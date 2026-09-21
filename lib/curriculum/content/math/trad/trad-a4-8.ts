@@ -1,0 +1,260 @@
+import type { SubmoduleTrad } from "./trad-types";
+
+const S = (fr: string, en: string, ar: string, fa: string, ti: string, uk: string, pt: string, so: string, tr: string, ps: string) =>
+  ({ fr, en, ar, fa, ti, uk, pt, so, tr, ps });
+const A = (fr: string[], en: string[], ar: string[], fa: string[], ti: string[], uk: string[], pt: string[], so: string[], tr: string[], ps: string[]) =>
+  ({ fr, en, ar, fa, ti, uk, pt, so, tr, ps });
+
+export const TRAD_A4_8: SubmoduleTrad = {
+  submoduleId: "A4-8",
+  title: S(
+    "Problèmes",
+    "Word problems",
+    "مسائل",
+    "مسئله‌ها",
+    "ጸገማት",
+    "Задачі",
+    "Problemas",
+    "Su'aalo xisaabeed",
+    "Problemler",
+    "مسئلې",
+  ),
+  blocks: [
+    // Block 0 — heading "Problèmes avec des fractions" (black)
+    { text: S(
+      "Problèmes avec des fractions",
+      "Problems with fractions",
+      "مسائل بالكسور",
+      "مسئله‌ها با کسرها",
+      "ጸገማት ምስ ፍርቂታት",
+      "Задачі з дробами",
+      "Problemas com frações",
+      "Su'aalo leh jajabyo",
+      "Kesirli problemler",
+      "د کسرونو سره مسئلې",
+    ) },
+    // Block 1 — highlight "Règle importante"
+    { text: S(
+      "Règle importante",
+      "Important rule",
+      "قاعدة مهمة",
+      "قانون مهم",
+      "ኣገዳሲ ሕጊ",
+      "Важливе правило",
+      "Regra importante",
+      "Xeerka muhiimka ah",
+      "Önemli kural",
+      "مهمه قاعده",
+    ) },
+    // Block 2 — plain
+    { text: S(
+      "Je ne choisis pas l'opération par automatisme. Je lis la question pour comprendre **ce que je cherche**.",
+      "I don't choose the operation automatically. I read the question to understand **what I am looking for**.",
+      "لا أختار العملية تلقائيًا. أقرأ السؤال لأفهم **ما أبحث عنه**.",
+      "من عملیات را به‌طور خودکار انتخاب نمی‌کنم. سؤال را می‌خوانم تا بفهمم **چه می‌خواهم**.",
+      "ኣሰራርሓ ብኣውቶማቲክ ኣይምረጽን። **ዝደሊ ዘለኹ** ንምርዳእ ሕቶ ይንብብ።",
+      "Я не обираю дію автоматично. Читаю запитання, щоб зрозуміти **що я шукаю**.",
+      "Não escolho a operação automaticamente. Leio a questão para perceber **o que procuro**.",
+      "Hawsha kuma doorto si toos ah. Waxaan akhriyaa su'aasha si aan u fahmaa **waxa aan raadinayo**.",
+      "İşlemi otomatik seçmiyorum. **Ne aradığımı** anlamak için soruyu okuyorum.",
+      "زه عمليه د خپلې خوښې نه ټاکم. **چه لټوم** د پوهيدو لپاره پوښتنه لولم.",
+    ) },
+    // Block 3 — bullets labelFr "Méthode"
+    { label: S(
+        "Méthode",
+        "Method",
+        "الطريقة",
+        "روش",
+        "ሜላ",
+        "Метод",
+        "Método",
+        "Hab",
+        "Yöntem",
+        "طريقه",
+      ), items: A(
+      [
+        "**1.** Je lis l'énoncé et je repère **le tout** (la quantité totale).",
+        "**2.** Je repère la fraction donnée et ce qu'elle représente.",
+        "**3.** Je décide : est-ce que je cherche **une partie** du tout, ou le **tout** à partir d'une partie ?",
+      ],
+      [
+        "**1.** I read the problem and find **the whole** (the total quantity).",
+        "**2.** I identify the given fraction and what it represents.",
+        "**3.** I decide: am I looking for **a part** of the whole, or the **whole** from a part?",
+      ],
+      [
+        "**1.** أقرأ المسألة وأحدد **الكل** (الكمية الإجمالية).",
+        "**2.** أحدد الكسر المعطى وما يمثله.",
+        "**3.** أقرر: هل أبحث عن **جزء** من الكل، أم عن **الكل** من جزء؟",
+      ],
+      [
+        "**1.** مسئله را می‌خوانم و **کل** (مقدار کل) را پیدا می‌کنم.",
+        "**2.** کسر داده‌شده و چیزی که نشان می‌دهد را پیدا می‌کنم.",
+        "**3.** تصمیم می‌گیرم: دنبال **یک بخش** از کل می‌گردم، یا دنبال **کل** از یک بخش؟",
+      ],
+      [
+        "**1.** ሕቶ ይንብብ፣ **ምሉእ** (ጠቕላሊ ዕቐን) ይርኢ።",
+        "**2.** ዝወሃበ ፍርቂ ምስ ዝውክሎ ይርኢ።",
+        "**3.** ይወስን: ካብ ምሉእ **ክፋል** ክደሊ ዲና፣ ወይ ካብ ክፋል **ምሉእ** ክደሊ?",
+      ],
+      [
+        "**1.** Читаю задачу і знаходжу **ціле** (загальну кількість).",
+        "**2.** Знаходжу даний дріб і те, що він позначає.",
+        "**3.** Вирішую: шукаю **частину** цілого чи **ціле** за частиною?",
+      ],
+      [
+        "**1.** Leio o enunciado e identifico **o todo** (a quantidade total).",
+        "**2.** Identifico a fração dada e o que ela representa.",
+        "**3.** Decido: estou à procura de **uma parte** do todo, ou do **todo** a partir de uma parte?",
+      ],
+      [
+        "**1.** Waxaan akhriyaa su'aasha oo waxaan helaa **guud ahaanshaha** (tirada wadarta).",
+        "**2.** Waxaan helaa jajabka la siiyay iyo waxa uu matalo.",
+        "**3.** Waxaan go'aamiyaa: ma raadinayaa **qayb** ka mid ah guud ahaanshaha, mise **guud ahaanshaha** ka qayb?",
+      ],
+      [
+        "**1.** Soruyu okuyor ve **bütünü** (toplam miktarı) buluyorum.",
+        "**2.** Verilen kesri ve neyi temsil ettiğini buluyorum.",
+        "**3.** Karar veriyorum: bütünün **bir parçasını** mı, yoksa parçadan **bütünü** mü arıyorum?",
+      ],
+      [
+        "**1.** مسئله لولم او **ټوله** (د ټولو مقدار) ومومم.",
+        "**2.** ورکړل شوی کسر او هغه چه ښيي ومومم.",
+        "**3.** پرېکړه کوم: آيا د ټول **برخه** لټوم، که د برخې نه **ټوله**؟",
+      ],
+    ) },
+    // Block 4 — theory_tabs (inner blocks not translated)
+    {},
+    // Block 5 — heading "Attention aux mots" (black)
+    { text: S(
+      "Attention aux mots",
+      "Watch out for the words",
+      "انتبه للكلمات",
+      "مراقب کلمات باشید",
+      "ንቃህ ንቃላት",
+      "Увага на слова",
+      "Atenção às palavras",
+      "Fiirso erayada",
+      "Sözcüklere dikkat et",
+      "د کلمو خيال ساته",
+    ) },
+    // Block 6 — plain
+    { text: S(
+      "Des mots comme **la moitié**, **le tiers**, **le quart** sont des fractions.",
+      "Words like **half**, **third**, **quarter** are fractions.",
+      "كلمات مثل **النصف** و**الثلث** و**الربع** هي كسور.",
+      "کلماتی مثل **نصف**، **ثلث**، **ربع** کسر هستند.",
+      "ቃላት ከም **ፍርቂ**፣ **ሳልሳይ**፣ **ርብዒ** ፍርቂታት እዮም።",
+      "Слова як **половина**, **третина**, **чверть** — це дроби.",
+      "Palavras como **metade**, **terço**, **quarto** são frações.",
+      "Erayada sida **badh**, **saddex-meelood-meel**, **afar-meelood-meel** waa jajabyo.",
+      "**Yarım**, **üçte bir**, **çeyrek** gibi kelimeler kesirdir.",
+      "د **نيمو**، **دريمو**، **ربع** غوندې کلمې کسرونه دي.",
+    ) },
+    // Block 7 — table headers ["Expression", "Fraction", "Calcul"]
+    { headers: A(
+      ["Expression", "Fraction", "Calcul"],
+      ["Expression", "Fraction", "Calculation"],
+      ["التعبير", "الكسر", "الحساب"],
+      ["عبارت", "کسر", "محاسبه"],
+      ["ምዝርዛር", "ፍርቂ", "ሕሳብ"],
+      ["Вираз", "Дріб", "Обчислення"],
+      ["Expressão", "Fração", "Cálculo"],
+      ["Muujinta", "Jajabka", "Xisaabta"],
+      ["İfade", "Kesir", "Hesap"],
+      ["بيان", "کسر", "حساب"],
+    ) },
+    // Block 8 — heading "Petite stratégie" (black)
+    { text: S(
+      "Petite stratégie",
+      "Quick strategy",
+      "استراتيجية صغيرة",
+      "استراتژی کوچک",
+      "ንኡስ ሜላ",
+      "Маленька стратегія",
+      "Pequena estratégia",
+      "Xeelad yar",
+      "Küçük strateji",
+      "کوچنۍ ستراتيژي",
+    ) },
+    // Block 9 — plain "1. Je repère le tout et la fraction."
+    { text: S(
+      "**1.** Je repère le tout et la fraction.",
+      "**1.** I identify the whole and the fraction.",
+      "**1.** أحدد الكل والكسر.",
+      "**1.** کل و کسر را پیدا می‌کنم.",
+      "**1.** ምሉእን ፍርቂን ይርኢ።",
+      "**1.** Знаходжу ціле і дріб.",
+      "**1.** Identifico o todo e a fração.",
+      "**1.** Waxaan helaa guud ahaanshaha iyo jajabka.",
+      "**1.** Bütünü ve kesri buluyorum.",
+      "**1.** ټوله او کسر ومومم.",
+    ) },
+    // Block 10 — plain "2. Je demande : est-ce que je cherche une partie ou le tout ?"
+    { text: S(
+      "**2.** Je demande : est-ce que je cherche **une partie** ou **le tout** ?",
+      "**2.** I ask: am I looking for **a part** or **the whole**?",
+      "**2.** أسأل: هل أبحث عن **جزء** أم عن **الكل**؟",
+      "**2.** می‌پرسم: دنبال **یک بخش** می‌گردم یا **کل**؟",
+      "**2.** ሕቶ ይሓቶ፡ **ክፋል** ወይ **ምሉእ** ክደሊ?",
+      "**2.** Питаю: шукаю **частину** чи **ціле**?",
+      "**2.** Pergunto: estou à procura de **uma parte** ou **do todo**?",
+      "**2.** Waxaan is weydiinaqa: ma raadinayaa **qayb** mise **guud ahaanshaha**?",
+      "**2.** Soruyorum: **bir parça** mı yoksa **bütünü** mü arıyorum?",
+      "**2.** پوښتم: **برخه** لټوم که **ټوله**؟",
+    ) },
+    // Block 11 — plain "3. Si je cherche une partie..."
+    { text: S(
+      "**3.** Si je cherche une partie : je divise par le dénominateur, puis multiplie par le numérateur.",
+      "**3.** If I am looking for a part: I divide by the denominator, then multiply by the numerator.",
+      "**3.** إذا كنت أبحث عن جزء: أقسم على المقام ثم أضرب في البسط.",
+      "**3.** اگر دنبال یک بخش می‌گردم: بر مخرج تقسیم می‌کنم، سپس در صورت ضرب می‌کنم.",
+      "**3.** ክፋል ዝደሊ ምስ ዝኸውን: ብዲኖሚኔተር ክፈል፣ ድሕሪኡ ብኒዩመሬተር ባዝሕ።",
+      "**3.** Якщо шукаю частину: ділю на знаменник, потім множу на чисельник.",
+      "**3.** Se procuro uma parte: divido pelo denominador e depois multiplico pelo numerador.",
+      "**3.** Haddaan raadinayo qayb: u qaybi hooseeyaha, kadibna ku dhufo sareeyaha.",
+      "**3.** Parça arıyorsam: paydaya bölerim, sonra pay ile çarparım.",
+      "**3.** که برخه لټوم: پر مخرج وویشم، بیا د صورت سره ضرب کوم.",
+    ) },
+    // Block 12 — plain "4. Si je cherche le tout..."
+    { text: S(
+      "**4.** Si je cherche le tout : je divise par le numérateur, puis multiplie par le dénominateur.",
+      "**4.** If I am looking for the whole: I divide by the numerator, then multiply by the denominator.",
+      "**4.** إذا كنت أبحث عن الكل: أقسم على البسط ثم أضرب في المقام.",
+      "**4.** اگر دنبال کل می‌گردم: بر صورت تقسیم می‌کنم، سپس در مخرج ضرب می‌کنم.",
+      "**4.** ምሉእ ዝደሊ ምስ ዝኸውን: ብኒዩመሬተር ክፈል፣ ድሕሪኡ ብዲኖሚኔተር ባዝሕ።",
+      "**4.** Якщо шукаю ціле: ділю на чисельник, потім множу на знаменник.",
+      "**4.** Se procuro o todo: divido pelo numerador e depois multiplico pelo denominador.",
+      "**4.** Haddaan raadinayo guud ahaanshaha: u qaybi sareeyaha, kadibna ku dhufo hooseeyaha.",
+      "**4.** Bütünü arıyorsam: paya bölerim, sonra payda ile çarparım.",
+      "**4.** که ټوله لټوم: پر صورت وویشم، بیا د مخرج سره ضرب کوم.",
+    ) },
+    // Block 13 — plain "5. Je vérifie que ma réponse est logique..."
+    { text: S(
+      "**5.** Je vérifie que ma réponse est logique (une partie est plus petite que le tout).",
+      "**5.** I check that my answer makes sense (a part is smaller than the whole).",
+      "**5.** أتحقق من أن إجابتي منطقية (الجزء أصغر من الكل).",
+      "**5.** بررسی می‌کنم که پاسخم منطقی باشد (یک بخش از کل کوچکتر است).",
+      "**5.** ምላሸይ ኣሎ እዩ ኢለ ይርኢ (ክፋል ካብ ምሉእ ዝነኣሰ እዩ)።",
+      "**5.** Перевіряю, чи відповідь логічна (частина менша за ціле).",
+      "**5.** Verifico se a minha resposta faz sentido (uma parte é menor que o todo).",
+      "**5.** Waxaan xaqiijiyaa in jawaabtu macno yeelatay (qayb way ka yar tahay guud ahaanshaha).",
+      "**5.** Cevabımın mantıklı olup olmadığını kontrol ediyorum (bir parça bütünden küçüktür).",
+      "**5.** چک کوم چه ځوابم منطقي وي (برخه د ټولو نه کوچنۍ ده).",
+    ) },
+  ],
+  consignes: {
+    wordProblems: {
+      fr: "Résolvez les problèmes. Écrivez uniquement la réponse numérique ou la fraction.",
+      en: "Solve the problems. Write only the numerical answer or the fraction.",
+      ar: "حلّ المسائل. اكتب الإجابة الرقمية أو الكسر فقط.",
+      fa: "مسئله‌ها را حل کنید. فقط پاسخ عددی یا کسر را بنویسید.",
+      ti: "ነቶም ጸገማት ፍታሕ። ቁጽራዊ መልሲ ወይ ፍርቂ ጥራይ ጻሕፍ።",
+      uk: "Розв'яжи задачі. Запиши лише числову відповідь або дріб.",
+      pt: "Resolve os problemas. Escreve apenas a resposta numérica ou a fração.",
+      so: "Xalli su'aalaha. Qor kaliya jawaabta tiro ahaan ama jajabka.",
+      tr: "Problemleri çöz. Yalnızca sayısal cevabı veya kesri yaz.",
+      ps: "مسئلې حل کړه. یوازې عددي ځواب یا کسر ولیکه.",
+    },
+  },
+};

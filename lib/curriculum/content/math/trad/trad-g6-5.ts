@@ -1,0 +1,147 @@
+import type { SubmoduleTrad } from "./trad-types";
+
+const S = (fr: string, en: string, ar: string, fa: string, ti: string, uk: string, pt: string, so: string, tr: string, ps: string) =>
+  ({ fr, en, ar, fa, ti, uk, pt, so, tr, ps });
+
+const P = (fr: string[], en: string[], ar: string[], fa: string[], ti: string[], uk: string[], pt: string[], so: string[], tr: string[], ps: string[]) =>
+  ({ fr, en, ar, fa, ti, uk, pt, so, tr, ps });
+
+export const TRAD_G6_5: SubmoduleTrad = {
+  submoduleId: "G6-5",
+  title: S(
+    "Homothétie",
+    "Dilation (homothety)",
+    "التمثيل المتناسب",
+    "همتایی (تمدد)",
+    "ዓቢ ምኻናን",
+    "Гомотетія",
+    "Homotetia",
+    "Isku-dheellitir",
+    "Benzerlik (homoteti)",
+    "همغږي بدلون",
+  ),
+  paragraphs: P(
+    [
+      "Une homothétie de centre O et de rapport k associe à chaque point M le point M' tel que OM' = k × OM (sur la même droite).",
+      "Si k > 1 : agrandissement. Si 0 < k < 1 : réduction. Si k < 0 : agrandissement avec retournement.",
+      "Propriétés : les angles sont conservés, les longueurs sont multipliées par |k|, les aires par k².",
+      "Exemple : homothétie de rapport 2 double toutes les distances au centre. Les figures sont semblables.",
+    ],
+    [
+      "A dilation (homothety) with center O and ratio k maps M to M' with OM' = k × OM.",
+      "k > 1: enlargement. 0 < k < 1: reduction. k < 0: reversal with scaling.",
+      "Properties: angles preserved; lengths scaled by |k|; areas by k².",
+      "Example: ratio 2 doubles all distances from center. Resulting figures are similar.",
+    ],
+    [
+      "التمثيل المتناسب بالمركز O ومعامل k يربط M بـ M' حيث OM' = k × OM.",
+      "k > 1: تكبير. 0 < k < 1: تصغير. k < 0: قلب مع تحجيم.",
+      "الخصائص: الزوايا محفوظة؛ الأطوال تُضرب بـ |k|؛ المساحات بـ k².",
+      "مثال: معامل 2 يضاعف جميع المسافات.",
+    ],
+    [
+      "همتایی با مرکز O و نسبت k، M را به M' می‌فرستد که OM' = k × OM.",
+      "k > 1: بزرگنمایی. 0 < k < 1: کوچک‌سازی. k < 0: انعکاس با مقیاس‌بندی.",
+      "ویژگی‌ها: زوایا حفظ می‌شوند؛ طول‌ها با |k| ضرب می‌شوند؛ مساحت‌ها با k².",
+      "مثال: نسبت 2 همه فاصله‌ها از مرکز را دو برابر می‌کند.",
+    ],
+    [
+      "ዓቢ ምኻናን ናይ O ማዕኸን ን k ሕጊ ነፍሲ ወከፍ M ናብ M' OM' = k × OM ዘቕርብ ዩ.",
+      "k > 1: ምዕባይ. 0 < k < 1: ምቕናስ. k < 0: ምቕዋም ምስ ምዕባይ.",
+      "ንብረታት: ኩርናዓት ዕቃቤ; ርዝሓ ብ|k| ምርባሕ; ሰፊሓ ብ k².",
+      "ምሳሌ: ሕጊ 2 ኩሉ ርሕቀት ካብ ማዕኸን ዕጻፍ.",
+    ],
+    [
+      "Гомотетія з центром O і коефіцієнтом k відображає M в M': OM' = k × OM.",
+      "k > 1: збільшення. 0 < k < 1: зменшення. k < 0: відображення зі зміною масштабу.",
+      "Властивості: кути зберігаються; довжини множаться на |k|; площі на k².",
+      "Приклад: k = 2 подвоює всі відстані від центра.",
+    ],
+    [
+      "Uma homotetia de centro O e razão k associa M a M' com OM' = k × OM.",
+      "k > 1: ampliação. 0 < k < 1: redução. k < 0: inversão com escala.",
+      "Propriedades: ângulos conservados; comprimentos multiplicados por |k|; áreas por k².",
+      "Exemplo: razão 2 duplica todas as distâncias ao centro.",
+    ],
+    [
+      "Isku-dheellitir xarun O iyo saamiga k wuxuu M ula xiriiriyaa M' halka OM' = k × OM.",
+      "k > 1: balaadhin. 0 < k < 1: yareyn. k < 0: rogasho iyo cabbir.",
+      "Sifooyinka: geeska waa la ilaaliyaa; dhererka lagu dhuftaa |k|; bedka k².",
+      "Tusaale: saamiga 2 wuxuu labanlaabaa dhammaan masaafooyinka xarunta.",
+    ],
+    [
+      "O merkezli ve k oranlı benzerlik (homoteti), M'yi OM' = k × OM olacak şekilde eşler.",
+      "k > 1: büyütme. 0 < k < 1: küçültme. k < 0: ölçekli ters çevirme.",
+      "Özellikler: açılar korunur; uzunluklar |k| ile çarpılır; alanlar k² ile.",
+      "Örnek: oran 2, merkeze olan tüm uzaklıkları ikiye katlar.",
+    ],
+    [
+      "د O مرکز او k تناسب سره همغږي بدلون M ته M' تړلي چې OM' = k × OM.",
+      "k > 1: لویول. 0 < k < 1: کوچنېدل. k < 0: بدلول او اندازه.",
+      "ځانګړتیاوې: زاویې ساتل کېږي؛ اوږدوالي |k| سره ضربېږي؛ ساحې k² سره.",
+      "بېلګه: تناسب 2 ټول واټنونه له مرکزه دوه برابر کوي.",
+    ],
+  ),
+  consignes: {
+    "g6-5-e1": S(
+      "Homothétie de rapport 3 : un segment de 4 cm devient ?",
+      "Dilation with scale factor 3: a 4 cm segment becomes?",
+      "تمثيل متناسب بمعامل 3: قطعة 4 سم تصبح ؟",
+      "همتایی با نسبت 3: پاره‌خط 4 سانتی‌متر می‌شود؟",
+      "ዓቢ ምኻናን ሕጊ 3: ክፍልታት 4 ሴሜ ይኸውን ?",
+      "Гомотетія з k = 3: відрізок 4 см стає?",
+      "Homotetia de razão 3: um segmento de 4 cm torna-se?",
+      "Isku-dheellitir saamiga 3: qayb 4 cm waxay noqotaa?",
+      "Oran 3 benzerlik: 4 cm'lik doğru parçası ne olur?",
+      "د 3 تناسب همغږي بدلون: 4 سانتي پاره خط کېږي؟",
+    ),
+    "g6-5-e2": S(
+      "Homothétie de rapport 1/2 : un segment de 8 cm devient ?",
+      "Dilation with scale factor 1/2: a 8 cm segment becomes?",
+      "تمثيل متناسب بمعامل 1/2: قطعة 8 سم تصبح ؟",
+      "همتایی با نسبت 1/2: پاره‌خط 8 سانتی‌متر می‌شود؟",
+      "ዓቢ ምኻናን ሕጊ 1/2: ክፍልታት 8 ሴሜ ይኸውን ?",
+      "Гомотетія з k = 1/2: відрізок 8 см стає?",
+      "Homotetia de razão 1/2: um segmento de 8 cm torna-se?",
+      "Isku-dheellitir saamiga 1/2: qayb 8 cm waxay noqotaa?",
+      "Oran 1/2 benzerlik: 8 cm'lik doğru parçası ne olur?",
+      "د 1/2 تناسب همغږي بدلون: 8 سانتي پاره خط کېږي؟",
+    ),
+    "g6-5-e3": S(
+      "Homothétie de rapport 2 : une aire de 5 cm² devient ?",
+      "Dilation with scale factor 2: an area of 5 cm² becomes?",
+      "تمثيل متناسب بمعامل 2: مساحة 5 سم² تصبح ؟",
+      "همتایی با نسبت 2: مساحت 5 سانتی‌متر مربع می‌شود؟",
+      "ዓቢ ምኻናን ሕጊ 2: ሰፊሓ 5 ሴሜ² ይኸውን ?",
+      "Гомотетія з k = 2: площа 5 см² стає?",
+      "Homotetia de razão 2: uma área de 5 cm² torna-se?",
+      "Isku-dheellitir saamiga 2: bed 5 cm² waxay noqotaa?",
+      "Oran 2 benzerlik: 5 cm² alan ne olur?",
+      "د 2 تناسب همغږي بدلون: 5 سانتي² ساحه کېږي؟",
+    ),
+    "g6-5-e4": S(
+      "L'homothétie conserve-t-elle les angles ? (oui/non)",
+      "Does dilation preserve angles? (yes/no)",
+      "هل التمثيل المتناسب يحافظ على الزوايا؟ (نعم/لا)",
+      "آیا همتایی زوایا را حفظ می‌کند؟ (بله/خیر)",
+      "ዓቢ ምኻናን ኩርናዓት ይቕቅብ ድዩ? (እወ/ኣይፋል)",
+      "Чи зберігає гомотетія кути? (так/ні)",
+      "A homotetia conserva os ângulos? (sim/não)",
+      "Isku-dheellitirku ma ilaalisaa geeska? (haa/maya)",
+      "Benzerlik açıları korur mu? (evet/hayır)",
+      "آیا همغږي بدلون زاویې ساتي؟ (هو/نه)",
+    ),
+    "g6-5-e5": S(
+      "Un rapport k = 1 laisse la figure identique ? (oui/non)",
+      "Does a scale factor k = 1 leave the figure unchanged? (yes/no)",
+      "هل المعامل k = 1 يترك الشكل دون تغيير؟ (نعم/لا)",
+      "آیا نسبت k = 1 شکل را بدون تغییر می‌گذارد؟ (بله/خیر)",
+      "ሕጊ k = 1 ቅርጺ ዘይቕየር ይሕዎ ድዩ? (እወ/ኣይፋል)",
+      "Чи коефіцієнт k = 1 залишає фігуру незмінною? (так/ні)",
+      "Uma razão k = 1 deixa a figura inalterada? (sim/não)",
+      "Saamiga k = 1 ma shaxda isbeddel la'aan u dayaa? (haa/maya)",
+      "k = 1 oranı şekli değiştirmeden bırakır mı? (evet/hayır)",
+      "آیا تناسب k = 1 شکل پرته له بدلون پریږدي؟ (هو/نه)",
+    ),
+  },
+};

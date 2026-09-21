@@ -1,0 +1,147 @@
+import type { SubmoduleTrad } from "./trad-types";
+
+const S = (fr: string, en: string, ar: string, fa: string, ti: string, uk: string, pt: string, so: string, tr: string, ps: string) =>
+  ({ fr, en, ar, fa, ti, uk, pt, so, tr, ps });
+
+const P = (fr: string[], en: string[], ar: string[], fa: string[], ti: string[], uk: string[], pt: string[], so: string[], tr: string[], ps: string[]) =>
+  ({ fr, en, ar, fa, ti, uk, pt, so, tr, ps });
+
+export const TRAD_G6_7: SubmoduleTrad = {
+  submoduleId: "G6-7",
+  title: S(
+    "Homothétie et longueurs",
+    "Dilation and lengths",
+    "التمثيل المتناسب والأطوال",
+    "همتایی و طول‌ها",
+    "ዓቢ ምኻናን ን ርዝሓ",
+    "Гомотетія та довжини",
+    "Homotetia e comprimentos",
+    "Isku-dheellitir iyo dherer",
+    "Benzerlik ve uzunluklar",
+    "همغږي بدلون او اوږدوالي",
+  ),
+  paragraphs: P(
+    [
+      "Deux figures semblables ont la même forme mais pas nécessairement la même taille. Elles sont reliées par une homothétie.",
+      "Coefficient de similitude k : rapport des longueurs correspondantes. k = longueur image / longueur originale.",
+      "Rapport des périmètres : k. Rapport des aires : k². Exemple : k = 3 → périmètres × 3, aires × 9.",
+      "Application : plans et maquettes (k < 1 pour une réduction, k > 1 pour un agrandissement).",
+    ],
+    [
+      "Similar figures have the same shape but not necessarily the same size. They are related by a dilation.",
+      "Similarity ratio k = image length / original length.",
+      "Perimeter ratio: k. Area ratio: k². Example: k = 3 → perimeters ×3, areas ×9.",
+      "Applications: scale drawings (k < 1 for reduction, k > 1 for enlargement).",
+    ],
+    [
+      "الأشكال المتشابهة لها نفس الشكل لكن ليس بالضرورة نفس الحجم.",
+      "نسبة التشابه k = الطول الصورة / الطول الأصل.",
+      "نسبة المحيطات: k. نسبة المساحات: k².",
+      "تطبيقات: مقاييس الرسم (k < 1 للتصغير).",
+    ],
+    [
+      "اشکال متشابه شکل یکسان دارند اما لزوماً اندازه یکسان ندارند.",
+      "نسبت تشابه k = طول تصویر / طول اصل.",
+      "نسبت محیط‌ها: k. نسبت مساحت‌ها: k².",
+      "کاربردها: نقشه‌های مقیاس‌دار.",
+    ],
+    [
+      "ተመሳሰልቲ ቅርጺ ሓደ ቅርጺ ዘለዎ ግን ሓደ ዓቐን ዘይብሎም ዩ.",
+      "ናይ ምስምሳል ሕጊ k = ናይ ምስሊ ርዝሓ / ናህሰ ርዝሓ.",
+      "ናይ ዙሪያ ሕጊ: k. ናይ ሰፊሓ ሕጊ: k².",
+      "ኣሰፋ: ናይ ሸቀልቲ ስዕሊ (k < 1 ምቕናስ).",
+    ],
+    [
+      "Подібні фігури мають однакову форму, але не обов'язково однаковий розмір. Їх пов'язує гомотетія.",
+      "Коефіцієнт подібності k = довжина образу / довжина оригіналу.",
+      "Відношення периметрів: k. Відношення площ: k².",
+      "Застосування: масштабні схеми (k < 1 зменшення).",
+    ],
+    [
+      "Figuras semelhantes têm a mesma forma mas não necessariamente o mesmo tamanho. Estão ligadas por uma homotetia.",
+      "Coeficiente de semelhança k = comprimento imagem / comprimento original.",
+      "Razão dos perímetros: k. Razão das áreas: k².",
+      "Aplicações: plantas e maquetas (k < 1 redução, k > 1 ampliação).",
+    ],
+    [
+      "Qaab isku mid ah waxay leeyihiin qaab isku mid ah laakiin maahan cabbir isku mid ah. Waxaa xiriira isku-dheellitir.",
+      "Saamiga isku midnimada k = dhererka sawirka / dhererka asalka.",
+      "Saamiga wareegga: k. Saamiga bedka: k².",
+      "Codsiyada: sawirro cabbir leh (k < 1 yareyn).",
+    ],
+    [
+      "Benzer şekiller aynı biçime sahiptir ama aynı boyutta olmak zorunda değildir. Benzerlik ile ilişkilidirler.",
+      "Benzerlik oranı k = görüntü uzunluğu / orijinal uzunluk.",
+      "Çevre oranı: k. Alan oranı: k².",
+      "Uygulamalar: ölçekli çizimler (k < 1 küçültme).",
+    ],
+    [
+      "ورته ورته شکلونه ورته بڼه لري خو لازم نه ده ورته اندازه ولري. د همغږي بدلون سره تړلي دي.",
+      "د ورته والي تناسب k = د انځور اوږدوالی / د اصلي اوږدوالی.",
+      "د محیط تناسب: k. د ساحې تناسب: k².",
+      "کارونه: د کچې انځورونه (k < 1 کوچنېدل).",
+    ],
+  ),
+  consignes: {
+    "g6-7-e1": S(
+      "Deux figures semblables, k = 4. Un côté de 3 cm → côté image = ?",
+      "Two similar figures, k = 4. A side of 3 cm → image side = ?",
+      "شكلان متشابهان، k = 4. ضلع 3 سم → ضلع الصورة = ?",
+      "دو شکل متشابه، k = 4. ضلع 3 سانتی‌متر → ضلع تصویر = ?",
+      "ክልተ ተመሳሳልቲ ቅርጺታት፣ k = 4. ጎኽ 3 ሴሜ → ጎኽ ምስሊ = ?",
+      "Дві подібні фігури, k = 4. Сторона 3 см → сторона образу = ?",
+      "Duas figuras semelhantes, k = 4. Lado de 3 cm → lado imagem = ?",
+      "Laba qaab isku mid ah, k = 4. Dhinac 3 cm → dhinaca sawirka = ?",
+      "İki benzer şekil, k = 4. 3 cm kenar → görüntü kenarı = ?",
+      "دو ورته شکلونه، k = 4. 3 سانتي اړخ → د انځور اړخ = ?",
+    ),
+    "g6-7-e2": S(
+      "k = 3. Rapport des aires = ?",
+      "k = 3. Area ratio = ?",
+      "k = 3. نسبة المساحات = ?",
+      "k = 3. نسبت مساحت‌ها = ?",
+      "k = 3. ናይ ሰፊሓ ሕጊ = ?",
+      "k = 3. Відношення площ = ?",
+      "k = 3. Razão das áreas = ?",
+      "k = 3. Saamiga bedka = ?",
+      "k = 3. Alan oranı = ?",
+      "k = 3. د ساحو تناسب = ?",
+    ),
+    "g6-7-e3": S(
+      "k = 2. Périmètre original = 10 cm. Périmètre image = ?",
+      "k = 2. Original perimeter = 10 cm. Image perimeter = ?",
+      "k = 2. محيط الأصل = 10 سم. محيط الصورة = ?",
+      "k = 2. محیط اصل = 10 سانتی‌متر. محیط تصویر = ?",
+      "k = 2. ናህሰ ዙሪያ = 10 ሴሜ. ዙሪያ ምስሊ = ?",
+      "k = 2. Периметр оригіналу = 10 см. Периметр образу = ?",
+      "k = 2. Perímetro original = 10 cm. Perímetro imagem = ?",
+      "k = 2. Wareeg asalka = 10 cm. Wareeg sawirka = ?",
+      "k = 2. Orijinal çevre = 10 cm. Görüntü çevresi = ?",
+      "k = 2. اصلي محیط = 10 سانتي. د انځور محیط = ?",
+    ),
+    "g6-7-e4": S(
+      "k = 1/3. Un côté de 9 cm → côté image = ?",
+      "k = 1/3. A side of 9 cm → image side = ?",
+      "k = 1/3. ضلع 9 سم → ضلع الصورة = ?",
+      "k = 1/3. ضلع 9 سانتی‌متر → ضلع تصویر = ?",
+      "k = 1/3. ጎኽ 9 ሴሜ → ጎኽ ምስሊ = ?",
+      "k = 1/3. Сторона 9 см → сторона образу = ?",
+      "k = 1/3. Lado de 9 cm → lado imagem = ?",
+      "k = 1/3. Dhinac 9 cm → dhinaca sawirka = ?",
+      "k = 1/3. 9 cm kenar → görüntü kenarı = ?",
+      "k = 1/3. 9 سانتي اړخ → د انځور اړخ = ?",
+    ),
+    "g6-7-e5": S(
+      "k = 2. Aire originale = 8 cm². Aire image = ?",
+      "k = 2. Original area = 8 cm². Image area = ?",
+      "k = 2. مساحة الأصل = 8 سم². مساحة الصورة = ?",
+      "k = 2. مساحت اصل = 8 سانتی‌متر مربع. مساحت تصویر = ?",
+      "k = 2. ናህሰ ሰፊሓ = 8 ሴሜ². ሰፊሓ ምስሊ = ?",
+      "k = 2. Площа оригіналу = 8 см². Площа образу = ?",
+      "k = 2. Área original = 8 cm². Área imagem = ?",
+      "k = 2. Bed asalka = 8 cm². Bed sawirka = ?",
+      "k = 2. Orijinal alan = 8 cm². Görüntü alanı = ?",
+      "k = 2. اصلي ساحه = 8 سانتي². د انځور ساحه = ?",
+    ),
+  },
+};
