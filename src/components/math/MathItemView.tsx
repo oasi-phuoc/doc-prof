@@ -2,7 +2,6 @@ import type { MathItem, PreviewMode } from '@/math/types'
 import { CoordGrid } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
 import { GeometryFigure } from './GeometryFigure'
-import { QuestionPoints } from './PrintDocumentChrome'
 
 function DigitRow({
   digits,
@@ -294,22 +293,15 @@ export function MathItemView({
   item,
   mode,
   index,
-  points,
-  showPoints,
 }: {
   item: MathItem
   mode: PreviewMode
   index: number
-  points?: number
-  showPoints?: boolean
 }) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
   return (
     <div className={`exercise-item layout-${item.layout}`}>
-      <div className="item-number">
-        {index + 1}.
-        {showPoints && points != null ? <QuestionPoints points={points} /> : null}
-      </div>
+      <div className="item-number">{index + 1}.</div>
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}

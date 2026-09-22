@@ -1,4 +1,15 @@
-import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
+import {
+  Children,
+  isValidElement,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactElement,
+  type ReactNode,
+} from 'react'
 import './App.css'
 import { MathItemView } from '@/components/math/MathItemView'
 import {
@@ -33,9 +44,10 @@ function WorksheetSheet({
   institutional,
   custom,
   evalMode,
-  pointsPerQuestion,
   pageNumber,
   total,
+  sheetIndex,
+  documentTotalPoints,
 }: {
   page: WorksheetPage
   mode: PreviewMode
@@ -43,27 +55,40 @@ function WorksheetSheet({
   institutional: InstitutionalHeader
   custom: CustomHeader
   evalMode: boolean
-  pointsPerQuestion: number
   pageNumber: number
   total: number
+  /** Rang physique dans la pile imprimée (1 = première feuille). Sert aux marges miroir. */
+  sheetIndex: number
+  /** Total de points de toute la fiche (toutes les pages). */
+  documentTotalPoints: number
 }) {
-  const totalPoints = page.items.length * pointsPerQuestion
+  const showHeader = pageNumber === 1
+  const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   return (
-    <article className="worksheet-sheet" style={{ '--sheet-columns': page.columns } as CSSProperties}>
-      {headerStyle === 'institutionnel' ? (
-        <InstitutionalDocumentHeader
-          config={institutional}
-          evalMode={evalMode}
-          totalPoints={evalMode ? totalPoints : undefined}
-          fallbackTitle={page.title}
-        />
-      ) : (
-        <CustomDocumentHeader config={custom} pageTitle={page.title} domain={page.domain} />
-      )}
+    <article
+      className={`worksheet-sheet ${parity}`}
+      style={{ '--sheet-columns': page.columns } as CSSProperties}
+    >
+      {showHeader &&
+        (headerStyle === 'institutionnel' ? (
+          <InstitutionalDocumentHeader
+            config={institutional}
+            evalMode={evalMode}
+            totalPoints={evalMode ? documentTotalPoints : undefined}
+            fallbackTitle={page.title}
+          />
+        ) : (
+          <CustomDocumentHeader config={custom} pageTitle={page.title} domain={page.domain} />
+        ))}
       <SheetBody>
         <div className="sheet-instruction">
           <b>Consigne</b>
-          <p>{page.instruction}</p>
+          <p>
+            {page.instruction}
+            {evalMode ? (
+              <span className="instruction-points"> /{documentTotalPoints} points</span>
+            ) : null}
+          </p>
         </div>
         <div className="exercise-grid">
           {page.items.map((item, index) => (
@@ -72,8 +97,6 @@ function WorksheetSheet({
               item={item}
               mode={mode}
               index={index}
-              points={pointsPerQuestion}
-              showPoints={evalMode}
             />
           ))}
         </div>
@@ -81,6 +104,22 @@ function WorksheetSheet({
       <DocumentFooter text={custom.footer} pageNumber={pageNumber} total={total} />
     </article>
   )
+}
+
+type SelectOption = { value: string; label: string; disabled?: boolean }
+
+function optionsFromChildren(children: ReactNode): SelectOption[] {
+  return Children.toArray(children).flatMap((child) => {
+    if (!isValidElement(child) || child.type !== 'option') return []
+    const el = child as ReactElement<{ value?: string | number; children?: ReactNode; disabled?: boolean }>
+    return [
+      {
+        value: String(el.props.value ?? ''),
+        label: Children.toArray(el.props.children).join(''),
+        disabled: Boolean(el.props.disabled),
+      },
+    ]
+  })
 }
 
 function SelectBox({
@@ -94,13 +133,68 @@ function SelectBox({
   children: ReactNode
   onChange: (value: string) => void
 }) {
+  const options = useMemo(() => optionsFromChildren(children), [children])
+  const [open, setOpen] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const listId = useId()
+  const selected = options.find((option) => option.value === value) ?? options[0]
+
+  useEffect(() => {
+    if (!open) return
+    const onPointer = (event: MouseEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onPointer)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onPointer)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
   return (
-    <label className="select-shell">
-      <span>{label}</span>
-      <select className="select-control" value={value} onChange={(event) => onChange(event.target.value)}>
-        {children}
-      </select>
-    </label>
+    <div className="select-shell" ref={rootRef}>
+      <span id={`${listId}-label`}>{label}</span>
+      <div className={`select-box ${open ? 'open' : ''}`}>
+        <button
+          type="button"
+          className="select-control"
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-labelledby={`${listId}-label`}
+          aria-controls={listId}
+          onClick={() => setOpen((current) => !current)}
+        >
+          <span className="select-control-value">{selected?.label ?? '—'}</span>
+          <span className="select-caret" aria-hidden />
+        </button>
+        {open && (
+          <ul className="select-menu" role="listbox" id={listId} aria-labelledby={`${listId}-label`}>
+            {options.map((option) => (
+              <li key={option.value} role="presentation">
+                <button
+                  type="button"
+                  role="option"
+                  className={`select-option ${option.value === value ? 'selected' : ''}`}
+                  aria-selected={option.value === value}
+                  disabled={option.disabled}
+                  onClick={() => {
+                    if (option.disabled) return
+                    onChange(option.value)
+                    setOpen(false)
+                  }}
+                >
+                  {option.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
   )
 }
 
@@ -237,18 +331,21 @@ function GeneratorPage() {
     setMode('student')
   }
 
-  function printWorksheet(nextMode: PreviewMode = mode) {
-    setMode(nextMode)
-    window.setTimeout(() => window.print(), 80)
+  function printAll() {
+    window.print()
   }
 
-  const sheetProps = {
-    mode,
+  const chromeProps = {
     headerStyle,
     institutional,
     custom,
     evalMode,
-    pointsPerQuestion,
+    documentTotalPoints: sheetTotalPoints,
+  } as const
+
+  const sheetProps = {
+    mode,
+    ...chromeProps,
   } as const
 
 
@@ -293,70 +390,6 @@ function GeneratorPage() {
               </button>
             </div>
             <div className="field-group">
-              <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
-                <option value="algèbre">Algèbre</option>
-                <option value="géométrie">Géométrie</option>
-              </SelectBox>
-              <SelectBox label="Thème" value={activePage.topic} onChange={changeTopic}>
-                {available.map((topic) => (
-                  <option value={topic.id} key={topic.id}>
-                    {topic.label}
-                  </option>
-                ))}
-              </SelectBox>
-              <SelectBox
-                label="Type d’exercice"
-                value={activePage.exerciseType}
-                onChange={(value) => {
-                  const type = exerciseTypeById[value]
-                  if (type) updatePage(applyType(type))
-                }}
-              >
-                {typesForTopic(activePage.topic).map((type) => (
-                  <option value={type.id} key={type.id}>
-                    {type.label}
-                  </option>
-                ))}
-              </SelectBox>
-              <label>
-                Questions
-                <div className="question-control">
-                  <select
-                    className="select-control"
-                    value={[6, 8, 10, 12, 16].includes(activePage.count) ? activePage.count : 'custom'}
-                    onChange={(event) =>
-                      event.target.value !== 'custom' && updatePage({ count: Number(event.target.value) })
-                    }
-                  >
-                    <option value="6">6 questions</option>
-                    <option value="8">8 questions</option>
-                    <option value="10">10 questions</option>
-                    <option value="12">12 questions</option>
-                    <option value="16">16 questions</option>
-                    <option value="custom">Personnalisé</option>
-                  </select>
-                  <input
-                    aria-label="Nombre personnalisé de questions"
-                    type="number"
-                    min={1}
-                    max={30}
-                    value={activePage.count}
-                    onChange={(event) =>
-                      updatePage({ count: Math.max(1, Math.min(30, Number(event.target.value) || 1)) })
-                    }
-                  />
-                </div>
-              </label>
-              <SelectBox
-                label="Colonnes"
-                value={String(activePage.columns)}
-                onChange={(value) => updatePage({ columns: Number(value) })}
-              >
-                <option value="1">1 colonne</option>
-                <option value="2">2 colonnes</option>
-                <option value="3">3 colonnes</option>
-              </SelectBox>
-
               <div className="mode-toggle-block">
                 <b>Mode de la fiche</b>
                 <div className="mode-toggle">
@@ -384,6 +417,7 @@ function GeneratorPage() {
                   <label>
                     Points par question
                     <input
+                      className="pill-input"
                       type="number"
                       min={1}
                       max={20}
@@ -393,13 +427,76 @@ function GeneratorPage() {
                       }
                     />
                     <small className="muted">
-                      Total fiche : {worksheets[pageIndex]?.items.length ?? 0} × {pointsPerQuestion} ={' '}
-                      {(worksheets[pageIndex]?.items.length ?? 0) * pointsPerQuestion} pts
-                      {pages.length > 1 ? ` · toutes pages ${sheetTotalPoints} pts` : ''}
+                      Total document : {sheetTotalPoints} pts
+                      {pages.length > 1
+                        ? ` (${pages.length} pages × points par question)`
+                        : ` (${worksheets[pageIndex]?.items.length ?? 0} × ${pointsPerQuestion})`}
                     </small>
                   </label>
                 )}
               </div>
+
+              <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
+                <option value="algèbre">Algèbre</option>
+                <option value="géométrie">Géométrie</option>
+              </SelectBox>
+              <SelectBox label="Thème" value={activePage.topic} onChange={changeTopic}>
+                {available.map((topic) => (
+                  <option value={topic.id} key={topic.id}>
+                    {topic.label}
+                  </option>
+                ))}
+              </SelectBox>
+              <SelectBox
+                label="Type d’exercice"
+                value={activePage.exerciseType}
+                onChange={(value) => {
+                  const type = exerciseTypeById[value]
+                  if (type) updatePage(applyType(type))
+                }}
+              >
+                {typesForTopic(activePage.topic).map((type) => (
+                  <option value={type.id} key={type.id}>
+                    {type.label}
+                  </option>
+                ))}
+              </SelectBox>
+              <div className="question-control-block">
+                <SelectBox
+                  label="QUESTIONS"
+                  value={String(activePage.count)}
+                  onChange={(next) => updatePage({ count: Number(next) })}
+                >
+                  {[6, 8, 10, 12, 16].map((n) => (
+                    <option value={String(n)} key={n}>
+                      {n} questions
+                    </option>
+                  ))}
+                  {![6, 8, 10, 12, 16].includes(activePage.count) && (
+                    <option value={String(activePage.count)}>{activePage.count} questions</option>
+                  )}
+                </SelectBox>
+                <input
+                  className="pill-input"
+                  aria-label="Nombre de questions"
+                  type="number"
+                  min={1}
+                  max={30}
+                  value={activePage.count}
+                  onChange={(event) =>
+                    updatePage({ count: Math.max(1, Math.min(30, Number(event.target.value) || 1)) })
+                  }
+                />
+              </div>
+              <SelectBox
+                label="Colonnes"
+                value={String(activePage.columns)}
+                onChange={(value) => updatePage({ columns: Number(value) })}
+              >
+                <option value="1">1 colonne</option>
+                <option value="2">2 colonnes</option>
+                <option value="3">3 colonnes</option>
+              </SelectBox>
 
               <div className="custom-header-form">
                 <b>En-tête</b>
@@ -423,43 +520,37 @@ function GeneratorPage() {
                   <>
                     <label>
                       Établissement
-                      <input
-                        value={institutional.schoolName}
+                      <input className="pill-input" value={institutional.schoolName}
                         onChange={(event) => setInstitutional({ ...institutional, schoolName: event.target.value })}
                       />
                     </label>
                     <label>
                       Année
-                      <input
-                        value={institutional.schoolYear}
+                      <input className="pill-input" value={institutional.schoolYear}
                         onChange={(event) => setInstitutional({ ...institutional, schoolYear: event.target.value })}
                       />
                     </label>
                     <label>
                       Mention
-                      <input
-                        value={institutional.schoolTagline}
+                      <input className="pill-input" value={institutional.schoolTagline}
                         onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
                       />
                     </label>
                     <label>
                       Organisation (ligne 1)
-                      <input
-                        value={institutional.orgLine1}
+                      <input className="pill-input" value={institutional.orgLine1}
                         onChange={(event) => setInstitutional({ ...institutional, orgLine1: event.target.value })}
                       />
                     </label>
                     <label>
                       Organisation (ligne 2)
-                      <input
-                        value={institutional.orgLine2}
+                      <input className="pill-input" value={institutional.orgLine2}
                         onChange={(event) => setInstitutional({ ...institutional, orgLine2: event.target.value })}
                       />
                     </label>
                     <label>
                       Organisation (ligne 3)
-                      <input
-                        value={institutional.orgLine3}
+                      <input className="pill-input" value={institutional.orgLine3}
                         onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
                       />
                     </label>
@@ -498,8 +589,7 @@ function GeneratorPage() {
                     </SelectBox>
                     <label>
                       Titre du document
-                      <input
-                        value={institutional.documentTitle}
+                      <input className="pill-input" value={institutional.documentTitle}
                         onChange={(event) =>
                           setInstitutional({ ...institutional, documentTitle: event.target.value })
                         }
@@ -511,20 +601,18 @@ function GeneratorPage() {
                   <>
                     <label>
                       Logo ou nom
-                      <input value={custom.logo} onChange={(event) => setCustom({ ...custom, logo: event.target.value })} />
+                      <input className="pill-input" value={custom.logo} onChange={(event) => setCustom({ ...custom, logo: event.target.value })} />
                     </label>
                     <label>
                       Titre personnalisé
-                      <input
-                        value={custom.title}
+                      <input className="pill-input" value={custom.title}
                         onChange={(event) => setCustom({ ...custom, title: event.target.value })}
                         placeholder="Ex. Collège des Tilleuls"
                       />
                     </label>
                     <label>
                       Sous-titre
-                      <input
-                        value={custom.subtitle}
+                      <input className="pill-input" value={custom.subtitle}
                         onChange={(event) => setCustom({ ...custom, subtitle: event.target.value })}
                         placeholder="Ex. Groupe 7H · Mathématiques"
                       />
@@ -533,8 +621,7 @@ function GeneratorPage() {
                 )}
                 <label>
                   Pied de page
-                  <input
-                    value={custom.footer}
+                  <input className="pill-input" value={custom.footer}
                     onChange={(event) => setCustom({ ...custom, footer: event.target.value })}
                   />
                 </label>
@@ -554,7 +641,18 @@ function GeneratorPage() {
                 <p className="eyebrow">Aperçu</p>
                 <h2>Votre activité est prête.</h2>
               </div>
-              <span className="status">Nouvelle version</span>
+              <div className="result-head-actions no-print">
+                <span className="status">Nouvelle version</span>
+                <button className="print-chip" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden>
+                    <path
+                      fill="currentColor"
+                      d="M7 3h10v4H7V3zm-3 6h16a2 2 0 0 1 2 2v6h-4v4H7v-4H3v-6a2 2 0 0 1 2-2zm2 8v2h8v-2H6zm12-5.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM7 14h10v1H7v-1z"
+                    />
+                  </svg>
+                  Imprimer
+                </button>
+              </div>
             </div>
             <div className="preview-tabs no-print">
               <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
@@ -571,6 +669,7 @@ function GeneratorPage() {
                     key={`${worksheets[pageIndex]?.exerciseType}-${seed}-${pageIndex}`}
                     page={worksheets[pageIndex]!}
                     pageNumber={pageIndex + 1}
+                    sheetIndex={pageIndex + 1}
                     total={worksheets.length}
                     {...sheetProps}
                   />
@@ -594,28 +693,30 @@ function GeneratorPage() {
                 </nav>
               )}
             </div>
-            {/* Toutes les pages pour l’impression */}
+            {/* Impression : toutes les fiches élèves, puis tous les corrigés */}
             <div className="sheet-stage print-only-sheets" aria-hidden>
               {worksheets.map((page, index) => (
                 <WorksheetSheet
-                  key={`print-${page.exerciseType}-${seed}-${index}`}
+                  key={`print-student-${page.exerciseType}-${seed}-${index}`}
                   page={page}
                   pageNumber={index + 1}
+                  sheetIndex={index + 1}
                   total={worksheets.length}
-                  {...sheetProps}
+                  {...chromeProps}
+                  mode="student"
                 />
               ))}
-            </div>
-            <div className="result-actions no-print">
-              <button className="button secondary" type="button" onClick={() => printWorksheet('student')}>
-                Imprimer la fiche
-              </button>
-              <button className="button" type="button" onClick={() => printWorksheet('answers')}>
-                Imprimer le corrigé
-              </button>
-              <button className="text-link" type="button" onClick={generate}>
-                Régénérer ↻
-              </button>
+              {worksheets.map((page, index) => (
+                <WorksheetSheet
+                  key={`print-answers-${page.exerciseType}-${seed}-${index}`}
+                  page={page}
+                  pageNumber={index + 1}
+                  sheetIndex={worksheets.length + index + 1}
+                  total={worksheets.length}
+                  {...chromeProps}
+                  mode="answers"
+                />
+              ))}
             </div>
           </section>
         </div>
