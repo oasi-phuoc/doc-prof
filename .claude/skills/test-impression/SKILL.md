@@ -33,7 +33,7 @@ Interdit :
 - [ ] Le cadre d'aperçu garde le ratio A4 si on passe de 4 à 20 questions.
 - [ ] Trop de contenu → coupé / dense, **pas** d'agrandissement du cadre.
 - [ ] Peu de contenu → pied de page toujours en bas de la feuille.
-- [ ] Navigation pages = numéros seuls (rail), sans changer la taille A4.
+- [ ] Navigation pages = onglets / boutons à côté du `+`, sans rail sous l’A4.
 - [ ] Modes Fiche élève / Corrigé : même chrome, mêmes emplacements.
 
 ## Checklist impression

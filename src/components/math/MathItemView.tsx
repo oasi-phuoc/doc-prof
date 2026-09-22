@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { CoordGrid } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
@@ -34,30 +35,55 @@ function DigitRow({
 function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const empty = item.blankOperands || item.layout === 'column-empty'
   const show = mode === 'answers'
-  const showCarries = Boolean(item.carries?.some(Boolean))
+  const carries = item.carries ?? item.digitsA?.map(() => '') ?? []
+  const partials = item.digitsPartials ?? []
+  const hasPartials = partials.length > 0
+
+  type Line =
+    | { kind: 'digits'; digits?: string[]; blank?: boolean; carry?: boolean; sign?: string }
+    | { kind: 'rule' }
+
+  const lines: Line[] = [
+    { kind: 'digits', digits: carries, blank: !show, carry: true },
+    { kind: 'digits', digits: item.digitsA, blank: empty },
+    { kind: 'digits', digits: item.digitsB, blank: empty, sign: item.op },
+    { kind: 'rule' },
+  ]
+  if (hasPartials) {
+    for (const row of partials) {
+      lines.push({ kind: 'digits', digits: row, blank: true })
+    }
+    lines.push({ kind: 'rule' })
+  }
+  lines.push({ kind: 'digits', digits: item.digitsResult, blank: true })
+
   return (
-    <div className="column-op">
+    <div className={`column-op${hasPartials ? ' has-partials' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <div className="column-grid school">
-        <div className="column-sign-col">
-          {showCarries && <span className="carry-spacer" />}
-          <span className="column-op-sign">{empty && !show ? '' : item.op}</span>
-        </div>
-        <div className="column-digits">
-          {showCarries && (
-            <DigitRow
-              digits={item.carries}
-              empty={!show}
-              showAnswer={show}
-              answerDigits={item.carries}
-              carry
-            />
-          )}
-          <DigitRow digits={item.digitsA} empty={empty} showAnswer={show} answerDigits={item.digitsA} />
-          <DigitRow digits={item.digitsB} empty={empty} showAnswer={show} answerDigits={item.digitsB} />
-          <div className="column-rule" />
-          <DigitRow digits={item.digitsResult} empty showAnswer={show} answerDigits={item.digitsResult} />
-        </div>
+        {lines.map((line, index) => {
+          if (line.kind === 'rule') {
+            return (
+              <div className="column-line rule-line" key={`rule-${index}`}>
+                <span className="column-line-sign" aria-hidden />
+                <div className="column-rule" />
+              </div>
+            )
+          }
+          const shownSign = line.sign && !(empty && !show) ? line.sign : ''
+          return (
+            <div className={`column-line${line.carry ? ' carry-line' : ''}`} key={`row-${index}`}>
+              <span className="column-line-sign">{shownSign}</span>
+              <DigitRow
+                digits={line.digits}
+                empty={line.blank}
+                showAnswer={show}
+                answerDigits={line.digits}
+                carry={line.carry}
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   )
@@ -74,7 +100,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       <div className="division-posee">
         <div className="division-left">
           <div className="division-dividend-row">
-            {empty && !show ? <span className="answer-line-field wide">{'\u00a0'}</span> : item.dividend}
+            {empty && !show ? <span className="answer-line-field compact">{'\u00a0'}</span> : item.dividend}
           </div>
           <div className="division-work">
             {show
@@ -91,7 +117,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
         </div>
         <div className="division-right">
           <div className="division-divisor">
-            {empty && !show ? <span className="answer-line-field">{'\u00a0'}</span> : item.divisor}
+            {empty && !show ? <span className="answer-line-field compact">{'\u00a0'}</span> : item.divisor}
           </div>
           <div className="division-quotient">
             {show ? (
@@ -100,7 +126,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
                 {item.remainder ? ` r ${item.remainder}` : ''}
               </strong>
             ) : (
-              <span className="answer-line-field wide">{'\u00a0'}</span>
+              <span className="answer-line-field compact">{'\u00a0'}</span>
             )}
           </div>
         </div>
@@ -109,23 +135,93 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
-function CompareRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
-  const symbols = ['<', '=', '>'] as const
+function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const options = item.options ?? []
   return (
-    <div className="compare-row school">
-      <span className="compare-side">{renderMathText(item.left ?? '')}</span>
-      <div className="compare-choices" role="group" aria-label="Comparer">
-        {symbols.map((sym) => {
-          const selected = mode === 'answers' && item.answer === sym
+    <div className="select-pills-row" aria-label="Choix">
+      <span className="select-pills-prompt">{item.prompt}</span>
+      <div className="select-pills" role="group">
+        {options.map((option) => {
+          const selected = mode === 'answers' && item.answer === option
           return (
-            <span key={sym} className={`compare-choice ${selected ? 'selected' : ''}`}>
-              <span className="compare-box">{selected ? '✓' : ''}</span>
-              <span>{sym}</span>
+            <span key={option} className={`select-pill ${selected ? 'selected' : ''}`}>
+              {option}
             </span>
           )
         })}
       </div>
-      <span className="compare-side">{renderMathText(item.right ?? '')}</span>
+    </div>
+  )
+}
+
+function EncadrementRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  return (
+    <div className="encadrement-row" aria-label="Encadrement">
+      <span className={`answer-line-field encadrement-blank ${show ? 'filled' : ''}`}>
+        {show ? formatOperand(item.a) : '\u00a0'}
+      </span>
+      <span className="encadrement-op">&lt;</span>
+      <span className="encadrement-mid">{item.prompt}</span>
+      <span className="encadrement-op">&lt;</span>
+      <span className={`answer-line-field encadrement-blank ${show ? 'filled' : ''}`}>
+        {show ? formatOperand(item.b) : '\u00a0'}
+      </span>
+    </div>
+  )
+}
+
+function CompareRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const symbols = ['<', '=', '>'] as const
+  return (
+    <div className="compare-row school" aria-label="Comparer">
+      <span className="compare-side left">{renderMathText(item.left ?? '')}</span>
+      <div className="compare-choices" role="group" aria-label="Choisissez le symbole correct">
+        {symbols.map((sym) => {
+          const selected = mode === 'answers' && item.answer === sym
+          return (
+            <span
+              key={sym}
+              className={`compare-choice ${selected ? 'selected' : ''}`}
+              aria-label={sym}
+            >
+              <span className="compare-circle">{sym}</span>
+            </span>
+          )
+        })}
+      </div>
+      <span className="compare-side right">{renderMathText(item.right ?? '')}</span>
+    </div>
+  )
+}
+
+function OrderRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const given = item.sequence ?? []
+  const parts = item.placeParts ?? []
+  const sep = item.orderOp === '>' ? '>' : '<'
+  const slots = Math.max(parts.length, given.length, 5)
+  return (
+    <div className="order-block">
+      {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+      <div className="order-given" aria-label="Nombres à ranger">
+        {given.map((term, index) => (
+          <span className="order-given-term" key={`${term}-${index}`}>
+            {term}
+            {index < given.length - 1 ? <span className="order-given-sep">·</span> : null}
+          </span>
+        ))}
+      </div>
+      <div className="order-answer-row" aria-label="Réponse">
+        {Array.from({ length: slots }, (_, i) => (
+          <Fragment key={i}>
+            {i > 0 && <span className="order-sep">{sep}</span>}
+            <span className={`answer-line-field order-blank ${show ? 'filled' : ''}`}>
+              {show ? (parts[i] ?? '\u00a0') : '\u00a0'}
+            </span>
+          </Fragment>
+        ))}
+      </div>
     </div>
   )
 }
@@ -134,7 +230,6 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const blanks = new Set(item.blankIndexes ?? [])
   const answers = item.answer.split(' ; ')
   let blankAt = 0
-  const isOrder = Boolean(item.prompt?.includes('petit'))
   return (
     <div className="sequence-block">
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
@@ -144,8 +239,8 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           if (isBlank) {
             const value = mode === 'answers' ? answers[blankAt++] ?? '' : null
             return (
-              <span className="sequence-term blank" key={index}>
-                {value ?? <span className="answer-line-field slim">{'\u00a0'}</span>}
+              <span className={`sequence-term blank ${mode === 'answers' ? 'filled' : ''}`} key={index}>
+                {value ?? '\u00a0'}
               </span>
             )
           }
@@ -156,12 +251,6 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           )
         })}
       </div>
-      {isOrder && (
-        <div className="sequence-answer-line">
-          <span className="field-label">Ordre :</span>
-          {mode === 'answers' ? <strong className="filled-answer">{item.answer}</strong> : <span className="write-line long" />}
-        </div>
-      )}
     </div>
   )
 }
@@ -202,7 +291,7 @@ function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
     <div className="eq-row" aria-label="Calcul">
       <span className="eq-cell eq-num">
         {aText == null ? (
-          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? formatOperand(item.a) : '\u00a0'}</span>
+          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>{show ? formatOperand(item.a) : '\u00a0'}</span>
         ) : (
           aText
         )}
@@ -210,7 +299,7 @@ function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       <span className="eq-cell eq-op">{item.op}</span>
       <span className="eq-cell eq-num">
         {bText == null ? (
-          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? formatOperand(item.b) : '\u00a0'}</span>
+          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>{show ? formatOperand(item.b) : '\u00a0'}</span>
         ) : (
           bText
         )}
@@ -249,7 +338,7 @@ function ParsedEquationRow({
     <div className="eq-row" aria-label="Calcul">
       <span className="eq-cell eq-num">
         {blankA ? (
-          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
         ) : (
           a
         )}
@@ -257,7 +346,7 @@ function ParsedEquationRow({
       <span className="eq-cell eq-op">{op}</span>
       <span className="eq-cell eq-num">
         {blankB ? (
-          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
         ) : (
           b
         )}
@@ -367,6 +456,44 @@ export function AlgebraRow({
   )
 }
 
+function PlaceValueRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const labels = item.labels ?? []
+  const parts = item.placeParts ?? []
+  const slots = labels.length > 0 ? labels.length : Math.max(parts.length, 3)
+  return (
+    <div className="place-value-row" aria-label="Décomposition">
+      <span className="place-value-num">{item.prompt}</span>
+      <span className="place-value-eq">=</span>
+      <div className="place-value-slots">
+        {Array.from({ length: slots }, (_, i) => (
+          <Fragment key={i}>
+            {i > 0 && <span className="place-value-plus">+</span>}
+            <div className="place-value-slot">
+              <span className={`answer-line-field place-value-line ${show ? 'filled' : ''}`}>
+                {show ? (parts[i] ?? '\u00a0') : '\u00a0'}
+              </span>
+              {labels[i] ? <span className="place-value-label">{labels[i]}</span> : null}
+            </div>
+          </Fragment>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  return (
+    <div className="prompt-stack">
+      <p className="prompt-stack-text">{item.prompt}</p>
+      <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+        {show ? item.answer : '\u00a0'}
+      </span>
+    </div>
+  )
+}
+
 function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const prompt = item.prompt ?? ''
   const show = mode === 'answers'
@@ -397,47 +524,76 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       </div>
     )
   }
-  const needsBox = !prompt.trimEnd().endsWith('=') && !prompt.includes('=')
+
+  const endsWithEq = prompt.trimEnd().endsWith('=')
+  const hasEq = prompt.includes('=')
+  // Phrase / consigne sans « = » : énoncé au-dessus, trait pleine largeur dessous.
+  if (!hasEq) {
+    return (
+      <div className="prompt-stack">
+        <p className="prompt-stack-text">{renderMathText(prompt)}</p>
+        <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+          {show ? <FractionView value={item.answer} /> : '\u00a0'}
+        </span>
+      </div>
+    )
+  }
+
   return (
     <div className="inline-prompt equation">
       <span className="eq-text">{renderMathText(prompt)}</span>
-      {(prompt.trimEnd().endsWith('=') || needsBox) && (
-        <span className={`answer-line-field med ${show ? 'filled' : ''}`}>
+      {endsWithEq && (
+        <span className={`answer-line-field ${show ? 'filled' : ''}`}>
           {show ? <FractionView value={item.answer} /> : '\u00a0'}
         </span>
       )}
-      {show && prompt.trimEnd().endsWith('=') === false && needsBox === false && (
-        <span className="filled-answer">{item.answer}</span>
-      )}
+      {show && !endsWithEq && <span className="filled-answer">{item.answer}</span>}
     </div>
   )
 }
 
-function ProblemBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+function ProblemBlock({
+  item,
+  mode,
+  draftGrid = true,
+  onToggleDraftGrid,
+}: {
+  item: MathItem
+  mode: PreviewMode
+  draftGrid?: boolean
+  onToggleDraftGrid?: () => void
+}) {
   const show = mode === 'answers'
   return (
     <div className="problem-block">
-      <p className="problem-prompt">{item.prompt}</p>
-      <div className="problem-fields">
-        <div className="problem-field">
-          <span className="field-label">Calcul</span>
+      <div className="problem-head">
+        <p className="problem-prompt">{item.prompt}</p>
+        {onToggleDraftGrid ? (
+          <button
+            type="button"
+            className={`no-print draft-grid-chip ${draftGrid ? 'on' : 'off'}`}
+            onClick={onToggleDraftGrid}
+            aria-pressed={draftGrid}
+          >
+            {draftGrid ? 'Grille 4×4' : 'Sans grille'}
+          </button>
+        ) : null}
+      </div>
+      <div className="problem-field">
+        <span className="field-label">Calcul</span>
+        <div className={`draft-pad ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de calcul">
           {show && item.calcAnswer ? (
-            <strong className="filled-answer">{item.calcAnswer}</strong>
-          ) : (
-            <>
-              <span className="write-line" />
-              <span className="write-line" />
-            </>
-          )}
+            <strong className="filled-answer draft-pad-answer">{item.calcAnswer}</strong>
+          ) : null}
         </div>
-        <div className="problem-field">
-          <span className="field-label">Réponse</span>
-          {show ? (
-            <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
-          ) : (
-            <span className="answer-line-field wide">{'\u00a0'}</span>
-          )}
-        </div>
+      </div>
+      <div className="problem-field problem-response">
+        <span className="field-label">Réponse</span>
+        {show ? (
+          <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
+        ) : (
+          <span className="answer-line-field">{'\u00a0'}</span>
+        )}
       </div>
     </div>
   )
@@ -465,7 +621,7 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
               {show ? (
                 <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
               ) : (
-                <span className="answer-line-field med">{'\u00a0'}</span>
+                <span className="answer-line-field">{'\u00a0'}</span>
               )}
             </div>
           </div>
@@ -475,7 +631,7 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
             {show ? (
               <strong className="filled-answer">{item.answer}</strong>
             ) : (
-              <span className="answer-line-field med">{'\u00a0'}</span>
+              <span className="answer-line-field">{'\u00a0'}</span>
             )}
           </div>
         )}
@@ -496,7 +652,7 @@ function CoordBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           {show ? (
             <strong className="filled-answer">{item.answer}</strong>
           ) : (
-            <span className="answer-line-field med">{'\u00a0'}</span>
+            <span className="answer-line-field">{'\u00a0'}</span>
           )}
         </div>
       </div>
@@ -509,31 +665,47 @@ export function MathItemView({
   mode,
   index,
   algebraPadLeft = 0,
+  draftGrid = true,
+  onToggleDraftGrid,
 }: {
   item: MathItem
   mode: PreviewMode
   index: number
   /** Cases vides à gauche pour aligner verticalement les atomes entre questions. */
   algebraPadLeft?: number
+  /** Zone de brouillon avec grille 4×4 mm (problèmes). */
+  draftGrid?: boolean
+  onToggleDraftGrid?: () => void
 }) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
+  const isStackedText = item.layout === 'text' && !isProblem
   return (
-    <div className={`exercise-item layout-${item.layout}`}>
+    <div className={`exercise-item layout-${item.layout}${isProblem ? ' is-problem' : ''}`}>
       <div className="item-number">{index + 1}.</div>
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
+        {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
+        {item.layout === 'select' && <SelectPillsRow item={item} mode={mode} />}
+        {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} />}
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
-        {isProblem && <ProblemBlock item={item} mode={mode} />}
+        {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
+        {isProblem && (
+          <ProblemBlock
+            item={item}
+            mode={mode}
+            draftGrid={draftGrid}
+            onToggleDraftGrid={onToggleDraftGrid}
+          />
+        )}
+        {isStackedText && <StackedPrompt item={item} mode={mode} />}
         {!isProblem &&
-          (item.layout === 'inline' ||
-            item.layout === 'text' ||
-            item.layout === 'select' ||
-            item.layout === 'place-value') && <InlinePrompt item={item} mode={mode} />}
+          !isStackedText &&
+          item.layout === 'inline' && <InlinePrompt item={item} mode={mode} />}
       </div>
     </div>
   )

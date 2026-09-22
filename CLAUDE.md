@@ -28,7 +28,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 1. **La feuille A4 est le produit.** Aperçu (`.a4-frame`) et impression (`.print-only-sheets`) partagent le même `WorksheetSheet`. Taille fixe **210 × 297 mm** : ni agrandissement ni rétrécissement selon le nombre de questions (`overflow: hidden`).
 2. **Déterministe d'abord.** Un tirage est une fonction pure de `(PageConfig, seed)` via `createRng(seed)`. Jamais de `Math.random()` / `Date.now()` dans `generate.ts`.
 3. **Une fiche = une recette** (config de page + graine), pas seulement un résultat.
-4. **Rendu scolaire, pas carte app.** Pas de cadres autour des questions ; numéros simples ; réponses en soulignés (`.answer-line-field`), pas en boîtes.
+4. **Rendu scolaire, pas carte app.** Pas de cadres autour des questions ; numéros simples ; réponses en soulignés (`.answer-line-field` **pleine largeur** par défaut), pas en boîtes.
 5. **Lisible en noir et blanc.** La couleur ne porte jamais seule une information.
 6. **Rien n'est copié d'une référence externe** (textes, logos, figures). On reprend l'esprit, pas les éléments.
 7. **Pied de page en bas de l'A4** (`margin-top: auto` sur `.doc-footer` dans un flex colonne).

@@ -1,5 +1,6 @@
 export type Domain = 'algèbre' | 'géométrie'
 export type PreviewMode = 'student' | 'answers'
+export type Difficulty = 'facile' | 'moyen' | 'avance'
 export type Figure =
   | 'rectangle'
   | 'square'
@@ -27,6 +28,8 @@ export type Layout =
   | 'geo'
   | 'coord'
   | 'algebra'
+  | 'encadrement'
+  | 'order'
 
 export type AlgebraGiven = { letter: string; value: number }
 
@@ -87,6 +90,8 @@ export type MathItem = {
   digitsA?: string[]
   digitsB?: string[]
   digitsResult?: string[]
+  /** Produits partiels (ex. × à 2 chiffres : unités puis dizaines décalées). */
+  digitsPartials?: string[][]
   /** Retenues / emprunts alignés sur les colonnes (même largeur que digitsA). */
   carries?: string[]
   dividend?: number
@@ -106,16 +111,26 @@ export type MathItem = {
   point?: { x: number; y: number; label?: string }
   /** Image du point (corrigé ou second point). */
   pointImage?: { x: number; y: number; label?: string }
+  /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
+  orderOp?: '<' | '>'
   calcAnswer?: string
   responseAnswer?: string
+  /** Valeurs par case pour la décomposition (layout place-value). */
+  placeParts?: string[]
 }
 
 export type PageConfig = {
   domain: Domain
   topic: string
   exerciseType: string
+  difficulty: Difficulty
   count: number
   columns: number
+  /**
+   * Pour les problèmes : grille de brouillon 4×4 mm par question.
+   * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
+   */
+  problemDraftGrids?: boolean[]
 }
 
 export type WorksheetPage = PageConfig & {

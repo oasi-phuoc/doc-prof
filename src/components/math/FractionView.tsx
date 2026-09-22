@@ -23,7 +23,7 @@ export function renderMathText(
   return parts.map((part, index) => {
     if (part === '□') {
       return (
-        <span className="answer-line-field" key={index}>
+        <span className="answer-line-field compact" key={index}>
           {blankContent ?? '\u00a0'}
         </span>
       )

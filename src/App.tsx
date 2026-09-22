@@ -33,9 +33,10 @@ import {
   geometryTopics,
   typesForTopic,
 } from '@/math/catalog'
+import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { buildPage } from '@/math/generate'
 import { randomSeed } from '@/math/rng'
-import type { Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
+import type { Difficulty, Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
 
 function WorksheetSheet({
   page,
@@ -48,6 +49,8 @@ function WorksheetSheet({
   total,
   sheetIndex,
   documentTotalPoints,
+  interactiveDraftGrids = false,
+  onToggleDraftGrid,
 }: {
   page: WorksheetPage
   mode: PreviewMode
@@ -61,9 +64,15 @@ function WorksheetSheet({
   sheetIndex: number
   /** Total de points de toute la fiche (toutes les pages). */
   documentTotalPoints: number
+  /** Affiche le bouton grille / sans grille sur chaque problème (aperçu seulement). */
+  interactiveDraftGrids?: boolean
+  onToggleDraftGrid?: (index: number) => void
 }) {
   const showHeader = pageNumber === 1
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
+  const isProblemPage = page.items.some(
+    (item) => item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer),
+  )
   return (
     <article
       className={`worksheet-sheet ${parity}`}
@@ -102,7 +111,19 @@ function WorksheetSheet({
             </p>
           ) : null}
         </div>
-        <div className={`exercise-grid${page.items.every((item) => item.layout === 'algebra') ? ' algebra-grid' : ''}`}>
+        <div
+          className={`exercise-grid${
+            page.items.every((item) => item.layout === 'algebra')
+              ? ' algebra-grid'
+              : page.items.every((item) => item.layout === 'compare')
+                ? ' compare-grid'
+                : page.items.every((item) => item.layout === 'encadrement')
+                  ? ' encadrement-grid'
+                  : isProblemPage
+                    ? ' problem-grid'
+                    : ''
+          }`}
+        >
           {(() => {
             const algebraItems = page.items.filter((item) => item.layout === 'algebra')
             const maxTokens =
@@ -112,6 +133,7 @@ function WorksheetSheet({
             return page.items.map((item, index) => {
               const padLeft =
                 item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
+              const draftGrid = page.problemDraftGrids?.[index] ?? true
               return (
                 <MathItemView
                   key={`${page.exerciseType}-${index}-${item.answer}`}
@@ -119,6 +141,12 @@ function WorksheetSheet({
                   mode={mode}
                   index={index}
                   algebraPadLeft={padLeft}
+                  draftGrid={draftGrid}
+                  onToggleDraftGrid={
+                    interactiveDraftGrids && onToggleDraftGrid
+                      ? () => onToggleDraftGrid(index)
+                      : undefined
+                  }
                 />
               )
             })
@@ -296,11 +324,22 @@ function Landing({ onCreate }: { onCreate: () => void }) {
 }
 
 function applyType(type: ExerciseType): Partial<PageConfig> {
+  const isProblem = type.id.includes('problemes')
+  const isLongMul = type.id === 'multiplication-2chiffres'
   return {
     exerciseType: type.id,
     topic: type.topic,
     columns: type.preferredColumns ?? 2,
+    ...(isProblem ? { count: 3 } : isLongMul ? { count: 4 } : {}),
   }
+}
+
+function resizeDraftGrids(prev: boolean[] | undefined, count: number): boolean[] {
+  return Array.from({ length: count }, (_, i) => prev?.[i] ?? true)
+}
+
+function isProblemExercise(typeId: string): boolean {
+  return typeId.includes('problemes')
 }
 
 function GeneratorPage() {
@@ -332,7 +371,36 @@ function GeneratorPage() {
   )
 
   const updatePage = (patch: Partial<PageConfig>) =>
-    setPages((current) => current.map((page, index) => (index === pageIndex ? { ...page, ...patch } : page)))
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const next = { ...page, ...patch }
+        if (patch.count != null || patch.exerciseType != null) {
+          const count = patch.count ?? next.count
+          next.problemDraftGrids = isProblemExercise(next.exerciseType)
+            ? resizeDraftGrids(next.problemDraftGrids, count)
+            : undefined
+        }
+        return next
+      }),
+    )
+
+  const toggleDraftGrid = (itemIndex: number) => {
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const grids = resizeDraftGrids(page.problemDraftGrids, page.count)
+        grids[itemIndex] = !(grids[itemIndex] ?? true)
+        return { ...page, problemDraftGrids: grids }
+      }),
+    )
+  }
+
+  const setAllDraftGrids = (value: boolean) => {
+    updatePage({
+      problemDraftGrids: Array.from({ length: activePage.count }, () => value),
+    })
+  }
 
   const addPage = () => {
     const next = defaultPage('géométrie')
@@ -485,6 +553,17 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              <SelectBox
+                label="Niveau"
+                value={activePage.difficulty ?? 'moyen'}
+                onChange={(value) => updatePage({ difficulty: value as Difficulty })}
+              >
+                {DIFFICULTY_OPTIONS.map((opt) => (
+                  <option value={opt.value} key={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </SelectBox>
               <label className="select-shell">
                 <span>QUESTIONS</span>
                 <input
@@ -508,6 +587,33 @@ function GeneratorPage() {
                 <option value="2">2 colonnes</option>
                 <option value="3">3 colonnes</option>
               </SelectBox>
+              {isProblemExercise(activePage.exerciseType) ? (
+                <div className="mode-toggle draft-grid-page-toggle" role="group" aria-label="Grille de brouillon">
+                  {(() => {
+                    const grids = resizeDraftGrids(activePage.problemDraftGrids, activePage.count)
+                    const allOn = grids.every(Boolean)
+                    const allOff = grids.every((v) => !v)
+                    return (
+                      <>
+                        <button
+                          type="button"
+                          className={allOn ? 'active' : ''}
+                          onClick={() => setAllDraftGrids(true)}
+                        >
+                          Grille 4×4
+                        </button>
+                        <button
+                          type="button"
+                          className={allOff ? 'active' : ''}
+                          onClick={() => setAllDraftGrids(false)}
+                        >
+                          Cadre seul
+                        </button>
+                      </>
+                    )
+                  })()}
+                </div>
+              ) : null}
 
               <details className="header-editor">
                 <summary className="header-editor-summary">
@@ -686,27 +792,12 @@ function GeneratorPage() {
                     pageNumber={pageIndex + 1}
                     sheetIndex={pageIndex + 1}
                     total={worksheets.length}
+                    interactiveDraftGrids={isProblemExercise(activePage.exerciseType)}
+                    onToggleDraftGrid={toggleDraftGrid}
                     {...sheetProps}
                   />
                 </div>
               </div>
-              {pages.length > 1 && (
-                <nav className="page-rail no-print" aria-label="Navigation entre les pages">
-                  <div className="page-rail-line" aria-hidden />
-                  {pages.map((_, index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      className={`page-rail-item ${pageIndex === index ? 'active' : ''}`}
-                      onClick={() => setPageIndex(index)}
-                      aria-label={`Page ${index + 1}`}
-                    >
-                      <span className="page-rail-dot" />
-                      <span className="page-rail-label">{index + 1}</span>
-                    </button>
-                  ))}
-                </nav>
-              )}
             </div>
             {/* Impression : toutes les fiches élèves, puis tous les corrigés */}
             <div className="sheet-stage print-only-sheets" aria-hidden>

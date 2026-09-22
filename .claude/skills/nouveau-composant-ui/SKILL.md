@@ -15,7 +15,7 @@ L'UI vit surtout dans `src/App.tsx` + `src/App.css` (pas encore une lib `compone
 
 | Besoin | Pattern |
 |---|---|
-| Liste déroulante | `SelectBox` (Domaine / Thème / Type / Questions) |
+| Liste déroulante | `SelectBox` (Domaine / Thème / Type / Niveau / Questions) |
 | Binaire | `.mode-toggle` (Exercice / Évaluation, Institutionnel / Personnalisé) |
 | Pages | `.page-tabs` (chiffres seuls) + rail `.page-rail` |
 | Actions | `.button` / `.button.secondary` |
@@ -23,7 +23,7 @@ L'UI vit surtout dans `src/App.tsx` + `src/App.css` (pas encore une lib `compone
 
 ## Règles
 
-- **Hiérarchie panneau** : Domaine → Thème → Type (SelectBox) → Questions ; pas de grille de cartes de types.
+- **Hiérarchie panneau** : Domaine → Thème → Type → **Niveau** (Facile / Moyen / Avancé) → Questions ; pas de grille de cartes de types.
 - Cible tactile confortable (~44 px) ; focus visible.
 - Libellés visibles (pas de placeholder seul).
 - Français, casse de phrase ; skill `texte-interface` pour le wording.

@@ -1,5 +1,5 @@
 import { int, pick, shuffle, type Rng } from './rng'
-import type { AlgebraGiven, MathItem } from './types'
+import type { AlgebraGiven, Difficulty, MathItem } from './types'
 
 export type { AlgebraGiven }
 
@@ -461,49 +461,109 @@ export function generateFactor(rng: Rng, count: number): AlgebraBatch {
   }
 }
 
-/** Équations ax+b = cx+d avec solution entière. */
-export function generateEquations(rng: Rng, count: number, kind: 'simple' | 'two-sides' | 'fraction'): AlgebraBatch {
-  const items: MathItem[] = Array.from({ length: count }, () => {
-    if (kind === 'simple') {
-      const x = int(rng, 2, 20)
-      const a = int(rng, 2, 7)
-      const b = int(rng, 1, 12)
-      const mode = int(rng, 0, 2)
-      if (mode === 0) return algebraExpr(`x + ${b} = ${x + b}`, x)
-      if (mode === 1) return algebraExpr(`${a}x = ${a * x}`, x)
-      return algebraExpr(`${a}x − ${b} = ${a * x - b}`, x)
+/** Équations adaptées au niveau : simple → fractions → fractions + puissances / racines. */
+export function generateEquations(
+  rng: Rng,
+  count: number,
+  kind: 'simple' | 'two-sides' | 'fraction',
+  difficulty: Difficulty = 'moyen',
+): AlgebraBatch {
+  const items: MathItem[] = Array.from({ length: count }, () => oneEquation(rng, kind, difficulty))
+  return {
+    items,
+    instruction:
+      difficulty === 'avance'
+        ? 'Trouvez la valeur de x (fractions, puissances ou racines).'
+        : 'Trouvez la valeur de x.',
+    preferredColumns: 1,
+  }
+}
+
+function oneEquation(
+  rng: Rng,
+  kind: 'simple' | 'two-sides' | 'fraction',
+  difficulty: Difficulty,
+): MathItem {
+  if (difficulty === 'avance') {
+    const mode = int(rng, 0, 3)
+    if (mode === 0) {
+      const den = int(rng, 2, 7)
+      const x = int(rng, 2, 8) * den
+      const k = int(rng, 1, 5)
+      return algebraExpr(`x/${den} + ${k}² = ${x / den + k * k}`, x)
     }
-    if (kind === 'two-sides') {
-      const x = int(rng, 2, 12)
-      const a = int(rng, 3, 8)
-      const c = int(rng, 1, a - 1)
-      const b = int(rng, 1, 10)
-      const d = a * x + b - c * x
-      return algebraExpr(`${a}x${signed(b)} = ${c}x${signed(d)}`, x)
+    if (mode === 1) {
+      const root = pick(rng, [4, 9, 16, 25, 36] as const)
+      const x = int(rng, 2, 15)
+      const a = int(rng, 2, 5)
+      return algebraExpr(`${a}x + √${root} = ${a * x + Math.sqrt(root)}`, x)
     }
+    if (mode === 2) {
+      const x = int(rng, 2, 10)
+      const a = int(rng, 2, 4)
+      return algebraExpr(`${a}x² − ${a * x * x - x} = ${x}`, x)
+    }
+    const den = int(rng, 2, 6)
+    const x = int(rng, 2, 9) * den
+    return algebraExpr(`x/${den} − √4 = ${x / den - 2}`, x)
+  }
+
+  if (difficulty === 'moyen' && (kind === 'fraction' || kind === 'simple' && rng() < 0.35)) {
     const den = int(rng, 2, 9)
     const x = int(rng, -8, 12) * den
     const constant = int(rng, -5, 8)
     const result = x / den + constant
     return algebraExpr(`x/${den}${signed(constant)} = ${result}`, x)
-  })
-  return {
-    items,
-    instruction: 'Trouvez la valeur de x.',
-    preferredColumns: 1,
   }
+
+  if (kind === 'two-sides' || (difficulty === 'moyen' && kind === 'simple' && rng() < 0.5)) {
+    const x = int(rng, 2, 12)
+    const a = int(rng, 3, 8)
+    const c = int(rng, 1, a - 1)
+    const b = int(rng, 1, 10)
+    const d = a * x + b - c * x
+    return algebraExpr(`${a}x${signed(b)} = ${c}x${signed(d)}`, x)
+  }
+
+  if (kind === 'fraction') {
+    const den = int(rng, 2, difficulty === 'facile' ? 5 : 9)
+    const x = int(rng, 2, 12) * den
+    const constant = int(rng, 0, 8)
+    const result = x / den + constant
+    return algebraExpr(
+      constant === 0 ? `x/${den} = ${result}` : `x/${den}${signed(constant)} = ${result}`,
+      x,
+    )
+  }
+
+  const x = int(rng, 2, difficulty === 'facile' ? 12 : 20)
+  const a = int(rng, 2, difficulty === 'facile' ? 5 : 7)
+  const b = int(rng, 1, difficulty === 'facile' ? 9 : 12)
+  const mode = int(rng, 0, 2)
+  if (mode === 0) return algebraExpr(`x + ${b} = ${x + b}`, x)
+  if (mode === 1) return algebraExpr(`${a}x = ${a * x}`, x)
+  return algebraExpr(`${a}x − ${b} = ${a * x - b}`, x)
 }
 
-export function tryGenerateAlgebraBatch(exerciseType: string, count: number, rng: Rng): AlgebraBatch | null {
+export function tryGenerateAlgebraBatch(
+  exerciseType: string,
+  count: number,
+  rng: Rng,
+  difficulty: Difficulty = 'moyen',
+): AlgebraBatch | null {
   switch (exerciseType) {
     case 'expressions-substituer':
       return generateEvalOneVar(rng, count)
     case 'expressions-evaluer-2var':
       return generateEvalMultiVar(rng, count, 'two')
     case 'expressions-evaluer-3var':
-      return generateEvalMultiVar(rng, count, 'three')
+      return generateEvalMultiVar(rng, count, difficulty === 'facile' ? 'two' : 'three')
     case 'expressions-evaluer-avances':
-      return generateEvalMultiVar(rng, count, 'advanced')
+      return generateEvalMultiVar(
+        rng,
+        count,
+        difficulty === 'facile' ? 'two' : difficulty === 'moyen' ? 'three' : 'advanced',
+      )
     case 'expressions-produits':
       return generateSimplifyProducts(rng, count)
     case 'expressions-reduire':
@@ -513,11 +573,11 @@ export function tryGenerateAlgebraBatch(exerciseType: string, count: number, rng
     case 'expressions-factoriser':
       return generateFactor(rng, count)
     case 'equations-simple':
-      return generateEquations(rng, count, 'simple')
+      return generateEquations(rng, count, 'simple', difficulty)
     case 'equations-deux-cotes':
-      return generateEquations(rng, count, 'two-sides')
+      return generateEquations(rng, count, 'two-sides', difficulty)
     case 'equations-fractions':
-      return generateEquations(rng, count, 'fraction')
+      return generateEquations(rng, count, 'fraction', difficulty)
     default:
       return null
   }

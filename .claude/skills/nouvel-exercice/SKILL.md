@@ -19,8 +19,20 @@ Lire `CLAUDE.md` et un type proche dans `catalog.ts` / `generate.ts`. Fixer en u
 1. **Thème** (`topic` id) et **domaine** (`algèbre` | `géométrie`).
 2. **Ce que l'élève fait sur le papier** (calculer, poser, comparer, mesurer sur figure…).
 3. **Layout** : réutiliser un `Layout` existant (`inline`, `column`, `column-empty`, `division-column`, `text`, `compare`, `sequence`, `geo`, `coord`…) autant que possible.
-4. **Paramètres implicites** : bornes de nombres, `preferredColumns`, `figure` éventuelle.
+4. **Paramètres implicites** : bornes de nombres selon `PageConfig.difficulty`, `preferredColumns`, `figure` éventuelle.
 5. **Corrigé** : champ `answer` + données de rendu (chiffres, retenues, dims, steps…).
+
+## Niveau (Facile / Moyen / Avancé)
+
+Champ `difficulty` sur `PageConfig` (`src/math/difficulty.ts` + SelectBox **Niveau** sous le type).
+
+| Niveau | Calculs simples (+ −) | Problèmes | Équations |
+|---|---|---|---|
+| Facile | opérandes 1–100 | texte A1, une opération | linéaires simples, sans puissance |
+| Moyen | 1–1000 | texte A2 + donnée piège inutile | fractions / deux côtés |
+| Avancé | 1–10 000 | texte B1, plusieurs opérations | fractions + puissances / racines |
+
+Toujours lire `config.difficulty` dans `generate.ts` / `algebra.ts` (via `pairAdd`, `makeWordProblem`, `generateEquations`…).
 
 ## Étapes
 
@@ -42,8 +54,30 @@ Lire `CLAUDE.md` et un type proche dans `catalog.ts` / `generate.ts`. Fixer en u
 
 - Numéro simple (pas de pastille / cadre).
 - Réponses élèves : `.answer-line-field` (souligné), pas de boîte.
+- **Trait de réponse = pleine largeur par défaut** (`display: block; width: 100%`). Partout : texte, calculs après `=`, algèbre, géométrie, problèmes. Ne pas utiliser `med` / `wide` / `slim`.
+- Exception uniquement : `.answer-line-field.compact` pour un **trou local** (suite, case de division, opérande manquant dans une équation).
+- **Texte / écrire en chiffres ou en lettres** : layout `text` → énoncé au-dessus, trait pleine largeur dessous (`.prompt-stack`).
+- **Calculs avec `=`** : énoncé à gauche, trait qui **occupe le reste de la ligne** à droite du `=` (`.eq-row` / `.inline-prompt.equation`).
 - Mode `answers` remplit les mêmes emplacements sans changer la mise en page.
-- Points d'éval : `QuestionPoints` seulement si `evalMode`.
+- Points d'éval : total dans la consigne / en-tête, pas par question.
+
+## Espacement fiche (harmonisé)
+
+Variables CSS dans `:root` (`src/App.css`) — ne pas hardcoder d'autres paddings sur `.exercise-item` :
+
+| Variable | Valeur | Rôle |
+|---|---|---|
+| `--ex-pad-y` | `8px` | Padding vertical de chaque question |
+| `--ex-pad-x` | `2px` | Padding horizontal de chaque question |
+| `--ex-num-gap` | `8px` | Espace numéro ↔ contenu |
+| `--ex-grid-gap` | `12px 16px` | Espacement grille d'exercices |
+| `--ex-prompt-gap` | `6px` | Espace énoncé ↔ trait de réponse |
+| `--ex-answer-h` | `1.35em` | Hauteur utile du trait de réponse |
+
+Règles :
+- `.exercise-item` utilise uniquement `padding: var(--ex-pad-y) var(--ex-pad-x)` et `gap: var(--ex-num-gap)`.
+- `.answer-line-field` et `.write-line` : **toujours** `width: 100%` sauf `.compact`.
+- Ne pas réintroduire `min-height` fixe ni cadres autour des questions.
 
 ## Gabarits
 

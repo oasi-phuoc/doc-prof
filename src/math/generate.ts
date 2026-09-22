@@ -1,8 +1,19 @@
 import { tryGenerateAlgebraBatch } from './algebra'
 import { exerciseTypeById, topicById } from './catalog'
+import {
+  calcBound,
+  columnAddPair,
+  columnSubPair,
+  nombreBound,
+  pairAdd,
+  pairDiv,
+  pairMul,
+  pairSub,
+} from './difficulty'
 import { numberToFrench } from './french-numbers'
+import { makeWordProblem } from './problems'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
-import type { ArithOp, DivisionStep, FigureDims, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
+import type { ArithOp, Difficulty, DivisionStep, FigureDims, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
@@ -71,7 +82,7 @@ function columnItem(op: ArithOp, a: number, b: number, result: number, empty: bo
   const w = widthOf(a, b, result)
   return {
     layout: empty ? 'column-empty' : 'column',
-    prompt: empty ? `Posez et calculez : ${fmt(a)} ${op} ${fmt(b)}` : undefined,
+    prompt: empty ? `${fmt(a)} ${op} ${fmt(b)}` : undefined,
     op,
     a,
     b,
@@ -83,6 +94,49 @@ function columnItem(op: ArithOp, a: number, b: number, result: number, empty: bo
     blankOperands: empty,
     answer: fmt(result),
   }
+}
+
+function padDigitRow(row: string[] | undefined, width: number): string[] {
+  const src = row ?? []
+  if (src.length >= width) return src
+  return [...Array.from({ length: width - src.length }, () => ''), ...src]
+}
+
+/** Aligne tous les tableaux en colonnes d’une fiche sur la même largeur (et ligne de retenues). */
+function normalizeColumnLayouts(items: MathItem[]): MathItem[] {
+  const columnItems = items.filter(
+    (item) => item.layout === 'column' || item.layout === 'column-empty',
+  )
+  if (columnItems.length === 0) return items
+  const maxWidth = Math.max(
+    1,
+    ...columnItems.flatMap((item) => [
+      item.digitsA?.length ?? 0,
+      item.digitsB?.length ?? 0,
+      item.digitsResult?.length ?? 0,
+      item.carries?.length ?? 0,
+      ...(item.digitsPartials?.map((row) => row.length) ?? []),
+    ]),
+  )
+  const maxPartials = Math.max(0, ...columnItems.map((item) => item.digitsPartials?.length ?? 0))
+  return items.map((item) => {
+    if (item.layout !== 'column' && item.layout !== 'column-empty') return item
+    const partials = item.digitsPartials ?? []
+    const paddedPartials =
+      maxPartials > 0
+        ? Array.from({ length: maxPartials }, (_, i) =>
+            padDigitRow(partials[i] ?? Array.from({ length: maxWidth }, () => ''), maxWidth),
+          )
+        : undefined
+    return {
+      ...item,
+      digitsA: padDigitRow(item.digitsA, maxWidth),
+      digitsB: padDigitRow(item.digitsB, maxWidth),
+      digitsResult: padDigitRow(item.digitsResult, maxWidth),
+      carries: padDigitRow(item.carries ?? Array.from({ length: maxWidth }, () => ''), maxWidth),
+      digitsPartials: paddedPartials,
+    }
+  })
 }
 
 function buildDivisionSteps(dividend: number, divisor: number): DivisionStep[] {
@@ -214,58 +268,6 @@ function inlineOp(op: ArithOp, a: number, b: number, result: number, missing: Mi
   }
 }
 
-function pairAdd(rng: Rng, max: number): { a: number; b: number; result: number } {
-  const a = int(rng, 2, max)
-  const b = int(rng, 2, max)
-  return { a, b, result: a + b }
-}
-
-function pairSub(rng: Rng, max: number): { a: number; b: number; result: number } {
-  const a = int(rng, 10, max)
-  const b = int(rng, 1, a - 1)
-  return { a, b, result: a - b }
-}
-
-function pairMul(rng: Rng): { a: number; b: number; result: number } {
-  const a = int(rng, 2, 12)
-  const b = int(rng, 2, 12)
-  return { a, b, result: a * b }
-}
-
-function pairDiv(rng: Rng): { a: number; b: number; result: number } {
-  const result = int(rng, 2, 12)
-  const b = int(rng, 2, 12)
-  return { a: result * b, b, result }
-}
-
-const ADD_PB = [
-  (a: number, b: number) => `Lina a ${a} billes. Elle en gagne ${b}. Combien a-t-elle de billes ?`,
-  (a: number, b: number) => `Il y a ${a} pommes. On ajoute ${b} pommes. Combien y a-t-il de pommes ?`,
-  (a: number, b: number) => `${a} enfants jouent. ${b} enfants arrivent. Combien y a-t-il d’enfants ?`,
-  (a: number, b: number) => `Noa a économisé ${a} CHF. On lui donne ${b} CHF. Combien a-t-il ?`,
-  (a: number, b: number) => `Un bus compte ${a} passagers. ${b} personnes montent. Combien y a-t-il de passagers ?`,
-]
-
-const SUB_PB = [
-  (a: number, b: number) => `Lina a ${a} billes. Elle en donne ${b}. Combien lui en reste-t-il ?`,
-  (a: number, b: number) => `Il y a ${a} pommes. On en mange ${b}. Combien reste-t-il de pommes ?`,
-  (a: number, b: number) => `${a} enfants jouent. ${b} enfants partent. Combien reste-t-il d’enfants ?`,
-  (a: number, b: number) => `Noa a ${a} CHF. Il dépense ${b} CHF. Combien lui reste-t-il ?`,
-  (a: number, b: number) => `Un bus compte ${a} passagers. ${b} personnes descendent. Combien reste-t-il de passagers ?`,
-]
-
-const MUL_PB = [
-  (a: number, b: number) => `Une boîte contient ${a} crayons. Combien y a-t-il de crayons dans ${b} boîtes ?`,
-  (a: number, b: number) => `Un cahier coûte ${a} CHF. Combien coûtent ${b} cahiers ?`,
-  (a: number, b: number) => `Une rangée a ${a} chaises. Combien y a-t-il de chaises sur ${b} rangées ?`,
-]
-
-const DIV_PB = [
-  (a: number, b: number) => `On partage ${a} billes entre ${b} enfants, équitablement. Combien chacun reçoit-il ?`,
-  (a: number, b: number) => `${a} élèves forment des groupes de ${b}. Combien de groupes obtient-on ?`,
-  (a: number, b: number) => `Un paquet de ${a} cartes est rangé dans des boîtes de ${b}. Combien de boîtes faut-il ?`,
-]
-
 function roundTo(n: number, unit: number): number {
   return Math.round(n / unit) * unit
 }
@@ -290,22 +292,24 @@ function decStr(n: number): string {
 
 const PLACE = ['unités', 'dizaines', 'centaines', 'milliers'] as const
 
-function generateItems(typeId: string, count: number, rng: Rng): MathItem[] {
+function generateItems(typeId: string, count: number, rng: Rng, difficulty: Difficulty): MathItem[] {
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
-    items.push(generateOne(typeId, rng, i))
+    items.push(generateOne(typeId, rng, i, difficulty))
   }
-  return items
+  return normalizeColumnLayouts(items)
 }
 
-function generateOne(typeId: string, rng: Rng, index: number): MathItem {
+function generateOne(typeId: string, rng: Rng, index: number, difficulty: Difficulty): MathItem {
+  const max = calcBound(difficulty)
+  const nMax = nombreBound(difficulty)
   switch (typeId) {
     case 'nombres-chiffres': {
-      const n = int(rng, 0, 999)
+      const n = int(rng, 0, Math.min(999, nMax))
       return { layout: 'text', prompt: numberToFrench(n), answer: String(n) }
     }
     case 'nombres-lettres': {
-      const n = int(rng, 0, 999)
+      const n = int(rng, 0, Math.min(999, nMax))
       return { layout: 'text', prompt: String(n), answer: numberToFrench(n) }
     }
     case 'nombres-position': {
@@ -313,15 +317,45 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       const place = PLACE[int(rng, 0, Math.min(3, String(n).length - 1))]!
       const idx = { unités: 0, dizaines: 1, centaines: 2, milliers: 3 }[place]
       const digit = Math.floor(n / 10 ** idx) % 10
-      return { layout: 'inline', prompt: `Dans ${n.toLocaleString('fr-CH')}, le chiffre des ${place} est`, answer: String(digit) }
+      return {
+        layout: 'text',
+        prompt: `Dans ${n.toLocaleString('fr-CH')}, le chiffre des ${place} est`,
+        answer: String(digit),
+      }
     }
     case 'nombres-decompose': {
-      const n = int(rng, 25, 999)
-      const c = Math.floor(n / 100)
-      const d = Math.floor((n % 100) / 10)
+      const digits = index % 2 === 0 ? 3 : 4
+      const n =
+        digits === 3
+          ? (() => {
+              let v = int(rng, 111, 999)
+              while (v % 10 === 0) v = int(rng, 111, 999)
+              return v
+            })()
+          : (() => {
+              let v = int(rng, 1111, 9999)
+              while (v % 10 === 0) v = int(rng, 1111, 9999)
+              return v
+            })()
       const u = n % 10
-      const parts = [c ? `${c}×100` : '', d ? `${d}×10` : '', u ? `${u}×1` : ''].filter(Boolean)
-      return { layout: 'inline', prompt: `Décomposez ${n} =`, answer: parts.join(' + ') }
+      const d = Math.floor((n % 100) / 10)
+      const c = Math.floor((n % 1000) / 100)
+      const m = Math.floor(n / 1000)
+      const placeParts =
+        digits === 4
+          ? [String(m * 1000), String(c * 100), String(d * 10), String(u)]
+          : [String(c * 100), String(d * 10), String(u)]
+      const labels =
+        digits === 4
+          ? ['milliers', 'centaines', 'dizaines', 'unités']
+          : ['centaines', 'dizaines', 'unités']
+      return {
+        layout: 'place-value',
+        prompt: n.toLocaleString('fr-CH'),
+        labels,
+        placeParts,
+        answer: placeParts.join(' + '),
+      }
     }
     case 'nombres-comparer': {
       const a = int(rng, 1, 999)
@@ -330,53 +364,88 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       const answer = a < b ? '<' : a > b ? '>' : '='
       return { layout: 'compare', left: String(a), right: String(b), answer }
     }
-    case 'nombres-encadrer': {
-      const unit = pick(rng, [10, 100] as const)
-      let n = int(rng, unit + 1, unit === 10 ? 999 : 9999)
-      while (n % unit === 0) n = int(rng, unit + 1, 9999)
+    case 'nombres-encadrer-10':
+    case 'nombres-encadrer-100': {
+      const unit = typeId === 'nombres-encadrer-10' ? 10 : 100
+      const hi = Math.max(unit * 2 + 1, calcBound(difficulty))
+      let n = int(rng, unit + 1, hi)
+      while (n % unit === 0) n = int(rng, unit + 1, hi)
       const lo = Math.floor(n / unit) * unit
-      return { layout: 'inline', prompt: `… < ${n} < …  (pas de ${unit})`, answer: `${lo} < ${n} < ${lo + unit}` }
+      return {
+        layout: 'encadrement',
+        prompt: String(n),
+        a: lo,
+        b: lo + unit,
+        answer: `${lo} < ${n} < ${lo + unit}`,
+      }
     }
     case 'nombres-pair': {
-      const n = int(rng, 1, 999)
-      return { layout: 'inline', prompt: `${n} est un nombre`, answer: n % 2 === 0 ? 'pair' : 'impair' }
+      const n = int(rng, 1, Math.min(999, calcBound(difficulty)))
+      return {
+        layout: 'select',
+        prompt: String(n),
+        options: ['pair', 'impair'],
+        answer: n % 2 === 0 ? 'pair' : 'impair',
+      }
     }
     case 'nombres-ranger': {
-      const numbers = shuffle(rng, [int(rng, 10, 99), int(rng, 10, 99), int(rng, 100, 999), int(rng, 100, 999), int(rng, 1, 50)])
-      const ordered = [...numbers].sort((a, b) => a - b)
-      return { layout: 'sequence', sequence: numbers.map(String), prompt: 'Du plus petit au plus grand :', answer: ordered.join(' ; ') }
+      const max = calcBound(difficulty)
+      const pool = [
+        int(rng, 1, Math.min(50, max)),
+        int(rng, 10, Math.min(99, max)),
+        int(rng, 10, Math.min(99, max)),
+        int(rng, Math.min(100, max), Math.min(999, max)),
+        int(rng, Math.min(100, max), Math.min(999, max)),
+      ].map((n) => Math.min(n, max))
+      const numbers = shuffle(rng, pool)
+      const ascending = rng() < 0.5
+      const ordered = [...numbers].sort((a, b) => (ascending ? a - b : b - a))
+      return {
+        layout: 'order',
+        sequence: numbers.map(String),
+        placeParts: ordered.map(String),
+        orderOp: ascending ? '<' : '>',
+        prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
+        answer: ordered.join(ascending ? ' < ' : ' > '),
+      }
     }
     case 'nombres-suite': {
-      const step = int(rng, 2, 9)
-      const start = int(rng, 1, 40)
-      const seq = Array.from({ length: 6 }, (_, k) => start + k * step)
-      const blanks = [2, 4]
+      const stepMax = difficulty === 'facile' ? 5 : difficulty === 'moyen' ? 9 : 15
+      const step = int(rng, 2, stepMax)
+      const start = int(rng, 1, difficulty === 'facile' ? 30 : 80)
+      const length = 8
+      const seq = Array.from({ length }, (_, k) => start + k * step)
+      const blankCount = 3
+      const indexes = shuffle(
+        rng,
+        Array.from({ length }, (_, k) => k),
+      ).slice(0, blankCount)
+      const blanks = [...indexes].sort((a, b) => a - b)
       return {
         layout: 'sequence',
         sequence: seq.map((n, k) => (blanks.includes(k) ? '□' : String(n))),
         blankIndexes: blanks,
-        answer: blanks.map((k) => String(seq[k])).join(' ; '),
+        answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
       }
     }
     case 'addition-ligne': {
-      const p = pairAdd(rng, index < 3 ? 20 : 80)
+      const p = pairAdd(rng, difficulty)
       return inlineOp('+', p.a, p.b, p.result)
     }
     case 'addition-trou': {
-      const p = pairAdd(rng, 50)
+      const p = pairAdd(rng, difficulty)
       return inlineOp('+', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'addition-colonne':
     case 'addition-colonne-poser': {
-      const a = int(rng, 100, 4999)
-      const b = int(rng, 100, 9999 - a)
-      return columnItem('+', a, b, a + b, typeId.endsWith('poser'))
+      const p = columnAddPair(rng, difficulty)
+      return columnItem('+', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'addition-comparer': {
-      const p = pairAdd(rng, 40)
-      const q = pairAdd(rng, 40)
-      const left = p.a + p.b
-      const right = q.a + q.b
+      const p = pairAdd(rng, difficulty)
+      const q = pairAdd(rng, difficulty)
+      const left = p.result
+      const right = q.result
       return {
         layout: 'compare',
         left: `${p.a} + ${p.b}`,
@@ -384,33 +453,24 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
         answer: left < right ? '<' : left > right ? '>' : '=',
       }
     }
-    case 'addition-problemes': {
-      const p = pairAdd(rng, 40)
-      return {
-        layout: 'text',
-        prompt: pick(rng, ADD_PB)(p.a, p.b),
-        calcAnswer: `${p.a} + ${p.b}`,
-        responseAnswer: String(p.result),
-        answer: `${p.a} + ${p.b} = ${p.result}`,
-      }
-    }
+    case 'addition-problemes':
+      return makeWordProblem(rng, difficulty, 'addition')
     case 'soustraction-ligne': {
-      const p = pairSub(rng, index < 3 ? 20 : 90)
+      const p = pairSub(rng, difficulty)
       return inlineOp('−', p.a, p.b, p.result)
     }
     case 'soustraction-trou': {
-      const p = pairSub(rng, 80)
+      const p = pairSub(rng, difficulty)
       return inlineOp('−', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'soustraction-colonne':
     case 'soustraction-colonne-poser': {
-      const a = int(rng, 1000, 9999)
-      const b = int(rng, 100, a - 1)
-      return columnItem('−', a, b, a - b, typeId.endsWith('poser'))
+      const p = columnSubPair(rng, difficulty)
+      return columnItem('−', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'soustraction-comparer': {
-      const p = pairSub(rng, 90)
-      const q = pairSub(rng, 90)
+      const p = pairSub(rng, difficulty)
+      const q = pairSub(rng, difficulty)
       const left = p.result
       const right = q.result
       return {
@@ -420,56 +480,54 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
         answer: left < right ? '<' : left > right ? '>' : '=',
       }
     }
-    case 'soustraction-problemes': {
-      const p = pairSub(rng, 50)
-      return {
-        layout: 'text',
-        prompt: pick(rng, SUB_PB)(p.a, p.b),
-        calcAnswer: `${p.a} − ${p.b}`,
-        responseAnswer: String(p.result),
-        answer: `${p.a} − ${p.b} = ${p.result}`,
-      }
-    }
+    case 'soustraction-problemes':
+      return makeWordProblem(rng, difficulty, 'soustraction')
     case 'estimation-dizaine': {
-      let n = int(rng, 11, 99)
-      while (n % 10 === 0) n = int(rng, 11, 99)
+      let n = int(rng, 11, Math.min(99, max))
+      while (n % 10 === 0) n = int(rng, 11, Math.min(99, max))
       return { layout: 'inline', prompt: `${n} ≈`, answer: String(roundTo(n, 10)) }
     }
     case 'estimation-centaine': {
-      let n = int(rng, 101, 999)
-      while (n % 100 === 0) n = int(rng, 101, 999)
+      const hi = Math.max(101, Math.min(999, max))
+      let n = int(rng, 101, hi)
+      while (n % 100 === 0) n = int(rng, 101, hi)
       return { layout: 'inline', prompt: `${n} ≈`, answer: String(roundTo(n, 100)) }
     }
     case 'estimation-somme': {
-      const a = int(rng, 21, 89)
-      const b = int(rng, 21, 89)
-      return { layout: 'inline', prompt: `${a} + ${b} ≈`, answer: String(roundTo(a, 10) + roundTo(b, 10)) }
+      const p = pairAdd(rng, difficulty === 'facile' ? 'facile' : 'moyen')
+      return { layout: 'inline', prompt: `${p.a} + ${p.b} ≈`, answer: String(roundTo(p.a, 10) + roundTo(p.b, 10)) }
     }
     case 'estimation-difference': {
-      const a = int(rng, 40, 99)
-      const b = int(rng, 11, a - 10)
-      return { layout: 'inline', prompt: `${a} − ${b} ≈`, answer: String(roundTo(a, 10) - roundTo(b, 10)) }
+      const p = pairSub(rng, difficulty === 'facile' ? 'facile' : 'moyen')
+      return { layout: 'inline', prompt: `${p.a} − ${p.b} ≈`, answer: String(roundTo(p.a, 10) - roundTo(p.b, 10)) }
     }
     case 'multiplication-ligne': {
-      const p = pairMul(rng)
+      const p = pairMul(rng, difficulty)
       return inlineOp('×', p.a, p.b, p.result)
     }
     case 'multiplication-trou': {
-      const p = pairMul(rng)
+      const p = pairMul(rng, difficulty)
       return inlineOp('×', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'multiplication-colonne':
     case 'multiplication-colonne-poser': {
-      const a = int(rng, 12, 999)
-      const b = int(rng, 2, 9)
+      const aMax = difficulty === 'facile' ? 99 : difficulty === 'moyen' ? 999 : 9999
+      const bMax = difficulty === 'avance' ? 12 : 9
+      const a = int(rng, 12, aMax)
+      const b = int(rng, 2, bMax)
       return columnItem('×', a, b, a * b, typeId.endsWith('poser'))
     }
     case 'multiplication-2chiffres': {
-      const a = int(rng, 12, 99)
-      let b = int(rng, 12, 99)
-      while (b % 10 === 0) b = int(rng, 12, 99)
+      const aMax = difficulty === 'facile' ? 49 : difficulty === 'moyen' ? 99 : 999
+      const a = int(rng, 12, aMax)
+      let b = int(rng, 12, difficulty === 'facile' ? 29 : 99)
+      while (b % 10 === 0) b = int(rng, 12, difficulty === 'facile' ? 29 : 99)
+      const units = b % 10
+      const tens = Math.floor(b / 10)
+      const partialUnits = a * units
+      const partialTens = a * tens * 10
       const result = a * b
-      const w = widthOf(a, b, result)
+      const w = widthOf(a, b, partialUnits, partialTens, result)
       return {
         layout: 'column',
         op: '×',
@@ -478,39 +536,31 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
         result,
         digitsA: digits(a, w),
         digitsB: digits(b, w),
+        digitsPartials: [digits(partialUnits, w), digits(partialTens, w)],
         digitsResult: digits(result, w),
-        carries: computeCarries('×', a, b % 10, w),
-        prompt: `Produits partiels : ${a} × ${b % 10} et ${a} × ${Math.floor(b / 10)}`,
+        carries: computeCarries('×', a, units, w),
         answer: String(result),
       }
     }
-    case 'multiplication-problemes': {
-      const p = pairMul(rng)
-      return {
-        layout: 'text',
-        prompt: pick(rng, MUL_PB)(p.a, p.b),
-        calcAnswer: `${p.a} × ${p.b}`,
-        responseAnswer: String(p.result),
-        answer: `${p.a} × ${p.b} = ${p.result}`,
-      }
-    }
+    case 'multiplication-problemes':
+      return makeWordProblem(rng, difficulty, 'multiplication')
     case 'division-ligne': {
-      const p = pairDiv(rng)
+      const p = pairDiv(rng, difficulty)
       return inlineOp('÷', p.a, p.b, p.result)
     }
     case 'division-trou': {
-      const p = pairDiv(rng)
+      const p = pairDiv(rng, difficulty)
       return inlineOp('÷', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'division-colonne':
     case 'division-colonne-poser': {
-      const divisor = int(rng, 2, 9)
-      const quotient = int(rng, 12, 99)
+      const divisor = int(rng, 2, difficulty === 'avance' ? 12 : 9)
+      const quotient = int(rng, difficulty === 'facile' ? 4 : 12, difficulty === 'facile' ? 20 : difficulty === 'moyen' ? 99 : 250)
       const remainder = int(rng, 0, divisor - 1)
       const dividend = divisor * quotient + remainder
       return {
         layout: 'division-column',
-        prompt: typeId.endsWith('poser') ? `Posez : ${dividend} ÷ ${divisor}` : undefined,
+        prompt: typeId.endsWith('poser') ? `${dividend} ÷ ${divisor}` : undefined,
         dividend,
         divisor,
         quotient,
@@ -521,22 +571,14 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       }
     }
     case 'division-reste': {
-      const divisor = int(rng, 3, 9)
-      const quotient = int(rng, 4, 20)
+      const divisor = int(rng, 3, difficulty === 'avance' ? 12 : 9)
+      const quotient = int(rng, 4, difficulty === 'facile' ? 20 : 80)
       const remainder = int(rng, 1, divisor - 1)
       const dividend = divisor * quotient + remainder
       return { layout: 'inline', prompt: `${dividend} ÷ ${divisor} =`, answer: `${quotient} reste ${remainder}` }
     }
-    case 'division-problemes': {
-      const p = pairDiv(rng)
-      return {
-        layout: 'text',
-        prompt: pick(rng, DIV_PB)(p.a, p.b),
-        calcAnswer: `${p.a} ÷ ${p.b}`,
-        responseAnswer: String(p.result),
-        answer: `${p.a} ÷ ${p.b} = ${p.result}`,
-      }
-    }
+    case 'division-problemes':
+      return makeWordProblem(rng, difficulty, 'division')
     case 'multiples-reconnaitre': {
       const base = int(rng, 2, 9)
       const yes = rng() < 0.5
@@ -661,9 +703,7 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       const b = Math.round(dec(rng, 40, 2) * 100)
       const result = a + b
       const item = columnItem('+', a, b, result, typeId.endsWith('poser'))
-      item.prompt = typeId.endsWith('poser')
-        ? `Posez (alignez les virgules) : ${decStr(a / 100)} + ${decStr(b / 100)}`
-        : `${decStr(a / 100)} + ${decStr(b / 100)}`
+      item.prompt = `${decStr(a / 100)} + ${decStr(b / 100)}`
       item.answer = decStr(result / 100)
       item.a = a / 100
       item.b = b / 100
@@ -1160,7 +1200,8 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   const rng = createRng(seed)
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
-  const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng)
+  const difficulty = config.difficulty ?? 'moyen'
+  const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng, difficulty)
   if (algebra) {
     return {
       ...config,
@@ -1175,6 +1216,6 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
     ...config,
     title: type?.label ?? topic?.label ?? 'Exercices',
     instruction: type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
-    items: generateItems(config.exerciseType, config.count, rng),
+    items: generateItems(config.exerciseType, config.count, rng, difficulty),
   }
 }
