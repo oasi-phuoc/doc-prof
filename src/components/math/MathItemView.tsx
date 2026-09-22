@@ -2,6 +2,7 @@ import type { MathItem, PreviewMode } from '@/math/types'
 import { CoordGrid } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
 import { GeometryFigure } from './GeometryFigure'
+import { QuestionPoints } from './PrintDocumentChrome'
 
 function DigitRow({
   digits,
@@ -74,7 +75,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       <div className="division-posee">
         <div className="division-left">
           <div className="division-dividend-row">
-            {empty && !show ? <span className="answer-box wide">{'\u00a0'}</span> : item.dividend}
+            {empty && !show ? <span className="answer-line-field wide">{'\u00a0'}</span> : item.dividend}
           </div>
           <div className="division-work">
             {show
@@ -91,7 +92,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
         </div>
         <div className="division-right">
           <div className="division-divisor">
-            {empty && !show ? <span className="answer-box">{'\u00a0'}</span> : item.divisor}
+            {empty && !show ? <span className="answer-line-field">{'\u00a0'}</span> : item.divisor}
           </div>
           <div className="division-quotient">
             {show ? (
@@ -100,7 +101,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
                 {item.remainder ? ` r ${item.remainder}` : ''}
               </strong>
             ) : (
-              <span className="answer-box wide">{'\u00a0'}</span>
+              <span className="answer-line-field wide">{'\u00a0'}</span>
             )}
           </div>
         </div>
@@ -145,7 +146,7 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
             const value = mode === 'answers' ? answers[blankAt++] ?? '' : null
             return (
               <span className="sequence-term blank" key={index}>
-                {value ?? <span className="answer-box slim">{'\u00a0'}</span>}
+                {value ?? <span className="answer-line-field slim">{'\u00a0'}</span>}
               </span>
             )
           }
@@ -176,7 +177,7 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
         {!prompt.includes('□') && (
           <>
             <span className="eq-space" />
-            <span className={`answer-box ${show ? 'filled' : ''}`}>{show ? <FractionView value={item.answer} /> : '\u00a0'}</span>
+            <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? <FractionView value={item.answer} /> : '\u00a0'}</span>
           </>
         )}
       </div>
@@ -187,7 +188,7 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
     <div className="inline-prompt equation">
       <span className="eq-text">{renderMathText(prompt)}</span>
       {(prompt.trimEnd().endsWith('=') || needsBox) && (
-        <span className={`answer-box med ${show ? 'filled' : ''}`}>
+        <span className={`answer-line-field med ${show ? 'filled' : ''}`}>
           {show ? <FractionView value={item.answer} /> : '\u00a0'}
         </span>
       )}
@@ -220,7 +221,7 @@ function ProblemBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           {show ? (
             <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
           ) : (
-            <span className="answer-box wide">{'\u00a0'}</span>
+            <span className="answer-line-field wide">{'\u00a0'}</span>
           )}
         </div>
       </div>
@@ -250,7 +251,7 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
               {show ? (
                 <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
               ) : (
-                <span className="answer-box med">{'\u00a0'}</span>
+                <span className="answer-line-field med">{'\u00a0'}</span>
               )}
             </div>
           </div>
@@ -260,7 +261,7 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
             {show ? (
               <strong className="filled-answer">{item.answer}</strong>
             ) : (
-              <span className="answer-box med">{'\u00a0'}</span>
+              <span className="answer-line-field med">{'\u00a0'}</span>
             )}
           </div>
         )}
@@ -281,7 +282,7 @@ function CoordBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           {show ? (
             <strong className="filled-answer">{item.answer}</strong>
           ) : (
-            <span className="answer-box med">{'\u00a0'}</span>
+            <span className="answer-line-field med">{'\u00a0'}</span>
           )}
         </div>
       </div>
@@ -289,11 +290,26 @@ function CoordBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
-export function MathItemView({ item, mode, index }: { item: MathItem; mode: PreviewMode; index: number }) {
+export function MathItemView({
+  item,
+  mode,
+  index,
+  points,
+  showPoints,
+}: {
+  item: MathItem
+  mode: PreviewMode
+  index: number
+  points?: number
+  showPoints?: boolean
+}) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
   return (
     <div className={`exercise-item layout-${item.layout}`}>
-      <div className="item-number">{index + 1}</div>
+      <div className="item-number">
+        {index + 1}.
+        {showPoints && points != null ? <QuestionPoints points={points} /> : null}
+      </div>
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}

@@ -1,5 +1,7 @@
 # Plan d'implémentation v2 — fiches de FLE imprimables pour apprenant·e·s allophones
 
+> **Archivé pour le produit actuel.** Le dépôt livre un générateur de **fiches maths A4** : suivre `CLAUDE.md` et les skills dans `.claude/skills/` (`nouvel-exercice`, `test-impression`, `contenu-catalogue`, etc.). Ce document FLE n’est plus la source de vérité.
+
 Version 2.1 · 21 septembre 2026 · **remplace la v1** · ajout du §15 (skills et conventions du projet)
 Base technique : React + Vite + Tailwind CSS v4 (build de production OK, branche `v0/setup-react-tailwind`)
 Inspiration visuelle : capture de landing page fournie (mise en page, typographie, couleurs, espacements). **Aucun texte, logo ou illustration de la référence n'est repris** : tout le contenu ci-dessous est original.

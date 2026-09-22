@@ -1,48 +1,35 @@
 ---
 name: illustration-svg
-description: Dessine ou ajoute une illustration de vitrine, un pictogramme de consigne (entourer, colorier, écrire, relier, cocher…), une pastille d'exercice ou un motif décoratif en SVG dans le style du projet (plat, contour régulier, pastels). À utiliser dès qu'on demande une illustration, une icône, un pictogramme, un visuel pour la page d'accueil, un motif ou un badge, même si la demande ne mentionne pas SVG.
+description: >-
+  Dessine ou corrige une figure géométrie cotée, une grille de repérage ou un
+  motif SVG scolaire (GeometryFigure, CoordGrid) lisible en N&B. À utiliser dès
+  qu'on parle de figure, côtés, cotes, triangle, trapèze, parallélogramme,
+  repérage, SVG pédagogique.
 ---
 
-# Illustrations et pictogrammes SVG
+# Figures SVG scolaires
 
-Le projet a un style unique : plat, contour foncé régulier, remplissages pastel, aucun dégradé. Il y a deux familles à ne pas mélanger :
+Deux composants pivots :
 
-- **Pictogrammes de consigne** : petits (≈ 48 px), sur la fiche imprimée, doivent rester lisibles en noir et blanc.
-- **Illustrations de vitrine** : grandes, sur le site seulement, personnages adultes et divers.
+- `src/components/math/GeometryFigure.tsx` — formes cotées (rectangle, triangle, trapèze, parallélogramme, solides schématiques…).
+- `src/components/math/CoordGrid.tsx` — repérage dans le plan.
 
-Les images pédagogiques des mots (banque d'images des fiches) relèvent du skill `contenu-linguistique`, pas de celui-ci.
+## Règles
 
-## Règles de style
-
-- `viewBox="0 0 96 96"` pour les pictogrammes, affichés à 48 px : `strokeWidth={4}` donne un contour visuel de 2 px.
-- Contour `var(--color-stroke)`, `strokeLinecap="round"`, `strokeLinejoin="round"`, `fill="none"` sur le groupe, remplissage pastel via les jetons (`--color-tint-violet`, `-rose`, `-orange`, `-green`).
-- **Pas de dégradé, pas d'ombre, pas de texte dans le SVG** (le texte est traduisible et accessible en HTML).
-- Formes simples : une idée par pictogramme, 3 à 6 éléments maximum.
-- Pictogrammes de consigne : même pastille circulaire de fond et mêmes proportions pour tout le jeu, de façon à ce qu'ils forment une famille.
-- Personnages (vitrine) : adultes, corps et âges variés, tenues neutres, aucun stéréotype ; jamais de personnage de marque ou de licence.
-- **Ne rien décalquer ni redessiner à l'identique d'une référence externe** : on s'inspire d'un style, on ne copie pas une œuvre.
+- Contour foncé régulier, **pas de dégradé**, pas d'ombre, texte de cote en `currentColor`.
+- Cotes **lisibles en N&B** ; jamais une info portée par la seule couleur.
+- Dimensions depuis `FigureDims` (`length`, `width`, `base`, `top`, `bottom`, `triangleKind`…).
+- Triangles : varier `equilateral` | `isosceles` | `scalene` | `right` via le générateur.
+- **Ne pas copier** une figure d'un site tiers : même esprit scolaire, géométrie recalculée.
 
 ## Étapes
 
-1. Décrire en une phrase ce que le dessin doit faire comprendre (pour un pictogramme : l'action de l'apprenant·e, par exemple « entourer une lettre »).
-2. Copier `assets/Pictogram.tsx.tpl` vers `src/components/pictograms/Picto<Nom>.tsx`, remplacer `__Name__`.
-3. Dessiner dans le cadre `96 × 96` ; garder au moins 6 unités de marge dans la pastille.
-4. Exporter le composant dans `src/components/pictograms/index.ts` et l'ajouter au registre par clé (`entourer`, `colorier`…), utilisée par `Consigne`.
-5. Contrôler : à 24 px, en niveaux de gris, en inversé. Si l'idée n'est plus lisible, simplifier.
-6. Ajouter à la page de démonstration des pictogrammes.
-
-## Jeu de pictogrammes de consigne à couvrir
-
-entourer · colorier · écrire · relier · cocher · souligner · barrer · observer · écouter · parler · numéroter · compléter · classer · associer · coller · découper
-
-Chaque pictogramme montre l'**outil ou le geste**, pas la notion abstraite (un crayon qui trace un cercle pour « entourer », des ciseaux pour « découper »).
-
-## Accessibilité
-
-- Pictogramme décoratif (à côté d'une consigne écrite) : `aria-hidden`, pas de `title`.
-- Pictogramme porteur de sens seul : `role="img"` et `<title>` en français.
-- Ne jamais coder une information uniquement par la couleur du pastel.
+1. Confirmer la `Figure` dans `types.ts` et les dims produites par `generate.ts`.
+2. Étendre le switch de `GeometryFigure` (paths + labels).
+3. Styles labels : `.geometry-figure .dim-label` dans `App.css`.
+4. Vérifier en mode élève (figure seule) et corrigé (si annotations).
+5. Contrôle A4 : la figure ne doit pas faire déborder la feuille (largeur ~170 px typique).
 
 ## Terminé quand
 
-Lisible à 24 px et en niveaux de gris · même style que le reste du jeu · exporté dans le registre · visible dans la page de démonstration · aucune source externe reproduite.
+Figure cotée correcte · N&B · dims cohérentes avec la réponse · pas de copie externe.

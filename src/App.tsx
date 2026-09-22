@@ -1,141 +1,85 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import './App.css'
 import { MathItemView } from '@/components/math/MathItemView'
-import { GeometryFigure } from '@/components/math/GeometryFigure'
+import {
+  CLASS_LEVELS,
+  CLASS_NUMBERS,
+  COURSES,
+  CustomDocumentHeader,
+  DEFAULT_INSTITUTIONAL,
+  DocumentFooter,
+  InstitutionalDocumentHeader,
+  SheetBody,
+  type CustomHeader,
+  type HeaderStyle,
+  type InstitutionalHeader,
+} from '@/components/math/PrintDocumentChrome'
 import {
   algebraTopics,
   defaultPage,
   exerciseTypeById,
   firstTypeFor,
   geometryTopics,
-  topicById,
   typesForTopic,
 } from '@/math/catalog'
 import { buildPage } from '@/math/generate'
 import { randomSeed } from '@/math/rng'
 import type { Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
 
-type HeaderConfig = { title: string; subtitle: string; logo: string; footer: string }
-
-function TypeVisual({ type }: { type: ExerciseType }) {
-  if (type.figure) return <GeometryFigure type={type.figure} />
-  if (type.visual === 'colonne') {
-    return (
-      <b>
-        46
-        <br />
-        + 37
-        <br />
-        ────
-      </b>
-    )
-  }
-  if (type.visual === 'colonne-vide') {
-    return (
-      <b>
-        □□
-        <br />
-        + □□
-        <br />
-        ────
-      </b>
-    )
-  }
-  if (type.visual === 'trou') return <b>46 + □ = 83</b>
-  if (type.visual === 'suite') return <b>2 · 4 · □ · 8</b>
-  if (type.visual === 'geo') return <GeometryFigure type="triangle" />
-  if (type.visual === 'texte') return <b>… ?</b>
-  return <b>12 + 8 = □</b>
-}
-
 function WorksheetSheet({
   page,
   mode,
-  header,
+  headerStyle,
+  institutional,
+  custom,
+  evalMode,
+  pointsPerQuestion,
   pageNumber,
   total,
 }: {
   page: WorksheetPage
   mode: PreviewMode
-  header: HeaderConfig
+  headerStyle: HeaderStyle
+  institutional: InstitutionalHeader
+  custom: CustomHeader
+  evalMode: boolean
+  pointsPerQuestion: number
   pageNumber: number
   total: number
 }) {
+  const totalPoints = page.items.length * pointsPerQuestion
   return (
     <article className="worksheet-sheet" style={{ '--sheet-columns': page.columns } as CSSProperties}>
-      <div className="custom-print-header">
-        <div className="custom-logo">{header.logo || 'ClairFLE'}</div>
-        <div>
-          <strong>{header.title || page.title}</strong>
-          {header.subtitle && <small>{header.subtitle}</small>}
+      {headerStyle === 'institutionnel' ? (
+        <InstitutionalDocumentHeader
+          config={institutional}
+          evalMode={evalMode}
+          totalPoints={evalMode ? totalPoints : undefined}
+          fallbackTitle={page.title}
+        />
+      ) : (
+        <CustomDocumentHeader config={custom} pageTitle={page.title} domain={page.domain} />
+      )}
+      <SheetBody>
+        <div className="sheet-instruction">
+          <b>Consigne</b>
+          <p>{page.instruction}</p>
         </div>
-        <span>{new Date().toLocaleDateString('fr-FR')}</span>
-      </div>
-      <div className="sheet-header">
-        <div>
-          <span className="sheet-kicker">MATHÉMATIQUES · {page.domain.toUpperCase()}</span>
-          <h3>{page.title}</h3>
+        <div className="exercise-grid">
+          {page.items.map((item, index) => (
+            <MathItemView
+              key={`${page.exerciseType}-${index}-${item.answer}`}
+              item={item}
+              mode={mode}
+              index={index}
+              points={pointsPerQuestion}
+              showPoints={evalMode}
+            />
+          ))}
         </div>
-        <span className="sheet-number">Fiche d’activité</span>
-      </div>
-      <div className="student-line">
-        Nom : <span /> Date : <span />
-      </div>
-      <div className="sheet-instruction">
-        <b>Consigne</b>
-        <p>{page.instruction}</p>
-      </div>
-      <div className="exercise-grid">
-        {page.items.map((item, index) => (
-          <MathItemView key={`${page.exerciseType}-${index}-${item.answer}`} item={item} mode={mode} index={index} />
-        ))}
-      </div>
-      <div className="sheet-footer">
-        <span>{header.footer || 'ClairFLE · Support imprimable'}</span>
-        <span>
-          Page {pageNumber} / {total}
-        </span>
-      </div>
+      </SheetBody>
+      <DocumentFooter text={custom.footer} pageNumber={pageNumber} total={total} />
     </article>
-  )
-}
-
-function ExerciseTypeCards({
-  topic,
-  selected,
-  onSelect,
-}: {
-  topic: string
-  selected: string
-  onSelect: (type: ExerciseType) => void
-}) {
-  const cards = typesForTopic(topic)
-  return (
-    <section className="exercise-types no-print">
-      <div className="section-heading">
-        <div>
-          <span className="eyebrow">Type d’exercice</span>
-          <h3>Choisissez un format</h3>
-        </div>
-        <span className="muted">{cards.length} formats</span>
-      </div>
-      <div className="exercise-type-grid">
-        {cards.map((type) => (
-          <button
-            key={type.id}
-            type="button"
-            className={`exercise-type-card ${selected === type.id ? 'selected' : ''}`}
-            onClick={() => onSelect(type)}
-          >
-            <span className="type-visual">
-              <TypeVisual type={type} />
-            </span>
-            <strong>{type.label}</strong>
-            <small>{type.description}</small>
-          </button>
-        ))}
-      </div>
-    </section>
   )
 }
 
@@ -173,7 +117,6 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
       </a>
       <nav>
         <a href="/#methode">La méthode</a>
-        <a href="/#exemples">Exemples</a>
         <a href="/#aide">Aide</a>
       </nav>
       {!generator && (
@@ -206,9 +149,6 @@ function Landing({ onCreate }: { onCreate: () => void }) {
               <button className="button" type="button" onClick={onCreate}>
                 Créer une fiche <span>→</span>
               </button>
-              <a className="text-link" href="#exemples">
-                Voir des exemples <span>↓</span>
-              </a>
             </div>
             <p className="microcopy">
               <span className="check">✓</span> Gratuit, sans compte, vos fiches restent à vous.
@@ -223,22 +163,6 @@ function Landing({ onCreate }: { onCreate: () => void }) {
               <b>Fiches claires</b>
               <small>à imprimer et partager</small>
             </div>
-          </div>
-        </section>
-        <section className="subject-section no-print" id="exemples">
-          <p className="eyebrow">Deux matières, un même outil</p>
-          <h2>Choisissez votre matière.</h2>
-          <div className="subject-grid">
-            <button type="button" onClick={onCreate}>
-              <b>Français</b>
-              <span>Fiches de langue et de lecture</span>
-              <strong>→</strong>
-            </button>
-            <button type="button" onClick={onCreate}>
-              <b>Mathématiques</b>
-              <span>Algèbre et géométrie</span>
-              <strong>→</strong>
-            </button>
           </div>
         </section>
       </main>
@@ -266,12 +190,16 @@ function GeneratorPage() {
   const [pages, setPages] = useState<PageConfig[]>([initial])
   const [pageIndex, setPageIndex] = useState(0)
   const [mode, setMode] = useState<PreviewMode>('student')
-  const [header, setHeader] = useState<HeaderConfig>({
+  const [headerStyle, setHeaderStyle] = useState<HeaderStyle>('institutionnel')
+  const [institutional, setInstitutional] = useState<InstitutionalHeader>(DEFAULT_INSTITUTIONAL)
+  const [custom, setCustom] = useState<CustomHeader>({
     title: '',
     subtitle: '',
     logo: 'ClairFLE',
     footer: 'ClairFLE · Support imprimable',
   })
+  const [evalMode, setEvalMode] = useState(false)
+  const [pointsPerQuestion, setPointsPerQuestion] = useState(1)
   const [seed, setSeed] = useState(randomSeed)
 
   const activePage = pages[pageIndex] ?? pages[0]!
@@ -279,6 +207,10 @@ function GeneratorPage() {
   const worksheets = useMemo(
     () => pages.map((page, index) => buildPage(page, seed + index * 7919)),
     [pages, seed],
+  )
+  const sheetTotalPoints = useMemo(
+    () => worksheets.reduce((sum, page) => sum + page.items.length * pointsPerQuestion, 0),
+    [worksheets, pointsPerQuestion],
   )
 
   const updatePage = (patch: Partial<PageConfig>) =>
@@ -310,6 +242,16 @@ function GeneratorPage() {
     window.setTimeout(() => window.print(), 80)
   }
 
+  const sheetProps = {
+    mode,
+    headerStyle,
+    institutional,
+    custom,
+    evalMode,
+    pointsPerQuestion,
+  } as const
+
+
   return (
     <div className="app-shell">
       <Header onCreate={() => undefined} generator />
@@ -335,19 +277,19 @@ function GeneratorPage() {
               </span>
             </div>
             <div className="page-tabs">
-              {pages.map((page, index) => (
+              {pages.map((_, index) => (
                 <button
                   key={index}
                   type="button"
                   className={pageIndex === index ? 'active' : ''}
                   onClick={() => setPageIndex(index)}
+                  aria-label={`Page ${index + 1}`}
                 >
-                  Page {index + 1}
-                  <small>{topicById[page.topic]?.label ?? page.topic}</small>
+                  {index + 1}
                 </button>
               ))}
-              <button className="add-page" type="button" onClick={addPage}>
-                + Nouvelle page
+              <button className="add-page" type="button" onClick={addPage} aria-label="Nouvelle page">
+                +
               </button>
             </div>
             <div className="field-group">
@@ -362,11 +304,20 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              <ExerciseTypeCards
-                topic={activePage.topic}
-                selected={activePage.exerciseType}
-                onSelect={(type) => updatePage(applyType(type))}
-              />
+              <SelectBox
+                label="Type d’exercice"
+                value={activePage.exerciseType}
+                onChange={(value) => {
+                  const type = exerciseTypeById[value]
+                  if (type) updatePage(applyType(type))
+                }}
+              >
+                {typesForTopic(activePage.topic).map((type) => (
+                  <option value={type.id} key={type.id}>
+                    {type.label}
+                  </option>
+                ))}
+              </SelectBox>
               <label>
                 Questions
                 <div className="question-control">
@@ -405,33 +356,186 @@ function GeneratorPage() {
                 <option value="2">2 colonnes</option>
                 <option value="3">3 colonnes</option>
               </SelectBox>
+
+              <div className="mode-toggle-block">
+                <b>Mode de la fiche</b>
+                <div className="mode-toggle">
+                  <button
+                    type="button"
+                    className={!evalMode ? 'active' : ''}
+                    onClick={() => setEvalMode(false)}
+                  >
+                    Exercice
+                  </button>
+                  <button
+                    type="button"
+                    className={evalMode ? 'active' : ''}
+                    onClick={() => {
+                      setEvalMode(true)
+                      if (!institutional.documentTitle.trim()) {
+                        setInstitutional((current) => ({ ...current, documentTitle: 'Évaluation' }))
+                      }
+                    }}
+                  >
+                    Évaluation
+                  </button>
+                </div>
+                {evalMode && (
+                  <label>
+                    Points par question
+                    <input
+                      type="number"
+                      min={1}
+                      max={20}
+                      value={pointsPerQuestion}
+                      onChange={(event) =>
+                        setPointsPerQuestion(Math.max(1, Math.min(20, Number(event.target.value) || 1)))
+                      }
+                    />
+                    <small className="muted">
+                      Total fiche : {worksheets[pageIndex]?.items.length ?? 0} × {pointsPerQuestion} ={' '}
+                      {(worksheets[pageIndex]?.items.length ?? 0) * pointsPerQuestion} pts
+                      {pages.length > 1 ? ` · toutes pages ${sheetTotalPoints} pts` : ''}
+                    </small>
+                  </label>
+                )}
+              </div>
+
               <div className="custom-header-form">
-                <b>En-tête et pied de page</b>
-                <label>
-                  Logo ou nom
-                  <input value={header.logo} onChange={(event) => setHeader({ ...header, logo: event.target.value })} />
-                </label>
-                <label>
-                  Titre personnalisé
-                  <input
-                    value={header.title}
-                    onChange={(event) => setHeader({ ...header, title: event.target.value })}
-                    placeholder="Ex. Collège des Tilleuls"
-                  />
-                </label>
-                <label>
-                  Sous-titre
-                  <input
-                    value={header.subtitle}
-                    onChange={(event) => setHeader({ ...header, subtitle: event.target.value })}
-                    placeholder="Ex. Groupe 7H · Mathématiques"
-                  />
-                </label>
+                <b>En-tête</b>
+                <div className="mode-toggle">
+                  <button
+                    type="button"
+                    className={headerStyle === 'institutionnel' ? 'active' : ''}
+                    onClick={() => setHeaderStyle('institutionnel')}
+                  >
+                    Institutionnel
+                  </button>
+                  <button
+                    type="button"
+                    className={headerStyle === 'personnalise' ? 'active' : ''}
+                    onClick={() => setHeaderStyle('personnalise')}
+                  >
+                    Personnalisé
+                  </button>
+                </div>
+                {headerStyle === 'institutionnel' ? (
+                  <>
+                    <label>
+                      Établissement
+                      <input
+                        value={institutional.schoolName}
+                        onChange={(event) => setInstitutional({ ...institutional, schoolName: event.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Année
+                      <input
+                        value={institutional.schoolYear}
+                        onChange={(event) => setInstitutional({ ...institutional, schoolYear: event.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Mention
+                      <input
+                        value={institutional.schoolTagline}
+                        onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Organisation (ligne 1)
+                      <input
+                        value={institutional.orgLine1}
+                        onChange={(event) => setInstitutional({ ...institutional, orgLine1: event.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Organisation (ligne 2)
+                      <input
+                        value={institutional.orgLine2}
+                        onChange={(event) => setInstitutional({ ...institutional, orgLine2: event.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Organisation (ligne 3)
+                      <input
+                        value={institutional.orgLine3}
+                        onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
+                      />
+                    </label>
+                    <SelectBox
+                      label="Classe"
+                      value={institutional.classLevel}
+                      onChange={(value) => setInstitutional({ ...institutional, classLevel: value })}
+                    >
+                      {CLASS_LEVELS.map((level) => (
+                        <option key={level} value={level}>
+                          {level}
+                        </option>
+                      ))}
+                    </SelectBox>
+                    <SelectBox
+                      label="N° de classe"
+                      value={institutional.classNumber}
+                      onChange={(value) => setInstitutional({ ...institutional, classNumber: value })}
+                    >
+                      {CLASS_NUMBERS.map((n) => (
+                        <option key={n} value={n}>
+                          {n}
+                        </option>
+                      ))}
+                    </SelectBox>
+                    <SelectBox
+                      label="Cours"
+                      value={institutional.course}
+                      onChange={(value) => setInstitutional({ ...institutional, course: value })}
+                    >
+                      {COURSES.map((course) => (
+                        <option key={course} value={course}>
+                          {course}
+                        </option>
+                      ))}
+                    </SelectBox>
+                    <label>
+                      Titre du document
+                      <input
+                        value={institutional.documentTitle}
+                        onChange={(event) =>
+                          setInstitutional({ ...institutional, documentTitle: event.target.value })
+                        }
+                        placeholder={evalMode ? 'Évaluation' : activePage.topic}
+                      />
+                    </label>
+                  </>
+                ) : (
+                  <>
+                    <label>
+                      Logo ou nom
+                      <input value={custom.logo} onChange={(event) => setCustom({ ...custom, logo: event.target.value })} />
+                    </label>
+                    <label>
+                      Titre personnalisé
+                      <input
+                        value={custom.title}
+                        onChange={(event) => setCustom({ ...custom, title: event.target.value })}
+                        placeholder="Ex. Collège des Tilleuls"
+                      />
+                    </label>
+                    <label>
+                      Sous-titre
+                      <input
+                        value={custom.subtitle}
+                        onChange={(event) => setCustom({ ...custom, subtitle: event.target.value })}
+                        placeholder="Ex. Groupe 7H · Mathématiques"
+                      />
+                    </label>
+                  </>
+                )}
                 <label>
                   Pied de page
                   <input
-                    value={header.footer}
-                    onChange={(event) => setHeader({ ...header, footer: event.target.value })}
+                    value={custom.footer}
+                    onChange={(event) => setCustom({ ...custom, footer: event.target.value })}
                   />
                 </label>
               </div>
@@ -460,15 +564,45 @@ function GeneratorPage() {
                 Corrigé
               </button>
             </div>
-            <div className="sheet-stage">
+            <div className="sheet-preview-wrap no-print-nav">
+              <div className="sheet-stage">
+                <div className="a4-frame">
+                  <WorksheetSheet
+                    key={`${worksheets[pageIndex]?.exerciseType}-${seed}-${pageIndex}`}
+                    page={worksheets[pageIndex]!}
+                    pageNumber={pageIndex + 1}
+                    total={worksheets.length}
+                    {...sheetProps}
+                  />
+                </div>
+              </div>
+              {pages.length > 1 && (
+                <nav className="page-rail no-print" aria-label="Navigation entre les pages">
+                  <div className="page-rail-line" aria-hidden />
+                  {pages.map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      className={`page-rail-item ${pageIndex === index ? 'active' : ''}`}
+                      onClick={() => setPageIndex(index)}
+                      aria-label={`Page ${index + 1}`}
+                    >
+                      <span className="page-rail-dot" />
+                      <span className="page-rail-label">{index + 1}</span>
+                    </button>
+                  ))}
+                </nav>
+              )}
+            </div>
+            {/* Toutes les pages pour l’impression */}
+            <div className="sheet-stage print-only-sheets" aria-hidden>
               {worksheets.map((page, index) => (
                 <WorksheetSheet
-                  key={`${page.exerciseType}-${seed}-${index}`}
+                  key={`print-${page.exerciseType}-${seed}-${index}`}
                   page={page}
-                  mode={mode}
-                  header={header}
                   pageNumber={index + 1}
                   total={worksheets.length}
+                  {...sheetProps}
                 />
               ))}
             </div>

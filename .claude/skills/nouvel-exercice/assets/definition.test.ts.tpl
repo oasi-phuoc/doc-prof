@@ -1,38 +1,25 @@
-import { describe, expect, it } from "vitest";
-import { mulberry32 } from "@/lib/rng";
-import { makeTestContext } from "@/test/fixtures";
-import { generate, paramsSchema } from "./definition";
+import { describe, expect, it } from 'vitest'
+import { buildPage } from '@/math/generate'
+import type { PageConfig } from '@/math/types'
 
-const ctx = makeTestContext(); // petit lexique de test, niveau A1
-const params = paramsSchema.parse({ theme: "test", count: 5 });
+const base: PageConfig = {
+  domain: 'algèbre',
+  topic: '__topic__',
+  exerciseType: '__id__',
+  count: 6,
+  columns: 2,
+}
 
-describe("__LABEL__", () => {
-  it("donne le même résultat avec la même graine", () => {
-    expect(generate(params, mulberry32(42), ctx)).toEqual(
-      generate(params, mulberry32(42), ctx)
-    );
-  });
+describe('__id__', () => {
+  it('est déterministe pour une même graine', () => {
+    const a = buildPage(base, 42)
+    const b = buildPage(base, 42)
+    expect(a.items.map((i) => i.answer)).toEqual(b.items.map((i) => i.answer))
+  })
 
-  it("garde items et corrigé alignés, sans doublon, sur 1000 graines", () => {
-    for (let seed = 0; seed < 1000; seed++) {
-      const { items, answers, warnings } = generate(params, mulberry32(seed), ctx);
-      expect(answers).toHaveLength(items.length);
-      expect(new Set(items.map((i) => i.id)).size).toBe(items.length);
-      expect(warnings ?? []).toEqual([]);
-    }
-  });
-
-  it("signale une réserve trop petite au lieu de planter", () => {
-    const tooMany = { ...params, count: 12 };
-    const { warnings } = generate(tooMany, mulberry32(1), ctx);
-    expect(warnings?.length).toBeGreaterThan(0);
-  });
-
-  it("n'utilise que des mots du niveau visé ou en dessous", () => {
-    const { items } = generate(params, mulberry32(3), ctx);
-    for (const item of items) {
-      const level = ctx.lexicon.byId(item.id)?.level;
-      expect(level && ctx.isAtOrBelowLevel(level)).toBe(true);
-    }
-  });
-});
+  it('change avec la graine', () => {
+    const a = buildPage(base, 1)
+    const b = buildPage(base, 2)
+    expect(a.items.map((i) => i.answer)).not.toEqual(b.items.map((i) => i.answer))
+  })
+})

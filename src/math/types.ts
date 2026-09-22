@@ -54,10 +54,13 @@ export type FigureDims = {
   height?: number
   base?: number
   radius?: number
+  top?: number
+  bottom?: number
   a?: number
   b?: number
   c?: number
   unit?: string
+  triangleKind?: 'equilateral' | 'isosceles' | 'scalene' | 'right'
 }
 
 export type DivisionStep = {

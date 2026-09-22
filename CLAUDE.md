@@ -1,55 +1,61 @@
-# [Nom] — générateur de fiches de FLE imprimables
+# ClairFLE Maths — générateur de fiches de maths imprimables
 
-Site où des formateurs·trices de français langue étrangère composent des fiches de travail A4 imprimables (avec corrigé) pour des apprenant·e·s allophones, du pré-alpha au B2.
-Le plan complet est dans `docs/plan-implementation-fiches-fle-allophones.md` : le consulter avant toute décision d'architecture, de design ou de contenu.
+Site où des enseignant·e·s composent des fiches de travail A4 imprimables (avec corrigé) en mathématiques : algèbre et géométrie, tirage déterministe par graine, rendu type cahier scolaire (colonnes, fractions, figures cotées, division posée).
 
 ## Stack et commandes
 
-React + Vite + TypeScript, Tailwind CSS v4 (plugin `@tailwindcss/vite`, thème dans `src/styles/index.css`), Zustand, React Hook Form + Zod, Dexie (IndexedDB), Vitest, Playwright.
+React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS du thème). Génération pure dans `src/math/`.
 
-- `npm run dev` · `npm run build` · `npm run lint` · `npm run typecheck` · `npm test` · `npm run check:content`
-- Si un de ces scripts n'existe pas encore, le créer plutôt que le contourner.
+- `npm run dev` · `npm run build` · `npm run lint`
+- Si un script utile manque, le créer plutôt que le contourner.
+
+## Architecture
+
+| Zone | Rôle |
+|---|---|
+| `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`) |
+| `src/math/generate.ts` | `buildPage(config, seed)` → `WorksheetPage` (pur, via `rng`) |
+| `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
+| `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |
+| `src/components/math/MathItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) |
+| `src/components/math/PrintDocumentChrome.tsx` | En-tête institutionnel / personnalisé, pied, points d'éval |
+| `src/components/math/GeometryFigure.tsx`, `FractionView.tsx`, `CoordGrid.tsx` | Visuels scolaires |
+| `src/App.tsx` | Générateur UI : SelectBox Domaine → Thème → Type, pages, aperçu |
+| `src/App.css` | Feuille A4 fixe, layouts école, impression |
 
 ## Principes non négociables
 
-1. **La feuille A4 est le produit.** Aperçu et impression utilisent le même rendu (`PrintSheet`).
-2. **Déterministe d'abord.** Un générateur est une fonction pure de `(params, rng, ctx)`. Jamais de `Math.random()`, jamais de `Date.now()` dans un générateur.
-3. **Une fiche = une recette** (paramètres + graine + retouches), pas seulement un résultat.
-4. **Aucune donnée personnelle sur les apprenant·e·s.** Prénoms fictifs et variés dans tous les exemples.
-5. **Le niveau est vérifié.** Tout texte affiché à un·e apprenant·e passe par le contrôle de niveau (`src/lib/level-check.ts`).
-6. **La couleur ne porte jamais seule une information** ; toute fiche reste lisible en noir et blanc.
-7. **Aucun secret dans le code client.** Jamais de clé dans une variable `VITE_*` ; les appels d'IA passent par une fonction serverless.
-8. **Rien n'est copié d'une référence externe** (textes, logos, illustrations). On reprend l'esprit d'une inspiration, pas ses éléments.
+1. **La feuille A4 est le produit.** Aperçu (`.a4-frame`) et impression (`.print-only-sheets`) partagent le même `WorksheetSheet`. Taille fixe **210 × 297 mm** : ni agrandissement ni rétrécissement selon le nombre de questions (`overflow: hidden`).
+2. **Déterministe d'abord.** Un tirage est une fonction pure de `(PageConfig, seed)` via `createRng(seed)`. Jamais de `Math.random()` / `Date.now()` dans `generate.ts`.
+3. **Une fiche = une recette** (config de page + graine), pas seulement un résultat.
+4. **Rendu scolaire, pas carte app.** Pas de cadres autour des questions ; numéros simples ; réponses en soulignés (`.answer-line-field`), pas en boîtes.
+5. **Lisible en noir et blanc.** La couleur ne porte jamais seule une information.
+6. **Rien n'est copié d'une référence externe** (textes, logos, figures). On reprend l'esprit, pas les éléments.
+7. **Pied de page en bas de l'A4** (`margin-top: auto` sur `.doc-footer` dans un flex colonne).
 
 ## Conventions de code
 
 - TypeScript strict, alias `@/` pour `src/`.
-- Styles : classes Tailwind avec les **jetons du thème** (`text-ink`, `bg-band`, `bg-go-700`, `rounded-control`…). Aucune couleur hexadécimale en dur dans un composant.
-- Composants d'interface dans `src/components/ui/`, pictogrammes dans `src/components/pictograms/`, illustrations de vitrine dans `src/components/illustrations/`.
-- Un type d'exercice = un dossier dans `src/features/exercises/<kind>/`, enregistré dans `registry.ts`.
-- Toutes les chaînes affichées passent par le dictionnaire i18n ; français sans exception au départ.
-
-## Conventions de contenu
-
-- Français, vouvoiement, casse de phrase, écriture inclusive avec point médian (« apprenant·e·s »).
-- Un verbe d'action par consigne ; mêmes verbes d'une fiche à l'autre.
-- Données linguistiques dans `src/content/` avec licence et source dans `src/content/SOURCES.md`.
+- Styles fiche : classes dans `src/App.css` ; variables `:root` (`--ink`, `--purple`, …). Pas de hex « magiques » nouveaux hors thème déjà présent.
+- Nouveau type d'exercice = entrée dans `catalog.ts` + branche dans `generate.ts` + rendu dans `MathItemView` si le `layout` n'existe pas encore.
+- Français (Suisse romande pour les nombres en lettres : `french-numbers.ts`).
 
 ## Quel skill utiliser
 
 | Tâche | Skill |
 |---|---|
-| Ajouter un type d'exercice | `nouvel-exercice` |
-| Composer une unité (séquence de fiches) | `nouvelle-unite` |
-| Créer ou modifier un composant d'interface | `nouveau-composant-ui` |
-| Dessiner une illustration, un pictogramme, un motif | `illustration-svg` |
-| Créer ou modifier une section de la page d'accueil | `section-vitrine` |
-| Écrire ou relire les textes de l'interface | `texte-interface` |
-| Ajouter ou importer lexique, graphèmes, consignes, documents fictifs | `contenu-linguistique` |
-| Relire une fiche ou un jeu de contenus (niveau, consignes, neutralité) | `relecture-linguistique` |
-| Vérifier qu'une fiche s'imprime bien en A4 | `test-impression` |
+| Ajouter un type d'exercice maths | `nouvel-exercice` |
+| Composer une série multi-pages | `nouvelle-unite` |
+| Modifier l'UI du générateur / contrôles | `nouveau-composant-ui` |
+| En-tête institutionnel, pied, mode éval | `en-tete-document` |
+| Figure SVG cotée ou grille | `illustration-svg` |
+| Section de la page d'accueil | `section-vitrine` |
+| Textes de l'interface | `texte-interface` |
+| Enrichir catalogue thèmes / types | `contenu-catalogue` |
+| Relire énoncés et consignes | `relecture-enonce` |
+| Aperçu A4 fixe + impression | `test-impression` |
 | Préparer une pull request | `preparer-pull-request` |
 
 ## Terminé, c'est quand
 
-Lint, types, tests et `check:content` passent ; la fiche s'imprime correctement (skill `test-impression`) ; les textes ont été relus ; rien n'est copié d'une référence ; la description de la PR liste ce qui a changé et comment le vérifier.
+Lint et build passent ; l'aperçu reste A4 quelle que soit la densité ; l'impression utilise les mêmes feuilles ; rien n'est copié d'une référence ; la description de la PR liste ce qui a changé et comment le vérifier.

@@ -1,7 +1,7 @@
 import { exerciseTypeById, topicById } from './catalog'
 import { numberToFrench } from './french-numbers'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
-import type { ArithOp, DivisionStep, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
+import type { ArithOp, DivisionStep, FigureDims, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
@@ -102,6 +102,98 @@ function buildDivisionSteps(dividend: number, divisor: number): DivisionStep[] {
     current = rem
   }
   return steps
+}
+
+type TriangleKind = NonNullable<FigureDims['triangleKind']>
+
+function randomTrianglePerimeter(rng: Rng): {
+  kind: TriangleKind
+  a: number
+  b: number
+  c: number
+  dims: FigureDims
+} {
+  const kind = pick(rng, ['equilateral', 'isosceles', 'scalene', 'right'] as const)
+  if (kind === 'equilateral') {
+    const s = int(rng, 4, 14)
+    return { kind, a: s, b: s, c: s, dims: { triangleKind: kind, side: s, a: s, b: s, c: s, unit: 'cm' } }
+  }
+  if (kind === 'isosceles') {
+    const leg = int(rng, 5, 14)
+    const base = int(rng, 3, leg * 2 - 2)
+    return {
+      kind,
+      a: leg,
+      b: leg,
+      c: base,
+      dims: { triangleKind: kind, a: leg, b: leg, c: base, side: leg, base, unit: 'cm' },
+    }
+  }
+  if (kind === 'right') {
+    const a = int(rng, 3, 9)
+    const b = int(rng, 4, 12)
+    const c = Math.round(Math.sqrt(a * a + b * b) * 10) / 10
+    return {
+      kind,
+      a,
+      b,
+      c,
+      dims: { triangleKind: kind, a, b, c, unit: 'cm' },
+    }
+  }
+  // scalene — inequality triangle
+  let a = int(rng, 5, 12)
+  let b = int(rng, 6, 14)
+  let c = int(rng, Math.abs(a - b) + 2, a + b - 2)
+  while (a === b || b === c || a === c) {
+    a = int(rng, 5, 12)
+    b = int(rng, 6, 14)
+    c = int(rng, Math.abs(a - b) + 2, a + b - 2)
+  }
+  return { kind, a, b, c, dims: { triangleKind: kind, a, b, c, unit: 'cm' } }
+}
+
+function randomTriangleArea(rng: Rng): {
+  kind: TriangleKind
+  base: number
+  height: number
+  dims: FigureDims
+  calc: string
+  area: number
+} {
+  const kind = pick(rng, ['equilateral', 'isosceles', 'scalene', 'right'] as const)
+  if (kind === 'right') {
+    const a = int(rng, 3, 10)
+    const b = int(rng, 4, 12)
+    return {
+      kind,
+      base: b,
+      height: a,
+      dims: { triangleKind: kind, a, b, c: Math.round(Math.sqrt(a * a + b * b) * 10) / 10, base: b, height: a, unit: 'cm' },
+      calc: `(${a} × ${b}) / 2`,
+      area: (a * b) / 2,
+    }
+  }
+  const base = int(rng, 6, 18)
+  const height = int(rng, 4, 14)
+  const side = int(rng, 5, 16)
+  return {
+    kind,
+    base,
+    height,
+    dims: {
+      triangleKind: kind,
+      base,
+      height,
+      side: kind === 'equilateral' ? base : side,
+      a: kind === 'equilateral' ? base : kind === 'isosceles' ? side : undefined,
+      b: kind === 'equilateral' ? base : kind === 'isosceles' ? side : undefined,
+      c: base,
+      unit: 'cm',
+    },
+    calc: `(${base} × ${height}) / 2`,
+    area: (base * height) / 2,
+  }
 }
 
 function inlineOp(op: ArithOp, a: number, b: number, result: number, missing: MissingPos = 'result'): MathItem {
@@ -808,17 +900,49 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       }
     }
     case 'perimetres-triangle': {
-      const a = int(rng, 3, 12)
-      const b = int(rng, 3, 12)
-      const c = int(rng, 3, 12)
+      const t = randomTrianglePerimeter(rng)
+      const labels: Record<TriangleKind, string> = {
+        equilateral: 'Triangle équilatéral',
+        isosceles: 'Triangle isocèle',
+        scalene: 'Triangle scalène',
+        right: 'Triangle rectangle',
+      }
+      return {
+        layout: 'geo',
+        prompt: `${labels[t.kind]}. Calculez le périmètre.`,
+        figure: 'triangle',
+        dims: t.dims,
+        calcAnswer: `${t.a} + ${t.b} + ${t.c}`,
+        responseAnswer: `${Math.round((t.a + t.b + t.c) * 10) / 10} cm`,
+        answer: `${Math.round((t.a + t.b + t.c) * 10) / 10} cm`,
+      }
+    }
+    case 'perimetres-parallelogramme': {
+      const base = int(rng, 5, 16)
+      const side = int(rng, 3, 12)
       return {
         layout: 'geo',
         prompt: `Calculez le périmètre.`,
-        figure: 'triangle',
-        dims: { a, b, c, unit: 'cm' },
-        calcAnswer: `${a} + ${b} + ${c}`,
-        responseAnswer: `${a + b + c} cm`,
-        answer: `${a + b + c} cm`,
+        figure: 'parallelogram',
+        dims: { base, side, a: side, unit: 'cm' },
+        calcAnswer: `2 × (${base} + ${side})`,
+        responseAnswer: `${2 * (base + side)} cm`,
+        answer: `${2 * (base + side)} cm`,
+      }
+    }
+    case 'perimetres-trapeze': {
+      const top = int(rng, 4, 12)
+      const bottom = int(rng, top + 2, top + 10)
+      const left = int(rng, 3, 10)
+      const right = int(rng, 3, 10)
+      return {
+        layout: 'geo',
+        prompt: `Calculez le périmètre.`,
+        figure: 'trapezoid',
+        dims: { top, bottom, a: left, b: right, unit: 'cm' },
+        calcAnswer: `${top} + ${bottom} + ${left} + ${right}`,
+        responseAnswer: `${top + bottom + left + right} cm`,
+        answer: `${top + bottom + left + right} cm`,
       }
     }
     case 'perimetres-cercle': {
@@ -860,29 +984,50 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       }
     }
     case 'aires-triangle': {
-      const b = int(rng, 4, 16)
-      const h = int(rng, 2, 12)
+      const t = randomTriangleArea(rng)
+      const labels: Record<TriangleKind, string> = {
+        equilateral: 'Triangle équilatéral',
+        isosceles: 'Triangle isocèle',
+        scalene: 'Triangle scalène',
+        right: 'Triangle rectangle',
+      }
       return {
         layout: 'geo',
-        prompt: `Calculez l’aire.`,
+        prompt: `${labels[t.kind]}. Calculez l’aire.`,
         figure: 'triangle',
-        dims: { base: b, height: h, unit: 'cm' },
-        calcAnswer: `(${b} × ${h}) / 2`,
-        responseAnswer: `${(b * h) / 2} cm²`,
-        answer: `${(b * h) / 2} cm²`,
+        dims: t.dims,
+        calcAnswer: t.calc,
+        responseAnswer: `${t.area} cm²`,
+        answer: `${t.area} cm²`,
       }
     }
     case 'aires-parallelogramme': {
       const b = int(rng, 5, 16)
       const h = int(rng, 3, 10)
+      const side = int(rng, 3, 12)
       return {
         layout: 'geo',
         prompt: `Calculez l’aire.`,
         figure: 'parallelogram',
-        dims: { base: b, height: h, unit: 'cm' },
+        dims: { base: b, height: h, side, a: side, unit: 'cm' },
         calcAnswer: `${b} × ${h}`,
         responseAnswer: `${b * h} cm²`,
         answer: `${b * h} cm²`,
+      }
+    }
+    case 'aires-trapeze': {
+      const top = int(rng, 4, 12)
+      const bottom = int(rng, top + 2, top + 12)
+      const h = int(rng, 3, 12)
+      const area = ((top + bottom) * h) / 2
+      return {
+        layout: 'geo',
+        prompt: `Calculez l’aire.`,
+        figure: 'trapezoid',
+        dims: { top, bottom, height: h, unit: 'cm' },
+        calcAnswer: `(${top} + ${bottom}) × ${h} / 2`,
+        responseAnswer: `${area} cm²`,
+        answer: `${area} cm²`,
       }
     }
     case 'aires-disque': {

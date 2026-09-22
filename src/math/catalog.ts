@@ -141,13 +141,16 @@ export const exerciseTypes: ExerciseType[] = [
 
   t('perimetres-carre', 'perimetres', 'Carré', 'Périmètre d’un carré.', 'Calculez le périmètre.', 'geo', { figure: 'square', preferredColumns: 2 }),
   t('perimetres-rectangle', 'perimetres', 'Rectangle', 'Périmètre d’un rectangle.', 'Calculez le périmètre.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
-  t('perimetres-triangle', 'perimetres', 'Triangle', 'Périmètre d’un triangle.', 'Calculez le périmètre.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('perimetres-triangle', 'perimetres', 'Triangle', 'Périmètre d’un triangle (tous types).', 'Calculez le périmètre.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('perimetres-parallelogramme', 'perimetres', 'Parallélogramme', 'Périmètre d’un parallélogramme.', 'Calculez le périmètre.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('perimetres-trapeze', 'perimetres', 'Trapèze', 'Périmètre d’un trapèze.', 'Calculez le périmètre.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
   t('perimetres-cercle', 'perimetres', 'Cercle', 'Périmètre = 2πr. Prenez π = 3,14.', 'Calculez le périmètre. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
 
   t('aires-carre', 'aires', 'Carré', 'Aire d’un carré.', 'Calculez l’aire.', 'geo', { figure: 'square', preferredColumns: 2 }),
   t('aires-rectangle', 'aires', 'Rectangle', 'Aire d’un rectangle.', 'Calculez l’aire.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
-  t('aires-triangle', 'aires', 'Triangle', 'Aire = (b × h) / 2.', 'Calculez l’aire.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('aires-triangle', 'aires', 'Triangle', 'Aire = (b × h) / 2 (tous types).', 'Calculez l’aire.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('aires-parallelogramme', 'aires', 'Parallélogramme', 'Aire = b × h.', 'Calculez l’aire.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('aires-trapeze', 'aires', 'Trapèze', 'Aire = (B + b) × h / 2.', 'Calculez l’aire.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
   t('aires-disque', 'aires', 'Disque', 'Aire = πr². Prenez π = 3,14.', 'Calculez l’aire. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
 
   t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube', preferredColumns: 2 }),
