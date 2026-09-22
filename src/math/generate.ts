@@ -1,3 +1,4 @@
+import { tryGenerateAlgebraBatch } from './algebra'
 import { exerciseTypeById, topicById } from './catalog'
 import { numberToFrench } from './french-numbers'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
@@ -1159,6 +1160,17 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   const rng = createRng(seed)
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
+  const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng)
+  if (algebra) {
+    return {
+      ...config,
+      columns: algebra.preferredColumns ?? type?.preferredColumns ?? 1,
+      title: type?.label ?? topic?.label ?? 'Exercices',
+      instruction: algebra.instruction ?? type?.instruction ?? 'Calculez.',
+      items: algebra.items,
+      givens: algebra.givens,
+    }
+  }
   return {
     ...config,
     title: type?.label ?? topic?.label ?? 'Exercices',

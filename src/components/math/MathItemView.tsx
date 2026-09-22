@@ -166,9 +166,222 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function formatOperand(n: number | undefined): string {
+  if (n == null) return ''
+  return String(n).replace('.', ',')
+}
+
+function parseBinaryEquation(prompt: string): {
+  a: string
+  op: string
+  b: string
+  trailing: 'blank' | 'value' | 'none'
+  trailingValue?: string
+} | null {
+  const trimmed = prompt.trim()
+  const withBlank = /^(.+?)\s*([+\-−×÷])\s*(.+?)\s*=\s*□?\s*$/u.exec(trimmed)
+  if (!withBlank) return null
+  const a = withBlank[1]!.trim()
+  const op = withBlank[2]!.replace('-', '−')
+  const b = withBlank[3]!.trim()
+  if (!a || !b) return null
+  // Évite les phrases (« Dans 12, le chiffre… »)
+  if (/[a-zA-Zàâäéèêëïîôùûüç]/u.test(a) || /[a-zA-Zàâäéèêëïîôùûüç]/u.test(b)) return null
+  const endsBlank = /=\s*□?\s*$/u.test(trimmed) && !/=\s*-?\d/.test(trimmed)
+  return { a, op, b, trailing: endsBlank || trimmed.endsWith('=') ? 'blank' : 'none' }
+}
+
+function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const missing = item.missing ?? 'result'
+  const aText = missing === 'a' && !show ? null : formatOperand(item.a)
+  const bText = missing === 'b' && !show ? null : formatOperand(item.b)
+  const resultShown = missing === 'result' ? (show ? item.answer : null) : formatOperand(item.result) || item.answer
+
+  return (
+    <div className="eq-row" aria-label="Calcul">
+      <span className="eq-cell eq-num">
+        {aText == null ? (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? formatOperand(item.a) : '\u00a0'}</span>
+        ) : (
+          aText
+        )}
+      </span>
+      <span className="eq-cell eq-op">{item.op}</span>
+      <span className="eq-cell eq-num">
+        {bText == null ? (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? formatOperand(item.b) : '\u00a0'}</span>
+        ) : (
+          bText
+        )}
+      </span>
+      <span className="eq-cell eq-eq">=</span>
+      <span className="eq-cell eq-ans">
+        {resultShown == null ? (
+          <span className="answer-line-field">{'\u00a0'}</span>
+        ) : missing === 'result' ? (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{resultShown}</span>
+        ) : (
+          <span className="filled-answer">{resultShown}</span>
+        )}
+      </span>
+    </div>
+  )
+}
+
+function ParsedEquationRow({
+  a,
+  op,
+  b,
+  answer,
+  mode,
+}: {
+  a: string
+  op: string
+  b: string
+  answer: string
+  mode: PreviewMode
+}) {
+  const show = mode === 'answers'
+  const blankA = a === '□'
+  const blankB = b === '□'
+  return (
+    <div className="eq-row" aria-label="Calcul">
+      <span className="eq-cell eq-num">
+        {blankA ? (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+        ) : (
+          a
+        )}
+      </span>
+      <span className="eq-cell eq-op">{op}</span>
+      <span className="eq-cell eq-num">
+        {blankB ? (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+        ) : (
+          b
+        )}
+      </span>
+      <span className="eq-cell eq-eq">=</span>
+      <span className="eq-cell eq-ans">
+        {!blankA && !blankB ? (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+        ) : show ? (
+          <span className="filled-answer">{answer}</span>
+        ) : (
+          <span className="answer-line-field">{'\u00a0'}</span>
+        )}
+      </span>
+    </div>
+  )
+}
+
+/** Découpe une expression algébrique en atomes (chiffres, lettres, opérateurs…). */
+export function tokenizeAlgebra(expression: string): string[] {
+  const tokens: string[] = []
+  const re =
+    /√\d+|√|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=()]/gu
+  let last = 0
+  for (const match of expression.matchAll(re)) {
+    const start = match.index ?? 0
+    if (start > last) {
+      const gap = expression.slice(last, start).trim()
+      if (gap) tokens.push(gap)
+    }
+    tokens.push(match[0]!.replace(/-/g, '−'))
+    last = start + match[0]!.length
+  }
+  const tail = expression.slice(last).trim()
+  if (tail) tokens.push(tail)
+  return tokens
+}
+
+function isAlgebraLetter(token: string): boolean {
+  return /^[A-Za-z][²³⁴]?$/.test(token)
+}
+
+function isAlgebraOp(token: string): boolean {
+  return /^[+\-−×÷·=]$/.test(token)
+}
+
+function AlgebraToken({ token }: { token: string }) {
+  if (token.startsWith('√') && token.length > 1) {
+    return (
+      <span className="alg-token alg-sqrt">
+        √<span className="alg-sqrt-arg">{token.slice(1)}</span>
+      </span>
+    )
+  }
+  if (token === '√') return <span className="alg-token alg-sqrt">√</span>
+  if (isAlgebraLetter(token)) {
+    const letter = token[0]!
+    const sup = token.slice(1)
+    return (
+      <span className="alg-token alg-letter">
+        {letter}
+        {sup ? <sup>{sup}</sup> : null}
+      </span>
+    )
+  }
+  if (isAlgebraOp(token)) return <span className={`alg-token alg-op${token === '=' ? ' alg-eq' : ''}`}>{token}</span>
+  if (/^[()]$/.test(token)) return <span className="alg-token alg-paren">{token}</span>
+  return <span className="alg-token alg-num">{token}</span>
+}
+
+export function AlgebraRow({
+  item,
+  mode,
+  padLeft = 0,
+}: {
+  item: MathItem
+  mode: PreviewMode
+  padLeft?: number
+}) {
+  const show = mode === 'answers'
+  const prompt = item.prompt ?? ''
+  const hasEquals = prompt.includes('=')
+  const tokens = tokenizeAlgebra(prompt)
+  const answerLabel = hasEquals ? `x = ${item.answer}` : item.answer
+
+  return (
+    <div
+      className={`algebra-row${hasEquals ? ' has-inline-eq' : ''}`}
+      aria-label="Expression algébrique"
+    >
+      <div
+        className="algebra-expr"
+        style={{ gridTemplateColumns: `repeat(${padLeft + tokens.length}, minmax(1.1ch, max-content))` }}
+      >
+        {Array.from({ length: padLeft }, (_, i) => (
+          <span className="alg-token alg-pad" key={`pad-${i}`} />
+        ))}
+        {tokens.map((token, i) => (
+          <AlgebraToken key={`${token}-${i}`} token={token} />
+        ))}
+      </div>
+      {!hasEquals && <span className="alg-token alg-eq">=</span>}
+      <span className={`answer-line-field algebra-answer ${show ? 'filled' : ''}`}>
+        {show ? answerLabel : '\u00a0'}
+      </span>
+    </div>
+  )
+}
+
 function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const prompt = item.prompt ?? ''
   const show = mode === 'answers'
+
+  if (item.op && item.a != null && item.b != null) {
+    return <EquationRow item={item} mode={mode} />
+  }
+
+  const parsed = parseBinaryEquation(prompt)
+  if (parsed) {
+    return (
+      <ParsedEquationRow a={parsed.a} op={parsed.op} b={parsed.b} answer={item.answer} mode={mode} />
+    )
+  }
+
   if (prompt.includes('□') || /\d+\/\d+/.test(prompt)) {
     return (
       <div className="inline-prompt equation">
@@ -176,7 +389,9 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
         {!prompt.includes('□') && (
           <>
             <span className="eq-space" />
-            <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? <FractionView value={item.answer} /> : '\u00a0'}</span>
+            <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+              {show ? <FractionView value={item.answer} /> : '\u00a0'}
+            </span>
           </>
         )}
       </div>
@@ -293,10 +508,13 @@ export function MathItemView({
   item,
   mode,
   index,
+  algebraPadLeft = 0,
 }: {
   item: MathItem
   mode: PreviewMode
   index: number
+  /** Cases vides à gauche pour aligner verticalement les atomes entre questions. */
+  algebraPadLeft?: number
 }) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
   return (
@@ -309,6 +527,7 @@ export function MathItemView({
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} />}
+        {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
         {isProblem && <ProblemBlock item={item} mode={mode} />}
         {!isProblem &&
           (item.layout === 'inline' ||

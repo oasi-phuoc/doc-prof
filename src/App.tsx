@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from 'react'
 import './App.css'
-import { MathItemView } from '@/components/math/MathItemView'
+import { MathItemView, tokenizeAlgebra } from '@/components/math/MathItemView'
 import {
   CLASS_LEVELS,
   CLASS_NUMBERS,
@@ -89,16 +89,40 @@ function WorksheetSheet({
               <span className="instruction-points"> /{documentTotalPoints} points</span>
             ) : null}
           </p>
+          {page.givens && page.givens.length > 0 ? (
+            <p className="sheet-givens">
+              {page.givens.map((given, index) => (
+                <span key={given.letter}>
+                  {index > 0 ? (index === page.givens!.length - 1 ? ' et ' : ', ') : null}
+                  <span className="given-letter">{given.letter}</span>
+                  {' = '}
+                  <span className="given-value">{String(given.value).replace('.', ',')}</span>
+                </span>
+              ))}
+            </p>
+          ) : null}
         </div>
-        <div className="exercise-grid">
-          {page.items.map((item, index) => (
-            <MathItemView
-              key={`${page.exerciseType}-${index}-${item.answer}`}
-              item={item}
-              mode={mode}
-              index={index}
-            />
-          ))}
+        <div className={`exercise-grid${page.items.every((item) => item.layout === 'algebra') ? ' algebra-grid' : ''}`}>
+          {(() => {
+            const algebraItems = page.items.filter((item) => item.layout === 'algebra')
+            const maxTokens =
+              algebraItems.length > 0
+                ? Math.max(...algebraItems.map((item) => tokenizeAlgebra(item.prompt ?? '').length))
+                : 0
+            return page.items.map((item, index) => {
+              const padLeft =
+                item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
+              return (
+                <MathItemView
+                  key={`${page.exerciseType}-${index}-${item.answer}`}
+                  item={item}
+                  mode={mode}
+                  index={index}
+                  algebraPadLeft={padLeft}
+                />
+              )
+            })
+          })()}
         </div>
       </SheetBody>
       <DocumentFooter text={custom.footer} pageNumber={pageNumber} total={total} />
@@ -461,21 +485,8 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              <div className="question-control-block">
-                <SelectBox
-                  label="QUESTIONS"
-                  value={String(activePage.count)}
-                  onChange={(next) => updatePage({ count: Number(next) })}
-                >
-                  {[6, 8, 10, 12, 16].map((n) => (
-                    <option value={String(n)} key={n}>
-                      {n} questions
-                    </option>
-                  ))}
-                  {![6, 8, 10, 12, 16].includes(activePage.count) && (
-                    <option value={String(activePage.count)}>{activePage.count} questions</option>
-                  )}
-                </SelectBox>
+              <label className="select-shell">
+                <span>QUESTIONS</span>
                 <input
                   className="pill-input"
                   aria-label="Nombre de questions"
@@ -487,7 +498,7 @@ function GeneratorPage() {
                     updatePage({ count: Math.max(1, Math.min(30, Number(event.target.value) || 1)) })
                   }
                 />
-              </div>
+              </label>
               <SelectBox
                 label="Colonnes"
                 value={String(activePage.columns)}
@@ -498,134 +509,139 @@ function GeneratorPage() {
                 <option value="3">3 colonnes</option>
               </SelectBox>
 
-              <div className="custom-header-form">
-                <b>En-tête</b>
-                <div className="mode-toggle">
-                  <button
-                    type="button"
-                    className={headerStyle === 'institutionnel' ? 'active' : ''}
-                    onClick={() => setHeaderStyle('institutionnel')}
-                  >
-                    Institutionnel
-                  </button>
-                  <button
-                    type="button"
-                    className={headerStyle === 'personnalise' ? 'active' : ''}
-                    onClick={() => setHeaderStyle('personnalise')}
-                  >
-                    Personnalisé
-                  </button>
+              <details className="header-editor">
+                <summary className="header-editor-summary">
+                  <span>En-tête et pied de page</span>
+                  <span className="header-editor-hint">Modifier</span>
+                </summary>
+                <div className="custom-header-form">
+                  <div className="mode-toggle">
+                    <button
+                      type="button"
+                      className={headerStyle === 'institutionnel' ? 'active' : ''}
+                      onClick={() => setHeaderStyle('institutionnel')}
+                    >
+                      Institutionnel
+                    </button>
+                    <button
+                      type="button"
+                      className={headerStyle === 'personnalise' ? 'active' : ''}
+                      onClick={() => setHeaderStyle('personnalise')}
+                    >
+                      Personnalisé
+                    </button>
+                  </div>
+                  {headerStyle === 'institutionnel' ? (
+                    <>
+                      <label>
+                        Établissement
+                        <input className="pill-input" value={institutional.schoolName}
+                          onChange={(event) => setInstitutional({ ...institutional, schoolName: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Année
+                        <input className="pill-input" value={institutional.schoolYear}
+                          onChange={(event) => setInstitutional({ ...institutional, schoolYear: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Mention
+                        <input className="pill-input" value={institutional.schoolTagline}
+                          onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Organisation (ligne 1)
+                        <input className="pill-input" value={institutional.orgLine1}
+                          onChange={(event) => setInstitutional({ ...institutional, orgLine1: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Organisation (ligne 2)
+                        <input className="pill-input" value={institutional.orgLine2}
+                          onChange={(event) => setInstitutional({ ...institutional, orgLine2: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Organisation (ligne 3)
+                        <input className="pill-input" value={institutional.orgLine3}
+                          onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
+                        />
+                      </label>
+                      <SelectBox
+                        label="Classe"
+                        value={institutional.classLevel}
+                        onChange={(value) => setInstitutional({ ...institutional, classLevel: value })}
+                      >
+                        {CLASS_LEVELS.map((level) => (
+                          <option key={level} value={level}>
+                            {level}
+                          </option>
+                        ))}
+                      </SelectBox>
+                      <SelectBox
+                        label="N° de classe"
+                        value={institutional.classNumber}
+                        onChange={(value) => setInstitutional({ ...institutional, classNumber: value })}
+                      >
+                        {CLASS_NUMBERS.map((n) => (
+                          <option key={n} value={n}>
+                            {n}
+                          </option>
+                        ))}
+                      </SelectBox>
+                      <SelectBox
+                        label="Cours"
+                        value={institutional.course}
+                        onChange={(value) => setInstitutional({ ...institutional, course: value })}
+                      >
+                        {COURSES.map((course) => (
+                          <option key={course} value={course}>
+                            {course}
+                          </option>
+                        ))}
+                      </SelectBox>
+                      <label>
+                        Titre du document
+                        <input className="pill-input" value={institutional.documentTitle}
+                          onChange={(event) =>
+                            setInstitutional({ ...institutional, documentTitle: event.target.value })
+                          }
+                          placeholder={evalMode ? 'Évaluation' : activePage.topic}
+                        />
+                      </label>
+                    </>
+                  ) : (
+                    <>
+                      <label>
+                        Logo ou nom
+                        <input className="pill-input" value={custom.logo} onChange={(event) => setCustom({ ...custom, logo: event.target.value })} />
+                      </label>
+                      <label>
+                        Titre personnalisé
+                        <input className="pill-input" value={custom.title}
+                          onChange={(event) => setCustom({ ...custom, title: event.target.value })}
+                          placeholder="Ex. Collège des Tilleuls"
+                        />
+                      </label>
+                      <label>
+                        Sous-titre
+                        <input className="pill-input" value={custom.subtitle}
+                          onChange={(event) => setCustom({ ...custom, subtitle: event.target.value })}
+                          placeholder="Ex. Groupe 7H · Mathématiques"
+                        />
+                      </label>
+                    </>
+                  )}
+                  <label>
+                    Pied de page
+                    <input className="pill-input" value={custom.footer}
+                      onChange={(event) => setCustom({ ...custom, footer: event.target.value })}
+                    />
+                  </label>
                 </div>
-                {headerStyle === 'institutionnel' ? (
-                  <>
-                    <label>
-                      Établissement
-                      <input className="pill-input" value={institutional.schoolName}
-                        onChange={(event) => setInstitutional({ ...institutional, schoolName: event.target.value })}
-                      />
-                    </label>
-                    <label>
-                      Année
-                      <input className="pill-input" value={institutional.schoolYear}
-                        onChange={(event) => setInstitutional({ ...institutional, schoolYear: event.target.value })}
-                      />
-                    </label>
-                    <label>
-                      Mention
-                      <input className="pill-input" value={institutional.schoolTagline}
-                        onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
-                      />
-                    </label>
-                    <label>
-                      Organisation (ligne 1)
-                      <input className="pill-input" value={institutional.orgLine1}
-                        onChange={(event) => setInstitutional({ ...institutional, orgLine1: event.target.value })}
-                      />
-                    </label>
-                    <label>
-                      Organisation (ligne 2)
-                      <input className="pill-input" value={institutional.orgLine2}
-                        onChange={(event) => setInstitutional({ ...institutional, orgLine2: event.target.value })}
-                      />
-                    </label>
-                    <label>
-                      Organisation (ligne 3)
-                      <input className="pill-input" value={institutional.orgLine3}
-                        onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
-                      />
-                    </label>
-                    <SelectBox
-                      label="Classe"
-                      value={institutional.classLevel}
-                      onChange={(value) => setInstitutional({ ...institutional, classLevel: value })}
-                    >
-                      {CLASS_LEVELS.map((level) => (
-                        <option key={level} value={level}>
-                          {level}
-                        </option>
-                      ))}
-                    </SelectBox>
-                    <SelectBox
-                      label="N° de classe"
-                      value={institutional.classNumber}
-                      onChange={(value) => setInstitutional({ ...institutional, classNumber: value })}
-                    >
-                      {CLASS_NUMBERS.map((n) => (
-                        <option key={n} value={n}>
-                          {n}
-                        </option>
-                      ))}
-                    </SelectBox>
-                    <SelectBox
-                      label="Cours"
-                      value={institutional.course}
-                      onChange={(value) => setInstitutional({ ...institutional, course: value })}
-                    >
-                      {COURSES.map((course) => (
-                        <option key={course} value={course}>
-                          {course}
-                        </option>
-                      ))}
-                    </SelectBox>
-                    <label>
-                      Titre du document
-                      <input className="pill-input" value={institutional.documentTitle}
-                        onChange={(event) =>
-                          setInstitutional({ ...institutional, documentTitle: event.target.value })
-                        }
-                        placeholder={evalMode ? 'Évaluation' : activePage.topic}
-                      />
-                    </label>
-                  </>
-                ) : (
-                  <>
-                    <label>
-                      Logo ou nom
-                      <input className="pill-input" value={custom.logo} onChange={(event) => setCustom({ ...custom, logo: event.target.value })} />
-                    </label>
-                    <label>
-                      Titre personnalisé
-                      <input className="pill-input" value={custom.title}
-                        onChange={(event) => setCustom({ ...custom, title: event.target.value })}
-                        placeholder="Ex. Collège des Tilleuls"
-                      />
-                    </label>
-                    <label>
-                      Sous-titre
-                      <input className="pill-input" value={custom.subtitle}
-                        onChange={(event) => setCustom({ ...custom, subtitle: event.target.value })}
-                        placeholder="Ex. Groupe 7H · Mathématiques"
-                      />
-                    </label>
-                  </>
-                )}
-                <label>
-                  Pied de page
-                  <input className="pill-input" value={custom.footer}
-                    onChange={(event) => setCustom({ ...custom, footer: event.target.value })}
-                  />
-                </label>
-              </div>
+              </details>
               <p className="type-hint muted">
                 {exerciseTypeById[activePage.exerciseType]?.description ??
                   'Choisissez un thème, puis un type d’exercice.'}
@@ -642,7 +658,14 @@ function GeneratorPage() {
                 <h2>Votre activité est prête.</h2>
               </div>
               <div className="result-head-actions no-print">
-                <span className="status">Nouvelle version</span>
+                <div className="preview-tabs" role="tablist" aria-label="Mode d’aperçu">
+                  <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
+                    Fiche élève
+                  </button>
+                  <button type="button" className={mode === 'answers' ? 'active' : ''} onClick={() => setMode('answers')}>
+                    Corrigé
+                  </button>
+                </div>
                 <button className="print-chip" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
                   <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden>
                     <path
@@ -653,14 +676,6 @@ function GeneratorPage() {
                   Imprimer
                 </button>
               </div>
-            </div>
-            <div className="preview-tabs no-print">
-              <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
-                Fiche élève
-              </button>
-              <button type="button" className={mode === 'answers' ? 'active' : ''} onClick={() => setMode('answers')}>
-                Corrigé
-              </button>
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-stage">

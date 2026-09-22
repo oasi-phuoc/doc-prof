@@ -26,6 +26,9 @@ export type Layout =
   | 'place-value'
   | 'geo'
   | 'coord'
+  | 'algebra'
+
+export type AlgebraGiven = { letter: string; value: number }
 
 export type ArithOp = '+' | '−' | '×' | '÷'
 export type MissingPos = 'a' | 'b' | 'result'
@@ -119,4 +122,6 @@ export type WorksheetPage = PageConfig & {
   title: string
   instruction: string
   items: MathItem[]
+  /** Valeurs partagées (ex. t = 3) pour les évaluations d'expressions. */
+  givens?: AlgebraGiven[]
 }
