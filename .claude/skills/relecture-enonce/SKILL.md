@@ -12,13 +12,14 @@ description: >-
 ## Checklist
 
 - [ ] **Consigne** (`instruction`) : un verbe d’action, vouvoiement (« Calculez », « Posez », « Comparez »).
-- [ ] **Problèmes** (`layout: text`) : phrases courtes ; nombres cohérents avec `answer`.
+- [ ] **Problèmes** (`layout: text`) : phrases courtes ; nombres cohérents avec `answer` ; **≥100 modèles distincts par thème×niveau** dans `problem-banks.ts` (aucun prompt dupliqué entre cellules).
 - [ ] **Prénoms** fictifs et variés ; pas de données personnelles réelles.
 - [ ] **Unités** explicites (cm, m²…) alignées sur la figure / la réponse.
 - [ ] **Figure** : cotes affichées = dims utilisées dans le calcul.
 - [ ] **Corrigé** : même emplacement que la réponse élève ; pas de spoiler en mode `student`.
 - [ ] **N&B** : aucune info critique seulement en couleur.
 - [ ] **Densité** : énoncé trop long pour une case → réduire ou passer `columns: 1`.
+- [ ] **Alignement** : texte justifié (`text-align: justify`) ; centrer seulement si demandé.
 
 ## À corriger immédiatement
 

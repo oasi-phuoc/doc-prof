@@ -7,6 +7,7 @@ export const topics: Topic[] = [
   { id: 'estimation', label: 'Estimation et arrondi', domain: 'algèbre' },
   { id: 'multiplication', label: 'Multiplications', domain: 'algèbre' },
   { id: 'division', label: 'Divisions', domain: 'algèbre' },
+  { id: 'problemes', label: 'Problèmes', domain: 'algèbre' },
   { id: 'multiples', label: 'Multiples, PGCD et PPCM', domain: 'algèbre' },
   { id: 'fractions', label: 'Fractions', domain: 'algèbre' },
   { id: 'decimaux', label: 'Nombres décimaux', domain: 'algèbre' },
@@ -22,11 +23,19 @@ export const topics: Topic[] = [
   { id: 'volumes', label: 'Volumes', domain: 'géométrie' },
   { id: 'reperage', label: 'Repérage dans le plan', domain: 'géométrie' },
   { id: 'transformations', label: 'Transformations géométriques', domain: 'géométrie' },
+  { id: 'alphabet', label: 'L’alphabet', domain: 'lecture' },
+  { id: 'voyelle-a', label: 'Voyelle A · son /a/', domain: 'lecture' },
+  { id: 'voyelle-o', label: 'Voyelle O · son /o/', domain: 'lecture' },
+  { id: 'voyelle-i', label: 'Voyelle I · son /i/', domain: 'lecture' },
+  { id: 'voyelle-u', label: 'Voyelle U · son /y/', domain: 'lecture' },
+  { id: 'voyelle-e', label: 'Voyelle E · son /ə/', domain: 'lecture' },
+  { id: 'voyelle-y', label: 'Voyelle Y · son /i/', domain: 'lecture' },
 ]
 
 export const topicById = Object.fromEntries(topics.map((topic) => [topic.id, topic])) as Record<string, Topic>
 export const algebraTopics = topics.filter((topic) => topic.domain === 'algèbre')
 export const geometryTopics = topics.filter((topic) => topic.domain === 'géométrie')
+export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
 
 const t = (
   id: string,
@@ -43,10 +52,10 @@ export const exerciseTypes: ExerciseType[] = [
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t('nombres-position', 'nombres', 'Valeur positionnelle', 'Retrouver le chiffre des unités, dizaines, centaines…', 'Indiquez le chiffre demandé.', 'texte', { preferredColumns: 1 }),
   t('nombres-decompose', 'nombres', 'Décomposer', 'Écrire un nombre en sommes de puissances de 10 (milliers… unités).', 'Décomposez chaque nombre.', 'ligne', { preferredColumns: 1 }),
-  t('nombres-comparer', 'nombres', 'Comparer', 'Choisir le symbole correct : <, = ou >.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
-  t('nombres-encadrer-10', 'nombres', 'Encadrer (pas de 10)', 'Encadrer un nombre entre deux dizaines consécutives.', 'Complétez l’encadrement par pas de 10.', 'ligne', { preferredColumns: 1 }),
-  t('nombres-encadrer-100', 'nombres', 'Encadrer (pas de 100)', 'Encadrer un nombre entre deux centaines consécutives.', 'Complétez l’encadrement par pas de 100.', 'ligne', { preferredColumns: 1 }),
-  t('nombres-pair', 'nombres', 'Pairs et impairs', 'Reconnaître un nombre pair ou impair.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
+  t('nombres-comparer', 'nombres', 'Comparer', 'Choisir le symbole correct : <, = ou >.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
+  t('nombres-encadrer-10', 'nombres', 'Encadrer (pas de 10)', 'Encadrer un nombre entre deux dizaines consécutives.', 'Complétez l’encadrement par pas de 10.', 'ligne', { preferredColumns: 2 }),
+  t('nombres-encadrer-100', 'nombres', 'Encadrer (pas de 100)', 'Encadrer un nombre entre deux centaines consécutives.', 'Complétez l’encadrement par pas de 100.', 'ligne', { preferredColumns: 2 }),
+  t('nombres-pair', 'nombres', 'Pairs et impairs', 'Reconnaître un nombre pair ou impair.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
   t('nombres-ranger', 'nombres', 'Ranger', 'Ranger cinq nombres dans l’ordre croissant ou décroissant.', 'Rangez les nombres dans l’ordre demandé.', 'suite', { preferredColumns: 1 }),
   t('nombres-suite', 'nombres', 'Suites à trous', 'Compléter une suite numérique.', 'Complétez les termes manquants.', 'suite'),
 
@@ -54,15 +63,13 @@ export const exerciseTypes: ExerciseType[] = [
   t('addition-trou', 'addition', 'En ligne avec des trous', 'Compléter 46 + ? = 83 ou ? + 37 = 83.', 'Complétez le nombre manquant.', 'trou'),
   t('addition-colonne', 'addition', 'En colonnes (nombres posés)', 'Les nombres sont déjà alignés dans le tableau.', 'Effectuez les additions en colonnes. Écrivez le résultat et les retenues.', 'colonne', { preferredColumns: 2 }),
   t('addition-colonne-poser', 'addition', 'En colonnes (à poser)', 'Poser soi-même les nombres dans le tableau.', 'Posez les nombres dans le tableau, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
-  t('addition-comparer', 'addition', 'Comparer des sommes', 'Comparer 12 + 8 et 15 + 4.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
-  t('addition-problemes', 'addition', 'Problèmes', 'Petits problèmes d’addition en français simple.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('addition-comparer', 'addition', 'Comparer des sommes', 'Comparer 12 + 8 et 15 + 4.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
 
   t('soustraction-ligne', 'soustraction', 'En ligne', 'Calculer 83 − 46 = ?', 'Calculez chaque soustraction.', 'ligne'),
   t('soustraction-trou', 'soustraction', 'En ligne avec des trous', 'Compléter 83 − ? = 46 ou ? − 37 = 46.', 'Complétez le nombre manquant.', 'trou'),
   t('soustraction-colonne', 'soustraction', 'En colonnes (nombres posés)', 'Les nombres sont déjà alignés dans le tableau.', 'Effectuez les soustractions en colonnes. Écrivez le résultat et les emprunts.', 'colonne', { preferredColumns: 2 }),
   t('soustraction-colonne-poser', 'soustraction', 'En colonnes (à poser)', 'Poser soi-même les nombres dans le tableau.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
-  t('soustraction-comparer', 'soustraction', 'Comparer des différences', 'Comparer 90 − 12 et 88 − 8.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
-  t('soustraction-problemes', 'soustraction', 'Problèmes', 'Petits problèmes de soustraction.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('soustraction-comparer', 'soustraction', 'Comparer des différences', 'Comparer 90 − 12 et 88 − 8.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
 
   t('estimation-dizaine', 'estimation', 'Arrondir à la dizaine', 'Arrondir 47 à la dizaine la plus proche.', 'Arrondissez à la dizaine la plus proche.', 'ligne'),
   t('estimation-centaine', 'estimation', 'Arrondir à la centaine', 'Arrondir 382 à la centaine la plus proche.', 'Arrondissez à la centaine la plus proche.', 'ligne'),
@@ -74,14 +81,18 @@ export const exerciseTypes: ExerciseType[] = [
   t('multiplication-colonne', 'multiplication', 'En colonnes × 1 chiffre', 'Nombres déjà posés, multiplicateur à 1 chiffre.', 'Effectuez les multiplications en colonnes.', 'colonne', { preferredColumns: 2 }),
   t('multiplication-colonne-poser', 'multiplication', 'En colonnes à poser × 1 chiffre', 'Poser le calcul dans le tableau.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
   t('multiplication-2chiffres', 'multiplication', 'En colonnes × 2 chiffres', 'Produits partiels (unités puis dizaines), puis addition.', 'Effectuez les multiplications en colonnes. Écrivez les deux produits partiels, puis additionnez.', 'colonne', { preferredColumns: 1 }),
-  t('multiplication-problemes', 'multiplication', 'Problèmes', 'Problèmes de multiplication.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
 
   t('division-ligne', 'division', 'En ligne', 'Calculer 56 ÷ 7 = ?', 'Calculez chaque quotient.', 'ligne'),
   t('division-trou', 'division', 'En ligne avec des trous', 'Compléter 56 ÷ ? = 8.', 'Complétez le nombre manquant.', 'trou'),
-  t('division-colonne', 'division', 'En colonnes (nombres posés)', 'Division posée, dividend et diviseur écrits.', 'Effectuez les divisions en colonnes.', 'colonne', { preferredColumns: 1 }),
-  t('division-colonne-poser', 'division', 'En colonnes (à poser)', 'Poser dividend et diviseur, puis diviser.', 'Posez la division, puis calculez le quotient et le reste.', 'colonne-vide', { preferredColumns: 1 }),
-  t('division-reste', 'division', 'Quotient et reste', 'Divisions non exactes.', 'Calculez le quotient et le reste.', 'ligne'),
-  t('division-problemes', 'division', 'Problèmes', 'Problèmes de division.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('division-colonne', 'division', 'En colonnes (nombres posés)', 'Division posée en grille (dividende, étapes, quotient, reste).', 'Effectuez les divisions en colonnes. Écrivez les étapes, le quotient et le reste.', 'colonne', { preferredColumns: 1 }),
+  t('division-colonne-poser', 'division', 'En colonnes (à poser)', 'Poser dividende et diviseur dans la grille, puis diviser.', 'Posez la division, puis calculez le quotient et le reste.', 'colonne-vide', { preferredColumns: 1 }),
+
+  t('problemes-addition', 'problemes', 'Addition', 'Petits problèmes d’addition.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('problemes-soustraction', 'problemes', 'Soustraction', 'Petits problèmes de soustraction.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('problemes-add-sub', 'problemes', 'Addition et soustraction', 'Problèmes mêlant additions et soustractions.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('problemes-multiplication', 'problemes', 'Multiplication', 'Problèmes de multiplication.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('problemes-division', 'problemes', 'Division', 'Problèmes de division.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
+  t('problemes-melange', 'problemes', 'Tout mélanger', 'Problèmes avec les quatre opérations.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
 
   t('multiples-reconnaitre', 'multiples', 'Reconnaître un multiple', 'Dire si un nombre est multiple d’un autre.', 'Répondez par oui ou non.', 'ligne'),
   t('multiples-diviseurs', 'multiples', 'Lister les diviseurs', 'Trouver tous les diviseurs d’un nombre.', 'Écrivez tous les diviseurs, du plus petit au plus grand.', 'texte'),
@@ -91,25 +102,29 @@ export const exerciseTypes: ExerciseType[] = [
   t('fractions-identifier', 'fractions', 'Lire une fraction', 'Donner le numérateur ou le dénominateur.', 'Complétez.', 'ligne'),
   t('fractions-equivalentes', 'fractions', 'Fractions équivalentes', 'Compléter 2/5 = ?/10.', 'Complétez la fraction équivalente.', 'ligne'),
   t('fractions-simplifier', 'fractions', 'Simplifier', 'Réduire une fraction.', 'Simplifiez chaque fraction.', 'ligne'),
-  t('fractions-comparer', 'fractions', 'Comparer', 'Comparer deux fractions.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
+  t('fractions-comparer', 'fractions', 'Comparer', 'Comparer deux fractions.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
   t('fractions-add', 'fractions', 'Additionner / soustraire', 'Même dénominateur, puis dénominateurs différents.', 'Calculez et simplifiez si possible.', 'ligne'),
   t('fractions-mul', 'fractions', 'Multiplier', 'Produit de deux fractions.', 'Calculez et simplifiez si possible.', 'ligne'),
   t('fractions-div', 'fractions', 'Diviser', 'Division de deux fractions.', 'Calculez et simplifiez si possible.', 'ligne'),
 
-  t('decimaux-lire', 'decimaux', 'Lire et écrire', 'Passer de 3,25 à « trois virgule vingt-cinq ».', 'Écrivez le nombre demandé.', 'texte'),
-  t('decimaux-comparer', 'decimaux', 'Comparer', 'Comparer 3,8 et 3,75.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
-  t('decimaux-arrondir', 'decimaux', 'Arrondir', 'Arrondir au dixième, au centième ou à l’unité.', 'Arrondissez comme indiqué.', 'ligne'),
-  t('decimaux-ligne', 'decimaux', 'Addition / soustraction en ligne', 'Calculer 3,4 + 2,75.', 'Calculez.', 'ligne'),
-  t('decimaux-colonne', 'decimaux', 'En colonnes (nombres posés)', 'Aligner les virgules, nombres déjà posés.', 'Calculez en colonnes.', 'colonne', { preferredColumns: 2 }),
-  t('decimaux-colonne-poser', 'decimaux', 'En colonnes (à poser)', 'Poser les décimaux en alignant les virgules.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
-  t('decimaux-mul', 'decimaux', 'Multiplication', 'Multiplier un décimal par un entier.', 'Calculez.', 'ligne'),
+  t('decimaux-comparer', 'decimaux', 'Comparer', 'Comparer 3,8 et 3,75.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
+  t('decimaux-add-colonne', 'decimaux', 'Addition en colonne (nombres posés)', 'Additions de décimaux déjà alignés.', 'Calculez les additions en colonnes.', 'colonne', { preferredColumns: 2 }),
+  t('decimaux-add-colonne-poser', 'decimaux', 'Addition en colonne à poser', 'Poser puis additionner des décimaux.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
+  t('decimaux-sub-colonne', 'decimaux', 'Soustraction en colonne (nombres posés)', 'Soustractions de décimaux déjà alignés.', 'Calculez les soustractions en colonnes.', 'colonne', { preferredColumns: 2 }),
+  t('decimaux-sub-colonne-poser', 'decimaux', 'Soustraction en colonne à poser', 'Poser puis soustraire des décimaux.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
+  t('decimaux-mul-colonne', 'decimaux', 'Multiplication en colonne (nombres posés)', 'Multiplier un décimal par un entier (posé).', 'Calculez les multiplications en colonnes.', 'colonne', { preferredColumns: 2 }),
+  t('decimaux-mul-colonne-poser', 'decimaux', 'Multiplication en colonne à poser', 'Poser puis multiplier un décimal par un entier.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
+  t('decimaux-div-colonne', 'decimaux', 'Division en colonne (nombres posés)', 'Division posée avec décimaux.', 'Effectuez les divisions en colonnes.', 'colonne', { preferredColumns: 1 }),
+  t('decimaux-div-colonne-poser', 'decimaux', 'Division en colonne à poser', 'Poser puis diviser des décimaux.', 'Posez la division, puis calculez.', 'colonne-vide', { preferredColumns: 1 }),
+  t('decimaux-mul-ligne', 'decimaux', 'Multiplication en ligne (facteurs)', 'Astuces × 0,5 · 0,25 · 0,2 · 0,1…', 'Calculez.', 'ligne'),
+  t('decimaux-div-ligne', 'decimaux', 'Division en ligne (facteurs)', 'Astuces ÷ 0,5 · 0,25 · 0,2 · 0,1…', 'Calculez.', 'ligne'),
 
   t('proportion-notion', 'proportionnalite', 'Notion de pourcentage', 'Écrire 1/4 = 25 %.', 'Complétez.', 'ligne'),
   t('proportion-de', 'proportionnalite', 'Pourcentage d’un nombre', 'Calculer 20 % de 80.', 'Calculez.', 'ligne'),
   t('proportion-var', 'proportionnalite', 'Augmentation et réduction', 'Augmenter ou diminuer d’un pourcentage.', 'Calculez le nouveau montant.', 'ligne'),
   t('proportion-problemes', 'proportionnalite', 'Problèmes', 'Situations de proportionnalité.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
 
-  t('relatifs-comparer', 'relatifs', 'Comparer', 'Comparer −7 et −3.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 1 }),
+  t('relatifs-comparer', 'relatifs', 'Comparer', 'Comparer −7 et −3.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
   t('relatifs-add', 'relatifs', 'Addition et soustraction', 'Calculer (−8) + 5.', 'Calculez.', 'ligne'),
   t('relatifs-mul', 'relatifs', 'Multiplication et division', 'Calculer (−6) × 3.', 'Calculez.', 'ligne'),
 
@@ -169,7 +184,82 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-centrale', 'transformations', 'Symétrie centrale', 'Symétrie par rapport à l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
   t('transformations-translation', 'transformations', 'Translation', 'Translater un point d’un vecteur.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
   t('transformations-rotation', 'transformations', 'Rotation', 'Rotation de 90° autour de l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
+
+  // —— Lecture (français / FLE voyelles) ——
+  t('alphabet-classer', 'alphabet', 'Classer les lettres', 'Ranger des lettres dans l’ordre alphabétique.', 'Classez les lettres par ordre alphabétique.', 'suite', { preferredColumns: 1 }),
+  t('alphabet-suivant', 'alphabet', 'Lettre suivante', 'Trouver la lettre qui suit immédiatement.', 'Coloriez la pastille de la lettre qui suit.', 'ligne', { preferredColumns: 2 }),
+  t('alphabet-initiale', 'alphabet', 'Mot d’initiale', 'Proposer un mot qui commence par une lettre donnée.', 'Écrivez un mot qui commence par la lettre demandée.', 'texte', { preferredColumns: 1 }),
 ]
+
+const VOWEL_TOPICS = [
+  { topic: 'voyelle-a', letter: 'A', sound: '/a/' },
+  { topic: 'voyelle-o', letter: 'O', sound: '/o/' },
+  { topic: 'voyelle-i', letter: 'I', sound: '/i/' },
+  { topic: 'voyelle-u', letter: 'U', sound: '/y/' },
+  { topic: 'voyelle-e', letter: 'E', sound: '/ə/' },
+  { topic: 'voyelle-y', letter: 'Y', sound: '/i/' },
+] as const
+
+for (const v of VOWEL_TOPICS) {
+  const L = v.letter
+  const low = L.toLowerCase()
+  exerciseTypes.push(
+    t(
+      `${v.topic}-entourer`,
+      v.topic,
+      `Entourer ${L} ${low}`,
+      `Repérer la lettre ${L} parmi d’autres lettres.`,
+      `Entourez toutes les lettres ${L} ${low}.`,
+      'ligne',
+      { preferredColumns: 1 },
+    ),
+    t(
+      `${v.topic}-cocher`,
+      v.topic,
+      `Mots avec ${v.sound}`,
+      `Repérer les mots où l’on entend le son ${v.sound}.`,
+      `Cochez les mots où l’on entend le son ${v.sound}.`,
+      'ligne',
+      { preferredColumns: 1 },
+    ),
+    t(
+      `${v.topic}-syllabe`,
+      v.topic,
+      `Syllabe ${v.sound}`,
+      `Indiquer quelle syllabe porte le son ${v.sound}.`,
+      `Indiquez la syllabe qui contient le son ${v.sound}.`,
+      'ligne',
+      { preferredColumns: 2 },
+    ),
+    t(
+      `${v.topic}-former`,
+      v.topic,
+      'Former un mot',
+      'Associer deux parties pour former un mot.',
+      'Associez les parties et écrivez le mot formé.',
+      'texte',
+      { preferredColumns: 1 },
+    ),
+    t(
+      `${v.topic}-lettres`,
+      v.topic,
+      'Lettres mélangées',
+      'Remettre des lettres dans l’ordre pour former un mot.',
+      'Remettez les lettres dans l’ordre pour former le mot.',
+      'texte',
+      { preferredColumns: 1 },
+    ),
+    t(
+      `${v.topic}-compter`,
+      v.topic,
+      `Compter la lettre ${low}`,
+      `Compter les occurrences de la lettre ${low} dans un mot.`,
+      `Comptez combien de fois apparaît la lettre ${low}.`,
+      'texte',
+      { preferredColumns: 2 },
+    ),
+  )
+}
 
 export const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [type.id, type])) as Record<string, ExerciseType>
 
@@ -182,7 +272,8 @@ export function firstTypeFor(domain: Domain, topic?: string): ExerciseType {
     const list = typesForTopic(topic)
     if (list[0]) return list[0]
   }
-  const fallbackTopic = domain === 'algèbre' ? 'addition' : 'aires'
+  const fallbackTopic =
+    domain === 'algèbre' ? 'addition' : domain === 'géométrie' ? 'aires' : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
@@ -196,7 +287,7 @@ export function defaultPage(domain: Domain = 'algèbre'): {
   problemDraftGrids?: boolean[]
 } {
   const type = firstTypeFor(domain)
-  const count = 8
+  const count = domain === 'lecture' ? 6 : 8
   return {
     domain,
     topic: type.topic,

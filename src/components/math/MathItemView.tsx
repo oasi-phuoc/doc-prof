@@ -92,42 +92,67 @@ function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
 function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const empty = Boolean(item.blankOperands)
-  const steps = item.divisionSteps ?? []
-  const workRows = Math.max(4, steps.length * 2)
+  const workRows = item.digitsPartials ?? []
+  const remDigits = item.digitsRemainder ?? ['']
+
   return (
-    <div className="division-column french">
+    <div className="division-column school">
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-      <div className="division-posee">
-        <div className="division-left">
-          <div className="division-dividend-row">
-            {empty && !show ? <span className="answer-line-field compact">{'\u00a0'}</span> : item.dividend}
+      <div className="division-board">
+        <div className="division-work-side">
+          <div className="column-line">
+            <span className="column-line-sign" aria-hidden />
+            <DigitRow
+              digits={item.digitsA}
+              empty={empty}
+              showAnswer={show}
+              answerDigits={item.digitsA}
+            />
           </div>
-          <div className="division-work">
-            {show
-              ? steps.map((step, i) => (
-                  <div className="div-step" key={i}>
-                    <div className="div-bring">{step.bringDown}</div>
-                    <div className="div-prod">− {step.product}</div>
-                    <div className="div-rule" />
-                    <div className="div-rem">{step.remainder}</div>
+          {workRows.map((row, index) => {
+            const isProduct = index % 2 === 0
+            return (
+              <Fragment key={`work-${index}`}>
+                {isProduct ? (
+                  <div className="column-line">
+                    <span className="column-line-sign">−</span>
+                    <DigitRow digits={row} empty showAnswer={show} answerDigits={row} />
                   </div>
-                ))
-              : Array.from({ length: workRows }, (_, i) => <div className="div-work-line" key={i} />)}
+                ) : (
+                  <>
+                    <div className="column-line rule-line">
+                      <span className="column-line-sign" aria-hidden />
+                      <div className="column-rule" />
+                    </div>
+                    <div className="column-line">
+                      <span className="column-line-sign" aria-hidden />
+                      <DigitRow digits={row} empty showAnswer={show} answerDigits={row} />
+                    </div>
+                  </>
+                )}
+              </Fragment>
+            )
+          })}
+          <div className="division-reste">
+            <span className="division-reste-label">Reste</span>
+            <DigitRow digits={remDigits} empty showAnswer={show} answerDigits={remDigits} />
           </div>
         </div>
-        <div className="division-right">
-          <div className="division-divisor">
-            {empty && !show ? <span className="answer-line-field compact">{'\u00a0'}</span> : item.divisor}
+        <div className="division-vbar" aria-hidden />
+        <div className="division-answer-side">
+          <div className="column-line">
+            <DigitRow
+              digits={item.digitsB}
+              empty={empty}
+              showAnswer={show}
+              answerDigits={item.digitsB}
+            />
           </div>
-          <div className="division-quotient">
-            {show ? (
-              <strong>
-                {item.quotient}
-                {item.remainder ? ` r ${item.remainder}` : ''}
-              </strong>
-            ) : (
-              <span className="answer-line-field compact">{'\u00a0'}</span>
-            )}
+          <div className="column-line rule-line tight">
+            <div className="column-rule" />
+          </div>
+          <div className="column-line">
+            <DigitRow digits={item.digitsResult} empty showAnswer={show} answerDigits={item.digitsResult} />
           </div>
         </div>
       </div>
@@ -137,15 +162,46 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
 
 function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
+  const selectedSet = new Set(
+    (item.labels?.length ? item.labels : item.answer.split(/\s*·\s*|\s*,\s*/)).map((s) => s.trim()).filter(Boolean),
+  )
+  const stacked = (item.prompt?.length ?? 0) > 28
   return (
-    <div className="select-pills-row" aria-label="Choix">
+    <div className={`select-pills-row${stacked ? ' stacked' : ''}`} aria-label="Choix">
       <span className="select-pills-prompt">{item.prompt}</span>
       <div className="select-pills" role="group">
         {options.map((option) => {
-          const selected = mode === 'answers' && item.answer === option
+          const selected = mode === 'answers' && selectedSet.has(option)
           return (
             <span key={option} className={`select-pill ${selected ? 'selected' : ''}`}>
               {option}
+            </span>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const options = item.options ?? []
+  const targets = new Set(
+    (item.labels ?? []).map((s) => s.toLowerCase()).filter(Boolean),
+  )
+  if (targets.size === 0 && item.answer) {
+    for (const ch of item.answer) {
+      if (/[A-Za-zÀ-ÿ]/.test(ch)) targets.add(ch.toLowerCase())
+    }
+  }
+  return (
+    <div className="letter-grid-block" aria-label="Grille de lettres">
+      {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+      <div className="letter-grid" role="group">
+        {options.map((letter, index) => {
+          const hit = mode === 'answers' && targets.has(letter.toLowerCase())
+          return (
+            <span key={`${letter}-${index}`} className={`letter-cell ${hit ? 'selected' : ''}`}>
+              {letter}
             </span>
           )
         })}
@@ -539,15 +595,24 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
     )
   }
 
-  return (
-    <div className="inline-prompt equation">
-      <span className="eq-text">{renderMathText(prompt)}</span>
-      {endsWithEq && (
+  // « expr = » : expression à droite d’une colonne commune → = et traits alignés entre questions.
+  if (endsWithEq) {
+    const expr = prompt.trimEnd().replace(/=\s*$/, '').trimEnd()
+    return (
+      <div className="inline-prompt equation aligned-eq">
+        <span className="eq-text">{renderMathText(expr)}</span>
+        <span className="eq-sign">=</span>
         <span className={`answer-line-field ${show ? 'filled' : ''}`}>
           {show ? <FractionView value={item.answer} /> : '\u00a0'}
         </span>
-      )}
-      {show && !endsWithEq && <span className="filled-answer">{item.answer}</span>}
+      </div>
+    )
+  }
+
+  return (
+    <div className="inline-prompt equation">
+      <span className="eq-text">{renderMathText(prompt)}</span>
+      {show && <span className="filled-answer">{item.answer}</span>}
     </div>
   )
 }
@@ -556,29 +621,15 @@ function ProblemBlock({
   item,
   mode,
   draftGrid = true,
-  onToggleDraftGrid,
 }: {
   item: MathItem
   mode: PreviewMode
   draftGrid?: boolean
-  onToggleDraftGrid?: () => void
 }) {
   const show = mode === 'answers'
   return (
     <div className="problem-block">
-      <div className="problem-head">
-        <p className="problem-prompt">{item.prompt}</p>
-        {onToggleDraftGrid ? (
-          <button
-            type="button"
-            className={`no-print draft-grid-chip ${draftGrid ? 'on' : 'off'}`}
-            onClick={onToggleDraftGrid}
-            aria-pressed={draftGrid}
-          >
-            {draftGrid ? 'Grille 4×4' : 'Sans grille'}
-          </button>
-        ) : null}
-      </div>
+      <p className="problem-prompt">{item.prompt}</p>
       <div className="problem-field">
         <span className="field-label">Calcul</span>
         <div className={`draft-pad ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de calcul">
@@ -587,10 +638,10 @@ function ProblemBlock({
           ) : null}
         </div>
       </div>
-      <div className="problem-field problem-response">
-        <span className="field-label">Réponse</span>
+      <div className="problem-response-line">
+        <span className="response-label">Réponse :</span>
         {show ? (
-          <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
+          <strong className="filled-answer response-value">{item.responseAnswer ?? item.answer}</strong>
         ) : (
           <span className="answer-line-field">{'\u00a0'}</span>
         )}
@@ -681,6 +732,16 @@ export function MathItemView({
   const isStackedText = item.layout === 'text' && !isProblem
   return (
     <div className={`exercise-item layout-${item.layout}${isProblem ? ' is-problem' : ''}`}>
+      {isProblem && onToggleDraftGrid ? (
+        <button
+          type="button"
+          className={`no-print draft-grid-chip draft-grid-chip-margin ${draftGrid ? 'on' : 'off'}`}
+          onClick={onToggleDraftGrid}
+          aria-pressed={draftGrid}
+        >
+          {draftGrid ? 'Grille 4×4' : 'Sans grille'}
+        </button>
+      ) : null}
       <div className="item-number">{index + 1}.</div>
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
@@ -688,20 +749,14 @@ export function MathItemView({
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={item} mode={mode} />}
+        {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} />}
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
-        {isProblem && (
-          <ProblemBlock
-            item={item}
-            mode={mode}
-            draftGrid={draftGrid}
-            onToggleDraftGrid={onToggleDraftGrid}
-          />
-        )}
+        {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {isStackedText && <StackedPrompt item={item} mode={mode} />}
         {!isProblem &&
           !isStackedText &&

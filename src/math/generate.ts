@@ -11,6 +11,7 @@ import {
   pairSub,
 } from './difficulty'
 import { numberToFrench } from './french-numbers'
+import { tryGenerateLectureBatch } from './lecture'
 import { makeWordProblem } from './problems'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type { ArithOp, Difficulty, DivisionStep, FigureDims, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
@@ -153,10 +154,79 @@ function buildDivisionSteps(dividend: number, divisor: number): DivisionStep[] {
       bringDown: String(current),
       product: String(product),
       remainder: String(rem),
+      endCol: i,
     })
     current = rem
   }
   return steps
+}
+
+function placeDigitsAtEnd(value: string, width: number, endCol: number): string[] {
+  const row = Array.from({ length: width }, () => '')
+  const start = Math.max(0, endCol - value.length + 1)
+  for (let k = 0; k < value.length; k++) {
+    const col = start + k
+    if (col >= 0 && col < width) row[col] = value[k]!
+  }
+  return row
+}
+
+function divisionColumnItem(dividend: number, divisor: number, empty: boolean): MathItem {
+  const quotient = Math.floor(dividend / divisor)
+  const remainder = dividend % divisor
+  const width = String(dividend).length
+  const steps = buildDivisionSteps(dividend, divisor)
+  const workRows: string[][] = []
+  for (const step of steps) {
+    workRows.push(placeDigitsAtEnd(step.product, width, step.endCol))
+    workRows.push(placeDigitsAtEnd(step.remainder, width, step.endCol))
+  }
+  // Au moins 2 lignes de travail (1 étape) pour la fiche élève.
+  while (workRows.length < 2) {
+    workRows.push(Array.from({ length: width }, () => ''))
+  }
+  return {
+    layout: 'division-column',
+    op: '÷',
+    prompt: empty ? `${fmt(dividend)} ÷ ${fmt(divisor)}` : undefined,
+    dividend,
+    divisor,
+    quotient,
+    remainder,
+    digitsA: digits(dividend, width),
+    digitsB: String(divisor).split(''),
+    digitsResult: String(quotient).split(''),
+    digitsPartials: workRows,
+    digitsRemainder: digits(remainder, Math.max(1, String(remainder).length)),
+    divisionSteps: steps,
+    blankOperands: empty,
+    answer: remainder ? `${quotient} reste ${remainder}` : String(quotient),
+  }
+}
+
+/** Aligne les divisions posées d’une fiche (même largeur / même nb de lignes de travail). */
+function normalizeDivisionLayouts(items: MathItem[]): MathItem[] {
+  const divItems = items.filter((item) => item.layout === 'division-column')
+  if (divItems.length === 0) return items
+  const maxWidth = Math.max(1, ...divItems.map((item) => item.digitsA?.length ?? 0))
+  const maxWork = Math.max(2, ...divItems.map((item) => item.digitsPartials?.length ?? 0))
+  const maxDivisor = Math.max(1, ...divItems.map((item) => item.digitsB?.length ?? 0))
+  const maxQuotient = Math.max(1, ...divItems.map((item) => item.digitsResult?.length ?? 0))
+  const maxRem = Math.max(1, ...divItems.map((item) => item.digitsRemainder?.length ?? 0))
+  return items.map((item) => {
+    if (item.layout !== 'division-column') return item
+    const work = item.digitsPartials ?? []
+    return {
+      ...item,
+      digitsA: padDigitRow(item.digitsA, maxWidth),
+      digitsB: padDigitRow(item.digitsB, maxDivisor),
+      digitsResult: padDigitRow(item.digitsResult, maxQuotient),
+      digitsRemainder: padDigitRow(item.digitsRemainder, maxRem),
+      digitsPartials: Array.from({ length: maxWork }, (_, i) =>
+        padDigitRow(work[i] ?? Array.from({ length: maxWidth }, () => ''), maxWidth),
+      ),
+    }
+  })
 }
 
 type TriangleKind = NonNullable<FigureDims['triangleKind']>
@@ -297,7 +367,7 @@ function generateItems(typeId: string, count: number, rng: Rng, difficulty: Diff
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty))
   }
-  return normalizeColumnLayouts(items)
+  return normalizeDivisionLayouts(normalizeColumnLayouts(items))
 }
 
 function generateOne(typeId: string, rng: Rng, index: number, difficulty: Difficulty): MathItem {
@@ -453,8 +523,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
         answer: left < right ? '<' : left > right ? '>' : '=',
       }
     }
-    case 'addition-problemes':
-      return makeWordProblem(rng, difficulty, 'addition')
     case 'soustraction-ligne': {
       const p = pairSub(rng, difficulty)
       return inlineOp('−', p.a, p.b, p.result)
@@ -480,8 +548,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
         answer: left < right ? '<' : left > right ? '>' : '=',
       }
     }
-    case 'soustraction-problemes':
-      return makeWordProblem(rng, difficulty, 'soustraction')
     case 'estimation-dizaine': {
       let n = int(rng, 11, Math.min(99, max))
       while (n % 10 === 0) n = int(rng, 11, Math.min(99, max))
@@ -542,8 +608,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
         answer: String(result),
       }
     }
-    case 'multiplication-problemes':
-      return makeWordProblem(rng, difficulty, 'multiplication')
     case 'division-ligne': {
       const p = pairDiv(rng, difficulty)
       return inlineOp('÷', p.a, p.b, p.result)
@@ -555,30 +619,27 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
     case 'division-colonne':
     case 'division-colonne-poser': {
       const divisor = int(rng, 2, difficulty === 'avance' ? 12 : 9)
-      const quotient = int(rng, difficulty === 'facile' ? 4 : 12, difficulty === 'facile' ? 20 : difficulty === 'moyen' ? 99 : 250)
+      const quotient = int(
+        rng,
+        difficulty === 'facile' ? 4 : 12,
+        difficulty === 'facile' ? 20 : difficulty === 'moyen' ? 99 : 250,
+      )
       const remainder = int(rng, 0, divisor - 1)
       const dividend = divisor * quotient + remainder
-      return {
-        layout: 'division-column',
-        prompt: typeId.endsWith('poser') ? `${dividend} ÷ ${divisor}` : undefined,
-        dividend,
-        divisor,
-        quotient,
-        remainder,
-        divisionSteps: buildDivisionSteps(dividend, divisor),
-        blankOperands: typeId.endsWith('poser'),
-        answer: remainder ? `${quotient} reste ${remainder}` : String(quotient),
-      }
+      return divisionColumnItem(dividend, divisor, typeId.endsWith('poser'))
     }
-    case 'division-reste': {
-      const divisor = int(rng, 3, difficulty === 'avance' ? 12 : 9)
-      const quotient = int(rng, 4, difficulty === 'facile' ? 20 : 80)
-      const remainder = int(rng, 1, divisor - 1)
-      const dividend = divisor * quotient + remainder
-      return { layout: 'inline', prompt: `${dividend} ÷ ${divisor} =`, answer: `${quotient} reste ${remainder}` }
-    }
-    case 'division-problemes':
+    case 'problemes-addition':
+      return makeWordProblem(rng, difficulty, 'addition')
+    case 'problemes-soustraction':
+      return makeWordProblem(rng, difficulty, 'soustraction')
+    case 'problemes-add-sub':
+      return makeWordProblem(rng, difficulty, 'add-sub')
+    case 'problemes-multiplication':
+      return makeWordProblem(rng, difficulty, 'multiplication')
+    case 'problemes-division':
       return makeWordProblem(rng, difficulty, 'division')
+    case 'problemes-melange':
+      return makeWordProblem(rng, difficulty, 'melange')
     case 'multiples-reconnaitre': {
       const base = int(rng, 2, 9)
       const yes = rng() < 0.5
@@ -592,14 +653,29 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       return { layout: 'text', prompt: `Quels sont les diviseurs de ${n} ?`, answer: list.join(' ; ') }
     }
     case 'multiples-pgcd': {
-      const g = int(rng, 2, 8)
-      const a = g * int(rng, 2, 9)
-      const b = g * int(rng, 2, 9)
+      const gMin = difficulty === 'facile' ? 2 : difficulty === 'moyen' ? 4 : 8
+      const gMax = difficulty === 'facile' ? 8 : difficulty === 'moyen' ? 24 : 48
+      const fMin = difficulty === 'facile' ? 2 : 3
+      const fMax = difficulty === 'facile' ? 9 : difficulty === 'moyen' ? 18 : 30
+      const g = int(rng, gMin, gMax)
+      const k1 = int(rng, fMin, fMax)
+      let k2 = int(rng, fMin, fMax)
+      while (k2 === k1) k2 = int(rng, fMin, fMax)
+      const a = g * k1
+      const b = g * k2
       return { layout: 'inline', prompt: `PGCD(${a} ; ${b}) =`, answer: String(gcd(a, b)) }
     }
     case 'multiples-ppcm': {
-      const a = int(rng, 4, 12)
-      const b = int(rng, 4, 12)
+      const gMin = difficulty === 'facile' ? 1 : difficulty === 'moyen' ? 2 : 4
+      const gMax = difficulty === 'facile' ? 4 : difficulty === 'moyen' ? 12 : 24
+      const fMin = difficulty === 'facile' ? 2 : 3
+      const fMax = difficulty === 'facile' ? 8 : difficulty === 'moyen' ? 16 : 28
+      const g = int(rng, gMin, gMax)
+      const k1 = int(rng, fMin, fMax)
+      let k2 = int(rng, fMin, fMax)
+      while (k2 === k1) k2 = int(rng, fMin, fMax)
+      const a = g * k1
+      const b = g * k2
       return { layout: 'inline', prompt: `PPCM(${a} ; ${b}) =`, answer: String(lcm(a, b)) }
     }
     case 'fractions-identifier': {
@@ -665,10 +741,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       const [sn, sd] = simplify(n1 * d2, d1 * n2)
       return { layout: 'inline', prompt: `${frac(n1, d1)} ÷ ${frac(n2, d2)} =`, answer: sd === 1 ? String(sn) : frac(sn, sd) }
     }
-    case 'decimaux-lire': {
-      const n = dec(rng, 20, 2)
-      return { layout: 'text', prompt: `Écrivez ${decStr(n)} en lettres (on peut écrire « virgule »).`, answer: decStr(n) }
-    }
     case 'decimaux-comparer': {
       const a = dec(rng, 9, 2)
       let b = dec(rng, 9, 2)
@@ -680,25 +752,8 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
         answer: a < b ? '<' : a > b ? '>' : '=',
       }
     }
-    case 'decimaux-arrondir': {
-      const n = dec(rng, 20, 2)
-      return { layout: 'inline', prompt: `Arrondissez ${decStr(n)} à l’unité`, answer: String(Math.round(n)) }
-    }
-    case 'decimaux-ligne': {
-      const a = Math.round(dec(rng, 20, 2) * 100)
-      const b = Math.round(dec(rng, 20, 2) * 100)
-      const add = rng() < 0.5
-      const result = add ? a + b : Math.max(a, b) - Math.min(a, b)
-      const A = Math.max(a, b)
-      const B = Math.min(a, b)
-      return {
-        layout: 'inline',
-        prompt: add ? `${decStr(a / 100)} + ${decStr(b / 100)} =` : `${decStr(A / 100)} − ${decStr(B / 100)} =`,
-        answer: decStr(result / 100),
-      }
-    }
-    case 'decimaux-colonne':
-    case 'decimaux-colonne-poser': {
+    case 'decimaux-add-colonne':
+    case 'decimaux-add-colonne-poser': {
       const a = Math.round(dec(rng, 40, 2) * 100)
       const b = Math.round(dec(rng, 40, 2) * 100)
       const result = a + b
@@ -709,11 +764,80 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       item.b = b / 100
       return item
     }
-    case 'decimaux-mul': {
-      const a = Math.round(dec(rng, 9, 1) * 10) / 10
-      const b = int(rng, 2, 9)
-      const result = Math.round(a * b * 10) / 10
-      return { layout: 'inline', prompt: `${decStr(a)} × ${b} =`, answer: decStr(result) }
+    case 'decimaux-sub-colonne':
+    case 'decimaux-sub-colonne-poser': {
+      let a = Math.round(dec(rng, 40, 2) * 100)
+      let b = Math.round(dec(rng, 40, 2) * 100)
+      if (b > a) [a, b] = [b, a]
+      const result = a - b
+      const item = columnItem('−', a, b, result, typeId.endsWith('poser'))
+      item.prompt = `${decStr(a / 100)} − ${decStr(b / 100)}`
+      item.answer = decStr(result / 100)
+      item.a = a / 100
+      item.b = b / 100
+      return item
+    }
+    case 'decimaux-mul-colonne':
+    case 'decimaux-mul-colonne-poser': {
+      const a = Math.round(dec(rng, 20, 1) * 10)
+      const b = int(rng, 2, difficulty === 'avance' ? 12 : 9)
+      const result = a * b
+      const item = columnItem('×', a, b, result, typeId.endsWith('poser'))
+      item.prompt = `${decStr(a / 10)} × ${b}`
+      item.answer = decStr(result / 10)
+      item.a = a / 10
+      item.b = b
+      return item
+    }
+    case 'decimaux-div-colonne':
+    case 'decimaux-div-colonne-poser': {
+      const divisor = int(rng, 2, difficulty === 'avance' ? 12 : 9)
+      const quotient = int(rng, 2, difficulty === 'facile' ? 20 : 80)
+      const dividend = divisor * quotient
+      const item = divisionColumnItem(dividend, divisor, typeId.endsWith('poser'))
+      item.prompt = `${decStr(dividend / 10)} ÷ ${divisor}`
+      item.answer = decStr(quotient / 10)
+      return item
+    }
+    case 'decimaux-mul-ligne': {
+      const factors = [
+        { label: '0,5', div: 2 },
+        { label: '0,25', div: 4 },
+        { label: '0,2', div: 5 },
+        { label: '0,125', div: 8 },
+        { label: '0,1', div: 10 },
+        { label: '0,01', div: 100 },
+        { label: '0,001', div: 1000 },
+      ] as const
+      const pickF = pick(rng, [...factors])
+      const maxK = difficulty === 'facile' ? 12 : difficulty === 'moyen' ? 40 : 120
+      const k = int(rng, 2, maxK)
+      const n = k * pickF.div
+      return {
+        layout: 'inline',
+        prompt: `${fmt(n)} × ${pickF.label} =`,
+        answer: fmt(k),
+      }
+    }
+    case 'decimaux-div-ligne': {
+      const factors = [
+        { label: '0,5', mul: 2 },
+        { label: '0,25', mul: 4 },
+        { label: '0,2', mul: 5 },
+        { label: '0,125', mul: 8 },
+        { label: '0,1', mul: 10 },
+        { label: '0,01', mul: 100 },
+        { label: '0,001', mul: 1000 },
+      ] as const
+      const pickF = pick(rng, [...factors])
+      const maxN = difficulty === 'facile' ? 20 : difficulty === 'moyen' ? 80 : 200
+      const n = int(rng, 1, maxN)
+      const result = n * pickF.mul
+      return {
+        layout: 'inline',
+        prompt: `${fmt(n)} ÷ ${pickF.label} =`,
+        answer: fmt(result),
+      }
     }
     case 'proportion-notion': {
       const pairs = [
@@ -1201,6 +1325,16 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
+  const lecture = tryGenerateLectureBatch(config.exerciseType, config.count, rng, difficulty)
+  if (lecture) {
+    return {
+      ...config,
+      columns: lecture.preferredColumns ?? type?.preferredColumns ?? 1,
+      title: type?.label ?? topic?.label ?? 'Exercices',
+      instruction: lecture.instruction ?? type?.instruction ?? 'Complétez.',
+      items: lecture.items,
+    }
+  }
   const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng, difficulty)
   if (algebra) {
     return {

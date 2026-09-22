@@ -130,6 +130,8 @@ export function CustomDocumentHeader({
   pageTitle: string
   domain: string
 }) {
+  const kicker =
+    domain === 'lecture' ? 'FRANÇAIS · LECTURE' : `MATHÉMATIQUES · ${domain.toUpperCase()}`
   return (
     <div className="doc-header custom">
       <div className="custom-print-header">
@@ -142,7 +144,7 @@ export function CustomDocumentHeader({
       </div>
       <div className="sheet-header">
         <div>
-          <span className="sheet-kicker">MATHÉMATIQUES · {domain.toUpperCase()}</span>
+          <span className="sheet-kicker">{kicker}</span>
           <h3>{pageTitle}</h3>
         </div>
         <span className="sheet-number">Fiche d’activité</span>
@@ -155,28 +157,27 @@ export function CustomDocumentHeader({
 }
 
 export function DocumentFooter({
-  text,
   pageNumber,
   total,
-  printedBy,
 }: {
-  text: string
   pageNumber: number
   total: number
+  /** @deprecated Pied fixe ; ignoré. */
+  text?: string
   printedBy?: string
 }) {
   return (
     <footer className="sheet-footer doc-footer">
       <div className="doc-footer-left">
-        <strong>{text || 'ClairFLE · Support imprimable'}</strong>
+        <strong>ClairFLE - Support imprimable</strong>
+      </div>
+      <div className="doc-footer-right">
+        <span>ThanhPhuoc VAN</span>
+        <span>Imprimé le {formatPrintDate()}</span>
         <span>
-          Imprimé le {formatPrintDate()}
-          {printedBy ? ` par ${printedBy}` : ''}
+          Page {pageNumber} / {total}
         </span>
       </div>
-      <span>
-        Page {pageNumber} / {total}
-      </span>
     </footer>
   )
 }

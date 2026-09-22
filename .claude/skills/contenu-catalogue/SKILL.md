@@ -35,7 +35,7 @@ t(
 
 ## Thèmes actuels (repère)
 
-Algèbre : nombres, addition, soustraction, estimation, multiplication, division, multiples, fractions, décimaux, proportionnalité, relatifs, puissances, expressions, équations.  
+Algèbre : nombres, addition, soustraction, estimation, multiplication, division, problèmes, multiples, fractions, décimaux, proportionnalité, relatifs, puissances, expressions, équations.  
 Géométrie : figures, conversions, périmètres, aires, volumes, repérage, transformations.
 
 ## Terminé quand

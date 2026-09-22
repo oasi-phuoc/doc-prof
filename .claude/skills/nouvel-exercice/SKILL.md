@@ -60,6 +60,7 @@ Toujours lire `config.difficulty` dans `generate.ts` / `algebra.ts` (via `pairAd
 - **Calculs avec `=`** : énoncé à gauche, trait qui **occupe le reste de la ligne** à droite du `=` (`.eq-row` / `.inline-prompt.equation`).
 - Mode `answers` remplit les mêmes emplacements sans changer la mise en page.
 - Points d'éval : total dans la consigne / en-tête, pas par question.
+- **Alignement du texte** : `text-align: justify` par défaut pour les énoncés, consignes et textes de fiche. Centrer **uniquement** si c’est explicitement demandé (ex. titre centré).
 
 ## Espacement fiche (harmonisé)
 

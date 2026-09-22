@@ -17,7 +17,7 @@ L'UI vit surtout dans `src/App.tsx` + `src/App.css` (pas encore une lib `compone
 |---|---|
 | Liste déroulante | `SelectBox` (Domaine / Thème / Type / Niveau / Questions) |
 | Binaire | `.mode-toggle` (Exercice / Évaluation, Institutionnel / Personnalisé) |
-| Pages | `.page-tabs` (chiffres seuls) + rail `.page-rail` |
+| Pages | `.page-tabs` (chiffres) + bouton `+` : **nouvelle page = mêmes options** que la page active (domaine, thème, type, niveau, questions, colonnes) |
 | Actions | `.button` / `.button.secondary` |
 | Champs en-tête | `.custom-header-form` / champs institutionnels dans le panneau |
 

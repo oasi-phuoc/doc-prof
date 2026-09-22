@@ -19,14 +19,19 @@ Le produit est la feuille **210 × 297 mm**. Le nombre de questions ne doit **ja
 .a4-frame .worksheet-sheet → 210mm × 297mm absolu + scale(100cqw/210mm)
 .worksheet-sheet   → height/max-height 297mm, overflow:hidden, flex colonne
 .sheet-body        → flex:1 ; overflow:hidden
+.exercise-grid     → flex:0 0 auto ; grid-auto-rows:max-content (pas de compression)
+.exercise-item     → padding fixe (--ex-*) ; flex-shrink:0 ; min-height:min-content
 .doc-footer        → margin-top:auto
 @media print       → .print-only-sheets visibles ; .sheet-preview-wrap masqué
 ```
 
 Interdit :
 - `min-height` flexible qui fait grandir la feuille avec le contenu
+- Réduire `--ex-pad-y` / `--ex-grid-gap` / padding des items selon le nombre de questions
 - `transform: scale(...)` mobile sur `.worksheet-sheet` hors du scale du `.a4-frame`
 - Cadres / cartes autour des `.exercise-item`
+
+Si trop de questions pour la fiche : le champ QUESTIONS reçoit `.is-overflow` (bordure rouge) + hint — le padding reste fixe, le surplus est coupé.
 
 ## Checklist écran
 

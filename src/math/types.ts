@@ -1,4 +1,4 @@
-export type Domain = 'algèbre' | 'géométrie'
+export type Domain = 'algèbre' | 'géométrie' | 'lecture'
 export type PreviewMode = 'student' | 'answers'
 export type Difficulty = 'facile' | 'moyen' | 'avance'
 export type Figure =
@@ -30,6 +30,7 @@ export type Layout =
   | 'algebra'
   | 'encadrement'
   | 'order'
+  | 'letter-grid'
 
 export type AlgebraGiven = { letter: string; value: number }
 
@@ -73,6 +74,8 @@ export type DivisionStep = {
   bringDown: string
   product: string
   remainder: string
+  /** Colonne de fin (0-based) sous le dividende pour aligner le produit. */
+  endCol: number
 }
 
 export type MathItem = {
@@ -90,10 +93,12 @@ export type MathItem = {
   digitsA?: string[]
   digitsB?: string[]
   digitsResult?: string[]
-  /** Produits partiels (ex. × à 2 chiffres : unités puis dizaines décalées). */
+  /** Produits partiels (× 2 chiffres) ou lignes de travail (division). */
   digitsPartials?: string[][]
   /** Retenues / emprunts alignés sur les colonnes (même largeur que digitsA). */
   carries?: string[]
+  /** Chiffres du reste (division posée). */
+  digitsRemainder?: string[]
   dividend?: number
   divisor?: number
   quotient?: number

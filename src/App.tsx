@@ -31,6 +31,7 @@ import {
   exerciseTypeById,
   firstTypeFor,
   geometryTopics,
+  lectureTopics,
   typesForTopic,
 } from '@/math/catalog'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
@@ -91,37 +92,33 @@ function WorksheetSheet({
         ))}
       <SheetBody>
         <div className="sheet-instruction">
-          <b>Consigne</b>
-          <p>
-            {page.instruction}
-            {evalMode ? (
-              <span className="instruction-points"> /{documentTotalPoints} points</span>
+          <div className="sheet-instruction-main">
+            <b>Consigne</b>
+            <p>{page.instruction}</p>
+            {page.givens && page.givens.length > 0 ? (
+              <p className="sheet-givens">
+                {page.givens.map((given, index) => (
+                  <span key={given.letter}>
+                    {index > 0 ? (index === page.givens!.length - 1 ? ' et ' : ', ') : null}
+                    <span className="given-letter">{given.letter}</span>
+                    {' = '}
+                    <span className="given-value">{String(given.value).replace('.', ',')}</span>
+                  </span>
+                ))}
+              </p>
             ) : null}
-          </p>
-          {page.givens && page.givens.length > 0 ? (
-            <p className="sheet-givens">
-              {page.givens.map((given, index) => (
-                <span key={given.letter}>
-                  {index > 0 ? (index === page.givens!.length - 1 ? ' et ' : ', ') : null}
-                  <span className="given-letter">{given.letter}</span>
-                  {' = '}
-                  <span className="given-value">{String(given.value).replace('.', ',')}</span>
-                </span>
-              ))}
-            </p>
+          </div>
+          {evalMode ? (
+            <span className="instruction-points">{documentTotalPoints} points</span>
           ) : null}
         </div>
         <div
           className={`exercise-grid${
             page.items.every((item) => item.layout === 'algebra')
               ? ' algebra-grid'
-              : page.items.every((item) => item.layout === 'compare')
-                ? ' compare-grid'
-                : page.items.every((item) => item.layout === 'encadrement')
-                  ? ' encadrement-grid'
-                  : isProblemPage
-                    ? ' problem-grid'
-                    : ''
+              : isProblemPage
+                ? ' problem-grid'
+                : ''
           }`}
         >
           {(() => {
@@ -153,7 +150,7 @@ function WorksheetSheet({
           })()}
         </div>
       </SheetBody>
-      <DocumentFooter text={custom.footer} pageNumber={pageNumber} total={total} />
+      <DocumentFooter pageNumber={pageNumber} total={total} />
     </article>
   )
 }
@@ -261,10 +258,6 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
         </span>
         Clair<span className="brand-accent">FLE</span>
       </a>
-      <nav>
-        <a href="/#methode">La méthode</a>
-        <a href="/#aide">Aide</a>
-      </nav>
       {!generator && (
         <button className="button small" type="button" onClick={onCreate}>
           Créer une fiche <span>→</span>
@@ -273,6 +266,9 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
     </header>
   )
 }
+
+/** Mot de passe pour ouvrir le générateur de fiches. */
+const FICHE_ACCESS_PASSWORD = 'Jebosseplus'
 
 function Landing({ onCreate }: { onCreate: () => void }) {
   return (
@@ -305,6 +301,7 @@ function Landing({ onCreate }: { onCreate: () => void }) {
             <span>Mathématiques</span>
             <span>Algèbre</span>
             <span>Géométrie</span>
+            <span>Lecture</span>
             <div className="art-card">
               <b>Fiches claires</b>
               <small>à imprimer et partager</small>
@@ -326,11 +323,24 @@ function Landing({ onCreate }: { onCreate: () => void }) {
 function applyType(type: ExerciseType): Partial<PageConfig> {
   const isProblem = type.id.includes('problemes')
   const isLongMul = type.id === 'multiplication-2chiffres'
+  const isDivisionCol = type.id.startsWith('division-colonne')
+  const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
+  const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
   return {
     exerciseType: type.id,
     topic: type.topic,
     columns: type.preferredColumns ?? 2,
-    ...(isProblem ? { count: 3 } : isLongMul ? { count: 4 } : {}),
+    ...(isProblem
+      ? { count: 2 }
+      : isDivisionCol
+        ? { count: 3 }
+        : isLongMul
+          ? { count: 4 }
+          : isLectureDense
+            ? { count: 4 }
+            : isLecture
+              ? { count: 6 }
+              : {}),
   }
 }
 
@@ -358,9 +368,16 @@ function GeneratorPage() {
   const [evalMode, setEvalMode] = useState(false)
   const [pointsPerQuestion, setPointsPerQuestion] = useState(1)
   const [seed, setSeed] = useState(randomSeed)
+  const [questionsOverflow, setQuestionsOverflow] = useState(false)
+  const previewFrameRef = useRef<HTMLDivElement>(null)
 
   const activePage = pages[pageIndex] ?? pages[0]!
-  const available = activePage.domain === 'algèbre' ? algebraTopics : geometryTopics
+  const available =
+    activePage.domain === 'algèbre'
+      ? algebraTopics
+      : activePage.domain === 'géométrie'
+        ? geometryTopics
+        : lectureTopics
   const worksheets = useMemo(
     () => pages.map((page, index) => buildPage(page, seed + index * 7919)),
     [pages, seed],
@@ -369,6 +386,65 @@ function GeneratorPage() {
     () => worksheets.reduce((sum, page) => sum + page.items.length * pointsPerQuestion, 0),
     [worksheets, pointsPerQuestion],
   )
+
+  useEffect(() => {
+    const frame = previewFrameRef.current
+    if (!frame) return
+
+    const measure = () => {
+      const sheet = frame.querySelector('.worksheet-sheet') as HTMLElement | null
+      const body = frame.querySelector('.sheet-body') as HTMLElement | null
+      const grid = frame.querySelector('.exercise-grid') as HTMLElement | null
+      const footer = frame.querySelector('.doc-footer') as HTMLElement | null
+      if (!sheet || !body || !grid) {
+        setQuestionsOverflow(false)
+        return
+      }
+
+      // Hauteur naturelle du contenu (sans compression) vs place disponible sous l'en-tête.
+      const contentHeight = Math.max(grid.scrollHeight, grid.offsetHeight)
+      const bodyLimit = body.clientHeight
+      const sheetOverflow = sheet.scrollHeight > sheet.clientHeight + 2
+      const bodyOverflow = body.scrollHeight > body.clientHeight + 2
+      const gridOverflow = contentHeight > bodyLimit + 2
+
+      // Pied chevauché / poussé hors feuille si le corps déborde.
+      let footerClash = false
+      if (footer) {
+        const sheetBox = sheet.getBoundingClientRect()
+        const footerBox = footer.getBoundingClientRect()
+        footerClash = footerBox.bottom > sheetBox.bottom + 1
+      }
+
+      setQuestionsOverflow(sheetOverflow || bodyOverflow || gridOverflow || footerClash)
+    }
+
+    measure()
+    const raf = requestAnimationFrame(measure)
+    const observer = new ResizeObserver(measure)
+    const sheet = frame.querySelector('.worksheet-sheet')
+    const body = frame.querySelector('.sheet-body')
+    const grid = frame.querySelector('.exercise-grid')
+    if (sheet) observer.observe(sheet)
+    if (body) observer.observe(body)
+    if (grid) observer.observe(grid)
+    return () => {
+      cancelAnimationFrame(raf)
+      observer.disconnect()
+    }
+  }, [
+    worksheets,
+    pageIndex,
+    mode,
+    seed,
+    activePage.count,
+    activePage.columns,
+    activePage.exerciseType,
+    evalMode,
+    headerStyle,
+    institutional,
+    custom,
+  ])
 
   const updatePage = (patch: Partial<PageConfig>) =>
     setPages((current) =>
@@ -403,7 +479,19 @@ function GeneratorPage() {
   }
 
   const addPage = () => {
-    const next = defaultPage('géométrie')
+    const next: PageConfig = {
+      domain: activePage.domain,
+      topic: activePage.topic,
+      exerciseType: activePage.exerciseType,
+      difficulty: activePage.difficulty,
+      count: activePage.count,
+      columns: activePage.columns,
+      ...(activePage.problemDraftGrids
+        ? { problemDraftGrids: [...activePage.problemDraftGrids] }
+        : isProblemExercise(activePage.exerciseType)
+          ? { problemDraftGrids: Array.from({ length: activePage.count }, () => true) }
+          : {}),
+    }
     setPages((current) => [...current, next])
     setPageIndex(pages.length)
   }
@@ -411,6 +499,11 @@ function GeneratorPage() {
   function changeDomain(next: Domain) {
     const type = firstTypeFor(next)
     updatePage({ domain: next, ...applyType(type) })
+    if (next === 'lecture') {
+      setInstitutional((current) =>
+        current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
+      )
+    }
   }
 
   function changeTopic(topic: string) {
@@ -531,6 +624,7 @@ function GeneratorPage() {
               <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
+                <option value="lecture">Lecture</option>
               </SelectBox>
               <SelectBox label="Thème" value={activePage.topic} onChange={changeTopic}>
                 {available.map((topic) => (
@@ -567,8 +661,14 @@ function GeneratorPage() {
               <label className="select-shell">
                 <span>QUESTIONS</span>
                 <input
-                  className="pill-input"
+                  className={`pill-input${questionsOverflow ? ' is-overflow' : ''}`}
                   aria-label="Nombre de questions"
+                  aria-invalid={questionsOverflow}
+                  title={
+                    questionsOverflow
+                      ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
+                      : undefined
+                  }
                   type="number"
                   min={1}
                   max={30}
@@ -577,6 +677,11 @@ function GeneratorPage() {
                     updatePage({ count: Math.max(1, Math.min(30, Number(event.target.value) || 1)) })
                   }
                 />
+                {questionsOverflow ? (
+                  <p className="questions-overflow-hint" role="status">
+                    Les questions suivantes dépassent de la fiche. Réduisez le nombre ou ajoutez une page.
+                  </p>
+                ) : null}
               </label>
               <SelectBox
                 label="Colonnes"
@@ -740,12 +845,6 @@ function GeneratorPage() {
                       </label>
                     </>
                   )}
-                  <label>
-                    Pied de page
-                    <input className="pill-input" value={custom.footer}
-                      onChange={(event) => setCustom({ ...custom, footer: event.target.value })}
-                    />
-                  </label>
                 </div>
               </details>
               <p className="type-hint muted">
@@ -785,7 +884,7 @@ function GeneratorPage() {
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-stage">
-                <div className="a4-frame">
+                <div className="a4-frame" ref={previewFrameRef}>
                   <WorksheetSheet
                     key={`${worksheets[pageIndex]?.exerciseType}-${seed}-${pageIndex}`}
                     page={worksheets[pageIndex]!}
@@ -834,6 +933,11 @@ function GeneratorPage() {
 export default function App() {
   const [generator, setGenerator] = useState(window.location.pathname === '/generateur')
   const openGenerator = () => {
+    const typed = window.prompt('Mot de passe pour créer une fiche')
+    if (typed !== FICHE_ACCESS_PASSWORD) {
+      if (typed != null) window.alert('Mot de passe incorrect.')
+      return
+    }
     window.history.pushState({}, '', '/generateur')
     setGenerator(true)
   }

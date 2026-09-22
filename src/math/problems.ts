@@ -1,230 +1,237 @@
 import type { Difficulty } from './types'
-import { pairAdd, pairDiv, pairMul, pairSub } from './difficulty'
 import { int, pick, type Rng } from './rng'
 import type { MathItem } from './types'
+import { PROBLEM_BANKS, type ProblemBankEntry, type ProblemOp } from './problem-banks'
 
-type ProblemMaker = (rng: Rng, difficulty: Difficulty) => MathItem
+export type ProblemKind =
+  | 'addition'
+  | 'soustraction'
+  | 'multiplication'
+  | 'division'
+  | 'add-sub'
+  | 'melange'
 
-function problem(
-  prompt: string,
-  calc: string,
-  response: string,
-): MathItem {
+function problem(prompt: string, calc: string, response: string): MathItem {
   return {
     layout: 'text',
-    prompt,
+    prompt: polishFrench(prompt),
     calcAnswer: calc,
     responseAnswer: response,
     answer: `${calc} = ${response}`,
   }
 }
 
-/** Problèmes d'addition — A1 / A2 avec piège / B1 multi-étapes. */
-const addProblems: Record<Difficulty, ProblemMaker[]> = {
-  facile: [
-    (rng, d) => {
-      const p = pairAdd(rng, d)
-      return problem(
-        pick(rng, [
-          `Lina a ${p.a} billes. Elle en gagne ${p.b}. Combien a-t-elle de billes ?`,
-          `Il y a ${p.a} pommes. On ajoute ${p.b} pommes. Combien y a-t-il de pommes ?`,
-          `Noa a ${p.a} CHF. On lui donne ${p.b} CHF. Combien a-t-il ?`,
-        ]),
-        `${p.a} + ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  moyen: [
-    (rng, d) => {
-      const p = pairAdd(rng, d)
-      const trap = int(rng, 2, Math.min(40, calcTrap(d)))
-      return problem(
-        pick(rng, [
-          `Léa a ${p.a} billes dans une boîte bleue et ${trap} billes dans une boîte rouge. Elle gagne ${p.b} billes pour la boîte bleue. Combien a-t-elle de billes dans la boîte bleue ?`,
-          `Un bus compte ${p.a} passagers. ${trap} personnes attendent à l’arrêt suivant. ${p.b} personnes montent. Combien y a-t-il de passagers dans le bus ?`,
-          `Sam a économisé ${p.a} CHF. Son frère a ${trap} CHF. On donne ${p.b} CHF à Sam. Combien Sam a-t-il maintenant ?`,
-        ]),
-        `${p.a} + ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  avance: [
-    (rng, d) => {
-      const p = pairAdd(rng, d)
-      const extra = int(rng, 2, Math.min(50, Math.floor(p.a / 4) || 5))
-      const total = p.result + extra
-      return problem(
-        pick(rng, [
-          `Une classe a déjà ${p.a} stylos. On reçoit deux cartons de ${p.b} et ${extra} stylos. Combien de stylos la classe a-t-elle en tout ?`,
-          `Noa met ${p.a} CHF de côté, puis ${p.b} CHF, puis encore ${extra} CHF. Combien a-t-il économisé au total ?`,
-          `Un magasin a vendu ${p.a} cahiers le matin et ${p.b} l’après-midi. Le soir, ${extra} cahiers sont encore vendus. Combien de cahiers ont été vendus dans la journée ?`,
-        ]),
-        `${p.a} + ${p.b} + ${extra}`,
-        String(total),
-      )
-    },
-  ],
+/** Accents / typographie scolaire (banques générées en ASCII sûr). */
+function polishFrench(s: string): string {
+  return s
+    .replace(/a l’/g, 'à l’')
+    .replace(/a la /g, 'à la ')
+    .replace(/L’apres/g, 'L’après')
+    .replace(/l’apres/g, 'l’après')
+    .replace(/apres/g, 'après')
+    .replace(/eleve/g, 'élève')
+    .replace(/eleves/g, 'élèves')
+    .replace(/ecole/g, 'école')
+    .replace(/mediatheque/g, 'médiathèque')
+    .replace(/bibliotheque/g, 'bibliothèque')
+    .replace(/depot/g, 'dépôt')
+    .replace(/Depot/g, 'Dépôt')
+    .replace(/equipes/g, 'équipes')
+    .replace(/egalement/g, 'également')
+    .replace(/egaux/g, 'égaux')
+    .replace(/reunit/g, 'réunit')
+    .replace(/prets/g, 'prêts')
+    .replace(/prete/g, 'prête')
+    .replace(/pretes/g, 'prêtés')
+    .replace(/reserve/g, 'réserve')
+    .replace(/reserves/g, 'réservés')
+    .replace(/reservees/g, 'réservées')
+    .replace(/numero/g, 'numéro')
+    .replace(/fevrier/g, 'février')
+    .replace(/aout/g, 'août')
+    .replace(/decembre/g, 'décembre')
+    .replace(/annee/g, 'année')
+    .replace(/gateaux/g, 'gâteaux')
+    .replace(/oeufs/g, 'œufs')
+    .replace(/etageres/g, 'étagères')
+    .replace(/etagere/g, 'étagère')
+    .replace(/recreation/g, 'récréation')
+    .replace(/preau/g, 'préau')
+    .replace(/aere/g, 'aéré')
+    .replace(/defi/g, 'défi')
+    .replace(/desistent/g, 'désistent')
+    .replace(/desistent/g, 'désistent')
+    .replace(/evenement/g, 'événement')
+    .replace(/marche/g, 'marché')
+    .replace(/musee/g, 'musée')
+    .replace(/medailles/g, 'médailles')
+    .replace(/legos/g, 'légos')
+    .replace(/boites/g, 'boîtes')
+    .replace(/boite/g, 'boîte')
+    .replace(/repartit/g, 'répartit')
+    .replace(/repartir/g, 'répartir')
+    .replace(/Recoit/g, 'Reçoit')
+    .replace(/recoit/g, 'reçoit')
+    .replace(/achete/g, 'achète')
+    .replace(/Achete/g, 'Achète')
+    .replace(/depense/g, 'dépense')
+    .replace(/enleve/g, 'enlève')
+    .replace(/enleve/g, 'enlève')
+    .replace(/recupere/g, 'récupère')
+    .replace(/possede/g, 'possède')
+    .replace(/deplace/g, 'déplace')
+    .replace(/gere/g, 'gère')
+    .replace(/prepare/g, 'prépare')
+    .replace(/prepares/g, 'préparés')
+    .replace(/prevu/g, 'prévu')
+    .replace(/prevus/g, 'prévus')
+    .replace(/prevoyait/g, 'prévoyait')
+    .replace(/matiere/g, 'matière')
+    .replace(/materiel/g, 'matériel')
+    .replace(/entrees/g, 'entrées')
+    .replace(/athletes/g, 'athlètes')
+    .replace(/seances/g, 'séances')
+    .replace(/unites/g, 'unités')
+    .replace(/equitablement/g, 'équitablement')
+    .replace(/ — /g, ' — ')
 }
 
-const subProblems: Record<Difficulty, ProblemMaker[]> = {
-  facile: [
-    (rng, d) => {
-      const p = pairSub(rng, d)
-      return problem(
-        pick(rng, [
-          `Lina a ${p.a} billes. Elle en donne ${p.b}. Combien lui en reste-t-il ?`,
-          `Il y a ${p.a} pommes. On en mange ${p.b}. Combien reste-t-il de pommes ?`,
-          `Noa a ${p.a} CHF. Il dépense ${p.b} CHF. Combien lui reste-t-il ?`,
-        ]),
-        `${p.a} − ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  moyen: [
-    (rng, d) => {
-      const p = pairSub(rng, d)
-      const trap = int(rng, 2, Math.min(40, calcTrap(d)))
-      return problem(
-        pick(rng, [
-          `Léa a ${p.a} billes. Elle en prête ${p.b} à Sam et en voit ${trap} par terre (elle ne les ramasse pas). Combien lui reste-t-il ?`,
-          `Un bus part avec ${p.a} passagers. ${p.b} descendent. ${trap} personnes regardent le bus depuis le trottoir. Combien reste-t-il de passagers ?`,
-          `Noa a ${p.a} CHF. Il achète un cadeau à ${p.b} CHF. Son frère a encore ${trap} CHF. Combien reste-t-il à Noa ?`,
-        ]),
-        `${p.a} − ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  avance: [
-    (rng, d) => {
-      const start = pairSub(rng, d).a
-      const first = int(rng, 2, Math.max(3, Math.floor(start / 3)))
-      const second = int(rng, 1, Math.max(2, start - first - 1))
-      const left = start - first - second
-      return problem(
-        pick(rng, [
-          `Une bibliothèque a ${start} livres. On en prête ${first}, puis on en range ${second} dans une autre salle. Combien de livres restent sur les rayons ?`,
-          `Noa a ${start} CHF. Il dépense ${first} CHF le matin et ${second} CHF l’après-midi. Combien lui reste-t-il ?`,
-          `Un réservoir contient ${start} litres. On en utilise ${first} litres, puis ${second} litres. Combien de litres restent ?`,
-        ]),
-        `${start} − ${first} − ${second}`,
-        String(left),
-      )
-    },
-  ],
+function bounds(d: Difficulty) {
+  if (d === 'facile') return { lo: 2, mid: 20, hi: 40 }
+  if (d === 'moyen') return { lo: 10, mid: 120, hi: 400 }
+  return { lo: 40, mid: 500, hi: 2500 }
 }
 
-const mulProblems: Record<Difficulty, ProblemMaker[]> = {
-  facile: [
-    (rng, d) => {
-      const p = pairMul(rng, d)
-      return problem(
-        pick(rng, [
-          `Une boîte contient ${p.a} crayons. Combien y a-t-il de crayons dans ${p.b} boîtes ?`,
-          `Un cahier coûte ${p.a} CHF. Combien coûtent ${p.b} cahiers ?`,
-        ]),
-        `${p.a} × ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  moyen: [
-    (rng, d) => {
-      const p = pairMul(rng, d)
-      const trap = int(rng, 2, 20)
-      return problem(
-        pick(rng, [
-          `Chaque boîte contient ${p.a} crayons. On a ${p.b} boîtes pleines et ${trap} crayons seuls (déjà comptés à part). Combien de crayons y a-t-il dans les boîtes ?`,
-          `Un billet de spectacle coûte ${p.a} CHF. Une famille achète ${p.b} billets. Le parking coûte ${trap} CHF (paiement séparé). Combien coûtent les billets ?`,
-        ]),
-        `${p.a} × ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  avance: [
-    (rng, d) => {
-      const p = pairMul(rng, d)
-      const discount = int(rng, 1, Math.min(15, Math.floor(p.result / 5) || 1))
-      return problem(
-        pick(rng, [
-          `${p.b} cahiers coûtent ${p.a} CHF chacun. Le magasin offre une réduction de ${discount} CHF sur le total. Combien paie-t-on finalement ?`,
-          `Une rangée a ${p.a} chaises. Il y a ${p.b} rangées. On enlève ${discount} chaises cassées. Combien reste-t-il de chaises utilisables ?`,
-        ]),
-        `${p.a} × ${p.b} − ${discount}`,
-        String(p.result - discount),
-      )
-    },
-  ],
+function fillPrompt(tpl: string, vals: Record<string, number>): string {
+  return tpl
+    .replace(/\{a\}/g, String(vals.a ?? ''))
+    .replace(/\{b\}/g, String(vals.b ?? ''))
+    .replace(/\{c\}/g, String(vals.c ?? ''))
 }
 
-const divProblems: Record<Difficulty, ProblemMaker[]> = {
-  facile: [
-    (rng, d) => {
-      const p = pairDiv(rng, d)
-      return problem(
-        pick(rng, [
-          `On partage ${p.a} billes entre ${p.b} enfants, équitablement. Combien chacun reçoit-il ?`,
-          `${p.a} élèves forment des groupes de ${p.b}. Combien de groupes obtient-on ?`,
-        ]),
-        `${p.a} ÷ ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  moyen: [
-    (rng, d) => {
-      const p = pairDiv(rng, d)
-      const trap = int(rng, 2, 15)
-      return problem(
-        pick(rng, [
-          `On partage ${p.a} billes entre ${p.b} enfants. Il reste aussi ${trap} billes dans une autre boîte (non partagées). Combien chaque enfant reçoit-il ?`,
-          `${p.a} cartes sont rangées par paquets de ${p.b}. ${trap} cartes d’un autre jeu restent sur la table. Combien de paquets complets obtient-on ?`,
-        ]),
-        `${p.a} ÷ ${p.b}`,
-        String(p.result),
-      )
-    },
-  ],
-  avance: [
-    (rng, d) => {
-      const p = pairDiv(rng, d)
-      const leftover = int(rng, 1, Math.max(1, p.b - 1))
-      const total = p.a + leftover
-      return problem(
-        pick(rng, [
-          `On a ${total} gommes. On remplit des boîtes de ${p.b} gommes. Combien de boîtes complètes obtient-on, et combien de gommes restent ?`,
-          `${total} élèves doivent former des groupes de ${p.b}. Combien de groupes complets peut-on former, et combien d’élèves restent sans groupe ?`,
-        ]),
-        `${total} ÷ ${p.b}`,
-        `${p.result} reste ${leftover}`,
-      )
-    },
-  ],
+function numsFor(rng: Rng, d: Difficulty, op: ProblemOp): {
+  vals: Record<string, number>
+  calc: string
+  response: string
+} {
+  const b = bounds(d)
+  if (op === '+') {
+    const a = int(rng, b.lo, b.hi)
+    const c = int(rng, b.lo, b.mid)
+    return { vals: { a, b: c }, calc: `${a} + ${c}`, response: String(a + c) }
+  }
+  if (op === '-') {
+    const a = int(rng, b.mid, b.hi)
+    const c = int(rng, b.lo, Math.max(b.lo, Math.min(b.mid, a - 1)))
+    return { vals: { a, b: c }, calc: `${a} − ${c}`, response: String(a - c) }
+  }
+  if (op === '*') {
+    const a = int(rng, d === 'facile' ? 2 : 3, d === 'avance' ? 24 : 12)
+    const c = int(rng, d === 'facile' ? 2 : 4, d === 'avance' ? 40 : 20)
+    return { vals: { a, b: c }, calc: `${a} × ${c}`, response: String(a * c) }
+  }
+  if (op === '/') {
+    const divisor = int(rng, 2, d === 'avance' ? 12 : 9)
+    const quot = int(rng, 2, d === 'facile' ? 12 : d === 'moyen' ? 40 : 80)
+    const dividend = divisor * quot
+    return {
+      vals: { a: dividend, b: divisor },
+      calc: `${dividend} ÷ ${divisor}`,
+      response: String(quot),
+    }
+  }
+  if (op === '+-') {
+    const a = int(rng, b.mid, b.hi)
+    const add = int(rng, b.lo, b.mid)
+    const sub = int(rng, b.lo, Math.max(b.lo, Math.min(a + add - 1, b.mid)))
+    const result = a + add - sub
+    return {
+      vals: { a, b: add, c: sub },
+      calc: `${a} + ${add} − ${sub}`,
+      response: String(result),
+    }
+  }
+  if (op === '*-') {
+    const a = int(rng, 2, d === 'avance' ? 20 : 10)
+    const c = int(rng, 2, d === 'avance' ? 30 : 12)
+    const product = a * c
+    const sub = int(rng, 1, Math.max(1, Math.floor(product / 3)))
+    return {
+      vals: { a, b: c, c: sub },
+      calc: `${a} × ${c} − ${sub}`,
+      response: String(product - sub),
+    }
+  }
+  if (op === '+*') {
+    const a = int(rng, b.lo, b.mid)
+    const packs = int(rng, 2, d === 'avance' ? 12 : 8)
+    const per = int(rng, 2, d === 'avance' ? 20 : 10)
+    // Templates: "{a} ... {b} paquets de {c}" or "{a} unitaires et {b} lots de {c}"
+    return {
+      vals: { a, b: packs, c: per },
+      calc: `${a} + ${packs} × ${per}`,
+      response: String(a + packs * per),
+    }
+  }
+  if (op === '++/') {
+    const a = int(rng, b.lo, b.mid)
+    const add = int(rng, b.lo, b.mid)
+    const groups = int(rng, 2, d === 'avance' ? 12 : 8)
+    const total = a + add
+    // Ensure divisible when possible
+    const adjusted = total - (total % groups)
+    const a2 = Math.max(b.lo, adjusted - add)
+    return {
+      vals: { a: a2, b: add, c: groups },
+      calc: `(${a2} + ${add}) ÷ ${groups}`,
+      response: String((a2 + add) / groups),
+    }
+  }
+  // '-*' : a - b*c
+  {
+    const per = int(rng, 2, d === 'avance' ? 15 : 10)
+    const boxes = int(rng, 2, d === 'avance' ? 20 : 10)
+    const product = per * boxes
+    const start = product + int(rng, b.lo, b.mid)
+    return {
+      vals: { a: start, b: boxes, c: per },
+      calc: `${start} − ${boxes} × ${per}`,
+      response: String(start - product),
+    }
+  }
 }
 
-function calcTrap(d: Difficulty): number {
-  if (d === 'facile') return 10
-  if (d === 'moyen') return 80
-  return 200
+function fromEntry(rng: Rng, d: Difficulty, entry: ProblemBankEntry): MathItem {
+  const { vals, calc, response } = numsFor(rng, d, entry.op)
+  return problem(fillPrompt(entry.prompt, vals), calc, response)
 }
 
-export function makeWordProblem(
-  rng: Rng,
-  difficulty: Difficulty,
-  kind: 'addition' | 'soustraction' | 'multiplication' | 'division',
-): MathItem {
-  const table =
-    kind === 'addition'
-      ? addProblems
-      : kind === 'soustraction'
-        ? subProblems
-        : kind === 'multiplication'
-          ? mulProblems
-          : divProblems
-  const makers = table[difficulty]
-  return pick(rng, makers)(rng, difficulty)
+function bankKey(kind: ProblemKind, difficulty: Difficulty): string {
+  return `${kind}:${difficulty}`
+}
+
+export function makeWordProblem(rng: Rng, difficulty: Difficulty, kind: ProblemKind): MathItem {
+  const key = bankKey(kind, difficulty)
+  const bank = PROBLEM_BANKS[key]
+  if (!bank || bank.length === 0) {
+    throw new Error(`Banque de problèmes manquante : ${key}`)
+  }
+  return fromEntry(rng, difficulty, pick(rng, bank))
+}
+
+/** Vérification runtime (tests / scripts) : ≥100 prompts uniques / cellule (issus de 50 frames). */
+export function assertProblemBanksIntegrity(): { cells: number; prompts: number } {
+  const keys = Object.keys(PROBLEM_BANKS)
+  const all = new Set<string>()
+  for (const key of keys) {
+    const bank = PROBLEM_BANKS[key]!
+    if (bank.length < 100) throw new Error(`${key} : ${bank.length} < 100`)
+    const local = new Set(bank.map((e) => e.prompt))
+    if (local.size !== bank.length) throw new Error(`${key} : doublons internes`)
+    for (const p of local) {
+      if (all.has(p)) throw new Error(`Prompt dupliqué entre cellules : ${p.slice(0, 60)}`)
+      all.add(p)
+    }
+  }
+  return { cells: keys.length, prompts: all.size }
 }
