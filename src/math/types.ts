@@ -28,6 +28,7 @@ export type Layout =
   | 'geo'
   | 'coord'
   | 'algebra'
+  | 'equation'
   | 'encadrement'
   | 'order'
   | 'letter-grid'
@@ -120,6 +121,14 @@ export type MathItem = {
   orderOp?: '<' | '>'
   calcAnswer?: string
   responseAnswer?: string
+  /** Inconnues à afficher sur les lignes de réponse (équations). */
+  unknowns?: string[]
+  /** Lignes de développement (corrigé équations, style soutien-scolaire). */
+  development?: string[]
+  /** Opérations en marge gauche, alignées sur development. */
+  operations?: string[]
+  /** Afficher le système avec I / II et accolade. */
+  systemBrace?: boolean
   /** Valeurs par case pour la décomposition (layout place-value). */
   placeParts?: string[]
 }

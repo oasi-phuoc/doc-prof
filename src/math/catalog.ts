@@ -133,21 +133,21 @@ export const exerciseTypes: ExerciseType[] = [
   t('puissances-racine', 'puissances', 'Racine carrée', 'Calculer √81.', 'Calculez.', 'ligne'),
   t('puissances-priorite', 'puissances', 'Priorité des opérations', 'Calculer 3 + 2 × 4².', 'Calculez en respectant les priorités.', 'ligne'),
 
-  t('expressions-lire', 'expressions', 'Lire une expression', 'Traduire « le double de x plus 3 ».', 'Écrivez l’expression ou sa lecture.', 'texte'),
-  t('expressions-substituer', 'expressions', 'Évaluer (1 variable)', 'Calculer des expressions pour une même valeur, ex. t = 3.', 'Calculez le résultat.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-evaluer-2var', 'expressions', 'Évaluer (2 variables)', 'Évaluer cinq expressions avec les mêmes valeurs de deux lettres.', 'Évaluez les expressions avec deux variables. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-evaluer-3var', 'expressions', 'Évaluer (3 variables)', 'Évaluer cinq expressions avec les mêmes valeurs de trois lettres.', 'Évaluez les expressions avec trois variables. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-evaluer-avances', 'expressions', 'Évaluer (puissances et racines)', 'Évaluer avec carrés, cubes et racines carrées.', 'Évaluez les expressions avec puissances et racines. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-produits', 'expressions', 'Simplifier les produits', 'Simplifier m² · 4 · n · 2.', 'Simplifiez les produits.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-reduire', 'expressions', 'Réduction', 'Réduire 3x + 5x − 2.', 'Réduisez chaque expression.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-developper', 'expressions', 'Développement', 'Développer 3(x + 4).', 'Développez, puis réduisez si besoin.', 'ligne', { preferredColumns: 1 }),
-  t('expressions-factoriser', 'expressions', 'Factorisation', 'Factoriser 6x + 9.', 'Factorisez.', 'ligne', { preferredColumns: 1 }),
+  t('expressions-lire', 'expressions', 'Lire une expression', 'Traduire « le double de x plus 3 ».', 'Écrivez l’expression ou sa lecture.', 'texte', { preferredColumns: 2 }),
+  t('expressions-substituer', 'expressions', 'Évaluer (1 variable)', 'Calculer des expressions pour une même valeur, ex. t = 3.', 'Calculez le résultat.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-evaluer-2var', 'expressions', 'Évaluer (2 variables)', 'Évaluer cinq expressions avec les mêmes valeurs de deux lettres.', 'Évaluez les expressions avec deux variables. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-evaluer-3var', 'expressions', 'Évaluer (3 variables)', 'Évaluer cinq expressions avec les mêmes valeurs de trois lettres.', 'Évaluez les expressions avec trois variables. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-evaluer-avances', 'expressions', 'Évaluer (puissances et racines)', 'Évaluer avec carrés, cubes et racines carrées.', 'Évaluez les expressions avec puissances et racines. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-produits', 'expressions', 'Simplifier les produits', 'Simplifier m² · 4 · n · 2.', 'Simplifiez les produits.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-reduire', 'expressions', 'Réduction', 'Réduire 3x + 5x − 2.', 'Réduisez chaque expression.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-developper', 'expressions', 'Développement', 'Développer 3(x + 4).', 'Développez, puis réduisez si besoin.', 'ligne', { preferredColumns: 2 }),
+  t('expressions-factoriser', 'expressions', 'Factorisation', 'Factoriser 6x + 9.', 'Factorisez.', 'ligne', { preferredColumns: 2 }),
 
-  t('equations-simple', 'equations', 'Équations simples', 'Résoudre x + 7 = 15.', 'Trouvez la valeur de x.', 'ligne', { preferredColumns: 1 }),
-  t('equations-deux-cotes', 'equations', 'Inconnue des deux côtés', 'Résoudre 3x + 2 = x + 10.', 'Trouvez la valeur de x.', 'ligne', { preferredColumns: 1 }),
-  t('equations-fractions', 'equations', 'Avec fractions', 'Résoudre x/2 + 3 = 7.', 'Trouvez la valeur de x.', 'ligne', { preferredColumns: 1 }),
-  t('equations-systeme', 'equations', 'Systèmes (substitution)', 'Deux équations, deux inconnues.', 'Trouvez le couple (x ; y).', 'texte', { preferredColumns: 1 }),
-  t('equations-systeme-add', 'equations', 'Systèmes (addition)', 'Combinaison linéaire.', 'Trouvez le couple (x ; y).', 'texte', { preferredColumns: 1 }),
+  t('equations-simple', 'equations', 'Équations simples', 'Résoudre x + 7 = 15.', 'Résolvez l’équation. Écrivez le développement, puis la valeur de x.', 'ligne', { preferredColumns: 1 }),
+  t('equations-deux-cotes', 'equations', 'Inconnue des deux côtés', 'Résoudre 3x + 2 = x + 10.', 'Résolvez l’équation. Écrivez le développement, puis la valeur de x.', 'ligne', { preferredColumns: 1 }),
+  t('equations-fractions', 'equations', 'Avec fractions', 'Résoudre x/2 + 3 = 7.', 'Résolvez l’équation. Écrivez le développement, puis la valeur de x.', 'ligne', { preferredColumns: 1 }),
+  t('equations-systeme', 'equations', 'Systèmes (substitution)', 'Deux équations, deux inconnues.', 'Résolvez le système. Écrivez le développement, puis l’ensemble solution.', 'texte', { preferredColumns: 1 }),
+  t('equations-systeme-add', 'equations', 'Systèmes (addition)', 'Combinaison linéaire.', 'Résolvez le système. Écrivez le développement, puis l’ensemble solution.', 'texte', { preferredColumns: 1 }),
 
   t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, triangle, cercle…', 'Nommez chaque figure.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, sommets, angles droits.', 'Complétez la propriété.', 'geo', { figure: 'square', preferredColumns: 2 }),
@@ -295,7 +295,7 @@ export function defaultPage(domain: Domain = 'algèbre'): {
     difficulty: 'moyen',
     count,
     columns: type.preferredColumns ?? 2,
-    problemDraftGrids: type.id.includes('problemes')
+    problemDraftGrids: type.id.includes('problemes') || type.id.startsWith('equations-')
       ? Array.from({ length: count }, () => true)
       : undefined,
   }

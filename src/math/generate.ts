@@ -1,4 +1,8 @@
-import { tryGenerateAlgebraBatch } from './algebra'
+import {
+  generateSystemAddition,
+  generateSystemSubstitution,
+  tryGenerateAlgebraBatch,
+} from './algebra'
 import { exerciseTypeById, topicById } from './catalog'
 import {
   calcBound,
@@ -972,28 +976,10 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       }
       return { layout: 'inline', prompt: `x/2 = ${x / 2}    x =`, answer: String(x) }
     }
-    case 'equations-systeme': {
-      const x = int(rng, 1, 8)
-      const y = int(rng, 1, 8)
-      return {
-        layout: 'text',
-        prompt: `Résolvez le système :\nx + y = ${x + y}\nx = ${x}\nMéthode : substitution.`,
-        calcAnswer: 'substitution',
-        responseAnswer: `x = ${x} ; y = ${y}`,
-        answer: `x = ${x} ; y = ${y}`,
-      }
-    }
-    case 'equations-systeme-add': {
-      const x = int(rng, 1, 8)
-      const y = int(rng, 1, 8)
-      return {
-        layout: 'text',
-        prompt: `Résolvez le système :\n2x + y = ${2 * x + y}\n2x − y = ${2 * x - y}\nMéthode : addition.`,
-        calcAnswer: 'addition',
-        responseAnswer: `x = ${x} ; y = ${y}`,
-        answer: `x = ${x} ; y = ${y}`,
-      }
-    }
+    case 'equations-systeme':
+      return generateSystemSubstitution(rng)
+    case 'equations-systeme-add':
+      return generateSystemAddition(rng)
     case 'figures-nommer': {
       const names = [
         { figure: 'square' as const, answer: 'carré' },
@@ -1329,7 +1315,6 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   if (lecture) {
     return {
       ...config,
-      columns: lecture.preferredColumns ?? type?.preferredColumns ?? 1,
       title: type?.label ?? topic?.label ?? 'Exercices',
       instruction: lecture.instruction ?? type?.instruction ?? 'Complétez.',
       items: lecture.items,
@@ -1339,7 +1324,6 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   if (algebra) {
     return {
       ...config,
-      columns: algebra.preferredColumns ?? type?.preferredColumns ?? 1,
       title: type?.label ?? topic?.label ?? 'Exercices',
       instruction: algebra.instruction ?? type?.instruction ?? 'Calculez.',
       items: algebra.items,

@@ -134,7 +134,7 @@
 .column-prompt{margin:0 0 8px;font-size:12px;color:var(--ink);font-weight:600}
 .column-grid.school{
   display:flex;flex-direction:column;align-items:stretch;gap:0;
-  width:max-content;max-width:100%;margin-left:auto;
+  width:max-content;max-width:100%;margin-left:0;
   font-variant-numeric:tabular-nums;font-family:ui-monospace,Consolas,"Courier New",monospace
 }
 .column-line{display:flex;align-items:center;gap:6px}
@@ -321,9 +321,11 @@
 .a4-frame .worksheet-sheet{position:absolute;top:0;left:0;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-sizing:border-box;overflow:hidden!important;display:flex;flex-direction:column;border:0;box-shadow:none;margin:0!important;transform-origin:top left;transform:scale(calc(100cqw / 210mm))!important}
 .worksheet-sheet{display:flex!important;flex-direction:column;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-sizing:border-box;overflow:hidden!important;background:#fff}
 /* Marges miroir pour perforation / reliure à gauche : 2,5 cm côté reliure, 1 cm côté libre */
-.worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 2.5cm}
-.worksheet-sheet.sheet-even{padding:12mm 2.5cm 10mm 1cm}
+.worksheet-sheet.sheet-odd{padding:12mm 2.5cm 10mm 1cm}
+.worksheet-sheet.sheet-even{padding:12mm 1cm 10mm 2.5cm}
 .sheet-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+/* Aperçu : laisse voir le chip grille dans la marge (hors zone texte). */
+.a4-frame .sheet-body{overflow:visible}
 .sheet-body .exercise-grid{
   flex:0 0 auto;min-height:0;overflow:visible;align-content:start;
   gap:var(--ex-grid-gap);grid-auto-rows:max-content
@@ -446,23 +448,37 @@
   text-align:justify;hyphens:auto
 }
 .draft-grid-chip{
-  margin:0;padding:4px 8px;border:1px solid var(--line);border-radius:999px;
-  background:#fff;color:var(--muted);font-size:9px;font-weight:700;text-transform:uppercase;
-  letter-spacing:.04em;cursor:pointer;line-height:1.2;white-space:nowrap
+  margin:0;padding:3px 7px;border:1px solid var(--line);border-radius:999px;
+  background:#fff;color:var(--muted);font-size:8px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.03em;cursor:pointer;line-height:1.15;white-space:nowrap;
+  max-width:2.1cm;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box
 }
 .draft-grid-chip.on{border-color:#d6cafc;color:var(--purple);background:#f7f3ff}
 .draft-grid-chip.off{opacity:.85}
+/* Dans la marge de reliure (2,5 cm), entièrement visible à l’écran ; .no-print à l’impression. */
 .draft-grid-chip-margin{
-  position:absolute;left:-56px;top:2px;z-index:2
+  position:absolute;top:2px;z-index:5;
+  width:max-content;max-width:2.1cm
+}
+/* Pages impaires : débordement à droite ; pages paires : à gauche. */
+.worksheet-sheet.sheet-odd .draft-grid-chip-margin{
+  left:calc(100% + 4px);right:auto
+}
+.worksheet-sheet.sheet-even .draft-grid-chip-margin{
+  left:auto;right:calc(100% + 4px)
 }
 .draft-pad{
-  width:100%;height:40mm;min-height:40mm;max-height:40mm;
+  /* 24 colonnes × 5 lignes de cases carrées (hauteur = largeur de colonne). */
+  --grid-cols:24;
+  --grid-rows:5;
+  width:100%;
+  height:auto;
+  aspect-ratio:var(--grid-cols) / var(--grid-rows);
+  min-height:0;max-height:none;
   box-sizing:border-box;border:1px solid #c8c4d0;border-radius:0;
   background-color:#fff;flex-shrink:0;overflow:hidden;position:relative
 }
 .draft-pad.with-grid{
-  --grid-cols:24;
-  --grid-rows:10;
   background-image:
     linear-gradient(to right, #e6e2ec 1px, transparent 1px),
     linear-gradient(to bottom, #e6e2ec 1px, transparent 1px);
@@ -471,8 +487,92 @@
 }
 .draft-pad.plain{background-image:none;background-color:#fff}
 .draft-pad-answer{
-  display:block;padding:6px 8px;font-size:14px;line-height:1.4
+  display:block;padding:6px 8px;font-size:13px;line-height:1.35;
+  white-space:pre-line;font-weight:600
 }
+.draft-pad.equation-draft{
+  --grid-rows:8;
+}
+.draft-pad.equation-draft.with-lines{
+  background-image:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(100% / var(--grid-rows) - 1px),
+    #d4cfe0 calc(100% / var(--grid-rows) - 1px),
+    #d4cfe0 calc(100% / var(--grid-rows))
+  );
+  background-size:100% 100%;
+  background-position:0 0
+}
+.draft-pad.equation-draft.has-correction{
+  overflow:auto;aspect-ratio:auto;min-height:4.5cm;height:auto;
+  background-image:none;padding:4px 2px
+}
+.draft-pad.equation-draft .draft-pad-answer{
+  font-size:11px;line-height:1.3;padding:4px 6px
+}
+.equation-correction{
+  width:100%;border-collapse:collapse;
+  font-family:ui-monospace,Consolas,"Courier New",monospace;
+  font-size:11px;line-height:1.35
+}
+.equation-correction .eq-corr-op{
+  vertical-align:top;text-align:right;padding:1px 6px 1px 2px;
+  color:var(--purple);font-size:10px;white-space:nowrap;font-weight:600
+}
+.equation-correction .eq-corr-body{
+  vertical-align:top;text-align:left;padding:1px 2px 1px 8px;
+  border-left:2px solid var(--purple);color:var(--ink)
+}
+.equation-correction .eq-corr-eq{
+  display:inline-flex;align-items:baseline;white-space:nowrap
+}
+.equation-correction .eq-corr-lhs{
+  display:inline-block;text-align:right;font-variant-numeric:tabular-nums;flex-shrink:0
+}
+.equation-correction .eq-corr-eq-sign{margin:0 0.35em;flex-shrink:0}
+.equation-correction .eq-corr-phase{
+  font-weight:700;color:var(--purple);font-family:'DM Sans',sans-serif;font-size:10px
+}
+.equation-correction .eq-corr-note{
+  font-weight:700;color:var(--purple);font-size:10px
+}
+.equation-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0;
+  overflow:visible;position:relative
+}
+.equation-prompt{display:flex;flex-direction:column;gap:2px;width:100%;min-width:0;align-items:center}
+.equation-line{
+  justify-content:start;align-items:baseline;font-size:15px;line-height:1.5;
+  font-weight:600;font-variant-numeric:tabular-nums;
+  font-family:ui-monospace,Consolas,"Courier New",monospace
+}
+.equation-system{
+  display:grid;grid-template-columns:auto auto 1fr;align-items:center;
+  column-gap:8px;width:fit-content;max-width:100%;margin:0 auto;
+  font-family:ui-monospace,Consolas,"Courier New",monospace
+}
+.equation-system-labels{
+  display:flex;flex-direction:column;justify-content:space-around;
+  align-items:flex-end;gap:2px;font-size:13px;font-weight:700;
+  font-family:Fraunces,Georgia,serif;color:var(--ink);line-height:1.5;height:100%
+}
+.equation-system-brace{
+  font-size:42px;line-height:0.9;font-weight:300;color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;padding:0 2px
+}
+.equation-system-eqs{
+  display:flex;flex-direction:column;gap:4px;min-width:0
+}
+.equation-answer-lines{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;width:100%;min-width:0;
+  margin-top:4px;padding-bottom:4px;box-sizing:border-box
+}
+.equation-answer-line{
+  display:flex;align-items:baseline;gap:8px;flex:1 1 8em;min-width:6em
+}
+.equation-answer-line .answer-line-field,
+.equation-answer-line .response-value{flex:1;min-width:3em}
 .problem-fields{display:flex;flex-direction:column;gap:var(--ex-pad-y)}
 .problem-fields.compact{gap:var(--ex-prompt-gap)}
 .problem-field{display:flex;flex-direction:column;gap:4px;width:100%;min-width:0}
@@ -488,16 +588,29 @@
 .problem-response-line .response-value{flex:1;min-width:0}
 .exercise-item.is-problem{
   position:relative;overflow:visible;
-  padding-bottom:20px;margin-bottom:16px;align-items:flex-start
+  padding-bottom:12px;margin-bottom:8px;align-items:flex-start;min-width:0
+}
+.a4-frame .exercise-item.is-problem,
+.a4-frame .exercise-grid.problem-grid{
+  overflow:visible
 }
 .draft-grid-page-toggle{margin-top:4px}
 .field-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#555}
 
-.geo-block,.coord-block{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
-.geo-side,.coord-side{min-width:0}
-.geometry-figure{display:block;width:170px;height:120px;margin:0;color:var(--ink);overflow:visible}
-.geometry-figure .dim-label{fill:currentColor;stroke:none;font-size:11px;font-weight:600;font-family:'DM Sans',sans-serif}
-.coord-grid{width:130px;height:130px;color:var(--ink)}
+.geo-block,.coord-block{
+  display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%;min-width:0
+}
+.geo-side,.coord-side{min-width:0;width:100%}
+.geometry-figure{
+  display:block;width:min(200px,100%);height:auto;aspect-ratio:260 / 190;
+  margin:0;color:var(--ink);overflow:visible
+}
+.geometry-figure .dim-label{
+  fill:currentColor;stroke:none;font-size:12px;font-weight:600;
+  font-family:'DM Sans',sans-serif
+}
+.geometry-figure.cotee{overflow:visible}
+.coord-grid{width:min(130px,100%);height:auto;aspect-ratio:1;color:var(--ink)}
 .coord-grid .grid-line{stroke:#ccc;stroke-width:0.6}
 .coord-grid .axis-line{stroke:#111;stroke-width:1.4}
 .coord-grid .axis-label{fill:#111;font-size:10px;font-family:'DM Sans',sans-serif}
@@ -534,10 +647,21 @@
 .sheet-givens .given-letter{color:var(--purple);font-style:italic}
 .sheet-givens .given-value{font-variant-numeric:tabular-nums}
 .exercise-grid.algebra-grid{
-  display:flex;flex-direction:column;gap:10px;grid-template-columns:none
+  display:grid!important;
+  grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr))!important;
+  gap:10px 16px;
+  align-content:start
 }
+/* Problèmes / équations : même grille 1–3 colonnes que le reste (plus de forçage 1 col). */
 .exercise-grid.problem-grid{
-  display:flex;flex-direction:column;gap:22px;grid-template-columns:none;align-content:start
+  display:grid!important;
+  grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr))!important;
+  gap:14px 12px;
+  align-content:start
+}
+.worksheet-sheet .exercise-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr));
 }
 .exercise-item.layout-algebra{min-height:min-content;align-items:baseline}
 .algebra-row{
@@ -584,8 +708,8 @@
   .sheet-preview-wrap{display:none!important}
   .print-only-sheets{display:block!important}
   .print-only-sheets .worksheet-sheet{width:210mm;min-height:297mm;max-height:297mm;height:297mm;margin:0;transform:none;border:0;box-shadow:none;display:flex;flex-direction:column;overflow:hidden;position:static}
-  .print-only-sheets .worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 2.5cm}
-  .print-only-sheets .worksheet-sheet.sheet-even{padding:12mm 2.5cm 10mm 1cm}
+  .print-only-sheets .worksheet-sheet.sheet-odd{padding:12mm 2.5cm 10mm 1cm}
+  .print-only-sheets .worksheet-sheet.sheet-even{padding:12mm 1cm 10mm 2.5cm}
   .sheet-body{flex:1 1 auto}
   .doc-footer{margin-top:auto}
 }
@@ -631,7 +755,11 @@
 }
 .sheet-instruction-main{flex:1;min-width:0}
 .sheet-instruction-main>b{font-weight:800}
-.sheet-instruction-main>p{display:inline;margin:0 0 0 9px}
+.sheet-instruction-main>p:not(.sheet-givens){display:inline;margin:0 0 0 9px}
+.sheet-instruction-main>.sheet-givens{
+  display:block;margin:10px 0 0;padding:0;
+  font-size:15px;font-weight:700;line-height:1.5;color:var(--ink)
+}
 .instruction-points{
   flex:0 0 auto;margin-left:auto;align-self:flex-start;
   font-weight:700;color:var(--ink);white-space:nowrap;text-align:right;line-height:1.45

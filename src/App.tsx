@@ -71,8 +71,10 @@ function WorksheetSheet({
 }) {
   const showHeader = pageNumber === 1
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
-  const isProblemPage = page.items.some(
-    (item) => item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer),
+  const isDraftPadPage = page.items.some(
+    (item) =>
+      item.layout === 'equation' ||
+      (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
   )
   return (
     <article
@@ -96,10 +98,10 @@ function WorksheetSheet({
             <b>Consigne</b>
             <p>{page.instruction}</p>
             {page.givens && page.givens.length > 0 ? (
-              <p className="sheet-givens">
+              <p className="sheet-givens" aria-label="Valeurs des variables">
                 {page.givens.map((given, index) => (
                   <span key={given.letter}>
-                    {index > 0 ? (index === page.givens!.length - 1 ? ' et ' : ', ') : null}
+                    {index > 0 ? <span className="given-sep"> · </span> : null}
                     <span className="given-letter">{given.letter}</span>
                     {' = '}
                     <span className="given-value">{String(given.value).replace('.', ',')}</span>
@@ -116,7 +118,7 @@ function WorksheetSheet({
           className={`exercise-grid${
             page.items.every((item) => item.layout === 'algebra')
               ? ' algebra-grid'
-              : isProblemPage
+              : isDraftPadPage
                 ? ' problem-grid'
                 : ''
           }`}
@@ -348,8 +350,12 @@ function resizeDraftGrids(prev: boolean[] | undefined, count: number): boolean[]
   return Array.from({ length: count }, (_, i) => prev?.[i] ?? true)
 }
 
+function isDraftPadExercise(typeId: string): boolean {
+  return typeId.includes('problemes') || typeId.startsWith('equations-')
+}
+
 function isProblemExercise(typeId: string): boolean {
-  return typeId.includes('problemes')
+  return isDraftPadExercise(typeId)
 }
 
 function GeneratorPage() {
@@ -451,6 +457,14 @@ function GeneratorPage() {
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const next = { ...page, ...patch }
+        if (
+          patch.exerciseType != null &&
+          patch.exerciseType.startsWith('equations-') &&
+          !page.exerciseType.startsWith('equations-') &&
+          patch.count == null
+        ) {
+          next.count = Math.min(next.count, 3)
+        }
         if (patch.count != null || patch.exerciseType != null) {
           const count = patch.count ?? next.count
           next.problemDraftGrids = isProblemExercise(next.exerciseType)

@@ -140,7 +140,6 @@ export function generateEvalOneVar(rng: Rng, count: number): AlgebraBatch {
     items,
     givens: [{ letter, value }],
     instruction: 'Calculez le résultat.',
-    preferredColumns: 1,
   }
 }
 
@@ -224,35 +223,52 @@ export function generateEvalMultiVar(
       const a = int(rng, 2, 5)
       const sq = pick(rng, SQRT_CHOICES)
       const root = Math.sqrt(sq)
-      return { expression: `${u}² + ${a}${v} - √${sq}`, result: uv! * uv! + a * vv! - root }
+      return { expression: `${u}² + ${a}${v} − √${sq}`, result: uv! * uv! + a * vv! - root }
     },
     () => {
       const a = int(rng, 2, 5)
       const b = int(rng, 2, 5)
-      return { expression: `${a}${u}² - ${b}${v} + ${w}`, result: a * uv! * uv! - b * vv! + wv! }
+      return { expression: `${a}${u}² − ${b}${v} + ${w}`, result: a * uv! * uv! - b * vv! + wv! }
     },
     () => {
       const a = int(rng, 2, 5)
       const sq = pick(rng, SQRT_CHOICES)
       const root = Math.sqrt(sq)
       return {
-        expression: `√${sq} + ${a}(${u} - ${v}) + ${w}²`,
+        expression: `√${sq} + ${a}(${u} − ${v}) + ${w}²`,
         result: root + a * (uv! - vv!) + wv! * wv!,
       }
     },
     () => {
       const a = int(rng, 2, 5)
       const b = int(rng, 2, 5)
-      return { expression: `${a}${u}² + ${b}${v}² - ${w}`, result: a * uv! * uv! + b * vv! * vv! - wv! }
+      return { expression: `${a}${u}² + ${b}${v}² − ${w}`, result: a * uv! * uv! + b * vv! * vv! - wv! }
     },
     () => {
       const a = int(rng, 2, 5)
       const sq = pick(rng, SQRT_CHOICES)
       const root = Math.sqrt(sq)
       return {
-        expression: `${a}(${u} + ${v})² - √${sq} - ${w}`,
+        expression: `${a}(${u} + ${v})² − √${sq} − ${w}`,
         result: a * (uv! + vv!) * (uv! + vv!) - root - wv!,
       }
+    },
+    () => {
+      const a = int(rng, 2, 4)
+      const sq = pick(rng, SQRT_CHOICES)
+      const root = Math.sqrt(sq)
+      return { expression: `${u}³ + ${a}${v} − √${sq}`, result: uv! * uv! * uv! + a * vv! - root }
+    },
+    () => {
+      const a = int(rng, 2, 5)
+      const b = int(rng, 2, 5)
+      return { expression: `${a}${u}² − ${b}${w}² + ${v}`, result: a * uv! * uv! - b * wv! * wv! + vv! }
+    },
+    () => {
+      const sq = pick(rng, SQRT_CHOICES)
+      const root = Math.sqrt(sq)
+      const a = int(rng, 2, 5)
+      return { expression: `√${sq} · ${a} + ${u}² − ${v}`, result: root * a + uv! * uv! - vv! }
     },
   ]
 
@@ -274,7 +290,6 @@ export function generateEvalMultiVar(
     items,
     givens: letters.map((letter, i) => ({ letter, value: values[i]! })),
     instruction,
-    preferredColumns: 1,
   }
 }
 
@@ -337,7 +352,6 @@ export function generateSimplifyProducts(rng: Rng, count: number): AlgebraBatch 
   return {
     items,
     instruction: 'Simplifiez les produits.',
-    preferredColumns: 1,
   }
 }
 
@@ -373,7 +387,6 @@ export function generateReduce(rng: Rng, count: number): AlgebraBatch {
   return {
     items,
     instruction: 'Réduisez chaque expression.',
-    preferredColumns: 1,
   }
 }
 
@@ -433,7 +446,6 @@ export function generateDevelop(rng: Rng, count: number): AlgebraBatch {
   return {
     items,
     instruction: 'Développez, puis réduisez si besoin.',
-    preferredColumns: 1,
   }
 }
 
@@ -457,7 +469,101 @@ export function generateFactor(rng: Rng, count: number): AlgebraBatch {
   return {
     items,
     instruction: 'Factorisez les expressions.',
-    preferredColumns: 1,
+  }
+}
+
+/** Item équation : énoncé + développement / opérations (corrigé) + lignes x = / y =. */
+function equationItem(opts: {
+  equation: string
+  development: string[]
+  operations?: string[]
+  x: number
+  y?: number
+  systemBrace?: boolean
+}): MathItem {
+  const { equation, development, x, y, systemBrace } = opts
+  const operations = alignOps(development, opts.operations ?? [])
+  const unknowns = y === undefined ? ['x'] : ['x', 'y']
+  const responseAnswer =
+    y === undefined ? `x = ${fmt(x)}` : `x = ${fmt(x)} ; y = ${fmt(y)}`
+  return {
+    layout: 'equation',
+    prompt: equation,
+    development,
+    operations,
+    calcAnswer: development.join('\n'),
+    responseAnswer,
+    answer: responseAnswer,
+    unknowns,
+    systemBrace,
+  }
+}
+
+function alignOps(dev: string[], ops: string[]): string[] {
+  if (ops.length === dev.length) return ops
+  if (ops.length > dev.length) return ops.slice(0, dev.length)
+  return [...ops, ...Array.from({ length: dev.length - ops.length }, () => '')]
+}
+
+function opAdd(n: number): string {
+  if (n === 0) return ''
+  return n < 0 ? `− ${Math.abs(n)}` : `+ ${n}`
+}
+
+function opSub(n: number): string {
+  return `− ${Math.abs(n)}`
+}
+
+function stepsXPlusB(b: number, right: number, x: number): { development: string[]; operations: string[] } {
+  const development = [`x + ${b} = ${right}`, `x = ${x}`]
+  return { development, operations: alignOps(development, ['', opSub(b)]) }
+}
+
+function stepsAX(a: number, right: number, x: number): { development: string[]; operations: string[] } {
+  const development = [`${a}x = ${right}`, `x = ${x}`]
+  return { development, operations: alignOps(development, ['', `: ${a}`]) }
+}
+
+function stepsAXMinusB(a: number, b: number, right: number, x: number): { development: string[]; operations: string[] } {
+  const mid = a * x
+  const development = [`${a}x − ${b} = ${right}`, `${a}x = ${mid}`, `x = ${x}`]
+  return { development, operations: alignOps(development, ['', `+ ${b}`, `: ${a}`]) }
+}
+
+function stepsTwoSides(a: number, b: number, c: number, d: number, x: number): {
+  development: string[]
+  operations: string[]
+} {
+  const coef = a - c
+  const development = [
+    `${a}x${signed(b)} = ${c}x${signed(d)}`,
+    `${coef}x${signed(b)} = ${d}`,
+    `${coef}x = ${coef * x}`,
+    `x = ${x}`,
+  ]
+  return {
+    development,
+    operations: alignOps(development, ['', `− ${c}x`, opSub(b), `: ${coef}`]),
+  }
+}
+
+function stepsFraction(den: number, constant: number, result: number, x: number): {
+  development: string[]
+  operations: string[]
+} {
+  const mid = x / den
+  if (constant === 0) {
+    const development = [`x/${den} = ${result}`, `x = ${x}`]
+    return { development, operations: alignOps(development, ['', `· ${den}`]) }
+  }
+  const development = [
+    `x/${den}${signed(constant)} = ${result}`,
+    `x/${den} = ${mid}`,
+    `x = ${x}`,
+  ]
+  return {
+    development,
+    operations: alignOps(development, ['', opAdd(-constant), `· ${den}`]),
   }
 }
 
@@ -473,9 +579,8 @@ export function generateEquations(
     items,
     instruction:
       difficulty === 'avance'
-        ? 'Trouvez la valeur de x (fractions, puissances ou racines).'
-        : 'Trouvez la valeur de x.',
-    preferredColumns: 1,
+        ? 'Résolvez l’équation. Écrivez le développement, puis la valeur de x (fractions, puissances ou racines).'
+        : 'Résolvez l’équation. Écrivez le développement, puis la valeur de x.',
   }
 }
 
@@ -490,30 +595,91 @@ function oneEquation(
       const den = int(rng, 2, 7)
       const x = int(rng, 2, 8) * den
       const k = int(rng, 1, 5)
-      return algebraExpr(`x/${den} + ${k}² = ${x / den + k * k}`, x)
+      const k2 = k * k
+      const mid = x / den
+      const right = mid + k2
+      const development = [
+        `x/${den} + ${k}² = ${right}`,
+        `x/${den} + ${k2} = ${right}`,
+        `x/${den} = ${mid}`,
+        `x = ${x}`,
+      ]
+      return equationItem({
+        equation: development[0]!,
+        development,
+        operations: ['', 'effectuer', opSub(k2), `· ${den}`],
+        x,
+      })
     }
     if (mode === 1) {
       const root = pick(rng, [4, 9, 16, 25, 36] as const)
+      const sqrt = Math.sqrt(root)
       const x = int(rng, 2, 15)
       const a = int(rng, 2, 5)
-      return algebraExpr(`${a}x + √${root} = ${a * x + Math.sqrt(root)}`, x)
+      const mid = a * x
+      const right = mid + sqrt
+      const development = [
+        `${a}x + √${root} = ${right}`,
+        `${a}x + ${sqrt} = ${right}`,
+        `${a}x = ${mid}`,
+        `x = ${x}`,
+      ]
+      return equationItem({
+        equation: development[0]!,
+        development,
+        operations: ['', 'effectuer', opSub(sqrt), `: ${a}`],
+        x,
+      })
     }
     if (mode === 2) {
       const x = int(rng, 2, 10)
       const a = int(rng, 2, 4)
-      return algebraExpr(`${a}x² − ${a * x * x - x} = ${x}`, x)
+      const constTerm = a * x * x - x
+      const mid = a * x * x
+      const development = [
+        `${a}x² − ${constTerm} = ${x}`,
+        `${a}x² = ${mid}`,
+        `x² = ${x * x}`,
+        `x = ${x}`,
+      ]
+      return equationItem({
+        equation: development[0]!,
+        development,
+        operations: ['', `+ ${constTerm}`, `: ${a}`, ''],
+        x,
+      })
     }
     const den = int(rng, 2, 6)
     const x = int(rng, 2, 9) * den
-    return algebraExpr(`x/${den} − √4 = ${x / den - 2}`, x)
+    const mid = x / den
+    const right = mid - 2
+    const development = [
+      `x/${den} − √4 = ${right}`,
+      `x/${den} − 2 = ${right}`,
+      `x/${den} = ${mid}`,
+      `x = ${x}`,
+    ]
+    return equationItem({
+      equation: development[0]!,
+      development,
+      operations: ['', 'effectuer', `+ 2`, `· ${den}`],
+      x,
+    })
   }
 
-  if (difficulty === 'moyen' && (kind === 'fraction' || kind === 'simple' && rng() < 0.35)) {
+  if (difficulty === 'moyen' && (kind === 'fraction' || (kind === 'simple' && rng() < 0.35))) {
     const den = int(rng, 2, 9)
     const x = int(rng, -8, 12) * den
-    const constant = int(rng, -5, 8)
+    if (x === 0) return oneEquation(rng, kind, difficulty)
+    const constant = nonzero(rng, -5, 8)
     const result = x / den + constant
-    return algebraExpr(`x/${den}${signed(constant)} = ${result}`, x)
+    const { development, operations } = stepsFraction(den, constant, result, x)
+    return equationItem({
+      equation: `x/${den}${signed(constant)} = ${result}`,
+      development,
+      operations,
+      x,
+    })
   }
 
   if (kind === 'two-sides' || (difficulty === 'moyen' && kind === 'simple' && rng() < 0.5)) {
@@ -522,7 +688,13 @@ function oneEquation(
     const c = int(rng, 1, a - 1)
     const b = int(rng, 1, 10)
     const d = a * x + b - c * x
-    return algebraExpr(`${a}x${signed(b)} = ${c}x${signed(d)}`, x)
+    const { development, operations } = stepsTwoSides(a, b, c, d, x)
+    return equationItem({
+      equation: `${a}x${signed(b)} = ${c}x${signed(d)}`,
+      development,
+      operations,
+      x,
+    })
   }
 
   if (kind === 'fraction') {
@@ -530,19 +702,127 @@ function oneEquation(
     const x = int(rng, 2, 12) * den
     const constant = int(rng, 0, 8)
     const result = x / den + constant
-    return algebraExpr(
-      constant === 0 ? `x/${den} = ${result}` : `x/${den}${signed(constant)} = ${result}`,
+    const { development, operations } = stepsFraction(den, constant, result, x)
+    return equationItem({
+      equation: constant === 0 ? `x/${den} = ${result}` : `x/${den}${signed(constant)} = ${result}`,
+      development,
+      operations,
       x,
-    )
+    })
   }
 
   const x = int(rng, 2, difficulty === 'facile' ? 12 : 20)
   const a = int(rng, 2, difficulty === 'facile' ? 5 : 7)
   const b = int(rng, 1, difficulty === 'facile' ? 9 : 12)
   const mode = int(rng, 0, 2)
-  if (mode === 0) return algebraExpr(`x + ${b} = ${x + b}`, x)
-  if (mode === 1) return algebraExpr(`${a}x = ${a * x}`, x)
-  return algebraExpr(`${a}x − ${b} = ${a * x - b}`, x)
+  if (mode === 0) {
+    const right = x + b
+    const { development, operations } = stepsXPlusB(b, right, x)
+    return equationItem({ equation: `x + ${b} = ${right}`, development, operations, x })
+  }
+  if (mode === 1) {
+    const right = a * x
+    const { development, operations } = stepsAX(a, right, x)
+    return equationItem({ equation: `${a}x = ${right}`, development, operations, x })
+  }
+  const right = a * x - b
+  const { development, operations } = stepsAXMinusB(a, b, right, x)
+  return equationItem({ equation: `${a}x − ${b} = ${right}`, development, operations, x })
+}
+
+const PHASE_ISOLATE = 'Isoler une inconnue'
+const PHASE_SUBSTITUTE = 'Substituer sa valeur'
+const PHASE_OTHER = "Chercher l'autre inconnue"
+
+function fmtLin(a: number, b: number, c: number): string {
+  const parts: string[] = []
+  if (a !== 0) parts.push(a === 1 ? 'x' : a === -1 ? '−x' : `${a}x`)
+  if (b !== 0) {
+    const abs = Math.abs(b)
+    const term = abs === 1 ? 'y' : `${abs}y`
+    parts.push(b > 0 ? `+ ${term}` : `− ${term}`)
+  }
+  return `${parts.join(' ').replace(/^\+ /, '')} = ${c}`
+}
+
+/** Système par substitution (style A10.3 soutien-scolaire). */
+export function generateSystemSubstitution(rng: Rng): MathItem {
+  const x = int(rng, 1, 8)
+  const y = int(rng, 1, 8)
+  const a = int(rng, 2, 5)
+  const c = a * x + y
+  const d = int(rng, 3, 8)
+  const e = int(rng, 2, 6)
+  const f2 = d * x - e * y
+  const development = [
+    PHASE_ISOLATE,
+    fmtLin(a, 1, c),
+    `y = ${c} − ${a}x`,
+    PHASE_SUBSTITUTE,
+    `${d}x − ${e}(${c} − ${a}x) = ${f2}`,
+    `${d}x − ${e * c} + ${e * a}x = ${f2}`,
+    `${d + e * a}x − ${e * c} = ${f2}`,
+    `${d + e * a}x = ${f2 + e * c}`,
+    `x = ${x}`,
+    PHASE_OTHER,
+    `y = ${c} − ${a}x`,
+    `y = ${y}`,
+  ]
+  return equationItem({
+    equation: `${fmtLin(a, 1, c)}\n${fmtLin(d, -e, f2)}`,
+    development,
+    operations: [
+      '',
+      '',
+      `− ${a}x`,
+      '',
+      '',
+      'effectuer',
+      'réduire',
+      `+ ${e * c}`,
+      `: ${d + e * a}`,
+      '',
+      '',
+      '',
+    ],
+    x,
+    y,
+    systemBrace: true,
+  })
+}
+
+/** Système par addition / combinaison linéaire (style A10.4). */
+export function generateSystemAddition(rng: Rng): MathItem {
+  const x = int(rng, 1, 8)
+  const y = int(rng, 1, 8)
+  const a = int(rng, 2, 5)
+  const b = int(rng, 2, 5)
+  const d = a
+  const e = -b
+  const c1 = a * x + b * y
+  const c2 = d * x + e * y
+  const development = [
+    'I',
+    fmtLin(a, b, c1),
+    'II',
+    fmtLin(d, e, c2),
+    `${2 * a}x = ${c1 + c2}`,
+    `x = ${x}`,
+    'dans I',
+    fmtLin(a, b, c1),
+    `${a} · ${x} + ${b}y = ${c1}`,
+    `${a * x} + ${b}y = ${c1}`,
+    `${b}y = ${c1 - a * x}`,
+    `y = ${y}`,
+  ]
+  return equationItem({
+    equation: `${fmtLin(a, b, c1)}\n${fmtLin(d, e, c2)}`,
+    development,
+    operations: ['', '', '', '', '', `: ${2 * a}`, '', '', 'effectuer', '', `− ${a * x}`, `: ${b}`],
+    x,
+    y,
+    systemBrace: true,
+  })
 }
 
 export function tryGenerateAlgebraBatch(
@@ -559,11 +839,8 @@ export function tryGenerateAlgebraBatch(
     case 'expressions-evaluer-3var':
       return generateEvalMultiVar(rng, count, difficulty === 'facile' ? 'two' : 'three')
     case 'expressions-evaluer-avances':
-      return generateEvalMultiVar(
-        rng,
-        count,
-        difficulty === 'facile' ? 'two' : difficulty === 'moyen' ? 'three' : 'advanced',
-      )
+      // Toujours des puissances / racines (pas de repli vers two/three selon le niveau).
+      return generateEvalMultiVar(rng, count, 'advanced')
     case 'expressions-produits':
       return generateSimplifyProducts(rng, count)
     case 'expressions-reduire':

@@ -425,7 +425,7 @@ function ParsedEquationRow({
 export function tokenizeAlgebra(expression: string): string[] {
   const tokens: string[] = []
   const re =
-    /√\d+|√|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=()]/gu
+    /√\d+|√|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()]/gu
   let last = 0
   for (const match of expression.matchAll(re)) {
     const start = match.index ?? 0
@@ -446,7 +446,7 @@ function isAlgebraLetter(token: string): boolean {
 }
 
 function isAlgebraOp(token: string): boolean {
-  return /^[+\-−×÷·=]$/.test(token)
+  return /^[+\-−×÷·=/]$/.test(token)
 }
 
 function AlgebraToken({ token }: { token: string }) {
@@ -650,6 +650,172 @@ function ProblemBlock({
   )
 }
 
+function EquationCorrectionLines({
+  lines,
+  operations = [],
+}: {
+  lines: string[]
+  operations?: string[]
+}) {
+  const PHASES = new Set([
+    'Isoler une inconnue',
+    'Substituer sa valeur',
+    "Chercher l'autre inconnue",
+  ])
+  const rows = lines.map((line, i) => ({
+    line,
+    op: (operations[i] ?? '').trim(),
+  }))
+
+  const parsed = rows.map(({ line, op }) => {
+    const equalIndex = line.indexOf('=')
+    const hasEquation = equalIndex > 0
+    const isPhase = PHASES.has(line) || /^(I|II|dans I|dans II)$/i.test(line.trim())
+    return {
+      op,
+      hasEquation,
+      isPhase: isPhase && !hasEquation,
+      lhs: hasEquation ? line.slice(0, equalIndex).trim() : '',
+      rhs: hasEquation ? line.slice(equalIndex + 1).trim() : '',
+      full: line,
+    }
+  })
+
+  const maxLhsLen = parsed.reduce(
+    (max, r) => (r.hasEquation ? Math.max(max, r.lhs.length) : max),
+    0,
+  )
+  const lhsWidthCh = Math.max(maxLhsLen + 0.5, 2)
+  const maxOpLen = parsed.reduce((max, r) => Math.max(max, r.op.length), 0)
+  const opWidthCh = Math.max(maxOpLen + 0.5, 3)
+
+  return (
+    <table className="equation-correction" aria-label="Correction du développement">
+      <tbody>
+        {parsed.map(({ hasEquation, isPhase, lhs, rhs, full, op }, i) => (
+          <tr key={`${full}-${i}`}>
+            <td className="eq-corr-op" style={{ width: `${opWidthCh}ch` }}>
+              {op || '\u00a0'}
+            </td>
+            <td className="eq-corr-body">
+              {hasEquation ? (
+                <span className="eq-corr-eq">
+                  <span className="eq-corr-lhs" style={{ width: `${lhsWidthCh}ch` }}>
+                    {lhs}
+                  </span>
+                  <span className="eq-corr-eq-sign">=</span>
+                  <span className="eq-corr-rhs">{rhs}</span>
+                </span>
+              ) : (
+                <span className={isPhase ? 'eq-corr-phase' : 'eq-corr-note'}>{full}</span>
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
+function EquationBlock({
+  item,
+  mode,
+  draftGrid = true,
+}: {
+  item: MathItem
+  mode: PreviewMode
+  draftGrid?: boolean
+}) {
+  const show = mode === 'answers'
+  const unknowns = item.unknowns ?? ['x']
+  const values = new Map<string, string>()
+  const raw = item.responseAnswer ?? item.answer ?? ''
+  for (const part of raw.split(';')) {
+    const m = part.trim().match(/^([a-z])\s*=\s*(.+)$/i)
+    if (m) values.set(m[1]!.toLowerCase(), m[2]!.trim())
+  }
+
+  const promptLines = (item.prompt ?? '').split('\n').filter(Boolean)
+  const development = item.development ?? (item.calcAnswer ? item.calcAnswer.split('\n') : [])
+  const operations = item.operations ?? []
+
+  return (
+    <div className="equation-block">
+      {item.systemBrace && promptLines.length >= 2 ? (
+        <div className="equation-system" aria-label="Système d’équations">
+          <div className="equation-system-labels">
+            <span>I</span>
+            <span>II</span>
+          </div>
+          <span className="equation-system-brace" aria-hidden>
+            {'{'}
+          </span>
+          <div className="equation-system-eqs">
+            {promptLines.map((line, i) => {
+              const tokens = tokenizeAlgebra(line)
+              return (
+                <div
+                  className="algebra-expr equation-line"
+                  key={`sys-${i}`}
+                  style={{
+                    gridTemplateColumns: `repeat(${tokens.length}, minmax(1.1ch, max-content))`,
+                  }}
+                >
+                  {tokens.map((token, ti) => (
+                    <AlgebraToken key={`${token}-${ti}`} token={token} />
+                  ))}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      ) : (
+        <div className="equation-prompt" aria-label="Équation">
+          {promptLines.map((line, i) => {
+            const tokens = tokenizeAlgebra(line)
+            return (
+              <div
+                className="algebra-expr equation-line"
+                key={`eq-${i}`}
+                style={{
+                  gridTemplateColumns: `repeat(${tokens.length}, minmax(1.1ch, max-content))`,
+                }}
+              >
+                {tokens.map((token, ti) => (
+                  <AlgebraToken key={`${token}-${ti}`} token={token} />
+                ))}
+              </div>
+            )
+          })}
+        </div>
+      )}
+      <div className="problem-field">
+        <span className="field-label">{show ? 'Correction' : 'Développement'}</span>
+        <div
+          className={`draft-pad equation-draft ${draftGrid ? 'with-lines' : 'plain'}${show ? ' has-correction' : ''}`}
+          aria-label="Zone de développement"
+        >
+          {show && development.length > 0 ? (
+            <EquationCorrectionLines lines={development} operations={operations} />
+          ) : null}
+        </div>
+      </div>
+      <div className="equation-answer-lines">
+        {unknowns.map((u) => (
+          <div className="equation-answer-line" key={u}>
+            <span className="response-label">{u} =</span>
+            {show ? (
+              <strong className="filled-answer response-value">{values.get(u) ?? '\u00a0'}</strong>
+            ) : (
+              <span className="answer-line-field">{'\u00a0'}</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   return (
@@ -729,17 +895,19 @@ export function MathItemView({
   onToggleDraftGrid?: () => void
 }) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
+  const isEquation = item.layout === 'equation'
+  const isDraftPad = isProblem || isEquation
   const isStackedText = item.layout === 'text' && !isProblem
   return (
-    <div className={`exercise-item layout-${item.layout}${isProblem ? ' is-problem' : ''}`}>
-      {isProblem && onToggleDraftGrid ? (
+    <div className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}`}>
+      {isDraftPad && onToggleDraftGrid ? (
         <button
           type="button"
           className={`no-print draft-grid-chip draft-grid-chip-margin ${draftGrid ? 'on' : 'off'}`}
           onClick={onToggleDraftGrid}
           aria-pressed={draftGrid}
         >
-          {draftGrid ? 'Grille 4×4' : 'Sans grille'}
+          {draftGrid ? 'Grille' : 'Sans'}
         </button>
       ) : null}
       <div className="item-number">{index + 1}.</div>
@@ -755,6 +923,7 @@ export function MathItemView({
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} />}
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
+        {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {isStackedText && <StackedPrompt item={item} mode={mode} />}

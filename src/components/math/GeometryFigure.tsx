@@ -18,39 +18,65 @@ function u(dims?: FigureDims) {
   return dims?.unit ?? 'cm'
 }
 
+function fmt(n: number) {
+  return String(n).replace('.', ',')
+}
+
 function L({
   x,
   y,
   children,
   anchor = 'middle',
+  rotate,
 }: {
   x: number
   y: number
   children: ReactNode
   anchor?: 'start' | 'middle' | 'end'
+  rotate?: number
 }) {
   return (
-    <text x={x} y={y} textAnchor={anchor} className="dim-label" fill="currentColor" stroke="none">
+    <text
+      x={x}
+      y={y}
+      textAnchor={anchor}
+      className="dim-label"
+      fill="currentColor"
+      stroke="none"
+      transform={rotate != null ? `rotate(${rotate} ${x} ${y})` : undefined}
+    >
       {children}
     </text>
   )
 }
 
-/** Figures cotées inspirées de soutien-scolaire (formes + placement des labels hors traits). */
+/**
+ * Figures cotées — géométrie et placement des labels calqués sur
+ * soutien-scolaire G2 (périmètre), G3 (aire), G5 (volume),
+ * recalculés en SVG React, lisibles en N&B.
+ */
 export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDims }) {
   if (!type || !ALL.includes(type)) return null
+  const d = dims ?? {}
   const unit = u(dims)
-  const kind = dims?.triangleKind ?? 'scalene'
+  const kind = d.triangleKind ?? 'scalene'
+  const hasHeight = d.height != null
+  const forArea = hasHeight || (type === 'triangle' && d.base != null && d.a == null)
 
   return (
-    <svg className="geometry-figure cotee" viewBox="0 0 200 140" role="img" aria-label="Figure géométrique">
-      <g fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round">
+    <svg
+      className="geometry-figure cotee"
+      viewBox="0 0 260 190"
+      role="img"
+      aria-label="Figure géométrique"
+    >
+      <g fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round">
         {type === 'square' && (
           <>
-            <rect x="55" y="28" width="78" height="78" />
-            {dims?.side != null && (
-              <L x={94} y={124}>
-                {dims.side} {unit}
+            <rect x="75" y="42" width="110" height="110" />
+            {d.side != null && (
+              <L x={130} y={32}>
+                {fmt(d.side)} {unit}
               </L>
             )}
           </>
@@ -58,15 +84,15 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'rectangle' && (
           <>
-            <rect x="35" y="38" width="120" height="62" />
-            {dims?.length != null && (
-              <L x={95} y={118}>
-                {dims.length} {unit}
+            <rect x="40" y="48" width="170" height="82" />
+            {d.length != null && (
+              <L x={125} y={38}>
+                {fmt(d.length)} {unit}
               </L>
             )}
-            {dims?.width != null && (
-              <L x={168} y={72} anchor="start">
-                {dims.width} {unit}
+            {d.width != null && (
+              <L x={222} y={92} anchor="start">
+                {fmt(d.width)} {unit}
               </L>
             )}
           </>
@@ -74,33 +100,44 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'triangle' && kind === 'right' && (
           <>
-            {/* Triangle rectangle : angle droit en bas à gauche */}
-            <polygon points="40,110 150,110 40,35" />
-            <polyline points="40,95 55,95 55,110" strokeWidth="1.6" />
-            {dims?.a != null && (
-              <L x={28} y={78} anchor="end">
-                {dims.a} {unit}
-              </L>
-            )}
-            {dims?.b != null && (
-              <L x={95} y={126}>
-                {dims.b} {unit}
-              </L>
-            )}
-            {dims?.c != null && (
-              <L x={112} y={62} anchor="start">
-                {dims.c} {unit}
-              </L>
-            )}
-            {dims?.base != null && dims?.height != null && !dims?.a && (
+            <polygon points="48,152 210,152 48,42" />
+            <polyline points="48,136 64,136 64,152" fill="none" strokeWidth="1.6" />
+            {forArea && d.base != null && d.height != null ? (
               <>
-                <line x1="40" y1="35" x2="40" y2="110" strokeDasharray="4 3" strokeWidth="1.3" />
-                <L x={95} y={126}>
-                  {dims.base} {unit}
+                <line
+                  x1="48"
+                  y1="42"
+                  x2="48"
+                  y2="152"
+                  fill="none"
+                  strokeDasharray="5 4"
+                  strokeWidth="1.4"
+                  strokeOpacity="0.85"
+                />
+                <L x={130} y={172}>
+                  {fmt(d.base)} {unit}
                 </L>
-                <L x={52} y={72} anchor="start">
-                  h={dims.height} {unit}
+                <L x={58} y={100} anchor="start">
+                  h = {fmt(d.height)} {unit}
                 </L>
+              </>
+            ) : (
+              <>
+                {d.a != null && (
+                  <L x={36} y={100} anchor="end">
+                    {fmt(d.a)} {unit}
+                  </L>
+                )}
+                {d.b != null && (
+                  <L x={130} y={172}>
+                    {fmt(d.b)} {unit}
+                  </L>
+                )}
+                {d.c != null && (
+                  <L x={148} y={88} anchor="start">
+                    {fmt(d.c)} {unit}
+                  </L>
+                )}
               </>
             )}
           </>
@@ -108,74 +145,83 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'triangle' && kind === 'equilateral' && (
           <>
-            <polygon points="100,22 168,118 32,118" />
-            {dims?.height != null && (dims?.base != null || dims?.side != null) ? (
+            <polygon points="130,32 220,152 40,152" />
+            {forArea && (d.base != null || d.side != null) && d.height != null ? (
               <>
-                <line x1="100" y1="22" x2="100" y2="118" strokeDasharray="4 3" strokeWidth="1.3" />
-                <L x={100} y={134}>
-                  {dims.base ?? dims.side} {unit}
+                <line
+                  x1="130"
+                  y1="32"
+                  x2="130"
+                  y2="152"
+                  fill="none"
+                  strokeDasharray="5 4"
+                  strokeWidth="1.4"
+                  strokeOpacity="0.85"
+                />
+                <L x={130} y={172}>
+                  {fmt(d.base ?? d.side!)} {unit}
                 </L>
-                <L x={108} y={78} anchor="start">
-                  h={dims.height} {unit}
+                <L x={140} y={100} anchor="start">
+                  h = {fmt(d.height)} {unit}
                 </L>
               </>
             ) : (
-              <>
-                {dims?.side != null && (
-                  <>
-                    <L x={100} y={134}>
-                      {dims.side} {unit}
-                    </L>
-                    <L x={58} y={68} anchor="end">
-                      {dims.side} {unit}
-                    </L>
-                    <L x={148} y={68} anchor="start">
-                      {dims.side} {unit}
-                    </L>
-                  </>
-                )}
-                {dims?.a != null && dims?.side == null && (
-                  <>
-                    <L x={100} y={134}>
-                      {dims.c ?? dims.a} {unit}
-                    </L>
-                    <L x={58} y={68} anchor="end">
-                      {dims.a} {unit}
-                    </L>
-                    <L x={148} y={68} anchor="start">
-                      {dims.b ?? dims.a} {unit}
-                    </L>
-                  </>
-                )}
-              </>
+              (d.side ?? d.a) != null && (
+                <>
+                  <L x={70} y={88} anchor="end">
+                    {fmt(d.side ?? d.a!)} {unit}
+                  </L>
+                  <L x={196} y={88} anchor="start">
+                    {fmt(d.side ?? d.b ?? d.a!)} {unit}
+                  </L>
+                  <L x={130} y={172}>
+                    {fmt(d.side ?? d.c ?? d.a!)} {unit}
+                  </L>
+                </>
+              )
             )}
           </>
         )}
 
         {type === 'triangle' && kind === 'isosceles' && (
           <>
-            <polygon points="100,24 175,118 25,118" />
-            {(dims?.a != null || dims?.side != null) && (
-              <L x={52} y={70} anchor="end">
-                {dims.a ?? dims.side} {unit}
-              </L>
-            )}
-            {(dims?.b != null || dims?.side != null) && (
-              <L x={154} y={70} anchor="start">
-                {dims.b ?? dims.side} {unit}
-              </L>
-            )}
-            {(dims?.c != null || dims?.base != null) && (
-              <L x={100} y={134}>
-                {dims.c ?? dims.base} {unit}
-              </L>
-            )}
-            {dims?.height != null && (
+            <polygon points="130,28 235,152 25,152" />
+            {forArea && d.base != null && d.height != null ? (
               <>
-                <line x1="100" y1="24" x2="100" y2="118" strokeDasharray="4 3" strokeWidth="1.3" />
-                <L x={108} y={78} anchor="start">
-                  h={dims.height} {unit}
+                <line
+                  x1="130"
+                  y1="28"
+                  x2="130"
+                  y2="152"
+                  fill="none"
+                  strokeDasharray="5 4"
+                  strokeWidth="1.4"
+                  strokeOpacity="0.85"
+                />
+                <L x={130} y={172}>
+                  {fmt(d.base)} {unit}
                 </L>
+                <L x={140} y={98} anchor="start">
+                  h = {fmt(d.height)} {unit}
+                </L>
+              </>
+            ) : (
+              <>
+                {(d.a ?? d.side) != null && (
+                  <L x={60} y={86} anchor="end">
+                    {fmt(d.a ?? d.side!)} {unit}
+                  </L>
+                )}
+                {(d.b ?? d.side) != null && (
+                  <L x={206} y={86} anchor="start">
+                    {fmt(d.b ?? d.side!)} {unit}
+                  </L>
+                )}
+                {(d.c ?? d.base) != null && (
+                  <L x={130} y={172}>
+                    {fmt(d.c ?? d.base!)} {unit}
+                  </L>
+                )}
               </>
             )}
           </>
@@ -183,33 +229,46 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'triangle' && (kind === 'scalene' || !['right', 'equilateral', 'isosceles'].includes(kind)) && (
           <>
-            {/* Scalène asymétrique — labels hors des côtés */}
-            <polygon points="95,20 175,118 28,118" />
-            {dims?.base != null && dims?.height != null && dims?.a == null ? (
+            <polygon points="135,28 246,152 42,152" />
+            {forArea && d.base != null && d.height != null ? (
               <>
-                <line x1="95" y1="20" x2="95" y2="118" strokeDasharray="4 3" strokeWidth="1.3" />
-                <L x={100} y={134}>
-                  {dims.base} {unit}
+                <line
+                  x1="142"
+                  y1="28"
+                  x2="142"
+                  y2="152"
+                  fill="none"
+                  strokeDasharray="5 4"
+                  strokeWidth="1.4"
+                  strokeOpacity="0.85"
+                />
+                <L x={144} y={172}>
+                  {fmt(d.base)} {unit}
                 </L>
-                <L x={105} y={72} anchor="start">
-                  h={dims.height} {unit}
+                <L x={152} y={100} anchor="start">
+                  h = {fmt(d.height)} {unit}
                 </L>
+                {d.side != null && (
+                  <L x={72} y={92} anchor="end">
+                    {fmt(d.side)} {unit}
+                  </L>
+                )}
               </>
             ) : (
               <>
-                {dims?.a != null && (
-                  <L x={52} y={66} anchor="end">
-                    {dims.a} {unit}
+                {d.a != null && (
+                  <L x={68} y={82} anchor="middle">
+                    {fmt(d.a)} {unit}
                   </L>
                 )}
-                {dims?.b != null && (
-                  <L x={152} y={62} anchor="start">
-                    {dims.b} {unit}
+                {d.b != null && (
+                  <L x={228} y={90} anchor="start">
+                    {fmt(d.b)} {unit}
                   </L>
                 )}
-                {dims?.c != null && (
-                  <L x={100} y={134}>
-                    {dims.c} {unit}
+                {d.c != null && (
+                  <L x={144} y={172}>
+                    {fmt(d.c)} {unit}
                   </L>
                 )}
               </>
@@ -219,22 +278,32 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'parallelogram' && (
           <>
-            {/* Points soutien-scolaire proportionnels : 85,40 250,40 210,145 45,145 → scale to 200×140 */}
-            <polygon points="52,28 155,28 130,100 27,100" />
-            <line x1="155" y1="28" x2="155" y2="100" strokeDasharray="4 3" strokeWidth="1.3" />
-            {(dims?.base != null || dims?.length != null) && (
-              <L x={78} y={118}>
-                {dims.base ?? dims.length} {unit}
+            <polygon points="70,40 220,40 185,145 35,145" />
+            {hasHeight && (
+              <line
+                x1="220"
+                y1="40"
+                x2="220"
+                y2="145"
+                fill="none"
+                strokeDasharray="5 4"
+                strokeWidth="1.4"
+                strokeOpacity="0.85"
+              />
+            )}
+            {(d.base != null || d.length != null) && (
+              <L x={110} y={168}>
+                {fmt(d.base ?? d.length!)} {unit}
               </L>
             )}
-            {dims?.height != null && (
-              <L x={164} y={68} anchor="start">
-                h={dims.height} {unit}
+            {d.height != null && (
+              <L x={230} y={96} anchor="start">
+                h = {fmt(d.height)} {unit}
               </L>
             )}
-            {(dims?.side != null || dims?.a != null) && (
-              <L x={32} y={62} anchor="end">
-                {dims.side ?? dims.a} {unit}
+            {(d.side != null || d.a != null) && (
+              <L x={42} y={92} anchor="end">
+                {fmt(d.side ?? d.a!)} {unit}
               </L>
             )}
           </>
@@ -242,32 +311,42 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'trapezoid' && (
           <>
-            {/* Trapèze isocèle : top 105-225, bottom 55-270 → scaled */}
-            <polygon points="62,28 138,28 168,105 30,105" />
-            <line x1="138" y1="28" x2="138" y2="105" strokeDasharray="4 3" strokeWidth="1.3" />
-            {dims?.top != null && (
-              <L x={100} y={20}>
-                {dims.top} {unit}
+            <polygon points="85,42 185,42 225,150 45,150" />
+            {hasHeight && (
+              <line
+                x1="185"
+                y1="42"
+                x2="185"
+                y2="150"
+                fill="none"
+                strokeDasharray="5 4"
+                strokeWidth="1.4"
+                strokeOpacity="0.85"
+              />
+            )}
+            {d.top != null && (
+              <L x={135} y={30}>
+                {fmt(d.top)} {unit}
               </L>
             )}
-            {(dims?.bottom != null || dims?.base != null) && (
-              <L x={100} y={122}>
-                {dims.bottom ?? dims.base} {unit}
+            {(d.bottom != null || d.base != null) && (
+              <L x={135} y={172}>
+                {fmt(d.bottom ?? d.base!)} {unit}
               </L>
             )}
-            {dims?.height != null && (
-              <L x={148} y={70} anchor="start">
-                h={dims.height} {unit}
+            {d.height != null && (
+              <L x={196} y={100} anchor="start">
+                h = {fmt(d.height)} {unit}
               </L>
             )}
-            {dims?.a != null && (
-              <L x={38} y={68} anchor="end">
-                {dims.a} {unit}
+            {d.a != null && (
+              <L x={52} y={100} anchor="end">
+                {fmt(d.a)} {unit}
               </L>
             )}
-            {dims?.b != null && (
-              <L x={168} y={68} anchor="start">
-                {dims.b} {unit}
+            {d.b != null && (
+              <L x={220} y={100} anchor="start">
+                {fmt(d.b)} {unit}
               </L>
             )}
           </>
@@ -275,12 +354,22 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'circle' && (
           <>
-            <circle cx="100" cy="62" r="42" />
-            <line x1="100" y1="62" x2="142" y2="62" strokeWidth="1.6" />
-            <circle cx="100" cy="62" r="2.2" fill="currentColor" stroke="none" />
-            {dims?.radius != null && (
-              <L x={100} y={122}>
-                r = {dims.radius} {unit}
+            <circle cx="130" cy="88" r="58" />
+            <line x1="130" y1="88" x2="188" y2="88" fill="none" strokeWidth="2" />
+            <line
+              x1="130"
+              y1="30"
+              x2="130"
+              y2="146"
+              fill="none"
+              strokeWidth="1.5"
+              strokeDasharray="5 4"
+              strokeOpacity="0.7"
+            />
+            <circle cx="130" cy="88" r="2.4" fillOpacity="1" stroke="none" />
+            {d.radius != null && (
+              <L x={130} y={172}>
+                r = {fmt(d.radius)} {unit}
               </L>
             )}
           </>
@@ -288,10 +377,10 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'rhombus' && (
           <>
-            <polygon points="100,18 160,70 100,122 40,70" />
-            {dims?.side != null && (
-              <L x={100} y={136}>
-                {dims.side} {unit}
+            <polygon points="130,28 200,95 130,162 60,95" />
+            {d.side != null && (
+              <L x={130} y={180}>
+                {fmt(d.side)} {unit}
               </L>
             )}
           </>
@@ -299,20 +388,19 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'cube' && (
           <>
-            {/* Face avant + dessus + côté droit — ratios soutien G5 */}
-            <path d="M48 55 h70 v70 H48 Z" />
-            <path d="M48 55 L78 28 h70 l-30 27" />
-            <path d="M148 28 v70 l-30 27" />
-            {dims?.side != null && (
+            <path d="M70 78 h76 v76 H70 Z" />
+            <path d="M70 78 L102 48 h76 l-32 30" fill="none" />
+            <path d="M178 48 v76 l-32 30" fill="none" />
+            {d.side != null && (
               <>
-                <L x={83} y={142}>
-                  {dims.side} {unit}
+                <L x={108} y={172}>
+                  {fmt(d.side)} {unit}
                 </L>
-                <L x={40} y={92} anchor="end">
-                  {dims.side} {unit}
+                <L x={58} y={120} anchor="end">
+                  {fmt(d.side)} {unit}
                 </L>
-                <L x={108} y={22}>
-                  {dims.side} {unit}
+                <L x={140} y={38}>
+                  {fmt(d.side)} {unit}
                 </L>
               </>
             )}
@@ -321,22 +409,22 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'cuboid' && (
           <>
-            <path d="M40 58 h100 v55 H40 Z" />
-            <path d="M40 58 L72 30 h100 l-32 28" />
-            <path d="M172 30 v55 l-32 28" />
-            {dims?.length != null && (
-              <L x={90} y={132}>
-                {dims.length} {unit}
+            <path d="M55 82 h118 v62 H55 Z" />
+            <path d="M55 82 L92 52 h118 l-37 30" fill="none" />
+            <path d="M210 52 v62 l-37 30" fill="none" />
+            {d.length != null && (
+              <L x={114} y={168}>
+                {fmt(d.length)} {unit}
               </L>
             )}
-            {dims?.width != null && (
-              <L x={178} y={58} anchor="start">
-                {dims.width} {unit}
+            {d.width != null && (
+              <L x={220} y={86} anchor="start">
+                {fmt(d.width)} {unit}
               </L>
             )}
-            {dims?.height != null && (
-              <L x={32} y={88} anchor="end">
-                {dims.height} {unit}
+            {d.height != null && (
+              <L x={42} y={118} anchor="end">
+                {fmt(d.height)} {unit}
               </L>
             )}
           </>
@@ -344,18 +432,19 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'cylinder' && (
           <>
-            <ellipse cx="100" cy="32" rx="42" ry="12" />
-            <path d="M58 32 v58" />
-            <path d="M142 32 v58" />
-            <ellipse cx="100" cy="90" rx="42" ry="12" />
-            {dims?.radius != null && (
-              <L x={158} y={62} anchor="start">
-                r={dims.radius} {unit}
+            <ellipse cx="120" cy="48" rx="55" ry="18" />
+            <path d="M65 48 v86" fill="none" />
+            <path d="M175 48 v86" fill="none" />
+            <ellipse cx="120" cy="134" rx="55" ry="18" fillOpacity="0.05" />
+            <line x1="120" y1="48" x2="175" y2="48" fill="none" strokeWidth="2" />
+            {d.radius != null && (
+              <L x={148} y={40} anchor="start">
+                r = {fmt(d.radius)} {unit}
               </L>
             )}
-            {dims?.height != null && (
-              <L x={42} y={66} anchor="end">
-                h={dims.height} {unit}
+            {d.height != null && (
+              <L x={190} y={100} anchor="start">
+                h = {fmt(d.height)} {unit}
               </L>
             )}
           </>
