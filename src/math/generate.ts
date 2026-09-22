@@ -1,7 +1,7 @@
 import { exerciseTypeById, topicById } from './catalog'
 import { numberToFrench } from './french-numbers'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
-import type { ArithOp, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
+import type { ArithOp, DivisionStep, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
@@ -31,6 +31,41 @@ function widthOf(...nums: number[]): number {
   return Math.max(1, ...nums.map((n) => String(Math.abs(Math.trunc(n))).length))
 }
 
+/** Retenues (addition / × 1 chiffre) ou emprunts (soustraction) alignés sur les colonnes. */
+function computeCarries(op: ArithOp, a: number, b: number, width: number): string[] {
+  const da = digits(a, width).map((d) => (d === '' ? 0 : Number(d)))
+  const db = digits(b, width).map((d) => (d === '' ? 0 : Number(d)))
+  const carries = Array.from({ length: width }, () => '')
+  if (op === '+') {
+    let carry = 0
+    for (let i = width - 1; i >= 0; i--) {
+      if (carry > 0) carries[i] = String(carry)
+      const sum = da[i]! + db[i]! + carry
+      carry = Math.floor(sum / 10)
+    }
+  } else if (op === '−') {
+    let borrow = 0
+    for (let i = width - 1; i >= 0; i--) {
+      let top = da[i]! - borrow
+      const bottom = db[i]!
+      if (top < bottom) {
+        carries[i] = '1'
+        borrow = 1
+      } else {
+        borrow = 0
+      }
+    }
+  } else if (op === '×') {
+    let carry = 0
+    for (let i = width - 1; i >= 0; i--) {
+      if (carry > 0) carries[i] = String(carry)
+      const prod = da[i]! * (b % 10) + carry
+      carry = Math.floor(prod / 10)
+    }
+  }
+  return carries
+}
+
 function columnItem(op: ArithOp, a: number, b: number, result: number, empty: boolean): MathItem {
   const w = widthOf(a, b, result)
   return {
@@ -43,9 +78,30 @@ function columnItem(op: ArithOp, a: number, b: number, result: number, empty: bo
     digitsA: digits(a, w),
     digitsB: digits(b, w),
     digitsResult: digits(result, w),
+    carries: computeCarries(op, a, b, w),
     blankOperands: empty,
     answer: fmt(result),
   }
+}
+
+function buildDivisionSteps(dividend: number, divisor: number): DivisionStep[] {
+  const steps: DivisionStep[] = []
+  const digitsStr = String(dividend)
+  let current = 0
+  for (let i = 0; i < digitsStr.length; i++) {
+    current = current * 10 + Number(digitsStr[i])
+    if (current < divisor && steps.length === 0 && i < digitsStr.length - 1) continue
+    const qDigit = Math.floor(current / divisor)
+    const product = qDigit * divisor
+    const rem = current - product
+    steps.push({
+      bringDown: String(current),
+      product: String(product),
+      remainder: String(rem),
+    })
+    current = rem
+  }
+  return steps
 }
 
 function inlineOp(op: ArithOp, a: number, b: number, result: number, missing: MissingPos = 'result'): MathItem {
@@ -237,7 +293,13 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
     }
     case 'addition-problemes': {
       const p = pairAdd(rng, 40)
-      return { layout: 'text', prompt: pick(rng, ADD_PB)(p.a, p.b), answer: `${p.a} + ${p.b} = ${p.result}` }
+      return {
+        layout: 'text',
+        prompt: pick(rng, ADD_PB)(p.a, p.b),
+        calcAnswer: `${p.a} + ${p.b}`,
+        responseAnswer: String(p.result),
+        answer: `${p.a} + ${p.b} = ${p.result}`,
+      }
     }
     case 'soustraction-ligne': {
       const p = pairSub(rng, index < 3 ? 20 : 90)
@@ -267,7 +329,13 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
     }
     case 'soustraction-problemes': {
       const p = pairSub(rng, 50)
-      return { layout: 'text', prompt: pick(rng, SUB_PB)(p.a, p.b), answer: `${p.a} − ${p.b} = ${p.result}` }
+      return {
+        layout: 'text',
+        prompt: pick(rng, SUB_PB)(p.a, p.b),
+        calcAnswer: `${p.a} − ${p.b}`,
+        responseAnswer: String(p.result),
+        answer: `${p.a} − ${p.b} = ${p.result}`,
+      }
     }
     case 'estimation-dizaine': {
       let n = int(rng, 11, 99)
@@ -308,22 +376,30 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       let b = int(rng, 12, 99)
       while (b % 10 === 0) b = int(rng, 12, 99)
       const result = a * b
+      const w = widthOf(a, b, result)
       return {
         layout: 'column',
         op: '×',
         a,
         b,
         result,
-        digitsA: digits(a, widthOf(a, b, result)),
-        digitsB: digits(b, widthOf(a, b, result)),
-        digitsResult: digits(result, widthOf(a, b, result)),
+        digitsA: digits(a, w),
+        digitsB: digits(b, w),
+        digitsResult: digits(result, w),
+        carries: computeCarries('×', a, b % 10, w),
         prompt: `Produits partiels : ${a} × ${b % 10} et ${a} × ${Math.floor(b / 10)}`,
         answer: String(result),
       }
     }
     case 'multiplication-problemes': {
       const p = pairMul(rng)
-      return { layout: 'text', prompt: pick(rng, MUL_PB)(p.a, p.b), answer: `${p.a} × ${p.b} = ${p.result}` }
+      return {
+        layout: 'text',
+        prompt: pick(rng, MUL_PB)(p.a, p.b),
+        calcAnswer: `${p.a} × ${p.b}`,
+        responseAnswer: String(p.result),
+        answer: `${p.a} × ${p.b} = ${p.result}`,
+      }
     }
     case 'division-ligne': {
       const p = pairDiv(rng)
@@ -346,6 +422,7 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
         divisor,
         quotient,
         remainder,
+        divisionSteps: buildDivisionSteps(dividend, divisor),
         blankOperands: typeId.endsWith('poser'),
         answer: remainder ? `${quotient} reste ${remainder}` : String(quotient),
       }
@@ -359,7 +436,13 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
     }
     case 'division-problemes': {
       const p = pairDiv(rng)
-      return { layout: 'text', prompt: pick(rng, DIV_PB)(p.a, p.b), answer: `${p.a} ÷ ${p.b} = ${p.result}` }
+      return {
+        layout: 'text',
+        prompt: pick(rng, DIV_PB)(p.a, p.b),
+        calcAnswer: `${p.a} ÷ ${p.b}`,
+        responseAnswer: String(p.result),
+        answer: `${p.a} ÷ ${p.b} = ${p.result}`,
+      }
     }
     case 'multiples-reconnaitre': {
       const base = int(rng, 2, 9)
@@ -530,10 +613,13 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
     case 'proportion-problemes': {
       const n = int(rng, 4, 12) * 10
       const pct = pick(rng, [10, 20, 25, 50])
+      const result = n - (pct * n) / 100
       return {
         layout: 'text',
         prompt: `Un article coûte ${n} CHF. Pendant les soldes, il est réduit de ${pct} %. Quel est le nouveau prix ?`,
-        answer: `${n - (pct * n) / 100} CHF`,
+        calcAnswer: `${n} − ${pct} %`,
+        responseAnswer: `${result} CHF`,
+        answer: `${result} CHF`,
       }
     }
     case 'relatifs-comparer': {
@@ -635,6 +721,8 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       return {
         layout: 'text',
         prompt: `Résolvez le système :\nx + y = ${x + y}\nx = ${x}\nMéthode : substitution.`,
+        calcAnswer: 'substitution',
+        responseAnswer: `x = ${x} ; y = ${y}`,
         answer: `x = ${x} ; y = ${y}`,
       }
     }
@@ -643,7 +731,9 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
       const y = int(rng, 1, 8)
       return {
         layout: 'text',
-        prompt: `Résolvez le système :\n${2}x + y = ${2 * x + y}\n${2}x − y = ${2 * x - y}\nMéthode : addition.`,
+        prompt: `Résolvez le système :\n2x + y = ${2 * x + y}\n2x − y = ${2 * x - y}\nMéthode : addition.`,
+        calcAnswer: 'addition',
+        responseAnswer: `x = ${x} ; y = ${y}`,
         answer: `x = ${x} ; y = ${y}`,
       }
     }
@@ -656,7 +746,7 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
         { figure: 'rhombus' as const, answer: 'losange' },
       ]
       const fig = names[index % names.length]!
-      return { layout: 'text', prompt: 'Nommez cette figure.', figure: fig.figure, answer: fig.answer }
+      return { layout: 'geo', prompt: 'Nommez cette figure.', figure: fig.figure, answer: fig.answer }
     }
     case 'figures-proprietes': {
       const q = pick(rng, [
@@ -664,7 +754,7 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
         { prompt: 'Un triangle a combien de sommets ?', answer: '3', figure: 'triangle' as const },
         { prompt: 'Un rectangle a combien d’angles droits ?', answer: '4', figure: 'rectangle' as const },
       ])
-      return { layout: 'text', prompt: q.prompt, figure: q.figure, answer: q.answer }
+      return { layout: 'geo', prompt: q.prompt, figure: q.figure, answer: q.answer }
     }
     case 'conversions-longueur': {
       const m = int(rng, 1, 12)
@@ -694,100 +784,226 @@ function generateOne(typeId: string, rng: Rng, index: number): MathItem {
     }
     case 'perimetres-carre': {
       const c = int(rng, 2, 15)
-      return { layout: 'text', prompt: `Périmètre d’un carré de côté ${c} cm`, figure: 'square', answer: `${4 * c} cm` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le périmètre.`,
+        figure: 'square',
+        dims: { side: c, unit: 'cm' },
+        calcAnswer: `4 × ${c}`,
+        responseAnswer: `${4 * c} cm`,
+        answer: `${4 * c} cm`,
+      }
     }
     case 'perimetres-rectangle': {
       const l = int(rng, 4, 16)
       const w = int(rng, 2, l - 1)
-      return { layout: 'text', prompt: `Périmètre d’un rectangle de ${l} cm sur ${w} cm`, figure: 'rectangle', answer: `${2 * (l + w)} cm` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le périmètre.`,
+        figure: 'rectangle',
+        dims: { length: l, width: w, unit: 'cm' },
+        calcAnswer: `2 × (${l} + ${w})`,
+        responseAnswer: `${2 * (l + w)} cm`,
+        answer: `${2 * (l + w)} cm`,
+      }
     }
     case 'perimetres-triangle': {
       const a = int(rng, 3, 12)
       const b = int(rng, 3, 12)
       const c = int(rng, 3, 12)
-      return { layout: 'text', prompt: `Périmètre d’un triangle de côtés ${a} cm, ${b} cm et ${c} cm`, figure: 'triangle', answer: `${a + b + c} cm` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le périmètre.`,
+        figure: 'triangle',
+        dims: { a, b, c, unit: 'cm' },
+        calcAnswer: `${a} + ${b} + ${c}`,
+        responseAnswer: `${a + b + c} cm`,
+        answer: `${a + b + c} cm`,
+      }
     }
     case 'perimetres-cercle': {
       const r = int(rng, 2, 10)
       const p = Math.round(2 * 3.14 * r * 100) / 100
-      return { layout: 'text', prompt: `Périmètre d’un cercle de rayon ${r} cm (π = 3,14)`, figure: 'circle', answer: `${fmt(p)} cm` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le périmètre (π = 3,14).`,
+        figure: 'circle',
+        dims: { radius: r, unit: 'cm' },
+        calcAnswer: `2 × 3,14 × ${r}`,
+        responseAnswer: `${fmt(p)} cm`,
+        answer: `${fmt(p)} cm`,
+      }
     }
     case 'aires-carre': {
       const c = int(rng, 2, 12)
-      return { layout: 'text', prompt: `Aire d’un carré de côté ${c} cm`, figure: 'square', answer: `${c * c} cm²` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez l’aire.`,
+        figure: 'square',
+        dims: { side: c, unit: 'cm' },
+        calcAnswer: `${c} × ${c}`,
+        responseAnswer: `${c * c} cm²`,
+        answer: `${c * c} cm²`,
+      }
     }
     case 'aires-rectangle': {
       const l = int(rng, 4, 16)
       const w = int(rng, 2, l - 1)
-      return { layout: 'text', prompt: `Aire d’un rectangle de ${l} cm sur ${w} cm`, figure: 'rectangle', answer: `${l * w} cm²` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez l’aire.`,
+        figure: 'rectangle',
+        dims: { length: l, width: w, unit: 'cm' },
+        calcAnswer: `${l} × ${w}`,
+        responseAnswer: `${l * w} cm²`,
+        answer: `${l * w} cm²`,
+      }
     }
     case 'aires-triangle': {
       const b = int(rng, 4, 16)
       const h = int(rng, 2, 12)
-      return { layout: 'text', prompt: `Aire d’un triangle de base ${b} cm et de hauteur ${h} cm`, figure: 'triangle', answer: `${(b * h) / 2} cm²` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez l’aire.`,
+        figure: 'triangle',
+        dims: { base: b, height: h, unit: 'cm' },
+        calcAnswer: `(${b} × ${h}) / 2`,
+        responseAnswer: `${(b * h) / 2} cm²`,
+        answer: `${(b * h) / 2} cm²`,
+      }
     }
     case 'aires-parallelogramme': {
       const b = int(rng, 5, 16)
       const h = int(rng, 3, 10)
-      return { layout: 'text', prompt: `Aire d’un parallélogramme de base ${b} cm et de hauteur ${h} cm`, figure: 'parallelogram', answer: `${b * h} cm²` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez l’aire.`,
+        figure: 'parallelogram',
+        dims: { base: b, height: h, unit: 'cm' },
+        calcAnswer: `${b} × ${h}`,
+        responseAnswer: `${b * h} cm²`,
+        answer: `${b * h} cm²`,
+      }
     }
     case 'aires-disque': {
       const r = int(rng, 2, 8)
       const a = Math.round(3.14 * r * r * 100) / 100
-      return { layout: 'text', prompt: `Aire d’un disque de rayon ${r} cm (π = 3,14)`, figure: 'circle', answer: `${fmt(a)} cm²` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez l’aire (π = 3,14).`,
+        figure: 'circle',
+        dims: { radius: r, unit: 'cm' },
+        calcAnswer: `3,14 × ${r}²`,
+        responseAnswer: `${fmt(a)} cm²`,
+        answer: `${fmt(a)} cm²`,
+      }
     }
     case 'volumes-cube': {
       const c = int(rng, 2, 9)
-      return { layout: 'text', prompt: `Volume d’un cube de côté ${c} cm`, figure: 'cube', answer: `${c ** 3} cm³` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le volume.`,
+        figure: 'cube',
+        dims: { side: c, unit: 'cm' },
+        calcAnswer: `${c}³`,
+        responseAnswer: `${c ** 3} cm³`,
+        answer: `${c ** 3} cm³`,
+      }
     }
     case 'volumes-pave': {
       const l = int(rng, 3, 10)
       const w = int(rng, 2, 8)
       const h = int(rng, 2, 7)
-      return { layout: 'text', prompt: `Volume d’un pavé de ${l} × ${w} × ${h} cm`, figure: 'cuboid', answer: `${l * w * h} cm³` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le volume.`,
+        figure: 'cuboid',
+        dims: { length: l, width: w, height: h, unit: 'cm' },
+        calcAnswer: `${l} × ${w} × ${h}`,
+        responseAnswer: `${l * w * h} cm³`,
+        answer: `${l * w * h} cm³`,
+      }
     }
     case 'volumes-cylindre': {
       const r = int(rng, 2, 6)
       const h = int(rng, 3, 10)
       const v = Math.round(3.14 * r * r * h * 100) / 100
-      return { layout: 'text', prompt: `Volume d’un cylindre de rayon ${r} cm et de hauteur ${h} cm (π = 3,14)`, figure: 'cylinder', answer: `${fmt(v)} cm³` }
+      return {
+        layout: 'geo',
+        prompt: `Calculez le volume (π = 3,14).`,
+        figure: 'cylinder',
+        dims: { radius: r, height: h, unit: 'cm' },
+        calcAnswer: `3,14 × ${r}² × ${h}`,
+        responseAnswer: `${fmt(v)} cm³`,
+        answer: `${fmt(v)} cm³`,
+      }
     }
     case 'reperage-lire': {
-      const x = int(rng, -5, 8)
-      const y = int(rng, -5, 8)
-      return { layout: 'inline', prompt: `Les coordonnées du point A(${x} ; ${y}) sont`, answer: `(${x} ; ${y})` }
+      const x = int(rng, -4, 5)
+      const y = int(rng, -4, 5)
+      return {
+        layout: 'coord',
+        prompt: 'Écrivez les coordonnées du point A.',
+        point: { x, y, label: 'A' },
+        answer: `(${x} ; ${y})`,
+      }
     }
     case 'reperage-abscisse': {
-      const x = int(rng, -6, 8)
-      const y = int(rng, -6, 8)
+      const x = int(rng, -4, 5)
+      const y = int(rng, -4, 5)
       const askX = rng() < 0.5
       return {
-        layout: 'inline',
-        prompt: askX ? `L’abscisse de A(${x} ; ${y}) est` : `L’ordonnée de A(${x} ; ${y}) est`,
+        layout: 'coord',
+        prompt: askX ? 'Quelle est l’abscisse du point A ?' : 'Quelle est l’ordonnée du point A ?',
+        point: { x, y, label: 'A' },
         answer: String(askX ? x : y),
       }
     }
     case 'transformations-axiale': {
-      const x = int(rng, 1, 6)
-      const y = int(rng, 1, 6)
-      return { layout: 'inline', prompt: `Image de A(${x} ; ${y}) par la symétrie d’axe des ordonnées :`, answer: `(${-x} ; ${y})` }
+      const x = int(rng, 1, 4)
+      const y = int(rng, 1, 4)
+      return {
+        layout: 'coord',
+        prompt: 'Image de A par la symétrie d’axe des ordonnées.',
+        point: { x, y, label: 'A' },
+        pointImage: { x: -x, y, label: "A'" },
+        answer: `(${-x} ; ${y})`,
+      }
     }
     case 'transformations-centrale': {
-      const x = int(rng, 1, 6)
-      const y = int(rng, 1, 6)
-      return { layout: 'inline', prompt: `Image de A(${x} ; ${y}) par la symétrie de centre O(0 ; 0) :`, answer: `(${-x} ; ${-y})` }
+      const x = int(rng, 1, 4)
+      const y = int(rng, 1, 4)
+      return {
+        layout: 'coord',
+        prompt: 'Image de A par la symétrie de centre O(0 ; 0).',
+        point: { x, y, label: 'A' },
+        pointImage: { x: -x, y: -y, label: "A'" },
+        answer: `(${-x} ; ${-y})`,
+      }
     }
     case 'transformations-translation': {
-      const x = int(rng, 1, 6)
-      const y = int(rng, 1, 6)
-      const vx = int(rng, 1, 4)
-      const vy = int(rng, -3, 3)
-      return { layout: 'inline', prompt: `Image de A(${x} ; ${y}) par la translation de vecteur (${vx} ; ${vy}) :`, answer: `(${x + vx} ; ${y + vy})` }
+      const x = int(rng, 1, 3)
+      const y = int(rng, 1, 3)
+      const vx = int(rng, 1, 2)
+      const vy = int(rng, -2, 2)
+      return {
+        layout: 'coord',
+        prompt: `Image de A par la translation de vecteur (${vx} ; ${vy}).`,
+        point: { x, y, label: 'A' },
+        pointImage: { x: x + vx, y: y + vy, label: "A'" },
+        answer: `(${x + vx} ; ${y + vy})`,
+      }
     }
     case 'transformations-rotation': {
-      const x = int(rng, 1, 5)
-      const y = int(rng, 1, 5)
-      return { layout: 'inline', prompt: `Image de A(${x} ; ${y}) par la rotation de 90° (sens direct) autour de O :`, answer: `(${-y} ; ${x})` }
+      const x = int(rng, 1, 3)
+      const y = int(rng, 1, 3)
+      return {
+        layout: 'coord',
+        prompt: 'Image de A par la rotation de 90° (sens direct) autour de O.',
+        point: { x, y, label: 'A' },
+        pointImage: { x: -y, y: x, label: "A'" },
+        answer: `(${-y} ; ${x})`,
+      }
     }
     default:
       return { layout: 'inline', prompt: 'Calculez 1 + 1 =', answer: '2' }

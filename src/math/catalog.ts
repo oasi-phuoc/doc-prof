@@ -129,8 +129,8 @@ export const exerciseTypes: ExerciseType[] = [
   t('equations-systeme', 'equations', 'Systèmes (substitution)', 'Deux équations, deux inconnues.', 'Trouvez le couple (x ; y).', 'texte', { preferredColumns: 1 }),
   t('equations-systeme-add', 'equations', 'Systèmes (addition)', 'Combinaison linéaire.', 'Trouvez le couple (x ; y).', 'texte', { preferredColumns: 1 }),
 
-  t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, triangle, cercle…', 'Nommez chaque figure.', 'geo', { figure: 'triangle' }),
-  t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, sommets, angles droits.', 'Complétez la propriété.', 'geo', { figure: 'square' }),
+  t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, triangle, cercle…', 'Nommez chaque figure.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, sommets, angles droits.', 'Complétez la propriété.', 'geo', { figure: 'square', preferredColumns: 2 }),
 
   t('conversions-longueur', 'conversions', 'Longueurs', 'm, km, cm, mm.', 'Convertissez.', 'ligne'),
   t('conversions-aire', 'conversions', 'Aires', 'm², cm², km².', 'Convertissez.', 'ligne'),
@@ -139,28 +139,28 @@ export const exerciseTypes: ExerciseType[] = [
   t('conversions-masse', 'conversions', 'Masses', 'kg, g, t.', 'Convertissez.', 'ligne'),
   t('conversions-temps', 'conversions', 'Temps', 'h, min, s.', 'Convertissez.', 'ligne'),
 
-  t('perimetres-carre', 'perimetres', 'Carré', 'Périmètre d’un carré.', 'Calculez le périmètre.', 'geo', { figure: 'square' }),
-  t('perimetres-rectangle', 'perimetres', 'Rectangle', 'Périmètre d’un rectangle.', 'Calculez le périmètre.', 'geo', { figure: 'rectangle' }),
-  t('perimetres-triangle', 'perimetres', 'Triangle', 'Périmètre d’un triangle.', 'Calculez le périmètre.', 'geo', { figure: 'triangle' }),
-  t('perimetres-cercle', 'perimetres', 'Cercle', 'Périmètre = 2πr. Prenez π = 3,14.', 'Calculez le périmètre. Prenez π = 3,14.', 'geo', { figure: 'circle' }),
+  t('perimetres-carre', 'perimetres', 'Carré', 'Périmètre d’un carré.', 'Calculez le périmètre.', 'geo', { figure: 'square', preferredColumns: 2 }),
+  t('perimetres-rectangle', 'perimetres', 'Rectangle', 'Périmètre d’un rectangle.', 'Calculez le périmètre.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
+  t('perimetres-triangle', 'perimetres', 'Triangle', 'Périmètre d’un triangle.', 'Calculez le périmètre.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('perimetres-cercle', 'perimetres', 'Cercle', 'Périmètre = 2πr. Prenez π = 3,14.', 'Calculez le périmètre. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
 
-  t('aires-carre', 'aires', 'Carré', 'Aire d’un carré.', 'Calculez l’aire.', 'geo', { figure: 'square' }),
-  t('aires-rectangle', 'aires', 'Rectangle', 'Aire d’un rectangle.', 'Calculez l’aire.', 'geo', { figure: 'rectangle' }),
-  t('aires-triangle', 'aires', 'Triangle', 'Aire = (b × h) / 2.', 'Calculez l’aire.', 'geo', { figure: 'triangle' }),
-  t('aires-parallelogramme', 'aires', 'Parallélogramme', 'Aire = b × h.', 'Calculez l’aire.', 'geo', { figure: 'parallelogram' }),
-  t('aires-disque', 'aires', 'Disque', 'Aire = πr². Prenez π = 3,14.', 'Calculez l’aire. Prenez π = 3,14.', 'geo', { figure: 'circle' }),
+  t('aires-carre', 'aires', 'Carré', 'Aire d’un carré.', 'Calculez l’aire.', 'geo', { figure: 'square', preferredColumns: 2 }),
+  t('aires-rectangle', 'aires', 'Rectangle', 'Aire d’un rectangle.', 'Calculez l’aire.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
+  t('aires-triangle', 'aires', 'Triangle', 'Aire = (b × h) / 2.', 'Calculez l’aire.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('aires-parallelogramme', 'aires', 'Parallélogramme', 'Aire = b × h.', 'Calculez l’aire.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('aires-disque', 'aires', 'Disque', 'Aire = πr². Prenez π = 3,14.', 'Calculez l’aire. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
 
-  t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube' }),
-  t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid' }),
-  t('volumes-cylindre', 'volumes', 'Cylindre', 'Volume = πr²h. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cylinder' }),
+  t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube', preferredColumns: 2 }),
+  t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
+  t('volumes-cylindre', 'volumes', 'Cylindre', 'Volume = πr²h. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
 
-  t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Donner les coordonnées d’un point.', 'Écrivez les coordonnées du point.', 'ligne'),
-  t('reperage-abscisse', 'reperage', 'Abscisse et ordonnée', 'Identifier x ou y.', 'Complétez.', 'ligne'),
+  t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Donner les coordonnées d’un point.', 'Écrivez les coordonnées du point.', 'ligne', { preferredColumns: 1 }),
+  t('reperage-abscisse', 'reperage', 'Abscisse et ordonnée', 'Identifier x ou y.', 'Complétez.', 'ligne', { preferredColumns: 1 }),
 
-  t('transformations-axiale', 'transformations', 'Symétrie axiale', 'Image d’un point par une symétrie.', 'Donnez les coordonnées de l’image.', 'ligne'),
-  t('transformations-centrale', 'transformations', 'Symétrie centrale', 'Symétrie par rapport à l’origine.', 'Donnez les coordonnées de l’image.', 'ligne'),
-  t('transformations-translation', 'transformations', 'Translation', 'Translater un point d’un vecteur.', 'Donnez les coordonnées de l’image.', 'ligne'),
-  t('transformations-rotation', 'transformations', 'Rotation', 'Rotation de 90° autour de l’origine.', 'Donnez les coordonnées de l’image.', 'ligne'),
+  t('transformations-axiale', 'transformations', 'Symétrie axiale', 'Image d’un point par une symétrie.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
+  t('transformations-centrale', 'transformations', 'Symétrie centrale', 'Symétrie par rapport à l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
+  t('transformations-translation', 'transformations', 'Translation', 'Translater un point d’un vecteur.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
+  t('transformations-rotation', 'transformations', 'Rotation', 'Rotation de 90° autour de l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
 ]
 
 export const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [type.id, type])) as Record<string, ExerciseType>
