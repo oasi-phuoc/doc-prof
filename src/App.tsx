@@ -1,7 +1,5 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import './App.css'
-import { generateAlgebraQuestions } from '../lib/curriculum/content/math/generated-algebra-exercises'
-import { MATH_MODULES } from '../lib/curriculum/math-data'
 
 type Domain = 'algèbre' | 'géométrie'
 type PreviewMode = 'student' | 'answers'
@@ -13,11 +11,10 @@ type PageConfig = { domain: Domain; topic: string; exerciseType: string; count: 
 type WorksheetPage = PageConfig & { title: string; instruction: string; items: Item[] }
 
 type Topic = { id: string; label: string; domain: Domain }
-const topics: Topic[] = MATH_MODULES.flatMap((module) => module.submodules.length ? module.submodules.map((submodule) => ({ id: submodule.id.toLowerCase(), label: `${module.title} · ${submodule.title}`, domain: module.branch === 'algebra' ? 'algèbre' as Domain : 'géométrie' as Domain })) : [{ id: module.id.toLowerCase(), label: module.title, domain: module.branch === 'algebra' ? 'algèbre' as Domain : 'géométrie' as Domain }])
 const fallbackTopics: Topic[] = [
   ['nombres', 'Nombres naturels', 'algèbre'], ['addition', 'Additions', 'algèbre'], ['soustraction', 'Soustractions', 'algèbre'], ['multiplication', 'Multiplications', 'algèbre'], ['division', 'Divisions', 'algèbre'], ['fractions', 'Fractions', 'algèbre'], ['decimaux', 'Nombres décimaux', 'algèbre'], ['proportionnalite', 'Pourcentages et proportions', 'algèbre'], ['relatifs', 'Nombres relatifs', 'algèbre'], ['puissances', 'Puissances et racines', 'algèbre'], ['equations', 'Équations', 'algèbre'], ['expressions', 'Expressions algébriques', 'algèbre'], ['figures', 'Formes', 'géométrie'], ['angles', 'Angles', 'géométrie'], ['perimetres', 'Périmètres', 'géométrie'], ['aires', 'Aires', 'géométrie'], ['volumes', 'Volumes', 'géométrie'], ['reperage', 'Repérage dans le plan', 'géométrie'], ['transformations', 'Transformations géométriques', 'géométrie'],
 ].map(([id, label, domain]) => ({ id, label, domain: domain as Domain }))
-const topicsWithFallback = [...fallbackTopics, ...topics.filter((topic) => !fallbackTopics.some((fallback) => fallback.id === topic.id))]
+const topicsWithFallback = fallbackTopics
 const topicById = Object.fromEntries(topicsWithFallback.map((topic) => [topic.id, topic]))
 const algebraTopics = topicsWithFallback.filter((topic) => topic.domain === 'algèbre')
 const geometryTopics = topicsWithFallback.filter((topic) => topic.domain === 'géométrie')
@@ -40,7 +37,7 @@ const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [type.id
 
 function randomSeed() { return Date.now() + Math.floor(Math.random() * 1000000) }
 function rng(seed: number) { let value = seed % 2147483647; return () => (value = value * 16807 % 2147483647) / 2147483647 }
-function makeItems(topic: string, exerciseType: string, count: number, seed: number): Item[] { const sourceLessonByTopic: Record<string, string> = { pourcentages: 'A6-5', relatifs: 'A7-5', expressions: 'A9-4', puissances: 'A9-1', equations: 'A10-1' }; const sourceLesson = sourceLessonByTopic[topic]; if (sourceLesson) { return generateAlgebraQuestions(sourceLesson, count, `${seed}`).map((item) => ({ prompt: item.promptFr, answer: item.acceptable[0] ?? '' })) } const next = rng(seed); const n = () => Math.floor(next() * 18) + 2; return Array.from({ length: count }, (_, index) => { const a = n(); const b = n();
+function makeItems(topic: string, exerciseType: string, count: number, seed: number): Item[] {  const next = rng(seed); const n = () => Math.floor(next() * 18) + 2; return Array.from({ length: count }, (_, index) => { const a = n(); const b = n();
   if (topic === 'addition') { const first = a * 6; const second = b * 4; return { prompt: exerciseType === 'addition-colonne' ? `${first}\n+ ${second}\n──────` : `${first} + ${second} =`, answer: `${first + second}` } }
   if (topic === 'soustraction') return { prompt: `${a * 8} − ${b * 3} =`, answer: `${a * 8 - b * 3}` }
   if (topic === 'division') { const divisor = Math.max(2, b); const quotient = a; return { prompt: `${divisor * quotient} ÷ ${divisor} =`, answer: `${quotient}` } }
