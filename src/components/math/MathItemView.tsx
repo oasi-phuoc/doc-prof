@@ -792,7 +792,7 @@ function EquationBlock({
       <div className="problem-field">
         <span className="field-label">{show ? 'Correction' : 'Développement'}</span>
         <div
-          className={`draft-pad equation-draft ${draftGrid ? 'with-lines' : 'plain'}${show ? ' has-correction' : ''}`}
+          className={`draft-pad ${draftGrid ? 'with-grid' : 'plain'}${show ? ' has-correction' : ''}`}
           aria-label="Zone de développement"
         >
           {show && development.length > 0 ? (

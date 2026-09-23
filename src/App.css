@@ -490,26 +490,9 @@
   display:block;padding:6px 8px;font-size:13px;line-height:1.35;
   white-space:pre-line;font-weight:600
 }
-.draft-pad.equation-draft{
-  --grid-rows:8;
-}
-.draft-pad.equation-draft.with-lines{
-  background-image:repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(100% / var(--grid-rows) - 1px),
-    #d4cfe0 calc(100% / var(--grid-rows) - 1px),
-    #d4cfe0 calc(100% / var(--grid-rows))
-  );
-  background-size:100% 100%;
-  background-position:0 0
-}
-.draft-pad.equation-draft.has-correction{
+.draft-pad.has-correction{
   overflow:auto;aspect-ratio:auto;min-height:4.5cm;height:auto;
   background-image:none;padding:4px 2px
-}
-.draft-pad.equation-draft .draft-pad-answer{
-  font-size:11px;line-height:1.3;padding:4px 6px
 }
 .equation-correction{
   width:100%;border-collapse:collapse;

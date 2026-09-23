@@ -324,6 +324,7 @@ function Landing({ onCreate }: { onCreate: () => void }) {
 
 function applyType(type: ExerciseType): Partial<PageConfig> {
   const isProblem = type.id.includes('problemes')
+  const isEquation = type.id.startsWith('equations-')
   const isLongMul = type.id === 'multiplication-2chiffres'
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
@@ -332,7 +333,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
     exerciseType: type.id,
     topic: type.topic,
     columns: type.preferredColumns ?? 2,
-    ...(isProblem
+    ...(isProblem || isEquation
       ? { count: 2 }
       : isDivisionCol
         ? { count: 3 }
@@ -463,7 +464,7 @@ function GeneratorPage() {
           !page.exerciseType.startsWith('equations-') &&
           patch.count == null
         ) {
-          next.count = Math.min(next.count, 3)
+          next.count = Math.min(next.count, 2)
         }
         if (patch.count != null || patch.exerciseType != null) {
           const count = patch.count ?? next.count
