@@ -596,8 +596,9 @@
   font-family:'DM Sans',sans-serif
 }
 .geometry-figure.cotee{overflow:visible}
-.geometry-figure.composite-figure{width:min(226px,100%)}
+.geometry-figure.composite-figure{width:min(100%,56mm)}
 .geometry-figure.composite-figure .dim-label{font-size:11px}
+.geo-block:has(.composite-figure){gap:5px}
 .coord-grid{width:min(130px,100%);height:auto;aspect-ratio:1;color:var(--ink)}
 .coord-grid.scene-cells,.coord-grid.scene-polygon,.coord-grid.scene-polar,.coord-grid.scene-axes{
   width:min(100%,118mm);max-height:118mm;aspect-ratio:1

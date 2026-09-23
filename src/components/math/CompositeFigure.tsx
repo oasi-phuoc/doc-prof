@@ -53,7 +53,7 @@ export function CompositeFigure({ scene }: { scene: CompositeScene }) {
       <path
         d={scene.outline}
         fill="currentColor"
-        fillOpacity="0.08"
+        fillOpacity="0.11"
         fillRule="evenodd"
         stroke="currentColor"
         strokeWidth="2.2"
