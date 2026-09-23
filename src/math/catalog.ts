@@ -1,6 +1,11 @@
 import type { Difficulty, Domain, ExerciseType, Topic } from './types'
 
 export const topics: Topic[] = [
+  { id: 'fr-grammaire', label: 'Grammaire', domain: 'français' },
+  { id: 'fr-vocabulaire', label: 'Vocabulaire', domain: 'français' },
+  { id: 'fr-communication', label: 'Communication', domain: 'français' },
+  { id: 'fr-oral', label: 'Compréhension orale', domain: 'français' },
+  { id: 'fr-ecrit', label: 'Compréhension écrite', domain: 'français' },
   { id: 'nombres', label: 'Nombres naturels', domain: 'algèbre' },
   { id: 'addition', label: 'Additions', domain: 'algèbre' },
   { id: 'soustraction', label: 'Soustractions', domain: 'algèbre' },
@@ -33,6 +38,7 @@ export const topics: Topic[] = [
 ]
 
 export const topicById = Object.fromEntries(topics.map((topic) => [topic.id, topic])) as Record<string, Topic>
+export const frenchTopics = topics.filter((topic) => topic.domain === 'français')
 export const algebraTopics = topics.filter((topic) => topic.domain === 'algèbre')
 export const geometryTopics = topics.filter((topic) => topic.domain === 'géométrie')
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
@@ -133,7 +139,6 @@ export const exerciseTypes: ExerciseType[] = [
   t('puissances-racine', 'puissances', 'Racine carrée', 'Calculer √81.', 'Calculez.', 'ligne'),
   t('puissances-priorite', 'puissances', 'Priorité des opérations', 'Calculer 3 + 2 × 4².', 'Calculez en respectant les priorités.', 'ligne'),
 
-  t('expressions-lire', 'expressions', 'Lire une expression', 'Traduire « le double de x plus 3 ».', 'Écrivez l’expression ou sa lecture.', 'texte', { preferredColumns: 2 }),
   t('expressions-substituer', 'expressions', 'Évaluer (1 variable)', 'Calculer des expressions pour une même valeur, ex. t = 3.', 'Calculez le résultat.', 'ligne', { preferredColumns: 2 }),
   t('expressions-evaluer-2var', 'expressions', 'Évaluer (2 variables)', 'Évaluer cinq expressions avec les mêmes valeurs de deux lettres.', 'Évaluez les expressions avec deux variables. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 2 }),
   t('expressions-evaluer-3var', 'expressions', 'Évaluer (3 variables)', 'Évaluer cinq expressions avec les mêmes valeurs de trois lettres.', 'Évaluez les expressions avec trois variables. Les expressions utilisent les mêmes valeurs.', 'ligne', { preferredColumns: 2 }),
@@ -149,15 +154,15 @@ export const exerciseTypes: ExerciseType[] = [
   t('equations-systeme', 'equations', 'Systèmes (substitution)', 'Deux équations, deux inconnues.', 'Résolvez le système. Écrivez le développement, puis l’ensemble solution.', 'texte', { preferredColumns: 1 }),
   t('equations-systeme-add', 'equations', 'Systèmes (addition)', 'Combinaison linéaire.', 'Résolvez le système. Écrivez le développement, puis l’ensemble solution.', 'texte', { preferredColumns: 1 }),
 
-  t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, triangle, cercle…', 'Nommez chaque figure.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
-  t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, sommets, angles droits.', 'Complétez la propriété.', 'geo', { figure: 'square', preferredColumns: 2 }),
+  t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, rectangle, triangles, trapèzes, cercle, ovale…', 'Nommez chaque figure.', 'geo', { preferredColumns: 2 }),
+  t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, angles droits et symétries, y compris les triangles et les trapèzes.', 'Complétez les propriétés.', 'geo', { preferredColumns: 1 }),
 
-  t('conversions-longueur', 'conversions', 'Longueurs', 'm, km, cm, mm.', 'Convertissez.', 'ligne'),
-  t('conversions-aire', 'conversions', 'Aires', 'm², cm², km².', 'Convertissez.', 'ligne'),
-  t('conversions-volume', 'conversions', 'Volumes', 'm³, cm³, dm³.', 'Convertissez.', 'ligne'),
-  t('conversions-capacite', 'conversions', 'Capacités', 'L, cL, mL.', 'Convertissez.', 'ligne'),
-  t('conversions-masse', 'conversions', 'Masses', 'kg, g, t.', 'Convertissez.', 'ligne'),
-  t('conversions-temps', 'conversions', 'Temps', 'h, min, s.', 'Convertissez.', 'ligne'),
+  t('conversions-longueur', 'conversions', 'Longueurs', 'km, hm, dam, m, dm, cm, mm.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('conversions-aire', 'conversions', 'Aires', 'km², hm², dam², m², dm², cm², mm².', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('conversions-volume', 'conversions', 'Volumes', 'km³, hm³, dam³, m³, dm³, cm³, mm³.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('conversions-capacite', 'conversions', 'Capacités', 'L, dL, cL, mL.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('conversions-masse', 'conversions', 'Masses', 'kg, g, mg.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('conversions-temps', 'conversions', 'Temps', 'h, min, s.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
 
   t('perimetres-carre', 'perimetres', 'Carré', 'Périmètre d’un carré.', 'Calculez le périmètre.', 'geo', { figure: 'square', preferredColumns: 2 }),
   t('perimetres-rectangle', 'perimetres', 'Rectangle', 'Périmètre d’un rectangle.', 'Calculez le périmètre.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
@@ -165,12 +170,20 @@ export const exerciseTypes: ExerciseType[] = [
   t('perimetres-parallelogramme', 'perimetres', 'Parallélogramme', 'Périmètre d’un parallélogramme.', 'Calculez le périmètre.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
   t('perimetres-trapeze', 'perimetres', 'Trapèze', 'Périmètre d’un trapèze.', 'Calculez le périmètre.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
   t('perimetres-cercle', 'perimetres', 'Cercle', 'Périmètre = 2πr. Prenez π = 3,14.', 'Calculez le périmètre. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
+  t('perimetres-losange', 'perimetres', 'Losange', 'Périmètre d’un losange.', 'Calculez le périmètre.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
+  t('perimetres-carre-manquant', 'perimetres', 'Côté du carré', 'Retrouver le côté à partir du périmètre.', 'Calculez le côté.', 'geo', { figure: 'square', preferredColumns: 2 }),
+  t('perimetres-rectangle-manquant', 'perimetres', 'Largeur du rectangle', 'Retrouver une dimension à partir du périmètre.', 'Calculez la largeur.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
+  t('perimetres-triangle-manquant', 'perimetres', 'Côté du triangle', 'Retrouver un côté à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('perimetres-parallelogramme-manquant', 'perimetres', 'Côté du parallélogramme', 'Retrouver un côté à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('perimetres-losange-manquant', 'perimetres', 'Côté du losange', 'Retrouver le côté à partir du périmètre.', 'Calculez le côté.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
+  t('perimetres-trapeze-manquant', 'perimetres', 'Côté du trapèze', 'Retrouver un côté à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
+  t('perimetres-cercle-manquant', 'perimetres', 'Rayon du cercle', 'Retrouver le rayon à partir du périmètre.', 'Calculez le rayon. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t(
     'perimetres-melange',
     'perimetres',
     'Tout mélanger',
-    'Périmètres de polygones et de cercles, tirés au hasard.',
-    'Calculez le périmètre.',
+    'Toutes les formes, au hasard : périmètre ou côté manquant.',
+    'Calculez le périmètre ou la mesure demandée.',
     'geo',
     { preferredColumns: 2 },
   ),
@@ -190,10 +203,24 @@ export const exerciseTypes: ExerciseType[] = [
   t('aires-parallelogramme', 'aires', 'Parallélogramme', 'Aire = b × h.', 'Calculez l’aire.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
   t('aires-trapeze', 'aires', 'Trapèze', 'Aire = (B + b) × h / 2.', 'Calculez l’aire.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
   t('aires-disque', 'aires', 'Disque', 'Aire = πr². Prenez π = 3,14.', 'Calculez l’aire. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
+  t('aires-carre-manquant', 'aires', 'Côté du carré', 'Retrouver le côté à partir de l’aire.', 'Calculez le côté.', 'geo', { figure: 'square', preferredColumns: 2 }),
+  t('aires-rectangle-manquant', 'aires', 'Largeur du rectangle', 'Retrouver la largeur à partir de l’aire.', 'Calculez la largeur.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
+  t('aires-triangle-manquant', 'aires', 'Hauteur du triangle', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
+  t('aires-parallelogramme-manquant', 'aires', 'Hauteur du parallélogramme', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('aires-trapeze-manquant', 'aires', 'Hauteur du trapèze', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
+  t('aires-disque-manquant', 'aires', 'Rayon du disque', 'Retrouver le rayon à partir de l’aire.', 'Calculez le rayon. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
+  t('aires-melange', 'aires', 'Mélanger', 'Toutes les formes, au hasard : aire ou mesure manquante.', 'Calculez l’aire ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
 
   t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube', preferredColumns: 2 }),
   t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
   t('volumes-cylindre', 'volumes', 'Cylindre', 'Volume = πr²h. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
+  t('volumes-cone', 'volumes', 'Cône', 'Volume = πr²h / 3. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cone', preferredColumns: 2 }),
+  t('volumes-sphere', 'volumes', 'Sphère', 'Volume = 4πr³ / 3. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'sphere', preferredColumns: 2 }),
+  t('volumes-cube-manquant', 'volumes', 'Arête du cube', 'Retrouver l’arête à partir du volume.', 'Calculez l’arête.', 'geo', { figure: 'cube', preferredColumns: 2 }),
+  t('volumes-pave-manquant', 'volumes', 'Hauteur du pavé', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
+  t('volumes-cylindre-manquant', 'volumes', 'Hauteur du cylindre', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
+  t('volumes-cone-manquant', 'volumes', 'Hauteur du cône', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur. Prenez π = 3,14.', 'geo', { figure: 'cone', preferredColumns: 2 }),
+  t('volumes-melange', 'volumes', 'Mélanger', 'Tous les solides, au hasard.', 'Calculez le volume ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
 
   t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 2 }),
   t('reperage-placer', 'reperage', 'Placer des formes', 'Dessiner les formes sur un tableau vide à partir des coordonnées.', 'Dessinez chaque forme à l’emplacement indiqué.', 'geo', { preferredColumns: 2 }),
@@ -223,6 +250,22 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-centrale', 'transformations', 'Symétrie centrale', 'Symétrie par rapport à l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
   t('transformations-translation', 'transformations', 'Translation', 'Translater un point d’un vecteur.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
   t('transformations-rotation', 'transformations', 'Rotation', 'Rotation de 90° autour de l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
+
+  t('fr-gram-etre', 'fr-grammaire', 'Le verbe être', 'Être au présent.', 'Complétez avec être au présent.', 'trou', { preferredColumns: 1 }),
+  t('fr-gram-avoir', 'fr-grammaire', 'Le verbe avoir', 'Avoir au présent.', 'Complétez avec avoir au présent.', 'trou', { preferredColumns: 1 }),
+  t('fr-gram-articles', 'fr-grammaire', 'Les articles', 'Articles définis, indéfinis et partitifs.', 'Choisissez l’article.', 'ligne', { preferredColumns: 1 }),
+  t('fr-gram-possessifs', 'fr-grammaire', 'Les possessifs', 'Mon, ton, son, notre, votre, leur.', 'Complétez le possessif.', 'trou', { preferredColumns: 1 }),
+  t('fr-gram-verbes-er', 'fr-grammaire', 'Les verbes en -er', 'Présent des verbes en -er.', 'Conjuguez le verbe entre parenthèses.', 'trou', { preferredColumns: 1 }),
+  t('fr-gram-negation', 'fr-grammaire', 'La négation', 'Ne … pas.', 'Complétez la négation.', 'trou', { preferredColumns: 1 }),
+  t('fr-vocab-famille', 'fr-vocabulaire', 'La famille', 'Liens de parenté.', 'Complétez.', 'trou', { preferredColumns: 1 }),
+  t('fr-vocab-logement', 'fr-vocabulaire', 'Le logement', 'Pièces de la maison.', 'Choisissez le mot.', 'ligne', { preferredColumns: 1 }),
+  t('fr-vocab-vetements', 'fr-vocabulaire', 'Les vêtements', 'Nommer un vêtement.', 'Complétez.', 'trou', { preferredColumns: 1 }),
+  t('fr-vocab-intrus', 'fr-vocabulaire', 'Trouver l’intrus', 'Un mot n’appartient pas au groupe.', 'Entourez l’intrus.', 'ligne', { preferredColumns: 1 }),
+  t('fr-com-presenter', 'fr-communication', 'Se présenter', 'Saluer et se présenter.', 'Complétez.', 'trou', { preferredColumns: 1 }),
+  t('fr-com-inviter', 'fr-communication', 'Inviter', 'Proposer une sortie.', 'Complétez.', 'trou', { preferredColumns: 1 }),
+  t('fr-com-logement', 'fr-communication', 'Décrire son logement', 'Phrase guidée.', 'Écrivez une phrase.', 'texte', { preferredColumns: 1 }),
+  t('fr-co-nombres', 'fr-oral', 'Les nombres', 'Écouter un nombre et l’écrire. Questions originales, enregistrements repris.', 'Écoutez. Écrivez le nombre.', 'texte', { preferredColumns: 1 }),
+  t('fr-ce-vrai-faux', 'fr-ecrit', 'Vrai ou faux', 'Lire une information courte.', 'Lisez. Choisissez Vrai ou Faux.', 'ligne', { preferredColumns: 1 }),
 
   // —— Lecture (français / FLE voyelles) ——
   t('alphabet-classer', 'alphabet', 'Classer les lettres', 'Ranger des lettres dans l’ordre alphabétique.', 'Classez les lettres par ordre alphabétique.', 'suite', { preferredColumns: 1 }),
@@ -322,7 +365,13 @@ export function firstTypeFor(domain: Domain, topic?: string): ExerciseType {
     if (list[0]) return list[0]
   }
   const fallbackTopic =
-    domain === 'algèbre' ? 'addition' : domain === 'géométrie' ? 'aires' : 'voyelle-a'
+    domain === 'français'
+      ? 'fr-grammaire'
+      : domain === 'algèbre'
+        ? 'addition'
+        : domain === 'géométrie'
+          ? 'aires'
+          : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 

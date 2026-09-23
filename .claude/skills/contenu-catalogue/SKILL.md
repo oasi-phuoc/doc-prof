@@ -35,6 +35,7 @@ t(
 
 ## Thèmes actuels (repère)
 
+Français : grammaire, vocabulaire, communication, compréhension orale, compréhension écrite (plan `docs/plan-fiches-FLE.md`).  
 Algèbre : nombres, addition, soustraction, estimation, multiplication, division, problèmes, multiples, fractions, décimaux, proportionnalité, relatifs, puissances, expressions, équations.  
 Géométrie : figures, conversions, périmètres, aires, volumes, repérage, transformations.
 

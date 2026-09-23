@@ -489,7 +489,21 @@
   background-size:calc(100% / var(--grid-cols)) calc(100% / var(--grid-rows));
   background-position:0 0
 }
+.draft-pad.draft-pad-short{--grid-rows:calc(3 * var(--sheet-columns, 1))}
+.draft-pad.draft-pad-geo{--grid-rows:calc(3 * var(--sheet-columns, 1));margin-top:2px}
 .draft-pad.plain{background-image:none;background-color:#fff}
+.algebra-stack{display:flex;flex-direction:column;gap:6px;width:100%}
+.convert-row{
+  display:grid;grid-template-columns:6.2ch 4.2ch auto minmax(3.2em,1fr) 4.6ch;
+  align-items:baseline;column-gap:6px;width:100%;font-variant-numeric:tabular-nums;font-weight:600
+}
+.convert-eq{font-weight:700}
+.convert-unit{font-weight:600}
+.property-lines{display:flex;flex-direction:column;gap:6px;width:100%}
+.property-line{display:grid;grid-template-columns:max-content minmax(4em,1fr);align-items:baseline;column-gap:8px}
+.property-label{font-weight:600}
+.property-blank{min-width:4em}
+.oral-audio{display:block;width:100%;height:32px;margin:4px 0}
 .draft-pad-answer{
   display:block;padding:6px 8px;font-size:13px;line-height:1.35;
   white-space:pre-line;font-weight:600
@@ -593,7 +607,7 @@
   margin:0;color:var(--ink);overflow:visible
 }
 .geometry-figure .dim-label{
-  fill:currentColor;stroke:none;font-size:12px;font-weight:600;
+  fill:var(--purple);fill-opacity:1;stroke:none;font-size:12px;font-weight:600;
   font-family:'DM Sans',sans-serif
 }
 .geometry-figure.cotee{overflow:visible}

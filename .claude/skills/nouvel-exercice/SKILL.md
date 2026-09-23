@@ -16,7 +16,7 @@ Un type d'exercice = une entrée dans `src/math/catalog.ts` + une branche dans `
 
 Lire `CLAUDE.md` et un type proche dans `catalog.ts` / `generate.ts`. Fixer en une phrase chacun :
 
-1. **Thème** (`topic` id) et **domaine** (`algèbre` | `géométrie`).
+1. **Thème** (`topic` id) et **domaine** (`français` | `algèbre` | `géométrie`).
 2. **Ce que l'élève fait sur le papier** (calculer, poser, comparer, mesurer sur figure…).
 3. **Layout** : réutiliser un `Layout` existant (`inline`, `column`, `column-empty`, `division-column`, `text`, `compare`, `sequence`, `geo`, `coord`…) autant que possible.
 4. **Paramètres implicites** : bornes de nombres selon `PageConfig.difficulty`, `preferredColumns`, `figure` éventuelle.
@@ -56,6 +56,8 @@ Toujours lire `config.difficulty` dans `generate.ts` / `algebra.ts` (via `pairAd
 - Réponses élèves : `.answer-line-field` (souligné), pas de boîte.
 - **Trait de réponse = pleine largeur par défaut** (`display: block; width: 100%`). Partout : texte, calculs après `=`, algèbre, géométrie, problèmes. Ne pas utiliser `med` / `wide` / `slim`.
 - Exception uniquement : `.answer-line-field.compact` pour un **trou local** (suite, case de division, opérande manquant dans une équation).
+- **Expressions algébriques** : grille de brouillon de 3 lignes sous l’expression (6 lignes en 2 colonnes).
+- **Périmètre, aire, volume** : grille de 3 lignes sous la figure, cotes en couleur du thème. Deux types par forme (calculer la mesure, retrouver une cote).
 - **Texte / écrire en chiffres ou en lettres** : layout `text` → énoncé au-dessus, trait pleine largeur dessous (`.prompt-stack`).
 - **Calculs avec `=`** : énoncé à gauche, trait qui **occupe le reste de la ligne** à droite du `=` (`.eq-row` / `.inline-prompt.equation`).
 - Mode `answers` remplit les mêmes emplacements sans changer la mise en page.

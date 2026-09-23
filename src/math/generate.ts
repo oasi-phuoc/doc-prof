@@ -20,9 +20,13 @@ import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
 import { tryGenerateLectureBatch } from './lecture'
+import { tryGenerateConversion } from './conversions'
+import { tryGenerateFigure } from './figures-school'
+import { tryGenerateFrancais } from './francais'
+import { tryGenerateMesure } from './mesures'
 import { makeWordProblem } from './problems'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
-import type { ArithOp, Difficulty, DivisionStep, FigureDims, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
+import type { ArithOp, Difficulty, DivisionStep, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
@@ -237,98 +241,6 @@ function normalizeDivisionLayouts(items: MathItem[]): MathItem[] {
   })
 }
 
-type TriangleKind = NonNullable<FigureDims['triangleKind']>
-
-function randomTrianglePerimeter(rng: Rng): {
-  kind: TriangleKind
-  a: number
-  b: number
-  c: number
-  dims: FigureDims
-} {
-  const kind = pick(rng, ['equilateral', 'isosceles', 'scalene', 'right'] as const)
-  if (kind === 'equilateral') {
-    const s = int(rng, 4, 14)
-    return { kind, a: s, b: s, c: s, dims: { triangleKind: kind, side: s, a: s, b: s, c: s, unit: 'cm' } }
-  }
-  if (kind === 'isosceles') {
-    const leg = int(rng, 5, 14)
-    const base = int(rng, 3, leg * 2 - 2)
-    return {
-      kind,
-      a: leg,
-      b: leg,
-      c: base,
-      dims: { triangleKind: kind, a: leg, b: leg, c: base, side: leg, base, unit: 'cm' },
-    }
-  }
-  if (kind === 'right') {
-    const a = int(rng, 3, 9)
-    const b = int(rng, 4, 12)
-    const c = Math.round(Math.sqrt(a * a + b * b) * 10) / 10
-    return {
-      kind,
-      a,
-      b,
-      c,
-      dims: { triangleKind: kind, a, b, c, unit: 'cm' },
-    }
-  }
-  // scalene — inequality triangle
-  let a = int(rng, 5, 12)
-  let b = int(rng, 6, 14)
-  let c = int(rng, Math.abs(a - b) + 2, a + b - 2)
-  while (a === b || b === c || a === c) {
-    a = int(rng, 5, 12)
-    b = int(rng, 6, 14)
-    c = int(rng, Math.abs(a - b) + 2, a + b - 2)
-  }
-  return { kind, a, b, c, dims: { triangleKind: kind, a, b, c, unit: 'cm' } }
-}
-
-function randomTriangleArea(rng: Rng): {
-  kind: TriangleKind
-  base: number
-  height: number
-  dims: FigureDims
-  calc: string
-  area: number
-} {
-  const kind = pick(rng, ['equilateral', 'isosceles', 'scalene', 'right'] as const)
-  if (kind === 'right') {
-    const a = int(rng, 3, 10)
-    const b = int(rng, 4, 12)
-    return {
-      kind,
-      base: b,
-      height: a,
-      dims: { triangleKind: kind, a, b, c: Math.round(Math.sqrt(a * a + b * b) * 10) / 10, base: b, height: a, unit: 'cm' },
-      calc: `(${a} × ${b}) / 2`,
-      area: (a * b) / 2,
-    }
-  }
-  const base = int(rng, 6, 18)
-  const height = int(rng, 4, 14)
-  const side = int(rng, 5, 16)
-  return {
-    kind,
-    base,
-    height,
-    dims: {
-      triangleKind: kind,
-      base,
-      height,
-      side: kind === 'equilateral' ? base : side,
-      a: kind === 'equilateral' ? base : kind === 'isosceles' ? side : undefined,
-      b: kind === 'equilateral' ? base : kind === 'isosceles' ? side : undefined,
-      c: base,
-      unit: 'cm',
-    },
-    calc: `(${base} × ${height}) / 2`,
-    area: (base * height) / 2,
-  }
-}
-
 function inlineOp(op: ArithOp, a: number, b: number, result: number, missing: MissingPos = 'result'): MathItem {
   const leftA = missing === 'a' ? '□' : fmt(a)
   const leftB = missing === 'b' ? '□' : fmt(b)
@@ -379,6 +291,12 @@ function generateItems(typeId: string, count: number, rng: Rng, difficulty: Diff
 }
 
 function generateOne(typeId: string, rng: Rng, index: number, difficulty: Difficulty): MathItem {
+  const routed =
+    tryGenerateFigure(typeId, index) ??
+    tryGenerateConversion(typeId, rng, difficulty) ??
+    tryGenerateMesure(typeId, rng, difficulty) ??
+    tryGenerateFrancais(typeId, rng, index)
+  if (routed) return routed
   const max = calcBound(difficulty)
   const nMax = nombreBound(difficulty)
   switch (typeId) {
@@ -932,11 +850,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       const c = int(rng, 2, 4)
       return { layout: 'inline', prompt: `${a} + ${b} × ${c} =`, answer: String(a + b * c) }
     }
-    case 'expressions-lire': {
-      const n = int(rng, 2, 9)
-      const k = int(rng, 1, 9)
-      return { layout: 'text', prompt: `Écrivez l’expression : le produit de ${n} et d’un nombre x, augmenté de ${k}.`, answer: `${n}x + ${k}` }
-    }
     case 'expressions-substituer': {
       const n = int(rng, 2, 6)
       const k = int(rng, 1, 9)
@@ -984,273 +897,8 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       return generateSystemSubstitution(rng)
     case 'equations-systeme-add':
       return generateSystemAddition(rng)
-    case 'figures-nommer': {
-      const names = [
-        { figure: 'square' as const, answer: 'carré' },
-        { figure: 'rectangle' as const, answer: 'rectangle' },
-        { figure: 'triangle' as const, answer: 'triangle' },
-        { figure: 'circle' as const, answer: 'cercle' },
-        { figure: 'rhombus' as const, answer: 'losange' },
-      ]
-      const fig = names[index % names.length]!
-      return { layout: 'geo', prompt: 'Nommez cette figure.', figure: fig.figure, answer: fig.answer }
-    }
-    case 'figures-proprietes': {
-      const q = pick(rng, [
-        { prompt: 'Un carré a combien de côtés égaux ?', answer: '4', figure: 'square' as const },
-        { prompt: 'Un triangle a combien de sommets ?', answer: '3', figure: 'triangle' as const },
-        { prompt: 'Un rectangle a combien d’angles droits ?', answer: '4', figure: 'rectangle' as const },
-      ])
-      return { layout: 'geo', prompt: q.prompt, figure: q.figure, answer: q.answer }
-    }
-    case 'conversions-longueur': {
-      const m = int(rng, 1, 12)
-      return rng() < 0.5
-        ? { layout: 'inline', prompt: `${m} m = … cm`, answer: `${m * 100} cm` }
-        : { layout: 'inline', prompt: `${m * 10} mm = … cm`, answer: `${m} cm` }
-    }
-    case 'conversions-aire': {
-      const m = int(rng, 1, 8)
-      return { layout: 'inline', prompt: `${m} m² = … cm²`, answer: `${m * 10_000} cm²` }
-    }
-    case 'conversions-volume': {
-      const m = int(rng, 1, 5)
-      return { layout: 'inline', prompt: `${m} dm³ = … L`, answer: `${m} L` }
-    }
-    case 'conversions-capacite': {
-      const l = int(rng, 1, 8)
-      return { layout: 'inline', prompt: `${l} L = … cL`, answer: `${l * 100} cL` }
-    }
-    case 'conversions-masse': {
-      const kg = int(rng, 1, 8)
-      return { layout: 'inline', prompt: `${kg} kg = … g`, answer: `${kg * 1000} g` }
-    }
-    case 'conversions-temps': {
-      const h = int(rng, 1, 4)
-      return { layout: 'inline', prompt: `${h} h = … min`, answer: `${h * 60} min` }
-    }
-    case 'perimetres-carre': {
-      const c = int(rng, 2, 15)
-      return {
-        layout: 'geo',
-        prompt: `Calculez le périmètre.`,
-        figure: 'square',
-        dims: { side: c, unit: 'cm' },
-        calcAnswer: `4 × ${c}`,
-        responseAnswer: `${4 * c} cm`,
-        answer: `${4 * c} cm`,
-      }
-    }
-    case 'perimetres-rectangle': {
-      const l = int(rng, 4, 16)
-      const w = int(rng, 2, l - 1)
-      return {
-        layout: 'geo',
-        prompt: `Calculez le périmètre.`,
-        figure: 'rectangle',
-        dims: { length: l, width: w, unit: 'cm' },
-        calcAnswer: `2 × (${l} + ${w})`,
-        responseAnswer: `${2 * (l + w)} cm`,
-        answer: `${2 * (l + w)} cm`,
-      }
-    }
-    case 'perimetres-triangle': {
-      const t = randomTrianglePerimeter(rng)
-      const labels: Record<TriangleKind, string> = {
-        equilateral: 'Triangle équilatéral',
-        isosceles: 'Triangle isocèle',
-        scalene: 'Triangle scalène',
-        right: 'Triangle rectangle',
-      }
-      return {
-        layout: 'geo',
-        prompt: `${labels[t.kind]}. Calculez le périmètre.`,
-        figure: 'triangle',
-        dims: t.dims,
-        calcAnswer: `${t.a} + ${t.b} + ${t.c}`,
-        responseAnswer: `${Math.round((t.a + t.b + t.c) * 10) / 10} cm`,
-        answer: `${Math.round((t.a + t.b + t.c) * 10) / 10} cm`,
-      }
-    }
-    case 'perimetres-parallelogramme': {
-      const base = int(rng, 5, 16)
-      const side = int(rng, 3, 12)
-      return {
-        layout: 'geo',
-        prompt: `Calculez le périmètre.`,
-        figure: 'parallelogram',
-        dims: { base, side, a: side, unit: 'cm' },
-        calcAnswer: `2 × (${base} + ${side})`,
-        responseAnswer: `${2 * (base + side)} cm`,
-        answer: `${2 * (base + side)} cm`,
-      }
-    }
-    case 'perimetres-trapeze': {
-      const top = int(rng, 4, 12)
-      const bottom = int(rng, top + 2, top + 10)
-      const left = int(rng, 3, 10)
-      const right = int(rng, 3, 10)
-      return {
-        layout: 'geo',
-        prompt: `Calculez le périmètre.`,
-        figure: 'trapezoid',
-        dims: { top, bottom, a: left, b: right, unit: 'cm' },
-        calcAnswer: `${top} + ${bottom} + ${left} + ${right}`,
-        responseAnswer: `${top + bottom + left + right} cm`,
-        answer: `${top + bottom + left + right} cm`,
-      }
-    }
-    case 'perimetres-cercle': {
-      const r = int(rng, 2, 10)
-      const p = Math.round(2 * 3.14 * r * 100) / 100
-      return {
-        layout: 'geo',
-        prompt: `Calculez le périmètre (π = 3,14).`,
-        figure: 'circle',
-        dims: { radius: r, unit: 'cm' },
-        calcAnswer: `2 × 3,14 × ${r}`,
-        responseAnswer: `${fmt(p)} cm`,
-        answer: `${fmt(p)} cm`,
-      }
-    }
-    case 'perimetres-melange': {
-      const simple = pick(rng, [
-        'perimetres-carre',
-        'perimetres-rectangle',
-        'perimetres-triangle',
-        'perimetres-parallelogramme',
-        'perimetres-trapeze',
-        'perimetres-cercle',
-      ])
-      return generateOne(simple, rng, index, difficulty)
-    }
     case 'perimetres-composees': {
       return generatePerimetreCompose(rng, difficulty)
-    }
-    case 'aires-carre': {
-      const c = int(rng, 2, 12)
-      return {
-        layout: 'geo',
-        prompt: `Calculez l’aire.`,
-        figure: 'square',
-        dims: { side: c, unit: 'cm' },
-        calcAnswer: `${c} × ${c}`,
-        responseAnswer: `${c * c} cm²`,
-        answer: `${c * c} cm²`,
-      }
-    }
-    case 'aires-rectangle': {
-      const l = int(rng, 4, 16)
-      const w = int(rng, 2, l - 1)
-      return {
-        layout: 'geo',
-        prompt: `Calculez l’aire.`,
-        figure: 'rectangle',
-        dims: { length: l, width: w, unit: 'cm' },
-        calcAnswer: `${l} × ${w}`,
-        responseAnswer: `${l * w} cm²`,
-        answer: `${l * w} cm²`,
-      }
-    }
-    case 'aires-triangle': {
-      const t = randomTriangleArea(rng)
-      const labels: Record<TriangleKind, string> = {
-        equilateral: 'Triangle équilatéral',
-        isosceles: 'Triangle isocèle',
-        scalene: 'Triangle scalène',
-        right: 'Triangle rectangle',
-      }
-      return {
-        layout: 'geo',
-        prompt: `${labels[t.kind]}. Calculez l’aire.`,
-        figure: 'triangle',
-        dims: t.dims,
-        calcAnswer: t.calc,
-        responseAnswer: `${t.area} cm²`,
-        answer: `${t.area} cm²`,
-      }
-    }
-    case 'aires-parallelogramme': {
-      const b = int(rng, 5, 16)
-      const h = int(rng, 3, 10)
-      const side = int(rng, 3, 12)
-      return {
-        layout: 'geo',
-        prompt: `Calculez l’aire.`,
-        figure: 'parallelogram',
-        dims: { base: b, height: h, side, a: side, unit: 'cm' },
-        calcAnswer: `${b} × ${h}`,
-        responseAnswer: `${b * h} cm²`,
-        answer: `${b * h} cm²`,
-      }
-    }
-    case 'aires-trapeze': {
-      const top = int(rng, 4, 12)
-      const bottom = int(rng, top + 2, top + 12)
-      const h = int(rng, 3, 12)
-      const area = ((top + bottom) * h) / 2
-      return {
-        layout: 'geo',
-        prompt: `Calculez l’aire.`,
-        figure: 'trapezoid',
-        dims: { top, bottom, height: h, unit: 'cm' },
-        calcAnswer: `(${top} + ${bottom}) × ${h} / 2`,
-        responseAnswer: `${area} cm²`,
-        answer: `${area} cm²`,
-      }
-    }
-    case 'aires-disque': {
-      const r = int(rng, 2, 8)
-      const a = Math.round(3.14 * r * r * 100) / 100
-      return {
-        layout: 'geo',
-        prompt: `Calculez l’aire (π = 3,14).`,
-        figure: 'circle',
-        dims: { radius: r, unit: 'cm' },
-        calcAnswer: `3,14 × ${r}²`,
-        responseAnswer: `${fmt(a)} cm²`,
-        answer: `${fmt(a)} cm²`,
-      }
-    }
-    case 'volumes-cube': {
-      const c = int(rng, 2, 9)
-      return {
-        layout: 'geo',
-        prompt: `Calculez le volume.`,
-        figure: 'cube',
-        dims: { side: c, unit: 'cm' },
-        calcAnswer: `${c}³`,
-        responseAnswer: `${c ** 3} cm³`,
-        answer: `${c ** 3} cm³`,
-      }
-    }
-    case 'volumes-pave': {
-      const l = int(rng, 3, 10)
-      const w = int(rng, 2, 8)
-      const h = int(rng, 2, 7)
-      return {
-        layout: 'geo',
-        prompt: `Calculez le volume.`,
-        figure: 'cuboid',
-        dims: { length: l, width: w, height: h, unit: 'cm' },
-        calcAnswer: `${l} × ${w} × ${h}`,
-        responseAnswer: `${l * w * h} cm³`,
-        answer: `${l * w * h} cm³`,
-      }
-    }
-    case 'volumes-cylindre': {
-      const r = int(rng, 2, 6)
-      const h = int(rng, 3, 10)
-      const v = Math.round(3.14 * r * r * h * 100) / 100
-      return {
-        layout: 'geo',
-        prompt: `Calculez le volume (π = 3,14).`,
-        figure: 'cylinder',
-        dims: { radius: r, height: h, unit: 'cm' },
-        calcAnswer: `3,14 × ${r}² × ${h}`,
-        responseAnswer: `${fmt(v)} cm³`,
-        answer: `${fmt(v)} cm³`,
-      }
     }
     case 'reperage-lire': {
       const x = int(rng, -4, 5)

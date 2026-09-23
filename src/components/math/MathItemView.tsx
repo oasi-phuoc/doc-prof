@@ -490,6 +490,7 @@ export function AlgebraRow({
   const answerLabel = hasEquals ? `x = ${item.answer}` : item.answer
 
   return (
+    <div className="algebra-stack">
     <div
       className={`algebra-row${hasEquals ? ' has-inline-eq' : ''}`}
       aria-label="Expression algébrique"
@@ -509,6 +510,8 @@ export function AlgebraRow({
       <span className={`answer-line-field algebra-answer ${show ? 'filled' : ''}`}>
         {show ? answerLabel : '\u00a0'}
       </span>
+    </div>
+    <div className="draft-pad draft-pad-short with-grid" aria-label="Zone de brouillon" />
     </div>
   )
 }
@@ -547,6 +550,21 @@ function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
         {show ? item.answer : '\u00a0'}
       </span>
+    </div>
+  )
+}
+
+function ConvertRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const convert = item.convert!
+  const answer = item.answer.replace(new RegExp(`\\s*${convert.to.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), '')
+  return (
+    <div className="convert-row" aria-label="Conversion">
+      <span className="convert-value">{convert.value}</span>
+      <span className="convert-unit">{convert.from}</span>
+      <span className="convert-eq">=</span>
+      <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+      <span className="convert-unit">{convert.to}</span>
     </div>
   )
 }
@@ -834,29 +852,40 @@ function GeoBlock({
       ) : (
         <GeometryFigure type={item.figure} dims={item.dims} />
       )}
+      {(item.calcAnswer || item.responseAnswer) && !item.propertyLines ? (
+        <div className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de calcul">
+          {show && item.calcAnswer ? (
+            <strong className="filled-answer draft-pad-answer">{item.calcAnswer}</strong>
+          ) : null}
+        </div>
+      ) : null}
       <div className="geo-side">
         {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-        {(item.calcAnswer || item.responseAnswer) && (
-          <div className="problem-fields compact">
-            <div className="problem-field">
-              <span className="field-label">Calcul</span>
-              <div className={`draft-pad ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de calcul">
-                {show && item.calcAnswer ? (
-                  <strong className="filled-answer draft-pad-answer">{item.calcAnswer}</strong>
-                ) : null}
+        {item.propertyLines ? (
+          <div className="property-lines">
+            {item.propertyLines.map((line) => (
+              <div className="property-line" key={line.label}>
+                <span className="property-label">{line.label} :</span>
+                {show ? (
+                  <strong className="filled-answer property-answer">{line.answer}</strong>
+                ) : (
+                  <span className="answer-line-field property-blank">{'\u00a0'}</span>
+                )}
               </div>
-            </div>
-            <div className="problem-field">
-              <span className="field-label">Réponse</span>
-              {show ? (
-                <strong className="filled-answer">{item.responseAnswer ?? item.answer}</strong>
-              ) : (
-                <span className="answer-line-field">{'\u00a0'}</span>
-              )}
-            </div>
+            ))}
           </div>
-        )}
-        {!item.calcAnswer && (
+        ) : null}
+        {(item.calcAnswer || item.responseAnswer) && !item.propertyLines ? (
+          <div className="problem-response-line">
+            <span className="response-label">Réponse :</span>
+            {show ? (
+              <strong className="filled-answer response-value">{item.responseAnswer ?? item.answer}</strong>
+            ) : (
+              <span className="answer-line-field">{'\u00a0'}</span>
+            )}
+          </div>
+        ) : null}
+        {!item.calcAnswer && !item.propertyLines && (
           <div className="problem-field">
             {show ? (
               <strong className="filled-answer">{item.answer}</strong>
@@ -1055,10 +1084,16 @@ export function MathItemView({
         {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
-        {isStackedText && <StackedPrompt item={item} mode={mode} />}
+        {item.audioSrc ? (
+          <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
+            Écoutez l’enregistrement.
+          </audio>
+        ) : null}
+        {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} />}
         {!isProblem &&
           !isStackedText &&
-          item.layout === 'inline' && <InlinePrompt item={item} mode={mode} />}
+          item.layout === 'inline' &&
+          (item.convert ? <ConvertRow item={item} mode={mode} /> : <InlinePrompt item={item} mode={mode} />)}
       </div>
     </div>
   )

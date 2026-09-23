@@ -31,6 +31,7 @@ import {
   defaultPage,
   exerciseTypeById,
   firstTypeFor,
+  frenchTopics,
   geometryTopics,
   isDraftPadExercise,
   lectureTopics,
@@ -465,11 +466,13 @@ function GeneratorPage() {
 
   const activePage = pages[pageIndex] ?? pages[0]!
   const available =
-    activePage.domain === 'algèbre'
-      ? algebraTopics
-      : activePage.domain === 'géométrie'
-        ? geometryTopics
-        : lectureTopics
+    activePage.domain === 'français'
+      ? frenchTopics
+      : activePage.domain === 'algèbre'
+        ? algebraTopics
+        : activePage.domain === 'géométrie'
+          ? geometryTopics
+          : lectureTopics
   const worksheets = useMemo(
     () => pages.map((page, index) => buildPage(page, seed + index * 7919)),
     [pages, seed],
@@ -662,7 +665,7 @@ function GeneratorPage() {
   function changeDomain(next: Domain) {
     const type = firstTypeFor(next)
     updatePage({ domain: next, ...applyType(type) })
-    if (next === 'lecture') {
+    if (next === 'français' || next === 'lecture') {
       setInstitutional((current) =>
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
@@ -785,6 +788,7 @@ function GeneratorPage() {
               </div>
 
               <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
+                <option value="français">Français</option>
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}

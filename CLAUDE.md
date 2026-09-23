@@ -1,6 +1,6 @@
 # ClairFLE Maths — générateur de fiches de maths imprimables
 
-Site où des enseignant·e·s composent des fiches de travail A4 imprimables (avec corrigé) en mathématiques : algèbre et géométrie, tirage déterministe par graine, rendu type cahier scolaire (colonnes, fractions, figures cotées, division posée).
+Site où des enseignant·e·s composent des fiches de travail A4 imprimables (avec corrigé) : français (grammaire, vocabulaire, communication), algèbre et géométrie. Tirage déterministe par graine, rendu type cahier scolaire (colonnes, fractions, figures cotées, division posée). Le plan des fiches FLE est dans `docs/plan-fiches-FLE.md`.
 
 ## Stack et commandes
 

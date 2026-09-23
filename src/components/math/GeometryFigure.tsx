@@ -12,6 +12,9 @@ const ALL: Figure[] = [
   'cube',
   'cuboid',
   'cylinder',
+  'cone',
+  'sphere',
+  'oval',
 ]
 
 function u(dims?: FigureDims) {
@@ -42,6 +45,7 @@ function L({
       textAnchor={anchor}
       className="dim-label"
       fill="currentColor"
+      fillOpacity={1}
       stroke="none"
       transform={rotate != null ? `rotate(${rotate} ${x} ${y})` : undefined}
     >
@@ -74,9 +78,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'square' && (
           <>
             <rect x="75" y="42" width="110" height="110" />
-            {d.side != null && (
+            {(d.side != null || d.ask === 'side') && (
               <L x={130} y={32}>
-                {fmt(d.side)} {unit}
+                {d.ask === 'side' ? '?' : `${fmt(d.side!)} ${unit}`}
               </L>
             )}
           </>
@@ -85,14 +89,14 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'rectangle' && (
           <>
             <rect x="40" y="48" width="170" height="82" />
-            {d.length != null && (
+            {(d.length != null || d.ask === 'length') && (
               <L x={125} y={38}>
-                {fmt(d.length)} {unit}
+                {d.ask === 'length' ? '?' : `${fmt(d.length!)} ${unit}`}
               </L>
             )}
-            {d.width != null && (
+            {(d.width != null || d.ask === 'width') && (
               <L x={222} y={92} anchor="start">
-                {fmt(d.width)} {unit}
+                {d.ask === 'width' ? '?' : `${fmt(d.width!)} ${unit}`}
               </L>
             )}
           </>
@@ -230,7 +234,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'triangle' && (kind === 'scalene' || !['right', 'equilateral', 'isosceles'].includes(kind)) && (
           <>
             <polygon points="135,28 246,152 42,152" />
-            {forArea && d.base != null && d.height != null ? (
+            {forArea && d.base != null && (d.height != null || d.ask === 'height') ? (
               <>
                 <line
                   x1="142"
@@ -246,7 +250,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                   {fmt(d.base)} {unit}
                 </L>
                 <L x={152} y={100} anchor="start">
-                  h = {fmt(d.height)} {unit}
+                  {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
                 </L>
                 {d.side != null && (
                   <L x={72} y={92} anchor="end">
@@ -266,9 +270,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                     {fmt(d.b)} {unit}
                   </L>
                 )}
-                {d.c != null && (
+                {(d.c != null || d.ask === 'c') && (
                   <L x={144} y={172}>
-                    {fmt(d.c)} {unit}
+                    {d.ask === 'c' ? '?' : `${fmt(d.c!)} ${unit}`}
                   </L>
                 )}
               </>
@@ -296,14 +300,14 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                 {fmt(d.base ?? d.length!)} {unit}
               </L>
             )}
-            {d.height != null && (
+            {(d.height != null || d.ask === 'height') && (
               <L x={230} y={96} anchor="start">
-                h = {fmt(d.height)} {unit}
+                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
               </L>
             )}
-            {(d.side != null || d.a != null) && (
+            {(d.side != null || d.a != null || d.ask === 'side') && (
               <L x={42} y={92} anchor="end">
-                {fmt(d.side ?? d.a!)} {unit}
+                {d.ask === 'side' ? '?' : `${fmt(d.side ?? d.a!)} ${unit}`}
               </L>
             )}
           </>
@@ -311,7 +315,18 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'trapezoid' && (
           <>
-            <polygon points="85,42 185,42 225,150 45,150" />
+            <polygon
+              points={
+                d.trapezoidKind === 'rectangle'
+                  ? '48,42 175,42 210,150 48,150'
+                  : d.trapezoidKind === 'scalene'
+                    ? '55,42 195,42 235,150 28,150'
+                    : '85,42 185,42 225,150 45,150'
+              }
+            />
+            {d.trapezoidKind === 'rectangle' && (
+              <polyline points="48,134 64,134 64,150" fill="none" strokeWidth="1.6" />
+            )}
             {hasHeight && (
               <line
                 x1="185"
@@ -334,9 +349,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                 {fmt(d.bottom ?? d.base!)} {unit}
               </L>
             )}
-            {d.height != null && (
+            {(d.height != null || d.ask === 'height') && (
               <L x={196} y={100} anchor="start">
-                h = {fmt(d.height)} {unit}
+                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
               </L>
             )}
             {d.a != null && (
@@ -344,9 +359,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                 {fmt(d.a)} {unit}
               </L>
             )}
-            {d.b != null && (
+            {(d.b != null || d.ask === 'b') && (
               <L x={220} y={100} anchor="start">
-                {fmt(d.b)} {unit}
+                {d.ask === 'b' ? '?' : `${fmt(d.b!)} ${unit}`}
               </L>
             )}
           </>
@@ -367,9 +382,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
               strokeOpacity="0.7"
             />
             <circle cx="130" cy="88" r="2.4" fillOpacity="1" stroke="none" />
-            {d.radius != null && (
+            {(d.radius != null || d.ask === 'radius') && (
               <L x={130} y={172}>
-                r = {fmt(d.radius)} {unit}
+                {d.ask === 'radius' ? 'r = ?' : `r = ${fmt(d.radius!)} ${unit}`}
               </L>
             )}
           </>
@@ -378,9 +393,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'rhombus' && (
           <>
             <polygon points="130,28 200,95 130,162 60,95" />
-            {d.side != null && (
+            {(d.side != null || d.ask === 'side') && (
               <L x={130} y={180}>
-                {fmt(d.side)} {unit}
+                {d.ask === 'side' ? '?' : `${fmt(d.side!)} ${unit}`}
               </L>
             )}
           </>
@@ -391,16 +406,16 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <path d="M70 78 h76 v76 H70 Z" />
             <path d="M70 78 L102 48 h76 l-32 30" fill="none" />
             <path d="M178 48 v76 l-32 30" fill="none" />
-            {d.side != null && (
+            {(d.side != null || d.ask === 'side') && (
               <>
                 <L x={108} y={172}>
-                  {fmt(d.side)} {unit}
+                  {d.ask === 'side' ? '?' : `${fmt(d.side!)} ${unit}`}
                 </L>
                 <L x={58} y={120} anchor="end">
-                  {fmt(d.side)} {unit}
+                  {d.ask === 'side' ? '?' : `${fmt(d.side!)} ${unit}`}
                 </L>
                 <L x={140} y={38}>
-                  {fmt(d.side)} {unit}
+                  {d.ask === 'side' ? '?' : `${fmt(d.side!)} ${unit}`}
                 </L>
               </>
             )}
@@ -422,9 +437,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                 {fmt(d.width)} {unit}
               </L>
             )}
-            {d.height != null && (
+            {(d.height != null || d.ask === 'height') && (
               <L x={42} y={118} anchor="end">
-                {fmt(d.height)} {unit}
+                {d.ask === 'height' ? '?' : `${fmt(d.height!)} ${unit}`}
               </L>
             )}
           </>
@@ -442,9 +457,40 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                 r = {fmt(d.radius)} {unit}
               </L>
             )}
-            {d.height != null && (
+            {(d.height != null || d.ask === 'height') && (
               <L x={190} y={100} anchor="start">
-                h = {fmt(d.height)} {unit}
+                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
+              </L>
+            )}
+          </>
+        )}
+
+        {type === 'oval' && <ellipse cx="130" cy="95" rx="78" ry="48" />}
+
+        {type === 'cone' && (
+          <>
+            <ellipse cx="130" cy="150" rx="62" ry="16" />
+            <path d="M68 150 L130 28 L192 150" fill="none" />
+            {(d.radius != null || d.ask === 'radius') && (
+              <L x={160} y={168}>
+                {d.ask === 'radius' ? 'r = ?' : `r = ${fmt(d.radius!)} ${unit}`}
+              </L>
+            )}
+            {(d.height != null || d.ask === 'height') && (
+              <L x={210} y={90} anchor="start">
+                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
+              </L>
+            )}
+          </>
+        )}
+
+        {type === 'sphere' && (
+          <>
+            <circle cx="130" cy="95" r="62" />
+            <ellipse cx="130" cy="95" rx="62" ry="18" fill="none" />
+            {(d.radius != null || d.ask === 'radius') && (
+              <L x={130} y={176}>
+                {d.ask === 'radius' ? 'r = ?' : `r = ${fmt(d.radius!)} ${unit}`}
               </L>
             )}
           </>

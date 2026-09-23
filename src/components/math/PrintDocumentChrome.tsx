@@ -131,7 +131,11 @@ export function CustomDocumentHeader({
   domain: string
 }) {
   const kicker =
-    domain === 'lecture' ? 'FRANÇAIS · LECTURE' : `MATHÉMATIQUES · ${domain.toUpperCase()}`
+    domain === 'lecture'
+      ? 'FRANÇAIS · LECTURE'
+      : domain === 'français'
+        ? 'FRANÇAIS'
+        : `MATHÉMATIQUES · ${domain.toUpperCase()}`
   return (
     <div className="doc-header custom">
       <div className="custom-print-header">

@@ -1,4 +1,4 @@
-export type Domain = 'algèbre' | 'géométrie' | 'lecture'
+export type Domain = 'français' | 'algèbre' | 'géométrie' | 'lecture'
 export type PreviewMode = 'student' | 'answers'
 export type Difficulty = 'facile' | 'moyen' | 'avance'
 export type Figure =
@@ -14,6 +14,7 @@ export type Figure =
   | 'cylinder'
   | 'cone'
   | 'sphere'
+  | 'oval'
 
 export type Layout =
   | 'inline'
@@ -156,6 +157,9 @@ export type FigureDims = {
   c?: number
   unit?: string
   triangleKind?: 'equilateral' | 'isosceles' | 'scalene' | 'right'
+  trapezoidKind?: 'rectangle' | 'isosceles' | 'scalene'
+  /** Cote à trouver : affichée « ? » sur la figure. */
+  ask?: 'side' | 'length' | 'width' | 'height' | 'radius' | 'a' | 'b' | 'c' | 'base' | 'top'
 }
 
 export type DivisionStep = {
@@ -226,6 +230,12 @@ export type MathItem = {
   placeParts?: string[]
   /** Figure composée cotée (périmètre). */
   compositeScene?: CompositeScene
+  /** Lignes « libellé : réponse » sans bordure (propriétés des figures). */
+  propertyLines?: { label: string; answer: string }[]
+  /** Conversion d’unités : valeur et unités de part et d’autre du signe =. */
+  convert?: { value: string; from: string; to: string }
+  /** Enregistrement à écouter (compréhension orale). */
+  audioSrc?: string
 }
 
 export type CompositeLabel = {
