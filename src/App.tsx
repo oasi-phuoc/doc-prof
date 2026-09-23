@@ -294,7 +294,7 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
 }
 
 /** Mot de passe pour ouvrir le générateur de fiches. */
-const FICHE_ACCESS_PASSWORD = 'Jebosseplus'
+const FICHE_ACCESS_PASSWORD = 'jebosseplus'
 
 function Landing({ onCreate }: { onCreate: () => void }) {
   return (
