@@ -935,11 +935,7 @@ function CoordBlock({
                     ) : null}
                     {isAxesPoint ? `${question.prompt} est en` : question.prompt}
                   </span>
-                  {isDraw ? (
-                    show ? (
-                      <strong className="filled-answer">{question.answer}</strong>
-                    ) : null
-                  ) : isPlace || (isPair && show) ? (
+                  {isDraw ? null : isPlace || (isPair && show) ? (
                     <strong className={isPlace ? 'coord-given' : 'filled-answer'}>{question.answer}</strong>
                   ) : isPair ? (
                     <span className="coord-pair">
