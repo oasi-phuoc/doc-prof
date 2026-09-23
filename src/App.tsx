@@ -11,6 +11,7 @@ import {
   type ReactNode,
 } from 'react'
 import './App.css'
+import { CoordEditorBoard, CoordShapeButton } from '@/components/math/CoordGrid'
 import { MathItemView, tokenizeAlgebra } from '@/components/math/MathItemView'
 import {
   CLASS_LEVELS,
@@ -34,10 +35,11 @@ import {
   lectureTopics,
   typesForTopic,
 } from '@/math/catalog'
+import { COORD_SHAPES, COORD_SHAPE_LABEL, clampCoordSize, coordSizeFor, sceneFromLibre } from '@/math/coord-reperage'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { buildPage } from '@/math/generate'
 import { randomSeed } from '@/math/rng'
-import type { Difficulty, Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
+import type { CoordShape, Difficulty, Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
 
 function WorksheetSheet({
   page,
@@ -52,6 +54,7 @@ function WorksheetSheet({
   documentTotalPoints,
   interactiveDraftGrids = false,
   onToggleDraftGrid,
+  coordEdit,
 }: {
   page: WorksheetPage
   mode: PreviewMode
@@ -68,6 +71,11 @@ function WorksheetSheet({
   /** Affiche le bouton grille / sans grille sur chaque problème (aperçu seulement). */
   interactiveDraftGrids?: boolean
   onToggleDraftGrid?: (index: number) => void
+  coordEdit?: {
+    selectedKind: CoordShape | null
+    onPlace: (x: number, y: number, kind: CoordShape) => void
+    onRemove: (x: number, y: number) => void
+  }
 }) {
   const showHeader = pageNumber === 1
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
@@ -146,6 +154,7 @@ function WorksheetSheet({
                       ? () => onToggleDraftGrid(index)
                       : undefined
                   }
+                  coordEdit={coordEdit}
                 />
               )
             })
@@ -329,6 +338,8 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
+  const isReperageLire = type.id === 'reperage-lire'
+  const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
     topic: type.topic,
@@ -343,7 +354,24 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
             ? { count: 4 }
             : isLecture
               ? { count: 6 }
-              : {}),
+              : isReperageLire
+                ? { count: 5 }
+                : {}),
+    ...(isReperageLire
+      ? {
+          coordLibre: false,
+          coordCols: coordSize.cols,
+          coordRows: coordSize.rows,
+          coordAxis: 'letters' as const,
+          coordMarks: [],
+        }
+      : {
+          coordLibre: undefined,
+          coordCols: undefined,
+          coordRows: undefined,
+          coordAxis: undefined,
+          coordMarks: undefined,
+        }),
   }
 }
 
@@ -376,6 +404,7 @@ function GeneratorPage() {
   const [pointsPerQuestion, setPointsPerQuestion] = useState(1)
   const [seed, setSeed] = useState(randomSeed)
   const [questionsOverflow, setQuestionsOverflow] = useState(false)
+  const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const previewFrameRef = useRef<HTMLDivElement>(null)
 
   const activePage = pages[pageIndex] ?? pages[0]!
@@ -447,6 +476,11 @@ function GeneratorPage() {
     activePage.count,
     activePage.columns,
     activePage.exerciseType,
+    activePage.coordLibre,
+    activePage.coordCols,
+    activePage.coordRows,
+    activePage.coordAxis,
+    activePage.coordMarks,
     evalMode,
     headerStyle,
     institutional,
@@ -493,6 +527,29 @@ function GeneratorPage() {
     })
   }
 
+  const isReperageLire = activePage.exerciseType === 'reperage-lire'
+
+  const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
+    const cols = clampCoordSize(activePage.coordCols ?? coordSizeFor(activePage.difficulty).cols)
+    const rows = clampCoordSize(activePage.coordRows ?? coordSizeFor(activePage.difficulty).rows)
+    if (x < 1 || y < 1 || x > cols || y > rows) return
+    const next = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
+    next.push({ x, y, kind })
+    updatePage({
+      coordLibre: true,
+      coordCols: cols,
+      coordRows: rows,
+      coordAxis: activePage.coordAxis ?? 'letters',
+      coordMarks: next,
+      count: next.length || 1,
+    })
+  }
+
+  const removeCoordMark = (x: number, y: number) => {
+    const next = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
+    updatePage({ coordMarks: next, count: next.length || 1 })
+  }
+
   const addPage = () => {
     const next: PageConfig = {
       domain: activePage.domain,
@@ -506,6 +563,15 @@ function GeneratorPage() {
         : isProblemExercise(activePage.exerciseType)
           ? { problemDraftGrids: Array.from({ length: activePage.count }, () => true) }
           : {}),
+      ...(activePage.exerciseType === 'reperage-lire'
+        ? {
+            coordLibre: activePage.coordLibre,
+            coordCols: activePage.coordCols,
+            coordRows: activePage.coordRows,
+            coordAxis: activePage.coordAxis,
+            coordMarks: activePage.coordMarks ? [...activePage.coordMarks] : [],
+          }
+        : {}),
     }
     setPages((current) => [...current, next])
     setPageIndex(pages.length)
@@ -673,8 +739,9 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              {!(isReperageLire && activePage.coordLibre) ? (
               <label className="select-shell">
-                <span>QUESTIONS</span>
+                <span>{isReperageLire ? 'Formes' : 'QUESTIONS'}</span>
                 <input
                   className={`pill-input${questionsOverflow ? ' is-overflow' : ''}`}
                   aria-label="Nombre de questions"
@@ -698,15 +765,142 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
-              <SelectBox
-                label="Colonnes"
-                value={String(activePage.columns)}
-                onChange={(value) => updatePage({ columns: Number(value) })}
-              >
-                <option value="1">1 colonne</option>
-                <option value="2">2 colonnes</option>
-                <option value="3">3 colonnes</option>
-              </SelectBox>
+              ) : null}
+              {isReperageLire ? (
+                <div className="coord-libre-panel">
+                  <b>Composition du tableau</b>
+                  <div className="mode-toggle" role="group" aria-label="Mode du tableau">
+                    <button
+                      type="button"
+                      className={!activePage.coordLibre ? 'active' : ''}
+                      onClick={() => updatePage({ coordLibre: false })}
+                    >
+                      Automatique
+                    </button>
+                    <button
+                      type="button"
+                      className={activePage.coordLibre ? 'active' : ''}
+                      onClick={() => {
+                        const size = coordSizeFor(activePage.difficulty)
+                        const empty = !activePage.coordMarks?.length
+                        updatePage({
+                          coordLibre: true,
+                          coordCols: empty ? size.cols : (activePage.coordCols ?? size.cols),
+                          coordRows: empty ? size.rows : (activePage.coordRows ?? size.rows),
+                          coordAxis: activePage.coordAxis ?? 'letters',
+                          coordMarks: activePage.coordMarks ?? [],
+                        })
+                      }}
+                    >
+                      Libre
+                    </button>
+                  </div>
+                  {activePage.coordLibre ? (
+                    <>
+                      <div className="coord-size-row">
+                        <label>
+                          Colonnes
+                          <input
+                            className="pill-input"
+                            type="number"
+                            min={3}
+                            max={12}
+                            value={activePage.coordCols ?? 7}
+                            onChange={(event) => {
+                              const cols = clampCoordSize(Number(event.target.value))
+                              updatePage({
+                                coordCols: cols,
+                                coordMarks: (activePage.coordMarks ?? []).filter((mark) => mark.x <= cols),
+                              })
+                            }}
+                          />
+                        </label>
+                        <label>
+                          Lignes
+                          <input
+                            className="pill-input"
+                            type="number"
+                            min={3}
+                            max={12}
+                            value={activePage.coordRows ?? 7}
+                            onChange={(event) => {
+                              const rows = clampCoordSize(Number(event.target.value))
+                              updatePage({
+                                coordRows: rows,
+                                coordMarks: (activePage.coordMarks ?? []).filter((mark) => mark.y <= rows),
+                              })
+                            }}
+                          />
+                        </label>
+                      </div>
+                      <SelectBox
+                        label="Axes"
+                        value={activePage.coordAxis ?? 'letters'}
+                        onChange={(value) => updatePage({ coordAxis: value as 'letters' | 'numeric' })}
+                      >
+                        <option value="letters">Lettres et chiffres</option>
+                        <option value="numeric">Nombres</option>
+                      </SelectBox>
+                      <div className="coord-palette" role="listbox" aria-label="Formes à placer">
+                        {COORD_SHAPES.map((kind) => (
+                          <button
+                            key={kind}
+                            type="button"
+                            role="option"
+                            draggable
+                            aria-selected={selectedCoordShape === kind}
+                            className={`coord-palette-item${selectedCoordShape === kind ? ' selected' : ''}`}
+                            title={COORD_SHAPE_LABEL[kind]}
+                            onClick={() => setSelectedCoordShape(kind)}
+                            onDragStart={(event) => {
+                              event.dataTransfer.setData('coord-kind', kind)
+                              event.dataTransfer.effectAllowed = 'copy'
+                              setSelectedCoordShape(kind)
+                            }}
+                          >
+                            <CoordShapeButton kind={kind} />
+                            <span>{COORD_SHAPE_LABEL[kind]}</span>
+                          </button>
+                        ))}
+                      </div>
+                      <CoordEditorBoard
+                        scene={sceneFromLibre(activePage)}
+                        selectedKind={selectedCoordShape}
+                        onPlace={placeCoordMark}
+                        onRemove={removeCoordMark}
+                      />
+                      <p className="type-hint muted">
+                        Glissez une forme sur une case, ou cliquez une forme puis une case. Cliquez une forme déjà
+                        posée pour la retirer.
+                      </p>
+                      {(activePage.coordMarks?.length ?? 0) > 0 ? (
+                        <button
+                          type="button"
+                          className="button secondary"
+                          onClick={() => updatePage({ coordMarks: [], count: 1 })}
+                        >
+                          Vider le tableau
+                        </button>
+                      ) : null}
+                    </>
+                  ) : (
+                    <p className="type-hint muted">
+                      La taille du tableau grandit avec le niveau. Facile : 5×5, premier cadran. Moyen : 7×7.
+                      Avancé : 10×10, figure ou repère polaire.
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <SelectBox
+                  label="Colonnes"
+                  value={String(activePage.columns)}
+                  onChange={(value) => updatePage({ columns: Number(value) })}
+                >
+                  <option value="1">1 colonne</option>
+                  <option value="2">2 colonnes</option>
+                  <option value="3">3 colonnes</option>
+                </SelectBox>
+              )}
               {isProblemExercise(activePage.exerciseType) ? (
                 <div className="mode-toggle draft-grid-page-toggle" role="group" aria-label="Grille de brouillon">
                   {(() => {
@@ -908,6 +1102,15 @@ function GeneratorPage() {
                     total={worksheets.length}
                     interactiveDraftGrids={isProblemExercise(activePage.exerciseType)}
                     onToggleDraftGrid={toggleDraftGrid}
+                    coordEdit={
+                      isReperageLire && activePage.coordLibre
+                        ? {
+                            selectedKind: selectedCoordShape,
+                            onPlace: placeCoordMark,
+                            onRemove: removeCoordMark,
+                          }
+                        : undefined
+                    }
                     {...sheetProps}
                   />
                 </div>

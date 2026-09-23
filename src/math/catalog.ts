@@ -177,7 +177,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
   t('volumes-cylindre', 'volumes', 'Cylindre', 'Volume = πr²h. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
 
-  t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Donner les coordonnées d’un point.', 'Écrivez les coordonnées du point.', 'ligne', { preferredColumns: 1 }),
+  t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau, une figure ou un repère polaire.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 1 }),
   t('reperage-abscisse', 'reperage', 'Abscisse et ordonnée', 'Identifier x ou y.', 'Complétez.', 'ligne', { preferredColumns: 1 }),
 
   t('transformations-axiale', 'transformations', 'Symétrie axiale', 'Image d’un point par une symétrie.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),

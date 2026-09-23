@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import type { MathItem, PreviewMode } from '@/math/types'
+import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
 import { CoordGrid } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
 import { GeometryFigure } from './GeometryFigure'
@@ -857,21 +857,65 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
-function CoordBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+function CoordBlock({
+  item,
+  mode,
+  coordEdit,
+}: {
+  item: MathItem
+  mode: PreviewMode
+  coordEdit?: {
+    selectedKind: CoordShape | null
+    onPlace: (x: number, y: number, kind: CoordShape) => void
+    onRemove: (x: number, y: number) => void
+  }
+}) {
   const show = mode === 'answers'
+  const questions = item.coordQuestions ?? []
+  const scene = item.coordScene
   return (
-    <div className="coord-block">
-      <CoordGrid point={item.point} pointImage={item.pointImage} showImage={show && Boolean(item.pointImage)} />
+    <div className={`coord-block${scene ? ' has-scene' : ''}`}>
+      <CoordGrid
+        point={item.point}
+        pointImage={item.pointImage}
+        showImage={show && Boolean(item.pointImage)}
+        scene={scene}
+        editable={Boolean(coordEdit && scene?.variant === 'cells')}
+        onPlace={
+          coordEdit
+            ? (x, y) => {
+                const kind = coordEdit.selectedKind
+                if (kind) coordEdit.onPlace(x, y, kind)
+              }
+            : undefined
+        }
+        onRemove={coordEdit?.onRemove}
+      />
       <div className="coord-side">
-        {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-        <div className="problem-field">
-          <span className="field-label">Réponse</span>
-          {show ? (
-            <strong className="filled-answer">{item.answer}</strong>
-          ) : (
-            <span className="answer-line-field">{'\u00a0'}</span>
-          )}
-        </div>
+        {item.prompt && questions.length === 0 ? <p className="column-prompt">{item.prompt}</p> : null}
+        {questions.length > 0 ? (
+          <div className="coord-questions">
+            {questions.map((question, index) => (
+              <div className="coord-question" key={`${question.prompt}-${index}`}>
+                <span className="coord-question-label">{question.prompt}</span>
+                {show ? (
+                  <strong className="filled-answer">{question.answer}</strong>
+                ) : (
+                  <span className="answer-line-field">{'\u00a0'}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="problem-field">
+            <span className="field-label">Réponse</span>
+            {show ? (
+              <strong className="filled-answer">{item.answer}</strong>
+            ) : (
+              <span className="answer-line-field">{'\u00a0'}</span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -884,6 +928,7 @@ export function MathItemView({
   algebraPadLeft = 0,
   draftGrid = true,
   onToggleDraftGrid,
+  coordEdit,
 }: {
   item: MathItem
   mode: PreviewMode
@@ -893,6 +938,11 @@ export function MathItemView({
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
   draftGrid?: boolean
   onToggleDraftGrid?: () => void
+  coordEdit?: {
+    selectedKind: CoordShape | null
+    onPlace: (x: number, y: number, kind: CoordShape) => void
+    onRemove: (x: number, y: number) => void
+  }
 }) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
   const isEquation = item.layout === 'equation'
@@ -921,7 +971,7 @@ export function MathItemView({
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} />}
-        {item.layout === 'coord' && <CoordBlock item={item} mode={mode} />}
+        {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
         {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}

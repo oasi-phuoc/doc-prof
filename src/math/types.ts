@@ -33,6 +33,48 @@ export type Layout =
   | 'order'
   | 'letter-grid'
 
+export type CoordShape =
+  | 'point'
+  | 'circle'
+  | 'triangle'
+  | 'square'
+  | 'diamond'
+  | 'star'
+  | 'plus'
+  | 'heart'
+  | 'pentagon'
+
+export type CoordVariant = 'cells' | 'polygon' | 'polar'
+export type CoordAxis = 'letters' | 'numeric'
+
+export type CoordMark = {
+  x: number
+  y: number
+  kind: CoordShape
+  label?: string
+}
+
+export type CoordVertex = {
+  x: number
+  y: number
+  label: string
+}
+
+export type CoordScene = {
+  variant: CoordVariant
+  cols: number
+  rows: number
+  axis: CoordAxis
+  marks: CoordMark[]
+  vertices?: CoordVertex[]
+}
+
+export type CoordQuestion = {
+  prompt: string
+  answer: string
+  kind?: CoordShape
+}
+
 export type AlgebraGiven = { letter: string; value: number }
 
 export type ArithOp = '+' | '−' | '×' | '÷'
@@ -117,6 +159,10 @@ export type MathItem = {
   point?: { x: number; y: number; label?: string }
   /** Image du point (corrigé ou second point). */
   pointImage?: { x: number; y: number; label?: string }
+  /** Grille de repérage (formes, polygone ou polaire). */
+  coordScene?: CoordScene
+  /** Questions de lecture de coordonnées liées à coordScene. */
+  coordQuestions?: CoordQuestion[]
   /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
   orderOp?: '<' | '>'
   calcAnswer?: string
@@ -145,6 +191,12 @@ export type PageConfig = {
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
   problemDraftGrids?: boolean[]
+  /** Mode libre : l’enseignant·e compose le tableau de repérage. */
+  coordLibre?: boolean
+  coordCols?: number
+  coordRows?: number
+  coordAxis?: CoordAxis
+  coordMarks?: CoordMark[]
 }
 
 export type WorksheetPage = PageConfig & {

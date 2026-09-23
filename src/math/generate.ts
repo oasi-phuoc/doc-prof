@@ -15,6 +15,7 @@ import {
   pairSub,
 } from './difficulty'
 import { numberToFrench } from './french-numbers'
+import { tryGenerateReperage } from './coord-reperage'
 import { tryGenerateLectureBatch } from './lecture'
 import { makeWordProblem } from './problems'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
@@ -1311,6 +1312,15 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
+  const reperage = tryGenerateReperage(config, rng)
+  if (reperage) {
+    return {
+      ...config,
+      title: type?.label ?? topic?.label ?? 'Exercices',
+      instruction: reperage.instruction,
+      items: reperage.items,
+    }
+  }
   const lecture = tryGenerateLectureBatch(config.exerciseType, config.count, rng, difficulty)
   if (lecture) {
     return {
