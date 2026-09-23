@@ -299,6 +299,9 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
 /** Mot de passe pour ouvrir le générateur de fiches. */
 const FICHE_ACCESS_PASSWORD = 'jebosseplus'
 
+/** Remettre à `true` pour réafficher Lecture dans le sélecteur Domaine. */
+const SHOW_LECTURE_DOMAIN = false
+
 function Landing({ onCreate }: { onCreate: () => void }) {
   return (
     <div className="landing-page">
@@ -784,7 +787,7 @@ function GeneratorPage() {
               <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
-                <option value="lecture">Lecture</option>
+                {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
               </SelectBox>
               <SelectBox label="Thème" value={activePage.topic} onChange={changeTopic}>
                 {available.map((topic) => (
