@@ -191,6 +191,15 @@ export const exerciseTypes: ExerciseType[] = [
     'geo',
     { preferredColumns: 1 },
   ),
+  t(
+    'reperage-construire',
+    'reperage',
+    'Construire sur le repère',
+    'Grille vide avec deux points donnés : tracer droites, parallèles, figures et symétries.',
+    'Placez les points demandés. Tracez les droites et les figures.',
+    'geo',
+    { preferredColumns: 1 },
+  ),
   t('reperage-abscisse', 'reperage', 'Abscisse et ordonnée', 'Identifier x ou y.', 'Complétez.', 'ligne', { preferredColumns: 1 }),
 
   t('transformations-axiale', 'transformations', 'Symétrie axiale', 'Image d’un point par une symétrie.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),

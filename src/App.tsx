@@ -43,6 +43,7 @@ import {
   clampCoordSize,
   coordSizeFor,
   isReperageCadrans,
+  isReperageConstruire,
   isReperageDroites,
   isReperageFormes,
   isReperagePage,
@@ -355,6 +356,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
   const isFormes = isReperageFormes(type.id)
   const isCadrans = isReperageCadrans(type.id)
   const isDroites = isReperageDroites(type.id)
+  const isConstruire = isReperageConstruire(type.id)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -374,7 +376,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
                 ? { count: 5 }
                 : isCadrans
                   ? { count: 6 }
-                  : isDroites
+                  : isDroites || isConstruire
                     ? { count: 5 }
                     : {}),
     ...(isFormes
@@ -566,6 +568,7 @@ function GeneratorPage() {
   const isCadrans = isReperageCadrans(activePage.exerciseType)
   const isFormes = isReperageFormes(activePage.exerciseType)
   const isDroites = isReperageDroites(activePage.exerciseType)
+  const isConstruire = isReperageConstruire(activePage.exerciseType)
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
     if (isCadrans) {
@@ -1047,6 +1050,17 @@ function GeneratorPage() {
                   </p>
                   <p className="type-hint muted">
                     Facile : intersections et axes. Moyen : parallèles ou sécantes. Avancé : équations des droites.
+                  </p>
+                </div>
+              ) : isConstruire ? (
+                <div className="coord-libre-panel">
+                  <b>Repère (construction)</b>
+                  <p className="type-hint muted">
+                    Une grille vide avec deux points donnés. Le champ Questions fixe le nombre de consignes : placer des
+                    points, tracer des droites, des parallèles, des figures et des symétries.
+                  </p>
+                  <p className="type-hint muted">
+                    Facile : −8 à 8. Moyen : −10 à 10. Avancé : −12 à 12. Le corrigé montre les tracés.
                   </p>
                 </div>
               ) : (

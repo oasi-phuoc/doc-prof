@@ -311,9 +311,30 @@ function AxesScene({
   const n = Math.round((2 * range) / step)
   for (let i = 0; i <= n; i++) values.push(Math.round((-range + i * step) * 1000) / 1000)
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
+  const fineN = scene.fineGrid ? 5 : 0
+  const labelStep = range >= 10 ? 2 : 1
 
   return (
-    <svg className="coord-grid scene-axes" viewBox={`0 0 ${size} ${size}`} role="img" aria-label="Repère à quatre cadrans">
+    <svg
+      className={`coord-grid scene-axes${scene.fineGrid ? ' is-fine' : ''}`}
+      viewBox={`0 0 ${size} ${size}`}
+      role="img"
+      aria-label="Repère à quatre cadrans"
+    >
+      {fineN
+        ? Array.from({ length: 2 * range * fineN + 1 }, (_, i) => {
+            const v = Math.round((-range + i / fineN) * 1000) / 1000
+            if (Number.isInteger(v)) return null
+            const h = to(v, 0)
+            const p = to(0, v)
+            return (
+              <g key={`f-${v}`}>
+                <line x1={h.cx} y1={pad} x2={h.cx} y2={size - pad} className="grid-line-fine" />
+                <line x1={pad} y1={p.cy} x2={size - pad} y2={p.cy} className="grid-line-fine" />
+              </g>
+            )
+          })
+        : null}
       {values.map((v) => {
         const h = to(v, 0)
         const p = to(0, v)
@@ -325,7 +346,7 @@ function AxesScene({
         )
       })}
       {values
-        .filter((v) => Number.isInteger(v) && v !== 0)
+        .filter((v) => Number.isInteger(v) && v !== 0 && v % labelStep === 0)
         .map((v) => {
           const onX = to(v, 0)
           const onY = to(0, v)
@@ -363,40 +384,78 @@ function AxesScene({
           />
         )
       })}
-      {values.map((x) =>
-        values.map((y) => {
-          const p = to(x, y)
-          const mark = markAt(x, y)
+      {(scene.paths ?? []).map((path) => {
+        if (path.kind === 'line' && path.a != null && path.b != null && path.c != null) {
+          const clip = clipLineToRange({ a: path.a, b: path.b, c: path.c }, range)
+          if (!clip) return null
+          const a = to(clip.x1, clip.y1)
+          const b = to(clip.x2, clip.y2)
           return (
-            <g key={`n-${x}-${y}`}>
-              {editable ? (
+            <line
+              key={path.id}
+              x1={a.cx}
+              y1={a.cy}
+              x2={b.cx}
+              y2={b.cy}
+              className={`coord-path${path.stroke === 'dashed' ? ' is-dashed' : ''}`}
+            />
+          )
+        }
+        const pts = path.points ?? []
+        if (pts.length < 2) return null
+        const d = pts
+          .map((pt, i) => {
+            const p = to(pt.x, pt.y)
+            return `${i === 0 ? 'M' : 'L'} ${p.cx} ${p.cy}`
+          })
+          .join(' ')
+        const closed = path.kind === 'polygon' ? `${d} Z` : d
+        return (
+          <path
+            key={path.id}
+            d={closed}
+            className={`coord-path${path.kind === 'polygon' ? ' is-poly' : ''}${
+              path.stroke === 'dashed' ? ' is-dashed' : ''
+            }`}
+          />
+        )
+      })}
+      {editable
+        ? values.map((x) =>
+            values.map((y) => {
+              const p = to(x, y)
+              const found = markAt(x, y)
+              return (
                 <circle
+                  key={`h-${x}-${y}`}
                   cx={p.cx}
                   cy={p.cy}
                   r={Math.max(3.5, inner / (2 * range) / 2.4)}
                   className="coord-hit"
-                  onClick={() => (mark ? onRemove?.(x, y) : onPlace?.(x, y))}
+                  onClick={() => (found ? onRemove?.(x, y) : onPlace?.(x, y))}
                 />
-              ) : null}
-              {mark ? (
-                <g>
-                  <circle cx={p.cx} cy={p.cy} r={3.2} className="grid-point" />
-                  {mark.label ? (
-                    <text
-                      x={p.cx + (x >= 0 ? 5 : -5)}
-                      y={p.cy + (y >= 0 ? -5 : 11)}
-                      className="point-label"
-                      textAnchor={x >= 0 ? 'start' : 'end'}
-                    >
-                      {mark.label}
-                    </text>
-                  ) : null}
-                </g>
-              ) : null}
-            </g>
+              )
+            }),
           )
-        }),
-      )}
+        : null}
+      {scene.marks.map((found, i) => {
+        const p = to(found.x, found.y)
+        return (
+          <g key={`m-${found.label ?? i}-${found.x}-${found.y}`}>
+            <circle cx={p.cx} cy={p.cy} r={3.2} className="grid-point" />
+            {found.label ? (
+              <text
+                x={p.cx + (found.x >= 0 ? 5 : -5)}
+                y={p.cy + (found.y >= 0 ? -5 : 11)}
+                className="point-label"
+                textAnchor={found.x >= 0 ? 'start' : 'end'}
+              >
+                {found.label}
+              </text>
+            ) : null}
+          </g>
+        )
+      })}
     </svg>
   )
 }
@@ -447,8 +506,9 @@ export function CoordGrid({
   if (scene?.variant === 'polar') return <PolarScene scene={scene} />
   if (scene?.variant === 'axes') {
     const lines = scene.lines ?? []
+    const construct = Boolean(scene.paths?.length || scene.fineGrid)
     return (
-      <div className={`coord-axes-wrap${lines.length ? ' has-lines' : ''}`}>
+      <div className={`coord-axes-wrap${lines.length || construct ? ' has-lines' : ''}`}>
         <AxesScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
         {lines.length ? <CoordLineLegend lines={lines} /> : null}
       </div>

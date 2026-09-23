@@ -52,6 +52,8 @@ export type CoordMark = {
   y: number
   kind: CoordShape
   label?: string
+  /** `answer` : visible seulement au corrigé. */
+  reveal?: 'always' | 'answer'
 }
 
 export type CoordVertex = {
@@ -73,11 +75,25 @@ export type CoordScene = {
   step?: number
   /** Droites colorées (repérage). */
   lines?: CoordLine[]
+  /** Traits et polygones à construire (corrigé). */
+  paths?: CoordPath[]
+  /** Quadrillage fin type papier millimétré. */
+  fineGrid?: boolean
 }
 
 export type CoordLineColor = 'violet' | 'orange' | 'green' | 'blue' | 'red' | 'muted' | 'rose'
 export type CoordLineStroke = 'solid' | 'dashed' | 'dotted' | 'dashdot' | 'longdash' | 'dense' | 'doubledash'
-export type CoordReply = 'pair' | 'text'
+export type CoordReply = 'pair' | 'text' | 'draw'
+
+export type CoordPath = {
+  id: string
+  kind: 'line' | 'segment' | 'polygon'
+  a?: number
+  b?: number
+  c?: number
+  points?: Array<{ x: number; y: number }>
+  stroke?: 'solid' | 'dashed'
+}
 
 export type CoordLine = {
   id: string
@@ -186,7 +202,7 @@ export type MathItem = {
   /** Questions de lecture de coordonnées liées à coordScene. */
   coordQuestions?: CoordQuestion[]
   /** `place` : tableau vide côté élève, formes visibles au corrigé. */
-  coordTask?: 'read' | 'place'
+  coordTask?: 'read' | 'place' | 'construct'
   /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
   orderOp?: '<' | '>'
   calcAnswer?: string

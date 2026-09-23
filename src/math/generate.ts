@@ -15,6 +15,7 @@ import {
   pairSub,
 } from './difficulty'
 import { numberToFrench } from './french-numbers'
+import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
 import { tryGenerateLectureBatch } from './lecture'
@@ -1320,6 +1321,15 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
       title: type?.label ?? topic?.label ?? 'Exercices',
       instruction: droites.instruction,
       items: droites.items,
+    }
+  }
+  if (config.exerciseType === 'reperage-construire') {
+    const construire = generateConstruire(config, rng)
+    return {
+      ...config,
+      title: type?.label ?? topic?.label ?? 'Exercices',
+      instruction: construire.instruction,
+      items: construire.items,
     }
   }
   const reperage = tryGenerateReperage(config, rng)

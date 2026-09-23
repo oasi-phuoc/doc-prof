@@ -872,17 +872,27 @@ function CoordBlock({
 }) {
   const show = mode === 'answers'
   const isPlace = item.coordTask === 'place'
+  const isConstruct = item.coordTask === 'construct'
   const questions = item.coordQuestions ?? []
   const scene = item.coordScene
   const hasLines = Boolean(scene?.lines?.length)
-  const displayScene =
-    ((isPlace || hasLines) && !show && scene)
-      ? { ...scene, marks: [] as typeof scene.marks }
-      : scene
+  const numbered = hasLines || isConstruct
+  const displayScene = !scene
+    ? scene
+    : isConstruct && !show
+      ? {
+          ...scene,
+          marks: scene.marks.filter((mark) => mark.reveal !== 'answer'),
+          paths: [],
+          lines: [],
+        }
+      : (isPlace || hasLines) && !show
+        ? { ...scene, marks: [] as typeof scene.marks }
+        : scene
   return (
     <div
-      className={`coord-block${scene ? ' has-scene' : ''}${hasLines ? ' has-lines' : ''}${
-        hasLines && questions.length >= 7 ? ' is-dense' : ''
+      className={`coord-block${scene ? ' has-scene' : ''}${hasLines || isConstruct ? ' has-lines' : ''}${
+        (hasLines || isConstruct) && questions.length >= 7 ? ' is-dense' : ''
       }`}
     >
       <CoordGrid
@@ -908,20 +918,28 @@ function CoordBlock({
       <div className="coord-side">
         {item.prompt && questions.length === 0 ? <p className="column-prompt">{item.prompt}</p> : null}
         {questions.length > 0 ? (
-          <div className={`coord-questions${hasLines ? ' is-lines' : ''}`}>
+          <div className={`coord-questions${numbered ? ' is-lines' : ''}`}>
             {questions.map((question, index) => {
-              const isAxesPoint = scene?.variant === 'axes' && !hasLines
+              const isAxesPoint = scene?.variant === 'axes' && !hasLines && !isConstruct
               const isPair = question.reply === 'pair' || (isAxesPoint && question.reply !== 'text')
+              const isDraw = question.reply === 'draw'
               return (
-                <div className="coord-question" key={`${question.prompt}-${index}`}>
-                  {hasLines ? <span className="coord-question-num">{index + 1}.</span> : null}
+                <div
+                  className={`coord-question${isDraw ? ' is-draw' : ''}`}
+                  key={`${question.prompt}-${index}`}
+                >
+                  {numbered ? <span className="coord-question-num">{index + 1}.</span> : null}
                   <span className="coord-question-label">
                     {question.kind && question.kind !== 'point' ? (
                       <CoordShapeButton kind={question.kind} size={16} />
                     ) : null}
                     {isAxesPoint ? `${question.prompt} est en` : question.prompt}
                   </span>
-                  {isPlace || (isPair && show) ? (
+                  {isDraw ? (
+                    show ? (
+                      <strong className="filled-answer">{question.answer}</strong>
+                    ) : null
+                  ) : isPlace || (isPair && show) ? (
                     <strong className={isPlace ? 'coord-given' : 'filled-answer'}>{question.answer}</strong>
                   ) : isPair ? (
                     <span className="coord-pair">
@@ -996,7 +1014,9 @@ export function MathItemView({
           {draftGrid ? 'Grille' : 'Sans'}
         </button>
       ) : null}
-      {item.coordScene?.lines?.length ? null : <div className="item-number">{index + 1}.</div>}
+      {item.coordScene?.lines?.length || item.coordTask === 'construct' ? null : (
+        <div className="item-number">{index + 1}.</div>
+      )}
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
