@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from 'react'
 import './App.css'
-import { CoordEditorBoard, CoordShapeButton } from '@/components/math/CoordGrid'
+import { CoordEditorBoard, CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
 import { MathItemView, tokenizeAlgebra } from '@/components/math/MathItemView'
 import {
   CLASS_LEVELS,
@@ -38,9 +38,15 @@ import {
 import {
   COORD_SHAPES,
   COORD_SHAPE_LABEL,
+  axesRangeFor,
+  clampCoordRange,
   clampCoordSize,
   coordSizeFor,
+  isReperageCadrans,
   isReperageFormes,
+  isReperagePage,
+  nextPointLabel,
+  sceneFromAxesLibre,
   sceneFromLibre,
 } from '@/math/coord-reperage'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
@@ -345,7 +351,8 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
-  const isReperage = isReperageFormes(type.id)
+  const isFormes = isReperageFormes(type.id)
+  const isCadrans = isReperageCadrans(type.id)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -361,24 +368,37 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
             ? { count: 4 }
             : isLecture
               ? { count: 6 }
-              : isReperage
+              : isFormes
                 ? { count: 5 }
-                : {}),
-    ...(isReperage
+                : isCadrans
+                  ? { count: 6 }
+                  : {}),
+    ...(isFormes
       ? {
           coordLibre: false,
           coordCols: coordSize.cols,
           coordRows: coordSize.rows,
           coordAxis: 'letters' as const,
           coordMarks: [],
+          coordRange: undefined,
         }
-      : {
-          coordLibre: undefined,
-          coordCols: undefined,
-          coordRows: undefined,
-          coordAxis: undefined,
-          coordMarks: undefined,
-        }),
+      : isCadrans
+        ? {
+            coordLibre: type.id === 'reperage-cadrans-libre',
+            coordRange: axesRangeFor('moyen'),
+            coordMarks: [],
+            coordCols: undefined,
+            coordRows: undefined,
+            coordAxis: undefined,
+          }
+        : {
+            coordLibre: undefined,
+            coordCols: undefined,
+            coordRows: undefined,
+            coordAxis: undefined,
+            coordMarks: undefined,
+            coordRange: undefined,
+          }),
   }
 }
 
@@ -487,6 +507,7 @@ function GeneratorPage() {
     activePage.coordCols,
     activePage.coordRows,
     activePage.coordAxis,
+    activePage.coordRange,
     activePage.coordMarks,
     evalMode,
     headerStyle,
@@ -513,8 +534,8 @@ function GeneratorPage() {
             ? resizeDraftGrids(next.problemDraftGrids, count)
             : undefined
         }
-        if (isReperageFormes(next.exerciseType) && next.coordLibre && next.coordMarks) {
-          next.coordMarks = next.coordMarks.slice(0, Math.max(1, next.count))
+        if (isReperagePage(next.exerciseType) && next.coordMarks) {
+          next.coordMarks = next.coordMarks.slice(0, Math.max(0, next.count))
         }
         return next
       }),
@@ -537,9 +558,24 @@ function GeneratorPage() {
     })
   }
 
-  const isReperage = isReperageFormes(activePage.exerciseType)
+  const isReperage = isReperagePage(activePage.exerciseType)
+  const isCadrans = isReperageCadrans(activePage.exerciseType)
+  const isFormes = isReperageFormes(activePage.exerciseType)
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
+    if (isCadrans) {
+      const range = clampCoordRange(activePage.coordRange ?? axesRangeFor(activePage.difficulty))
+      if (Math.abs(x) > range || Math.abs(y) > range) return
+      const without = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
+      const current = (activePage.coordMarks ?? []).find((mark) => mark.x === x && mark.y === y)
+      if (!current && without.length >= activePage.count) return
+      updatePage({
+        coordLibre: true,
+        coordRange: range,
+        coordMarks: [...without, { x, y, kind: 'point', label: current?.label ?? nextPointLabel(without) }],
+      })
+      return
+    }
     const cols = clampCoordSize(activePage.coordCols ?? coordSizeFor(activePage.difficulty).cols)
     const rows = clampCoordSize(activePage.coordRows ?? coordSizeFor(activePage.difficulty).rows)
     if (x < 1 || y < 1 || x > cols || y > rows) return
@@ -574,12 +610,13 @@ function GeneratorPage() {
         : isProblemExercise(activePage.exerciseType)
           ? { problemDraftGrids: Array.from({ length: activePage.count }, () => true) }
           : {}),
-      ...(isReperageFormes(activePage.exerciseType)
+      ...(isReperagePage(activePage.exerciseType)
         ? {
             coordLibre: activePage.coordLibre,
             coordCols: activePage.coordCols,
             coordRows: activePage.coordRows,
             coordAxis: activePage.coordAxis,
+            coordRange: activePage.coordRange,
             coordMarks: activePage.coordMarks ? [...activePage.coordMarks] : [],
           }
         : {}),
@@ -731,8 +768,15 @@ function GeneratorPage() {
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
                   if (!type) return
-                  if (isReperageFormes(value) && isReperageFormes(activePage.exerciseType)) {
-                    updatePage({ exerciseType: value, topic: type.topic })
+                  if (
+                    (isReperageFormes(value) && isReperageFormes(activePage.exerciseType)) ||
+                    (isReperageCadrans(value) && isReperageCadrans(activePage.exerciseType))
+                  ) {
+                    updatePage({
+                      exerciseType: value,
+                      topic: type.topic,
+                      coordLibre: value === 'reperage-cadrans-libre' ? true : activePage.coordLibre,
+                    })
                     return
                   }
                   updatePage(applyType(type))
@@ -780,7 +824,7 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
-              {isReperage ? (
+              {isFormes ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>
                   <div className="mode-toggle" role="group" aria-label="Mode du tableau">
@@ -905,6 +949,87 @@ function GeneratorPage() {
                     <p className="type-hint muted">
                       Une seule grille. Le champ Questions ajoute des formes. Facile : 5×5. Moyen : 7×7. Avancé :
                       10×10.
+                    </p>
+                  )}
+                </div>
+              ) : isCadrans ? (
+                <div className="coord-libre-panel">
+                  <b>Repère (4 cadrans)</b>
+                  {activePage.exerciseType !== 'reperage-cadrans-libre' ? (
+                    <div className="mode-toggle" role="group" aria-label="Mode du repère">
+                      <button
+                        type="button"
+                        className={!activePage.coordLibre ? 'active' : ''}
+                        onClick={() => updatePage({ coordLibre: false })}
+                      >
+                        Automatique
+                      </button>
+                      <button
+                        type="button"
+                        className={activePage.coordLibre ? 'active' : ''}
+                        onClick={() =>
+                          updatePage({
+                            coordLibre: true,
+                            coordRange: activePage.coordRange ?? axesRangeFor(activePage.difficulty),
+                            coordMarks: activePage.coordMarks ?? [],
+                          })
+                        }
+                      >
+                        Libre
+                      </button>
+                    </div>
+                  ) : null}
+                  <label>
+                    Étendue (−n à +n)
+                    <input
+                      className="pill-input"
+                      type="number"
+                      min={3}
+                      max={10}
+                      value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
+                      onChange={(event) => {
+                        const range = clampCoordRange(Number(event.target.value))
+                        updatePage({
+                          coordRange: range,
+                          coordMarks: (activePage.coordMarks ?? []).filter(
+                            (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
+                          ),
+                        })
+                      }}
+                    />
+                  </label>
+                  {activePage.coordLibre || activePage.exerciseType === 'reperage-cadrans-libre' ? (
+                    <>
+                      <div className="coord-axes-editor">
+                        <CoordGrid
+                          scene={sceneFromAxesLibre(activePage, activePage.difficulty)}
+                          editable
+                          onPlace={(x, y) => placeCoordMark(x, y, 'point')}
+                          onRemove={removeCoordMark}
+                        />
+                      </div>
+                      <p className="type-hint muted">
+                        Cliquez une intersection pour poser A, B, C… Le champ Questions limite le nombre de points.
+                        Cliquez un point pour le retirer.
+                      </p>
+                      <p className="type-hint muted">
+                        {(activePage.coordMarks?.length ?? 0)} / {activePage.count} point
+                        {activePage.count > 1 ? 's' : ''}
+                      </p>
+                      {(activePage.coordMarks?.length ?? 0) > 0 ? (
+                        <button
+                          type="button"
+                          className="button secondary"
+                          onClick={() => updatePage({ coordMarks: [] })}
+                        >
+                          Vider le repère
+                        </button>
+                      ) : null}
+                    </>
+                  ) : (
+                    <p className="type-hint muted">
+                      Une seule grille à 4 cadrans. Le champ Questions ajoute des points. Facile : −4 à 4. Moyen :
+                      −6 à 6. Avancé : demi-unités.
                     </p>
                   )}
                 </div>
@@ -1121,7 +1246,8 @@ function GeneratorPage() {
                     interactiveDraftGrids={isProblemExercise(activePage.exerciseType)}
                     onToggleDraftGrid={toggleDraftGrid}
                     coordEdit={
-                      isReperage && activePage.coordLibre
+                      (isFormes && activePage.coordLibre) ||
+                      (isCadrans && (activePage.coordLibre || activePage.exerciseType === 'reperage-cadrans-libre'))
                         ? {
                             selectedKind: selectedCoordShape,
                             onPlace: placeCoordMark,

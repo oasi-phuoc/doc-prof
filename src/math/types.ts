@@ -44,7 +44,7 @@ export type CoordShape =
   | 'heart'
   | 'pentagon'
 
-export type CoordVariant = 'cells' | 'polygon' | 'polar'
+export type CoordVariant = 'cells' | 'polygon' | 'polar' | 'axes'
 export type CoordAxis = 'letters' | 'numeric'
 
 export type CoordMark = {
@@ -67,6 +67,10 @@ export type CoordScene = {
   axis: CoordAxis
   marks: CoordMark[]
   vertices?: CoordVertex[]
+  /** Étendue du repère (−range à +range) pour le variant `axes`. */
+  range?: number
+  /** Pas de la grille (1 ou 0,5). */
+  step?: number
 }
 
 export type CoordQuestion = {
@@ -199,6 +203,8 @@ export type PageConfig = {
   coordRows?: number
   coordAxis?: CoordAxis
   coordMarks?: CoordMark[]
+  /** Étendue du repère à 4 cadrans (−n à +n). */
+  coordRange?: number
 }
 
 export type WorksheetPage = PageConfig & {

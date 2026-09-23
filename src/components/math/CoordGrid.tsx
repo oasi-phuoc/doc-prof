@@ -1,4 +1,4 @@
-import { COORD_SHAPE_LABEL, columnLetter } from '@/math/coord-reperage'
+import { COORD_SHAPE_LABEL, columnLetter, formatAxesNum } from '@/math/coord-reperage'
 import type { CoordScene, CoordShape } from '@/math/types'
 
 type Pt = { x: number; y: number; label?: string }
@@ -286,6 +286,103 @@ function PolarScene({ scene }: { scene: CoordScene }) {
   )
 }
 
+function AxesScene({
+  scene,
+  editable,
+  onPlace,
+  onRemove,
+}: {
+  scene: CoordScene
+  editable?: boolean
+  onPlace?: (x: number, y: number) => void
+  onRemove?: (x: number, y: number) => void
+}) {
+  const range = scene.range ?? 5
+  const step = scene.step ?? 1
+  const size = 240
+  const pad = 22
+  const inner = size - 2 * pad
+  const to = (x: number, y: number) => ({
+    cx: pad + ((x + range) / (2 * range)) * inner,
+    cy: pad + ((range - y) / (2 * range)) * inner,
+  })
+  const values: number[] = []
+  const n = Math.round((2 * range) / step)
+  for (let i = 0; i <= n; i++) values.push(Math.round((-range + i * step) * 1000) / 1000)
+  const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
+
+  return (
+    <svg className="coord-grid scene-axes" viewBox={`0 0 ${size} ${size}`} role="img" aria-label="Repère à quatre cadrans">
+      {values.map((v) => {
+        const h = to(v, 0)
+        const p = to(0, v)
+        return (
+          <g key={`g-${v}`}>
+            <line x1={h.cx} y1={pad} x2={h.cx} y2={size - pad} className={v === 0 ? 'axis-line' : 'grid-line'} />
+            <line x1={pad} y1={p.cy} x2={size - pad} y2={p.cy} className={v === 0 ? 'axis-line' : 'grid-line'} />
+          </g>
+        )
+      })}
+      {values
+        .filter((v) => Number.isInteger(v) && v !== 0)
+        .map((v) => {
+          const onX = to(v, 0)
+          const onY = to(0, v)
+          return (
+            <g key={`lab-${v}`}>
+              <text x={onX.cx} y={onX.cy + 11} className="axis-label" textAnchor="middle">
+                {formatAxesNum(v)}
+              </text>
+              <text x={onY.cx - 5} y={onY.cy + 3} className="axis-label" textAnchor="end">
+                {formatAxesNum(v)}
+              </text>
+            </g>
+          )
+        })}
+      <text x={size - pad + 2} y={to(0, 0).cy - 4} className="axis-label">
+        x
+      </text>
+      <text x={to(0, 0).cx + 5} y={pad - 2} className="axis-label">
+        y
+      </text>
+      {values.map((x) =>
+        values.map((y) => {
+          const p = to(x, y)
+          const mark = markAt(x, y)
+          return (
+            <g key={`n-${x}-${y}`}>
+              {editable ? (
+                <circle
+                  cx={p.cx}
+                  cy={p.cy}
+                  r={Math.max(3.5, inner / (2 * range) / 2.4)}
+                  className="coord-hit"
+                  onClick={() => (mark ? onRemove?.(x, y) : onPlace?.(x, y))}
+                />
+              ) : null}
+              {mark ? (
+                <g>
+                  <circle cx={p.cx} cy={p.cy} r={3.2} className="grid-point" />
+                  {mark.label ? (
+                    <text
+                      x={p.cx + (x >= 0 ? 5 : -5)}
+                      y={p.cy + (y >= 0 ? -5 : 11)}
+                      className="point-label"
+                      textAnchor={x >= 0 ? 'start' : 'end'}
+                    >
+                      {mark.label}
+                    </text>
+                  ) : null}
+                </g>
+              ) : null}
+            </g>
+          )
+        }),
+      )}
+    </svg>
+  )
+}
+
 export function CoordGrid({
   point,
   pointImage,
@@ -305,6 +402,9 @@ export function CoordGrid({
 }) {
   if (scene?.variant === 'polygon') return <PolygonScene scene={scene} />
   if (scene?.variant === 'polar') return <PolarScene scene={scene} />
+  if (scene?.variant === 'axes') {
+    return <AxesScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
+  }
   if (scene?.variant === 'cells') {
     return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
   }

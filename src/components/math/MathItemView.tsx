@@ -883,10 +883,14 @@ function CoordBlock({
         pointImage={item.pointImage}
         showImage={show && Boolean(item.pointImage)}
         scene={displayScene}
-        editable={Boolean(coordEdit && scene?.variant === 'cells')}
+        editable={Boolean(coordEdit && (scene?.variant === 'cells' || scene?.variant === 'axes'))}
         onPlace={
           coordEdit
             ? (x, y) => {
+                if (scene?.variant === 'axes') {
+                  coordEdit.onPlace(x, y, 'point')
+                  return
+                }
                 const kind = coordEdit.selectedKind
                 if (kind) coordEdit.onPlace(x, y, kind)
               }
@@ -898,21 +902,34 @@ function CoordBlock({
         {item.prompt && questions.length === 0 ? <p className="column-prompt">{item.prompt}</p> : null}
         {questions.length > 0 ? (
           <div className="coord-questions">
-            {questions.map((question, index) => (
-              <div className="coord-question" key={`${question.prompt}-${index}`}>
-                <span className="coord-question-label">
-                  {question.kind ? <CoordShapeButton kind={question.kind} size={16} /> : null}
-                  {question.prompt}
-                </span>
-                {isPlace ? (
-                  <strong className="coord-given">{question.answer}</strong>
-                ) : show ? (
-                  <strong className="filled-answer">{question.answer}</strong>
-                ) : (
-                  <span className="answer-line-field">{'\u00a0'}</span>
-                )}
-              </div>
-            ))}
+            {questions.map((question, index) => {
+              const isAxesPoint = scene?.variant === 'axes'
+              return (
+                <div className="coord-question" key={`${question.prompt}-${index}`}>
+                  <span className="coord-question-label">
+                    {question.kind && question.kind !== 'point' ? (
+                      <CoordShapeButton kind={question.kind} size={16} />
+                    ) : null}
+                    {isAxesPoint ? `${question.prompt} est en` : question.prompt}
+                  </span>
+                  {isPlace || (isAxesPoint && show) ? (
+                    <strong className={isPlace ? 'coord-given' : 'filled-answer'}>{question.answer}</strong>
+                  ) : isAxesPoint ? (
+                    <span className="coord-pair">
+                      (
+                      <span className="answer-line-field compact">{'\u00a0'}</span>
+                      <span className="coord-pair-sep">;</span>
+                      <span className="answer-line-field compact">{'\u00a0'}</span>
+                      )
+                    </span>
+                  ) : show ? (
+                    <strong className="filled-answer">{question.answer}</strong>
+                  ) : (
+                    <span className="answer-line-field">{'\u00a0'}</span>
+                  )}
+                </div>
+              )
+            })}
           </div>
         ) : (
           <div className="problem-field">
