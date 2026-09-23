@@ -54,7 +54,7 @@ import {
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { buildPage } from '@/math/generate'
 import { randomSeed } from '@/math/rng'
-import type { CoordShape, Difficulty, Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
+import type { CoordAxis, CoordShape, Difficulty, Domain, ExerciseType, PageConfig, PreviewMode, WorksheetPage } from '@/math/types'
 
 function WorksheetSheet({
   page,
@@ -591,9 +591,10 @@ function GeneratorPage() {
     const cols = clampCoordSize(activePage.coordCols ?? coordSizeFor(activePage.difficulty).cols)
     const rows = clampCoordSize(activePage.coordRows ?? coordSizeFor(activePage.difficulty).rows)
     if (x < 1 || y < 1 || x > cols || y > rows) return
-    const without = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
-    const replacing = (activePage.coordMarks ?? []).some((mark) => mark.x === x && mark.y === y)
-    if (!replacing && without.length >= activePage.count) return
+    const without = (activePage.coordMarks ?? []).filter(
+      (mark) => !(mark.x === x && mark.y === y) && mark.kind !== kind,
+    )
+    if (without.length >= activePage.count) return
     updatePage({
       coordLibre: true,
       coordCols: cols,
@@ -864,7 +865,16 @@ function GeneratorPage() {
                     >
                       Libre
                     </button>
-                  </div>
+                    </div>
+                  <SelectBox
+                    label="Axes"
+                    value={activePage.coordAxis ?? 'letters'}
+                    onChange={(value) => updatePage({ coordAxis: value as CoordAxis })}
+                  >
+                    <option value="letters">Lettres en bas</option>
+                    <option value="letters-y">Lettres à gauche</option>
+                    <option value="numeric">Nombres seulement</option>
+                  </SelectBox>
                   {activePage.coordLibre ? (
                     <>
                       <div className="coord-size-row">
@@ -874,7 +884,7 @@ function GeneratorPage() {
                             className="pill-input"
                             type="number"
                             min={3}
-                            max={12}
+                            max={20}
                             value={activePage.coordCols ?? 7}
                             onChange={(event) => {
                               const cols = clampCoordSize(Number(event.target.value))
@@ -891,7 +901,7 @@ function GeneratorPage() {
                             className="pill-input"
                             type="number"
                             min={3}
-                            max={12}
+                            max={20}
                             value={activePage.coordRows ?? 7}
                             onChange={(event) => {
                               const rows = clampCoordSize(Number(event.target.value))
@@ -903,24 +913,18 @@ function GeneratorPage() {
                           />
                         </label>
                       </div>
-                      <SelectBox
-                        label="Axes"
-                        value={activePage.coordAxis ?? 'letters'}
-                        onChange={(value) => updatePage({ coordAxis: value as 'letters' | 'numeric' })}
-                      >
-                        <option value="letters">Lettres et chiffres</option>
-                        <option value="numeric">Nombres</option>
-                      </SelectBox>
                       <div className="coord-palette" role="listbox" aria-label="Formes à placer">
-                        {COORD_SHAPES.map((kind) => (
+                        {COORD_SHAPES.map((kind) => {
+                          const used = (activePage.coordMarks ?? []).some((mark) => mark.kind === kind)
+                          return (
                           <button
                             key={kind}
                             type="button"
                             role="option"
                             draggable
                             aria-selected={selectedCoordShape === kind}
-                            className={`coord-palette-item${selectedCoordShape === kind ? ' selected' : ''}`}
-                            title={COORD_SHAPE_LABEL[kind]}
+                            className={`coord-palette-item${selectedCoordShape === kind ? ' selected' : ''}${used ? ' used' : ''}`}
+                            title={used ? `${COORD_SHAPE_LABEL[kind]} (déjà sur le tableau)` : COORD_SHAPE_LABEL[kind]}
                             onClick={() => setSelectedCoordShape(kind)}
                             onDragStart={(event) => {
                               event.dataTransfer.setData('coord-kind', kind)
@@ -931,7 +935,8 @@ function GeneratorPage() {
                             <CoordShapeButton kind={kind} />
                             <span>{COORD_SHAPE_LABEL[kind]}</span>
                           </button>
-                        ))}
+                          )
+                        })}
                       </div>
                       <CoordEditorBoard
                         scene={sceneFromLibre(activePage)}
@@ -940,8 +945,9 @@ function GeneratorPage() {
                         onRemove={removeCoordMark}
                       />
                       <p className="type-hint muted">
-                        Une seule grille : le champ Questions fixe le nombre de formes. Glissez une forme sur une
-                        case, ou cliquez une forme puis une case.
+                        Une seule grille : le champ Questions fixe le nombre de formes. Chaque forme n’apparaît
+                        qu’une fois. Glissez une forme sur une case, ou cliquez une forme puis une case. Le tableau
+                        va jusqu’à 20 × 20.
                       </p>
                       <p className="type-hint muted">
                         {(activePage.coordMarks?.length ?? 0)} / {activePage.count} forme
@@ -959,8 +965,8 @@ function GeneratorPage() {
                     </>
                   ) : (
                     <p className="type-hint muted">
-                      Une seule grille. Le champ Questions ajoute des formes. Facile : 5×5. Moyen : 7×7. Avancé :
-                      10×10.
+                      Une seule grille. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des formes.
+                      Facile : 5×5. Moyen : 7×7. Avancé : 10×10. Vous pouvez placer les lettres en bas ou à gauche.
                     </p>
                   )}
                 </div>
@@ -991,27 +997,27 @@ function GeneratorPage() {
                       </button>
                     </div>
                   ) : null}
-                  <label>
-                    Étendue (−n à +n)
-                    <input
-                      className="pill-input"
-                      type="number"
-                      min={3}
-                      max={10}
-                      value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
-                      onChange={(event) => {
-                        const range = clampCoordRange(Number(event.target.value))
-                        updatePage({
-                          coordRange: range,
-                          coordMarks: (activePage.coordMarks ?? []).filter(
-                            (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
-                          ),
-                        })
-                      }}
-                    />
-                  </label>
                   {activePage.coordLibre || activePage.exerciseType === 'reperage-cadrans-libre' ? (
                     <>
+                      <label>
+                        Étendue (−n à +n)
+                        <input
+                          className="pill-input"
+                          type="number"
+                          min={3}
+                          max={20}
+                          value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
+                          onChange={(event) => {
+                            const range = clampCoordRange(Number(event.target.value))
+                            updatePage({
+                              coordRange: range,
+                              coordMarks: (activePage.coordMarks ?? []).filter(
+                                (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
+                              ),
+                            })
+                          }}
+                        />
+                      </label>
                       <div className="coord-axes-editor">
                         <CoordGrid
                           scene={sceneFromAxesLibre(activePage, activePage.difficulty)}
@@ -1022,7 +1028,7 @@ function GeneratorPage() {
                       </div>
                       <p className="type-hint muted">
                         Cliquez une intersection pour poser A, B, C… Le champ Questions limite le nombre de points.
-                        Cliquez un point pour le retirer.
+                        Cliquez un point pour le retirer. L’étendue va jusqu’à −20 / +20.
                       </p>
                       <p className="type-hint muted">
                         {(activePage.coordMarks?.length ?? 0)} / {activePage.count} point

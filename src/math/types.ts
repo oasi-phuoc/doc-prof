@@ -43,9 +43,17 @@ export type CoordShape =
   | 'plus'
   | 'heart'
   | 'pentagon'
+  | 'hexagon'
+  | 'oval'
+  | 'crescent'
+  | 'arrow'
+  | 'cross'
+  | 'trapezoid'
+  | 'house'
+  | 'parallelogram'
 
 export type CoordVariant = 'cells' | 'polygon' | 'polar' | 'axes'
-export type CoordAxis = 'letters' | 'numeric'
+export type CoordAxis = 'letters' | 'letters-y' | 'numeric'
 
 export type CoordMark = {
   x: number

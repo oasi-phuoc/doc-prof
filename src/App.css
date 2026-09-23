@@ -647,16 +647,41 @@
 .coord-grid .grid-line,.coord-grid .axis-line,.coord-grid .axis-label{pointer-events:none}
 .coord-grid .coord-hit{fill:#000;fill-opacity:0;cursor:pointer;pointer-events:all}
 .coord-block.has-scene{gap:10px}
+.coord-block.is-centered{align-items:center}
+.coord-block.is-centered .coord-grid,
+.coord-block.is-centered .coord-axes-wrap{margin-inline:auto}
+.coord-block.is-centered .coord-side{width:100%}
+.exercise-item.layout-coord:not(:has(.item-number)){gap:0}
 .coord-questions{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px;width:100%
 }
+.coord-questions.is-shapes{
+  display:grid;
+  grid-template-columns:1.6em max-content auto 1.6em max-content auto;
+  column-gap:8px;row-gap:7px;justify-content:center;align-items:center
+}
+.coord-questions.is-shapes .coord-question{display:contents}
 .coord-question{display:flex;align-items:baseline;gap:8px;min-width:0}
+.coord-question-icon{display:inline-flex;align-items:center;justify-content:center;width:1.6em}
 .coord-question-label{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
 .coord-question-label svg{flex:0 0 auto;color:var(--ink)}
+.coord-questions.is-shapes .coord-question-label{justify-self:start}
+.coord-questions.is-shapes .coord-given,
+.coord-questions.is-shapes .filled-answer,
+.coord-questions.is-shapes .coord-pair{justify-self:start}
 .coord-question .answer-line-field,.coord-question .filled-answer,.coord-given{flex:1;min-width:0}
 .coord-given{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
-.coord-pair{display:inline-flex;align-items:baseline;gap:4px;flex:1;min-width:0}
-.coord-pair-sep{font-weight:700}
+.coord-pair{
+  display:inline-flex;align-items:baseline;gap:3px;flex:0 0 auto;min-width:0;width:auto
+}
+.coord-pair-sep{font-weight:700;flex:0 0 auto}
+.coord-pair .answer-line-field,
+.coord-pair .answer-line-field.compact,
+.coord-question .coord-pair .answer-line-field{
+  display:inline-block;flex:0 0 2.35em;width:2.35em;min-width:2.35em;max-width:2.35em;
+  margin:0
+}
+.coord-question .coord-pair .filled-answer{flex:0 0 auto;width:auto}
 .coord-axes-editor .coord-grid{width:100%;max-width:260px}
 .coord-libre-panel{display:flex;flex-direction:column;gap:10px}
 .coord-libre-panel>b{font-size:12px}
@@ -668,6 +693,7 @@
   background:#fff;color:var(--ink);font-size:10px;font-weight:600
 }
 .coord-palette-item.selected{border-color:var(--purple);background:var(--lavender);color:var(--purple)}
+.coord-palette-item.used{opacity:.55}
 .coord-editor{border:1px solid var(--line);border-radius:12px;padding:8px;background:#faf9f6}
 .coord-editor-grid{display:grid;gap:2px;width:100%}
 .coord-editor-label{

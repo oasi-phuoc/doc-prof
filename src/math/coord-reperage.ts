@@ -50,7 +50,7 @@ export function axesStepFor(difficulty: Difficulty): number {
 }
 
 export function clampCoordRange(n: number): number {
-  return Math.max(3, Math.min(10, Math.round(n) || 5))
+  return Math.max(3, Math.min(20, Math.round(n) || 5))
 }
 
 export function formatAxesNum(n: number): string {
@@ -82,7 +82,14 @@ export const COORD_SHAPES: CoordShape[] = [
   'plus',
   'heart',
   'pentagon',
-  'point',
+  'hexagon',
+  'oval',
+  'crescent',
+  'arrow',
+  'cross',
+  'trapezoid',
+  'house',
+  'parallelogram',
 ]
 
 export const COORD_SHAPE_LABEL: Record<CoordShape, string> = {
@@ -95,6 +102,20 @@ export const COORD_SHAPE_LABEL: Record<CoordShape, string> = {
   plus: 'plus',
   heart: 'cœur',
   pentagon: 'pentagone',
+  hexagon: 'hexagone',
+  oval: 'ovale',
+  crescent: 'lune',
+  arrow: 'flèche',
+  cross: 'croix',
+  trapezoid: 'trapèze',
+  house: 'maison',
+  parallelogram: 'parallélogramme',
+}
+
+export function axisTickLabel(index: number, axis: CoordAxis, which: 'x' | 'y'): string {
+  if (axis === 'letters' && which === 'x') return columnLetter(index)
+  if (axis === 'letters-y' && which === 'y') return columnLetter(index)
+  return String(index)
 }
 
 export function coordSizeFor(difficulty: Difficulty): { cols: number; rows: number } {
@@ -104,7 +125,7 @@ export function coordSizeFor(difficulty: Difficulty): { cols: number; rows: numb
 }
 
 export function clampCoordSize(n: number): number {
-  return Math.max(3, Math.min(12, Math.round(n) || 5))
+  return Math.max(3, Math.min(20, Math.round(n) || 5))
 }
 
 export function columnLetter(index: number): string {
@@ -113,6 +134,7 @@ export function columnLetter(index: number): string {
 
 export function formatCellCoord(x: number, y: number, axis: CoordAxis): string {
   if (axis === 'letters') return `(${columnLetter(x)} ; ${y})`
+  if (axis === 'letters-y') return `(${x} ; ${columnLetter(y)})`
   return `(${x} ; ${y})`
 }
 
@@ -148,6 +170,7 @@ function questionsFromMarks(marks: CoordMark[], axis: CoordAxis, variant: CoordS
       prompt,
       answer: variant === 'polar' ? formatPolarCoord(mark.x, mark.y) : formatCellCoord(mark.x, mark.y, axis),
       kind: mark.kind,
+      reply: 'pair',
     }
   })
 }
@@ -172,12 +195,12 @@ function generateCells(rng: Rng, cols: number, rows: number, count: number, axis
   scene: CoordScene
   questions: CoordQuestion[]
 } {
-  const kinds = shuffle(rng, COORD_SHAPES.filter((k) => k !== 'point'))
-  const cells = uniqueCells(rng, cols, rows, count)
+  const kinds = shuffle(rng, COORD_SHAPES).slice(0, count)
+  const cells = uniqueCells(rng, cols, rows, kinds.length)
   const marks: CoordMark[] = cells.map((cell, i) => ({
     x: cell.x,
     y: cell.y,
-    kind: kinds[i % kinds.length]!,
+    kind: kinds[i]!,
   }))
   const scene: CoordScene = { variant: 'cells', cols, rows, axis, marks }
   return { scene, questions: questionsFromMarks(marks, axis, 'cells') }
@@ -186,8 +209,14 @@ function generateCells(rng: Rng, cols: number, rows: number, count: number, axis
 export function sceneFromLibre(config: PageConfig): CoordScene {
   const cols = clampCoordSize(config.coordCols ?? 7)
   const rows = clampCoordSize(config.coordRows ?? 7)
-  const axis = config.coordAxis === 'numeric' ? 'numeric' : 'letters'
-  const marks = (config.coordMarks ?? []).filter((mark) => mark.x >= 1 && mark.x <= cols && mark.y >= 1 && mark.y <= rows)
+  const axis = config.coordAxis ?? 'letters'
+  const seen = new Set<CoordShape>()
+  const marks = (config.coordMarks ?? []).filter((mark) => {
+    if (mark.x < 1 || mark.y < 1 || mark.x > cols || mark.y > rows) return false
+    if (seen.has(mark.kind)) return false
+    seen.add(mark.kind)
+    return true
+  })
   return { variant: 'cells', cols, rows, axis, marks }
 }
 
@@ -196,6 +225,7 @@ function questionsFromAxes(marks: CoordMark[]): CoordQuestion[] {
     prompt: mark.label ?? 'A',
     answer: formatAxesCoord(mark.x, mark.y),
     kind: 'point',
+    reply: 'pair',
   }))
 }
 
@@ -317,8 +347,8 @@ export function tryGenerateReperage(
   }
 
   const { cols, rows } = coordSizeFor(difficulty)
-  const markCount = Math.max(1, Math.min(config.count || 5, cols * rows))
-  const axis: CoordAxis = difficulty === 'avance' || (difficulty === 'moyen' && rng() < 0.45) ? 'numeric' : 'letters'
+  const markCount = Math.max(1, Math.min(config.count || 5, cols * rows, COORD_SHAPES.length))
+  const axis: CoordAxis = config.coordAxis ?? (difficulty === 'avance' ? 'numeric' : 'letters')
   const cells = generateCells(rng, cols, rows, markCount, axis)
   return {
     instruction,
