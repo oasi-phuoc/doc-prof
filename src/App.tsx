@@ -32,6 +32,7 @@ import {
   exerciseTypeById,
   firstTypeFor,
   geometryTopics,
+  isDraftPadExercise,
   lectureTopics,
   typesForTopic,
 } from '@/math/catalog'
@@ -98,6 +99,7 @@ function WorksheetSheet({
   const isDraftPadPage = page.items.some(
     (item) =>
       item.layout === 'equation' ||
+      (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
       (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
   )
   return (
@@ -358,6 +360,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
   const isCadrans = isReperageCadrans(type.id)
   const isDroites = isReperageDroites(type.id)
   const isConstruire = isReperageConstruire(type.id)
+  const isGeoCalc = isDraftPadExercise(type.id) && !isProblem && !isEquation
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -373,17 +376,15 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
             ? { count: 4 }
             : isLecture
               ? { count: 6 }
+              : isGeoCalc
+                ? { count: 4 }
               : isFormes
                 ? { count: 5 }
                 : isCadrans
                   ? { count: 6 }
                   : isDroites || isConstruire
                     ? { count: 5 }
-                    : type.id === 'perimetres-composees'
-                      ? { count: 4 }
-                      : type.id === 'perimetres-melange'
-                        ? { count: 6 }
-                        : {}),
+                    : {}),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -433,10 +434,6 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
 
 function resizeDraftGrids(prev: boolean[] | undefined, count: number): boolean[] {
   return Array.from({ length: count }, (_, i) => prev?.[i] ?? true)
-}
-
-function isDraftPadExercise(typeId: string): boolean {
-  return typeId.includes('problemes') || typeId.startsWith('equations-')
 }
 
 function isProblemExercise(typeId: string): boolean {

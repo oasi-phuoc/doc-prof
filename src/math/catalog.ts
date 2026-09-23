@@ -306,6 +306,16 @@ export function typesForTopic(topic: string): ExerciseType[] {
   return exerciseTypes.filter((type) => type.topic === topic)
 }
 
+export function isDraftPadExercise(typeId: string): boolean {
+  return (
+    typeId.includes('problemes') ||
+    typeId.startsWith('equations-') ||
+    typeId.startsWith('perimetres-') ||
+    typeId.startsWith('aires-') ||
+    typeId.startsWith('volumes-')
+  )
+}
+
 export function firstTypeFor(domain: Domain, topic?: string): ExerciseType {
   if (topic) {
     const list = typesForTopic(topic)
@@ -326,7 +336,14 @@ export function defaultPage(domain: Domain = 'algèbre'): {
   problemDraftGrids?: boolean[]
 } {
   const type = firstTypeFor(domain)
-  const count = domain === 'lecture' ? 6 : 8
+  const count =
+    domain === 'lecture'
+      ? 6
+      : type.id.includes('problemes') || type.id.startsWith('equations-')
+        ? 2
+        : isDraftPadExercise(type.id)
+          ? 4
+          : 8
   return {
     domain,
     topic: type.topic,
@@ -334,7 +351,7 @@ export function defaultPage(domain: Domain = 'algèbre'): {
     difficulty: 'moyen',
     count,
     columns: type.preferredColumns ?? 2,
-    problemDraftGrids: type.id.includes('problemes') || type.id.startsWith('equations-')
+    problemDraftGrids: isDraftPadExercise(type.id)
       ? Array.from({ length: count }, () => true)
       : undefined,
   }

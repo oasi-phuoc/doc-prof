@@ -267,7 +267,7 @@ export type PageConfig = {
   count: number
   columns: number
   /**
-   * Pour les problèmes : grille de brouillon 4×4 mm par question.
+   * Grille de brouillon (problèmes, équations, périmètres / aires / volumes).
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
   problemDraftGrids?: boolean[]

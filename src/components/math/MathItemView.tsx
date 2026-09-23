@@ -817,7 +817,15 @@ function EquationBlock({
   )
 }
 
-function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+function GeoBlock({
+  item,
+  mode,
+  draftGrid = true,
+}: {
+  item: MathItem
+  mode: PreviewMode
+  draftGrid?: boolean
+}) {
   const show = mode === 'answers'
   return (
     <div className="geo-block">
@@ -832,11 +840,11 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           <div className="problem-fields compact">
             <div className="problem-field">
               <span className="field-label">Calcul</span>
-              {show && item.calcAnswer ? (
-                <strong className="filled-answer">{item.calcAnswer}</strong>
-              ) : (
-                <span className="write-line" />
-              )}
+              <div className={`draft-pad ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de calcul">
+                {show && item.calcAnswer ? (
+                  <strong className="filled-answer draft-pad-answer">{item.calcAnswer}</strong>
+                ) : null}
+              </div>
             </div>
             <div className="problem-field">
               <span className="field-label">Réponse</span>
@@ -1016,7 +1024,8 @@ export function MathItemView({
 }) {
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
   const isEquation = item.layout === 'equation'
-  const isDraftPad = isProblem || isEquation
+  const isGeoCalc = item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)
+  const isDraftPad = isProblem || isEquation || isGeoCalc
   const isStackedText = item.layout === 'text' && !isProblem
   return (
     <div className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}`}>
@@ -1040,7 +1049,7 @@ export function MathItemView({
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
-        {item.layout === 'geo' && <GeoBlock item={item} mode={mode} />}
+        {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
         {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}

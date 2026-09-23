@@ -471,9 +471,10 @@
   left:calc(100% + 4px);right:auto
 }
 .draft-pad{
-  /* 24 colonnes × 5 lignes de cases carrées (hauteur = largeur de colonne). */
+  /* 24 colonnes × 5 lignes en 1 col ; on multiplie les lignes par le nombre de colonnes
+     (2 col → 10 lignes) pour garder la même hauteur de cases une fois la largeur coupée. */
   --grid-cols:24;
-  --grid-rows:5;
+  --grid-rows:calc(5 * var(--sheet-columns, 1));
   width:100%;
   height:auto;
   aspect-ratio:var(--grid-cols) / var(--grid-rows);
