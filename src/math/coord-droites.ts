@@ -504,7 +504,7 @@ function pickQuestions(rng: Rng, all: DraftQuestion[], count: number, difficulty
   const equations = extra.filter((q) => q.prompt.startsWith('Une équation'))
 
   const nMeet = Math.min(meet.length, count <= 3 ? 1 : count <= 5 ? 2 : 3)
-  const nAxis = Math.min(axis.length, count <= 4 ? 1 : 2)
+  const nAxis = Math.min(axis.length, difficulty === 'avance' || count <= 4 ? 1 : 2)
   const nRel = Math.min(relation.length, count >= 4 ? (count >= 7 ? 2 : 1) : count >= 3 ? 1 : 0)
 
   const chosen = [

@@ -880,7 +880,11 @@ function CoordBlock({
       ? { ...scene, marks: [] as typeof scene.marks }
       : scene
   return (
-    <div className={`coord-block${scene ? ' has-scene' : ''}${hasLines ? ' has-lines' : ''}`}>
+    <div
+      className={`coord-block${scene ? ' has-scene' : ''}${hasLines ? ' has-lines' : ''}${
+        hasLines && questions.length >= 7 ? ' is-dense' : ''
+      }`}
+    >
       <CoordGrid
         point={item.point}
         pointImage={item.pointImage}
@@ -910,6 +914,7 @@ function CoordBlock({
               const isPair = question.reply === 'pair' || (isAxesPoint && question.reply !== 'text')
               return (
                 <div className="coord-question" key={`${question.prompt}-${index}`}>
+                  {hasLines ? <span className="coord-question-num">{index + 1}.</span> : null}
                   <span className="coord-question-label">
                     {question.kind && question.kind !== 'point' ? (
                       <CoordShapeButton kind={question.kind} size={16} />
@@ -991,7 +996,7 @@ export function MathItemView({
           {draftGrid ? 'Grille' : 'Sans'}
         </button>
       ) : null}
-      <div className="item-number">{index + 1}.</div>
+      {item.coordScene?.lines?.length ? null : <div className="item-number">{index + 1}.</div>}
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
