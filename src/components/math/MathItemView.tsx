@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
+import { CompositeFigure } from './CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
 import { GeometryFigure } from './GeometryFigure'
@@ -820,7 +821,11 @@ function GeoBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   return (
     <div className="geo-block">
-      <GeometryFigure type={item.figure} dims={item.dims} />
+      {item.compositeScene ? (
+        <CompositeFigure scene={item.compositeScene} />
+      ) : (
+        <GeometryFigure type={item.figure} dims={item.dims} />
+      )}
       <div className="geo-side">
         {item.prompt && <p className="column-prompt">{item.prompt}</p>}
         {(item.calcAnswer || item.responseAnswer) && (

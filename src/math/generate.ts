@@ -15,6 +15,7 @@ import {
   pairSub,
 } from './difficulty'
 import { numberToFrench } from './french-numbers'
+import { generatePerimetreCompose } from './perimetre-compose'
 import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
@@ -1111,6 +1112,20 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
         responseAnswer: `${fmt(p)} cm`,
         answer: `${fmt(p)} cm`,
       }
+    }
+    case 'perimetres-melange': {
+      const simple = pick(rng, [
+        'perimetres-carre',
+        'perimetres-rectangle',
+        'perimetres-triangle',
+        'perimetres-parallelogramme',
+        'perimetres-trapeze',
+        'perimetres-cercle',
+      ])
+      return generateOne(simple, rng, index, difficulty)
+    }
+    case 'perimetres-composees': {
+      return generatePerimetreCompose(rng, difficulty)
     }
     case 'aires-carre': {
       const c = int(rng, 2, 12)

@@ -217,6 +217,39 @@ export type MathItem = {
   systemBrace?: boolean
   /** Valeurs par case pour la décomposition (layout place-value). */
   placeParts?: string[]
+  /** Figure composée cotée (périmètre). */
+  compositeScene?: CompositeScene
+}
+
+export type CompositeLabel = {
+  x: number
+  y: number
+  text: string
+  anchor?: 'start' | 'middle' | 'end'
+}
+
+export type CompositeTick = {
+  x: number
+  y: number
+  angle: number
+  n: 1 | 2 | 3
+}
+
+export type CompositeRight = {
+  x: number
+  y: number
+  ax: number
+  ay: number
+  bx: number
+  by: number
+}
+
+export type CompositeScene = {
+  outline: string
+  helpers?: Array<{ d: string; dashed?: boolean }>
+  labels: CompositeLabel[]
+  ticks?: CompositeTick[]
+  rights?: CompositeRight[]
 }
 
 export type PageConfig = {

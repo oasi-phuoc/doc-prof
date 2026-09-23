@@ -378,7 +378,11 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
                   ? { count: 6 }
                   : isDroites || isConstruire
                     ? { count: 5 }
-                    : {}),
+                    : type.id === 'perimetres-composees'
+                      ? { count: 4 }
+                      : type.id === 'perimetres-melange'
+                        ? { count: 6 }
+                        : {}),
     ...(isFormes
       ? {
           coordLibre: false,
