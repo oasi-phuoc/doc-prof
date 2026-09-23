@@ -35,6 +35,7 @@ import {
   lectureTopics,
   typesForTopic,
 } from '@/math/catalog'
+import { constructRangeFor } from '@/math/coord-construire'
 import {
   COORD_SHAPES,
   COORD_SHAPE_LABEL,
@@ -401,14 +402,32 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
             coordRows: undefined,
             coordAxis: undefined,
           }
-        : {
-            coordLibre: undefined,
-            coordCols: undefined,
-            coordRows: undefined,
-            coordAxis: undefined,
-            coordMarks: undefined,
-            coordRange: undefined,
-          }),
+        : isDroites
+          ? {
+              coordLibre: undefined,
+              coordCols: undefined,
+              coordRows: undefined,
+              coordAxis: undefined,
+              coordMarks: undefined,
+              coordRange: axesRangeFor('moyen'),
+            }
+          : isConstruire
+            ? {
+                coordLibre: undefined,
+                coordCols: undefined,
+                coordRows: undefined,
+                coordAxis: undefined,
+                coordMarks: undefined,
+                coordRange: constructRangeFor('moyen'),
+              }
+            : {
+                coordLibre: undefined,
+                coordCols: undefined,
+                coordRows: undefined,
+                coordAxis: undefined,
+                coordMarks: undefined,
+                coordRange: undefined,
+              }),
   }
 }
 
@@ -544,7 +563,7 @@ function GeneratorPage() {
             ? resizeDraftGrids(next.problemDraftGrids, count)
             : undefined
         }
-        if (isReperagePage(next.exerciseType) && next.coordMarks) {
+        if (isReperageCadrans(next.exerciseType) && next.coordMarks) {
           next.coordMarks = next.coordMarks.slice(0, Math.max(0, next.count))
         }
         return next
@@ -594,13 +613,15 @@ function GeneratorPage() {
     const without = (activePage.coordMarks ?? []).filter(
       (mark) => !(mark.x === x && mark.y === y) && mark.kind !== kind,
     )
-    if (without.length >= activePage.count) return
+    if (without.length >= COORD_SHAPES.length) return
+    const nextMarks = [...without, { x, y, kind }]
     updatePage({
       coordLibre: true,
       coordCols: cols,
       coordRows: rows,
       coordAxis: activePage.coordAxis ?? 'letters',
-      coordMarks: [...without, { x, y, kind }],
+      coordMarks: nextMarks,
+      count: Math.max(activePage.count, nextMarks.length),
     })
   }
 
@@ -825,10 +846,15 @@ function GeneratorPage() {
                   }
                   type="number"
                   min={1}
-                  max={30}
+                  max={isFormes ? COORD_SHAPES.length : 30}
                   value={activePage.count}
                   onChange={(event) =>
-                    updatePage({ count: Math.max(1, Math.min(30, Number(event.target.value) || 1)) })
+                    updatePage({
+                      count: Math.max(
+                        1,
+                        Math.min(isFormes ? COORD_SHAPES.length : 30, Number(event.target.value) || 1),
+                      ),
+                    })
                   }
                 />
                 {questionsOverflow ? (
@@ -837,6 +863,15 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
+              <SelectBox
+                label="Colonnes"
+                value={String(activePage.columns)}
+                onChange={(value) => updatePage({ columns: Number(value) })}
+              >
+                <option value="1">1 colonne</option>
+                <option value="2">2 colonnes</option>
+                <option value="3">3 colonnes</option>
+              </SelectBox>
               {isFormes ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>
@@ -875,44 +910,44 @@ function GeneratorPage() {
                     <option value="letters-y">Lettres à gauche</option>
                     <option value="numeric">Nombres seulement</option>
                   </SelectBox>
+                  <div className="coord-size-row">
+                    <label>
+                      Largeur
+                      <input
+                        className="pill-input"
+                        type="number"
+                        min={3}
+                        max={20}
+                        value={activePage.coordCols ?? coordSizeFor(activePage.difficulty).cols}
+                        onChange={(event) => {
+                          const cols = clampCoordSize(Number(event.target.value))
+                          updatePage({
+                            coordCols: cols,
+                            coordMarks: (activePage.coordMarks ?? []).filter((mark) => mark.x <= cols),
+                          })
+                        }}
+                      />
+                    </label>
+                    <label>
+                      Hauteur
+                      <input
+                        className="pill-input"
+                        type="number"
+                        min={3}
+                        max={20}
+                        value={activePage.coordRows ?? coordSizeFor(activePage.difficulty).rows}
+                        onChange={(event) => {
+                          const rows = clampCoordSize(Number(event.target.value))
+                          updatePage({
+                            coordRows: rows,
+                            coordMarks: (activePage.coordMarks ?? []).filter((mark) => mark.y <= rows),
+                          })
+                        }}
+                      />
+                    </label>
+                  </div>
                   {activePage.coordLibre ? (
                     <>
-                      <div className="coord-size-row">
-                        <label>
-                          Colonnes
-                          <input
-                            className="pill-input"
-                            type="number"
-                            min={3}
-                            max={20}
-                            value={activePage.coordCols ?? 7}
-                            onChange={(event) => {
-                              const cols = clampCoordSize(Number(event.target.value))
-                              updatePage({
-                                coordCols: cols,
-                                coordMarks: (activePage.coordMarks ?? []).filter((mark) => mark.x <= cols),
-                              })
-                            }}
-                          />
-                        </label>
-                        <label>
-                          Lignes
-                          <input
-                            className="pill-input"
-                            type="number"
-                            min={3}
-                            max={20}
-                            value={activePage.coordRows ?? 7}
-                            onChange={(event) => {
-                              const rows = clampCoordSize(Number(event.target.value))
-                              updatePage({
-                                coordRows: rows,
-                                coordMarks: (activePage.coordMarks ?? []).filter((mark) => mark.y <= rows),
-                              })
-                            }}
-                          />
-                        </label>
-                      </div>
                       <div className="coord-palette" role="listbox" aria-label="Formes à placer">
                         {COORD_SHAPES.map((kind) => {
                           const used = (activePage.coordMarks ?? []).some((mark) => mark.kind === kind)
@@ -945,13 +980,13 @@ function GeneratorPage() {
                         onRemove={removeCoordMark}
                       />
                       <p className="type-hint muted">
-                        Une seule grille : le champ Questions fixe le nombre de formes. Chaque forme n’apparaît
-                        qu’une fois. Glissez une forme sur une case, ou cliquez une forme puis une case. Le tableau
-                        va jusqu’à 20 × 20.
+                        Vous pouvez placer toutes les formes, une seule fois chacune. Glissez une forme sur une case,
+                        ou cliquez une forme puis une case. Largeur et hauteur règlent la taille du tableau, jusqu’à
+                        20 × 20.
                       </p>
                       <p className="type-hint muted">
-                        {(activePage.coordMarks?.length ?? 0)} / {activePage.count} forme
-                        {activePage.count > 1 ? 's' : ''}
+                        {(activePage.coordMarks?.length ?? 0)} / {COORD_SHAPES.length} forme
+                        {COORD_SHAPES.length > 1 ? 's' : ''}
                       </p>
                       {(activePage.coordMarks?.length ?? 0) > 0 ? (
                         <button
@@ -966,7 +1001,8 @@ function GeneratorPage() {
                   ) : (
                     <p className="type-hint muted">
                       Une seule grille. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des formes.
-                      Facile : 5×5. Moyen : 7×7. Avancé : 10×10. Vous pouvez placer les lettres en bas ou à gauche.
+                      Largeur et hauteur règlent la taille du tableau, indépendamment du nombre de questions. Vous
+                      pouvez afficher les questions sur 1, 2 ou 3 colonnes.
                     </p>
                   )}
                 </div>
@@ -997,27 +1033,27 @@ function GeneratorPage() {
                       </button>
                     </div>
                   ) : null}
+                  <label>
+                    Étendue (−n à +n)
+                    <input
+                      className="pill-input"
+                      type="number"
+                      min={3}
+                      max={20}
+                      value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
+                      onChange={(event) => {
+                        const range = clampCoordRange(Number(event.target.value))
+                        updatePage({
+                          coordRange: range,
+                          coordMarks: (activePage.coordMarks ?? []).filter(
+                            (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
+                          ),
+                        })
+                      }}
+                    />
+                  </label>
                   {activePage.coordLibre || activePage.exerciseType === 'reperage-cadrans-libre' ? (
                     <>
-                      <label>
-                        Étendue (−n à +n)
-                        <input
-                          className="pill-input"
-                          type="number"
-                          min={3}
-                          max={20}
-                          value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
-                          onChange={(event) => {
-                            const range = clampCoordRange(Number(event.target.value))
-                            updatePage({
-                              coordRange: range,
-                              coordMarks: (activePage.coordMarks ?? []).filter(
-                                (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
-                              ),
-                            })
-                          }}
-                        />
-                      </label>
                       <div className="coord-axes-editor">
                         <CoordGrid
                           scene={sceneFromAxesLibre(activePage, activePage.difficulty)}
@@ -1046,44 +1082,51 @@ function GeneratorPage() {
                     </>
                   ) : (
                     <p className="type-hint muted">
-                      Une seule grille à 4 cadrans. Le champ Questions ajoute des points. Facile : −4 à 4. Moyen :
-                      −6 à 6. Avancé : demi-unités.
+                      Une seule grille à 4 cadrans. Le champ Questions ajoute des points. L’étendue (−n à +n) règle la
+                      taille du repère, jusqu’à −20 / +20. Avancé : demi-unités.
                     </p>
                   )}
                 </div>
               ) : isDroites ? (
                 <div className="coord-libre-panel">
                   <b>Repère (droites)</b>
+                  <label>
+                    Étendue (−n à +n)
+                    <input
+                      className="pill-input"
+                      type="number"
+                      min={3}
+                      max={20}
+                      value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
+                      onChange={(event) => updatePage({ coordRange: clampCoordRange(Number(event.target.value)) })}
+                    />
+                  </label>
                   <p className="type-hint muted">
-                    Une seule grille à 4 cadrans. Le champ Questions fixe le nombre de questions. Chaque droite a une
-                    couleur et un tracé distinct, lisible en noir et blanc.
-                  </p>
-                  <p className="type-hint muted">
-                    Facile : intersections et axes. Moyen : parallèles ou sécantes. Avancé : équations des droites.
+                    Une seule grille centrée. Le champ Questions fixe le nombre de questions. L’étendue règle la taille
+                    du repère, jusqu’à −20 / +20. Chaque droite a une couleur et un tracé distinct, lisible en noir et
+                    blanc.
                   </p>
                 </div>
               ) : isConstruire ? (
                 <div className="coord-libre-panel">
                   <b>Repère (construction)</b>
+                  <label>
+                    Étendue (−n à +n)
+                    <input
+                      className="pill-input"
+                      type="number"
+                      min={3}
+                      max={20}
+                      value={activePage.coordRange ?? constructRangeFor(activePage.difficulty)}
+                      onChange={(event) => updatePage({ coordRange: clampCoordRange(Number(event.target.value)) })}
+                    />
+                  </label>
                   <p className="type-hint muted">
-                    Une grille vide avec deux points donnés. Le champ Questions fixe le nombre de consignes : placer des
-                    points, tracer des droites, des parallèles, des figures et des symétries.
-                  </p>
-                  <p className="type-hint muted">
-                    Facile : −8 à 8. Moyen : −10 à 10. Avancé : −12 à 12. Le corrigé montre les tracés.
+                    Une grille vide centrée, avec deux points donnés. Le champ Questions fixe le nombre de consignes.
+                    L’étendue règle la taille du repère, jusqu’à −20 / +20. Le corrigé montre les tracés.
                   </p>
                 </div>
-              ) : (
-                <SelectBox
-                  label="Colonnes"
-                  value={String(activePage.columns)}
-                  onChange={(value) => updatePage({ columns: Number(value) })}
-                >
-                  <option value="1">1 colonne</option>
-                  <option value="2">2 colonnes</option>
-                  <option value="3">3 colonnes</option>
-                </SelectBox>
-              )}
+              ) : null}
               {isProblemExercise(activePage.exerciseType) ? (
                 <div className="mode-toggle draft-grid-page-toggle" role="group" aria-label="Grille de brouillon">
                   {(() => {

@@ -898,7 +898,7 @@ function CoordBlock({
     <div
       className={`coord-block${scene ? ' has-scene' : ''}${hasLines || isConstruct ? ' has-lines' : ''}${
         (hasLines || isConstruct) && questions.length >= 7 ? ' is-dense' : ''
-      }${!hasLines && !isConstruct ? ' is-centered' : ''}`}
+      }${scene ? ' is-centered' : ''}`}
     >
       <CoordGrid
         point={item.point}

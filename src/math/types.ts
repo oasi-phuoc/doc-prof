@@ -50,7 +50,6 @@ export type CoordShape =
   | 'cross'
   | 'trapezoid'
   | 'house'
-  | 'parallelogram'
 
 export type CoordVariant = 'cells' | 'polygon' | 'polar' | 'axes'
 export type CoordAxis = 'letters' | 'letters-y' | 'numeric'

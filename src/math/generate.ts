@@ -1262,17 +1262,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
         answer: `(${x} ; ${y})`,
       }
     }
-    case 'reperage-abscisse': {
-      const x = int(rng, -4, 5)
-      const y = int(rng, -4, 5)
-      const askX = rng() < 0.5
-      return {
-        layout: 'coord',
-        prompt: askX ? 'Quelle est l’abscisse du point A ?' : 'Quelle est l’ordonnée du point A ?',
-        point: { x, y, label: 'A' },
-        answer: String(askX ? x : y),
-      }
-    }
     case 'transformations-axiale': {
       const x = int(rng, 1, 4)
       const y = int(rng, 1, 4)

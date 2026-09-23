@@ -89,7 +89,6 @@ export const COORD_SHAPES: CoordShape[] = [
   'cross',
   'trapezoid',
   'house',
-  'parallelogram',
 ]
 
 export const COORD_SHAPE_LABEL: Record<CoordShape, string> = {
@@ -109,7 +108,6 @@ export const COORD_SHAPE_LABEL: Record<CoordShape, string> = {
   cross: 'croix',
   trapezoid: 'trapèze',
   house: 'maison',
-  parallelogram: 'parallélogramme',
 }
 
 export function axisTickLabel(index: number, axis: CoordAxis, which: 'x' | 'y'): string {
@@ -119,9 +117,9 @@ export function axisTickLabel(index: number, axis: CoordAxis, which: 'x' | 'y'):
 }
 
 export function coordSizeFor(difficulty: Difficulty): { cols: number; rows: number } {
-  if (difficulty === 'facile') return { cols: 5, rows: 5 }
-  if (difficulty === 'moyen') return { cols: 7, rows: 7 }
-  return { cols: 10, rows: 10 }
+  if (difficulty === 'facile') return { cols: 6, rows: 6 }
+  if (difficulty === 'moyen') return { cols: 8, rows: 8 }
+  return { cols: 12, rows: 12 }
 }
 
 export function clampCoordSize(n: number): number {
@@ -308,7 +306,7 @@ export function tryGenerateReperage(
         items: [itemFromScene(limited, questionsFromAxes(limited.marks), instruction, task)],
       }
     }
-    const range = axesRangeFor(difficulty)
+    const range = clampCoordRange(config.coordRange ?? axesRangeFor(difficulty))
     const step = axesStepFor(difficulty)
     const maxPts = ticks(range, step).length ** 2 - 1
     const markCount = Math.max(1, Math.min(config.count || 6, maxPts))
@@ -338,15 +336,16 @@ export function tryGenerateReperage(
 
   if (config.coordLibre) {
     const scene = sceneFromLibre(config)
-    const limited = { ...scene, marks: scene.marks.slice(0, Math.max(1, config.count || scene.marks.length || 1)) }
-    const questions = questionsFromMarks(limited.marks, limited.axis, limited.variant)
+    const questions = questionsFromMarks(scene.marks, scene.axis, scene.variant)
     return {
       instruction,
-      items: [itemFromScene(limited, questions, instruction, task)],
+      items: [itemFromScene(scene, questions, instruction, task)],
     }
   }
 
-  const { cols, rows } = coordSizeFor(difficulty)
+  const fallback = coordSizeFor(difficulty)
+  const cols = clampCoordSize(config.coordCols ?? fallback.cols)
+  const rows = clampCoordSize(config.coordRows ?? fallback.rows)
   const markCount = Math.max(1, Math.min(config.count || 5, cols * rows, COORD_SHAPES.length))
   const axis: CoordAxis = config.coordAxis ?? (difficulty === 'avance' ? 'numeric' : 'letters')
   const cells = generateCells(rng, cols, rows, markCount, axis)

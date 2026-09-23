@@ -1,5 +1,5 @@
 import { int, pick, type Rng } from './rng'
-import { formatAxesCoord } from './coord-reperage'
+import { clampCoordRange, formatAxesCoord } from './coord-reperage'
 import type { CoordMark, CoordPath, CoordQuestion, CoordScene, Difficulty, MathItem, PageConfig } from './types'
 
 export function constructRangeFor(difficulty: Difficulty): number {
@@ -519,7 +519,7 @@ export function generateConstruire(
   rng: Rng,
 ): { items: MathItem[]; instruction: string } {
   const difficulty = config.difficulty ?? 'moyen'
-  const range = constructRangeFor(difficulty)
+  const range = clampCoordRange(config.coordRange ?? constructRangeFor(difficulty))
   const questionCount = Math.max(1, Math.min(config.count || 5, 8))
   const makers = difficulty === 'facile' ? [familyDroites, familyPara, familyTranslation] : FAMILIES
   const start = Math.abs(Math.floor(rng() * 1e9)) % makers.length

@@ -109,12 +109,6 @@ export function CoordShapeGlyph({
           points={`${x},${y - r * 0.74} ${x + r * 0.68},${y - r * 0.1} ${x + r * 0.68},${y + r * 0.64} ${x - r * 0.68},${y + r * 0.64} ${x - r * 0.68},${y - r * 0.1}`}
         />
       )
-    case 'parallelogram':
-      return (
-        <polygon
-          points={`${x - r * 0.22},${y - r * 0.5} ${x + r * 0.7},${y - r * 0.5} ${x + r * 0.22},${y + r * 0.5} ${x - r * 0.7},${y + r * 0.5}`}
-        />
-      )
     default:
       return <circle cx={x} cy={y} r={r * 0.4} />
   }

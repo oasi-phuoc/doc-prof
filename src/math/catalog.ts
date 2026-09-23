@@ -195,8 +195,8 @@ export const exerciseTypes: ExerciseType[] = [
   t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
   t('volumes-cylindre', 'volumes', 'Cylindre', 'Volume = πr²h. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
 
-  t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 1 }),
-  t('reperage-placer', 'reperage', 'Placer des formes', 'Dessiner les formes sur un tableau vide à partir des coordonnées.', 'Dessinez chaque forme à l’emplacement indiqué.', 'geo', { preferredColumns: 1 }),
+  t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 2 }),
+  t('reperage-placer', 'reperage', 'Placer des formes', 'Dessiner les formes sur un tableau vide à partir des coordonnées.', 'Dessinez chaque forme à l’emplacement indiqué.', 'geo', { preferredColumns: 2 }),
   t('reperage-cadrans-lire', 'reperage', 'Lire les 4 cadrans', 'Lire les coordonnées de points dans le plan (axes et cadrans).', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
   t('reperage-cadrans-placer', 'reperage', 'Placer dans les 4 cadrans', 'Placer des points sur un repère vide à partir des coordonnées.', 'Placez chaque point à l’emplacement indiqué.', 'geo', { preferredColumns: 1 }),
   t('reperage-cadrans-libre', 'reperage', 'Composer les points', 'Placer vous-même les points A, B, C… directement sur le repère.', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
@@ -207,7 +207,7 @@ export const exerciseTypes: ExerciseType[] = [
     'Lire intersections, intercepts et positions de droites colorées sur un repère.',
     'Observez les droites du repère. Répondez aux questions.',
     'geo',
-    { preferredColumns: 1 },
+    { preferredColumns: 2 },
   ),
   t(
     'reperage-construire',
@@ -216,9 +216,8 @@ export const exerciseTypes: ExerciseType[] = [
     'Grille vide avec deux points donnés : tracer droites, parallèles, figures et symétries.',
     'Placez les points demandés. Tracez les droites et les figures.',
     'geo',
-    { preferredColumns: 1 },
+    { preferredColumns: 2 },
   ),
-  t('reperage-abscisse', 'reperage', 'Abscisse et ordonnée', 'Identifier x ou y.', 'Complétez.', 'ligne', { preferredColumns: 1 }),
 
   t('transformations-axiale', 'transformations', 'Symétrie axiale', 'Image d’un point par une symétrie.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
   t('transformations-centrale', 'transformations', 'Symétrie centrale', 'Symétrie par rapport à l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),

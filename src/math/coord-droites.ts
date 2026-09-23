@@ -1,5 +1,5 @@
 import { pick, shuffle, type Rng } from './rng'
-import { axesRangeFor, formatAxesCoord, formatAxesNum } from './coord-reperage'
+import { axesRangeFor, clampCoordRange, formatAxesCoord, formatAxesNum } from './coord-reperage'
 import type {
   CoordLine,
   CoordLineColor,
@@ -551,7 +551,7 @@ export function generateDroites(
   rng: Rng,
 ): { items: MathItem[]; instruction: string } {
   const difficulty = config.difficulty ?? 'moyen'
-  const range = axesRangeFor(difficulty)
+  const range = clampCoordRange(config.coordRange ?? axesRangeFor(difficulty))
   const step = 1
   const questionCount = Math.max(1, Math.min(config.count || 5, 10))
   const nLines = lineCountFor(questionCount, difficulty)
