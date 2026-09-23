@@ -1,5 +1,5 @@
 import { clipLineToRange, STROKE_DASH, STROKE_LABEL } from '@/math/coord-droites'
-import { COORD_SHAPE_LABEL, columnLetter, formatAxesNum } from '@/math/coord-reperage'
+import { COORD_SHAPE_LABEL, axisTickLabel, columnLetter, formatAxesNum } from '@/math/coord-reperage'
 import type { CoordLine, CoordScene, CoordShape } from '@/math/types'
 
 type Pt = { x: number; y: number; label?: string }
@@ -70,6 +70,51 @@ export function CoordShapeGlyph({
       })
       return <polygon points={pts.join(' ')} />
     }
+    case 'hexagon': {
+      const pts = Array.from({ length: 6 }, (_, i) => {
+        const a = -Math.PI / 2 + (i * Math.PI) / 3
+        return `${x + Math.cos(a) * r * 0.7},${y + Math.sin(a) * r * 0.7}`
+      })
+      return <polygon points={pts.join(' ')} />
+    }
+    case 'oval':
+      return <ellipse cx={x} cy={y} rx={r * 0.42} ry={r * 0.68} />
+    case 'crescent':
+      return (
+        <path
+          d={`M${x + r * 0.12} ${y - r * 0.62} A ${r * 0.64} ${r * 0.64} 0 1 0 ${x + r * 0.12} ${y + r * 0.62} A ${r * 0.46} ${r * 0.46} 0 1 1 ${x + r * 0.12} ${y - r * 0.62}z`}
+        />
+      )
+    case 'arrow':
+      return (
+        <polygon
+          points={`${x},${y - r * 0.74} ${x + r * 0.54},${y - r * 0.06} ${x + r * 0.18},${y - r * 0.06} ${x + r * 0.18},${y + r * 0.7} ${x - r * 0.18},${y + r * 0.7} ${x - r * 0.18},${y - r * 0.06} ${x - r * 0.54},${y - r * 0.06}`}
+        />
+      )
+    case 'cross':
+      return (
+        <polygon
+          points={`${x - r * 0.55},${y - r * 0.7} ${x - r * 0.28},${y - r * 0.7} ${x},${y - r * 0.18} ${x + r * 0.28},${y - r * 0.7} ${x + r * 0.55},${y - r * 0.7} ${x + r * 0.22},${y} ${x + r * 0.55},${y + r * 0.7} ${x + r * 0.28},${y + r * 0.7} ${x},${y + r * 0.18} ${x - r * 0.28},${y + r * 0.7} ${x - r * 0.55},${y + r * 0.7} ${x - r * 0.22},${y}`}
+        />
+      )
+    case 'trapezoid':
+      return (
+        <polygon
+          points={`${x - r * 0.32},${y - r * 0.48} ${x + r * 0.32},${y - r * 0.48} ${x + r * 0.7},${y + r * 0.52} ${x - r * 0.7},${y + r * 0.52}`}
+        />
+      )
+    case 'house':
+      return (
+        <polygon
+          points={`${x},${y - r * 0.74} ${x + r * 0.68},${y - r * 0.1} ${x + r * 0.68},${y + r * 0.64} ${x - r * 0.68},${y + r * 0.64} ${x - r * 0.68},${y - r * 0.1}`}
+        />
+      )
+    case 'parallelogram':
+      return (
+        <polygon
+          points={`${x - r * 0.22},${y - r * 0.5} ${x + r * 0.7},${y - r * 0.5} ${x + r * 0.22},${y + r * 0.5} ${x - r * 0.7},${y + r * 0.5}`}
+        />
+      )
     default:
       return <circle cx={x} cy={y} r={r * 0.4} />
   }
@@ -123,7 +168,7 @@ function CellsScene({
           <g key={`h-${y}`}>
             <line x1={pad} y1={gy} x2={size - pad} y2={gy} className="grid-line" />
             <text x={pad - 6} y={gy + inner / scene.rows / 2 + 3} className="axis-label" textAnchor="end">
-              {y}
+              {axisTickLabel(y, scene.axis, 'y')}
             </text>
           </g>
         )
@@ -136,7 +181,7 @@ function CellsScene({
           <g key={`v-${x}`}>
             <line x1={gx} y1={pad} x2={gx} y2={size - pad} className="grid-line" />
             <text x={gx + inner / scene.cols / 2} y={size - pad + 14} className="axis-label" textAnchor="middle">
-              {scene.axis === 'letters' ? columnLetter(x) : x}
+              {axisTickLabel(x, scene.axis, 'x')}
             </text>
           </g>
         )
@@ -590,7 +635,7 @@ export function CoordEditorBoard({
           const y = scene.rows - i
           return (
             <div className="coord-editor-row" key={`row-${y}`} style={{ display: 'contents' }}>
-              <span className="coord-editor-label">{y}</span>
+              <span className="coord-editor-label">{axisTickLabel(y, scene.axis, 'y')}</span>
               {Array.from({ length: scene.cols }, (_, j) => {
                 const x = j + 1
                 const mark = markAt(x, y)
@@ -621,7 +666,7 @@ export function CoordEditorBoard({
         <span className="coord-editor-label" />
         {Array.from({ length: scene.cols }, (_, i) => (
           <span className="coord-editor-label axis" key={`ax-${i}`}>
-            {scene.axis === 'letters' ? columnLetter(i + 1) : i + 1}
+            {axisTickLabel(i + 1, scene.axis, 'x')}
           </span>
         ))}
       </div>
@@ -630,5 +675,5 @@ export function CoordEditorBoard({
 }
 
 function formatAria(x: number, y: number, axis: CoordScene['axis']): string {
-  return axis === 'letters' ? `${columnLetter(x)} ${y}` : `${x} ; ${y}`
+  return `${axisTickLabel(x, axis, 'x')} ; ${axisTickLabel(y, axis, 'y')}`
 }

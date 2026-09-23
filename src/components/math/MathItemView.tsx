@@ -923,7 +923,11 @@ function CoordBlock({
       <div className="coord-side">
         {item.prompt && questions.length === 0 ? <p className="column-prompt">{item.prompt}</p> : null}
         {questions.length > 0 ? (
-          <div className={`coord-questions${numbered ? ' is-lines' : ''}`}>
+          <div
+            className={`coord-questions${numbered ? ' is-lines' : ''}${
+              scene?.variant === 'cells' ? ' is-shapes' : ''
+            }`}
+          >
             {questions.map((question, index) => {
               const isAxesPoint = scene?.variant === 'axes' && !hasLines && !isConstruct
               const isDraw = question.reply === 'draw'
@@ -936,16 +940,19 @@ function CoordBlock({
                   !isDraw &&
                   question.reply !== 'text' &&
                   (scene?.variant === 'cells' || scene?.variant === 'polygon' || scene?.variant === 'polar'))
+              const showShape = Boolean(question.kind && question.kind !== 'point')
               return (
                 <div
                   className={`coord-question${isDraw ? ' is-draw' : ''}`}
                   key={`${question.prompt}-${index}`}
                 >
                   {numbered ? <span className="coord-question-num">{index + 1}.</span> : null}
+                  {showShape ? (
+                    <span className="coord-question-icon">
+                      <CoordShapeButton kind={question.kind!} size={16} />
+                    </span>
+                  ) : null}
                   <span className="coord-question-label">
-                    {question.kind && question.kind !== 'point' ? (
-                      <CoordShapeButton kind={question.kind} size={16} />
-                    ) : null}
                     {isAxesPoint ? `${question.prompt} est en` : question.prompt}
                   </span>
                   {isDraw ? null : isPlace || (isPair && show) ? (

@@ -655,9 +655,20 @@
 .coord-questions{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px;width:100%
 }
+.coord-questions.is-shapes{
+  display:grid;
+  grid-template-columns:1.6em max-content auto 1.6em max-content auto;
+  column-gap:8px;row-gap:7px;justify-content:center;align-items:center
+}
+.coord-questions.is-shapes .coord-question{display:contents}
 .coord-question{display:flex;align-items:baseline;gap:8px;min-width:0}
+.coord-question-icon{display:inline-flex;align-items:center;justify-content:center;width:1.6em}
 .coord-question-label{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
 .coord-question-label svg{flex:0 0 auto;color:var(--ink)}
+.coord-questions.is-shapes .coord-question-label{justify-self:start}
+.coord-questions.is-shapes .coord-given,
+.coord-questions.is-shapes .filled-answer,
+.coord-questions.is-shapes .coord-pair{justify-self:start}
 .coord-question .answer-line-field,.coord-question .filled-answer,.coord-given{flex:1;min-width:0}
 .coord-given{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
 .coord-pair{
@@ -682,6 +693,7 @@
   background:#fff;color:var(--ink);font-size:10px;font-weight:600
 }
 .coord-palette-item.selected{border-color:var(--purple);background:var(--lavender);color:var(--purple)}
+.coord-palette-item.used{opacity:.55}
 .coord-editor{border:1px solid var(--line);border-radius:12px;padding:8px;background:#faf9f6}
 .coord-editor-grid{display:grid;gap:2px;width:100%}
 .coord-editor-label{
