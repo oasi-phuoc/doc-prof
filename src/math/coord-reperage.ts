@@ -67,13 +67,27 @@ function uniqueCells(rng: Rng, cols: number, rows: number, count: number): Array
 }
 
 function questionsFromMarks(marks: CoordMark[], axis: CoordAxis, variant: CoordScene['variant']): CoordQuestion[] {
-  return marks.map((mark) => ({
-    prompt: mark.label
-      ? `Point ${mark.label}`
-      : COORD_SHAPE_LABEL[mark.kind],
-    answer: variant === 'polar' ? formatPolarCoord(mark.x, mark.y) : formatCellCoord(mark.x, mark.y, axis),
-    kind: mark.kind,
-  }))
+  const totals = new Map<string, number>()
+  for (const mark of marks) {
+    const key = mark.label ?? COORD_SHAPE_LABEL[mark.kind]
+    totals.set(key, (totals.get(key) ?? 0) + 1)
+  }
+  const seen = new Map<string, number>()
+  return marks.map((mark) => {
+    const base = mark.label ? `Point ${mark.label}` : COORD_SHAPE_LABEL[mark.kind]
+    const key = mark.label ?? COORD_SHAPE_LABEL[mark.kind]
+    let prompt = base
+    if (!mark.label && (totals.get(key) ?? 0) > 1) {
+      const n = (seen.get(key) ?? 0) + 1
+      seen.set(key, n)
+      prompt = `${base} ${n}`
+    }
+    return {
+      prompt,
+      answer: variant === 'polar' ? formatPolarCoord(mark.x, mark.y) : formatCellCoord(mark.x, mark.y, axis),
+      kind: mark.kind,
+    }
+  })
 }
 
 function questionsFromVertices(vertices: CoordVertex[]): CoordQuestion[] {
