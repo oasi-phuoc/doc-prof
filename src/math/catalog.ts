@@ -339,11 +339,9 @@ export function defaultPage(domain: Domain = 'algèbre'): {
   const count =
     domain === 'lecture'
       ? 6
-      : type.id.includes('problemes') || type.id.startsWith('equations-')
+      : isDraftPadExercise(type.id)
         ? 2
-        : isDraftPadExercise(type.id)
-          ? 4
-          : 8
+        : 8
   return {
     domain,
     topic: type.topic,

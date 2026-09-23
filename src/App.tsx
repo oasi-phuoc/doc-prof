@@ -377,7 +377,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
             : isLecture
               ? { count: 6 }
               : isGeoCalc
-                ? { count: 4 }
+                ? { count: 2 }
               : isFormes
                 ? { count: 5 }
                 : isCadrans
