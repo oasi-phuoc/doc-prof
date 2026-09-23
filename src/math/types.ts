@@ -71,12 +71,30 @@ export type CoordScene = {
   range?: number
   /** Pas de la grille (1 ou 0,5). */
   step?: number
+  /** Droites colorées (repérage). */
+  lines?: CoordLine[]
+}
+
+export type CoordLineColor = 'violet' | 'orange' | 'green' | 'blue' | 'red' | 'muted' | 'rose'
+export type CoordLineStroke = 'solid' | 'dashed' | 'dotted' | 'dashdot' | 'longdash' | 'dense' | 'doubledash'
+export type CoordReply = 'pair' | 'text'
+
+export type CoordLine = {
+  id: string
+  name: string
+  color: CoordLineColor
+  stroke: CoordLineStroke
+  /** Droite ax + by + c = 0. */
+  a: number
+  b: number
+  c: number
 }
 
 export type CoordQuestion = {
   prompt: string
   answer: string
   kind?: CoordShape
+  reply?: CoordReply
 }
 
 export type AlgebraGiven = { letter: string; value: number }

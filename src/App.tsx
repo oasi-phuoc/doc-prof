@@ -43,6 +43,7 @@ import {
   clampCoordSize,
   coordSizeFor,
   isReperageCadrans,
+  isReperageDroites,
   isReperageFormes,
   isReperagePage,
   nextPointLabel,
@@ -353,6 +354,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
   const isFormes = isReperageFormes(type.id)
   const isCadrans = isReperageCadrans(type.id)
+  const isDroites = isReperageDroites(type.id)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -372,7 +374,9 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
                 ? { count: 5 }
                 : isCadrans
                   ? { count: 6 }
-                  : {}),
+                  : isDroites
+                    ? { count: 5 }
+                    : {}),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -561,6 +565,7 @@ function GeneratorPage() {
   const isReperage = isReperagePage(activePage.exerciseType)
   const isCadrans = isReperageCadrans(activePage.exerciseType)
   const isFormes = isReperageFormes(activePage.exerciseType)
+  const isDroites = isReperageDroites(activePage.exerciseType)
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
     if (isCadrans) {
@@ -1032,6 +1037,17 @@ function GeneratorPage() {
                       −6 à 6. Avancé : demi-unités.
                     </p>
                   )}
+                </div>
+              ) : isDroites ? (
+                <div className="coord-libre-panel">
+                  <b>Repère (droites)</b>
+                  <p className="type-hint muted">
+                    Une seule grille à 4 cadrans. Le champ Questions fixe le nombre de questions. Chaque droite a une
+                    couleur et un tracé distinct, lisible en noir et blanc.
+                  </p>
+                  <p className="type-hint muted">
+                    Facile : intersections et axes. Moyen : parallèles ou sécantes. Avancé : équations des droites.
+                  </p>
                 </div>
               ) : (
                 <SelectBox

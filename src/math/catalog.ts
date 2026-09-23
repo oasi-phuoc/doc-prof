@@ -182,6 +182,15 @@ export const exerciseTypes: ExerciseType[] = [
   t('reperage-cadrans-lire', 'reperage', 'Lire les 4 cadrans', 'Lire les coordonnées de points dans le plan (axes et cadrans).', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
   t('reperage-cadrans-placer', 'reperage', 'Placer dans les 4 cadrans', 'Placer des points sur un repère vide à partir des coordonnées.', 'Placez chaque point à l’emplacement indiqué.', 'geo', { preferredColumns: 1 }),
   t('reperage-cadrans-libre', 'reperage', 'Composer les points', 'Placer vous-même les points A, B, C… directement sur le repère.', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
+  t(
+    'reperage-droites',
+    'reperage',
+    'Lire les droites',
+    'Lire intersections, intercepts et positions de droites colorées sur un repère.',
+    'Observez les droites du repère. Répondez aux questions.',
+    'geo',
+    { preferredColumns: 1 },
+  ),
   t('reperage-abscisse', 'reperage', 'Abscisse et ordonnée', 'Identifier x ou y.', 'Complétez.', 'ligne', { preferredColumns: 1 }),
 
   t('transformations-axiale', 'transformations', 'Symétrie axiale', 'Image d’un point par une symétrie.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),

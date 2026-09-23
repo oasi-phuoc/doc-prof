@@ -22,8 +22,12 @@ export function isReperageCadrans(typeId: string): boolean {
   )
 }
 
+export function isReperageDroites(typeId: string): boolean {
+  return typeId === 'reperage-droites'
+}
+
 export function isReperagePage(typeId: string): boolean {
-  return isReperageFormes(typeId) || isReperageCadrans(typeId)
+  return isReperageFormes(typeId) || isReperageCadrans(typeId) || isReperageDroites(typeId)
 }
 
 export function axesRangeFor(difficulty: Difficulty): number {

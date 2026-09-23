@@ -1,5 +1,6 @@
+import { clipLineToRange, STROKE_DASH, STROKE_LABEL } from '@/math/coord-droites'
 import { COORD_SHAPE_LABEL, columnLetter, formatAxesNum } from '@/math/coord-reperage'
-import type { CoordScene, CoordShape } from '@/math/types'
+import type { CoordLine, CoordScene, CoordShape } from '@/math/types'
 
 type Pt = { x: number; y: number; label?: string }
 
@@ -345,6 +346,23 @@ function AxesScene({
       <text x={to(0, 0).cx + 5} y={pad - 2} className="axis-label">
         y
       </text>
+      {(scene.lines ?? []).map((line) => {
+        const clip = clipLineToRange(line, range)
+        if (!clip) return null
+        const a = to(clip.x1, clip.y1)
+        const b = to(clip.x2, clip.y2)
+        return (
+          <line
+            key={line.id}
+            x1={a.cx}
+            y1={a.cy}
+            x2={b.cx}
+            y2={b.cy}
+            className={`coord-line line-${line.color}`}
+            strokeDasharray={STROKE_DASH[line.stroke]}
+          />
+        )
+      })}
       {values.map((x) =>
         values.map((y) => {
           const p = to(x, y)
@@ -383,6 +401,31 @@ function AxesScene({
   )
 }
 
+function CoordLineLegend({ lines }: { lines: CoordLine[] }) {
+  return (
+    <ul className="coord-line-legend">
+      {lines.map((line) => (
+        <li key={line.id}>
+          <svg className="coord-line-swatch" viewBox="0 0 28 10" aria-hidden>
+            <line
+              x1="1"
+              y1="5"
+              x2="27"
+              y2="5"
+              className={`coord-line line-${line.color}`}
+              strokeDasharray={STROKE_DASH[line.stroke]}
+            />
+          </svg>
+          <span>
+            droite {line.name}
+            <small> · {STROKE_LABEL[line.stroke]}</small>
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export function CoordGrid({
   point,
   pointImage,
@@ -403,7 +446,13 @@ export function CoordGrid({
   if (scene?.variant === 'polygon') return <PolygonScene scene={scene} />
   if (scene?.variant === 'polar') return <PolarScene scene={scene} />
   if (scene?.variant === 'axes') {
-    return <AxesScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
+    const lines = scene.lines ?? []
+    return (
+      <div className={`coord-axes-wrap${lines.length ? ' has-lines' : ''}`}>
+        <AxesScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
+        {lines.length ? <CoordLineLegend lines={lines} /> : null}
+      </div>
+    )
   }
   if (scene?.variant === 'cells') {
     return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />

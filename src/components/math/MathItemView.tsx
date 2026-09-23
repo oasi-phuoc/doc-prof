@@ -874,16 +874,19 @@ function CoordBlock({
   const isPlace = item.coordTask === 'place'
   const questions = item.coordQuestions ?? []
   const scene = item.coordScene
+  const hasLines = Boolean(scene?.lines?.length)
   const displayScene =
-    isPlace && !show && scene ? { ...scene, marks: [] as typeof scene.marks } : scene
+    ((isPlace || hasLines) && !show && scene)
+      ? { ...scene, marks: [] as typeof scene.marks }
+      : scene
   return (
-    <div className={`coord-block${scene ? ' has-scene' : ''}`}>
+    <div className={`coord-block${scene ? ' has-scene' : ''}${hasLines ? ' has-lines' : ''}`}>
       <CoordGrid
         point={item.point}
         pointImage={item.pointImage}
         showImage={show && Boolean(item.pointImage)}
         scene={displayScene}
-        editable={Boolean(coordEdit && (scene?.variant === 'cells' || scene?.variant === 'axes'))}
+        editable={Boolean(coordEdit && (scene?.variant === 'cells' || scene?.variant === 'axes') && !hasLines)}
         onPlace={
           coordEdit
             ? (x, y) => {
@@ -901,9 +904,10 @@ function CoordBlock({
       <div className="coord-side">
         {item.prompt && questions.length === 0 ? <p className="column-prompt">{item.prompt}</p> : null}
         {questions.length > 0 ? (
-          <div className="coord-questions">
+          <div className={`coord-questions${hasLines ? ' is-lines' : ''}`}>
             {questions.map((question, index) => {
-              const isAxesPoint = scene?.variant === 'axes'
+              const isAxesPoint = scene?.variant === 'axes' && !hasLines
+              const isPair = question.reply === 'pair' || (isAxesPoint && question.reply !== 'text')
               return (
                 <div className="coord-question" key={`${question.prompt}-${index}`}>
                   <span className="coord-question-label">
@@ -912,9 +916,9 @@ function CoordBlock({
                     ) : null}
                     {isAxesPoint ? `${question.prompt} est en` : question.prompt}
                   </span>
-                  {isPlace || (isAxesPoint && show) ? (
+                  {isPlace || (isPair && show) ? (
                     <strong className={isPlace ? 'coord-given' : 'filled-answer'}>{question.answer}</strong>
-                  ) : isAxesPoint ? (
+                  ) : isPair ? (
                     <span className="coord-pair">
                       (
                       <span className="answer-line-field compact">{'\u00a0'}</span>
@@ -925,7 +929,9 @@ function CoordBlock({
                   ) : show ? (
                     <strong className="filled-answer">{question.answer}</strong>
                   ) : (
-                    <span className="answer-line-field">{'\u00a0'}</span>
+                    <span className={`answer-line-field${question.reply === 'text' ? ' compact' : ''}`}>
+                      {'\u00a0'}
+                    </span>
                   )}
                 </div>
               )
