@@ -35,7 +35,14 @@ import {
   lectureTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { COORD_SHAPES, COORD_SHAPE_LABEL, clampCoordSize, coordSizeFor, sceneFromLibre } from '@/math/coord-reperage'
+import {
+  COORD_SHAPES,
+  COORD_SHAPE_LABEL,
+  clampCoordSize,
+  coordSizeFor,
+  isReperageFormes,
+  sceneFromLibre,
+} from '@/math/coord-reperage'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { buildPage } from '@/math/generate'
 import { randomSeed } from '@/math/rng'
@@ -338,7 +345,7 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
-  const isReperageLire = type.id === 'reperage-lire'
+  const isReperage = isReperageFormes(type.id)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -354,10 +361,10 @@ function applyType(type: ExerciseType): Partial<PageConfig> {
             ? { count: 4 }
             : isLecture
               ? { count: 6 }
-              : isReperageLire
+              : isReperage
                 ? { count: 5 }
                 : {}),
-    ...(isReperageLire
+    ...(isReperage
       ? {
           coordLibre: false,
           coordCols: coordSize.cols,
@@ -506,6 +513,9 @@ function GeneratorPage() {
             ? resizeDraftGrids(next.problemDraftGrids, count)
             : undefined
         }
+        if (isReperageFormes(next.exerciseType) && next.coordLibre && next.coordMarks) {
+          next.coordMarks = next.coordMarks.slice(0, Math.max(1, next.count))
+        }
         return next
       }),
     )
@@ -527,27 +537,28 @@ function GeneratorPage() {
     })
   }
 
-  const isReperageLire = activePage.exerciseType === 'reperage-lire'
+  const isReperage = isReperageFormes(activePage.exerciseType)
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
     const cols = clampCoordSize(activePage.coordCols ?? coordSizeFor(activePage.difficulty).cols)
     const rows = clampCoordSize(activePage.coordRows ?? coordSizeFor(activePage.difficulty).rows)
     if (x < 1 || y < 1 || x > cols || y > rows) return
-    const next = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
-    next.push({ x, y, kind })
+    const without = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
+    const replacing = (activePage.coordMarks ?? []).some((mark) => mark.x === x && mark.y === y)
+    if (!replacing && without.length >= activePage.count) return
     updatePage({
       coordLibre: true,
       coordCols: cols,
       coordRows: rows,
       coordAxis: activePage.coordAxis ?? 'letters',
-      coordMarks: next,
-      count: next.length || 1,
+      coordMarks: [...without, { x, y, kind }],
     })
   }
 
   const removeCoordMark = (x: number, y: number) => {
-    const next = (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
-    updatePage({ coordMarks: next, count: next.length || 1 })
+    updatePage({
+      coordMarks: (activePage.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y)),
+    })
   }
 
   const addPage = () => {
@@ -563,7 +574,7 @@ function GeneratorPage() {
         : isProblemExercise(activePage.exerciseType)
           ? { problemDraftGrids: Array.from({ length: activePage.count }, () => true) }
           : {}),
-      ...(activePage.exerciseType === 'reperage-lire'
+      ...(isReperageFormes(activePage.exerciseType)
         ? {
             coordLibre: activePage.coordLibre,
             coordCols: activePage.coordCols,
@@ -719,7 +730,12 @@ function GeneratorPage() {
                 value={activePage.exerciseType}
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
-                  if (type) updatePage(applyType(type))
+                  if (!type) return
+                  if (isReperageFormes(value) && isReperageFormes(activePage.exerciseType)) {
+                    updatePage({ exerciseType: value, topic: type.topic })
+                    return
+                  }
+                  updatePage(applyType(type))
                 }}
               >
                 {typesForTopic(activePage.topic).map((type) => (
@@ -739,9 +755,8 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {!(isReperageLire && activePage.coordLibre) ? (
               <label className="select-shell">
-                <span>{isReperageLire ? 'Formes' : 'QUESTIONS'}</span>
+                <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
                   className={`pill-input${questionsOverflow ? ' is-overflow' : ''}`}
                   aria-label="Nombre de questions"
@@ -765,8 +780,7 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
-              ) : null}
-              {isReperageLire ? (
+              {isReperage ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>
                   <div className="mode-toggle" role="group" aria-label="Mode du tableau">
@@ -870,14 +884,18 @@ function GeneratorPage() {
                         onRemove={removeCoordMark}
                       />
                       <p className="type-hint muted">
-                        Glissez une forme sur une case, ou cliquez une forme puis une case. Cliquez une forme déjà
-                        posée pour la retirer.
+                        Une seule grille : le champ Questions fixe le nombre de formes. Glissez une forme sur une
+                        case, ou cliquez une forme puis une case.
+                      </p>
+                      <p className="type-hint muted">
+                        {(activePage.coordMarks?.length ?? 0)} / {activePage.count} forme
+                        {activePage.count > 1 ? 's' : ''}
                       </p>
                       {(activePage.coordMarks?.length ?? 0) > 0 ? (
                         <button
                           type="button"
                           className="button secondary"
-                          onClick={() => updatePage({ coordMarks: [], count: 1 })}
+                          onClick={() => updatePage({ coordMarks: [] })}
                         >
                           Vider le tableau
                         </button>
@@ -885,8 +903,8 @@ function GeneratorPage() {
                     </>
                   ) : (
                     <p className="type-hint muted">
-                      La taille du tableau grandit avec le niveau. Facile : 5×5, premier cadran. Moyen : 7×7.
-                      Avancé : 10×10, figure ou repère polaire.
+                      Une seule grille. Le champ Questions ajoute des formes. Facile : 5×5. Moyen : 7×7. Avancé :
+                      10×10.
                     </p>
                   )}
                 </div>
@@ -1103,7 +1121,7 @@ function GeneratorPage() {
                     interactiveDraftGrids={isProblemExercise(activePage.exerciseType)}
                     onToggleDraftGrid={toggleDraftGrid}
                     coordEdit={
-                      isReperageLire && activePage.coordLibre
+                      isReperage && activePage.coordLibre
                         ? {
                             selectedKind: selectedCoordShape,
                             onPlace: placeCoordMark,

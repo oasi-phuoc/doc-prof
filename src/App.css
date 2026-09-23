@@ -610,8 +610,10 @@
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px;width:100%
 }
 .coord-question{display:flex;align-items:baseline;gap:8px;min-width:0}
-.coord-question-label{flex:0 0 auto;font-size:13px;font-weight:600}
-.coord-question .answer-line-field,.coord-question .filled-answer{flex:1;min-width:0}
+.coord-question-label{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.coord-question-label svg{flex:0 0 auto;color:var(--ink)}
+.coord-question .answer-line-field,.coord-question .filled-answer,.coord-given{flex:1;min-width:0}
+.coord-given{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
 .coord-libre-panel{display:flex;flex-direction:column;gap:10px}
 .coord-libre-panel>b{font-size:12px}
 .coord-size-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}

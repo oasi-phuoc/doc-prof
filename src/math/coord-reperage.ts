@@ -1,15 +1,18 @@
-import { int, pick, shuffle, type Rng } from './rng'
+import { shuffle, type Rng } from './rng'
 import type {
   CoordAxis,
   CoordMark,
   CoordQuestion,
   CoordScene,
   CoordShape,
-  CoordVertex,
   Difficulty,
   MathItem,
   PageConfig,
 } from './types'
+
+export function isReperageFormes(typeId: string): boolean {
+  return typeId === 'reperage-lire' || typeId === 'reperage-placer'
+}
 
 export const COORD_SHAPES: CoordShape[] = [
   'circle',
@@ -90,70 +93,20 @@ function questionsFromMarks(marks: CoordMark[], axis: CoordAxis, variant: CoordS
   })
 }
 
-function questionsFromVertices(vertices: CoordVertex[]): CoordQuestion[] {
-  return vertices.map((vertex) => ({
-    prompt: `Sommet ${vertex.label}`,
-    answer: `(${vertex.x} ; ${vertex.y})`,
-  }))
-}
-
-function itemFromScene(scene: CoordScene, questions: CoordQuestion[], prompt: string): MathItem {
+function itemFromScene(
+  scene: CoordScene,
+  questions: CoordQuestion[],
+  prompt: string,
+  task: 'read' | 'place',
+): MathItem {
   return {
     layout: 'coord',
     prompt,
     coordScene: scene,
     coordQuestions: questions,
+    coordTask: task,
     answer: questions.map((q) => `${q.prompt} : ${q.answer}`).join(' · '),
   }
-}
-
-function generatePolygon(rng: Rng, cols: number, rows: number): CoordVertex[] {
-  const kind = pick(rng, ['l', 'house', 'steps', 'rect'] as const)
-  const ox = int(rng, 1, Math.max(1, cols - 6))
-  const oy = int(rng, 1, Math.max(1, rows - 6))
-  const raw: Array<{ x: number; y: number }> =
-    kind === 'l'
-      ? [
-          { x: 0, y: 0 },
-          { x: 4, y: 0 },
-          { x: 4, y: 2 },
-          { x: 2, y: 2 },
-          { x: 2, y: 5 },
-          { x: 0, y: 5 },
-        ]
-      : kind === 'house'
-        ? [
-            { x: 0, y: 0 },
-            { x: 4, y: 0 },
-            { x: 4, y: 3 },
-            { x: 2, y: 5 },
-            { x: 0, y: 3 },
-          ]
-        : kind === 'steps'
-          ? [
-              { x: 0, y: 0 },
-              { x: 6, y: 0 },
-              { x: 6, y: 2 },
-              { x: 4, y: 2 },
-              { x: 4, y: 4 },
-              { x: 2, y: 4 },
-              { x: 2, y: 6 },
-              { x: 0, y: 6 },
-            ]
-          : [
-              { x: 0, y: 0 },
-              { x: 5, y: 0 },
-              { x: 5, y: 3 },
-              { x: 0, y: 3 },
-            ]
-  const maxX = Math.max(...raw.map((p) => p.x))
-  const maxY = Math.max(...raw.map((p) => p.y))
-  const scale = Math.min((cols - ox) / maxX, (rows - oy) / maxY, 1)
-  return raw.map((p, i) => ({
-    x: Math.round((ox + p.x * scale) * 10) / 10,
-    y: Math.round((oy + p.y * scale) * 10) / 10,
-    label: String.fromCharCode(65 + i),
-  }))
 }
 
 function generateCells(rng: Rng, cols: number, rows: number, count: number, axis: CoordAxis): {
@@ -171,20 +124,6 @@ function generateCells(rng: Rng, cols: number, rows: number, count: number, axis
   return { scene, questions: questionsFromMarks(marks, axis, 'cells') }
 }
 
-function generatePolar(rng: Rng, count: number): { scene: CoordScene; questions: CoordQuestion[] } {
-  const rays = 6
-  const rings = 4
-  const kinds = shuffle(rng, COORD_SHAPES.filter((k) => k !== 'point'))
-  const cells = uniqueCells(rng, rays, rings, count)
-  const marks: CoordMark[] = cells.map((cell, i) => ({
-    x: cell.x,
-    y: cell.y,
-    kind: kinds[i % kinds.length]!,
-  }))
-  const scene: CoordScene = { variant: 'polar', cols: rays, rows: rings, axis: 'letters', marks }
-  return { scene, questions: questionsFromMarks(marks, 'letters', 'polar') }
-}
-
 export function sceneFromLibre(config: PageConfig): CoordScene {
   const cols = clampCoordSize(config.coordCols ?? 7)
   const rows = clampCoordSize(config.coordRows ?? 7)
@@ -197,49 +136,30 @@ export function tryGenerateReperage(
   config: PageConfig,
   rng: Rng,
 ): { items: MathItem[]; instruction: string } | null {
-  if (config.exerciseType !== 'reperage-lire') return null
+  if (!isReperageFormes(config.exerciseType)) return null
   const difficulty = config.difficulty ?? 'moyen'
+  const task = config.exerciseType === 'reperage-placer' ? 'place' : 'read'
+  const instruction =
+    task === 'place'
+      ? 'Dessinez chaque forme à l’emplacement indiqué.'
+      : 'Écrivez les coordonnées de chaque forme.'
 
   if (config.coordLibre) {
     const scene = sceneFromLibre(config)
-    const questions = questionsFromMarks(scene.marks, scene.axis, scene.variant)
+    const limited = { ...scene, marks: scene.marks.slice(0, Math.max(1, config.count || scene.marks.length || 1)) }
+    const questions = questionsFromMarks(limited.marks, limited.axis, limited.variant)
     return {
-      instruction: 'Écrivez les coordonnées de chaque forme.',
-      items: [itemFromScene(scene, questions, 'Écrivez les coordonnées de chaque forme.')],
+      instruction,
+      items: [itemFromScene(limited, questions, instruction, task)],
     }
   }
 
   const { cols, rows } = coordSizeFor(difficulty)
-  const markCount = Math.max(3, Math.min(config.count || 5, cols * rows, 10))
-
-  if (difficulty === 'avance' && rng() < 0.34) {
-    const polar = generatePolar(rng, markCount)
-    return {
-      instruction: 'Écrivez le rayon et le cercle de chaque forme, sous la forme (rayon ; cercle).',
-      items: [itemFromScene(polar.scene, polar.questions, 'Écrivez les coordonnées de chaque forme.')],
-    }
-  }
-
-  if (difficulty !== 'facile' && rng() < (difficulty === 'avance' ? 0.4 : 0.28)) {
-    const vertices = generatePolygon(rng, cols, rows)
-    const scene: CoordScene = {
-      variant: 'polygon',
-      cols,
-      rows,
-      axis: 'numeric',
-      marks: [],
-      vertices,
-    }
-    return {
-      instruction: 'Écrivez les coordonnées de chaque sommet.',
-      items: [itemFromScene(scene, questionsFromVertices(vertices), 'Écrivez les coordonnées de chaque sommet.')],
-    }
-  }
-
+  const markCount = Math.max(1, Math.min(config.count || 5, cols * rows))
   const axis: CoordAxis = difficulty === 'avance' || (difficulty === 'moyen' && rng() < 0.45) ? 'numeric' : 'letters'
   const cells = generateCells(rng, cols, rows, markCount, axis)
   return {
-    instruction: 'Écrivez les coordonnées de chaque forme.',
-    items: [itemFromScene(cells.scene, cells.questions, 'Écrivez les coordonnées de chaque forme.')],
+    instruction,
+    items: [itemFromScene(cells.scene, cells.questions, instruction, task)],
   }
 }

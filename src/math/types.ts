@@ -163,6 +163,8 @@ export type MathItem = {
   coordScene?: CoordScene
   /** Questions de lecture de coordonnées liées à coordScene. */
   coordQuestions?: CoordQuestion[]
+  /** `place` : tableau vide côté élève, formes visibles au corrigé. */
+  coordTask?: 'read' | 'place'
   /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
   orderOp?: '<' | '>'
   calcAnswer?: string

@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
-import { CoordGrid } from './CoordGrid'
+import { CoordGrid, CoordShapeButton } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
 import { GeometryFigure } from './GeometryFigure'
 
@@ -871,15 +871,18 @@ function CoordBlock({
   }
 }) {
   const show = mode === 'answers'
+  const isPlace = item.coordTask === 'place'
   const questions = item.coordQuestions ?? []
   const scene = item.coordScene
+  const displayScene =
+    isPlace && !show && scene ? { ...scene, marks: [] as typeof scene.marks } : scene
   return (
     <div className={`coord-block${scene ? ' has-scene' : ''}`}>
       <CoordGrid
         point={item.point}
         pointImage={item.pointImage}
         showImage={show && Boolean(item.pointImage)}
-        scene={scene}
+        scene={displayScene}
         editable={Boolean(coordEdit && scene?.variant === 'cells')}
         onPlace={
           coordEdit
@@ -897,8 +900,13 @@ function CoordBlock({
           <div className="coord-questions">
             {questions.map((question, index) => (
               <div className="coord-question" key={`${question.prompt}-${index}`}>
-                <span className="coord-question-label">{question.prompt}</span>
-                {show ? (
+                <span className="coord-question-label">
+                  {question.kind ? <CoordShapeButton kind={question.kind} size={16} /> : null}
+                  {question.prompt}
+                </span>
+                {isPlace ? (
+                  <strong className="coord-given">{question.answer}</strong>
+                ) : show ? (
                   <strong className="filled-answer">{question.answer}</strong>
                 ) : (
                   <span className="answer-line-field">{'\u00a0'}</span>
