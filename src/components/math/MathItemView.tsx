@@ -898,7 +898,7 @@ function CoordBlock({
     <div
       className={`coord-block${scene ? ' has-scene' : ''}${hasLines || isConstruct ? ' has-lines' : ''}${
         (hasLines || isConstruct) && questions.length >= 7 ? ' is-dense' : ''
-      }`}
+      }${!hasLines && !isConstruct ? ' is-centered' : ''}`}
     >
       <CoordGrid
         point={item.point}
@@ -926,8 +926,16 @@ function CoordBlock({
           <div className={`coord-questions${numbered ? ' is-lines' : ''}`}>
             {questions.map((question, index) => {
               const isAxesPoint = scene?.variant === 'axes' && !hasLines && !isConstruct
-              const isPair = question.reply === 'pair' || (isAxesPoint && question.reply !== 'text')
               const isDraw = question.reply === 'draw'
+              const isPair =
+                question.reply === 'pair' ||
+                (isAxesPoint && question.reply !== 'text' && !isDraw) ||
+                (!isPlace &&
+                  !isConstruct &&
+                  !hasLines &&
+                  !isDraw &&
+                  question.reply !== 'text' &&
+                  (scene?.variant === 'cells' || scene?.variant === 'polygon' || scene?.variant === 'polar'))
               return (
                 <div
                   className={`coord-question${isDraw ? ' is-draw' : ''}`}
@@ -1015,9 +1023,7 @@ export function MathItemView({
           {draftGrid ? 'Grille' : 'Sans'}
         </button>
       ) : null}
-      {item.coordScene?.lines?.length || item.coordTask === 'construct' ? null : (
-        <div className="item-number">{index + 1}.</div>
-      )}
+      {item.coordScene ? null : <div className="item-number">{index + 1}.</div>}
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}

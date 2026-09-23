@@ -50,7 +50,7 @@ export function axesStepFor(difficulty: Difficulty): number {
 }
 
 export function clampCoordRange(n: number): number {
-  return Math.max(3, Math.min(10, Math.round(n) || 5))
+  return Math.max(3, Math.min(20, Math.round(n) || 5))
 }
 
 export function formatAxesNum(n: number): string {
@@ -104,7 +104,7 @@ export function coordSizeFor(difficulty: Difficulty): { cols: number; rows: numb
 }
 
 export function clampCoordSize(n: number): number {
-  return Math.max(3, Math.min(12, Math.round(n) || 5))
+  return Math.max(3, Math.min(20, Math.round(n) || 5))
 }
 
 export function columnLetter(index: number): string {
@@ -148,6 +148,7 @@ function questionsFromMarks(marks: CoordMark[], axis: CoordAxis, variant: CoordS
       prompt,
       answer: variant === 'polar' ? formatPolarCoord(mark.x, mark.y) : formatCellCoord(mark.x, mark.y, axis),
       kind: mark.kind,
+      reply: 'pair',
     }
   })
 }
@@ -196,6 +197,7 @@ function questionsFromAxes(marks: CoordMark[]): CoordQuestion[] {
     prompt: mark.label ?? 'A',
     answer: formatAxesCoord(mark.x, mark.y),
     kind: 'point',
+    reply: 'pair',
   }))
 }
 

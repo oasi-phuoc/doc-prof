@@ -647,6 +647,11 @@
 .coord-grid .grid-line,.coord-grid .axis-line,.coord-grid .axis-label{pointer-events:none}
 .coord-grid .coord-hit{fill:#000;fill-opacity:0;cursor:pointer;pointer-events:all}
 .coord-block.has-scene{gap:10px}
+.coord-block.is-centered{align-items:center}
+.coord-block.is-centered .coord-grid,
+.coord-block.is-centered .coord-axes-wrap{margin-inline:auto}
+.coord-block.is-centered .coord-side{width:100%}
+.exercise-item.layout-coord:not(:has(.item-number)){gap:0}
 .coord-questions{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px;width:100%
 }
@@ -655,8 +660,17 @@
 .coord-question-label svg{flex:0 0 auto;color:var(--ink)}
 .coord-question .answer-line-field,.coord-question .filled-answer,.coord-given{flex:1;min-width:0}
 .coord-given{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
-.coord-pair{display:inline-flex;align-items:baseline;gap:4px;flex:1;min-width:0}
-.coord-pair-sep{font-weight:700}
+.coord-pair{
+  display:inline-flex;align-items:baseline;gap:3px;flex:0 0 auto;min-width:0;width:auto
+}
+.coord-pair-sep{font-weight:700;flex:0 0 auto}
+.coord-pair .answer-line-field,
+.coord-pair .answer-line-field.compact,
+.coord-question .coord-pair .answer-line-field{
+  display:inline-block;flex:0 0 2.35em;width:2.35em;min-width:2.35em;max-width:2.35em;
+  margin:0
+}
+.coord-question .coord-pair .filled-answer{flex:0 0 auto;width:auto}
 .coord-axes-editor .coord-grid{width:100%;max-width:260px}
 .coord-libre-panel{display:flex;flex-direction:column;gap:10px}
 .coord-libre-panel>b{font-size:12px}

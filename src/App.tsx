@@ -874,7 +874,7 @@ function GeneratorPage() {
                             className="pill-input"
                             type="number"
                             min={3}
-                            max={12}
+                            max={20}
                             value={activePage.coordCols ?? 7}
                             onChange={(event) => {
                               const cols = clampCoordSize(Number(event.target.value))
@@ -891,7 +891,7 @@ function GeneratorPage() {
                             className="pill-input"
                             type="number"
                             min={3}
-                            max={12}
+                            max={20}
                             value={activePage.coordRows ?? 7}
                             onChange={(event) => {
                               const rows = clampCoordSize(Number(event.target.value))
@@ -941,7 +941,7 @@ function GeneratorPage() {
                       />
                       <p className="type-hint muted">
                         Une seule grille : le champ Questions fixe le nombre de formes. Glissez une forme sur une
-                        case, ou cliquez une forme puis une case.
+                        case, ou cliquez une forme puis une case. Le tableau va jusqu’à 20 × 20.
                       </p>
                       <p className="type-hint muted">
                         {(activePage.coordMarks?.length ?? 0)} / {activePage.count} forme
@@ -991,27 +991,27 @@ function GeneratorPage() {
                       </button>
                     </div>
                   ) : null}
-                  <label>
-                    Étendue (−n à +n)
-                    <input
-                      className="pill-input"
-                      type="number"
-                      min={3}
-                      max={10}
-                      value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
-                      onChange={(event) => {
-                        const range = clampCoordRange(Number(event.target.value))
-                        updatePage({
-                          coordRange: range,
-                          coordMarks: (activePage.coordMarks ?? []).filter(
-                            (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
-                          ),
-                        })
-                      }}
-                    />
-                  </label>
                   {activePage.coordLibre || activePage.exerciseType === 'reperage-cadrans-libre' ? (
                     <>
+                      <label>
+                        Étendue (−n à +n)
+                        <input
+                          className="pill-input"
+                          type="number"
+                          min={3}
+                          max={20}
+                          value={activePage.coordRange ?? axesRangeFor(activePage.difficulty)}
+                          onChange={(event) => {
+                            const range = clampCoordRange(Number(event.target.value))
+                            updatePage({
+                              coordRange: range,
+                              coordMarks: (activePage.coordMarks ?? []).filter(
+                                (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
+                              ),
+                            })
+                          }}
+                        />
+                      </label>
                       <div className="coord-axes-editor">
                         <CoordGrid
                           scene={sceneFromAxesLibre(activePage, activePage.difficulty)}
@@ -1022,7 +1022,7 @@ function GeneratorPage() {
                       </div>
                       <p className="type-hint muted">
                         Cliquez une intersection pour poser A, B, C… Le champ Questions limite le nombre de points.
-                        Cliquez un point pour le retirer.
+                        Cliquez un point pour le retirer. L’étendue va jusqu’à −20 / +20.
                       </p>
                       <p className="type-hint muted">
                         {(activePage.coordMarks?.length ?? 0)} / {activePage.count} point
