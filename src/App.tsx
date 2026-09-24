@@ -19,6 +19,7 @@ import {
   COURSES,
   CustomDocumentHeader,
   DEFAULT_INSTITUTIONAL,
+  DEFAULT_INSTITUTIONAL_LOGO,
   DocumentFooter,
   InstitutionalDocumentHeader,
   SheetBody,
@@ -1389,6 +1390,34 @@ function GeneratorPage() {
                         Mention
                         <input className="pill-input" value={institutional.schoolTagline}
                           onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Logo
+                        <input
+                          className="pill-input"
+                          value={institutional.logoSrc}
+                          onChange={(event) =>
+                            setInstitutional({ ...institutional, logoSrc: event.target.value })
+                          }
+                          placeholder="/lib/logos/etat-du-valais.webp"
+                        />
+                        <input
+                          className="pill-input"
+                          type="file"
+                          accept="image/*"
+                          aria-label="Remplacer le logo"
+                          onChange={(event) => {
+                            const file = event.target.files?.[0]
+                            if (!file) return
+                            const reader = new FileReader()
+                            reader.onload = () =>
+                              setInstitutional({
+                                ...institutional,
+                                logoSrc: String(reader.result ?? DEFAULT_INSTITUTIONAL_LOGO),
+                              })
+                            reader.readAsDataURL(file)
+                          }}
                         />
                       </label>
                       <label>

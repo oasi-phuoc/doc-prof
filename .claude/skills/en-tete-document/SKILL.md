@@ -29,7 +29,7 @@ Composants : `src/components/math/PrintDocumentChrome.tsx` · styles `.doc-*` da
 - Pied **toujours en bas** de l'A4 (`margin-top: auto`), jamais sous le dernier exercice seulement.
 - Grille d'éval lisible N&B (filets noirs).
 - Niveaux classe : `CLASS_LEVELS` / `CLASS_NUMBERS` / `COURSES` — étendre là, pas en dur dans le JSX.
-- Ne pas copier logos institutionnels réels ; emplacement « Logo » placeholder.
+- Logo institutionnel : `logoSrc` (chemin, URL ou image chargée). Défaut : blason du Valais (`/lib/logos/etat-du-valais.webp`), remplaçable comme les autres champs.
 
 ## Terminé quand
 

@@ -13,7 +13,11 @@ export type InstitutionalHeader = {
   classNumber: string
   course: string
   documentTitle: string
+  /** Chemin, URL ou data URL du logo. Vide = emplacement sans image. */
+  logoSrc: string
 }
+
+export const DEFAULT_INSTITUTIONAL_LOGO = '/lib/logos/etat-du-valais.webp'
 
 export type CustomHeader = {
   logo: string
@@ -33,6 +37,7 @@ export const DEFAULT_INSTITUTIONAL: InstitutionalHeader = {
   classNumber: '01',
   course: 'Mathématiques',
   documentTitle: '',
+  logoSrc: DEFAULT_INSTITUTIONAL_LOGO,
 }
 
 export const CLASS_LEVELS = ['CSC', 'CFR', 'EPL', 'CPR', 'HSS'] as const
@@ -71,8 +76,12 @@ export function InstitutionalDocumentHeader({
           <p className="doc-school-tag">{config.schoolTagline}</p>
         </div>
         <div className="doc-header-org">
-          <div className="doc-logo-slot" aria-hidden>
-            <span>Logo</span>
+          <div className="doc-logo-slot">
+            {config.logoSrc ? (
+              <img src={config.logoSrc} alt="" />
+            ) : (
+              <span aria-hidden>Logo</span>
+            )}
           </div>
           <div className="doc-org-lines">
             <p>{config.orgLine1}</p>
