@@ -1,19 +1,6 @@
-import {
-  ADJECTIFS,
-  ADVERBES,
-  CONJONCTIONS_COORD,
-  CONJONCTIONS_SUB,
-  DETERMINANTS,
-  NOMS,
-  NOMS_PROPRES,
-  PREPOSITIONS,
-  PRONOMS,
-  PRODUCTION_PROMPTS_BY_THEME,
-  VERBES,
-  type NounEntry,
-  type PhraseThemeId,
-} from './phrase-banks'
-import { int, pick, shuffle, type Rng } from './rng'
+import { PHRASE_SENTENCES, joinPhrase } from './phrase-sentences'
+import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
+import { pick, shuffle, type Rng } from './rng'
 import type { Difficulty, MathItem, PhraseCategory, PhraseToken } from './types'
 
 export type PhraseBatch = {
@@ -30,177 +17,39 @@ type BuiltPhrase = {
   verbInfinitive: string
 }
 
-function capitalize(s: string): string {
-  if (!s) return s
-  return s[0]!.toUpperCase() + s.slice(1)
-}
-
-function detFor(noun: NounEntry, rng: Rng): string {
-  if (noun.number === 'plur') return pick(rng, [...DETERMINANTS.plur])
-  return noun.gender === 'f'
-    ? pick(rng, [...DETERMINANTS.f_sing])
-    : pick(rng, [...DETERMINANTS.m_sing])
-}
-
-function adjFor(noun: NounEntry, rng: Rng): string {
-  const adj = pick(rng, ADJECTIFS)
-  const base = noun.gender === 'f' ? adj.f : adj.m
-  if (noun.number === 'plur') {
-    if (base.endsWith('s') || base.endsWith('x')) return base
-    return `${base}s`
-  }
-  return base
-}
-
-function verbForm(rng: Rng, subjectKind: 'je' | 'tu' | 'il' | 'nous' | 'vous' | 'ils'): {
-  infinitive: string
-  conjugated: string
-} {
-  const v = pick(rng, VERBES)
-  return { infinitive: v.infinitive, conjugated: v.forms[subjectKind] }
-}
-
-function subjectKindFromPronoun(p: string): 'je' | 'tu' | 'il' | 'nous' | 'vous' | 'ils' {
-  if (p === 'je') return 'je'
-  if (p === 'tu') return 'tu'
-  if (p === 'nous') return 'nous'
-  if (p === 'vous') return 'vous'
-  if (p === 'ils' || p === 'elles') return 'ils'
-  return 'il'
-}
-
-function makeSubject(rng: Rng): {
-  tokens: PhraseToken[]
-  kind: 'je' | 'tu' | 'il' | 'nous' | 'vous' | 'ils'
-} {
-  const mode = int(rng, 0, 2)
-  if (mode === 0) {
-    const p = pick(rng, [...PRONOMS])
-    return { tokens: [{ text: p, category: 'pronom' }], kind: subjectKindFromPronoun(p) }
-  }
-  if (mode === 1) {
-    const name = pick(rng, [...NOMS_PROPRES])
-    return { tokens: [{ text: name, category: 'nom' }], kind: 'il' }
-  }
-  const noun = pick(
-    rng,
-    NOMS.filter((n) => n.number === 'sing'),
-  )
-  const det = detFor(noun, rng)
-  return {
-    tokens: [
-      { text: det, category: 'determinant' },
-      { text: noun.text, category: 'nom' },
-    ],
-    kind: 'il',
-  }
-}
-
-function makeObject(rng: Rng, withAdj: boolean): PhraseToken[] {
-  if (rng() < 0.25) {
-    return [{ text: pick(rng, [...NOMS_PROPRES]), category: 'nom' }]
-  }
-  const noun = pick(rng, NOMS)
-  const det = detFor(noun, rng)
-  if (withAdj) {
-    return [
-      { text: det, category: 'determinant' },
-      { text: adjFor(noun, rng), category: 'adjectif' },
-      { text: noun.text, category: 'nom' },
-    ]
-  }
-  return [
-    { text: det, category: 'determinant' },
-    { text: noun.text, category: 'nom' },
-  ]
-}
-
-function finish(tokens: PhraseToken[]): BuiltPhrase {
-  const parts = tokens.map((t, i) => (i === 0 ? capitalize(t.text) : t.text))
-  const sentence = `${parts.join(' ')}.`
-  const verb = tokens.find((t) => t.category === 'verbe')
+function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
+  const sentence = joinPhrase(tokens)
+  const verb = tokens.find((token) => token.category === 'verbe')
   const verbText = verb?.text ?? ''
-  return {
-    tokens: tokens.map((t, i) => (i === 0 ? { ...t, text: capitalize(t.text) } : t)),
-    sentence,
-    verbInfinitive:
-      VERBES.find((v) => (Object.values(v.forms) as string[]).includes(verbText))?.infinitive ??
-      'manger',
-  }
+  const infinitive =
+    VERBES.find((entry) => (Object.values(entry.forms) as string[]).includes(verbText))?.infinitive ??
+    verbText
+  return { tokens, sentence, verbInfinitive: infinitive }
 }
 
-function buildPhrase(rng: Rng, theme: PhraseThemeId): BuiltPhrase {
-  const subject = makeSubject(rng)
-  const withAdj =
-    theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
-  const withNeg =
-    theme === 'phrase-negation' ||
-    theme === 'phrase-negation-adjectif' ||
-    theme === 'phrase-negation-adverbe'
-  const withAdv =
-    theme === 'phrase-adverbe' || theme === 'phrase-negation-adverbe'
-  const withPrep = theme === 'phrase-preposition'
-  const withConj = theme === 'phrase-conjonctions'
-
-  const { infinitive, conjugated } = verbForm(rng, subject.kind)
-  void infinitive
-
-  const tokens: PhraseToken[] = [...subject.tokens]
-
-  if (withNeg) {
-    tokens.push({ text: 'ne', category: 'negation' })
-  }
-  if (withAdv && rng() < 0.45) {
-    tokens.push({ text: pick(rng, [...ADVERBES]), category: 'adverbe' })
-  }
-  tokens.push({ text: conjugated, category: 'verbe' })
-  if (withNeg) {
-    tokens.push({ text: 'pas', category: 'negation' })
-  }
-  if (withAdv && !tokens.some((t) => t.category === 'adverbe')) {
-    tokens.push({ text: pick(rng, [...ADVERBES]), category: 'adverbe' })
-  }
-
-  if (withPrep) {
-    tokens.push({ text: pick(rng, [...PREPOSITIONS]), category: 'preposition' })
-    tokens.push(...makeObject(rng, withAdj))
-  } else {
-    tokens.push(...makeObject(rng, withAdj))
-  }
-
-  if (withConj) {
-    const conj =
-      rng() < 0.55 ? pick(rng, [...CONJONCTIONS_COORD]) : pick(rng, [...CONJONCTIONS_SUB])
-    tokens.push({ text: conj, category: 'conjonction' })
-    const sub2 = makeSubject(rng)
-    const v2 = verbForm(rng, sub2.kind)
-    tokens.push(...sub2.tokens)
-    tokens.push({ text: v2.conjugated, category: 'verbe' })
-    tokens.push(...makeObject(rng, false))
-  }
-
-  const built = finish(tokens)
-  built.verbInfinitive =
-    VERBES.find((v) => (Object.values(v.forms) as string[]).includes(conjugated))?.infinitive ??
-    conjugated
-  return built
+function pickPhrase(rng: Rng, theme: PhraseThemeId, used: Set<string>): BuiltPhrase {
+  const bank = PHRASE_SENTENCES[theme]
+  const unused = bank.filter((tokens) => !used.has(joinPhrase(tokens)))
+  const pool = unused.length ? unused : bank
+  const tokens = pick(rng, pool)
+  used.add(joinPhrase(tokens))
+  return builtFromTokens(tokens)
 }
 
 /** Séquence de pastilles cohérente pour le thème (type 3). */
 function pastillePattern(theme: PhraseThemeId, rng: Rng): PhraseCategory[] {
-  const subj: PhraseCategory[] =
-    rng() < 0.4 ? ['pronom'] : rng() < 0.5 ? ['nom'] : ['determinant', 'nom']
+  const subj: PhraseCategory[] = rng() < 0.5 ? ['pronom'] : ['determinant', 'nom']
   switch (theme) {
     case 'phrase-simple':
       return [...subj, 'verbe', 'determinant', 'nom']
     case 'phrase-negation':
       return [...subj, 'negation', 'verbe', 'negation', 'determinant', 'nom']
     case 'phrase-adjectif':
-      return rng() < 0.5
-        ? [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
-        : ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'nom']
+      return [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
     case 'phrase-negation-adjectif':
       return [...subj, 'negation', 'verbe', 'negation', 'determinant', 'adjectif', 'nom']
+    case 'phrase-negation-determinants':
+      return ['determinant', 'nom', 'negation', 'verbe', 'negation', 'determinant', 'nom']
     case 'phrase-preposition':
       return [...subj, 'verbe', 'preposition', 'determinant', 'nom']
     case 'phrase-adverbe':
@@ -208,7 +57,7 @@ function pastillePattern(theme: PhraseThemeId, rng: Rng): PhraseCategory[] {
     case 'phrase-negation-adverbe':
       return [...subj, 'negation', 'verbe', 'negation', 'adverbe', 'determinant', 'nom']
     case 'phrase-conjonctions':
-      return [...subj, 'verbe', 'determinant', 'nom', 'conjonction', 'pronom', 'verbe', 'determinant', 'nom']
+      return [...subj, 'verbe', 'determinant', 'nom', 'conjonction', 'determinant', 'nom', 'verbe', 'determinant', 'nom']
   }
 }
 
@@ -217,7 +66,7 @@ function typeColor(phrase: BuiltPhrase): MathItem {
     layout: 'phrase-color',
     prompt: undefined,
     tokens: phrase.tokens,
-    answer: phrase.tokens.map((t) => t.category).join(' · '),
+    answer: phrase.tokens.map((token) => token.category).join(' · '),
     responseAnswer: phrase.sentence,
   }
 }
@@ -229,7 +78,7 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
     tokens: scrambled,
     answer: phrase.sentence,
     responseAnswer: phrase.sentence,
-    labels: phrase.tokens.map((t) => t.text),
+    labels: phrase.tokens.map((token) => token.text),
   }
 }
 
@@ -257,7 +106,7 @@ function typeWrite(rng: Rng, theme: PhraseThemeId, countLines: number): MathItem
 
 function parsePhraseType(typeId: string): { theme: PhraseThemeId; kind: string } | null {
   const m =
-    /^(phrase-simple|phrase-negation-adjectif|phrase-negation-adverbe|phrase-negation|phrase-adjectif|phrase-preposition|phrase-adverbe|phrase-conjonctions)-(colorier|ordre|construire|ecrire)$/.exec(
+    /^(phrase-simple|phrase-negation-adjectif|phrase-negation-adverbe|phrase-negation-determinants|phrase-negation|phrase-adjectif|phrase-preposition|phrase-adverbe|phrase-conjonctions)-(colorier|ordre|construire|ecrire)$/.exec(
       typeId,
     )
   if (!m) return null
@@ -315,12 +164,13 @@ export function tryGeneratePhraseBatch(
     }
   }
 
+  const used = new Set<string>()
   const items: MathItem[] = []
   for (let i = 0; i < n; i++) {
     if (kind === 'construire') {
       items.push(typeBuild(rng, theme))
     } else {
-      const phrase = buildPhrase(rng, theme)
+      const phrase = pickPhrase(rng, theme, used)
       if (kind === 'colorier') items.push(typeColor(phrase))
       else items.push(typeOrder(rng, phrase))
     }

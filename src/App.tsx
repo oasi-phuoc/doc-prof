@@ -36,6 +36,7 @@ import {
   frenchTopics,
   geometryTopics,
   isDraftPadExercise,
+  isQuadExercise,
   lectureTopics,
   phraseTopics,
   typesForTopic,
@@ -58,6 +59,12 @@ import {
   sceneFromLibre,
 } from '@/math/coord-reperage'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
+import {
+  AREA_QUAD_FIGURES,
+  PERI_QUAD_FIGURES,
+  QUAD_SHAPE_LABELS,
+  VOLUME_QUAD_FIGURES,
+} from '@/math/mesures'
 import { buildWorksheets } from '@/math/generate'
 import {
   addPageBlock,
@@ -697,6 +704,13 @@ function GeneratorPage() {
   const isFormes = isReperageFormes(activeBlock.exerciseType)
   const isDroites = isReperageDroites(activeBlock.exerciseType)
   const isConstruire = isReperageConstruire(activeBlock.exerciseType)
+  const isQuadType = isQuadExercise(activeBlock.exerciseType)
+  const isNumberLibreDomain = activePage.domain === 'algèbre' || activePage.domain === 'géométrie'
+  const quadPool = activeBlock.exerciseType.startsWith('volumes-')
+    ? VOLUME_QUAD_FIGURES
+    : activeBlock.exerciseType.startsWith('aires-')
+      ? AREA_QUAD_FIGURES
+      : PERI_QUAD_FIGURES
   const activeAsPage = pageAsConfig(activePage, activeBlock)
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
@@ -778,6 +792,12 @@ function GeneratorPage() {
       coordAxis: fields.coordAxis,
       coordMarks: fields.coordMarks,
       coordRange: fields.coordRange,
+      numberLibre: activeBlock.numberLibre,
+      numberMin: activeBlock.numberMin,
+      numberMax: activeBlock.numberMax,
+      numberDecimals: activeBlock.numberDecimals,
+      quadLibre: isQuadExercise(nextType.id) ? activeBlock.quadLibre : undefined,
+      quadShapes: isQuadExercise(nextType.id) ? activeBlock.quadShapes : undefined,
     }
     setPages((current) =>
       current.map((page, index) => (index === pageIndex ? addPageBlock(page, newBlock) : page)),
@@ -1025,17 +1045,134 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              <SelectBox
-                label="Niveau"
-                value={activeBlock.difficulty ?? 'moyen'}
-                onChange={(value) => updatePage({ difficulty: value as Difficulty })}
-              >
-                {DIFFICULTY_OPTIONS.map((opt) => (
-                  <option value={opt.value} key={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </SelectBox>
+              <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
+                <SelectBox
+                  label="Niveau"
+                  value={activeBlock.difficulty ?? 'moyen'}
+                  onChange={(value) => updatePage({ difficulty: value as Difficulty })}
+                >
+                  {DIFFICULTY_OPTIONS.map((opt) => (
+                    <option value={opt.value} key={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </SelectBox>
+                {isNumberLibreDomain ? (
+                  <button
+                    type="button"
+                    className={`niveau-libre-btn${activeBlock.numberLibre ? ' active' : ''}`}
+                    aria-pressed={!!activeBlock.numberLibre}
+                    aria-label="Saisir les valeurs"
+                    title="Saisir les valeurs à la place du niveau"
+                    onClick={() =>
+                      updatePage({
+                        numberLibre: !activeBlock.numberLibre,
+                        numberMin: activeBlock.numberMin ?? 1,
+                        numberMax: activeBlock.numberMax ?? 100,
+                      })
+                    }
+                  >
+                    Valeurs
+                  </button>
+                ) : null}
+              </div>
+              {isNumberLibreDomain && activeBlock.numberLibre ? (
+                <div className="number-libre-fields">
+                  <label className="select-shell">
+                    <span>De</span>
+                    <input
+                      className="pill-input"
+                      type="number"
+                      inputMode="decimal"
+                      step={activeBlock.numberDecimals ? 0.1 : 1}
+                      value={activeBlock.numberMin ?? 1}
+                      onChange={(event) => updatePage({ numberMin: Number(event.target.value) })}
+                    />
+                  </label>
+                  <label className="select-shell">
+                    <span>À</span>
+                    <input
+                      className="pill-input"
+                      type="number"
+                      inputMode="decimal"
+                      step={activeBlock.numberDecimals ? 0.1 : 1}
+                      value={activeBlock.numberMax ?? 100}
+                      onChange={(event) => updatePage({ numberMax: Number(event.target.value) })}
+                    />
+                  </label>
+                  <div className="mode-toggle-block">
+                    <b>Décimales</b>
+                    <div className="mode-toggle">
+                      <button
+                        type="button"
+                        className={!activeBlock.numberDecimals ? 'active' : ''}
+                        onClick={() => updatePage({ numberDecimals: false })}
+                      >
+                        Sans
+                      </button>
+                      <button
+                        type="button"
+                        className={activeBlock.numberDecimals ? 'active' : ''}
+                        onClick={() => updatePage({ numberDecimals: true })}
+                      >
+                        Avec
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+              {isQuadType ? (
+                <div className="quad-libre-block">
+                  <div className="mode-toggle-block">
+                    <b>Formes</b>
+                    <div className="mode-toggle">
+                      <button
+                        type="button"
+                        className={!activeBlock.quadLibre ? 'active' : ''}
+                        onClick={() => updatePage({ quadLibre: false, quadShapes: undefined })}
+                      >
+                        Hasard
+                      </button>
+                      <button
+                        type="button"
+                        className={activeBlock.quadLibre ? 'active' : ''}
+                        onClick={() =>
+                          updatePage({
+                            quadLibre: true,
+                            quadShapes: activeBlock.quadShapes?.length ? activeBlock.quadShapes : [...quadPool],
+                          })
+                        }
+                      >
+                        Choisir
+                      </button>
+                    </div>
+                  </div>
+                  {activeBlock.quadLibre ? (
+                    <div className="quad-shape-list">
+                      {quadPool.map((figure) => {
+                        const selected = (activeBlock.quadShapes ?? quadPool).includes(figure)
+                        return (
+                          <button
+                            key={figure}
+                            type="button"
+                            className={selected ? 'active' : ''}
+                            aria-pressed={selected}
+                            onClick={() => {
+                              const current = activeBlock.quadShapes ?? [...quadPool]
+                              const next = selected
+                                ? current.filter((item) => item !== figure)
+                                : [...current, figure]
+                              updatePage({ quadShapes: next.length ? next : [figure] })
+                            }}
+                          >
+                            {QUAD_SHAPE_LABELS[figure] ?? figure}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input

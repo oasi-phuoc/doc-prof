@@ -393,9 +393,26 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'rhombus' && (
           <>
             <polygon points="130,28 200,95 130,162 60,95" />
+            {hasHeight && (
+              <line
+                x1="200"
+                y1="95"
+                x2="60"
+                y2="95"
+                fill="none"
+                strokeDasharray="5 4"
+                strokeWidth="1.4"
+                strokeOpacity="0.85"
+              />
+            )}
             {(d.side != null || d.ask === 'side') && (
               <L x={130} y={180}>
                 {d.ask === 'side' ? '?' : `${fmt(d.side!)} ${unit}`}
+              </L>
+            )}
+            {(d.height != null || d.ask === 'height') && (
+              <L x={210} y={92} anchor="start">
+                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
               </L>
             )}
           </>

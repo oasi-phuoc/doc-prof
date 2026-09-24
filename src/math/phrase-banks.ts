@@ -564,6 +564,7 @@ export type PhraseThemeId =
   | 'phrase-negation'
   | 'phrase-adjectif'
   | 'phrase-negation-adjectif'
+  | 'phrase-negation-determinants'
   | 'phrase-preposition'
   | 'phrase-adverbe'
   | 'phrase-negation-adverbe'
@@ -617,6 +618,20 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases avec beau / belle.',
     'Écrivez des phrases pour décrire un lieu (adjectif).',
     'Écrivez des phrases avec un adjectif avant ou après le nom.',
+  ],
+  'phrase-negation-determinants': [
+    'Écrivez des phrases négatives avec mon, ma, tes, cette…',
+    'Écrivez des phrases négatives avec un déterminant possessif.',
+    'Écrivez des phrases négatives avec ce, cet, cette, ces.',
+    'Écrivez ce que votre famille ne fait pas (mon, ma, notre…).',
+    'Écrivez des phrases : mon / ma / mes + ne… pas.',
+    'Écrivez des phrases négatives avec ton / ta / tes.',
+    'Écrivez des phrases négatives avec son / sa / ses.',
+    'Écrivez des phrases négatives avec leur / leurs.',
+    'Écrivez des phrases pour dire ce que cet élève ne fait pas.',
+    'Écrivez des phrases négatives avec notre / votre.',
+    'Écrivez des phrases : cette personne ne… pas.',
+    'Écrivez des phrases négatives pour parler d’un proche (déterminant).',
   ],
   'phrase-negation-adjectif': [
     'Écrivez des phrases négatives avec un adjectif.',

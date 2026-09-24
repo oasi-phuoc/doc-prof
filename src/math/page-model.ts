@@ -15,6 +15,12 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     coordAxis: page.coordAxis,
     coordMarks: page.coordMarks,
     coordRange: page.coordRange,
+    numberLibre: page.numberLibre,
+    numberMin: page.numberMin,
+    numberMax: page.numberMax,
+    numberDecimals: page.numberDecimals,
+    quadLibre: page.quadLibre,
+    quadShapes: page.quadShapes,
   }
 }
 

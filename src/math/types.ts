@@ -326,6 +326,14 @@ export type ExerciseBlock = {
   coordMarks?: CoordMark[]
   /** Étendue du repère à 4 cadrans (−n à +n). */
   coordRange?: number
+  /** Bornes de nombres libres à la place du niveau. */
+  numberLibre?: boolean
+  numberMin?: number
+  numberMax?: number
+  numberDecimals?: boolean
+  /** Choix des quadrilatères (sinon tirage au hasard parmi toutes les formes). */
+  quadLibre?: boolean
+  quadShapes?: Figure[]
 }
 
 export type PageConfig = ExerciseBlock & {

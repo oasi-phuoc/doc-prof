@@ -5,14 +5,16 @@ import {
 } from './algebra'
 import { exerciseTypeById, topicById } from './catalog'
 import {
-  calcBound,
   columnAddPair,
   columnSubPair,
   nombreBound,
+  numberRangeFrom,
   pairAdd,
   pairDiv,
   pairMul,
   pairSub,
+  upperBound,
+  type NumberRange,
 } from './difficulty'
 import { numberToFrench } from './french-numbers'
 import { generatePerimetreCompose } from './perimetre-compose'
@@ -33,6 +35,7 @@ import type {
   ArithOp,
   Difficulty,
   DivisionStep,
+  Figure,
   MathItem,
   MissingPos,
   PageConfig,
@@ -295,22 +298,36 @@ function decStr(n: number): string {
 
 const PLACE = ['unités', 'dizaines', 'centaines', 'milliers'] as const
 
-function generateItems(typeId: string, count: number, rng: Rng, difficulty: Difficulty): MathItem[] {
+function generateItems(
+  typeId: string,
+  count: number,
+  rng: Rng,
+  difficulty: Difficulty,
+  range?: NumberRange,
+  shapes?: Figure[],
+): MathItem[] {
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
-    items.push(generateOne(typeId, rng, i, difficulty))
+    items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
   }
   return normalizeDivisionLayouts(normalizeColumnLayouts(items))
 }
 
-function generateOne(typeId: string, rng: Rng, index: number, difficulty: Difficulty): MathItem {
+function generateOne(
+  typeId: string,
+  rng: Rng,
+  index: number,
+  difficulty: Difficulty,
+  range?: NumberRange,
+  shapes?: Figure[],
+): MathItem {
   const routed =
     tryGenerateFigure(typeId, index) ??
     tryGenerateConversion(typeId, rng, difficulty) ??
-    tryGenerateMesure(typeId, rng, difficulty)
+    tryGenerateMesure(typeId, rng, difficulty, range, shapes)
   if (routed) return routed
-  const max = calcBound(difficulty)
-  const nMax = nombreBound(difficulty)
+  const max = upperBound(difficulty, range)
+  const nMax = range ? range.max : nombreBound(difficulty)
   switch (typeId) {
     case 'nombres-chiffres': {
       const n = int(rng, 0, Math.min(999, nMax))
@@ -375,7 +392,7 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
     case 'nombres-encadrer-10':
     case 'nombres-encadrer-100': {
       const unit = typeId === 'nombres-encadrer-10' ? 10 : 100
-      const hi = Math.max(unit * 2 + 1, calcBound(difficulty))
+      const hi = Math.max(unit * 2 + 1, max)
       let n = int(rng, unit + 1, hi)
       while (n % unit === 0) n = int(rng, unit + 1, hi)
       const lo = Math.floor(n / unit) * unit
@@ -388,7 +405,7 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       }
     }
     case 'nombres-pair': {
-      const n = int(rng, 1, Math.min(999, calcBound(difficulty)))
+      const n = int(rng, 1, Math.min(999, max))
       return {
         layout: 'select',
         prompt: String(n),
@@ -397,7 +414,6 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       }
     }
     case 'nombres-ranger': {
-      const max = calcBound(difficulty)
       const pool = [
         int(rng, 1, Math.min(50, max)),
         int(rng, 10, Math.min(99, max)),
@@ -437,21 +453,21 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       }
     }
     case 'addition-ligne': {
-      const p = pairAdd(rng, difficulty)
+      const p = pairAdd(rng, difficulty, range)
       return inlineOp('+', p.a, p.b, p.result)
     }
     case 'addition-trou': {
-      const p = pairAdd(rng, difficulty)
+      const p = pairAdd(rng, difficulty, range)
       return inlineOp('+', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'addition-colonne':
     case 'addition-colonne-poser': {
-      const p = columnAddPair(rng, difficulty)
+      const p = columnAddPair(rng, difficulty, range)
       return columnItem('+', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'addition-comparer': {
-      const p = pairAdd(rng, difficulty)
-      const q = pairAdd(rng, difficulty)
+      const p = pairAdd(rng, difficulty, range)
+      const q = pairAdd(rng, difficulty, range)
       const left = p.result
       const right = q.result
       return {
@@ -462,21 +478,21 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       }
     }
     case 'soustraction-ligne': {
-      const p = pairSub(rng, difficulty)
+      const p = pairSub(rng, difficulty, range)
       return inlineOp('−', p.a, p.b, p.result)
     }
     case 'soustraction-trou': {
-      const p = pairSub(rng, difficulty)
+      const p = pairSub(rng, difficulty, range)
       return inlineOp('−', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'soustraction-colonne':
     case 'soustraction-colonne-poser': {
-      const p = columnSubPair(rng, difficulty)
+      const p = columnSubPair(rng, difficulty, range)
       return columnItem('−', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'soustraction-comparer': {
-      const p = pairSub(rng, difficulty)
-      const q = pairSub(rng, difficulty)
+      const p = pairSub(rng, difficulty, range)
+      const q = pairSub(rng, difficulty, range)
       const left = p.result
       const right = q.result
       return {
@@ -498,19 +514,19 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       return { layout: 'inline', prompt: `${n} ≈`, answer: String(roundTo(n, 100)) }
     }
     case 'estimation-somme': {
-      const p = pairAdd(rng, difficulty === 'facile' ? 'facile' : 'moyen')
+      const p = pairAdd(rng, difficulty === 'facile' ? 'facile' : 'moyen', range)
       return { layout: 'inline', prompt: `${p.a} + ${p.b} ≈`, answer: String(roundTo(p.a, 10) + roundTo(p.b, 10)) }
     }
     case 'estimation-difference': {
-      const p = pairSub(rng, difficulty === 'facile' ? 'facile' : 'moyen')
+      const p = pairSub(rng, difficulty === 'facile' ? 'facile' : 'moyen', range)
       return { layout: 'inline', prompt: `${p.a} − ${p.b} ≈`, answer: String(roundTo(p.a, 10) - roundTo(p.b, 10)) }
     }
     case 'multiplication-ligne': {
-      const p = pairMul(rng, difficulty)
+      const p = pairMul(rng, difficulty, range)
       return inlineOp('×', p.a, p.b, p.result)
     }
     case 'multiplication-trou': {
-      const p = pairMul(rng, difficulty)
+      const p = pairMul(rng, difficulty, range)
       return inlineOp('×', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'multiplication-colonne':
@@ -547,11 +563,11 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
       }
     }
     case 'division-ligne': {
-      const p = pairDiv(rng, difficulty)
+      const p = pairDiv(rng, difficulty, range)
       return inlineOp('÷', p.a, p.b, p.result)
     }
     case 'division-trou': {
-      const p = pairDiv(rng, difficulty)
+      const p = pairDiv(rng, difficulty, range)
       return inlineOp('÷', p.a, p.b, p.result, pick(rng, ['a', 'b'] as const))
     }
     case 'division-colonne':
@@ -910,7 +926,7 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
     case 'equations-systeme-add':
       return generateSystemAddition(rng)
     case 'perimetres-composees': {
-      return generatePerimetreCompose(rng, difficulty)
+      return generatePerimetreCompose(rng, difficulty, range)
     }
     case 'reperage-lire': {
       const x = int(rng, -4, 5)
@@ -1037,7 +1053,14 @@ function buildSingleBlock(
   return {
     title: fallbackTitle,
     instruction: type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
-    items: generateItems(config.exerciseType, config.count, rng, difficulty),
+    items: generateItems(
+      config.exerciseType,
+      config.count,
+      rng,
+      difficulty,
+      numberRangeFrom(config),
+      config.quadLibre ? config.quadShapes : undefined,
+    ),
   }
 }
 

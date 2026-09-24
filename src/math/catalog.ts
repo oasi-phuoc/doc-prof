@@ -53,6 +53,7 @@ export const topics: Topic[] = [
   { id: 'phrase-negation', label: 'Négation simple', domain: 'phrase' },
   { id: 'phrase-adjectif', label: 'Adjectif', domain: 'phrase' },
   { id: 'phrase-negation-adjectif', label: 'Négation avec adjectif', domain: 'phrase' },
+  { id: 'phrase-negation-determinants', label: 'Négation déterminants', domain: 'phrase' },
   { id: 'phrase-preposition', label: 'Préposition', domain: 'phrase' },
   { id: 'phrase-adverbe', label: 'Adverbe', domain: 'phrase' },
   { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'phrase' },
@@ -191,15 +192,17 @@ export const exerciseTypes: ExerciseType[] = [
   t('perimetres-rectangle', 'perimetres', 'Rectangle', 'Périmètre d’un rectangle.', 'Calculez le périmètre.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
   t('perimetres-triangle', 'perimetres', 'Triangle', 'Périmètre d’un triangle (tous types).', 'Calculez le périmètre.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('perimetres-parallelogramme', 'perimetres', 'Parallélogramme', 'Périmètre d’un parallélogramme.', 'Calculez le périmètre.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
-  t('perimetres-trapeze', 'perimetres', 'Trapèze', 'Périmètre d’un trapèze.', 'Calculez le périmètre.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
-  t('perimetres-cercle', 'perimetres', 'Cercle', 'Périmètre = 2πr. Prenez π = 3,14.', 'Calculez le périmètre. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t('perimetres-losange', 'perimetres', 'Losange', 'Périmètre d’un losange.', 'Calculez le périmètre.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
+  t('perimetres-trapeze', 'perimetres', 'Trapèze', 'Périmètre d’un trapèze.', 'Calculez le périmètre.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
+  t('perimetres-quadrilatere', 'perimetres', 'Quadrilatère', 'Périmètre des quadrilatères (sauf le cercle). Hasard ou choix des formes.', 'Calculez le périmètre.', 'geo', { preferredColumns: 2 }),
+  t('perimetres-cercle', 'perimetres', 'Cercle', 'Périmètre = 2πr. Prenez π = 3,14.', 'Calculez le périmètre. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t('perimetres-carre-manquant', 'perimetres', 'Côté du carré', 'Retrouver le côté à partir du périmètre.', 'Calculez le côté.', 'geo', { figure: 'square', preferredColumns: 2 }),
   t('perimetres-rectangle-manquant', 'perimetres', 'Largeur du rectangle', 'Retrouver une dimension à partir du périmètre.', 'Calculez la largeur.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
   t('perimetres-triangle-manquant', 'perimetres', 'Côté du triangle', 'Retrouver un côté à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('perimetres-parallelogramme-manquant', 'perimetres', 'Côté du parallélogramme', 'Retrouver un côté à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
   t('perimetres-losange-manquant', 'perimetres', 'Côté du losange', 'Retrouver le côté à partir du périmètre.', 'Calculez le côté.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
   t('perimetres-trapeze-manquant', 'perimetres', 'Côté du trapèze', 'Retrouver un côté à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
+  t('perimetres-quadrilatere-manquant', 'perimetres', 'Côté de quadrilatère', 'Retrouver un côté d’un quadrilatère à partir du périmètre.', 'Calculez le côté demandé.', 'geo', { preferredColumns: 2 }),
   t('perimetres-cercle-manquant', 'perimetres', 'Rayon du cercle', 'Retrouver le rayon à partir du périmètre.', 'Calculez le rayon. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t(
     'perimetres-melange',
@@ -224,23 +227,29 @@ export const exerciseTypes: ExerciseType[] = [
   t('aires-rectangle', 'aires', 'Rectangle', 'Aire d’un rectangle.', 'Calculez l’aire.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
   t('aires-triangle', 'aires', 'Triangle', 'Aire = (b × h) / 2 (tous types).', 'Calculez l’aire.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('aires-parallelogramme', 'aires', 'Parallélogramme', 'Aire = b × h.', 'Calculez l’aire.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('aires-losange', 'aires', 'Losange', 'Aire = c × h.', 'Calculez l’aire.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
   t('aires-trapeze', 'aires', 'Trapèze', 'Aire = (B + b) × h / 2.', 'Calculez l’aire.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
+  t('aires-quadrilatere', 'aires', 'Quadrilatère', 'Aire des quadrilatères (sauf le disque). Hasard ou choix des formes.', 'Calculez l’aire.', 'geo', { preferredColumns: 2 }),
   t('aires-disque', 'aires', 'Disque', 'Aire = πr². Prenez π = 3,14.', 'Calculez l’aire. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t('aires-carre-manquant', 'aires', 'Côté du carré', 'Retrouver le côté à partir de l’aire.', 'Calculez le côté.', 'geo', { figure: 'square', preferredColumns: 2 }),
   t('aires-rectangle-manquant', 'aires', 'Largeur du rectangle', 'Retrouver la largeur à partir de l’aire.', 'Calculez la largeur.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
   t('aires-triangle-manquant', 'aires', 'Hauteur du triangle', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('aires-parallelogramme-manquant', 'aires', 'Hauteur du parallélogramme', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
+  t('aires-losange-manquant', 'aires', 'Hauteur du losange', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
   t('aires-trapeze-manquant', 'aires', 'Hauteur du trapèze', 'Retrouver la hauteur à partir de l’aire.', 'Calculez la hauteur.', 'geo', { figure: 'trapezoid', preferredColumns: 2 }),
+  t('aires-quadrilatere-manquant', 'aires', 'Côté de quadrilatère', 'Retrouver une mesure d’un quadrilatère à partir de l’aire.', 'Calculez la mesure demandée.', 'geo', { preferredColumns: 2 }),
   t('aires-disque-manquant', 'aires', 'Rayon du disque', 'Retrouver le rayon à partir de l’aire.', 'Calculez le rayon. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t('aires-melange', 'aires', 'Mélanger', 'Toutes les formes, au hasard : aire ou mesure manquante.', 'Calculez l’aire ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
 
   t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube', preferredColumns: 2 }),
   t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
+  t('volumes-quadrilatere', 'volumes', 'Quadrilatère', 'Volume des prismes à faces quadrilatères (cube, pavé). Hasard ou choix.', 'Calculez le volume.', 'geo', { preferredColumns: 2 }),
   t('volumes-cylindre', 'volumes', 'Cylindre', 'Volume = πr²h. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
   t('volumes-cone', 'volumes', 'Cône', 'Volume = πr²h / 3. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'cone', preferredColumns: 2 }),
   t('volumes-sphere', 'volumes', 'Sphère', 'Volume = 4πr³ / 3. Prenez π = 3,14.', 'Calculez le volume. Prenez π = 3,14.', 'geo', { figure: 'sphere', preferredColumns: 2 }),
   t('volumes-cube-manquant', 'volumes', 'Arête du cube', 'Retrouver l’arête à partir du volume.', 'Calculez l’arête.', 'geo', { figure: 'cube', preferredColumns: 2 }),
   t('volumes-pave-manquant', 'volumes', 'Hauteur du pavé', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
+  t('volumes-quadrilatere-manquant', 'volumes', 'Mesure du quadrilatère', 'Retrouver une arête ou une hauteur d’un prisme à faces quadrilatères.', 'Calculez la mesure demandée.', 'geo', { preferredColumns: 2 }),
   t('volumes-cylindre-manquant', 'volumes', 'Hauteur du cylindre', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur. Prenez π = 3,14.', 'geo', { figure: 'cylinder', preferredColumns: 2 }),
   t('volumes-cone-manquant', 'volumes', 'Hauteur du cône', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur. Prenez π = 3,14.', 'geo', { figure: 'cone', preferredColumns: 2 }),
   t('volumes-melange', 'volumes', 'Mélanger', 'Tous les solides, au hasard.', 'Calculez le volume ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
@@ -468,6 +477,7 @@ const PHRASE_THEMES = [
   { topic: 'phrase-negation', label: 'Négation simple' },
   { topic: 'phrase-adjectif', label: 'Adjectif' },
   { topic: 'phrase-negation-adjectif', label: 'Négation avec adjectif' },
+  { topic: 'phrase-negation-determinants', label: 'Négation déterminants' },
   { topic: 'phrase-preposition', label: 'Préposition' },
   { topic: 'phrase-adverbe', label: 'Adverbe' },
   { topic: 'phrase-negation-adverbe', label: 'Négation avec adverbe' },
@@ -519,6 +529,10 @@ export const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [
 
 export function typesForTopic(topic: string, track?: FrenchTrack): ExerciseType[] {
   return exerciseTypes.filter((type) => type.topic === topic && (track == null || type.track === track))
+}
+
+export function isQuadExercise(typeId: string): boolean {
+  return typeId.includes('-quadrilatere')
 }
 
 export function isDraftPadExercise(typeId: string): boolean {

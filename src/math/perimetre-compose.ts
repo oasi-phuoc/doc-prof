@@ -1,3 +1,4 @@
+import { pickInRange, type NumberRange } from './difficulty'
 import { int, pick, type Rng } from './rng'
 import type { CompositeLabel, CompositeRight, CompositeScene, CompositeTick, Difficulty, MathItem } from './types'
 
@@ -16,7 +17,13 @@ function r2(n: number): number {
   return Math.round(n * 100) / 100
 }
 
+let activeRange: NumberRange | undefined
+
 function nLen(rng: Rng, difficulty: Difficulty, min: number, max: number): number {
+  if (activeRange) {
+    const n = pickInRange(rng, activeRange)
+    return n > 0 ? n : activeRange.decimals ? 0.1 : 1
+  }
   if (difficulty === 'avance' && rng() < 0.35) {
     return Math.round(int(rng, min * 2, max * 2) * 5) / 10
   }
@@ -891,8 +898,13 @@ const MAKERS: Array<(rng: Rng, difficulty: Difficulty) => Draft> = [
   doubleEll,
 ]
 
-export function generatePerimetreCompose(rng: Rng, difficulty: Difficulty): MathItem {
-  return itemOf(pick(rng, MAKERS)(rng, difficulty))
+export function generatePerimetreCompose(rng: Rng, difficulty: Difficulty, range?: NumberRange): MathItem {
+  activeRange = range
+  try {
+    return itemOf(pick(rng, MAKERS)(rng, difficulty))
+  } finally {
+    activeRange = undefined
+  }
 }
 
 export function compositeTemplateCount(): number {

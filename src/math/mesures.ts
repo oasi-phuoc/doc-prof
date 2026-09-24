@@ -1,9 +1,29 @@
+import { pickInRange, type NumberRange } from './difficulty'
 import { int, pick, type Rng } from './rng'
 import type { Difficulty, Figure, FigureDims, MathItem } from './types'
 
 const PI = 3.14
 
-function val(rng: Rng, difficulty: Difficulty): number {
+export const PERI_QUAD_FIGURES: Figure[] = ['square', 'rectangle', 'parallelogram', 'rhombus', 'trapezoid']
+export const AREA_QUAD_FIGURES: Figure[] = ['square', 'rectangle', 'parallelogram', 'rhombus', 'trapezoid']
+export const VOLUME_QUAD_FIGURES: Figure[] = ['cube', 'cuboid']
+
+export const QUAD_SHAPE_LABELS: Partial<Record<Figure, string>> = {
+  square: 'Carré',
+  rectangle: 'Rectangle',
+  parallelogram: 'Parallélogramme',
+  rhombus: 'Losange',
+  trapezoid: 'Trapèze',
+  cube: 'Cube',
+  cuboid: 'Pavé',
+}
+
+function val(rng: Rng, difficulty: Difficulty, range?: NumberRange): number {
+  if (range) {
+    const n = pickInRange(rng, range)
+    if (n > 0) return n
+    return range.decimals ? 0.1 : 1
+  }
   if (difficulty === 'facile') return int(rng, 1, 10)
   if (difficulty === 'moyen') return int(rng, 10, 1000)
   return int(rng, 10, 1000) / 10
@@ -37,16 +57,16 @@ function geo(partial: {
   }
 }
 
-function triangleSides(rng: Rng, difficulty: Difficulty): [number, number, number] {
+function triangleSides(rng: Rng, difficulty: Difficulty, range?: NumberRange): [number, number, number] {
   for (let i = 0; i < 24; i++) {
-    const sides = [val(rng, difficulty), val(rng, difficulty), val(rng, difficulty)].sort((a, b) => a - b)
+    const sides = [val(rng, difficulty, range), val(rng, difficulty, range), val(rng, difficulty, range)].sort((a, b) => a - b)
     if (sides[0]! + sides[1]! > sides[2]!) return [sides[0]!, sides[1]!, sides[2]!]
   }
   return difficulty === 'facile' ? [3, 4, 5] : [30, 40, 50]
 }
 
-function periSquare(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const s = val(rng, difficulty)
+function periSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const s = val(rng, difficulty, range)
   const p = round2(4 * s)
   if (!missing) {
     return geo({
@@ -66,9 +86,9 @@ function periSquare(rng: Rng, difficulty: Difficulty, missing: boolean): MathIte
   })
 }
 
-function periRectangle(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const length = val(rng, difficulty)
-  let width = val(rng, difficulty)
+function periRectangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const length = val(rng, difficulty, range)
+  let width = val(rng, difficulty, range)
   if (width === length) width = round2(width + (difficulty === 'avance' ? 0.5 : 1))
   const p = round2(2 * (length + width))
   if (!missing) {
@@ -89,8 +109,8 @@ function periRectangle(rng: Rng, difficulty: Difficulty, missing: boolean): Math
   })
 }
 
-function periTriangle(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const [a, b, c] = triangleSides(rng, difficulty)
+function periTriangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const [a, b, c] = triangleSides(rng, difficulty, range)
   const p = round2(a + b + c)
   if (!missing) {
     return geo({
@@ -110,9 +130,9 @@ function periTriangle(rng: Rng, difficulty: Difficulty, missing: boolean): MathI
   })
 }
 
-function periParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const base = val(rng, difficulty)
-  const side = val(rng, difficulty)
+function periParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const base = val(rng, difficulty, range)
+  const side = val(rng, difficulty, range)
   const p = round2(2 * (base + side))
   if (!missing) {
     return geo({
@@ -132,8 +152,8 @@ function periParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean): 
   })
 }
 
-function periRhombus(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const s = val(rng, difficulty)
+function periRhombus(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const s = val(rng, difficulty, range)
   const p = round2(4 * s)
   if (!missing) {
     return geo({
@@ -153,11 +173,11 @@ function periRhombus(rng: Rng, difficulty: Difficulty, missing: boolean): MathIt
   })
 }
 
-function periTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const top = val(rng, difficulty)
-  const bottom = val(rng, difficulty)
-  const left = val(rng, difficulty)
-  const right = val(rng, difficulty)
+function periTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const top = val(rng, difficulty, range)
+  const bottom = val(rng, difficulty, range)
+  const left = val(rng, difficulty, range)
+  const right = val(rng, difficulty, range)
   const p = round2(top + bottom + left + right)
   if (!missing) {
     return geo({
@@ -177,8 +197,8 @@ function periTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean): Math
   })
 }
 
-function periCircle(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const r = val(rng, difficulty)
+function periCircle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const r = val(rng, difficulty, range)
   const p = round2(2 * PI * r)
   if (!missing) {
     return geo({
@@ -198,8 +218,8 @@ function periCircle(rng: Rng, difficulty: Difficulty, missing: boolean): MathIte
   })
 }
 
-function areaSquare(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const s = val(rng, difficulty)
+function areaSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const s = val(rng, difficulty, range)
   const a = round2(s * s)
   if (!missing) {
     return geo({
@@ -219,9 +239,9 @@ function areaSquare(rng: Rng, difficulty: Difficulty, missing: boolean): MathIte
   })
 }
 
-function areaRectangle(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const length = val(rng, difficulty)
-  const width = val(rng, difficulty)
+function areaRectangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const length = val(rng, difficulty, range)
+  const width = val(rng, difficulty, range)
   const a = round2(length * width)
   if (!missing) {
     return geo({
@@ -241,9 +261,9 @@ function areaRectangle(rng: Rng, difficulty: Difficulty, missing: boolean): Math
   })
 }
 
-function areaTriangle(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const base = val(rng, difficulty)
-  const height = val(rng, difficulty)
+function areaTriangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const base = val(rng, difficulty, range)
+  const height = val(rng, difficulty, range)
   const a = round2((base * height) / 2)
   if (!missing) {
     return geo({
@@ -263,9 +283,9 @@ function areaTriangle(rng: Rng, difficulty: Difficulty, missing: boolean): MathI
   })
 }
 
-function areaParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const base = val(rng, difficulty)
-  const height = val(rng, difficulty)
+function areaParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const base = val(rng, difficulty, range)
+  const height = val(rng, difficulty, range)
   const a = round2(base * height)
   if (!missing) {
     return geo({
@@ -285,10 +305,32 @@ function areaParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean): 
   })
 }
 
-function areaTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const top = val(rng, difficulty)
-  const bottom = val(rng, difficulty)
-  const height = val(rng, difficulty)
+function areaRhombus(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const s = val(rng, difficulty, range)
+  const height = val(rng, difficulty, range)
+  const a = round2(s * height)
+  if (!missing) {
+    return geo({
+      prompt: 'Calculez l’aire.',
+      figure: 'rhombus',
+      dims: { side: s, height, unit: 'cm' },
+      calc: `${fmt(s)} × ${fmt(height)}`,
+      response: `${fmt(a)} cm²`,
+    })
+  }
+  return geo({
+    prompt: `L’aire mesure ${fmt(a)} cm². Le côté mesure ${fmt(s)} cm. Calculez la hauteur.`,
+    figure: 'rhombus',
+    dims: { side: s, ask: 'height', unit: 'cm' },
+    calc: `${fmt(a)} ÷ ${fmt(s)}`,
+    response: `${fmt(height)} cm`,
+  })
+}
+
+function areaTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const top = val(rng, difficulty, range)
+  const bottom = val(rng, difficulty, range)
+  const height = val(rng, difficulty, range)
   const a = round2(((top + bottom) * height) / 2)
   if (!missing) {
     return geo({
@@ -308,8 +350,8 @@ function areaTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean): Math
   })
 }
 
-function areaDisk(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const r = val(rng, difficulty)
+function areaDisk(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const r = val(rng, difficulty, range)
   const a = round2(PI * r * r)
   if (!missing) {
     return geo({
@@ -329,8 +371,8 @@ function areaDisk(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem 
   })
 }
 
-function volCube(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const s = val(rng, difficulty)
+function volCube(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const s = val(rng, difficulty, range)
   const v = round2(s * s * s)
   if (!missing) {
     return geo({
@@ -350,10 +392,10 @@ function volCube(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
   })
 }
 
-function volCuboid(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const length = val(rng, difficulty)
-  const width = val(rng, difficulty)
-  const height = val(rng, difficulty)
+function volCuboid(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const length = val(rng, difficulty, range)
+  const width = val(rng, difficulty, range)
+  const height = val(rng, difficulty, range)
   const v = round2(length * width * height)
   if (!missing) {
     return geo({
@@ -373,9 +415,9 @@ function volCuboid(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem
   })
 }
 
-function volCylinder(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const r = val(rng, difficulty)
-  const h = val(rng, difficulty)
+function volCylinder(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const r = val(rng, difficulty, range)
+  const h = val(rng, difficulty, range)
   const v = round2(PI * r * r * h)
   if (!missing) {
     return geo({
@@ -395,9 +437,9 @@ function volCylinder(rng: Rng, difficulty: Difficulty, missing: boolean): MathIt
   })
 }
 
-function volCone(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
-  const r = val(rng, difficulty)
-  const h = val(rng, difficulty)
+function volCone(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  const r = val(rng, difficulty, range)
+  const h = val(rng, difficulty, range)
   const v = round2((PI * r * r * h) / 3)
   if (!missing) {
     return geo({
@@ -417,8 +459,8 @@ function volCone(rng: Rng, difficulty: Difficulty, missing: boolean): MathItem {
   })
 }
 
-function volSphere(rng: Rng, difficulty: Difficulty): MathItem {
-  const r = val(rng, difficulty)
+function volSphere(rng: Rng, difficulty: Difficulty, range?: NumberRange): MathItem {
+  const r = val(rng, difficulty, range)
   const v = round2((4 / 3) * PI * r * r * r)
   return geo({
     prompt: 'Calculez le volume. Prenez π = 3,14.',
@@ -439,50 +481,105 @@ const PERI = [
   periCircle,
 ] as const
 
-const AREA = [areaSquare, areaRectangle, areaTriangle, areaParallelogram, areaTrapezoid, areaDisk] as const
+const AREA = [areaSquare, areaRectangle, areaTriangle, areaParallelogram, areaRhombus, areaTrapezoid, areaDisk] as const
 
 const VOL = [volCube, volCuboid, volCylinder, volCone] as const
+
+type MeasureFn = (rng: Rng, d: Difficulty, missing: boolean, range?: NumberRange) => MathItem
+
+const PERI_QUAD: Partial<Record<Figure, MeasureFn>> = {
+  square: periSquare,
+  rectangle: periRectangle,
+  parallelogram: periParallelogram,
+  rhombus: periRhombus,
+  trapezoid: periTrapezoid,
+}
+
+const AREA_QUAD: Partial<Record<Figure, MeasureFn>> = {
+  square: areaSquare,
+  rectangle: areaRectangle,
+  parallelogram: areaParallelogram,
+  rhombus: areaRhombus,
+  trapezoid: areaTrapezoid,
+}
+
+const VOL_QUAD: Partial<Record<Figure, MeasureFn>> = {
+  cube: volCube,
+  cuboid: volCuboid,
+}
+
+function allowedFigures(all: Figure[], chosen?: Figure[]): Figure[] {
+  if (!chosen?.length) return all
+  const keep = chosen.filter((figure) => all.includes(figure))
+  return keep.length ? keep : all
+}
+
+function pickQuad(
+  rng: Rng,
+  table: Partial<Record<Figure, MeasureFn>>,
+  all: Figure[],
+  chosen: Figure[] | undefined,
+  d: Difficulty,
+  missing: boolean,
+  range?: NumberRange,
+): MathItem {
+  const figure = pick(rng, allowedFigures(all, chosen))
+  const make = table[figure] ?? table[all[0]!]
+  return make!(rng, d, missing, range)
+}
 
 export function tryGenerateMesure(
   typeId: string,
   rng: Rng,
   difficulty: Difficulty,
+  range?: NumberRange,
+  shapes?: Figure[],
 ): MathItem | null {
   const d = difficulty
+  if (typeId === 'perimetres-quadrilatere' || typeId === 'perimetres-quadrilatere-manquant') {
+    return pickQuad(rng, PERI_QUAD, PERI_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
+  }
+  if (typeId === 'aires-quadrilatere' || typeId === 'aires-quadrilatere-manquant') {
+    return pickQuad(rng, AREA_QUAD, AREA_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
+  }
+  if (typeId === 'volumes-quadrilatere' || typeId === 'volumes-quadrilatere-manquant') {
+    return pickQuad(rng, VOL_QUAD, VOLUME_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
+  }
   if (typeId === 'perimetres-melange') {
     const fn = pick(rng, [...PERI])
-    return fn(rng, d, rng() < 0.45)
+    return fn(rng, d, rng() < 0.45, range)
   }
   if (typeId === 'aires-melange') {
     const fn = pick(rng, [...AREA])
-    return fn(rng, d, rng() < 0.45)
+    return fn(rng, d, rng() < 0.45, range)
   }
   if (typeId === 'volumes-melange') {
-    if (rng() < 0.15) return volSphere(rng, d)
+    if (rng() < 0.15) return volSphere(rng, d, range)
     const fn = pick(rng, [...VOL])
-    return fn(rng, d, rng() < 0.45)
+    return fn(rng, d, rng() < 0.45, range)
   }
 
   const table: Record<string, (missing: boolean) => MathItem> = {
-    'perimetres-carre': (m) => periSquare(rng, d, m),
-    'perimetres-rectangle': (m) => periRectangle(rng, d, m),
-    'perimetres-triangle': (m) => periTriangle(rng, d, m),
-    'perimetres-parallelogramme': (m) => periParallelogram(rng, d, m),
-    'perimetres-losange': (m) => periRhombus(rng, d, m),
-    'perimetres-trapeze': (m) => periTrapezoid(rng, d, m),
-    'perimetres-cercle': (m) => periCircle(rng, d, m),
-    'aires-carre': (m) => areaSquare(rng, d, m),
-    'aires-rectangle': (m) => areaRectangle(rng, d, m),
-    'aires-triangle': (m) => areaTriangle(rng, d, m),
-    'aires-parallelogramme': (m) => areaParallelogram(rng, d, m),
-    'aires-trapeze': (m) => areaTrapezoid(rng, d, m),
-    'aires-disque': (m) => areaDisk(rng, d, m),
-    'volumes-cube': (m) => volCube(rng, d, m),
-    'volumes-pave': (m) => volCuboid(rng, d, m),
-    'volumes-cylindre': (m) => volCylinder(rng, d, m),
-    'volumes-cone': (m) => volCone(rng, d, m),
+    'perimetres-carre': (m) => periSquare(rng, d, m, range),
+    'perimetres-rectangle': (m) => periRectangle(rng, d, m, range),
+    'perimetres-triangle': (m) => periTriangle(rng, d, m, range),
+    'perimetres-parallelogramme': (m) => periParallelogram(rng, d, m, range),
+    'perimetres-losange': (m) => periRhombus(rng, d, m, range),
+    'perimetres-trapeze': (m) => periTrapezoid(rng, d, m, range),
+    'perimetres-cercle': (m) => periCircle(rng, d, m, range),
+    'aires-carre': (m) => areaSquare(rng, d, m, range),
+    'aires-rectangle': (m) => areaRectangle(rng, d, m, range),
+    'aires-triangle': (m) => areaTriangle(rng, d, m, range),
+    'aires-parallelogramme': (m) => areaParallelogram(rng, d, m, range),
+    'aires-losange': (m) => areaRhombus(rng, d, m, range),
+    'aires-trapeze': (m) => areaTrapezoid(rng, d, m, range),
+    'aires-disque': (m) => areaDisk(rng, d, m, range),
+    'volumes-cube': (m) => volCube(rng, d, m, range),
+    'volumes-pave': (m) => volCuboid(rng, d, m, range),
+    'volumes-cylindre': (m) => volCylinder(rng, d, m, range),
+    'volumes-cone': (m) => volCone(rng, d, m, range),
   }
-  if (typeId === 'volumes-sphere') return volSphere(rng, d)
+  if (typeId === 'volumes-sphere') return volSphere(rng, d, range)
   const base = typeId.endsWith('-manquant') ? typeId.slice(0, -'-manquant'.length) : typeId
   const make = table[base]
   if (!make) return null

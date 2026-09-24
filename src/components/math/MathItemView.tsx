@@ -1030,6 +1030,10 @@ function CoordBlock({
   )
 }
 
+function isDarkPhraseColor(color: string): boolean {
+  return color === '#1a1a1a' || color === '#111' || color === '#111111'
+}
+
 function PhrasePastille({ category, filled }: { category?: PhraseCategory; filled?: boolean }) {
   const color = category ? PHRASE_COLORS[category] : '#111'
   return (
@@ -1070,15 +1074,19 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
   return (
     <div className="phrase-order-block">
       <div className="phrase-bubble-row">
-        {tokens.map((token, i) => (
-          <span
-            className="phrase-bubble"
-            key={`${token.text}-${i}`}
-            style={{ backgroundColor: PHRASE_COLORS[token.category], borderColor: '#111' }}
-          >
-            {token.text}
-          </span>
-        ))}
+        {tokens.map((token, i) => {
+          const fill = PHRASE_COLORS[token.category]
+          const ink = isDarkPhraseColor(fill) ? '#fff' : '#111'
+          return (
+            <span
+              className="phrase-bubble"
+              key={`${token.text}-${i}`}
+              style={{ backgroundColor: fill, borderColor: '#111', color: ink }}
+            >
+              {token.text}
+            </span>
+          )
+        })}
       </div>
       {show ? (
         <strong className="filled-answer phrase-order-answer">{item.responseAnswer ?? item.answer}</strong>
