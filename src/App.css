@@ -1008,11 +1008,18 @@
   border:2.5px solid var(--gec-prep);border-top-color:var(--gec-det);
   background:#fff;box-sizing:border-box
 }
+.sheet-body:has(.layout-gattegno-chart)>.exercise-block{
+  flex:1 1 auto;min-height:0;margin:0;
+  display:flex;flex-direction:column
+}
 .sheet-body:has(.layout-gattegno-chart) .exercise-grid{
-  flex:1 1 auto;min-height:0;grid-template-rows:minmax(0,1fr);align-content:stretch
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:minmax(0,1fr);grid-auto-rows:minmax(0,1fr);
+  align-content:stretch
 }
 .exercise-item.layout-gattegno-chart{
   padding:2px 0;height:100%;min-height:0;
+  align-self:stretch;flex-shrink:1;
   display:flex;flex-direction:column
 }
 .exercise-item.layout-gattegno-chart .item-content{
