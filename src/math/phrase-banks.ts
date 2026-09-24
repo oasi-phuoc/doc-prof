@@ -334,24 +334,47 @@ export const ADJECTIFS: AdjEntry[] = [
 ]
 
 /** Verbes : liste pédagogique limitée (pas exhaustive). */
-export const VERBES = [
+export const VERBES_ER = [
   { infinitive: 'manger', forms: { je: 'mange', tu: 'manges', il: 'mange', nous: 'mangeons', vous: 'mangez', ils: 'mangent' } },
   { infinitive: 'porter', forms: { je: 'porte', tu: 'portes', il: 'porte', nous: 'portons', vous: 'portez', ils: 'portent' } },
   { infinitive: 'regarder', forms: { je: 'regarde', tu: 'regardes', il: 'regarde', nous: 'regardons', vous: 'regardez', ils: 'regardent' } },
   { infinitive: 'acheter', forms: { je: 'achète', tu: 'achètes', il: 'achète', nous: 'achetons', vous: 'achetez', ils: 'achètent' } },
-  { infinitive: 'prendre', forms: { je: 'prends', tu: 'prends', il: 'prend', nous: 'prenons', vous: 'prenez', ils: 'prennent' } },
-  { infinitive: 'avoir', forms: { je: 'ai', tu: 'as', il: 'a', nous: 'avons', vous: 'avez', ils: 'ont' } },
   { infinitive: 'aimer', forms: { je: 'aime', tu: 'aimes', il: 'aime', nous: 'aimons', vous: 'aimez', ils: 'aiment' } },
-  { infinitive: 'lire', forms: { je: 'lis', tu: 'lis', il: 'lit', nous: 'lisons', vous: 'lisez', ils: 'lisent' } },
-  { infinitive: 'voir', forms: { je: 'vois', tu: 'vois', il: 'voit', nous: 'voyons', vous: 'voyez', ils: 'voient' } },
   { infinitive: 'trouver', forms: { je: 'trouve', tu: 'trouves', il: 'trouve', nous: 'trouvons', vous: 'trouvez', ils: 'trouvent' } },
-  { infinitive: 'ouvrir', forms: { je: 'ouvre', tu: 'ouvres', il: 'ouvre', nous: 'ouvrons', vous: 'ouvrez', ils: 'ouvrent' } },
   { infinitive: 'dessiner', forms: { je: 'dessine', tu: 'dessines', il: 'dessine', nous: 'dessinons', vous: 'dessinez', ils: 'dessinent' } },
   { infinitive: 'lancer', forms: { je: 'lance', tu: 'lances', il: 'lance', nous: 'lançons', vous: 'lancez', ils: 'lancent' } },
   { infinitive: 'chercher', forms: { je: 'cherche', tu: 'cherches', il: 'cherche', nous: 'cherchons', vous: 'cherchez', ils: 'cherchent' } },
+  { infinitive: 'habiter', forms: { je: 'habite', tu: 'habites', il: 'habite', nous: 'habitons', vous: 'habitez', ils: 'habitent' } },
+  { infinitive: 'écouter', forms: { je: 'écoute', tu: 'écoutes', il: 'écoute', nous: 'écoutons', vous: 'écoutez', ils: 'écoutent' } },
+  { infinitive: 'être', forms: { je: 'suis', tu: 'es', il: 'est', nous: 'sommes', vous: 'êtes', ils: 'sont' } },
+  { infinitive: 'avoir', forms: { je: 'ai', tu: 'as', il: 'a', nous: 'avons', vous: 'avez', ils: 'ont' } },
+] as const
+
+export const VERBES_AUTRES = [
+  { infinitive: 'prendre', forms: { je: 'prends', tu: 'prends', il: 'prend', nous: 'prenons', vous: 'prenez', ils: 'prennent' } },
+  { infinitive: 'lire', forms: { je: 'lis', tu: 'lis', il: 'lit', nous: 'lisons', vous: 'lisez', ils: 'lisent' } },
+  { infinitive: 'voir', forms: { je: 'vois', tu: 'vois', il: 'voit', nous: 'voyons', vous: 'voyez', ils: 'voient' } },
+  { infinitive: 'ouvrir', forms: { je: 'ouvre', tu: 'ouvres', il: 'ouvre', nous: 'ouvrons', vous: 'ouvrez', ils: 'ouvrent' } },
   { infinitive: 'écrire', forms: { je: 'écris', tu: 'écris', il: 'écrit', nous: 'écrivons', vous: 'écrivez', ils: 'écrivent' } },
   { infinitive: 'boire', forms: { je: 'bois', tu: 'bois', il: 'boit', nous: 'buvons', vous: 'buvez', ils: 'boivent' } },
+  { infinitive: 'finir', forms: { je: 'finis', tu: 'finis', il: 'finit', nous: 'finissons', vous: 'finissez', ils: 'finissent' } },
+  { infinitive: 'choisir', forms: { je: 'choisis', tu: 'choisis', il: 'choisit', nous: 'choisissons', vous: 'choisissez', ils: 'choisissent' } },
+  { infinitive: 'faire', forms: { je: 'fais', tu: 'fais', il: 'fait', nous: 'faisons', vous: 'faites', ils: 'font' } },
+  { infinitive: 'mettre', forms: { je: 'mets', tu: 'mets', il: 'met', nous: 'mettons', vous: 'mettez', ils: 'mettent' } },
+  { infinitive: 'aller', forms: { je: 'vais', tu: 'vas', il: 'va', nous: 'allons', vous: 'allez', ils: 'vont' } },
+  { infinitive: 'venir', forms: { je: 'viens', tu: 'viens', il: 'vient', nous: 'venons', vous: 'venez', ils: 'viennent' } },
 ] as const
+
+export type VerbEntry = {
+  infinitive: string
+  forms: { je: string; tu: string; il: string; nous: string; vous: string; ils: string }
+}
+
+export const VERBES: readonly VerbEntry[] = [...VERBES_ER, ...VERBES_AUTRES]
+
+export function verbesFor(group: 'er' | 'autres' = 'er'): readonly VerbEntry[] {
+  return group === 'autres' ? VERBES_AUTRES : VERBES_ER
+}
 
 export const ADVERBES = [
   'très',

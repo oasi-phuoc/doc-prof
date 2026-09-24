@@ -85,6 +85,7 @@ import type {
   ExerciseType,
   FrenchTrack,
   PageConfig,
+  PhraseVerbGroup,
   PreviewMode,
   WorksheetBlock,
   WorksheetPage,
@@ -437,7 +438,6 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
   const isPhrase = type.topic.startsWith('phrase-')
   const isPhraseChart = type.id.startsWith('phrase-tableau-')
-  const isPhraseWrite = type.id.endsWith('-ecrire')
   const isFormes = isReperageFormes(type.id)
   const isCadrans = isReperageCadrans(type.id)
   const isDroites = isReperageDroites(type.id)
@@ -459,9 +459,7 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
           ? { count: 4 }
           : isPhraseChart
             ? { count: 1 }
-            : isPhraseWrite
-              ? { count: 1 }
-              : isPhrase
+            : isPhrase
                 ? { count: 6 }
                 : isLectureDense
                   ? { count: 4 }
@@ -783,6 +781,7 @@ function GeneratorPage() {
       count,
       columns: fields.columns ?? nextType.preferredColumns ?? 2,
       track: nextType.track,
+      verbGroup: activeBlock.verbGroup,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,
@@ -1001,6 +1000,27 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              {activePage.domain === 'phrase' ? (
+                <div className="mode-toggle-block">
+                  <b>Verbes</b>
+                  <div className="mode-toggle" role="group" aria-label="Groupe de verbes">
+                    <button
+                      type="button"
+                      className={(activeBlock.verbGroup ?? 'er') === 'er' ? 'active' : ''}
+                      onClick={() => updatePage({ verbGroup: 'er' as PhraseVerbGroup })}
+                    >
+                      -er, être, avoir
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.verbGroup === 'autres' ? 'active' : ''}
+                      onClick={() => updatePage({ verbGroup: 'autres' as PhraseVerbGroup })}
+                    >
+                      2e et 3e groupes
+                    </button>
+                  </div>
+                </div>
+              ) : null}
               {activePage.domain === 'français' ? (
                 <div className="mode-toggle-block">
                   <b>Voc · Gram · Com</b>
@@ -1587,6 +1607,12 @@ function GeneratorPage() {
                         Organisation (ligne 3)
                         <input className="pill-input" value={institutional.orgLine3}
                           onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
+                        />
+                      </label>
+                      <label>
+                        Organisation (ligne 4)
+                        <input className="pill-input" value={institutional.orgLine4}
+                          onChange={(event) => setInstitutional({ ...institutional, orgLine4: event.target.value })}
                         />
                       </label>
                       <SelectBox

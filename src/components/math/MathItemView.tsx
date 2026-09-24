@@ -1118,17 +1118,10 @@ function PhraseBuildBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
 }
 
 function PhraseWriteBlock({ item }: { item: MathItem }) {
-  const lines = item.writeLines ?? 6
   return (
     <div className="phrase-write-block">
       {item.prompt ? <p className="phrase-write-prompt">{item.prompt}</p> : null}
-      <ol className="phrase-write-lines">
-        {Array.from({ length: lines }, (_, i) => (
-          <li key={i}>
-            <span className="phrase-write-line" />
-          </li>
-        ))}
-      </ol>
+      <span className="phrase-write-line" />
     </div>
   )
 }

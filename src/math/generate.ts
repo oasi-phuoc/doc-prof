@@ -1024,7 +1024,13 @@ function buildSingleBlock(
       items: lecture.items,
     }
   }
-  const phrase = tryGeneratePhraseBatch(config.exerciseType, config.count, rng, difficulty)
+  const phrase = tryGeneratePhraseBatch(
+    config.exerciseType,
+    config.count,
+    rng,
+    difficulty,
+    config.verbGroup ?? 'er',
+  )
   if (phrase) {
     return {
       title: fallbackTitle,

@@ -976,6 +976,7 @@
 .phrase-color-block,.phrase-order-block,.phrase-build-block,.phrase-write-block{
   width:100%;min-width:0;display:flex;flex-direction:column;gap:8px
 }
+.phrase-order-block{gap:12px}
 .phrase-word-row,.phrase-bubble-row,.phrase-pastille-row{
   display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 14px
 }
@@ -990,7 +991,7 @@
   display:inline-flex;align-items:center;justify-content:center;
   padding:6px 12px;border:1.5px solid #111;border-radius:4px;
   font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#111;
-  text-decoration:underline;text-underline-offset:3px;line-height:1.2
+  text-decoration:none;line-height:1.2
 }
 .phrase-write-line{
   display:block;width:100%;min-height:1.4em;border:0;border-bottom:1.5px dashed #5ba3c9;

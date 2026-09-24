@@ -1,7 +1,7 @@
-import { PHRASE_SENTENCES, joinPhrase } from './phrase-sentences'
-import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
+import { phrasesFor, joinPhrase } from './phrase-sentences'
+import { PRODUCTION_PROMPTS_BY_THEME, VERBES, verbesFor, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from './rng'
-import type { Difficulty, MathItem, PhraseCategory, PhraseToken } from './types'
+import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
 
 export type PhraseBatch = {
   items: MathItem[]
@@ -17,6 +17,11 @@ type BuiltPhrase = {
   verbInfinitive: string
 }
 
+function uncap(text: string): string {
+  if (!text) return text
+  return text[0]!.toLowerCase() + text.slice(1)
+}
+
 function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
   const sentence = joinPhrase(tokens)
   const verb = tokens.find((token) => token.category === 'verbe')
@@ -27,8 +32,13 @@ function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
   return { tokens, sentence, verbInfinitive: infinitive }
 }
 
-function pickPhrase(rng: Rng, theme: PhraseThemeId, used: Set<string>): BuiltPhrase {
-  const bank = PHRASE_SENTENCES[theme]
+function pickPhrase(
+  rng: Rng,
+  theme: PhraseThemeId,
+  used: Set<string>,
+  group: PhraseVerbGroup,
+): BuiltPhrase {
+  const bank = phrasesFor(theme, group)
   const unused = bank.filter((tokens) => !used.has(joinPhrase(tokens)))
   const pool = unused.length ? unused : bank
   const tokens = pick(rng, pool)
@@ -43,19 +53,19 @@ function pastillePattern(theme: PhraseThemeId, rng: Rng): PhraseCategory[] {
     case 'phrase-simple':
       return [...subj, 'verbe', 'determinant', 'nom']
     case 'phrase-negation':
-      return [...subj, 'negation', 'verbe', 'negation', 'determinant', 'nom']
+      return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-adjectif':
       return [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
     case 'phrase-negation-adjectif':
-      return [...subj, 'negation', 'verbe', 'negation', 'determinant', 'adjectif', 'nom']
+      return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'adjectif', 'nom']
     case 'phrase-negation-determinants':
-      return ['determinant', 'nom', 'negation', 'verbe', 'negation', 'determinant', 'nom']
+      return ['determinant', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-preposition':
       return [...subj, 'verbe', 'preposition', 'determinant', 'nom']
     case 'phrase-adverbe':
       return [...subj, 'verbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-negation-adverbe':
-      return [...subj, 'negation', 'verbe', 'negation', 'adverbe', 'determinant', 'nom']
+      return [...subj, 'adverbe', 'verbe', 'adverbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-conjonctions':
       return [...subj, 'verbe', 'determinant', 'nom', 'conjonction', 'determinant', 'nom', 'verbe', 'determinant', 'nom']
   }
@@ -72,7 +82,10 @@ function typeColor(phrase: BuiltPhrase): MathItem {
 }
 
 function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
-  const scrambled = shuffle(rng, [...phrase.tokens])
+  const scrambled = shuffle(
+    rng,
+    phrase.tokens.map((token) => ({ ...token, text: uncap(token.text) })),
+  )
   return {
     layout: 'phrase-order',
     tokens: scrambled,
@@ -82,25 +95,15 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
   }
 }
 
-function typeBuild(rng: Rng, theme: PhraseThemeId): MathItem {
+function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup): MathItem {
   const pastilles = pastillePattern(theme, rng)
-  const verb = pick(rng, VERBES)
+  const verb = pick(rng, verbesFor(group))
   return {
     layout: 'phrase-build',
     prompt: verb.infinitive,
     pastilles,
     answer: pastilles.join(' · '),
     calcAnswer: verb.infinitive,
-  }
-}
-
-function typeWrite(rng: Rng, theme: PhraseThemeId, countLines: number): MathItem {
-  const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
-  return {
-    layout: 'phrase-write',
-    prompt: pick(rng, [...prompts]),
-    writeLines: countLines,
-    answer: '',
   }
 }
 
@@ -125,7 +128,9 @@ export function tryGeneratePhraseBatch(
   count: number,
   rng: Rng,
   difficulty: Difficulty = 'moyen',
+  group: PhraseVerbGroup = 'er',
 ): PhraseBatch | null {
+  void difficulty
   if (exerciseType === 'phrase-tableau-categories') {
     return {
       items: [{ layout: 'gattegno-chart', chartMode: 'labels', answer: 'tableau', prompt: 'Tableau des catégories' }],
@@ -153,13 +158,17 @@ export function tryGeneratePhraseBatch(
 
   const { theme, kind } = parsed
   const n = Math.max(1, count)
-  const lines = difficulty === 'facile' ? 4 : difficulty === 'moyen' ? 6 : 8
 
   if (kind === 'ecrire') {
-    const item = typeWrite(rng, theme, lines)
+    const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
+    const prompt = pick(rng, [...prompts])
     return {
-      items: [item],
-      instruction: item.prompt ?? INSTRUCTIONS.ecrire,
+      items: Array.from({ length: n }, () => ({
+        layout: 'phrase-write' as const,
+        writeLines: 1,
+        answer: '',
+      })),
+      instruction: prompt ?? INSTRUCTIONS.ecrire,
       preferredColumns: 1,
     }
   }
@@ -168,9 +177,9 @@ export function tryGeneratePhraseBatch(
   const items: MathItem[] = []
   for (let i = 0; i < n; i++) {
     if (kind === 'construire') {
-      items.push(typeBuild(rng, theme))
+      items.push(typeBuild(rng, theme, group))
     } else {
-      const phrase = pickPhrase(rng, theme, used)
+      const phrase = pickPhrase(rng, theme, used, group)
       if (kind === 'colorier') items.push(typeColor(phrase))
       else items.push(typeOrder(rng, phrase))
     }

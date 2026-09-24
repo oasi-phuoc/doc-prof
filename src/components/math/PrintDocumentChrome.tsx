@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import valaisLogo from '@/assets/logos/etat-du-valais.webp'
 
 export type HeaderStyle = 'institutionnel' | 'personnalise'
 
@@ -9,6 +10,7 @@ export type InstitutionalHeader = {
   orgLine1: string
   orgLine2: string
   orgLine3: string
+  orgLine4: string
   classLevel: string
   classNumber: string
   course: string
@@ -17,7 +19,7 @@ export type InstitutionalHeader = {
   logoSrc: string
 }
 
-export const DEFAULT_INSTITUTIONAL_LOGO = '/lib/logos/etat-du-valais.webp'
+export const DEFAULT_INSTITUTIONAL_LOGO = valaisLogo
 
 export type CustomHeader = {
   logo: string
@@ -27,12 +29,13 @@ export type CustomHeader = {
 }
 
 export const DEFAULT_INSTITUTIONAL: InstitutionalHeader = {
-  schoolName: 'SCAI',
+  schoolName: "Classe d'accueil",
   schoolYear: '2025-2026',
-  schoolTagline: "Classes d'accueil",
+  schoolTagline: '',
   orgLine1: 'Département de la santé, des affaires sociales et de la culture',
   orgLine2: "Service de l'action sociale",
   orgLine3: "Office de l'asile",
+  orgLine4: 'Centre de formation "Le Botza"',
   classLevel: 'CSC',
   classNumber: '01',
   course: 'Mathématiques',
@@ -73,7 +76,7 @@ export function InstitutionalDocumentHeader({
         <div className="doc-header-school">
           <p className="doc-school-name">{config.schoolName}</p>
           <p>{config.schoolYear}</p>
-          <p className="doc-school-tag">{config.schoolTagline}</p>
+          {config.schoolTagline ? <p className="doc-school-tag">{config.schoolTagline}</p> : null}
         </div>
         <div className="doc-header-org">
           <div className="doc-logo-slot">
@@ -84,9 +87,10 @@ export function InstitutionalDocumentHeader({
             )}
           </div>
           <div className="doc-org-lines">
-            <p>{config.orgLine1}</p>
-            <p>{config.orgLine2}</p>
-            <p>{config.orgLine3}</p>
+            {config.orgLine1 ? <p>{config.orgLine1}</p> : null}
+            {config.orgLine2 ? <p>{config.orgLine2}</p> : null}
+            {config.orgLine3 ? <p>{config.orgLine3}</p> : null}
+            {config.orgLine4 ? <p>{config.orgLine4}</p> : null}
           </div>
         </div>
       </div>
@@ -187,7 +191,6 @@ export function DocumentFooter({
         <strong>ClairFLE - Support imprimable</strong>
       </div>
       <div className="doc-footer-right">
-        <span>ThanhPhuoc VAN</span>
         <span>Imprimé le {formatPrintDate()}</span>
         <span>
           Page {pageNumber} / {total}
