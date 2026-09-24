@@ -1,12 +1,10 @@
 import {
-  phrasesFor,
+  framesForTheme,
+  instantiateThemeFrame,
   joinPhrase,
-  instantiateTagged,
-  SIMPLE_SUBJECTS,
-  simpleFramesFor,
-  withNegation,
+  subjectsFor,
 } from './phrase-sentences'
-import { PRODUCTION_PROMPTS_BY_THEME, VERBES, verbesFor, type PhraseThemeId } from './phrase-banks'
+import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from './rng'
 import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
 
@@ -39,28 +37,24 @@ function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
   return { tokens, sentence, verbInfinitive: infinitive }
 }
 
+/** Un modèle = un verbe. Sujet et complément varient ; le verbe ne se répète pas sur la fiche. */
 function pickPhrase(
   rng: Rng,
   theme: PhraseThemeId,
   used: Set<string>,
   group: PhraseVerbGroup,
 ): BuiltPhrase {
-  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
-    const frames = simpleFramesFor(group)
-    const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
-    const frame = pick(rng, unused.length ? unused : frames)
-    used.add(`frame:${frame.id}`)
-    const subject = pick(rng, [...SIMPLE_SUBJECTS])
-    const pred = pick(rng, [...frame.preds])
-    const tokens =
-      theme === 'phrase-negation' ? withNegation(instantiateTagged(subject, pred)) : instantiateTagged(subject, pred)
-    return builtFromTokens(tokens)
-  }
-  const bank = phrasesFor(theme, group)
-  const unused = bank.filter((tokens) => !used.has(joinPhrase(tokens)))
-  const pool = unused.length ? unused : bank
-  const tokens = pick(rng, pool)
-  used.add(joinPhrase(tokens))
+  const frames = framesForTheme(theme, group)
+  const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
+  const frame = pick(rng, unused.length ? unused : frames)
+  used.add(`frame:${frame.id}`)
+  const pool = subjectsFor(theme)
+  const tokens = instantiateThemeFrame(
+    theme,
+    frame,
+    () => pick(rng, [...pool]),
+    (preds) => pick(rng, [...preds]),
+  )
   return builtFromTokens(tokens)
 }
 
@@ -121,38 +115,21 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
   }
 }
 
-function verbsForTheme(theme: PhraseThemeId, group: PhraseVerbGroup) {
-  const verbs = verbesFor(group)
-  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
-    return verbs.filter((verb) => verb.infinitive !== 'être')
-  }
-  return verbs
-}
-
 function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup, used: Set<string>): MathItem {
   const pastilles = pastillePattern(theme, rng)
+  let frames = framesForTheme(theme, group)
   if (theme === 'phrase-simple' || theme === 'phrase-negation') {
-    const frames = simpleFramesFor(group).filter((frame) =>
-      frame.preds.every((pred) => !pred.includes('/preposition')),
-    )
-    const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
-    const frame = pick(rng, unused.length ? unused : frames)
-    used.add(`frame:${frame.id}`)
-    return {
-      layout: 'phrase-build',
-      prompt: frame.id,
-      pastilles,
-      answer: pastilles.join(' · '),
-      calcAnswer: frame.id,
-    }
+    frames = frames.filter((frame) => frame.preds.every((pred) => !pred.includes('/preposition')))
   }
-  const verb = pick(rng, verbsForTheme(theme, group))
+  const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
+  const frame = pick(rng, unused.length ? unused : frames)
+  used.add(`frame:${frame.id}`)
   return {
     layout: 'phrase-build',
-    prompt: verb.infinitive,
+    prompt: frame.id,
     pastilles,
     answer: pastilles.join(' · '),
-    calcAnswer: verb.infinitive,
+    calcAnswer: frame.id,
   }
 }
 

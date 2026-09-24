@@ -20,6 +20,7 @@ description: >-
 - [ ] **N&B** : aucune info critique seulement en couleur.
 - [ ] **Densité** : énoncé trop long pour une case → réduire ou passer `columns: 1`.
 - [ ] **Alignement** : texte justifié (`text-align: justify`) ; centrer seulement si demandé.
+- [ ] **Phrases Gattegno** : un verbe = un modèle ; sujet personne ; complément qui va avec le verbe ; pas de *la maison voit une voiture*. Voir `phrase-gattegno`.
 
 ## À corriger immédiatement
 

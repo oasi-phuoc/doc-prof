@@ -54,6 +54,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Textes de l'interface | `texte-interface` |
 | Enrichir catalogue thèmes / types | `contenu-catalogue` |
 | Relire énoncés et consignes | `relecture-enonce` |
+| Phrases Gattegno (modèles uniques, français réel) | `phrase-gattegno` |
 | Aperçu A4 fixe + impression | `test-impression` |
 | Préparer une pull request | `preparer-pull-request` |
 

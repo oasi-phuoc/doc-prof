@@ -1,6 +1,7 @@
 import type { PhraseThemeId } from './phrase-banks'
 import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
-import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER, type SimpleFrame } from './phrase-simple-frames'
+import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER } from './phrase-simple-frames'
+import { themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
 
 /** Découpe « mot/catégorie » — l’espace après une apostrophe est omise à l’affichage. */
 export function tagged(source: string): PhraseToken[] {
@@ -57,16 +58,6 @@ export function withNegation(tokens: PhraseToken[]): PhraseToken[] {
   ]
 }
 
-function cartesian(subjects: readonly string[], preds: readonly string[]): PhraseToken[][] {
-  const out: PhraseToken[][] = []
-  for (const subject of subjects) {
-    for (const pred of preds) {
-      out.push(parse(`${subject} ${pred}`))
-    }
-  }
-  return out
-}
-
 function atLeast(list: PhraseToken[][], theme: string, min: number): PhraseToken[][] {
   if (list.length < min) {
     throw new Error(`${theme} : ${list.length} modèles (${min} attendus au minimum)`)
@@ -98,6 +89,9 @@ function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): Phr
     }
     if (banEtre && tokens.some(isEtreVerb)) {
       throw new Error(`${theme} : « être » interdit (il faut un adjectif ou une préposition) — ${sentence}`)
+    }
+    if (hasInanimateSubject(tokens)) {
+      throw new Error(`${theme} : sujet inanimé — ${sentence}`)
     }
   }
   return list
@@ -193,39 +187,64 @@ const COMMON = [
   'La/determinant musicienne/nom',
 ] as const
 
-const PEOPLE = [...PROPER, ...COMMON] as const
-
-/** Sujets pour instancier un modèle (le modèle lui-même ne change pas). */
+/** Sujets pour instancier un modèle (le modèle lui-même ne change pas). Personnes seulement. */
 export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, 'Il/pronom', 'Elle/pronom'] as const
 
 export function instantiateTagged(subject: string, pred: string): PhraseToken[] {
   return parse(`${subject} ${pred}`)
 }
 
-function samplesFromFrames(frames: readonly SimpleFrame[], negate: boolean): PhraseToken[][] {
-  return frames.map((frame, index) => {
-    const tokens = instantiateTagged(PEOPLE[index % PEOPLE.length]!, frame.preds[0]!)
-    return negate ? withNegation(tokens) : tokens
-  })
+const FEMALE_PROPER = new Set([
+  'Léa', 'Inès', 'Emma', 'Sara', 'Chloé', 'Amina', 'Nora', 'Jade', 'Yara', 'Lina',
+  'Sofia', 'Nina', 'Camille', 'Lila', 'Maya', 'Fatou', 'Zoé', 'Inaya', 'Rania',
+  'Hana', 'Nour', 'Léna', 'Mila',
+])
+
+const INANIMATE_SUBJECT =
+  /^(maison|voiture|livre|cahier|table|porte|fenêtre|arbre|école|jardin|rue|pont|mer|train|bus)$/i
+
+export function subjectGender(tagged: string): 'm' | 'f' {
+  if (tagged === 'Elle/pronom' || /^(La|Une|Ma|Ta|Sa|Cette)\//.test(tagged)) return 'f'
+  const proper = tagged.replace(/\/nom$/, '')
+  if (FEMALE_PROPER.has(proper)) return 'f'
+  if (/(ière|euse|esse|ine|sœur|fille|maman|tante|copine|amie|voisine|maîtresse|boulangère|factrice|cuisinière|jardinière|musicienne|infirmière)\/nom/.test(tagged)) {
+    return 'f'
+  }
+  return 'm'
 }
 
-const ADJ_SUBJECTS = [
-  'Mon/determinant petit/adjectif frère/nom',
-  'Ma/determinant grande/adjectif sœur/nom',
-  'Ton/determinant jeune/adjectif cousin/nom',
-  'Ta/determinant petite/adjectif nièce/nom',
-  'Son/determinant vieux/adjectif papa/nom',
-  'Sa/determinant jeune/adjectif maman/nom',
-  'Notre/determinant gentil/adjectif voisin/nom',
-  'Votre/determinant nouvelle/adjectif voisine/nom',
-  'Leur/determinant petit/adjectif enfant/nom',
-  'Cette/determinant jolie/adjectif fille/nom',
-  'Ce/determinant grand/adjectif garçon/nom',
-  'Cet/determinant élève/nom sérieux/adjectif',
-] as const
+function hasInanimateSubject(tokens: PhraseToken[]): boolean {
+  const first = tokens.find((token) => token.category === 'nom' || token.category === 'pronom')
+  return Boolean(first && INANIMATE_SUBJECT.test(first.text))
+}
+
+export type PhraseThemeKind = PhraseThemeId
+
+export function framesForTheme(theme: PhraseThemeId, group: PhraseVerbGroup): readonly ThemedFrame[] {
+  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
+    return group === 'autres' ? SIMPLE_FRAMES_AUTRES : SIMPLE_FRAMES_ER
+  }
+  return themedFramesFor(
+    theme as
+      | 'phrase-adjectif'
+      | 'phrase-negation-adjectif'
+      | 'phrase-preposition'
+      | 'phrase-negation-preposition'
+      | 'phrase-adverbe'
+      | 'phrase-negation-adverbe'
+      | 'phrase-conjonctions'
+      | 'phrase-determinants'
+      | 'phrase-negation-determinants',
+    group,
+  )
+}
+
+function isNegationTheme(theme: PhraseThemeId): boolean {
+  return theme.startsWith('phrase-negation')
+}
 
 /** Tous types de déterminants, sujets singuliers (verbe au singulier). */
-const DET_SUBJECTS = [
+export const DET_SUBJECTS = [
   'Le/determinant garçon/nom',
   'La/determinant fille/nom',
   'L’/determinant élève/nom',
@@ -246,189 +265,12 @@ const DET_SUBJECTS = [
   'Chaque/determinant enfant/nom',
 ] as const
 
-/** 1er groupe (-er) + avoir. « être » est exclu de phrase simple / négation simple. */
-const ER_PRED = [
-  'mange/verbe une/determinant pomme/nom',
-  'mange/verbe un/determinant sandwich/nom',
-  'mange/verbe une/determinant soupe/nom',
-  'mange/verbe une/determinant salade/nom',
-  'regarde/verbe un/determinant film/nom',
-  'regarde/verbe un/determinant match/nom',
-  'regarde/verbe la/determinant télé/nom',
-  'dessine/verbe un/determinant arbre/nom',
-  'dessine/verbe un/determinant chat/nom',
-  'dessine/verbe une/determinant maison/nom',
-  'lave/verbe la/determinant vaisselle/nom',
-  'lave/verbe la/determinant voiture/nom',
-  'porte/verbe un/determinant manteau/nom',
-  'porte/verbe un/determinant chapeau/nom',
-  'porte/verbe une/determinant écharpe/nom',
-  'porte/verbe un/determinant pull/nom',
-  'habite/verbe dans/preposition une/determinant maison/nom',
-  'habite/verbe dans/preposition un/determinant village/nom',
-  'habite/verbe dans/preposition un/determinant appartement/nom',
-  'écoute/verbe une/determinant chanson/nom',
-  'écoute/verbe une/determinant histoire/nom',
-  'écoute/verbe la/determinant radio/nom',
-  'aime/verbe les/determinant livres/nom',
-  'aime/verbe les/determinant gâteaux/nom',
-  'aime/verbe le/determinant football/nom',
-  'aime/verbe la/determinant musique/nom',
-  'a/verbe un/determinant cahier/nom',
-  'a/verbe un/determinant chien/nom',
-  'a/verbe un/determinant vélo/nom',
-  'a/verbe une/determinant sœur/nom',
-  'a/verbe un/determinant ballon/nom',
-  'cherche/verbe un/determinant stylo/nom',
-  'cherche/verbe le/determinant chat/nom',
-  'cherche/verbe ses/determinant clés/nom',
-  'trouve/verbe une/determinant pièce/nom',
-  'trouve/verbe un/determinant trésor/nom',
-  'achète/verbe du/determinant pain/nom',
-  'achète/verbe une/determinant glace/nom',
-  'achète/verbe des/determinant fleurs/nom',
-  'prépare/verbe le/determinant dîner/nom',
-  'prépare/verbe un/determinant gâteau/nom',
-  'lance/verbe le/determinant ballon/nom',
-  'invite/verbe un/determinant ami/nom',
-  'aide/verbe la/determinant voisine/nom',
-  'ferme/verbe la/determinant porte/nom',
-  'visite/verbe la/determinant ferme/nom',
-  'range/verbe sa/determinant chambre/nom',
-  'plante/verbe une/determinant fleur/nom',
-  'est/verbe à/preposition la/determinant maison/nom',
-] as const
-
-const ER_ADJ_COMPL = [
-  'mange/verbe une/determinant pomme/nom rouge/adjectif',
-  'regarde/verbe un/determinant film/nom amusant/adjectif',
-  'dessine/verbe un/determinant arbre/nom vert/adjectif',
-  'porte/verbe un/determinant manteau/nom bleu/adjectif',
-  'habite/verbe dans/preposition une/determinant petite/adjectif maison/nom',
-  'écoute/verbe une/determinant chanson/nom douce/adjectif',
-  'aime/verbe les/determinant livres/nom anciens/adjectif',
-  'a/verbe un/determinant nouveau/adjectif cahier/nom',
-  'prépare/verbe un/determinant bon/adjectif repas/nom',
-  'cherche/verbe un/determinant stylo/nom noir/adjectif',
-] as const
-
-const ER_PREP = [
-  'joue/verbe dans/preposition le/determinant jardin/nom',
-  'reste/verbe chez/preposition la/determinant mamie/nom',
-  'marche/verbe avec/preposition un/determinant ami/nom',
-  'travaille/verbe à/preposition l’/determinant école/nom',
-  'cherche/verbe un/determinant livre/nom sous/preposition le/determinant lit/nom',
-  'arrive/verbe après/preposition le/determinant cours/nom',
-  'habite/verbe dans/preposition une/determinant maison/nom',
-  'passe/verbe devant/preposition la/determinant poste/nom',
-  'rentre/verbe à/preposition l’/determinant école/nom',
-  'entre/verbe dans/preposition la/determinant classe/nom',
-] as const
-
-const ER_ADV = [
-  'mange/verbe vite/adverbe une/determinant pomme/nom',
-  'regarde/verbe souvent/adverbe un/determinant film/nom',
-  'dessine/verbe bien/adverbe un/determinant arbre/nom',
-  'parle/verbe trop/adverbe',
-  'travaille/verbe beaucoup/adverbe',
-  'arrive/verbe tôt/adverbe',
-  'reste/verbe ici/adverbe',
-  'chante/verbe fort/adverbe',
-  'est/verbe souvent/adverbe à/preposition la/determinant maison/nom',
-  'a/verbe déjà/adverbe un/determinant cahier/nom',
-] as const
-
-/** 2e groupe (-ir) et 3e groupe. */
-const AUTRES_PRED = [
-  'lit/verbe un/determinant livre/nom',
-  'lit/verbe un/determinant journal/nom',
-  'lit/verbe une/determinant recette/nom',
-  'lit/verbe une/determinant revue/nom',
-  'boit/verbe un/determinant jus/nom',
-  'boit/verbe un/determinant thé/nom',
-  'boit/verbe un/determinant chocolat/nom',
-  'écrit/verbe une/determinant lettre/nom',
-  'écrit/verbe un/determinant poème/nom',
-  'écrit/verbe un/determinant message/nom',
-  'ouvre/verbe la/determinant fenêtre/nom',
-  'ouvre/verbe la/determinant porte/nom',
-  'ouvre/verbe la/determinant boîte/nom',
-  'prend/verbe le/determinant bus/nom',
-  'prend/verbe le/determinant train/nom',
-  'prend/verbe le/determinant métro/nom',
-  'prend/verbe une/determinant photo/nom',
-  'finit/verbe un/determinant dessin/nom',
-  'finit/verbe un/determinant puzzle/nom',
-  'finit/verbe un/determinant devoir/nom',
-  'choisit/verbe une/determinant pomme/nom',
-  'choisit/verbe une/determinant robe/nom',
-  'choisit/verbe un/determinant film/nom',
-  'voit/verbe un/determinant oiseau/nom',
-  'voit/verbe un/determinant chat/nom',
-  'voit/verbe la/determinant mer/nom',
-  'fait/verbe un/determinant gâteau/nom',
-  'fait/verbe un/determinant bricolage/nom',
-  'fait/verbe la/determinant vaisselle/nom',
-  'met/verbe un/determinant manteau/nom',
-  'met/verbe une/determinant écharpe/nom',
-  'met/verbe un/determinant chapeau/nom',
-  'met/verbe la/determinant table/nom',
-] as const
-
-const AUTRES_ADJ_COMPL = [
-  'lit/verbe un/determinant livre/nom ancien/adjectif',
-  'boit/verbe un/determinant jus/nom froid/adjectif',
-  'écrit/verbe une/determinant longue/adjectif lettre/nom',
-  'ouvre/verbe la/determinant grande/adjectif fenêtre/nom',
-  'prend/verbe le/determinant bus/nom jaune/adjectif',
-  'finit/verbe un/determinant joli/adjectif dessin/nom',
-  'choisit/verbe une/determinant pomme/nom rouge/adjectif',
-  'voit/verbe un/determinant oiseau/nom bleu/adjectif',
-  'fait/verbe un/determinant bon/adjectif gâteau/nom',
-  'met/verbe un/determinant manteau/nom chaud/adjectif',
-] as const
-
-const AUTRES_PREP = [
-  'va/verbe à/preposition l’/determinant école/nom',
-  'vient/verbe chez/preposition la/determinant mamie/nom',
-  'sort/verbe de/preposition la/determinant classe/nom',
-  'part/verbe après/preposition le/determinant cours/nom',
-  'lit/verbe dans/preposition le/determinant lit/nom',
-  'écrit/verbe sur/preposition le/determinant cahier/nom',
-  'prend/verbe un/determinant livre/nom dans/preposition le/determinant sac/nom',
-  'dort/verbe sur/preposition le/determinant lit/nom',
-  'met/verbe le/determinant livre/nom sur/preposition la/determinant table/nom',
-  'finit/verbe le/determinant dessin/nom à/preposition l’/determinant école/nom',
-] as const
-
-const AUTRES_ADV = [
-  'lit/verbe souvent/adverbe un/determinant livre/nom',
-  'écrit/verbe bien/adverbe une/determinant lettre/nom',
-  'court/verbe lentement/adverbe',
-  'part/verbe demain/adverbe',
-  'vient/verbe tôt/adverbe',
-  'finit/verbe vite/adverbe un/determinant dessin/nom',
-  'prend/verbe déjà/adverbe le/determinant bus/nom',
-  'boit/verbe trop/adverbe',
-  'voit/verbe clairement/adverbe un/determinant oiseau/nom',
-  'fait/verbe bien/adverbe un/determinant gâteau/nom',
-] as const
-
-const CONJONCTIONS = [
-  'et/conjonction',
-  'ou/conjonction',
-  'mais/conjonction',
-  'donc/conjonction',
-  'car/conjonction',
-  'puis/conjonction',
-  'quand/conjonction',
-  'si/conjonction',
-  'parce_que/conjonction',
-  'alors/conjonction',
-] as const
+export function subjectsFor(theme: PhraseThemeId): readonly string[] {
+  if (theme === 'phrase-determinants' || theme === 'phrase-negation-determinants') return DET_SUBJECTS
+  return SIMPLE_SUBJECTS
+}
 
 function lowerCommon(taggedSubject: string): string {
-  if (!taggedSubject.includes('/determinant')) return taggedSubject
   return taggedSubject
     .replace(/^Le\//, 'le/')
     .replace(/^La\//, 'la/')
@@ -448,93 +290,72 @@ function lowerCommon(taggedSubject: string): string {
     .replace(/^Cet\//, 'cet/')
     .replace(/^Cette\//, 'cette/')
     .replace(/^Chaque\//, 'chaque/')
+    .replace(/^Il\//, 'il/')
+    .replace(/^Elle\//, 'elle/')
 }
 
-function conjonctionSentences(preds: readonly string[]): PhraseToken[][] {
-  const out: PhraseToken[][] = []
-  const commons = [...COMMON]
-  for (let i = 0; i < commons.length; i++) {
-    for (let j = 0; j < preds.length; j++) {
-      const left = `${commons[i]} ${preds[i % preds.length]!}`
-      const right = `${lowerCommon(commons[(i + 1 + (j % 3)) % commons.length]!)} ${preds[j]!}`
-      const conj = CONJONCTIONS[j % CONJONCTIONS.length]!
-      out.push(parse(`${left} ${conj} ${right}`))
-    }
+const FEMININE_ETRE_ADJ = /(?:grande|fatiguée|contente)\/adjectif/
+const MASCULINE_ETRE_ADJ = /(?:grand|fatigué|content)\/adjectif/
+
+function predsForEtreAdj(preds: readonly string[], gender: 'm' | 'f'): readonly string[] {
+  const feminine = preds.filter((item) => FEMININE_ETRE_ADJ.test(item))
+  const masculine = preds.filter((item) => MASCULINE_ETRE_ADJ.test(item) && !FEMININE_ETRE_ADJ.test(item))
+  const pool = gender === 'f' ? feminine : masculine
+  return pool.length ? pool : preds
+}
+
+export function instantiateThemeFrame(
+  theme: PhraseThemeId,
+  frame: ThemedFrame,
+  pickSubject: () => string,
+  pickPred: (preds: readonly string[]) => string,
+): PhraseToken[] {
+  if (theme === 'phrase-conjonctions') {
+    const left = pickSubject()
+    let right = pickSubject()
+    if (right === left) right = pickSubject()
+    const tokens = parse(
+      `${left} ${pickPred(frame.preds)} ${pickPred(frame.conjs ?? ['et/conjonction'])} ${lowerCommon(right)} ${pickPred(frame.rightPreds ?? frame.preds)}`,
+    )
+    return tokens
   }
-  return out
+  const subject = pickSubject()
+  let pred = pickPred(frame.preds)
+  if (frame.id === 'être' && (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif')) {
+    pred = pickPred(predsForEtreAdj(frame.preds, subjectGender(subject)))
+  }
+  const tokens = instantiateTagged(subject, pred)
+  return isNegationTheme(theme) ? withNegation(tokens) : tokens
 }
 
-const ER_PLURALS = [
-  'Les/determinant enfants/nom mangent/verbe une/determinant pomme/nom',
-  'Les/determinant élèves/nom regardent/verbe un/determinant film/nom',
-  'Mes/determinant cousins/nom habitent/verbe dans/preposition une/determinant maison/nom',
-  'Ces/determinant filles/nom écoutent/verbe une/determinant chanson/nom',
-  'Nos/determinant voisins/nom aiment/verbe les/determinant livres/nom',
-  'Vos/determinant amis/nom portent/verbe un/determinant manteau/nom',
-  'Plusieurs/determinant élèves/nom dessinent/verbe un/determinant arbre/nom',
-  'Quelques/determinant enfants/nom jouent/verbe dans/preposition le/determinant jardin/nom',
-  'Les/determinant maîtres/nom préparent/verbe le/determinant repas/nom',
-  'Des/determinant amis/nom arrivent/verbe après/preposition le/determinant cours/nom',
-  'Les/determinant cousins/nom achètent/verbe une/determinant glace/nom',
-  'Ces/determinant copains/nom lancent/verbe le/determinant ballon/nom',
-  'Nos/determinant sœurs/nom préparent/verbe le/determinant dîner/nom',
-  'Vos/determinant voisines/nom plantent/verbe une/determinant fleur/nom',
-  'Plusieurs/determinant enfants/nom cherchent/verbe le/determinant chat/nom',
-  'Quelques/determinant amis/nom visitent/verbe la/determinant ferme/nom',
-  'Les/determinant musiciens/nom aiment/verbe la/determinant musique/nom',
-  'Des/determinant élèves/nom rangent/verbe la/determinant classe/nom',
-] as const
-
-const AUTRES_PLURALS = [
-  'Les/determinant enfants/nom lisent/verbe un/determinant livre/nom',
-  'Les/determinant élèves/nom écrivent/verbe une/determinant lettre/nom',
-  'Mes/determinant cousins/nom prennent/verbe le/determinant bus/nom',
-  'Ces/determinant filles/nom voient/verbe un/determinant oiseau/nom',
-  'Nos/determinant voisins/nom font/verbe un/determinant gâteau/nom',
-  'Vos/determinant amis/nom mettent/verbe un/determinant manteau/nom',
-  'Plusieurs/determinant élèves/nom finissent/verbe un/determinant dessin/nom',
-  'Quelques/determinant enfants/nom boivent/verbe un/determinant jus/nom',
-  'Les/determinant maîtres/nom ouvrent/verbe la/determinant fenêtre/nom',
-  'Des/determinant amis/nom vont/verbe à/preposition l’/determinant école/nom',
-  'Les/determinant cousins/nom prennent/verbe le/determinant train/nom',
-  'Ces/determinant copines/nom lisent/verbe un/determinant journal/nom',
-  'Nos/determinant frères/nom font/verbe un/determinant bricolage/nom',
-  'Vos/determinant voisins/nom ouvrent/verbe la/determinant porte/nom',
-  'Plusieurs/determinant enfants/nom voient/verbe la/determinant mer/nom',
-  'Quelques/determinant amis/nom choisissent/verbe un/determinant film/nom',
-  'Les/determinant élèves/nom finissent/verbe un/determinant devoir/nom',
-  'Des/determinant musiciens/nom mettent/verbe la/determinant table/nom',
-] as const
-
-function withExtras(base: PhraseToken[][], extras: readonly string[]): PhraseToken[][] {
-  return [...base, ...extras.map(parse)]
-}
-
-function bankFor(
-  preds: readonly string[],
-  adjCompl: readonly string[],
-  prep: readonly string[],
-  adv: readonly string[],
-  plurals: readonly string[],
-  frames: readonly SimpleFrame[],
-): Record<PhraseThemeId, PhraseToken[][]> {
-  const adj = [...cartesian(ADJ_SUBJECTS, preds), ...cartesian(PEOPLE, adjCompl)]
-  const dets = withExtras(cartesian(DET_SUBJECTS, preds), plurals)
-  return {
-    'phrase-simple': assertBank('phrase-simple', samplesFromFrames(frames, false), Math.min(100, frames.length)),
-    'phrase-negation': assertBank('phrase-negation', samplesFromFrames(frames, true), Math.min(100, frames.length)),
-    'phrase-adjectif': assertBank('phrase-adjectif', adj),
-    'phrase-negation-adjectif': assertBank('phrase-negation-adjectif', adj.map(withNegation)),
-    'phrase-determinants': assertBank('phrase-determinants', dets),
-    'phrase-negation-determinants': assertBank('phrase-negation-determinants', dets.map(withNegation)),
-    'phrase-preposition': assertBank('phrase-preposition', cartesian(PEOPLE, prep)),
-    'phrase-negation-preposition': assertBank(
-      'phrase-negation-preposition',
-      cartesian(PEOPLE, prep).map(withNegation),
+function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): PhraseToken[][] {
+  const frames = framesForTheme(theme, group)
+  const subjects = subjectsFor(theme)
+  return frames.map((frame, index) =>
+    instantiateThemeFrame(
+      theme,
+      frame,
+      () => subjects[index % subjects.length]!,
+      (preds) => preds[0]!,
     ),
-    'phrase-adverbe': assertBank('phrase-adverbe', cartesian(PEOPLE, adv)),
-    'phrase-negation-adverbe': assertBank('phrase-negation-adverbe', cartesian(PEOPLE, adv).map(withNegation)),
-    'phrase-conjonctions': assertBank('phrase-conjonctions', conjonctionSentences(preds)),
+  )
+}
+
+function bankFor(group: PhraseVerbGroup): Record<PhraseThemeId, PhraseToken[][]> {
+  const simple = framesForTheme('phrase-simple', group)
+  const minSimple = Math.min(100, simple.length)
+  return {
+    'phrase-simple': assertBank('phrase-simple', samplesFromThemed('phrase-simple', group), minSimple),
+    'phrase-negation': assertBank('phrase-negation', samplesFromThemed('phrase-negation', group), minSimple),
+    'phrase-adjectif': assertBank('phrase-adjectif', samplesFromThemed('phrase-adjectif', group), Math.min(100, framesForTheme('phrase-adjectif', group).length)),
+    'phrase-negation-adjectif': assertBank('phrase-negation-adjectif', samplesFromThemed('phrase-negation-adjectif', group), Math.min(100, framesForTheme('phrase-negation-adjectif', group).length)),
+    'phrase-determinants': assertBank('phrase-determinants', samplesFromThemed('phrase-determinants', group), minSimple),
+    'phrase-negation-determinants': assertBank('phrase-negation-determinants', samplesFromThemed('phrase-negation-determinants', group), minSimple),
+    'phrase-preposition': assertBank('phrase-preposition', samplesFromThemed('phrase-preposition', group), Math.min(40, framesForTheme('phrase-preposition', group).length)),
+    'phrase-negation-preposition': assertBank('phrase-negation-preposition', samplesFromThemed('phrase-negation-preposition', group), Math.min(40, framesForTheme('phrase-negation-preposition', group).length)),
+    'phrase-adverbe': assertBank('phrase-adverbe', samplesFromThemed('phrase-adverbe', group), minSimple),
+    'phrase-negation-adverbe': assertBank('phrase-negation-adverbe', samplesFromThemed('phrase-negation-adverbe', group), minSimple),
+    'phrase-conjonctions': assertBank('phrase-conjonctions', samplesFromThemed('phrase-conjonctions', group), minSimple),
   }
 }
 
@@ -543,8 +364,8 @@ if (SIMPLE_FRAMES_ER.length < 100) {
 }
 
 const BANKS: Record<PhraseVerbGroup, Record<PhraseThemeId, PhraseToken[][]>> = {
-  er: bankFor(ER_PRED, ER_ADJ_COMPL, ER_PREP, ER_ADV, ER_PLURALS, SIMPLE_FRAMES_ER),
-  autres: bankFor(AUTRES_PRED, AUTRES_ADJ_COMPL, AUTRES_PREP, AUTRES_ADV, AUTRES_PLURALS, SIMPLE_FRAMES_AUTRES),
+  er: bankFor('er'),
+  autres: bankFor('autres'),
 }
 
 export function phrasesFor(theme: PhraseThemeId, group: PhraseVerbGroup = 'er'): PhraseToken[][] {
