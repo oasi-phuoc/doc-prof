@@ -453,6 +453,29 @@ function Landing({ onCreate }: { onCreate: () => void }) {
   )
 }
 
+function TabRemoveButton({ label, onRemove }: { label: string; onRemove: () => void }) {
+  return (
+    <span
+      className="tab-remove"
+      role="button"
+      tabIndex={0}
+      aria-label={label}
+      onClick={(event) => {
+        event.stopPropagation()
+        onRemove()
+      }}
+      onKeyDown={(event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return
+        event.preventDefault()
+        event.stopPropagation()
+        onRemove()
+      }}
+    >
+      ×
+    </span>
+  )
+}
+
 function FormesPalette({
   marks,
   selectedKind,
@@ -1015,6 +1038,19 @@ function GeneratorPage() {
     setBlockIndex(0)
   }
 
+  const removePage = (index: number) => {
+    setPages((current) => {
+      if (current.length <= 1) return current
+      return current.filter((_, pageIdx) => pageIdx !== index)
+    })
+    setPageIndex((current) => {
+      if (index < current) return current - 1
+      if (index === current) return Math.max(0, current - 1)
+      return current
+    })
+    setBlockIndex(0)
+  }
+
   const addExerciseOnPage = () => {
     const currentTypes = typesForTopic(
       activeBlock.topic,
@@ -1133,7 +1169,7 @@ function GeneratorPage() {
                 {pages.length} page{pages.length > 1 ? 's' : ''}
               </span>
             </div>
-            <div className="page-tabs">
+            <div className="page-tabs" role="tablist" aria-label="Pages">
               {pages.map((_, index) => (
                 <button
                   key={index}
@@ -1145,7 +1181,10 @@ function GeneratorPage() {
                   }}
                   aria-label={`Page ${index + 1}`}
                 >
-                  {index + 1}
+                  <span className="tab-number">{index + 1}</span>
+                  {pages.length > 1 && index === pageIndex ? (
+                    <TabRemoveButton label="Retirer cette page" onRemove={() => removePage(index)} />
+                  ) : null}
                 </button>
               ))}
             </div>
@@ -1167,15 +1206,11 @@ function GeneratorPage() {
                     onClick={() => setBlockIndex(index)}
                     aria-label={`Exercice ${firstExerciseNo + index}`}
                   >
-                    {firstExerciseNo + index}
+                    <span className="tab-number">{firstExerciseNo + index}</span>
                     {pageExerciseBlocks.length > 1 && index === safeBlockIndex ? (
-                      <span
-                        className="exercise-tab-remove"
-                        role="button"
-                        tabIndex={0}
-                        aria-label="Retirer cet exercice"
-                        onClick={(event) => {
-                          event.stopPropagation()
+                      <TabRemoveButton
+                        label="Retirer cet exercice"
+                        onRemove={() => {
                           setPages((current) =>
                             current.map((page, pageIdx) =>
                               pageIdx === pageIndex ? removePageBlock(page, index) : page,
@@ -1183,20 +1218,7 @@ function GeneratorPage() {
                           )
                           setBlockIndex(Math.max(0, index - 1))
                         }}
-                        onKeyDown={(event) => {
-                          if (event.key !== 'Enter' && event.key !== ' ') return
-                          event.preventDefault()
-                          event.stopPropagation()
-                          setPages((current) =>
-                            current.map((page, pageIdx) =>
-                              pageIdx === pageIndex ? removePageBlock(page, index) : page,
-                            ),
-                          )
-                          setBlockIndex(Math.max(0, index - 1))
-                        }}
-                      >
-                        ×
-                      </span>
+                      />
                     ) : null}
                   </button>
                 ))}
