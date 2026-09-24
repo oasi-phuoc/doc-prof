@@ -826,6 +826,9 @@ function GeneratorPage() {
   }
 
   const isReperage = isReperagePage(activeBlock.exerciseType)
+  const isPhraseChart =
+    activeBlock.topic === 'phrase-tableaux' || activeBlock.exerciseType.startsWith('phrase-tableau-')
+  const isPhraseDomain = activePage.domain === 'phrase'
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
   const isComposer = isReperageComposer(activeBlock.exerciseType)
   const isFormes = isReperageFormes(activeBlock.exerciseType)
@@ -1212,21 +1215,29 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {activePage.domain === 'phrase' ? (
+              {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>
                   <div className="mode-toggle" role="group" aria-label="Groupe de verbes">
                     <button
                       type="button"
                       className={(activeBlock.verbGroup ?? 'er') === 'er' ? 'active' : ''}
-                      onClick={() => updatePage({ verbGroup: 'er' as PhraseVerbGroup })}
+                      onClick={() => {
+                        if ((activeBlock.verbGroup ?? 'er') === 'er') return
+                        updatePage({ verbGroup: 'er' as PhraseVerbGroup })
+                        setSeed(randomSeed())
+                      }}
                     >
                       -er, être, avoir
                     </button>
                     <button
                       type="button"
                       className={activeBlock.verbGroup === 'autres' ? 'active' : ''}
-                      onClick={() => updatePage({ verbGroup: 'autres' as PhraseVerbGroup })}
+                      onClick={() => {
+                        if (activeBlock.verbGroup === 'autres') return
+                        updatePage({ verbGroup: 'autres' as PhraseVerbGroup })
+                        setSeed(randomSeed())
+                      }}
                     >
                       2e et 3e groupes
                     </button>
@@ -1301,7 +1312,7 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {isReperage ? null : (
+              {isReperage || isPhraseDomain ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -1433,6 +1444,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
+              {isPhraseChart ? null : (
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
@@ -1460,6 +1472,7 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
+              )}
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

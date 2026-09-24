@@ -594,8 +594,10 @@ export type PhraseThemeId =
   | 'phrase-negation'
   | 'phrase-adjectif'
   | 'phrase-negation-adjectif'
+  | 'phrase-determinants'
   | 'phrase-negation-determinants'
   | 'phrase-preposition'
+  | 'phrase-negation-preposition'
   | 'phrase-adverbe'
   | 'phrase-negation-adverbe'
   | 'phrase-conjonctions'
@@ -663,6 +665,20 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases : cette personne ne… pas.',
     'Écrivez des phrases négatives pour parler d’un proche (déterminant).',
   ],
+  'phrase-determinants': [
+    'Écrivez des phrases affirmatives avec des déterminants variés.',
+    'Écrivez des phrases avec le, la, les, l’, un, une, des.',
+    'Écrivez des phrases avec mon, ma, mes, ton, ta, tes.',
+    'Écrivez des phrases avec son, sa, ses, notre, votre, leur.',
+    'Écrivez des phrases avec ce, cet, cette, ces.',
+    'Écrivez des phrases avec chaque, plusieurs, quelques.',
+    'Écrivez des phrases pour parler de votre famille (mon, ma, nos…).',
+    'Écrivez des phrases avec un déterminant démonstratif.',
+    'Écrivez des phrases avec un déterminant possessif.',
+    'Écrivez des phrases avec un article défini.',
+    'Écrivez des phrases avec un article indéfini.',
+    'Écrivez des phrases : cette personne + verbe + complément.',
+  ],
   'phrase-negation-adjectif': [
     'Écrivez des phrases négatives avec un adjectif.',
     'Écrivez ce qui n’est pas grand / petit (avec adjectif).',
@@ -691,6 +707,20 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases avec près de / loin de.',
     'Écrivez des phrases avec pendant / depuis.',
     'Écrivez des phrases pour décrire un trajet (préposition).',
+  ],
+  'phrase-negation-preposition': [
+    'Écrivez des phrases négatives avec une préposition.',
+    'Écrivez des phrases : ne… pas + dans / sur / sous.',
+    'Écrivez ce que vous ne faites pas chez quelqu’un.',
+    'Écrivez des phrases négatives avec à / de.',
+    'Écrivez des phrases : je ne vais pas à…',
+    'Écrivez des phrases négatives avec avec / sans.',
+    'Écrivez des phrases : il ne reste pas chez…',
+    'Écrivez des phrases négatives pour situer (devant, derrière).',
+    'Écrivez des phrases avec ne… pas + près de / loin de.',
+    'Écrivez des phrases négatives sur le trajet (préposition).',
+    'Écrivez des phrases : elle n’entre pas dans…',
+    'Écrivez des phrases négatives avec après / avant.',
   ],
   'phrase-adverbe': [
     'Écrivez des phrases avec un adverbe (vite, bien, souvent…).',

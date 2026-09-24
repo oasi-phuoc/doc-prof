@@ -55,13 +55,21 @@ function pastillePattern(theme: PhraseThemeId, rng: Rng): PhraseCategory[] {
     case 'phrase-negation':
       return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-adjectif':
-      return [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
+      return rng() < 0.5
+        ? ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'nom']
+        : [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
     case 'phrase-negation-adjectif':
-      return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'adjectif', 'nom']
+      return rng() < 0.5
+        ? ['determinant', 'adjectif', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
+        : [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'adjectif', 'nom']
+    case 'phrase-determinants':
+      return ['determinant', 'nom', 'verbe', 'determinant', 'nom']
     case 'phrase-negation-determinants':
       return ['determinant', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-preposition':
       return [...subj, 'verbe', 'preposition', 'determinant', 'nom']
+    case 'phrase-negation-preposition':
+      return [...subj, 'adverbe', 'verbe', 'adverbe', 'preposition', 'determinant', 'nom']
     case 'phrase-adverbe':
       return [...subj, 'verbe', 'adverbe', 'determinant', 'nom']
     case 'phrase-negation-adverbe':
@@ -109,7 +117,7 @@ function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup): Math
 
 function parsePhraseType(typeId: string): { theme: PhraseThemeId; kind: string } | null {
   const m =
-    /^(phrase-simple|phrase-negation-adjectif|phrase-negation-adverbe|phrase-negation-determinants|phrase-negation|phrase-adjectif|phrase-preposition|phrase-adverbe|phrase-conjonctions)-(colorier|ordre|construire|ecrire)$/.exec(
+    /^(phrase-simple|phrase-negation-adjectif|phrase-negation-adverbe|phrase-negation-preposition|phrase-negation-determinants|phrase-negation|phrase-adjectif|phrase-determinants|phrase-preposition|phrase-adverbe|phrase-conjonctions)-(colorier|ordre|construire|ecrire)$/.exec(
       typeId,
     )
   if (!m) return null

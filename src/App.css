@@ -959,12 +959,16 @@
   --gec-inter:#7a7a7a;
 }
 .gattegno-chart{
-  width:100%;max-width:100%;font-family:'DM Sans',sans-serif;color:var(--ink);
-  padding:4px 0 8px;box-sizing:border-box
+  width:100%;max-width:100%;height:100%;min-height:0;
+  font-family:'DM Sans',sans-serif;color:var(--ink);
+  padding:2px 0 0;box-sizing:border-box;
+  display:flex;flex-direction:column
 }
 .gattegno-grid{
+  flex:1 1 auto;min-height:0;
   display:grid;
-  grid-template-columns:1.05fr 1fr 0.95fr 0.95fr;
+  grid-template-columns:1.15fr 1fr 0.95fr 0.95fr;
+  grid-template-rows:0.85fr 0.62fr 1.35fr 0.9fr 0.55fr 1.15fr;
   grid-template-areas:
     "pronoms   pronoms   adverbes adverbes"
     "interject .         verbes   verbes"
@@ -972,11 +976,11 @@
     "dets      dets      verbes   verbes"
     "junction  junction  verbes   verbes"
     "preps     preps     conjc    conjs";
-  gap:6px;align-items:stretch
+  gap:5px;align-items:stretch
 }
 .gattegno-pronoms{grid-area:pronoms}
 .gattegno-adverbes{grid-area:adverbes}
-.gattegno-interjections{grid-area:interject;width:58%;justify-self:start}
+.gattegno-interjections{grid-area:interject;width:92%;justify-self:start}
 .gattegno-noms{grid-area:noms}
 .gattegno-adjectifs{grid-area:adjectifs}
 .gattegno-verbes{grid-area:verbes}
@@ -986,26 +990,34 @@
 .gattegno-conj-coord{grid-area:conjc}
 .gattegno-conj-sub{grid-area:conjs}
 .gattegno-cell{
-  border:2.5px solid;background:#fff;border-radius:0;padding:8px 10px;
+  border:2.5px solid;background:#fff;border-radius:0;padding:6px 8px;
   display:flex;align-items:center;justify-content:center;text-align:center;
   font-weight:700;font-size:13px;line-height:1.25;letter-spacing:.02em;
-  box-sizing:border-box;min-height:36px;color:var(--ink)
+  box-sizing:border-box;min-height:0;height:100%;overflow:hidden;color:var(--ink)
 }
-.gattegno-cell.is-words{font-weight:500;font-size:10px;line-height:1.35;padding:7px 8px}
+.gattegno-cell.is-words{font-weight:500;font-size:9.5px;line-height:1.3;padding:5px 6px}
 .gattegno-cell.is-outline span{visibility:hidden}
-.gattegno-pronoms,.gattegno-adverbes{min-height:40px;text-transform:uppercase}
-.gattegno-interjections{min-height:24px;font-size:8px;padding:3px 5px;text-transform:uppercase}
-.gattegno-noms,.gattegno-adjectifs{min-height:84px;text-transform:uppercase;font-size:15px}
-.gattegno-verbes{min-height:132px;text-transform:uppercase;font-size:22px;font-weight:800}
-.gattegno-determinants,.gattegno-prepositions{min-height:36px;text-transform:uppercase;font-size:12px}
-.gattegno-conj{min-height:48px;font-size:8px;text-transform:uppercase;line-height:1.2;padding:5px 4px}
+.gattegno-pronoms,.gattegno-adverbes{text-transform:uppercase}
+.gattegno-interjections{font-size:9px;padding:4px 6px;text-transform:uppercase}
+.gattegno-noms,.gattegno-adjectifs{text-transform:uppercase;font-size:15px}
+.gattegno-verbes{text-transform:uppercase;font-size:22px;font-weight:800}
+.gattegno-determinants,.gattegno-prepositions{text-transform:uppercase;font-size:12px}
+.gattegno-conj{font-size:8px;text-transform:uppercase;line-height:1.2;padding:5px 4px}
 .gattegno-junction{
-  width:46%;justify-self:start;min-height:22px;
+  width:46%;justify-self:start;min-height:0;height:100%;
   border:2.5px solid var(--gec-prep);border-top-color:var(--gec-det);
   background:#fff;box-sizing:border-box
 }
-.exercise-item.layout-gattegno-chart{padding:4px 0}
-.exercise-item.layout-gattegno-chart .item-content{width:100%}
+.sheet-body:has(.layout-gattegno-chart) .exercise-grid{
+  flex:1 1 auto;min-height:0;grid-template-rows:minmax(0,1fr);align-content:stretch
+}
+.exercise-item.layout-gattegno-chart{
+  padding:2px 0;height:100%;min-height:0;
+  display:flex;flex-direction:column
+}
+.exercise-item.layout-gattegno-chart .item-content{
+  width:100%;flex:1;min-height:0;display:flex;flex-direction:column
+}
 .phrase-color-block,.phrase-order-block,.phrase-build-block,.phrase-write-block{
   width:100%;min-width:0;display:flex;flex-direction:column;gap:8px
 }
@@ -1041,8 +1053,7 @@
   content:counter(pw) ".";color:#3d9bc9;font-weight:700;font-size:15px;line-height:1.4
 }
 .phrase-answer-hint{margin:4px 0 0;font-size:13px}
-.exercise-item.layout-phrase-write .item-content,
-.exercise-item.layout-gattegno-chart .item-content{width:100%}
+.exercise-item.layout-phrase-write .item-content{width:100%}
 .exercise-item.layout-phrase-color,
 .exercise-item.layout-phrase-order,
 .exercise-item.layout-phrase-build{align-items:flex-start}
