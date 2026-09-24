@@ -103,9 +103,17 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
   }
 }
 
+function verbsForTheme(theme: PhraseThemeId, group: PhraseVerbGroup) {
+  const verbs = verbesFor(group)
+  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
+    return verbs.filter((verb) => verb.infinitive !== 'être')
+  }
+  return verbs
+}
+
 function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup): MathItem {
   const pastilles = pastillePattern(theme, rng)
-  const verb = pick(rng, verbesFor(group))
+  const verb = pick(rng, verbsForTheme(theme, group))
   return {
     layout: 'phrase-build',
     prompt: verb.infinitive,

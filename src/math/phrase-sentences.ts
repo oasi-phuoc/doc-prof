@@ -73,10 +73,21 @@ function atLeast100(list: PhraseToken[][], theme: string): PhraseToken[][] {
   return list
 }
 
+const ETRE_FORMS = /^(suis|es|est|sommes|êtes|sont)$/
+
+function isEtreVerb(token: PhraseToken): boolean {
+  return token.category === 'verbe' && ETRE_FORMS.test(token.text)
+}
+
+function predsWithoutEtre(preds: readonly string[]): string[] {
+  return preds.filter((pred) => !/(^|\s)(suis|es|est|sommes|êtes|sont)\/verbe/.test(pred))
+}
+
 function assertBank(theme: PhraseThemeId, list: PhraseToken[][]): PhraseToken[][] {
   atLeast100(list, theme)
   const needAdj = theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
   const needPrep = theme === 'phrase-preposition' || theme === 'phrase-negation-preposition'
+  const banEtre = theme === 'phrase-simple' || theme === 'phrase-negation'
   for (const tokens of list) {
     const sentence = joinPhrase(tokens)
     if (/habite (une|un|la|le|l’|cette|cette)/i.test(sentence) && !/habite dans/i.test(sentence)) {
@@ -87,6 +98,9 @@ function assertBank(theme: PhraseThemeId, list: PhraseToken[][]): PhraseToken[][
     }
     if (needPrep && !tokens.some((token) => token.category === 'preposition')) {
       throw new Error(`${theme} : préposition manquante — ${sentence}`)
+    }
+    if (banEtre && tokens.some(isEtreVerb)) {
+      throw new Error(`${theme} : « être » interdit (il faut un adjectif ou une préposition) — ${sentence}`)
     }
   }
   return list
@@ -167,7 +181,7 @@ const DET_SUBJECTS = [
   'Chaque/determinant enfant/nom',
 ] as const
 
-/** 1er groupe (-er) + être + avoir — compléments autonomes et grammaticaux. */
+/** 1er groupe (-er) + avoir. « être » est exclu de phrase simple / négation simple. */
 const ER_PRED = [
   'mange/verbe une/determinant pomme/nom',
   'regarde/verbe un/determinant film/nom',
@@ -359,7 +373,7 @@ function bankFor(
   adv: readonly string[],
   plurals: readonly string[],
 ): Record<PhraseThemeId, PhraseToken[][]> {
-  const simple = withExtras(cartesian(PEOPLE, preds), plurals)
+  const simple = withExtras(cartesian(PEOPLE, predsWithoutEtre(preds)), plurals)
   const adj = [...cartesian(ADJ_SUBJECTS, preds), ...cartesian(PEOPLE, adjCompl)]
   const dets = withExtras(cartesian(DET_SUBJECTS, preds), plurals)
   return {
