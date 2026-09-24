@@ -48,10 +48,12 @@ import {
   COORD_SHAPES,
   COORD_SHAPE_LABEL,
   DEFAULT_CELL_MM,
+  DEFAULT_FORMES_CELL_MM,
   DEFAULT_UNIT_SQUARES,
+  FORMES_CELL_MM_OPTIONS,
   clampAxesCols,
   clampAxesRows,
-  clampCellMm,
+  clampFormesCellMm,
   clampCoordSize,
   clampOrigin,
   centeredOrigin,
@@ -592,7 +594,7 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
           coordAxis: 'letters' as const,
           coordMarks: [],
           coordRange: undefined,
-          coordCellMm: DEFAULT_CELL_MM,
+          coordCellMm: DEFAULT_FORMES_CELL_MM,
           coordUnitSquares: undefined,
         }
       : isCadrans || isDroites || isConstruire
@@ -1439,7 +1441,6 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
-              {isReperage ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
@@ -1455,7 +1456,6 @@ function GeneratorPage() {
                   ))}
                 </div>
               </div>
-              )}
               {isFormes ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>
@@ -1533,11 +1533,11 @@ function GeneratorPage() {
                   <div className="coord-param-label">
                     Côté du carré
                     <div className="mode-toggle is-3" role="group" aria-label="Côté du carré">
-                      {CELL_MM_OPTIONS.map((mm) => (
+                      {FORMES_CELL_MM_OPTIONS.map((mm) => (
                         <button
                           key={mm}
                           type="button"
-                          className={clampCellMm(activeBlock.coordCellMm) === mm ? 'active' : ''}
+                          className={clampFormesCellMm(activeBlock.coordCellMm) === mm ? 'active' : ''}
                           onClick={() => updatePage({ coordCellMm: mm })}
                         >
                           {mm} mm
@@ -1581,7 +1581,7 @@ function GeneratorPage() {
                       <p className="type-hint muted">
                         Vous pouvez placer toutes les formes, une seule fois chacune. Glissez une forme sur une case,
                         ou cliquez une forme puis une case. Largeur et hauteur font grandir le tableau ; chaque carré
-                        garde le côté choisi, jusqu’à 26 × 26.
+                        reste à 6, 8 ou 10 mm, jusqu’à 26 × 26.
                       </p>
                       <p className="type-hint muted">
                         {(activeBlock.coordMarks?.length ?? 0)} / {COORD_SHAPES.length} forme
@@ -1601,7 +1601,7 @@ function GeneratorPage() {
                     <p className="type-hint muted">
                       Une seule grille centrée. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des
                       formes. Largeur et hauteur font grandir le tableau (26 lettres au plus) ; les carrés restent à
-                      3, 4 ou 5 mm.
+                      6, 8 ou 10 mm. Les colonnes 1 / 2 / 3 séparent les questions, pas le tableau.
                     </p>
                   )}
                 </div>
@@ -1704,7 +1704,7 @@ function GeneratorPage() {
                     <p className="type-hint muted">
                       {isComposer
                         ? 'Une grille sans axes x / y. L’origine est placée au hasard. Un point est donné avec ses coordonnées ; les autres se complètent comme pour lire les cadrans.'
-                        : 'Une seule grille à 4 cadrans, centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. La graduation choisit 1 ou 2 carrés pour une unité.'}
+                        : 'Une seule grille à 4 cadrans, centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Les colonnes 1 / 2 / 3 séparent les questions, pas le tableau.'}
                     </p>
                   )}
                 </div>
@@ -1720,8 +1720,8 @@ function GeneratorPage() {
                   />
                   <p className="type-hint muted">
                     {isDroites
-                      ? 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
-                      : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. Le corrigé montre les tracés.'}
+                      ? 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
+                      : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Le corrigé montre les tracés.'}
                   </p>
                 </div>
               ) : null}

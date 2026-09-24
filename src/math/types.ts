@@ -79,7 +79,11 @@ export type CoordShape =
 export type CoordVariant = 'cells' | 'polygon' | 'polar' | 'axes'
 export type CoordAxis = 'letters' | 'letters-y' | 'numeric'
 /** Côté physique d’un carré du tableau, en millimètres. */
-export type CoordCellMm = 3 | 4 | 5
+export type CoordCellMm = 3 | 4 | 5 | 6 | 8 | 10
+/** Carrés des repères à cadrans / droites / construction. */
+export type CoordAxesCellMm = 3 | 4 | 5
+/** Carrés des tableaux de formes (lire / placer). */
+export type CoordFormesCellMm = 6 | 8 | 10
 /** Nombre de carrés pour une unité de graduation. */
 export type CoordUnitSquares = 1 | 2
 
@@ -353,7 +357,7 @@ export type ExerciseBlock = {
   coordMarks?: CoordMark[]
   /** Étendue du repère à 4 cadrans (−n à +n), conservée pour les anciennes fiches. */
   coordRange?: number
-  /** Côté du carré (3, 4 ou 5 mm). */
+  /** Côté du carré (3/4/5 mm cadrans, 6/8/10 mm formes). */
   coordCellMm?: CoordCellMm
   /** Graduation : 1 ou 2 carrés pour une unité. */
   coordUnitSquares?: CoordUnitSquares

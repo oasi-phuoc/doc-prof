@@ -637,15 +637,15 @@
 }
 .coord-grid.scene-cells.is-fixed-mm,
 .coord-grid.scene-axes.is-fixed-mm{
-  width:auto;height:auto;max-width:none;max-height:none;aspect-ratio:auto;display:block;flex:0 0 auto
+  width:auto;height:auto;max-width:none;max-height:none;aspect-ratio:auto;display:block;flex:0 0 auto;overflow:visible
 }
 .coord-grid.is-fixed-mm .grid-line{stroke-width:0.18}
 .coord-grid.is-fixed-mm .grid-line-fine{stroke-width:0.08}
 .coord-grid.is-fixed-mm .axis-line{stroke-width:0.38}
-.coord-grid.is-fixed-mm .axis-label{font-size:2.2mm}
-.coord-grid.is-fixed-mm .point-label{font-size:2.4mm;font-weight:700}
+.coord-grid.is-fixed-mm .axis-label{font-size:3.2mm;font-weight:500}
+.coord-grid.is-fixed-mm .point-label{font-size:3.2mm;font-weight:600}
 .coord-grid .origin-mark{stroke:#111;stroke-width:0.4;fill:none}
-.coord-grid .origin-label{fill:#111;font-size:2.2mm;font-weight:700;font-family:'DM Sans',sans-serif}
+.coord-grid .origin-label{fill:#111;font-size:3.2mm;font-weight:600;font-family:'DM Sans',sans-serif}
 .coord-grid.is-placing-origin{cursor:crosshair}
 .coord-grid.is-fixed-mm .coord-line{stroke-width:0.55}
 .coord-grid.is-fixed-mm .coord-path{stroke-width:0.42}
@@ -683,10 +683,10 @@
 .coord-path.is-poly{fill:#111;fill-opacity:0.07}
 .coord-questions.is-lines .coord-question.is-draw{grid-template-columns:1.6em minmax(0,1fr)}
 .coord-grid .axis-line{stroke:#111;stroke-width:1.4}
-.coord-grid .axis-label{fill:#111;font-size:10px;font-family:'DM Sans',sans-serif}
+.coord-grid .axis-label{fill:#111;font-size:3.2mm;font-weight:500;font-family:'DM Sans',sans-serif}
 .coord-grid .grid-point{fill:#111}
 .coord-grid .grid-point.image{fill:#111;stroke:#111;stroke-width:1}
-.coord-grid .point-label{fill:#111;font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif}
+.coord-grid .point-label{fill:#111;font-size:3.2mm;font-weight:600;font-family:'DM Sans',sans-serif}
 .coord-grid .coord-poly{fill:#d8d8d8;stroke:#111;stroke-width:1.4}
 .coord-grid .grid-line,.coord-grid .axis-line,.coord-grid .axis-label{pointer-events:none}
 .coord-grid .coord-hit{fill:#000;fill-opacity:0;cursor:pointer;pointer-events:all}
@@ -801,6 +801,9 @@
 .worksheet-sheet .exercise-grid{
   display:grid;
   grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr));
+}
+.worksheet-sheet .exercise-grid:has(.layout-coord){
+  grid-template-columns:minmax(0,1fr);
 }
 .exercise-item.layout-algebra{min-height:min-content;align-items:baseline}
 .algebra-row{

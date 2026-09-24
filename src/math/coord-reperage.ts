@@ -1,7 +1,9 @@
 import { int, pick, shuffle, type Rng } from './rng'
 import type {
   CoordAxis,
+  CoordAxesCellMm,
   CoordCellMm,
+  CoordFormesCellMm,
   CoordMark,
   CoordQuestion,
   CoordScene,
@@ -14,19 +16,19 @@ import type {
 
 export const AXES_DEFAULT_COLS = 32
 export const AXES_DEFAULT_ROWS = 18
-export const DEFAULT_CELL_MM: CoordCellMm = 5
+export const DEFAULT_CELL_MM: CoordAxesCellMm = 5
+export const DEFAULT_FORMES_CELL_MM: CoordFormesCellMm = 8
 export const DEFAULT_UNIT_SQUARES: CoordUnitSquares = 1
-export const CELL_MM_OPTIONS: CoordCellMm[] = [3, 4, 5]
-export const AXES_MAX_COLS = 40
+export const CELL_MM_OPTIONS: CoordAxesCellMm[] = [3, 4, 5]
+export const FORMES_CELL_MM_OPTIONS: CoordFormesCellMm[] = [6, 8, 10]
+export const AXES_MAX_COLS = 56
 export const AXES_MAX_ROWS = 36
-/** Largeur utile A4 (210 mm − marges) pour caler le nombre de colonnes. */
-const PRINTABLE_INNER_MM = 178
-const LABEL_GUTTER_MM = 14
+const AXES_MAX_COLS_BY_MM: Record<CoordAxesCellMm, number> = { 3: 56, 4: 42, 5: 34 }
 
 export type AxesGrid = {
   cols: number
   rows: number
-  cellMm: CoordCellMm
+  cellMm: CoordAxesCellMm
   unitSquares: CoordUnitSquares
   rangeX: number
   rangeY: number
@@ -86,9 +88,17 @@ function evenBetween(n: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, even < min ? min : even))
 }
 
-export function clampCellMm(n: number | undefined): CoordCellMm {
+export function clampCellMm(n: number | undefined): CoordAxesCellMm {
   if (n === 3 || n === 4 || n === 5) return n
   return DEFAULT_CELL_MM
+}
+
+export function clampFormesCellMm(n: number | undefined): CoordFormesCellMm {
+  if (n === 6 || n === 8 || n === 10) return n
+  if (n === 3) return 6
+  if (n === 4) return 8
+  if (n === 5) return 10
+  return DEFAULT_FORMES_CELL_MM
 }
 
 export function clampUnitSquares(n: number | undefined): CoordUnitSquares {
@@ -96,11 +106,13 @@ export function clampUnitSquares(n: number | undefined): CoordUnitSquares {
 }
 
 export function maxAxesColsForCell(cellMm: CoordCellMm): number {
-  return evenBetween(Math.floor((PRINTABLE_INNER_MM - LABEL_GUTTER_MM) / cellMm), 2, AXES_MAX_COLS)
+  const axesMm = cellMm === 3 || cellMm === 4 || cellMm === 5 ? cellMm : DEFAULT_CELL_MM
+  return AXES_MAX_COLS_BY_MM[axesMm]
 }
 
 export function maxAxesRowsForCell(cellMm: CoordCellMm): number {
-  const max = evenBetween(Math.floor(190 / cellMm), 2, AXES_MAX_ROWS)
+  const axesMm = cellMm === 3 || cellMm === 4 || cellMm === 5 ? cellMm : DEFAULT_CELL_MM
+  const max = evenBetween(Math.floor(190 / axesMm), 2, AXES_MAX_ROWS)
   return max
 }
 
@@ -147,13 +159,13 @@ export function resolveAxesGrid(config: Pick<PageConfig, 'coordCols' | 'coordRow
 export function resolveFormesGrid(
   config: Pick<PageConfig, 'coordCols' | 'coordRows' | 'coordCellMm' | 'difficulty'>,
   difficulty?: Difficulty,
-): { cols: number; rows: number; cellMm: CoordCellMm } {
+): { cols: number; rows: number; cellMm: CoordFormesCellMm } {
   const level = difficulty ?? config.difficulty ?? 'moyen'
   const fallback = coordSizeFor(level)
   return {
     cols: clampCoordSize(config.coordCols ?? fallback.cols),
     rows: clampCoordSize(config.coordRows ?? fallback.rows),
-    cellMm: clampCellMm(config.coordCellMm),
+    cellMm: clampFormesCellMm(config.coordCellMm),
   }
 }
 
@@ -357,7 +369,7 @@ function generateCells(
   rows: number,
   count: number,
   axis: CoordAxis,
-  cellMm: CoordCellMm,
+  cellMm: CoordFormesCellMm,
 ): {
   scene: CoordScene
   questions: CoordQuestion[]

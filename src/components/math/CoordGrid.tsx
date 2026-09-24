@@ -124,8 +124,9 @@ export function CoordShapeButton({ kind, size = 22 }: { kind: CoordShape; size?:
   )
 }
 
-function mmPads() {
-  return { padL: 7, padR: 5, padT: 5, padB: 7 }
+function mmPads(kind: 'cells' | 'axes' = 'cells') {
+  if (kind === 'axes') return { padL: 8, padR: 12, padT: 6, padB: 8 }
+  return { padL: 7, padR: 8, padT: 5, padB: 7 }
 }
 
 function cellCenterMm(rows: number, x: number, y: number, padL: number, padT: number, cellMm: number) {
@@ -146,8 +147,8 @@ function CellsScene({
   onPlace?: (x: number, y: number) => void
   onRemove?: (x: number, y: number) => void
 }) {
-  const cellMm = scene.cellMm ?? 5
-  const { padL, padR, padT, padB } = mmPads()
+  const cellMm = scene.cellMm ?? 8
+  const { padL, padR, padT, padB } = mmPads('cells')
   const gridW = scene.cols * cellMm
   const gridH = scene.rows * cellMm
   const svgW = padL + gridW + padR
@@ -183,7 +184,12 @@ function CellsScene({
         return (
           <g key={`v-${x}`}>
             <line x1={gx} y1={padT} x2={gx} y2={padT + gridH} className="grid-line" />
-            <text x={gx + cellMm / 2} y={padT + gridH + 3.4} className="axis-label" textAnchor="middle">
+            <text
+              x={gx + cellMm / 2}
+              y={padT + gridH + 3.2}
+              className="axis-label"
+              textAnchor={x === scene.cols ? 'end' : 'middle'}
+            >
               {axisTickLabel(x, scene.axis, 'x')}
             </text>
           </g>
@@ -356,7 +362,7 @@ function AxesScene({
   const hideAxes = Boolean(scene.hideAxes)
   const showOrigin = Boolean(scene.showOrigin)
   const step = scene.step ?? 1
-  const { padL, padR, padT, padB } = mmPads()
+  const { padL, padR, padT, padB } = mmPads('axes')
   const gridW = cols * cellMm
   const gridH = rows * cellMm
   const svgW = padL + gridW + padR
@@ -558,6 +564,10 @@ function AxesScene({
         : null}
       {scene.marks.map((found, i) => {
         const p = to(found.x, found.y)
+        const gx = originCol + found.x * unit
+        const gy = originRow + found.y * unit
+        const flipX = gx >= cols - 1.25
+        const flipY = gy >= rows - 0.75
         const caption = found.showCoord
           ? `${found.label ?? ''}${found.label ? ' ' : ''}${formatAxesCoord(found.x, found.y)}`
           : found.label
@@ -566,10 +576,10 @@ function AxesScene({
             <circle cx={p.cx} cy={p.cy} r={Math.max(0.85, cellMm * 0.22)} className="grid-point" />
             {caption ? (
               <text
-                x={p.cx + (found.x >= 0 ? 1.4 : -1.4)}
-                y={p.cy + (found.y >= 0 ? -1.4 : 2.8)}
+                x={p.cx + (flipX ? -1.4 : 1.4)}
+                y={p.cy + (flipY ? 2.8 : -1.4)}
                 className="point-label"
-                textAnchor={found.x >= 0 ? 'start' : 'end'}
+                textAnchor={flipX ? 'end' : 'start'}
               >
                 {caption}
               </text>
