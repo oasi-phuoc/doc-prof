@@ -399,6 +399,27 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
 /** Mot de passe pour ouvrir le générateur de fiches. */
 const FICHE_ACCESS_PASSWORD = 'jebosseplus'
 
+const THEME_STORAGE_KEY = 'clairfle-theme-color'
+/** Couleurs déjà présentes dans `:root` — le bouton actif des toggles les reprend. */
+const THEME_COLORS = [
+  { id: 'violet', color: '#7c3aed', label: 'Violet' },
+  { id: 'bleu', color: '#4f46e5', label: 'Bleu' },
+  { id: 'vert', color: '#18a66a', label: 'Vert' },
+  { id: 'orange', color: '#c45c12', label: 'Orange' },
+  { id: 'rouge', color: '#b42318', label: 'Rouge' },
+  { id: 'rose', color: '#be185d', label: 'Rose' },
+] as const
+
+function readThemeColor(): string {
+  try {
+    const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
+    if (stored && THEME_COLORS.some((swatch) => swatch.color === stored)) return stored
+  } catch {
+    /* ignore */
+  }
+  return THEME_COLORS[0].color
+}
+
 /** Remettre à `true` pour réafficher Lecture dans le sélecteur Domaine. */
 const SHOW_LECTURE_DOMAIN = false
 
@@ -734,7 +755,17 @@ function GeneratorPage() {
   const [questionsOverflow, setQuestionsOverflow] = useState(false)
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const [coordTool, setCoordTool] = useState<'origin' | 'given' | 'points'>('origin')
+  const [themeColor, setThemeColor] = useState(readThemeColor)
   const previewFrameRef = useRef<HTMLDivElement>(null)
+
+  const applyThemeColor = (color: string) => {
+    setThemeColor(color)
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, color)
+    } catch {
+      /* ignore */
+    }
+  }
 
   const activePage = pages[pageIndex] ?? pages[0]!
   const pageExerciseBlocks = pageBlocks(activePage)
@@ -1146,7 +1177,7 @@ function GeneratorPage() {
 
 
   return (
-    <div className="app-shell">
+    <div className="app-shell" style={{ '--purple': themeColor } as CSSProperties}>
       <Header onCreate={() => undefined} generator />
       <main className="generator-page" id="top">
         <div className="generator-intro">
@@ -1169,7 +1200,7 @@ function GeneratorPage() {
                 {pages.length} page{pages.length > 1 ? 's' : ''}
               </span>
             </div>
-            <div className="page-tabs" role="tablist" aria-label="Pages">
+            <div className="mode-toggle is-tabs page-tabs" role="tablist" aria-label="Pages">
               {pages.map((_, index) => (
                 <button
                   key={index}
@@ -1197,7 +1228,7 @@ function GeneratorPage() {
               </button>
             </div>
             {pageExerciseBlocks.length > 1 ? (
-              <div className="page-tabs exercise-tabs" role="tablist" aria-label="Exercices de la page">
+              <div className="mode-toggle is-tabs page-tabs exercise-tabs" role="tablist" aria-label="Exercices de la page">
                 {pageExerciseBlocks.map((_, index) => (
                   <button
                     key={index}
@@ -2015,10 +2046,23 @@ function GeneratorPage() {
                   )}
                 </div>
               </details>
-              <p className="type-hint muted">
-                {exerciseTypeById[activeBlock.exerciseType]?.description ??
-                  'Choisissez un thème, puis un type d’exercice.'}
-              </p>
+              <div className="theme-color-block">
+                <b>Modifier la couleur du thème</b>
+                <div className="theme-color-choices" role="listbox" aria-label="Couleur du thème">
+                  {THEME_COLORS.map((swatch) => (
+                    <button
+                      key={swatch.id}
+                      type="button"
+                      role="option"
+                      aria-selected={themeColor === swatch.color}
+                      aria-label={swatch.label}
+                      className={`theme-color-swatch${themeColor === swatch.color ? ' active' : ''}`}
+                      style={{ background: swatch.color }}
+                      onClick={() => applyThemeColor(swatch.color)}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </aside>
           <section className="result-panel">
@@ -2028,7 +2072,7 @@ function GeneratorPage() {
                 <h2>Votre activité est prête.</h2>
               </div>
               <div className="result-head-actions no-print">
-                <div className="preview-tabs" role="tablist" aria-label="Mode d’aperçu">
+                <div className="mode-toggle preview-mode-toggle" role="tablist" aria-label="Mode d’aperçu">
                   <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
                     Fiche élève
                   </button>
