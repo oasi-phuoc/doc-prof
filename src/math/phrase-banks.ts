@@ -41,11 +41,18 @@ export const CHART_WORD_SAMPLES: Record<PhraseCategory, string> = {
     'très, trop, assez, peu, bien, mal, vite, lentement, souvent, toujours, jamais, parfois, ici, là, ailleurs, aujourd’hui, demain, hier, maintenant, bientôt, déjà, encore, aussi, peut-être, vraiment…',
   preposition:
     'à, de, en, dans, sur, sous, chez, avec, sans, pour, par, entre, parmi, devant, derrière, avant, après, depuis, pendant, vers, jusqu’à, contre, selon, malgré, près de, loin de…',
-  conjonction:
-    'et, ou, mais, donc, or, ni, car, puis, cependant, pourtant, quand, lorsque, si, comme, parce que, puisque, bien que, afin que, pour que, tandis que…',
+  conjonction: 'et, ou, mais, donc, or, ni, car…',
   negation: 'ne, n’, pas, plus, jamais, rien, personne, aucun, aucune, nulle part, guère, que…',
   interjection: 'ah, oh, hé, eh, ouf, aïe, bravo, chut, stop, allez, tiens, mince, zut, hourra…',
 }
+
+/** Conjonctions de coordination (case gauche du tableau). */
+export const CHART_CONJ_COORD =
+  'et, ou, mais, donc, or, ni, car, puis, cependant, pourtant…'
+
+/** Conjonctions de subordination (case droite du tableau). */
+export const CHART_CONJ_SUB =
+  'quand, lorsque, si, comme, parce que, puisque, bien que, afin que, pour que, tandis que…'
 
 /** Pronoms sujets (génération de phrases). */
 export const PRONOMS = [
