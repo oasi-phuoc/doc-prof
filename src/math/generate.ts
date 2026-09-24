@@ -20,6 +20,7 @@ import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
 import { tryGenerateLectureBatch } from './lecture'
+import { tryGeneratePhraseBatch } from './phrase'
 import { tryGenerateConversion } from './conversions'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from './francais'
@@ -1005,6 +1006,14 @@ function buildSingleBlock(
       title: fallbackTitle,
       instruction: lecture.instruction ?? type?.instruction ?? 'Complétez.',
       items: lecture.items,
+    }
+  }
+  const phrase = tryGeneratePhraseBatch(config.exerciseType, config.count, rng, difficulty)
+  if (phrase) {
+    return {
+      title: fallbackTitle,
+      instruction: phrase.instruction ?? type?.instruction ?? 'Complétez.',
+      items: phrase.items,
     }
   }
   const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng, difficulty)

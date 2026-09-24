@@ -1,4 +1,23 @@
-export type Domain = 'français' | 'algèbre' | 'géométrie' | 'lecture'
+export type Domain = 'français' | 'algèbre' | 'géométrie' | 'lecture' | 'phrase'
+
+/** Catégories grammaire en couleur (Gattegno). */
+export type PhraseCategory =
+  | 'pronom'
+  | 'verbe'
+  | 'nom'
+  | 'determinant'
+  | 'adjectif'
+  | 'adverbe'
+  | 'preposition'
+  | 'conjonction'
+  | 'negation'
+  | 'interjection'
+
+export type PhraseToken = {
+  text: string
+  category: PhraseCategory
+}
+
 export type PreviewMode = 'student' | 'answers'
 export type Difficulty = 'facile' | 'moyen' | 'avance'
 export type Figure =
@@ -33,6 +52,11 @@ export type Layout =
   | 'encadrement'
   | 'order'
   | 'letter-grid'
+  | 'phrase-color'
+  | 'phrase-order'
+  | 'phrase-build'
+  | 'phrase-write'
+  | 'gattegno-chart'
 
 export type CoordShape =
   | 'point'
@@ -240,6 +264,14 @@ export type MathItem = {
   convert?: { value: string; from: string; to: string }
   /** Enregistrement à écouter (compréhension orale). */
   audioSrc?: string
+  /** Mots étiquetés (grammaire en couleur). */
+  tokens?: PhraseToken[]
+  /** Séquence de pastilles (type 3). */
+  pastilles?: PhraseCategory[]
+  /** Nombre de lignes d’écriture (type 4). */
+  writeLines?: number
+  /** Variante du tableau Gattegno. */
+  chartMode?: 'labels' | 'words' | 'outline'
 }
 
 export type CompositeLabel = {

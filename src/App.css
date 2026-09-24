@@ -905,4 +905,94 @@
 .landing-page>main{flex:1 1 auto}
 .landing-page>.footer{margin-top:auto}
 .landing-art span:nth-child(5){left:42%;bottom:6%;transform:rotate(-4deg)}
+
+/* Phrase / Gattegno (grammaire en couleur) */
+:root{
+  --gec-pronom:#8b5a2b;
+  --gec-verbe:#e67e22;
+  --gec-nom:#2e8b57;
+  --gec-det:#d4a017;
+  --gec-adj:#9b4dca;
+  --gec-adv:#3d9bc9;
+  --gec-prep:#c0392b;
+  --gec-conj:#1a1a1a;
+  --gec-inter:#7a7a7a;
+}
+.gattegno-chart{
+  width:100%;max-width:100%;font-family:'DM Sans',sans-serif;color:var(--ink);
+  display:flex;flex-direction:column;gap:6px;padding:4px 0 8px;box-sizing:border-box
+}
+.gattegno-row.top{display:grid;grid-template-columns:1.05fr 1fr;gap:8px;align-items:stretch}
+.gattegno-pronoms-wrap,.gattegno-det-wrap,.gattegno-prep-wrap{position:relative}
+.gattegno-bridge{
+  position:absolute;z-index:2;width:14px;height:10px;border:2.5px solid;background:#fff;box-sizing:border-box
+}
+.gattegno-bridge.brown{border-color:var(--gec-pronom);right:-10px;top:50%;transform:translateY(-50%)}
+.gattegno-bridge.yellow{border-color:var(--gec-det);left:18%;bottom:-7px}
+.gattegno-row.middle{display:grid;grid-template-columns:1.05fr 1fr;gap:8px;align-items:stretch;min-height:0}
+.gattegno-left-stack{display:flex;flex-direction:column;gap:5px;min-width:0}
+.gattegno-right-stack{display:flex;flex-direction:column;gap:6px;min-width:0}
+.gattegno-noms-adj{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex:1 1 auto;min-height:72px}
+.gattegno-conj-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.gattegno-cell{
+  border:2.5px solid;background:#fff;border-radius:0;padding:8px 10px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-weight:700;font-size:13px;line-height:1.25;letter-spacing:.02em;
+  box-sizing:border-box;min-height:36px
+}
+.gattegno-cell.is-words{font-weight:500;font-size:11px;line-height:1.35;padding:8px}
+.gattegno-cell.is-outline span{visibility:hidden}
+.gattegno-pronoms,.gattegno-adverbes{min-height:40px;text-transform:uppercase}
+.gattegno-interjections{min-height:26px;font-size:9px;padding:4px 6px;text-transform:uppercase;align-self:flex-start;width:42%}
+.gattegno-noms,.gattegno-adjectifs{min-height:88px;text-transform:uppercase;font-size:15px}
+.gattegno-verbes{flex:1 1 auto;min-height:120px;text-transform:uppercase;font-size:22px;font-weight:800}
+.gattegno-determinants,.gattegno-prepositions{min-height:38px;text-transform:uppercase;font-size:12px}
+.gattegno-conj{min-height:44px;font-size:9px;text-transform:uppercase;line-height:1.2;padding:6px 4px}
+.gattegno-det-prep{
+  position:absolute;left:10%;top:50%;transform:translateY(-50%);z-index:3;
+  background:#fff;border:1.5px solid var(--gec-prep);border-top-color:var(--gec-det);
+  font-size:7px;font-weight:700;letter-spacing:.02em;padding:2px 4px;line-height:1.1;
+  text-transform:uppercase;max-width:46%;text-align:center
+}
+.exercise-item.layout-gattegno-chart{padding:4px 0}
+.exercise-item.layout-gattegno-chart .item-content{width:100%}
+.phrase-color-block,.phrase-order-block,.phrase-build-block,.phrase-write-block{
+  width:100%;min-width:0;display:flex;flex-direction:column;gap:8px
+}
+.phrase-word-row,.phrase-bubble-row,.phrase-pastille-row{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 14px
+}
+.phrase-word-slot{display:flex;flex-direction:column;align-items:center;gap:6px}
+.phrase-word{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;line-height:1.3;color:var(--ink)}
+.phrase-period{font-size:15px;font-weight:700;align-self:flex-end;padding-bottom:18px}
+.phrase-pastille{
+  width:14px;height:14px;border-radius:50%;border:1.5px solid #111;background:#fff;
+  display:inline-block;box-sizing:border-box
+}
+.phrase-bubble{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:6px 12px;border:1.5px solid #111;border-radius:4px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#111;
+  text-decoration:underline;text-underline-offset:3px;line-height:1.2
+}
+.phrase-write-line{
+  display:block;width:100%;min-height:1.4em;border:0;border-bottom:1.5px dashed #5ba3c9;
+  margin-top:2px;box-sizing:border-box
+}
+.phrase-order-answer{margin-top:4px;font-size:14px}
+.phrase-verb-prompt{margin:0;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#3d9bc9}
+.phrase-write-prompt{margin:0 0 8px;font-size:14px;font-weight:500;color:var(--ink)}
+.phrase-write-lines{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:pw}
+.phrase-write-lines>li{
+  display:grid;grid-template-columns:1.6em 1fr;gap:8px;align-items:end;counter-increment:pw
+}
+.phrase-write-lines>li::before{
+  content:counter(pw) ".";color:#3d9bc9;font-weight:700;font-size:15px;line-height:1.4
+}
+.phrase-answer-hint{margin:4px 0 0;font-size:13px}
+.exercise-item.layout-phrase-write .item-content,
+.exercise-item.layout-gattegno-chart .item-content{width:100%}
+.exercise-item.layout-phrase-color,
+.exercise-item.layout-phrase-order,
+.exercise-item.layout-phrase-build{align-items:flex-start}
 /* End */

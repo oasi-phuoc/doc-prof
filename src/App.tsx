@@ -37,6 +37,7 @@ import {
   geometryTopics,
   isDraftPadExercise,
   lectureTopics,
+  phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
 import { constructRangeFor } from '@/math/coord-construire'
@@ -401,6 +402,7 @@ function Landing({ onCreate }: { onCreate: () => void }) {
             <span>Algèbre</span>
             <span>Géométrie</span>
             <span>Lecture</span>
+            <span>Phrase</span>
             <div className="art-card">
               <b>Fiches claires</b>
               <small>à imprimer et partager</small>
@@ -426,6 +428,9 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
+  const isPhrase = type.topic.startsWith('phrase-')
+  const isPhraseChart = type.id.startsWith('phrase-tableau-')
+  const isPhraseWrite = type.id.endsWith('-ecrire')
   const isFormes = isReperageFormes(type.id)
   const isCadrans = isReperageCadrans(type.id)
   const isDroites = isReperageDroites(type.id)
@@ -445,23 +450,29 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
         ? { count: 3 }
         : isLongMul
           ? { count: 4 }
-          : isLectureDense
-            ? { count: 4 }
-            : isLecture
-              ? { count: 6 }
-              : isGeoCalc
-                ? { count: 2 }
-              : isFrenchCom
-                ? { count: 4 }
-              : isFrenchLang
+          : isPhraseChart
+            ? { count: 1 }
+            : isPhraseWrite
+              ? { count: 1 }
+              : isPhrase
                 ? { count: 6 }
-              : isFormes
-                ? { count: 5 }
-                : isCadrans
-                  ? { count: 6 }
-                  : isDroites || isConstruire
-                    ? { count: 5 }
-                    : {}),
+                : isLectureDense
+                  ? { count: 4 }
+                  : isLecture
+                    ? { count: 6 }
+                    : isGeoCalc
+                      ? { count: 2 }
+                      : isFrenchCom
+                        ? { count: 4 }
+                        : isFrenchLang
+                          ? { count: 6 }
+                          : isFormes
+                            ? { count: 5 }
+                            : isCadrans
+                              ? { count: 6 }
+                              : isDroites || isConstruire
+                                ? { count: 5 }
+                                : {}),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -549,7 +560,9 @@ function GeneratorPage() {
         ? algebraTopics
         : activePage.domain === 'géométrie'
           ? geometryTopics
-          : lectureTopics
+          : activePage.domain === 'phrase'
+            ? phraseTopics
+            : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -776,7 +789,7 @@ function GeneratorPage() {
     const type = firstTypeFor(next)
     setBlockIndex(0)
     updatePage({ domain: next, ...applyType(type) })
-    if (next === 'français' || next === 'lecture') {
+    if (next === 'français' || next === 'lecture' || next === 'phrase') {
       setInstitutional((current) =>
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
@@ -958,6 +971,7 @@ function GeneratorPage() {
                 <option value="français">Français</option>
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
+                <option value="phrase">Phrase</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
               </SelectBox>
               <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>

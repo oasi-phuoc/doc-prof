@@ -1,8 +1,10 @@
 import { Fragment } from 'react'
-import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
+import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
+import { PHRASE_COLORS } from '@/math/phrase-banks'
 import { CompositeFigure } from './CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
+import { GattegnoChart } from './GattegnoChart'
 import { GeometryFigure } from './GeometryFigure'
 
 function DigitRow({
@@ -1028,6 +1030,101 @@ function CoordBlock({
   )
 }
 
+function PhrasePastille({ category, filled }: { category?: PhraseCategory; filled?: boolean }) {
+  const color = category ? PHRASE_COLORS[category] : '#111'
+  return (
+    <span
+      className={`phrase-pastille${filled ? ' filled' : ''}`}
+      style={filled ? { backgroundColor: color, borderColor: color } : undefined}
+      aria-hidden
+    />
+  )
+}
+
+function PhraseColorBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const tokens = item.tokens ?? []
+  return (
+    <div className="phrase-color-block">
+      <div className="phrase-word-row">
+        {tokens.map((token, i) => (
+          <div className="phrase-word-slot" key={`${token.text}-${i}`}>
+            <span className="phrase-word">{token.text}</span>
+            <PhrasePastille category={token.category} filled={show} />
+          </div>
+        ))}
+        <span className="phrase-period">.</span>
+      </div>
+      {show && item.responseAnswer ? (
+        <p className="phrase-answer-hint">
+          <strong className="filled-answer">{item.responseAnswer}</strong>
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const tokens = item.tokens ?? []
+  return (
+    <div className="phrase-order-block">
+      <div className="phrase-bubble-row">
+        {tokens.map((token, i) => (
+          <span
+            className="phrase-bubble"
+            key={`${token.text}-${i}`}
+            style={{ backgroundColor: PHRASE_COLORS[token.category], borderColor: '#111' }}
+          >
+            {token.text}
+          </span>
+        ))}
+      </div>
+      {show ? (
+        <strong className="filled-answer phrase-order-answer">{item.responseAnswer ?? item.answer}</strong>
+      ) : (
+        <span className="phrase-write-line" />
+      )}
+    </div>
+  )
+}
+
+function PhraseBuildBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const pastilles = item.pastilles ?? []
+  return (
+    <div className="phrase-build-block">
+      <p className="phrase-verb-prompt">{item.prompt}</p>
+      {show ? (
+        <strong className="filled-answer">{item.calcAnswer ? `Verbe : ${item.calcAnswer}` : item.answer}</strong>
+      ) : (
+        <span className="phrase-write-line" />
+      )}
+      <div className="phrase-pastille-row">
+        {pastilles.map((cat, i) => (
+          <PhrasePastille key={`${cat}-${i}`} category={cat} filled />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function PhraseWriteBlock({ item }: { item: MathItem }) {
+  const lines = item.writeLines ?? 6
+  return (
+    <div className="phrase-write-block">
+      {item.prompt ? <p className="phrase-write-prompt">{item.prompt}</p> : null}
+      <ol className="phrase-write-lines">
+        {Array.from({ length: lines }, (_, i) => (
+          <li key={i}>
+            <span className="phrase-write-line" />
+          </li>
+        ))}
+      </ol>
+    </div>
+  )
+}
+
 export function MathItemView({
   item,
   mode,
@@ -1056,6 +1153,7 @@ export function MathItemView({
   const isGeoCalc = item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)
   const isDraftPad = isProblem || isEquation || isGeoCalc
   const isStackedText = item.layout === 'text' && !isProblem
+  const hideNumber = item.layout === 'gattegno-chart' || item.layout === 'phrase-write'
   return (
     <div className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}`}>
       {isDraftPad && onToggleDraftGrid ? (
@@ -1068,7 +1166,7 @@ export function MathItemView({
           {draftGrid ? 'Grille' : 'Sans'}
         </button>
       ) : null}
-      {item.coordScene ? null : <div className="item-number">{index + 1}.</div>}
+      {item.coordScene || hideNumber ? null : <div className="item-number">{index + 1}.</div>}
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
@@ -1083,6 +1181,11 @@ export function MathItemView({
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
         {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
+        {item.layout === 'phrase-color' && <PhraseColorBlock item={item} mode={mode} />}
+        {item.layout === 'phrase-order' && <PhraseOrderBlock item={item} mode={mode} />}
+        {item.layout === 'phrase-build' && <PhraseBuildBlock item={item} mode={mode} />}
+        {item.layout === 'phrase-write' && <PhraseWriteBlock item={item} />}
+        {item.layout === 'gattegno-chart' && <GattegnoChart mode={item.chartMode ?? 'labels'} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
