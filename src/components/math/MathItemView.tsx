@@ -937,7 +937,7 @@ function CoordBlock({
         : scene.hideAxes
           ? {
               ...scene,
-              showOrigin: show || Boolean(coordEdit),
+              showOrigin: show,
               marks: scene.marks.map((mark) => ({
                 ...mark,
                 showCoord: Boolean(mark.given || show),

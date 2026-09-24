@@ -496,7 +496,7 @@ export function sceneFromAxesLibre(config: PageConfig, difficulty: Difficulty): 
     originCol: origin.col,
     originRow: origin.row,
     hideAxes: composer,
-    showOrigin: composer,
+    showOrigin: composer && Boolean(config.coordLibre),
     step: grid.step,
     marks,
   }
@@ -533,6 +533,7 @@ export function tryGenerateReperage(
         originCol: origin.col,
         originRow: origin.row,
         hideAxes: true,
+        showOrigin: false,
         step: grid.step,
         marks,
       }
