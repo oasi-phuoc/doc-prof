@@ -1221,10 +1221,10 @@ function GeneratorPage() {
             </div>
             <div className="page-structure-actions">
               <button className="button secondary" type="button" onClick={addPage}>
-                Ajouter une page
+                + Page
               </button>
               <button className="button secondary" type="button" onClick={addExerciseOnPage}>
-                Ajouter un exercice
+                + Exercice
               </button>
             </div>
             {pageExerciseBlocks.length > 1 ? (

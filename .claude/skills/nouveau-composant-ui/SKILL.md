@@ -18,7 +18,7 @@ L'UI vit surtout dans `src/App.tsx` + `src/App.css` (pas encore une lib `compone
 | Liste déroulante | `SelectBox` (Domaine / Thème / Type / Niveau / Questions) |
 | Binaire | `.mode-toggle` (Exercice / Évaluation, Institutionnel / Personnalisé, Fiche élève / Corrigé). Le bouton **actif** est à la couleur du thème (`--purple`). |
 | Trois choix | `.mode-toggle.is-3` (Voc / Gram / Com, Colonnes 1 / 2 / 3) |
-| Pages / exercices | `.mode-toggle.is-tabs` (chiffres centrés). Croix `×` sur l’onglet actif. **Ajouter une page** / **Ajouter un exercice** : `.page-structure-actions`. |
+| Pages / exercices | `.mode-toggle.is-tabs` (chiffres centrés). Croix `×` sur l’onglet actif. **+ Page** / **+ Exercice** : `.page-structure-actions`. |
 | Couleur du thème | Cercles sous « En-tête et pied de page » (`theme-color-block`). Met à jour `--purple` (et `--lavender` via `color-mix`). |
 | Actions | `.button` / `.button.secondary` |
 | Champs en-tête | `.custom-header-form` / champs institutionnels dans le panneau |
