@@ -456,12 +456,16 @@ function ReperageAxesFields({
   cellMm,
   unitSquares,
   onChange,
+  onLiveCols,
+  onLiveRows,
 }: {
   cols: number
   rows: number
   cellMm: CoordCellMm
   unitSquares: CoordUnitSquares
   onChange: (patch: Partial<ExerciseBlock>) => void
+  onLiveCols?: (n: number) => void
+  onLiveRows?: (n: number) => void
 }) {
   const maxCols = maxAxesColsForCell(cellMm)
   const maxRows = maxAxesRowsForCell(cellMm)
@@ -480,8 +484,12 @@ function ReperageAxesFields({
             title={`Maximum ${maxCols} colonnes à ${cellMm} mm`}
             onChange={(event) => {
               const raw = Number(event.target.value)
-              onChange({ coordCols: Number.isFinite(raw) ? clampAxesCols(raw, cellMm) : cols })
+              if (!Number.isFinite(raw)) return
+              const next = Math.max(2, Math.min(maxCols, Math.round(raw)))
+              if (onLiveCols) onLiveCols(next)
+              else onChange({ coordCols: next })
             }}
+            onBlur={() => onChange({ coordCols: clampAxesCols(cols, cellMm) })}
           />
         </label>
         <label>
@@ -493,7 +501,14 @@ function ReperageAxesFields({
             max={maxRows}
             step={2}
             value={rows}
-            onChange={(event) => onChange({ coordRows: clampAxesRows(Number(event.target.value), cellMm) })}
+            onChange={(event) => {
+              const raw = Number(event.target.value)
+              if (!Number.isFinite(raw)) return
+              const next = Math.max(2, Math.min(maxRows, Math.round(raw)))
+              if (onLiveRows) onLiveRows(next)
+              else onChange({ coordRows: next })
+            }}
+            onBlur={() => onChange({ coordRows: clampAxesRows(rows, cellMm) })}
           />
         </label>
       </div>
@@ -1641,11 +1656,13 @@ function GeneratorPage() {
                     </button>
                   </div>
                   <ReperageAxesFields
-                    cols={axesGrid.cols}
-                    rows={axesGrid.rows}
+                    cols={activeBlock.coordCols ?? axesGrid.cols}
+                    rows={activeBlock.coordRows ?? axesGrid.rows}
                     cellMm={axesGrid.cellMm}
                     unitSquares={axesGrid.unitSquares}
                     onChange={updateAxesGrid}
+                    onLiveCols={(n) => updatePage({ coordCols: n })}
+                    onLiveRows={(n) => updatePage({ coordRows: n })}
                   />
                   {activeBlock.coordLibre ? (
                     <>
@@ -1716,11 +1733,13 @@ function GeneratorPage() {
                 <div className="coord-libre-panel">
                   <b>{isDroites ? 'Repère (droites)' : 'Repère (construction)'}</b>
                   <ReperageAxesFields
-                    cols={axesGrid.cols}
-                    rows={axesGrid.rows}
+                    cols={activeBlock.coordCols ?? axesGrid.cols}
+                    rows={activeBlock.coordRows ?? axesGrid.rows}
                     cellMm={axesGrid.cellMm}
                     unitSquares={axesGrid.unitSquares}
                     onChange={updateAxesGrid}
+                    onLiveCols={(n) => updatePage({ coordCols: n })}
+                    onLiveRows={(n) => updatePage({ coordRows: n })}
                   />
                   <p className="type-hint muted">
                     {isDroites
