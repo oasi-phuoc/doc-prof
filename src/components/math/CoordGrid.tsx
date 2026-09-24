@@ -125,8 +125,8 @@ export function CoordShapeButton({ kind, size = 22 }: { kind: CoordShape; size?:
 }
 
 function mmPads(kind: 'cells' | 'axes' = 'cells') {
-  if (kind === 'axes') return { padL: 8, padR: 12, padT: 6, padB: 8 }
-  return { padL: 7, padR: 8, padT: 5, padB: 7 }
+  if (kind === 'axes') return { padL: 5, padR: 6, padT: 5, padB: 5 }
+  return { padL: 6, padR: 6, padT: 4, padB: 6 }
 }
 
 function cellCenterMm(rows: number, x: number, y: number, padL: number, padT: number, cellMm: number) {
@@ -171,7 +171,7 @@ function CellsScene({
         return (
           <g key={`h-${y}`}>
             <line x1={padL} y1={gy} x2={padL + gridW} y2={gy} className="grid-line" />
-            <text x={padL - 1.4} y={gy + cellMm / 2 + 0.8} className="axis-label" textAnchor="end">
+            <text x={padL - 1.2} y={gy + cellMm / 2 + 1.1} className="axis-label" textAnchor="end" fontSize={3.4}>
               {axisTickLabel(y, scene.axis, 'y')}
             </text>
           </g>
@@ -185,10 +185,11 @@ function CellsScene({
           <g key={`v-${x}`}>
             <line x1={gx} y1={padT} x2={gx} y2={padT + gridH} className="grid-line" />
             <text
-              x={gx + cellMm / 2}
-              y={padT + gridH + 3.2}
+              x={x === scene.cols ? gx + cellMm - 0.2 : gx + cellMm / 2}
+              y={padT + gridH + 3.6}
               className="axis-label"
               textAnchor={x === scene.cols ? 'end' : 'middle'}
+              fontSize={3.4}
             >
               {axisTickLabel(x, scene.axis, 'x')}
             </text>
@@ -223,7 +224,7 @@ function CellsScene({
                 <g fill="currentColor" stroke="currentColor" strokeWidth={0.22} strokeLinejoin="round">
                   <CoordShapeGlyph kind={mark.kind} x={cx} y={cy} size={glyph} />
                   {mark.label ? (
-                    <text x={cx + 1.8} y={cy - 1.6} className="point-label">
+                    <text x={cx + 1.8} y={cy - 1.6} className="point-label" fontSize={3.4}>
                       {mark.label}
                     </text>
                   ) : null}
@@ -377,8 +378,8 @@ function AxesScene({
   const mathAtRow = (row: number) => Math.round(((row - originRow) / unit) * 1000) / 1000
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
   const fineN = scene.fineGrid ? 5 : 0
-  const labelStepX = rangeX >= 12 ? 2 : 1
-  const labelStepY = rangeY >= 12 ? 2 : 1
+  const labelStepX = rangeX >= 20 ? 4 : rangeX >= 12 ? 2 : 1
+  const labelStepY = rangeY >= 20 ? 4 : rangeY >= 12 ? 2 : 1
   const dashScale = cellMm / 5
   const tickX = Array.from({ length: cols + 1 }, (_, col) => mathAtCol(col)).filter(
     (v) => Number.isInteger(v) && v !== 0 && v % labelStepX === 0 && Number.isInteger(v / step),
@@ -434,7 +435,7 @@ function AxesScene({
         ? tickX.map((v) => {
             const onX = to(v, 0)
             return (
-              <text key={`lx-${v}`} x={onX.cx} y={onX.cy + 3.2} className="axis-label" textAnchor="middle">
+              <text key={`lx-${v}`} x={onX.cx} y={onX.cy + 3.2} className="axis-label" textAnchor="middle" fontSize={3.4}>
                 {formatAxesNum(v)}
               </text>
             )
@@ -444,19 +445,19 @@ function AxesScene({
         ? tickY.map((v) => {
             const onY = to(0, v)
             return (
-              <text key={`ly-${v}`} x={onY.cx - 1.4} y={onY.cy + 0.8} className="axis-label" textAnchor="end">
+              <text key={`ly-${v}`} x={onY.cx - 1.2} y={onY.cy + 0.8} className="axis-label" textAnchor="end" fontSize={3.4}>
                 {formatAxesNum(v)}
               </text>
             )
           })
         : null}
       {!hideAxes ? (
-        <text x={padL + gridW + 1.2} y={to(0, 0).cy - 1.2} className="axis-label">
+        <text x={padL + gridW + 0.8} y={to(0, 0).cy - 1.2} className="axis-label" fontSize={3.4}>
           x
         </text>
       ) : null}
       {!hideAxes ? (
-        <text x={to(0, 0).cx + 1.4} y={padT - 1} className="axis-label">
+        <text x={to(0, 0).cx + 1.4} y={padT - 0.6} className="axis-label" fontSize={3.4}>
           y
         </text>
       ) : null}
@@ -476,7 +477,7 @@ function AxesScene({
             y2={to(0, 0).cy + cellMm * 0.45}
             className="origin-mark"
           />
-          <text x={to(0, 0).cx + 1.5} y={to(0, 0).cy - 1.4} className="origin-label">
+          <text x={to(0, 0).cx + 1.5} y={to(0, 0).cy - 1.4} className="origin-label" fontSize={3.4}>
             O
           </text>
         </g>
@@ -579,6 +580,7 @@ function AxesScene({
                 x={p.cx + (flipX ? -1.4 : 1.4)}
                 y={p.cy + (flipY ? 2.8 : -1.4)}
                 className="point-label"
+                fontSize={3.4}
                 textAnchor={flipX ? 'end' : 'start'}
               >
                 {caption}
