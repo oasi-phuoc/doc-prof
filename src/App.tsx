@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from 'react'
 import './App.css'
-import { CoordEditorBoard, CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
+import { CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
 import { MathItemView, tokenizeAlgebra } from '@/components/math/MathItemView'
 import {
   CLASS_LEVELS,
@@ -54,11 +54,13 @@ import {
   clampAxesCols,
   clampAxesRows,
   clampFormesCellMm,
-  clampCoordSize,
+  clampFormesCols,
+  clampFormesRows,
   clampOrigin,
   centeredOrigin,
   COORD_LETTER_MAX,
   coordSizeFor,
+  FORMES_MAX_BY_MM,
   ensureGivenMark,
   isReperageCadrans,
   isReperageComposer,
@@ -70,10 +72,11 @@ import {
   remapMarksToOrigin,
   maxAxesColsForCell,
   maxAxesRowsForCell,
+  maxFormesColsForCell,
+  maxFormesRowsForCell,
   nextPointLabel,
   resolveAxesGrid,
   sceneFromAxesLibre,
-  sceneFromLibre,
 } from '@/math/coord-reperage'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import {
@@ -446,6 +449,44 @@ function Landing({ onCreate }: { onCreate: () => void }) {
         <span>Fiches pour la classe.</span>
         <span>Essai local · sans compte</span>
       </footer>
+    </div>
+  )
+}
+
+function FormesPalette({
+  marks,
+  selectedKind,
+  onSelect,
+}: {
+  marks: { kind: string }[]
+  selectedKind: CoordShape | null
+  onSelect: (kind: CoordShape) => void
+}) {
+  return (
+    <div className="coord-palette" role="listbox" aria-label="Formes à placer">
+      {COORD_SHAPES.map((kind) => {
+        const used = marks.some((mark) => mark.kind === kind)
+        return (
+          <button
+            key={kind}
+            type="button"
+            role="option"
+            draggable
+            aria-selected={selectedKind === kind}
+            className={`coord-palette-item${selectedKind === kind ? ' selected' : ''}${used ? ' used' : ''}`}
+            title={used ? `${COORD_SHAPE_LABEL[kind]} (déjà sur le tableau)` : COORD_SHAPE_LABEL[kind]}
+            onClick={() => onSelect(kind)}
+            onDragStart={(event) => {
+              event.dataTransfer.setData('coord-kind', kind)
+              event.dataTransfer.effectAllowed = 'copy'
+              onSelect(kind)
+            }}
+          >
+            <CoordShapeButton kind={kind} />
+            <span>{COORD_SHAPE_LABEL[kind]}</span>
+          </button>
+        )
+      })}
     </div>
   )
 }
@@ -936,8 +977,9 @@ function GeneratorPage() {
       })
       return
     }
-    const cols = clampCoordSize(activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols)
-    const rows = clampCoordSize(activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows)
+    const cellMm = clampFormesCellMm(activeBlock.coordCellMm)
+    const cols = clampFormesCols(activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols, cellMm)
+    const rows = clampFormesRows(activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows, cellMm)
     if (x < 1 || y < 1 || x > cols || y > rows) return
     const without = (activeBlock.coordMarks ?? []).filter(
       (mark) => !(mark.x === x && mark.y === y) && mark.kind !== kind,
@@ -948,6 +990,7 @@ function GeneratorPage() {
       coordLibre: true,
       coordCols: cols,
       coordRows: rows,
+      coordCellMm: cellMm,
       coordAxis: activeBlock.coordAxis ?? 'letters',
       coordMarks: nextMarks,
       count: Math.max(activeBlock.count, nextMarks.length),
@@ -1105,8 +1148,13 @@ function GeneratorPage() {
                   {index + 1}
                 </button>
               ))}
-              <button className="add-page" type="button" onClick={addPage} aria-label="Nouvelle page">
-                +
+            </div>
+            <div className="page-structure-actions">
+              <button className="button secondary" type="button" onClick={addPage}>
+                Ajouter une page
+              </button>
+              <button className="button secondary" type="button" onClick={addExerciseOnPage}>
+                Ajouter un exercice
               </button>
             </div>
             {pageExerciseBlocks.length > 1 ? (
@@ -1528,15 +1576,18 @@ function GeneratorPage() {
                   </SelectBox>
                   <div className="coord-size-row">
                     <label>
-                      Largeur
+                      Largeur · max {maxFormesColsForCell(clampFormesCellMm(activeBlock.coordCellMm))}
                       <input
                         className="pill-input"
                         type="number"
                         min={3}
-                        max={26}
+                        max={maxFormesColsForCell(clampFormesCellMm(activeBlock.coordCellMm))}
                         value={activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols}
                         onChange={(event) => {
-                          const cols = clampCoordSize(Number(event.target.value))
+                          const cols = clampFormesCols(
+                            Number(event.target.value),
+                            clampFormesCellMm(activeBlock.coordCellMm),
+                          )
                           updatePage({
                             coordCols: cols,
                             coordMarks: (activeBlock.coordMarks ?? []).filter((mark) => mark.x <= cols),
@@ -1545,15 +1596,18 @@ function GeneratorPage() {
                       />
                     </label>
                     <label>
-                      Hauteur
+                      Hauteur · max {maxFormesRowsForCell(clampFormesCellMm(activeBlock.coordCellMm))}
                       <input
                         className="pill-input"
                         type="number"
                         min={3}
-                        max={26}
+                        max={maxFormesRowsForCell(clampFormesCellMm(activeBlock.coordCellMm))}
                         value={activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows}
                         onChange={(event) => {
-                          const rows = clampCoordSize(Number(event.target.value))
+                          const rows = clampFormesRows(
+                            Number(event.target.value),
+                            clampFormesCellMm(activeBlock.coordCellMm),
+                          )
                           updatePage({
                             coordRows: rows,
                             coordMarks: (activeBlock.coordMarks ?? []).filter((mark) => mark.y <= rows),
@@ -1570,7 +1624,24 @@ function GeneratorPage() {
                           key={mm}
                           type="button"
                           className={clampFormesCellMm(activeBlock.coordCellMm) === mm ? 'active' : ''}
-                          onClick={() => updatePage({ coordCellMm: mm })}
+                          onClick={() => {
+                            const cols = clampFormesCols(
+                              activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols,
+                              mm,
+                            )
+                            const rows = clampFormesRows(
+                              activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows,
+                              mm,
+                            )
+                            updatePage({
+                              coordCellMm: mm,
+                              coordCols: cols,
+                              coordRows: rows,
+                              coordMarks: (activeBlock.coordMarks ?? []).filter(
+                                (mark) => mark.x <= cols && mark.y <= rows,
+                              ),
+                            })
+                          }}
                         >
                           {mm} mm
                         </button>
@@ -1579,45 +1650,17 @@ function GeneratorPage() {
                   </div>
                   {activeBlock.coordLibre ? (
                     <>
-                      <div className="coord-palette" role="listbox" aria-label="Formes à placer">
-                        {COORD_SHAPES.map((kind) => {
-                          const used = (activeBlock.coordMarks ?? []).some((mark) => mark.kind === kind)
-                          return (
-                          <button
-                            key={kind}
-                            type="button"
-                            role="option"
-                            draggable
-                            aria-selected={selectedCoordShape === kind}
-                            className={`coord-palette-item${selectedCoordShape === kind ? ' selected' : ''}${used ? ' used' : ''}`}
-                            title={used ? `${COORD_SHAPE_LABEL[kind]} (déjà sur le tableau)` : COORD_SHAPE_LABEL[kind]}
-                            onClick={() => setSelectedCoordShape(kind)}
-                            onDragStart={(event) => {
-                              event.dataTransfer.setData('coord-kind', kind)
-                              event.dataTransfer.effectAllowed = 'copy'
-                              setSelectedCoordShape(kind)
-                            }}
-                          >
-                            <CoordShapeButton kind={kind} />
-                            <span>{COORD_SHAPE_LABEL[kind]}</span>
-                          </button>
-                          )
-                        })}
-                      </div>
-                      <CoordEditorBoard
-                        scene={sceneFromLibre(activeAsPage)}
-                        selectedKind={selectedCoordShape}
-                        onPlace={placeCoordMark}
-                        onRemove={removeCoordMark}
-                      />
                       <p className="type-hint muted">
-                        Vous pouvez placer toutes les formes, une seule fois chacune. Glissez une forme sur une case,
-                        ou cliquez une forme puis une case. Largeur et hauteur font grandir le tableau ; chaque carré
-                        reste à 6, 8 ou 10 mm, jusqu’à 26 × 26.
+                        Les formes sont à droite de la fiche. Cliquez une forme puis une case, ou glissez-la sur le
+                        tableau. Chaque forme n’apparaît qu’une fois.
                       </p>
                       <p className="type-hint muted">
                         {(activeBlock.coordMarks?.length ?? 0)} / {COORD_SHAPES.length} forme
                         {COORD_SHAPES.length > 1 ? 's' : ''}
+                        {' · '}
+                        {FORMES_MAX_BY_MM[clampFormesCellMm(activeBlock.coordCellMm)].cols} ×{' '}
+                        {FORMES_MAX_BY_MM[clampFormesCellMm(activeBlock.coordCellMm)].rows} au plus à{' '}
+                        {clampFormesCellMm(activeBlock.coordCellMm)} mm.
                       </p>
                       {(activeBlock.coordMarks?.length ?? 0) > 0 ? (
                         <button
@@ -1632,8 +1675,8 @@ function GeneratorPage() {
                   ) : (
                     <p className="type-hint muted">
                       Une seule grille centrée. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des
-                      formes. Largeur et hauteur font grandir le tableau (26 lettres au plus) ; les carrés restent à
-                      6, 8 ou 10 mm. Les colonnes 1 / 2 / 3 séparent les questions, pas le tableau.
+                      formes. Maximum : 16 × 12 à 10 mm, 21 × 15 à 8 mm, 26 × 20 à 6 mm. Les colonnes 1 / 2 / 3
+                      séparent les questions, pas le tableau.
                     </p>
                   )}
                 </div>
@@ -1954,9 +1997,6 @@ function GeneratorPage() {
                 {exerciseTypeById[activeBlock.exerciseType]?.description ??
                   'Choisissez un thème, puis un type d’exercice.'}
               </p>
-              <button className="button full" type="button" onClick={generate}>
-                Générer une nouvelle fiche <span>→</span>
-              </button>
             </div>
           </aside>
           <section className="result-panel">
@@ -1974,6 +2014,9 @@ function GeneratorPage() {
                     Corrigé
                   </button>
                 </div>
+                <button className="print-chip is-generate" type="button" onClick={generate}>
+                  Générer une nouvelle fiche
+                </button>
                 <button className="print-chip" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
                   <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden>
                     <path
@@ -2013,25 +2056,17 @@ function GeneratorPage() {
                       />
                     </div>
                   </div>
-                  <button
-                    className="sheet-add-fab no-print"
-                    type="button"
-                    onClick={addPage}
-                    aria-label="Ajouter une page"
-                    title="Ajouter une page"
-                  >
-                    +
-                  </button>
+                  {isFormes && activeBlock.coordLibre ? (
+                    <aside className="coord-page-palette no-print">
+                      <b>Formes</b>
+                      <FormesPalette
+                        marks={activeBlock.coordMarks ?? []}
+                        selectedKind={selectedCoordShape}
+                        onSelect={setSelectedCoordShape}
+                      />
+                    </aside>
+                  ) : null}
                 </div>
-                <button
-                  className="sheet-add-fab is-below no-print"
-                  type="button"
-                  onClick={addExerciseOnPage}
-                  aria-label="Ajouter un exercice sur cette page"
-                  title="Ajouter un exercice sur cette page"
-                >
-                  +
-                </button>
               </div>
             </div>
             {/* Impression : toutes les fiches élèves, puis tous les corrigés */}

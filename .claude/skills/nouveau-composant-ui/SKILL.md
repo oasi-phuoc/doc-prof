@@ -18,7 +18,7 @@ L'UI vit surtout dans `src/App.tsx` + `src/App.css` (pas encore une lib `compone
 | Liste déroulante | `SelectBox` (Domaine / Thème / Type / Niveau / Questions) |
 | Binaire | `.mode-toggle` (Exercice / Évaluation, Institutionnel / Personnalisé) |
 | Trois choix | `.mode-toggle.is-3` (Voc / Gram / Com, Colonnes 1 / 2 / 3) |
-| Pages | `.page-tabs` (chiffres) + bouton `+` : **nouvelle page**. Un second `+` **sous** l’A4 ajoute un type d’exercice sur la **même** page (`extraBlocks`). |
+| Pages | `.page-tabs` (chiffres) dans les paramètres. **Ajouter une page** / **Ajouter un exercice** : boutons du panneau (`.page-structure-actions`), pas de `+` autour de l’A4. |
 | Actions | `.button` / `.button.secondary` |
 | Champs en-tête | `.custom-header-form` / champs institutionnels dans le panneau |
 

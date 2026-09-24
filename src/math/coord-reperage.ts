@@ -156,16 +156,40 @@ export function resolveAxesGrid(config: Pick<PageConfig, 'coordCols' | 'coordRow
   }
 }
 
+/** Maximum largeur × hauteur du tableau de formes, selon le côté du carré. */
+export const FORMES_MAX_BY_MM: Record<CoordFormesCellMm, { cols: number; rows: number }> = {
+  6: { cols: 26, rows: 20 },
+  8: { cols: 21, rows: 15 },
+  10: { cols: 16, rows: 12 },
+}
+
+export function maxFormesColsForCell(cellMm: CoordCellMm): number {
+  return FORMES_MAX_BY_MM[clampFormesCellMm(cellMm)].cols
+}
+
+export function maxFormesRowsForCell(cellMm: CoordCellMm): number {
+  return FORMES_MAX_BY_MM[clampFormesCellMm(cellMm)].rows
+}
+
+export function clampFormesCols(n: number, cellMm: CoordCellMm = DEFAULT_FORMES_CELL_MM): number {
+  return Math.max(3, Math.min(maxFormesColsForCell(cellMm), Math.round(n) || 5))
+}
+
+export function clampFormesRows(n: number, cellMm: CoordCellMm = DEFAULT_FORMES_CELL_MM): number {
+  return Math.max(3, Math.min(maxFormesRowsForCell(cellMm), Math.round(n) || 5))
+}
+
 export function resolveFormesGrid(
   config: Pick<PageConfig, 'coordCols' | 'coordRows' | 'coordCellMm' | 'difficulty'>,
   difficulty?: Difficulty,
 ): { cols: number; rows: number; cellMm: CoordFormesCellMm } {
   const level = difficulty ?? config.difficulty ?? 'moyen'
   const fallback = coordSizeFor(level)
+  const cellMm = clampFormesCellMm(config.coordCellMm)
   return {
-    cols: clampCoordSize(config.coordCols ?? fallback.cols),
-    rows: clampCoordSize(config.coordRows ?? fallback.rows),
-    cellMm: clampFormesCellMm(config.coordCellMm),
+    cols: clampFormesCols(config.coordCols ?? fallback.cols, cellMm),
+    rows: clampFormesRows(config.coordRows ?? fallback.rows, cellMm),
+    cellMm,
   }
 }
 
@@ -241,7 +265,7 @@ export function coordSizeFor(difficulty: Difficulty): { cols: number; rows: numb
 export const COORD_LETTER_MAX = 26
 
 export function clampCoordSize(n: number): number {
-  return Math.max(3, Math.min(COORD_LETTER_MAX, Math.round(n) || 5))
+  return clampFormesCols(n, 6)
 }
 
 export function centeredOrigin(cols: number, rows: number): { col: number; row: number } {

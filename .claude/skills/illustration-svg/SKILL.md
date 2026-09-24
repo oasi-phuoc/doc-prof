@@ -14,6 +14,8 @@ Deux composants pivots :
 - `src/components/math/GeometryFigure.tsx` — formes cotées (rectangle, triangle, trapèze, parallélogramme, solides schématiques…).
 - `src/components/math/CoordGrid.tsx` — repérage dans le plan.
 
+Limites du tableau de formes (lire / placer) : **10 mm → 16 × 12**, **8 mm → 21 × 15**, **6 mm → 26 × 20**. En mode libre, les formes se placent sur la fiche A4 (palette à droite), pas sur un second tableau dans le panneau.
+
 ## Règles
 
 - Contour foncé régulier, **pas de dégradé**, pas d'ombre, texte de cote en `currentColor`.
