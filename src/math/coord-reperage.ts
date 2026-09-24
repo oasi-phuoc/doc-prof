@@ -1,4 +1,4 @@
-import { pick, shuffle, type Rng } from './rng'
+import { int, pick, shuffle, type Rng } from './rng'
 import type {
   CoordAxis,
   CoordCellMm,
@@ -43,6 +43,10 @@ export function isReperageCadrans(typeId: string): boolean {
     typeId === 'reperage-cadrans-placer' ||
     typeId === 'reperage-cadrans-libre'
   )
+}
+
+export function isReperageComposer(typeId: string): boolean {
+  return typeId === 'reperage-cadrans-libre'
 }
 
 export function isReperageDroites(typeId: string): boolean {
@@ -222,8 +226,66 @@ export function coordSizeFor(difficulty: Difficulty): { cols: number; rows: numb
   return { cols: 12, rows: 12 }
 }
 
+export const COORD_LETTER_MAX = 26
+
 export function clampCoordSize(n: number): number {
-  return Math.max(3, Math.min(20, Math.round(n) || 5))
+  return Math.max(3, Math.min(COORD_LETTER_MAX, Math.round(n) || 5))
+}
+
+export function centeredOrigin(cols: number, rows: number): { col: number; row: number } {
+  return { col: cols / 2, row: rows / 2 }
+}
+
+export function clampOrigin(col: number, row: number, cols: number, rows: number): { col: number; row: number } {
+  return {
+    col: Math.max(0, Math.min(cols, Math.round(col))),
+    row: Math.max(0, Math.min(rows, Math.round(row))),
+  }
+}
+
+export function pickRandomOrigin(rng: Rng, cols: number, rows: number): { col: number; row: number } {
+  const maxC = Math.max(0, cols)
+  const maxR = Math.max(0, rows)
+  if (maxC <= 2 || maxR <= 2) return centeredOrigin(cols, rows)
+  const marginC = Math.max(1, Math.min(Math.floor(cols / 6), Math.floor(cols / 2) - 1))
+  const marginR = Math.max(1, Math.min(Math.floor(rows / 6), Math.floor(rows / 2) - 1))
+  return {
+    col: int(rng, marginC, cols - marginC),
+    row: int(rng, marginR, rows - marginR),
+  }
+}
+
+export function remapMarksToOrigin(
+  marks: CoordMark[],
+  from: { col: number; row: number },
+  to: { col: number; row: number },
+  unit: number,
+): CoordMark[] {
+  return marks.map((mark) => ({
+    ...mark,
+    x: Math.round(((from.col + mark.x * unit - to.col) / unit) * 1000) / 1000,
+    y: Math.round(((from.row + mark.y * unit - to.row) / unit) * 1000) / 1000,
+  }))
+}
+
+export function markOnGrid(
+  mark: CoordMark,
+  origin: { col: number; row: number },
+  cols: number,
+  rows: number,
+  unit: number,
+): boolean {
+  const gx = origin.col + mark.x * unit
+  const gy = origin.row + mark.y * unit
+  return gx >= -1e-8 && gx <= cols + 1e-8 && gy >= -1e-8 && gy <= rows + 1e-8
+}
+
+export function ensureGivenMark(marks: CoordMark[]): CoordMark[] {
+  if (!marks.length) return marks
+  if (marks.some((mark) => mark.given)) {
+    return marks.map((mark) => (mark.given ? { ...mark, showCoord: true } : { ...mark, given: false }))
+  }
+  return [{ ...marks[0]!, given: true, showCoord: true }, ...marks.slice(1).map((mark) => ({ ...mark, given: false }))]
 }
 
 export function columnLetter(index: number): string {
@@ -368,7 +430,7 @@ function generateAxesPoints(rng: Rng, rangeX: number, rangeY: number, step: numb
     rng,
     pool.filter((pt) => !chosen.some((c) => c.x === pt.x && c.y === pt.y)),
   )
-  const points = [...chosen, ...rest].slice(0, Math.min(count, pool.length))
+  const points = [...chosen, ...rest].slice(0, Math.min(count, pool.length, COORD_LETTER_MAX))
   return points.map((pt, i) => ({
     x: pt.x,
     y: pt.y,
@@ -377,11 +439,50 @@ function generateAxesPoints(rng: Rng, rangeX: number, rangeY: number, step: numb
   }))
 }
 
+function generateComposerPoints(
+  rng: Rng,
+  cols: number,
+  rows: number,
+  origin: { col: number; row: number },
+  unit: number,
+  count: number,
+): CoordMark[] {
+  const pool: Array<{ x: number; y: number }> = []
+  for (let c = 0; c <= cols; c++) {
+    for (let r = 0; r <= rows; r++) {
+      if (c === origin.col && r === origin.row) continue
+      pool.push({
+        x: Math.round(((c - origin.col) / unit) * 1000) / 1000,
+        y: Math.round(((r - origin.row) / unit) * 1000) / 1000,
+      })
+    }
+  }
+  const picked = shuffle(rng, pool).slice(0, Math.min(count, pool.length, COORD_LETTER_MAX))
+  return ensureGivenMark(
+    picked.map((pt, i) => ({
+      x: pt.x,
+      y: pt.y,
+      kind: 'point' as const,
+      label: String.fromCharCode(65 + i),
+    })),
+  )
+}
+
 export function sceneFromAxesLibre(config: PageConfig, difficulty: Difficulty): CoordScene {
   const grid = resolveAxesGrid(config, difficulty)
-  const marks = (config.coordMarks ?? []).filter(
-    (mark) => Math.abs(mark.x) <= grid.rangeX && Math.abs(mark.y) <= grid.rangeY,
+  const composer = isReperageComposer(config.exerciseType)
+  const origin = composer
+    ? clampOrigin(
+        config.coordOriginCol ?? grid.cols / 2,
+        config.coordOriginRow ?? grid.rows / 2,
+        grid.cols,
+        grid.rows,
+      )
+    : centeredOrigin(grid.cols, grid.rows)
+  const raw = (config.coordMarks ?? []).filter((mark) =>
+    markOnGrid(mark, origin, grid.cols, grid.rows, grid.unitSquares),
   )
+  const marks = composer ? ensureGivenMark(raw) : raw
   return {
     variant: 'axes',
     cols: grid.cols,
@@ -392,6 +493,10 @@ export function sceneFromAxesLibre(config: PageConfig, difficulty: Difficulty): 
     rangeY: grid.rangeY,
     cellMm: grid.cellMm,
     unitSquares: grid.unitSquares,
+    originCol: origin.col,
+    originRow: origin.row,
+    hideAxes: composer,
+    showOrigin: composer,
     step: grid.step,
     marks,
   }
@@ -408,13 +513,47 @@ export function tryGenerateReperage(
       task === 'place'
         ? 'Placez chaque point à l’emplacement indiqué.'
         : 'Écrivez les coordonnées de chaque point.'
-    const libre = Boolean(config.coordLibre) || config.exerciseType === 'reperage-cadrans-libre'
-    if (libre) {
-      const scene = sceneFromAxesLibre(config, difficulty)
-      const limited = { ...scene, marks: scene.marks.slice(0, Math.max(0, config.count || scene.marks.length)) }
+    const composer = isReperageComposer(config.exerciseType)
+    if (composer && !config.coordLibre) {
+      const grid = resolveAxesGrid(config, difficulty)
+      const origin = pickRandomOrigin(rng, grid.cols, grid.rows)
+      const findCount = Math.max(1, Math.min(config.count || 5, COORD_LETTER_MAX - 1))
+      const marks = generateComposerPoints(rng, grid.cols, grid.rows, origin, grid.unitSquares, findCount + 1)
+      const questions = questionsFromAxes(marks.filter((mark) => !mark.given))
+      const scene: CoordScene = {
+        variant: 'axes',
+        cols: grid.cols,
+        rows: grid.rows,
+        axis: 'numeric',
+        range: Math.max(grid.rangeX, grid.rangeY),
+        rangeX: grid.rangeX,
+        rangeY: grid.rangeY,
+        cellMm: grid.cellMm,
+        unitSquares: grid.unitSquares,
+        originCol: origin.col,
+        originRow: origin.row,
+        hideAxes: true,
+        step: grid.step,
+        marks,
+      }
       return {
-        instruction,
-        items: [itemFromScene(limited, questionsFromAxes(limited.marks), instruction, task)],
+        instruction:
+          'Un point est donné avec ses coordonnées. Trouvez l’origine du repère, puis écrivez les coordonnées des autres points.',
+        items: [itemFromScene(scene, questions, scene.marks[0] ? `Point ${scene.marks[0].label}` : instruction, 'read')],
+      }
+    }
+    if (config.coordLibre) {
+      const scene = sceneFromAxesLibre(config, difficulty)
+      const given = composer ? scene.marks.filter((mark) => mark.given) : []
+      const others = composer ? scene.marks.filter((mark) => !mark.given) : scene.marks
+      const visible = [...given, ...others.slice(0, Math.max(0, config.count || others.length))]
+      const limited = { ...scene, marks: visible, hideAxes: composer, showOrigin: false }
+      const questions = questionsFromAxes(composer ? limited.marks.filter((mark) => !mark.given) : limited.marks)
+      return {
+        instruction: composer
+          ? 'Un point est donné avec ses coordonnées. Trouvez l’origine du repère, puis écrivez les coordonnées des autres points.'
+          : instruction,
+        items: [itemFromScene(limited, questions, instruction, composer ? 'read' : task)],
       }
     }
     const grid = resolveAxesGrid(config, difficulty)

@@ -49,17 +49,23 @@ import {
   COORD_SHAPE_LABEL,
   DEFAULT_CELL_MM,
   DEFAULT_UNIT_SQUARES,
-  axesExtent,
   clampAxesCols,
   clampAxesRows,
   clampCellMm,
   clampCoordSize,
+  clampOrigin,
+  centeredOrigin,
+  COORD_LETTER_MAX,
   coordSizeFor,
+  ensureGivenMark,
   isReperageCadrans,
+  isReperageComposer,
   isReperageConstruire,
   isReperageDroites,
   isReperageFormes,
   isReperagePage,
+  markOnGrid,
+  remapMarksToOrigin,
   maxAxesColsForCell,
   maxAxesRowsForCell,
   nextPointLabel,
@@ -151,7 +157,9 @@ function WorksheetSheet({
   onToggleDraftGrid?: (index: number, blockIndex?: number) => void
   coordEdit?: {
     selectedKind: CoordShape | null
+    placingOrigin?: boolean
     onPlace: (x: number, y: number, kind: CoordShape) => void
+    onPlaceOrigin?: (col: number, row: number) => void
     onRemove: (x: number, y: number) => void
   }
 }) {
@@ -589,7 +597,7 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
         }
       : isCadrans || isDroites || isConstruire
         ? {
-            coordLibre: isCadrans ? type.id === 'reperage-cadrans-libre' : undefined,
+            coordLibre: isCadrans ? false : undefined,
             coordCols: AXES_DEFAULT_COLS,
             coordRows: AXES_DEFAULT_ROWS,
             coordAxis: undefined,
@@ -597,6 +605,8 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
             coordRange: undefined,
             coordCellMm: DEFAULT_CELL_MM,
             coordUnitSquares: DEFAULT_UNIT_SQUARES,
+            coordOriginCol: undefined,
+            coordOriginRow: undefined,
           }
         : {
             coordLibre: undefined,
@@ -638,6 +648,7 @@ function GeneratorPage() {
   const [seed, setSeed] = useState(randomSeed)
   const [questionsOverflow, setQuestionsOverflow] = useState(false)
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
+  const [coordTool, setCoordTool] = useState<'origin' | 'given' | 'points'>('origin')
   const previewFrameRef = useRef<HTMLDivElement>(null)
 
   const activePage = pages[pageIndex] ?? pages[0]!
@@ -725,6 +736,8 @@ function GeneratorPage() {
     activeBlock.coordRange,
     activeBlock.coordCellMm,
     activeBlock.coordUnitSquares,
+    activeBlock.coordOriginCol,
+    activeBlock.coordOriginRow,
     activeBlock.coordMarks,
     activePage.extraBlocks,
     evalMode,
@@ -761,7 +774,13 @@ function GeneratorPage() {
           }
         }
         if (isReperageCadrans(fixed.exerciseType) && fixed.coordMarks) {
-          fixed = { ...fixed, coordMarks: fixed.coordMarks.slice(0, Math.max(0, fixed.count)) }
+          if (isReperageComposer(fixed.exerciseType)) {
+            const given = fixed.coordMarks.filter((mark) => mark.given)
+            const others = fixed.coordMarks.filter((mark) => !mark.given).slice(0, Math.max(0, fixed.count))
+            fixed = { ...fixed, coordMarks: [...given, ...others] }
+          } else {
+            fixed = { ...fixed, coordMarks: fixed.coordMarks.slice(0, Math.max(0, fixed.count)) }
+          }
         }
         return setPageBlock(merged, safeBlockIndex, fixed)
       }),
@@ -787,9 +806,17 @@ function GeneratorPage() {
 
   const isReperage = isReperagePage(activeBlock.exerciseType)
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
+  const isComposer = isReperageComposer(activeBlock.exerciseType)
   const isFormes = isReperageFormes(activeBlock.exerciseType)
   const isDroites = isReperageDroites(activeBlock.exerciseType)
   const isConstruire = isReperageConstruire(activeBlock.exerciseType)
+  const maxQuestions = isComposer
+    ? COORD_LETTER_MAX - 1
+    : isFormes
+      ? COORD_SHAPES.length
+      : isReperage
+        ? COORD_LETTER_MAX
+        : 30
   const isQuadType = isQuadExercise(activeBlock.exerciseType)
   const isNumberLibreDomain = activePage.domain === 'algèbre' || activePage.domain === 'géométrie'
   const quadPool = activeBlock.exerciseType.startsWith('volumes-')
@@ -802,7 +829,6 @@ function GeneratorPage() {
   const updateAxesGrid = (patch: Partial<ExerciseBlock>) => {
     const next = { ...activeBlock, ...patch }
     const grid = resolveAxesGrid({ ...activeAsPage, ...next }, next.difficulty)
-    const { rangeX, rangeY } = axesExtent(grid.cols, grid.rows, grid.unitSquares)
     updatePage({
       ...patch,
       coordCols: grid.cols,
@@ -810,25 +836,79 @@ function GeneratorPage() {
       coordCellMm: grid.cellMm,
       coordUnitSquares: grid.unitSquares,
       coordMarks: isCadrans
-        ? (next.coordMarks ?? []).filter((mark) => Math.abs(mark.x) <= rangeX && Math.abs(mark.y) <= rangeY)
+        ? (next.coordMarks ?? []).filter((mark) =>
+            markOnGrid(
+              mark,
+              {
+                col: next.coordOriginCol ?? grid.cols / 2,
+                row: next.coordOriginRow ?? grid.rows / 2,
+              },
+              grid.cols,
+              grid.rows,
+              grid.unitSquares,
+            ),
+          )
         : next.coordMarks,
+    })
+  }
+
+  const placeOrigin = (col: number, row: number) => {
+    const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+    const from = {
+      col: activeBlock.coordOriginCol ?? grid.cols / 2,
+      row: activeBlock.coordOriginRow ?? grid.rows / 2,
+    }
+    const to = clampOrigin(col, row, grid.cols, grid.rows)
+    const remapped = remapMarksToOrigin(activeBlock.coordMarks ?? [], from, to, grid.unitSquares).filter((mark) =>
+      markOnGrid(mark, to, grid.cols, grid.rows, grid.unitSquares),
+    )
+    updatePage({
+      coordLibre: true,
+      coordOriginCol: to.col,
+      coordOriginRow: to.row,
+      coordCols: grid.cols,
+      coordRows: grid.rows,
+      coordCellMm: grid.cellMm,
+      coordUnitSquares: grid.unitSquares,
+      coordMarks: isComposer ? ensureGivenMark(remapped) : remapped,
     })
   }
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
     if (isCadrans) {
       const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
-      if (Math.abs(x) > grid.rangeX || Math.abs(y) > grid.rangeY) return
+      const origin = {
+        col: activeBlock.coordOriginCol ?? grid.cols / 2,
+        row: activeBlock.coordOriginRow ?? grid.rows / 2,
+      }
+      if (!markOnGrid({ x, y, kind: 'point' }, origin, grid.cols, grid.rows, grid.unitSquares)) return
+      if (x === 0 && y === 0 && isComposer) return
       const without = (activeBlock.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
       const current = (activeBlock.coordMarks ?? []).find((mark) => mark.x === x && mark.y === y)
-      if (!current && without.length >= activeBlock.count) return
+      const others = without.filter((mark) => !mark.given)
+      const asGiven = isComposer && (coordTool === 'given' || !without.some((mark) => mark.given))
+      if (!current && !asGiven && others.length >= activeBlock.count) return
+      if (!current && asGiven && without.length + 1 > COORD_LETTER_MAX) return
+      const nextMarks = [
+        ...without.map((mark) => (asGiven ? { ...mark, given: false, showCoord: false } : mark)),
+        {
+          x,
+          y,
+          kind: 'point' as const,
+          label: current?.label ?? nextPointLabel(without),
+          given: asGiven,
+          showCoord: asGiven,
+        },
+      ]
       updatePage({
         coordLibre: true,
         coordCols: grid.cols,
         coordRows: grid.rows,
         coordCellMm: grid.cellMm,
         coordUnitSquares: grid.unitSquares,
-        coordMarks: [...without, { x, y, kind: 'point', label: current?.label ?? nextPointLabel(without) }],
+        coordOriginCol: isComposer ? origin.col : activeBlock.coordOriginCol,
+        coordOriginRow: isComposer ? origin.row : activeBlock.coordOriginRow,
+        coordMarks: isComposer ? ensureGivenMark(nextMarks) : nextMarks,
       })
       return
     }
@@ -900,6 +980,8 @@ function GeneratorPage() {
       coordRange: fields.coordRange,
       coordCellMm: fields.coordCellMm,
       coordUnitSquares: fields.coordUnitSquares,
+      coordOriginCol: fields.coordOriginCol,
+      coordOriginRow: fields.coordOriginRow,
       numberLibre: activeBlock.numberLibre,
       numberMin: activeBlock.numberMin,
       numberMax: activeBlock.numberMax,
@@ -1157,11 +1239,35 @@ function GeneratorPage() {
                     (isReperageFormes(value) && isReperageFormes(activeBlock.exerciseType)) ||
                     (isReperageCadrans(value) && isReperageCadrans(activeBlock.exerciseType))
                   ) {
+                    const fromComposer = isReperageComposer(activeBlock.exerciseType)
+                    const toComposer = isReperageComposer(value)
+                    if (fromComposer !== toComposer && isReperageCadrans(value)) {
+                      const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+                      const unit = grid.unitSquares
+                      const stored = {
+                        col: activeBlock.coordOriginCol ?? grid.cols / 2,
+                        row: activeBlock.coordOriginRow ?? grid.rows / 2,
+                      }
+                      const center = centeredOrigin(grid.cols, grid.rows)
+                      const remapped = fromComposer
+                        ? remapMarksToOrigin(activeBlock.coordMarks ?? [], stored, center, unit)
+                        : activeBlock.coordMarks
+                      updatePage({
+                        exerciseType: value,
+                        topic: type.topic,
+                        track: type.track,
+                        coordLibre: activeBlock.coordLibre,
+                        coordMarks: remapped,
+                        coordOriginCol: toComposer ? center.col : undefined,
+                        coordOriginRow: toComposer ? center.row : undefined,
+                      })
+                      return
+                    }
                     updatePage({
                       exerciseType: value,
                       topic: type.topic,
                       track: type.track,
-                      coordLibre: value === 'reperage-cadrans-libre' ? true : activeBlock.coordLibre,
+                      coordLibre: activeBlock.coordLibre,
                     })
                     return
                   }
@@ -1174,6 +1280,8 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              {isReperage ? null : (
+              <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
                   label="Niveau"
@@ -1250,6 +1358,8 @@ function GeneratorPage() {
                   </div>
                 </div>
               ) : null}
+              </>
+              )}
               {isQuadType ? (
                 <div className="quad-libre-block">
                   <div className="mode-toggle-block">
@@ -1315,14 +1425,11 @@ function GeneratorPage() {
                   }
                   type="number"
                   min={1}
-                  max={isFormes ? COORD_SHAPES.length : 30}
+                  max={maxQuestions}
                   value={activeBlock.count}
                   onChange={(event) =>
                     updatePage({
-                      count: Math.max(
-                        1,
-                        Math.min(isFormes ? COORD_SHAPES.length : 30, Number(event.target.value) || 1),
-                      ),
+                      count: Math.max(1, Math.min(maxQuestions, Number(event.target.value) || 1)),
                     })
                   }
                 />
@@ -1332,6 +1439,7 @@ function GeneratorPage() {
                   </p>
                 ) : null}
               </label>
+              {isReperage ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
@@ -1347,6 +1455,7 @@ function GeneratorPage() {
                   ))}
                 </div>
               </div>
+              )}
               {isFormes ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>
@@ -1392,7 +1501,7 @@ function GeneratorPage() {
                         className="pill-input"
                         type="number"
                         min={3}
-                        max={20}
+                        max={26}
                         value={activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols}
                         onChange={(event) => {
                           const cols = clampCoordSize(Number(event.target.value))
@@ -1409,7 +1518,7 @@ function GeneratorPage() {
                         className="pill-input"
                         type="number"
                         min={3}
-                        max={20}
+                        max={26}
                         value={activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows}
                         onChange={(event) => {
                           const rows = clampCoordSize(Number(event.target.value))
@@ -1472,7 +1581,7 @@ function GeneratorPage() {
                       <p className="type-hint muted">
                         Vous pouvez placer toutes les formes, une seule fois chacune. Glissez une forme sur une case,
                         ou cliquez une forme puis une case. Largeur et hauteur font grandir le tableau ; chaque carré
-                        garde le côté choisi, jusqu’à 20 × 20.
+                        garde le côté choisi, jusqu’à 26 × 26.
                       </p>
                       <p className="type-hint muted">
                         {(activeBlock.coordMarks?.length ?? 0)} / {COORD_SHAPES.length} forme
@@ -1491,42 +1600,42 @@ function GeneratorPage() {
                   ) : (
                     <p className="type-hint muted">
                       Une seule grille centrée. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des
-                      formes. Largeur et hauteur font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. Vous
-                      pouvez afficher les questions sur 1, 2 ou 3 colonnes.
+                      formes. Largeur et hauteur font grandir le tableau (26 lettres au plus) ; les carrés restent à
+                      3, 4 ou 5 mm.
                     </p>
                   )}
                 </div>
               ) : isCadrans ? (
                 <div className="coord-libre-panel">
-                  <b>Repère (4 cadrans)</b>
-                  {activeBlock.exerciseType !== 'reperage-cadrans-libre' ? (
-                    <div className="mode-toggle" role="group" aria-label="Mode du repère">
-                      <button
-                        type="button"
-                        className={!activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() => updatePage({ coordLibre: false })}
-                      >
-                        Automatique
-                      </button>
-                      <button
-                        type="button"
-                        className={activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() => {
-                          const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
-                          updatePage({
-                            coordLibre: true,
-                            coordCols: grid.cols,
-                            coordRows: grid.rows,
-                            coordCellMm: grid.cellMm,
-                            coordUnitSquares: grid.unitSquares,
-                            coordMarks: activeBlock.coordMarks ?? [],
-                          })
-                        }}
-                      >
-                        Libre
-                      </button>
-                    </div>
-                  ) : null}
+                  <b>{isComposer ? 'Composer les points' : 'Repère (4 cadrans)'}</b>
+                  <div className="mode-toggle" role="group" aria-label="Mode du repère">
+                    <button
+                      type="button"
+                      className={!activeBlock.coordLibre ? 'active' : ''}
+                      onClick={() => updatePage({ coordLibre: false })}
+                    >
+                      Automatique
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.coordLibre ? 'active' : ''}
+                      onClick={() => {
+                        const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+                        updatePage({
+                          coordLibre: true,
+                          coordCols: grid.cols,
+                          coordRows: grid.rows,
+                          coordCellMm: grid.cellMm,
+                          coordUnitSquares: grid.unitSquares,
+                          coordMarks: activeBlock.coordMarks ?? [],
+                          coordOriginCol: activeBlock.coordOriginCol ?? Math.round(grid.cols / 2),
+                          coordOriginRow: activeBlock.coordOriginRow ?? Math.round(grid.rows / 2),
+                        })
+                      }}
+                    >
+                      Libre
+                    </button>
+                  </div>
                   <ReperageAxesFields
                     cols={axesGrid.cols}
                     rows={axesGrid.rows}
@@ -1534,23 +1643,52 @@ function GeneratorPage() {
                     unitSquares={axesGrid.unitSquares}
                     onChange={updateAxesGrid}
                   />
-                  {activeBlock.coordLibre || activeBlock.exerciseType === 'reperage-cadrans-libre' ? (
+                  {activeBlock.coordLibre ? (
                     <>
+                      {isComposer ? (
+                        <div className="mode-toggle is-3" role="group" aria-label="Outil de placement">
+                          <button
+                            type="button"
+                            className={coordTool === 'origin' ? 'active' : ''}
+                            onClick={() => setCoordTool('origin')}
+                          >
+                            Origine
+                          </button>
+                          <button
+                            type="button"
+                            className={coordTool === 'given' ? 'active' : ''}
+                            onClick={() => setCoordTool('given')}
+                          >
+                            Point donné
+                          </button>
+                          <button
+                            type="button"
+                            className={coordTool === 'points' ? 'active' : ''}
+                            onClick={() => setCoordTool('points')}
+                          >
+                            Autres points
+                          </button>
+                        </div>
+                      ) : null}
                       <div className="coord-axes-editor">
                         <CoordGrid
                           scene={sceneFromAxesLibre(activeAsPage, activeBlock.difficulty)}
                           editable
+                          placingOrigin={isComposer && coordTool === 'origin'}
                           onPlace={(x, y) => placeCoordMark(x, y, 'point')}
+                          onPlaceOrigin={placeOrigin}
                           onRemove={removeCoordMark}
                         />
                       </div>
                       <p className="type-hint muted">
-                        Cliquez une intersection pour poser A, B, C… Le champ Questions limite le nombre de points.
-                        Cliquez un point pour le retirer. Colonnes et lignes restent paires.
+                        {isComposer
+                          ? 'Placez l’origine (invisible sur la fiche), un point donné avec ses coordonnées, puis les autres points à lire. Le champ Questions limite les points à compléter (26 lettres au plus).'
+                          : 'Cliquez une intersection pour poser A, B, C… Le champ Questions limite le nombre de points. Cliquez un point pour le retirer. Colonnes et lignes restent paires.'}
                       </p>
                       <p className="type-hint muted">
-                        {(activeBlock.coordMarks?.length ?? 0)} / {activeBlock.count} point
-                        {activeBlock.count > 1 ? 's' : ''}
+                        {isComposer
+                          ? `${(activeBlock.coordMarks ?? []).filter((mark) => !mark.given).length} / ${activeBlock.count} point${activeBlock.count > 1 ? 's' : ''} à lire`
+                          : `${activeBlock.coordMarks?.length ?? 0} / ${activeBlock.count} point${activeBlock.count > 1 ? 's' : ''}`}
                       </p>
                       {(activeBlock.coordMarks?.length ?? 0) > 0 ? (
                         <button
@@ -1564,9 +1702,9 @@ function GeneratorPage() {
                     </>
                   ) : (
                     <p className="type-hint muted">
-                      Une seule grille à 4 cadrans, centrée. Colonnes et lignes (nombres pairs) font grandir le
-                      tableau ; les carrés restent à 3, 4 ou 5 mm. La graduation choisit 1 ou 2 carrés pour une
-                      unité. Avancé : demi-unités.
+                      {isComposer
+                        ? 'Une grille sans axes x / y. L’origine est placée au hasard. Un point est donné avec ses coordonnées ; les autres se complètent comme pour lire les cadrans.'
+                        : 'Une seule grille à 4 cadrans, centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. La graduation choisit 1 ou 2 carrés pour une unité.'}
                     </p>
                   )}
                 </div>
@@ -1825,11 +1963,12 @@ function GeneratorPage() {
                         interactiveDraftGrids={isProblemExercise(activeBlock.exerciseType)}
                         onToggleDraftGrid={toggleDraftGrid}
                         coordEdit={
-                          (isFormes && activeBlock.coordLibre) ||
-                          (isCadrans && (activeBlock.coordLibre || activeBlock.exerciseType === 'reperage-cadrans-libre'))
+                          (isFormes && activeBlock.coordLibre) || (isCadrans && activeBlock.coordLibre)
                             ? {
                                 selectedKind: selectedCoordShape,
+                                placingOrigin: isComposer && coordTool === 'origin',
                                 onPlace: placeCoordMark,
+                                onPlaceOrigin: placeOrigin,
                                 onRemove: removeCoordMark,
                               }
                             : undefined

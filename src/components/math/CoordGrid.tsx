@@ -1,5 +1,5 @@
 import { clipLineToRange, STROKE_DASH, STROKE_LABEL } from '@/math/coord-droites'
-import { COORD_SHAPE_LABEL, axisTickLabel, columnLetter, formatAxesNum } from '@/math/coord-reperage'
+import { COORD_SHAPE_LABEL, axisTickLabel, columnLetter, formatAxesCoord, formatAxesNum } from '@/math/coord-reperage'
 import type { CoordLine, CoordScene, CoordShape } from '@/math/types'
 
 type Pt = { x: number; y: number; label?: string }
@@ -333,12 +333,16 @@ function PolarScene({ scene }: { scene: CoordScene }) {
 function AxesScene({
   scene,
   editable,
+  placingOrigin,
   onPlace,
+  onPlaceOrigin,
   onRemove,
 }: {
   scene: CoordScene
   editable?: boolean
+  placingOrigin?: boolean
   onPlace?: (x: number, y: number) => void
+  onPlaceOrigin?: (col: number, row: number) => void
   onRemove?: (x: number, y: number) => void
 }) {
   const cellMm = scene.cellMm ?? 5
@@ -347,6 +351,10 @@ function AxesScene({
   const rangeY = scene.rangeY ?? scene.range ?? 5
   const cols = scene.cols || Math.round(2 * rangeX * unit)
   const rows = scene.rows || Math.round(2 * rangeY * unit)
+  const originCol = scene.originCol ?? cols / 2
+  const originRow = scene.originRow ?? rows / 2
+  const hideAxes = Boolean(scene.hideAxes)
+  const showOrigin = Boolean(scene.showOrigin)
   const step = scene.step ?? 1
   const { padL, padR, padT, padB } = mmPads()
   const gridW = cols * cellMm
@@ -354,100 +362,119 @@ function AxesScene({
   const svgW = padL + gridW + padR
   const svgH = padT + gridH + padB
   const to = (x: number, y: number) => ({
-    cx: padL + ((x + rangeX) / (2 * rangeX)) * gridW,
-    cy: padT + ((rangeY - y) / (2 * rangeY)) * gridH,
+    cx: padL + (originCol + x * unit) * cellMm,
+    cy: padT + (rows - (originRow + y * unit)) * cellMm,
   })
-  const squareXs = Array.from({ length: cols + 1 }, (_, i) => Math.round((-rangeX + i / unit) * 1000) / 1000)
-  const squareYs = Array.from({ length: rows + 1 }, (_, i) => Math.round((-rangeY + i / unit) * 1000) / 1000)
-  const tickX: number[] = []
-  const tickY: number[] = []
-  const nx = Math.round((2 * rangeX) / step)
-  const ny = Math.round((2 * rangeY) / step)
-  for (let i = 0; i <= nx; i++) tickX.push(Math.round((-rangeX + i * step) * 1000) / 1000)
-  for (let i = 0; i <= ny; i++) tickY.push(Math.round((-rangeY + i * step) * 1000) / 1000)
+  const colX = (col: number) => padL + col * cellMm
+  const rowY = (row: number) => padT + (rows - row) * cellMm
+  const mathAtCol = (col: number) => Math.round(((col - originCol) / unit) * 1000) / 1000
+  const mathAtRow = (row: number) => Math.round(((row - originRow) / unit) * 1000) / 1000
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
   const fineN = scene.fineGrid ? 5 : 0
   const labelStepX = rangeX >= 12 ? 2 : 1
   const labelStepY = rangeY >= 12 ? 2 : 1
   const dashScale = cellMm / 5
+  const tickX = Array.from({ length: cols + 1 }, (_, col) => mathAtCol(col)).filter(
+    (v) => Number.isInteger(v) && v !== 0 && v % labelStepX === 0 && Number.isInteger(v / step),
+  )
+  const tickY = Array.from({ length: rows + 1 }, (_, row) => mathAtRow(row)).filter(
+    (v) => Number.isInteger(v) && v !== 0 && v % labelStepY === 0 && Number.isInteger(v / step),
+  )
 
   return (
     <svg
-      className={`coord-grid scene-axes is-fixed-mm${scene.fineGrid ? ' is-fine' : ''}`}
+      className={`coord-grid scene-axes is-fixed-mm${scene.fineGrid ? ' is-fine' : ''}${placingOrigin ? ' is-placing-origin' : ''}`}
       width={`${svgW}mm`}
       height={`${svgH}mm`}
       viewBox={`0 0 ${svgW} ${svgH}`}
       role="img"
-      aria-label="Repère à quatre cadrans"
+      aria-label={hideAxes ? 'Quadrillage sans axes' : 'Repère à quatre cadrans'}
     >
       {fineN
         ? Array.from({ length: cols * fineN + 1 }, (_, i) => {
-            const v = Math.round((-rangeX + i / (unit * fineN)) * 1000) / 1000
-            if (Number.isInteger(v * unit)) return null
-            const h = to(v, 0)
-            return <line key={`fx-${v}`} x1={h.cx} y1={padT} x2={h.cx} y2={padT + gridH} className="grid-line-fine" />
+            if (i % fineN === 0) return null
+            const cx = padL + (i / fineN) * cellMm
+            return <line key={`fx-${i}`} x1={cx} y1={padT} x2={cx} y2={padT + gridH} className="grid-line-fine" />
           })
         : null}
       {fineN
         ? Array.from({ length: rows * fineN + 1 }, (_, i) => {
-            const v = Math.round((-rangeY + i / (unit * fineN)) * 1000) / 1000
-            if (Number.isInteger(v * unit)) return null
-            const p = to(0, v)
-            return <line key={`fy-${v}`} x1={padL} y1={p.cy} x2={padL + gridW} y2={p.cy} className="grid-line-fine" />
+            if (i % fineN === 0) return null
+            const cy = padT + (i / fineN) * cellMm
+            return <line key={`fy-${i}`} x1={padL} y1={cy} x2={padL + gridW} y2={cy} className="grid-line-fine" />
           })
         : null}
-      {squareXs.map((v) => {
-        const h = to(v, 0)
-        return (
+      {Array.from({ length: cols + 1 }, (_, col) => (
+        <line
+          key={`vx-${col}`}
+          x1={colX(col)}
+          y1={padT}
+          x2={colX(col)}
+          y2={padT + gridH}
+          className={!hideAxes && col === originCol ? 'axis-line' : 'grid-line'}
+        />
+      ))}
+      {Array.from({ length: rows + 1 }, (_, row) => (
+        <line
+          key={`hy-${row}`}
+          x1={padL}
+          y1={rowY(row)}
+          x2={padL + gridW}
+          y2={rowY(row)}
+          className={!hideAxes && row === originRow ? 'axis-line' : 'grid-line'}
+        />
+      ))}
+      {!hideAxes
+        ? tickX.map((v) => {
+            const onX = to(v, 0)
+            return (
+              <text key={`lx-${v}`} x={onX.cx} y={onX.cy + 3.2} className="axis-label" textAnchor="middle">
+                {formatAxesNum(v)}
+              </text>
+            )
+          })
+        : null}
+      {!hideAxes
+        ? tickY.map((v) => {
+            const onY = to(0, v)
+            return (
+              <text key={`ly-${v}`} x={onY.cx - 1.4} y={onY.cy + 0.8} className="axis-label" textAnchor="end">
+                {formatAxesNum(v)}
+              </text>
+            )
+          })
+        : null}
+      {!hideAxes ? (
+        <text x={padL + gridW + 1.2} y={to(0, 0).cy - 1.2} className="axis-label">
+          x
+        </text>
+      ) : null}
+      {!hideAxes ? (
+        <text x={to(0, 0).cx + 1.4} y={padT - 1} className="axis-label">
+          y
+        </text>
+      ) : null}
+      {showOrigin ? (
+        <g className="coord-origin">
           <line
-            key={`vx-${v}`}
-            x1={h.cx}
-            y1={padT}
-            x2={h.cx}
-            y2={padT + gridH}
-            className={v === 0 ? 'axis-line' : 'grid-line'}
+            x1={to(0, 0).cx - cellMm * 0.45}
+            y1={to(0, 0).cy}
+            x2={to(0, 0).cx + cellMm * 0.45}
+            y2={to(0, 0).cy}
+            className="origin-mark"
           />
-        )
-      })}
-      {squareYs.map((v) => {
-        const p = to(0, v)
-        return (
           <line
-            key={`hy-${v}`}
-            x1={padL}
-            y1={p.cy}
-            x2={padL + gridW}
-            y2={p.cy}
-            className={v === 0 ? 'axis-line' : 'grid-line'}
+            x1={to(0, 0).cx}
+            y1={to(0, 0).cy - cellMm * 0.45}
+            x2={to(0, 0).cx}
+            y2={to(0, 0).cy + cellMm * 0.45}
+            className="origin-mark"
           />
-        )
-      })}
-      {tickX
-        .filter((v) => Number.isInteger(v) && v !== 0 && v % labelStepX === 0)
-        .map((v) => {
-          const onX = to(v, 0)
-          return (
-            <text key={`lx-${v}`} x={onX.cx} y={onX.cy + 3.2} className="axis-label" textAnchor="middle">
-              {formatAxesNum(v)}
-            </text>
-          )
-        })}
-      {tickY
-        .filter((v) => Number.isInteger(v) && v !== 0 && v % labelStepY === 0)
-        .map((v) => {
-          const onY = to(0, v)
-          return (
-            <text key={`ly-${v}`} x={onY.cx - 1.4} y={onY.cy + 0.8} className="axis-label" textAnchor="end">
-              {formatAxesNum(v)}
-            </text>
-          )
-        })}
-      <text x={padL + gridW + 1.2} y={to(0, 0).cy - 1.2} className="axis-label">
-        x
-      </text>
-      <text x={to(0, 0).cx + 1.4} y={padT - 1} className="axis-label">
-        y
-      </text>
+          <text x={to(0, 0).cx + 1.5} y={to(0, 0).cy - 1.4} className="origin-label">
+            O
+          </text>
+        </g>
+      ) : null}
       {(scene.lines ?? []).map((line) => {
         const clip = clipLineToRange(line, rangeX, rangeY)
         if (!clip) return null
@@ -503,18 +530,27 @@ function AxesScene({
         )
       })}
       {editable
-        ? tickX.map((x) =>
-            tickY.map((y) => {
+        ? Array.from({ length: cols + 1 }, (_, i) =>
+            Array.from({ length: rows + 1 }, (_, j) => {
+              const x = Math.round(((i - originCol) / unit) * 1000) / 1000
+              const y = Math.round(((j - originRow) / unit) * 1000) / 1000
               const p = to(x, y)
               const found = markAt(x, y)
               return (
                 <circle
-                  key={`h-${x}-${y}`}
+                  key={`h-${i}-${j}`}
                   cx={p.cx}
                   cy={p.cy}
                   r={Math.max(1.1, cellMm / 2.4)}
                   className="coord-hit"
-                  onClick={() => (found ? onRemove?.(x, y) : onPlace?.(x, y))}
+                  onClick={() => {
+                    if (placingOrigin) {
+                      onPlaceOrigin?.(i, j)
+                      return
+                    }
+                    if (found) onRemove?.(x, y)
+                    else onPlace?.(x, y)
+                  }}
                 />
               )
             }),
@@ -522,17 +558,20 @@ function AxesScene({
         : null}
       {scene.marks.map((found, i) => {
         const p = to(found.x, found.y)
+        const caption = found.showCoord
+          ? `${found.label ?? ''}${found.label ? ' ' : ''}${formatAxesCoord(found.x, found.y)}`
+          : found.label
         return (
           <g key={`m-${found.label ?? i}-${found.x}-${found.y}`}>
             <circle cx={p.cx} cy={p.cy} r={Math.max(0.85, cellMm * 0.22)} className="grid-point" />
-            {found.label ? (
+            {caption ? (
               <text
                 x={p.cx + (found.x >= 0 ? 1.4 : -1.4)}
                 y={p.cy + (found.y >= 0 ? -1.4 : 2.8)}
                 className="point-label"
                 textAnchor={found.x >= 0 ? 'start' : 'end'}
               >
-                {found.label}
+                {caption}
               </text>
             ) : null}
           </g>
@@ -573,7 +612,9 @@ export function CoordGrid({
   showImage,
   scene,
   editable,
+  placingOrigin,
   onPlace,
+  onPlaceOrigin,
   onRemove,
 }: {
   point?: Pt
@@ -581,7 +622,9 @@ export function CoordGrid({
   showImage?: boolean
   scene?: CoordScene
   editable?: boolean
+  placingOrigin?: boolean
   onPlace?: (x: number, y: number) => void
+  onPlaceOrigin?: (col: number, row: number) => void
   onRemove?: (x: number, y: number) => void
 }) {
   if (scene?.variant === 'polygon') return <PolygonScene scene={scene} />
@@ -591,7 +634,14 @@ export function CoordGrid({
     const construct = Boolean(scene.paths?.length || scene.fineGrid)
     return (
       <div className={`coord-axes-wrap${lines.length || construct ? ' has-lines' : ''}`}>
-        <AxesScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} />
+        <AxesScene
+          scene={scene}
+          editable={editable}
+          placingOrigin={placingOrigin}
+          onPlace={onPlace}
+          onPlaceOrigin={onPlaceOrigin}
+          onRemove={onRemove}
+        />
         {lines.length ? <CoordLineLegend lines={lines} /> : null}
       </div>
     )

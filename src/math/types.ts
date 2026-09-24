@@ -90,6 +90,10 @@ export type CoordMark = {
   label?: string
   /** `answer` : visible seulement au corrigé. */
   reveal?: 'always' | 'answer'
+  /** Point donné : coordonnées affichées sur le tableau. */
+  given?: boolean
+  /** Afficher (x ; y) à côté du point. */
+  showCoord?: boolean
 }
 
 export type CoordVertex = {
@@ -115,6 +119,14 @@ export type CoordScene = {
   cellMm?: CoordCellMm
   /** 1 carré = 1 unité, ou 2 carrés = 1 unité. */
   unitSquares?: CoordUnitSquares
+  /** Origine : nombre de carrés depuis le bord gauche. */
+  originCol?: number
+  /** Origine : nombre de carrés depuis le bord bas. */
+  originRow?: number
+  /** Masquer axes, labels x/y et graduations (origine à deviner). */
+  hideAxes?: boolean
+  /** Afficher l’origine (éditeur / corrigé). */
+  showOrigin?: boolean
   /** Pas de la grille (1 ou 0,5). */
   step?: number
   /** Droites colorées (repérage). */
@@ -345,6 +357,9 @@ export type ExerciseBlock = {
   coordCellMm?: CoordCellMm
   /** Graduation : 1 ou 2 carrés pour une unité. */
   coordUnitSquares?: CoordUnitSquares
+  /** Origine du repère (carrés depuis la gauche / le bas). */
+  coordOriginCol?: number
+  coordOriginRow?: number
   /** Bornes de nombres libres à la place du niveau. */
   numberLibre?: boolean
   numberMin?: number

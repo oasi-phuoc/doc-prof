@@ -644,6 +644,9 @@
 .coord-grid.is-fixed-mm .axis-line{stroke-width:0.38}
 .coord-grid.is-fixed-mm .axis-label{font-size:2.2mm}
 .coord-grid.is-fixed-mm .point-label{font-size:2.4mm;font-weight:700}
+.coord-grid .origin-mark{stroke:#111;stroke-width:0.4;fill:none}
+.coord-grid .origin-label{fill:#111;font-size:2.2mm;font-weight:700;font-family:'DM Sans',sans-serif}
+.coord-grid.is-placing-origin{cursor:crosshair}
 .coord-grid.is-fixed-mm .coord-line{stroke-width:0.55}
 .coord-grid.is-fixed-mm .coord-path{stroke-width:0.42}
 .coord-grid.is-fixed-mm .coord-path.is-dashed{stroke-dasharray:1.6 1}

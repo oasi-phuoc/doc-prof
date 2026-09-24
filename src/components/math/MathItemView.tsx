@@ -910,7 +910,9 @@ function CoordBlock({
   mode: PreviewMode
   coordEdit?: {
     selectedKind: CoordShape | null
+    placingOrigin?: boolean
     onPlace: (x: number, y: number, kind: CoordShape) => void
+    onPlaceOrigin?: (col: number, row: number) => void
     onRemove: (x: number, y: number) => void
   }
 }) {
@@ -932,7 +934,16 @@ function CoordBlock({
         }
       : (isPlace || hasLines) && !show
         ? { ...scene, marks: [] as typeof scene.marks }
-        : scene
+        : scene.hideAxes
+          ? {
+              ...scene,
+              showOrigin: show || Boolean(coordEdit),
+              marks: scene.marks.map((mark) => ({
+                ...mark,
+                showCoord: Boolean(mark.given || show),
+              })),
+            }
+          : scene
   return (
     <div
       className={`coord-block${scene ? ' has-scene' : ''}${hasLines || isConstruct ? ' has-lines' : ''}${
@@ -945,6 +956,7 @@ function CoordBlock({
         showImage={show && Boolean(item.pointImage)}
         scene={displayScene}
         editable={Boolean(coordEdit && (scene?.variant === 'cells' || scene?.variant === 'axes') && !hasLines)}
+        placingOrigin={coordEdit?.placingOrigin}
         onPlace={
           coordEdit
             ? (x, y) => {
@@ -957,6 +969,7 @@ function CoordBlock({
               }
             : undefined
         }
+        onPlaceOrigin={coordEdit?.onPlaceOrigin}
         onRemove={coordEdit?.onRemove}
       />
       <div className="coord-side">
@@ -1145,7 +1158,9 @@ export function MathItemView({
   onToggleDraftGrid?: () => void
   coordEdit?: {
     selectedKind: CoordShape | null
+    placingOrigin?: boolean
     onPlace: (x: number, y: number, kind: CoordShape) => void
+    onPlaceOrigin?: (col: number, row: number) => void
     onRemove: (x: number, y: number) => void
   }
 }) {

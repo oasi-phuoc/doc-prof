@@ -18,6 +18,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     coordRange: page.coordRange,
     coordCellMm: page.coordCellMm,
     coordUnitSquares: page.coordUnitSquares,
+    coordOriginCol: page.coordOriginCol,
+    coordOriginRow: page.coordOriginRow,
     numberLibre: page.numberLibre,
     numberMin: page.numberMin,
     numberMax: page.numberMax,
