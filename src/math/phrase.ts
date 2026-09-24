@@ -1,4 +1,5 @@
 import {
+  COMMON,
   framesForTheme,
   instantiateThemeFrame,
   joinPhrase,
@@ -54,6 +55,7 @@ function pickPhrase(
     frame,
     () => pick(rng, [...pool]),
     (preds) => pick(rng, [...preds]),
+    () => pick(rng, [...COMMON]),
   )
   return builtFromTokens(tokens)
 }
@@ -115,15 +117,26 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
   }
 }
 
-function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup, used: Set<string>): MathItem {
-  const pastilles = pastillePattern(theme, rng)
-  let frames = framesForTheme(theme, group)
-  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
-    frames = frames.filter((frame) => frame.preds.every((pred) => !pred.includes('/preposition')))
+function pastillesForFrame(
+  theme: PhraseThemeId,
+  rng: Rng,
+  frame: { id: string },
+): PhraseCategory[] {
+  if (frame.id === 'être' && (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif')) {
+    const subj: PhraseCategory[] = rng() < 0.5 ? ['pronom'] : ['determinant', 'nom']
+    return theme === 'phrase-negation-adjectif'
+      ? [...subj, 'adverbe', 'verbe', 'adverbe', 'adjectif']
+      : [...subj, 'verbe', 'adjectif']
   }
+  return pastillePattern(theme, rng)
+}
+
+function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup, used: Set<string>): MathItem {
+  const frames = framesForTheme(theme, group)
   const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
   const frame = pick(rng, unused.length ? unused : frames)
   used.add(`frame:${frame.id}`)
+  const pastilles = pastillesForFrame(theme, rng, frame)
   return {
     layout: 'phrase-build',
     prompt: frame.id,

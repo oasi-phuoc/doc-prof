@@ -93,6 +93,12 @@ function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): Phr
     if (hasInanimateSubject(tokens)) {
       throw new Error(`${theme} : sujet inanimé — ${sentence}`)
     }
+    if (!needPrep && tokens.some((token) => token.category === 'preposition')) {
+      throw new Error(`${theme} : préposition hors thème — ${sentence}`)
+    }
+    if (theme === 'phrase-conjonctions' && /^.+[A-ZÉÈÊÀÂÎÏÔÙÛÇ]/.test(sentence)) {
+      throw new Error(`${theme} : deuxième majuscule — ${sentence}`)
+    }
   }
   return list
 }
@@ -148,7 +154,7 @@ const PROPER = [
 ] as const
 
 /** Noms communs singuliers, articles définis / indéfinis de base. */
-const COMMON = [
+export const COMMON = [
   'Le/determinant garçon/nom',
   'La/determinant fille/nom',
   'L’/determinant élève/nom',
@@ -220,23 +226,41 @@ function hasInanimateSubject(tokens: PhraseToken[]): boolean {
 
 export type PhraseThemeKind = PhraseThemeId
 
+function predHasPrep(pred: string): boolean {
+  return pred.includes('/preposition')
+}
+
+function frameHasPrep(frame: ThemedFrame): boolean {
+  return frame.preds.some(predHasPrep) || (frame.rightPreds ?? []).some(predHasPrep)
+}
+
+/** Le modèle doit coller aux pastilles du thème (pas d’« habiter » en phrase simple). */
+export function frameMatchesTheme(theme: PhraseThemeId, frame: ThemedFrame): boolean {
+  const prepTheme = theme === 'phrase-preposition' || theme === 'phrase-negation-preposition'
+  if (prepTheme) return frame.preds.length > 0 && frame.preds.every(predHasPrep)
+  return !frameHasPrep(frame)
+}
+
 export function framesForTheme(theme: PhraseThemeId, group: PhraseVerbGroup): readonly ThemedFrame[] {
-  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
-    return group === 'autres' ? SIMPLE_FRAMES_AUTRES : SIMPLE_FRAMES_ER
-  }
-  return themedFramesFor(
-    theme as
-      | 'phrase-adjectif'
-      | 'phrase-negation-adjectif'
-      | 'phrase-preposition'
-      | 'phrase-negation-preposition'
-      | 'phrase-adverbe'
-      | 'phrase-negation-adverbe'
-      | 'phrase-conjonctions'
-      | 'phrase-determinants'
-      | 'phrase-negation-determinants',
-    group,
-  )
+  const raw =
+    theme === 'phrase-simple' || theme === 'phrase-negation'
+      ? group === 'autres'
+        ? SIMPLE_FRAMES_AUTRES
+        : SIMPLE_FRAMES_ER
+      : themedFramesFor(
+          theme as
+            | 'phrase-adjectif'
+            | 'phrase-negation-adjectif'
+            | 'phrase-preposition'
+            | 'phrase-negation-preposition'
+            | 'phrase-adverbe'
+            | 'phrase-negation-adverbe'
+            | 'phrase-conjonctions'
+            | 'phrase-determinants'
+            | 'phrase-negation-determinants',
+          group,
+        )
+  return raw.filter((frame) => frameMatchesTheme(theme, frame))
 }
 
 function isNegationTheme(theme: PhraseThemeId): boolean {
@@ -309,11 +333,15 @@ export function instantiateThemeFrame(
   frame: ThemedFrame,
   pickSubject: () => string,
   pickPred: (preds: readonly string[]) => string,
+  pickRightSubject: () => string = () => COMMON[0]!,
 ): PhraseToken[] {
   if (theme === 'phrase-conjonctions') {
     const left = pickSubject()
-    let right = pickSubject()
-    if (right === left) right = pickSubject()
+    let right = pickRightSubject()
+    if (right === left) right = pickRightSubject()
+    if (!right.includes('/determinant') && !right.startsWith('Il/') && !right.startsWith('Elle/')) {
+      right = COMMON[0]!
+    }
     const tokens = parse(
       `${left} ${pickPred(frame.preds)} ${pickPred(frame.conjs ?? ['et/conjonction'])} ${lowerCommon(right)} ${pickPred(frame.rightPreds ?? frame.preds)}`,
     )
@@ -337,6 +365,7 @@ function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): Phrase
       frame,
       () => subjects[index % subjects.length]!,
       (preds) => preds[0]!,
+      () => COMMON[(index + 1) % COMMON.length]!,
     ),
   )
 }

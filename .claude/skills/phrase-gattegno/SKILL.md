@@ -36,6 +36,18 @@ Une fiche de phrases n’est **pas** un produit cartésien (Léa / elle / le pap
 
 Ne plus assembler `PEOPLE × prédicats`. Un id de verbe déjà tiré (`frame:${id}`) est exclu du tirage suivant.
 
+**Colorier, remettre en ordre et écrire selon les pastilles partagent le même bassin de verbes.** `framesForTheme` filtre les modèles qui ne collent pas aux pastilles du thème. Un verbe proposé en « construire » peut apparaître en « colorier », et inversement.
+
+## Verbes à préposition
+
+*Habiter*, *aller*, *rester chez*… exigent une préposition (*j’habite à Sion*, *j’habite dans un appartement*). Ils n’apparaissent **jamais** en phrase simple, négation simple, déterminants, adjectif, adverbe ou conjonctions : les pastilles n’ont pas de préposition, l’élève écrirait *habite une maison*.
+
+Ils restent dans les thèmes **préposition** / **négation + préposition**. `frameMatchesTheme` refuse tout modèle dont un complément contient `/preposition` hors de ces thèmes.
+
+## Conjonctions : une seule majuscule
+
+Dans colorier et remettre en ordre, seule la première lettre de la phrase est une majuscule. Le second sujet est un nom commun personne (*le garçon*, *la sœur*), jamais un prénom : *Léa mange une pomme et le cousin lit un journal.* — pas *et Mila*.
+
 ## Sens réel
 
 - **Sujet = personne** : prénoms, rôles (papa, élève, voisine…) ou *Il* / *Elle*. Jamais *la maison*, *la voiture*, *le livre* comme sujet.
@@ -43,7 +55,7 @@ Ne plus assembler `PEOPLE × prédicats`. Un id de verbe déjà tiré (`frame:${
 - **Contractions** : *au maître*, *du film*, *près du parc* — jamais *à le* / *de le*.
 - **Accord** : *être* + adjectif suit le genre du sujet (*Léa est grande*, *Noah est grand*).
 
-`assertBank` refuse : sujet inanimé, « être » en phrase simple / négation simple, adjectif ou préposition manquant, *habite* sans *dans*.
+`assertBank` refuse : sujet inanimé, « être » en phrase simple / négation simple, adjectif ou préposition manquant, *habite* sans *dans*, préposition hors thème préposition, deuxième majuscule dans une phrase à conjonction.
 
 ## Verbe être
 

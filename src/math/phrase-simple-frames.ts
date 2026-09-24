@@ -8,7 +8,7 @@ function frame(id: string, preds: readonly string[]): SimpleFrame {
   return { id, preds }
 }
 
-/** 100 modèles du 1er groupe + avoir. Pas de « être ». */
+/** 100 modèles du 1er groupe + avoir. Pas de « être » ni d’« habiter » (préposition obligatoire). */
 export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
   frame('manger', ['mange/verbe une/determinant pomme/nom', 'mange/verbe un/determinant sandwich/nom', 'mange/verbe une/determinant soupe/nom', 'mange/verbe une/determinant salade/nom']),
   frame('goûter', ['goûte/verbe un/determinant gâteau/nom', 'goûte/verbe une/determinant tarte/nom', 'goûte/verbe un/determinant yaourt/nom']),
@@ -61,7 +61,6 @@ export const SIMPLE_FRAMES_ER: readonly SimpleFrame[] = [
   frame('détester', ['déteste/verbe le/determinant bruit/nom', 'déteste/verbe les/determinant épinards/nom', 'déteste/verbe le/determinant froid/nom']),
   frame('préférer', ['préfère/verbe le/determinant thé/nom', 'préfère/verbe le/determinant train/nom', 'préfère/verbe la/determinant mer/nom']),
   frame('avoir', ['a/verbe un/determinant chien/nom', 'a/verbe un/determinant vélo/nom', 'a/verbe une/determinant sœur/nom', 'a/verbe un/determinant ballon/nom']),
-  frame('habiter', ['habite/verbe dans/preposition une/determinant maison/nom', 'habite/verbe dans/preposition un/determinant village/nom', 'habite/verbe dans/preposition un/determinant appartement/nom']),
   frame('visiter', ['visite/verbe la/determinant ferme/nom', 'visite/verbe un/determinant musée/nom', 'visite/verbe une/determinant île/nom']),
   frame('traverser', ['traverse/verbe la/determinant rue/nom', 'traverse/verbe le/determinant pont/nom', 'traverse/verbe le/determinant parc/nom']),
   frame('longer', ['longe/verbe la/determinant rivière/nom', 'longe/verbe le/determinant mur/nom', 'longe/verbe la/determinant plage/nom']),
