@@ -1,11 +1,24 @@
-import type { Difficulty, Domain, ExerciseType, Topic } from './types'
+import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
+
+export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
+  { id: 'voc', label: 'Voc' },
+  { id: 'gram', label: 'Gram' },
+  { id: 'com', label: 'Com' },
+]
 
 export const topics: Topic[] = [
-  { id: 'fr-grammaire', label: 'Grammaire', domain: 'français' },
-  { id: 'fr-vocabulaire', label: 'Vocabulaire', domain: 'français' },
-  { id: 'fr-communication', label: 'Communication', domain: 'français' },
-  { id: 'fr-oral', label: 'Compréhension orale', domain: 'français' },
-  { id: 'fr-ecrit', label: 'Compréhension écrite', domain: 'français' },
+  { id: 'fr-presenter', label: 'Se présenter', domain: 'français' },
+  { id: 'fr-famille', label: 'La famille', domain: 'français' },
+  { id: 'fr-logement', label: 'Le logement', domain: 'français' },
+  { id: 'fr-achats', label: 'Les achats', domain: 'français' },
+  { id: 'fr-vetements', label: 'Les vêtements', domain: 'français' },
+  { id: 'fr-nourriture', label: 'La nourriture', domain: 'français' },
+  { id: 'fr-sante', label: 'La santé', domain: 'français' },
+  { id: 'fr-transports', label: 'Les transports', domain: 'français' },
+  { id: 'fr-inviter', label: 'Inviter', domain: 'français' },
+  { id: 'fr-travail', label: 'Le travail', domain: 'français' },
+  { id: 'fr-journee', label: 'Ma journée', domain: 'français' },
+  { id: 'fr-loisirs', label: 'Les loisirs', domain: 'français' },
   { id: 'nombres', label: 'Nombres naturels', domain: 'algèbre' },
   { id: 'addition', label: 'Additions', domain: 'algèbre' },
   { id: 'soustraction', label: 'Soustractions', domain: 'algèbre' },
@@ -251,22 +264,6 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-translation', 'transformations', 'Translation', 'Translater un point d’un vecteur.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
   t('transformations-rotation', 'transformations', 'Rotation', 'Rotation de 90° autour de l’origine.', 'Donnez les coordonnées de l’image.', 'ligne', { preferredColumns: 1 }),
 
-  t('fr-gram-etre', 'fr-grammaire', 'Le verbe être', 'Être au présent.', 'Complétez avec être au présent.', 'trou', { preferredColumns: 1 }),
-  t('fr-gram-avoir', 'fr-grammaire', 'Le verbe avoir', 'Avoir au présent.', 'Complétez avec avoir au présent.', 'trou', { preferredColumns: 1 }),
-  t('fr-gram-articles', 'fr-grammaire', 'Les articles', 'Articles définis, indéfinis et partitifs.', 'Choisissez l’article.', 'ligne', { preferredColumns: 1 }),
-  t('fr-gram-possessifs', 'fr-grammaire', 'Les possessifs', 'Mon, ton, son, notre, votre, leur.', 'Complétez le possessif.', 'trou', { preferredColumns: 1 }),
-  t('fr-gram-verbes-er', 'fr-grammaire', 'Les verbes en -er', 'Présent des verbes en -er.', 'Conjuguez le verbe entre parenthèses.', 'trou', { preferredColumns: 1 }),
-  t('fr-gram-negation', 'fr-grammaire', 'La négation', 'Ne … pas.', 'Complétez la négation.', 'trou', { preferredColumns: 1 }),
-  t('fr-vocab-famille', 'fr-vocabulaire', 'La famille', 'Liens de parenté.', 'Complétez.', 'trou', { preferredColumns: 1 }),
-  t('fr-vocab-logement', 'fr-vocabulaire', 'Le logement', 'Pièces de la maison.', 'Choisissez le mot.', 'ligne', { preferredColumns: 1 }),
-  t('fr-vocab-vetements', 'fr-vocabulaire', 'Les vêtements', 'Nommer un vêtement.', 'Complétez.', 'trou', { preferredColumns: 1 }),
-  t('fr-vocab-intrus', 'fr-vocabulaire', 'Trouver l’intrus', 'Un mot n’appartient pas au groupe.', 'Entourez l’intrus.', 'ligne', { preferredColumns: 1 }),
-  t('fr-com-presenter', 'fr-communication', 'Se présenter', 'Saluer et se présenter.', 'Complétez.', 'trou', { preferredColumns: 1 }),
-  t('fr-com-inviter', 'fr-communication', 'Inviter', 'Proposer une sortie.', 'Complétez.', 'trou', { preferredColumns: 1 }),
-  t('fr-com-logement', 'fr-communication', 'Décrire son logement', 'Phrase guidée.', 'Écrivez une phrase.', 'texte', { preferredColumns: 1 }),
-  t('fr-co-nombres', 'fr-oral', 'Les nombres', 'Écouter un nombre et l’écrire. Questions originales, enregistrements repris.', 'Écoutez. Écrivez le nombre.', 'texte', { preferredColumns: 1 }),
-  t('fr-ce-vrai-faux', 'fr-ecrit', 'Vrai ou faux', 'Lire une information courte.', 'Lisez. Choisissez Vrai ou Faux.', 'ligne', { preferredColumns: 1 }),
-
   // —— Lecture (français / FLE voyelles) ——
   t('alphabet-classer', 'alphabet', 'Classer les lettres', 'Ranger des lettres dans l’ordre alphabétique.', 'Classez les lettres par ordre alphabétique.', 'suite', { preferredColumns: 1 }),
   t('alphabet-suivant', 'alphabet', 'Lettre suivante', 'Trouver la lettre qui suit immédiatement.', 'Coloriez la pastille de la lettre qui suit.', 'ligne', { preferredColumns: 2 }),
@@ -343,10 +340,118 @@ for (const v of VOWEL_TOPICS) {
   )
 }
 
+const FRENCH_THEMES: Array<{ id: string; grammar: string; vocab: string }> = [
+  { id: 'fr-presenter', grammar: 'être, avoir et s’appeler', vocab: 'salutations et identité' },
+  { id: 'fr-famille', grammar: 'adjectifs possessifs', vocab: 'liens de parenté' },
+  { id: 'fr-logement', grammar: 'articles définis et indéfinis', vocab: 'pièces et logement' },
+  { id: 'fr-achats', grammar: 'place de l’adjectif et quantité', vocab: 'courses et prix' },
+  { id: 'fr-vetements', grammar: 'conditionnel de politesse', vocab: 'habits et tailles' },
+  { id: 'fr-nourriture', grammar: 'articles partitifs', vocab: 'aliments et restaurant' },
+  { id: 'fr-sante', grammar: 'il faut et devoir', vocab: 'corps et symptômes' },
+  { id: 'fr-transports', grammar: 'aller au présent', vocab: 'moyens de transport' },
+  { id: 'fr-inviter', grammar: 'questions formelles et informelles', vocab: 'invitations et sorties' },
+  { id: 'fr-travail', grammar: 'accord des adjectifs', vocab: 'métiers et bureau' },
+  { id: 'fr-journee', grammar: 'verbes pronominaux', vocab: 'routine quotidienne' },
+  { id: 'fr-loisirs', grammar: 'pronoms COD', vocab: 'activités et hobbies' },
+]
+
+const FRENCH_KINDS: Array<{
+  suffix: string
+  track: FrenchTrack
+  label: string
+  description: (theme: (typeof FRENCH_THEMES)[number]) => string
+  instruction: string
+  visual: ExerciseType['visual']
+}> = [
+  {
+    suffix: 'voc-completer',
+    track: 'voc',
+    label: 'Compléter',
+    description: (theme) => `Compléter le lexique : ${theme.vocab}.`,
+    instruction: 'Complétez avec le mot du thème.',
+    visual: 'trou',
+  },
+  {
+    suffix: 'voc-choisir',
+    track: 'voc',
+    label: 'Choisir le mot',
+    description: (theme) => `Choisir le mot juste parmi des propositions (${theme.vocab}).`,
+    instruction: 'Choisissez le mot qui convient.',
+    visual: 'ligne',
+  },
+  {
+    suffix: 'voc-intrus',
+    track: 'voc',
+    label: 'Trouver l’intrus',
+    description: (theme) => `Repérer le mot qui n’appartient pas au thème (${theme.vocab}).`,
+    instruction: 'Entourez l’intrus.',
+    visual: 'ligne',
+  },
+  {
+    suffix: 'gram-trous',
+    track: 'gram',
+    label: 'Texte à trous',
+    description: (theme) => `Compléter la forme grammaticale : ${theme.grammar}.`,
+    instruction: 'Complétez la phrase.',
+    visual: 'trou',
+  },
+  {
+    suffix: 'gram-conjuguer',
+    track: 'gram',
+    label: 'Conjuguer',
+    description: (theme) => `Conjuguer selon le point de la fiche : ${theme.grammar}.`,
+    instruction: 'Conjuguez le verbe entre parenthèses.',
+    visual: 'trou',
+  },
+  {
+    suffix: 'gram-choisir',
+    track: 'gram',
+    label: 'Choisir la forme',
+    description: (theme) => `Choisir la forme correcte : ${theme.grammar}.`,
+    instruction: 'Choisissez la forme correcte.',
+    visual: 'ligne',
+  },
+  {
+    suffix: 'com-orale',
+    track: 'com',
+    label: 'Compréhension orale',
+    description: () => 'Écouter un dialogue du thème, puis répondre aux QCM. Transcription au corrigé.',
+    instruction: 'Écoutez le dialogue. Répondez aux questions.',
+    visual: 'ligne',
+  },
+  {
+    suffix: 'com-ecrite',
+    track: 'com',
+    label: 'Compréhension écrite',
+    description: () => 'Lire un texte du thème, puis répondre uniquement aux QCM.',
+    instruction: 'Lisez le texte. Répondez aux questions.',
+    visual: 'ligne',
+  },
+  {
+    suffix: 'com-dialogue',
+    track: 'com',
+    label: 'Dialogue à compléter',
+    description: () => 'Réemployer le thème dans un échange guidé.',
+    instruction: 'Complétez le dialogue.',
+    visual: 'trou',
+  },
+]
+
+for (const theme of FRENCH_THEMES) {
+  for (const kind of FRENCH_KINDS) {
+    exerciseTypes.push(
+      t(`${theme.id}-${kind.suffix}`, theme.id, kind.label, kind.description(theme), kind.instruction, kind.visual, {
+        preferredColumns: 1,
+        track: kind.track,
+      }),
+    )
+  }
+}
+
 export const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [type.id, type])) as Record<string, ExerciseType>
 
-export function typesForTopic(topic: string): ExerciseType[] {
-  return exerciseTypes.filter((type) => type.topic === topic)
+export function typesForTopic(topic: string, track?: FrenchTrack): ExerciseType[] {
+  return exerciseTypes.filter((type) => type.topic === topic && (track == null || type.track === track))
 }
 
 export function isDraftPadExercise(typeId: string): boolean {
@@ -359,14 +464,17 @@ export function isDraftPadExercise(typeId: string): boolean {
   )
 }
 
-export function firstTypeFor(domain: Domain, topic?: string): ExerciseType {
+export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack): ExerciseType {
   if (topic) {
-    const list = typesForTopic(topic)
+    const preferred = domain === 'français' ? (track ?? 'voc') : track
+    const list = typesForTopic(topic, preferred)
     if (list[0]) return list[0]
+    const any = typesForTopic(topic)
+    if (any[0]) return any[0]
   }
   const fallbackTopic =
     domain === 'français'
-      ? 'fr-grammaire'
+      ? 'fr-presenter'
       : domain === 'algèbre'
         ? 'addition'
         : domain === 'géométrie'
@@ -375,22 +483,18 @@ export function firstTypeFor(domain: Domain, topic?: string): ExerciseType {
   return typesForTopic(fallbackTopic)[0]!
 }
 
-export function defaultPage(domain: Domain = 'algèbre'): {
-  domain: Domain
-  topic: string
-  exerciseType: string
-  difficulty: Difficulty
-  count: number
-  columns: number
-  problemDraftGrids?: boolean[]
-} {
+export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const type = firstTypeFor(domain)
   const count =
     domain === 'lecture'
       ? 6
-      : isDraftPadExercise(type.id)
-        ? 2
-        : 8
+      : domain === 'français'
+        ? type.track === 'com'
+          ? 4
+          : 6
+        : isDraftPadExercise(type.id)
+          ? 2
+          : 8
   return {
     domain,
     topic: type.topic,
@@ -398,8 +502,20 @@ export function defaultPage(domain: Domain = 'algèbre'): {
     difficulty: 'moyen',
     count,
     columns: type.preferredColumns ?? 2,
+    track: type.track,
     problemDraftGrids: isDraftPadExercise(type.id)
       ? Array.from({ length: count }, () => true)
       : undefined,
   }
+}
+
+type PageConfigLike = {
+  domain: Domain
+  topic: string
+  exerciseType: string
+  difficulty: Difficulty
+  count: number
+  columns: number
+  track?: FrenchTrack
+  problemDraftGrids?: boolean[]
 }

@@ -38,7 +38,8 @@ Si trop de questions pour la fiche : le champ QUESTIONS reçoit `.is-overflow` (
 - [ ] Le cadre d'aperçu garde le ratio A4 si on passe de 4 à 20 questions.
 - [ ] Trop de contenu → coupé / dense, **pas** d'agrandissement du cadre.
 - [ ] Peu de contenu → pied de page toujours en bas de la feuille.
-- [ ] Navigation pages = onglets / boutons à côté du `+`, sans rail sous l’A4.
+- [ ] Navigation pages = onglets / boutons à côté du `+` (nouvelle page). Le `+` sous l’A4 ajoute un exercice sur la même feuille, pas une page.
+- [ ] Chaque bloc commence par « Exercice N » ; la consigne est sous le titre, sans cadre rempli.
 - [ ] Modes Fiche élève / Corrigé : même chrome, mêmes emplacements.
 
 ## Checklist impression

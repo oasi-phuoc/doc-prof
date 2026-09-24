@@ -21,7 +21,7 @@ t(
   'Description pour l’enseignant·e.',
   'Consigne élève (vouvoiement, un verbe).',
   'ligne' | 'trou' | 'colonne' | 'colonne-vide' | 'texte' | 'geo' | 'suite',
-  { preferredColumns?: number; figure?: Figure },
+  { preferredColumns?: number; figure?: Figure; track?: 'voc' | 'gram' | 'com' },
 )
 ```
 
@@ -35,7 +35,7 @@ t(
 
 ## Thèmes actuels (repère)
 
-Français : grammaire, vocabulaire, communication, compréhension orale, compréhension écrite (plan `docs/plan-fiches-FLE.md`).  
+Français : thèmes communicatifs (`fr-presenter`, `fr-famille`, `fr-logement`, `fr-achats`…). Le filtre **Voc / Gram / Com** (`track`) propose les blocs de chaque thème.  
 Algèbre : nombres, addition, soustraction, estimation, multiplication, division, problèmes, multiples, fractions, décimaux, proportionnalité, relatifs, puissances, expressions, équations.  
 Géométrie : figures, conversions, périmètres, aires, volumes, repérage, transformations.
 

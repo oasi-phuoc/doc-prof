@@ -132,6 +132,8 @@ export type Topic = {
   domain: Domain
 }
 
+export type FrenchTrack = 'voc' | 'gram' | 'com'
+
 export type ExerciseType = {
   id: string
   topic: string
@@ -141,6 +143,8 @@ export type ExerciseType = {
   visual: 'ligne' | 'trou' | 'colonne' | 'colonne-vide' | 'texte' | 'geo' | 'suite'
   figure?: Figure
   preferredColumns?: number
+  /** Filtre Voc / Gram / Com du domaine français. */
+  track?: FrenchTrack
 }
 
 export type FigureDims = {
@@ -269,13 +273,14 @@ export type CompositeScene = {
   rights?: CompositeRight[]
 }
 
-export type PageConfig = {
-  domain: Domain
+export type ExerciseBlock = {
   topic: string
   exerciseType: string
   difficulty: Difficulty
   count: number
   columns: number
+  /** Voc / Gram / Com — domaine français uniquement. */
+  track?: FrenchTrack
   /**
    * Grille de brouillon (problèmes, équations, périmètres / aires / volumes).
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
@@ -291,10 +296,36 @@ export type PageConfig = {
   coordRange?: number
 }
 
+export type PageConfig = ExerciseBlock & {
+  domain: Domain
+  /** Types d’exercices supplémentaires sur la même feuille A4. */
+  extraBlocks?: ExerciseBlock[]
+}
+
+export type WorksheetDocument = {
+  kind: 'oral' | 'written'
+  title?: string
+  text: string
+  audioSrc?: string
+}
+
+export type WorksheetBlock = {
+  exerciseIndex: number
+  title: string
+  instruction: string
+  items: MathItem[]
+  columns: number
+  exerciseType: string
+  givens?: AlgebraGiven[]
+  document?: WorksheetDocument
+  problemDraftGrids?: boolean[]
+}
+
 export type WorksheetPage = PageConfig & {
   title: string
   instruction: string
   items: MathItem[]
+  blocks: WorksheetBlock[]
   /** Valeurs partagées (ex. t = 3) pour les évaluations d'expressions. */
   givens?: AlgebraGiven[]
 }

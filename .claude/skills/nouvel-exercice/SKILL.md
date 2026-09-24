@@ -17,7 +17,7 @@ Un type d'exercice = une entrée dans `src/math/catalog.ts` + une branche dans `
 Lire `CLAUDE.md` et un type proche dans `catalog.ts` / `generate.ts`. Fixer en une phrase chacun :
 
 1. **Thème** (`topic` id) et **domaine** (`français` | `algèbre` | `géométrie`).
-2. **Ce que l'élève fait sur le papier** (calculer, poser, comparer, mesurer sur figure…).
+2. **Ce que l'élève fait sur le papier** (calculer, poser, comparer, mesurer sur figure…). En français : le type appartient à un thème communicatif + un `track` Voc / Gram / Com.
 3. **Layout** : réutiliser un `Layout` existant (`inline`, `column`, `column-empty`, `division-column`, `text`, `compare`, `sequence`, `geo`, `coord`…) autant que possible.
 4. **Paramètres implicites** : bornes de nombres selon `PageConfig.difficulty`, `preferredColumns`, `figure` éventuelle.
 5. **Corrigé** : champ `answer` + données de rendu (chiffres, retenues, dims, steps…).

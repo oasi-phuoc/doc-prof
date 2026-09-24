@@ -15,7 +15,7 @@ Une « unité » ici = plusieurs entrées dans l'état `pages: PageConfig[]` de 
 
 1. Clarifier l'objectif (ex. « additions posées puis problèmes », « périmètres rectangle/triangle/trapèze »).
 2. Choisir des `exerciseType` déjà dans `catalog.ts` ; ne pas inventer de types hors catalogue (sinon skill `nouvel-exercice` d'abord).
-3. Définir pour chaque page : `domain`, `topic`, `exerciseType`, `count`, `columns` (respecter `preferredColumns` du type).
+3. Définir pour chaque page : `domain` + un ou plusieurs blocs (`exerciseType`, `count`, `columns` ; français : `track` Voc/Gram/Com). Plusieurs types sur la même A4 via `extraBlocks`. Les titres **Exercice 1, 2, 3…** sont chronologiques sur toute la fiche.
 4. Densité : viser le remplissage d'**une** A4 par page sans overflow destructeur ; préférer une page de plus plutôt que densifier au détriment de la lisibilité.
 5. Mode éval : `evalMode` + `pointsPerQuestion` cohérents sur toute la série si c'est une évaluation.
 6. En-tête : même `headerStyle` / champs institutionnels pour toute la série.

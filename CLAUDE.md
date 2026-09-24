@@ -13,7 +13,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 
 | Zone | Rôle |
 |---|---|
-| `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`) |
+| `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`). Français : thèmes communicatifs + `track` Voc/Gram/Com |
 | `src/math/generate.ts` | `buildPage(config, seed)` → `WorksheetPage` (pur, via `rng`) |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |
@@ -38,6 +38,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 - TypeScript strict, alias `@/` pour `src/`.
 - Styles fiche : classes dans `src/App.css` ; variables `:root` (`--ink`, `--purple`, …). Pas de hex « magiques » nouveaux hors thème déjà présent.
 - Nouveau type d'exercice = entrée dans `catalog.ts` + branche dans `generate.ts` + rendu dans `MathItemView` si le `layout` n'existe pas encore.
+- Une page peut contenir plusieurs types (`extraBlocks`). Titres **Exercice 1, 2…** chronologiques ; consigne sous le titre, sans cadre.
 - Français (Suisse romande pour les nombres en lettres : `french-numbers.ts`).
 
 ## Quel skill utiliser

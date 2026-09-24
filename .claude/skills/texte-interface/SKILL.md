@@ -28,6 +28,7 @@ Public : enseignant·e·s qui préparent des fiches maths rapidement.
 | Version solutions | Corrigé | Answer key |
 | Nouveau tirage | Régénérer | Randomiser |
 | Mode points | Évaluation | Exam mode |
+| Filtre FLE | Voc / Gram / Com | Vocabulary / Grammar |
 | En-tête école | Institutionnel | Official header |
 | En-tête libre | Personnalisé | Custom |
 

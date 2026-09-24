@@ -22,11 +22,23 @@ import { tryGenerateReperage } from './coord-reperage'
 import { tryGenerateLectureBatch } from './lecture'
 import { tryGenerateConversion } from './conversions'
 import { tryGenerateFigure } from './figures-school'
-import { tryGenerateFrancais } from './francais'
+import { tryGenerateFrancaisBlock } from './francais'
 import { tryGenerateMesure } from './mesures'
+import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
-import type { ArithOp, Difficulty, DivisionStep, MathItem, MissingPos, PageConfig, WorksheetPage } from './types'
+import type {
+  AlgebraGiven,
+  ArithOp,
+  Difficulty,
+  DivisionStep,
+  MathItem,
+  MissingPos,
+  PageConfig,
+  WorksheetBlock,
+  WorksheetDocument,
+  WorksheetPage,
+} from './types'
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
@@ -294,8 +306,7 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
   const routed =
     tryGenerateFigure(typeId, index) ??
     tryGenerateConversion(typeId, rng, difficulty) ??
-    tryGenerateMesure(typeId, rng, difficulty) ??
-    tryGenerateFrancais(typeId, rng, index)
+    tryGenerateMesure(typeId, rng, difficulty)
   if (routed) return routed
   const max = calcBound(difficulty)
   const nMax = nombreBound(difficulty)
@@ -961,43 +972,37 @@ function generateOne(typeId: string, rng: Rng, index: number, difficulty: Diffic
   }
 }
 
-export function buildPage(config: PageConfig, seed: number): WorksheetPage {
+function buildSingleBlock(
+  config: PageConfig,
+  seed: number,
+): {
+  title: string
+  instruction: string
+  items: MathItem[]
+  givens?: AlgebraGiven[]
+  document?: WorksheetDocument
+} {
   const rng = createRng(seed)
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
+  const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
   if (config.exerciseType === 'reperage-droites') {
     const droites = generateDroites(config, rng)
-    return {
-      ...config,
-      title: type?.label ?? topic?.label ?? 'Exercices',
-      instruction: droites.instruction,
-      items: droites.items,
-    }
+    return { title: fallbackTitle, instruction: droites.instruction, items: droites.items }
   }
   if (config.exerciseType === 'reperage-construire') {
     const construire = generateConstruire(config, rng)
-    return {
-      ...config,
-      title: type?.label ?? topic?.label ?? 'Exercices',
-      instruction: construire.instruction,
-      items: construire.items,
-    }
+    return { title: fallbackTitle, instruction: construire.instruction, items: construire.items }
   }
   const reperage = tryGenerateReperage(config, rng)
   if (reperage) {
-    return {
-      ...config,
-      title: type?.label ?? topic?.label ?? 'Exercices',
-      instruction: reperage.instruction,
-      items: reperage.items,
-    }
+    return { title: fallbackTitle, instruction: reperage.instruction, items: reperage.items }
   }
   const lecture = tryGenerateLectureBatch(config.exerciseType, config.count, rng, difficulty)
   if (lecture) {
     return {
-      ...config,
-      title: type?.label ?? topic?.label ?? 'Exercices',
+      title: fallbackTitle,
       instruction: lecture.instruction ?? type?.instruction ?? 'Complétez.',
       items: lecture.items,
     }
@@ -1005,17 +1010,63 @@ export function buildPage(config: PageConfig, seed: number): WorksheetPage {
   const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng, difficulty)
   if (algebra) {
     return {
-      ...config,
-      title: type?.label ?? topic?.label ?? 'Exercices',
+      title: fallbackTitle,
       instruction: algebra.instruction ?? type?.instruction ?? 'Calculez.',
       items: algebra.items,
       givens: algebra.givens,
     }
   }
+  const francais = tryGenerateFrancaisBlock(config.exerciseType, config.count, rng)
+  if (francais) {
+    return {
+      title: fallbackTitle,
+      instruction: francais.instruction ?? type?.instruction ?? 'Complétez.',
+      items: francais.items,
+      document: francais.document,
+    }
+  }
   return {
-    ...config,
-    title: type?.label ?? topic?.label ?? 'Exercices',
+    title: fallbackTitle,
     instruction: type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
     items: generateItems(config.exerciseType, config.count, rng, difficulty),
   }
+}
+
+export function buildPage(config: PageConfig, seed: number, startExercise = 1): WorksheetPage {
+  const blocksIn = pageBlocks(config)
+  const built: WorksheetBlock[] = blocksIn.map((block, index) => {
+    const single = pageAsConfig(config, block)
+    const result = buildSingleBlock(single, seed + index * 10007)
+    return {
+      exerciseIndex: startExercise + index,
+      title: `Exercice ${startExercise + index}`,
+      instruction: result.instruction,
+      items: result.items,
+      columns: block.columns,
+      exerciseType: block.exerciseType,
+      givens: result.givens,
+      document: result.document,
+      problemDraftGrids: block.problemDraftGrids,
+    }
+  })
+  const first = built[0]
+  const topic = topicById[config.topic]
+  const type = exerciseTypeById[config.exerciseType]
+  return {
+    ...config,
+    title: built.length > 1 ? (topic?.label ?? 'Exercices') : (type?.label ?? topic?.label ?? 'Exercices'),
+    instruction: first?.instruction ?? type?.instruction ?? 'Complétez.',
+    items: built.flatMap((block) => block.items),
+    blocks: built,
+    givens: first?.givens,
+  }
+}
+
+export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
+  let exerciseNo = 1
+  return pages.map((page, index) => {
+    const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
+    exerciseNo += worksheet.blocks.length
+    return worksheet
+  })
 }
