@@ -469,7 +469,7 @@ function ReperageAxesFields({
     <>
       <div className="coord-size-row">
         <label>
-          Colonnes
+          Colonnes · max {maxCols}
           <input
             className="pill-input"
             type="number"
@@ -477,7 +477,11 @@ function ReperageAxesFields({
             max={maxCols}
             step={2}
             value={cols}
-            onChange={(event) => onChange({ coordCols: clampAxesCols(Number(event.target.value), cellMm) })}
+            title={`Maximum ${maxCols} colonnes à ${cellMm} mm`}
+            onChange={(event) => {
+              const raw = Number(event.target.value)
+              onChange({ coordCols: Number.isFinite(raw) ? clampAxesCols(raw, cellMm) : cols })
+            }}
           />
         </label>
         <label>
