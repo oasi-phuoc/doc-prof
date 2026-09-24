@@ -1,4 +1,11 @@
-import { phrasesFor, joinPhrase } from './phrase-sentences'
+import {
+  phrasesFor,
+  joinPhrase,
+  instantiateTagged,
+  SIMPLE_SUBJECTS,
+  simpleFramesFor,
+  withNegation,
+} from './phrase-sentences'
 import { PRODUCTION_PROMPTS_BY_THEME, VERBES, verbesFor, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from './rng'
 import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
@@ -38,6 +45,17 @@ function pickPhrase(
   used: Set<string>,
   group: PhraseVerbGroup,
 ): BuiltPhrase {
+  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
+    const frames = simpleFramesFor(group)
+    const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
+    const frame = pick(rng, unused.length ? unused : frames)
+    used.add(`frame:${frame.id}`)
+    const subject = pick(rng, [...SIMPLE_SUBJECTS])
+    const pred = pick(rng, [...frame.preds])
+    const tokens =
+      theme === 'phrase-negation' ? withNegation(instantiateTagged(subject, pred)) : instantiateTagged(subject, pred)
+    return builtFromTokens(tokens)
+  }
   const bank = phrasesFor(theme, group)
   const unused = bank.filter((tokens) => !used.has(joinPhrase(tokens)))
   const pool = unused.length ? unused : bank
@@ -111,8 +129,23 @@ function verbsForTheme(theme: PhraseThemeId, group: PhraseVerbGroup) {
   return verbs
 }
 
-function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup): MathItem {
+function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup, used: Set<string>): MathItem {
   const pastilles = pastillePattern(theme, rng)
+  if (theme === 'phrase-simple' || theme === 'phrase-negation') {
+    const frames = simpleFramesFor(group).filter((frame) =>
+      frame.preds.every((pred) => !pred.includes('/preposition')),
+    )
+    const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
+    const frame = pick(rng, unused.length ? unused : frames)
+    used.add(`frame:${frame.id}`)
+    return {
+      layout: 'phrase-build',
+      prompt: frame.id,
+      pastilles,
+      answer: pastilles.join(' · '),
+      calcAnswer: frame.id,
+    }
+  }
   const verb = pick(rng, verbsForTheme(theme, group))
   return {
     layout: 'phrase-build',
@@ -193,7 +226,7 @@ export function tryGeneratePhraseBatch(
   const items: MathItem[] = []
   for (let i = 0; i < n; i++) {
     if (kind === 'construire') {
-      items.push(typeBuild(rng, theme, group))
+      items.push(typeBuild(rng, theme, group, used))
     } else {
       const phrase = pickPhrase(rng, theme, used, group)
       if (kind === 'colorier') items.push(typeColor(phrase))

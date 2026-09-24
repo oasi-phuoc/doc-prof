@@ -1,5 +1,6 @@
 import type { PhraseThemeId } from './phrase-banks'
 import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
+import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER, type SimpleFrame } from './phrase-simple-frames'
 
 /** Découpe « mot/catégorie » — l’espace après une apostrophe est omise à l’affichage. */
 export function tagged(source: string): PhraseToken[] {
@@ -66,9 +67,9 @@ function cartesian(subjects: readonly string[], preds: readonly string[]): Phras
   return out
 }
 
-function atLeast100(list: PhraseToken[][], theme: string): PhraseToken[][] {
-  if (list.length < 100) {
-    throw new Error(`${theme} : ${list.length} phrases (100 attendues au minimum)`)
+function atLeast(list: PhraseToken[][], theme: string, min: number): PhraseToken[][] {
+  if (list.length < min) {
+    throw new Error(`${theme} : ${list.length} modèles (${min} attendus au minimum)`)
   }
   return list
 }
@@ -79,12 +80,8 @@ function isEtreVerb(token: PhraseToken): boolean {
   return token.category === 'verbe' && ETRE_FORMS.test(token.text)
 }
 
-function predsWithoutEtre(preds: readonly string[]): string[] {
-  return preds.filter((pred) => !/(^|\s)(suis|es|est|sommes|êtes|sont)\/verbe/.test(pred))
-}
-
-function assertBank(theme: PhraseThemeId, list: PhraseToken[][]): PhraseToken[][] {
-  atLeast100(list, theme)
+function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): PhraseToken[][] {
+  atLeast(list, theme, min)
   const needAdj = theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
   const needPrep = theme === 'phrase-preposition' || theme === 'phrase-negation-preposition'
   const banEtre = theme === 'phrase-simple' || theme === 'phrase-negation'
@@ -197,6 +194,20 @@ const COMMON = [
 ] as const
 
 const PEOPLE = [...PROPER, ...COMMON] as const
+
+/** Sujets pour instancier un modèle (le modèle lui-même ne change pas). */
+export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, 'Il/pronom', 'Elle/pronom'] as const
+
+export function instantiateTagged(subject: string, pred: string): PhraseToken[] {
+  return parse(`${subject} ${pred}`)
+}
+
+function samplesFromFrames(frames: readonly SimpleFrame[], negate: boolean): PhraseToken[][] {
+  return frames.map((frame, index) => {
+    const tokens = instantiateTagged(PEOPLE[index % PEOPLE.length]!, frame.preds[0]!)
+    return negate ? withNegation(tokens) : tokens
+  })
+}
 
 const ADJ_SUBJECTS = [
   'Mon/determinant petit/adjectif frère/nom',
@@ -505,13 +516,13 @@ function bankFor(
   prep: readonly string[],
   adv: readonly string[],
   plurals: readonly string[],
+  frames: readonly SimpleFrame[],
 ): Record<PhraseThemeId, PhraseToken[][]> {
-  const simple = withExtras(cartesian(PEOPLE, predsWithoutEtre(preds)), plurals)
   const adj = [...cartesian(ADJ_SUBJECTS, preds), ...cartesian(PEOPLE, adjCompl)]
   const dets = withExtras(cartesian(DET_SUBJECTS, preds), plurals)
   return {
-    'phrase-simple': assertBank('phrase-simple', simple),
-    'phrase-negation': assertBank('phrase-negation', simple.map(withNegation)),
+    'phrase-simple': assertBank('phrase-simple', samplesFromFrames(frames, false), Math.min(100, frames.length)),
+    'phrase-negation': assertBank('phrase-negation', samplesFromFrames(frames, true), Math.min(100, frames.length)),
     'phrase-adjectif': assertBank('phrase-adjectif', adj),
     'phrase-negation-adjectif': assertBank('phrase-negation-adjectif', adj.map(withNegation)),
     'phrase-determinants': assertBank('phrase-determinants', dets),
@@ -527,14 +538,20 @@ function bankFor(
   }
 }
 
+if (SIMPLE_FRAMES_ER.length < 100) {
+  throw new Error(`phrase-simple : ${SIMPLE_FRAMES_ER.length} modèles (100 attendus au minimum)`)
+}
+
 const BANKS: Record<PhraseVerbGroup, Record<PhraseThemeId, PhraseToken[][]>> = {
-  er: bankFor(ER_PRED, ER_ADJ_COMPL, ER_PREP, ER_ADV, ER_PLURALS),
-  autres: bankFor(AUTRES_PRED, AUTRES_ADJ_COMPL, AUTRES_PREP, AUTRES_ADV, AUTRES_PLURALS),
+  er: bankFor(ER_PRED, ER_ADJ_COMPL, ER_PREP, ER_ADV, ER_PLURALS, SIMPLE_FRAMES_ER),
+  autres: bankFor(AUTRES_PRED, AUTRES_ADJ_COMPL, AUTRES_PREP, AUTRES_ADV, AUTRES_PLURALS, SIMPLE_FRAMES_AUTRES),
 }
 
 export function phrasesFor(theme: PhraseThemeId, group: PhraseVerbGroup = 'er'): PhraseToken[][] {
   return BANKS[group][theme]
 }
+
+export { simpleFramesFor, type SimpleFrame } from './phrase-simple-frames'
 
 export function sentenceOf(tokens: PhraseToken[]): string {
   return joinPhrase(tokens)
