@@ -1574,6 +1574,7 @@ function GeneratorPage() {
                 ) : null}
               </label>
               )}
+              {isPhraseChart ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
@@ -1589,6 +1590,7 @@ function GeneratorPage() {
                   ))}
                 </div>
               </div>
+              )}
               {isFormes ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>
