@@ -124,11 +124,14 @@ export function CoordShapeButton({ kind, size = 22 }: { kind: CoordShape; size?:
   )
 }
 
-function cellCenter(cols: number, rows: number, x: number, y: number, pad: number, size: number) {
-  const inner = size - 2 * pad
+function mmPads() {
+  return { padL: 7, padR: 5, padT: 5, padB: 7 }
+}
+
+function cellCenterMm(rows: number, x: number, y: number, padL: number, padT: number, cellMm: number) {
   return {
-    cx: pad + ((x - 0.5) / cols) * inner,
-    cy: pad + ((rows - y + 0.5) / rows) * inner,
+    cx: padL + (x - 0.5) * cellMm,
+    cy: padT + (rows - y + 0.5) * cellMm,
   }
 }
 
@@ -143,58 +146,64 @@ function CellsScene({
   onPlace?: (x: number, y: number) => void
   onRemove?: (x: number, y: number) => void
 }) {
-  const size = 240
-  const pad = 28
-  const inner = size - 2 * pad
+  const cellMm = scene.cellMm ?? 5
+  const { padL, padR, padT, padB } = mmPads()
+  const gridW = scene.cols * cellMm
+  const gridH = scene.rows * cellMm
+  const svgW = padL + gridW + padR
+  const svgH = padT + gridH + padB
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
+  const glyph = Math.max(1.4, cellMm * 0.32)
 
   return (
     <svg
-      className="coord-grid scene-cells"
-      viewBox={`0 0 ${size} ${size}`}
+      className="coord-grid scene-cells is-fixed-mm"
+      width={`${svgW}mm`}
+      height={`${svgH}mm`}
+      viewBox={`0 0 ${svgW} ${svgH}`}
       role="img"
       aria-label="Tableau de repérage"
     >
       {Array.from({ length: scene.rows }, (_, i) => {
         const y = scene.rows - i
-        const gy = pad + (i / scene.rows) * inner
+        const gy = padT + i * cellMm
         return (
           <g key={`h-${y}`}>
-            <line x1={pad} y1={gy} x2={size - pad} y2={gy} className="grid-line" />
-            <text x={pad - 6} y={gy + inner / scene.rows / 2 + 3} className="axis-label" textAnchor="end">
+            <line x1={padL} y1={gy} x2={padL + gridW} y2={gy} className="grid-line" />
+            <text x={padL - 1.4} y={gy + cellMm / 2 + 0.8} className="axis-label" textAnchor="end">
               {axisTickLabel(y, scene.axis, 'y')}
             </text>
           </g>
         )
       })}
-      <line x1={pad} y1={size - pad} x2={size - pad} y2={size - pad} className="grid-line" />
+      <line x1={padL} y1={padT + gridH} x2={padL + gridW} y2={padT + gridH} className="grid-line" />
       {Array.from({ length: scene.cols }, (_, i) => {
         const x = i + 1
-        const gx = pad + (i / scene.cols) * inner
+        const gx = padL + i * cellMm
         return (
           <g key={`v-${x}`}>
-            <line x1={gx} y1={pad} x2={gx} y2={size - pad} className="grid-line" />
-            <text x={gx + inner / scene.cols / 2} y={size - pad + 14} className="axis-label" textAnchor="middle">
+            <line x1={gx} y1={padT} x2={gx} y2={padT + gridH} className="grid-line" />
+            <text x={gx + cellMm / 2} y={padT + gridH + 3.4} className="axis-label" textAnchor="middle">
               {axisTickLabel(x, scene.axis, 'x')}
             </text>
           </g>
         )
       })}
-      <line x1={size - pad} y1={pad} x2={size - pad} y2={size - pad} className="grid-line" />
+      <line x1={padL + gridW} y1={padT} x2={padL + gridW} y2={padT + gridH} className="grid-line" />
       {Array.from({ length: scene.rows }, (_, i) =>
         Array.from({ length: scene.cols }, (_, j) => {
           const x = j + 1
           const y = scene.rows - i
-          const { cx, cy } = cellCenter(scene.cols, scene.rows, x, y, pad, size)
+          const { cx, cy } = cellCenterMm(scene.rows, x, y, padL, padT, cellMm)
           const mark = markAt(x, y)
           return (
             <g key={`c-${x}-${y}`}>
               {editable ? (
                 <rect
-                  x={pad + (j / scene.cols) * inner}
-                  y={pad + (i / scene.rows) * inner}
-                  width={inner / scene.cols}
-                  height={inner / scene.rows}
+                  x={padL + j * cellMm}
+                  y={padT + i * cellMm}
+                  width={cellMm}
+                  height={cellMm}
                   className="coord-hit"
                   onClick={() => (mark ? onRemove?.(x, y) : onPlace?.(x, y))}
                   onDragOver={(event) => event.preventDefault()}
@@ -205,15 +214,10 @@ function CellsScene({
                 />
               ) : null}
               {mark ? (
-                <g fill="currentColor" stroke="currentColor" strokeWidth={0.7} strokeLinejoin="round">
-                  <CoordShapeGlyph
-                    kind={mark.kind}
-                    x={cx}
-                    y={cy}
-                    size={Math.min(inner / scene.cols, inner / scene.rows) * 0.32}
-                  />
+                <g fill="currentColor" stroke="currentColor" strokeWidth={0.22} strokeLinejoin="round">
+                  <CoordShapeGlyph kind={mark.kind} x={cx} y={cy} size={glyph} />
                   {mark.label ? (
-                    <text x={cx + 7} y={cy - 6} className="point-label">
+                    <text x={cx + 1.8} y={cy - 1.6} className="point-label">
                       {mark.label}
                     </text>
                   ) : null}
@@ -337,80 +341,119 @@ function AxesScene({
   onPlace?: (x: number, y: number) => void
   onRemove?: (x: number, y: number) => void
 }) {
-  const range = scene.range ?? 5
+  const cellMm = scene.cellMm ?? 5
+  const unit = scene.unitSquares ?? 1
+  const rangeX = scene.rangeX ?? scene.range ?? 5
+  const rangeY = scene.rangeY ?? scene.range ?? 5
+  const cols = scene.cols || Math.round(2 * rangeX * unit)
+  const rows = scene.rows || Math.round(2 * rangeY * unit)
   const step = scene.step ?? 1
-  const size = 240
-  const pad = 22
-  const inner = size - 2 * pad
+  const { padL, padR, padT, padB } = mmPads()
+  const gridW = cols * cellMm
+  const gridH = rows * cellMm
+  const svgW = padL + gridW + padR
+  const svgH = padT + gridH + padB
   const to = (x: number, y: number) => ({
-    cx: pad + ((x + range) / (2 * range)) * inner,
-    cy: pad + ((range - y) / (2 * range)) * inner,
+    cx: padL + ((x + rangeX) / (2 * rangeX)) * gridW,
+    cy: padT + ((rangeY - y) / (2 * rangeY)) * gridH,
   })
-  const values: number[] = []
-  const n = Math.round((2 * range) / step)
-  for (let i = 0; i <= n; i++) values.push(Math.round((-range + i * step) * 1000) / 1000)
+  const squareXs = Array.from({ length: cols + 1 }, (_, i) => Math.round((-rangeX + i / unit) * 1000) / 1000)
+  const squareYs = Array.from({ length: rows + 1 }, (_, i) => Math.round((-rangeY + i / unit) * 1000) / 1000)
+  const tickX: number[] = []
+  const tickY: number[] = []
+  const nx = Math.round((2 * rangeX) / step)
+  const ny = Math.round((2 * rangeY) / step)
+  for (let i = 0; i <= nx; i++) tickX.push(Math.round((-rangeX + i * step) * 1000) / 1000)
+  for (let i = 0; i <= ny; i++) tickY.push(Math.round((-rangeY + i * step) * 1000) / 1000)
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
   const fineN = scene.fineGrid ? 5 : 0
-  const labelStep = range >= 10 ? 2 : 1
+  const labelStepX = rangeX >= 12 ? 2 : 1
+  const labelStepY = rangeY >= 12 ? 2 : 1
+  const dashScale = cellMm / 5
 
   return (
     <svg
-      className={`coord-grid scene-axes${scene.fineGrid ? ' is-fine' : ''}`}
-      viewBox={`0 0 ${size} ${size}`}
+      className={`coord-grid scene-axes is-fixed-mm${scene.fineGrid ? ' is-fine' : ''}`}
+      width={`${svgW}mm`}
+      height={`${svgH}mm`}
+      viewBox={`0 0 ${svgW} ${svgH}`}
       role="img"
       aria-label="Repère à quatre cadrans"
     >
       {fineN
-        ? Array.from({ length: 2 * range * fineN + 1 }, (_, i) => {
-            const v = Math.round((-range + i / fineN) * 1000) / 1000
-            if (Number.isInteger(v)) return null
+        ? Array.from({ length: cols * fineN + 1 }, (_, i) => {
+            const v = Math.round((-rangeX + i / (unit * fineN)) * 1000) / 1000
+            if (Number.isInteger(v * unit)) return null
             const h = to(v, 0)
-            const p = to(0, v)
-            return (
-              <g key={`f-${v}`}>
-                <line x1={h.cx} y1={pad} x2={h.cx} y2={size - pad} className="grid-line-fine" />
-                <line x1={pad} y1={p.cy} x2={size - pad} y2={p.cy} className="grid-line-fine" />
-              </g>
-            )
+            return <line key={`fx-${v}`} x1={h.cx} y1={padT} x2={h.cx} y2={padT + gridH} className="grid-line-fine" />
           })
         : null}
-      {values.map((v) => {
+      {fineN
+        ? Array.from({ length: rows * fineN + 1 }, (_, i) => {
+            const v = Math.round((-rangeY + i / (unit * fineN)) * 1000) / 1000
+            if (Number.isInteger(v * unit)) return null
+            const p = to(0, v)
+            return <line key={`fy-${v}`} x1={padL} y1={p.cy} x2={padL + gridW} y2={p.cy} className="grid-line-fine" />
+          })
+        : null}
+      {squareXs.map((v) => {
         const h = to(v, 0)
-        const p = to(0, v)
         return (
-          <g key={`g-${v}`}>
-            <line x1={h.cx} y1={pad} x2={h.cx} y2={size - pad} className={v === 0 ? 'axis-line' : 'grid-line'} />
-            <line x1={pad} y1={p.cy} x2={size - pad} y2={p.cy} className={v === 0 ? 'axis-line' : 'grid-line'} />
-          </g>
+          <line
+            key={`vx-${v}`}
+            x1={h.cx}
+            y1={padT}
+            x2={h.cx}
+            y2={padT + gridH}
+            className={v === 0 ? 'axis-line' : 'grid-line'}
+          />
         )
       })}
-      {values
-        .filter((v) => Number.isInteger(v) && v !== 0 && v % labelStep === 0)
+      {squareYs.map((v) => {
+        const p = to(0, v)
+        return (
+          <line
+            key={`hy-${v}`}
+            x1={padL}
+            y1={p.cy}
+            x2={padL + gridW}
+            y2={p.cy}
+            className={v === 0 ? 'axis-line' : 'grid-line'}
+          />
+        )
+      })}
+      {tickX
+        .filter((v) => Number.isInteger(v) && v !== 0 && v % labelStepX === 0)
         .map((v) => {
           const onX = to(v, 0)
-          const onY = to(0, v)
           return (
-            <g key={`lab-${v}`}>
-              <text x={onX.cx} y={onX.cy + 11} className="axis-label" textAnchor="middle">
-                {formatAxesNum(v)}
-              </text>
-              <text x={onY.cx - 5} y={onY.cy + 3} className="axis-label" textAnchor="end">
-                {formatAxesNum(v)}
-              </text>
-            </g>
+            <text key={`lx-${v}`} x={onX.cx} y={onX.cy + 3.2} className="axis-label" textAnchor="middle">
+              {formatAxesNum(v)}
+            </text>
           )
         })}
-      <text x={size - pad + 2} y={to(0, 0).cy - 4} className="axis-label">
+      {tickY
+        .filter((v) => Number.isInteger(v) && v !== 0 && v % labelStepY === 0)
+        .map((v) => {
+          const onY = to(0, v)
+          return (
+            <text key={`ly-${v}`} x={onY.cx - 1.4} y={onY.cy + 0.8} className="axis-label" textAnchor="end">
+              {formatAxesNum(v)}
+            </text>
+          )
+        })}
+      <text x={padL + gridW + 1.2} y={to(0, 0).cy - 1.2} className="axis-label">
         x
       </text>
-      <text x={to(0, 0).cx + 5} y={pad - 2} className="axis-label">
+      <text x={to(0, 0).cx + 1.4} y={padT - 1} className="axis-label">
         y
       </text>
       {(scene.lines ?? []).map((line) => {
-        const clip = clipLineToRange(line, range)
+        const clip = clipLineToRange(line, rangeX, rangeY)
         if (!clip) return null
         const a = to(clip.x1, clip.y1)
         const b = to(clip.x2, clip.y2)
+        const dash = STROKE_DASH[line.stroke]
         return (
           <line
             key={line.id}
@@ -419,13 +462,13 @@ function AxesScene({
             x2={b.cx}
             y2={b.cy}
             className={`coord-line line-${line.color}`}
-            strokeDasharray={STROKE_DASH[line.stroke]}
+            strokeDasharray={dash ? dash.split(' ').map((n) => Number(n) * dashScale * 0.35).join(' ') : undefined}
           />
         )
       })}
       {(scene.paths ?? []).map((path) => {
         if (path.kind === 'line' && path.a != null && path.b != null && path.c != null) {
-          const clip = clipLineToRange({ a: path.a, b: path.b, c: path.c }, range)
+          const clip = clipLineToRange({ a: path.a, b: path.b, c: path.c }, rangeX, rangeY)
           if (!clip) return null
           const a = to(clip.x1, clip.y1)
           const b = to(clip.x2, clip.y2)
@@ -460,8 +503,8 @@ function AxesScene({
         )
       })}
       {editable
-        ? values.map((x) =>
-            values.map((y) => {
+        ? tickX.map((x) =>
+            tickY.map((y) => {
               const p = to(x, y)
               const found = markAt(x, y)
               return (
@@ -469,7 +512,7 @@ function AxesScene({
                   key={`h-${x}-${y}`}
                   cx={p.cx}
                   cy={p.cy}
-                  r={Math.max(3.5, inner / (2 * range) / 2.4)}
+                  r={Math.max(1.1, cellMm / 2.4)}
                   className="coord-hit"
                   onClick={() => (found ? onRemove?.(x, y) : onPlace?.(x, y))}
                 />
@@ -481,11 +524,11 @@ function AxesScene({
         const p = to(found.x, found.y)
         return (
           <g key={`m-${found.label ?? i}-${found.x}-${found.y}`}>
-            <circle cx={p.cx} cy={p.cy} r={3.2} className="grid-point" />
+            <circle cx={p.cx} cy={p.cy} r={Math.max(0.85, cellMm * 0.22)} className="grid-point" />
             {found.label ? (
               <text
-                x={p.cx + (found.x >= 0 ? 5 : -5)}
-                y={p.cy + (found.y >= 0 ? -5 : 11)}
+                x={p.cx + (found.x >= 0 ? 1.4 : -1.4)}
+                y={p.cy + (found.y >= 0 ? -1.4 : 2.8)}
                 className="point-label"
                 textAnchor={found.x >= 0 ? 'start' : 'end'}
               >

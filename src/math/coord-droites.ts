@@ -1,5 +1,5 @@
 import { pick, shuffle, type Rng } from './rng'
-import { axesRangeFor, clampCoordRange, formatAxesCoord, formatAxesNum } from './coord-reperage'
+import { formatAxesCoord, formatAxesNum, resolveAxesGrid } from './coord-reperage'
 import type {
   CoordLine,
   CoordLineColor,
@@ -170,20 +170,24 @@ export function formatLineEquation(line: LineEq): string {
   return `y = ${slopeStr}x${interStr}`
 }
 
-export function clipLineToRange(line: LineEq, range: number): { x1: number; y1: number; x2: number; y2: number } | null {
+export function clipLineToRange(
+  line: LineEq,
+  rangeX: number,
+  rangeY = rangeX,
+): { x1: number; y1: number; x2: number; y2: number } | null {
   const pts: Array<{ x: number; y: number }> = []
   const add = (x: number, y: number) => {
-    if (inRange(x, range) && inRange(y, range)) {
+    if (inRange(x, rangeX) && inRange(y, rangeY)) {
       if (!pts.some((p) => Math.abs(p.x - x) < 1e-8 && Math.abs(p.y - y) < 1e-8)) {
         pts.push({ x, y })
       }
     }
   }
   if (line.b !== 0) {
-    for (const x of [-range, range]) add(x, -(line.a * x + line.c) / line.b)
+    for (const x of [-rangeX, rangeX]) add(x, -(line.a * x + line.c) / line.b)
   }
   if (line.a !== 0) {
-    for (const y of [-range, range]) add(-(line.b * y + line.c) / line.a, y)
+    for (const y of [-rangeY, rangeY]) add(-(line.b * y + line.c) / line.a, y)
   }
   if (pts.length < 2) return null
   let best = { i: 0, j: 1, d: -1 }
@@ -551,7 +555,8 @@ export function generateDroites(
   rng: Rng,
 ): { items: MathItem[]; instruction: string } {
   const difficulty = config.difficulty ?? 'moyen'
-  const range = clampCoordRange(config.coordRange ?? axesRangeFor(difficulty))
+  const grid = resolveAxesGrid(config, difficulty)
+  const range = Math.min(grid.rangeX, grid.rangeY)
   const step = 1
   const questionCount = Math.max(1, Math.min(config.count || 5, 10))
   const nLines = lineCountFor(questionCount, difficulty)
@@ -568,10 +573,14 @@ export function generateDroites(
   const questions = pickQuestions(rng, buildQuestions(lines, range, step, difficulty), questionCount, difficulty)
   const scene: CoordScene = {
     variant: 'axes',
-    cols: range * 2,
-    rows: range * 2,
+    cols: grid.cols,
+    rows: grid.rows,
     axis: 'numeric',
-    range,
+    range: Math.max(grid.rangeX, grid.rangeY),
+    rangeX: grid.rangeX,
+    rangeY: grid.rangeY,
+    cellMm: grid.cellMm,
+    unitSquares: grid.unitSquares,
     step,
     marks: highlightsFrom(questions),
     lines,

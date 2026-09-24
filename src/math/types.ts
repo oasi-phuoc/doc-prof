@@ -78,6 +78,10 @@ export type CoordShape =
 
 export type CoordVariant = 'cells' | 'polygon' | 'polar' | 'axes'
 export type CoordAxis = 'letters' | 'letters-y' | 'numeric'
+/** Côté physique d’un carré du tableau, en millimètres. */
+export type CoordCellMm = 3 | 4 | 5
+/** Nombre de carrés pour une unité de graduation. */
+export type CoordUnitSquares = 1 | 2
 
 export type CoordMark = {
   x: number
@@ -101,8 +105,16 @@ export type CoordScene = {
   axis: CoordAxis
   marks: CoordMark[]
   vertices?: CoordVertex[]
-  /** Étendue du repère (−range à +range) pour le variant `axes`. */
+  /** Étendue du repère (−range à +range) pour le variant `axes` (carré). */
   range?: number
+  /** Demi-largeur en unités (repère rectangulaire). */
+  rangeX?: number
+  /** Demi-hauteur en unités (repère rectangulaire). */
+  rangeY?: number
+  /** Côté d’un carré, en millimètres (le tableau grandit avec les cases). */
+  cellMm?: CoordCellMm
+  /** 1 carré = 1 unité, ou 2 carrés = 1 unité. */
+  unitSquares?: CoordUnitSquares
   /** Pas de la grille (1 ou 0,5). */
   step?: number
   /** Droites colorées (repérage). */
@@ -327,8 +339,12 @@ export type ExerciseBlock = {
   coordRows?: number
   coordAxis?: CoordAxis
   coordMarks?: CoordMark[]
-  /** Étendue du repère à 4 cadrans (−n à +n). */
+  /** Étendue du repère à 4 cadrans (−n à +n), conservée pour les anciennes fiches. */
   coordRange?: number
+  /** Côté du carré (3, 4 ou 5 mm). */
+  coordCellMm?: CoordCellMm
+  /** Graduation : 1 ou 2 carrés pour une unité. */
+  coordUnitSquares?: CoordUnitSquares
   /** Bornes de nombres libres à la place du niveau. */
   numberLibre?: boolean
   numberMin?: number

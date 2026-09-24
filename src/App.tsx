@@ -41,12 +41,18 @@ import {
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { constructRangeFor } from '@/math/coord-construire'
 import {
+  AXES_DEFAULT_COLS,
+  AXES_DEFAULT_ROWS,
+  CELL_MM_OPTIONS,
   COORD_SHAPES,
   COORD_SHAPE_LABEL,
-  axesRangeFor,
-  clampCoordRange,
+  DEFAULT_CELL_MM,
+  DEFAULT_UNIT_SQUARES,
+  axesExtent,
+  clampAxesCols,
+  clampAxesRows,
+  clampCellMm,
   clampCoordSize,
   coordSizeFor,
   isReperageCadrans,
@@ -54,7 +60,10 @@ import {
   isReperageDroites,
   isReperageFormes,
   isReperagePage,
+  maxAxesColsForCell,
+  maxAxesRowsForCell,
   nextPointLabel,
+  resolveAxesGrid,
   sceneFromAxesLibre,
   sceneFromLibre,
 } from '@/math/coord-reperage'
@@ -78,7 +87,9 @@ import {
 import { randomSeed } from '@/math/rng'
 import type {
   CoordAxis,
+  CoordCellMm,
   CoordShape,
+  CoordUnitSquares,
   Difficulty,
   Domain,
   ExerciseBlock,
@@ -429,6 +440,93 @@ function Landing({ onCreate }: { onCreate: () => void }) {
   )
 }
 
+function ReperageAxesFields({
+  cols,
+  rows,
+  cellMm,
+  unitSquares,
+  onChange,
+}: {
+  cols: number
+  rows: number
+  cellMm: CoordCellMm
+  unitSquares: CoordUnitSquares
+  onChange: (patch: Partial<ExerciseBlock>) => void
+}) {
+  const maxCols = maxAxesColsForCell(cellMm)
+  const maxRows = maxAxesRowsForCell(cellMm)
+  return (
+    <>
+      <div className="coord-size-row">
+        <label>
+          Colonnes
+          <input
+            className="pill-input"
+            type="number"
+            min={2}
+            max={maxCols}
+            step={2}
+            value={cols}
+            onChange={(event) => onChange({ coordCols: clampAxesCols(Number(event.target.value), cellMm) })}
+          />
+        </label>
+        <label>
+          Lignes
+          <input
+            className="pill-input"
+            type="number"
+            min={2}
+            max={maxRows}
+            step={2}
+            value={rows}
+            onChange={(event) => onChange({ coordRows: clampAxesRows(Number(event.target.value), cellMm) })}
+          />
+        </label>
+      </div>
+      <div className="coord-param-label">
+        Graduation
+        <div className="mode-toggle" role="group" aria-label="Graduation">
+          <button
+            type="button"
+            className={unitSquares === 1 ? 'active' : ''}
+            onClick={() => onChange({ coordUnitSquares: 1 })}
+          >
+            1 carré = 1 unité
+          </button>
+          <button
+            type="button"
+            className={unitSquares === 2 ? 'active' : ''}
+            onClick={() => onChange({ coordUnitSquares: 2 })}
+          >
+            2 carrés = 1 unité
+          </button>
+        </div>
+      </div>
+      <div className="coord-param-label">
+        Côté du carré
+        <div className="mode-toggle is-3" role="group" aria-label="Côté du carré">
+          {CELL_MM_OPTIONS.map((mm) => (
+            <button
+              key={mm}
+              type="button"
+              className={cellMm === mm ? 'active' : ''}
+              onClick={() =>
+                onChange({
+                  coordCellMm: mm,
+                  coordCols: clampAxesCols(cols, mm),
+                  coordRows: clampAxesRows(rows, mm),
+                })
+              }
+            >
+              {mm} mm
+            </button>
+          ))}
+        </div>
+      </div>
+    </>
+  )
+}
+
 function applyType(type: ExerciseType): Partial<ExerciseBlock> {
   const isProblem = type.id.includes('problemes')
   const isEquation = type.id.startsWith('equations-')
@@ -486,42 +584,30 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
           coordAxis: 'letters' as const,
           coordMarks: [],
           coordRange: undefined,
+          coordCellMm: DEFAULT_CELL_MM,
+          coordUnitSquares: undefined,
         }
-      : isCadrans
+      : isCadrans || isDroites || isConstruire
         ? {
-            coordLibre: type.id === 'reperage-cadrans-libre',
-            coordRange: axesRangeFor('moyen'),
-            coordMarks: [],
+            coordLibre: isCadrans ? type.id === 'reperage-cadrans-libre' : undefined,
+            coordCols: AXES_DEFAULT_COLS,
+            coordRows: AXES_DEFAULT_ROWS,
+            coordAxis: undefined,
+            coordMarks: isCadrans ? [] : undefined,
+            coordRange: undefined,
+            coordCellMm: DEFAULT_CELL_MM,
+            coordUnitSquares: DEFAULT_UNIT_SQUARES,
+          }
+        : {
+            coordLibre: undefined,
             coordCols: undefined,
             coordRows: undefined,
             coordAxis: undefined,
-          }
-        : isDroites
-          ? {
-              coordLibre: undefined,
-              coordCols: undefined,
-              coordRows: undefined,
-              coordAxis: undefined,
-              coordMarks: undefined,
-              coordRange: axesRangeFor('moyen'),
-            }
-          : isConstruire
-            ? {
-                coordLibre: undefined,
-                coordCols: undefined,
-                coordRows: undefined,
-                coordAxis: undefined,
-                coordMarks: undefined,
-                coordRange: constructRangeFor('moyen'),
-              }
-            : {
-                coordLibre: undefined,
-                coordCols: undefined,
-                coordRows: undefined,
-                coordAxis: undefined,
-                coordMarks: undefined,
-                coordRange: undefined,
-              }),
+            coordMarks: undefined,
+            coordRange: undefined,
+            coordCellMm: undefined,
+            coordUnitSquares: undefined,
+          }),
   }
 }
 
@@ -637,6 +723,8 @@ function GeneratorPage() {
     activeBlock.coordRows,
     activeBlock.coordAxis,
     activeBlock.coordRange,
+    activeBlock.coordCellMm,
+    activeBlock.coordUnitSquares,
     activeBlock.coordMarks,
     activePage.extraBlocks,
     evalMode,
@@ -710,17 +798,36 @@ function GeneratorPage() {
       ? AREA_QUAD_FIGURES
       : PERI_QUAD_FIGURES
   const activeAsPage = pageAsConfig(activePage, activeBlock)
+  const axesGrid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+  const updateAxesGrid = (patch: Partial<ExerciseBlock>) => {
+    const next = { ...activeBlock, ...patch }
+    const grid = resolveAxesGrid({ ...activeAsPage, ...next }, next.difficulty)
+    const { rangeX, rangeY } = axesExtent(grid.cols, grid.rows, grid.unitSquares)
+    updatePage({
+      ...patch,
+      coordCols: grid.cols,
+      coordRows: grid.rows,
+      coordCellMm: grid.cellMm,
+      coordUnitSquares: grid.unitSquares,
+      coordMarks: isCadrans
+        ? (next.coordMarks ?? []).filter((mark) => Math.abs(mark.x) <= rangeX && Math.abs(mark.y) <= rangeY)
+        : next.coordMarks,
+    })
+  }
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
     if (isCadrans) {
-      const range = clampCoordRange(activeBlock.coordRange ?? axesRangeFor(activeBlock.difficulty))
-      if (Math.abs(x) > range || Math.abs(y) > range) return
+      const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+      if (Math.abs(x) > grid.rangeX || Math.abs(y) > grid.rangeY) return
       const without = (activeBlock.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y))
       const current = (activeBlock.coordMarks ?? []).find((mark) => mark.x === x && mark.y === y)
       if (!current && without.length >= activeBlock.count) return
       updatePage({
         coordLibre: true,
-        coordRange: range,
+        coordCols: grid.cols,
+        coordRows: grid.rows,
+        coordCellMm: grid.cellMm,
+        coordUnitSquares: grid.unitSquares,
         coordMarks: [...without, { x, y, kind: 'point', label: current?.label ?? nextPointLabel(without) }],
       })
       return
@@ -791,6 +898,8 @@ function GeneratorPage() {
       coordAxis: fields.coordAxis,
       coordMarks: fields.coordMarks,
       coordRange: fields.coordRange,
+      coordCellMm: fields.coordCellMm,
+      coordUnitSquares: fields.coordUnitSquares,
       numberLibre: activeBlock.numberLibre,
       numberMin: activeBlock.numberMin,
       numberMax: activeBlock.numberMax,
@@ -1312,6 +1421,21 @@ function GeneratorPage() {
                       />
                     </label>
                   </div>
+                  <div className="coord-param-label">
+                    Côté du carré
+                    <div className="mode-toggle is-3" role="group" aria-label="Côté du carré">
+                      {CELL_MM_OPTIONS.map((mm) => (
+                        <button
+                          key={mm}
+                          type="button"
+                          className={clampCellMm(activeBlock.coordCellMm) === mm ? 'active' : ''}
+                          onClick={() => updatePage({ coordCellMm: mm })}
+                        >
+                          {mm} mm
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                   {activeBlock.coordLibre ? (
                     <>
                       <div className="coord-palette" role="listbox" aria-label="Formes à placer">
@@ -1347,8 +1471,8 @@ function GeneratorPage() {
                       />
                       <p className="type-hint muted">
                         Vous pouvez placer toutes les formes, une seule fois chacune. Glissez une forme sur une case,
-                        ou cliquez une forme puis une case. Largeur et hauteur règlent la taille du tableau, jusqu’à
-                        20 × 20.
+                        ou cliquez une forme puis une case. Largeur et hauteur font grandir le tableau ; chaque carré
+                        garde le côté choisi, jusqu’à 20 × 20.
                       </p>
                       <p className="type-hint muted">
                         {(activeBlock.coordMarks?.length ?? 0)} / {COORD_SHAPES.length} forme
@@ -1366,8 +1490,8 @@ function GeneratorPage() {
                     </>
                   ) : (
                     <p className="type-hint muted">
-                      Une seule grille. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des formes.
-                      Largeur et hauteur règlent la taille du tableau, indépendamment du nombre de questions. Vous
+                      Une seule grille centrée. Chaque forme n’apparaît qu’une fois. Le champ Questions ajoute des
+                      formes. Largeur et hauteur font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. Vous
                       pouvez afficher les questions sur 1, 2 ou 3 colonnes.
                     </p>
                   )}
@@ -1387,37 +1511,29 @@ function GeneratorPage() {
                       <button
                         type="button"
                         className={activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() =>
+                        onClick={() => {
+                          const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
                           updatePage({
                             coordLibre: true,
-                            coordRange: activeBlock.coordRange ?? axesRangeFor(activeBlock.difficulty),
+                            coordCols: grid.cols,
+                            coordRows: grid.rows,
+                            coordCellMm: grid.cellMm,
+                            coordUnitSquares: grid.unitSquares,
                             coordMarks: activeBlock.coordMarks ?? [],
                           })
-                        }
+                        }}
                       >
                         Libre
                       </button>
                     </div>
                   ) : null}
-                  <label>
-                    Étendue (−n à +n)
-                    <input
-                      className="pill-input"
-                      type="number"
-                      min={3}
-                      max={20}
-                      value={activeBlock.coordRange ?? axesRangeFor(activeBlock.difficulty)}
-                      onChange={(event) => {
-                        const range = clampCoordRange(Number(event.target.value))
-                        updatePage({
-                          coordRange: range,
-                          coordMarks: (activeBlock.coordMarks ?? []).filter(
-                            (mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range,
-                          ),
-                        })
-                      }}
-                    />
-                  </label>
+                  <ReperageAxesFields
+                    cols={axesGrid.cols}
+                    rows={axesGrid.rows}
+                    cellMm={axesGrid.cellMm}
+                    unitSquares={axesGrid.unitSquares}
+                    onChange={updateAxesGrid}
+                  />
                   {activeBlock.coordLibre || activeBlock.exerciseType === 'reperage-cadrans-libre' ? (
                     <>
                       <div className="coord-axes-editor">
@@ -1430,7 +1546,7 @@ function GeneratorPage() {
                       </div>
                       <p className="type-hint muted">
                         Cliquez une intersection pour poser A, B, C… Le champ Questions limite le nombre de points.
-                        Cliquez un point pour le retirer. L’étendue va jusqu’à −20 / +20.
+                        Cliquez un point pour le retirer. Colonnes et lignes restent paires.
                       </p>
                       <p className="type-hint muted">
                         {(activeBlock.coordMarks?.length ?? 0)} / {activeBlock.count} point
@@ -1448,48 +1564,26 @@ function GeneratorPage() {
                     </>
                   ) : (
                     <p className="type-hint muted">
-                      Une seule grille à 4 cadrans. Le champ Questions ajoute des points. L’étendue (−n à +n) règle la
-                      taille du repère, jusqu’à −20 / +20. Avancé : demi-unités.
+                      Une seule grille à 4 cadrans, centrée. Colonnes et lignes (nombres pairs) font grandir le
+                      tableau ; les carrés restent à 3, 4 ou 5 mm. La graduation choisit 1 ou 2 carrés pour une
+                      unité. Avancé : demi-unités.
                     </p>
                   )}
                 </div>
-              ) : isDroites ? (
+              ) : isDroites || isConstruire ? (
                 <div className="coord-libre-panel">
-                  <b>Repère (droites)</b>
-                  <label>
-                    Étendue (−n à +n)
-                    <input
-                      className="pill-input"
-                      type="number"
-                      min={3}
-                      max={20}
-                      value={activeBlock.coordRange ?? axesRangeFor(activeBlock.difficulty)}
-                      onChange={(event) => updatePage({ coordRange: clampCoordRange(Number(event.target.value)) })}
-                    />
-                  </label>
+                  <b>{isDroites ? 'Repère (droites)' : 'Repère (construction)'}</b>
+                  <ReperageAxesFields
+                    cols={axesGrid.cols}
+                    rows={axesGrid.rows}
+                    cellMm={axesGrid.cellMm}
+                    unitSquares={axesGrid.unitSquares}
+                    onChange={updateAxesGrid}
+                  />
                   <p className="type-hint muted">
-                    Une seule grille centrée. Le champ Questions fixe le nombre de questions. L’étendue règle la taille
-                    du repère, jusqu’à −20 / +20. Chaque droite a une couleur et un tracé distinct, lisible en noir et
-                    blanc.
-                  </p>
-                </div>
-              ) : isConstruire ? (
-                <div className="coord-libre-panel">
-                  <b>Repère (construction)</b>
-                  <label>
-                    Étendue (−n à +n)
-                    <input
-                      className="pill-input"
-                      type="number"
-                      min={3}
-                      max={20}
-                      value={activeBlock.coordRange ?? constructRangeFor(activeBlock.difficulty)}
-                      onChange={(event) => updatePage({ coordRange: clampCoordRange(Number(event.target.value)) })}
-                    />
-                  </label>
-                  <p className="type-hint muted">
-                    Une grille vide centrée, avec deux points donnés. Le champ Questions fixe le nombre de consignes.
-                    L’étendue règle la taille du repère, jusqu’à −20 / +20. Le corrigé montre les tracés.
+                    {isDroites
+                      ? 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
+                      : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm. Le corrigé montre les tracés.'}
                   </p>
                 </div>
               ) : null}

@@ -1,14 +1,37 @@
 import { pick, shuffle, type Rng } from './rng'
 import type {
   CoordAxis,
+  CoordCellMm,
   CoordMark,
   CoordQuestion,
   CoordScene,
   CoordShape,
+  CoordUnitSquares,
   Difficulty,
   MathItem,
   PageConfig,
 } from './types'
+
+export const AXES_DEFAULT_COLS = 32
+export const AXES_DEFAULT_ROWS = 18
+export const DEFAULT_CELL_MM: CoordCellMm = 5
+export const DEFAULT_UNIT_SQUARES: CoordUnitSquares = 1
+export const CELL_MM_OPTIONS: CoordCellMm[] = [3, 4, 5]
+export const AXES_MAX_COLS = 40
+export const AXES_MAX_ROWS = 36
+/** Largeur utile A4 (210 mm − marges) pour caler le nombre de colonnes. */
+const PRINTABLE_INNER_MM = 178
+const LABEL_GUTTER_MM = 14
+
+export type AxesGrid = {
+  cols: number
+  rows: number
+  cellMm: CoordCellMm
+  unitSquares: CoordUnitSquares
+  rangeX: number
+  rangeY: number
+  step: number
+}
 
 export function isReperageFormes(typeId: string): boolean {
   return typeId === 'reperage-lire' || typeId === 'reperage-placer'
@@ -51,6 +74,83 @@ export function axesStepFor(difficulty: Difficulty): number {
 
 export function clampCoordRange(n: number): number {
   return Math.max(3, Math.min(20, Math.round(n) || 5))
+}
+
+function evenBetween(n: number, min: number, max: number): number {
+  const raw = Math.round(n) || min
+  const even = raw % 2 === 0 ? raw : raw + (raw < min ? 1 : -1)
+  return Math.max(min, Math.min(max, even < min ? min : even))
+}
+
+export function clampCellMm(n: number | undefined): CoordCellMm {
+  if (n === 3 || n === 4 || n === 5) return n
+  return DEFAULT_CELL_MM
+}
+
+export function clampUnitSquares(n: number | undefined): CoordUnitSquares {
+  return n === 2 ? 2 : 1
+}
+
+export function maxAxesColsForCell(cellMm: CoordCellMm): number {
+  return evenBetween(Math.floor((PRINTABLE_INNER_MM - LABEL_GUTTER_MM) / cellMm), 2, AXES_MAX_COLS)
+}
+
+export function maxAxesRowsForCell(cellMm: CoordCellMm): number {
+  const max = evenBetween(Math.floor(190 / cellMm), 2, AXES_MAX_ROWS)
+  return max
+}
+
+export function clampAxesCols(n: number, cellMm: CoordCellMm = DEFAULT_CELL_MM): number {
+  return evenBetween(n, 2, maxAxesColsForCell(cellMm))
+}
+
+export function clampAxesRows(n: number, cellMm: CoordCellMm = DEFAULT_CELL_MM): number {
+  return evenBetween(n, 2, maxAxesRowsForCell(cellMm))
+}
+
+export function axesExtent(cols: number, rows: number, unitSquares: CoordUnitSquares): {
+  rangeX: number
+  rangeY: number
+} {
+  return {
+    rangeX: cols / 2 / unitSquares,
+    rangeY: rows / 2 / unitSquares,
+  }
+}
+
+export function resolveAxesGrid(config: Pick<PageConfig, 'coordCols' | 'coordRows' | 'coordRange' | 'coordCellMm' | 'coordUnitSquares' | 'difficulty'>, difficulty?: Difficulty): AxesGrid {
+  const level = difficulty ?? config.difficulty ?? 'moyen'
+  const cellMm = clampCellMm(config.coordCellMm)
+  const unitSquares = clampUnitSquares(config.coordUnitSquares)
+  const fallbackFromRange =
+    config.coordRange != null ? clampCoordRange(config.coordRange) * 2 * unitSquares : undefined
+  const fallbackCols = fallbackFromRange ?? AXES_DEFAULT_COLS
+  const fallbackRows = fallbackFromRange ?? AXES_DEFAULT_ROWS
+  const cols = clampAxesCols(config.coordCols ?? fallbackCols, cellMm)
+  const rows = clampAxesRows(config.coordRows ?? fallbackRows, cellMm)
+  const { rangeX, rangeY } = axesExtent(cols, rows, unitSquares)
+  return {
+    cols,
+    rows,
+    cellMm,
+    unitSquares,
+    rangeX,
+    rangeY,
+    step: axesStepFor(level),
+  }
+}
+
+export function resolveFormesGrid(
+  config: Pick<PageConfig, 'coordCols' | 'coordRows' | 'coordCellMm' | 'difficulty'>,
+  difficulty?: Difficulty,
+): { cols: number; rows: number; cellMm: CoordCellMm } {
+  const level = difficulty ?? config.difficulty ?? 'moyen'
+  const fallback = coordSizeFor(level)
+  return {
+    cols: clampCoordSize(config.coordCols ?? fallback.cols),
+    rows: clampCoordSize(config.coordRows ?? fallback.rows),
+    cellMm: clampCellMm(config.coordCellMm),
+  }
 }
 
 export function formatAxesNum(n: number): string {
@@ -189,7 +289,14 @@ function itemFromScene(
   }
 }
 
-function generateCells(rng: Rng, cols: number, rows: number, count: number, axis: CoordAxis): {
+function generateCells(
+  rng: Rng,
+  cols: number,
+  rows: number,
+  count: number,
+  axis: CoordAxis,
+  cellMm: CoordCellMm,
+): {
   scene: CoordScene
   questions: CoordQuestion[]
 } {
@@ -200,13 +307,12 @@ function generateCells(rng: Rng, cols: number, rows: number, count: number, axis
     y: cell.y,
     kind: kinds[i]!,
   }))
-  const scene: CoordScene = { variant: 'cells', cols, rows, axis, marks }
+  const scene: CoordScene = { variant: 'cells', cols, rows, axis, marks, cellMm }
   return { scene, questions: questionsFromMarks(marks, axis, 'cells') }
 }
 
 export function sceneFromLibre(config: PageConfig): CoordScene {
-  const cols = clampCoordSize(config.coordCols ?? 7)
-  const rows = clampCoordSize(config.coordRows ?? 7)
+  const { cols, rows, cellMm } = resolveFormesGrid(config)
   const axis = config.coordAxis ?? 'letters'
   const seen = new Set<CoordShape>()
   const marks = (config.coordMarks ?? []).filter((mark) => {
@@ -215,7 +321,7 @@ export function sceneFromLibre(config: PageConfig): CoordScene {
     seen.add(mark.kind)
     return true
   })
-  return { variant: 'cells', cols, rows, axis, marks }
+  return { variant: 'cells', cols, rows, axis, marks, cellMm }
 }
 
 function questionsFromAxes(marks: CoordMark[]): CoordQuestion[] {
@@ -236,9 +342,9 @@ function ticks(range: number, step: number): number[] {
   return values
 }
 
-function generateAxesPoints(rng: Rng, range: number, step: number, count: number): CoordMark[] {
-  const xs = ticks(range, step)
-  const ys = ticks(range, step)
+function generateAxesPoints(rng: Rng, rangeX: number, rangeY: number, step: number, count: number): CoordMark[] {
+  const xs = ticks(rangeX, step)
+  const ys = ticks(rangeY, step)
   const pool: Array<{ x: number; y: number }> = []
   const quads: Array<Array<{ x: number; y: number }>> = [[], [], [], []]
   for (const x of xs) {
@@ -272,16 +378,21 @@ function generateAxesPoints(rng: Rng, range: number, step: number, count: number
 }
 
 export function sceneFromAxesLibre(config: PageConfig, difficulty: Difficulty): CoordScene {
-  const range = clampCoordRange(config.coordRange ?? axesRangeFor(difficulty))
-  const step = axesStepFor(difficulty)
-  const marks = (config.coordMarks ?? []).filter((mark) => Math.abs(mark.x) <= range && Math.abs(mark.y) <= range)
+  const grid = resolveAxesGrid(config, difficulty)
+  const marks = (config.coordMarks ?? []).filter(
+    (mark) => Math.abs(mark.x) <= grid.rangeX && Math.abs(mark.y) <= grid.rangeY,
+  )
   return {
     variant: 'axes',
-    cols: range * 2,
-    rows: range * 2,
+    cols: grid.cols,
+    rows: grid.rows,
     axis: 'numeric',
-    range,
-    step,
+    range: Math.max(grid.rangeX, grid.rangeY),
+    rangeX: grid.rangeX,
+    rangeY: grid.rangeY,
+    cellMm: grid.cellMm,
+    unitSquares: grid.unitSquares,
+    step: grid.step,
     marks,
   }
 }
@@ -306,18 +417,21 @@ export function tryGenerateReperage(
         items: [itemFromScene(limited, questionsFromAxes(limited.marks), instruction, task)],
       }
     }
-    const range = clampCoordRange(config.coordRange ?? axesRangeFor(difficulty))
-    const step = axesStepFor(difficulty)
-    const maxPts = ticks(range, step).length ** 2 - 1
+    const grid = resolveAxesGrid(config, difficulty)
+    const maxPts = ticks(grid.rangeX, grid.step).length * ticks(grid.rangeY, grid.step).length - 1
     const markCount = Math.max(1, Math.min(config.count || 6, maxPts))
-    const marks = generateAxesPoints(rng, range, step, markCount)
+    const marks = generateAxesPoints(rng, grid.rangeX, grid.rangeY, grid.step, markCount)
     const scene: CoordScene = {
       variant: 'axes',
-      cols: range * 2,
-      rows: range * 2,
+      cols: grid.cols,
+      rows: grid.rows,
       axis: 'numeric',
-      range,
-      step,
+      range: Math.max(grid.rangeX, grid.rangeY),
+      rangeX: grid.rangeX,
+      rangeY: grid.rangeY,
+      cellMm: grid.cellMm,
+      unitSquares: grid.unitSquares,
+      step: grid.step,
       marks,
     }
     return {
@@ -343,12 +457,10 @@ export function tryGenerateReperage(
     }
   }
 
-  const fallback = coordSizeFor(difficulty)
-  const cols = clampCoordSize(config.coordCols ?? fallback.cols)
-  const rows = clampCoordSize(config.coordRows ?? fallback.rows)
+  const { cols, rows, cellMm } = resolveFormesGrid(config, difficulty)
   const markCount = Math.max(1, Math.min(config.count || 5, cols * rows, COORD_SHAPES.length))
   const axis: CoordAxis = config.coordAxis ?? (difficulty === 'avance' ? 'numeric' : 'letters')
-  const cells = generateCells(rng, cols, rows, markCount, axis)
+  const cells = generateCells(rng, cols, rows, markCount, axis, cellMm)
   return {
     instruction,
     items: [itemFromScene(cells.scene, cells.questions, instruction, task)],

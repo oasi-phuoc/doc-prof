@@ -1,5 +1,5 @@
 import { int, pick, type Rng } from './rng'
-import { clampCoordRange, formatAxesCoord } from './coord-reperage'
+import { formatAxesCoord, resolveAxesGrid } from './coord-reperage'
 import type { CoordMark, CoordPath, CoordQuestion, CoordScene, Difficulty, MathItem, PageConfig } from './types'
 
 export function constructRangeFor(difficulty: Difficulty): number {
@@ -519,7 +519,8 @@ export function generateConstruire(
   rng: Rng,
 ): { items: MathItem[]; instruction: string } {
   const difficulty = config.difficulty ?? 'moyen'
-  const range = clampCoordRange(config.coordRange ?? constructRangeFor(difficulty))
+  const grid = resolveAxesGrid(config, difficulty)
+  const range = Math.min(grid.rangeX, grid.rangeY)
   const questionCount = Math.max(1, Math.min(config.count || 5, 8))
   const makers = difficulty === 'facile' ? [familyDroites, familyPara, familyTranslation] : FAMILIES
   const start = Math.abs(Math.floor(rng() * 1e9)) % makers.length
@@ -543,10 +544,14 @@ export function generateConstruire(
   const questions = draft.questions.slice(0, questionCount)
   const scene: CoordScene = {
     variant: 'axes',
-    cols: range * 2,
-    rows: range * 2,
+    cols: grid.cols,
+    rows: grid.rows,
     axis: 'numeric',
-    range,
+    range: Math.max(grid.rangeX, grid.rangeY),
+    rangeX: grid.rangeX,
+    rangeY: grid.rangeY,
+    cellMm: grid.cellMm,
+    unitSquares: grid.unitSquares,
     step: 1,
     fineGrid: true,
     marks: draft.marks,
