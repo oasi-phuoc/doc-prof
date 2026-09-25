@@ -7,7 +7,7 @@ export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
 ]
 
 export const topics: Topic[] = [
-  { id: 'fr-presenter', label: 'Se présenter', domain: 'français' },
+  { id: 'fr-presenter', label: 'L’identité', domain: 'français' },
   { id: 'fr-famille', label: 'La famille', domain: 'français' },
   { id: 'fr-description', label: 'La description', domain: 'français' },
   { id: 'fr-logement', label: 'Le logement', domain: 'français' },
@@ -16,9 +16,9 @@ export const topics: Topic[] = [
   { id: 'fr-nourriture', label: 'La nourriture', domain: 'français' },
   { id: 'fr-sante', label: 'La santé', domain: 'français' },
   { id: 'fr-transports', label: 'Les transports', domain: 'français' },
-  { id: 'fr-inviter', label: 'Inviter', domain: 'français' },
+  { id: 'fr-inviter', label: 'L’invitation', domain: 'français' },
   { id: 'fr-travail', label: 'Le travail', domain: 'français' },
-  { id: 'fr-journee', label: 'Ma journée', domain: 'français' },
+  { id: 'fr-journee', label: 'Le quotidien', domain: 'français' },
   { id: 'fr-loisirs', label: 'Les loisirs', domain: 'français' },
   { id: 'nombres', label: 'Nombres naturels', domain: 'algèbre' },
   { id: 'addition', label: 'Additions', domain: 'algèbre' },
