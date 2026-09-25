@@ -1097,6 +1097,12 @@
   flex:1 1 auto;min-height:0;margin:0;
   display:flex;flex-direction:column
 }
+.sheet-body:has(.layout-vocab-table) .exercise-heading{
+  margin:0 0 4px
+}
+.sheet-body:has(.layout-vocab-table) .exercise-heading p{
+  margin:2px 0 0
+}
 .sheet-body:has(.layout-vocab-table) .exercise-grid{
   flex:1 1 auto;min-height:0;
   grid-template-rows:minmax(0,1fr);grid-auto-rows:minmax(0,1fr);
