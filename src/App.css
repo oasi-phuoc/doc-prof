@@ -1089,42 +1089,10 @@
 .exercise-item.layout-gattegno-chart .item-content{
   width:100%;flex:1;min-height:0;display:flex;flex-direction:column
 }
-.vocab-table{
-  width:100%;display:flex;flex-direction:column;gap:10px;box-sizing:border-box
+/* Cartes Voc « Mots à apprendre » : taille fixe calée sur un plein 4×4 A4. */
+.sheet-body:has(.layout-vocab-table){
+  padding-bottom:20px
 }
-.vocab-table-pair{display:flex;flex-direction:column;gap:0}
-.vocab-table-images,.vocab-table-words{
-  display:grid;grid-template-columns:repeat(var(--vocab-cols,3),minmax(0,1fr));
-  gap:0;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink)
-}
-.vocab-table-pair:first-child .vocab-table-images{border-top:1.5px solid var(--ink)}
-.vocab-table-words{border-bottom:1.5px solid var(--ink)}
-.vocab-cell{
-  border-right:1.5px solid var(--ink);box-sizing:border-box;min-width:0;
-  display:flex;align-items:center;justify-content:center;text-align:center
-}
-.vocab-cell:last-child{border-right:0}
-.vocab-cell-image{
-  aspect-ratio:1.15;padding:6px;background:#fff
-}
-.vocab-cell-image img{
-  width:100%;height:100%;object-fit:contain;display:block
-}
-.vocab-cell-empty{
-  display:block;width:100%;height:100%;min-height:48px
-}
-.vocab-cell-word{
-  min-height:1.7em;padding:4px 6px;
-  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;line-height:1.25;color:var(--ink)
-}
-.vocab-word-list{display:flex;flex-wrap:wrap;gap:6px}
-.vocab-word-list label{
-  display:inline-flex;align-items:center;gap:6px;
-  border:1px solid #d8dde6;border-radius:999px;background:#fff;color:var(--muted);
-  padding:6px 10px 6px 8px;font-size:12px;font-weight:700;cursor:pointer
-}
-.vocab-word-list label.is-on{border-color:var(--purple);color:var(--purple);background:var(--lavender)}
-.vocab-word-list input{margin:0;accent-color:var(--purple)}
 .sheet-body:has(.layout-vocab-table)>.exercise-block{
   flex:1 1 auto;min-height:0;margin:0;
   display:flex;flex-direction:column
@@ -1137,11 +1105,57 @@
 .exercise-item.layout-vocab-table{
   padding:2px 0;height:100%;min-height:0;
   align-self:stretch;flex-shrink:1;
-  display:flex;flex-direction:column
+  display:flex;flex-direction:column;overflow:hidden
 }
 .exercise-item.layout-vocab-table .item-content{
-  width:100%;flex:1;min-height:0;display:flex;flex-direction:column
+  width:100%;flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden
 }
+.vocab-table{
+  --vocab-card-w:38mm;
+  --vocab-card-h:40mm;
+  --vocab-card-gap:3.5mm;
+  width:100%;height:100%;min-height:0;box-sizing:border-box;
+  display:grid;
+  grid-template-columns:repeat(var(--vocab-cols,3),var(--vocab-card-w));
+  grid-template-rows:repeat(var(--vocab-rows,3),var(--vocab-card-h));
+  gap:var(--vocab-card-gap);
+  justify-content:center;
+  align-content:start;
+  overflow:hidden;padding:2px 0 0
+}
+.vocab-card{
+  width:var(--vocab-card-w);height:var(--vocab-card-h);
+  box-sizing:border-box;flex:none;
+  display:flex;flex-direction:column;align-items:stretch;
+  border-radius:10px;background:#fff;
+  border:1px solid #d8dde6;
+  overflow:hidden;padding:3mm 2.5mm 2mm
+}
+.vocab-card-image{
+  flex:1 1 auto;min-height:0;
+  display:flex;align-items:center;justify-content:center;
+  background:#faf9f7;border-radius:7px;padding:1.5mm;box-sizing:border-box
+}
+.vocab-card-image img{
+  width:100%;height:100%;max-height:100%;object-fit:contain;display:block
+}
+.vocab-card-empty{
+  display:block;width:100%;height:100%;min-height:12mm
+}
+.vocab-card-word{
+  flex:0 0 auto;margin-top:1.5mm;
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;
+  line-height:1.2;color:var(--ink);text-align:center;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.vocab-word-list{display:flex;flex-wrap:wrap;gap:6px}
+.vocab-word-list label{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid #d8dde6;border-radius:999px;background:#fff;color:var(--muted);
+  padding:6px 10px 6px 8px;font-size:12px;font-weight:700;cursor:pointer
+}
+.vocab-word-list label.is-on{border-color:var(--purple);color:var(--purple);background:var(--lavender)}
+.vocab-word-list input{margin:0;accent-color:var(--purple)}
 .vocab-match{width:100%;display:flex;flex-direction:column;gap:10px}
 .vocab-match-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;align-items:start

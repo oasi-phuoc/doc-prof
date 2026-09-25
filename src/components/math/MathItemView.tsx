@@ -14,32 +14,23 @@ function VocabTable({ item }: { item: MathItem }) {
   const cells = Array.from({ length: rows * cols }, (_, index) => entries[index] ?? null)
 
   return (
-    <div className="vocab-table" style={{ '--vocab-cols': cols } as CSSProperties} aria-label="Mots à apprendre">
-      {Array.from({ length: rows }, (_, rowIndex) => {
-        const slice = cells.slice(rowIndex * cols, rowIndex * cols + cols)
-        return (
-          <div className="vocab-table-pair" key={`row-${rowIndex}`}>
-            <div className="vocab-table-images">
-              {slice.map((entry, colIndex) => (
-                <div className="vocab-cell vocab-cell-image" key={`img-${rowIndex}-${colIndex}`}>
-                  {entry?.imageSrc ? (
-                    <img src={entry.imageSrc} alt="" />
-                  ) : (
-                    <span className="vocab-cell-empty" aria-hidden />
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="vocab-table-words">
-              {slice.map((entry, colIndex) => (
-                <div className="vocab-cell vocab-cell-word" key={`word-${rowIndex}-${colIndex}`}>
-                  {entry?.label ?? ''}
-                </div>
-              ))}
-            </div>
+    <div
+      className="vocab-table"
+      style={{ '--vocab-cols': cols, '--vocab-rows': rows } as CSSProperties}
+      aria-label="Mots à apprendre"
+    >
+      {cells.map((entry, index) => (
+        <div className="vocab-card" key={`card-${index}`}>
+          <div className="vocab-card-image">
+            {entry?.imageSrc ? (
+              <img src={entry.imageSrc} alt="" />
+            ) : (
+              <span className="vocab-card-empty" aria-hidden />
+            )}
           </div>
-        )
-      })}
+          <div className="vocab-card-word">{entry?.label ?? ''}</div>
+        </div>
+      ))}
     </div>
   )
 }
