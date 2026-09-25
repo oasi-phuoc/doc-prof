@@ -1,4 +1,5 @@
 /** Lexique Voc : mots sélectionnés + métadonnées d’exercices. */
+import { FR_DESCRIPTION_VOCAB } from './vocab-banks/fr-description'
 import { FR_PRESENTER_VOCAB } from './vocab-banks/fr-presenter'
 import type { Difficulty } from '@/math/types'
 
@@ -24,6 +25,7 @@ export type VocabLearnWord = Pick<VocabWordEntry, 'id' | 'label' | 'imageSrc'>
 
 const VOCAB_BY_TOPIC: Record<string, VocabWordEntry[]> = {
   'fr-presenter': FR_PRESENTER_VOCAB,
+  'fr-description': FR_DESCRIPTION_VOCAB,
 }
 
 export const VOCAB_EXERCISE_KINDS = [

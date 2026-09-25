@@ -9,6 +9,7 @@ export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
 export const topics: Topic[] = [
   { id: 'fr-presenter', label: 'Se présenter', domain: 'français' },
   { id: 'fr-famille', label: 'La famille', domain: 'français' },
+  { id: 'fr-description', label: 'La description', domain: 'français' },
   { id: 'fr-logement', label: 'Le logement', domain: 'français' },
   { id: 'fr-achats', label: 'Les achats', domain: 'français' },
   { id: 'fr-vetements', label: 'Les vêtements', domain: 'français' },
@@ -369,6 +370,7 @@ for (const v of VOWEL_TOPICS) {
 const FRENCH_THEMES: Array<{ id: string; grammar: string; vocab: string }> = [
   { id: 'fr-presenter', grammar: 'être, avoir et s’appeler', vocab: 'salutations et identité' },
   { id: 'fr-famille', grammar: 'adjectifs possessifs', vocab: 'liens de parenté' },
+  { id: 'fr-description', grammar: 'accord des adjectifs de description', vocab: 'description physique' },
   { id: 'fr-logement', grammar: 'articles définis et indéfinis', vocab: 'pièces et logement' },
   { id: 'fr-achats', grammar: 'place de l’adjectif et quantité', vocab: 'courses et prix' },
   { id: 'fr-vetements', grammar: 'conditionnel de politesse', vocab: 'habits et tailles' },

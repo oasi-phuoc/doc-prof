@@ -191,6 +191,78 @@ const banks: Record<string, ThemeBank> = {
       { prompt: 'B : Non, ils ont ___ propre appartement.', answer: 'leur' },
     ],
   },
+  'fr-description': {
+    vocHoles: [
+      { prompt: 'Mon frère est très ___ : il mesure presque deux mètres.', answer: 'grand' },
+      { prompt: 'Elle a les cheveux ___ : ils touchent le dos.', answer: 'longs' },
+      { prompt: 'Il n’est pas gros, il est ___.', answer: 'mince' },
+      { prompt: 'Ma sœur est ___ : elle a quinze ans.', answer: 'jeune' },
+      { prompt: 'Il a les cheveux ___ , presque rouges.', answer: 'roux' },
+      { prompt: 'Sur la photo, elle est vraiment ___.', answer: 'belle' },
+    ],
+    vocChoices: [
+      { prompt: 'Qui a une taille élevée ?', options: ['grand', 'petit', 'court'], answer: 'grand' },
+      { prompt: 'Qui a les cheveux clairs, jaunes ?', options: ['blond', 'brun', 'chauve'], answer: 'blond' },
+      { prompt: 'Le contraire de mince :', options: ['gros', 'jeune', 'raide'], answer: 'gros' },
+      { prompt: 'Qui a beaucoup de force ?', options: ['fort', 'faible', 'pâle'], answer: 'fort' },
+    ],
+    vocIntrus: [
+      { prompt: 'Entourez l’intrus.', options: ['grand', 'petit', 'mince', 'bus'], answer: 'bus' },
+      { prompt: 'Entourez l’intrus.', options: ['blond', 'brun', 'roux', 'cuisine'], answer: 'cuisine' },
+      { prompt: 'Entourez l’intrus.', options: ['beau', 'laid', 'jeune', 'train'], answer: 'train' },
+    ],
+    gramHoles: [
+      { prompt: 'Ma sœur est ___ (grand).', answer: 'grande' },
+      { prompt: 'Ils sont ___ (fort).', answer: 'forts' },
+      { prompt: 'Cette fille est ___ (beau).', answer: 'belle' },
+      { prompt: 'Les cheveux sont ___ (long).', answer: 'longs' },
+      { prompt: 'Elle est ___ (roux).', answer: 'rousse' },
+      { prompt: 'Nos voisines sont ___ (jeune).', answer: 'jeunes' },
+    ],
+    gramConj: [
+      { prompt: 'Il ___ (être) grand et mince.', answer: 'est' },
+      { prompt: 'Elles ___ (avoir) les cheveux blonds.', answer: 'ont' },
+      { prompt: 'Nous ___ (être) sportifs.', answer: 'sommes' },
+      { prompt: 'Tu ___ (avoir) les yeux verts.', answer: 'as' },
+    ],
+    gramChoices: [
+      { prompt: 'Ma mère est ___.', options: ['grande', 'grand', 'grands'], answer: 'grande' },
+      { prompt: 'Ils sont ___.', options: ['forts', 'fort', 'forte'], answer: 'forts' },
+      { prompt: 'Cette femme est ___.', options: ['belle', 'beau', 'beaux'], answer: 'belle' },
+      { prompt: 'Les filles sont ___.', options: ['jeunes', 'jeune', 'jeun'], answer: 'jeunes' },
+    ],
+    oral: [
+      {
+        title: 'Décrire un camarade',
+        transcript:
+          'Lina : Tu peux décrire ton frère ?\nOmar : Oui. Il est grand et mince. Il a les cheveux bruns et courts.\nLina : Il est jeune ?\nOmar : Oui, il a dix-huit ans. Il est aussi très sportif.\nLina : Et les yeux ?\nOmar : Il a les yeux marron.',
+        questions: [
+          { prompt: 'Comment est le frère d’Omar ?', options: ['grand et mince', 'petit et gros', 'âgé'], answer: 'grand et mince' },
+          { prompt: 'Quels cheveux a-t-il ?', options: ['bruns et courts', 'blonds et longs', 'roux'], answer: 'bruns et courts' },
+          { prompt: 'Quel âge a-t-il ?', options: ['dix-huit ans', 'huit ans', 'cinquante ans'], answer: 'dix-huit ans' },
+          { prompt: 'De quelle couleur sont ses yeux ?', options: ['marron', 'bleus', 'verts'], answer: 'marron' },
+        ],
+      },
+    ],
+    written: [
+      {
+        title: 'Portrait de Nora',
+        text: 'Nora est une jeune femme. Elle est petite et mince. Elle a les cheveux longs et châtains. Elle n’est pas blonde. Sur la photo de classe, elle sourit : tout le monde dit qu’elle est belle. Son frère, lui, est grand et fort.',
+        questions: [
+          { prompt: 'Comment est Nora ?', options: ['petite et mince', 'grande et forte', 'âgée'], answer: 'petite et mince' },
+          { prompt: 'Quels cheveux a-t-elle ?', options: ['longs et châtains', 'courts et blonds', 'roux'], answer: 'longs et châtains' },
+          { prompt: 'Est-elle blonde ?', options: ['non', 'oui', 'on ne sait pas'], answer: 'non' },
+          { prompt: 'Comment est son frère ?', options: ['grand et fort', 'petit et faible', 'chauve'], answer: 'grand et fort' },
+        ],
+      },
+    ],
+    dialogue: [
+      { prompt: 'A : Il est comment, ton ami ?', answer: 'grand' },
+      { prompt: 'B : Il est grand et ___.', answer: 'mince' },
+      { prompt: 'A : Il a les cheveux ___ ?', answer: 'blonds' },
+      { prompt: 'B : Non, il est ___ .', answer: 'brun' },
+    ],
+  },
   'fr-logement': {
     vocHoles: [
       { prompt: 'On dort dans la ___.', answer: 'chambre' },
