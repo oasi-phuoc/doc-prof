@@ -1142,6 +1142,27 @@
 .exercise-item.layout-vocab-table .item-content{
   width:100%;flex:1;min-height:0;display:flex;flex-direction:column
 }
+.vocab-match{width:100%;display:flex;flex-direction:column;gap:10px}
+.vocab-match-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;align-items:start
+}
+.vocab-match-col{display:flex;flex-direction:column;gap:8px}
+.vocab-match-item{
+  display:flex;align-items:center;gap:8px;min-height:2.4em;
+  padding:4px 0;border-bottom:1px solid #d8dde6
+}
+.vocab-match-num{flex:0 0 1.6em;font-weight:700;color:var(--ink)}
+.vocab-match-text{flex:1;min-width:0;font-size:13px;line-height:1.35;text-align:justify}
+.vocab-match-img{
+  width:72px;height:54px;object-fit:contain;display:block;background:#fff;
+  border:1px solid #d8dde6
+}
+.vocab-write{width:100%}
+.vocab-answer-line{
+  display:block;width:auto;max-width:100%;
+  border-bottom-color:var(--purple)
+}
+.vocab-dictee-answer{margin:0;font-size:13px;line-height:1.4;text-align:justify;color:var(--ink)}
 .phrase-color-block,.phrase-order-block,.phrase-build-block,.phrase-write-block{
   width:100%;min-width:0;display:flex;flex-direction:column;gap:8px
 }

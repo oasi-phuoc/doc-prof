@@ -44,6 +44,70 @@ function VocabTable({ item }: { item: MathItem }) {
   )
 }
 
+function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const left = item.labels ?? []
+  const right = item.options ?? []
+  const pairs = item.vocabPairs ?? []
+  const byLeft = new Map(pairs.map((pair) => [pair.left, pair.right]))
+  const imageMode = item.vocabMatchMode === 'image'
+  return (
+    <div className="vocab-match" aria-label="Association">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div className="vocab-match-grid">
+        <div className="vocab-match-col">
+          {left.map((value, index) => (
+            <div className="vocab-match-item" key={`L-${index}`}>
+              <span className="vocab-match-num">{index + 1}.</span>
+              {imageMode ? (
+                <img className="vocab-match-img" src={value} alt="" />
+              ) : (
+                <span className="vocab-match-text">{value}</span>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="vocab-match-col">
+          {right.map((value, index) => (
+            <div className="vocab-match-item" key={`R-${index}`}>
+              <span className="vocab-match-num">{String.fromCharCode(65 + index)}.</span>
+              <span className="vocab-match-text">
+                {mode === 'answers'
+                  ? `${value}${
+                      [...byLeft.entries()].find(([, rightLabel]) => rightLabel === value)
+                        ? ` ← ${
+                            left.findIndex(
+                              (leftValue) => byLeft.get(leftValue) === value,
+                            ) + 1
+                          }`
+                        : ''
+                    }`
+                  : value}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const ch = Math.max(4, item.vocabLineCh ?? 12)
+  return (
+    <div className="vocab-write prompt-stack">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      {item.vocabDictee && show ? <p className="vocab-dictee-answer">{item.vocabDictee}</p> : null}
+      <span
+        className={`answer-line-field vocab-answer-line${show ? ' filled' : ''}`}
+        style={{ width: `${ch}ch`, maxWidth: '100%' }}
+      >
+        {show ? item.answer : '\u00a0'}
+      </span>
+    </div>
+  )
+}
+
 function DigitRow({
   digits,
   empty,
@@ -1207,7 +1271,10 @@ export function MathItemView({
   const isDraftPad = isProblem || isEquation || isGeoCalc
   const isStackedText = item.layout === 'text' && !isProblem
   const hideNumber =
-    item.layout === 'gattegno-chart' || item.layout === 'phrase-write' || item.layout === 'vocab-table'
+    item.layout === 'gattegno-chart' ||
+    item.layout === 'phrase-write' ||
+    item.layout === 'vocab-table' ||
+    item.layout === 'vocab-match'
   return (
     <div className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}`}>
       {isDraftPad && onToggleDraftGrid ? (
@@ -1241,6 +1308,8 @@ export function MathItemView({
         {item.layout === 'phrase-write' && <PhraseWriteBlock item={item} />}
         {item.layout === 'gattegno-chart' && <GattegnoChart mode={item.chartMode ?? 'labels'} />}
         {item.layout === 'vocab-table' && <VocabTable item={item} />}
+        {item.layout === 'vocab-match' && <VocabMatch item={item} mode={mode} />}
+        {item.layout === 'vocab-write' && <VocabWrite item={item} mode={mode} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>

@@ -58,6 +58,8 @@ export type Layout =
   | 'phrase-write'
   | 'gattegno-chart'
   | 'vocab-table'
+  | 'vocab-match'
+  | 'vocab-write'
 
 export type CoordShape =
   | 'point'
@@ -306,6 +308,16 @@ export type MathItem = {
   vocabEntries?: Array<{ id: string; label: string; imageSrc?: string }>
   vocabRows?: number
   vocabCols?: number
+  /** Association Voc : mode image ou texte. */
+  vocabMatchMode?: 'image' | 'text'
+  /** Paires correctes pour le corrigé (association). */
+  vocabPairs?: Array<{ left: string; right: string }>
+  /** Longueur du trait de réponse Voc (en caractères approximatifs). */
+  vocabLineCh?: number
+  /** Mot cible (phrase / dictée). */
+  vocabWriteHint?: string
+  /** Phrase lue à voix haute (dictée), affichée au corrigé. */
+  vocabDictee?: string
 }
 
 export type CompositeLabel = {
@@ -381,8 +393,10 @@ export type ExerciseBlock = {
   vocabRows?: number
   /** Mots à apprendre : colonnes du tableau. */
   vocabCols?: number
-  /** Ids des mots cochés pour le tableau « Mots à apprendre ». */
+  /** Ids des mots cochés pour le tableau « Mots à apprendre » et le pool Voc. */
   vocabSelected?: string[]
+  /** Longueur du trait de réponse (production écrite Voc), en caractères. */
+  vocabLineCh?: number
 }
 
 export type PageConfig = ExerciseBlock & {

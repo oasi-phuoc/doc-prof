@@ -1,7 +1,8 @@
 import { frenchBank, parseFrenchType, type FrChoice, type FrHole } from './francais-banks'
 import { pick, shuffle, type Rng } from './rng'
-import type { MathItem, WorksheetDocument } from './types'
+import type { Difficulty, MathItem, WorksheetDocument } from './types'
 import { resolveVocabEntries } from './vocab-learn'
+import { tryGenerateVocabBlock } from './vocab-generate'
 
 export type FrancaisBlockResult = {
   items: MathItem[]
@@ -13,6 +14,9 @@ export type FrancaisGenOptions = {
   vocabRows?: number
   vocabCols?: number
   vocabSelected?: string[]
+  vocabLineCh?: number
+  difficulty?: Difficulty
+  topic?: string
 }
 
 function hole(row: FrHole): MathItem {
@@ -64,6 +68,13 @@ export function tryGenerateFrancaisBlock(
     }
   }
 
+  const vocab = tryGenerateVocabBlock(typeId, parsed.topic, count, rng, {
+    vocabSelected: options?.vocabSelected,
+    vocabLineCh: options?.vocabLineCh,
+    difficulty: options?.difficulty,
+  })
+  if (vocab) return vocab
+
   const bank = frenchBank(parsed.topic)
   if (!bank) return null
 
@@ -76,7 +87,7 @@ export function tryGenerateFrancaisBlock(
   if (parsed.kind === 'intrus') {
     return { items: take(bank.vocIntrus, count, rng).map(choice) }
   }
-  if (parsed.kind === 'trous') {
+  if (parsed.kind === 'trous' && parsed.track === 'gram') {
     return { items: take(bank.gramHoles, count, rng).map(hole) }
   }
   if (parsed.kind === 'conjuguer') {

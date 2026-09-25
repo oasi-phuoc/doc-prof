@@ -41,7 +41,7 @@ import {
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { defaultVocabSelected, isVocabLearnType, vocabLearnWordsFor } from '@/math/vocab-learn'
+import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/math/vocab-learn'
 import {
   AXES_DEFAULT_COLS,
   AXES_DEFAULT_ROWS,
@@ -839,7 +839,7 @@ function ReperageAxesFields({
   )
 }
 
-function applyType(type: ExerciseType): Partial<ExerciseBlock> {
+function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBlock> {
   const isProblem = type.id.includes('problemes')
   const isEquation = type.id.startsWith('equations-')
   const isLongMul = type.id === 'multiplication-2chiffres'
@@ -856,6 +856,15 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
   const isFrenchCom = type.track === 'com'
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
   const isVocabLearn = isVocabLearnType(type.id)
+  const isVocabPool = isVocabPoolType(type.id)
+  const isVocabProd = isVocabProductionType(type.id)
+  const bankIds = new Set(vocabLearnWordsFor(type.topic).map((word) => word.id))
+  const preservedSelected =
+    prev?.topic === type.topic && prev.vocabSelected?.length
+      ? prev.vocabSelected.filter((id) => bankIds.has(id))
+      : []
+  const vocabSelected =
+    preservedSelected.length > 0 ? preservedSelected : defaultVocabSelected(type.topic, 3, 3)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -872,36 +881,42 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
             ? { count: 1 }
             : isVocabLearn
               ? { count: 1 }
-              : isPhrase
-                ? { count: 6 }
-                : isLectureDense
-                  ? { count: 4 }
-                  : isLecture
-                    ? { count: 6 }
-                    : isGeoCalc
-                      ? { count: 2 }
-                      : isFrenchCom
-                        ? { count: 4 }
-                        : isFrenchLang
-                          ? { count: 6 }
-                          : isFormes
-                            ? { count: 5 }
-                            : isCadrans
-                              ? { count: 6 }
-                              : isDroites || isConstruire
-                                ? { count: 5 }
-                                : {}),
-    ...(isVocabLearn
+              : isVocabPool
+                ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
+                : isPhrase
+                  ? { count: 6 }
+                  : isLectureDense
+                    ? { count: 4 }
+                    : isLecture
+                      ? { count: 6 }
+                      : isGeoCalc
+                        ? { count: 2 }
+                        : isFrenchCom
+                          ? { count: 4 }
+                          : isFrenchLang
+                            ? { count: 6 }
+                            : isFormes
+                              ? { count: 5 }
+                              : isCadrans
+                                ? { count: 6 }
+                                : isDroites || isConstruire
+                                  ? { count: 5 }
+                                  : {}),
+    ...(isVocabPool
       ? {
           columns: 1,
-          vocabRows: 3,
-          vocabCols: 3,
-          vocabSelected: defaultVocabSelected(type.topic, 3, 3),
+          vocabSelected,
+          vocabRows: isVocabLearn ? (prev?.vocabRows ?? 3) : undefined,
+          vocabCols: isVocabLearn ? (prev?.vocabCols ?? 3) : undefined,
+          vocabLineCh: isVocabProd
+            ? (prev?.vocabLineCh ?? (type.id.includes('phrase') || type.id.includes('dictee') ? 32 : 12))
+            : undefined,
         }
       : {
           vocabRows: undefined,
           vocabCols: undefined,
           vocabSelected: undefined,
+          vocabLineCh: undefined,
         }),
     ...(isFormes
       ? {
@@ -1137,12 +1152,22 @@ function GeneratorPage() {
   const isPhraseChart =
     activeBlock.topic === 'phrase-tableaux' || activeBlock.exerciseType.startsWith('phrase-tableau-')
   const isVocabLearn = isVocabLearnType(activeBlock.exerciseType)
-  const vocabLearnWords = isVocabLearn ? vocabLearnWordsFor(activeBlock.topic) : []
+  const isVocabPool = isVocabPoolType(activeBlock.exerciseType)
+  const isVocabProd = isVocabProductionType(activeBlock.exerciseType)
+  const vocabLearnWords = isVocabPool ? vocabLearnWordsFor(activeBlock.topic) : []
   const vocabSelectedIds =
     activeBlock.vocabSelected ??
-    (isVocabLearn
+    (isVocabPool
       ? defaultVocabSelected(activeBlock.topic, activeBlock.vocabRows ?? 3, activeBlock.vocabCols ?? 3)
       : [])
+  const vocabDifficultyOptions =
+    isVocabPool && !isVocabLearn
+      ? [
+          { value: 'facile' as const, label: 'A1 · Facile' },
+          { value: 'moyen' as const, label: 'A2 · Moyen' },
+          { value: 'avance' as const, label: 'B1 · Avancé' },
+        ]
+      : DIFFICULTY_OPTIONS
   const isPhraseDomain = activePage.domain === 'phrase'
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
   const isComposer = isReperageComposer(activeBlock.exerciseType)
@@ -1313,7 +1338,7 @@ function GeneratorPage() {
       currentTypes[0] ??
       firstTypeFor(activePage.domain, activeBlock.topic, activeBlock.track)
     if (!nextType) return
-    const fields = applyType(nextType)
+    const fields = applyType(nextType, activeBlock)
     const count = Math.min(fields.count ?? 4, 4)
     const newBlock: ExerciseBlock = {
       topic: nextType.topic,
@@ -1326,6 +1351,10 @@ function GeneratorPage() {
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,
+      vocabSelected: fields.vocabSelected,
+      vocabRows: fields.vocabRows,
+      vocabCols: fields.vocabCols,
+      vocabLineCh: fields.vocabLineCh,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -1369,7 +1398,7 @@ function GeneratorPage() {
 
   function changeTrack(track: FrenchTrack) {
     const type = typesForTopic(activeBlock.topic, track)[0] ?? firstTypeFor('français', activeBlock.topic, track)
-    updatePage({ track, ...applyType(type) })
+    updatePage({ track, ...applyType(type, activeBlock) })
   }
 
   function generate() {
@@ -1627,7 +1656,7 @@ function GeneratorPage() {
                     })
                     return
                   }
-                  updatePage(applyType(type))
+                  updatePage(applyType(type, activeBlock))
                 }}
               >
                 {typeChoices.map((type) => (
@@ -1644,7 +1673,7 @@ function GeneratorPage() {
                   value={activeBlock.difficulty ?? 'moyen'}
                   onChange={(value) => updatePage({ difficulty: value as Difficulty })}
                 >
-                  {DIFFICULTY_OPTIONS.map((opt) => (
+                  {vocabDifficultyOptions.map((opt) => (
                     <option value={opt.value} key={opt.value}>
                       {opt.label}
                     </option>
@@ -1716,8 +1745,10 @@ function GeneratorPage() {
               ) : null}
               </>
               )}
-              {isVocabLearn ? (
+              {isVocabPool ? (
                 <>
+                  {isVocabLearn ? (
+                    <>
                   <div className="mode-toggle-block">
                     <b>Lignes</b>
                     <div className="mode-toggle is-4" role="group" aria-label="Nombre de lignes">
@@ -1748,6 +1779,25 @@ function GeneratorPage() {
                       ))}
                     </div>
                   </div>
+                    </>
+                  ) : null}
+                  {isVocabProd ? (
+                    <label className="select-shell">
+                      <span>Longueur du trait</span>
+                      <input
+                        className="pill-input"
+                        type="number"
+                        min={4}
+                        max={48}
+                        value={activeBlock.vocabLineCh ?? 12}
+                        onChange={(event) =>
+                          updatePage({
+                            vocabLineCh: Math.max(4, Math.min(48, Number(event.target.value) || 12)),
+                          })
+                        }
+                      />
+                    </label>
+                  ) : null}
                   {vocabLearnWords.length > 0 ? (
                     <div className="quad-libre-block">
                       <b>Mots</b>
@@ -1864,7 +1914,7 @@ function GeneratorPage() {
                 ) : null}
               </label>
               )}
-              {isPhraseChart || isVocabLearn ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

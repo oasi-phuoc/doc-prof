@@ -1051,6 +1051,8 @@ function buildSingleBlock(
     vocabRows: config.vocabRows,
     vocabCols: config.vocabCols,
     vocabSelected: config.vocabSelected,
+    vocabLineCh: config.vocabLineCh,
+    difficulty: config.difficulty,
   })
   if (francais) {
     return {
