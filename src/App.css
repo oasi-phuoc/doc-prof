@@ -95,6 +95,7 @@
 .number-libre-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;align-items:end}
 .number-libre-fields .mode-toggle-block{grid-column:1 / -1}
 .quad-libre-block{display:flex;flex-direction:column;gap:10px}
+.quad-libre-block>b{font-size:12px}
 .quad-shape-list{display:flex;flex-wrap:wrap;gap:6px}
 .quad-shape-list button{
   border:1px solid #d8dde6;border-radius:999px;background:#fff;color:var(--muted);
@@ -920,6 +921,7 @@
 .sheet-instruction-main>b{font-weight:800}
 .sheet-instruction-main>p:not(.sheet-givens){display:block;margin:4px 0 0;text-align:justify}
 .mode-toggle.is-3{grid-template-columns:1fr 1fr 1fr}
+.mode-toggle.is-4{grid-template-columns:1fr 1fr 1fr 1fr}
 .exercise-block{margin:0 0 12px}
 .exercise-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 8px}
 .exercise-heading-main{flex:1;min-width:0}
@@ -1085,6 +1087,59 @@
   display:flex;flex-direction:column
 }
 .exercise-item.layout-gattegno-chart .item-content{
+  width:100%;flex:1;min-height:0;display:flex;flex-direction:column
+}
+.vocab-table{
+  width:100%;display:flex;flex-direction:column;gap:10px;box-sizing:border-box
+}
+.vocab-table-pair{display:flex;flex-direction:column;gap:0}
+.vocab-table-images,.vocab-table-words{
+  display:grid;grid-template-columns:repeat(var(--vocab-cols,3),minmax(0,1fr));
+  gap:0;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink)
+}
+.vocab-table-pair:first-child .vocab-table-images{border-top:1.5px solid var(--ink)}
+.vocab-table-words{border-bottom:1.5px solid var(--ink)}
+.vocab-cell{
+  border-right:1.5px solid var(--ink);box-sizing:border-box;min-width:0;
+  display:flex;align-items:center;justify-content:center;text-align:center
+}
+.vocab-cell:last-child{border-right:0}
+.vocab-cell-image{
+  aspect-ratio:1.15;padding:6px;background:#fff
+}
+.vocab-cell-image img{
+  width:100%;height:100%;object-fit:contain;display:block
+}
+.vocab-cell-empty{
+  display:block;width:100%;height:100%;min-height:48px
+}
+.vocab-cell-word{
+  min-height:1.7em;padding:4px 6px;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;line-height:1.25;color:var(--ink)
+}
+.vocab-word-list{display:flex;flex-wrap:wrap;gap:6px}
+.vocab-word-list label{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid #d8dde6;border-radius:999px;background:#fff;color:var(--muted);
+  padding:6px 10px 6px 8px;font-size:12px;font-weight:700;cursor:pointer
+}
+.vocab-word-list label.is-on{border-color:var(--purple);color:var(--purple);background:var(--lavender)}
+.vocab-word-list input{margin:0;accent-color:var(--purple)}
+.sheet-body:has(.layout-vocab-table)>.exercise-block{
+  flex:1 1 auto;min-height:0;margin:0;
+  display:flex;flex-direction:column
+}
+.sheet-body:has(.layout-vocab-table) .exercise-grid{
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:minmax(0,1fr);grid-auto-rows:minmax(0,1fr);
+  align-content:stretch
+}
+.exercise-item.layout-vocab-table{
+  padding:2px 0;height:100%;min-height:0;
+  align-self:stretch;flex-shrink:1;
+  display:flex;flex-direction:column
+}
+.exercise-item.layout-vocab-table .item-content{
   width:100%;flex:1;min-height:0;display:flex;flex-direction:column
 }
 .phrase-color-block,.phrase-order-block,.phrase-build-block,.phrase-write-block{

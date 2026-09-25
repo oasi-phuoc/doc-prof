@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, type CSSProperties } from 'react'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/math/phrase-banks'
 import { CompositeFigure } from './CompositeFigure'
@@ -6,6 +6,43 @@ import { CoordGrid, CoordShapeButton } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'
 import { GattegnoChart } from './GattegnoChart'
 import { GeometryFigure } from './GeometryFigure'
+
+function VocabTable({ item }: { item: MathItem }) {
+  const rows = Math.max(1, item.vocabRows ?? 3)
+  const cols = Math.max(1, item.vocabCols ?? 3)
+  const entries = item.vocabEntries ?? []
+  const cells = Array.from({ length: rows * cols }, (_, index) => entries[index] ?? null)
+
+  return (
+    <div className="vocab-table" style={{ '--vocab-cols': cols } as CSSProperties} aria-label="Mots à apprendre">
+      {Array.from({ length: rows }, (_, rowIndex) => {
+        const slice = cells.slice(rowIndex * cols, rowIndex * cols + cols)
+        return (
+          <div className="vocab-table-pair" key={`row-${rowIndex}`}>
+            <div className="vocab-table-images">
+              {slice.map((entry, colIndex) => (
+                <div className="vocab-cell vocab-cell-image" key={`img-${rowIndex}-${colIndex}`}>
+                  {entry?.imageSrc ? (
+                    <img src={entry.imageSrc} alt="" />
+                  ) : (
+                    <span className="vocab-cell-empty" aria-hidden />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="vocab-table-words">
+              {slice.map((entry, colIndex) => (
+                <div className="vocab-cell vocab-cell-word" key={`word-${rowIndex}-${colIndex}`}>
+                  {entry?.label ?? ''}
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 function DigitRow({
   digits,
@@ -1169,7 +1206,8 @@ export function MathItemView({
   const isGeoCalc = item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)
   const isDraftPad = isProblem || isEquation || isGeoCalc
   const isStackedText = item.layout === 'text' && !isProblem
-  const hideNumber = item.layout === 'gattegno-chart' || item.layout === 'phrase-write'
+  const hideNumber =
+    item.layout === 'gattegno-chart' || item.layout === 'phrase-write' || item.layout === 'vocab-table'
   return (
     <div className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}`}>
       {isDraftPad && onToggleDraftGrid ? (
@@ -1202,6 +1240,7 @@ export function MathItemView({
         {item.layout === 'phrase-build' && <PhraseBuildBlock item={item} mode={mode} />}
         {item.layout === 'phrase-write' && <PhraseWriteBlock item={item} />}
         {item.layout === 'gattegno-chart' && <GattegnoChart mode={item.chartMode ?? 'labels'} />}
+        {item.layout === 'vocab-table' && <VocabTable item={item} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>

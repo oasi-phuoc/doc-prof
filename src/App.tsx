@@ -41,6 +41,7 @@ import {
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
+import { defaultVocabSelected, isVocabLearnType, vocabLearnWordsFor } from '@/math/vocab-learn'
 import {
   AXES_DEFAULT_COLS,
   AXES_DEFAULT_ROWS,
@@ -854,6 +855,7 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
   const isGeoCalc = isDraftPadExercise(type.id) && !isProblem && !isEquation
   const isFrenchCom = type.track === 'com'
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
+  const isVocabLearn = isVocabLearnType(type.id)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -868,7 +870,9 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
           ? { count: 4 }
           : isPhraseChart
             ? { count: 1 }
-            : isPhrase
+            : isVocabLearn
+              ? { count: 1 }
+              : isPhrase
                 ? { count: 6 }
                 : isLectureDense
                   ? { count: 4 }
@@ -887,6 +891,18 @@ function applyType(type: ExerciseType): Partial<ExerciseBlock> {
                               : isDroites || isConstruire
                                 ? { count: 5 }
                                 : {}),
+    ...(isVocabLearn
+      ? {
+          columns: 1,
+          vocabRows: 3,
+          vocabCols: 3,
+          vocabSelected: defaultVocabSelected(type.topic, 3, 3),
+        }
+      : {
+          vocabRows: undefined,
+          vocabCols: undefined,
+          vocabSelected: undefined,
+        }),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -1120,6 +1136,13 @@ function GeneratorPage() {
   const isReperage = isReperagePage(activeBlock.exerciseType)
   const isPhraseChart =
     activeBlock.topic === 'phrase-tableaux' || activeBlock.exerciseType.startsWith('phrase-tableau-')
+  const isVocabLearn = isVocabLearnType(activeBlock.exerciseType)
+  const vocabLearnWords = isVocabLearn ? vocabLearnWordsFor(activeBlock.topic) : []
+  const vocabSelectedIds =
+    activeBlock.vocabSelected ??
+    (isVocabLearn
+      ? defaultVocabSelected(activeBlock.topic, activeBlock.vocabRows ?? 3, activeBlock.vocabCols ?? 3)
+      : [])
   const isPhraseDomain = activePage.domain === 'phrase'
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
   const isComposer = isReperageComposer(activeBlock.exerciseType)
@@ -1613,7 +1636,7 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {isReperage || isPhraseDomain ? null : (
+              {isReperage || isPhraseDomain || isVocabLearn ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -1693,6 +1716,73 @@ function GeneratorPage() {
               ) : null}
               </>
               )}
+              {isVocabLearn ? (
+                <>
+                  <div className="mode-toggle-block">
+                    <b>Lignes</b>
+                    <div className="mode-toggle is-4" role="group" aria-label="Nombre de lignes">
+                      {[1, 2, 3, 4].map((value) => (
+                        <button
+                          key={value}
+                          type="button"
+                          className={(activeBlock.vocabRows ?? 3) === value ? 'active' : ''}
+                          onClick={() => updatePage({ vocabRows: value })}
+                        >
+                          {value}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mode-toggle-block">
+                    <b>Colonnes</b>
+                    <div className="mode-toggle is-4" role="group" aria-label="Nombre de colonnes du tableau">
+                      {[1, 2, 3, 4].map((value) => (
+                        <button
+                          key={value}
+                          type="button"
+                          className={(activeBlock.vocabCols ?? 3) === value ? 'active' : ''}
+                          onClick={() => updatePage({ vocabCols: value })}
+                        >
+                          {value}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  {vocabLearnWords.length > 0 ? (
+                    <div className="quad-libre-block">
+                      <b>Mots</b>
+                      <div className="vocab-word-list" role="group" aria-label="Mots à afficher">
+                        {vocabLearnWords.map((word) => {
+                          const selected = vocabSelectedIds.includes(word.id)
+                          return (
+                            <label key={word.id} className={selected ? 'is-on' : ''}>
+                              <input
+                                type="checkbox"
+                                checked={selected}
+                                onChange={() => {
+                                  const next = selected
+                                    ? vocabSelectedIds.filter((id) => id !== word.id)
+                                    : [...vocabSelectedIds, word.id]
+                                  updatePage({
+                                    vocabSelected: next.length
+                                      ? next
+                                      : vocabLearnWords.slice(0, 1).map((item) => item.id),
+                                  })
+                                }}
+                              />
+                              {word.label}
+                            </label>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="questions-overflow-hint" role="status">
+                      Aucun mot n’est encore défini pour ce thème.
+                    </p>
+                  )}
+                </>
+              ) : null}
               {isQuadType ? (
                 <div className="quad-libre-block">
                   <div className="mode-toggle-block">
@@ -1745,7 +1835,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart ? null : (
+              {isPhraseChart || isVocabLearn ? null : (
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
@@ -1774,7 +1864,7 @@ function GeneratorPage() {
                 ) : null}
               </label>
               )}
-              {isPhraseChart ? null : (
+              {isPhraseChart || isVocabLearn ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

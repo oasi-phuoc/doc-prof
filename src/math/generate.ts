@@ -1047,7 +1047,11 @@ function buildSingleBlock(
       givens: algebra.givens,
     }
   }
-  const francais = tryGenerateFrancaisBlock(config.exerciseType, config.count, rng)
+  const francais = tryGenerateFrancaisBlock(config.exerciseType, config.count, rng, {
+    vocabRows: config.vocabRows,
+    vocabCols: config.vocabCols,
+    vocabSelected: config.vocabSelected,
+  })
   if (francais) {
     return {
       title: fallbackTitle,

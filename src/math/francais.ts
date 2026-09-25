@@ -1,11 +1,18 @@
 import { frenchBank, parseFrenchType, type FrChoice, type FrHole } from './francais-banks'
 import { pick, shuffle, type Rng } from './rng'
 import type { MathItem, WorksheetDocument } from './types'
+import { resolveVocabEntries } from './vocab-learn'
 
 export type FrancaisBlockResult = {
   items: MathItem[]
   instruction?: string
   document?: WorksheetDocument
+}
+
+export type FrancaisGenOptions = {
+  vocabRows?: number
+  vocabCols?: number
+  vocabSelected?: string[]
 }
 
 function hole(row: FrHole): MathItem {
@@ -24,9 +31,39 @@ function take<T>(list: T[], count: number, rng: Rng): T[] {
   return out
 }
 
-export function tryGenerateFrancaisBlock(typeId: string, count: number, rng: Rng): FrancaisBlockResult | null {
+function clampVocabDim(value: number | undefined, fallback: number, max: number): number {
+  if (value == null || !Number.isFinite(value)) return fallback
+  return Math.max(1, Math.min(max, Math.round(value)))
+}
+
+export function tryGenerateFrancaisBlock(
+  typeId: string,
+  count: number,
+  rng: Rng,
+  options?: FrancaisGenOptions,
+): FrancaisBlockResult | null {
   const parsed = parseFrenchType(typeId)
   if (!parsed) return null
+
+  if (parsed.kind === 'mots') {
+    const rows = clampVocabDim(options?.vocabRows, 3, 6)
+    const cols = clampVocabDim(options?.vocabCols, 3, 4)
+    const entries = resolveVocabEntries(parsed.topic, options?.vocabSelected, rows, cols)
+    return {
+      items: [
+        {
+          layout: 'vocab-table',
+          prompt: 'Mots à apprendre',
+          answer: entries.map((entry) => entry.label).join(', '),
+          vocabEntries: entries,
+          vocabRows: rows,
+          vocabCols: cols,
+        },
+      ],
+      instruction: 'Observez les images et apprenez les mots.',
+    }
+  }
+
   const bank = frenchBank(parsed.topic)
   if (!bank) return null
 

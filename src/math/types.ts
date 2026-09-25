@@ -57,6 +57,7 @@ export type Layout =
   | 'phrase-build'
   | 'phrase-write'
   | 'gattegno-chart'
+  | 'vocab-table'
 
 export type CoordShape =
   | 'point'
@@ -301,6 +302,10 @@ export type MathItem = {
   writeLines?: number
   /** Variante du tableau Gattegno. */
   chartMode?: 'labels' | 'words' | 'outline'
+  /** Tableau de mots à apprendre (image + libellé). */
+  vocabEntries?: Array<{ id: string; label: string; imageSrc?: string }>
+  vocabRows?: number
+  vocabCols?: number
 }
 
 export type CompositeLabel = {
@@ -372,6 +377,12 @@ export type ExerciseBlock = {
   /** Choix des quadrilatères (sinon tirage au hasard parmi toutes les formes). */
   quadLibre?: boolean
   quadShapes?: Figure[]
+  /** Mots à apprendre : lignes du tableau (chaque ligne = images + mots). */
+  vocabRows?: number
+  /** Mots à apprendre : colonnes du tableau. */
+  vocabCols?: number
+  /** Ids des mots cochés pour le tableau « Mots à apprendre ». */
+  vocabSelected?: string[]
 }
 
 export type PageConfig = ExerciseBlock & {

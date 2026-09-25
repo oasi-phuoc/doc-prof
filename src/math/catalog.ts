@@ -390,6 +390,14 @@ const FRENCH_KINDS: Array<{
   visual: ExerciseType['visual']
 }> = [
   {
+    suffix: 'voc-mots',
+    track: 'voc',
+    label: 'Mots à apprendre',
+    description: (theme) => `Tableau image + mot pour mémoriser le lexique (${theme.vocab}).`,
+    instruction: 'Observez les images et apprenez les mots.',
+    visual: 'texte',
+  },
+  {
     suffix: 'voc-completer',
     track: 'voc',
     label: 'Compléter',
