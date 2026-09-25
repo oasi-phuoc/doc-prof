@@ -252,6 +252,71 @@ function copyScenes() {
   }
 }
 
+/** Transcriptions CO / expression → classement audio par thème (voir remap-audio-themes.mjs). */
+function loadAudioTranscripts() {
+  const map = new Map()
+  const comm = join(SRC, 'lib/curriculum/content/communication')
+  const put = (stem, text) => {
+    if (!stem || !text?.trim()) return
+    const key = String(stem).replace(/\.mp3$/i, '')
+    const prev = map.get(key)
+    if (!prev || text.length > prev.length) map.set(key, text.trim())
+  }
+  for (const file of [
+    'co-transcripts-scolaire-base.json',
+    'co-transcripts-scolaire-moyen.json',
+    'co-transcripts-scolaire-avance.json',
+  ]) {
+    const path = join(comm, file)
+    if (!existsSync(path)) continue
+    for (const [stem, text] of Object.entries(JSON.parse(readFileSync(path, 'utf8')))) put(stem, text)
+  }
+  for (const name of ['co-audio.ts', 'co-audio-avance.ts', 'co-audio-avance-conv-extra.ts']) {
+    const path = join(comm, name)
+    if (!existsSync(path)) continue
+    const src = readFileSync(path, 'utf8')
+    const re =
+      /item\(\s*"(?:base|moyen|avance)"\s*,\s*"[^"]+"\s*,\s*"[^"]+"\s*,\s*"([^"]+\.mp3)"\s*,\s*"((?:\\.|[^"\\])*)"\s*\)/g
+    let m
+    while ((m = re.exec(src))) put(m[1], m[2].replace(/\\n/g, '\n').replace(/\\"/g, '"'))
+  }
+  for (const name of ['co-audio-avance.ts', 'co-audio-avance-conv-extra.ts', 'co-audio-avance-radio.ts']) {
+    const path = join(comm, name)
+    if (!existsSync(path)) continue
+    const src = readFileSync(path, 'utf8')
+    const re = /(?:export )?const (CONV|RADIO)_(\d+)\s*=\s*`([^`]*)`/g
+    let m
+    while ((m = re.exec(src))) {
+      const prefix = m[1] === 'CONV' ? 'conversation' : 'radio'
+      put(`${prefix}-${m[2]}`, m[3])
+    }
+  }
+  if (existsSync(comm)) {
+    for (const name of readdirSync(comm)) {
+      if (!/^express-.*-listening\.ts$/.test(name)) continue
+      const src = readFileSync(join(comm, name), 'utf8')
+      const blocks = new Map()
+      const trRe = /const TRANSCRIPT_(\d+)\s*=\s*`([^`]*)`/g
+      let m
+      while ((m = trRe.exec(src))) blocks.set(m[1], m[2])
+      const useRe =
+        /audioSrc:\s*A([12])\(\s*"(\d+)"\s*\)[\s\S]{0,200}?transcript:\s*TRANSCRIPT_(\d+)/g
+      while ((m = useRe.exec(src))) {
+        const text = blocks.get(m[3])
+        if (text) put(m[2].padStart(3, '0'), text)
+      }
+      for (const [num, text] of blocks) put(num.padStart(3, '0'), text)
+      const inlineRe =
+        /audioSrc:\s*A([12])\(\s*"(\d+)"\s*\)[\s\S]{0,400}?transcript:\s*`([^`]*)`/g
+      while ((m = inlineRe.exec(src))) put(m[2].padStart(3, '0'), m[3])
+      const buildRe =
+        /buildListeningAudio\(\{\s*id:\s*"[^"]+"\s*,\s*level:\s*"(A1|A2)"\s*,\s*num:\s*(\d+)\s*,\s*transcript:\s*`([^`]*)`/g
+      while ((m = buildRe.exec(src))) put(String(m[2]).padStart(3, '0'), m[3])
+    }
+  }
+  return map
+}
+
 function copyComprehension() {
   const jobs = [
     { from: 'public/assets/expression/co/base', level: 'facile-a1' },
@@ -264,11 +329,16 @@ function copyComprehension() {
     { from: 'public/assets/expression/images/ce', level: 'facile-a1' },
     { from: 'public/assets/expression/images/comp', level: 'moyen-a2' },
   ]
+  const transcripts = loadAudioTranscripts()
   for (const job of jobs) {
     for (const file of walk(join(SRC, job.from))) {
       if (isAudio(file)) {
-        copyTo(file, join(DEST, 'audio/comprehension', job.level, basename(file)))
-        tally(`audio/${job.level}`)
+        const stem = basename(file, extname(file))
+        const text = transcripts.get(stem) ?? stem.replace(/[-_]+/g, ' ')
+        const { theme } = scoreText(text)
+        const destName = `${job.level}__${basename(file)}`
+        copyTo(file, join(DEST, 'audio/comprehension', theme, destName))
+        tally(`audio/${theme}`)
       } else if (isImage(file)) {
         copyTo(file, join(DEST, 'images/comprehension', job.level, basename(file)))
         tally(`comprehension/${job.level}`)
