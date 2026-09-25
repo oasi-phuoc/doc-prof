@@ -1237,6 +1237,14 @@ function GeneratorPage() {
       : isReperage
         ? COORD_LETTER_MAX
         : 30
+  const activeSheetBlock = worksheets[pageIndex]?.blocks[safeBlockIndex]
+  const bankQuestionCap = activeSheetBlock?.bankQuestionCap
+  const bankOverflow =
+    Boolean(bankQuestionCap != null) &&
+    (isOralComprehensionExercise(activeBlock.exerciseType) ||
+      activeBlock.exerciseType.includes('-com-ecrite')) &&
+    activeBlock.count > (bankQuestionCap ?? 0)
+  const questionsInputOverflow = questionsOverflow || bankOverflow
   const isQuadType = isQuadExercise(activeBlock.exerciseType)
   const isNumberLibreDomain = activePage.domain === 'algèbre' || activePage.domain === 'géométrie'
   const quadPool = activeBlock.exerciseType.startsWith('volumes-')
@@ -1948,13 +1956,15 @@ function GeneratorPage() {
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
-                  className={`pill-input${questionsOverflow ? ' is-overflow' : ''}`}
+                  className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
                   aria-label="Nombre de questions"
-                  aria-invalid={questionsOverflow}
+                  aria-invalid={questionsInputOverflow}
                   title={
-                    questionsOverflow
-                      ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
-                      : undefined
+                    bankOverflow
+                      ? `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
+                      : questionsOverflow
+                        ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
+                        : undefined
                   }
                   type="number"
                   min={1}
@@ -1966,7 +1976,13 @@ function GeneratorPage() {
                     })
                   }
                 />
-                {questionsOverflow ? (
+                {bankOverflow ? (
+                  <p className="questions-overflow-hint" role="status">
+                    La banque ne contient que {bankQuestionCap} question
+                    {(bankQuestionCap ?? 0) > 1 ? 's' : ''} pour cet enregistrement. Réduisez le
+                    nombre ou générez une nouvelle fiche.
+                  </p>
+                ) : questionsOverflow ? (
                   <p className="questions-overflow-hint" role="status">
                     Les questions suivantes dépassent de la fiche. Réduisez le nombre ou ajoutez une page.
                   </p>

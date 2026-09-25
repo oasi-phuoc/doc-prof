@@ -15,6 +15,8 @@ export type FrancaisBlockResult = {
   items: MathItem[]
   instruction?: string
   document?: WorksheetDocument
+  /** Taille de la banque de questions du document tiré (CO / CE). */
+  bankQuestionCap?: number
 }
 
 export type FrancaisGenOptions = {
@@ -53,6 +55,11 @@ function take<T>(list: T[], count: number, rng: Rng): T[] {
   const out: T[] = []
   for (let i = 0; i < count; i++) out.push(mixed[i % mixed.length]!)
   return out
+}
+
+function takeUnique<T>(list: T[], count: number, rng: Rng): T[] {
+  if (list.length === 0 || count <= 0) return []
+  return shuffle(rng, list).slice(0, Math.min(count, list.length))
 }
 
 function clampVocabDim(value: number | undefined, fallback: number, max: number): number {
@@ -121,7 +128,8 @@ export function tryGenerateFrancaisBlock(
     const pool = oralDocsFor(parsed.topic, level)
     if (pool.length > 0) {
       const doc = pick(rng, pool)
-      const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)
+      const bankCap = doc.questions.length
+      const questions = takeUnique(doc.questions, count, rng)
       return {
         items: questions.map(oralChoice),
         instruction: 'Écoutez l’enregistrement. Répondez aux questions (QCM).',
@@ -131,15 +139,15 @@ export function tryGenerateFrancaisBlock(
           text: doc.transcript,
           audioSrc: doc.audioSrc,
         },
+        bankQuestionCap: bankCap,
       }
     }
     if (bank.oral.length === 0) return null
     const doc = pick(rng, bank.oral)
-    const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)
+    const bankCap = doc.questions.length
+    const questions = takeUnique(doc.questions, count, rng)
     return {
-      items: questions.map((q) =>
-        oralChoice({ ...q, imagesAvailable: false }),
-      ),
+      items: questions.map((q) => oralChoice({ ...q, imagesAvailable: false })),
       instruction: 'Écoutez l’enregistrement. Répondez aux questions (QCM).',
       document: {
         kind: 'oral',
@@ -147,13 +155,15 @@ export function tryGenerateFrancaisBlock(
         text: doc.transcript,
         audioSrc: doc.audioSrc,
       },
+      bankQuestionCap: bankCap,
     }
   }
   if (parsed.kind === 'ecrite') {
     const level = writtenLevelFromDifficulty(options?.difficulty)
     const pool = writtenDocsFor(parsed.topic, level)
     const doc = pick(rng, pool)
-    const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)
+    const bankCap = doc.questions.length
+    const questions = takeUnique(doc.questions, count, rng)
     return {
       items: questions.map(choice),
       instruction: 'Lisez le texte. Répondez aux questions.',
@@ -162,6 +172,7 @@ export function tryGenerateFrancaisBlock(
         title: doc.title,
         text: doc.text,
       },
+      bankQuestionCap: bankCap,
     }
   }
   if (parsed.kind === 'dialogue') {

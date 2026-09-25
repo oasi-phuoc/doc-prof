@@ -998,6 +998,7 @@ function buildSingleBlock(
   items: MathItem[]
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
+  bankQuestionCap?: number
 } {
   const rng = createRng(seed)
   const topic = topicById[config.topic]
@@ -1060,6 +1061,7 @@ function buildSingleBlock(
       instruction: francais.instruction ?? type?.instruction ?? 'Complétez.',
       items: francais.items,
       document: francais.document,
+      bankQuestionCap: francais.bankQuestionCap,
     }
   }
   return {
@@ -1092,6 +1094,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
       oralAnswerModes: block.oralAnswerModes,
+      bankQuestionCap: result.bankQuestionCap,
     }
   })
   const first = built[0]

@@ -433,6 +433,8 @@ export type WorksheetBlock = {
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
+  /** Nombre max de questions distinctes dans la banque du document tiré (CO/CE). */
+  bankQuestionCap?: number
 }
 
 export type WorksheetPage = PageConfig & {

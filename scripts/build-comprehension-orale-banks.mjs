@@ -403,21 +403,33 @@ function shuffleDeterministic(arr, seed) {
   return a
 }
 
-function generateQuestionsFromTranscript(transcript, stem) {
+function generateQuestionsFromTranscript(transcript, stem, target = 10, excludePrompts = new Set()) {
   const text = transcript.replace(/\s+/g, ' ').trim()
   const questions = []
-  const seenPrompts = new Set()
+  const seenPrompts = new Set([...excludePrompts].map(norm))
 
   const addQ = (prompt, answer, distractors) => {
+    if (questions.length >= target) return false
     const p = ensureInterrogative(prompt)
-    if (seenPrompts.has(norm(p))) return
+    const key = norm(p)
+    if (seenPrompts.has(key)) return false
+    const cleanAnswer = String(answer).trim()
+    if (!cleanAnswer) return false
     const opts = shuffleDeterministic(
-      [answer, ...distractors.filter((d) => norm(d) !== norm(answer))].slice(0, 3),
-      stem + p,
+      [cleanAnswer, ...distractors.filter((d) => norm(d) !== norm(cleanAnswer) && String(d).trim())].slice(
+        0,
+        3,
+      ),
+      stem + p + String(questions.length),
     )
-    while (opts.length < 3) opts.push(DISTRACTORS.generic[opts.length] ?? 'demain')
-    questions.push({ prompt: p, options: opts.slice(0, 3), answer })
-    seenPrompts.add(norm(p))
+    while (opts.length < 3) {
+      const pad = DISTRACTORS.generic[(opts.length + questions.length) % DISTRACTORS.generic.length]
+      if (!opts.includes(pad)) opts.push(pad)
+      else opts.push(`option ${opts.length + 1}`)
+    }
+    questions.push({ prompt: p, options: opts.slice(0, 3), answer: cleanAnswer })
+    seenPrompts.add(key)
+    return true
   }
 
   const names = []
@@ -426,89 +438,199 @@ function generateQuestionsFromTranscript(transcript, stem) {
   let m
   while ((m = nameRe.exec(transcript))) {
     const n = m[1]
-    if (!['Bonjour', 'Merci', 'Oui', 'Non', 'Alors', 'Donc', 'Exercice', 'Regarde', 'Homme', 'Femme'].includes(n)) {
+    if (
+      !['Bonjour', 'Merci', 'Oui', 'Non', 'Alors', 'Donc', 'Exercice', 'Regarde', 'Homme', 'Femme', 'Madame', 'Monsieur'].includes(
+        n,
+      )
+    ) {
       if (!names.includes(n)) names.push(n)
     }
   }
 
-  const ageM = /(?:j’ai|j'ai|il a|elle a|tu as)\s+(\d{1,2})\s*ans/i.exec(text)
+  const ageM = /(?:j’ai|j'ai|il a|elle a|tu as|j’ai)\s+(\d{1,2})\s*ans/i.exec(text)
   if (ageM) {
     const ans = `${ageM[1]} ans`
     addQ(names[0] ? `Quel âge a ${names[0]} ?` : 'Quel âge est mentionné ?', ans, DISTRACTORS.ages)
   }
 
-  const placeM =
-    /(?:habite(?:\s+à)?|viens? de|vient de)\s+([A-ZÉÈÊÀÂÔÙÛÎÏÇ][a-zéèêàâôùûîïç-]+)/.exec(transcript) ||
-    /\bà\s+(Genève|Sion|Lausanne|Martigny|Sierre|Fribourg|Berne|Zurich|Neuchâtel|Bâle|Paris)\b/i.exec(transcript)
-  if (placeM) {
-    const city = placeM[1]
-    const nice = city.match(/^à /i) ? city : `à ${city}`
-    addQ(names[0] ? `Où habite ${names[0]} ?` : 'Où se passe la scène ?', nice, DISTRACTORS.places)
-  }
+  const placeMatches = [
+    ...transcript.matchAll(
+      /(?:habite(?:\s+à)?|viens? de|vient de|habite à)\s+([A-ZÉÈÊÀÂÔÙÛÎÏÇ][a-zéèêàâôùûîïç-]+)/g,
+    ),
+    ...transcript.matchAll(
+      /\bà\s+(Genève|Sion|Lausanne|Martigny|Sierre|Fribourg|Berne|Zurich|Neuchâtel|Bâle|Paris|Vevey|Montreux)\b/gi,
+    ),
+  ]
+  placeMatches.slice(0, 2).forEach((pm, idx) => {
+    const city = pm[1]
+    const nice = /^à /i.test(city) ? city : `à ${city}`
+    addQ(
+      idx === 0
+        ? names[0]
+          ? `Où habite ${names[0]} ?`
+          : 'Où se passe la scène ?'
+        : 'Quelle autre ville est citée ?',
+      nice,
+      DISTRACTORS.places,
+    )
+  })
 
-  const timeM = /(?:à\s+)?(\d{1,2})\s*h(?:eures?)?(?:\s*(\d{2}))?/i.exec(text)
-  if (timeM) {
-    const ans = timeM[2] ? `à ${timeM[1]} h ${timeM[2]}` : `à ${timeM[1]} heures`
-    addQ('À quelle heure a lieu l’événement ?', ans, DISTRACTORS.times)
-  }
+  const times = [...text.matchAll(/(?:à\s+)?(\d{1,2})\s*h(?:eures?)?(?:\s*(\d{2}))?/gi)]
+  times.slice(0, 2).forEach((tm, idx) => {
+    const ans = tm[2] ? `à ${tm[1]} h ${tm[2]}` : `à ${tm[1]} heures`
+    addQ(
+      idx === 0 ? 'À quelle heure a lieu l’événement ?' : 'Quelle autre heure est indiquée ?',
+      ans,
+      DISTRACTORS.times,
+    )
+  })
 
-  const dayM = /\b(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\b/i.exec(text)
-  if (dayM) {
-    addQ('Quel jour est mentionné ?', dayM[1].toLowerCase(), DISTRACTORS.days)
-  }
+  const days = [...text.matchAll(/\b(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\b/gi)]
+  days.slice(0, 2).forEach((dm, idx) => {
+    addQ(
+      idx === 0 ? 'Quel jour est mentionné ?' : 'Quel autre jour est cité ?',
+      dm[1].toLowerCase(),
+      DISTRACTORS.days,
+    )
+  })
 
   if (names.length >= 1) {
-    const ans = names[0]
-    const distract = [
+    addQ('Qui est mentionné dans l’enregistrement ?', names[0], [
       ...names.slice(1),
-      ...DISTRACTORS.people.filter((p) => p !== ans),
-    ].slice(0, 2)
-    addQ('Qui est mentionné dans l’enregistrement ?', ans, distract)
+      ...DISTRACTORS.people,
+    ])
+  }
+  if (names.length >= 2) {
+    addQ(`Qui parle avec ${names[0]} ?`, names[1], [names[2], ...DISTRACTORS.people].filter(Boolean))
   }
 
-  const activityM =
-    /\b(cinéma|restaurant|piscine|bibliothèque|parc|musée|école|magasin|hôpital|gare|marché|mariage|photo|appartement|studio)\b/i.exec(
-      text,
+  const activityMatches = [
+    ...text.matchAll(
+      /\b(cinéma|restaurant|piscine|bibliothèque|parc|musée|école|magasin|hôpital|gare|marché|mariage|photo|appartement|studio|train|bus|tram|métro|pharmacie|boulangerie|concert|fête)\b/gi,
+    ),
+  ]
+  activityMatches.slice(0, 3).forEach((am, idx) => {
+    const ans = am[1].toLowerCase()
+    addQ(
+      idx === 0 ? 'De quel lieu ou objet parle-t-on ?' : `Quel autre élément est cité (${idx + 1}) ?`,
+      ans,
+      ['football', 'cuisine', 'ordinateur', 'plage', 'théâtre'].filter((x) => x !== ans),
     )
-  if (activityM) {
-    const ans = activityM[1].toLowerCase()
-    addQ('De quel lieu ou objet parle-t-on ?', ans, [
-      'football',
-      'cuisine',
-      'ordinateur',
-      'train',
-    ].filter((x) => x !== ans))
+  })
+
+  const priceM = /(\d+[.,]?\d*)\s*(euros?|francs?|CHF|€)/i.exec(text)
+  if (priceM) {
+    const ans = `${priceM[1].replace('.', ',')} ${priceM[2]}`
+    addQ('Quel prix est annoncé ?', ans, ['10 euros', '25 francs', '50 euros'])
   }
 
-  // Fact sentences as « Que dit X ? »
+  const numberM = /\b(\d{1,3})\b(?:\s+(personnes|enfants|chambres|minutes|jours|ans))?/i.exec(text)
+  if (numberM && numberM[2]) {
+    const ans = `${numberM[1]} ${numberM[2]}`
+    addQ(`Combien de ${numberM[2]} sont mentionnés ?`, ans, [
+      `2 ${numberM[2]}`,
+      `5 ${numberM[2]}`,
+      `10 ${numberM[2]}`,
+    ])
+  }
+
+  const yesNoFacts = [
+    [/animaux?\s+(non|pas)\s+accept/i, 'Les animaux sont-ils acceptés ?', 'Non', ['Oui', 'On ne sait pas']],
+    [/ouvert/i, 'Le lieu est-il ouvert ?', 'Oui', ['Non', 'On ne sait pas']],
+    [/fermé/i, 'Le lieu est-il fermé ?', 'Oui', ['Non', 'Seulement le dimanche']],
+    [/gratuit/i, 'Est-ce gratuit ?', 'Oui', ['Non', 'On ne sait pas']],
+  ]
+  for (const [re, prompt, ans, distract] of yesNoFacts) {
+    if (re.test(text)) addQ(prompt, ans, distract)
+  }
+
+  // Phrases du dialogue → questions « Que dit… / Qu’apprend-on… »
   const lines = transcript
-    .split(/\n|—|- /)
-    .map((l) => l.replace(/^[\s\d.]+/, '').trim())
-    .filter((l) => l.length > 20 && l.length < 120)
+    .split(/\n|—/)
+    .map((l) => l.replace(/^[\s\-–\d.]+/, '').trim())
+    .filter((l) => l.length > 18 && l.length < 140)
+  let lineIdx = 0
   for (const line of lines) {
-    if (questions.length >= 4) break
+    if (questions.length >= target) break
     const speaker = /^([A-ZÉÈÊÀÂÔÙÛÎÏÇ][a-zéèêàâôùûîïç-]{2,})\s*[:：]/.exec(line)
-    const content = line.replace(/^[^:]+:\s*/, '').trim()
-    if (content.length < 12) continue
-    const short = content.slice(0, 48).replace(/\s+\S*$/, '')
-    const wrong1 = 'On ne parle pas de cela.'
-    const wrong2 = 'Le contraire est dit.'
+    const content = line.replace(/^[^:]+:\s*/, '').replace(/^-+\s*/, '').trim()
+    if (content.length < 14) continue
+    const short = content.slice(0, 56).replace(/\s+\S*$/, '')
+    const wrongs = [
+      lines[(lineIdx + 1) % lines.length]?.replace(/^[^:]+:\s*/, '').slice(0, 40) || 'Autre chose est dit.',
+      lines[(lineIdx + 2) % lines.length]?.replace(/^[^:]+:\s*/, '').slice(0, 40) || 'Ce n’est pas dans l’audio.',
+    ]
     addQ(
-      speaker ? `Que dit ${speaker[1]} ?` : 'Que dit l’enregistrement ?',
+      speaker
+        ? `Que dit ${speaker[1]} ?`
+        : `Qu’apprend-on dans le passage ${lineIdx + 1} ?`,
       short,
-      [wrong1, wrong2],
+      wrongs,
     )
+    lineIdx++
   }
 
-  while (questions.length < 3) {
+  // Compléments à partir de mots saillants du transcript (pas de gabarit méta)
+  const tokens = text
+    .split(/\s+/)
+    .map((w) => w.replace(/[^\p{L}\p{N}-]/gu, ''))
+    .filter((w) => w.length >= 5)
+  const salient = [...new Set(tokens.map((w) => w.toLowerCase()))].filter(
+    (w) =>
+      !/^(bonjour|merci|alors|après|avant|parce|comme|quand|comme|entre|selon|toute|toutes|leurs|notre|votre|cette|ces|pour|dans|avec|sans|plus|moins|très|aussi|donc|mais|être|avoir|fait|faites|être)$/i.test(
+        w,
+      ),
+  )
+  for (let i = 0; i < salient.length && questions.length < target; i++) {
+    const word = salient[i]
+    if (!word) continue
+    const distract = [
+      salient[(i + 3) % Math.max(salient.length, 1)] || 'voyage',
+      salient[(i + 5) % Math.max(salient.length, 1)] || 'musique',
+      'ordinateur',
+    ].filter((d) => norm(d) !== norm(word))
+    addQ(`Quel mot important entend-on à propos de « ${word.slice(0, 18)} » ?`, word, distract.slice(0, 2))
+  }
+
+  // Derniers secours contextualisés par extrait (toujours ancrés au texte)
+  let guard = 0
+  while (questions.length < target && guard < 12) {
+    guard++
+    const snippet = text.slice(guard * 25, guard * 25 + 40).trim() || text.slice(0, 40)
+    const ans = snippet.split(/\s+/).slice(0, 4).join(' ') || 'le message'
     addQ(
-      `Quel est le thème de l’écoute ${questions.length + 1} ?`,
-      'le message entendu',
-      ['un match de foot', 'une recette de cuisine'],
+      `Que retient-on de cet extrait : « ${snippet.slice(0, 28)}… » ?`,
+      ans,
+      ['un silence total', 'une chanson uniquement', 'rien de précis'],
     )
   }
 
-  return questions.slice(0, 5)
+  return questions.slice(0, target)
+}
+
+function dedupeQuestions(list) {
+  const out = []
+  const seen = new Set()
+  for (const q of list) {
+    const key = norm(q.prompt)
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push(q)
+  }
+  return out
+}
+
+function ensureTenQuestions(baseQuestions, transcript, stem) {
+  const base = dedupeQuestions(baseQuestions).map((q) => ({
+    prompt: ensureInterrogative(q.prompt),
+    options: q.options.slice(0, 3),
+    answer: q.answer,
+    imgLabels: q.imgLabels,
+  }))
+  if (base.length >= 10) return base.slice(0, 10)
+  const exclude = new Set(base.map((q) => q.prompt))
+  const generated = generateQuestionsFromTranscript(transcript, stem, 10 - base.length, exclude)
+  return dedupeQuestions([...base, ...generated]).slice(0, 10)
 }
 
 function titleFromStem(stem, transcript) {
@@ -560,18 +682,13 @@ function main() {
     let questions = getPoolForStem(stem)
     let source = 'soutien'
     if (!questions?.length) {
-      questions = generateQuestionsFromTranscript(transcript, stem)
+      questions = []
       source = 'generated'
       generated++
     } else {
       withPool++
-      questions = questions.map((q) => ({
-        prompt: ensureInterrogative(q.prompt),
-        options: q.options.slice(0, 3),
-        answer: q.answer,
-        imgLabels: q.imgLabels,
-      }))
     }
+    questions = ensureTenQuestions(questions, transcript, stem)
 
     const enriched = questions.map((q) => {
       const labels = q.imgLabels?.length === 3 ? q.imgLabels : q.options
