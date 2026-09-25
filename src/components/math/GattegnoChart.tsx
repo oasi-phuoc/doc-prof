@@ -4,7 +4,7 @@ import {
   CHART_WORD_SAMPLES,
   PHRASE_COLORS,
   PHRASE_CATEGORY_LABELS,
-} from '@/math/phrase-banks'
+} from '@/francais/phrase-banks'
 
 type ChartMode = 'labels' | 'words' | 'outline'
 

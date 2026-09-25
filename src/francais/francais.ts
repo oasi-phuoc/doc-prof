@@ -1,6 +1,6 @@
 import { frenchBank, parseFrenchType, type FrChoice, type FrHole } from './francais-banks'
-import { pick, shuffle, type Rng } from './rng'
-import type { Difficulty, MathItem, WorksheetDocument } from './types'
+import { pick, shuffle, type Rng } from '@/math/rng'
+import type { Difficulty, MathItem, WorksheetDocument } from '@/math/types'
 import { resolveVocabEntries } from './vocab-learn'
 import { tryGenerateVocabBlock } from './vocab-generate'
 

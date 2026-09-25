@@ -1,5 +1,5 @@
-import { int, pick, shuffle, type Rng } from './rng'
-import type { Difficulty, MathItem } from './types'
+import { int, pick, shuffle, type Rng } from '@/math/rng'
+import type { Difficulty, MathItem } from '@/math/types'
 import {
   parseVocabKind,
   resolveVocabPool,

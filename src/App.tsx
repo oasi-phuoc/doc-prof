@@ -41,7 +41,7 @@ import {
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/math/vocab-learn'
+import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/francais/vocab-learn'
 import {
   AXES_DEFAULT_COLS,
   AXES_DEFAULT_ROWS,

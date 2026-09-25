@@ -1,5 +1,5 @@
 import type { PhraseThemeId } from './phrase-banks'
-import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
+import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
 import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER } from './phrase-simple-frames'
 import { themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
 

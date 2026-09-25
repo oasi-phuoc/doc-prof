@@ -1,6 +1,6 @@
 import { Fragment, type CSSProperties } from 'react'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
-import { PHRASE_COLORS } from '@/math/phrase-banks'
+import { PHRASE_COLORS } from '@/francais/phrase-banks'
 import { CompositeFigure } from './CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './CoordGrid'
 import { FractionView, renderMathText } from './FractionView'

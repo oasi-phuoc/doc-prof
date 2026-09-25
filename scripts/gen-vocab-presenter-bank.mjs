@@ -1,12 +1,12 @@
 /**
- * Génère src/math/vocab-banks/fr-presenter.ts
+ * Génère src/francais/vocab-banks/fr-presenter.ts
  * à partir de soutien-scolaire (nationalités) + gabarits pour identité.
  */
 import fs from 'node:fs'
 import path from 'node:path'
 
 const SOUTIEN = '/tmp/soutien-scolaire/lib/curriculum/content/francais/vocab-v1-nationalites.ts'
-const OUT = path.resolve('src/math/vocab-banks/fr-presenter.ts')
+const OUT = path.resolve('src/francais/vocab-banks/fr-presenter.ts')
 const PRESENTER_IMG = '/lib/images/vocabulaire/presenter'
 const ADMIN_IMG = '/lib/images/vocabulaire/administration'
 

@@ -1,4 +1,4 @@
-import type { PhraseCategory } from './types'
+import type { PhraseCategory } from '@/math/types'
 
 /** Couleurs Gattegno — grammaire en couleur (imprimables, contrastées). */
 export const PHRASE_COLORS: Record<PhraseCategory, string> = {

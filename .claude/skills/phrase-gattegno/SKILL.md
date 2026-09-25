@@ -17,11 +17,11 @@ Une fiche de phrases n’est **pas** un produit cartésien (Léa / elle / le pap
 
 | Fichier | Rôle |
 |---|---|
-| `src/math/phrase-simple-frames.ts` | Modèles phrase simple / négation simple (≥100 `-er`, pas d’« être ») |
-| `src/math/phrase-theme-frames.ts` | Modèles adjectif, préposition, adverbe, conjonctions |
-| `src/math/phrase-sentences.ts` | Sujets personnes, `framesForTheme`, `instantiateThemeFrame`, contrôles |
-| `src/math/phrase.ts` | Tirage (`used` = `frame:${id}`) pour **tous** les thèmes |
-| `src/math/phrase-banks.ts` | Verbes (formes), consignes d’écriture libre |
+| `src/francais/phrase-simple-frames.ts` | Modèles phrase simple / négation simple (≥100 `-er`, pas d’« être ») |
+| `src/francais/phrase-theme-frames.ts` | Modèles adjectif, préposition, adverbe, conjonctions |
+| `src/francais/phrase-sentences.ts` | Sujets personnes, `framesForTheme`, `instantiateThemeFrame`, contrôles |
+| `src/francais/phrase.ts` | Tirage (`used` = `frame:${id}`) pour **tous** les thèmes |
+| `src/francais/phrase-banks.ts` | Verbes (formes), consignes d’écriture libre |
 
 ## Tous les thèmes passent par les modèles
 

@@ -6,8 +6,8 @@ import {
   subjectsFor,
 } from './phrase-sentences'
 import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
-import { pick, shuffle, type Rng } from './rng'
-import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from './types'
+import { pick, shuffle, type Rng } from '@/math/rng'
+import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
 
 export type PhraseBatch = {
   items: MathItem[]

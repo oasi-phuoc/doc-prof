@@ -4,7 +4,7 @@ Site où des enseignant·e·s composent des fiches de travail A4 imprimables (av
 
 ## Stack et commandes
 
-React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS du thème). Génération pure dans `src/math/`.
+React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS du thème). Génération pure dans `src/math/` (maths) et `src/francais/` (FLE / phrase / lecture).
 
 - `npm run dev` · `npm run build` · `npm run lint`
 - Si un script utile manque, le créer plutôt que le contourner.
@@ -14,7 +14,9 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Zone | Rôle |
 |---|---|
 | `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`). Français : thèmes communicatifs + `track` Voc/Gram/Com |
-| `src/math/generate.ts` | `buildPage(config, seed)` → `WorksheetPage` (pur, via `rng`) |
+| `src/math/generate.ts` | `buildPage(config, seed)` → `WorksheetPage` (pur, via `rng`) ; délègue au français via `@/francais/*` |
+| `src/math/` | Générateurs maths (algèbre, géométrie, repérage, `rng`, `types`, `difficulty`) |
+| `src/francais/` | Générateurs et banques FLE : Voc/Gram/Com, Phrase, Lecture, nombres en lettres |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |
 | `src/components/math/MathItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) |

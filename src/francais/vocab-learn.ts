@@ -1,6 +1,6 @@
 /** Lexique Voc : mots sélectionnés + métadonnées d’exercices. */
 import { FR_PRESENTER_VOCAB } from './vocab-banks/fr-presenter'
-import type { Difficulty } from './types'
+import type { Difficulty } from '@/math/types'
 
 export type VocabLevel = 'a1' | 'a2' | 'b1'
 
