@@ -90,28 +90,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Carte de présentation',
-        text: 'Je m’appelle Adam Rossi. J’ai 34 ans. Je suis italien et j’habite à Fribourg depuis deux ans. Je suis cuisinier dans un restaurant du centre. Le soir, je suis un cours de français.',
-        questions: [
-          { prompt: 'Quel est le prénom de l’homme ?', options: ['Adam', 'Rossi', 'Fribourg'], answer: 'Adam' },
-          { prompt: 'Quelle est sa nationalité ?', options: ['italienne', 'suisse', 'française'], answer: 'italienne' },
-          { prompt: 'Où habite-t-il ?', options: ['Fribourg', 'Sion', 'Rome'], answer: 'Fribourg' },
-          { prompt: 'Que fait-il le soir ?', options: ['un cours de français', 'du sport', 'rien'], answer: 'un cours de français' },
-        ],
-      },
-      {
-        title: 'Message du groupe',
-        text: 'Bonjour, je m’appelle Sofia. Je viens du Tessin. J’ai 22 ans et je suis étudiante. J’habite à Neuchâtel, près de la gare. Enchantée de vous rencontrer.',
-        questions: [
-          { prompt: 'D’où vient Sofia ?', options: ['du Tessin', 'de Neuchâtel', 'de Genève'], answer: 'du Tessin' },
-          { prompt: 'Quel âge a-t-elle ?', options: ['22 ans', '32 ans', '12 ans'], answer: '22 ans' },
-          { prompt: 'Que fait Sofia ?', options: ['elle est étudiante', 'elle est professeure', 'elle est cuisinière'], answer: 'elle est étudiante' },
-          { prompt: 'Où habite-t-elle ?', options: ['près de la gare', 'à la montagne', 'à l’hôtel'], answer: 'près de la gare' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Bonjour, comment vous ___-vous ?', answer: 'appelez' },
       { prompt: 'B : Je ___ Inès. Et vous ?', answer: 'm’appelle' },
@@ -172,18 +151,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Un message familial',
-        text: 'Je m’appelle Nora. J’habite avec mon mari et nos deux enfants. Ma sœur habite dans le même immeuble. Le dimanche, nous déjeunons chez mes parents. Mon oncle vient parfois avec ses trois cousins.',
-        questions: [
-          { prompt: 'Avec qui Nora habite-t-elle ?', options: ['son mari et ses enfants', 'sa sœur seule', 'son oncle'], answer: 'son mari et ses enfants' },
-          { prompt: 'Où habite sa sœur ?', options: ['dans le même immeuble', 'à l’étranger', 'chez les parents'], answer: 'dans le même immeuble' },
-          { prompt: 'Que font-ils le dimanche ?', options: ['ils déjeunent chez les parents', 'ils voyagent', 'ils travaillent'], answer: 'ils déjeunent chez les parents' },
-          { prompt: 'Qui vient parfois ?', options: ['son oncle', 'sa voisine', 'son professeur'], answer: 'son oncle' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Tu as une grande ___ ?', answer: 'famille' },
       { prompt: 'B : Oui, j’ai deux ___ et une sœur.', answer: 'frères' },
@@ -244,18 +212,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Portrait de Nora',
-        text: 'Nora est une jeune femme. Elle est petite et mince. Elle a les cheveux longs et châtains. Elle n’est pas blonde. Sur la photo de classe, elle sourit : tout le monde dit qu’elle est belle. Son frère, lui, est grand et fort.',
-        questions: [
-          { prompt: 'Comment est Nora ?', options: ['petite et mince', 'grande et forte', 'âgée'], answer: 'petite et mince' },
-          { prompt: 'Quels cheveux a-t-elle ?', options: ['longs et châtains', 'courts et blonds', 'roux'], answer: 'longs et châtains' },
-          { prompt: 'Est-elle blonde ?', options: ['non', 'oui', 'on ne sait pas'], answer: 'non' },
-          { prompt: 'Comment est son frère ?', options: ['grand et fort', 'petit et faible', 'chauve'], answer: 'grand et fort' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Il est comment, ton ami ?', answer: 'grand' },
       { prompt: 'B : Il est grand et ___.', answer: 'mince' },
@@ -316,18 +273,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Annonce de location',
-        text: 'À louer : 4 pièces à Sion, 92 m², 2e étage avec ascenseur. Cuisine équipée, salon, deux chambres, salle de bain et balcon. Cave et place de parc. Loyer : 1 780 francs par mois, charges en plus. Disponible le 1er octobre.',
-        questions: [
-          { prompt: 'Où se trouve l’appartement ?', options: ['à Sion', 'à Sierre', 'à Martigny'], answer: 'à Sion' },
-          { prompt: 'À quel étage est-il ?', options: ['2e étage', 'rez-de-chaussée', '4e étage'], answer: '2e étage' },
-          { prompt: 'Y a-t-il un balcon ?', options: ['oui', 'non', 'seulement une cave'], answer: 'oui' },
-          { prompt: 'Quand est-il disponible ?', options: ['le 1er octobre', 'le 1er janvier', 'tout de suite'], answer: 'le 1er octobre' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Vous habitez dans une maison ou un ___ ?', answer: 'appartement' },
       { prompt: 'B : Un appartement. Il y a deux ___.', answer: 'chambres' },
@@ -388,18 +334,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Ticket de caisse',
-        text: 'Marché de Sierre — 12 mars. Pain 3,20 · Lait 1,80 · Pommes 4,50 · Fromage 6,90. Total 16,40 francs. Payé en espèces. Rendu 3,60 francs. Merci de votre visite.',
-        questions: [
-          { prompt: 'Où a lieu l’achat ?', options: ['à Sierre', 'à Sion', 'à Sion gare'], answer: 'à Sierre' },
-          { prompt: 'Combien coûte le fromage ?', options: ['6,90 francs', '4,50 francs', '3,20 francs'], answer: '6,90 francs' },
-          { prompt: 'Quel est le total ?', options: ['16,40 francs', '13,60 francs', '20 francs'], answer: '16,40 francs' },
-          { prompt: 'Comment le client a-t-il payé ?', options: ['en espèces', 'par carte', 'par bon'], answer: 'en espèces' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Vous avez ce pull en taille ___ ?', answer: 'M' },
       { prompt: 'B : Oui. Il est en ___, 39 francs.', answer: 'promo' },
@@ -458,18 +393,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Étiquette de vêtement',
-        text: 'Pull col V, 100 % coton. Couleur : bleu marine. Tailles : S, M, L, XL. Prix : 34,90 francs. Lavage à 30 °. Promotion jusqu’au 30 avril : −20 %.',
-        questions: [
-          { prompt: 'De quel vêtement s’agit-il ?', options: ['un pull', 'un manteau', 'une jupe'], answer: 'un pull' },
-          { prompt: 'Quelle est la matière ?', options: ['coton', 'laine', 'cuir'], answer: 'coton' },
-          { prompt: 'Quel est le prix affiché ?', options: ['34,90 francs', '20 francs', '30 francs'], answer: '34,90 francs' },
-          { prompt: 'Jusqu’à quand dure la promo ?', options: ['30 avril', '30 mars', '30 mai'], answer: '30 avril' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Je ___ essayer ce pantalon.', answer: 'voudrais' },
       { prompt: 'B : Bien sûr. La cabine est à ___.', answer: 'droite' },
@@ -530,18 +454,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Menu du jour',
-        text: 'Menu 18 francs. Entrée : soupe ou salade. Plat : poulet-riz ou filet de perche. Dessert : yogourt ou fruit. Boisson non comprise. Service jusqu’à 14 h. Cuisine fermée le lundi.',
-        questions: [
-          { prompt: 'Quel est le prix du menu ?', options: ['18 francs', '14 francs', '8 francs'], answer: '18 francs' },
-          { prompt: 'Le poulet est servi avec :', options: ['du riz', 'des frites', 'des pâtes'], answer: 'du riz' },
-          { prompt: 'La boisson est :', options: ['non comprise', 'comprise', 'gratuite toujours'], answer: 'non comprise' },
-          { prompt: 'Quel jour la cuisine est-elle fermée ?', options: ['lundi', 'dimanche', 'mardi'], answer: 'lundi' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Je voudrais ___ café, s’il vous plaît.', answer: 'un' },
       { prompt: 'B : Avec ___ lait ?', answer: 'du' },
@@ -600,18 +513,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Ordonnance',
-        text: 'Dr Morel, Sion. Patient : Elias Haddad. Repos trois jours. Sirop pour la toux : 1 cuillère le matin et le soir. Paracétamol si fièvre, 1 comprimé toutes les 6 heures. Revenir vendredi si ça ne va pas mieux.',
-        questions: [
-          { prompt: 'Combien de jours de repos ?', options: ['trois', 'six', 'un'], answer: 'trois' },
-          { prompt: 'Quand prendre le sirop ?', options: ['matin et soir', 'seulement le soir', 'toutes les heures'], answer: 'matin et soir' },
-          { prompt: 'Le paracétamol est pour :', options: ['la fièvre', 'la toux', 'le dos'], answer: 'la fièvre' },
-          { prompt: 'Quand revenir si ça ne va pas mieux ?', options: ['vendredi', 'lundi', 'dimanche'], answer: 'vendredi' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : J’ai mal au ___.', answer: 'ventre' },
       { prompt: 'B : Depuis ___ ?', answer: 'quand' },
@@ -672,18 +574,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Horaire affiché',
-        text: 'Ligne Sion → Genève. Départ 7 h 04, quai 2, arrivée 9 h 11. Train direct. Billet 2e classe : 36 francs. Abonnement demi-tarif accepté. Dimanche : premier train à 8 h 04.',
-        questions: [
-          { prompt: 'Où va le train ?', options: ['à Genève', 'à Sion', 'à Brigue'], answer: 'à Genève' },
-          { prompt: 'De quel quai part-il en semaine ?', options: ['quai 2', 'quai 4', 'quai 7'], answer: 'quai 2' },
-          { prompt: 'Quel est le prix en 2e classe ?', options: ['36 francs', '7 francs', '9 francs'], answer: '36 francs' },
-          { prompt: 'Le dimanche, le premier train est à :', options: ['8 h 04', '7 h 04', '9 h 11'], answer: '8 h 04' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Je ___ à la gare. Tu viens ?', answer: 'vais' },
       { prompt: 'B : Oui. On ___ le bus ou le train ?', answer: 'prend' },
@@ -742,18 +633,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Message d’invitation',
-        text: 'Salut ! On organise un pique-nique dimanche à 12 h au parc des Îles. Amenez quelque chose à partager. S’il pleut, on se retrouve chez moi, impasse des Prés 4. Répondez avant vendredi, s’il vous plaît.',
-        questions: [
-          { prompt: 'Quel jour est le pique-nique ?', options: ['dimanche', 'vendredi', 'samedi'], answer: 'dimanche' },
-          { prompt: 'Où a-t-il lieu s’il fait beau ?', options: ['au parc des Îles', 'à la gare', 'au restaurant'], answer: 'au parc des Îles' },
-          { prompt: 'Que doivent faire les invités ?', options: ['amener quelque chose', 'acheter un billet', 'rester à la maison'], answer: 'amener quelque chose' },
-          { prompt: 'Quand faut-il répondre ?', options: ['avant vendredi', 'le jour même', 'lundi'], answer: 'avant vendredi' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Tu es ___ samedi ?', answer: 'libre' },
       { prompt: 'B : Oui. Tu ___ quelque chose ?', answer: 'proposes' },
@@ -812,18 +692,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Annonce d’emploi',
-        text: 'Nous cherchons un·e employé·e de commerce à 80 %, à Sion. Horaires : lundi-vendredi, 8 h–16 h 30. Bon français exigé. Salaire selon convention. Envoyez un CV avant le 15 mai à emploi@atelier-sion.ch.',
-        questions: [
-          { prompt: 'Quel est le taux de travail ?', options: ['80 %', '100 %', '50 %'], answer: '80 %' },
-          { prompt: 'Où se trouve le poste ?', options: ['à Sion', 'à Sierre', 'à Lausanne'], answer: 'à Sion' },
-          { prompt: 'Quels jours travaille-t-on ?', options: ['lundi-vendredi', 'week-end', 'nuit seulement'], answer: 'lundi-vendredi' },
-          { prompt: 'Quand envoyer le CV ?', options: ['avant le 15 mai', 'après juin', 'le jour même'], answer: 'avant le 15 mai' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Vous ___ dans quel service ?', answer: 'travaillez' },
       { prompt: 'B : À l’accueil. Je ___ à 8 h.', answer: 'commence' },
@@ -884,18 +753,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Emploi du temps',
-        text: 'Lundi au vendredi : réveil 6 h 15, douche, petit-déjeuner, départ 7 h 10. Cours de 8 h à 11 h 45. Pause déjeuner. Après-midi : stage de 13 h 30 à 16 h 30. Soir : courses ou sport. Coucher vers 22 h 30.',
-        questions: [
-          { prompt: 'À quelle heure est le réveil ?', options: ['6 h 15', '7 h 10', '8 h'], answer: '6 h 15' },
-          { prompt: 'Quand commencent les cours ?', options: ['8 h', '7 h 10', '13 h 30'], answer: '8 h' },
-          { prompt: 'Que fait la personne l’après-midi ?', options: ['un stage', 'du sport seulement', 'rien'], answer: 'un stage' },
-          { prompt: 'Vers quelle heure se couche-t-elle ?', options: ['22 h 30', '16 h 30', '11 h 45'], answer: '22 h 30' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Tu te ___ à quelle heure ?', answer: 'lèves' },
       { prompt: 'B : À 7 h. Après, je me ___.', answer: 'douche' },
@@ -954,18 +812,7 @@ const banks: Record<string, ThemeBank> = {
         ],
       },
     ],
-    written: [
-      {
-        title: 'Programme du centre',
-        text: 'Centre culturel de Martigny. Mardi 18 h 30 : atelier photo. Mercredi 19 h : chorale. Samedi 14 h : sortie vélo, départ devant la gare. Inscription à l’accueil avant mercredi. Tarif : 10 francs par activité.',
-        questions: [
-          { prompt: 'Quel jour est l’atelier photo ?', options: ['mardi', 'mercredi', 'samedi'], answer: 'mardi' },
-          { prompt: 'À quelle heure est la chorale ?', options: ['19 h', '18 h 30', '14 h'], answer: '19 h' },
-          { prompt: 'Où commence la sortie vélo ?', options: ['devant la gare', 'au musée', 'à la piscine'], answer: 'devant la gare' },
-          { prompt: 'Quel est le tarif ?', options: ['10 francs', '14 francs', '19 francs'], answer: '10 francs' },
-        ],
-      },
-    ],
+    written: [],
     dialogue: [
       { prompt: 'A : Tu aimes le ___ ?', answer: 'cinéma' },
       { prompt: 'B : Oui, je ___ aime beaucoup.', answer: 'l’' },

@@ -1,6 +1,8 @@
 import { frenchBank, parseFrenchType, type FrChoice, type FrHole } from './francais-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
 import type { Difficulty, MathItem, WorksheetDocument } from '@/math/types'
+import { comprehensionLevelFromDifficulty } from './comprehension-ecrite'
+import { writtenDocsFor } from './comprehension-ecrite-banks'
 import { resolveVocabEntries } from './vocab-learn'
 import { tryGenerateVocabBlock } from './vocab-generate'
 
@@ -111,7 +113,9 @@ export function tryGenerateFrancaisBlock(
     }
   }
   if (parsed.kind === 'ecrite') {
-    const doc = pick(rng, bank.written)
+    const level = comprehensionLevelFromDifficulty(options?.difficulty)
+    const pool = writtenDocsFor(parsed.topic, level)
+    const doc = pick(rng, pool)
     const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)
     return {
       items: questions.map(choice),

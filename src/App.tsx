@@ -1160,14 +1160,15 @@ function GeneratorPage() {
     (isVocabPool
       ? defaultVocabSelected(activeBlock.topic, activeBlock.vocabRows ?? 3, activeBlock.vocabCols ?? 3)
       : [])
-  const vocabDifficultyOptions =
-    isVocabPool && !isVocabLearn
-      ? [
-          { value: 'facile' as const, label: 'A1 · Facile' },
-          { value: 'moyen' as const, label: 'A2 · Moyen' },
-          { value: 'avance' as const, label: 'B1 · Avancé' },
-        ]
-      : DIFFICULTY_OPTIONS
+  const usesCefrLevel =
+    (isVocabPool && !isVocabLearn) || activeBlock.exerciseType.includes('-com-ecrite')
+  const vocabDifficultyOptions = usesCefrLevel
+    ? [
+        { value: 'facile' as const, label: 'A1 · Facile' },
+        { value: 'moyen' as const, label: 'A2 · Moyen' },
+        { value: 'avance' as const, label: 'B1 · Avancé' },
+      ]
+    : DIFFICULTY_OPTIONS
   const isPhraseDomain = activePage.domain === 'phrase'
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
   const isComposer = isReperageComposer(activeBlock.exerciseType)
