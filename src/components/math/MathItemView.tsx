@@ -260,6 +260,72 @@ function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const selectedSet = new Set(
     (item.labels?.length ? item.labels : item.answer.split(/\s*·\s*|\s*,\s*/)).map((s) => s.trim()).filter(Boolean),
   )
+  const answerMode = item.answerMode ?? 'qcm'
+  const isOral = item.selectVariant === 'oral'
+
+  if (isOral && answerMode === 'text') {
+    return (
+      <div className="oral-answer-stack" aria-label="Réponse libre">
+        <p className="oral-qcm-prompt">{item.prompt}</p>
+        <span className={`answer-line-field ${mode === 'answers' ? 'filled' : ''}`}>
+          {mode === 'answers' ? item.answer : '\u00a0'}
+        </span>
+      </div>
+    )
+  }
+
+  if (isOral && answerMode === 'images' && item.optionImages?.length === options.length) {
+    const letters = ['A', 'B', 'C']
+    return (
+      <div className="oral-answer-stack oral-qcm-images" aria-label="Choix images">
+        <p className="oral-qcm-prompt">{item.prompt}</p>
+        <div className="oral-qcm-options images" role="group">
+          {options.map((option, index) => {
+            const selected = mode === 'answers' && selectedSet.has(option)
+            const src = item.optionImages?.[index]
+            return (
+              <div key={`${option}-${index}`} className={`oral-qcm-option ${selected ? 'selected' : ''}`}>
+                {src ? <img className="oral-qcm-img" src={src} alt={option} /> : null}
+                <span className="oral-qcm-option-label">{option}</span>
+                <span className="oral-qcm-check">
+                  {letters[index] ?? String(index + 1)}{' '}
+                  <span className={`oral-qcm-box ${selected ? 'checked' : ''}`} aria-hidden>
+                    {selected ? '✓' : ''}
+                  </span>
+                </span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
+  if (isOral) {
+    const letters = ['A', 'B', 'C']
+    return (
+      <div className="oral-answer-stack" aria-label="Choix">
+        <p className="oral-qcm-prompt">{item.prompt}</p>
+        <div className="oral-qcm-options" role="group">
+          {options.map((option, index) => {
+            const selected = mode === 'answers' && selectedSet.has(option)
+            return (
+              <div key={`${option}-${index}`} className={`oral-qcm-option ${selected ? 'selected' : ''}`}>
+                <span className="oral-qcm-option-text">{option}</span>
+                <span className="oral-qcm-check">
+                  {letters[index] ?? String(index + 1)}{' '}
+                  <span className={`oral-qcm-box ${selected ? 'checked' : ''}`} aria-hidden>
+                    {selected ? '✓' : ''}
+                  </span>
+                </span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   const stacked = (item.prompt?.length ?? 0) > 28
   return (
     <div className={`select-pills-row${stacked ? ' stacked' : ''}`} aria-label="Choix">
@@ -1238,6 +1304,8 @@ export function MathItemView({
   algebraPadLeft = 0,
   draftGrid = true,
   onToggleDraftGrid,
+  oralAnswerMode,
+  onCycleOralAnswerMode,
   coordEdit,
 }: {
   item: MathItem
@@ -1248,6 +1316,8 @@ export function MathItemView({
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
   draftGrid?: boolean
   onToggleDraftGrid?: () => void
+  oralAnswerMode?: 'qcm' | 'text' | 'images'
+  onCycleOralAnswerMode?: () => void
   coordEdit?: {
     selectedKind: CoordShape | null
     placingOrigin?: boolean
@@ -1261,13 +1331,22 @@ export function MathItemView({
   const isGeoCalc = item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)
   const isDraftPad = isProblem || isEquation || isGeoCalc
   const isStackedText = item.layout === 'text' && !isProblem
+  const isOralSelect = item.layout === 'select' && item.selectVariant === 'oral'
+  const resolvedOralMode = oralAnswerMode ?? item.answerMode ?? 'qcm'
+  const oralItem = isOralSelect ? { ...item, answerMode: resolvedOralMode } : item
+  const oralModeLabel =
+    resolvedOralMode === 'text' ? 'Texte' : resolvedOralMode === 'images' ? 'Images' : 'QCM'
   const hideNumber =
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match'
   return (
-    <div className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}`}>
+    <div
+      className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
+        isOralSelect ? ' is-oral' : ''
+      }`}
+    >
       {isDraftPad && onToggleDraftGrid ? (
         <button
           type="button"
@@ -1278,13 +1357,30 @@ export function MathItemView({
           {draftGrid ? 'Grille' : 'Sans'}
         </button>
       ) : null}
+      {isOralSelect && onCycleOralAnswerMode ? (
+        <button
+          type="button"
+          className={`no-print draft-grid-chip draft-grid-chip-margin oral-mode-chip ${
+            resolvedOralMode === 'qcm' ? 'on' : 'off'
+          }`}
+          onClick={onCycleOralAnswerMode}
+          aria-label={`Mode de réponse : ${oralModeLabel}. Cliquer pour changer.`}
+          title={
+            item.imagesAvailable
+              ? 'QCM → texte libre → images'
+              : 'QCM → texte libre (images indisponibles pour cette question)'
+          }
+        >
+          {oralModeLabel}
+        </button>
+      ) : null}
       {item.coordScene || hideNumber ? null : <div className="item-number">{index + 1}.</div>}
       <div className="item-content">
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
-        {item.layout === 'select' && <SelectPillsRow item={item} mode={mode} />}
+        {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}

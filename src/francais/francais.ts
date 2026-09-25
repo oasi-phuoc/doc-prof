@@ -1,8 +1,13 @@
 import { frenchBank, parseFrenchType, type FrChoice, type FrHole } from './francais-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
 import type { Difficulty, MathItem, WorksheetDocument } from '@/math/types'
-import { comprehensionLevelFromDifficulty } from './comprehension-ecrite'
+import { comprehensionLevelFromDifficulty as writtenLevelFromDifficulty } from './comprehension-ecrite'
 import { writtenDocsFor } from './comprehension-ecrite-banks'
+import {
+  comprehensionLevelFromDifficulty as oralLevelFromDifficulty,
+  oralDocsFor,
+  type FrOralChoice,
+} from './comprehension-orale'
 import { resolveVocabEntries } from './vocab-learn'
 import { tryGenerateVocabBlock } from './vocab-generate'
 
@@ -27,6 +32,19 @@ function hole(row: FrHole): MathItem {
 
 function choice(row: FrChoice): MathItem {
   return { layout: 'select', prompt: row.prompt, options: row.options, answer: row.answer }
+}
+
+function oralChoice(row: FrOralChoice): MathItem {
+  return {
+    layout: 'select',
+    selectVariant: 'oral',
+    prompt: row.prompt,
+    options: row.options,
+    answer: row.answer,
+    optionImages: row.optionImages,
+    imagesAvailable: Boolean(row.imagesAvailable && row.optionImages?.length === 3),
+    answerMode: 'qcm',
+  }
 }
 
 function take<T>(list: T[], count: number, rng: Rng): T[] {
@@ -99,11 +117,30 @@ export function tryGenerateFrancaisBlock(
     return { items: take(bank.gramChoices, count, rng).map(choice) }
   }
   if (parsed.kind === 'orale') {
+    const level = oralLevelFromDifficulty(options?.difficulty)
+    const pool = oralDocsFor(parsed.topic, level)
+    if (pool.length > 0) {
+      const doc = pick(rng, pool)
+      const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)
+      return {
+        items: questions.map(oralChoice),
+        instruction: 'Écoutez l’enregistrement. Répondez aux questions (QCM).',
+        document: {
+          kind: 'oral',
+          title: doc.title,
+          text: doc.transcript,
+          audioSrc: doc.audioSrc,
+        },
+      }
+    }
+    if (bank.oral.length === 0) return null
     const doc = pick(rng, bank.oral)
     const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)
     return {
-      items: questions.map(choice),
-      instruction: 'Écoutez le dialogue. Répondez aux questions.',
+      items: questions.map((q) =>
+        oralChoice({ ...q, imagesAvailable: false }),
+      ),
+      instruction: 'Écoutez l’enregistrement. Répondez aux questions (QCM).',
       document: {
         kind: 'oral',
         title: doc.title,
@@ -113,7 +150,7 @@ export function tryGenerateFrancaisBlock(
     }
   }
   if (parsed.kind === 'ecrite') {
-    const level = comprehensionLevelFromDifficulty(options?.difficulty)
+    const level = writtenLevelFromDifficulty(options?.difficulty)
     const pool = writtenDocsFor(parsed.topic, level)
     const doc = pick(rng, pool)
     const questions = take(doc.questions, Math.min(count, doc.questions.length), rng)

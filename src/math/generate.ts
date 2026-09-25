@@ -1091,6 +1091,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
       givens: result.givens,
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
+      oralAnswerModes: block.oralAnswerModes,
     }
   })
   const first = built[0]

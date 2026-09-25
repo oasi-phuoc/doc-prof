@@ -300,6 +300,57 @@
   grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
+/* Compréhension orale : question à gauche sous le n°, réponses empilées + A □ B □ C □ */
+.exercise-item.is-oral{
+  align-items:flex-start
+}
+.exercise-item.is-oral .item-content{
+  width:100%;min-width:0
+}
+.oral-answer-stack{
+  display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0
+}
+.oral-qcm-prompt{
+  margin:0;width:100%;text-align:left;font-size:14px;font-weight:600;line-height:1.4;
+  font-family:inherit
+}
+.oral-qcm-options{
+  display:flex;flex-direction:column;gap:6px;width:100%
+}
+.oral-qcm-options.images{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px
+}
+.oral-qcm-option{
+  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+  width:100%;min-width:0;padding:0;border:none;background:transparent
+}
+.oral-qcm-option-text{
+  font-size:13px;font-weight:500;line-height:1.35;text-align:left;color:var(--ink)
+}
+.oral-qcm-option-label{
+  font-size:11px;font-weight:600;line-height:1.2;text-align:center;width:100%
+}
+.oral-qcm-check{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--ink)
+}
+.oral-qcm-box{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.1em;height:1.1em;border:1.5px solid #222;border-radius:2px;
+  font-size:10px;line-height:1;box-sizing:border-box;background:#fff
+}
+.oral-qcm-box.checked{
+  border-color:var(--purple);background:var(--lavender);color:var(--purple)
+}
+.oral-qcm-option.selected .oral-qcm-option-text{
+  color:var(--purple)
+}
+.oral-qcm-img{
+  width:100%;max-height:4.2cm;object-fit:contain;display:block;
+  border:1px solid var(--line);background:#fff
+}
+.oral-mode-chip{text-transform:none;letter-spacing:0}
+
 .letter-grid-block{
   display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0
 }

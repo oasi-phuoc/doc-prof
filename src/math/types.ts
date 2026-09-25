@@ -262,6 +262,14 @@ export type MathItem = {
   blankIndexes?: number[]
   options?: string[]
   labels?: string[]
+  /** Variante de rendu pour les QCM (compréhension orale empilée). */
+  selectVariant?: 'pills' | 'oral'
+  /** Mode de réponse orale : QCM texte, trait libre, ou QCM images. */
+  answerMode?: 'qcm' | 'text' | 'images'
+  /** Images des choix (même ordre que `options`) pour le QCM images. */
+  optionImages?: string[]
+  /** true si un QCM images est possible pour cette question. */
+  imagesAvailable?: boolean
   /** Grille vide à remplir (poser soi-même les nombres). */
   blankOperands?: boolean
   /** Point pour repérage / transformations. */
@@ -366,6 +374,8 @@ export type ExerciseBlock = {
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
   problemDraftGrids?: boolean[]
+  /** Modes de réponse par question (compréhension orale) : QCM / texte / images. */
+  oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   /** Mode libre : l’enseignant·e compose le tableau de repérage. */
   coordLibre?: boolean
   coordCols?: number
@@ -422,6 +432,7 @@ export type WorksheetBlock = {
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
+  oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
 }
 
 export type WorksheetPage = PageConfig & {

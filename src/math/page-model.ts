@@ -10,6 +10,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     track: page.track,
     verbGroup: page.verbGroup,
     problemDraftGrids: page.problemDraftGrids,
+    oralAnswerModes: page.oralAnswerModes,
     coordLibre: page.coordLibre,
     coordCols: page.coordCols,
     coordRows: page.coordRows,

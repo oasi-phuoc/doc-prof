@@ -507,8 +507,9 @@ const FRENCH_KINDS: Array<{
     suffix: 'com-orale',
     track: 'com',
     label: 'Compréhension orale',
-    description: () => 'Écouter un dialogue du thème, puis répondre aux QCM. Transcription au corrigé.',
-    instruction: 'Écoutez le dialogue. Répondez aux questions.',
+    description: () =>
+      'Écouter un enregistrement du thème (même audios que le soutien scolaire), puis répondre aux QCM. Pastille pour texte libre ou images si disponibles. Transcription au corrigé.',
+    instruction: 'Écoutez l’enregistrement. Répondez aux questions.',
     visual: 'ligne',
   },
   {
@@ -659,6 +660,9 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
     problemDraftGrids: isDraftPadExercise(type.id)
       ? Array.from({ length: count }, () => true)
       : undefined,
+    oralAnswerModes: type.id.includes('-com-orale')
+      ? Array.from({ length: count }, () => 'qcm' as const)
+      : undefined,
   }
 }
 
@@ -671,4 +675,5 @@ type PageConfigLike = {
   columns: number
   track?: FrenchTrack
   problemDraftGrids?: boolean[]
+  oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
 }

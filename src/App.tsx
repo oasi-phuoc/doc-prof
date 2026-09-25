@@ -125,6 +125,7 @@ function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
       exerciseType: page.exerciseType,
       givens: page.givens,
       problemDraftGrids: page.problemDraftGrids,
+      oralAnswerModes: page.oralAnswerModes,
     },
   ]
 }
@@ -143,6 +144,8 @@ function WorksheetSheet({
   pointsPerQuestion = 1,
   interactiveDraftGrids = false,
   onToggleDraftGrid,
+  interactiveOralModes = false,
+  onCycleOralAnswerMode,
   coordEdit,
 }: {
   page: WorksheetPage
@@ -161,6 +164,9 @@ function WorksheetSheet({
   /** Affiche le bouton grille / sans grille sur chaque problème (aperçu seulement). */
   interactiveDraftGrids?: boolean
   onToggleDraftGrid?: (index: number, blockIndex?: number) => void
+  /** Pastille QCM / texte / images pour la compréhension orale. */
+  interactiveOralModes?: boolean
+  onCycleOralAnswerMode?: (index: number, blockIndex?: number) => void
   coordEdit?: {
     selectedKind: CoordShape | null
     placingOrigin?: boolean
@@ -258,6 +264,8 @@ function WorksheetSheet({
                   const padLeft =
                     item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
                   const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true
+                  const oralAnswerMode =
+                    block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   return (
                     <MathItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}`}
@@ -269,6 +277,12 @@ function WorksheetSheet({
                       onToggleDraftGrid={
                         interactiveDraftGrids && onToggleDraftGrid
                           ? () => onToggleDraftGrid(index, blockIndex)
+                          : undefined
+                      }
+                      oralAnswerMode={item.selectVariant === 'oral' ? oralAnswerMode : undefined}
+                      onCycleOralAnswerMode={
+                        interactiveOralModes && onCycleOralAnswerMode && item.selectVariant === 'oral'
+                          ? () => onCycleOralAnswerMode(index, blockIndex)
                           : undefined
                       }
                       coordEdit={coordEdit}
@@ -959,8 +973,28 @@ function resizeDraftGrids(prev: boolean[] | undefined, count: number): boolean[]
   return Array.from({ length: count }, (_, i) => prev?.[i] ?? true)
 }
 
+function resizeOralAnswerModes(
+  prev: Array<'qcm' | 'text' | 'images'> | undefined,
+  count: number,
+): Array<'qcm' | 'text' | 'images'> {
+  return Array.from({ length: count }, (_, i) => prev?.[i] ?? 'qcm')
+}
+
 function isProblemExercise(typeId: string): boolean {
   return isDraftPadExercise(typeId)
+}
+
+function isOralComprehensionExercise(typeId: string): boolean {
+  return typeId.includes('-com-orale')
+}
+
+function cycleOralMode(
+  current: 'qcm' | 'text' | 'images',
+  imagesAvailable: boolean,
+): 'qcm' | 'text' | 'images' {
+  if (current === 'qcm') return 'text'
+  if (current === 'text') return imagesAvailable ? 'images' : 'qcm'
+  return 'qcm'
 }
 
 function GeneratorPage() {
@@ -1115,6 +1149,9 @@ function GeneratorPage() {
             problemDraftGrids: isProblemExercise(fixed.exerciseType)
               ? resizeDraftGrids(fixed.problemDraftGrids, count)
               : undefined,
+            oralAnswerModes: isOralComprehensionExercise(fixed.exerciseType)
+              ? resizeOralAnswerModes(fixed.oralAnswerModes, count)
+              : undefined,
           }
         }
         if (isReperageCadrans(fixed.exerciseType) && fixed.coordMarks) {
@@ -1142,6 +1179,22 @@ function GeneratorPage() {
     )
   }
 
+  const cycleOralAnswerMode = (itemIndex: number, targetBlock = safeBlockIndex) => {
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
+        const modes = resizeOralAnswerModes(block.oralAnswerModes, block.count)
+        const sheet = worksheets[pageIndex]
+        const sheetBlock = sheet?.blocks[targetBlock]
+        const item = sheetBlock?.items[itemIndex]
+        const imagesAvailable = Boolean(item?.imagesAvailable)
+        modes[itemIndex] = cycleOralMode(modes[itemIndex] ?? 'qcm', imagesAvailable)
+        return setPageBlock(page, targetBlock, { oralAnswerModes: modes })
+      }),
+    )
+  }
+
   const setAllDraftGrids = (value: boolean) => {
     updatePage({
       problemDraftGrids: Array.from({ length: activeBlock.count }, () => value),
@@ -1161,7 +1214,9 @@ function GeneratorPage() {
       ? defaultVocabSelected(activeBlock.topic, activeBlock.vocabRows ?? 3, activeBlock.vocabCols ?? 3)
       : [])
   const usesCefrLevel =
-    (isVocabPool && !isVocabLearn) || activeBlock.exerciseType.includes('-com-ecrite')
+    (isVocabPool && !isVocabLearn) ||
+    activeBlock.exerciseType.includes('-com-ecrite') ||
+    activeBlock.exerciseType.includes('-com-orale')
   const vocabDifficultyOptions = usesCefrLevel
     ? [
         { value: 'facile' as const, label: 'A1 · Facile' },
@@ -1351,6 +1406,9 @@ function GeneratorPage() {
       verbGroup: activeBlock.verbGroup,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
+        : undefined,
+      oralAnswerModes: isOralComprehensionExercise(nextType.id)
+        ? Array.from({ length: count }, () => 'qcm' as const)
         : undefined,
       vocabSelected: fields.vocabSelected,
       vocabRows: fields.vocabRows,
@@ -2434,6 +2492,8 @@ function GeneratorPage() {
                         total={worksheets.length}
                         interactiveDraftGrids={isProblemExercise(activeBlock.exerciseType)}
                         onToggleDraftGrid={toggleDraftGrid}
+                        interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
+                        onCycleOralAnswerMode={cycleOralAnswerMode}
                         coordEdit={
                           (isFormes && activeBlock.coordLibre) || (isCadrans && activeBlock.coordLibre)
                             ? {
