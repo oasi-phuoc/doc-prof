@@ -400,24 +400,221 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
 const FICHE_ACCESS_PASSWORD = 'jebosseplus'
 
 const THEME_STORAGE_KEY = 'clairfle-theme-color'
-/** Couleurs déjà présentes dans `:root` — le bouton actif des toggles les reprend. */
+const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
+/** Arc-en-ciel — tokens `:root` (`--red` … `--purple`). */
 const THEME_COLORS = [
-  { id: 'violet', color: '#7c3aed', label: 'Violet' },
-  { id: 'bleu', color: '#4f46e5', label: 'Bleu' },
-  { id: 'vert', color: '#18a66a', label: 'Vert' },
-  { id: 'orange', color: '#c45c12', label: 'Orange' },
   { id: 'rouge', color: '#b42318', label: 'Rouge' },
-  { id: 'rose', color: '#be185d', label: 'Rose' },
+  { id: 'orange', color: '#c45c12', label: 'Orange' },
+  { id: 'jaune', color: '#a16207', label: 'Jaune' },
+  { id: 'vert', color: '#18a66a', label: 'Vert' },
+  { id: 'bleu', color: '#2563eb', label: 'Bleu' },
+  { id: 'indigo', color: '#4338ca', label: 'Indigo' },
+  { id: 'violet', color: '#7c3aed', label: 'Violet' },
+] as const
+const THEME_TONES = [
+  { id: 'pastel', label: 'Pastel', s: 48, l: 78 },
+  { id: 'doux', label: 'Doux', s: 58, l: 64 },
+  { id: 'vif', label: 'Vif', s: 84, l: 48 },
+  { id: 'profond', label: 'Profond', s: 76, l: 38 },
+  { id: 'sombre', label: 'Sombre', s: 72, l: 28 },
 ] as const
 
 function readThemeColor(): string {
   try {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
-    if (stored && THEME_COLORS.some((swatch) => swatch.color === stored)) return stored
+    if (stored && HEX_COLOR.test(stored)) return stored
   } catch {
     /* ignore */
   }
-  return THEME_COLORS[0].color
+  return THEME_COLORS[THEME_COLORS.length - 1].color
+}
+
+function contrastOnTheme(hex: string): string {
+  const value = Number.parseInt(hex.slice(1), 16)
+  const r = (value >> 16) & 255
+  const g = (value >> 8) & 255
+  const b = value & 255
+  const luma = (r * 299 + g * 587 + b * 114) / 1000
+  return luma > 160 ? '#28252f' : '#fff'
+}
+
+function hslToHex(h: number, s: number, l: number): string {
+  const sat = s / 100
+  const light = l / 100
+  const chroma = sat * Math.min(light, 1 - light)
+  const channel = (n: number) => {
+    const k = (n + h / 30) % 12
+    const mix = light - chroma * Math.max(Math.min(k - 3, 9 - k, 1), -1)
+    return Math.round(255 * mix)
+      .toString(16)
+      .padStart(2, '0')
+  }
+  return `#${channel(0)}${channel(8)}${channel(4)}`
+}
+
+function hexToHue(hex: string): number {
+  const value = Number.parseInt(hex.slice(1), 16)
+  const r = ((value >> 16) & 255) / 255
+  const g = ((value >> 8) & 255) / 255
+  const b = (value & 255) / 255
+  const max = Math.max(r, g, b)
+  const min = Math.min(r, g, b)
+  const delta = max - min
+  if (delta === 0) return 0
+  let hue = 0
+  if (max === r) hue = ((g - b) / delta) % 6
+  else if (max === g) hue = (b - r) / delta + 2
+  else hue = (r - g) / delta + 4
+  hue *= 60
+  if (hue < 0) hue += 360
+  return hue
+}
+
+function hueFromPointer(el: HTMLElement, clientX: number, clientY: number): number {
+  const rect = el.getBoundingClientRect()
+  const x = clientX - rect.left - rect.width / 2
+  const y = clientY - rect.top - rect.height / 2
+  let deg = (Math.atan2(x, -y) * 180) / Math.PI
+  if (deg < 0) deg += 360
+  return deg
+}
+
+function ThemeColorPicker({
+  themeColor,
+  onChange,
+}: {
+  themeColor: string
+  onChange: (color: string) => void
+}) {
+  const [open, setOpen] = useState(false)
+  const [hue, setHue] = useState(() => hexToHue(themeColor))
+  const [toneId, setToneId] = useState<(typeof THEME_TONES)[number]['id']>('vif')
+  const boxRef = useRef<HTMLDivElement>(null)
+  const wheelRef = useRef<HTMLButtonElement>(null)
+  const dragging = useRef(false)
+  const toneRef = useRef(toneId)
+  const onChangeRef = useRef(onChange)
+  const isPreset = THEME_COLORS.some((swatch) => swatch.color === themeColor)
+
+  useEffect(() => {
+    toneRef.current = toneId
+  }, [toneId])
+  useEffect(() => {
+    onChangeRef.current = onChange
+  }, [onChange])
+
+  const applyHueTone = (nextHue: number, nextTone: (typeof THEME_TONES)[number]['id']) => {
+    const tone = THEME_TONES.find((item) => item.id === nextTone) ?? THEME_TONES[2]
+    onChangeRef.current(hslToHex(nextHue, tone.s, tone.l))
+  }
+
+  const pickFromPointer = (clientX: number, clientY: number) => {
+    const wheel = wheelRef.current
+    if (!wheel) return
+    const nextHue = hueFromPointer(wheel, clientX, clientY)
+    setHue(nextHue)
+    applyHueTone(nextHue, toneRef.current)
+  }
+
+  useEffect(() => {
+    const close = (event: MouseEvent) => {
+      if (!boxRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    const move = (event: PointerEvent) => {
+      if (!dragging.current) return
+      pickFromPointer(event.clientX, event.clientY)
+    }
+    const stop = () => {
+      dragging.current = false
+    }
+    document.addEventListener('mousedown', close)
+    document.addEventListener('pointermove', move)
+    document.addEventListener('pointerup', stop)
+    return () => {
+      document.removeEventListener('mousedown', close)
+      document.removeEventListener('pointermove', move)
+      document.removeEventListener('pointerup', stop)
+    }
+  }, [])
+
+  const knobStyle = {
+    left: `${50 + 38 * Math.sin((hue * Math.PI) / 180)}%`,
+    top: `${50 - 38 * Math.cos((hue * Math.PI) / 180)}%`,
+    background: hslToHex(hue, 84, 48),
+  } as CSSProperties
+
+  return (
+    <div className="theme-color-block" ref={boxRef}>
+      <b>Modifier la couleur du thème</b>
+      <div className="theme-color-choices" role="listbox" aria-label="Couleur du thème">
+        {THEME_COLORS.map((swatch) => (
+          <button
+            key={swatch.id}
+            type="button"
+            role="option"
+            aria-selected={themeColor === swatch.color}
+            aria-label={swatch.label}
+            className={`theme-color-swatch${themeColor === swatch.color ? ' active' : ''}`}
+            style={{ background: swatch.color }}
+            onClick={() => {
+              setOpen(false)
+              onChange(swatch.color)
+            }}
+          />
+        ))}
+        <button
+          type="button"
+          role="option"
+          aria-selected={!isPreset}
+          aria-expanded={open}
+          aria-label="Autre, cercle chromatique"
+          className={`theme-color-swatch theme-color-other${!isPreset ? ' active' : ''}`}
+          style={!isPreset ? { background: themeColor } : undefined}
+          onClick={() => {
+            setHue(hexToHue(themeColor))
+            setOpen((current) => !current)
+          }}
+        />
+        <span className="theme-color-other-label">Autre</span>
+      </div>
+      {open ? (
+        <div className="theme-color-picker" role="dialog" aria-label="Cercle chromatique">
+          <button
+            ref={wheelRef}
+            type="button"
+            className="theme-hue-wheel"
+            aria-label="Choisir une teinte"
+            onPointerDown={(event) => {
+              dragging.current = true
+              event.currentTarget.setPointerCapture(event.pointerId)
+              pickFromPointer(event.clientX, event.clientY)
+            }}
+          >
+            <span className="theme-hue-knob" style={knobStyle} />
+          </button>
+          <div className="theme-tone-row" role="group" aria-label="Ton de la couleur">
+            {THEME_TONES.map((tone) => (
+              <button
+                key={tone.id}
+                type="button"
+                className={`theme-tone-chip${toneId === tone.id ? ' active' : ''}`}
+                style={{
+                  background: hslToHex(hue, tone.s, tone.l),
+                  color: contrastOnTheme(hslToHex(hue, tone.s, tone.l)),
+                }}
+                onClick={() => {
+                  setToneId(tone.id)
+                  applyHueTone(hue, tone.id)
+                }}
+              >
+                {tone.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </div>
+  )
 }
 
 /** Remettre à `true` pour réafficher Lecture dans le sélecteur Domaine. */
@@ -1177,7 +1374,10 @@ function GeneratorPage() {
 
 
   return (
-    <div className="app-shell" style={{ '--purple': themeColor } as CSSProperties}>
+    <div
+      className="app-shell"
+      style={{ '--purple': themeColor, '--theme-on': contrastOnTheme(themeColor) } as CSSProperties}
+    >
       <Header onCreate={() => undefined} generator />
       <main className="generator-page" id="top">
         <div className="generator-intro">
@@ -2048,23 +2248,7 @@ function GeneratorPage() {
                   )}
                 </div>
               </details>
-              <div className="theme-color-block">
-                <b>Modifier la couleur du thème</b>
-                <div className="theme-color-choices" role="listbox" aria-label="Couleur du thème">
-                  {THEME_COLORS.map((swatch) => (
-                    <button
-                      key={swatch.id}
-                      type="button"
-                      role="option"
-                      aria-selected={themeColor === swatch.color}
-                      aria-label={swatch.label}
-                      className={`theme-color-swatch${themeColor === swatch.color ? ' active' : ''}`}
-                      style={{ background: swatch.color }}
-                      onClick={() => applyThemeColor(swatch.color)}
-                    />
-                  ))}
-                </div>
-              </div>
+              <ThemeColorPicker themeColor={themeColor} onChange={applyThemeColor} />
             </div>
           </aside>
           <section className="result-panel">

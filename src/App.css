@@ -9,8 +9,11 @@
   --blue:#4f46e5;
   --green:#18a66a;
   --orange:#c45c12;
+  --yellow:#a16207;
   --red:#b42318;
   --rose:#be185d;
+  --azure:#2563eb;
+  --indigo:#4338ca;
   --cream:#fcfaff;
   /* Espacement fiche scolaire — source de vérité (skill nouvel-exercice) */
   --ex-pad-y: 8px;
@@ -902,7 +905,7 @@
 .mode-toggle-block>b,.custom-header-form>b{font-size:13px}
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:13px;font-weight:700}
-.mode-toggle button.active{background:var(--purple);color:#fff;box-shadow:none}
+.mode-toggle button.active{background:var(--purple);color:var(--theme-on,#fff);box-shadow:none}
 .mode-toggle.is-tabs{
   display:flex;flex-wrap:wrap;grid-template-columns:unset;
   align-items:center;width:fit-content;max-width:100%
@@ -934,8 +937,8 @@
 }
 .coord-page-palette>b{font-size:13px;font-weight:800;letter-spacing:-.02em}
 .coord-page-palette .coord-palette{grid-template-columns:1fr 1fr}
-.print-chip.is-generate{background:var(--purple);border-color:var(--purple);color:#fff}
-.print-chip.is-generate:hover{filter:brightness(0.92);color:#fff}
+.print-chip.is-generate{background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)}
+.print-chip.is-generate:hover{filter:brightness(0.92);color:var(--theme-on,#fff)}
 .exercise-tabs button{position:relative}
 .sheet-instruction-main>.sheet-givens{
   display:block;margin:10px 0 0;padding:0;
@@ -967,6 +970,34 @@
 }
 .theme-color-swatch.active{border-color:var(--ink);box-shadow:0 0 0 2px #fff,0 0 0 4px var(--ink)}
 .theme-color-swatch:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.theme-color-other{
+  background:
+    conic-gradient(from 0deg,#e11d48,#ea580c,#eab308,#16a34a,#2563eb,#4f46e5,#7c3aed,#e11d48);
+}
+.theme-color-other-label{
+  font-size:11px;font-weight:700;color:var(--muted);margin:0
+}
+.theme-color-picker{display:flex;flex-direction:column;gap:10px;padding:10px 2px 2px}
+.theme-hue-wheel{
+  width:132px;height:132px;margin:0 auto;border-radius:999px;padding:0;border:0;
+  background:conic-gradient(from 0deg,#f43f5e,#f97316,#eab308,#22c55e,#0ea5e9,#6366f1,#a855f7,#f43f5e);
+  box-shadow:inset 0 0 0 1px #ffffffaa,0 0 0 4px #fff,0 0 0 5px var(--line);
+  cursor:crosshair;position:relative
+}
+.theme-hue-wheel::after{
+  content:'';position:absolute;inset:38px;border-radius:999px;background:var(--purple);
+  box-shadow:inset 0 0 0 1px var(--line);pointer-events:none
+}
+.theme-hue-wheel .theme-hue-knob{
+  position:absolute;z-index:1;width:14px;height:14px;border-radius:999px;border:2px solid #fff;
+  box-shadow:0 0 0 1px #0003;transform:translate(-50%,-50%);pointer-events:none
+}
+.theme-tone-row{display:flex;flex-wrap:wrap;gap:6px}
+.theme-tone-chip{
+  flex:1 1 auto;min-height:32px;padding:6px 8px;border:1px solid var(--line);
+  border-radius:999px;background:#fff;color:var(--ink);font-size:11px;font-weight:700
+}
+.theme-tone-chip.active{border-color:var(--ink);color:var(--theme-on,#fff);background:var(--purple)}
 
 .landing-page{min-height:100vh;display:flex;flex-direction:column}
 .landing-page>main{flex:1 1 auto}
@@ -1034,6 +1065,10 @@
   width:46%;justify-self:start;min-height:0;height:100%;
   border:2.5px solid var(--gec-prep);border-top-color:var(--gec-det);
   background:#fff;box-sizing:border-box
+}
+/* 10 × le padding actuel (2 px) entre le tableau Gattegno et le pied de page */
+.sheet-body:has(.layout-gattegno-chart){
+  padding-bottom:20px
 }
 .sheet-body:has(.layout-gattegno-chart)>.exercise-block{
   flex:1 1 auto;min-height:0;margin:0;
