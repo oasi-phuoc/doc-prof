@@ -1,11 +1,11 @@
 import { Fragment, type CSSProperties } from 'react'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
-import { CompositeFigure } from './CompositeFigure'
-import { CoordGrid, CoordShapeButton } from './CoordGrid'
-import { FractionView, renderMathText } from './FractionView'
-import { GattegnoChart } from './GattegnoChart'
-import { GeometryFigure } from './GeometryFigure'
+import { CompositeFigure } from './math/CompositeFigure'
+import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
+import { FractionView, renderMathText } from './math/FractionView'
+import { GattegnoChart } from './math/GattegnoChart'
+import { GeometryFigure } from './math/GeometryFigure'
 
 function VocabTable({ item }: { item: MathItem }) {
   const rows = Math.max(1, item.vocabRows ?? 3)
