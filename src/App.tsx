@@ -1016,20 +1016,24 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
       ? prev.gameSelectedIds
       : themeGame?.gameSelectedIds
   const seriesDefaults: Record<string, string> = {
+    'jeux-vocabulaire': 'Vocabulaire',
+    'jeux-devinettes': 'Devinettes',
     'jeux-memory': 'Mémory',
     'jeux-intrus': 'Intrus',
     'jeux-tri': 'Tri',
     'jeux-loto': 'Loto',
   }
-  const usesSeriesBack =
+  const usesSeriesIdentity =
     type.id === 'jeux-memory' ||
     type.id === 'jeux-intrus' ||
     type.id === 'jeux-tri' ||
-    type.id === 'jeux-loto'
+    type.id === 'jeux-loto' ||
+    type.id === 'jeux-vocabulaire' ||
+    type.id === 'jeux-devinettes'
   const gameBackColor =
     prev?.exerciseType === type.id
       ? prev.gameBackColor
-      : usesSeriesBack
+      : usesSeriesIdentity
         ? '#0f6b5c'
         : undefined
   const gameSeriesName =
@@ -1099,8 +1103,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameSource,
           gameTopic,
           gameSelectedIds,
-          gameBackColor: usesSeriesBack ? (gameBackColor ?? '#0f6b5c') : undefined,
-          gameSeriesName: usesSeriesBack ? gameSeriesName : undefined,
+          gameBackColor: usesSeriesIdentity ? (gameBackColor ?? '#0f6b5c') : undefined,
+          gameSeriesName: usesSeriesIdentity ? gameSeriesName : undefined,
         }
       : {
           gameEntries: undefined,

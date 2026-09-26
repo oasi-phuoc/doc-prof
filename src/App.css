@@ -1472,12 +1472,14 @@
   padding:2.5mm;
   overflow:hidden
 }
-/* Recto ludique : fond pastel léger, filet de découpe, badge vif (lisible N&B). */
-.game-board.is-ludic .game-card:not(.is-series-back):not(.is-back){
+/* Recto ludique : fond pastel, filet de découpe, coins, badge vif (lisible N&B). */
+.game-board.is-ludic .game-card:not(.is-series-back):not(.is-back):not(.is-series-content){
   background:
-    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 7%, #fff) 0%, #fff 55%);
-  border:1.6px dashed var(--jeux-cut);
-  box-shadow:inset 0 0 0 0.6mm #fff
+    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 10%, #fff) 0%, #fff 52%),
+    radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--jeux-soft) 55%, #fff), transparent 55%);
+  border:1.7px dashed var(--jeux-cut);
+  box-shadow:inset 0 0 0 0.7mm #fff;
+  border-radius:calc(var(--jeux-card-radius) + 1px)
 }
 .game-board.is-ludic .game-card.is-category,
 .game-board.is-ludic .game-card.is-family-head{
@@ -1485,13 +1487,28 @@
   border-style:solid
 }
 .game-board.is-ludic .game-card-badge{
-  background:color-mix(in srgb, var(--jeux-accent) 18%, #fff);
-  border-color:var(--jeux-accent);color:var(--jeux-ink)
+  background:color-mix(in srgb, var(--jeux-accent) 22%, #fff);
+  border-color:var(--jeux-accent);color:var(--jeux-ink);
+  box-shadow:0 0.4mm 0 color-mix(in srgb, var(--jeux-accent) 25%, #fff)
 }
 .game-board.is-ludic .game-card-image{
   background:color-mix(in srgb, var(--jeux-soft) 70%, #fff);
-  border-radius:7px
+  border-radius:8px;
+  border:1px solid color-mix(in srgb, var(--jeux-line) 55%, #fff);
+  padding:1mm
 }
+.game-board.is-ludic .game-card-image img{border-radius:6px;object-fit:contain}
+/* Vocabulaire / cartes : même hauteur-largeur recto et verso (grille stretch). */
+.game-board.is-cards .game-card-grid{
+  --game-card-gap:2.5mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-cards .game-card{
+  min-height:0;height:100%;padding:2.2mm
+}
+.game-board.is-cards .game-card-image{min-height:0;flex:1 1 auto;margin-bottom:0}
 .game-card-badge{
   position:absolute;top:1.5mm;right:1.5mm;
   min-width:4.5mm;height:4.5mm;padding:0 1mm;
@@ -1506,6 +1523,35 @@
   border-style:solid;
   background:#fff;
   justify-content:center;padding:2mm;min-height:0;height:100%
+}
+/* Verso contenu brandé (vocab mots / devinettes indices) */
+.game-card.is-series-content{
+  border:2.2mm solid var(--series-frame, var(--jeux-accent));
+  border-radius:var(--jeux-card-radius);
+  border-style:solid;
+  background:#fff;
+  justify-content:center;gap:1.5mm;padding:2mm;min-height:0;height:100%
+}
+.game-card.is-series-content .game-series-back{
+  flex:0 0 auto;gap:1mm
+}
+.game-card.is-series-content .game-series-back.is-compact .game-series-logo{
+  width:10mm;height:10mm
+}
+.game-card.is-series-content .game-series-back.is-compact .game-series-logo-text{font-size:4.5px}
+.game-card.is-series-content .game-series-back.is-compact .game-series-label{
+  font-size:8px;font-weight:700;max-width:100%
+}
+.game-card.is-series-content .game-card-word{
+  flex:1 1 auto;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;line-height:1.15;padding:0 1mm
+}
+.game-card.is-series-content .game-card-clues{
+  flex:1 1 auto;font-size:9px;align-self:stretch
+}
+.game-board.is-cards .game-card.is-series-content,
+.game-board.is-devinettes .game-card.is-series-content{
+  min-height:0;height:100%
 }
 .game-series-back{
   display:flex;flex-direction:column;align-items:center;justify-content:center;

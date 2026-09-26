@@ -54,6 +54,8 @@ export type GameCard = {
   backColor?: string
   /** Cadre épais de série (verso Intrus / série). */
   frameColor?: string
+  /** Nom de série (verso contenu brandé : mot / indices). */
+  seriesLabel?: string
 }
 
 /** Sous-grille (loto : 3 grilles par page). */

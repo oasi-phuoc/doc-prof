@@ -89,12 +89,18 @@ function mirrorRows<T>(items: T[], cols: number): T[] {
 
 /**
  * Vocabulaire imprimable recto-verso :
- * feuille 1 = images, feuille 2 = mots (ordre mirroir pour correspondance au retournement).
+ * feuille 1 = images, feuille 2 = mots brandés (logo ClairFLE + série, miroir bord long).
  */
-function vocab(entries: GameEntry[]): MathItem[] {
+function vocab(
+  entries: GameEntry[],
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
   const cols = 3
   const rows = 4
   const list = padEntries(entries, cols * rows)
+  const series = resolveSeriesName(seriesName, 'Vocabulaire')
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const recto: GameCard[] = list.map((e, i) => ({
     id: `vr-${i}`,
     imageSrc: e.imageSrc,
@@ -108,6 +114,8 @@ function vocab(entries: GameEntry[]): MathItem[] {
     text: e.text,
     variant: 'word' as const,
     badge: String(i + 1),
+    seriesLabel: series,
+    frameColor: frame,
   }))
   return [
     boardItem({
@@ -122,22 +130,30 @@ function vocab(entries: GameEntry[]): MathItem[] {
       rows,
       cards: verso,
       kind: 'cards',
-      title: 'Verso — mots (retournez la feuille : chaque mot correspond à l’image)',
+      themeLabel: series,
+      frameColor: frame,
+      title: `Verso — mots · série « ${series} » (miroir bord long)`,
     }),
   ]
 }
 
 /**
  * Devinettes recto-verso :
- * feuille 1 = mot + image, feuille 2 = 3 indices (ordre mirroir, bord long).
+ * feuille 1 = mot + image, feuille 2 = 3 indices brandés (logo + série, miroir bord long).
  */
-function devinettes(entries: GameEntry[]): MathItem[] {
+function devinettes(
+  entries: GameEntry[],
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
   const cols = 3
   const rows = 3
   const list = padEntries(entries, cols * rows).map((e) => ({
     ...e,
     clues: e.clues && e.clues.length >= 3 ? e.clues.slice(0, 3) : ['…', '…', '…'],
   }))
+  const series = resolveSeriesName(seriesName, 'Devinettes')
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const recto: GameCard[] = list.map((e, i) => ({
     id: `dr-${i}`,
     text: e.text,
@@ -154,6 +170,8 @@ function devinettes(entries: GameEntry[]): MathItem[] {
     lines: e.clues,
     variant: 'clue' as const,
     badge: String(i + 1),
+    seriesLabel: series,
+    frameColor: frame,
   }))
   return [
     boardItem({
@@ -168,7 +186,9 @@ function devinettes(entries: GameEntry[]): MathItem[] {
       rows,
       cards: verso,
       kind: 'devinettes',
-      title: 'Verso — indices (retournez la feuille : chaque carte correspond au mot)',
+      themeLabel: series,
+      frameColor: frame,
+      title: `Verso — indices · série « ${series} » (miroir bord long)`,
     }),
   ]
 }
@@ -747,10 +767,10 @@ export function tryGenerateJeuxBatch(
   let items: MathItem[]
   switch (typeId) {
     case 'jeux-vocabulaire':
-      items = vocab(entries)
+      items = vocab(entries, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-devinettes':
-      items = devinettes(entries)
+      items = devinettes(entries, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-memory':
       items = memory(entries, rng, options.gameBackColor, options.gameSeriesName)

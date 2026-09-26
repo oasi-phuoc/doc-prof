@@ -43,12 +43,15 @@ function defaultSeriesName(typeId: string): string {
   return SERIES_DEFAULTS[typeId] ?? 'Jeux'
 }
 
-function usesSeriesBack(typeId: string): boolean {
+/** Types avec identité de série (logo ClairFLE + nom + cadre) au verso. */
+function usesSeriesIdentity(typeId: string): boolean {
   return (
     typeId === 'jeux-memory' ||
     typeId === 'jeux-intrus' ||
     typeId === 'jeux-tri' ||
-    typeId === 'jeux-loto'
+    typeId === 'jeux-loto' ||
+    typeId === 'jeux-vocabulaire' ||
+    typeId === 'jeux-devinettes'
   )
 }
 
@@ -224,7 +227,7 @@ function SeriesIdentityFields({
       </label>
       <GameColorPicker
         title="Cadre de série (verso)"
-        hint="Logo ClairFLE + nom de série dans un cadre coloré (recto-verso bord long)."
+        hint="Logo ClairFLE dans un cercle + nom de série, cadre coloré (recto-verso bord long)."
         value={frameColor || '#0f6b5c'}
         allowWhite={false}
         onChange={onFrameColor}
@@ -525,17 +528,17 @@ export function GameContentPanel({
           />
           <small className="muted">
             {typeId === 'jeux-vocabulaire'
-              ? 'Impression recto-verso : images puis mots alignés (bord long).'
+              ? 'Recto images · verso mots + logo ClairFLE et nom de série (bord long).'
               : typeId === 'jeux-memory'
                 ? 'Recto : paires image / mot · verso : logo ClairFLE + nom de série.'
                 : typeId === 'jeux-loto'
                   ? '15 grilles (3/page) · verso = série (logo ClairFLE) · lot animateur 27 mots.'
                   : typeId === 'jeux-devinettes'
-                    ? 'Sélectionnez les mots (image) ; les indices se règlent en mode Libre.'
+                    ? 'Sélectionnez les mots ; verso indices + identité de série.'
                     : template.entryHint}
           </small>
         </div>
-        {usesSeriesBack(typeId) ? (
+        {usesSeriesIdentity(typeId) ? (
           <SeriesIdentityFields
             typeId={typeId}
             seriesName={gameSeriesName}
@@ -743,6 +746,13 @@ export function GameContentPanel({
       <div className="game-content-field">
         <span className="game-content-label">Contenu</span>
         <p className="muted game-content-hint">{template.entryHint}</p>
+        <SeriesIdentityFields
+          typeId={typeId}
+          seriesName={gameSeriesName}
+          frameColor={gameBackColor}
+          onSeriesName={setSeriesName}
+          onFrameColor={setBackColor}
+        />
         <ul className="game-riddle-list" aria-label="Devinettes">
           {slots.map((entry, index) => {
             const inputId = `${baseId}-riddle-img-${index}`
@@ -826,7 +836,7 @@ export function GameContentPanel({
           </p>
         ) : (
           <small className="muted">
-            Recto-verso : page mot + image, puis page indices (bord long).
+            Recto mot + image · verso indices + logo ClairFLE et nom de série (bord long).
           </small>
         )}
       </div>
@@ -941,13 +951,13 @@ export function GameContentPanel({
       ) : (
         <small className="muted">
           {typeId === 'jeux-vocabulaire'
-            ? 'Recto-verso : page images puis page mots (bord long).'
+            ? 'Recto images · verso mots + logo ClairFLE et nom de série (bord long).'
             : typeId === 'jeux-memory'
               ? 'Recto : paires image / mot · verso : logo ClairFLE + série (bord long).'
               : 'JPG, PNG, WebP ou SVG · max. 2,5 Mo'}
         </small>
       )}
-      {usesSeriesBack(typeId) ? (
+      {usesSeriesIdentity(typeId) ? (
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}

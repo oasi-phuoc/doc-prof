@@ -1,11 +1,54 @@
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import type { GameBoard, GameCard, GamePanel } from './types'
+
+/** Logo ClairFLE (cercle) + libellé de série — skill jeux-verso-serie. */
+function SeriesIdentity({
+  label,
+  sub,
+  compact,
+}: {
+  label?: string
+  sub?: string
+  compact?: boolean
+}) {
+  return (
+    <div className={`game-series-back${compact ? ' is-compact' : ''}`}>
+      <div className="game-series-logo" aria-hidden>
+        <span className="game-series-logo-mark">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span className="game-series-logo-text">ClairFLE</span>
+      </div>
+      {label ? <strong className="game-series-label">{label}</strong> : null}
+      {sub ? <small className="loto-panel-theme-sub">{sub}</small> : null}
+    </div>
+  )
+}
+
+function cardShell(
+  className: string,
+  card: GameCard,
+  children: ReactNode,
+  style?: CSSProperties,
+) {
+  return (
+    <div className={className} data-badge={card.badge || undefined} style={style}>
+      {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+      {children}
+    </div>
+  )
+}
 
 function CardFace({ card }: { card: GameCard }) {
   const variant = card.variant ?? 'default'
   const showImageSlot =
     variant === 'default' || variant === 'image' || (variant === 'word' && Boolean(card.imageSrc))
   const showWord = variant !== 'image' && Boolean(card.text)
+  const frame = card.frameColor?.trim()
+  const seriesLabel = card.seriesLabel?.trim()
+  const branded = Boolean(seriesLabel || frame)
 
   if (variant === 'domino') {
     return (
@@ -29,15 +72,20 @@ function CardFace({ card }: { card: GameCard }) {
   }
 
   if (variant === 'clue') {
-    return (
-      <div className="game-card is-clue" data-badge={card.badge || undefined}>
-        {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+    return cardShell(
+      `game-card is-clue${branded ? ' is-series-content' : ''}`,
+      card,
+      <>
+        {branded ? <SeriesIdentity label={seriesLabel} compact /> : null}
         <ol className="game-card-clues">
           {(card.lines ?? []).map((line, i) => (
             <li key={i}>{line}</li>
           ))}
         </ol>
-      </div>
+      </>,
+      branded
+        ? ({ '--series-frame': frame || '#0f6b5c' } as CSSProperties)
+        : undefined,
     )
   }
 
@@ -53,24 +101,14 @@ function CardFace({ card }: { card: GameCard }) {
   }
 
   if (variant === 'series-back') {
-    const frame = card.frameColor?.trim() || '#0f6b5c'
+    const seriesFrame = frame || '#0f6b5c'
     return (
       <div
         className="game-card is-series-back"
-        style={{ '--series-frame': frame } as CSSProperties}
+        style={{ '--series-frame': seriesFrame } as CSSProperties}
         aria-label={card.text ? `Série ${card.text}` : 'Dos de série'}
       >
-        <div className="game-series-back">
-          <div className="game-series-logo" aria-hidden>
-            <span className="game-series-logo-mark">
-              <i />
-              <i />
-              <i />
-            </span>
-            <span className="game-series-logo-text">ClairFLE</span>
-          </div>
-          {card.text ? <strong className="game-series-label">{card.text}</strong> : null}
-        </div>
+        <SeriesIdentity label={card.text} />
       </div>
     )
   }
@@ -101,16 +139,28 @@ function CardFace({ card }: { card: GameCard }) {
   }
 
   if (variant === 'intrus-answer') {
-    const frame = card.frameColor?.trim() || '#0f6b5c'
+    const intrusFrame = frame || '#0f6b5c'
     return (
       <div
         className="game-card is-intrus-answer"
         data-badge={card.badge || undefined}
-        style={{ '--intrus-frame': frame } as CSSProperties}
+        style={{ '--intrus-frame': intrusFrame } as CSSProperties}
       >
         {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
         <div className="game-card-word">{card.text}</div>
       </div>
+    )
+  }
+
+  if (variant === 'word' && branded && !card.imageSrc) {
+    return cardShell(
+      'game-card is-word is-series-content',
+      card,
+      <>
+        <SeriesIdentity label={seriesLabel} compact />
+        <div className="game-card-word">{card.text}</div>
+      </>,
+      { '--series-frame': frame || '#0f6b5c' } as CSSProperties,
     )
   }
 
@@ -160,19 +210,8 @@ function LotoPanelFace({ panel, mode }: { panel: GamePanel; mode: 'page' | 'back
   if (mode === 'back') {
     return (
       <div className="loto-panel is-back is-series">
-        <div className="game-series-back">
-          <div className="game-series-logo" aria-hidden>
-            <span className="game-series-logo-mark">
-              <i />
-              <i />
-              <i />
-            </span>
-            <span className="game-series-logo-text">ClairFLE</span>
-          </div>
-          <strong className="game-series-label">{panel.themeLabel ?? 'Loto'}</strong>
-          {panel.themeSub ? <small className="loto-panel-theme-sub">{panel.themeSub}</small> : null}
-          {panel.title ? <span className="loto-panel-theme-grid">{panel.title}</span> : null}
-        </div>
+        <SeriesIdentity label={panel.themeLabel ?? 'Loto'} sub={panel.themeSub} />
+        {panel.title ? <span className="loto-panel-theme-grid">{panel.title}</span> : null}
       </div>
     )
   }
