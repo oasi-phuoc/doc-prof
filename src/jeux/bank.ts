@@ -1,6 +1,7 @@
 /** Banques mots/images pour les fiches-jeux (thème FR + lecture). */
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { vocabLearnWordsFor, vocabSubgroupsFor } from '@/francais/vocab-learn'
+import { resolveGameImageSrc } from './image-resolve'
 import { LECTURE_WORDS_BY_TOPIC, lectureWordsForTopic, type LectureWord } from './lecture-bank'
 import { entriesToText } from './parse'
 import { templateFor } from './templates'
@@ -15,7 +16,8 @@ export function isGameBankType(typeId: string): boolean {
     typeId === 'jeux-vocabulaire' ||
     typeId === 'jeux-memory' ||
     typeId === 'jeux-loto' ||
-    typeId === 'jeux-dominos'
+    typeId === 'jeux-dominos' ||
+    typeId === 'jeux-devinettes'
   )
 }
 
@@ -28,7 +30,7 @@ export function themeBankItems(topicId: string, subgroupId?: string): BankItem[]
     byLabel.set(w.label.toLowerCase(), {
       id: w.id,
       label: w.label,
-      imageSrc: w.imageSrc,
+      imageSrc: resolveGameImageSrc(w.label, w.imageSrc),
     })
   }
   // Lecture rattachée au thème (sans doublon de libellé ; image lecture en secours).
@@ -36,10 +38,16 @@ export function themeBankItems(topicId: string, subgroupId?: string): BankItem[]
     const key = w.label.toLowerCase()
     if (byLabel.has(key)) {
       const prev = byLabel.get(key)!
-      if (w.imageSrc) byLabel.set(key, { ...prev, imageSrc: prev.imageSrc || w.imageSrc })
+      if (!prev.imageSrc && w.imageSrc) {
+        byLabel.set(key, { ...prev, imageSrc: resolveGameImageSrc(w.label, w.imageSrc) })
+      }
       continue
     }
-    byLabel.set(key, { id: w.id, label: w.label, imageSrc: w.imageSrc })
+    byLabel.set(key, {
+      id: w.id,
+      label: w.label,
+      imageSrc: resolveGameImageSrc(w.label, w.imageSrc),
+    })
   }
   return [...byLabel.values()].sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 }
@@ -79,12 +87,20 @@ export function padGameEntries(entries: GameEntry[], count: number): GameEntry[]
   return out
 }
 
-export function entriesFromBankItems(items: BankItem[], count: number): GameEntry[] {
+export function entriesFromBankItems(
+  items: BankItem[],
+  count: number,
+  previous?: GameEntry[],
+): GameEntry[] {
   return padGameEntries(
-    items.slice(0, count).map((item) => ({
-      text: item.label,
-      imageSrc: item.imageSrc,
-    })),
+    items.slice(0, count).map((item) => {
+      const prev = previous?.find((p) => p.text.trim().toLowerCase() === item.label.toLowerCase())
+      return {
+        text: item.label,
+        imageSrc: resolveGameImageSrc(item.label, item.imageSrc || prev?.imageSrc),
+        clues: prev?.clues,
+      }
+    }),
     count,
   )
 }

@@ -495,6 +495,10 @@
 /* Marges miroir (recto/verso) : page impaire 2,5 cm à gauche et 1 cm à droite ; page paire inversée. */
 .worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 2.5cm}
 .worksheet-sheet.sheet-even{padding:12mm 2.5cm 10mm 1cm}
+/* Jeux : marges symétriques (aperçu = impression, pas de décalage miroir). */
+.worksheet-sheet.is-jeux,
+.worksheet-sheet.is-jeux.sheet-odd,
+.worksheet-sheet.is-jeux.sheet-even{padding:10mm 12mm 8mm}
 .sheet-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 /* Aperçu : laisse voir le chip grille dans la marge (hors zone texte). */
 .a4-frame .sheet-body{overflow:visible}
@@ -1004,6 +1008,11 @@
   .print-only-sheets .worksheet-sheet{width:210mm;min-height:297mm;max-height:297mm;height:297mm;margin:0;transform:none;border:0;box-shadow:none;display:flex;flex-direction:column;overflow:hidden;position:static}
   .print-only-sheets .worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 2.5cm}
   .print-only-sheets .worksheet-sheet.sheet-even{padding:12mm 2.5cm 10mm 1cm}
+  .print-only-sheets .worksheet-sheet.is-jeux,
+  .print-only-sheets .worksheet-sheet.is-jeux.sheet-odd,
+  .print-only-sheets .worksheet-sheet.is-jeux.sheet-even{
+    padding:10mm 12mm 8mm!important
+  }
   .sheet-body{flex:1 1 auto}
   .doc-footer{margin-top:auto}
 }
@@ -1077,7 +1086,11 @@
 .coord-page-palette>b{font-size:13px;font-weight:800;letter-spacing:-.02em}
 .coord-page-palette .coord-palette{grid-template-columns:1fr 1fr}
 .print-chip.is-generate{background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)}
-.print-chip.is-generate:hover{filter:brightness(0.92);color:var(--theme-on,#fff)}
+.print-chip.is-generate:hover{filter:brightness(0.92);color:var(--theme-on,#fff);background:var(--purple)}
+.print-chip.is-generate:active{
+  background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff);
+  filter:brightness(0.85)
+}
 .exercise-tabs button{position:relative}
 .sheet-instruction-main>.sheet-givens{
   display:block;margin:10px 0 0;padding:0;
@@ -1094,11 +1107,18 @@
 .result-head-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .print-chip{
   display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:8px 16px;
-  border:1px solid #d6cafc;border-radius:999px;background:#fff;color:var(--purple);
+  border:1px solid color-mix(in srgb, var(--purple) 40%, #fff);border-radius:999px;background:#fff;color:var(--purple);
   font-size:13px;font-weight:700;cursor:pointer;box-shadow:none
 }
-.print-chip:hover{border-color:var(--purple);background:#f7f3ff}
-.print-chip:focus-visible{outline:2px solid #8b93a3;outline-offset:2px}
+.print-chip:hover{
+  border-color:var(--purple);
+  background:color-mix(in srgb, var(--purple) 10%, #fff);
+  color:var(--purple)
+}
+.print-chip:active{
+  background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)
+}
+.print-chip:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 .print-chip svg{flex:0 0 auto}
 .theme-color-block{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .theme-color-block>b{font-size:13px;font-weight:700;color:var(--ink)}
@@ -1333,6 +1353,9 @@
 }
 .vocab-add-btn:disabled{opacity:.4;cursor:not-allowed}
 .vocab-add-row .questions-overflow-hint{grid-column:1/-1;margin:0}
+.game-extra-words{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.game-extra-words>b{font-size:12px;font-weight:700;color:var(--ink)}
+.game-extra-words .vocab-add-row{margin-top:0}
 .vocab-match{width:100%;display:flex;flex-direction:column;gap:10px}
 .vocab-match-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;align-items:start
@@ -1406,7 +1429,7 @@
   --jeux-card-radius:10px;
   --series-frame:var(--jeux-accent);
 }
-.worksheet-sheet.is-jeux{padding:10mm 12mm 8mm}
+/* padding Jeux déjà défini avec .sheet-odd/.sheet-even ci-dessus */
 .jeux-sheet-title{margin:0 0 4mm}
 .jeux-sheet-title h3{margin:0;font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--jeux-ink)}
 .exercise-heading.is-jeux{margin:0 0 3mm}
