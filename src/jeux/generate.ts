@@ -316,10 +316,17 @@ function loto(
     boardItem({
       cols: 3,
       rows: 9,
-      cards: call.map((text, i) => ({
-        ...toCard(text, i, 'call'),
-        badge: String(i + 1),
-      })),
+      cards: call.map((text, i) => {
+        const entry = byText.get(text)
+        return {
+          id: `call-${i}-${text}`,
+          text,
+          imageSrc: entry?.imageSrc,
+          // Image + mot côte à côte (CSS is-loto-call) — contain, pas de rognage.
+          variant: 'default' as const,
+          badge: String(i + 1),
+        }
+      }),
       kind: 'loto-call',
       themeLabel: series,
       title: `Lot animateur — 27 mots (série « ${series} »)`,

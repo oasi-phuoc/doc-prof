@@ -1712,9 +1712,25 @@
   grid-template-rows:repeat(var(--game-rows,9),minmax(0,1fr));
   align-content:stretch;--game-card-gap:1.6mm
 }
-.game-board.is-loto-call .game-card{min-height:0;height:100%;padding:1.2mm;border-style:solid}
-.game-board.is-loto-call .game-card-image{min-height:0;margin-bottom:0.8mm;flex:1 1 auto}
-.game-board.is-loto-call .game-card-word{font-size:10px;font-weight:700}
+/* Lot animateur : image complète à gauche, mot à droite (pas de rognage). */
+.game-board.is-loto-call .game-card{
+  min-height:0;height:100%;padding:1.2mm 2mm;border-style:solid;
+  flex-direction:row;align-items:center;justify-content:flex-start;gap:2.5mm
+}
+.game-board.is-loto-call .game-card-image{
+  flex:0 0 16mm;width:16mm;height:12mm;min-height:12mm;max-height:12mm;
+  margin-bottom:0;background:#fff;border-radius:4px
+}
+.game-board.is-loto-call .game-card-image img{
+  width:100%;height:100%;object-fit:contain;object-position:center
+}
+.game-board.is-loto-call .game-card-word{
+  flex:1 1 auto;min-width:0;margin:0;padding-right:5mm;
+  font-size:11px;font-weight:800;text-align:left;line-height:1.15
+}
+.game-board.is-loto-call .game-card.is-word{
+  justify-content:flex-start;padding-left:2mm
+}
 .game-board.is-plateau .game-card{min-height:16mm}
 .game-board.is-die .game-card{
   min-height:32mm;border-style:solid;border-color:var(--jeux-accent);
@@ -1731,7 +1747,10 @@
   min-height:0;height:100%;padding:4mm;border-width:1.8px
 }
 .game-board.is-devinettes .game-card-image{
-  min-height:0;margin-bottom:2.5mm;flex:1 1 auto
+  min-height:0;margin-bottom:2.5mm;flex:1 1 auto;background:#fff
+}
+.game-board.is-devinettes .game-card-image img{
+  width:100%;height:100%;object-fit:contain;object-position:center
 }
 .game-board.is-devinettes .game-card-word{
   font-size:17px;font-weight:800;line-height:1.15;letter-spacing:.01em;flex:0 0 auto
