@@ -334,12 +334,21 @@ export function GameContentPanel({
   // —— Mode libre (ou templates sans images) ——
   const resolved = resolveEntries(typeId, entries)
   const slots =
-    withImages || typeId === 'jeux-devinettes' || typeId === 'jeux-intrus'
+    withImages ||
+    typeId === 'jeux-devinettes' ||
+    typeId === 'jeux-intrus' ||
+    typeId === 'jeux-tri'
       ? Array.from({ length: template.entryCount }, (_, i) =>
           resolved[i] ??
           (typeId === 'jeux-intrus'
             ? { text: '', words: ['', '', '', ''], isIntrus: true }
-            : { text: '', clues: ['', '', ''] }),
+            : typeId === 'jeux-tri'
+              ? {
+                  text: '',
+                  category: '',
+                  words: ['', '', '', '', '', '', ''],
+                }
+              : { text: '', clues: ['', '', ''] }),
         )
       : resolved
 
@@ -364,6 +373,31 @@ export function GameContentPanel({
     updateSlot(index, { words: words.slice(0, 4), isIntrus: true })
   }
 
+  function updateTriWord(index: number, wordIndex: number, value: string) {
+    const entry = slots[index] ?? {
+      text: '',
+      category: '',
+      words: ['', '', '', '', '', '', ''],
+    }
+    const words = [...(entry.words ?? ['', '', '', '', '', '', ''])]
+    while (words.length < 7) words.push('')
+    words[wordIndex] = value
+    const cat = entry.category || entry.text
+    updateSlot(index, { words: words.slice(0, 7), category: cat, text: cat })
+  }
+
+  function setSeriesName(name: string) {
+    const resolvedNow = resolveEntries(typeId, entries)
+    onChange({
+      gameEntries: resolvedNow,
+      gameText: entriesToText(typeId, resolvedNow),
+      gameSource: source,
+      gameTopic: name,
+      gameSelectedIds: selectedIds,
+      gameBackColor,
+    })
+  }
+
   async function onPickImage(index: number, file: File | undefined) {
     if (!file) return
     try {
@@ -372,6 +406,81 @@ export function GameContentPanel({
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Image refusée.')
     }
+  }
+
+  // —— Tri : 3 blocs (catégorie + 7 mots) ——
+  if (typeId === 'jeux-tri') {
+    return (
+      <div className="game-content-field">
+        <span className="game-content-label">Contenu</span>
+        <p className="muted game-content-hint">{template.entryHint}</p>
+        <label className="game-series-name">
+          <span>Nom de la série</span>
+          <input
+            className="pill-input"
+            type="text"
+            maxLength={32}
+            value={gameTopic ?? 'Tri'}
+            aria-label="Nom de la série (verso)"
+            placeholder="Tri"
+            onChange={(event) => setSeriesName(event.target.value)}
+          />
+        </label>
+        <ul className="game-intrus-list" aria-label="Catégories du tri">
+          {slots.map((entry, index) => {
+            const words = [...(entry.words ?? [])]
+            while (words.length < 7) words.push('')
+            const cat = entry.category || entry.text
+            return (
+              <li className="game-intrus-block" key={`${typeId}-${index}`}>
+                <b>Catégorie {index + 1}</b>
+                <div className="game-intrus-fields">
+                  <label>
+                    <span>Catégorie</span>
+                    <input
+                      className="pill-input"
+                      type="text"
+                      maxLength={20}
+                      value={cat}
+                      aria-label={`Catégorie ${index + 1}`}
+                      placeholder="Nom de la catégorie"
+                      onChange={(event) => {
+                        const value = event.target.value
+                        updateSlot(index, { text: value, category: value })
+                      }}
+                    />
+                  </label>
+                  {[0, 1, 2, 3, 4, 5, 6].map((wordIndex) => (
+                    <label key={wordIndex}>
+                      <span>Mot {wordIndex + 1}</span>
+                      <input
+                        className="pill-input"
+                        type="text"
+                        maxLength={template.maxTextLen}
+                        value={words[wordIndex] ?? ''}
+                        aria-label={`Catégorie ${index + 1}, mot ${wordIndex + 1}`}
+                        placeholder={`Mot ${wordIndex + 1}`}
+                        onChange={(event) => updateTriWord(index, wordIndex, event.target.value)}
+                      />
+                    </label>
+                  ))}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+        <GameColorPicker
+          title="Cadre de série (verso)"
+          hint="Cadre épais au verso pour identifier la fiche / série."
+          value={gameBackColor || '#0f6b5c'}
+          allowWhite={false}
+          onChange={setBackColor}
+        />
+        <small className="muted">
+          Recto : 24 cartes (étiquettes + mots) · verso : nom de série (bord long).
+        </small>
+      </div>
+    )
   }
 
   // —— Intrus : 12 blocs (intrus + 4 mots) ——

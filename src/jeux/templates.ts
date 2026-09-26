@@ -135,15 +135,17 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     family: 'cartes',
     label: 'Tri / catégories',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 4 },
+    grid: { cols: 4, rows: 6 },
     fields: [
       { type: 'categorie', required: true },
       { type: 'texte', required: true },
     ],
     entryCount: 3,
-    cardCount: 15,
+    cardCount: 24,
+    duplex: true,
     maxTextLen: 16,
-    entryHint: 'Catégorie : mot1, mot2, mot3, mot4 (3 catégories).',
+    entryHint:
+      '3 catégories × 7 mots · 24 cartes · verso = nom de série avec cadre.',
   },
   'jeux-sept-familles': {
     id: 'jeux-sept-familles',

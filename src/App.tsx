@@ -1020,9 +1020,15 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
       ? prev.gameBackColor
       : type.id === 'jeux-memory'
         ? ''
-        : type.id === 'jeux-intrus'
+        : type.id === 'jeux-intrus' || type.id === 'jeux-tri'
           ? '#0f6b5c'
           : undefined
+  const gameTopicTri =
+    type.id === 'jeux-tri'
+      ? prev?.exerciseType === type.id && prev.gameTopic
+        ? prev.gameTopic
+        : 'Tri'
+      : gameTopic
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -1084,11 +1090,12 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameEntries,
           gameText,
           gameSource,
-          gameTopic,
+          gameTopic: type.id === 'jeux-tri' ? gameTopicTri : gameTopic,
           gameSelectedIds,
           gameBackColor:
-            type.id === 'jeux-memory' || type.id === 'jeux-intrus'
-              ? (gameBackColor ?? (type.id === 'jeux-intrus' ? '#0f6b5c' : ''))
+            type.id === 'jeux-memory' || type.id === 'jeux-intrus' || type.id === 'jeux-tri'
+              ? (gameBackColor ??
+                (type.id === 'jeux-intrus' || type.id === 'jeux-tri' ? '#0f6b5c' : ''))
               : undefined,
         }
       : {

@@ -359,7 +359,7 @@ export const exerciseTypes: ExerciseType[] = [
     'jeux-tri',
     'jeux-cartes',
     'Tri / catégories',
-    'Cartes-mots et étiquettes de catégories à classer.',
+    '3 catégories × 7 mots (24 cartes) ; verso = nom de série avec cadre.',
     'Classez chaque mot sous la bonne catégorie.',
     'texte',
     { preferredColumns: 1 },

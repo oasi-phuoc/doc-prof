@@ -446,35 +446,96 @@ function dominos(entries: GameEntry[], rng: Rng): MathItem[] {
   ]
 }
 
-function tri(entries: GameEntry[]): MathItem[] {
+/** Normalise 3 catégories × 7 mots (format structuré ou plat legacy). */
+function normalizeTriGroups(
+  entries: GameEntry[],
+): Array<{ category: string; words: string[] }> {
+  if (entries.some((e) => (e.words?.length ?? 0) > 0 || (e.category && e.text === e.category))) {
+    const groups = entries.slice(0, 3).map((e, i) => {
+      const category = (e.category || e.text || `Catégorie ${i + 1}`).trim() || `Catégorie ${i + 1}`
+      const words = [...(e.words ?? [])].map((w) => w.trim()).filter(Boolean)
+      while (words.length < 7) words.push(`mot${words.length + 1}`)
+      return { category, words: words.slice(0, 7) }
+    })
+    while (groups.length < 3) {
+      const n = groups.length + 1
+      groups.push({
+        category: `Catégorie ${n}`,
+        words: Array.from({ length: 7 }, (_, i) => `mot${i + 1}`),
+      })
+    }
+    return groups
+  }
   const byCat = new Map<string, string[]>()
   for (const e of entries) {
-    const key = e.category || 'Divers'
+    const key = (e.category || 'Divers').trim() || 'Divers'
     const list = byCat.get(key) ?? []
-    list.push(e.text)
+    if (e.text.trim()) list.push(e.text.trim())
     byCat.set(key, list)
   }
   const cats = [...byCat.keys()].slice(0, 3)
   while (cats.length < 3) cats.push(`Catégorie ${cats.length + 1}`)
-  const cards: GameCard[] = []
-  for (const cat of cats) {
-    cards.push({ id: `cat-${cat}`, text: cat, variant: 'category' })
-    const words = byCat.get(cat) ?? []
-    for (let i = 0; i < 4; i++) {
-      cards.push({
-        id: `tri-${cat}-${i}`,
-        text: words[i] ?? '…',
+  return cats.map((category) => {
+    const words = [...(byCat.get(category) ?? [])]
+    while (words.length < 7) words.push(`mot${words.length + 1}`)
+    return { category, words: words.slice(0, 7) }
+  })
+}
+
+/**
+ * Tri / catégories recto-verso :
+ * feuille 1 = 24 cartes (3 étiquettes catégorie + 21 mots),
+ * feuille 2 = nom de série + cadre (identification de la fiche).
+ */
+function tri(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
+  const cols = 4
+  const rows = 6
+  const groups = normalizeTriGroups(entries)
+  const frame = frameColor?.trim() || '#0f6b5c'
+  const series = seriesName?.trim() || 'Tri'
+  const raw: GameCard[] = []
+  for (const g of groups) {
+    raw.push({
+      id: `cat-${g.category}`,
+      text: g.category,
+      variant: 'category',
+    })
+    g.words.forEach((word, i) => {
+      raw.push({
+        id: `tri-${g.category}-${i}`,
+        text: word,
         variant: 'word',
       })
-    }
+    })
   }
+  const recto = shuffle(rng, raw)
+  const verso = mirrorRows(recto, cols).map((card, i) => ({
+    id: `tv-${card.id}-${i}`,
+    text: series,
+    variant: 'intrus-answer' as const,
+    frameColor: frame,
+  }))
   return [
     boardItem({
-      cols: 3,
-      rows: 5,
-      cards,
-      kind: 'cards',
-      title: 'Étiquettes catégories (en tête) + cartes-mots à classer.',
+      cols,
+      rows,
+      cards: recto,
+      kind: 'tri',
+      title: 'Recto — triez les mots sous chaque catégorie',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'tri',
+      frameColor: frame,
+      themeLabel: series,
+      title: `Verso — série « ${series} » (cadre = fiche)`,
     }),
   ]
 }
@@ -675,7 +736,7 @@ export function tryGenerateJeuxBatch(
       items = dominos(entries, rng)
       break
     case 'jeux-tri':
-      items = tri(entries)
+      items = tri(entries, rng, options.gameBackColor, options.gameTopic)
       break
     case 'jeux-sept-familles':
       items = septFamilles(entries)

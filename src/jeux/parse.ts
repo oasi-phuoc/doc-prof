@@ -23,16 +23,19 @@ export function entriesToText(typeId: string, entries: GameEntry[]): string {
           )
         })
         .join('\n\n')
-    case 'jeux-tri': {
-      const byCat = new Map<string, string[]>()
-      for (const e of entries) {
-        const key = e.category || 'Divers'
-        const list = byCat.get(key) ?? []
-        list.push(e.text)
-        byCat.set(key, list)
-      }
-      return [...byCat.entries()].map(([cat, words]) => `${cat} : ${words.join(', ')}`).join('\n')
-    }
+    case 'jeux-tri':
+      return entries
+        .slice(0, 3)
+        .map((e, index) => {
+          const cat = (e.category || e.text || `Catégorie ${index + 1}`).trim()
+          const words = [...(e.words ?? [])]
+          while (words.length < 7) words.push('')
+          return [
+            `Catégorie : ${cat}`,
+            ...words.slice(0, 7).map((w, i) => `Mot ${i + 1} : ${w}`),
+          ].join('\n')
+        })
+        .join('\n\n')
     case 'jeux-sept-familles': {
       // Prefer structured defaults when entries are flat placeholders.
       if (entries.length >= 28 && entries.every((e) => !e.category)) {
@@ -151,9 +154,57 @@ export function textToEntries(
       }
       break
     }
-    case 'jeux-tri':
+    case 'jeux-tri': {
+      const blocks = text
+        .split(/\r?\n\s*\r?\n/)
+        .map((b) => b.trim())
+        .filter(Boolean)
+      if (blocks.length > 1 || (blocks[0] && /^catégorie\s*:/i.test(blocks[0]))) {
+        parsed = blocks.slice(0, 3).map((block, index) => {
+          const parts = block
+            .split(/\r?\n/)
+            .map((p) => p.trim())
+            .filter(Boolean)
+          let category = ''
+          const words: string[] = []
+          for (const part of parts) {
+            const mCat = /^catégorie\s*:\s*(.+)$/i.exec(part)
+            const mMot = /^mot\s*\d+\s*:\s*(.+)$/i.exec(part)
+            if (mCat) category = mCat[1]!.trim()
+            else if (mMot) words.push(mMot[1]!.trim())
+            else if (!category) category = part
+            else words.push(part)
+          }
+          while (words.length < 7) words.push('')
+          const cat = clip(category || `Catégorie ${index + 1}`, 20)
+          return {
+            text: cat,
+            category: cat,
+            words: words.slice(0, 7).map((w) => clip(w, maxLen)),
+          }
+        })
+      } else {
+        // Rétrocompat : « Animaux : chat, chien, … »
+        parsed = lines.slice(0, 3).map((line, index) => {
+          const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)
+          const category = clip((m?.[1] ?? `Catégorie ${index + 1}`).trim(), 20)
+          const words = (m?.[2] ?? '')
+            .split(/[,;]/)
+            .map((w) => w.trim())
+            .filter(Boolean)
+            .slice(0, 7)
+          while (words.length < 7) words.push('')
+          return {
+            text: category,
+            category,
+            words: words.map((w) => clip(w, maxLen)),
+          }
+        })
+      }
+      break
+    }
     case 'jeux-sept-familles': {
-      const maxGroups = typeId === 'jeux-sept-familles' ? 7 : 3
+      const maxGroups = 7
       const maxWords = 4
       parsed = lines.slice(0, maxGroups).flatMap((line) => {
         const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)

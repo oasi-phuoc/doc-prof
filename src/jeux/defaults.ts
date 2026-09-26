@@ -144,19 +144,23 @@ const DOMINOS: GameEntry[] = [
   imageSrc: `/assets/words/lecture/${text}.webp`,
 }))
 
+/** 3 catégories × 7 mots (+ 3 étiquettes catégorie = 24 cartes). */
 const TRI: GameEntry[] = [
-  { text: 'chat', category: 'Animaux' },
-  { text: 'chien', category: 'Animaux' },
-  { text: 'oiseau', category: 'Animaux' },
-  { text: 'poisson', category: 'Animaux' },
-  { text: 'pain', category: 'Nourriture' },
-  { text: 'lait', category: 'Nourriture' },
-  { text: 'riz', category: 'Nourriture' },
-  { text: 'soupe', category: 'Nourriture' },
-  { text: 'rouge', category: 'Couleurs' },
-  { text: 'bleu', category: 'Couleurs' },
-  { text: 'vert', category: 'Couleurs' },
-  { text: 'jaune', category: 'Couleurs' },
+  {
+    text: 'Animaux',
+    category: 'Animaux',
+    words: ['chat', 'chien', 'oiseau', 'poisson', 'cheval', 'vache', 'mouton'],
+  },
+  {
+    text: 'Nourriture',
+    category: 'Nourriture',
+    words: ['pain', 'lait', 'riz', 'soupe', 'fromage', 'fruit', 'eau'],
+  },
+  {
+    text: 'Couleurs',
+    category: 'Couleurs',
+    words: ['rouge', 'bleu', 'vert', 'jaune', 'noir', 'blanc', 'rose'],
+  },
 ]
 
 /** 7 familles structurées pour le générateur. */

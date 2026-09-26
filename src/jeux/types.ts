@@ -85,12 +85,13 @@ export type GameBoard = {
     | 'loto-call'
     | 'intrus'
     | 'dominos'
+    | 'tri'
   /** Couleur de dos (mémory verso), blanc si absent. */
   backColor?: string
   /** Plusieurs grilles encadrées sur une même feuille (loto). */
   panels?: GamePanel[]
   /** Thème / série du loto (verso). */
   themeLabel?: string
-  /** Couleur du cadre de série (verso Intrus). */
+  /** Couleur du cadre de série (verso Intrus / Tri). */
   frameColor?: string
 }
