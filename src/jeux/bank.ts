@@ -26,12 +26,12 @@ export function themeBankItems(topicId: string, subgroupId?: string): BankItem[]
       imageSrc: w.imageSrc,
     })
   }
-  // Lecture rattachée au thème (sans doublon de libellé).
+  // Lecture rattachée au thème (sans doublon de libellé ; image lecture en secours).
   for (const w of lectureWordsForTopic(topicId)) {
     const key = w.label.toLowerCase()
     if (byLabel.has(key)) {
       const prev = byLabel.get(key)!
-      if (!prev.imageSrc && w.imageSrc) byLabel.set(key, { ...prev, imageSrc: w.imageSrc })
+      if (w.imageSrc) byLabel.set(key, { ...prev, imageSrc: prev.imageSrc || w.imageSrc })
       continue
     }
     byLabel.set(key, { id: w.id, label: w.label, imageSrc: w.imageSrc })

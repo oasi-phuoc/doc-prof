@@ -1148,6 +1148,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     const isJeuxDuplex =
       page.exerciseType === 'jeux-vocabulaire' || page.exerciseType === 'jeux-devinettes'
     // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
+    // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.
     if (isJeuxDuplex && worksheet.items.length >= 2) {
       const block = worksheet.blocks[0]
       worksheet.items.forEach((item, part) => {
@@ -1174,7 +1175,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
               ]
             : worksheet.blocks,
           configIndex: index,
-          isContinuation: part > 0,
+          isContinuation: false,
         })
       })
       return
