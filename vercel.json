@@ -1,6 +1,6 @@
 {
   "framework": "vite",
-  "installCommand": "git lfs install && git lfs pull && npm install",
+  "installCommand": "git lfs install; git lfs pull || true; npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist"
 }
