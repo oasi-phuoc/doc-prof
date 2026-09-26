@@ -44,6 +44,45 @@ function CardFace({ card }: { card: GameCard }) {
     )
   }
 
+  if (variant === 'scatter') {
+    return (
+      <div className="game-card is-scatter" data-badge={card.badge || undefined}>
+        {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+        <div className="game-scatter" aria-label="Mots de la carte">
+          {(card.scatter ?? []).map((word, i) => (
+            <span
+              key={`${word.text}-${i}`}
+              className="game-scatter-word"
+              style={
+                {
+                  left: `${word.x}%`,
+                  top: `${word.y}%`,
+                  '--scatter-rot': `${word.rotate}deg`,
+                } as CSSProperties
+              }
+            >
+              {word.text}
+            </span>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (variant === 'intrus-answer') {
+    const frame = card.frameColor?.trim() || '#0f6b5c'
+    return (
+      <div
+        className="game-card is-intrus-answer"
+        data-badge={card.badge || undefined}
+        style={{ '--intrus-frame': frame } as CSSProperties}
+      >
+        {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+        <div className="game-card-word">{card.text}</div>
+      </div>
+    )
+  }
+
   return (
     <div className={`game-card is-${variant}`} data-badge={card.badge || undefined}>
       {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}

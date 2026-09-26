@@ -3,9 +3,20 @@ export type GameEntry = {
   text: string
   imageSrc?: string
   clues?: string[]
+  /** Mots de la catégorie (Intrus : 4 mots + text = intrus). */
+  words?: string[]
   category?: string
   isIntrus?: boolean
   isTrue?: boolean
+}
+
+/** Mot placé librement dans une carte Intrus. */
+export type ScatterWord = {
+  text: string
+  rotate: number
+  /** Position en % dans la carte. */
+  x: number
+  y: number
 }
 
 /** Carte imprimable produite par le générateur. */
@@ -15,6 +26,8 @@ export type GameCard = {
   imageSrc?: string
   /** Lignes secondaires (indices, moitié domino…). */
   lines?: string[]
+  /** Mots éparpillés (Intrus recto). */
+  scatter?: ScatterWord[]
   /** Variante visuelle. */
   variant?:
     | 'default'
@@ -30,12 +43,16 @@ export type GameCard = {
     | 'family-head'
     | 'face'
     | 'back'
+    | 'scatter'
+    | 'intrus-answer'
   /** Badge / coin (V, F, n°, paire…). */
   badge?: string
   /** Moitié droite d’un domino. */
   textRight?: string
   /** Couleur de fond (dos de carte mémory). */
   backColor?: string
+  /** Cadre épais de série (verso Intrus). */
+  frameColor?: string
 }
 
 /** Sous-grille (loto : 3 grilles par page). */
@@ -66,10 +83,13 @@ export type GameBoard = {
     | 'loto-page'
     | 'loto-back'
     | 'loto-call'
+    | 'intrus'
   /** Couleur de dos (mémory verso), blanc si absent. */
   backColor?: string
   /** Plusieurs grilles encadrées sur une même feuille (loto). */
   panels?: GamePanel[]
   /** Thème / série du loto (verso). */
   themeLabel?: string
+  /** Couleur du cadre de série (verso Intrus). */
+  frameColor?: string
 }

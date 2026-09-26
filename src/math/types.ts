@@ -355,7 +355,9 @@ export type MathItem = {
       | 'loto-page'
       | 'loto-back'
       | 'loto-call'
+      | 'intrus'
     backColor?: string
+    frameColor?: string
     themeLabel?: string
     panels?: Array<{
       title?: string
@@ -368,10 +370,12 @@ export type MathItem = {
         text?: string
         imageSrc?: string
         lines?: string[]
+        scatter?: Array<{ text: string; rotate: number; x: number; y: number }>
         variant?: string
         badge?: string
         textRight?: string
         backColor?: string
+        frameColor?: string
       }>
     }>
     cards: Array<{
@@ -379,10 +383,12 @@ export type MathItem = {
       text?: string
       imageSrc?: string
       lines?: string[]
+      scatter?: Array<{ text: string; rotate: number; x: number; y: number }>
       variant?: string
       badge?: string
       textRight?: string
       backColor?: string
+      frameColor?: string
     }>
   }
 }
@@ -496,6 +502,7 @@ export type ExerciseBlock = {
     text: string
     imageSrc?: string
     clues?: string[]
+    words?: string[]
     category?: string
     isIntrus?: boolean
     isTrue?: boolean

@@ -102,15 +102,17 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     family: 'cartes',
     label: 'Intrus',
     orientation: 'portrait',
-    grid: { cols: 4, rows: 4 },
+    grid: { cols: 3, rows: 4 },
     fields: [
       { type: 'texte', required: true },
-      { type: 'categorie' },
+      { type: 'indices', required: true },
     ],
-    entryCount: 4,
-    cardCount: 16,
+    entryCount: 12,
+    cardCount: 12,
+    duplex: true,
     maxTextLen: 18,
-    entryHint: 'Groupe = 3 mots + intrus : « chat, chien, oiseau | table » (4 groupes).',
+    entryHint:
+      '12 cartes · 4 mots + 1 intrus · verso = mot intrus avec cadre de série.',
   },
   'jeux-dominos': {
     id: 'jeux-dominos',

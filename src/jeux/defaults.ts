@@ -108,22 +108,18 @@ const LOTO: GameEntry[] = [
 }))
 
 const INTRUS: GameEntry[] = [
-  { text: 'chat', category: 'animaux' },
-  { text: 'chien', category: 'animaux' },
-  { text: 'oiseau', category: 'animaux' },
-  { text: 'table', category: 'animaux', isIntrus: true },
-  { text: 'pomme', category: 'fruits' },
-  { text: 'banane', category: 'fruits' },
-  { text: 'poire', category: 'fruits' },
-  { text: 'crayon', category: 'fruits', isIntrus: true },
-  { text: 'rouge', category: 'couleurs' },
-  { text: 'bleu', category: 'couleurs' },
-  { text: 'vert', category: 'couleurs' },
-  { text: 'livre', category: 'couleurs', isIntrus: true },
-  { text: 'lundi', category: 'jours' },
-  { text: 'mardi', category: 'jours' },
-  { text: 'vendredi', category: 'jours' },
-  { text: 'janvier', category: 'jours', isIntrus: true },
+  { text: 'table', words: ['chat', 'chien', 'oiseau', 'poisson'] },
+  { text: 'crayon', words: ['pomme', 'banane', 'poire', 'cerise'] },
+  { text: 'livre', words: ['rouge', 'bleu', 'vert', 'jaune'] },
+  { text: 'janvier', words: ['lundi', 'mardi', 'jeudi', 'vendredi'] },
+  { text: 'bus', words: ['mère', 'père', 'sœur', 'frère'] },
+  { text: 'nuage', words: ['chambre', 'cuisine', 'salon', 'salle'] },
+  { text: 'fièvre', words: ['train', 'bus', 'vélo', 'métro'] },
+  { text: 'balai', words: ['pain', 'riz', 'lait', 'fromage'] },
+  { text: 'quai', words: ['pull', 'jupe', 'pantalon', 'chemise'] },
+  { text: 'oreiller', words: ['médecin', 'infirmière', 'pharmacie', 'hôpital'] },
+  { text: 'caisse', words: ['livre', 'cahier', 'stylo', 'gomme'] },
+  { text: 'valise', words: ['soleil', 'lune', 'étoile', 'nuage'] },
 ]
 
 const DOMINOS: GameEntry[] = [

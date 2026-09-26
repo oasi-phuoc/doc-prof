@@ -1150,7 +1150,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     const isJeuxDuplex =
       page.exerciseType === 'jeux-vocabulaire' ||
       page.exerciseType === 'jeux-devinettes' ||
-      page.exerciseType === 'jeux-memory'
+      page.exerciseType === 'jeux-memory' ||
+      page.exerciseType === 'jeux-intrus'
     // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
     // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.
     if (isJeuxDuplex && worksheet.items.length >= 2) {
@@ -1158,11 +1159,15 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       const versoInstruction =
         page.exerciseType === 'jeux-memory'
           ? 'Verso — dos des cartes. Imprimez en recto-verso (bord long).'
-          : 'Verso — retournez la feuille pour faire correspondre mot et image.'
+          : page.exerciseType === 'jeux-intrus'
+            ? 'Verso — mot intrus. Imprimez en recto-verso (bord long).'
+            : 'Verso — retournez la feuille pour faire correspondre mot et image.'
       const versoBlockInstruction =
         page.exerciseType === 'jeux-memory'
           ? 'Imprimez en recto-verso (bord long). Le dos est blanc ou coloré.'
-          : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
+          : page.exerciseType === 'jeux-intrus'
+            ? 'Imprimez en recto-verso (bord long). Le cadre coloré indique la série.'
+            : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
       worksheet.items.forEach((item, part) => {
         const side = part === 0 ? 'Recto' : 'Verso'
         out.push({

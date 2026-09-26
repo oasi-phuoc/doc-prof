@@ -13,22 +13,16 @@ export function entriesToText(typeId: string, entries: GameEntry[]): string {
           return [e.text, ...clues.slice(0, 3)].join('\n')
         })
         .join('\n\n')
-    case 'jeux-intrus': {
-      const groups = new Map<string, GameEntry[]>()
-      for (const e of entries) {
-        const key = e.category || 'groupe'
-        const list = groups.get(key) ?? []
-        list.push(e)
-        groups.set(key, list)
-      }
-      return [...groups.values()]
-        .map((group) => {
-          const normals = group.filter((g) => !g.isIntrus).map((g) => g.text)
-          const intrus = group.find((g) => g.isIntrus)?.text ?? ''
-          return `${normals.join(', ')} | ${intrus}`
+    case 'jeux-intrus':
+      return entries
+        .map((e) => {
+          const words = [...(e.words ?? [])]
+          while (words.length < 4) words.push('')
+          return [`Intrus : ${e.text}`, ...words.slice(0, 4).map((w, i) => `Mot ${i + 1} : ${w}`)].join(
+            '\n',
+          )
         })
-        .join('\n')
-    }
+        .join('\n\n')
     case 'jeux-tri': {
       const byCat = new Map<string, string[]>()
       for (const e of entries) {
@@ -111,23 +105,52 @@ export function textToEntries(
       }
       break
     }
-    case 'jeux-intrus':
-      parsed = lines.slice(0, 4).flatMap((line, groupIndex) => {
-        const [left = '', right = ''] = line.split('|').map((p) => p.trim())
-        const normals = left
-          .split(/[,;]/)
-          .map((w) => w.trim())
-          .filter(Boolean)
-          .slice(0, 3)
-        while (normals.length < 3) normals.push(`mot${normals.length + 1}`)
-        const intrus = right || 'intrus'
-        const category = `groupe-${groupIndex + 1}`
-        return [
-          ...normals.map((word) => ({ text: clip(word, maxLen), category })),
-          { text: clip(intrus, maxLen), category, isIntrus: true },
-        ]
-      })
+    case 'jeux-intrus': {
+      const blocks = text
+        .split(/\r?\n\s*\r?\n/)
+        .map((b) => b.trim())
+        .filter(Boolean)
+      if (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|'))) {
+        parsed = blocks.slice(0, 12).map((block, index) => {
+          const parts = block
+            .split(/\r?\n/)
+            .map((p) => p.trim())
+            .filter(Boolean)
+          let intrus = ''
+          const words: string[] = []
+          for (const part of parts) {
+            const mIntrus = /^intrus\s*:\s*(.+)$/i.exec(part)
+            const mMot = /^mot\s*\d+\s*:\s*(.+)$/i.exec(part)
+            if (mIntrus) intrus = mIntrus[1]!.trim()
+            else if (mMot) words.push(mMot[1]!.trim())
+            else if (!intrus) intrus = part
+            else words.push(part)
+          }
+          while (words.length < 4) words.push('')
+          return {
+            text: clip(intrus || `intrus${index + 1}`, maxLen),
+            words: words.slice(0, 4).map((w) => clip(w, maxLen)),
+            isIntrus: true,
+          }
+        })
+      } else {
+        parsed = lines.slice(0, 12).map((line, groupIndex) => {
+          const [left = '', right = ''] = line.split('|').map((p) => p.trim())
+          const normals = left
+            .split(/[,;]/)
+            .map((w) => w.trim())
+            .filter(Boolean)
+            .slice(0, 4)
+          while (normals.length < 4) normals.push(`mot${normals.length + 1}`)
+          return {
+            text: clip(right || `intrus${groupIndex + 1}`, maxLen),
+            words: normals.map((w) => clip(w, maxLen)),
+            isIntrus: true,
+          }
+        })
+      }
       break
+    }
     case 'jeux-tri':
     case 'jeux-sept-familles': {
       const maxGroups = typeId === 'jeux-sept-familles' ? 7 : 3

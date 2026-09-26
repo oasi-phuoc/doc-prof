@@ -1016,7 +1016,13 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
       ? prev.gameSelectedIds
       : themeGame?.gameSelectedIds
   const gameBackColor =
-    prev?.exerciseType === type.id ? prev.gameBackColor : type.id === 'jeux-memory' ? '' : undefined
+    prev?.exerciseType === type.id
+      ? prev.gameBackColor
+      : type.id === 'jeux-memory'
+        ? ''
+        : type.id === 'jeux-intrus'
+          ? '#0f6b5c'
+          : undefined
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -1080,7 +1086,10 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameSource,
           gameTopic,
           gameSelectedIds,
-          gameBackColor: type.id === 'jeux-memory' ? (gameBackColor ?? '') : undefined,
+          gameBackColor:
+            type.id === 'jeux-memory' || type.id === 'jeux-intrus'
+              ? (gameBackColor ?? (type.id === 'jeux-intrus' ? '#0f6b5c' : ''))
+              : undefined,
         }
       : {
           gameEntries: undefined,

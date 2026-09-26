@@ -1,12 +1,12 @@
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { exerciseTypeById } from '@/math/catalog'
 import type { Rng } from '@/math/rng'
-import { shuffle } from '@/math/rng'
+import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
 import { DEFAULT_SEPT_FAMILLES } from './defaults'
 import { resolveEntries } from './parse'
 import { isJeuxType, templateFor } from './templates'
-import type { GameBoard, GameCard, GameEntry, GamePanel } from './types'
+import type { GameBoard, GameCard, GameEntry, GamePanel, ScatterWord } from './types'
 
 export type JeuxBatch = {
   items: MathItem[]
@@ -305,39 +305,110 @@ function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
   return items
 }
 
-function intrus(entries: GameEntry[]): MathItem[] {
-  const groups = new Map<string, GameEntry[]>()
-  for (const e of padEntries(entries, 16)) {
-    const key = e.category || 'g'
-    const list = groups.get(key) ?? []
-    list.push(e)
-    groups.set(key, list)
-  }
-  const cards: GameCard[] = []
-  let g = 0
-  for (const [, group] of groups) {
-    g += 1
-    const four = group.slice(0, 4)
-    while (four.length < 4) four.push({ text: '…', category: `g${g}` })
-    for (const e of four) {
-      cards.push({
-        id: `in-${g}-${e.text}`,
-        text: e.text,
-        variant: e.isIntrus ? 'intrus' : 'word',
-        badge: e.isIntrus ? '!' : String(g),
+/** Normalise 12 groupes Intrus : text = intrus, words = 4 mots. */
+function normalizeIntrusGroups(entries: GameEntry[]): Array<{ intrus: string; words: string[] }> {
+  // Format moderne : une entrée = un groupe (words + text = intrus).
+  if (entries.some((e) => e.words && e.words.length > 0)) {
+    const groups = entries.slice(0, 12).map((e, i) => {
+      const words = [...(e.words ?? [])].map((w) => w.trim()).filter(Boolean)
+      while (words.length < 4) words.push(`mot${words.length + 1}`)
+      const intrus = e.text.trim() || `intrus${i + 1}`
+      return { intrus, words: words.slice(0, 4) }
+    })
+    while (groups.length < 12) {
+      groups.push({
+        intrus: `intrus${groups.length + 1}`,
+        words: ['a', 'b', 'c', 'd'],
       })
     }
+    return groups
   }
-  while (cards.length < 16) {
-    cards.push({ id: `in-pad-${cards.length}`, text: '…', variant: 'word' })
+  // Ancien format plat (category + isIntrus).
+  const byCat = new Map<string, GameEntry[]>()
+  for (const e of entries) {
+    const key = e.category || 'g'
+    const list = byCat.get(key) ?? []
+    list.push(e)
+    byCat.set(key, list)
   }
+  const groups: Array<{ intrus: string; words: string[] }> = []
+  for (const [, group] of byCat) {
+    const intrus = group.find((g) => g.isIntrus)?.text ?? group[group.length - 1]?.text ?? 'intrus'
+    const words = group.filter((g) => !g.isIntrus).map((g) => g.text).slice(0, 4)
+    while (words.length < 4) words.push(`mot${words.length + 1}`)
+    groups.push({ intrus, words })
+    if (groups.length >= 12) break
+  }
+  while (groups.length < 12) {
+    groups.push({ intrus: `intrus${groups.length + 1}`, words: ['a', 'b', 'c', 'd'] })
+  }
+  return groups
+}
+
+const SCATTER_ZONES = [
+  { x: 20, y: 24 },
+  { x: 74, y: 30 },
+  { x: 42, y: 52 },
+  { x: 24, y: 78 },
+  { x: 70, y: 74 },
+]
+
+function scatterWords(words: string[], rng: Rng): ScatterWord[] {
+  const zones = shuffle(rng, SCATTER_ZONES)
+  const angles = [-30, -22, -14, -8, 8, 12, 20, 28]
+  return words.map((text, i) => {
+    const zone = zones[i % zones.length]!
+    return {
+      text,
+      rotate: pick(rng, angles),
+      x: Math.min(88, Math.max(12, zone.x + int(rng, -6, 6))),
+      y: Math.min(88, Math.max(14, zone.y + int(rng, -5, 5))),
+    }
+  })
+}
+
+/**
+ * Intrus recto-verso :
+ * feuille 1 = 12 cartes (5 mots inclinés), feuille 2 = mot intrus + cadre série.
+ */
+function intrus(entries: GameEntry[], rng: Rng, frameColor?: string): MathItem[] {
+  const cols = 3
+  const rows = 4
+  const groups = normalizeIntrusGroups(entries)
+  const frame = frameColor?.trim() || '#0f6b5c'
+  const recto: GameCard[] = groups.map((g, i) => {
+    const five = shuffle(rng, [...g.words, g.intrus])
+    return {
+      id: `ir-${i}`,
+      variant: 'scatter' as const,
+      badge: String(i + 1),
+      scatter: scatterWords(five, rng),
+    }
+  })
+  const versoSource = groups.map((g, i) => ({ g, i }))
+  const versoMirrored = mirrorRows(versoSource, cols)
+  const verso: GameCard[] = versoMirrored.map(({ g, i }) => ({
+    id: `iv-${i}`,
+    text: g.intrus,
+    variant: 'intrus-answer' as const,
+    badge: String(i + 1),
+    frameColor: frame,
+  }))
   return [
     boardItem({
-      cols: 4,
-      rows: 4,
-      cards: cards.slice(0, 16),
-      kind: 'cards',
-      title: 'Entourez l’intrus de chaque ligne (badge !).',
+      cols,
+      rows,
+      cards: recto,
+      kind: 'intrus',
+      title: 'Recto — entourez l’intrus (mots dans tous les sens)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'intrus',
+      frameColor: frame,
+      title: 'Verso — mot intrus (cadre = série du jeu)',
     }),
   ]
 }
@@ -590,7 +661,7 @@ export function tryGenerateJeuxBatch(
       items = loto(entries, rng, options.gameTopic)
       break
     case 'jeux-intrus':
-      items = intrus(entries)
+      items = intrus(entries, rng, options.gameBackColor)
       break
     case 'jeux-dominos':
       items = dominos(entries)

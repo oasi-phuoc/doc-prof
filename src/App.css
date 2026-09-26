@@ -1487,6 +1487,45 @@
 .game-card.is-family-head .game-card-word{font-size:12px;color:var(--jeux-accent)}
 .game-card.is-intrus{border-style:solid;border-color:var(--jeux-false)}
 .game-card.is-intrus .game-card-badge{background:var(--jeux-false);color:#fff;border-color:var(--jeux-false)}
+.game-board.is-intrus .game-card-grid{
+  --game-card-gap:3mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-intrus .game-card{
+  min-height:0;height:100%;padding:2mm
+}
+.game-card.is-scatter{overflow:hidden}
+.game-scatter{
+  position:relative;flex:1 1 auto;min-height:0;width:100%;height:100%
+}
+.game-scatter-word{
+  position:absolute;transform:translate(-50%,-50%) rotate(var(--scatter-rot,0deg));
+  font-size:12px;font-weight:800;line-height:1.1;color:var(--jeux-ink);
+  white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis;
+  pointer-events:none
+}
+.game-card.is-intrus-answer{
+  border:2.8mm solid var(--intrus-frame,#0f6b5c);
+  border-radius:8px;justify-content:center;background:#fff
+}
+.game-card.is-intrus-answer .game-card-word{
+  font-size:16px;font-weight:800;line-height:1.15;padding:2mm
+}
+.game-intrus-list{
+  list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
+  max-height:22rem;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#faf9fc
+}
+.game-intrus-block{
+  margin:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  display:flex;flex-direction:column;gap:8px
+}
+.game-intrus-block>b{font-size:12px;color:var(--muted)}
+.game-intrus-fields{display:flex;flex-direction:column;gap:6px}
+.game-intrus-fields label{display:flex;flex-direction:column;gap:3px;margin:0}
+.game-intrus-fields label>span{font-size:11px;font-weight:600;color:var(--muted)}
+.game-intrus-fields label.is-intrus>span{color:var(--jeux-false,#a33b2b)}
 .game-card.is-word,
 .game-card.is-face{min-height:22mm}
 .game-card.is-band{

@@ -27,13 +27,14 @@ export type GameContentChange = {
   gameBackColor?: string
 }
 
-/** Dos des cartes Mémory — blanc par défaut, sinon teinte imprimable. */
-const MEMORY_BACK_SWATCHES: Array<{ id: string; color: string; label: string }> = [
+/** Teintes imprimables (dos Mémory / cadre Intrus). */
+const GAME_COLOR_SWATCHES: Array<{ id: string; color: string; label: string }> = [
   { id: 'blanc', color: '', label: 'Blanc' },
   { id: 'rouge', color: '#b42318', label: 'Rouge' },
   { id: 'orange', color: '#c45c12', label: 'Orange' },
   { id: 'jaune', color: '#ca8a04', label: 'Jaune' },
   { id: 'vert', color: '#18a66a', label: 'Vert' },
+  { id: 'teal', color: '#0f6b5c', label: 'Sarcelle' },
   { id: 'bleu', color: '#2563eb', label: 'Bleu' },
   { id: 'indigo', color: '#4338ca', label: 'Indigo' },
   { id: 'violet', color: '#7c3aed', label: 'Violet' },
@@ -43,20 +44,29 @@ function templateHasImages(template: GameTemplate): boolean {
   return template.fields.some((field) => field.type === 'image')
 }
 
-function MemoryBackPicker({
+function GameColorPicker({
+  title,
+  hint,
   value,
+  allowWhite = true,
   onChange,
 }: {
+  title: string
+  hint: string
   value?: string
+  allowWhite?: boolean
   onChange: (color: string) => void
 }) {
   const current = value?.trim() ?? ''
+  const swatches = allowWhite
+    ? GAME_COLOR_SWATCHES
+    : GAME_COLOR_SWATCHES.filter((s) => s.color)
   return (
     <div className="mode-toggle-block">
-      <b>Dos des cartes</b>
-      <div className="game-back-swatches" role="group" aria-label="Couleur du verso">
-        {MEMORY_BACK_SWATCHES.map((swatch) => {
-          const active = current === swatch.color
+      <b>{title}</b>
+      <div className="game-back-swatches" role="group" aria-label={title}>
+        {swatches.map((swatch) => {
+          const active = current === swatch.color || (!current && !swatch.color)
           return (
             <button
               key={swatch.id}
@@ -71,7 +81,7 @@ function MemoryBackPicker({
           )
         })}
       </div>
-      <small className="muted">Blanc par défaut · couleur uniforme au verso (recto-verso bord long).</small>
+      <small className="muted">{hint}</small>
     </div>
   )
 }
@@ -310,7 +320,12 @@ export function GameContentPanel({
           </small>
         </div>
         {typeId === 'jeux-memory' ? (
-          <MemoryBackPicker value={gameBackColor} onChange={setBackColor} />
+          <GameColorPicker
+            title="Dos des cartes"
+            hint="Blanc par défaut · couleur uniforme au verso (recto-verso bord long)."
+            value={gameBackColor}
+            onChange={setBackColor}
+          />
         ) : null}
       </div>
     )
@@ -318,9 +333,15 @@ export function GameContentPanel({
 
   // —— Mode libre (ou templates sans images) ——
   const resolved = resolveEntries(typeId, entries)
-  const slots = withImages || typeId === 'jeux-devinettes'
-    ? Array.from({ length: template.entryCount }, (_, i) => resolved[i] ?? { text: '', clues: ['', '', ''] })
-    : resolved
+  const slots =
+    withImages || typeId === 'jeux-devinettes' || typeId === 'jeux-intrus'
+      ? Array.from({ length: template.entryCount }, (_, i) =>
+          resolved[i] ??
+          (typeId === 'jeux-intrus'
+            ? { text: '', words: ['', '', '', ''], isIntrus: true }
+            : { text: '', clues: ['', '', ''] }),
+        )
+      : resolved
 
   function updateSlot(index: number, patch: Partial<GameEntry>) {
     const next = slots.map((entry, i) => (i === index ? { ...entry, ...patch } : entry))
@@ -335,6 +356,14 @@ export function GameContentPanel({
     updateSlot(index, { clues: clues.slice(0, 3) })
   }
 
+  function updateIntrusWord(index: number, wordIndex: number, value: string) {
+    const entry = slots[index] ?? { text: '', words: ['', '', '', ''], isIntrus: true }
+    const words = [...(entry.words ?? ['', '', '', ''])]
+    while (words.length < 4) words.push('')
+    words[wordIndex] = value
+    updateSlot(index, { words: words.slice(0, 4), isIntrus: true })
+  }
+
   async function onPickImage(index: number, file: File | undefined) {
     if (!file) return
     try {
@@ -343,6 +372,67 @@ export function GameContentPanel({
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Image refusée.')
     }
+  }
+
+  // —— Intrus : 12 blocs (intrus + 4 mots) ——
+  if (typeId === 'jeux-intrus') {
+    return (
+      <div className="game-content-field">
+        <span className="game-content-label">Contenu</span>
+        <p className="muted game-content-hint">{template.entryHint}</p>
+        <ul className="game-intrus-list" aria-label="Cartes Intrus">
+          {slots.map((entry, index) => {
+            const words = [...(entry.words ?? [])]
+            while (words.length < 4) words.push('')
+            return (
+              <li className="game-intrus-block" key={`${typeId}-${index}`}>
+                <b>Carte {index + 1}</b>
+                <div className="game-intrus-fields">
+                  <label className="is-intrus">
+                    <span>Intrus</span>
+                    <input
+                      className="pill-input"
+                      type="text"
+                      maxLength={template.maxTextLen}
+                      value={entry.text}
+                      aria-label={`Carte ${index + 1}, intrus`}
+                      placeholder="Mot intrus"
+                      onChange={(event) =>
+                        updateSlot(index, { text: event.target.value, isIntrus: true })
+                      }
+                    />
+                  </label>
+                  {[0, 1, 2, 3].map((wordIndex) => (
+                    <label key={wordIndex}>
+                      <span>Mot {wordIndex + 1}</span>
+                      <input
+                        className="pill-input"
+                        type="text"
+                        maxLength={template.maxTextLen}
+                        value={words[wordIndex] ?? ''}
+                        aria-label={`Carte ${index + 1}, mot ${wordIndex + 1}`}
+                        placeholder={`Mot ${wordIndex + 1}`}
+                        onChange={(event) => updateIntrusWord(index, wordIndex, event.target.value)}
+                      />
+                    </label>
+                  ))}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+        <GameColorPicker
+          title="Cadre de série (verso)"
+          hint="Cadre épais au verso pour identifier la série du jeu."
+          value={gameBackColor || '#0f6b5c'}
+          allowWhite={false}
+          onChange={setBackColor}
+        />
+        <small className="muted">
+          Recto : 5 mots inclinés · verso : mot intrus (bord long).
+        </small>
+      </div>
+    )
   }
 
   // —— Devinettes : Mot N + image + 3 indices (pas de syntaxe | ) ——
@@ -556,7 +646,12 @@ export function GameContentPanel({
         </small>
       )}
       {typeId === 'jeux-memory' ? (
-        <MemoryBackPicker value={gameBackColor} onChange={setBackColor} />
+        <GameColorPicker
+          title="Dos des cartes"
+          hint="Blanc par défaut · couleur uniforme au verso (recto-verso bord long)."
+          value={gameBackColor}
+          onChange={setBackColor}
+        />
       ) : null}
     </div>
   )
