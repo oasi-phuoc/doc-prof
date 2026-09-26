@@ -468,13 +468,21 @@ function intrus(
 }
 
 /**
- * Dominos vocabulaire : 16 cartes.
- * Carte i = [image du mot i | texte du mot i+1] (boucle) ;
- * on relie chaque image au mot correspondant.
+ * Dominos vocabulaire recto-verso :
+ * feuille 1 = 16 dominos image|mot ; feuille 2 = dos série (logo ClairFLE).
  */
-function dominos(entries: GameEntry[], rng: Rng): MathItem[] {
+function dominos(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
+  const cols = 2
+  const rows = 8
   const pool = padEntries(entries, 16)
   const n = pool.length
+  const series = resolveSeriesName(seriesName, 'Dominos')
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const raw: GameCard[] = []
   for (let i = 0; i < n; i++) {
     const left = pool[i]!
@@ -489,13 +497,23 @@ function dominos(entries: GameEntry[], rng: Rng): MathItem[] {
     })
   }
   const cards = shuffle(rng, raw)
+  const verso = makeSeriesBackCards(cards, cols, series, frame)
   return [
     boardItem({
-      cols: 2,
-      rows: 8,
+      cols,
+      rows,
       cards,
       kind: 'dominos',
-      title: 'Dominos — reliez chaque image au mot correspondant.',
+      title: 'Recto — dominos image / mot (imprimez cette page en premier)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'dominos',
+      frameColor: frame,
+      themeLabel: series,
+      title: `Verso — série « ${series} » (miroir bord long)`,
     }),
   ]
 }
@@ -782,7 +800,7 @@ export function tryGenerateJeuxBatch(
       items = intrus(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-dominos':
-      items = dominos(entries, rng)
+      items = dominos(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-tri':
       items = tri(entries, rng, options.gameBackColor, options.gameSeriesName)

@@ -350,7 +350,7 @@ export const exerciseTypes: ExerciseType[] = [
     'jeux-dominos',
     'jeux-cartes',
     'Dominos',
-    '16 dominos image / mot : enchaînez chaque image au mot correspondant.',
+    '16 dominos image / mot ; verso = logo ClairFLE + nom de série.',
     'Placez les dominos pour former une chaîne.',
     'texte',
     { preferredColumns: 1 },

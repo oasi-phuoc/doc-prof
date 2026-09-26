@@ -1462,6 +1462,7 @@
   align-content:start
 }
 .game-card{
+  --game-card-frame:2.2mm;
   position:relative;
   box-sizing:border-box;
   min-height:28mm;
@@ -1472,19 +1473,25 @@
   padding:2.5mm;
   overflow:hidden
 }
-/* Recto ludique : fond pastel, filet de découpe, coins, badge vif (lisible N&B). */
+/*
+ * Recto ludique type carte à jouer (grille de cartes) :
+ * bordure pleine même épaisseur que le verso (alignement duplex).
+ */
 .game-board.is-ludic .game-card:not(.is-series-back):not(.is-back):not(.is-series-content){
   background:
-    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 10%, #fff) 0%, #fff 52%),
-    radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--jeux-soft) 55%, #fff), transparent 55%);
-  border:1.7px dashed var(--jeux-cut);
-  box-shadow:inset 0 0 0 0.7mm #fff;
-  border-radius:calc(var(--jeux-card-radius) + 1px)
+    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 12%, #fff) 0%, #fff 50%),
+    radial-gradient(120% 80% at 0% 100%, color-mix(in srgb, var(--jeux-soft) 60%, #fff), transparent 55%);
+  border:var(--game-card-frame) solid color-mix(in srgb, var(--jeux-accent) 82%, #1a1a1a);
+  border-style:solid;
+  box-shadow:inset 0 0 0 0.75mm #fff;
+  border-radius:3.2mm;
+  padding:2mm
 }
 .game-board.is-ludic .game-card.is-category,
 .game-board.is-ludic .game-card.is-family-head{
   background:color-mix(in srgb, var(--jeux-accent) 16%, #fff);
-  border-style:solid
+  border-style:solid;
+  border-color:var(--jeux-accent)
 }
 .game-board.is-ludic .game-card-badge{
   background:color-mix(in srgb, var(--jeux-accent) 22%, #fff);
@@ -1498,17 +1505,36 @@
   padding:1mm
 }
 .game-board.is-ludic .game-card-image img{border-radius:6px;object-fit:contain}
-/* Vocabulaire / cartes : même hauteur-largeur recto et verso (grille stretch). */
-.game-board.is-cards .game-card-grid{
-  --game-card-gap:2.5mm;
+/* Toutes les grilles de cartes : stretch → même hauteur/largeur recto et verso. */
+.game-board.is-cards .game-card-grid,
+.game-board.is-memory .game-card-grid,
+.game-board.is-devinettes .game-card-grid,
+.game-board.is-intrus .game-card-grid,
+.game-board.is-tri .game-card-grid,
+.game-board.is-dominos .game-card-grid{
   flex:1 1 auto;min-height:0;
   grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
   align-content:stretch
 }
-.game-board.is-cards .game-card{
-  min-height:0;height:100%;padding:2.2mm
+.game-board.is-cards .game-card-grid{--game-card-gap:2.5mm}
+.game-board.is-cards .game-card,
+.game-board.is-memory .game-card,
+.game-board.is-devinettes .game-card,
+.game-board.is-intrus .game-card,
+.game-board.is-tri .game-card,
+.game-board.is-dominos .game-card{
+  min-height:0;height:100%
 }
 .game-board.is-cards .game-card-image{min-height:0;flex:1 1 auto;margin-bottom:0}
+.game-board.is-memory .game-card.is-series-back,
+.game-board.is-intrus .game-card.is-series-back,
+.game-board.is-tri .game-card.is-series-back,
+.game-board.is-dominos .game-card.is-series-back,
+.game-board.is-cards .game-card.is-series-back,
+.game-board.is-cards .game-card.is-series-content,
+.game-board.is-devinettes .game-card.is-series-content{
+  min-height:0;height:100%
+}
 .game-card-badge{
   position:absolute;top:1.5mm;right:1.5mm;
   min-width:4.5mm;height:4.5mm;padding:0 1mm;
@@ -1516,21 +1542,23 @@
   display:flex;align-items:center;justify-content:center;
   font-size:8px;font-weight:800;line-height:1;color:var(--jeux-ink);background:var(--jeux-soft)
 }
-/* Verso série unifié (skill jeux-verso-serie) */
+/* Verso série unifié (skill jeux-verso-serie) — même --game-card-frame que le recto */
 .game-card.is-series-back{
-  border:2.4mm solid var(--series-frame, var(--jeux-accent));
-  border-radius:var(--jeux-card-radius);
+  border:var(--game-card-frame) solid var(--series-frame, var(--jeux-accent));
+  border-radius:3.2mm;
   border-style:solid;
   background:#fff;
-  justify-content:center;padding:2mm;min-height:0;height:100%
+  justify-content:center;padding:2mm;min-height:0;height:100%;
+  box-shadow:inset 0 0 0 0.75mm #fff
 }
 /* Verso contenu brandé (vocab mots / devinettes indices) */
 .game-card.is-series-content{
-  border:2.2mm solid var(--series-frame, var(--jeux-accent));
-  border-radius:var(--jeux-card-radius);
+  border:var(--game-card-frame) solid var(--series-frame, var(--jeux-accent));
+  border-radius:3.2mm;
   border-style:solid;
   background:#fff;
-  justify-content:center;gap:1.5mm;padding:2mm;min-height:0;height:100%
+  justify-content:center;gap:1.5mm;padding:2mm;min-height:0;height:100%;
+  box-shadow:inset 0 0 0 0.75mm #fff
 }
 .game-card.is-series-content .game-series-back{
   flex:0 0 auto;gap:1mm
@@ -1548,10 +1576,6 @@
 }
 .game-card.is-series-content .game-card-clues{
   flex:1 1 auto;font-size:9px;align-self:stretch
-}
-.game-board.is-cards .game-card.is-series-content,
-.game-board.is-devinettes .game-card.is-series-content{
-  min-height:0;height:100%
 }
 .game-series-back{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -1622,24 +1646,10 @@
 .game-card.is-family-head .game-card-word{font-size:12px;color:var(--jeux-accent)}
 .game-card.is-intrus{border-style:solid;border-color:var(--jeux-false)}
 .game-card.is-intrus .game-card-badge{background:var(--jeux-false);color:#fff;border-color:var(--jeux-false)}
-.game-board.is-intrus .game-card-grid{
-  --game-card-gap:3mm;
-  flex:1 1 auto;min-height:0;
-  grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
-  align-content:stretch
-}
-.game-board.is-intrus .game-card{
-  min-height:0;height:100%;padding:2mm
-}
-.game-board.is-tri .game-card-grid{
-  --game-card-gap:2.2mm;
-  flex:1 1 auto;min-height:0;
-  grid-template-rows:repeat(var(--game-rows,6),minmax(0,1fr));
-  align-content:stretch
-}
-.game-board.is-tri .game-card{
-  min-height:0;height:100%;padding:1.6mm
-}
+.game-board.is-intrus .game-card-grid{--game-card-gap:3mm}
+.game-board.is-intrus .game-card{padding:2mm}
+.game-board.is-tri .game-card-grid{--game-card-gap:2.2mm}
+.game-board.is-tri .game-card{padding:1.6mm}
 .game-board.is-tri .game-card.is-word .game-card-word,
 .game-board.is-tri .game-card.is-category .game-card-word{
   font-size:11px;font-weight:800;line-height:1.15
@@ -1650,11 +1660,6 @@
 }
 .game-board.is-tri .game-series-logo{width:9mm;height:9mm}
 .game-board.is-tri .game-series-logo-text{font-size:4.5px}
-.game-board.is-memory .game-card.is-series-back,
-.game-board.is-intrus .game-card.is-series-back,
-.game-board.is-tri .game-card.is-series-back{
-  min-height:0;height:100%
-}
 .game-series-identity{display:flex;flex-direction:column;gap:10px;margin:0 0 10px}
 .game-series-name{
   display:flex;flex-direction:column;gap:4px;margin:0
@@ -1715,16 +1720,12 @@
   width:1.2px;align-self:stretch;background:transparent;
   border-left:1.5px dashed var(--jeux-cut)
 }
-.game-board.is-dominos .game-card-grid{
-  --game-card-gap:2.5mm;
-  flex:1 1 auto;min-height:0;
-  grid-template-rows:repeat(var(--game-rows,8),minmax(0,1fr));
-  align-content:stretch
-}
-.game-board.is-dominos .game-card{
-  min-height:0;height:100%;padding:2mm;border-style:dashed
-}
+.game-board.is-dominos .game-card-grid{--game-card-gap:2.5mm}
+.game-board.is-dominos .game-card{padding:1.8mm}
 .game-board.is-dominos .game-card.is-domino{display:flex;flex-direction:column}
+.game-board.is-dominos .game-card.is-series-back .game-series-logo{width:11mm;height:11mm}
+.game-board.is-dominos .game-card.is-series-back .game-series-logo-text{font-size:5px}
+.game-board.is-dominos .game-card.is-series-back .game-series-label{font-size:10px}
 .game-board.is-loto .game-card{min-height:18mm;border-style:solid}
 .game-board.is-loto-page,
 .game-board.is-loto-back{
@@ -1806,15 +1807,8 @@
   background:color-mix(in srgb, var(--jeux-accent) 6%, #fff)
 }
 .game-board.is-bands .game-card-grid{gap:2mm}
-.game-board.is-devinettes .game-card-grid{
-  --game-card-gap:3.5mm;
-  flex:1 1 auto;min-height:0;
-  grid-template-rows:repeat(var(--game-rows,3),minmax(0,1fr));
-  align-content:stretch
-}
-.game-board.is-devinettes .game-card{
-  min-height:0;height:100%;padding:4mm;border-width:1.8px
-}
+.game-board.is-devinettes .game-card-grid{--game-card-gap:3.5mm}
+.game-board.is-devinettes .game-card{padding:3mm}
 .game-board.is-devinettes .game-card-image{
   min-height:0;margin-bottom:2.5mm;flex:1 1 auto;background:#fff
 }
@@ -1833,15 +1827,8 @@
 .game-board.is-devinettes .game-card-badge{
   min-width:6mm;height:6mm;font-size:10px
 }
-.game-board.is-memory .game-card-grid{
-  --game-card-gap:3mm;
-  flex:1 1 auto;min-height:0;
-  grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
-  align-content:stretch
-}
-.game-board.is-memory .game-card{
-  min-height:0;height:100%;padding:3mm
-}
+.game-board.is-memory .game-card-grid{--game-card-gap:3mm}
+.game-board.is-memory .game-card{padding:3mm}
 .game-board.is-memory .game-card-image{min-height:0;flex:1 1 auto;margin-bottom:1.5mm}
 .game-board.is-memory .game-card-word{font-size:14px;font-weight:800}
 .game-card.is-back{

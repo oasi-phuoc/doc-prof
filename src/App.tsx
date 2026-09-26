@@ -1022,6 +1022,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
     'jeux-intrus': 'Intrus',
     'jeux-tri': 'Tri',
     'jeux-loto': 'Loto',
+    'jeux-dominos': 'Dominos',
   }
   const usesSeriesIdentity =
     type.id === 'jeux-memory' ||
@@ -1029,7 +1030,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
     type.id === 'jeux-tri' ||
     type.id === 'jeux-loto' ||
     type.id === 'jeux-vocabulaire' ||
-    type.id === 'jeux-devinettes'
+    type.id === 'jeux-devinettes' ||
+    type.id === 'jeux-dominos'
   const gameBackColor =
     prev?.exerciseType === type.id
       ? prev.gameBackColor

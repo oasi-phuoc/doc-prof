@@ -43,7 +43,7 @@ function defaultSeriesName(typeId: string): string {
   return SERIES_DEFAULTS[typeId] ?? 'Jeux'
 }
 
-/** Types avec identité de série (logo ClairFLE + nom + cadre) au verso. */
+/** Grille de cartes : identité de série (logo ClairFLE + nom + cadre) au verso. */
 function usesSeriesIdentity(typeId: string): boolean {
   return (
     typeId === 'jeux-memory' ||
@@ -51,7 +51,8 @@ function usesSeriesIdentity(typeId: string): boolean {
     typeId === 'jeux-tri' ||
     typeId === 'jeux-loto' ||
     typeId === 'jeux-vocabulaire' ||
-    typeId === 'jeux-devinettes'
+    typeId === 'jeux-devinettes' ||
+    typeId === 'jeux-dominos'
   )
 }
 
