@@ -12,9 +12,17 @@ function CardFace({ card }: { card: GameCard }) {
       <div className="game-card is-domino" data-badge={card.badge || undefined}>
         {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
         <div className="game-domino">
-          <span className="game-domino-half">{card.text}</span>
+          <div className={`game-domino-half${card.imageSrc ? ' is-image' : ' is-word'}`}>
+            {card.imageSrc ? (
+              <img src={card.imageSrc} alt="" />
+            ) : (
+              <span className="game-domino-label">{card.text}</span>
+            )}
+          </div>
           <span className="game-domino-sep" aria-hidden />
-          <span className="game-domino-half">{card.textRight}</span>
+          <div className="game-domino-half is-word">
+            <span className="game-domino-label">{card.textRight}</span>
+          </div>
         </div>
       </div>
     )

@@ -119,12 +119,16 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     family: 'cartes',
     label: 'Dominos',
     orientation: 'portrait',
-    grid: { cols: 2, rows: 4 },
-    fields: [{ type: 'texte', required: true, maxLength: 14 }],
-    entryCount: 8,
-    cardCount: 8,
-    maxTextLen: 14,
-    entryHint: 'Chaîne de mots (8) : chaque domino relie deux mots voisins.',
+    grid: { cols: 2, rows: 8 },
+    fields: [
+      { type: 'image' },
+      { type: 'texte', required: true, maxLength: 16 },
+    ],
+    entryCount: 16,
+    cardCount: 16,
+    maxTextLen: 16,
+    entryHint:
+      '16 mots + images · chaque domino : image d’un mot | mot suivant (chaîne).',
   },
   'jeux-tri': {
     id: 'jeux-tri',

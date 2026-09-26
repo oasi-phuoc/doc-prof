@@ -356,6 +356,7 @@ export type MathItem = {
       | 'loto-back'
       | 'loto-call'
       | 'intrus'
+      | 'dominos'
     backColor?: string
     frameColor?: string
     themeLabel?: string

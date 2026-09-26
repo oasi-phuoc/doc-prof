@@ -413,27 +413,35 @@ function intrus(entries: GameEntry[], rng: Rng, frameColor?: string): MathItem[]
   ]
 }
 
-function dominos(entries: GameEntry[]): MathItem[] {
-  const words = padEntries(entries, 8).map((e) => e.text)
-  // Chain: (w0|w1) (w1|w2) ... wrap last to first for a loop.
-  const cards: GameCard[] = []
-  for (let i = 0; i < words.length; i++) {
-    const left = words[i]!
-    const right = words[(i + 1) % words.length]!
-    cards.push({
+/**
+ * Dominos vocabulaire : 16 cartes.
+ * Carte i = [image du mot i | texte du mot i+1] (boucle) ;
+ * on relie chaque image au mot correspondant.
+ */
+function dominos(entries: GameEntry[], rng: Rng): MathItem[] {
+  const pool = padEntries(entries, 16)
+  const n = pool.length
+  const raw: GameCard[] = []
+  for (let i = 0; i < n; i++) {
+    const left = pool[i]!
+    const right = pool[(i + 1) % n]!
+    raw.push({
       id: `dom-${i}`,
-      text: left,
-      textRight: right,
+      imageSrc: left.imageSrc,
+      text: left.imageSrc ? undefined : left.text,
+      textRight: right.text,
       variant: 'domino',
+      badge: String(i + 1),
     })
   }
+  const cards = shuffle(rng, raw)
   return [
     boardItem({
       cols: 2,
-      rows: 4,
+      rows: 8,
       cards,
-      kind: 'cards',
-      title: 'Dominos — enchaînez les moitiés identiques.',
+      kind: 'dominos',
+      title: 'Dominos — reliez chaque image au mot correspondant.',
     }),
   ]
 }
@@ -664,7 +672,7 @@ export function tryGenerateJeuxBatch(
       items = intrus(entries, rng, options.gameBackColor)
       break
     case 'jeux-dominos':
-      items = dominos(entries)
+      items = dominos(entries, rng)
       break
     case 'jeux-tri':
       items = tri(entries)

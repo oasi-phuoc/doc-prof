@@ -11,7 +11,12 @@ export type GameSource = 'theme' | 'lecture' | 'libre'
 export type BankItem = { id: string; label: string; imageSrc?: string }
 
 export function isGameBankType(typeId: string): boolean {
-  return typeId === 'jeux-vocabulaire' || typeId === 'jeux-memory' || typeId === 'jeux-loto'
+  return (
+    typeId === 'jeux-vocabulaire' ||
+    typeId === 'jeux-memory' ||
+    typeId === 'jeux-loto' ||
+    typeId === 'jeux-dominos'
+  )
 }
 
 /** Thème FR par défaut (beaucoup d’images vocab + lecture). */

@@ -84,6 +84,7 @@ export type GameBoard = {
     | 'loto-back'
     | 'loto-call'
     | 'intrus'
+    | 'dominos'
   /** Couleur de dos (mémory verso), blanc si absent. */
   backColor?: string
   /** Plusieurs grilles encadrées sur une même feuille (loto). */

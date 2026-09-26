@@ -123,15 +123,26 @@ const INTRUS: GameEntry[] = [
 ]
 
 const DOMINOS: GameEntry[] = [
-  'matin',
-  'école',
-  'classe',
-  'livre',
-  'crayon',
-  'cahier',
-  'récréation',
   'maison',
-].map((text) => ({ text }))
+  'fenêtre',
+  'chaise',
+  'lampe',
+  'chat',
+  'pomme',
+  'chien',
+  'livre',
+  'pain',
+  'soleil',
+  'vélo',
+  'eau',
+  'fleur',
+  'cahier',
+  'crayon',
+  'arbre',
+].map((text) => ({
+  text,
+  imageSrc: `/assets/words/lecture/${text}.webp`,
+}))
 
 const TRI: GameEntry[] = [
   { text: 'chat', category: 'Animaux' },

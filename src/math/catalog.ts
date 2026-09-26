@@ -350,7 +350,7 @@ export const exerciseTypes: ExerciseType[] = [
     'jeux-dominos',
     'jeux-cartes',
     'Dominos',
-    'Dominos lexicaux avec enchaînement des moitiés.',
+    '16 dominos image / mot : enchaînez chaque image au mot correspondant.',
     'Placez les dominos pour former une chaîne.',
     'texte',
     { preferredColumns: 1 },
