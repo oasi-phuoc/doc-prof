@@ -99,18 +99,12 @@ function mirrorRows<T>(items: T[], cols: number): T[] {
 
 /**
  * Vocabulaire imprimable recto-verso :
- * feuille 1 = images, feuille 2 = mots brandés (logo ClairFLE + série, miroir bord long).
+ * feuille 1 = images, feuille 2 = mots seuls (miroir bord long).
  */
-function vocab(
-  entries: GameEntry[],
-  frameColor?: string,
-  seriesName?: string,
-): MathItem[] {
+function vocab(entries: GameEntry[]): MathItem[] {
   const cols = 3
   const rows = 4
   const list = padEntries(entries, cols * rows)
-  const series = resolveSeriesName(seriesName, 'Vocabulaire')
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const recto: GameCard[] = list.map((e, i) => ({
     id: `vr-${i}`,
     imageSrc: e.imageSrc,
@@ -124,8 +118,6 @@ function vocab(
     text: e.text,
     variant: 'word' as const,
     badge: String(i + 1),
-    seriesLabel: series,
-    frameColor: frame,
   }))
   return [
     boardItem({
@@ -133,6 +125,7 @@ function vocab(
       rows,
       cards: recto,
       kind: 'cards',
+      side: 'recto',
       title: 'Recto — images (imprimez cette page en premier)',
     }),
     boardItem({
@@ -140,30 +133,23 @@ function vocab(
       rows,
       cards: verso,
       kind: 'cards',
-      themeLabel: series,
-      frameColor: frame,
-      title: `Verso — mots · série « ${series} » (miroir bord long)`,
+      side: 'verso',
+      title: 'Verso — mots (miroir bord long)',
     }),
   ]
 }
 
 /**
  * Devinettes recto-verso :
- * feuille 1 = mot + image, feuille 2 = 3 indices brandés (logo + série, miroir bord long).
+ * feuille 1 = mot + image, feuille 2 = 3 indices (miroir bord long).
  */
-function devinettes(
-  entries: GameEntry[],
-  frameColor?: string,
-  seriesName?: string,
-): MathItem[] {
+function devinettes(entries: GameEntry[]): MathItem[] {
   const cols = 3
   const rows = 3
   const list = padEntries(entries, cols * rows).map((e) => ({
     ...e,
     clues: e.clues && e.clues.length >= 3 ? e.clues.slice(0, 3) : ['…', '…', '…'],
   }))
-  const series = resolveSeriesName(seriesName, 'Devinettes')
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const recto: GameCard[] = list.map((e, i) => ({
     id: `dr-${i}`,
     text: e.text,
@@ -180,8 +166,6 @@ function devinettes(
     lines: e.clues,
     variant: 'clue' as const,
     badge: String(i + 1),
-    seriesLabel: series,
-    frameColor: frame,
   }))
   return [
     boardItem({
@@ -189,6 +173,7 @@ function devinettes(
       rows,
       cards: recto,
       kind: 'devinettes',
+      side: 'recto',
       title: 'Recto — mot et image (imprimez cette page en premier)',
     }),
     boardItem({
@@ -196,9 +181,8 @@ function devinettes(
       rows,
       cards: verso,
       kind: 'devinettes',
-      themeLabel: series,
-      frameColor: frame,
-      title: `Verso — indices · série « ${series} » (miroir bord long)`,
+      side: 'verso',
+      title: 'Verso — indices (miroir bord long)',
     }),
   ]
 }
@@ -795,25 +779,25 @@ export function tryGenerateJeuxBatch(
   let items: MathItem[]
   switch (typeId) {
     case 'jeux-vocabulaire':
-      items = vocab(entries, options.gameBackColor, options.gameSeriesName)
+      items = vocab(entries)
       break
     case 'jeux-devinettes':
-      items = devinettes(entries, options.gameBackColor, options.gameSeriesName)
+      items = devinettes(entries)
       break
     case 'jeux-memory':
-      items = memory(entries, rng, options.gameBackColor, options.gameSeriesName)
+      items = memory(entries, rng, undefined, options.gameSeriesName)
       break
     case 'jeux-loto':
       items = loto(entries, rng, options.gameTopic, options.gameSeriesName)
       break
     case 'jeux-intrus':
-      items = intrus(entries, rng, options.gameBackColor, options.gameSeriesName)
+      items = intrus(entries, rng, undefined, options.gameSeriesName)
       break
     case 'jeux-dominos':
-      items = dominos(entries, rng, options.gameBackColor, options.gameSeriesName)
+      items = dominos(entries, rng, undefined, options.gameSeriesName)
       break
     case 'jeux-tri':
-      items = tri(entries, rng, options.gameBackColor, options.gameSeriesName)
+      items = tri(entries, rng, undefined, options.gameSeriesName)
       break
     case 'jeux-sept-familles':
       items = septFamilles(entries)
@@ -831,7 +815,7 @@ export function tryGenerateJeuxBatch(
       items = phrasesTexte(entries, rng)
       break
     default:
-      items = vocab(entries, options.gameBackColor, options.gameSeriesName)
+      items = vocab(entries)
   }
 
   return {

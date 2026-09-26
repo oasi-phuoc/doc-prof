@@ -141,106 +141,52 @@ function GameAddWordRow({
   )
 }
 
-/** Teintes imprimables (dos Mémory / cadre Intrus). */
-const GAME_COLOR_SWATCHES: Array<{ id: string; color: string; label: string }> = [
-  { id: 'blanc', color: '', label: 'Blanc' },
-  { id: 'rouge', color: '#b42318', label: 'Rouge' },
-  { id: 'orange', color: '#c45c12', label: 'Orange' },
-  { id: 'jaune', color: '#ca8a04', label: 'Jaune' },
-  { id: 'vert', color: '#18a66a', label: 'Vert' },
-  { id: 'teal', color: '#0f6b5c', label: 'Sarcelle' },
-  { id: 'bleu', color: '#2563eb', label: 'Bleu' },
-  { id: 'indigo', color: '#4338ca', label: 'Indigo' },
-  { id: 'violet', color: '#7c3aed', label: 'Violet' },
-]
-
 function templateHasImages(template: GameTemplate): boolean {
   return template.fields.some((field) => field.type === 'image')
 }
 
-function GameColorPicker({
-  title,
-  hint,
-  value,
-  allowWhite = true,
-  onChange,
-}: {
-  title: string
-  hint: string
-  value?: string
-  allowWhite?: boolean
-  onChange: (color: string) => void
-}) {
-  const current = value?.trim() ?? ''
-  const swatches = allowWhite
-    ? GAME_COLOR_SWATCHES
-    : GAME_COLOR_SWATCHES.filter((s) => s.color)
+function usesSeriesNameField(typeId: string): boolean {
   return (
-    <div className="mode-toggle-block">
-      <b>{title}</b>
-      <div className="game-back-swatches" role="group" aria-label={title}>
-        {swatches.map((swatch) => {
-          const active = current === swatch.color || (!current && !swatch.color)
-          return (
-            <button
-              key={swatch.id}
-              type="button"
-              className={`game-back-swatch${swatch.color ? '' : ' is-white'}${active ? ' active' : ''}`}
-              style={swatch.color ? { background: swatch.color } : undefined}
-              title={swatch.label}
-              aria-label={swatch.label}
-              aria-pressed={active}
-              onClick={() => onChange(swatch.color)}
-            />
-          )
-        })}
-      </div>
-      <small className="muted">{hint}</small>
-    </div>
+    typeId === 'jeux-memory' ||
+    typeId === 'jeux-intrus' ||
+    typeId === 'jeux-tri' ||
+    typeId === 'jeux-loto' ||
+    typeId === 'jeux-dominos'
   )
 }
 
-/** Nom de série + cadre (verso unifié — skill jeux-verso-serie). */
+/** Nom de série (si dos identification) + bordure personnalisée. */
 function SeriesIdentityFields({
   typeId,
   seriesName,
-  frameColor,
   borderId,
   onSeriesName,
-  onFrameColor,
   onBorderId,
 }: {
   typeId: string
   seriesName?: string
-  frameColor?: string
   borderId?: string
   onSeriesName: (name: string) => void
-  onFrameColor: (color: string) => void
   onBorderId: (id: string | undefined) => void
 }) {
   const [pickerOpen, setPickerOpen] = useState(false)
   const active = borderId?.trim() || ''
   return (
     <div className="game-series-identity">
-      <label className="game-series-name">
-        <span>Nom de la série</span>
-        <input
-          className="pill-input"
-          type="text"
-          maxLength={32}
-          value={seriesName ?? defaultSeriesName(typeId)}
-          aria-label="Nom de la série (verso)"
-          placeholder={defaultSeriesName(typeId)}
-          onChange={(event) => onSeriesName(event.target.value)}
-        />
-      </label>
-      <GameColorPicker
-        title="Cadre de série (verso)"
-        hint="Logo ClairFLE dans un cercle + nom de série, cadre coloré (recto-verso bord long)."
-        value={frameColor || '#0f6b5c'}
-        allowWhite={false}
-        onChange={onFrameColor}
-      />
+      {usesSeriesNameField(typeId) ? (
+        <label className="game-series-name">
+          <span>Nom de la série</span>
+          <input
+            className="pill-input"
+            type="text"
+            maxLength={32}
+            value={seriesName ?? defaultSeriesName(typeId)}
+            aria-label="Nom de la série (verso)"
+            placeholder={defaultSeriesName(typeId)}
+            onChange={(event) => onSeriesName(event.target.value)}
+          />
+        </label>
+      ) : null}
       <div className="game-border-block">
         <button
           type="button"
@@ -434,20 +380,6 @@ export function GameContentPanel({
     })
   }
 
-  function setBackColor(color: string) {
-    const resolved = resolveEntries(typeId, entries)
-    onChange({
-      gameEntries: resolved,
-      gameText: entriesToText(typeId, resolved),
-      gameSource: source,
-      gameTopic: topicId,
-      gameSelectedIds: selectedIds,
-      gameBackColor: color,
-      gameSeriesName,
-      gameBorderId,
-    })
-  }
-
   function setSeriesName(name: string) {
     const resolvedNow = resolveEntries(typeId, entries)
     onChange({
@@ -616,13 +548,13 @@ export function GameContentPanel({
           />
           <small className="muted">
             {typeId === 'jeux-vocabulaire'
-              ? 'Recto images · verso mots + logo ClairFLE et nom de série (bord long).'
+              ? 'Recto images · verso mots seuls (miroir bord long).'
               : typeId === 'jeux-memory'
                 ? 'Recto : paires image / mot · verso : logo ClairFLE + nom de série.'
                 : typeId === 'jeux-loto'
                   ? '15 grilles (3/page) · verso = série (logo ClairFLE) · lot animateur 27 mots.'
                   : typeId === 'jeux-devinettes'
-                    ? 'Sélectionnez les mots ; verso indices + identité de série.'
+                    ? 'Sélectionnez les mots ; verso indices (miroir bord long).'
                     : template.entryHint}
           </small>
         </div>
@@ -630,10 +562,8 @@ export function GameContentPanel({
           <SeriesIdentityFields
             typeId={typeId}
             seriesName={gameSeriesName}
-            frameColor={gameBackColor}
             borderId={gameBorderId}
             onSeriesName={setSeriesName}
-            onFrameColor={setBackColor}
             onBorderId={setBorderId}
           />
         ) : null}
@@ -715,10 +645,8 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          frameColor={gameBackColor}
           borderId={gameBorderId}
           onSeriesName={setSeriesName}
-          onFrameColor={setBackColor}
           onBorderId={setBorderId}
         />
         <ul className="game-intrus-list" aria-label="Catégories du tri">
@@ -821,10 +749,8 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          frameColor={gameBackColor}
           borderId={gameBorderId}
           onSeriesName={setSeriesName}
-          onFrameColor={setBackColor}
           onBorderId={setBorderId}
         />
         <small className="muted">
@@ -843,10 +769,8 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          frameColor={gameBackColor}
           borderId={gameBorderId}
           onSeriesName={setSeriesName}
-          onFrameColor={setBackColor}
           onBorderId={setBorderId}
         />
         <ul className="game-riddle-list" aria-label="Devinettes">
@@ -932,7 +856,7 @@ export function GameContentPanel({
           </p>
         ) : (
           <small className="muted">
-            Recto mot + image · verso indices + logo ClairFLE et nom de série (bord long).
+            Recto mot + image · verso indices (miroir bord long).
           </small>
         )}
       </div>
@@ -1047,7 +971,7 @@ export function GameContentPanel({
       ) : (
         <small className="muted">
           {typeId === 'jeux-vocabulaire'
-            ? 'Recto images · verso mots + logo ClairFLE et nom de série (bord long).'
+            ? 'Recto images · verso mots seuls (miroir bord long).'
             : typeId === 'jeux-memory'
               ? 'Recto : paires image / mot · verso : logo ClairFLE + série (bord long).'
               : 'JPG, PNG, WebP ou SVG · max. 2,5 Mo'}
@@ -1057,10 +981,8 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          frameColor={gameBackColor}
           borderId={gameBorderId}
           onSeriesName={setSeriesName}
-          onFrameColor={setBackColor}
           onBorderId={setBorderId}
         />
       ) : null}

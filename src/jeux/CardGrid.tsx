@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import { gameBorderSrc } from './borders'
 import type { GameBoard, GameCard, GamePanel } from './types'
 
-/** Logo ClairFLE (cercle) + libellé de série — skill jeux-verso-serie. */
+/** Logo ClairFLE (cercle) + libellé de série — dos identification (Mémory, etc.). */
 function SeriesIdentity({
   label,
   sub,
@@ -37,37 +37,47 @@ function cardShell(
   className: string,
   card: GameCard,
   children: ReactNode,
-  style?: CSSProperties,
-  borderSrc?: string,
+  opts: {
+    style?: CSSProperties
+    borderSrc?: string
+    /** Masquer le badge (bordure perso). */
+    hideBadge?: boolean
+  } = {},
 ) {
-  const custom = Boolean(borderSrc)
+  const custom = Boolean(opts.borderSrc)
+  const showBadge = Boolean(card.badge) && !opts.hideBadge && !custom
   return (
     <div
       className={`${className}${custom ? ' has-custom-border' : ''}`}
-      data-badge={card.badge || undefined}
-      style={style}
+      data-badge={showBadge ? card.badge : undefined}
+      style={opts.style}
     >
-      <BorderOverlay src={borderSrc} />
-      {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+      {showBadge ? <span className="game-card-badge">{card.badge}</span> : null}
       {children}
+      {/* Bordure au-dessus du contenu (image) pour ne pas être rognée. */}
+      <BorderOverlay src={opts.borderSrc} />
     </div>
   )
 }
 
-function CardFace({ card, borderId }: { card: GameCard; borderId?: string }) {
+function CardFace({
+  card,
+  borderId,
+  side,
+}: {
+  card: GameCard
+  borderId?: string
+  side?: 'recto' | 'verso'
+}) {
   const variant = card.variant ?? 'default'
   const showImageSlot =
     variant === 'default' || variant === 'image' || (variant === 'word' && Boolean(card.imageSrc))
   const showWord = variant !== 'image' && Boolean(card.text)
-  const frame = card.frameColor?.trim()
-  const seriesLabel = card.seriesLabel?.trim()
-  const branded = Boolean(seriesLabel || frame)
-  const isVersoFace =
-    variant === 'series-back' ||
-    variant === 'back' ||
-    variant === 'clue' ||
-    (variant === 'word' && branded && !card.imageSrc)
-  const border = gameBorderSrc(borderId, isVersoFace ? 'verso' : 'recto')
+  const face: 'recto' | 'verso' =
+    side ??
+    (variant === 'series-back' || variant === 'back' || variant === 'clue' ? 'verso' : 'recto')
+  const border = gameBorderSrc(borderId, face)
+  const hideBadge = Boolean(border)
 
   if (variant === 'domino') {
     return cardShell(
@@ -86,27 +96,20 @@ function CardFace({ card, borderId }: { card: GameCard; borderId?: string }) {
           <span className="game-domino-label">{card.textRight}</span>
         </div>
       </div>,
-      undefined,
-      border,
+      { borderSrc: border, hideBadge },
     )
   }
 
   if (variant === 'clue') {
     return cardShell(
-      `game-card is-clue${branded ? ' is-series-content' : ''}`,
+      'game-card is-clue is-verso-content',
       card,
-      <>
-        {branded ? <SeriesIdentity label={seriesLabel} compact /> : null}
-        <ol className="game-card-clues">
-          {(card.lines ?? []).map((line, i) => (
-            <li key={i}>{line}</li>
-          ))}
-        </ol>
-      </>,
-      branded && !border
-        ? ({ '--series-frame': frame || '#0f6b5c' } as CSSProperties)
-        : undefined,
-      border,
+      <ol className="game-card-clues">
+        {(card.lines ?? []).map((line, i) => (
+          <li key={i}>{line}</li>
+        ))}
+      </ol>,
+      { borderSrc: border, hideBadge },
     )
   }
 
@@ -116,19 +119,20 @@ function CardFace({ card, borderId }: { card: GameCard; borderId?: string }) {
       `game-card is-back${color ? ' has-color' : ''}`,
       card,
       null,
-      color && !border ? ({ '--game-back': color } as CSSProperties) : undefined,
-      border,
+      {
+        style: color && !border ? ({ '--game-back': color } as CSSProperties) : undefined,
+        borderSrc: border,
+        hideBadge,
+      },
     )
   }
 
   if (variant === 'series-back') {
-    const seriesFrame = frame || '#0f6b5c'
     return cardShell(
       'game-card is-series-back',
       card,
       <SeriesIdentity label={card.text} />,
-      border ? undefined : ({ '--series-frame': seriesFrame } as CSSProperties),
-      border,
+      { borderSrc: border, hideBadge },
     )
   }
 
@@ -153,32 +157,26 @@ function CardFace({ card, borderId }: { card: GameCard; borderId?: string }) {
           </span>
         ))}
       </div>,
-      undefined,
-      border,
+      { borderSrc: border, hideBadge },
     )
   }
 
   if (variant === 'intrus-answer') {
-    const intrusFrame = frame || '#0f6b5c'
     return cardShell(
       'game-card is-intrus-answer',
       card,
       <div className="game-card-word">{card.text}</div>,
-      border ? undefined : ({ '--intrus-frame': intrusFrame } as CSSProperties),
-      border,
+      { borderSrc: border, hideBadge },
     )
   }
 
-  if (variant === 'word' && branded && !card.imageSrc) {
+  // Verso mot (vocabulaire) : numéro petit en haut, mot centré — sans logo / série.
+  if (variant === 'word' && !card.imageSrc && face === 'verso') {
     return cardShell(
-      'game-card is-word is-series-content',
+      'game-card is-word is-verso-content',
       card,
-      <>
-        <SeriesIdentity label={seriesLabel} compact />
-        <div className="game-card-word">{card.text}</div>
-      </>,
-      border ? undefined : ({ '--series-frame': frame || '#0f6b5c' } as CSSProperties),
-      border,
+      <div className="game-card-word">{card.text}</div>,
+      { borderSrc: border, hideBadge },
     )
   }
 
@@ -203,12 +201,19 @@ function CardFace({ card, borderId }: { card: GameCard; borderId?: string }) {
         <div className="game-card-word is-muted">Image</div>
       ) : null}
     </>,
-    undefined,
-    border,
+    { borderSrc: border, hideBadge },
   )
 }
 
-function PanelGrid({ panel, borderId }: { panel: GamePanel; borderId?: string }) {
+function PanelGrid({
+  panel,
+  borderId,
+  side,
+}: {
+  panel: GamePanel
+  borderId?: string
+  side?: 'recto' | 'verso'
+}) {
   return (
     <div
       className="game-card-grid"
@@ -221,7 +226,7 @@ function PanelGrid({ panel, borderId }: { panel: GamePanel; borderId?: string })
       aria-label={panel.title ?? 'Grille'}
     >
       {panel.cards.map((card) => (
-        <CardFace key={card.id} card={card} borderId={borderId} />
+        <CardFace key={card.id} card={card} borderId={borderId} side={side} />
       ))}
     </div>
   )
@@ -240,17 +245,17 @@ function LotoPanelFace({
   if (mode === 'back') {
     return (
       <div className={`loto-panel is-back is-series${border ? ' has-custom-border' : ''}`}>
-        <BorderOverlay src={border} />
         <SeriesIdentity label={panel.themeLabel ?? 'Loto'} sub={panel.themeSub} />
         {panel.title ? <span className="loto-panel-theme-grid">{panel.title}</span> : null}
+        <BorderOverlay src={border} />
       </div>
     )
   }
   return (
     <div className={`loto-panel${border ? ' has-custom-border' : ''}`}>
-      <BorderOverlay src={border} />
       {panel.title ? <p className="loto-panel-title">{panel.title}</p> : null}
-      <PanelGrid panel={panel} borderId={borderId} />
+      <PanelGrid panel={panel} borderId={borderId} side="recto" />
+      <BorderOverlay src={border} />
     </div>
   )
 }
@@ -258,6 +263,7 @@ function LotoPanelFace({
 export function CardGrid({ board }: { board: GameBoard }) {
   const kind = board.kind ?? 'cards'
   const borderId = board.borderId
+  const side = board.side
 
   if (kind === 'loto-page' || kind === 'loto-back') {
     const mode = kind === 'loto-back' ? 'back' : 'page'
@@ -300,7 +306,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
         aria-label={board.title ?? 'Cartes du jeu'}
       >
         {board.cards.map((card) => (
-          <CardFace key={card.id} card={card} borderId={borderId} />
+          <CardFace key={card.id} card={card} borderId={borderId} side={side} />
         ))}
       </div>
     </div>

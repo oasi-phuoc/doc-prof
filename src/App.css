@@ -1479,7 +1479,7 @@
  */
 .game-board.is-ludic .game-card:not(.is-series-back):not(.is-back):not(.is-series-content){
   background:#fff;
-  border:var(--game-card-frame) solid color-mix(in srgb, var(--jeux-accent) 82%, #1a1a1a);
+  border:var(--game-card-frame) solid var(--jeux-accent);
   border-style:solid;
   box-shadow:inset 0 0 0 0.75mm #fff;
   border-radius:3.2mm;
@@ -1495,14 +1495,43 @@
 }
 .game-card-border{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:fill;pointer-events:none;z-index:1;
+  object-fit:fill;pointer-events:none;z-index:5;
   border-radius:inherit
+}
+.game-card.has-custom-border,
+.loto-panel.has-custom-border{
+  isolation:isolate
 }
 .game-card.has-custom-border > :not(.game-card-border),
 .loto-panel.has-custom-border > :not(.game-card-border){
-  position:relative;z-index:2
+  position:relative;z-index:1
 }
-.game-card.has-custom-border .game-card-badge{z-index:3}
+.game-card.has-custom-border .game-card-image,
+.game-card.has-custom-border .game-card-image img{
+  z-index:1
+}
+.game-card.has-custom-border .game-card-badge{display:none}
+/* Verso mot : badge petit en haut (cercle), mot centré — ne chevauche pas la bordure */
+.game-card.is-verso-content{
+  justify-content:center;align-items:center;gap:0;padding:5mm 3.5mm 3mm
+}
+.game-card.is-verso-content .game-card-badge{
+  top:2.4mm;right:auto;left:50%;transform:translateX(-50%);
+  min-width:4.2mm;height:4.2mm;font-size:7px;padding:0 0.6mm;
+  z-index:3;border-radius:999px
+}
+.game-card.is-verso-content .game-card-word{
+  flex:1 1 auto;display:flex;align-items:center;justify-content:center;
+  width:100%;font-size:15px;font-weight:800;line-height:1.15;text-align:center;
+  padding:3mm 2mm 1mm;margin:0
+}
+.game-board.is-ludic .game-card.is-verso-content,
+.game-board.is-ludic .game-card.is-series-back{
+  border-color:var(--jeux-accent)
+}
+.game-card.is-series-back{
+  --series-frame:var(--jeux-accent)
+}
 .game-border-block{display:flex;flex-direction:column;gap:8px;margin:0}
 .game-border-toggle{
   display:flex;align-items:center;justify-content:space-between;gap:8px;

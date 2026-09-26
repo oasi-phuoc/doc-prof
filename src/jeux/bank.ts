@@ -33,21 +33,15 @@ export function themeBankItems(topicId: string, subgroupId?: string): BankItem[]
       imageSrc: resolveGameImageSrc(w.label, w.imageSrc),
     })
   }
-  // Lecture rattachée au thème (sans doublon de libellé ; image lecture en secours).
+  // Images lecture en secours pour les libellés déjà dans la liste uniquement.
+  // Ne pas ajouter d’autres mots lecture (sinon Fruits affiche aussi Légumes, etc.).
   for (const w of lectureWordsForTopic(topicId)) {
     const key = w.label.toLowerCase()
-    if (byLabel.has(key)) {
-      const prev = byLabel.get(key)!
-      if (!prev.imageSrc && w.imageSrc) {
-        byLabel.set(key, { ...prev, imageSrc: resolveGameImageSrc(w.label, w.imageSrc) })
-      }
-      continue
+    const prev = byLabel.get(key)
+    if (!prev) continue
+    if (!prev.imageSrc && w.imageSrc) {
+      byLabel.set(key, { ...prev, imageSrc: resolveGameImageSrc(w.label, w.imageSrc) })
     }
-    byLabel.set(key, {
-      id: w.id,
-      label: w.label,
-      imageSrc: resolveGameImageSrc(w.label, w.imageSrc),
-    })
   }
   return [...byLabel.values()].sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 }

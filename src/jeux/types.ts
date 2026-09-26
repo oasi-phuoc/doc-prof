@@ -99,4 +99,6 @@ export type GameBoard = {
   frameColor?: string
   /** Id de bordure personnalisée (01–15), optionnelle. */
   borderId?: string
+  /** Face pour choisir l’image de bordure recto / verso. */
+  side?: 'recto' | 'verso'
 }

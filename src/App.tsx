@@ -2825,13 +2825,7 @@ function GeneratorPage() {
                 <button className="print-chip is-generate" type="button" onClick={generate}>
                   Générer
                 </button>
-                <button className="print-chip" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
-                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden>
-                    <path
-                      fill="currentColor"
-                      d="M7 3h10v4H7V3zm-3 6h16a2 2 0 0 1 2 2v6h-4v4H7v-4H3v-6a2 2 0 0 1 2-2zm2 8v2h8v-2H6zm12-5.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM7 14h10v1H7v-1z"
-                    />
-                  </svg>
+                <button className="print-chip is-generate" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
                   Imprimer
                 </button>
               </div>
