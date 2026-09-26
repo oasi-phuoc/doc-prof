@@ -37,6 +37,7 @@ import {
   geometryTopics,
   isDraftPadExercise,
   isQuadExercise,
+  jeuxTopics,
   lectureTopics,
   phraseTopics,
   typesForTopic,
@@ -176,7 +177,8 @@ function WorksheetSheet({
     onRemove: (x: number, y: number) => void
   }
 }) {
-  const showHeader = pageNumber === 1
+  const isJeuxSheet = page.domain === 'jeux'
+  const showHeader = pageNumber === 1 && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
     (item) =>
@@ -186,7 +188,7 @@ function WorksheetSheet({
   )
   return (
     <article
-      className={`worksheet-sheet ${parity}`}
+      className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}`}
       style={{ '--sheet-columns': page.columns } as CSSProperties}
     >
       {showHeader &&
@@ -200,6 +202,11 @@ function WorksheetSheet({
         ) : (
           <CustomDocumentHeader config={custom} pageTitle={page.title} domain={page.domain} />
         ))}
+      {isJeuxSheet && pageNumber === 1 ? (
+        <header className="jeux-sheet-title">
+          <h3>{page.title}</h3>
+        </header>
+      ) : null}
       <SheetBody>
         {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, blockIndex) => {
           const algebraItems = block.items.filter((item) => item.layout === 'algebra')
@@ -232,7 +239,7 @@ function WorksheetSheet({
                     </p>
                   ) : null}
                 </div>
-                {evalMode ? (
+                {evalMode && !isJeuxSheet ? (
                   <span className="instruction-points">{block.items.length * pointsPerQuestion} points</span>
                 ) : null}
               </header>
@@ -297,7 +304,7 @@ function WorksheetSheet({
           )
         })}
       </SheetBody>
-      <DocumentFooter pageNumber={pageNumber} total={total} />
+      {isJeuxSheet ? null : <DocumentFooter pageNumber={pageNumber} total={total} />}
     </article>
   )
 }
@@ -1058,7 +1065,9 @@ function GeneratorPage() {
           ? geometryTopics
           : activePage.domain === 'phrase'
             ? phraseTopics
-            : lectureTopics
+            : activePage.domain === 'jeux'
+              ? jeuxTopics
+              : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -1244,6 +1253,7 @@ function GeneratorPage() {
       ]
     : DIFFICULTY_OPTIONS
   const isPhraseDomain = activePage.domain === 'phrase'
+  const isJeuxDomain = activePage.domain === 'jeux'
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
   const isComposer = isReperageComposer(activeBlock.exerciseType)
   const isFormes = isReperageFormes(activeBlock.exerciseType)
@@ -1468,11 +1478,12 @@ function GeneratorPage() {
     const type = firstTypeFor(next)
     setBlockIndex(0)
     updatePage({ domain: next, ...applyType(type) })
-    if (next === 'français' || next === 'lecture' || next === 'phrase') {
+    if (next === 'français' || next === 'lecture' || next === 'phrase' || next === 'jeux') {
       setInstitutional((current) =>
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
     }
+    if (next === 'jeux') setEvalMode(false)
   }
 
   function changeTopic(topic: string) {
@@ -1604,6 +1615,7 @@ function GeneratorPage() {
               </div>
             ) : null}
             <div className="field-group">
+              {isJeuxDomain ? null : (
               <div className="mode-toggle-block">
                 <b>Mode de la fiche</b>
                 <div className="mode-toggle">
@@ -1649,12 +1661,14 @@ function GeneratorPage() {
                   </label>
                 )}
               </div>
+              )}
 
               <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
                 <option value="français">Français</option>
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
                 <option value="phrase">Phrase</option>
+                <option value="jeux">Jeux</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
               </SelectBox>
               <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>
@@ -1761,7 +1775,7 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {isReperage || isPhraseDomain || isVocabLearn || isGramTheory ? null : (
+              {isReperage || isPhraseDomain || isJeuxDomain || isVocabLearn || isGramTheory ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -1981,7 +1995,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isGramTheory ? null : (
+              {isPhraseChart || isVocabLearn || isGramTheory || isJeuxDomain ? null : (
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
@@ -2054,7 +2068,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

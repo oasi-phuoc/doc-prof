@@ -26,6 +26,7 @@ import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { tryGenerateConversion } from './conversions'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from '@/francais/francais'
+import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { tryGenerateMesure } from './mesures'
 import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
@@ -1064,6 +1065,14 @@ function buildSingleBlock(
       bankQuestionCap: francais.bankQuestionCap,
     }
   }
+  const jeux = tryGenerateJeuxBatch(config.exerciseType)
+  if (jeux) {
+    return {
+      title: fallbackTitle,
+      instruction: jeux.instruction,
+      items: jeux.items,
+    }
+  }
   return {
     title: fallbackTitle,
     instruction: type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
@@ -1084,11 +1093,14 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
     const single = pageAsConfig(config, block)
     const result = buildSingleBlock(single, seed + index * 10007)
     const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
+    const isJeux = block.exerciseType.startsWith('jeux-')
     return {
       exerciseIndex: startExercise + index,
       title: isTheory
         ? (result.instruction?.replace(/^Théorie — /, '') || `Théorie`)
-        : `Exercice ${startExercise + index}`,
+        : isJeux
+          ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${startExercise + index}`)
+          : `Exercice ${startExercise + index}`,
       instruction: result.instruction,
       items: result.items,
       columns: block.columns,

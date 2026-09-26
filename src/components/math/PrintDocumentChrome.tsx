@@ -148,9 +148,11 @@ export function CustomDocumentHeader({
       ? 'FRANÇAIS · LECTURE'
       : domain === 'phrase'
         ? 'FRANÇAIS · PHRASE'
-        : domain === 'français'
-          ? 'FRANÇAIS'
-          : `MATHÉMATIQUES · ${domain.toUpperCase()}`
+        : domain === 'jeux'
+          ? 'FRANÇAIS · JEUX'
+          : domain === 'français'
+            ? 'FRANÇAIS'
+            : `MATHÉMATIQUES · ${domain.toUpperCase()}`
   return (
     <div className="doc-header custom">
       <div className="custom-print-header">

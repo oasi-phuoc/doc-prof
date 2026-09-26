@@ -1,4 +1,4 @@
-export type Domain = 'français' | 'algèbre' | 'géométrie' | 'lecture' | 'phrase'
+export type Domain = 'français' | 'algèbre' | 'géométrie' | 'lecture' | 'phrase' | 'jeux'
 
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =

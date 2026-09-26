@@ -62,6 +62,10 @@ export const topics: Topic[] = [
   { id: 'phrase-adverbe', label: 'Adverbe', domain: 'phrase' },
   { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'phrase' },
   { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'phrase' },
+  // —— Jeux (fiches-cartes / plateaux / étiquettes) ——
+  { id: 'jeux-cartes', label: 'Grille de cartes', domain: 'jeux' },
+  { id: 'jeux-structures', label: 'Jeu structuré', domain: 'jeux' },
+  { id: 'jeux-etiquettes', label: 'Étiquettes', domain: 'jeux' },
 ]
 
 export const topicById = Object.fromEntries(topics.map((topic) => [topic.id, topic])) as Record<string, Topic>
@@ -70,6 +74,7 @@ export const algebraTopics = topics.filter((topic) => topic.domain === 'algèbre
 export const geometryTopics = topics.filter((topic) => topic.domain === 'géométrie')
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
 export const phraseTopics = topics.filter((topic) => topic.domain === 'phrase')
+export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 
 const t = (
   id: string,
@@ -296,6 +301,125 @@ export const exerciseTypes: ExerciseType[] = [
   t('phrase-tableau-categories', 'phrase-tableaux', 'Tableau des catégories', 'Tableau Gattegno avec les noms de catégories.', 'Repérez les catégories de la grammaire en couleur.', 'texte', { preferredColumns: 1 }),
   t('phrase-tableau-mots', 'phrase-tableaux', 'Tableau des mots', 'Tableau Gattegno avec des exemples de mots.', 'Repérez les mots selon leur catégorie.', 'texte', { preferredColumns: 1 }),
   t('phrase-tableau-vide', 'phrase-tableaux', 'Tableau vide', 'Structure vide du tableau Gattegno.', 'Observez la structure du tableau.', 'texte', { preferredColumns: 1 }),
+
+  // —— Jeux (phase 0 : stubs catalogue ; rendu moteur en phases suivantes) ——
+  t(
+    'jeux-vocabulaire',
+    'jeux-cartes',
+    'Vocabulaire',
+    'Cartes image + mot pour réviser le lexique (12 cartes, 3×4).',
+    'Découpez les cartes. Associez chaque image au mot.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-vrai-faux',
+    'jeux-cartes',
+    'Vrai / Faux',
+    'Cartes affirmation avec recto vrai et verso faux (8 cartes).',
+    'Découpez les cartes. Jouez en vrai ou faux.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-devinettes',
+    'jeux-cartes',
+    'Devinettes',
+    'Cartes recto-verso : mot caché et trois indices (6 cartes).',
+    'Lisez les indices. Devinez le mot.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-memory',
+    'jeux-cartes',
+    'Mémory',
+    'Paires mot / image mélangées de façon déterministe (6 paires).',
+    'Retournez les cartes. Retrouvez les paires.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-loto',
+    'jeux-cartes',
+    'Loto',
+    'Grilles joueurs et paquet animateur tirés parmi une liste de mots.',
+    'Cochez les mots tirés sur votre grille.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-intrus',
+    'jeux-cartes',
+    'Intrus',
+    'Groupes de quatre : trois mots d’une catégorie et un intrus.',
+    'Entourez l’intrus dans chaque groupe.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-dominos',
+    'jeux-cartes',
+    'Dominos',
+    'Dominos lexicaux avec enchaînement des moitiés.',
+    'Placez les dominos pour former une chaîne.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-tri',
+    'jeux-cartes',
+    'Tri / catégories',
+    'Cartes-mots et étiquettes de catégories à classer.',
+    'Classez chaque mot sous la bonne catégorie.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-sept-familles',
+    'jeux-structures',
+    '7 familles',
+    'Jeu de sept familles avec en-tête de thème et sous-cartes.',
+    'Demandez une carte pour compléter votre famille.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-plateau',
+    'jeux-structures',
+    'Plateau de jeu',
+    'Plateau numéroté en paysage relié à un paquet de cartes-questions.',
+    'Avancez sur le plateau et répondez aux questions.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-de-roue',
+    'jeux-structures',
+    'Dé / roue',
+    'Patron de dé ou roue de consignes à personnaliser légèrement.',
+    'Lancez le dé ou tournez la roue. Suivez la consigne.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-bandes-mots',
+    'jeux-etiquettes',
+    'Bandes-mots',
+    'Découpe automatique d’une phrase en étiquettes-mots.',
+    'Remettez les mots dans l’ordre pour former la phrase.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'jeux-phrases-texte',
+    'jeux-etiquettes',
+    'Phrases à reconstituer',
+    'Découpe d’un texte en bandes-phrases à remettre en ordre.',
+    'Remettez les phrases dans l’ordre pour reconstituer le texte.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
 ]
 
 const VOWEL_TOPICS = [
@@ -652,22 +776,26 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
           ? 'aires'
           : domain === 'phrase'
             ? 'phrase-simple'
-            : 'voyelle-a'
+            : domain === 'jeux'
+              ? 'jeux-cartes'
+              : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const type = firstTypeFor(domain)
   const count =
-    domain === 'lecture' || domain === 'phrase'
-      ? 6
-      : domain === 'français'
-        ? type.track === 'com'
-          ? 4
-          : 6
-        : isDraftPadExercise(type.id)
-          ? 2
-          : 8
+    domain === 'jeux'
+      ? 1
+      : domain === 'lecture' || domain === 'phrase'
+        ? 6
+        : domain === 'français'
+          ? type.track === 'com'
+            ? 4
+            : 6
+          : isDraftPadExercise(type.id)
+            ? 2
+            : 8
   return {
     domain,
     topic: type.topic,

@@ -17,6 +17,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/math/generate.ts` | `buildPage(config, seed)` → `WorksheetPage` (pur, via `rng`) ; délègue au français via `@/francais/*` |
 | `src/math/` | Générateurs maths (algèbre, géométrie, repérage, `rng`, `types`, `difficulty`) |
 | `src/francais/` | Générateurs et banques FLE : Voc/Gram/Com, Phrase, Lecture, nombres en lettres |
+| `src/jeux/` | Fiches-jeux (templates cartes / plateaux / étiquettes) — planning `docs/plan-domaine-jeux.md` |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |
 | `src/components/ItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) — maths et français |
