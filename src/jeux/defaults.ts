@@ -65,9 +65,14 @@ const DEVINETTES: GameEntry[] = [
   },
 ]
 
-const MEMORY: GameEntry[] = ['maison', 'porte', 'fenêtre', 'table', 'chaise', 'lampe'].map((text) => ({
-  text,
-}))
+const MEMORY: GameEntry[] = [
+  { text: 'maison', imageSrc: '/assets/words/lecture/maison.webp' },
+  { text: 'fenêtre', imageSrc: '/assets/words/lecture/fenêtre.webp' },
+  { text: 'chaise', imageSrc: '/assets/words/lecture/chaise.webp' },
+  { text: 'lampe', imageSrc: '/assets/words/lecture/lampe.webp' },
+  { text: 'chat', imageSrc: '/assets/words/lecture/chat.webp' },
+  { text: 'pomme', imageSrc: '/assets/words/lecture/pomme.webp' },
+]
 
 const LOTO: GameEntry[] = [
   'rouge',

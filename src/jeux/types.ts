@@ -29,10 +29,13 @@ export type GameCard = {
     | 'band'
     | 'family-head'
     | 'face'
+    | 'back'
   /** Badge / coin (V, F, n°, paire…). */
   badge?: string
   /** Moitié droite d’un domino. */
   textRight?: string
+  /** Couleur de fond (dos de carte mémory). */
+  backColor?: string
 }
 
 export type GameBoard = {
@@ -41,5 +44,7 @@ export type GameBoard = {
   rows: number
   cards: GameCard[]
   /** Style de grille. */
-  kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes'
+  kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes' | 'memory'
+  /** Couleur de dos (mémory verso), blanc si absent. */
+  backColor?: string
 }

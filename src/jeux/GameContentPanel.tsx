@@ -24,10 +24,56 @@ export type GameContentChange = {
   gameSource?: GameSource
   gameTopic?: string
   gameSelectedIds?: string[]
+  gameBackColor?: string
 }
+
+/** Dos des cartes Mémory — blanc par défaut, sinon teinte imprimable. */
+const MEMORY_BACK_SWATCHES: Array<{ id: string; color: string; label: string }> = [
+  { id: 'blanc', color: '', label: 'Blanc' },
+  { id: 'rouge', color: '#b42318', label: 'Rouge' },
+  { id: 'orange', color: '#c45c12', label: 'Orange' },
+  { id: 'jaune', color: '#ca8a04', label: 'Jaune' },
+  { id: 'vert', color: '#18a66a', label: 'Vert' },
+  { id: 'bleu', color: '#2563eb', label: 'Bleu' },
+  { id: 'indigo', color: '#4338ca', label: 'Indigo' },
+  { id: 'violet', color: '#7c3aed', label: 'Violet' },
+]
 
 function templateHasImages(template: GameTemplate): boolean {
   return template.fields.some((field) => field.type === 'image')
+}
+
+function MemoryBackPicker({
+  value,
+  onChange,
+}: {
+  value?: string
+  onChange: (color: string) => void
+}) {
+  const current = value?.trim() ?? ''
+  return (
+    <div className="mode-toggle-block">
+      <b>Dos des cartes</b>
+      <div className="game-back-swatches" role="group" aria-label="Couleur du verso">
+        {MEMORY_BACK_SWATCHES.map((swatch) => {
+          const active = current === swatch.color
+          return (
+            <button
+              key={swatch.id}
+              type="button"
+              className={`game-back-swatch${swatch.color ? '' : ' is-white'}${active ? ' active' : ''}`}
+              style={swatch.color ? { background: swatch.color } : undefined}
+              title={swatch.label}
+              aria-label={swatch.label}
+              aria-pressed={active}
+              onClick={() => onChange(swatch.color)}
+            />
+          )
+        })}
+      </div>
+      <small className="muted">Blanc par défaut · couleur uniforme au verso (recto-verso bord long).</small>
+    </div>
+  )
 }
 
 export function GameContentPanel({
@@ -38,6 +84,7 @@ export function GameContentPanel({
   gameSource = 'theme',
   gameTopic,
   gameSelectedIds,
+  gameBackColor,
   onChange,
 }: {
   typeId: string
@@ -47,6 +94,7 @@ export function GameContentPanel({
   gameSource?: GameSource
   gameTopic?: string
   gameSelectedIds?: string[]
+  gameBackColor?: string
   onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
@@ -79,6 +127,7 @@ export function GameContentPanel({
       gameSource: source,
       gameTopic: topicId,
       gameSelectedIds: selectedIds,
+      gameBackColor,
       ...patch,
     })
   }
@@ -99,7 +148,20 @@ export function GameContentPanel({
       gameSource: patch.gameSource ?? source,
       gameTopic: patch.gameTopic ?? topicId,
       gameSelectedIds: picked.map((p) => p.id),
+      gameBackColor,
       ...patch,
+    })
+  }
+
+  function setBackColor(color: string) {
+    const resolved = resolveEntries(typeId, entries)
+    onChange({
+      gameEntries: resolved,
+      gameText: entriesToText(typeId, resolved),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: selectedIds,
+      gameBackColor: color,
     })
   }
 
@@ -240,9 +302,14 @@ export function GameContentPanel({
           <small className="muted">
             {typeId === 'jeux-vocabulaire'
               ? 'Impression recto-verso : images puis mots alignés (bord long).'
-              : template.entryHint}
+              : typeId === 'jeux-memory'
+                ? 'Recto : paires image / mot mélangées · verso : dos blanc ou couleur.'
+                : template.entryHint}
           </small>
         </div>
+        {typeId === 'jeux-memory' ? (
+          <MemoryBackPicker value={gameBackColor} onChange={setBackColor} />
+        ) : null}
       </div>
     )
   }
@@ -481,9 +548,14 @@ export function GameContentPanel({
         <small className="muted">
           {typeId === 'jeux-vocabulaire'
             ? 'Recto-verso : page images puis page mots (bord long).'
-            : 'JPG, PNG, WebP ou SVG · max. 2,5 Mo'}
+            : typeId === 'jeux-memory'
+              ? 'Recto : paires image / mot · verso : dos blanc ou couleur (bord long).'
+              : 'JPG, PNG, WebP ou SVG · max. 2,5 Mo'}
         </small>
       )}
+      {typeId === 'jeux-memory' ? (
+        <MemoryBackPicker value={gameBackColor} onChange={setBackColor} />
+      ) : null}
     </div>
   )
 }

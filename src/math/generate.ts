@@ -1069,6 +1069,7 @@ function buildSingleBlock(
   }
   const jeux = tryGenerateJeuxBatch(config.exerciseType, rng, {
     gameEntries: config.gameEntries,
+    gameBackColor: config.gameBackColor,
   })
   if (jeux) {
     return {
@@ -1146,30 +1147,34 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')
     const isTheory = /gram-theorie-\d+$/.test(page.exerciseType)
     const isJeuxDuplex =
-      page.exerciseType === 'jeux-vocabulaire' || page.exerciseType === 'jeux-devinettes'
+      page.exerciseType === 'jeux-vocabulaire' ||
+      page.exerciseType === 'jeux-devinettes' ||
+      page.exerciseType === 'jeux-memory'
     // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
     // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.
     if (isJeuxDuplex && worksheet.items.length >= 2) {
       const block = worksheet.blocks[0]
+      const versoInstruction =
+        page.exerciseType === 'jeux-memory'
+          ? 'Verso — dos des cartes. Imprimez en recto-verso (bord long).'
+          : 'Verso — retournez la feuille pour faire correspondre mot et image.'
+      const versoBlockInstruction =
+        page.exerciseType === 'jeux-memory'
+          ? 'Imprimez en recto-verso (bord long). Le dos est blanc ou coloré.'
+          : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
       worksheet.items.forEach((item, part) => {
         const side = part === 0 ? 'Recto' : 'Verso'
         out.push({
           ...worksheet,
           title: part === 0 ? worksheet.title : `${worksheet.title} — ${side.toLowerCase()}`,
-          instruction:
-            part === 0
-              ? worksheet.instruction
-              : 'Verso — retournez la feuille pour faire correspondre mot et image.',
+          instruction: part === 0 ? worksheet.instruction : versoInstruction,
           items: [item],
           blocks: block
             ? [
                 {
                   ...block,
                   title: side,
-                  instruction:
-                    part === 0
-                      ? block.instruction
-                      : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.',
+                  instruction: part === 0 ? block.instruction : versoBlockInstruction,
                   items: [item],
                 },
               ]

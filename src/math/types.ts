@@ -344,7 +344,8 @@ export type MathItem = {
     title?: string
     cols: number
     rows: number
-    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes'
+    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes' | 'memory'
+    backColor?: string
     cards: Array<{
       id: string
       text?: string
@@ -353,6 +354,7 @@ export type MathItem = {
       variant?: string
       badge?: string
       textRight?: string
+      backColor?: string
     }>
   }
 }
@@ -478,6 +480,8 @@ export type ExerciseBlock = {
   gameTopic?: string
   /** Ids cochés dans la banque (mode thème / lecture). */
   gameSelectedIds?: string[]
+  /** Couleur du dos des cartes Mémory (vide = blanc). */
+  gameBackColor?: string
 }
 
 export type PageConfig = ExerciseBlock & {

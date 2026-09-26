@@ -323,7 +323,7 @@ export const exerciseTypes: ExerciseType[] = [
     'jeux-memory',
     'jeux-cartes',
     'Mémory',
-    'Paires mot / image mélangées de façon déterministe (6 paires).',
+    'Paires image / mot au recto, dos blanc ou coloré au verso (6 paires).',
     'Retournez les cartes. Retrouvez les paires.',
     'texte',
     { preferredColumns: 1 },

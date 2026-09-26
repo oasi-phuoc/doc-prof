@@ -39,6 +39,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     gameSource: page.gameSource,
     gameTopic: page.gameTopic,
     gameSelectedIds: page.gameSelectedIds,
+    gameBackColor: page.gameBackColor,
   }
 }
 

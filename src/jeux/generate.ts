@@ -15,6 +15,8 @@ export type JeuxBatch = {
 
 export type JeuxGenerateOptions = {
   gameEntries?: GameEntry[]
+  /** Dos des cartes Mémory (hex), blanc si absent. */
+  gameBackColor?: string
 }
 
 function boardItem(board: GameBoard, answer = ''): MathItem {
@@ -129,7 +131,14 @@ function devinettes(entries: GameEntry[]): MathItem[] {
   ]
 }
 
-function memory(entries: GameEntry[], rng: Rng): MathItem[] {
+/**
+ * Mémory recto-verso :
+ * feuille 1 = 12 cartes mélangées (6 paires image / mot),
+ * feuille 2 = dos blanc ou couleur (ordre mirroir, bord long).
+ */
+function memory(entries: GameEntry[], rng: Rng, backColor?: string): MathItem[] {
+  const cols = 3
+  const rows = 4
   const pairs = padEntries(entries, 6)
   const raw: GameCard[] = pairs.flatMap((e, i) => [
     {
@@ -140,20 +149,38 @@ function memory(entries: GameEntry[], rng: Rng): MathItem[] {
     },
     {
       id: `m-i-${i}`,
-      // Carte image sans le mot (la paire se lit au badge).
       imageSrc: e.imageSrc,
       variant: 'image' as const,
       badge: String(i + 1),
     },
   ])
   const cards = shuffle(rng, raw)
+  const fill = backColor?.trim() || undefined
+  const versoSource = cards.map((card, i) => ({ card, i }))
+  const versoMirrored = mirrorRows(versoSource, cols)
+  const backs: GameCard[] = versoMirrored.map(({ card, i }) => ({
+    id: `mb-${i}`,
+    variant: 'back' as const,
+    badge: card.badge,
+    backColor: fill,
+  }))
   return [
     boardItem({
-      cols: 3,
-      rows: 4,
+      cols,
+      rows,
       cards,
-      kind: 'cards',
-      title: 'Mémory — 6 paires (mot / image). Même numéro = même paire.',
+      kind: 'memory',
+      title: 'Recto — paires image / mot (même numéro = même paire)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: backs,
+      kind: 'memory',
+      backColor: fill,
+      title: fill
+        ? 'Verso — dos des cartes (couleur)'
+        : 'Verso — dos des cartes (blanc)',
     }),
   ]
 }
@@ -482,7 +509,7 @@ export function tryGenerateJeuxBatch(
       items = devinettes(entries)
       break
     case 'jeux-memory':
-      items = memory(entries, rng)
+      items = memory(entries, rng, options.gameBackColor)
       break
     case 'jeux-loto':
       items = loto(entries, rng)

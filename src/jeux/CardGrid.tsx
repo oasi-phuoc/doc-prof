@@ -33,6 +33,17 @@ function CardFace({ card }: { card: GameCard }) {
     )
   }
 
+  if (variant === 'back') {
+    const color = card.backColor?.trim()
+    return (
+      <div
+        className={`game-card is-back${color ? ' has-color' : ''}`}
+        style={color ? ({ '--game-back': color } as CSSProperties) : undefined}
+        aria-label="Dos de carte"
+      />
+    )
+  }
+
   return (
     <div className={`game-card is-${variant}`} data-badge={card.badge || undefined}>
       {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}

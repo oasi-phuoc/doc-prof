@@ -75,8 +75,10 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     ],
     entryCount: 6,
     cardCount: 12,
+    duplex: true,
     maxTextLen: 16,
-    entryHint: '6 paires : mot + image → 12 cartes mélangées.',
+    entryHint:
+      '6 paires image / mot au recto · dos blanc ou couleur au verso (bord long).',
   },
   'jeux-loto': {
     id: 'jeux-loto',
