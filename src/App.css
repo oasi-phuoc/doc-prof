@@ -1312,6 +1312,10 @@
   margin:0;flex:0 0 auto;width:1em;height:1em;accent-color:var(--purple);
   display:inline-block;position:relative;top:0
 }
+.vocab-word-thumb{
+  width:28px;height:28px;flex:0 0 auto;border-radius:6px;object-fit:cover;
+  object-position:center;background:#fff;border:1px solid var(--line);display:block
+}
 .vocab-word-label{flex:1;min-width:0;line-height:1.3}
 .vocab-add-row{
   display:grid;grid-template-columns:36px 1fr 36px;gap:6px;align-items:center;margin-top:8px
@@ -1399,7 +1403,8 @@
   --jeux-accent:#0f6b5c;
   --jeux-true:#1f7a4c;
   --jeux-false:#a33b2b;
-  --jeux-card-radius:8px;
+  --jeux-card-radius:10px;
+  --series-frame:var(--jeux-accent);
 }
 .worksheet-sheet.is-jeux{padding:10mm 12mm 8mm}
 .jeux-sheet-title{margin:0 0 4mm}
@@ -1414,13 +1419,16 @@
   grid-template-columns:1fr;grid-template-rows:none;align-content:start
 }
 .exercise-item.layout-card-grid{
-  padding:0;height:auto;align-self:stretch;width:100%
+  padding:0;height:auto;flex:1 1 auto;min-height:0;align-self:stretch;width:100%;
+  display:flex;flex-direction:column
 }
-.exercise-item.layout-card-grid .item-content{width:100%}
-.game-board{width:100%}
+.exercise-item.layout-card-grid .item-content{
+  width:100%;flex:1 1 auto;min-height:0;display:flex;flex-direction:column
+}
+.game-board{width:100%;flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
 .game-board-title{
   margin:0 0 2mm;font-size:10px;font-weight:700;letter-spacing:.02em;
-  text-transform:uppercase;color:var(--muted);text-align:left
+  text-transform:uppercase;color:var(--muted);text-align:left;flex:0 0 auto
 }
 .game-card-grid{
   --game-card-gap:2.5mm;
@@ -1441,6 +1449,26 @@
   padding:2.5mm;
   overflow:hidden
 }
+/* Recto ludique : fond pastel léger, filet de découpe, badge vif (lisible N&B). */
+.game-board.is-ludic .game-card:not(.is-series-back):not(.is-back){
+  background:
+    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 7%, #fff) 0%, #fff 55%);
+  border:1.6px dashed var(--jeux-cut);
+  box-shadow:inset 0 0 0 0.6mm #fff
+}
+.game-board.is-ludic .game-card.is-category,
+.game-board.is-ludic .game-card.is-family-head{
+  background:color-mix(in srgb, var(--jeux-accent) 16%, #fff);
+  border-style:solid
+}
+.game-board.is-ludic .game-card-badge{
+  background:color-mix(in srgb, var(--jeux-accent) 18%, #fff);
+  border-color:var(--jeux-accent);color:var(--jeux-ink)
+}
+.game-board.is-ludic .game-card-image{
+  background:color-mix(in srgb, var(--jeux-soft) 70%, #fff);
+  border-radius:7px
+}
 .game-card-badge{
   position:absolute;top:1.5mm;right:1.5mm;
   min-width:4.5mm;height:4.5mm;padding:0 1mm;
@@ -1448,6 +1476,51 @@
   display:flex;align-items:center;justify-content:center;
   font-size:8px;font-weight:800;line-height:1;color:var(--jeux-ink);background:var(--jeux-soft)
 }
+/* Verso série unifié (skill jeux-verso-serie) */
+.game-card.is-series-back{
+  border:2.4mm solid var(--series-frame, var(--jeux-accent));
+  border-radius:var(--jeux-card-radius);
+  border-style:solid;
+  background:#fff;
+  justify-content:center;padding:2mm;min-height:0;height:100%
+}
+.game-series-back{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2mm;text-align:center;width:100%;min-height:0;flex:1 1 auto
+}
+.game-series-logo{
+  width:14mm;height:14mm;border-radius:50%;
+  border:1.4px solid var(--series-frame, var(--jeux-accent));
+  background:color-mix(in srgb, var(--series-frame, var(--jeux-accent)) 10%, #fff);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6mm;
+  flex:0 0 auto
+}
+.game-series-logo-mark{
+  display:flex;gap:1.2px;align-items:end;height:5mm
+}
+.game-series-logo-mark i{
+  display:block;width:1.6mm;border-radius:2px;
+  background:var(--series-frame, var(--jeux-accent));
+  transform:rotate(35deg)
+}
+.game-series-logo-mark i:nth-child(1){height:3.2mm;opacity:.75}
+.game-series-logo-mark i:nth-child(2){height:4.6mm}
+.game-series-logo-mark i:nth-child(3){height:2.6mm;opacity:.55}
+.game-series-logo-text{
+  font-size:5.5px;font-weight:800;letter-spacing:-.02em;
+  color:var(--jeux-ink);line-height:1
+}
+.game-series-label{
+  font-family:Fraunces,serif;font-size:11px;font-weight:600;line-height:1.15;
+  color:var(--jeux-ink);word-break:break-word;max-width:95%
+}
+.loto-panel.is-back.is-series{
+  border:2.4mm solid var(--jeux-accent);
+  background:#fff
+}
+.loto-panel.is-back.is-series .game-series-logo{width:18mm;height:18mm}
+.loto-panel.is-back.is-series .game-series-logo-text{font-size:7px}
+.loto-panel.is-back.is-series .game-series-label{font-size:18px}
 .game-card-image{
   flex:1 1 auto;min-height:14mm;
   display:flex;align-items:center;justify-content:center;
@@ -1480,6 +1553,74 @@
 .game-card.is-family-head .game-card-word{font-size:12px;color:var(--jeux-accent)}
 .game-card.is-intrus{border-style:solid;border-color:var(--jeux-false)}
 .game-card.is-intrus .game-card-badge{background:var(--jeux-false);color:#fff;border-color:var(--jeux-false)}
+.game-board.is-intrus .game-card-grid{
+  --game-card-gap:3mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-intrus .game-card{
+  min-height:0;height:100%;padding:2mm
+}
+.game-board.is-tri .game-card-grid{
+  --game-card-gap:2.2mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,6),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-tri .game-card{
+  min-height:0;height:100%;padding:1.6mm
+}
+.game-board.is-tri .game-card.is-word .game-card-word,
+.game-board.is-tri .game-card.is-category .game-card-word{
+  font-size:11px;font-weight:800;line-height:1.15
+}
+.game-board.is-tri .game-card.is-intrus-answer .game-card-word,
+.game-board.is-tri .game-card.is-series-back .game-series-label{
+  font-size:9px;font-weight:800;line-height:1.15;padding:0.5mm
+}
+.game-board.is-tri .game-series-logo{width:9mm;height:9mm}
+.game-board.is-tri .game-series-logo-text{font-size:4.5px}
+.game-board.is-memory .game-card.is-series-back,
+.game-board.is-intrus .game-card.is-series-back,
+.game-board.is-tri .game-card.is-series-back{
+  min-height:0;height:100%
+}
+.game-series-identity{display:flex;flex-direction:column;gap:10px;margin:0 0 10px}
+.game-series-name{
+  display:flex;flex-direction:column;gap:4px;margin:0
+}
+.game-series-name>span{font-size:11px;font-weight:600;color:var(--muted)}
+.game-card.is-scatter{overflow:hidden}
+.game-scatter{
+  position:relative;flex:1 1 auto;min-height:0;width:100%;height:100%
+}
+.game-scatter-word{
+  position:absolute;transform:translate(-50%,-50%) rotate(var(--scatter-rot,0deg));
+  font-size:12px;font-weight:800;line-height:1.1;color:var(--jeux-ink);
+  white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis;
+  pointer-events:none
+}
+.game-card.is-intrus-answer{
+  border:2.8mm solid var(--intrus-frame,#0f6b5c);
+  border-radius:8px;justify-content:center;background:#fff
+}
+.game-card.is-intrus-answer .game-card-word{
+  font-size:16px;font-weight:800;line-height:1.15;padding:2mm
+}
+.game-intrus-list{
+  list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
+  max-height:22rem;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#faf9fc
+}
+.game-intrus-block{
+  margin:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  display:flex;flex-direction:column;gap:8px
+}
+.game-intrus-block>b{font-size:12px;color:var(--muted)}
+.game-intrus-fields{display:flex;flex-direction:column;gap:6px}
+.game-intrus-fields label{display:flex;flex-direction:column;gap:3px;margin:0}
+.game-intrus-fields label>span{font-size:11px;font-weight:600;color:var(--muted)}
+.game-intrus-fields label.is-intrus>span{color:var(--jeux-false,#a33b2b)}
 .game-card.is-word,
 .game-card.is-face{min-height:22mm}
 .game-card.is-band{
@@ -1488,17 +1629,182 @@
 }
 .game-card.is-band .game-card-word{font-size:12px;font-weight:600;text-align:left}
 .game-domino{
-  display:grid;grid-template-columns:1fr 1px 1fr;align-items:center;gap:0;min-height:18mm;width:100%
+  display:grid;grid-template-columns:1fr 1.2px 1fr;align-items:stretch;gap:0;
+  min-height:0;flex:1 1 auto;width:100%
 }
-.game-domino-half{font-size:11px;font-weight:700;text-align:center;padding:1mm}
-.game-domino-sep{width:1px;align-self:stretch;background:var(--jeux-cut);border-left:1px dashed var(--jeux-cut)}
+.game-domino-half{
+  display:flex;align-items:center;justify-content:center;padding:1.5mm;min-width:0;overflow:hidden
+}
+.game-domino-half.is-image img{
+  width:100%;height:100%;max-height:22mm;object-fit:contain;object-position:center;display:block
+}
+.game-domino-label{
+  font-size:12px;font-weight:800;text-align:center;line-height:1.15;color:var(--jeux-ink);
+  word-break:break-word
+}
+.game-domino-sep{
+  width:1.2px;align-self:stretch;background:transparent;
+  border-left:1.5px dashed var(--jeux-cut)
+}
+.game-board.is-dominos .game-card-grid{
+  --game-card-gap:2.5mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,8),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-dominos .game-card{
+  min-height:0;height:100%;padding:2mm;border-style:dashed
+}
+.game-board.is-dominos .game-card.is-domino{display:flex;flex-direction:column}
 .game-board.is-loto .game-card{min-height:18mm;border-style:solid}
+.game-board.is-loto-page,
+.game-board.is-loto-back{
+  flex:1 1 auto;min-height:0;display:flex;flex-direction:column
+}
+.loto-panels{
+  flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:3mm
+}
+.loto-panel{
+  flex:1 1 0;min-height:0;
+  border:1.6px dashed var(--jeux-cut);
+  border-radius:7px;padding:2.5mm 3mm;
+  display:flex;flex-direction:column;background:#fff;
+  box-sizing:border-box
+}
+.loto-panel-title{
+  margin:0 0 1.5mm;font-size:10px;font-weight:800;color:var(--jeux-ink);
+  letter-spacing:.02em;text-transform:uppercase;flex:0 0 auto
+}
+.loto-panel .game-card-grid{
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,3),minmax(0,1fr));
+  align-content:stretch;--game-card-gap:1.8mm
+}
+.loto-panel .game-card{
+  min-height:0;height:100%;padding:1.5mm;border-style:solid;border-color:var(--jeux-line)
+}
+.loto-panel .game-card-image{min-height:0;margin-bottom:1mm;flex:1 1 auto}
+.loto-panel .game-card-word{font-size:11px;font-weight:800}
+.loto-panel.is-back{
+  border-style:solid;border-color:var(--jeux-accent);
+  background:color-mix(in srgb,var(--jeux-accent) 6%,#fff);
+  align-items:center;justify-content:center;gap:3mm;padding:4mm
+}
+.loto-panel-theme{
+  display:flex;flex-direction:column;align-items:center;gap:1.5mm;text-align:center
+}
+.loto-panel-theme-kicker{
+  font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)
+}
+.loto-panel-theme-label{
+  font-family:Fraunces,serif;font-size:22px;font-weight:600;line-height:1.1;color:var(--jeux-ink)
+}
+.loto-panel-theme-sub{font-size:11px;color:var(--muted);line-height:1.3;max-width:90%}
+.loto-panel-theme-grid{font-size:11px;font-weight:700;color:var(--jeux-accent)}
+.loto-panel-theme-thumbs{
+  display:flex;flex-wrap:wrap;gap:2mm;justify-content:center;max-width:100%
+}
+.loto-panel-theme-thumbs img{
+  width:14mm;height:14mm;object-fit:cover;border-radius:5px;border:1px solid var(--jeux-line);background:#fff
+}
+.game-board.is-loto-call .game-card-grid{
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,9),minmax(0,1fr));
+  align-content:stretch;--game-card-gap:1.6mm
+}
+/* Lot animateur : image complète à gauche, mot à droite (pas de rognage). */
+.game-board.is-loto-call .game-card{
+  min-height:0;height:100%;padding:1.2mm 2mm;border-style:solid;
+  flex-direction:row;align-items:center;justify-content:flex-start;gap:2.5mm
+}
+.game-board.is-loto-call .game-card-image{
+  flex:0 0 16mm;width:16mm;height:12mm;min-height:12mm;max-height:12mm;
+  margin-bottom:0;background:#fff;border-radius:4px
+}
+.game-board.is-loto-call .game-card-image img{
+  width:100%;height:100%;object-fit:contain;object-position:center
+}
+.game-board.is-loto-call .game-card-word{
+  flex:1 1 auto;min-width:0;margin:0;padding-right:5mm;
+  font-size:11px;font-weight:800;text-align:left;line-height:1.15
+}
+.game-board.is-loto-call .game-card.is-word{
+  justify-content:flex-start;padding-left:2mm
+}
 .game-board.is-plateau .game-card{min-height:16mm}
 .game-board.is-die .game-card{
   min-height:32mm;border-style:solid;border-color:var(--jeux-accent);
   background:color-mix(in srgb, var(--jeux-accent) 6%, #fff)
 }
 .game-board.is-bands .game-card-grid{gap:2mm}
+.game-board.is-devinettes .game-card-grid{
+  --game-card-gap:3.5mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,3),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-devinettes .game-card{
+  min-height:0;height:100%;padding:4mm;border-width:1.8px
+}
+.game-board.is-devinettes .game-card-image{
+  min-height:0;margin-bottom:2.5mm;flex:1 1 auto;background:#fff
+}
+.game-board.is-devinettes .game-card-image img{
+  width:100%;height:100%;object-fit:contain;object-position:center
+}
+.game-board.is-devinettes .game-card-word{
+  font-size:17px;font-weight:800;line-height:1.15;letter-spacing:.01em;flex:0 0 auto
+}
+.game-board.is-devinettes .game-card.is-clue{
+  justify-content:center;padding:5mm 4mm
+}
+.game-board.is-devinettes .game-card-clues{
+  padding-left:5.5mm;font-size:14px;line-height:1.5;font-weight:600
+}
+.game-board.is-devinettes .game-card-badge{
+  min-width:6mm;height:6mm;font-size:10px
+}
+.game-board.is-memory .game-card-grid{
+  --game-card-gap:3mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
+  align-content:stretch
+}
+.game-board.is-memory .game-card{
+  min-height:0;height:100%;padding:3mm
+}
+.game-board.is-memory .game-card-image{min-height:0;flex:1 1 auto;margin-bottom:1.5mm}
+.game-board.is-memory .game-card-word{font-size:14px;font-weight:800}
+.game-card.is-back{
+  background:var(--game-back,#fff);
+  border-style:dashed;min-height:0
+}
+.game-card.is-back.has-color{border-style:solid;border-color:color-mix(in srgb,var(--game-back,#fff) 70%,#000)}
+.game-back-swatches{
+  display:flex;flex-wrap:wrap;gap:6px;align-items:center
+}
+.game-back-swatch{
+  width:28px;height:28px;padding:0;border-radius:8px;border:2px solid var(--line);
+  background:#fff;box-shadow:inset 0 0 0 1px #0001
+}
+.game-back-swatch.is-white{background:#fff}
+.game-back-swatch.active{border-color:var(--purple);box-shadow:0 0 0 2px color-mix(in srgb,var(--purple) 35%,#fff)}
+.game-back-swatch:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.game-riddle-list{
+  list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
+  max-height:22rem;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#faf9fc
+}
+.game-riddle-block{
+  margin:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  display:flex;flex-direction:column;gap:8px
+}
+.game-riddle-head{
+  display:grid;grid-template-columns:auto 40px 1fr 28px;gap:6px;align-items:center
+}
+.game-riddle-head>b{font-size:12px;color:var(--muted);min-width:3.2rem}
+.game-riddle-clues{display:flex;flex-direction:column;gap:6px;padding-left:2px}
+.game-riddle-clue{display:flex;flex-direction:column;gap:3px;margin:0}
+.game-riddle-clue>span{font-size:11px;font-weight:600;color:var(--muted)}
 .game-content-field{display:flex;flex-direction:column;gap:6px}
 .game-content-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em;text-transform:uppercase}
 .game-content-hint{margin:0;font-size:12px;line-height:1.35}

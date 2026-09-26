@@ -1,11 +1,12 @@
+import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { exerciseTypeById } from '@/math/catalog'
 import type { Rng } from '@/math/rng'
-import { shuffle } from '@/math/rng'
+import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
 import { DEFAULT_SEPT_FAMILLES } from './defaults'
 import { resolveEntries } from './parse'
 import { isJeuxType, templateFor } from './templates'
-import type { GameBoard, GameCard, GameEntry } from './types'
+import type { GameBoard, GameCard, GameEntry, GamePanel, ScatterWord } from './types'
 
 export type JeuxBatch = {
   items: MathItem[]
@@ -15,6 +16,45 @@ export type JeuxBatch = {
 
 export type JeuxGenerateOptions = {
   gameEntries?: GameEntry[]
+  /** Couleur du cadre de série (verso). */
+  gameBackColor?: string
+  /** Thème FR (loto / banques). */
+  gameTopic?: string
+  /** Nom de série imprimé au verso (logo ClairFLE). */
+  gameSeriesName?: string
+}
+
+const DEFAULT_SERIES_FRAME = '#0f6b5c'
+
+function resolveSeriesName(name: string | undefined, fallback: string): string {
+  const t = name?.trim()
+  return t || fallback
+}
+
+/** Dos unifiés : logo ClairFLE + nom de série + cadre (miroir bord long). */
+function makeSeriesBackCards(
+  recto: GameCard[],
+  cols: number,
+  seriesName: string,
+  frameColor?: string,
+): GameCard[] {
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  return mirrorRows(recto, cols).map((card, i) => ({
+    id: `sb-${card.id}-${i}`,
+    text: seriesName,
+    variant: 'series-back' as const,
+    frameColor: frame,
+    badge: card.badge,
+  }))
+}
+
+function lotoThemeLabel(topicId?: string): { label: string; sub?: string } {
+  if (!topicId || topicId === 'tous' || topicId === 'libre') {
+    return { label: 'Loto', sub: 'Vocabulaire' }
+  }
+  const meta = VOCAB_TOPIC_META.find((t) => t.id === topicId)
+  if (!meta) return { label: 'Loto', sub: 'Vocabulaire' }
+  return { label: meta.label, sub: meta.vocab }
 }
 
 function boardItem(board: GameBoard, answer = ''): MathItem {
@@ -32,68 +72,119 @@ function padEntries(entries: GameEntry[], n: number, fill = '…'): GameEntry[] 
   return out
 }
 
-function vocab(entries: GameEntry[]): MathItem[] {
-  const cards: GameCard[] = padEntries(entries, 12).map((e, i) => ({
-    id: `v-${i}`,
-    text: e.text,
-    imageSrc: e.imageSrc,
-    variant: 'default',
-  }))
-  return [boardItem({ cols: 3, rows: 4, cards, kind: 'cards' })]
+/** Miroir horizontal par ligne (recto-verso bord long : le mot colle à l’image). */
+function mirrorRows<T>(items: T[], cols: number): T[] {
+  const out: T[] = []
+  for (let i = 0; i < items.length; i += cols) {
+    const row = items.slice(i, i + cols)
+    while (row.length < cols) row.push(row[row.length - 1]!)
+    out.push(...row.reverse())
+  }
+  return out
 }
 
-function vraiFaux(entries: GameEntry[]): MathItem[] {
-  const cards: GameCard[] = padEntries(entries, 8).map((e, i) => {
-    const ok = e.isTrue !== false
-    return {
-      id: `vf-${i}`,
-      text: e.text,
-      variant: ok ? 'true' : 'false',
-      badge: ok ? 'V' : 'F',
-    }
-  })
+/**
+ * Vocabulaire imprimable recto-verso :
+ * feuille 1 = images, feuille 2 = mots (ordre mirroir pour correspondance au retournement).
+ */
+function vocab(entries: GameEntry[]): MathItem[] {
+  const cols = 3
+  const rows = 4
+  const list = padEntries(entries, cols * rows)
+  const recto: GameCard[] = list.map((e, i) => ({
+    id: `vr-${i}`,
+    imageSrc: e.imageSrc,
+    variant: 'image' as const,
+    badge: String(i + 1),
+  }))
+  const versoSource = list.map((e, i) => ({ e, i }))
+  const versoMirrored = mirrorRows(versoSource, cols)
+  const verso: GameCard[] = versoMirrored.map(({ e, i }) => ({
+    id: `vv-${i}`,
+    text: e.text,
+    variant: 'word' as const,
+    badge: String(i + 1),
+  }))
   return [
     boardItem({
-      cols: 2,
-      rows: 4,
-      cards,
+      cols,
+      rows,
+      cards: recto,
       kind: 'cards',
-      title: 'Découpez. Le badge V / F indique la réponse (également en couleur).',
+      title: 'Recto — images (imprimez cette page en premier)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'cards',
+      title: 'Verso — mots (retournez la feuille : chaque mot correspond à l’image)',
     }),
   ]
 }
 
+/**
+ * Devinettes recto-verso :
+ * feuille 1 = mot + image, feuille 2 = 3 indices (ordre mirroir, bord long).
+ */
 function devinettes(entries: GameEntry[]): MathItem[] {
-  const list = padEntries(entries, 6).map((e) => ({
+  const cols = 3
+  const rows = 3
+  const list = padEntries(entries, cols * rows).map((e) => ({
     ...e,
-    clues: e.clues && e.clues.length >= 3 ? e.clues : ['…', '…', '…'],
+    clues: e.clues && e.clues.length >= 3 ? e.clues.slice(0, 3) : ['…', '…', '…'],
   }))
   const recto: GameCard[] = list.map((e, i) => ({
     id: `dr-${i}`,
     text: e.text,
-    variant: 'word',
+    imageSrc: e.imageSrc,
+    variant: 'word' as const,
     badge: String(i + 1),
   }))
-  const verso: GameCard[] = list.map((e, i) => ({
+  const versoMirrored = mirrorRows(
+    list.map((e, i) => ({ e, i })),
+    cols,
+  )
+  const verso: GameCard[] = versoMirrored.map(({ e, i }) => ({
     id: `dv-${i}`,
-    lines: e.clues!.slice(0, 3),
-    variant: 'clue',
+    lines: e.clues,
+    variant: 'clue' as const,
     badge: String(i + 1),
   }))
   return [
-    boardItem({ cols: 3, rows: 2, cards: recto, kind: 'cards', title: 'Recto — mots' }),
     boardItem({
-      cols: 3,
-      rows: 2,
+      cols,
+      rows,
+      cards: recto,
+      kind: 'devinettes',
+      title: 'Recto — mot et image (imprimez cette page en premier)',
+    }),
+    boardItem({
+      cols,
+      rows,
       cards: verso,
-      kind: 'cards',
-      title: 'Verso — indices (à imprimer au dos ou à découper séparément)',
+      kind: 'devinettes',
+      title: 'Verso — indices (retournez la feuille : chaque carte correspond au mot)',
     }),
   ]
 }
 
-function memory(entries: GameEntry[], rng: Rng): MathItem[] {
+/**
+ * Mémory recto-verso :
+ * feuille 1 = 12 cartes mélangées (6 paires image / mot),
+ * feuille 2 = dos série (logo ClairFLE + nom, miroir bord long).
+ */
+function memory(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
+  const cols = 3
+  const rows = 4
   const pairs = padEntries(entries, 6)
+  const series = resolveSeriesName(seriesName, 'Mémory')
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const raw: GameCard[] = pairs.flatMap((e, i) => [
     {
       id: `m-w-${i}`,
@@ -103,160 +194,373 @@ function memory(entries: GameEntry[], rng: Rng): MathItem[] {
     },
     {
       id: `m-i-${i}`,
-      // Carte image sans le mot (la paire se lit au badge).
       imageSrc: e.imageSrc,
       variant: 'image' as const,
       badge: String(i + 1),
     },
   ])
   const cards = shuffle(rng, raw)
+  const backs = makeSeriesBackCards(cards, cols, series, frame)
   return [
     boardItem({
-      cols: 3,
-      rows: 4,
+      cols,
+      rows,
       cards,
-      kind: 'cards',
-      title: 'Mémory — 6 paires (mot / image). Même numéro = même paire.',
+      kind: 'memory',
+      title: 'Recto — paires image / mot (même numéro = même paire)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: backs,
+      kind: 'memory',
+      frameColor: frame,
+      themeLabel: series,
+      title: `Verso — série « ${series} »`,
     }),
   ]
 }
 
-function loto(entries: GameEntry[], rng: Rng): MathItem[] {
-  const pool = padEntries(entries, 18)
+/** 15 grilles 3×3 distinctes tirées dans un lot de 27 mots. */
+function uniqueLotoGrids(words: string[], count: number, size: number, rng: Rng): string[][] {
+  const grids: string[][] = []
+  const seen = new Set<string>()
+  let guard = 0
+  while (grids.length < count && guard < 800) {
+    guard += 1
+    const picks = shuffle(rng, [...words]).slice(0, size)
+    const sig = [...picks].sort((a, b) => a.localeCompare(b, 'fr')).join('|')
+    if (seen.has(sig)) continue
+    seen.add(sig)
+    grids.push(picks)
+  }
+  while (grids.length < count) {
+    grids.push(shuffle(rng, [...words]).slice(0, size))
+  }
+  return grids
+}
+
+/**
+ * Loto : 15 grilles (3 par page) + verso série (logo ClairFLE), puis lot animateur.
+ */
+function loto(
+  entries: GameEntry[],
+  rng: Rng,
+  topicId?: string,
+  seriesName?: string,
+): MathItem[] {
+  const pool = padEntries(entries, 27)
   const byText = new Map(pool.map((e) => [e.text, e]))
   const words = pool.map((e) => e.text)
-  const toCard = (text: string, i: number): GameCard => {
+  const theme = lotoThemeLabel(topicId)
+  const series = resolveSeriesName(seriesName, theme.label)
+  const toCard = (text: string, i: number, prefix: string): GameCard => {
     const entry = byText.get(text)
     return {
-      id: `l-${text}-${i}`,
+      id: `${prefix}-${i}-${text}`,
       text,
       imageSrc: entry?.imageSrc,
       variant: entry?.imageSrc ? 'default' : 'word',
     }
   }
-  const b1 = shuffle(rng, [...words]).slice(0, 9)
-  const b2 = shuffle(rng, [...words]).slice(0, 9)
+  const grids = uniqueLotoGrids(words, 15, 9, rng)
+  const items: MathItem[] = []
+  const pages = 5
+  for (let page = 0; page < pages; page++) {
+    const slice = grids.slice(page * 3, page * 3 + 3)
+    const rectoPanels: GamePanel[] = slice.map((picks, local) => {
+      const n = page * 3 + local + 1
+      return {
+        title: `Grille ${n}`,
+        cols: 3,
+        rows: 3,
+        cards: picks.map((text, i) => toCard(text, i, `g${n}`)),
+        themeLabel: series,
+        themeSub: theme.sub,
+      }
+    })
+    items.push(
+      boardItem({
+        cols: 3,
+        rows: 3,
+        cards: [],
+        kind: 'loto-page',
+        themeLabel: series,
+        panels: rectoPanels,
+        title: `Grilles ${page * 3 + 1} à ${page * 3 + 3} — découpez chaque cadre`,
+      }),
+    )
+    // Verso : même ordre (flip bord long) — identité de série.
+    const versoPanels: GamePanel[] = rectoPanels.map((panel) => ({
+      title: panel.title,
+      cols: 3,
+      rows: 3,
+      cards: [],
+      themeLabel: series,
+      themeSub: theme.sub,
+    }))
+    items.push(
+      boardItem({
+        cols: 3,
+        rows: 3,
+        cards: [],
+        kind: 'loto-back',
+        themeLabel: series,
+        panels: versoPanels,
+        title: `Verso — série « ${series} »`,
+      }),
+    )
+  }
   const call = shuffle(rng, [...words])
-  return [
+  items.push(
     boardItem({
       cols: 3,
-      rows: 3,
-      cards: b1.map((text, i) => toCard(text, i)),
-      kind: 'loto',
-      title: 'Grille joueur 1',
+      rows: 9,
+      cards: call.map((text, i) => {
+        const entry = byText.get(text)
+        return {
+          id: `call-${i}-${text}`,
+          text,
+          imageSrc: entry?.imageSrc,
+          // Image + mot côte à côte (CSS is-loto-call) — contain, pas de rognage.
+          variant: 'default' as const,
+          badge: String(i + 1),
+        }
+      }),
+      kind: 'loto-call',
+      themeLabel: series,
+      title: `Lot animateur — 27 mots (série « ${series} »)`,
     }),
-    boardItem({
-      cols: 3,
-      rows: 3,
-      cards: b2.map((text, i) => toCard(text, i)),
-      kind: 'loto',
-      title: 'Grille joueur 2',
-    }),
-    boardItem({
-      cols: 3,
-      rows: 6,
-      cards: call.map((text, i) => ({
-        ...toCard(text, i),
-        id: `call-${i}`,
-        badge: String(i + 1),
-      })),
-      kind: 'cards',
-      title: 'Paquet animateur (ordre de tirage)',
-    }),
-  ]
+  )
+  return items
 }
 
-function intrus(entries: GameEntry[]): MathItem[] {
-  const groups = new Map<string, GameEntry[]>()
-  for (const e of padEntries(entries, 16)) {
-    const key = e.category || 'g'
-    const list = groups.get(key) ?? []
-    list.push(e)
-    groups.set(key, list)
-  }
-  const cards: GameCard[] = []
-  let g = 0
-  for (const [, group] of groups) {
-    g += 1
-    const four = group.slice(0, 4)
-    while (four.length < 4) four.push({ text: '…', category: `g${g}` })
-    for (const e of four) {
-      cards.push({
-        id: `in-${g}-${e.text}`,
-        text: e.text,
-        variant: e.isIntrus ? 'intrus' : 'word',
-        badge: e.isIntrus ? '!' : String(g),
+/** Normalise 12 groupes Intrus : text = intrus, words = 4 mots. */
+function normalizeIntrusGroups(entries: GameEntry[]): Array<{ intrus: string; words: string[] }> {
+  // Format moderne : une entrée = un groupe (words + text = intrus).
+  if (entries.some((e) => e.words && e.words.length > 0)) {
+    const groups = entries.slice(0, 12).map((e, i) => {
+      const words = [...(e.words ?? [])].map((w) => w.trim()).filter(Boolean)
+      while (words.length < 4) words.push(`mot${words.length + 1}`)
+      const intrus = e.text.trim() || `intrus${i + 1}`
+      return { intrus, words: words.slice(0, 4) }
+    })
+    while (groups.length < 12) {
+      groups.push({
+        intrus: `intrus${groups.length + 1}`,
+        words: ['a', 'b', 'c', 'd'],
       })
     }
+    return groups
   }
-  while (cards.length < 16) {
-    cards.push({ id: `in-pad-${cards.length}`, text: '…', variant: 'word' })
+  // Ancien format plat (category + isIntrus).
+  const byCat = new Map<string, GameEntry[]>()
+  for (const e of entries) {
+    const key = e.category || 'g'
+    const list = byCat.get(key) ?? []
+    list.push(e)
+    byCat.set(key, list)
   }
+  const groups: Array<{ intrus: string; words: string[] }> = []
+  for (const [, group] of byCat) {
+    const intrus = group.find((g) => g.isIntrus)?.text ?? group[group.length - 1]?.text ?? 'intrus'
+    const words = group.filter((g) => !g.isIntrus).map((g) => g.text).slice(0, 4)
+    while (words.length < 4) words.push(`mot${words.length + 1}`)
+    groups.push({ intrus, words })
+    if (groups.length >= 12) break
+  }
+  while (groups.length < 12) {
+    groups.push({ intrus: `intrus${groups.length + 1}`, words: ['a', 'b', 'c', 'd'] })
+  }
+  return groups
+}
+
+const SCATTER_ZONES = [
+  { x: 20, y: 24 },
+  { x: 74, y: 30 },
+  { x: 42, y: 52 },
+  { x: 24, y: 78 },
+  { x: 70, y: 74 },
+]
+
+function scatterWords(words: string[], rng: Rng): ScatterWord[] {
+  const zones = shuffle(rng, SCATTER_ZONES)
+  const angles = [-30, -22, -14, -8, 8, 12, 20, 28]
+  return words.map((text, i) => {
+    const zone = zones[i % zones.length]!
+    return {
+      text,
+      rotate: pick(rng, angles),
+      x: Math.min(88, Math.max(12, zone.x + int(rng, -6, 6))),
+      y: Math.min(88, Math.max(14, zone.y + int(rng, -5, 5))),
+    }
+  })
+}
+
+/**
+ * Intrus recto-verso :
+ * feuille 1 = 12 cartes (5 mots inclinés),
+ * feuille 2 = dos série (logo ClairFLE + nom, miroir bord long).
+ */
+function intrus(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
+  const cols = 3
+  const rows = 4
+  const groups = normalizeIntrusGroups(entries)
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const series = resolveSeriesName(seriesName, 'Intrus')
+  const recto: GameCard[] = groups.map((g, i) => {
+    const five = shuffle(rng, [...g.words, g.intrus])
+    return {
+      id: `ir-${i}`,
+      variant: 'scatter' as const,
+      badge: String(i + 1),
+      scatter: scatterWords(five, rng),
+    }
+  })
+  const verso = makeSeriesBackCards(recto, cols, series, frame)
   return [
     boardItem({
-      cols: 4,
-      rows: 4,
-      cards: cards.slice(0, 16),
-      kind: 'cards',
-      title: 'Entourez l’intrus de chaque ligne (badge !).',
+      cols,
+      rows,
+      cards: recto,
+      kind: 'intrus',
+      title: 'Recto — entourez l’intrus (mots dans tous les sens)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'intrus',
+      frameColor: frame,
+      themeLabel: series,
+      title: `Verso — série « ${series} »`,
     }),
   ]
 }
 
-function dominos(entries: GameEntry[]): MathItem[] {
-  const words = padEntries(entries, 8).map((e) => e.text)
-  // Chain: (w0|w1) (w1|w2) ... wrap last to first for a loop.
-  const cards: GameCard[] = []
-  for (let i = 0; i < words.length; i++) {
-    const left = words[i]!
-    const right = words[(i + 1) % words.length]!
-    cards.push({
+/**
+ * Dominos vocabulaire : 16 cartes.
+ * Carte i = [image du mot i | texte du mot i+1] (boucle) ;
+ * on relie chaque image au mot correspondant.
+ */
+function dominos(entries: GameEntry[], rng: Rng): MathItem[] {
+  const pool = padEntries(entries, 16)
+  const n = pool.length
+  const raw: GameCard[] = []
+  for (let i = 0; i < n; i++) {
+    const left = pool[i]!
+    const right = pool[(i + 1) % n]!
+    raw.push({
       id: `dom-${i}`,
-      text: left,
-      textRight: right,
+      imageSrc: left.imageSrc,
+      text: left.imageSrc ? undefined : left.text,
+      textRight: right.text,
       variant: 'domino',
+      badge: String(i + 1),
     })
   }
+  const cards = shuffle(rng, raw)
   return [
     boardItem({
       cols: 2,
-      rows: 4,
+      rows: 8,
       cards,
-      kind: 'cards',
-      title: 'Dominos — enchaînez les moitiés identiques.',
+      kind: 'dominos',
+      title: 'Dominos — reliez chaque image au mot correspondant.',
     }),
   ]
 }
 
-function tri(entries: GameEntry[]): MathItem[] {
+/** Normalise 3 catégories × 7 mots (format structuré ou plat legacy). */
+function normalizeTriGroups(
+  entries: GameEntry[],
+): Array<{ category: string; words: string[] }> {
+  if (entries.some((e) => (e.words?.length ?? 0) > 0 || (e.category && e.text === e.category))) {
+    const groups = entries.slice(0, 3).map((e, i) => {
+      const category = (e.category || e.text || `Catégorie ${i + 1}`).trim() || `Catégorie ${i + 1}`
+      const words = [...(e.words ?? [])].map((w) => w.trim()).filter(Boolean)
+      while (words.length < 7) words.push(`mot${words.length + 1}`)
+      return { category, words: words.slice(0, 7) }
+    })
+    while (groups.length < 3) {
+      const n = groups.length + 1
+      groups.push({
+        category: `Catégorie ${n}`,
+        words: Array.from({ length: 7 }, (_, i) => `mot${i + 1}`),
+      })
+    }
+    return groups
+  }
   const byCat = new Map<string, string[]>()
   for (const e of entries) {
-    const key = e.category || 'Divers'
+    const key = (e.category || 'Divers').trim() || 'Divers'
     const list = byCat.get(key) ?? []
-    list.push(e.text)
+    if (e.text.trim()) list.push(e.text.trim())
     byCat.set(key, list)
   }
   const cats = [...byCat.keys()].slice(0, 3)
   while (cats.length < 3) cats.push(`Catégorie ${cats.length + 1}`)
-  const cards: GameCard[] = []
-  for (const cat of cats) {
-    cards.push({ id: `cat-${cat}`, text: cat, variant: 'category' })
-    const words = byCat.get(cat) ?? []
-    for (let i = 0; i < 4; i++) {
-      cards.push({
-        id: `tri-${cat}-${i}`,
-        text: words[i] ?? '…',
+  return cats.map((category) => {
+    const words = [...(byCat.get(category) ?? [])]
+    while (words.length < 7) words.push(`mot${words.length + 1}`)
+    return { category, words: words.slice(0, 7) }
+  })
+}
+
+/**
+ * Tri / catégories recto-verso :
+ * feuille 1 = 24 cartes (3 étiquettes catégorie + 21 mots),
+ * feuille 2 = nom de série + cadre (identification de la fiche).
+ */
+function tri(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
+  const cols = 4
+  const rows = 6
+  const groups = normalizeTriGroups(entries)
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const series = resolveSeriesName(seriesName, 'Tri')
+  const raw: GameCard[] = []
+  for (const g of groups) {
+    raw.push({
+      id: `cat-${g.category}`,
+      text: g.category,
+      variant: 'category',
+    })
+    g.words.forEach((word, i) => {
+      raw.push({
+        id: `tri-${g.category}-${i}`,
+        text: word,
         variant: 'word',
       })
-    }
+    })
   }
+  const recto = shuffle(rng, raw)
+  const verso = makeSeriesBackCards(recto, cols, series, frame)
   return [
     boardItem({
-      cols: 3,
-      rows: 5,
-      cards,
-      kind: 'cards',
-      title: 'Étiquettes catégories (en tête) + cartes-mots à classer.',
+      cols,
+      rows,
+      cards: recto,
+      kind: 'tri',
+      title: 'Recto — triez les mots sous chaque catégorie',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'tri',
+      frameColor: frame,
+      themeLabel: series,
+      title: `Verso — série « ${series} »`,
     }),
   ]
 }
@@ -441,26 +745,23 @@ export function tryGenerateJeuxBatch(
     case 'jeux-vocabulaire':
       items = vocab(entries)
       break
-    case 'jeux-vrai-faux':
-      items = vraiFaux(entries)
-      break
     case 'jeux-devinettes':
       items = devinettes(entries)
       break
     case 'jeux-memory':
-      items = memory(entries, rng)
+      items = memory(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-loto':
-      items = loto(entries, rng)
+      items = loto(entries, rng, options.gameTopic, options.gameSeriesName)
       break
     case 'jeux-intrus':
-      items = intrus(entries)
+      items = intrus(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-dominos':
-      items = dominos(entries)
+      items = dominos(entries, rng)
       break
     case 'jeux-tri':
-      items = tri(entries)
+      items = tri(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-sept-familles':
       items = septFamilles(entries)

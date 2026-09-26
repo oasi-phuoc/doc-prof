@@ -5,40 +5,37 @@ import type { GameEntry } from './types'
 /** Convertit les entrées en texte éditable (une ligne = une entrée). */
 export function entriesToText(typeId: string, entries: GameEntry[]): string {
   switch (typeId) {
-    case 'jeux-vrai-faux':
-      return entries
-        .map((e) => `${e.isTrue === false ? 'F' : 'V'} · ${e.text}`)
-        .join('\n')
     case 'jeux-devinettes':
       return entries
-        .map((e) => [e.text, ...(e.clues ?? [])].join(' | '))
-        .join('\n')
-    case 'jeux-intrus': {
-      const groups = new Map<string, GameEntry[]>()
-      for (const e of entries) {
-        const key = e.category || 'groupe'
-        const list = groups.get(key) ?? []
-        list.push(e)
-        groups.set(key, list)
-      }
-      return [...groups.values()]
-        .map((group) => {
-          const normals = group.filter((g) => !g.isIntrus).map((g) => g.text)
-          const intrus = group.find((g) => g.isIntrus)?.text ?? ''
-          return `${normals.join(', ')} | ${intrus}`
+        .map((e) => {
+          const clues = [...(e.clues ?? [])]
+          while (clues.length < 3) clues.push('')
+          return [e.text, ...clues.slice(0, 3)].join('\n')
         })
-        .join('\n')
-    }
-    case 'jeux-tri': {
-      const byCat = new Map<string, string[]>()
-      for (const e of entries) {
-        const key = e.category || 'Divers'
-        const list = byCat.get(key) ?? []
-        list.push(e.text)
-        byCat.set(key, list)
-      }
-      return [...byCat.entries()].map(([cat, words]) => `${cat} : ${words.join(', ')}`).join('\n')
-    }
+        .join('\n\n')
+    case 'jeux-intrus':
+      return entries
+        .map((e) => {
+          const words = [...(e.words ?? [])]
+          while (words.length < 4) words.push('')
+          return [`Intrus : ${e.text}`, ...words.slice(0, 4).map((w, i) => `Mot ${i + 1} : ${w}`)].join(
+            '\n',
+          )
+        })
+        .join('\n\n')
+    case 'jeux-tri':
+      return entries
+        .slice(0, 3)
+        .map((e, index) => {
+          const cat = (e.category || e.text || `Catégorie ${index + 1}`).trim()
+          const words = [...(e.words ?? [])]
+          while (words.length < 7) words.push('')
+          return [
+            `Catégorie : ${cat}`,
+            ...words.slice(0, 7).map((w, i) => `Mot ${i + 1} : ${w}`),
+          ].join('\n')
+        })
+        .join('\n\n')
     case 'jeux-sept-familles': {
       // Prefer structured defaults when entries are flat placeholders.
       if (entries.length >= 28 && entries.every((e) => !e.category)) {
@@ -83,46 +80,131 @@ export function textToEntries(
 
   let parsed: GameEntry[]
   switch (typeId) {
-    case 'jeux-vrai-faux':
-      parsed = lines.slice(0, 8).map((line) => {
-        const m = /^(V|F)\s*[·.:\-–]?\s*(.+)$/i.exec(line)
-        if (m) {
+    case 'jeux-devinettes': {
+      // Blocs séparés par une ligne vide, ou lignes « mot | i1 | i2 | i3 » (rétrocompat).
+      const blocks = text
+        .split(/\r?\n\s*\r?\n/)
+        .map((b) => b.trim())
+        .filter(Boolean)
+      if (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|'))) {
+        parsed = blocks.slice(0, 9).map((block) => {
+          const parts = block
+            .split(/\r?\n/)
+            .map((p) => p.trim())
+            .filter(Boolean)
+          const [word = '', c1 = '', c2 = '', c3 = ''] = parts
           return {
-            text: clip(m[2]!, maxLen),
-            isTrue: m[1]!.toUpperCase() === 'V',
+            text: clip(word, maxLen),
+            clues: [c1, c2, c3].map((c) => clip(c, 80)),
           }
-        }
-        return { text: clip(line, maxLen), isTrue: true }
-      })
+        })
+      } else {
+        parsed = lines.slice(0, 9).map((line) => {
+          const parts = line.split('|').map((p) => p.trim())
+          const [word = 'mot', ...clues] = parts
+          while (clues.length < 3) clues.push('')
+          return { text: clip(word, maxLen), clues: clues.slice(0, 3).map((c) => clip(c, 80)) }
+        })
+      }
       break
-    case 'jeux-devinettes':
-      parsed = lines.slice(0, 6).map((line) => {
-        const parts = line.split('|').map((p) => p.trim()).filter(Boolean)
-        const [word = 'mot', ...clues] = parts
-        while (clues.length < 3) clues.push('…')
-        return { text: clip(word, maxLen), clues: clues.slice(0, 3).map((c) => clip(c, 40)) }
-      })
+    }
+    case 'jeux-intrus': {
+      const blocks = text
+        .split(/\r?\n\s*\r?\n/)
+        .map((b) => b.trim())
+        .filter(Boolean)
+      if (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|'))) {
+        parsed = blocks.slice(0, 12).map((block, index) => {
+          const parts = block
+            .split(/\r?\n/)
+            .map((p) => p.trim())
+            .filter(Boolean)
+          let intrus = ''
+          const words: string[] = []
+          for (const part of parts) {
+            const mIntrus = /^intrus\s*:\s*(.+)$/i.exec(part)
+            const mMot = /^mot\s*\d+\s*:\s*(.+)$/i.exec(part)
+            if (mIntrus) intrus = mIntrus[1]!.trim()
+            else if (mMot) words.push(mMot[1]!.trim())
+            else if (!intrus) intrus = part
+            else words.push(part)
+          }
+          while (words.length < 4) words.push('')
+          return {
+            text: clip(intrus || `intrus${index + 1}`, maxLen),
+            words: words.slice(0, 4).map((w) => clip(w, maxLen)),
+            isIntrus: true,
+          }
+        })
+      } else {
+        parsed = lines.slice(0, 12).map((line, groupIndex) => {
+          const [left = '', right = ''] = line.split('|').map((p) => p.trim())
+          const normals = left
+            .split(/[,;]/)
+            .map((w) => w.trim())
+            .filter(Boolean)
+            .slice(0, 4)
+          while (normals.length < 4) normals.push(`mot${normals.length + 1}`)
+          return {
+            text: clip(right || `intrus${groupIndex + 1}`, maxLen),
+            words: normals.map((w) => clip(w, maxLen)),
+            isIntrus: true,
+          }
+        })
+      }
       break
-    case 'jeux-intrus':
-      parsed = lines.slice(0, 4).flatMap((line, groupIndex) => {
-        const [left = '', right = ''] = line.split('|').map((p) => p.trim())
-        const normals = left
-          .split(/[,;]/)
-          .map((w) => w.trim())
-          .filter(Boolean)
-          .slice(0, 3)
-        while (normals.length < 3) normals.push(`mot${normals.length + 1}`)
-        const intrus = right || 'intrus'
-        const category = `groupe-${groupIndex + 1}`
-        return [
-          ...normals.map((word) => ({ text: clip(word, maxLen), category })),
-          { text: clip(intrus, maxLen), category, isIntrus: true },
-        ]
-      })
+    }
+    case 'jeux-tri': {
+      const blocks = text
+        .split(/\r?\n\s*\r?\n/)
+        .map((b) => b.trim())
+        .filter(Boolean)
+      if (blocks.length > 1 || (blocks[0] && /^catégorie\s*:/i.test(blocks[0]))) {
+        parsed = blocks.slice(0, 3).map((block, index) => {
+          const parts = block
+            .split(/\r?\n/)
+            .map((p) => p.trim())
+            .filter(Boolean)
+          let category = ''
+          const words: string[] = []
+          for (const part of parts) {
+            const mCat = /^catégorie\s*:\s*(.+)$/i.exec(part)
+            const mMot = /^mot\s*\d+\s*:\s*(.+)$/i.exec(part)
+            if (mCat) category = mCat[1]!.trim()
+            else if (mMot) words.push(mMot[1]!.trim())
+            else if (!category) category = part
+            else words.push(part)
+          }
+          while (words.length < 7) words.push('')
+          const cat = clip(category || `Catégorie ${index + 1}`, 20)
+          return {
+            text: cat,
+            category: cat,
+            words: words.slice(0, 7).map((w) => clip(w, maxLen)),
+          }
+        })
+      } else {
+        // Rétrocompat : « Animaux : chat, chien, … »
+        parsed = lines.slice(0, 3).map((line, index) => {
+          const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)
+          const category = clip((m?.[1] ?? `Catégorie ${index + 1}`).trim(), 20)
+          const words = (m?.[2] ?? '')
+            .split(/[,;]/)
+            .map((w) => w.trim())
+            .filter(Boolean)
+            .slice(0, 7)
+          while (words.length < 7) words.push('')
+          return {
+            text: category,
+            category,
+            words: words.map((w) => clip(w, maxLen)),
+          }
+        })
+      }
       break
-    case 'jeux-tri':
+    }
     case 'jeux-sept-familles': {
-      const maxGroups = typeId === 'jeux-sept-familles' ? 7 : 3
+      const maxGroups = 7
       const maxWords = 4
       parsed = lines.slice(0, maxGroups).flatMap((line) => {
         const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)
@@ -147,10 +229,10 @@ export function textToEntries(
       parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
       break
     case 'jeux-loto':
-      parsed = lines.slice(0, 24).map((line) => ({ text: clip(line, maxLen) }))
+      parsed = lines.slice(0, 27).map((line) => ({ text: clip(line, maxLen) }))
       break
     case 'jeux-dominos':
-      parsed = lines.slice(0, 8).map((line) => ({ text: clip(line, maxLen) }))
+      parsed = lines.slice(0, 16).map((line) => ({ text: clip(line, maxLen) }))
       break
     case 'jeux-plateau':
       parsed = lines.slice(0, 12).map((line) => ({ text: clip(line, maxLen) }))

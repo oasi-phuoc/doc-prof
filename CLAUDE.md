@@ -59,6 +59,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Relire énoncés et consignes | `relecture-enonce` |
 | Phrases Gattegno (modèles uniques, français réel) | `phrase-gattegno` |
 | Compréhension écrite A1/A2/B1 (CECRL / FALC) | `comprehension-ecrite` |
+| Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
 | Aperçu A4 fixe + impression | `test-impression` |
 | Préparer une pull request | `preparer-pull-request` |
 

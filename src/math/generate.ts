@@ -1069,6 +1069,9 @@ function buildSingleBlock(
   }
   const jeux = tryGenerateJeuxBatch(config.exerciseType, rng, {
     gameEntries: config.gameEntries,
+    gameBackColor: config.gameBackColor,
+    gameTopic: config.gameTopic,
+    gameSeriesName: config.gameSeriesName,
   })
   if (jeux) {
     return {
@@ -1145,6 +1148,95 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     const isCom =
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')
     const isTheory = /gram-theorie-\d+$/.test(page.exerciseType)
+    const isJeuxDuplex =
+      page.exerciseType === 'jeux-vocabulaire' ||
+      page.exerciseType === 'jeux-devinettes' ||
+      page.exerciseType === 'jeux-memory' ||
+      page.exerciseType === 'jeux-intrus' ||
+      page.exerciseType === 'jeux-tri'
+    // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
+    // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.
+    if (isJeuxDuplex && worksheet.items.length >= 2) {
+      const block = worksheet.blocks[0]
+      const versoInstruction =
+        page.exerciseType === 'jeux-memory'
+          ? 'Verso — dos des cartes. Imprimez en recto-verso (bord long).'
+          : page.exerciseType === 'jeux-intrus' ||
+              page.exerciseType === 'jeux-tri' ||
+              page.exerciseType === 'jeux-memory'
+            ? 'Verso — série (logo ClairFLE). Imprimez en recto-verso (bord long).'
+            : 'Verso — retournez la feuille pour faire correspondre mot et image.'
+      const versoBlockInstruction =
+        page.exerciseType === 'jeux-memory' ||
+        page.exerciseType === 'jeux-intrus' ||
+        page.exerciseType === 'jeux-tri'
+          ? 'Imprimez en recto-verso (bord long). Logo ClairFLE + nom de série sur chaque dos.'
+          : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
+      worksheet.items.forEach((item, part) => {
+        const side = part === 0 ? 'Recto' : 'Verso'
+        out.push({
+          ...worksheet,
+          title: part === 0 ? worksheet.title : `${worksheet.title} — ${side.toLowerCase()}`,
+          instruction: part === 0 ? worksheet.instruction : versoInstruction,
+          items: [item],
+          blocks: block
+            ? [
+                {
+                  ...block,
+                  title: side,
+                  instruction: part === 0 ? block.instruction : versoBlockInstruction,
+                  items: [item],
+                },
+              ]
+            : worksheet.blocks,
+          configIndex: index,
+          isContinuation: false,
+        })
+      })
+      return
+    }
+    // Loto : paires (page grilles + verso thème), puis lot animateur.
+    if (page.exerciseType === 'jeux-loto' && worksheet.items.length > 0) {
+      const block = worksheet.blocks[0]
+      const pushSheet = (item: (typeof worksheet.items)[number], side: string, instruction: string) => {
+        out.push({
+          ...worksheet,
+          title: side ? `${worksheet.title} — ${side}` : worksheet.title,
+          instruction,
+          items: [item],
+          blocks: block
+            ? [{ ...block, title: side || block.title, instruction, items: [item] }]
+            : worksheet.blocks,
+          configIndex: index,
+          isContinuation: false,
+        })
+      }
+      let i = 0
+      while (i < worksheet.items.length) {
+        const cur = worksheet.items[i]!
+        const next = worksheet.items[i + 1]
+        const kind = cur.gameBoard?.kind
+        if (kind === 'loto-page' && next?.gameBoard?.kind === 'loto-back') {
+          pushSheet(cur, 'grilles', worksheet.instruction)
+          pushSheet(
+            next,
+            'verso thème',
+            'Verso — série / thème. Imprimez en recto-verso (bord long), découpez les cadres.',
+          )
+          i += 2
+          continue
+        }
+        pushSheet(
+          cur,
+          kind === 'loto-call' ? 'lot animateur' : '',
+          kind === 'loto-call'
+            ? 'Lot animateur — tirez les mots dans l’ordre indiqué.'
+            : worksheet.instruction,
+        )
+        i += 1
+      }
+      return
+    }
     // Théorie : ~6 blocs par feuille A4 (titres + tableaux densent vite).
     const pageCap = isTheory ? 6 : 4
     const totalItems = worksheet.items.length

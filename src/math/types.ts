@@ -344,15 +344,53 @@ export type MathItem = {
     title?: string
     cols: number
     rows: number
-    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die'
+    kind?:
+      | 'cards'
+      | 'loto'
+      | 'bands'
+      | 'plateau'
+      | 'die'
+      | 'devinettes'
+      | 'memory'
+      | 'loto-page'
+      | 'loto-back'
+      | 'loto-call'
+      | 'intrus'
+      | 'dominos'
+      | 'tri'
+    backColor?: string
+    frameColor?: string
+    themeLabel?: string
+    panels?: Array<{
+      title?: string
+      cols: number
+      rows: number
+      themeLabel?: string
+      themeSub?: string
+      cards: Array<{
+        id: string
+        text?: string
+        imageSrc?: string
+        lines?: string[]
+        scatter?: Array<{ text: string; rotate: number; x: number; y: number }>
+        variant?: string
+        badge?: string
+        textRight?: string
+        backColor?: string
+        frameColor?: string
+      }>
+    }>
     cards: Array<{
       id: string
       text?: string
       imageSrc?: string
       lines?: string[]
+      scatter?: Array<{ text: string; rotate: number; x: number; y: number }>
       variant?: string
       badge?: string
       textRight?: string
+      backColor?: string
+      frameColor?: string
     }>
   }
 }
@@ -466,12 +504,23 @@ export type ExerciseBlock = {
     text: string
     imageSrc?: string
     clues?: string[]
+    words?: string[]
     category?: string
     isIntrus?: boolean
     isTrue?: boolean
   }>
   /** Domaine Jeux : texte brut du panneau (resync → gameEntries). */
   gameText?: string
+  /** Source du contenu Jeux vocabulaire : thème FR, banque lecture, ou libre. */
+  gameSource?: 'theme' | 'lecture' | 'libre'
+  /** Thème français pour filtrer la banque (mode thème / lecture). */
+  gameTopic?: string
+  /** Ids cochés dans la banque (mode thème / lecture). */
+  gameSelectedIds?: string[]
+  /** Couleur du cadre / dos de série Jeux. */
+  gameBackColor?: string
+  /** Nom de série imprimé au verso des cartes Jeux. */
+  gameSeriesName?: string
 }
 
 export type PageConfig = ExerciseBlock & {

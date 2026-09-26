@@ -1,6 +1,6 @@
 /** Schémas des templates du domaine Jeux. */
 
-export type GameFieldType = 'texte' | 'image' | 'indices' | 'categorie' | 'vrai-faux'
+export type GameFieldType = 'texte' | 'image' | 'indices' | 'categorie'
 
 export type GameField = {
   type: GameFieldType
@@ -40,36 +40,28 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     ],
     entryCount: 12,
     cardCount: 12,
+    duplex: true,
     maxTextLen: 20,
-    entryHint: '12 cartes : mot + image (JPG, PNG, WebP ou SVG).',
-  },
-  'jeux-vrai-faux': {
-    id: 'jeux-vrai-faux',
-    family: 'cartes',
-    label: 'Vrai / Faux',
-    orientation: 'portrait',
-    grid: { cols: 2, rows: 4 },
-    fields: [{ type: 'vrai-faux', required: true, maxLength: 60 }],
-    entryCount: 8,
-    cardCount: 8,
-    maxTextLen: 60,
-    entryHint: 'Une affirmation par ligne, préfixe V ou F (ex. « V · Paris est en France »).',
+    entryHint:
+      '12 paires image/mot · impression recto-verso (images puis mots alignés).',
   },
   'jeux-devinettes': {
     id: 'jeux-devinettes',
     family: 'cartes',
     label: 'Devinettes',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 2 },
+    grid: { cols: 3, rows: 3 },
     fields: [
+      { type: 'image' },
       { type: 'texte', required: true, maxLength: 20 },
       { type: 'indices', required: true },
     ],
-    entryCount: 6,
-    cardCount: 6,
+    entryCount: 9,
+    cardCount: 9,
     duplex: true,
     maxTextLen: 20,
-    entryHint: 'Mot | indice 1 | indice 2 | indice 3 (une carte par ligne).',
+    entryHint:
+      '9 cartes · mot + image au recto, 3 indices au verso (impression bord long).',
   },
   'jeux-memory': {
     id: 'jeux-memory',
@@ -83,8 +75,10 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     ],
     entryCount: 6,
     cardCount: 12,
+    duplex: true,
     maxTextLen: 16,
-    entryHint: '6 paires : mot + image → 12 cartes mélangées.',
+    entryHint:
+      '6 paires image / mot au recto · verso = logo ClairFLE + nom de série.',
   },
   'jeux-loto': {
     id: 'jeux-loto',
@@ -96,52 +90,62 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 16 },
     ],
-    entryCount: 18,
-    cardCount: 18,
+    entryCount: 27,
+    cardCount: 27,
+    duplex: true,
     maxTextLen: 16,
-    entryHint: '18 mots (+ images optionnelles). Deux grilles 3×3 + paquet animateur.',
+    entryHint:
+      '27 mots · 15 grilles (3 par page) + verso thème · lot animateur.',
   },
   'jeux-intrus': {
     id: 'jeux-intrus',
     family: 'cartes',
     label: 'Intrus',
     orientation: 'portrait',
-    grid: { cols: 4, rows: 4 },
+    grid: { cols: 3, rows: 4 },
     fields: [
       { type: 'texte', required: true },
-      { type: 'categorie' },
+      { type: 'indices', required: true },
     ],
-    entryCount: 4,
-    cardCount: 16,
+    entryCount: 12,
+    cardCount: 12,
+    duplex: true,
     maxTextLen: 18,
-    entryHint: 'Groupe = 3 mots + intrus : « chat, chien, oiseau | table » (4 groupes).',
+    entryHint:
+      '12 cartes · 4 mots + 1 intrus · verso = logo ClairFLE + nom de série.',
   },
   'jeux-dominos': {
     id: 'jeux-dominos',
     family: 'cartes',
     label: 'Dominos',
     orientation: 'portrait',
-    grid: { cols: 2, rows: 4 },
-    fields: [{ type: 'texte', required: true, maxLength: 14 }],
-    entryCount: 8,
-    cardCount: 8,
-    maxTextLen: 14,
-    entryHint: 'Chaîne de mots (8) : chaque domino relie deux mots voisins.',
+    grid: { cols: 2, rows: 8 },
+    fields: [
+      { type: 'image' },
+      { type: 'texte', required: true, maxLength: 16 },
+    ],
+    entryCount: 16,
+    cardCount: 16,
+    maxTextLen: 16,
+    entryHint:
+      '16 mots + images · chaque domino : image d’un mot | mot suivant (chaîne).',
   },
   'jeux-tri': {
     id: 'jeux-tri',
     family: 'cartes',
     label: 'Tri / catégories',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 4 },
+    grid: { cols: 4, rows: 6 },
     fields: [
       { type: 'categorie', required: true },
       { type: 'texte', required: true },
     ],
     entryCount: 3,
-    cardCount: 15,
+    cardCount: 24,
+    duplex: true,
     maxTextLen: 16,
-    entryHint: 'Catégorie : mot1, mot2, mot3, mot4 (3 catégories).',
+    entryHint:
+      '3 catégories × 7 mots · 24 cartes · verso = logo ClairFLE + nom de série.',
   },
   'jeux-sept-familles': {
     id: 'jeux-sept-familles',

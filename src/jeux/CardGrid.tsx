@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import type { GameBoard, GameCard } from './types'
+import type { GameBoard, GameCard, GamePanel } from './types'
 
 function CardFace({ card }: { card: GameCard }) {
   const variant = card.variant ?? 'default'
@@ -12,9 +12,17 @@ function CardFace({ card }: { card: GameCard }) {
       <div className="game-card is-domino" data-badge={card.badge || undefined}>
         {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
         <div className="game-domino">
-          <span className="game-domino-half">{card.text}</span>
+          <div className={`game-domino-half${card.imageSrc ? ' is-image' : ' is-word'}`}>
+            {card.imageSrc ? (
+              <img src={card.imageSrc} alt="" />
+            ) : (
+              <span className="game-domino-label">{card.text}</span>
+            )}
+          </div>
           <span className="game-domino-sep" aria-hidden />
-          <span className="game-domino-half">{card.textRight}</span>
+          <div className="game-domino-half is-word">
+            <span className="game-domino-label">{card.textRight}</span>
+          </div>
         </div>
       </div>
     )
@@ -29,6 +37,79 @@ function CardFace({ card }: { card: GameCard }) {
             <li key={i}>{line}</li>
           ))}
         </ol>
+      </div>
+    )
+  }
+
+  if (variant === 'back') {
+    const color = card.backColor?.trim()
+    return (
+      <div
+        className={`game-card is-back${color ? ' has-color' : ''}`}
+        style={color ? ({ '--game-back': color } as CSSProperties) : undefined}
+        aria-label="Dos de carte"
+      />
+    )
+  }
+
+  if (variant === 'series-back') {
+    const frame = card.frameColor?.trim() || '#0f6b5c'
+    return (
+      <div
+        className="game-card is-series-back"
+        style={{ '--series-frame': frame } as CSSProperties}
+        aria-label={card.text ? `Série ${card.text}` : 'Dos de série'}
+      >
+        <div className="game-series-back">
+          <div className="game-series-logo" aria-hidden>
+            <span className="game-series-logo-mark">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span className="game-series-logo-text">ClairFLE</span>
+          </div>
+          {card.text ? <strong className="game-series-label">{card.text}</strong> : null}
+        </div>
+      </div>
+    )
+  }
+
+  if (variant === 'scatter') {
+    return (
+      <div className="game-card is-scatter" data-badge={card.badge || undefined}>
+        {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+        <div className="game-scatter" aria-label="Mots de la carte">
+          {(card.scatter ?? []).map((word, i) => (
+            <span
+              key={`${word.text}-${i}`}
+              className="game-scatter-word"
+              style={
+                {
+                  left: `${word.x}%`,
+                  top: `${word.y}%`,
+                  '--scatter-rot': `${word.rotate}deg`,
+                } as CSSProperties
+              }
+            >
+              {word.text}
+            </span>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (variant === 'intrus-answer') {
+    const frame = card.frameColor?.trim() || '#0f6b5c'
+    return (
+      <div
+        className="game-card is-intrus-answer"
+        data-badge={card.badge || undefined}
+        style={{ '--intrus-frame': frame } as CSSProperties}
+      >
+        {card.badge ? <span className="game-card-badge">{card.badge}</span> : null}
+        <div className="game-card-word">{card.text}</div>
       </div>
     )
   }
@@ -56,10 +137,84 @@ function CardFace({ card }: { card: GameCard }) {
   )
 }
 
+function PanelGrid({ panel }: { panel: GamePanel }) {
+  return (
+    <div
+      className="game-card-grid"
+      style={
+        {
+          '--game-cols': panel.cols,
+          '--game-rows': panel.rows,
+        } as CSSProperties
+      }
+      aria-label={panel.title ?? 'Grille'}
+    >
+      {panel.cards.map((card) => (
+        <CardFace key={card.id} card={card} />
+      ))}
+    </div>
+  )
+}
+
+function LotoPanelFace({ panel, mode }: { panel: GamePanel; mode: 'page' | 'back' }) {
+  if (mode === 'back') {
+    return (
+      <div className="loto-panel is-back is-series">
+        <div className="game-series-back">
+          <div className="game-series-logo" aria-hidden>
+            <span className="game-series-logo-mark">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span className="game-series-logo-text">ClairFLE</span>
+          </div>
+          <strong className="game-series-label">{panel.themeLabel ?? 'Loto'}</strong>
+          {panel.themeSub ? <small className="loto-panel-theme-sub">{panel.themeSub}</small> : null}
+          {panel.title ? <span className="loto-panel-theme-grid">{panel.title}</span> : null}
+        </div>
+      </div>
+    )
+  }
+  return (
+    <div className="loto-panel">
+      {panel.title ? <p className="loto-panel-title">{panel.title}</p> : null}
+      <PanelGrid panel={panel} />
+    </div>
+  )
+}
+
 export function CardGrid({ board }: { board: GameBoard }) {
   const kind = board.kind ?? 'cards'
+
+  if (kind === 'loto-page' || kind === 'loto-back') {
+    const mode = kind === 'loto-back' ? 'back' : 'page'
+    return (
+      <div className={`game-board is-${kind}`}>
+        {board.title ? <p className="game-board-title">{board.title}</p> : null}
+        <div className="loto-panels" aria-label={board.title ?? 'Grilles de loto'}>
+          {(board.panels ?? []).map((panel, index) => (
+            <LotoPanelFace
+              key={`${panel.title ?? 'panel'}-${index}`}
+              panel={panel}
+              mode={mode}
+            />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  const ludic =
+    kind === 'memory' ||
+    kind === 'intrus' ||
+    kind === 'tri' ||
+    kind === 'devinettes' ||
+    kind === 'dominos' ||
+    kind === 'cards'
+
   return (
-    <div className={`game-board is-${kind}`}>
+    <div className={`game-board is-${kind}${ludic ? ' is-ludic' : ''}`}>
       {board.title ? <p className="game-board-title">{board.title}</p> : null}
       <div
         className="game-card-grid"

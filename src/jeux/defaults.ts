@@ -17,94 +17,150 @@ const VOCAB: GameEntry[] = [
   'fruit',
 ].map((text) => ({ text }))
 
-const VRAI_FAUX: GameEntry[] = [
-  { text: 'Paris est la capitale de la France.', isTrue: true },
-  { text: 'Le soleil est bleu.', isTrue: false },
-  { text: 'On boit de l’eau.', isTrue: true },
-  { text: 'Un chat a six pattes.', isTrue: false },
-  { text: 'Le lundi vient avant le mardi.', isTrue: true },
-  { text: 'On mange avec les oreilles.', isTrue: false },
-  { text: 'Deux et deux font quatre.', isTrue: true },
-  { text: 'L’hiver est plus chaud que l’été.', isTrue: false },
-]
-
 const DEVINETTES: GameEntry[] = [
-  { text: 'pomme', clues: ['C’est un fruit.', 'C’est souvent rouge ou verte.', 'On la croque.'] },
-  { text: 'chat', clues: ['C’est un animal.', 'Il miaule.', 'Il aime le lait.'] },
-  { text: 'livre', clues: ['On le lit.', 'Il a des pages.', 'Il est à la bibliothèque.'] },
-  { text: 'école', clues: ['Les enfants y vont.', 'On y apprend.', 'Il y a des classes.'] },
-  { text: 'vélo', clues: ['Il a deux roues.', 'On pédale.', 'On porte un casque.'] },
-  { text: 'pain', clues: ['On l’achète à la boulangerie.', 'On le mange.', 'Il est croustillant.'] },
+  {
+    text: 'pomme',
+    imageSrc: '/assets/words/lecture/pomme.webp',
+    clues: ['C’est un fruit.', 'C’est souvent rouge ou verte.', 'On la croque.'],
+  },
+  {
+    text: 'chat',
+    imageSrc: '/assets/words/lecture/chat.webp',
+    clues: ['C’est un animal.', 'Il miaule.', 'Il aime le lait.'],
+  },
+  {
+    text: 'livre',
+    imageSrc: '/assets/words/lecture/livre.webp',
+    clues: ['On le lit.', 'Il a des pages.', 'Il est à la bibliothèque.'],
+  },
+  {
+    text: 'soleil',
+    imageSrc: '/assets/words/lecture/soleil.webp',
+    clues: ['Il brille le jour.', 'Il donne de la lumière.', 'Il chauffe.'],
+  },
+  {
+    text: 'vélo',
+    imageSrc: '/assets/words/lecture/vélo.webp',
+    clues: ['Il a deux roues.', 'On pédale.', 'On porte un casque.'],
+  },
+  {
+    text: 'pain',
+    imageSrc: '/assets/words/lecture/pain.webp',
+    clues: ['On l’achète à la boulangerie.', 'On le mange.', 'Il est croustillant.'],
+  },
+  {
+    text: 'maison',
+    imageSrc: '/assets/words/lecture/maison.webp',
+    clues: ['On y habite.', 'Elle a un toit.', 'Elle a des portes et des fenêtres.'],
+  },
+  {
+    text: 'chien',
+    imageSrc: '/assets/words/lecture/chien.webp',
+    clues: ['C’est un animal.', 'Il aboie.', 'C’est un ami de l’humain.'],
+  },
+  {
+    text: 'chaise',
+    imageSrc: '/assets/words/lecture/chaise.webp',
+    clues: ['On s’assoit dessus.', 'Elle a quatre pieds.', 'Elle est dans la salle.'],
+  },
 ]
 
-const MEMORY: GameEntry[] = ['maison', 'porte', 'fenêtre', 'table', 'chaise', 'lampe'].map((text) => ({
-  text,
-}))
+const MEMORY: GameEntry[] = [
+  { text: 'maison', imageSrc: '/assets/words/lecture/maison.webp' },
+  { text: 'fenêtre', imageSrc: '/assets/words/lecture/fenêtre.webp' },
+  { text: 'chaise', imageSrc: '/assets/words/lecture/chaise.webp' },
+  { text: 'lampe', imageSrc: '/assets/words/lecture/lampe.webp' },
+  { text: 'chat', imageSrc: '/assets/words/lecture/chat.webp' },
+  { text: 'pomme', imageSrc: '/assets/words/lecture/pomme.webp' },
+]
 
 const LOTO: GameEntry[] = [
-  'rouge',
-  'bleu',
-  'vert',
-  'jaune',
-  'noir',
-  'blanc',
+  'abricot',
+  'ail',
+  'ananas',
+  'asperge',
+  'aubergine',
+  'poisson',
+  'banane',
+  'betterave',
+  'beurre',
+  'brocoli',
+  'carotte',
+  'cerise',
+  'champignon',
+  'citron',
+  'concombre',
+  'fraise',
+  'fromage',
+  'lait',
+  'oignon',
   'orange',
-  'rose',
-  'gris',
-  'violet',
-  'marron',
-  'beige',
-  'argent',
-  'or',
-  'turquoise',
-  'ivoire',
-  'indigo',
-  'corail',
-].map((text) => ({ text }))
+  'pain',
+  'pomme',
+  'poulet',
+  'raisin',
+  'riz',
+  'salade',
+  'tomate',
+].map((text) => ({
+  text,
+  imageSrc: `/assets/words/lecture/${text}.webp`,
+}))
 
 const INTRUS: GameEntry[] = [
-  { text: 'chat', category: 'animaux' },
-  { text: 'chien', category: 'animaux' },
-  { text: 'oiseau', category: 'animaux' },
-  { text: 'table', category: 'animaux', isIntrus: true },
-  { text: 'pomme', category: 'fruits' },
-  { text: 'banane', category: 'fruits' },
-  { text: 'poire', category: 'fruits' },
-  { text: 'crayon', category: 'fruits', isIntrus: true },
-  { text: 'rouge', category: 'couleurs' },
-  { text: 'bleu', category: 'couleurs' },
-  { text: 'vert', category: 'couleurs' },
-  { text: 'livre', category: 'couleurs', isIntrus: true },
-  { text: 'lundi', category: 'jours' },
-  { text: 'mardi', category: 'jours' },
-  { text: 'vendredi', category: 'jours' },
-  { text: 'janvier', category: 'jours', isIntrus: true },
+  { text: 'table', words: ['chat', 'chien', 'oiseau', 'poisson'] },
+  { text: 'crayon', words: ['pomme', 'banane', 'poire', 'cerise'] },
+  { text: 'livre', words: ['rouge', 'bleu', 'vert', 'jaune'] },
+  { text: 'janvier', words: ['lundi', 'mardi', 'jeudi', 'vendredi'] },
+  { text: 'bus', words: ['mère', 'père', 'sœur', 'frère'] },
+  { text: 'nuage', words: ['chambre', 'cuisine', 'salon', 'salle'] },
+  { text: 'fièvre', words: ['train', 'bus', 'vélo', 'métro'] },
+  { text: 'balai', words: ['pain', 'riz', 'lait', 'fromage'] },
+  { text: 'quai', words: ['pull', 'jupe', 'pantalon', 'chemise'] },
+  { text: 'oreiller', words: ['médecin', 'infirmière', 'pharmacie', 'hôpital'] },
+  { text: 'caisse', words: ['livre', 'cahier', 'stylo', 'gomme'] },
+  { text: 'valise', words: ['soleil', 'lune', 'étoile', 'nuage'] },
 ]
 
 const DOMINOS: GameEntry[] = [
-  'matin',
-  'école',
-  'classe',
-  'livre',
-  'crayon',
-  'cahier',
-  'récréation',
   'maison',
-].map((text) => ({ text }))
+  'fenêtre',
+  'chaise',
+  'lampe',
+  'chat',
+  'pomme',
+  'chien',
+  'livre',
+  'pain',
+  'soleil',
+  'vélo',
+  'eau',
+  'fleur',
+  'cahier',
+  'crayon',
+  'arbre',
+].map((text) => ({
+  text,
+  imageSrc: `/assets/words/lecture/${text}.webp`,
+}))
 
+/** 3 catégories × 7 mots (+ 3 étiquettes catégorie = 24 cartes). */
 const TRI: GameEntry[] = [
-  { text: 'chat', category: 'Animaux' },
-  { text: 'chien', category: 'Animaux' },
-  { text: 'oiseau', category: 'Animaux' },
-  { text: 'poisson', category: 'Animaux' },
-  { text: 'pain', category: 'Nourriture' },
-  { text: 'lait', category: 'Nourriture' },
-  { text: 'riz', category: 'Nourriture' },
-  { text: 'soupe', category: 'Nourriture' },
-  { text: 'rouge', category: 'Couleurs' },
-  { text: 'bleu', category: 'Couleurs' },
-  { text: 'vert', category: 'Couleurs' },
-  { text: 'jaune', category: 'Couleurs' },
+  {
+    text: 'Animaux',
+    category: 'Animaux',
+    words: ['chat', 'chien', 'oiseau', 'poisson', 'cheval', 'vache', 'mouton'],
+  },
+  {
+    text: 'Nourriture',
+    category: 'Nourriture',
+    words: ['pain', 'lait', 'riz', 'soupe', 'fromage', 'fruit', 'eau'],
+  },
+  {
+    text: 'Couleurs',
+    category: 'Couleurs',
+    words: ['rouge', 'bleu', 'vert', 'jaune', 'noir', 'blanc', 'rose'],
+  },
 ]
 
 /** 7 familles structurées pour le générateur. */
@@ -160,7 +216,6 @@ const PHRASES: GameEntry[] = [
 
 export const DEFAULT_ENTRIES: Record<string, GameEntry[]> = {
   'jeux-vocabulaire': VOCAB,
-  'jeux-vrai-faux': VRAI_FAUX,
   'jeux-devinettes': DEVINETTES,
   'jeux-memory': MEMORY,
   'jeux-loto': LOTO,
