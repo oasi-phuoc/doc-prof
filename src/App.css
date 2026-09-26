@@ -1418,13 +1418,16 @@
   grid-template-columns:1fr;grid-template-rows:none;align-content:start
 }
 .exercise-item.layout-card-grid{
-  padding:0;height:auto;align-self:stretch;width:100%
+  padding:0;height:auto;flex:1 1 auto;min-height:0;align-self:stretch;width:100%;
+  display:flex;flex-direction:column
 }
-.exercise-item.layout-card-grid .item-content{width:100%}
-.game-board{width:100%}
+.exercise-item.layout-card-grid .item-content{
+  width:100%;flex:1 1 auto;min-height:0;display:flex;flex-direction:column
+}
+.game-board{width:100%;flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
 .game-board-title{
   margin:0 0 2mm;font-size:10px;font-weight:700;letter-spacing:.02em;
-  text-transform:uppercase;color:var(--muted);text-align:left
+  text-transform:uppercase;color:var(--muted);text-align:left;flex:0 0 auto
 }
 .game-card-grid{
   --game-card-gap:2.5mm;
@@ -1503,24 +1506,29 @@
   background:color-mix(in srgb, var(--jeux-accent) 6%, #fff)
 }
 .game-board.is-bands .game-card-grid{gap:2mm}
-.game-board.is-devinettes .game-card-grid{--game-card-gap:3mm}
+.game-board.is-devinettes .game-card-grid{
+  --game-card-gap:3.5mm;
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,3),minmax(0,1fr));
+  align-content:stretch
+}
 .game-board.is-devinettes .game-card{
-  min-height:42mm;padding:3.5mm;border-width:1.8px
+  min-height:0;height:100%;padding:4mm;border-width:1.8px
 }
 .game-board.is-devinettes .game-card-image{
-  min-height:24mm;margin-bottom:2mm;flex:1 1 auto
+  min-height:0;margin-bottom:2.5mm;flex:1 1 auto
 }
 .game-board.is-devinettes .game-card-word{
-  font-size:15px;font-weight:800;line-height:1.2;letter-spacing:.01em
+  font-size:17px;font-weight:800;line-height:1.15;letter-spacing:.01em;flex:0 0 auto
 }
 .game-board.is-devinettes .game-card.is-clue{
-  justify-content:center;padding:4mm 3.5mm
+  justify-content:center;padding:5mm 4mm
 }
 .game-board.is-devinettes .game-card-clues{
-  padding-left:5mm;font-size:12.5px;line-height:1.45;font-weight:600
+  padding-left:5.5mm;font-size:14px;line-height:1.5;font-weight:600
 }
 .game-board.is-devinettes .game-card-badge{
-  min-width:5.5mm;height:5.5mm;font-size:9px
+  min-width:6mm;height:6mm;font-size:10px
 }
 .game-riddle-list{
   list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
