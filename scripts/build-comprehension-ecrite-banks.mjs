@@ -155,11 +155,17 @@ function q(prompt, options, answer) {
 
 function makeQuestions(level, theme, facts) {
   const { who, where, when, what, howMuch } = facts
+  const friend = pick(NAMES, who.length + 4)
+  const otherCity = pick(CITIES, where.length + 3)
   const base = [
     q(`Qui est concerné ?`, [who, pick(NAMES, 3), pick(NAMES, 7)], who),
-    q(`Où cela se passe-t-il ?`, [where, pick(CITIES, 2), pick(CITIES, 5)], where),
+    q(`Où cela se passe-t-il ?`, [where, `À ${otherCity}`, 'À Paris'], where),
     q(`Quand cela a-t-il lieu ?`, [when, 'Demain soir', 'Le mois prochain'], when),
     q(`De quoi parle le texte ?`, [what, 'Un voyage en avion', 'Une recette secrète'], what),
+    q(`Quelle personne est citée ?`, [who, friend, pick(NAMES, 12)], who),
+    q(`Le texte mentionne un lieu. Lequel ?`, [where, 'À la montagne', `À ${otherCity}`], where),
+    q(`Quelle information temporelle est donnée ?`, [when, 'Dans un an', 'Hier matin'], when),
+    q(`Quel est le sujet principal ?`, [what, 'Un match de football', 'Une leçon de cuisine'], what),
   ]
   if (howMuch) {
     base.push(q(`Quelle information chiffrée est donnée ?`, [howMuch, 'Cinq euros', 'Cent francs'], howMuch))
@@ -173,7 +179,8 @@ function makeQuestions(level, theme, facts) {
       ], 'Pour organiser la suite'),
     )
   }
-  return base.slice(0, level === 'a1' ? 3 : 4)
+  // Banque large (comme la CO) : 8 questions / texte ; la fiche en affiche 4 par défaut.
+  return base.slice(0, 8)
 }
 
 function buildA1(theme, i) {
@@ -186,11 +193,11 @@ function buildA1(theme, i) {
   const format = pick(['sms', 'annonce', 'narratif', 'avis', 'notice'], i)
 
   const variants = [
-    `Salut ! C’est ${who}. J’habite à ${city}. ${when.charAt(0).toUpperCase() + when.slice(1)} je vais au ${place}. Je parle de mon ${noun}. Le ${place} est près de chez moi. À bientôt.`,
+    `Salut ! C’est ${who}. J’habite à ${city}. ${when.charAt(0).toUpperCase() + when.slice(1)} je vais vers le ${place}. Je parle de mon ${noun}. Le ${place} est près de chez moi. À bientôt.`,
     `Annonce à ${city}. ${who} cherche un ${noun}. Le rendez-vous est ${when}. Le lieu est le ${place}. Merci de répondre vite. Le ${noun} est utile pour la famille.`,
-    `${who} est à ${city}. ${who} regarde un ${noun}. ${who} va au ${place} ${when}. ${who} est content. ${who} lit un message simple.`,
-    `Message : ${who} à ${city}. Information sur le ${noun}. Rendez-vous au ${place} ${when}. Merci. Le ${place} ouvre tôt.`,
-    `Bonjour. Je m’appelle ${who}. J’habite à ${city}. Mon ${noun} est important. Je vais au ${place} ${when}. Je parle français.`,
+    `${who} est à ${city}. ${who} regarde un ${noun}. ${who} va vers le ${place} ${when}. ${who} est content. ${who} lit un message simple.`,
+    `Message : ${who} à ${city}. Information sur le ${noun}. Rendez-vous vers le ${place} ${when}. Merci. Le ${place} ouvre tôt.`,
+    `Bonjour. Je m’appelle ${who}. J’habite à ${city}. Mon ${noun} est important. Je vais vers le ${place} ${when}. Je parle français.`,
   ]
   let text = fitWords(pick(variants, i), 30, 60, [
     `${who} lit le message.`,
@@ -203,7 +210,7 @@ function buildA1(theme, i) {
     who,
     where: `À ${city}`,
     when: when.charAt(0).toUpperCase() + when.slice(1),
-    what: `Un ${noun} et le ${place}`,
+    what: `${noun} / ${place}`,
     howMuch: null,
   }
   return {
@@ -226,10 +233,10 @@ function buildA2(theme, i) {
   const format = pick(['email', 'annonce', 'invitation', 'article', 'avis'], i)
 
   const bodies = [
-    `Bonjour ${friend},\nJe suis ${who}. J’habite à ${city}. ${when.charAt(0).toUpperCase() + when.slice(1)}, je vais au ${place}. Je veux parler du ${noun}. Tu peux venir avec moi ? Le ${place} est calme et facile à trouver. Réponds-moi vite.\n${who}`,
-    `Annonce — ${city}. ${who} organise une activité autour du ${noun}. Rendez-vous au ${place} ${when}. Prix : ${price}. Inscription par message. Apportez une pièce d’identité.`,
+    `Bonjour ${friend},\nJe suis ${who}. J’habite à ${city}. ${when.charAt(0).toUpperCase() + when.slice(1)}, je vais vers le ${place}. Je veux parler du ${noun}. Tu peux venir avec moi ? Le ${place} est calme et facile à trouver. Réponds-moi vite.\n${who}`,
+    `Annonce — ${city}. ${who} organise une activité autour du ${noun}. Rendez-vous vers le ${place} ${when}. Prix : ${price}. Inscription par message. Apportez une pièce d’identité.`,
     `${who} a écrit un petit texte. Hier, ${who} a visité le ${place} à ${city}. ${who} a vu un ${noun} intéressant. ${when.charAt(0).toUpperCase() + when.slice(1)}, ${who} va y retourner avec ${friend}. Ils veulent comparer les prix.`,
-    `Invitation : ${who} invite ${friend} à ${city}. On se retrouve au ${place} ${when}. On parlera du ${noun}. Apportez une boisson. Merci ! Le temps prévu est d’environ ${price}.`,
+    `Invitation : ${who} invite ${friend} à ${city}. On se retrouve vers le ${place} ${when}. On parlera du ${noun}. Apportez une boisson. Merci ! Le temps prévu est d’environ ${price}.`,
   ]
   let text = fitWords(pick(bodies, i), 60, 120, [
     `Le ${place} est facile à trouver.`,
@@ -246,7 +253,7 @@ function buildA2(theme, i) {
       who,
       where: `À ${city}`,
       when: when.charAt(0).toUpperCase() + when.slice(1),
-      what: `Le ${noun} au ${place}`,
+      what: `${noun} / ${place}`,
       howMuch: price,
     }),
   }
@@ -262,7 +269,7 @@ function buildB1(theme, i) {
   const when = pick(['la semaine prochaine', 'dès lundi', 'pendant les vacances', 'jeudi soir'], i)
   const format = pick(['lettre', 'article', 'email', 'avis', 'narratif'], i)
 
-  let text = `Chère / Cher collègue,\n\nJe m’appelle ${who} et j’habite à ${city}. Je vous écris au sujet du ${noun}. Hier, j’ai rencontré ${other} au ${place}. Nous avons parlé longtemps : si le projet avance, nous pourrons organiser une rencontre ${when}.\n\nÀ mon avis, il faudrait préparer les documents avant la réunion. ${other} pensait que c’était trop tôt, mais j’aimerais que nous soyons prêts. Le ${place} de ${city} reste disponible et le ${noun} concerne plusieurs collègues.\n\nMerci de me dire ce que vous en pensez. Je reste joignable par message.\n\nCordialement,\n${who}`
+  let text = `Chère / Cher collègue,\n\nJe m’appelle ${who} et j’habite à ${city}. Je vous écris au sujet du ${noun}. Hier, j’ai rencontré ${other} vers le ${place}. Nous avons parlé longtemps : si le projet avance, nous pourrons organiser une rencontre ${when}.\n\nÀ mon avis, il faudrait préparer les documents avant la réunion. ${other} pensait que c’était trop tôt, mais j’aimerais que nous soyons prêts. Le ${place} de ${city} reste disponible et le ${noun} concerne plusieurs collègues.\n\nMerci de me dire ce que vous en pensez. Je reste joignable par message.\n\nCordialement,\n${who}`
 
   const extras = [
     `Si vous êtes d’accord, j’enverrai un rappel la veille.`,

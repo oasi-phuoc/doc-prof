@@ -101,8 +101,8 @@ export function assertTextFitsLevel(doc: ComprehensionEcritedoc): string[] {
   if (words < rules.minWords || words > rules.maxWords) {
     issues.push(`${doc.id}: ${words} mots hors ${rules.minWords}–${rules.maxWords}`)
   }
-  if (doc.questions.length < 3) {
-    issues.push(`${doc.id}: moins de 3 questions`)
+  if (doc.questions.length < 6) {
+    issues.push(`${doc.id}: moins de 6 questions (banque suite auto)`)
   }
   return issues
 }

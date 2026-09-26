@@ -71,7 +71,8 @@ Mots étrangers, métaphores, jeux de mots, inversion sujet/verbe, imparfait / c
 | A2 | QCM / ouvertes courtes | Relier **deux infos** explicites |
 | B1 | QCM / reformulation | Inférence, reformulation, ou infos à des endroits différents |
 
-3 à 4 questions par texte ; distracteurs plausibles mais clairement faux.
+Banque : **8 questions** par texte (comme la CO) ; la fiche en affiche **4** par défaut.
+Distracteurs plausibles mais clairement faux. Style A1 = littéral, A2 = lien, B1 = inférence.
 
 ## Paramètres réutilisables (code)
 
