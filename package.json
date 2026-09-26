@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "git lfs pull || true; tsc -b && vite build",
+    "build": "git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs >/dev/null 2>&1; git lfs pull || true; tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },

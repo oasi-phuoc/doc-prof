@@ -1,6 +1,6 @@
 {
   "framework": "vite",
-  "installCommand": "git lfs install; git lfs pull || true; npm install",
+  "installCommand": "git lfs install; git remote get-url origin >/dev/null 2>&1 || git remote add origin https://github.com/oasi-phuoc/doc-prof.git; git remote set-url origin https://github.com/oasi-phuoc/doc-prof.git; git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs; git lfs pull || true; npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist"
 }
