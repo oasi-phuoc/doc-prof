@@ -1065,7 +1065,9 @@ function buildSingleBlock(
       bankQuestionCap: francais.bankQuestionCap,
     }
   }
-  const jeux = tryGenerateJeuxBatch(config.exerciseType)
+  const jeux = tryGenerateJeuxBatch(config.exerciseType, rng, {
+    gameEntries: config.gameEntries,
+  })
   if (jeux) {
     return {
       title: fallbackTitle,

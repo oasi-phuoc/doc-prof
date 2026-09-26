@@ -28,6 +28,12 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     numberDecimals: page.numberDecimals,
     quadLibre: page.quadLibre,
     quadShapes: page.quadShapes,
+    vocabRows: page.vocabRows,
+    vocabCols: page.vocabCols,
+    vocabSelected: page.vocabSelected,
+    vocabLineCh: page.vocabLineCh,
+    gameEntries: page.gameEntries,
+    gameText: page.gameText,
   }
 }
 

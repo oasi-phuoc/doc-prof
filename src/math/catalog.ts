@@ -1,5 +1,7 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
+import { defaultEntriesFor } from '@/jeux/defaults'
+import { entriesToText } from '@/jeux/parse'
 
 export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
   { id: 'voc', label: 'Voc' },
@@ -796,6 +798,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
           : isDraftPadExercise(type.id)
             ? 2
             : 8
+  const gameEntries = domain === 'jeux' ? defaultEntriesFor(type.id) : undefined
   return {
     domain,
     topic: type.topic,
@@ -810,6 +813,8 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
     oralAnswerModes: type.id.includes('-com-orale')
       ? Array.from({ length: count }, () => 'qcm' as const)
       : undefined,
+    gameEntries,
+    gameText: gameEntries ? entriesToText(type.id, gameEntries) : undefined,
   }
 }
 
@@ -823,4 +828,13 @@ type PageConfigLike = {
   track?: FrenchTrack
   problemDraftGrids?: boolean[]
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
+  gameEntries?: Array<{
+    text: string
+    imageSrc?: string
+    clues?: string[]
+    category?: string
+    isIntrus?: boolean
+    isTrue?: boolean
+  }>
+  gameText?: string
 }

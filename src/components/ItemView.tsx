@@ -6,6 +6,8 @@ import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
 import { FractionView, renderMathText } from './math/FractionView'
 import { GattegnoChart } from './math/GattegnoChart'
 import { GeometryFigure } from './math/GeometryFigure'
+import { CardGrid } from '@/jeux/CardGrid'
+import type { GameBoard } from '@/jeux/types'
 
 function VocabTable({ item }: { item: MathItem }) {
   const rows = Math.max(1, item.vocabRows ?? 3)
@@ -1443,7 +1445,8 @@ export function ItemView({
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match' ||
-    item.layout === 'theory'
+    item.layout === 'theory' ||
+    item.layout === 'card-grid'
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
@@ -1501,6 +1504,9 @@ export function ItemView({
         {item.layout === 'vocab-table' && <VocabTable item={item} />}
         {item.layout === 'vocab-match' && <VocabMatch item={item} mode={mode} />}
         {item.layout === 'vocab-write' && <VocabWrite item={item} mode={mode} />}
+        {item.layout === 'card-grid' && item.gameBoard ? (
+          <CardGrid board={item.gameBoard as GameBoard} />
+        ) : null}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>

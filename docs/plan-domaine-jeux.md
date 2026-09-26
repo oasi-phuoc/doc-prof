@@ -149,43 +149,37 @@ Composant de base : `<CardGrid>` (colonnes / lignes, taille carte, recto-verso).
 
 ## 8. Ordre d’implémentation
 
-### Phase 0 — Socle catalogue + UI (cette PR)
+### Phase 0 — Socle catalogue + UI ✅
 
-1. Domaine `jeux` dans les types.
-2. Thèmes des 3 familles + types stub (au moins vague 1).
-3. Option **Jeux** après Phrase ; course Français ; topics / types branchés.
-4. Planning versionné ici ; générateur placeholder déterministe (« fiche en préparation ») pour ne pas casser l’aperçu.
-5. Lint / build verts.
+Domaine `jeux`, thèmes, types, option après Phrase, sans chrome scolaire.
 
-### Phase 1 — Moteur A4 jeu
+### Phase 1 — Moteur A4 jeu ✅
 
-1. `<PageA4Game orientation>` + CSS print (sans chrome scolaire).
-2. `<CardGrid>` générique + layout `card-grid` dans `ItemView`.
-3. Schémas dans `src/jeux/templates.ts` + `tryGenerateJeuxBatch`.
+`CardGrid`, layout `card-grid`, schémas `templates.ts`, `tryGenerateJeuxBatch`.
 
-### Phase 2 — Templates simples (valident le pipeline)
+### Phase 2 — Templates simples ✅
 
-Vocabulaire → Vrai/Faux → Devinettes (saisie texte d’abord, images ensuite).
+Vocabulaire, Vrai/Faux, Devinettes (saisie texte ; zone image vide en attendant l’upload).
 
-### Phase 3 — Génération automatique
+### Phase 3 — Génération automatique ✅
 
-Mémory (duplication + shuffle seed) → Loto → Intrus.
+Mémory (duplication + shuffle seed), Loto, Intrus.
 
-### Phase 4 — Images
+### Phase 4 — Images (à venir)
 
 Upload sur Vocabulaire, puis généralisation famille A.
 
-### Phase 5 — Templates liés
+### Phase 5 — Templates liés ✅
 
-Dominos → Tri/catégorisation.
+Dominos, Tri/catégorisation.
 
-### Phase 6 — Famille C
+### Phase 6 — Famille C ✅
 
-Bandes-mots → Phrases à reconstituer.
+Bandes-mots, Phrases à reconstituer.
 
-### Phase 7 — Famille B
+### Phase 7 — Famille B ✅ (version compacte portrait)
 
-7 familles → Plateau → Dé/roue (les plus custom, en dernier).
+7 familles, Plateau, Dé/roue — raffinements paysage / patrons SVG ensuite.
 
 ---
 

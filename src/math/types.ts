@@ -61,6 +61,7 @@ export type Layout =
   | 'vocab-match'
   | 'vocab-write'
   | 'theory'
+  | 'card-grid'
 
 export type CoordShape =
   | 'point'
@@ -338,6 +339,22 @@ export type MathItem = {
   vocabWriteHint?: string
   /** Phrase lue à voix haute (dictée), affichée au corrigé. */
   vocabDictee?: string
+  /** Domaine Jeux : une grille de cartes / bandes / plateau. */
+  gameBoard?: {
+    title?: string
+    cols: number
+    rows: number
+    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die'
+    cards: Array<{
+      id: string
+      text?: string
+      imageSrc?: string
+      lines?: string[]
+      variant?: string
+      badge?: string
+      textRight?: string
+    }>
+  }
 }
 
 export type CompositeLabel = {
@@ -424,6 +441,17 @@ export type ExerciseBlock = {
   vocabSelected?: string[]
   /** Longueur du trait de réponse (production écrite Voc), en caractères. */
   vocabLineCh?: number
+  /** Domaine Jeux : contenu saisi (mots, affirmations, phrases…). */
+  gameEntries?: Array<{
+    text: string
+    imageSrc?: string
+    clues?: string[]
+    category?: string
+    isIntrus?: boolean
+    isTrue?: boolean
+  }>
+  /** Domaine Jeux : texte brut du panneau (resync → gameEntries). */
+  gameText?: string
 }
 
 export type PageConfig = ExerciseBlock & {

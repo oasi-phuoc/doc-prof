@@ -44,6 +44,9 @@ import {
 } from '@/math/catalog'
 import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/francais/vocab-learn'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
+import { defaultEntriesFor } from '@/jeux/defaults'
+import { entriesToText, textToEntries } from '@/jeux/parse'
+import { isJeuxType, templateFor } from '@/jeux/templates'
 import {
   AXES_DEFAULT_COLS,
   AXES_DEFAULT_ROWS,
@@ -222,9 +225,9 @@ function WorksheetSheet({
           )
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
-              <header className="exercise-heading">
+              <header className={`exercise-heading${isJeuxSheet ? ' is-jeux' : ''}`}>
                 <div className="exercise-heading-main">
-                  <h3>{block.title}</h3>
+                  {isJeuxSheet ? null : <h3>{block.title}</h3>}
                   <p>{block.instruction}</p>
                   {block.givens && block.givens.length > 0 ? (
                     <p className="sheet-givens" aria-label="Valeurs des variables">
@@ -885,6 +888,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isVocabLearn = isVocabLearnType(type.id)
   const isVocabPool = isVocabPoolType(type.id)
   const isVocabProd = isVocabProductionType(type.id)
+  const isJeux = isJeuxType(type.id)
   const bankIds = new Set(vocabLearnWordsFor(type.topic).map((word) => word.id))
   const preservedSelected =
     prev?.topic === type.topic && prev.vocabSelected?.length
@@ -892,6 +896,14 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
       : []
   const vocabSelected =
     preservedSelected.length > 0 ? preservedSelected : defaultVocabSelected(type.topic, 3, 3)
+  const preservedGame =
+    prev?.exerciseType === type.id && prev.gameEntries?.length
+      ? prev.gameEntries
+      : defaultEntriesFor(type.id)
+  const gameText =
+    prev?.exerciseType === type.id && prev.gameText != null
+      ? prev.gameText
+      : entriesToText(type.id, preservedGame)
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -904,33 +916,29 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
         ? { count: 3 }
         : isLongMul
           ? { count: 4 }
-          : isPhraseChart
+          : isPhraseChart || isVocabLearn || isJeux || isTheory
             ? { count: 1 }
-            : isVocabLearn
-              ? { count: 1 }
-              : isVocabPool
-                ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
-                : isPhrase
-                  ? { count: 6 }
-                  : isLectureDense
-                    ? { count: 4 }
-                    : isLecture
-                      ? { count: 6 }
-                      : isGeoCalc
-                        ? { count: 2 }
-                        : isTheory
-                          ? { count: 1 }
-                          : isFrenchCom
-                            ? { count: 4 }
-                            : isFrenchLang
+            : isVocabPool
+              ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
+              : isPhrase
+                ? { count: 6 }
+                : isLectureDense
+                  ? { count: 4 }
+                  : isLecture
+                    ? { count: 6 }
+                    : isGeoCalc
+                      ? { count: 2 }
+                      : isFrenchCom
+                        ? { count: 4 }
+                        : isFrenchLang
+                          ? { count: 6 }
+                          : isFormes
+                            ? { count: 5 }
+                            : isCadrans
                               ? { count: 6 }
-                              : isFormes
+                              : isDroites || isConstruire
                                 ? { count: 5 }
-                                : isCadrans
-                                  ? { count: 6 }
-                                  : isDroites || isConstruire
-                                    ? { count: 5 }
-                                    : {}),
+                                : {}),
     ...(isVocabPool
       ? {
           columns: 1,
@@ -947,6 +955,9 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           vocabSelected: undefined,
           vocabLineCh: undefined,
         }),
+    ...(isJeux
+      ? { columns: 1, gameEntries: preservedGame, gameText }
+      : { gameEntries: undefined, gameText: undefined }),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -1254,6 +1265,10 @@ function GeneratorPage() {
     : DIFFICULTY_OPTIONS
   const isPhraseDomain = activePage.domain === 'phrase'
   const isJeuxDomain = activePage.domain === 'jeux'
+  const jeuxTemplate = isJeuxDomain ? templateFor(activeBlock.exerciseType) : null
+  const jeuxText =
+    activeBlock.gameText ??
+    entriesToText(activeBlock.exerciseType, activeBlock.gameEntries ?? defaultEntriesFor(activeBlock.exerciseType))
   const isCadrans = isReperageCadrans(activeBlock.exerciseType)
   const isComposer = isReperageComposer(activeBlock.exerciseType)
   const isFormes = isReperageFormes(activeBlock.exerciseType)
@@ -1451,6 +1466,8 @@ function GeneratorPage() {
       vocabRows: fields.vocabRows,
       vocabCols: fields.vocabCols,
       vocabLineCh: fields.vocabLineCh,
+      gameEntries: fields.gameEntries,
+      gameText: fields.gameText,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -1678,6 +1695,27 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              {isJeuxDomain && jeuxTemplate ? (
+                <label className="select-shell game-content-field">
+                  <span>Contenu</span>
+                  <textarea
+                    className="pill-input game-content-textarea"
+                    rows={Math.min(12, Math.max(4, jeuxTemplate.entryCount + 1))}
+                    value={jeuxText}
+                    spellCheck
+                    aria-label="Contenu du jeu"
+                    placeholder={jeuxTemplate.entryHint}
+                    onChange={(event) => {
+                      const nextText = event.target.value
+                      updatePage({
+                        gameText: nextText,
+                        gameEntries: textToEntries(activeBlock.exerciseType, nextText),
+                      })
+                    }}
+                  />
+                  <small className="muted">{jeuxTemplate.entryHint}</small>
+                </label>
+              ) : null}
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>
