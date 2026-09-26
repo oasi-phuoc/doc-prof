@@ -326,6 +326,31 @@ function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
     )
   }
 
+  if (item.selectVariant === 'cards') {
+    const letters = ['A', 'B', 'C']
+    return (
+      <div className="voc-qcm-stack" aria-label="Choix">
+        {item.prompt ? <p className="voc-qcm-prompt">{item.prompt}</p> : null}
+        <div className="voc-qcm-cards" role="group">
+          {options.slice(0, 3).map((option, index) => {
+            const selected = mode === 'answers' && selectedSet.has(option)
+            return (
+              <div key={`${option}-${index}`} className={`voc-qcm-card${selected ? ' selected' : ''}`}>
+                <span className="voc-qcm-card-text">{option}</span>
+                <span className="voc-qcm-card-check">
+                  {letters[index] ?? String(index + 1)}{' '}
+                  <span className={`oral-qcm-box ${selected ? 'checked' : ''}`} aria-hidden>
+                    {selected ? '✓' : ''}
+                  </span>
+                </span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   const stacked = (item.prompt?.length ?? 0) > 28
   return (
     <div className={`select-pills-row${stacked ? ' stacked' : ''}`} aria-label="Choix">
@@ -342,6 +367,83 @@ function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       </div>
     </div>
   )
+}
+
+function TheoryBlockView({ item }: { item: MathItem }) {
+  const block = item.theoryBlock
+  if (!block) return null
+  if (block.kind === 'heading') {
+    return <h3 className={`theory-heading${block.sub ? ' is-sub' : ''}`}>{block.text}</h3>
+  }
+  if (block.kind === 'paragraph') {
+    return <p className="theory-paragraph">{block.text}</p>
+  }
+  if (block.kind === 'note') {
+    return <p className="theory-note">{block.text}</p>
+  }
+  if (block.kind === 'rule') {
+    return (
+      <div className="theory-rule">
+        <p className="theory-paragraph">{block.text}</p>
+        {block.examples?.length ? (
+          <ul className="theory-examples">
+            {block.examples.map((ex, index) => (
+              <li key={`${ex.correct}-${index}`}>
+                <span className="theory-ex-ok">{ex.correct}</span>
+                {ex.wrong ? (
+                  <>
+                    {' '}
+                    <span className="theory-ex-bad" aria-label="à éviter">
+                      (pas : {ex.wrong})
+                    </span>
+                  </>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
+    )
+  }
+  if (block.kind === 'list') {
+    return (
+      <div className="theory-list-block">
+        {block.title ? <p className="theory-list-title">{block.title}</p> : null}
+        <ul className="theory-list">
+          {(block.items ?? []).map((entry, index) => (
+            <li key={`${entry}-${index}`}>{entry}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  if (block.kind === 'table') {
+    const headers = block.headers ?? []
+    const rows = block.rows ?? []
+    return (
+      <table className="theory-table">
+        {headers.some(Boolean) ? (
+          <thead>
+            <tr>
+              {headers.map((header, index) => (
+                <th key={`${header}-${index}`}>{header}</th>
+              ))}
+            </tr>
+          </thead>
+        ) : null}
+        <tbody>
+          {rows.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+  return null
 }
 
 function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
@@ -1340,7 +1442,8 @@ export function MathItemView({
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
-    item.layout === 'vocab-match'
+    item.layout === 'vocab-match' ||
+    item.layout === 'theory'
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
@@ -1381,6 +1484,7 @@ export function MathItemView({
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
+        {item.layout === 'theory' && <TheoryBlockView item={item} />}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}

@@ -827,7 +827,7 @@ export function frenchBank(topic: string): ThemeBank | null {
 }
 
 export function parseFrenchType(typeId: string): { topic: string; track: 'voc' | 'gram' | 'com'; kind: string } | null {
-  const match = /^(fr-[a-z]+)-(voc|gram|com)-([a-z-]+)$/.exec(typeId)
+  const match = /^(fr-[a-z]+)-(voc|gram|com)-([a-z0-9-]+)$/.exec(typeId)
   if (!match) return null
   return { topic: match[1]!, track: match[2] as 'voc' | 'gram' | 'com', kind: match[3]! }
 }

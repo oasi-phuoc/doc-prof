@@ -1,4 +1,5 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
+import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
 
 export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
   { id: 'voc', label: 'Voc' },
@@ -531,6 +532,24 @@ const FRENCH_KINDS: Array<{
 ]
 
 for (const theme of FRENCH_THEMES) {
+  // Théories en tête de la piste Gram (avant Texte à trous).
+  const theories = GRAMMAR_THEORY_BY_TOPIC[theme.id] ?? []
+  for (const theory of theories) {
+    const multi = theories.length > 1
+    const label = multi ? `Théorie ${theory.index} — ${theory.title}` : `Théorie — ${theory.title}`
+    const description = `Fiche de théorie grammaticale : ${theory.title} (${theme.grammar}).`
+    exerciseTypes.push(
+      t(
+        `${theme.id}-gram-theorie-${theory.index}`,
+        theme.id,
+        label,
+        description,
+        'Lisez la théorie.',
+        'texte',
+        { preferredColumns: 1, track: 'gram' },
+      ),
+    )
+  }
   for (const kind of FRENCH_KINDS) {
     exerciseTypes.push(
       t(`${theme.id}-${kind.suffix}`, theme.id, kind.label, kind.description(theme), kind.instruction, kind.visual, {

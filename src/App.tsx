@@ -42,6 +42,7 @@ import {
   typesForTopic,
 } from '@/math/catalog'
 import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/francais/vocab-learn'
+import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import {
   AXES_DEFAULT_COLS,
   AXES_DEFAULT_ROWS,
@@ -254,9 +255,11 @@ function WorksheetSheet({
                 className={`exercise-grid${
                   block.items.every((item) => item.layout === 'algebra')
                     ? ' algebra-grid'
-                    : blockDraft || isDraftPadPage
-                      ? ' problem-grid'
-                      : ''
+                    : block.items.every((item) => item.layout === 'theory')
+                      ? ' theory-grid'
+                      : blockDraft || isDraftPadPage
+                        ? ' problem-grid'
+                        : ''
                 }`}
                 style={{ '--sheet-columns': block.columns } as CSSProperties}
               >
@@ -870,6 +873,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isFrenchCom = type.track === 'com'
   const isComQcm =
     type.id.includes('-com-orale') || type.id.includes('-com-ecrite')
+  const isTheory = isGrammarTheoryType(type.id)
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
   const isVocabLearn = isVocabLearnType(type.id)
   const isVocabPool = isVocabPoolType(type.id)
@@ -907,17 +911,19 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                       ? { count: 6 }
                       : isGeoCalc
                         ? { count: 2 }
-                        : isFrenchCom
-                          ? { count: 4 }
-                          : isFrenchLang
-                            ? { count: 6 }
-                            : isFormes
-                              ? { count: 5 }
-                              : isCadrans
-                                ? { count: 6 }
-                                : isDroites || isConstruire
-                                  ? { count: 5 }
-                                  : {}),
+                        : isTheory
+                          ? { count: 1 }
+                          : isFrenchCom
+                            ? { count: 4 }
+                            : isFrenchLang
+                              ? { count: 6 }
+                              : isFormes
+                                ? { count: 5 }
+                                : isCadrans
+                                  ? { count: 6 }
+                                  : isDroites || isConstruire
+                                    ? { count: 5 }
+                                    : {}),
     ...(isVocabPool
       ? {
           columns: 1,
@@ -968,7 +974,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
             coordCellMm: undefined,
             coordUnitSquares: undefined,
           }),
-    continueOnNextPage: isComQcm ? (prev?.continueOnNextPage ?? false) : undefined,
+    continueOnNextPage: isComQcm || isTheory ? (prev?.continueOnNextPage ?? isTheory) : undefined,
     oralAnswerModes: type.id.includes('-com-orale')
       ? resizeOralAnswerModes(prev?.oralAnswerModes, 4)
       : undefined,
@@ -1219,6 +1225,7 @@ function GeneratorPage() {
   const isVocabLearn = isVocabLearnType(activeBlock.exerciseType)
   const isVocabPool = isVocabPoolType(activeBlock.exerciseType)
   const isVocabProd = isVocabProductionType(activeBlock.exerciseType)
+  const isGramTheory = isGrammarTheoryType(activeBlock.exerciseType)
   const vocabLearnWords = isVocabPool ? vocabLearnWordsFor(activeBlock.topic) : []
   const vocabSelectedIds =
     activeBlock.vocabSelected ??
@@ -1754,7 +1761,7 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {isReperage || isPhraseDomain || isVocabLearn ? null : (
+              {isReperage || isPhraseDomain || isVocabLearn || isGramTheory ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -1974,7 +1981,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn ? null : (
+              {isPhraseChart || isVocabLearn || isGramTheory ? null : (
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
@@ -2013,7 +2020,8 @@ function GeneratorPage() {
               </label>
               )}
               {isOralComprehensionExercise(activeBlock.exerciseType) ||
-              activeBlock.exerciseType.includes('-com-ecrite') ? (
+              activeBlock.exerciseType.includes('-com-ecrite') ||
+              isGramTheory ? (
                 <div className="mode-toggle-block">
                   <b>Saut de page</b>
                   <div className="mode-toggle" role="group" aria-label="Saut de page pour les questions">
@@ -2028,19 +2036,25 @@ function GeneratorPage() {
                       type="button"
                       className={activeBlock.continueOnNextPage ? 'active' : ''}
                       onClick={() => updatePage({ continueOnNextPage: true })}
-                      title="Les questions au-delà de 4 passent sur la feuille suivante"
+                      title={
+                        isGramTheory
+                          ? 'La suite de la théorie passe sur la feuille suivante'
+                          : 'Les questions au-delà de 4 passent sur la feuille suivante'
+                      }
                     >
                       Suite auto
                     </button>
                   </div>
                   {activeBlock.continueOnNextPage ? (
                     <small className="muted">
-                      Au-delà de 4 questions, une feuille « suite » est ajoutée automatiquement.
+                      {isGramTheory
+                        ? 'Si la théorie dépasse, une feuille « suite » est ajoutée automatiquement.'
+                        : 'Au-delà de 4 questions, une feuille « suite » est ajoutée automatiquement.'}
                     </small>
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

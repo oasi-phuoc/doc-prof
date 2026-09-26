@@ -60,6 +60,7 @@ export type Layout =
   | 'vocab-table'
   | 'vocab-match'
   | 'vocab-write'
+  | 'theory'
 
 export type CoordShape =
   | 'point'
@@ -262,8 +263,19 @@ export type MathItem = {
   blankIndexes?: number[]
   options?: string[]
   labels?: string[]
-  /** Variante de rendu pour les QCM (compréhension orale empilée). */
-  selectVariant?: 'pills' | 'oral'
+  /** Variante de rendu pour les QCM (orale empilée, cartes vocabulaire). */
+  selectVariant?: 'pills' | 'oral' | 'cards'
+  /** Bloc de théorie grammaticale (fiche lecture seule). */
+  theoryBlock?: {
+    kind: 'heading' | 'paragraph' | 'note' | 'rule' | 'list' | 'table'
+    text?: string
+    sub?: boolean
+    title?: string
+    items?: string[]
+    headers?: string[]
+    rows?: string[][]
+    examples?: Array<{ correct: string; wrong?: string }>
+  }
   /** Mode de réponse orale : QCM texte, trait libre, ou QCM images. */
   answerMode?: 'qcm' | 'text' | 'images'
   /** Images des choix (même ordre que `options`) pour le QCM images. */

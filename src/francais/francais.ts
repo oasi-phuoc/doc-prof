@@ -10,6 +10,8 @@ import {
 } from './comprehension-orale'
 import { resolveVocabEntries } from './vocab-learn'
 import { tryGenerateVocabBlock } from './vocab-generate'
+import { theoryByTypeId } from './grammar-theory-banks'
+import type { GrammarTheoryBlock } from './grammar-theory'
 
 export type FrancaisBlockResult = {
   items: MathItem[]
@@ -105,6 +107,22 @@ export function tryGenerateFrancaisBlock(
         },
       ],
       instruction: 'Observez les images et apprenez les mots.',
+    }
+  }
+
+  if (parsed.kind.startsWith('theorie-') && parsed.track === 'gram') {
+    const doc = theoryByTypeId(typeId)
+    if (!doc) return null
+    const items: MathItem[] = doc.blocks.map((block: GrammarTheoryBlock, index) => ({
+      layout: 'theory' as const,
+      answer: '',
+      prompt: block.kind === 'heading' ? block.text : undefined,
+      theoryBlock: block,
+      labels: [`${doc.id}-${index}`],
+    }))
+    return {
+      items,
+      instruction: `Théorie — ${doc.title}`,
     }
   }
 

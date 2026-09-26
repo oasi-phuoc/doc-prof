@@ -109,9 +109,10 @@ function genAssocDef(pool: VocabWordEntry[], count: number, rng: Rng): MathItem[
 function genQcmDef(pool: VocabWordEntry[], count: number, rng: Rng): MathItem[] {
   const words = uniqueWords(pool, count, rng)
   return words.map((word) => {
-    const opts = shuffle(rng, [word.label, ...distractors(pool, word.id, 3, rng)]).slice(0, 4)
+    const opts = shuffle(rng, [word.label, ...distractors(pool, word.id, 2, rng)]).slice(0, 3)
     return {
       layout: 'select' as const,
+      selectVariant: 'cards' as const,
       prompt: word.definition,
       options: opts,
       answer: word.label,

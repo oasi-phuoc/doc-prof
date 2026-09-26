@@ -1083,9 +1083,12 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(config, block)
     const result = buildSingleBlock(single, seed + index * 10007)
+    const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
     return {
       exerciseIndex: startExercise + index,
-      title: `Exercice ${startExercise + index}`,
+      title: isTheory
+        ? (result.instruction?.replace(/^Théorie — /, '') || `Théorie`)
+        : `Exercice ${startExercise + index}`,
       instruction: result.instruction,
       items: result.items,
       columns: block.columns,
@@ -1100,9 +1103,14 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   const first = built[0]
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
+  const isTheoryPage = /gram-theorie-\d+$/.test(config.exerciseType)
   return {
     ...config,
-    title: built.length > 1 ? (topic?.label ?? 'Exercices') : (type?.label ?? topic?.label ?? 'Exercices'),
+    title: isTheoryPage
+      ? (first?.title ?? type?.label ?? 'Théorie')
+      : built.length > 1
+        ? (topic?.label ?? 'Exercices')
+        : (type?.label ?? topic?.label ?? 'Exercices'),
     instruction: first?.instruction ?? type?.instruction ?? 'Complétez.',
     items: built.flatMap((block) => block.items),
     blocks: built,
@@ -1113,7 +1121,6 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
 export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
-  const firstPageCap = 4
 
   pages.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
@@ -1121,47 +1128,47 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
     const isCom =
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')
+    const isTheory = /gram-theorie-\d+$/.test(page.exerciseType)
+    // Théorie : ~6 blocs par feuille A4 (titres + tableaux densent vite).
+    const pageCap = isTheory ? 6 : 4
     const totalItems = worksheet.items.length
-    if (!page.continueOnNextPage || !isCom || totalItems <= firstPageCap) {
+    if (!page.continueOnNextPage || !(isCom || isTheory) || totalItems <= pageCap) {
       out.push({ ...worksheet, configIndex: index, isContinuation: false })
       return
     }
 
-    const headBlocks = worksheet.blocks.map((block) => ({
-      ...block,
-      items: block.items.slice(0, firstPageCap),
-      oralAnswerModes: block.oralAnswerModes?.slice(0, firstPageCap),
-      problemDraftGrids: block.problemDraftGrids?.slice(0, firstPageCap),
-    }))
-    const tailBlocks = worksheet.blocks
-      .map((block) => ({
-        ...block,
-        title: `${block.title} (suite)`,
-        instruction: 'Continuez. Répondez aux questions suivantes.',
-        document: undefined,
-        items: block.items.slice(firstPageCap),
-        oralAnswerModes: block.oralAnswerModes?.slice(firstPageCap),
-        problemDraftGrids: block.problemDraftGrids?.slice(firstPageCap),
-      }))
-      .filter((block) => block.items.length > 0)
+    const suiteInstruction = isTheory
+      ? 'Suite de la théorie.'
+      : 'Continuez. Répondez aux questions suivantes.'
+    const suiteTitleSuffix = isTheory ? 'Suite de la théorie.' : 'Suite des questions.'
 
-    out.push({
-      ...worksheet,
-      items: headBlocks.flatMap((block) => block.items),
-      blocks: headBlocks,
-      configIndex: index,
-      isContinuation: false,
-    })
-    if (tailBlocks.length > 0) {
+    let offset = 0
+    let part = 0
+    while (offset < totalItems) {
+      const sliceEnd = offset + pageCap
+      const headBlocks = worksheet.blocks
+        .map((block) => ({
+          ...block,
+          title: part === 0 ? block.title : `${block.title.replace(/ \(suite\)$/, '')} (suite)`,
+          instruction: part === 0 ? block.instruction : suiteInstruction,
+          document: part === 0 ? block.document : undefined,
+          items: block.items.slice(offset, sliceEnd),
+          oralAnswerModes: block.oralAnswerModes?.slice(offset, sliceEnd),
+          problemDraftGrids: block.problemDraftGrids?.slice(offset, sliceEnd),
+        }))
+        .filter((block) => block.items.length > 0)
+
       out.push({
         ...worksheet,
-        title: `${worksheet.title} — suite`,
-        instruction: 'Suite des questions.',
-        items: tailBlocks.flatMap((block) => block.items),
-        blocks: tailBlocks,
+        title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
+        instruction: part === 0 ? worksheet.instruction : suiteTitleSuffix,
+        items: headBlocks.flatMap((block) => block.items),
+        blocks: headBlocks,
         configIndex: index,
-        isContinuation: true,
+        isContinuation: part > 0,
       })
+      offset = sliceEnd
+      part++
     }
   })
 
