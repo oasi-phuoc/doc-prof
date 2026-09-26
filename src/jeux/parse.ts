@@ -66,8 +66,12 @@ export function entriesToText(typeId: string, entries: GameEntry[]): string {
   }
 }
 
-/** Parse le texte du panneau enseignant·e. */
-export function textToEntries(typeId: string, text: string): GameEntry[] {
+/** Parse le texte du panneau enseignant·e. Conserve les images par index si fournies. */
+export function textToEntries(
+  typeId: string,
+  text: string,
+  previous?: GameEntry[],
+): GameEntry[] {
   const lines = text
     .split(/\r?\n/)
     .map((line) => line.trim())
@@ -77,9 +81,10 @@ export function textToEntries(typeId: string, text: string): GameEntry[] {
   const tpl = templateFor(typeId)
   const maxLen = tpl?.maxTextLen ?? 40
 
+  let parsed: GameEntry[]
   switch (typeId) {
     case 'jeux-vrai-faux':
-      return lines.slice(0, 8).map((line) => {
+      parsed = lines.slice(0, 8).map((line) => {
         const m = /^(V|F)\s*[·.:\-–]?\s*(.+)$/i.exec(line)
         if (m) {
           return {
@@ -89,15 +94,17 @@ export function textToEntries(typeId: string, text: string): GameEntry[] {
         }
         return { text: clip(line, maxLen), isTrue: true }
       })
+      break
     case 'jeux-devinettes':
-      return lines.slice(0, 6).map((line) => {
+      parsed = lines.slice(0, 6).map((line) => {
         const parts = line.split('|').map((p) => p.trim()).filter(Boolean)
         const [word = 'mot', ...clues] = parts
         while (clues.length < 3) clues.push('…')
         return { text: clip(word, maxLen), clues: clues.slice(0, 3).map((c) => clip(c, 40)) }
       })
+      break
     case 'jeux-intrus':
-      return lines.slice(0, 4).flatMap((line, groupIndex) => {
+      parsed = lines.slice(0, 4).flatMap((line, groupIndex) => {
         const [left = '', right = ''] = line.split('|').map((p) => p.trim())
         const normals = left
           .split(/[,;]/)
@@ -108,15 +115,16 @@ export function textToEntries(typeId: string, text: string): GameEntry[] {
         const intrus = right || 'intrus'
         const category = `groupe-${groupIndex + 1}`
         return [
-          ...normals.map((text) => ({ text: clip(text, maxLen), category })),
+          ...normals.map((word) => ({ text: clip(word, maxLen), category })),
           { text: clip(intrus, maxLen), category, isIntrus: true },
         ]
       })
+      break
     case 'jeux-tri':
     case 'jeux-sept-familles': {
       const maxGroups = typeId === 'jeux-sept-familles' ? 7 : 3
-      const maxWords = typeId === 'jeux-sept-familles' ? 4 : 4
-      return lines.slice(0, maxGroups).flatMap((line) => {
+      const maxWords = 4
+      parsed = lines.slice(0, maxGroups).flatMap((line) => {
         const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)
         const category = clip((m?.[1] ?? 'Catégorie').trim(), 20)
         const words = (m?.[2] ?? line)
@@ -125,27 +133,42 @@ export function textToEntries(typeId: string, text: string): GameEntry[] {
           .filter(Boolean)
           .slice(0, maxWords)
         while (words.length < maxWords) words.push(`mot${words.length + 1}`)
-        return words.map((text) => ({ text: clip(text, maxLen), category }))
+        return words.map((word) => ({ text: clip(word, maxLen), category }))
       })
+      break
     }
     case 'jeux-bandes-mots':
-      return [{ text: clip(lines.join(' '), 120) }]
+      parsed = [{ text: clip(lines.join(' '), 120) }]
+      break
     case 'jeux-phrases-texte':
-      return lines.slice(0, 8).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, 8).map((line) => ({ text: clip(line, maxLen) }))
+      break
     case 'jeux-memory':
-      return lines.slice(0, 6).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
+      break
     case 'jeux-loto':
-      return lines.slice(0, 24).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, 24).map((line) => ({ text: clip(line, maxLen) }))
+      break
     case 'jeux-dominos':
-      return lines.slice(0, 8).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, 8).map((line) => ({ text: clip(line, maxLen) }))
+      break
     case 'jeux-plateau':
-      return lines.slice(0, 12).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, 12).map((line) => ({ text: clip(line, maxLen) }))
+      break
     case 'jeux-de-roue':
-      return lines.slice(0, 6).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
+      break
     case 'jeux-vocabulaire':
     default:
-      return lines.slice(0, tpl?.entryCount ?? 12).map((text) => ({ text: clip(text, maxLen) }))
+      parsed = lines.slice(0, tpl?.entryCount ?? 12).map((line) => ({ text: clip(line, maxLen) }))
   }
+
+  if (!previous?.length) return parsed
+  return parsed.map((entry, index) => {
+    const prev = previous[index]
+    if (!prev?.imageSrc) return entry
+    return { ...entry, imageSrc: prev.imageSrc }
+  })
 }
 
 function clip(value: string, max: number): string {

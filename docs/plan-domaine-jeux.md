@@ -165,9 +165,9 @@ Vocabulaire, Vrai/Faux, Devinettes (saisie texte ; zone image vide en attendant 
 
 Mémory (duplication + shuffle seed), Loto, Intrus.
 
-### Phase 4 — Images (à venir)
+### Phase 4 — Images ✅
 
-Upload sur Vocabulaire, puis généralisation famille A.
+Upload local (data URL) sur Vocabulaire et Mémory : JPG / PNG / WebP / SVG, validation taille, redimensionnement, `object-fit: cover`, conservation des images à l’édition du texte.
 
 ### Phase 5 — Templates liés ✅
 

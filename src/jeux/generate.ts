@@ -103,7 +103,7 @@ function memory(entries: GameEntry[], rng: Rng): MathItem[] {
     },
     {
       id: `m-i-${i}`,
-      text: e.text,
+      // Carte image sans le mot (la paire se lit au badge).
       imageSrc: e.imageSrc,
       variant: 'image' as const,
       badge: String(i + 1),
@@ -123,13 +123,17 @@ function memory(entries: GameEntry[], rng: Rng): MathItem[] {
 
 function loto(entries: GameEntry[], rng: Rng): MathItem[] {
   const pool = padEntries(entries, 18)
+  const byText = new Map(pool.map((e) => [e.text, e]))
   const words = pool.map((e) => e.text)
-  const boardWords = (seedCards: string[]) =>
-    seedCards.map((text, i) => ({
+  const toCard = (text: string, i: number): GameCard => {
+    const entry = byText.get(text)
+    return {
       id: `l-${text}-${i}`,
       text,
-      variant: 'word' as const,
-    }))
+      imageSrc: entry?.imageSrc,
+      variant: entry?.imageSrc ? 'default' : 'word',
+    }
+  }
   const b1 = shuffle(rng, [...words]).slice(0, 9)
   const b2 = shuffle(rng, [...words]).slice(0, 9)
   const call = shuffle(rng, [...words])
@@ -137,14 +141,14 @@ function loto(entries: GameEntry[], rng: Rng): MathItem[] {
     boardItem({
       cols: 3,
       rows: 3,
-      cards: boardWords(b1),
+      cards: b1.map((text, i) => toCard(text, i)),
       kind: 'loto',
       title: 'Grille joueur 1',
     }),
     boardItem({
       cols: 3,
       rows: 3,
-      cards: boardWords(b2),
+      cards: b2.map((text, i) => toCard(text, i)),
       kind: 'loto',
       title: 'Grille joueur 2',
     }),
@@ -152,9 +156,8 @@ function loto(entries: GameEntry[], rng: Rng): MathItem[] {
       cols: 3,
       rows: 6,
       cards: call.map((text, i) => ({
+        ...toCard(text, i),
         id: `call-${i}`,
-        text,
-        variant: 'word',
         badge: String(i + 1),
       })),
       kind: 'cards',

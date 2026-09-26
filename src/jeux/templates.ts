@@ -41,7 +41,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     entryCount: 12,
     cardCount: 12,
     maxTextLen: 20,
-    entryHint: 'Un mot par ligne (12 cartes). Image optionnelle plus tard.',
+    entryHint: '12 cartes : mot + image (JPG, PNG, WebP ou SVG).',
   },
   'jeux-vrai-faux': {
     id: 'jeux-vrai-faux',
@@ -84,7 +84,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     entryCount: 6,
     cardCount: 12,
     maxTextLen: 16,
-    entryHint: 'Un mot par ligne (6 paires → 12 cartes mélangées).',
+    entryHint: '6 paires : mot + image → 12 cartes mélangées.',
   },
   'jeux-loto': {
     id: 'jeux-loto',
@@ -92,11 +92,14 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     label: 'Loto',
     orientation: 'portrait',
     grid: { cols: 3, rows: 3 },
-    fields: [{ type: 'texte', required: true, maxLength: 16 }],
+    fields: [
+      { type: 'image' },
+      { type: 'texte', required: true, maxLength: 16 },
+    ],
     entryCount: 18,
     cardCount: 18,
     maxTextLen: 16,
-    entryHint: 'Liste de mots (18 max). Deux grilles 3×3 + paquet animateur.',
+    entryHint: '18 mots (+ images optionnelles). Deux grilles 3×3 + paquet animateur.',
   },
   'jeux-intrus': {
     id: 'jeux-intrus',

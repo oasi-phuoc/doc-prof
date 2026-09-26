@@ -45,7 +45,8 @@ import {
 import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/francais/vocab-learn'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { defaultEntriesFor } from '@/jeux/defaults'
-import { entriesToText, textToEntries } from '@/jeux/parse'
+import { GameContentPanel } from '@/jeux/GameContentPanel'
+import { entriesToText } from '@/jeux/parse'
 import { isJeuxType, templateFor } from '@/jeux/templates'
 import {
   AXES_DEFAULT_COLS,
@@ -1696,25 +1697,13 @@ function GeneratorPage() {
                 ))}
               </SelectBox>
               {isJeuxDomain && jeuxTemplate ? (
-                <label className="select-shell game-content-field">
-                  <span>Contenu</span>
-                  <textarea
-                    className="pill-input game-content-textarea"
-                    rows={Math.min(12, Math.max(4, jeuxTemplate.entryCount + 1))}
-                    value={jeuxText}
-                    spellCheck
-                    aria-label="Contenu du jeu"
-                    placeholder={jeuxTemplate.entryHint}
-                    onChange={(event) => {
-                      const nextText = event.target.value
-                      updatePage({
-                        gameText: nextText,
-                        gameEntries: textToEntries(activeBlock.exerciseType, nextText),
-                      })
-                    }}
-                  />
-                  <small className="muted">{jeuxTemplate.entryHint}</small>
-                </label>
+                <GameContentPanel
+                  typeId={activeBlock.exerciseType}
+                  template={jeuxTemplate}
+                  entries={activeBlock.gameEntries}
+                  text={jeuxText}
+                  onChange={(next) => updatePage(next)}
+                />
               ) : null}
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">

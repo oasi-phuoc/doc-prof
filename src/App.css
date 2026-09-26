@@ -1437,12 +1437,16 @@
   display:flex;align-items:center;justify-content:center;
   background:var(--jeux-soft);border-radius:5px;margin-bottom:1.5mm
 }
-.game-card-image img{width:100%;height:100%;object-fit:cover;display:block;border-radius:5px}
+.game-card-image{overflow:hidden}
+.game-card-image img{
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:5px
+}
 .game-card-empty{display:block;width:100%;height:100%;min-height:12mm}
 .game-card-word{
   font-size:11px;font-weight:700;line-height:1.2;text-align:center;color:var(--jeux-ink);
   word-break:break-word
 }
+.game-card-word.is-muted{color:var(--muted);font-weight:600;font-size:10px}
 .game-card-sub{display:block;font-size:8px;font-weight:600;color:var(--muted);text-align:center;margin-bottom:1mm}
 .game-card-clues{
   margin:0;padding:0 0 0 3.5mm;font-size:9px;line-height:1.35;color:var(--jeux-ink);text-align:left
@@ -1480,8 +1484,33 @@
 }
 .game-board.is-bands .game-card-grid{gap:2mm}
 .game-content-field{display:flex;flex-direction:column;gap:6px}
+.game-content-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em;text-transform:uppercase}
+.game-content-hint{margin:0;font-size:12px;line-height:1.35}
 .game-content-textarea{
   width:100%;min-height:7rem;resize:vertical;border-radius:14px!important;
   font-size:13px;line-height:1.4;padding:10px 12px;white-space:pre-wrap
+}
+.game-entry-list{
+  list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:6px;
+  max-height:18rem;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#faf9fc
+}
+.game-entry-row{display:grid;grid-template-columns:40px 1fr 28px;gap:6px;align-items:center}
+.game-entry-thumb{
+  width:40px;height:40px;padding:0;border:1px dashed #c9c2b8;border-radius:10px;
+  background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  color:var(--muted);font-size:18px;font-weight:700;line-height:1
+}
+.game-entry-thumb.has-image{border-style:solid;border-color:var(--jeux-accent,#0f6b5c)}
+.game-entry-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.game-entry-text{min-width:0;width:100%}
+.game-entry-clear{
+  width:28px;height:28px;border:1px solid var(--line);border-radius:8px;background:#fff;
+  color:var(--muted);font-size:16px;line-height:1;padding:0
+}
+.game-entry-clear:hover{color:var(--red);border-color:color-mix(in srgb,var(--red) 35%,#fff)}
+.game-entry-clear.is-spacer{visibility:hidden;pointer-events:none;border:0;background:transparent}
+.visually-hidden{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0
 }
 /* End */
