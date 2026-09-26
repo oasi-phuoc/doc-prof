@@ -11,6 +11,7 @@ import {
   type BankItem,
   type GameSource,
 } from './bank'
+import { resolveGameImageSrc } from './image-resolve'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from './image'
 import { entriesToText, resolveEntries, textToEntries } from './parse'
 import type { GameTemplate } from './templates'
@@ -48,6 +49,89 @@ function usesSeriesBack(typeId: string): boolean {
     typeId === 'jeux-intrus' ||
     typeId === 'jeux-tri' ||
     typeId === 'jeux-loto'
+  )
+}
+
+function GameAddWordRow({
+  disabled,
+  onAdd,
+}: {
+  disabled?: boolean
+  onAdd: (entry: GameEntry) => void
+}) {
+  const [label, setLabel] = useState('')
+  const [imageSrc, setImageSrc] = useState<string | undefined>()
+  const [error, setError] = useState<string | null>(null)
+  const fileRef = useRef<HTMLInputElement | null>(null)
+
+  async function onPick(file: File | undefined) {
+    if (!file) return
+    try {
+      const dataUrl = await readGameImageFile(file)
+      setImageSrc(dataUrl)
+      setError(null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Image refusée.')
+    }
+  }
+
+  return (
+    <div className="game-extra-words">
+      <b>Mots supplémentaires</b>
+      <div className="vocab-add-row">
+        <button
+          type="button"
+          className={`vocab-add-thumb${imageSrc ? ' has-image' : ''}`}
+          aria-label="Image du nouveau mot"
+          disabled={disabled}
+          onClick={() => fileRef.current?.click()}
+        >
+          {imageSrc ? <img src={imageSrc} alt="" /> : <span aria-hidden>+</span>}
+        </button>
+        <input
+          ref={fileRef}
+          className="visually-hidden"
+          type="file"
+          accept={GAME_IMAGE_ACCEPT}
+          onChange={(event) => {
+            void onPick(event.target.files?.[0])
+            event.target.value = ''
+          }}
+        />
+        <input
+          className="pill-input"
+          type="text"
+          value={label}
+          placeholder="Nouveau mot"
+          aria-label="Nouveau mot hors liste"
+          disabled={disabled}
+          onChange={(event) => setLabel(event.target.value)}
+        />
+        <button
+          type="button"
+          className="vocab-add-btn"
+          aria-label="Ajouter le mot"
+          title="Ajouter"
+          disabled={disabled || !label.trim()}
+          onClick={() => {
+            const word = label.trim()
+            if (!word) return
+            onAdd({ text: word, imageSrc: resolveGameImageSrc(word, imageSrc) })
+            setLabel('')
+            setImageSrc(undefined)
+            setError(null)
+          }}
+        >
+          +
+        </button>
+        {error ? (
+          <p className="questions-overflow-hint" role="alert">
+            {error}
+          </p>
+        ) : null}
+      </div>
+      <small className="muted">Hors liste · image optionnelle (+).</small>
+    </div>
   )
 }
 
@@ -210,23 +294,68 @@ export function GameContentPanel({
 
   function applySelection(ids: string[], items: BankItem[], patch: Partial<GameContentChange> = {}) {
     const byId = new Map(items.map((item) => [item.id, item]))
-    const picked = ids
+    const bankIds = ids.filter((id) => !id.startsWith('custom:'))
+    const customIds = ids.filter((id) => id.startsWith('custom:'))
+    const picked = bankIds
       .map((id) => byId.get(id))
       .filter((item): item is BankItem => Boolean(item))
-      .slice(0, maxCards)
-    const nextEntries = entriesFromBankItems(picked, maxCards)
+    const customEntries = resolveEntries(typeId, entries).filter((entry) => {
+      const key = `custom:${entry.text.trim().toLowerCase()}`
+      return customIds.includes(key) && Boolean(entry.text.trim())
+    })
+    const room = Math.max(0, maxCards - customEntries.length)
+    const bankPicked = picked.slice(0, room)
+    const nextEntries = [
+      ...entriesFromBankItems(bankPicked, bankPicked.length, resolveEntries(typeId, entries)),
+      ...customEntries,
+    ]
+    while (nextEntries.length < maxCards) nextEntries.push({ text: '' })
+    const nextIds = [
+      ...bankPicked.map((p) => p.id),
+      ...customEntries.map((e) => `custom:${e.text.trim().toLowerCase()}`),
+    ]
     onChange({
-      gameEntries: nextEntries,
+      gameEntries: nextEntries.slice(0, maxCards),
       gameText: entriesToText(
         typeId,
         nextEntries.filter((e) => e.text),
       ),
       gameSource: patch.gameSource ?? source,
       gameTopic: patch.gameTopic ?? topicId,
-      gameSelectedIds: picked.map((p) => p.id),
+      gameSelectedIds: nextIds,
       gameBackColor,
       gameSeriesName,
       ...patch,
+    })
+  }
+
+  function addExtraWord(entry: GameEntry) {
+    const current = resolveEntries(typeId, entries).filter((e) => e.text.trim())
+    if (current.length >= maxCards) return
+    const key = entry.text.trim().toLowerCase()
+    if (current.some((e) => e.text.trim().toLowerCase() === key)) return
+    const nextEntries = [...current, entry].slice(0, maxCards)
+    const bankLabels = new Set(bankItems.map((b) => b.label.toLowerCase()))
+    const mergedIds = [
+      ...selectedIds.filter((id) => {
+        if (id.startsWith('custom:')) return false
+        const item = bankItems.find((b) => b.id === id)
+        return Boolean(
+          item && nextEntries.some((e) => e.text.toLowerCase() === item.label.toLowerCase()),
+        )
+      }),
+      ...nextEntries
+        .filter((e) => !bankLabels.has(e.text.toLowerCase()))
+        .map((e) => `custom:${e.text.trim().toLowerCase()}`),
+    ]
+    onChange({
+      gameEntries: nextEntries,
+      gameText: entriesToText(typeId, nextEntries),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: mergedIds.slice(0, maxCards),
+      gameBackColor,
+      gameSeriesName,
     })
   }
 
@@ -390,6 +519,10 @@ export function GameContentPanel({
               )
             })}
           </div>
+          <GameAddWordRow
+            disabled={selectedIds.length >= maxCards}
+            onAdd={addExtraWord}
+          />
           <small className="muted">
             {typeId === 'jeux-vocabulaire'
               ? 'Impression recto-verso : images puis mots alignés (bord long).'
@@ -397,7 +530,9 @@ export function GameContentPanel({
                 ? 'Recto : paires image / mot · verso : logo ClairFLE + nom de série.'
                 : typeId === 'jeux-loto'
                   ? '15 grilles (3/page) · verso = série (logo ClairFLE) · lot animateur 27 mots.'
-                  : template.entryHint}
+                  : typeId === 'jeux-devinettes'
+                    ? 'Sélectionnez les mots (image) ; les indices se règlent en mode Libre.'
+                    : template.entryHint}
           </small>
         </div>
         {usesSeriesBack(typeId) ? (

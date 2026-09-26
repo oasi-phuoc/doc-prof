@@ -1,6 +1,11 @@
+import { resolveGameImageSrc } from './image-resolve'
 import type { GameEntry } from './types'
 
 /** Contenus démo déterministes (originaux) pour chaque template. */
+
+function withImage(text: string, extra: Partial<GameEntry> = {}): GameEntry {
+  return { text, imageSrc: resolveGameImageSrc(text), ...extra }
+}
 
 const VOCAB: GameEntry[] = [
   'pain',
@@ -15,63 +20,45 @@ const VOCAB: GameEntry[] = [
   'soupe',
   'yaourt',
   'fruit',
-].map((text) => ({ text }))
+].map((text) => withImage(text))
 
 const DEVINETTES: GameEntry[] = [
-  {
-    text: 'pomme',
-    imageSrc: '/assets/words/lecture/pomme.webp',
+  withImage('pomme', {
     clues: ['C’est un fruit.', 'C’est souvent rouge ou verte.', 'On la croque.'],
-  },
-  {
-    text: 'chat',
-    imageSrc: '/assets/words/lecture/chat.webp',
+  }),
+  withImage('chat', {
     clues: ['C’est un animal.', 'Il miaule.', 'Il aime le lait.'],
-  },
-  {
-    text: 'livre',
-    imageSrc: '/assets/words/lecture/livre.webp',
+  }),
+  withImage('livre', {
     clues: ['On le lit.', 'Il a des pages.', 'Il est à la bibliothèque.'],
-  },
-  {
-    text: 'soleil',
-    imageSrc: '/assets/words/lecture/soleil.webp',
+  }),
+  withImage('soleil', {
     clues: ['Il brille le jour.', 'Il donne de la lumière.', 'Il chauffe.'],
-  },
-  {
-    text: 'vélo',
-    imageSrc: '/assets/words/lecture/vélo.webp',
+  }),
+  withImage('vélo', {
     clues: ['Il a deux roues.', 'On pédale.', 'On porte un casque.'],
-  },
-  {
-    text: 'pain',
-    imageSrc: '/assets/words/lecture/pain.webp',
+  }),
+  withImage('pain', {
     clues: ['On l’achète à la boulangerie.', 'On le mange.', 'Il est croustillant.'],
-  },
-  {
-    text: 'maison',
-    imageSrc: '/assets/words/lecture/maison.webp',
+  }),
+  withImage('maison', {
     clues: ['On y habite.', 'Elle a un toit.', 'Elle a des portes et des fenêtres.'],
-  },
-  {
-    text: 'chien',
-    imageSrc: '/assets/words/lecture/chien.webp',
+  }),
+  withImage('chien', {
     clues: ['C’est un animal.', 'Il aboie.', 'C’est un ami de l’humain.'],
-  },
-  {
-    text: 'chaise',
-    imageSrc: '/assets/words/lecture/chaise.webp',
+  }),
+  withImage('chaise', {
     clues: ['On s’assoit dessus.', 'Elle a quatre pieds.', 'Elle est dans la salle.'],
-  },
+  }),
 ]
 
 const MEMORY: GameEntry[] = [
-  { text: 'maison', imageSrc: '/assets/words/lecture/maison.webp' },
-  { text: 'fenêtre', imageSrc: '/assets/words/lecture/fenêtre.webp' },
-  { text: 'chaise', imageSrc: '/assets/words/lecture/chaise.webp' },
-  { text: 'lampe', imageSrc: '/assets/words/lecture/lampe.webp' },
-  { text: 'chat', imageSrc: '/assets/words/lecture/chat.webp' },
-  { text: 'pomme', imageSrc: '/assets/words/lecture/pomme.webp' },
+  withImage('maison'),
+  withImage('fenêtre'),
+  withImage('chaise'),
+  withImage('lampe'),
+  withImage('chat'),
+  withImage('pomme'),
 ]
 
 const LOTO: GameEntry[] = [
@@ -102,10 +89,7 @@ const LOTO: GameEntry[] = [
   'riz',
   'salade',
   'tomate',
-].map((text) => ({
-  text,
-  imageSrc: `/assets/words/lecture/${text}.webp`,
-}))
+].map((text) => withImage(text))
 
 const INTRUS: GameEntry[] = [
   { text: 'table', words: ['chat', 'chien', 'oiseau', 'poisson'] },
@@ -139,10 +123,7 @@ const DOMINOS: GameEntry[] = [
   'cahier',
   'crayon',
   'arbre',
-].map((text) => ({
-  text,
-  imageSrc: `/assets/words/lecture/${text}.webp`,
-}))
+].map((text) => withImage(text))
 
 /** 3 catégories × 7 mots (+ 3 étiquettes catégorie = 24 cartes). */
 const TRI: GameEntry[] = [

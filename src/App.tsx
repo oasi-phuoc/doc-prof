@@ -1716,7 +1716,13 @@ function GeneratorPage() {
   return (
     <div
       className="app-shell"
-      style={{ '--purple': themeColor, '--theme-on': contrastOnTheme(themeColor) } as CSSProperties}
+      style={
+        {
+          '--purple': themeColor,
+          '--lavender': `color-mix(in srgb, ${themeColor} 14%, #fff)`,
+          '--theme-on': contrastOnTheme(themeColor),
+        } as CSSProperties
+      }
     >
       <Header onCreate={() => undefined} generator />
       <main className="generator-page" id="top">
@@ -1869,20 +1875,6 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
-              {isJeuxDomain && jeuxTemplate ? (
-                <GameContentPanel
-                  typeId={activeBlock.exerciseType}
-                  template={jeuxTemplate}
-                  entries={activeBlock.gameEntries}
-                  text={jeuxText}
-                  gameSource={activeBlock.gameSource}
-                  gameTopic={activeBlock.gameTopic}
-                  gameSelectedIds={activeBlock.gameSelectedIds}
-                  gameBackColor={activeBlock.gameBackColor}
-                  gameSeriesName={activeBlock.gameSeriesName}
-                  onChange={(next) => updatePage(next)}
-                />
-              ) : null}
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>
@@ -1980,6 +1972,20 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              {isJeuxDomain && jeuxTemplate ? (
+                <GameContentPanel
+                  typeId={activeBlock.exerciseType}
+                  template={jeuxTemplate}
+                  entries={activeBlock.gameEntries}
+                  text={jeuxText}
+                  gameSource={activeBlock.gameSource}
+                  gameTopic={activeBlock.gameTopic}
+                  gameSelectedIds={activeBlock.gameSelectedIds}
+                  gameBackColor={activeBlock.gameBackColor}
+                  gameSeriesName={activeBlock.gameSeriesName}
+                  onChange={(next) => updatePage(next)}
+                />
+              ) : null}
               {isReperage || isPhraseDomain || isJeuxDomain || isVocabLearn || isGramTheory ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>

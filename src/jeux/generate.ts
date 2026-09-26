@@ -4,6 +4,7 @@ import type { Rng } from '@/math/rng'
 import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
 import { DEFAULT_SEPT_FAMILLES } from './defaults'
+import { resolveGameImageSrc } from './image-resolve'
 import { resolveEntries } from './parse'
 import { isJeuxType, templateFor } from './templates'
 import type { GameBoard, GameCard, GameEntry, GamePanel, ScatterWord } from './types'
@@ -67,7 +68,10 @@ function boardItem(board: GameBoard, answer = ''): MathItem {
 }
 
 function padEntries(entries: GameEntry[], n: number, fill = '…'): GameEntry[] {
-  const out = entries.slice(0, n)
+  const out: GameEntry[] = entries.slice(0, n).map((e) => ({
+    ...e,
+    imageSrc: resolveGameImageSrc(e.text, e.imageSrc),
+  }))
   while (out.length < n) out.push({ text: `${fill}${out.length + 1}` })
   return out
 }
