@@ -38,13 +38,38 @@ export type GameCard = {
   backColor?: string
 }
 
+/** Sous-grille (loto : 3 grilles par page). */
+export type GamePanel = {
+  title?: string
+  cols: number
+  rows: number
+  cards: GameCard[]
+  /** Libellé thème / série (verso loto). */
+  themeLabel?: string
+  themeSub?: string
+}
+
 export type GameBoard = {
   title?: string
   cols: number
   rows: number
   cards: GameCard[]
   /** Style de grille. */
-  kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes' | 'memory'
+  kind?:
+    | 'cards'
+    | 'loto'
+    | 'bands'
+    | 'plateau'
+    | 'die'
+    | 'devinettes'
+    | 'memory'
+    | 'loto-page'
+    | 'loto-back'
+    | 'loto-call'
   /** Couleur de dos (mémory verso), blanc si absent. */
   backColor?: string
+  /** Plusieurs grilles encadrées sur une même feuille (loto). */
+  panels?: GamePanel[]
+  /** Thème / série du loto (verso). */
+  themeLabel?: string
 }

@@ -332,7 +332,7 @@ export const exerciseTypes: ExerciseType[] = [
     'jeux-loto',
     'jeux-cartes',
     'Loto',
-    'Grilles joueurs et paquet animateur tirés parmi une liste de mots.',
+    '15 grilles (3 par page), verso thème vocabulaire, lot animateur 27 mots.',
     'Cochez les mots tirés sur votre grille.',
     'texte',
     { preferredColumns: 1 },

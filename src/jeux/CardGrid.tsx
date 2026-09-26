@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import type { GameBoard, GameCard } from './types'
+import type { GameBoard, GameCard, GamePanel } from './types'
 
 function CardFace({ card }: { card: GameCard }) {
   const variant = card.variant ?? 'default'
@@ -67,8 +67,76 @@ function CardFace({ card }: { card: GameCard }) {
   )
 }
 
+function PanelGrid({ panel }: { panel: GamePanel }) {
+  return (
+    <div
+      className="game-card-grid"
+      style={
+        {
+          '--game-cols': panel.cols,
+          '--game-rows': panel.rows,
+        } as CSSProperties
+      }
+      aria-label={panel.title ?? 'Grille'}
+    >
+      {panel.cards.map((card) => (
+        <CardFace key={card.id} card={card} />
+      ))}
+    </div>
+  )
+}
+
+function LotoPanelFace({ panel, mode }: { panel: GamePanel; mode: 'page' | 'back' }) {
+  if (mode === 'back') {
+    return (
+      <div className="loto-panel is-back">
+        <div className="loto-panel-theme">
+          <span className="loto-panel-theme-kicker">Série</span>
+          <strong className="loto-panel-theme-label">{panel.themeLabel ?? 'Loto'}</strong>
+          {panel.themeSub ? <small className="loto-panel-theme-sub">{panel.themeSub}</small> : null}
+          {panel.title ? <span className="loto-panel-theme-grid">{panel.title}</span> : null}
+        </div>
+        {panel.cards.length > 0 ? (
+          <div className="loto-panel-theme-thumbs" aria-hidden>
+            {panel.cards.slice(0, 6).map((card) =>
+              card.imageSrc ? (
+                <img key={card.id} src={card.imageSrc} alt="" />
+              ) : null,
+            )}
+          </div>
+        ) : null}
+      </div>
+    )
+  }
+  return (
+    <div className="loto-panel">
+      {panel.title ? <p className="loto-panel-title">{panel.title}</p> : null}
+      <PanelGrid panel={panel} />
+    </div>
+  )
+}
+
 export function CardGrid({ board }: { board: GameBoard }) {
   const kind = board.kind ?? 'cards'
+
+  if (kind === 'loto-page' || kind === 'loto-back') {
+    const mode = kind === 'loto-back' ? 'back' : 'page'
+    return (
+      <div className={`game-board is-${kind}`}>
+        {board.title ? <p className="game-board-title">{board.title}</p> : null}
+        <div className="loto-panels" aria-label={board.title ?? 'Grilles de loto'}>
+          {(board.panels ?? []).map((panel, index) => (
+            <LotoPanelFace
+              key={`${panel.title ?? 'panel'}-${index}`}
+              panel={panel}
+              mode={mode}
+            />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className={`game-board is-${kind}`}>
       {board.title ? <p className="game-board-title">{board.title}</p> : null}

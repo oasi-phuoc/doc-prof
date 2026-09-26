@@ -1,3 +1,4 @@
+import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { exerciseTypeById } from '@/math/catalog'
 import type { Rng } from '@/math/rng'
 import { shuffle } from '@/math/rng'
@@ -5,7 +6,7 @@ import type { MathItem } from '@/math/types'
 import { DEFAULT_SEPT_FAMILLES } from './defaults'
 import { resolveEntries } from './parse'
 import { isJeuxType, templateFor } from './templates'
-import type { GameBoard, GameCard, GameEntry } from './types'
+import type { GameBoard, GameCard, GameEntry, GamePanel } from './types'
 
 export type JeuxBatch = {
   items: MathItem[]
@@ -17,6 +18,17 @@ export type JeuxGenerateOptions = {
   gameEntries?: GameEntry[]
   /** Dos des cartes Mémory (hex), blanc si absent. */
   gameBackColor?: string
+  /** Thème FR (loto verso — série). */
+  gameTopic?: string
+}
+
+function lotoThemeLabel(topicId?: string): { label: string; sub?: string } {
+  if (!topicId || topicId === 'tous' || topicId === 'libre') {
+    return { label: 'Loto', sub: 'Vocabulaire' }
+  }
+  const meta = VOCAB_TOPIC_META.find((t) => t.id === topicId)
+  if (!meta) return { label: 'Loto', sub: 'Vocabulaire' }
+  return { label: meta.label, sub: meta.vocab }
 }
 
 function boardItem(board: GameBoard, answer = ''): MathItem {
@@ -185,49 +197,112 @@ function memory(entries: GameEntry[], rng: Rng, backColor?: string): MathItem[] 
   ]
 }
 
-function loto(entries: GameEntry[], rng: Rng): MathItem[] {
-  const pool = padEntries(entries, 18)
+/** 15 grilles 3×3 distinctes tirées dans un lot de 27 mots. */
+function uniqueLotoGrids(words: string[], count: number, size: number, rng: Rng): string[][] {
+  const grids: string[][] = []
+  const seen = new Set<string>()
+  let guard = 0
+  while (grids.length < count && guard < 800) {
+    guard += 1
+    const picks = shuffle(rng, [...words]).slice(0, size)
+    const sig = [...picks].sort((a, b) => a.localeCompare(b, 'fr')).join('|')
+    if (seen.has(sig)) continue
+    seen.add(sig)
+    grids.push(picks)
+  }
+  while (grids.length < count) {
+    grids.push(shuffle(rng, [...words]).slice(0, size))
+  }
+  return grids
+}
+
+/**
+ * Loto : 15 grilles (3 par page) + verso thème, puis lot animateur 27 mots.
+ */
+function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
+  const pool = padEntries(entries, 27)
   const byText = new Map(pool.map((e) => [e.text, e]))
   const words = pool.map((e) => e.text)
-  const toCard = (text: string, i: number): GameCard => {
+  const theme = lotoThemeLabel(topicId)
+  const toCard = (text: string, i: number, prefix: string): GameCard => {
     const entry = byText.get(text)
     return {
-      id: `l-${text}-${i}`,
+      id: `${prefix}-${i}-${text}`,
       text,
       imageSrc: entry?.imageSrc,
       variant: entry?.imageSrc ? 'default' : 'word',
     }
   }
-  const b1 = shuffle(rng, [...words]).slice(0, 9)
-  const b2 = shuffle(rng, [...words]).slice(0, 9)
+  const grids = uniqueLotoGrids(words, 15, 9, rng)
+  const items: MathItem[] = []
+  const pages = 5
+  for (let page = 0; page < pages; page++) {
+    const slice = grids.slice(page * 3, page * 3 + 3)
+    const rectoPanels: GamePanel[] = slice.map((picks, local) => {
+      const n = page * 3 + local + 1
+      return {
+        title: `Grille ${n}`,
+        cols: 3,
+        rows: 3,
+        cards: picks.map((text, i) => toCard(text, i, `g${n}`)),
+        themeLabel: theme.label,
+        themeSub: theme.sub,
+      }
+    })
+    items.push(
+      boardItem({
+        cols: 3,
+        rows: 3,
+        cards: [],
+        kind: 'loto-page',
+        themeLabel: theme.label,
+        panels: rectoPanels,
+        title: `Grilles ${page * 3 + 1} à ${page * 3 + 3} — découpez chaque cadre`,
+      }),
+    )
+    // Verso : même ordre (flip bord long) — thème / série du vocabulaire.
+    const versoPanels: GamePanel[] = rectoPanels.map((panel) => ({
+      title: panel.title,
+      cols: 3,
+      rows: 3,
+      cards: panel.cards
+        .filter((c) => c.imageSrc)
+        .slice(0, 6)
+        .map((c, i) => ({
+          id: `vb-${panel.title}-${i}`,
+          imageSrc: c.imageSrc,
+          variant: 'image' as const,
+        })),
+      themeLabel: theme.label,
+      themeSub: theme.sub,
+    }))
+    items.push(
+      boardItem({
+        cols: 3,
+        rows: 3,
+        cards: [],
+        kind: 'loto-back',
+        themeLabel: theme.label,
+        panels: versoPanels,
+        title: `Verso — série « ${theme.label} »`,
+      }),
+    )
+  }
   const call = shuffle(rng, [...words])
-  return [
+  items.push(
     boardItem({
       cols: 3,
-      rows: 3,
-      cards: b1.map((text, i) => toCard(text, i)),
-      kind: 'loto',
-      title: 'Grille joueur 1',
-    }),
-    boardItem({
-      cols: 3,
-      rows: 3,
-      cards: b2.map((text, i) => toCard(text, i)),
-      kind: 'loto',
-      title: 'Grille joueur 2',
-    }),
-    boardItem({
-      cols: 3,
-      rows: 6,
+      rows: 9,
       cards: call.map((text, i) => ({
-        ...toCard(text, i),
-        id: `call-${i}`,
+        ...toCard(text, i, 'call'),
         badge: String(i + 1),
       })),
-      kind: 'cards',
-      title: 'Paquet animateur (ordre de tirage)',
+      kind: 'loto-call',
+      themeLabel: theme.label,
+      title: `Lot animateur — 27 mots (série « ${theme.label} »)`,
     }),
-  ]
+  )
+  return items
 }
 
 function intrus(entries: GameEntry[]): MathItem[] {
@@ -512,7 +587,7 @@ export function tryGenerateJeuxBatch(
       items = memory(entries, rng, options.gameBackColor)
       break
     case 'jeux-loto':
-      items = loto(entries, rng)
+      items = loto(entries, rng, options.gameTopic)
       break
     case 'jeux-intrus':
       items = intrus(entries)

@@ -90,10 +90,12 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 16 },
     ],
-    entryCount: 18,
-    cardCount: 18,
+    entryCount: 27,
+    cardCount: 27,
+    duplex: true,
     maxTextLen: 16,
-    entryHint: '18 mots (+ images optionnelles). Deux grilles 3×3 + paquet animateur.',
+    entryHint:
+      '27 mots · 15 grilles (3 par page) + verso thème · lot animateur.',
   },
   'jeux-intrus': {
     id: 'jeux-intrus',

@@ -344,8 +344,36 @@ export type MathItem = {
     title?: string
     cols: number
     rows: number
-    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes' | 'memory'
+    kind?:
+      | 'cards'
+      | 'loto'
+      | 'bands'
+      | 'plateau'
+      | 'die'
+      | 'devinettes'
+      | 'memory'
+      | 'loto-page'
+      | 'loto-back'
+      | 'loto-call'
     backColor?: string
+    themeLabel?: string
+    panels?: Array<{
+      title?: string
+      cols: number
+      rows: number
+      themeLabel?: string
+      themeSub?: string
+      cards: Array<{
+        id: string
+        text?: string
+        imageSrc?: string
+        lines?: string[]
+        variant?: string
+        badge?: string
+        textRight?: string
+        backColor?: string
+      }>
+    }>
     cards: Array<{
       id: string
       text?: string

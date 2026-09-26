@@ -1500,6 +1500,64 @@
 .game-domino-half{font-size:11px;font-weight:700;text-align:center;padding:1mm}
 .game-domino-sep{width:1px;align-self:stretch;background:var(--jeux-cut);border-left:1px dashed var(--jeux-cut)}
 .game-board.is-loto .game-card{min-height:18mm;border-style:solid}
+.game-board.is-loto-page,
+.game-board.is-loto-back{
+  flex:1 1 auto;min-height:0;display:flex;flex-direction:column
+}
+.loto-panels{
+  flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:3mm
+}
+.loto-panel{
+  flex:1 1 0;min-height:0;
+  border:1.6px dashed var(--jeux-cut);
+  border-radius:7px;padding:2.5mm 3mm;
+  display:flex;flex-direction:column;background:#fff;
+  box-sizing:border-box
+}
+.loto-panel-title{
+  margin:0 0 1.5mm;font-size:10px;font-weight:800;color:var(--jeux-ink);
+  letter-spacing:.02em;text-transform:uppercase;flex:0 0 auto
+}
+.loto-panel .game-card-grid{
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,3),minmax(0,1fr));
+  align-content:stretch;--game-card-gap:1.8mm
+}
+.loto-panel .game-card{
+  min-height:0;height:100%;padding:1.5mm;border-style:solid;border-color:var(--jeux-line)
+}
+.loto-panel .game-card-image{min-height:0;margin-bottom:1mm;flex:1 1 auto}
+.loto-panel .game-card-word{font-size:11px;font-weight:800}
+.loto-panel.is-back{
+  border-style:solid;border-color:var(--jeux-accent);
+  background:color-mix(in srgb,var(--jeux-accent) 6%,#fff);
+  align-items:center;justify-content:center;gap:3mm;padding:4mm
+}
+.loto-panel-theme{
+  display:flex;flex-direction:column;align-items:center;gap:1.5mm;text-align:center
+}
+.loto-panel-theme-kicker{
+  font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)
+}
+.loto-panel-theme-label{
+  font-family:Fraunces,serif;font-size:22px;font-weight:600;line-height:1.1;color:var(--jeux-ink)
+}
+.loto-panel-theme-sub{font-size:11px;color:var(--muted);line-height:1.3;max-width:90%}
+.loto-panel-theme-grid{font-size:11px;font-weight:700;color:var(--jeux-accent)}
+.loto-panel-theme-thumbs{
+  display:flex;flex-wrap:wrap;gap:2mm;justify-content:center;max-width:100%
+}
+.loto-panel-theme-thumbs img{
+  width:14mm;height:14mm;object-fit:cover;border-radius:5px;border:1px solid var(--jeux-line);background:#fff
+}
+.game-board.is-loto-call .game-card-grid{
+  flex:1 1 auto;min-height:0;
+  grid-template-rows:repeat(var(--game-rows,9),minmax(0,1fr));
+  align-content:stretch;--game-card-gap:1.6mm
+}
+.game-board.is-loto-call .game-card{min-height:0;height:100%;padding:1.2mm;border-style:solid}
+.game-board.is-loto-call .game-card-image{min-height:0;margin-bottom:0.8mm;flex:1 1 auto}
+.game-board.is-loto-call .game-card-word{font-size:10px;font-weight:700}
 .game-board.is-plateau .game-card{min-height:16mm}
 .game-board.is-die .game-card{
   min-height:32mm;border-style:solid;border-color:var(--jeux-accent);

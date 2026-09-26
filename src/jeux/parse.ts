@@ -155,7 +155,7 @@ export function textToEntries(
       parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
       break
     case 'jeux-loto':
-      parsed = lines.slice(0, 24).map((line) => ({ text: clip(line, maxLen) }))
+      parsed = lines.slice(0, 27).map((line) => ({ text: clip(line, maxLen) }))
       break
     case 'jeux-dominos':
       parsed = lines.slice(0, 8).map((line) => ({ text: clip(line, maxLen) }))

@@ -304,7 +304,9 @@ export function GameContentPanel({
               ? 'Impression recto-verso : images puis mots alignés (bord long).'
               : typeId === 'jeux-memory'
                 ? 'Recto : paires image / mot mélangées · verso : dos blanc ou couleur.'
-                : template.entryHint}
+                : typeId === 'jeux-loto'
+                  ? '15 grilles (3/page) · verso = série / thème · lot animateur 27 mots.'
+                  : template.entryHint}
           </small>
         </div>
         {typeId === 'jeux-memory' ? (

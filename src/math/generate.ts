@@ -1070,6 +1070,7 @@ function buildSingleBlock(
   const jeux = tryGenerateJeuxBatch(config.exerciseType, rng, {
     gameEntries: config.gameEntries,
     gameBackColor: config.gameBackColor,
+    gameTopic: config.gameTopic,
   })
   if (jeux) {
     return {
@@ -1183,6 +1184,48 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
           isContinuation: false,
         })
       })
+      return
+    }
+    // Loto : paires (page grilles + verso thème), puis lot animateur.
+    if (page.exerciseType === 'jeux-loto' && worksheet.items.length > 0) {
+      const block = worksheet.blocks[0]
+      const pushSheet = (item: (typeof worksheet.items)[number], side: string, instruction: string) => {
+        out.push({
+          ...worksheet,
+          title: side ? `${worksheet.title} — ${side}` : worksheet.title,
+          instruction,
+          items: [item],
+          blocks: block
+            ? [{ ...block, title: side || block.title, instruction, items: [item] }]
+            : worksheet.blocks,
+          configIndex: index,
+          isContinuation: false,
+        })
+      }
+      let i = 0
+      while (i < worksheet.items.length) {
+        const cur = worksheet.items[i]!
+        const next = worksheet.items[i + 1]
+        const kind = cur.gameBoard?.kind
+        if (kind === 'loto-page' && next?.gameBoard?.kind === 'loto-back') {
+          pushSheet(cur, 'grilles', worksheet.instruction)
+          pushSheet(
+            next,
+            'verso thème',
+            'Verso — série / thème. Imprimez en recto-verso (bord long), découpez les cadres.',
+          )
+          i += 2
+          continue
+        }
+        pushSheet(
+          cur,
+          kind === 'loto-call' ? 'lot animateur' : '',
+          kind === 'loto-call'
+            ? 'Lot animateur — tirez les mots dans l’ordre indiqué.'
+            : worksheet.instruction,
+        )
+        i += 1
+      }
       return
     }
     // Théorie : ~6 blocs par feuille A4 (titres + tableaux densent vite).
