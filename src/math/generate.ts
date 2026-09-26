@@ -1112,9 +1112,58 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
 
 export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
   let exerciseNo = 1
-  return pages.map((page, index) => {
+  const out: WorksheetPage[] = []
+  const firstPageCap = 4
+
+  pages.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
     exerciseNo += worksheet.blocks.length
-    return worksheet
+
+    const isCom =
+      page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')
+    const totalItems = worksheet.items.length
+    if (!page.continueOnNextPage || !isCom || totalItems <= firstPageCap) {
+      out.push({ ...worksheet, configIndex: index, isContinuation: false })
+      return
+    }
+
+    const headBlocks = worksheet.blocks.map((block) => ({
+      ...block,
+      items: block.items.slice(0, firstPageCap),
+      oralAnswerModes: block.oralAnswerModes?.slice(0, firstPageCap),
+      problemDraftGrids: block.problemDraftGrids?.slice(0, firstPageCap),
+    }))
+    const tailBlocks = worksheet.blocks
+      .map((block) => ({
+        ...block,
+        title: `${block.title} (suite)`,
+        instruction: 'Continuez. Répondez aux questions suivantes.',
+        document: undefined,
+        items: block.items.slice(firstPageCap),
+        oralAnswerModes: block.oralAnswerModes?.slice(firstPageCap),
+        problemDraftGrids: block.problemDraftGrids?.slice(firstPageCap),
+      }))
+      .filter((block) => block.items.length > 0)
+
+    out.push({
+      ...worksheet,
+      items: headBlocks.flatMap((block) => block.items),
+      blocks: headBlocks,
+      configIndex: index,
+      isContinuation: false,
+    })
+    if (tailBlocks.length > 0) {
+      out.push({
+        ...worksheet,
+        title: `${worksheet.title} — suite`,
+        instruction: 'Suite des questions.',
+        items: tailBlocks.flatMap((block) => block.items),
+        blocks: tailBlocks,
+        configIndex: index,
+        isContinuation: true,
+      })
+    }
   })
+
+  return out
 }

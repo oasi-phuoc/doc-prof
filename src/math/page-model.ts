@@ -11,6 +11,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     verbGroup: page.verbGroup,
     problemDraftGrids: page.problemDraftGrids,
     oralAnswerModes: page.oralAnswerModes,
+    continueOnNextPage: page.continueOnNextPage,
     coordLibre: page.coordLibre,
     coordCols: page.coordCols,
     coordRows: page.coordRows,

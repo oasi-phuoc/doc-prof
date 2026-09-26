@@ -59,7 +59,9 @@ Mots étrangers, métaphores, jeux de mots, inversion sujet/verbe, imparfait / c
    - notice / fiche / mode d’emploi simple
    - invitation écrite
    - avis / message de forum
-6. Banque : **20 textes uniques par niveau** (`a1` / `a2` / `b1`), étiquetés par thème(s) communicatif(s).
+6. Banque : **20 textes uniques par thème × par niveau** (`a1` / `a2` / `b1`).
+   Les 13 thèmes communicatifs (`fr-presenter` … `fr-loisirs`) sont chacun couverts :
+   **20 × 13 × 3 = 780** textes. Génération : `node scripts/build-comprehension-ecrite-banks.mjs`.
 
 ## Questions (adapter au niveau)
 
@@ -92,4 +94,4 @@ Mots étrangers, métaphores, jeux de mots, inversion sujet/verbe, imparfait / c
 
 ## Terminé quand
 
-Skill à jour · banque ≥ 20 textes / niveau · tirage déterministe via `difficulty` · anciens `written` des thèmes vidés · lint / build OK.
+Skill à jour · banque = 20 textes / thème / niveau (780) · tirage déterministe via `difficulty` · anciens `written` des thèmes vidés · lint / build OK.

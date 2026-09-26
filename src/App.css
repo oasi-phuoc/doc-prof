@@ -123,9 +123,11 @@
   border-color:#dc2626;background:#fef2f2;color:#b91c1c;
   box-shadow:0 0 0 3px #dc262633
 }
-.questions-overflow-hint{
-  margin:0;color:#b91c1c;font-size:11px;font-weight:600;line-height:1.35
+.tab-suite{
+  display:block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);line-height:1.1;margin-top:1px
 }
+.page-tabs button.active .tab-suite{color:var(--purple)}
 .workspace{overflow:visible}
 .settings-panel{overflow:visible}
 .field-group{overflow:visible}
@@ -315,24 +317,34 @@
   font-family:inherit
 }
 .oral-qcm-options{
-  display:flex;flex-direction:column;gap:6px;width:100%
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:auto auto;
+  grid-auto-flow:column;
+  column-gap:10px;
+  row-gap:4px;
+  width:100%;
+  align-items:start;
 }
 .oral-qcm-options.images{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
 }
+/* Ligne 1 = libellés, ligne 2 = A □ B □ C □ (flux : textA, textB, textC, checkA, checkB, checkC) */
 .oral-qcm-option{
-  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
-  width:100%;min-width:0;padding:0;border:none;background:transparent
+  display:contents;
 }
 .oral-qcm-option-text{
-  font-size:13px;font-weight:500;line-height:1.35;text-align:left;color:var(--ink)
+  font-size:13px;font-weight:500;line-height:1.35;text-align:center;color:var(--ink);
+  min-width:0;padding:0 2px;
 }
 .oral-qcm-option-label{
   font-size:11px;font-weight:600;line-height:1.2;text-align:center;width:100%
 }
 .oral-qcm-check{
-  display:inline-flex;align-items:center;gap:4px;
-  font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--ink)
+  display:inline-flex;align-items:center;justify-content:center;gap:4px;
+  font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--ink);
+  width:100%;padding-top:2px;
 }
 .oral-qcm-box{
   display:inline-flex;align-items:center;justify-content:center;
@@ -346,8 +358,13 @@
   color:var(--purple)
 }
 .oral-qcm-img{
-  width:100%;max-height:4.2cm;object-fit:contain;display:block;
-  border:1px solid var(--line);background:#fff
+  width:100%;max-height:3.2cm;object-fit:contain;display:block;
+  border:1px solid var(--line);background:#fff;grid-row:1;
+}
+/* Mode images : chaque option redevient une cellule (pas display:contents) */
+.oral-qcm-options.images .oral-qcm-option{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  width:100%;min-width:0;padding:0;border:none;background:transparent
 }
 .oral-mode-chip{text-transform:none;letter-spacing:0}
 

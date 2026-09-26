@@ -376,6 +376,11 @@ export type ExerciseBlock = {
   problemDraftGrids?: boolean[]
   /** Modes de réponse par question (compréhension orale) : QCM / texte / images. */
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
+  /**
+   * Compréhension orale / écrite : les questions qui ne tiennent pas sur la fiche
+   * continuent sur la page suivante (saut de page automatique).
+   */
+  continueOnNextPage?: boolean
   /** Mode libre : l’enseignant·e compose le tableau de repérage. */
   coordLibre?: boolean
   coordCols?: number
@@ -444,4 +449,8 @@ export type WorksheetPage = PageConfig & {
   blocks: WorksheetBlock[]
   /** Valeurs partagées (ex. t = 3) pour les évaluations d'expressions. */
   givens?: AlgebraGiven[]
+  /** Index de la PageConfig d’origine (aperçu multi-feuilles / suite). */
+  configIndex?: number
+  /** Feuille de suite (questions débordantes). */
+  isContinuation?: boolean
 }

@@ -36,17 +36,30 @@ function choice(row: FrChoice): MathItem {
   return { layout: 'select', prompt: row.prompt, options: row.options, answer: row.answer }
 }
 
-function oralChoice(row: FrOralChoice): MathItem {
+function qcmChoice(
+  row: FrChoice & { optionImages?: string[]; imagesAvailable?: boolean },
+  rng?: Rng,
+): MathItem {
+  const options = rng ? shuffle(rng, row.options) : row.options
+  const images = row.optionImages
+  const optionImages =
+    images && images.length === row.options.length && rng
+      ? options.map((opt) => images[row.options.indexOf(opt)]!)
+      : images
   return {
     layout: 'select',
     selectVariant: 'oral',
     prompt: row.prompt,
-    options: row.options,
+    options,
     answer: row.answer,
-    optionImages: row.optionImages,
-    imagesAvailable: Boolean(row.imagesAvailable && row.optionImages?.length === 3),
+    optionImages,
+    imagesAvailable: Boolean(row.imagesAvailable && optionImages?.length === 3),
     answerMode: 'qcm',
   }
+}
+
+function oralChoice(row: FrOralChoice, rng?: Rng): MathItem {
+  return qcmChoice(row, rng)
 }
 
 function take<T>(list: T[], count: number, rng: Rng): T[] {
@@ -131,7 +144,7 @@ export function tryGenerateFrancaisBlock(
       const bankCap = doc.questions.length
       const questions = takeUnique(doc.questions, count, rng)
       return {
-        items: questions.map(oralChoice),
+        items: questions.map((q) => oralChoice(q, rng)),
         instruction: 'Écoutez l’enregistrement. Répondez aux questions (QCM).',
         document: {
           kind: 'oral',
@@ -147,7 +160,7 @@ export function tryGenerateFrancaisBlock(
     const bankCap = doc.questions.length
     const questions = takeUnique(doc.questions, count, rng)
     return {
-      items: questions.map((q) => oralChoice({ ...q, imagesAvailable: false })),
+      items: questions.map((q) => oralChoice({ ...q, imagesAvailable: false }, rng)),
       instruction: 'Écoutez l’enregistrement. Répondez aux questions (QCM).',
       document: {
         kind: 'oral',
@@ -165,7 +178,7 @@ export function tryGenerateFrancaisBlock(
     const bankCap = doc.questions.length
     const questions = takeUnique(doc.questions, count, rng)
     return {
-      items: questions.map(choice),
+      items: questions.map((q) => qcmChoice(q, rng)),
       instruction: 'Lisez le texte. Répondez aux questions.',
       document: {
         kind: 'written',

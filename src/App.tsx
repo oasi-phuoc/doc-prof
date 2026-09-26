@@ -868,6 +868,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isConstruire = isReperageConstruire(type.id)
   const isGeoCalc = isDraftPadExercise(type.id) && !isProblem && !isEquation
   const isFrenchCom = type.track === 'com'
+  const isComQcm =
+    type.id.includes('-com-orale') || type.id.includes('-com-ecrite')
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
   const isVocabLearn = isVocabLearnType(type.id)
   const isVocabPool = isVocabPoolType(type.id)
@@ -966,6 +968,10 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
             coordCellMm: undefined,
             coordUnitSquares: undefined,
           }),
+    continueOnNextPage: isComQcm ? (prev?.continueOnNextPage ?? false) : undefined,
+    oralAnswerModes: type.id.includes('-com-orale')
+      ? resizeOralAnswerModes(prev?.oralAnswerModes, 4)
+      : undefined,
   }
 }
 
@@ -1000,7 +1006,7 @@ function cycleOralMode(
 function GeneratorPage() {
   const initial = defaultPage('algèbre')
   const [pages, setPages] = useState<PageConfig[]>([initial])
-  const [pageIndex, setPageIndex] = useState(0)
+  const [sheetIndex, setSheetIndex] = useState(0)
   const [blockIndex, setBlockIndex] = useState(0)
   const [mode, setMode] = useState<PreviewMode>('student')
   const [headerStyle, setHeaderStyle] = useState<HeaderStyle>('institutionnel')
@@ -1029,6 +1035,10 @@ function GeneratorPage() {
     }
   }
 
+  const worksheets = useMemo(() => buildWorksheets(pages, seed), [pages, seed])
+  const safeSheetIndex = Math.min(sheetIndex, Math.max(0, worksheets.length - 1))
+  const activeSheet = worksheets[safeSheetIndex] ?? worksheets[0]
+  const pageIndex = activeSheet?.configIndex ?? Math.min(sheetIndex, Math.max(0, pages.length - 1))
   const activePage = pages[pageIndex] ?? pages[0]!
   const pageExerciseBlocks = pageBlocks(activePage)
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
@@ -1047,7 +1057,6 @@ function GeneratorPage() {
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
   )
-  const worksheets = useMemo(() => buildWorksheets(pages, seed), [pages, seed])
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
   const sheetTotalPoints = useMemo(
     () => worksheets.reduce((sum, page) => sum + page.items.length * pointsPerQuestion, 0),
@@ -1102,6 +1111,7 @@ function GeneratorPage() {
   }, [
     worksheets,
     pageIndex,
+    sheetIndex,
     mode,
     seed,
     activeBlock.count,
@@ -1185,11 +1195,13 @@ function GeneratorPage() {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const modes = resizeOralAnswerModes(block.oralAnswerModes, block.count)
-        const sheet = worksheets[pageIndex]
+        const sheet = worksheets[safeSheetIndex]
         const sheetBlock = sheet?.blocks[targetBlock]
         const item = sheetBlock?.items[itemIndex]
         const imagesAvailable = Boolean(item?.imagesAvailable)
-        modes[itemIndex] = cycleOralMode(modes[itemIndex] ?? 'qcm', imagesAvailable)
+        const offset = sheet?.isContinuation ? 4 : 0
+        const modeIndex = itemIndex + offset
+        modes[modeIndex] = cycleOralMode(modes[modeIndex] ?? 'qcm', imagesAvailable)
         return setPageBlock(page, targetBlock, { oralAnswerModes: modes })
       }),
     )
@@ -1237,7 +1249,7 @@ function GeneratorPage() {
       : isReperage
         ? COORD_LETTER_MAX
         : 30
-  const activeSheetBlock = worksheets[pageIndex]?.blocks[safeBlockIndex]
+  const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
     Boolean(bankQuestionCap != null) &&
@@ -1374,20 +1386,16 @@ function GeneratorPage() {
       extraBlocks: activePage.extraBlocks?.map((block) => ({ ...block })),
     }
     setPages((current) => [...current, next])
-    setPageIndex(pages.length)
+    setSheetIndex(worksheets.length) // will clamp after recompute; prefer end
     setBlockIndex(0)
   }
 
-  const removePage = (index: number) => {
+  const removePage = (configIdx: number) => {
     setPages((current) => {
       if (current.length <= 1) return current
-      return current.filter((_, pageIdx) => pageIdx !== index)
+      return current.filter((_, pageIdx) => pageIdx !== configIdx)
     })
-    setPageIndex((current) => {
-      if (index < current) return current - 1
-      if (index === current) return Math.max(0, current - 1)
-      return current
-    })
+    setSheetIndex(0)
     setBlockIndex(0)
   }
 
@@ -1418,6 +1426,10 @@ function GeneratorPage() {
       oralAnswerModes: isOralComprehensionExercise(nextType.id)
         ? Array.from({ length: count }, () => 'qcm' as const)
         : undefined,
+      continueOnNextPage:
+        nextType.id.includes('-com-orale') || nextType.id.includes('-com-ecrite')
+          ? (activeBlock.continueOnNextPage ?? false)
+          : undefined,
       vocabSelected: fields.vocabSelected,
       vocabRows: fields.vocabRows,
       vocabCols: fields.vocabCols,
@@ -1516,24 +1528,34 @@ function GeneratorPage() {
             <div className="panel-title">
               <h3>Paramètres de l’activité</h3>
               <span>
-                {pages.length} page{pages.length > 1 ? 's' : ''}
+                {worksheets.length} feuille{worksheets.length > 1 ? 's' : ''}
+                {pages.length !== worksheets.length ? ` · ${pages.length} config.` : ''}
               </span>
             </div>
-            <div className="mode-toggle is-tabs page-tabs" role="tablist" aria-label="Pages">
-              {pages.map((_, index) => (
+            <div className="mode-toggle is-tabs page-tabs" role="tablist" aria-label="Feuilles">
+              {worksheets.map((sheet, index) => (
                 <button
-                  key={index}
+                  key={`${sheet.configIndex ?? index}-${sheet.isContinuation ? 'suite' : 'main'}-${index}`}
                   type="button"
-                  className={pageIndex === index ? 'active' : ''}
+                  className={safeSheetIndex === index ? 'active' : ''}
                   onClick={() => {
-                    setPageIndex(index)
+                    setSheetIndex(index)
                     setBlockIndex(0)
                   }}
-                  aria-label={`Page ${index + 1}`}
+                  aria-label={
+                    sheet.isContinuation ? `Page ${index + 1} (suite)` : `Page ${index + 1}`
+                  }
                 >
                   <span className="tab-number">{index + 1}</span>
-                  {pages.length > 1 && index === pageIndex ? (
-                    <TabRemoveButton label="Retirer cette page" onRemove={() => removePage(index)} />
+                  {sheet.isContinuation ? <span className="tab-suite">suite</span> : null}
+                  {pages.length > 1 &&
+                  !sheet.isContinuation &&
+                  (sheet.configIndex ?? index) === pageIndex &&
+                  safeSheetIndex === index ? (
+                    <TabRemoveButton
+                      label="Retirer cette page"
+                      onRemove={() => removePage(sheet.configIndex ?? index)}
+                    />
                   ) : null}
                 </button>
               ))}
@@ -1615,7 +1637,7 @@ function GeneratorPage() {
                       Total document : {sheetTotalPoints} pts
                       {pages.length > 1
                         ? ` (${pages.length} pages × points par question)`
-                        : ` (${worksheets[pageIndex]?.items.length ?? 0} × ${pointsPerQuestion})`}
+                        : ` (${worksheets[safeSheetIndex]?.items.length ?? 0} × ${pointsPerQuestion})`}
                     </small>
                   </label>
                 )}
@@ -1982,13 +2004,42 @@ function GeneratorPage() {
                     {(bankQuestionCap ?? 0) > 1 ? 's' : ''} pour cet enregistrement. Réduisez le
                     nombre ou générez une nouvelle fiche.
                   </p>
-                ) : questionsOverflow ? (
+                ) : questionsOverflow && !activeBlock.continueOnNextPage ? (
                   <p className="questions-overflow-hint" role="status">
-                    Les questions suivantes dépassent de la fiche. Réduisez le nombre ou ajoutez une page.
+                    Les questions suivantes dépassent de la fiche. Réduisez le nombre, activez le
+                    saut de page, ou ajoutez une page.
                   </p>
                 ) : null}
               </label>
               )}
+              {isOralComprehensionExercise(activeBlock.exerciseType) ||
+              activeBlock.exerciseType.includes('-com-ecrite') ? (
+                <div className="mode-toggle-block">
+                  <b>Saut de page</b>
+                  <div className="mode-toggle" role="group" aria-label="Saut de page pour les questions">
+                    <button
+                      type="button"
+                      className={!activeBlock.continueOnNextPage ? 'active' : ''}
+                      onClick={() => updatePage({ continueOnNextPage: false })}
+                    >
+                      Une fiche
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.continueOnNextPage ? 'active' : ''}
+                      onClick={() => updatePage({ continueOnNextPage: true })}
+                      title="Les questions au-delà de 4 passent sur la feuille suivante"
+                    >
+                      Suite auto
+                    </button>
+                  </div>
+                  {activeBlock.continueOnNextPage ? (
+                    <small className="muted">
+                      Au-delà de 4 questions, une feuille « suite » est ajoutée automatiquement.
+                    </small>
+                  ) : null}
+                </div>
+              ) : null}
               {isPhraseChart || isVocabLearn || isVocabPool ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
@@ -2501,10 +2552,10 @@ function GeneratorPage() {
                   <div className="sheet-stage">
                     <div className="a4-frame" ref={previewFrameRef}>
                       <WorksheetSheet
-                        key={`${worksheets[pageIndex]?.exerciseType}-${seed}-${pageIndex}-${pageExerciseBlocks.length}`}
-                        page={worksheets[pageIndex]!}
-                        pageNumber={pageIndex + 1}
-                        sheetIndex={pageIndex + 1}
+                        key={`${worksheets[safeSheetIndex]?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
+                        page={worksheets[safeSheetIndex]!}
+                        pageNumber={safeSheetIndex + 1}
+                        sheetIndex={safeSheetIndex + 1}
                         total={worksheets.length}
                         interactiveDraftGrids={isProblemExercise(activeBlock.exerciseType)}
                         onToggleDraftGrid={toggleDraftGrid}
