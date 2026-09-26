@@ -1475,18 +1475,67 @@
 }
 /*
  * Recto ludique type carte à jouer (grille de cartes) :
- * bordure pleine même épaisseur que le verso (alignement duplex).
+ * fond blanc + bordure pleine même épaisseur que le verso (alignement duplex).
  */
 .game-board.is-ludic .game-card:not(.is-series-back):not(.is-back):not(.is-series-content){
-  background:
-    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 12%, #fff) 0%, #fff 50%),
-    radial-gradient(120% 80% at 0% 100%, color-mix(in srgb, var(--jeux-soft) 60%, #fff), transparent 55%);
+  background:#fff;
   border:var(--game-card-frame) solid color-mix(in srgb, var(--jeux-accent) 82%, #1a1a1a);
   border-style:solid;
   box-shadow:inset 0 0 0 0.75mm #fff;
   border-radius:3.2mm;
   padding:2mm
 }
+/* Bordure personnalisée (images recto/verso) — optionnelle */
+.game-card.has-custom-border,
+.loto-panel.has-custom-border{
+  background:#fff!important;
+  border:1px dashed var(--jeux-cut)!important;
+  box-shadow:none!important;
+  padding:3.2mm!important
+}
+.game-card-border{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:fill;pointer-events:none;z-index:1;
+  border-radius:inherit
+}
+.game-card.has-custom-border > :not(.game-card-border),
+.loto-panel.has-custom-border > :not(.game-card-border){
+  position:relative;z-index:2
+}
+.game-card.has-custom-border .game-card-badge{z-index:3}
+.game-border-block{display:flex;flex-direction:column;gap:8px;margin:0}
+.game-border-toggle{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  width:100%;text-align:left
+}
+.game-border-toggle.is-active{border-color:var(--purple);color:var(--purple)}
+.game-border-toggle-tag{
+  font-size:11px;font-weight:600;color:var(--muted);
+  max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.game-border-picker{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;
+  max-height:22rem;overflow:auto;padding:8px;border:1px solid var(--line);
+  border-radius:12px;background:#faf9fc
+}
+.game-border-option{
+  display:flex;flex-direction:column;gap:4px;align-items:center;
+  margin:0;padding:6px;border:1px solid var(--line);border-radius:10px;
+  background:#fff;font-size:10px;font-weight:600;color:var(--ink);line-height:1.2
+}
+.game-border-option.is-selected,
+.game-border-option:hover{border-color:var(--purple);box-shadow:0 0 0 1px color-mix(in srgb,var(--purple) 35%,#fff)}
+.game-border-option-preview{
+  width:100%;aspect-ratio:36/52;object-fit:contain;border-radius:6px;background:#fff;
+  border:1px solid var(--line)
+}
+.game-border-option-preview.is-default{
+  display:block;background:
+    linear-gradient(#fff,#fff) padding-box,
+    repeating-linear-gradient(45deg,var(--line) 0 2px,transparent 2px 6px) border-box;
+  border:2px dashed var(--jeux-cut,#bbb)
+}
+.game-border-option.is-none span:last-child{text-align:center}
 .game-board.is-ludic .game-card.is-category,
 .game-board.is-ludic .game-card.is-family-head{
   background:color-mix(in srgb, var(--jeux-accent) 16%, #fff);

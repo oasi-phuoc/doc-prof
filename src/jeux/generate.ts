@@ -23,6 +23,16 @@ export type JeuxGenerateOptions = {
   gameTopic?: string
   /** Nom de série imprimé au verso (logo ClairFLE). */
   gameSeriesName?: string
+  /** Bordure personnalisée (01–15), optionnelle. */
+  gameBorderId?: string
+}
+
+function withBoardBorder(items: MathItem[], borderId?: string): MathItem[] {
+  const id = borderId?.trim()
+  if (!id) return items
+  return items.map((item) =>
+    item.gameBoard ? { ...item, gameBoard: { ...item.gameBoard, borderId: id } } : item,
+  )
 }
 
 const DEFAULT_SERIES_FRAME = '#0f6b5c'
@@ -821,12 +831,12 @@ export function tryGenerateJeuxBatch(
       items = phrasesTexte(entries, rng)
       break
     default:
-      items = vocab(entries)
+      items = vocab(entries, options.gameBackColor, options.gameSeriesName)
   }
 
   return {
     instruction: type?.instruction ?? tpl?.label ?? 'Préparez le jeu.',
     preferredColumns: 1,
-    items,
+    items: withBoardBorder(items, options.gameBorderId),
   }
 }

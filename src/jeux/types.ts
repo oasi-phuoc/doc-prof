@@ -97,4 +97,6 @@ export type GameBoard = {
   themeLabel?: string
   /** Couleur du cadre de série (verso Intrus / Tri). */
   frameColor?: string
+  /** Id de bordure personnalisée (01–15), optionnelle. */
+  borderId?: string
 }

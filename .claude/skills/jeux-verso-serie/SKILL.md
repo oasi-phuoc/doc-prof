@@ -1,48 +1,39 @@
 ---
 name: jeux-verso-serie
 description: >-
-  Harmonise les versos des cartes Jeux (grille de cartes) : logo ClairFLE dans
-  un cercle, nom de série optionnel, cadre coloré, même taille recto-verso,
-  bordure ludique type carte au recto. À utiliser dès qu’on parle de dos de
-  carte, série, verso fiche, Vocabulaire, Dominos, Mémory, Loto, Intrus, Tri.
+  Harmonise les versos des cartes Jeux (grille de cartes) : logo ClairFLE,
+  nom de série, cadre, tailles recto-verso, fond blanc, bordures personnalisées
+  optionnelles (15 styles). À utiliser pour dos de carte, série, bordure perso.
 ---
 
-# Verso série Jeux (grille de cartes)
+# Verso série + bordures personnalisées
 
-## Principe
+## Défaut
 
-Pour **tout** le thème « Grille de cartes » (`jeux-cartes`) :
+- Fond **blanc** au recto.
+- Cadre plein `--game-card-frame` (2,2 mm) + logo ClairFLE / série au verso.
+- Même taille recto / verso ; `mirrorRows` bord long.
 
-1. **Recto** : bordure pleine ludique (type carte à jouer), même épaisseur `--game-card-frame` (2,2 mm).
-2. **Verso** : logo ClairFLE dans un cercle + nom de série (paramètre optionnel) + cadre coloré.
-3. **Même taille** recto / verso : grille `minmax(0,1fr)` + `height:100%` + même `--game-card-frame`.
-4. **Miroir bord long** : `mirrorRows(recto, cols)`.
+## Bordure personnalisée (option)
 
-## Types concernés
+- Bouton **Bordure personnalisée** dans les paramètres série.
+- Par défaut : **Aucune** (cadre actuel).
+- 15 styles (`01`–`15`) avec images **recto** et **verso** exactes :
+  `public/lib/images/jeux/borders/border-XX-{recto|verso}.webp`
+- Catalogue : `src/jeux/borders.ts` (`GAME_BORDER_STYLES`, `gameBorderSrc`).
+- Champ config : `gameBorderId` → `GameBoard.borderId` → overlay `.game-card-border`.
 
-| Type | Verso |
-|---|---|
-| Mémory, Intrus, Tri, Dominos | `series-back` (logo + série) |
-| Loto | identité série dans chaque panneau verso |
-| Vocabulaire | mots + logo + série + cadre (`is-series-content`) |
-| Devinettes | indices + logo + série + cadre |
+## Types grille de cartes
 
-UI : toujours « Nom de la série » + « Cadre de série » (`usesSeriesIdentity`).
-
-## Look recto (cartes)
-
-- Bordure solide `--game-card-frame` (pas seulement des pointillés).
-- Coins ~3,2 mm, filet intérieur blanc, fond pastel léger.
-- Image en `object-fit: contain` ; badges numérotés ; pas d’emojis.
-- Classe `.game-board.is-ludic`.
+Vocabulaire, Devinettes, Mémory, Loto, Intrus, Dominos, Tri (`usesSeriesIdentity`).
 
 ## Fichiers
 
-- `src/jeux/CardGrid.tsx` — `SeriesIdentity`, variantes
-- `src/jeux/generate.ts` — `makeSeriesBackCards`, `mirrorRows`, tous les générateurs cartes
-- `src/App.css` — `--game-card-frame`, `.is-ludic`, `.is-series-back`, `.is-series-content`
-- `GameContentPanel` / `App.tsx` — `usesSeriesIdentity` (tous les `jeux-cartes`)
+- `CardGrid.tsx` — overlay bordure selon face
+- `GameContentPanel.tsx` — bouton + grille de choix
+- `App.css` — `.has-custom-border`, `.game-border-*`
+- `generate.ts` — `withBoardBorder`
 
 ## Terminé quand
 
-Tous les types grille de cartes : verso logo+série, recto bordure carte, tailles égales, miroir bord long, skill à jour, lint/build OK.
+Fond blanc · 15 bordures sélectionnables · défaut inchangé sans bouton · lint/build OK.

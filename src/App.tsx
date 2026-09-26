@@ -1107,6 +1107,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameSelectedIds,
           gameBackColor: usesSeriesIdentity ? (gameBackColor ?? '#0f6b5c') : undefined,
           gameSeriesName: usesSeriesIdentity ? gameSeriesName : undefined,
+          gameBorderId:
+            prev?.exerciseType === type.id ? prev.gameBorderId : undefined,
         }
       : {
           gameEntries: undefined,
@@ -1116,6 +1118,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameSelectedIds: undefined,
           gameBackColor: undefined,
           gameSeriesName: undefined,
+          gameBorderId: undefined,
         }),
     ...(isFormes
       ? {
@@ -1648,6 +1651,7 @@ function GeneratorPage() {
       gameSelectedIds: fields.gameSelectedIds,
       gameBackColor: fields.gameBackColor,
       gameSeriesName: fields.gameSeriesName,
+      gameBorderId: fields.gameBorderId,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -1989,6 +1993,7 @@ function GeneratorPage() {
                   gameSelectedIds={activeBlock.gameSelectedIds}
                   gameBackColor={activeBlock.gameBackColor}
                   gameSeriesName={activeBlock.gameSeriesName}
+                  gameBorderId={activeBlock.gameBorderId}
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}

@@ -11,6 +11,7 @@ import {
   type BankItem,
   type GameSource,
 } from './bank'
+import { GAME_BORDER_STYLES } from './borders'
 import { resolveGameImageSrc } from './image-resolve'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from './image'
 import { entriesToText, resolveEntries, textToEntries } from './parse'
@@ -27,6 +28,7 @@ export type GameContentChange = {
   gameSelectedIds?: string[]
   gameBackColor?: string
   gameSeriesName?: string
+  gameBorderId?: string
 }
 
 const SERIES_DEFAULTS: Record<string, string> = {
@@ -203,15 +205,21 @@ function SeriesIdentityFields({
   typeId,
   seriesName,
   frameColor,
+  borderId,
   onSeriesName,
   onFrameColor,
+  onBorderId,
 }: {
   typeId: string
   seriesName?: string
   frameColor?: string
+  borderId?: string
   onSeriesName: (name: string) => void
   onFrameColor: (color: string) => void
+  onBorderId: (id: string | undefined) => void
 }) {
+  const [pickerOpen, setPickerOpen] = useState(false)
+  const active = borderId?.trim() || ''
   return (
     <div className="game-series-identity">
       <label className="game-series-name">
@@ -233,6 +241,64 @@ function SeriesIdentityFields({
         allowWhite={false}
         onChange={onFrameColor}
       />
+      <div className="game-border-block">
+        <button
+          type="button"
+          className={`button secondary game-border-toggle${pickerOpen ? ' is-open' : ''}${active ? ' is-active' : ''}`}
+          aria-expanded={pickerOpen}
+          aria-controls="game-border-picker"
+          onClick={() => setPickerOpen((v) => !v)}
+        >
+          Bordure personnalisée
+          {active ? (
+            <span className="game-border-toggle-tag">
+              {GAME_BORDER_STYLES.find((b) => b.id === active)?.label ?? active}
+            </span>
+          ) : null}
+        </button>
+        {pickerOpen ? (
+          <div id="game-border-picker" className="game-border-picker" role="listbox" aria-label="Bordures personnalisées">
+            <button
+              type="button"
+              className={`game-border-option is-none${!active ? ' is-selected' : ''}`}
+              role="option"
+              aria-selected={!active}
+              onClick={() => {
+                onBorderId(undefined)
+                setPickerOpen(false)
+              }}
+            >
+              <span className="game-border-option-preview is-default" aria-hidden />
+              <span>Aucune (défaut)</span>
+            </button>
+            {GAME_BORDER_STYLES.map((style) => (
+              <button
+                key={style.id}
+                type="button"
+                className={`game-border-option${active === style.id ? ' is-selected' : ''}`}
+                role="option"
+                aria-selected={active === style.id}
+                title={style.label}
+                onClick={() => {
+                  onBorderId(style.id)
+                  setPickerOpen(false)
+                }}
+              >
+                <img
+                  className="game-border-option-preview"
+                  src={style.recto}
+                  alt=""
+                  draggable={false}
+                />
+                <span>{style.label}</span>
+              </button>
+            ))}
+          </div>
+        ) : null}
+        <small className="muted">
+          Option : 15 paires recto / verso. Par défaut, les cartes gardent leur cadre actuel.
+        </small>
+      </div>
     </div>
   )
 }
@@ -247,6 +313,7 @@ export function GameContentPanel({
   gameSelectedIds,
   gameBackColor,
   gameSeriesName,
+  gameBorderId,
   onChange,
 }: {
   typeId: string
@@ -258,6 +325,7 @@ export function GameContentPanel({
   gameSelectedIds?: string[]
   gameBackColor?: string
   gameSeriesName?: string
+  gameBorderId?: string
   onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
@@ -292,6 +360,7 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor,
       gameSeriesName,
+      gameBorderId,
       ...patch,
     })
   }
@@ -329,6 +398,7 @@ export function GameContentPanel({
       gameSelectedIds: nextIds,
       gameBackColor,
       gameSeriesName,
+      gameBorderId,
       ...patch,
     })
   }
@@ -360,6 +430,7 @@ export function GameContentPanel({
       gameSelectedIds: mergedIds.slice(0, maxCards),
       gameBackColor,
       gameSeriesName,
+      gameBorderId,
     })
   }
 
@@ -373,6 +444,7 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor: color,
       gameSeriesName,
+      gameBorderId,
     })
   }
 
@@ -386,6 +458,21 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor,
       gameSeriesName: name,
+      gameBorderId,
+    })
+  }
+
+  function setBorderId(id: string | undefined) {
+    const resolvedNow = resolveEntries(typeId, entries)
+    onChange({
+      gameEntries: resolvedNow,
+      gameText: entriesToText(typeId, resolvedNow),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: selectedIds,
+      gameBackColor,
+      gameSeriesName,
+      gameBorderId: id,
     })
   }
 
@@ -544,8 +631,10 @@ export function GameContentPanel({
             typeId={typeId}
             seriesName={gameSeriesName}
             frameColor={gameBackColor}
+            borderId={gameBorderId}
             onSeriesName={setSeriesName}
             onFrameColor={setBackColor}
+            onBorderId={setBorderId}
           />
         ) : null}
       </div>
@@ -627,8 +716,10 @@ export function GameContentPanel({
           typeId={typeId}
           seriesName={gameSeriesName}
           frameColor={gameBackColor}
+          borderId={gameBorderId}
           onSeriesName={setSeriesName}
           onFrameColor={setBackColor}
+          onBorderId={setBorderId}
         />
         <ul className="game-intrus-list" aria-label="Catégories du tri">
           {slots.map((entry, index) => {
@@ -731,8 +822,10 @@ export function GameContentPanel({
           typeId={typeId}
           seriesName={gameSeriesName}
           frameColor={gameBackColor}
+          borderId={gameBorderId}
           onSeriesName={setSeriesName}
           onFrameColor={setBackColor}
+          onBorderId={setBorderId}
         />
         <small className="muted">
           Recto : 5 mots inclinés · verso : logo ClairFLE + série (bord long).
@@ -751,8 +844,10 @@ export function GameContentPanel({
           typeId={typeId}
           seriesName={gameSeriesName}
           frameColor={gameBackColor}
+          borderId={gameBorderId}
           onSeriesName={setSeriesName}
           onFrameColor={setBackColor}
+          onBorderId={setBorderId}
         />
         <ul className="game-riddle-list" aria-label="Devinettes">
           {slots.map((entry, index) => {
@@ -963,8 +1058,10 @@ export function GameContentPanel({
           typeId={typeId}
           seriesName={gameSeriesName}
           frameColor={gameBackColor}
+          borderId={gameBorderId}
           onSeriesName={setSeriesName}
           onFrameColor={setBackColor}
+          onBorderId={setBorderId}
         />
       ) : null}
     </div>

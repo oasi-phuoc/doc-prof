@@ -1072,6 +1072,7 @@ function buildSingleBlock(
     gameBackColor: config.gameBackColor,
     gameTopic: config.gameTopic,
     gameSeriesName: config.gameSeriesName,
+    gameBorderId: config.gameBorderId,
   })
   if (jeux) {
     return {
