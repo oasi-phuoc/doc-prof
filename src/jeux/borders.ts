@@ -7,6 +7,9 @@ export type GameBorderStyle = {
   verso: string
 }
 
+/** Bordure verso proposée par défaut à l’activation. */
+export const DEFAULT_VERSO_BORDER_ID = '15'
+
 export const GAME_BORDER_STYLES: GameBorderStyle[] = [
   {
     id: '01',
@@ -105,10 +108,13 @@ export function gameBorderById(id?: string): GameBorderStyle | undefined {
   return GAME_BORDER_STYLES.find((b) => b.id === id)
 }
 
+/** Image de bordure pour une face (ids recto / verso indépendants). */
 export function gameBorderSrc(
-  id: string | undefined,
+  rectoId: string | undefined,
   face: 'recto' | 'verso',
+  versoId?: string,
 ): string | undefined {
+  const id = (face === 'verso' ? versoId || rectoId : rectoId || versoId)?.trim()
   const style = gameBorderById(id)
   if (!style) return undefined
   return face === 'verso' ? style.verso : style.recto

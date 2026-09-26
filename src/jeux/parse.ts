@@ -247,9 +247,17 @@ export function textToEntries(
 
   if (!previous?.length) return parsed
   return parsed.map((entry, index) => {
-    const prev = previous[index]
-    if (!prev?.imageSrc) return entry
-    return { ...entry, imageSrc: prev.imageSrc }
+    const key = entry.text.trim().toLowerCase()
+    const prevByText = key
+      ? previous.find((p) => p.text.trim().toLowerCase() === key)
+      : undefined
+    const prev = prevByText ?? previous[index]
+    if (!prev) return entry
+    return {
+      ...entry,
+      imageSrc: prev.imageSrc ?? entry.imageSrc,
+      clues: entry.clues?.some((c) => c.trim()) ? entry.clues : prev.clues,
+    }
   })
 }
 

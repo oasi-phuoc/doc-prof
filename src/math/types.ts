@@ -521,8 +521,12 @@ export type ExerciseBlock = {
   gameBackColor?: string
   /** Nom de série imprimé au verso des cartes Jeux. */
   gameSeriesName?: string
-  /** Bordure personnalisée des cartes (id 01–15), optionnelle. */
+  /** Bordure personnalisée des cartes (id 01–15), optionnelle — legacy (= recto). */
   gameBorderId?: string
+  /** Bordure recto des cartes (id 01–15), optionnelle. */
+  gameBorderRectoId?: string
+  /** Bordure verso des cartes (id 01–15), optionnelle. */
+  gameBorderVersoId?: string
 }
 
 export type PageConfig = ExerciseBlock & {

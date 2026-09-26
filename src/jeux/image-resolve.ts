@@ -73,11 +73,25 @@ function lecturePath(label: string): string {
   return `/assets/words/lecture/${label}.webp`
 }
 
-/** Chemin image pour un libellé : /lib d’abord, sinon lecture. */
+/**
+ * Chemin image pour un libellé.
+ * Une image fournie (upload data:/blob:, /lib/, http) est toujours prioritaire —
+ * ne jamais la remplacer par une entrée banque / lecture inexistante.
+ */
 export function resolveGameImageSrc(label: string, fallback?: string): string | undefined {
   const key = label.trim().toLowerCase()
   if (!key) return fallback
-  if (fallback?.startsWith('data:') || fallback?.startsWith('blob:')) return fallback
-  if (fallback?.startsWith('/lib/')) return fallback
-  return LIB_BY_LABEL[key] ?? fallback ?? lecturePath(label.trim())
+  const fb = fallback?.trim()
+  if (
+    fb &&
+    (fb.startsWith('data:') ||
+      fb.startsWith('blob:') ||
+      fb.startsWith('/lib/') ||
+      fb.startsWith('http://') ||
+      fb.startsWith('https://') ||
+      fb.startsWith('/assets/'))
+  ) {
+    return fb
+  }
+  return LIB_BY_LABEL[key] ?? fb ?? lecturePath(label.trim())
 }

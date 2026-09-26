@@ -1105,7 +1105,17 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameBackColor: usesSeriesIdentity ? (gameBackColor ?? '#0f6b5c') : undefined,
           gameSeriesName: usesSeriesIdentity ? gameSeriesName : undefined,
           gameBorderId:
-            prev?.exerciseType === type.id ? prev.gameBorderId : undefined,
+            prev?.exerciseType === type.id
+              ? (prev.gameBorderRectoId ?? prev.gameBorderId)
+              : undefined,
+          gameBorderRectoId:
+            prev?.exerciseType === type.id
+              ? (prev.gameBorderRectoId ?? prev.gameBorderId)
+              : undefined,
+          gameBorderVersoId:
+            prev?.exerciseType === type.id
+              ? (prev.gameBorderVersoId ?? prev.gameBorderId)
+              : undefined,
         }
       : {
           gameEntries: undefined,
@@ -1116,6 +1126,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameBackColor: undefined,
           gameSeriesName: undefined,
           gameBorderId: undefined,
+          gameBorderRectoId: undefined,
+          gameBorderVersoId: undefined,
         }),
     ...(isFormes
       ? {
@@ -1656,7 +1668,9 @@ function GeneratorPage() {
       gameSelectedIds: fields.gameSelectedIds,
       gameBackColor: fields.gameBackColor,
       gameSeriesName: fields.gameSeriesName,
-      gameBorderId: fields.gameBorderId,
+      gameBorderId: fields.gameBorderRectoId ?? fields.gameBorderId,
+      gameBorderRectoId: fields.gameBorderRectoId ?? fields.gameBorderId,
+      gameBorderVersoId: fields.gameBorderVersoId ?? fields.gameBorderId,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -2013,6 +2027,8 @@ function GeneratorPage() {
                   gameBackColor={activeBlock.gameBackColor}
                   gameSeriesName={activeBlock.gameSeriesName}
                   gameBorderId={activeBlock.gameBorderId}
+                  gameBorderRectoId={activeBlock.gameBorderRectoId ?? activeBlock.gameBorderId}
+                  gameBorderVersoId={activeBlock.gameBorderVersoId ?? activeBlock.gameBorderId}
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}

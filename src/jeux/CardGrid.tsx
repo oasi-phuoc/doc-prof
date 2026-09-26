@@ -62,11 +62,13 @@ function cardShell(
 
 function CardFace({
   card,
-  borderId,
+  borderRectoId,
+  borderVersoId,
   side,
 }: {
   card: GameCard
-  borderId?: string
+  borderRectoId?: string
+  borderVersoId?: string
   side?: 'recto' | 'verso'
 }) {
   const variant = card.variant ?? 'default'
@@ -76,7 +78,7 @@ function CardFace({
   const face: 'recto' | 'verso' =
     side ??
     (variant === 'series-back' || variant === 'back' || variant === 'clue' ? 'verso' : 'recto')
-  const border = gameBorderSrc(borderId, face)
+  const border = gameBorderSrc(borderRectoId, face, borderVersoId)
   const hideBadge = Boolean(border)
 
   if (variant === 'domino') {
@@ -207,11 +209,13 @@ function CardFace({
 
 function PanelGrid({
   panel,
-  borderId,
+  borderRectoId,
+  borderVersoId,
   side,
 }: {
   panel: GamePanel
-  borderId?: string
+  borderRectoId?: string
+  borderVersoId?: string
   side?: 'recto' | 'verso'
 }) {
   return (
@@ -226,7 +230,13 @@ function PanelGrid({
       aria-label={panel.title ?? 'Grille'}
     >
       {panel.cards.map((card) => (
-        <CardFace key={card.id} card={card} borderId={borderId} side={side} />
+        <CardFace
+          key={card.id}
+          card={card}
+          borderRectoId={borderRectoId}
+          borderVersoId={borderVersoId}
+          side={side}
+        />
       ))}
     </div>
   )
@@ -235,13 +245,15 @@ function PanelGrid({
 function LotoPanelFace({
   panel,
   mode,
-  borderId,
+  borderRectoId,
+  borderVersoId,
 }: {
   panel: GamePanel
   mode: 'page' | 'back'
-  borderId?: string
+  borderRectoId?: string
+  borderVersoId?: string
 }) {
-  const border = gameBorderSrc(borderId, mode === 'back' ? 'verso' : 'recto')
+  const border = gameBorderSrc(borderRectoId, mode === 'back' ? 'verso' : 'recto', borderVersoId)
   if (mode === 'back') {
     return (
       <div className={`loto-panel is-back is-series${border ? ' has-custom-border' : ''}`}>
@@ -254,7 +266,12 @@ function LotoPanelFace({
   return (
     <div className={`loto-panel${border ? ' has-custom-border' : ''}`}>
       {panel.title ? <p className="loto-panel-title">{panel.title}</p> : null}
-      <PanelGrid panel={panel} borderId={borderId} side="recto" />
+      <PanelGrid
+        panel={panel}
+        borderRectoId={borderRectoId}
+        borderVersoId={borderVersoId}
+        side="recto"
+      />
       <BorderOverlay src={border} />
     </div>
   )
@@ -262,7 +279,8 @@ function LotoPanelFace({
 
 export function CardGrid({ board }: { board: GameBoard }) {
   const kind = board.kind ?? 'cards'
-  const borderId = board.borderId
+  const borderRectoId = board.borderRectoId ?? board.borderId
+  const borderVersoId = board.borderVersoId ?? board.borderId
   const side = board.side
 
   if (kind === 'loto-page' || kind === 'loto-back') {
@@ -275,7 +293,8 @@ export function CardGrid({ board }: { board: GameBoard }) {
               key={`${panel.title ?? 'panel'}-${index}`}
               panel={panel}
               mode={mode}
-              borderId={borderId}
+              borderRectoId={borderRectoId}
+              borderVersoId={borderVersoId}
             />
           ))}
         </div>
@@ -304,7 +323,13 @@ export function CardGrid({ board }: { board: GameBoard }) {
         aria-label="Cartes du jeu"
       >
         {board.cards.map((card) => (
-          <CardFace key={card.id} card={card} borderId={borderId} side={side} />
+          <CardFace
+            key={card.id}
+            card={card}
+            borderRectoId={borderRectoId}
+            borderVersoId={borderVersoId}
+            side={side}
+          />
         ))}
       </div>
     </div>

@@ -1073,6 +1073,8 @@ function buildSingleBlock(
     gameTopic: config.gameTopic,
     gameSeriesName: config.gameSeriesName,
     gameBorderId: config.gameBorderId,
+    gameBorderRectoId: config.gameBorderRectoId ?? config.gameBorderId,
+    gameBorderVersoId: config.gameBorderVersoId ?? config.gameBorderId,
   })
   if (jeux) {
     return {

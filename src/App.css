@@ -1543,6 +1543,19 @@
   font-size:11px;font-weight:600;color:var(--muted);
   max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
 }
+.game-border-picker-wrap{display:flex;flex-direction:column;gap:8px}
+.game-border-face-tabs{width:100%}
+.game-border-face-tabs button{font-size:12px;padding:8px 10px}
+.game-custom-words{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.game-custom-word-list{
+  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px
+}
+.game-custom-word-list li{
+  display:flex;align-items:center;gap:6px;padding:4px 8px 4px 4px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;font-size:12px;font-weight:600
+}
+.game-custom-word-list .vocab-word-thumb{width:28px;height:28px;border-radius:6px;object-fit:cover}
+.game-custom-word-list .vocab-word-thumb.is-empty{background:var(--cream,#f5f3f0);border:1px dashed var(--line)}
 .game-border-picker{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;
   max-height:22rem;overflow:auto;padding:8px;border:1px solid var(--line);

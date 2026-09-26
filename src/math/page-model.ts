@@ -41,6 +41,9 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     gameSelectedIds: page.gameSelectedIds,
     gameBackColor: page.gameBackColor,
     gameSeriesName: page.gameSeriesName,
+    gameBorderId: page.gameBorderId,
+    gameBorderRectoId: page.gameBorderRectoId,
+    gameBorderVersoId: page.gameBorderVersoId,
   }
 }
 

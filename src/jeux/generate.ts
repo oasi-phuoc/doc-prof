@@ -22,15 +22,34 @@ export type JeuxGenerateOptions = {
   gameTopic?: string
   /** Nom de série imprimé au verso (logo ClairFLE). */
   gameSeriesName?: string
-  /** Bordure personnalisée (01–15), optionnelle. */
+  /** Bordure personnalisée (01–15), optionnelle — legacy (= recto). */
   gameBorderId?: string
+  /** Bordure recto (01–15), optionnelle. */
+  gameBorderRectoId?: string
+  /** Bordure verso (01–15), optionnelle — indépendante du recto. */
+  gameBorderVersoId?: string
 }
 
-function withBoardBorder(items: MathItem[], borderId?: string): MathItem[] {
-  const id = borderId?.trim()
-  if (!id) return items
+function withBoardBorder(
+  items: MathItem[],
+  rectoId?: string,
+  versoId?: string,
+): MathItem[] {
+  const recto = rectoId?.trim() || undefined
+  const verso = versoId?.trim() || undefined
+  if (!recto && !verso) return items
   return items.map((item) =>
-    item.gameBoard ? { ...item, gameBoard: { ...item.gameBoard, borderId: id } } : item,
+    item.gameBoard
+      ? {
+          ...item,
+          gameBoard: {
+            ...item.gameBoard,
+            borderId: recto ?? verso,
+            borderRectoId: recto,
+            borderVersoId: verso,
+          },
+        }
+      : item,
   )
 }
 
@@ -808,6 +827,10 @@ export function tryGenerateJeuxBatch(
     // Consigne catalogue masquée sur la feuille (cartes seules).
     instruction: '',
     preferredColumns: 1,
-    items: withBoardBorder(items, options.gameBorderId),
+    items: withBoardBorder(
+      items,
+      options.gameBorderRectoId ?? options.gameBorderId,
+      options.gameBorderVersoId ?? options.gameBorderId,
+    ),
   }
 }

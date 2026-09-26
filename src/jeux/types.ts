@@ -97,8 +97,12 @@ export type GameBoard = {
   themeLabel?: string
   /** Couleur du cadre de série (verso Intrus / Tri). */
   frameColor?: string
-  /** Id de bordure personnalisée (01–15), optionnelle. */
+  /** Id de bordure personnalisée recto (01–15), optionnelle. */
   borderId?: string
+  /** Id de bordure personnalisée recto (prioritaire sur borderId). */
+  borderRectoId?: string
+  /** Id de bordure personnalisée verso (indépendant du recto). */
+  borderVersoId?: string
   /** Face pour choisir l’image de bordure recto / verso. */
   side?: 'recto' | 'verso'
 }

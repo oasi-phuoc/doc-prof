@@ -11,7 +11,7 @@ import {
   type BankItem,
   type GameSource,
 } from './bank'
-import { GAME_BORDER_STYLES } from './borders'
+import { DEFAULT_VERSO_BORDER_ID, GAME_BORDER_STYLES } from './borders'
 import { resolveGameImageSrc } from './image-resolve'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from './image'
 import { entriesToText, resolveEntries, textToEntries } from './parse'
@@ -29,6 +29,8 @@ export type GameContentChange = {
   gameBackColor?: string
   gameSeriesName?: string
   gameBorderId?: string
+  gameBorderRectoId?: string
+  gameBorderVersoId?: string
 }
 
 const SERIES_DEFAULTS: Record<string, string> = {
@@ -122,7 +124,8 @@ function GameAddWordRow({
           onClick={() => {
             const word = label.trim()
             if (!word) return
-            onAdd({ text: word, imageSrc: resolveGameImageSrc(word, imageSrc) })
+            // Garder l’upload tel quel (data URL) — ne pas le perdre via la résolution banque.
+            onAdd({ text: word, imageSrc: imageSrc || resolveGameImageSrc(word) })
             setLabel('')
             setImageSrc(undefined)
             setError(null)
@@ -155,22 +158,39 @@ function usesSeriesNameField(typeId: string): boolean {
   )
 }
 
-/** Nom de série (si dos identification) + bordure personnalisée. */
+/** Nom de série (si dos identification) + bordures recto / verso indépendantes. */
 function SeriesIdentityFields({
   typeId,
   seriesName,
-  borderId,
+  borderRectoId,
+  borderVersoId,
   onSeriesName,
-  onBorderId,
+  onBorderIds,
 }: {
   typeId: string
   seriesName?: string
-  borderId?: string
+  borderRectoId?: string
+  borderVersoId?: string
   onSeriesName: (name: string) => void
-  onBorderId: (id: string | undefined) => void
+  onBorderIds: (recto: string | undefined, verso: string | undefined) => void
 }) {
   const [pickerOpen, setPickerOpen] = useState(false)
-  const active = borderId?.trim() || ''
+  const [faceTab, setFaceTab] = useState<'recto' | 'verso'>('recto')
+  const recto = borderRectoId?.trim() || ''
+  const verso = borderVersoId?.trim() || ''
+  const active = faceTab === 'recto' ? recto : verso
+  const previewSrc = (id: string, face: 'recto' | 'verso') => {
+    const style = GAME_BORDER_STYLES.find((b) => b.id === id)
+    if (!style) return undefined
+    return face === 'verso' ? style.verso : style.recto
+  }
+  const tagLabel = () => {
+    if (!recto && !verso) return null
+    const r = GAME_BORDER_STYLES.find((b) => b.id === recto)?.label ?? (recto ? recto : 'Défaut')
+    const v = GAME_BORDER_STYLES.find((b) => b.id === verso)?.label ?? (verso ? verso : 'Défaut')
+    if (recto && verso && recto === verso) return r
+    return `${r} · ${v}`
+  }
   return (
     <div className="game-series-identity">
       {usesSeriesNameField(typeId) ? (
@@ -190,59 +210,85 @@ function SeriesIdentityFields({
       <div className="game-border-block">
         <button
           type="button"
-          className={`button secondary game-border-toggle${pickerOpen ? ' is-open' : ''}${active ? ' is-active' : ''}`}
+          className={`button secondary game-border-toggle${pickerOpen ? ' is-open' : ''}${recto || verso ? ' is-active' : ''}`}
           aria-expanded={pickerOpen}
           aria-controls="game-border-picker"
-          onClick={() => setPickerOpen((v) => !v)}
+          onClick={() => {
+            setFaceTab('recto')
+            setPickerOpen((v) => !v)
+          }}
         >
           Bordure personnalisée
-          {active ? (
-            <span className="game-border-toggle-tag">
-              {GAME_BORDER_STYLES.find((b) => b.id === active)?.label ?? active}
-            </span>
-          ) : null}
+          {tagLabel() ? <span className="game-border-toggle-tag">{tagLabel()}</span> : null}
         </button>
         {pickerOpen ? (
-          <div id="game-border-picker" className="game-border-picker" role="listbox" aria-label="Bordures personnalisées">
-            <button
-              type="button"
-              className={`game-border-option is-none${!active ? ' is-selected' : ''}`}
-              role="option"
-              aria-selected={!active}
-              onClick={() => {
-                onBorderId(undefined)
-                setPickerOpen(false)
-              }}
-            >
-              <span className="game-border-option-preview is-default" aria-hidden />
-              <span>Aucune (défaut)</span>
-            </button>
-            {GAME_BORDER_STYLES.map((style) => (
+          <div id="game-border-picker" className="game-border-picker-wrap">
+            <div className="mode-toggle is-2 game-border-face-tabs" role="tablist" aria-label="Face de la bordure">
               <button
-                key={style.id}
                 type="button"
-                className={`game-border-option${active === style.id ? ' is-selected' : ''}`}
+                role="tab"
+                aria-selected={faceTab === 'recto'}
+                className={faceTab === 'recto' ? 'active' : ''}
+                onClick={() => setFaceTab('recto')}
+              >
+                Recto{recto ? ` · ${GAME_BORDER_STYLES.find((b) => b.id === recto)?.label ?? ''}` : ''}
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={faceTab === 'verso'}
+                className={faceTab === 'verso' ? 'active' : ''}
+                onClick={() => setFaceTab('verso')}
+              >
+                Verso{verso ? ` · ${GAME_BORDER_STYLES.find((b) => b.id === verso)?.label ?? ''}` : ''}
+              </button>
+            </div>
+            <div className="game-border-picker" role="listbox" aria-label={`Bordures ${faceTab}`}>
+              <button
+                type="button"
+                className={`game-border-option is-none${!active ? ' is-selected' : ''}`}
                 role="option"
-                aria-selected={active === style.id}
-                title={style.label}
+                aria-selected={!active}
                 onClick={() => {
-                  onBorderId(style.id)
-                  setPickerOpen(false)
+                  if (faceTab === 'recto') onBorderIds(undefined, verso || undefined)
+                  else onBorderIds(recto || undefined, undefined)
                 }}
               >
-                <img
-                  className="game-border-option-preview"
-                  src={style.recto}
-                  alt=""
-                  draggable={false}
-                />
-                <span>{style.label}</span>
+                <span className="game-border-option-preview is-default" aria-hidden />
+                <span>Aucune (défaut)</span>
               </button>
-            ))}
+              {GAME_BORDER_STYLES.map((style) => (
+                <button
+                  key={style.id}
+                  type="button"
+                  className={`game-border-option${active === style.id ? ' is-selected' : ''}`}
+                  role="option"
+                  aria-selected={active === style.id}
+                  title={style.label}
+                  onClick={() => {
+                    if (faceTab === 'recto') {
+                      // Première sélection recto : proposer Nuit étoilée au verso s’il est vide.
+                      const nextVerso = verso || DEFAULT_VERSO_BORDER_ID
+                      onBorderIds(style.id, nextVerso)
+                    } else {
+                      onBorderIds(recto || undefined, style.id)
+                    }
+                  }}
+                >
+                  <img
+                    className="game-border-option-preview"
+                    src={previewSrc(style.id, faceTab)}
+                    alt=""
+                    draggable={false}
+                  />
+                  <span>{style.label}</span>
+                </button>
+              ))}
+            </div>
           </div>
         ) : null}
         <small className="muted">
-          Option : 15 paires recto / verso. Par défaut, les cartes gardent leur cadre actuel.
+          Choisissez la bordure du recto et du verso séparément. Verso par défaut : Nuit étoilée.
         </small>
       </div>
     </div>
@@ -260,6 +306,8 @@ export function GameContentPanel({
   gameBackColor,
   gameSeriesName,
   gameBorderId,
+  gameBorderRectoId,
+  gameBorderVersoId,
   onChange,
 }: {
   typeId: string
@@ -272,6 +320,8 @@ export function GameContentPanel({
   gameBackColor?: string
   gameSeriesName?: string
   gameBorderId?: string
+  gameBorderRectoId?: string
+  gameBorderVersoId?: string
   onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
@@ -295,6 +345,9 @@ export function GameContentPanel({
 
   const selectedIds = gameSelectedIds ?? []
   const topicOptions = source === 'lecture' ? lectureTopicOptions() : themeTopicOptions()
+  const borderRectoId = gameBorderRectoId ?? gameBorderId
+  const borderVersoId = gameBorderVersoId ?? gameBorderId
+
 
   function commitEntries(nextEntries: GameEntry[], patch: Partial<GameContentChange> = {}) {
     setError(null)
@@ -306,7 +359,9 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor,
       gameSeriesName,
-      gameBorderId,
+      gameBorderId: borderRectoId,
+      gameBorderRectoId: borderRectoId,
+      gameBorderVersoId: borderVersoId,
       ...patch,
     })
   }
@@ -344,7 +399,9 @@ export function GameContentPanel({
       gameSelectedIds: nextIds,
       gameBackColor,
       gameSeriesName,
-      gameBorderId,
+      gameBorderId: borderRectoId,
+      gameBorderRectoId: borderRectoId,
+      gameBorderVersoId: borderVersoId,
       ...patch,
     })
   }
@@ -376,7 +433,9 @@ export function GameContentPanel({
       gameSelectedIds: mergedIds.slice(0, maxCards),
       gameBackColor,
       gameSeriesName,
-      gameBorderId,
+      gameBorderId: borderRectoId,
+      gameBorderRectoId: borderRectoId,
+      gameBorderVersoId: borderVersoId,
     })
   }
 
@@ -390,11 +449,13 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor,
       gameSeriesName: name,
-      gameBorderId,
+      gameBorderId: borderRectoId,
+      gameBorderRectoId: borderRectoId,
+      gameBorderVersoId: borderVersoId,
     })
   }
 
-  function setBorderId(id: string | undefined) {
+  function setBorderIds(recto: string | undefined, verso: string | undefined) {
     const resolvedNow = resolveEntries(typeId, entries)
     onChange({
       gameEntries: resolvedNow,
@@ -404,7 +465,9 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor,
       gameSeriesName,
-      gameBorderId: id,
+      gameBorderId: recto,
+      gameBorderRectoId: recto,
+      gameBorderVersoId: verso,
     })
   }
 
@@ -546,6 +609,28 @@ export function GameContentPanel({
             disabled={selectedIds.length >= maxCards}
             onAdd={addExtraWord}
           />
+          {selectedIds.some((id) => id.startsWith('custom:')) ? (
+            <div className="game-custom-words" aria-label="Mots ajoutés">
+              <b>Mots ajoutés</b>
+              <ul className="game-custom-word-list">
+                {resolveEntries(typeId, entries)
+                  .filter((e) => {
+                    const key = `custom:${e.text.trim().toLowerCase()}`
+                    return selectedIds.includes(key) && e.text.trim()
+                  })
+                  .map((entry) => (
+                    <li key={`custom-show-${entry.text}`}>
+                      {entry.imageSrc ? (
+                        <img className="vocab-word-thumb" src={entry.imageSrc} alt="" />
+                      ) : (
+                        <span className="vocab-word-thumb is-empty" aria-hidden />
+                      )}
+                      <span className="vocab-word-label">{entry.text}</span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ) : null}
           <small className="muted">
             {typeId === 'jeux-vocabulaire'
               ? '9 cartes · recto images · verso mots (miroir bord long).'
@@ -606,7 +691,9 @@ export function GameContentPanel({
                                   gameSelectedIds: selectedIds,
                                   gameBackColor,
                                   gameSeriesName,
-                                  gameBorderId,
+                                  gameBorderId: borderRectoId,
+                                  gameBorderRectoId: borderRectoId,
+                                  gameBorderVersoId: borderVersoId,
                                 })
                               }}
                             />
@@ -623,9 +710,10 @@ export function GameContentPanel({
           <SeriesIdentityFields
             typeId={typeId}
             seriesName={gameSeriesName}
-            borderId={gameBorderId}
+            borderRectoId={borderRectoId}
+            borderVersoId={borderVersoId}
             onSeriesName={setSeriesName}
-            onBorderId={setBorderId}
+            onBorderIds={setBorderIds}
           />
         ) : null}
       </div>
@@ -706,9 +794,10 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          borderId={gameBorderId}
+          borderRectoId={borderRectoId}
+          borderVersoId={borderVersoId}
           onSeriesName={setSeriesName}
-          onBorderId={setBorderId}
+          onBorderIds={setBorderIds}
         />
         <ul className="game-intrus-list" aria-label="Catégories du tri">
           {slots.map((entry, index) => {
@@ -808,9 +897,10 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          borderId={gameBorderId}
+          borderRectoId={borderRectoId}
+          borderVersoId={borderVersoId}
           onSeriesName={setSeriesName}
-          onBorderId={setBorderId}
+          onBorderIds={setBorderIds}
         />
         <small className="muted">9 cartes · 5 mots inclinés · verso série.</small>
       </div>
@@ -826,9 +916,10 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          borderId={gameBorderId}
+          borderRectoId={borderRectoId}
+          borderVersoId={borderVersoId}
           onSeriesName={setSeriesName}
-          onBorderId={setBorderId}
+          onBorderIds={setBorderIds}
         />
         <ul className="game-riddle-list" aria-label="Devinettes">
           {slots.map((entry, index) => {
@@ -1038,9 +1129,10 @@ export function GameContentPanel({
         <SeriesIdentityFields
           typeId={typeId}
           seriesName={gameSeriesName}
-          borderId={gameBorderId}
+          borderRectoId={borderRectoId}
+          borderVersoId={borderVersoId}
           onSeriesName={setSeriesName}
-          onBorderId={setBorderId}
+          onBorderIds={setBorderIds}
         />
       ) : null}
     </div>
