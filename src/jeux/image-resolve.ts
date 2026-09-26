@@ -58,7 +58,7 @@ const LIB_BY_LABEL: Record<string, string> = {
   crayon: '/lib/images/vocabulaire/ecole/crayon.webp',
   maison: '/lib/images/vocabulaire/logement/maison.webp',
   chaise: '/lib/images/vocabulaire/logement/chaise.webp',
-  porte: '/lib/images/vocabulaire/logement/porte.webp',
+  porte: '/lib/images/vocabulaire/objets/porte.webp',
   'fenêtre': '/lib/images/vocabulaire/logement/fenêtre.webp',
   table: '/lib/images/vocabulaire/logement/table.webp',
   lampe: '/lib/images/vocabulaire/objets/lampe.webp',
