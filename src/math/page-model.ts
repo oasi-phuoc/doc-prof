@@ -36,6 +36,9 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     vocabLineCh: page.vocabLineCh,
     gameEntries: page.gameEntries,
     gameText: page.gameText,
+    gameSource: page.gameSource,
+    gameTopic: page.gameTopic,
+    gameSelectedIds: page.gameSelectedIds,
   }
 }
 

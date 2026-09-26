@@ -40,8 +40,10 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     ],
     entryCount: 12,
     cardCount: 12,
+    duplex: true,
     maxTextLen: 20,
-    entryHint: '12 cartes : mot + image (JPG, PNG, WebP ou SVG).',
+    entryHint:
+      '12 paires image/mot · impression recto-verso (images puis mots alignés).',
   },
   'jeux-vrai-faux': {
     id: 'jeux-vrai-faux',

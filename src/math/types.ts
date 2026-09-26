@@ -472,6 +472,12 @@ export type ExerciseBlock = {
   }>
   /** Domaine Jeux : texte brut du panneau (resync → gameEntries). */
   gameText?: string
+  /** Source du contenu Jeux vocabulaire : thème FR, banque lecture, ou libre. */
+  gameSource?: 'theme' | 'lecture' | 'libre'
+  /** Thème français pour filtrer la banque (mode thème / lecture). */
+  gameTopic?: string
+  /** Ids cochés dans la banque (mode thème / lecture). */
+  gameSelectedIds?: string[]
 }
 
 export type PageConfig = ExerciseBlock & {

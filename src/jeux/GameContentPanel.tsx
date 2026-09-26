@@ -1,8 +1,30 @@
-import { useId, useRef, useState } from 'react'
+import { useId, useMemo, useRef, useState } from 'react'
+import { vocabSubgroupsFor } from '@/francais/vocab-learn'
+import {
+  DEFAULT_GAME_TOPIC,
+  entriesFromBankItems,
+  isGameBankType,
+  lectureBankItems,
+  lectureTopicOptions,
+  themeBankItems,
+  themeTopicOptions,
+  type BankItem,
+  type GameSource,
+} from './bank'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from './image'
 import { entriesToText, resolveEntries, textToEntries } from './parse'
 import type { GameTemplate } from './templates'
 import type { GameEntry } from './types'
+
+export type { GameSource }
+
+export type GameContentChange = {
+  gameText: string
+  gameEntries: GameEntry[]
+  gameSource?: GameSource
+  gameTopic?: string
+  gameSelectedIds?: string[]
+}
 
 function templateHasImages(template: GameTemplate): boolean {
   return template.fields.some((field) => field.type === 'image')
@@ -13,34 +35,227 @@ export function GameContentPanel({
   template,
   entries,
   text,
+  gameSource = 'theme',
+  gameTopic,
+  gameSelectedIds,
   onChange,
 }: {
   typeId: string
   template: GameTemplate
   entries: GameEntry[] | undefined
   text: string
-  onChange: (next: { gameText: string; gameEntries: GameEntry[] }) => void
+  gameSource?: GameSource
+  gameTopic?: string
+  gameSelectedIds?: string[]
+  onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
   const fileRefs = useRef<Array<HTMLInputElement | null>>([])
   const [error, setError] = useState<string | null>(null)
+  const [subgroup, setSubgroup] = useState<string | undefined>()
   const withImages = templateHasImages(template)
+  const bankMode = isGameBankType(typeId) && withImages
+  const source = gameSource ?? 'theme'
+  const topicId = gameTopic ?? DEFAULT_GAME_TOPIC
+  const maxCards = template.entryCount
+
+  const themeSubgroups = useMemo(() => vocabSubgroupsFor(topicId), [topicId])
+  const activeSubgroup = subgroup ?? themeSubgroups[0]?.id
+
+  const bankItems: BankItem[] = useMemo(() => {
+    if (source === 'theme') return themeBankItems(topicId, activeSubgroup)
+    if (source === 'lecture') return lectureBankItems(topicId)
+    return []
+  }, [source, topicId, activeSubgroup])
+
+  const selectedIds = gameSelectedIds ?? []
+  const topicOptions = source === 'lecture' ? lectureTopicOptions() : themeTopicOptions()
+
+  function commitEntries(nextEntries: GameEntry[], patch: Partial<GameContentChange> = {}) {
+    setError(null)
+    onChange({
+      gameEntries: nextEntries,
+      gameText: entriesToText(typeId, nextEntries),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: selectedIds,
+      ...patch,
+    })
+  }
+
+  function applySelection(ids: string[], items: BankItem[], patch: Partial<GameContentChange> = {}) {
+    const byId = new Map(items.map((item) => [item.id, item]))
+    const picked = ids
+      .map((id) => byId.get(id))
+      .filter((item): item is BankItem => Boolean(item))
+      .slice(0, maxCards)
+    const nextEntries = entriesFromBankItems(picked, maxCards)
+    onChange({
+      gameEntries: nextEntries,
+      gameText: entriesToText(
+        typeId,
+        nextEntries.filter((e) => e.text),
+      ),
+      gameSource: patch.gameSource ?? source,
+      gameTopic: patch.gameTopic ?? topicId,
+      gameSelectedIds: picked.map((p) => p.id),
+      ...patch,
+    })
+  }
+
+  function setSource(next: GameSource) {
+    if (next === 'libre') {
+      const resolved = resolveEntries(typeId, entries)
+      commitEntries(resolved, { gameSource: 'libre', gameSelectedIds: [] })
+      return
+    }
+    const nextTopic = topicId === 'tous' && next === 'theme' ? DEFAULT_GAME_TOPIC : topicId
+    const items =
+      next === 'theme'
+        ? themeBankItems(nextTopic, vocabSubgroupsFor(nextTopic)[0]?.id)
+        : lectureBankItems(nextTopic === 'tous' ? 'tous' : nextTopic)
+    const defaults = items.slice(0, maxCards)
+    applySelection(
+      defaults.map((w) => w.id),
+      items,
+      { gameSource: next, gameTopic: nextTopic },
+    )
+  }
+
+  // —— Modes banque (thème / lecture) ——
+  if (bankMode && source !== 'libre') {
+    return (
+      <div className="game-content-field">
+        <span className="game-content-label">Contenu</span>
+        <div className="mode-toggle-block">
+          <b>Source</b>
+          <div className="mode-toggle is-3" role="group" aria-label="Source des cartes">
+            <button
+              type="button"
+              className={source === 'theme' ? 'active' : ''}
+              onClick={() => setSource('theme')}
+            >
+              Thème
+            </button>
+            <button
+              type="button"
+              className={source === 'lecture' ? 'active' : ''}
+              onClick={() => setSource('lecture')}
+            >
+              Banque
+            </button>
+            <button type="button" className="" onClick={() => setSource('libre')}>
+              Libre
+            </button>
+          </div>
+        </div>
+
+        <label className="select-shell">
+          <span>Thème</span>
+          <select
+            className="pill-input"
+            value={topicId}
+            onChange={(event) => {
+              const nextTopic = event.target.value
+              if (source === 'theme') {
+                const sg = vocabSubgroupsFor(nextTopic)[0]?.id
+                setSubgroup(sg)
+                const items = themeBankItems(nextTopic, sg)
+                applySelection(
+                  items.slice(0, maxCards).map((w) => w.id),
+                  items,
+                  { gameTopic: nextTopic },
+                )
+              } else {
+                const items = lectureBankItems(nextTopic)
+                applySelection(
+                  items.slice(0, maxCards).map((w) => w.id),
+                  items,
+                  { gameTopic: nextTopic },
+                )
+              }
+            }}
+          >
+            {topicOptions.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        {source === 'theme' && themeSubgroups.length > 1 ? (
+          <label className="select-shell">
+            <span>Liste</span>
+            <select
+              className="pill-input"
+              value={activeSubgroup ?? ''}
+              onChange={(event) => {
+                const sg = event.target.value
+                setSubgroup(sg)
+                const items = themeBankItems(topicId, sg)
+                applySelection(
+                  items.slice(0, maxCards).map((w) => w.id),
+                  items,
+                )
+              }}
+            >
+              {themeSubgroups.map((g) => (
+                <option key={g.id} value={g.id}>
+                  {g.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
+
+        <div className="quad-libre-block">
+          <b>
+            Mots ({selectedIds.length}/{maxCards})
+          </b>
+          <div className="vocab-word-list" role="group" aria-label="Mots à mettre sur les cartes">
+            {bankItems.map((word) => {
+              const selected = selectedIds.includes(word.id)
+              return (
+                <label key={word.id} className={selected ? 'is-on' : ''}>
+                  <input
+                    type="checkbox"
+                    checked={selected}
+                    disabled={!selected && selectedIds.length >= maxCards}
+                    onChange={() => {
+                      const next = selected
+                        ? selectedIds.filter((id) => id !== word.id)
+                        : [...selectedIds, word.id].slice(0, maxCards)
+                      applySelection(next, bankItems)
+                    }}
+                  />
+                  {word.imageSrc ? (
+                    <img className="vocab-word-thumb" src={word.imageSrc} alt="" />
+                  ) : null}
+                  <span className="vocab-word-label">{word.label}</span>
+                </label>
+              )
+            })}
+          </div>
+          <small className="muted">
+            {typeId === 'jeux-vocabulaire'
+              ? 'Impression recto-verso : images puis mots alignés (bord long).'
+              : template.entryHint}
+          </small>
+        </div>
+      </div>
+    )
+  }
+
+  // —— Mode libre (ou templates sans images) ——
   const resolved = resolveEntries(typeId, entries)
   const slots = withImages
     ? Array.from({ length: template.entryCount }, (_, i) => resolved[i] ?? { text: '' })
     : resolved
 
-  function commit(nextEntries: GameEntry[]) {
-    setError(null)
-    onChange({
-      gameEntries: nextEntries,
-      gameText: entriesToText(typeId, nextEntries),
-    })
-  }
-
   function updateSlot(index: number, patch: Partial<GameEntry>) {
     const next = slots.map((entry, i) => (i === index ? { ...entry, ...patch } : entry))
-    commit(next)
+    commitEntries(next, { gameSource: 'libre' })
   }
 
   async function onPickImage(index: number, file: File | undefined) {
@@ -69,6 +284,7 @@ export function GameContentPanel({
             onChange({
               gameText: nextText,
               gameEntries: textToEntries(typeId, nextText, entries),
+              gameSource: 'libre',
             })
           }}
         />
@@ -80,6 +296,22 @@ export function GameContentPanel({
   return (
     <div className="game-content-field">
       <span className="game-content-label">Contenu</span>
+      {bankMode ? (
+        <div className="mode-toggle-block">
+          <b>Source</b>
+          <div className="mode-toggle is-3" role="group" aria-label="Source des cartes">
+            <button type="button" onClick={() => setSource('theme')}>
+              Thème
+            </button>
+            <button type="button" onClick={() => setSource('lecture')}>
+              Banque
+            </button>
+            <button type="button" className="active" onClick={() => setSource('libre')}>
+              Libre
+            </button>
+          </div>
+        </div>
+      ) : null}
       <p className="muted game-content-hint">{template.entryHint}</p>
       <ul className="game-entry-list" aria-label="Cartes du jeu">
         {slots.map((entry, index) => {
@@ -96,11 +328,7 @@ export function GameContentPanel({
                 }
                 onClick={() => fileRefs.current[index]?.click()}
               >
-                {entry.imageSrc ? (
-                  <img src={entry.imageSrc} alt="" />
-                ) : (
-                  <span aria-hidden>+</span>
-                )}
+                {entry.imageSrc ? <img src={entry.imageSrc} alt="" /> : <span aria-hidden>+</span>}
               </button>
               <input
                 ref={(el) => {
@@ -111,8 +339,7 @@ export function GameContentPanel({
                 type="file"
                 accept={GAME_IMAGE_ACCEPT}
                 onChange={(event) => {
-                  const file = event.target.files?.[0]
-                  void onPickImage(index, file)
+                  void onPickImage(index, event.target.files?.[0])
                   event.target.value = ''
                 }}
               />
@@ -147,7 +374,11 @@ export function GameContentPanel({
           {error}
         </p>
       ) : (
-        <small className="muted">JPG, PNG, WebP ou SVG · max. 2,5 Mo · cadrage automatique</small>
+        <small className="muted">
+          {typeId === 'jeux-vocabulaire'
+            ? 'Recto-verso : page images puis page mots (bord long).'
+            : 'JPG, PNG, WebP ou SVG · max. 2,5 Mo'}
+        </small>
       )}
     </div>
   )

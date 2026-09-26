@@ -32,14 +32,55 @@ function padEntries(entries: GameEntry[], n: number, fill = '…'): GameEntry[] 
   return out
 }
 
+/** Miroir horizontal par ligne (recto-verso bord long : le mot colle à l’image). */
+function mirrorRows<T>(items: T[], cols: number): T[] {
+  const out: T[] = []
+  for (let i = 0; i < items.length; i += cols) {
+    const row = items.slice(i, i + cols)
+    while (row.length < cols) row.push(row[row.length - 1]!)
+    out.push(...row.reverse())
+  }
+  return out
+}
+
+/**
+ * Vocabulaire imprimable recto-verso :
+ * feuille 1 = images, feuille 2 = mots (ordre mirroir pour correspondance au retournement).
+ */
 function vocab(entries: GameEntry[]): MathItem[] {
-  const cards: GameCard[] = padEntries(entries, 12).map((e, i) => ({
-    id: `v-${i}`,
-    text: e.text,
+  const cols = 3
+  const rows = 4
+  const list = padEntries(entries, cols * rows)
+  const recto: GameCard[] = list.map((e, i) => ({
+    id: `vr-${i}`,
     imageSrc: e.imageSrc,
-    variant: 'default',
+    variant: 'image' as const,
+    badge: String(i + 1),
   }))
-  return [boardItem({ cols: 3, rows: 4, cards, kind: 'cards' })]
+  const versoSource = list.map((e, i) => ({ e, i }))
+  const versoMirrored = mirrorRows(versoSource, cols)
+  const verso: GameCard[] = versoMirrored.map(({ e, i }) => ({
+    id: `vv-${i}`,
+    text: e.text,
+    variant: 'word' as const,
+    badge: String(i + 1),
+  }))
+  return [
+    boardItem({
+      cols,
+      rows,
+      cards: recto,
+      kind: 'cards',
+      title: 'Recto — images (imprimez cette page en premier)',
+    }),
+    boardItem({
+      cols,
+      rows,
+      cards: verso,
+      kind: 'cards',
+      title: 'Verso — mots (retournez la feuille : chaque mot correspond à l’image)',
+    }),
+  ]
 }
 
 function vraiFaux(entries: GameEntry[]): MathItem[] {

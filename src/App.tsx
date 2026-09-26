@@ -55,6 +55,7 @@ import {
 } from '@/francais/vocab-learn'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
+import { defaultThemeGameContent, isGameBankType } from '@/jeux/bank'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { entriesToText } from '@/jeux/parse'
@@ -991,11 +992,29 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const preservedGame =
     prev?.exerciseType === type.id && prev.gameEntries?.length
       ? prev.gameEntries
-      : defaultEntriesFor(type.id)
+      : undefined
+  const themeGame = isJeux && isGameBankType(type.id) ? defaultThemeGameContent(type.id) : null
+  const gameEntries =
+    preservedGame ??
+    (themeGame?.gameEntries ?? (isJeux ? defaultEntriesFor(type.id) : undefined))
   const gameText =
     prev?.exerciseType === type.id && prev.gameText != null
       ? prev.gameText
-      : entriesToText(type.id, preservedGame)
+      : gameEntries
+        ? entriesToText(type.id, gameEntries)
+        : undefined
+  const gameSource =
+    prev?.exerciseType === type.id && prev.gameSource
+      ? prev.gameSource
+      : themeGame?.gameSource
+  const gameTopic =
+    prev?.exerciseType === type.id && prev.gameTopic
+      ? prev.gameTopic
+      : themeGame?.gameTopic
+  const gameSelectedIds =
+    prev?.exerciseType === type.id && prev.gameSelectedIds?.length
+      ? prev.gameSelectedIds
+      : themeGame?.gameSelectedIds
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -1052,8 +1071,21 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           vocabLineCh: undefined,
         }),
     ...(isJeux
-      ? { columns: 1, gameEntries: preservedGame, gameText }
-      : { gameEntries: undefined, gameText: undefined }),
+      ? {
+          columns: 1,
+          gameEntries,
+          gameText,
+          gameSource,
+          gameTopic,
+          gameSelectedIds,
+        }
+      : {
+          gameEntries: undefined,
+          gameText: undefined,
+          gameSource: undefined,
+          gameTopic: undefined,
+          gameSelectedIds: undefined,
+        }),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -1580,6 +1612,9 @@ function GeneratorPage() {
       vocabLineCh: fields.vocabLineCh,
       gameEntries: fields.gameEntries,
       gameText: fields.gameText,
+      gameSource: fields.gameSource,
+      gameTopic: fields.gameTopic,
+      gameSelectedIds: fields.gameSelectedIds,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -1813,6 +1848,9 @@ function GeneratorPage() {
                   template={jeuxTemplate}
                   entries={activeBlock.gameEntries}
                   text={jeuxText}
+                  gameSource={activeBlock.gameSource}
+                  gameTopic={activeBlock.gameTopic}
+                  gameSelectedIds={activeBlock.gameSelectedIds}
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}
