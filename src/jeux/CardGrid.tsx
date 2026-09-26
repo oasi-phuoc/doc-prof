@@ -269,8 +269,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
     const mode = kind === 'loto-back' ? 'back' : 'page'
     return (
       <div className={`game-board is-${kind}`}>
-        {board.title ? <p className="game-board-title">{board.title}</p> : null}
-        <div className="loto-panels" aria-label={board.title ?? 'Grilles de loto'}>
+        <div className="loto-panels" aria-label="Grilles de loto">
           {(board.panels ?? []).map((panel, index) => (
             <LotoPanelFace
               key={`${panel.title ?? 'panel'}-${index}`}
@@ -294,7 +293,6 @@ export function CardGrid({ board }: { board: GameBoard }) {
 
   return (
     <div className={`game-board is-${kind}${ludic ? ' is-ludic' : ''}`}>
-      {board.title ? <p className="game-board-title">{board.title}</p> : null}
       <div
         className="game-card-grid"
         style={
@@ -303,7 +301,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
             '--game-rows': board.rows,
           } as CSSProperties
         }
-        aria-label={board.title ?? 'Cartes du jeu'}
+        aria-label="Cartes du jeu"
       >
         {board.cards.map((card) => (
           <CardFace key={card.id} card={card} borderId={borderId} side={side} />

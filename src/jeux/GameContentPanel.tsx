@@ -548,16 +548,77 @@ export function GameContentPanel({
           />
           <small className="muted">
             {typeId === 'jeux-vocabulaire'
-              ? 'Recto images · verso mots seuls (miroir bord long).'
+              ? '9 cartes · recto images · verso mots (miroir bord long).'
               : typeId === 'jeux-memory'
-                ? 'Recto : paires image / mot · verso : logo ClairFLE + nom de série.'
+                ? '4 paires (8 cartes + 1 vide) · verso série.'
                 : typeId === 'jeux-loto'
-                  ? '15 grilles (3/page) · verso = série (logo ClairFLE) · lot animateur 27 mots.'
+                  ? '27 mots · 15 grilles (3/page) + verso · lot animateur.'
                   : typeId === 'jeux-devinettes'
-                    ? 'Sélectionnez les mots ; verso indices (miroir bord long).'
+                    ? 'Sélectionnez jusqu’à 9 mots, puis saisissez 3 phrases-indices chacune.'
                     : template.entryHint}
           </small>
         </div>
+        {typeId === 'jeux-devinettes' && selectedIds.length > 0 ? (
+          <div className="game-riddle-bank-clues">
+            <b>Phrases-indices</b>
+            <ul className="game-riddle-list" aria-label="Indices des mots sélectionnés">
+              {resolveEntries(typeId, entries)
+                .filter((e) => e.text.trim())
+                .slice(0, maxCards)
+                .map((entry, index) => {
+                  const clues = [...(entry.clues ?? [])]
+                  while (clues.length < 3) clues.push('')
+                  return (
+                    <li className="game-riddle-block" key={`bank-riddle-${entry.text}-${index}`}>
+                      <div className="game-riddle-head">
+                        <b>{entry.text}</b>
+                        {entry.imageSrc ? (
+                          <img className="vocab-word-thumb" src={entry.imageSrc} alt="" />
+                        ) : null}
+                      </div>
+                      <div className="game-riddle-clues">
+                        {[0, 1, 2].map((clueIndex) => (
+                          <label key={clueIndex} className="game-riddle-clue">
+                            <span>Phrase {clueIndex + 1}</span>
+                            <input
+                              className="pill-input"
+                              type="text"
+                              maxLength={80}
+                              value={clues[clueIndex] ?? ''}
+                              aria-label={`${entry.text}, phrase ${clueIndex + 1}`}
+                              placeholder={`Indice ${clueIndex + 1}`}
+                              onChange={(event) => {
+                                const resolved = resolveEntries(typeId, entries)
+                                const next = resolved.map((e) => {
+                                  if (e.text.trim().toLowerCase() !== entry.text.trim().toLowerCase()) {
+                                    return e
+                                  }
+                                  const nextClues = [...(e.clues ?? ['', '', ''])]
+                                  while (nextClues.length < 3) nextClues.push('')
+                                  nextClues[clueIndex] = event.target.value
+                                  return { ...e, clues: nextClues.slice(0, 3) }
+                                })
+                                onChange({
+                                  gameEntries: next,
+                                  gameText: entriesToText(typeId, next),
+                                  gameSource: source,
+                                  gameTopic: topicId,
+                                  gameSelectedIds: selectedIds,
+                                  gameBackColor,
+                                  gameSeriesName,
+                                  gameBorderId,
+                                })
+                              }}
+                            />
+                          </label>
+                        ))}
+                      </div>
+                    </li>
+                  )
+                })}
+            </ul>
+          </div>
+        ) : null}
         {usesSeriesIdentity(typeId) ? (
           <SeriesIdentityFields
             typeId={typeId}
@@ -586,7 +647,7 @@ export function GameContentPanel({
               ? {
                   text: '',
                   category: '',
-                  words: ['', '', '', '', '', '', ''],
+                  words: ['', ''],
                 }
               : { text: '', clues: ['', '', ''] }),
         )
@@ -617,13 +678,13 @@ export function GameContentPanel({
     const entry = slots[index] ?? {
       text: '',
       category: '',
-      words: ['', '', '', '', '', '', ''],
+      words: ['', ''],
     }
-    const words = [...(entry.words ?? ['', '', '', '', '', '', ''])]
-    while (words.length < 7) words.push('')
+    const words = [...(entry.words ?? ['', ''])]
+    while (words.length < 2) words.push('')
     words[wordIndex] = value
     const cat = entry.category || entry.text
-    updateSlot(index, { words: words.slice(0, 7), category: cat, text: cat })
+    updateSlot(index, { words: words.slice(0, 2), category: cat, text: cat })
   }
 
   async function onPickImage(index: number, file: File | undefined) {
@@ -636,7 +697,7 @@ export function GameContentPanel({
     }
   }
 
-  // —— Tri : 3 blocs (catégorie + 7 mots) ——
+  // —— Tri : 3 blocs (catégorie + 2 mots) → 9 cartes ——
   if (typeId === 'jeux-tri') {
     return (
       <div className="game-content-field">
@@ -652,7 +713,7 @@ export function GameContentPanel({
         <ul className="game-intrus-list" aria-label="Catégories du tri">
           {slots.map((entry, index) => {
             const words = [...(entry.words ?? [])]
-            while (words.length < 7) words.push('')
+            while (words.length < 2) words.push('')
             const cat = entry.category || entry.text
             return (
               <li className="game-intrus-block" key={`${typeId}-${index}`}>
@@ -673,7 +734,7 @@ export function GameContentPanel({
                       }}
                     />
                   </label>
-                  {[0, 1, 2, 3, 4, 5, 6].map((wordIndex) => (
+                  {[0, 1].map((wordIndex) => (
                     <label key={wordIndex}>
                       <span>Mot {wordIndex + 1}</span>
                       <input
@@ -692,14 +753,12 @@ export function GameContentPanel({
             )
           })}
         </ul>
-        <small className="muted">
-          Recto : 24 cartes (étiquettes + mots) · verso : logo ClairFLE + série (bord long).
-        </small>
+        <small className="muted">9 cartes (3 étiquettes + 6 mots) · verso série.</small>
       </div>
     )
   }
 
-  // —— Intrus : 12 blocs (intrus + 4 mots) ——
+  // —— Intrus : 9 blocs (intrus + 4 mots) ——
   if (typeId === 'jeux-intrus') {
     return (
       <div className="game-content-field">
@@ -753,9 +812,7 @@ export function GameContentPanel({
           onSeriesName={setSeriesName}
           onBorderId={setBorderId}
         />
-        <small className="muted">
-          Recto : 5 mots inclinés · verso : logo ClairFLE + série (bord long).
-        </small>
+        <small className="muted">9 cartes · 5 mots inclinés · verso série.</small>
       </div>
     )
   }

@@ -1156,34 +1156,23 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       page.exerciseType === 'jeux-intrus' ||
       page.exerciseType === 'jeux-tri' ||
       page.exerciseType === 'jeux-dominos'
-    const isJeuxSeriesBack =
-      page.exerciseType === 'jeux-memory' ||
-      page.exerciseType === 'jeux-intrus' ||
-      page.exerciseType === 'jeux-tri' ||
-      page.exerciseType === 'jeux-dominos'
     // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
     // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.
     if (isJeuxDuplex && worksheet.items.length >= 2) {
       const block = worksheet.blocks[0]
-      const versoInstruction = isJeuxSeriesBack
-        ? 'Verso — série (logo ClairFLE). Imprimez en recto-verso (bord long).'
-        : 'Verso — retournez la feuille pour faire correspondre mot et image.'
-      const versoBlockInstruction = isJeuxSeriesBack
-        ? 'Imprimez en recto-verso (bord long). Logo ClairFLE + nom de série sur chaque dos.'
-        : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
       worksheet.items.forEach((item, part) => {
         const side = part === 0 ? 'Recto' : 'Verso'
         out.push({
           ...worksheet,
-          title: part === 0 ? worksheet.title : `${worksheet.title} — ${side.toLowerCase()}`,
-          instruction: part === 0 ? worksheet.instruction : versoInstruction,
+          title: `${worksheet.title} — ${side}`,
+          instruction: '',
           items: [item],
           blocks: block
             ? [
                 {
                   ...block,
                   title: side,
-                  instruction: part === 0 ? block.instruction : versoBlockInstruction,
+                  instruction: '',
                   items: [item],
                 },
               ]
@@ -1197,14 +1186,14 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
     // Loto : paires (page grilles + verso thème), puis lot animateur.
     if (page.exerciseType === 'jeux-loto' && worksheet.items.length > 0) {
       const block = worksheet.blocks[0]
-      const pushSheet = (item: (typeof worksheet.items)[number], side: string, instruction: string) => {
+      const pushSheet = (item: (typeof worksheet.items)[number], side: string) => {
         out.push({
           ...worksheet,
           title: side ? `${worksheet.title} — ${side}` : worksheet.title,
-          instruction,
+          instruction: '',
           items: [item],
           blocks: block
-            ? [{ ...block, title: side || block.title, instruction, items: [item] }]
+            ? [{ ...block, title: side || block.title, instruction: '', items: [item] }]
             : worksheet.blocks,
           configIndex: index,
           isContinuation: false,
@@ -1216,22 +1205,12 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
         const next = worksheet.items[i + 1]
         const kind = cur.gameBoard?.kind
         if (kind === 'loto-page' && next?.gameBoard?.kind === 'loto-back') {
-          pushSheet(cur, 'grilles', worksheet.instruction)
-          pushSheet(
-            next,
-            'verso thème',
-            'Verso — série / thème. Imprimez en recto-verso (bord long), découpez les cadres.',
-          )
+          pushSheet(cur, 'Recto')
+          pushSheet(next, 'Verso')
           i += 2
           continue
         }
-        pushSheet(
-          cur,
-          kind === 'loto-call' ? 'lot animateur' : '',
-          kind === 'loto-call'
-            ? 'Lot animateur — tirez les mots dans l’ordre indiqué.'
-            : worksheet.instruction,
-        )
+        pushSheet(cur, kind === 'loto-call' ? 'Lot animateur' : '')
         i += 1
       }
       return

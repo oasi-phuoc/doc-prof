@@ -27,30 +27,32 @@ export type GameTemplate = {
   entryHint: string
 }
 
+/** Grille de cartes unifiée : 9 cartes, 3 × 3. */
+const GRID_3X3 = { cols: 3, rows: 3 } as const
+
 export const GAME_TEMPLATES: Record<string, GameTemplate> = {
   'jeux-vocabulaire': {
     id: 'jeux-vocabulaire',
     family: 'cartes',
     label: 'Vocabulaire',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 4 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 20 },
     ],
-    entryCount: 12,
-    cardCount: 12,
+    entryCount: 9,
+    cardCount: 9,
     duplex: true,
     maxTextLen: 20,
-    entryHint:
-      '12 paires image/mot · impression recto-verso (images puis mots alignés).',
+    entryHint: '9 paires image/mot · impression recto-verso (bord long).',
   },
   'jeux-devinettes': {
     id: 'jeux-devinettes',
     family: 'cartes',
     label: 'Devinettes',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 3 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 20 },
@@ -61,31 +63,30 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 20,
     entryHint:
-      '9 cartes · mot + image au recto, 3 indices au verso (impression bord long).',
+      '9 cartes · mot + image au recto, 3 phrases-indices au verso (bord long).',
   },
   'jeux-memory': {
     id: 'jeux-memory',
     family: 'cartes',
     label: 'Mémory',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 4 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 16 },
     ],
-    entryCount: 6,
-    cardCount: 12,
+    entryCount: 4,
+    cardCount: 9,
     duplex: true,
     maxTextLen: 16,
-    entryHint:
-      '6 paires image / mot au recto · verso = logo ClairFLE + nom de série.',
+    entryHint: '4 paires image / mot (8 cartes + 1 case vide) · verso série.',
   },
   'jeux-loto': {
     id: 'jeux-loto',
     family: 'cartes',
     label: 'Loto',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 3 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 16 },
@@ -94,65 +95,62 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     cardCount: 27,
     duplex: true,
     maxTextLen: 16,
-    entryHint:
-      '27 mots · 15 grilles (3 par page) + verso thème · lot animateur.',
+    entryHint: '27 mots · 15 grilles (3 par page) + verso thème · lot animateur.',
   },
   'jeux-intrus': {
     id: 'jeux-intrus',
     family: 'cartes',
     label: 'Intrus',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 4 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'texte', required: true },
       { type: 'indices', required: true },
     ],
-    entryCount: 12,
-    cardCount: 12,
+    entryCount: 9,
+    cardCount: 9,
     duplex: true,
     maxTextLen: 18,
-    entryHint:
-      '12 cartes · 4 mots + 1 intrus · verso = logo ClairFLE + nom de série.',
+    entryHint: '9 cartes · 4 mots + 1 intrus · verso = logo ClairFLE + série.',
   },
   'jeux-dominos': {
     id: 'jeux-dominos',
     family: 'cartes',
     label: 'Dominos',
     orientation: 'portrait',
-    grid: { cols: 2, rows: 8 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 16 },
     ],
-    entryCount: 16,
-    cardCount: 16,
+    entryCount: 9,
+    cardCount: 9,
+    duplex: true,
     maxTextLen: 16,
-    entryHint:
-      '16 mots + images · chaque domino : image d’un mot | mot suivant (chaîne).',
+    entryHint: '9 dominos image | mot (chaîne) · verso série.',
   },
   'jeux-tri': {
     id: 'jeux-tri',
     family: 'cartes',
     label: 'Tri / catégories',
     orientation: 'portrait',
-    grid: { cols: 4, rows: 6 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'categorie', required: true },
       { type: 'texte', required: true },
     ],
     entryCount: 3,
-    cardCount: 24,
+    cardCount: 9,
     duplex: true,
     maxTextLen: 16,
-    entryHint:
-      '3 catégories × 7 mots · 24 cartes · verso = logo ClairFLE + nom de série.',
+    entryHint: '3 catégories × 2 mots (+ étiquettes) · 9 cartes · verso série.',
   },
   'jeux-sept-familles': {
     id: 'jeux-sept-familles',
     family: 'structures',
     label: '7 familles',
     orientation: 'portrait',
-    grid: { cols: 4, rows: 7 },
+    grid: { ...GRID_3X3 },
     fields: [
       { type: 'categorie', required: true },
       { type: 'texte', required: true },
@@ -167,7 +165,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     family: 'structures',
     label: 'Plateau de jeu',
     orientation: 'portrait',
-    grid: { cols: 5, rows: 5 },
+    grid: { cols: 5, rows: 4 },
     fields: [{ type: 'texte', required: true, maxLength: 40 }],
     entryCount: 12,
     cardCount: 20,
@@ -218,4 +216,9 @@ export function templateFor(typeId: string): GameTemplate | null {
 
 export function isJeuxType(typeId: string): boolean {
   return typeId.startsWith('jeux-') || typeId in GAME_TEMPLATES
+}
+
+/** Types « grille de cartes » (9 cartes 3×3, duplex). */
+export function isJeuxCartesType(typeId: string): boolean {
+  return templateFor(typeId)?.family === 'cartes'
 }

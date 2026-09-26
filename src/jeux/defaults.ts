@@ -125,22 +125,22 @@ const DOMINOS: GameEntry[] = [
   'arbre',
 ].map((text) => withImage(text))
 
-/** 3 catégories × 7 mots (+ 3 étiquettes catégorie = 24 cartes). */
+/** 3 catégories × 2 mots (+ 3 étiquettes = 9 cartes). */
 const TRI: GameEntry[] = [
   {
     text: 'Animaux',
     category: 'Animaux',
-    words: ['chat', 'chien', 'oiseau', 'poisson', 'cheval', 'vache', 'mouton'],
+    words: ['chat', 'chien'],
   },
   {
     text: 'Nourriture',
     category: 'Nourriture',
-    words: ['pain', 'lait', 'riz', 'soupe', 'fromage', 'fruit', 'eau'],
+    words: ['pain', 'lait'],
   },
   {
     text: 'Couleurs',
     category: 'Couleurs',
-    words: ['rouge', 'bleu', 'vert', 'jaune', 'noir', 'blanc', 'rose'],
+    words: ['rouge', 'bleu'],
   },
 ]
 

@@ -218,11 +218,6 @@ function WorksheetSheet({
         ) : (
           <CustomDocumentHeader config={custom} pageTitle={page.title} domain={page.domain} />
         ))}
-      {isJeuxSheet && pageNumber === 1 ? (
-        <header className="jeux-sheet-title">
-          <h3>{page.title}</h3>
-        </header>
-      ) : null}
       <SheetBody>
         {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, blockIndex) => {
           const algebraItems = block.items.filter((item) => item.layout === 'algebra')
@@ -238,9 +233,10 @@ function WorksheetSheet({
           )
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
-              <header className={`exercise-heading${isJeuxSheet ? ' is-jeux' : ''}`}>
+              {isJeuxSheet ? null : (
+              <header className="exercise-heading">
                 <div className="exercise-heading-main">
-                  {isJeuxSheet ? null : <h3>{block.title}</h3>}
+                  <h3>{block.title}</h3>
                   <p>{block.instruction}</p>
                   {block.givens && block.givens.length > 0 ? (
                     <p className="sheet-givens" aria-label="Valeurs des variables">
@@ -255,10 +251,11 @@ function WorksheetSheet({
                     </p>
                   ) : null}
                 </div>
-                {evalMode && !isJeuxSheet ? (
+                {evalMode ? (
                   <span className="instruction-points">{block.items.length * pointsPerQuestion} points</span>
                 ) : null}
               </header>
+              )}
               {block.document ? (
                 <div className={`exercise-document is-${block.document.kind}`}>
                   {block.document.title ? <p className="exercise-document-title">{block.document.title}</p> : null}
@@ -1229,6 +1226,14 @@ function GeneratorPage() {
   const pageExerciseBlocks = pageBlocks(activePage)
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
+  /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
+  const jeuxPreviewSheets = useMemo(() => {
+    if (activePage.domain !== 'jeux') return null
+    const related = worksheets
+      .map((sheet, index) => ({ sheet, index }))
+      .filter(({ sheet }) => (sheet.configIndex ?? 0) === pageIndex)
+    return related.length > 0 ? related : null
+  }, [activePage.domain, worksheets, pageIndex])
   const available =
     activePage.domain === 'français'
       ? frenchTopics
@@ -1758,7 +1763,17 @@ function GeneratorPage() {
               </span>
             </div>
             <div className="mode-toggle is-tabs page-tabs" role="tablist" aria-label="Feuilles">
-              {worksheets.map((sheet, index) => (
+              {worksheets.map((sheet, index) => {
+                const sideLabel = sheet.title?.includes('—')
+                  ? sheet.title.split('—').pop()?.trim()
+                  : undefined
+                const tabLabel =
+                  sheet.domain === 'jeux' && sideLabel
+                    ? sideLabel
+                    : sheet.isContinuation
+                      ? 'suite'
+                      : String(index + 1)
+                return (
                 <button
                   key={`${sheet.configIndex ?? index}-${sheet.isContinuation ? 'suite' : 'main'}-${index}`}
                   type="button"
@@ -1768,11 +1783,14 @@ function GeneratorPage() {
                     setBlockIndex(0)
                   }}
                   aria-label={
-                    sheet.isContinuation ? `Page ${index + 1} (suite)` : `Page ${index + 1}`
+                    sheet.domain === 'jeux' && sideLabel
+                      ? sideLabel
+                      : sheet.isContinuation
+                        ? `Page ${index + 1} (suite)`
+                        : `Page ${index + 1}`
                   }
                 >
-                  <span className="tab-number">{index + 1}</span>
-                  {sheet.isContinuation ? <span className="tab-suite">suite</span> : null}
+                  <span className="tab-number">{tabLabel}</span>
                   {pages.length > 1 &&
                   !sheet.isContinuation &&
                   (sheet.configIndex ?? index) === pageIndex &&
@@ -1783,7 +1801,8 @@ function GeneratorPage() {
                     />
                   ) : null}
                 </button>
-              ))}
+                )
+              })}
             </div>
             <div className="page-structure-actions">
               <button className="button secondary" type="button" onClick={addPage}>
@@ -2832,7 +2851,26 @@ function GeneratorPage() {
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
-                <div className="sheet-preview-row">
+                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}`}>
+                  {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
+                    <div className="sheet-stage is-jeux-stack">
+                      {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
+                        <div
+                          className="a4-frame"
+                          key={`jeux-prev-${sheet.exerciseType}-${seed}-${index}`}
+                          ref={stackIdx === 0 ? previewFrameRef : undefined}
+                        >
+                          <WorksheetSheet
+                            page={sheet}
+                            pageNumber={index + 1}
+                            sheetIndex={index + 1}
+                            total={worksheets.length}
+                            {...sheetProps}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
                   <div className="sheet-stage">
                     <div className="a4-frame" ref={previewFrameRef}>
                       <WorksheetSheet
@@ -2860,6 +2898,7 @@ function GeneratorPage() {
                       />
                     </div>
                   </div>
+                  )}
                   {isFormes && activeBlock.coordLibre ? (
                     <aside className="coord-page-palette no-print">
                       <b>Formes</b>
