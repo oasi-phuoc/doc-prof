@@ -2,7 +2,7 @@
 name: nouvel-exercice
 description: >-
   Ajoute un type d'exercice maths de bout en bout (entrée catalog.ts, branche
-  déterministe dans generate.ts, layout MathItemView si besoin, colonnes /
+  déterministe dans generate.ts, layout ItemView si besoin, colonnes /
   préférences). À utiliser dès qu'on demande d'ajouter, créer ou implémenter un
   exercice, un type de fiche, un générateur (addition en colonnes, fractions,
   périmètre, division posée, suites, problèmes…), même sans le mot « exercice ».
@@ -10,7 +10,7 @@ description: >-
 
 # Créer un type d'exercice maths
 
-Un type d'exercice = une entrée dans `src/math/catalog.ts` + une branche dans `src/math/generate.ts` (maths) ou un générateur dans `src/francais/` (FLE / phrase / lecture) + un rendu via un `layout` existant (ou nouveau) dans `MathItemView.tsx`.
+Un type d'exercice = une entrée dans `src/math/catalog.ts` + une branche dans `src/math/generate.ts` (maths) ou un générateur dans `src/francais/` (FLE / phrase / lecture) + un rendu via un `layout` existant (ou nouveau) dans `ItemView.tsx`.
 
 ## Avant de coder
 
@@ -38,7 +38,7 @@ Toujours lire `config.difficulty` dans `generate.ts` / `algebra.ts` (via `pairAd
 
 1. Ajouter l'entrée avec l'helper `t(...)` dans `exerciseTypes` (`catalog.ts`) : `id`, `topic`, `label`, `description`, `instruction`, `visual`, extras (`preferredColumns`, `figure`).
 2. Dans `generate.ts`, brancher sur `config.exerciseType` (ou le motif déjà utilisé) pour produire des `MathItem[]` via `rng` uniquement (`int`, `pick`, `shuffle` de `src/math/rng.ts`).
-3. Si le `layout` n'existe pas : l'ajouter dans `types.ts`, le rendu dans `MathItemView.tsx`, les styles dans `App.css` (école, N&B).
+3. Si le `layout` n'existe pas : l'ajouter dans `types.ts`, le rendu dans `ItemView.tsx`, les styles dans `App.css` (école, N&B).
 4. Vérifier densité A4 : `preferredColumns` et `count` par défaut compatibles avec une page fixe (voir skill `test-impression`).
 5. `npm run lint` puis `npm run build`. Contrôler aperçu élève + corrigé.
 

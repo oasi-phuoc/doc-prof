@@ -12,7 +12,7 @@ import {
 } from 'react'
 import './App.css'
 import { CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
-import { MathItemView, tokenizeAlgebra } from '@/components/math/MathItemView'
+import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
 import {
   CLASS_LEVELS,
   CLASS_NUMBERS,
@@ -270,7 +270,7 @@ function WorksheetSheet({
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   return (
-                    <MathItemView
+                    <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}`}
                       item={item}
                       mode={mode}

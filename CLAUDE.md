@@ -19,7 +19,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/francais/` | Générateurs et banques FLE : Voc/Gram/Com, Phrase, Lecture, nombres en lettres |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |
-| `src/components/math/MathItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) |
+| `src/components/ItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) — maths et français |
 | `src/components/math/PrintDocumentChrome.tsx` | En-tête institutionnel / personnalisé, pied, points d'éval |
 | `src/components/math/GeometryFigure.tsx`, `FractionView.tsx`, `CoordGrid.tsx` | Visuels scolaires |
 | `src/App.tsx` | Générateur UI : SelectBox Domaine → Thème → Type, pages, aperçu |
@@ -39,7 +39,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 
 - TypeScript strict, alias `@/` pour `src/`.
 - Styles fiche : classes dans `src/App.css` ; variables `:root` (`--ink`, `--purple`, …). Pas de hex « magiques » nouveaux hors thème déjà présent.
-- Nouveau type d'exercice = entrée dans `catalog.ts` + branche dans `generate.ts` + rendu dans `MathItemView` si le `layout` n'existe pas encore.
+- Nouveau type d'exercice = entrée dans `catalog.ts` + branche dans `generate.ts` + rendu dans `ItemView` si le `layout` n'existe pas encore.
 - Une page peut contenir plusieurs types (`extraBlocks`). Titres **Exercice 1, 2…** chronologiques ; consigne sous le titre, sans cadre.
 - Français (Suisse romande pour les nombres en lettres : `french-numbers.ts`).
 

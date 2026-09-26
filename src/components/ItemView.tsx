@@ -1399,7 +1399,7 @@ function PhraseWriteBlock({ item }: { item: MathItem }) {
   )
 }
 
-export function MathItemView({
+export function ItemView({
   item,
   mode,
   index,
