@@ -2,6 +2,7 @@ import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import type { Rng } from '@/math/rng'
 import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
+import { outsiderWordsFor, withAutoClues } from './clues'
 import { DEFAULT_SEPT_FAMILLES } from './defaults'
 import { resolveGameImageSrc } from './image-resolve'
 import { resolveEntries } from './parse'
@@ -99,13 +100,24 @@ function boardItem(board: GameBoard, answer = ''): MathItem {
 
 const GRID = { cols: 3, rows: 3 } as const
 
+/** Entrées non vides avec image résolue — sans inventer de mots « … ». */
+function solidEntries(entries: GameEntry[]): GameEntry[] {
+  return entries
+    .filter((e) => e.text.trim() && !/^…\d*$/.test(e.text.trim()))
+    .map((e) => ({
+      ...e,
+      text: e.text.trim(),
+      imageSrc: resolveGameImageSrc(e.text, e.imageSrc),
+    }))
+}
+
 function padEntries(entries: GameEntry[], n: number, fill = '…'): GameEntry[] {
-  const out: GameEntry[] = entries.slice(0, n).map((e) => ({
+  const out: GameEntry[] = solidEntries(entries).slice(0, n)
+  while (out.length < n) out.push({ text: `${fill}${out.length + 1}` })
+  return out.map((e) => ({
     ...e,
     imageSrc: resolveGameImageSrc(e.text, e.imageSrc),
   }))
-  while (out.length < n) out.push({ text: `${fill}${out.length + 1}` })
-  return out
 }
 
 /** Miroir horizontal par ligne (recto-verso bord long : le mot colle à l’image). */
@@ -123,9 +135,9 @@ function mirrorRows<T>(items: T[], cols: number): T[] {
  * Vocabulaire imprimable recto-verso :
  * feuille 1 = images, feuille 2 = mots seuls (miroir bord long).
  */
-function vocab(entries: GameEntry[]): MathItem[] {
+function vocab(entries: GameEntry[], rng: Rng): MathItem[] {
   const { cols, rows } = GRID
-  const list = padEntries(entries, cols * rows)
+  const list = padEntries(shuffle(rng, solidEntries(entries)), cols * rows)
   const recto: GameCard[] = list.map((e, i) => ({
     id: `vr-${i}`,
     imageSrc: e.imageSrc,
@@ -162,9 +174,13 @@ function vocab(entries: GameEntry[]): MathItem[] {
  * Devinettes recto-verso :
  * feuille 1 = mot + image, feuille 2 = 3 indices (miroir bord long).
  */
-function devinettes(entries: GameEntry[]): MathItem[] {
+function devinettes(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
   const { cols, rows } = GRID
-  const list = padEntries(entries, cols * rows).map((e) => ({
+  const enriched = withAutoClues(
+    shuffle(rng, solidEntries(entries)).slice(0, cols * rows),
+    topicId,
+  )
+  const list = padEntries(enriched, cols * rows).map((e) => ({
     ...e,
     clues: e.clues && e.clues.length >= 3 ? e.clues.slice(0, 3) : ['…', '…', '…'],
   }))
@@ -215,7 +231,7 @@ function memory(
   seriesName?: string,
 ): MathItem[] {
   const { cols, rows } = GRID
-  const pairs = padEntries(entries, 4)
+  const pairs = padEntries(shuffle(rng, solidEntries(entries)), 4)
   const series = resolveSeriesName(seriesName, 'Mémory')
   const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const raw: GameCard[] = pairs.flatMap((e, i) => [
@@ -257,7 +273,17 @@ function memory(
   ]
 }
 
-/** 15 grilles 3×3 distinctes tirées dans un lot de 27 mots. */
+/** Dimensions de grille loto sans cases vides. */
+function lotoGridDims(wordCount: number): { cols: number; rows: number; size: number } {
+  if (wordCount >= 9) return { cols: 3, rows: 3, size: 9 }
+  if (wordCount >= 6) return { cols: 3, rows: 2, size: 6 }
+  if (wordCount >= 4) return { cols: 2, rows: 2, size: 4 }
+  if (wordCount === 3) return { cols: 3, rows: 1, size: 3 }
+  if (wordCount === 2) return { cols: 2, rows: 1, size: 2 }
+  return { cols: 1, rows: 1, size: Math.max(1, wordCount) }
+}
+
+/** Grilles distinctes tirées dans le lot (taille ≤ nb de mots). */
 function uniqueLotoGrids(words: string[], count: number, size: number, rng: Rng): string[][] {
   const grids: string[][] = []
   const seen = new Set<string>()
@@ -265,19 +291,21 @@ function uniqueLotoGrids(words: string[], count: number, size: number, rng: Rng)
   while (grids.length < count && guard < 800) {
     guard += 1
     const picks = shuffle(rng, [...words]).slice(0, size)
+    if (picks.length < size) break
     const sig = [...picks].sort((a, b) => a.localeCompare(b, 'fr')).join('|')
     if (seen.has(sig)) continue
     seen.add(sig)
     grids.push(picks)
   }
-  while (grids.length < count) {
+  while (grids.length < count && words.length >= size) {
     grids.push(shuffle(rng, [...words]).slice(0, size))
   }
   return grids
 }
 
 /**
- * Loto : 15 grilles (3 par page) + verso série (logo ClairFLE), puis lot animateur.
+ * Loto : grilles selon le nombre de mots disponibles (pas de cases vides)
+ * + verso série, puis lot animateur.
  */
 function loto(
   entries: GameEntry[],
@@ -285,9 +313,13 @@ function loto(
   topicId?: string,
   seriesName?: string,
 ): MathItem[] {
-  const pool = padEntries(entries, 27)
+  const pool = solidEntries(entries)
+  if (pool.length === 0) {
+    return loto(padEntries([], 9), rng, topicId, seriesName)
+  }
   const byText = new Map(pool.map((e) => [e.text, e]))
   const words = pool.map((e) => e.text)
+  const { cols, rows, size } = lotoGridDims(words.length)
   const theme = lotoThemeLabel(topicId)
   const series = resolveSeriesName(seriesName, theme.label)
   const toCard = (text: string, i: number, prefix: string): GameCard => {
@@ -299,17 +331,20 @@ function loto(
       variant: entry?.imageSrc ? 'default' : 'word',
     }
   }
-  const grids = uniqueLotoGrids(words, 15, 9, rng)
+  const gridCount = words.length >= 9 ? 15 : Math.min(9, Math.max(3, words.length * 2))
+  const grids = uniqueLotoGrids(words, gridCount, size, rng)
   const items: MathItem[] = []
-  const pages = 5
+  const perPage = 3
+  const pages = Math.max(1, Math.ceil(grids.length / perPage))
   for (let page = 0; page < pages; page++) {
-    const slice = grids.slice(page * 3, page * 3 + 3)
+    const slice = grids.slice(page * perPage, page * perPage + perPage)
+    if (slice.length === 0) break
     const rectoPanels: GamePanel[] = slice.map((picks, local) => {
-      const n = page * 3 + local + 1
+      const n = page * perPage + local + 1
       return {
         title: `Grille ${n}`,
-        cols: 3,
-        rows: 3,
+        cols,
+        rows,
         cards: picks.map((text, i) => toCard(text, i, `g${n}`)),
         themeLabel: series,
         themeSub: theme.sub,
@@ -317,27 +352,26 @@ function loto(
     })
     items.push(
       boardItem({
-        cols: 3,
-        rows: 3,
+        cols,
+        rows,
         cards: [],
         kind: 'loto-page',
         themeLabel: series,
         panels: rectoPanels,
       }),
     )
-    // Verso : même ordre (flip bord long) — identité de série.
     const versoPanels: GamePanel[] = rectoPanels.map((panel) => ({
       title: panel.title,
-      cols: 3,
-      rows: 3,
+      cols,
+      rows,
       cards: [],
       themeLabel: series,
       themeSub: theme.sub,
     }))
     items.push(
       boardItem({
-        cols: 3,
-        rows: 3,
+        cols,
+        rows,
         cards: [],
         kind: 'loto-back',
         themeLabel: series,
@@ -346,17 +380,18 @@ function loto(
     )
   }
   const call = shuffle(rng, [...words])
+  const callCols = 3
+  const callRows = Math.max(1, Math.ceil(call.length / callCols))
   items.push(
     boardItem({
-      cols: 3,
-      rows: 9,
+      cols: callCols,
+      rows: callRows,
       cards: call.map((text, i) => {
         const entry = byText.get(text)
         return {
           id: `call-${i}-${text}`,
           text,
           imageSrc: entry?.imageSrc,
-          // Image à gauche + mot à droite (CSS is-loto-call).
           variant: 'default' as const,
           badge: String(i + 1),
         }
@@ -368,9 +403,8 @@ function loto(
   return items
 }
 
-/** Normalise 9 groupes Intrus : text = intrus, words = 4 mots. */
+/** Normalise des groupes Intrus déjà structurés (mode libre). */
 function normalizeIntrusGroups(entries: GameEntry[]): Array<{ intrus: string; words: string[] }> {
-  // Format moderne : une entrée = un groupe (words + text = intrus).
   if (entries.some((e) => e.words && e.words.length > 0)) {
     const groups = entries.slice(0, 9).map((e, i) => {
       const words = [...(e.words ?? [])].map((w) => w.trim()).filter(Boolean)
@@ -386,7 +420,6 @@ function normalizeIntrusGroups(entries: GameEntry[]): Array<{ intrus: string; wo
     }
     return groups
   }
-  // Ancien format plat (category + isIntrus).
   const byCat = new Map<string, GameEntry[]>()
   for (const e of entries) {
     const key = e.category || 'g'
@@ -404,6 +437,57 @@ function normalizeIntrusGroups(entries: GameEntry[]): Array<{ intrus: string; wo
   }
   while (groups.length < 9) {
     groups.push({ intrus: `intrus${groups.length + 1}`, words: ['a', 'b', 'c', 'd'] })
+  }
+  return groups
+}
+
+/**
+ * Construit 9 cartes Intrus à partir des mots du thème :
+ * 4 mots du lot + 1 intrus tiré ailleurs (re-tiré à chaque génération).
+ */
+function buildIntrusFromTheme(
+  entries: GameEntry[],
+  rng: Rng,
+  topicId?: string,
+): Array<{ intrus: string; words: string[] }> {
+  // Mode libre déjà structuré : garder les 4 mots, re-tirer l’intrus.
+  if (entries.some((e) => e.words && e.words.length > 0)) {
+    const base = normalizeIntrusGroups(entries)
+    const outsiders = outsiderWordsFor(topicId ?? 'fr-nourriture', undefined, 80)
+    return base.map((g) => {
+      const used = new Set([...g.words, g.intrus].map((w) => w.toLowerCase()))
+      const pool = shuffle(
+        rng,
+        outsiders.filter((o) => !used.has(o.toLowerCase())),
+      )
+      const intrus = pool[0] ?? g.intrus
+      return { intrus, words: shuffle(rng, [...g.words]) }
+    })
+  }
+
+  const themeWords = solidEntries(entries).map((e) => e.text)
+  if (themeWords.length === 0) {
+    return normalizeIntrusGroups(entries)
+  }
+  const outsiders = outsiderWordsFor(topicId ?? 'fr-nourriture', undefined, 80)
+  const themeSet = new Set(themeWords.map((w) => w.toLowerCase()))
+  const outsiderPool = outsiders.filter((o) => !themeSet.has(o.toLowerCase()))
+  const fallbackOutsiders = ['table', 'crayon', 'nuage', 'balai', 'valise', 'quai', 'fièvre', 'oreiller', 'janvier']
+  const groups: Array<{ intrus: string; words: string[] }> = []
+  for (let i = 0; i < 9; i++) {
+    const words = shuffle(rng, [...themeWords]).slice(0, Math.min(4, themeWords.length))
+    while (words.length < 4) {
+      words.push(themeWords[words.length % themeWords.length]!)
+    }
+    const used = new Set(words.map((w) => w.toLowerCase()))
+    const pool = shuffle(
+      rng,
+      (outsiderPool.length ? outsiderPool : fallbackOutsiders).filter(
+        (o) => !used.has(o.toLowerCase()),
+      ),
+    )
+    const intrus = pool[i % Math.max(1, pool.length)] ?? fallbackOutsiders[i % fallbackOutsiders.length]!
+    groups.push({ intrus, words: words.slice(0, 4) })
   }
   return groups
 }
@@ -440,9 +524,10 @@ function intrus(
   rng: Rng,
   frameColor?: string,
   seriesName?: string,
+  topicId?: string,
 ): MathItem[] {
   const { cols, rows } = GRID
-  const groups = normalizeIntrusGroups(entries)
+  const groups = buildIntrusFromTheme(entries, rng, topicId)
   const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const series = resolveSeriesName(seriesName, 'Intrus')
   const recto: GameCard[] = groups.map((g, i) => {
@@ -477,7 +562,7 @@ function intrus(
 
 /**
  * Dominos vocabulaire recto-verso :
- * feuille 1 = 9 dominos image|mot ; feuille 2 = dos série (logo ClairFLE).
+ * feuille 1 = 16 dominos image|mot (2×8) ; feuille 2 = dos série.
  */
 function dominos(
   entries: GameEntry[],
@@ -485,8 +570,9 @@ function dominos(
   frameColor?: string,
   seriesName?: string,
 ): MathItem[] {
-  const { cols, rows } = GRID
-  const pool = padEntries(entries, 9)
+  const cols = 2
+  const rows = 8
+  const pool = padEntries(shuffle(rng, solidEntries(entries)), 16)
   const n = pool.length
   const series = resolveSeriesName(seriesName, 'Dominos')
   const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
@@ -525,94 +611,6 @@ function dominos(
   ]
 }
 
-/** Normalise 3 catégories × 2 mots (9 cartes : 3 étiquettes + 6 mots). */
-function normalizeTriGroups(
-  entries: GameEntry[],
-): Array<{ category: string; words: string[] }> {
-  if (entries.some((e) => (e.words?.length ?? 0) > 0 || (e.category && e.text === e.category))) {
-    const groups = entries.slice(0, 3).map((e, i) => {
-      const category = (e.category || e.text || `Catégorie ${i + 1}`).trim() || `Catégorie ${i + 1}`
-      const words = [...(e.words ?? [])].map((w) => w.trim()).filter(Boolean)
-      while (words.length < 2) words.push(`mot${words.length + 1}`)
-      return { category, words: words.slice(0, 2) }
-    })
-    while (groups.length < 3) {
-      const n = groups.length + 1
-      groups.push({
-        category: `Catégorie ${n}`,
-        words: Array.from({ length: 2 }, (_, i) => `mot${i + 1}`),
-      })
-    }
-    return groups
-  }
-  const byCat = new Map<string, string[]>()
-  for (const e of entries) {
-    const key = (e.category || 'Divers').trim() || 'Divers'
-    const list = byCat.get(key) ?? []
-    if (e.text.trim()) list.push(e.text.trim())
-    byCat.set(key, list)
-  }
-  const cats = [...byCat.keys()].slice(0, 3)
-  while (cats.length < 3) cats.push(`Catégorie ${cats.length + 1}`)
-  return cats.map((category) => {
-    const words = [...(byCat.get(category) ?? [])]
-    while (words.length < 2) words.push(`mot${words.length + 1}`)
-    return { category, words: words.slice(0, 2) }
-  })
-}
-
-/**
- * Tri / catégories recto-verso :
- * feuille 1 = 9 cartes (3 étiquettes catégorie + 6 mots),
- * feuille 2 = dos série.
- */
-function tri(
-  entries: GameEntry[],
-  rng: Rng,
-  frameColor?: string,
-  seriesName?: string,
-): MathItem[] {
-  const { cols, rows } = GRID
-  const groups = normalizeTriGroups(entries)
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
-  const series = resolveSeriesName(seriesName, 'Tri')
-  const raw: GameCard[] = []
-  for (const g of groups) {
-    raw.push({
-      id: `cat-${g.category}`,
-      text: g.category,
-      variant: 'category',
-    })
-    g.words.forEach((word, i) => {
-      raw.push({
-        id: `tri-${g.category}-${i}`,
-        text: word,
-        variant: 'word',
-      })
-    })
-  }
-  const recto = shuffle(rng, raw)
-  const verso = makeSeriesBackCards(recto, cols, series, frame)
-  return [
-    boardItem({
-      cols,
-      rows,
-      cards: recto,
-      kind: 'tri',
-      side: 'recto',
-    }),
-    boardItem({
-      cols,
-      rows,
-      cards: verso,
-      kind: 'tri',
-      side: 'verso',
-      frameColor: frame,
-      themeLabel: series,
-    }),
-  ]
-}
-
 function septFamilles(entries: GameEntry[]): MathItem[] {
   const byCat = new Map<string, string[]>()
   for (const e of entries) {
@@ -632,27 +630,6 @@ function septFamilles(entries: GameEntry[]): MathItem[] {
       members: ['a', 'b', 'c', 'd'],
     })
   }
-  const cards: GameCard[] = []
-  for (const f of families) {
-    cards.push({
-      id: `fh-${f.family}`,
-      text: f.family,
-      variant: 'family-head',
-    })
-    const members = [...f.members]
-    while (members.length < 4) members.push('…')
-    for (let i = 0; i < 4; i++) {
-      cards.push({
-        id: `fm-${f.family}-${i}`,
-        text: members[i],
-        lines: [f.family],
-        variant: 'word',
-      })
-    }
-  }
-  // 7 familles × (1 tête + 4) = 35 — dense for A4; show 4 familles first page via 4*5=20
-  // Better: show all as compact 4-col grid without separate head cards — head is colored card
-  // Use only family member cards with family name as badge: 7*4 = 28
   const compact: GameCard[] = []
   for (const f of families) {
     compact.push({
@@ -784,10 +761,10 @@ export function tryGenerateJeuxBatch(
   let items: MathItem[]
   switch (typeId) {
     case 'jeux-vocabulaire':
-      items = vocab(entries)
+      items = vocab(entries, rng)
       break
     case 'jeux-devinettes':
-      items = devinettes(entries)
+      items = devinettes(entries, rng, options.gameTopic)
       break
     case 'jeux-memory':
       items = memory(entries, rng, undefined, options.gameSeriesName)
@@ -796,13 +773,10 @@ export function tryGenerateJeuxBatch(
       items = loto(entries, rng, options.gameTopic, options.gameSeriesName)
       break
     case 'jeux-intrus':
-      items = intrus(entries, rng, undefined, options.gameSeriesName)
+      items = intrus(entries, rng, undefined, options.gameSeriesName, options.gameTopic)
       break
     case 'jeux-dominos':
       items = dominos(entries, rng, undefined, options.gameSeriesName)
-      break
-    case 'jeux-tri':
-      items = tri(entries, rng, undefined, options.gameSeriesName)
       break
     case 'jeux-sept-familles':
       items = septFamilles(entries)
@@ -820,7 +794,7 @@ export function tryGenerateJeuxBatch(
       items = phrasesTexte(entries, rng)
       break
     default:
-      items = vocab(entries)
+      items = vocab(entries, rng)
   }
 
   return {

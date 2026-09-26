@@ -14,28 +14,20 @@ export function entriesToText(typeId: string, entries: GameEntry[]): string {
         })
         .join('\n\n')
     case 'jeux-intrus':
-      return entries
-        .map((e) => {
-          const words = [...(e.words ?? [])]
-          while (words.length < 4) words.push('')
-          return [`Intrus : ${e.text}`, ...words.slice(0, 4).map((w, i) => `Mot ${i + 1} : ${w}`)].join(
-            '\n',
-          )
-        })
-        .join('\n\n')
-    case 'jeux-tri':
-      return entries
-        .slice(0, 3)
-        .map((e, index) => {
-          const cat = (e.category || e.text || `Catégorie ${index + 1}`).trim()
-          const words = [...(e.words ?? [])]
-          while (words.length < 7) words.push('')
-          return [
-            `Catégorie : ${cat}`,
-            ...words.slice(0, 7).map((w, i) => `Mot ${i + 1} : ${w}`),
-          ].join('\n')
-        })
-        .join('\n\n')
+      // Lot de mots du thème (intrus tirés à la génération) ou blocs structurés (libre).
+      if (entries.some((e) => e.words && e.words.length > 0)) {
+        return entries
+          .map((e) => {
+            const words = [...(e.words ?? [])]
+            while (words.length < 4) words.push('')
+            return [
+              `Intrus : ${e.text}`,
+              ...words.slice(0, 4).map((w, i) => `Mot ${i + 1} : ${w}`),
+            ].join('\n')
+          })
+          .join('\n\n')
+      }
+      return entries.map((e) => e.text).join('\n')
     case 'jeux-sept-familles': {
       // Prefer structured defaults when entries are flat placeholders.
       if (entries.length >= 28 && entries.every((e) => !e.category)) {
@@ -113,7 +105,10 @@ export function textToEntries(
         .split(/\r?\n\s*\r?\n/)
         .map((b) => b.trim())
         .filter(Boolean)
-      if (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|'))) {
+      const structured =
+        blocks.some((b) => /^intrus\s*:/i.test(b)) ||
+        lines.some((l) => l.includes('|') && /[,;]/.test(l.split('|')[0] ?? ''))
+      if (structured && (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|')))) {
         parsed = blocks.slice(0, 12).map((block, index) => {
           const parts = block
             .split(/\r?\n/)
@@ -136,7 +131,7 @@ export function textToEntries(
             isIntrus: true,
           }
         })
-      } else {
+      } else if (structured) {
         parsed = lines.slice(0, 12).map((line, groupIndex) => {
           const [left = '', right = ''] = line.split('|').map((p) => p.trim())
           const normals = left
@@ -151,55 +146,9 @@ export function textToEntries(
             isIntrus: true,
           }
         })
-      }
-      break
-    }
-    case 'jeux-tri': {
-      const blocks = text
-        .split(/\r?\n\s*\r?\n/)
-        .map((b) => b.trim())
-        .filter(Boolean)
-      if (blocks.length > 1 || (blocks[0] && /^catégorie\s*:/i.test(blocks[0]))) {
-        parsed = blocks.slice(0, 3).map((block, index) => {
-          const parts = block
-            .split(/\r?\n/)
-            .map((p) => p.trim())
-            .filter(Boolean)
-          let category = ''
-          const words: string[] = []
-          for (const part of parts) {
-            const mCat = /^catégorie\s*:\s*(.+)$/i.exec(part)
-            const mMot = /^mot\s*\d+\s*:\s*(.+)$/i.exec(part)
-            if (mCat) category = mCat[1]!.trim()
-            else if (mMot) words.push(mMot[1]!.trim())
-            else if (!category) category = part
-            else words.push(part)
-          }
-          while (words.length < 7) words.push('')
-          const cat = clip(category || `Catégorie ${index + 1}`, 20)
-          return {
-            text: cat,
-            category: cat,
-            words: words.slice(0, 7).map((w) => clip(w, maxLen)),
-          }
-        })
       } else {
-        // Rétrocompat : « Animaux : chat, chien, … »
-        parsed = lines.slice(0, 3).map((line, index) => {
-          const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)
-          const category = clip((m?.[1] ?? `Catégorie ${index + 1}`).trim(), 20)
-          const words = (m?.[2] ?? '')
-            .split(/[,;]/)
-            .map((w) => w.trim())
-            .filter(Boolean)
-            .slice(0, 7)
-          while (words.length < 7) words.push('')
-          return {
-            text: category,
-            category,
-            words: words.map((w) => clip(w, maxLen)),
-          }
-        })
+        // Liste plate de mots du thème (intrus générés à l’impression).
+        parsed = lines.slice(0, 20).map((line) => ({ text: clip(line, maxLen) }))
       }
       break
     }

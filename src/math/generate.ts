@@ -1156,7 +1156,6 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       page.exerciseType === 'jeux-devinettes' ||
       page.exerciseType === 'jeux-memory' ||
       page.exerciseType === 'jeux-intrus' ||
-      page.exerciseType === 'jeux-tri' ||
       page.exerciseType === 'jeux-dominos'
     // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
     // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.

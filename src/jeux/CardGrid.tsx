@@ -305,7 +305,6 @@ export function CardGrid({ board }: { board: GameBoard }) {
   const ludic =
     kind === 'memory' ||
     kind === 'intrus' ||
-    kind === 'tri' ||
     kind === 'devinettes' ||
     kind === 'dominos' ||
     kind === 'cards'

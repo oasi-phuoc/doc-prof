@@ -39,7 +39,6 @@ const SERIES_DEFAULTS: Record<string, string> = {
   'jeux-memory': 'Mémory',
   'jeux-loto': 'Loto',
   'jeux-intrus': 'Intrus',
-  'jeux-tri': 'Tri',
   'jeux-dominos': 'Dominos',
 }
 
@@ -52,7 +51,6 @@ function usesSeriesIdentity(typeId: string): boolean {
   return (
     typeId === 'jeux-memory' ||
     typeId === 'jeux-intrus' ||
-    typeId === 'jeux-tri' ||
     typeId === 'jeux-loto' ||
     typeId === 'jeux-vocabulaire' ||
     typeId === 'jeux-devinettes' ||
@@ -152,7 +150,6 @@ function usesSeriesNameField(typeId: string): boolean {
   return (
     typeId === 'jeux-memory' ||
     typeId === 'jeux-intrus' ||
-    typeId === 'jeux-tri' ||
     typeId === 'jeux-loto' ||
     typeId === 'jeux-dominos'
   )
@@ -380,7 +377,11 @@ export function GameContentPanel({
     const room = Math.max(0, maxCards - customEntries.length)
     const bankPicked = picked.slice(0, room)
     const nextEntries = [
-      ...entriesFromBankItems(bankPicked, bankPicked.length, resolveEntries(typeId, entries)),
+      ...entriesFromBankItems(bankPicked, bankPicked.length, resolveEntries(typeId, entries), {
+        topicId,
+        subgroupId: activeSubgroup,
+        withClues: typeId === 'jeux-devinettes',
+      }),
       ...customEntries,
     ]
     while (nextEntries.length < maxCards) nextEntries.push({ text: '' })
@@ -637,15 +638,19 @@ export function GameContentPanel({
               : typeId === 'jeux-memory'
                 ? '4 paires (8 cartes + 1 vide) · verso série.'
                 : typeId === 'jeux-loto'
-                  ? '27 mots · 15 grilles (3/page) + verso · lot animateur.'
+                  ? 'Grilles selon le nombre de mots (pas de cases vides) · lot animateur.'
                   : typeId === 'jeux-devinettes'
-                    ? 'Sélectionnez jusqu’à 9 mots, puis saisissez 3 phrases-indices chacune.'
-                    : template.entryHint}
+                    ? '9 mots · 3 phrases-indices générées automatiquement (sans nommer le thème).'
+                    : typeId === 'jeux-intrus'
+                      ? 'Mots du thème · à chaque génération, 9 cartes avec un nouvel intrus.'
+                      : typeId === 'jeux-dominos'
+                        ? '16 dominos image | mot (2×8) · verso série.'
+                        : template.entryHint}
           </small>
         </div>
         {typeId === 'jeux-devinettes' && selectedIds.length > 0 ? (
           <div className="game-riddle-bank-clues">
-            <b>Phrases-indices</b>
+            <b>Phrases-indices (modifiables)</b>
             <ul className="game-riddle-list" aria-label="Indices des mots sélectionnés">
               {resolveEntries(typeId, entries)
                 .filter((e) => e.text.trim())
@@ -723,21 +728,9 @@ export function GameContentPanel({
   // —— Mode libre (ou templates sans images) ——
   const resolved = resolveEntries(typeId, entries)
   const slots =
-    withImages ||
-    typeId === 'jeux-devinettes' ||
-    typeId === 'jeux-intrus' ||
-    typeId === 'jeux-tri'
+    withImages || typeId === 'jeux-devinettes'
       ? Array.from({ length: template.entryCount }, (_, i) =>
-          resolved[i] ??
-          (typeId === 'jeux-intrus'
-            ? { text: '', words: ['', '', '', ''], isIntrus: true }
-            : typeId === 'jeux-tri'
-              ? {
-                  text: '',
-                  category: '',
-                  words: ['', ''],
-                }
-              : { text: '', clues: ['', '', ''] }),
+          resolved[i] ?? { text: '', clues: typeId === 'jeux-devinettes' ? ['', '', ''] : undefined },
         )
       : resolved
 
@@ -754,27 +747,6 @@ export function GameContentPanel({
     updateSlot(index, { clues: clues.slice(0, 3) })
   }
 
-  function updateIntrusWord(index: number, wordIndex: number, value: string) {
-    const entry = slots[index] ?? { text: '', words: ['', '', '', ''], isIntrus: true }
-    const words = [...(entry.words ?? ['', '', '', ''])]
-    while (words.length < 4) words.push('')
-    words[wordIndex] = value
-    updateSlot(index, { words: words.slice(0, 4), isIntrus: true })
-  }
-
-  function updateTriWord(index: number, wordIndex: number, value: string) {
-    const entry = slots[index] ?? {
-      text: '',
-      category: '',
-      words: ['', ''],
-    }
-    const words = [...(entry.words ?? ['', ''])]
-    while (words.length < 2) words.push('')
-    words[wordIndex] = value
-    const cat = entry.category || entry.text
-    updateSlot(index, { words: words.slice(0, 2), category: cat, text: cat })
-  }
-
   async function onPickImage(index: number, file: File | undefined) {
     if (!file) return
     try {
@@ -783,128 +755,6 @@ export function GameContentPanel({
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Image refusée.')
     }
-  }
-
-  // —— Tri : 3 blocs (catégorie + 2 mots) → 9 cartes ——
-  if (typeId === 'jeux-tri') {
-    return (
-      <div className="game-content-field">
-        <span className="game-content-label">Contenu</span>
-        <p className="muted game-content-hint">{template.entryHint}</p>
-        <SeriesIdentityFields
-          typeId={typeId}
-          seriesName={gameSeriesName}
-          borderRectoId={borderRectoId}
-          borderVersoId={borderVersoId}
-          onSeriesName={setSeriesName}
-          onBorderIds={setBorderIds}
-        />
-        <ul className="game-intrus-list" aria-label="Catégories du tri">
-          {slots.map((entry, index) => {
-            const words = [...(entry.words ?? [])]
-            while (words.length < 2) words.push('')
-            const cat = entry.category || entry.text
-            return (
-              <li className="game-intrus-block" key={`${typeId}-${index}`}>
-                <b>Catégorie {index + 1}</b>
-                <div className="game-intrus-fields">
-                  <label>
-                    <span>Catégorie</span>
-                    <input
-                      className="pill-input"
-                      type="text"
-                      maxLength={20}
-                      value={cat}
-                      aria-label={`Catégorie ${index + 1}`}
-                      placeholder="Nom de la catégorie"
-                      onChange={(event) => {
-                        const value = event.target.value
-                        updateSlot(index, { text: value, category: value })
-                      }}
-                    />
-                  </label>
-                  {[0, 1].map((wordIndex) => (
-                    <label key={wordIndex}>
-                      <span>Mot {wordIndex + 1}</span>
-                      <input
-                        className="pill-input"
-                        type="text"
-                        maxLength={template.maxTextLen}
-                        value={words[wordIndex] ?? ''}
-                        aria-label={`Catégorie ${index + 1}, mot ${wordIndex + 1}`}
-                        placeholder={`Mot ${wordIndex + 1}`}
-                        onChange={(event) => updateTriWord(index, wordIndex, event.target.value)}
-                      />
-                    </label>
-                  ))}
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-        <small className="muted">9 cartes (3 étiquettes + 6 mots) · verso série.</small>
-      </div>
-    )
-  }
-
-  // —— Intrus : 9 blocs (intrus + 4 mots) ——
-  if (typeId === 'jeux-intrus') {
-    return (
-      <div className="game-content-field">
-        <span className="game-content-label">Contenu</span>
-        <p className="muted game-content-hint">{template.entryHint}</p>
-        <ul className="game-intrus-list" aria-label="Cartes Intrus">
-          {slots.map((entry, index) => {
-            const words = [...(entry.words ?? [])]
-            while (words.length < 4) words.push('')
-            return (
-              <li className="game-intrus-block" key={`${typeId}-${index}`}>
-                <b>Carte {index + 1}</b>
-                <div className="game-intrus-fields">
-                  <label className="is-intrus">
-                    <span>Intrus</span>
-                    <input
-                      className="pill-input"
-                      type="text"
-                      maxLength={template.maxTextLen}
-                      value={entry.text}
-                      aria-label={`Carte ${index + 1}, intrus`}
-                      placeholder="Mot intrus"
-                      onChange={(event) =>
-                        updateSlot(index, { text: event.target.value, isIntrus: true })
-                      }
-                    />
-                  </label>
-                  {[0, 1, 2, 3].map((wordIndex) => (
-                    <label key={wordIndex}>
-                      <span>Mot {wordIndex + 1}</span>
-                      <input
-                        className="pill-input"
-                        type="text"
-                        maxLength={template.maxTextLen}
-                        value={words[wordIndex] ?? ''}
-                        aria-label={`Carte ${index + 1}, mot ${wordIndex + 1}`}
-                        placeholder={`Mot ${wordIndex + 1}`}
-                        onChange={(event) => updateIntrusWord(index, wordIndex, event.target.value)}
-                      />
-                    </label>
-                  ))}
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-        <SeriesIdentityFields
-          typeId={typeId}
-          seriesName={gameSeriesName}
-          borderRectoId={borderRectoId}
-          borderVersoId={borderVersoId}
-          onSeriesName={setSeriesName}
-          onBorderIds={setBorderIds}
-        />
-        <small className="muted">9 cartes · 5 mots inclinés · verso série.</small>
-      </div>
-    )
   }
 
   // —— Devinettes : Mot N + image + 3 indices (pas de syntaxe | ) ——

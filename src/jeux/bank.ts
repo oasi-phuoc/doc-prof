@@ -1,6 +1,8 @@
 /** Banques mots/images pour les fiches-jeux (thème FR + lecture). */
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { vocabLearnWordsFor, vocabSubgroupsFor } from '@/francais/vocab-learn'
+import { createRng, shuffle } from '@/math/rng'
+import { cluesForWord } from './clues'
 import { resolveGameImageSrc } from './image-resolve'
 import { LECTURE_WORDS_BY_TOPIC, lectureWordsForTopic, type LectureWord } from './lecture-bank'
 import { entriesToText } from './parse'
@@ -17,7 +19,8 @@ export function isGameBankType(typeId: string): boolean {
     typeId === 'jeux-memory' ||
     typeId === 'jeux-loto' ||
     typeId === 'jeux-dominos' ||
-    typeId === 'jeux-devinettes'
+    typeId === 'jeux-devinettes' ||
+    typeId === 'jeux-intrus'
   )
 }
 
@@ -85,15 +88,20 @@ export function entriesFromBankItems(
   items: BankItem[],
   count: number,
   previous?: GameEntry[],
+  options?: { topicId?: string; subgroupId?: string; withClues?: boolean },
 ): GameEntry[] {
   return padGameEntries(
     items.slice(0, count).map((item) => {
       const prev = previous?.find((p) => p.text.trim().toLowerCase() === item.label.toLowerCase())
-      return {
+      const entry: GameEntry = {
         text: item.label,
         imageSrc: resolveGameImageSrc(item.label, item.imageSrc || prev?.imageSrc),
         clues: prev?.clues,
       }
+      if (options?.withClues) {
+        entry.clues = cluesForWord(item.label, options.topicId, options.subgroupId, prev?.clues)
+      }
+      return entry
     }),
     count,
   )
@@ -112,8 +120,12 @@ export function defaultThemeGameContent(typeId: string): {
   const topic = DEFAULT_GAME_TOPIC
   const subgroup = vocabSubgroupsFor(topic)[0]?.id
   const items = themeBankItems(topic, subgroup)
-  const picked = items.slice(0, count)
-  const gameEntries = entriesFromBankItems(picked, count)
+  const picked = items.slice(0, Math.min(count, items.length))
+  const gameEntries = entriesFromBankItems(picked, picked.length, undefined, {
+    topicId: topic,
+    subgroupId: subgroup,
+    withClues: typeId === 'jeux-devinettes',
+  })
   return {
     gameSource: 'theme',
     gameTopic: topic,
@@ -123,5 +135,99 @@ export function defaultThemeGameContent(typeId: string): {
       typeId,
       gameEntries.filter((e) => e.text),
     ),
+  }
+}
+
+/**
+ * Re-tire une série de mots (bouton Générer) :
+ * mode banque → nouvel échantillon du thème ; mode libre → mélange l’ordre.
+ */
+export function reshuffleGameContent(
+  typeId: string,
+  seed: number,
+  current: {
+    gameSource?: GameSource
+    gameTopic?: string
+    gameSelectedIds?: string[]
+    gameEntries?: GameEntry[]
+  },
+): {
+  gameEntries: GameEntry[]
+  gameText: string
+  gameSelectedIds: string[]
+} {
+  const tpl = templateFor(typeId)
+  const maxCards = tpl?.entryCount ?? 12
+  const rng = createRng(seed)
+  const source = current.gameSource ?? 'theme'
+  const topic = current.gameTopic ?? DEFAULT_GAME_TOPIC
+  const withClues = typeId === 'jeux-devinettes'
+
+  if (source === 'libre' || !isGameBankType(typeId)) {
+    const prev = (current.gameEntries ?? []).filter((e) => e.text.trim())
+    const shuffled = shuffle(rng, [...prev])
+    const gameEntries = withClues
+      ? shuffled.map((e) => ({
+          ...e,
+          clues: cluesForWord(e.text, topic, undefined, e.clues),
+        }))
+      : shuffled
+    return {
+      gameEntries,
+      gameText: entriesToText(typeId, gameEntries),
+      gameSelectedIds: current.gameSelectedIds ?? [],
+    }
+  }
+
+  const customIds = (current.gameSelectedIds ?? []).filter((id) => id.startsWith('custom:'))
+  const customEntries = (current.gameEntries ?? []).filter((e) => {
+    const key = `custom:${e.text.trim().toLowerCase()}`
+    return customIds.includes(key) && e.text.trim()
+  })
+
+  let subgroup: string | undefined
+  let items: BankItem[]
+  if (source === 'lecture') {
+    items = lectureBankItems(topic)
+  } else {
+    const groups = vocabSubgroupsFor(topic)
+    let bestId = groups[0]?.id
+    let bestHit = -1
+    for (const g of groups) {
+      const bank = themeBankItems(topic, g.id)
+      const ids = new Set(bank.map((b) => b.id))
+      const hit = (current.gameSelectedIds ?? []).filter((id) => ids.has(id)).length
+      if (hit > bestHit) {
+        bestHit = hit
+        bestId = g.id
+      }
+    }
+    subgroup = bestId
+    items = themeBankItems(topic, subgroup)
+  }
+
+  const room = Math.max(0, maxCards - customEntries.length)
+  const want = Math.min(room, items.length)
+  // Garder le même effectif que la sélection précédente si possible.
+  const prevBankCount = (current.gameSelectedIds ?? []).filter((id) => !id.startsWith('custom:')).length
+  const take = Math.min(want, prevBankCount > 0 ? prevBankCount : want)
+  const picked = shuffle(rng, [...items]).slice(0, take)
+  const bankEntries = entriesFromBankItems(picked, picked.length, current.gameEntries, {
+    topicId: topic,
+    subgroupId: subgroup,
+    withClues,
+  })
+  const gameEntries = [...bankEntries, ...customEntries]
+  const gameSelectedIds = [
+    ...picked.map((p) => p.id),
+    ...customEntries.map((e) => `custom:${e.text.trim().toLowerCase()}`),
+  ]
+  return {
+    gameEntries,
+    gameText: entriesToText(
+      typeId,
+      gameEntries.filter((e) => e.text),
+    ),
+    gameSelectedIds,
   }
 }

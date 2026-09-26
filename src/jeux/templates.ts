@@ -63,7 +63,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 20,
     entryHint:
-      '9 cartes · mot + image au recto, 3 phrases-indices au verso (bord long).',
+      '9 cartes · 3 phrases-indices auto (sans nommer le thème) · verso miroir.',
   },
   'jeux-memory': {
     id: 'jeux-memory',
@@ -95,7 +95,8 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     cardCount: 27,
     duplex: true,
     maxTextLen: 16,
-    entryHint: '27 mots · 15 grilles (3 par page) + verso thème · lot animateur.',
+    entryHint:
+      'Jusqu’à 27 mots · grilles selon le nombre disponible (pas de cases vides).',
   },
   'jeux-intrus': {
     id: 'jeux-intrus',
@@ -104,46 +105,31 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     orientation: 'portrait',
     grid: { ...GRID_3X3 },
     fields: [
+      { type: 'image' },
       { type: 'texte', required: true },
-      { type: 'indices', required: true },
     ],
-    entryCount: 9,
+    entryCount: 20,
     cardCount: 9,
     duplex: true,
     maxTextLen: 18,
-    entryHint: '9 cartes · 4 mots + 1 intrus · verso = logo ClairFLE + série.',
+    entryHint:
+      'Mots du thème · à chaque génération, 9 cartes avec un nouvel intrus.',
   },
   'jeux-dominos': {
     id: 'jeux-dominos',
     family: 'cartes',
     label: 'Dominos',
     orientation: 'portrait',
-    grid: { ...GRID_3X3 },
+    grid: { cols: 2, rows: 8 },
     fields: [
       { type: 'image' },
       { type: 'texte', required: true, maxLength: 16 },
     ],
-    entryCount: 9,
-    cardCount: 9,
+    entryCount: 16,
+    cardCount: 16,
     duplex: true,
     maxTextLen: 16,
-    entryHint: '9 dominos image | mot (chaîne) · verso série.',
-  },
-  'jeux-tri': {
-    id: 'jeux-tri',
-    family: 'cartes',
-    label: 'Tri / catégories',
-    orientation: 'portrait',
-    grid: { ...GRID_3X3 },
-    fields: [
-      { type: 'categorie', required: true },
-      { type: 'texte', required: true },
-    ],
-    entryCount: 3,
-    cardCount: 9,
-    duplex: true,
-    maxTextLen: 16,
-    entryHint: '3 catégories × 2 mots (+ étiquettes) · 9 cartes · verso série.',
+    entryHint: '16 dominos image | mot (chaîne) · verso série.',
   },
   'jeux-sept-familles': {
     id: 'jeux-sept-familles',
@@ -218,7 +204,7 @@ export function isJeuxType(typeId: string): boolean {
   return typeId.startsWith('jeux-') || typeId in GAME_TEMPLATES
 }
 
-/** Types « grille de cartes » (9 cartes 3×3, duplex). */
+/** Types « grille de cartes » duplex. */
 export function isJeuxCartesType(typeId: string): boolean {
   return templateFor(typeId)?.family === 'cartes'
 }

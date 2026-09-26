@@ -55,7 +55,7 @@ import {
 } from '@/francais/vocab-learn'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
-import { defaultThemeGameContent, isGameBankType } from '@/jeux/bank'
+import { defaultThemeGameContent, isGameBankType, reshuffleGameContent } from '@/jeux/bank'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { entriesToText } from '@/jeux/parse'
@@ -1017,14 +1017,12 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
     'jeux-devinettes': 'Devinettes',
     'jeux-memory': 'Mémory',
     'jeux-intrus': 'Intrus',
-    'jeux-tri': 'Tri',
     'jeux-loto': 'Loto',
     'jeux-dominos': 'Dominos',
   }
   const usesSeriesIdentity =
     type.id === 'jeux-memory' ||
     type.id === 'jeux-intrus' ||
-    type.id === 'jeux-tri' ||
     type.id === 'jeux-loto' ||
     type.id === 'jeux-vocabulaire' ||
     type.id === 'jeux-devinettes' ||
@@ -1719,8 +1717,21 @@ function GeneratorPage() {
   }
 
   function generate() {
-    setSeed(randomSeed())
+    const nextSeed = randomSeed()
+    setSeed(nextSeed)
     setMode('student')
+    if (!isJeuxType(activeBlock.exerciseType)) return
+    const reshuffled = reshuffleGameContent(activeBlock.exerciseType, nextSeed, {
+      gameSource: activeBlock.gameSource,
+      gameTopic: activeBlock.gameTopic,
+      gameSelectedIds: activeBlock.gameSelectedIds,
+      gameEntries: activeBlock.gameEntries,
+    })
+    updatePage({
+      gameEntries: reshuffled.gameEntries,
+      gameText: reshuffled.gameText,
+      gameSelectedIds: reshuffled.gameSelectedIds,
+    })
   }
 
   function printAll() {

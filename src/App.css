@@ -1602,7 +1602,6 @@
 .game-board.is-memory .game-card-grid,
 .game-board.is-devinettes .game-card-grid,
 .game-board.is-intrus .game-card-grid,
-.game-board.is-tri .game-card-grid,
 .game-board.is-dominos .game-card-grid{
   flex:1 1 auto;min-height:0;
   grid-template-rows:repeat(var(--game-rows,4),minmax(0,1fr));
@@ -1613,7 +1612,6 @@
 .game-board.is-memory .game-card,
 .game-board.is-devinettes .game-card,
 .game-board.is-intrus .game-card,
-.game-board.is-tri .game-card,
 .game-board.is-dominos .game-card{
   min-height:0;height:100%;aspect-ratio:auto
 }
@@ -1621,15 +1619,16 @@
 .game-board.is-cards .game-card-grid,
 .game-board.is-memory .game-card-grid,
 .game-board.is-devinettes .game-card-grid,
-.game-board.is-intrus .game-card-grid,
-.game-board.is-tri .game-card-grid,
-.game-board.is-dominos .game-card-grid{
+.game-board.is-intrus .game-card-grid{
   --game-rows:3
+}
+.game-board.is-dominos .game-card-grid{
+  --game-rows:8;
+  --game-cols:2
 }
 .game-board.is-cards .game-card-image{min-height:0;flex:1 1 auto;margin-bottom:0}
 .game-board.is-memory .game-card.is-series-back,
 .game-board.is-intrus .game-card.is-series-back,
-.game-board.is-tri .game-card.is-series-back,
 .game-board.is-dominos .game-card.is-series-back,
 .game-board.is-cards .game-card.is-series-back,
 .game-board.is-cards .game-card.is-series-content,
