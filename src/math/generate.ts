@@ -1153,25 +1153,23 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       page.exerciseType === 'jeux-devinettes' ||
       page.exerciseType === 'jeux-memory' ||
       page.exerciseType === 'jeux-intrus' ||
-      page.exerciseType === 'jeux-tri'
+      page.exerciseType === 'jeux-tri' ||
+      page.exerciseType === 'jeux-dominos'
+    const isJeuxSeriesBack =
+      page.exerciseType === 'jeux-memory' ||
+      page.exerciseType === 'jeux-intrus' ||
+      page.exerciseType === 'jeux-tri' ||
+      page.exerciseType === 'jeux-dominos'
     // Jeux recto-verso : une feuille A4 par grille (recto puis verso).
     // Pas « suite » : ce sont deux faces d’une même fiche, pas un débordement.
     if (isJeuxDuplex && worksheet.items.length >= 2) {
       const block = worksheet.blocks[0]
-      const versoInstruction =
-        page.exerciseType === 'jeux-memory'
-          ? 'Verso — dos des cartes. Imprimez en recto-verso (bord long).'
-          : page.exerciseType === 'jeux-intrus' ||
-              page.exerciseType === 'jeux-tri' ||
-              page.exerciseType === 'jeux-memory'
-            ? 'Verso — série (logo ClairFLE). Imprimez en recto-verso (bord long).'
-            : 'Verso — retournez la feuille pour faire correspondre mot et image.'
-      const versoBlockInstruction =
-        page.exerciseType === 'jeux-memory' ||
-        page.exerciseType === 'jeux-intrus' ||
-        page.exerciseType === 'jeux-tri'
-          ? 'Imprimez en recto-verso (bord long). Logo ClairFLE + nom de série sur chaque dos.'
-          : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
+      const versoInstruction = isJeuxSeriesBack
+        ? 'Verso — série (logo ClairFLE). Imprimez en recto-verso (bord long).'
+        : 'Verso — retournez la feuille pour faire correspondre mot et image.'
+      const versoBlockInstruction = isJeuxSeriesBack
+        ? 'Imprimez en recto-verso (bord long). Logo ClairFLE + nom de série sur chaque dos.'
+        : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
       worksheet.items.forEach((item, part) => {
         const side = part === 0 ? 'Recto' : 'Verso'
         out.push({
