@@ -439,6 +439,26 @@ export type ExerciseBlock = {
   vocabCols?: number
   /** Ids des mots cochés pour le tableau « Mots à apprendre » et le pool Voc. */
   vocabSelected?: string[]
+  /** Sous-groupe de vocabulaire (liste déroulante). */
+  vocabSubgroup?: string
+  /** Mots ajoutés par l’enseignant·e (hors banque). */
+  vocabCustomEntries?: Array<{
+    id: string
+    label: string
+    imageSrc?: string
+    definition: string
+    syllables: string[]
+    synonym?: string
+    antonym?: string
+    masculine?: string
+    feminine?: string
+    subgroup?: string
+    sentences: {
+      trous: { a1: string[]; a2: string[]; b1: string[] }
+      phrase: { a1: string[]; a2: string[]; b1: string[] }
+      dictee: { a1: string[]; a2: string[]; b1: string[] }
+    }
+  }>
   /** Longueur du trait de réponse (production écrite Voc), en caractères. */
   vocabLineCh?: number
   /** Domaine Jeux : contenu saisi (mots, affirmations, phrases…). */

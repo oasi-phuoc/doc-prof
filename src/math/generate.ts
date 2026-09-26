@@ -1053,6 +1053,8 @@ function buildSingleBlock(
     vocabRows: config.vocabRows,
     vocabCols: config.vocabCols,
     vocabSelected: config.vocabSelected,
+    vocabSubgroup: config.vocabSubgroup,
+    vocabCustomEntries: config.vocabCustomEntries,
     vocabLineCh: config.vocabLineCh,
     difficulty: config.difficulty,
   })

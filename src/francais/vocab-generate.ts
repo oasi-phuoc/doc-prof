@@ -12,6 +12,8 @@ import {
 
 export type VocabGenOptions = {
   vocabSelected?: string[]
+  vocabSubgroup?: string
+  vocabCustomEntries?: VocabWordEntry[]
   vocabLineCh?: number
   difficulty?: Difficulty
 }
@@ -266,7 +268,12 @@ export function tryGenerateVocabBlock(
 ): { items: MathItem[]; instruction: string } | null {
   const kind = parseVocabKind(typeId)
   if (!kind || kind === 'mots') return null
-  const pool = resolveVocabPool(topic, options?.vocabSelected)
+  const pool = resolveVocabPool(
+    topic,
+    options?.vocabSelected,
+    options?.vocabSubgroup,
+    options?.vocabCustomEntries,
+  )
   if (pool.length === 0) {
     return {
       items: [

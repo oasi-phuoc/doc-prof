@@ -25,6 +25,8 @@ export type FrancaisGenOptions = {
   vocabRows?: number
   vocabCols?: number
   vocabSelected?: string[]
+  vocabSubgroup?: string
+  vocabCustomEntries?: import('./vocab-learn').VocabWordEntry[]
   vocabLineCh?: number
   difficulty?: Difficulty
   topic?: string
@@ -94,7 +96,14 @@ export function tryGenerateFrancaisBlock(
   if (parsed.kind === 'mots') {
     const rows = clampVocabDim(options?.vocabRows, 3, 6)
     const cols = clampVocabDim(options?.vocabCols, 3, 4)
-    const entries = resolveVocabEntries(parsed.topic, options?.vocabSelected, rows, cols)
+    const entries = resolveVocabEntries(
+      parsed.topic,
+      options?.vocabSelected,
+      rows,
+      cols,
+      options?.vocabSubgroup,
+      options?.vocabCustomEntries,
+    )
     return {
       items: [
         {
@@ -128,6 +137,8 @@ export function tryGenerateFrancaisBlock(
 
   const vocab = tryGenerateVocabBlock(typeId, parsed.topic, count, rng, {
     vocabSelected: options?.vocabSelected,
+    vocabSubgroup: options?.vocabSubgroup,
+    vocabCustomEntries: options?.vocabCustomEntries,
     vocabLineCh: options?.vocabLineCh,
     difficulty: options?.difficulty,
   })

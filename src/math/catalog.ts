@@ -1,5 +1,6 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
+import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 
@@ -9,20 +10,15 @@ export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
   { id: 'com', label: 'Com' },
 ]
 
+/** Thèmes français (libellés sans déterminant, ordre alpha). */
+const FRENCH_TOPIC_ENTRIES: Topic[] = VOCAB_TOPIC_META.map((meta) => ({
+  id: meta.id,
+  label: meta.label,
+  domain: 'français' as const,
+}))
+
 export const topics: Topic[] = [
-  { id: 'fr-presenter', label: 'L’identité', domain: 'français' },
-  { id: 'fr-famille', label: 'La famille', domain: 'français' },
-  { id: 'fr-description', label: 'La description', domain: 'français' },
-  { id: 'fr-logement', label: 'Le logement', domain: 'français' },
-  { id: 'fr-achats', label: 'Les achats', domain: 'français' },
-  { id: 'fr-vetements', label: 'Les vêtements', domain: 'français' },
-  { id: 'fr-nourriture', label: 'La nourriture', domain: 'français' },
-  { id: 'fr-sante', label: 'La santé', domain: 'français' },
-  { id: 'fr-transports', label: 'Les transports', domain: 'français' },
-  { id: 'fr-inviter', label: 'L’invitation', domain: 'français' },
-  { id: 'fr-travail', label: 'Le travail', domain: 'français' },
-  { id: 'fr-journee', label: 'Le quotidien', domain: 'français' },
-  { id: 'fr-loisirs', label: 'Les loisirs', domain: 'français' },
+  ...FRENCH_TOPIC_ENTRIES,
   { id: 'nombres', label: 'Nombres naturels', domain: 'algèbre' },
   { id: 'addition', label: 'Additions', domain: 'algèbre' },
   { id: 'soustraction', label: 'Soustractions', domain: 'algèbre' },
@@ -494,21 +490,9 @@ for (const v of VOWEL_TOPICS) {
   )
 }
 
-const FRENCH_THEMES: Array<{ id: string; grammar: string; vocab: string }> = [
-  { id: 'fr-presenter', grammar: 'être, avoir et s’appeler', vocab: 'salutations et identité' },
-  { id: 'fr-famille', grammar: 'adjectifs possessifs', vocab: 'liens de parenté' },
-  { id: 'fr-description', grammar: 'accord des adjectifs de description', vocab: 'description physique' },
-  { id: 'fr-logement', grammar: 'articles définis et indéfinis', vocab: 'pièces et logement' },
-  { id: 'fr-achats', grammar: 'place de l’adjectif et quantité', vocab: 'courses et prix' },
-  { id: 'fr-vetements', grammar: 'conditionnel de politesse', vocab: 'habits et tailles' },
-  { id: 'fr-nourriture', grammar: 'articles partitifs', vocab: 'aliments et restaurant' },
-  { id: 'fr-sante', grammar: 'il faut et devoir', vocab: 'corps et symptômes' },
-  { id: 'fr-transports', grammar: 'aller au présent', vocab: 'moyens de transport' },
-  { id: 'fr-inviter', grammar: 'questions formelles et informelles', vocab: 'invitations et sorties' },
-  { id: 'fr-travail', grammar: 'accord des adjectifs', vocab: 'métiers et bureau' },
-  { id: 'fr-journee', grammar: 'verbes pronominaux', vocab: 'routine quotidienne' },
-  { id: 'fr-loisirs', grammar: 'pronoms COD', vocab: 'activités et hobbies' },
-]
+const FRENCH_THEMES: Array<{ id: string; grammar: string; vocab: string }> = VOCAB_TOPIC_META.map(
+  (meta) => ({ id: meta.id, grammar: meta.grammar, vocab: meta.vocab }),
+)
 
 const FRENCH_KINDS: Array<{
   suffix: string

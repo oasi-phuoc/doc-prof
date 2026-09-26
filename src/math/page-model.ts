@@ -31,6 +31,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     vocabRows: page.vocabRows,
     vocabCols: page.vocabCols,
     vocabSelected: page.vocabSelected,
+    vocabSubgroup: page.vocabSubgroup,
+    vocabCustomEntries: page.vocabCustomEntries,
     vocabLineCh: page.vocabLineCh,
     gameEntries: page.gameEntries,
     gameText: page.gameText,

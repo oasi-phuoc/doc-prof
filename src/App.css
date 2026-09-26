@@ -1113,9 +1113,7 @@
   background:
     conic-gradient(from 0deg,#e11d48,#ea580c,#eab308,#16a34a,#2563eb,#4f46e5,#7c3aed,#e11d48);
 }
-.theme-color-other-label{
-  font-size:11px;font-weight:700;color:var(--muted);margin:0
-}
+.theme-color-other-label{display:none}
 .theme-color-picker{display:flex;flex-direction:column;gap:10px;padding:10px 2px 2px}
 .theme-hue-wheel{
   width:132px;height:132px;margin:0 auto;border-radius:999px;padding:0;border:0;
@@ -1303,16 +1301,34 @@
   scrollbar-gutter:stable;
 }
 .vocab-word-list label{
-  display:flex;align-items:center;gap:8px;
+  display:flex;flex-direction:row;align-items:center;gap:8px;
   margin:0;border:0;border-radius:6px;background:transparent;color:var(--ink);
-  padding:7px 10px;font-size:13px;font-weight:500;cursor:pointer;
+  padding:6px 10px;font-size:13px;font-weight:500;cursor:pointer;
   width:100%;box-sizing:border-box;
 }
 .vocab-word-list label:hover{background:color-mix(in srgb,var(--lavender) 55%,#fff)}
 .vocab-word-list label.is-on{color:var(--purple);background:var(--lavender);font-weight:600}
-.vocab-word-list input{
-  margin:0;flex:0 0 auto;width:1em;height:1em;accent-color:var(--purple)
+.vocab-word-list input[type="checkbox"]{
+  margin:0;flex:0 0 auto;width:1em;height:1em;accent-color:var(--purple);
+  display:inline-block;position:relative;top:0
 }
+.vocab-word-label{flex:1;min-width:0;line-height:1.3}
+.vocab-add-row{
+  display:grid;grid-template-columns:36px 1fr 36px;gap:6px;align-items:center;margin-top:8px
+}
+.vocab-add-thumb{
+  width:36px;height:36px;padding:0;border:1px dashed #c9c2b8;border-radius:10px;
+  background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  color:var(--muted);font-size:18px;font-weight:700
+}
+.vocab-add-thumb.has-image{border-style:solid;border-color:var(--purple)}
+.vocab-add-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.vocab-add-btn{
+  width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  color:var(--purple);font-size:20px;font-weight:700;line-height:1;padding:0
+}
+.vocab-add-btn:disabled{opacity:.4;cursor:not-allowed}
+.vocab-add-row .questions-overflow-hint{grid-column:1/-1;margin:0}
 .vocab-match{width:100%;display:flex;flex-direction:column;gap:10px}
 .vocab-match-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;align-items:start

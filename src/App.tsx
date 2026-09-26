@@ -42,7 +42,18 @@ import {
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { defaultVocabSelected, isVocabLearnType, isVocabPoolType, isVocabProductionType, vocabLearnWordsFor } from '@/francais/vocab-learn'
+import {
+  defaultVocabSelected,
+  defaultVocabSubgroup,
+  isVocabLearnType,
+  isVocabPoolType,
+  isVocabProductionType,
+  makeCustomVocabWord,
+  vocabLearnWordsFor,
+  vocabSubgroupsFor,
+  type VocabWordEntry,
+} from '@/francais/vocab-learn'
+import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
@@ -596,7 +607,7 @@ function ThemeColorPicker({
           role="option"
           aria-selected={!isPreset}
           aria-expanded={open}
-          aria-label="Autre, cercle chromatique"
+          aria-label="Autre couleur"
           className={`theme-color-swatch theme-color-other${!isPreset ? ' active' : ''}`}
           style={!isPreset ? { background: themeColor } : undefined}
           onClick={() => {
@@ -604,7 +615,6 @@ function ThemeColorPicker({
             setOpen((current) => !current)
           }}
         />
-        <span className="theme-color-other-label">Autre</span>
       </div>
       {open ? (
         <div className="theme-color-picker" role="dialog" aria-label="Cercle chromatique">
@@ -641,6 +651,77 @@ function ThemeColorPicker({
             ))}
           </div>
         </div>
+      ) : null}
+    </div>
+  )
+}
+
+function VocabAddWordRow({ onAdd }: { onAdd: (entry: VocabWordEntry) => void }) {
+  const [label, setLabel] = useState('')
+  const [imageSrc, setImageSrc] = useState<string | undefined>()
+  const [error, setError] = useState<string | null>(null)
+  const fileRef = useRef<HTMLInputElement>(null)
+
+  async function onPick(file: File | undefined) {
+    if (!file) return
+    try {
+      const dataUrl = await readGameImageFile(file)
+      setImageSrc(dataUrl)
+      setError(null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Image refusée.')
+    }
+  }
+
+  return (
+    <div className="vocab-add-row">
+      <button
+        type="button"
+        className={`vocab-add-thumb${imageSrc ? ' has-image' : ''}`}
+        aria-label="Image du nouveau mot"
+        onClick={() => fileRef.current?.click()}
+      >
+        {imageSrc ? <img src={imageSrc} alt="" /> : <span aria-hidden>+</span>}
+      </button>
+      <input
+        ref={fileRef}
+        className="visually-hidden"
+        type="file"
+        accept={GAME_IMAGE_ACCEPT}
+        onChange={(event) => {
+          void onPick(event.target.files?.[0])
+          event.target.value = ''
+        }}
+      />
+      <input
+        className="pill-input"
+        type="text"
+        value={label}
+        placeholder="Nouveau mot"
+        aria-label="Nouveau mot"
+        onChange={(event) => setLabel(event.target.value)}
+      />
+      <button
+        type="button"
+        className="vocab-add-btn"
+        aria-label="Ajouter le mot"
+        title="Ajouter"
+        disabled={!label.trim()}
+        onClick={() => {
+          const word = label.trim()
+          if (!word) return
+          onAdd(makeCustomVocabWord(word, imageSrc))
+          setLabel('')
+          setImageSrc(undefined)
+          setError(null)
+        }}
+      >
+        +
+      </button>
+      {error ? (
+        <p className="questions-overflow-hint" role="alert">
+          {error}
+        </p>
       ) : null}
     </div>
   )
@@ -890,13 +971,23 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isVocabPool = isVocabPoolType(type.id)
   const isVocabProd = isVocabProductionType(type.id)
   const isJeux = isJeuxType(type.id)
-  const bankIds = new Set(vocabLearnWordsFor(type.topic).map((word) => word.id))
+  const vocabSubgroup =
+    prev?.topic === type.topic && prev.vocabSubgroup
+      ? prev.vocabSubgroup
+      : defaultVocabSubgroup(type.topic)
+  const bankIds = new Set(
+    vocabLearnWordsFor(type.topic, vocabSubgroup).map((word) => word.id),
+  )
   const preservedSelected =
     prev?.topic === type.topic && prev.vocabSelected?.length
-      ? prev.vocabSelected.filter((id) => bankIds.has(id))
+      ? prev.vocabSelected.filter((id) => bankIds.has(id) || id.startsWith('custom-'))
       : []
   const vocabSelected =
-    preservedSelected.length > 0 ? preservedSelected : defaultVocabSelected(type.topic, 3, 3)
+    preservedSelected.length > 0
+      ? preservedSelected
+      : defaultVocabSelected(type.topic, 3, 3, vocabSubgroup)
+  const vocabCustomEntries =
+    prev?.topic === type.topic ? prev.vocabCustomEntries : undefined
   const preservedGame =
     prev?.exerciseType === type.id && prev.gameEntries?.length
       ? prev.gameEntries
@@ -944,6 +1035,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
       ? {
           columns: 1,
           vocabSelected,
+          vocabSubgroup,
+          vocabCustomEntries,
           vocabRows: isVocabLearn ? (prev?.vocabRows ?? 3) : undefined,
           vocabCols: isVocabLearn ? (prev?.vocabCols ?? 3) : undefined,
           vocabLineCh: isVocabProd
@@ -954,6 +1047,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           vocabRows: undefined,
           vocabCols: undefined,
           vocabSelected: undefined,
+          vocabSubgroup: undefined,
+          vocabCustomEntries: undefined,
           vocabLineCh: undefined,
         }),
     ...(isJeux
@@ -1247,11 +1342,25 @@ function GeneratorPage() {
   const isVocabPool = isVocabPoolType(activeBlock.exerciseType)
   const isVocabProd = isVocabProductionType(activeBlock.exerciseType)
   const isGramTheory = isGrammarTheoryType(activeBlock.exerciseType)
-  const vocabLearnWords = isVocabPool ? vocabLearnWordsFor(activeBlock.topic) : []
+  const vocabSubgroups = isVocabPool ? vocabSubgroupsFor(activeBlock.topic) : []
+  const activeVocabSubgroup =
+    activeBlock.vocabSubgroup ?? vocabSubgroups[0]?.id ?? defaultVocabSubgroup(activeBlock.topic)
+  const vocabBankWords = isVocabPool
+    ? vocabLearnWordsFor(activeBlock.topic, activeVocabSubgroup)
+    : []
+  const vocabCustomWords = (activeBlock.vocabCustomEntries ?? []) as VocabWordEntry[]
+  const vocabLearnWords = [...vocabBankWords, ...vocabCustomWords].sort((a, b) =>
+    a.label.localeCompare(b.label, 'fr'),
+  )
   const vocabSelectedIds =
     activeBlock.vocabSelected ??
     (isVocabPool
-      ? defaultVocabSelected(activeBlock.topic, activeBlock.vocabRows ?? 3, activeBlock.vocabCols ?? 3)
+      ? defaultVocabSelected(
+          activeBlock.topic,
+          activeBlock.vocabRows ?? 3,
+          activeBlock.vocabCols ?? 3,
+          activeVocabSubgroup,
+        )
       : [])
   const usesCefrLevel =
     (isVocabPool && !isVocabLearn) ||
@@ -1464,6 +1573,8 @@ function GeneratorPage() {
           ? (activeBlock.continueOnNextPage ?? false)
           : undefined,
       vocabSelected: fields.vocabSelected,
+      vocabSubgroup: fields.vocabSubgroup,
+      vocabCustomEntries: fields.vocabCustomEntries,
       vocabRows: fields.vocabRows,
       vocabCols: fields.vocabCols,
       vocabLineCh: fields.vocabLineCh,
@@ -1935,6 +2046,27 @@ function GeneratorPage() {
                       />
                     </label>
                   ) : null}
+                  {vocabSubgroups.length > 1 ? (
+                    <SelectBox
+                      label="Liste"
+                      value={activeVocabSubgroup ?? ''}
+                      onChange={(value) => {
+                        const nextSelected = defaultVocabSelected(
+                          activeBlock.topic,
+                          activeBlock.vocabRows ?? 3,
+                          activeBlock.vocabCols ?? 3,
+                          value,
+                        )
+                        updatePage({ vocabSubgroup: value, vocabSelected: nextSelected })
+                      }}
+                    >
+                      {vocabSubgroups.map((group) => (
+                        <option value={group.id} key={group.id}>
+                          {group.label}
+                        </option>
+                      ))}
+                    </SelectBox>
+                  ) : null}
                   {vocabLearnWords.length > 0 ? (
                     <div className="quad-libre-block">
                       <b>Mots</b>
@@ -1957,16 +2089,35 @@ function GeneratorPage() {
                                   })
                                 }}
                               />
-                              {word.label}
+                              <span className="vocab-word-label">{word.label}</span>
                             </label>
                           )
                         })}
                       </div>
+                      <VocabAddWordRow
+                        onAdd={(entry) => {
+                          const customs = [...vocabCustomWords, entry]
+                          updatePage({
+                            vocabCustomEntries: customs,
+                            vocabSelected: [...vocabSelectedIds, entry.id],
+                          })
+                        }}
+                      />
                     </div>
                   ) : (
-                    <p className="questions-overflow-hint" role="status">
-                      Aucun mot n’est encore défini pour ce thème.
-                    </p>
+                    <div className="quad-libre-block">
+                      <p className="questions-overflow-hint" role="status">
+                        Aucun mot dans cette liste. Ajoutez-en un ci-dessous.
+                      </p>
+                      <VocabAddWordRow
+                        onAdd={(entry) => {
+                          updatePage({
+                            vocabCustomEntries: [...vocabCustomWords, entry],
+                            vocabSelected: [...vocabSelectedIds, entry.id],
+                          })
+                        }}
+                      />
+                    </div>
                   )}
                 </>
               ) : null}
@@ -2588,7 +2739,7 @@ function GeneratorPage() {
                   </button>
                 </div>
                 <button className="print-chip is-generate" type="button" onClick={generate}>
-                  Générer une nouvelle fiche
+                  Générer
                 </button>
                 <button className="print-chip" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
                   <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden>
