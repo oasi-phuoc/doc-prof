@@ -386,7 +386,7 @@
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
   min-width:0;width:100%;
   padding:10px 8px;
-  border:1.5px solid var(--ink);
+  border:1.5px solid var(--purple);
   border-radius:12px;
   background:#fff;
   box-sizing:border-box;
@@ -398,7 +398,10 @@
 }
 .voc-qcm-card-check{
   display:inline-flex;align-items:center;justify-content:center;gap:4px;
-  font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--ink);
+  font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--purple);
+}
+.voc-qcm-card-check .oral-qcm-box{
+  border-color:var(--purple);
 }
 .voc-qcm-card.selected{
   border-color:var(--purple);background:color-mix(in srgb,var(--lavender) 55%,#fff)
@@ -1288,14 +1291,28 @@
   line-height:1.2;color:var(--ink);text-align:center;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis
 }
-.vocab-word-list{display:flex;flex-wrap:wrap;gap:6px}
-.vocab-word-list label{
-  display:inline-flex;align-items:center;gap:6px;
-  border:1px solid #d8dde6;border-radius:999px;background:#fff;color:var(--muted);
-  padding:6px 10px 6px 8px;font-size:12px;font-weight:700;cursor:pointer
+.vocab-word-list{
+  display:flex;flex-direction:column;gap:2px;
+  max-height:11.5rem;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:4px 2px 4px 0;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#faf9fc;
+  scrollbar-gutter:stable;
 }
-.vocab-word-list label.is-on{border-color:var(--purple);color:var(--purple);background:var(--lavender)}
-.vocab-word-list input{margin:0;accent-color:var(--purple)}
+.vocab-word-list label{
+  display:flex;align-items:center;gap:8px;
+  margin:0;border:0;border-radius:6px;background:transparent;color:var(--ink);
+  padding:7px 10px;font-size:13px;font-weight:500;cursor:pointer;
+  width:100%;box-sizing:border-box;
+}
+.vocab-word-list label:hover{background:color-mix(in srgb,var(--lavender) 55%,#fff)}
+.vocab-word-list label.is-on{color:var(--purple);background:var(--lavender);font-weight:600}
+.vocab-word-list input{
+  margin:0;flex:0 0 auto;width:1em;height:1em;accent-color:var(--purple)
+}
 .vocab-match{width:100%;display:flex;flex-direction:column;gap:10px}
 .vocab-match-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;align-items:start
