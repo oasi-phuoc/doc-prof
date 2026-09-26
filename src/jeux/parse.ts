@@ -5,14 +5,14 @@ import type { GameEntry } from './types'
 /** Convertit les entrées en texte éditable (une ligne = une entrée). */
 export function entriesToText(typeId: string, entries: GameEntry[]): string {
   switch (typeId) {
-    case 'jeux-vrai-faux':
-      return entries
-        .map((e) => `${e.isTrue === false ? 'F' : 'V'} · ${e.text}`)
-        .join('\n')
     case 'jeux-devinettes':
       return entries
-        .map((e) => [e.text, ...(e.clues ?? [])].join(' | '))
-        .join('\n')
+        .map((e) => {
+          const clues = [...(e.clues ?? [])]
+          while (clues.length < 3) clues.push('')
+          return [e.text, ...clues.slice(0, 3)].join('\n')
+        })
+        .join('\n\n')
     case 'jeux-intrus': {
       const groups = new Map<string, GameEntry[]>()
       for (const e of entries) {
@@ -83,26 +83,34 @@ export function textToEntries(
 
   let parsed: GameEntry[]
   switch (typeId) {
-    case 'jeux-vrai-faux':
-      parsed = lines.slice(0, 8).map((line) => {
-        const m = /^(V|F)\s*[·.:\-–]?\s*(.+)$/i.exec(line)
-        if (m) {
+    case 'jeux-devinettes': {
+      // Blocs séparés par une ligne vide, ou lignes « mot | i1 | i2 | i3 » (rétrocompat).
+      const blocks = text
+        .split(/\r?\n\s*\r?\n/)
+        .map((b) => b.trim())
+        .filter(Boolean)
+      if (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|'))) {
+        parsed = blocks.slice(0, 9).map((block) => {
+          const parts = block
+            .split(/\r?\n/)
+            .map((p) => p.trim())
+            .filter(Boolean)
+          const [word = '', c1 = '', c2 = '', c3 = ''] = parts
           return {
-            text: clip(m[2]!, maxLen),
-            isTrue: m[1]!.toUpperCase() === 'V',
+            text: clip(word, maxLen),
+            clues: [c1, c2, c3].map((c) => clip(c, 80)),
           }
-        }
-        return { text: clip(line, maxLen), isTrue: true }
-      })
+        })
+      } else {
+        parsed = lines.slice(0, 9).map((line) => {
+          const parts = line.split('|').map((p) => p.trim())
+          const [word = 'mot', ...clues] = parts
+          while (clues.length < 3) clues.push('')
+          return { text: clip(word, maxLen), clues: clues.slice(0, 3).map((c) => clip(c, 80)) }
+        })
+      }
       break
-    case 'jeux-devinettes':
-      parsed = lines.slice(0, 6).map((line) => {
-        const parts = line.split('|').map((p) => p.trim()).filter(Boolean)
-        const [word = 'mot', ...clues] = parts
-        while (clues.length < 3) clues.push('…')
-        return { text: clip(word, maxLen), clues: clues.slice(0, 3).map((c) => clip(c, 40)) }
-      })
-      break
+    }
     case 'jeux-intrus':
       parsed = lines.slice(0, 4).flatMap((line, groupIndex) => {
         const [left = '', right = ''] = line.split('|').map((p) => p.trim())

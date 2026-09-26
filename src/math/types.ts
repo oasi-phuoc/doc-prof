@@ -344,7 +344,7 @@ export type MathItem = {
     title?: string
     cols: number
     rows: number
-    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die'
+    kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes'
     cards: Array<{
       id: string
       text?: string

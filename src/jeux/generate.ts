@@ -83,52 +83,48 @@ function vocab(entries: GameEntry[]): MathItem[] {
   ]
 }
 
-function vraiFaux(entries: GameEntry[]): MathItem[] {
-  const cards: GameCard[] = padEntries(entries, 8).map((e, i) => {
-    const ok = e.isTrue !== false
-    return {
-      id: `vf-${i}`,
-      text: e.text,
-      variant: ok ? 'true' : 'false',
-      badge: ok ? 'V' : 'F',
-    }
-  })
-  return [
-    boardItem({
-      cols: 2,
-      rows: 4,
-      cards,
-      kind: 'cards',
-      title: 'Découpez. Le badge V / F indique la réponse (également en couleur).',
-    }),
-  ]
-}
-
+/**
+ * Devinettes recto-verso :
+ * feuille 1 = mot + image, feuille 2 = 3 indices (ordre mirroir, bord long).
+ */
 function devinettes(entries: GameEntry[]): MathItem[] {
-  const list = padEntries(entries, 6).map((e) => ({
+  const cols = 3
+  const rows = 3
+  const list = padEntries(entries, cols * rows).map((e) => ({
     ...e,
-    clues: e.clues && e.clues.length >= 3 ? e.clues : ['…', '…', '…'],
+    clues: e.clues && e.clues.length >= 3 ? e.clues.slice(0, 3) : ['…', '…', '…'],
   }))
   const recto: GameCard[] = list.map((e, i) => ({
     id: `dr-${i}`,
     text: e.text,
-    variant: 'word',
+    imageSrc: e.imageSrc,
+    variant: 'word' as const,
     badge: String(i + 1),
   }))
-  const verso: GameCard[] = list.map((e, i) => ({
+  const versoMirrored = mirrorRows(
+    list.map((e, i) => ({ e, i })),
+    cols,
+  )
+  const verso: GameCard[] = versoMirrored.map(({ e, i }) => ({
     id: `dv-${i}`,
-    lines: e.clues!.slice(0, 3),
-    variant: 'clue',
+    lines: e.clues,
+    variant: 'clue' as const,
     badge: String(i + 1),
   }))
   return [
-    boardItem({ cols: 3, rows: 2, cards: recto, kind: 'cards', title: 'Recto — mots' }),
     boardItem({
-      cols: 3,
-      rows: 2,
+      cols,
+      rows,
+      cards: recto,
+      kind: 'devinettes',
+      title: 'Recto — mot et image (imprimez cette page en premier)',
+    }),
+    boardItem({
+      cols,
+      rows,
       cards: verso,
-      kind: 'cards',
-      title: 'Verso — indices (à imprimer au dos ou à découper séparément)',
+      kind: 'devinettes',
+      title: 'Verso — indices (retournez la feuille : chaque carte correspond au mot)',
     }),
   ]
 }
@@ -481,9 +477,6 @@ export function tryGenerateJeuxBatch(
   switch (typeId) {
     case 'jeux-vocabulaire':
       items = vocab(entries)
-      break
-    case 'jeux-vrai-faux':
-      items = vraiFaux(entries)
       break
     case 'jeux-devinettes':
       items = devinettes(entries)

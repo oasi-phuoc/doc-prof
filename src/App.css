@@ -1503,6 +1503,40 @@
   background:color-mix(in srgb, var(--jeux-accent) 6%, #fff)
 }
 .game-board.is-bands .game-card-grid{gap:2mm}
+.game-board.is-devinettes .game-card-grid{--game-card-gap:3mm}
+.game-board.is-devinettes .game-card{
+  min-height:42mm;padding:3.5mm;border-width:1.8px
+}
+.game-board.is-devinettes .game-card-image{
+  min-height:24mm;margin-bottom:2mm;flex:1 1 auto
+}
+.game-board.is-devinettes .game-card-word{
+  font-size:15px;font-weight:800;line-height:1.2;letter-spacing:.01em
+}
+.game-board.is-devinettes .game-card.is-clue{
+  justify-content:center;padding:4mm 3.5mm
+}
+.game-board.is-devinettes .game-card-clues{
+  padding-left:5mm;font-size:12.5px;line-height:1.45;font-weight:600
+}
+.game-board.is-devinettes .game-card-badge{
+  min-width:5.5mm;height:5.5mm;font-size:9px
+}
+.game-riddle-list{
+  list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
+  max-height:22rem;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#faf9fc
+}
+.game-riddle-block{
+  margin:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  display:flex;flex-direction:column;gap:8px
+}
+.game-riddle-head{
+  display:grid;grid-template-columns:auto 40px 1fr 28px;gap:6px;align-items:center
+}
+.game-riddle-head>b{font-size:12px;color:var(--muted);min-width:3.2rem}
+.game-riddle-clues{display:flex;flex-direction:column;gap:6px;padding-left:2px}
+.game-riddle-clue{display:flex;flex-direction:column;gap:3px;margin:0}
+.game-riddle-clue>span{font-size:11px;font-weight:600;color:var(--muted)}
 .game-content-field{display:flex;flex-direction:column;gap:6px}
 .game-content-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em;text-transform:uppercase}
 .game-content-hint{margin:0;font-size:12px;line-height:1.35}

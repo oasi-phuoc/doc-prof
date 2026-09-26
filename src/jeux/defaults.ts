@@ -17,24 +17,52 @@ const VOCAB: GameEntry[] = [
   'fruit',
 ].map((text) => ({ text }))
 
-const VRAI_FAUX: GameEntry[] = [
-  { text: 'Paris est la capitale de la France.', isTrue: true },
-  { text: 'Le soleil est bleu.', isTrue: false },
-  { text: 'On boit de l’eau.', isTrue: true },
-  { text: 'Un chat a six pattes.', isTrue: false },
-  { text: 'Le lundi vient avant le mardi.', isTrue: true },
-  { text: 'On mange avec les oreilles.', isTrue: false },
-  { text: 'Deux et deux font quatre.', isTrue: true },
-  { text: 'L’hiver est plus chaud que l’été.', isTrue: false },
-]
-
 const DEVINETTES: GameEntry[] = [
-  { text: 'pomme', clues: ['C’est un fruit.', 'C’est souvent rouge ou verte.', 'On la croque.'] },
-  { text: 'chat', clues: ['C’est un animal.', 'Il miaule.', 'Il aime le lait.'] },
-  { text: 'livre', clues: ['On le lit.', 'Il a des pages.', 'Il est à la bibliothèque.'] },
-  { text: 'école', clues: ['Les enfants y vont.', 'On y apprend.', 'Il y a des classes.'] },
-  { text: 'vélo', clues: ['Il a deux roues.', 'On pédale.', 'On porte un casque.'] },
-  { text: 'pain', clues: ['On l’achète à la boulangerie.', 'On le mange.', 'Il est croustillant.'] },
+  {
+    text: 'pomme',
+    imageSrc: '/assets/words/lecture/pomme.webp',
+    clues: ['C’est un fruit.', 'C’est souvent rouge ou verte.', 'On la croque.'],
+  },
+  {
+    text: 'chat',
+    imageSrc: '/assets/words/lecture/chat.webp',
+    clues: ['C’est un animal.', 'Il miaule.', 'Il aime le lait.'],
+  },
+  {
+    text: 'livre',
+    imageSrc: '/assets/words/lecture/livre.webp',
+    clues: ['On le lit.', 'Il a des pages.', 'Il est à la bibliothèque.'],
+  },
+  {
+    text: 'soleil',
+    imageSrc: '/assets/words/lecture/soleil.webp',
+    clues: ['Il brille le jour.', 'Il donne de la lumière.', 'Il chauffe.'],
+  },
+  {
+    text: 'vélo',
+    imageSrc: '/assets/words/lecture/vélo.webp',
+    clues: ['Il a deux roues.', 'On pédale.', 'On porte un casque.'],
+  },
+  {
+    text: 'pain',
+    imageSrc: '/assets/words/lecture/pain.webp',
+    clues: ['On l’achète à la boulangerie.', 'On le mange.', 'Il est croustillant.'],
+  },
+  {
+    text: 'maison',
+    imageSrc: '/assets/words/lecture/maison.webp',
+    clues: ['On y habite.', 'Elle a un toit.', 'Elle a des portes et des fenêtres.'],
+  },
+  {
+    text: 'chien',
+    imageSrc: '/assets/words/lecture/chien.webp',
+    clues: ['C’est un animal.', 'Il aboie.', 'C’est un ami de l’humain.'],
+  },
+  {
+    text: 'chaise',
+    imageSrc: '/assets/words/lecture/chaise.webp',
+    clues: ['On s’assoit dessus.', 'Elle a quatre pieds.', 'Elle est dans la salle.'],
+  },
 ]
 
 const MEMORY: GameEntry[] = ['maison', 'porte', 'fenêtre', 'table', 'chaise', 'lampe'].map((text) => ({
@@ -160,7 +188,6 @@ const PHRASES: GameEntry[] = [
 
 export const DEFAULT_ENTRIES: Record<string, GameEntry[]> = {
   'jeux-vocabulaire': VOCAB,
-  'jeux-vrai-faux': VRAI_FAUX,
   'jeux-devinettes': DEVINETTES,
   'jeux-memory': MEMORY,
   'jeux-loto': LOTO,

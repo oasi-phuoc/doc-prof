@@ -41,5 +41,5 @@ export type GameBoard = {
   rows: number
   cards: GameCard[]
   /** Style de grille. */
-  kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die'
+  kind?: 'cards' | 'loto' | 'bands' | 'plateau' | 'die' | 'devinettes'
 }

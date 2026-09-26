@@ -1,6 +1,6 @@
 /** Schémas des templates du domaine Jeux. */
 
-export type GameFieldType = 'texte' | 'image' | 'indices' | 'categorie' | 'vrai-faux'
+export type GameFieldType = 'texte' | 'image' | 'indices' | 'categorie'
 
 export type GameField = {
   type: GameFieldType
@@ -45,33 +45,23 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     entryHint:
       '12 paires image/mot · impression recto-verso (images puis mots alignés).',
   },
-  'jeux-vrai-faux': {
-    id: 'jeux-vrai-faux',
-    family: 'cartes',
-    label: 'Vrai / Faux',
-    orientation: 'portrait',
-    grid: { cols: 2, rows: 4 },
-    fields: [{ type: 'vrai-faux', required: true, maxLength: 60 }],
-    entryCount: 8,
-    cardCount: 8,
-    maxTextLen: 60,
-    entryHint: 'Une affirmation par ligne, préfixe V ou F (ex. « V · Paris est en France »).',
-  },
   'jeux-devinettes': {
     id: 'jeux-devinettes',
     family: 'cartes',
     label: 'Devinettes',
     orientation: 'portrait',
-    grid: { cols: 3, rows: 2 },
+    grid: { cols: 3, rows: 3 },
     fields: [
+      { type: 'image' },
       { type: 'texte', required: true, maxLength: 20 },
       { type: 'indices', required: true },
     ],
-    entryCount: 6,
-    cardCount: 6,
+    entryCount: 9,
+    cardCount: 9,
     duplex: true,
     maxTextLen: 20,
-    entryHint: 'Mot | indice 1 | indice 2 | indice 3 (une carte par ligne).',
+    entryHint:
+      '9 cartes · mot + image au recto, 3 indices au verso (impression bord long).',
   },
   'jeux-memory': {
     id: 'jeux-memory',

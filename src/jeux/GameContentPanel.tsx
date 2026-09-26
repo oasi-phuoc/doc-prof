@@ -249,13 +249,21 @@ export function GameContentPanel({
 
   // —— Mode libre (ou templates sans images) ——
   const resolved = resolveEntries(typeId, entries)
-  const slots = withImages
-    ? Array.from({ length: template.entryCount }, (_, i) => resolved[i] ?? { text: '' })
+  const slots = withImages || typeId === 'jeux-devinettes'
+    ? Array.from({ length: template.entryCount }, (_, i) => resolved[i] ?? { text: '', clues: ['', '', ''] })
     : resolved
 
   function updateSlot(index: number, patch: Partial<GameEntry>) {
     const next = slots.map((entry, i) => (i === index ? { ...entry, ...patch } : entry))
     commitEntries(next, { gameSource: 'libre' })
+  }
+
+  function updateClue(index: number, clueIndex: number, value: string) {
+    const entry = slots[index] ?? { text: '', clues: ['', '', ''] }
+    const clues = [...(entry.clues ?? ['', '', ''])]
+    while (clues.length < 3) clues.push('')
+    clues[clueIndex] = value
+    updateSlot(index, { clues: clues.slice(0, 3) })
   }
 
   async function onPickImage(index: number, file: File | undefined) {
@@ -266,6 +274,102 @@ export function GameContentPanel({
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Image refusée.')
     }
+  }
+
+  // —— Devinettes : Mot N + image + 3 indices (pas de syntaxe | ) ——
+  if (typeId === 'jeux-devinettes') {
+    return (
+      <div className="game-content-field">
+        <span className="game-content-label">Contenu</span>
+        <p className="muted game-content-hint">{template.entryHint}</p>
+        <ul className="game-riddle-list" aria-label="Devinettes">
+          {slots.map((entry, index) => {
+            const inputId = `${baseId}-riddle-img-${index}`
+            const clues = [...(entry.clues ?? [])]
+            while (clues.length < 3) clues.push('')
+            return (
+              <li className="game-riddle-block" key={`${typeId}-${index}`}>
+                <div className="game-riddle-head">
+                  <b>Mot {index + 1}</b>
+                  <button
+                    type="button"
+                    className={`game-entry-thumb${entry.imageSrc ? ' has-image' : ''}`}
+                    aria-label={
+                      entry.imageSrc
+                        ? `Changer l’image du mot ${index + 1}`
+                        : `Ajouter une image au mot ${index + 1}`
+                    }
+                    onClick={() => fileRefs.current[index]?.click()}
+                  >
+                    {entry.imageSrc ? <img src={entry.imageSrc} alt="" /> : <span aria-hidden>+</span>}
+                  </button>
+                  <input
+                    ref={(el) => {
+                      fileRefs.current[index] = el
+                    }}
+                    id={inputId}
+                    className="visually-hidden"
+                    type="file"
+                    accept={GAME_IMAGE_ACCEPT}
+                    onChange={(event) => {
+                      void onPickImage(index, event.target.files?.[0])
+                      event.target.value = ''
+                    }}
+                  />
+                  <input
+                    className="pill-input game-entry-text"
+                    type="text"
+                    maxLength={template.maxTextLen}
+                    value={entry.text}
+                    aria-label={`Mot ${index + 1}`}
+                    placeholder={`Mot ${index + 1}`}
+                    onChange={(event) => updateSlot(index, { text: event.target.value })}
+                  />
+                  {entry.imageSrc ? (
+                    <button
+                      type="button"
+                      className="game-entry-clear"
+                      aria-label={`Retirer l’image du mot ${index + 1}`}
+                      title="Retirer l’image"
+                      onClick={() => updateSlot(index, { imageSrc: undefined })}
+                    >
+                      ×
+                    </button>
+                  ) : (
+                    <span className="game-entry-clear is-spacer" aria-hidden />
+                  )}
+                </div>
+                <div className="game-riddle-clues">
+                  {[0, 1, 2].map((clueIndex) => (
+                    <label key={clueIndex} className="game-riddle-clue">
+                      <span>Indice {clueIndex + 1}</span>
+                      <input
+                        className="pill-input"
+                        type="text"
+                        maxLength={80}
+                        value={clues[clueIndex] ?? ''}
+                        aria-label={`Mot ${index + 1}, indice ${clueIndex + 1}`}
+                        placeholder={`Phrase ${clueIndex + 1}`}
+                        onChange={(event) => updateClue(index, clueIndex, event.target.value)}
+                      />
+                    </label>
+                  ))}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+        {error ? (
+          <p className="questions-overflow-hint" role="alert">
+            {error}
+          </p>
+        ) : (
+          <small className="muted">
+            Recto-verso : page mot + image, puis page indices (bord long).
+          </small>
+        )}
+      </div>
+    )
   }
 
   if (!withImages) {
