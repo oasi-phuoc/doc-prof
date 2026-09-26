@@ -16,10 +16,36 @@ export type JeuxBatch = {
 
 export type JeuxGenerateOptions = {
   gameEntries?: GameEntry[]
-  /** Dos des cartes Mémory (hex), blanc si absent. */
+  /** Couleur du cadre de série (verso). */
   gameBackColor?: string
-  /** Thème FR (loto verso — série). */
+  /** Thème FR (loto / banques). */
   gameTopic?: string
+  /** Nom de série imprimé au verso (logo ClairFLE). */
+  gameSeriesName?: string
+}
+
+const DEFAULT_SERIES_FRAME = '#0f6b5c'
+
+function resolveSeriesName(name: string | undefined, fallback: string): string {
+  const t = name?.trim()
+  return t || fallback
+}
+
+/** Dos unifiés : logo ClairFLE + nom de série + cadre (miroir bord long). */
+function makeSeriesBackCards(
+  recto: GameCard[],
+  cols: number,
+  seriesName: string,
+  frameColor?: string,
+): GameCard[] {
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  return mirrorRows(recto, cols).map((card, i) => ({
+    id: `sb-${card.id}-${i}`,
+    text: seriesName,
+    variant: 'series-back' as const,
+    frameColor: frame,
+    badge: card.badge,
+  }))
 }
 
 function lotoThemeLabel(topicId?: string): { label: string; sub?: string } {
@@ -146,12 +172,19 @@ function devinettes(entries: GameEntry[]): MathItem[] {
 /**
  * Mémory recto-verso :
  * feuille 1 = 12 cartes mélangées (6 paires image / mot),
- * feuille 2 = dos blanc ou couleur (ordre mirroir, bord long).
+ * feuille 2 = dos série (logo ClairFLE + nom, miroir bord long).
  */
-function memory(entries: GameEntry[], rng: Rng, backColor?: string): MathItem[] {
+function memory(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
   const cols = 3
   const rows = 4
   const pairs = padEntries(entries, 6)
+  const series = resolveSeriesName(seriesName, 'Mémory')
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const raw: GameCard[] = pairs.flatMap((e, i) => [
     {
       id: `m-w-${i}`,
@@ -167,15 +200,7 @@ function memory(entries: GameEntry[], rng: Rng, backColor?: string): MathItem[] 
     },
   ])
   const cards = shuffle(rng, raw)
-  const fill = backColor?.trim() || undefined
-  const versoSource = cards.map((card, i) => ({ card, i }))
-  const versoMirrored = mirrorRows(versoSource, cols)
-  const backs: GameCard[] = versoMirrored.map(({ card, i }) => ({
-    id: `mb-${i}`,
-    variant: 'back' as const,
-    badge: card.badge,
-    backColor: fill,
-  }))
+  const backs = makeSeriesBackCards(cards, cols, series, frame)
   return [
     boardItem({
       cols,
@@ -189,10 +214,9 @@ function memory(entries: GameEntry[], rng: Rng, backColor?: string): MathItem[] 
       rows,
       cards: backs,
       kind: 'memory',
-      backColor: fill,
-      title: fill
-        ? 'Verso — dos des cartes (couleur)'
-        : 'Verso — dos des cartes (blanc)',
+      frameColor: frame,
+      themeLabel: series,
+      title: `Verso — série « ${series} »`,
     }),
   ]
 }
@@ -217,13 +241,19 @@ function uniqueLotoGrids(words: string[], count: number, size: number, rng: Rng)
 }
 
 /**
- * Loto : 15 grilles (3 par page) + verso thème, puis lot animateur 27 mots.
+ * Loto : 15 grilles (3 par page) + verso série (logo ClairFLE), puis lot animateur.
  */
-function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
+function loto(
+  entries: GameEntry[],
+  rng: Rng,
+  topicId?: string,
+  seriesName?: string,
+): MathItem[] {
   const pool = padEntries(entries, 27)
   const byText = new Map(pool.map((e) => [e.text, e]))
   const words = pool.map((e) => e.text)
   const theme = lotoThemeLabel(topicId)
+  const series = resolveSeriesName(seriesName, theme.label)
   const toCard = (text: string, i: number, prefix: string): GameCard => {
     const entry = byText.get(text)
     return {
@@ -245,7 +275,7 @@ function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
         cols: 3,
         rows: 3,
         cards: picks.map((text, i) => toCard(text, i, `g${n}`)),
-        themeLabel: theme.label,
+        themeLabel: series,
         themeSub: theme.sub,
       }
     })
@@ -255,25 +285,18 @@ function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
         rows: 3,
         cards: [],
         kind: 'loto-page',
-        themeLabel: theme.label,
+        themeLabel: series,
         panels: rectoPanels,
         title: `Grilles ${page * 3 + 1} à ${page * 3 + 3} — découpez chaque cadre`,
       }),
     )
-    // Verso : même ordre (flip bord long) — thème / série du vocabulaire.
+    // Verso : même ordre (flip bord long) — identité de série.
     const versoPanels: GamePanel[] = rectoPanels.map((panel) => ({
       title: panel.title,
       cols: 3,
       rows: 3,
-      cards: panel.cards
-        .filter((c) => c.imageSrc)
-        .slice(0, 6)
-        .map((c, i) => ({
-          id: `vb-${panel.title}-${i}`,
-          imageSrc: c.imageSrc,
-          variant: 'image' as const,
-        })),
-      themeLabel: theme.label,
+      cards: [],
+      themeLabel: series,
       themeSub: theme.sub,
     }))
     items.push(
@@ -282,9 +305,9 @@ function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
         rows: 3,
         cards: [],
         kind: 'loto-back',
-        themeLabel: theme.label,
+        themeLabel: series,
         panels: versoPanels,
-        title: `Verso — série « ${theme.label} »`,
+        title: `Verso — série « ${series} »`,
       }),
     )
   }
@@ -298,8 +321,8 @@ function loto(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
         badge: String(i + 1),
       })),
       kind: 'loto-call',
-      themeLabel: theme.label,
-      title: `Lot animateur — 27 mots (série « ${theme.label} »)`,
+      themeLabel: series,
+      title: `Lot animateur — 27 mots (série « ${series} »)`,
     }),
   )
   return items
@@ -369,13 +392,20 @@ function scatterWords(words: string[], rng: Rng): ScatterWord[] {
 
 /**
  * Intrus recto-verso :
- * feuille 1 = 12 cartes (5 mots inclinés), feuille 2 = mot intrus + cadre série.
+ * feuille 1 = 12 cartes (5 mots inclinés),
+ * feuille 2 = dos série (logo ClairFLE + nom, miroir bord long).
  */
-function intrus(entries: GameEntry[], rng: Rng, frameColor?: string): MathItem[] {
+function intrus(
+  entries: GameEntry[],
+  rng: Rng,
+  frameColor?: string,
+  seriesName?: string,
+): MathItem[] {
   const cols = 3
   const rows = 4
   const groups = normalizeIntrusGroups(entries)
-  const frame = frameColor?.trim() || '#0f6b5c'
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const series = resolveSeriesName(seriesName, 'Intrus')
   const recto: GameCard[] = groups.map((g, i) => {
     const five = shuffle(rng, [...g.words, g.intrus])
     return {
@@ -385,15 +415,7 @@ function intrus(entries: GameEntry[], rng: Rng, frameColor?: string): MathItem[]
       scatter: scatterWords(five, rng),
     }
   })
-  const versoSource = groups.map((g, i) => ({ g, i }))
-  const versoMirrored = mirrorRows(versoSource, cols)
-  const verso: GameCard[] = versoMirrored.map(({ g, i }) => ({
-    id: `iv-${i}`,
-    text: g.intrus,
-    variant: 'intrus-answer' as const,
-    badge: String(i + 1),
-    frameColor: frame,
-  }))
+  const verso = makeSeriesBackCards(recto, cols, series, frame)
   return [
     boardItem({
       cols,
@@ -408,7 +430,8 @@ function intrus(entries: GameEntry[], rng: Rng, frameColor?: string): MathItem[]
       cards: verso,
       kind: 'intrus',
       frameColor: frame,
-      title: 'Verso — mot intrus (cadre = série du jeu)',
+      themeLabel: series,
+      title: `Verso — série « ${series} »`,
     }),
   ]
 }
@@ -496,8 +519,8 @@ function tri(
   const cols = 4
   const rows = 6
   const groups = normalizeTriGroups(entries)
-  const frame = frameColor?.trim() || '#0f6b5c'
-  const series = seriesName?.trim() || 'Tri'
+  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const series = resolveSeriesName(seriesName, 'Tri')
   const raw: GameCard[] = []
   for (const g of groups) {
     raw.push({
@@ -514,12 +537,7 @@ function tri(
     })
   }
   const recto = shuffle(rng, raw)
-  const verso = mirrorRows(recto, cols).map((card, i) => ({
-    id: `tv-${card.id}-${i}`,
-    text: series,
-    variant: 'intrus-answer' as const,
-    frameColor: frame,
-  }))
+  const verso = makeSeriesBackCards(recto, cols, series, frame)
   return [
     boardItem({
       cols,
@@ -535,7 +553,7 @@ function tri(
       kind: 'tri',
       frameColor: frame,
       themeLabel: series,
-      title: `Verso — série « ${series} » (cadre = fiche)`,
+      title: `Verso — série « ${series} »`,
     }),
   ]
 }
@@ -724,19 +742,19 @@ export function tryGenerateJeuxBatch(
       items = devinettes(entries)
       break
     case 'jeux-memory':
-      items = memory(entries, rng, options.gameBackColor)
+      items = memory(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-loto':
-      items = loto(entries, rng, options.gameTopic)
+      items = loto(entries, rng, options.gameTopic, options.gameSeriesName)
       break
     case 'jeux-intrus':
-      items = intrus(entries, rng, options.gameBackColor)
+      items = intrus(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-dominos':
       items = dominos(entries, rng)
       break
     case 'jeux-tri':
-      items = tri(entries, rng, options.gameBackColor, options.gameTopic)
+      items = tri(entries, rng, options.gameBackColor, options.gameSeriesName)
       break
     case 'jeux-sept-familles':
       items = septFamilles(entries)

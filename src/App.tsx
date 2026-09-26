@@ -1015,20 +1015,27 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
     prev?.exerciseType === type.id && prev.gameSelectedIds?.length
       ? prev.gameSelectedIds
       : themeGame?.gameSelectedIds
+  const seriesDefaults: Record<string, string> = {
+    'jeux-memory': 'Mémory',
+    'jeux-intrus': 'Intrus',
+    'jeux-tri': 'Tri',
+    'jeux-loto': 'Loto',
+  }
+  const usesSeriesBack =
+    type.id === 'jeux-memory' ||
+    type.id === 'jeux-intrus' ||
+    type.id === 'jeux-tri' ||
+    type.id === 'jeux-loto'
   const gameBackColor =
     prev?.exerciseType === type.id
       ? prev.gameBackColor
-      : type.id === 'jeux-memory'
-        ? ''
-        : type.id === 'jeux-intrus' || type.id === 'jeux-tri'
-          ? '#0f6b5c'
-          : undefined
-  const gameTopicTri =
-    type.id === 'jeux-tri'
-      ? prev?.exerciseType === type.id && prev.gameTopic
-        ? prev.gameTopic
-        : 'Tri'
-      : gameTopic
+      : usesSeriesBack
+        ? '#0f6b5c'
+        : undefined
+  const gameSeriesName =
+    prev?.exerciseType === type.id && prev.gameSeriesName
+      ? prev.gameSeriesName
+      : seriesDefaults[type.id]
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
@@ -1090,13 +1097,10 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameEntries,
           gameText,
           gameSource,
-          gameTopic: type.id === 'jeux-tri' ? gameTopicTri : gameTopic,
+          gameTopic,
           gameSelectedIds,
-          gameBackColor:
-            type.id === 'jeux-memory' || type.id === 'jeux-intrus' || type.id === 'jeux-tri'
-              ? (gameBackColor ??
-                (type.id === 'jeux-intrus' || type.id === 'jeux-tri' ? '#0f6b5c' : ''))
-              : undefined,
+          gameBackColor: usesSeriesBack ? (gameBackColor ?? '#0f6b5c') : undefined,
+          gameSeriesName: usesSeriesBack ? gameSeriesName : undefined,
         }
       : {
           gameEntries: undefined,
@@ -1105,6 +1109,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameTopic: undefined,
           gameSelectedIds: undefined,
           gameBackColor: undefined,
+          gameSeriesName: undefined,
         }),
     ...(isFormes
       ? {
@@ -1636,6 +1641,7 @@ function GeneratorPage() {
       gameTopic: fields.gameTopic,
       gameSelectedIds: fields.gameSelectedIds,
       gameBackColor: fields.gameBackColor,
+      gameSeriesName: fields.gameSeriesName,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -1873,6 +1879,7 @@ function GeneratorPage() {
                   gameTopic={activeBlock.gameTopic}
                   gameSelectedIds={activeBlock.gameSelectedIds}
                   gameBackColor={activeBlock.gameBackColor}
+                  gameSeriesName={activeBlock.gameSeriesName}
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}

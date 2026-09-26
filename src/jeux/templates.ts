@@ -78,7 +78,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 16,
     entryHint:
-      '6 paires image / mot au recto · dos blanc ou couleur au verso (bord long).',
+      '6 paires image / mot au recto · verso = logo ClairFLE + nom de série.',
   },
   'jeux-loto': {
     id: 'jeux-loto',
@@ -112,7 +112,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 18,
     entryHint:
-      '12 cartes · 4 mots + 1 intrus · verso = mot intrus avec cadre de série.',
+      '12 cartes · 4 mots + 1 intrus · verso = logo ClairFLE + nom de série.',
   },
   'jeux-dominos': {
     id: 'jeux-dominos',
@@ -145,7 +145,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 16,
     entryHint:
-      '3 catégories × 7 mots · 24 cartes · verso = nom de série avec cadre.',
+      '3 catégories × 7 mots · 24 cartes · verso = logo ClairFLE + nom de série.',
   },
   'jeux-sept-familles': {
     id: 'jeux-sept-familles',

@@ -517,8 +517,10 @@ export type ExerciseBlock = {
   gameTopic?: string
   /** Ids cochés dans la banque (mode thème / lecture). */
   gameSelectedIds?: string[]
-  /** Couleur du dos des cartes Mémory (vide = blanc). */
+  /** Couleur du cadre / dos de série Jeux. */
   gameBackColor?: string
+  /** Nom de série imprimé au verso des cartes Jeux. */
+  gameSeriesName?: string
 }
 
 export type PageConfig = ExerciseBlock & {

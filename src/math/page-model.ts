@@ -40,6 +40,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     gameTopic: page.gameTopic,
     gameSelectedIds: page.gameSelectedIds,
     gameBackColor: page.gameBackColor,
+    gameSeriesName: page.gameSeriesName,
   }
 }
 

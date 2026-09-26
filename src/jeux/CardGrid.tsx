@@ -52,6 +52,29 @@ function CardFace({ card }: { card: GameCard }) {
     )
   }
 
+  if (variant === 'series-back') {
+    const frame = card.frameColor?.trim() || '#0f6b5c'
+    return (
+      <div
+        className="game-card is-series-back"
+        style={{ '--series-frame': frame } as CSSProperties}
+        aria-label={card.text ? `Série ${card.text}` : 'Dos de série'}
+      >
+        <div className="game-series-back">
+          <div className="game-series-logo" aria-hidden>
+            <span className="game-series-logo-mark">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span className="game-series-logo-text">ClairFLE</span>
+          </div>
+          {card.text ? <strong className="game-series-label">{card.text}</strong> : null}
+        </div>
+      </div>
+    )
+  }
+
   if (variant === 'scatter') {
     return (
       <div className="game-card is-scatter" data-badge={card.badge || undefined}>
@@ -136,22 +159,20 @@ function PanelGrid({ panel }: { panel: GamePanel }) {
 function LotoPanelFace({ panel, mode }: { panel: GamePanel; mode: 'page' | 'back' }) {
   if (mode === 'back') {
     return (
-      <div className="loto-panel is-back">
-        <div className="loto-panel-theme">
-          <span className="loto-panel-theme-kicker">Série</span>
-          <strong className="loto-panel-theme-label">{panel.themeLabel ?? 'Loto'}</strong>
+      <div className="loto-panel is-back is-series">
+        <div className="game-series-back">
+          <div className="game-series-logo" aria-hidden>
+            <span className="game-series-logo-mark">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span className="game-series-logo-text">ClairFLE</span>
+          </div>
+          <strong className="game-series-label">{panel.themeLabel ?? 'Loto'}</strong>
           {panel.themeSub ? <small className="loto-panel-theme-sub">{panel.themeSub}</small> : null}
           {panel.title ? <span className="loto-panel-theme-grid">{panel.title}</span> : null}
         </div>
-        {panel.cards.length > 0 ? (
-          <div className="loto-panel-theme-thumbs" aria-hidden>
-            {panel.cards.slice(0, 6).map((card) =>
-              card.imageSrc ? (
-                <img key={card.id} src={card.imageSrc} alt="" />
-              ) : null,
-            )}
-          </div>
-        ) : null}
       </div>
     )
   }
@@ -184,8 +205,16 @@ export function CardGrid({ board }: { board: GameBoard }) {
     )
   }
 
+  const ludic =
+    kind === 'memory' ||
+    kind === 'intrus' ||
+    kind === 'tri' ||
+    kind === 'devinettes' ||
+    kind === 'dominos' ||
+    kind === 'cards'
+
   return (
-    <div className={`game-board is-${kind}`}>
+    <div className={`game-board is-${kind}${ludic ? ' is-ludic' : ''}`}>
       {board.title ? <p className="game-board-title">{board.title}</p> : null}
       <div
         className="game-card-grid"

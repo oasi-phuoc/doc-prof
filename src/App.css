@@ -1403,7 +1403,8 @@
   --jeux-accent:#0f6b5c;
   --jeux-true:#1f7a4c;
   --jeux-false:#a33b2b;
-  --jeux-card-radius:8px;
+  --jeux-card-radius:10px;
+  --series-frame:var(--jeux-accent);
 }
 .worksheet-sheet.is-jeux{padding:10mm 12mm 8mm}
 .jeux-sheet-title{margin:0 0 4mm}
@@ -1448,6 +1449,26 @@
   padding:2.5mm;
   overflow:hidden
 }
+/* Recto ludique : fond pastel léger, filet de découpe, badge vif (lisible N&B). */
+.game-board.is-ludic .game-card:not(.is-series-back):not(.is-back){
+  background:
+    linear-gradient(165deg, color-mix(in srgb, var(--jeux-accent) 7%, #fff) 0%, #fff 55%);
+  border:1.6px dashed var(--jeux-cut);
+  box-shadow:inset 0 0 0 0.6mm #fff
+}
+.game-board.is-ludic .game-card.is-category,
+.game-board.is-ludic .game-card.is-family-head{
+  background:color-mix(in srgb, var(--jeux-accent) 16%, #fff);
+  border-style:solid
+}
+.game-board.is-ludic .game-card-badge{
+  background:color-mix(in srgb, var(--jeux-accent) 18%, #fff);
+  border-color:var(--jeux-accent);color:var(--jeux-ink)
+}
+.game-board.is-ludic .game-card-image{
+  background:color-mix(in srgb, var(--jeux-soft) 70%, #fff);
+  border-radius:7px
+}
 .game-card-badge{
   position:absolute;top:1.5mm;right:1.5mm;
   min-width:4.5mm;height:4.5mm;padding:0 1mm;
@@ -1455,6 +1476,51 @@
   display:flex;align-items:center;justify-content:center;
   font-size:8px;font-weight:800;line-height:1;color:var(--jeux-ink);background:var(--jeux-soft)
 }
+/* Verso série unifié (skill jeux-verso-serie) */
+.game-card.is-series-back{
+  border:2.4mm solid var(--series-frame, var(--jeux-accent));
+  border-radius:var(--jeux-card-radius);
+  border-style:solid;
+  background:#fff;
+  justify-content:center;padding:2mm;min-height:0;height:100%
+}
+.game-series-back{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2mm;text-align:center;width:100%;min-height:0;flex:1 1 auto
+}
+.game-series-logo{
+  width:14mm;height:14mm;border-radius:50%;
+  border:1.4px solid var(--series-frame, var(--jeux-accent));
+  background:color-mix(in srgb, var(--series-frame, var(--jeux-accent)) 10%, #fff);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6mm;
+  flex:0 0 auto
+}
+.game-series-logo-mark{
+  display:flex;gap:1.2px;align-items:end;height:5mm
+}
+.game-series-logo-mark i{
+  display:block;width:1.6mm;border-radius:2px;
+  background:var(--series-frame, var(--jeux-accent));
+  transform:rotate(35deg)
+}
+.game-series-logo-mark i:nth-child(1){height:3.2mm;opacity:.75}
+.game-series-logo-mark i:nth-child(2){height:4.6mm}
+.game-series-logo-mark i:nth-child(3){height:2.6mm;opacity:.55}
+.game-series-logo-text{
+  font-size:5.5px;font-weight:800;letter-spacing:-.02em;
+  color:var(--jeux-ink);line-height:1
+}
+.game-series-label{
+  font-family:Fraunces,serif;font-size:11px;font-weight:600;line-height:1.15;
+  color:var(--jeux-ink);word-break:break-word;max-width:95%
+}
+.loto-panel.is-back.is-series{
+  border:2.4mm solid var(--jeux-accent);
+  background:#fff
+}
+.loto-panel.is-back.is-series .game-series-logo{width:18mm;height:18mm}
+.loto-panel.is-back.is-series .game-series-logo-text{font-size:7px}
+.loto-panel.is-back.is-series .game-series-label{font-size:18px}
 .game-card-image{
   flex:1 1 auto;min-height:14mm;
   display:flex;align-items:center;justify-content:center;
@@ -1509,11 +1575,20 @@
 .game-board.is-tri .game-card.is-category .game-card-word{
   font-size:11px;font-weight:800;line-height:1.15
 }
-.game-board.is-tri .game-card.is-intrus-answer .game-card-word{
-  font-size:12px;font-weight:800;line-height:1.15;padding:1mm
+.game-board.is-tri .game-card.is-intrus-answer .game-card-word,
+.game-board.is-tri .game-card.is-series-back .game-series-label{
+  font-size:9px;font-weight:800;line-height:1.15;padding:0.5mm
 }
+.game-board.is-tri .game-series-logo{width:9mm;height:9mm}
+.game-board.is-tri .game-series-logo-text{font-size:4.5px}
+.game-board.is-memory .game-card.is-series-back,
+.game-board.is-intrus .game-card.is-series-back,
+.game-board.is-tri .game-card.is-series-back{
+  min-height:0;height:100%
+}
+.game-series-identity{display:flex;flex-direction:column;gap:10px;margin:0 0 10px}
 .game-series-name{
-  display:flex;flex-direction:column;gap:4px;margin:0 0 8px
+  display:flex;flex-direction:column;gap:4px;margin:0
 }
 .game-series-name>span{font-size:11px;font-weight:600;color:var(--muted)}
 .game-card.is-scatter{overflow:hidden}

@@ -25,6 +25,30 @@ export type GameContentChange = {
   gameTopic?: string
   gameSelectedIds?: string[]
   gameBackColor?: string
+  gameSeriesName?: string
+}
+
+const SERIES_DEFAULTS: Record<string, string> = {
+  'jeux-vocabulaire': 'Vocabulaire',
+  'jeux-devinettes': 'Devinettes',
+  'jeux-memory': 'Mémory',
+  'jeux-loto': 'Loto',
+  'jeux-intrus': 'Intrus',
+  'jeux-tri': 'Tri',
+  'jeux-dominos': 'Dominos',
+}
+
+function defaultSeriesName(typeId: string): string {
+  return SERIES_DEFAULTS[typeId] ?? 'Jeux'
+}
+
+function usesSeriesBack(typeId: string): boolean {
+  return (
+    typeId === 'jeux-memory' ||
+    typeId === 'jeux-intrus' ||
+    typeId === 'jeux-tri' ||
+    typeId === 'jeux-loto'
+  )
 }
 
 /** Teintes imprimables (dos Mémory / cadre Intrus). */
@@ -86,6 +110,45 @@ function GameColorPicker({
   )
 }
 
+/** Nom de série + cadre (verso unifié — skill jeux-verso-serie). */
+function SeriesIdentityFields({
+  typeId,
+  seriesName,
+  frameColor,
+  onSeriesName,
+  onFrameColor,
+}: {
+  typeId: string
+  seriesName?: string
+  frameColor?: string
+  onSeriesName: (name: string) => void
+  onFrameColor: (color: string) => void
+}) {
+  return (
+    <div className="game-series-identity">
+      <label className="game-series-name">
+        <span>Nom de la série</span>
+        <input
+          className="pill-input"
+          type="text"
+          maxLength={32}
+          value={seriesName ?? defaultSeriesName(typeId)}
+          aria-label="Nom de la série (verso)"
+          placeholder={defaultSeriesName(typeId)}
+          onChange={(event) => onSeriesName(event.target.value)}
+        />
+      </label>
+      <GameColorPicker
+        title="Cadre de série (verso)"
+        hint="Logo ClairFLE + nom de série dans un cadre coloré (recto-verso bord long)."
+        value={frameColor || '#0f6b5c'}
+        allowWhite={false}
+        onChange={onFrameColor}
+      />
+    </div>
+  )
+}
+
 export function GameContentPanel({
   typeId,
   template,
@@ -95,6 +158,7 @@ export function GameContentPanel({
   gameTopic,
   gameSelectedIds,
   gameBackColor,
+  gameSeriesName,
   onChange,
 }: {
   typeId: string
@@ -105,6 +169,7 @@ export function GameContentPanel({
   gameTopic?: string
   gameSelectedIds?: string[]
   gameBackColor?: string
+  gameSeriesName?: string
   onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
@@ -138,6 +203,7 @@ export function GameContentPanel({
       gameTopic: topicId,
       gameSelectedIds: selectedIds,
       gameBackColor,
+      gameSeriesName,
       ...patch,
     })
   }
@@ -159,6 +225,7 @@ export function GameContentPanel({
       gameTopic: patch.gameTopic ?? topicId,
       gameSelectedIds: picked.map((p) => p.id),
       gameBackColor,
+      gameSeriesName,
       ...patch,
     })
   }
@@ -172,6 +239,20 @@ export function GameContentPanel({
       gameTopic: topicId,
       gameSelectedIds: selectedIds,
       gameBackColor: color,
+      gameSeriesName,
+    })
+  }
+
+  function setSeriesName(name: string) {
+    const resolvedNow = resolveEntries(typeId, entries)
+    onChange({
+      gameEntries: resolvedNow,
+      gameText: entriesToText(typeId, resolvedNow),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: selectedIds,
+      gameBackColor,
+      gameSeriesName: name,
     })
   }
 
@@ -313,18 +394,19 @@ export function GameContentPanel({
             {typeId === 'jeux-vocabulaire'
               ? 'Impression recto-verso : images puis mots alignés (bord long).'
               : typeId === 'jeux-memory'
-                ? 'Recto : paires image / mot mélangées · verso : dos blanc ou couleur.'
+                ? 'Recto : paires image / mot · verso : logo ClairFLE + nom de série.'
                 : typeId === 'jeux-loto'
-                  ? '15 grilles (3/page) · verso = série / thème · lot animateur 27 mots.'
+                  ? '15 grilles (3/page) · verso = série (logo ClairFLE) · lot animateur 27 mots.'
                   : template.entryHint}
           </small>
         </div>
-        {typeId === 'jeux-memory' ? (
-          <GameColorPicker
-            title="Dos des cartes"
-            hint="Blanc par défaut · couleur uniforme au verso (recto-verso bord long)."
-            value={gameBackColor}
-            onChange={setBackColor}
+        {usesSeriesBack(typeId) ? (
+          <SeriesIdentityFields
+            typeId={typeId}
+            seriesName={gameSeriesName}
+            frameColor={gameBackColor}
+            onSeriesName={setSeriesName}
+            onFrameColor={setBackColor}
           />
         ) : null}
       </div>
@@ -386,18 +468,6 @@ export function GameContentPanel({
     updateSlot(index, { words: words.slice(0, 7), category: cat, text: cat })
   }
 
-  function setSeriesName(name: string) {
-    const resolvedNow = resolveEntries(typeId, entries)
-    onChange({
-      gameEntries: resolvedNow,
-      gameText: entriesToText(typeId, resolvedNow),
-      gameSource: source,
-      gameTopic: name,
-      gameSelectedIds: selectedIds,
-      gameBackColor,
-    })
-  }
-
   async function onPickImage(index: number, file: File | undefined) {
     if (!file) return
     try {
@@ -414,18 +484,13 @@ export function GameContentPanel({
       <div className="game-content-field">
         <span className="game-content-label">Contenu</span>
         <p className="muted game-content-hint">{template.entryHint}</p>
-        <label className="game-series-name">
-          <span>Nom de la série</span>
-          <input
-            className="pill-input"
-            type="text"
-            maxLength={32}
-            value={gameTopic ?? 'Tri'}
-            aria-label="Nom de la série (verso)"
-            placeholder="Tri"
-            onChange={(event) => setSeriesName(event.target.value)}
-          />
-        </label>
+        <SeriesIdentityFields
+          typeId={typeId}
+          seriesName={gameSeriesName}
+          frameColor={gameBackColor}
+          onSeriesName={setSeriesName}
+          onFrameColor={setBackColor}
+        />
         <ul className="game-intrus-list" aria-label="Catégories du tri">
           {slots.map((entry, index) => {
             const words = [...(entry.words ?? [])]
@@ -469,15 +534,8 @@ export function GameContentPanel({
             )
           })}
         </ul>
-        <GameColorPicker
-          title="Cadre de série (verso)"
-          hint="Cadre épais au verso pour identifier la fiche / série."
-          value={gameBackColor || '#0f6b5c'}
-          allowWhite={false}
-          onChange={setBackColor}
-        />
         <small className="muted">
-          Recto : 24 cartes (étiquettes + mots) · verso : nom de série (bord long).
+          Recto : 24 cartes (étiquettes + mots) · verso : logo ClairFLE + série (bord long).
         </small>
       </div>
     )
@@ -530,15 +588,15 @@ export function GameContentPanel({
             )
           })}
         </ul>
-        <GameColorPicker
-          title="Cadre de série (verso)"
-          hint="Cadre épais au verso pour identifier la série du jeu."
-          value={gameBackColor || '#0f6b5c'}
-          allowWhite={false}
-          onChange={setBackColor}
+        <SeriesIdentityFields
+          typeId={typeId}
+          seriesName={gameSeriesName}
+          frameColor={gameBackColor}
+          onSeriesName={setSeriesName}
+          onFrameColor={setBackColor}
         />
         <small className="muted">
-          Recto : 5 mots inclinés · verso : mot intrus (bord long).
+          Recto : 5 mots inclinés · verso : logo ClairFLE + série (bord long).
         </small>
       </div>
     )
@@ -750,16 +808,17 @@ export function GameContentPanel({
           {typeId === 'jeux-vocabulaire'
             ? 'Recto-verso : page images puis page mots (bord long).'
             : typeId === 'jeux-memory'
-              ? 'Recto : paires image / mot · verso : dos blanc ou couleur (bord long).'
+              ? 'Recto : paires image / mot · verso : logo ClairFLE + série (bord long).'
               : 'JPG, PNG, WebP ou SVG · max. 2,5 Mo'}
         </small>
       )}
-      {typeId === 'jeux-memory' ? (
-        <GameColorPicker
-          title="Dos des cartes"
-          hint="Blanc par défaut · couleur uniforme au verso (recto-verso bord long)."
-          value={gameBackColor}
-          onChange={setBackColor}
+      {usesSeriesBack(typeId) ? (
+        <SeriesIdentityFields
+          typeId={typeId}
+          seriesName={gameSeriesName}
+          frameColor={gameBackColor}
+          onSeriesName={setSeriesName}
+          onFrameColor={setBackColor}
         />
       ) : null}
     </div>

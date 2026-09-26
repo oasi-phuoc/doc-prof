@@ -45,13 +45,14 @@ export type GameCard = {
     | 'back'
     | 'scatter'
     | 'intrus-answer'
+    | 'series-back'
   /** Badge / coin (V, F, n°, paire…). */
   badge?: string
   /** Moitié droite d’un domino. */
   textRight?: string
   /** Couleur de fond (dos de carte mémory). */
   backColor?: string
-  /** Cadre épais de série (verso Intrus). */
+  /** Cadre épais de série (verso Intrus / série). */
   frameColor?: string
 }
 

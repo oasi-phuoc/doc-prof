@@ -1071,6 +1071,7 @@ function buildSingleBlock(
     gameEntries: config.gameEntries,
     gameBackColor: config.gameBackColor,
     gameTopic: config.gameTopic,
+    gameSeriesName: config.gameSeriesName,
   })
   if (jeux) {
     return {
@@ -1160,17 +1161,17 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       const versoInstruction =
         page.exerciseType === 'jeux-memory'
           ? 'Verso — dos des cartes. Imprimez en recto-verso (bord long).'
-          : page.exerciseType === 'jeux-intrus'
-            ? 'Verso — mot intrus. Imprimez en recto-verso (bord long).'
-            : page.exerciseType === 'jeux-tri'
-              ? 'Verso — nom de série. Imprimez en recto-verso (bord long).'
-              : 'Verso — retournez la feuille pour faire correspondre mot et image.'
+          : page.exerciseType === 'jeux-intrus' ||
+              page.exerciseType === 'jeux-tri' ||
+              page.exerciseType === 'jeux-memory'
+            ? 'Verso — série (logo ClairFLE). Imprimez en recto-verso (bord long).'
+            : 'Verso — retournez la feuille pour faire correspondre mot et image.'
       const versoBlockInstruction =
-        page.exerciseType === 'jeux-memory'
-          ? 'Imprimez en recto-verso (bord long). Le dos est blanc ou coloré.'
-          : page.exerciseType === 'jeux-intrus' || page.exerciseType === 'jeux-tri'
-            ? 'Imprimez en recto-verso (bord long). Le cadre coloré indique la série.'
-            : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
+        page.exerciseType === 'jeux-memory' ||
+        page.exerciseType === 'jeux-intrus' ||
+        page.exerciseType === 'jeux-tri'
+          ? 'Imprimez en recto-verso (bord long). Logo ClairFLE + nom de série sur chaque dos.'
+          : 'Imprimez en recto-verso (bord long). Les numéros indiquent les paires.'
       worksheet.items.forEach((item, part) => {
         const side = part === 0 ? 'Recto' : 'Verso'
         out.push({
