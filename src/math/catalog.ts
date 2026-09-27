@@ -63,10 +63,9 @@ export const topics: Topic[] = [
   { id: 'phrase-adverbe', label: 'Adverbe', domain: 'phrase' },
   { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'phrase' },
   { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'phrase' },
-  // —— Jeux (fiches-cartes / plateaux / étiquettes) ——
+  // —— Jeux (fiches-cartes / plateaux) ——
   { id: 'jeux-cartes', label: 'Grille de cartes', domain: 'jeux' },
   { id: 'jeux-structures', label: 'Jeu structuré', domain: 'jeux' },
-  { id: 'jeux-etiquettes', label: 'Étiquettes', domain: 'jeux' },
   // —— Calligraphie (thèmes FR + Libre) ——
   ...calliTopicList,
 ]
@@ -385,24 +384,6 @@ export const exerciseTypes: ExerciseType[] = [
     'Dé / roue',
     'Patron de dé ou roue de consignes à personnaliser légèrement.',
     'Lancez le dé ou tournez la roue. Suivez la consigne.',
-    'texte',
-    { preferredColumns: 1 },
-  ),
-  t(
-    'jeux-bandes-mots',
-    'jeux-etiquettes',
-    'Bandes-mots',
-    'Découpe automatique d’une phrase en étiquettes-mots.',
-    'Remettez les mots dans l’ordre pour former la phrase.',
-    'texte',
-    { preferredColumns: 1 },
-  ),
-  t(
-    'jeux-phrases-texte',
-    'jeux-etiquettes',
-    'Phrases à reconstituer',
-    'Découpe d’un texte en bandes-phrases à remettre en ordre.',
-    'Remettez les phrases dans l’ordre pour reconstituer le texte.',
     'texte',
     { preferredColumns: 1 },
   ),

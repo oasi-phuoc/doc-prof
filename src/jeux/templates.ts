@@ -8,7 +8,7 @@ export type GameField = {
   maxLength?: number
 }
 
-export type GameFamily = 'cartes' | 'structures' | 'etiquettes'
+export type GameFamily = 'cartes' | 'structures'
 
 export type GameTemplate = {
   id: string
@@ -169,30 +169,6 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     cardCount: 6,
     maxTextLen: 24,
     entryHint: 'Six consignes (une par face du dé / secteur).',
-  },
-  'jeux-bandes-mots': {
-    id: 'jeux-bandes-mots',
-    family: 'etiquettes',
-    label: 'Bandes-mots',
-    orientation: 'portrait',
-    grid: { cols: 1, rows: 1 },
-    fields: [{ type: 'texte', required: true }],
-    entryCount: 1,
-    cardCount: 12,
-    maxTextLen: 120,
-    entryHint: 'Une phrase : elle sera découpée en étiquettes-mots.',
-  },
-  'jeux-phrases-texte': {
-    id: 'jeux-phrases-texte',
-    family: 'etiquettes',
-    label: 'Phrases à reconstituer',
-    orientation: 'portrait',
-    grid: { cols: 1, rows: 1 },
-    fields: [{ type: 'texte', required: true }],
-    entryCount: 5,
-    cardCount: 5,
-    maxTextLen: 100,
-    entryHint: 'Une phrase par ligne (à remettre dans l’ordre).',
   },
 }
 

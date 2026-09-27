@@ -168,12 +168,6 @@ export function textToEntries(
       })
       break
     }
-    case 'jeux-bandes-mots':
-      parsed = [{ text: clip(lines.join(' '), 120) }]
-      break
-    case 'jeux-phrases-texte':
-      parsed = lines.slice(0, 8).map((line) => ({ text: clip(line, maxLen) }))
-      break
     case 'jeux-memory':
       parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
       break

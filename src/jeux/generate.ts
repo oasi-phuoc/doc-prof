@@ -705,51 +705,6 @@ function deRoue(entries: GameEntry[]): MathItem[] {
   ]
 }
 
-function bandesMots(entries: GameEntry[], rng: Rng): MathItem[] {
-  const phrase = entries[0]?.text || 'Le chat dort.'
-  const words = phrase
-    .replace(/([.!?…,;:])/g, ' $1 ')
-    .split(/\s+/)
-    .map((w) => w.trim())
-    .filter(Boolean)
-  const shuffled = shuffle(rng, words.map((text, i) => ({ text, i })))
-  const cards: GameCard[] = shuffled.map((w, order) => ({
-    id: `bw-${order}`,
-    text: w.text,
-    variant: 'band',
-  }))
-  return [
-    boardItem({
-      cols: Math.min(4, Math.max(2, Math.ceil(cards.length / 3))),
-      rows: Math.ceil(cards.length / Math.min(4, Math.max(2, Math.ceil(cards.length / 3)))),
-      cards,
-      kind: 'bands',
-    }),
-  ]
-}
-
-function phrasesTexte(entries: GameEntry[], rng: Rng): MathItem[] {
-  const list = padEntries(entries, Math.max(3, Math.min(6, entries.length || 5)), 'Phrase')
-  const shuffled = shuffle(
-    rng,
-    list.map((e, i) => ({ ...e, i })),
-  )
-  const cards: GameCard[] = shuffled.map((e, order) => ({
-    id: `ph-${order}`,
-    text: e.text,
-    variant: 'band',
-    badge: String(order + 1),
-  }))
-  return [
-    boardItem({
-      cols: 1,
-      rows: cards.length,
-      cards,
-      kind: 'bands',
-    }),
-  ]
-}
-
 export function tryGenerateJeuxBatch(
   typeId: string,
   rng: Rng,
@@ -786,12 +741,6 @@ export function tryGenerateJeuxBatch(
       break
     case 'jeux-de-roue':
       items = deRoue(entries)
-      break
-    case 'jeux-bandes-mots':
-      items = bandesMots(entries, rng)
-      break
-    case 'jeux-phrases-texte':
-      items = phrasesTexte(entries, rng)
       break
     default:
       items = vocab(entries, rng)

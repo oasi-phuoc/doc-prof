@@ -160,18 +160,6 @@ const DE_ROUE: GameEntry[] = [
   'Nommez un lieu',
 ].map((text) => ({ text }))
 
-const BANDES: GameEntry[] = [
-  { text: 'Le chat noir dort sur la chaise verte.' },
-]
-
-const PHRASES: GameEntry[] = [
-  { text: 'Marie ouvre la porte.' },
-  { text: 'Le soleil brille ce matin.' },
-  { text: 'Nous mangeons une pomme.' },
-  { text: 'Les enfants jouent dans la cour.' },
-  { text: 'Le bus arrive à l’école.' },
-]
-
 export const DEFAULT_ENTRIES: Record<string, GameEntry[]> = {
   'jeux-vocabulaire': VOCAB,
   'jeux-devinettes': DEVINETTES,
@@ -182,8 +170,6 @@ export const DEFAULT_ENTRIES: Record<string, GameEntry[]> = {
   'jeux-sept-familles': SEPT_FAMILLES,
   'jeux-plateau': PLATEAU,
   'jeux-de-roue': DE_ROUE,
-  'jeux-bandes-mots': BANDES,
-  'jeux-phrases-texte': PHRASES,
 }
 
 export function defaultEntriesFor(typeId: string): GameEntry[] {
