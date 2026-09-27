@@ -1544,12 +1544,23 @@
 }
 .game-card.has-custom-border .game-card-badge{display:none}
 .loto-panel.has-custom-border{
-  padding:var(--game-border-inset)!important
+  position:relative;
+  padding:var(--game-border-inset)!important;
+  overflow:hidden
 }
 .loto-panel.has-custom-border .game-card-grid{
   /* Les cases internes gardent une petite marge sous la bordure du plateau */
   margin:0
 }
+/* Loto : la bordure perso encadre uniquement le panneau, jamais les cases */
+.loto-panel .game-card.has-custom-border{
+  --game-border-inset:2mm;
+  padding:var(--game-content-inset,2mm)!important;
+  border:1.5px solid var(--jeux-line)!important;
+  box-shadow:none!important
+}
+.loto-panel .game-card-border{display:none!important}
+.game-board.is-loto-call .game-card-border{display:none!important}
 /* Verso mot : badge petit en haut (cercle), mot centré — ne chevauche pas la bordure */
 .game-card.is-verso-content{
   justify-content:center;align-items:center;gap:0;

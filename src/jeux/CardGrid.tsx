@@ -264,12 +264,8 @@ function LotoPanelFace({
   return (
     <div className={`loto-panel${border ? ' has-custom-border' : ''}`}>
       {panel.title ? <p className="loto-panel-title">{panel.title}</p> : null}
-      <PanelGrid
-        panel={panel}
-        borderRectoId={borderRectoId}
-        borderVersoId={borderVersoId}
-        side="recto"
-      />
+      {/* Bordure uniquement sur le cadre de la grille — pas sur chaque case. */}
+      <PanelGrid panel={panel} side="recto" />
       <BorderOverlay src={border} />
     </div>
   )
@@ -312,6 +308,10 @@ export function CardGrid({ board }: { board: GameBoard }) {
     kind === 'dominos' ||
     kind === 'cards'
 
+  // Lot animateur : pas de bordure perso sur chaque ligne (réservée aux cadres de grille).
+  const cellBorderRecto = kind === 'loto-call' ? undefined : borderRectoId
+  const cellBorderVerso = kind === 'loto-call' ? undefined : borderVersoId
+
   return (
     <div className={`game-board is-${kind}${ludic ? ' is-ludic' : ''}`} style={boardStyle}>
       <div
@@ -328,8 +328,8 @@ export function CardGrid({ board }: { board: GameBoard }) {
           <CardFace
             key={card.id}
             card={card}
-            borderRectoId={borderRectoId}
-            borderVersoId={borderVersoId}
+            borderRectoId={cellBorderRecto}
+            borderVersoId={cellBorderVerso}
             side={side}
           />
         ))}
