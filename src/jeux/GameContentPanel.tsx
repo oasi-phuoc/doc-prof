@@ -519,39 +519,30 @@ export function GameContentPanel({
           </div>
         </div>
 
-        <label className="select-shell">
-          <span>Thème</span>
-          <select
-            className="pill-input"
-            value={topicId}
-            onChange={(event) => {
-              const nextTopic = event.target.value
-              if (source === 'theme') {
-                const sg = vocabSubgroupsFor(nextTopic)[0]?.id
-                setSubgroup(sg)
-                const items = themeBankItems(nextTopic, sg)
-                applySelection(
-                  items.slice(0, maxCards).map((w) => w.id),
-                  items,
-                  { gameTopic: nextTopic },
-                )
-              } else {
+        {source === 'lecture' ? (
+          <label className="select-shell">
+            <span>Banque</span>
+            <select
+              className="pill-input"
+              value={topicId}
+              onChange={(event) => {
+                const nextTopic = event.target.value
                 const items = lectureBankItems(nextTopic)
                 applySelection(
                   items.slice(0, maxCards).map((w) => w.id),
                   items,
                   { gameTopic: nextTopic },
                 )
-              }
-            }}
-          >
-            {topicOptions.map((t) => (
-              <option key={t.id} value={t.id}>
-                {t.label}
-              </option>
-            ))}
-          </select>
-        </label>
+              }}
+            >
+              {topicOptions.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
 
         {source === 'theme' && themeSubgroups.length > 1 ? (
           <label className="select-shell">

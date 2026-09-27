@@ -6,6 +6,7 @@ import { DEFAULT_CALLI_FONT, DEFAULT_CALLI_SIZE } from '@/calligraphie/fonts'
 import { CALLI_LIBRE_TOPIC, calligraphieTopics as calliTopicList } from '@/calligraphie/topics'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
+import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
 
 export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
   { id: 'voc', label: 'Voc' },
@@ -63,9 +64,8 @@ export const topics: Topic[] = [
   { id: 'phrase-adverbe', label: 'Adverbe', domain: 'phrase' },
   { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'phrase' },
   { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'phrase' },
-  // —— Jeux (fiches-cartes / plateaux) ——
-  { id: 'jeux-cartes', label: 'Grille de cartes', domain: 'jeux' },
-  { id: 'jeux-structures', label: 'Jeu structuré', domain: 'jeux' },
+  // —— Grilles de cartes (thèmes FR + Libre) ——
+  ...jeuxTopicsFromFr,
   // —— Calligraphie (thèmes FR + Libre) ——
   ...calliTopicList,
 ]
@@ -305,10 +305,10 @@ export const exerciseTypes: ExerciseType[] = [
   t('phrase-tableau-mots', 'phrase-tableaux', 'Tableau des mots', 'Tableau Gattegno avec des exemples de mots.', 'Repérez les mots selon leur catégorie.', 'texte', { preferredColumns: 1 }),
   t('phrase-tableau-vide', 'phrase-tableaux', 'Tableau vide', 'Structure vide du tableau Gattegno.', 'Observez la structure du tableau.', 'texte', { preferredColumns: 1 }),
 
-  // —— Jeux (phase 0 : stubs catalogue ; rendu moteur en phases suivantes) ——
+  // —— Grilles de cartes (types partagés ; le thème porte le lexique) ——
   t(
     'jeux-vocabulaire',
-    'jeux-cartes',
+    JEUX_LIBRE_TOPIC,
     'Vocabulaire',
     '9 cartes image / mot (grille 3×3), recto-verso.',
     '',
@@ -317,7 +317,7 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   t(
     'jeux-devinettes',
-    'jeux-cartes',
+    JEUX_LIBRE_TOPIC,
     'Devinettes',
     '9 cartes : mot + image au recto, 3 phrases-indices au verso.',
     '',
@@ -326,7 +326,7 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   t(
     'jeux-memory',
-    'jeux-cartes',
+    JEUX_LIBRE_TOPIC,
     'Mémory',
     '4 paires image / mot (grille 3×3) ; verso série.',
     '',
@@ -335,7 +335,7 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   t(
     'jeux-loto',
-    'jeux-cartes',
+    JEUX_LIBRE_TOPIC,
     'Loto',
     '15 grilles 3×3, verso thème, lot animateur 27 mots (image à gauche, mot à droite).',
     '',
@@ -344,7 +344,7 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   t(
     'jeux-intrus',
-    'jeux-cartes',
+    JEUX_LIBRE_TOPIC,
     'Intrus',
     'Mots du thème · 9 cartes (4 + 1 intrus) ; verso série.',
     '',
@@ -353,37 +353,10 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   t(
     'jeux-dominos',
-    'jeux-cartes',
+    JEUX_LIBRE_TOPIC,
     'Dominos',
     '16 dominos image / mot (grille 2×8) ; verso série.',
     '',
-    'texte',
-    { preferredColumns: 1 },
-  ),
-  t(
-    'jeux-sept-familles',
-    'jeux-structures',
-    '7 familles',
-    'Jeu de sept familles avec en-tête de thème et sous-cartes.',
-    'Demandez une carte pour compléter votre famille.',
-    'texte',
-    { preferredColumns: 1 },
-  ),
-  t(
-    'jeux-plateau',
-    'jeux-structures',
-    'Plateau de jeu',
-    'Plateau numéroté en paysage relié à un paquet de cartes-questions.',
-    'Avancez sur le plateau et répondez aux questions.',
-    'texte',
-    { preferredColumns: 1 },
-  ),
-  t(
-    'jeux-de-roue',
-    'jeux-structures',
-    'Dé / roue',
-    'Patron de dé ou roue de consignes à personnaliser légèrement.',
-    'Lancez le dé ou tournez la roue. Suivez la consigne.',
     'texte',
     { preferredColumns: 1 },
   ),
@@ -735,6 +708,15 @@ for (const theme of PHRASE_THEMES) {
 
 export const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [type.id, type])) as Record<string, ExerciseType>
 
+const JEUX_CARD_TYPE_IDS = [
+  'jeux-vocabulaire',
+  'jeux-devinettes',
+  'jeux-memory',
+  'jeux-loto',
+  'jeux-intrus',
+  'jeux-dominos',
+] as const
+
 export function typesForTopic(topic: string, track?: FrenchTrack): ExerciseType[] {
   if (topic.startsWith('calli-')) {
     const mots = exerciseTypeById['calli-mots']
@@ -745,6 +727,11 @@ export function typesForTopic(topic: string, track?: FrenchTrack): ExerciseType[
         { ...phrases, topic },
       ]
     }
+  }
+  if (isJeuxTopicId(topic)) {
+    return JEUX_CARD_TYPE_IDS.map((id) => exerciseTypeById[id])
+      .filter((type): type is ExerciseType => Boolean(type))
+      .map((type) => ({ ...type, topic }))
   }
   return exerciseTypes.filter((type) => type.topic === topic && (track == null || type.track === track))
 }
@@ -781,7 +768,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
           : domain === 'phrase'
             ? 'phrase-simple'
             : domain === 'jeux'
-              ? 'jeux-cartes'
+              ? JEUX_LIBRE_TOPIC
               : domain === 'calligraphie'
                 ? CALLI_LIBRE_TOPIC
                 : 'voyelle-a'

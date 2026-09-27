@@ -63,6 +63,7 @@ import {
   reshuffleCalliContent,
 } from '@/calligraphie/generate'
 import { frTopicFromCalliTopic, isCalliLibreTopic } from '@/calligraphie/topics'
+import { frTopicFromJeuxTopic, isJeuxLibreTopic } from '@/jeux/topics'
 import {
   defaultVocabSelected,
   defaultVocabSubgroup,
@@ -1034,7 +1035,15 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
     prev?.exerciseType === type.id && prev.gameEntries?.length
       ? prev.gameEntries
       : undefined
-  const themeGame = isJeux && isGameBankType(type.id) ? defaultThemeGameContent(type.id) : null
+  const jeuxFrTopic = isJeux ? frTopicFromJeuxTopic(type.topic) : undefined
+  const themeGame =
+    isJeux && isGameBankType(type.id) && jeuxFrTopic
+      ? defaultThemeGameContent(type.id, jeuxFrTopic)
+      : isJeux && isGameBankType(type.id) && isJeuxLibreTopic(type.topic)
+        ? null
+        : isJeux && isGameBankType(type.id)
+          ? defaultThemeGameContent(type.id)
+          : null
   const gameEntries =
     preservedGame ??
     (themeGame?.gameEntries ?? (isJeux ? defaultEntriesFor(type.id) : undefined))
@@ -1047,11 +1056,13 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const gameSource =
     prev?.exerciseType === type.id && prev.gameSource
       ? prev.gameSource
-      : themeGame?.gameSource
+      : isJeux && isJeuxLibreTopic(type.topic)
+        ? 'libre'
+        : themeGame?.gameSource
   const gameTopic =
     prev?.exerciseType === type.id && prev.gameTopic
       ? prev.gameTopic
-      : themeGame?.gameTopic
+      : jeuxFrTopic ?? themeGame?.gameTopic
   const gameSelectedIds =
     prev?.exerciseType === type.id && prev.gameSelectedIds?.length
       ? prev.gameSelectedIds
@@ -1836,6 +1847,15 @@ function GeneratorPage() {
       })
       return
     }
+    if (activePage.domain === 'jeux') {
+      const kind = isJeuxType(activeBlock.exerciseType) ? activeBlock.exerciseType : 'jeux-vocabulaire'
+      const type = { ...exerciseTypeById[kind]!, topic }
+      updatePage({
+        topic,
+        ...applyType(type, { ...activeBlock, topic, gameTopic: undefined, gameEntries: undefined, gameText: undefined, gameSelectedIds: undefined }),
+      })
+      return
+    }
     const type =
       typesForTopic(topic, activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined)[0] ??
       firstTypeFor(activePage.domain, topic, activeBlock.track)
@@ -2085,7 +2105,7 @@ function GeneratorPage() {
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
                 <option value="phrase">Phrase</option>
-                <option value="jeux">Jeux</option>
+                <option value="jeux">Grilles de cartes</option>
                 <option value="calligraphie">Calligraphie</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
               </SelectBox>

@@ -3,7 +3,6 @@ import type { Rng } from '@/math/rng'
 import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
 import { outsiderWordsFor, withAutoClues } from './clues'
-import { DEFAULT_SEPT_FAMILLES } from './defaults'
 import { resolveGameImageSrc } from './image-resolve'
 import { resolveEntries } from './parse'
 import { isJeuxType } from './templates'
@@ -611,100 +610,6 @@ function dominos(
   ]
 }
 
-function septFamilles(entries: GameEntry[]): MathItem[] {
-  const byCat = new Map<string, string[]>()
-  for (const e of entries) {
-    if (!e.category) continue
-    const list = byCat.get(e.category) ?? []
-    list.push(e.text)
-    byCat.set(e.category, list)
-  }
-  let families =
-    byCat.size > 0
-      ? [...byCat.entries()].map(([family, members]) => ({ family, members }))
-      : DEFAULT_SEPT_FAMILLES
-  families = families.slice(0, 7)
-  while (families.length < 7) {
-    families.push({
-      family: `Famille ${families.length + 1}`,
-      members: ['a', 'b', 'c', 'd'],
-    })
-  }
-  const compact: GameCard[] = []
-  for (const f of families) {
-    compact.push({
-      id: `head-${f.family}`,
-      text: f.family,
-      variant: 'family-head',
-      badge: '★',
-    })
-    const members = [...f.members]
-    while (members.length < 3) members.push('…')
-    for (let i = 0; i < 3; i++) {
-      compact.push({
-        id: `m-${f.family}-${i}`,
-        text: members[i],
-        lines: [f.family],
-        variant: 'word',
-      })
-    }
-  }
-  return [
-    boardItem({
-      cols: 4,
-      rows: 7,
-      cards: compact.slice(0, 28),
-      kind: 'cards',
-    }),
-  ]
-}
-
-function plateau(entries: GameEntry[]): MathItem[] {
-  const prompts = padEntries(entries, 12)
-  const cards: GameCard[] = []
-  for (let i = 0; i < 20; i++) {
-    if (i === 0) {
-      cards.push({ id: 'p-start', text: 'Départ', variant: 'category', badge: '1' })
-    } else if (i === 19) {
-      cards.push({ id: 'p-end', text: 'Arrivée', variant: 'category', badge: '20' })
-    } else {
-      const prompt = prompts[(i - 1) % prompts.length]!
-      cards.push({
-        id: `p-${i}`,
-        text: prompt.text,
-        variant: 'word',
-        badge: String(i + 1),
-      })
-    }
-  }
-  return [
-    boardItem({
-      cols: 5,
-      rows: 4,
-      cards,
-      kind: 'plateau',
-    }),
-  ]
-}
-
-function deRoue(entries: GameEntry[]): MathItem[] {
-  const faces = padEntries(entries, 6)
-  const cards: GameCard[] = faces.map((e, i) => ({
-    id: `die-${i}`,
-    text: e.text,
-    variant: 'face',
-    badge: String(i + 1),
-  }))
-  return [
-    boardItem({
-      cols: 3,
-      rows: 2,
-      cards,
-      kind: 'die',
-    }),
-  ]
-}
-
 export function tryGenerateJeuxBatch(
   typeId: string,
   rng: Rng,
@@ -732,15 +637,6 @@ export function tryGenerateJeuxBatch(
       break
     case 'jeux-dominos':
       items = dominos(entries, rng, undefined, options.gameSeriesName)
-      break
-    case 'jeux-sept-familles':
-      items = septFamilles(entries)
-      break
-    case 'jeux-plateau':
-      items = plateau(entries)
-      break
-    case 'jeux-de-roue':
-      items = deRoue(entries)
       break
     default:
       items = vocab(entries, rng)

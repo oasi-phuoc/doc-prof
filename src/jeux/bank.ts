@@ -108,7 +108,10 @@ export function entriesFromBankItems(
 }
 
 /** Contenu initial mode Thème pour un template banque. */
-export function defaultThemeGameContent(typeId: string): {
+export function defaultThemeGameContent(
+  typeId: string,
+  frTopicId?: string,
+): {
   gameSource: GameSource
   gameTopic: string
   gameSelectedIds: string[]
@@ -117,7 +120,7 @@ export function defaultThemeGameContent(typeId: string): {
 } {
   const tpl = templateFor(typeId)
   const count = tpl?.entryCount ?? 12
-  const topic = DEFAULT_GAME_TOPIC
+  const topic = frTopicId?.trim() || DEFAULT_GAME_TOPIC
   const subgroup = vocabSubgroupsFor(topic)[0]?.id
   const items = themeBankItems(topic, subgroup)
   const picked = items.slice(0, Math.min(count, items.length))

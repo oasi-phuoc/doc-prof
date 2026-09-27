@@ -8,7 +8,7 @@ export type GameField = {
   maxLength?: number
 }
 
-export type GameFamily = 'cartes' | 'structures'
+export type GameFamily = 'cartes'
 
 export type GameTemplate = {
   id: string
@@ -130,45 +130,6 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 16,
     entryHint: '16 dominos image | mot (chaîne) · verso série.',
-  },
-  'jeux-sept-familles': {
-    id: 'jeux-sept-familles',
-    family: 'structures',
-    label: '7 familles',
-    orientation: 'portrait',
-    grid: { ...GRID_3X3 },
-    fields: [
-      { type: 'categorie', required: true },
-      { type: 'texte', required: true },
-    ],
-    entryCount: 7,
-    cardCount: 28,
-    maxTextLen: 14,
-    entryHint: 'Famille : membre1, membre2, membre3, membre4 (7 familles).',
-  },
-  'jeux-plateau': {
-    id: 'jeux-plateau',
-    family: 'structures',
-    label: 'Plateau de jeu',
-    orientation: 'portrait',
-    grid: { cols: 5, rows: 4 },
-    fields: [{ type: 'texte', required: true, maxLength: 40 }],
-    entryCount: 12,
-    cardCount: 20,
-    maxTextLen: 40,
-    entryHint: 'Consignes de cases (12). Le plateau numérote 20 cases.',
-  },
-  'jeux-de-roue': {
-    id: 'jeux-de-roue',
-    family: 'structures',
-    label: 'Dé / roue',
-    orientation: 'portrait',
-    grid: { cols: 3, rows: 2 },
-    fields: [{ type: 'texte', required: true, maxLength: 24 }],
-    entryCount: 6,
-    cardCount: 6,
-    maxTextLen: 24,
-    entryHint: 'Six consignes (une par face du dé / secteur).',
   },
 }
 

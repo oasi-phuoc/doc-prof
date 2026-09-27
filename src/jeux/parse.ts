@@ -1,4 +1,4 @@
-import { defaultEntriesFor, DEFAULT_SEPT_FAMILLES } from './defaults'
+import { defaultEntriesFor } from './defaults'
 import { templateFor } from './templates'
 import type { GameEntry } from './types'
 
@@ -28,28 +28,6 @@ export function entriesToText(typeId: string, entries: GameEntry[]): string {
           .join('\n\n')
       }
       return entries.map((e) => e.text).join('\n')
-    case 'jeux-sept-familles': {
-      // Prefer structured defaults when entries are flat placeholders.
-      if (entries.length >= 28 && entries.every((e) => !e.category)) {
-        return DEFAULT_SEPT_FAMILLES.map(
-          (f) => `${f.family} : ${f.members.join(', ')}`,
-        ).join('\n')
-      }
-      const byCat = new Map<string, string[]>()
-      for (const e of entries) {
-        const key = e.category || e.text
-        if (!e.category) continue
-        const list = byCat.get(key) ?? []
-        list.push(e.text)
-        byCat.set(key, list)
-      }
-      if (byCat.size === 0) {
-        return DEFAULT_SEPT_FAMILLES.map(
-          (f) => `${f.family} : ${f.members.join(', ')}`,
-        ).join('\n')
-      }
-      return [...byCat.entries()].map(([cat, words]) => `${cat} : ${words.join(', ')}`).join('\n')
-    }
     default:
       return entries.map((e) => e.text).join('\n')
   }
@@ -152,22 +130,6 @@ export function textToEntries(
       }
       break
     }
-    case 'jeux-sept-familles': {
-      const maxGroups = 7
-      const maxWords = 4
-      parsed = lines.slice(0, maxGroups).flatMap((line) => {
-        const m = /^([^:]+)\s*:\s*(.+)$/.exec(line)
-        const category = clip((m?.[1] ?? 'Catégorie').trim(), 20)
-        const words = (m?.[2] ?? line)
-          .split(/[,;]/)
-          .map((w) => w.trim())
-          .filter(Boolean)
-          .slice(0, maxWords)
-        while (words.length < maxWords) words.push(`mot${words.length + 1}`)
-        return words.map((word) => ({ text: clip(word, maxLen), category }))
-      })
-      break
-    }
     case 'jeux-memory':
       parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
       break
@@ -176,12 +138,6 @@ export function textToEntries(
       break
     case 'jeux-dominos':
       parsed = lines.slice(0, 16).map((line) => ({ text: clip(line, maxLen) }))
-      break
-    case 'jeux-plateau':
-      parsed = lines.slice(0, 12).map((line) => ({ text: clip(line, maxLen) }))
-      break
-    case 'jeux-de-roue':
-      parsed = lines.slice(0, 6).map((line) => ({ text: clip(line, maxLen) }))
       break
     case 'jeux-vocabulaire':
     default:

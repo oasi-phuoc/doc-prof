@@ -121,45 +121,6 @@ const DOMINOS: GameEntry[] = [
   'arbre',
 ].map((text) => withImage(text))
 
-/** 7 familles structurées pour le générateur. */
-export const DEFAULT_SEPT_FAMILLES: Array<{ family: string; members: string[] }> = [
-  { family: 'Maison', members: ['porte', 'fenêtre', 'toit', 'mur'] },
-  { family: 'École', members: ['livre', 'crayon', 'cahier', 'cartable'] },
-  { family: 'Fruits', members: ['pomme', 'poire', 'banane', 'orange'] },
-  { family: 'Animaux', members: ['chat', 'chien', 'oiseau', 'poisson'] },
-  { family: 'Corps', members: ['main', 'pied', 'tête', 'œil'] },
-  { family: 'Vêtements', members: ['manteau', 'chaussure', 'chapeau', 'écharpe'] },
-  { family: 'Transports', members: ['bus', 'train', 'vélo', 'voiture'] },
-]
-
-const SEPT_FAMILLES: GameEntry[] = DEFAULT_SEPT_FAMILLES.flatMap((f) =>
-  f.members.map((text) => ({ text, category: f.family })),
-)
-
-const PLATEAU: GameEntry[] = [
-  'Dites votre prénom.',
-  'Nommez une couleur.',
-  'Comptez jusqu’à cinq.',
-  'Citez un fruit.',
-  'Faites un geste.',
-  'Dites bonjour.',
-  'Nommez un animal.',
-  'Citez un jour.',
-  'Dites merci.',
-  'Nommez une boisson.',
-  'Citez un métier.',
-  'Avancez de deux cases.',
-].map((text) => ({ text }))
-
-const DE_ROUE: GameEntry[] = [
-  'Mimez un animal',
-  'Dites un fruit',
-  'Comptez à voix haute',
-  'Citez une couleur',
-  'Faites une question',
-  'Nommez un lieu',
-].map((text) => ({ text }))
-
 export const DEFAULT_ENTRIES: Record<string, GameEntry[]> = {
   'jeux-vocabulaire': VOCAB,
   'jeux-devinettes': DEVINETTES,
@@ -167,9 +128,6 @@ export const DEFAULT_ENTRIES: Record<string, GameEntry[]> = {
   'jeux-loto': LOTO,
   'jeux-intrus': INTRUS,
   'jeux-dominos': DOMINOS,
-  'jeux-sept-familles': SEPT_FAMILLES,
-  'jeux-plateau': PLATEAU,
-  'jeux-de-roue': DE_ROUE,
 }
 
 export function defaultEntriesFor(typeId: string): GameEntry[] {
