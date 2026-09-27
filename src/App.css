@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
-/* Marelle2 : cursive liée scolaire, ascendantes/descendantes 2 interlignes (OFL). */
-@font-face{
-  font-family:'Marelle';
-  src:url('/fonts/marelle/Marelle2-Regular.woff2') format('woff2');
-  font-weight:400;font-style:normal;font-display:swap
-}
+/* Calligraphie — cursives liées (OFL) : Marelle + Playwrite + scripts. */
+@font-face{font-family:'Calli Marelle';src:url('/fonts/calli/marelle.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Playwrite FR Trad';src:url('/fonts/calli/playwrite-fr-trad.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Playwrite FR Moderne';src:url('/fonts/calli/playwrite-fr-moderne.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Playwrite IT';src:url('/fonts/calli/playwrite-it-trad.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Playwrite ES';src:url('/fonts/calli/playwrite-es.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Playwrite DE';src:url('/fonts/calli/playwrite-de-grund.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Dancing Script';src:url('/fonts/calli/dancing-script.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Marck Script';src:url('/fonts/calli/marck-script.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Cookie';src:url('/fonts/calli/cookie.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Parisienne';src:url('/fonts/calli/parisienne.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Sacramento';src:url('/fonts/calli/sacramento.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 :root {
   --ink:#28252f;
   --muted:#6f6875;
   --line:#e7e0ea;
   --calli-ink:#1a1a1a;
   --calli-rule:#9aa3ad;
-  --calli-base:#5c6b7a;
   --calli-margin:#c45c5c;
   --paper:#fff;
   --purple:#7c3aed;
@@ -2008,60 +2013,51 @@
   clip:rect(0,0,0,0);white-space:nowrap;border:0
 }
 
-/* —— Calligraphie (bandes lignées + cursive liée Marelle) —— */
+/* —— Calligraphie (bandes lignées + cursive liée) —— */
 .exercise-item.layout-calligraphy{
   padding-top:2px;padding-bottom:2px;width:100%
 }
 .exercise-item.layout-calligraphy .item-content{width:100%;min-width:0}
 .calli-sheet{
-  display:flex;flex-direction:column;gap:2.8mm;width:100%;
-  padding-left:0
+  display:flex;flex-direction:column;gap:2.6mm;width:100%
 }
-.calli-sheet.is-copy-below{gap:4mm}
-.calli-entry{display:flex;flex-direction:column;gap:1.4mm}
+.calli-sheet.is-copy-below{gap:3.8mm}
+.calli-entry{display:flex;flex-direction:column;gap:1.2mm}
 .calli-band{
-  position:relative;width:100%;
-  height:calc(var(--calli-n,6) * 2.2mm);
-  border-left:1.2px solid var(--calli-margin);
-  padding-left:3mm;
-  box-sizing:border-box
+  position:relative;width:100%;box-sizing:border-box;overflow:visible
 }
-.calli-band.is-4{height:calc(4 * 2.8mm)}
-.calli-band.is-6{height:calc(6 * 2.2mm)}
+.calli-margin{
+  position:absolute;left:0;top:0;bottom:0;width:0;
+  border-left:1.3px solid var(--calli-margin);pointer-events:none
+}
 .calli-rules{
-  position:absolute;inset:0 0 0 3mm;
+  position:absolute;inset:0 0 0 2.2mm;
   display:flex;flex-direction:column;justify-content:space-between;
   pointer-events:none
 }
 .calli-rule{
   display:block;height:0;border-top:0.7px solid var(--calli-rule)
 }
-.calli-rule.is-base{border-top-color:var(--calli-base);border-top-width:1.1px}
-.calli-rule.is-top{border-top-color:color-mix(in srgb,var(--calli-rule) 70%,#fff)}
-.calli-script-row{
-  position:absolute;left:3mm;right:2mm;
-  /* Aligne la baseline du texte sur le trait d’écriture (4e / 6 ou 3e / 4). */
-  bottom:calc((var(--calli-n,6) - 1 - var(--calli-base-i,3)) / (var(--calli-n,6) - 1) * 100%);
-  display:flex;align-items:baseline;gap:4mm;min-height:0;
-  transform:translateY(0.12em)
+/* Ligne d’écriture (4e / 6 ou 3e / 4) = couleur du thème */
+.calli-rule.is-base{
+  border-top-color:var(--purple);
+  border-top-width:1.35px
 }
-.calli-script{
-  font-family:'Marelle',cursive,serif;
-  font-size:18px;font-weight:400;line-height:1;
-  color:var(--calli-ink);white-space:nowrap;
-  letter-spacing:0;
+.calli-rule.is-top{border-top-color:color-mix(in srgb,var(--calli-rule) 70%,#fff)}
+.calli-text-svg{
+  position:absolute;left:0;top:0;display:block;
+  overflow:visible;pointer-events:none
+}
+.calli-svg-text{
+  fill:var(--calli-ink);
   font-variant-ligatures:common-ligatures discretionary-ligatures contextual;
   font-feature-settings:"liga" 1,"clig" 1,"calt" 1,"dlig" 1,"kern" 1
 }
-.calli-band.is-6 .calli-script{font-size:17px}
-.calli-band.is-4 .calli-script{font-size:19px}
-.calli-copy-space{flex:1 1 auto;min-width:12mm}
-.calli-band.is-blank{opacity:1}
 
 @media print{
   .calli-rule{border-top-color:#888}
-  .calli-rule.is-base{border-top-color:#444}
-  .calli-band{border-left-color:#b44}
-  .calli-script{color:#111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .calli-rule.is-base{border-top-color:var(--purple)}
+  .calli-margin{border-left-color:#b44}
+  .calli-svg-text{fill:#111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 /* End */

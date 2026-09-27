@@ -410,6 +410,8 @@ export type MathItem = {
     mode: 'same-line' | 'copy-below'
     ruleLines: 4 | 6
     entries: string[]
+    fontId?: string
+    sizeId?: string
   }
 }
 
@@ -550,6 +552,10 @@ export type ExerciseBlock = {
    * (texte brut du panneau enseignant·e).
    */
   calliText?: string
+  /** Police cursive liée (id CalliFont). */
+  calliFont?: string
+  /** Taille d’écriture / espacement des carreaux (petit | moyen | grand). */
+  calliSize?: string
 }
 
 export type PageConfig = ExerciseBlock & {

@@ -44,6 +44,12 @@ import {
   typesForTopic,
 } from '@/math/catalog'
 import { defaultCalliText } from '@/calligraphie/defaults'
+import {
+  CALLI_FONTS,
+  CALLI_SIZES,
+  DEFAULT_CALLI_FONT,
+  DEFAULT_CALLI_SIZE,
+} from '@/calligraphie/fonts'
 import { isCalligraphieType } from '@/calligraphie/generate'
 import {
   defaultVocabSelected,
@@ -1138,8 +1144,16 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
             prev?.exerciseType === type.id && prev.calliText != null
               ? prev.calliText
               : defaultCalliText(type.id),
+          calliFont:
+            prev?.exerciseType === type.id && prev.calliFont
+              ? prev.calliFont
+              : DEFAULT_CALLI_FONT,
+          calliSize:
+            prev?.exerciseType === type.id && prev.calliSize
+              ? prev.calliSize
+              : DEFAULT_CALLI_SIZE,
         }
-      : { calliText: undefined }),
+      : { calliText: undefined, calliFont: undefined, calliSize: undefined }),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -1686,6 +1700,8 @@ function GeneratorPage() {
       gameBorderRectoId: fields.gameBorderRectoId ?? fields.gameBorderId,
       gameBorderVersoId: fields.gameBorderVersoId ?? fields.gameBorderId,
       calliText: fields.calliText,
+      calliFont: fields.calliFont,
+      calliSize: fields.calliSize,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -2051,24 +2067,55 @@ function GeneratorPage() {
                 ))}
               </SelectBox>
               {isCalliDomain ? (
-                <label className="select-shell game-content-field">
-                  <span>Mots ou phrases</span>
-                  <textarea
-                    className="pill-input game-content-textarea"
-                    rows={10}
-                    value={activeBlock.calliText ?? defaultCalliText(activeBlock.exerciseType)}
-                    spellCheck
-                    aria-label="Mots ou phrases à recopier"
-                    placeholder="Un mot ou une phrase par ligne"
-                    onChange={(event) => updatePage({ calliText: event.target.value })}
-                  />
-                  <small className="muted">
-                    {activeBlock.exerciseType === 'calli-4-lignes' ||
-                    activeBlock.exerciseType === 'calli-3-lignes'
-                      ? 'Une phrase par ligne · modèle sur 4 lignes (texte sur la 3e) + bande vide dessous.'
-                      : 'Un mot par ligne · modèle et copie sur la même bande à 6 lignes (texte sur la 4e).'}
-                  </small>
-                </label>
+                <>
+                  <SelectBox
+                    label="Écriture"
+                    value={activeBlock.calliFont ?? DEFAULT_CALLI_FONT}
+                    onChange={(value) => updatePage({ calliFont: value })}
+                  >
+                    {CALLI_FONTS.map((font) => (
+                      <option value={font.id} key={font.id}>
+                        {font.label}
+                      </option>
+                    ))}
+                  </SelectBox>
+                  <div className="mode-toggle-block">
+                    <b>Taille</b>
+                    <div className="mode-toggle is-3" role="group" aria-label="Taille d’écriture">
+                      {CALLI_SIZES.map((size) => (
+                        <button
+                          key={size.id}
+                          type="button"
+                          className={(activeBlock.calliSize ?? DEFAULT_CALLI_SIZE) === size.id ? 'active' : ''}
+                          onClick={() => updatePage({ calliSize: size.id })}
+                        >
+                          {size.label}
+                        </button>
+                      ))}
+                    </div>
+                    <small className="muted">
+                      Change la taille du modèle et l’écartement des lignes (écrire plus petit ou plus grand).
+                    </small>
+                  </div>
+                  <label className="select-shell game-content-field">
+                    <span>Mots ou phrases</span>
+                    <textarea
+                      className="pill-input game-content-textarea"
+                      rows={10}
+                      value={activeBlock.calliText ?? defaultCalliText(activeBlock.exerciseType)}
+                      spellCheck
+                      aria-label="Mots ou phrases à recopier"
+                      placeholder="Un mot ou une phrase par ligne"
+                      onChange={(event) => updatePage({ calliText: event.target.value })}
+                    />
+                    <small className="muted">
+                      {activeBlock.exerciseType === 'calli-4-lignes' ||
+                      activeBlock.exerciseType === 'calli-3-lignes'
+                        ? 'Une phrase par ligne · modèle sur 4 lignes (texte sur la 3e, trait en couleur du thème) + bande vide dessous.'
+                        : 'Un mot par ligne · modèle et copie sur la même bande à 6 lignes (texte sur la 4e, trait en couleur du thème).'}
+                    </small>
+                  </label>
+                </>
               ) : null}
               {isJeuxDomain && jeuxTemplate ? (
                 <GameContentPanel

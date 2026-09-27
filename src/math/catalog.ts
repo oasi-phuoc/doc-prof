@@ -2,6 +2,7 @@ import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './typ
 import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { defaultCalliText } from '@/calligraphie/defaults'
+import { DEFAULT_CALLI_FONT, DEFAULT_CALLI_SIZE } from '@/calligraphie/fonts'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 
@@ -809,6 +810,8 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
     gameEntries,
     gameText: gameEntries ? entriesToText(type.id, gameEntries) : undefined,
     calliText,
+    calliFont: domain === 'calligraphie' ? DEFAULT_CALLI_FONT : undefined,
+    calliSize: domain === 'calligraphie' ? DEFAULT_CALLI_SIZE : undefined,
   }
 }
 
@@ -832,4 +835,6 @@ type PageConfigLike = {
   }>
   gameText?: string
   calliText?: string
+  calliFont?: string
+  calliSize?: string
 }

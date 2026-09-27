@@ -1084,7 +1084,12 @@ function buildSingleBlock(
       items: jeux.items,
     }
   }
-  const calligraphie = tryGenerateCalligraphieBatch(config.exerciseType, config.calliText)
+  const calligraphie = tryGenerateCalligraphieBatch(
+    config.exerciseType,
+    config.calliText,
+    config.calliFont,
+    config.calliSize,
+  )
   if (calligraphie) {
     return {
       title: fallbackTitle,
