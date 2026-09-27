@@ -1864,8 +1864,8 @@ function GeneratorPage() {
     updatePage({ calliText: joinCalliLines([...calliFields, value]) })
   }
 
-  function addCalliExtraWord(entry: { label: string } | string) {
-    const word = (typeof entry === 'string' ? entry : entry.label).trim()
+  function addCalliExtraWord(entry: VocabWordEntry) {
+    const word = entry.label.trim()
     if (!word) return
     const base = calliFields.filter((line) => line.trim().length > 0)
     updatePage({ calliText: joinCalliLines([...base, word]) })
