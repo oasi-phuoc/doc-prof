@@ -1133,18 +1133,26 @@
 .print-chip svg{flex:0 0 auto}
 .theme-color-block{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .theme-color-block>b{font-size:13px;font-weight:700;color:var(--ink)}
-.theme-color-choices{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.theme-color-choices{
+  display:flex;flex-wrap:nowrap;gap:8px;align-items:center;
+  width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch
+}
 .theme-color-swatch{
-  width:28px;height:28px;padding:0;border-radius:999px;border:2px solid transparent;
+  flex:0 0 auto;width:28px;height:28px;padding:0;border-radius:999px;border:2px solid transparent;
   box-shadow:inset 0 0 0 1px #ffffffaa
 }
 .theme-color-swatch.active{border-color:var(--ink);box-shadow:0 0 0 2px #fff,0 0 0 4px var(--ink)}
 .theme-color-swatch:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 .theme-color-other{
+  flex:0 0 auto;
   background:
     conic-gradient(from 0deg,#e11d48,#ea580c,#eab308,#16a34a,#2563eb,#4f46e5,#7c3aed,#e11d48);
 }
 .theme-color-other-label{display:none}
+@media(max-width:550px){
+  .theme-color-choices{gap:6px}
+  .theme-color-swatch,.theme-color-other{width:24px;height:24px}
+}
 .theme-color-picker{display:flex;flex-direction:column;gap:10px;padding:10px 2px 2px}
 .theme-hue-wheel{
   width:132px;height:132px;margin:0 auto;border-radius:999px;padding:0;border:0;
@@ -1351,6 +1359,7 @@
 .vocab-add-row{
   display:grid;grid-template-columns:36px 1fr 36px;gap:6px;align-items:center;margin-top:8px
 }
+.vocab-add-row.is-text-only{grid-template-columns:1fr 36px}
 .vocab-add-thumb{
   width:36px;height:36px;padding:0;border:1px dashed #c9c2b8;border-radius:10px;
   background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;

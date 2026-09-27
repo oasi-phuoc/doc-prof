@@ -675,7 +675,15 @@ function ThemeColorPicker({
   )
 }
 
-function VocabAddWordRow({ onAdd }: { onAdd: (entry: VocabWordEntry) => void }) {
+function VocabAddWordRow({
+  onAdd,
+  withImage = true,
+  placeholder = 'Nouveau mot',
+}: {
+  onAdd: (entry: VocabWordEntry) => void
+  withImage?: boolean
+  placeholder?: string
+}) {
   const [label, setLabel] = useState('')
   const [imageSrc, setImageSrc] = useState<string | undefined>()
   const [error, setError] = useState<string | null>(null)
@@ -693,43 +701,57 @@ function VocabAddWordRow({ onAdd }: { onAdd: (entry: VocabWordEntry) => void }) 
   }
 
   return (
-    <div className="vocab-add-row">
-      <button
-        type="button"
-        className={`vocab-add-thumb${imageSrc ? ' has-image' : ''}`}
-        aria-label="Image du nouveau mot"
-        onClick={() => fileRef.current?.click()}
-      >
-        {imageSrc ? <img src={imageSrc} alt="" /> : <span aria-hidden>+</span>}
-      </button>
-      <input
-        ref={fileRef}
-        className="visually-hidden"
-        type="file"
-        accept={GAME_IMAGE_ACCEPT}
-        onChange={(event) => {
-          void onPick(event.target.files?.[0])
-          event.target.value = ''
-        }}
-      />
+    <div className={`vocab-add-row${withImage ? '' : ' is-text-only'}`}>
+      {withImage ? (
+        <>
+          <button
+            type="button"
+            className={`vocab-add-thumb${imageSrc ? ' has-image' : ''}`}
+            aria-label="Image du nouveau mot"
+            onClick={() => fileRef.current?.click()}
+          >
+            {imageSrc ? <img src={imageSrc} alt="" /> : <span aria-hidden>+</span>}
+          </button>
+          <input
+            ref={fileRef}
+            className="visually-hidden"
+            type="file"
+            accept={GAME_IMAGE_ACCEPT}
+            onChange={(event) => {
+              void onPick(event.target.files?.[0])
+              event.target.value = ''
+            }}
+          />
+        </>
+      ) : null}
       <input
         className="pill-input"
         type="text"
         value={label}
-        placeholder="Nouveau mot"
-        aria-label="Nouveau mot"
+        placeholder={placeholder}
+        aria-label={placeholder}
         onChange={(event) => setLabel(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key !== 'Enter') return
+          event.preventDefault()
+          const word = label.trim()
+          if (!word) return
+          onAdd(makeCustomVocabWord(word, withImage ? imageSrc : undefined))
+          setLabel('')
+          setImageSrc(undefined)
+          setError(null)
+        }}
       />
       <button
         type="button"
         className="vocab-add-btn"
-        aria-label="Ajouter le mot"
+        aria-label="Ajouter"
         title="Ajouter"
         disabled={!label.trim()}
         onClick={() => {
           const word = label.trim()
           if (!word) return
-          onAdd(makeCustomVocabWord(word, imageSrc))
+          onAdd(makeCustomVocabWord(word, withImage ? imageSrc : undefined))
           setLabel('')
           setImageSrc(undefined)
           setError(null)
@@ -1795,7 +1817,10 @@ function GeneratorPage() {
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
     }
-    if (next === 'jeux' || next === 'calligraphie') setEvalMode(false)
+    if (next === 'jeux' || next === 'calligraphie') {
+      setEvalMode(false)
+      setMode('student')
+    }
   }
 
   function changeTopic(topic: string) {
@@ -1858,10 +1883,6 @@ function GeneratorPage() {
     const next = [...calliFields]
     next[index] = value
     updatePage({ calliText: joinCalliLines(next) })
-  }
-
-  function addCalliField(value = '') {
-    updatePage({ calliText: joinCalliLines([...calliFields, value]) })
   }
 
   function addCalliExtraWord(entry: VocabWordEntry) {
@@ -2213,7 +2234,9 @@ function GeneratorPage() {
                       ))}
                     </div>
                     <small className="muted">
-                      Petit : 10 mots · Moyen : 9 · Grand : 8 (vous pouvez en ajouter).
+                      {calliIsPhrases
+                        ? 'Petit : 9 blocs · Moyen : 7 · Grand : 6 (vous pouvez en ajouter).'
+                        : 'Petit : 11 mots · Moyen : 9 · Grand : 8 (vous pouvez en ajouter).'}
                     </small>
                   </div>
                   {calliIsPhrases ? (
@@ -2280,27 +2303,27 @@ function GeneratorPage() {
                         </li>
                       ))}
                     </ul>
-                    {calliIsPhrases ? (
-                      <div className="calli-fields-actions">
-                        <button type="button" className="button secondary" onClick={() => addCalliField()}>
-                          Ajouter une phrase
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="game-extra-words">
-                        <b>Mots supplémentaires</b>
-                        <VocabAddWordRow onAdd={addCalliExtraWord} />
-                        <small className="muted">Hors liste · image optionnelle (+).</small>
-                      </div>
-                    )}
+                    <div className="game-extra-words">
+                      <b>{calliIsPhrases ? 'Phrases supplémentaires' : 'Mots supplémentaires'}</b>
+                      <VocabAddWordRow
+                        withImage={false}
+                        placeholder={calliIsPhrases ? 'Nouvelle phrase' : 'Nouveau mot'}
+                        onAdd={addCalliExtraWord}
+                      />
+                      <small className="muted">
+                        {calliIsPhrases
+                          ? 'Hors liste · les ajouts dépassent le nombre par défaut.'
+                          : 'Hors liste · les ajouts dépassent le nombre par défaut.'}
+                      </small>
+                    </div>
                     <small className="muted">
                       {calliIsPhrases
                         ? calliIsLibre
-                          ? 'Générer tire des phrases depuis tout le vocabulaire · une ligne max.'
-                          : 'Générer tire des phrases du thème (A1 / A2 / B1), une ligne max.'
+                          ? 'Petit 9 · Moyen 7 · Grand 6 blocs · Générer tire dans tout le vocabulaire.'
+                          : 'Petit 9 · Moyen 7 · Grand 6 blocs · Générer tire des phrases du thème (A1 / A2 / B1).'
                         : calliIsLibre
-                          ? 'Générer tire des mots de tous les thèmes · les ajouts dépassent le nombre par défaut.'
-                          : 'Générer tire de nouveaux mots du thème · les ajouts dépassent le nombre par défaut.'}
+                          ? 'Petit 11 · Moyen 9 · Grand 8 mots · Générer tire dans tous les thèmes.'
+                          : 'Petit 11 · Moyen 9 · Grand 8 mots · Générer tire dans le thème.'}
                     </small>
                   </div>
                 </>
@@ -3139,18 +3162,25 @@ function GeneratorPage() {
                 <h2>Votre activité est prête.</h2>
               </div>
               <div className="result-head-actions no-print">
-                <div className="mode-toggle preview-mode-toggle" role="tablist" aria-label="Mode d’aperçu">
-                  <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
-                    Fiche élève
-                  </button>
-                  <button type="button" className={mode === 'answers' ? 'active' : ''} onClick={() => setMode('answers')}>
-                    Corrigé
-                  </button>
-                </div>
+                {isCalliDomain || isJeuxDomain ? null : (
+                  <div className="mode-toggle preview-mode-toggle" role="tablist" aria-label="Mode d’aperçu">
+                    <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
+                      Fiche élève
+                    </button>
+                    <button type="button" className={mode === 'answers' ? 'active' : ''} onClick={() => setMode('answers')}>
+                      Corrigé
+                    </button>
+                  </div>
+                )}
                 <button className="print-chip is-generate" type="button" onClick={generate}>
                   Générer
                 </button>
-                <button className="print-chip is-generate" type="button" onClick={printAll} aria-label="Imprimer la fiche et le corrigé">
+                <button
+                  className="print-chip is-generate"
+                  type="button"
+                  onClick={printAll}
+                  aria-label={isCalliDomain || isJeuxDomain ? 'Imprimer la fiche' : 'Imprimer la fiche et le corrigé'}
+                >
                   Imprimer
                 </button>
               </div>
@@ -3218,7 +3248,7 @@ function GeneratorPage() {
                 </div>
               </div>
             </div>
-            {/* Impression : toutes les fiches élèves, puis tous les corrigés */}
+            {/* Impression : fiches élèves ; corrigés seulement s’il y en a */}
             <div className="sheet-stage print-only-sheets" aria-hidden>
               {worksheets.map((page, index) => (
                 <WorksheetSheet
@@ -3231,17 +3261,19 @@ function GeneratorPage() {
                   mode="student"
                 />
               ))}
-              {worksheets.map((page, index) => (
-                <WorksheetSheet
-                  key={`print-answers-${page.exerciseType}-${seed}-${index}`}
-                  page={page}
-                  pageNumber={index + 1}
-                  sheetIndex={worksheets.length + index + 1}
-                  total={worksheets.length}
-                  {...chromeProps}
-                  mode="answers"
-                />
-              ))}
+              {isCalliDomain || isJeuxDomain
+                ? null
+                : worksheets.map((page, index) => (
+                    <WorksheetSheet
+                      key={`print-answers-${page.exerciseType}-${seed}-${index}`}
+                      page={page}
+                      pageNumber={index + 1}
+                      sheetIndex={worksheets.length + index + 1}
+                      total={worksheets.length}
+                      {...chromeProps}
+                      mode="answers"
+                    />
+                  ))}
             </div>
           </section>
         </div>

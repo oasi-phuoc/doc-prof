@@ -12,6 +12,7 @@ export const DEFAULT_CALLI_WORDS = [
   'elle',
   'nous',
   'vous',
+  'ami',
 ]
 
 export const DEFAULT_CALLI_PHRASES = [
@@ -19,38 +20,46 @@ export const DEFAULT_CALLI_PHRASES = [
   'Elle lit un livre.',
   'Nous allons à l’école.',
   'Bonjour les amis.',
+  'Il fait beau.',
+  'Léa mange une pomme.',
+  'Noah boit de l’eau.',
+  'Où est ton sac ?',
+  'Papa lit le journal.',
 ]
 
 /** Fallback si la taille n’est pas connue (taille moyenne). */
 export const DEFAULT_CALLI_WORD_COUNT = 9
-export const DEFAULT_CALLI_PHRASE_COUNT = 4
+export const DEFAULT_CALLI_PHRASE_COUNT = 7
 
 /**
- * Nombre de mots tirés par défaut selon la taille d’écriture.
- * Grand → 8 · Moyen → 9 · Petit → 10.
- * L’enseignant·e peut en ajouter au-delà.
+ * Mots par défaut selon la taille.
+ * Grand → 8 · Moyen → 9 · Petit → 11.
  */
 export function defaultCalliWordCount(sizeId: string | undefined): number {
   if (sizeId === 'grand') return 8
-  if (sizeId === 'petit') return 10
+  if (sizeId === 'petit') return 11
   return 9
 }
 
+/**
+ * Blocs phrases par défaut selon la taille.
+ * Grand → 6 · Moyen → 7 · Petit → 9.
+ */
 export function defaultCalliPhraseCount(sizeId: string | undefined): number {
-  if (sizeId === 'grand') return 3
-  if (sizeId === 'petit') return 5
-  return 4
+  if (sizeId === 'grand') return 6
+  if (sizeId === 'petit') return 9
+  return 7
 }
 
-/** Plafond dur A4 (au-delà du défaut, pour les ajouts manuels). */
+/** Plafond dur A4 (ajouts manuels au-delà du défaut). */
 export function hardMaxCalliEntries(mode: 'same-line' | 'copy-below', sizeId: string | undefined): number {
   if (mode === 'copy-below') {
-    if (sizeId === 'grand') return 6
-    if (sizeId === 'petit') return 8
-    return 7
+    if (sizeId === 'grand') return 8
+    if (sizeId === 'petit') return 12
+    return 10
   }
   if (sizeId === 'grand') return 14
-  if (sizeId === 'petit') return 16
+  if (sizeId === 'petit') return 18
   return 15
 }
 

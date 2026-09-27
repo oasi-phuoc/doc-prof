@@ -44,7 +44,7 @@ banque `sentences.phrase` côté Voc. Elles doivent se dire vraiment en françai
    **chaque sous-thème** de **chaque thème**.
 9. **Fiche** : un mot Voc = une seule entrée ; mode Libre tire dans **toutes**
    les banques ; les ajouts manuels peuvent dépasser le nombre par défaut
-   (Petit 10 / Moyen 9 / Grand 8 mots).
+   (Mots : Petit 11 / Moyen 9 / Grand 8 · Phrases : Petit 9 / Moyen 7 / Grand 6).
 
 ## Catégories (générateur)
 
