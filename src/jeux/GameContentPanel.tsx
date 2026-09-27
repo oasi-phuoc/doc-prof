@@ -15,6 +15,7 @@ import { GAME_BORDER_STYLES } from './borders'
 import {
   DEFAULT_GAME_FONT_SIZE,
   GAME_FONT_SIZES,
+  usesCompactGameFont,
   type GameFontSizeId,
 } from './font-size'
 import { resolveGameImageSrc } from './image-resolve'
@@ -299,7 +300,7 @@ function SeriesIdentityFields({
           ))}
         </div>
         <small className="muted">
-          {typeId === 'jeux-intrus'
+          {usesCompactGameFont(typeId)
             ? 'Petit : 15 px · Moyen : 20 px · Grand : 25 px'
             : 'Petit : 20 px · Moyen : 30 px · Grand : 40 px'}
         </small>
