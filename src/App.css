@@ -2028,25 +2028,28 @@
 }
 .calli-margin{
   position:absolute;left:0;top:0;bottom:0;width:0;
-  border-left:1.3px solid var(--calli-margin);pointer-events:none
+  border-left:1.3px solid var(--calli-margin);pointer-events:none;z-index:1
 }
 .calli-rules{
-  position:absolute;inset:0 0 0 2.2mm;
-  display:flex;flex-direction:column;justify-content:space-between;
-  pointer-events:none
+  position:absolute;inset:0;pointer-events:none;z-index:1
 }
 .calli-rule{
-  display:block;height:0;border-top:0.7px solid var(--calli-rule)
+  position:absolute;left:2.2mm;right:0;height:0;
+  border-top:0.7px solid var(--calli-rule)
 }
 /* Ligne d’écriture (4e / 6 ou 3e / 4) = couleur du thème */
 .calli-rule.is-base{
   border-top-color:var(--purple);
-  border-top-width:1.35px
+  border-top-width:1.4px
 }
-.calli-rule.is-top{border-top-color:color-mix(in srgb,var(--calli-rule) 70%,#fff)}
+.calli-rule.is-top{border-top-color:color-mix(in srgb,var(--calli-rule) 65%,#fff)}
+/*
+ * Texte SVG : pas de viewBox (évite le scale meet qui écrasait Y).
+ * y / font-size en mm — baseline alphabétique sur le trait coloré.
+ */
 .calli-text-svg{
   position:absolute;left:0;top:0;display:block;
-  overflow:visible;pointer-events:none
+  overflow:visible;pointer-events:none;z-index:2
 }
 .calli-svg-text{
   fill:var(--calli-ink);

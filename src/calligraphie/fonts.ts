@@ -24,7 +24,7 @@ export type CalliFont = {
   file: string
   /**
    * Rapport taille de police / interligne (carreau).
-   * Calé pour coller le corps et les jambages aux traits Seyès.
+   * Calé sur la hauteur du « o » pour un corps ≈ 1 carreau (Seyès scolaire).
    */
   emPerUnit: number
 }
@@ -42,77 +42,77 @@ export const CALLI_FONTS: CalliFont[] = [
     label: 'Marelle',
     family: 'Calli Marelle',
     file: 'marelle.woff2',
-    emPerUnit: 3.15,
+    emPerUnit: 2.04,
   },
   {
     id: 'playwrite-fr-trad',
     label: 'Playwrite FR Trad',
     family: 'Calli Playwrite FR Trad',
     file: 'playwrite-fr-trad.ttf',
-    emPerUnit: 3.0,
+    emPerUnit: 1.86,
   },
   {
     id: 'playwrite-fr-moderne',
     label: 'Playwrite FR Moderne',
     family: 'Calli Playwrite FR Moderne',
     file: 'playwrite-fr-moderne.ttf',
-    emPerUnit: 3.0,
+    emPerUnit: 1.86,
   },
   {
     id: 'playwrite-it-trad',
     label: 'Playwrite IT',
     family: 'Calli Playwrite IT',
     file: 'playwrite-it-trad.ttf',
-    emPerUnit: 3.0,
+    emPerUnit: 1.86,
   },
   {
     id: 'playwrite-es',
     label: 'Playwrite ES',
     family: 'Calli Playwrite ES',
     file: 'playwrite-es.ttf',
-    emPerUnit: 3.0,
+    emPerUnit: 1.86,
   },
   {
     id: 'playwrite-de-grund',
     label: 'Playwrite DE',
     family: 'Calli Playwrite DE',
     file: 'playwrite-de-grund.ttf',
-    emPerUnit: 2.95,
+    emPerUnit: 1.86,
   },
   {
     id: 'dancing-script',
     label: 'Dancing Script',
     family: 'Calli Dancing Script',
     file: 'dancing-script.ttf',
-    emPerUnit: 2.85,
+    emPerUnit: 2.6,
   },
   {
     id: 'marck-script',
     label: 'Marck Script',
     family: 'Calli Marck Script',
     file: 'marck-script.ttf',
-    emPerUnit: 2.9,
+    emPerUnit: 2.69,
   },
   {
     id: 'cookie',
     label: 'Cookie',
     family: 'Calli Cookie',
     file: 'cookie.ttf',
-    emPerUnit: 3.1,
+    emPerUnit: 2.7,
   },
   {
     id: 'parisienne',
     label: 'Parisienne',
     family: 'Calli Parisienne',
     file: 'parisienne.ttf',
-    emPerUnit: 2.95,
+    emPerUnit: 2.64,
   },
   {
     id: 'sacramento',
     label: 'Sacramento',
     family: 'Calli Sacramento',
     file: 'sacramento.ttf',
-    emPerUnit: 3.0,
+    emPerUnit: 4.02,
   },
 ]
 

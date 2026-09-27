@@ -2,7 +2,11 @@ import type { CSSProperties } from 'react'
 import type { MathItem } from '@/math/types'
 import { calliFontById, calliSizeById } from '@/calligraphie/fonts'
 
-/** Bande lignée (4 ou 6) — baseline en couleur thème ; texte SVG collé sur le trait. */
+/**
+ * Bande lignée (4 ou 6).
+ * Traits en CSS (mm). Texte en SVG sans viewBox déformant :
+ * `y` = baseline alphabétique exacte sur le trait coloré.
+ */
 function RuledBand({
   ruleLines,
   text,
@@ -22,9 +26,9 @@ function RuledBand({
   const baselineIndex = ruleLines === 6 ? 3 : 2
   const gaps = ruleLines - 1
   const heightMm = gaps * unitMm
-  const baselineY = baselineIndex * unitMm
-  // En 4 lignes (1 carreau sous la baseline), un peu plus petit pour ne pas déborder.
-  const sizeFactor = ruleLines === 4 ? 0.82 : 1
+  const baselineYmm = baselineIndex * unitMm
+  // Corps ≈ 1 carreau ; en 4 lignes (1 carreau sous la baseline), léger retrait.
+  const sizeFactor = ruleLines === 4 ? 0.92 : 1
   const fontSizeMm = unitMm * emPerUnit * sizeFactor
 
   return (
@@ -33,8 +37,7 @@ function RuledBand({
       style={
         {
           height: `${heightMm}mm`,
-          '--calli-n': ruleLines,
-          '--calli-base-i': baselineIndex,
+          '--calli-unit': `${unitMm}mm`,
         } as CSSProperties
       }
     >
@@ -44,25 +47,24 @@ function RuledBand({
           <span
             key={i}
             className={`calli-rule${i === baselineIndex ? ' is-base' : ''}${i === 0 ? ' is-top' : ''}`}
+            style={{ top: `${i * unitMm}mm` }}
           />
         ))}
       </div>
       {text ? (
         <svg
           className="calli-text-svg"
-          viewBox={`0 0 700 ${heightMm}`}
           width="100%"
           height={`${heightMm}mm`}
-          preserveAspectRatio="xMinYMin meet"
           overflow="visible"
           aria-label={text}
         >
           <text
             className="calli-svg-text"
-            x={16}
-            y={baselineY}
+            x="5mm"
+            y={`${baselineYmm}mm`}
             fontFamily={fontFamily}
-            fontSize={fontSizeMm}
+            fontSize={`${fontSizeMm}mm`}
           >
             {text}
           </text>
