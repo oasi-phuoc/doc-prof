@@ -7,6 +7,9 @@ export const DEFAULT_CALLI_WORDS = [
   'une',
   'et',
   'est',
+  'il',
+  'elle',
+  'nous',
 ]
 
 export const DEFAULT_CALLI_PHRASES = [
@@ -16,7 +19,8 @@ export const DEFAULT_CALLI_PHRASES = [
   'Bonjour les amis.',
 ]
 
-export const DEFAULT_CALLI_WORD_COUNT = 6
+/** Nombre de mots tirés par défaut sur une fiche Mots. */
+export const DEFAULT_CALLI_WORD_COUNT = 9
 export const DEFAULT_CALLI_PHRASE_COUNT = 4
 
 /** Longueur max pour rester sur une seule ligne d’écriture cursive. */

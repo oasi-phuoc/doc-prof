@@ -1860,8 +1860,15 @@ function GeneratorPage() {
     updatePage({ calliText: joinCalliLines(next) })
   }
 
-  function addCalliField() {
-    updatePage({ calliText: joinCalliLines([...calliFields, '']) })
+  function addCalliField(value = '') {
+    updatePage({ calliText: joinCalliLines([...calliFields, value]) })
+  }
+
+  function addCalliExtraWord(entry: { label: string } | string) {
+    const word = (typeof entry === 'string' ? entry : entry.label).trim()
+    if (!word) return
+    const base = calliFields.filter((line) => line.trim().length > 0)
+    updatePage({ calliText: joinCalliLines([...base, word]) })
   }
 
   function removeCalliField(index: number) {
@@ -2264,19 +2271,27 @@ function GeneratorPage() {
                         </li>
                       ))}
                     </ul>
-                    <div className="calli-fields-actions">
-                      <button type="button" className="button secondary" onClick={addCalliField}>
-                        {calliIsPhrases ? 'Ajouter une phrase' : 'Ajouter un mot'}
-                      </button>
-                    </div>
+                    {calliIsPhrases ? (
+                      <div className="calli-fields-actions">
+                        <button type="button" className="button secondary" onClick={() => addCalliField()}>
+                          Ajouter une phrase
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="game-extra-words">
+                        <b>Mots supplémentaires</b>
+                        <VocabAddWordRow onAdd={addCalliExtraWord} />
+                        <small className="muted">Hors liste · image optionnelle (+).</small>
+                      </div>
+                    )}
                     <small className="muted">
                       {calliIsPhrases
                         ? calliIsLibre
                           ? 'Une phrase par champ · modèle sur 4 lignes + bande vide dessous.'
                           : 'Générer tire des phrases du thème (A1 / A2 / B1) avec le vocabulaire de la liste, une ligne max.'
                         : calliIsLibre
-                          ? 'Un mot par champ · modèle et copie sur la même bande à 6 lignes.'
-                          : 'Générer tire de nouveaux mots du vocabulaire du thème.'}
+                          ? 'Neuf mots par défaut · modèle et copie sur la même bande à 6 lignes.'
+                          : 'Neuf mots tirés au hasard du thème · Générer en tire de nouveaux.'}
                     </small>
                   </div>
                 </>

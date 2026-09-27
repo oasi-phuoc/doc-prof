@@ -52,9 +52,10 @@ export function maxCalliEntries(mode: 'same-line' | 'copy-below', sizeId: string
     if (size.id === 'petit') return 5
     return 4
   }
-  if (size.id === 'grand') return 8
+  // Mots (6 lignes) : 9 par défaut en taille moyenne.
+  if (size.id === 'grand') return 9
   if (size.id === 'petit') return 12
-  return 10
+  return 9
 }
 
 export function isCalligraphieType(typeId: string): boolean {
