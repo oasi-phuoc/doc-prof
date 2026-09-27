@@ -63,8 +63,8 @@ export function hardMaxCalliEntries(mode: 'same-line' | 'copy-below', sizeId: st
   return 15
 }
 
-/** Longueur max pour rester sur une seule ligne d’écriture cursive. */
-export const MAX_CALLI_LINE_CHARS = 36
+/** Longueur max pour rester sur une seule ligne d’écriture cursive (espaces compris). */
+export const MAX_CALLI_LINE_CHARS = 50
 
 export function isCalliPhrasesType(typeId: string): boolean {
   return (

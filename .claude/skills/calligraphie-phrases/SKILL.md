@@ -35,7 +35,7 @@ banque `sentences.phrase` côté Voc. Elles doivent se dire vraiment en françai
    mot varient d’un index à l’autre ; rotation par id de mot.
 4. **Français correct** : articles, accords, contractions (`du`, `au`, `des`).
 5. **Unique** : 10 phrases distinctes par niveau ; pas de quasi-doublon.
-6. **Une ligne cursive** : ≤ `MAX_CALLI_LINE_CHARS` (36) caractères.
+6. **Une ligne cursive** : ≤ `MAX_CALLI_LINE_CHARS` (50) caractères, espaces compris.
 7. **Niveaux** :
    - **A1 · Simple** : présent, structures courtes, questions simples.
    - **A2 · Moyen** : passé composé / futur proche / questions au passé.
@@ -65,7 +65,7 @@ Le script **ne touche pas** à `trous` ni `dictee`.
 
 ## Terminé quand
 
-- 10 × 3 niveaux par mot, ≤ 36 caractères, sens réel
+- 10 × 3 niveaux par mot, ≤ 50 caractères (espaces compris), sens réel
 - Sujet + complément + questions représentés
 - Générer (Libre / thème) : mots distincts, ajouts possibles au-delà du défaut
 - Skill et `CLAUDE.md` alignés

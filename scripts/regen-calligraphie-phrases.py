@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BANK_DIR = ROOT / "src" / "francais" / "vocab-banks"
-MAX_CHARS = 36
+MAX_CHARS = 50
 VOWELS = set("aeiouyàâäéèêëïîôùûühAEIOUYÀÂÄÉÈÊËÏÎÔÙÛÜH")
 
 CAT = {
