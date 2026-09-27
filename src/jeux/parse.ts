@@ -8,9 +8,8 @@ export function entriesToText(typeId: string, entries: GameEntry[]): string {
     case 'jeux-devinettes':
       return entries
         .map((e) => {
-          const clues = [...(e.clues ?? [])]
-          while (clues.length < 3) clues.push('')
-          return [e.text, ...clues.slice(0, 3)].join('\n')
+          const clue = (e.clues ?? []).join('\n').trim()
+          return clue ? `${e.text}\n${clue}` : e.text
         })
         .join('\n\n')
     case 'jeux-intrus':
@@ -51,29 +50,30 @@ export function textToEntries(
   let parsed: GameEntry[]
   switch (typeId) {
     case 'jeux-devinettes': {
-      // Blocs séparés par une ligne vide, ou lignes « mot | i1 | i2 | i3 » (rétrocompat).
+      // Blocs séparés par une ligne vide : 1ʳᵉ ligne = mot, suite = phrase (retours à la ligne OK).
+      // Rétrocompat : « mot | phrase » ou anciennes 3 phrases jointes.
       const blocks = text
         .split(/\r?\n\s*\r?\n/)
         .map((b) => b.trim())
         .filter(Boolean)
       if (blocks.length > 1 || (blocks[0] && !blocks[0].includes('|'))) {
         parsed = blocks.slice(0, 9).map((block) => {
-          const parts = block
-            .split(/\r?\n/)
-            .map((p) => p.trim())
-            .filter(Boolean)
-          const [word = '', c1 = '', c2 = '', c3 = ''] = parts
+          const parts = block.split(/\r?\n/)
+          const word = (parts[0] ?? '').trim()
+          const clueLines = parts.slice(1).map((p) => p.trimEnd())
+          // Ancien format 3 phrases séparées → une seule phrase.
+          const clue = clueLines.join('\n').trim()
           return {
             text: clip(word, maxLen),
-            clues: [c1, c2, c3].map((c) => clip(c, 80)),
+            clues: clue ? [clue.slice(0, 280)] : [''],
           }
         })
       } else {
         parsed = lines.slice(0, 9).map((line) => {
           const parts = line.split('|').map((p) => p.trim())
-          const [word = 'mot', ...clues] = parts
-          while (clues.length < 3) clues.push('')
-          return { text: clip(word, maxLen), clues: clues.slice(0, 3).map((c) => clip(c, 80)) }
+          const [word = 'mot', ...rest] = parts
+          const clue = rest.filter(Boolean).join('\n')
+          return { text: clip(word, maxLen), clues: [clue.slice(0, 280)] }
         })
       }
       break

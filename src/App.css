@@ -1766,6 +1766,10 @@
 .game-card-clues{
   margin:0;padding:0 0 0 3.5mm;font-size:9px;line-height:1.35;color:var(--jeux-ink);text-align:left
 }
+.game-card-clue-text{
+  margin:0;font-size:11px;line-height:1.4;font-weight:600;color:var(--jeux-ink);
+  text-align:center;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%
+}
 .game-card.is-true{background:color-mix(in srgb, var(--jeux-true) 12%, #fff);border-style:solid;border-color:var(--jeux-true)}
 .game-card.is-true .game-card-badge{background:var(--jeux-true);color:#fff;border-color:var(--jeux-true)}
 .game-card.is-false{background:color-mix(in srgb, var(--jeux-false) 12%, #fff);border-style:solid;border-color:var(--jeux-false)}
@@ -1960,8 +1964,10 @@
 .game-board.is-devinettes .game-card.is-clue{
   justify-content:center;padding:5mm 4mm
 }
-.game-board.is-devinettes .game-card-clues{
-  padding-left:5.5mm;font-size:14px;line-height:1.5;font-weight:600
+.game-board.is-devinettes .game-card-clues,
+.game-board.is-devinettes .game-card-clue-text{
+  font-size:14px;line-height:1.45;font-weight:600;margin:0;text-align:center;
+  white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%
 }
 .game-board.is-devinettes .game-card-badge{
   min-width:6mm;height:6mm;font-size:10px
@@ -2000,6 +2006,10 @@
 .game-riddle-clues{display:flex;flex-direction:column;gap:6px;padding-left:2px}
 .game-riddle-clue{display:flex;flex-direction:column;gap:3px;margin:0}
 .game-riddle-clue>span{font-size:11px;font-weight:600;color:var(--muted)}
+.game-riddle-textarea{
+  width:100%;min-height:4.2rem;resize:vertical;white-space:pre-wrap;
+  font-size:13px;line-height:1.35;padding:8px 10px;border-radius:10px!important
+}
 .game-content-field{display:flex;flex-direction:column;gap:6px}
 .game-content-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em;text-transform:uppercase}
 .game-content-hint{margin:0;font-size:12px;line-height:1.35}

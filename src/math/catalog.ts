@@ -319,7 +319,7 @@ export const exerciseTypes: ExerciseType[] = [
     'jeux-devinettes',
     JEUX_LIBRE_TOPIC,
     'Devinettes',
-    '9 cartes : mot + image au recto, 3 phrases-indices au verso.',
+    '9 cartes : mot + image au recto, une phrase-indice au verso.',
     '',
     'texte',
     { preferredColumns: 1 },

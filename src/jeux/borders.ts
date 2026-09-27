@@ -135,12 +135,6 @@ export const GAME_BORDER_STYLES: GameBorderStyle[] = [
     verso: '/lib/images/jeux/borders/border-22-verso.webp',
   },
   {
-    id: '23',
-    label: 'Étoiles jaunes',
-    recto: '/lib/images/jeux/borders/border-23-recto.webp',
-    verso: '/lib/images/jeux/borders/border-23-verso.webp',
-  },
-  {
     id: '24',
     label: 'Bandes pastel',
     recto: '/lib/images/jeux/borders/border-24-recto.webp',

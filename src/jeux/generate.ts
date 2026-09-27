@@ -171,7 +171,7 @@ function vocab(entries: GameEntry[], rng: Rng): MathItem[] {
 
 /**
  * Devinettes recto-verso :
- * feuille 1 = mot + image, feuille 2 = 3 indices (miroir bord long).
+ * feuille 1 = mot + image, feuille 2 = une phrase-indice (miroir bord long).
  */
 function devinettes(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[] {
   const { cols, rows } = GRID
@@ -179,10 +179,10 @@ function devinettes(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[
     shuffle(rng, solidEntries(entries)).slice(0, cols * rows),
     topicId,
   )
-  const list = padEntries(enriched, cols * rows).map((e) => ({
-    ...e,
-    clues: e.clues && e.clues.length >= 3 ? e.clues.slice(0, 3) : ['…', '…', '…'],
-  }))
+  const list = padEntries(enriched, cols * rows).map((e) => {
+    const clue = (e.clues ?? []).join('\n').trim() || '…'
+    return { ...e, clues: [clue] }
+  })
   const recto: GameCard[] = list.map((e, i) => ({
     id: `dr-${i}`,
     text: e.text,
@@ -196,7 +196,7 @@ function devinettes(entries: GameEntry[], rng: Rng, topicId?: string): MathItem[
   )
   const verso: GameCard[] = versoMirrored.map(({ e, i }) => ({
     id: `dv-${i}`,
-    lines: e.clues,
+    text: e.clues[0] ?? '…',
     variant: 'clue' as const,
     badge: String(i + 1),
   }))

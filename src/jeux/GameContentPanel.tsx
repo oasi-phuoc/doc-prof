@@ -631,7 +631,7 @@ export function GameContentPanel({
                 : typeId === 'jeux-loto'
                   ? 'Grilles selon le nombre de mots (pas de cases vides) · lot animateur.'
                   : typeId === 'jeux-devinettes'
-                    ? '9 mots · 3 phrases-indices générées automatiquement (sans nommer le thème).'
+                    ? '9 mots · une phrase-indice par mot (retours à la ligne possibles).'
                     : typeId === 'jeux-intrus'
                       ? 'Mots du thème · à chaque génération, 9 cartes avec un nouvel intrus.'
                       : typeId === 'jeux-dominos'
@@ -641,14 +641,13 @@ export function GameContentPanel({
         </div>
         {typeId === 'jeux-devinettes' && selectedIds.length > 0 ? (
           <div className="game-riddle-bank-clues">
-            <b>Phrases-indices (modifiables)</b>
+            <b>Phrase-indice (modifiable)</b>
             <ul className="game-riddle-list" aria-label="Indices des mots sélectionnés">
               {resolveEntries(typeId, entries)
                 .filter((e) => e.text.trim())
                 .slice(0, maxCards)
                 .map((entry, index) => {
-                  const clues = [...(entry.clues ?? [])]
-                  while (clues.length < 3) clues.push('')
+                  const clue = (entry.clues ?? []).join('\n')
                   return (
                     <li className="game-riddle-block" key={`bank-riddle-${entry.text}-${index}`}>
                       <div className="game-riddle-head">
@@ -657,45 +656,38 @@ export function GameContentPanel({
                           <img className="vocab-word-thumb" src={entry.imageSrc} alt="" />
                         ) : null}
                       </div>
-                      <div className="game-riddle-clues">
-                        {[0, 1, 2].map((clueIndex) => (
-                          <label key={clueIndex} className="game-riddle-clue">
-                            <span>Phrase {clueIndex + 1}</span>
-                            <input
-                              className="pill-input"
-                              type="text"
-                              maxLength={80}
-                              value={clues[clueIndex] ?? ''}
-                              aria-label={`${entry.text}, phrase ${clueIndex + 1}`}
-                              placeholder={`Indice ${clueIndex + 1}`}
-                              onChange={(event) => {
-                                const resolved = resolveEntries(typeId, entries)
-                                const next = resolved.map((e) => {
-                                  if (e.text.trim().toLowerCase() !== entry.text.trim().toLowerCase()) {
-                                    return e
-                                  }
-                                  const nextClues = [...(e.clues ?? ['', '', ''])]
-                                  while (nextClues.length < 3) nextClues.push('')
-                                  nextClues[clueIndex] = event.target.value
-                                  return { ...e, clues: nextClues.slice(0, 3) }
-                                })
-                                onChange({
-                                  gameEntries: next,
-                                  gameText: entriesToText(typeId, next),
-                                  gameSource: source,
-                                  gameTopic: topicId,
-                                  gameSelectedIds: selectedIds,
-                                  gameBackColor,
-                                  gameSeriesName,
-                                  gameBorderId: borderRectoId,
-                                  gameBorderRectoId: borderRectoId,
-                                  gameBorderVersoId: borderVersoId,
-                                })
-                              }}
-                            />
-                          </label>
-                        ))}
-                      </div>
+                      <label className="game-riddle-clue">
+                        <span>Devinette</span>
+                        <textarea
+                          className="pill-input game-riddle-textarea"
+                          rows={3}
+                          maxLength={280}
+                          value={clue}
+                          aria-label={`${entry.text}, phrase-indice`}
+                          placeholder="Une phrase pour faire deviner le mot…"
+                          onChange={(event) => {
+                            const resolved = resolveEntries(typeId, entries)
+                            const next = resolved.map((e) => {
+                              if (e.text.trim().toLowerCase() !== entry.text.trim().toLowerCase()) {
+                                return e
+                              }
+                              return { ...e, clues: [event.target.value] }
+                            })
+                            onChange({
+                              gameEntries: next,
+                              gameText: entriesToText(typeId, next),
+                              gameSource: source,
+                              gameTopic: topicId,
+                              gameSelectedIds: selectedIds,
+                              gameBackColor,
+                              gameSeriesName,
+                              gameBorderId: borderRectoId,
+                              gameBorderRectoId: borderRectoId,
+                              gameBorderVersoId: borderVersoId,
+                            })
+                          }}
+                        />
+                      </label>
                     </li>
                   )
                 })}
@@ -721,7 +713,7 @@ export function GameContentPanel({
   const slots =
     withImages || typeId === 'jeux-devinettes'
       ? Array.from({ length: template.entryCount }, (_, i) =>
-          resolved[i] ?? { text: '', clues: typeId === 'jeux-devinettes' ? ['', '', ''] : undefined },
+          resolved[i] ?? { text: '', clues: typeId === 'jeux-devinettes' ? [''] : undefined },
         )
       : resolved
 
@@ -730,12 +722,8 @@ export function GameContentPanel({
     commitEntries(next, { gameSource: 'libre' })
   }
 
-  function updateClue(index: number, clueIndex: number, value: string) {
-    const entry = slots[index] ?? { text: '', clues: ['', '', ''] }
-    const clues = [...(entry.clues ?? ['', '', ''])]
-    while (clues.length < 3) clues.push('')
-    clues[clueIndex] = value
-    updateSlot(index, { clues: clues.slice(0, 3) })
+  function updateClue(index: number, value: string) {
+    updateSlot(index, { clues: [value] })
   }
 
   async function onPickImage(index: number, file: File | undefined) {
@@ -748,7 +736,7 @@ export function GameContentPanel({
     }
   }
 
-  // —— Devinettes : Mot N + image + 3 indices (pas de syntaxe | ) ——
+  // —— Devinettes : Mot N + image + une phrase (retours à la ligne OK) ——
   if (typeId === 'jeux-devinettes') {
     return (
       <div className="game-content-field">
@@ -765,8 +753,7 @@ export function GameContentPanel({
         <ul className="game-riddle-list" aria-label="Devinettes">
           {slots.map((entry, index) => {
             const inputId = `${baseId}-riddle-img-${index}`
-            const clues = [...(entry.clues ?? [])]
-            while (clues.length < 3) clues.push('')
+            const clue = (entry.clues ?? []).join('\n')
             return (
               <li className="game-riddle-block" key={`${typeId}-${index}`}>
                 <div className="game-riddle-head">
@@ -819,22 +806,18 @@ export function GameContentPanel({
                     <span className="game-entry-clear is-spacer" aria-hidden />
                   )}
                 </div>
-                <div className="game-riddle-clues">
-                  {[0, 1, 2].map((clueIndex) => (
-                    <label key={clueIndex} className="game-riddle-clue">
-                      <span>Indice {clueIndex + 1}</span>
-                      <input
-                        className="pill-input"
-                        type="text"
-                        maxLength={80}
-                        value={clues[clueIndex] ?? ''}
-                        aria-label={`Mot ${index + 1}, indice ${clueIndex + 1}`}
-                        placeholder={`Phrase ${clueIndex + 1}`}
-                        onChange={(event) => updateClue(index, clueIndex, event.target.value)}
-                      />
-                    </label>
-                  ))}
-                </div>
+                <label className="game-riddle-clue">
+                  <span>Devinette</span>
+                  <textarea
+                    className="pill-input game-riddle-textarea"
+                    rows={3}
+                    maxLength={280}
+                    value={clue}
+                    aria-label={`Mot ${index + 1}, phrase-indice`}
+                    placeholder="Une phrase pour faire deviner le mot…"
+                    onChange={(event) => updateClue(index, event.target.value)}
+                  />
+                </label>
               </li>
             )
           })}
@@ -845,7 +828,7 @@ export function GameContentPanel({
           </p>
         ) : (
           <small className="muted">
-            Recto mot + image · verso indices (miroir bord long).
+            Recto mot + image · verso phrase-indice (miroir bord long).
           </small>
         )}
       </div>

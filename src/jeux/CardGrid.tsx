@@ -103,14 +103,11 @@ function CardFace({
   }
 
   if (variant === 'clue') {
+    const clueText = (card.text ?? (card.lines ?? []).join('\n')).trim()
     return cardShell(
       'game-card is-clue is-verso-content',
       card,
-      <ol className="game-card-clues">
-        {(card.lines ?? []).map((line, i) => (
-          <li key={i}>{line}</li>
-        ))}
-      </ol>,
+      <p className="game-card-clue-text">{clueText}</p>,
       { borderSrc: border, hideBadge },
     )
   }

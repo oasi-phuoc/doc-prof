@@ -63,7 +63,7 @@ export const GAME_TEMPLATES: Record<string, GameTemplate> = {
     duplex: true,
     maxTextLen: 20,
     entryHint:
-      '9 cartes · 3 phrases-indices auto (sans nommer le thème) · verso miroir.',
+      '9 cartes · une phrase-indice par mot (retours à la ligne possibles) · verso miroir.',
   },
   'jeux-memory': {
     id: 'jeux-memory',
