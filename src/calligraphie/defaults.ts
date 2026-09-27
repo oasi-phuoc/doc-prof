@@ -24,7 +24,9 @@ export const DEFAULT_CALLI_PHRASES = [
 ]
 
 export function defaultCalliText(typeId: string): string {
-  if (typeId === 'calli-3-lignes') return DEFAULT_CALLI_PHRASES.join('\n')
+  if (typeId === 'calli-4-lignes' || typeId === 'calli-3-lignes') {
+    return DEFAULT_CALLI_PHRASES.join('\n')
+  }
   return DEFAULT_CALLI_WORDS.join('\n')
 }
 

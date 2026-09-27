@@ -407,19 +407,19 @@ export const exerciseTypes: ExerciseType[] = [
 
   // —— Calligraphie ——
   t(
-    'calli-5-lignes',
+    'calli-6-lignes',
     'calli-copie',
-    'Mots · 5 lignes',
-    'Mots en cursive sur bande à 5 lignes ; à recopier sur la même ligne.',
+    'Mots · 6 lignes',
+    'Mots en cursive liée sur bande à 6 lignes (texte sur la 4e) ; à recopier sur la même ligne.',
     'Recopiez chaque mot en écriture cursive sur la même ligne.',
     'texte',
     { preferredColumns: 1 },
   ),
   t(
-    'calli-3-lignes',
+    'calli-4-lignes',
     'calli-copie',
-    'Phrases · 3 lignes',
-    'Phrase modèle sur 3 lignes, puis bande vide pour recopier.',
+    'Phrases · 4 lignes',
+    'Phrase modèle sur 4 lignes (texte sur la 3e), puis bande vide pour recopier.',
     'Recopiez chaque phrase en écriture cursive.',
     'texte',
     { preferredColumns: 1 },

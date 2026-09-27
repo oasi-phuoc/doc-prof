@@ -8,11 +8,15 @@ export type CalligraphieBatch = {
 }
 
 /** Capacité approximative pour rester sur une A4 (en-tête + pied). */
-const MAX_SAME_LINE = 12
+const MAX_SAME_LINE = 11
 const MAX_COPY_BELOW = 5
 
 export function isCalligraphieType(typeId: string): boolean {
   return typeId.startsWith('calli-')
+}
+
+function isCopyBelowType(typeId: string): boolean {
+  return typeId === 'calli-4-lignes' || typeId === 'calli-3-lignes'
 }
 
 export function tryGenerateCalligraphieBatch(
@@ -25,7 +29,7 @@ export function tryGenerateCalligraphieBatch(
   const fallback = parseCalliLines(defaultCalliText(typeId))
   const entries = (raw.length > 0 ? raw : fallback).map((t) => t.slice(0, 80))
 
-  if (typeId === 'calli-3-lignes') {
+  if (isCopyBelowType(typeId)) {
     return {
       instruction: 'Recopiez chaque phrase en écriture cursive.',
       preferredColumns: 1,
@@ -36,7 +40,7 @@ export function tryGenerateCalligraphieBatch(
           prompt: '',
           calligraphy: {
             mode: 'copy-below',
-            ruleLines: 3,
+            ruleLines: 4,
             entries: entries.slice(0, MAX_COPY_BELOW),
           },
         },
@@ -44,7 +48,7 @@ export function tryGenerateCalligraphieBatch(
     }
   }
 
-  // calli-5-lignes (défaut)
+  // calli-6-lignes (et ancien id calli-5-lignes)
   return {
     instruction: 'Recopiez chaque mot en écriture cursive sur la même ligne.',
     preferredColumns: 1,
@@ -55,7 +59,7 @@ export function tryGenerateCalligraphieBatch(
         prompt: '',
         calligraphy: {
           mode: 'same-line',
-          ruleLines: 5,
+          ruleLines: 6,
           entries: entries.slice(0, MAX_SAME_LINE),
         },
       },

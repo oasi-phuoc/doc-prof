@@ -2063,9 +2063,10 @@ function GeneratorPage() {
                     onChange={(event) => updatePage({ calliText: event.target.value })}
                   />
                   <small className="muted">
-                    {activeBlock.exerciseType === 'calli-3-lignes'
-                      ? 'Une phrase par ligne · modèle sur 3 lignes + bande vide dessous.'
-                      : 'Un mot par ligne · modèle et copie sur la même bande à 5 lignes.'}
+                    {activeBlock.exerciseType === 'calli-4-lignes' ||
+                    activeBlock.exerciseType === 'calli-3-lignes'
+                      ? 'Une phrase par ligne · modèle sur 4 lignes (texte sur la 3e) + bande vide dessous.'
+                      : 'Un mot par ligne · modèle et copie sur la même bande à 6 lignes (texte sur la 4e).'}
                   </small>
                 </label>
               ) : null}

@@ -402,13 +402,13 @@ export type MathItem = {
     }>
   }
   /**
-   * Domaine Calligraphie : bandes lignées (3 ou 5) avec modèle cursif.
-   * - same-line : modèle + espace vide sur la même bande (5 lignes)
-   * - copy-below : modèle sur une bande, bande vide dessous (3 lignes)
+   * Domaine Calligraphie : bandes lignées (4 ou 6) avec modèle cursif lié.
+   * - same-line : modèle + espace vide sur la même bande (6 lignes, texte sur la 4e)
+   * - copy-below : modèle sur une bande, bande vide dessous (4 lignes, texte sur la 3e)
    */
   calligraphy?: {
     mode: 'same-line' | 'copy-below'
-    ruleLines: 3 | 5
+    ruleLines: 4 | 6
     entries: string[]
   }
 }
