@@ -279,7 +279,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
     board.borderVersoId !== undefined ? board.borderVersoId : board.borderId
   const side = board.side
   const boardStyle = {
-    '--game-word-px': gameFontSizePx(board.fontSize),
+    '--game-word-px': gameFontSizePx(board.fontSize, kind),
   } as CSSProperties
 
   if (kind === 'loto-page' || kind === 'loto-back') {

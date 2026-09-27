@@ -3,7 +3,7 @@ import type { Rng } from '@/math/rng'
 import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
 import { outsiderWordsFor, withAutoClues } from './clues'
-import { DEFAULT_GAME_FONT_SIZE, gameFontSizeById } from './font-size'
+import { DEFAULT_GAME_FONT_SIZE, gameFontSizeById, gameFontSizePx } from './font-size'
 import { resolveGameImageSrc } from './image-resolve'
 import { resolveEntries } from './parse'
 import { isJeuxType } from './templates'
@@ -497,26 +497,92 @@ function buildIntrusFromTheme(
   return groups
 }
 
-const SCATTER_ZONES = [
-  { x: 20, y: 24 },
-  { x: 74, y: 30 },
-  { x: 42, y: 52 },
-  { x: 24, y: 78 },
-  { x: 70, y: 74 },
-]
+/** Largeur / hauteur approx. d’un mot en % de la carte (centre = x,y). */
+function scatterWordSize(text: string, fontPx: number): { w: number; h: number } {
+  // Carte Intrus ≈ 52 mm ≈ 196 CSS px à l’impression ; marge de sécurité incluse.
+  const cardPx = 196
+  const w = Math.min(62, ((Math.max(1, text.length) * fontPx * 0.58) / cardPx) * 100)
+  const h = Math.min(28, ((fontPx * 1.25) / cardPx) * 100)
+  return { w, h }
+}
 
-function scatterWords(words: string[], rng: Rng): ScatterWord[] {
-  const zones = shuffle(rng, SCATTER_ZONES)
-  const angles = [-30, -22, -14, -8, 8, 12, 20, 28]
-  return words.map((text, i) => {
-    const zone = zones[i % zones.length]!
-    return {
-      text,
-      rotate: pick(rng, angles),
-      x: Math.min(88, Math.max(12, zone.x + int(rng, -6, 6))),
-      y: Math.min(88, Math.max(14, zone.y + int(rng, -5, 5))),
+function scatterAabb(
+  cx: number,
+  cy: number,
+  w: number,
+  h: number,
+  rotateDeg: number,
+): { x0: number; y0: number; x1: number; y1: number } {
+  const rad = (Math.abs(rotateDeg) * Math.PI) / 180
+  const cos = Math.cos(rad)
+  const sin = Math.sin(rad)
+  const aw = (w / 2) * cos + (h / 2) * sin
+  const ah = (w / 2) * sin + (h / 2) * cos
+  // Petit écart anti-chevauchement.
+  const pad = 1.8
+  return { x0: cx - aw - pad, y0: cy - ah - pad, x1: cx + aw + pad, y1: cy + ah + pad }
+}
+
+function aabbsOverlap(
+  a: { x0: number; y0: number; x1: number; y1: number },
+  b: { x0: number; y0: number; x1: number; y1: number },
+): boolean {
+  return a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0
+}
+
+/**
+ * Place 5 mots sans chevauchement, hors zone de bordure (~18 % de marge).
+ * Tentatives déterministes via rng ; repli sur une grille fixe si besoin.
+ */
+function scatterWords(words: string[], rng: Rng, fontSizeId?: string): ScatterWord[] {
+  const fontPx = gameFontSizePx(fontSizeId, 'intrus')
+  const angles = [-26, -18, -10, 10, 18, 26]
+  // Marge intérieure pour ne pas passer sous la bordure perso (padding carte ~6 mm).
+  const margin = 18
+  const minX = margin
+  const maxX = 100 - margin
+  const minY = margin
+  const maxY = 100 - margin
+
+  const placed: ScatterWord[] = []
+  const boxes: Array<{ x0: number; y0: number; x1: number; y1: number }> = []
+  const ordered = [...words].sort((a, b) => b.length - a.length)
+
+  for (const text of ordered) {
+    const { w, h } = scatterWordSize(text, fontPx)
+    let best: ScatterWord | undefined
+    for (let attempt = 0; attempt < 80; attempt++) {
+      const rotate = pick(rng, angles)
+      const halfW = scatterAabb(50, 50, w, h, rotate)
+      const spanX = (halfW.x1 - halfW.x0) / 2
+      const spanY = (halfW.y1 - halfW.y0) / 2
+      const x = int(rng, Math.ceil(minX + spanX), Math.floor(maxX - spanX))
+      const y = int(rng, Math.ceil(minY + spanY), Math.floor(maxY - spanY))
+      const box = scatterAabb(x, y, w, h, rotate)
+      if (box.x0 < minX || box.x1 > maxX || box.y0 < minY || box.y1 > maxY) continue
+      if (boxes.some((b) => aabbsOverlap(box, b))) continue
+      best = { text, rotate, x, y }
+      boxes.push(box)
+      break
     }
-  })
+    if (!best) {
+      // Repli : 5 slots fixes (losange) avec angles faibles.
+      const fallback = [
+        { x: 50, y: 28, rotate: -12 },
+        { x: 28, y: 48, rotate: 14 },
+        { x: 72, y: 48, rotate: -16 },
+        { x: 36, y: 74, rotate: 10 },
+        { x: 64, y: 74, rotate: -10 },
+      ]
+      const slot = fallback[placed.length % fallback.length]!
+      best = { text, rotate: slot.rotate, x: slot.x, y: slot.y }
+      boxes.push(scatterAabb(best.x, best.y, w, h, best.rotate))
+    }
+    placed.push(best)
+  }
+
+  // Remettre dans un ordre mélangé pour l’affichage (pas toujours les longs en premier).
+  return shuffle(rng, placed)
 }
 
 /**
@@ -530,18 +596,20 @@ function intrus(
   frameColor?: string,
   seriesName?: string,
   topicId?: string,
+  fontSizeId?: string,
 ): MathItem[] {
   const { cols, rows } = GRID
   const groups = buildIntrusFromTheme(entries, rng, topicId)
   const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
   const series = resolveSeriesName(seriesName, 'Intrus')
+  const sizeId = fontSizeId ?? DEFAULT_GAME_FONT_SIZE
   const recto: GameCard[] = groups.map((g, i) => {
     const five = shuffle(rng, [...g.words, g.intrus])
     return {
       id: `ir-${i}`,
       variant: 'scatter' as const,
       badge: String(i + 1),
-      scatter: scatterWords(five, rng),
+      scatter: scatterWords(five, rng, sizeId),
     }
   })
   const verso = makeSeriesBackCards(recto, cols, series, frame)
@@ -639,7 +707,14 @@ export function tryGenerateJeuxBatch(
       items = loto(entries, rng, options.gameTopic, options.gameSeriesName)
       break
     case 'jeux-intrus':
-      items = intrus(entries, rng, undefined, options.gameSeriesName, options.gameTopic)
+      items = intrus(
+        entries,
+        rng,
+        undefined,
+        options.gameSeriesName,
+        options.gameTopic,
+        options.gameFontSize,
+      )
       break
     case 'jeux-dominos':
       items = dominos(entries, rng, undefined, options.gameSeriesName)

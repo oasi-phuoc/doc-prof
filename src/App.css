@@ -1835,14 +1835,22 @@
 }
 .game-series-name>span{font-size:11px;font-weight:600;color:var(--muted)}
 .game-card.is-scatter{overflow:hidden}
+.game-board.is-intrus .game-card.is-scatter{
+  /* Zone utile à l’intérieur du padding / bordure perso */
+  padding:var(--game-content-inset,6mm)
+}
 .game-scatter{
-  position:relative;flex:1 1 auto;min-height:0;width:100%;height:100%
+  position:relative;flex:1 1 auto;min-height:0;width:100%;height:100%;
+  overflow:hidden
 }
 .game-scatter-word{
   position:absolute;transform:translate(-50%,-50%) rotate(var(--scatter-rot,0deg));
-  font-size:calc(var(--game-word-px,30) * 1.1 * 1px);font-weight:800;line-height:1.05;color:var(--jeux-ink);
-  white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis;
+  font-size:calc(var(--game-word-px,20) * 1px);font-weight:800;line-height:1.05;color:var(--jeux-ink);
+  white-space:nowrap;max-width:88%;overflow:hidden;text-overflow:ellipsis;
   pointer-events:none
+}
+.game-board.is-intrus .game-card.is-intrus-answer .game-card-word{
+  font-size:calc(var(--game-word-px,20) * 1.2 * 1px)
 }
 .game-card.is-intrus-answer{
   border:2.8mm solid var(--intrus-frame,#0f6b5c);

@@ -298,7 +298,11 @@ function SeriesIdentityFields({
             </button>
           ))}
         </div>
-        <small className="muted">Petit : 20 px · Moyen : 30 px · Grand : 40 px</small>
+        <small className="muted">
+          {typeId === 'jeux-intrus'
+            ? 'Petit : 15 px · Moyen : 20 px · Grand : 25 px'
+            : 'Petit : 20 px · Moyen : 30 px · Grand : 40 px'}
+        </small>
       </div>
     </div>
   )
