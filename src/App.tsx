@@ -80,6 +80,7 @@ import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { defaultThemeGameContent, isGameBankType, reshuffleGameContent } from '@/jeux/bank'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
+import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import { entriesToText } from '@/jeux/parse'
 import { isJeuxType, templateFor } from '@/jeux/templates'
 import {
@@ -1169,6 +1170,10 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
             prev?.exerciseType === type.id
               ? (prev.gameBorderVersoId ?? prev.gameBorderId)
               : undefined,
+          gameFontSize:
+            prev?.exerciseType === type.id
+              ? (prev.gameFontSize ?? DEFAULT_GAME_FONT_SIZE)
+              : DEFAULT_GAME_FONT_SIZE,
         }
       : {
           gameEntries: undefined,
@@ -1181,6 +1186,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameBorderId: undefined,
           gameBorderRectoId: undefined,
           gameBorderVersoId: undefined,
+          gameFontSize: undefined,
         }),
     ...(isCalli
       ? (() => {
@@ -1795,6 +1801,7 @@ function GeneratorPage() {
         fields.gameBorderVersoId !== undefined
           ? fields.gameBorderVersoId
           : fields.gameBorderId,
+      gameFontSize: fields.gameFontSize ?? DEFAULT_GAME_FONT_SIZE,
       calliText: fields.calliText,
       calliFont: fields.calliFont,
       calliSize: fields.calliSize,
@@ -2378,6 +2385,7 @@ function GeneratorPage() {
                       ? activeBlock.gameBorderVersoId
                       : activeBlock.gameBorderId
                   }
+                  gameFontSize={activeBlock.gameFontSize ?? DEFAULT_GAME_FONT_SIZE}
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}

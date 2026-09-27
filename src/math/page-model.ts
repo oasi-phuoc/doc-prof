@@ -44,6 +44,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     gameBorderId: page.gameBorderId,
     gameBorderRectoId: page.gameBorderRectoId,
     gameBorderVersoId: page.gameBorderVersoId,
+    gameFontSize: page.gameFontSize,
     calliText: page.calliText,
     calliFont: page.calliFont,
     calliSize: page.calliSize,

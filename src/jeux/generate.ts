@@ -3,6 +3,7 @@ import type { Rng } from '@/math/rng'
 import { int, pick, shuffle } from '@/math/rng'
 import type { MathItem } from '@/math/types'
 import { outsiderWordsFor, withAutoClues } from './clues'
+import { DEFAULT_GAME_FONT_SIZE, gameFontSizeById } from './font-size'
 import { resolveGameImageSrc } from './image-resolve'
 import { resolveEntries } from './parse'
 import { isJeuxType } from './templates'
@@ -28,17 +29,20 @@ export type JeuxGenerateOptions = {
   gameBorderRectoId?: string
   /** Bordure verso (01–15), optionnelle — indépendante du recto. */
   gameBorderVersoId?: string
+  /** Taille des mots (petit | moyen | grand). */
+  gameFontSize?: string
 }
 
-function withBoardBorder(
+function withBoardChrome(
   items: MathItem[],
   rectoId?: string,
   versoId?: string,
+  fontSizeId?: string,
 ): MathItem[] {
   // Conserver '' (= aucune) pour ne pas réinjecter l’autre face via borderId.
   const recto = (rectoId ?? '').trim()
   const verso = (versoId ?? '').trim()
-  if (!recto && !verso) return items
+  const fontSize = gameFontSizeById(fontSizeId ?? DEFAULT_GAME_FONT_SIZE).id
   return items.map((item) =>
     item.gameBoard
       ? {
@@ -48,6 +52,7 @@ function withBoardBorder(
             borderId: recto || verso || undefined,
             borderRectoId: recto,
             borderVersoId: verso,
+            fontSize,
           },
         }
       : item,
@@ -647,7 +652,7 @@ export function tryGenerateJeuxBatch(
     // Consigne catalogue masquée sur la feuille (cartes seules).
     instruction: '',
     preferredColumns: 1,
-    items: withBoardBorder(
+    items: withBoardChrome(
       items,
       options.gameBorderRectoId !== undefined
         ? options.gameBorderRectoId
@@ -655,6 +660,7 @@ export function tryGenerateJeuxBatch(
       options.gameBorderVersoId !== undefined
         ? options.gameBorderVersoId
         : options.gameBorderId,
+      options.gameFontSize,
     ),
   }
 }

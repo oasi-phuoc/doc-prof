@@ -1569,19 +1569,12 @@
 .game-card.is-series-back{
   --series-frame:var(--jeux-accent)
 }
-.game-border-block{display:flex;flex-direction:column;gap:8px;margin:0}
-.game-border-toggle{
-  display:flex;align-items:center;justify-content:space-between;gap:8px;
-  width:100%;text-align:left
-}
-.game-border-toggle.is-active{border-color:var(--purple);color:var(--purple)}
-.game-border-toggle-tag{
-  font-size:11px;font-weight:600;color:var(--muted);
-  max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
-}
-.game-border-picker-wrap{display:flex;flex-direction:column;gap:8px}
+.game-border-editor{margin:0}
+.game-border-editor-body{gap:10px}
 .game-border-face-tabs{width:100%}
 .game-border-face-tabs button{font-size:12px;padding:8px 10px}
+.game-font-size-block{margin:0}
+.game-font-size-block>b{font-size:13px}
 .game-custom-words{display:flex;flex-direction:column;gap:6px;margin-top:4px}
 .game-custom-word-list{
   list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px
@@ -1708,7 +1701,7 @@
 }
 .game-card.is-series-content .game-card-word{
   flex:1 1 auto;display:flex;align-items:center;justify-content:center;
-  font-size:42px;font-weight:800;line-height:1.1;padding:0 1mm
+  font-size:calc(var(--game-word-px,30) * 1.25 * 1px);font-weight:800;line-height:1.1;padding:0 1mm
 }
 .game-card.is-series-content .game-card-clues{
   flex:1 1 auto;font-size:9px;align-self:stretch
@@ -1760,37 +1753,40 @@
   width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:5px
 }
 .game-card-empty{display:block;width:100%;height:100%;min-height:12mm}
+.game-board{
+  --game-word-px:30
+}
 .game-card-word{
   font-size:11px;font-weight:700;line-height:1.2;text-align:center;color:var(--jeux-ink);
   word-break:break-word
 }
-/* Vocabulaire / Devinettes / Mémory : mots ×3, orientation vers le haut */
+/* Vocabulaire / Devinettes / Mémory : orientation vers le haut · taille via --game-word-px */
 .game-board.is-cards .game-card-word,
 .game-board.is-memory .game-card-word,
 .game-board.is-devinettes .game-card-word{
-  font-size:33px;font-weight:800;line-height:1.05;letter-spacing:.01em;
+  font-size:calc(var(--game-word-px,30) * 1px);font-weight:800;line-height:1.05;letter-spacing:.01em;
   writing-mode:vertical-rl;transform:rotate(180deg);
   max-height:100%;overflow:hidden;text-overflow:ellipsis;padding:0
 }
 .game-board.is-cards .game-card.is-verso-content .game-card-word{
-  font-size:45px
+  font-size:calc(var(--game-word-px,30) * 1.35 * 1px)
 }
-.game-board.is-memory .game-card-word{font-size:42px}
-.game-board.is-devinettes .game-card-word{font-size:51px}
-/* Loto / Intrus / Dominos : mots ×3, sens inchangé */
+.game-board.is-memory .game-card-word{font-size:calc(var(--game-word-px,30) * 1.25 * 1px)}
+.game-board.is-devinettes .game-card-word{font-size:calc(var(--game-word-px,30) * 1.5 * 1px)}
+/* Loto / Intrus / Dominos : sens inchangé · même base */
 .game-board.is-loto-page .game-card-word,
 .game-board.is-loto-call .game-card-word,
 .game-board.is-intrus .game-card-word,
 .game-board.is-dominos .game-domino-label{
-  font-size:33px;font-weight:800;line-height:1.1
+  font-size:calc(var(--game-word-px,30) * 1px);font-weight:800;line-height:1.1
 }
-.game-card-word.is-muted{color:var(--muted);font-weight:600;font-size:10px}
-.game-card-sub{display:block;font-size:8px;font-weight:600;color:var(--muted);text-align:center;margin-bottom:1mm}
+.game-card-word.is-muted{color:var(--muted);font-weight:600;font-size:calc(var(--game-word-px,30) * 0.35 * 1px)}
+.game-card-sub{display:block;font-size:calc(var(--game-word-px,30) * 0.28 * 1px);font-weight:600;color:var(--muted);text-align:center;margin-bottom:1mm}
 .game-card-clues{
-  margin:0;padding:0 0 0 3.5mm;font-size:9px;line-height:1.35;color:var(--jeux-ink);text-align:left
+  margin:0;padding:0 0 0 3.5mm;font-size:calc(var(--game-word-px,30) * 0.3 * 1px);line-height:1.35;color:var(--jeux-ink);text-align:left
 }
 .game-card-clue-text{
-  margin:0;font-size:11px;line-height:1.4;font-weight:600;color:var(--jeux-ink);
+  margin:0;font-size:calc(var(--game-word-px,30) * 0.47 * 1px);line-height:1.4;font-weight:600;color:var(--jeux-ink);
   text-align:center;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%
 }
 .game-card.is-true{background:color-mix(in srgb, var(--jeux-true) 12%, #fff);border-style:solid;border-color:var(--jeux-true)}
@@ -1803,7 +1799,9 @@
   border-style:solid;border-color:var(--jeux-accent)
 }
 .game-card.is-category .game-card-word,
-.game-card.is-family-head .game-card-word{font-size:12px;color:var(--jeux-accent)}
+.game-card.is-family-head .game-card-word{
+  font-size:calc(var(--game-word-px,30) * 0.4 * 1px);color:var(--jeux-accent)
+}
 .game-card.is-intrus{border-style:solid;border-color:var(--jeux-false)}
 .game-card.is-intrus .game-card-badge{background:var(--jeux-false);color:#fff;border-color:var(--jeux-false)}
 .game-board.is-intrus .game-card-grid{--game-card-gap:3mm}
@@ -1812,11 +1810,11 @@
 .game-board.is-tri .game-card{padding:1.6mm}
 .game-board.is-tri .game-card.is-word .game-card-word,
 .game-board.is-tri .game-card.is-category .game-card-word{
-  font-size:33px;font-weight:800;line-height:1.1
+  font-size:calc(var(--game-word-px,30) * 1px);font-weight:800;line-height:1.1
 }
 .game-board.is-tri .game-card.is-intrus-answer .game-card-word,
 .game-board.is-tri .game-card.is-series-back .game-series-label{
-  font-size:27px;font-weight:800;line-height:1.1;padding:0.5mm
+  font-size:calc(var(--game-word-px,30) * 0.9 * 1px);font-weight:800;line-height:1.1;padding:0.5mm
 }
 .game-board.is-tri .game-series-logo{width:9mm;height:9mm}
 .game-board.is-tri .game-series-logo-text{font-size:4.5px}
@@ -1831,7 +1829,7 @@
 }
 .game-scatter-word{
   position:absolute;transform:translate(-50%,-50%) rotate(var(--scatter-rot,0deg));
-  font-size:36px;font-weight:800;line-height:1.05;color:var(--jeux-ink);
+  font-size:calc(var(--game-word-px,30) * 1.1 * 1px);font-weight:800;line-height:1.05;color:var(--jeux-ink);
   white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis;
   pointer-events:none
 }
@@ -1840,7 +1838,7 @@
   border-radius:8px;justify-content:center;background:#fff
 }
 .game-card.is-intrus-answer .game-card-word{
-  font-size:48px;font-weight:800;line-height:1.05;padding:2mm
+  font-size:calc(var(--game-word-px,30) * 1.45 * 1px);font-weight:800;line-height:1.05;padding:2mm
 }
 .game-intrus-list{
   list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
@@ -1873,7 +1871,7 @@
   width:100%;height:100%;max-height:22mm;object-fit:contain;object-position:center;display:block
 }
 .game-domino-label{
-  font-size:36px;font-weight:800;text-align:center;line-height:1.1;color:var(--jeux-ink);
+  font-size:calc(var(--game-word-px,30) * 1.1 * 1px);font-weight:800;text-align:center;line-height:1.1;color:var(--jeux-ink);
   word-break:break-word
 }
 .game-domino-sep{
@@ -1921,7 +1919,7 @@
 }
 .loto-panel .game-card-image img{width:100%;height:100%;object-fit:contain;object-position:center}
 .loto-panel .game-card-word{
-  flex:1 1 auto;min-width:0;margin:0;font-size:30px;font-weight:800;text-align:left;line-height:1.05
+  flex:1 1 auto;min-width:0;margin:0;font-size:calc(var(--game-word-px,30) * 1px);font-weight:800;text-align:left;line-height:1.05
 }
 .loto-panel.is-back{
   border-style:solid;border-color:var(--jeux-accent);
@@ -1965,7 +1963,7 @@
 }
 .game-board.is-loto-call .game-card-word{
   flex:1 1 auto;min-width:0;margin:0;padding-right:2mm;
-  font-size:33px;font-weight:800;text-align:left;line-height:1.05
+  font-size:calc(var(--game-word-px,30) * 1px);font-weight:800;text-align:left;line-height:1.05
 }
 .game-board.is-loto-call .game-card.is-word{
   justify-content:flex-start;padding-left:2mm
@@ -1992,7 +1990,7 @@
 }
 .game-board.is-devinettes .game-card-clues,
 .game-board.is-devinettes .game-card-clue-text{
-  font-size:14px;line-height:1.45;font-weight:600;margin:0;text-align:center;
+  font-size:calc(var(--game-word-px,30) * 0.47 * 1px);line-height:1.45;font-weight:600;margin:0;text-align:center;
   white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;
   writing-mode:initial;transform:none
 }

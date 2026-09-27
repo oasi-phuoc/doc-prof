@@ -105,4 +105,6 @@ export type GameBoard = {
   borderVersoId?: string
   /** Face pour choisir l’image de bordure recto / verso. */
   side?: 'recto' | 'verso'
+  /** Taille des mots (petit | moyen | grand). */
+  fontSize?: string
 }

@@ -1082,6 +1082,7 @@ function buildSingleBlock(
       config.gameBorderVersoId !== undefined
         ? config.gameBorderVersoId
         : config.gameBorderId,
+    gameFontSize: config.gameFontSize,
   })
   if (jeux) {
     return {

@@ -12,6 +12,11 @@ import {
   type GameSource,
 } from './bank'
 import { GAME_BORDER_STYLES } from './borders'
+import {
+  DEFAULT_GAME_FONT_SIZE,
+  GAME_FONT_SIZES,
+  type GameFontSizeId,
+} from './font-size'
 import { resolveGameImageSrc } from './image-resolve'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from './image'
 import { entriesToText, resolveEntries, textToEntries } from './parse'
@@ -31,6 +36,7 @@ export type GameContentChange = {
   gameBorderId?: string
   gameBorderRectoId?: string
   gameBorderVersoId?: string
+  gameFontSize?: string
 }
 
 const SERIES_DEFAULTS: Record<string, string> = {
@@ -161,28 +167,32 @@ function SeriesIdentityFields({
   seriesName,
   borderRectoId,
   borderVersoId,
+  fontSize,
   onSeriesName,
   onBorderIds,
+  onFontSize,
 }: {
   typeId: string
   seriesName?: string
   borderRectoId?: string
   borderVersoId?: string
+  fontSize?: string
   onSeriesName: (name: string) => void
   onBorderIds: (recto: string | undefined, verso: string | undefined) => void
+  onFontSize: (size: GameFontSizeId) => void
 }) {
-  const [pickerOpen, setPickerOpen] = useState(false)
   const [faceTab, setFaceTab] = useState<'recto' | 'verso'>('recto')
   const recto = borderRectoId?.trim() || ''
   const verso = borderVersoId?.trim() || ''
   const active = faceTab === 'recto' ? recto : verso
+  const sizeId = (fontSize as GameFontSizeId | undefined) ?? DEFAULT_GAME_FONT_SIZE
   const previewSrc = (id: string, face: 'recto' | 'verso') => {
     const style = GAME_BORDER_STYLES.find((b) => b.id === id)
     if (!style) return undefined
     return face === 'verso' ? style.verso : style.recto
   }
-  const tagLabel = () => {
-    if (!recto && !verso) return null
+  const hintLabel = () => {
+    if (!recto && !verso) return 'Modifier'
     const r = GAME_BORDER_STYLES.find((b) => b.id === recto)?.label ?? (recto ? recto : 'Défaut')
     const v = GAME_BORDER_STYLES.find((b) => b.id === verso)?.label ?? (verso ? verso : 'Défaut')
     if (recto && verso && recto === verso) return r
@@ -206,85 +216,89 @@ function SeriesIdentityFields({
           />
         </label>
       ) : null}
-      <div className="game-border-block">
-        <button
-          type="button"
-          className={`button secondary game-border-toggle${pickerOpen ? ' is-open' : ''}${recto || verso ? ' is-active' : ''}`}
-          aria-expanded={pickerOpen}
-          aria-controls="game-border-picker"
-          onClick={() => {
-            setFaceTab('recto')
-            setPickerOpen((v) => !v)
-          }}
-        >
-          Bordure personnalisée
-          {tagLabel() ? <span className="game-border-toggle-tag">{tagLabel()}</span> : null}
-        </button>
-        {pickerOpen ? (
-          <div id="game-border-picker" className="game-border-picker-wrap">
-            <div className="mode-toggle is-2 game-border-face-tabs" role="tablist" aria-label="Face de la bordure">
+      <details className="header-editor game-border-editor">
+        <summary className="header-editor-summary">
+          <span>Bordure</span>
+          <span className="header-editor-hint">{hintLabel()}</span>
+        </summary>
+        <div className="custom-header-form game-border-editor-body">
+          <div className="mode-toggle is-2 game-border-face-tabs" role="tablist" aria-label="Face de la bordure">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={faceTab === 'recto'}
+              className={faceTab === 'recto' ? 'active' : ''}
+              onClick={() => setFaceTab('recto')}
+            >
+              Recto{recto ? ` · ${GAME_BORDER_STYLES.find((b) => b.id === recto)?.label ?? ''}` : ''}
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={faceTab === 'verso'}
+              className={faceTab === 'verso' ? 'active' : ''}
+              onClick={() => setFaceTab('verso')}
+            >
+              Verso{verso ? ` · ${GAME_BORDER_STYLES.find((b) => b.id === verso)?.label ?? ''}` : ''}
+            </button>
+          </div>
+          <div className="game-border-picker" role="listbox" aria-label={`Bordures ${faceTab}`}>
+            <button
+              type="button"
+              className={`game-border-option is-none${!active ? ' is-selected' : ''}`}
+              role="option"
+              aria-selected={!active}
+              onClick={() => {
+                if (faceTab === 'recto') onBorderIds('', verso)
+                else onBorderIds(recto, '')
+              }}
+            >
+              <span className="game-border-option-preview is-default" aria-hidden />
+              <span>Aucune (défaut)</span>
+            </button>
+            {GAME_BORDER_STYLES.map((style) => (
               <button
+                key={style.id}
                 type="button"
-                role="tab"
-                aria-selected={faceTab === 'recto'}
-                className={faceTab === 'recto' ? 'active' : ''}
-                onClick={() => setFaceTab('recto')}
-              >
-                Recto{recto ? ` · ${GAME_BORDER_STYLES.find((b) => b.id === recto)?.label ?? ''}` : ''}
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={faceTab === 'verso'}
-                className={faceTab === 'verso' ? 'active' : ''}
-                onClick={() => setFaceTab('verso')}
-              >
-                Verso{verso ? ` · ${GAME_BORDER_STYLES.find((b) => b.id === verso)?.label ?? ''}` : ''}
-              </button>
-            </div>
-            <div className="game-border-picker" role="listbox" aria-label={`Bordures ${faceTab}`}>
-              <button
-                type="button"
-                className={`game-border-option is-none${!active ? ' is-selected' : ''}`}
+                className={`game-border-option${active === style.id ? ' is-selected' : ''}`}
                 role="option"
-                aria-selected={!active}
+                aria-selected={active === style.id}
+                title={style.label}
                 onClick={() => {
-                  // '' = aucune bordure explicite (pas de repli sur l’autre face).
-                  if (faceTab === 'recto') onBorderIds('', verso)
-                  else onBorderIds(recto, '')
+                  if (faceTab === 'recto') onBorderIds(style.id, verso)
+                  else onBorderIds(recto, style.id)
                 }}
               >
-                <span className="game-border-option-preview is-default" aria-hidden />
-                <span>Aucune (défaut)</span>
+                <img
+                  className="game-border-option-preview"
+                  src={previewSrc(style.id, faceTab)}
+                  alt=""
+                  draggable={false}
+                />
+                <span>{style.label}</span>
               </button>
-              {GAME_BORDER_STYLES.map((style) => (
-                <button
-                  key={style.id}
-                  type="button"
-                  className={`game-border-option${active === style.id ? ' is-selected' : ''}`}
-                  role="option"
-                  aria-selected={active === style.id}
-                  title={style.label}
-                  onClick={() => {
-                    if (faceTab === 'recto') onBorderIds(style.id, verso)
-                    else onBorderIds(recto, style.id)
-                  }}
-                >
-                  <img
-                    className="game-border-option-preview"
-                    src={previewSrc(style.id, faceTab)}
-                    alt=""
-                    draggable={false}
-                  />
-                  <span>{style.label}</span>
-                </button>
-              ))}
-            </div>
+            ))}
           </div>
-        ) : null}
-        <small className="muted">
-          Même liste pour le recto et le verso — choisissez chaque face séparément.
-        </small>
+          <small className="muted">
+            Même liste pour le recto et le verso — choisissez chaque face séparément.
+          </small>
+        </div>
+      </details>
+      <div className="mode-toggle-block game-font-size-block">
+        <b>Taille</b>
+        <div className="mode-toggle is-3" role="group" aria-label="Taille des mots">
+          {GAME_FONT_SIZES.map((size) => (
+            <button
+              key={size.id}
+              type="button"
+              className={sizeId === size.id ? 'active' : ''}
+              onClick={() => onFontSize(size.id)}
+            >
+              {size.label}
+            </button>
+          ))}
+        </div>
+        <small className="muted">Petit : 20 px · Moyen : 30 px · Grand : 40 px</small>
       </div>
     </div>
   )
@@ -303,6 +317,7 @@ export function GameContentPanel({
   gameBorderId,
   gameBorderRectoId,
   gameBorderVersoId,
+  gameFontSize,
   onChange,
 }: {
   typeId: string
@@ -317,6 +332,7 @@ export function GameContentPanel({
   gameBorderId?: string
   gameBorderRectoId?: string
   gameBorderVersoId?: string
+  gameFontSize?: string
   onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
@@ -345,7 +361,26 @@ export function GameContentPanel({
     gameBorderRectoId !== undefined ? gameBorderRectoId : (gameBorderId ?? '')
   const borderVersoId =
     gameBorderVersoId !== undefined ? gameBorderVersoId : (gameBorderId ?? '')
+  const fontSize = gameFontSize ?? DEFAULT_GAME_FONT_SIZE
 
+  function chromeFields(): Pick<
+    GameContentChange,
+    | 'gameBackColor'
+    | 'gameSeriesName'
+    | 'gameBorderId'
+    | 'gameBorderRectoId'
+    | 'gameBorderVersoId'
+    | 'gameFontSize'
+  > {
+    return {
+      gameBackColor,
+      gameSeriesName,
+      gameBorderId: borderRectoId,
+      gameBorderRectoId: borderRectoId,
+      gameBorderVersoId: borderVersoId,
+      gameFontSize: fontSize,
+    }
+  }
 
   function commitEntries(nextEntries: GameEntry[], patch: Partial<GameContentChange> = {}) {
     setError(null)
@@ -355,11 +390,7 @@ export function GameContentPanel({
       gameSource: source,
       gameTopic: topicId,
       gameSelectedIds: selectedIds,
-      gameBackColor,
-      gameSeriesName,
-      gameBorderId: borderRectoId,
-      gameBorderRectoId: borderRectoId,
-      gameBorderVersoId: borderVersoId,
+      ...chromeFields(),
       ...patch,
     })
   }
@@ -399,11 +430,7 @@ export function GameContentPanel({
       gameSource: patch.gameSource ?? source,
       gameTopic: patch.gameTopic ?? topicId,
       gameSelectedIds: nextIds,
-      gameBackColor,
-      gameSeriesName,
-      gameBorderId: borderRectoId,
-      gameBorderRectoId: borderRectoId,
-      gameBorderVersoId: borderVersoId,
+      ...chromeFields(),
       ...patch,
     })
   }
@@ -433,11 +460,7 @@ export function GameContentPanel({
       gameSource: source,
       gameTopic: topicId,
       gameSelectedIds: mergedIds.slice(0, maxCards),
-      gameBackColor,
-      gameSeriesName,
-      gameBorderId: borderRectoId,
-      gameBorderRectoId: borderRectoId,
-      gameBorderVersoId: borderVersoId,
+      ...chromeFields(),
     })
   }
 
@@ -449,11 +472,8 @@ export function GameContentPanel({
       gameSource: source,
       gameTopic: topicId,
       gameSelectedIds: selectedIds,
-      gameBackColor,
+      ...chromeFields(),
       gameSeriesName: name,
-      gameBorderId: borderRectoId,
-      gameBorderRectoId: borderRectoId,
-      gameBorderVersoId: borderVersoId,
     })
   }
 
@@ -467,12 +487,24 @@ export function GameContentPanel({
       gameSource: source,
       gameTopic: topicId,
       gameSelectedIds: selectedIds,
-      gameBackColor,
-      gameSeriesName,
+      ...chromeFields(),
       // '' conserve le choix « aucune » (évite le repli via ?? gameBorderId).
       gameBorderId: r || v || undefined,
       gameBorderRectoId: r,
       gameBorderVersoId: v,
+    })
+  }
+
+  function setFontSize(size: GameFontSizeId) {
+    const resolvedNow = resolveEntries(typeId, entries)
+    onChange({
+      gameEntries: resolvedNow,
+      gameText: entriesToText(typeId, resolvedNow),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: selectedIds,
+      ...chromeFields(),
+      gameFontSize: size,
     })
   }
 
@@ -683,11 +715,7 @@ export function GameContentPanel({
                               gameSource: source,
                               gameTopic: topicId,
                               gameSelectedIds: selectedIds,
-                              gameBackColor,
-                              gameSeriesName,
-                              gameBorderId: borderRectoId,
-                              gameBorderRectoId: borderRectoId,
-                              gameBorderVersoId: borderVersoId,
+                              ...chromeFields(),
                             })
                           }}
                         />
@@ -704,8 +732,10 @@ export function GameContentPanel({
             seriesName={gameSeriesName}
             borderRectoId={borderRectoId}
             borderVersoId={borderVersoId}
+            fontSize={fontSize}
             onSeriesName={setSeriesName}
             onBorderIds={setBorderIds}
+            onFontSize={setFontSize}
           />
         ) : null}
       </div>
@@ -751,8 +781,10 @@ export function GameContentPanel({
           seriesName={gameSeriesName}
           borderRectoId={borderRectoId}
           borderVersoId={borderVersoId}
+          fontSize={fontSize}
           onSeriesName={setSeriesName}
           onBorderIds={setBorderIds}
+          onFontSize={setFontSize}
         />
         <ul className="game-riddle-list" aria-label="Devinettes">
           {slots.map((entry, index) => {
@@ -959,8 +991,10 @@ export function GameContentPanel({
           seriesName={gameSeriesName}
           borderRectoId={borderRectoId}
           borderVersoId={borderVersoId}
+          fontSize={fontSize}
           onSeriesName={setSeriesName}
           onBorderIds={setBorderIds}
+          onFontSize={setFontSize}
         />
       ) : null}
     </div>

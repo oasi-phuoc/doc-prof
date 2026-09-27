@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { gameBorderSrc } from './borders'
+import { gameFontSizePx } from './font-size'
 import type { GameBoard, GameCard, GamePanel } from './types'
 
 /** Logo ClairFLE (cercle) + libellé de série — dos identification (Mémory, etc.). */
@@ -281,11 +282,14 @@ export function CardGrid({ board }: { board: GameBoard }) {
   const borderVersoId =
     board.borderVersoId !== undefined ? board.borderVersoId : board.borderId
   const side = board.side
+  const boardStyle = {
+    '--game-word-px': gameFontSizePx(board.fontSize),
+  } as CSSProperties
 
   if (kind === 'loto-page' || kind === 'loto-back') {
     const mode = kind === 'loto-back' ? 'back' : 'page'
     return (
-      <div className={`game-board is-${kind}`}>
+      <div className={`game-board is-${kind}`} style={boardStyle}>
         <div className="loto-panels" aria-label="Grilles de loto">
           {(board.panels ?? []).map((panel, index) => (
             <LotoPanelFace
@@ -309,7 +313,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
     kind === 'cards'
 
   return (
-    <div className={`game-board is-${kind}${ludic ? ' is-ludic' : ''}`}>
+    <div className={`game-board is-${kind}${ludic ? ' is-ludic' : ''}`} style={boardStyle}>
       <div
         className="game-card-grid"
         style={

@@ -547,6 +547,8 @@ export type ExerciseBlock = {
   gameBorderRectoId?: string
   /** Bordure verso des cartes (id 01–15), optionnelle. */
   gameBorderVersoId?: string
+  /** Taille des mots sur les cartes (petit | moyen | grand). */
+  gameFontSize?: string
   /**
    * Domaine Calligraphie : un mot ou une phrase par ligne
    * (texte brut du panneau enseignant·e).
