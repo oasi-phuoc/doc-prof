@@ -1784,9 +1784,17 @@ function GeneratorPage() {
       gameSelectedIds: fields.gameSelectedIds,
       gameBackColor: fields.gameBackColor,
       gameSeriesName: fields.gameSeriesName,
-      gameBorderId: fields.gameBorderRectoId ?? fields.gameBorderId,
-      gameBorderRectoId: fields.gameBorderRectoId ?? fields.gameBorderId,
-      gameBorderVersoId: fields.gameBorderVersoId ?? fields.gameBorderId,
+      gameBorderId:
+        (fields.gameBorderRectoId || fields.gameBorderVersoId || fields.gameBorderId) || undefined,
+      // '' = aucune bordure explicite (ne pas replier sur gameBorderId).
+      gameBorderRectoId:
+        fields.gameBorderRectoId !== undefined
+          ? fields.gameBorderRectoId
+          : fields.gameBorderId,
+      gameBorderVersoId:
+        fields.gameBorderVersoId !== undefined
+          ? fields.gameBorderVersoId
+          : fields.gameBorderId,
       calliText: fields.calliText,
       calliFont: fields.calliFont,
       calliSize: fields.calliSize,
@@ -2360,8 +2368,16 @@ function GeneratorPage() {
                   gameBackColor={activeBlock.gameBackColor}
                   gameSeriesName={activeBlock.gameSeriesName}
                   gameBorderId={activeBlock.gameBorderId}
-                  gameBorderRectoId={activeBlock.gameBorderRectoId ?? activeBlock.gameBorderId}
-                  gameBorderVersoId={activeBlock.gameBorderVersoId ?? activeBlock.gameBorderId}
+                  gameBorderRectoId={
+                    activeBlock.gameBorderRectoId !== undefined
+                      ? activeBlock.gameBorderRectoId
+                      : activeBlock.gameBorderId
+                  }
+                  gameBorderVersoId={
+                    activeBlock.gameBorderVersoId !== undefined
+                      ? activeBlock.gameBorderVersoId
+                      : activeBlock.gameBorderId
+                  }
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}

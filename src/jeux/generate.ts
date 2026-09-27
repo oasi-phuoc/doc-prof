@@ -35,8 +35,9 @@ function withBoardBorder(
   rectoId?: string,
   versoId?: string,
 ): MathItem[] {
-  const recto = rectoId?.trim() || undefined
-  const verso = versoId?.trim() || undefined
+  // Conserver '' (= aucune) pour ne pas réinjecter l’autre face via borderId.
+  const recto = (rectoId ?? '').trim()
+  const verso = (versoId ?? '').trim()
   if (!recto && !verso) return items
   return items.map((item) =>
     item.gameBoard
@@ -44,7 +45,7 @@ function withBoardBorder(
           ...item,
           gameBoard: {
             ...item.gameBoard,
-            borderId: recto ?? verso,
+            borderId: recto || verso || undefined,
             borderRectoId: recto,
             borderVersoId: verso,
           },
@@ -648,8 +649,12 @@ export function tryGenerateJeuxBatch(
     preferredColumns: 1,
     items: withBoardBorder(
       items,
-      options.gameBorderRectoId ?? options.gameBorderId,
-      options.gameBorderVersoId ?? options.gameBorderId,
+      options.gameBorderRectoId !== undefined
+        ? options.gameBorderRectoId
+        : options.gameBorderId,
+      options.gameBorderVersoId !== undefined
+        ? options.gameBorderVersoId
+        : options.gameBorderId,
     ),
   }
 }

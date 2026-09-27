@@ -186,6 +186,8 @@ function SeriesIdentityFields({
     const r = GAME_BORDER_STYLES.find((b) => b.id === recto)?.label ?? (recto ? recto : 'Défaut')
     const v = GAME_BORDER_STYLES.find((b) => b.id === verso)?.label ?? (verso ? verso : 'Défaut')
     if (recto && verso && recto === verso) return r
+    if (!recto) return `Défaut · ${v}`
+    if (!verso) return `${r} · Défaut`
     return `${r} · ${v}`
   }
   return (
@@ -247,8 +249,9 @@ function SeriesIdentityFields({
                 role="option"
                 aria-selected={!active}
                 onClick={() => {
-                  if (faceTab === 'recto') onBorderIds(undefined, verso || undefined)
-                  else onBorderIds(recto || undefined, undefined)
+                  // '' = aucune bordure explicite (pas de repli sur l’autre face).
+                  if (faceTab === 'recto') onBorderIds('', verso)
+                  else onBorderIds(recto, '')
                 }}
               >
                 <span className="game-border-option-preview is-default" aria-hidden />
@@ -263,13 +266,8 @@ function SeriesIdentityFields({
                   aria-selected={active === style.id}
                   title={style.label}
                   onClick={() => {
-                    if (faceTab === 'recto') {
-                      // Première sélection recto : même style au verso s’il est vide.
-                      const nextVerso = verso || style.id
-                      onBorderIds(style.id, nextVerso)
-                    } else {
-                      onBorderIds(recto || undefined, style.id)
-                    }
+                    if (faceTab === 'recto') onBorderIds(style.id, verso)
+                    else onBorderIds(recto, style.id)
                   }}
                 >
                   <img
@@ -342,8 +340,11 @@ export function GameContentPanel({
 
   const selectedIds = gameSelectedIds ?? []
   const topicOptions = source === 'lecture' ? lectureTopicOptions() : themeTopicOptions()
-  const borderRectoId = gameBorderRectoId ?? gameBorderId
-  const borderVersoId = gameBorderVersoId ?? gameBorderId
+  // '' = défaut explicite ; undefined seul → héritage de gameBorderId (anciennes fiches).
+  const borderRectoId =
+    gameBorderRectoId !== undefined ? gameBorderRectoId : (gameBorderId ?? '')
+  const borderVersoId =
+    gameBorderVersoId !== undefined ? gameBorderVersoId : (gameBorderId ?? '')
 
 
   function commitEntries(nextEntries: GameEntry[], patch: Partial<GameContentChange> = {}) {
@@ -458,6 +459,8 @@ export function GameContentPanel({
 
   function setBorderIds(recto: string | undefined, verso: string | undefined) {
     const resolvedNow = resolveEntries(typeId, entries)
+    const r = (recto ?? '').trim()
+    const v = (verso ?? '').trim()
     onChange({
       gameEntries: resolvedNow,
       gameText: entriesToText(typeId, resolvedNow),
@@ -466,9 +469,10 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       gameBackColor,
       gameSeriesName,
-      gameBorderId: recto,
-      gameBorderRectoId: recto,
-      gameBorderVersoId: verso,
+      // '' conserve le choix « aucune » (évite le repli via ?? gameBorderId).
+      gameBorderId: r || v || undefined,
+      gameBorderRectoId: r,
+      gameBorderVersoId: v,
     })
   }
 

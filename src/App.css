@@ -1479,6 +1479,8 @@
 }
 .game-card{
   --game-card-frame:2.2mm;
+  /* Zone contenu réduite en permanence (cadre décoratif ou bordure simple). */
+  --game-content-inset:6mm;
   position:relative;
   box-sizing:border-box;
   min-height:28mm;
@@ -1486,7 +1488,7 @@
   border:1.5px dashed var(--jeux-cut);
   border-radius:var(--jeux-card-radius);
   background:#fff;
-  padding:2.5mm;
+  padding:var(--game-content-inset);
   overflow:hidden
 }
 /*
@@ -1499,16 +1501,16 @@
   border-style:solid;
   box-shadow:inset 0 0 0 0.75mm #fff;
   border-radius:3.2mm;
-  padding:2mm
+  padding:var(--game-content-inset)
 }
 /* Bordure personnalisée (images recto/verso) — optionnelle */
 .game-card.has-custom-border,
 .loto-panel.has-custom-border{
-  --game-border-inset:6mm;
+  --game-border-inset:var(--game-content-inset,6mm);
   background:#fff!important;
   border:1px dashed var(--jeux-cut)!important;
   box-shadow:none!important;
-  /* Marge intérieure pour que l’image/mot ne soit pas masqué par le cadre décoratif */
+  /* Même inset que sans bordure perso — l’image/mot reste dans la zone utile */
   padding:var(--game-border-inset)!important
 }
 .game-card-border{
@@ -1547,7 +1549,8 @@
 }
 /* Verso mot : badge petit en haut (cercle), mot centré — ne chevauche pas la bordure */
 .game-card.is-verso-content{
-  justify-content:center;align-items:center;gap:0;padding:5mm 3.5mm 3mm
+  justify-content:center;align-items:center;gap:0;
+  padding:var(--game-content-inset,6mm)
 }
 .game-card.is-verso-content .game-card-badge{
   top:2.4mm;right:auto;left:50%;transform:translateX(-50%);
@@ -1557,7 +1560,7 @@
 .game-card.is-verso-content .game-card-word{
   flex:1 1 auto;display:flex;align-items:center;justify-content:center;
   width:100%;font-size:15px;font-weight:800;line-height:1.15;text-align:center;
-  padding:3mm 2mm 1mm;margin:0
+  padding:0;margin:0
 }
 .game-board.is-ludic .game-card.is-verso-content,
 .game-board.is-ludic .game-card.is-series-back{
@@ -1681,7 +1684,7 @@
   border-radius:3.2mm;
   border-style:solid;
   background:#fff;
-  justify-content:center;padding:2mm;min-height:0;height:100%;
+  justify-content:center;padding:var(--game-content-inset);min-height:0;height:100%;
   box-shadow:inset 0 0 0 0.75mm #fff
 }
 /* Verso contenu brandé (vocab mots / devinettes indices) */
@@ -1690,7 +1693,7 @@
   border-radius:3.2mm;
   border-style:solid;
   background:#fff;
-  justify-content:center;gap:1.5mm;padding:2mm;min-height:0;height:100%;
+  justify-content:center;gap:1.5mm;padding:var(--game-content-inset);min-height:0;height:100%;
   box-shadow:inset 0 0 0 0.75mm #fff
 }
 .game-card.is-series-content .game-series-back{
@@ -1705,7 +1708,7 @@
 }
 .game-card.is-series-content .game-card-word{
   flex:1 1 auto;display:flex;align-items:center;justify-content:center;
-  font-size:14px;font-weight:800;line-height:1.15;padding:0 1mm
+  font-size:42px;font-weight:800;line-height:1.1;padding:0 1mm
 }
 .game-card.is-series-content .game-card-clues{
   flex:1 1 auto;font-size:9px;align-self:stretch
@@ -1761,6 +1764,26 @@
   font-size:11px;font-weight:700;line-height:1.2;text-align:center;color:var(--jeux-ink);
   word-break:break-word
 }
+/* Vocabulaire / Devinettes / Mémory : mots ×3, orientation vers le haut */
+.game-board.is-cards .game-card-word,
+.game-board.is-memory .game-card-word,
+.game-board.is-devinettes .game-card-word{
+  font-size:33px;font-weight:800;line-height:1.05;letter-spacing:.01em;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  max-height:100%;overflow:hidden;text-overflow:ellipsis;padding:0
+}
+.game-board.is-cards .game-card.is-verso-content .game-card-word{
+  font-size:45px
+}
+.game-board.is-memory .game-card-word{font-size:42px}
+.game-board.is-devinettes .game-card-word{font-size:51px}
+/* Loto / Intrus / Dominos : mots ×3, sens inchangé */
+.game-board.is-loto-page .game-card-word,
+.game-board.is-loto-call .game-card-word,
+.game-board.is-intrus .game-card-word,
+.game-board.is-dominos .game-domino-label{
+  font-size:33px;font-weight:800;line-height:1.1
+}
 .game-card-word.is-muted{color:var(--muted);font-weight:600;font-size:10px}
 .game-card-sub{display:block;font-size:8px;font-weight:600;color:var(--muted);text-align:center;margin-bottom:1mm}
 .game-card-clues{
@@ -1789,11 +1812,11 @@
 .game-board.is-tri .game-card{padding:1.6mm}
 .game-board.is-tri .game-card.is-word .game-card-word,
 .game-board.is-tri .game-card.is-category .game-card-word{
-  font-size:11px;font-weight:800;line-height:1.15
+  font-size:33px;font-weight:800;line-height:1.1
 }
 .game-board.is-tri .game-card.is-intrus-answer .game-card-word,
 .game-board.is-tri .game-card.is-series-back .game-series-label{
-  font-size:9px;font-weight:800;line-height:1.15;padding:0.5mm
+  font-size:27px;font-weight:800;line-height:1.1;padding:0.5mm
 }
 .game-board.is-tri .game-series-logo{width:9mm;height:9mm}
 .game-board.is-tri .game-series-logo-text{font-size:4.5px}
@@ -1808,7 +1831,7 @@
 }
 .game-scatter-word{
   position:absolute;transform:translate(-50%,-50%) rotate(var(--scatter-rot,0deg));
-  font-size:12px;font-weight:800;line-height:1.1;color:var(--jeux-ink);
+  font-size:36px;font-weight:800;line-height:1.05;color:var(--jeux-ink);
   white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis;
   pointer-events:none
 }
@@ -1817,7 +1840,7 @@
   border-radius:8px;justify-content:center;background:#fff
 }
 .game-card.is-intrus-answer .game-card-word{
-  font-size:16px;font-weight:800;line-height:1.15;padding:2mm
+  font-size:48px;font-weight:800;line-height:1.05;padding:2mm
 }
 .game-intrus-list{
   list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;gap:10px;
@@ -1850,7 +1873,7 @@
   width:100%;height:100%;max-height:22mm;object-fit:contain;object-position:center;display:block
 }
 .game-domino-label{
-  font-size:12px;font-weight:800;text-align:center;line-height:1.15;color:var(--jeux-ink);
+  font-size:36px;font-weight:800;text-align:center;line-height:1.1;color:var(--jeux-ink);
   word-break:break-word
 }
 .game-domino-sep{
@@ -1872,9 +1895,10 @@
   flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:3mm
 }
 .loto-panel{
+  --game-content-inset:6mm;
   flex:1 1 0;min-height:0;
   border:1.6px dashed var(--jeux-cut);
-  border-radius:7px;padding:2.5mm 3mm;
+  border-radius:7px;padding:var(--game-content-inset);
   display:flex;flex-direction:column;background:#fff;
   box-sizing:border-box
 }
@@ -1888,7 +1912,8 @@
   align-content:stretch;--game-card-gap:1.8mm
 }
 .loto-panel .game-card{
-  min-height:0;height:100%;aspect-ratio:auto;padding:1.2mm 1.5mm;border-style:solid;border-color:var(--jeux-line);
+  --game-content-inset:2mm;
+  min-height:0;height:100%;aspect-ratio:auto;padding:var(--game-content-inset);border-style:solid;border-color:var(--jeux-line);
   flex-direction:row;align-items:center;justify-content:flex-start;gap:1.8mm
 }
 .loto-panel .game-card-image{
@@ -1896,7 +1921,7 @@
 }
 .loto-panel .game-card-image img{width:100%;height:100%;object-fit:contain;object-position:center}
 .loto-panel .game-card-word{
-  flex:1 1 auto;min-width:0;margin:0;font-size:10px;font-weight:800;text-align:left;line-height:1.15
+  flex:1 1 auto;min-width:0;margin:0;font-size:30px;font-weight:800;text-align:left;line-height:1.05
 }
 .loto-panel.is-back{
   border-style:solid;border-color:var(--jeux-accent);
@@ -1927,7 +1952,8 @@
 }
 /* Lot animateur : image complète à gauche, mot à droite (pas de rognage). */
 .game-board.is-loto-call .game-card{
-  min-height:0;height:100%;aspect-ratio:auto;padding:1.2mm 2mm;border-style:solid;
+  --game-content-inset:3mm;
+  min-height:0;height:100%;aspect-ratio:auto;padding:var(--game-content-inset);border-style:solid;
   flex-direction:row;align-items:center;justify-content:flex-start;gap:2.5mm
 }
 .game-board.is-loto-call .game-card-image{
@@ -1938,8 +1964,8 @@
   width:100%;height:100%;object-fit:contain;object-position:center
 }
 .game-board.is-loto-call .game-card-word{
-  flex:1 1 auto;min-width:0;margin:0;padding-right:5mm;
-  font-size:11px;font-weight:800;text-align:left;line-height:1.15
+  flex:1 1 auto;min-width:0;margin:0;padding-right:2mm;
+  font-size:33px;font-weight:800;text-align:left;line-height:1.05
 }
 .game-board.is-loto-call .game-card.is-word{
   justify-content:flex-start;padding-left:2mm
@@ -1951,31 +1977,37 @@
 }
 .game-board.is-bands .game-card-grid{gap:2mm}
 .game-board.is-devinettes .game-card-grid{--game-card-gap:3.5mm}
-.game-board.is-devinettes .game-card{padding:3mm}
+.game-board.is-devinettes .game-card{padding:var(--game-content-inset)}
 .game-board.is-devinettes .game-card-image{
-  min-height:0;margin-bottom:2.5mm;flex:1 1 auto;background:#fff
+  min-height:0;margin-bottom:2mm;flex:1 1 auto;background:#fff
 }
 .game-board.is-devinettes .game-card-image img{
   width:100%;height:100%;object-fit:contain;object-position:center
 }
 .game-board.is-devinettes .game-card-word{
-  font-size:17px;font-weight:800;line-height:1.15;letter-spacing:.01em;flex:0 0 auto
+  flex:0 1 auto;max-width:42%
 }
 .game-board.is-devinettes .game-card.is-clue{
-  justify-content:center;padding:5mm 4mm
+  justify-content:center;padding:var(--game-content-inset)
 }
 .game-board.is-devinettes .game-card-clues,
 .game-board.is-devinettes .game-card-clue-text{
   font-size:14px;line-height:1.45;font-weight:600;margin:0;text-align:center;
-  white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%
+  white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;
+  writing-mode:initial;transform:none
 }
 .game-board.is-devinettes .game-card-badge{
   min-width:6mm;height:6mm;font-size:10px
 }
 .game-board.is-memory .game-card-grid{--game-card-gap:3mm}
-.game-board.is-memory .game-card{padding:3mm}
+.game-board.is-memory .game-card{padding:var(--game-content-inset)}
 .game-board.is-memory .game-card-image{min-height:0;flex:1 1 auto;margin-bottom:1.5mm}
-.game-board.is-memory .game-card-word{font-size:14px;font-weight:800}
+.game-board.is-memory .game-card-word{flex:0 1 auto;max-width:42%}
+.game-board.is-intrus .game-card,
+.game-board.is-dominos .game-card,
+.game-board.is-cards .game-card{
+  padding:var(--game-content-inset)
+}
 .game-card.is-back{
   background:var(--game-back,#fff);
   border-style:dashed;min-height:0

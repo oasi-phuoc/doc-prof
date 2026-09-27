@@ -276,8 +276,10 @@ function LotoPanelFace({
 
 export function CardGrid({ board }: { board: GameBoard }) {
   const kind = board.kind ?? 'cards'
-  const borderRectoId = board.borderRectoId ?? board.borderId
-  const borderVersoId = board.borderVersoId ?? board.borderId
+  const borderRectoId =
+    board.borderRectoId !== undefined ? board.borderRectoId : board.borderId
+  const borderVersoId =
+    board.borderVersoId !== undefined ? board.borderVersoId : board.borderId
   const side = board.side
 
   if (kind === 'loto-page' || kind === 'loto-back') {

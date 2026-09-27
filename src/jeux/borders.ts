@@ -177,13 +177,19 @@ export function gameBorderById(id?: string): GameBorderStyle | undefined {
   return GAME_BORDER_STYLES.find((b) => b.id === id)
 }
 
-/** Image de bordure pour une face (ids recto / verso indépendants). */
+/**
+ * Image de bordure pour une face.
+ * Pas de repli vers l’autre face : « Aucune (défaut) » reste bien sans cadre.
+ * Chaîne vide = aucune bordure (choix explicite).
+ */
 export function gameBorderSrc(
   rectoId: string | undefined,
   face: 'recto' | 'verso',
   versoId?: string,
 ): string | undefined {
-  const id = (face === 'verso' ? versoId || rectoId : rectoId || versoId)?.trim()
+  const raw = face === 'verso' ? versoId : rectoId
+  const id = raw?.trim()
+  if (!id) return undefined
   const style = gameBorderById(id)
   if (!style) return undefined
   return face === 'verso' ? style.verso : style.recto
