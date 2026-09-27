@@ -1,5 +1,21 @@
-import type { MathItem } from '@/math/types'
-import { defaultCalliText, parseCalliLines } from './defaults'
+import type { Difficulty, MathItem } from '@/math/types'
+import { createRng, pick, shuffle, type Rng } from '@/math/rng'
+import {
+  defaultVocabSubgroup,
+  vocabLevelFromDifficulty,
+  vocabLearnWordsFor,
+  type VocabLevel,
+  type VocabWordEntry,
+} from '@/francais/vocab-learn'
+import {
+  DEFAULT_CALLI_PHRASE_COUNT,
+  DEFAULT_CALLI_WORD_COUNT,
+  MAX_CALLI_LINE_CHARS,
+  defaultCalliText,
+  isCalliPhrasesType,
+  joinCalliLines,
+  parseCalliLines,
+} from './defaults'
 import {
   DEFAULT_CALLI_FONT,
   DEFAULT_CALLI_SIZE,
@@ -8,6 +24,7 @@ import {
   type CalliFontId,
   type CalliSizeId,
 } from './fonts'
+import { frTopicFromCalliTopic, isCalliLibreTopic } from './topics'
 
 export type CalligraphieBatch = {
   items: MathItem[]
@@ -15,8 +32,20 @@ export type CalligraphieBatch = {
   preferredColumns?: number
 }
 
+export type CalliReshuffleInput = {
+  exerciseType: string
+  topic: string
+  difficulty?: Difficulty
+  calliText?: string
+  calliFont?: string
+  calliSize?: string
+  vocabSubgroup?: string
+  /** Nombre de champs souhaité (sinon dérivé du texte / défauts). */
+  countHint?: number
+}
+
 /** Capacité selon la taille (bande plus haute → moins d’entrées). */
-function maxEntries(mode: 'same-line' | 'copy-below', sizeId: string): number {
+export function maxCalliEntries(mode: 'same-line' | 'copy-below', sizeId: string): number {
   const size = calliSizeById(sizeId)
   if (mode === 'copy-below') {
     if (size.id === 'grand') return 3
@@ -29,11 +58,86 @@ function maxEntries(mode: 'same-line' | 'copy-below', sizeId: string): number {
 }
 
 export function isCalligraphieType(typeId: string): boolean {
-  return typeId.startsWith('calli-')
+  return (
+    typeId === 'calli-mots' ||
+    typeId === 'calli-phrases' ||
+    typeId === 'calli-6-lignes' ||
+    typeId === 'calli-4-lignes' ||
+    typeId === 'calli-5-lignes' ||
+    typeId === 'calli-3-lignes' ||
+    (typeId.startsWith('calli-') && (typeId.endsWith('-mots') || typeId.endsWith('-phrases')))
+  )
 }
 
-function isCopyBelowType(typeId: string): boolean {
-  return typeId === 'calli-4-lignes' || typeId === 'calli-3-lignes'
+function phrasesForWord(word: VocabWordEntry, level: VocabLevel): string[] {
+  const pool = word.sentences?.phrase?.[level] ?? []
+  return pool
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0 && p.length <= MAX_CALLI_LINE_CHARS)
+}
+
+function pickPhraseForWord(rng: Rng, word: VocabWordEntry, level: VocabLevel): string {
+  const preferred = phrasesForWord(word, level)
+  if (preferred.length) return pick(rng, preferred)
+  // Repli : autres niveaux, puis phrase courte fabriquée.
+  for (const lvl of ['a1', 'a2', 'b1'] as VocabLevel[]) {
+    if (lvl === level) continue
+    const alt = phrasesForWord(word, lvl)
+    if (alt.length) return pick(rng, alt)
+  }
+  const label = word.label.trim()
+  const fallback = `Voici ${label}.`
+  return fallback.length <= MAX_CALLI_LINE_CHARS ? fallback : label.slice(0, MAX_CALLI_LINE_CHARS)
+}
+
+function bankWords(topic: string, subgroupId?: string): VocabWordEntry[] {
+  const frTopic = frTopicFromCalliTopic(topic)
+  if (!frTopic) return []
+  const subgroup = subgroupId || defaultVocabSubgroup(frTopic)
+  return vocabLearnWordsFor(frTopic, subgroup)
+}
+
+/** Tire de nouveaux mots / phrases selon le thème (déterministe via seed). */
+export function reshuffleCalliContent(seed: number, input: CalliReshuffleInput): string {
+  const rng = createRng(seed)
+  const phrases = isCalliPhrasesType(input.exerciseType)
+  const sizeId = calliSizeById(input.calliSize).id
+  const mode = phrases ? 'copy-below' : 'same-line'
+  const maxN = maxCalliEntries(mode, sizeId)
+  const current = parseCalliLines(input.calliText)
+  const n = Math.min(
+    maxN,
+    Math.max(
+      phrases ? DEFAULT_CALLI_PHRASE_COUNT : DEFAULT_CALLI_WORD_COUNT,
+      input.countHint ?? current.length,
+      phrases ? DEFAULT_CALLI_PHRASE_COUNT : DEFAULT_CALLI_WORD_COUNT,
+    ),
+  )
+
+  if (isCalliLibreTopic(input.topic)) {
+    // Libre : on garde les champs saisis ; s’ils sont vides, démo.
+    if (current.length > 0) return joinCalliLines(current.slice(0, maxN))
+    return defaultCalliText(input.exerciseType)
+  }
+
+  const words = bankWords(input.topic, input.vocabSubgroup)
+  if (!words.length) {
+    return current.length ? joinCalliLines(current.slice(0, maxN)) : defaultCalliText(input.exerciseType)
+  }
+
+  const level = vocabLevelFromDifficulty(input.difficulty)
+  const pickedWords = shuffle(rng, words).slice(0, Math.min(n, words.length))
+
+  if (!phrases) {
+    return joinCalliLines(pickedWords.map((w) => w.label))
+  }
+
+  return joinCalliLines(pickedWords.map((w) => pickPhraseForWord(rng, w, level)))
+}
+
+/** Contenu initial quand on change de thème / type. */
+export function initialCalliText(input: CalliReshuffleInput, seed = 1): string {
+  return reshuffleCalliContent(seed, input)
 }
 
 export function tryGenerateCalligraphieBatch(
@@ -49,8 +153,9 @@ export function tryGenerateCalligraphieBatch(
   const raw = parseCalliLines(calliText)
   const fallback = parseCalliLines(defaultCalliText(typeId))
   const entries = (raw.length > 0 ? raw : fallback).map((t) => t.slice(0, 80))
+  const phrases = isCalliPhrasesType(typeId)
 
-  if (isCopyBelowType(typeId)) {
+  if (phrases) {
     return {
       instruction: 'Recopiez chaque phrase en écriture cursive.',
       preferredColumns: 1,
@@ -62,7 +167,7 @@ export function tryGenerateCalligraphieBatch(
           calligraphy: {
             mode: 'copy-below',
             ruleLines: 4,
-            entries: entries.slice(0, maxEntries('copy-below', sizeId)),
+            entries: entries.slice(0, maxCalliEntries('copy-below', sizeId)),
             fontId: fontId ?? DEFAULT_CALLI_FONT,
             sizeId: sizeId ?? DEFAULT_CALLI_SIZE,
           },
@@ -82,7 +187,7 @@ export function tryGenerateCalligraphieBatch(
         calligraphy: {
           mode: 'same-line',
           ruleLines: 6,
-          entries: entries.slice(0, maxEntries('same-line', sizeId)),
+          entries: entries.slice(0, maxCalliEntries('same-line', sizeId)),
           fontId: fontId ?? DEFAULT_CALLI_FONT,
           sizeId: sizeId ?? DEFAULT_CALLI_SIZE,
         },

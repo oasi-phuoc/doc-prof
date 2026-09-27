@@ -3,6 +3,7 @@ import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { defaultCalliText } from '@/calligraphie/defaults'
 import { DEFAULT_CALLI_FONT, DEFAULT_CALLI_SIZE } from '@/calligraphie/fonts'
+import { CALLI_LIBRE_TOPIC, calligraphieTopics as calliTopicList } from '@/calligraphie/topics'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 
@@ -66,8 +67,8 @@ export const topics: Topic[] = [
   { id: 'jeux-cartes', label: 'Grille de cartes', domain: 'jeux' },
   { id: 'jeux-structures', label: 'Jeu structuré', domain: 'jeux' },
   { id: 'jeux-etiquettes', label: 'Étiquettes', domain: 'jeux' },
-  // —— Calligraphie ——
-  { id: 'calli-copie', label: 'Copie cursive', domain: 'calligraphie' },
+  // —— Calligraphie (thèmes FR + Libre) ——
+  ...calliTopicList,
 ]
 
 export const topicById = Object.fromEntries(topics.map((topic) => [topic.id, topic])) as Record<string, Topic>
@@ -406,11 +407,30 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 1 },
   ),
 
-  // —— Calligraphie ——
+  // —— Calligraphie (types partagés ; le thème porte le lexique) ——
+  t(
+    'calli-mots',
+    CALLI_LIBRE_TOPIC,
+    'Mots',
+    'Mots en cursive liée sur bande à 6 lignes (texte sur la 4e) ; à recopier sur la même ligne.',
+    'Recopiez chaque mot en écriture cursive sur la même ligne.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'calli-phrases',
+    CALLI_LIBRE_TOPIC,
+    'Juste phrases',
+    'Phrase modèle sur 4 lignes (texte sur la 3e), puis bande vide pour recopier.',
+    'Recopiez chaque phrase en écriture cursive.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  // Alias historiques (anciennes fiches / URLs).
   t(
     'calli-6-lignes',
-    'calli-copie',
-    'Mots · 6 lignes',
+    CALLI_LIBRE_TOPIC,
+    'Mots',
     'Mots en cursive liée sur bande à 6 lignes (texte sur la 4e) ; à recopier sur la même ligne.',
     'Recopiez chaque mot en écriture cursive sur la même ligne.',
     'texte',
@@ -418,8 +438,8 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   t(
     'calli-4-lignes',
-    'calli-copie',
-    'Phrases · 4 lignes',
+    CALLI_LIBRE_TOPIC,
+    'Juste phrases',
     'Phrase modèle sur 4 lignes (texte sur la 3e), puis bande vide pour recopier.',
     'Recopiez chaque phrase en écriture cursive.',
     'texte',
@@ -735,6 +755,16 @@ for (const theme of PHRASE_THEMES) {
 export const exerciseTypeById = Object.fromEntries(exerciseTypes.map((type) => [type.id, type])) as Record<string, ExerciseType>
 
 export function typesForTopic(topic: string, track?: FrenchTrack): ExerciseType[] {
+  if (topic.startsWith('calli-')) {
+    const mots = exerciseTypeById['calli-mots']
+    const phrases = exerciseTypeById['calli-phrases']
+    if (mots && phrases) {
+      return [
+        { ...mots, topic },
+        { ...phrases, topic },
+      ]
+    }
+  }
   return exerciseTypes.filter((type) => type.topic === topic && (track == null || type.track === track))
 }
 
@@ -772,7 +802,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
             : domain === 'jeux'
               ? 'jeux-cartes'
               : domain === 'calligraphie'
-                ? 'calli-copie'
+                ? CALLI_LIBRE_TOPIC
                 : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }

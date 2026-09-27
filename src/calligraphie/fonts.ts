@@ -1,17 +1,6 @@
 /** Polices cursives liées (OFL) pour le domaine Calligraphie. */
 
-export type CalliFontId =
-  | 'marelle'
-  | 'playwrite-fr-trad'
-  | 'playwrite-fr-moderne'
-  | 'playwrite-it-trad'
-  | 'playwrite-es'
-  | 'playwrite-de-grund'
-  | 'dancing-script'
-  | 'marck-script'
-  | 'cookie'
-  | 'parisienne'
-  | 'sacramento'
+export type CalliFontId = 'marelle' | 'playwrite'
 
 export type CalliSizeId = 'petit' | 'moyen' | 'grand'
 
@@ -45,74 +34,11 @@ export const CALLI_FONTS: CalliFont[] = [
     emPerUnit: 2.04,
   },
   {
-    id: 'playwrite-fr-trad',
-    label: 'Playwrite FR Trad',
-    family: 'Calli Playwrite FR Trad',
-    file: 'playwrite-fr-trad.ttf',
-    emPerUnit: 1.86,
-  },
-  {
-    id: 'playwrite-fr-moderne',
-    label: 'Playwrite FR Moderne',
-    family: 'Calli Playwrite FR Moderne',
-    file: 'playwrite-fr-moderne.ttf',
-    emPerUnit: 1.86,
-  },
-  {
-    id: 'playwrite-it-trad',
-    label: 'Playwrite IT',
-    family: 'Calli Playwrite IT',
-    file: 'playwrite-it-trad.ttf',
-    emPerUnit: 1.86,
-  },
-  {
-    id: 'playwrite-es',
-    label: 'Playwrite ES',
-    family: 'Calli Playwrite ES',
+    id: 'playwrite',
+    label: 'Playwrite',
+    family: 'Calli Playwrite',
     file: 'playwrite-es.ttf',
     emPerUnit: 1.86,
-  },
-  {
-    id: 'playwrite-de-grund',
-    label: 'Playwrite DE',
-    family: 'Calli Playwrite DE',
-    file: 'playwrite-de-grund.ttf',
-    emPerUnit: 1.86,
-  },
-  {
-    id: 'dancing-script',
-    label: 'Dancing Script',
-    family: 'Calli Dancing Script',
-    file: 'dancing-script.ttf',
-    emPerUnit: 2.6,
-  },
-  {
-    id: 'marck-script',
-    label: 'Marck Script',
-    family: 'Calli Marck Script',
-    file: 'marck-script.ttf',
-    emPerUnit: 2.69,
-  },
-  {
-    id: 'cookie',
-    label: 'Cookie',
-    family: 'Calli Cookie',
-    file: 'cookie.ttf',
-    emPerUnit: 2.7,
-  },
-  {
-    id: 'parisienne',
-    label: 'Parisienne',
-    family: 'Calli Parisienne',
-    file: 'parisienne.ttf',
-    emPerUnit: 2.64,
-  },
-  {
-    id: 'sacramento',
-    label: 'Sacramento',
-    family: 'Calli Sacramento',
-    file: 'sacramento.ttf',
-    emPerUnit: 4.02,
   },
 ]
 
@@ -125,8 +51,25 @@ export const CALLI_SIZES: CalliSize[] = [
 export const DEFAULT_CALLI_FONT: CalliFontId = 'marelle'
 export const DEFAULT_CALLI_SIZE: CalliSizeId = 'moyen'
 
+/** Anciens ids → police courante. */
+const FONT_ALIASES: Record<string, CalliFontId> = {
+  marelle: 'marelle',
+  playwrite: 'playwrite',
+  'playwrite-es': 'playwrite',
+  'playwrite-fr-trad': 'playwrite',
+  'playwrite-fr-moderne': 'playwrite',
+  'playwrite-it-trad': 'playwrite',
+  'playwrite-de-grund': 'playwrite',
+  'dancing-script': 'marelle',
+  'marck-script': 'marelle',
+  cookie: 'marelle',
+  parisienne: 'marelle',
+  sacramento: 'marelle',
+}
+
 export function calliFontById(id: string | undefined): CalliFont {
-  return CALLI_FONTS.find((f) => f.id === id) ?? CALLI_FONTS[0]!
+  const resolved = (id && FONT_ALIASES[id]) || DEFAULT_CALLI_FONT
+  return CALLI_FONTS.find((f) => f.id === resolved) ?? CALLI_FONTS[0]!
 }
 
 export function calliSizeById(id: string | undefined): CalliSize {

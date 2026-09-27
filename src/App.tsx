@@ -43,14 +43,26 @@ import {
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { defaultCalliText } from '@/calligraphie/defaults'
+import {
+  DEFAULT_CALLI_PHRASE_COUNT,
+  DEFAULT_CALLI_WORD_COUNT,
+  isCalliPhrasesType,
+  joinCalliLines,
+  normalizeCalliFields,
+  parseCalliLines,
+} from '@/calligraphie/defaults'
 import {
   CALLI_FONTS,
   CALLI_SIZES,
   DEFAULT_CALLI_FONT,
   DEFAULT_CALLI_SIZE,
 } from '@/calligraphie/fonts'
-import { isCalligraphieType } from '@/calligraphie/generate'
+import {
+  initialCalliText,
+  isCalligraphieType,
+  reshuffleCalliContent,
+} from '@/calligraphie/generate'
+import { frTopicFromCalliTopic, isCalliLibreTopic } from '@/calligraphie/topics'
 import {
   defaultVocabSelected,
   defaultVocabSubgroup,
@@ -1138,21 +1150,48 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameBorderVersoId: undefined,
         }),
     ...(isCalli
-      ? {
-          columns: 1,
-          calliText:
-            prev?.exerciseType === type.id && prev.calliText != null
+      ? (() => {
+          const topic = type.topic.startsWith('calli-')
+            ? type.topic
+            : prev?.topic?.startsWith('calli-')
+              ? prev.topic
+              : type.topic
+          const frTopic = frTopicFromCalliTopic(topic)
+          const subgroup =
+            prev?.topic === topic && prev.vocabSubgroup
+              ? prev.vocabSubgroup
+              : frTopic
+                ? defaultVocabSubgroup(frTopic)
+                : undefined
+          const sameKind =
+            prev != null &&
+            isCalligraphieType(prev.exerciseType) &&
+            isCalliPhrasesType(prev.exerciseType) === isCalliPhrasesType(type.id)
+          const keepText =
+            sameKind && prev.topic === topic && prev.calliText != null && prev.calliText !== ''
+          return {
+            columns: 1,
+            topic,
+            vocabSubgroup: subgroup,
+            calliText: keepText
               ? prev.calliText
-              : defaultCalliText(type.id),
-          calliFont:
-            prev?.exerciseType === type.id && prev.calliFont
-              ? prev.calliFont
-              : DEFAULT_CALLI_FONT,
-          calliSize:
-            prev?.exerciseType === type.id && prev.calliSize
-              ? prev.calliSize
-              : DEFAULT_CALLI_SIZE,
-        }
+              : initialCalliText({
+                  exerciseType: type.id,
+                  topic,
+                  difficulty: prev?.difficulty ?? 'moyen',
+                  calliSize: prev?.calliSize ?? DEFAULT_CALLI_SIZE,
+                  vocabSubgroup: subgroup,
+                }),
+            calliFont:
+              prev != null && isCalligraphieType(prev.exerciseType) && prev.calliFont
+                ? prev.calliFont
+                : DEFAULT_CALLI_FONT,
+            calliSize:
+              prev != null && isCalligraphieType(prev.exerciseType) && prev.calliSize
+                ? prev.calliSize
+                : DEFAULT_CALLI_SIZE,
+          }
+        })()
       : { calliText: undefined, calliFont: undefined, calliSize: undefined }),
     ...(isFormes
       ? {
@@ -1452,12 +1491,26 @@ function GeneratorPage() {
   const isVocabPool = isVocabPoolType(activeBlock.exerciseType)
   const isVocabProd = isVocabProductionType(activeBlock.exerciseType)
   const isGramTheory = isGrammarTheoryType(activeBlock.exerciseType)
-  const vocabSubgroups = isVocabPool ? vocabSubgroupsFor(activeBlock.topic) : []
+  const isPhraseDomain = activePage.domain === 'phrase'
+  const isJeuxDomain = activePage.domain === 'jeux'
+  const isCalliDomain = activePage.domain === 'calligraphie'
+  const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
+  const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
+  const calliIsPhrases = isCalliDomain && isCalliPhrasesType(activeBlock.exerciseType)
+  const vocabSubgroups = isVocabPool
+    ? vocabSubgroupsFor(activeBlock.topic)
+    : calliFrTopic
+      ? vocabSubgroupsFor(calliFrTopic)
+      : []
   const activeVocabSubgroup =
-    activeBlock.vocabSubgroup ?? vocabSubgroups[0]?.id ?? defaultVocabSubgroup(activeBlock.topic)
+    activeBlock.vocabSubgroup ??
+    vocabSubgroups[0]?.id ??
+    (calliFrTopic ? defaultVocabSubgroup(calliFrTopic) : defaultVocabSubgroup(activeBlock.topic))
   const vocabBankWords = isVocabPool
     ? vocabLearnWordsFor(activeBlock.topic, activeVocabSubgroup)
-    : []
+    : calliFrTopic
+      ? vocabLearnWordsFor(calliFrTopic, activeVocabSubgroup)
+      : []
   const vocabCustomWords = (activeBlock.vocabCustomEntries ?? []) as VocabWordEntry[]
   const vocabLearnWords = [...vocabBankWords, ...vocabCustomWords].sort((a, b) =>
     a.label.localeCompare(b.label, 'fr'),
@@ -1474,18 +1527,20 @@ function GeneratorPage() {
       : [])
   const usesCefrLevel =
     (isVocabPool && !isVocabLearn) ||
+    isCalliDomain ||
     activeBlock.exerciseType.includes('-com-ecrite') ||
     activeBlock.exerciseType.includes('-com-orale')
   const vocabDifficultyOptions = usesCefrLevel
     ? [
-        { value: 'facile' as const, label: 'A1 · Facile' },
+        { value: 'facile' as const, label: 'A1 · Simple' },
         { value: 'moyen' as const, label: 'A2 · Moyen' },
         { value: 'avance' as const, label: 'B1 · Avancé' },
       ]
     : DIFFICULTY_OPTIONS
-  const isPhraseDomain = activePage.domain === 'phrase'
-  const isJeuxDomain = activePage.domain === 'jeux'
-  const isCalliDomain = activePage.domain === 'calligraphie'
+  const calliFields = normalizeCalliFields(
+    parseCalliLines(activeBlock.calliText),
+    calliIsPhrases ? DEFAULT_CALLI_PHRASE_COUNT : DEFAULT_CALLI_WORD_COUNT,
+  )
   const jeuxTemplate = isJeuxDomain ? templateFor(activeBlock.exerciseType) : null
   const jeuxText =
     activeBlock.gameText ??
@@ -1744,6 +1799,18 @@ function GeneratorPage() {
   }
 
   function changeTopic(topic: string) {
+    if (activePage.domain === 'calligraphie') {
+      const kind = isCalliPhrasesType(activeBlock.exerciseType) ? 'calli-phrases' : 'calli-mots'
+      const type = { ...exerciseTypeById[kind]!, topic }
+      const frTopic = frTopicFromCalliTopic(topic)
+      const subgroup = frTopic ? defaultVocabSubgroup(frTopic) : undefined
+      updatePage({
+        topic,
+        ...applyType(type, { ...activeBlock, topic, vocabSubgroup: subgroup, calliText: undefined }),
+        vocabSubgroup: subgroup,
+      })
+      return
+    }
     const type =
       typesForTopic(topic, activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined)[0] ??
       firstTypeFor(activePage.domain, topic, activeBlock.track)
@@ -1759,6 +1826,20 @@ function GeneratorPage() {
     const nextSeed = randomSeed()
     setSeed(nextSeed)
     setMode('student')
+    if (isCalligraphieType(activeBlock.exerciseType)) {
+      const nextText = reshuffleCalliContent(nextSeed, {
+        exerciseType: activeBlock.exerciseType,
+        topic: activeBlock.topic,
+        difficulty: activeBlock.difficulty,
+        calliText: activeBlock.calliText,
+        calliFont: activeBlock.calliFont,
+        calliSize: activeBlock.calliSize,
+        vocabSubgroup: activeBlock.vocabSubgroup,
+        countHint: Math.max(parseCalliLines(activeBlock.calliText).length, calliFields.length),
+      })
+      updatePage({ calliText: nextText })
+      return
+    }
     if (!isJeuxType(activeBlock.exerciseType)) return
     const reshuffled = reshuffleGameContent(activeBlock.exerciseType, nextSeed, {
       gameSource: activeBlock.gameSource,
@@ -1771,6 +1852,24 @@ function GeneratorPage() {
       gameText: reshuffled.gameText,
       gameSelectedIds: reshuffled.gameSelectedIds,
     })
+  }
+
+  function setCalliFieldAt(index: number, value: string) {
+    const next = [...calliFields]
+    next[index] = value
+    updatePage({ calliText: joinCalliLines(next) })
+  }
+
+  function addCalliField() {
+    updatePage({ calliText: joinCalliLines([...calliFields, '']) })
+  }
+
+  function removeCalliField(index: number) {
+    if (calliFields.length <= 1) {
+      updatePage({ calliText: '' })
+      return
+    }
+    updatePage({ calliText: joinCalliLines(calliFields.filter((_, i) => i !== index)) })
   }
 
   function printAll() {
@@ -2068,17 +2167,21 @@ function GeneratorPage() {
               </SelectBox>
               {isCalliDomain ? (
                 <>
-                  <SelectBox
-                    label="Écriture"
-                    value={activeBlock.calliFont ?? DEFAULT_CALLI_FONT}
-                    onChange={(value) => updatePage({ calliFont: value })}
-                  >
-                    {CALLI_FONTS.map((font) => (
-                      <option value={font.id} key={font.id}>
-                        {font.label}
-                      </option>
-                    ))}
-                  </SelectBox>
+                  <div className="mode-toggle-block">
+                    <b>Écriture</b>
+                    <div className="mode-toggle" role="group" aria-label="Police d’écriture">
+                      {CALLI_FONTS.map((font) => (
+                        <button
+                          key={font.id}
+                          type="button"
+                          className={(activeBlock.calliFont ?? DEFAULT_CALLI_FONT) === font.id ? 'active' : ''}
+                          onClick={() => updatePage({ calliFont: font.id })}
+                        >
+                          {font.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                   <div className="mode-toggle-block">
                     <b>Taille</b>
                     <div className="mode-toggle is-3" role="group" aria-label="Taille d’écriture">
@@ -2094,27 +2197,88 @@ function GeneratorPage() {
                       ))}
                     </div>
                     <small className="muted">
-                      Change la taille du modèle et l’écartement des lignes (écrire plus petit ou plus grand).
+                      Change la taille du modèle et l’écartement des lignes.
                     </small>
                   </div>
-                  <label className="select-shell game-content-field">
-                    <span>Mots ou phrases</span>
-                    <textarea
-                      className="pill-input game-content-textarea"
-                      rows={10}
-                      value={activeBlock.calliText ?? defaultCalliText(activeBlock.exerciseType)}
-                      spellCheck
-                      aria-label="Mots ou phrases à recopier"
-                      placeholder="Un mot ou une phrase par ligne"
-                      onChange={(event) => updatePage({ calliText: event.target.value })}
-                    />
+                  {calliIsPhrases ? (
+                    <SelectBox
+                      label="Niveau"
+                      value={activeBlock.difficulty ?? 'moyen'}
+                      onChange={(value) => updatePage({ difficulty: value as Difficulty })}
+                    >
+                      {vocabDifficultyOptions.map((opt) => (
+                        <option value={opt.value} key={opt.value}>
+                          {opt.label}
+                        </option>
+                      ))}
+                    </SelectBox>
+                  ) : null}
+                  {!calliIsLibre && vocabSubgroups.length > 1 ? (
+                    <SelectBox
+                      label="Liste"
+                      value={activeVocabSubgroup ?? ''}
+                      onChange={(value) => {
+                        const nextText = initialCalliText({
+                          exerciseType: activeBlock.exerciseType,
+                          topic: activeBlock.topic,
+                          difficulty: activeBlock.difficulty,
+                          calliSize: activeBlock.calliSize,
+                          vocabSubgroup: value,
+                          countHint: calliFields.length,
+                        })
+                        updatePage({ vocabSubgroup: value, calliText: nextText })
+                      }}
+                    >
+                      {vocabSubgroups.map((group) => (
+                        <option value={group.id} key={group.id}>
+                          {group.label}
+                        </option>
+                      ))}
+                    </SelectBox>
+                  ) : null}
+                  <div className="quad-libre-block">
+                    <b>{calliIsPhrases ? 'Phrases' : 'Mots'}</b>
+                    <ul className="calli-fields" aria-label={calliIsPhrases ? 'Phrases à recopier' : 'Mots à recopier'}>
+                      {calliFields.map((value, index) => (
+                        <li className="calli-field-row" key={`calli-field-${index}`}>
+                          <span className="calli-field-num">{index + 1}.</span>
+                          <input
+                            className="pill-input"
+                            type="text"
+                            value={value}
+                            spellCheck
+                            aria-label={
+                              calliIsPhrases ? `Phrase ${index + 1}` : `Mot ${index + 1}`
+                            }
+                            placeholder={calliIsPhrases ? 'Phrase' : 'Mot'}
+                            onChange={(event) => setCalliFieldAt(index, event.target.value)}
+                          />
+                          <button
+                            type="button"
+                            className="calli-field-remove"
+                            aria-label={`Supprimer la ligne ${index + 1}`}
+                            onClick={() => removeCalliField(index)}
+                          >
+                            ×
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="calli-fields-actions">
+                      <button type="button" className="button secondary" onClick={addCalliField}>
+                        {calliIsPhrases ? 'Ajouter une phrase' : 'Ajouter un mot'}
+                      </button>
+                    </div>
                     <small className="muted">
-                      {activeBlock.exerciseType === 'calli-4-lignes' ||
-                      activeBlock.exerciseType === 'calli-3-lignes'
-                        ? 'Une phrase par ligne · modèle sur 4 lignes (texte sur la 3e, trait en couleur du thème) + bande vide dessous.'
-                        : 'Un mot par ligne · modèle et copie sur la même bande à 6 lignes (texte sur la 4e, trait en couleur du thème).'}
+                      {calliIsPhrases
+                        ? calliIsLibre
+                          ? 'Une phrase par champ · modèle sur 4 lignes + bande vide dessous.'
+                          : 'Générer tire des phrases du thème (A1 / A2 / B1) avec le vocabulaire de la liste, une ligne max.'
+                        : calliIsLibre
+                          ? 'Un mot par champ · modèle et copie sur la même bande à 6 lignes.'
+                          : 'Générer tire de nouveaux mots du vocabulaire du thème.'}
                     </small>
-                  </label>
+                  </div>
                 </>
               ) : null}
               {isJeuxDomain && jeuxTemplate ? (
@@ -2142,7 +2306,7 @@ function GeneratorPage() {
                   value={activeBlock.difficulty ?? 'moyen'}
                   onChange={(value) => updatePage({ difficulty: value as Difficulty })}
                 >
-                  {vocabDifficultyOptions.map((opt) => (
+                  {DIFFICULTY_OPTIONS.map((opt) => (
                     <option value={opt.value} key={opt.value}>
                       {opt.label}
                     </option>

@@ -1,16 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
-/* Calligraphie — cursives liées (OFL) : Marelle + Playwrite + scripts. */
+/* Calligraphie — cursives liées (OFL) : Marelle + Playwrite. */
 @font-face{font-family:'Calli Marelle';src:url('/fonts/calli/marelle.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Playwrite FR Trad';src:url('/fonts/calli/playwrite-fr-trad.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Playwrite FR Moderne';src:url('/fonts/calli/playwrite-fr-moderne.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Playwrite IT';src:url('/fonts/calli/playwrite-it-trad.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Playwrite ES';src:url('/fonts/calli/playwrite-es.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Playwrite DE';src:url('/fonts/calli/playwrite-de-grund.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Dancing Script';src:url('/fonts/calli/dancing-script.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Marck Script';src:url('/fonts/calli/marck-script.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Cookie';src:url('/fonts/calli/cookie.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Parisienne';src:url('/fonts/calli/parisienne.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Calli Sacramento';src:url('/fonts/calli/sacramento.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Calli Playwrite';src:url('/fonts/calli/playwrite-es.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 :root {
   --ink:#28252f;
   --muted:#6f6875;
@@ -2019,10 +2010,26 @@
 }
 .exercise-item.layout-calligraphy .item-content{width:100%;min-width:0}
 .calli-sheet{
-  display:flex;flex-direction:column;gap:2.6mm;width:100%
+  display:flex;flex-direction:column;gap:7.8mm;width:100%
 }
-.calli-sheet.is-copy-below{gap:3.8mm}
-.calli-entry{display:flex;flex-direction:column;gap:1.2mm}
+.calli-sheet.is-copy-below{gap:7.8mm}
+.calli-entry{display:flex;flex-direction:column;gap:2.4mm}
+.calli-fields{
+  list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px
+}
+.calli-field-row{
+  display:grid;grid-template-columns:1.8em minmax(0,1fr) 32px;gap:8px;align-items:center
+}
+.calli-field-row .calli-field-num{
+  color:var(--muted);font-size:13px;font-weight:600;text-align:right
+}
+.calli-field-row .pill-input{width:100%;min-width:0}
+.calli-field-row .calli-field-remove{
+  width:32px;height:32px;border:1px solid var(--line);border-radius:8px;background:#fff;
+  color:var(--muted);font-size:18px;line-height:1;padding:0
+}
+.calli-field-row .calli-field-remove:hover{color:var(--red);border-color:color-mix(in srgb,var(--red) 35%,#fff)}
+.calli-fields-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .calli-band{
   position:relative;width:100%;box-sizing:border-box;overflow:visible
 }
