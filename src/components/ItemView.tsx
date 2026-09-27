@@ -8,6 +8,7 @@ import { GattegnoChart } from './math/GattegnoChart'
 import { GeometryFigure } from './math/GeometryFigure'
 import { CardGrid } from '@/jeux/CardGrid'
 import type { GameBoard } from '@/jeux/types'
+import { CalligraphyView } from './math/CalligraphyView'
 
 function VocabTable({ item }: { item: MathItem }) {
   const rows = Math.max(1, item.vocabRows ?? 3)
@@ -1446,7 +1447,8 @@ export function ItemView({
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match' ||
     item.layout === 'theory' ||
-    item.layout === 'card-grid'
+    item.layout === 'card-grid' ||
+    item.layout === 'calligraphy'
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
@@ -1506,6 +1508,9 @@ export function ItemView({
         {item.layout === 'vocab-write' && <VocabWrite item={item} mode={mode} />}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
+        ) : null}
+        {item.layout === 'calligraphy' && item.calligraphy ? (
+          <CalligraphyView item={item} />
         ) : null}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (

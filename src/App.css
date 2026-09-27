@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Mynerve&display=swap');
 :root {
   --ink:#28252f;
   --muted:#6f6875;
   --line:#e7e0ea;
+  --calli-ink:#1a1a1a;
+  --calli-rule:#9aa3ad;
+  --calli-base:#5c6b7a;
+  --calli-margin:#c45c5c;
   --paper:#fff;
   --purple:#7c3aed;
   --lavender:color-mix(in srgb, var(--purple) 14%, #fff);
@@ -1996,5 +2000,61 @@
 .visually-hidden{
   position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0
+}
+
+/* —— Calligraphie (bandes lignées + cursive) —— */
+.exercise-item.layout-calligraphy{
+  padding-top:2px;padding-bottom:2px;width:100%
+}
+.exercise-item.layout-calligraphy .item-content{width:100%;min-width:0}
+.calli-sheet{
+  display:flex;flex-direction:column;gap:3.2mm;width:100%;
+  padding-left:0
+}
+.calli-sheet.is-copy-below{gap:4.5mm}
+.calli-entry{display:flex;flex-direction:column;gap:1.6mm}
+.calli-band{
+  position:relative;width:100%;
+  height:calc(var(--calli-n,5) * 2.35mm);
+  border-left:1.2px solid var(--calli-margin);
+  padding-left:3mm;
+  box-sizing:border-box
+}
+.calli-band.is-3{height:calc(3 * 3.1mm)}
+.calli-band.is-5{height:calc(5 * 2.35mm)}
+.calli-rules{
+  position:absolute;inset:0 0 0 3mm;
+  display:flex;flex-direction:column;justify-content:space-between;
+  pointer-events:none
+}
+.calli-rule{
+  display:block;height:0;border-top:0.7px solid var(--calli-rule)
+}
+.calli-rule.is-base{border-top-color:var(--calli-base);border-top-width:1px}
+.calli-rule.is-top{border-top-color:color-mix(in srgb,var(--calli-rule) 70%,#fff)}
+.calli-script-row{
+  position:absolute;left:3mm;right:2mm;
+  /* Baseline : 2e trait depuis le bas (5 lignes → index 3 ; 3 lignes → trait du bas). */
+  bottom:calc(100% / var(--calli-n,5));
+  display:flex;align-items:flex-end;gap:4mm;min-height:0;
+  transform:translateY(0.35em)
+}
+.calli-band.is-3 .calli-script-row{bottom:0;transform:translateY(-0.15em)}
+.calli-script{
+  font-family:'Mynerve',cursive,serif;
+  font-size:15px;font-weight:400;line-height:1;
+  color:var(--calli-ink);white-space:nowrap;
+  letter-spacing:0.02em
+}
+.calli-band.is-5 .calli-script{font-size:16px}
+.calli-band.is-3 .calli-script{font-size:17px}
+.calli-copy-space{flex:1 1 auto;min-width:12mm}
+.calli-band.is-blank{opacity:1}
+
+@media print{
+  .calli-rule{border-top-color:#888}
+  .calli-rule.is-base{border-top-color:#444}
+  .calli-band{border-left-color:#b44}
+  .calli-script{color:#111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 /* End */

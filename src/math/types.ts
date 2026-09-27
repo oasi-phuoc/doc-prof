@@ -1,4 +1,11 @@
-export type Domain = 'français' | 'algèbre' | 'géométrie' | 'lecture' | 'phrase' | 'jeux'
+export type Domain =
+  | 'français'
+  | 'algèbre'
+  | 'géométrie'
+  | 'lecture'
+  | 'phrase'
+  | 'jeux'
+  | 'calligraphie'
 
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =
@@ -62,6 +69,7 @@ export type Layout =
   | 'vocab-write'
   | 'theory'
   | 'card-grid'
+  | 'calligraphy'
 
 export type CoordShape =
   | 'point'
@@ -393,6 +401,16 @@ export type MathItem = {
       frameColor?: string
     }>
   }
+  /**
+   * Domaine Calligraphie : bandes lignées (3 ou 5) avec modèle cursif.
+   * - same-line : modèle + espace vide sur la même bande (5 lignes)
+   * - copy-below : modèle sur une bande, bande vide dessous (3 lignes)
+   */
+  calligraphy?: {
+    mode: 'same-line' | 'copy-below'
+    ruleLines: 3 | 5
+    entries: string[]
+  }
 }
 
 export type CompositeLabel = {
@@ -527,6 +545,11 @@ export type ExerciseBlock = {
   gameBorderRectoId?: string
   /** Bordure verso des cartes (id 01–15), optionnelle. */
   gameBorderVersoId?: string
+  /**
+   * Domaine Calligraphie : un mot ou une phrase par ligne
+   * (texte brut du panneau enseignant·e).
+   */
+  calliText?: string
 }
 
 export type PageConfig = ExerciseBlock & {

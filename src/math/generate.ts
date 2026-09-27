@@ -26,6 +26,7 @@ import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { tryGenerateConversion } from './conversions'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from '@/francais/francais'
+import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
 import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { tryGenerateMesure } from './mesures'
 import { pageAsConfig, pageBlocks } from './page-model'
@@ -1081,6 +1082,14 @@ function buildSingleBlock(
       title: fallbackTitle,
       instruction: jeux.instruction,
       items: jeux.items,
+    }
+  }
+  const calligraphie = tryGenerateCalligraphieBatch(config.exerciseType, config.calliText)
+  if (calligraphie) {
+    return {
+      title: fallbackTitle,
+      instruction: calligraphie.instruction,
+      items: calligraphie.items,
     }
   }
   return {

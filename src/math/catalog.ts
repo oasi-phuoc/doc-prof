@@ -1,6 +1,7 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
+import { defaultCalliText } from '@/calligraphie/defaults'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 
@@ -64,6 +65,8 @@ export const topics: Topic[] = [
   { id: 'jeux-cartes', label: 'Grille de cartes', domain: 'jeux' },
   { id: 'jeux-structures', label: 'Jeu structuré', domain: 'jeux' },
   { id: 'jeux-etiquettes', label: 'Étiquettes', domain: 'jeux' },
+  // —— Calligraphie ——
+  { id: 'calli-copie', label: 'Copie cursive', domain: 'calligraphie' },
 ]
 
 export const topicById = Object.fromEntries(topics.map((topic) => [topic.id, topic])) as Record<string, Topic>
@@ -73,6 +76,7 @@ export const geometryTopics = topics.filter((topic) => topic.domain === 'géomé
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
 export const phraseTopics = topics.filter((topic) => topic.domain === 'phrase')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
+export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
 
 const t = (
   id: string,
@@ -397,6 +401,26 @@ export const exerciseTypes: ExerciseType[] = [
     'Phrases à reconstituer',
     'Découpe d’un texte en bandes-phrases à remettre en ordre.',
     'Remettez les phrases dans l’ordre pour reconstituer le texte.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+
+  // —— Calligraphie ——
+  t(
+    'calli-5-lignes',
+    'calli-copie',
+    'Mots · 5 lignes',
+    'Mots en cursive sur bande à 5 lignes ; à recopier sur la même ligne.',
+    'Recopiez chaque mot en écriture cursive sur la même ligne.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'calli-3-lignes',
+    'calli-copie',
+    'Phrases · 3 lignes',
+    'Phrase modèle sur 3 lignes, puis bande vide pour recopier.',
+    'Recopiez chaque phrase en écriture cursive.',
     'texte',
     { preferredColumns: 1 },
   ),
@@ -746,14 +770,16 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
             ? 'phrase-simple'
             : domain === 'jeux'
               ? 'jeux-cartes'
-              : 'voyelle-a'
+              : domain === 'calligraphie'
+                ? 'calli-copie'
+                : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const type = firstTypeFor(domain)
   const count =
-    domain === 'jeux'
+    domain === 'jeux' || domain === 'calligraphie'
       ? 1
       : domain === 'lecture' || domain === 'phrase'
         ? 6
@@ -765,6 +791,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
             ? 2
             : 8
   const gameEntries = domain === 'jeux' ? defaultEntriesFor(type.id) : undefined
+  const calliText = domain === 'calligraphie' ? defaultCalliText(type.id) : undefined
   return {
     domain,
     topic: type.topic,
@@ -781,6 +808,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
       : undefined,
     gameEntries,
     gameText: gameEntries ? entriesToText(type.id, gameEntries) : undefined,
+    calliText,
   }
 }
 
@@ -803,4 +831,5 @@ type PageConfigLike = {
     isTrue?: boolean
   }>
   gameText?: string
+  calliText?: string
 }

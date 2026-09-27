@@ -37,11 +37,14 @@ import {
   geometryTopics,
   isDraftPadExercise,
   isQuadExercise,
+  calligraphieTopics,
   jeuxTopics,
   lectureTopics,
   phraseTopics,
   typesForTopic,
 } from '@/math/catalog'
+import { defaultCalliText } from '@/calligraphie/defaults'
+import { isCalligraphieType } from '@/calligraphie/generate'
 import {
   defaultVocabSelected,
   defaultVocabSubgroup,
@@ -969,6 +972,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isVocabPool = isVocabPoolType(type.id)
   const isVocabProd = isVocabProductionType(type.id)
   const isJeux = isJeuxType(type.id)
+  const isCalli = isCalligraphieType(type.id)
   const vocabSubgroup =
     prev?.topic === type.topic && prev.vocabSubgroup
       ? prev.vocabSubgroup
@@ -1049,7 +1053,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
         ? { count: 3 }
         : isLongMul
           ? { count: 4 }
-          : isPhraseChart || isVocabLearn || isJeux || isTheory
+          : isPhraseChart || isVocabLearn || isJeux || isCalli || isTheory
             ? { count: 1 }
             : isVocabPool
               ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
@@ -1127,6 +1131,15 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameBorderRectoId: undefined,
           gameBorderVersoId: undefined,
         }),
+    ...(isCalli
+      ? {
+          columns: 1,
+          calliText:
+            prev?.exerciseType === type.id && prev.calliText != null
+              ? prev.calliText
+              : defaultCalliText(type.id),
+        }
+      : { calliText: undefined }),
     ...(isFormes
       ? {
           coordLibre: false,
@@ -1255,7 +1268,9 @@ function GeneratorPage() {
             ? phraseTopics
             : activePage.domain === 'jeux'
               ? jeuxTopics
-              : lectureTopics
+              : activePage.domain === 'calligraphie'
+                ? calligraphieTopics
+                : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -1456,6 +1471,7 @@ function GeneratorPage() {
     : DIFFICULTY_OPTIONS
   const isPhraseDomain = activePage.domain === 'phrase'
   const isJeuxDomain = activePage.domain === 'jeux'
+  const isCalliDomain = activePage.domain === 'calligraphie'
   const jeuxTemplate = isJeuxDomain ? templateFor(activeBlock.exerciseType) : null
   const jeuxText =
     activeBlock.gameText ??
@@ -1669,6 +1685,7 @@ function GeneratorPage() {
       gameBorderId: fields.gameBorderRectoId ?? fields.gameBorderId,
       gameBorderRectoId: fields.gameBorderRectoId ?? fields.gameBorderId,
       gameBorderVersoId: fields.gameBorderVersoId ?? fields.gameBorderId,
+      calliText: fields.calliText,
       coordLibre: fields.coordLibre,
       coordCols: fields.coordCols,
       coordRows: fields.coordRows,
@@ -1696,12 +1713,18 @@ function GeneratorPage() {
     const type = firstTypeFor(next)
     setBlockIndex(0)
     updatePage({ domain: next, ...applyType(type) })
-    if (next === 'français' || next === 'lecture' || next === 'phrase' || next === 'jeux') {
+    if (
+      next === 'français' ||
+      next === 'lecture' ||
+      next === 'phrase' ||
+      next === 'jeux' ||
+      next === 'calligraphie'
+    ) {
       setInstitutional((current) =>
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
     }
-    if (next === 'jeux') setEvalMode(false)
+    if (next === 'jeux' || next === 'calligraphie') setEvalMode(false)
   }
 
   function changeTopic(topic: string) {
@@ -1866,7 +1889,7 @@ function GeneratorPage() {
               </div>
             ) : null}
             <div className="field-group">
-              {isJeuxDomain ? null : (
+              {isJeuxDomain || isCalliDomain ? null : (
               <div className="mode-toggle-block">
                 <b>Mode de la fiche</b>
                 <div className="mode-toggle">
@@ -1920,6 +1943,7 @@ function GeneratorPage() {
                 <option value="géométrie">Géométrie</option>
                 <option value="phrase">Phrase</option>
                 <option value="jeux">Jeux</option>
+                <option value="calligraphie">Calligraphie</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
               </SelectBox>
               <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>
@@ -2026,6 +2050,25 @@ function GeneratorPage() {
                   </option>
                 ))}
               </SelectBox>
+              {isCalliDomain ? (
+                <label className="select-shell game-content-field">
+                  <span>Mots ou phrases</span>
+                  <textarea
+                    className="pill-input game-content-textarea"
+                    rows={10}
+                    value={activeBlock.calliText ?? defaultCalliText(activeBlock.exerciseType)}
+                    spellCheck
+                    aria-label="Mots ou phrases à recopier"
+                    placeholder="Un mot ou une phrase par ligne"
+                    onChange={(event) => updatePage({ calliText: event.target.value })}
+                  />
+                  <small className="muted">
+                    {activeBlock.exerciseType === 'calli-3-lignes'
+                      ? 'Une phrase par ligne · modèle sur 3 lignes + bande vide dessous.'
+                      : 'Un mot par ligne · modèle et copie sur la même bande à 5 lignes.'}
+                  </small>
+                </label>
+              ) : null}
               {isJeuxDomain && jeuxTemplate ? (
                 <GameContentPanel
                   typeId={activeBlock.exerciseType}
@@ -2043,7 +2086,7 @@ function GeneratorPage() {
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}
-              {isReperage || isPhraseDomain || isJeuxDomain || isVocabLearn || isGramTheory ? null : (
+              {isReperage || isPhraseDomain || isJeuxDomain || isCalliDomain || isVocabLearn || isGramTheory ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -2303,7 +2346,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isGramTheory || isJeuxDomain ? null : (
+              {isPhraseChart || isVocabLearn || isGramTheory || isJeuxDomain || isCalliDomain ? null : (
               <label className="select-shell">
                 <span>{isReperage ? 'Questions' : 'QUESTIONS'}</span>
                 <input
@@ -2376,7 +2419,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
