@@ -1,4 +1,5 @@
 /** Contenus démo et helpers de lignes pour la calligraphie. */
+import type { CalliSizeId } from './fonts'
 
 export const DEFAULT_CALLI_WORDS = [
   'le',
@@ -10,6 +11,7 @@ export const DEFAULT_CALLI_WORDS = [
   'il',
   'elle',
   'nous',
+  'vous',
 ]
 
 export const DEFAULT_CALLI_PHRASES = [
@@ -19,9 +21,38 @@ export const DEFAULT_CALLI_PHRASES = [
   'Bonjour les amis.',
 ]
 
-/** Nombre de mots tirés par défaut sur une fiche Mots. */
+/** Fallback si la taille n’est pas connue (taille moyenne). */
 export const DEFAULT_CALLI_WORD_COUNT = 9
 export const DEFAULT_CALLI_PHRASE_COUNT = 4
+
+/**
+ * Nombre de mots tirés par défaut selon la taille d’écriture.
+ * Grand → 8 · Moyen → 9 · Petit → 10.
+ * L’enseignant·e peut en ajouter au-delà.
+ */
+export function defaultCalliWordCount(sizeId: string | undefined): number {
+  if (sizeId === 'grand') return 8
+  if (sizeId === 'petit') return 10
+  return 9
+}
+
+export function defaultCalliPhraseCount(sizeId: string | undefined): number {
+  if (sizeId === 'grand') return 3
+  if (sizeId === 'petit') return 5
+  return 4
+}
+
+/** Plafond dur A4 (au-delà du défaut, pour les ajouts manuels). */
+export function hardMaxCalliEntries(mode: 'same-line' | 'copy-below', sizeId: string | undefined): number {
+  if (mode === 'copy-below') {
+    if (sizeId === 'grand') return 6
+    if (sizeId === 'petit') return 8
+    return 7
+  }
+  if (sizeId === 'grand') return 14
+  if (sizeId === 'petit') return 16
+  return 15
+}
 
 /** Longueur max pour rester sur une seule ligne d’écriture cursive. */
 export const MAX_CALLI_LINE_CHARS = 36
@@ -44,11 +75,11 @@ export function isCalliMotsType(typeId: string): boolean {
   )
 }
 
-export function defaultCalliText(typeId: string): string {
+export function defaultCalliText(typeId: string, sizeId?: CalliSizeId | string): string {
   if (isCalliPhrasesType(typeId)) {
-    return DEFAULT_CALLI_PHRASES.join('\n')
+    return DEFAULT_CALLI_PHRASES.slice(0, defaultCalliPhraseCount(sizeId)).join('\n')
   }
-  return DEFAULT_CALLI_WORDS.join('\n')
+  return DEFAULT_CALLI_WORDS.slice(0, defaultCalliWordCount(sizeId)).join('\n')
 }
 
 export function parseCalliLines(text: string | undefined): string[] {

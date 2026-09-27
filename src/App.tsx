@@ -44,8 +44,8 @@ import {
   typesForTopic,
 } from '@/math/catalog'
 import {
-  DEFAULT_CALLI_PHRASE_COUNT,
-  DEFAULT_CALLI_WORD_COUNT,
+  defaultCalliPhraseCount,
+  defaultCalliWordCount,
   isCalliPhrasesType,
   joinCalliLines,
   normalizeCalliFields,
@@ -1537,10 +1537,10 @@ function GeneratorPage() {
         { value: 'avance' as const, label: 'B1 · Avancé' },
       ]
     : DIFFICULTY_OPTIONS
-  const calliFields = normalizeCalliFields(
-    parseCalliLines(activeBlock.calliText),
-    calliIsPhrases ? DEFAULT_CALLI_PHRASE_COUNT : DEFAULT_CALLI_WORD_COUNT,
-  )
+  const calliDefaultCount = calliIsPhrases
+    ? defaultCalliPhraseCount(activeBlock.calliSize)
+    : defaultCalliWordCount(activeBlock.calliSize)
+  const calliFields = normalizeCalliFields(parseCalliLines(activeBlock.calliText), calliDefaultCount)
   const jeuxTemplate = isJeuxDomain ? templateFor(activeBlock.exerciseType) : null
   const jeuxText =
     activeBlock.gameText ??
@@ -2197,14 +2197,23 @@ function GeneratorPage() {
                           key={size.id}
                           type="button"
                           className={(activeBlock.calliSize ?? DEFAULT_CALLI_SIZE) === size.id ? 'active' : ''}
-                          onClick={() => updatePage({ calliSize: size.id })}
+                          onClick={() => {
+                            const nextText = initialCalliText({
+                              exerciseType: activeBlock.exerciseType,
+                              topic: activeBlock.topic,
+                              difficulty: activeBlock.difficulty,
+                              calliSize: size.id,
+                              vocabSubgroup: activeBlock.vocabSubgroup,
+                            })
+                            updatePage({ calliSize: size.id, calliText: nextText })
+                          }}
                         >
                           {size.label}
                         </button>
                       ))}
                     </div>
                     <small className="muted">
-                      Change la taille du modèle et l’écartement des lignes.
+                      Petit : 10 mots · Moyen : 9 · Grand : 8 (vous pouvez en ajouter).
                     </small>
                   </div>
                   {calliIsPhrases ? (
@@ -2287,11 +2296,11 @@ function GeneratorPage() {
                     <small className="muted">
                       {calliIsPhrases
                         ? calliIsLibre
-                          ? 'Une phrase par champ · modèle sur 4 lignes + bande vide dessous.'
-                          : 'Générer tire des phrases du thème (A1 / A2 / B1) avec le vocabulaire de la liste, une ligne max.'
+                          ? 'Générer tire des phrases depuis tout le vocabulaire · une ligne max.'
+                          : 'Générer tire des phrases du thème (A1 / A2 / B1), une ligne max.'
                         : calliIsLibre
-                          ? 'Neuf mots par défaut · modèle et copie sur la même bande à 6 lignes.'
-                          : 'Neuf mots tirés au hasard du thème · Générer en tire de nouveaux.'}
+                          ? 'Générer tire des mots de tous les thèmes · les ajouts dépassent le nombre par défaut.'
+                          : 'Générer tire de nouveaux mots du thème · les ajouts dépassent le nombre par défaut.'}
                     </small>
                   </div>
                 </>

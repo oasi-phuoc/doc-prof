@@ -19,32 +19,36 @@ banque `sentences.phrase` côté Voc. Elles doivent se dire vraiment en françai
 | `scripts/regen-calligraphie-phrases.py` | Régénère `sentences.phrase` (10 × A1/A2/B1) |
 | `src/francais/vocab-banks/fr-*.ts` | Banques Voc (champ `phrase` uniquement) |
 | `src/calligraphie/generate.ts` | Tirage fiche : **un mot = une phrase**, sans doublon |
-| `src/calligraphie/defaults.ts` | `MAX_CALLI_LINE_CHARS` (une seule ligne cursive) |
+| `src/calligraphie/defaults.ts` | Compteurs taille, `MAX_CALLI_LINE_CHARS` |
 
 ## Règles non négociables
 
 1. **Sens réel** : la phrase parle du référent du mot, pas du « mot » lui-même.
-   - Oui : `Léa porte un blouson.`
-   - Non : `J’écoute le mot blouson.` / `Je vois blouson.` / `Voici âgé.`
-2. **Pas de gabarit clone** : interdit d’avoir la même ossature pour tous les
-   mots d’une liste (`Elle va devenir ___`, `Je pense que ___ aide à…`).
-   Chaque index 0…9 doit varier la construction **et** la place du mot.
-3. **Français correct** : articles, accords, contractions (`du`, `au`, `des`).
-   Adjectif → s’accorde / se place naturellement ; verbe → conjugaison réelle.
-4. **Unique** : les 10 phrases d’un niveau sont distinctes ; pas de quasi-doublon.
-5. **Une ligne cursive** : ≤ `MAX_CALLI_LINE_CHARS` (36) caractères.
-6. **Niveaux** :
-   - **A1 · Simple** : présent, structures courtes.
-   - **A2 · Moyen** : passé composé / futur proche / complément léger.
+   - Oui : `Léa mange une pomme.` / `La pomme est sur la table.`
+   - Non : `J’écoute le mot pomme.` / `Je vois pomme.` / `Pour réussir, j’utilise la pomme.`
+2. **Rôles variés** : pour chaque mot, les 10 phrases mélangent
+   - **sujet** (`La pomme tombe.`)
+   - **complément** (`Léa mange une pomme.`)
+   - **questions** (`Où est la pomme ?` / `Tu veux une pomme ?`)
+3. **Pas de gabarit clone** : interdit la même ossature pour tous les mots
+   (`Elle va devenir ___`, `Je pense que ___`). Construction **et** place du
+   mot varient d’un index à l’autre ; rotation par id de mot.
+4. **Français correct** : articles, accords, contractions (`du`, `au`, `des`).
+5. **Unique** : 10 phrases distinctes par niveau ; pas de quasi-doublon.
+6. **Une ligne cursive** : ≤ `MAX_CALLI_LINE_CHARS` (36) caractères.
+7. **Niveaux** :
+   - **A1 · Simple** : présent, structures courtes, questions simples.
+   - **A2 · Moyen** : passé composé / futur proche / questions au passé.
    - **B1 · Avancé** : subordonnée courte encore lisible sur une ligne.
-7. **Une occurrence du mot-cible par fiche** : `reshuffleCalliContent` tire des
-   mots distincts ; jamais deux phrases du même item Voc sur la même feuille.
+8. **Densité banque** : **10 phrases × A1 × A2 × B1** pour **chaque mot** de
+   **chaque sous-thème** de **chaque thème**.
+9. **Fiche** : un mot Voc = une seule entrée ; mode Libre tire dans **toutes**
+   les banques ; les ajouts manuels peuvent dépasser le nombre par défaut
+   (Petit 10 / Moyen 9 / Grand 8 mots).
 
 ## Catégories (générateur)
 
-Le script choisit des patrons selon le sous-groupe / la nature du mot :
-
-- nom concret (vêtement, fruit, pièce, transport…)
+- nom concret (fruit, vêtement, pièce…) — sujet / complément / questions
 - adjectif (description, couleur, nationalité)
 - personne / métier / parenté
 - verbe d’action (cuisine…)
@@ -61,7 +65,7 @@ Le script **ne touche pas** à `trous` ni `dictee`.
 
 ## Terminé quand
 
-- 10 phrases × 3 niveaux par mot, toutes ≤ 36 caractères
-- Aucun patron « Je vois / Voici / C’est / le mot … »
-- Générer une fiche Juste phrases : mots tous différents, phrases cohérentes
+- 10 × 3 niveaux par mot, ≤ 36 caractères, sens réel
+- Sujet + complément + questions représentés
+- Générer (Libre / thème) : mots distincts, ajouts possibles au-delà du défaut
 - Skill et `CLAUDE.md` alignés

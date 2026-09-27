@@ -215,78 +215,87 @@ def rotate(pool: list[str], offset: int, n: int = 10) -> list[str]:
 
 
 def build_noun_phrases(label: str, gender: str | None) -> dict[str, list[str]]:
+    """Sujet, complément, questions — phrases courtes authentiques."""
     d = det_def(label, gender)
     i = det_ind(label, gender)
     p = det_poss(gender)
     p2 = det_poss2(gender)
     c = det_ce(label, gender)
     de = de_du(label, gender)
+    # Pronom objet selon genre
+    obj = "la" if gender == "f" else "le"
     a1 = [
-        f"Léa achète {i}{label}.",
-        f"{c}{label} me plaît beaucoup.",
-        f"Où est {p}{label} ?",
-        f"Il range {p2}{label}.",
+        # complément
+        f"Léa mange {i}{label}.",
+        f"Noah achète {i}{label}.",
+        f"Je prends {p}{label}.",
+        f"Elle range {p2}{label}.",
         f"Nous aimons {d}{label}.",
-        f"Elle montre {i}{label}.",
+        # sujet
         f"{d}{label} est sur la table.",
-        f"Tu cherches {p2}{label} ?",
-        f"J’ai trouvé {i}{label}.",
-        f"Sans {label}, c’est difficile.",
+        f"{c}{label} me plaît.",
+        f"{d}{label} tombe par terre.",
+        f"{p}{label} est prêt." if gender != "f" else f"{p}{label} est prête.",
+        # questions
+        f"Où est {d}{label} ?",
+        f"Tu veux {i}{label} ?",
+        f"Qui a pris {d}{label} ?",
+        f"As-tu vu {p2}{label} ?",
+        f"Combien coûte {d}{label} ?",
+        # autres
         f"Regarde {d}{label} là-bas.",
         f"Papa apporte {i}{label}.",
         f"Mila dessine {i}{label}.",
-        f"On utilise {d}{label} souvent.",
-        f"Voici {p}{label} préféré." if gender != "f" else f"Voici {p}{label} préférée.",
         f"Prends {d}{label}, s’il te plaît.",
         f"Ils parlent {de}.",
-        f"Je prépare {i}{label}.",
-        f"{c}{label} coûte cher.",
-        f"Nous voyons {d}{label}.",
+        f"Je cherche {i}{label}.",
+        f"On partage {d}{label}.",
+        f"Elle montre {i}{label}.",
     ]
     a2 = [
-        f"Hier, j’ai acheté {i}{label}.",
+        f"Hier, j’ai mangé {i}{label}.",
         f"Ce matin, {d}{label} manquait.",
-        f"Nous avons rangé {d}{label}.",
+        f"Nous avons acheté {d}{label}.",
         f"Elle a oublié {p}{label}.",
         f"Demain, je prendrai {i}{label}.",
-        f"Quand j’arrive, je vois {d}{label}.",
         f"Il a perdu {p2}{label} hier.",
-        f"Après le cours, range {d}{label}.",
-        f"On a partagé {i}{label}.",
-        f"J’ai noté {d}{label} dans mon carnet.",
         f"Tu as vu {p2}{label} ?",
+        f"Où as-tu mis {d}{label} ?",
         f"Nous allons chercher {i}{label}.",
         f"Elle a choisi {c}{label}.",
+        f"Qui a apporté {d}{label} ?",
         f"Pendant la pause, j’ai pris {d}{label}.",
-        f"Ils ont réparé {d}{label}.",
         f"Avant, j’avais {i}{label}.",
         f"Le soir, je range {p}{label}.",
-        f"Nous avons regardé {d}{label}.",
         f"J’ai prêté {p}{label} à Noah.",
-        f"Elle va utiliser {d}{label}.",
+        f"{d}{label} est tombé." if gender != "f" else f"{d}{label} est tombée.",
+        f"Ils ont partagé {d}{label}.",
+        f"Elle va préparer {d}{label}.",
+        f"As-tu goûté {d}{label} ?",
+        f"Nous avons regardé {d}{label}.",
     ]
-    a1s = [x for x in (fit(s) for s in a1) if x]
-    a2s = [x for x in (fit(s) for s in a2) if x]
-    # B1: keep short subordinations
-    b1_raw = [
-        f"Comme {d}{label} est utile, je le garde." if gender != "f" else f"Comme {d}{label} est utile, je la garde.",
-        f"Si tu veux, prends {p2}{label}.",
-        f"Bien que simple, {d}{label} aide.",
-        f"Quand j’ai le temps, je range {d}{label}.",
-        f"Puisque {d}{label} est prêt, on part." if gender != "f" else f"Puisque {d}{label} est prête, on part.",
-        f"Dès que je vois {d}{label}, je souris.",
-        f"Pour réussir, j’utilise {d}{label}.",
-        f"Même fatigué, il cherche {d}{label}.",
-        f"Avant de sortir, prends {d}{label}.",
-        f"Sans {d}{label}, on ne peut pas.",
+    b1 = [
+        f"Si tu as faim, prends {i}{label}.",
+        f"Quand {d}{label} est mûr, on le mange." if gender != "f" else f"Quand {d}{label} est mûre, on la mange.",
         f"Comme j’aime {d}{label}, j’en rachète.",
-        f"Si {d}{label} tombe, ramasse-le." if gender != "f" else f"Si {d}{label} tombe, ramasse-la.",
-        f"Lorsque j’ai faim, je prends {d}{label}.",
-        f"Afin d’être prêt, prépare {d}{label}.",
-        f"Alors que Léa lit, Noah range {d}{label}.",
+        f"Dès que je vois {d}{label}, je souris.",
+        f"Avant de partir, range {d}{label}.",
+        f"Sans {d}{label}, le goûter est triste.",
+        f"Si {d}{label} tombe, ramasse-{obj}.",
+        f"Pourquoi as-tu caché {d}{label} ?",
+        f"Alors que Léa lit, Noah coupe {d}{label}.",
+        f"Puisque {d}{label} est prêt, on mange." if gender != "f" else f"Puisque {d}{label} est prête, on mange.",
+        f"Bien qu’il soit petit, {d}{label} suffit." if gender != "f" else f"Bien qu’elle soit petite, {d}{label} suffit.",
+        f"Quand tu veux, goûte {d}{label}.",
+        f"Même partagé, {d}{label} reste bon." if gender != "f" else f"Même partagée, {d}{label} reste bonne.",
+        f"Où met-on {d}{label} d’habitude ?",
+        f"Comme {d}{label} est frais, je le garde." if gender != "f" else f"Comme {d}{label} est fraîche, je la garde.",
     ]
-    b1s = [x for x in (fit(s) for s in b1_raw) if x]
-    return {"a1": a1s, "a2": a2s, "b1": b1s}
+    return {
+        "a1": [x for x in (fit(s) for s in a1) if x],
+        "a2": [x for x in (fit(s) for s in a2) if x],
+        "b1": [x for x in (fit(s) for s in b1) if x],
+    }
 
 
 def fem_form(entry: dict, label: str) -> str:
