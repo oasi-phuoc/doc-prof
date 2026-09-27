@@ -11,7 +11,7 @@ import {
   type BankItem,
   type GameSource,
 } from './bank'
-import { DEFAULT_VERSO_BORDER_ID, GAME_BORDER_STYLES } from './borders'
+import { GAME_BORDER_STYLES } from './borders'
 import { resolveGameImageSrc } from './image-resolve'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from './image'
 import { entriesToText, resolveEntries, textToEntries } from './parse'
@@ -264,8 +264,8 @@ function SeriesIdentityFields({
                   title={style.label}
                   onClick={() => {
                     if (faceTab === 'recto') {
-                      // Première sélection recto : proposer Nuit étoilée au verso s’il est vide.
-                      const nextVerso = verso || DEFAULT_VERSO_BORDER_ID
+                      // Première sélection recto : même style au verso s’il est vide.
+                      const nextVerso = verso || style.id
                       onBorderIds(style.id, nextVerso)
                     } else {
                       onBorderIds(recto || undefined, style.id)
@@ -285,7 +285,7 @@ function SeriesIdentityFields({
           </div>
         ) : null}
         <small className="muted">
-          Choisissez la bordure du recto et du verso séparément. Verso par défaut : Nuit étoilée.
+          Même liste pour le recto et le verso — choisissez chaque face séparément.
         </small>
       </div>
     </div>

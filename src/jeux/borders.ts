@@ -1,4 +1,4 @@
-/** 15 bordures personnalisées (recto / verso) — option grille de cartes. */
+/** Bordures personnalisées (recto / verso) — même liste pour les deux faces. */
 
 export type GameBorderStyle = {
   id: string
@@ -7,8 +7,11 @@ export type GameBorderStyle = {
   verso: string
 }
 
-/** Bordure verso proposée par défaut à l’activation. */
-export const DEFAULT_VERSO_BORDER_ID = '15'
+/**
+ * Bordure verso proposée à la première sélection recto
+ * (même style, face verso du couple).
+ */
+export const DEFAULT_VERSO_BORDER_ID = '16'
 
 export const GAME_BORDER_STYLES: GameBorderStyle[] = [
   {
@@ -34,12 +37,6 @@ export const GAME_BORDER_STYLES: GameBorderStyle[] = [
     label: 'Vagues pastel',
     recto: '/lib/images/jeux/borders/border-04-recto.webp',
     verso: '/lib/images/jeux/borders/border-04-verso.webp',
-  },
-  {
-    id: '05',
-    label: 'Cadre étoilé',
-    recto: '/lib/images/jeux/borders/border-05-recto.webp',
-    verso: '/lib/images/jeux/borders/border-05-verso.webp',
   },
   {
     id: '06',
@@ -96,10 +93,88 @@ export const GAME_BORDER_STYLES: GameBorderStyle[] = [
     verso: '/lib/images/jeux/borders/border-14-verso.webp',
   },
   {
-    id: '15',
-    label: 'Nuit étoilée',
-    recto: '/lib/images/jeux/borders/border-15-recto.webp',
-    verso: '/lib/images/jeux/borders/border-15-verso.webp',
+    id: '16',
+    label: 'Aquarelle botanique',
+    recto: '/lib/images/jeux/borders/border-16-recto.webp',
+    verso: '/lib/images/jeux/borders/border-16-verso.webp',
+  },
+  {
+    id: '17',
+    label: 'Géométrie vive',
+    recto: '/lib/images/jeux/borders/border-17-recto.webp',
+    verso: '/lib/images/jeux/borders/border-17-verso.webp',
+  },
+  {
+    id: '18',
+    label: 'Pinceaux colorés',
+    recto: '/lib/images/jeux/borders/border-18-recto.webp',
+    verso: '/lib/images/jeux/borders/border-18-verso.webp',
+  },
+  {
+    id: '19',
+    label: 'Vichy scrapbook',
+    recto: '/lib/images/jeux/borders/border-19-recto.webp',
+    verso: '/lib/images/jeux/borders/border-19-verso.webp',
+  },
+  {
+    id: '20',
+    label: 'Bord de mer',
+    recto: '/lib/images/jeux/borders/border-20-recto.webp',
+    verso: '/lib/images/jeux/borders/border-20-verso.webp',
+  },
+  {
+    id: '21',
+    label: 'Cœurs roses',
+    recto: '/lib/images/jeux/borders/border-21-recto.webp',
+    verso: '/lib/images/jeux/borders/border-21-verso.webp',
+  },
+  {
+    id: '22',
+    label: 'Feuilles sauge',
+    recto: '/lib/images/jeux/borders/border-22-recto.webp',
+    verso: '/lib/images/jeux/borders/border-22-verso.webp',
+  },
+  {
+    id: '23',
+    label: 'Étoiles jaunes',
+    recto: '/lib/images/jeux/borders/border-23-recto.webp',
+    verso: '/lib/images/jeux/borders/border-23-verso.webp',
+  },
+  {
+    id: '24',
+    label: 'Bandes pastel',
+    recto: '/lib/images/jeux/borders/border-24-recto.webp',
+    verso: '/lib/images/jeux/borders/border-24-verso.webp',
+  },
+  {
+    id: '25',
+    label: 'Avions papier',
+    recto: '/lib/images/jeux/borders/border-25-recto.webp',
+    verso: '/lib/images/jeux/borders/border-25-verso.webp',
+  },
+  {
+    id: '26',
+    label: 'Bouquet floral',
+    recto: '/lib/images/jeux/borders/border-26-recto.webp',
+    verso: '/lib/images/jeux/borders/border-26-verso.webp',
+  },
+  {
+    id: '27',
+    label: 'Carnet formes',
+    recto: '/lib/images/jeux/borders/border-27-recto.webp',
+    verso: '/lib/images/jeux/borders/border-27-verso.webp',
+  },
+  {
+    id: '28',
+    label: 'Doodles noirs',
+    recto: '/lib/images/jeux/borders/border-28-recto.webp',
+    verso: '/lib/images/jeux/borders/border-28-verso.webp',
+  },
+  {
+    id: '29',
+    label: 'Bulles douces',
+    recto: '/lib/images/jeux/borders/border-29-recto.webp',
+    verso: '/lib/images/jeux/borders/border-29-verso.webp',
   },
 ]
 
