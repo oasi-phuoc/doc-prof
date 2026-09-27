@@ -126,13 +126,31 @@ export function reshuffleCalliContent(seed: number, input: CalliReshuffleInput):
   }
 
   const level = vocabLevelFromDifficulty(input.difficulty)
-  const pickedWords = shuffle(rng, words).slice(0, Math.min(n, words.length))
+  // Un mot Voc = une seule entrée sur la fiche (pas de doublon d’item).
+  const uniqueById = new Map<string, (typeof words)[number]>()
+  for (const w of shuffle(rng, words)) {
+    if (!uniqueById.has(w.id)) uniqueById.set(w.id, w)
+    if (uniqueById.size >= n) break
+  }
+  const pickedWords = [...uniqueById.values()]
 
   if (!phrases) {
     return joinCalliLines(pickedWords.map((w) => w.label))
   }
 
-  return joinCalliLines(pickedWords.map((w) => pickPhraseForWord(rng, w, level)))
+  const usedPhrases = new Set<string>()
+  const lines: string[] = []
+  for (const w of pickedWords) {
+    let phrase = pickPhraseForWord(rng, w, level)
+    // Évite deux fois la même phrase sur la feuille.
+    if (usedPhrases.has(phrase)) {
+      const alts = phrasesForWord(w, level).filter((p) => !usedPhrases.has(p))
+      if (alts.length) phrase = pick(rng, alts)
+    }
+    usedPhrases.add(phrase)
+    lines.push(phrase)
+  }
+  return joinCalliLines(lines)
 }
 
 /** Contenu initial quand on change de thème / type. */
