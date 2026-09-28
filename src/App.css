@@ -2200,15 +2200,33 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 
 /* —— Calligraphie (bandes lignées + cursive liée) —— */
+/* Remplit la zone sous l’en-tête / titre, au-dessus du pied. */
+.sheet-body:has(.layout-calligraphy)>.exercise-block{
+  flex:1 1 auto;min-height:0;margin:0;
+  display:flex;flex-direction:column
+}
+.sheet-body:has(.layout-calligraphy) .exercise-grid{
+  flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column;
+  grid-template-columns:1fr;grid-template-rows:minmax(0,1fr);
+  align-content:stretch
+}
+.sheet-body:has(.layout-calligraphy) .exercise-heading{flex:0 0 auto}
 .exercise-item.layout-calligraphy{
-  padding-top:2px;padding-bottom:2px;width:100%
+  padding-top:2px;padding-bottom:2px;width:100%;
+  flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column
 }
-.exercise-item.layout-calligraphy .item-content{width:100%;min-width:0}
+.exercise-item.layout-calligraphy .item-content{
+  width:100%;min-width:0;flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column
+}
 .calli-sheet{
-  display:flex;flex-direction:column;gap:7.8mm;width:100%
+  display:flex;flex-direction:column;justify-content:space-between;
+  gap:4mm;width:100%;flex:1 1 auto;min-height:0
 }
-.calli-sheet.is-copy-below{gap:7.8mm}
-.calli-entry{display:flex;flex-direction:column;gap:2.4mm}
+.calli-sheet.is-copy-below{gap:4mm}
+.calli-entry{display:flex;flex-direction:column;gap:2mm;flex:0 0 auto}
 .calli-fields{
   list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px
 }

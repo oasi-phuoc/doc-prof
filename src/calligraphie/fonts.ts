@@ -42,10 +42,15 @@ export const CALLI_FONTS: CalliFont[] = [
   },
 ]
 
+/**
+ * Carreau (mm) calé pour 4 / 5 / 6 blocs sur une page A4
+ * avec en-tête institutionnel, titre et pied de page.
+ * Grand → carreau plus large (4 blocs) · Petit → plus serré (6 blocs).
+ */
 export const CALLI_SIZES: CalliSize[] = [
-  { id: 'petit', label: 'Petit', unitMm: 1.7 },
-  { id: 'moyen', label: 'Moyen', unitMm: 2.2 },
-  { id: 'grand', label: 'Grand', unitMm: 2.85 },
+  { id: 'petit', label: 'Petit', unitMm: 3.6 },
+  { id: 'moyen', label: 'Moyen', unitMm: 4.7 },
+  { id: 'grand', label: 'Grand', unitMm: 6.2 },
 ]
 
 export const DEFAULT_CALLI_FONT: CalliFontId = 'marelle'

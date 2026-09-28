@@ -193,7 +193,7 @@ export function tryGenerateCalligraphieBatch(
   }
 
   return {
-    instruction: 'Recopiez chaque mot en écriture cursive sur la même ligne.',
+    instruction: 'Recopiez chaque ligne en écriture cursive sur la même bande.',
     preferredColumns: 1,
     items: [
       {

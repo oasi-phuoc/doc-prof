@@ -28,39 +28,35 @@ export const DEFAULT_CALLI_PHRASES = [
 ]
 
 /** Fallback si la taille n’est pas connue (taille moyenne). */
-export const DEFAULT_CALLI_WORD_COUNT = 9
-export const DEFAULT_CALLI_PHRASE_COUNT = 7
+export const DEFAULT_CALLI_WORD_COUNT = 5
+export const DEFAULT_CALLI_PHRASE_COUNT = 5
 
 /**
- * Mots par défaut selon la taille.
- * Grand → 8 · Moyen → 9 · Petit → 11.
+ * Blocs par défaut selon la taille (phrases et mots partagent le carreau).
+ * Grand → 4 · Moyen → 5 · Petit → 6.
  */
 export function defaultCalliWordCount(sizeId: string | undefined): number {
-  if (sizeId === 'grand') return 8
-  if (sizeId === 'petit') return 11
-  return 9
+  if (sizeId === 'grand') return 4
+  if (sizeId === 'petit') return 6
+  return 5
 }
 
 /**
  * Blocs phrases par défaut selon la taille.
- * Grand → 6 · Moyen → 7 · Petit → 9.
+ * Grand → 4 · Moyen → 5 · Petit → 6.
  */
 export function defaultCalliPhraseCount(sizeId: string | undefined): number {
-  if (sizeId === 'grand') return 6
-  if (sizeId === 'petit') return 9
-  return 7
+  if (sizeId === 'grand') return 4
+  if (sizeId === 'petit') return 6
+  return 5
 }
 
 /** Plafond dur A4 (ajouts manuels au-delà du défaut). */
 export function hardMaxCalliEntries(mode: 'same-line' | 'copy-below', sizeId: string | undefined): number {
-  if (mode === 'copy-below') {
-    if (sizeId === 'grand') return 8
-    if (sizeId === 'petit') return 12
-    return 10
-  }
-  if (sizeId === 'grand') return 14
-  if (sizeId === 'petit') return 18
-  return 15
+  void mode
+  if (sizeId === 'grand') return 5
+  if (sizeId === 'petit') return 7
+  return 6
 }
 
 /** Longueur max pour rester sur une seule ligne d’écriture cursive (espaces compris). */

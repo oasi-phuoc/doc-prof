@@ -2334,9 +2334,7 @@ function GeneratorPage() {
                       ))}
                     </div>
                     <small className="muted">
-                      {calliIsPhrases
-                        ? 'Petit : 9 blocs · Moyen : 7 · Grand : 6 (vous pouvez en ajouter).'
-                        : 'Petit : 11 mots · Moyen : 9 · Grand : 8 (vous pouvez en ajouter).'}
+                      Petit : 6 blocs · Moyen : 5 · Grand : 4 (vous pouvez en ajouter).
                     </small>
                   </div>
                   {calliIsPhrases ? (
@@ -2377,7 +2375,10 @@ function GeneratorPage() {
                   ) : null}
                   <div className="quad-libre-block">
                     <b>{calliIsPhrases ? 'Phrases' : 'Mots'}</b>
-                    <ul className="calli-fields" aria-label={calliIsPhrases ? 'Phrases à recopier' : 'Mots à recopier'}>
+                    <ul
+                      className="calli-fields"
+                      aria-label={calliIsPhrases ? 'Phrases à recopier' : 'Mots ou phrases à recopier'}
+                    >
                       {calliFields.map((value, index) => (
                         <li className="calli-field-row" key={`calli-field-${index}`}>
                           <span className="calli-field-num">{index + 1}.</span>
@@ -2387,9 +2388,11 @@ function GeneratorPage() {
                             value={value}
                             spellCheck
                             aria-label={
-                              calliIsPhrases ? `Phrase ${index + 1}` : `Mot ${index + 1}`
+                              calliIsPhrases
+                                ? `Phrase ${index + 1}`
+                                : `Mot ou phrase ${index + 1}`
                             }
-                            placeholder={calliIsPhrases ? 'Phrase' : 'Mot'}
+                            placeholder={calliIsPhrases ? 'Phrase' : 'Mot ou phrase'}
                             onChange={(event) => setCalliFieldAt(index, event.target.value)}
                           />
                           <button
@@ -2404,26 +2407,24 @@ function GeneratorPage() {
                       ))}
                     </ul>
                     <div className="game-extra-words">
-                      <b>{calliIsPhrases ? 'Phrases supplémentaires' : 'Mots supplémentaires'}</b>
+                      <b>{calliIsPhrases ? 'Phrases supplémentaires' : 'Lignes supplémentaires'}</b>
                       <VocabAddWordRow
                         withImage={false}
-                        placeholder={calliIsPhrases ? 'Nouvelle phrase' : 'Nouveau mot'}
+                        placeholder={calliIsPhrases ? 'Nouvelle phrase' : 'Mot ou phrase'}
                         onAdd={addCalliExtraWord}
                       />
                       <small className="muted">
-                        {calliIsPhrases
-                          ? 'Hors liste · les ajouts dépassent le nombre par défaut.'
-                          : 'Hors liste · les ajouts dépassent le nombre par défaut.'}
+                        Hors liste · les ajouts dépassent le nombre par défaut.
                       </small>
                     </div>
                     <small className="muted">
                       {calliIsPhrases
                         ? calliIsLibre
-                          ? 'Petit 9 · Moyen 7 · Grand 6 blocs · Générer tire dans tout le vocabulaire.'
-                          : 'Petit 9 · Moyen 7 · Grand 6 blocs · Générer tire des phrases du thème (A1 / A2 / B1).'
+                          ? 'Petit 6 · Moyen 5 · Grand 4 blocs · Générer tire dans tout le vocabulaire.'
+                          : 'Petit 6 · Moyen 5 · Grand 4 blocs · Générer tire des phrases du thème (A1 / A2 / B1).'
                         : calliIsLibre
-                          ? 'Petit 11 · Moyen 9 · Grand 8 mots · Générer tire dans tous les thèmes.'
-                          : 'Petit 11 · Moyen 9 · Grand 8 mots · Générer tire dans le thème.'}
+                          ? 'Petit 6 · Moyen 5 · Grand 4 · Générer tire des mots ; vous pouvez saisir une phrase.'
+                          : 'Petit 6 · Moyen 5 · Grand 4 · Générer tire des mots du thème ; vous pouvez saisir une phrase.'}
                     </small>
                   </div>
                 </>
