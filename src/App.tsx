@@ -216,6 +216,7 @@ function WorksheetSheet({
     onRemove: (x: number, y: number) => void
   }
 }) {
+  const sheetTitle = institutional.documentTitle.trim()
   const isJeuxSheet = page.domain === 'jeux'
   const showHeader = pageNumber === 1 && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
@@ -239,7 +240,12 @@ function WorksheetSheet({
             fallbackTitle={page.title}
           />
         ) : (
-          <CustomDocumentHeader config={custom} pageTitle={page.title} domain={page.domain} />
+          <CustomDocumentHeader
+            config={custom}
+            pageTitle={page.title}
+            domain={page.domain}
+            sheetTitle={sheetTitle}
+          />
         ))}
       <SheetBody>
         {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, blockIndex) => {
@@ -254,12 +260,13 @@ function WorksheetSheet({
               (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
+          const blockHeading = sheetTitle || block.title
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">
-                  <h3>{block.title}</h3>
+                  <h3>{blockHeading}</h3>
                   <p>{block.instruction}</p>
                   {block.givens && block.givens.length > 0 ? (
                     <p className="sheet-givens" aria-label="Valeurs des variables">
@@ -340,7 +347,13 @@ function WorksheetSheet({
           )
         })}
       </SheetBody>
-      {isJeuxSheet ? null : <DocumentFooter pageNumber={pageNumber} total={total} />}
+      {isJeuxSheet ? null : (
+        <DocumentFooter
+          pageNumber={pageNumber}
+          total={total}
+          reference={institutional.reference}
+        />
+      )}
     </article>
   )
 }
@@ -3162,15 +3175,6 @@ function GeneratorPage() {
                           </option>
                         ))}
                       </SelectBox>
-                      <label>
-                        Titre du document
-                        <input className="pill-input" value={institutional.documentTitle}
-                          onChange={(event) =>
-                            setInstitutional({ ...institutional, documentTitle: event.target.value })
-                          }
-                          placeholder={evalMode ? 'Évaluation' : activeBlock.topic}
-                        />
-                      </label>
                     </>
                   ) : (
                     <>
@@ -3194,6 +3198,34 @@ function GeneratorPage() {
                       </label>
                     </>
                   )}
+                  <label>
+                    Titre de la fiche
+                    <input
+                      className="pill-input"
+                      value={institutional.documentTitle}
+                      onChange={(event) =>
+                        setInstitutional({ ...institutional, documentTitle: event.target.value })
+                      }
+                      placeholder={
+                        evalMode
+                          ? 'Évaluation'
+                          : (exerciseTypeById[activeBlock.exerciseType]?.label ?? 'Nom du type d’exercice')
+                      }
+                    />
+                    <small className="muted">Vide = nom du type d’exercice partout sur la fiche.</small>
+                  </label>
+                  <label>
+                    Référence
+                    <input
+                      className="pill-input"
+                      value={institutional.reference}
+                      onChange={(event) =>
+                        setInstitutional({ ...institutional, reference: event.target.value })
+                      }
+                      placeholder="Ex. FICHE-12"
+                    />
+                    <small className="muted">Pied de page, à gauche. Vide = rien.</small>
+                  </label>
                 </div>
               </details>
               <ThemeColorPicker themeColor={themeColor} onChange={applyThemeColor} />

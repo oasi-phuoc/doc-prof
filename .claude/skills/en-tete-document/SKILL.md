@@ -16,7 +16,7 @@ Composants : `src/components/math/PrintDocumentChrome.tsx` · styles `.doc-*` da
 |---|---|---|
 | Institutionnel | `InstitutionalDocumentHeader` | École, année, org, niveau/classe, cours, lignes Nom/Prénom/Date, grille notes si éval |
 | Personnalisé | `CustomDocumentHeader` | Logo texte, titre, sous-titre |
-| Pied | `DocumentFooter` | Texte libre + « page i / n », collé en bas via flex |
+| Pied | `DocumentFooter` | ClairFLE + « page i / n » + « Imprimé le… » ; `reference` optionnel (`Référence : …` à gauche) |
 
 ## Évaluation
 
@@ -29,6 +29,8 @@ Composants : `src/components/math/PrintDocumentChrome.tsx` · styles `.doc-*` da
 - Pied **toujours en bas** de l'A4 (`margin-top: auto`), jamais sous le dernier exercice seulement.
 - Grille d'éval lisible N&B (filets noirs).
 - Niveaux classe : `CLASS_LEVELS` / `CLASS_NUMBERS` / `COURSES` — étendre là, pas en dur dans le JSX.
+- Titre de fiche : `documentTitle` (vide = libellé du type d’exercice en en-tête et titres de blocs).
+- Pied `reference` : vide par défaut ; sinon `Référence : …` aligné à gauche, même ligne que « Imprimé le… ».
 - Logo institutionnel : `logoSrc` (chemin, URL ou image chargée). Défaut : blason du Valais (`/lib/logos/etat-du-valais.webp`), remplaçable comme les autres champs.
 
 ## Terminé quand

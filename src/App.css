@@ -1064,7 +1064,16 @@ html,body,#root{
   .doc-footer{margin-top:auto}
 }
 
-.sheet-footer.doc-footer,.doc-footer{margin-top:auto;padding-top:12px;border-top:1px solid #111;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;color:#111;font-size:10px}
+.sheet-footer.doc-footer,.doc-footer{
+  margin-top:auto;padding-top:12px;border-top:1px solid #111;
+  display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;
+  column-gap:12px;row-gap:2px;align-items:end;color:#111;font-size:10px
+}
+.doc-footer-brand{grid-column:1;grid-row:1}
+.doc-footer-brand strong{font-size:11px}
+.doc-footer-page{grid-column:2;grid-row:1;text-align:right;justify-self:end}
+.doc-footer-ref{grid-column:1;grid-row:2;text-align:left;min-height:1em}
+.doc-footer-printed{grid-column:2;grid-row:2;text-align:right;justify-self:end}
 .doc-footer-left{display:flex;flex-direction:column;gap:2px}
 .doc-footer-left strong{font-size:11px}
 .doc-footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}

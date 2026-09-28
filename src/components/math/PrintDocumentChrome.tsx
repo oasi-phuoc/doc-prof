@@ -15,6 +15,8 @@ export type InstitutionalHeader = {
   classNumber: string
   course: string
   documentTitle: string
+  /** Pied de page : vide = rien ; sinon « Référence : … ». */
+  reference: string
   /** Chemin, URL ou data URL du logo. Vide = emplacement sans image. */
   logoSrc: string
 }
@@ -40,6 +42,7 @@ export const DEFAULT_INSTITUTIONAL: InstitutionalHeader = {
   classNumber: '01',
   course: 'Mathématiques',
   documentTitle: '',
+  reference: '',
   logoSrc: DEFAULT_INSTITUTIONAL_LOGO,
 }
 
@@ -47,9 +50,13 @@ export const CLASS_LEVELS = ['CSC', 'CFR', 'EPL', 'CPR', 'HSS'] as const
 export const CLASS_NUMBERS = Array.from({ length: 20 }, (_, i) => String(i + 1).padStart(2, '0'))
 export const COURSES = [
   'Mathématiques',
+  'Math soutien',
   'Français',
-  'Sciences et santé',
+  'Français soutien',
+  'Calligraphie',
+  'Découverte de la vie scolaire',
   'Découverte de la société',
+  'Sciences et santé',
   'Informatique',
   'Sport',
 ]
@@ -138,11 +145,15 @@ export function CustomDocumentHeader({
   config,
   pageTitle,
   domain,
+  sheetTitle,
 }: {
   config: CustomHeader
   pageTitle: string
   domain: string
+  /** Titre de fiche (remplace le nom du type d’exercice s’il est renseigné). */
+  sheetTitle?: string
 }) {
+  const ficheTitle = sheetTitle?.trim() || pageTitle
   const kicker =
     domain === 'lecture'
       ? 'FRANÇAIS · LECTURE'
@@ -150,15 +161,17 @@ export function CustomDocumentHeader({
         ? 'FRANÇAIS · GATTEGNO'
         : domain === 'jeux'
           ? 'FRANÇAIS · JEUX'
-          : domain === 'français'
-            ? 'FRANÇAIS'
-            : `MATHÉMATIQUES · ${domain.toUpperCase()}`
+          : domain === 'calligraphie'
+            ? 'FRANÇAIS · CALLIGRAPHIE'
+            : domain === 'français'
+              ? 'FRANÇAIS'
+              : `MATHÉMATIQUES · ${domain.toUpperCase()}`
   return (
     <div className="doc-header custom">
       <div className="custom-print-header">
         <div className="custom-logo">{config.logo || 'ClairFLE'}</div>
         <div>
-          <strong>{config.title || pageTitle}</strong>
+          <strong>{config.title || ficheTitle}</strong>
           {config.subtitle && <small>{config.subtitle}</small>}
         </div>
         <span>{formatPrintDate()}</span>
@@ -166,7 +179,7 @@ export function CustomDocumentHeader({
       <div className="sheet-header">
         <div>
           <span className="sheet-kicker">{kicker}</span>
-          <h3>{pageTitle}</h3>
+          <h3>{ficheTitle}</h3>
         </div>
         <span className="sheet-number">Fiche d’activité</span>
       </div>
@@ -180,23 +193,30 @@ export function CustomDocumentHeader({
 export function DocumentFooter({
   pageNumber,
   total,
+  reference,
 }: {
   pageNumber: number
   total: number
+  /** Pied : affiché à gauche sur la ligne « Imprimé le… » si non vide. */
+  reference?: string
   /** @deprecated Pied fixe ; ignoré. */
   text?: string
   printedBy?: string
 }) {
+  const ref = reference?.trim() ?? ''
   return (
     <footer className="sheet-footer doc-footer">
-      <div className="doc-footer-left">
+      <div className="doc-footer-brand">
         <strong>ClairFLE - Support imprimable</strong>
       </div>
-      <div className="doc-footer-right">
+      <div className="doc-footer-page">
+        Page {pageNumber} / {total}
+      </div>
+      <div className="doc-footer-ref">
+        {ref ? <span>Référence : {ref}</span> : null}
+      </div>
+      <div className="doc-footer-printed">
         <span>Imprimé le {formatPrintDate()}</span>
-        <span>
-          Page {pageNumber} / {total}
-        </span>
       </div>
     </footer>
   )
