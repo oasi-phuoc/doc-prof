@@ -196,6 +196,54 @@ export const COMMON = [
 /** Sujets pour instancier un modèle (le modèle lui-même ne change pas). Personnes seulement. */
 export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, 'Il/pronom', 'Elle/pronom'] as const
 
+/**
+ * Sujets personnes avec adjectif (thèmes adjectif).
+ * Placement avant le nom (BAGS) ; accord m/f déjà dans la chaîne.
+ */
+export const ADJ_SUBJECTS = [
+  'Le/determinant petit/adjectif garçon/nom',
+  'La/determinant petite/adjectif fille/nom',
+  'Un/determinant jeune/adjectif ami/nom',
+  'Une/determinant jeune/adjectif amie/nom',
+  'Le/determinant grand/adjectif frère/nom',
+  'La/determinant grande/adjectif sœur/nom',
+  'Le/determinant gentil/adjectif voisin/nom',
+  'La/determinant gentille/adjectif voisine/nom',
+  'Un/determinant petit/adjectif cousin/nom',
+  'Une/determinant petite/adjectif cousine/nom',
+  'Le/determinant nouveau/adjectif maître/nom',
+  'La/determinant nouvelle/adjectif maîtresse/nom',
+  'Le/determinant joli/adjectif bébé/nom',
+  'La/determinant jolie/adjectif maman/nom',
+  'Un/determinant grand/adjectif papa/nom',
+  'Une/determinant grande/adjectif tante/nom',
+  'Le/determinant vieux/adjectif monsieur/nom',
+  'La/determinant vieille/adjectif dame/nom',
+  'Le/determinant bel/adjectif homme/nom',
+  'La/determinant belle/adjectif femme/nom',
+  'Un/determinant bon/adjectif élève/nom',
+  'Une/determinant bonne/adjectif élève/nom',
+  'Le/determinant petit/adjectif facteur/nom',
+  'La/determinant petite/adjectif factrice/nom',
+  'Le/determinant jeune/adjectif cuisinier/nom',
+  'La/determinant jeune/adjectif cuisinière/nom',
+  'Un/determinant gentil/adjectif copain/nom',
+  'Une/determinant gentille/adjectif copine/nom',
+  'Le/determinant petit/adjectif musicien/nom',
+  'La/determinant petite/adjectif musicienne/nom',
+] as const
+
+/** Où placer le ou les adjectifs dans une phrase à thème adjectif. */
+export type AdjPlacement = 'comp' | 'subj' | 'both'
+
+/** Retire les jetons adjectif d’un prédicat étiqueté (mode sujet seul). */
+export function stripAdjFromPred(pred: string): string {
+  return pred
+    .split(/\s+/)
+    .filter((part) => part.length > 0 && !part.endsWith('/adjectif'))
+    .join(' ')
+}
+
 export function instantiateTagged(subject: string, pred: string): PhraseToken[] {
   return parse(`${subject} ${pred}`)
 }
@@ -294,6 +342,25 @@ export function subjectsFor(theme: PhraseThemeId): readonly string[] {
   return SIMPLE_SUBJECTS
 }
 
+function isAdjTheme(theme: PhraseThemeId): boolean {
+  return theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
+}
+
+/** Sujets selon le placement de l’adjectif (complément → sujets simples ; sujet / les deux → sujets avec adj). */
+export function subjectsForAdjPlacement(
+  theme: PhraseThemeId,
+  placement: AdjPlacement,
+): readonly string[] {
+  if (isAdjTheme(theme) && placement !== 'comp') return ADJ_SUBJECTS
+  return subjectsFor(theme)
+}
+
+/** Pour *être*, le mode « sujet seul » n’a pas de complément adjectival : on passe en « les deux ». */
+export function resolveAdjPlacement(frameId: string, placement: AdjPlacement): AdjPlacement {
+  if (frameId === 'être' && placement === 'subj') return 'both'
+  return placement
+}
+
 function lowerCommon(taggedSubject: string): string {
   return taggedSubject
     .replace(/^Le\//, 'le/')
@@ -334,6 +401,7 @@ export function instantiateThemeFrame(
   pickSubject: () => string,
   pickPred: (preds: readonly string[]) => string,
   pickRightSubject: () => string = () => COMMON[0]!,
+  adjPlacement: AdjPlacement = 'comp',
 ): PhraseToken[] {
   if (theme === 'phrase-conjonctions') {
     const left = pickSubject()
@@ -347,27 +415,52 @@ export function instantiateThemeFrame(
     )
     return tokens
   }
+  const placement = isAdjTheme(theme) ? resolveAdjPlacement(frame.id, adjPlacement) : 'comp'
   const subject = pickSubject()
   let pred = pickPred(frame.preds)
-  if (frame.id === 'être' && (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif')) {
+  if (frame.id === 'être' && isAdjTheme(theme)) {
     pred = pickPred(predsForEtreAdj(frame.preds, subjectGender(subject)))
+  } else if (isAdjTheme(theme) && placement === 'subj') {
+    pred = stripAdjFromPred(pred)
   }
   const tokens = instantiateTagged(subject, pred)
   return isNegationTheme(theme) ? withNegation(tokens) : tokens
 }
 
+const ADJ_PLACEMENTS: readonly AdjPlacement[] = ['comp', 'subj', 'both']
+
 function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): PhraseToken[][] {
   const frames = framesForTheme(theme, group)
-  const subjects = subjectsFor(theme)
-  return frames.map((frame, index) =>
-    instantiateThemeFrame(
-      theme,
-      frame,
-      () => subjects[index % subjects.length]!,
-      (preds) => preds[0]!,
-      () => COMMON[(index + 1) % COMMON.length]!,
-    ),
-  )
+  if (!isAdjTheme(theme)) {
+    const subjects = subjectsFor(theme)
+    return frames.map((frame, index) =>
+      instantiateThemeFrame(
+        theme,
+        frame,
+        () => subjects[index % subjects.length]!,
+        (preds) => preds[0]!,
+        () => COMMON[(index + 1) % COMMON.length]!,
+      ),
+    )
+  }
+  const out: PhraseToken[][] = []
+  for (const [index, frame] of frames.entries()) {
+    for (const placement of ADJ_PLACEMENTS) {
+      const effective = resolveAdjPlacement(frame.id, placement)
+      const pool = subjectsForAdjPlacement(theme, effective)
+      out.push(
+        instantiateThemeFrame(
+          theme,
+          frame,
+          () => pool[index % pool.length]!,
+          (preds) => preds[0]!,
+          () => COMMON[(index + 1) % COMMON.length]!,
+          effective,
+        ),
+      )
+    }
+  }
+  return out
 }
 
 function bankFor(group: PhraseVerbGroup): Record<PhraseThemeId, PhraseToken[][]> {

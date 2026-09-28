@@ -19,7 +19,11 @@ const CONJS = [
   'donc/conjonction',
 ] as const
 
-/** Adjectif sur le complément — accordé avec le nom, phrases réelles. */
+/**
+ * Adjectif sur le complément — accordé avec le nom, phrases réelles.
+ * À l’instanciation (thèmes adjectif), chaque modèle produit aussi
+ * une variante avec adjectif dans le sujet, et une avec les deux.
+ */
 const ADJ_ER: Record<string, readonly string[]> = {
   manger: ['mange/verbe une/determinant pomme/nom rouge/adjectif', 'mange/verbe une/determinant soupe/nom chaude/adjectif', 'mange/verbe un/determinant sandwich/nom froid/adjectif'],
   goûter: ['goûte/verbe un/determinant gâteau/nom sucré/adjectif', 'goûte/verbe une/determinant tarte/nom chaude/adjectif'],

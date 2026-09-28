@@ -54,6 +54,7 @@ Dans colorier et remettre en ordre, seule la première lettre de la phrase est u
 - **Complément qui va avec le verbe** : *Léa voit une voiture* oui ; *la maison voit une voiture* non ; *habite* exige *dans*.
 - **Contractions** : *au maître*, *du film*, *près du parc* — jamais *à le* / *de le*.
 - **Accord** : *être* + adjectif suit le genre du sujet (*Léa est grande*, *Noah est grand*).
+- **Thèmes adjectif** : trois placements — adjectif dans le complément (*Léa mange une pomme rouge*), dans le sujet (*Le petit garçon mange une pomme*), ou les deux (*La petite fille mange une pomme rouge*). Pour *être*, le mode « sujet seul » devient « les deux » (*La petite fille est contente*).
 
 `assertBank` refuse : sujet inanimé, « être » en phrase simple / négation simple, adjectif ou préposition manquant, *habite* sans *dans*, préposition hors thème préposition, deuxième majuscule dans une phrase à conjonction.
 

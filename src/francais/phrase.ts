@@ -3,7 +3,9 @@ import {
   framesForTheme,
   instantiateThemeFrame,
   joinPhrase,
-  subjectsFor,
+  resolveAdjPlacement,
+  subjectsForAdjPlacement,
+  type AdjPlacement,
 } from './phrase-sentences'
 import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
@@ -49,13 +51,18 @@ function pickPhrase(
   const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
   const frame = pick(rng, unused.length ? unused : frames)
   used.add(`frame:${frame.id}`)
-  const pool = subjectsFor(theme)
+  const isAdj = theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif'
+  const adjPlacement: AdjPlacement = isAdj
+    ? resolveAdjPlacement(frame.id, pick(rng, ['comp', 'subj', 'both'] as const))
+    : 'comp'
+  const pool = subjectsForAdjPlacement(theme, adjPlacement)
   const tokens = instantiateThemeFrame(
     theme,
     frame,
     () => pick(rng, [...pool]),
     (preds) => pick(rng, [...preds]),
     () => pick(rng, [...COMMON]),
+    adjPlacement,
   )
   return builtFromTokens(tokens)
 }
@@ -68,14 +75,32 @@ function pastillePattern(theme: PhraseThemeId, rng: Rng): PhraseCategory[] {
       return [...subj, 'verbe', 'determinant', 'nom']
     case 'phrase-negation':
       return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
-    case 'phrase-adjectif':
-      return rng() < 0.5
-        ? ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'nom']
-        : [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
-    case 'phrase-negation-adjectif':
-      return rng() < 0.5
-        ? ['determinant', 'adjectif', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
-        : [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'adjectif', 'nom']
+    case 'phrase-adjectif': {
+      const roll = rng()
+      if (roll < 1 / 3) return ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'nom']
+      if (roll < 2 / 3) return [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
+      return ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'adjectif', 'nom']
+    }
+    case 'phrase-negation-adjectif': {
+      const roll = rng()
+      if (roll < 1 / 3) {
+        return ['determinant', 'adjectif', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
+      }
+      if (roll < 2 / 3) {
+        return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'adjectif', 'nom']
+      }
+      return [
+        'determinant',
+        'adjectif',
+        'nom',
+        'adverbe',
+        'verbe',
+        'adverbe',
+        'determinant',
+        'adjectif',
+        'nom',
+      ]
+    }
     case 'phrase-determinants':
       return ['determinant', 'nom', 'verbe', 'determinant', 'nom']
     case 'phrase-negation-determinants':
@@ -123,7 +148,12 @@ function pastillesForFrame(
   frame: { id: string },
 ): PhraseCategory[] {
   if (frame.id === 'être' && (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif')) {
-    const subj: PhraseCategory[] = rng() < 0.5 ? ['pronom'] : ['determinant', 'nom']
+    const withAdjSubject = rng() < 0.5
+    const subj: PhraseCategory[] = withAdjSubject
+      ? ['determinant', 'adjectif', 'nom']
+      : rng() < 0.5
+        ? ['pronom']
+        : ['determinant', 'nom']
     return theme === 'phrase-negation-adjectif'
       ? [...subj, 'adverbe', 'verbe', 'adverbe', 'adjectif']
       : [...subj, 'verbe', 'adjectif']
