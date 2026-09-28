@@ -134,45 +134,47 @@
   color:var(--muted);line-height:1.1;margin-top:1px
 }
 .page-tabs button.active .tab-suite{color:var(--purple)}
-/* Desktop : ne pas rogner l’aperçu A4 (overflow:hidden du .workspace de base). */
+/* Chrome / desktop : page entière défilable, rien n’est rogné. */
+html,body,#root{
+  height:auto;
+  min-height:100%;
+  overflow-x:clip;
+  overflow-y:auto;
+}
 .workspace{
   overflow:visible;
-  align-items:start;
+  /* stretch : le fond blanc suit la colonne la plus haute (aperçu A4) */
+  align-items:stretch;
 }
-.settings-panel{overflow:visible}
+.settings-panel{
+  overflow:visible;
+  height:auto;
+  max-height:none;
+  position:static;
+  border-radius:18px 0 0 18px;
+}
 .field-group{overflow:visible}
 .result-panel{
   min-width:0;
   overflow:visible;
+  height:auto;
+  max-height:none;
   border-radius:0 18px 18px 0;
-}
-.settings-panel{
-  border-radius:18px 0 0 18px;
 }
 @media (min-width:851px){
   .app-shell{
     min-height:100vh;
     min-height:100dvh;
+    overflow:visible;
   }
   .generator-page{
     overflow:visible;
-    padding-bottom:72px;
-  }
-  /* Panneau réglages sticky ; l’aperçu A4 défile entièrement avec la page. */
-  .settings-panel{
-    position:sticky;
-    top:12px;
-    max-height:calc(100dvh - 24px);
-    max-height:calc(100vh - 24px);
-    overflow-x:visible;
-    overflow-y:auto;
-    overscroll-behavior:contain;
+    padding-bottom:80px;
   }
   .sheet-preview-wrap{
-    padding-bottom:56px;
+    padding-bottom:64px;
   }
   .a4-frame{
-    /* Largeur un peu plus basse pour que la hauteur A4 tienne mieux à l’écran */
     width:min(100%,480px);
   }
 }
