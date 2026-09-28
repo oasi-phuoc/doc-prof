@@ -134,11 +134,11 @@
   color:var(--muted);line-height:1.1;margin-top:1px
 }
 .page-tabs button.active .tab-suite{color:var(--purple)}
-/* Chrome / desktop : page entière défilable, rien n’est rogné. */
+/* Desktop (Chrome, Firefox, …) : page entière défilable, rien n’est rogné. */
 html,body,#root{
   height:auto;
   min-height:100%;
-  overflow-x:clip;
+  overflow-x:hidden;
   overflow-y:auto;
 }
 .workspace{
@@ -1216,7 +1216,7 @@ html,body,#root{
 }
 .theme-tone-chip.active{border-color:var(--ink);color:var(--theme-on,#fff);background:var(--purple)}
 
-.landing-page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:clip}
+.landing-page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden}
 .landing-page>main{flex:1 1 auto;overflow:visible}
 .landing-page>.footer{margin-top:auto}
 .landing-hero{overflow:visible}
