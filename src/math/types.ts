@@ -457,6 +457,11 @@ export type ExerciseBlock = {
   /** Phrase : verbes en -er + être + avoir, ou 2e / 3e groupes. */
   verbGroup?: PhraseVerbGroup
   /**
+   * Graine locale de l’exercice (bouton refresh sur la fiche).
+   * Permet de retirer uniquement ce bloc sans régénérer toute la fiche.
+   */
+  contentSeed?: number
+  /**
    * Grille de brouillon (problèmes, équations, périmètres / aires / volumes).
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
