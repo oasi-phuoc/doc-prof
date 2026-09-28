@@ -12,6 +12,11 @@ function parsePhraseKind(typeId: string): 'colorier' | 'ordre' | 'construire' | 
   return null
 }
 
+function inkFor(category: PhraseCategory): string {
+  const color = PHRASE_COLORS[category]
+  return color === '#1a1a1a' || color === '#111' || color === '#111111' ? '#fff' : '#111'
+}
+
 function rebuildColorItem(item: MathItem, tokens: PhraseToken[]): MathItem {
   return {
     ...item,
@@ -30,6 +35,49 @@ function rebuildOrderItem(item: MathItem, tokens: PhraseToken[], correct?: strin
     answer: sentence.endsWith('.') ? sentence : `${sentence}.`,
     responseAnswer: sentence.endsWith('.') ? sentence : `${sentence}.`,
   }
+}
+
+function rebuildBuildItem(item: MathItem, pastilles: PhraseCategory[], verb?: string): MathItem {
+  const nextVerb = verb ?? item.prompt ?? item.calcAnswer ?? ''
+  return {
+    ...item,
+    prompt: nextVerb,
+    calcAnswer: nextVerb,
+    pastilles,
+    answer: pastilles.join(' · '),
+  }
+}
+
+function moveIndex<T>(list: T[], from: number, to: number): T[] {
+  if (to < 0 || to >= list.length || from === to) return list
+  const next = [...list]
+  const [item] = next.splice(from, 1)
+  next.splice(to, 0, item!)
+  return next
+}
+
+function CategorySelect({
+  value,
+  onChange,
+  ariaLabel,
+}: {
+  value: PhraseCategory
+  onChange: (category: PhraseCategory) => void
+  ariaLabel: string
+}) {
+  return (
+    <select
+      value={value}
+      onChange={(event) => onChange(event.target.value as PhraseCategory)}
+      aria-label={ariaLabel}
+    >
+      {CATEGORIES.map((cat) => (
+        <option value={cat} key={cat}>
+          {PHRASE_CATEGORY_LABELS[cat]}
+        </option>
+      ))}
+    </select>
+  )
 }
 
 export function PhraseLibreEditor({
@@ -72,50 +120,163 @@ export function PhraseLibreEditor({
     onChangeItems(copy)
   }
 
+  function setTokens(itemIndex: number, tokens: PhraseToken[], correct?: string) {
+    const item = items[itemIndex]
+    if (!item) return
+    if (item.layout === 'phrase-order' || kind === 'ordre') {
+      updateItem(itemIndex, rebuildOrderItem(item, tokens, correct))
+    } else {
+      updateItem(itemIndex, rebuildColorItem(item, tokens))
+    }
+  }
+
   function updateToken(itemIndex: number, tokenIndex: number, patch: Partial<PhraseToken>) {
     const item = items[itemIndex]
     if (!item?.tokens) return
     const tokens = item.tokens.map((token, i) => (i === tokenIndex ? { ...token, ...patch } : token))
-    if (item.layout === 'phrase-order') {
-      updateItem(itemIndex, rebuildOrderItem(item, tokens))
-    } else {
-      updateItem(itemIndex, rebuildColorItem(item, tokens))
-    }
+    setTokens(itemIndex, tokens)
+  }
+
+  function addToken(itemIndex: number) {
+    const item = items[itemIndex]
+    if (!item) return
+    const tokens = [...(item.tokens ?? []), { text: '', category: 'nom' as PhraseCategory }]
+    setTokens(itemIndex, tokens)
+  }
+
+  function removeToken(itemIndex: number, tokenIndex: number) {
+    const item = items[itemIndex]
+    if (!item?.tokens || item.tokens.length <= 1) return
+    setTokens(
+      itemIndex,
+      item.tokens.filter((_, i) => i !== tokenIndex),
+    )
+  }
+
+  function moveToken(itemIndex: number, tokenIndex: number, delta: number) {
+    const item = items[itemIndex]
+    if (!item?.tokens) return
+    setTokens(itemIndex, moveIndex(item.tokens, tokenIndex, tokenIndex + delta))
+  }
+
+  function setPastilles(itemIndex: number, pastilles: PhraseCategory[]) {
+    const item = items[itemIndex]
+    if (!item) return
+    updateItem(itemIndex, rebuildBuildItem(item, pastilles))
   }
 
   return (
     <div className="phrase-libre-editor">
       <b>
         {kind === 'construire'
-          ? 'Verbes (mode libre)'
+          ? 'Verbe et pastilles (mode libre)'
           : kind === 'ordre'
             ? 'Phrases et couleurs (mode libre)'
             : 'Mots et couleurs (mode libre)'}
       </b>
       <small className="muted">
-        Contenu tiré de la banque : corrigez un mot ou une catégorie si le sens n’est pas juste.
+        Contenu tiré de la banque : corrigez les mots, les couleurs ou les pastilles si besoin.
       </small>
       <div className="phrase-libre-list">
         {items.map((item, itemIndex) => (
           <div className="phrase-libre-card" key={`phrase-libre-${itemIndex}`}>
             <span className="phrase-libre-index">{itemIndex + 1}.</span>
+
             {kind === 'construire' ? (
-              <label className="phrase-libre-field">
-                <span>Verbe</span>
-                <input
-                  type="text"
-                  value={item.prompt ?? item.calcAnswer ?? ''}
-                  onChange={(event) => {
-                    const verb = event.target.value
-                    updateItem(itemIndex, {
-                      ...item,
-                      prompt: verb,
-                      calcAnswer: verb,
-                    })
-                  }}
-                  aria-label={`Verbe de la phrase ${itemIndex + 1}`}
-                />
-              </label>
+              <>
+                <label className="phrase-libre-field">
+                  <span>Verbe</span>
+                  <input
+                    type="text"
+                    value={item.prompt ?? item.calcAnswer ?? ''}
+                    onChange={(event) => {
+                      updateItem(
+                        itemIndex,
+                        rebuildBuildItem(item, item.pastilles ?? [], event.target.value),
+                      )
+                    }}
+                    aria-label={`Verbe de la phrase ${itemIndex + 1}`}
+                  />
+                </label>
+                <div className="phrase-libre-pastilles">
+                  {(item.pastilles ?? []).map((cat, pastilleIndex) => (
+                    <div className="phrase-libre-pastille-row" key={`${itemIndex}-p-${pastilleIndex}`}>
+                      <select
+                        className="phrase-libre-word-fill"
+                        value={cat}
+                        onChange={(event) => {
+                          const next = [...(item.pastilles ?? [])]
+                          next[pastilleIndex] = event.target.value as PhraseCategory
+                          setPastilles(itemIndex, next)
+                        }}
+                        style={{
+                          backgroundColor: PHRASE_COLORS[cat],
+                          color: inkFor(cat),
+                          borderColor: '#111',
+                        }}
+                        aria-label={`Catégorie de la pastille ${pastilleIndex + 1}`}
+                      >
+                        {CATEGORIES.map((option) => (
+                          <option value={option} key={option}>
+                            {PHRASE_CATEGORY_LABELS[option]}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="phrase-libre-actions">
+                        <button
+                          type="button"
+                          className="phrase-libre-icon-btn"
+                          aria-label="Monter la pastille"
+                          disabled={pastilleIndex === 0}
+                          onClick={() =>
+                            setPastilles(
+                              itemIndex,
+                              moveIndex(item.pastilles ?? [], pastilleIndex, pastilleIndex - 1),
+                            )
+                          }
+                        >
+                          ↑
+                        </button>
+                        <button
+                          type="button"
+                          className="phrase-libre-icon-btn"
+                          aria-label="Descendre la pastille"
+                          disabled={pastilleIndex >= (item.pastilles?.length ?? 0) - 1}
+                          onClick={() =>
+                            setPastilles(
+                              itemIndex,
+                              moveIndex(item.pastilles ?? [], pastilleIndex, pastilleIndex + 1),
+                            )
+                          }
+                        >
+                          ↓
+                        </button>
+                        <button
+                          type="button"
+                          className="phrase-libre-icon-btn is-danger"
+                          aria-label="Supprimer la pastille"
+                          disabled={(item.pastilles?.length ?? 0) <= 1}
+                          onClick={() =>
+                            setPastilles(
+                              itemIndex,
+                              (item.pastilles ?? []).filter((_, i) => i !== pastilleIndex),
+                            )
+                          }
+                        >
+                          ×
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="phrase-libre-add"
+                  onClick={() => setPastilles(itemIndex, [...(item.pastilles ?? []), 'nom'])}
+                >
+                  + Pastille
+                </button>
+              </>
             ) : (
               <>
                 <div className="phrase-libre-tokens">
@@ -123,37 +284,64 @@ export function PhraseLibreEditor({
                     <div className="phrase-libre-token" key={`${itemIndex}-${tokenIndex}`}>
                       <input
                         type="text"
+                        className="phrase-libre-word-fill"
                         value={token.text}
                         onChange={(event) =>
                           updateToken(itemIndex, tokenIndex, { text: event.target.value })
                         }
+                        style={{
+                          backgroundColor: PHRASE_COLORS[token.category],
+                          color: inkFor(token.category),
+                          borderColor: '#111',
+                        }}
                         aria-label={`Mot ${tokenIndex + 1} de la phrase ${itemIndex + 1}`}
                       />
-                      <label className="phrase-libre-cat">
-                        <span
-                          className="phrase-libre-swatch"
-                          style={{ background: PHRASE_COLORS[token.category] }}
-                          aria-hidden
-                        />
-                        <select
-                          value={token.category}
-                          onChange={(event) =>
-                            updateToken(itemIndex, tokenIndex, {
-                              category: event.target.value as PhraseCategory,
-                            })
-                          }
-                          aria-label={`Catégorie du mot ${tokenIndex + 1}`}
+                      <CategorySelect
+                        value={token.category}
+                        ariaLabel={`Catégorie du mot ${tokenIndex + 1}`}
+                        onChange={(category) =>
+                          updateToken(itemIndex, tokenIndex, { category })
+                        }
+                      />
+                      <div className="phrase-libre-actions">
+                        {kind === 'ordre' ? (
+                          <>
+                            <button
+                              type="button"
+                              className="phrase-libre-icon-btn"
+                              aria-label="Monter le mot"
+                              disabled={tokenIndex === 0}
+                              onClick={() => moveToken(itemIndex, tokenIndex, -1)}
+                            >
+                              ↑
+                            </button>
+                            <button
+                              type="button"
+                              className="phrase-libre-icon-btn"
+                              aria-label="Descendre le mot"
+                              disabled={tokenIndex >= (item.tokens?.length ?? 0) - 1}
+                              onClick={() => moveToken(itemIndex, tokenIndex, 1)}
+                            >
+                              ↓
+                            </button>
+                          </>
+                        ) : null}
+                        <button
+                          type="button"
+                          className="phrase-libre-icon-btn is-danger"
+                          aria-label="Supprimer le mot"
+                          disabled={(item.tokens?.length ?? 0) <= 1}
+                          onClick={() => removeToken(itemIndex, tokenIndex)}
                         >
-                          {CATEGORIES.map((cat) => (
-                            <option value={cat} key={cat}>
-                              {PHRASE_CATEGORY_LABELS[cat]}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
+                          ×
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
+                <button type="button" className="phrase-libre-add" onClick={() => addToken(itemIndex)}>
+                  + Mot
+                </button>
                 {kind === 'ordre' ? (
                   <label className="phrase-libre-field">
                     <span>Phrase correcte</span>
