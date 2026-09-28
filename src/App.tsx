@@ -1110,11 +1110,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
     type.id === 'jeux-devinettes' ||
     type.id === 'jeux-dominos'
   const gameBackColor =
-    prev?.exerciseType === type.id
-      ? prev.gameBackColor
-      : usesSeriesIdentity
-        ? '#0f6b5c'
-        : undefined
+    prev?.exerciseType === type.id ? prev.gameBackColor : undefined
   const gameSeriesName =
     prev?.exerciseType === type.id && prev.gameSeriesName
       ? prev.gameSeriesName
@@ -1182,7 +1178,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameSource,
           gameTopic,
           gameSelectedIds,
-          gameBackColor: usesSeriesIdentity ? (gameBackColor ?? '#0f6b5c') : undefined,
+          gameBackColor: usesSeriesIdentity ? gameBackColor : undefined,
           gameSeriesName: usesSeriesIdentity ? gameSeriesName : undefined,
           gameBorderId:
             prev?.exerciseType === type.id

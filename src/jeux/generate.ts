@@ -59,11 +59,19 @@ function withBoardChrome(
   )
 }
 
-const DEFAULT_SERIES_FRAME = '#0f6b5c'
+/** Ancien défaut teal — traité comme « suivre le thème ». */
+const LEGACY_SERIES_FRAME = '#0f6b5c'
 
 function resolveSeriesName(name: string | undefined, fallback: string): string {
   const t = name?.trim()
   return t || fallback
+}
+
+/** Couleur de cadre personnalisée ; vide / legacy → CSS thème (`--jeux-accent`). */
+function resolveFrameColor(color?: string): string | undefined {
+  const t = color?.trim()
+  if (!t || t.toLowerCase() === LEGACY_SERIES_FRAME) return undefined
+  return t
 }
 
 /** Dos unifiés : logo ClairFLE + nom de série + cadre (miroir bord long). */
@@ -73,12 +81,12 @@ function makeSeriesBackCards(
   seriesName: string,
   frameColor?: string,
 ): GameCard[] {
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const frame = resolveFrameColor(frameColor)
   return mirrorRows(recto, cols).map((card, i) => ({
     id: `sb-${card.id}-${i}`,
     text: seriesName,
     variant: 'series-back' as const,
-    frameColor: frame,
+    ...(frame ? { frameColor: frame } : {}),
     badge: card.badge,
   }))
 }
@@ -238,7 +246,7 @@ function memory(
   const { cols, rows } = GRID
   const pairs = padEntries(shuffle(rng, solidEntries(entries)), 4)
   const series = resolveSeriesName(seriesName, 'Mémory')
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const frame = resolveFrameColor(frameColor)
   const raw: GameCard[] = pairs.flatMap((e, i) => [
     {
       id: `m-w-${i}`,
@@ -272,7 +280,7 @@ function memory(
       cards: backs,
       kind: 'memory',
       side: 'verso',
-      frameColor: frame,
+      ...(frame ? { frameColor: frame } : {}),
       themeLabel: series,
     }),
   ]
@@ -600,7 +608,7 @@ function intrus(
 ): MathItem[] {
   const { cols, rows } = GRID
   const groups = buildIntrusFromTheme(entries, rng, topicId)
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const frame = resolveFrameColor(frameColor)
   const series = resolveSeriesName(seriesName, 'Intrus')
   const sizeId = fontSizeId ?? DEFAULT_GAME_FONT_SIZE
   const recto: GameCard[] = groups.map((g, i) => {
@@ -627,7 +635,7 @@ function intrus(
       cards: verso,
       kind: 'intrus',
       side: 'verso',
-      frameColor: frame,
+      ...(frame ? { frameColor: frame } : {}),
       themeLabel: series,
     }),
   ]
@@ -648,7 +656,7 @@ function dominos(
   const pool = padEntries(shuffle(rng, solidEntries(entries)), 16)
   const n = pool.length
   const series = resolveSeriesName(seriesName, 'Dominos')
-  const frame = frameColor?.trim() || DEFAULT_SERIES_FRAME
+  const frame = resolveFrameColor(frameColor)
   const raw: GameCard[] = []
   for (let i = 0; i < n; i++) {
     const left = pool[i]!
@@ -678,7 +686,7 @@ function dominos(
       cards: verso,
       kind: 'dominos',
       side: 'verso',
-      frameColor: frame,
+      ...(frame ? { frameColor: frame } : {}),
       themeLabel: series,
     }),
   ]

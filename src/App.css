@@ -197,7 +197,11 @@ html,body,#root{
   margin-left:auto;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);
   color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em
 }
-.header-editor[open] .header-editor-hint{color:var(--purple);border-color:#d6cafc;background:#f7f3ff}
+.header-editor[open] .header-editor-hint{
+  color:var(--purple);
+  border-color:color-mix(in srgb,var(--purple) 28%,#fff);
+  background:var(--lavender)
+}
 .header-editor .custom-header-form{padding:4px 14px 14px;border-top:1px solid var(--line)}
 .field-group select,.field-group input,.custom-header-form input{border-radius:999px!important;background:#fff!important}
 .preview-tabs{display:flex;gap:8px;padding:0}
@@ -683,7 +687,10 @@ html,body,#root{
   letter-spacing:.03em;cursor:pointer;line-height:1.15;white-space:nowrap;
   max-width:2.1cm;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box
 }
-.draft-grid-chip.on{border-color:#d6cafc;color:var(--purple);background:#f7f3ff}
+.draft-grid-chip.on{
+  border-color:color-mix(in srgb,var(--purple) 28%,#fff);
+  color:var(--purple);background:var(--lavender)
+}
 .draft-grid-chip.off{opacity:.85}
 /* Dans la marge large (2,5 cm), entièrement visible à l’écran ; .no-print à l’impression. */
 .draft-grid-chip-margin{
@@ -965,7 +972,7 @@ html,body,#root{
   aspect-ratio:1;min-height:22px;border:1px solid #d8d4de;border-radius:3px;
   background:#fff;padding:0;display:flex;align-items:center;justify-content:center
 }
-.coord-editor-cell.filled{background:#f7f3ff}
+.coord-editor-cell.filled{background:var(--lavender)}
 
 .exercise-item{
   border:0!important;border-radius:0;background:transparent;box-shadow:none;
@@ -1598,7 +1605,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   --jeux-line:#c9c2b8;
   --jeux-cut:#9a9288;
   --jeux-soft:#f7f3ec;
-  --jeux-accent:#0f6b5c;
+  /* Suit la couleur du thème (sélecteur) — cadres, badges, numéros Jeux. */
+  --jeux-accent:var(--purple);
   --jeux-true:#1f7a4c;
   --jeux-false:#a33b2b;
   --jeux-card-radius:10px;
@@ -2008,7 +2016,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   font-size:calc(var(--game-word-px,20) * 1.2 * 1px)
 }
 .game-card.is-intrus-answer{
-  border:2.8mm solid var(--intrus-frame,#0f6b5c);
+  border:2.8mm solid var(--intrus-frame,var(--jeux-accent));
   border-radius:8px;justify-content:center;background:#fff
 }
 .game-card.is-intrus-answer .game-card-word{
@@ -2231,7 +2239,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;
   color:var(--muted);font-size:18px;font-weight:700;line-height:1
 }
-.game-entry-thumb.has-image{border-style:solid;border-color:var(--jeux-accent,#0f6b5c)}
+.game-entry-thumb.has-image{border-style:solid;border-color:var(--jeux-accent)}
 .game-entry-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .game-entry-text{min-width:0;width:100%}
 .game-entry-clear{
