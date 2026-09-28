@@ -17,14 +17,11 @@ import {
   CLASS_LEVELS,
   CLASS_NUMBERS,
   COURSES,
-  CustomDocumentHeader,
   DEFAULT_INSTITUTIONAL,
   DEFAULT_INSTITUTIONAL_LOGO,
   DocumentFooter,
   InstitutionalDocumentHeader,
   SheetBody,
-  type CustomHeader,
-  type HeaderStyle,
   type InstitutionalHeader,
 } from '@/components/math/PrintDocumentChrome'
 import {
@@ -174,9 +171,7 @@ function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
 function WorksheetSheet({
   page,
   mode,
-  headerStyle,
   institutional,
-  custom,
   evalMode,
   pageNumber,
   total,
@@ -191,9 +186,7 @@ function WorksheetSheet({
 }: {
   page: WorksheetPage
   mode: PreviewMode
-  headerStyle: HeaderStyle
   institutional: InstitutionalHeader
-  custom: CustomHeader
   evalMode: boolean
   pageNumber: number
   total: number
@@ -231,22 +224,14 @@ function WorksheetSheet({
       className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}`}
       style={{ '--sheet-columns': page.columns } as CSSProperties}
     >
-      {showHeader &&
-        (headerStyle === 'institutionnel' ? (
-          <InstitutionalDocumentHeader
-            config={institutional}
-            evalMode={evalMode}
-            totalPoints={evalMode ? documentTotalPoints : undefined}
-            fallbackTitle={page.title}
-          />
-        ) : (
-          <CustomDocumentHeader
-            config={custom}
-            pageTitle={page.title}
-            domain={page.domain}
-            sheetTitle={sheetTitle}
-          />
-        ))}
+      {showHeader ? (
+        <InstitutionalDocumentHeader
+          config={institutional}
+          evalMode={evalMode}
+          totalPoints={evalMode ? documentTotalPoints : undefined}
+          fallbackTitle={page.title}
+        />
+      ) : null}
       <SheetBody>
         {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, blockIndex) => {
           const algebraItems = block.items.filter((item) => item.layout === 'algebra')
@@ -1320,14 +1305,7 @@ function GeneratorPage() {
   const [sheetIndex, setSheetIndex] = useState(0)
   const [blockIndex, setBlockIndex] = useState(0)
   const [mode, setMode] = useState<PreviewMode>('student')
-  const [headerStyle, setHeaderStyle] = useState<HeaderStyle>('institutionnel')
   const [institutional, setInstitutional] = useState<InstitutionalHeader>(DEFAULT_INSTITUTIONAL)
-  const [custom, setCustom] = useState<CustomHeader>({
-    title: '',
-    subtitle: '',
-    logo: 'ClairFLE',
-    footer: 'ClairFLE · Support imprimable',
-  })
   const [evalMode, setEvalMode] = useState(false)
   const [pointsPerQuestion, setPointsPerQuestion] = useState(1)
   const [seed, setSeed] = useState(randomSeed)
@@ -1452,9 +1430,7 @@ function GeneratorPage() {
     activeBlock.coordMarks,
     activePage.extraBlocks,
     evalMode,
-    headerStyle,
     institutional,
-    custom,
   ])
 
   const updatePage = (patch: Partial<PageConfig>) =>
@@ -1953,9 +1929,7 @@ function GeneratorPage() {
   }
 
   const chromeProps = {
-    headerStyle,
     institutional,
-    custom,
     evalMode,
     documentTotalPoints: sheetTotalPoints,
     pointsPerQuestion,
@@ -3054,150 +3028,109 @@ function GeneratorPage() {
                   <span className="header-editor-hint">Modifier</span>
                 </summary>
                 <div className="custom-header-form">
-                  <div className="mode-toggle">
-                    <button
-                      type="button"
-                      className={headerStyle === 'institutionnel' ? 'active' : ''}
-                      onClick={() => setHeaderStyle('institutionnel')}
-                    >
-                      Institutionnel
-                    </button>
-                    <button
-                      type="button"
-                      className={headerStyle === 'personnalise' ? 'active' : ''}
-                      onClick={() => setHeaderStyle('personnalise')}
-                    >
-                      Personnalisé
-                    </button>
-                  </div>
-                  {headerStyle === 'institutionnel' ? (
-                    <>
-                      <label>
-                        Établissement
-                        <input className="pill-input" value={institutional.schoolName}
-                          onChange={(event) => setInstitutional({ ...institutional, schoolName: event.target.value })}
-                        />
-                      </label>
-                      <label>
-                        Année
-                        <input className="pill-input" value={institutional.schoolYear}
-                          onChange={(event) => setInstitutional({ ...institutional, schoolYear: event.target.value })}
-                        />
-                      </label>
-                      <label>
-                        Mention
-                        <input className="pill-input" value={institutional.schoolTagline}
-                          onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
-                        />
-                      </label>
-                      <label>
-                        Logo
-                        <input
-                          className="pill-input"
-                          value={institutional.logoSrc}
-                          onChange={(event) =>
-                            setInstitutional({ ...institutional, logoSrc: event.target.value })
-                          }
-                          placeholder="/lib/logos/etat-du-valais.webp"
-                        />
-                        <input
-                          className="pill-input"
-                          type="file"
-                          accept="image/*"
-                          aria-label="Remplacer le logo"
-                          onChange={(event) => {
-                            const file = event.target.files?.[0]
-                            if (!file) return
-                            const reader = new FileReader()
-                            reader.onload = () =>
-                              setInstitutional({
-                                ...institutional,
-                                logoSrc: String(reader.result ?? DEFAULT_INSTITUTIONAL_LOGO),
-                              })
-                            reader.readAsDataURL(file)
-                          }}
-                        />
-                      </label>
-                      <label>
-                        Organisation (ligne 1)
-                        <input className="pill-input" value={institutional.orgLine1}
-                          onChange={(event) => setInstitutional({ ...institutional, orgLine1: event.target.value })}
-                        />
-                      </label>
-                      <label>
-                        Organisation (ligne 2)
-                        <input className="pill-input" value={institutional.orgLine2}
-                          onChange={(event) => setInstitutional({ ...institutional, orgLine2: event.target.value })}
-                        />
-                      </label>
-                      <label>
-                        Organisation (ligne 3)
-                        <input className="pill-input" value={institutional.orgLine3}
-                          onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
-                        />
-                      </label>
-                      <label>
-                        Organisation (ligne 4)
-                        <input className="pill-input" value={institutional.orgLine4}
-                          onChange={(event) => setInstitutional({ ...institutional, orgLine4: event.target.value })}
-                        />
-                      </label>
-                      <SelectBox
-                        label="Classe"
-                        value={institutional.classLevel}
-                        onChange={(value) => setInstitutional({ ...institutional, classLevel: value })}
-                      >
-                        {CLASS_LEVELS.map((level) => (
-                          <option key={level} value={level}>
-                            {level}
-                          </option>
-                        ))}
-                      </SelectBox>
-                      <SelectBox
-                        label="N° de classe"
-                        value={institutional.classNumber}
-                        onChange={(value) => setInstitutional({ ...institutional, classNumber: value })}
-                      >
-                        {CLASS_NUMBERS.map((n) => (
-                          <option key={n} value={n}>
-                            {n}
-                          </option>
-                        ))}
-                      </SelectBox>
-                      <SelectBox
-                        label="Cours"
-                        value={institutional.course}
-                        onChange={(value) => setInstitutional({ ...institutional, course: value })}
-                      >
-                        {COURSES.map((course) => (
-                          <option key={course} value={course}>
-                            {course}
-                          </option>
-                        ))}
-                      </SelectBox>
-                    </>
-                  ) : (
-                    <>
-                      <label>
-                        Logo ou nom
-                        <input className="pill-input" value={custom.logo} onChange={(event) => setCustom({ ...custom, logo: event.target.value })} />
-                      </label>
-                      <label>
-                        Titre personnalisé
-                        <input className="pill-input" value={custom.title}
-                          onChange={(event) => setCustom({ ...custom, title: event.target.value })}
-                          placeholder="Ex. Collège des Tilleuls"
-                        />
-                      </label>
-                      <label>
-                        Sous-titre
-                        <input className="pill-input" value={custom.subtitle}
-                          onChange={(event) => setCustom({ ...custom, subtitle: event.target.value })}
-                          placeholder="Ex. Groupe 7H · Mathématiques"
-                        />
-                      </label>
-                    </>
-                  )}
+                  <label>
+                    Établissement
+                    <input className="pill-input" value={institutional.schoolName}
+                      onChange={(event) => setInstitutional({ ...institutional, schoolName: event.target.value })}
+                    />
+                  </label>
+                  <label>
+                    Année
+                    <input className="pill-input" value={institutional.schoolYear}
+                      onChange={(event) => setInstitutional({ ...institutional, schoolYear: event.target.value })}
+                    />
+                  </label>
+                  <label>
+                    Mention
+                    <input className="pill-input" value={institutional.schoolTagline}
+                      onChange={(event) => setInstitutional({ ...institutional, schoolTagline: event.target.value })}
+                    />
+                  </label>
+                  <label>
+                    Logo
+                    <input
+                      className="pill-input"
+                      value={institutional.logoSrc}
+                      onChange={(event) =>
+                        setInstitutional({ ...institutional, logoSrc: event.target.value })
+                      }
+                      placeholder="/lib/logos/etat-du-valais.webp"
+                    />
+                    <input
+                      className="pill-input"
+                      type="file"
+                      accept="image/*"
+                      aria-label="Remplacer le logo"
+                      onChange={(event) => {
+                        const file = event.target.files?.[0]
+                        if (!file) return
+                        const reader = new FileReader()
+                        reader.onload = () =>
+                          setInstitutional({
+                            ...institutional,
+                            logoSrc: String(reader.result ?? DEFAULT_INSTITUTIONAL_LOGO),
+                          })
+                        reader.readAsDataURL(file)
+                      }}
+                    />
+                  </label>
+                  <label>
+                    Organisation (ligne 1)
+                    <input className="pill-input" value={institutional.orgLine1}
+                      onChange={(event) => setInstitutional({ ...institutional, orgLine1: event.target.value })}
+                    />
+                  </label>
+                  <label>
+                    Organisation (ligne 2)
+                    <input className="pill-input" value={institutional.orgLine2}
+                      onChange={(event) => setInstitutional({ ...institutional, orgLine2: event.target.value })}
+                    />
+                  </label>
+                  <label>
+                    Organisation (ligne 3)
+                    <input className="pill-input" value={institutional.orgLine3}
+                      onChange={(event) => setInstitutional({ ...institutional, orgLine3: event.target.value })}
+                    />
+                  </label>
+                  <label>
+                    Organisation (ligne 4)
+                    <input className="pill-input" value={institutional.orgLine4}
+                      onChange={(event) => setInstitutional({ ...institutional, orgLine4: event.target.value })}
+                    />
+                  </label>
+                  <SelectBox
+                    label="Classe"
+                    value={institutional.classLevel}
+                    onChange={(value) => setInstitutional({ ...institutional, classLevel: value })}
+                  >
+                    {CLASS_LEVELS.map((level) => (
+                      <option key={level} value={level}>
+                        {level}
+                      </option>
+                    ))}
+                  </SelectBox>
+                  <SelectBox
+                    label="N° de classe"
+                    value={institutional.classNumber}
+                    onChange={(value) => setInstitutional({ ...institutional, classNumber: value })}
+                  >
+                    {CLASS_NUMBERS.map((n) => (
+                      <option key={n} value={n}>
+                        {n}
+                      </option>
+                    ))}
+                  </SelectBox>
+                  <SelectBox
+                    label="Cours"
+                    value={institutional.course}
+                    onChange={(value) => setInstitutional({ ...institutional, course: value })}
+                  >
+                    {COURSES.map((course) => (
+                      <option key={course} value={course}>
+                        {course}
+                      </option>
+                    ))}
+                  </SelectBox>
                   <label>
                     Titre de la fiche
                     <input

@@ -1,22 +1,23 @@
 ---
 name: en-tete-document
 description: >-
-  Configure ou modifie l'en-tête institutionnel / personnalisé, le pied de page
-  A4 et le mode évaluation (points) via PrintDocumentChrome. À utiliser dès qu'on
-  parle d'en-tête, logo école, CSC/CFR, footer, points, grille d'évaluation.
+  Configure ou modifie l'en-tête institutionnel, le pied de page A4 et le mode
+  évaluation (points) via PrintDocumentChrome. À utiliser dès qu'on parle
+  d'en-tête, logo école, CSC/CFR, footer, points, grille d'évaluation.
 ---
 
 # En-tête, pied et évaluation
 
 Composants : `src/components/math/PrintDocumentChrome.tsx` · styles `.doc-*` dans `App.css`.
 
-## Modes
+## Contenu
 
-| Mode | Composant | Contenu |
+| Zone | Composant | Contenu |
 |---|---|---|
-| Institutionnel | `InstitutionalDocumentHeader` | École, année, org, niveau/classe, cours, lignes Nom/Prénom/Date, grille notes si éval |
-| Personnalisé | `CustomDocumentHeader` | Logo texte, titre, sous-titre |
+| En-tête | `InstitutionalDocumentHeader` | École, année, org, niveau/classe, cours, lignes Nom/Prénom/Date, grille notes si éval |
 | Pied | `DocumentFooter` | ClairFLE + « page i / n » + « Imprimé le… » ; `reference` optionnel (`Référence : …` à gauche) |
+
+Un seul en-tête (institutionnel) : pas de mode personnalisé.
 
 ## Évaluation
 

@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react'
 import valaisLogo from '@/assets/logos/etat-du-valais.webp'
 
-export type HeaderStyle = 'institutionnel' | 'personnalise'
-
 export type InstitutionalHeader = {
   schoolName: string
   schoolYear: string
@@ -22,13 +20,6 @@ export type InstitutionalHeader = {
 }
 
 export const DEFAULT_INSTITUTIONAL_LOGO = valaisLogo
-
-export type CustomHeader = {
-  logo: string
-  title: string
-  subtitle: string
-  footer: string
-}
 
 export const DEFAULT_INSTITUTIONAL: InstitutionalHeader = {
   schoolName: "Classe d'accueil",
@@ -137,55 +128,6 @@ export function InstitutionalDocumentHeader({
         )}
       </div>
       {title ? <p className="doc-document-title">{title}</p> : null}
-    </div>
-  )
-}
-
-export function CustomDocumentHeader({
-  config,
-  pageTitle,
-  domain,
-  sheetTitle,
-}: {
-  config: CustomHeader
-  pageTitle: string
-  domain: string
-  /** Titre de fiche (remplace le nom du type d’exercice s’il est renseigné). */
-  sheetTitle?: string
-}) {
-  const ficheTitle = sheetTitle?.trim() || pageTitle
-  const kicker =
-    domain === 'lecture'
-      ? 'FRANÇAIS · LECTURE'
-      : domain === 'gattegno'
-        ? 'FRANÇAIS · GATTEGNO'
-        : domain === 'jeux'
-          ? 'FRANÇAIS · JEUX'
-          : domain === 'calligraphie'
-            ? 'FRANÇAIS · CALLIGRAPHIE'
-            : domain === 'français'
-              ? 'FRANÇAIS'
-              : `MATHÉMATIQUES · ${domain.toUpperCase()}`
-  return (
-    <div className="doc-header custom">
-      <div className="custom-print-header">
-        <div className="custom-logo">{config.logo || 'ClairFLE'}</div>
-        <div>
-          <strong>{config.title || ficheTitle}</strong>
-          {config.subtitle && <small>{config.subtitle}</small>}
-        </div>
-        <span>{formatPrintDate()}</span>
-      </div>
-      <div className="sheet-header">
-        <div>
-          <span className="sheet-kicker">{kicker}</span>
-          <h3>{ficheTitle}</h3>
-        </div>
-        <span className="sheet-number">Fiche d’activité</span>
-      </div>
-      <div className="student-line">
-        Nom : <span /> Date : <span />
-      </div>
     </div>
   )
 }
