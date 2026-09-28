@@ -1478,12 +1478,28 @@ html,body,#root{
   font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#111;
   text-decoration:none;line-height:1.2
 }
-.phrase-write-line{
-  display:block;width:100%;min-height:1.4em;border:0;
-  border-bottom:1.5px dashed color-mix(in srgb,var(--purple) 55%,#fff);
-  margin-top:2px;box-sizing:border-box
+/* Même emprise élève / corrigé (padding du texte réponse comme base). */
+.phrase-answer-slot{
+  display:flex;align-items:flex-end;width:100%;min-width:0;
+  min-height:1.55em;margin-top:4px;padding:0 2px 2px;box-sizing:border-box;
+  font-size:14px;line-height:1.4;font-weight:700
 }
-.phrase-order-answer{margin-top:4px;font-size:14px}
+.phrase-answer-slot .phrase-write-line{
+  flex:1 1 auto;width:100%;min-height:1.55em;margin-top:0;padding:0;
+  border:0;border-bottom:1.5px dashed color-mix(in srgb,var(--purple) 55%,#fff);
+  box-sizing:border-box
+}
+.phrase-answer-slot .phrase-slot-answer,
+.phrase-answer-slot .filled-answer{
+  display:block;width:100%;margin:0;padding:0;
+  font-size:inherit;line-height:inherit;font-weight:inherit;box-sizing:border-box
+}
+.phrase-write-line{
+  display:block;width:100%;min-height:1.55em;border:0;
+  border-bottom:1.5px dashed color-mix(in srgb,var(--purple) 55%,#fff);
+  margin-top:4px;padding:0 2px 2px;box-sizing:border-box
+}
+.phrase-order-answer{margin-top:0;font-size:14px;line-height:1.4}
 .phrase-verb-prompt{
   margin:0;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--purple)
 }
@@ -1495,6 +1511,7 @@ html,body,#root{
 .phrase-write-lines>li::before{
   content:counter(pw) ".";color:var(--purple);font-weight:700;font-size:15px;line-height:1.4
 }
+.phrase-write-lines .phrase-answer-slot{margin-top:0}
 .phrase-answer-hint{margin:4px 0 0;font-size:13px}
 .exercise-item.layout-phrase-write .item-content{width:100%}
 .exercise-item.layout-phrase-color,

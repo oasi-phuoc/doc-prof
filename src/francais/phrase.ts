@@ -10,7 +10,7 @@ import {
 } from './phrase-sentences'
 import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
-import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
+import type { Difficulty, MathItem, PhraseToken, PhraseVerbGroup } from '@/math/types'
 
 export type PhraseBatch = {
   items: MathItem[]
@@ -77,64 +77,13 @@ function pickPhrase(
   return builtFromTokens(tokens)
 }
 
-/** Séquence de pastilles cohérente pour le thème (type 3). */
-function pastillePattern(theme: PhraseThemeId, rng: Rng): PhraseCategory[] {
-  const subj: PhraseCategory[] = rng() < 0.5 ? ['pronom'] : ['determinant', 'nom']
-  switch (theme) {
-    case 'phrase-simple':
-      return [...subj, 'verbe', 'determinant', 'nom']
-    case 'phrase-negation':
-      return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
-    case 'phrase-adjectif': {
-      const roll = rng()
-      if (roll < 1 / 3) return ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'nom']
-      if (roll < 2 / 3) return [...subj, 'verbe', 'determinant', 'adjectif', 'nom']
-      return ['determinant', 'adjectif', 'nom', 'verbe', 'determinant', 'adjectif', 'nom']
-    }
-    case 'phrase-negation-adjectif': {
-      const roll = rng()
-      if (roll < 1 / 3) {
-        return ['determinant', 'adjectif', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
-      }
-      if (roll < 2 / 3) {
-        return [...subj, 'adverbe', 'verbe', 'adverbe', 'determinant', 'adjectif', 'nom']
-      }
-      return [
-        'determinant',
-        'adjectif',
-        'nom',
-        'adverbe',
-        'verbe',
-        'adverbe',
-        'determinant',
-        'adjectif',
-        'nom',
-      ]
-    }
-    case 'phrase-determinants':
-      return ['determinant', 'nom', 'verbe', 'determinant', 'nom']
-    case 'phrase-negation-determinants':
-      return ['determinant', 'nom', 'adverbe', 'verbe', 'adverbe', 'determinant', 'nom']
-    case 'phrase-preposition':
-      return [...subj, 'verbe', 'preposition', 'determinant', 'nom']
-    case 'phrase-negation-preposition':
-      return [...subj, 'adverbe', 'verbe', 'adverbe', 'preposition', 'determinant', 'nom']
-    case 'phrase-adverbe':
-      return [...subj, 'verbe', 'adverbe', 'determinant', 'nom']
-    case 'phrase-negation-adverbe':
-      return [...subj, 'adverbe', 'verbe', 'adverbe', 'adverbe', 'determinant', 'nom']
-    case 'phrase-conjonctions':
-      return [...subj, 'verbe', 'determinant', 'nom', 'conjonction', 'determinant', 'nom', 'verbe', 'determinant', 'nom']
-  }
-}
-
 function typeColor(phrase: BuiltPhrase): MathItem {
   return {
     layout: 'phrase-color',
     prompt: undefined,
     tokens: phrase.tokens,
+    /** Corrigé = pastilles colorées seulement (pas de phrase). */
     answer: phrase.tokens.map((token) => token.category).join(' · '),
-    responseAnswer: phrase.sentence,
   }
 }
 
@@ -150,37 +99,17 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
   }
 }
 
-function pastillesForFrame(
-  theme: PhraseThemeId,
-  rng: Rng,
-  frame: { id: string },
-): PhraseCategory[] {
-  if (frame.id === 'être' && (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif')) {
-    const withAdjSubject = rng() < 0.5
-    const subj: PhraseCategory[] = withAdjSubject
-      ? ['determinant', 'adjectif', 'nom']
-      : rng() < 0.5
-        ? ['pronom']
-        : ['determinant', 'nom']
-    return theme === 'phrase-negation-adjectif'
-      ? [...subj, 'adverbe', 'verbe', 'adverbe', 'adjectif']
-      : [...subj, 'verbe', 'adjectif']
-  }
-  return pastillePattern(theme, rng)
-}
-
+/** Pastilles = catégories de la phrase modèle (corrigé cohérent). */
 function typeBuild(rng: Rng, theme: PhraseThemeId, group: PhraseVerbGroup, used: Set<string>): MathItem {
-  const frames = framesForTheme(theme, group)
-  const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
-  const frame = pick(rng, unused.length ? unused : frames)
-  used.add(`frame:${frame.id}`)
-  const pastilles = pastillesForFrame(theme, rng, frame)
+  const phrase = pickPhrase(rng, theme, used, group)
+  const pastilles = phrase.tokens.map((token) => token.category)
   return {
     layout: 'phrase-build',
-    prompt: frame.id,
+    prompt: phrase.verbInfinitive,
     pastilles,
-    answer: pastilles.join(' · '),
-    calcAnswer: frame.id,
+    answer: phrase.sentence,
+    responseAnswer: phrase.sentence,
+    calcAnswer: phrase.verbInfinitive,
   }
 }
 
@@ -245,12 +174,17 @@ export function tryGeneratePhraseBatch(
   if (kind === 'ecrire') {
     const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
     const prompt = pick(rng, [...prompts])
+    const used = new Set<string>()
     return {
-      items: Array.from({ length: n }, () => ({
-        layout: 'phrase-write' as const,
-        writeLines: 1,
-        answer: '',
-      })),
+      items: Array.from({ length: n }, () => {
+        const phrase = pickPhrase(rng, theme, used, bank)
+        return {
+          layout: 'phrase-write' as const,
+          writeLines: 1,
+          answer: phrase.sentence,
+          responseAnswer: phrase.sentence,
+        }
+      }),
       instruction: prompt ?? INSTRUCTIONS.ecrire,
       preferredColumns: 1,
     }

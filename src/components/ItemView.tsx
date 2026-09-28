@@ -1321,6 +1321,24 @@ function PhrasePastille({ category, filled }: { category?: PhraseCategory; fille
   )
 }
 
+function PhraseAnswerSlot({
+  show,
+  answer,
+}: {
+  show: boolean
+  answer?: string
+}) {
+  return (
+    <div className="phrase-answer-slot">
+      {show && answer ? (
+        <strong className="filled-answer phrase-slot-answer">{answer}</strong>
+      ) : (
+        <span className="phrase-write-line" aria-hidden={!show} />
+      )}
+    </div>
+  )
+}
+
 function PhraseColorBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const tokens = item.tokens ?? []
@@ -1335,11 +1353,6 @@ function PhraseColorBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
         ))}
         <span className="phrase-period">.</span>
       </div>
-      {show && item.responseAnswer ? (
-        <p className="phrase-answer-hint">
-          <strong className="filled-answer">{item.responseAnswer}</strong>
-        </p>
-      ) : null}
     </div>
   )
 }
@@ -1364,11 +1377,7 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
           )
         })}
       </div>
-      {show ? (
-        <strong className="filled-answer phrase-order-answer">{item.responseAnswer ?? item.answer}</strong>
-      ) : (
-        <span className="phrase-write-line" />
-      )}
+      <PhraseAnswerSlot show={show} answer={item.responseAnswer ?? item.answer} />
     </div>
   )
 }
@@ -1376,14 +1385,11 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
 function PhraseBuildBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const pastilles = item.pastilles ?? []
+  const answer = item.responseAnswer ?? (item.answer && !item.answer.includes(' · ') ? item.answer : undefined)
   return (
     <div className="phrase-build-block">
       <p className="phrase-verb-prompt">{item.prompt}</p>
-      {show ? (
-        <strong className="filled-answer">{item.calcAnswer ? `Verbe : ${item.calcAnswer}` : item.answer}</strong>
-      ) : (
-        <span className="phrase-write-line" />
-      )}
+      <PhraseAnswerSlot show={show} answer={answer} />
       <div className="phrase-pastille-row">
         {pastilles.map((cat, i) => (
           <PhrasePastille key={`${cat}-${i}`} category={cat} filled />
@@ -1393,11 +1399,27 @@ function PhraseBuildBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
   )
 }
 
-function PhraseWriteBlock({ item }: { item: MathItem }) {
+function PhraseWriteBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const show = mode === 'answers'
+  const lines = Math.max(1, item.writeLines ?? 1)
+  const answers = (item.responseAnswer ?? item.answer ?? '')
+    .split(/\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
   return (
     <div className="phrase-write-block">
       {item.prompt ? <p className="phrase-write-prompt">{item.prompt}</p> : null}
-      <span className="phrase-write-line" />
+      {lines === 1 ? (
+        <PhraseAnswerSlot show={show} answer={answers[0]} />
+      ) : (
+        <ol className="phrase-write-lines">
+          {Array.from({ length: lines }, (_, index) => (
+            <li key={index}>
+              <PhraseAnswerSlot show={show} answer={answers[index]} />
+            </li>
+          ))}
+        </ol>
+      )}
     </div>
   )
 }
@@ -1501,7 +1523,7 @@ export function ItemView({
         {item.layout === 'phrase-color' && <PhraseColorBlock item={item} mode={mode} />}
         {item.layout === 'phrase-order' && <PhraseOrderBlock item={item} mode={mode} />}
         {item.layout === 'phrase-build' && <PhraseBuildBlock item={item} mode={mode} />}
-        {item.layout === 'phrase-write' && <PhraseWriteBlock item={item} />}
+        {item.layout === 'phrase-write' && <PhraseWriteBlock item={item} mode={mode} />}
         {item.layout === 'gattegno-chart' && <GattegnoChart mode={item.chartMode ?? 'labels'} />}
         {item.layout === 'vocab-table' && <VocabTable item={item} />}
         {item.layout === 'vocab-match' && <VocabMatch item={item} mode={mode} />}

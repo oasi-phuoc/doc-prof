@@ -17,34 +17,58 @@ function inkFor(category: PhraseCategory): string {
   return color === '#1a1a1a' || color === '#111' || color === '#111111' ? '#fff' : '#111'
 }
 
+function withFinalDot(sentence: string): string {
+  const trimmed = sentence.trim()
+  if (!trimmed) return ''
+  return trimmed.endsWith('.') ? trimmed : `${trimmed}.`
+}
+
 function rebuildColorItem(item: MathItem, tokens: PhraseToken[]): MathItem {
   return {
     ...item,
     tokens,
     answer: tokens.map((token) => token.category).join(' · '),
-    responseAnswer: joinPhrase(tokens),
+    responseAnswer: undefined,
   }
 }
 
 function rebuildOrderItem(item: MathItem, tokens: PhraseToken[], correct?: string): MathItem {
-  const sentence = (correct ?? item.responseAnswer ?? item.answer ?? joinPhrase(tokens)).trim()
+  const sentence = withFinalDot(correct ?? item.responseAnswer ?? item.answer ?? joinPhrase(tokens))
   return {
     ...item,
     tokens,
     labels: tokens.map((token) => token.text),
-    answer: sentence.endsWith('.') ? sentence : `${sentence}.`,
-    responseAnswer: sentence.endsWith('.') ? sentence : `${sentence}.`,
+    answer: sentence,
+    responseAnswer: sentence,
   }
 }
 
-function rebuildBuildItem(item: MathItem, pastilles: PhraseCategory[], verb?: string): MathItem {
+function rebuildBuildItem(
+  item: MathItem,
+  pastilles: PhraseCategory[],
+  verb?: string,
+  response?: string,
+): MathItem {
   const nextVerb = verb ?? item.prompt ?? item.calcAnswer ?? ''
+  const sentence = withFinalDot(
+    response ?? item.responseAnswer ?? (item.answer?.includes(' · ') ? '' : (item.answer ?? '')),
+  )
   return {
     ...item,
     prompt: nextVerb,
     calcAnswer: nextVerb,
     pastilles,
-    answer: pastilles.join(' · '),
+    answer: sentence || pastilles.join(' · '),
+    responseAnswer: sentence || undefined,
+  }
+}
+
+function rebuildWriteItem(item: MathItem, response: string): MathItem {
+  const sentence = withFinalDot(response)
+  return {
+    ...item,
+    answer: sentence,
+    responseAnswer: sentence,
   }
 }
 
@@ -96,10 +120,16 @@ export function PhraseLibreEditor({
   const kind = parsePhraseKind(exerciseType)
   if (!kind) return null
 
+  function updateItem(index: number, next: MathItem) {
+    const copy = [...items]
+    copy[index] = next
+    onChangeItems(copy)
+  }
+
   if (kind === 'ecrire') {
     return (
       <div className="phrase-libre-editor">
-        <b>Consigne (production écrite)</b>
+        <b>Consigne et phrases exemples (mode libre)</b>
         <label className="phrase-libre-field">
           <span>Texte de la consigne</span>
           <textarea
@@ -109,15 +139,48 @@ export function PhraseLibreEditor({
             aria-label="Consigne de production écrite"
           />
         </label>
-        <small className="muted">Les phrases viennent de la banque ; vous pouvez corriger la consigne.</small>
+        <small className="muted">
+          Une phrase exemple par ligne d’écriture : elle apparaît au corrigé.
+        </small>
+        <div className="phrase-libre-list">
+          {items.map((item, itemIndex) => {
+            const lineCount = Math.max(1, item.writeLines ?? 1)
+            const answers = (item.responseAnswer ?? item.answer ?? '')
+              .split(/\n/)
+              .map((line) => line.trim())
+            while (answers.length < lineCount) answers.push('')
+            return (
+              <div className="phrase-libre-card" key={`phrase-libre-write-${itemIndex}`}>
+                <span className="phrase-libre-index">{itemIndex + 1}.</span>
+                {Array.from({ length: lineCount }, (_, lineIndex) => (
+                  <label className="phrase-libre-field" key={`${itemIndex}-l-${lineIndex}`}>
+                    <span>
+                      Phrase exemple
+                      {lineCount > 1 ? ` ${lineIndex + 1}` : ''}
+                    </span>
+                    <input
+                      type="text"
+                      value={answers[lineIndex] ?? ''}
+                      onChange={(event) => {
+                        const next = [...answers]
+                        next[lineIndex] = event.target.value
+                        updateItem(
+                          itemIndex,
+                          rebuildWriteItem(item, next.slice(0, lineCount).join('\n')),
+                        )
+                      }}
+                      aria-label={`Phrase exemple ${itemIndex + 1}${
+                        lineCount > 1 ? `, ligne ${lineIndex + 1}` : ''
+                      }`}
+                    />
+                  </label>
+                ))}
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
-  }
-
-  function updateItem(index: number, next: MathItem) {
-    const copy = [...items]
-    copy[index] = next
-    onChangeItems(copy)
   }
 
   function setTokens(itemIndex: number, tokens: PhraseToken[], correct?: string) {
@@ -169,7 +232,7 @@ export function PhraseLibreEditor({
     <div className="phrase-libre-editor">
       <b>
         {kind === 'construire'
-          ? 'Verbe et pastilles (mode libre)'
+          ? 'Verbe, pastilles et phrase (mode libre)'
           : kind === 'ordre'
             ? 'Phrases et couleurs (mode libre)'
             : 'Mots et couleurs (mode libre)'}
@@ -276,6 +339,25 @@ export function PhraseLibreEditor({
                 >
                   + Pastille
                 </button>
+                <label className="phrase-libre-field">
+                  <span>Phrase réponse (corrigé)</span>
+                  <input
+                    type="text"
+                    value={item.responseAnswer ?? (item.answer?.includes(' · ') ? '' : (item.answer ?? ''))}
+                    onChange={(event) =>
+                      updateItem(
+                        itemIndex,
+                        rebuildBuildItem(
+                          item,
+                          item.pastilles ?? [],
+                          item.prompt ?? item.calcAnswer,
+                          event.target.value,
+                        ),
+                      )
+                    }
+                    aria-label={`Phrase réponse ${itemIndex + 1}`}
+                  />
+                </label>
               </>
             ) : (
               <>
