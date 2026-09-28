@@ -196,6 +196,16 @@ export const COMMON = [
 /** Sujets pour instancier un modèle (le modèle lui-même ne change pas). Personnes seulement. */
 export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, 'Il/pronom', 'Elle/pronom'] as const
 
+/** Prénoms / noms propres (majuscule conservée, y compris en « remettre en ordre »). */
+export const PROPER_NAMES = new Set(PROPER.map((entry) => entry.replace(/\/nom$/, '')))
+
+export function isProperNameToken(token: PhraseToken): boolean {
+  if (token.category !== 'nom') return false
+  if (PROPER_NAMES.has(token.text)) return true
+  const capped = token.text ? token.text[0]!.toUpperCase() + token.text.slice(1) : token.text
+  return PROPER_NAMES.has(capped)
+}
+
 /**
  * Sujets personnes avec adjectif (thèmes adjectif).
  * Placement avant le nom (BAGS) ; accord m/f déjà dans la chaîne.

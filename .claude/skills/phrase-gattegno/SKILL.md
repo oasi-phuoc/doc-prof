@@ -46,7 +46,11 @@ Ils restent dans les thèmes **préposition** / **négation + préposition**. `f
 
 ## Conjonctions : une seule majuscule
 
-Dans colorier et remettre en ordre, seule la première lettre de la phrase est une majuscule. Le second sujet est un nom commun personne (*le garçon*, *la sœur*), jamais un prénom : *Léa mange une pomme et le cousin lit un journal.* — pas *et Mila*.
+Dans colorier et remettre en ordre, seule la première lettre de la phrase est une majuscule (hors noms propres). Le second sujet est un nom commun personne (*le garçon*, *la sœur*), jamais un prénom : *Léa mange une pomme et le cousin lit un journal.* — pas *et Mila*.
+
+## Noms propres
+
+Les prénoms (`PROPER` / `PROPER_NAMES`) gardent leur majuscule partout, y compris dans les pastilles « remettre en ordre » (on ne les force pas en minuscules).
 
 ## Sens réel
 

@@ -2,6 +2,7 @@ import {
   COMMON,
   framesForTheme,
   instantiateThemeFrame,
+  isProperNameToken,
   joinPhrase,
   resolveAdjPlacement,
   subjectsForAdjPlacement,
@@ -28,6 +29,15 @@ type BuiltPhrase = {
 function uncap(text: string): string {
   if (!text) return text
   return text[0]!.toLowerCase() + text.slice(1)
+}
+
+/** Minuscule pour le tirage « ordre », sauf prénoms / noms propres. */
+function tokenForOrder(token: PhraseToken): PhraseToken {
+  if (isProperNameToken(token)) {
+    const capped = token.text ? token.text[0]!.toUpperCase() + token.text.slice(1) : token.text
+    return capped === token.text ? token : { ...token, text: capped }
+  }
+  return { ...token, text: uncap(token.text) }
 }
 
 function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
@@ -129,16 +139,14 @@ function typeColor(phrase: BuiltPhrase): MathItem {
 }
 
 function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
-  const scrambled = shuffle(
-    rng,
-    phrase.tokens.map((token) => ({ ...token, text: uncap(token.text) })),
-  )
+  const ordered = phrase.tokens.map(tokenForOrder)
+  const scrambled = shuffle(rng, ordered)
   return {
     layout: 'phrase-order',
     tokens: scrambled,
     answer: phrase.sentence,
     responseAnswer: phrase.sentence,
-    labels: phrase.tokens.map((token) => token.text),
+    labels: ordered.map((token) => token.text),
   }
 }
 
