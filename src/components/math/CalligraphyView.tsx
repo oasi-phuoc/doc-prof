@@ -6,6 +6,7 @@ import { calliFontById, calliSizeById } from '@/calligraphie/fonts'
  * Bande lignée (4 ou 6).
  * Traits en CSS (mm). Texte en SVG sans viewBox déformant :
  * `y` = baseline alphabétique exacte sur le trait coloré.
+ * Les blocs mots utilisent 4 lignes (= hauteur d’une bande phrases).
  */
 function RuledBand({
   ruleLines,
@@ -74,14 +75,13 @@ function RuledBand({
   )
 }
 
-/** Fiche calligraphie : bandes 6 / 4 lignes, police et taille configurables. */
+/** Fiche calligraphie : bandes 4 lignes (mots = 1 bande, phrases = 2), taille configurable. */
 export function CalligraphyView({ item }: { item: MathItem }) {
   const data = item.calligraphy
   if (!data) return null
   const { mode, ruleLines, entries, fontId, sizeId } = data
-  const lines = (ruleLines === 6 || ruleLines === 4 ? ruleLines : mode === 'same-line' ? 6 : 4) as
-    | 4
-    | 6
+  // Mots et phrases : bande 4 lignes par défaut (même hauteur de carreau).
+  const lines = (ruleLines === 6 || ruleLines === 4 ? ruleLines : 4) as 4 | 6
   const font = calliFontById(fontId)
   const size = calliSizeById(sizeId)
 

@@ -192,6 +192,7 @@ export function tryGenerateCalligraphieBatch(
     }
   }
 
+  // Mots : même hauteur qu’une bande 4 lignes des phrases (pas 6 lignes).
   return {
     instruction: 'Recopiez chaque ligne en écriture cursive sur la même bande.',
     preferredColumns: 1,
@@ -202,7 +203,7 @@ export function tryGenerateCalligraphieBatch(
         prompt: '',
         calligraphy: {
           mode: 'same-line',
-          ruleLines: 6,
+          ruleLines: 4,
           entries: entries.slice(0, hard),
           fontId: fontId ?? DEFAULT_CALLI_FONT,
           sizeId: sizeId ?? DEFAULT_CALLI_SIZE,

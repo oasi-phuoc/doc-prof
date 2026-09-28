@@ -2334,7 +2334,9 @@ function GeneratorPage() {
                       ))}
                     </div>
                     <small className="muted">
-                      Petit : 6 blocs · Moyen : 5 · Grand : 4 (vous pouvez en ajouter).
+                      {calliIsPhrases
+                        ? 'Phrases : Petit 6 · Moyen 5 · Grand 4 blocs (vous pouvez en ajouter).'
+                        : `Mots : Petit ${defaultCalliWordCount('petit')} · Moyen ${defaultCalliWordCount('moyen')} · Grand ${defaultCalliWordCount('grand')} (hauteur d’une bande 4 lignes).`}
                     </small>
                   </div>
                   {calliIsPhrases ? (
@@ -2423,8 +2425,8 @@ function GeneratorPage() {
                           ? 'Petit 6 · Moyen 5 · Grand 4 blocs · Générer tire dans tout le vocabulaire.'
                           : 'Petit 6 · Moyen 5 · Grand 4 blocs · Générer tire des phrases du thème (A1 / A2 / B1).'
                         : calliIsLibre
-                          ? 'Petit 6 · Moyen 5 · Grand 4 · Générer tire des mots ; vous pouvez saisir une phrase.'
-                          : 'Petit 6 · Moyen 5 · Grand 4 · Générer tire des mots du thème ; vous pouvez saisir une phrase.'}
+                          ? `Petit ${defaultCalliWordCount('petit')} · Moyen ${defaultCalliWordCount('moyen')} · Grand ${defaultCalliWordCount('grand')} · Générer tire des mots ; vous pouvez saisir une phrase.`
+                          : `Petit ${defaultCalliWordCount('petit')} · Moyen ${defaultCalliWordCount('moyen')} · Grand ${defaultCalliWordCount('grand')} · Générer tire des mots du thème ; vous pouvez saisir une phrase.`}
                     </small>
                   </div>
                 </>
