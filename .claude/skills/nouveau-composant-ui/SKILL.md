@@ -16,7 +16,7 @@ L'UI vit surtout dans `src/App.tsx` + `src/App.css` (pas encore une lib `compone
 | Besoin | Pattern |
 |---|---|
 | Liste déroulante | `SelectBox` (Domaine / Thème / Type / Niveau / Questions) |
-| Binaire | `.mode-toggle` (Exercice / Évaluation, Institutionnel / Personnalisé, Fiche élève / Corrigé). Le bouton **actif** est à la couleur du thème (`--purple`). |
+| Binaire | `.mode-toggle` (Exercice / Évaluation, Fiche élève / Corrigé). Le bouton **actif** est à la couleur du thème (`--purple`). |
 | Trois choix | `.mode-toggle.is-3` (Voc / Gram / Com, Colonnes 1 / 2 / 3). Pas de toggle Colonnes pour un tableau Gattegno (`isPhraseChart`) : un seul tableau. |
 | Pages / exercices | `.mode-toggle.is-tabs` (chiffres centrés). Croix `×` sur l’onglet actif. **+ Page** / **+ Exercice** : `.page-structure-actions`. |
 | Couleur du thème | 7 cercles arc-en-ciel + **Autre** (`theme-color-block`). Autre ouvre un cercle chromatique et des tons (pastel, doux, vif, profond, sombre). Met à jour `--purple` (et `--lavender` via `color-mix`). |
