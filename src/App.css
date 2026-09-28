@@ -1479,24 +1479,53 @@ html,body,#root{
   text-decoration:none;line-height:1.2
 }
 .phrase-write-line{
-  display:block;width:100%;min-height:1.4em;border:0;border-bottom:1.5px dashed #5ba3c9;
+  display:block;width:100%;min-height:1.4em;border:0;
+  border-bottom:1.5px dashed color-mix(in srgb,var(--purple) 55%,#fff);
   margin-top:2px;box-sizing:border-box
 }
 .phrase-order-answer{margin-top:4px;font-size:14px}
-.phrase-verb-prompt{margin:0;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#3d9bc9}
+.phrase-verb-prompt{
+  margin:0;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--purple)
+}
 .phrase-write-prompt{margin:0 0 8px;font-size:14px;font-weight:500;color:var(--ink)}
 .phrase-write-lines{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:pw}
 .phrase-write-lines>li{
   display:grid;grid-template-columns:1.6em 1fr;gap:8px;align-items:end;counter-increment:pw
 }
 .phrase-write-lines>li::before{
-  content:counter(pw) ".";color:#3d9bc9;font-weight:700;font-size:15px;line-height:1.4
+  content:counter(pw) ".";color:var(--purple);font-weight:700;font-size:15px;line-height:1.4
 }
 .phrase-answer-hint{margin:4px 0 0;font-size:13px}
 .exercise-item.layout-phrase-write .item-content{width:100%}
 .exercise-item.layout-phrase-color,
 .exercise-item.layout-phrase-order,
 .exercise-item.layout-phrase-build{align-items:flex-start}
+
+/* Éditeur mode libre Gattegno (panneau paramètres) */
+.phrase-libre-editor{
+  display:flex;flex-direction:column;gap:10px;margin:0 0 18px;
+  padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:#fff
+}
+.phrase-libre-editor>b{font-size:13px;font-weight:800;letter-spacing:-.02em}
+.phrase-libre-list{display:flex;flex-direction:column;gap:12px;max-height:340px;overflow:auto}
+.phrase-libre-card{
+  display:flex;flex-direction:column;gap:8px;padding:10px 12px;
+  border:1px solid var(--line);border-radius:12px;background:var(--lavender,#f7f3ff)
+}
+.phrase-libre-index{font-size:12px;font-weight:800;color:var(--purple)}
+.phrase-libre-field{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--muted)}
+.phrase-libre-field input,.phrase-libre-field textarea,.phrase-libre-token input,.phrase-libre-cat select{
+  width:100%;min-height:40px;padding:8px 12px;border:1px solid #d8dde6;border-radius:999px;
+  background:#fff;color:var(--ink);font:inherit;box-sizing:border-box
+}
+.phrase-libre-field textarea{border-radius:14px;resize:vertical;min-height:72px}
+.phrase-libre-tokens{display:flex;flex-direction:column;gap:8px}
+.phrase-libre-token{display:grid;grid-template-columns:minmax(0,1fr) minmax(7.5em,0.9fr);gap:8px;align-items:center}
+.phrase-libre-cat{display:flex;align-items:center;gap:6px;min-width:0}
+.phrase-libre-swatch{
+  flex:0 0 12px;width:12px;height:12px;border-radius:50%;border:1px solid #111;box-sizing:border-box
+}
+.phrase-libre-cat select{padding-left:10px;padding-right:28px}
 
 /* —— Domaine Jeux : grilles de cartes —— */
 :root{

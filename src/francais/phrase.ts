@@ -200,6 +200,11 @@ const INSTRUCTIONS: Record<string, string> = {
   ecrire: 'Écrivez des phrases.',
 }
 
+/** Banque utilisée pour le tirage (Libre réutilise Simple). */
+export function phraseBankGroup(group: PhraseVerbGroup = 'er'): 'er' | 'autres' {
+  return group === 'autres' ? 'autres' : 'er'
+}
+
 export function tryGeneratePhraseBatch(
   exerciseType: string,
   count: number,
@@ -208,6 +213,7 @@ export function tryGeneratePhraseBatch(
   group: PhraseVerbGroup = 'er',
 ): PhraseBatch | null {
   void difficulty
+  const bank = phraseBankGroup(group)
   if (exerciseType === 'phrase-tableau-categories') {
     return {
       items: [{ layout: 'gattegno-chart', chartMode: 'labels', answer: 'tableau', prompt: 'Tableau des catégories' }],
@@ -254,9 +260,9 @@ export function tryGeneratePhraseBatch(
   const items: MathItem[] = []
   for (let i = 0; i < n; i++) {
     if (kind === 'construire') {
-      items.push(typeBuild(rng, theme, group, used))
+      items.push(typeBuild(rng, theme, bank, used))
     } else {
-      const phrase = pickPhrase(rng, theme, used, group)
+      const phrase = pickPhrase(rng, theme, used, bank)
       if (kind === 'colorier') items.push(typeColor(phrase))
       else items.push(typeOrder(rng, phrase))
     }

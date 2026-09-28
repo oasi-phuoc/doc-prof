@@ -198,7 +198,8 @@ export type Topic = {
 }
 
 export type FrenchTrack = 'voc' | 'gram' | 'com'
-export type PhraseVerbGroup = 'er' | 'autres'
+/** Banque de verbes Gattegno, ou mode libre (édition des phrases générées). */
+export type PhraseVerbGroup = 'er' | 'autres' | 'libre'
 
 export type ExerciseType = {
   id: string
@@ -454,8 +455,15 @@ export type ExerciseBlock = {
   columns: number
   /** Voc / Gram / Com — domaine français uniquement. */
   track?: FrenchTrack
-  /** Phrase : verbes en -er + être + avoir, ou 2e / 3e groupes. */
+  /** Phrase : Simple (er), Autres (2e/3e), ou Libre (édition). */
   verbGroup?: PhraseVerbGroup
+  /**
+   * Mode libre Gattegno : items édités (mots, catégories, verbes).
+   * Si présents, ils remplacent le tirage pour l’affichage / l’impression.
+   */
+  phraseItems?: MathItem[]
+  /** Mode libre : consigne de production écrite (écraser l’instruction tirée). */
+  phraseInstruction?: string
   /**
    * Grille de brouillon (problèmes, équations, périmètres / aires / volumes).
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.

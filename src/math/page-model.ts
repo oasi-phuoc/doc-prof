@@ -9,6 +9,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     columns: page.columns,
     track: page.track,
     verbGroup: page.verbGroup,
+    phraseItems: page.phraseItems,
+    phraseInstruction: page.phraseInstruction,
     problemDraftGrids: page.problemDraftGrids,
     oralAnswerModes: page.oralAnswerModes,
     continueOnNextPage: page.continueOnNextPage,

@@ -1035,10 +1035,16 @@ function buildSingleBlock(
     config.verbGroup ?? 'er',
   )
   if (phrase) {
+    const libre =
+      config.verbGroup === 'libre' &&
+      Array.isArray(config.phraseItems) &&
+      config.phraseItems.length > 0
     return {
       title: fallbackTitle,
-      instruction: phrase.instruction ?? type?.instruction ?? 'Complétez.',
-      items: phrase.items,
+      instruction: libre
+        ? (config.phraseInstruction ?? phrase.instruction ?? type?.instruction ?? 'Complétez.')
+        : (phrase.instruction ?? type?.instruction ?? 'Complétez.'),
+      items: libre ? config.phraseItems! : phrase.items,
     }
   }
   const algebra = tryGenerateAlgebraBatch(config.exerciseType, config.count, rng, difficulty)

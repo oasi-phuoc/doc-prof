@@ -74,6 +74,7 @@ import {
 } from '@/francais/vocab-learn'
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
+import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { defaultThemeGameContent, isGameBankType, reshuffleGameContent } from '@/jeux/bank'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
@@ -1455,6 +1456,13 @@ function GeneratorPage() {
           const count = patch.count ?? fixed.count
           fixed = {
             ...fixed,
+            // Nouveau type / nombre de questions → retirer le brouillon libre pour retirer.
+            phraseItems:
+              patch.exerciseType != null || patch.count != null ? undefined : fixed.phraseItems,
+            phraseInstruction:
+              patch.exerciseType != null || patch.count != null
+                ? undefined
+                : fixed.phraseInstruction,
             problemDraftGrids: isProblemExercise(fixed.exerciseType)
               ? resizeDraftGrids(fixed.problemDraftGrids, count)
               : undefined,
@@ -1475,6 +1483,28 @@ function GeneratorPage() {
         return setPageBlock(merged, safeBlockIndex, fixed)
       }),
     )
+
+  // Mode libre Gattegno : synchronise le brouillon éditable après un nouveau tirage.
+  useEffect(() => {
+    if (activeBlock.verbGroup !== 'libre') return
+    if (!isPhraseLibreEditable(activeBlock.exerciseType)) return
+    if (activeBlock.phraseItems && activeBlock.phraseItems.length > 0) return
+    const block = activeSheet?.blocks[safeBlockIndex]
+    if (!block) return
+    updatePage({
+      phraseItems: block.items,
+      phraseInstruction: block.instruction,
+    })
+  }, [
+    activeBlock.verbGroup,
+    activeBlock.exerciseType,
+    activeBlock.phraseItems,
+    activeBlock.count,
+    seed,
+    activeSheet,
+    safeBlockIndex,
+    updatePage,
+  ])
 
   const toggleDraftGrid = (itemIndex: number, targetBlock = safeBlockIndex) => {
     setPages((current) =>
@@ -1889,6 +1919,11 @@ function GeneratorPage() {
       updatePage({ calliText: nextText })
       return
     }
+    if (activeBlock.verbGroup === 'libre' && isPhraseLibreEditable(activeBlock.exerciseType)) {
+      // Nouveau tirage banque → l’effet resynchronise phraseItems.
+      updatePage({ phraseItems: undefined, phraseInstruction: undefined })
+      return
+    }
     if (!isJeuxType(activeBlock.exerciseType)) return
     const reshuffled = reshuffleGameContent(activeBlock.exerciseType, nextSeed, {
       gameSource: activeBlock.gameSource,
@@ -1901,6 +1936,26 @@ function GeneratorPage() {
       gameText: reshuffled.gameText,
       gameSelectedIds: reshuffled.gameSelectedIds,
     })
+  }
+
+  function setVerbGroup(next: PhraseVerbGroup) {
+    const current = activeBlock.verbGroup ?? 'er'
+    if (current === next) return
+    if (next === 'libre') {
+      const block = activeSheet?.blocks[safeBlockIndex]
+      updatePage({
+        verbGroup: 'libre',
+        phraseItems: block?.items,
+        phraseInstruction: block?.instruction,
+      })
+      return
+    }
+    updatePage({
+      verbGroup: next,
+      phraseItems: undefined,
+      phraseInstruction: undefined,
+    })
+    setSeed(randomSeed())
   }
 
   function setCalliFieldAt(index: number, value: string) {
@@ -2121,31 +2176,46 @@ function GeneratorPage() {
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>
-                  <div className="mode-toggle" role="group" aria-label="Groupe de verbes">
+                  <div className="mode-toggle is-3" role="group" aria-label="Groupe de verbes">
                     <button
                       type="button"
                       className={(activeBlock.verbGroup ?? 'er') === 'er' ? 'active' : ''}
-                      onClick={() => {
-                        if ((activeBlock.verbGroup ?? 'er') === 'er') return
-                        updatePage({ verbGroup: 'er' as PhraseVerbGroup })
-                        setSeed(randomSeed())
-                      }}
+                      onClick={() => setVerbGroup('er')}
                     >
-                      -er, être, avoir
+                      Simple
                     </button>
                     <button
                       type="button"
                       className={activeBlock.verbGroup === 'autres' ? 'active' : ''}
-                      onClick={() => {
-                        if (activeBlock.verbGroup === 'autres') return
-                        updatePage({ verbGroup: 'autres' as PhraseVerbGroup })
-                        setSeed(randomSeed())
-                      }}
+                      onClick={() => setVerbGroup('autres')}
                     >
-                      2e et 3e groupes
+                      Autres
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.verbGroup === 'libre' ? 'active' : ''}
+                      onClick={() => setVerbGroup('libre')}
+                    >
+                      Libre
                     </button>
                   </div>
                 </div>
+              ) : null}
+              {isPhraseDomain &&
+              !isPhraseChart &&
+              activeBlock.verbGroup === 'libre' &&
+              isPhraseLibreEditable(activeBlock.exerciseType) ? (
+                <PhraseLibreEditor
+                  exerciseType={activeBlock.exerciseType}
+                  items={activeBlock.phraseItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []}
+                  instruction={
+                    activeBlock.phraseInstruction ??
+                    activeSheet?.blocks[safeBlockIndex]?.instruction ??
+                    ''
+                  }
+                  onChangeItems={(phraseItems) => updatePage({ phraseItems })}
+                  onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
+                />
               ) : null}
               {activePage.domain === 'français' ? (
                 <div className="mode-toggle-block">

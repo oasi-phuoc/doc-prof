@@ -299,10 +299,15 @@ export function frameMatchesTheme(theme: PhraseThemeId, frame: ThemedFrame): boo
   return !frameHasPrep(frame)
 }
 
+function bankKey(group: PhraseVerbGroup): 'er' | 'autres' {
+  return group === 'autres' ? 'autres' : 'er'
+}
+
 export function framesForTheme(theme: PhraseThemeId, group: PhraseVerbGroup): readonly ThemedFrame[] {
+  const bank = bankKey(group)
   const raw =
     theme === 'phrase-simple' || theme === 'phrase-negation'
-      ? group === 'autres'
+      ? bank === 'autres'
         ? SIMPLE_FRAMES_AUTRES
         : SIMPLE_FRAMES_ER
       : themedFramesFor(
@@ -316,7 +321,7 @@ export function framesForTheme(theme: PhraseThemeId, group: PhraseVerbGroup): re
             | 'phrase-conjonctions'
             | 'phrase-determinants'
             | 'phrase-negation-determinants',
-          group,
+          bank,
         )
   return raw.filter((frame) => frameMatchesTheme(theme, frame))
 }
@@ -495,13 +500,13 @@ if (SIMPLE_FRAMES_ER.length < 100) {
   throw new Error(`phrase-simple : ${SIMPLE_FRAMES_ER.length} modèles (100 attendus au minimum)`)
 }
 
-const BANKS: Record<PhraseVerbGroup, Record<PhraseThemeId, PhraseToken[][]>> = {
+const BANKS: Record<'er' | 'autres', Record<PhraseThemeId, PhraseToken[][]>> = {
   er: bankFor('er'),
   autres: bankFor('autres'),
 }
 
 export function phrasesFor(theme: PhraseThemeId, group: PhraseVerbGroup = 'er'): PhraseToken[][] {
-  return BANKS[group][theme]
+  return BANKS[bankKey(group)][theme]
 }
 
 export { simpleFramesFor, type SimpleFrame } from './phrase-simple-frames'
