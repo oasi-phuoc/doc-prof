@@ -1491,10 +1491,18 @@ function GeneratorPage() {
     if (activeBlock.phraseItems && activeBlock.phraseItems.length > 0) return
     const block = activeSheet?.blocks[safeBlockIndex]
     if (!block) return
-    updatePage({
-      phraseItems: block.items,
-      phraseInstruction: block.instruction,
-    })
+    const items = block.items
+    const instruction = block.instruction
+    setPages((current) =>
+      current.map((page, index) =>
+        index === pageIndex
+          ? setPageBlock(page, safeBlockIndex, {
+              phraseItems: items,
+              phraseInstruction: instruction,
+            })
+          : page,
+      ),
+    )
   }, [
     activeBlock.verbGroup,
     activeBlock.exerciseType,
@@ -1503,7 +1511,7 @@ function GeneratorPage() {
     seed,
     activeSheet,
     safeBlockIndex,
-    updatePage,
+    pageIndex,
   ])
 
   const toggleDraftGrid = (itemIndex: number, targetBlock = safeBlockIndex) => {
