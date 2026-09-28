@@ -40,7 +40,7 @@ import {
   calligraphieTopics,
   jeuxTopics,
   lectureTopics,
-  phraseTopics,
+  gattegnoTopics,
   typesForTopic,
 } from '@/math/catalog'
 import {
@@ -805,7 +805,7 @@ function Landing({ onCreate }: { onCreate: () => void }) {
             <span>Algèbre</span>
             <span>Géométrie</span>
             <span>Lecture</span>
-            <span>Phrase</span>
+            <span>Gattegno</span>
             <div className="art-card">
               <b>Fiches claires</b>
               <small>à imprimer et partager</small>
@@ -1356,8 +1356,8 @@ function GeneratorPage() {
         ? algebraTopics
         : activePage.domain === 'géométrie'
           ? geometryTopics
-          : activePage.domain === 'phrase'
-            ? phraseTopics
+          : activePage.domain === 'gattegno'
+            ? gattegnoTopics
             : activePage.domain === 'jeux'
               ? jeuxTopics
               : activePage.domain === 'calligraphie'
@@ -1530,7 +1530,7 @@ function GeneratorPage() {
   const isVocabPool = isVocabPoolType(activeBlock.exerciseType)
   const isVocabProd = isVocabProductionType(activeBlock.exerciseType)
   const isGramTheory = isGrammarTheoryType(activeBlock.exerciseType)
-  const isPhraseDomain = activePage.domain === 'phrase'
+  const isPhraseDomain = activePage.domain === 'gattegno'
   const isJeuxDomain = activePage.domain === 'jeux'
   const isCalliDomain = activePage.domain === 'calligraphie'
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
@@ -1835,7 +1835,7 @@ function GeneratorPage() {
     if (
       next === 'français' ||
       next === 'lecture' ||
-      next === 'phrase' ||
+      next === 'gattegno' ||
       next === 'jeux' ||
       next === 'calligraphie'
     ) {
@@ -2119,7 +2119,7 @@ function GeneratorPage() {
                 <option value="français">Français</option>
                 <option value="algèbre">Algèbre</option>
                 <option value="géométrie">Géométrie</option>
-                <option value="phrase">Phrase</option>
+                <option value="gattegno">Gattegno</option>
                 <option value="jeux">Grilles de cartes</option>
                 <option value="calligraphie">Calligraphie</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}

@@ -146,8 +146,8 @@ export function CustomDocumentHeader({
   const kicker =
     domain === 'lecture'
       ? 'FRANÇAIS · LECTURE'
-      : domain === 'phrase'
-        ? 'FRANÇAIS · PHRASE'
+      : domain === 'gattegno'
+        ? 'FRANÇAIS · GATTEGNO'
         : domain === 'jeux'
           ? 'FRANÇAIS · JEUX'
           : domain === 'français'

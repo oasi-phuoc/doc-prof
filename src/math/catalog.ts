@@ -52,18 +52,18 @@ export const topics: Topic[] = [
   { id: 'voyelle-u', label: 'Voyelle U · son /y/', domain: 'lecture' },
   { id: 'voyelle-e', label: 'Voyelle E · son /ə/', domain: 'lecture' },
   { id: 'voyelle-y', label: 'Voyelle Y · son /i/', domain: 'lecture' },
-  { id: 'phrase-tableaux', label: 'Tableaux Gattegno', domain: 'phrase' },
-  { id: 'phrase-simple', label: 'Simple', domain: 'phrase' },
-  { id: 'phrase-negation', label: 'Négation simple', domain: 'phrase' },
-  { id: 'phrase-adjectif', label: 'Adjectif', domain: 'phrase' },
-  { id: 'phrase-negation-adjectif', label: 'Négation avec adjectif', domain: 'phrase' },
-  { id: 'phrase-determinants', label: 'Déterminants', domain: 'phrase' },
-  { id: 'phrase-negation-determinants', label: 'Négation déterminants', domain: 'phrase' },
-  { id: 'phrase-preposition', label: 'Préposition', domain: 'phrase' },
-  { id: 'phrase-negation-preposition', label: 'Négation prépositions', domain: 'phrase' },
-  { id: 'phrase-adverbe', label: 'Adverbe', domain: 'phrase' },
-  { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'phrase' },
-  { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'phrase' },
+  { id: 'phrase-tableaux', label: 'Tableaux Gattegno', domain: 'gattegno' },
+  { id: 'phrase-simple', label: 'Simple', domain: 'gattegno' },
+  { id: 'phrase-negation', label: 'Négation simple', domain: 'gattegno' },
+  { id: 'phrase-adjectif', label: 'Adjectif', domain: 'gattegno' },
+  { id: 'phrase-negation-adjectif', label: 'Négation avec adjectif', domain: 'gattegno' },
+  { id: 'phrase-determinants', label: 'Déterminants', domain: 'gattegno' },
+  { id: 'phrase-negation-determinants', label: 'Négation déterminants', domain: 'gattegno' },
+  { id: 'phrase-preposition', label: 'Préposition', domain: 'gattegno' },
+  { id: 'phrase-negation-preposition', label: 'Négation prépositions', domain: 'gattegno' },
+  { id: 'phrase-adverbe', label: 'Adverbe', domain: 'gattegno' },
+  { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'gattegno' },
+  { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'gattegno' },
   // —— Grilles de cartes (thèmes FR + Libre) ——
   ...jeuxTopicsFromFr,
   // —— Calligraphie (thèmes FR + Libre) ——
@@ -75,7 +75,7 @@ export const frenchTopics = topics.filter((topic) => topic.domain === 'français
 export const algebraTopics = topics.filter((topic) => topic.domain === 'algèbre')
 export const geometryTopics = topics.filter((topic) => topic.domain === 'géométrie')
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
-export const phraseTopics = topics.filter((topic) => topic.domain === 'phrase')
+export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
 
@@ -300,7 +300,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('alphabet-suivant', 'alphabet', 'Lettre suivante', 'Trouver la lettre qui suit immédiatement.', 'Coloriez la pastille de la lettre qui suit.', 'ligne', { preferredColumns: 2 }),
   t('alphabet-initiale', 'alphabet', 'Mot d’initiale', 'Proposer un mot qui commence par une lettre donnée.', 'Écrivez un mot qui commence par la lettre demandée.', 'texte', { preferredColumns: 1 }),
 
-  // —— Phrase (grammaire en couleur / Gattegno) ——
+  // —— Gattegno (grammaire en couleur) ——
   t('phrase-tableau-categories', 'phrase-tableaux', 'Tableau des catégories', 'Tableau Gattegno avec les noms de catégories.', 'Repérez les catégories de la grammaire en couleur.', 'texte', { preferredColumns: 1 }),
   t('phrase-tableau-mots', 'phrase-tableaux', 'Tableau des mots', 'Tableau Gattegno avec des exemples de mots.', 'Repérez les mots selon leur catégorie.', 'texte', { preferredColumns: 1 }),
   t('phrase-tableau-vide', 'phrase-tableaux', 'Tableau vide', 'Structure vide du tableau Gattegno.', 'Observez la structure du tableau.', 'texte', { preferredColumns: 1 }),
@@ -765,7 +765,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
         ? 'addition'
         : domain === 'géométrie'
           ? 'aires'
-          : domain === 'phrase'
+          : domain === 'gattegno'
             ? 'phrase-simple'
             : domain === 'jeux'
               ? JEUX_LIBRE_TOPIC
@@ -780,7 +780,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const count =
     domain === 'jeux' || domain === 'calligraphie'
       ? 1
-      : domain === 'lecture' || domain === 'phrase'
+      : domain === 'lecture' || domain === 'gattegno'
         ? 6
         : domain === 'français'
           ? type.track === 'com'
