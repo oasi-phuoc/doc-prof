@@ -128,11 +128,16 @@ function CardFace({
   }
 
   if (variant === 'series-back') {
+    const frame = card.frameColor?.trim()
     return cardShell(
       'game-card is-series-back',
       card,
       <SeriesIdentity label={card.text} />,
-      { borderSrc: border, hideBadge },
+      {
+        style: frame ? ({ '--series-frame': frame } as CSSProperties) : undefined,
+        borderSrc: border,
+        hideBadge,
+      },
     )
   }
 
@@ -278,8 +283,10 @@ export function CardGrid({ board }: { board: GameBoard }) {
   const borderVersoId =
     board.borderVersoId !== undefined ? board.borderVersoId : board.borderId
   const side = board.side
+  const frame = board.frameColor?.trim()
   const boardStyle = {
     '--game-word-px': gameFontSizePx(board.fontSize, kind),
+    ...(frame ? { '--series-frame': frame } : {}),
   } as CSSProperties
 
   if (kind === 'loto-page' || kind === 'loto-back') {
