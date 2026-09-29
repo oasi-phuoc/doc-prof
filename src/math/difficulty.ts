@@ -146,6 +146,11 @@ export function pairDiv(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
+    if (range.decimals) {
+      const b = Math.max(2, Math.round(pickInRange(rng, { ...range, decimals: false })))
+      const result = Math.max(0.1, pickInRange(rng, range))
+      return { a: round2(result * b), b, result: round2(result) }
+    }
     const intRange: NumberRange = { ...range, decimals: false }
     const result = Math.max(2, Math.round(pickInRange(rng, intRange)))
     const b = Math.max(2, Math.round(pickInRange(rng, intRange)))
@@ -163,6 +168,11 @@ export function columnAddPair(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
+    if (range.decimals) {
+      const a = pickInRange(rng, range)
+      const b = pickInRange(rng, range)
+      return { a, b, result: round2(a + b) }
+    }
     const lo = Math.max(1, Math.ceil(range.min))
     const hi = Math.max(lo, Math.floor(range.max))
     const a = int(rng, lo, hi)
@@ -181,6 +191,14 @@ export function columnSubPair(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
+    if (range.decimals) {
+      const hi = pickInRange(rng, range)
+      const loBound = range.min
+      const span: NumberRange = { min: loBound, max: hi, decimals: true }
+      let b = pickInRange(rng, span)
+      if (b >= hi) b = round2(Math.max(loBound, hi - 0.1))
+      return { a: hi, b, result: round2(hi - b) }
+    }
     const lo = Math.max(1, Math.ceil(range.min))
     const hi = Math.max(lo + 1, Math.floor(range.max))
     let a = int(rng, lo, hi)
@@ -203,4 +221,41 @@ export function columnSubPair(
     if (b >= a) b = Math.max(1, a - 1)
   }
   return { a, b, result: a - b }
+}
+
+/** Multiplication en colonnes (multiplicateur entier à 1 chiffre si décimales). */
+export function columnMulPair(
+  rng: Rng,
+  difficulty: Difficulty,
+  range?: NumberRange,
+): { a: number; b: number; result: number } {
+  if (range) {
+    const a = Math.max(range.decimals ? 0.1 : 1, pickInRange(rng, range))
+    const bMax = Math.min(9, Math.max(2, Math.floor(range.max)))
+    const b = int(rng, 2, Math.max(2, bMax))
+    return { a, b, result: round2(a * b) }
+  }
+  const aMax = difficulty === 'facile' ? 99 : difficulty === 'moyen' ? 999 : 9999
+  const bMax = difficulty === 'avance' ? 12 : 9
+  const a = int(rng, 12, aMax)
+  const b = int(rng, 2, bMax)
+  return { a, b, result: a * b }
+}
+
+/**
+ * Division en colonnes pour valeurs libres.
+ * Avec décimales : quotient décimal, reste 0.
+ * Sans : quotient entier exact (reste 0) dans la plage.
+ */
+export function columnDivPair(
+  rng: Rng,
+  range: NumberRange,
+): { a: number; b: number; result: number } {
+  const b = int(rng, 2, Math.min(9, Math.max(2, Math.floor(range.max))))
+  if (range.decimals) {
+    const result = Math.max(0.1, pickInRange(rng, range))
+    return { a: round2(result * b), b, result: round2(result) }
+  }
+  const result = Math.max(2, Math.round(pickInRange(rng, { ...range, decimals: false })))
+  return { a: result * b, b, result }
 }

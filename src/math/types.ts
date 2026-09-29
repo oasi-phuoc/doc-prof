@@ -260,6 +260,11 @@ export type MathItem = {
   digitsPartials?: string[][]
   /** Retenues / emprunts alignés sur les colonnes (même largeur que digitsA). */
   carries?: string[]
+  /**
+   * Nombre de chiffres après la virgule (colonnes décimales).
+   * La virgule s’affiche dans la case des unités (même carré).
+   */
+  decimalPlaces?: number
   /** Chiffres du reste (division posée). */
   digitsRemainder?: string[]
   dividend?: number

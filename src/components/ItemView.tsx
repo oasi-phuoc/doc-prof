@@ -108,21 +108,35 @@ function DigitRow({
   showAnswer,
   answerDigits,
   carry,
+  decimalPlaces = 0,
+  showDecimalComma = false,
 }: {
   digits?: string[]
   empty?: boolean
   showAnswer?: boolean
   answerDigits?: string[]
   carry?: boolean
+  /** Chiffres après la virgule ; la virgule est dans la case des unités. */
+  decimalPlaces?: number
+  showDecimalComma?: boolean
 }) {
   const cells = digits ?? []
+  const unitsIdx =
+    showDecimalComma && decimalPlaces > 0 ? cells.length - decimalPlaces - 1 : -1
   return (
     <div className={`digit-row ${carry ? 'carry-row' : ''}`}>
       {cells.map((digit, index) => {
         const shown = empty ? (showAnswer ? answerDigits?.[index] ?? '' : '') : digit
+        const showComma = index === unitsIdx && (!empty || showAnswer)
         return (
-          <span className={`digit-cell ${empty && !showAnswer ? 'blank' : ''} ${carry ? 'carry' : ''}`} key={index}>
+          <span
+            className={`digit-cell ${empty && !showAnswer ? 'blank' : ''} ${carry ? 'carry' : ''}${
+              showComma ? ' has-comma' : ''
+            }`}
+            key={index}
+          >
             {shown}
+            {showComma ? <span className="digit-comma">,</span> : null}
           </span>
         )
       })}
@@ -136,24 +150,39 @@ function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const carries = item.carries ?? item.digitsA?.map(() => '') ?? []
   const partials = item.digitsPartials ?? []
   const hasPartials = partials.length > 0
+  const decimalPlaces = item.decimalPlaces ?? 0
 
   type Line =
-    | { kind: 'digits'; digits?: string[]; blank?: boolean; carry?: boolean; sign?: string }
+    | {
+        kind: 'digits'
+        digits?: string[]
+        blank?: boolean
+        carry?: boolean
+        sign?: string
+        comma?: boolean
+      }
     | { kind: 'rule' }
 
   const lines: Line[] = [
     { kind: 'digits', digits: carries, blank: !show, carry: true },
-    { kind: 'digits', digits: item.digitsA, blank: empty },
-    { kind: 'digits', digits: item.digitsB, blank: empty, sign: item.op },
+    { kind: 'digits', digits: item.digitsA, blank: empty, comma: decimalPlaces > 0 },
+    {
+      kind: 'digits',
+      digits: item.digitsB,
+      blank: empty,
+      sign: item.op,
+      // × : multiplicateur entier — pas de virgule sur cette ligne.
+      comma: decimalPlaces > 0 && item.op !== '×',
+    },
     { kind: 'rule' },
   ]
   if (hasPartials) {
     for (const row of partials) {
-      lines.push({ kind: 'digits', digits: row, blank: true })
+      lines.push({ kind: 'digits', digits: row, blank: true, comma: false })
     }
     lines.push({ kind: 'rule' })
   }
-  lines.push({ kind: 'digits', digits: item.digitsResult, blank: true })
+  lines.push({ kind: 'digits', digits: item.digitsResult, blank: true, comma: decimalPlaces > 0 })
 
   return (
     <div className={`column-op${hasPartials ? ' has-partials' : ''}`}>
@@ -178,6 +207,8 @@ function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
                 showAnswer={show}
                 answerDigits={line.digits}
                 carry={line.carry}
+                decimalPlaces={decimalPlaces}
+                showDecimalComma={Boolean(line.comma)}
               />
             </div>
           )
@@ -192,6 +223,7 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const empty = Boolean(item.blankOperands)
   const workRows = item.digitsPartials ?? []
   const remDigits = item.digitsRemainder ?? ['']
+  const decimalPlaces = item.decimalPlaces ?? 0
 
   return (
     <div className="division-column school">
@@ -205,6 +237,8 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
               empty={empty}
               showAnswer={show}
               answerDigits={item.digitsA}
+              decimalPlaces={decimalPlaces}
+              showDecimalComma={decimalPlaces > 0}
             />
           </div>
           {workRows.map((row, index) => {
@@ -250,7 +284,14 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
             <div className="column-rule" />
           </div>
           <div className="column-line">
-            <DigitRow digits={item.digitsResult} empty showAnswer={show} answerDigits={item.digitsResult} />
+            <DigitRow
+              digits={item.digitsResult}
+              empty
+              showAnswer={show}
+              answerDigits={item.digitsResult}
+              decimalPlaces={decimalPlaces}
+              showDecimalComma={decimalPlaces > 0}
+            />
           </div>
         </div>
       </div>
@@ -691,7 +732,7 @@ function ParsedEquationRow({
 export function tokenizeAlgebra(expression: string): string[] {
   const tokens: string[] = []
   const re =
-    /√\d+|√|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()]/gu
+    /√\d+|√|[A-Za-z]\/\d+|\d+\/\d+|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()]/gu
   let last = 0
   for (const match of expression.matchAll(re)) {
     const start = match.index ?? 0
@@ -716,6 +757,13 @@ function isAlgebraOp(token: string): boolean {
 }
 
 function AlgebraToken({ token }: { token: string }) {
+  if (/^(?:[A-Za-z]|\d+)\/\d+$/.test(token)) {
+    return (
+      <span className="alg-token alg-frac">
+        <FractionView value={token} />
+      </span>
+    )
+  }
   if (token.startsWith('√') && token.length > 1) {
     return (
       <span className="alg-token alg-sqrt">
@@ -985,13 +1033,15 @@ function EquationCorrectionLines({
               {hasEquation ? (
                 <span className="eq-corr-eq">
                   <span className="eq-corr-lhs" style={{ width: `${lhsWidthCh}ch` }}>
-                    {lhs}
+                    {renderMathText(lhs)}
                   </span>
                   <span className="eq-corr-eq-sign">=</span>
-                  <span className="eq-corr-rhs">{rhs}</span>
+                  <span className="eq-corr-rhs">{renderMathText(rhs)}</span>
                 </span>
               ) : (
-                <span className={isPhase ? 'eq-corr-phase' : 'eq-corr-note'}>{full}</span>
+                <span className={isPhase ? 'eq-corr-phase' : 'eq-corr-note'}>
+                  {renderMathText(full)}
+                </span>
               )}
             </td>
           </tr>

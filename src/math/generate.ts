@@ -6,6 +6,8 @@ import {
 import { exerciseTypeById, topicById } from './catalog'
 import {
   columnAddPair,
+  columnDivPair,
+  columnMulPair,
   columnSubPair,
   nombreBound,
   numberRangeFrom,
@@ -65,19 +67,57 @@ function lcm(a: number, b: number): number {
   return Math.abs(a * b) / gcd(a, b)
 }
 
+function decimalPlacesOf(n: number): number {
+  if (!Number.isFinite(n)) return 0
+  const s = String(n)
+  const i = s.indexOf('.')
+  if (i < 0) return 0
+  return Math.min(2, s.length - i - 1)
+}
+
+function scaleInt(n: number, places: number): number {
+  return Math.round(Math.abs(n) * 10 ** places)
+}
+
+/** Chiffres d’un entier (parties déjà mises à l’échelle). */
 function digits(n: number, width: number): string[] {
   const s = String(Math.abs(Math.trunc(n))).padStart(width, ' ')
   return s.split('').map((ch) => (ch === ' ' ? '' : ch))
+}
+
+/**
+ * Chiffres d’un nombre décimal : partie entière + décimales.
+ * La case des unités garde un 0 si besoin (ex. 0,5).
+ */
+function digitsDecimal(n: number, intWidth: number, places: number): string[] {
+  const scaled = scaleInt(n, places)
+  const factor = 10 ** places
+  const intPart = places > 0 ? Math.floor(scaled / factor) : scaled
+  const fracPart = places > 0 ? scaled % factor : 0
+  const intDigits = String(intPart)
+    .padStart(intWidth, ' ')
+    .split('')
+    .map((ch) => (ch === ' ' ? '' : ch))
+  if (places > 0 && intPart === 0) intDigits[intWidth - 1] = '0'
+  if (places <= 0) return intDigits
+  const fracDigits = String(fracPart).padStart(places, '0').split('')
+  return [...intDigits, ...fracDigits]
 }
 
 function widthOf(...nums: number[]): number {
   return Math.max(1, ...nums.map((n) => String(Math.abs(Math.trunc(n))).length))
 }
 
+function intWidthOf(n: number, places: number): number {
+  const scaled = scaleInt(n, places)
+  const intPart = places > 0 ? Math.floor(scaled / 10 ** places) : scaled
+  return Math.max(1, String(intPart).length)
+}
+
 /** Retenues (addition / × 1 chiffre) ou emprunts (soustraction) alignés sur les colonnes. */
-function computeCarries(op: ArithOp, a: number, b: number, width: number): string[] {
-  const da = digits(a, width).map((d) => (d === '' ? 0 : Number(d)))
-  const db = digits(b, width).map((d) => (d === '' ? 0 : Number(d)))
+function computeCarries(op: ArithOp, scaledA: number, scaledB: number, width: number): string[] {
+  const da = digits(scaledA, width).map((d) => (d === '' ? 0 : Number(d)))
+  const db = digits(scaledB, width).map((d) => (d === '' ? 0 : Number(d)))
   const carries = Array.from({ length: width }, () => '')
   if (op === '+') {
     let carry = 0
@@ -89,7 +129,7 @@ function computeCarries(op: ArithOp, a: number, b: number, width: number): strin
   } else if (op === '−') {
     let borrow = 0
     for (let i = width - 1; i >= 0; i--) {
-      let top = da[i]! - borrow
+      const top = da[i]! - borrow
       const bottom = db[i]!
       if (top < bottom) {
         carries[i] = '1'
@@ -100,9 +140,10 @@ function computeCarries(op: ArithOp, a: number, b: number, width: number): strin
     }
   } else if (op === '×') {
     let carry = 0
+    const mul = scaledB % 10
     for (let i = width - 1; i >= 0; i--) {
       if (carry > 0) carries[i] = String(carry)
-      const prod = da[i]! * (b % 10) + carry
+      const prod = da[i]! * mul + carry
       carry = Math.floor(prod / 10)
     }
   }
@@ -110,7 +151,18 @@ function computeCarries(op: ArithOp, a: number, b: number, width: number): strin
 }
 
 function columnItem(op: ArithOp, a: number, b: number, result: number, empty: boolean): MathItem {
-  const w = widthOf(a, b, result)
+  const places =
+    op === '×'
+      ? Math.max(decimalPlacesOf(a), decimalPlacesOf(result))
+      : Math.max(decimalPlacesOf(a), decimalPlacesOf(b), decimalPlacesOf(result))
+  const sa = scaleInt(a, places)
+  const sb = op === '×' ? Math.round(Math.abs(b)) : scaleInt(b, places)
+  const intW = Math.max(
+    intWidthOf(a, places),
+    op === '×' ? String(Math.round(Math.abs(b))).length : intWidthOf(b, places),
+    intWidthOf(result, places),
+  )
+  const w = intW + places
   return {
     layout: empty ? 'column-empty' : 'column',
     prompt: empty ? `${fmt(a)} ${op} ${fmt(b)}` : undefined,
@@ -118,10 +170,12 @@ function columnItem(op: ArithOp, a: number, b: number, result: number, empty: bo
     a,
     b,
     result,
-    digitsA: digits(a, w),
-    digitsB: digits(b, w),
-    digitsResult: digits(result, w),
-    carries: computeCarries(op, a, b, w),
+    digitsA: digitsDecimal(a, intW, places),
+    // × : multiplicateur aligné à droite (comme le produit entier mis à l’échelle).
+    digitsB: op === '×' ? digits(sb, w) : digitsDecimal(b, intW, places),
+    digitsResult: digitsDecimal(result, intW, places),
+    carries: computeCarries(op, sa, sb, w),
+    decimalPlaces: places > 0 ? places : undefined,
     blankOperands: empty,
     answer: fmt(result),
   }
@@ -133,49 +187,74 @@ function padDigitRow(row: string[] | undefined, width: number): string[] {
   return [...Array.from({ length: width - src.length }, () => ''), ...src]
 }
 
+/** Pad à droite (décimales) puis à gauche (partie entière) pour aligner la virgule. */
+function padDecimalRow(
+  row: string[] | undefined,
+  places: number,
+  targetPlaces: number,
+  totalWidth: number,
+): string[] {
+  const src = row ?? []
+  const p = Math.max(0, places)
+  const frac = p > 0 ? src.slice(Math.max(0, src.length - p)) : []
+  const intPart = p > 0 ? src.slice(0, Math.max(0, src.length - p)) : [...src]
+  while (frac.length < targetPlaces) frac.push(p > 0 || targetPlaces > 0 ? '0' : '')
+  return padDigitRow([...intPart, ...frac], totalWidth)
+}
+
 /** Aligne tous les tableaux en colonnes d’une fiche sur la même largeur (et ligne de retenues). */
 function normalizeColumnLayouts(items: MathItem[]): MathItem[] {
   const columnItems = items.filter(
     (item) => item.layout === 'column' || item.layout === 'column-empty',
   )
   if (columnItems.length === 0) return items
-  const maxWidth = Math.max(
+  const maxPlaces = Math.max(0, ...columnItems.map((item) => item.decimalPlaces ?? 0))
+  const maxIntWidth = Math.max(
     1,
-    ...columnItems.flatMap((item) => [
-      item.digitsA?.length ?? 0,
-      item.digitsB?.length ?? 0,
-      item.digitsResult?.length ?? 0,
-      item.carries?.length ?? 0,
-      ...(item.digitsPartials?.map((row) => row.length) ?? []),
-    ]),
+    ...columnItems.map((item) => {
+      const places = item.decimalPlaces ?? 0
+      const len = Math.max(
+        item.digitsA?.length ?? 0,
+        item.digitsB?.length ?? 0,
+        item.digitsResult?.length ?? 0,
+        item.carries?.length ?? 0,
+        ...(item.digitsPartials?.map((row) => row.length) ?? [0]),
+      )
+      return Math.max(1, len - places)
+    }),
   )
+  const maxWidth = maxIntWidth + maxPlaces
   const maxPartials = Math.max(0, ...columnItems.map((item) => item.digitsPartials?.length ?? 0))
   return items.map((item) => {
     if (item.layout !== 'column' && item.layout !== 'column-empty') return item
+    const places = item.decimalPlaces ?? 0
     const partials = item.digitsPartials ?? []
+    const padRow = (row: string[] | undefined) =>
+      maxPlaces > 0 || places > 0
+        ? padDecimalRow(row, places, maxPlaces, maxWidth)
+        : padDigitRow(row, maxWidth)
     const paddedPartials =
       maxPartials > 0
-        ? Array.from({ length: maxPartials }, (_, i) =>
-            padDigitRow(partials[i] ?? Array.from({ length: maxWidth }, () => ''), maxWidth),
-          )
+        ? Array.from({ length: maxPartials }, (_, i) => padRow(partials[i]))
         : undefined
     return {
       ...item,
-      digitsA: padDigitRow(item.digitsA, maxWidth),
-      digitsB: padDigitRow(item.digitsB, maxWidth),
-      digitsResult: padDigitRow(item.digitsResult, maxWidth),
-      carries: padDigitRow(item.carries ?? Array.from({ length: maxWidth }, () => ''), maxWidth),
+      digitsA: padRow(item.digitsA),
+      // Multiplicateur entier : aligné à droite, sans colonnes décimales ajoutées au milieu.
+      digitsB: item.op === '×' ? padDigitRow(item.digitsB, maxWidth) : padRow(item.digitsB),
+      digitsResult: padRow(item.digitsResult),
+      carries: padRow(item.carries ?? Array.from({ length: maxWidth }, () => '')),
       digitsPartials: paddedPartials,
+      decimalPlaces: maxPlaces > 0 ? maxPlaces : undefined,
     }
   })
 }
 
-function buildDivisionSteps(dividend: number, divisor: number): DivisionStep[] {
+function buildDivisionSteps(digitsStr: string, divisor: number): DivisionStep[] {
   const steps: DivisionStep[] = []
-  const digitsStr = String(dividend)
   let current = 0
   for (let i = 0; i < digitsStr.length; i++) {
-    current = current * 10 + Number(digitsStr[i])
+    current = current * 10 + Number(digitsStr[i] || 0)
     if (current < divisor && steps.length === 0 && i < digitsStr.length - 1) continue
     const qDigit = Math.floor(current / divisor)
     const product = qDigit * divisor
@@ -202,10 +281,17 @@ function placeDigitsAtEnd(value: string, width: number, endCol: number): string[
 }
 
 function divisionColumnItem(dividend: number, divisor: number, empty: boolean): MathItem {
-  const quotient = Math.floor(dividend / divisor)
-  const remainder = dividend % divisor
-  const width = String(dividend).length
-  const steps = buildDivisionSteps(dividend, divisor)
+  const places = Math.max(decimalPlacesOf(dividend), decimalPlacesOf(dividend / divisor))
+  const scale = 10 ** places
+  const scaledDividend = scaleInt(dividend, places)
+  const scaledQuotient = Math.floor(scaledDividend / divisor)
+  const remainder = scaledDividend % divisor
+  const quotient = places > 0 ? scaledQuotient / scale : scaledQuotient
+  const intW = intWidthOf(dividend, places)
+  const digitsA = digitsDecimal(dividend, intW, places)
+  const width = digitsA.length
+  const digitsStr = digitsA.map((d) => (d === '' ? '0' : d)).join('')
+  const steps = buildDivisionSteps(digitsStr, divisor)
   const workRows: string[][] = []
   for (const step of steps) {
     workRows.push(placeDigitsAtEnd(step.product, width, step.endCol))
@@ -215,6 +301,7 @@ function divisionColumnItem(dividend: number, divisor: number, empty: boolean): 
   while (workRows.length < 2) {
     workRows.push(Array.from({ length: width }, () => ''))
   }
+  const qIntW = Math.max(1, String(Math.floor(Math.abs(quotient))).length)
   return {
     layout: 'division-column',
     op: '÷',
@@ -222,15 +309,19 @@ function divisionColumnItem(dividend: number, divisor: number, empty: boolean): 
     dividend,
     divisor,
     quotient,
-    remainder,
-    digitsA: digits(dividend, width),
+    remainder: places > 0 ? remainder / scale : remainder,
+    digitsA,
     digitsB: String(divisor).split(''),
-    digitsResult: String(quotient).split(''),
+    digitsResult: digitsDecimal(quotient, qIntW, places),
     digitsPartials: workRows,
     digitsRemainder: digits(remainder, Math.max(1, String(remainder).length)),
     divisionSteps: steps,
+    decimalPlaces: places > 0 ? places : undefined,
     blankOperands: empty,
-    answer: remainder ? `${quotient} reste ${remainder}` : String(quotient),
+    answer:
+      remainder && places === 0
+        ? `${scaledQuotient} reste ${remainder}`
+        : fmt(quotient),
   }
 }
 
@@ -533,11 +624,8 @@ function generateOne(
     }
     case 'multiplication-colonne':
     case 'multiplication-colonne-poser': {
-      const aMax = difficulty === 'facile' ? 99 : difficulty === 'moyen' ? 999 : 9999
-      const bMax = difficulty === 'avance' ? 12 : 9
-      const a = int(rng, 12, aMax)
-      const b = int(rng, 2, bMax)
-      return columnItem('×', a, b, a * b, typeId.endsWith('poser'))
+      const p = columnMulPair(rng, difficulty, range)
+      return columnItem('×', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'multiplication-2chiffres': {
       const aMax = difficulty === 'facile' ? 49 : difficulty === 'moyen' ? 99 : 999
@@ -574,6 +662,10 @@ function generateOne(
     }
     case 'division-colonne':
     case 'division-colonne-poser': {
+      if (range) {
+        const p = columnDivPair(rng, range)
+        return divisionColumnItem(p.a, p.b, typeId.endsWith('poser'))
+      }
       const divisor = int(rng, 2, difficulty === 'avance' ? 12 : 9)
       const quotient = int(
         rng,
@@ -710,50 +802,32 @@ function generateOne(
     }
     case 'decimaux-add-colonne':
     case 'decimaux-add-colonne-poser': {
-      const a = Math.round(dec(rng, 40, 2) * 100)
-      const b = Math.round(dec(rng, 40, 2) * 100)
-      const result = a + b
-      const item = columnItem('+', a, b, result, typeId.endsWith('poser'))
-      item.prompt = `${decStr(a / 100)} + ${decStr(b / 100)}`
-      item.answer = decStr(result / 100)
-      item.a = a / 100
-      item.b = b / 100
-      return item
+      const a = dec(rng, 40, 2)
+      const b = dec(rng, 40, 2)
+      const result = Math.round((a + b) * 100) / 100
+      return columnItem('+', a, b, result, typeId.endsWith('poser'))
     }
     case 'decimaux-sub-colonne':
     case 'decimaux-sub-colonne-poser': {
-      let a = Math.round(dec(rng, 40, 2) * 100)
-      let b = Math.round(dec(rng, 40, 2) * 100)
+      let a = dec(rng, 40, 2)
+      let b = dec(rng, 40, 2)
       if (b > a) [a, b] = [b, a]
-      const result = a - b
-      const item = columnItem('−', a, b, result, typeId.endsWith('poser'))
-      item.prompt = `${decStr(a / 100)} − ${decStr(b / 100)}`
-      item.answer = decStr(result / 100)
-      item.a = a / 100
-      item.b = b / 100
-      return item
+      const result = Math.round((a - b) * 100) / 100
+      return columnItem('−', a, b, result, typeId.endsWith('poser'))
     }
     case 'decimaux-mul-colonne':
     case 'decimaux-mul-colonne-poser': {
-      const a = Math.round(dec(rng, 20, 1) * 10)
+      const a = dec(rng, 20, 1)
       const b = int(rng, 2, difficulty === 'avance' ? 12 : 9)
-      const result = a * b
-      const item = columnItem('×', a, b, result, typeId.endsWith('poser'))
-      item.prompt = `${decStr(a / 10)} × ${b}`
-      item.answer = decStr(result / 10)
-      item.a = a / 10
-      item.b = b
-      return item
+      const result = Math.round(a * b * 10) / 10
+      return columnItem('×', a, b, result, typeId.endsWith('poser'))
     }
     case 'decimaux-div-colonne':
     case 'decimaux-div-colonne-poser': {
       const divisor = int(rng, 2, difficulty === 'avance' ? 12 : 9)
-      const quotient = int(rng, 2, difficulty === 'facile' ? 20 : 80)
-      const dividend = divisor * quotient
-      const item = divisionColumnItem(dividend, divisor, typeId.endsWith('poser'))
-      item.prompt = `${decStr(dividend / 10)} ÷ ${divisor}`
-      item.answer = decStr(quotient / 10)
-      return item
+      const quotient = dec(rng, difficulty === 'facile' ? 20 : 80, 1)
+      const dividend = Math.round(quotient * divisor * 10) / 10
+      return divisionColumnItem(dividend, divisor, typeId.endsWith('poser'))
     }
     case 'decimaux-mul-ligne': {
       const factors = [
