@@ -163,6 +163,8 @@ function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       }
     | { kind: 'rule' }
 
+  const bHasDecimal =
+    typeof item.b === 'number' && Math.abs(item.b - Math.round(item.b)) > 1e-9
   const lines: Line[] = [
     { kind: 'digits', digits: carries, blank: !show, carry: true },
     { kind: 'digits', digits: item.digitsA, blank: empty, comma: decimalPlaces > 0 },
@@ -171,8 +173,8 @@ function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       digits: item.digitsB,
       blank: empty,
       sign: item.op,
-      // × : multiplicateur entier — pas de virgule sur cette ligne.
-      comma: decimalPlaces > 0 && item.op !== '×',
+      // × entier : pas de virgule ; × décimal (ex. 1,5) : virgule aux unités.
+      comma: decimalPlaces > 0 && (item.op !== '×' || bHasDecimal),
     },
     { kind: 'rule' },
   ]

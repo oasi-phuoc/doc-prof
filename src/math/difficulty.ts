@@ -29,14 +29,35 @@ export function numberRangeFrom(config: {
   return { min, max, decimals: !!config.numberDecimals }
 }
 
+export function roundToPlaces(n: number, places: number): number {
+  const factor = 10 ** Math.max(0, places)
+  return Math.round(n * factor) / factor
+}
+
+/** Nombre dans [min, max] avec exactement `places` chiffres après la virgule (0 = entier). */
+export function pickWithPlaces(rng: Rng, min: number, max: number, places: number): number {
+  const p = Math.max(0, places)
+  const factor = 10 ** p
+  let lo = Math.ceil(min * factor - 1e-9)
+  let hi = Math.floor(max * factor + 1e-9)
+  if (hi < lo) return roundToPlaces(min, p)
+  if (p === 0) return int(rng, lo, hi)
+  // Dernier chiffre non nul → exactement `p` décimales (évite 14,0 ou 1,50).
+  for (let attempt = 0; attempt < 40; attempt++) {
+    const scaled = int(rng, lo, hi)
+    if (scaled % 10 !== 0) return scaled / factor
+  }
+  // Repli déterministe : force un dixième non nul.
+  const base = int(rng, lo, hi)
+  const forced = base - (base % 10) + int(rng, 1, 9)
+  const clamped = Math.min(hi, Math.max(lo, forced))
+  return (clamped % 10 === 0 ? clamped + 1 : clamped) / factor
+}
+
 export function pickInRange(rng: Rng, range: NumberRange): number {
   if (range.decimals) {
-    const factor = 10
-    const a = Math.round(range.min * factor)
-    const b = Math.round(range.max * factor)
-    const lo = Math.min(a, b)
-    const hi = Math.max(a, b)
-    return int(rng, lo, hi) / factor
+    // Par défaut 1 décimale (ligne / usages génériques) ; les colonnes ont leurs propres tirages.
+    return pickWithPlaces(rng, range.min, range.max, 1)
   }
   const lo = Math.ceil(range.min)
   const hi = Math.floor(range.max)
@@ -44,8 +65,15 @@ export function pickInRange(rng: Rng, range: NumberRange): number {
   return int(rng, lo, hi)
 }
 
-function round2(n: number): number {
-  return Math.round(n * 100) / 100
+/** Places pour +/− : 0–3 chacun, au moins un des deux > 0. */
+function pickAddSubPlaces(rng: Rng): [number, number] {
+  let pa = int(rng, 0, 3)
+  let pb = int(rng, 0, 3)
+  if (pa === 0 && pb === 0) {
+    if (rng() < 0.5) pa = int(rng, 1, 3)
+    else pb = int(rng, 1, 3)
+  }
+  return [pa, pb]
 }
 
 export const DIFFICULTY_OPTIONS: Array<{ value: Difficulty; label: string }> = [
@@ -95,9 +123,10 @@ export function pairAdd(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
+    if (range.decimals) return columnAddPair(rng, difficulty, range)
     const a = pickInRange(rng, range)
     const b = pickInRange(rng, range)
-    return { a, b, result: round2(a + b) }
+    return { a, b, result: a + b }
   }
   const max = calcBound(difficulty)
   const a = int(rng, 1, max)
@@ -111,12 +140,13 @@ export function pairSub(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
+    if (range.decimals) return columnSubPair(rng, difficulty, range)
     const hi = pickInRange(rng, range)
-    const loBound = range.decimals ? range.min : Math.max(range.min, 0)
-    const span: NumberRange = { min: loBound, max: hi, decimals: range.decimals }
+    const loBound = Math.max(range.min, 0)
+    const span: NumberRange = { min: loBound, max: hi, decimals: false }
     let b = pickInRange(rng, span)
-    if (b >= hi) b = range.decimals ? round2(Math.max(loBound, hi - 0.1)) : Math.max(loBound, hi - 1)
-    return { a: hi, b, result: round2(hi - b) }
+    if (b >= hi) b = Math.max(loBound, hi - 1)
+    return { a: hi, b, result: hi - b }
   }
   const max = calcBound(difficulty)
   const a = int(rng, 2, max)
@@ -130,9 +160,10 @@ export function pairMul(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
+    if (range.decimals) return columnMulPair(rng, difficulty, range)
     const a = Math.max(1, pickInRange(rng, range))
     const b = Math.max(1, pickInRange(rng, range))
-    return { a, b, result: round2(a * b) }
+    return { a, b, result: a * b }
   }
   const max = mulBound(difficulty)
   const a = int(rng, 2, max)
@@ -146,11 +177,7 @@ export function pairDiv(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
-    if (range.decimals) {
-      const b = Math.max(2, Math.round(pickInRange(rng, { ...range, decimals: false })))
-      const result = Math.max(0.1, pickInRange(rng, range))
-      return { a: round2(result * b), b, result: round2(result) }
-    }
+    if (range.decimals) return columnDivPair(rng, range)
     const intRange: NumberRange = { ...range, decimals: false }
     const result = Math.max(2, Math.round(pickInRange(rng, intRange)))
     const b = Math.max(2, Math.round(pickInRange(rng, intRange)))
@@ -169,9 +196,11 @@ export function columnAddPair(
 ): { a: number; b: number; result: number } {
   if (range) {
     if (range.decimals) {
-      const a = pickInRange(rng, range)
-      const b = pickInRange(rng, range)
-      return { a, b, result: round2(a + b) }
+      const [pa, pb] = pickAddSubPlaces(rng)
+      const a = pickWithPlaces(rng, range.min, range.max, pa)
+      const b = pickWithPlaces(rng, range.min, range.max, pb)
+      const places = Math.max(pa, pb)
+      return { a, b, result: roundToPlaces(a + b, places) }
     }
     const lo = Math.max(1, Math.ceil(range.min))
     const hi = Math.max(lo, Math.floor(range.max))
@@ -192,12 +221,21 @@ export function columnSubPair(
 ): { a: number; b: number; result: number } {
   if (range) {
     if (range.decimals) {
-      const hi = pickInRange(rng, range)
-      const loBound = range.min
-      const span: NumberRange = { min: loBound, max: hi, decimals: true }
-      let b = pickInRange(rng, span)
-      if (b >= hi) b = round2(Math.max(loBound, hi - 0.1))
-      return { a: hi, b, result: round2(hi - b) }
+      const [pa, pb] = pickAddSubPlaces(rng)
+      let a = pickWithPlaces(rng, range.min, range.max, pa)
+      let b = pickWithPlaces(rng, range.min, range.max, pb)
+      if (b > a) {
+        const t = a
+        a = b
+        b = t
+      }
+      if (b >= a) {
+        const step = 10 ** -Math.max(pa, pb, 1)
+        b = roundToPlaces(Math.max(range.min, a - step), Math.max(pb, 1))
+        if (b >= a) b = roundToPlaces(Math.max(range.min, a - step), Math.max(pa, pb, 1))
+      }
+      const places = Math.max(pa, pb, 1)
+      return { a, b, result: roundToPlaces(a - b, places) }
     }
     const lo = Math.max(1, Math.ceil(range.min))
     const hi = Math.max(lo + 1, Math.floor(range.max))
@@ -223,17 +261,29 @@ export function columnSubPair(
   return { a, b, result: a - b }
 }
 
-/** Multiplication en colonnes (multiplicateur entier à 1 chiffre si décimales). */
+/**
+ * Multiplication en colonnes.
+ * Avec décimales : les deux facteurs sont décimaux ;
+ * le 2ᵉ est toujours dans [1,1 ; 9,9] à 1 décimale ;
+ * le 1ᵉ a 1, 2 ou 3 décimales.
+ */
 export function columnMulPair(
   rng: Rng,
   difficulty: Difficulty,
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
-    const a = Math.max(range.decimals ? 0.1 : 1, pickInRange(rng, range))
+    if (range.decimals) {
+      const placesA = int(rng, 1, 3)
+      const aMin = Math.max(range.min, 10 ** -placesA)
+      const a = pickWithPlaces(rng, aMin, range.max, placesA)
+      const b = pickWithPlaces(rng, 1.1, 9.9, 1)
+      return { a, b, result: roundToPlaces(a * b, placesA + 1) }
+    }
+    const a = Math.max(1, pickInRange(rng, range))
     const bMax = Math.min(9, Math.max(2, Math.floor(range.max)))
     const b = int(rng, 2, Math.max(2, bMax))
-    return { a, b, result: round2(a * b) }
+    return { a, b, result: a * b }
   }
   const aMax = difficulty === 'facile' ? 99 : difficulty === 'moyen' ? 999 : 9999
   const bMax = difficulty === 'avance' ? 12 : 9
@@ -243,19 +293,117 @@ export function columnMulPair(
 }
 
 /**
+ * Dividende à exactement `places` décimales, diviseur entier, quotient exact
+ * (dividende mis à l’échelle divisible par le diviseur).
+ */
+function decimalDivExact(
+  rng: Rng,
+  min: number,
+  max: number,
+  bMax = 9,
+): { a: number; b: number; result: number } {
+  const places = int(rng, 1, 3)
+  const factor = 10 ** places
+  const bHi = Math.min(9, Math.max(2, Math.floor(bMax)))
+  const lo = Math.max(1, Math.ceil(min * factor - 1e-9))
+  const hi = Math.max(lo, Math.floor(max * factor + 1e-9))
+
+  for (let attempt = 0; attempt < 60; attempt++) {
+    const b = int(rng, 2, bHi)
+    const minMult = Math.ceil(lo / b)
+    const maxMult = Math.floor(hi / b)
+    if (maxMult < minMult) continue
+    const mult = int(rng, minMult, maxMult)
+    const scaled = mult * b
+    // Dernier chiffre non nul → exactement `places` décimales sur le dividende.
+    if (scaled < lo || scaled > hi || scaled % 10 === 0) continue
+    const a = scaled / factor
+    const result = mult / factor
+    return { a, b, result }
+  }
+
+  // Repli déterministe : construire un dividende exact.
+  const b = int(rng, 2, bHi)
+  const placesF = places
+  const factorF = 10 ** placesF
+  let mult = Math.max(1, Math.round(((min + max) / 2) * factorF / b))
+  let scaled = mult * b
+  if (scaled % 10 === 0) {
+    mult += 1
+    scaled = mult * b
+    if (scaled % 10 === 0) {
+      mult += 1
+      scaled = mult * b
+    }
+  }
+  const a = scaled / factorF
+  return { a, b, result: mult / factorF }
+}
+
+/**
  * Division en colonnes pour valeurs libres.
- * Avec décimales : quotient décimal, reste 0.
+ * Avec décimales : diviseur entier ; dividende à 1, 2 ou 3 décimales (exact).
  * Sans : quotient entier exact (reste 0) dans la plage.
  */
 export function columnDivPair(
   rng: Rng,
   range: NumberRange,
 ): { a: number; b: number; result: number } {
-  const b = int(rng, 2, Math.min(9, Math.max(2, Math.floor(range.max))))
   if (range.decimals) {
-    const result = Math.max(0.1, pickInRange(rng, range))
-    return { a: round2(result * b), b, result: round2(result) }
+    return decimalDivExact(rng, range.min, range.max, Math.min(9, range.max))
   }
+  const b = int(rng, 2, Math.min(9, Math.max(2, Math.floor(range.max))))
   const result = Math.max(2, Math.round(pickInRange(rng, { ...range, decimals: false })))
   return { a: result * b, b, result }
+}
+
+/** Tirage +/− décimal hors valeurs libres (thème Décimaux). */
+export function decimalAddPair(
+  rng: Rng,
+  maxInt = 40,
+): { a: number; b: number; result: number } {
+  const [pa, pb] = pickAddSubPlaces(rng)
+  const a = pickWithPlaces(rng, 10 ** -Math.max(pa, 1), maxInt, pa)
+  const b = pickWithPlaces(rng, 10 ** -Math.max(pb, 1), maxInt, pb)
+  const places = Math.max(pa, pb)
+  return { a, b, result: roundToPlaces(a + b, places) }
+}
+
+export function decimalSubPair(
+  rng: Rng,
+  maxInt = 40,
+): { a: number; b: number; result: number } {
+  const [pa, pb] = pickAddSubPlaces(rng)
+  let a = pickWithPlaces(rng, 10 ** -Math.max(pa, 1), maxInt, pa)
+  let b = pickWithPlaces(rng, 10 ** -Math.max(pb, 1), maxInt, pb)
+  if (b > a) {
+    const t = a
+    a = b
+    b = t
+  }
+  if (b >= a) {
+    const step = 10 ** -Math.max(pa, pb, 1)
+    b = roundToPlaces(Math.max(step, a - step), Math.max(pb, 1))
+  }
+  const places = Math.max(pa, pb, 1)
+  return { a, b, result: roundToPlaces(a - b, places) }
+}
+
+/** × décimal : a à 1–3 décimales, b ∈ [1,1 ; 9,9] à 1 décimale. */
+export function decimalMulPair(
+  rng: Rng,
+  maxInt = 20,
+): { a: number; b: number; result: number } {
+  const placesA = int(rng, 1, 3)
+  const a = pickWithPlaces(rng, 10 ** -placesA, maxInt, placesA)
+  const b = pickWithPlaces(rng, 1.1, 9.9, 1)
+  return { a, b, result: roundToPlaces(a * b, placesA + 1) }
+}
+
+/** ÷ décimal : diviseur entier, dividende à 1–3 décimales (exact). */
+export function decimalDivPair(
+  rng: Rng,
+  maxDividend = 40,
+): { a: number; b: number; result: number } {
+  return decimalDivExact(rng, 10 ** -3, maxDividend, 9)
 }

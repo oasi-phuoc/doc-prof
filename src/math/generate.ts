@@ -9,6 +9,10 @@ import {
   columnDivPair,
   columnMulPair,
   columnSubPair,
+  decimalAddPair,
+  decimalDivPair,
+  decimalMulPair,
+  decimalSubPair,
   nombreBound,
   numberRangeFrom,
   pairAdd,
@@ -69,10 +73,11 @@ function lcm(a: number, b: number): number {
 
 function decimalPlacesOf(n: number): number {
   if (!Number.isFinite(n)) return 0
-  const s = String(n)
-  const i = s.indexOf('.')
-  if (i < 0) return 0
-  return Math.min(2, s.length - i - 1)
+  for (let places = 0; places <= 3; places++) {
+    const factor = 10 ** places
+    if (Math.abs(n * factor - Math.round(n * factor)) < 1e-8) return places
+  }
+  return 3
 }
 
 function scaleInt(n: number, places: number): number {
@@ -150,7 +155,60 @@ function computeCarries(op: ArithOp, scaledA: number, scaledB: number, width: nu
   return carries
 }
 
+/** Chiffres d’un entier mis à l’échelle, avec 0 forcé dans la case des unités. */
+function digitsScaledAligned(scaled: number, width: number, places: number): string[] {
+  const cells = digits(scaled, width)
+  if (places > 0) {
+    const unitsIdx = width - places - 1
+    if (unitsIdx >= 0 && cells[unitsIdx] === '') cells[unitsIdx] = '0'
+  }
+  return cells
+}
+
+/** × décimal × décimal (b à 1 décimale, 1,1–9,9) : produits partiels sur entiers mis à l’échelle. */
+function columnMulDecimalItem(a: number, b: number, result: number, empty: boolean): MathItem {
+  const placesA = Math.max(1, decimalPlacesOf(a))
+  const placesB = Math.max(1, decimalPlacesOf(b))
+  const places = placesA + placesB
+  const sa = scaleInt(a, placesA)
+  const sb = scaleInt(b, placesB)
+  const units = sb % 10
+  const tens = Math.floor(sb / 10)
+  const partialUnits = sa * units
+  const partialTens = sa * tens * 10
+  const product = sa * sb
+  const aScaled = sa * 10 ** (places - placesA)
+  const bScaled = sb * 10 ** (places - placesB)
+  const w = Math.max(
+    1,
+    String(product).length,
+    String(aScaled).length,
+    String(bScaled).length,
+    String(partialUnits).length,
+    String(partialTens).length,
+  )
+  return {
+    layout: empty ? 'column-empty' : 'column',
+    prompt: empty ? `${fmt(a)} × ${fmt(b)}` : undefined,
+    op: '×',
+    a,
+    b,
+    result,
+    digitsA: digitsScaledAligned(aScaled, w, places),
+    digitsB: digitsScaledAligned(bScaled, w, places),
+    digitsPartials: [digits(partialUnits, w), digits(partialTens, w)],
+    digitsResult: digitsScaledAligned(product, w, places),
+    carries: computeCarries('×', aScaled, units, w),
+    decimalPlaces: places,
+    blankOperands: empty,
+    answer: fmt(result),
+  }
+}
+
 function columnItem(op: ArithOp, a: number, b: number, result: number, empty: boolean): MathItem {
+  if (op === '×' && (decimalPlacesOf(a) > 0 || decimalPlacesOf(b) > 0) && decimalPlacesOf(b) > 0) {
+    return columnMulDecimalItem(a, b, result, empty)
+  }
   const places =
     op === '×'
       ? Math.max(decimalPlacesOf(a), decimalPlacesOf(result))
@@ -171,7 +229,7 @@ function columnItem(op: ArithOp, a: number, b: number, result: number, empty: bo
     b,
     result,
     digitsA: digitsDecimal(a, intW, places),
-    // × : multiplicateur aligné à droite (comme le produit entier mis à l’échelle).
+    // × entier : multiplicateur aligné à droite.
     digitsB: op === '×' ? digits(sb, w) : digitsDecimal(b, intW, places),
     digitsResult: digitsDecimal(result, intW, places),
     carries: computeCarries(op, sa, sb, w),
@@ -237,11 +295,14 @@ function normalizeColumnLayouts(items: MathItem[]): MathItem[] {
       maxPartials > 0
         ? Array.from({ length: maxPartials }, (_, i) => padRow(partials[i]))
         : undefined
+    const bIsDecimal =
+      item.op === '×' && typeof item.b === 'number' && decimalPlacesOf(item.b) > 0
     return {
       ...item,
       digitsA: padRow(item.digitsA),
-      // Multiplicateur entier : aligné à droite, sans colonnes décimales ajoutées au milieu.
-      digitsB: item.op === '×' ? padDigitRow(item.digitsB, maxWidth) : padRow(item.digitsB),
+      // × entier : aligné à droite ; × décimal : même alignement de virgule.
+      digitsB:
+        item.op === '×' && !bIsDecimal ? padDigitRow(item.digitsB, maxWidth) : padRow(item.digitsB),
       digitsResult: padRow(item.digitsResult),
       carries: padRow(item.carries ?? Array.from({ length: maxWidth }, () => '')),
       digitsPartials: paddedPartials,
@@ -802,32 +863,23 @@ function generateOne(
     }
     case 'decimaux-add-colonne':
     case 'decimaux-add-colonne-poser': {
-      const a = dec(rng, 40, 2)
-      const b = dec(rng, 40, 2)
-      const result = Math.round((a + b) * 100) / 100
-      return columnItem('+', a, b, result, typeId.endsWith('poser'))
+      const p = decimalAddPair(rng, 40)
+      return columnItem('+', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'decimaux-sub-colonne':
     case 'decimaux-sub-colonne-poser': {
-      let a = dec(rng, 40, 2)
-      let b = dec(rng, 40, 2)
-      if (b > a) [a, b] = [b, a]
-      const result = Math.round((a - b) * 100) / 100
-      return columnItem('−', a, b, result, typeId.endsWith('poser'))
+      const p = decimalSubPair(rng, 40)
+      return columnItem('−', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'decimaux-mul-colonne':
     case 'decimaux-mul-colonne-poser': {
-      const a = dec(rng, 20, 1)
-      const b = int(rng, 2, difficulty === 'avance' ? 12 : 9)
-      const result = Math.round(a * b * 10) / 10
-      return columnItem('×', a, b, result, typeId.endsWith('poser'))
+      const p = decimalMulPair(rng, 20)
+      return columnItem('×', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'decimaux-div-colonne':
     case 'decimaux-div-colonne-poser': {
-      const divisor = int(rng, 2, difficulty === 'avance' ? 12 : 9)
-      const quotient = dec(rng, difficulty === 'facile' ? 20 : 80, 1)
-      const dividend = Math.round(quotient * divisor * 10) / 10
-      return divisionColumnItem(dividend, divisor, typeId.endsWith('poser'))
+      const p = decimalDivPair(rng, difficulty === 'facile' ? 40 : difficulty === 'moyen' ? 120 : 400)
+      return divisionColumnItem(p.a, p.b, typeId.endsWith('poser'))
     }
     case 'decimaux-mul-ligne': {
       const factors = [
