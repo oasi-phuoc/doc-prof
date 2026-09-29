@@ -63,6 +63,21 @@ npm run lint && npm run build
 
 Le script **ne touche pas** à `trous` ni `dictee`.
 
+## Importer un document corrigé
+
+Document source : `scripts/data/calligraphie-phrases-corrigees.txt`  
+(format `##### FICHIER … #####` / `=== id | label | subgroup ===` / `--- A1|A2|B1 ---`).
+
+```bash
+python3 scripts/import-calligraphie-phrases.py
+# optionnel — enrichir les preds Gattegno (phrase-simple) depuis les A1
+python3 scripts/enrich-gattegno-from-calli.py
+npm run lint && npm run build
+```
+
+L’import remplace uniquement `sentences.phrase` (pas `trous` / `dictee`).  
+La calligraphie ne tire que les phrases ≤ `MAX_CALLI_LINE_CHARS` (50) ; les B1 plus longues restent disponibles pour le Voc.
+
 ## Terminé quand
 
 - 10 × 3 niveaux par mot, ≤ 50 caractères (espaces compris), sens réel
