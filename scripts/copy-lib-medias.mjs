@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
  * Copie les médias pédagogiques de soutien-scolaire vers public/lib/
- * selon les thèmes ClairFLE. Pas d’audio lecture / nombres / vocabulaire,
- * pas d’images maths.
+ * selon les thèmes ClairFLE. Pas d’audio nombres, pas d’images maths.
+ * Audios mots (vocab / lecture) → audio/vocabulaire/{thème}/
+ * (voir aussi scripts/remap-word-audio-themes.mjs côté soutien).
  */
 import { mkdirSync, readdirSync, readFileSync, copyFileSync, existsSync, statSync } from 'node:fs'
 import { basename, dirname, extname, join } from 'node:path'
@@ -367,10 +368,67 @@ function copyExtras() {
   }
 }
 
+/** Audios mots déjà classés par thème dans soutien, sinon remap local. */
+function copyWordAudios() {
+  const themed = join(SRC, 'public/lib/audio/vocabulaire')
+  if (existsSync(themed)) {
+    for (const file of walk(themed).filter(isAudio)) {
+      const rel = file.split('/vocabulaire/')[1]
+      if (!rel) continue
+      copyTo(file, join(DEST, 'audio/vocabulaire', rel))
+      tally(`word-audio/${dirname(rel)}`)
+    }
+    return
+  }
+  // Fallback : son_f → thèmes (même logique que remap-word-audio-themes.mjs)
+  const vDefault = {
+    V1: 'presenter',
+    V2: 'journee',
+    V3: 'loisirs',
+    V4: 'logement',
+    V5: 'ecole',
+    V6: 'vetements',
+    V7: 'nourriture',
+    V8: 'sante',
+    V9: 'transports',
+  }
+  const planned = new Map()
+  const plan = (file, vFolder) => {
+    const stem = basename(file, extname(file))
+    const key = norm(stem)
+    if (!key) return
+    const prev = planned.get(key)
+    if (prev?.vFolder && !vFolder) return
+    const guessed = scoreText(stem)
+    let theme = 'objets'
+    let via = 'fallback'
+    if (guessed.score >= 2) {
+      theme = guessed.theme
+      via = 'score'
+    } else if (vFolder && vDefault[vFolder]) {
+      theme = vDefault[vFolder]
+      via = 'v-default'
+    }
+    planned.set(key, { file, theme, name: basename(file), via, vFolder })
+  }
+  for (const file of walk(join(SRC, 'public/assets/words/son_f/vocab')).filter(isAudio)) {
+    const folder = file.split('/vocab/')[1]?.split('/')[0]
+    plan(file, /^V\d+$/.test(folder ?? '') ? folder : undefined)
+  }
+  for (const file of walk(join(SRC, 'public/assets/words/son_f/mots')).filter(isAudio)) {
+    plan(file, undefined)
+  }
+  for (const { file, theme, name } of planned.values()) {
+    copyTo(file, join(DEST, 'audio/vocabulaire', theme, name))
+    tally(`word-audio/${theme}`)
+  }
+}
+
 copyVocab()
 copyLecture()
 copyScenes()
 copyComprehension()
+copyWordAudios()
 copyExtras()
 
 console.log(JSON.stringify(counts, null, 2))
