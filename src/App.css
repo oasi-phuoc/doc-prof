@@ -1140,8 +1140,24 @@ html,body,#root{
 .exercise-block{margin:0 0 12px}
 .exercise-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 8px}
 .exercise-heading-main{flex:1;min-width:0}
+.exercise-heading-title-row{
+  display:flex;align-items:flex-end;justify-content:flex-start;gap:8px;flex-wrap:wrap
+}
 .exercise-heading h3{margin:0;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
 .exercise-heading p{margin:3px 0 0;font-size:12px;line-height:1.45;text-align:justify}
+/* Refresh en bas à droite du titre « Exercice N » (aperçu seulement). */
+.exercise-refresh-btn{
+  width:22px;height:22px;padding:0;margin:0 0 1px;border:1px solid var(--line);
+  border-radius:999px;background:#fff;color:var(--muted);
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+  box-sizing:border-box;flex:0 0 auto;line-height:0
+}
+.exercise-refresh-btn:hover{
+  border-color:color-mix(in srgb,var(--purple) 35%,#fff);
+  color:var(--purple);background:var(--lavender)
+}
+.exercise-refresh-btn:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.exercise-refresh-btn svg{width:12px;height:12px;display:block}
 .exercise-document{margin:0 0 10px}
 .exercise-document-title{margin:0 0 4px;font-size:12px;font-weight:700}
 .exercise-document-text{margin:0;font-size:12px;line-height:1.5;text-align:justify;white-space:pre-line}

@@ -463,6 +463,11 @@ export type ExerciseBlock = {
   /** Phrase : Simple (er), Autres (2e/3e), ou Libre (édition). */
   verbGroup?: PhraseVerbGroup
   /**
+   * Graine locale de l’exercice (bouton refresh sur la fiche).
+   * Permet de retirer uniquement ce bloc sans régénérer toute la fiche.
+   */
+  contentSeed?: number
+  /**
    * Mode libre Gattegno : items édités (mots, catégories, verbes).
    * Si présents, ils remplacent le tirage pour l’affichage / l’impression.
    */

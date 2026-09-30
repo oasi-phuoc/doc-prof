@@ -169,6 +169,17 @@ function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
   ]
 }
 
+function RefreshIcon() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden>
+      <path
+        fill="currentColor"
+        d="M13.5 2.5a.75.75 0 0 0-1.5 0v1.2A5.5 5.5 0 1 0 13.4 10a.75.75 0 1 0-1.3-.75 4 4 0 1 1-1.05-3.7H9.25a.75.75 0 0 0 0 1.5h3.5A.75.75 0 0 0 13.5 6V2.5Z"
+      />
+    </svg>
+  )
+}
+
 function WorksheetSheet({
   page,
   mode,
@@ -183,6 +194,7 @@ function WorksheetSheet({
   onToggleDraftGrid,
   interactiveOralModes = false,
   onCycleOralAnswerMode,
+  onRegenerateBlock,
   coordEdit,
 }: {
   page: WorksheetPage
@@ -202,6 +214,8 @@ function WorksheetSheet({
   /** Pastille QCM / texte / images pour la compréhension orale. */
   interactiveOralModes?: boolean
   onCycleOralAnswerMode?: (index: number, blockIndex?: number) => void
+  /** Bouton refresh : régénère uniquement cet exercice. */
+  onRegenerateBlock?: (blockIndex: number) => void
   coordEdit?: {
     selectedKind: CoordShape | null
     placingOrigin?: boolean
@@ -252,7 +266,20 @@ function WorksheetSheet({
               {isJeuxSheet ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">
-                  <h3>{blockHeading}</h3>
+                  <div className="exercise-heading-title-row">
+                    <h3>{blockHeading}</h3>
+                    {onRegenerateBlock ? (
+                      <button
+                        type="button"
+                        className="no-print exercise-refresh-btn"
+                        aria-label="Régénérer cet exercice"
+                        title="Régénérer cet exercice"
+                        onClick={() => onRegenerateBlock(blockIndex)}
+                      >
+                        <RefreshIcon />
+                      </button>
+                    ) : null}
+                  </div>
                   <p>{block.instruction}</p>
                   {block.givens && block.givens.length > 0 ? (
                     <p className="sheet-givens" aria-label="Valeurs des variables">
@@ -1924,12 +1951,12 @@ function GeneratorPage() {
         vocabSubgroup: activeBlock.vocabSubgroup,
         countHint: Math.max(parseCalliLines(activeBlock.calliText).length, calliFields.length),
       })
-      updatePage({ calliText: nextText })
+      updatePage({ calliText: nextText, contentSeed: nextSeed })
       return
     }
     if (activeBlock.verbGroup === 'libre' && isPhraseLibreEditable(activeBlock.exerciseType)) {
       // Nouveau tirage banque → l’effet resynchronise phraseItems.
-      updatePage({ phraseItems: undefined, phraseInstruction: undefined })
+      updatePage({ phraseItems: undefined, phraseInstruction: undefined, contentSeed: nextSeed })
       return
     }
     if (!isJeuxType(activeBlock.exerciseType)) return
@@ -1943,7 +1970,58 @@ function GeneratorPage() {
       gameEntries: reshuffled.gameEntries,
       gameText: reshuffled.gameText,
       gameSelectedIds: reshuffled.gameSelectedIds,
+      contentSeed: nextSeed,
     })
+  }
+
+  /** Régénère uniquement l’exercice ciblé (les autres blocs / pages restent inchangés). */
+  function regenerateBlock(targetBlock: number) {
+    const nextSeed = randomSeed()
+    setMode('student')
+    setBlockIndex(targetBlock)
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const block = pageBlocks(page)[targetBlock]
+        if (!block) return page
+        let patch: Partial<ExerciseBlock> = { contentSeed: nextSeed }
+        if (isCalligraphieType(block.exerciseType)) {
+          patch = {
+            ...patch,
+            calliText: reshuffleCalliContent(nextSeed, {
+              exerciseType: block.exerciseType,
+              topic: block.topic,
+              difficulty: block.difficulty,
+              calliText: block.calliText,
+              calliFont: block.calliFont,
+              calliSize: block.calliSize,
+              vocabSubgroup: block.vocabSubgroup,
+              countHint: Math.max(parseCalliLines(block.calliText).length, 1),
+            }),
+          }
+        } else if (block.verbGroup === 'libre' && isPhraseLibreEditable(block.exerciseType)) {
+          patch = {
+            ...patch,
+            phraseItems: undefined,
+            phraseInstruction: undefined,
+          }
+        } else if (isJeuxType(block.exerciseType)) {
+          const reshuffled = reshuffleGameContent(block.exerciseType, nextSeed, {
+            gameSource: block.gameSource,
+            gameTopic: block.gameTopic,
+            gameSelectedIds: block.gameSelectedIds,
+            gameEntries: block.gameEntries,
+          })
+          patch = {
+            ...patch,
+            gameEntries: reshuffled.gameEntries,
+            gameText: reshuffled.gameText,
+            gameSelectedIds: reshuffled.gameSelectedIds,
+          }
+        }
+        return setPageBlock(page, targetBlock, patch)
+      }),
+    )
   }
 
   function setVerbGroup(next: PhraseVerbGroup) {
@@ -2001,6 +2079,7 @@ function GeneratorPage() {
   const sheetProps = {
     mode,
     ...chromeProps,
+    onRegenerateBlock: regenerateBlock,
   } as const
 
 

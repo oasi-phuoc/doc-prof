@@ -1254,7 +1254,8 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   const blocksIn = pageBlocks(config)
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(config, block)
-    const result = buildSingleBlock(single, seed + index * 10007)
+    const local = block.contentSeed ?? 0
+    const result = buildSingleBlock(single, seed + index * 10007 + local)
     const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     return {
