@@ -118,6 +118,10 @@ import {
   resolveAxesGrid,
   sceneFromAxesLibre,
 } from '@/math/coord-reperage'
+import {
+  isTransformationCentrale,
+  isTransformationExercise,
+} from '@/math/coord-transformations'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import {
   AREA_QUAD_FIGURES,
@@ -1030,6 +1034,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isCadrans = isReperageCadrans(type.id)
   const isDroites = isReperageDroites(type.id)
   const isConstruire = isReperageConstruire(type.id)
+  const isTransform = isTransformationExercise(type.id)
+  const isTransformCentrale = isTransformationCentrale(type.id)
   const isGeoCalc = isDraftPadExercise(type.id) && !isProblem && !isEquation
   const isFrenchCom = type.track === 'com'
   const isComQcm =
@@ -1265,13 +1271,13 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           coordCellMm: DEFAULT_FORMES_CELL_MM,
           coordUnitSquares: undefined,
         }
-      : isCadrans || isDroites || isConstruire
+      : isCadrans || isDroites || isConstruire || isTransform
         ? {
-            coordLibre: isCadrans ? false : undefined,
+            coordLibre: isCadrans || isTransformCentrale ? false : undefined,
             coordCols: AXES_DEFAULT_COLS,
             coordRows: AXES_DEFAULT_ROWS,
             coordAxis: undefined,
-            coordMarks: isCadrans ? [] : undefined,
+            coordMarks: isCadrans || isTransformCentrale ? [] : undefined,
             coordRange: undefined,
             coordCellMm: DEFAULT_CELL_MM,
             coordUnitSquares: DEFAULT_UNIT_SQUARES,
@@ -1639,6 +1645,8 @@ function GeneratorPage() {
   const isFormes = isReperageFormes(activeBlock.exerciseType)
   const isDroites = isReperageDroites(activeBlock.exerciseType)
   const isConstruire = isReperageConstruire(activeBlock.exerciseType)
+  const isTransform = isTransformationExercise(activeBlock.exerciseType)
+  const isTransformCentrale = isTransformationCentrale(activeBlock.exerciseType)
   const maxQuestions = isComposer
     ? COORD_LETTER_MAX - 1
     : isFormes
@@ -1712,6 +1720,22 @@ function GeneratorPage() {
   }
 
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
+    if (isTransformCentrale && activeBlock.coordLibre) {
+      const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+      const origin = { col: grid.cols / 2, row: grid.rows / 2 }
+      if (!markOnGrid({ x, y, kind: 'point' }, origin, grid.cols, grid.rows, grid.unitSquares)) return
+      updatePage({
+        coordLibre: true,
+        coordCols: grid.cols,
+        coordRows: grid.rows,
+        coordCellMm: grid.cellMm,
+        coordUnitSquares: grid.unitSquares,
+        coordMarks: [
+          { x, y, kind: 'point', label: 'Ω', given: true, showCoord: true },
+        ],
+      })
+      return
+    }
     if (isCadrans) {
       const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
       const origin = {
@@ -3131,9 +3155,40 @@ function GeneratorPage() {
                     </p>
                   )}
                 </div>
-              ) : isDroites || isConstruire ? (
+              ) : isDroites || isConstruire || isTransform ? (
                 <div className="coord-libre-panel">
-                  <b>{isDroites ? 'Repère (droites)' : 'Repère (construction)'}</b>
+                  <b>
+                    {isDroites
+                      ? 'Repère (droites)'
+                      : isTransform
+                        ? 'Repère (transformations)'
+                        : 'Repère (construction)'}
+                  </b>
+                  {isTransformCentrale ? (
+                    <div className="mode-toggle" role="group" aria-label="Mode du centre">
+                      <button
+                        type="button"
+                        className={!activeBlock.coordLibre ? 'active' : ''}
+                        onClick={() => updatePage({ coordLibre: false, coordMarks: [] })}
+                      >
+                        Automatique
+                      </button>
+                      <button
+                        type="button"
+                        className={activeBlock.coordLibre ? 'active' : ''}
+                        onClick={() =>
+                          updatePage({
+                            coordLibre: true,
+                            coordMarks: activeBlock.coordMarks?.length
+                              ? activeBlock.coordMarks
+                              : [{ x: 0, y: 0, kind: 'point', label: 'Ω', given: true, showCoord: true }],
+                          })
+                        }
+                      >
+                        Libre
+                      </button>
+                    </div>
+                  ) : null}
                   <ReperageAxesFields
                     cols={activeBlock.coordCols ?? axesGrid.cols}
                     rows={activeBlock.coordRows ?? axesGrid.rows}
@@ -3143,10 +3198,17 @@ function GeneratorPage() {
                     onLiveCols={(n) => updatePage({ coordCols: n })}
                     onLiveRows={(n) => updatePage({ coordRows: n })}
                   />
+                  {isTransformCentrale && activeBlock.coordLibre ? (
+                    <p className="type-hint muted">
+                      Cliquez sur le repère de l’aperçu pour placer le centre Ω de la symétrie centrale.
+                    </p>
+                  ) : null}
                   <p className="type-hint muted">
                     {isDroites
                       ? 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
-                      : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Le corrigé montre les tracés.'}
+                      : isTransform
+                        ? 'Même grille que « Lire les droites » / « Construire » (pas de petit quadrillage dans une unité). Types 1 et 2 : figure fermée déjà tracée ; types 3 et 4 : un seul point placé, les autres à placer puis symétrie.'
+                        : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Le corrigé montre les tracés.'}
                   </p>
                 </div>
               ) : null}
@@ -3385,7 +3447,9 @@ function GeneratorPage() {
                         interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                         onCycleOralAnswerMode={cycleOralAnswerMode}
                         coordEdit={
-                          (isFormes && activeBlock.coordLibre) || (isCadrans && activeBlock.coordLibre)
+                          (isFormes && activeBlock.coordLibre) ||
+                          (isCadrans && activeBlock.coordLibre) ||
+                          (isTransformCentrale && activeBlock.coordLibre)
                             ? {
                                 selectedKind: selectedCoordShape,
                                 placingOrigin: isComposer && coordTool === 'origin',

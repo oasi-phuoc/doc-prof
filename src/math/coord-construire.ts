@@ -553,7 +553,8 @@ export function generateConstruire(
     cellMm: grid.cellMm,
     unitSquares: grid.unitSquares,
     step: 1,
-    fineGrid: true,
+    // Même grille que « Lire les droites » : pas de petit quadrillage dans une unité.
+    fineGrid: false,
     marks: draft.marks,
     paths: draft.paths,
   }

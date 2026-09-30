@@ -27,6 +27,8 @@ import { generatePerimetreCompose } from './perimetre-compose'
 import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
+import { generateTransformations, isTransformationExercise } from './coord-transformations'
+import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { tryGenerateConversion } from './conversions'
@@ -1066,52 +1068,6 @@ function generateOne(
         answer: `(${x} ; ${y})`,
       }
     }
-    case 'transformations-axiale': {
-      const x = int(rng, 1, 4)
-      const y = int(rng, 1, 4)
-      return {
-        layout: 'coord',
-        prompt: 'Image de A par la symétrie d’axe des ordonnées.',
-        point: { x, y, label: 'A' },
-        pointImage: { x: -x, y, label: "A'" },
-        answer: `(${-x} ; ${y})`,
-      }
-    }
-    case 'transformations-centrale': {
-      const x = int(rng, 1, 4)
-      const y = int(rng, 1, 4)
-      return {
-        layout: 'coord',
-        prompt: 'Image de A par la symétrie de centre O(0 ; 0).',
-        point: { x, y, label: 'A' },
-        pointImage: { x: -x, y: -y, label: "A'" },
-        answer: `(${-x} ; ${-y})`,
-      }
-    }
-    case 'transformations-translation': {
-      const x = int(rng, 1, 3)
-      const y = int(rng, 1, 3)
-      const vx = int(rng, 1, 2)
-      const vy = int(rng, -2, 2)
-      return {
-        layout: 'coord',
-        prompt: `Image de A par la translation de vecteur (${vx} ; ${vy}).`,
-        point: { x, y, label: 'A' },
-        pointImage: { x: x + vx, y: y + vy, label: "A'" },
-        answer: `(${x + vx} ; ${y + vy})`,
-      }
-    }
-    case 'transformations-rotation': {
-      const x = int(rng, 1, 3)
-      const y = int(rng, 1, 3)
-      return {
-        layout: 'coord',
-        prompt: 'Image de A par la rotation de 90° (sens direct) autour de O.',
-        point: { x, y, label: 'A' },
-        pointImage: { x: -y, y: x, label: "A'" },
-        answer: `(${-y} ; ${x})`,
-      }
-    }
     default:
       return { layout: 'inline', prompt: 'Calculez 1 + 1 =', answer: '2' }
   }
@@ -1140,6 +1096,29 @@ function buildSingleBlock(
   if (config.exerciseType === 'reperage-construire') {
     const construire = generateConstruire(config, rng)
     return { title: fallbackTitle, instruction: construire.instruction, items: construire.items }
+  }
+  if (isTransformationExercise(config.exerciseType)) {
+    const tr = generateTransformations(config, rng)
+    return { title: fallbackTitle, instruction: tr.instruction, items: tr.items }
+  }
+  if (config.exerciseType === 'glossaire-algebre-mots' || config.exerciseType === 'glossaire-geometrie-mots') {
+    const bank = config.exerciseType === 'glossaire-algebre-mots' ? ALGEBRA_GLOSSARY : GEOMETRY_GLOSSARY
+    const count = Math.max(1, Math.min(config.count || 8, bank.length))
+    const picked = shuffle(rng, [...bank]).slice(0, count)
+    return {
+      title: fallbackTitle,
+      instruction: type?.instruction ?? 'Lisez chaque mot, sa définition et le schéma.',
+      items: picked.map((entry) => ({
+        layout: 'glossary' as const,
+        prompt: entry.term,
+        glossary: {
+          term: entry.term,
+          definition: entry.definition,
+          figure: entry.figure,
+        },
+        answer: entry.definition,
+      })),
+    }
   }
   const reperage = tryGenerateReperage(config, rng)
   if (reperage) {

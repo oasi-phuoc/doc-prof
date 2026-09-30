@@ -6,6 +6,8 @@ import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
 import { FractionView, renderMathText } from './math/FractionView'
 import { GattegnoChart } from './math/GattegnoChart'
 import { GeometryFigure } from './math/GeometryFigure'
+import { GlossaryFigure } from './math/GlossaryFigure'
+import type { GlossaryFigureId } from '@/math/glossary-banks'
 import { CardGrid } from '@/jeux/CardGrid'
 import type { GameBoard } from '@/jeux/types'
 import { CalligraphyView } from './math/CalligraphyView'
@@ -1244,7 +1246,9 @@ function CoordBlock({
       ? {
           ...scene,
           marks: scene.marks.filter((mark) => mark.reveal !== 'answer'),
-          paths: [],
+          // Seulement les traits explicitement « always » (figures de transformations).
+          // Les tracés de « Construire » restent au corrigé.
+          paths: (scene.paths ?? []).filter((path) => path.reveal === 'always'),
           lines: [],
         }
       : (isPlace || hasLines) && !show
@@ -1521,6 +1525,7 @@ export function ItemView({
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match' ||
     item.layout === 'theory' ||
+    item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
     item.layout === 'calligraphy'
   return (
@@ -1564,6 +1569,17 @@ export function ItemView({
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
         {item.layout === 'theory' && <TheoryBlockView item={item} />}
+        {item.layout === 'glossary' && item.glossary ? (
+          <div className="glossary-card">
+            <div className="glossary-figure-wrap">
+              <GlossaryFigure id={item.glossary.figure as GlossaryFigureId} />
+            </div>
+            <div className="glossary-text">
+              <p className="glossary-term">{item.glossary.term}</p>
+              <p className="glossary-definition">{item.glossary.definition}</p>
+            </div>
+          </div>
+        ) : null}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}

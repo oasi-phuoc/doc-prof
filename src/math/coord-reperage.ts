@@ -64,7 +64,8 @@ export function isReperagePage(typeId: string): boolean {
     isReperageFormes(typeId) ||
     isReperageCadrans(typeId) ||
     isReperageDroites(typeId) ||
-    isReperageConstruire(typeId)
+    isReperageConstruire(typeId) ||
+    typeId.startsWith('transformations-')
   )
 }
 

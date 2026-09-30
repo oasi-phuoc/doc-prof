@@ -68,6 +68,7 @@ export type Layout =
   | 'vocab-match'
   | 'vocab-write'
   | 'theory'
+  | 'glossary'
   | 'card-grid'
   | 'calligraphy'
 
@@ -166,6 +167,10 @@ export type CoordPath = {
   c?: number
   points?: Array<{ x: number; y: number }>
   stroke?: 'solid' | 'dashed'
+  /** Couleur du trait (lisible aussi via style de trait). */
+  color?: CoordLineColor
+  /** `answer` : visible seulement au corrigé. */
+  reveal?: 'always' | 'answer'
 }
 
 export type CoordLine = {
@@ -290,6 +295,12 @@ export type MathItem = {
     headers?: string[]
     rows?: string[][]
     examples?: Array<{ correct: string; wrong?: string }>
+  }
+  /** Entrée de glossaire maths (mot + définition + schéma). */
+  glossary?: {
+    term: string
+    definition: string
+    figure: string
   }
   /** Mode de réponse orale : QCM texte, trait libre, ou QCM images. */
   answerMode?: 'qcm' | 'text' | 'images'

@@ -506,6 +506,7 @@ function AxesScene({
           if (!clip) return null
           const a = to(clip.x1, clip.y1)
           const b = to(clip.x2, clip.y2)
+          const colorClass = path.color ? ` line-${path.color}` : ''
           return (
             <line
               key={path.id}
@@ -513,7 +514,7 @@ function AxesScene({
               y1={a.cy}
               x2={b.cx}
               y2={b.cy}
-              className={`coord-path${path.stroke === 'dashed' ? ' is-dashed' : ''}`}
+              className={`coord-path${colorClass}${path.stroke === 'dashed' ? ' is-dashed' : ''}`}
             />
           )
         }
@@ -526,11 +527,12 @@ function AxesScene({
           })
           .join(' ')
         const closed = path.kind === 'polygon' ? `${d} Z` : d
+        const colorClass = path.color ? ` line-${path.color}` : ''
         return (
           <path
             key={path.id}
             d={closed}
-            className={`coord-path${path.kind === 'polygon' ? ' is-poly' : ''}${
+            className={`coord-path${colorClass}${path.kind === 'polygon' ? ' is-poly' : ''}${
               path.stroke === 'dashed' ? ' is-dashed' : ''
             }`}
           />
