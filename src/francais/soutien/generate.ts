@@ -7,6 +7,7 @@ import { soutienBankByTopic, type SoutienVowelBank } from './banks'
 import { soutienAudioFor } from './audio'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
+import { buildWordSearch, wordSearchHitCells } from './word-search'
 
 /** Mots Voc (libellés) — distracteurs / pool images partagé avec le vocabulaire. */
 const VOCAB_LABELS: readonly string[] = (() => {
@@ -507,6 +508,28 @@ function genKind(
             })),
             answer: listenWords.map((w, i) => `${i + 1} → ${w}`).join(' · '),
             themeGraphemes: [...bank.graphemes],
+          },
+        ],
+      }
+    }
+    case 'mots-meles': {
+      /** Liste 12 mots + grille 15×15 (H/V). */
+      const puzzle = buildWordSearch(rng, bank.wordSearchWords, 15, 12)
+      const hits = [...wordSearchHitCells(puzzle.placements)]
+      return {
+        instruction: 'Entourez les mots dans la grille.',
+        preferredColumns: 1,
+        items: [
+          {
+            layout: 'word-search',
+            prompt: 'Entourez les mots dans la grille.',
+            wordSearch: {
+              size: puzzle.size,
+              grid: puzzle.grid,
+              words: puzzle.words,
+              hitCells: hits,
+            },
+            answer: puzzle.words.join(' · '),
           },
         ],
       }

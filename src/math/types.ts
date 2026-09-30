@@ -78,6 +78,7 @@ export type Layout =
   | 'count-sound'
   | 'read-phrases'
   | 'audio-match'
+  | 'word-search'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -438,6 +439,14 @@ export type MathItem = {
     /** Mot affiché sur la même ligne (mélangé). */
     showWord: string
   }>
+  /** Soutien FR type 16 : mots mêlés. */
+  wordSearch?: {
+    size: number
+    grid: string[][]
+    words: string[]
+    /** Cellules du corrigé : « r,c ». */
+    hitCells?: string[]
+  }
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string

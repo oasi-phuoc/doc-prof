@@ -161,6 +161,59 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function WordSearchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const puzzle = item.wordSearch
+  if (!puzzle) return null
+  const show = mode === 'answers'
+  const hits = new Set(puzzle.hitCells ?? [])
+  const words = puzzle.words
+  const cols = 4
+  const wordRows: string[][] = []
+  for (let i = 0; i < words.length; i += cols) {
+    wordRows.push(words.slice(i, i + cols))
+  }
+  return (
+    <div className="word-search-block" aria-label="Mots mêlés">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="word-search-list">
+        <tbody>
+          {wordRows.map((row, ri) => (
+            <tr key={`wsl-${ri}`}>
+              {Array.from({ length: cols }, (_, ci) => {
+                const w = row[ci]
+                return (
+                  <td key={`wsl-${ri}-${ci}`} className="word-search-list-cell">
+                    {w ? <span className="word-search-list-word">{w}</span> : null}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <table className="word-search-grid" aria-label="Grille">
+        <tbody>
+          {puzzle.grid.map((line, r) => (
+            <tr key={`wsg-${r}`}>
+              {line.map((letter, c) => {
+                const hit = show && hits.has(`${r},${c}`)
+                return (
+                  <td
+                    key={`wsg-${r}-${c}`}
+                    className={`word-search-cell${hit ? ' is-hit' : ''}`}
+                  >
+                    {letter}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function AudioMatchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.audioMatchRows ?? []
   const graphemes = item.themeGraphemes ?? []
@@ -2215,6 +2268,7 @@ export function ItemView({
     item.layout === 'count-sound' ||
     item.layout === 'read-phrases' ||
     item.layout === 'audio-match' ||
+    item.layout === 'word-search' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -2310,6 +2364,9 @@ export function ItemView({
         {item.layout === 'read-phrases' && <ReadPhrasesBlock item={item} />}
         {item.layout === 'audio-match' && (
           <AudioMatchBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'word-search' && (
+          <WordSearchBlock item={item} mode={mode} />
         )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />

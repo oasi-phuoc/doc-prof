@@ -1,4 +1,4 @@
-/** 15 types d’exercice Soutien FR — identiques pour chaque document (voyelle). */
+/** 16 types d’exercice Soutien FR — identiques pour chaque document (voyelle). */
 export const SOUTIEN_KINDS = [
   {
     id: 'mots',
@@ -105,6 +105,13 @@ export const SOUTIEN_KINDS = [
     instruction: 'Écoutez (QR) et reliez au bon mot.',
     preferredColumns: 1 as const,
   },
+  {
+    id: 'mots-meles',
+    label: '16 · Mots mêlés',
+    description: 'Liste de 12 mots + grille 15×15 à entourer.',
+    instruction: 'Entourez les mots dans la grille.',
+    preferredColumns: 1 as const,
+  },
 ] as const
 
 export type SoutienKindId = (typeof SOUTIEN_KINDS)[number]['id']
@@ -113,7 +120,7 @@ export function parseSoutienType(
   typeId: string,
 ): { vowel: string; kind: SoutienKindId } | null {
   const m =
-    /^soutien-([aeiouy])-(mots|lettres|syllabes|relier|completer|ecouter-image|ecouter|syllabe-son|lettres-phrase|determinants|dictee|compter|ordre|lire|associer-audio)$/.exec(
+    /^soutien-([aeiouy])-(mots|lettres|syllabes|relier|completer|ecouter-image|ecouter|syllabe-son|lettres-phrase|determinants|dictee|compter|ordre|lire|associer-audio|mots-meles)$/.exec(
       typeId,
     )
   if (!m) return null
