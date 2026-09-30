@@ -1138,6 +1138,9 @@ html,body,#root{
   .digit-cell.carry{border-color:#ddd9e3!important}
   .column-rule{border-bottom-color:var(--purple)!important}
   .sequence-term,.compare-circle,.select-pill,.digit-cell,.letter-cell{border-color:#000!important}
+  .letter-table,.letter-table td{border:none!important}
+  .letter-table-cell.selected{border-color:#000!important}
+  .letter-table-cell--lower{text-decoration-color:#000!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
