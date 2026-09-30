@@ -72,6 +72,7 @@ export type Layout =
   | 'syllable-complete'
   | 'listen-check'
   | 'syllable-sound'
+  | 'phrase-scramble'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -400,6 +401,14 @@ export type MathItem = {
     parts: string[]
     /** Index de la syllabe qui porte le son (−1 si aucune). */
     hitIndex: number
+    imageSrc?: string
+  }>
+  /** Soutien FR type 9 : phrase + image + trait + lettres mélangées. */
+  phraseScrambles?: Array<{
+    before: string
+    after: string
+    word: string
+    letters: string
     imageSrc?: string
   }>
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */

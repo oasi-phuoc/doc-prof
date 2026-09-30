@@ -1198,6 +1198,9 @@ html,body,#root{
   .syllable-sound-grid,.syllable-sound-card,.syllable-sound-image{border-color:#999!important}
   .syllable-sound-num{color:var(--purple)!important;border-color:var(--purple)!important}
   .syllable-mini-table td{border-color:#000!important}
+  .phrase-scramble-table,.phrase-scramble-table td{border-color:#999!important}
+  .phrase-scramble-num{color:var(--purple)!important}
+  .phrase-scramble-blank{border-bottom-color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1810,6 +1813,49 @@ html,body,#root{
   grid-column:1 / -1;
   font-size:10px;font-weight:600;color:var(--muted);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Soutien FR type 9 — n° + image + phrase (trait + lettres mélangées) */
+.phrase-scramble-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.phrase-scramble-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.phrase-scramble-table td{
+  border:1px dashed #c5c9d0;padding:6px 8px;vertical-align:middle
+}
+.phrase-scramble-num{
+  width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
+  text-align:left;white-space:nowrap;border-right:1px dashed #c5c9d0
+}
+.phrase-scramble-image{
+  width:22mm;text-align:center;border-right:1px dashed #c5c9d0
+}
+.phrase-scramble-image img{
+  max-width:20mm;max-height:16mm;object-fit:contain;display:inline-block
+}
+.phrase-scramble-text{
+  font-size:13px;font-weight:600;line-height:1.45;color:var(--ink)
+}
+.phrase-scramble-sentence{
+  display:inline;hyphens:auto
+}
+.phrase-scramble-blank{
+  display:inline-block;
+  min-width:5ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 3px;
+  padding:0 2px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+  vertical-align:baseline;
+}
+.phrase-scramble-blank.filled{border-bottom-style:solid}
+.phrase-scramble-letters{
+  font-weight:700;letter-spacing:.04em;white-space:nowrap;color:var(--ink)
 }
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */

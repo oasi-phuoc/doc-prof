@@ -159,6 +159,49 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.phraseScrambles ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="phrase-scramble-block" aria-label="Mot dans la phrase">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="phrase-scramble-table">
+        <tbody>
+          {rows.map((row, index) => {
+            const blankCh = Math.max(6, Math.min(14, row.word.length + 2))
+            return (
+              <tr key={`ps-${index}-${row.word}`}>
+                <td className="phrase-scramble-num">{index + 1}.</td>
+                <td className="phrase-scramble-image">
+                  {row.imageSrc ? (
+                    <img src={row.imageSrc} alt="" />
+                  ) : (
+                    <span className="vocab-card-empty" aria-hidden />
+                  )}
+                </td>
+                <td className="phrase-scramble-text">
+                  <span className="phrase-scramble-sentence">
+                    {highlightThemeLetters(row.before, graphemes)}
+                    <span
+                      className={`phrase-scramble-blank${show ? ' filled' : ''}`}
+                      style={{ width: `${blankCh}ch` }}
+                    >
+                      {show ? row.word : '\u00a0'}
+                    </span>
+                    {highlightThemeLetters(row.after, graphemes)}{' '}
+                    <span className="phrase-scramble-letters">({row.letters})</span>
+                  </span>
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.syllableSoundItems ?? []
   const cols = Math.max(1, item.letterGridCols ?? 3)
@@ -1918,6 +1961,7 @@ export function ItemView({
     item.layout === 'syllable-table' ||
     item.layout === 'listen-check' ||
     item.layout === 'syllable-sound' ||
+    item.layout === 'phrase-scramble' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -1997,6 +2041,9 @@ export function ItemView({
         {item.layout === 'listen-check' && <ListenCheckBlock item={item} mode={mode} />}
         {item.layout === 'syllable-sound' && (
           <SyllableSoundBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'phrase-scramble' && (
+          <PhraseScrambleBlock item={item} mode={mode} />
         )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />

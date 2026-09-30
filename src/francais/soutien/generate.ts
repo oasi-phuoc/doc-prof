@@ -330,15 +330,36 @@ function genKind(
       }
     }
     case 'lettres-phrase': {
-      const rows = shuffle(rng, [...bank.scrambles]).slice(0, Math.min(n, bank.scrambles.length))
+      /** Phrase + image + trait couleur thème + lettres mélangées. */
+      const rows = shuffle(rng, [...bank.scrambles]).slice(
+        0,
+        Math.min(7, bank.scrambles.length),
+      )
       return {
         instruction: 'Écrivez le mot correct à l’aide des lettres.',
         preferredColumns: 1,
-        items: rows.map((row) => ({
-          layout: 'text' as const,
-          prompt: `${row.sentence} (${row.letters.split('').join(' ')})`,
-          answer: row.word,
-        })),
+        items: [
+          {
+            layout: 'phrase-scramble',
+            prompt: 'Écrivez le mot correct à l’aide des lettres.',
+            phraseScrambles: rows.map((row) => {
+              const lower = row.sentence.toLowerCase()
+              const w = row.word.toLowerCase()
+              const idx = lower.indexOf(w)
+              const before = idx >= 0 ? row.sentence.slice(0, idx) : `${row.sentence} `
+              const after = idx >= 0 ? row.sentence.slice(idx + row.word.length) : ''
+              return {
+                before,
+                after,
+                word: row.word,
+                letters: row.letters.split('').join(' '),
+                imageSrc: soutienImageFor(row.word),
+              }
+            }),
+            answer: rows.map((row) => row.word).join(' · '),
+            themeGraphemes: [...bank.graphemes],
+          },
+        ],
       }
     }
     case 'determinants': {

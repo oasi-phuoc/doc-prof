@@ -59,7 +59,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'lettres-phrase',
     label: '9 · Mot dans la phrase',
-    description: 'Écrire le mot correct avec des lettres mélangées.',
+    description: 'Image + phrase : trait (couleur thème) + lettres mélangées à remettre en ordre.',
     instruction: 'Écrivez le mot correct à l’aide des lettres.',
     preferredColumns: 1 as const,
   },
