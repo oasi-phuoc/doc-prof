@@ -66,7 +66,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'determinants',
     label: '10 · Déterminants',
-    description: 'Compléter les phrases avec le / la / l’ / les (mots liés au type 5).',
+    description: 'Tableau : phrases à compléter avec l’ / le / la / les (traits couleur thème).',
     instruction: 'Complétez avec les déterminants l’, le, la ou les.',
     preferredColumns: 1 as const,
   },

@@ -73,6 +73,7 @@ export type Layout =
   | 'listen-check'
   | 'syllable-sound'
   | 'phrase-scramble'
+  | 'determinant-fill'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -410,6 +411,11 @@ export type MathItem = {
     word: string
     letters: string
     imageSrc?: string
+  }>
+  /** Soutien FR type 10 : phrases à compléter (le / la / l’ / les). */
+  determinantFills?: Array<{
+    parts: Array<{ t: string; u?: boolean } | { blank: string }>
+    sentence: string
   }>
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {

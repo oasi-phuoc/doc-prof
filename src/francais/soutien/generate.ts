@@ -363,16 +363,26 @@ function genKind(
       }
     }
     case 'determinants': {
-      const rows = shuffle(rng, [...bank.determinants]).slice(0, Math.min(n, bank.determinants.length))
+      /** Tableau : n° + phrase avec traits couleur thème (le / la / l’ / les). */
+      const rows = shuffle(rng, [...bank.determinants]).slice(
+        0,
+        Math.min(8, bank.determinants.length),
+      )
       return {
         instruction: 'Complétez avec les déterminants l’, le, la ou les.',
         preferredColumns: 1,
-        items: rows.map((row) => ({
-          layout: 'text' as const,
-          prompt: `___ ${row.rest}`,
-          answer: row.blank,
-          responseAnswer: row.sentence,
-        })),
+        items: [
+          {
+            layout: 'determinant-fill',
+            prompt: 'Complétez avec les déterminants l’, le, la ou les.',
+            determinantFills: rows.map((row) => ({
+              parts: row.parts.map((p) => ('blank' in p ? { blank: p.blank } : { t: p.t, u: p.u })),
+              sentence: row.sentence,
+            })),
+            answer: rows.map((row) => row.sentence).join(' · '),
+            themeGraphemes: [...bank.graphemes],
+          },
+        ],
       }
     }
     case 'dictee': {

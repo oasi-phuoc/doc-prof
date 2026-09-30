@@ -159,6 +159,52 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function DeterminantFillBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.determinantFills ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="determinant-fill-block" aria-label="Déterminants">
+      <p className="column-prompt determinant-fill-prompt">
+        Complétez avec les déterminants{' '}
+        <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
+        <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
+      </p>
+      <table className="determinant-fill-table">
+        <tbody>
+          {rows.map((row, index) => (
+            <tr key={`det-${index}`}>
+              <td className="determinant-fill-num">{index + 1}.</td>
+              <td className="determinant-fill-text">
+                {row.parts.map((part, pi) => {
+                  if ('blank' in part) {
+                    return (
+                      <span
+                        key={`b-${pi}`}
+                        className={`determinant-blank${show ? ' filled' : ''}`}
+                      >
+                        {show ? part.blank : '\u00a0'}
+                      </span>
+                    )
+                  }
+                  const content = highlightThemeLetters(part.t, graphemes)
+                  return part.u ? (
+                    <span key={`t-${pi}`} className="determinant-underline">
+                      {content}
+                    </span>
+                  ) : (
+                    <span key={`t-${pi}`}>{content}</span>
+                  )
+                })}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.phraseScrambles ?? []
   const graphemes = item.themeGraphemes ?? []
@@ -1962,6 +2008,7 @@ export function ItemView({
     item.layout === 'listen-check' ||
     item.layout === 'syllable-sound' ||
     item.layout === 'phrase-scramble' ||
+    item.layout === 'determinant-fill' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -2044,6 +2091,9 @@ export function ItemView({
         )}
         {item.layout === 'phrase-scramble' && (
           <PhraseScrambleBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'determinant-fill' && (
+          <DeterminantFillBlock item={item} mode={mode} />
         )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />

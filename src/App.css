@@ -1201,6 +1201,10 @@ html,body,#root{
   .phrase-scramble-table,.phrase-scramble-table td{border-color:#999!important}
   .phrase-scramble-num{color:var(--purple)!important}
   .phrase-scramble-blank{border-bottom-color:var(--purple)!important}
+  .determinant-fill-table,.determinant-fill-table td{border-color:#999!important}
+  .determinant-fill-num,.det-choice{color:var(--purple)!important}
+  .determinant-blank{border-bottom-color:var(--purple)!important}
+  .determinant-underline{border-bottom-color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1856,6 +1860,44 @@ html,body,#root{
 .phrase-scramble-blank.filled{border-bottom-style:solid}
 .phrase-scramble-letters{
   font-weight:700;letter-spacing:.04em;white-space:nowrap;color:var(--ink)
+}
+
+/* Soutien FR type 10 — déterminants l’ / le / la / les */
+.determinant-fill-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.determinant-fill-prompt .det-choice{
+  color:var(--purple);font-weight:700
+}
+.determinant-fill-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.determinant-fill-table td{
+  border:1px dashed #c5c9d0;padding:7px 8px;vertical-align:middle
+}
+.determinant-fill-num{
+  width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
+  text-align:left;white-space:nowrap
+}
+.determinant-fill-text{
+  font-size:13px;font-weight:600;line-height:1.5;color:var(--ink)
+}
+.determinant-blank{
+  display:inline-block;
+  min-width:5.5ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 2px;
+  padding:0 2px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+  vertical-align:baseline;
+}
+.determinant-blank.filled{border-bottom-style:solid}
+.determinant-underline{
+  border-bottom:2px solid var(--purple);
+  padding-bottom:0;
 }
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
