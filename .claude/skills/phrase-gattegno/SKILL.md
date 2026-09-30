@@ -50,7 +50,9 @@ Dans colorier et remettre en ordre, seule la première lettre de la phrase est u
 
 ## Noms propres
 
-Les prénoms (`PROPER` / `PROPER_NAMES`) gardent leur majuscule partout, y compris dans les pastilles « remettre en ordre » (on ne les force pas en minuscules).
+Les prénoms (`PROPER` / `PROPER_NAMES` dans `phrase-proper-names.ts`) gardent leur majuscule partout, y compris dans les pastilles « remettre en ordre » (on ne les force pas en minuscules).
+
+Banque : **~15 prénoms par nationalité** (alignée sur le vocabulaire Présenter + japonais), mixte m/f pour l’accord.
 
 ## Sens réel
 

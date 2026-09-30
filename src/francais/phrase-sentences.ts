@@ -2,6 +2,7 @@ import type { PhraseThemeId } from './phrase-banks'
 import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
 import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER } from './phrase-simple-frames'
 import { themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
+import { FEMALE_PROPER_NAMES, PROPER_NAMES, PROPER_TAGGED } from './phrase-proper-names'
 
 /** Découpe « mot/catégorie » — l’espace après une apostrophe est omise à l’affichage. */
 export function tagged(source: string): PhraseToken[] {
@@ -103,55 +104,8 @@ function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): Phr
   return list
 }
 
-/** Noms propres — toujours singulier. */
-const PROPER = [
-  'Léa/nom',
-  'Noah/nom',
-  'Inès/nom',
-  'Karim/nom',
-  'Emma/nom',
-  'Théo/nom',
-  'Sara/nom',
-  'Yanis/nom',
-  'Chloé/nom',
-  'Hugo/nom',
-  'Amina/nom',
-  'Lucas/nom',
-  'Nora/nom',
-  'Mehdi/nom',
-  'Jade/nom',
-  'Enzo/nom',
-  'Yara/nom',
-  'Omar/nom',
-  'Lina/nom',
-  'Pablo/nom',
-  'Sofia/nom',
-  'Malik/nom',
-  'Nina/nom',
-  'Idris/nom',
-  'Camille/nom',
-  'Sami/nom',
-  'Lila/nom',
-  'Kenji/nom',
-  'Maya/nom',
-  'Diego/nom',
-  'Fatou/nom',
-  'Elias/nom',
-  'Zoé/nom',
-  'Amir/nom',
-  'Inaya/nom',
-  'Jules/nom',
-  'Rania/nom',
-  'Loïc/nom',
-  'Hana/nom',
-  'Victor/nom',
-  'Nour/nom',
-  'Adam/nom',
-  'Léna/nom',
-  'Ilias/nom',
-  'Mila/nom',
-  'Rayan/nom',
-] as const
+/** Noms propres — toujours singulier (banque par nationalité). */
+const PROPER = PROPER_TAGGED
 
 /** Noms communs singuliers, articles définis / indéfinis de base. */
 export const COMMON = [
@@ -197,7 +151,7 @@ export const COMMON = [
 export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, 'Il/pronom', 'Elle/pronom'] as const
 
 /** Prénoms / noms propres (majuscule conservée, y compris en « remettre en ordre »). */
-export const PROPER_NAMES = new Set(PROPER.map((entry) => entry.replace(/\/nom$/, '')))
+export { PROPER_NAMES }
 
 export function isProperNameToken(token: PhraseToken): boolean {
   if (token.category !== 'nom') return false
@@ -258,19 +212,13 @@ export function instantiateTagged(subject: string, pred: string): PhraseToken[] 
   return parse(`${subject} ${pred}`)
 }
 
-const FEMALE_PROPER = new Set([
-  'Léa', 'Inès', 'Emma', 'Sara', 'Chloé', 'Amina', 'Nora', 'Jade', 'Yara', 'Lina',
-  'Sofia', 'Nina', 'Camille', 'Lila', 'Maya', 'Fatou', 'Zoé', 'Inaya', 'Rania',
-  'Hana', 'Nour', 'Léna', 'Mila',
-])
-
 const INANIMATE_SUBJECT =
   /^(maison|voiture|livre|cahier|table|porte|fenêtre|arbre|école|jardin|rue|pont|mer|train|bus)$/i
 
 export function subjectGender(tagged: string): 'm' | 'f' {
   if (tagged === 'Elle/pronom' || /^(La|Une|Ma|Ta|Sa|Cette)\//.test(tagged)) return 'f'
   const proper = tagged.replace(/\/nom$/, '')
-  if (FEMALE_PROPER.has(proper)) return 'f'
+  if (FEMALE_PROPER_NAMES.has(proper)) return 'f'
   if (/(ière|euse|esse|ine|sœur|fille|maman|tante|copine|amie|voisine|maîtresse|boulangère|factrice|cuisinière|jardinière|musicienne|infirmière)\/nom/.test(tagged)) {
     return 'f'
   }
