@@ -557,6 +557,50 @@ html,body,#root{
   padding:1px 4px;
 }
 
+/* Soutien FR type 3 — deux tableaux 4×5 sans bordure (script + Playwrite) */
+.syllable-table-block{
+  display:flex;flex-direction:column;gap:10px;width:100%;min-width:0
+}
+.syllable-table{
+  width:100%;
+  border-collapse:collapse;
+  border:none;
+  table-layout:fixed;
+  margin:0;
+}
+.syllable-table td{
+  border:none;
+  padding:6px 4px;
+  text-align:center;
+  vertical-align:middle;
+}
+.syllable-table-cell{
+  display:inline-block;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.25;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.syllable-table--script .syllable-table-cell{
+  font-family:'DM Sans',sans-serif;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.syllable-table--playwrite .syllable-table-cell{
+  font-family:'Calli Playwrite',cursive;
+  font-weight:400;
+  font-size:20px;
+  line-height:1.35;
+}
+.syllable-vowel{
+  color:var(--purple);
+  font-weight:inherit;
+}
+.syllable-cons{
+  color:var(--ink);
+}
+
 .order-block{display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0}
 .order-given{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;
@@ -1141,6 +1185,9 @@ html,body,#root{
   .letter-table,.letter-table td{border:none!important}
   .letter-table-cell.selected{border-color:#000!important}
   .letter-table-cell--lower{text-decoration-color:#000!important}
+  .syllable-table,.syllable-table td{border:none!important}
+  .syllable-vowel{color:var(--purple)!important}
+  .syllable-cons{color:#000!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}

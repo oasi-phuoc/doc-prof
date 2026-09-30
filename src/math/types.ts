@@ -60,6 +60,7 @@ export type Layout =
   | 'encadrement'
   | 'order'
   | 'letter-grid'
+  | 'syllable-table'
   | 'phrase-color'
   | 'phrase-order'
   | 'phrase-build'

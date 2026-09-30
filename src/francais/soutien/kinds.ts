@@ -17,7 +17,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'syllabes',
     label: '3 · Lecture de syllabes',
-    description: 'Lire les syllabes proposées.',
+    description: 'Deux tableaux 4×5 sans bordure : script puis Playwrite, voyelle en couleur.',
     instruction: 'Lisez les syllabes ci-dessous.',
     preferredColumns: 1 as const,
   },

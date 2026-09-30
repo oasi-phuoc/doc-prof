@@ -1,4 +1,4 @@
-import { Fragment, type CSSProperties } from 'react'
+import { Fragment, type CSSProperties, type ReactNode } from 'react'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
 import { CompositeFigure } from './math/CompositeFigure'
@@ -562,6 +562,86 @@ function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           )
         })}
       </div>
+    </div>
+  )
+}
+
+/** Met en évidence les graphèmes cibles (voyelle du thème) dans une syllabe. */
+function highlightThemeLetters(text: string, graphemes: readonly string[]): ReactNode[] {
+  const needles = [...graphemes]
+    .filter(Boolean)
+    .sort((a, b) => b.length - a.length)
+  if (needles.length === 0) return [text]
+
+  const lowerNeedles = needles.map((g) => g.toLowerCase())
+  const out: ReactNode[] = []
+  let i = 0
+  let key = 0
+  while (i < text.length) {
+    const rest = text.slice(i)
+    const restLower = rest.toLowerCase()
+    let matched: string | null = null
+    for (let n = 0; n < lowerNeedles.length; n++) {
+      const needle = lowerNeedles[n]!
+      if (restLower.startsWith(needle)) {
+        matched = rest.slice(0, needle.length)
+        break
+      }
+    }
+    if (matched) {
+      out.push(
+        <span key={`v-${key++}`} className="syllable-vowel">
+          {matched}
+        </span>,
+      )
+      i += matched.length
+    } else {
+      out.push(
+        <span key={`c-${key++}`} className="syllable-cons">
+          {text[i]}
+        </span>,
+      )
+      i += 1
+    }
+  }
+  return out
+}
+
+function SyllableTableBlock({ item }: { item: MathItem }) {
+  const options = item.options ?? []
+  const graphemes = item.labels ?? []
+  const cols = Math.max(1, item.letterGridCols ?? 5)
+  const rows: string[][] = []
+  for (let i = 0; i < options.length; i += cols) {
+    rows.push(options.slice(i, i + cols))
+  }
+
+  const renderTable = (variant: 'script' | 'playwrite') => (
+    <table
+      className={`syllable-table syllable-table--${variant}`}
+      aria-label={variant === 'script' ? 'Syllabes en script' : 'Syllabes en écriture Playwrite'}
+    >
+      <tbody>
+        {rows.map((row, rIdx) => (
+          <tr key={`${variant}-r-${rIdx}`}>
+            {row.map((syllable, cIdx) => (
+              <td key={`${variant}-${rIdx}-${cIdx}-${syllable}`}>
+                <span className="syllable-table-cell">
+                  {highlightThemeLetters(syllable, graphemes)}
+                </span>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+
+  return (
+    <div className="syllable-table-block" aria-label="Lecture de syllabes">
+      {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+      {renderTable('script')}
+      {renderTable('playwrite')}
     </div>
   )
 }
@@ -1679,6 +1759,7 @@ export function ItemView({
           </div>
         ) : null}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
+        {item.layout === 'syllable-table' && <SyllableTableBlock item={item} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}

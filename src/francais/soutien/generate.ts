@@ -152,17 +152,26 @@ function genKind(
         items: [letterGrid(rng, bank, difficulty)],
       }
     case 'syllabes': {
-      const list = shuffle(rng, [...bank.syllables]).slice(0, Math.min(24, bank.syllables.length))
+      /** Deux tableaux 4 × 5 (script + Playwrite), voyelle en couleur du thème. */
+      const cols = 5
+      const rows = 4
+      const need = cols * rows
+      const pool = shuffle(rng, [...bank.syllables])
+      const list =
+        pool.length >= need
+          ? pool.slice(0, need)
+          : [...pool, ...Array.from({ length: need - pool.length }, (_, i) => pool[i % pool.length]!)]
       return {
-        instruction: 'Lisez les syllabes proposées ci-dessous.',
+        instruction: 'Lisez les syllabes ci-dessous.',
         preferredColumns: 1,
         items: [
           {
-            layout: 'text',
+            layout: 'syllable-table',
             prompt: 'Lisez les syllabes :',
-            answer: list.join(' · '),
             options: list,
-            labels: list,
+            labels: [...bank.graphemes],
+            answer: list.join(' · '),
+            letterGridCols: cols,
           },
         ],
       }
