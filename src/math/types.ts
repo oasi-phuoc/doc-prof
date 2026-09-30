@@ -499,6 +499,11 @@ export type ExerciseBlock = {
   continueOnNextPage?: boolean
   /** Mode libre : l’enseignant·e compose le tableau de repérage. */
   coordLibre?: boolean
+  /**
+   * Mode libre (Lire les droites / Construire) : questions rédigées ou modifiées
+   * par l’enseignant·e. Remplacent le tirage automatique des énoncés.
+   */
+  coordQuestionsLibre?: CoordQuestion[]
   coordCols?: number
   coordRows?: number
   coordAxis?: CoordAxis

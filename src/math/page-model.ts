@@ -16,6 +16,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     oralAnswerModes: page.oralAnswerModes,
     continueOnNextPage: page.continueOnNextPage,
     coordLibre: page.coordLibre,
+    coordQuestionsLibre: page.coordQuestionsLibre,
     coordCols: page.coordCols,
     coordRows: page.coordRows,
     coordAxis: page.coordAxis,

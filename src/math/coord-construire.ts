@@ -541,7 +541,15 @@ export function generateConstruire(
     }
   }
 
-  const questions = draft.questions.slice(0, questionCount)
+  const autoQuestions = draft.questions.slice(0, questionCount)
+  const questions =
+    config.coordLibre && config.coordQuestionsLibre?.length
+      ? config.coordQuestionsLibre.slice(0, questionCount).map((q) => ({
+          prompt: q.prompt,
+          answer: q.answer,
+          reply: q.reply ?? 'text',
+        }))
+      : autoQuestions
   const scene: CoordScene = {
     variant: 'axes',
     cols: grid.cols,

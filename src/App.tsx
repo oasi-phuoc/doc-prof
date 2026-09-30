@@ -75,6 +75,10 @@ import {
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
+import {
+  CoordQuestionsLibreEditor,
+  resizeCoordQuestionsLibre,
+} from '@/math/CoordQuestionsLibreEditor'
 import { defaultThemeGameContent, isGameBankType, reshuffleGameContent } from '@/jeux/bank'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
@@ -143,6 +147,7 @@ import { randomSeed } from '@/math/rng'
 import type {
   CoordAxis,
   CoordCellMm,
+  CoordReply,
   CoordShape,
   CoordUnitSquares,
   Difficulty,
@@ -156,6 +161,10 @@ import type {
   WorksheetBlock,
   WorksheetPage,
 } from '@/math/types'
+
+function defaultCoordQuestionReply(exerciseType: string): CoordReply {
+  return isReperageConstruire(exerciseType) ? 'draw' : 'text'
+}
 
 function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
   return [
@@ -1273,7 +1282,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
         }
       : isCadrans || isDroites || isConstruire || isTransform
         ? {
-            coordLibre: isCadrans || isTransformCentrale ? false : undefined,
+            coordLibre: isCadrans || isTransformCentrale || isDroites || isConstruire ? false : undefined,
+            coordQuestionsLibre: undefined,
             coordCols: AXES_DEFAULT_COLS,
             coordRows: AXES_DEFAULT_ROWS,
             coordAxis: undefined,
@@ -1286,6 +1296,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           }
         : {
             coordLibre: undefined,
+            coordQuestionsLibre: undefined,
             coordCols: undefined,
             coordRows: undefined,
             coordAxis: undefined,
@@ -1509,6 +1520,20 @@ function GeneratorPage() {
             fixed = { ...fixed, coordMarks: fixed.coordMarks.slice(0, Math.max(0, fixed.count)) }
           }
         }
+        if (
+          fixed.coordLibre &&
+          (isReperageDroites(fixed.exerciseType) || isReperageConstruire(fixed.exerciseType)) &&
+          (patch.count != null || patch.coordLibre != null)
+        ) {
+          fixed = {
+            ...fixed,
+            coordQuestionsLibre: resizeCoordQuestionsLibre(
+              fixed.coordQuestionsLibre,
+              fixed.count,
+              defaultCoordQuestionReply(fixed.exerciseType),
+            ),
+          }
+        }
         return setPageBlock(merged, safeBlockIndex, fixed)
       }),
     )
@@ -1536,6 +1561,40 @@ function GeneratorPage() {
     activeBlock.verbGroup,
     activeBlock.exerciseType,
     activeBlock.phraseItems,
+    activeBlock.count,
+    seed,
+    activeSheet,
+    safeBlockIndex,
+    pageIndex,
+  ])
+
+  // Mode libre droites / construire : initialise les questions depuis le tirage courant.
+  useEffect(() => {
+    if (!activeBlock.coordLibre) return
+    if (!isReperageDroites(activeBlock.exerciseType) && !isReperageConstruire(activeBlock.exerciseType)) {
+      return
+    }
+    if (activeBlock.coordQuestionsLibre && activeBlock.coordQuestionsLibre.length > 0) return
+    const block = activeSheet?.blocks[safeBlockIndex]
+    const fromSheet = block?.items[0]?.coordQuestions
+    if (!fromSheet?.length) return
+    setPages((current) =>
+      current.map((page, index) =>
+        index === pageIndex
+          ? setPageBlock(page, safeBlockIndex, {
+              coordQuestionsLibre: resizeCoordQuestionsLibre(
+                fromSheet,
+                activeBlock.count,
+                defaultCoordQuestionReply(activeBlock.exerciseType),
+              ),
+            })
+          : page,
+      ),
+    )
+  }, [
+    activeBlock.coordLibre,
+    activeBlock.exerciseType,
+    activeBlock.coordQuestionsLibre,
     activeBlock.count,
     seed,
     activeSheet,
@@ -3164,26 +3223,62 @@ function GeneratorPage() {
                         ? 'Repère (transformations)'
                         : 'Repère (construction)'}
                   </b>
-                  {isTransformCentrale ? (
-                    <div className="mode-toggle" role="group" aria-label="Mode du centre">
+                  {isTransformCentrale || isDroites || isConstruire ? (
+                    <div
+                      className="mode-toggle"
+                      role="group"
+                      aria-label={
+                        isTransformCentrale ? 'Mode du centre' : 'Mode des questions'
+                      }
+                    >
                       <button
                         type="button"
                         className={!activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() => updatePage({ coordLibre: false, coordMarks: [] })}
+                        onClick={() =>
+                          updatePage({
+                            coordLibre: false,
+                            coordMarks: isTransformCentrale ? [] : activeBlock.coordMarks,
+                            coordQuestionsLibre: undefined,
+                          })
+                        }
                       >
                         Automatique
                       </button>
                       <button
                         type="button"
                         className={activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() =>
+                        onClick={() => {
+                          if (isTransformCentrale) {
+                            updatePage({
+                              coordLibre: true,
+                              coordMarks: activeBlock.coordMarks?.length
+                                ? activeBlock.coordMarks
+                                : [
+                                    {
+                                      x: 0,
+                                      y: 0,
+                                      kind: 'point',
+                                      label: 'Ω',
+                                      given: true,
+                                      showCoord: true,
+                                    },
+                                  ],
+                            })
+                            return
+                          }
+                          const fromSheet =
+                            activeSheet?.blocks[safeBlockIndex]?.items[0]?.coordQuestions
                           updatePage({
                             coordLibre: true,
-                            coordMarks: activeBlock.coordMarks?.length
-                              ? activeBlock.coordMarks
-                              : [{ x: 0, y: 0, kind: 'point', label: 'Ω', given: true, showCoord: true }],
+                            coordQuestionsLibre: resizeCoordQuestionsLibre(
+                              activeBlock.coordQuestionsLibre?.length
+                                ? activeBlock.coordQuestionsLibre
+                                : fromSheet,
+                              activeBlock.count,
+                              defaultCoordQuestionReply(activeBlock.exerciseType),
+                            ),
                           })
-                        }
+                        }}
                       >
                         Libre
                       </button>
@@ -3203,12 +3298,37 @@ function GeneratorPage() {
                       Cliquez sur le repère de l’aperçu pour placer le centre Ω de la symétrie centrale.
                     </p>
                   ) : null}
+                  {(isDroites || isConstruire) && activeBlock.coordLibre ? (
+                    <CoordQuestionsLibreEditor
+                      questions={
+                        activeBlock.coordQuestionsLibre ??
+                        resizeCoordQuestionsLibre(
+                          undefined,
+                          activeBlock.count,
+                          defaultCoordQuestionReply(activeBlock.exerciseType),
+                        )
+                      }
+                      defaultReply={defaultCoordQuestionReply(activeBlock.exerciseType)}
+                      maxCount={isConstruire ? 8 : 10}
+                      onChange={(next) => {
+                        const capped = next.slice(0, isConstruire ? 8 : 10)
+                        updatePage({
+                          coordQuestionsLibre: capped,
+                          count: Math.max(1, capped.length),
+                        })
+                      }}
+                    />
+                  ) : null}
                   <p className="type-hint muted">
                     {isDroites
-                      ? 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
+                      ? activeBlock.coordLibre
+                        ? 'Mode libre : le repère (droites) reste généré ; vous rédigez ou modifiez les questions et les réponses du corrigé.'
+                        : 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
                       : isTransform
                         ? 'Même grille que « Lire les droites » / « Construire » (pas de petit quadrillage dans une unité). Types 1 et 2 : figure fermée déjà tracée ; types 3 et 4 : un seul point placé, les autres à placer puis symétrie.'
-                        : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Le corrigé montre les tracés.'}
+                        : activeBlock.coordLibre
+                          ? 'Mode libre : la figure du repère reste générée ; vous rédigez ou modifiez les questions et les réponses du corrigé.'
+                          : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Le corrigé montre les tracés.'}
                   </p>
                 </div>
               ) : null}

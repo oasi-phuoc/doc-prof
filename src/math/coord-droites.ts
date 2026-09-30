@@ -570,7 +570,20 @@ export function generateDroites(
 
   const styles = shuffle(rng, LINE_PALETTE).slice(0, eqs.length)
   const lines = decorate(eqs, styles)
-  const questions = pickQuestions(rng, buildQuestions(lines, range, step, difficulty), questionCount, difficulty)
+  const autoQuestions = pickQuestions(
+    rng,
+    buildQuestions(lines, range, step, difficulty),
+    questionCount,
+    difficulty,
+  )
+  const questions =
+    config.coordLibre && config.coordQuestionsLibre?.length
+      ? config.coordQuestionsLibre.slice(0, questionCount).map((q) => ({
+          prompt: q.prompt,
+          answer: q.answer,
+          reply: q.reply ?? 'text',
+        }))
+      : autoQuestions
   const scene: CoordScene = {
     variant: 'axes',
     cols: grid.cols,
