@@ -4,9 +4,12 @@ import {
   instantiateThemeFrame,
   isProperNameToken,
   joinPhrase,
+  pronounsForFrame,
   resolveAdjPlacement,
+  subjectKindOf,
   subjectsForAdjPlacement,
   type AdjPlacement,
+  type SubjectKind,
 } from './phrase-sentences'
 import { PRODUCTION_PROMPTS_BY_THEME, VERBES, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
@@ -50,6 +53,38 @@ function builtFromTokens(tokens: PhraseToken[]): BuiltPhrase {
   return { tokens, sentence, verbInfinitive: infinitive }
 }
 
+/**
+ * Tirage équilibré : ~⅓ prénom, ~⅓ déterminant+nom, ~⅓ pronom
+ * (quand le thème et le verbe le permettent).
+ */
+function pickBalancedSubject(
+  rng: Rng,
+  theme: PhraseThemeId,
+  frameId: string,
+  preds: readonly string[],
+  pool: readonly string[],
+  adjPlacement: AdjPlacement,
+): string {
+  const detTheme = theme === 'phrase-determinants' || theme === 'phrase-negation-determinants'
+  const adjLocked = (theme === 'phrase-adjectif' || theme === 'phrase-negation-adjectif') && adjPlacement !== 'comp'
+  if (detTheme || adjLocked) return pick(rng, [...pool])
+
+  const proper = pool.filter((item) => subjectKindOf(item) === 'proper')
+  const common = pool.filter((item) => subjectKindOf(item) === 'common')
+  const pronouns = [...pronounsForFrame(frameId, preds)]
+
+  const kinds: SubjectKind[] = []
+  if (proper.length) kinds.push('proper')
+  if (common.length) kinds.push('common')
+  if (pronouns.length) kinds.push('pronoun')
+  if (!kinds.length) return pick(rng, [...pool])
+
+  const kind = pick(rng, kinds)
+  if (kind === 'proper') return pick(rng, proper)
+  if (kind === 'common') return pick(rng, common)
+  return pick(rng, [...pronouns])
+}
+
 /** Un modèle = un verbe. Sujet et complément varient ; le verbe ne se répète pas sur la fiche. */
 function pickPhrase(
   rng: Rng,
@@ -69,7 +104,7 @@ function pickPhrase(
   const tokens = instantiateThemeFrame(
     theme,
     frame,
-    () => pick(rng, [...pool]),
+    () => pickBalancedSubject(rng, theme, frame.id, frame.preds, pool, adjPlacement),
     (preds) => pick(rng, [...preds]),
     () => pick(rng, [...COMMON]),
     adjPlacement,

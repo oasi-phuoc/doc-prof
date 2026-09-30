@@ -370,6 +370,36 @@ export const VERBES_AUTRES = [
   { infinitive: 'mettre', forms: { je: 'mets', tu: 'mets', il: 'met', nous: 'mettons', vous: 'mettez', ils: 'mettent' } },
   { infinitive: 'aller', forms: { je: 'vais', tu: 'vas', il: 'va', nous: 'allons', vous: 'allez', ils: 'vont' } },
   { infinitive: 'venir', forms: { je: 'viens', tu: 'viens', il: 'vient', nous: 'venons', vous: 'venez', ils: 'viennent' } },
+  { infinitive: 'apprendre', forms: { je: 'apprends', tu: 'apprends', il: 'apprend', nous: 'apprenons', vous: 'apprenez', ils: 'apprennent' } },
+  { infinitive: 'comprendre', forms: { je: 'comprends', tu: 'comprends', il: 'comprend', nous: 'comprenons', vous: 'comprenez', ils: 'comprennent' } },
+  { infinitive: 'descendre', forms: { je: 'descends', tu: 'descends', il: 'descend', nous: 'descendons', vous: 'descendez', ils: 'descendent' } },
+  { infinitive: 'attendre', forms: { je: 'attends', tu: 'attends', il: 'attend', nous: 'attendons', vous: 'attendez', ils: 'attendent' } },
+  { infinitive: 'vendre', forms: { je: 'vends', tu: 'vends', il: 'vend', nous: 'vendons', vous: 'vendez', ils: 'vendent' } },
+  { infinitive: 'perdre', forms: { je: 'perds', tu: 'perds', il: 'perd', nous: 'perdons', vous: 'perdez', ils: 'perdent' } },
+  { infinitive: 'dire', forms: { je: 'dis', tu: 'dis', il: 'dit', nous: 'disons', vous: 'dites', ils: 'disent' } },
+  { infinitive: 'suivre', forms: { je: 'suis', tu: 'suis', il: 'suit', nous: 'suivons', vous: 'suivez', ils: 'suivent' } },
+  { infinitive: 'vivre', forms: { je: 'vis', tu: 'vis', il: 'vit', nous: 'vivons', vous: 'vivez', ils: 'vivent' } },
+  { infinitive: 'conduire', forms: { je: 'conduis', tu: 'conduis', il: 'conduit', nous: 'conduisons', vous: 'conduisez', ils: 'conduisent' } },
+  { infinitive: 'construire', forms: { je: 'construis', tu: 'construis', il: 'construit', nous: 'construisons', vous: 'construisez', ils: 'construisent' } },
+  { infinitive: 'peindre', forms: { je: 'peins', tu: 'peins', il: 'peint', nous: 'peignons', vous: 'peignez', ils: 'peignent' } },
+  { infinitive: 'cueillir', forms: { je: 'cueille', tu: 'cueilles', il: 'cueille', nous: 'cueillons', vous: 'cueillez', ils: 'cueillent' } },
+  { infinitive: 'offrir', forms: { je: 'offre', tu: 'offres', il: 'offre', nous: 'offrons', vous: 'offrez', ils: 'offrent' } },
+  { infinitive: 'couvrir', forms: { je: 'couvre', tu: 'couvres', il: 'couvre', nous: 'couvrons', vous: 'couvrez', ils: 'couvrent' } },
+  { infinitive: 'découvrir', forms: { je: 'découvre', tu: 'découvres', il: 'découvre', nous: 'découvrons', vous: 'découvrez', ils: 'découvrent' } },
+  { infinitive: 'tenir', forms: { je: 'tiens', tu: 'tiens', il: 'tient', nous: 'tenons', vous: 'tenez', ils: 'tiennent' } },
+  { infinitive: 'sentir', forms: { je: 'sens', tu: 'sens', il: 'sent', nous: 'sentons', vous: 'sentez', ils: 'sentent' } },
+  { infinitive: 'servir', forms: { je: 'sers', tu: 'sers', il: 'sert', nous: 'servons', vous: 'servez', ils: 'servent' } },
+  { infinitive: 'connaître', forms: { je: 'connais', tu: 'connais', il: 'connaît', nous: 'connaissons', vous: 'connaissez', ils: 'connaissent' } },
+  { infinitive: 'savoir', forms: { je: 'sais', tu: 'sais', il: 'sait', nous: 'savons', vous: 'savez', ils: 'savent' } },
+  { infinitive: 'vouloir', forms: { je: 'veux', tu: 'veux', il: 'veut', nous: 'voulons', vous: 'voulez', ils: 'veulent' } },
+  { infinitive: 'recevoir', forms: { je: 'reçois', tu: 'reçois', il: 'reçoit', nous: 'recevons', vous: 'recevez', ils: 'reçoivent' } },
+  { infinitive: 'battre', forms: { je: 'bats', tu: 'bats', il: 'bat', nous: 'battons', vous: 'battez', ils: 'battent' } },
+  { infinitive: 'éteindre', forms: { je: 'éteins', tu: 'éteins', il: 'éteint', nous: 'éteignons', vous: 'éteignez', ils: 'éteignent' } },
+  { infinitive: 'traduire', forms: { je: 'traduis', tu: 'traduis', il: 'traduit', nous: 'traduisons', vous: 'traduisez', ils: 'traduisent' } },
+  { infinitive: 'coudre', forms: { je: 'couds', tu: 'couds', il: 'coud', nous: 'cousons', vous: 'cousez', ils: 'cousent' } },
+  { infinitive: 'joindre', forms: { je: 'joins', tu: 'joins', il: 'joint', nous: 'joignons', vous: 'joignez', ils: 'joignent' } },
+  { infinitive: 'atteindre', forms: { je: 'atteins', tu: 'atteins', il: 'atteint', nous: 'atteignons', vous: 'atteignez', ils: 'atteignent' } },
+  { infinitive: 'résoudre', forms: { je: 'résous', tu: 'résous', il: 'résout', nous: 'résolvons', vous: 'résolvez', ils: 'résolvent' } },
 ] as const
 
 export type VerbEntry = {
@@ -603,12 +633,14 @@ export type PhraseThemeId =
   | 'phrase-conjonctions'
 
 /**
- * 100 consignes de production écrite, uniques, adaptées au thème
+ * 15 consignes distinctes de production écrite par thème
  * (structure attendue de la phrase).
  */
 export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[]> = {
   'phrase-simple': [
     'Écrivez des phrases simples (sujet + verbe + complément).',
+    'Écrivez des phrases qui commencent par un pronom (je, tu, il, elle…).',
+    'Écrivez des phrases avec un groupe nominal (déterminant + nom).',
     'Écrivez des phrases pour dire ce que vous faites aujourd’hui.',
     'Écrivez des phrases sur votre école.',
     'Écrivez des phrases pour décrire votre journée.',
@@ -624,6 +656,8 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
   ],
   'phrase-negation': [
     'Écrivez des phrases négatives avec ne… pas.',
+    'Écrivez des phrases négatives qui commencent par un pronom.',
+    'Écrivez des phrases négatives avec un déterminant + nom comme sujet.',
     'Écrivez ce que vous ne faites pas le matin.',
     'Écrivez des phrases pour dire ce que vous n’aimez pas.',
     'Écrivez des phrases négatives sur l’école.',
@@ -632,12 +666,15 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez ce que vous ne mangez pas.',
     'Écrivez des phrases négatives sur le week-end.',
     'Écrivez des phrases pour dire ce qui n’est pas vrai.',
-    'Écrivez des phrases négatives avec un pronom sujet.',
     'Écrivez des phrases négatives sur les devoirs.',
     'Écrivez des phrases pour refuser poliment (ne… pas).',
+    'Écrivez des phrases : nous / vous / ils ne… pas.',
+    'Écrivez des phrases négatives sur un loisir.',
   ],
   'phrase-adjectif': [
     'Écrivez des phrases avec un adjectif pour décrire.',
+    'Écrivez des phrases qui commencent par un pronom + adjectif dans le complément.',
+    'Écrivez des phrases avec un déterminant + nom + adjectif.',
     'Écrivez des phrases pour décrire une personne (adjectif).',
     'Écrivez des phrases pour décrire un animal (adjectif).',
     'Écrivez des phrases pour décrire un objet (adjectif).',
@@ -664,6 +701,9 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases négatives avec notre / votre.',
     'Écrivez des phrases : cette personne ne… pas.',
     'Écrivez des phrases négatives pour parler d’un proche (déterminant).',
+    'Écrivez des phrases : chaque enfant ne… pas.',
+    'Écrivez des phrases négatives avec un article défini (le, la, l’).',
+    'Écrivez des phrases négatives avec un article indéfini (un, une).',
   ],
   'phrase-determinants': [
     'Écrivez des phrases affirmatives avec des déterminants variés.',
@@ -678,9 +718,14 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases avec un article défini.',
     'Écrivez des phrases avec un article indéfini.',
     'Écrivez des phrases : cette personne + verbe + complément.',
+    'Écrivez des phrases : mon frère / ma sœur + verbe.',
+    'Écrivez des phrases avec leur enfant / notre maître.',
+    'Écrivez des phrases : chaque élève + verbe + complément.',
   ],
   'phrase-negation-adjectif': [
     'Écrivez des phrases négatives avec un adjectif.',
+    'Écrivez des phrases négatives qui commencent par un pronom.',
+    'Écrivez des phrases négatives avec un déterminant + nom + adjectif.',
     'Écrivez ce qui n’est pas grand / petit (avec adjectif).',
     'Écrivez des phrases : ce n’est pas… + adjectif.',
     'Écrivez des phrases négatives pour décrire une personne.',
@@ -692,9 +737,12 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases négatives pour corriger une description.',
     'Écrivez des phrases avec ne… jamais + adjectif.',
     'Écrivez des phrases négatives sur le temps (adjectif).',
+    'Écrivez des phrases : elle / il n’est pas… + adjectif.',
   ],
   'phrase-preposition': [
     'Écrivez des phrases avec une préposition (dans, sur, sous…).',
+    'Écrivez des phrases avec un pronom sujet et une préposition.',
+    'Écrivez des phrases avec un déterminant + nom et une préposition.',
     'Écrivez des phrases avec dans.',
     'Écrivez des phrases avec sur / sous.',
     'Écrivez des phrases avec chez.',
@@ -710,6 +758,8 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
   ],
   'phrase-negation-preposition': [
     'Écrivez des phrases négatives avec une préposition.',
+    'Écrivez des phrases négatives avec un pronom sujet et une préposition.',
+    'Écrivez des phrases négatives avec un groupe nominal sujet.',
     'Écrivez des phrases : ne… pas + dans / sur / sous.',
     'Écrivez ce que vous ne faites pas chez quelqu’un.',
     'Écrivez des phrases négatives avec à / de.',
@@ -721,9 +771,12 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases négatives sur le trajet (préposition).',
     'Écrivez des phrases : elle n’entre pas dans…',
     'Écrivez des phrases négatives avec après / avant.',
+    'Écrivez des phrases : nous ne rentrons pas à…',
   ],
   'phrase-adverbe': [
     'Écrivez des phrases avec un adverbe (vite, bien, souvent…).',
+    'Écrivez des phrases avec un pronom sujet et un adverbe.',
+    'Écrivez des phrases avec un déterminant + nom et un adverbe.',
     'Écrivez des phrases avec bien / mal.',
     'Écrivez des phrases avec vite / lentement.',
     'Écrivez des phrases avec souvent / toujours.',
@@ -735,9 +788,12 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases avec peut-être / vraiment.',
     'Écrivez des phrases avec hier / maintenant.',
     'Écrivez des phrases avec beaucoup / peu.',
+    'Écrivez des phrases : ils / elles + verbe + adverbe.',
   ],
   'phrase-negation-adverbe': [
     'Écrivez des phrases négatives avec un adverbe.',
+    'Écrivez des phrases négatives avec un pronom sujet et un adverbe.',
+    'Écrivez des phrases négatives avec un groupe nominal sujet.',
     'Écrivez des phrases avec ne… pas + bien / mal.',
     'Écrivez des phrases avec ne… jamais + adverbe de temps.',
     'Écrivez ce que vous ne faites pas souvent.',
@@ -749,9 +805,12 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
     'Écrivez des phrases négatives pour dire comment vous n’agissez pas.',
     'Écrivez des phrases avec ne… pas encore.',
     'Écrivez des phrases négatives avec trop / assez.',
+    'Écrivez des phrases : on ne… pas toujours.',
   ],
   'phrase-conjonctions': [
     'Écrivez des phrases avec et / ou / mais.',
+    'Écrivez des phrases avec un pronom à gauche et un nom commun à droite.',
+    'Écrivez des phrases avec deux groupes nominaux reliés par et.',
     'Écrivez des phrases avec parce que.',
     'Écrivez des phrases avec quand / si.',
     'Écrivez des phrases avec donc / car.',
@@ -767,5 +826,14 @@ export const PRODUCTION_PROMPTS_BY_THEME: Record<PhraseThemeId, readonly string[
   ],
 }
 
-/** Toutes les consignes (100), utiles pour contrôles d’unicité. */
+/** Toutes les consignes (165), utiles pour contrôles d’unicité. */
 export const PRODUCTION_PROMPTS: readonly string[] = Object.values(PRODUCTION_PROMPTS_BY_THEME).flat()
+
+for (const [theme, prompts] of Object.entries(PRODUCTION_PROMPTS_BY_THEME)) {
+  if (prompts.length !== 15) {
+    throw new Error(`${theme} : ${prompts.length} consignes de production (15 attendues)`)
+  }
+  if (new Set(prompts).size !== prompts.length) {
+    throw new Error(`${theme} : consignes de production en double`)
+  }
+}

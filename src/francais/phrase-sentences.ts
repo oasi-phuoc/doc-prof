@@ -1,5 +1,12 @@
 import type { PhraseThemeId } from './phrase-banks'
 import type { PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
+import {
+  canConjugatePerson,
+  conjugateTaggedPred,
+  elideJeSubject,
+  type VerbPerson,
+  verbCoreFromToken,
+} from './phrase-conjugate'
 import { SIMPLE_FRAMES_AUTRES, SIMPLE_FRAMES_ER } from './phrase-simple-frames'
 import { themedFramesFor, type ThemedFrame } from './phrase-theme-frames'
 import { FEMALE_PROPER_NAMES, PROPER_NAMES, PROPER_TAGGED } from './phrase-proper-names'
@@ -105,7 +112,20 @@ function assertBank(theme: PhraseThemeId, list: PhraseToken[][], min = 100): Phr
 }
 
 /** Noms propres — toujours singulier (banque par nationalité). */
-const PROPER = PROPER_TAGGED
+export const PROPER = PROPER_TAGGED
+
+/** Pronoms sujets (conjugaison selon la personne). */
+export const PRONOUN_SUBJECTS = [
+  'Je/pronom',
+  'Tu/pronom',
+  'Il/pronom',
+  'Elle/pronom',
+  'Nous/pronom',
+  'Vous/pronom',
+  'Ils/pronom',
+  'Elles/pronom',
+  'On/pronom',
+] as const
 
 /** Noms communs singuliers, articles définis / indéfinis de base. */
 export const COMMON = [
@@ -148,7 +168,41 @@ export const COMMON = [
 ] as const
 
 /** Sujets pour instancier un modèle (le modèle lui-même ne change pas). Personnes seulement. */
-export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, 'Il/pronom', 'Elle/pronom'] as const
+export const SIMPLE_SUBJECTS = [...PROPER, ...COMMON, ...PRONOUN_SUBJECTS] as const
+
+export type SubjectKind = 'proper' | 'common' | 'pronoun'
+
+export function subjectKindOf(tagged: string): SubjectKind {
+  if (tagged.includes('/pronom')) return 'pronoun'
+  if (tagged.includes('/determinant')) return 'common'
+  return 'proper'
+}
+
+/** Personne verbale du sujet (noms propres / GN → 3e sg). */
+export function verbPersonOf(tagged: string): VerbPerson {
+  if (tagged.startsWith('Je/') || tagged.startsWith('J’/')) return 'je'
+  if (tagged.startsWith('Tu/')) return 'tu'
+  if (tagged.startsWith('Nous/')) return 'nous'
+  if (tagged.startsWith('Vous/')) return 'vous'
+  if (tagged.startsWith('Ils/') || tagged.startsWith('Elles/')) return 'ils'
+  return 'il'
+}
+
+function form3sgFromPreds(preds: readonly string[]): string {
+  const pred = preds[0] ?? ''
+  const part = pred.split(/\s+/).find((item) => item.endsWith('/verbe'))
+  if (!part) return ''
+  const text = part.slice(0, part.lastIndexOf('/'))
+  return verbCoreFromToken(text).core
+}
+
+/** Filtre les pronoms conjugables pour ce modèle. */
+export function pronounsForFrame(frameId: string, preds: readonly string[]): readonly string[] {
+  const form3sg = form3sgFromPreds(preds)
+  return PRONOUN_SUBJECTS.filter((subject) =>
+    canConjugatePerson(frameId, verbPersonOf(subject), form3sg),
+  )
+}
 
 /** Prénoms / noms propres (majuscule conservée, y compris en « remettre en ordre »). */
 export { PROPER_NAMES }
@@ -216,7 +270,13 @@ const INANIMATE_SUBJECT =
   /^(maison|voiture|livre|cahier|table|porte|fenêtre|arbre|école|jardin|rue|pont|mer|train|bus)$/i
 
 export function subjectGender(tagged: string): 'm' | 'f' {
-  if (tagged === 'Elle/pronom' || /^(La|Une|Ma|Ta|Sa|Cette)\//.test(tagged)) return 'f'
+  if (
+    tagged === 'Elle/pronom' ||
+    tagged === 'Elles/pronom' ||
+    /^(La|Une|Ma|Ta|Sa|Cette)\//.test(tagged)
+  ) {
+    return 'f'
+  }
   const proper = tagged.replace(/\/nom$/, '')
   if (FEMALE_PROPER_NAMES.has(proper)) return 'f'
   if (/(ière|euse|esse|ine|sœur|fille|maman|tante|copine|amie|voisine|maîtresse|boulangère|factrice|cuisinière|jardinière|musicienne|infirmière)\/nom/.test(tagged)) {
@@ -346,6 +406,14 @@ function lowerCommon(taggedSubject: string): string {
     .replace(/^Chaque\//, 'chaque/')
     .replace(/^Il\//, 'il/')
     .replace(/^Elle\//, 'elle/')
+    .replace(/^Ils\//, 'ils/')
+    .replace(/^Elles\//, 'elles/')
+    .replace(/^Je\//, 'je/')
+    .replace(/^J’\//, 'j’/')
+    .replace(/^Tu\//, 'tu/')
+    .replace(/^Nous\//, 'nous/')
+    .replace(/^Vous\//, 'vous/')
+    .replace(/^On\//, 'on/')
 }
 
 const FEMININE_ETRE_ADJ = /(?:grande|fatiguée|contente)\/adjectif/
@@ -358,6 +426,17 @@ function predsForEtreAdj(preds: readonly string[], gender: 'm' | 'f'): readonly 
   return pool.length ? pool : preds
 }
 
+function applyPredForSubject(
+  frameId: string,
+  subject: string,
+  pred: string,
+): { subject: string; pred: string } {
+  const person = verbPersonOf(subject)
+  const conjugated = conjugateTaggedPred(pred, frameId, person)
+  const nextPred = conjugated ?? pred
+  return { subject: elideJeSubject(subject, nextPred), pred: nextPred }
+}
+
 export function instantiateThemeFrame(
   theme: PhraseThemeId,
   frame: ThemedFrame,
@@ -367,40 +446,79 @@ export function instantiateThemeFrame(
   adjPlacement: AdjPlacement = 'comp',
 ): PhraseToken[] {
   if (theme === 'phrase-conjonctions') {
-    const left = pickSubject()
+    const leftRaw = pickSubject()
     let right = pickRightSubject()
-    if (right === left) right = pickRightSubject()
-    if (!right.includes('/determinant') && !right.startsWith('Il/') && !right.startsWith('Elle/')) {
+    if (right === leftRaw) right = pickRightSubject()
+    if (
+      !right.includes('/determinant') &&
+      !right.startsWith('Il/') &&
+      !right.startsWith('Elle/') &&
+      !right.startsWith('Ils/') &&
+      !right.startsWith('Elles/') &&
+      !right.startsWith('On/')
+    ) {
       right = COMMON[0]!
     }
+    const leftPredRaw = pickPred(frame.preds)
+    const rightPredRaw = pickPred(frame.rightPreds ?? frame.preds)
+    const leftApplied = applyPredForSubject(frame.id, leftRaw, leftPredRaw)
+    const rightApplied = applyPredForSubject(frame.id, right, rightPredRaw)
     const tokens = parse(
-      `${left} ${pickPred(frame.preds)} ${pickPred(frame.conjs ?? ['et/conjonction'])} ${lowerCommon(right)} ${pickPred(frame.rightPreds ?? frame.preds)}`,
+      `${leftApplied.subject} ${leftApplied.pred} ${pickPred(frame.conjs ?? ['et/conjonction'])} ${lowerCommon(rightApplied.subject)} ${rightApplied.pred}`,
     )
     return tokens
   }
   const placement = isAdjTheme(theme) ? resolveAdjPlacement(frame.id, adjPlacement) : 'comp'
-  const subject = pickSubject()
+  const subjectRaw = pickSubject()
   let pred = pickPred(frame.preds)
   if (frame.id === 'être' && isAdjTheme(theme)) {
-    pred = pickPred(predsForEtreAdj(frame.preds, subjectGender(subject)))
+    pred = pickPred(predsForEtreAdj(frame.preds, subjectGender(subjectRaw)))
   } else if (isAdjTheme(theme) && placement === 'subj') {
     pred = stripAdjFromPred(pred)
   }
-  const tokens = instantiateTagged(subject, pred)
+  const { subject, pred: nextPred } = applyPredForSubject(frame.id, subjectRaw, pred)
+  const tokens = instantiateTagged(subject, nextPred)
   return isNegationTheme(theme) ? withNegation(tokens) : tokens
 }
 
 const ADJ_PLACEMENTS: readonly AdjPlacement[] = ['comp', 'subj', 'both']
 
+/** Sujet d’échantillon : alterne prénom / GN / pronom pour couvrir les trois familles. */
+function sampleSubjectFor(
+  theme: PhraseThemeId,
+  frame: ThemedFrame,
+  index: number,
+  placement: AdjPlacement = 'comp',
+): string {
+  const pool = subjectsForAdjPlacement(theme, placement)
+  if (theme === 'phrase-determinants' || theme === 'phrase-negation-determinants') {
+    return pool[index % pool.length]!
+  }
+  if (isAdjTheme(theme) && placement !== 'comp') {
+    return pool[index % pool.length]!
+  }
+  const kind = index % 3
+  if (kind === 0) {
+    const proper = pool.filter((item) => subjectKindOf(item) === 'proper')
+    if (proper.length) return proper[index % proper.length]!
+  }
+  if (kind === 1) {
+    const common = pool.filter((item) => subjectKindOf(item) === 'common')
+    if (common.length) return common[index % common.length]!
+  }
+  const pronouns = pronounsForFrame(frame.id, frame.preds)
+  if (pronouns.length) return pronouns[index % pronouns.length]!
+  return pool[index % pool.length]!
+}
+
 function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): PhraseToken[][] {
   const frames = framesForTheme(theme, group)
   if (!isAdjTheme(theme)) {
-    const subjects = subjectsFor(theme)
     return frames.map((frame, index) =>
       instantiateThemeFrame(
         theme,
         frame,
-        () => subjects[index % subjects.length]!,
+        () => sampleSubjectFor(theme, frame, index),
         (preds) => preds[0]!,
         () => COMMON[(index + 1) % COMMON.length]!,
       ),
@@ -410,12 +528,11 @@ function samplesFromThemed(theme: PhraseThemeId, group: PhraseVerbGroup): Phrase
   for (const [index, frame] of frames.entries()) {
     for (const placement of ADJ_PLACEMENTS) {
       const effective = resolveAdjPlacement(frame.id, placement)
-      const pool = subjectsForAdjPlacement(theme, effective)
       out.push(
         instantiateThemeFrame(
           theme,
           frame,
-          () => pool[index % pool.length]!,
+          () => sampleSubjectFor(theme, frame, index, effective),
           (preds) => preds[0]!,
           () => COMMON[(index + 1) % COMMON.length]!,
           effective,
