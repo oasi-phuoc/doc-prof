@@ -37,6 +37,7 @@ import {
   calligraphieTopics,
   jeuxTopics,
   lectureTopics,
+  soutienFrTopics,
   gattegnoTopics,
   typesForTopic,
 } from '@/math/catalog'
@@ -1040,6 +1041,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
+  const isSoutienFr = type.topic.startsWith('soutien-')
   const isPhrase = type.topic.startsWith('phrase-')
   const isPhraseChart = type.id.startsWith('phrase-tableau-')
   const isFormes = isReperageFormes(type.id)
@@ -1152,7 +1154,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                 ? { count: 6 }
                 : isLectureDense
                   ? { count: 4 }
-                  : isLecture
+                  : isLecture || isSoutienFr
                     ? { count: 6 }
                     : isGeoCalc
                       ? { count: 2 }
@@ -1399,7 +1401,9 @@ function GeneratorPage() {
               ? jeuxTopics
               : activePage.domain === 'calligraphie'
                 ? calligraphieTopics
-                : lectureTopics
+                : activePage.domain === 'soutien-fr'
+                  ? soutienFrTopics
+                  : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -2024,6 +2028,7 @@ function GeneratorPage() {
     if (
       next === 'français' ||
       next === 'lecture' ||
+      next === 'soutien-fr' ||
       next === 'gattegno' ||
       next === 'jeux' ||
       next === 'calligraphie'
@@ -2386,6 +2391,7 @@ function GeneratorPage() {
                 <option value="gattegno">Gattegno</option>
                 <option value="jeux">Grilles de cartes</option>
                 <option value="calligraphie">Calligraphie</option>
+                <option value="soutien-fr">Soutien FR</option>
                 {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
               </SelectBox>
               <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>

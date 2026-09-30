@@ -28,6 +28,7 @@ import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
 import { generateTransformations, isTransformationExercise } from './coord-transformations'
+import { tryGenerateSoutienBatch } from '@/francais/soutien/generate'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
@@ -1123,6 +1124,14 @@ function buildSingleBlock(
   const reperage = tryGenerateReperage(config, rng)
   if (reperage) {
     return { title: fallbackTitle, instruction: reperage.instruction, items: reperage.items }
+  }
+  const soutien = tryGenerateSoutienBatch(config.exerciseType, config.count, rng, difficulty)
+  if (soutien) {
+    return {
+      title: fallbackTitle,
+      instruction: soutien.instruction ?? type?.instruction ?? 'Complétez.',
+      items: soutien.items,
+    }
   }
   const lecture = tryGenerateLectureBatch(config.exerciseType, config.count, rng, difficulty)
   if (lecture) {

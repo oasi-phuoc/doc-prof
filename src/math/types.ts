@@ -3,6 +3,7 @@ export type Domain =
   | 'algèbre'
   | 'géométrie'
   | 'lecture'
+  | 'soutien-fr'
   | 'gattegno'
   | 'jeux'
   | 'calligraphie'

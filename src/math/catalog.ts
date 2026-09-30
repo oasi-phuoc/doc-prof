@@ -1,4 +1,5 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
+import { SOUTIEN_KINDS } from '@/francais/soutien/kinds'
 import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
 import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { defaultCalliText } from '@/calligraphie/defaults'
@@ -54,6 +55,12 @@ export const topics: Topic[] = [
   { id: 'voyelle-u', label: 'Voyelle U · son /y/', domain: 'lecture' },
   { id: 'voyelle-e', label: 'Voyelle E · son /ə/', domain: 'lecture' },
   { id: 'voyelle-y', label: 'Voyelle Y · son /i/', domain: 'lecture' },
+  { id: 'soutien-a', label: 'Voyelle A · son /a/', domain: 'soutien-fr' },
+  { id: 'soutien-o', label: 'Voyelle O · son /o/', domain: 'soutien-fr' },
+  { id: 'soutien-i', label: 'Voyelle I · son /i/', domain: 'soutien-fr' },
+  { id: 'soutien-u', label: 'Voyelle U · son /y/', domain: 'soutien-fr' },
+  { id: 'soutien-e', label: 'Voyelle E · son /ə/', domain: 'soutien-fr' },
+  { id: 'soutien-y', label: 'Voyelle Y · son /i/', domain: 'soutien-fr' },
   { id: 'phrase-tableaux', label: 'Tableaux Gattegno', domain: 'gattegno' },
   { id: 'phrase-simple', label: 'Simple', domain: 'gattegno' },
   { id: 'phrase-negation', label: 'Négation simple', domain: 'gattegno' },
@@ -77,6 +84,7 @@ export const frenchTopics = topics.filter((topic) => topic.domain === 'français
 export const algebraTopics = topics.filter((topic) => topic.domain === 'algèbre')
 export const geometryTopics = topics.filter((topic) => topic.domain === 'géométrie')
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
+export const soutienFrTopics = topics.filter((topic) => topic.domain === 'soutien-fr')
 export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
@@ -507,6 +515,32 @@ for (const v of VOWEL_TOPICS) {
   )
 }
 
+/** Soutien FR : 15 types identiques pour chaque document voyelle. */
+const SOUTIEN_VOWELS = [
+  { id: 'a', topic: 'soutien-a', sound: '/a/' },
+  { id: 'o', topic: 'soutien-o', sound: '/o/' },
+  { id: 'i', topic: 'soutien-i', sound: '/i/' },
+  { id: 'u', topic: 'soutien-u', sound: '/y/' },
+  { id: 'e', topic: 'soutien-e', sound: '/ə/' },
+  { id: 'y', topic: 'soutien-y', sound: '/i/' },
+] as const
+
+for (const v of SOUTIEN_VOWELS) {
+  for (const kind of SOUTIEN_KINDS) {
+    exerciseTypes.push(
+      t(
+        `soutien-${v.id}-${kind.id}`,
+        v.topic,
+        kind.label,
+        kind.description.replace('le son', `le son ${v.sound}`),
+        kind.instruction,
+        'texte',
+        { preferredColumns: kind.preferredColumns },
+      ),
+    )
+  }
+}
+
 const FRENCH_THEMES: Array<{ id: string; grammar: string; vocab: string }> = VOCAB_TOPIC_META.map(
   (meta) => ({ id: meta.id, grammar: meta.grammar, vocab: meta.vocab }),
 )
@@ -807,7 +841,9 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
               ? JEUX_LIBRE_TOPIC
               : domain === 'calligraphie'
                 ? CALLI_LIBRE_TOPIC
-                : 'voyelle-a'
+                : domain === 'soutien-fr'
+                  ? 'soutien-a'
+                  : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
@@ -816,7 +852,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const count =
     domain === 'jeux' || domain === 'calligraphie'
       ? 1
-      : domain === 'lecture' || domain === 'gattegno'
+      : domain === 'lecture' || domain === 'soutien-fr' || domain === 'gattegno'
         ? 6
         : domain === 'français'
           ? type.track === 'com'
