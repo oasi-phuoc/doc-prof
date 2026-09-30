@@ -166,6 +166,7 @@ function WordSearchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   if (!puzzle) return null
   const show = mode === 'answers'
   const hits = new Set(puzzle.hitCells ?? [])
+  const graphemes = item.themeGraphemes ?? []
   const words = puzzle.words
   const cols = 4
   const wordRows: string[][] = []
@@ -183,7 +184,11 @@ function WordSearchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
                 const w = row[ci]
                 return (
                   <td key={`wsl-${ri}-${ci}`} className="word-search-list-cell">
-                    {w ? <span className="word-search-list-word">{w}</span> : null}
+                    {w ? (
+                      <span className="word-search-list-word">
+                        {graphemes.length ? highlightThemeLetters(w, graphemes) : w}
+                      </span>
+                    ) : null}
                   </td>
                 )
               })}
@@ -353,7 +358,14 @@ function CountSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
 
 function DicteeGridBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const words = item.dicteeWords ?? []
+  const graphemes = item.themeGraphemes ?? []
   const show = mode === 'answers'
+  const paint = (word?: string) =>
+    word
+      ? graphemes.length
+        ? highlightThemeLetters(word, graphemes)
+        : word
+      : '\u00a0'
   /** 4 lignes × 2 colonnes : gauche 1–4, droite 5–8. */
   const rows = [0, 1, 2, 3].map((r) => ({
     left: { n: r + 1, word: words[r] },
@@ -369,14 +381,14 @@ function DicteeGridBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
               <td className="dictee-grid-num">{row.left.n}.</td>
               <td className="dictee-grid-line-cell">
                 <span className={`dictee-write-line${show && row.left.word ? ' filled' : ''}`}>
-                  {show && row.left.word ? row.left.word : '\u00a0'}
+                  {show ? paint(row.left.word) : '\u00a0'}
                 </span>
               </td>
               <td className="dictee-grid-gutter" aria-hidden />
               <td className="dictee-grid-num">{row.right.n}.</td>
               <td className="dictee-grid-line-cell">
                 <span className={`dictee-write-line${show && row.right.word ? ' filled' : ''}`}>
-                  {show && row.right.word ? row.right.word : '\u00a0'}
+                  {show ? paint(row.right.word) : '\u00a0'}
                 </span>
               </td>
             </tr>
@@ -461,10 +473,20 @@ function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode
                       className={`phrase-scramble-blank${show ? ' filled' : ''}`}
                       style={{ width: `${blankCh}ch` }}
                     >
-                      {show ? row.word : '\u00a0'}
+                      {show
+                        ? graphemes.length
+                          ? highlightThemeLetters(row.word, graphemes)
+                          : row.word
+                        : '\u00a0'}
                     </span>
                     {highlightThemeLetters(row.after, graphemes)}{' '}
-                    <span className="phrase-scramble-letters">({row.letters})</span>
+                    <span className="phrase-scramble-letters">
+                      (
+                      {graphemes.length
+                        ? highlightThemeLetters(row.letters, graphemes)
+                        : row.letters}
+                      )
+                    </span>
                   </span>
                 </td>
               </tr>
@@ -479,6 +501,7 @@ function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode
 function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.syllableSoundItems ?? []
   const cols = Math.max(1, item.letterGridCols ?? 3)
+  const graphemes = item.themeGraphemes ?? []
   const show = mode === 'answers'
   return (
     <div className="syllable-sound-block" aria-label="Syllabe du son">
@@ -508,7 +531,11 @@ function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
                           key={`${row.word}-${pIdx}`}
                           className={hit ? 'is-hit' : undefined}
                         >
-                          {hit ? part : '\u00a0'}
+                          {hit
+                            ? graphemes.length
+                              ? highlightThemeLetters(part, graphemes)
+                              : part
+                            : '\u00a0'}
                         </td>
                       )
                     })}
@@ -529,6 +556,7 @@ function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
   const images = item.optionImages ?? []
   const withImages = images.length > 0 && images.length === words.length
   const positives = new Set((item.labels ?? []).map((w) => w.toLowerCase()))
+  const graphemes = item.themeGraphemes ?? []
   const cols = Math.max(1, item.letterGridCols ?? (withImages ? 5 : 3))
   const show = mode === 'answers'
   return (
@@ -561,7 +589,11 @@ function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
                   >
                     {show && hit ? '✓' : ''}
                   </span>
-                  {show ? <span className="listen-check-caption">{word}</span> : null}
+                  {show ? (
+                    <span className="listen-check-caption">
+                      {graphemes.length ? highlightThemeLetters(word, graphemes) : word}
+                    </span>
+                  ) : null}
                 </div>
               </div>
             )
@@ -576,7 +608,11 @@ function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
                 {show && hit ? '✓' : ''}
               </span>
               <span className={`listen-check-line${show ? ' filled' : ''}`}>
-                {show ? word : '\u00a0'}
+                {show
+                  ? graphemes.length
+                    ? highlightThemeLetters(word, graphemes)
+                    : word
+                  : '\u00a0'}
               </span>
             </div>
           )
@@ -589,7 +625,10 @@ function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
 function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.syllableCompletes ?? []
   const cols = Math.max(1, item.vocabCols ?? 2)
+  const graphemes = item.themeGraphemes ?? []
   const show = mode === 'answers'
+  const paint = (text: string) =>
+    graphemes.length ? highlightThemeLetters(text, graphemes) : text
   return (
     <div className="syllable-complete-block" aria-label="Compléter les mots">
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
@@ -609,19 +648,21 @@ function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMo
                 )}
               </div>
               <div className="syllable-complete-text">
-                <span className="syllable-complete-article">{row.article}</span>{' '}
-                {row.before ? <span className="syllable-complete-affix">{row.before}</span> : null}
+                <span className="syllable-complete-article">{paint(row.article)}</span>{' '}
+                {row.before ? (
+                  <span className="syllable-complete-affix">{paint(row.before)}</span>
+                ) : null}
                 <span
                   className={`syllable-complete-blank${show ? ' filled' : ''}`}
                   style={{ width: `${blankCh}ch` }}
                 >
-                  {show ? row.blank : '\u00a0'}
+                  {show ? paint(row.blank) : '\u00a0'}
                 </span>
-                <span className="syllable-complete-affix">{row.after}</span>
+                <span className="syllable-complete-affix">{paint(row.after)}</span>
                 {show ? (
                   <span className="syllable-complete-full">
                     {' '}
-                    ({row.article} {row.word})
+                    ({paint(row.article)} {paint(row.word)})
                   </span>
                 ) : null}
               </div>
@@ -2118,8 +2159,11 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
   const show = mode === 'answers'
   const tokens = item.tokens ?? []
   const orderedLabels = item.labels ?? []
+  const graphemes = item.themeGraphemes ?? []
   const categoryOf = (text: string): PhraseCategory =>
     tokens.find((t) => t.text === text)?.category ?? 'nom'
+  const labelOf = (text: string) =>
+    graphemes.length ? highlightThemeLetters(text, graphemes) : text
   return (
     <div className="phrase-order-block">
       <div className="phrase-bubble-row">
@@ -2138,7 +2182,7 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
                 printColorAdjust: 'exact',
               }}
             >
-              {token.text}
+              {labelOf(token.text)}
             </span>
           )
         })}
@@ -2160,7 +2204,7 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
                   printColorAdjust: 'exact',
                 }}
               >
-                {text}
+                {labelOf(text)}
               </span>
             )
           })}

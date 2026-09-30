@@ -598,7 +598,12 @@ html,body,#root{
   font-weight:inherit;
 }
 .syllable-cons{
-  color:var(--ink);
+  color:inherit;
+}
+/* Pastilles Gattegno : voyelle du thème reste en couleur thème */
+.phrase-bubble .syllable-vowel{
+  color:var(--purple)!important;
+  font-weight:700;
 }
 
 .order-block{display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0}
@@ -1223,6 +1228,7 @@ html,body,#root{
     background:color-mix(in srgb, var(--purple) 16%, #fff)!important;
     -webkit-print-color-adjust:exact;print-color-adjust:exact
   }
+  .syllable-vowel,.phrase-bubble .syllable-vowel{color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}

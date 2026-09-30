@@ -228,6 +228,7 @@ function genKind(
             answer: pool.map((row) => `${row.article} ${row.word}`).join(' · '),
             vocabRows: 5,
             vocabCols: 2,
+            themeGraphemes: [...bank.graphemes],
           },
         ],
       }
@@ -415,12 +416,13 @@ function genKind(
             prompt: 'Dictée. Écrivez les mots correctement !',
             dicteeWords: words,
             answer: words.join(' · '),
+            themeGraphemes: [...bank.graphemes],
           },
         ],
       }
     }
     case 'compter': {
-      /** Phrase en Playwrite + « J’entends … fois le son. » (trait couleur thème). */
+      /** Phrase Playwrite sans coloriage des lettres (type 12). */
       const phrases = shuffle(rng, [...bank.countPhrases]).slice(
         0,
         Math.min(5, bank.countPhrases.length),
@@ -438,13 +440,12 @@ function genKind(
             prompt: `J’entends …… fois le son ${bank.sound}.`,
             countSoundItems: items,
             answer: items.map((it) => String(it.count)).join(' · '),
-            themeGraphemes: [...bank.graphemes],
           },
         ],
       }
     }
     case 'ordre': {
-      /** Pastilles Gattegno colorées selon la nature (mot/catégorie). */
+      /** Pastilles Gattegno + lettres du son en couleur thème. */
       const rows = shuffle(rng, [...bank.orderSentences]).slice(
         0,
         Math.min(n, bank.orderSentences.length),
@@ -462,6 +463,7 @@ function genKind(
             labels: ordered.map((t) => t.text),
             answer: sentence,
             responseAnswer: sentence,
+            themeGraphemes: [...bank.graphemes],
           }
         }),
       }
@@ -530,6 +532,7 @@ function genKind(
               hitCells: hits,
             },
             answer: puzzle.words.join(' · '),
+            themeGraphemes: [...bank.graphemes],
           },
         ],
       }
