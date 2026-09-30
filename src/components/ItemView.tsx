@@ -1963,6 +1963,9 @@ function PhraseColorBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
 function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const tokens = item.tokens ?? []
+  const orderedLabels = item.labels ?? []
+  const categoryOf = (text: string): PhraseCategory =>
+    tokens.find((t) => t.text === text)?.category ?? 'nom'
   return (
     <div className="phrase-order-block">
       <div className="phrase-bubble-row">
@@ -1986,7 +1989,31 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
           )
         })}
       </div>
-      <PhraseAnswerSlot show={show} answer={item.responseAnswer ?? item.answer} />
+      {show && orderedLabels.length > 0 ? (
+        <div className="phrase-bubble-row phrase-order-answer" aria-label="Corrigé">
+          {orderedLabels.map((text, i) => {
+            const fill = PHRASE_COLORS[categoryOf(text)]
+            const ink = isDarkPhraseColor(fill) ? '#fff' : '#111'
+            return (
+              <span
+                className="phrase-bubble"
+                key={`ans-${text}-${i}`}
+                style={{
+                  backgroundColor: fill,
+                  borderColor: '#111',
+                  color: ink,
+                  WebkitPrintColorAdjust: 'exact',
+                  printColorAdjust: 'exact',
+                }}
+              >
+                {text}
+              </span>
+            )
+          })}
+        </div>
+      ) : (
+        <PhraseAnswerSlot show={show} answer={item.responseAnswer ?? item.answer} />
+      )}
     </div>
   )
 }

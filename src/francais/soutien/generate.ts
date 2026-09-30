@@ -1,7 +1,8 @@
 import { countGrapheme, wordHasGrapheme, type VowelBank } from '@/francais/lecture-banks'
 import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
 import { pick, shuffle, type Rng } from '@/math/rng'
-import type { Difficulty, MathItem } from '@/math/types'
+import { tagged } from '@/francais/phrase-sentences'
+import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
 import { soutienBankByTopic, type SoutienVowelBank } from './banks'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
@@ -98,6 +99,21 @@ function letterGrid(rng: Rng, bank: SoutienVowelBank, difficulty: Difficulty): M
 
 function countSoundInPhrase(phrase: string, bank: SoutienVowelBank): number {
   return countGrapheme(phrase, asVowelBank(bank))
+}
+
+/** Assemble les jetons (apostrophe collée, ponctuation déjà sur le mot). */
+function joinSoutienOrder(tokens: PhraseToken[]): string {
+  let out = ''
+  for (const token of tokens) {
+    if (!out) {
+      out = token.text
+      continue
+    }
+    if (out.endsWith("'") || out.endsWith('’')) out += token.text
+    else if (token.text === '?' || token.text === '!') out += token.text
+    else out += ` ${token.text}`
+  }
+  return out
 }
 
 function genKind(
@@ -426,19 +442,24 @@ function genKind(
       }
     }
     case 'ordre': {
-      const rows = shuffle(rng, [...bank.orderSentences]).slice(0, Math.min(n, bank.orderSentences.length))
+      /** Pastilles Gattegno colorées selon la nature (mot/catégorie). */
+      const rows = shuffle(rng, [...bank.orderSentences]).slice(
+        0,
+        Math.min(n, bank.orderSentences.length),
+      )
       return {
         instruction: 'Mettez dans l’ordre les mots.',
         preferredColumns: 1,
-        items: rows.map((tokens) => {
-          const ordered = [...tokens]
-          const scrambled = shuffle(rng, [...tokens])
+        items: rows.map((taggedParts) => {
+          const ordered: PhraseToken[] = tagged(taggedParts.join(' '))
+          const scrambled = shuffle(rng, [...ordered])
+          const sentence = joinSoutienOrder(ordered)
           return {
             layout: 'phrase-order' as const,
-            tokens: scrambled.map((text) => ({ text, category: 'nom' as const })),
-            labels: ordered,
-            answer: ordered.join(' '),
-            responseAnswer: ordered.join(' '),
+            tokens: scrambled,
+            labels: ordered.map((t) => t.text),
+            answer: sentence,
+            responseAnswer: sentence,
           }
         }),
       }
