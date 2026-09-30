@@ -38,7 +38,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'ecouter',
     label: '6 · Entendre le son',
-    description: 'Écouter et cocher quand on entend le son (sans image).',
+    description: 'Grille 3×3 : écouter, cocher et écrire quand on entend le son (sans image).',
     instruction: 'Écoutez les mots et cochez quand vous entendez le son.',
     preferredColumns: 1 as const,
   },

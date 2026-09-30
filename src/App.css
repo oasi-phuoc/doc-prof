@@ -1192,6 +1192,9 @@ html,body,#root{
   .syllable-match-num{color:var(--purple)!important}
   .syllable-complete-card{border:none!important}
   .syllable-complete-blank{border-bottom-color:var(--purple)!important}
+  .listen-check-grid,.listen-check-cell{border-color:#999!important}
+  .listen-check-num{color:var(--purple)!important}
+  .listen-check-box{border-color:#000!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1672,6 +1675,50 @@ html,body,#root{
   font-weight:600;
   margin-left:4px;
 }
+/* Soutien FR type 6 — grille écoute / cocher / écrire */
+.listen-check-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
+}
+.listen-check-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--lc-cols,3),minmax(0,1fr));
+  width:100%;
+  border:1px dashed #c5c9d0;
+}
+.listen-check-cell{
+  display:grid;
+  grid-template-columns:1.7em 1.15em minmax(0,1fr);
+  align-items:center;
+  gap:4px;
+  min-height:2.4em;
+  padding:6px 8px;
+  border-right:1px dashed #c5c9d0;
+  border-bottom:1px dashed #c5c9d0;
+  box-sizing:border-box;
+}
+.listen-check-grid .listen-check-cell:nth-child(3n){border-right:none}
+.listen-check-grid .listen-check-cell:nth-last-child(-n+3){border-bottom:none}
+.listen-check-num{
+  font-size:14px;font-weight:700;color:var(--purple);line-height:1;white-space:nowrap
+}
+.listen-check-box{
+  width:14px;height:14px;
+  border:1.5px solid var(--ink);
+  border-radius:2px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;line-height:1;color:var(--ink);
+  box-sizing:border-box;background:#fff;
+}
+.listen-check-box.checked{background:color-mix(in srgb,var(--purple) 12%,#fff)}
+.listen-check-line{
+  display:block;min-width:0;width:100%;
+  border-bottom:1.5px solid #c5c9d0;
+  min-height:1.15em;
+  font-size:13px;font-weight:600;color:var(--ink);
+  padding:0 2px;line-height:1.2;
+}
+.listen-check-line.filled{border-bottom-color:var(--purple)}
+
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
 .syllable-complete-block{
   display:flex;flex-direction:column;gap:8px;width:100%;min-width:0

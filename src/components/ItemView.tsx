@@ -159,6 +159,40 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const words = item.options ?? []
+  const positives = new Set((item.labels ?? []).map((w) => w.toLowerCase()))
+  const cols = Math.max(1, item.letterGridCols ?? 3)
+  const show = mode === 'answers'
+  return (
+    <div className="listen-check-block" aria-label="Entendre le son">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div
+        className="listen-check-grid"
+        style={{ '--lc-cols': cols } as CSSProperties}
+      >
+        {words.map((word, index) => {
+          const hit = positives.has(word.toLowerCase())
+          return (
+            <div className="listen-check-cell" key={`lc-${index}-${word}`}>
+              <span className="listen-check-num">{index + 1}.</span>
+              <span
+                className={`listen-check-box${show && hit ? ' checked' : ''}`}
+                aria-hidden
+              >
+                {show && hit ? '✓' : ''}
+              </span>
+              <span className={`listen-check-line${show ? ' filled' : ''}`}>
+                {show ? word : '\u00a0'}
+              </span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.syllableCompletes ?? []
   const cols = Math.max(1, item.vocabCols ?? 2)
@@ -1806,6 +1840,7 @@ export function ItemView({
     item.layout === 'vocab-match' ||
     item.layout === 'syllable-complete' ||
     item.layout === 'syllable-table' ||
+    item.layout === 'listen-check' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -1882,6 +1917,7 @@ export function ItemView({
         {item.layout === 'syllable-complete' && (
           <SyllableCompleteBlock item={item} mode={mode} />
         )}
+        {item.layout === 'listen-check' && <ListenCheckBlock item={item} mode={mode} />}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
         ) : null}

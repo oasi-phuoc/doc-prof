@@ -232,6 +232,7 @@ function genKind(
       }
     }
     case 'ecouter': {
+      /** Grille 3×9 : n° + case + trait ; mots dictés (corrigé). */
       const positives = shuffle(rng, [...bank.words]).slice(0, 5)
       const negatives = shuffle(rng, otherWords(bank)).slice(0, 4)
       const options = shuffle(rng, [...positives, ...negatives])
@@ -240,11 +241,13 @@ function genKind(
         preferredColumns: 1,
         items: [
           {
-            layout: 'select',
-            prompt: `Cochez quand vous entendez le son ${bank.sound}.`,
+            layout: 'listen-check',
+            prompt: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
             options,
-            answer: positives.join(' · '),
             labels: positives,
+            answer: positives.join(' · '),
+            letterGridCols: 3,
+            themeGraphemes: [...bank.graphemes],
           },
         ],
       }

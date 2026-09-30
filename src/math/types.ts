@@ -70,6 +70,7 @@ export type Layout =
   | 'vocab-match'
   | 'vocab-write'
   | 'syllable-complete'
+  | 'listen-check'
   | 'theory'
   | 'glossary'
   | 'card-grid'
