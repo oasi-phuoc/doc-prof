@@ -161,18 +161,46 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
 
 function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const words = item.options ?? []
+  const images = item.optionImages ?? []
+  const withImages = images.length > 0 && images.length === words.length
   const positives = new Set((item.labels ?? []).map((w) => w.toLowerCase()))
-  const cols = Math.max(1, item.letterGridCols ?? 3)
+  const cols = Math.max(1, item.letterGridCols ?? (withImages ? 5 : 3))
   const show = mode === 'answers'
   return (
-    <div className="listen-check-block" aria-label="Entendre le son">
+    <div
+      className={`listen-check-block${withImages ? ' listen-check-block--images' : ''}`}
+      aria-label="Entendre le son"
+    >
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
       <div
-        className="listen-check-grid"
+        className={`listen-check-grid${withImages ? ' listen-check-grid--images' : ''}`}
         style={{ '--lc-cols': cols } as CSSProperties}
       >
         {words.map((word, index) => {
           const hit = positives.has(word.toLowerCase())
+          if (withImages) {
+            return (
+              <div className="listen-check-image-cell" key={`lci-${index}-${word}`}>
+                <div className="listen-check-image">
+                  {images[index] ? (
+                    <img src={images[index]} alt="" />
+                  ) : (
+                    <span className="vocab-card-empty" aria-hidden />
+                  )}
+                </div>
+                <div className="listen-check-image-foot">
+                  <span className="listen-check-num">{index + 1}.</span>
+                  <span
+                    className={`listen-check-box${show && hit ? ' checked' : ''}`}
+                    aria-hidden
+                  >
+                    {show && hit ? '✓' : ''}
+                  </span>
+                  {show ? <span className="listen-check-caption">{word}</span> : null}
+                </div>
+              </div>
+            )
+          }
           return (
             <div className="listen-check-cell" key={`lc-${index}-${word}`}>
               <span className="listen-check-num">{index + 1}.</span>

@@ -253,23 +253,46 @@ function genKind(
       }
     }
     case 'ecouter-image': {
-      const positives = shuffle(rng, [...bank.words]).filter((w) => soutienImageFor(w)).slice(0, 5)
-      const negatives = shuffle(rng, otherWords(bank)).filter((w) => soutienImageFor(w)).slice(0, 4)
-      const pool = shuffle(rng, [...positives, ...negatives])
+      /** Grille 3×5 (15) : image + n° + case ; cocher si on entend le son. */
+      const need = 15
+      const withImg = (list: readonly string[]) =>
+        list.filter((w) => Boolean(soutienImageFor(w)))
+      const posPool = withImg(bank.words)
+      const negPool = withImg([
+        ...otherWords(bank),
+        ...bank.completes.map((c) => c.word),
+        ...bank.syllableWords,
+      ])
+      const positives = shuffle(rng, posPool).slice(0, Math.min(8, posPool.length))
+      const negatives = shuffle(
+        rng,
+        negPool.filter((w) => !positives.some((p) => p.toLowerCase() === w.toLowerCase())),
+      ).slice(0, Math.max(0, need - positives.length))
+      let pool = shuffle(rng, [...positives, ...negatives])
+      if (pool.length < need) {
+        const extra = withImg([...bank.words, ...otherWords(bank)]).filter(
+          (w) => !pool.some((p) => p.toLowerCase() === w.toLowerCase()),
+        )
+        pool = [...pool, ...shuffle(rng, extra)].slice(0, need)
+      }
+      pool = pool.slice(0, need)
       const images = pool.map((w) => soutienImageFor(w)!)
+      const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
+      const checked = pool.filter((w) => positiveSet.has(w.toLowerCase()))
       return {
-        instruction: `Cochez quand vous entendez le son ${bank.sound}.`,
+        instruction: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
         preferredColumns: 1,
         items: [
           {
-            layout: 'select',
-            selectVariant: 'cards',
-            prompt: `Cochez quand vous entendez le son ${bank.sound}.`,
+            layout: 'listen-check',
+            prompt: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
             options: pool,
             optionImages: images,
             imagesAvailable: true,
-            answer: positives.join(' · '),
-            labels: positives,
+            labels: checked,
+            answer: checked.join(' · '),
+            letterGridCols: 5,
+            themeGraphemes: [...bank.graphemes],
           },
         ],
       }

@@ -45,7 +45,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'ecouter-image',
     label: '7 · Entendre avec image',
-    description: 'Écouter et cocher le son, avec image.',
+    description: 'Grille 3×5 : image + n° (1, 2, 3…) + case à cocher si on entend le son.',
     instruction: 'Écoutez. Cochez quand vous entendez le son (regardez l’image).',
     preferredColumns: 1 as const,
   },

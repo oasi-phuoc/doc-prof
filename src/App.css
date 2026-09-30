@@ -1192,7 +1192,7 @@ html,body,#root{
   .syllable-match-num{color:var(--purple)!important}
   .syllable-complete-card{border:none!important}
   .syllable-complete-blank{border-bottom-color:var(--purple)!important}
-  .listen-check-grid,.listen-check-cell{border-color:#999!important}
+  .listen-check-grid,.listen-check-cell,.listen-check-image-cell,.listen-check-image{border-color:#999!important}
   .listen-check-num{color:var(--purple)!important}
   .listen-check-box{border-color:#000!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
@@ -1718,6 +1718,38 @@ html,body,#root{
   padding:0 2px;line-height:1.2;
 }
 .listen-check-line.filled{border-bottom-color:var(--purple)}
+
+/* Type 7 — grille images + n° + case */
+.listen-check-grid--images{
+  border:1px dashed #c5c9d0;
+}
+.listen-check-image-cell{
+  display:flex;flex-direction:column;
+  min-width:0;min-height:0;
+  border-right:1px dashed #c5c9d0;
+  border-bottom:1px dashed #c5c9d0;
+  box-sizing:border-box;
+  background:#fff;
+}
+.listen-check-grid--images .listen-check-image-cell:nth-child(5n){border-right:none}
+.listen-check-grid--images .listen-check-image-cell:nth-last-child(-n+5){border-bottom:none}
+.listen-check-image{
+  flex:1 1 auto;
+  display:flex;align-items:center;justify-content:center;
+  min-height:22mm;padding:4px;
+  border-bottom:1px dashed #c5c9d0;
+}
+.listen-check-image img{
+  max-width:100%;max-height:24mm;object-fit:contain;display:block
+}
+.listen-check-image-foot{
+  display:flex;align-items:center;gap:5px;
+  padding:4px 6px;min-height:1.6em;
+}
+.listen-check-caption{
+  font-size:10px;font-weight:600;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0
+}
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
 .syllable-complete-block{
