@@ -1214,6 +1214,9 @@ html,body,#root{
   .count-sound-blank{border-bottom-color:var(--purple)!important}
   .read-phrases-table,.read-phrases-table td{border-color:#999!important}
   .read-phrases-text .syllable-vowel{color:var(--purple)!important}
+  .audio-match-table,.audio-match-table td{border-color:#999!important}
+  .audio-match-num,.audio-match-key{color:var(--purple)!important}
+  .audio-match-word-text .syllable-vowel{color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -2025,6 +2028,49 @@ html,body,#root{
 .read-phrases-text .syllable-vowel{
   color:var(--purple);font-weight:700
 }
+
+/* Soutien FR type 15 — QR audio + relier au mot */
+.audio-match-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.audio-match-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.audio-match-table td{
+  border:1px dashed #c5c9d0;padding:4px 6px;vertical-align:middle
+}
+.audio-match-num{
+  width:1.6em;font-size:13px;font-weight:700;color:var(--purple);
+  text-align:center;white-space:nowrap
+}
+.audio-match-qr{
+  width:16mm;text-align:center;padding:3px!important
+}
+.audio-match-qr img{
+  width:14mm;height:14mm;display:inline-block;object-fit:contain
+}
+.audio-match-qr-ph{
+  display:inline-block;width:14mm;height:14mm;background:#eee
+}
+.audio-match-dot{
+  width:1.2em;text-align:center;font-size:11px;color:var(--ink);line-height:1
+}
+.audio-match-gap{width:auto;min-width:18mm}
+.audio-match-word{
+  width:28%;font-size:14px;font-weight:600;color:var(--ink);text-align:left
+}
+.audio-match-word-text{
+  display:inline-block;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:1px;
+  line-height:1.2;
+}
+.audio-match-word-text .syllable-vowel{
+  color:var(--purple);font-weight:700;
+  text-decoration:underline;text-decoration-color:var(--purple);
+  text-underline-offset:2px;
+}
+.audio-match-key{font-size:11px;font-weight:700;color:var(--purple);margin-left:4px}
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
 .syllable-complete-block{

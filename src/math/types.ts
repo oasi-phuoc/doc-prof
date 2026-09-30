@@ -77,6 +77,7 @@ export type Layout =
   | 'dictee-grid'
   | 'count-sound'
   | 'read-phrases'
+  | 'audio-match'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -429,6 +430,14 @@ export type MathItem = {
   }>
   /** Soutien FR type 14 : phrases à lire (voyelle colorée). */
   readPhrases?: string[]
+  /** Soutien FR type 15 : QR audio à gauche + mots à relier à droite. */
+  audioMatchRows?: Array<{
+    /** Mot entendu (ordre d’écoute / QR). */
+    listenWord: string
+    audioSrc?: string
+    /** Mot affiché sur la même ligne (mélangé). */
+    showWord: string
+  }>
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string

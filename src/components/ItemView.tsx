@@ -1,6 +1,8 @@
-import { Fragment, type CSSProperties, type ReactNode } from 'react'
+import { Fragment, useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import QRCode from 'qrcode'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
+import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { CompositeFigure } from './math/CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
 import { FractionView, renderMathText } from './math/FractionView'
@@ -155,6 +157,84 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       >
         {show ? item.answer : '\u00a0'}
       </span>
+    </div>
+  )
+}
+
+function AudioMatchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.audioMatchRows ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  const [qrSrcs, setQrSrcs] = useState<string[]>(() => rows.map(() => ''))
+
+  const audioKey = rows.map((r) => r.audioSrc ?? '').join('|')
+  useEffect(() => {
+    let cancelled = false
+    const srcs = audioKey.split('|')
+    const run = async () => {
+      const next = await Promise.all(
+        srcs.map(async (audioSrc) => {
+          if (!audioSrc) return ''
+          try {
+            return await QRCode.toDataURL(soutienAudioAbsoluteUrl(audioSrc), {
+              margin: 1,
+              width: 96,
+              errorCorrectionLevel: 'M',
+              color: { dark: '#111111', light: '#ffffff' },
+            })
+          } catch {
+            return ''
+          }
+        }),
+      )
+      if (!cancelled) setQrSrcs(next)
+    }
+    void run()
+    return () => {
+      cancelled = true
+    }
+  }, [audioKey])
+
+  return (
+    <div className="audio-match-block" aria-label="Écouter et relier">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="audio-match-table">
+        <tbody>
+          {rows.map((row, index) => {
+            const matchNum =
+              show
+                ? rows.findIndex((r) => r.listenWord === row.showWord) + 1
+                : 0
+            return (
+              <tr key={`am-${index}-${row.listenWord}`}>
+                <td className="audio-match-num">{index + 1}.</td>
+                <td className="audio-match-qr">
+                  {qrSrcs[index] ? (
+                    <img src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
+                  ) : (
+                    <span className="audio-match-qr-ph" aria-hidden />
+                  )}
+                </td>
+                <td className="audio-match-dot" aria-hidden>
+                  ●
+                </td>
+                <td className="audio-match-gap" aria-hidden />
+                <td className="audio-match-dot" aria-hidden>
+                  ●
+                </td>
+                <td className="audio-match-word">
+                  <span className="audio-match-word-text">
+                    {highlightThemeLetters(row.showWord, graphemes)}
+                  </span>
+                  {show && matchNum > 0 ? (
+                    <span className="audio-match-key"> ← {matchNum}</span>
+                  ) : null}
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -2134,6 +2214,7 @@ export function ItemView({
     item.layout === 'dictee-grid' ||
     item.layout === 'count-sound' ||
     item.layout === 'read-phrases' ||
+    item.layout === 'audio-match' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -2227,6 +2308,9 @@ export function ItemView({
           <CountSoundBlock item={item} mode={mode} />
         )}
         {item.layout === 'read-phrases' && <ReadPhrasesBlock item={item} />}
+        {item.layout === 'audio-match' && (
+          <AudioMatchBlock item={item} mode={mode} />
+        )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
         ) : null}

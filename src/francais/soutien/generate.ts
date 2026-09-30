@@ -4,6 +4,7 @@ import { pick, shuffle, type Rng } from '@/math/rng'
 import { tagged } from '@/francais/phrase-sentences'
 import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
 import { soutienBankByTopic, type SoutienVowelBank } from './banks'
+import { soutienAudioFor } from './audio'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
 
@@ -482,29 +483,30 @@ function genKind(
       }
     }
     case 'associer-audio': {
-      const pairs = shuffle(rng, [...bank.audioPairs]).slice(0, Math.min(8, bank.audioPairs.length))
-      const left = pairs.map((p) => p.word)
-      const right = shuffle(
+      /** QR audio (gauche) + mots mélangés à relier (droite). */
+      const pairs = shuffle(rng, [...bank.audioPairs]).slice(
+        0,
+        Math.min(8, bank.audioPairs.length),
+      )
+      const listenWords = pairs.map((p) => p.word)
+      const showWords = shuffle(
         rng,
         pairs.map((p) => p.word),
       )
-      // distractors on the sheet: show word + other as choice columns via match
-      const options = shuffle(
-        rng,
-        Array.from(new Set([...pairs.map((p) => p.word), ...pairs.map((p) => p.other)])),
-      )
       return {
-        instruction: 'Écoutez et associez le mot.',
+        instruction: 'Écoutez (QR) et reliez au bon mot.',
         preferredColumns: 1,
         items: [
           {
-            layout: 'vocab-match',
-            prompt: 'Écoutez et associez le mot.',
-            labels: left.map((_, i) => String(i + 1)),
-            options: right.length ? right : options,
-            vocabMatchMode: 'text',
-            vocabPairs: pairs.map((p, i) => ({ left: String(i + 1), right: p.word })),
-            answer: pairs.map((p, i) => `${i + 1} → ${p.word}`).join(' · '),
+            layout: 'audio-match',
+            prompt: 'Écoutez et reliez au bon mot.',
+            audioMatchRows: listenWords.map((listenWord, i) => ({
+              listenWord,
+              audioSrc: soutienAudioFor(listenWord),
+              showWord: showWords[i] ?? listenWord,
+            })),
+            answer: listenWords.map((w, i) => `${i + 1} → ${w}`).join(' · '),
+            themeGraphemes: [...bank.graphemes],
           },
         ],
       }

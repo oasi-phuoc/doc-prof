@@ -101,8 +101,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'associer-audio',
     label: '15 · Écouter et associer',
-    description: 'Écouter et relier au bon mot.',
-    instruction: 'Écoutez et associez le mot.',
+    description: 'QR audio à gauche + mots à relier à droite (voyelle colorée).',
+    instruction: 'Écoutez (QR) et reliez au bon mot.',
     preferredColumns: 1 as const,
   },
 ] as const
