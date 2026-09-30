@@ -31,6 +31,8 @@ export type JeuxGenerateOptions = {
   gameBorderVersoId?: string
   /** Taille des mots (petit | moyen | grand). */
   gameFontSize?: string
+  /** Vocabulaire : coloriage Alpha (graphies / sons). */
+  gameAlpha?: boolean
 }
 
 function withBoardChrome(
@@ -38,6 +40,7 @@ function withBoardChrome(
   rectoId?: string,
   versoId?: string,
   fontSizeId?: string,
+  alphaPhonics?: boolean,
 ): MathItem[] {
   // Conserver '' (= aucune) pour ne pas réinjecter l’autre face via borderId.
   const recto = (rectoId ?? '').trim()
@@ -53,6 +56,7 @@ function withBoardChrome(
             borderRectoId: recto,
             borderVersoId: verso,
             fontSize,
+            ...(alphaPhonics ? { alphaPhonics: true } : {}),
           },
         }
       : item,
@@ -744,6 +748,7 @@ export function tryGenerateJeuxBatch(
         ? options.gameBorderVersoId
         : options.gameBorderId,
       options.gameFontSize,
+      typeId === 'jeux-vocabulaire' ? Boolean(options.gameAlpha) : false,
     ),
   }
 }

@@ -1217,6 +1217,12 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
             prev?.exerciseType === type.id
               ? (prev.gameFontSize ?? DEFAULT_GAME_FONT_SIZE)
               : DEFAULT_GAME_FONT_SIZE,
+          gameAlpha:
+            type.id === 'jeux-vocabulaire'
+              ? prev?.exerciseType === type.id
+                ? Boolean(prev.gameAlpha)
+                : false
+              : undefined,
         }
       : {
           gameEntries: undefined,
@@ -1230,6 +1236,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameBorderRectoId: undefined,
           gameBorderVersoId: undefined,
           gameFontSize: undefined,
+          gameAlpha: undefined,
         }),
     ...(isCalli
       ? (() => {
@@ -1995,6 +2002,7 @@ function GeneratorPage() {
           ? fields.gameBorderVersoId
           : fields.gameBorderId,
       gameFontSize: fields.gameFontSize ?? DEFAULT_GAME_FONT_SIZE,
+      gameAlpha: fields.gameAlpha,
       calliText: fields.calliText,
       calliFont: fields.calliFont,
       calliSize: fields.calliSize,
@@ -2674,6 +2682,7 @@ function GeneratorPage() {
                       : activeBlock.gameBorderId
                   }
                   gameFontSize={activeBlock.gameFontSize ?? DEFAULT_GAME_FONT_SIZE}
+                  gameAlpha={activeBlock.gameAlpha}
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}

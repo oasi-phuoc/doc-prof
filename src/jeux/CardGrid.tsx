@@ -1,7 +1,27 @@
 import type { CSSProperties, ReactNode } from 'react'
+import { alphaToneClass, tokenizeAlpha } from './alpha-phonics'
 import { gameBorderSrc } from './borders'
 import { gameFontSizePx } from './font-size'
 import type { GameBoard, GameCard, GamePanel } from './types'
+
+/** Mot en coloriage Alpha (graphies colorées). */
+function AlphaWord({ text }: { text: string }) {
+  const segments = tokenizeAlpha(text)
+  return (
+    <span className="alpha-word">
+      {segments.map((seg, i) => (
+        <span key={`${seg.text}-${i}`} className={alphaToneClass(seg.tone)}>
+          {seg.text}
+        </span>
+      ))}
+    </span>
+  )
+}
+
+function renderCardWord(text: string | undefined, alpha?: boolean): ReactNode {
+  if (!text) return null
+  return alpha ? <AlphaWord text={text} /> : text
+}
 
 /** Logo ClairFLE (cercle) + libellé de série — dos identification (Mémory, etc.). */
 function SeriesIdentity({
@@ -66,11 +86,13 @@ function CardFace({
   borderRectoId,
   borderVersoId,
   side,
+  alphaPhonics,
 }: {
   card: GameCard
   borderRectoId?: string
   borderVersoId?: string
   side?: 'recto' | 'verso'
+  alphaPhonics?: boolean
 }) {
   const variant = card.variant ?? 'default'
   const showImageSlot =
@@ -91,12 +113,16 @@ function CardFace({
           {card.imageSrc ? (
             <img src={card.imageSrc} alt="" />
           ) : (
-            <span className="game-domino-label">{card.text}</span>
+            <span className="game-domino-label">
+              {renderCardWord(card.text, alphaPhonics)}
+            </span>
           )}
         </div>
         <span className="game-domino-sep" aria-hidden />
         <div className="game-domino-half is-word">
-          <span className="game-domino-label">{card.textRight}</span>
+          <span className="game-domino-label">
+            {renderCardWord(card.textRight, alphaPhonics)}
+          </span>
         </div>
       </div>,
       { borderSrc: border, hideBadge },
@@ -170,7 +196,7 @@ function CardFace({
     return cardShell(
       'game-card is-intrus-answer',
       card,
-      <div className="game-card-word">{card.text}</div>,
+      <div className="game-card-word">{renderCardWord(card.text, alphaPhonics)}</div>,
       { borderSrc: border, hideBadge },
     )
   }
@@ -180,7 +206,7 @@ function CardFace({
     return cardShell(
       'game-card is-word is-verso-content',
       card,
-      <div className="game-card-word">{card.text}</div>,
+      <div className="game-card-word">{renderCardWord(card.text, alphaPhonics)}</div>,
       { borderSrc: border, hideBadge },
     )
   }
@@ -201,7 +227,9 @@ function CardFace({
       {card.lines && card.lines[0] && variant !== 'default' ? (
         <small className="game-card-sub">{card.lines[0]}</small>
       ) : null}
-      {showWord ? <div className="game-card-word">{card.text}</div> : null}
+      {showWord ? (
+        <div className="game-card-word">{renderCardWord(card.text, alphaPhonics)}</div>
+      ) : null}
       {variant === 'image' && !card.imageSrc ? (
         <div className="game-card-word is-muted">Image</div>
       ) : null}
@@ -215,11 +243,13 @@ function PanelGrid({
   borderRectoId,
   borderVersoId,
   side,
+  alphaPhonics,
 }: {
   panel: GamePanel
   borderRectoId?: string
   borderVersoId?: string
   side?: 'recto' | 'verso'
+  alphaPhonics?: boolean
 }) {
   return (
     <div
@@ -239,6 +269,7 @@ function PanelGrid({
           borderRectoId={borderRectoId}
           borderVersoId={borderVersoId}
           side={side}
+          alphaPhonics={alphaPhonics}
         />
       ))}
     </div>
@@ -283,6 +314,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
   const borderVersoId =
     board.borderVersoId !== undefined ? board.borderVersoId : board.borderId
   const side = board.side
+  const alphaPhonics = Boolean(board.alphaPhonics)
   const frame = board.frameColor?.trim()
   const boardStyle = {
     '--game-word-px': gameFontSizePx(board.fontSize, kind),
@@ -338,6 +370,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
             borderRectoId={cellBorderRecto}
             borderVersoId={cellBorderVerso}
             side={side}
+            alphaPhonics={alphaPhonics}
           />
         ))}
       </div>

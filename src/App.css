@@ -2300,6 +2300,34 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   --jeux-false:#a33b2b;
   --jeux-card-radius:10px;
   --series-frame:var(--jeux-accent);
+  /* Alpha — 1 couleur = 1 son (graphies) */
+  --alpha-vowel:#d32f2f;
+  --alpha-ou:#ef6c00;
+  --alpha-oi:#f9a825;
+  --alpha-ai:#8e24aa;
+  --alpha-au:#ec407a;
+  --alpha-eu:#1e88e5;
+  --alpha-an:#2e7d32;
+  --alpha-on:#00acc1;
+  --alpha-in:#6d4c41;
+  --alpha-un:#3949ab;
+  --alpha-cons:#111111;
+}
+.alpha-word{display:inline}
+.alpha-tone-vowel{color:var(--alpha-vowel);font-weight:inherit}
+.alpha-tone-ou{color:var(--alpha-ou);font-weight:inherit}
+.alpha-tone-oi{color:var(--alpha-oi);font-weight:inherit}
+.alpha-tone-ai{color:var(--alpha-ai);font-weight:inherit}
+.alpha-tone-au{color:var(--alpha-au);font-weight:inherit}
+.alpha-tone-eu{color:var(--alpha-eu);font-weight:inherit}
+.alpha-tone-an{color:var(--alpha-an);font-weight:inherit}
+.alpha-tone-on{color:var(--alpha-on);font-weight:inherit}
+.alpha-tone-in{color:var(--alpha-in);font-weight:inherit}
+.alpha-tone-un{color:var(--alpha-un);font-weight:inherit}
+.alpha-tone-cons{color:var(--alpha-cons);font-weight:inherit}
+.game-card-word .alpha-word,
+.game-domino-label .alpha-word{
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
 /* padding Jeux déjà défini avec .sheet-odd/.sheet-even ci-dessus */
 .sheet-body:has(.layout-card-grid)>.exercise-block{

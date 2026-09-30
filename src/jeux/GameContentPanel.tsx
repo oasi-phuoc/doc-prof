@@ -38,6 +38,8 @@ export type GameContentChange = {
   gameBorderRectoId?: string
   gameBorderVersoId?: string
   gameFontSize?: string
+  /** Vocabulaire : coloriage Alpha (1 couleur = 1 son). */
+  gameAlpha?: boolean
 }
 
 const SERIES_DEFAULTS: Record<string, string> = {
@@ -169,18 +171,22 @@ function SeriesIdentityFields({
   borderRectoId,
   borderVersoId,
   fontSize,
+  alpha,
   onSeriesName,
   onBorderIds,
   onFontSize,
+  onAlpha,
 }: {
   typeId: string
   seriesName?: string
   borderRectoId?: string
   borderVersoId?: string
   fontSize?: string
+  alpha?: boolean
   onSeriesName: (name: string) => void
   onBorderIds: (recto: string | undefined, verso: string | undefined) => void
   onFontSize: (size: GameFontSizeId) => void
+  onAlpha?: (on: boolean) => void
 }) {
   const [faceTab, setFaceTab] = useState<'recto' | 'verso'>('recto')
   const recto = borderRectoId?.trim() || ''
@@ -305,6 +311,30 @@ function SeriesIdentityFields({
             : 'Petit : 20 px · Moyen : 30 px · Grand : 40 px'}
         </small>
       </div>
+      {typeId === 'jeux-vocabulaire' && onAlpha ? (
+        <div className="mode-toggle-block game-alpha-block">
+          <b>Couleurs</b>
+          <div className="mode-toggle is-2" role="group" aria-label="Coloriage des mots">
+            <button
+              type="button"
+              className={!alpha ? 'active' : ''}
+              onClick={() => onAlpha(false)}
+            >
+              Normal
+            </button>
+            <button
+              type="button"
+              className={alpha ? 'active' : ''}
+              onClick={() => onAlpha(true)}
+            >
+              Alpha
+            </button>
+          </div>
+          <small className="muted">
+            Alpha : 1 couleur = 1 son (graphies : OU, AN, CH…).
+          </small>
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -323,6 +353,7 @@ export function GameContentPanel({
   gameBorderRectoId,
   gameBorderVersoId,
   gameFontSize,
+  gameAlpha = false,
   onChange,
 }: {
   typeId: string
@@ -338,6 +369,7 @@ export function GameContentPanel({
   gameBorderRectoId?: string
   gameBorderVersoId?: string
   gameFontSize?: string
+  gameAlpha?: boolean
   onChange: (next: GameContentChange) => void
 }) {
   const baseId = useId()
@@ -367,6 +399,7 @@ export function GameContentPanel({
   const borderVersoId =
     gameBorderVersoId !== undefined ? gameBorderVersoId : (gameBorderId ?? '')
   const fontSize = gameFontSize ?? DEFAULT_GAME_FONT_SIZE
+  const alphaOn = Boolean(gameAlpha)
 
   function chromeFields(): Pick<
     GameContentChange,
@@ -376,6 +409,7 @@ export function GameContentPanel({
     | 'gameBorderRectoId'
     | 'gameBorderVersoId'
     | 'gameFontSize'
+    | 'gameAlpha'
   > {
     return {
       gameBackColor,
@@ -384,6 +418,7 @@ export function GameContentPanel({
       gameBorderRectoId: borderRectoId,
       gameBorderVersoId: borderVersoId,
       gameFontSize: fontSize,
+      gameAlpha: typeId === 'jeux-vocabulaire' ? alphaOn : undefined,
     }
   }
 
@@ -510,6 +545,19 @@ export function GameContentPanel({
       gameSelectedIds: selectedIds,
       ...chromeFields(),
       gameFontSize: size,
+    })
+  }
+
+  function setAlpha(on: boolean) {
+    const resolvedNow = resolveEntries(typeId, entries)
+    onChange({
+      gameEntries: resolvedNow,
+      gameText: entriesToText(typeId, resolvedNow),
+      gameSource: source,
+      gameTopic: topicId,
+      gameSelectedIds: selectedIds,
+      ...chromeFields(),
+      gameAlpha: on,
     })
   }
 
@@ -738,9 +786,11 @@ export function GameContentPanel({
             borderRectoId={borderRectoId}
             borderVersoId={borderVersoId}
             fontSize={fontSize}
+            alpha={alphaOn}
             onSeriesName={setSeriesName}
             onBorderIds={setBorderIds}
             onFontSize={setFontSize}
+            onAlpha={typeId === 'jeux-vocabulaire' ? setAlpha : undefined}
           />
         ) : null}
       </div>
@@ -997,9 +1047,11 @@ export function GameContentPanel({
           borderRectoId={borderRectoId}
           borderVersoId={borderVersoId}
           fontSize={fontSize}
+          alpha={alphaOn}
           onSeriesName={setSeriesName}
           onBorderIds={setBorderIds}
           onFontSize={setFontSize}
+          onAlpha={typeId === 'jeux-vocabulaire' ? setAlpha : undefined}
         />
       ) : null}
     </div>

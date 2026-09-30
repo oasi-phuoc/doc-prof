@@ -666,6 +666,8 @@ export type ExerciseBlock = {
   gameBorderVersoId?: string
   /** Taille des mots sur les cartes (petit | moyen | grand). */
   gameFontSize?: string
+  /** Jeux Vocabulaire : coloriage Alpha (1 couleur = 1 son). */
+  gameAlpha?: boolean
   /**
    * Domaine Calligraphie : un mot ou une phrase par ligne
    * (texte brut du panneau enseignant·e).

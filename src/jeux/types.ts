@@ -107,4 +107,6 @@ export type GameBoard = {
   side?: 'recto' | 'verso'
   /** Taille des mots (petit | moyen | grand). */
   fontSize?: string
+  /** Vocabulaire : coloriage Alpha (1 couleur = 1 son / graphie). */
+  alphaPhonics?: boolean
 }
