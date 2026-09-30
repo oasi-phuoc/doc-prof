@@ -402,18 +402,27 @@ function genKind(
       }
     }
     case 'compter': {
-      const phrases = shuffle(rng, [...bank.countPhrases]).slice(0, Math.min(n, bank.countPhrases.length))
+      /** Phrase en Playwrite + « J’entends … fois le son. » (trait couleur thème). */
+      const phrases = shuffle(rng, [...bank.countPhrases]).slice(
+        0,
+        Math.min(5, bank.countPhrases.length),
+      )
+      const items = phrases.map((phrase) => ({
+        phrase,
+        count: countSoundInPhrase(phrase, bank),
+      }))
       return {
         instruction: `Combien de fois entendez-vous le son ${bank.sound} ?`,
         preferredColumns: 1,
-        items: phrases.map((phrase) => {
-          const total = countSoundInPhrase(phrase, bank)
-          return {
-            layout: 'text' as const,
-            prompt: `${phrase}\nJ’entends ___ fois le son ${bank.sound}.`,
-            answer: String(total),
-          }
-        }),
+        items: [
+          {
+            layout: 'count-sound',
+            prompt: `J’entends …… fois le son ${bank.sound}.`,
+            countSoundItems: items,
+            answer: items.map((it) => String(it.count)).join(' · '),
+            themeGraphemes: [...bank.graphemes],
+          },
+        ],
       }
     }
     case 'ordre': {

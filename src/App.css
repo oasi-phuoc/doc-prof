@@ -1209,6 +1209,9 @@ html,body,#root{
   .dictee-grid-num{color:var(--purple)!important}
   .dictee-write-line{border-bottom-color:var(--purple)!important}
   .dictee-write-line::before{border-bottom-color:var(--purple)!important}
+  .count-sound-block,.count-sound-item,.count-sound-head,.count-sound-num{border-color:#999!important}
+  .count-sound-num,.count-sound-prompt{color:var(--purple)!important}
+  .count-sound-blank{border-bottom-color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1943,6 +1946,63 @@ html,body,#root{
   pointer-events:none;
 }
 .dictee-write-line.filled::before{opacity:.35}
+
+/* Soutien FR type 12 — compter le son + phrase Playwrite */
+.count-sound-block{width:100%;min-width:0}
+.count-sound-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.count-sound-table td{
+  border:1px dashed #c5c9d0;vertical-align:middle;padding:0
+}
+.count-sound-num{
+  width:2em;
+  padding:6px 4px;
+  font-size:14px;font-weight:700;color:var(--purple);
+  text-align:center;vertical-align:middle
+}
+.count-sound-prompt-cell{padding:6px 10px}
+.count-sound-prompt{
+  font-size:13px;font-weight:700;color:var(--purple)
+}
+.count-sound-blank{
+  display:inline-block;
+  min-width:6ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 2px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+  vertical-align:baseline;
+}
+.count-sound-blank.filled{border-bottom-style:solid}
+.count-sound-phrase-cell{padding:0}
+.count-sound-phrase-wrap{
+  position:relative;
+  padding:8px 12px 10px;
+  /* lignes tiretées (cahier) derrière la phrase cursive */
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 11px,
+      #c5c9d0 11px,
+      #c5c9d0 12px
+    );
+  background-size:100% 12px;
+  background-position:0 6px;
+}
+.count-sound-phrase{
+  margin:0;
+  font-family:'Calli Playwrite',cursive;
+  font-size:18px;
+  font-weight:400;
+  line-height:24px;
+  color:var(--ink);
+  position:relative;
+  z-index:1;
+}
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
 .syllable-complete-block{

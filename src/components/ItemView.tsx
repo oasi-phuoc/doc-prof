@@ -159,6 +159,44 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function CountSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.countSoundItems ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="count-sound-block" aria-label="Compter le son">
+      <table className="count-sound-table">
+        <tbody>
+          {rows.map((row, index) => (
+            <Fragment key={`csr-${index}`}>
+              <tr className="count-sound-prompt-row">
+                <td className="count-sound-num" rowSpan={2}>
+                  {index + 1}.
+                </td>
+                <td className="count-sound-prompt-cell">
+                  <span className="count-sound-prompt">
+                    J’entends{' '}
+                    <span className={`count-sound-blank${show ? ' filled' : ''}`}>
+                      {show ? String(row.count) : '\u00a0'}
+                    </span>{' '}
+                    fois le son.
+                  </span>
+                </td>
+              </tr>
+              <tr className="count-sound-phrase-row">
+                <td className="count-sound-phrase-cell">
+                  <div className="count-sound-phrase-wrap">
+                    <p className="count-sound-phrase">{row.phrase}</p>
+                  </div>
+                </td>
+              </tr>
+            </Fragment>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function DicteeGridBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const words = item.dicteeWords ?? []
   const show = mode === 'answers'
@@ -2046,6 +2084,7 @@ export function ItemView({
     item.layout === 'phrase-scramble' ||
     item.layout === 'determinant-fill' ||
     item.layout === 'dictee-grid' ||
+    item.layout === 'count-sound' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -2134,6 +2173,9 @@ export function ItemView({
         )}
         {item.layout === 'dictee-grid' && (
           <DicteeGridBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'count-sound' && (
+          <CountSoundBlock item={item} mode={mode} />
         )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
