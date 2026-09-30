@@ -69,6 +69,7 @@ export type Layout =
   | 'vocab-table'
   | 'vocab-match'
   | 'vocab-write'
+  | 'syllable-complete'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -382,6 +383,15 @@ export type MathItem = {
   vocabWriteHint?: string
   /** Phrase lue à voix haute (dictée), affichée au corrigé. */
   vocabDictee?: string
+  /** Soutien FR type 5 : grille image + Un/Une + mot à trous (syllabe). */
+  syllableCompletes?: Array<{
+    article: string
+    before: string
+    blank: string
+    after: string
+    word: string
+    imageSrc?: string
+  }>
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string

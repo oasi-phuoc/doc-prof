@@ -159,6 +159,53 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.syllableCompletes ?? []
+  const cols = Math.max(1, item.vocabCols ?? 2)
+  const show = mode === 'answers'
+  return (
+    <div className="syllable-complete-block" aria-label="Compléter les mots">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div
+        className="syllable-complete-grid"
+        style={{ '--sc-cols': cols } as CSSProperties}
+      >
+        {rows.map((row, index) => {
+          const blankCh = Math.max(2, Math.min(6, row.blank.length + 1))
+          return (
+            <div className="syllable-complete-card" key={`sc-${index}-${row.word}`}>
+              <div className="syllable-complete-image">
+                {row.imageSrc ? (
+                  <img src={row.imageSrc} alt="" />
+                ) : (
+                  <span className="vocab-card-empty" aria-hidden />
+                )}
+              </div>
+              <div className="syllable-complete-text">
+                <span className="syllable-complete-article">{row.article}</span>{' '}
+                {row.before ? <span className="syllable-complete-affix">{row.before}</span> : null}
+                <span
+                  className={`syllable-complete-blank${show ? ' filled' : ''}`}
+                  style={{ width: `${blankCh}ch` }}
+                >
+                  {show ? row.blank : '\u00a0'}
+                </span>
+                <span className="syllable-complete-affix">{row.after}</span>
+                {show ? (
+                  <span className="syllable-complete-full">
+                    {' '}
+                    ({row.article} {row.word})
+                  </span>
+                ) : null}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 function DigitRow({
   digits,
   empty,
@@ -1757,6 +1804,8 @@ export function ItemView({
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match' ||
+    item.layout === 'syllable-complete' ||
+    item.layout === 'syllable-table' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -1830,6 +1879,9 @@ export function ItemView({
         {item.layout === 'vocab-table' && <VocabTable item={item} />}
         {item.layout === 'vocab-match' && <VocabMatch item={item} mode={mode} />}
         {item.layout === 'vocab-write' && <VocabWrite item={item} mode={mode} />}
+        {item.layout === 'syllable-complete' && (
+          <SyllableCompleteBlock item={item} mode={mode} />
+        )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
         ) : null}

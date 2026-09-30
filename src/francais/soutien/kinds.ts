@@ -31,7 +31,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'completer',
     label: '5 · Compléter les mots',
-    description: 'Compléter avec déterminant + mot (son cible, images Voc).',
+    description: 'Image + Un/Une + syllabe à écrire (consonne + voyelle), trait couleur thème.',
     instruction: 'Complétez les mots à l’aide de l’image.',
     preferredColumns: 1 as const,
   },

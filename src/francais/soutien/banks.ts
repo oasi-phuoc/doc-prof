@@ -2,7 +2,17 @@
 import type { VowelId } from '../lecture-banks'
 
 export type SoutienScramble = { sentence: string; word: string; letters: string }
-export type SoutienComplete = { article: string; word: string }
+/** Mot à compléter : Un/Une + [before]____[after] → word (syllabe = consonant+voyelle). */
+export type SoutienComplete = {
+  article: 'Un' | 'Une'
+  word: string
+  /** Préfixe affiché avant le trait (ex. « aspi »). */
+  before: string
+  /** Syllabe manquante (corrigé). */
+  blank: string
+  /** Suite du mot après le trait (ex. « teur », « teau »). */
+  after: string
+}
 export type SoutienDet = { blank: string; rest: string; sentence: string }
 export type SoutienAudio = { word: string; other: string }
 export type SoutienCompound = { parts: readonly [string, string]; word: string }
@@ -52,16 +62,16 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { parts: ['a', 'vion'] as const, word: 'avion' },
     ],
     completes: [
-      { article: 'Un', word: 'bateau' },
-      { article: 'Un', word: 'animal' },
-      { article: 'Un', word: 'arbre' },
-      { article: 'Une', word: 'famille' },
-      { article: 'Un', word: 'vase' },
-      { article: 'Un', word: 'ballon' },
-      { article: 'Une', word: 'datte' },
-      { article: 'Un', word: 'aspirateur' },
-      { article: 'Un', word: 'avion' },
-      { article: 'Une', word: 'allumette' },
+      { article: 'Un', word: 'bateau', before: '', blank: 'ba', after: 'teau' },
+      { article: 'Un', word: 'animal', before: '', blank: 'an', after: 'imal' },
+      { article: 'Un', word: 'arbre', before: '', blank: 'ar', after: 'bre' },
+      { article: 'Une', word: 'famille', before: '', blank: 'fa', after: 'mille' },
+      { article: 'Un', word: 'vase', before: '', blank: 'va', after: 'se' },
+      { article: 'Un', word: 'ballon', before: '', blank: 'ba', after: 'llon' },
+      { article: 'Une', word: 'datte', before: '', blank: 'da', after: 'tte' },
+      { article: 'Un', word: 'aspirateur', before: 'aspi', blank: 'ra', after: 'teur' },
+      { article: 'Un', word: 'avion', before: '', blank: 'av', after: 'ion' },
+      { article: 'Une', word: 'allumette', before: '', blank: 'al', after: 'lumette' },
     ],
     scrambles: [
       { sentence: 'Le chat noir marche près de la plage', word: 'plage', letters: 'GLPEA' },
@@ -127,16 +137,16 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { parts: ['o', 'live'] as const, word: 'olive' },
     ],
     completes: [
-      { article: 'Un', word: 'piano' },
-      { article: 'Une', word: 'otarie' },
-      { article: 'Un', word: 'cobra' },
-      { article: 'Un', word: 'fromage' },
-      { article: 'Une', word: 'moto' },
-      { article: 'Un', word: 'donut' },
-      { article: 'Une', word: 'robe' },
-      { article: 'Une', word: 'coccinelle' },
-      { article: 'Un', word: 'flocon' },
-      { article: 'Un', word: 'losange' },
+      { article: 'Un', word: 'piano', before: '', blank: 'pi', after: 'ano' },
+      { article: 'Une', word: 'otarie', before: '', blank: 'o', after: 'tarie' },
+      { article: 'Un', word: 'cobra', before: '', blank: 'co', after: 'bra' },
+      { article: 'Un', word: 'fromage', before: 'fro', blank: 'ma', after: 'ge' },
+      { article: 'Une', word: 'moto', before: '', blank: 'mo', after: 'to' },
+      { article: 'Un', word: 'donut', before: '', blank: 'do', after: 'nut' },
+      { article: 'Une', word: 'robe', before: '', blank: 'ro', after: 'be' },
+      { article: 'Une', word: 'coccinelle', before: '', blank: 'co', after: 'ccinelle' },
+      { article: 'Un', word: 'flocon', before: '', blank: 'flo', after: 'con' },
+      { article: 'Un', word: 'losange', before: '', blank: 'lo', after: 'sange' },
     ],
     scrambles: [
       { sentence: 'Le soleil brille sur le robot', word: 'soleil', letters: 'LEIOSLE' },
@@ -200,16 +210,16 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { parts: ['bro', 'coli'] as const, word: 'brocoli' },
     ],
     completes: [
-      { article: 'Un', word: 'tigre' },
-      { article: 'Un', word: 'briquet' },
-      { article: 'Un', word: 'cookie' },
-      { article: 'Un', word: 'canari' },
-      { article: 'Un', word: 'kiwi' },
-      { article: 'Un', word: 'épinard' },
-      { article: 'Un', word: 'citron' },
-      { article: 'Une', word: 'cerise' },
-      { article: 'Une', word: 'viande' },
-      { article: 'Un', word: 'hérisson' },
+      { article: 'Un', word: 'tigre', before: '', blank: 'ti', after: 'gre' },
+      { article: 'Un', word: 'briquet', before: '', blank: 'bri', after: 'quet' },
+      { article: 'Un', word: 'cookie', before: '', blank: 'coo', after: 'kie' },
+      { article: 'Un', word: 'canari', before: '', blank: 'ca', after: 'nari' },
+      { article: 'Un', word: 'kiwi', before: '', blank: 'ki', after: 'wi' },
+      { article: 'Un', word: 'épinard', before: '', blank: 'épi', after: 'nard' },
+      { article: 'Un', word: 'citron', before: '', blank: 'ci', after: 'tron' },
+      { article: 'Une', word: 'cerise', before: '', blank: 'ce', after: 'rise' },
+      { article: 'Une', word: 'viande', before: '', blank: 'vi', after: 'ande' },
+      { article: 'Un', word: 'hérisson', before: '', blank: 'hé', after: 'risson' },
     ],
     scrambles: [
       { sentence: 'Le biberon est bien rempli', word: 'biberon', letters: 'RBOINBE' },
@@ -275,16 +285,16 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { parts: ['am', 'bulance'] as const, word: 'ambulance' },
     ],
     completes: [
-      { article: 'Un', word: 'uniforme' },
-      { article: 'Une', word: 'sucette' },
-      { article: 'Un', word: 'biscuit' },
-      { article: 'Une', word: 'prune' },
-      { article: 'Un', word: 'nuage' },
-      { article: 'Une', word: 'huile' },
-      { article: 'Une', word: 'plume' },
-      { article: 'Un', word: 'muguet' },
-      { article: 'Une', word: 'luciole' },
-      { article: 'Une', word: 'peinture' },
+      { article: 'Un', word: 'uniforme', before: '', blank: 'u', after: 'niforme' },
+      { article: 'Une', word: 'sucette', before: '', blank: 'su', after: 'cette' },
+      { article: 'Un', word: 'biscuit', before: '', blank: 'bis', after: 'cuit' },
+      { article: 'Une', word: 'prune', before: '', blank: 'pru', after: 'ne' },
+      { article: 'Un', word: 'nuage', before: '', blank: 'nu', after: 'age' },
+      { article: 'Une', word: 'huile', before: '', blank: 'hui', after: 'le' },
+      { article: 'Une', word: 'plume', before: '', blank: 'plu', after: 'me' },
+      { article: 'Un', word: 'muguet', before: '', blank: 'mu', after: 'guet' },
+      { article: 'Une', word: 'luciole', before: '', blank: 'lu', after: 'ciole' },
+      { article: 'Une', word: 'peinture', before: 'pein', blank: 'tu', after: 're' },
     ],
     scrambles: [
       { sentence: 'La dune surplombe un petit refuge', word: 'dune', letters: 'NDUE' },
@@ -350,16 +360,16 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { parts: ['ce', 'rise'] as const, word: 'cerise' },
     ],
     completes: [
-      { article: 'Une', word: 'crevette' },
-      { article: 'Une', word: 'fenêtre' },
-      { article: 'Une', word: 'pelote' },
-      { article: 'Un', word: 'requin' },
-      { article: 'Une', word: 'recette' },
-      { article: 'Une', word: 'chemise' },
-      { article: 'Une', word: 'peluche' },
-      { article: 'Une', word: 'grenade' },
-      { article: 'Un', word: 'chemin' },
-      { article: 'Un', word: 'repas' },
+      { article: 'Une', word: 'crevette', before: '', blank: 'cre', after: 'vette' },
+      { article: 'Une', word: 'fenêtre', before: '', blank: 'fe', after: 'nêtre' },
+      { article: 'Une', word: 'pelote', before: '', blank: 'pe', after: 'lote' },
+      { article: 'Un', word: 'requin', before: '', blank: 're', after: 'quin' },
+      { article: 'Une', word: 'recette', before: '', blank: 're', after: 'cette' },
+      { article: 'Une', word: 'chemise', before: '', blank: 'che', after: 'mise' },
+      { article: 'Une', word: 'peluche', before: '', blank: 'pe', after: 'luche' },
+      { article: 'Une', word: 'grenade', before: '', blank: 'gre', after: 'nade' },
+      { article: 'Un', word: 'chemin', before: '', blank: 'che', after: 'min' },
+      { article: 'Un', word: 'repas', before: '', blank: 're', after: 'pas' },
     ],
     scrambles: [
       { sentence: 'Le melon n’est pas pour eux', word: 'melon', letters: 'NOLEM' },
@@ -425,15 +435,16 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { parts: ['gym', 'nase'] as const, word: 'gymnase' },
     ],
     completes: [
-      { article: 'Un', word: 'stylo' },
-      { article: 'Une', word: 'pyjama' },
-      { article: 'Un', word: 'bicyclette' },
-      { article: 'Une', word: 'cygne' },
-      { article: 'Un', word: 'gymnaste' },
-      { article: 'Une', word: 'pyramide' },
-      { article: 'Un', word: 'encyclopédie' },
-      { article: 'Une', word: 'myrtille' },
-      { article: 'Un', word: 'cyclone' },
+      { article: 'Un', word: 'stylo', before: '', blank: 'sty', after: 'lo' },
+      { article: 'Un', word: 'pyjama', before: '', blank: 'py', after: 'jama' },
+      { article: 'Une', word: 'bicyclette', before: '', blank: 'bi', after: 'cyclette' },
+      { article: 'Un', word: 'cygne', before: '', blank: 'cy', after: 'gne' },
+      { article: 'Un', word: 'gymnaste', before: '', blank: 'gym', after: 'naste' },
+      { article: 'Une', word: 'pyramide', before: '', blank: 'py', after: 'ramide' },
+      { article: 'Une', word: 'encyclopédie', before: 'ency', blank: 'clo', after: 'pédie' },
+      { article: 'Une', word: 'myrtille', before: '', blank: 'myr', after: 'tille' },
+      { article: 'Un', word: 'cyclone', before: '', blank: 'cy', after: 'clone' },
+      { article: 'Un', word: 'gymnase', before: '', blank: 'gym', after: 'nase' },
     ],
     scrambles: [
       { sentence: 'Le papyrus est un vieux document', word: 'papyrus', letters: 'YRUSAPYP' },

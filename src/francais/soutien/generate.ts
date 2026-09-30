@@ -207,23 +207,28 @@ function genKind(
       }
     }
     case 'completer': {
-      const pool = shuffle(rng, [...bank.completes]).slice(0, Math.min(n, bank.completes.length))
+      /** Grille 2×5 : image + Un/Une + [avant]____[après] (trait couleur thème). */
+      const pool = shuffle(rng, [...bank.completes]).slice(0, Math.min(10, bank.completes.length))
       return {
-        instruction: 'Complétez les mots ci-dessous à l’aide de l’image.',
+        instruction: 'Complétez les mots à l’aide de l’image.',
         preferredColumns: 1,
-        items: pool.map((row) => ({
-          layout: 'vocab-write' as const,
-          prompt: `${row.article} _____`,
-          answer: `${row.article} ${row.word}`,
-          vocabLineCh: 18,
-          vocabEntries: [
-            {
-              id: `c-${row.word}`,
-              label: row.word,
+        items: [
+          {
+            layout: 'syllable-complete',
+            prompt: 'Complétez les mots à l’aide de l’image.',
+            syllableCompletes: pool.map((row) => ({
+              article: row.article,
+              before: row.before,
+              blank: row.blank,
+              after: row.after,
+              word: row.word,
               imageSrc: soutienImageFor(row.word),
-            },
-          ],
-        })),
+            })),
+            answer: pool.map((row) => `${row.article} ${row.word}`).join(' · '),
+            vocabRows: 5,
+            vocabCols: 2,
+          },
+        ],
       }
     }
     case 'ecouter': {

@@ -1190,6 +1190,8 @@ html,body,#root{
   .syllable-cons{color:#000!important}
   .syllable-match-table,.syllable-match-table td{border:none!important}
   .syllable-match-num{color:var(--purple)!important}
+  .syllable-complete-card{border:none!important}
+  .syllable-complete-blank{border-bottom-color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1670,6 +1672,54 @@ html,body,#root{
   font-weight:600;
   margin-left:4px;
 }
+/* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
+.syllable-complete-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
+}
+.syllable-complete-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--sc-cols,2),minmax(0,1fr));
+  gap:8px 14px;
+  width:100%;
+}
+.syllable-complete-card{
+  display:flex;align-items:center;gap:8px;min-width:0;
+  border:none;padding:2px 0;
+}
+.syllable-complete-image{
+  flex:0 0 22mm;width:22mm;height:18mm;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#fff;
+}
+.syllable-complete-image img{
+  max-width:100%;max-height:100%;object-fit:contain;display:block
+}
+.syllable-complete-text{
+  flex:1;min-width:0;
+  font-size:14px;font-weight:600;line-height:1.35;color:var(--ink);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:0 1px;
+}
+.syllable-complete-article{font-weight:700}
+.syllable-complete-affix{font-weight:600}
+.syllable-complete-blank{
+  display:inline-block;
+  min-width:2.2ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 1px;
+  padding:0 1px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+}
+.syllable-complete-blank.filled{
+  border-bottom-style:solid;
+}
+.syllable-complete-full{
+  flex:1 0 100%;
+  font-size:11px;font-weight:600;color:var(--muted);margin-top:1px
+}
+
 .vocab-write{width:100%}
 .vocab-answer-line{
   display:block;width:auto;max-width:100%;
