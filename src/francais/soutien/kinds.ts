@@ -24,7 +24,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'relier',
     label: '4 · Relier les parties',
-    description: 'Associer les parties pour former les mots du type 1.',
+    description: 'Relier des syllabes correctement découpées pour former les mots.',
     instruction: 'Reliez les parties et formez un mot.',
     preferredColumns: 1 as const,
   },

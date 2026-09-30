@@ -371,7 +371,9 @@ export type MathItem = {
   vocabRows?: number
   vocabCols?: number
   /** Association Voc : mode image ou texte. */
-  vocabMatchMode?: 'image' | 'text'
+  vocabMatchMode?: 'image' | 'text' | 'syllables'
+  /** Graphèmes à colorer (Soutien FR — voyelle du thème). */
+  themeGraphemes?: string[]
   /** Paires correctes pour le corrigé (association). */
   vocabPairs?: Array<{ left: string; right: string }>
   /** Longueur du trait de réponse Voc (en caractères approximatifs). */

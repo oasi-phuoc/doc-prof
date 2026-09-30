@@ -54,6 +54,53 @@ function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const pairs = item.vocabPairs ?? []
   const byLeft = new Map(pairs.map((pair) => [pair.left, pair.right]))
   const imageMode = item.vocabMatchMode === 'image'
+  const syllableMode = item.vocabMatchMode === 'syllables'
+  const graphemes = item.themeGraphemes ?? []
+
+  if (syllableMode) {
+    return (
+      <div className="vocab-match vocab-match--syllables" aria-label="Relier les syllabes">
+        {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+        <table className="syllable-match-table">
+          <tbody>
+            {left.map((leftPart, index) => {
+              const rightPart = right[index] ?? ''
+              const matchLeft =
+                mode === 'answers'
+                  ? left.find((l) => byLeft.get(l) === rightPart)
+                  : undefined
+              const matchNum =
+                matchLeft != null ? left.findIndex((l) => l === matchLeft) + 1 : 0
+              return (
+                <tr key={`sm-${index}`}>
+                  <td className="syllable-match-num">{index + 1}.</td>
+                  <td className="syllable-match-left">
+                    {highlightThemeLetters(leftPart, graphemes)}
+                  </td>
+                  <td className="syllable-match-dot" aria-hidden>
+                    ●
+                  </td>
+                  <td className="syllable-match-gap" aria-hidden />
+                  <td className="syllable-match-dot" aria-hidden>
+                    ●
+                  </td>
+                  <td className="syllable-match-right">
+                    <span className="syllable-match-right-text">
+                      {highlightThemeLetters(rightPart, graphemes)}
+                    </span>
+                    {mode === 'answers' && matchNum > 0 ? (
+                      <span className="syllable-match-key"> ← {matchNum}</span>
+                    ) : null}
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
   return (
     <div className="vocab-match" aria-label="Association">
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}

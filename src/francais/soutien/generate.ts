@@ -178,7 +178,11 @@ function genKind(
       }
     }
     case 'relier': {
-      const compounds = shuffle(rng, [...bank.compounds]).slice(0, Math.min(6, bank.compounds.length))
+      /** 7 paires, syllabes découpées correctement ; droite mélangée. */
+      const compounds = shuffle(rng, [...bank.compounds]).slice(
+        0,
+        Math.min(7, bank.compounds.length),
+      )
       const left = compounds.map((c) => c.parts[0])
       const right = shuffle(
         rng,
@@ -186,15 +190,16 @@ function genKind(
       )
       const pairs = compounds.map((c) => ({ left: c.parts[0], right: c.parts[1] }))
       return {
-        instruction: 'Associez les paires et formez un mot.',
+        instruction: 'Reliez les parties et formez un mot.',
         preferredColumns: 1,
         items: [
           {
             layout: 'vocab-match',
-            prompt: 'Associez les paires et formez un mot.',
+            prompt: 'Reliez les parties et formez un mot.',
             labels: left,
             options: right,
-            vocabMatchMode: 'text',
+            vocabMatchMode: 'syllables',
+            themeGraphemes: [...bank.graphemes],
             vocabPairs: pairs,
             answer: compounds.map((c) => `${c.parts[0]} + ${c.parts[1]} → ${c.word}`).join(' · '),
           },

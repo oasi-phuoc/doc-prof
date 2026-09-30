@@ -1616,6 +1616,58 @@ html,body,#root{
   width:72px;height:54px;object-fit:contain;display:block;background:#fff;
   border:1px solid #d8dde6
 }
+
+/* Soutien FR type 4 — relier syllabes, tableau sans bordure */
+.syllable-match-table{
+  width:100%;
+  border-collapse:collapse;
+  border:none;
+  table-layout:fixed;
+  margin:2px 0 4px;
+}
+.syllable-match-table td{
+  border:none;
+  padding:5px 4px;
+  vertical-align:middle;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.3;
+  color:var(--ink);
+}
+.syllable-match-num{
+  width:2em;
+  color:var(--purple);
+  font-weight:700;
+  text-align:left;
+  white-space:nowrap;
+}
+.syllable-match-left{
+  width:22%;
+  text-align:left;
+  white-space:nowrap;
+}
+.syllable-match-dot{
+  width:1.2em;
+  text-align:center;
+  font-size:11px;
+  line-height:1;
+  color:var(--ink);
+  padding-left:2px;
+  padding-right:2px;
+}
+.syllable-match-gap{
+  width:28%;
+}
+.syllable-match-right{
+  text-align:left;
+  white-space:nowrap;
+}
+.syllable-match-key{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+  margin-left:4px;
+}
 .vocab-write{width:100%}
 .vocab-answer-line{
   display:block;width:auto;max-width:100%;
