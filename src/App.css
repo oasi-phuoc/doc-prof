@@ -1088,6 +1088,12 @@ html,body,#root{
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
   .item-number{background:transparent!important;border:0!important;color:var(--purple)!important}
+  /* Gattegno : fonds colorés des bulles / pastilles (sinon seuls les contours restent). */
+  .phrase-bubble,
+  .phrase-pastille.filled{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important
+  }
   .sheet-preview-wrap{display:none!important}
   .print-only-sheets{display:block!important}
   .print-only-sheets .worksheet-sheet{width:210mm;min-height:297mm;max-height:297mm;height:297mm;margin:0;transform:none;border:0;box-shadow:none;display:flex;flex-direction:column;overflow:hidden;position:static}
@@ -1525,6 +1531,12 @@ html,body,#root{
 .phrase-pastille{
   width:14px;height:14px;border-radius:50%;border:1.5px solid #111;background:#fff;
   display:inline-block;box-sizing:border-box
+}
+.phrase-pastille.filled,
+.phrase-bubble{
+  /* Conservent le remplissage couleur à l’impression PDF. */
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact
 }
 .phrase-bubble{
   display:inline-flex;align-items:center;justify-content:center;

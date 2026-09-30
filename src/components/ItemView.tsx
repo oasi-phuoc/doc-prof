@@ -1371,7 +1371,16 @@ function PhrasePastille({ category, filled }: { category?: PhraseCategory; fille
   return (
     <span
       className={`phrase-pastille${filled ? ' filled' : ''}`}
-      style={filled ? { backgroundColor: color, borderColor: color } : undefined}
+      style={
+        filled
+          ? {
+              backgroundColor: color,
+              borderColor: color,
+              WebkitPrintColorAdjust: 'exact',
+              printColorAdjust: 'exact',
+            }
+          : undefined
+      }
       aria-hidden
     />
   )
@@ -1426,7 +1435,13 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
             <span
               className="phrase-bubble"
               key={`${token.text}-${i}`}
-              style={{ backgroundColor: fill, borderColor: '#111', color: ink }}
+              style={{
+                backgroundColor: fill,
+                borderColor: '#111',
+                color: ink,
+                WebkitPrintColorAdjust: 'exact',
+                printColorAdjust: 'exact',
+              }}
             >
               {token.text}
             </span>
