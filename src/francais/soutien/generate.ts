@@ -100,23 +100,6 @@ function countSoundInPhrase(phrase: string, bank: SoutienVowelBank): number {
   return countGrapheme(phrase, asVowelBank(bank))
 }
 
-function splitSyllables(word: string, bank: SoutienVowelBank): string[] {
-  const lower = word.toLowerCase()
-  for (const g of bank.graphemes) {
-    const idx = lower.indexOf(g)
-    if (idx >= 0) {
-      const left = word.slice(0, idx)
-      const mid = word.slice(idx, idx + g.length)
-      const right = word.slice(idx + g.length)
-      const parts = [left, mid, right].filter((p) => p.length > 0)
-      if (parts.length >= 2) return parts
-    }
-  }
-  if (word.length <= 3) return [word]
-  const mid = Math.ceil(word.length / 2)
-  return [word.slice(0, mid), word.slice(mid)]
-}
-
 function genKind(
   kind: SoutienKindId,
   bank: SoutienVowelBank,
@@ -261,7 +244,7 @@ function genKind(
       const negPool = withImg([
         ...otherWords(bank),
         ...bank.completes.map((c) => c.word),
-        ...bank.syllableWords,
+        ...bank.syllableItems.map((item) => item.word),
       ])
       const positives = shuffle(rng, posPool).slice(0, Math.min(8, posPool.length))
       const negatives = shuffle(
@@ -298,36 +281,52 @@ function genKind(
       }
     }
     case 'syllabe-son': {
+      /** Grille 3×4 : image + n° + mini-tableau (1 case / syllabe). */
       const withSound = shuffle(
         rng,
-        bank.syllableWords.filter((w) => wordHasGrapheme(w, asVowelBank(bank))),
+        bank.syllableItems.filter((item) => wordHasGrapheme(item.word, asVowelBank(bank))),
       )
       const without = shuffle(
         rng,
-        [
-          ...otherWords(bank),
-          ...bank.syllableWords.filter((w) => !wordHasGrapheme(w, asVowelBank(bank))),
-        ],
+        bank.syllableItems.filter((item) => !wordHasGrapheme(item.word, asVowelBank(bank))),
       )
       const chosenPos = withSound.slice(0, 9)
       const chosenNeg = without.slice(0, Math.max(0, 12 - chosenPos.length))
-      const twelve = shuffle(rng, [...chosenPos, ...chosenNeg]).slice(0, 12)
+      let twelve = shuffle(rng, [...chosenPos, ...chosenNeg]).slice(0, 12)
+      if (twelve.length < 12) {
+        const rest = bank.syllableItems.filter(
+          (item) => !twelve.some((t) => t.word.toLowerCase() === item.word.toLowerCase()),
+        )
+        twelve = [...twelve, ...shuffle(rng, rest)].slice(0, 12)
+      }
       return {
         instruction: `À quelle syllabe entendez-vous le son ${bank.sound} ?`,
-        preferredColumns: 2,
-        items: twelve.map((word) => {
-          const parts = splitSyllables(word, bank)
-          const correct =
-            parts.find((p) => wordHasGrapheme(p, asVowelBank(bank))) ??
-            (wordHasGrapheme(word, asVowelBank(bank)) ? parts[0]! : '—')
-          const options = parts.length >= 2 ? parts : [...parts, '—']
-          return {
-            layout: 'select' as const,
-            prompt: word,
-            options: shuffle(rng, options),
-            answer: wordHasGrapheme(word, asVowelBank(bank)) ? correct : '—',
-          }
-        }),
+        preferredColumns: 1,
+        items: [
+          {
+            layout: 'syllable-sound',
+            prompt: `Cochez la case de la syllabe où vous entendez le son ${bank.sound}.`,
+            syllableSoundItems: twelve.map((item) => {
+              const parts = [...item.parts]
+              const hitIndex = parts.findIndex((p) => wordHasGrapheme(p, asVowelBank(bank)))
+              return {
+                word: item.word,
+                parts,
+                hitIndex: hitIndex >= 0 ? hitIndex : -1,
+                imageSrc: soutienImageFor(item.word),
+              }
+            }),
+            answer: twelve
+              .map((item) => {
+                const parts = item.parts
+                const hit = parts.find((p) => wordHasGrapheme(p, asVowelBank(bank)))
+                return hit ? `${item.word} → ${hit}` : item.word
+              })
+              .join(' · '),
+            letterGridCols: 3,
+            themeGraphemes: [...bank.graphemes],
+          },
+        ],
       }
     }
     case 'lettres-phrase': {

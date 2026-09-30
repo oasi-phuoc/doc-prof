@@ -159,6 +159,54 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.syllableSoundItems ?? []
+  const cols = Math.max(1, item.letterGridCols ?? 3)
+  const show = mode === 'answers'
+  return (
+    <div className="syllable-sound-block" aria-label="Syllabe du son">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div
+        className="syllable-sound-grid"
+        style={{ '--ss-cols': cols } as CSSProperties}
+      >
+        {rows.map((row, index) => (
+          <div className="syllable-sound-card" key={`ss-${index}-${row.word}`}>
+            <div className="syllable-sound-image">
+              {row.imageSrc ? (
+                <img src={row.imageSrc} alt="" />
+              ) : (
+                <span className="vocab-card-empty" aria-hidden />
+              )}
+            </div>
+            <div className="syllable-sound-foot">
+              <span className="syllable-sound-num">{index + 1}.</span>
+              <table className="syllable-mini-table" aria-label={`${row.parts.length} syllabes`}>
+                <tbody>
+                  <tr>
+                    {row.parts.map((part, pIdx) => {
+                      const hit = show && pIdx === row.hitIndex
+                      return (
+                        <td
+                          key={`${row.word}-${pIdx}`}
+                          className={hit ? 'is-hit' : undefined}
+                        >
+                          {hit ? part : '\u00a0'}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                </tbody>
+              </table>
+              {show ? <span className="syllable-sound-word">{row.word}</span> : null}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const words = item.options ?? []
   const images = item.optionImages ?? []
@@ -1869,6 +1917,7 @@ export function ItemView({
     item.layout === 'syllable-complete' ||
     item.layout === 'syllable-table' ||
     item.layout === 'listen-check' ||
+    item.layout === 'syllable-sound' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -1946,6 +1995,9 @@ export function ItemView({
           <SyllableCompleteBlock item={item} mode={mode} />
         )}
         {item.layout === 'listen-check' && <ListenCheckBlock item={item} mode={mode} />}
+        {item.layout === 'syllable-sound' && (
+          <SyllableSoundBlock item={item} mode={mode} />
+        )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
         ) : null}

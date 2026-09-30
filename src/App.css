@@ -1195,6 +1195,9 @@ html,body,#root{
   .listen-check-grid,.listen-check-cell,.listen-check-image-cell,.listen-check-image{border-color:#999!important}
   .listen-check-num{color:var(--purple)!important}
   .listen-check-box{border-color:#000!important}
+  .syllable-sound-grid,.syllable-sound-card,.syllable-sound-image{border-color:#999!important}
+  .syllable-sound-num{color:var(--purple)!important;border-color:var(--purple)!important}
+  .syllable-mini-table td{border-color:#000!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1749,6 +1752,64 @@ html,body,#root{
 .listen-check-caption{
   font-size:10px;font-weight:600;color:var(--muted);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0
+}
+
+/* Soutien FR type 8 — image + n° + mini-tableau de syllabes */
+.syllable-sound-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
+}
+.syllable-sound-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--ss-cols,3),minmax(0,1fr));
+  width:100%;
+  border:1px dashed #c5c9d0;
+}
+.syllable-sound-card{
+  display:flex;flex-direction:column;
+  border-right:1px dashed #c5c9d0;
+  border-bottom:1px dashed #c5c9d0;
+  box-sizing:border-box;background:#fff;min-width:0;
+}
+.syllable-sound-grid .syllable-sound-card:nth-child(3n){border-right:none}
+.syllable-sound-grid .syllable-sound-card:nth-last-child(-n+3){border-bottom:none}
+.syllable-sound-image{
+  flex:1 1 auto;
+  display:flex;align-items:center;justify-content:center;
+  min-height:24mm;padding:5px;
+  border-bottom:1px dashed #c5c9d0;
+}
+.syllable-sound-image img{
+  max-width:100%;max-height:26mm;object-fit:contain;display:block
+}
+.syllable-sound-foot{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  align-items:center;gap:6px;
+  padding:5px 6px;min-height:1.8em;
+}
+.syllable-sound-num{
+  font-size:13px;font-weight:700;color:var(--purple);
+  border:1px dashed color-mix(in srgb,var(--purple) 55%,#fff);
+  padding:2px 5px;line-height:1.2;white-space:nowrap;
+}
+.syllable-mini-table{
+  border-collapse:collapse;border:none;margin:0;width:auto;max-width:100%;
+}
+.syllable-mini-table td{
+  width:1.35em;height:1.35em;
+  border:1.25px solid var(--ink);
+  padding:0;text-align:center;vertical-align:middle;
+  font-size:10px;font-weight:700;line-height:1;color:var(--ink);
+  box-sizing:border-box;background:#fff;
+}
+.syllable-mini-table td.is-hit{
+  background:color-mix(in srgb,var(--purple) 18%,#fff);
+  color:var(--purple);
+}
+.syllable-sound-word{
+  grid-column:1 / -1;
+  font-size:10px;font-weight:600;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */

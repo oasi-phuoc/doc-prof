@@ -16,6 +16,8 @@ export type SoutienComplete = {
 export type SoutienDet = { blank: string; rest: string; sentence: string }
 export type SoutienAudio = { word: string; other: string }
 export type SoutienCompound = { parts: readonly [string, string]; word: string }
+/** Mot + découpe syllabique correcte (type 8). */
+export type SoutienSyllableItem = { word: string; parts: readonly string[] }
 
 export type SoutienVowelBank = {
   id: VowelId
@@ -34,7 +36,7 @@ export type SoutienVowelBank = {
   countPhrases: readonly string[]
   readPhrases: readonly string[]
   audioPairs: readonly SoutienAudio[]
-  syllableWords: readonly string[]
+  syllableItems: readonly SoutienSyllableItem[]
   orderSentences: readonly (readonly string[])[]
 }
 
@@ -104,7 +106,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'lapin', other: 'abricot' },
       { word: 'salade', other: 'lapin' },
     ],
-    syllableWords: ["Plante", "Patin", "Caméra", "Château", "Matelas", "Chandelier", "Magasin", "Caneton", "Papillon", "Chanteuse", "Automne", "Ordinateur"],
+    syllableItems: [
+      { word: 'Plante', parts: ['Plan', 'te'] },
+      { word: 'Patin', parts: ['Pa', 'tin'] },
+      { word: 'Caméra', parts: ['Ca', 'mé', 'ra'] },
+      { word: 'Château', parts: ['Châ', 'teau'] },
+      { word: 'Matelas', parts: ['Ma', 'te', 'las'] },
+      { word: 'Chandelier', parts: ['Chan', 'de', 'lier'] },
+      { word: 'Magasin', parts: ['Ma', 'ga', 'sin'] },
+      { word: 'Caneton', parts: ['Ca', 'ne', 'ton'] },
+      { word: 'Papillon', parts: ['Pa', 'pil', 'lon'] },
+      { word: 'Chanteuse', parts: ['Chan', 'teuse'] },
+      { word: 'Automne', parts: ['Au', 'tomne'] },
+      { word: 'Ordinateur', parts: ['Or', 'di', 'na', 'teur'] },
+    ],
     orderSentences: [
       ["La", "classe", "est", "pleine."],
       ["Mario", "part", "en", "vacances."],
@@ -179,7 +194,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'flocon', other: 'coffre' },
       { word: 'parasol', other: 'flocon' },
     ],
-    syllableWords: ["Abricot", "Boxe", "Brocoli", "Chorizo", "Forêt", "Serveuse", "Homard", "Pantalon", "Colibri", "Échalote", "Judo", "Lavabo"],
+    syllableItems: [
+      { word: 'Abricot', parts: ['A', 'bri', 'cot'] },
+      { word: 'Boxe', parts: ['Boxe'] },
+      { word: 'Brocoli', parts: ['Bro', 'co', 'li'] },
+      { word: 'Chorizo', parts: ['Cho', 'ri', 'zo'] },
+      { word: 'Forêt', parts: ['Fo', 'rêt'] },
+      { word: 'Serveuse', parts: ['Ser', 'veuse'] },
+      { word: 'Homard', parts: ['Ho', 'mard'] },
+      { word: 'Pantalon', parts: ['Pan', 'ta', 'lon'] },
+      { word: 'Colibri', parts: ['Co', 'li', 'bri'] },
+      { word: 'Échalote', parts: ['É', 'cha', 'lote'] },
+      { word: 'Judo', parts: ['Ju', 'do'] },
+      { word: 'Lavabo', parts: ['La', 'va', 'bo'] },
+    ],
     orderSentences: [
       ["Le", "cochon", "dort", "dans", "son", "abri."],
       ["Le", "robot", "est", "sur", "la", "table."],
@@ -252,7 +280,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'soulier', other: 'grizzly' },
       { word: 'grizzly', other: 'soulier' },
     ],
-    syllableWords: ["Artichaut", "Mixeur", "Balai", "glacier", "moustique", "clarinette", "cassis", "imprimante", "kangourou", "dentifrice", "frite", "chien"],
+    syllableItems: [
+      { word: 'Artichaut', parts: ['Ar', 'ti', 'chaut'] },
+      { word: 'Mixeur', parts: ['Mi', 'xeur'] },
+      { word: 'Balai', parts: ['Ba', 'lai'] },
+      { word: 'glacier', parts: ['gla', 'cier'] },
+      { word: 'moustique', parts: ['mous', 'tique'] },
+      { word: 'clarinette', parts: ['cla', 'ri', 'nette'] },
+      { word: 'cassis', parts: ['cas', 'sis'] },
+      { word: 'imprimante', parts: ['im', 'pri', 'mante'] },
+      { word: 'kangourou', parts: ['kan', 'gou', 'rou'] },
+      { word: 'dentifrice', parts: ['den', 'ti', 'frice'] },
+      { word: 'frite', parts: ['fri', 'te'] },
+      { word: 'chien', parts: ['chien'] },
+    ],
     orderSentences: [
       ["Nina", "a", "mis", "une", "liste", "sur", "la", "vitre."],
       ["Michel", "n’a", "pas", "fini", "son", "bol", "de", "riz."],
@@ -327,7 +368,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'lunette', other: 'bureau' },
       { word: 'juge', other: 'bulldozer' },
     ],
-    syllableWords: ["agriculteur", "peluche", "balai", "ciseaux", "surligneur", "clarinette", "gazoduc", "écureuil", "tortue", "culotte", "hirondelle", "fusée"],
+    syllableItems: [
+      { word: 'agriculteur', parts: ['a', 'gri', 'cul', 'teur'] },
+      { word: 'peluche', parts: ['pe', 'luche'] },
+      { word: 'balai', parts: ['ba', 'lai'] },
+      { word: 'ciseaux', parts: ['ci', 'seaux'] },
+      { word: 'surligneur', parts: ['sur', 'li', 'gneur'] },
+      { word: 'clarinette', parts: ['cla', 'ri', 'nette'] },
+      { word: 'gazoduc', parts: ['ga', 'zo', 'duc'] },
+      { word: 'écureuil', parts: ['é', 'cu', 'reuil'] },
+      { word: 'tortue', parts: ['tor', 'tue'] },
+      { word: 'culotte', parts: ['cu', 'lotte'] },
+      { word: 'hirondelle', parts: ['hi', 'ron', 'delle'] },
+      { word: 'fusée', parts: ['fu', 'sée'] },
+    ],
     orderSentences: [
       ["Luc", "ajoute", "du", "sucre", "dans", "son", "jus."],
       ["Le", "renard", "a", "trouvé", "une", "plume", "brune."],
@@ -402,7 +456,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'remix', other: 'reflet' },
       { word: 'sonnerie', other: 'casserole' },
     ],
-    syllableWords: ["betterave", "baignoire", "madelaine", "cadenas", "harmonica", "fenouil", "hanneton", "grenouille", "caleçon", "coquelicot", "hexagone"],
+    syllableItems: [
+      { word: 'betterave', parts: ['bet', 'te', 'rave'] },
+      { word: 'baignoire', parts: ['bai', 'gnoire'] },
+      { word: 'madelaine', parts: ['ma', 'de', 'laine'] },
+      { word: 'cadenas', parts: ['ca', 'de', 'nas'] },
+      { word: 'harmonica', parts: ['har', 'mo', 'ni', 'ca'] },
+      { word: 'fenouil', parts: ['fe', 'nouil'] },
+      { word: 'hanneton', parts: ['han', 'ne', 'ton'] },
+      { word: 'grenouille', parts: ['gre', 'nouille'] },
+      { word: 'caleçon', parts: ['ca', 'le', 'çon'] },
+      { word: 'coquelicot', parts: ['co', 'que', 'li', 'cot'] },
+      { word: 'hexagone', parts: ['hex', 'a', 'gone'] },
+      { word: 'cerise', parts: ['ce', 'rise'] },
+    ],
     orderSentences: [
       ["Après", "le", "repas,", "le", "renard", "retourne", "à", "son", "refuge."],
       ["Elle", "se", "remet", "de", "son", "retard."],
@@ -473,7 +540,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'analyse', other: 'paysage' },
       { word: 'physicien', other: 'syllabe' },
     ],
-    syllableWords: ["polygone", "cyclisme", "polystyrène", "symètrie", "rythme", "dynamite", "recycler", "oxygène"],
+    syllableItems: [
+      { word: 'polygone', parts: ['po', 'ly', 'gone'] },
+      { word: 'cyclisme', parts: ['cy', 'clisme'] },
+      { word: 'polystyrène', parts: ['po', 'ly', 'sty', 'rène'] },
+      { word: 'symétrie', parts: ['sy', 'mé', 'trie'] },
+      { word: 'rythme', parts: ['ryth', 'me'] },
+      { word: 'dynamite', parts: ['dy', 'na', 'mite'] },
+      { word: 'recycler', parts: ['re', 'cy', 'cler'] },
+      { word: 'oxygène', parts: ['ox', 'y', 'gène'] },
+      { word: 'pyramide', parts: ['py', 'ra', 'mide'] },
+      { word: 'stylo', parts: ['sty', 'lo'] },
+      { word: 'cygne', parts: ['cy', 'gne'] },
+      { word: 'gymnase', parts: ['gym', 'nase'] },
+    ],
     orderSentences: [
       ["Il", "y", "a", "un", "stylo,", "un", "livre", "et", "un", "pyjama", "ici."],
       ["Mon", "ami", "a", "remis", "sa", "bicyclette", "à", "minuit."],

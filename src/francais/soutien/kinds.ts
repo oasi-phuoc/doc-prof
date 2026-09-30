@@ -52,9 +52,9 @@ export const SOUTIEN_KINDS = [
   {
     id: 'syllabe-son',
     label: '8 · Syllabe du son',
-    description: '12 mots : cocher la syllabe où l’on entend le son (≥9 avec le son).',
+    description: 'Grille 3×4 : image + n° + mini-tableau (une case par syllabe du mot).',
     instruction: 'À quelle syllabe entendez-vous le son ?',
-    preferredColumns: 2 as const,
+    preferredColumns: 1 as const,
   },
   {
     id: 'lettres-phrase',

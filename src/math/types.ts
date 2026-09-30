@@ -71,6 +71,7 @@ export type Layout =
   | 'vocab-write'
   | 'syllable-complete'
   | 'listen-check'
+  | 'syllable-sound'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -391,6 +392,14 @@ export type MathItem = {
     blank: string
     after: string
     word: string
+    imageSrc?: string
+  }>
+  /** Soutien FR type 8 : image + mini-tableau (une case par syllabe). */
+  syllableSoundItems?: Array<{
+    word: string
+    parts: string[]
+    /** Index de la syllabe qui porte le son (−1 si aucune). */
+    hitIndex: number
     imageSrc?: string
   }>
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
