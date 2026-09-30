@@ -159,6 +159,27 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function ReadPhrasesBlock({ item }: { item: MathItem }) {
+  const phrases = item.readPhrases ?? []
+  const graphemes = item.themeGraphemes ?? []
+  return (
+    <div className="read-phrases-block" aria-label="Phrases à lire">
+      <table className="read-phrases-table">
+        <tbody>
+          {phrases.map((phrase, index) => (
+            <tr key={`rp-${index}`}>
+              <td className="read-phrases-num">{index + 1}.</td>
+              <td className="read-phrases-text">
+                {highlightThemeLetters(phrase, graphemes)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function CountSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.countSoundItems ?? []
   const show = mode === 'answers'
@@ -2112,6 +2133,7 @@ export function ItemView({
     item.layout === 'determinant-fill' ||
     item.layout === 'dictee-grid' ||
     item.layout === 'count-sound' ||
+    item.layout === 'read-phrases' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -2204,6 +2226,7 @@ export function ItemView({
         {item.layout === 'count-sound' && (
           <CountSoundBlock item={item} mode={mode} />
         )}
+        {item.layout === 'read-phrases' && <ReadPhrasesBlock item={item} />}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
         ) : null}

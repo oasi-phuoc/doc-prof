@@ -465,16 +465,20 @@ function genKind(
       }
     }
     case 'lire': {
+      /** Tableau : n° + phrase, voyelle du thème en couleur. */
       const phrases = bank.readPhrases.slice(0, Math.min(16, bank.readPhrases.length))
       return {
         instruction: 'Lisez les phrases.',
         preferredColumns: 1,
-        items: phrases.map((phrase, index) => ({
-          layout: 'text' as const,
-          prompt: `${index + 1}.`,
-          answer: phrase,
-          labels: [phrase],
-        })),
+        items: [
+          {
+            layout: 'read-phrases',
+            prompt: 'Lisez les phrases.',
+            readPhrases: phrases,
+            answer: phrases.join(' · '),
+            themeGraphemes: [...bank.graphemes],
+          },
+        ],
       }
     }
     case 'associer-audio': {

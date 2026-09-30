@@ -1209,9 +1209,11 @@ html,body,#root{
   .dictee-grid-num{color:var(--purple)!important}
   .dictee-write-line{border-bottom-color:var(--purple)!important}
   .dictee-write-line::before{border-bottom-color:var(--purple)!important}
-  .count-sound-block,.count-sound-item,.count-sound-head,.count-sound-num{border-color:#999!important}
+  .count-sound-table,.count-sound-table td{border-color:#999!important}
   .count-sound-num,.count-sound-prompt{color:var(--purple)!important}
   .count-sound-blank{border-bottom-color:var(--purple)!important}
+  .read-phrases-table,.read-phrases-table td{border-color:#999!important}
+  .read-phrases-text .syllable-vowel{color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -2002,6 +2004,26 @@ html,body,#root{
   color:var(--ink);
   position:relative;
   z-index:1;
+}
+
+/* Soutien FR type 14 — phrases à lire, voyelle couleur thème */
+.read-phrases-block{width:100%;min-width:0}
+.read-phrases-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.read-phrases-table td{
+  border:1px dashed #c5c9d0;padding:6px 8px;vertical-align:middle
+}
+.read-phrases-num{
+  width:2em;font-size:13px;font-weight:700;color:var(--ink);
+  text-align:left;white-space:nowrap
+}
+.read-phrases-text{
+  font-size:13px;font-weight:600;line-height:1.4;color:var(--ink);
+  text-align:left
+}
+.read-phrases-text .syllable-vowel{
+  color:var(--purple);font-weight:700
 }
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */

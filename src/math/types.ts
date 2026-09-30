@@ -76,6 +76,7 @@ export type Layout =
   | 'determinant-fill'
   | 'dictee-grid'
   | 'count-sound'
+  | 'read-phrases'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -426,6 +427,8 @@ export type MathItem = {
     phrase: string
     count: number
   }>
+  /** Soutien FR type 14 : phrases à lire (voyelle colorée). */
+  readPhrases?: string[]
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string

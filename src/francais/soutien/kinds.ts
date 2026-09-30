@@ -94,7 +94,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'lire',
     label: '14 · Phrases à lire',
-    description: 'Liste de phrases à lire.',
+    description: 'Tableau de phrases à lire — voyelle du thème en couleur.',
     instruction: 'Lisez les phrases.',
     preferredColumns: 1 as const,
   },
