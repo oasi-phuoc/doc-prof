@@ -1237,9 +1237,10 @@ function CoordBlock({
   const isPlace = item.coordTask === 'place'
   const isConstruct = item.coordTask === 'construct'
   const questions = item.coordQuestions ?? []
+  const columns = item.coordColumns
   const scene = item.coordScene
   const hasLines = Boolean(scene?.lines?.length)
-  const numbered = hasLines || isConstruct
+  const numbered = hasLines || (isConstruct && questions.length > 0)
   const displayScene = !scene
     ? scene
     : isConstruct && !show
@@ -1291,8 +1292,44 @@ function CoordBlock({
         onPlaceOrigin={coordEdit?.onPlaceOrigin}
         onRemove={coordEdit?.onRemove}
       />
+      {columns || questions.length > 0 || (!isConstruct && Boolean(item.prompt || item.answer)) ? (
       <div className="coord-side">
-        {item.prompt && questions.length === 0 ? <p className="column-prompt">{item.prompt}</p> : null}
+        {columns ? (
+          <div className="coord-transform-cols">
+            <div className="coord-transform-col">
+              <b>{columns.leftTitle}</b>
+              <ul>
+                {columns.left.map((row) => (
+                  <li key={`L-${row.label}`}>{row.text}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="coord-transform-col">
+              <b>{columns.rightTitle}</b>
+              <ul>
+                {columns.right.map((row) => (
+                  <li key={`R-${row.label}`}>
+                    <span className="coord-transform-label">{row.label}</span>
+                    {show ? (
+                      <strong className="filled-answer">{row.answer}</strong>
+                    ) : (
+                      <span className="coord-pair">
+                        (
+                        <span className="answer-line-field compact">{'\u00a0'}</span>
+                        <span className="coord-pair-sep">;</span>
+                        <span className="answer-line-field compact">{'\u00a0'}</span>
+                        )
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : null}
+        {item.prompt && questions.length === 0 && !columns && !isConstruct ? (
+          <p className="column-prompt">{item.prompt}</p>
+        ) : null}
         {questions.length > 0 ? (
           <div
             className={`coord-questions${numbered ? ' is-lines' : ''}${
@@ -1347,7 +1384,7 @@ function CoordBlock({
               )
             })}
           </div>
-        ) : (
+        ) : !columns && !isConstruct ? (
           <div className="problem-field">
             <span className="field-label">Réponse</span>
             {show ? (
@@ -1356,8 +1393,9 @@ function CoordBlock({
               <span className="answer-line-field">{'\u00a0'}</span>
             )}
           </div>
-        )}
+        ) : null}
       </div>
+      ) : null}
     </div>
   )
 }

@@ -4,6 +4,9 @@
  * Type 2 : figure fermée + symétrie centrale (centre libre ou tiré).
  * Type 3 : comme 1, un seul point placé ; les autres à placer puis symétrie.
  * Type 4 : comme 2, un seul point placé ; les autres à placer puis symétrie.
+ *
+ * Pas de bloc « questions » : types 3–4 affichent deux colonnes de données
+ * (points à placer / coordonnées des images).
  */
 import { int, pick, type Rng } from './rng'
 import { formatAxesCoord, resolveAxesGrid } from './coord-reperage'
@@ -11,8 +14,8 @@ import type {
   CoordLineColor,
   CoordMark,
   CoordPath,
-  CoordQuestion,
   CoordScene,
+  CoordTransformColumns,
   MathItem,
   PageConfig,
 } from './types'
@@ -41,7 +44,9 @@ export function isTransformationPlacer(typeId: string): boolean {
 type Pt = { x: number; y: number }
 
 const EDGE_COLORS: CoordLineColor[] = ['violet', 'orange', 'green', 'blue', 'red', 'rose']
-const LABELS = ['A', 'B', 'C', 'D', 'E', 'F'] as const
+/** Jusqu’à 10 sommets (types 3 et 4 en mode libre). */
+export const TRANSFORM_LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'] as const
+export const TRANSFORM_MAX_POINTS = 10
 
 function same(p: Pt, q: Pt): boolean {
   return p.x === q.x && p.y === q.y
@@ -102,7 +107,6 @@ function randomPolygon(rng: Rng, range: number, n: number, avoid: Pt[] = []): Pt
     }
     if (chosen.length !== n) continue
     if (new Set(chosen.map(keyOf)).size !== n) continue
-    // Évite les points colinéaires grossiers (aire nulle).
     let area = 0
     for (let i = 0; i < n; i++) {
       const a = chosen[i]!
@@ -132,9 +136,32 @@ function pickCenter(rng: Rng, range: number, libreCenter?: Pt): Pt {
 
 function libreCenterFromConfig(config: PageConfig): Pt | undefined {
   if (!config.coordLibre) return undefined
-  const markPt = (config.coordMarks ?? []).find((m) => m.kind === 'point')
-  if (!markPt) return undefined
-  return { x: markPt.x, y: markPt.y }
+  const omega = (config.coordMarks ?? []).find((m) => m.label === 'Ω')
+  if (omega) return { x: omega.x, y: omega.y }
+  return undefined
+}
+
+/** Sommets de la figure posés en mode libre (hors Ω), dans l’ordre des labels. */
+function libreFigureFromConfig(config: PageConfig): Pt[] | null {
+  if (!config.coordLibre) return null
+  const labeled = (config.coordMarks ?? []).filter(
+    (m) => m.kind === 'point' && m.label && m.label !== 'Ω',
+  )
+  if (!labeled.length) return null
+  const order = new Map(TRANSFORM_LABELS.map((label, index) => [label, index]))
+  const sorted = [...labeled].sort((a, b) => {
+    const ia = order.get(a.label as (typeof TRANSFORM_LABELS)[number]) ?? 99
+    const ib = order.get(b.label as (typeof TRANSFORM_LABELS)[number]) ?? 99
+    return ia - ib
+  })
+  return sorted.slice(0, TRANSFORM_MAX_POINTS).map((m) => ({ x: m.x, y: m.y }))
+}
+
+function pointCountFor(config: PageConfig, difficulty: string, placer: boolean): number {
+  const maxN = TRANSFORM_MAX_POINTS
+  const fallback = difficulty === 'facile' ? 3 : difficulty === 'moyen' ? 4 : 5
+  const requested = config.count || fallback
+  return Math.max(3, Math.min(requested, maxN, placer ? TRANSFORM_MAX_POINTS : TRANSFORM_MAX_POINTS))
 }
 
 export function generateTransformations(
@@ -147,7 +174,7 @@ export function generateTransformations(
   const typeId = config.exerciseType
   const axiale = isTransformationAxiale(typeId)
   const placer = isTransformationPlacer(typeId)
-  const n = difficulty === 'facile' ? 3 : difficulty === 'moyen' ? 4 : pick(rng, [3, 4, 5])
+  const n = pointCountFor(config, difficulty, placer)
 
   const axis: 'x' | 'y' = pick(rng, ['x', 'y'])
   const center = pickCenter(rng, range, libreCenterFromConfig(config))
@@ -157,17 +184,19 @@ export function generateTransformations(
       : flipY
     : (p: Pt) => flipCenter(p, center)
 
-  let pts: Pt[] | null = null
-  for (let i = 0; i < 40; i++) {
-    const cand = randomPolygon(rng, range, n, axiale ? [] : [center])
-    if (!cand) continue
-    if (!ensureImagesInside(cand, map, range)) continue
-    // Images distinctes des sommets d’origine.
-    const imgs = cand.map(map)
-    if (imgs.some((ip, idx) => cand.some((op, j) => idx !== j && same(ip, op)))) continue
-    if (imgs.some((ip) => cand.some((op) => same(ip, op)))) continue
-    pts = cand
-    break
+  const librePts = libreFigureFromConfig(config)
+  let pts: Pt[] | null = librePts
+  if (!pts) {
+    for (let i = 0; i < 40; i++) {
+      const cand = randomPolygon(rng, range, n, axiale ? [] : [center])
+      if (!cand) continue
+      if (!ensureImagesInside(cand, map, range)) continue
+      const imgs = cand.map(map)
+      if (imgs.some((ip, idx) => cand.some((op, j) => idx !== j && same(ip, op)))) continue
+      if (imgs.some((ip) => cand.some((op) => same(ip, op)))) continue
+      pts = cand
+      break
+    }
   }
   if (!pts) {
     pts = [
@@ -178,16 +207,16 @@ export function generateTransformations(
   }
 
   const images = pts.map(map)
-  const givenIndex = placer ? int(rng, 0, pts.length - 1) : -1
+  const givenIndex = placer ? 0 : -1
 
   const marks: CoordMark[] = []
   pts.forEach((p, i) => {
-    const label = LABELS[i] ?? `P${i + 1}`
+    const label = TRANSFORM_LABELS[i] ?? `P${i + 1}`
     const reveal: 'always' | 'answer' = placer && i !== givenIndex ? 'answer' : 'always'
     marks.push(mark(p, label, reveal))
   })
   images.forEach((p, i) => {
-    const label = `${LABELS[i] ?? `P${i + 1}`}′`
+    const label = `${TRANSFORM_LABELS[i] ?? `P${i + 1}`}′`
     marks.push(mark(p, label, 'answer'))
   })
   if (!axiale) {
@@ -202,12 +231,14 @@ export function generateTransformations(
     })
   }
 
-  const paths: CoordPath[] = [
-    ...closedEdges(pts, 'fig', placer ? 'answer' : 'always'),
-    ...closedEdges(images, 'img', 'answer'),
-  ]
-  // En mode placer : montrer le segment depuis le point donné seulement côté élève.
-  if (placer) {
+  const paths: CoordPath[] = []
+  if (pts.length >= 3) {
+    paths.push(
+      ...closedEdges(pts, 'fig', placer ? 'answer' : 'always'),
+      ...closedEdges(images, 'img', 'answer'),
+    )
+  }
+  if (placer && pts.length >= 2) {
     const g = pts[givenIndex]!
     const next = pts[(givenIndex + 1) % pts.length]!
     const prev = pts[(givenIndex - 1 + pts.length) % pts.length]!
@@ -218,41 +249,39 @@ export function generateTransformations(
   }
 
   const axisLabel = axis === 'x' ? 'l’axe des abscisses (Ox)' : 'l’axe des ordonnées (Oy)'
-  const instruction = axiale
-    ? placer
-      ? `Un point de la figure est placé. Placez les autres sommets aux coordonnées indiquées, joignez-les pour former une figure fermée, puis construisez son image par la symétrie axiale par rapport à ${axisLabel}.`
-      : `La figure fermée est donnée. Construisez son image par la symétrie axiale par rapport à ${axisLabel}.`
-    : placer
-      ? `Un point de la figure est placé. Placez les autres sommets aux coordonnées indiquées, joignez-les pour former une figure fermée, puis construisez son image par la symétrie centrale de centre Ω${formatAxesCoord(center.x, center.y)}.`
-      : `La figure fermée est donnée. Construisez son image par la symétrie centrale de centre Ω${formatAxesCoord(center.x, center.y)}.`
+  const centerLabel = `Ω${formatAxesCoord(center.x, center.y)}`
 
-  const questions: CoordQuestion[] = []
+  let instruction: string
   if (placer) {
-    pts.forEach((p, i) => {
-      if (i === givenIndex) return
-      const label = LABELS[i] ?? `P${i + 1}`
-      questions.push({
-        prompt: `Placez le point ${label}${formatAxesCoord(p.x, p.y)}`,
-        answer: formatAxesCoord(p.x, p.y),
-        reply: 'draw',
-      })
-    })
+    instruction = axiale
+      ? `Colonne 1 : placez les points aux coordonnées indiquées et formez une figure fermée. Colonne 2 : écrivez les coordonnées des nouveaux points (images) après la symétrie axiale par rapport à ${axisLabel}.`
+      : `Colonne 1 : placez les points aux coordonnées indiquées et formez une figure fermée. Colonne 2 : écrivez les coordonnées des nouveaux points (images) après la symétrie centrale de centre ${centerLabel}.`
+  } else {
+    instruction = axiale
+      ? `La figure fermée est donnée. Construisez son image par la symétrie axiale par rapport à ${axisLabel}.`
+      : `La figure fermée est donnée. Construisez son image par la symétrie centrale de centre ${centerLabel}.`
   }
-  questions.push({
-    prompt: axiale
-      ? `Tracez l’image par symétrie axiale par rapport à ${axisLabel}`
-      : `Tracez l’image par symétrie centrale de centre Ω`,
-    answer: images.map((p, i) => `${LABELS[i] ?? 'P'}′${formatAxesCoord(p.x, p.y)}`).join(' · '),
-    reply: 'draw',
-  })
-  images.forEach((p, i) => {
-    const label = `${LABELS[i] ?? `P${i + 1}`}′`
-    questions.push({
-      prompt: `Coordonnées de ${label}`,
-      answer: formatAxesCoord(p.x, p.y),
-      reply: 'pair',
+
+  let coordColumns: CoordTransformColumns | undefined
+  if (placer) {
+    const toPlace = pts
+      .map((p, i) => ({ p, i }))
+      .filter(({ i }) => i !== givenIndex)
+      .map(({ p, i }) => {
+        const label = TRANSFORM_LABELS[i] ?? `P${i + 1}`
+        return { label, text: `${label}${formatAxesCoord(p.x, p.y)}` }
+      })
+    const imageRows = images.map((p, i) => {
+      const label = `${TRANSFORM_LABELS[i] ?? `P${i + 1}`}′`
+      return { label, answer: formatAxesCoord(p.x, p.y) }
     })
-  })
+    coordColumns = {
+      leftTitle: 'Colonne 1 — Points à placer',
+      left: toPlace,
+      rightTitle: 'Colonne 2 — Nouveaux points',
+      right: imageRows,
+    }
+  }
 
   const scene: CoordScene = {
     variant: 'axes',
@@ -270,6 +299,10 @@ export function generateTransformations(
     paths,
   }
 
+  const answer = images
+    .map((p, i) => `${TRANSFORM_LABELS[i] ?? 'P'}′${formatAxesCoord(p.x, p.y)}`)
+    .join(' · ')
+
   return {
     instruction,
     items: [
@@ -277,9 +310,9 @@ export function generateTransformations(
         layout: 'coord',
         prompt: instruction,
         coordScene: scene,
-        coordQuestions: questions,
+        coordColumns,
         coordTask: 'construct',
-        answer: questions.map((q) => `${q.prompt} : ${q.answer}`).join(' · '),
+        answer,
       },
     ],
   }

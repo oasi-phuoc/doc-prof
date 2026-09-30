@@ -191,6 +191,14 @@ export type CoordQuestion = {
   reply?: CoordReply
 }
 
+/** Deux colonnes de données (transformations types 3–4), sans bloc questions. */
+export type CoordTransformColumns = {
+  leftTitle: string
+  left: Array<{ label: string; text: string }>
+  rightTitle: string
+  right: Array<{ label: string; answer: string }>
+}
+
 export type AlgebraGiven = { letter: string; value: number }
 
 export type ArithOp = '+' | '−' | '×' | '÷'
@@ -318,6 +326,8 @@ export type MathItem = {
   coordScene?: CoordScene
   /** Questions de lecture de coordonnées liées à coordScene. */
   coordQuestions?: CoordQuestion[]
+  /** Transformations types 3–4 : points à placer (col. 1) et images (col. 2). */
+  coordColumns?: CoordTransformColumns
   /** `place` : tableau vide côté élève, formes visibles au corrigé. */
   coordTask?: 'read' | 'place' | 'construct'
   /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
