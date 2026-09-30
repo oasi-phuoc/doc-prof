@@ -71,8 +71,11 @@ function otherWords(bank: SoutienVowelBank): string[] {
 }
 
 function letterGrid(rng: Rng, bank: SoutienVowelBank, difficulty: Difficulty): MathItem {
-  const size = difficulty === 'facile' ? 16 : difficulty === 'moyen' ? 20 : 24
-  const targetCount = difficulty === 'facile' ? 4 : difficulty === 'moyen' ? 5 : 6
+  /** Tableau 5 × 10 sans bordure (modèle livret Soutien FR). */
+  const cols = 10
+  const rows = 5
+  const size = cols * rows
+  const targetCount = difficulty === 'facile' ? 10 : difficulty === 'moyen' ? 12 : 14
   const cells: string[] = []
   for (let i = 0; i < targetCount; i++) {
     cells.push(pick(rng, [bank.letterUpper, bank.letterLower]))
@@ -88,6 +91,8 @@ function letterGrid(rng: Rng, bank: SoutienVowelBank, difficulty: Difficulty): M
     options: shuffle(rng, cells),
     answer: `${bank.letterUpper}${bank.letterLower}`,
     labels: [bank.letterLower],
+    letterGridCols: cols,
+    letterGridVariant: 'table',
   }
 }
 

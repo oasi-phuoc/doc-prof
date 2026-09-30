@@ -292,6 +292,10 @@ export type MathItem = {
   blankIndexes?: number[]
   options?: string[]
   labels?: string[]
+  /** Grille de lettres : nombre de colonnes (ex. 10 pour Soutien FR type 2). */
+  letterGridCols?: number
+  /** Rendu cercles (lecture) ou tableau sans bordure (Soutien FR). */
+  letterGridVariant?: 'circles' | 'table'
   /** Variante de rendu pour les QCM (orale empilée, cartes vocabulaire). */
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */

@@ -504,10 +504,55 @@ function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       if (/[A-Za-zÀ-ÿ]/.test(ch)) targets.add(ch.toLowerCase())
     }
   }
+  const isTable = item.letterGridVariant === 'table'
+  const cols = Math.max(1, item.letterGridCols ?? (isTable ? 10 : 8))
+
+  if (isTable) {
+    const rows: string[][] = []
+    for (let i = 0; i < options.length; i += cols) {
+      rows.push(options.slice(i, i + cols))
+    }
+    return (
+      <div className="letter-grid-block letter-grid-block--table" aria-label="Grille de lettres">
+        {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+        <table className="letter-table">
+          <tbody>
+            {rows.map((row, rIdx) => (
+              <tr key={`r-${rIdx}`}>
+                {row.map((letter, cIdx) => {
+                  const isLower =
+                    letter.length === 1 &&
+                    letter === letter.toLowerCase() &&
+                    letter !== letter.toUpperCase()
+                  const hit = mode === 'answers' && targets.has(letter.toLowerCase())
+                  return (
+                    <td key={`${rIdx}-${cIdx}-${letter}`}>
+                      <span
+                        className={[
+                          'letter-table-cell',
+                          isLower ? 'letter-table-cell--lower' : 'letter-table-cell--upper',
+                          hit ? 'selected' : '',
+                        ]
+                          .filter(Boolean)
+                          .join(' ')}
+                      >
+                        {letter}
+                      </span>
+                    </td>
+                  )
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
   return (
     <div className="letter-grid-block" aria-label="Grille de lettres">
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-      <div className="letter-grid" role="group">
+      <div className="letter-grid" role="group" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {options.map((letter, index) => {
           const hit = mode === 'answers' && targets.has(letter.toLowerCase())
           return (
