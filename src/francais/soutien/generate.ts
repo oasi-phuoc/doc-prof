@@ -386,16 +386,19 @@ function genKind(
       }
     }
     case 'dictee': {
+      /** Grille 2×4 : n° + double trait (pointillé + plein) couleur thème. */
       const words = shuffle(rng, [...bank.words]).slice(0, Math.min(8, bank.words.length))
       return {
         instruction: 'Dictée. Écrivez les mots correctement !',
         preferredColumns: 1,
-        items: words.map((word) => ({
-          layout: 'vocab-write' as const,
-          prompt: 'Écoutez et écrivez.',
-          answer: word,
-          vocabLineCh: 20,
-        })),
+        items: [
+          {
+            layout: 'dictee-grid',
+            prompt: 'Dictée. Écrivez les mots correctement !',
+            dicteeWords: words,
+            answer: words.join(' · '),
+          },
+        ],
       }
     }
     case 'compter': {

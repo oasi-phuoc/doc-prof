@@ -74,6 +74,7 @@ export type Layout =
   | 'syllable-sound'
   | 'phrase-scramble'
   | 'determinant-fill'
+  | 'dictee-grid'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -417,6 +418,8 @@ export type MathItem = {
     parts: Array<{ t: string; u?: boolean } | { blank: string }>
     sentence: string
   }>
+  /** Soutien FR type 11 : 8 mots de dictée (grille 2×4). */
+  dicteeWords?: string[]
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string

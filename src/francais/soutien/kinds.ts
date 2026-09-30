@@ -73,8 +73,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'dictee',
     label: '11 · Dictée',
-    description: 'Une ligne par mot à écrire.',
-    instruction: 'Dictée. Écrivez les mots correctement.',
+    description: 'Grille 2×4 : n° + double trait (couleur thème) pour écrire 8 mots.',
+    instruction: 'Dictée. Écrivez les mots correctement !',
     preferredColumns: 1 as const,
   },
   {

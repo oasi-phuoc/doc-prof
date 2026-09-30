@@ -159,6 +159,42 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function DicteeGridBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const words = item.dicteeWords ?? []
+  const show = mode === 'answers'
+  /** 4 lignes × 2 colonnes : gauche 1–4, droite 5–8. */
+  const rows = [0, 1, 2, 3].map((r) => ({
+    left: { n: r + 1, word: words[r] },
+    right: { n: r + 5, word: words[r + 4] },
+  }))
+  return (
+    <div className="dictee-grid-block" aria-label="Dictée">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="dictee-grid-table">
+        <tbody>
+          {rows.map((row, ri) => (
+            <tr key={`dg-${ri}`}>
+              <td className="dictee-grid-num">{row.left.n}.</td>
+              <td className="dictee-grid-line-cell">
+                <span className={`dictee-write-line${show && row.left.word ? ' filled' : ''}`}>
+                  {show && row.left.word ? row.left.word : '\u00a0'}
+                </span>
+              </td>
+              <td className="dictee-grid-gutter" aria-hidden />
+              <td className="dictee-grid-num">{row.right.n}.</td>
+              <td className="dictee-grid-line-cell">
+                <span className={`dictee-write-line${show && row.right.word ? ' filled' : ''}`}>
+                  {show && row.right.word ? row.right.word : '\u00a0'}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function DeterminantFillBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const rows = item.determinantFills ?? []
   const graphemes = item.themeGraphemes ?? []
@@ -2009,6 +2045,7 @@ export function ItemView({
     item.layout === 'syllable-sound' ||
     item.layout === 'phrase-scramble' ||
     item.layout === 'determinant-fill' ||
+    item.layout === 'dictee-grid' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -2094,6 +2131,9 @@ export function ItemView({
         )}
         {item.layout === 'determinant-fill' && (
           <DeterminantFillBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'dictee-grid' && (
+          <DicteeGridBlock item={item} mode={mode} />
         )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />

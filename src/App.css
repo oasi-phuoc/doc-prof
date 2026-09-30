@@ -1205,6 +1205,10 @@ html,body,#root{
   .determinant-fill-num,.det-choice{color:var(--purple)!important}
   .determinant-blank{border-bottom-color:var(--purple)!important}
   .determinant-underline{border-bottom-color:var(--purple)!important}
+  .dictee-grid-table,.dictee-grid-table td{border-color:#999!important}
+  .dictee-grid-num{color:var(--purple)!important}
+  .dictee-write-line{border-bottom-color:var(--purple)!important}
+  .dictee-write-line::before{border-bottom-color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1899,6 +1903,46 @@ html,body,#root{
   border-bottom:2px solid var(--purple);
   padding-bottom:0;
 }
+
+/* Soutien FR type 11 — dictée grille 2×4, double trait couleur thème */
+.dictee-grid-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.dictee-grid-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.dictee-grid-table td{
+  border:1px dashed #c5c9d0;padding:10px 8px;vertical-align:middle
+}
+.dictee-grid-num{
+  width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
+  text-align:center;white-space:nowrap
+}
+.dictee-grid-gutter{
+  width:3mm;padding:0!important;background:#fff
+}
+.dictee-write-line{
+  position:relative;
+  display:block;
+  width:100%;
+  min-height:1.35em;
+  line-height:1.35em;
+  border-bottom:2px solid var(--purple);
+  color:var(--purple);
+  font-weight:700;
+  font-size:13px;
+  text-align:left;
+  padding:0 2px;
+}
+.dictee-write-line::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;
+  bottom:0.55em;
+  border-bottom:2px dotted var(--purple);
+  pointer-events:none;
+}
+.dictee-write-line.filled::before{opacity:.35}
 
 /* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
 .syllable-complete-block{
