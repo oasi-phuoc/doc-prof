@@ -516,6 +516,96 @@ html,body,#root{
   box-shadow:inset 0 0 0 1.5px var(--purple)
 }
 
+/* Soutien FR type 2 — tableau 5×10 sans bordure, minuscules soulignées bleues */
+.letter-table{
+  width:100%;
+  border-collapse:collapse;
+  border:none;
+  table-layout:fixed;
+  margin:2px 0 4px;
+}
+.letter-table td{
+  border:none;
+  padding:4px 2px;
+  text-align:center;
+  vertical-align:middle;
+}
+.letter-table-cell{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:1.35em;
+  min-height:1.5em;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.2;
+  color:var(--ink);
+  box-sizing:border-box;
+}
+.letter-table-cell--lower{
+  text-decoration:underline;
+  text-decoration-color:var(--blue);
+  text-decoration-thickness:1.5px;
+  text-underline-offset:3px;
+}
+.letter-table-cell--upper{
+  text-decoration:none;
+}
+.letter-table-cell.selected{
+  border:1.75px solid var(--ink);
+  border-radius:50%;
+  padding:1px 4px;
+}
+
+/* Soutien FR type 3 — deux tableaux 4×5 sans bordure (script + Playwrite) */
+.syllable-table-block{
+  display:flex;flex-direction:column;gap:10px;width:100%;min-width:0
+}
+.syllable-table{
+  width:100%;
+  border-collapse:collapse;
+  border:none;
+  table-layout:fixed;
+  margin:0;
+}
+.syllable-table td{
+  border:none;
+  padding:6px 4px;
+  text-align:center;
+  vertical-align:middle;
+}
+.syllable-table-cell{
+  display:inline-block;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.25;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.syllable-table--script .syllable-table-cell{
+  font-family:'DM Sans',sans-serif;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.syllable-table--playwrite .syllable-table-cell{
+  font-family:'Calli Playwrite',cursive;
+  font-weight:400;
+  font-size:20px;
+  line-height:1.35;
+}
+.syllable-vowel{
+  color:var(--purple);
+  font-weight:inherit;
+}
+.syllable-cons{
+  color:inherit;
+}
+/* Pastilles Gattegno : voyelle du thème reste en couleur thème */
+.phrase-bubble .syllable-vowel{
+  color:var(--purple)!important;
+  font-weight:700;
+}
+
 .order-block{display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0}
 .order-given{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;
@@ -1097,6 +1187,48 @@ html,body,#root{
   .digit-cell.carry{border-color:#ddd9e3!important}
   .column-rule{border-bottom-color:var(--purple)!important}
   .sequence-term,.compare-circle,.select-pill,.digit-cell,.letter-cell{border-color:#000!important}
+  .letter-table,.letter-table td{border:none!important}
+  .letter-table-cell.selected{border-color:#000!important}
+  .letter-table-cell--lower{text-decoration-color:#000!important}
+  .syllable-table,.syllable-table td{border:none!important}
+  .syllable-vowel{color:var(--purple)!important}
+  .syllable-cons{color:#000!important}
+  .syllable-match-table,.syllable-match-table td{border:none!important}
+  .syllable-match-num{color:var(--purple)!important}
+  .syllable-complete-card{border:none!important}
+  .syllable-complete-blank{border-bottom-color:var(--purple)!important}
+  .listen-check-grid,.listen-check-cell,.listen-check-image-cell,.listen-check-image{border-color:#999!important}
+  .listen-check-num{color:var(--purple)!important}
+  .listen-check-box{border-color:#000!important}
+  .syllable-sound-grid,.syllable-sound-card,.syllable-sound-image{border-color:#999!important}
+  .syllable-sound-num{color:var(--purple)!important;border-color:var(--purple)!important}
+  .syllable-mini-table td{border-color:#000!important}
+  .phrase-scramble-table,.phrase-scramble-table td{border-color:#999!important}
+  .phrase-scramble-num{color:var(--purple)!important}
+  .phrase-scramble-blank{border-bottom-color:var(--purple)!important}
+  .determinant-fill-table,.determinant-fill-table td{border-color:#999!important}
+  .determinant-fill-num,.det-choice{color:var(--purple)!important}
+  .determinant-blank{border-bottom-color:var(--purple)!important}
+  .determinant-underline{border-bottom-color:var(--purple)!important}
+  .dictee-grid-table,.dictee-grid-table td{border-color:#999!important}
+  .dictee-grid-num{color:var(--purple)!important}
+  .dictee-write-line{border-bottom-color:var(--purple)!important}
+  .dictee-write-line::before{border-bottom-color:var(--purple)!important}
+  .count-sound-table,.count-sound-table td{border-color:#999!important}
+  .count-sound-num,.count-sound-prompt{color:var(--purple)!important}
+  .count-sound-blank{border-bottom-color:var(--purple)!important}
+  .read-phrases-table,.read-phrases-table td{border-color:#999!important}
+  .read-phrases-text .syllable-vowel{color:var(--purple)!important}
+  .audio-match-table,.audio-match-table td{border-color:#999!important}
+  .audio-match-num,.audio-match-key{color:var(--purple)!important}
+  .audio-match-word-text .syllable-vowel{color:var(--purple)!important}
+  .word-search-list,.word-search-list-cell{border-color:#999!important}
+  .word-search-cell.is-hit{
+    color:var(--purple)!important;
+    background:color-mix(in srgb, var(--purple) 16%, #fff)!important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact
+  }
+  .syllable-vowel,.phrase-bubble .syllable-vowel{color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
   .filled-answer,.inline-blank{color:#000!important}
   .geometry-figure,.coord-grid{color:#000}
@@ -1525,6 +1657,518 @@ html,body,#root{
   width:72px;height:54px;object-fit:contain;display:block;background:#fff;
   border:1px solid #d8dde6
 }
+
+/* Soutien FR type 4 — relier syllabes, tableau sans bordure */
+.syllable-match-table{
+  width:100%;
+  border-collapse:collapse;
+  border:none;
+  table-layout:fixed;
+  margin:2px 0 4px;
+}
+.syllable-match-table td{
+  border:none;
+  padding:5px 4px;
+  vertical-align:middle;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.3;
+  color:var(--ink);
+}
+.syllable-match-num{
+  width:2em;
+  color:var(--purple);
+  font-weight:700;
+  text-align:left;
+  white-space:nowrap;
+}
+.syllable-match-left{
+  width:22%;
+  text-align:left;
+  white-space:nowrap;
+}
+.syllable-match-dot{
+  width:1.2em;
+  text-align:center;
+  font-size:11px;
+  line-height:1;
+  color:var(--ink);
+  padding-left:2px;
+  padding-right:2px;
+}
+.syllable-match-gap{
+  width:28%;
+}
+.syllable-match-right{
+  text-align:left;
+  white-space:nowrap;
+}
+.syllable-match-key{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+  margin-left:4px;
+}
+/* Soutien FR type 6 — grille écoute / cocher / écrire */
+.listen-check-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
+}
+.listen-check-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--lc-cols,3),minmax(0,1fr));
+  width:100%;
+  border:1px dashed #c5c9d0;
+}
+.listen-check-cell{
+  display:grid;
+  grid-template-columns:1.7em 1.15em minmax(0,1fr);
+  align-items:center;
+  gap:4px;
+  min-height:2.4em;
+  padding:6px 8px;
+  border-right:1px dashed #c5c9d0;
+  border-bottom:1px dashed #c5c9d0;
+  box-sizing:border-box;
+}
+.listen-check-grid .listen-check-cell:nth-child(3n){border-right:none}
+.listen-check-grid .listen-check-cell:nth-last-child(-n+3){border-bottom:none}
+.listen-check-num{
+  font-size:14px;font-weight:700;color:var(--purple);line-height:1;white-space:nowrap
+}
+.listen-check-box{
+  width:14px;height:14px;
+  border:1.5px solid var(--ink);
+  border-radius:2px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;line-height:1;color:var(--ink);
+  box-sizing:border-box;background:#fff;
+}
+.listen-check-box.checked{background:color-mix(in srgb,var(--purple) 12%,#fff)}
+.listen-check-line{
+  display:block;min-width:0;width:100%;
+  border-bottom:1.5px solid #c5c9d0;
+  min-height:1.15em;
+  font-size:13px;font-weight:600;color:var(--ink);
+  padding:0 2px;line-height:1.2;
+}
+.listen-check-line.filled{border-bottom-color:var(--purple)}
+
+/* Type 7 — grille images + n° + case */
+.listen-check-grid--images{
+  border:1px dashed #c5c9d0;
+}
+.listen-check-image-cell{
+  display:flex;flex-direction:column;
+  min-width:0;min-height:0;
+  border-right:1px dashed #c5c9d0;
+  border-bottom:1px dashed #c5c9d0;
+  box-sizing:border-box;
+  background:#fff;
+}
+.listen-check-grid--images .listen-check-image-cell:nth-child(5n){border-right:none}
+.listen-check-grid--images .listen-check-image-cell:nth-last-child(-n+5){border-bottom:none}
+.listen-check-image{
+  flex:1 1 auto;
+  display:flex;align-items:center;justify-content:center;
+  min-height:22mm;padding:4px;
+  border-bottom:1px dashed #c5c9d0;
+}
+.listen-check-image img{
+  max-width:100%;max-height:24mm;object-fit:contain;display:block
+}
+.listen-check-image-foot{
+  display:flex;align-items:center;gap:5px;
+  padding:4px 6px;min-height:1.6em;
+}
+.listen-check-caption{
+  font-size:10px;font-weight:600;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0
+}
+
+/* Soutien FR type 8 — image + n° + mini-tableau de syllabes */
+.syllable-sound-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
+}
+.syllable-sound-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--ss-cols,3),minmax(0,1fr));
+  width:100%;
+  border:1px dashed #c5c9d0;
+}
+.syllable-sound-card{
+  display:flex;flex-direction:column;
+  border-right:1px dashed #c5c9d0;
+  border-bottom:1px dashed #c5c9d0;
+  box-sizing:border-box;background:#fff;min-width:0;
+}
+.syllable-sound-grid .syllable-sound-card:nth-child(3n){border-right:none}
+.syllable-sound-grid .syllable-sound-card:nth-last-child(-n+3){border-bottom:none}
+.syllable-sound-image{
+  flex:1 1 auto;
+  display:flex;align-items:center;justify-content:center;
+  min-height:24mm;padding:5px;
+  border-bottom:1px dashed #c5c9d0;
+}
+.syllable-sound-image img{
+  max-width:100%;max-height:26mm;object-fit:contain;display:block
+}
+.syllable-sound-foot{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  align-items:center;gap:6px;
+  padding:5px 6px;min-height:1.8em;
+}
+.syllable-sound-num{
+  font-size:13px;font-weight:700;color:var(--purple);
+  border:1px dashed color-mix(in srgb,var(--purple) 55%,#fff);
+  padding:2px 5px;line-height:1.2;white-space:nowrap;
+}
+.syllable-mini-table{
+  border-collapse:collapse;border:none;margin:0;width:auto;max-width:100%;
+}
+.syllable-mini-table td{
+  width:1.35em;height:1.35em;
+  border:1.25px solid var(--ink);
+  padding:0;text-align:center;vertical-align:middle;
+  font-size:10px;font-weight:700;line-height:1;color:var(--ink);
+  box-sizing:border-box;background:#fff;
+}
+.syllable-mini-table td.is-hit{
+  background:color-mix(in srgb,var(--purple) 18%,#fff);
+  color:var(--purple);
+}
+.syllable-sound-word{
+  grid-column:1 / -1;
+  font-size:10px;font-weight:600;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Soutien FR type 9 — n° + image + phrase (trait + lettres mélangées) */
+.phrase-scramble-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.phrase-scramble-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.phrase-scramble-table td{
+  border:1px dashed #c5c9d0;padding:6px 8px;vertical-align:middle
+}
+.phrase-scramble-num{
+  width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
+  text-align:left;white-space:nowrap;border-right:1px dashed #c5c9d0
+}
+.phrase-scramble-image{
+  width:22mm;text-align:center;border-right:1px dashed #c5c9d0
+}
+.phrase-scramble-image img{
+  max-width:20mm;max-height:16mm;object-fit:contain;display:inline-block
+}
+.phrase-scramble-text{
+  font-size:13px;font-weight:600;line-height:1.45;color:var(--ink)
+}
+.phrase-scramble-sentence{
+  display:inline;hyphens:auto
+}
+.phrase-scramble-blank{
+  display:inline-block;
+  min-width:5ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 3px;
+  padding:0 2px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+  vertical-align:baseline;
+}
+.phrase-scramble-blank.filled{border-bottom-style:solid}
+.phrase-scramble-letters{
+  font-weight:700;letter-spacing:.04em;white-space:nowrap;color:var(--ink)
+}
+
+/* Soutien FR type 10 — déterminants l’ / le / la / les */
+.determinant-fill-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.determinant-fill-prompt .det-choice{
+  color:var(--purple);font-weight:700
+}
+.determinant-fill-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.determinant-fill-table td{
+  border:1px dashed #c5c9d0;padding:7px 8px;vertical-align:middle
+}
+.determinant-fill-num{
+  width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
+  text-align:left;white-space:nowrap
+}
+.determinant-fill-text{
+  font-size:13px;font-weight:600;line-height:1.5;color:var(--ink)
+}
+.determinant-blank{
+  display:inline-block;
+  min-width:5.5ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 2px;
+  padding:0 2px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+  vertical-align:baseline;
+}
+.determinant-blank.filled{border-bottom-style:solid}
+.determinant-underline{
+  border-bottom:2px solid var(--purple);
+  padding-bottom:0;
+}
+
+/* Soutien FR type 11 — dictée grille 2×4, double trait couleur thème */
+.dictee-grid-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.dictee-grid-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.dictee-grid-table td{
+  border:1px dashed #c5c9d0;padding:10px 8px;vertical-align:middle
+}
+.dictee-grid-num{
+  width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
+  text-align:center;white-space:nowrap
+}
+.dictee-grid-gutter{
+  width:3mm;padding:0!important;background:#fff
+}
+.dictee-write-line{
+  position:relative;
+  display:block;
+  width:100%;
+  min-height:1.35em;
+  line-height:1.35em;
+  border-bottom:2px solid var(--purple);
+  color:var(--purple);
+  font-weight:700;
+  font-size:13px;
+  text-align:left;
+  padding:0 2px;
+}
+.dictee-write-line::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;
+  bottom:0.55em;
+  border-bottom:2px dotted var(--purple);
+  pointer-events:none;
+}
+.dictee-write-line.filled::before{opacity:.35}
+
+/* Soutien FR type 12 — compter le son + phrase Playwrite */
+.count-sound-block{width:100%;min-width:0}
+.count-sound-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.count-sound-table td{
+  border:1px dashed #c5c9d0;vertical-align:middle;padding:0
+}
+.count-sound-num{
+  width:2em;
+  padding:6px 4px;
+  font-size:14px;font-weight:700;color:var(--purple);
+  text-align:center;vertical-align:middle
+}
+.count-sound-prompt-cell{padding:6px 10px}
+.count-sound-prompt{
+  font-size:13px;font-weight:700;color:var(--purple)
+}
+.count-sound-blank{
+  display:inline-block;
+  min-width:6ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 2px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+  vertical-align:baseline;
+}
+.count-sound-blank.filled{border-bottom-style:solid}
+.count-sound-phrase-cell{padding:0}
+.count-sound-phrase-wrap{
+  position:relative;
+  padding:8px 12px 10px;
+  /* lignes tiretées (cahier) derrière la phrase cursive */
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 11px,
+      #c5c9d0 11px,
+      #c5c9d0 12px
+    );
+  background-size:100% 12px;
+  background-position:0 6px;
+}
+.count-sound-phrase{
+  margin:0;
+  font-family:'Calli Playwrite',cursive;
+  font-size:18px;
+  font-weight:400;
+  line-height:24px;
+  color:var(--ink);
+  position:relative;
+  z-index:1;
+}
+
+/* Soutien FR type 14 — phrases à lire, voyelle couleur thème */
+.read-phrases-block{width:100%;min-width:0}
+.read-phrases-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.read-phrases-table td{
+  border:1px dashed #c5c9d0;padding:6px 8px;vertical-align:middle
+}
+.read-phrases-num{
+  width:2em;font-size:13px;font-weight:700;color:var(--ink);
+  text-align:left;white-space:nowrap
+}
+.read-phrases-text{
+  font-size:13px;font-weight:600;line-height:1.4;color:var(--ink);
+  text-align:left
+}
+.read-phrases-text .syllable-vowel{
+  color:var(--purple);font-weight:700
+}
+
+/* Soutien FR type 15 — QR audio + relier au mot */
+.audio-match-block{
+  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+}
+.audio-match-table{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.audio-match-table td{
+  border:1px dashed #c5c9d0;padding:4px 6px;vertical-align:middle
+}
+.audio-match-num{
+  width:1.6em;font-size:13px;font-weight:700;color:var(--purple);
+  text-align:center;white-space:nowrap
+}
+.audio-match-qr{
+  width:16mm;text-align:center;padding:3px!important
+}
+.audio-match-qr img{
+  width:14mm;height:14mm;display:inline-block;object-fit:contain
+}
+.audio-match-qr-ph{
+  display:inline-block;width:14mm;height:14mm;background:#eee
+}
+.audio-match-dot{
+  width:1.2em;text-align:center;font-size:11px;color:var(--ink);line-height:1
+}
+.audio-match-gap{width:auto;min-width:18mm}
+.audio-match-word{
+  width:28%;font-size:14px;font-weight:600;color:var(--ink);text-align:left
+}
+.audio-match-word-text{
+  display:inline-block;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:1px;
+  line-height:1.2;
+}
+.audio-match-word-text .syllable-vowel{
+  color:var(--purple);font-weight:700;
+  text-decoration:underline;text-decoration-color:var(--purple);
+  text-underline-offset:2px;
+}
+.audio-match-key{font-size:11px;font-weight:700;color:var(--purple);margin-left:4px}
+
+/* Soutien FR type 16 — mots mêlés */
+.word-search-block{
+  display:flex;flex-direction:column;gap:10px;width:100%;min-width:0
+}
+.word-search-list{
+  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+}
+.word-search-list-cell{
+  border:1px dashed #c5c9d0;padding:5px 8px;vertical-align:middle;
+  font-size:12px;font-weight:600;color:var(--ink);text-align:left
+}
+.word-search-list-word{
+  display:inline-block;border-bottom:1px solid var(--ink);line-height:1.2;padding-bottom:1px
+}
+.word-search-grid{
+  width:100%;max-width:100%;
+  border-collapse:collapse;table-layout:fixed;
+  margin:0 auto;
+}
+.word-search-cell{
+  border:none;
+  padding:1px 0;
+  text-align:center;
+  vertical-align:middle;
+  font-family:'DM Sans',ui-monospace,monospace;
+  font-size:11px;
+  font-weight:700;
+  line-height:1.35;
+  color:var(--ink);
+  width:calc(100% / 15);
+}
+.word-search-cell.is-hit{
+  color:var(--purple);
+  background:color-mix(in srgb, var(--purple) 16%, #fff);
+  border-radius:2px;
+}
+
+/* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
+.syllable-complete-block{
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
+}
+.syllable-complete-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--sc-cols,2),minmax(0,1fr));
+  gap:8px 14px;
+  width:100%;
+}
+.syllable-complete-card{
+  display:flex;align-items:center;gap:8px;min-width:0;
+  border:none;padding:2px 0;
+}
+.syllable-complete-image{
+  flex:0 0 22mm;width:22mm;height:18mm;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#fff;
+}
+.syllable-complete-image img{
+  max-width:100%;max-height:100%;object-fit:contain;display:block
+}
+.syllable-complete-text{
+  flex:1;min-width:0;
+  font-size:14px;font-weight:600;line-height:1.35;color:var(--ink);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:0 1px;
+}
+.syllable-complete-article{font-weight:700}
+.syllable-complete-affix{font-weight:600}
+.syllable-complete-blank{
+  display:inline-block;
+  min-width:2.2ch;
+  border-bottom:2px dotted var(--purple);
+  text-align:center;
+  margin:0 1px;
+  padding:0 1px;
+  line-height:1.2;
+  color:var(--purple);
+  font-weight:700;
+}
+.syllable-complete-blank.filled{
+  border-bottom-style:solid;
+}
+.syllable-complete-full{
+  flex:1 0 100%;
+  font-size:11px;font-weight:600;color:var(--muted);margin-top:1px
+}
+
 .vocab-write{width:100%}
 .vocab-answer-line{
   display:block;width:auto;max-width:100%;

@@ -1,6 +1,8 @@
-import { Fragment, type CSSProperties } from 'react'
+import { Fragment, useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import QRCode from 'qrcode'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
+import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { CompositeFigure } from './math/CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
 import { FractionView, renderMathText } from './math/FractionView'
@@ -17,10 +19,12 @@ function VocabTable({ item }: { item: MathItem }) {
   const cols = Math.max(1, item.vocabCols ?? 3)
   const entries = item.vocabEntries ?? []
   const cells = Array.from({ length: rows * cols }, (_, index) => entries[index] ?? null)
+  const themeLetters = item.labels ?? []
+  const highlight = themeLetters.length > 0
 
   return (
     <div
-      className="vocab-table"
+      className={`vocab-table${highlight ? ' vocab-table--theme-letters' : ''}`}
       style={{ '--vocab-cols': cols, '--vocab-rows': rows } as CSSProperties}
       aria-label="Mots à apprendre"
     >
@@ -33,7 +37,13 @@ function VocabTable({ item }: { item: MathItem }) {
               <span className="vocab-card-empty" aria-hidden />
             )}
           </div>
-          <div className="vocab-card-word">{entry?.label ?? ''}</div>
+          <div className="vocab-card-word">
+            {entry?.label
+              ? highlight
+                ? highlightThemeLetters(entry.label, themeLetters)
+                : entry.label
+              : ''}
+          </div>
         </div>
       ))}
     </div>
@@ -46,6 +56,53 @@ function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const pairs = item.vocabPairs ?? []
   const byLeft = new Map(pairs.map((pair) => [pair.left, pair.right]))
   const imageMode = item.vocabMatchMode === 'image'
+  const syllableMode = item.vocabMatchMode === 'syllables'
+  const graphemes = item.themeGraphemes ?? []
+
+  if (syllableMode) {
+    return (
+      <div className="vocab-match vocab-match--syllables" aria-label="Relier les syllabes">
+        {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+        <table className="syllable-match-table">
+          <tbody>
+            {left.map((leftPart, index) => {
+              const rightPart = right[index] ?? ''
+              const matchLeft =
+                mode === 'answers'
+                  ? left.find((l) => byLeft.get(l) === rightPart)
+                  : undefined
+              const matchNum =
+                matchLeft != null ? left.findIndex((l) => l === matchLeft) + 1 : 0
+              return (
+                <tr key={`sm-${index}`}>
+                  <td className="syllable-match-num">{index + 1}.</td>
+                  <td className="syllable-match-left">
+                    {highlightThemeLetters(leftPart, graphemes)}
+                  </td>
+                  <td className="syllable-match-dot" aria-hidden>
+                    ●
+                  </td>
+                  <td className="syllable-match-gap" aria-hidden />
+                  <td className="syllable-match-dot" aria-hidden>
+                    ●
+                  </td>
+                  <td className="syllable-match-right">
+                    <span className="syllable-match-right-text">
+                      {highlightThemeLetters(rightPart, graphemes)}
+                    </span>
+                    {mode === 'answers' && matchNum > 0 ? (
+                      <span className="syllable-match-key"> ← {matchNum}</span>
+                    ) : null}
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
   return (
     <div className="vocab-match" aria-label="Association">
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
@@ -100,6 +157,519 @@ function VocabWrite({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       >
         {show ? item.answer : '\u00a0'}
       </span>
+    </div>
+  )
+}
+
+function WordSearchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const puzzle = item.wordSearch
+  if (!puzzle) return null
+  const show = mode === 'answers'
+  const hits = new Set(puzzle.hitCells ?? [])
+  const graphemes = item.themeGraphemes ?? []
+  const words = puzzle.words
+  const cols = 4
+  const wordRows: string[][] = []
+  for (let i = 0; i < words.length; i += cols) {
+    wordRows.push(words.slice(i, i + cols))
+  }
+  return (
+    <div className="word-search-block" aria-label="Mots mêlés">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="word-search-list">
+        <tbody>
+          {wordRows.map((row, ri) => (
+            <tr key={`wsl-${ri}`}>
+              {Array.from({ length: cols }, (_, ci) => {
+                const w = row[ci]
+                return (
+                  <td key={`wsl-${ri}-${ci}`} className="word-search-list-cell">
+                    {w ? (
+                      <span className="word-search-list-word">
+                        {graphemes.length ? highlightThemeLetters(w, graphemes) : w}
+                      </span>
+                    ) : null}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <table className="word-search-grid" aria-label="Grille">
+        <tbody>
+          {puzzle.grid.map((line, r) => (
+            <tr key={`wsg-${r}`}>
+              {line.map((letter, c) => {
+                const hit = show && hits.has(`${r},${c}`)
+                return (
+                  <td
+                    key={`wsg-${r}-${c}`}
+                    className={`word-search-cell${hit ? ' is-hit' : ''}`}
+                  >
+                    {letter}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function AudioMatchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.audioMatchRows ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  const [qrSrcs, setQrSrcs] = useState<string[]>(() => rows.map(() => ''))
+
+  const audioKey = rows.map((r) => r.audioSrc ?? '').join('|')
+  useEffect(() => {
+    let cancelled = false
+    const srcs = audioKey.split('|')
+    const run = async () => {
+      const next = await Promise.all(
+        srcs.map(async (audioSrc) => {
+          if (!audioSrc) return ''
+          try {
+            return await QRCode.toDataURL(soutienAudioAbsoluteUrl(audioSrc), {
+              margin: 1,
+              width: 96,
+              errorCorrectionLevel: 'M',
+              color: { dark: '#111111', light: '#ffffff' },
+            })
+          } catch {
+            return ''
+          }
+        }),
+      )
+      if (!cancelled) setQrSrcs(next)
+    }
+    void run()
+    return () => {
+      cancelled = true
+    }
+  }, [audioKey])
+
+  return (
+    <div className="audio-match-block" aria-label="Écouter et relier">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="audio-match-table">
+        <tbody>
+          {rows.map((row, index) => {
+            const matchNum =
+              show
+                ? rows.findIndex((r) => r.listenWord === row.showWord) + 1
+                : 0
+            return (
+              <tr key={`am-${index}-${row.listenWord}`}>
+                <td className="audio-match-num">{index + 1}.</td>
+                <td className="audio-match-qr">
+                  {qrSrcs[index] ? (
+                    <img src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
+                  ) : (
+                    <span className="audio-match-qr-ph" aria-hidden />
+                  )}
+                </td>
+                <td className="audio-match-dot" aria-hidden>
+                  ●
+                </td>
+                <td className="audio-match-gap" aria-hidden />
+                <td className="audio-match-dot" aria-hidden>
+                  ●
+                </td>
+                <td className="audio-match-word">
+                  <span className="audio-match-word-text">
+                    {highlightThemeLetters(row.showWord, graphemes)}
+                  </span>
+                  {show && matchNum > 0 ? (
+                    <span className="audio-match-key"> ← {matchNum}</span>
+                  ) : null}
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function ReadPhrasesBlock({ item }: { item: MathItem }) {
+  const phrases = item.readPhrases ?? []
+  const graphemes = item.themeGraphemes ?? []
+  return (
+    <div className="read-phrases-block" aria-label="Phrases à lire">
+      <table className="read-phrases-table">
+        <tbody>
+          {phrases.map((phrase, index) => (
+            <tr key={`rp-${index}`}>
+              <td className="read-phrases-num">{index + 1}.</td>
+              <td className="read-phrases-text">
+                {highlightThemeLetters(phrase, graphemes)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function CountSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.countSoundItems ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="count-sound-block" aria-label="Compter le son">
+      <table className="count-sound-table">
+        <tbody>
+          {rows.map((row, index) => (
+            <Fragment key={`csr-${index}`}>
+              <tr className="count-sound-prompt-row">
+                <td className="count-sound-num" rowSpan={2}>
+                  {index + 1}.
+                </td>
+                <td className="count-sound-prompt-cell">
+                  <span className="count-sound-prompt">
+                    J’entends{' '}
+                    <span className={`count-sound-blank${show ? ' filled' : ''}`}>
+                      {show ? String(row.count) : '\u00a0'}
+                    </span>{' '}
+                    fois le son.
+                  </span>
+                </td>
+              </tr>
+              <tr className="count-sound-phrase-row">
+                <td className="count-sound-phrase-cell">
+                  <div className="count-sound-phrase-wrap">
+                    <p className="count-sound-phrase">{row.phrase}</p>
+                  </div>
+                </td>
+              </tr>
+            </Fragment>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function DicteeGridBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const words = item.dicteeWords ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  const paint = (word?: string) =>
+    word
+      ? graphemes.length
+        ? highlightThemeLetters(word, graphemes)
+        : word
+      : '\u00a0'
+  /** 4 lignes × 2 colonnes : gauche 1–4, droite 5–8. */
+  const rows = [0, 1, 2, 3].map((r) => ({
+    left: { n: r + 1, word: words[r] },
+    right: { n: r + 5, word: words[r + 4] },
+  }))
+  return (
+    <div className="dictee-grid-block" aria-label="Dictée">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="dictee-grid-table">
+        <tbody>
+          {rows.map((row, ri) => (
+            <tr key={`dg-${ri}`}>
+              <td className="dictee-grid-num">{row.left.n}.</td>
+              <td className="dictee-grid-line-cell">
+                <span className={`dictee-write-line${show && row.left.word ? ' filled' : ''}`}>
+                  {show ? paint(row.left.word) : '\u00a0'}
+                </span>
+              </td>
+              <td className="dictee-grid-gutter" aria-hidden />
+              <td className="dictee-grid-num">{row.right.n}.</td>
+              <td className="dictee-grid-line-cell">
+                <span className={`dictee-write-line${show && row.right.word ? ' filled' : ''}`}>
+                  {show ? paint(row.right.word) : '\u00a0'}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function DeterminantFillBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.determinantFills ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="determinant-fill-block" aria-label="Déterminants">
+      <p className="column-prompt determinant-fill-prompt">
+        Complétez avec les déterminants{' '}
+        <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
+        <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
+      </p>
+      <table className="determinant-fill-table">
+        <tbody>
+          {rows.map((row, index) => (
+            <tr key={`det-${index}`}>
+              <td className="determinant-fill-num">{index + 1}.</td>
+              <td className="determinant-fill-text">
+                {row.parts.map((part, pi) => {
+                  if ('blank' in part) {
+                    return (
+                      <span
+                        key={`b-${pi}`}
+                        className={`determinant-blank${show ? ' filled' : ''}`}
+                      >
+                        {show ? part.blank : '\u00a0'}
+                      </span>
+                    )
+                  }
+                  const content = highlightThemeLetters(part.t, graphemes)
+                  return part.u ? (
+                    <span key={`t-${pi}`} className="determinant-underline">
+                      {content}
+                    </span>
+                  ) : (
+                    <span key={`t-${pi}`}>{content}</span>
+                  )
+                })}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.phraseScrambles ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="phrase-scramble-block" aria-label="Mot dans la phrase">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <table className="phrase-scramble-table">
+        <tbody>
+          {rows.map((row, index) => {
+            const blankCh = Math.max(6, Math.min(14, row.word.length + 2))
+            return (
+              <tr key={`ps-${index}-${row.word}`}>
+                <td className="phrase-scramble-num">{index + 1}.</td>
+                <td className="phrase-scramble-image">
+                  {row.imageSrc ? (
+                    <img src={row.imageSrc} alt="" />
+                  ) : (
+                    <span className="vocab-card-empty" aria-hidden />
+                  )}
+                </td>
+                <td className="phrase-scramble-text">
+                  <span className="phrase-scramble-sentence">
+                    {highlightThemeLetters(row.before, graphemes)}
+                    <span
+                      className={`phrase-scramble-blank${show ? ' filled' : ''}`}
+                      style={{ width: `${blankCh}ch` }}
+                    >
+                      {show
+                        ? graphemes.length
+                          ? highlightThemeLetters(row.word, graphemes)
+                          : row.word
+                        : '\u00a0'}
+                    </span>
+                    {highlightThemeLetters(row.after, graphemes)}{' '}
+                    <span className="phrase-scramble-letters">
+                      (
+                      {graphemes.length
+                        ? highlightThemeLetters(row.letters, graphemes)
+                        : row.letters}
+                      )
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.syllableSoundItems ?? []
+  const cols = Math.max(1, item.letterGridCols ?? 3)
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  return (
+    <div className="syllable-sound-block" aria-label="Syllabe du son">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div
+        className="syllable-sound-grid"
+        style={{ '--ss-cols': cols } as CSSProperties}
+      >
+        {rows.map((row, index) => (
+          <div className="syllable-sound-card" key={`ss-${index}-${row.word}`}>
+            <div className="syllable-sound-image">
+              {row.imageSrc ? (
+                <img src={row.imageSrc} alt="" />
+              ) : (
+                <span className="vocab-card-empty" aria-hidden />
+              )}
+            </div>
+            <div className="syllable-sound-foot">
+              <span className="syllable-sound-num">{index + 1}.</span>
+              <table className="syllable-mini-table" aria-label={`${row.parts.length} syllabes`}>
+                <tbody>
+                  <tr>
+                    {row.parts.map((part, pIdx) => {
+                      const hit = show && pIdx === row.hitIndex
+                      return (
+                        <td
+                          key={`${row.word}-${pIdx}`}
+                          className={hit ? 'is-hit' : undefined}
+                        >
+                          {hit
+                            ? graphemes.length
+                              ? highlightThemeLetters(part, graphemes)
+                              : part
+                            : '\u00a0'}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                </tbody>
+              </table>
+              {show ? <span className="syllable-sound-word">{row.word}</span> : null}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const words = item.options ?? []
+  const images = item.optionImages ?? []
+  const withImages = images.length > 0 && images.length === words.length
+  const positives = new Set((item.labels ?? []).map((w) => w.toLowerCase()))
+  const graphemes = item.themeGraphemes ?? []
+  const cols = Math.max(1, item.letterGridCols ?? (withImages ? 5 : 3))
+  const show = mode === 'answers'
+  return (
+    <div
+      className={`listen-check-block${withImages ? ' listen-check-block--images' : ''}`}
+      aria-label="Entendre le son"
+    >
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div
+        className={`listen-check-grid${withImages ? ' listen-check-grid--images' : ''}`}
+        style={{ '--lc-cols': cols } as CSSProperties}
+      >
+        {words.map((word, index) => {
+          const hit = positives.has(word.toLowerCase())
+          if (withImages) {
+            return (
+              <div className="listen-check-image-cell" key={`lci-${index}-${word}`}>
+                <div className="listen-check-image">
+                  {images[index] ? (
+                    <img src={images[index]} alt="" />
+                  ) : (
+                    <span className="vocab-card-empty" aria-hidden />
+                  )}
+                </div>
+                <div className="listen-check-image-foot">
+                  <span className="listen-check-num">{index + 1}.</span>
+                  <span
+                    className={`listen-check-box${show && hit ? ' checked' : ''}`}
+                    aria-hidden
+                  >
+                    {show && hit ? '✓' : ''}
+                  </span>
+                  {show ? (
+                    <span className="listen-check-caption">
+                      {graphemes.length ? highlightThemeLetters(word, graphemes) : word}
+                    </span>
+                  ) : null}
+                </div>
+              </div>
+            )
+          }
+          return (
+            <div className="listen-check-cell" key={`lc-${index}-${word}`}>
+              <span className="listen-check-num">{index + 1}.</span>
+              <span
+                className={`listen-check-box${show && hit ? ' checked' : ''}`}
+                aria-hidden
+              >
+                {show && hit ? '✓' : ''}
+              </span>
+              <span className={`listen-check-line${show ? ' filled' : ''}`}>
+                {show
+                  ? graphemes.length
+                    ? highlightThemeLetters(word, graphemes)
+                    : word
+                  : '\u00a0'}
+              </span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const rows = item.syllableCompletes ?? []
+  const cols = Math.max(1, item.vocabCols ?? 2)
+  const graphemes = item.themeGraphemes ?? []
+  const show = mode === 'answers'
+  const paint = (text: string) =>
+    graphemes.length ? highlightThemeLetters(text, graphemes) : text
+  return (
+    <div className="syllable-complete-block" aria-label="Compléter les mots">
+      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+      <div
+        className="syllable-complete-grid"
+        style={{ '--sc-cols': cols } as CSSProperties}
+      >
+        {rows.map((row, index) => {
+          const blankCh = Math.max(2, Math.min(6, row.blank.length + 1))
+          return (
+            <div className="syllable-complete-card" key={`sc-${index}-${row.word}`}>
+              <div className="syllable-complete-image">
+                {row.imageSrc ? (
+                  <img src={row.imageSrc} alt="" />
+                ) : (
+                  <span className="vocab-card-empty" aria-hidden />
+                )}
+              </div>
+              <div className="syllable-complete-text">
+                <span className="syllable-complete-article">{paint(row.article)}</span>{' '}
+                {row.before ? (
+                  <span className="syllable-complete-affix">{paint(row.before)}</span>
+                ) : null}
+                <span
+                  className={`syllable-complete-blank${show ? ' filled' : ''}`}
+                  style={{ width: `${blankCh}ch` }}
+                >
+                  {show ? paint(row.blank) : '\u00a0'}
+                </span>
+                <span className="syllable-complete-affix">{paint(row.after)}</span>
+                {show ? (
+                  <span className="syllable-complete-full">
+                    {' '}
+                    ({paint(row.article)} {paint(row.word)})
+                  </span>
+                ) : null}
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -504,10 +1074,55 @@ function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       if (/[A-Za-zÀ-ÿ]/.test(ch)) targets.add(ch.toLowerCase())
     }
   }
+  const isTable = item.letterGridVariant === 'table'
+  const cols = Math.max(1, item.letterGridCols ?? (isTable ? 10 : 8))
+
+  if (isTable) {
+    const rows: string[][] = []
+    for (let i = 0; i < options.length; i += cols) {
+      rows.push(options.slice(i, i + cols))
+    }
+    return (
+      <div className="letter-grid-block letter-grid-block--table" aria-label="Grille de lettres">
+        {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+        <table className="letter-table">
+          <tbody>
+            {rows.map((row, rIdx) => (
+              <tr key={`r-${rIdx}`}>
+                {row.map((letter, cIdx) => {
+                  const isLower =
+                    letter.length === 1 &&
+                    letter === letter.toLowerCase() &&
+                    letter !== letter.toUpperCase()
+                  const hit = mode === 'answers' && targets.has(letter.toLowerCase())
+                  return (
+                    <td key={`${rIdx}-${cIdx}-${letter}`}>
+                      <span
+                        className={[
+                          'letter-table-cell',
+                          isLower ? 'letter-table-cell--lower' : 'letter-table-cell--upper',
+                          hit ? 'selected' : '',
+                        ]
+                          .filter(Boolean)
+                          .join(' ')}
+                      >
+                        {letter}
+                      </span>
+                    </td>
+                  )
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
   return (
     <div className="letter-grid-block" aria-label="Grille de lettres">
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-      <div className="letter-grid" role="group">
+      <div className="letter-grid" role="group" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {options.map((letter, index) => {
           const hit = mode === 'answers' && targets.has(letter.toLowerCase())
           return (
@@ -517,6 +1132,86 @@ function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
           )
         })}
       </div>
+    </div>
+  )
+}
+
+/** Met en évidence les graphèmes cibles (voyelle du thème) dans une syllabe. */
+function highlightThemeLetters(text: string, graphemes: readonly string[]): ReactNode[] {
+  const needles = [...graphemes]
+    .filter(Boolean)
+    .sort((a, b) => b.length - a.length)
+  if (needles.length === 0) return [text]
+
+  const lowerNeedles = needles.map((g) => g.toLowerCase())
+  const out: ReactNode[] = []
+  let i = 0
+  let key = 0
+  while (i < text.length) {
+    const rest = text.slice(i)
+    const restLower = rest.toLowerCase()
+    let matched: string | null = null
+    for (let n = 0; n < lowerNeedles.length; n++) {
+      const needle = lowerNeedles[n]!
+      if (restLower.startsWith(needle)) {
+        matched = rest.slice(0, needle.length)
+        break
+      }
+    }
+    if (matched) {
+      out.push(
+        <span key={`v-${key++}`} className="syllable-vowel">
+          {matched}
+        </span>,
+      )
+      i += matched.length
+    } else {
+      out.push(
+        <span key={`c-${key++}`} className="syllable-cons">
+          {text[i]}
+        </span>,
+      )
+      i += 1
+    }
+  }
+  return out
+}
+
+function SyllableTableBlock({ item }: { item: MathItem }) {
+  const options = item.options ?? []
+  const graphemes = item.labels ?? []
+  const cols = Math.max(1, item.letterGridCols ?? 5)
+  const rows: string[][] = []
+  for (let i = 0; i < options.length; i += cols) {
+    rows.push(options.slice(i, i + cols))
+  }
+
+  const renderTable = (variant: 'script' | 'playwrite') => (
+    <table
+      className={`syllable-table syllable-table--${variant}`}
+      aria-label={variant === 'script' ? 'Syllabes en script' : 'Syllabes en écriture Playwrite'}
+    >
+      <tbody>
+        {rows.map((row, rIdx) => (
+          <tr key={`${variant}-r-${rIdx}`}>
+            {row.map((syllable, cIdx) => (
+              <td key={`${variant}-${rIdx}-${cIdx}-${syllable}`}>
+                <span className="syllable-table-cell">
+                  {highlightThemeLetters(syllable, graphemes)}
+                </span>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+
+  return (
+    <div className="syllable-table-block" aria-label="Lecture de syllabes">
+      {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+      {renderTable('script')}
+      {renderTable('playwrite')}
     </div>
   )
 }
@@ -1463,6 +2158,12 @@ function PhraseColorBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
 function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const tokens = item.tokens ?? []
+  const orderedLabels = item.labels ?? []
+  const graphemes = item.themeGraphemes ?? []
+  const categoryOf = (text: string): PhraseCategory =>
+    tokens.find((t) => t.text === text)?.category ?? 'nom'
+  const labelOf = (text: string) =>
+    graphemes.length ? highlightThemeLetters(text, graphemes) : text
   return (
     <div className="phrase-order-block">
       <div className="phrase-bubble-row">
@@ -1481,12 +2182,36 @@ function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
                 printColorAdjust: 'exact',
               }}
             >
-              {token.text}
+              {labelOf(token.text)}
             </span>
           )
         })}
       </div>
-      <PhraseAnswerSlot show={show} answer={item.responseAnswer ?? item.answer} />
+      {show && orderedLabels.length > 0 ? (
+        <div className="phrase-bubble-row phrase-order-answer" aria-label="Corrigé">
+          {orderedLabels.map((text, i) => {
+            const fill = PHRASE_COLORS[categoryOf(text)]
+            const ink = isDarkPhraseColor(fill) ? '#fff' : '#111'
+            return (
+              <span
+                className="phrase-bubble"
+                key={`ans-${text}-${i}`}
+                style={{
+                  backgroundColor: fill,
+                  borderColor: '#111',
+                  color: ink,
+                  WebkitPrintColorAdjust: 'exact',
+                  printColorAdjust: 'exact',
+                }}
+              >
+                {labelOf(text)}
+              </span>
+            )
+          })}
+        </div>
+      ) : (
+        <PhraseAnswerSlot show={show} answer={item.responseAnswer ?? item.answer} />
+      )}
     </div>
   )
 }
@@ -1577,6 +2302,17 @@ export function ItemView({
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match' ||
+    item.layout === 'syllable-complete' ||
+    item.layout === 'syllable-table' ||
+    item.layout === 'listen-check' ||
+    item.layout === 'syllable-sound' ||
+    item.layout === 'phrase-scramble' ||
+    item.layout === 'determinant-fill' ||
+    item.layout === 'dictee-grid' ||
+    item.layout === 'count-sound' ||
+    item.layout === 'read-phrases' ||
+    item.layout === 'audio-match' ||
+    item.layout === 'word-search' ||
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
@@ -1634,6 +2370,7 @@ export function ItemView({
           </div>
         ) : null}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
+        {item.layout === 'syllable-table' && <SyllableTableBlock item={item} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
@@ -1649,6 +2386,32 @@ export function ItemView({
         {item.layout === 'vocab-table' && <VocabTable item={item} />}
         {item.layout === 'vocab-match' && <VocabMatch item={item} mode={mode} />}
         {item.layout === 'vocab-write' && <VocabWrite item={item} mode={mode} />}
+        {item.layout === 'syllable-complete' && (
+          <SyllableCompleteBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'listen-check' && <ListenCheckBlock item={item} mode={mode} />}
+        {item.layout === 'syllable-sound' && (
+          <SyllableSoundBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'phrase-scramble' && (
+          <PhraseScrambleBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'determinant-fill' && (
+          <DeterminantFillBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'dictee-grid' && (
+          <DicteeGridBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'count-sound' && (
+          <CountSoundBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'read-phrases' && <ReadPhrasesBlock item={item} />}
+        {item.layout === 'audio-match' && (
+          <AudioMatchBlock item={item} mode={mode} />
+        )}
+        {item.layout === 'word-search' && (
+          <WordSearchBlock item={item} mode={mode} />
+        )}
         {item.layout === 'card-grid' && item.gameBoard ? (
           <CardGrid board={item.gameBoard as GameBoard} />
         ) : null}

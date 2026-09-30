@@ -60,6 +60,7 @@ export type Layout =
   | 'encadrement'
   | 'order'
   | 'letter-grid'
+  | 'syllable-table'
   | 'phrase-color'
   | 'phrase-order'
   | 'phrase-build'
@@ -68,6 +69,16 @@ export type Layout =
   | 'vocab-table'
   | 'vocab-match'
   | 'vocab-write'
+  | 'syllable-complete'
+  | 'listen-check'
+  | 'syllable-sound'
+  | 'phrase-scramble'
+  | 'determinant-fill'
+  | 'dictee-grid'
+  | 'count-sound'
+  | 'read-phrases'
+  | 'audio-match'
+  | 'word-search'
   | 'theory'
   | 'glossary'
   | 'card-grid'
@@ -292,6 +303,10 @@ export type MathItem = {
   blankIndexes?: number[]
   options?: string[]
   labels?: string[]
+  /** Grille de lettres : nombre de colonnes (ex. 10 pour Soutien FR type 2). */
+  letterGridCols?: number
+  /** Rendu cercles (lecture) ou tableau sans bordure (Soutien FR). */
+  letterGridVariant?: 'circles' | 'table'
   /** Variante de rendu pour les QCM (orale empilée, cartes vocabulaire). */
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
@@ -366,7 +381,9 @@ export type MathItem = {
   vocabRows?: number
   vocabCols?: number
   /** Association Voc : mode image ou texte. */
-  vocabMatchMode?: 'image' | 'text'
+  vocabMatchMode?: 'image' | 'text' | 'syllables'
+  /** Graphèmes à colorer (Soutien FR — voyelle du thème). */
+  themeGraphemes?: string[]
   /** Paires correctes pour le corrigé (association). */
   vocabPairs?: Array<{ left: string; right: string }>
   /** Longueur du trait de réponse Voc (en caractères approximatifs). */
@@ -375,6 +392,61 @@ export type MathItem = {
   vocabWriteHint?: string
   /** Phrase lue à voix haute (dictée), affichée au corrigé. */
   vocabDictee?: string
+  /** Soutien FR type 5 : grille image + Un/Une + mot à trous (syllabe). */
+  syllableCompletes?: Array<{
+    article: string
+    before: string
+    blank: string
+    after: string
+    word: string
+    imageSrc?: string
+  }>
+  /** Soutien FR type 8 : image + mini-tableau (une case par syllabe). */
+  syllableSoundItems?: Array<{
+    word: string
+    parts: string[]
+    /** Index de la syllabe qui porte le son (−1 si aucune). */
+    hitIndex: number
+    imageSrc?: string
+  }>
+  /** Soutien FR type 9 : phrase + image + trait + lettres mélangées. */
+  phraseScrambles?: Array<{
+    before: string
+    after: string
+    word: string
+    letters: string
+    imageSrc?: string
+  }>
+  /** Soutien FR type 10 : phrases à compléter (le / la / l’ / les). */
+  determinantFills?: Array<{
+    parts: Array<{ t: string; u?: boolean } | { blank: string }>
+    sentence: string
+  }>
+  /** Soutien FR type 11 : 8 mots de dictée (grille 2×4). */
+  dicteeWords?: string[]
+  /** Soutien FR type 12 : phrases Playwrite + compter le son. */
+  countSoundItems?: Array<{
+    phrase: string
+    count: number
+  }>
+  /** Soutien FR type 14 : phrases à lire (voyelle colorée). */
+  readPhrases?: string[]
+  /** Soutien FR type 15 : QR audio à gauche + mots à relier à droite. */
+  audioMatchRows?: Array<{
+    /** Mot entendu (ordre d’écoute / QR). */
+    listenWord: string
+    audioSrc?: string
+    /** Mot affiché sur la même ligne (mélangé). */
+    showWord: string
+  }>
+  /** Soutien FR type 16 : mots mêlés. */
+  wordSearch?: {
+    size: number
+    grid: string[][]
+    words: string[]
+    /** Cellules du corrigé : « r,c ». */
+    hitCells?: string[]
+  }
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string
