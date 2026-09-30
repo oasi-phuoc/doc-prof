@@ -140,6 +140,7 @@ function genKind(
             vocabEntries: entries,
             vocabRows: 4,
             vocabCols: 4,
+            labels: [...bank.graphemes],
             answer: words.join(' · '),
           },
         ],

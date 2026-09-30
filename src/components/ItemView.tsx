@@ -17,10 +17,12 @@ function VocabTable({ item }: { item: MathItem }) {
   const cols = Math.max(1, item.vocabCols ?? 3)
   const entries = item.vocabEntries ?? []
   const cells = Array.from({ length: rows * cols }, (_, index) => entries[index] ?? null)
+  const themeLetters = item.labels ?? []
+  const highlight = themeLetters.length > 0
 
   return (
     <div
-      className="vocab-table"
+      className={`vocab-table${highlight ? ' vocab-table--theme-letters' : ''}`}
       style={{ '--vocab-cols': cols, '--vocab-rows': rows } as CSSProperties}
       aria-label="Mots à apprendre"
     >
@@ -33,7 +35,13 @@ function VocabTable({ item }: { item: MathItem }) {
               <span className="vocab-card-empty" aria-hidden />
             )}
           </div>
-          <div className="vocab-card-word">{entry?.label ?? ''}</div>
+          <div className="vocab-card-word">
+            {entry?.label
+              ? highlight
+                ? highlightThemeLetters(entry.label, themeLetters)
+                : entry.label
+              : ''}
+          </div>
         </div>
       ))}
     </div>
