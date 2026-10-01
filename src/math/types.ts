@@ -426,7 +426,7 @@ export type MathItem = {
   }>
   /** Soutien FR type 11 : mots de dictée (grille 2 colonnes). */
   dicteeWords?: string[]
-  /** Soutien FR type 12 : phrases Playwrite + compter le son. */
+  /** Soutien FR type 12 : phrases à lire + compter le son. */
   countSoundItems?: Array<{
     phrase: string
     count: number

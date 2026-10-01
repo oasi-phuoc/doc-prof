@@ -196,7 +196,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       },
 
     ],
-    countPhrases: ["Clara habite dans une maison à côté de l’école.", "Sous un arbre il y a des animaux : des chiens et des chats.", "Ils achètent des légumes frais pour préparer le repas.", "Isabelle lit un roman à haute voix.", "Ma girafe mange des feuilles et boit de l’eau près du lac.", "Papa va prendre la chatte et son chaton."],
+    countPhrases: [
+      "Clara habite dans une maison à côté de l’école.",
+      "Sous un arbre il y a des animaux : des chiens et des chats.",
+      "Ils achètent des légumes frais pour préparer le repas.",
+      "Isabelle lit un roman à haute voix.",
+      "Ma girafe mange des feuilles et boit de l’eau près du lac.",
+      "Papa va prendre la chatte et son chaton.",
+      "Anna range sa valise avant le départ en vacances.",
+      "Le bateau avance lentement sur le lac calme.",
+      "Sara achète une salade et des carottes au marché.",
+      "Le chat noir marche près de la table basse.",
+      "Marc lave sa voiture dans la cour derrière la maison.",
+      "La famille chante à la maison le samedi matin.",
+    ],
     readPhrases: ["Je m'appelle Anastasia.", "Le chat dort sur le canapé.", "Maman prépare une salade.", "Ma famille chante à la maison.", "J'achète des carottes et des patates.", "Le samedi, je vais au marché.", "Alicia joue au football avec mes amis.", "Adna va au théâtre regarder un spectacle.", "J'aime les animaux.", "Nous allons au parc avec Max.", "Je suis l'amie d'Alexandre.", "Monica va au cinéma.", "Sara lave sa voiture.", "Marc un sac à la main.", "Le papa va à la gare.", "Le garçon joue avec sa balle."],
     audioPairs: [
       { word: 'chat', other: 'abeille' },
@@ -400,7 +413,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       }
 
     ],
-    countPhrases: ["Le gorille mange une pomme dans le zoo.", "Le cochon rose porte un bonnet dans son enclos.", "Le poisson orange tourne autour du rocher au fond de l’eau.", "Le coq picore des graines près du portail.", "Le docteur fait tomber les dominos sur le sol.", "Le motard prend des photos de son vélo."],
+    countPhrases: [
+      "Le gorille mange une pomme dans le zoo.",
+      "Le cochon rose porte un bonnet dans son enclos.",
+      "Le poisson orange tourne autour du rocher au fond de l’eau.",
+      "Le coq picore des graines près du portail.",
+      "Le docteur fait tomber les dominos sur le sol.",
+      "Le motard prend des photos de son vélo.",
+      "Le robot range les bols dans le frigo.",
+      "Olivia pose son manteau près de la porte.",
+      "Le fromage orange est trop fort pour Thomas.",
+      "Le clown jette des bonbons dans la foule.",
+      "Nora ouvre la boîte de chocolats.",
+      "Le mot « photo » est écrit au tableau.",
+    ],
     readPhrases: ["Après le loto, Tom boit un soda et fait dodo.", "Le parasol est posé près du vélo.", "Le métro ne passe pas à Vétroz.", "Paul porte le javelot jusqu’au rocher.", "L’homme va à l’hôpital avec sa moto.", "Je mets ma culotte et mon maillot.", "Le pilote joue du piano avant le vol.", "Le crocodile dort au bord de l’eau.", "Hugo vole des brocolis et des abricots.", "La brosse est dans le bocal.", "Rosa croque le chocolat devant le zoo.", "Le koala mange du  fromage orange.", "Le rocher rose est au bord de l’océan.", "L’otarie montre son oreille au docteur.", "Le lavabo n’est pas propre.", "Le professeur donne une limonade à Noé"],
     audioPairs: [
       { word: 'coffre', other: 'avocate' },
@@ -609,7 +635,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       }
 
     ],
-    countPhrases: ["La fille visite la ville avec son ami.", "Le piano joue une jolie mélodie.", "Elise met une chemise grise dans sa valise.", "Qui a mis le crayon ici ?", "La vitrine est remplie de figurines d’animaux.", "Michel n’a pas fini son bol de riz."],
+    countPhrases: [
+      "La fille visite la ville avec son ami.",
+      "Le piano joue une jolie mélodie.",
+      "Elise met une chemise grise dans sa valise.",
+      "Qui a mis le crayon ici ?",
+      "La vitrine est remplie de figurines d’animaux.",
+      "Michel n’a pas fini son bol de riz.",
+      "Le tigre dort dans la jungle silencieuse.",
+      "Iris lit une histoire dans son lit.",
+      "Le kiwi vert est trop acide pour Julie.",
+      "Philippe range six livres sur l’étagère.",
+      "La cerise tombe vite de l’arbre.",
+      "Le mini robot vibre près de la pile.",
+    ],
     readPhrases: ["Elle fait un exercice difficile.", "Lili choisit une jolie tulipe.", "Le cuisinier prépare du riz et des épinards.", "J’admire les photographies.", "Iris lit un livre illustré.", "La jolie fille colorie une image.", "Dimitri finit son dîner dans huit minutes.", "La petite souris grignote du riz.", "Il choisit des lilas et des jonquilles", "Nina a mis une liste sur la vitre", "Le pirate visite une île.", "La souris file dans la cuisine.", "Mimi porte un costume gris.", "Emilie dessine une pie et un dinosaure.", "La rapide fourmi transporte des sucreries.", "Rémi est timide quand il imite le tigre."],
     audioPairs: [
       { word: 'zipper', other: 'panier' },
@@ -849,7 +888,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       }
 
     ],
-    countPhrases: ["La fusée monte au-dessus des nuages.", "Le renard a trouvé une plume brune.", "La musique résonne dans la rue.", "Une tortue avance doucement sous la pluie.", "Le juge écoute le début du procès.", "Le curé discute avec plusieurs habitants du village."],
+    countPhrases: [
+      "La fusée monte au-dessus des nuages.",
+      "Le renard a trouvé une plume brune.",
+      "La musique résonne dans la rue.",
+      "Une tortue avance doucement sous la pluie.",
+      "Le juge écoute le début du procès.",
+      "Le curé discute avec plusieurs habitants du village.",
+      "La prune mûre tombe du prunier du jardin.",
+      "Luc range son pull turquoise dans l’armoire.",
+      "Une plume flotte au-dessus du mur.",
+      "Le biscuit sucré fond dans la bouche.",
+      "La dune surplombe le rivage au crépuscule.",
+      "Une huile parfumée coule dans la casserole.",
+    ],
     readPhrases: ["Ursula porte une jupe sur mesure.", "Le début du film surprend le public.", "Le costume du danseur est de couleur prune.", "Luc ajoute du sucre dans son jus.", "La bûche brûle dans la cheminée.", "Un curieux étudiant observe la plume tomber.", "Julie écoute de la musique dans sa voiture.", "Il cherche une solution pour aller sur la lune.", "Les cuisiniers épluchent des légumes.", "La pluie tombe sur les tuiles.", "Le futur médecin étudie beaucoup.", "Une tortue se réfugie sous un buisson.", "Au menu, il y a des fruits et des légumes", "Le bus passe dans un tunnel.", "La lumière du soleil illumine la clôture.", "Lucie ne met pas sa couverture la nuit."],
     audioPairs: [
       { word: 'huitre', other: 'lunette' },
@@ -1094,7 +1146,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       }
 
     ],
-    countPhrases: ["Je veux acheter deux œufs.", "Ma mère mesure le niveau de l’eau.", "Vous semez les graines sur la pelouse ?", "Je peux mettre le jeu sur la table.", "Le cheval peut venir avec nous.", "Alicia n’est pas heureuse quand elle regarde le feu."],
+    countPhrases: [
+      "Je veux acheter deux œufs.",
+      "Ma mère mesure le niveau de l’eau.",
+      "Vous semez les graines sur la pelouse ?",
+      "Je peux mettre le jeu sur la table.",
+      "Le cheval peut venir avec nous.",
+      "Alicia n’est pas heureuse quand elle regarde le feu.",
+      "Le repas est prêt pour le déjeuner.",
+      "La fenêtre reste ouverte sur le jardin.",
+      "Une crevette rose est dans l’assiette.",
+      "Le chemin mène vers l’école du village.",
+      "Elle prépare une recette avec des œufs.",
+      "Le bébé regarde le feu dans la cheminée.",
+    ],
     readPhrases: ["Le petit cheval regarde la grenouille.", "Je me demande ce que je vais faire ce soir.", "Le renard se promène le long de la rivière.", "Ce que tu me dis me semble étrange.", "Le redoutable chevalier se repose sur le sol.", "Le second chat retourne sur la pelouse.", "Je le retrouve devant le magasin de fleurs.", "Ne me dérange pas, je regarde le ciel se colorer.", "Que ferons-nous demain, se demande le fermier ?", "Le chemin de terre mène vers le reposant village.", "Ce remède laisse un léger regret.", "Le refuge du chevreau velu est près de la colline.", "Les revenants se retrouve chaque nuit.", "Après le repas, le renard retourne à son refuge.", "Elle se remet de son retard.", "Je regarde le reflet de ma femme dans l'eau."],
     audioPairs: [
       { word: 'médecin', other: 'relax' },
@@ -1340,7 +1405,20 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       }
 
     ],
-    countPhrases: ["Le gymnase est fermé aujourd'hui.", "Ce type d'oiseau vole trop vite.", "La glycémie de l’infirmière est stable.", "Ce polyglotte parle six langues différentes.", "Voici les règles d'hygiène du lycée.", "Je n’aime pas du tout la gymnastique."],
+    countPhrases: [
+      "Le gymnase est fermé aujourd'hui.",
+      "Ce type d'oiseau vole trop vite.",
+      "La glycémie de l’infirmière est stable.",
+      "Ce polyglotte parle six langues différentes.",
+      "Voici les règles d'hygiène du lycée.",
+      "Je n’aime pas du tout la gymnastique.",
+      "Le stylo jaune est près du pyjama.",
+      "La bicyclette rouge reste dans le garage.",
+      "Le cygne nage sur l’étang du parc.",
+      "La pyramide est dessinée dans le livre.",
+      "Le cyclone approche de la côte.",
+      "Yves range l’encyclopédie sur l’étagère.",
+    ],
     readPhrases: ["Il y a un stylo, un livre et un pyjama ici.", "Mon ami a remis sa bicyclette à minuit.", "Le jury analyse le mystère de ce crime.", "À midi, il y a un joli cygne dans la ville.", "Le physicien étudie le système avec un style précis.", "Six amis roulent à motocyclette.", "Ce polygone a une belle symétrie.", "La cycliste et l'infirmière habitent près du lycée.", "La pyramide est immense et ancienne.", "Qui a pris mon cylindre gris ?", "Ils ont pris rapidement un tricycle.", "Son hobby favori, c'est la dactylo.", "La syllabe finale est difficile à lire.", "La fille lit un mythe ancien dans son lit.", "Quel type de films aimes-tu ?", "Le rythme de sa vie est calme."],
     audioPairs: [
       { word: 'sytème', other: 'typique' },

@@ -1235,14 +1235,17 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                           soutienKind === 'syllabe-son' ||
                           soutienKind === 'lettres-phrase' ||
                           soutienKind === 'determinants' ||
-                          soutienKind === 'dictee'
+                          soutienKind === 'dictee' ||
+                          soutienKind === 'compter'
                         ? {
                             count:
                               soutienKind === 'lettres-phrase'
                                 ? 6
                                 : soutienKind === 'ecouter-image'
                                   ? 9
-                                  : 8,
+                                  : soutienKind === 'compter'
+                                    ? 5
+                                    : 8,
                           }
                         : isLecture || isSoutienFr
                           ? { count: 6 }
@@ -1985,7 +1988,9 @@ function GeneratorPage() {
                         soutienKind === 'determinants' ||
                         soutienKind === 'dictee'
                       ? 16
-                      : 30
+                      : soutienKind === 'compter'
+                        ? 12
+                        : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -3397,6 +3402,9 @@ function GeneratorPage() {
                 ) : null}
                 {soutienKind === 'dictee' ? (
                   <small className="muted">Nombre de mots à écrire (max. 16).</small>
+                ) : null}
+                {soutienKind === 'compter' ? (
+                  <small className="muted">Nombre de phrases à compter (max. 12).</small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
