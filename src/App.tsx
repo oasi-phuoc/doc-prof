@@ -3363,12 +3363,8 @@ function GeneratorPage() {
               isGramTheory ||
               isJeuxDomain ||
               isCalliDomain ||
-<<<<<<< HEAD
               isSoutienMots ||
               isSoutienMotsMeles ? null : (
-=======
-              isSoutienMots ? null : (
->>>>>>> origin/cursor/soutien-type1-libre-mots-0375
               <label className="select-shell">
                 <span>
                   {isTransform
