@@ -274,6 +274,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'Chanteuse', parts: ['Chan', 'teuse'] },
       { word: 'Automne', parts: ['Au', 'tomne'] },
       { word: 'Ordinateur', parts: ['Or', 'di', 'na', 'teur'] },
+      { word: 'Ballon', parts: ['Ba', 'llon'] },
+      { word: 'Avion', parts: ['A', 'vion'] },
+      { word: 'Ananas', parts: ['A', 'na', 'nas'] },
+      { word: 'Vase', parts: ['Va', 'se'] },
+      { word: 'Café', parts: ['Ca', 'fé'] },
+      { word: 'Parapluie', parts: ['Pa', 'ra', 'pluie'] },
     ],
     orderSentences: [
       ['La/determinant', 'classe/nom', 'est/verbe', 'pleine./adjectif'],
@@ -537,6 +543,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'Échalote', parts: ['É', 'cha', 'lote'] },
       { word: 'Judo', parts: ['Ju', 'do'] },
       { word: 'Lavabo', parts: ['La', 'va', 'bo'] },
+      { word: 'Tomate', parts: ['To', 'ma', 'te'] },
+      { word: 'Robot', parts: ['Ro', 'bot'] },
+      { word: 'Photo', parts: ['Pho', 'to'] },
+      { word: 'Domino', parts: ['Do', 'mi', 'no'] },
+      { word: 'Motard', parts: ['Mo', 'tard'] },
+      { word: 'Cochon', parts: ['Co', 'chon'] },
     ],
     orderSentences: [
       [
@@ -805,6 +817,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'dentifrice', parts: ['den', 'ti', 'frice'] },
       { word: 'frite', parts: ['fri', 'te'] },
       { word: 'chien', parts: ['chien'] },
+      { word: 'Ville', parts: ['Vil', 'le'] },
+      { word: 'Piano', parts: ['Pi', 'a', 'no'] },
+      { word: 'Chemise', parts: ['Che', 'mi', 'se'] },
+      { word: 'Livre', parts: ['Li', 'vre'] },
+      { word: 'Tigre', parts: ['Ti', 'gre'] },
+      { word: 'Iris', parts: ['I', 'ris'] },
     ],
     orderSentences: [
       [
@@ -1104,6 +1122,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'culotte', parts: ['cu', 'lotte'] },
       { word: 'hirondelle', parts: ['hi', 'ron', 'delle'] },
       { word: 'fusée', parts: ['fu', 'sée'] },
+      { word: 'Plume', parts: ['Plu', 'me'] },
+      { word: 'Sucre', parts: ['Su', 'cre'] },
+      { word: 'Lune', parts: ['Lu', 'ne'] },
+      { word: 'Jupe', parts: ['Ju', 'pe'] },
+      { word: 'Musique', parts: ['Mu', 'sique'] },
+      { word: 'Prune', parts: ['Pru', 'ne'] },
     ],
     orderSentences: [
       [
@@ -1408,6 +1432,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'coquelicot', parts: ['co', 'que', 'li', 'cot'] },
       { word: 'hexagone', parts: ['hex', 'a', 'gone'] },
       { word: 'cerise', parts: ['ce', 'rise'] },
+      { word: 'Fenêtre', parts: ['Fe', 'nê', 'tre'] },
+      { word: 'Cheval', parts: ['Che', 'val'] },
+      { word: 'Crevette', parts: ['Cre', 'vette'] },
+      { word: 'Recette', parts: ['Re', 'cette'] },
+      { word: 'Bébé', parts: ['Bé', 'bé'] },
+      { word: 'Chemin', parts: ['Che', 'min'] },
     ],
     orderSentences: [
       [
@@ -1713,6 +1743,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'stylo', parts: ['sty', 'lo'] },
       { word: 'cygne', parts: ['cy', 'gne'] },
       { word: 'gymnase', parts: ['gym', 'nase'] },
+      { word: 'Pyjama', parts: ['Py', 'ja', 'ma'] },
+      { word: 'Mythe', parts: ['My', 'the'] },
+      { word: 'Syllabe', parts: ['Syl', 'la', 'be'] },
+      { word: 'Lycée', parts: ['Ly', 'cée'] },
+      { word: 'Cyclone', parts: ['Cy', 'clo', 'ne'] },
+      { word: 'Tricycle', parts: ['Tri', 'cy', 'cle'] },
     ],
     orderSentences: [
       [
