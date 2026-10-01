@@ -94,7 +94,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'ordre',
     label: '13 · Remettre en ordre',
-    description: 'Remettre les mots dans l’ordre — pastilles couleurs Gattegno selon la nature.',
+    description:
+      'Remettre les mots dans l’ordre — pastilles Gattegno ; sans coloriage des lettres du son.',
     instruction: 'Mettez les mots dans l’ordre.',
     preferredColumns: 1 as const,
   },

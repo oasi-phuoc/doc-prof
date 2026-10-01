@@ -639,10 +639,11 @@ function genKind(
       }
     }
     case 'ordre': {
-      /** Pastilles Gattegno + lettres du son en couleur thème. */
+      /** Pastilles Gattegno uniquement (pas de coloriage des lettres du son). */
+      const want = Math.max(1, Math.min(12, n))
       const rows = shuffle(rng, [...bank.orderSentences]).slice(
         0,
-        Math.min(n, bank.orderSentences.length),
+        Math.min(want, bank.orderSentences.length),
       )
       return {
         instruction: 'Mettez dans l’ordre les mots.',
@@ -657,7 +658,6 @@ function genKind(
             labels: ordered.map((t) => t.text),
             answer: sentence,
             responseAnswer: sentence,
-            themeGraphemes: [...bank.graphemes],
           }
         }),
       }
