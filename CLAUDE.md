@@ -61,7 +61,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Phrases calligraphie (10/mot, authentiques, une ligne) | `calligraphie-phrases` |
 | Compréhension écrite A1/A2/B1 (CECRL / FALC) | `comprehension-ecrite` |
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
-| Images / audios vocab (fond blanc, TTS Siwis) | `medias-image-audio` |
+| Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) | `medias-image-audio` |
 | Aperçu A4 fixe + impression | `test-impression` |
 | Préparer une pull request | `preparer-pull-request` |
 

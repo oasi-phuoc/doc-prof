@@ -1400,6 +1400,13 @@ html,body,#root{
   font-size:12px;font-weight:700;color:var(--ink);white-space:nowrap;line-height:1.7
 }
 .result-head-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+/* Générer / Imprimer : même boîte (largeur + hauteur). */
+.result-head-actions .print-chip.is-generate{
+  box-sizing:border-box;
+  width:7.75rem;min-width:7.75rem;max-width:7.75rem;
+  min-height:40px;height:40px;padding:0 16px;
+  justify-content:center;
+}
 .print-chip{
   display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:8px 16px;
   border:1px solid color-mix(in srgb, var(--purple) 40%, #fff);border-radius:999px;background:#fff;color:var(--purple);
