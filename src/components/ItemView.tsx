@@ -3,6 +3,7 @@ import QRCode from 'qrcode'
 import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
 import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
+import { lessonPhonemeSegmentsFromGraphemes } from '@/francais/soutien/phoneme'
 import { CompositeFigure } from './math/CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
 import { FractionView, renderMathText } from './math/FractionView'
@@ -324,6 +325,16 @@ function AudioMatchBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   )
 }
 
+/** Type 14 : colorie seulement la voyelle simple (Alpha), pas an / au / eau… */
+function highlightLessonPhonemes(text: string, graphemes: readonly string[]): ReactNode[] {
+  if (!graphemes.length) return [text]
+  return lessonPhonemeSegmentsFromGraphemes(text, graphemes).map((seg, index) => (
+    <span key={`lp-${index}`} className={seg.hit ? 'syllable-vowel' : 'syllable-cons'}>
+      {seg.text}
+    </span>
+  ))
+}
+
 function ReadPhrasesBlock({ item }: { item: MathItem }) {
   const phrases = item.readPhrases ?? []
   const graphemes = item.themeGraphemes ?? []
@@ -335,7 +346,7 @@ function ReadPhrasesBlock({ item }: { item: MathItem }) {
             <tr key={`rp-${index}`}>
               <td className="read-phrases-num">{index + 1}.</td>
               <td className="read-phrases-text">
-                {highlightThemeLetters(phrase, graphemes)}
+                {highlightLessonPhonemes(phrase, graphemes)}
               </td>
             </tr>
           ))}

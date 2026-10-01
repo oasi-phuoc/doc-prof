@@ -4,9 +4,11 @@
  *
  * - Type 1 / écrits : phonème de la leçon + lettre écrite (ex. /o/ → lettre o/ô).
  * - Audio : phonème seul (ex. /o/ inclut au, eau → bateau, chaud…).
+ * - Types 12 / 14 : découpe Alpha (an/au/eau… exclus du /a/ simple).
  */
 import { normalizeLetter } from '@/francais/lecture-banks'
 import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
+import { tokenizeAlpha } from '@/jeux/alpha-phonics'
 import type { SoutienCompound, SoutienVowelBank } from './banks'
 import { GRAPHEME_WORD_POOLS } from './grapheme-word-pools'
 import { LECTURE_WORD_ITEMS, type LectureWordItem } from './lecture-word-items'
@@ -80,6 +82,70 @@ export function wordHasLessonLetter(word: string, bank: SoutienVowelBank): boole
     }
   }
   return false
+}
+
+/** Cibles lettre de la leçon (a/à/â → « a », etc.). */
+function lessonLetterTargets(bank: SoutienVowelBank): Set<string> {
+  const targets = new Set<string>()
+  targets.add(normalizeLetter(bank.letterLower))
+  for (const g of bank.graphemes) {
+    if (g.length === 1) targets.add(normalizeLetter(g))
+  }
+  return targets
+}
+
+/**
+ * Segment Alpha = voyelle simple de la leçon (pas an / au / eau / on…).
+ * Même logique que le coloriage Alpha des cartes vocabulaire.
+ */
+export function isLessonSimpleVowelSegment(
+  segmentText: string,
+  tone: string,
+  bank: SoutienVowelBank,
+): boolean {
+  if (tone !== 'vowel') return false
+  if (segmentText.length !== 1) return false
+  return lessonLetterTargets(bank).has(normalizeLetter(segmentText))
+}
+
+/** Compte les phonèmes simples de la leçon dans un texte (Alpha). */
+export function countLessonPhonemeInText(text: string, bank: SoutienVowelBank): number {
+  let n = 0
+  for (const seg of tokenizeAlpha(text)) {
+    if (isLessonSimpleVowelSegment(seg.text, seg.tone, bank)) n += 1
+  }
+  return n
+}
+
+/** Découpe Alpha + marquage des voyelles simples de la leçon. */
+export function lessonPhonemeSegments(
+  text: string,
+  bank: SoutienVowelBank,
+): ReadonlyArray<{ text: string; hit: boolean }> {
+  return tokenizeAlpha(text).map((seg) => ({
+    text: seg.text,
+    hit: isLessonSimpleVowelSegment(seg.text, seg.tone, bank),
+  }))
+}
+
+/**
+ * Variante à partir des seuls graphèmes (rendu UI sans objet banque).
+ * Les graphèmes multi-lettres (au, eau) sont ignorés : on ne colorie que la lettre simple.
+ */
+export function lessonPhonemeSegmentsFromGraphemes(
+  text: string,
+  graphemes: readonly string[],
+): ReadonlyArray<{ text: string; hit: boolean }> {
+  const targets = new Set(
+    graphemes.filter((g) => g.length === 1).map((g) => normalizeLetter(g)),
+  )
+  if (targets.size === 0) {
+    return [{ text, hit: false }]
+  }
+  return tokenizeAlpha(text).map((seg) => ({
+    text: seg.text,
+    hit: seg.tone === 'vowel' && seg.text.length === 1 && targets.has(normalizeLetter(seg.text)),
+  }))
 }
 
 /**

@@ -1,4 +1,4 @@
-import { countGrapheme, wordHasGrapheme, type VowelBank } from '@/francais/lecture-banks'
+import { wordHasGrapheme, type VowelBank } from '@/francais/lecture-banks'
 import { int, pick, shuffle, type Rng } from '@/math/rng'
 import { tagged } from '@/francais/phrase-sentences'
 import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
@@ -9,6 +9,7 @@ import { parseSoutienType, type SoutienKindId } from './kinds'
 import {
   ALL_VOCAB_LABELS,
   compoundsForType1Words,
+  countLessonPhonemeInText,
   lessonSoundGraphemes,
   lessonWordsByLetter,
   lessonWordsBySound,
@@ -139,8 +140,9 @@ function letterGrid(rng: Rng, bank: SoutienVowelBank, rowCount: number): MathIte
   }
 }
 
+/** Type 12 : compte le phonème simple (Alpha), pas la lettre dans an/au/eau… */
 function countSoundInPhrase(phrase: string, bank: SoutienVowelBank): number {
-  return countGrapheme(phrase, asVowelBank(bank))
+  return countLessonPhonemeInText(phrase, bank)
 }
 
 /** Consonnes simples (pas de digrammes CH/GN/PH/QU). */
