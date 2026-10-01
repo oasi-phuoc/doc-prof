@@ -24,17 +24,19 @@ const DIRS: ReadonlyArray<readonly [number, number]> = [
   [-1, 0],
 ]
 
-/** Majuscules pour la grille (garde les accents ; Æ/Œ → AE/OE, jamais en une cellule). */
+/** Majuscules pour la grille : sans accents ni ligatures (Æ/Œ → AE/OE). */
 export function toGridLetters(word: string): string {
   return word
-    .normalize('NFC')
-    .replace(/[’']/g, '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // accents / diacritiques
+    .replace(/[’'`´ˆ¨˜¯¸]/g, '')
     .replace(/-/g, '')
     .replace(/œ/gi, 'oe')
     .replace(/æ/gi, 'ae')
     .toLocaleUpperCase('fr-FR')
     .replace(/Œ/g, 'OE')
     .replace(/Æ/g, 'AE')
+    .replace(/[^A-Z]/g, '')
 }
 
 function canPlace(
@@ -69,9 +71,8 @@ function placeWord(
   }
 }
 
-/** Remplissage : lettres simples uniquement (pas de ligatures Æ / Œ). */
-const FILL =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ'.split('')
+/** Remplissage : lettres latines simples uniquement (pas d’accents ni ligatures). */
+const FILL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
 /**
  * Construit une grille de mots mêlés déterministe (15×15 par défaut).

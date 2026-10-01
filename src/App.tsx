@@ -1862,6 +1862,7 @@ function GeneratorPage() {
   const isSoutienFr = activePage.domain === 'soutien-fr'
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
   const isSoutienMots = soutienKind === 'mots'
+  const isSoutienMotsMeles = soutienKind === 'mots-meles'
   const isSoutienCompleter = soutienKind === 'completer'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
@@ -3362,7 +3363,8 @@ function GeneratorPage() {
               isGramTheory ||
               isJeuxDomain ||
               isCalliDomain ||
-              isSoutienMots ? null : (
+              isSoutienMots ||
+              isSoutienMotsMeles ? null : (
               <label className="select-shell">
                 <span>
                   {isTransform

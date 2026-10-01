@@ -720,7 +720,7 @@ function genKind(
       }
     }
     case 'mots-meles': {
-      /** Liste 12 mots + grille 15×15 (H/V) ; pas de ligatures Æ/Œ. */
+      /** Liste 12 mots + grille 15×15 (H/V) ; lettres sans accents ni ligatures. */
       const puzzle = buildWordSearch(rng, bank.wordSearchWords, 15, 12)
       const hits = [...wordSearchHitCells(puzzle.placements)]
       return {
