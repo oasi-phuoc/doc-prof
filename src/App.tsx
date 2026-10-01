@@ -1903,7 +1903,7 @@ function GeneratorPage() {
                   : soutienKind === 'ecouter-image'
                     ? 20
                     : soutienKind === 'lettres-phrase'
-                      ? 12
+                      ? 16
                       : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
@@ -3297,7 +3297,9 @@ function GeneratorPage() {
                   <small className="muted">Nombre de cartes (max. 18).</small>
                 ) : null}
                 {soutienKind === 'lettres-phrase' ? (
-                  <small className="muted">Nombre de phrases (max. 12).</small>
+                  <small className="muted">
+                    Nombre de phrases (max. 16 · lettres remélangées à chaque tirage).
+                  </small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">

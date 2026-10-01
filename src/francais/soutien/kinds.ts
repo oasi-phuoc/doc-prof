@@ -63,7 +63,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'lettres-phrase',
     label: '9 · Mot dans la phrase',
-    description: 'Lignes de hauteur égale, sans bordure ; trait + lettres mélangées.',
+    description:
+      '25 phrases par son ; lettres remélangées à chaque tirage ; hauteurs égales, sans bordure.',
     instruction: 'Écrivez le mot correct à l’aide des lettres.',
     preferredColumns: 1 as const,
   },

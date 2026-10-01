@@ -530,8 +530,8 @@ function genKind(
       }
     }
     case 'lettres-phrase': {
-      /** Phrases à trous ; count = nb de mots / lignes. */
-      const want = Math.max(1, Math.min(12, n))
+      /** Phrases à trous ; count = nb de mots / lignes ; lettres remélangées à chaque tirage. */
+      const want = Math.max(1, Math.min(16, n))
       const rows = shuffle(rng, [...bank.scrambles]).slice(
         0,
         Math.min(want, bank.scrambles.length),
@@ -548,11 +548,15 @@ function genKind(
               const idx = lower.indexOf(w)
               const before = idx >= 0 ? row.sentence.slice(0, idx) : `${row.sentence} `
               const after = idx >= 0 ? row.sentence.slice(idx + row.word.length) : ''
+              const letters = shuffle(
+                rng,
+                [...row.word.toLocaleUpperCase('fr-FR')].filter((ch) => /\p{L}/u.test(ch)),
+              ).join(' ')
               return {
                 before,
                 after,
                 word: row.word,
-                letters: row.letters.split('').join(' '),
+                letters,
                 imageSrc: soutienImageFor(row.word),
               }
             }),
