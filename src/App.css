@@ -3000,6 +3000,15 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   max-height:18rem;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#faf9fc
 }
 .game-entry-row{display:grid;grid-template-columns:40px 1fr 28px;gap:6px;align-items:center}
+.soutien-mots-libre .game-entry-row{grid-template-columns:40px 1fr 28px 28px}
+.game-entry-replace{
+  width:28px;height:28px;border:1px solid var(--line);border-radius:8px;background:#fff;
+  color:var(--muted);font-size:13px;font-weight:700;line-height:1;padding:0
+}
+.game-entry-replace:hover,.game-entry-replace.is-active{
+  color:var(--purple);border-color:color-mix(in srgb,var(--purple) 40%,#fff);
+  background:var(--lavender)
+}
 .game-entry-thumb{
   width:40px;height:40px;padding:0;border:1px dashed #c9c2b8;border-radius:10px;
   background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;
@@ -3017,6 +3026,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .soutien-mots-libre{margin-top:10px}
 .soutien-mots-libre .game-entry-list{max-height:14rem;background:#fff}
 .soutien-mots-libre .vocab-add-row{margin-top:8px}
+.soutien-mots-libre .soutien-suggest-list{max-height:8.5rem}
 .soutien-completer-libre{margin-top:10px}
 .soutien-suggest-list{
   display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px;max-height:6.5rem;overflow:auto

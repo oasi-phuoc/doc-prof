@@ -16,8 +16,11 @@ import {
 } from './phoneme'
 import { buildWordSearch, wordSearchHitCells } from './word-search'
 
-/** Mots type 1 (16) : banque + Voc filtrés par la lettre de la leçon. */
-export function type1Words(bank: SoutienVowelBank): string[] {
+/**
+ * Tous les mots type 1 du son (lettre de la leçon) : banque + Voc.
+ * Utilisé en mode libre pour proposer des remplacements au-delà des 16 défauts.
+ */
+export function type1WordPool(bank: SoutienVowelBank): string[] {
   const pool = lessonWordsByLetter(bank)
   const withImg: string[] = []
   const without: string[] = []
@@ -30,7 +33,12 @@ export function type1Words(bank: SoutienVowelBank): string[] {
   const fromBank = pool.filter((w) => bankSet.has(w.toLowerCase()))
   const fromVocabImg = withImg.filter((w) => !bankSet.has(w.toLowerCase()))
   const fromVocabRest = without.filter((w) => !bankSet.has(w.toLowerCase()))
-  return [...fromBank, ...fromVocabImg, ...fromVocabRest].slice(0, 16)
+  return [...fromBank, ...fromVocabImg, ...fromVocabRest]
+}
+
+/** Mots type 1 (16) : banque + Voc filtrés par la lettre de la leçon. */
+export function type1Words(bank: SoutienVowelBank): string[] {
+  return type1WordPool(bank).slice(0, 16)
 }
 
 export type SoutienBatch = {

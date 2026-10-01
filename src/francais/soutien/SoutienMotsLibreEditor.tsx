@@ -29,14 +29,29 @@ function newEntryId(label: string): string {
   return `soutien-${slug || 'mot'}-${Date.now().toString(36)}`
 }
 
+function entryFromWord(label: string): SoutienMotEntry {
+  const trimmed = label.trim()
+  return {
+    id: newEntryId(trimmed),
+    label: trimmed,
+    imageSrc: soutienImageFor(trimmed),
+  }
+}
+
 /** Liste éditable mot + image pour Soutien FR type 1 (mode Libre). */
 export function SoutienMotsLibreEditor({
   entries,
   onChange,
+  suggestedWords = [],
+  soundLabel,
   max = SOUTIEN_MOTS_MAX,
 }: {
   entries: SoutienMotEntry[]
   onChange: (next: SoutienMotEntry[]) => void
+  /** Autres mots du son (hors liste actuelle) pour sélection / remplacement. */
+  suggestedWords?: readonly string[]
+  /** Ex. « /a/ » — libellé affiché au-dessus des propositions. */
+  soundLabel?: string
   max?: number
 }) {
   const baseId = useId()
@@ -44,7 +59,11 @@ export function SoutienMotsLibreEditor({
   const [error, setError] = useState<string | null>(null)
   const [draftLabel, setDraftLabel] = useState('')
   const [draftImage, setDraftImage] = useState<string | undefined>()
+  const [replaceIndex, setReplaceIndex] = useState<number | null>(null)
   const draftFileRef = useRef<HTMLInputElement | null>(null)
+
+  const used = new Set(entries.map((e) => e.label.trim().toLowerCase()).filter(Boolean))
+  const suggestions = suggestedWords.filter((w) => w.trim() && !used.has(w.trim().toLowerCase()))
 
   async function pickImage(file: File | undefined, apply: (src: string) => void) {
     if (!file) return
@@ -65,6 +84,25 @@ export function SoutienMotsLibreEditor({
   function removeAt(index: number) {
     if (entries.length <= 1) return
     onChange(entries.filter((_, i) => i !== index))
+    if (replaceIndex === index) setReplaceIndex(null)
+    else if (replaceIndex != null && replaceIndex > index) setReplaceIndex(replaceIndex - 1)
+  }
+
+  function applySuggestion(word: string) {
+    const next = entryFromWord(word)
+    if (replaceIndex != null && replaceIndex >= 0 && replaceIndex < entries.length) {
+      const replaced = entries.map((entry, i) => (i === replaceIndex ? next : entry))
+      onChange(replaced)
+      setReplaceIndex(null)
+      setError(null)
+      return
+    }
+    if (entries.length >= max) {
+      setError('Sélectionnez d’abord un mot de la liste (bouton ⇄) pour le remplacer, ou retirez-en un.')
+      return
+    }
+    onChange([...entries, next])
+    setError(null)
   }
 
   function addDraft() {
@@ -85,6 +123,34 @@ export function SoutienMotsLibreEditor({
 
   return (
     <div className="quad-libre-block soutien-mots-libre">
+      {suggestions.length > 0 ? (
+        <>
+          <b>
+            Autres mots{soundLabel ? ` du son ${soundLabel}` : ''}
+            {replaceIndex != null ? ` — remplacer « ${entries[replaceIndex]?.label ?? ''} »` : ''}
+          </b>
+          <div className="soutien-suggest-list" role="group" aria-label="Mots du son à sélectionner">
+            {suggestions.map((word) => (
+              <button
+                key={`sug-${word}`}
+                type="button"
+                className="soutien-suggest-chip"
+                title={
+                  replaceIndex != null
+                    ? `Remplacer par ${word}`
+                    : entries.length >= max
+                      ? `Choisir ${word} (sélectionnez d’abord un mot à remplacer)`
+                      : `Ajouter ${word}`
+                }
+                onClick={() => applySuggestion(word)}
+              >
+                {word}
+              </button>
+            ))}
+          </div>
+        </>
+      ) : null}
+
       <b>Mots ({entries.length}/{max})</b>
       <ul className="game-entry-list" aria-label="Mots et images du type 1">
         {entries.map((entry, index) => {
@@ -137,6 +203,20 @@ export function SoutienMotsLibreEditor({
                   })
                 }}
               />
+              <button
+                type="button"
+                className={`game-entry-replace${replaceIndex === index ? ' is-active' : ''}`}
+                aria-label={
+                  replaceIndex === index
+                    ? `Annuler le remplacement du mot ${index + 1}`
+                    : `Remplacer le mot ${index + 1} par un autre du son`
+                }
+                aria-pressed={replaceIndex === index}
+                title="Remplacer par un mot du son"
+                onClick={() => setReplaceIndex((cur) => (cur === index ? null : index))}
+              >
+                ⇄
+              </button>
               <button
                 type="button"
                 className="game-entry-clear"
@@ -197,14 +277,16 @@ export function SoutienMotsLibreEditor({
           </button>
         </div>
       ) : (
-        <small className="muted">Maximum {max} mots (grille 4×4).</small>
+        <small className="muted">Maximum {max} mots (grille 4×4). Utilisez ⇄ pour en remplacer un.</small>
       )}
       {error ? (
         <p className="questions-overflow-hint" role="alert">
           {error}
         </p>
       ) : (
-        <small className="muted">Libre : modifiez le mot ou l’image (+), ou ajoutez une ligne.</small>
+        <small className="muted">
+          Libre : choisissez un autre mot du son (pastilles), remplacez avec ⇄, ou saisissez un mot.
+        </small>
       )}
     </div>
   )

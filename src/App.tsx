@@ -78,7 +78,7 @@ import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankByTopic } from '@/francais/soutien/banks'
-import { type1Words } from '@/francais/soutien/generate'
+import { type1WordPool, type1Words } from '@/francais/soutien/generate'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import {
   defaultSoutienMotsEntries,
@@ -1950,6 +1950,8 @@ function GeneratorPage() {
   const isSoutienCols345 = soutienKind === 'ecouter-image'
   const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
   const soutienType1Words = soutienBank ? type1Words(soutienBank) : []
+  /** Pool complet du son (au-delà des 16 défauts) pour le mode libre type 1. */
+  const soutienType1WordPool = soutienBank ? type1WordPool(soutienBank) : []
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
   const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
   const calliIsPhrases = isCalliDomain && isCalliPhrasesType(activeBlock.exerciseType)
@@ -3111,7 +3113,7 @@ function GeneratorPage() {
                     </button>
                   </div>
                   <small className="muted">
-                    Libre : ajoutez des mots ou changez le mot et l’image.
+                    Libre : choisissez d’autres mots du son, ou changez le mot et l’image.
                   </small>
                   {activeBlock.soutienMotsLibre ? (
                     <SoutienMotsLibreEditor
@@ -3120,6 +3122,8 @@ function GeneratorPage() {
                           ? activeBlock.soutienMotsEntries
                           : defaultSoutienMotsEntries(soutienType1Words)
                       }
+                      suggestedWords={soutienType1WordPool}
+                      soundLabel={soutienBank?.sound}
                       onChange={(next) => updatePage({ soutienMotsEntries: next })}
                     />
                   ) : null}
@@ -3356,7 +3360,12 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isGramTheory || isJeuxDomain || isCalliDomain ? null : (
+              {isPhraseChart ||
+              isVocabLearn ||
+              isGramTheory ||
+              isJeuxDomain ||
+              isCalliDomain ||
+              isSoutienMots ? null : (
               <label className="select-shell">
                 <span>
                   {isTransform
