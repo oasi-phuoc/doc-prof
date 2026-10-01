@@ -1234,13 +1234,10 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                           soutienKind === 'ecouter-image' ||
                           soutienKind === 'syllabe-son' ||
                           soutienKind === 'lettres-phrase' ||
-<<<<<<< HEAD
                           soutienKind === 'determinants' ||
                           soutienKind === 'dictee' ||
-                          soutienKind === 'compter'
-=======
+                          soutienKind === 'compter' ||
                           soutienKind === 'ordre'
->>>>>>> origin/cursor/soutien-type13-ordre-0375
                         ? {
                             count:
                               soutienKind === 'lettres-phrase' || soutienKind === 'ordre'
@@ -1992,11 +1989,7 @@ function GeneratorPage() {
                         soutienKind === 'determinants' ||
                         soutienKind === 'dictee'
                       ? 16
-<<<<<<< HEAD
-                      : soutienKind === 'compter'
-=======
-                      : soutienKind === 'ordre'
->>>>>>> origin/cursor/soutien-type13-ordre-0375
+                      : soutienKind === 'compter' || soutienKind === 'ordre'
                         ? 12
                         : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
@@ -3401,7 +3394,6 @@ function GeneratorPage() {
                     Nombre de phrases (max. 16 · lettres remélangées à chaque tirage).
                   </small>
                 ) : null}
-<<<<<<< HEAD
                 {soutienKind === 'determinants' ? (
                   <small className="muted">
                     {isSoutienDetLocked
@@ -3414,10 +3406,9 @@ function GeneratorPage() {
                 ) : null}
                 {soutienKind === 'compter' ? (
                   <small className="muted">Nombre de phrases à compter (max. 12).</small>
-=======
+                ) : null}
                 {soutienKind === 'ordre' ? (
                   <small className="muted">Nombre de phrases à remettre en ordre (max. 12).</small>
->>>>>>> origin/cursor/soutien-type13-ordre-0375
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
