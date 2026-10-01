@@ -712,7 +712,7 @@ function genKind(
       }
     }
     case 'mots-meles': {
-      /** Liste 12 mots + grille 15×15 (H/V). */
+      /** Liste 12 mots + grille 15×15 (H/V) ; pas de ligatures Æ/Œ. */
       const puzzle = buildWordSearch(rng, bank.wordSearchWords, 15, 12)
       const hits = [...wordSearchHitCells(puzzle.placements)]
       return {
@@ -721,7 +721,6 @@ function genKind(
         items: [
           {
             layout: 'word-search',
-            prompt: 'Entourez les mots dans la grille.',
             wordSearch: {
               size: puzzle.size,
               grid: puzzle.grid,

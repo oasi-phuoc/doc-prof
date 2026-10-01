@@ -1250,8 +1250,14 @@ html,body,#root{
   .read-phrases-text .syllable-vowel{color:var(--purple)!important}
   .audio-match-table,.audio-match-table td{border:none!important}
   .audio-match-num,.audio-match-key{color:var(--purple)!important}
+<<<<<<< HEAD
   .audio-match-word-text .syllable-vowel{color:var(--purple)!important;text-decoration:none!important}
   .word-search-list,.word-search-list-cell{border-color:#999!important}
+=======
+  .audio-match-word-text .syllable-vowel{color:var(--purple)!important}
+  .word-search-list,.word-search-list-cell{border:none!important}
+  .word-search-list-word{border-bottom:none!important}
+>>>>>>> origin/cursor/soutien-type16-meles-0375
   .word-search-cell.is-hit{
     color:var(--purple)!important;
     background:color-mix(in srgb, var(--purple) 16%, #fff)!important;
@@ -2122,19 +2128,19 @@ html,body,#root{
 }
 .audio-match-key{font-size:11px;font-weight:700;color:var(--purple);margin-left:4px}
 
-/* Soutien FR type 16 — mots mêlés */
+/* Soutien FR type 16 — mots mêlés ; sans bordure liste ; lettres ×2 ; padding ×3 */
 .word-search-block{
-  display:flex;flex-direction:column;gap:10px;width:100%;min-width:0
+  display:flex;flex-direction:column;gap:30px;width:100%;min-width:0
 }
 .word-search-list{
-  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+  width:100%;border-collapse:collapse;border:none;table-layout:fixed
 }
 .word-search-list-cell{
-  border:1px dashed #c5c9d0;padding:5px 8px;vertical-align:middle;
+  border:none;padding:5px 8px;vertical-align:middle;
   font-size:12px;font-weight:600;color:var(--ink);text-align:left
 }
 .word-search-list-word{
-  display:inline-block;border-bottom:1px solid var(--ink);line-height:1.2;padding-bottom:1px
+  display:inline-block;line-height:1.2
 }
 .word-search-grid{
   width:100%;max-width:100%;
@@ -2143,11 +2149,11 @@ html,body,#root{
 }
 .word-search-cell{
   border:none;
-  padding:1px 0;
+  padding:3px 0;
   text-align:center;
   vertical-align:middle;
   font-family:'DM Sans',ui-monospace,monospace;
-  font-size:11px;
+  font-size:22px;
   font-weight:700;
   line-height:1.35;
   color:var(--ink);
