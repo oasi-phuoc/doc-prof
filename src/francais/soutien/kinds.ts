@@ -87,7 +87,7 @@ export const SOUTIEN_KINDS = [
     id: 'compter',
     label: '12 · Compter le son',
     description:
-      'Phrases à lire (texte simple) + compter le son ; « J’entends … fois le son » ; sans bordure.',
+      'Phrases en Playwrite (sans lignes) + compter le phonème simple ; écart questions ×2.',
     instruction: 'Combien de fois entendez-vous le son ?',
     preferredColumns: 1 as const,
   },
@@ -103,7 +103,7 @@ export const SOUTIEN_KINDS = [
     id: 'lire',
     label: '14 · Phrases à lire',
     description:
-      'Phrases à lire (banque 50) ; numéros couleur thème ; sans bordure ; 10 à 20 questions.',
+      'Phrases à lire ; voyelle simple colorée (Alpha : pas an/au/eau…) ; 10 à 20 questions.',
     instruction: 'Lisez les phrases.',
     preferredColumns: 1 as const,
   },
