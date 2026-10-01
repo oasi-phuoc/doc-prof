@@ -607,10 +607,11 @@ function genKind(
       }
     }
     case 'compter': {
-      /** Phrase Playwrite sans coloriage des lettres (type 12). */
+      /** Phrases à lire (texte simple) + compter le son ; count réglable. */
+      const want = Math.max(1, Math.min(12, n))
       const phrases = shuffle(rng, [...bank.countPhrases]).slice(
         0,
-        Math.min(5, bank.countPhrases.length),
+        Math.min(want, bank.countPhrases.length),
       )
       const items = phrases.map((phrase) => ({
         phrase,
@@ -622,7 +623,6 @@ function genKind(
         items: [
           {
             layout: 'count-sound',
-            prompt: `J’entends …… fois le son ${bank.sound}.`,
             countSoundItems: items,
             answer: items.map((it) => String(it.count)).join(' · '),
           },

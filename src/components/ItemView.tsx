@@ -370,9 +370,7 @@ function CountSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
               </tr>
               <tr className="count-sound-phrase-row">
                 <td className="count-sound-phrase-cell">
-                  <div className="count-sound-phrase-wrap">
-                    <p className="count-sound-phrase">{row.phrase}</p>
-                  </div>
+                  <p className="count-sound-phrase">{row.phrase}</p>
                 </td>
               </tr>
             </Fragment>

@@ -85,7 +85,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'compter',
     label: '12 · Compter le son',
-    description: 'Phrase à lire en Playwrite + compter combien de fois on entend le son.',
+    description:
+      'Phrases à lire (texte simple) + compter le son ; « J’entends … fois le son » ; sans bordure.',
     instruction: 'Combien de fois entendez-vous le son ?',
     preferredColumns: 1 as const,
   },
