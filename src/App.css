@@ -1245,7 +1245,8 @@ html,body,#root{
   .count-sound-num{color:var(--purple)!important}
   .count-sound-prompt{color:var(--ink)!important}
   .count-sound-blank{border-bottom-color:var(--purple)!important;color:var(--purple)!important}
-  .read-phrases-table,.read-phrases-table td{border-color:#999!important}
+  .read-phrases-table,.read-phrases-table td{border:none!important}
+  .read-phrases-num{color:var(--purple)!important}
   .read-phrases-text .syllable-vowel{color:var(--purple)!important}
   .audio-match-table,.audio-match-table td{border-color:#999!important}
   .audio-match-num,.audio-match-key{color:var(--purple)!important}
@@ -2061,16 +2062,16 @@ html,body,#root{
   text-align:justify;
 }
 
-/* Soutien FR type 14 — phrases à lire, voyelle couleur thème */
+/* Soutien FR type 14 — phrases à lire ; sans bordure ; espacement +50 % */
 .read-phrases-block{width:100%;min-width:0}
 .read-phrases-table{
-  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+  width:100%;border-collapse:collapse;border:none;table-layout:fixed
 }
 .read-phrases-table td{
-  border:1px dashed #c5c9d0;padding:6px 8px;vertical-align:middle
+  border:none;padding:9px 8px;vertical-align:middle
 }
 .read-phrases-num{
-  width:2em;font-size:13px;font-weight:700;color:var(--ink);
+  width:2em;font-size:13px;font-weight:700;color:var(--purple);
   text-align:left;white-space:nowrap
 }
 .read-phrases-text{

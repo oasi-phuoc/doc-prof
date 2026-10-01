@@ -1237,7 +1237,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                           soutienKind === 'determinants' ||
                           soutienKind === 'dictee' ||
                           soutienKind === 'compter' ||
-                          soutienKind === 'ordre'
+                          soutienKind === 'ordre' ||
+                          soutienKind === 'lire'
                         ? {
                             count:
                               soutienKind === 'lettres-phrase' || soutienKind === 'ordre'
@@ -1246,7 +1247,9 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                                   ? 9
                                   : soutienKind === 'compter'
                                     ? 5
-                                    : 8,
+                                    : soutienKind === 'lire'
+                                      ? 10
+                                      : 8,
                           }
                         : isLecture || isSoutienFr
                           ? { count: 6 }
@@ -1991,7 +1994,9 @@ function GeneratorPage() {
                       ? 16
                       : soutienKind === 'compter' || soutienKind === 'ordre'
                         ? 12
-                        : 30
+                        : soutienKind === 'lire'
+                          ? 20
+                          : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -3409,6 +3414,9 @@ function GeneratorPage() {
                 ) : null}
                 {soutienKind === 'ordre' ? (
                   <small className="muted">Nombre de phrases à remettre en ordre (max. 12).</small>
+                ) : null}
+                {soutienKind === 'lire' ? (
+                  <small className="muted">Nombre de phrases à lire (défaut 10, max. 20).</small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
