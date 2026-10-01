@@ -197,6 +197,19 @@ function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
   ]
 }
 
+/** Consigne type 10 : l’ / le / la / les en gras + couleur thème. */
+function renderSoutienInstruction(text: string): ReactNode {
+  const marker = 'Complétez avec les déterminants '
+  if (!text.startsWith(marker)) return text
+  return (
+    <>
+      {marker}
+      <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
+      <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
+    </>
+  )
+}
+
 function RefreshIcon() {
   return (
     <svg viewBox="0 0 16 16" aria-hidden>
@@ -329,7 +342,7 @@ function WorksheetSheet({
                       </button>
                     ) : null}
                   </div>
-                  <p>{block.instruction}</p>
+                  <p>{renderSoutienInstruction(block.instruction)}</p>
                   {block.givens && block.givens.length > 0 ? (
                     <p className="sheet-givens" aria-label="Valeurs des variables">
                       {block.givens.map((given, index) => (
@@ -1220,7 +1233,9 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                           soutienKind === 'ecouter' ||
                           soutienKind === 'ecouter-image' ||
                           soutienKind === 'syllabe-son' ||
-                          soutienKind === 'lettres-phrase'
+                          soutienKind === 'lettres-phrase' ||
+                          soutienKind === 'determinants' ||
+                          soutienKind === 'dictee'
                         ? {
                             count:
                               soutienKind === 'lettres-phrase'
@@ -1808,14 +1823,78 @@ function GeneratorPage() {
   const isSoutienCompleter = soutienKind === 'completer'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
-  /** Types 4–9 : le champ compte des mots (pas des « questions » génériques). */
+  /** Types 4–11 : le champ compte des mots (pas des « questions » génériques). */
   const isSoutienMotsCount =
     soutienKind === 'relier' ||
     soutienKind === 'completer' ||
     soutienKind === 'ecouter' ||
     soutienKind === 'ecouter-image' ||
     soutienKind === 'syllabe-son' ||
-    soutienKind === 'lettres-phrase'
+    soutienKind === 'lettres-phrase' ||
+    soutienKind === 'determinants' ||
+    soutienKind === 'dictee'
+  /** Type 5 de la fiche (même thème) — fixe le nb de questions du type 10. */
+  const soutienType5Count = (() => {
+    if (!isSoutienFr) return undefined
+    for (const page of pages) {
+      for (const block of pageBlocks(page)) {
+        if (
+          parseSoutienType(block.exerciseType)?.kind === 'completer' &&
+          block.topic === activeBlock.topic
+        ) {
+          return block.count
+        }
+      }
+    }
+    return undefined
+  })()
+  const isSoutienDetLocked =
+    soutienKind === 'determinants' && soutienType5Count != null
+  /** Aligne le type 10 sur le nombre de mots du type 5 (même thème). */
+  const soutienDetSyncKey = useMemo(() => {
+    if (!isSoutienFr) return ''
+    return pages
+      .flatMap((page) =>
+        pageBlocks(page).map((block) => {
+          const kind = parseSoutienType(block.exerciseType)?.kind
+          if (kind === 'completer' || kind === 'determinants') {
+            return `${block.topic}:${kind}:${block.count}`
+          }
+          return ''
+        }),
+      )
+      .filter(Boolean)
+      .join('|')
+  }, [isSoutienFr, pages])
+  useEffect(() => {
+    if (!soutienDetSyncKey) return
+    setPages((current) => {
+      const type5ByTopic = new Map<string, number>()
+      for (const page of current) {
+        for (const block of pageBlocks(page)) {
+          if (parseSoutienType(block.exerciseType)?.kind !== 'completer') continue
+          if (!type5ByTopic.has(block.topic)) {
+            type5ByTopic.set(block.topic, block.count)
+          }
+        }
+      }
+      if (type5ByTopic.size === 0) return current
+      let changed = false
+      const next = current.map((page) => {
+        const blocks = pageBlocks(page)
+        let updated = page
+        blocks.forEach((block, bi) => {
+          if (parseSoutienType(block.exerciseType)?.kind !== 'determinants') return
+          const want = type5ByTopic.get(block.topic)
+          if (want == null || block.count === want) return
+          changed = true
+          updated = setPageBlock(updated, bi, { ...block, count: want })
+        })
+        return updated
+      })
+      return changed ? next : current
+    })
+  }, [soutienDetSyncKey])
   /** Types 5 / 6 / 8 : grille 1–3 colonnes. */
   const isSoutienCols123 =
     soutienKind === 'completer' ||
@@ -1902,7 +1981,9 @@ function GeneratorPage() {
                   ? 18
                   : soutienKind === 'ecouter-image'
                     ? 20
-                    : soutienKind === 'lettres-phrase'
+                    : soutienKind === 'lettres-phrase' ||
+                        soutienKind === 'determinants' ||
+                        soutienKind === 'dictee'
                       ? 16
                       : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
@@ -3247,18 +3328,24 @@ function GeneratorPage() {
                   }
                   aria-invalid={questionsInputOverflow}
                   title={
-                    bankOverflow
-                      ? `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
-                      : questionsOverflow
-                        ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
-                        : undefined
+                    isSoutienDetLocked
+                      ? 'Aligné sur le nombre de mots du type 5 (même thème).'
+                      : bankOverflow
+                        ? `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
+                        : questionsOverflow
+                          ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
+                          : undefined
                   }
                   type="number"
                   min={soutienKind === 'syllabes' ? 2 : 1}
                   max={maxQuestions}
                   step={soutienKind === 'syllabes' ? 2 : 1}
-                  value={activeBlock.count}
+                  value={
+                    isSoutienDetLocked ? (soutienType5Count as number) : activeBlock.count
+                  }
+                  readOnly={isSoutienDetLocked}
                   onChange={(event) => {
+                    if (isSoutienDetLocked) return
                     let next = Math.max(
                       soutienKind === 'syllabes' ? 2 : 1,
                       Math.min(maxQuestions, Number(event.target.value) || 1),
@@ -3300,6 +3387,16 @@ function GeneratorPage() {
                   <small className="muted">
                     Nombre de phrases (max. 16 · lettres remélangées à chaque tirage).
                   </small>
+                ) : null}
+                {soutienKind === 'determinants' ? (
+                  <small className="muted">
+                    {isSoutienDetLocked
+                      ? 'Nombre de phrases aligné sur les mots du type 5 (même thème).'
+                      : 'Nombre de phrases (max. 16 · ajoutez un type 5 pour l’aligner).'}
+                  </small>
+                ) : null}
+                {soutienKind === 'dictee' ? (
+                  <small className="muted">Nombre de mots à écrire (max. 16).</small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">

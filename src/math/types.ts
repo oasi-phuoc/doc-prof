@@ -421,10 +421,10 @@ export type MathItem = {
   }>
   /** Soutien FR type 10 : phrases à compléter (le / la / l’ / les). */
   determinantFills?: Array<{
-    parts: Array<{ t: string; u?: boolean } | { blank: string }>
+    parts: Array<{ t: string } | { blank: string }>
     sentence: string
   }>
-  /** Soutien FR type 11 : 8 mots de dictée (grille 2×4). */
+  /** Soutien FR type 11 : mots de dictée (grille 2 colonnes). */
   dicteeWords?: string[]
   /** Soutien FR type 12 : phrases Playwrite + compter le son. */
   countSoundItems?: Array<{

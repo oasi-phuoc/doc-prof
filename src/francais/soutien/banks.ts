@@ -13,10 +13,8 @@ export type SoutienComplete = {
   /** Suite du mot après le trait (ex. « teur », « teau »). */
   after: string
 }
-/** Segment de phrase déterminants : texte (évent. souligné) ou blanc. */
-export type SoutienDetPart =
-  | { t: string; u?: boolean }
-  | { blank: string }
+/** Segment de phrase déterminants : texte ou blanc (trait continu). */
+export type SoutienDetPart = { t: string } | { blank: string }
 export type SoutienDet = {
   parts: readonly SoutienDetPart[]
   /** Phrase complète (corrigé). */
@@ -118,33 +116,35 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     ],
     determinants: [
       {
-        parts: [{ blank: 'Le' }, { t: ' bateau', u: true }, { t: ' avance sur le lac.' }],
+        parts: [{ blank: 'Le' }, { t: ' bateau avance sur le lac.' }],
         sentence: 'Le bateau avance sur le lac.',
       },
+
       {
         parts: [
           { blank: 'Les' },
-          { t: ' animaux', u: true },
-          { t: ' jouent avec ' },
+          { t: ' animaux jouent avec ' },
           { blank: 'le' },
           { t: ' ballon.' },
         ],
         sentence: 'Les animaux jouent avec le ballon.',
       },
+
       {
         parts: [
           { blank: 'L’' },
-          { t: ' avion', u: true },
-          { t: ' vole au-dessus de ' },
+          { t: ' avion vole au-dessus de ' },
           { blank: 'l’' },
           { t: ' arbre.' },
         ],
         sentence: 'L’avion vole au-dessus de l’arbre.',
       },
+
       {
-        parts: [{ blank: 'La' }, { t: ' famille', u: true }, { t: ' de Sara mange une salade.' }],
+        parts: [{ blank: 'La' }, { t: ' famille de Sara mange une salade.' }],
         sentence: 'La famille de Sara mange une salade.',
       },
+
       {
         parts: [
           { t: 'Je pose ' },
@@ -155,18 +155,46 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
         ],
         sentence: 'Je pose le vase et l’allumette sur une table.',
       },
+
       {
-        parts: [{ blank: 'L’' }, { t: ' aspirateur', u: true }, { t: ' est dans un placard.' }],
+        parts: [{ blank: 'L’' }, { t: ' aspirateur est dans un placard.' }],
         sentence: 'L’aspirateur est dans un placard.',
       },
+
       {
-        parts: [{ blank: 'La' }, { t: ' datte', u: true }, { t: ' est dans mon assiette.' }],
+        parts: [{ blank: 'La' }, { t: ' datte est dans mon assiette.' }],
         sentence: 'La datte est dans mon assiette.',
       },
+
       {
-        parts: [{ t: 'Je n’arrive pas à allumer ' }, { blank: 'les' }, { t: ' allumettes.' }],
+        parts: [
+          { t: 'Je n’arrive pas à allumer ' },
+          { blank: 'les' },
+          { t: ' allumettes.' },
+        ],
         sentence: 'Je n’arrive pas à allumer les allumettes.',
       },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' ballon rouge roule dans la cour.' }],
+        sentence: 'Le ballon rouge roule dans la cour.',
+      },
+
+      {
+        parts: [{ blank: 'L’' }, { t: ' arbre du parc est très grand.' }],
+        sentence: 'L’arbre du parc est très grand.',
+      },
+
+      {
+        parts: [{ blank: 'L’' }, { t: ' animal dort dans la grange.' }],
+        sentence: 'L’animal dort dans la grange.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' vase est plein d’eau fraîche.' }],
+        sentence: 'Le vase est plein d’eau fraîche.',
+      },
+
     ],
     countPhrases: ["Clara habite dans une maison à côté de l’école.", "Sous un arbre il y a des animaux : des chiens et des chats.", "Ils achètent des légumes frais pour préparer le repas.", "Isabelle lit un roman à haute voix.", "Ma girafe mange des feuilles et boit de l’eau près du lac.", "Papa va prendre la chatte et son chaton."],
     readPhrases: ["Je m'appelle Anastasia.", "Le chat dort sur le canapé.", "Maman prépare une salade.", "Ma famille chante à la maison.", "J'achète des carottes et des patates.", "Le samedi, je vais au marché.", "Alicia joue au football avec mes amis.", "Adna va au théâtre regarder un spectacle.", "J'aime les animaux.", "Nous allons au parc avec Max.", "Je suis l'amie d'Alexandre.", "Monica va au cinéma.", "Sara lave sa voiture.", "Marc un sac à la main.", "Le papa va à la gare.", "Le garçon joue avec sa balle."],
@@ -292,53 +320,85 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     ],
     determinants: [
       {
-        parts: [{ blank: 'La' }, { t: ' moto', u: true }, { t: ' est devant la maison.' }],
-        sentence: 'La moto est devant la maison.',
+        parts: [{ blank: 'Le' }, { t: ' piano est trop lourd à porter.' }],
+        sentence: 'Le piano est trop lourd à porter.',
       },
+
+      {
+        parts: [{ blank: 'L’' }, { t: ' otarie nage près du rocher.' }],
+        sentence: 'L’otarie nage près du rocher.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' cobra se cache sous la pierre.' }],
+        sentence: 'Le cobra se cache sous la pierre.',
+      },
+
       {
         parts: [
-          { t: 'Elle coupe ' },
+          { blank: 'Le' },
+          { t: ' fromage est dans ' },
           { blank: 'le' },
-          { t: ' fromage', u: true },
-          { t: ' en gros morceaux.' },
+          { t: ' frigo.' },
         ],
-        sentence: 'Elle coupe le fromage en gros morceaux.',
+        sentence: 'Le fromage est dans le frigo.',
       },
+
       {
-        parts: [{ blank: 'La' }, { t: ' coccinelle', u: true }, { t: ' est sur une tomate.' }],
-        sentence: 'La coccinelle est sur une tomate.',
+        parts: [{ blank: 'La' }, { t: ' moto file sur la route.' }],
+        sentence: 'La moto file sur la route.',
       },
+
       {
         parts: [
-          { blank: 'L’' },
-          { t: ' otarie', u: true },
-          { t: ' nage dans ' },
+          { blank: 'Le' },
+          { t: ' donut est sur ' },
           { blank: 'l’' },
-          { t: ' océan.' },
+          { t: ' assiette.' },
         ],
-        sentence: 'L’otarie nage dans l’océan.',
+        sentence: 'Le donut est sur l’assiette.',
       },
-      {
-        parts: [{ blank: 'Les' }, { t: ' donuts', u: true }, { t: ' au chocolat sont sur la table.' }],
-        sentence: 'Les donuts au chocolat sont sur la table.',
-      },
+
       {
         parts: [
-          { t: 'Je pose ' },
-          { blank: 'le' },
-          { t: ' piano', u: true },
-          { t: ' près du vélo.' },
+          { blank: 'La' },
+          { t: ' robe bleue est dans ' },
+          { blank: 'l’' },
+          { t: ' armoire.' },
         ],
-        sentence: 'Je pose le piano près du vélo.',
+        sentence: 'La robe bleue est dans l’armoire.',
       },
+
       {
-        parts: [{ blank: 'Le' }, { t: ' cobra', u: true }, { t: ' dort dans son abri.' }],
-        sentence: 'Le cobra dort dans son abri.',
+        parts: [{ blank: 'La' }, { t: ' coccinelle marche sur la rose.' }],
+        sentence: 'La coccinelle marche sur la rose.',
       },
+
       {
-        parts: [{ blank: 'Les' }, { t: ' losanges', u: true }, { t: ' sont de couleur rose.' }],
-        sentence: 'Les losanges sont de couleur rose.',
+        parts: [
+          { blank: 'Le' },
+          { t: ' flocon tombe sur ' },
+          { blank: 'le' },
+          { t: ' manteau.' },
+        ],
+        sentence: 'Le flocon tombe sur le manteau.',
       },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' losange est dessiné au tableau.' }],
+        sentence: 'Le losange est dessiné au tableau.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' robot marche tout seul.' }],
+        sentence: 'Le robot marche tout seul.',
+      },
+
+      {
+        parts: [{ blank: 'L’' }, { t: ' orange est juteuse et ronde.' }],
+        sentence: 'L’orange est juteuse et ronde.',
+      }
+
     ],
     countPhrases: ["Le gorille mange une pomme dans le zoo.", "Le cochon rose porte un bonnet dans son enclos.", "Le poisson orange tourne autour du rocher au fond de l’eau.", "Le coq picore des graines près du portail.", "Le docteur fait tomber les dominos sur le sol.", "Le motard prend des photos de son vélo."],
     readPhrases: ["Après le loto, Tom boit un soda et fait dodo.", "Le parasol est posé près du vélo.", "Le métro ne passe pas à Vétroz.", "Paul porte le javelot jusqu’au rocher.", "L’homme va à l’hôpital avec sa moto.", "Je mets ma culotte et mon maillot.", "Le pilote joue du piano avant le vol.", "Le crocodile dort au bord de l’eau.", "Hugo vole des brocolis et des abricots.", "La brosse est dans le bocal.", "Rosa croque le chocolat devant le zoo.", "Le koala mange du  fromage orange.", "Le rocher rose est au bord de l’océan.", "L’otarie montre son oreille au docteur.", "Le lavabo n’est pas propre.", "Le professeur donne une limonade à Noé"],
@@ -474,83 +534,80 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     ],
     determinants: [
       {
-        parts: [
-          { blank: 'La' },
-          { t: ' petite fille', u: true },
-          { t: ' mange ' },
-          { blank: 'la' },
-          { t: ' cerise.' },
-        ],
-        sentence: 'La petite fille mange la cerise.',
+        parts: [{ blank: 'Le' }, { t: ' tigre dort dans la jungle.' }],
+        sentence: 'Le tigre dort dans la jungle.',
       },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' briquet est sur la table.' }],
+        sentence: 'Le briquet est sur la table.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' cookie est trop sucré.' }],
+        sentence: 'Le cookie est trop sucré.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' canari chante près de la fenêtre.' }],
+        sentence: 'Le canari chante près de la fenêtre.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' kiwi est vert et acidulé.' }],
+        sentence: 'Le kiwi est vert et acidulé.',
+      },
+
       {
         parts: [
           { blank: 'L’' },
-          { t: ' hérisson', u: true },
-          { t: ' finit ' },
+          { t: ' épinard est dans ' },
           { blank: 'le' },
-          { t: ' citron.' },
+          { t: ' panier.' },
         ],
-        sentence: 'L’hérisson finit le citron.',
+        sentence: 'L’épinard est dans le panier.',
       },
+
       {
-        parts: [
-          { blank: 'Les' },
-          { t: ' cuisiniers', u: true },
-          { t: ' coupent ' },
-          { blank: 'le' },
-          { t: ' kiwi.' },
-        ],
-        sentence: 'Les cuisiniers coupent le kiwi.',
+        parts: [{ blank: 'Le' }, { t: ' citron est très acide.' }],
+        sentence: 'Le citron est très acide.',
       },
-      {
-        parts: [
-          { blank: 'Le' },
-          { t: ' tigre', u: true },
-          { t: ' dévore ' },
-          { blank: 'la' },
-          { t: ' viande.' },
-        ],
-        sentence: 'Le tigre dévore la viande.',
-      },
-      {
-        parts: [
-          { blank: 'Le' },
-          { t: ' canari', u: true },
-          { t: ' picore ' },
-          { blank: 'l’' },
-          { t: ' épinard.' },
-        ],
-        sentence: 'Le canari picore l’épinard.',
-      },
-      {
-        parts: [
-          { t: 'Emilie partage ' },
-          { blank: 'le' },
-          { t: ' cookie', u: true },
-          { t: ' avec son ami.' },
-        ],
-        sentence: 'Emilie partage le cookie avec son ami.',
-      },
-      {
-        parts: [
-          { t: 'Lili n’aime pas ' },
-          { blank: 'le' },
-          { t: ' briquet', u: true },
-          { t: ' gris.' },
-        ],
-        sentence: 'Lili n’aime pas le briquet gris.',
-      },
+
       {
         parts: [
           { blank: 'La' },
-          { t: ' jolie girafe', u: true },
-          { t: ' visite ' },
-          { blank: 'les' },
-          { t: ' îles de Sion.' },
+          { t: ' cerise tombe de ' },
+          { blank: 'l’' },
+          { t: ' arbre.' },
         ],
-        sentence: 'La jolie girafe visite les îles de Sion.',
+        sentence: 'La cerise tombe de l’arbre.',
       },
+
+      {
+        parts: [
+          { blank: 'La' },
+          { t: ' viande est dans ' },
+          { blank: 'le' },
+          { t: ' frigo.' },
+        ],
+        sentence: 'La viande est dans le frigo.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' hérisson se cache sous les feuilles.' }],
+        sentence: 'Le hérisson se cache sous les feuilles.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' navire avance sur la mer.' }],
+        sentence: 'Le navire avance sur la mer.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' hibou crie dans la nuit.' }],
+        sentence: 'Le hibou crie dans la nuit.',
+      }
+
     ],
     countPhrases: ["La fille visite la ville avec son ami.", "Le piano joue une jolie mélodie.", "Elise met une chemise grise dans sa valise.", "Qui a mis le crayon ici ?", "La vitrine est remplie de figurines d’animaux.", "Michel n’a pas fini son bol de riz."],
     readPhrases: ["Elle fait un exercice difficile.", "Lili choisit une jolie tulipe.", "Le cuisinier prépare du riz et des épinards.", "J’admire les photographies.", "Iris lit un livre illustré.", "La jolie fille colorie une image.", "Dimitri finit son dîner dans huit minutes.", "La petite souris grignote du riz.", "Il choisit des lilas et des jonquilles", "Nina a mis une liste sur la vitre", "Le pirate visite une île.", "La souris file dans la cuisine.", "Mimi porte un costume gris.", "Emilie dessine une pie et un dinosaure.", "La rapide fourmi transporte des sucreries.", "Rémi est timide quand il imite le tigre."],
@@ -717,41 +774,80 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     ],
     determinants: [
       {
-        parts: [{ blank: 'Le' }, { t: ' nuage', u: true }, { t: ' obscur couvre la lune.' }],
-        sentence: 'Le nuage obscur couvre la lune.',
+        parts: [{ blank: 'L’' }, { t: ' uniforme est propre et rangé.' }],
+        sentence: 'L’uniforme est propre et rangé.',
       },
+
       {
-        parts: [{ blank: 'Les' }, { t: ' prunes', u: true }, { t: ' mûres sont dans le fruitier.' }],
-        sentence: 'Les prunes mûres sont dans le fruitier.',
+        parts: [{ blank: 'La' }, { t: ' sucette est trop sucrée.' }],
+        sentence: 'La sucette est trop sucrée.',
       },
+
       {
-        parts: [{ blank: 'Le' }, { t: ' muguet', u: true }, { t: ' parfumé pousse dans la nature.' }],
-        sentence: 'Le muguet parfumé pousse dans la nature.',
+        parts: [{ blank: 'Le' }, { t: ' biscuit est dans la boîte.' }],
+        sentence: 'Le biscuit est dans la boîte.',
       },
+
       {
-        parts: [{ blank: 'L’' }, { t: ' uniforme', u: true }, { t: ' écru est devenu trop court.' }],
-        sentence: 'L’uniforme écru est devenu trop court.',
+        parts: [{ blank: 'La' }, { t: ' prune mûre tombe du prunier.' }],
+        sentence: 'La prune mûre tombe du prunier.',
       },
+
       {
-        parts: [{ blank: 'La' }, { t: ' plume', u: true }, { t: ' brune tombe sur le mur.' }],
-        sentence: 'La plume brune tombe sur le mur.',
+        parts: [
+          { blank: 'Le' },
+          { t: ' nuage cache ' },
+          { blank: 'le' },
+          { t: ' soleil.' },
+        ],
+        sentence: 'Le nuage cache le soleil.',
       },
+
       {
-        parts: [{ blank: 'Les' }, { t: ' biscuits', u: true }, { t: ' sucrés sont sur le bureau.' }],
-        sentence: 'Les biscuits sucrés sont sur le bureau.',
+        parts: [{ blank: 'L’' }, { t: ' huile est dans la bouteille.' }],
+        sentence: 'L’huile est dans la bouteille.',
       },
+
       {
         parts: [
           { blank: 'La' },
-          { t: ' peinture', u: true },
-          { t: ' de la sucette brille dans la nuit.' },
+          { t: ' plume flotte dans ' },
+          { blank: 'le' },
+          { t: ' vent.' },
         ],
-        sentence: 'La peinture de la sucette brille dans la nuit.',
+        sentence: 'La plume flotte dans le vent.',
       },
+
       {
-        parts: [{ blank: 'L’' }, { t: ' huile', u: true }, { t: ' pure est utile en cuisine.' }],
-        sentence: 'L’huile pure est utile en cuisine.',
+        parts: [{ blank: 'Le' }, { t: ' muguet parfumé pousse au jardin.' }],
+        sentence: 'Le muguet parfumé pousse au jardin.',
       },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' luciole brille dans la nuit.' }],
+        sentence: 'La luciole brille dans la nuit.',
+      },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' peinture est encore fraîche.' }],
+        sentence: 'La peinture est encore fraîche.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' pull turquoise est unique.' }],
+        sentence: 'Le pull turquoise est unique.',
+      },
+
+      {
+        parts: [
+          { blank: 'La' },
+          { t: ' dune surplombe ' },
+          { blank: 'le' },
+          { t: ' rivage.' },
+        ],
+        sentence: 'La dune surplombe le rivage.',
+      }
+
     ],
     countPhrases: ["La fusée monte au-dessus des nuages.", "Le renard a trouvé une plume brune.", "La musique résonne dans la rue.", "Une tortue avance doucement sous la pluie.", "Le juge écoute le début du procès.", "Le curé discute avec plusieurs habitants du village."],
     readPhrases: ["Ursula porte une jupe sur mesure.", "Le début du film surprend le public.", "Le costume du danseur est de couleur prune.", "Luc ajoute du sucre dans son jus.", "La bûche brûle dans la cheminée.", "Un curieux étudiant observe la plume tomber.", "Julie écoute de la musique dans sa voiture.", "Il cherche une solution pour aller sur la lune.", "Les cuisiniers épluchent des légumes.", "La pluie tombe sur les tuiles.", "Le futur médecin étudie beaucoup.", "Une tortue se réfugie sous un buisson.", "Au menu, il y a des fruits et des légumes", "Le bus passe dans un tunnel.", "La lumière du soleil illumine la clôture.", "Lucie ne met pas sa couverture la nuit."],
@@ -919,82 +1015,84 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     determinants: [
       {
         parts: [
-          { t: 'Je me demande où se trouve ' },
-          { blank: 'la' },
-          { t: ' chemise', u: true },
-          { t: ' bleue.' },
+          { blank: 'La' },
+          { t: ' crevette est dans ' },
+          { blank: 'l’' },
+          { t: ' assiette.' },
         ],
-        sentence: 'Je me demande où se trouve la chemise bleue.',
+        sentence: 'La crevette est dans l’assiette.',
       },
+
       {
         parts: [
-          { t: 'Deux enfants regardent par ' },
-          { blank: 'la' },
-          { t: ' fenêtre', u: true },
-          { t: '.' },
-        ],
-        sentence: 'Deux enfants regardent par la fenêtre.',
-      },
-      {
-        parts: [
-          { t: 'Je me lève pour manger ' },
+          { blank: 'La' },
+          { t: ' fenêtre est ouverte sur ' },
           { blank: 'le' },
-          { t: ' repas', u: true },
-          { t: '.' },
+          { t: ' jardin.' },
         ],
-        sentence: 'Je me lève pour manger le repas.',
+        sentence: 'La fenêtre est ouverte sur le jardin.',
       },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' pelote de laine est sur la table.' }],
+        sentence: 'La pelote de laine est sur la table.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' requin nage dans la mer.' }],
+        sentence: 'Le requin nage dans la mer.',
+      },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' recette est écrite au tableau.' }],
+        sentence: 'La recette est écrite au tableau.',
+      },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' chemise bleue est pliée.' }],
+        sentence: 'La chemise bleue est pliée.',
+      },
+
       {
         parts: [
-          { t: 'Je mets ' },
-          { blank: 'les' },
-          { t: ' petites crevettes', u: true },
-          { t: ' dans ' },
+          { blank: 'La' },
+          { t: ' peluche est sur ' },
           { blank: 'le' },
-          { t: ' feu.' },
+          { t: ' lit.' },
         ],
-        sentence: 'Je mets les petites crevettes dans le feu.',
+        sentence: 'La peluche est sur le lit.',
       },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' grenade est un fruit juteux.' }],
+        sentence: 'La grenade est un fruit juteux.',
+      },
+
       {
         parts: [
           { blank: 'Le' },
-          { t: ' chemin', u: true },
-          { t: ' devient étroit après ' },
-          { blank: 'le' },
-          { t: ' cerisier.' },
+          { t: ' chemin mène à ' },
+          { blank: 'l’' },
+          { t: ' école.' },
         ],
-        sentence: 'Le chemin devient étroit après le cerisier.',
+        sentence: 'Le chemin mène à l’école.',
       },
+
       {
-        parts: [
-          { t: 'Je veux ' },
-          { blank: 'la' },
-          { t: ' recette', u: true },
-          { t: ' de gâteau de Déborah.' },
-        ],
-        sentence: 'Je veux la recette de gâteau de Déborah.',
+        parts: [{ blank: 'Le' }, { t: ' repas est prêt pour midi.' }],
+        sentence: 'Le repas est prêt pour midi.',
       },
+
       {
-        parts: [
-          { blank: 'L’' },
-          { t: ' oiseau', u: true },
-          { t: ' se pose sur ' },
-          { blank: 'la' },
-          { t: ' peluche.' },
-        ],
-        sentence: 'L’oiseau se pose sur la peluche.',
+        parts: [{ blank: 'Le' }, { t: ' melon n’est pas pour eux.' }],
+        sentence: 'Le melon n’est pas pour eux.',
       },
+
       {
-        parts: [
-          { t: 'Nous pesons ' },
-          { blank: 'les' },
-          { t: ' grenades', u: true },
-          { t: ' sur ' },
-          { blank: 'la' },
-          { t: ' balance.' },
-        ],
-        sentence: 'Nous pesons les grenades sur la balance.',
-      },
+        parts: [{ blank: 'Le' }, { t: ' bébé dort dans son berceau.' }],
+        sentence: 'Le bébé dort dans son berceau.',
+      }
+
     ],
     countPhrases: ["Je veux acheter deux œufs.", "Ma mère mesure le niveau de l’eau.", "Vous semez les graines sur la pelouse ?", "Je peux mettre le jeu sur la table.", "Le cheval peut venir avec nous.", "Alicia n’est pas heureuse quand elle regarde le feu."],
     readPhrases: ["Le petit cheval regarde la grenouille.", "Je me demande ce que je vais faire ce soir.", "Le renard se promène le long de la rivière.", "Ce que tu me dis me semble étrange.", "Le redoutable chevalier se repose sur le sol.", "Le second chat retourne sur la pelouse.", "Je le retrouve devant le magasin de fleurs.", "Ne me dérange pas, je regarde le ciel se colorer.", "Que ferons-nous demain, se demande le fermier ?", "Le chemin de terre mène vers le reposant village.", "Ce remède laisse un léger regret.", "Le refuge du chevreau velu est près de la colline.", "Les revenants se retrouve chaque nuit.", "Après le repas, le renard retourne à son refuge.", "Elle se remet de son retard.", "Je regarde le reflet de ma femme dans l'eau."],
@@ -1157,69 +1255,90 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     ],
     determinants: [
       {
-        parts: [{ blank: 'Le' }, { t: ' labyrinthe', u: true }, { t: ' est si difficile.' }],
-        sentence: 'Le labyrinthe est si difficile.',
+        parts: [
+          { blank: 'Le' },
+          { t: ' stylo est sur ' },
+          { blank: 'le' },
+          { t: ' bureau.' },
+        ],
+        sentence: 'Le stylo est sur le bureau.',
       },
+
       {
-        parts: [{ blank: 'La' }, { t: ' dynamo', u: true }, { t: ' produit de l’électricité.' }],
-        sentence: 'La dynamo produit de l’électricité.',
+        parts: [{ blank: 'Le' }, { t: ' pyjama est confortable.' }],
+        sentence: 'Le pyjama est confortable.',
       },
+
       {
         parts: [
-          { t: 'Je sers ' },
+          { blank: 'La' },
+          { t: ' bicyclette est dans ' },
           { blank: 'le' },
-          { t: ' curry', u: true },
-          { t: ' avec du riz.' },
+          { t: ' garage.' },
         ],
-        sentence: 'Je sers le curry avec du riz.',
+        sentence: 'La bicyclette est dans le garage.',
       },
-      {
-        parts: [
-          { t: 'Sur la piste, ' },
-          { blank: 'le' },
-          { t: ' cycliste', u: true },
-          { t: ' roule très vite.' },
-        ],
-        sentence: 'Sur la piste, le cycliste roule très vite.',
-      },
+
       {
         parts: [
           { blank: 'Le' },
-          { t: ' papillon', u: true },
-          { t: ' sort de ' },
-          { blank: 'la' },
-          { t: ' chrysalide.' },
+          { t: ' cygne nage sur ' },
+          { blank: 'l’' },
+          { t: ' étang.' },
         ],
-        sentence: 'Le papillon sort de la chrysalide.',
+        sentence: 'Le cygne nage sur l’étang.',
       },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' gymnaste saute très haut.' }],
+        sentence: 'Le gymnaste saute très haut.',
+      },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' pyramide est immense.' }],
+        sentence: 'La pyramide est immense.',
+      },
+
+      {
+        parts: [
+          { blank: 'L’' },
+          { t: ' encyclopédie est sur ' },
+          { blank: 'l’' },
+          { t: ' étagère.' },
+        ],
+        sentence: 'L’encyclopédie est sur l’étagère.',
+      },
+
+      {
+        parts: [{ blank: 'La' }, { t: ' myrtille est bleue et sucrée.' }],
+        sentence: 'La myrtille est bleue et sucrée.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' cyclone approche de la côte.' }],
+        sentence: 'Le cyclone approche de la côte.',
+      },
+
+      {
+        parts: [{ blank: 'Le' }, { t: ' gymnase est grand et clair.' }],
+        sentence: 'Le gymnase est grand et clair.',
+      },
+
+      {
+        parts: [{ blank: 'L’' }, { t: ' hydravion atterrit à midi.' }],
+        sentence: 'L’hydravion atterrit à midi.',
+      },
+
       {
         parts: [
           { blank: 'Le' },
-          { t: ' python', u: true },
-          { t: ' vit dans ' },
-          { blank: 'la' },
-          { t: ' rivière.' },
-        ],
-        sentence: 'Le python vit dans la rivière.',
-      },
-      {
-        parts: [
-          { t: 'Où est ' },
+          { t: ' kayak glisse sur ' },
           { blank: 'le' },
-          { t: ' whisky', u: true },
-          { t: ' que tu as pris ?' },
+          { t: ' lac.' },
         ],
-        sentence: 'Où est le whisky que tu as pris ?',
-      },
-      {
-        parts: [
-          { t: 'Dans l’histoire, ' },
-          { blank: 'les' },
-          { t: ' cyclopes', u: true },
-          { t: ' vivent dans des grottes.' },
-        ],
-        sentence: 'Dans l’histoire, les cyclopes vivent dans des grottes.',
-      },
+        sentence: 'Le kayak glisse sur le lac.',
+      }
+
     ],
     countPhrases: ["Le gymnase est fermé aujourd'hui.", "Ce type d'oiseau vole trop vite.", "La glycémie de l’infirmière est stable.", "Ce polyglotte parle six langues différentes.", "Voici les règles d'hygiène du lycée.", "Je n’aime pas du tout la gymnastique."],
     readPhrases: ["Il y a un stylo, un livre et un pyjama ici.", "Mon ami a remis sa bicyclette à minuit.", "Le jury analyse le mystère de ce crime.", "À midi, il y a un joli cygne dans la ville.", "Le physicien étudie le système avec un style précis.", "Six amis roulent à motocyclette.", "Ce polygone a une belle symétrie.", "La cycliste et l'infirmière habitent près du lycée.", "La pyramide est immense et ancienne.", "Qui a pris mon cylindre gris ?", "Ils ont pris rapidement un tricycle.", "Son hobby favori, c'est la dactylo.", "La syllabe finale est difficile à lire.", "La fille lit un mythe ancien dans son lit.", "Quel type de films aimes-tu ?", "Le rythme de sa vie est calme."],

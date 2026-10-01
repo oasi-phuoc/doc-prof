@@ -393,30 +393,34 @@ function DicteeGridBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
         ? highlightThemeLetters(word, graphemes)
         : word
       : '\u00a0'
-  /** 4 lignes × 2 colonnes : gauche 1–4, droite 5–8. */
-  const rows = [0, 1, 2, 3].map((r) => ({
+  /** Grille 2 colonnes ; nombre de lignes = ceil(n / 2). */
+  const rowCount = Math.max(1, Math.ceil(words.length / 2))
+  const rows = Array.from({ length: rowCount }, (_, r) => ({
     left: { n: r + 1, word: words[r] },
-    right: { n: r + 5, word: words[r + 4] },
+    right: { n: r + 1 + rowCount, word: words[r + rowCount] },
   }))
   return (
     <div className="dictee-grid-block" aria-label="Dictée">
-      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
       <table className="dictee-grid-table">
         <tbody>
           {rows.map((row, ri) => (
             <tr key={`dg-${ri}`}>
-              <td className="dictee-grid-num">{row.left.n}.</td>
+              <td className="dictee-grid-num">{row.left.word ? `${row.left.n}.` : ''}</td>
               <td className="dictee-grid-line-cell">
-                <span className={`dictee-write-line${show && row.left.word ? ' filled' : ''}`}>
-                  {show ? paint(row.left.word) : '\u00a0'}
-                </span>
+                {row.left.word != null ? (
+                  <span className={`dictee-write-line${show ? ' filled' : ''}`}>
+                    {show ? paint(row.left.word) : '\u00a0'}
+                  </span>
+                ) : null}
               </td>
               <td className="dictee-grid-gutter" aria-hidden />
-              <td className="dictee-grid-num">{row.right.n}.</td>
+              <td className="dictee-grid-num">{row.right.word ? `${row.right.n}.` : ''}</td>
               <td className="dictee-grid-line-cell">
-                <span className={`dictee-write-line${show && row.right.word ? ' filled' : ''}`}>
-                  {show ? paint(row.right.word) : '\u00a0'}
-                </span>
+                {row.right.word != null ? (
+                  <span className={`dictee-write-line${show ? ' filled' : ''}`}>
+                    {show ? paint(row.right.word) : '\u00a0'}
+                  </span>
+                ) : null}
               </td>
             </tr>
           ))}
@@ -432,11 +436,7 @@ function DeterminantFillBlock({ item, mode }: { item: MathItem; mode: PreviewMod
   const show = mode === 'answers'
   return (
     <div className="determinant-fill-block" aria-label="Déterminants">
-      <p className="column-prompt determinant-fill-prompt">
-        Complétez avec les déterminants{' '}
-        <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
-        <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
-      </p>
+      {/* Consigne unique = en-tête d’exercice (l’ / le / la / les stylés). */}
       <table className="determinant-fill-table">
         <tbody>
           {rows.map((row, index) => (
@@ -454,13 +454,8 @@ function DeterminantFillBlock({ item, mode }: { item: MathItem; mode: PreviewMod
                       </span>
                     )
                   }
-                  const content = highlightThemeLetters(part.t, graphemes)
-                  return part.u ? (
-                    <span key={`t-${pi}`} className="determinant-underline">
-                      {content}
-                    </span>
-                  ) : (
-                    <span key={`t-${pi}`}>{content}</span>
+                  return (
+                    <span key={`t-${pi}`}>{highlightThemeLetters(part.t, graphemes)}</span>
                   )
                 })}
               </td>

@@ -567,10 +567,14 @@ function genKind(
       }
     }
     case 'determinants': {
-      /** Tableau : n° + phrase avec traits couleur thème (le / la / l’ / les). */
+      /**
+       * Phrases à trous (banque liée aux mots type 5) ; count = nb de questions.
+       * Consigne unique en en-tête (l’ / le / la / les stylés).
+       */
+      const want = Math.max(1, Math.min(16, n))
       const rows = shuffle(rng, [...bank.determinants]).slice(
         0,
-        Math.min(8, bank.determinants.length),
+        Math.min(want, bank.determinants.length),
       )
       return {
         instruction: 'Complétez avec les déterminants l’, le, la ou les.',
@@ -578,9 +582,10 @@ function genKind(
         items: [
           {
             layout: 'determinant-fill',
-            prompt: 'Complétez avec les déterminants l’, le, la ou les.',
             determinantFills: rows.map((row) => ({
-              parts: row.parts.map((p) => ('blank' in p ? { blank: p.blank } : { t: p.t, u: p.u })),
+              parts: row.parts.map((p) =>
+                'blank' in p ? { blank: p.blank } : { t: p.t },
+              ),
               sentence: row.sentence,
             })),
             answer: rows.map((row) => row.sentence).join(' · '),
@@ -590,15 +595,19 @@ function genKind(
       }
     }
     case 'dictee': {
-      /** Grille 2×4 : n° + double trait (pointillé + plein) couleur thème. */
-      const words = shuffle(rng, [...bank.words]).slice(0, Math.min(8, bank.words.length))
+      /** Grille 2 colonnes ; count = nb de mots ; trait continu, sans bordure. */
+      const want = Math.max(1, Math.min(16, n))
+      const pool = type1Words(bank)
+      const words = shuffle(rng, pool.length ? pool : [...bank.words]).slice(
+        0,
+        Math.min(want, pool.length || bank.words.length),
+      )
       return {
         instruction: 'Dictée. Écrivez les mots correctement !',
         preferredColumns: 1,
         items: [
           {
             layout: 'dictee-grid',
-            prompt: 'Dictée. Écrivez les mots correctement !',
             dicteeWords: words,
             answer: words.join(' · '),
             themeGraphemes: [...bank.graphemes],

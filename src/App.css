@@ -1235,14 +1235,12 @@ html,body,#root{
   .phrase-scramble-table,.phrase-scramble-table td,.phrase-scramble-num,.phrase-scramble-image{border:none!important}
   .phrase-scramble-num{color:var(--purple)!important}
   .phrase-scramble-blank{border-bottom-color:var(--purple)!important}
-  .determinant-fill-table,.determinant-fill-table td{border-color:#999!important}
-  .determinant-fill-num,.det-choice{color:var(--purple)!important}
+  .determinant-fill-table,.determinant-fill-table td{border:none!important}
+  .determinant-fill-num,.det-choice,.exercise-heading .det-choice{color:var(--purple)!important}
   .determinant-blank{border-bottom-color:var(--purple)!important}
-  .determinant-underline{border-bottom-color:var(--purple)!important}
-  .dictee-grid-table,.dictee-grid-table td{border-color:#999!important}
+  .dictee-grid-table,.dictee-grid-table td{border:none!important}
   .dictee-grid-num{color:var(--purple)!important}
   .dictee-write-line{border-bottom-color:var(--purple)!important}
-  .dictee-write-line::before{border-bottom-color:var(--purple)!important}
   .count-sound-table,.count-sound-table td{border-color:#999!important}
   .count-sound-num,.count-sound-prompt{color:var(--purple)!important}
   .count-sound-blank{border-bottom-color:var(--purple)!important}
@@ -1955,18 +1953,19 @@ html,body,#root{
   font-weight:700;letter-spacing:.04em;white-space:nowrap;color:var(--ink)
 }
 
-/* Soutien FR type 10 — déterminants l’ / le / la / les */
+/* Soutien FR type 10 — déterminants ; sans bordure ; trait continu */
 .determinant-fill-block{
   display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
 }
+.exercise-heading .det-choice,
 .determinant-fill-prompt .det-choice{
   color:var(--purple);font-weight:700
 }
 .determinant-fill-table{
-  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+  width:100%;border-collapse:collapse;border:none;table-layout:fixed
 }
 .determinant-fill-table td{
-  border:1px dashed #c5c9d0;padding:7px 8px;vertical-align:middle
+  border:none;padding:8px 6px;vertical-align:middle
 }
 .determinant-fill-num{
   width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
@@ -1978,7 +1977,7 @@ html,body,#root{
 .determinant-blank{
   display:inline-block;
   min-width:5.5ch;
-  border-bottom:2px dotted var(--purple);
+  border-bottom:2px solid var(--purple);
   text-align:center;
   margin:0 2px;
   padding:0 2px;
@@ -1988,50 +1987,38 @@ html,body,#root{
   vertical-align:baseline;
 }
 .determinant-blank.filled{border-bottom-style:solid}
-.determinant-underline{
-  border-bottom:2px solid var(--purple);
-  padding-bottom:0;
-}
 
-/* Soutien FR type 11 — dictée grille 2×4, double trait couleur thème */
+/* Soutien FR type 11 — dictée 2 col. ; trait continu ; hauteur de ligne ×2 */
 .dictee-grid-block{
   display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
 }
 .dictee-grid-table{
-  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+  width:100%;border-collapse:collapse;border:none;table-layout:fixed
 }
 .dictee-grid-table td{
-  border:1px dashed #c5c9d0;padding:10px 8px;vertical-align:middle
+  border:none;padding:18px 8px;vertical-align:middle
 }
 .dictee-grid-num{
   width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
   text-align:center;white-space:nowrap
 }
 .dictee-grid-gutter{
-  width:3mm;padding:0!important;background:#fff
+  width:3mm;padding:0!important;background:#fff;border:none
 }
 .dictee-write-line{
-  position:relative;
   display:block;
   width:100%;
-  min-height:1.35em;
-  line-height:1.35em;
+  min-height:2.7em;
+  line-height:2.7em;
   border-bottom:2px solid var(--purple);
   color:var(--purple);
   font-weight:700;
   font-size:13px;
   text-align:left;
   padding:0 2px;
+  box-sizing:border-box;
 }
-.dictee-write-line::before{
-  content:"";
-  position:absolute;
-  left:0;right:0;
-  bottom:0.55em;
-  border-bottom:2px dotted var(--purple);
-  pointer-events:none;
-}
-.dictee-write-line.filled::before{opacity:.35}
+.dictee-write-line.filled{border-bottom-style:solid}
 
 /* Soutien FR type 12 — compter le son + phrase Playwrite */
 .count-sound-block{width:100%;min-width:0}

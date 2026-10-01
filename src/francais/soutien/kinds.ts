@@ -71,14 +71,15 @@ export const SOUTIEN_KINDS = [
   {
     id: 'determinants',
     label: '10 · Déterminants',
-    description: 'Tableau : phrases à compléter avec l’ / le / la / les (traits couleur thème).',
+    description:
+      'Phrases à trous (mots du type 5) ; l’ / le / la / les ; trait continu, sans bordure.',
     instruction: 'Complétez avec les déterminants l’, le, la ou les.',
     preferredColumns: 1 as const,
   },
   {
     id: 'dictee',
     label: '11 · Dictée',
-    description: 'Grille 2×4 : n° + double trait (couleur thème) pour écrire 8 mots.',
+    description: 'Grille 2 colonnes : n° + trait continu ; nombre de mots réglable.',
     instruction: 'Dictée. Écrivez les mots correctement !',
     preferredColumns: 1 as const,
   },
