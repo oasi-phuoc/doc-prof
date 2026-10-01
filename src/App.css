@@ -1246,7 +1246,7 @@ html,body,#root{
   .syllable-cons{color:#000!important}
   .syllable-match-table,.syllable-match-table td{border:none!important}
   .syllable-match-num{color:var(--purple)!important}
-  .syllable-complete-card{border:none!important}
+  .syllable-complete-card{border:1px solid var(--purple)!important}
   .syllable-complete-blank{border-bottom-color:var(--purple)!important}
   .listen-check-grid,.listen-check-cell,.listen-check-image-cell,.listen-check-image{border:none!important}
   .listen-check-num{color:var(--purple)!important}
@@ -2238,8 +2238,11 @@ html,body,#root{
 }
 .syllable-complete-card{
   display:flex;align-items:center;gap:8px;min-width:0;width:100%;
-  border:none;padding:2px 0;
+  border:1px solid var(--purple);
+  border-radius:10px;
+  padding:6px 8px;
   box-sizing:border-box;
+  background:#fff;
 }
 .syllable-complete-image{
   flex:0 0 20mm;width:20mm;height:16mm;

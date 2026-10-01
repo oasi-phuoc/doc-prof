@@ -2021,9 +2021,11 @@ function GeneratorPage() {
             ? 15
             : soutienKind === 'syllabes'
               ? 10
-              : soutienKind === 'relier' || soutienKind === 'completer'
+              : soutienKind === 'relier'
                 ? 16
-                : soutienKind === 'ecouter' || soutienKind === 'syllabe-son'
+                : soutienKind === 'completer' ||
+                    soutienKind === 'ecouter' ||
+                    soutienKind === 'syllabe-son'
                   ? 18
                   : soutienKind === 'ecouter-image'
                     ? 20
@@ -3432,7 +3434,7 @@ function GeneratorPage() {
                   <small className="muted">Jusqu’à 16 mots (selon la banque du son).</small>
                 ) : null}
                 {isSoutienCompleter && !activeBlock.soutienCompleterLibre ? (
-                  <small className="muted">Nombre de mots à compléter (max. 16).</small>
+                  <small className="muted">Nombre de mots à compléter (max. 18).</small>
                 ) : null}
                 {soutienKind === 'ecouter' ? (
                   <small className="muted">Mots à écouter / écrire (max. 18).</small>
