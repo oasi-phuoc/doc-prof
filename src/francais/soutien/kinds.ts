@@ -35,7 +35,7 @@ export const SOUTIEN_KINDS = [
     id: 'completer',
     label: '5 · Compléter les mots',
     description:
-      'Image + Un/Une + trait ; colonnes 1–3 pleine largeur (g/c/d) ; mode libre.',
+      'Cartes image + Un/Une + trait (bord thème) ; jusqu’à 18 mots ; colonnes 1–3 ; mode libre.',
     instruction: 'Complétez les mots à l’aide de l’image.',
     preferredColumns: 1 as const,
   },

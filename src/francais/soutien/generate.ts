@@ -364,7 +364,7 @@ function genKind(
         Boolean(options?.soutienCompleterLibre) &&
         (options?.soutienCompleterEntries?.some((e) => e.word.trim() && e.blank.trim()) ??
           false)
-      const want = Math.max(1, Math.min(16, n))
+      const want = Math.max(1, Math.min(18, n))
       const pool = libre
         ? (options!.soutienCompleterEntries ?? [])
             .filter((e) => e.word.trim() && e.blank.trim())
