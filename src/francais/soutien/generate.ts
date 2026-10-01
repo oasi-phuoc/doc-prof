@@ -79,12 +79,13 @@ function otherWords(bank: SoutienVowelBank): string[] {
   return pool.filter((w) => !own.has(w.toLowerCase()) && !wordHasGrapheme(w, asVowelBank(bank)))
 }
 
-function letterGrid(rng: Rng, bank: SoutienVowelBank, difficulty: Difficulty): MathItem {
-  /** Tableau 5 × 10 sans bordure (modèle livret Soutien FR). */
+/** Type 2 : tableau cols×rows ; le nombre de questions = nombre de lignes. */
+function letterGrid(rng: Rng, bank: SoutienVowelBank, rowCount: number): MathItem {
   const cols = 10
-  const rows = 5
+  const rows = Math.max(1, Math.min(12, Math.round(rowCount) || 5))
   const size = cols * rows
-  const targetCount = difficulty === 'facile' ? 10 : difficulty === 'moyen' ? 12 : 14
+  /** ~¼ des cases = lettre cible, borné pour rester lisible. */
+  const targetCount = Math.max(4, Math.min(size - cols, Math.round(size * 0.24)))
   const cells: string[] = []
   for (let i = 0; i < targetCount; i++) {
     cells.push(pick(rng, [bank.letterUpper, bank.letterLower]))
@@ -129,7 +130,7 @@ function genKind(
   bank: SoutienVowelBank,
   count: number,
   rng: Rng,
-  difficulty: Difficulty,
+  _difficulty: Difficulty,
   options?: SoutienGenerateOptions,
 ): { items: MathItem[]; instruction: string; preferredColumns?: number } {
   const n = Math.max(1, count)
@@ -176,7 +177,8 @@ function genKind(
       return {
         instruction: `Entourez les lettres ${bank.letterUpper} ${bank.letterLower}.`,
         preferredColumns: 1,
-        items: [letterGrid(rng, bank, difficulty)],
+        /** `count` = nombre de lignes du tableau de lettres. */
+        items: [letterGrid(rng, bank, n)],
       }
     case 'syllabes': {
       /** Deux tableaux 4 × 5 (script + Playwrite), voyelle en couleur du thème. */

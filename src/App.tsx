@@ -1160,23 +1160,25 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                 ? { count: 6 }
                 : isLectureDense
                   ? { count: 4 }
-                  : isLecture || isSoutienFr
-                    ? { count: 6 }
-                    : isGeoCalc
-                      ? { count: 2 }
-                      : isFrenchCom
-                        ? { count: 4 }
-                        : isFrenchLang
-                          ? { count: 6 }
-                          : isFormes
-                            ? { count: 5 }
-                            : isCadrans
-                              ? { count: 6 }
-                              : isDroites || isConstruire
-                                ? { count: 5 }
-                                : isTransform
-                                  ? { count: 4 }
-                                  : {}),
+                  : isSoutienFr && parseSoutienType(type.id)?.kind === 'lettres'
+                    ? { count: 5 }
+                    : isLecture || isSoutienFr
+                      ? { count: 6 }
+                      : isGeoCalc
+                        ? { count: 2 }
+                        : isFrenchCom
+                          ? { count: 4 }
+                          : isFrenchLang
+                            ? { count: 6 }
+                            : isFormes
+                              ? { count: 5 }
+                              : isCadrans
+                                ? { count: 6 }
+                                : isDroites || isConstruire
+                                  ? { count: 5 }
+                                  : isTransform
+                                    ? { count: 4 }
+                                    : {}),
     ...(isVocabPool
       ? {
           columns: 1,
@@ -1766,7 +1768,9 @@ function GeneratorPage() {
         ? TRANSFORM_MAX_POINTS
         : isReperage
           ? COORD_LETTER_MAX
-          : 30
+          : isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'lettres'
+            ? 12
+            : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -3033,7 +3037,13 @@ function GeneratorPage() {
               {isPhraseChart || isVocabLearn || isGramTheory || isJeuxDomain || isCalliDomain ? null : (
               <label className="select-shell">
                 <span>
-                  {isTransform ? 'Points' : isReperage ? 'Questions' : 'QUESTIONS'}
+                  {isTransform
+                    ? 'Points'
+                    : isReperage
+                      ? 'Questions'
+                      : isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'lettres'
+                        ? 'Lignes'
+                        : 'QUESTIONS'}
                 </span>
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
@@ -3056,6 +3066,9 @@ function GeneratorPage() {
                     })
                   }
                 />
+                {isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'lettres' ? (
+                  <small className="muted">Nombre de lignes du tableau (10 lettres par ligne).</small>
+                ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
                     La banque ne contient que {bankQuestionCap} question

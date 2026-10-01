@@ -10,7 +10,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'lettres',
     label: '2 · Reconnaître la lettre',
-    description: 'Entourer la lettre cible parmi d’autres lettres.',
+    description: 'Tableau de lettres : le nombre de lignes suit le champ Lignes.',
     instruction: 'Entourez toutes les lettres demandées.',
     preferredColumns: 1 as const,
   },
