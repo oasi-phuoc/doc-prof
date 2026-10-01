@@ -64,7 +64,7 @@ export const SOUTIEN_KINDS = [
     id: 'lettres-phrase',
     label: '9 · Mot dans la phrase',
     description:
-      '25 phrases par son ; lettres remélangées à chaque tirage ; hauteurs égales, sans bordure.',
+      'Phrases + lettres mélangées ; voyelle simple colorée (Alpha : pas an/au/eau…).',
     instruction: 'Écrivez le mot correct à l’aide des lettres.',
     preferredColumns: 1 as const,
   },
@@ -72,7 +72,7 @@ export const SOUTIEN_KINDS = [
     id: 'determinants',
     label: '10 · Déterminants',
     description:
-      'Phrases à trous (mots du type 5) ; l’ / le / la / les ; trait continu, sans bordure.',
+      'Phrases à trous ; l’ / le / la / les ; voyelle simple colorée (Alpha : pas an/au/eau…).',
     instruction: 'Complétez avec les déterminants l’, le, la ou les.',
     preferredColumns: 1 as const,
   },

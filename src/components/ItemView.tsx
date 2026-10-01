@@ -464,7 +464,7 @@ function DeterminantFillBlock({ item, mode }: { item: MathItem; mode: PreviewMod
                     )
                   }
                   return (
-                    <span key={`t-${pi}`}>{highlightThemeLetters(part.t, graphemes)}</span>
+                    <span key={`t-${pi}`}>{highlightLessonPhonemes(part.t, graphemes)}</span>
                   )
                 })}
               </td>
@@ -480,6 +480,8 @@ function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode
   const rows = item.phraseScrambles ?? []
   const graphemes = item.themeGraphemes ?? []
   const show = mode === 'answers'
+  const paint = (text: string) =>
+    graphemes.length ? highlightLessonPhonemes(text, graphemes) : text
   return (
     <div className="phrase-scramble-block" aria-label="Mot dans la phrase">
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
@@ -499,24 +501,16 @@ function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: PreviewMode
                 </td>
                 <td className="phrase-scramble-text">
                   <span className="phrase-scramble-sentence">
-                    {highlightThemeLetters(row.before, graphemes)}
+                    {paint(row.before)}
                     <span
                       className={`phrase-scramble-blank${show ? ' filled' : ''}`}
                       style={{ width: `${blankCh}ch` }}
                     >
-                      {show
-                        ? graphemes.length
-                          ? highlightThemeLetters(row.word, graphemes)
-                          : row.word
-                        : '\u00a0'}
+                      {show ? paint(row.word) : '\u00a0'}
                     </span>
-                    {highlightThemeLetters(row.after, graphemes)}{' '}
+                    {paint(row.after)}{' '}
                     <span className="phrase-scramble-letters">
-                      (
-                      {graphemes.length
-                        ? highlightThemeLetters(row.letters, graphemes)
-                        : row.letters}
-                      )
+                      ({paint(row.letters)})
                     </span>
                   </span>
                 </td>
