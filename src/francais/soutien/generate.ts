@@ -654,15 +654,18 @@ function genKind(
       }
     }
     case 'lire': {
-      /** Tableau : n° + phrase, voyelle du thème en couleur. */
-      const phrases = bank.readPhrases.slice(0, Math.min(16, bank.readPhrases.length))
+      /** Phrases à lire ; voyelle du thème en couleur ; count réglable. */
+      const want = Math.max(1, Math.min(20, n))
+      const phrases = shuffle(rng, [...bank.readPhrases]).slice(
+        0,
+        Math.min(want, bank.readPhrases.length),
+      )
       return {
         instruction: 'Lisez les phrases.',
         preferredColumns: 1,
         items: [
           {
             layout: 'read-phrases',
-            prompt: 'Lisez les phrases.',
             readPhrases: phrases,
             answer: phrases.join(' · '),
             themeGraphemes: [...bank.graphemes],
