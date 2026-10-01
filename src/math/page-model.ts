@@ -52,6 +52,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     gameAlpha: page.gameAlpha,
     soutienMotsLibre: page.soutienMotsLibre,
     soutienMotsEntries: page.soutienMotsEntries,
+    soutienCompleterLibre: page.soutienCompleterLibre,
+    soutienCompleterEntries: page.soutienCompleterEntries,
     calliText: page.calliText,
     calliFont: page.calliFont,
     calliSize: page.calliSize,

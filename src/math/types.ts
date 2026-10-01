@@ -330,6 +330,8 @@ export type MathItem = {
   answerMode?: 'qcm' | 'text' | 'images'
   /** Images des choix (même ordre que `options`) pour le QCM images. */
   optionImages?: string[]
+  /** Chemins audio (QR) alignés sur `options` — Soutien FR type 6. */
+  optionAudioSrcs?: string[]
   /** true si un QCM images est possible pour cette question. */
   imagesAvailable?: boolean
   /** Grille vide à remplir (poser soi-même les nombres). */
@@ -675,6 +677,18 @@ export type ExerciseBlock = {
   soutienMotsLibre?: boolean
   /** Entrées libre type 1 — mot + image (max. 16). */
   soutienMotsEntries?: Array<{ id: string; label: string; imageSrc?: string }>
+  /** Soutien FR type 5 : édition libre. */
+  soutienCompleterLibre?: boolean
+  /** Entrées libre type 5 — article + parties + image. */
+  soutienCompleterEntries?: Array<{
+    id: string
+    article: string
+    before: string
+    blank: string
+    after: string
+    word: string
+    imageSrc?: string
+  }>
   /**
    * Domaine Calligraphie : un mot ou une phrase par ligne
    * (texte brut du panneau enseignant·e).

@@ -32,10 +32,25 @@ export type SoutienBatch = {
   preferredColumns?: number
 }
 
+export type SoutienCompleterEntry = {
+  id: string
+  article: string
+  before: string
+  blank: string
+  after: string
+  word: string
+  imageSrc?: string
+}
+
 export type SoutienGenerateOptions = {
   /** Type 1 : mode libre (mots / images saisis). */
   soutienMotsLibre?: boolean
   soutienMotsEntries?: ReadonlyArray<{ id: string; label: string; imageSrc?: string }>
+  /** Type 4 : 1 ou 2 colonnes (mélange indépendant par colonne). */
+  columns?: number
+  /** Type 5 : mode libre. */
+  soutienCompleterLibre?: boolean
+  soutienCompleterEntries?: ReadonlyArray<SoutienCompleterEntry>
 }
 
 const DISTRACTOR_LETTERS = 'bcdfghjklmnpqrstvwxzBCDFGHIJKLMNPQRSTVWXZ'.split('')
@@ -276,54 +291,90 @@ function genKind(
       }
     }
     case 'relier': {
-      /** 7 paires, syllabes découpées correctement ; droite mélangée. */
+      /**
+       * Jusqu’à 16 paires ; 1 ou 2 colonnes.
+       * En 2 colonnes : chaque colonne mélange sa propre liste de droites.
+       */
+      const want = Math.max(1, Math.min(16, n))
       const compounds = shuffle(rng, [...bank.compounds]).slice(
         0,
-        Math.min(7, bank.compounds.length),
+        Math.min(want, bank.compounds.length),
       )
-      const left = compounds.map((c) => c.parts[0])
-      const right = shuffle(
-        rng,
-        compounds.map((c) => c.parts[1]),
-      )
-      const pairs = compounds.map((c) => ({ left: c.parts[0], right: c.parts[1] }))
+      const colCount = options?.columns === 2 ? 2 : 1
+      const mid = colCount === 2 ? Math.ceil(compounds.length / 2) : compounds.length
+      const groups =
+        colCount === 2
+          ? [compounds.slice(0, mid), compounds.slice(mid)]
+          : [compounds]
+      const left: string[] = []
+      const right: string[] = []
+      const pairs: Array<{ left: string; right: string }> = []
+      for (const group of groups) {
+        const gLeft = group.map((c) => c.parts[0])
+        const gRight = shuffle(
+          rng,
+          group.map((c) => c.parts[1]),
+        )
+        left.push(...gLeft)
+        right.push(...gRight)
+        for (const c of group) pairs.push({ left: c.parts[0], right: c.parts[1] })
+      }
       return {
         instruction: 'Reliez les parties et formez un mot.',
         preferredColumns: 1,
         items: [
           {
             layout: 'vocab-match',
-            prompt: 'Reliez les parties et formez un mot.',
             labels: left,
             options: right,
             vocabMatchMode: 'syllables',
             themeGraphemes: [...bank.graphemes],
             vocabPairs: pairs,
+            letterGridCols: colCount,
+            letterGridVariant: colCount === 2 ? 'table' : undefined,
             answer: compounds.map((c) => `${c.parts[0]} + ${c.parts[1]} → ${c.word}`).join(' · '),
           },
         ],
       }
     }
     case 'completer': {
-      /** Grille 2×5 : image + Un/Une + [avant]____[après] (trait couleur thème). */
-      const pool = shuffle(rng, [...bank.completes]).slice(0, Math.min(10, bank.completes.length))
-      return {
-        instruction: 'Complétez les mots à l’aide de l’image.',
-        preferredColumns: 1,
-        items: [
-          {
-            layout: 'syllable-complete',
-            prompt: 'Complétez les mots à l’aide de l’image.',
-            syllableCompletes: pool.map((row) => ({
+      /** Grille image + Un/Une + [avant]____[après] (trait continu). */
+      const libre =
+        Boolean(options?.soutienCompleterLibre) &&
+        (options?.soutienCompleterEntries?.some((e) => e.word.trim() && e.blank.trim()) ??
+          false)
+      const pool = libre
+        ? (options!.soutienCompleterEntries ?? [])
+            .filter((e) => e.word.trim() && e.blank.trim())
+            .slice(0, 16)
+            .map((row) => ({
+              article: row.article.trim() || 'Un',
+              before: row.before,
+              blank: row.blank,
+              after: row.after,
+              word: row.word.trim(),
+              imageSrc: row.imageSrc || soutienImageFor(row.word),
+            }))
+        : shuffle(rng, [...bank.completes])
+            .slice(0, Math.min(Math.max(1, Math.min(16, n)), bank.completes.length))
+            .map((row) => ({
               article: row.article,
               before: row.before,
               blank: row.blank,
               after: row.after,
               word: row.word,
               imageSrc: soutienImageFor(row.word),
-            })),
+            }))
+      const rows = Math.max(1, Math.ceil(pool.length / 2))
+      return {
+        instruction: 'Complétez les mots à l’aide de l’image.',
+        preferredColumns: 1,
+        items: [
+          {
+            layout: 'syllable-complete',
+            syllableCompletes: pool,
             answer: pool.map((row) => `${row.article} ${row.word}`).join(' · '),
-            vocabRows: 5,
+            vocabRows: rows,
             vocabCols: 2,
             themeGraphemes: [...bank.graphemes],
           },
@@ -331,18 +382,19 @@ function genKind(
       }
     }
     case 'ecouter': {
-      /** Grille 3×9 : n° + case + trait ; mots dictés (corrigé). */
+      /** Grille 3×3 : n° + case + trait (+ QR audio si dispo). */
       const positives = shuffle(rng, [...bank.words]).slice(0, 5)
       const negatives = shuffle(rng, otherWords(bank)).slice(0, 4)
-      const options = shuffle(rng, [...positives, ...negatives])
+      const optionsList = shuffle(rng, [...positives, ...negatives])
+      const audios = optionsList.map((w) => soutienAudioFor(w))
       return {
         instruction: `Écoutez les mots et cochez quand vous entendez le son ${bank.sound}.`,
         preferredColumns: 1,
         items: [
           {
             layout: 'listen-check',
-            prompt: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
-            options,
+            options: optionsList,
+            optionAudioSrcs: audios.map((a) => a ?? ''),
             labels: positives,
             answer: positives.join(' · '),
             letterGridCols: 3,
@@ -384,7 +436,6 @@ function genKind(
         items: [
           {
             layout: 'listen-check',
-            prompt: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
             options: pool,
             optionImages: images,
             imagesAvailable: true,
@@ -421,7 +472,6 @@ function genKind(
         items: [
           {
             layout: 'syllable-sound',
-            prompt: `Cochez la case de la syllabe où vous entendez le son ${bank.sound}.`,
             syllableSoundItems: twelve.map((item) => {
               const parts = [...item.parts]
               const hitIndex = parts.findIndex((p) => wordHasGrapheme(p, asVowelBank(bank)))
@@ -650,5 +700,10 @@ export function tryGenerateSoutienBatch(
   if (!parsed) return null
   const bank = soutienBankByTopic(`soutien-${parsed.vowel}`)
   if (!bank) return null
-  return genKind(parsed.kind, bank, count, rng, difficulty, options)
+  const batch = genKind(parsed.kind, bank, count, rng, difficulty, options)
+  // Consigne une seule fois (en-tête d’exercice) — pas de prompt sous chaque item.
+  return {
+    ...batch,
+    items: batch.items.map((item) => ({ ...item, prompt: undefined })),
+  }
 }

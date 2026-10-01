@@ -83,6 +83,10 @@ import {
   SoutienMotsLibreEditor,
 } from '@/francais/soutien/SoutienMotsLibreEditor'
 import {
+  defaultSoutienCompleterEntries,
+  SoutienCompleterLibreEditor,
+} from '@/francais/soutien/SoutienCompleterLibreEditor'
+import {
   CoordQuestionsLibreEditor,
   resizeCoordQuestionsLibre,
 } from '@/math/CoordQuestionsLibreEditor'
@@ -1164,8 +1168,12 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                     ? { count: 5 }
                     : isSoutienFr && parseSoutienType(type.id)?.kind === 'syllabes'
                       ? { count: 4 }
-                      : isLecture || isSoutienFr
-                        ? { count: 6 }
+                      : isSoutienFr &&
+                          (parseSoutienType(type.id)?.kind === 'relier' ||
+                            parseSoutienType(type.id)?.kind === 'completer')
+                        ? { count: 8 }
+                        : isLecture || isSoutienFr
+                          ? { count: 6 }
                         : isGeoCalc
                           ? { count: 2 }
                           : isFrenchCom
@@ -1259,6 +1267,25 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           soutienMotsLibre: undefined,
           soutienMotsEntries: undefined,
         }),
+    ...(isSoutienFr && parseSoutienType(type.id)?.kind === 'completer'
+      ? {
+          soutienCompleterLibre:
+            prev?.exerciseType === type.id ? Boolean(prev.soutienCompleterLibre) : false,
+          soutienCompleterEntries:
+            prev?.exerciseType === type.id ? prev.soutienCompleterEntries : undefined,
+        }
+      : {
+          soutienCompleterLibre: undefined,
+          soutienCompleterEntries: undefined,
+        }),
+    ...(isSoutienFr && parseSoutienType(type.id)?.kind === 'relier'
+      ? {
+          columns:
+            prev?.exerciseType === type.id
+              ? Math.min(2, Math.max(1, prev.columns ?? 1))
+              : 1,
+        }
+      : {}),
     ...(isCalli
       ? (() => {
           const topic = type.topic.startsWith('calli-')
@@ -1703,6 +1730,8 @@ function GeneratorPage() {
   const isSoutienFr = activePage.domain === 'soutien-fr'
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
   const isSoutienMots = soutienKind === 'mots'
+  const isSoutienCompleter = soutienKind === 'completer'
+  const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
   const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
@@ -1776,7 +1805,9 @@ function GeneratorPage() {
             ? 12
             : soutienKind === 'syllabes'
               ? 10
-              : 30
+              : soutienKind === 'relier' || soutienKind === 'completer'
+                ? 16
+                : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -2035,6 +2066,8 @@ function GeneratorPage() {
       gameAlpha: fields.gameAlpha,
       soutienMotsLibre: fields.soutienMotsLibre,
       soutienMotsEntries: fields.soutienMotsEntries,
+      soutienCompleterLibre: fields.soutienCompleterLibre,
+      soutienCompleterEntries: fields.soutienCompleterEntries,
       calliText: fields.calliText,
       calliFont: fields.calliFont,
       calliSize: fields.calliSize,
@@ -2118,6 +2151,8 @@ function GeneratorPage() {
           topic,
           soutienMotsLibre: false,
           soutienMotsEntries: undefined,
+          soutienCompleterLibre: false,
+          soutienCompleterEntries: undefined,
         }),
       })
       return
@@ -2860,6 +2895,57 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
+              {isSoutienCompleter ? (
+                <div className="mode-toggle-block">
+                  <b>Contenu</b>
+                  <div className="mode-toggle is-2" role="group" aria-label="Source des mots à compléter">
+                    <button
+                      type="button"
+                      className={!activeBlock.soutienCompleterLibre ? 'active' : ''}
+                      onClick={() =>
+                        updatePage({
+                          soutienCompleterLibre: false,
+                          soutienCompleterEntries: undefined,
+                        })
+                      }
+                    >
+                      Banque
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.soutienCompleterLibre ? 'active' : ''}
+                      onClick={() => {
+                        const seeded =
+                          activeBlock.soutienCompleterEntries?.some((e) => e.word.trim())
+                            ? activeBlock.soutienCompleterEntries
+                            : defaultSoutienCompleterEntries(soutienBank?.completes ?? [])
+                        updatePage({
+                          soutienCompleterLibre: true,
+                          soutienCompleterEntries: seeded.length
+                            ? seeded
+                            : defaultSoutienCompleterEntries(soutienBank?.completes ?? []),
+                        })
+                      }}
+                    >
+                      Libre
+                    </button>
+                  </div>
+                  <small className="muted">
+                    Libre : choisissez la partie à cacher, ou ajoutez mot + image.
+                  </small>
+                  {activeBlock.soutienCompleterLibre ? (
+                    <SoutienCompleterLibreEditor
+                      entries={
+                        activeBlock.soutienCompleterEntries?.length
+                          ? activeBlock.soutienCompleterEntries
+                          : defaultSoutienCompleterEntries(soutienBank?.completes ?? [])
+                      }
+                      suggestedWords={soutienBank?.words ?? []}
+                      onChange={(next) => updatePage({ soutienCompleterEntries: next })}
+                    />
+                  ) : null}
+                </div>
+              ) : null}
               {isVocabPool ? (
                 <>
                   {isVocabLearn ? (
@@ -3049,11 +3135,19 @@ function GeneratorPage() {
                       ? 'Questions'
                       : isSoutienLignes
                         ? 'Lignes'
-                        : 'QUESTIONS'}
+                        : isSoutienRelier || isSoutienCompleter
+                          ? 'Mots'
+                          : 'QUESTIONS'}
                 </span>
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
-                  aria-label={isSoutienLignes ? 'Nombre de lignes' : 'Nombre de questions'}
+                  aria-label={
+                    isSoutienLignes
+                      ? 'Nombre de lignes'
+                      : isSoutienRelier || isSoutienCompleter
+                        ? 'Nombre de mots'
+                        : 'Nombre de questions'
+                  }
                   aria-invalid={questionsInputOverflow}
                   title={
                     bankOverflow
@@ -3087,6 +3181,12 @@ function GeneratorPage() {
                     Lignes paires pour les deux tableaux (5 syllabes par ligne · moitié CV, moitié
                     doubles).
                   </small>
+                ) : null}
+                {isSoutienRelier ? (
+                  <small className="muted">Jusqu’à 16 mots (selon la banque du son).</small>
+                ) : null}
+                {isSoutienCompleter && !activeBlock.soutienCompleterLibre ? (
+                  <small className="muted">Nombre de mots à compléter (max. 16).</small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
@@ -3137,7 +3237,27 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr ? null : (
+              {isSoutienRelier ? (
+                <div className="mode-toggle-block">
+                  <b>Colonnes</b>
+                  <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
+                    {[1, 2].map((value) => (
+                      <button
+                        key={value}
+                        type="button"
+                        className={(activeBlock.columns ?? 1) === value ? 'active' : ''}
+                        onClick={() => updatePage({ columns: value })}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                  <small className="muted">
+                    En 2 colonnes, chaque colonne mélange ses propres mots (sans mélange croisé).
+                  </small>
+                </div>
+              ) : null}
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || (isSoutienFr && !isSoutienRelier) ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

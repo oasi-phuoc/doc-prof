@@ -1128,6 +1128,9 @@ function buildSingleBlock(
   const soutien = tryGenerateSoutienBatch(config.exerciseType, config.count, rng, difficulty, {
     soutienMotsLibre: config.soutienMotsLibre,
     soutienMotsEntries: config.soutienMotsEntries,
+    columns: config.columns,
+    soutienCompleterLibre: config.soutienCompleterLibre,
+    soutienCompleterEntries: config.soutienCompleterEntries,
   })
   if (soutien) {
     return {

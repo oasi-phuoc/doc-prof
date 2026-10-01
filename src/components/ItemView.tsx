@@ -60,45 +60,76 @@ function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const graphemes = item.themeGraphemes ?? []
 
   if (syllableMode) {
-    return (
-      <div className="vocab-match vocab-match--syllables" aria-label="Relier les syllabes">
-        {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
-        <table className="syllable-match-table">
-          <tbody>
-            {left.map((leftPart, index) => {
-              const rightPart = right[index] ?? ''
-              const matchLeft =
-                mode === 'answers'
-                  ? left.find((l) => byLeft.get(l) === rightPart)
-                  : undefined
-              const matchNum =
-                matchLeft != null ? left.findIndex((l) => l === matchLeft) + 1 : 0
-              return (
-                <tr key={`sm-${index}`}>
-                  <td className="syllable-match-num">{index + 1}.</td>
-                  <td className="syllable-match-left">
+    const colCount = Math.max(1, Math.min(2, item.letterGridCols ?? 1))
+    const mid = colCount === 2 ? Math.ceil(left.length / 2) : left.length
+    const columns =
+      colCount === 2
+        ? [
+            { left: left.slice(0, mid), right: right.slice(0, mid), offset: 0 },
+            { left: left.slice(mid), right: right.slice(mid), offset: mid },
+          ]
+        : [{ left, right, offset: 0 }]
+
+    const renderTable = (
+      colLeft: string[],
+      colRight: string[],
+      offset: number,
+      key: string,
+    ) => (
+      <table className="syllable-match-table" key={key}>
+        <tbody>
+          {colLeft.map((leftPart, index) => {
+            const rightPart = colRight[index] ?? ''
+            const globalIndex = offset + index
+            const matchLeft =
+              mode === 'answers'
+                ? left.find((l) => byLeft.get(l) === rightPart)
+                : undefined
+            const matchNum =
+              matchLeft != null ? left.findIndex((l) => l === matchLeft) + 1 : 0
+            return (
+              <tr key={`sm-${key}-${index}`}>
+                <td className="syllable-match-num">{globalIndex + 1}.</td>
+                <td className="syllable-match-left-group">
+                  <span className="syllable-match-left">
                     {highlightThemeLetters(leftPart, graphemes)}
-                  </td>
-                  <td className="syllable-match-dot" aria-hidden>
+                  </span>
+                  <span className="syllable-match-dot syllable-match-dot--left" aria-hidden>
                     ●
-                  </td>
-                  <td className="syllable-match-gap" aria-hidden />
-                  <td className="syllable-match-dot" aria-hidden>
+                  </span>
+                </td>
+                <td className="syllable-match-gap" aria-hidden />
+                <td className="syllable-match-right-group">
+                  <span className="syllable-match-dot syllable-match-dot--right" aria-hidden>
                     ●
-                  </td>
-                  <td className="syllable-match-right">
-                    <span className="syllable-match-right-text">
-                      {highlightThemeLetters(rightPart, graphemes)}
-                    </span>
-                    {mode === 'answers' && matchNum > 0 ? (
-                      <span className="syllable-match-key"> ← {matchNum}</span>
-                    ) : null}
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+                  </span>
+                  <span className="syllable-match-right-text">
+                    {highlightThemeLetters(rightPart, graphemes)}
+                  </span>
+                  {mode === 'answers' && matchNum > 0 ? (
+                    <span className="syllable-match-key"> ← {matchNum}</span>
+                  ) : null}
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    )
+
+    return (
+      <div
+        className={`vocab-match vocab-match--syllables${colCount === 2 ? ' is-2col' : ''}`}
+        aria-label="Relier les syllabes"
+      >
+        {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
+        <div className={`syllable-match-columns${colCount === 2 ? ' is-2' : ''}`}>
+          {columns.map((col, i) =>
+            col.left.length
+              ? renderTable(col.left, col.right, col.offset, `c${i}`)
+              : null,
+          )}
+        </div>
       </div>
     )
   }
@@ -531,7 +562,7 @@ function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
                           key={`${row.word}-${pIdx}`}
                           className={hit ? 'is-hit' : undefined}
                         >
-                          {hit
+                          {show
                             ? graphemes.length
                               ? highlightThemeLetters(part, graphemes)
                               : part
@@ -542,7 +573,6 @@ function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
                   </tr>
                 </tbody>
               </table>
-              {show ? <span className="syllable-sound-word">{row.word}</span> : null}
             </div>
           </div>
         ))}
@@ -554,14 +584,50 @@ function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
 function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const words = item.options ?? []
   const images = item.optionImages ?? []
-  const withImages = images.length > 0 && images.length === words.length
+  const audios = item.optionAudioSrcs ?? []
+  const withImages =
+    images.length > 0 &&
+    images.length === words.length &&
+    images.every((src) => Boolean(src) && !src.endsWith('.mp3') && !src.includes('/audio/'))
+  const withAudio = !withImages && audios.some(Boolean)
   const positives = new Set((item.labels ?? []).map((w) => w.toLowerCase()))
   const graphemes = item.themeGraphemes ?? []
   const cols = Math.max(1, item.letterGridCols ?? (withImages ? 5 : 3))
   const show = mode === 'answers'
+  const [qrSrcs, setQrSrcs] = useState<string[]>(() => audios.map(() => ''))
+  const audioKey = withAudio ? audios.join('|') : ''
+
+  useEffect(() => {
+    if (!withAudio) return
+    let cancelled = false
+    const srcs = audioKey.split('|')
+    const run = async () => {
+      const next = await Promise.all(
+        srcs.map(async (audioSrc) => {
+          if (!audioSrc) return ''
+          try {
+            return await QRCode.toDataURL(soutienAudioAbsoluteUrl(audioSrc), {
+              margin: 0,
+              width: 72,
+              errorCorrectionLevel: 'M',
+              color: { dark: '#111111', light: '#ffffff' },
+            })
+          } catch {
+            return ''
+          }
+        }),
+      )
+      if (!cancelled) setQrSrcs(next)
+    }
+    void run()
+    return () => {
+      cancelled = true
+    }
+  }, [withAudio, audioKey])
+
   return (
     <div
-      className={`listen-check-block${withImages ? ' listen-check-block--images' : ''}`}
+      className={`listen-check-block${withImages ? ' listen-check-block--images' : ''}${withAudio ? ' listen-check-block--audio' : ''}`}
       aria-label="Entendre le son"
     >
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
@@ -582,24 +648,37 @@ function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
                   )}
                 </div>
                 <div className="listen-check-image-foot">
-                  <span className="listen-check-num">{index + 1}.</span>
-                  <span
-                    className={`listen-check-box${show && hit ? ' checked' : ''}`}
-                    aria-hidden
-                  >
-                    {show && hit ? '✓' : ''}
-                  </span>
-                  {show ? (
-                    <span className="listen-check-caption">
-                      {graphemes.length ? highlightThemeLetters(word, graphemes) : word}
+                  <div className="listen-check-image-controls">
+                    <span className="listen-check-num">{index + 1}.</span>
+                    <span
+                      className={`listen-check-box${show && hit ? ' checked' : ''}`}
+                      aria-hidden
+                    >
+                      {show && hit ? '✓' : ''}
                     </span>
-                  ) : null}
+                  </div>
+                  <span className="listen-check-caption">
+                    {show
+                      ? graphemes.length
+                        ? highlightThemeLetters(word, graphemes)
+                        : word
+                      : '\u00a0'}
+                  </span>
                 </div>
               </div>
             )
           }
           return (
             <div className="listen-check-cell" key={`lc-${index}-${word}`}>
+              {withAudio ? (
+                <span className="listen-check-qr">
+                  {qrSrcs[index] ? (
+                    <img src={qrSrcs[index]} alt={`Audio ${index + 1}`} />
+                  ) : (
+                    <span className="listen-check-qr-ph" aria-hidden />
+                  )}
+                </span>
+              ) : null}
               <span className="listen-check-num">{index + 1}.</span>
               <span
                 className={`listen-check-box${show && hit ? ' checked' : ''}`}
@@ -648,7 +727,7 @@ function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMo
                 )}
               </div>
               <div className="syllable-complete-text">
-                <span className="syllable-complete-article">{paint(row.article)}</span>{' '}
+                <span className="syllable-complete-article">{paint(row.article)}</span>
                 {row.before ? (
                   <span className="syllable-complete-affix">{paint(row.before)}</span>
                 ) : null}
@@ -658,7 +737,9 @@ function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: PreviewMo
                 >
                   {show ? paint(row.blank) : '\u00a0'}
                 </span>
-                <span className="syllable-complete-affix">{paint(row.after)}</span>
+                {row.after ? (
+                  <span className="syllable-complete-affix">{paint(row.after)}</span>
+                ) : null}
                 {show ? (
                   <span className="syllable-complete-full">
                     {' '}
