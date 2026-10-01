@@ -352,7 +352,31 @@ function WorksheetSheet({
                         ? ' problem-grid'
                         : ''
                 }`}
-                style={{ '--sheet-columns': block.columns } as CSSProperties}
+                style={
+                  {
+                    /* Soutien FR : Colonnes = grille interne ; la feuille reste 1 col. */
+                    '--sheet-columns': block.items.some((item) =>
+                      [
+                        'vocab-table',
+                        'letter-grid',
+                        'syllable-table',
+                        'vocab-match',
+                        'syllable-complete',
+                        'listen-check',
+                        'syllable-sound',
+                        'phrase-scramble',
+                        'determinant-fill',
+                        'dictee-grid',
+                        'count-sound',
+                        'read-phrases',
+                        'audio-match',
+                        'word-search',
+                      ].includes(item.layout),
+                    )
+                      ? 1
+                      : block.columns,
+                  } as CSSProperties
+                }
               >
                 {block.items.map((item, index) => {
                   const padLeft =
