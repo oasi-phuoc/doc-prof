@@ -1,6 +1,6 @@
 import { countGrapheme, wordHasGrapheme, type VowelBank } from '@/francais/lecture-banks'
 import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
-import { pick, shuffle, type Rng } from '@/math/rng'
+import { int, pick, shuffle, type Rng } from '@/math/rng'
 import { tagged } from '@/francais/phrase-sentences'
 import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
 import { soutienBankByTopic, type SoutienVowelBank } from './banks'
@@ -110,6 +110,78 @@ function countSoundInPhrase(phrase: string, bank: SoutienVowelBank): number {
   return countGrapheme(phrase, asVowelBank(bank))
 }
 
+/** Consonnes simples (pas de digrammes CH/GN/PH/QU). */
+const SYLLABLE_CONS = ['b', 'c', 'd', 'f', 'g', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'z'] as const
+
+/** Lignes paires pour le type 3 (les deux tableaux script + Playwrite). */
+function evenSyllableRows(rowCount: number): number {
+  let rows = Math.max(2, Math.min(10, Math.round(rowCount) || 4))
+  if (rows % 2 !== 0) rows = Math.min(10, rows + 1)
+  return rows
+}
+
+/**
+ * Syllabes type 3 :
+ * - moitié CV (consonne + voyelle du thème)
+ * - moitié doubles : CVC / VCV, ou CVCV si CVC ferait un nasal (pan→pana, pin→pino…)
+ * Toujours alternance consonne/voyelle ; jamais digramme ni nasal type pan/pon/pin.
+ */
+function buildSyllableReadingList(rng: Rng, vowel: string, total: number): string[] {
+  const v = vowel.toLowerCase()
+  const half = Math.floor(total / 2)
+  const seen = new Set<string>()
+  const simple: string[] = []
+  const doubles: string[] = []
+
+  const tryAdd = (bucket: string[], value: string): boolean => {
+    if (seen.has(value)) return false
+    seen.add(value)
+    bucket.push(value)
+    return true
+  }
+
+  let guard = 0
+  while (simple.length < half && guard < half * 40) {
+    guard += 1
+    const s = `${pick(rng, [...SYLLABLE_CONS])}${v}`
+    if (!tryAdd(simple, s) && simple.length > 0 && guard > half * 20) {
+      simple.push(s) // doublon toléré si le pool est saturé
+    }
+  }
+  while (simple.length < half) {
+    simple.push(`${pick(rng, [...SYLLABLE_CONS])}${v}`)
+  }
+
+  guard = 0
+  while (doubles.length < half && guard < half * 50) {
+    guard += 1
+    const kind = int(rng, 0, 2) // 0 VCV · 1 CVC/CVCV · 2 CVCV
+    let s: string
+    if (kind === 0) {
+      s = `${v}${pick(rng, [...SYLLABLE_CONS])}${v}`
+    } else if (kind === 1) {
+      const c1 = pick(rng, [...SYLLABLE_CONS])
+      const c2 = pick(rng, [...SYLLABLE_CONS])
+      // pan / pin / pon / pun… → pana / pino / pono (pas de nasal)
+      s = /[nm]/i.test(c2) ? `${c1}${v}${c2}${v}` : `${c1}${v}${c2}`
+    } else {
+      const c1 = pick(rng, [...SYLLABLE_CONS])
+      const c2 = pick(rng, [...SYLLABLE_CONS])
+      s = `${c1}${v}${c2}${v}`
+    }
+    if (!tryAdd(doubles, s) && doubles.length > 0 && guard > half * 25) {
+      doubles.push(s)
+    }
+  }
+  while (doubles.length < half) {
+    const c1 = pick(rng, [...SYLLABLE_CONS])
+    const c2 = pick(rng, [...SYLLABLE_CONS])
+    doubles.push(/[nm]/i.test(c2) ? `${c1}${v}${c2}${v}` : `${c1}${v}${c2}`)
+  }
+
+  return shuffle(rng, [...simple.slice(0, half), ...doubles.slice(0, half)])
+}
+
 /** Assemble les jetons (apostrophe collée, ponctuation déjà sur le mot). */
 function joinSoutienOrder(tokens: PhraseToken[]): string {
   let out = ''
@@ -181,15 +253,13 @@ function genKind(
         items: [letterGrid(rng, bank, n)],
       }
     case 'syllabes': {
-      /** Deux tableaux 4 × 5 (script + Playwrite), voyelle en couleur du thème. */
+      /**
+       * Deux tableaux (script + Playwrite), même contenu.
+       * `count` = lignes paires (4→4×5, 6→6×5) ; moitié CV, moitié doubles sans nasal.
+       */
       const cols = 5
-      const rows = 4
-      const need = cols * rows
-      const pool = shuffle(rng, [...bank.syllables])
-      const list =
-        pool.length >= need
-          ? pool.slice(0, need)
-          : [...pool, ...Array.from({ length: need - pool.length }, (_, i) => pool[i % pool.length]!)]
+      const rows = evenSyllableRows(n)
+      const list = buildSyllableReadingList(rng, bank.letterLower, cols * rows)
       return {
         instruction: 'Lisez les syllabes ci-dessous.',
         preferredColumns: 1,

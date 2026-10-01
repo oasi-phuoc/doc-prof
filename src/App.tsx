@@ -1162,23 +1162,25 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                   ? { count: 4 }
                   : isSoutienFr && parseSoutienType(type.id)?.kind === 'lettres'
                     ? { count: 5 }
-                    : isLecture || isSoutienFr
-                      ? { count: 6 }
-                      : isGeoCalc
-                        ? { count: 2 }
-                        : isFrenchCom
-                          ? { count: 4 }
-                          : isFrenchLang
-                            ? { count: 6 }
-                            : isFormes
-                              ? { count: 5 }
-                              : isCadrans
-                                ? { count: 6 }
-                                : isDroites || isConstruire
-                                  ? { count: 5 }
-                                  : isTransform
-                                    ? { count: 4 }
-                                    : {}),
+                    : isSoutienFr && parseSoutienType(type.id)?.kind === 'syllabes'
+                      ? { count: 4 }
+                      : isLecture || isSoutienFr
+                        ? { count: 6 }
+                        : isGeoCalc
+                          ? { count: 2 }
+                          : isFrenchCom
+                            ? { count: 4 }
+                            : isFrenchLang
+                              ? { count: 6 }
+                              : isFormes
+                                ? { count: 5 }
+                                : isCadrans
+                                  ? { count: 6 }
+                                  : isDroites || isConstruire
+                                    ? { count: 5 }
+                                    : isTransform
+                                      ? { count: 4 }
+                                      : {}),
     ...(isVocabPool
       ? {
           columns: 1,
@@ -1699,7 +1701,9 @@ function GeneratorPage() {
   const isJeuxDomain = activePage.domain === 'jeux'
   const isCalliDomain = activePage.domain === 'calligraphie'
   const isSoutienFr = activePage.domain === 'soutien-fr'
-  const isSoutienMots = isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'mots'
+  const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
+  const isSoutienMots = soutienKind === 'mots'
+  const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
   const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
   const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
@@ -1768,9 +1772,11 @@ function GeneratorPage() {
         ? TRANSFORM_MAX_POINTS
         : isReperage
           ? COORD_LETTER_MAX
-          : isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'lettres'
+          : soutienKind === 'lettres'
             ? 12
-            : 30
+            : soutienKind === 'syllabes'
+              ? 10
+              : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -3041,13 +3047,13 @@ function GeneratorPage() {
                     ? 'Points'
                     : isReperage
                       ? 'Questions'
-                      : isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'lettres'
+                      : isSoutienLignes
                         ? 'Lignes'
                         : 'QUESTIONS'}
                 </span>
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
-                  aria-label="Nombre de questions"
+                  aria-label={isSoutienLignes ? 'Nombre de lignes' : 'Nombre de questions'}
                   aria-invalid={questionsInputOverflow}
                   title={
                     bankOverflow
@@ -3057,17 +3063,30 @@ function GeneratorPage() {
                         : undefined
                   }
                   type="number"
-                  min={1}
+                  min={soutienKind === 'syllabes' ? 2 : 1}
                   max={maxQuestions}
+                  step={soutienKind === 'syllabes' ? 2 : 1}
                   value={activeBlock.count}
-                  onChange={(event) =>
-                    updatePage({
-                      count: Math.max(1, Math.min(maxQuestions, Number(event.target.value) || 1)),
-                    })
-                  }
+                  onChange={(event) => {
+                    let next = Math.max(
+                      soutienKind === 'syllabes' ? 2 : 1,
+                      Math.min(maxQuestions, Number(event.target.value) || 1),
+                    )
+                    // Type 3 : toujours un nombre pair de lignes (les deux blocs).
+                    if (soutienKind === 'syllabes' && next % 2 !== 0) {
+                      next = Math.min(maxQuestions, next + 1)
+                    }
+                    updatePage({ count: next })
+                  }}
                 />
-                {isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'lettres' ? (
+                {soutienKind === 'lettres' ? (
                   <small className="muted">Nombre de lignes du tableau (10 lettres par ligne).</small>
+                ) : null}
+                {soutienKind === 'syllabes' ? (
+                  <small className="muted">
+                    Lignes paires pour les deux tableaux (5 syllabes par ligne · moitié CV, moitié
+                    doubles).
+                  </small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
