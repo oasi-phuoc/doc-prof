@@ -7,6 +7,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type FormEvent,
   type ReactElement,
   type ReactNode,
 } from 'react'
@@ -549,10 +550,19 @@ function SelectBox({
   )
 }
 
-function Header({ onCreate, generator = false }: { onCreate: () => void; generator?: boolean }) {
+function Header({
+  onCreate,
+  generator = false,
+  showCreate,
+}: {
+  onCreate: () => void
+  generator?: boolean
+  showCreate?: boolean
+}) {
+  const createVisible = showCreate ?? !generator
   return (
     <header className="topbar no-print">
-      <a className="brand" href={generator ? '/' : '#top'}>
+      <a className="brand" href={generator || !createVisible ? '/' : '#top'}>
         <span className="brand-mark">
           <i />
           <i />
@@ -560,17 +570,44 @@ function Header({ onCreate, generator = false }: { onCreate: () => void; generat
         </span>
         Clair<span className="brand-accent">FLE</span>
       </a>
-      {!generator && (
+      {createVisible ? (
         <button className="button small" type="button" onClick={onCreate}>
           Créer une fiche <span>→</span>
         </button>
-      )}
+      ) : null}
     </header>
   )
 }
 
 /** Mot de passe pour ouvrir le générateur de fiches. */
 const FICHE_ACCESS_PASSWORD = 'jebosseplus'
+/** Cookie d’accès (évite de resaisir le mot de passe à chaque visite). */
+const FICHE_ACCESS_COOKIE = 'clairfle-fiche-access'
+const FICHE_ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 365 // 1 an
+/** Identifiant fixe pour le gestionnaire de mots de passe du navigateur. */
+const FICHE_ACCESS_USERNAME = 'ClairFLE'
+
+function readAccessCookie(): boolean {
+  if (typeof document === 'undefined') return false
+  return document.cookie.split(';').some((part) => part.trim() === `${FICHE_ACCESS_COOKIE}=1`)
+}
+
+function writeAccessCookie() {
+  document.cookie = `${FICHE_ACCESS_COOKIE}=1; path=/; max-age=${FICHE_ACCESS_COOKIE_MAX_AGE}; SameSite=Lax`
+}
+
+function pathFromLocation(): 'landing' | 'access' | 'generator' {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/'
+  if (path === '/generateur') return 'generator'
+  if (path === '/acces') return 'access'
+  return 'landing'
+}
+
+function navigateTo(path: string) {
+  if (window.location.pathname !== path) {
+    window.history.pushState({}, '', path)
+  }
+}
 
 const THEME_STORAGE_KEY = 'clairfle-theme-color'
 const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
@@ -4315,16 +4352,121 @@ function GeneratorPage() {
   )
 }
 
-export default function App() {
-  const [generator, setGenerator] = useState(window.location.pathname === '/generateur')
-  const openGenerator = () => {
-    const typed = window.prompt('Mot de passe pour créer une fiche')
-    if (typed !== FICHE_ACCESS_PASSWORD) {
-      if (typed != null) window.alert('Mot de passe incorrect.')
+function AccessPage({ onSuccess }: { onSuccess: () => void }) {
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (password !== FICHE_ACCESS_PASSWORD) {
+      setError('Mot de passe incorrect. Vérifiez et réessayez.')
       return
     }
-    window.history.pushState({}, '', '/generateur')
-    setGenerator(true)
+    writeAccessCookie()
+    setError(null)
+    onSuccess()
   }
-  return generator ? <GeneratorPage /> : <Landing onCreate={openGenerator} />
+
+  return (
+    <div className="access-page">
+      <Header onCreate={() => undefined} showCreate={false} />
+      <main className="access-main">
+        <form className="access-card" method="post" action="/acces" autoComplete="on" onSubmit={handleSubmit}>
+          <p className="eyebrow">Accès enseignant</p>
+          <h1>Ouvrir le générateur</h1>
+          <p className="access-lead">
+            Saisissez le mot de passe pour créer vos fiches. Votre navigateur peut l’enregistrer pour les prochaines
+            visites.
+          </p>
+          {/* Champ username : nécessaire pour que le navigateur propose d’enregistrer le mot de passe. */}
+          <label className="access-field">
+            <span>Identifiant</span>
+            <input
+              name="username"
+              type="text"
+              autoComplete="username"
+              defaultValue={FICHE_ACCESS_USERNAME}
+            />
+          </label>
+          <label className="access-field">
+            <span>Mot de passe</span>
+            <input
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(event) => {
+                setPassword(event.target.value)
+                if (error) setError(null)
+              }}
+              required
+              autoFocus
+            />
+          </label>
+          {error ? (
+            <p className="access-error" role="alert">
+              {error}
+            </p>
+          ) : null}
+          <button className="button full" type="submit">
+            Continuer vers les fiches
+          </button>
+          <p className="access-hint">
+            Après validation, l’accès est mémorisé dans un cookie (1 an). Vous pourrez aussi enregistrer le mot de passe
+            dans votre navigateur.
+          </p>
+          <a className="text-link access-back" href="/">
+            ← Retour à l’accueil
+          </a>
+        </form>
+      </main>
+    </div>
+  )
+}
+
+function resolveRoute(): 'landing' | 'access' | 'generator' {
+  const initial = pathFromLocation()
+  if (initial === 'generator' && !readAccessCookie()) {
+    if (typeof window !== 'undefined' && pathFromLocation() === 'generator') {
+      window.history.replaceState({}, '', '/acces')
+    }
+    return 'access'
+  }
+  if (initial === 'access' && readAccessCookie()) {
+    if (typeof window !== 'undefined') {
+      window.history.replaceState({}, '', '/generateur')
+    }
+    return 'generator'
+  }
+  return initial
+}
+
+export default function App() {
+  const [route, setRoute] = useState<'landing' | 'access' | 'generator'>(resolveRoute)
+
+  useEffect(() => {
+    const sync = () => setRoute(resolveRoute())
+    window.addEventListener('popstate', sync)
+    return () => window.removeEventListener('popstate', sync)
+  }, [])
+
+  const goAccess = () => {
+    if (readAccessCookie()) {
+      navigateTo('/generateur')
+      setRoute('generator')
+      return
+    }
+    navigateTo('/acces')
+    setRoute('access')
+  }
+
+  const openGenerator = () => {
+    writeAccessCookie()
+    navigateTo('/generateur')
+    setRoute('generator')
+  }
+
+  if (route === 'generator') return <GeneratorPage />
+  if (route === 'access') return <AccessPage onSuccess={openGenerator} />
+  return <Landing onCreate={goAccess} />
 }
