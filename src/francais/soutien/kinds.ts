@@ -113,7 +113,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'mots-meles',
     label: '16 · Mots mêlés',
-    description: 'Liste de 12 mots + grille 15×15 à entourer.',
+    description:
+      'Liste de 12 mots (sans bordure) + grille 15×15 ; lettres agrandies ; pas de ligatures Æ/Œ.',
     instruction: 'Entourez les mots dans la grille.',
     preferredColumns: 1 as const,
   },

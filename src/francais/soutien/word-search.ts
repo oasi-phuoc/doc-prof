@@ -24,13 +24,17 @@ const DIRS: ReadonlyArray<readonly [number, number]> = [
   [-1, 0],
 ]
 
-/** Majuscules pour la grille (garde les accents). */
+/** Majuscules pour la grille (garde les accents ; Æ/Œ → AE/OE, jamais en une cellule). */
 export function toGridLetters(word: string): string {
   return word
     .normalize('NFC')
     .replace(/[’']/g, '')
     .replace(/-/g, '')
+    .replace(/œ/gi, 'oe')
+    .replace(/æ/gi, 'ae')
     .toLocaleUpperCase('fr-FR')
+    .replace(/Œ/g, 'OE')
+    .replace(/Æ/g, 'AE')
 }
 
 function canPlace(
@@ -65,8 +69,9 @@ function placeWord(
   }
 }
 
+/** Remplissage : lettres simples uniquement (pas de ligatures Æ / Œ). */
 const FILL =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÄÉÈÊËÎÏÔÖÙÛÜÆŒÇ'.split('')
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ'.split('')
 
 /**
  * Construit une grille de mots mêlés déterministe (15×15 par défaut).
