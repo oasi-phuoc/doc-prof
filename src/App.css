@@ -1203,7 +1203,7 @@ html,body,#root{
   .syllable-sound-grid,.syllable-sound-card,.syllable-sound-image,.syllable-sound-num{border:none!important}
   .syllable-sound-num{color:var(--purple)!important}
   .syllable-mini-table td{border-color:#000!important}
-  .phrase-scramble-table,.phrase-scramble-table td{border-color:#999!important}
+  .phrase-scramble-table,.phrase-scramble-table td,.phrase-scramble-num,.phrase-scramble-image{border:none!important}
   .phrase-scramble-num{color:var(--purple)!important}
   .phrase-scramble-blank{border-bottom-color:var(--purple)!important}
   .determinant-fill-table,.determinant-fill-table td{border-color:#999!important}
@@ -1766,13 +1766,15 @@ html,body,#root{
 }
 .listen-check-line.filled{border-bottom-color:var(--purple)}
 
-/* Type 7 — grille images + n° + case (sans tillé, pied hauteur fixe) */
+/* Type 7 — grille images fluide (3–5 col.) ; cellules de hauteur égale */
 .listen-check-grid--images{
   border:none;gap:6px 8px;
+  align-items:stretch;
+  grid-auto-rows:1fr;
 }
 .listen-check-image-cell{
   display:flex;flex-direction:column;
-  min-width:0;min-height:0;
+  min-width:0;min-height:0;height:100%;
   border:none;
   box-sizing:border-box;
   background:#fff;
@@ -1851,28 +1853,31 @@ html,body,#root{
   color:var(--purple);
 }
 
-/* Soutien FR type 9 — n° + image + phrase (trait + lettres mélangées) */
+/* Soutien FR type 9 — n° + image + phrase (hauteurs égales, sans bordure) */
 .phrase-scramble-block{
   display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
 }
 .phrase-scramble-table{
-  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+  width:100%;border-collapse:collapse;border:none;table-layout:fixed
+}
+.phrase-scramble-table tr{
+  height:22mm
 }
 .phrase-scramble-table td{
-  border:1px dashed #c5c9d0;padding:6px 8px;vertical-align:middle
+  border:none;padding:4px 6px;vertical-align:middle;height:22mm;box-sizing:border-box
 }
 .phrase-scramble-num{
   width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
-  text-align:left;white-space:nowrap;border-right:1px dashed #c5c9d0
+  text-align:left;white-space:nowrap
 }
 .phrase-scramble-image{
-  width:22mm;text-align:center;border-right:1px dashed #c5c9d0
+  width:22mm;text-align:center
 }
 .phrase-scramble-image img{
-  max-width:20mm;max-height:16mm;object-fit:contain;display:inline-block
+  max-width:18mm;max-height:18mm;object-fit:contain;display:inline-block
 }
 .phrase-scramble-text{
-  font-size:13px;font-weight:600;line-height:1.45;color:var(--ink)
+  font-size:13px;font-weight:600;line-height:1.35;color:var(--ink)
 }
 .phrase-scramble-sentence{
   display:inline;hyphens:auto

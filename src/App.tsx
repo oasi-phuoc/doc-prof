@@ -1052,6 +1052,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
   const isSoutienFr = type.topic.startsWith('soutien-')
+  const soutienKind = isSoutienFr ? parseSoutienType(type.id)?.kind : undefined
   const isPhrase = type.topic.startsWith('phrase-')
   const isPhraseChart = type.id.startsWith('phrase-tableau-')
   const isFormes = isReperageFormes(type.id)
@@ -1164,14 +1165,24 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                 ? { count: 6 }
                 : isLectureDense
                   ? { count: 4 }
-                  : isSoutienFr && parseSoutienType(type.id)?.kind === 'lettres'
+                  : soutienKind === 'lettres'
                     ? { count: 5 }
-                    : isSoutienFr && parseSoutienType(type.id)?.kind === 'syllabes'
+                    : soutienKind === 'syllabes'
                       ? { count: 4 }
-                      : isSoutienFr &&
-                          (parseSoutienType(type.id)?.kind === 'relier' ||
-                            parseSoutienType(type.id)?.kind === 'completer')
-                        ? { count: 8 }
+                      : soutienKind === 'relier' ||
+                          soutienKind === 'completer' ||
+                          soutienKind === 'ecouter' ||
+                          soutienKind === 'ecouter-image' ||
+                          soutienKind === 'syllabe-son' ||
+                          soutienKind === 'lettres-phrase'
+                        ? {
+                            count:
+                              soutienKind === 'lettres-phrase'
+                                ? 6
+                                : soutienKind === 'ecouter-image'
+                                  ? 9
+                                  : 8,
+                          }
                         : isLecture || isSoutienFr
                           ? { count: 6 }
                         : isGeoCalc
@@ -1256,7 +1267,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameFontSize: undefined,
           gameAlpha: undefined,
         }),
-    ...(isSoutienFr && parseSoutienType(type.id)?.kind === 'mots'
+    ...(soutienKind === 'mots'
       ? {
           soutienMotsLibre:
             prev?.exerciseType === type.id ? Boolean(prev.soutienMotsLibre) : false,
@@ -1267,7 +1278,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           soutienMotsLibre: undefined,
           soutienMotsEntries: undefined,
         }),
-    ...(isSoutienFr && parseSoutienType(type.id)?.kind === 'completer'
+    ...(soutienKind === 'completer'
       ? {
           soutienCompleterLibre:
             prev?.exerciseType === type.id ? Boolean(prev.soutienCompleterLibre) : false,
@@ -1278,14 +1289,32 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           soutienCompleterLibre: undefined,
           soutienCompleterEntries: undefined,
         }),
-    ...(isSoutienFr && parseSoutienType(type.id)?.kind === 'relier'
+    ...(soutienKind === 'relier'
       ? {
           columns:
             prev?.exerciseType === type.id
               ? Math.min(2, Math.max(1, prev.columns ?? 1))
               : 1,
         }
-      : {}),
+      : soutienKind === 'completer' ||
+          soutienKind === 'ecouter' ||
+          soutienKind === 'syllabe-son'
+        ? {
+            columns:
+              prev?.exerciseType === type.id
+                ? Math.min(3, Math.max(1, prev.columns ?? 3))
+                : soutienKind === 'completer'
+                  ? 2
+                  : 3,
+          }
+        : soutienKind === 'ecouter-image'
+          ? {
+              columns:
+                prev?.exerciseType === type.id
+                  ? Math.min(5, Math.max(3, prev.columns ?? 3))
+                  : 3,
+            }
+          : {}),
     ...(isCalli
       ? (() => {
           const topic = type.topic.startsWith('calli-')
@@ -1733,6 +1762,21 @@ function GeneratorPage() {
   const isSoutienCompleter = soutienKind === 'completer'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
+  /** Types 4–9 : le champ compte des mots (pas des « questions » génériques). */
+  const isSoutienMotsCount =
+    soutienKind === 'relier' ||
+    soutienKind === 'completer' ||
+    soutienKind === 'ecouter' ||
+    soutienKind === 'ecouter-image' ||
+    soutienKind === 'syllabe-son' ||
+    soutienKind === 'lettres-phrase'
+  /** Types 5 / 6 / 8 : grille 1–3 colonnes. */
+  const isSoutienCols123 =
+    soutienKind === 'completer' ||
+    soutienKind === 'ecouter' ||
+    soutienKind === 'syllabe-son'
+  /** Type 7 : grille images 3–5 colonnes (fluide). */
+  const isSoutienCols345 = soutienKind === 'ecouter-image'
   const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
   const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
@@ -1807,7 +1851,13 @@ function GeneratorPage() {
               ? 10
               : soutienKind === 'relier' || soutienKind === 'completer'
                 ? 16
-                : 30
+                : soutienKind === 'ecouter' || soutienKind === 'syllabe-son'
+                  ? 18
+                  : soutienKind === 'ecouter-image'
+                    ? 20
+                    : soutienKind === 'lettres-phrase'
+                      ? 12
+                      : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -3135,7 +3185,7 @@ function GeneratorPage() {
                       ? 'Questions'
                       : isSoutienLignes
                         ? 'Lignes'
-                        : isSoutienRelier || isSoutienCompleter
+                        : isSoutienMotsCount
                           ? 'Mots'
                           : 'QUESTIONS'}
                 </span>
@@ -3144,7 +3194,7 @@ function GeneratorPage() {
                   aria-label={
                     isSoutienLignes
                       ? 'Nombre de lignes'
-                      : isSoutienRelier || isSoutienCompleter
+                      : isSoutienMotsCount
                         ? 'Nombre de mots'
                         : 'Nombre de questions'
                   }
@@ -3187,6 +3237,18 @@ function GeneratorPage() {
                 ) : null}
                 {isSoutienCompleter && !activeBlock.soutienCompleterLibre ? (
                   <small className="muted">Nombre de mots à compléter (max. 16).</small>
+                ) : null}
+                {soutienKind === 'ecouter' ? (
+                  <small className="muted">Mots à écouter / écrire (max. 18).</small>
+                ) : null}
+                {soutienKind === 'ecouter-image' ? (
+                  <small className="muted">Images à écouter / cocher (max. 20).</small>
+                ) : null}
+                {soutienKind === 'syllabe-son' ? (
+                  <small className="muted">Nombre de cartes (max. 18).</small>
+                ) : null}
+                {soutienKind === 'lettres-phrase' ? (
+                  <small className="muted">Nombre de phrases (max. 12).</small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
@@ -3257,7 +3319,50 @@ function GeneratorPage() {
                   </small>
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || (isSoutienFr && !isSoutienRelier) ? null : (
+              {isSoutienCols123 ? (
+                <div className="mode-toggle-block">
+                  <b>Colonnes</b>
+                  <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
+                    {[1, 2, 3].map((value) => (
+                      <button
+                        key={value}
+                        type="button"
+                        className={
+                          (activeBlock.columns ?? (soutienKind === 'completer' ? 2 : 3)) ===
+                          value
+                            ? 'active'
+                            : ''
+                        }
+                        onClick={() => updatePage({ columns: value })}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                  <small className="muted">Grille fluide : 1, 2 ou 3 colonnes.</small>
+                </div>
+              ) : null}
+              {isSoutienCols345 ? (
+                <div className="mode-toggle-block">
+                  <b>Colonnes</b>
+                  <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
+                    {[3, 4, 5].map((value) => (
+                      <button
+                        key={value}
+                        type="button"
+                        className={(activeBlock.columns ?? 3) === value ? 'active' : ''}
+                        onClick={() => updatePage({ columns: value })}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                  <small className="muted">
+                    Grille fluide (pas un tableau fixe) : 3, 4 ou 5 colonnes.
+                  </small>
+                </div>
+              ) : null}
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">

@@ -46,7 +46,10 @@ export type SoutienGenerateOptions = {
   /** Type 1 : mode libre (mots / images saisis). */
   soutienMotsLibre?: boolean
   soutienMotsEntries?: ReadonlyArray<{ id: string; label: string; imageSrc?: string }>
-  /** Type 4 : 1 ou 2 colonnes (mélange indépendant par colonne). */
+  /**
+   * Colonnes : type 4 → 1–2 ; types 5/6/8 → 1–3 ; type 7 → 3–5.
+   * (Mélange indépendant par colonne pour le type 4.)
+   */
   columns?: number
   /** Type 5 : mode libre. */
   soutienCompleterLibre?: boolean
@@ -338,15 +341,17 @@ function genKind(
       }
     }
     case 'completer': {
-      /** Grille image + Un/Une + [avant]____[après] (trait continu). */
+      /** Grille image + Un/Une + trait ; colonnes 1–3 ; count = nb de mots. */
+      const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 2) || 2))
       const libre =
         Boolean(options?.soutienCompleterLibre) &&
         (options?.soutienCompleterEntries?.some((e) => e.word.trim() && e.blank.trim()) ??
           false)
+      const want = Math.max(1, Math.min(16, n))
       const pool = libre
         ? (options!.soutienCompleterEntries ?? [])
             .filter((e) => e.word.trim() && e.blank.trim())
-            .slice(0, 16)
+            .slice(0, want)
             .map((row) => ({
               article: row.article.trim() || 'Un',
               before: row.before,
@@ -356,7 +361,7 @@ function genKind(
               imageSrc: row.imageSrc || soutienImageFor(row.word),
             }))
         : shuffle(rng, [...bank.completes])
-            .slice(0, Math.min(Math.max(1, Math.min(16, n)), bank.completes.length))
+            .slice(0, Math.min(want, bank.completes.length))
             .map((row) => ({
               article: row.article,
               before: row.before,
@@ -365,7 +370,7 @@ function genKind(
               word: row.word,
               imageSrc: soutienImageFor(row.word),
             }))
-      const rows = Math.max(1, Math.ceil(pool.length / 2))
+      const rows = Math.max(1, Math.ceil(pool.length / cols))
       return {
         instruction: 'Complétez les mots à l’aide de l’image.',
         preferredColumns: 1,
@@ -375,17 +380,30 @@ function genKind(
             syllableCompletes: pool,
             answer: pool.map((row) => `${row.article} ${row.word}`).join(' · '),
             vocabRows: rows,
-            vocabCols: 2,
+            vocabCols: cols,
             themeGraphemes: [...bank.graphemes],
           },
         ],
       }
     }
     case 'ecouter': {
-      /** Grille 3×3 : n° + case + trait (+ QR audio si dispo). */
-      const positives = shuffle(rng, [...bank.words]).slice(0, 5)
-      const negatives = shuffle(rng, otherWords(bank)).slice(0, 4)
-      const optionsList = shuffle(rng, [...positives, ...negatives])
+      /** Grille : n° + case + trait (+ QR) ; count = nb de mots ; colonnes 1–3. */
+      const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 3) || 3))
+      const need = Math.max(1, Math.min(18, n))
+      const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.55)))
+      const negCount = Math.max(0, need - posCount)
+      const positives = shuffle(rng, [...bank.words]).slice(0, Math.min(posCount, bank.words.length))
+      const negatives = shuffle(rng, otherWords(bank)).slice(0, negCount)
+      let optionsList = shuffle(rng, [...positives, ...negatives])
+      if (optionsList.length < need) {
+        const extra = shuffle(rng, [...bank.words, ...otherWords(bank)]).filter(
+          (w) => !optionsList.some((p) => p.toLowerCase() === w.toLowerCase()),
+        )
+        optionsList = [...optionsList, ...extra].slice(0, need)
+      }
+      optionsList = optionsList.slice(0, need)
+      const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
+      const checked = optionsList.filter((w) => positiveSet.has(w.toLowerCase()))
       const audios = optionsList.map((w) => soutienAudioFor(w))
       return {
         instruction: `Écoutez les mots et cochez quand vous entendez le son ${bank.sound}.`,
@@ -395,17 +413,18 @@ function genKind(
             layout: 'listen-check',
             options: optionsList,
             optionAudioSrcs: audios.map((a) => a ?? ''),
-            labels: positives,
-            answer: positives.join(' · '),
-            letterGridCols: 3,
+            labels: checked,
+            answer: checked.join(' · '),
+            letterGridCols: cols,
             themeGraphemes: [...bank.graphemes],
           },
         ],
       }
     }
     case 'ecouter-image': {
-      /** Grille 3×5 (15) : image + n° + case ; cocher si on entend le son. */
-      const need = 15
+      /** Grille images fluide ; count = nb de mots ; colonnes 3–5. */
+      const cols = Math.max(3, Math.min(5, Math.round(options?.columns ?? 3) || 3))
+      const need = Math.max(1, Math.min(20, n))
       const withImg = (list: readonly string[]) =>
         list.filter((w) => Boolean(soutienImageFor(w)))
       const posPool = withImg(bank.words)
@@ -414,7 +433,8 @@ function genKind(
         ...bank.completes.map((c) => c.word),
         ...bank.syllableItems.map((item) => item.word),
       ])
-      const positives = shuffle(rng, posPool).slice(0, Math.min(8, posPool.length))
+      const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.55)))
+      const positives = shuffle(rng, posPool).slice(0, Math.min(posCount, posPool.length))
       const negatives = shuffle(
         rng,
         negPool.filter((w) => !positives.some((p) => p.toLowerCase() === w.toLowerCase())),
@@ -441,14 +461,16 @@ function genKind(
             imagesAvailable: true,
             labels: checked,
             answer: checked.join(' · '),
-            letterGridCols: 5,
+            letterGridCols: cols,
             themeGraphemes: [...bank.graphemes],
           },
         ],
       }
     }
     case 'syllabe-son': {
-      /** Grille 3×4 : image + n° + mini-tableau (1 case / syllabe). */
+      /** Grille fluide ; count = nb de cartes ; colonnes 1–3. */
+      const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 3) || 3))
+      const need = Math.max(1, Math.min(18, n))
       const withSound = shuffle(
         rng,
         bank.syllableItems.filter((item) => wordHasGrapheme(item.word, asVowelBank(bank))),
@@ -457,14 +479,15 @@ function genKind(
         rng,
         bank.syllableItems.filter((item) => !wordHasGrapheme(item.word, asVowelBank(bank))),
       )
-      const chosenPos = withSound.slice(0, 9)
-      const chosenNeg = without.slice(0, Math.max(0, 12 - chosenPos.length))
-      let twelve = shuffle(rng, [...chosenPos, ...chosenNeg]).slice(0, 12)
-      if (twelve.length < 12) {
+      const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.7)))
+      const chosenPos = withSound.slice(0, posCount)
+      const chosenNeg = without.slice(0, Math.max(0, need - chosenPos.length))
+      let chosen = shuffle(rng, [...chosenPos, ...chosenNeg]).slice(0, need)
+      if (chosen.length < need) {
         const rest = bank.syllableItems.filter(
-          (item) => !twelve.some((t) => t.word.toLowerCase() === item.word.toLowerCase()),
+          (item) => !chosen.some((t) => t.word.toLowerCase() === item.word.toLowerCase()),
         )
-        twelve = [...twelve, ...shuffle(rng, rest)].slice(0, 12)
+        chosen = [...chosen, ...shuffle(rng, rest)].slice(0, need)
       }
       return {
         instruction: `À quelle syllabe entendez-vous le son ${bank.sound} ?`,
@@ -472,7 +495,7 @@ function genKind(
         items: [
           {
             layout: 'syllable-sound',
-            syllableSoundItems: twelve.map((item) => {
+            syllableSoundItems: chosen.map((item) => {
               const parts = [...item.parts]
               const hitIndex = parts.findIndex((p) => wordHasGrapheme(p, asVowelBank(bank)))
               return {
@@ -482,24 +505,25 @@ function genKind(
                 imageSrc: soutienImageFor(item.word),
               }
             }),
-            answer: twelve
+            answer: chosen
               .map((item) => {
                 const parts = item.parts
                 const hit = parts.find((p) => wordHasGrapheme(p, asVowelBank(bank)))
                 return hit ? `${item.word} → ${hit}` : item.word
               })
               .join(' · '),
-            letterGridCols: 3,
+            letterGridCols: cols,
             themeGraphemes: [...bank.graphemes],
           },
         ],
       }
     }
     case 'lettres-phrase': {
-      /** Phrase + image + trait couleur thème + lettres mélangées. */
+      /** Phrases à trous ; count = nb de mots / lignes. */
+      const want = Math.max(1, Math.min(12, n))
       const rows = shuffle(rng, [...bank.scrambles]).slice(
         0,
-        Math.min(7, bank.scrambles.length),
+        Math.min(want, bank.scrambles.length),
       )
       return {
         instruction: 'Écrivez le mot correct à l’aide des lettres.',
@@ -507,7 +531,6 @@ function genKind(
         items: [
           {
             layout: 'phrase-scramble',
-            prompt: 'Écrivez le mot correct à l’aide des lettres.',
             phraseScrambles: rows.map((row) => {
               const lower = row.sentence.toLowerCase()
               const w = row.word.toLowerCase()
