@@ -272,6 +272,8 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'bateau', other: 'animal' },
       { word: 'lapin', other: 'abricot' },
       { word: 'salade', other: 'lapin' },
+      { word: 'ananas', other: 'vase' },
+      { word: 'vase', other: 'ananas' },
     ],
     syllableItems: [
       { word: 'Plante', parts: ['Plan', 'te'] },
@@ -547,6 +549,8 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'corbeau', other: 'parasol' },
       { word: 'flocon', other: 'coffre' },
       { word: 'parasol', other: 'flocon' },
+      { word: 'robot', other: 'orange' },
+      { word: 'orange', other: 'robot' },
     ],
     syllableItems: [
       { word: 'Abricot', parts: ['A', 'bri', 'cot'] },
@@ -827,6 +831,8 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'vitrine', other: 'penderie' },
       { word: 'soulier', other: 'grizzly' },
       { word: 'grizzly', other: 'soulier' },
+      { word: 'tigre', other: 'kiwi' },
+      { word: 'kiwi', other: 'tigre' },
     ],
     syllableItems: [
       { word: 'Artichaut', parts: ['Ar', 'ti', 'chaut'] },
@@ -1138,6 +1144,8 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'cuisinière', other: 'libellule' },
       { word: 'lunette', other: 'bureau' },
       { word: 'juge', other: 'bulldozer' },
+      { word: 'plume', other: 'nuage' },
+      { word: 'nuage', other: 'plume' },
     ],
     syllableItems: [
       { word: 'agriculteur', parts: ['a', 'gri', 'cul', 'teur'] },
@@ -1454,6 +1462,8 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'reflet', other: 'remix' },
       { word: 'remix', other: 'reflet' },
       { word: 'sonnerie', other: 'casserole' },
+      { word: 'renard', other: 'cheval' },
+      { word: 'cheval', other: 'renard' },
     ],
     syllableItems: [
       { word: 'betterave', parts: ['bet', 'te', 'rave'] },
@@ -1767,6 +1777,12 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       { word: 'mystère', other: 'myopie' },
       { word: 'analyse', other: 'paysage' },
       { word: 'physicien', other: 'syllabe' },
+      { word: 'stylo', other: 'pyjama' },
+      { word: 'pyjama', other: 'stylo' },
+      { word: 'cygne', other: 'gymnase' },
+      { word: 'gymnase', other: 'cygne' },
+      { word: 'pyramide', other: 'bicyclette' },
+      { word: 'bicyclette', other: 'pyramide' },
     ],
     syllableItems: [
       { word: 'polygone', parts: ['po', 'ly', 'gone'] },

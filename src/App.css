@@ -1248,9 +1248,9 @@ html,body,#root{
   .read-phrases-table,.read-phrases-table td{border:none!important}
   .read-phrases-num{color:var(--purple)!important}
   .read-phrases-text .syllable-vowel{color:var(--purple)!important}
-  .audio-match-table,.audio-match-table td{border-color:#999!important}
+  .audio-match-table,.audio-match-table td{border:none!important}
   .audio-match-num,.audio-match-key{color:var(--purple)!important}
-  .audio-match-word-text .syllable-vowel{color:var(--purple)!important}
+  .audio-match-word-text .syllable-vowel{color:var(--purple)!important;text-decoration:none!important}
   .word-search-list,.word-search-list-cell{border-color:#999!important}
   .word-search-cell.is-hit{
     color:var(--purple)!important;
@@ -2082,15 +2082,15 @@ html,body,#root{
   color:var(--purple);font-weight:700
 }
 
-/* Soutien FR type 15 — QR audio + relier au mot */
+/* Soutien FR type 15 — QR audio + relier ; sans bordure ni soulignement */
 .audio-match-block{
-  display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
+  display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
 }
 .audio-match-table{
-  width:100%;border-collapse:collapse;border:1px dashed #c5c9d0;table-layout:fixed
+  width:100%;border-collapse:collapse;border:none;table-layout:fixed
 }
 .audio-match-table td{
-  border:1px dashed #c5c9d0;padding:4px 6px;vertical-align:middle
+  border:none;padding:10px 6px;vertical-align:middle
 }
 .audio-match-num{
   width:1.6em;font-size:13px;font-weight:700;color:var(--purple);
@@ -2114,14 +2114,11 @@ html,body,#root{
 }
 .audio-match-word-text{
   display:inline-block;
-  border-bottom:1px solid var(--ink);
-  padding-bottom:1px;
   line-height:1.2;
 }
 .audio-match-word-text .syllable-vowel{
   color:var(--purple);font-weight:700;
-  text-decoration:underline;text-decoration-color:var(--purple);
-  text-underline-offset:2px;
+  text-decoration:none;
 }
 .audio-match-key{font-size:11px;font-weight:700;color:var(--purple);margin-left:4px}
 

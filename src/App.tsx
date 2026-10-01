@@ -1238,7 +1238,8 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                           soutienKind === 'dictee' ||
                           soutienKind === 'compter' ||
                           soutienKind === 'ordre' ||
-                          soutienKind === 'lire'
+                          soutienKind === 'lire' ||
+                          soutienKind === 'associer-audio'
                         ? {
                             count:
                               soutienKind === 'lettres-phrase' || soutienKind === 'ordre'
@@ -1830,7 +1831,7 @@ function GeneratorPage() {
   const isSoutienCompleter = soutienKind === 'completer'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
-  /** Types 4–11 : le champ compte des mots (pas des « questions » génériques). */
+  /** Types 4–11 / 15 : le champ compte des mots (pas des « questions » génériques). */
   const isSoutienMotsCount =
     soutienKind === 'relier' ||
     soutienKind === 'completer' ||
@@ -1839,7 +1840,8 @@ function GeneratorPage() {
     soutienKind === 'syllabe-son' ||
     soutienKind === 'lettres-phrase' ||
     soutienKind === 'determinants' ||
-    soutienKind === 'dictee'
+    soutienKind === 'dictee' ||
+    soutienKind === 'associer-audio'
   /** Type 5 de la fiche (même thème) — fixe le nb de questions du type 10. */
   const soutienType5Count = (() => {
     if (!isSoutienFr) return undefined
@@ -1996,7 +1998,9 @@ function GeneratorPage() {
                         ? 12
                         : soutienKind === 'lire'
                           ? 20
-                          : 30
+                          : soutienKind === 'associer-audio'
+                            ? 10
+                            : 30
   const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
   const bankQuestionCap = activeSheetBlock?.bankQuestionCap
   const bankOverflow =
@@ -3417,6 +3421,9 @@ function GeneratorPage() {
                 ) : null}
                 {soutienKind === 'lire' ? (
                   <small className="muted">Nombre de phrases à lire (défaut 10, max. 20).</small>
+                ) : null}
+                {soutienKind === 'associer-audio' ? (
+                  <small className="muted">Nombre de mots à associer (max. 10).</small>
                 ) : null}
                 {bankOverflow ? (
                   <p className="questions-overflow-hint" role="status">
