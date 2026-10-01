@@ -669,6 +669,13 @@ export type ExerciseBlock = {
   /** Jeux Vocabulaire : coloriage Alpha (1 couleur = 1 son). */
   gameAlpha?: boolean
   /**
+   * Soutien FR type 1 (mots et images) : édition libre
+   * (sinon banque de la voyelle).
+   */
+  soutienMotsLibre?: boolean
+  /** Entrées libre type 1 — mot + image (max. 16). */
+  soutienMotsEntries?: Array<{ id: string; label: string; imageSrc?: string }>
+  /**
    * Domaine Calligraphie : un mot ou une phrase par ligne
    * (texte brut du panneau enseignant·e).
    */

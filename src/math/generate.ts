@@ -1125,7 +1125,10 @@ function buildSingleBlock(
   if (reperage) {
     return { title: fallbackTitle, instruction: reperage.instruction, items: reperage.items }
   }
-  const soutien = tryGenerateSoutienBatch(config.exerciseType, config.count, rng, difficulty)
+  const soutien = tryGenerateSoutienBatch(config.exerciseType, config.count, rng, difficulty, {
+    soutienMotsLibre: config.soutienMotsLibre,
+    soutienMotsEntries: config.soutienMotsEntries,
+  })
   if (soutien) {
     return {
       title: fallbackTitle,

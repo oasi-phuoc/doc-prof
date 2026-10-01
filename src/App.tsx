@@ -76,6 +76,12 @@ import {
 import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
+import { soutienBankByTopic } from '@/francais/soutien/banks'
+import { parseSoutienType } from '@/francais/soutien/kinds'
+import {
+  defaultSoutienMotsEntries,
+  SoutienMotsLibreEditor,
+} from '@/francais/soutien/SoutienMotsLibreEditor'
 import {
   CoordQuestionsLibreEditor,
   resizeCoordQuestionsLibre,
@@ -1238,6 +1244,17 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
           gameFontSize: undefined,
           gameAlpha: undefined,
         }),
+    ...(isSoutienFr && parseSoutienType(type.id)?.kind === 'mots'
+      ? {
+          soutienMotsLibre:
+            prev?.exerciseType === type.id ? Boolean(prev.soutienMotsLibre) : false,
+          soutienMotsEntries:
+            prev?.exerciseType === type.id ? prev.soutienMotsEntries : undefined,
+        }
+      : {
+          soutienMotsLibre: undefined,
+          soutienMotsEntries: undefined,
+        }),
     ...(isCalli
       ? (() => {
           const topic = type.topic.startsWith('calli-')
@@ -1680,6 +1697,8 @@ function GeneratorPage() {
   const isJeuxDomain = activePage.domain === 'jeux'
   const isCalliDomain = activePage.domain === 'calligraphie'
   const isSoutienFr = activePage.domain === 'soutien-fr'
+  const isSoutienMots = isSoutienFr && parseSoutienType(activeBlock.exerciseType)?.kind === 'mots'
+  const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
   const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
   const calliIsPhrases = isCalliDomain && isCalliPhrasesType(activeBlock.exerciseType)
@@ -2004,6 +2023,8 @@ function GeneratorPage() {
           : fields.gameBorderId,
       gameFontSize: fields.gameFontSize ?? DEFAULT_GAME_FONT_SIZE,
       gameAlpha: fields.gameAlpha,
+      soutienMotsLibre: fields.soutienMotsLibre,
+      soutienMotsEntries: fields.soutienMotsEntries,
       calliText: fields.calliText,
       calliFont: fields.calliFont,
       calliSize: fields.calliSize,
@@ -2071,6 +2092,23 @@ function GeneratorPage() {
       updatePage({
         topic,
         ...applyType(type, { ...activeBlock, topic, gameTopic: undefined, gameEntries: undefined, gameText: undefined, gameSelectedIds: undefined }),
+      })
+      return
+    }
+    if (activePage.domain === 'soutien-fr') {
+      const parsed = parseSoutienType(activeBlock.exerciseType)
+      const kind = parsed?.kind ?? 'mots'
+      const nextId = `soutien-${topic.replace(/^soutien-/, '')}-${kind}`
+      const type = exerciseTypeById[nextId] ?? firstTypeFor('soutien-fr', topic)
+      // Changer de voyelle : repartir de la banque (ne pas garder les mots libres de l’autre son).
+      updatePage({
+        topic,
+        ...applyType(type, {
+          ...activeBlock,
+          topic,
+          soutienMotsLibre: false,
+          soutienMotsEntries: undefined,
+        }),
       })
       return
     }
@@ -2767,6 +2805,51 @@ function GeneratorPage() {
               ) : null}
               </>
               )}
+              {isSoutienMots ? (
+                <div className="mode-toggle-block">
+                  <b>Contenu</b>
+                  <div className="mode-toggle is-2" role="group" aria-label="Source des mots">
+                    <button
+                      type="button"
+                      className={!activeBlock.soutienMotsLibre ? 'active' : ''}
+                      onClick={() =>
+                        updatePage({ soutienMotsLibre: false, soutienMotsEntries: undefined })
+                      }
+                    >
+                      Banque
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.soutienMotsLibre ? 'active' : ''}
+                      onClick={() => {
+                        const seeded =
+                          activeBlock.soutienMotsEntries?.some((e) => e.label.trim())
+                            ? activeBlock.soutienMotsEntries
+                            : defaultSoutienMotsEntries(soutienBank?.words ?? [])
+                        updatePage({
+                          soutienMotsLibre: true,
+                          soutienMotsEntries: seeded,
+                        })
+                      }}
+                    >
+                      Libre
+                    </button>
+                  </div>
+                  <small className="muted">
+                    Libre : ajoutez des mots ou changez le mot et l’image.
+                  </small>
+                  {activeBlock.soutienMotsLibre ? (
+                    <SoutienMotsLibreEditor
+                      entries={
+                        activeBlock.soutienMotsEntries?.length
+                          ? activeBlock.soutienMotsEntries
+                          : defaultSoutienMotsEntries(soutienBank?.words ?? [])
+                      }
+                      onChange={(next) => updatePage({ soutienMotsEntries: next })}
+                    />
+                  ) : null}
+                </div>
+              ) : null}
               {isVocabPool ? (
                 <>
                   {isVocabLearn ? (

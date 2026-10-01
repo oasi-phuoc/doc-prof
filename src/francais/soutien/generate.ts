@@ -32,6 +32,12 @@ export type SoutienBatch = {
   preferredColumns?: number
 }
 
+export type SoutienGenerateOptions = {
+  /** Type 1 : mode libre (mots / images saisis). */
+  soutienMotsLibre?: boolean
+  soutienMotsEntries?: ReadonlyArray<{ id: string; label: string; imageSrc?: string }>
+}
+
 const DISTRACTOR_LETTERS = 'bcdfghjklmnpqrstvwxzBCDFGHIJKLMNPQRSTVWXZ'.split('')
 
 function asVowelBank(bank: SoutienVowelBank): VowelBank {
@@ -124,13 +130,32 @@ function genKind(
   count: number,
   rng: Rng,
   difficulty: Difficulty,
+  options?: SoutienGenerateOptions,
 ): { items: MathItem[]; instruction: string; preferredColumns?: number } {
   const n = Math.max(1, count)
 
   switch (kind) {
     case 'mots': {
-      const words = bank.words.slice(0, 16)
-      const entries = soutienEntriesWithImages(words)
+      const libre =
+        Boolean(options?.soutienMotsLibre) &&
+        (options?.soutienMotsEntries?.some((e) => e.label.trim()) ?? false)
+      const libreEntries = libre
+        ? (options!.soutienMotsEntries ?? [])
+            .filter((e) => e.label.trim())
+            .slice(0, 16)
+            .map((e, index) => ({
+              id: e.id || `soutien-libre-${index}`,
+              label: e.label.trim(),
+              imageSrc: e.imageSrc || soutienImageFor(e.label),
+            }))
+        : null
+      const words = libreEntries
+        ? libreEntries.map((e) => e.label)
+        : bank.words.slice(0, 16)
+      const entries = libreEntries ?? soutienEntriesWithImages(words)
+      const total = Math.max(1, Math.min(16, entries.length))
+      const cols = Math.min(4, total)
+      const rows = Math.ceil(total / cols)
       return {
         instruction: `On entend le son ${bank.sound} dans ces mots.`,
         preferredColumns: 1,
@@ -139,8 +164,8 @@ function genKind(
             layout: 'vocab-table',
             prompt: `On entend le son ${bank.sound} dans ces mots.`,
             vocabEntries: entries,
-            vocabRows: 4,
-            vocabCols: 4,
+            vocabRows: rows,
+            vocabCols: cols,
             labels: [...bank.graphemes],
             answer: words.join(' · '),
           },
@@ -547,10 +572,11 @@ export function tryGenerateSoutienBatch(
   count: number,
   rng: Rng,
   difficulty: Difficulty = 'moyen',
+  options?: SoutienGenerateOptions,
 ): SoutienBatch | null {
   const parsed = parseSoutienType(exerciseType)
   if (!parsed) return null
   const bank = soutienBankByTopic(`soutien-${parsed.vowel}`)
   if (!bank) return null
-  return genKind(parsed.kind, bank, count, rng, difficulty)
+  return genKind(parsed.kind, bank, count, rng, difficulty, options)
 }
