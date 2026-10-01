@@ -584,9 +584,6 @@ const FICHE_ACCESS_PASSWORD = 'jebosseplus'
 /** Cookie d’accès (évite de resaisir le mot de passe à chaque visite). */
 const FICHE_ACCESS_COOKIE = 'clairfle-fiche-access'
 const FICHE_ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 365 // 1 an
-/** Identifiant fixe pour le gestionnaire de mots de passe du navigateur. */
-const FICHE_ACCESS_USERNAME = 'ClairFLE'
-
 function readAccessCookie(): boolean {
   if (typeof document === 'undefined') return false
   return document.cookie.split(';').some((part) => part.trim() === `${FICHE_ACCESS_COOKIE}=1`)
@@ -4383,20 +4380,7 @@ function AccessPage({ onSuccess }: { onSuccess: () => void }) {
         <form className="access-card" method="post" action="/acces" autoComplete="on" onSubmit={handleSubmit}>
           <p className="eyebrow">Accès enseignant</p>
           <h1>Ouvrir le générateur</h1>
-          <p className="access-lead">
-            Saisissez le mot de passe pour créer vos fiches. Votre navigateur peut l’enregistrer pour les prochaines
-            visites.
-          </p>
-          {/* Champ username : nécessaire pour que le navigateur propose d’enregistrer le mot de passe. */}
-          <label className="access-field">
-            <span>Identifiant</span>
-            <input
-              name="username"
-              type="text"
-              autoComplete="username"
-              defaultValue={FICHE_ACCESS_USERNAME}
-            />
-          </label>
+          <p className="access-lead">Saisissez le mot de passe pour créer vos fiches.</p>
           <label className="access-field">
             <span>Mot de passe</span>
             <input
@@ -4420,10 +4404,6 @@ function AccessPage({ onSuccess }: { onSuccess: () => void }) {
           <button className="button full" type="submit">
             Continuer vers les fiches
           </button>
-          <p className="access-hint">
-            Après validation, l’accès est mémorisé dans un cookie (1 an). Vous pourrez aussi enregistrer le mot de passe
-            dans votre navigateur.
-          </p>
           <a className="text-link access-back" href="/">
             ← Retour à l’accueil
           </a>
