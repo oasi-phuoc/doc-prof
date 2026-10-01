@@ -671,10 +671,11 @@ function genKind(
       }
     }
     case 'associer-audio': {
-      /** QR audio (gauche) + mots mélangés à relier (droite). */
+      /** QR audio (gauche) + mots mélangés à relier (droite) ; count ≤ 10. */
+      const want = Math.max(1, Math.min(10, n))
       const pairs = shuffle(rng, [...bank.audioPairs]).slice(
         0,
-        Math.min(8, bank.audioPairs.length),
+        Math.min(want, bank.audioPairs.length),
       )
       const listenWords = pairs.map((p) => p.word)
       const showWords = shuffle(
@@ -687,7 +688,6 @@ function genKind(
         items: [
           {
             layout: 'audio-match',
-            prompt: 'Écoutez et reliez au bon mot.',
             audioMatchRows: listenWords.map((listenWord, i) => ({
               listenWord,
               audioSrc: soutienAudioFor(listenWord),
