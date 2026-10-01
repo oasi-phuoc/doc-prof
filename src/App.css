@@ -1769,7 +1769,7 @@ html,body,#root{
 }
 .syllable-match-table td{
   border:none;
-  padding:5px 2px;
+  padding:10px 2px; /* ×2 vs 5px — espace entre les mots */
   vertical-align:middle;
   font-size:15px;
   font-weight:600;
@@ -1792,7 +1792,7 @@ html,body,#root{
 .syllable-match-dot-cell{
   width:1.1em;
   white-space:nowrap;
-  padding:5px 0;
+  padding:10px 0;
 }
 .syllable-match-dot-cell--left{text-align:left}
 .syllable-match-dot-cell--right{text-align:right}
