@@ -1679,6 +1679,7 @@ function GeneratorPage() {
   const isPhraseDomain = activePage.domain === 'gattegno'
   const isJeuxDomain = activePage.domain === 'jeux'
   const isCalliDomain = activePage.domain === 'calligraphie'
+  const isSoutienFr = activePage.domain === 'soutien-fr'
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
   const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
   const calliIsPhrases = isCalliDomain && isCalliPhrasesType(activeBlock.exerciseType)
@@ -2686,7 +2687,7 @@ function GeneratorPage() {
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}
-              {isReperage || isPhraseDomain || isJeuxDomain || isCalliDomain || isVocabLearn || isGramTheory ? null : (
+              {isReperage || isPhraseDomain || isJeuxDomain || isCalliDomain || isVocabLearn || isGramTheory || isSoutienFr ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -3021,7 +3022,7 @@ function GeneratorPage() {
                   ) : null}
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
