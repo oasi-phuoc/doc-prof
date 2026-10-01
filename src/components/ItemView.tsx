@@ -535,7 +535,12 @@ function SyllableSoundBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
       <div
         className="syllable-sound-grid"
-        style={{ '--ss-cols': cols } as CSSProperties}
+        style={
+          {
+            '--ss-cols': cols,
+            gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+          } as CSSProperties
+        }
       >
         {rows.map((row, index) => (
           <div className="syllable-sound-card" key={`ss-${index}-${row.word}`}>
@@ -629,7 +634,12 @@ function ListenCheckBlock({ item, mode }: { item: MathItem; mode: PreviewMode })
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
       <div
         className={`listen-check-grid${withImages ? ' listen-check-grid--images' : ''}`}
-        style={{ '--lc-cols': cols } as CSSProperties}
+        style={
+          {
+            '--lc-cols': cols,
+            gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+          } as CSSProperties
+        }
       >
         {words.map((word, index) => {
           const hit = positives.has(word.toLowerCase())

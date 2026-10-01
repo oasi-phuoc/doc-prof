@@ -262,10 +262,31 @@ function WorksheetSheet({
       (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
       (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
   )
+  /** Soutien FR : Colonnes = grille interne ; la feuille A4 reste 1 colonne. */
+  const sheetColumns = page.items.some((item) =>
+    [
+      'vocab-table',
+      'letter-grid',
+      'syllable-table',
+      'vocab-match',
+      'syllable-complete',
+      'listen-check',
+      'syllable-sound',
+      'phrase-scramble',
+      'determinant-fill',
+      'dictee-grid',
+      'count-sound',
+      'read-phrases',
+      'audio-match',
+      'word-search',
+    ].includes(item.layout),
+  )
+    ? 1
+    : page.columns
   return (
     <article
       className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}`}
-      style={{ '--sheet-columns': page.columns } as CSSProperties}
+      style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (
         <InstitutionalDocumentHeader
