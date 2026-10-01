@@ -1,5 +1,4 @@
 import { countGrapheme, wordHasGrapheme, type VowelBank } from '@/francais/lecture-banks'
-import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
 import { int, pick, shuffle, type Rng } from '@/math/rng'
 import { tagged } from '@/francais/phrase-sentences'
 import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
@@ -7,24 +6,32 @@ import { soutienBankByTopic, type SoutienVowelBank } from './banks'
 import { soutienAudioFor } from './audio'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
+import {
+  ALL_VOCAB_LABELS,
+  compoundsForType1Words,
+  lessonSoundGraphemes,
+  lessonWordsByLetter,
+  lessonWordsBySound,
+  wordHasLessonSound,
+} from './phoneme'
 import { buildWordSearch, wordSearchHitCells } from './word-search'
 
-/** Mots Voc (libellés) — distracteurs / pool images partagé avec le vocabulaire. */
-const VOCAB_LABELS: readonly string[] = (() => {
-  const labels: string[] = []
-  const seen = new Set<string>()
-  for (const topic of VOCAB_TOPIC_BANKS) {
-    for (const subgroup of topic.subgroups) {
-      for (const word of subgroup.words) {
-        const key = word.label.trim().toLowerCase()
-        if (!key || seen.has(key)) continue
-        seen.add(key)
-        labels.push(word.label.trim())
-      }
-    }
+/** Mots type 1 (16) : banque + Voc filtrés par la lettre de la leçon. */
+export function type1Words(bank: SoutienVowelBank): string[] {
+  const pool = lessonWordsByLetter(bank)
+  const withImg: string[] = []
+  const without: string[] = []
+  for (const w of pool) {
+    if (soutienImageFor(w)) withImg.push(w)
+    else without.push(w)
   }
-  return labels
-})()
+  /** Banque d’abord (ordre leçon), puis Voc avec image, puis le reste. */
+  const bankSet = new Set(bank.words.map((w) => w.toLowerCase()))
+  const fromBank = pool.filter((w) => bankSet.has(w.toLowerCase()))
+  const fromVocabImg = withImg.filter((w) => !bankSet.has(w.toLowerCase()))
+  const fromVocabRest = without.filter((w) => !bankSet.has(w.toLowerCase()))
+  return [...fromBank, ...fromVocabImg, ...fromVocabRest].slice(0, 16)
+}
 
 export type SoutienBatch = {
   items: MathItem[]
@@ -74,7 +81,7 @@ function asVowelBank(bank: SoutienVowelBank): VowelBank {
 }
 
 function otherWords(bank: SoutienVowelBank): string[] {
-  const own = new Set(bank.words.map((w) => w.toLowerCase()))
+  const own = new Set(lessonWordsBySound(bank).map((w) => w.toLowerCase()))
   const fallback = [
     'chat',
     'chien',
@@ -93,14 +100,14 @@ function otherWords(bank: SoutienVowelBank): string[] {
     'fromage',
     'vélo',
   ]
-  const pool = VOCAB_LABELS.length > 0 ? VOCAB_LABELS : fallback
-  return pool.filter((w) => !own.has(w.toLowerCase()) && !wordHasGrapheme(w, asVowelBank(bank)))
+  const pool = ALL_VOCAB_LABELS.length > 0 ? ALL_VOCAB_LABELS : fallback
+  return pool.filter((w) => !own.has(w.toLowerCase()) && !wordHasLessonSound(w, bank))
 }
 
-/** Type 2 : tableau cols×rows ; le nombre de questions = nombre de lignes. */
+/** Type 2 : tableau cols×rows ; le nombre de questions = nombre de lignes (max 15). */
 function letterGrid(rng: Rng, bank: SoutienVowelBank, rowCount: number): MathItem {
   const cols = 10
-  const rows = Math.max(1, Math.min(12, Math.round(rowCount) || 5))
+  const rows = Math.max(1, Math.min(15, Math.round(rowCount) || 5))
   const size = cols * rows
   /** ~¼ des cases = lettre cible, borné pour rester lisible. */
   const targetCount = Math.max(4, Math.min(size - cols, Math.round(size * 0.24)))
@@ -240,9 +247,10 @@ function genKind(
               imageSrc: e.imageSrc || soutienImageFor(e.label),
             }))
         : null
+      /** Banque leçon + Voc filtrés par la lettre (pas par sous-thème). */
       const words = libreEntries
         ? libreEntries.map((e) => e.label)
-        : bank.words.slice(0, 16)
+        : type1Words(bank)
       const entries = libreEntries ?? soutienEntriesWithImages(words)
       const total = Math.max(1, Math.min(16, entries.length))
       const cols = Math.min(4, total)
@@ -295,14 +303,13 @@ function genKind(
     }
     case 'relier': {
       /**
-       * Jusqu’à 16 paires ; 1 ou 2 colonnes.
-       * En 2 colonnes : chaque colonne mélange sa propre liste de droites.
+       * Jusqu’à 16 paires (= mots du type 1) ; 1 ou 2 colonnes.
+       * En 2 colonnes : 1er tableau à gauche, 2e à droite ; mélange indépendant.
        */
       const want = Math.max(1, Math.min(16, n))
-      const compounds = shuffle(rng, [...bank.compounds]).slice(
-        0,
-        Math.min(want, bank.compounds.length),
-      )
+      const type1 = type1Words(bank)
+      const pool = compoundsForType1Words(bank, type1)
+      const compounds = shuffle(rng, pool).slice(0, Math.min(want, pool.length))
       const colCount = options?.columns === 2 ? 2 : 1
       const mid = colCount === 2 ? Math.ceil(compounds.length / 2) : compounds.length
       const groups =
@@ -387,16 +394,17 @@ function genKind(
       }
     }
     case 'ecouter': {
-      /** Grille : n° + case + trait (+ QR) ; count = nb de mots ; colonnes 1–3. */
+      /** Grille : n° + case + trait (+ QR) ; positifs = son (au/eau admis pour /o/). */
       const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 3) || 3))
       const need = Math.max(1, Math.min(18, n))
+      const soundPool = lessonWordsBySound(bank)
       const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.55)))
       const negCount = Math.max(0, need - posCount)
-      const positives = shuffle(rng, [...bank.words]).slice(0, Math.min(posCount, bank.words.length))
+      const positives = shuffle(rng, soundPool).slice(0, Math.min(posCount, soundPool.length))
       const negatives = shuffle(rng, otherWords(bank)).slice(0, negCount)
       let optionsList = shuffle(rng, [...positives, ...negatives])
       if (optionsList.length < need) {
-        const extra = shuffle(rng, [...bank.words, ...otherWords(bank)]).filter(
+        const extra = shuffle(rng, [...soundPool, ...otherWords(bank)]).filter(
           (w) => !optionsList.some((p) => p.toLowerCase() === w.toLowerCase()),
         )
         optionsList = [...optionsList, ...extra].slice(0, need)
@@ -416,22 +424,25 @@ function genKind(
             labels: checked,
             answer: checked.join(' · '),
             letterGridCols: cols,
-            themeGraphemes: [...bank.graphemes],
+            themeGraphemes: [...lessonSoundGraphemes(bank)],
           },
         ],
       }
     }
     case 'ecouter-image': {
-      /** Grille images fluide ; count = nb de mots ; colonnes 3–5. */
+      /** Grille images fluide ; positifs = son (au/eau admis pour /o/). */
       const cols = Math.max(3, Math.min(5, Math.round(options?.columns ?? 3) || 3))
       const need = Math.max(1, Math.min(20, n))
       const withImg = (list: readonly string[]) =>
         list.filter((w) => Boolean(soutienImageFor(w)))
-      const posPool = withImg(bank.words)
+      const soundPool = lessonWordsBySound(bank)
+      const posPool = withImg(soundPool)
       const negPool = withImg([
         ...otherWords(bank),
-        ...bank.completes.map((c) => c.word),
-        ...bank.syllableItems.map((item) => item.word),
+        ...bank.completes.map((c) => c.word).filter((w) => !wordHasLessonSound(w, bank)),
+        ...bank.syllableItems
+          .map((item) => item.word)
+          .filter((w) => !wordHasLessonSound(w, bank)),
       ])
       const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.55)))
       const positives = shuffle(rng, posPool).slice(0, Math.min(posCount, posPool.length))
@@ -441,7 +452,7 @@ function genKind(
       ).slice(0, Math.max(0, need - positives.length))
       let pool = shuffle(rng, [...positives, ...negatives])
       if (pool.length < need) {
-        const extra = withImg([...bank.words, ...otherWords(bank)]).filter(
+        const extra = withImg([...soundPool, ...otherWords(bank)]).filter(
           (w) => !pool.some((p) => p.toLowerCase() === w.toLowerCase()),
         )
         pool = [...pool, ...shuffle(rng, extra)].slice(0, need)
@@ -462,7 +473,7 @@ function genKind(
             labels: checked,
             answer: checked.join(' · '),
             letterGridCols: cols,
-            themeGraphemes: [...bank.graphemes],
+            themeGraphemes: [...lessonSoundGraphemes(bank)],
           },
         ],
       }

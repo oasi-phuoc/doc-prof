@@ -90,22 +90,18 @@ function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }) {
             return (
               <tr key={`sm-${key}-${index}`}>
                 <td className="syllable-match-num">{globalIndex + 1}.</td>
-                <td className="syllable-match-left-group">
-                  <span className="syllable-match-left">
-                    {highlightThemeLetters(leftPart, graphemes)}
-                  </span>
-                  <span className="syllable-match-dot syllable-match-dot--left" aria-hidden>
-                    ●
-                  </span>
+                <td className="syllable-match-left">
+                  {highlightThemeLetters(leftPart, graphemes)}
+                </td>
+                <td className="syllable-match-dot-cell syllable-match-dot-cell--left" aria-hidden>
+                  <span className="syllable-match-dot">●</span>
                 </td>
                 <td className="syllable-match-gap" aria-hidden />
-                <td className="syllable-match-right-group">
-                  <span className="syllable-match-dot syllable-match-dot--right" aria-hidden>
-                    ●
-                  </span>
-                  <span className="syllable-match-right-text">
-                    {highlightThemeLetters(rightPart, graphemes)}
-                  </span>
+                <td className="syllable-match-dot-cell syllable-match-dot-cell--right" aria-hidden>
+                  <span className="syllable-match-dot">●</span>
+                </td>
+                <td className="syllable-match-right">
+                  {highlightThemeLetters(rightPart, graphemes)}
                   {mode === 'answers' && matchNum > 0 ? (
                     <span className="syllable-match-key"> ← {matchNum}</span>
                   ) : null}
@@ -2383,6 +2379,7 @@ export function ItemView({
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
     item.layout === 'vocab-match' ||
+    item.layout === 'letter-grid' ||
     item.layout === 'syllable-complete' ||
     item.layout === 'syllable-table' ||
     item.layout === 'listen-check' ||

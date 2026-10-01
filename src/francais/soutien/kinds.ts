@@ -3,14 +3,15 @@ export const SOUTIEN_KINDS = [
   {
     id: 'mots',
     label: '1 · Mots et images',
-    description: '16 mots du son avec image (banque vocabulaire si disponible).',
+    description:
+      '16 mots (lecture + Voc) filtrés par le phonème exact ; /o/ écrit = lettre o.',
     instruction: 'Observez les images et lisez les mots où l’on entend le son.',
     preferredColumns: 1 as const,
   },
   {
     id: 'lettres',
     label: '2 · Reconnaître la lettre',
-    description: 'Tableau de lettres : le nombre de lignes suit le champ Lignes.',
+    description: 'Tableau de lettres sans numérotation ; jusqu’à 15 lignes.',
     instruction: 'Entourez toutes les lettres demandées.',
     preferredColumns: 1 as const,
   },
@@ -25,14 +26,16 @@ export const SOUTIEN_KINDS = [
   {
     id: 'relier',
     label: '4 · Relier les parties',
-    description: 'Jusqu’à 16 paires, 1 ou 2 colonnes ; mélange indépendant par colonne.',
+    description:
+      'Jusqu’à 16 mots (type 1) ; n° · partie · ● · espace · ● · partie ; 1 ou 2 tableaux.',
     instruction: 'Reliez les parties et formez un mot.',
     preferredColumns: 1 as const,
   },
   {
     id: 'completer',
     label: '5 · Compléter les mots',
-    description: 'Image + Un/Une + trait ; 1–3 colonnes ; nombre de mots réglable ; mode libre.',
+    description:
+      'Image + Un/Une + trait ; colonnes 1–3 pleine largeur (g/c/d) ; mode libre.',
     instruction: 'Complétez les mots à l’aide de l’image.',
     preferredColumns: 1 as const,
   },

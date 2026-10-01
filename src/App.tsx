@@ -77,6 +77,7 @@ import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankByTopic } from '@/francais/soutien/banks'
+import { type1Words } from '@/francais/soutien/generate'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import {
   defaultSoutienMotsEntries,
@@ -1778,6 +1779,7 @@ function GeneratorPage() {
   /** Type 7 : grille images 3–5 colonnes (fluide). */
   const isSoutienCols345 = soutienKind === 'ecouter-image'
   const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
+  const soutienType1Words = soutienBank ? type1Words(soutienBank) : []
   const calliFrTopic = isCalliDomain ? frTopicFromCalliTopic(activeBlock.topic) : undefined
   const calliIsLibre = isCalliDomain && isCalliLibreTopic(activeBlock.topic)
   const calliIsPhrases = isCalliDomain && isCalliPhrasesType(activeBlock.exerciseType)
@@ -1846,7 +1848,7 @@ function GeneratorPage() {
         : isReperage
           ? COORD_LETTER_MAX
           : soutienKind === 'lettres'
-            ? 12
+            ? 15
             : soutienKind === 'syllabes'
               ? 10
               : soutienKind === 'relier' || soutienKind === 'completer'
@@ -2920,7 +2922,7 @@ function GeneratorPage() {
                         const seeded =
                           activeBlock.soutienMotsEntries?.some((e) => e.label.trim())
                             ? activeBlock.soutienMotsEntries
-                            : defaultSoutienMotsEntries(soutienBank?.words ?? [])
+                            : defaultSoutienMotsEntries(soutienType1Words)
                         updatePage({
                           soutienMotsLibre: true,
                           soutienMotsEntries: seeded,
@@ -2938,7 +2940,7 @@ function GeneratorPage() {
                       entries={
                         activeBlock.soutienMotsEntries?.length
                           ? activeBlock.soutienMotsEntries
-                          : defaultSoutienMotsEntries(soutienBank?.words ?? [])
+                          : defaultSoutienMotsEntries(soutienType1Words)
                       }
                       onChange={(next) => updatePage({ soutienMotsEntries: next })}
                     />
@@ -3224,7 +3226,9 @@ function GeneratorPage() {
                   }}
                 />
                 {soutienKind === 'lettres' ? (
-                  <small className="muted">Nombre de lignes du tableau (10 lettres par ligne).</small>
+                  <small className="muted">
+                    Nombre de lignes du tableau (10 lettres par ligne, max. 15).
+                  </small>
                 ) : null}
                 {soutienKind === 'syllabes' ? (
                   <small className="muted">

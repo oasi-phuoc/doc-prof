@@ -1143,6 +1143,24 @@ html,body,#root{
 .worksheet-sheet .exercise-grid:has(.layout-coord){
   grid-template-columns:minmax(0,1fr);
 }
+/* Soutien FR (1 item pleine largeur) : les « Colonnes » du panneau
+   pilotent la grille interne, pas la grille de la feuille. */
+.worksheet-sheet .exercise-grid:has(.layout-vocab-table),
+.worksheet-sheet .exercise-grid:has(.layout-letter-grid),
+.worksheet-sheet .exercise-grid:has(.layout-syllable-table),
+.worksheet-sheet .exercise-grid:has(.layout-vocab-match),
+.worksheet-sheet .exercise-grid:has(.layout-syllable-complete),
+.worksheet-sheet .exercise-grid:has(.layout-listen-check),
+.worksheet-sheet .exercise-grid:has(.layout-syllable-sound),
+.worksheet-sheet .exercise-grid:has(.layout-phrase-scramble),
+.worksheet-sheet .exercise-grid:has(.layout-determinant-fill),
+.worksheet-sheet .exercise-grid:has(.layout-dictee-grid),
+.worksheet-sheet .exercise-grid:has(.layout-count-sound),
+.worksheet-sheet .exercise-grid:has(.layout-read-phrases),
+.worksheet-sheet .exercise-grid:has(.layout-audio-match),
+.worksheet-sheet .exercise-grid:has(.layout-word-search){
+  grid-template-columns:minmax(0,1fr);
+}
 .exercise-item.layout-algebra{min-height:min-content;align-items:baseline}
 .algebra-row{
   display:grid;
@@ -1659,21 +1677,27 @@ html,body,#root{
   border:1px solid #d8dde6
 }
 
-/* Soutien FR type 4 — relier syllabes, tableau sans bordure */
+/* Soutien FR type 4 — n° | gauche | ● | flex | ● | droite */
 .syllable-match-columns{width:100%;display:flex;flex-direction:column;gap:4px}
 .syllable-match-columns.is-2{
-  display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;align-items:start
+  display:flex;flex-direction:row;justify-content:space-between;align-items:flex-start;
+  gap:10px 16px;width:100%
 }
+.syllable-match-columns.is-2 .syllable-match-table{
+  width:auto;max-width:48%;flex:0 1 auto
+}
+.syllable-match-columns.is-2 .syllable-match-table:first-child{justify-self:start}
+.syllable-match-columns.is-2 .syllable-match-table:last-child{margin-left:auto}
 .syllable-match-table{
   width:100%;
   border-collapse:collapse;
   border:none;
-  table-layout:fixed;
+  table-layout:auto;
   margin:2px 0 4px;
 }
 .syllable-match-table td{
   border:none;
-  padding:5px 3px;
+  padding:5px 2px;
   vertical-align:middle;
   font-size:15px;
   font-weight:600;
@@ -1687,12 +1711,19 @@ html,body,#root{
   text-align:left;
   white-space:nowrap;
 }
-.syllable-match-left-group{
-  width:34%;
+.syllable-match-left{
+  width:1%;
   text-align:left;
   white-space:nowrap;
+  padding-right:4px;
 }
-.syllable-match-left{margin-right:2px}
+.syllable-match-dot-cell{
+  width:1%;
+  white-space:nowrap;
+  padding:5px 0;
+}
+.syllable-match-dot-cell--left{text-align:left}
+.syllable-match-dot-cell--right{text-align:right}
 .syllable-match-dot{
   display:inline-block;
   font-size:11px;
@@ -1700,14 +1731,13 @@ html,body,#root{
   color:var(--ink);
   vertical-align:middle;
 }
-.syllable-match-dot--left{margin-left:2px}
-.syllable-match-dot--right{margin-right:2px}
 .syllable-match-gap{width:auto}
-.syllable-match-right-group{
-  text-align:right;
+.syllable-match-right{
+  width:1%;
+  text-align:left;
   white-space:nowrap;
+  padding-left:4px;
 }
-.syllable-match-right-text{white-space:nowrap}
 .syllable-match-key{
   color:var(--muted);
   font-size:12px;
@@ -2134,22 +2164,24 @@ html,body,#root{
   border-radius:2px;
 }
 
-/* Soutien FR type 5 — image + Un/Une + syllabe à écrire (trait couleur thème) */
+/* Soutien FR type 5 — colonnes égales pleine largeur (1 / 2 / 3) */
 .syllable-complete-block{
   display:flex;flex-direction:column;gap:8px;width:100%;min-width:0
 }
 .syllable-complete-grid{
   display:grid;
   grid-template-columns:repeat(var(--sc-cols,2),minmax(0,1fr));
-  gap:8px 14px;
+  gap:10px 16px;
   width:100%;
+  align-items:start;
 }
 .syllable-complete-card{
-  display:flex;align-items:center;gap:8px;min-width:0;
+  display:flex;align-items:center;gap:8px;min-width:0;width:100%;
   border:none;padding:2px 0;
+  box-sizing:border-box;
 }
 .syllable-complete-image{
-  flex:0 0 22mm;width:22mm;height:18mm;
+  flex:0 0 20mm;width:20mm;height:16mm;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;background:#fff;
 }
@@ -2157,9 +2189,10 @@ html,body,#root{
   max-width:100%;max-height:100%;object-fit:contain;display:block
 }
 .syllable-complete-text{
-  flex:1;min-width:0;
+  flex:1 1 auto;min-width:0;
   font-size:14px;font-weight:600;line-height:1.35;color:var(--ink);
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:0 1px;
+  display:flex;flex-wrap:nowrap;align-items:baseline;gap:0 1px;
+  overflow:hidden;
 }
 .syllable-complete-article{font-weight:700;margin-right:0.4em}
 .syllable-complete-affix{font-weight:600}
