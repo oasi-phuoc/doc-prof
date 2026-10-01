@@ -196,20 +196,6 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       },
 
     ],
-    countPhrases: [
-      "Clara habite dans une maison à côté de l’école.",
-      "Sous un arbre il y a des animaux : des chiens et des chats.",
-      "Ils achètent des légumes frais pour préparer le repas.",
-      "Isabelle lit un roman à haute voix.",
-      "Ma girafe mange des feuilles et boit de l’eau près du lac.",
-      "Papa va prendre la chatte et son chaton.",
-      "Anna range sa valise avant le départ en vacances.",
-      "Le bateau avance lentement sur le lac calme.",
-      "Sara achète une salade et des carottes au marché.",
-      "Le chat noir marche près de la table basse.",
-      "Marc lave sa voiture dans la cour derrière la maison.",
-      "La famille chante à la maison le samedi matin.",
-    ],
     countPhrases: ["Clara habite dans une maison à côté de l’école.", "Sous un arbre il y a des animaux : des chiens et des chats.", "Ils achètent des légumes frais pour préparer le repas.", "Isabelle lit un roman à haute voix.", "Ma girafe mange des feuilles et boit de l’eau près du lac.", "Papa va prendre la chatte et son chaton."],
     readPhrases: [
       "Je m’appelle Anastasia.",
@@ -472,20 +458,6 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
         sentence: 'L’orange est juteuse et ronde.',
       }
 
-    ],
-    countPhrases: [
-      "Le gorille mange une pomme dans le zoo.",
-      "Le cochon rose porte un bonnet dans son enclos.",
-      "Le poisson orange tourne autour du rocher au fond de l’eau.",
-      "Le coq picore des graines près du portail.",
-      "Le docteur fait tomber les dominos sur le sol.",
-      "Le motard prend des photos de son vélo.",
-      "Le robot range les bols dans le frigo.",
-      "Olivia pose son manteau près de la porte.",
-      "Le fromage orange est trop fort pour Thomas.",
-      "Le clown jette des bonbons dans la foule.",
-      "Nora ouvre la boîte de chocolats.",
-      "Le mot « photo » est écrit au tableau.",
     ],
     countPhrases: ["Le gorille mange une pomme dans le zoo.", "Le cochon rose porte un bonnet dans son enclos.", "Le poisson orange tourne autour du rocher au fond de l’eau.", "Le coq picore des graines près du portail.", "Le docteur fait tomber les dominos sur le sol.", "Le motard prend des photos de son vélo."],
     readPhrases: [
@@ -754,20 +726,6 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
         sentence: 'Le hibou crie dans la nuit.',
       }
 
-    ],
-    countPhrases: [
-      "La fille visite la ville avec son ami.",
-      "Le piano joue une jolie mélodie.",
-      "Elise met une chemise grise dans sa valise.",
-      "Qui a mis le crayon ici ?",
-      "La vitrine est remplie de figurines d’animaux.",
-      "Michel n’a pas fini son bol de riz.",
-      "Le tigre dort dans la jungle silencieuse.",
-      "Iris lit une histoire dans son lit.",
-      "Le kiwi vert est trop acide pour Julie.",
-      "Philippe range six livres sur l’étagère.",
-      "La cerise tombe vite de l’arbre.",
-      "Le mini robot vibre près de la pile.",
     ],
     countPhrases: ["La fille visite la ville avec son ami.", "Le piano joue une jolie mélodie.", "Elise met une chemise grise dans sa valise.", "Qui a mis le crayon ici ?", "La vitrine est remplie de figurines d’animaux.", "Michel n’a pas fini son bol de riz."],
     readPhrases: [
@@ -1067,20 +1025,6 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
         sentence: 'La dune surplombe le rivage.',
       }
 
-    ],
-    countPhrases: [
-      "La fusée monte au-dessus des nuages.",
-      "Le renard a trouvé une plume brune.",
-      "La musique résonne dans la rue.",
-      "Une tortue avance doucement sous la pluie.",
-      "Le juge écoute le début du procès.",
-      "Le curé discute avec plusieurs habitants du village.",
-      "La prune mûre tombe du prunier du jardin.",
-      "Luc range son pull turquoise dans l’armoire.",
-      "Une plume flotte au-dessus du mur.",
-      "Le biscuit sucré fond dans la bouche.",
-      "La dune surplombe le rivage au crépuscule.",
-      "Une huile parfumée coule dans la casserole.",
     ],
     countPhrases: ["La fusée monte au-dessus des nuages.", "Le renard a trouvé une plume brune.", "La musique résonne dans la rue.", "Une tortue avance doucement sous la pluie.", "Le juge écoute le début du procès.", "Le curé discute avec plusieurs habitants du village."],
     readPhrases: [
@@ -1386,20 +1330,6 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
       }
 
     ],
-    countPhrases: [
-      "Je veux acheter deux œufs.",
-      "Ma mère mesure le niveau de l’eau.",
-      "Vous semez les graines sur la pelouse ?",
-      "Je peux mettre le jeu sur la table.",
-      "Le cheval peut venir avec nous.",
-      "Alicia n’est pas heureuse quand elle regarde le feu.",
-      "Le repas est prêt pour le déjeuner.",
-      "La fenêtre reste ouverte sur le jardin.",
-      "Une crevette rose est dans l’assiette.",
-      "Le chemin mène vers l’école du village.",
-      "Elle prépare une recette avec des œufs.",
-      "Le bébé regarde le feu dans la cheminée.",
-    ],
     countPhrases: ["Je veux acheter deux œufs.", "Ma mère mesure le niveau de l’eau.", "Vous semez les graines sur la pelouse ?", "Je peux mettre le jeu sur la table.", "Le cheval peut venir avec nous.", "Alicia n’est pas heureuse quand elle regarde le feu."],
     readPhrases: [
       "Le petit cheval regarde la grenouille.",
@@ -1704,20 +1634,6 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
         sentence: 'Le kayak glisse sur le lac.',
       }
 
-    ],
-    countPhrases: [
-      "Le gymnase est fermé aujourd'hui.",
-      "Ce type d'oiseau vole trop vite.",
-      "La glycémie de l’infirmière est stable.",
-      "Ce polyglotte parle six langues différentes.",
-      "Voici les règles d'hygiène du lycée.",
-      "Je n’aime pas du tout la gymnastique.",
-      "Le stylo jaune est près du pyjama.",
-      "La bicyclette rouge reste dans le garage.",
-      "Le cygne nage sur l’étang du parc.",
-      "La pyramide est dessinée dans le livre.",
-      "Le cyclone approche de la côte.",
-      "Yves range l’encyclopédie sur l’étagère.",
     ],
     countPhrases: ["Le gymnase est fermé aujourd'hui.", "Ce type d'oiseau vole trop vite.", "La glycémie de l’infirmière est stable.", "Ce polyglotte parle six langues différentes.", "Voici les règles d'hygiène du lycée.", "Je n’aime pas du tout la gymnastique."],
     readPhrases: [
