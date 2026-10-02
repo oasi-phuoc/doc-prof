@@ -4500,35 +4500,57 @@ function AdminAccessSettings() {
         Réglages
       </button>
       {open ? (
-        <div className="access-settings-panel" role="dialog" aria-label="Accès aux domaines">
-          <p className="access-settings-title">Accès aux domaines</p>
-          <p className="access-settings-lead">
-            Choisissez les domaines visibles pour chaque mot de passe (hors admin).
-          </p>
-          {(['jebosseplus', 'synecom'] as const).map((account) => (
-            <section className="access-settings-account" key={account}>
-              <h3>Compte · {ACCOUNT_LABELS[account]}</h3>
-              <ul className="access-settings-domains">
-                {ACCESS_DOMAIN_OPTIONS.map((domain) => {
-                  const checked = grants[account].includes(domain.id)
-                  return (
-                    <li key={`${account}-${domain.id}`}>
-                      <label>
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          disabled={checked && grants[account].length <= 1}
-                          onChange={() => applyToggle(account, domain.id)}
-                        />
-                        <span>{domain.label}</span>
-                      </label>
-                    </li>
-                  )
-                })}
-              </ul>
-            </section>
-          ))}
-        </div>
+        <>
+          <button
+            type="button"
+            className="access-settings-backdrop"
+            aria-label="Fermer les réglages"
+            onClick={() => setOpen(false)}
+          />
+          <div className="access-settings-panel" role="dialog" aria-label="Accès aux domaines">
+            <div className="access-settings-head">
+              <div>
+                <p className="access-settings-title">Accès aux domaines</p>
+                <p className="access-settings-lead">
+                  Domaines visibles pour chaque mot de passe (hors admin).
+                </p>
+              </div>
+              <button
+                type="button"
+                className="access-settings-close"
+                aria-label="Fermer"
+                onClick={() => setOpen(false)}
+              >
+                ×
+              </button>
+            </div>
+            <div className="access-settings-body">
+              {(['jebosseplus', 'synecom'] as const).map((account) => (
+                <section className="access-settings-account" key={account}>
+                  <h3>Compte · {ACCOUNT_LABELS[account]}</h3>
+                  <ul className="access-settings-domains">
+                    {ACCESS_DOMAIN_OPTIONS.map((domain) => {
+                      const checked = grants[account].includes(domain.id)
+                      return (
+                        <li key={`${account}-${domain.id}`}>
+                          <label>
+                            <input
+                              type="checkbox"
+                              checked={checked}
+                              disabled={checked && grants[account].length <= 1}
+                              onChange={() => applyToggle(account, domain.id)}
+                            />
+                            <span>{domain.label}</span>
+                          </label>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
+        </>
       ) : null}
     </div>
   )
