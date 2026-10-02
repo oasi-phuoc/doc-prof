@@ -12,6 +12,22 @@ import {
   type ReactNode,
 } from 'react'
 import './App.css'
+import {
+  ACCESS_DOMAIN_OPTIONS,
+  ACCOUNT_LABELS,
+  accountCanAccessDomain,
+  domainsForAccount,
+  hasAccessCookie,
+  readAccessAccount,
+  readDomainGrants,
+  resolveAccountFromPassword,
+  toggleDomainGrant,
+  writeAccessAccount,
+  writeDomainGrants,
+  type AccessAccount,
+  type ConfigurableAccount,
+  type DomainGrants,
+} from '@/access'
 import { CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
 import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
 import {
@@ -554,10 +570,12 @@ function Header({
   onCreate,
   generator = false,
   showCreate,
+  rightSlot,
 }: {
   onCreate: () => void
   generator?: boolean
   showCreate?: boolean
+  rightSlot?: ReactNode
 }) {
   const createVisible = showCreate ?? !generator
   return (
@@ -570,27 +588,16 @@ function Header({
         </span>
         Clair<span className="brand-accent">FLE</span>
       </a>
-      {createVisible ? (
-        <button className="button small" type="button" onClick={onCreate}>
-          Créer une fiche <span>→</span>
-        </button>
-      ) : null}
+      <div className="topbar-right">
+        {rightSlot}
+        {createVisible ? (
+          <button className="button small" type="button" onClick={onCreate}>
+            Créer une fiche <span>→</span>
+          </button>
+        ) : null}
+      </div>
     </header>
   )
-}
-
-/** Mot de passe pour ouvrir le générateur de fiches. */
-const FICHE_ACCESS_PASSWORD = 'jebosseplus'
-/** Cookie d’accès (évite de resaisir le mot de passe à chaque visite). */
-const FICHE_ACCESS_COOKIE = 'clairfle-fiche-access'
-const FICHE_ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 365 // 1 an
-function readAccessCookie(): boolean {
-  if (typeof document === 'undefined') return false
-  return document.cookie.split(';').some((part) => part.trim() === `${FICHE_ACCESS_COOKIE}=1`)
-}
-
-function writeAccessCookie() {
-  document.cookie = `${FICHE_ACCESS_COOKIE}=1; path=/; max-age=${FICHE_ACCESS_COOKIE_MAX_AGE}; SameSite=Lax`
 }
 
 function pathFromLocation(): 'landing' | 'access' | 'generator' {
@@ -1535,7 +1542,12 @@ function cycleOralMode(
 }
 
 function GeneratorPage() {
-  const initial = defaultPage('algèbre')
+  const accessAccount = readAccessAccount()
+  const allowedDomains = useMemo(() => domainsForAccount(accessAccount), [accessAccount])
+  const firstAllowedDomain = allowedDomains[0] ?? 'algèbre'
+  const initial = defaultPage(
+    accountCanAccessDomain(accessAccount, 'algèbre') ? 'algèbre' : firstAllowedDomain,
+  )
   const [pages, setPages] = useState<PageConfig[]>([initial])
   const [sheetIndex, setSheetIndex] = useState(0)
   const [blockIndex, setBlockIndex] = useState(0)
@@ -1549,6 +1561,7 @@ function GeneratorPage() {
   const [coordTool, setCoordTool] = useState<'origin' | 'given' | 'points' | 'center'>('origin')
   const [themeColor, setThemeColor] = useState(readThemeColor)
   const previewFrameRef = useRef<HTMLDivElement>(null)
+  const isAdmin = accessAccount === 'admin'
 
   const applyThemeColor = (color: string) => {
     setThemeColor(color)
@@ -2327,6 +2340,7 @@ function GeneratorPage() {
   }
 
   function changeDomain(next: Domain) {
+    if (!accountCanAccessDomain(accessAccount, next)) return
     const type = firstTypeFor(next)
     setBlockIndex(0)
     updatePage({ domain: next, ...applyType(type) })
@@ -2347,6 +2361,15 @@ function GeneratorPage() {
       setMode('student')
     }
   }
+
+  // Si le domaine actif n’est plus autorisé (grants admin), basculer.
+  useEffect(() => {
+    if (accountCanAccessDomain(accessAccount, activePage.domain)) return
+    const fallback = allowedDomains[0]
+    if (!fallback) return
+    changeDomain(fallback)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- bascule unique sur domaine / droits
+  }, [accessAccount, activePage.domain, allowedDomains])
 
   function changeTopic(topic: string) {
     if (activePage.domain === 'calligraphie') {
@@ -2558,7 +2581,11 @@ function GeneratorPage() {
         } as CSSProperties
       }
     >
-      <Header onCreate={() => undefined} generator />
+      <Header
+        onCreate={() => undefined}
+        generator
+        rightSlot={isAdmin ? <AdminAccessSettings /> : null}
+      />
       <main className="generator-page" id="top">
         <div className="generator-intro">
           <a className="back-link" href="/">
@@ -2709,14 +2736,16 @@ function GeneratorPage() {
               )}
 
               <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
-                <option value="français">Français</option>
-                <option value="algèbre">Algèbre</option>
-                <option value="géométrie">Géométrie</option>
-                <option value="gattegno">Gattegno</option>
-                <option value="jeux">Grilles de cartes</option>
-                <option value="calligraphie">Calligraphie</option>
-                <option value="soutien-fr">Soutien FR</option>
-                {SHOW_LECTURE_DOMAIN ? <option value="lecture">Lecture</option> : null}
+                {ACCESS_DOMAIN_OPTIONS.filter((domain) => allowedDomains.includes(domain.id)).map(
+                  (domain) => (
+                    <option value={domain.id} key={domain.id}>
+                      {domain.label}
+                    </option>
+                  ),
+                )}
+                {SHOW_LECTURE_DOMAIN && accessAccount === 'admin' ? (
+                  <option value="lecture">Lecture</option>
+                ) : null}
               </SelectBox>
               <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>
                 {available.map((topic) => (
@@ -4362,19 +4391,20 @@ function GeneratorPage() {
   )
 }
 
-function AccessPage({ onSuccess }: { onSuccess: () => void }) {
+function AccessPage({ onSuccess }: { onSuccess: (account: AccessAccount) => void }) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (password !== FICHE_ACCESS_PASSWORD) {
+    const account = resolveAccountFromPassword(password)
+    if (!account) {
       setError('Mot de passe incorrect. Vérifiez et réessayez.')
       return
     }
-    writeAccessCookie()
+    writeAccessAccount(account)
     setError(null)
-    onSuccess()
+    onSuccess(account)
   }
 
   return (
@@ -4417,15 +4447,90 @@ function AccessPage({ onSuccess }: { onSuccess: () => void }) {
   )
 }
 
+function AdminAccessSettings() {
+  const [open, setOpen] = useState(false)
+  const [grants, setGrants] = useState<DomainGrants>(() => readDomainGrants())
+  const panelRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    const onDoc = (event: MouseEvent) => {
+      if (!panelRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onDoc)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDoc)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  const applyToggle = (account: ConfigurableAccount, domain: Domain) => {
+    setGrants((prev) => {
+      const next = toggleDomainGrant(prev, account, domain)
+      writeDomainGrants(next)
+      return next
+    })
+  }
+
+  return (
+    <div className="access-settings" ref={panelRef}>
+      <button
+        type="button"
+        className={`access-settings-btn${open ? ' active' : ''}`}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        onClick={() => setOpen((v) => !v)}
+      >
+        Réglages
+      </button>
+      {open ? (
+        <div className="access-settings-panel" role="dialog" aria-label="Accès aux domaines">
+          <p className="access-settings-title">Accès aux domaines</p>
+          <p className="access-settings-lead">
+            Choisissez les domaines visibles pour chaque mot de passe (hors admin).
+          </p>
+          {(['jebosseplus', 'synecom'] as const).map((account) => (
+            <section className="access-settings-account" key={account}>
+              <h3>Compte · {ACCOUNT_LABELS[account]}</h3>
+              <ul className="access-settings-domains">
+                {ACCESS_DOMAIN_OPTIONS.map((domain) => {
+                  const checked = grants[account].includes(domain.id)
+                  return (
+                    <li key={`${account}-${domain.id}`}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          disabled={checked && grants[account].length <= 1}
+                          onChange={() => applyToggle(account, domain.id)}
+                        />
+                        <span>{domain.label}</span>
+                      </label>
+                    </li>
+                  )
+                })}
+              </ul>
+            </section>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 function resolveRoute(): 'landing' | 'access' | 'generator' {
   const initial = pathFromLocation()
-  if (initial === 'generator' && !readAccessCookie()) {
+  if (initial === 'generator' && !hasAccessCookie()) {
     if (typeof window !== 'undefined' && pathFromLocation() === 'generator') {
       window.history.replaceState({}, '', '/acces')
     }
     return 'access'
   }
-  if (initial === 'access' && readAccessCookie()) {
+  if (initial === 'access' && hasAccessCookie()) {
     if (typeof window !== 'undefined') {
       window.history.replaceState({}, '', '/generateur')
     }
@@ -4444,7 +4549,7 @@ export default function App() {
   }, [])
 
   const goAccess = () => {
-    if (readAccessCookie()) {
+    if (hasAccessCookie()) {
       navigateTo('/generateur')
       setRoute('generator')
       return
@@ -4453,8 +4558,8 @@ export default function App() {
     setRoute('access')
   }
 
-  const openGenerator = () => {
-    writeAccessCookie()
+  const openGenerator = (account: AccessAccount) => {
+    writeAccessAccount(account)
     navigateTo('/generateur')
     setRoute('generator')
   }
