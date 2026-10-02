@@ -3268,6 +3268,19 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .access-settings-domains label:hover{background:var(--lavender)}
 .access-settings-domains input{width:16px;height:16px;accent-color:var(--purple);flex:0 0 auto}
+.access-settings-lead code{
+  font-size:11px;font-weight:700;color:var(--ink);
+  background:var(--lavender);padding:1px 5px;border-radius:6px
+}
+.access-settings-banner{
+  margin:0;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:600;line-height:1.4;
+  background:color-mix(in srgb,var(--orange) 16%,#fff);color:var(--ink)
+}
+.access-settings-banner.is-env{
+  background:color-mix(in srgb,var(--green) 14%,#fff)
+}
+.access-settings-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.access-settings-actions .button{min-height:40px;padding:0 12px;font-size:12px}
 @media(max-width:550px){
   .access-main{padding:28px 14px 48px}
   .access-card{padding:28px 20px 22px}
