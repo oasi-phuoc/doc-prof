@@ -14,24 +14,14 @@ import {
 import './App.css'
 import {
   ACCESS_DOMAIN_OPTIONS,
-  ACCOUNT_LABELS,
   accountCanAccessDomain,
   clearAccessAccount,
-  clearLocalDomainGrantsOverride,
   domainsForAccount,
-  domainsToEnvValue,
-  envDomainGrants,
   hasAccessCookie,
-  hasLocalDomainGrantsOverride,
   readAccessAccount,
-  readDomainGrants,
   resolveAccountFromPassword,
-  toggleDomainGrant,
   writeAccessAccount,
-  writeDomainGrants,
   type AccessAccount,
-  type ConfigurableAccount,
-  type DomainGrants,
 } from '@/access'
 import { CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
 import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
@@ -1566,7 +1556,6 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const [coordTool, setCoordTool] = useState<'origin' | 'given' | 'points' | 'center'>('origin')
   const [themeColor, setThemeColor] = useState(readThemeColor)
   const previewFrameRef = useRef<HTMLDivElement>(null)
-  const isAdmin = accessAccount === 'admin'
 
   const applyThemeColor = (color: string) => {
     setThemeColor(color)
@@ -2590,16 +2579,9 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
         onCreate={() => undefined}
         generator
         rightSlot={
-          <>
-            {isAdmin ? <AdminAccessSettings /> : null}
-            <button
-              type="button"
-              className="access-logout-btn"
-              onClick={onLogout}
-            >
-              Se déconnecter
-            </button>
-          </>
+          <button type="button" className="access-logout-btn" onClick={onLogout}>
+            Se déconnecter
+          </button>
         }
       />
       <main className="generator-page" id="top">
@@ -4459,145 +4441,6 @@ function AccessPage({ onSuccess }: { onSuccess: (account: AccessAccount) => void
           </a>
         </form>
       </main>
-    </div>
-  )
-}
-
-function AdminAccessSettings() {
-  const [open, setOpen] = useState(false)
-  const [grants, setGrants] = useState<DomainGrants>(() => readDomainGrants())
-  const [localOverride, setLocalOverride] = useState(() => hasLocalDomainGrantsOverride())
-  const panelRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!open) return
-    const onDoc = (event: MouseEvent) => {
-      if (!panelRef.current?.contains(event.target as Node)) setOpen(false)
-    }
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false)
-    }
-    document.addEventListener('mousedown', onDoc)
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('mousedown', onDoc)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [open])
-
-  const applyToggle = (account: ConfigurableAccount, domain: Domain) => {
-    setGrants((prev) => {
-      const next = toggleDomainGrant(prev, account, domain)
-      writeDomainGrants(next)
-      setLocalOverride(true)
-      return next
-    })
-  }
-
-  const resetToEnv = () => {
-    clearLocalDomainGrantsOverride()
-    setGrants(envDomainGrants())
-    setLocalOverride(false)
-  }
-
-  const copyEnvHints = async () => {
-    const text = [
-      `VITE_ACCESS_DOMAINS_FULL=${domainsToEnvValue(grants.full)}`,
-      `VITE_ACCESS_DOMAINS_PARTIAL=${domainsToEnvValue(grants.partial)}`,
-    ].join('\n')
-    try {
-      await navigator.clipboard.writeText(text)
-    } catch {
-      /* ignore */
-    }
-  }
-
-  return (
-    <div className="access-settings" ref={panelRef}>
-      <button
-        type="button"
-        className={`access-settings-btn${open ? ' active' : ''}`}
-        aria-expanded={open}
-        aria-haspopup="dialog"
-        onClick={() => setOpen((v) => !v)}
-      >
-        Réglages
-      </button>
-      {open ? (
-        <>
-          <button
-            type="button"
-            className="access-settings-backdrop"
-            aria-label="Fermer les réglages"
-            onClick={() => setOpen(false)}
-          />
-          <div className="access-settings-panel" role="dialog" aria-label="Accès aux domaines">
-            <div className="access-settings-head">
-              <div>
-                <p className="access-settings-title">Accès aux domaines</p>
-                <p className="access-settings-lead">
-                  Pour tous les ordinateurs : variables Vercel{' '}
-                  <code>VITE_ACCESS_DOMAINS_FULL</code> /{' '}
-                  <code>VITE_ACCESS_DOMAINS_PARTIAL</code>, puis redéploiement. Les coches
-                  ci-dessous ne s’appliquent qu’à cet appareil.
-                </p>
-              </div>
-              <button
-                type="button"
-                className="access-settings-close"
-                aria-label="Fermer"
-                onClick={() => setOpen(false)}
-              >
-                ×
-              </button>
-            </div>
-            <div className="access-settings-body">
-              {localOverride ? (
-                <p className="access-settings-banner" role="status">
-                  Surcharge locale active sur cet appareil.
-                </p>
-              ) : (
-                <p className="access-settings-banner is-env" role="status">
-                  Config serveur (variables d’environnement).
-                </p>
-              )}
-              {(['full', 'partial'] as const).map((account) => (
-                <section className="access-settings-account" key={account}>
-                  <h3>Compte · {ACCOUNT_LABELS[account]}</h3>
-                  <ul className="access-settings-domains">
-                    {ACCESS_DOMAIN_OPTIONS.map((domain) => {
-                      const checked = grants[account].includes(domain.id)
-                      return (
-                        <li key={`${account}-${domain.id}`}>
-                          <label>
-                            <input
-                              type="checkbox"
-                              checked={checked}
-                              disabled={checked && grants[account].length <= 1}
-                              onChange={() => applyToggle(account, domain.id)}
-                            />
-                            <span>{domain.label}</span>
-                          </label>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </section>
-              ))}
-              <div className="access-settings-actions">
-                <button type="button" className="button secondary" onClick={copyEnvHints}>
-                  Copier les variables env
-                </button>
-                {localOverride ? (
-                  <button type="button" className="button secondary" onClick={resetToEnv}>
-                    Revenir à la config serveur
-                  </button>
-                ) : null}
-              </div>
-            </div>
-          </div>
-        </>
-      ) : null}
     </div>
   )
 }
