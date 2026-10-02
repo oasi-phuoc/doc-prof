@@ -16,6 +16,7 @@ import {
   ACCESS_DOMAIN_OPTIONS,
   ACCOUNT_LABELS,
   accountCanAccessDomain,
+  clearAccessAccount,
   domainsForAccount,
   hasAccessCookie,
   readAccessAccount,
@@ -1541,7 +1542,7 @@ function cycleOralMode(
   return 'qcm'
 }
 
-function GeneratorPage() {
+function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const accessAccount = readAccessAccount()
   const allowedDomains = useMemo(() => domainsForAccount(accessAccount), [accessAccount])
   const firstAllowedDomain = allowedDomains[0] ?? 'algèbre'
@@ -2584,7 +2585,18 @@ function GeneratorPage() {
       <Header
         onCreate={() => undefined}
         generator
-        rightSlot={isAdmin ? <AdminAccessSettings /> : null}
+        rightSlot={
+          <>
+            {isAdmin ? <AdminAccessSettings /> : null}
+            <button
+              type="button"
+              className="access-logout-btn"
+              onClick={onLogout}
+            >
+              Se déconnecter
+            </button>
+          </>
+        }
       />
       <main className="generator-page" id="top">
         <div className="generator-intro">
@@ -4564,7 +4576,13 @@ export default function App() {
     setRoute('generator')
   }
 
-  if (route === 'generator') return <GeneratorPage />
+  const logout = () => {
+    clearAccessAccount()
+    navigateTo('/acces')
+    setRoute('access')
+  }
+
+  if (route === 'generator') return <GeneratorPage onLogout={logout} />
   if (route === 'access') return <AccessPage onSuccess={openGenerator} />
   return <Landing onCreate={goAccess} />
 }
