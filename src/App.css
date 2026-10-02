@@ -3225,82 +3225,17 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .access-error{margin:0;color:var(--red);font-size:13px;font-weight:600;line-height:1.4}
 .access-back{margin-top:8px;align-self:flex-start;font-size:13px}
 .topbar-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.access-settings{position:relative}
-.access-settings-btn,.access-logout-btn{
+.access-logout-btn{
   min-height:42px;padding:0 16px;border:1px solid var(--line);border-radius:999px;
-  background:#fff;color:var(--ink);font-size:13px;font-weight:700;white-space:nowrap
+  background:#fff;color:var(--muted);font-size:13px;font-weight:700;white-space:nowrap
 }
-.access-settings-btn:hover,.access-settings-btn.active,.access-logout-btn:hover{
+.access-logout-btn:hover{
   border-color:color-mix(in srgb,var(--purple) 40%,var(--line));color:var(--purple)
 }
-.access-logout-btn{color:var(--muted)}
-.access-logout-btn:hover{color:var(--purple)}
-.access-settings-backdrop{
-  display:none;border:0;padding:0;margin:0;background:transparent
-}
-.access-settings-panel{
-  position:absolute;top:calc(100% + 8px);right:0;z-index:40;
-  width:min(340px,calc(100vw - 24px));
-  max-height:min(70vh,520px);
-  padding:16px 16px 14px;background:#fff;border:1px solid var(--line);border-radius:16px;
-  box-shadow:0 16px 36px #28252f1f;display:flex;flex-direction:column;gap:12px
-}
-.access-settings-head{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-shrink:0
-}
-.access-settings-close{
-  display:none;flex:0 0 auto;width:36px;height:36px;border:1px solid var(--line);
-  border-radius:999px;background:#fff;color:var(--ink);font-size:22px;line-height:1;font-weight:600
-}
-.access-settings-body{
-  display:flex;flex-direction:column;gap:12px;overflow:auto;min-height:0;-webkit-overflow-scrolling:touch
-}
-.access-settings-title{margin:0;font-size:15px;font-weight:700;color:var(--ink)}
-.access-settings-lead{margin:4px 0 0;font-size:12px;line-height:1.45;color:var(--muted)}
-.access-settings-account{display:flex;flex-direction:column;gap:8px}
-.access-settings-account h3{
-  margin:0;font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.01em
-}
-.access-settings-domains{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.access-settings-domains label{
-  display:flex;align-items:center;gap:8px;min-height:34px;padding:0 6px;border-radius:8px;
-  font-size:13px;font-weight:600;color:var(--ink);cursor:pointer
-}
-.access-settings-domains label:hover{background:var(--lavender)}
-.access-settings-domains input{width:16px;height:16px;accent-color:var(--purple);flex:0 0 auto}
-.access-settings-lead code{
-  font-size:11px;font-weight:700;color:var(--ink);
-  background:var(--lavender);padding:1px 5px;border-radius:6px
-}
-.access-settings-banner{
-  margin:0;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:600;line-height:1.4;
-  background:color-mix(in srgb,var(--orange) 16%,#fff);color:var(--ink)
-}
-.access-settings-banner.is-env{
-  background:color-mix(in srgb,var(--green) 14%,#fff)
-}
-.access-settings-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.access-settings-actions .button{min-height:40px;padding:0 12px;font-size:12px}
 @media(max-width:550px){
   .access-main{padding:28px 14px 48px}
   .access-card{padding:28px 20px 22px}
   .topbar-right{gap:6px}
-  .access-settings-btn,.access-logout-btn{
-    min-height:36px;padding:0 10px;font-size:12px
-  }
-  .access-settings-backdrop{
-    display:block;position:fixed;inset:0;z-index:90;background:#28252f66;cursor:pointer
-  }
-  .access-settings-panel{
-    position:fixed;top:auto;right:0;bottom:0;left:0;z-index:100;
-    width:100%;max-width:none;
-    max-height:min(88dvh,640px);
-    padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));
-    border-radius:18px 18px 0 0;border:0;border-top:1px solid var(--line);
-    box-shadow:0 -8px 28px #28252f22
-  }
-  .access-settings-close{display:inline-flex;align-items:center;justify-content:center}
-  .access-settings-domains{grid-template-columns:1fr 1fr;gap:2px 8px}
-  .access-settings-domains label{min-height:40px;font-size:12px}
+  .access-logout-btn{min-height:36px;padding:0 10px;font-size:12px}
 }
 /* End */
