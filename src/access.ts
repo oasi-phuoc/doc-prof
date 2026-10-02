@@ -1,21 +1,20 @@
 import type { Domain } from '@/math/types'
 
-/** Compte reconnu par le mot de passe (pas d’identifiant). */
-export type AccessAccount = 'jebosseplus' | 'synecom' | 'admin'
+/**
+ * Comptes d’accès (le mot de passe détermine le rôle).
+ * - admin  ← VITE_ACCESS_ADMIN  (ex. jesuisleboss)
+ * - full   ← VITE_ACCESS_FULL   (ex. jebosseplus)
+ * - partial← VITE_ACCESS_PARTIAL (ex. synecom)
+ */
+export type AccessAccount = 'admin' | 'full' | 'partial'
 
-/** Comptes dont les domaines sont configurables par l’admin. */
-export type ConfigurableAccount = 'jebosseplus' | 'synecom'
-
-export const ACCESS_PASSWORDS: Readonly<Record<string, AccessAccount>> = {
-  jebosseplus: 'jebosseplus',
-  synecom: 'synecom',
-  jesuisleboss: 'admin',
-}
+/** Comptes dont les domaines sont définis par env (et surcharge locale optionnelle). */
+export type ConfigurableAccount = 'full' | 'partial'
 
 export const ACCOUNT_LABELS: Readonly<Record<AccessAccount, string>> = {
-  jebosseplus: 'jebosseplus',
-  synecom: 'synecom',
   admin: 'Admin',
+  full: 'FULL',
+  partial: 'PARTIAL',
 }
 
 /** Domaines proposés dans le générateur (hors Lecture masquée). */
@@ -33,26 +32,58 @@ const ALL_DOMAIN_IDS: Domain[] = ACCESS_DOMAIN_OPTIONS.map((d) => d.id)
 
 export type DomainGrants = Record<ConfigurableAccount, Domain[]>
 
-const DEFAULT_GRANTS: DomainGrants = {
-  jebosseplus: [...ALL_DOMAIN_IDS],
-  synecom: ['algèbre', 'géométrie'],
-}
-
 const ACCESS_COOKIE = 'clairfle-fiche-access'
 const ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 365
 const GRANTS_STORAGE_KEY = 'clairfle-domain-grants'
+
+function envString(key: keyof ImportMetaEnv, fallback: string): string {
+  const raw = import.meta.env[key]
+  return typeof raw === 'string' && raw.trim() ? raw.trim() : fallback
+}
+
+/** Mots de passe (visibles dans le bundle client — comme avant en dur). */
+function passwordMap(): Readonly<Record<string, AccessAccount>> {
+  const admin = envString('VITE_ACCESS_ADMIN', 'jesuisleboss')
+  const full = envString('VITE_ACCESS_FULL', 'jebosseplus')
+  const partial = envString('VITE_ACCESS_PARTIAL', 'synecom')
+  return {
+    [admin]: 'admin',
+    [full]: 'full',
+    [partial]: 'partial',
+  }
+}
+
+function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] {
+  if (!raw?.trim()) return [...fallback]
+  const parts = raw
+    .split(/[,;|]/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+  const domains = parts.filter(isDomain)
+  return domains.length > 0 ? domains : [...fallback]
+}
+
+/** Droits par défaut : variables d’env (partagés après redéploiement). */
+export function envDomainGrants(): DomainGrants {
+  return {
+    full: parseDomainList(
+      import.meta.env.VITE_ACCESS_DOMAINS_FULL,
+      [...ALL_DOMAIN_IDS],
+    ),
+    partial: parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
+      'algèbre',
+      'géométrie',
+    ]),
+  }
+}
 
 function isDomain(value: unknown): value is Domain {
   return typeof value === 'string' && ALL_DOMAIN_IDS.includes(value as Domain)
 }
 
-function isConfigurableAccount(value: string): value is ConfigurableAccount {
-  return value === 'jebosseplus' || value === 'synecom'
-}
-
 export function resolveAccountFromPassword(password: string): AccessAccount | null {
   const key = password.trim()
-  return ACCESS_PASSWORDS[key] ?? null
+  return passwordMap()[key] ?? null
 }
 
 export function readAccessAccount(): AccessAccount | null {
@@ -61,9 +92,9 @@ export function readAccessAccount(): AccessAccount | null {
     const trimmed = part.trim()
     if (!trimmed.startsWith(`${ACCESS_COOKIE}=`)) continue
     const value = decodeURIComponent(trimmed.slice(ACCESS_COOKIE.length + 1))
-    // Ancien cookie (=1) → accès complet historique.
-    if (value === '1' || value === 'jebosseplus') return 'jebosseplus'
-    if (value === 'synecom') return 'synecom'
+    // Anciens cookies → nouveaux rôles.
+    if (value === '1' || value === 'jebosseplus' || value === 'full') return 'full'
+    if (value === 'synecom' || value === 'partial') return 'partial'
     if (value === 'admin') return 'admin'
   }
   return null
@@ -81,27 +112,45 @@ export function hasAccessCookie(): boolean {
   return readAccessAccount() != null
 }
 
+/** true si une surcharge locale (cet appareil) est active. */
+export function hasLocalDomainGrantsOverride(): boolean {
+  if (typeof localStorage === 'undefined') return false
+  return Boolean(localStorage.getItem(GRANTS_STORAGE_KEY))
+}
+
+/**
+ * Droits effectifs : surcharge localStorage (cet appareil) sinon variables d’env.
+ * Les env s’appliquent à tous les ordinateurs après redéploiement Vercel.
+ */
 export function readDomainGrants(): DomainGrants {
-  if (typeof localStorage === 'undefined') return structuredClone(DEFAULT_GRANTS)
+  const fromEnv = envDomainGrants()
+  if (typeof localStorage === 'undefined') return fromEnv
   try {
     const raw = localStorage.getItem(GRANTS_STORAGE_KEY)
-    if (!raw) return structuredClone(DEFAULT_GRANTS)
-    const parsed = JSON.parse(raw) as Partial<Record<ConfigurableAccount, unknown>>
-    const next: DomainGrants = structuredClone(DEFAULT_GRANTS)
-    for (const account of ['jebosseplus', 'synecom'] as const) {
-      const list = parsed[account]
+    if (!raw) return fromEnv
+    const parsed = JSON.parse(raw) as Partial<Record<string, unknown>>
+    const next: DomainGrants = { ...fromEnv }
+    for (const account of ['full', 'partial'] as const) {
+      // Migration anciennes clés jebosseplus / synecom.
+      const legacyKey = account === 'full' ? 'jebosseplus' : 'synecom'
+      const list = parsed[account] ?? parsed[legacyKey]
       if (!Array.isArray(list)) continue
       const domains = list.filter(isDomain)
       if (domains.length > 0) next[account] = domains
     }
     return next
   } catch {
-    return structuredClone(DEFAULT_GRANTS)
+    return fromEnv
   }
 }
 
 export function writeDomainGrants(grants: DomainGrants) {
   localStorage.setItem(GRANTS_STORAGE_KEY, JSON.stringify(grants))
+}
+
+/** Repart des variables d’environnement (tous les postes après deploy). */
+export function clearLocalDomainGrantsOverride() {
+  localStorage.removeItem(GRANTS_STORAGE_KEY)
 }
 
 /** Domaines autorisés pour le compte connecté. */
@@ -110,7 +159,7 @@ export function domainsForAccount(account: AccessAccount | null): Domain[] {
   if (account === 'admin') return [...ALL_DOMAIN_IDS]
   const grants = readDomainGrants()
   const allowed = grants[account]?.filter(isDomain) ?? []
-  return allowed.length > 0 ? allowed : [...DEFAULT_GRANTS[account]]
+  return allowed.length > 0 ? allowed : [...envDomainGrants()[account]]
 }
 
 export function accountCanAccessDomain(account: AccessAccount | null, domain: Domain): boolean {
@@ -124,7 +173,7 @@ export function toggleDomainGrant(
 ): DomainGrants {
   const current = new Set(grants[account])
   if (current.has(domain)) {
-    if (current.size <= 1) return grants // au moins un domaine
+    if (current.size <= 1) return grants
     current.delete(domain)
   } else {
     current.add(domain)
@@ -135,6 +184,7 @@ export function toggleDomainGrant(
   }
 }
 
-export function isConfigurableAccountId(value: string): value is ConfigurableAccount {
-  return isConfigurableAccount(value)
+/** Chaîne prête à coller dans Vercel (VITE_ACCESS_DOMAINS_*). */
+export function domainsToEnvValue(domains: readonly Domain[]): string {
+  return domains.join(',')
 }

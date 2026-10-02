@@ -17,8 +17,12 @@ import {
   ACCOUNT_LABELS,
   accountCanAccessDomain,
   clearAccessAccount,
+  clearLocalDomainGrantsOverride,
   domainsForAccount,
+  domainsToEnvValue,
+  envDomainGrants,
   hasAccessCookie,
+  hasLocalDomainGrantsOverride,
   readAccessAccount,
   readDomainGrants,
   resolveAccountFromPassword,
@@ -4462,6 +4466,7 @@ function AccessPage({ onSuccess }: { onSuccess: (account: AccessAccount) => void
 function AdminAccessSettings() {
   const [open, setOpen] = useState(false)
   const [grants, setGrants] = useState<DomainGrants>(() => readDomainGrants())
+  const [localOverride, setLocalOverride] = useState(() => hasLocalDomainGrantsOverride())
   const panelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -4484,8 +4489,27 @@ function AdminAccessSettings() {
     setGrants((prev) => {
       const next = toggleDomainGrant(prev, account, domain)
       writeDomainGrants(next)
+      setLocalOverride(true)
       return next
     })
+  }
+
+  const resetToEnv = () => {
+    clearLocalDomainGrantsOverride()
+    setGrants(envDomainGrants())
+    setLocalOverride(false)
+  }
+
+  const copyEnvHints = async () => {
+    const text = [
+      `VITE_ACCESS_DOMAINS_FULL=${domainsToEnvValue(grants.full)}`,
+      `VITE_ACCESS_DOMAINS_PARTIAL=${domainsToEnvValue(grants.partial)}`,
+    ].join('\n')
+    try {
+      await navigator.clipboard.writeText(text)
+    } catch {
+      /* ignore */
+    }
   }
 
   return (
@@ -4512,7 +4536,10 @@ function AdminAccessSettings() {
               <div>
                 <p className="access-settings-title">Accès aux domaines</p>
                 <p className="access-settings-lead">
-                  Domaines visibles pour chaque mot de passe (hors admin).
+                  Pour tous les ordinateurs : variables Vercel{' '}
+                  <code>VITE_ACCESS_DOMAINS_FULL</code> /{' '}
+                  <code>VITE_ACCESS_DOMAINS_PARTIAL</code>, puis redéploiement. Les coches
+                  ci-dessous ne s’appliquent qu’à cet appareil.
                 </p>
               </div>
               <button
@@ -4525,7 +4552,16 @@ function AdminAccessSettings() {
               </button>
             </div>
             <div className="access-settings-body">
-              {(['jebosseplus', 'synecom'] as const).map((account) => (
+              {localOverride ? (
+                <p className="access-settings-banner" role="status">
+                  Surcharge locale active sur cet appareil.
+                </p>
+              ) : (
+                <p className="access-settings-banner is-env" role="status">
+                  Config serveur (variables d’environnement).
+                </p>
+              )}
+              {(['full', 'partial'] as const).map((account) => (
                 <section className="access-settings-account" key={account}>
                   <h3>Compte · {ACCOUNT_LABELS[account]}</h3>
                   <ul className="access-settings-domains">
@@ -4548,6 +4584,16 @@ function AdminAccessSettings() {
                   </ul>
                 </section>
               ))}
+              <div className="access-settings-actions">
+                <button type="button" className="button secondary" onClick={copyEnvHints}>
+                  Copier les variables env
+                </button>
+                {localOverride ? (
+                  <button type="button" className="button secondary" onClick={resetToEnv}>
+                    Revenir à la config serveur
+                  </button>
+                ) : null}
+              </div>
             </div>
           </div>
         </>
