@@ -3226,13 +3226,15 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .access-back{margin-top:8px;align-self:flex-start;font-size:13px}
 .topbar-right{display:flex;align-items:center;gap:10px}
 .access-settings{position:relative}
-.access-settings-btn{
+.access-settings-btn,.access-logout-btn{
   min-height:42px;padding:0 16px;border:1px solid var(--line);border-radius:999px;
   background:#fff;color:var(--ink);font-size:13px;font-weight:700
 }
-.access-settings-btn:hover,.access-settings-btn.active{
+.access-settings-btn:hover,.access-settings-btn.active,.access-logout-btn:hover{
   border-color:color-mix(in srgb,var(--purple) 40%,var(--line));color:var(--purple)
 }
+.access-logout-btn{color:var(--muted)}
+.access-logout-btn:hover{color:var(--purple)}
 .access-settings-panel{
   position:absolute;top:calc(100% + 8px);right:0;z-index:40;
   width:min(340px,calc(100vw - 24px));
