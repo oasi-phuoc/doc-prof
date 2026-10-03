@@ -51,8 +51,10 @@ import {
   lectureTopics,
   soutienFrTopics,
   gattegnoTopics,
+  tcmTopics,
   typesForTopic,
 } from '@/math/catalog'
+import { buildTcmTestPages, isTcmDomain } from '@/math/tcm-test'
 import {
   defaultCalliPhraseCount,
   defaultCalliWordCount,
@@ -1597,7 +1599,9 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 ? calligraphieTopics
                 : activePage.domain === 'soutien-fr'
                   ? soutienFrTopics
-                  : lectureTopics
+                  : activePage.domain === 'tcm'
+                    ? tcmTopics
+                    : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -1867,6 +1871,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isJeuxDomain = activePage.domain === 'jeux'
   const isCalliDomain = activePage.domain === 'calligraphie'
   const isSoutienFr = activePage.domain === 'soutien-fr'
+  const isTcm = isTcmDomain(activePage.domain)
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
   const isSoutienMots = soutienKind === 'mots'
   const isSoutienMotsMeles = soutienKind === 'mots-meles'
@@ -2335,9 +2340,25 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
 
   function changeDomain(next: Domain) {
     if (!accountCanAccessDomain(accessAccount, next)) return
-    const type = firstTypeFor(next)
     setBlockIndex(0)
-    updatePage({ domain: next, ...applyType(type) })
+    if (isTcmDomain(next)) {
+      setSheetIndex(0)
+      setPages(buildTcmTestPages())
+      setEvalMode(true)
+      setMode('student')
+      setInstitutional((current) =>
+        current.course !== 'Mathématiques' ? { ...current, course: 'Mathématiques' } : current,
+      )
+      return
+    }
+    const type = firstTypeFor(next)
+    const leavingTcm = isTcmDomain(activePage.domain)
+    if (leavingTcm) {
+      setSheetIndex(0)
+      setPages([{ ...defaultPage(next), ...applyType(type), domain: next }])
+    } else {
+      updatePage({ domain: next, ...applyType(type) })
+    }
     if (
       next === 'français' ||
       next === 'lecture' ||
@@ -3029,7 +3050,14 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}
-              {isReperage || isPhraseDomain || isJeuxDomain || isCalliDomain || isVocabLearn || isGramTheory || isSoutienFr ? null : (
+              {isReperage ||
+              isPhraseDomain ||
+              isJeuxDomain ||
+              isCalliDomain ||
+              isVocabLearn ||
+              isGramTheory ||
+              isSoutienFr ||
+              isTcm ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox

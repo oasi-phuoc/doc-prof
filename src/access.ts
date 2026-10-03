@@ -8,8 +8,8 @@ import type { Domain } from '@/math/types'
  */
 export type AccessAccount = 'admin' | 'full' | 'partial'
 
-/** Domaines proposés dans le générateur (hors Lecture masquée). */
-export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
+/** Domaines « normales » (hors TCM réservé admin). */
+export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'français', label: 'Français' },
   { id: 'algèbre', label: 'Algèbre' },
   { id: 'géométrie', label: 'Géométrie' },
@@ -19,6 +19,13 @@ export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'soutien-fr', label: 'Soutien FR' },
 ]
 
+/** Tous les domaines sélectionnables (TCM inclus). */
+export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
+  ...REGULAR_DOMAIN_OPTIONS,
+  { id: 'tcm', label: 'TCM' },
+]
+
+const REGULAR_DOMAIN_IDS: Domain[] = REGULAR_DOMAIN_OPTIONS.map((d) => d.id)
 const ALL_DOMAIN_IDS: Domain[] = ACCESS_DOMAIN_OPTIONS.map((d) => d.id)
 
 const ACCESS_COOKIE = 'clairfle-fiche-access'
@@ -54,15 +61,20 @@ function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] 
   return domains.length > 0 ? domains : [...fallback]
 }
 
-/** Domaines FULL / PARTIAL depuis les variables d’environnement. */
+/** Domaines FULL / PARTIAL : jamais TCM (réservé admin). */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
-  if (account === 'full') {
-    return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [...ALL_DOMAIN_IDS])
-  }
-  return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
-    'algèbre',
-    'géométrie',
-  ])
+  const list =
+    account === 'full'
+      ? parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [...REGULAR_DOMAIN_IDS])
+      : parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
+          'algèbre',
+          'géométrie',
+        ])
+  return list.filter((d) => d !== 'tcm')
+}
+
+function adminDomainsFromEnv(): Domain[] {
+  return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_ADMIN, [...ALL_DOMAIN_IDS])
 }
 
 export function resolveAccountFromPassword(password: string): AccessAccount | null {
@@ -98,7 +110,7 @@ export function hasAccessCookie(): boolean {
 /** Domaines autorisés pour le compte connecté. */
 export function domainsForAccount(account: AccessAccount | null): Domain[] {
   if (!account) return []
-  if (account === 'admin') return [...ALL_DOMAIN_IDS]
+  if (account === 'admin') return adminDomainsFromEnv()
   return domainsFromEnv(account)
 }
 
