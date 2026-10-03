@@ -88,6 +88,8 @@ export const soutienFrTopics = topics.filter((topic) => topic.domain === 'soutie
 export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
+/** Thèmes maths utilisables dans le TCM (algèbre + géométrie). */
+export const tcmTopics = [...algebraTopics, ...geometryTopics]
 
 const t = (
   id: string,
@@ -831,7 +833,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
   const fallbackTopic =
     domain === 'français'
       ? 'fr-presenter'
-      : domain === 'algèbre'
+      : domain === 'algèbre' || domain === 'tcm'
         ? 'addition'
         : domain === 'géométrie'
           ? 'aires'

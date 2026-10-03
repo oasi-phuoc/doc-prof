@@ -7,6 +7,7 @@ export type Domain =
   | 'gattegno'
   | 'jeux'
   | 'calligraphie'
+  | 'tcm'
 
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =
