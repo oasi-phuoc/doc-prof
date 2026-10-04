@@ -800,10 +800,12 @@ html,body,#root{
 }
 .eq-row{
   display:grid;
-  grid-template-columns: 6.5ch 2.4ch 6.5ch 2.4ch minmax(4.5em,1fr);
-  column-gap:0.15em;
+  /* Trait de réponse fixe (~3 chiffres) : ne pas étirer en 1fr (mangeait le gap colonnes). */
+  grid-template-columns: max-content 2.2ch max-content 2.2ch 3.6em;
+  column-gap:0.25em;
   align-items:center;
-  width:100%;
+  justify-items:start;
+  width:max-content;
   max-width:100%;
   font-size:13pt;
   font-weight:600;
@@ -814,13 +816,13 @@ html,body,#root{
 .eq-cell{min-width:0;text-align:center}
 .eq-num{text-align:center;padding:0}
 .eq-op,.eq-eq{text-align:center;font-weight:700}
-.eq-ans{text-align:center}
+.eq-ans{text-align:center;width:3.6em;max-width:3.6em}
 .eq-ans .answer-line-field{
-  display:block;width:100%;min-width:0;margin:0;text-align:center;
+  display:block;width:3.6em;min-width:3.6em;max-width:3.6em;margin:0;text-align:center;
   box-sizing:border-box
 }
 .eq-num .answer-line-field.compact{
-  display:block;width:100%;min-width:0;margin:0;text-align:center
+  display:block;width:2.8em;min-width:2.8em;max-width:2.8em;margin:0;text-align:center
 }
 .exercise-item.layout-inline .item-content{
   display:flex;justify-content:flex-start;width:100%

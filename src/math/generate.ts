@@ -355,7 +355,7 @@ function generateTcmDecompose9999Batch(rng: Rng, count: number): MathItem[] {
 
 /**
  * TCM ex. 12 : une multiplication (3 ch × 3–9, grille 5 col)
- * + une division (4 ch ÷ 3–9, dividende 5 col / quotient 5 col, reste sous les unités).
+ * + une division (4 ch ÷ 3–9, dividende 5 col / quotient 4 col).
  */
 function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   const mulB = int(rng, 3, 9)
@@ -366,7 +366,7 @@ function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   const qMax = Math.floor(9999 / divB)
   const quot = int(rng, qMin, qMax)
   const dividend = divB * quot
-  const div = withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 5, 5)
+  const div = withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 5, 4)
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }
 
@@ -523,7 +523,7 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
 
 /**
  * TCM ex. 16 : trier.
- * Q1 : 6 nombres 100 000–999 999 (paires début / fin / centre).
+ * Q1 : 6 nombres 10 000–99 999 (5 chiffres ; paires début / fin / centre).
  * Q2 : 5 décimaux motifs x,0x · x,x · x,xx · x,xx · x,x0.
  */
 function generateTcmRangerBatch(rng: Rng): MathItem[] {
@@ -531,27 +531,26 @@ function generateTcmRangerBatch(rng: Rng): MathItem[] {
     const first = int(rng, 1, 9)
     let firstB = int(rng, 1, 9)
     while (firstB === first) firstB = int(rng, 1, 9)
-    // Paire début : même 1er chiffre, fins différentes.
-    const a1 = first * 100_000 + int(rng, 10_000, 99_999)
-    let a2 = first * 100_000 + int(rng, 10_000, 99_999)
-    while (a2 % 100 === a1 % 100 || a2 === a1) a2 = first * 100_000 + int(rng, 10_000, 99_999)
+    // Paire début : même 1er chiffre, fins différentes (5 chiffres).
+    const a1 = first * 10_000 + int(rng, 1_000, 9_999)
+    let a2 = first * 10_000 + int(rng, 1_000, 9_999)
+    while (a2 % 100 === a1 % 100 || a2 === a1) a2 = first * 10_000 + int(rng, 1_000, 9_999)
     // Paire fin : mêmes 2 derniers chiffres, débuts différents.
     const end2 = int(rng, 10, 99)
-    const b1 =
-      firstB * 100_000 + int(rng, 100, 999) * 100 + end2
+    const b1 = firstB * 10_000 + int(rng, 10, 99) * 100 + end2
     let b2Head = int(rng, 1, 9)
     while (b2Head === firstB || b2Head === first) b2Head = int(rng, 1, 9)
-    const b2 = b2Head * 100_000 + int(rng, 100, 999) * 100 + end2
-    // Paire centre : mêmes chiffres 3–4 (positions), début et fin différents.
+    const b2 = b2Head * 10_000 + int(rng, 10, 99) * 100 + end2
+    // Paire centre : mêmes chiffres 2–3, début et fin différents.
     const mid = int(rng, 10, 99)
     const c1Head = int(rng, 1, 9)
     const c1End = int(rng, 10, 99)
-    const c1 = c1Head * 100_000 + int(rng, 0, 9) * 10_000 + mid * 100 + c1End
+    const c1 = c1Head * 10_000 + mid * 100 + c1End
     let c2Head = int(rng, 1, 9)
     while (c2Head === c1Head) c2Head = int(rng, 1, 9)
     let c2End = int(rng, 10, 99)
     while (c2End === c1End) c2End = int(rng, 10, 99)
-    const c2 = c2Head * 100_000 + int(rng, 0, 9) * 10_000 + mid * 100 + c2End
+    const c2 = c2Head * 10_000 + mid * 100 + c2End
     const numbers = shuffle(rng, [a1, a2, b1, b2, c1, c2])
     const ascending = rng() < 0.5
     const ordered = [...numbers].sort((x, y) => (ascending ? x - y : y - x))
