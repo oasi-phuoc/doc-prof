@@ -215,7 +215,7 @@ html,body,#root{
 .type-hint{margin:0 0 8px;line-height:1.45}
 .column-op,.division-column,.sequence-block,.problem-block,.geo-block,.coord-block{width:100%}
 .column-op.has-partials{margin-bottom:6px}
-.column-prompt{margin:0 0 8px;font-size:12px;color:var(--ink);font-weight:600}
+.column-prompt{margin:0 0 8px;font-size:13pt;color:var(--ink);font-weight:600}
 .column-grid.school{
   display:flex;flex-direction:column;align-items:stretch;gap:0;
   width:max-content;max-width:100%;margin-left:0;
@@ -281,7 +281,7 @@ html,body,#root{
   align-items:center;
   column-gap:10px;
   width:100%;
-  font-size:15px;font-weight:600;
+  font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums;
   font-family:ui-monospace,Consolas,"Courier New",monospace
 }
@@ -310,7 +310,7 @@ html,body,#root{
   align-items:baseline;
   column-gap:0.35em;
   width:100%;
-  font-size:15px;font-weight:600;
+  font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums;
   font-family:ui-monospace,Consolas,"Courier New",monospace
 }
@@ -326,7 +326,7 @@ html,body,#root{
   align-items:center;
   column-gap:14px;
   width:100%;
-  font-size:15px;font-weight:600;
+  font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums
 }
 .select-pills-prompt{text-align:center;font-family:ui-monospace,Consolas,"Courier New",monospace}
@@ -470,20 +470,20 @@ html,body,#root{
 .theory-heading{
   margin:6px 0 2px;font-size:15px;font-weight:700;line-height:1.3;color:var(--ink);text-align:left
 }
-.theory-heading.is-sub{font-size:13px;font-weight:600;margin-top:8px}
+.theory-heading.is-sub{font-size:13pt;font-weight:600;margin-top:8px}
 .theory-paragraph,.theory-note{
-  margin:0;font-size:13px;line-height:1.45;text-align:justify;color:var(--ink)
+  margin:0;font-size:13pt;line-height:1.45;text-align:justify;color:var(--ink)
 }
 .theory-note{font-style:italic;color:var(--muted)}
 .theory-rule{display:flex;flex-direction:column;gap:4px;width:100%}
-.theory-examples{margin:0;padding-left:1.2em;font-size:12.5px;line-height:1.4}
+.theory-examples{margin:0;padding-left:1.2em;font-size:13pt;line-height:1.4}
 .theory-ex-ok{font-weight:600}
 .theory-ex-bad{color:var(--muted)}
 .theory-list-block{width:100%}
-.theory-list-title{margin:0 0 2px;font-size:13px;font-weight:600}
-.theory-list{margin:0;padding-left:1.2em;font-size:13px;line-height:1.4}
+.theory-list-title{margin:0 0 2px;font-size:13pt;font-weight:600}
+.theory-list{margin:0;padding-left:1.2em;font-size:13pt;line-height:1.4}
 .theory-table{
-  width:100%;border-collapse:collapse;font-size:12.5px;margin:2px 0 6px
+  width:100%;border-collapse:collapse;font-size:13pt;margin:2px 0 6px
 }
 .theory-table th,.theory-table td{
   border:1px solid var(--ink);padding:4px 6px;text-align:left;vertical-align:top
@@ -601,7 +601,7 @@ html,body,#root{
 .order-block{display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0}
 .order-given{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;
-  font-size:15px;font-weight:600;font-variant-numeric:tabular-nums
+  font-size:13pt;font-weight:600;font-variant-numeric:tabular-nums
 }
 .order-given-term{display:inline-flex;align-items:baseline;gap:4px}
 .order-given-sep{color:var(--muted);font-weight:500}
@@ -611,7 +611,7 @@ html,body,#root{
   align-items:baseline;
   column-gap:0.25em;
   width:100%;
-  font-size:15px;font-weight:600;
+  font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums;
   font-family:ui-monospace,Consolas,"Courier New",monospace
 }
@@ -669,7 +669,10 @@ html,body,#root{
 .worksheet-sheet.is-jeux,
 .worksheet-sheet.is-jeux.sheet-odd,
 .worksheet-sheet.is-jeux.sheet-even{padding:10mm 12mm 8mm}
-.sheet-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.sheet-body{
+  flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;
+  font-size:13pt;
+}
 /* Aperçu : laisse voir le chip grille dans la marge (hors zone texte). */
 .a4-frame .sheet-body{overflow:visible}
 .sheet-body .exercise-grid{
@@ -697,13 +700,13 @@ html,body,#root{
   width:100%;min-width:0
 }
 .prompt-stack-text{
-  margin:0;font-size:15px;font-weight:600;line-height:1.45;color:var(--ink);
+  margin:0;font-size:13pt;font-weight:600;line-height:1.45;color:var(--ink);
   text-align:justify;hyphens:auto
 }
 
 .place-value-row{
   display:flex;align-items:flex-start;gap:6px;width:100%;min-width:0;
-  font-size:15px;font-weight:600;line-height:1.4
+  font-size:13pt;font-weight:600;line-height:1.4
 }
 .place-value-num{flex:0 0 auto;font-variant-numeric:tabular-nums;padding-top:2px}
 .place-value-eq{flex:0 0 auto;padding-top:2px}
@@ -726,7 +729,7 @@ html,body,#root{
 .inline-prompt.equation{
   display:flex;flex-wrap:nowrap;align-items:center;gap:4px;
   width:100%;min-width:0;
-  font-size:15px;font-weight:600;line-height:1.7;font-variant-numeric:tabular-nums
+  font-size:13pt;font-weight:600;line-height:1.55;font-variant-numeric:tabular-nums
 }
 .inline-prompt.equation .eq-text{
   flex:0 1 auto;min-width:0;
@@ -753,9 +756,9 @@ html,body,#root{
   align-items:center;
   width:100%;
   max-width:100%;
-  font-size:15px;
+  font-size:13pt;
   font-weight:600;
-  line-height:1.7;
+  line-height:1.55;
   font-variant-numeric:tabular-nums;
   font-family:ui-monospace,Consolas,"Courier New",monospace
 }
@@ -1027,7 +1030,7 @@ html,body,#root{
 }
 .glossary-figure{width:64px;height:48px;display:block}
 .glossary-term{margin:0 0 4px;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
-.glossary-definition{margin:0;font-size:12px;line-height:1.45;text-align:justify;color:var(--ink)}
+.glossary-definition{margin:0;font-size:13pt;line-height:1.45;text-align:justify;color:var(--ink)}
 .coord-questions.is-lines .coord-question.is-draw{grid-template-columns:1.6em minmax(0,1fr)}
 .coord-grid .axis-line{stroke:#111;stroke-width:1.4}
 .coord-grid .axis-label{fill:#111;font-size:10px;font-weight:500;font-family:'DM Sans',sans-serif}
@@ -1134,15 +1137,15 @@ html,body,#root{
 .item-number{
   flex:0 0 auto;width:auto;height:auto!important;min-width:1.5em;min-height:0!important;
   padding:0;margin:0;border:0!important;border-radius:0;background:transparent!important;
-  color:var(--purple)!important;font-size:15px;font-weight:700;line-height:1.7;
+  color:var(--purple)!important;font-size:13pt;font-weight:700;line-height:1.7;
   display:inline-flex!important;align-items:baseline;justify-content:flex-start;gap:6px;
   white-space:nowrap
 }
-.item-content{flex:1;min-width:0;font-size:15px;line-height:1.7;padding:0;margin:0}
+.item-content{flex:1;min-width:0;font-size:13pt;line-height:1.55;padding:0;margin:0}
 .item-content>.inline-prompt,.item-content>.compare-row,.item-content>.prompt-stack{margin:0;width:100%}
 
 .sheet-givens{
-  margin:8px 0 0;font-size:15px;font-weight:700;line-height:1.5;color:var(--ink)
+  margin:8px 0 0;font-size:13pt;font-weight:700;line-height:1.5;color:var(--ink)
 }
 .sheet-givens .given-letter{color:var(--purple);font-style:italic}
 .sheet-givens .given-value{font-variant-numeric:tabular-nums}
@@ -1202,7 +1205,7 @@ html,body,#root{
   column-gap:0.45em;
   align-items:baseline;
   width:100%;
-  font-size:15px;font-weight:600;line-height:1.7;
+  font-size:13pt;font-weight:600;line-height:1.55;
   font-variant-numeric:tabular-nums;
   font-family:ui-monospace,Consolas,"Courier New",monospace
 }
@@ -1359,7 +1362,7 @@ html,body,#root{
 .preview-mode-toggle{min-width:220px}
 .sheet-instruction{
   display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
-  padding:0;margin:0 0 10px;border-radius:0;background:transparent;font-size:12px
+  padding:0;margin:0 0 10px;border-radius:0;background:transparent;font-size:13pt
 }
 .sheet-instruction-main{flex:1;min-width:0}
 .sheet-instruction-main>b{font-weight:800}
@@ -1373,7 +1376,7 @@ html,body,#root{
   display:flex;align-items:flex-end;justify-content:flex-start;gap:8px;flex-wrap:wrap
 }
 .exercise-heading h3{margin:0;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
-.exercise-heading p{margin:3px 0 0;font-size:12px;line-height:1.45;text-align:justify}
+.exercise-heading p{margin:3px 0 0;font-size:13pt;line-height:1.45;text-align:justify}
 /* Refresh en bas à droite du titre « Exercice N » (aperçu seulement). */
 .exercise-refresh-btn{
   width:22px;height:22px;padding:0;margin:0 0 1px;border:1px solid var(--line);
@@ -1388,9 +1391,9 @@ html,body,#root{
 .exercise-refresh-btn:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 .exercise-refresh-btn svg{width:12px;height:12px;display:block}
 .exercise-document{margin:0 0 10px}
-.exercise-document-title{margin:0 0 4px;font-size:12px;font-weight:700}
-.exercise-document-text{margin:0;font-size:12px;line-height:1.5;text-align:justify;white-space:pre-line}
-.exercise-document-listen{margin:0 0 6px;font-size:12px;font-style:italic}
+.exercise-document-title{margin:0 0 4px;font-size:13pt;font-weight:700}
+.exercise-document-text{margin:0;font-size:13pt;line-height:1.5;text-align:justify;white-space:pre-line}
+.exercise-document-listen{margin:0 0 6px;font-size:13pt;font-style:italic}
 .sheet-preview-cluster{
   flex:1 1 auto;
   min-height:0;
@@ -1431,15 +1434,15 @@ html,body,#root{
 .exercise-tabs button{position:relative}
 .sheet-instruction-main>.sheet-givens{
   display:block;margin:10px 0 0;padding:0;
-  font-size:15px;font-weight:700;line-height:1.5;color:var(--ink)
+  font-size:13pt;font-weight:700;line-height:1.5;color:var(--ink)
 }
 .instruction-points{
   flex:0 0 auto;margin-left:auto;align-self:flex-start;
-  font-weight:700;color:var(--ink);white-space:nowrap;text-align:right;line-height:1.45
+  font-size:13pt;font-weight:700;color:var(--ink);white-space:nowrap;text-align:right;line-height:1.45
 }
 .question-points{
   flex:0 0 auto;margin-left:auto;align-self:flex-start;
-  font-size:12px;font-weight:700;color:var(--ink);white-space:nowrap;line-height:1.7
+  font-size:13pt;font-weight:700;color:var(--ink);white-space:nowrap;line-height:1.7
 }
 .result-head-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 /* Générer / Imprimer : même boîte (largeur + hauteur). */
@@ -3254,18 +3257,15 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:#fff;
   overflow:hidden;
 }
-/* TCM / multi-exercices : cadres plus bas pour tenir Compter + Comparer + Suites + Ops */
+/* Multi-exercices sur une page : cadres compter plus bas + espace entre blocs */
 .worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-frame{
   aspect-ratio:1 / 0.55;
   max-height:34mm;
 }
 .worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:2px}
-.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-caption{font-size:12px;line-height:1.3}
 .worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading{
-  margin-bottom:1px
+  margin-bottom:4px
 }
-.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading h3{font-size:14px}
-.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading p{font-size:12px;line-height:1.3}
 .worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-item{
   padding-top:2px;padding-bottom:2px
 }
@@ -3273,7 +3273,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   gap:6px 12px
 }
 .worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-block{
-  margin-bottom:2px
+  margin-bottom:0
+}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-block + .exercise-block{
+  margin-top:10px;
+  padding-top:10px;
 }
 .worksheet-sheet:has(.layout-theory) .exercise-heading p{display:none}
 .worksheet-sheet:has(.layout-theory) .theory-grid{
@@ -3291,8 +3295,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .count-icons-caption{
   margin:0;
-  font-size:15px;
-  line-height:1.5;
+  font-size:13pt;
+  line-height:1.45;
   color:var(--ink);
   text-align:justify;
 }
