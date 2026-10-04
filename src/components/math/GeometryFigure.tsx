@@ -128,13 +128,13 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
   const viewBox = paraPlacement
     ? '0 0 350 168'
     : triPlacement
-      ? '0 0 300 172'
+      ? '0 0 300 180'
       : rhombusPlacement
-        ? '0 0 340 198'
+        ? '0 0 340 200'
         : trapPlacement
-          ? '0 0 370 172'
+          ? '0 0 370 178'
           : circleDiameter
-            ? '0 0 180 168'
+            ? '0 0 180 172'
             : '0 0 260 190'
 
   return (
@@ -229,7 +229,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           <>
             {/* Coords placement soutien Ex. 26 — scalène + a / b / c / h */}
             <polygon points="72,28 22,122 185,122" />
-            <L x={(22 + 185) / 2} y={142} baseline="hanging">
+            <L x={(22 + 185) / 2} y={148} baseline="hanging">
               a = {fmt(d.a!)} {unit}
             </L>
             <L x={(72 + 185) / 2 + 20} y={(28 + 122) / 2 - 4} anchor="start">
@@ -435,7 +435,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <L x={(92 + 202) / 2} y={16}>
               a = {fmt(d.top!)} {unit}
             </L>
-            <L x={(54 + 244) / 2} y={140} baseline="hanging">
+            <L x={(54 + 244) / 2} y={146} baseline="hanging">
               b = {fmt(d.bottom!)} {unit}
             </L>
             <L x={(54 + 92) / 2 - 20} y={(120 + 32) / 2} anchor="end" baseline="middle">
@@ -531,7 +531,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
               <line x1={47} y1={147} x2={47} y2={157} strokeWidth={1.5} />
               <line x1={203} y1={147} x2={203} y2={157} strokeWidth={1.5} />
             </g>
-            <L x={125} y={172} baseline="hanging">
+            <L x={125} y={176} baseline="hanging">
               d₁ = {fmt(d.d1!)} {unit}
             </L>
           </>
@@ -571,7 +571,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <circle cx="90" cy="62" r="48" />
             <line x1={90 - 48} y1={62} x2={90 + 48} y2={62} fill="none" strokeWidth={1.5} />
             <circle cx="90" cy="62" r="2.5" fillOpacity={1} stroke="none" />
-            <L x={90} y={128} baseline="hanging">
+            <L x={90} y={134} baseline="hanging">
               d = {fmt(d.diameter ?? d.length!)} {unit}
             </L>
           </>
