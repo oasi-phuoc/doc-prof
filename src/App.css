@@ -803,9 +803,9 @@ html,body,#root{
 }
 .eq-row{
   display:grid;
-  /* Largeurs fixes : aligne op et = dans la colonne ; pas de 1fr (préserve gap ≥ 15 px). */
-  grid-template-columns: 6.5ch 2.2ch 6.5ch 2.2ch 4.8em;
-  column-gap:0.25em;
+  /* Opérandes / réponse −20 % ; op et = en largeur mini (pas la même que les nombres). */
+  grid-template-columns: 5.2ch max-content 5.2ch max-content 3.8em;
+  column-gap:0.2em;
   align-items:center;
   justify-items:center;
   width:max-content;
@@ -817,15 +817,15 @@ html,body,#root{
   font-family:inherit;
 }
 .eq-cell{min-width:0;text-align:center}
-.eq-num{width:6.5ch;text-align:center;padding:0;justify-self:center}
-.eq-op,.eq-eq{text-align:center;font-weight:700;width:2.2ch}
-.eq-ans{text-align:center;width:4.8em;max-width:4.8em}
+.eq-num{width:5.2ch;text-align:center;padding:0;justify-self:center}
+.eq-op,.eq-eq{text-align:center;font-weight:700;width:auto;min-width:0;padding:0 0.05em}
+.eq-ans{text-align:center;width:3.8em;max-width:3.8em}
 .eq-ans .answer-line-field{
-  display:block;width:4.8em;min-width:4.8em;max-width:4.8em;margin:0;text-align:center;
+  display:block;width:3.8em;min-width:3.8em;max-width:3.8em;margin:0;text-align:center;
   box-sizing:border-box
 }
 .eq-num .answer-line-field.compact{
-  display:block;width:100%;min-width:0;max-width:6.5ch;margin:0 auto;text-align:center
+  display:block;width:100%;min-width:0;max-width:5.2ch;margin:0 auto;text-align:center
 }
 .exercise-item.layout-inline .item-content{
   display:flex;justify-content:flex-start;width:100%
