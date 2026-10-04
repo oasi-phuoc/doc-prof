@@ -378,6 +378,15 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 1 },
   ),
   t(
+    'tcm-conversions-mixte',
+    'tcm-info',
+    'Conversions d’unités (mixte)',
+    'Quatre conversions : masse (kg), capacité (L), temps (h), aire (m²) ou volume (m³). Entier ou décimal au hasard.',
+    'Convertissez.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
+  t(
     'tcm-proportion-kg',
     'tcm-info',
     'Règle de trois (kg)',
