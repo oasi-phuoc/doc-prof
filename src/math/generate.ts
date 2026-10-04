@@ -38,6 +38,7 @@ import { generateLengthConversionBatch, tryGenerateConversion } from './conversi
 import { generateTcmPrioriteBatch } from './tcm-priorite'
 import { generateTcmProportionKgBatch } from './tcm-proportion-kg'
 import { generateTcmReduireBatch } from './tcm-reduire'
+import { generateTcmEvaluerBatch } from './tcm-evaluer'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from '@/francais/francais'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
@@ -1678,6 +1679,9 @@ function generateItems(
   if (typeId === 'tcm-expressions-reduire') {
     return generateTcmReduireBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-expressions-evaluer') {
+    return generateTcmEvaluerBatch(rng).items.slice(0, Math.max(1, count))
+  }
   if (typeId === 'tcm-proportion-kg') {
     return generateTcmProportionKgBatch(rng, count)
   }
@@ -1819,6 +1823,9 @@ function generateOne(
     }
     case 'tcm-expressions-reduire': {
       return generateTcmReduireBatch(rng)[0]!
+    }
+    case 'tcm-expressions-evaluer': {
+      return generateTcmEvaluerBatch(rng).items[0]!
     }
     case 'tcm-proportion-kg': {
       return generateTcmProportionKgBatch(rng, 1)[0]!
