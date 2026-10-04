@@ -103,15 +103,12 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 17,
     label: 'Additions et soustractions décimales',
-    blocks: [
-      { exerciseType: 'decimaux-add-colonne', count: 2, columns: 2 },
-      { exerciseType: 'decimaux-sub-colonne', count: 2, columns: 2 },
-    ],
+    blocks: [{ exerciseType: 'tcm-dec-add-sub', count: 2, columns: 2 }],
   },
   {
     id: 18,
-    label: 'Multiplication décimale',
-    blocks: [{ exerciseType: 'decimaux-mul-colonne', count: 2, columns: 2 }],
+    label: 'Multiplications posées (entier et décimal)',
+    blocks: [{ exerciseType: 'tcm-mul-mixte', count: 2, columns: 2 }],
   },
   {
     id: 19,
@@ -237,13 +234,16 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
 
 /**
  * Étapes regroupées sur une même feuille A4 (après la page consignes).
- * Page 2 : 1–4 · Page 3 : 5–8 · Page 4 : 9–12 · Page 5 : 13 + 15 + 16.
+ * Page 2 : 1–4 · Page 3 : 5–8 · Page 4 : 9–11 · Page 5 : 12+13+15 ·
+ * Page 6 : 16 · Page 7 : 17+18.
  */
 const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],
   [5, 6, 7, 8],
-  [9, 10, 11, 12],
-  [13, 15, 16],
+  [9, 10, 11],
+  [12, 13, 15],
+  [16],
+  [17, 18],
 ]
 
 function blockFromSpec(

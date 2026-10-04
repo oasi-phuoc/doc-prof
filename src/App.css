@@ -25,7 +25,7 @@
   --ex-pad-y: 8px;
   --ex-pad-x: 2px;
   --ex-num-gap: 8px;
-  --ex-grid-gap: 10px 16px;
+  --ex-grid-gap: 10px 15px;
   --ex-prompt-gap: 6px;
   --ex-answer-h: 1.35em;
   --ex-block-before: 15px;
@@ -268,11 +268,12 @@ html,body,#root{
   border-left:1.75px solid #111
 }
 .division-reste{
-  display:flex;align-items:center;gap:8px;margin-top:8px;align-self:flex-start;padding-left:calc(1.1em + 6px)
+  display:flex;align-items:center;gap:6px;margin-top:6px;align-self:flex-start
 }
 .division-reste-label{
-  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#555;
-  font-family:'DM Sans',sans-serif
+  flex:0 0 1.1em;width:1.1em;min-width:1.1em;
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:#555;
+  font-family:'DM Sans',sans-serif;text-align:center;line-height:28px
 }
 .column-line.rule-line.tight{margin:2px 0 4px}
 .column-line.rule-line.tight .column-rule{margin:0}
@@ -627,6 +628,17 @@ html,body,#root{
   box-sizing:border-box;line-height:1.35
 }
 .sequence-term.blank.filled{color:var(--ink)}
+/* Suites TCM : cases à largeur fixe (5 chiffres) + 10 px entre termes. */
+.sequence-row.sequence-digits-5{
+  flex-wrap:nowrap;gap:10px;width:100%;justify-content:flex-start
+}
+.sequence-row.sequence-digits-5 .sequence-term{
+  flex:0 0 auto;width:5.2ch;min-width:5.2ch;max-width:5.2ch;
+  padding:0 0 2px;box-sizing:content-box;justify-content:center
+}
+.sequence-row.sequence-digits-5 .sequence-term.blank{
+  min-width:5.2ch;width:5.2ch;max-width:5.2ch
+}
 .sequence-answer-line{display:flex;align-items:center;gap:8px;margin-top:10px}
 
 /* Aperçu : padding uniforme 28px (haut/droite/bas/gauche) ; A4 = toute la largeur utile. */
@@ -963,11 +975,11 @@ html,body,#root{
   display:flex;justify-content:center;width:100%;margin:0 0 8px
 }
 .geo-dual-pads{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%
+  display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%
 }
 .geo-dual-pads .draft-pad{width:100%;min-height:28mm;margin:0}
 .geo-dual-answers{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%;
   padding-top:15px
 }
 .geo-dual-answer{
@@ -978,13 +990,16 @@ html,body,#root{
   display:block;width:min(200px,100%);height:auto;aspect-ratio:260 / 190;
   margin:0;color:var(--ink);overflow:visible
 }
+.geo-dual-figure .geometry-figure{
+  width:min(280px,100%)
+}
 .geometry-figure .dim-label{
-  fill:var(--purple);fill-opacity:1;stroke:none;font-size:12px;font-weight:600;
+  fill:var(--purple);fill-opacity:1;stroke:none;font-size:13pt;font-weight:600;
   font-family:'DM Sans',sans-serif
 }
 .geometry-figure.cotee{overflow:visible}
 .geometry-figure.composite-figure{width:min(100%,56mm)}
-.geometry-figure.composite-figure .dim-label{font-size:11px}
+.geometry-figure.composite-figure .dim-label{font-size:13pt}
 .geo-block:has(.composite-figure){gap:5px}
 .coord-grid{width:min(130px,100%);height:auto;aspect-ratio:1;color:var(--ink)}
 .coord-grid.scene-polygon,.coord-grid.scene-polar{
@@ -1175,14 +1190,14 @@ html,body,#root{
 .exercise-grid.algebra-grid{
   display:grid!important;
   grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr))!important;
-  gap:10px 16px;
+  gap:var(--ex-grid-gap);
   align-content:start
 }
 /* Problèmes / équations : même grille 1–3 colonnes que le reste (plus de forçage 1 col). */
 .exercise-grid.problem-grid{
   display:grid!important;
   grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr))!important;
-  gap:14px 12px;
+  gap:var(--ex-grid-gap);
   align-content:start
 }
 .worksheet-sheet .exercise-grid{

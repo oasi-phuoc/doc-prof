@@ -325,6 +325,8 @@ export type MathItem = {
   right?: string
   sequence?: string[]
   blankIndexes?: number[]
+  /** Largeur fixe des cases de suite (ex. 5 chiffres). */
+  sequenceDigits?: number
   options?: string[]
   labels?: string[]
   /** Grille de lettres : nombre de colonnes (ex. 10 pour Soutien FR type 2). */

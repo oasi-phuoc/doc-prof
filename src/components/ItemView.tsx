@@ -1051,7 +1051,9 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
             )
           })}
           <div className="division-reste">
-            <span className="division-reste-label">Reste</span>
+            <span className="division-reste-label" title="Reste">
+              R
+            </span>
             <DigitRow digits={remDigits} empty showAnswer={show} answerDigits={remDigits} />
           </div>
         </div>
@@ -1503,10 +1505,12 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const blanks = new Set(item.blankIndexes ?? [])
   const answers = item.answer.split(' ; ')
   let blankAt = 0
+  const digitsClass =
+    item.sequenceDigits === 5 ? ' sequence-digits-5' : item.sequenceDigits ? ` sequence-digits-${item.sequenceDigits}` : ''
   return (
     <div className="sequence-block">
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-      <div className="sequence-row">
+      <div className={`sequence-row${digitsClass}`}>
         {(item.sequence ?? []).map((term, index) => {
           const isBlank = term === '□' || blanks.has(index)
           if (isBlank) {

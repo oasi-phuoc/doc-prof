@@ -231,6 +231,25 @@ function withFixedColumnWidth(item: MathItem, width: number): MathItem {
 }
 
 /**
+ * Division posée à largeurs fixes : dividende / travail / reste = `dividendWidth`,
+ * quotient = `quotientWidth`. Le reste est aligné sous les unités (dernière colonne).
+ */
+function withFixedDivisionWidth(
+  item: MathItem,
+  dividendWidth: number,
+  quotientWidth: number,
+): MathItem {
+  const rem = Math.round(Math.abs(Number(item.remainder ?? 0)))
+  return {
+    ...item,
+    digitsA: padDigitRow(item.digitsA, dividendWidth),
+    digitsPartials: (item.digitsPartials ?? []).map((row) => padDigitRow(row, dividendWidth)),
+    digitsResult: padDigitRow(item.digitsResult, quotientWidth),
+    digitsRemainder: digits(rem, dividendWidth),
+  }
+}
+
+/**
  * TCM : une addition + une soustraction en colonnes (ordre aléatoire).
  * `digitCount` 3 → grille à 4 colonnes ; 4 → grille à 5 colonnes.
  */
@@ -298,6 +317,7 @@ function generateTcmGrandesSuitesBatch(rng: Rng): MathItem[] {
       layout: 'sequence',
       sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : String(v))),
       blankIndexes: blanks,
+      sequenceDigits: 5,
       answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
     }
   }
@@ -334,17 +354,20 @@ function generateTcmDecompose9999Batch(rng: Rng, count: number): MathItem[] {
   })
 }
 
-/** TCM : une multiplication (3 ch × 3–9) + une division (4 ch ÷ 3–9, sans reste). */
+/**
+ * TCM ex. 12 : une multiplication (3 ch × 3–9, grille 5 col)
+ * + une division (4 ch ÷ 3–9, dividende 5 col / quotient 5 col, reste sous les unités).
+ */
 function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   const mulB = int(rng, 3, 9)
   const mulA = int(rng, 100, 999)
-  const mul = columnItem('×', mulA, mulB, mulA * mulB, false)
+  const mul = withFixedColumnWidth(columnItem('×', mulA, mulB, mulA * mulB, false), 5)
   const divB = int(rng, 3, 9)
   const qMin = Math.ceil(1000 / divB)
   const qMax = Math.floor(9999 / divB)
   const quot = int(rng, qMin, qMax)
   const dividend = divB * quot
-  const div = divisionColumnItem(dividend, divB, false)
+  const div = withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 5, 5)
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }
 
@@ -397,6 +420,7 @@ function generateTcmSuites6Batch(rng: Rng): MathItem[] {
       layout: 'sequence',
       sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : String(v))),
       blankIndexes: blanks,
+      sequenceDigits: 5,
       answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
     }
   }
@@ -417,10 +441,51 @@ function generateTcmSuites6Batch(rng: Rng): MathItem[] {
       layout: 'sequence',
       sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : show(v))),
       blankIndexes: blanks,
+      sequenceDigits: 5,
       answer: blanks.map((k) => show(seq[k]!)).join(' ; '),
     }
   }
   return [makeInt(), makeDec()]
+}
+
+/** TCM ex. 17 : une addition + une soustraction décimales (ordre aléatoire), grille 6 col. */
+function generateTcmDecAddSubBatch(rng: Rng): MathItem[] {
+  const addP = decimalAddPair(rng, 40)
+  const subP = decimalSubPair(rng, 40)
+  const add = withFixedColumnWidth(columnItem('+', addP.a, addP.b, addP.result, false), 6)
+  const sub = withFixedColumnWidth(columnItem('−', subP.a, subP.b, subP.result, false), 6)
+  return rng() < 0.5 ? [add, sub] : [sub, add]
+}
+
+/**
+ * TCM ex. 18 : multiplication posée, grille 6 col.
+ * Gauche : entier 100–999 × 11–99.
+ * Droite : décimal 4 chiffres (2–3 décimales) × [1,1 ; 9,9] (pas ×,0).
+ */
+function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
+  const aInt = int(rng, 100, 999)
+  const bInt = int(rng, 11, 99)
+  const mulInt = withFixedColumnWidth(columnItem('×', aInt, bInt, aInt * bInt, false), 6)
+
+  const placesA = pick(rng, [2, 3] as const)
+  // 4 chiffres au total : 2 déc. → 2 entiers ; 3 déc. → 1 entier.
+  const intDigits = 4 - placesA
+  const intPart =
+    intDigits === 1 ? int(rng, 1, 9) : int(rng, 10, 99)
+  const fracMax = 10 ** placesA - 1
+  const fracMin = placesA === 2 ? 10 : 100 // pas de zéro leading inutile côté décimal
+  let frac = int(rng, fracMin, fracMax)
+  // Éviter une queue de zéros qui réduirait le nombre de décimales affichées.
+  while (frac % 10 === 0) frac = int(rng, fracMin, fracMax)
+  const aDec = intPart + frac / 10 ** placesA
+  // 1,1 … 9,9 — exclure les ×,0 (2,0 · 3,0…) qui sont des entiers.
+  let bTenths = int(rng, 11, 99)
+  while (bTenths % 10 === 0) bTenths = int(rng, 11, 99)
+  const bDec = bTenths / 10
+  const product = Math.round(aDec * bDec * 10 ** (placesA + 1)) / 10 ** (placesA + 1)
+  const mulDec = withFixedColumnWidth(columnItem('×', aDec, bDec, product, false), 6)
+
+  return rng() < 0.5 ? [mulInt, mulDec] : [mulDec, mulInt]
 }
 
 /**
@@ -979,9 +1044,8 @@ function generateItems(
     return generateTcmDecompose9999Batch(rng, count)
   }
   if (typeId === 'tcm-mul-div-col') {
-    return normalizeDivisionLayouts(
-      normalizeColumnLayouts(generateTcmMulDivColBatch(rng).slice(0, Math.max(1, count))),
-    )
+    // Largeurs imposées (× 5 col · ÷ 5/5) : pas de normalize qui les élargirait.
+    return generateTcmMulDivColBatch(rng).slice(0, Math.max(1, count))
   }
   if (typeId === 'tcm-rect-peri-aire') {
     return [generateTcmRectPeriAire(rng)]
@@ -991,6 +1055,13 @@ function generateItems(
   }
   if (typeId === 'tcm-ranger') {
     return generateTcmRangerBatch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'tcm-dec-add-sub') {
+    // Largeur imposée à 6 : ne pas ré-aligner via normalize (sinon > 6 col).
+    return generateTcmDecAddSubBatch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'tcm-mul-mixte') {
+    return generateTcmMulMixteBatch(rng).slice(0, Math.max(1, count))
   }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
@@ -1068,6 +1139,12 @@ function generateOne(
     }
     case 'tcm-ranger': {
       return generateTcmRangerBatch(rng)[0]!
+    }
+    case 'tcm-dec-add-sub': {
+      return generateTcmDecAddSubBatch(rng)[0]!
+    }
+    case 'tcm-mul-mixte': {
+      return generateTcmMulMixteBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
