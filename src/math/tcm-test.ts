@@ -128,7 +128,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 23,
     label: 'Conversions de longueur',
-    blocks: [{ exerciseType: 'conversions-longueur', count: 8, columns: 2 }],
+    blocks: [{ exerciseType: 'conversions-longueur', count: 6, columns: 2 }],
   },
   {
     id: 24,
@@ -225,7 +225,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
 /**
  * Étapes regroupées sur une même feuille A4 (après la page consignes).
  * Page 2 : 1–4 · Page 3 : 5–8 · Page 4 : 9–11 · Page 5 : 12+13 ·
- * Page 6 : 15+16+17 · Page 7 : 18 · Page 8 : 19 · Page 9 : 21+22+23.
+ * Page 6 : 15+16+17 · Page 7 : 18+19 · Page 8 : 21+22+23.
  */
 const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],
@@ -233,8 +233,7 @@ const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [9, 10, 11],
   [12, 13],
   [15, 16, 17],
-  [18],
-  [19],
+  [18, 19],
   [21, 22, 23],
 ]
 
