@@ -355,17 +355,6 @@ function WorksheetSheet({
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet ? null : (
               <header className="exercise-heading">
-                {onRegenerateBlock ? (
-                  <button
-                    type="button"
-                    className="no-print exercise-refresh-btn"
-                    aria-label="Régénérer cet exercice"
-                    title="Régénérer cet exercice"
-                    onClick={() => onRegenerateBlock(blockIndex)}
-                  >
-                    <RefreshIcon />
-                  </button>
-                ) : null}
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
                     <h3>{blockHeading}</h3>
@@ -1898,6 +1887,23 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     updatePage({
       problemDraftGrids: Array.from({ length: activeBlock.count }, () => value),
     })
+  }
+
+  /** TCM : afficher ou masquer toutes les grilles de calcul de toutes les pages. */
+  const setAllTcmDraftGrids = (value: boolean) => {
+    setPages((current) =>
+      current.map((page) => {
+        if (!isTcmDomain(page.domain)) return page
+        let next = page
+        pageBlocks(page).forEach((block, bi) => {
+          if (!isDraftPadExercise(block.exerciseType)) return
+          next = setPageBlock(next, bi, {
+            problemDraftGrids: Array.from({ length: block.count }, () => value),
+          })
+        })
+        return next
+      }),
+    )
   }
 
   const isReperage = isReperagePage(activeBlock.exerciseType)
@@ -4165,7 +4171,49 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </p>
                 </div>
               ) : null}
-              {pageExerciseBlocks.some((b) => isProblemExercise(b.exerciseType)) ? (
+              {isTcm ? (
+                <div className="mode-toggle-block">
+                  <b>Grilles de calcul</b>
+                  <div className="mode-toggle" role="group" aria-label="Grilles de calcul de toute la fiche">
+                    {(() => {
+                      const draftBlocks = pages.flatMap((page) =>
+                        isTcmDomain(page.domain)
+                          ? pageBlocks(page).filter((b) => isDraftPadExercise(b.exerciseType))
+                          : [],
+                      )
+                      const allOn =
+                        draftBlocks.length > 0 &&
+                        draftBlocks.every((b) =>
+                          resizeDraftGrids(b.problemDraftGrids, b.count).every(Boolean),
+                        )
+                      const allOff =
+                        draftBlocks.length > 0 &&
+                        draftBlocks.every((b) =>
+                          resizeDraftGrids(b.problemDraftGrids, b.count).every((v) => !v),
+                        )
+                      return (
+                        <>
+                          <button
+                            type="button"
+                            className={allOn ? 'active' : ''}
+                            onClick={() => setAllTcmDraftGrids(true)}
+                          >
+                            Afficher
+                          </button>
+                          <button
+                            type="button"
+                            className={allOff ? 'active' : ''}
+                            onClick={() => setAllTcmDraftGrids(false)}
+                          >
+                            Masquer
+                          </button>
+                        </>
+                      )
+                    })()}
+                  </div>
+                  <small className="muted">Toutes les grilles de toutes les pages.</small>
+                </div>
+              ) : pageExerciseBlocks.some((b) => isProblemExercise(b.exerciseType)) ? (
                 <div className="mode-toggle draft-grid-page-toggle" role="group" aria-label="Grille de brouillon">
                   {(() => {
                     const grids = resizeDraftGrids(activeBlock.problemDraftGrids, activeBlock.count)
