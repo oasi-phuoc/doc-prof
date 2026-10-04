@@ -142,19 +142,13 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 26,
-    label: 'Triangle rectangle',
-    blocks: [
-      { exerciseType: 'perimetres-triangle', count: 1, columns: 2 },
-      { exerciseType: 'aires-triangle', count: 1, columns: 2 },
-    ],
+    label: 'Triangle (périmètre et aire)',
+    blocks: [{ exerciseType: 'tcm-tri-peri-aire', count: 1, columns: 1 }],
   },
   {
     id: 27,
-    label: 'Losange',
-    blocks: [
-      { exerciseType: 'perimetres-losange', count: 1, columns: 2 },
-      { exerciseType: 'aires-losange', count: 1, columns: 2 },
-    ],
+    label: 'Losange (périmètre et aire)',
+    blocks: [{ exerciseType: 'tcm-rhombus-peri-aire', count: 1, columns: 1 }],
   },
   {
     id: 28,
@@ -218,19 +212,13 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 37,
-    label: 'Trapèze',
-    blocks: [
-      { exerciseType: 'perimetres-trapeze', count: 1, columns: 2 },
-      { exerciseType: 'aires-trapeze', count: 1, columns: 2 },
-    ],
+    label: 'Trapèze (périmètre et aire)',
+    blocks: [{ exerciseType: 'tcm-trap-peri-aire', count: 1, columns: 1 }],
   },
   {
     id: 38,
-    label: 'Cercle',
-    blocks: [
-      { exerciseType: 'perimetres-cercle', count: 1, columns: 2 },
-      { exerciseType: 'aires-disque', count: 1, columns: 2 },
-    ],
+    label: 'Cercle (périmètre et aire)',
+    blocks: [{ exerciseType: 'tcm-circle-peri-aire', count: 1, columns: 1 }],
   },
 ]
 

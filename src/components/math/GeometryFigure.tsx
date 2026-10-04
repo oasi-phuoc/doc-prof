@@ -31,18 +31,21 @@ function L({
   children,
   anchor = 'middle',
   rotate,
+  baseline,
 }: {
   x: number
   y: number
   children: ReactNode
   anchor?: 'start' | 'middle' | 'end'
   rotate?: number
+  baseline?: 'auto' | 'middle' | 'hanging'
 }) {
   return (
     <text
       x={x}
       y={y}
       textAnchor={anchor}
+      dominantBaseline={baseline}
       className="dim-label"
       fill="currentColor"
       fillOpacity={1}
@@ -54,10 +57,52 @@ function L({
   )
 }
 
+/** Crochet de hauteur à droite (style placement soutien-scolaire). */
+function HeightBracket({
+  shapeRightX,
+  yTop,
+  yBot,
+  bracketX,
+  label,
+}: {
+  shapeRightX: number
+  yTop: number
+  yBot: number
+  bracketX: number
+  label: string
+}) {
+  const tick = 5
+  return (
+    <g fill="none" stroke="currentColor" strokeOpacity={0.85}>
+      <line
+        x1={shapeRightX}
+        y1={yBot}
+        x2={bracketX - 2}
+        y2={yBot}
+        strokeWidth={1}
+        strokeDasharray="4 3"
+      />
+      <line
+        x1={shapeRightX}
+        y1={yTop}
+        x2={bracketX - 2}
+        y2={yTop}
+        strokeWidth={1}
+        strokeDasharray="4 3"
+      />
+      <line x1={bracketX} y1={yTop} x2={bracketX} y2={yBot} strokeWidth={1.5} />
+      <line x1={bracketX - tick} y1={yTop} x2={bracketX + tick} y2={yTop} strokeWidth={1.5} />
+      <line x1={bracketX - tick} y1={yBot} x2={bracketX + tick} y2={yBot} strokeWidth={1.5} />
+      <L x={bracketX + tick + 4} y={(yTop + yBot) / 2} anchor="start" baseline="middle">
+        {label}
+      </L>
+    </g>
+  )
+}
+
 /**
- * Figures cotées — géométrie et placement des labels calqués sur
- * soutien-scolaire G2 (périmètre), G3 (aire), G5 (volume),
- * recalculés en SVG React, lisibles en N&B.
+ * Figures cotées — géométrie calquée sur soutien-scolaire
+ * (placement Ex. 25–27 / 37–38 + G2/G3), lisibles en N&B.
  */
 export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDims }) {
   if (!type || !ALL.includes(type)) return null
@@ -67,10 +112,35 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
   const hasHeight = d.height != null
   const forArea = hasHeight || (type === 'triangle' && d.base != null && d.a == null)
 
+  /** Styles placement TCM : toutes les cotes utiles sur une figure. */
+  const paraPlacement = type === 'parallelogram' && d.base != null && d.side != null && d.height != null
+  const triPlacement =
+    type === 'triangle' && d.a != null && d.b != null && d.c != null && d.height != null
+  const rhombusPlacement = type === 'rhombus' && d.side != null && d.d1 != null && d.d2 != null
+  const trapPlacement =
+    type === 'trapezoid' &&
+    d.top != null &&
+    d.bottom != null &&
+    (d.c != null || d.side != null) &&
+    d.height != null
+  const circleDiameter = type === 'circle' && (d.diameter != null || (d.length != null && d.radius == null))
+
+  const viewBox = paraPlacement
+    ? '0 0 350 145'
+    : triPlacement
+      ? '0 0 295 145'
+      : rhombusPlacement
+        ? '0 0 330 178'
+        : trapPlacement
+          ? '0 0 360 145'
+          : circleDiameter
+            ? '0 0 180 140'
+            : '0 0 260 190'
+
   return (
     <svg
       className="geometry-figure cotee"
-      viewBox="0 0 260 190"
+      viewBox={viewBox}
       role="img"
       aria-label="Figure géométrique"
     >
@@ -102,7 +172,83 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           </>
         )}
 
-        {type === 'triangle' && kind === 'right' && (
+        {paraPlacement && (
+          <>
+            {/* Coords placement soutien Ex. 25 */}
+            <polygon points="76,118 216,118 248,38 108,38" />
+            <L x={(108 + 248) / 2} y={30}>
+              {fmt(d.base!)} {unit}
+            </L>
+            <L x={66} y={(118 + 38) / 2} anchor="end" baseline="middle">
+              {fmt(d.side!)} {unit}
+            </L>
+            <HeightBracket
+              shapeRightX={248}
+              yTop={38}
+              yBot={118}
+              bracketX={286}
+              label={`h = ${fmt(d.height!)} ${unit}`}
+            />
+          </>
+        )}
+
+        {type === 'parallelogram' && !paraPlacement && (
+          <>
+            <polygon points="70,40 220,40 185,145 35,145" />
+            {hasHeight && (
+              <line
+                x1="220"
+                y1="40"
+                x2="220"
+                y2="145"
+                fill="none"
+                strokeDasharray="5 4"
+                strokeWidth="1.4"
+                strokeOpacity="0.85"
+              />
+            )}
+            {(d.base != null || d.length != null) && (
+              <L x={110} y={168}>
+                {fmt(d.base ?? d.length!)} {unit}
+              </L>
+            )}
+            {(d.height != null || d.ask === 'height') && (
+              <L x={230} y={96} anchor="start">
+                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
+              </L>
+            )}
+            {(d.side != null || d.a != null || d.ask === 'side') && (
+              <L x={42} y={92} anchor="end">
+                {d.ask === 'side' ? '?' : `${fmt(d.side ?? d.a!)} ${unit}`}
+              </L>
+            )}
+          </>
+        )}
+
+        {triPlacement && (
+          <>
+            {/* Coords placement soutien Ex. 26 — scalène + a / b / c / h */}
+            <polygon points="72,28 22,122 185,122" />
+            <L x={(22 + 185) / 2} y={136}>
+              a = {fmt(d.a!)} {unit}
+            </L>
+            <L x={(72 + 185) / 2 + 8} y={(28 + 122) / 2 - 4} anchor="start">
+              b = {fmt(d.b!)} {unit}
+            </L>
+            <L x={(72 + 22) / 2 - 8} y={(28 + 122) / 2 - 4} anchor="end">
+              c = {fmt(d.c!)} {unit}
+            </L>
+            <HeightBracket
+              shapeRightX={185}
+              yTop={28}
+              yBot={122}
+              bracketX={215}
+              label={`h = ${fmt(d.height!)} ${unit}`}
+            />
+          </>
+        )}
+
+        {type === 'triangle' && !triPlacement && kind === 'right' && (
           <>
             <polygon points="48,152 210,152 48,42" />
             <polyline points="48,136 64,136 64,152" fill="none" strokeWidth="1.6" />
@@ -147,7 +293,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           </>
         )}
 
-        {type === 'triangle' && kind === 'equilateral' && (
+        {type === 'triangle' && !triPlacement && kind === 'equilateral' && (
           <>
             <polygon points="130,32 220,152 40,152" />
             {forArea && (d.base != null || d.side != null) && d.height != null ? (
@@ -187,7 +333,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           </>
         )}
 
-        {type === 'triangle' && kind === 'isosceles' && (
+        {type === 'triangle' && !triPlacement && kind === 'isosceles' && (
           <>
             <polygon points="130,28 235,152 25,152" />
             {forArea && d.base != null && d.height != null ? (
@@ -231,89 +377,81 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           </>
         )}
 
-        {type === 'triangle' && (kind === 'scalene' || !['right', 'equilateral', 'isosceles'].includes(kind)) && (
-          <>
-            <polygon points="135,28 246,152 42,152" />
-            {forArea && d.base != null && (d.height != null || d.ask === 'height') ? (
-              <>
-                <line
-                  x1="142"
-                  y1="28"
-                  x2="142"
-                  y2="152"
-                  fill="none"
-                  strokeDasharray="5 4"
-                  strokeWidth="1.4"
-                  strokeOpacity="0.85"
-                />
-                <L x={144} y={172}>
-                  {fmt(d.base)} {unit}
-                </L>
-                <L x={152} y={100} anchor="start">
-                  {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
-                </L>
-                {d.side != null && (
-                  <L x={72} y={92} anchor="end">
-                    {fmt(d.side)} {unit}
-                  </L>
-                )}
-              </>
-            ) : (
-              <>
-                {d.a != null && (
-                  <L x={68} y={82} anchor="middle">
-                    {fmt(d.a)} {unit}
-                  </L>
-                )}
-                {d.b != null && (
-                  <L x={228} y={90} anchor="start">
-                    {fmt(d.b)} {unit}
-                  </L>
-                )}
-                {(d.c != null || d.ask === 'c') && (
+        {type === 'triangle' &&
+          !triPlacement &&
+          (kind === 'scalene' || !['right', 'equilateral', 'isosceles'].includes(kind)) && (
+            <>
+              <polygon points="135,28 246,152 42,152" />
+              {forArea && d.base != null && (d.height != null || d.ask === 'height') ? (
+                <>
+                  <line
+                    x1="142"
+                    y1="28"
+                    x2="142"
+                    y2="152"
+                    fill="none"
+                    strokeDasharray="5 4"
+                    strokeWidth="1.4"
+                    strokeOpacity="0.85"
+                  />
                   <L x={144} y={172}>
-                    {d.ask === 'c' ? '?' : `${fmt(d.c!)} ${unit}`}
+                    {fmt(d.base)} {unit}
                   </L>
-                )}
-              </>
-            )}
-          </>
-        )}
+                  <L x={152} y={100} anchor="start">
+                    {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
+                  </L>
+                  {d.side != null && (
+                    <L x={72} y={92} anchor="end">
+                      {fmt(d.side)} {unit}
+                    </L>
+                  )}
+                </>
+              ) : (
+                <>
+                  {d.a != null && (
+                    <L x={68} y={82} anchor="middle">
+                      {fmt(d.a)} {unit}
+                    </L>
+                  )}
+                  {d.b != null && (
+                    <L x={228} y={90} anchor="start">
+                      {fmt(d.b)} {unit}
+                    </L>
+                  )}
+                  {(d.c != null || d.ask === 'c') && (
+                    <L x={144} y={172}>
+                      {d.ask === 'c' ? '?' : `${fmt(d.c!)} ${unit}`}
+                    </L>
+                  )}
+                </>
+              )}
+            </>
+          )}
 
-        {type === 'parallelogram' && (
+        {trapPlacement && (
           <>
-            <polygon points="70,40 220,40 185,145 35,145" />
-            {hasHeight && (
-              <line
-                x1="220"
-                y1="40"
-                x2="220"
-                y2="145"
-                fill="none"
-                strokeDasharray="5 4"
-                strokeWidth="1.4"
-                strokeOpacity="0.85"
-              />
-            )}
-            {(d.base != null || d.length != null) && (
-              <L x={110} y={168}>
-                {fmt(d.base ?? d.length!)} {unit}
-              </L>
-            )}
-            {(d.height != null || d.ask === 'height') && (
-              <L x={230} y={96} anchor="start">
-                {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
-              </L>
-            )}
-            {(d.side != null || d.a != null || d.ask === 'side') && (
-              <L x={42} y={92} anchor="end">
-                {d.ask === 'side' ? '?' : `${fmt(d.side ?? d.a!)} ${unit}`}
-              </L>
-            )}
+            {/* Coords placement soutien Ex. 37 — a / b / c / h */}
+            <polygon points="92,32 202,32 244,120 54,120" />
+            <L x={(92 + 202) / 2} y={25}>
+              a = {fmt(d.top!)} {unit}
+            </L>
+            <L x={(54 + 244) / 2} y={134}>
+              b = {fmt(d.bottom!)} {unit}
+            </L>
+            <L x={(54 + 92) / 2 - 8} y={(120 + 32) / 2} anchor="end" baseline="middle">
+              c = {fmt(d.c ?? d.side!)} {unit}
+            </L>
+            <HeightBracket
+              shapeRightX={244}
+              yTop={32}
+              yBot={120}
+              bracketX={270}
+              label={`h = ${fmt(d.height!)} ${unit}`}
+            />
           </>
         )}
 
-        {type === 'trapezoid' && (
+        {type === 'trapezoid' && !trapPlacement && (
           <>
             <polygon
               points={
@@ -367,30 +505,39 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           </>
         )}
 
-        {type === 'circle' && (
+        {rhombusPlacement && (
           <>
-            <circle cx="130" cy="88" r="58" />
-            <line x1="130" y1="88" x2="188" y2="88" fill="none" strokeWidth="2" />
-            <line
-              x1="130"
-              y1="30"
-              x2="130"
-              y2="146"
-              fill="none"
-              strokeWidth="1.5"
-              strokeDasharray="5 4"
-              strokeOpacity="0.7"
-            />
-            <circle cx="130" cy="88" r="2.4" fillOpacity="1" stroke="none" />
-            {(d.radius != null || d.ask === 'radius') && (
-              <L x={130} y={172}>
-                {d.ask === 'radius' ? 'r = ?' : `r = ${fmt(d.radius!)} ${unit}`}
-              </L>
-            )}
+            {/* Coords placement soutien Ex. 27 — c / d₁ / d₂ */}
+            <polygon points="125,21 203,73 125,125 47,73" />
+            <L x={(125 + 47) / 2 - 12} y={(21 + 73) / 2} anchor="end" baseline="middle">
+              c = {fmt(d.side!)} {unit}
+            </L>
+            {/* Bracket d₂ (vertical, droite) */}
+            <g fill="none" stroke="currentColor" strokeOpacity={0.85}>
+              <line x1={203} y1={21} x2={233} y2={21} strokeWidth={1} strokeDasharray="4 3" />
+              <line x1={203} y1={125} x2={233} y2={125} strokeWidth={1} strokeDasharray="4 3" />
+              <line x1={235} y1={21} x2={235} y2={125} strokeWidth={1.5} />
+              <line x1={230} y1={21} x2={240} y2={21} strokeWidth={1.5} />
+              <line x1={230} y1={125} x2={240} y2={125} strokeWidth={1.5} />
+            </g>
+            <L x={244} y={73} anchor="start" baseline="middle">
+              d₂ = {fmt(d.d2!)} {unit}
+            </L>
+            {/* Bracket d₁ (horizontal, bas) */}
+            <g fill="none" stroke="currentColor" strokeOpacity={0.85}>
+              <line x1={47} y1={75} x2={47} y2={146} strokeWidth={1} strokeDasharray="4 3" />
+              <line x1={203} y1={75} x2={203} y2={146} strokeWidth={1} strokeDasharray="4 3" />
+              <line x1={47} y1={148} x2={203} y2={148} strokeWidth={1.5} />
+              <line x1={47} y1={143} x2={47} y2={153} strokeWidth={1.5} />
+              <line x1={203} y1={143} x2={203} y2={153} strokeWidth={1.5} />
+            </g>
+            <L x={125} y={165}>
+              d₁ = {fmt(d.d1!)} {unit}
+            </L>
           </>
         )}
 
-        {type === 'rhombus' && (
+        {type === 'rhombus' && !rhombusPlacement && (
           <>
             <polygon points="130,28 200,95 130,162 60,95" />
             {hasHeight && (
@@ -413,6 +560,41 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             {(d.height != null || d.ask === 'height') && (
               <L x={210} y={92} anchor="start">
                 {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
+              </L>
+            )}
+          </>
+        )}
+
+        {circleDiameter && (
+          <>
+            {/* Placement soutien Ex. 38 — diamètre */}
+            <circle cx="90" cy="68" r="52" />
+            <line x1={90 - 52} y1={68} x2={90 + 52} y2={68} fill="none" strokeWidth={1.5} />
+            <circle cx="90" cy="68" r="2.5" fillOpacity={1} stroke="none" />
+            <L x={90} y={82}>
+              d = {fmt(d.diameter ?? d.length!)} {unit}
+            </L>
+          </>
+        )}
+
+        {type === 'circle' && !circleDiameter && (
+          <>
+            <circle cx="130" cy="88" r="58" />
+            <line x1="130" y1="88" x2="188" y2="88" fill="none" strokeWidth="2" />
+            <line
+              x1="130"
+              y1="30"
+              x2="130"
+              y2="146"
+              fill="none"
+              strokeWidth="1.5"
+              strokeDasharray="5 4"
+              strokeOpacity="0.7"
+            />
+            <circle cx="130" cy="88" r="2.4" fillOpacity="1" stroke="none" />
+            {(d.radius != null || d.ask === 'radius') && (
+              <L x={130} y={172}>
+                {d.ask === 'radius' ? 'r = ?' : `r = ${fmt(d.radius!)} ${unit}`}
               </L>
             )}
           </>

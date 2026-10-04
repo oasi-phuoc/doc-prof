@@ -271,11 +271,16 @@ export type FigureDims = {
   height?: number
   base?: number
   radius?: number
+  /** Diamètre (cercle TCM / placement). */
+  diameter?: number
   top?: number
   bottom?: number
   a?: number
   b?: number
   c?: number
+  /** Diagonales du losange (placement / TCM). */
+  d1?: number
+  d2?: number
   unit?: string
   triangleKind?: 'equilateral' | 'isosceles' | 'scalene' | 'right'
   trapezoidKind?: 'rectangle' | 'isosceles' | 'scalene'

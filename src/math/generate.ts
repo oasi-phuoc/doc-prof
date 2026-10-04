@@ -392,22 +392,129 @@ function generateTcmRectPeriAire(rng: Rng): MathItem {
   }
 }
 
-/** TCM ex. 25 : parallélogramme — base, côté et hauteur sur la même figure. */
-function generateTcmParaPeriAire(rng: Rng): MathItem {
-  const base = int(rng, 4, 18)
-  let side = int(rng, 3, 16)
-  if (side === base) side = Math.max(3, side - 1)
-  let height = int(rng, 2, Math.max(2, side - 1))
-  if (height >= side) height = Math.max(2, side - 1)
-  const peri = 2 * (base + side)
-  const area = base * height
+/** Décimal à 1 chiffre après la virgule (placement soutien). */
+function tcmOneDecimal(rng: Rng, loTenths: number, hiTenths: number): number {
+  let t = int(rng, loTenths, hiTenths)
+  while (t % 10 === 0) t = int(rng, loTenths, hiTenths)
+  return t / 10
+}
+
+function tcmDualGeo(
+  figure: MathItem['figure'],
+  dims: NonNullable<MathItem['dims']>,
+  periExpr: string,
+  areaExpr: string,
+  peri: number,
+  area: number,
+): MathItem {
   return {
     layout: 'geo',
-    figure: 'parallelogram',
-    dims: { base, side, height, unit: 'cm' },
+    figure,
+    dims: { ...dims, unit: dims.unit ?? 'cm' },
     geoDualPads: true,
-    calcAnswer: `2 × (${fmt(base)} + ${fmt(side)})`,
-    calcAnswerSecondary: `${fmt(base)} × ${fmt(height)}`,
+    calcAnswer: periExpr,
+    calcAnswerSecondary: areaExpr,
+    propertyLines: [
+      { label: 'Périmètre', answer: `${fmt(peri)} cm` },
+      { label: 'Aire', answer: `${fmt(area)} cm²` },
+    ],
+    answer: `Périmètre = ${fmt(peri)} cm ; Aire = ${fmt(area)} cm²`,
+  }
+}
+
+/** TCM ex. 25 : parallélogramme — base, côté et hauteur (SVG placement). */
+function generateTcmParaPeriAire(rng: Rng): MathItem {
+  const base = int(rng, 8, 16)
+  const side = tcmOneDecimal(rng, 40, 100)
+  const height = int(rng, 3, Math.max(3, Math.floor(side - 1)))
+  const peri = Math.round(2 * (base + side) * 10) / 10
+  const area = base * height
+  return tcmDualGeo(
+    'parallelogram',
+    { base, side, height },
+    `2 × (${fmt(base)} + ${fmt(side)})`,
+    `${fmt(base)} × ${fmt(height)}`,
+    peri,
+    area,
+  )
+}
+
+/** TCM ex. 26 : triangle quelconque — a, b, c et h (SVG placement). */
+function generateTcmTriPeriAire(rng: Rng): MathItem {
+  const a = int(rng, 8, 14)
+  let b = int(rng, 6, 12)
+  while (b === a) b = int(rng, 6, 12)
+  let c = tcmOneDecimal(rng, 50, 110)
+  while (c === a || c === b) c = tcmOneDecimal(rng, 50, 110)
+  let h = int(rng, 4, 8)
+  if ((a * h) % 2 !== 0) h += 1
+  const peri = Math.round((a + b + c) * 10) / 10
+  const area = (a * h) / 2
+  return tcmDualGeo(
+    'triangle',
+    { a, b, c, height: h, triangleKind: 'scalene' },
+    `${fmt(a)} + ${fmt(b)} + ${fmt(c)}`,
+    `(${fmt(a)} × ${fmt(h)}) ÷ 2`,
+    peri,
+    area,
+  )
+}
+
+/** TCM ex. 27 : losange — côté c et diagonales d₁, d₂ (SVG placement). */
+function generateTcmRhombusPeriAire(rng: Rng): MathItem {
+  const triples = [
+    [3, 4, 5],
+    [5, 12, 13],
+  ] as const
+  const [pa, pb, pc] = pick(rng, [...triples])
+  const k = int(rng, 1, 2)
+  const d1 = pa * k * 2
+  const d2 = pb * k * 2
+  const side = pc * k + int(rng, 1, 9) / 10
+  const peri = Math.round(4 * side * 10) / 10
+  const area = (d1 * d2) / 2
+  return tcmDualGeo(
+    'rhombus',
+    { side, d1, d2 },
+    `4 × ${fmt(side)}`,
+    `(${fmt(d1)} × ${fmt(d2)}) ÷ 2`,
+    peri,
+    area,
+  )
+}
+
+/** TCM ex. 37 : trapèze isocèle — a, b, c et h (SVG placement). */
+function generateTcmTrapPeriAire(rng: Rng): MathItem {
+  const top = int(rng, 4, 10)
+  const bottom = top + int(rng, 2, 6)
+  const height = int(rng, 3, 8)
+  const leg = tcmOneDecimal(rng, 30, 80)
+  const peri = Math.round((top + bottom + 2 * leg) * 10) / 10
+  const area = ((top + bottom) * height) / 2
+  return tcmDualGeo(
+    'trapezoid',
+    { top, bottom, c: leg, height, trapezoidKind: 'isosceles' },
+    `${fmt(top)} + ${fmt(bottom)} + 2 × ${fmt(leg)}`,
+    `(${fmt(top)} + ${fmt(bottom)}) × ${fmt(height)} ÷ 2`,
+    peri,
+    area,
+  )
+}
+
+/** TCM ex. 38 : cercle — diamètre, π = 3,14 (SVG placement). */
+function generateTcmCirclePeriAire(rng: Rng): MathItem {
+  const diameter = pick(rng, [3, 5, 7, 9, 11, 13, 15, 17])
+  const r = diameter / 2
+  const pi = 3.14
+  const peri = Math.round(pi * diameter * 100) / 100
+  const area = Math.round(pi * r * r * 1000) / 1000
+  return {
+    layout: 'geo',
+    figure: 'circle',
+    dims: { diameter, unit: 'cm' },
+    geoDualPads: true,
+    calcAnswer: `3,14 × ${fmt(diameter)}`,
+    calcAnswerSecondary: `3,14 × ${fmt(r)}²`,
     propertyLines: [
       { label: 'Périmètre', answer: `${fmt(peri)} cm` },
       { label: 'Aire', answer: `${fmt(area)} cm²` },
@@ -1192,6 +1299,18 @@ function generateItems(
   if (typeId === 'tcm-para-peri-aire') {
     return [generateTcmParaPeriAire(rng)]
   }
+  if (typeId === 'tcm-tri-peri-aire') {
+    return [generateTcmTriPeriAire(rng)]
+  }
+  if (typeId === 'tcm-rhombus-peri-aire') {
+    return [generateTcmRhombusPeriAire(rng)]
+  }
+  if (typeId === 'tcm-trap-peri-aire') {
+    return [generateTcmTrapPeriAire(rng)]
+  }
+  if (typeId === 'tcm-circle-peri-aire') {
+    return [generateTcmCirclePeriAire(rng)]
+  }
   if (typeId === 'tcm-suites-6') {
     return generateTcmSuites6Batch(rng).slice(0, Math.max(1, count))
   }
@@ -1298,6 +1417,18 @@ function generateOne(
     }
     case 'tcm-para-peri-aire': {
       return generateTcmParaPeriAire(rng)
+    }
+    case 'tcm-tri-peri-aire': {
+      return generateTcmTriPeriAire(rng)
+    }
+    case 'tcm-rhombus-peri-aire': {
+      return generateTcmRhombusPeriAire(rng)
+    }
+    case 'tcm-trap-peri-aire': {
+      return generateTcmTrapPeriAire(rng)
+    }
+    case 'tcm-circle-peri-aire': {
+      return generateTcmCirclePeriAire(rng)
     }
     case 'tcm-suites-6': {
       return generateTcmSuites6Batch(rng)[0]!
