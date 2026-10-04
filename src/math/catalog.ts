@@ -380,8 +380,8 @@ export const exerciseTypes: ExerciseType[] = [
   t(
     'tcm-proportion-kg',
     'tcm-info',
-    'Règle de trois (kg)',
-    'Deux questions du type « n kg → p CHF » / « m kg = … » (25 modèles ; nombres 10–99 ; masses non divisibles entre elles).',
+    'Pourcentage et règle de trois',
+    '1) p % de n (p ∈ {10,20,25,40,60,75,80}, n 101–999 non multiple de 10) ; 2) a → b / c = … (a,c 3–9, b 11–99, sans multiples entre eux).',
     'Complétez.',
     'texte',
     { preferredColumns: 1 },
