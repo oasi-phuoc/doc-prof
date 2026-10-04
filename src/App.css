@@ -846,8 +846,27 @@ html,body,#root{
   /* Centre le trait de fraction sur la ligne de texte (pas la ligne de base du dénominateur). */
   position:relative;top:0.05em
 }
-.fraction-num,.fraction-den{padding:0 3px;font-size:13px;line-height:1.15}
-.fraction-bar{display:block;width:100%;min-width:1.1em;height:0;border-top:1.5px solid #111;margin:0.04em 0}
+.fraction-num,.fraction-den{
+  padding:0 4px;font-size:13pt;line-height:1.2;font-weight:700;
+  min-height:1.15em;box-sizing:border-box
+}
+/* Barre de fraction = couleur du thème (pas de trait de réponse séparé). */
+.fraction-bar{
+  display:block;width:100%;min-width:1.35em;height:0;
+  border-top:2px solid var(--purple);margin:0.08em 0
+}
+/* Case d’écriture num/den : pas de souligné — la barre centrale suffit. */
+.frac-write-slot{
+  display:inline-block;min-width:1.6em;min-height:1.15em;height:1.15em;
+  margin:0;padding:0 2px;border:0;background:transparent;
+  vertical-align:middle;text-align:center;box-sizing:border-box;
+  font-size:13pt;font-weight:700;line-height:1.15;color:inherit
+}
+.frac-write-slot-inline{min-width:2.2em;border-bottom:1.5px solid var(--purple)}
+.fraction-answer-blank{
+  min-width:2.2em;padding:0 2px
+}
+.fraction-answer-blank .frac-write-slot{min-width:1.8em}
 
 .problem-block{
   display:flex;flex-direction:column;gap:8px;width:100%;min-width:0;
@@ -1324,8 +1343,10 @@ html,body,#root{
 .alg-frac{align-self:center;padding-inline:2px}
 .alg-frac .fraction-stack{top:0}
 .eq-corr-lhs .fraction-stack,.eq-corr-rhs .fraction-stack,.eq-corr-body .fraction-stack{vertical-align:middle}
+/* Anciens trous compact dans une fraction : plus de souligné (barre thème). */
 .fraction-stack .answer-line-field.compact{
-  min-width:1.4em;height:1.1em;margin:0;padding:0 2px;border-bottom-width:1px
+  min-width:1.6em;min-height:1.15em;height:1.15em;margin:0;padding:0 2px;
+  border-bottom:none;font-size:13pt
 }
 .alg-letter sup{font-style:normal;font-size:0.7em}
 .alg-op,.alg-eq{font-weight:700;min-width:1.2ch}
