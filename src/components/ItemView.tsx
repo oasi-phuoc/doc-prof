@@ -1547,6 +1547,10 @@ function FractionShapeBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
         ? preColorFlat(fs.n, fs.d)
         : new Set(Array.from({ length: fs.n }, (_, k) => k))
       : new Set<number>()
+  // Colorier (20) : pas de remplissage pour l’élève ; corrigé plein.
+  // Lire (21) : remplissage clair (pas aussi foncé que la bordure).
+  const fillVariant =
+    fs.mode === 'color' ? (show ? 'solid' : 'none') : 'light'
   const scale = fs.multi ? computeScale(fs.kind, fs.copies) * 0.85 : 0.85
   return (
     <div className="frac-shape-card" aria-label={`Fraction ${fs.n}/${fs.d}`}>
@@ -1568,9 +1572,22 @@ function FractionShapeBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
         </div>
         <div className="frac-shape-figure">
           {fs.multi ? (
-            <ShapesRow kind={fs.kind} d={fs.d} copies={fs.copies} colored={colored} scale={scale} />
+            <ShapesRow
+              kind={fs.kind}
+              d={fs.d}
+              copies={fs.copies}
+              colored={colored}
+              scale={scale}
+              fillVariant={fillVariant}
+            />
           ) : (
-            <FractionShape kind={fs.kind} d={fs.d} colored={colored} scale={scale} />
+            <FractionShape
+              kind={fs.kind}
+              d={fs.d}
+              colored={colored}
+              scale={scale}
+              fillVariant={fillVariant}
+            />
           )}
         </div>
       </div>

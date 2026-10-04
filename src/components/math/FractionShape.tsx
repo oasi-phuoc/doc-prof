@@ -1,12 +1,16 @@
 /** Couleurs SVG fractions (portées depuis soutien-scolaire A4ModuleContent). */
 const FRACTION_FILL = 'var(--purple)'
-const FRACTION_FILL_LIGHT = 'color-mix(in srgb, var(--purple) 12%, #fff)'
+/** Remplissage clair (ex. 21) : nettement plus pâle que la bordure. */
+const FRACTION_FILL_LIGHT = 'color-mix(in srgb, var(--purple) 18%, #fff)'
 const FRACTION_STROKE = 'var(--purple)'
 const FRACTION_STROKE_LIGHT = 'color-mix(in srgb, var(--purple) 45%, #fff)'
 
 export type ShapeKind = "rect" | "grid" | "square" | "triangle" | "circle" | "semicircle" | "quartercircle" | "hexagon";
 
-export function FractionShape({ kind, d, colored, onToggle, scale = 1, missSet, extraSet }: {
+/** solid = corrigé colorier ; light = lire (clair) ; none = élève colorier (pas de remplissage). */
+export type FractionFillVariant = 'solid' | 'light' | 'none'
+
+export function FractionShape({ kind, d, colored, onToggle, scale = 1, missSet, extraSet, fillVariant = 'solid' }: {
   kind: ShapeKind;
   d: number;
   colored: Set<number>;
@@ -14,14 +18,19 @@ export function FractionShape({ kind, d, colored, onToggle, scale = 1, missSet, 
   scale?: number;
   missSet?: Set<number>;
   extraSet?: Set<number>;
+  fillVariant?: FractionFillVariant;
 }) {
   const toggle = onToggle;
   const s = scale;
 
   function cellFill(i: number): string {
-    if (colored.has(i)) return FRACTION_FILL;
     if (missSet?.has(i)) return "#fbbf24";
-    return FRACTION_FILL_LIGHT;
+    if (fillVariant === 'none') return '#fff'
+    if (colored.has(i)) {
+      return fillVariant === 'light' ? FRACTION_FILL_LIGHT : FRACTION_FILL
+    }
+    // Parties non colorées : blanc (pas de voile thème).
+    return '#fff'
   }
 
   function xMark(cx: number, cy: number, r: number, i: number) {
@@ -43,7 +52,7 @@ export function FractionShape({ kind, d, colored, onToggle, scale = 1, missSet, 
           const r = Math.floor(i / cols), c = i % cols;
           return (
             <rect key={i} x={c * cellW} y={r * cellH} width={cellW} height={cellH}
-              fill={colored.has(i) ? FRACTION_FILL : FRACTION_FILL_LIGHT}
+              fill={cellFill(i)}
               stroke={FRACTION_STROKE_LIGHT} strokeWidth={0.5}
               style={toggle ? { cursor: "pointer" } : {}}
               onClick={toggle ? () => toggle(i) : undefined}
@@ -381,13 +390,14 @@ export function preColorFlat(n: number, d: number): Set<number> {
   return s;
 }
 
-export function ShapesRow({ kind, d, copies, colored, onToggle, scale, missSet, extraSet }: {
+export function ShapesRow({ kind, d, copies, colored, onToggle, scale, missSet, extraSet, fillVariant = 'solid' }: {
   kind: ShapeKind; d: number; copies: number;
   colored: Set<number>;
   onToggle?: (flatIdx: number) => void;
   scale?: number;
   missSet?: Set<number>;
   extraSet?: Set<number>;
+  fillVariant?: FractionFillVariant;
 }) {
   return (
     <div className="fraction-shapes-row">
@@ -396,7 +406,19 @@ export function ShapesRow({ kind, d, copies, colored, onToggle, scale, missSet, 
         const copyMissSet = missSet ? new Set(Array.from({ length: d }, (_, k) => k).filter(k => missSet.has(copy * d + k))) : undefined;
         const copyExtraSet = extraSet ? new Set(Array.from({ length: d }, (_, k) => k).filter(k => extraSet.has(copy * d + k))) : undefined;
         const handleToggle = onToggle ? (ci: number) => onToggle(copy * d + ci) : undefined;
-        return <FractionShape key={copy} kind={kind} d={d} colored={copySet} onToggle={handleToggle} scale={scale} missSet={copyMissSet} extraSet={copyExtraSet} />;
+        return (
+          <FractionShape
+            key={copy}
+            kind={kind}
+            d={d}
+            colored={copySet}
+            onToggle={handleToggle}
+            scale={scale}
+            missSet={copyMissSet}
+            extraSet={copyExtraSet}
+            fillVariant={fillVariant}
+          />
+        )
       })}
     </div>
   );
