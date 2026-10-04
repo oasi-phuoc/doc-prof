@@ -1595,7 +1595,7 @@ function parseBinaryEquation(prompt: string): {
   if (!eq) return null
   const left = eq[1]!.trim()
   if (!left) return null
-  // Opérateur binaire au niveau 0 (ignore +/− dans (+12) / (−3)).
+  // Opérateur binaire au niveau 0 (ignore +/− unaires : (+12), −3/4, × −2/5).
   let depth = 0
   let opAt = -1
   let opChar = ''
@@ -1604,12 +1604,11 @@ function parseBinaryEquation(prompt: string): {
     if (ch === '(' || ch === '[') depth++
     else if (ch === ')' || ch === ']') depth = Math.max(0, depth - 1)
     else if (depth === 0 && /[+\-−×÷]/.test(ch)) {
-      // Ne pas prendre un signe collé au chiffre suivant comme opérateur principal
-      // si précédé d’une ouverture — déjà couvert par depth. Ici : dernier op niveau 0.
-      const prev = left[i - 1]
-      const next = left[i + 1]
-      if ((ch === '+' || ch === '-' || ch === '−') && prev && /[([]/.test(prev) && next && /\d/.test(next)) {
-        continue
+      if (ch === '+' || ch === '-' || ch === '−') {
+        let j = i - 1
+        while (j >= 0 && /\s/.test(left[j]!)) j--
+        // Unaiare : début, après ouverture, ou après un autre opérateur.
+        if (j < 0 || /[([]|[+\-−×÷]/.test(left[j]!)) continue
       }
       opAt = i
       opChar = ch
@@ -1714,7 +1713,7 @@ function ParsedEquationRow({
           <FractionResultSlot answer={answer} show={show} />
         ) : (
           <span className={`answer-line-field ${show && resultBlank ? 'filled' : ''}`}>
-            {show && resultBlank ? answer : '\u00a0'}
+            {show && resultBlank ? <FractionView value={answer} /> : '\u00a0'}
           </span>
         )}
       </span>
@@ -1726,7 +1725,7 @@ function ParsedEquationRow({
 export function tokenizeAlgebra(expression: string): string[] {
   const tokens: string[] = []
   const re =
-    /√\d+|√|[A-Za-z]\/\d+|\d+\/\d+|\d+[¹²³⁴]|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()[\]]/gu
+    /√\d+|√|[-−]?[A-Za-z]\/\d+|[-−]?\d+\/[-−]?\d+|\d+[¹²³⁴]|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()[\]]/gu
   let last = 0
   for (const match of expression.matchAll(re)) {
     const start = match.index ?? 0
@@ -1751,7 +1750,7 @@ function isAlgebraOp(token: string): boolean {
 }
 
 function AlgebraToken({ token }: { token: string }) {
-  if (/^(?:[A-Za-z]|\d+)\/\d+$/.test(token)) {
+  if (/^[-−]?(?:[A-Za-z]|\d+)\/[-−]?\d+$/.test(token)) {
     return (
       <span className="alg-token alg-frac">
         <FractionView value={token} />

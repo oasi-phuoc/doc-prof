@@ -360,6 +360,15 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 2 },
   ),
   t(
+    'tcm-fractions-mixte',
+    'tcm-info',
+    'Fractions (réduire et calculer)',
+    'Réduire (avec ou sans trou), puis + − × ÷ ; multiplication et division avec au moins un relatif.',
+    'Réduisez ou calculez. Simplifiez si possible.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
+  t(
     'tcm-expressions-reduire',
     'tcm-info',
     'Réduction d’expressions',
