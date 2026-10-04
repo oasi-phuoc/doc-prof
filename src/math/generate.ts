@@ -123,6 +123,82 @@ function generateCountIcons(rng: Rng): MathItem {
   }
 }
 
+function generateTcmComparerBatch(rng: Rng, count: number): MathItem[] {
+  const n = Math.max(3, count)
+  const relations: Array<'<' | '=' | '>'> = ['=', '>', '<']
+  while (relations.length < n) {
+    relations.push(pick(rng, ['<', '=', '>'] as const))
+  }
+  const ordered = shuffle(rng, relations).slice(0, n)
+  return ordered.map((rel) => {
+    if (rel === '=') {
+      const a = int(rng, 10, 100)
+      return { layout: 'compare' as const, left: String(a), right: String(a), answer: '=' }
+    }
+    let a = int(rng, 10, 100)
+    let b = int(rng, 10, 100)
+    while (a === b) b = int(rng, 10, 100)
+    if (rel === '<') {
+      const lo = Math.min(a, b)
+      const hi = Math.max(a, b)
+      return { layout: 'compare' as const, left: String(lo), right: String(hi), answer: '<' }
+    }
+    const lo = Math.min(a, b)
+    const hi = Math.max(a, b)
+    return { layout: 'compare' as const, left: String(hi), right: String(lo), answer: '>' }
+  })
+}
+
+function generateTcmSuite(rng: Rng): MathItem {
+  const length = 5
+  const step = int(rng, 2, 10)
+  const maxStart = Math.max(1, 100 - (length - 1) * step)
+  const start = int(rng, 1, maxStart)
+  const seq = Array.from({ length }, (_, k) => start + k * step)
+  const blankCount = 2
+  const indexes = shuffle(
+    rng,
+    Array.from({ length }, (_, k) => k),
+  ).slice(0, blankCount)
+  const blanks = [...indexes].sort((a, b) => a - b)
+  return {
+    layout: 'sequence',
+    sequence: seq.map((n, k) => (blanks.includes(k) ? '□' : String(n))),
+    blankIndexes: blanks,
+    answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
+  }
+}
+
+/** 3 additions + 3 soustractions (templates résultat / trou), opérandes 10–100. */
+function generateTcmOperationsBatch(rng: Rng): MathItem[] {
+  type Kind =
+    | { op: '+'; missing: 'result' }
+    | { op: '+'; missing: 'a' }
+    | { op: '+'; missing: 'b' }
+    | { op: '−'; missing: 'result' }
+    | { op: '−'; missing: 'a' }
+    | { op: '−'; missing: 'b' }
+  const kinds: Kind[] = [
+    { op: '+', missing: 'result' },
+    { op: '+', missing: 'b' },
+    { op: '+', missing: 'a' },
+    { op: '−', missing: 'result' },
+    { op: '−', missing: 'b' },
+    { op: '−', missing: 'a' },
+  ]
+  return shuffle(rng, kinds).map((kind) => {
+    if (kind.op === '+') {
+      const a = int(rng, 10, 100)
+      const b = int(rng, 10, 100)
+      return inlineOp('+', a, b, a + b, kind.missing)
+    }
+    // Soustraction : résultat ≥ 0, opérandes dans 10–100.
+    const b = int(rng, 10, 100)
+    const a = int(rng, b, 100)
+    return inlineOp('−', a, b, a - b, kind.missing)
+  })
+}
+
 function fmt(n: number): string {
   return String(n).replace('.', ',')
 }
@@ -531,6 +607,12 @@ function generateItems(
   range?: NumberRange,
   shapes?: Figure[],
 ): MathItem[] {
+  if (typeId === 'tcm-comparer') {
+    return generateTcmComparerBatch(rng, count)
+  }
+  if (typeId === 'tcm-operations') {
+    return generateTcmOperationsBatch(rng).slice(0, Math.max(1, count))
+  }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
@@ -564,6 +646,18 @@ function generateOne(
     }
     case 'nombres-compter-formes': {
       return generateCountIcons(rng)
+    }
+    case 'tcm-comparer': {
+      // Lot complet généré dans generateItems ; repli unitaire.
+      const [item] = generateTcmComparerBatch(rng, 1)
+      return item!
+    }
+    case 'tcm-suite': {
+      return generateTcmSuite(rng)
+    }
+    case 'tcm-operations': {
+      const [item] = generateTcmOperationsBatch(rng)
+      return item!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
@@ -1177,7 +1271,7 @@ function generateTcmConsignes(): MathItem[] {
         kind: 'list',
         title: 'Organisation du test',
         items: [
-          '38 exercices couvrant tous les niveaux de CSC jusqu’à CAP',
+          '35 exercices couvrant tous les niveaux de CSC jusqu’à CAP',
           '90 minutes pour compléter le test',
           'Score maximum : 100 points',
         ],

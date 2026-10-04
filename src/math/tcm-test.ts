@@ -1,7 +1,8 @@
 /**
  * Test de placement mathématiques (TCM) — chronologie calquée sur
- * soutien-scolaire `PLACEMENT_MATH_EXERCISES` (38 exercices).
- * Chaque étape réutilise un type déjà présent en algèbre / géométrie.
+ * soutien-scolaire `PLACEMENT_MATH_EXERCISES` (35 exercices).
+ * Chaque étape réutilise un type déjà présent en algèbre / géométrie
+ * (ou un type TCM dédié pour les premiers exercices).
  */
 import type { Difficulty, Domain, ExerciseBlock, PageConfig } from './types'
 import { exerciseTypeById } from './catalog'
@@ -37,39 +38,19 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   { id: 1, label: 'Compter les formes', blocks: [{ exerciseType: 'nombres-compter-formes', count: 2, columns: 2 }] },
   {
     id: 2,
-    label: 'Comparer (11–99)',
-    blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
+    label: 'Comparer (10–100)',
+    blocks: [{ exerciseType: 'tcm-comparer', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
   },
-  { id: 3, label: 'Suites numériques', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 1 }] },
+  { id: 3, label: 'Suites numériques', blocks: [{ exerciseType: 'tcm-suite', count: 2, columns: 2 }] },
   {
     id: 4,
     label: 'Additions et soustractions',
-    blocks: [
-      { exerciseType: 'addition-ligne', count: 2, columns: 2 },
-      { exerciseType: 'soustraction-ligne', count: 2, columns: 2 },
-    ],
+    blocks: [{ exerciseType: 'tcm-operations', count: 6, columns: 2, pointsPerQuestion: 1 }],
   },
+  { id: 5, label: 'Comparer (101–999)', blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2 }] },
+  { id: 6, label: 'Grandes suites', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 2 }] },
   {
-    id: 5,
-    label: 'Opérande manquant',
-    blocks: [
-      { exerciseType: 'addition-trou', count: 2, columns: 2 },
-      { exerciseType: 'soustraction-trou', count: 2, columns: 2 },
-    ],
-  },
-  {
-    id: 6,
-    label: 'Calcul en colonnes (99–999)',
-    blocks: [
-      { exerciseType: 'addition-colonne', count: 1, columns: 2 },
-      { exerciseType: 'soustraction-colonne', count: 1, columns: 2 },
-    ],
-  },
-  { id: 7, label: 'Dizaines et unités', blocks: [{ exerciseType: 'nombres-position', count: 2, columns: 2 }] },
-  { id: 8, label: 'Comparer (101–999)', blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2 }] },
-  { id: 9, label: 'Grandes suites', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 2 }] },
-  {
-    id: 10,
+    id: 7,
     label: 'Calcul mixte',
     blocks: [
       { exerciseType: 'addition-ligne', count: 2, columns: 2 },
@@ -77,9 +58,9 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
       { exerciseType: 'multiplication-ligne', count: 2, columns: 2 },
     ],
   },
-  { id: 11, label: 'Décomposition', blocks: [{ exerciseType: 'nombres-decompose', count: 2, columns: 1 }] },
+  { id: 8, label: 'Décomposition', blocks: [{ exerciseType: 'nombres-decompose', count: 2, columns: 1 }] },
   {
-    id: 12,
+    id: 9,
     label: 'Colonnes (1000–9999)',
     blocks: [
       { exerciseType: 'addition-colonne', count: 1, columns: 2 },
@@ -87,23 +68,23 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 13,
+    id: 10,
     label: 'Multiplication en colonnes',
     blocks: [{ exerciseType: 'multiplication-colonne', count: 2, columns: 2 }],
   },
-  { id: 14, label: 'Division en colonnes', blocks: [{ exerciseType: 'division-colonne', count: 2, columns: 1 }] },
+  { id: 11, label: 'Division en colonnes', blocks: [{ exerciseType: 'division-colonne', count: 2, columns: 1 }] },
   {
-    id: 15,
+    id: 12,
     label: 'Rectangle',
     blocks: [
       { exerciseType: 'perimetres-rectangle', count: 1, columns: 2 },
       { exerciseType: 'aires-rectangle', count: 1, columns: 2 },
     ],
   },
-  { id: 16, label: 'Suites (grands nombres)', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 1 }] },
-  { id: 17, label: 'Trier des nombres', blocks: [{ exerciseType: 'nombres-ranger', count: 2, columns: 1 }] },
+  { id: 13, label: 'Suites (grands nombres)', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 1 }] },
+  { id: 14, label: 'Trier des nombres', blocks: [{ exerciseType: 'nombres-ranger', count: 2, columns: 1 }] },
   {
-    id: 18,
+    id: 15,
     label: 'Additions et soustractions décimales',
     blocks: [
       { exerciseType: 'decimaux-add-colonne', count: 2, columns: 2 },
@@ -111,24 +92,24 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 19,
+    id: 16,
     label: 'Multiplication décimale',
     blocks: [{ exerciseType: 'decimaux-mul-colonne', count: 2, columns: 2 }],
   },
   {
-    id: 20,
+    id: 17,
     label: 'Division décimale',
     blocks: [{ exerciseType: 'decimaux-div-colonne', count: 2, columns: 1 }],
   },
-  { id: 21, label: 'Colorier les fractions', blocks: [{ exerciseType: 'fractions-identifier', count: 4, columns: 2 }] },
-  { id: 22, label: 'Lire les fractions', blocks: [{ exerciseType: 'fractions-equivalentes', count: 4, columns: 2 }] },
+  { id: 18, label: 'Colorier les fractions', blocks: [{ exerciseType: 'fractions-identifier', count: 4, columns: 2 }] },
+  { id: 19, label: 'Lire les fractions', blocks: [{ exerciseType: 'fractions-equivalentes', count: 4, columns: 2 }] },
   {
-    id: 23,
+    id: 20,
     label: 'Conversions de longueur',
     blocks: [{ exerciseType: 'conversions-longueur', count: 8, columns: 2 }],
   },
   {
-    id: 24,
+    id: 21,
     label: 'Calculs décimaux',
     blocks: [
       { exerciseType: 'decimaux-mul-ligne', count: 4, columns: 2 },
@@ -136,7 +117,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 25,
+    id: 22,
     label: 'Parallélogramme',
     blocks: [
       { exerciseType: 'perimetres-parallelogramme', count: 1, columns: 2 },
@@ -144,7 +125,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 26,
+    id: 23,
     label: 'Triangle rectangle',
     blocks: [
       { exerciseType: 'perimetres-triangle', count: 1, columns: 2 },
@@ -152,7 +133,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 27,
+    id: 24,
     label: 'Losange',
     blocks: [
       { exerciseType: 'perimetres-losange', count: 1, columns: 2 },
@@ -160,7 +141,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 28,
+    id: 25,
     label: 'Puissances et racines',
     blocks: [
       { exerciseType: 'puissances-calcul', count: 2, columns: 2 },
@@ -168,12 +149,12 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 29,
+    id: 26,
     label: 'Priorité des opérations',
     blocks: [{ exerciseType: 'puissances-priorite', count: 4, columns: 2 }],
   },
   {
-    id: 30,
+    id: 27,
     label: 'Nombres relatifs',
     blocks: [
       { exerciseType: 'relatifs-comparer', count: 4, columns: 2 },
@@ -181,7 +162,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 31,
+    id: 28,
     label: 'Fractions',
     blocks: [
       { exerciseType: 'fractions-add', count: 4, columns: 2 },
@@ -189,7 +170,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 32,
+    id: 29,
     label: 'Pourcentages et règle de trois',
     blocks: [
       { exerciseType: 'proportion-de', count: 1, columns: 2 },
@@ -197,22 +178,22 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 33,
+    id: 30,
     label: 'Simplification algébrique',
     blocks: [{ exerciseType: 'expressions-reduire', count: 4, columns: 1 }],
   },
   {
-    id: 34,
+    id: 31,
     label: 'Évaluer des expressions',
     blocks: [{ exerciseType: 'expressions-substituer', count: 2, columns: 1 }],
   },
   {
-    id: 35,
+    id: 32,
     label: 'Résoudre des équations',
     blocks: [{ exerciseType: 'equations-simple', count: 2, columns: 2 }],
   },
   {
-    id: 36,
+    id: 33,
     label: 'Conversions d’unités',
     blocks: [
       { exerciseType: 'conversions-masse', count: 2, columns: 2 },
@@ -220,7 +201,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 37,
+    id: 34,
     label: 'Trapèze',
     blocks: [
       { exerciseType: 'perimetres-trapeze', count: 1, columns: 2 },
@@ -228,7 +209,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 38,
+    id: 35,
     label: 'Cercle',
     blocks: [
       { exerciseType: 'perimetres-cercle', count: 1, columns: 2 },
@@ -238,7 +219,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
 ]
 
 /** Étapes regroupées sur une même feuille A4 (après la page consignes). */
-const TCM_PACKED_STEP_IDS: readonly number[] = [1, 2, 3]
+const TCM_PACKED_STEP_IDS: readonly number[] = [1, 2, 3, 4]
 
 function blockFromSpec(spec: TcmBlockSpec, difficulty: Difficulty = 'moyen'): ExerciseBlock {
   const type = exerciseTypeById[spec.exerciseType]
@@ -280,7 +261,7 @@ function buildConsignesPage(): PageConfig {
   }
 }
 
-/** Feuille consignes + 38 exercices (1–3 regroupés sur une page). */
+/** Feuille consignes + 35 exercices (1–4 regroupés sur une page). */
 export function buildTcmTestPages(): PageConfig[] {
   const byId = new Map(TCM_STEPS.map((step) => [step.id, step]))
   const packed = TCM_PACKED_STEP_IDS.flatMap((id) => {

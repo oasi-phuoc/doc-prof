@@ -3254,20 +3254,26 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:#fff;
   overflow:hidden;
 }
-/* TCM / multi-exercices : cadres plus bas pour tenir avec Comparer + Suites */
+/* TCM / multi-exercices : cadres plus bas pour tenir Compter + Comparer + Suites + Ops */
 .worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-frame{
-  aspect-ratio:1 / 0.72;
-  max-height:48mm;
+  aspect-ratio:1 / 0.55;
+  max-height:34mm;
 }
-.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:4px}
-.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-caption{font-size:13px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:2px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-caption{font-size:12px;line-height:1.3}
 .worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading{
-  margin-bottom:2px
+  margin-bottom:1px
 }
-.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading h3{font-size:15px}
-.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading p{font-size:12.5px;line-height:1.35}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading h3{font-size:14px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading p{font-size:12px;line-height:1.3}
 .worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-item{
-  padding-top:4px;padding-bottom:4px
+  padding-top:2px;padding-bottom:2px
+}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-grid{
+  gap:6px 12px
+}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-block{
+  margin-bottom:2px
 }
 .worksheet-sheet:has(.layout-theory) .exercise-heading p{display:none}
 .worksheet-sheet:has(.layout-theory) .theory-grid{
@@ -3295,6 +3301,13 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   min-width:3.5ch;
   vertical-align:baseline;
 }
+.count-icons-caption-icon{
+  display:inline-flex;
+  width:1.15em;height:1.15em;
+  vertical-align:-0.2em;
+  color:var(--ink);
+}
+.count-icons-caption-icon svg{width:100%;height:100%;display:block}
 @media print{
   .count-icons-frame{border-color:#000!important}
   .count-icon-token{color:#000!important}

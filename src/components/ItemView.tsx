@@ -471,7 +471,12 @@ function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) 
         <span className={`answer-line-field compact count-icons-blank${show ? ' filled' : ''}`}>
           {show ? String(scene.targetCount) : '\u00a0'}
         </span>{' '}
-        {scene.label}
+        {scene.label}{' '}
+        <span className="count-icons-caption-icon" aria-hidden>
+          <svg viewBox="0 0 24 24" focusable="false">
+            <CountIconGlyph kind={scene.targetKind} />
+          </svg>
+        </span>
       </p>
     </div>
   )
