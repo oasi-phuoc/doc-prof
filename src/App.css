@@ -1363,9 +1363,17 @@ html,body,#root{
 .mode-toggle button.active{background:var(--purple);color:var(--theme-on,#fff);box-shadow:none}
 .mode-toggle.is-tabs{
   display:flex;flex-wrap:wrap;grid-template-columns:unset;
-  align-items:center;width:fit-content;max-width:100%
+  align-items:center;width:fit-content;max-width:100%;gap:6px
 }
 .mode-toggle.is-tabs button{flex:0 0 auto}
+/* Onglets de feuilles : 7 par ligne, pleine largeur du panneau. */
+.mode-toggle.is-tabs.page-tabs:not(.exercise-tabs){
+  display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+  width:100%;max-width:100%
+}
+.mode-toggle.is-tabs.page-tabs:not(.exercise-tabs) button{
+  flex:unset;min-width:0;width:100%
+}
 .preview-mode-toggle{min-width:220px}
 .sheet-instruction{
   display:flex;align-items:flex-start;justify-content:space-between;gap:12px;

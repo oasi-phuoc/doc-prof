@@ -218,6 +218,136 @@ function generateTcmQuatreOpsBatch(rng: Rng): MathItem[] {
   return makers.map((make) => make())
 }
 
+/** Force une largeur fixe de chiffres (ex. 4 colonnes pour des 3 chiffres). */
+function withFixedColumnWidth(item: MathItem, width: number): MathItem {
+  return {
+    ...item,
+    digitsA: padDigitRow(item.digitsA, width),
+    digitsB: padDigitRow(item.digitsB, width),
+    digitsResult: padDigitRow(item.digitsResult, width),
+    carries: padDigitRow(item.carries ?? [], width),
+    digitsPartials: item.digitsPartials?.map((row) => padDigitRow(row, width)),
+  }
+}
+
+/**
+ * TCM : une addition + une soustraction en colonnes (ordre aléatoire).
+ * `digitCount` 3 → grille à 4 colonnes ; 4 → grille à 5 colonnes.
+ */
+function generateTcmAddSubColBatch(rng: Rng, digitCount: 3 | 4): MathItem[] {
+  const width = digitCount === 3 ? 4 : 5
+  const min = digitCount === 3 ? 100 : 1000
+  const max = digitCount === 3 ? 999 : 9999
+  const aAdd = int(rng, min, max)
+  const bAdd = int(rng, min, max)
+  let aSub = int(rng, min, max)
+  let bSub = int(rng, min, max)
+  if (bSub > aSub) [aSub, bSub] = [bSub, aSub]
+  while (aSub === bSub) {
+    aSub = int(rng, min, max)
+    bSub = int(rng, min, max)
+    if (bSub > aSub) [aSub, bSub] = [bSub, aSub]
+  }
+  const add = withFixedColumnWidth(columnItem('+', aAdd, bAdd, aAdd + bAdd, false), width)
+  const sub = withFixedColumnWidth(columnItem('−', aSub, bSub, aSub - bSub, false), width)
+  return rng() < 0.5 ? [add, sub] : [sub, add]
+}
+
+/** TCM : décomposition 11–99 (dizaines + unités). */
+function generateTcmDecompose99Batch(rng: Rng, count: number): MathItem[] {
+  const n = Math.max(1, count)
+  return Array.from({ length: n }, () => {
+    let value = int(rng, 11, 99)
+    while (value % 10 === 0) value = int(rng, 11, 99)
+    const d = Math.floor(value / 10)
+    const u = value % 10
+    const placeParts = [String(d * 10), String(u)]
+    return {
+      layout: 'place-value' as const,
+      prompt: String(value),
+      labels: ['dizaines', 'unités'],
+      placeParts,
+      answer: placeParts.join(' + '),
+    }
+  })
+}
+
+/**
+ * TCM grandes suites (1 colonne) :
+ * Q1 max 999, écart 100–200, multiple de 5, pas une centaine ronde ;
+ * Q2 max 9999, écart 200–400, multiple de 5, pas une centaine ronde.
+ */
+function generateTcmGrandesSuitesBatch(rng: Rng): MathItem[] {
+  const length = 5
+  const roundHundreds = new Set([100, 200, 300, 400, 500])
+  const pickStep = (lo: number, hi: number): number => {
+    const candidates: number[] = []
+    for (let s = lo; s <= hi; s += 5) {
+      if (!roundHundreds.has(s)) candidates.push(s)
+    }
+    return pick(rng, candidates)
+  }
+  const makeSeq = (step: number, maxVal: number): MathItem => {
+    const span = step * (length - 1)
+    const maxStart = Math.max(1, maxVal - span)
+    const start = int(rng, 1, maxStart)
+    const seq = Array.from({ length }, (_, k) => start + k * step)
+    const first = int(rng, 0, length - 2)
+    const blanks = [first, first + 1]
+    return {
+      layout: 'sequence',
+      sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : String(v))),
+      blankIndexes: blanks,
+      answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
+    }
+  }
+  return [makeSeq(pickStep(100, 200), 999), makeSeq(pickStep(200, 400), 9999)]
+}
+
+/** TCM : décomposition 1000–9999 avec un 0 aux centaines ou aux dizaines. */
+function generateTcmDecompose9999Batch(rng: Rng, count: number): MathItem[] {
+  const n = Math.max(1, count)
+  return Array.from({ length: n }, () => {
+    let value = 0
+    for (let guard = 0; guard < 40; guard++) {
+      const m = int(rng, 1, 9)
+      const zeroInHundreds = rng() < 0.5
+      const c = zeroInHundreds ? 0 : int(rng, 1, 9)
+      const d = zeroInHundreds ? int(rng, 0, 9) : 0
+      // Au moins un 0 en C ou D ; éviter 0 partout sur C et D si on veut de la variété.
+      const u = int(rng, 0, 9)
+      value = m * 1000 + c * 100 + d * 10 + u
+      if (value >= 1000 && value <= 9999 && (c === 0 || d === 0)) break
+    }
+    const u = value % 10
+    const d = Math.floor((value % 100) / 10)
+    const c = Math.floor((value % 1000) / 100)
+    const m = Math.floor(value / 1000)
+    const placeParts = [String(m * 1000), String(c * 100), String(d * 10), String(u)]
+    return {
+      layout: 'place-value' as const,
+      prompt: value.toLocaleString('fr-CH'),
+      labels: ['milliers', 'centaines', 'dizaines', 'unités'],
+      placeParts,
+      answer: placeParts.join(' + '),
+    }
+  })
+}
+
+/** TCM : une multiplication (3 ch × 3–9) + une division (4 ch ÷ 3–9, sans reste). */
+function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
+  const mulB = int(rng, 3, 9)
+  const mulA = int(rng, 100, 999)
+  const mul = columnItem('×', mulA, mulB, mulA * mulB, false)
+  const divB = int(rng, 3, 9)
+  const qMin = Math.ceil(1000 / divB)
+  const qMax = Math.floor(9999 / divB)
+  const quot = int(rng, qMin, qMax)
+  const dividend = divB * quot
+  const div = divisionColumnItem(dividend, divB, false)
+  return rng() < 0.5 ? [mul, div] : [div, mul]
+}
+
 /** 3 additions + 3 soustractions (templates résultat / trou), opérandes 10–100. */
 function generateTcmOperationsBatch(rng: Rng): MathItem[] {
   type Kind =
@@ -669,6 +799,26 @@ function generateItems(
   if (typeId === 'tcm-quatre-ops') {
     return generateTcmQuatreOpsBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-add-sub-col-3') {
+    return normalizeColumnLayouts(generateTcmAddSubColBatch(rng, 3).slice(0, Math.max(1, count)))
+  }
+  if (typeId === 'tcm-add-sub-col-4') {
+    return normalizeColumnLayouts(generateTcmAddSubColBatch(rng, 4).slice(0, Math.max(1, count)))
+  }
+  if (typeId === 'tcm-decompose-99') {
+    return generateTcmDecompose99Batch(rng, count)
+  }
+  if (typeId === 'tcm-grandes-suites') {
+    return generateTcmGrandesSuitesBatch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'tcm-decompose-9999') {
+    return generateTcmDecompose9999Batch(rng, count)
+  }
+  if (typeId === 'tcm-mul-div-col') {
+    return normalizeDivisionLayouts(
+      normalizeColumnLayouts(generateTcmMulDivColBatch(rng).slice(0, Math.max(1, count))),
+    )
+  }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
@@ -718,6 +868,24 @@ function generateOne(
     case 'tcm-quatre-ops': {
       const [item] = generateTcmQuatreOpsBatch(rng)
       return item!
+    }
+    case 'tcm-add-sub-col-3': {
+      return generateTcmAddSubColBatch(rng, 3)[0]!
+    }
+    case 'tcm-add-sub-col-4': {
+      return generateTcmAddSubColBatch(rng, 4)[0]!
+    }
+    case 'tcm-decompose-99': {
+      return generateTcmDecompose99Batch(rng, 1)[0]!
+    }
+    case 'tcm-grandes-suites': {
+      return generateTcmGrandesSuitesBatch(rng)[0]!
+    }
+    case 'tcm-decompose-9999': {
+      return generateTcmDecompose9999Batch(rng, 1)[0]!
+    }
+    case 'tcm-mul-div-col': {
+      return generateTcmMulDivColBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
