@@ -1771,10 +1771,12 @@ export function AlgebraRow({
   item,
   mode,
   padLeft = 0,
+  draftGrid = true,
 }: {
   item: MathItem
   mode: PreviewMode
   padLeft?: number
+  draftGrid?: boolean
 }) {
   const show = mode === 'answers'
   const prompt = item.prompt ?? ''
@@ -1804,7 +1806,10 @@ export function AlgebraRow({
         {show ? answerLabel : '\u00a0'}
       </span>
     </div>
-    <div className="draft-pad draft-pad-short with-grid" aria-label="Zone de brouillon" />
+    <div
+      className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`}
+      aria-label="Zone de brouillon"
+    />
     </div>
   )
 }
@@ -2615,7 +2620,10 @@ export function ItemView({
   const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
   const isEquation = item.layout === 'equation'
   const isGeoCalc = item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)
-  const isDraftPad = isProblem || isEquation || isGeoCalc
+  const isAlgebraDraft = item.layout === 'algebra'
+  /** Inline (ex. substitution) : brouillon seulement si le chip grille est branché. */
+  const isInlineDraft = item.layout === 'inline' && Boolean(onToggleDraftGrid)
+  const isDraftPad = isProblem || isEquation || isGeoCalc || isAlgebraDraft || isInlineDraft
   const isStackedText = item.layout === 'text' && !isProblem
   const isOralSelect = item.layout === 'select' && item.selectVariant === 'oral'
   const resolvedOralMode = oralAnswerMode ?? item.answerMode ?? 'qcm'
@@ -2702,7 +2710,9 @@ export function ItemView({
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
-        {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}
+        {item.layout === 'algebra' && (
+          <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} draftGrid={draftGrid} />
+        )}
         {item.layout === 'equation' && <EquationBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
         {item.layout === 'phrase-color' && <PhraseColorBlock item={item} mode={mode} />}
@@ -2757,6 +2767,12 @@ export function ItemView({
           !isStackedText &&
           item.layout === 'inline' &&
           (item.convert ? <ConvertRow item={item} mode={mode} /> : <InlinePrompt item={item} mode={mode} />)}
+        {isInlineDraft ? (
+          <div
+            className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`}
+            aria-label="Zone de brouillon"
+          />
+        ) : null}
       </div>
     </div>
   )

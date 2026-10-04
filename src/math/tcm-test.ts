@@ -5,7 +5,7 @@
  * (ou un type TCM dédié pour les premiers exercices).
  */
 import type { Difficulty, Domain, ExerciseBlock, PageConfig } from './types'
-import { exerciseTypeById } from './catalog'
+import { exerciseTypeById, isDraftPadExercise } from './catalog'
 
 export const TCM_DOMAIN: Domain = 'tcm'
 
@@ -252,6 +252,9 @@ function blockFromSpec(
     difficulty,
     count: spec.count,
     columns: Math.max(1, Math.min(3, columns)) as 1 | 2 | 3,
+    ...(isDraftPadExercise(type.id)
+      ? { problemDraftGrids: Array.from({ length: spec.count }, () => true) }
+      : {}),
     ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
     ...(exerciseNo != null || spec.exerciseNo != null
       ? { exerciseNo: spec.exerciseNo ?? exerciseNo }

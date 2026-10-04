@@ -1093,7 +1093,11 @@ export function isDraftPadExercise(typeId: string): boolean {
     typeId.startsWith('equations-') ||
     typeId.startsWith('perimetres-') ||
     typeId.startsWith('aires-') ||
-    typeId.startsWith('volumes-')
+    typeId.startsWith('volumes-') ||
+    // TCM : géométrie périmètre/aire, réduction, substitution (comme les équations).
+    typeId.includes('peri-aire') ||
+    typeId === 'tcm-expressions-reduire' ||
+    typeId === 'expressions-substituer'
   )
 }
 

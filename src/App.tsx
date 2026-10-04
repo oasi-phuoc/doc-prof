@@ -294,6 +294,7 @@ function WorksheetSheet({
   const isDraftPadPage = page.items.some(
     (item) =>
       item.layout === 'equation' ||
+      item.layout === 'algebra' ||
       (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
       (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
   )
@@ -341,6 +342,7 @@ function WorksheetSheet({
           const blockDraft = block.items.some(
             (item) =>
               item.layout === 'equation' ||
+              item.layout === 'algebra' ||
               (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
@@ -444,6 +446,7 @@ function WorksheetSheet({
                   const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
+                  const blockAllowsDraftGrid = isDraftPadExercise(block.exerciseType)
                   return (
                     <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}`}
@@ -453,7 +456,7 @@ function WorksheetSheet({
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       onToggleDraftGrid={
-                        interactiveDraftGrids && onToggleDraftGrid
+                        interactiveDraftGrids && blockAllowsDraftGrid && onToggleDraftGrid
                           ? () => onToggleDraftGrid(index, blockIndex)
                           : undefined
                       }
@@ -4151,7 +4154,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </p>
                 </div>
               ) : null}
-              {isProblemExercise(activeBlock.exerciseType) ? (
+              {pageExerciseBlocks.some((b) => isProblemExercise(b.exerciseType)) ? (
                 <div className="mode-toggle draft-grid-page-toggle" role="group" aria-label="Grille de brouillon">
                   {(() => {
                     const grids = resizeDraftGrids(activeBlock.problemDraftGrids, activeBlock.count)
@@ -4381,7 +4384,9 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                         pageNumber={safeSheetIndex + 1}
                         sheetIndex={safeSheetIndex + 1}
                         total={worksheets.length}
-                        interactiveDraftGrids={isProblemExercise(activeBlock.exerciseType)}
+                        interactiveDraftGrids={pageExerciseBlocks.some((b) =>
+                          isProblemExercise(b.exerciseType),
+                        )}
                         onToggleDraftGrid={toggleDraftGrid}
                         interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                         onCycleOralAnswerMode={cycleOralAnswerMode}
