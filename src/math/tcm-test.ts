@@ -172,7 +172,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 31,
-    label: 'Règle de trois (kg)',
+    label: 'Pourcentage et règle de trois',
     blocks: [{ exerciseType: 'tcm-proportion-kg', count: 2, columns: 1 }],
   },
   {
