@@ -134,7 +134,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         : trapPlacement
           ? '0 0 370 178'
           : circleDiameter
-            ? '0 0 180 172'
+            ? '0 0 180 178'
             : '0 0 260 190'
 
   return (
@@ -158,14 +158,14 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {type === 'rectangle' && (
           <>
-            <rect x="40" y="48" width="170" height="82" />
+            <rect x="28" y="40" width="190" height="100" />
             {(d.length != null || d.ask === 'length') && (
-              <L x={125} y={26}>
+              <L x={123} y={22}>
                 {d.ask === 'length' ? '?' : `${fmt(d.length!)} ${unit}`}
               </L>
             )}
             {(d.width != null || d.ask === 'width') && (
-              <L x={236} y={92} anchor="start">
+              <L x={232} y={90} anchor="start">
                 {d.ask === 'width' ? '?' : `${fmt(d.width!)} ${unit}`}
               </L>
             )}
@@ -568,10 +568,10 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {circleDiameter && (
           <>
             {/* Placement soutien Ex. 38 — diamètre */}
-            <circle cx="90" cy="62" r="48" />
-            <line x1={90 - 48} y1={62} x2={90 + 48} y2={62} fill="none" strokeWidth={1.5} />
-            <circle cx="90" cy="62" r="2.5" fillOpacity={1} stroke="none" />
-            <L x={90} y={134} baseline="hanging">
+            <circle cx="90" cy="68" r="58" />
+            <line x1={90 - 58} y1={68} x2={90 + 58} y2={68} fill="none" strokeWidth={1.5} />
+            <circle cx="90" cy="68" r="2.5" fillOpacity={1} stroke="none" />
+            <L x={90} y={142} baseline="hanging">
               d = {fmt(d.diameter ?? d.length!)} {unit}
             </L>
           </>
