@@ -805,8 +805,13 @@ function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
   const subPlaces = Math.max(decimalPlacesOf(subA), decimalPlacesOf(subB))
   const subResult = Math.round((subA - subB) * 10 ** subPlaces) / 10 ** subPlaces
 
+  // × et ÷ « facteur » : deux facteurs distincts (0,01…0,5).
+  const factorMul = pick(rng, [...TCM_DEC_FACTORS])
+  const factorDivPool = TCM_DEC_FACTORS.filter((f) => f !== factorMul)
+  const factorDiv = pick(rng, [...factorDivPool])
+
   const mulFactor = (() => {
-    const factor = pick(rng, [...TCM_DEC_FACTORS])
+    const factor = factorMul
     const kMin = Math.max(1, Math.ceil(100 * factor))
     const kMax = Math.floor(999 * factor)
     const k = int(rng, kMin, Math.max(kMin, kMax))
@@ -824,7 +829,7 @@ function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
   })()
 
   const divFactor = (() => {
-    const factor = pick(rng, [...TCM_DEC_FACTORS])
+    const factor = factorDiv
     const n = int(rng, 100, 999)
     const result = Math.round(n / factor)
     return inlineOp('÷', n, factor, result, 'result')
