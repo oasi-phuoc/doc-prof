@@ -1013,7 +1013,6 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const empty = Boolean(item.blankOperands)
   const workRows = item.digitsPartials ?? []
-  const remDigits = item.digitsRemainder ?? ['']
   const decimalPlaces = item.decimalPlaces ?? 0
 
   return (
@@ -1056,12 +1055,6 @@ function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
               </Fragment>
             )
           })}
-          <div className="division-reste">
-            <span className="division-reste-label" title="Reste">
-              R
-            </span>
-            <DigitRow digits={remDigits} empty showAnswer={show} answerDigits={remDigits} />
-          </div>
         </div>
         <div className="division-vbar" aria-hidden />
         <div className="division-answer-side">
@@ -1631,13 +1624,10 @@ function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
       </span>
       <span className="eq-cell eq-eq">=</span>
       <span className="eq-cell eq-ans">
-        {resultShown == null ? (
-          <span className="answer-line-field">{'\u00a0'}</span>
-        ) : missing === 'result' ? (
-          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{resultShown}</span>
-        ) : (
-          <span className="filled-answer">{resultShown}</span>
-        )}
+        {/* Toujours un trait de réponse après « = » (élève et corrigé). */}
+        <span className={`answer-line-field ${show && resultShown != null ? 'filled' : ''}`}>
+          {resultShown ?? '\u00a0'}
+        </span>
       </span>
     </div>
   )
@@ -1659,6 +1649,7 @@ function ParsedEquationRow({
   const show = mode === 'answers'
   const blankA = a === '□'
   const blankB = b === '□'
+  const resultBlank = !blankA && !blankB
   return (
     <div className="eq-row" aria-label="Calcul">
       <span className="eq-cell eq-num">
@@ -1678,13 +1669,9 @@ function ParsedEquationRow({
       </span>
       <span className="eq-cell eq-eq">=</span>
       <span className="eq-cell eq-ans">
-        {!blankA && !blankB ? (
-          <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
-        ) : show ? (
-          <span className="filled-answer">{answer}</span>
-        ) : (
-          <span className="answer-line-field">{'\u00a0'}</span>
-        )}
+        <span className={`answer-line-field ${show && resultBlank ? 'filled' : ''}`}>
+          {show && resultBlank ? answer : '\u00a0'}
+        </span>
       </span>
     </div>
   )

@@ -186,17 +186,15 @@ function generateTcmSuite(rng: Rng): MathItem {
  */
 function generateTcmQuatreOpsBatch(rng: Rng): MathItem[] {
   const mkAdd = (): MathItem => {
-    const missing: MissingPos = pick(rng, ['a', 'b'] as const)
     const a = int(rng, 75, 450)
     const b = int(rng, 75, Math.max(75, 500 - a))
-    return inlineOp('+', a, b, a + b, missing)
+    return inlineOp('+', a, b, a + b, 'result')
   }
   const mkSub = (): MathItem => {
-    const missing: MissingPos = pick(rng, ['a', 'b'] as const)
     const b = int(rng, 75, 425)
     const result = int(rng, 75, Math.max(75, 500 - b))
     const a = b + result
-    return inlineOp('−', a, b, result, missing)
+    return inlineOp('−', a, b, result, 'result')
   }
   const mkMul = (factors: readonly number[]): MathItem => {
     const b = pick(rng, factors)
