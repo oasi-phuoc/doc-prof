@@ -132,23 +132,23 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 23,
-    label: 'Opérations décimales',
-    blocks: [{ exerciseType: 'tcm-ops-decimales', count: 6, columns: 2 }],
-  },
-  {
-    id: 24,
     label: 'Parallélogramme (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-para-peri-aire', count: 1, columns: 1 }],
   },
   {
-    id: 25,
+    id: 24,
     label: 'Triangle (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-tri-peri-aire', count: 1, columns: 1 }],
   },
   {
-    id: 26,
+    id: 25,
     label: 'Losange (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-rhombus-peri-aire', count: 1, columns: 1 }],
+  },
+  {
+    id: 26,
+    label: 'Opérations décimales',
+    blocks: [{ exerciseType: 'tcm-ops-decimales', count: 6, columns: 2 }],
   },
   {
     id: 27,
@@ -224,6 +224,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
  * Page 2 : 1–4 · Page 3 : 5–8 · Page 4 : 9–11 · Page 5 : 12+13 ·
  * Page 6 : 15+16+17 · Page 7 : 18+19 · Page 8 : 20+21+22 ·
  * Page 9 : 23+24+25 · Page 10 : 26+27+28 · Page 11 : 29+30+31.
+ * (23–25 géométrie ; 26 ops décimales — déplacé après le losange.)
  */
 const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],

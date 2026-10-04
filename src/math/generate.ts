@@ -703,7 +703,7 @@ function generateTcmPuissancesMixteBatch(rng: Rng): MathItem[] {
   return [powerItem, rootItem, mulItem, divItem]
 }
 
-/** Facteurs décimaux TCM ex. 24 (× / ÷ → résultat entier côté « facteur »). */
+/** Facteurs décimaux TCM ex. 26 (× / ÷ → résultat entier côté « facteur »). */
 const TCM_DEC_FACTORS = [0.01, 0.1, 0.2, 0.25, 0.5] as const
 
 /** Décimal avec partie fractionnaire visible (1–2 décimales), dans ]0 ; maxInt]. */
@@ -716,7 +716,7 @@ function tcmDecOperand(rng: Rng, maxInt = 40): number {
 }
 
 /**
- * TCM ex. 24 : six opérations en ligne —
+ * TCM ex. 26 : six opérations en ligne —
  * + et − (deux décimaux) ;
  * × (100–999 × facteur 0,01…0,5, résultat entier) et × (1 déc. 10–99 × 3–9) ;
  * ÷ (100–999 ÷ facteur, résultat entier) et ÷ (1 déc. 10–99 ÷ 3–9, exact).
