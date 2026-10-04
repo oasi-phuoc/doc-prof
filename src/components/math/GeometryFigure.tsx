@@ -134,7 +134,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         : trapPlacement
           ? '0 0 370 178'
           : circleDiameter
-            ? '0 0 180 178'
+            ? '0 0 180 130'
             : '0 0 260 190'
 
   return (
@@ -567,11 +567,11 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {circleDiameter && (
           <>
-            {/* Placement soutien Ex. 38 — diamètre */}
-            <circle cx="90" cy="68" r="58" />
-            <line x1={90 - 58} y1={68} x2={90 + 58} y2={68} fill="none" strokeWidth={1.5} />
-            <circle cx="90" cy="68" r="2.5" fillOpacity={1} stroke="none" />
-            <L x={90} y={142} baseline="hanging">
+            {/* TCM ex. 37 — diamètre ; r SVG 41 ≈ 58 × 0,7 (−30 %) */}
+            <circle cx="90" cy="52" r={41} />
+            <line x1={90 - 41} y1={52} x2={90 + 41} y2={52} fill="none" strokeWidth={1.5} />
+            <circle cx="90" cy="52" r="2.2" fillOpacity={1} stroke="none" />
+            <L x={90} y={106} baseline="hanging">
               d = {fmt(d.diameter ?? d.length!)} {unit}
             </L>
           </>
