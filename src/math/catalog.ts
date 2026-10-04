@@ -1112,10 +1112,15 @@ export function isDraftPadExercise(typeId: string): boolean {
     typeId.startsWith('perimetres-') ||
     typeId.startsWith('aires-') ||
     typeId.startsWith('volumes-') ||
-    // TCM : géométrie périmètre/aire, réduction, substitution, règle de trois kg.
+    // TCM : géométrie périmètre/aire, calculs en ligne / algèbre, réduction, substitution.
     typeId.includes('peri-aire') ||
     typeId === 'tcm-expressions-reduire' ||
-    typeId === 'expressions-substituer'
+    typeId === 'expressions-substituer' ||
+    typeId === 'tcm-priorite-ops' ||
+    typeId === 'tcm-fractions-mixte' ||
+    typeId === 'tcm-puissances-mixte' ||
+    typeId === 'tcm-relatifs-ops' ||
+    typeId === 'tcm-ops-decimales'
   )
 }
 
