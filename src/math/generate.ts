@@ -32,7 +32,7 @@ import { tryGenerateSoutienBatch } from '@/francais/soutien/generate'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
-import { tryGenerateConversion } from './conversions'
+import { generateLengthConversionBatch, tryGenerateConversion } from './conversions'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from '@/francais/francais'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
@@ -1343,6 +1343,10 @@ function generateItems(
   }
   if (typeId === 'tcm-ops-decimales') {
     return generateTcmOpsDecimalesBatch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'conversions-longueur' && count >= 2) {
+    // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
+    return generateLengthConversionBatch(rng, count)
   }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {

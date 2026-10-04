@@ -2111,31 +2111,31 @@ function GeoBlock({
   const show = mode === 'answers'
   if (item.geoDualPads) {
     const lines = item.propertyLines ?? []
+    const padCorrection =
+      show && (item.calcAnswer || item.calcAnswerSecondary)
+        ? [item.calcAnswer, item.calcAnswerSecondary].filter(Boolean).join('\n')
+        : null
     return (
       <div className="geo-block geo-dual" aria-label="Périmètre et aire">
-        <div className="geo-dual-figure">
-          {item.compositeScene ? (
-            <CompositeFigure scene={item.compositeScene} />
-          ) : (
-            <GeometryFigure type={item.figure} dims={item.dims} />
-          )}
-        </div>
-        <div className="geo-dual-pads">
-          <div
-            className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}`}
-            aria-label="Brouillon périmètre"
-          >
-            {show && item.calcAnswer ? (
-              <strong className="filled-answer draft-pad-answer">{item.calcAnswer}</strong>
-            ) : null}
+        <div className="geo-dual-top">
+          <div className="geo-dual-figure">
+            {item.compositeScene ? (
+              <CompositeFigure scene={item.compositeScene} />
+            ) : (
+              <GeometryFigure type={item.figure} dims={item.dims} />
+            )}
           </div>
-          <div
-            className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}`}
-            aria-label="Brouillon aire"
-          >
-            {show && item.calcAnswerSecondary ? (
-              <strong className="filled-answer draft-pad-answer">{item.calcAnswerSecondary}</strong>
-            ) : null}
+          <div className="geo-dual-pad">
+            <div
+              className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}${
+                padCorrection ? ' has-correction' : ''
+              }`}
+              aria-label="Zone de brouillon"
+            >
+              {padCorrection ? (
+                <strong className="filled-answer draft-pad-answer">{padCorrection}</strong>
+              ) : null}
+            </div>
           </div>
         </div>
         <div className="geo-dual-answers">

@@ -1,4 +1,4 @@
-import { int, pick, type Rng } from './rng'
+import { int, pick, shuffle, type Rng } from './rng'
 import type { Difficulty, MathItem } from './types'
 
 const LENGTH = ['mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km']
@@ -54,6 +54,53 @@ function convert(
   const value = int(rng, 11, 99) / 10
   const answer = towardSmaller ? value * factor : value / factor
   return item(value, units[fromIdx]!, units[toIdx]!, answer, units[toIdx]!)
+}
+
+/** Paires adjacentes dirigées (ex. mm→cm, cm→mm) — jamais deux fois la même. */
+function adjacentDirectedPairs(units: string[]): Array<[number, number]> {
+  const pairs: Array<[number, number]> = []
+  for (let i = 0; i < units.length; i++) {
+    if (i > 0) pairs.push([i, i - 1])
+    if (i < units.length - 1) pairs.push([i, i + 1])
+  }
+  return pairs
+}
+
+/**
+ * Lot de conversions de longueur :
+ * - chaque couple d’unités (from→to) est unique dans le lot ;
+ * - les deux dernières questions (5 et 6 si count ≥ 5) sont en décimal.
+ */
+export function generateLengthConversionBatch(rng: Rng, count: number): MathItem[] {
+  const n = Math.max(1, count)
+  const factor = stepFactor('length')
+  const pairs = shuffle(rng, adjacentDirectedPairs(LENGTH))
+  const chosen = pairs.slice(0, Math.min(n, pairs.length))
+  while (chosen.length < n) {
+    // Repli très rare : ajouter une paire non encore utilisée si le pool est insuffisant.
+    const extra = adjacentDirectedPairs(LENGTH).find(
+      ([a, b]) => !chosen.some(([x, y]) => x === a && y === b),
+    )
+    if (!extra) break
+    chosen.push(extra)
+  }
+
+  return chosen.map(([fromIdx, toIdx], index) => {
+    const from = LENGTH[fromIdx]!
+    const to = LENGTH[toIdx]!
+    const towardSmaller = toIdx < fromIdx
+    const decimal = index >= n - 2 && n >= 5
+    let value: number
+    if (decimal) {
+      let tenths = int(rng, 11, 99)
+      while (tenths % 10 === 0) tenths = int(rng, 11, 99)
+      value = tenths / 10
+    } else {
+      value = int(rng, 2, 25)
+    }
+    const answer = towardSmaller ? value * factor : value / factor
+    return item(value, from, to, answer, to)
+  })
 }
 
 export function tryGenerateConversion(
