@@ -10,6 +10,9 @@ export const TCM_DOMAIN: Domain = 'tcm'
 
 export const TCM_DOCUMENT_TITLE = 'Test de connaissance de mathématiques'
 
+/** Score maximum annoncé sur la page consignes / grille d’évaluation. */
+export const TCM_MAX_SCORE = 100
+
 type TcmBlockSpec = {
   exerciseType: string
   count: number
@@ -316,4 +319,14 @@ export function formatPointsLabel(points: number): string {
   const text = Number.isInteger(points) ? String(points) : String(points).replace('.', ',')
   const unit = points > 1 ? 'points' : 'point'
   return `${text} ${unit}`
+}
+
+/** Badge d’exercice : met en avant un barème fractionnaire (ex. 0,5 pt × 4). */
+export function formatBlockPointsBadge(perQuestion: number, questionCount: number): string {
+  const scored = questionCount // caller passes already-filtered count
+  const total = scored * perQuestion
+  if (perQuestion > 0 && perQuestion !== 1 && scored > 1) {
+    return `${formatPointsLabel(perQuestion)} × ${scored}`
+  }
+  return formatPointsLabel(total)
 }

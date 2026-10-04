@@ -57,9 +57,10 @@ import {
 import {
   blockPointsTotal,
   buildTcmTestPages,
-  formatPointsLabel,
+  formatBlockPointsBadge,
   isTcmDomain,
   TCM_DOCUMENT_TITLE,
+  TCM_MAX_SCORE,
 } from '@/math/tcm-test'
 import {
   defaultCalliPhraseCount,
@@ -344,10 +345,10 @@ function WorksheetSheet({
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
           const blockHeading = multiExercisePage ? block.title : sheetTitle || block.title
-          const blockPts = blockPointsTotal(
-            block.items,
-            block.pointsPerQuestion ?? pointsPerQuestion,
-          )
+          const perQ = block.pointsPerQuestion ?? pointsPerQuestion
+          const scoredCount = block.items.filter((item) => item.layout !== 'theory').length
+          const blockPts = blockPointsTotal(block.items, perQ)
+          const pointsBadge = formatBlockPointsBadge(perQ, scoredCount)
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet ? null : (
@@ -382,7 +383,7 @@ function WorksheetSheet({
                   ) : null}
                 </div>
                 {evalMode && blockPts > 0 ? (
-                  <span className="instruction-points">{formatPointsLabel(blockPts)}</span>
+                  <span className="instruction-points">{pointsBadge}</span>
                 ) : null}
               </header>
               )}
@@ -2602,7 +2603,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const chromeProps = {
     institutional,
     evalMode,
-    documentTotalPoints: sheetTotalPoints,
+    documentTotalPoints: isTcm ? TCM_MAX_SCORE : sheetTotalPoints,
     pointsPerQuestion,
   } as const
 
