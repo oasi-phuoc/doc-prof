@@ -1681,7 +1681,7 @@ function ParsedEquationRow({
 export function tokenizeAlgebra(expression: string): string[] {
   const tokens: string[] = []
   const re =
-    /√\d+|√|[A-Za-z]\/\d+|\d+\/\d+|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()]/gu
+    /√\d+|√|[A-Za-z]\/\d+|\d+\/\d+|\d+[¹²³⁴]|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()[\]]/gu
   let last = 0
   for (const match of expression.matchAll(re)) {
     const start = match.index ?? 0
@@ -1721,6 +1721,14 @@ function AlgebraToken({ token }: { token: string }) {
     )
   }
   if (token === '√') return <span className="alg-token alg-sqrt">√</span>
+  if (/^\d+[¹²³⁴]$/.test(token)) {
+    return (
+      <span className="alg-token alg-num">
+        {token.slice(0, -1)}
+        <sup>{token.slice(-1)}</sup>
+      </span>
+    )
+  }
   if (isAlgebraLetter(token)) {
     const letter = token[0]!
     const sup = token.slice(1)
@@ -1732,7 +1740,7 @@ function AlgebraToken({ token }: { token: string }) {
     )
   }
   if (isAlgebraOp(token)) return <span className={`alg-token alg-op${token === '=' ? ' alg-eq' : ''}`}>{token}</span>
-  if (/^[()]$/.test(token)) return <span className="alg-token alg-paren">{token}</span>
+  if (/^[()[\]]$/.test(token)) return <span className="alg-token alg-paren">{token}</span>
   return <span className="alg-token alg-num">{token}</span>
 }
 

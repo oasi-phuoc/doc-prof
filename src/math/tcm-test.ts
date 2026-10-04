@@ -158,7 +158,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 28,
     label: 'Priorité des opérations',
-    blocks: [{ exerciseType: 'puissances-priorite', count: 4, columns: 2 }],
+    blocks: [{ exerciseType: 'tcm-priorite-ops', count: 2, columns: 1 }],
   },
   {
     id: 29,

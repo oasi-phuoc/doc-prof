@@ -341,6 +341,15 @@ export const exerciseTypes: ExerciseType[] = [
     'ligne',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-priorite-ops',
+    'tcm-info',
+    'Priorité des opérations',
+    'Deux expressions : () [] avec + − × ÷ ; puis fractions empilées et puissances (50 modèles).',
+    'Calculez en respectant les priorités.',
+    'ligne',
+    { preferredColumns: 1 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(
