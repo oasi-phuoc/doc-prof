@@ -216,6 +216,15 @@ export const exerciseTypes: ExerciseType[] = [
     { figure: 'rectangle', preferredColumns: 1 },
   ),
   t(
+    'tcm-para-peri-aire',
+    'tcm-info',
+    'Parallélogramme (périmètre et aire)',
+    'Parallélogramme coté (base, côté, hauteur) : calculer le périmètre et l’aire.',
+    'Calculez le périmètre et l’aire.',
+    'geo',
+    { figure: 'parallelogram', preferredColumns: 1 },
+  ),
+  t(
     'tcm-suites-6',
     'tcm-info',
     'Suites (6 termes)',

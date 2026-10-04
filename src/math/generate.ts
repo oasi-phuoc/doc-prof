@@ -392,6 +392,30 @@ function generateTcmRectPeriAire(rng: Rng): MathItem {
   }
 }
 
+/** TCM ex. 25 : parallélogramme — base, côté et hauteur sur la même figure. */
+function generateTcmParaPeriAire(rng: Rng): MathItem {
+  const base = int(rng, 4, 18)
+  let side = int(rng, 3, 16)
+  if (side === base) side = Math.max(3, side - 1)
+  let height = int(rng, 2, Math.max(2, side - 1))
+  if (height >= side) height = Math.max(2, side - 1)
+  const peri = 2 * (base + side)
+  const area = base * height
+  return {
+    layout: 'geo',
+    figure: 'parallelogram',
+    dims: { base, side, height, unit: 'cm' },
+    geoDualPads: true,
+    calcAnswer: `2 × (${fmt(base)} + ${fmt(side)})`,
+    calcAnswerSecondary: `${fmt(base)} × ${fmt(height)}`,
+    propertyLines: [
+      { label: 'Périmètre', answer: `${fmt(peri)} cm` },
+      { label: 'Aire', answer: `${fmt(area)} cm²` },
+    ],
+    answer: `Périmètre = ${fmt(peri)} cm ; Aire = ${fmt(area)} cm²`,
+  }
+}
+
 /**
  * TCM ex. 15 : suites 6 termes, 4 trous, 2 visibles consécutifs.
  * Q1 : 10 000–99 999, écart 500–900 ×5 hors centaines.
@@ -1165,6 +1189,9 @@ function generateItems(
   if (typeId === 'tcm-rect-peri-aire') {
     return [generateTcmRectPeriAire(rng)]
   }
+  if (typeId === 'tcm-para-peri-aire') {
+    return [generateTcmParaPeriAire(rng)]
+  }
   if (typeId === 'tcm-suites-6') {
     return generateTcmSuites6Batch(rng).slice(0, Math.max(1, count))
   }
@@ -1268,6 +1295,9 @@ function generateOne(
     }
     case 'tcm-rect-peri-aire': {
       return generateTcmRectPeriAire(rng)
+    }
+    case 'tcm-para-peri-aire': {
+      return generateTcmParaPeriAire(rng)
     }
     case 'tcm-suites-6': {
       return generateTcmSuites6Batch(rng)[0]!

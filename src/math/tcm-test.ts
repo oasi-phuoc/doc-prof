@@ -137,11 +137,8 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 25,
-    label: 'Parallélogramme',
-    blocks: [
-      { exerciseType: 'perimetres-parallelogramme', count: 1, columns: 2 },
-      { exerciseType: 'aires-parallelogramme', count: 1, columns: 2 },
-    ],
+    label: 'Parallélogramme (périmètre et aire)',
+    blocks: [{ exerciseType: 'tcm-para-peri-aire', count: 1, columns: 1 }],
   },
   {
     id: 26,
