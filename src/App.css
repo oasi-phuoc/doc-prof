@@ -800,11 +800,11 @@ html,body,#root{
 }
 .eq-row{
   display:grid;
-  /* Trait de réponse fixe (~3 chiffres) : ne pas étirer en 1fr (mangeait le gap colonnes). */
-  grid-template-columns: max-content 2.2ch max-content 2.2ch 3.6em;
+  /* Largeurs fixes : aligne op et = dans la colonne ; pas de 1fr (préserve gap ≥ 15 px). */
+  grid-template-columns: 6.5ch 2.2ch 6.5ch 2.2ch 4.8em;
   column-gap:0.25em;
   align-items:center;
-  justify-items:start;
+  justify-items:center;
   width:max-content;
   max-width:100%;
   font-size:13pt;
@@ -814,15 +814,15 @@ html,body,#root{
   font-family:inherit;
 }
 .eq-cell{min-width:0;text-align:center}
-.eq-num{text-align:center;padding:0}
-.eq-op,.eq-eq{text-align:center;font-weight:700}
-.eq-ans{text-align:center;width:3.6em;max-width:3.6em}
+.eq-num{width:6.5ch;text-align:center;padding:0;justify-self:center}
+.eq-op,.eq-eq{text-align:center;font-weight:700;width:2.2ch}
+.eq-ans{text-align:center;width:4.8em;max-width:4.8em}
 .eq-ans .answer-line-field{
-  display:block;width:3.6em;min-width:3.6em;max-width:3.6em;margin:0;text-align:center;
+  display:block;width:4.8em;min-width:4.8em;max-width:4.8em;margin:0;text-align:center;
   box-sizing:border-box
 }
 .eq-num .answer-line-field.compact{
-  display:block;width:2.8em;min-width:2.8em;max-width:2.8em;margin:0;text-align:center
+  display:block;width:100%;min-width:0;max-width:6.5ch;margin:0 auto;text-align:center
 }
 .exercise-item.layout-inline .item-content{
   display:flex;justify-content:flex-start;width:100%
@@ -890,7 +890,8 @@ html,body,#root{
   background-position:0 0
 }
 .draft-pad.draft-pad-short{--grid-rows:calc(3 * var(--sheet-columns, 1))}
-.draft-pad.draft-pad-geo{--grid-rows:calc(3 * var(--sheet-columns, 1));margin-top:2px}
+/* Géométrie dual (ex. 13, 25…) : 4 lignes de carrés (aspect-ratio = cols/rows). */
+.draft-pad.draft-pad-geo{--grid-rows:4;margin-top:2px}
 .draft-pad.plain{background-image:none;background-color:#fff}
 .algebra-stack{display:flex;flex-direction:column;gap:6px;width:100%}
 .convert-row{
@@ -1009,7 +1010,7 @@ html,body,#root{
 .geo-dual-pads{
   display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%
 }
-.geo-dual-pads .draft-pad{width:100%;min-height:28mm;margin:0}
+.geo-dual-pads .draft-pad{width:100%;min-height:0;margin:0}
 .geo-dual-answers{
   display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%;
   padding-top:15px

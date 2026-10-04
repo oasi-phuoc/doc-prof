@@ -25,7 +25,7 @@ type TcmBlockSpec = {
 }
 
 type TcmStepSpec = {
-  /** N° d’exercice dans le TCM (1–38). */
+  /** N° d’exercice dans le TCM (1–37 ; le 14 est sauté comme en soutien). */
   id: number
   label: string
   blocks: readonly TcmBlockSpec[]
@@ -116,42 +116,42 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     blocks: [{ exerciseType: 'tcm-div-mixte', count: 2, columns: 2 }],
   },
   {
-    id: 21,
+    id: 20,
     label: 'Colorier les fractions',
     blocks: [{ exerciseType: 'tcm-frac-color', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
   },
   {
-    id: 22,
+    id: 21,
     label: 'Lire les fractions',
     blocks: [{ exerciseType: 'tcm-frac-read', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
   },
   {
-    id: 23,
+    id: 22,
     label: 'Conversions de longueur',
     blocks: [{ exerciseType: 'conversions-longueur', count: 6, columns: 2 }],
   },
   {
-    id: 24,
+    id: 23,
     label: 'Opérations décimales',
     blocks: [{ exerciseType: 'tcm-ops-decimales', count: 6, columns: 2 }],
   },
   {
-    id: 25,
+    id: 24,
     label: 'Parallélogramme (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-para-peri-aire', count: 1, columns: 1 }],
   },
   {
-    id: 26,
+    id: 25,
     label: 'Triangle (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-tri-peri-aire', count: 1, columns: 1 }],
   },
   {
-    id: 27,
+    id: 26,
     label: 'Losange (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-rhombus-peri-aire', count: 1, columns: 1 }],
   },
   {
-    id: 28,
+    id: 27,
     label: 'Puissances et racines',
     blocks: [
       { exerciseType: 'puissances-calcul', count: 2, columns: 2 },
@@ -159,12 +159,12 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 29,
+    id: 28,
     label: 'Priorité des opérations',
     blocks: [{ exerciseType: 'puissances-priorite', count: 4, columns: 2 }],
   },
   {
-    id: 30,
+    id: 29,
     label: 'Nombres relatifs',
     blocks: [
       { exerciseType: 'relatifs-comparer', count: 4, columns: 2 },
@@ -172,7 +172,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 31,
+    id: 30,
     label: 'Fractions',
     blocks: [
       { exerciseType: 'fractions-add', count: 4, columns: 2 },
@@ -180,7 +180,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 32,
+    id: 31,
     label: 'Pourcentages et règle de trois',
     blocks: [
       { exerciseType: 'proportion-de', count: 1, columns: 2 },
@@ -188,22 +188,22 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 33,
+    id: 32,
     label: 'Simplification algébrique',
     blocks: [{ exerciseType: 'expressions-reduire', count: 4, columns: 1 }],
   },
   {
-    id: 34,
+    id: 33,
     label: 'Évaluer des expressions',
     blocks: [{ exerciseType: 'expressions-substituer', count: 2, columns: 1 }],
   },
   {
-    id: 35,
+    id: 34,
     label: 'Résoudre des équations',
     blocks: [{ exerciseType: 'equations-simple', count: 2, columns: 2 }],
   },
   {
-    id: 36,
+    id: 35,
     label: 'Conversions d’unités',
     blocks: [
       { exerciseType: 'conversions-masse', count: 2, columns: 2 },
@@ -211,12 +211,12 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     ],
   },
   {
-    id: 37,
+    id: 36,
     label: 'Trapèze (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-trap-peri-aire', count: 1, columns: 1 }],
   },
   {
-    id: 38,
+    id: 37,
     label: 'Cercle (périmètre et aire)',
     blocks: [{ exerciseType: 'tcm-circle-peri-aire', count: 1, columns: 1 }],
   },
@@ -225,7 +225,8 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
 /**
  * Étapes regroupées sur une même feuille A4 (après la page consignes).
  * Page 2 : 1–4 · Page 3 : 5–8 · Page 4 : 9–11 · Page 5 : 12+13 ·
- * Page 6 : 15+16+17 · Page 7 : 18+19 · Page 8 : 21+22+23.
+ * Page 6 : 15+16+17 · Page 7 : 18+19 · Page 8 : 20+21+22 ·
+ * Page 9 : 23+24+25 · Page 10 : 26+27+28 · Page 11 : 29+30+31.
  */
 const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],
@@ -234,7 +235,10 @@ const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [12, 13],
   [15, 16, 17],
   [18, 19],
-  [21, 22, 23],
+  [20, 21, 22],
+  [23, 24, 25],
+  [26, 27, 28],
+  [29, 30, 31],
 ]
 
 function blockFromSpec(

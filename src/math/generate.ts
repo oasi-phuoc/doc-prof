@@ -422,7 +422,7 @@ function tcmDualGeo(
   }
 }
 
-/** TCM ex. 25 : parallélogramme — base, côté et hauteur (SVG placement). */
+/** TCM : parallélogramme — base, côté et hauteur (SVG placement). */
 function generateTcmParaPeriAire(rng: Rng): MathItem {
   const base = int(rng, 8, 16)
   const side = tcmOneDecimal(rng, 40, 100)
@@ -439,7 +439,7 @@ function generateTcmParaPeriAire(rng: Rng): MathItem {
   )
 }
 
-/** TCM ex. 26 : triangle quelconque — a, b, c et h (SVG placement). */
+/** TCM : triangle quelconque — a, b, c et h (SVG placement). */
 function generateTcmTriPeriAire(rng: Rng): MathItem {
   const a = int(rng, 8, 14)
   let b = int(rng, 6, 12)
@@ -460,7 +460,7 @@ function generateTcmTriPeriAire(rng: Rng): MathItem {
   )
 }
 
-/** TCM ex. 27 : losange — côté c et diagonales d₁, d₂ (SVG placement). */
+/** TCM : losange — côté c et diagonales d₁, d₂ (SVG placement). */
 function generateTcmRhombusPeriAire(rng: Rng): MathItem {
   const triples = [
     [3, 4, 5],
@@ -483,7 +483,7 @@ function generateTcmRhombusPeriAire(rng: Rng): MathItem {
   )
 }
 
-/** TCM ex. 37 : trapèze isocèle — a, b, c et h (SVG placement). */
+/** TCM : trapèze isocèle — a, b, c et h (SVG placement). */
 function generateTcmTrapPeriAire(rng: Rng): MathItem {
   const top = int(rng, 4, 10)
   const bottom = top + int(rng, 2, 6)
@@ -501,7 +501,7 @@ function generateTcmTrapPeriAire(rng: Rng): MathItem {
   )
 }
 
-/** TCM ex. 38 : cercle — diamètre, π = 3,14 (SVG placement). */
+/** TCM : cercle — diamètre, π = 3,14 (SVG placement). */
 function generateTcmCirclePeriAire(rng: Rng): MathItem {
   const diameter = pick(rng, [3, 5, 7, 9, 11, 13, 15, 17])
   const r = diameter / 2
@@ -619,7 +619,7 @@ function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
 }
 
 /**
- * TCM ex. 19 : deux divisions posées (5 col dividende / 5 col quotient).
+ * TCM ex. 19 : deux divisions posées (5 col dividende / 4 col quotient).
  * Gauche : entier 10 000–99 999 ÷ 12–19 (exact).
  * Droite : décimal 5 chiffres (2–3 décimales, avec un 0) ÷ 3–9 (exact).
  */
@@ -628,7 +628,7 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
   const qMin = Math.ceil(10_000 / dInt)
   const qMax = Math.floor(99_999 / dInt)
   const qInt = int(rng, qMin, qMax)
-  const left = withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 5, 5)
+  const left = withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 5, 4)
 
   let dDec = int(rng, 3, 9)
   let dividendDec = 0
@@ -648,7 +648,7 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
     dividendDec = 10.206
     dDec = 3
   }
-  const right = withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 5, 5)
+  const right = withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 5, 4)
   return [left, right]
 }
 
@@ -737,7 +737,7 @@ function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
 
 /**
  * TCM ex. 16 : trier.
- * Q1 : 6 nombres 10 000–99 999 (5 chiffres ; paires début / fin / centre).
+ * Q1 : 5 nombres 10 000–99 999 (5 chiffres ; paires début / fin + 1 centre).
  * Q2 : 5 décimaux motifs x,0x · x,x · x,xx · x,xx · x,x0.
  */
 function generateTcmRangerBatch(rng: Rng): MathItem[] {
@@ -755,17 +755,13 @@ function generateTcmRangerBatch(rng: Rng): MathItem[] {
     let b2Head = int(rng, 1, 9)
     while (b2Head === firstB || b2Head === first) b2Head = int(rng, 1, 9)
     const b2 = b2Head * 10_000 + int(rng, 10, 99) * 100 + end2
-    // Paire centre : mêmes chiffres 2–3, début et fin différents.
+    // Un seul centre (5 nombres au total, comme Q2).
     const mid = int(rng, 10, 99)
-    const c1Head = int(rng, 1, 9)
-    const c1End = int(rng, 10, 99)
-    const c1 = c1Head * 10_000 + mid * 100 + c1End
-    let c2Head = int(rng, 1, 9)
-    while (c2Head === c1Head) c2Head = int(rng, 1, 9)
-    let c2End = int(rng, 10, 99)
-    while (c2End === c1End) c2End = int(rng, 10, 99)
-    const c2 = c2Head * 10_000 + mid * 100 + c2End
-    const numbers = shuffle(rng, [a1, a2, b1, b2, c1, c2])
+    let cHead = int(rng, 1, 9)
+    while (cHead === first || cHead === firstB || cHead === b2Head) cHead = int(rng, 1, 9)
+    const cEnd = int(rng, 10, 99)
+    const c1 = cHead * 10_000 + mid * 100 + cEnd
+    const numbers = shuffle(rng, [a1, a2, b1, b2, c1])
     const ascending = rng() < 0.5
     const ordered = [...numbers].sort((x, y) => (ascending ? x - y : y - x))
     return {
