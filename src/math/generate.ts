@@ -478,7 +478,9 @@ function generateTcmRangerBatch(rng: Rng): MathItem[] {
       t2 = int(rng, 1, 9)
       h2 = int(rng, 1, 9)
     }
-    const t0 = int(rng, 1, 9) // x,x0
+    // x,x0 numériquement égal à x,x si même dixième : forcer un dixième distinct.
+    let t0 = int(rng, 1, 9)
+    while (t0 === d2) t0 = int(rng, 1, 9)
     const values = [
       x + d1 / 100, // x,0x
       x + d2 / 10, // x,x
