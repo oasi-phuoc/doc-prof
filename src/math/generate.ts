@@ -128,8 +128,10 @@ function generateCountIcons(rng: Rng): MathItem {
 }
 
 function generateTcmComparerBatch(rng: Rng, count: number): MathItem[] {
-  const n = Math.max(3, count)
-  const relations: Array<'<' | '=' | '>'> = ['=', '>', '<']
+  const n = Math.max(1, count)
+  // Garantir au moins une occurrence de chaque symbole si n ≥ 3 ; sinon tirage libre.
+  const relations: Array<'<' | '=' | '>'> =
+    n >= 3 ? ['=', '>', '<'] : Array.from({ length: n }, () => pick(rng, ['<', '=', '>'] as const))
   while (relations.length < n) {
     relations.push(pick(rng, ['<', '=', '>'] as const))
   }
