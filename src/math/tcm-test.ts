@@ -163,10 +163,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 29,
     label: 'Nombres relatifs',
-    blocks: [
-      { exerciseType: 'relatifs-comparer', count: 4, columns: 2 },
-      { exerciseType: 'relatifs-add', count: 4, columns: 2 },
-    ],
+    blocks: [{ exerciseType: 'tcm-relatifs-ops', count: 4, columns: 2 }],
   },
   {
     id: 30,

@@ -350,6 +350,15 @@ export const exerciseTypes: ExerciseType[] = [
     'ligne',
     { preferredColumns: 1 },
   ),
+  t(
+    'tcm-relatifs-ops',
+    'tcm-info',
+    'Opérations avec relatifs',
+    'Quatre opérations (+ − × ÷) sur relatifs : positifs écrits (+n) ; +/− en 10–99 ; ×/÷ (10–25)×(1–9).',
+    'Calculez.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(

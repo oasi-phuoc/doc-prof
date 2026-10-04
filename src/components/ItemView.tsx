@@ -1586,14 +1586,37 @@ function parseBinaryEquation(prompt: string): {
   trailingValue?: string
 } | null {
   const trimmed = prompt.trim()
-  const withBlank = /^(.+?)\s*([+\-−×÷])\s*(.+?)\s*=\s*□?\s*$/u.exec(trimmed)
-  if (!withBlank) return null
-  const a = withBlank[1]!.trim()
-  const op = withBlank[2]!.replace('-', '−')
-  const b = withBlank[3]!.trim()
+  const eq = /^(.*?)\s*=\s*□?\s*$/u.exec(trimmed)
+  if (!eq) return null
+  const left = eq[1]!.trim()
+  if (!left) return null
+  // Opérateur binaire au niveau 0 (ignore +/− dans (+12) / (−3)).
+  let depth = 0
+  let opAt = -1
+  let opChar = ''
+  for (let i = 0; i < left.length; i++) {
+    const ch = left[i]!
+    if (ch === '(' || ch === '[') depth++
+    else if (ch === ')' || ch === ']') depth = Math.max(0, depth - 1)
+    else if (depth === 0 && /[+\-−×÷]/.test(ch)) {
+      // Ne pas prendre un signe collé au chiffre suivant comme opérateur principal
+      // si précédé d’une ouverture — déjà couvert par depth. Ici : dernier op niveau 0.
+      const prev = left[i - 1]
+      const next = left[i + 1]
+      if ((ch === '+' || ch === '-' || ch === '−') && prev && /[([]/.test(prev) && next && /\d/.test(next)) {
+        continue
+      }
+      opAt = i
+      opChar = ch
+    }
+  }
+  if (opAt < 0) return null
+  const a = left.slice(0, opAt).trim()
+  const b = left.slice(opAt + 1).trim()
   if (!a || !b) return null
   // Évite les phrases (« Dans 12, le chiffre… »)
   if (/[a-zA-Zàâäéèêëïîôùûüç]/u.test(a) || /[a-zA-Zàâäéèêëïîôùûüç]/u.test(b)) return null
+  const op = opChar.replace('-', '−')
   const endsBlank = /=\s*□?\s*$/u.test(trimmed) && !/=\s*-?\d/.test(trimmed)
   return { a, op, b, trailing: endsBlank || trimmed.endsWith('=') ? 'blank' : 'none' }
 }

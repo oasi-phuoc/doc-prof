@@ -704,6 +704,72 @@ function generateTcmPuissancesMixteBatch(rng: Rng): MathItem[] {
   return [powerItem, rootItem, mulItem, divItem]
 }
 
+/** Affiche un relatif : (+4) ou (−4). */
+function fmtRelatif(n: number): string {
+  if (n >= 0) return `(+${n})`
+  return `(−${Math.abs(n)})`
+}
+
+function fmtRelatifAnswer(n: number): string {
+  if (Math.abs(n - Math.round(n)) < 1e-8) {
+    const r = Math.round(n)
+    return r >= 0 ? `(+${r})` : `(−${Math.abs(r)})`
+  }
+  const t = fmt(n)
+  return n >= 0 ? `(+${t})` : `(−${t.replace(/^-/, '').replace(/^−/, '')})`
+}
+
+/** Paire de signes opposés, ordre aléatoire (+ puis −, ou − puis +). */
+function tcmOppositeSignedPair(rng: Rng, lo: number, hi: number): [number, number] {
+  const pos = int(rng, lo, hi)
+  const neg = -int(rng, lo, hi)
+  return rng() < 0.5 ? [pos, neg] : [neg, pos]
+}
+
+/**
+ * TCM ex. 29 — quatre opérations sur relatifs :
+ * 1) + et 2) − : magnitudes 10–99, signes opposés (+/− ou −/+) ;
+ * 3) × et 4) ÷ : 1er facteur 10–25 (2 chiffres), 2e 1–9 (1 chiffre), signes libres ;
+ * positifs toujours écrits (+n) ; quotient ÷ éventuellement décimal.
+ */
+function generateTcmRelatifsOpsBatch(rng: Rng): MathItem[] {
+  const [addA, addB] = tcmOppositeSignedPair(rng, 10, 99)
+  const [subA, subB] = tcmOppositeSignedPair(rng, 10, 99)
+
+  const signed = (mag: number) => (rng() < 0.5 ? mag : -mag)
+  const mulA = signed(int(rng, 10, 25))
+  const mulB = signed(int(rng, 1, 9))
+  const divA = signed(int(rng, 10, 25))
+  let divB = signed(int(rng, 1, 9))
+  while (divB === 0) divB = signed(int(rng, 1, 9))
+
+  const divRaw = divA / divB
+  const divAns = Number(divRaw.toFixed(3))
+
+  return [
+    {
+      layout: 'inline',
+      prompt: `${fmtRelatif(addA)} + ${fmtRelatif(addB)} =`,
+      answer: fmtRelatifAnswer(addA + addB),
+    },
+    {
+      layout: 'inline',
+      prompt: `${fmtRelatif(subA)} − ${fmtRelatif(subB)} =`,
+      answer: fmtRelatifAnswer(subA - subB),
+    },
+    {
+      layout: 'inline',
+      prompt: `${fmtRelatif(mulA)} × ${fmtRelatif(mulB)} =`,
+      answer: fmtRelatifAnswer(mulA * mulB),
+    },
+    {
+      layout: 'inline',
+      prompt: `${fmtRelatif(divA)} ÷ ${fmtRelatif(divB)} =`,
+      answer: fmtRelatifAnswer(divAns),
+    },
+  ]
+}
+
 /** Facteurs décimaux TCM ex. 26 (× / ÷ → résultat entier côté « facteur »). */
 const TCM_DEC_FACTORS = [0.01, 0.1, 0.2, 0.25, 0.5] as const
 
@@ -1398,6 +1464,9 @@ function generateItems(
   if (typeId === 'tcm-priorite-ops') {
     return generateTcmPrioriteBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-relatifs-ops') {
+    return generateTcmRelatifsOpsBatch(rng).slice(0, Math.max(1, count))
+  }
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count)
@@ -1527,6 +1596,9 @@ function generateOne(
     }
     case 'tcm-priorite-ops': {
       return generateTcmPrioriteBatch(rng)[0]!
+    }
+    case 'tcm-relatifs-ops': {
+      return generateTcmRelatifsOpsBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
