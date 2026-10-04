@@ -521,6 +521,89 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
   return [left, right]
 }
 
+/** Facteurs décimaux TCM ex. 24 (× / ÷ → résultat entier côté « facteur »). */
+const TCM_DEC_FACTORS = [0.01, 0.1, 0.2, 0.25, 0.5] as const
+
+/** Décimal avec partie fractionnaire visible (1–2 décimales), dans ]0 ; maxInt]. */
+function tcmDecOperand(rng: Rng, maxInt = 40): number {
+  const places = pick(rng, [1, 2] as const)
+  const scale = 10 ** places
+  let scaled = int(rng, 1, maxInt * scale)
+  while (scaled % 10 === 0) scaled = int(rng, 1, maxInt * scale)
+  return scaled / scale
+}
+
+/**
+ * TCM ex. 24 : six opérations en ligne —
+ * + et − (deux décimaux) ;
+ * × (100–999 × facteur 0,01…0,5, résultat entier) et × (1 déc. 10–99 × 3–9) ;
+ * ÷ (100–999 ÷ facteur, résultat entier) et ÷ (1 déc. 10–99 ÷ 3–9, exact).
+ */
+function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
+  const addA = tcmDecOperand(rng, 40)
+  const addB = tcmDecOperand(rng, 40)
+  const addPlaces = Math.max(decimalPlacesOf(addA), decimalPlacesOf(addB))
+  const addResult = Math.round((addA + addB) * 10 ** addPlaces) / 10 ** addPlaces
+
+  let subA = tcmDecOperand(rng, 40)
+  let subB = tcmDecOperand(rng, 40)
+  if (subB > subA) [subA, subB] = [subB, subA]
+  if (subB >= subA) subB = tcmDecOperand(rng, Math.max(1, Math.floor(subA)))
+  if (subB >= subA) {
+    subA = Math.round((subB + tcmDecOperand(rng, 10)) * 100) / 100
+  }
+  const subPlaces = Math.max(decimalPlacesOf(subA), decimalPlacesOf(subB))
+  const subResult = Math.round((subA - subB) * 10 ** subPlaces) / 10 ** subPlaces
+
+  const mulFactor = (() => {
+    const factor = pick(rng, [...TCM_DEC_FACTORS])
+    const kMin = Math.max(1, Math.ceil(100 * factor))
+    const kMax = Math.floor(999 * factor)
+    const k = int(rng, kMin, Math.max(kMin, kMax))
+    const n = Math.round(k / factor)
+    return inlineOp('×', n, factor, k, 'result')
+  })()
+
+  const mulDec = (() => {
+    let tenths = int(rng, 101, 989)
+    while (tenths % 10 === 0) tenths = int(rng, 101, 989)
+    const a = tenths / 10
+    const b = int(rng, 3, 9)
+    const result = Math.round(a * b * 10) / 10
+    return inlineOp('×', a, b, result, 'result')
+  })()
+
+  const divFactor = (() => {
+    const factor = pick(rng, [...TCM_DEC_FACTORS])
+    const n = int(rng, 100, 999)
+    const result = Math.round(n / factor)
+    return inlineOp('÷', n, factor, result, 'result')
+  })()
+
+  const divDec = (() => {
+    const b = int(rng, 3, 9)
+    const candidates: number[] = []
+    for (let t = 101; t <= 989; t++) {
+      if (t % 10 === 0) continue
+      if (t % b === 0) candidates.push(t)
+    }
+    const tenths = candidates.length ? pick(rng, candidates) : b * int(rng, 15, 90) + (b % 10 || 1)
+    const a = tenths / 10
+    // Exact : a ÷ b = tenths / (10 × b)
+    const exact = tenths / (10 * b)
+    return inlineOp('÷', a, b, exact, 'result')
+  })()
+
+  return [
+    inlineOp('+', addA, addB, addResult, 'result'),
+    inlineOp('−', subA, subB, subResult, 'result'),
+    mulFactor,
+    mulDec,
+    divFactor,
+    divDec,
+  ]
+}
+
 /**
  * TCM ex. 16 : trier.
  * Q1 : 6 nombres 10 000–99 999 (5 chiffres ; paires début / fin / centre).
@@ -1112,6 +1195,9 @@ function generateItems(
       answer: `${item.n}/${item.d}`,
     }))
   }
+  if (typeId === 'tcm-ops-decimales') {
+    return generateTcmOpsDecimalesBatch(rng).slice(0, Math.max(1, count))
+  }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
@@ -1213,6 +1299,9 @@ function generateOne(
         fracShape: { ...item, mode: 'read' },
         answer: `${item.n}/${item.d}`,
       }
+    }
+    case 'tcm-ops-decimales': {
+      return generateTcmOpsDecimalesBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)

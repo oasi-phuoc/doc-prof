@@ -132,11 +132,8 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 24,
-    label: 'Calculs décimaux',
-    blocks: [
-      { exerciseType: 'decimaux-mul-ligne', count: 4, columns: 2 },
-      { exerciseType: 'decimaux-div-ligne', count: 4, columns: 2 },
-    ],
+    label: 'Opérations décimales',
+    blocks: [{ exerciseType: 'tcm-ops-decimales', count: 6, columns: 2 }],
   },
   {
     id: 25,

@@ -278,6 +278,15 @@ export const exerciseTypes: ExerciseType[] = [
     'geo',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-ops-decimales',
+    'tcm-info',
+    'Opérations décimales',
+    'Une addition, une soustraction, deux multiplications et deux divisions avec décimaux (en ligne).',
+    'Effectuez les opérations.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(
