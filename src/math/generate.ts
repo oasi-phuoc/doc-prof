@@ -778,14 +778,34 @@ function generateTcmRelatifsOpsBatch(rng: Rng): MathItem[] {
   const [subA, subB] = tcmOppositeSignedPair(rng, 10, 99)
 
   const signed = (mag: number) => (rng() < 0.5 ? mag : -mag)
+  // × : aucun facteur ±1 (magnitudes ≥ 2).
   const mulA = signed(int(rng, 10, 25))
-  const mulB = signed(int(rng, 1, 9))
-  const divA = signed(int(rng, 10, 25))
-  let divB = signed(int(rng, 1, 9))
-  while (divB === 0) divB = signed(int(rng, 1, 9))
+  const mulB = signed(int(rng, 2, 9))
 
-  const divRaw = divA / divB
-  const divAns = Number(divRaw.toFixed(3))
+  // ÷ : quotient exact, au plus 2 décimales (pas de reste « sale »).
+  let divA = 0
+  let divB = 1
+  let divAns = 0
+  for (let attempt = 0; attempt < 80; attempt++) {
+    const magA = int(rng, 10, 25)
+    const magB = int(rng, 2, 9)
+    const a = signed(magA)
+    const b = signed(magB)
+    const raw = a / b
+    const rounded = Math.round(raw * 100) / 100
+    if (Math.abs(raw - rounded) < 1e-9) {
+      divA = a
+      divB = b
+      divAns = rounded
+      break
+    }
+  }
+  if (divA === 0) {
+    // Repli : (−24) ÷ (+5) = −4,8
+    divA = -24
+    divB = 5
+    divAns = -4.8
+  }
 
   return [
     {
@@ -829,19 +849,24 @@ function fracAnswer(n: number, d: number): string {
   return fracSigned(sn, sd)
 }
 
-/** Fraction réductible (k ≥ 2) et sa forme simplifiée (num et den > 1). */
+/**
+ * Fraction réductible (k ≥ 2) issue de la table ≤ 12×12 :
+ * numérateur et dénominateur non simplifiés ≤ 12 ; forme simplifiée avec termes > 1.
+ */
 function tcmReducibleFraction(rng: Rng): { n: number; d: number; sn: number; sd: number } {
-  for (let attempt = 0; attempt < 40; attempt++) {
-    const sn = int(rng, 2, 9)
-    const sd = int(rng, sn + 1, 14)
-    const g = gcd(sn, sd)
-    const a = sn / g
-    const b = sd / g
-    if (a <= 1 || b <= 1) continue
-    const k = int(rng, 2, 6)
-    return { n: a * k, d: b * k, sn: a, sd: b }
+  for (let attempt = 0; attempt < 60; attempt++) {
+    const a = int(rng, 2, 5)
+    const b = int(rng, a + 1, 11)
+    if (gcd(a, b) !== 1) continue
+    const maxK = Math.min(Math.floor(12 / a), Math.floor(12 / b))
+    if (maxK < 2) continue
+    const k = int(rng, 2, maxK)
+    const n = a * k
+    const d = b * k
+    if (n > 12 || d > 12) continue
+    return { n, d, sn: a, sd: b }
   }
-  return { n: 4, d: 6, sn: 2, sd: 3 }
+  return { n: 8, d: 12, sn: 2, sd: 3 }
 }
 
 /** Deux fractions pour ×/÷ : au moins un numérateur relatif (négatif) ; parfois les deux. */
