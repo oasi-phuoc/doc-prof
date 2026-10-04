@@ -372,7 +372,7 @@ export const exerciseTypes: ExerciseType[] = [
     'tcm-expressions-reduire',
     'tcm-info',
     'Réduction d’expressions',
-    'Deux expressions : réduction classique ; puis modèle avec · et parenthèses (50 gabarits, ≥ 5 pièces).',
+    'Q1 : somme de monômes sans puissance ; Q2 : produit avec au moins deux · (monômes / parenthèses), sans puissance dans l’énoncé.',
     'Réduisez chaque expression.',
     'ligne',
     { preferredColumns: 1 },
