@@ -11,6 +11,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import './App.css'
 import {
   ACCESS_DOMAIN_OPTIONS,
@@ -4554,7 +4555,7 @@ export default function App() {
     setRoute('access')
   }
 
-  if (route === 'generator') return <GeneratorPage onLogout={logout} />
-  if (route === 'access') return <AccessPage onSuccess={openGenerator} />
-  return <Landing onCreate={goAccess} />
+  if (route === 'generator') return (<><GeneratorPage onLogout={logout} /><SpeedInsights /></>)
+  if (route === 'access') return (<><AccessPage onSuccess={openGenerator} /><SpeedInsights /></>)
+  return (<><Landing onCreate={goAccess} /><SpeedInsights /></>)
 }
