@@ -2708,15 +2708,18 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             </div>
             {pageExerciseBlocks.length > 1 ? (
               <div className="mode-toggle is-tabs page-tabs exercise-tabs" role="tablist" aria-label="Exercices de la page">
-                {pageExerciseBlocks.map((_, index) => (
+                {pageExerciseBlocks.map((_, index) => {
+                  const tabNo =
+                    activeSheet?.blocks?.[index]?.exerciseIndex ?? firstExerciseNo + index
+                  return (
                   <button
                     key={index}
                     type="button"
                     className={safeBlockIndex === index ? 'active' : ''}
                     onClick={() => setBlockIndex(index)}
-                    aria-label={`Exercice ${firstExerciseNo + index}`}
+                    aria-label={`Exercice ${tabNo}`}
                   >
-                    <span className="tab-number">{firstExerciseNo + index}</span>
+                    <span className="tab-number">{tabNo}</span>
                     {pageExerciseBlocks.length > 1 && index === safeBlockIndex ? (
                       <TabRemoveButton
                         label="Retirer cet exercice"
@@ -2731,7 +2734,8 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                       />
                     ) : null}
                   </button>
-                ))}
+                  )
+                })}
               </div>
             ) : null}
             <div className="field-group">

@@ -348,6 +348,168 @@ function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }
 
+/** TCM ex. 13 : rectangle — périmètre et aire, deux cadres. */
+function generateTcmRectPeriAire(rng: Rng): MathItem {
+  const length = int(rng, 3, 18)
+  let width = int(rng, 2, 14)
+  if (width === length) width = Math.max(2, width - 1)
+  const peri = 2 * (length + width)
+  const area = length * width
+  return {
+    layout: 'geo',
+    figure: 'rectangle',
+    dims: { length, width, unit: 'cm' },
+    geoDualPads: true,
+    calcAnswer: `2 × (${fmt(length)} + ${fmt(width)})`,
+    calcAnswerSecondary: `${fmt(length)} × ${fmt(width)}`,
+    propertyLines: [
+      { label: 'Périmètre', answer: `${fmt(peri)} cm` },
+      { label: 'Aire', answer: `${fmt(area)} cm²` },
+    ],
+    answer: `Périmètre = ${fmt(peri)} cm ; Aire = ${fmt(area)} cm²`,
+  }
+}
+
+/**
+ * TCM ex. 15 : suites 6 termes, 4 trous, 2 visibles consécutifs.
+ * Q1 : 10 000–99 999, écart 500–900 ×5 hors centaines.
+ * Q2 : 0–9,99, écart 0,05–0,95 ×0,05 hors dixièmes ronds.
+ */
+function generateTcmSuites6Batch(rng: Rng): MathItem[] {
+  const length = 6
+  const makeBlanks = (): number[] => {
+    const pairStart = int(rng, 0, length - 2)
+    const visible = new Set([pairStart, pairStart + 1])
+    return Array.from({ length }, (_, k) => k).filter((k) => !visible.has(k))
+  }
+  const makeInt = (): MathItem => {
+    const candidates: number[] = []
+    for (let s = 500; s <= 900; s += 5) {
+      if (s % 100 !== 0) candidates.push(s)
+    }
+    const step = pick(rng, candidates)
+    const span = step * (length - 1)
+    const maxStart = Math.max(10_000, 99_999 - span)
+    const start = int(rng, 10_000, maxStart)
+    const seq = Array.from({ length }, (_, k) => start + k * step)
+    const blanks = makeBlanks()
+    return {
+      layout: 'sequence',
+      sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : String(v))),
+      blankIndexes: blanks,
+      answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
+    }
+  }
+  const makeDec = (): MathItem => {
+    // Multiples impairs de 0,05 (évite 0,10 ; 0,20…).
+    const oddK = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    const stepK = pick(rng, oddK)
+    const spanK = stepK * (length - 1)
+    const startMaxK = Math.max(1, 199 - spanK)
+    const startK = int(rng, 1, startMaxK)
+    const seq = Array.from({ length }, (_, k) => {
+      const u = startK + k * stepK
+      return Math.round(u * 5) / 100 // u × 0,05
+    })
+    const blanks = makeBlanks()
+    const show = (n: number) => fmt(n)
+    return {
+      layout: 'sequence',
+      sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : show(v))),
+      blankIndexes: blanks,
+      answer: blanks.map((k) => show(seq[k]!)).join(' ; '),
+    }
+  }
+  return [makeInt(), makeDec()]
+}
+
+/**
+ * TCM ex. 16 : trier.
+ * Q1 : 6 nombres 100 000–999 999 (paires début / fin / centre).
+ * Q2 : 5 décimaux motifs x,0x · x,x · x,xx · x,xx · x,x0.
+ */
+function generateTcmRangerBatch(rng: Rng): MathItem[] {
+  const makeInt = (): MathItem => {
+    const first = int(rng, 1, 9)
+    let firstB = int(rng, 1, 9)
+    while (firstB === first) firstB = int(rng, 1, 9)
+    // Paire début : même 1er chiffre, fins différentes.
+    const a1 = first * 100_000 + int(rng, 10_000, 99_999)
+    let a2 = first * 100_000 + int(rng, 10_000, 99_999)
+    while (a2 % 100 === a1 % 100 || a2 === a1) a2 = first * 100_000 + int(rng, 10_000, 99_999)
+    // Paire fin : mêmes 2 derniers chiffres, débuts différents.
+    const end2 = int(rng, 10, 99)
+    const b1 =
+      firstB * 100_000 + int(rng, 100, 999) * 100 + end2
+    let b2Head = int(rng, 1, 9)
+    while (b2Head === firstB || b2Head === first) b2Head = int(rng, 1, 9)
+    const b2 = b2Head * 100_000 + int(rng, 100, 999) * 100 + end2
+    // Paire centre : mêmes chiffres 3–4 (positions), début et fin différents.
+    const mid = int(rng, 10, 99)
+    const c1Head = int(rng, 1, 9)
+    const c1End = int(rng, 10, 99)
+    const c1 = c1Head * 100_000 + int(rng, 0, 9) * 10_000 + mid * 100 + c1End
+    let c2Head = int(rng, 1, 9)
+    while (c2Head === c1Head) c2Head = int(rng, 1, 9)
+    let c2End = int(rng, 10, 99)
+    while (c2End === c1End) c2End = int(rng, 10, 99)
+    const c2 = c2Head * 100_000 + int(rng, 0, 9) * 10_000 + mid * 100 + c2End
+    const numbers = shuffle(rng, [a1, a2, b1, b2, c1, c2])
+    const ascending = rng() < 0.5
+    const ordered = [...numbers].sort((x, y) => (ascending ? x - y : y - x))
+    return {
+      layout: 'order',
+      sequence: numbers.map(String),
+      placeParts: ordered.map(String),
+      orderOp: ascending ? '<' : '>',
+      prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
+      answer: ordered.join(ascending ? ' < ' : ' > '),
+    }
+  }
+  const makeDec = (): MathItem => {
+    const x = int(rng, 1, 9)
+    const d1 = int(rng, 1, 9) // x,0x
+    const d2 = int(rng, 1, 9) // x,x
+    let t1 = int(rng, 1, 9)
+    let h1 = int(rng, 1, 9)
+    let t2 = int(rng, 1, 9)
+    let h2 = int(rng, 1, 9)
+    while (t1 === t2 && h1 === h2) {
+      t2 = int(rng, 1, 9)
+      h2 = int(rng, 1, 9)
+    }
+    const t0 = int(rng, 1, 9) // x,x0
+    const values = [
+      x + d1 / 100, // x,0x
+      x + d2 / 10, // x,x
+      x + t1 / 10 + h1 / 100, // x,xx
+      x + t2 / 10 + h2 / 100, // x,xx
+      x + t0 / 10, // x,x0  → affichage avec 0 des centièmes
+    ]
+    const show = (n: number, kind: '0x' | 'x' | 'xx' | 'x0'): string => {
+      if (kind === '0x') return `${x},0${Math.round((n - x) * 100)}`
+      if (kind === 'x') return `${x},${Math.round((n - x) * 10)}`
+      if (kind === 'x0') return `${x},${Math.round((n - x) * 10)}0`
+      const cents = Math.round((n - x) * 100)
+      return `${x},${String(cents).padStart(2, '0')}`
+    }
+    const kinds: Array<'0x' | 'x' | 'xx' | 'x0'> = ['0x', 'x', 'xx', 'xx', 'x0']
+    const labeled = values.map((v, i) => ({ v, text: show(v, kinds[i]!) }))
+    const shuffled = shuffle(rng, labeled)
+    const ascending = rng() < 0.5
+    const ordered = [...shuffled].sort((a, b) => (ascending ? a.v - b.v : b.v - a.v))
+    return {
+      layout: 'order',
+      sequence: shuffled.map((e) => e.text),
+      placeParts: ordered.map((e) => e.text),
+      orderOp: ascending ? '<' : '>',
+      prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
+      answer: ordered.map((e) => e.text).join(ascending ? ' < ' : ' > '),
+    }
+  }
+  return [makeInt(), makeDec()]
+}
+
 /** 3 additions + 3 soustractions (templates résultat / trou), opérandes 10–100. */
 function generateTcmOperationsBatch(rng: Rng): MathItem[] {
   type Kind =
@@ -819,6 +981,15 @@ function generateItems(
       normalizeColumnLayouts(generateTcmMulDivColBatch(rng).slice(0, Math.max(1, count))),
     )
   }
+  if (typeId === 'tcm-rect-peri-aire') {
+    return [generateTcmRectPeriAire(rng)]
+  }
+  if (typeId === 'tcm-suites-6') {
+    return generateTcmSuites6Batch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'tcm-ranger') {
+    return generateTcmRangerBatch(rng).slice(0, Math.max(1, count))
+  }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
@@ -886,6 +1057,15 @@ function generateOne(
     }
     case 'tcm-mul-div-col': {
       return generateTcmMulDivColBatch(rng)[0]!
+    }
+    case 'tcm-rect-peri-aire': {
+      return generateTcmRectPeriAire(rng)
+    }
+    case 'tcm-suites-6': {
+      return generateTcmSuites6Batch(rng)[0]!
+    }
+    case 'tcm-ranger': {
+      return generateTcmRangerBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
@@ -1727,7 +1907,15 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
     const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTcmConsignes = block.exerciseType === 'tcm-consignes'
-    const exerciseIndex = isTcmConsignes ? 0 : exerciseCursor++
+    let exerciseIndex = 0
+    if (!isTcmConsignes) {
+      if (block.exerciseNo != null) {
+        exerciseIndex = block.exerciseNo
+        exerciseCursor = Math.max(exerciseCursor, block.exerciseNo + 1)
+      } else {
+        exerciseIndex = exerciseCursor++
+      }
+    }
     return {
       exerciseIndex,
       title: isTcmConsignes
@@ -1776,7 +1964,10 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
   pages.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
-    exerciseNo += worksheet.blocks.filter((block) => block.exerciseType !== 'tcm-consignes').length
+    const scoredBlocks = worksheet.blocks.filter((block) => block.exerciseType !== 'tcm-consignes')
+    if (scoredBlocks.length) {
+      exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1
+    }
 
     const isCom =
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')

@@ -375,6 +375,8 @@ export type MathItem = {
   /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
   orderOp?: '<' | '>'
   calcAnswer?: string
+  /** Second calcul (layout geo dual : aire à droite). */
+  calcAnswerSecondary?: string
   responseAnswer?: string
   /** Inconnues à afficher sur les lignes de réponse (équations). */
   unknowns?: string[]
@@ -390,6 +392,8 @@ export type MathItem = {
   compositeScene?: CompositeScene
   /** Lignes « libellé : réponse » sans bordure (propriétés des figures). */
   propertyLines?: { label: string; answer: string }[]
+  /** Geo : deux cadres de brouillon côte à côte (périmètre / aire). */
+  geoDualPads?: boolean
   /** Conversion d’unités : valeur et unités de part et d’autre du signe =. */
   convert?: { value: string; from: string; to: string }
   /** Enregistrement à écouter (compréhension orale). */
@@ -580,6 +584,11 @@ export type ExerciseBlock = {
   difficulty: Difficulty
   count: number
   columns: number
+  /**
+   * N° d’exercice forcé (TCM : ids de recette non contigus, ex. 13 puis 15).
+   * Si absent, numérotation chronologique.
+   */
+  exerciseNo?: number
   /**
    * Points par question pour ce bloc (mode évaluation).
    * Si absent, le total utilise le réglage global de la fiche.

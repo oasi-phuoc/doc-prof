@@ -2070,6 +2070,50 @@ function GeoBlock({
   draftGrid?: boolean
 }) {
   const show = mode === 'answers'
+  if (item.geoDualPads) {
+    const lines = item.propertyLines ?? []
+    return (
+      <div className="geo-block geo-dual" aria-label="Périmètre et aire">
+        <div className="geo-dual-figure">
+          {item.compositeScene ? (
+            <CompositeFigure scene={item.compositeScene} />
+          ) : (
+            <GeometryFigure type={item.figure} dims={item.dims} />
+          )}
+        </div>
+        <div className="geo-dual-pads">
+          <div
+            className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}`}
+            aria-label="Brouillon périmètre"
+          >
+            {show && item.calcAnswer ? (
+              <strong className="filled-answer draft-pad-answer">{item.calcAnswer}</strong>
+            ) : null}
+          </div>
+          <div
+            className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}`}
+            aria-label="Brouillon aire"
+          >
+            {show && item.calcAnswerSecondary ? (
+              <strong className="filled-answer draft-pad-answer">{item.calcAnswerSecondary}</strong>
+            ) : null}
+          </div>
+        </div>
+        <div className="geo-dual-answers">
+          {lines.map((line) => (
+            <div className="geo-dual-answer" key={line.label}>
+              <span className="property-label">{line.label} =</span>
+              {show ? (
+                <strong className="filled-answer property-answer">{line.answer}</strong>
+              ) : (
+                <span className="answer-line-field property-blank">{'\u00a0'}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="geo-block">
       {item.compositeScene ? (

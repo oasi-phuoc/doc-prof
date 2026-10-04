@@ -958,6 +958,22 @@ html,body,#root{
   display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%;min-width:0
 }
 .geo-side,.coord-side{min-width:0;width:100%}
+.geo-block.geo-dual{align-items:stretch;gap:0}
+.geo-dual-figure{
+  display:flex;justify-content:center;width:100%;margin:0 0 8px
+}
+.geo-dual-pads{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%
+}
+.geo-dual-pads .draft-pad{width:100%;min-height:28mm;margin:0}
+.geo-dual-answers{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;
+  padding-top:15px
+}
+.geo-dual-answer{
+  display:grid;grid-template-columns:max-content minmax(4em,1fr);
+  align-items:baseline;column-gap:8px;width:100%
+}
 .geometry-figure{
   display:block;width:min(200px,100%);height:auto;aspect-ratio:260 / 190;
   margin:0;color:var(--ink);overflow:visible
@@ -1366,12 +1382,12 @@ html,body,#root{
   align-items:center;width:fit-content;max-width:100%;gap:6px
 }
 .mode-toggle.is-tabs button{flex:0 0 auto}
-/* Onglets de feuilles : 7 par ligne, pleine largeur du panneau. */
-.mode-toggle.is-tabs.page-tabs:not(.exercise-tabs){
+/* Onglets de feuilles / exercices : 7 par ligne, pleine largeur du panneau. */
+.mode-toggle.is-tabs.page-tabs{
   display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
   width:100%;max-width:100%
 }
-.mode-toggle.is-tabs.page-tabs:not(.exercise-tabs) button{
+.mode-toggle.is-tabs.page-tabs button{
   flex:unset;min-width:0;width:100%
 }
 .preview-mode-toggle{min-width:220px}
