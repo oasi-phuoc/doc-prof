@@ -85,6 +85,7 @@ export type Layout =
   | 'card-grid'
   | 'calligraphy'
   | 'count-icons'
+  | 'fraction-shape'
 
 /** Icône cible à compter (SVG N&B). */
 export type CountIconKind = 'note' | 'notes' | 'star' | 'heart' | 'leaf' | 'moon' | 'bolt' | 'flower'
@@ -396,6 +397,19 @@ export type MathItem = {
   propertyLines?: { label: string; answer: string }[]
   /** Geo : deux cadres de brouillon côte à côte (périmètre / aire). */
   geoDualPads?: boolean
+  /**
+   * Forme fractionnaire (TCM ex. 21/22, port soutien-scolaire).
+   * `mode: 'color'` = fraction donnée, forme à colorier ;
+   * `mode: 'read'` = forme précoloriée, fraction à écrire.
+   */
+  fracShape?: {
+    kind: import('@/components/math/FractionShape').ShapeKind
+    d: number
+    n: number
+    copies: number
+    multi: boolean
+    mode: 'color' | 'read'
+  }
   /** Conversion d’unités : valeur et unités de part et d’autre du signe =. */
   convert?: { value: string; from: string; to: string }
   /** Enregistrement à écouter (compréhension orale). */

@@ -40,6 +40,7 @@ import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { tryGenerateMesure } from './mesures'
 import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
+import { genFracItems } from './fraction-shapes'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type {
   AlgebraGiven,
@@ -1100,6 +1101,20 @@ function generateItems(
   if (typeId === 'tcm-div-mixte') {
     return generateTcmDivMixteBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-frac-color') {
+    return genFracItems(rng, Math.max(1, count)).map((item) => ({
+      layout: 'fraction-shape' as const,
+      fracShape: { ...item, mode: 'color' as const },
+      answer: `${item.n}/${item.d}`,
+    }))
+  }
+  if (typeId === 'tcm-frac-read') {
+    return genFracItems(rng, Math.max(1, count)).map((item) => ({
+      layout: 'fraction-shape' as const,
+      fracShape: { ...item, mode: 'read' as const },
+      answer: `${item.n}/${item.d}`,
+    }))
+  }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
@@ -1185,6 +1200,22 @@ function generateOne(
     }
     case 'tcm-div-mixte': {
       return generateTcmDivMixteBatch(rng)[0]!
+    }
+    case 'tcm-frac-color': {
+      const item = genFracItems(rng, 1)[0]!
+      return {
+        layout: 'fraction-shape',
+        fracShape: { ...item, mode: 'color' },
+        answer: `${item.n}/${item.d}`,
+      }
+    }
+    case 'tcm-frac-read': {
+      const item = genFracItems(rng, 1)[0]!
+      return {
+        layout: 'fraction-shape',
+        fracShape: { ...item, mode: 'read' },
+        answer: `${item.n}/${item.d}`,
+      }
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)

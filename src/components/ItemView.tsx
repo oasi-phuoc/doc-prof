@@ -12,6 +12,12 @@ import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { lessonPhonemeSegmentsFromGraphemes } from '@/francais/soutien/phoneme'
 import { CompositeFigure } from './math/CompositeFigure'
 import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
+import {
+  computeScale,
+  FractionShape,
+  preColorFlat,
+  ShapesRow,
+} from './math/FractionShape'
 import { FractionView, renderMathText } from './math/FractionView'
 import { GattegnoChart } from './math/GattegnoChart'
 import { GeometryFigure } from './math/GeometryFigure'
@@ -1532,6 +1538,48 @@ function SequenceRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+/** TCM ex. 21/22 — formes fractionnaires (port soutien-scolaire). */
+function FractionShapeBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const fs = item.fracShape
+  if (!fs) return null
+  const show = mode === 'answers'
+  const colored =
+    fs.mode === 'read' || show
+      ? fs.multi
+        ? preColorFlat(fs.n, fs.d)
+        : new Set(Array.from({ length: fs.n }, (_, k) => k))
+      : new Set<number>()
+  const scale = fs.multi ? computeScale(fs.kind, fs.copies) * 0.85 : 0.85
+  return (
+    <div className="frac-shape-card" aria-label={`Fraction ${fs.n}/${fs.d}`}>
+      <div className="frac-shape-inner">
+        <div className="frac-shape-frac">
+          {fs.mode === 'color' ? (
+            <span className="frac-shape-display">
+              <span className="frac-shape-num">{fs.n}</span>
+              <span className="frac-shape-bar" aria-hidden />
+              <span className="frac-shape-den">{fs.d}</span>
+            </span>
+          ) : (
+            <span className="frac-shape-display">
+              <span className={`frac-shape-box ${show ? 'filled' : ''}`}>{show ? fs.n : '\u00a0'}</span>
+              <span className="frac-shape-bar" aria-hidden />
+              <span className={`frac-shape-box ${show ? 'filled' : ''}`}>{show ? fs.d : '\u00a0'}</span>
+            </span>
+          )}
+        </div>
+        <div className="frac-shape-figure">
+          {fs.multi ? (
+            <ShapesRow kind={fs.kind} d={fs.d} copies={fs.copies} colored={colored} scale={scale} />
+          ) : (
+            <FractionShape kind={fs.kind} d={fs.d} colored={colored} scale={scale} />
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function formatOperand(n: number | undefined): string {
   if (n == null) return ''
   return String(n).replace('.', ',')
@@ -2633,6 +2681,7 @@ export function ItemView({
         {item.layout === 'syllable-table' && <SyllableTableBlock item={item} />}
         {item.layout === 'order' && <OrderRow item={item} mode={mode} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
+        {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
         {item.layout === 'algebra' && <AlgebraRow item={item} mode={mode} padLeft={algebraPadLeft} />}

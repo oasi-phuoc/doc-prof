@@ -641,6 +641,36 @@ html,body,#root{
 }
 .sequence-answer-line{display:flex;align-items:center;gap:8px;margin-top:10px}
 
+/* TCM fractions formes (soutien-scolaire ex. 21/22). */
+.frac-shape-card{
+  width:100%;min-width:0;border:1px solid var(--line);border-radius:12px;
+  padding:8px 10px;box-sizing:border-box;background:#fff
+}
+.frac-shape-inner{display:flex;align-items:center;gap:10px;width:100%;min-height:0}
+.frac-shape-frac{flex:0 0 auto}
+.frac-shape-display{
+  display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-width:2.2em
+}
+.frac-shape-num,.frac-shape-den{
+  font-size:14pt;font-weight:800;line-height:1.1;color:var(--purple);font-variant-numeric:tabular-nums
+}
+.frac-shape-bar{display:block;width:1.6em;height:0;border-top:2px solid var(--ink)}
+.frac-shape-box{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.7em;height:1.5em;border:1.5px solid var(--purple);border-radius:6px;
+  font-size:13pt;font-weight:700;line-height:1;color:var(--ink);box-sizing:border-box
+}
+.frac-shape-box.filled{color:var(--purple)}
+.frac-shape-figure{
+  flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:center;overflow:hidden
+}
+.fraction-shapes-row{
+  display:flex;align-items:center;justify-content:center;gap:6px;max-width:100%;overflow:hidden
+}
+.fraction-shape-svg{display:block;max-width:100%;height:auto}
+.exercise-item.layout-fraction-shape{padding:var(--ex-pad-y) var(--ex-pad-x)}
+.exercise-item.layout-fraction-shape .item-content{width:100%}
+
 /* Aperçu : padding uniforme 28px (haut/droite/bas/gauche) ; A4 = toute la largeur utile. */
 .sheet-preview-wrap{
   flex:1 1 auto;
