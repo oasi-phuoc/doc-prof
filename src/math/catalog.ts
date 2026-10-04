@@ -381,8 +381,8 @@ export const exerciseTypes: ExerciseType[] = [
     'tcm-proportion-kg',
     'tcm-info',
     'Règle de trois (kg)',
-    'Deux problèmes de proportionnalité avec des masses en kg (25 modèles ; masses 10–99 non divisibles entre elles).',
-    'Lisez le problème. Écrivez le calcul et la réponse.',
+    'Deux questions du type « n kg → p CHF » / « m kg = … » (25 modèles ; nombres 10–99 ; masses non divisibles entre elles).',
+    'Complétez.',
     'texte',
     { preferredColumns: 1 },
   ),
@@ -1115,7 +1115,6 @@ export function isDraftPadExercise(typeId: string): boolean {
     // TCM : géométrie périmètre/aire, réduction, substitution, règle de trois kg.
     typeId.includes('peri-aire') ||
     typeId === 'tcm-expressions-reduire' ||
-    typeId === 'tcm-proportion-kg' ||
     typeId === 'expressions-substituer'
   )
 }
