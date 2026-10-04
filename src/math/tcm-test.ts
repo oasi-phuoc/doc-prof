@@ -230,12 +230,11 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
 
 /**
  * Étapes regroupées sur une même feuille A4 (après la page consignes).
- * Page 2 : ex. 1–4 · Page 3 : ex. 5–6 · Page 4 : ex. 7–8 · Page 5 : ex. 10–11.
+ * Page 2 : ex. 1–4 · Page 3 : ex. 5–8 · Page 4 : ex. 10–11.
  */
 const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],
-  [5, 6],
-  [7, 8],
+  [5, 6, 7, 8],
   [10, 11],
 ]
 
