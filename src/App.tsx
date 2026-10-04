@@ -11,6 +11,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 import {
   ACCESS_DOMAIN_OPTIONS,
@@ -4554,7 +4555,12 @@ export default function App() {
     setRoute('access')
   }
 
-  if (route === 'generator') return <GeneratorPage onLogout={logout} />
-  if (route === 'access') return <AccessPage onSuccess={openGenerator} />
-  return <Landing onCreate={goAccess} />
+  return (
+    <>
+      {route === 'generator' && <GeneratorPage onLogout={logout} />}
+      {route === 'access' && <AccessPage onSuccess={openGenerator} />}
+      {route === 'landing' && <Landing onCreate={goAccess} />}
+      <Analytics />
+    </>
+  )
 }
