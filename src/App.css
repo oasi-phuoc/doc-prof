@@ -3262,12 +3262,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:#fff;
   overflow:hidden;
 }
-/* Multi-exercices sur une page : cadres compter plus bas + espace entre blocs */
+/* Multi-exercices sur une page : cadres compter (+50 % vs 34 mm) + 5 px sous cadre */
 .worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-frame{
-  aspect-ratio:1 / 0.55;
-  max-height:34mm;
+  aspect-ratio:1 / 0.825;
+  max-height:51mm;
 }
-.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:2px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:5px}
 .worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading{
   margin-bottom:4px
 }

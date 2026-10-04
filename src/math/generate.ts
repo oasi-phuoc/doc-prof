@@ -149,24 +149,73 @@ function generateTcmComparerBatch(rng: Rng, count: number): MathItem[] {
   })
 }
 
-function generateTcmSuite(rng: Rng): MathItem {
+/** Suites TCM : Q1 = deux blancs consécutifs ; Q2 = motif `n _ n _ n` (index 1 et 3). */
+function generateTcmSuiteBatch(rng: Rng, count: number): MathItem[] {
   const length = 5
-  const step = int(rng, 2, 10)
-  const maxStart = Math.max(1, 100 - (length - 1) * step)
-  const start = int(rng, 1, maxStart)
-  const seq = Array.from({ length }, (_, k) => start + k * step)
-  const blankCount = 2
-  const indexes = shuffle(
-    rng,
-    Array.from({ length }, (_, k) => k),
-  ).slice(0, blankCount)
-  const blanks = [...indexes].sort((a, b) => a - b)
-  return {
-    layout: 'sequence',
-    sequence: seq.map((n, k) => (blanks.includes(k) ? '□' : String(n))),
-    blankIndexes: blanks,
-    answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
+  const n = Math.max(1, count)
+  return Array.from({ length: n }, (_, qi) => {
+    const step = int(rng, 2, 10)
+    const maxStart = Math.max(1, 100 - (length - 1) * step)
+    const start = int(rng, 1, maxStart)
+    const seq = Array.from({ length }, (_, k) => start + k * step)
+    // Q1 : deux blancs consécutifs ; Q2+ : motif 1 _ 3 _ 5 (blancs aux index 1 et 3).
+    const blanks: number[] =
+      qi === 0
+        ? (() => {
+            const first = int(rng, 0, length - 2)
+            return [first, first + 1]
+          })()
+        : [1, 3]
+    return {
+      layout: 'sequence' as const,
+      sequence: seq.map((v, k) => (blanks.includes(k) ? '□' : String(v))),
+      blankIndexes: blanks,
+      answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
+    }
+  })
+}
+
+function generateTcmSuite(rng: Rng): MathItem {
+  return generateTcmSuiteBatch(rng, 1)[0]!
+}
+
+/**
+ * Calcul mixte TCM (fusion ex. 7–8–9) : templates + / − / × / ÷.
+ * Ordre fixe : + trou, − trou, ×(6|7), ×(8|9), ÷(3|4|5), ÷(11|12).
+ */
+function generateTcmQuatreOpsBatch(rng: Rng): MathItem[] {
+  const mkAdd = (): MathItem => {
+    const missing: MissingPos = pick(rng, ['a', 'b'] as const)
+    const a = int(rng, 75, 450)
+    const b = int(rng, 75, Math.max(75, 500 - a))
+    return inlineOp('+', a, b, a + b, missing)
   }
+  const mkSub = (): MathItem => {
+    const missing: MissingPos = pick(rng, ['a', 'b'] as const)
+    const b = int(rng, 75, 425)
+    const result = int(rng, 75, Math.max(75, 500 - b))
+    const a = b + result
+    return inlineOp('−', a, b, result, missing)
+  }
+  const mkMul = (factors: readonly number[]): MathItem => {
+    const b = pick(rng, factors)
+    const a = int(rng, 3, 12)
+    return inlineOp('×', a, b, a * b, 'result')
+  }
+  const mkDiv = (divisors: readonly number[], quotMax: number): MathItem => {
+    const b = pick(rng, divisors)
+    const result = int(rng, 2, quotMax)
+    return inlineOp('÷', b * result, b, result, 'result')
+  }
+  const makers = [
+    mkAdd,
+    mkSub,
+    () => mkMul([6, 7]),
+    () => mkMul([8, 9]),
+    () => mkDiv([3, 4, 5], 12),
+    () => mkDiv([11, 12], 9),
+  ]
+  return makers.map((make) => make())
 }
 
 /** 3 additions + 3 soustractions (templates résultat / trou), opérandes 10–100. */
@@ -611,8 +660,14 @@ function generateItems(
   if (typeId === 'tcm-comparer') {
     return generateTcmComparerBatch(rng, count)
   }
+  if (typeId === 'tcm-suite') {
+    return generateTcmSuiteBatch(rng, count)
+  }
   if (typeId === 'tcm-operations') {
     return generateTcmOperationsBatch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'tcm-quatre-ops') {
+    return generateTcmQuatreOpsBatch(rng).slice(0, Math.max(1, count))
   }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
@@ -658,6 +713,10 @@ function generateOne(
     }
     case 'tcm-operations': {
       const [item] = generateTcmOperationsBatch(rng)
+      return item!
+    }
+    case 'tcm-quatre-ops': {
+      const [item] = generateTcmQuatreOpsBatch(rng)
       return item!
     }
     case 'nombres-position': {

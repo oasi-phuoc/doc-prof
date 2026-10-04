@@ -51,21 +51,9 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   { id: 6, label: 'Grandes suites', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 2 }] },
   {
     id: 7,
-    label: 'Calcul mixte',
-    blocks: [
-      { exerciseType: 'addition-ligne', count: 2, columns: 2 },
-      { exerciseType: 'soustraction-ligne', count: 2, columns: 2 },
-      { exerciseType: 'multiplication-ligne', count: 2, columns: 2 },
-    ],
-  },
-  { id: 8, label: 'Décomposition', blocks: [{ exerciseType: 'nombres-decompose', count: 2, columns: 1 }] },
-  {
-    id: 9,
-    label: 'Colonnes (1000–9999)',
-    blocks: [
-      { exerciseType: 'addition-colonne', count: 1, columns: 2 },
-      { exerciseType: 'soustraction-colonne', count: 1, columns: 2 },
-    ],
+    label: 'Calcul mixte (+ − × ÷)',
+    /** Fusion des anciens ex. 7–8–9 : templates + / − / × / ÷. */
+    blocks: [{ exerciseType: 'tcm-quatre-ops', count: 6, columns: 2, pointsPerQuestion: 0.5 }],
   },
   {
     id: 10,
@@ -218,8 +206,14 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
 ]
 
-/** Étapes regroupées sur une même feuille A4 (après la page consignes). */
-const TCM_PACKED_STEP_IDS: readonly number[] = [1, 2, 3, 4]
+/**
+ * Étapes regroupées sur une même feuille A4 (après la page consignes).
+ * Page 2 : ex. 1–4 · Page 3 : ex. 5–6 + fusion 7 + ex. 10.
+ */
+const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 10],
+]
 
 function blockFromSpec(spec: TcmBlockSpec, difficulty: Difficulty = 'moyen'): ExerciseBlock {
   const type = exerciseTypeById[spec.exerciseType]
@@ -261,21 +255,24 @@ function buildConsignesPage(): PageConfig {
   }
 }
 
-/** Feuille consignes + 35 exercices (1–4 regroupés sur une page). */
+/** Feuille consignes + exercices (1–4 et 5–7+10 regroupés). */
 export function buildTcmTestPages(): PageConfig[] {
   const byId = new Map(TCM_STEPS.map((step) => [step.id, step]))
-  const packed = TCM_PACKED_STEP_IDS.flatMap((id) => {
-    const step = byId.get(id)
-    if (!step) throw new Error(`TCM : étape ${id} introuvable`)
-    return step.blocks.map((b) => blockFromSpec(b))
+  const packedPages = TCM_PACKED_PAGES.map((ids) => {
+    const blocks = ids.flatMap((id) => {
+      const step = byId.get(id)
+      if (!step) throw new Error(`TCM : étape ${id} introuvable`)
+      return step.blocks.map((b) => blockFromSpec(b))
+    })
+    return pageFromBlocks(blocks)
   })
 
-  const packedIds = new Set(TCM_PACKED_STEP_IDS)
+  const packedIds = new Set(TCM_PACKED_PAGES.flat())
   const rest = TCM_STEPS.filter((step) => !packedIds.has(step.id)).map((step) =>
     pageFromBlocks(step.blocks.map((b) => blockFromSpec(b))),
   )
 
-  return [buildConsignesPage(), pageFromBlocks(packed), ...rest]
+  return [buildConsignesPage(), ...packedPages, ...rest]
 }
 
 export function isTcmDomain(domain: Domain | undefined): boolean {

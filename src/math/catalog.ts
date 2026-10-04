@@ -143,6 +143,15 @@ export const exerciseTypes: ExerciseType[] = [
     'ligne',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-quatre-ops',
+    'tcm-info',
+    'Calcul mixte (+ − × ÷)',
+    'Additions, soustractions, multiplications et divisions en ligne (templates à trous).',
+    'Effectuez les calculs.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(
