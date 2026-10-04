@@ -899,6 +899,13 @@ html,body,#root{
   border-color:color-mix(in srgb,var(--purple) 28%,#fff);
   color:var(--purple);background:var(--lavender)
 }
+<<<<<<< HEAD
+=======
+.draft-grid-chip.on{
+  border-color:color-mix(in srgb,var(--purple) 28%,#fff);
+  color:var(--purple);background:var(--lavender)
+}
+>>>>>>> origin/cursor/theme-accents-jeux-0375
 .draft-grid-chip.off{opacity:.85}
 /* Dans la marge large (2,5 cm), entièrement visible à l’écran ; .no-print à l’impression. */
 .draft-grid-chip-margin{
@@ -2460,6 +2467,7 @@ html,body,#root{
   font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#111;
   text-decoration:none;line-height:1.2
 }
+<<<<<<< HEAD
 /* Même emprise élève / corrigé (padding du texte réponse comme base). */
 .phrase-answer-slot{
   display:flex;align-items:flex-end;width:100%;min-width:0;
@@ -2485,6 +2493,15 @@ html,body,#root{
 .phrase-verb-prompt{
   margin:0;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--purple)
 }
+=======
+.phrase-write-line{
+  display:block;width:100%;min-height:1.4em;border:0;
+  border-bottom:1.5px dashed color-mix(in srgb,var(--purple) 55%,#fff);
+  margin-top:2px;box-sizing:border-box
+}
+.phrase-order-answer{margin-top:4px;font-size:14px}
+.phrase-verb-prompt{margin:0;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--purple)}
+>>>>>>> origin/cursor/theme-accents-jeux-0375
 .phrase-write-prompt{margin:0 0 8px;font-size:14px;font-weight:500;color:var(--ink)}
 .phrase-write-lines{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:pw}
 .phrase-write-lines>li{
