@@ -805,24 +805,26 @@ function tcmReducibleFraction(rng: Rng): { n: number; d: number; sn: number; sd:
 
 /** Deux fractions pour ×/÷ : au moins un numérateur relatif (négatif) ; parfois les deux. */
 function tcmSignedFracPair(rng: Rng): [{ n: number; d: number }, { n: number; d: number }] {
-  const one = (): { n: number; d: number } => ({
-    n: int(rng, 1, 6),
-    d: int(rng, 2, 9),
-  })
-  let a = one()
-  let b = one()
-  while (b.n === 0) b = one()
+  const one = (): { n: number; d: number } => {
+    for (let attempt = 0; attempt < 20; attempt++) {
+      const n = int(rng, 1, 6)
+      const d = int(rng, 2, 9)
+      if (n !== d) return { n, d }
+    }
+    return { n: 2, d: 5 }
+  }
+  const a = one()
+  const b = one()
 
   const both = rng() < 0.4
   if (both) {
-    a = { ...a, n: -a.n }
-    b = { ...b, n: -b.n }
-  } else if (rng() < 0.5) {
-    a = { ...a, n: -a.n }
-  } else {
-    b = { ...b, n: -b.n }
+    return [
+      { n: -a.n, d: a.d },
+      { n: -b.n, d: b.d },
+    ]
   }
-  return [a, b]
+  if (rng() < 0.5) return [{ n: -a.n, d: a.d }, b]
+  return [a, { n: -b.n, d: b.d }]
 }
 
 /**
