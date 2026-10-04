@@ -1127,7 +1127,8 @@ html,body,#root{
   min-height:min-content
 }
 .exercise-item.layout-column,.exercise-item.layout-column-empty,.exercise-item.layout-division-column,
-.exercise-item.layout-text,.exercise-item.layout-geo,.exercise-item.layout-coord{
+.exercise-item.layout-text,.exercise-item.layout-geo,.exercise-item.layout-coord,
+.exercise-item.layout-count-icons{
   min-height:min-content
 }
 .item-number{
@@ -3237,5 +3238,46 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   .access-card{padding:28px 20px 22px}
   .topbar-right{gap:6px}
   .access-logout-btn{min-height:36px;padding:0 10px;font-size:12px}
+}
+
+/* Nombres — compter les formes / icônes N&B */
+.count-icons-block{
+  width:100%;min-width:0;
+  display:flex;flex-direction:column;gap:8px;
+}
+.count-icons-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:1 / 1.05;
+  max-height:78mm;
+  border:1.5px solid var(--ink);
+  background:#fff;
+  overflow:hidden;
+}
+.count-icon-token{
+  position:absolute;
+  color:var(--ink);
+  display:block;
+  line-height:0;
+  pointer-events:none;
+}
+.count-icon-token svg{
+  width:100%;height:100%;display:block;
+}
+.count-icons-caption{
+  margin:0;
+  font-size:15px;
+  line-height:1.5;
+  color:var(--ink);
+  text-align:justify;
+}
+.count-icons-blank{
+  display:inline-block;
+  min-width:3.5ch;
+  vertical-align:baseline;
+}
+@media print{
+  .count-icons-frame{border-color:#000!important}
+  .count-icon-token{color:#000!important}
 }
 /* End */

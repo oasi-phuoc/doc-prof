@@ -44,6 +44,8 @@ import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type {
   AlgebraGiven,
   ArithOp,
+  CountIconKind,
+  CountIconToken,
   Difficulty,
   DivisionStep,
   Figure,
@@ -54,6 +56,72 @@ import type {
   WorksheetDocument,
   WorksheetPage,
 } from './types'
+
+const COUNT_ICON_TARGETS: readonly {
+  kind: CountIconKind
+  label: string
+}[] = [
+  { kind: 'note', label: 'notes' },
+  { kind: 'notes', label: 'notes' },
+  { kind: 'star', label: 'étoiles' },
+  { kind: 'heart', label: 'cœurs' },
+  { kind: 'leaf', label: 'feuilles' },
+  { kind: 'moon', label: 'lunes' },
+  { kind: 'bolt', label: 'éclairs' },
+  { kind: 'flower', label: 'fleurs' },
+]
+
+function generateCountIcons(rng: Rng): MathItem {
+  const target = pick(rng, COUNT_ICON_TARGETS)
+  const targetCount = int(rng, 10, 20)
+  const circleCount = int(rng, 4, 10)
+  const triangleCount = int(rng, 4, 10)
+  const total = targetCount + circleCount + triangleCount
+
+  // Grille irrégulière : positions mélangées, tailles variées.
+  const cols = Math.ceil(Math.sqrt(total * 1.35))
+  const rows = Math.ceil(total / cols)
+  const cells: Array<{ c: number; r: number }> = []
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) cells.push({ c, r })
+  }
+  const slots = shuffle(rng, cells).slice(0, total)
+
+  const kinds: Array<CountIconKind | 'circle' | 'triangle'> = [
+    ...Array.from({ length: targetCount }, () => target.kind),
+    ...Array.from({ length: circleCount }, () => 'circle' as const),
+    ...Array.from({ length: triangleCount }, () => 'triangle' as const),
+  ]
+  const orderedKinds = shuffle(rng, kinds)
+
+  const tokens: CountIconToken[] = slots.map((slot, i) => {
+    const padX = 8
+    const padY = 10
+    const cellW = (100 - padX * 2) / cols
+    const cellH = (100 - padY * 2) / rows
+    const x = padX + slot.c * cellW + cellW * (0.25 + rng() * 0.5)
+    const y = padY + slot.r * cellH + cellH * (0.25 + rng() * 0.5)
+    return {
+      kind: orderedKinds[i]!,
+      x: Math.max(6, Math.min(94, x)),
+      y: Math.max(8, Math.min(92, y)),
+      size: int(rng, 11, 20),
+      rot: int(rng, -28, 28),
+    }
+  })
+
+  return {
+    layout: 'count-icons',
+    prompt: `Il y a ____ ${target.label}`,
+    answer: String(targetCount),
+    countIcons: {
+      label: target.label,
+      targetKind: target.kind,
+      targetCount,
+      tokens,
+    },
+  }
+}
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
@@ -493,6 +561,9 @@ function generateOne(
     case 'nombres-lettres': {
       const n = int(rng, 0, Math.min(999, nMax))
       return { layout: 'text', prompt: String(n), answer: numberToFrench(n) }
+    }
+    case 'nombres-compter-formes': {
+      return generateCountIcons(rng)
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)

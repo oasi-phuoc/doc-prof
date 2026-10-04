@@ -1168,6 +1168,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
   const isVocabProd = isVocabProductionType(type.id)
   const isJeux = isJeuxType(type.id)
   const isCalli = isCalligraphieType(type.id)
+  const isCountIcons = type.id === 'nombres-compter-formes'
   const vocabSubgroup =
     prev?.topic === type.topic && prev.vocabSubgroup
       ? prev.vocabSubgroup
@@ -1292,7 +1293,7 @@ function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBl
                           }
                         : isLecture || isSoutienFr
                           ? { count: 6 }
-                        : isGeoCalc
+                        : isGeoCalc || isCountIcons
                           ? { count: 2 }
                           : isFrenchCom
                             ? { count: 4 }

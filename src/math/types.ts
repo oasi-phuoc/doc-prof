@@ -84,6 +84,29 @@ export type Layout =
   | 'glossary'
   | 'card-grid'
   | 'calligraphy'
+  | 'count-icons'
+
+/** Icône cible à compter (SVG N&B). */
+export type CountIconKind = 'note' | 'notes' | 'star' | 'heart' | 'leaf' | 'moon' | 'bolt' | 'flower'
+
+export type CountIconToken = {
+  kind: CountIconKind | 'circle' | 'triangle'
+  /** Position en % dans le cadre (0–100). */
+  x: number
+  y: number
+  /** Taille relative (environ 10–22). */
+  size: number
+  /** Rotation en degrés. */
+  rot: number
+}
+
+export type CountIconScene = {
+  /** Libellé pluriel sous le cadre (ex. « notes »). */
+  label: string
+  targetKind: CountIconKind
+  targetCount: number
+  tokens: CountIconToken[]
+}
 
 export type CoordShape =
   | 'point'
@@ -516,6 +539,8 @@ export type MathItem = {
     fontId?: string
     sizeId?: string
   }
+  /** Compter les formes / icônes dans un cadre (nombres naturels). */
+  countIcons?: CountIconScene
 }
 
 export type CompositeLabel = {

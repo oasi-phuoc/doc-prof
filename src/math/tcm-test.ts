@@ -27,7 +27,7 @@ type TcmStepSpec = {
  * quand disponibles ; géométrie périmètre+aire = 2 blocs.
  */
 export const TCM_STEPS: readonly TcmStepSpec[] = [
-  { id: 1, label: 'Compter les formes', blocks: [{ exerciseType: 'figures-nommer', count: 2, columns: 2 }] },
+  { id: 1, label: 'Compter les formes', blocks: [{ exerciseType: 'nombres-compter-formes', count: 2, columns: 2 }] },
   { id: 2, label: 'Comparer (11–99)', blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2 }] },
   { id: 3, label: 'Suites numériques', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 2 }] },
   {

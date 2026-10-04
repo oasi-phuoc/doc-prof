@@ -1,6 +1,12 @@
 import { Fragment, useEffect, useState, type CSSProperties, type ReactNode } from 'react'
 import QRCode from 'qrcode'
-import type { CoordShape, MathItem, PhraseCategory, PreviewMode } from '@/math/types'
+import type {
+  CoordShape,
+  CountIconToken,
+  MathItem,
+  PhraseCategory,
+  PreviewMode,
+} from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
 import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { lessonPhonemeSegmentsFromGraphemes } from '@/francais/soutien/phoneme'
@@ -352,6 +358,121 @@ function ReadPhrasesBlock({ item }: { item: MathItem }) {
           ))}
         </tbody>
       </table>
+    </div>
+  )
+}
+
+function CountIconGlyph({
+  kind,
+}: {
+  kind: CountIconToken['kind']
+}) {
+  const common = {
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.6,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+  }
+  switch (kind) {
+    case 'circle':
+      return <circle cx="12" cy="12" r="7.5" {...common} />
+    case 'triangle':
+      return <path d="M12 4.5 L20 19 H4 Z" {...common} />
+    case 'note':
+      return (
+        <g {...common}>
+          <ellipse cx="8.5" cy="17" rx="3.2" ry="2.4" fill="currentColor" stroke="none" />
+          <path d="M11.5 17 V6.5 c0 0 2.2 1.2 5 1.6" />
+          <path d="M16.5 8.2 V14" />
+          <ellipse cx="13.5" cy="14.2" rx="3" ry="2.2" fill="currentColor" stroke="none" />
+        </g>
+      )
+    case 'notes':
+      return (
+        <g {...common}>
+          <ellipse cx="7" cy="17.2" rx="2.8" ry="2.1" fill="currentColor" stroke="none" />
+          <ellipse cx="15.5" cy="15.8" rx="2.8" ry="2.1" fill="currentColor" stroke="none" />
+          <path d="M9.7 17 V7.2 H18.2 V15.5" />
+          <path d="M9.7 7.2 C12.5 8.6 15.5 8.6 18.2 7.2" />
+        </g>
+      )
+    case 'star':
+      return (
+        <path
+          d="M12 3.5l2.2 5.4 5.8.4-4.4 3.7 1.4 5.6L12 15.6 6.9 18.6l1.4-5.6L4 9.3l5.8-.4Z"
+          {...common}
+        />
+      )
+    case 'heart':
+      return (
+        <path
+          d="M12 20 S4.5 14.5 4.5 9.8 A3.8 3.8 0 0 1 12 7.8 A3.8 3.8 0 0 1 19.5 9.8 C19.5 14.5 12 20 12 20 Z"
+          {...common}
+        />
+      )
+    case 'leaf':
+      return (
+        <g {...common}>
+          <path d="M6 17 C7 8 14 4 19 5 C18 12 12 17 6 17 Z" />
+          <path d="M8.5 15.5 C11 12 14 9 17.5 6.5" />
+        </g>
+      )
+    case 'moon':
+      return (
+        <path
+          d="M15.5 4.8 A8.2 8.2 0 1 0 19.2 15.5 A6.4 6.4 0 1 1 15.5 4.8 Z"
+          {...common}
+        />
+      )
+    case 'bolt':
+      return <path d="M13.5 3.5 L7.5 13 h4.2 L9.8 20.5 L17.5 10.2 h-4.1 Z" {...common} />
+    case 'flower':
+      return (
+        <g {...common}>
+          <circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none" />
+          <circle cx="12" cy="6.2" r="2.4" />
+          <circle cx="12" cy="17.8" r="2.4" />
+          <circle cx="6.2" cy="12" r="2.4" />
+          <circle cx="17.8" cy="12" r="2.4" />
+        </g>
+      )
+    default:
+      return <circle cx="12" cy="12" r="7.5" {...common} />
+  }
+}
+
+function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const scene = item.countIcons
+  const show = mode === 'answers'
+  if (!scene) return null
+  return (
+    <div className="count-icons-block" aria-label="Compter les formes">
+      <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
+        {scene.tokens.map((token, index) => (
+          <span
+            key={`ci-${index}`}
+            className={`count-icon-token kind-${token.kind}`}
+            style={{
+              left: `${token.x}%`,
+              top: `${token.y}%`,
+              width: `${token.size}%`,
+              transform: `translate(-50%, -50%) rotate(${token.rot}deg)`,
+            }}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden focusable="false">
+              <CountIconGlyph kind={token.kind} />
+            </svg>
+          </span>
+        ))}
+      </div>
+      <p className="count-icons-caption">
+        Il y a{' '}
+        <span className={`answer-line-field compact count-icons-blank${show ? ' filled' : ''}`}>
+          {show ? String(scene.targetCount) : '\u00a0'}
+        </span>{' '}
+        {scene.label}
+      </p>
     </div>
   )
 }
@@ -2504,6 +2625,7 @@ export function ItemView({
         {item.layout === 'calligraphy' && item.calligraphy ? (
           <CalligraphyView item={item} />
         ) : null}
+        {item.layout === 'count-icons' && <CountIconsBlock item={item} mode={mode} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
