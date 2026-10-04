@@ -1863,9 +1863,35 @@ function PlaceValueRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
 
 function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
+  const prompt = item.prompt ?? ''
+  const lines = prompt.split('\n')
+  // Style règle de trois kg : « n kg → p CHF » puis « m kg = ____ CHF » sur la 2ᵉ ligne.
+  if (lines.length >= 2 && lines[lines.length - 1]!.trimEnd().endsWith('=')) {
+    const head = lines.slice(0, -1)
+    const last = lines[lines.length - 1]!.trimEnd()
+    const answer = item.answer ?? ''
+    const chf = /\s*CHF\s*$/i.test(answer)
+    const value = chf ? answer.replace(/\s*CHF\s*$/i, '').trim() : answer
+    return (
+      <div className="prompt-stack proportion-kg-stack">
+        {head.map((line, i) => (
+          <p className="prompt-stack-text" key={`pkg-h-${i}`}>
+            {line}
+          </p>
+        ))}
+        <div className="proportion-kg-question" aria-label="Question">
+          <span className="prompt-stack-text">{last}</span>
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+            {show ? value : '\u00a0'}
+          </span>
+          {chf ? <span className="proportion-kg-unit">CHF</span> : null}
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="prompt-stack">
-      <p className="prompt-stack-text">{item.prompt}</p>
+      <p className="prompt-stack-text">{prompt}</p>
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
         {show ? item.answer : '\u00a0'}
       </span>

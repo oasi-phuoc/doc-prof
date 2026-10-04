@@ -763,6 +763,15 @@ html,body,#root{
   margin:0;font-size:13pt;font-weight:600;line-height:1.45;color:var(--ink);
   text-align:justify;hyphens:auto
 }
+.proportion-kg-stack{gap:4px}
+.proportion-kg-question{
+  display:flex;align-items:baseline;gap:8px;width:100%;min-width:0;flex-wrap:nowrap
+}
+.proportion-kg-question .prompt-stack-text{flex:0 0 auto;white-space:nowrap}
+.proportion-kg-question .answer-line-field{flex:1 1 auto;min-width:4cm}
+.proportion-kg-unit{
+  flex:0 0 auto;font-size:13pt;font-weight:600;color:var(--ink);white-space:nowrap
+}
 
 .place-value-row{
   display:flex;align-items:flex-start;gap:6px;width:100%;min-width:0;

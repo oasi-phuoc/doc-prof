@@ -1,7 +1,7 @@
 /**
  * TCM ex. 31 — règle de trois (masses en kg).
- * 25 modèles : « n kg de … coûtent … ; combien pour m kg ? »
- * n, m ∈ [10 ; 99], ni n|m ni m|n ; prix unitaires entiers (CHF).
+ * Style : « n kg de … → p CHF » / « m kg de … = ____ CHF »
+ * 25 modèles ; n, m, p ∈ [10 ; 99] ; ni n|m ni m|n ; réponse exacte en CHF.
  */
 import { int, type Rng } from './rng'
 import type { MathItem } from './types'
@@ -45,37 +45,55 @@ export const TCM_PROPORTION_KG_TEMPLATES: readonly ProportionKgTemplate[] = [
 
 export const TCM_PROPORTION_KG_COUNT = TCM_PROPORTION_KG_TEMPLATES.length
 
+function gcd(a: number, b: number): number {
+  let x = Math.abs(a)
+  let y = Math.abs(b)
+  while (y) {
+    const t = y
+    y = x % y
+    x = t
+  }
+  return x || 1
+}
+
 function divides(a: number, b: number): boolean {
   return a !== 0 && b % a === 0
 }
 
-/** Deux masses 10–99 telles que ni l’une ni l’autre ne divise l’autre. */
-export function pickIndepKgPair(rng: Rng): { kgA: number; kgB: number } {
-  for (let attempt = 0; attempt < 80; attempt++) {
+/**
+ * Deux masses 10–99 (ni l’une ni l’autre ne divise l’autre)
+ * + prix donné 10–99 tel que le prix cherché soit entier.
+ */
+export function pickIndepKgPrice(rng: Rng): { kgA: number; kgB: number; priceA: number; priceB: number } {
+  for (let attempt = 0; attempt < 120; attempt++) {
     const kgA = int(rng, 10, 99)
     let kgB = int(rng, 10, 99)
     while (kgB === kgA) kgB = int(rng, 10, 99)
-    if (!divides(kgA, kgB) && !divides(kgB, kgA)) {
-      return { kgA, kgB }
-    }
+    if (divides(kgA, kgB) || divides(kgB, kgA)) continue
+
+    // priceA × kgB divisible par kgA ⇔ priceA multiple de kgA / gcd(kgA, kgB).
+    const step = kgA / gcd(kgA, kgB)
+    const minK = Math.ceil(10 / step)
+    const maxK = Math.floor(99 / step)
+    if (minK > maxK) continue
+    const k = int(rng, minK, maxK)
+    const priceA = k * step
+    const priceB = (priceA * kgB) / kgA
+    if (!Number.isInteger(priceB) || priceB <= 0) continue
+    return { kgA, kgB, priceA, priceB }
   }
-  // Repli déterministe rare (15 ∤ 28, 28 ∤ 15).
-  return { kgA: 15, kgB: 28 }
+  // Repli : 15 ∤ 28 ; 30 × 28 / 15 = 56.
+  return { kgA: 15, kgB: 28, priceA: 30, priceB: 56 }
 }
 
 function fillTemplate(
   tpl: ProportionKgTemplate,
   rng: Rng,
-): { prompt: string; calcAnswer: string; responseAnswer: string; answer: string } {
-  const { kgA, kgB } = pickIndepKgPair(rng)
-  // Prix unitaire 2–9 CHF/kg → totaux entiers raisonnables.
-  const unit = int(rng, 2, 9)
-  const priceA = unit * kgA
-  const priceB = unit * kgB
-  const prompt = `${kgA} kg ${tpl.ofProduct} coûtent ${priceA} CHF. Combien coûtent ${kgB} kg ${tpl.ofProduct} ?`
-  const calcAnswer = `${priceA} × ${kgB} ÷ ${kgA}`
-  const responseAnswer = `${priceB} CHF`
-  return { prompt, calcAnswer, responseAnswer, answer: responseAnswer }
+): { prompt: string; answer: string } {
+  const { kgA, kgB, priceA, priceB } = pickIndepKgPrice(rng)
+  // Style placement : donnée avec → ; question avec = et trait de réponse.
+  const prompt = `${kgA} kg ${tpl.ofProduct} → ${priceA} CHF\n${kgB} kg ${tpl.ofProduct} =`
+  return { prompt, answer: `${priceB} CHF` }
 }
 
 /** Lot TCM ex. 31 : 2 questions, modèles distincts parmi 25. */
@@ -92,8 +110,6 @@ export function generateTcmProportionKgBatch(rng: Rng, count = 2): MathItem[] {
     return {
       layout: 'text' as const,
       prompt: filled.prompt,
-      calcAnswer: filled.calcAnswer,
-      responseAnswer: filled.responseAnswer,
       answer: filled.answer,
     }
   })
