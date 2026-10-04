@@ -34,6 +34,8 @@ import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { generateLengthConversionBatch, tryGenerateConversion } from './conversions'
 import { generateTcmPrioriteBatch } from './tcm-priorite'
+import { generateTcmProportionKgBatch } from './tcm-proportion-kg'
+import { generateTcmReduireBatch } from './tcm-reduire'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from '@/francais/francais'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
@@ -804,8 +806,13 @@ function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
   const subPlaces = Math.max(decimalPlacesOf(subA), decimalPlacesOf(subB))
   const subResult = Math.round((subA - subB) * 10 ** subPlaces) / 10 ** subPlaces
 
+  // × et ÷ « facteur » : deux facteurs distincts (0,01…0,5).
+  const factorMul = pick(rng, [...TCM_DEC_FACTORS])
+  const factorDivPool = TCM_DEC_FACTORS.filter((f) => f !== factorMul)
+  const factorDiv = pick(rng, [...factorDivPool])
+
   const mulFactor = (() => {
-    const factor = pick(rng, [...TCM_DEC_FACTORS])
+    const factor = factorMul
     const kMin = Math.max(1, Math.ceil(100 * factor))
     const kMax = Math.floor(999 * factor)
     const k = int(rng, kMin, Math.max(kMin, kMax))
@@ -823,7 +830,7 @@ function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
   })()
 
   const divFactor = (() => {
-    const factor = pick(rng, [...TCM_DEC_FACTORS])
+    const factor = factorDiv
     const n = int(rng, 100, 999)
     const result = Math.round(n / factor)
     return inlineOp('÷', n, factor, result, 'result')
@@ -1467,6 +1474,12 @@ function generateItems(
   if (typeId === 'tcm-relatifs-ops') {
     return generateTcmRelatifsOpsBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-expressions-reduire') {
+    return generateTcmReduireBatch(rng).slice(0, Math.max(1, count))
+  }
+  if (typeId === 'tcm-proportion-kg') {
+    return generateTcmProportionKgBatch(rng, count)
+  }
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count)
@@ -1599,6 +1612,12 @@ function generateOne(
     }
     case 'tcm-relatifs-ops': {
       return generateTcmRelatifsOpsBatch(rng)[0]!
+    }
+    case 'tcm-expressions-reduire': {
+      return generateTcmReduireBatch(rng)[0]!
+    }
+    case 'tcm-proportion-kg': {
+      return generateTcmProportionKgBatch(rng, 1)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)

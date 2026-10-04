@@ -5,7 +5,7 @@
  * (ou un type TCM dédié pour les premiers exercices).
  */
 import type { Difficulty, Domain, ExerciseBlock, PageConfig } from './types'
-import { exerciseTypeById } from './catalog'
+import { exerciseTypeById, isDraftPadExercise } from './catalog'
 
 export const TCM_DOMAIN: Domain = 'tcm'
 
@@ -175,16 +175,13 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 31,
-    label: 'Pourcentages et règle de trois',
-    blocks: [
-      { exerciseType: 'proportion-de', count: 1, columns: 2 },
-      { exerciseType: 'proportion-problemes', count: 1, columns: 1 },
-    ],
+    label: 'Règle de trois (kg)',
+    blocks: [{ exerciseType: 'tcm-proportion-kg', count: 2, columns: 1 }],
   },
   {
     id: 32,
     label: 'Simplification algébrique',
-    blocks: [{ exerciseType: 'expressions-reduire', count: 4, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-expressions-reduire', count: 2, columns: 1 }],
   },
   {
     id: 33,
@@ -252,6 +249,9 @@ function blockFromSpec(
     difficulty,
     count: spec.count,
     columns: Math.max(1, Math.min(3, columns)) as 1 | 2 | 3,
+    ...(isDraftPadExercise(type.id)
+      ? { problemDraftGrids: Array.from({ length: spec.count }, () => true) }
+      : {}),
     ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
     ...(exerciseNo != null || spec.exerciseNo != null
       ? { exerciseNo: spec.exerciseNo ?? exerciseNo }

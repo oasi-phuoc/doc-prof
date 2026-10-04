@@ -359,6 +359,24 @@ export const exerciseTypes: ExerciseType[] = [
     'ligne',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-expressions-reduire',
+    'tcm-info',
+    'Réduction d’expressions',
+    'Deux expressions : réduction classique ; puis modèle avec · et parenthèses (50 gabarits, ≥ 5 pièces).',
+    'Réduisez chaque expression.',
+    'ligne',
+    { preferredColumns: 1 },
+  ),
+  t(
+    'tcm-proportion-kg',
+    'tcm-info',
+    'Règle de trois (kg)',
+    'Deux problèmes de proportionnalité avec des masses en kg (25 modèles ; masses 10–99 non divisibles entre elles).',
+    'Lisez le problème. Écrivez le calcul et la réponse.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(
@@ -1084,7 +1102,12 @@ export function isDraftPadExercise(typeId: string): boolean {
     typeId.startsWith('equations-') ||
     typeId.startsWith('perimetres-') ||
     typeId.startsWith('aires-') ||
-    typeId.startsWith('volumes-')
+    typeId.startsWith('volumes-') ||
+    // TCM : géométrie périmètre/aire, réduction, substitution, règle de trois kg.
+    typeId.includes('peri-aire') ||
+    typeId === 'tcm-expressions-reduire' ||
+    typeId === 'tcm-proportion-kg' ||
+    typeId === 'expressions-substituer'
   )
 }
 
