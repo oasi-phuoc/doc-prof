@@ -859,82 +859,89 @@ function generateTcmOpsDecimalesBatch(rng: Rng): MathItem[] {
  * Q2 : 5 décimaux motifs x,0x · x,x · x,xx · x,xx · x,x0.
  */
 function generateTcmRangerBatch(rng: Rng): MathItem[] {
-  const makeInt = (): MathItem => {
-    const first = int(rng, 1, 9)
-    let firstB = int(rng, 1, 9)
-    while (firstB === first) firstB = int(rng, 1, 9)
-    // Paire début : même 1er chiffre, fins différentes (5 chiffres).
-    const a1 = first * 10_000 + int(rng, 1_000, 9_999)
-    let a2 = first * 10_000 + int(rng, 1_000, 9_999)
-    while (a2 % 100 === a1 % 100 || a2 === a1) a2 = first * 10_000 + int(rng, 1_000, 9_999)
-    // Paire fin : mêmes 2 derniers chiffres, débuts différents.
-    const end2 = int(rng, 10, 99)
-    const b1 = firstB * 10_000 + int(rng, 10, 99) * 100 + end2
-    let b2Head = int(rng, 1, 9)
-    while (b2Head === firstB || b2Head === first) b2Head = int(rng, 1, 9)
-    const b2 = b2Head * 10_000 + int(rng, 10, 99) * 100 + end2
-    // Un seul centre (5 nombres au total, comme Q2).
-    const mid = int(rng, 10, 99)
-    let cHead = int(rng, 1, 9)
-    while (cHead === first || cHead === firstB || cHead === b2Head) cHead = int(rng, 1, 9)
-    const cEnd = int(rng, 10, 99)
-    const c1 = cHead * 10_000 + mid * 100 + cEnd
-    const numbers = shuffle(rng, [a1, a2, b1, b2, c1])
-    const ascending = rng() < 0.5
-    const ordered = [...numbers].sort((x, y) => (ascending ? x - y : y - x))
-    return {
-      layout: 'order',
-      sequence: numbers.map(String),
-      placeParts: ordered.map(String),
-      orderOp: ascending ? '<' : '>',
-      prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
-      answer: ordered.join(ascending ? ' < ' : ' > '),
-    }
+  const orderItem = (
+    ascending: boolean,
+    sequence: string[],
+    ordered: string[],
+  ): MathItem => ({
+    layout: 'order',
+    sequence,
+    placeParts: ordered,
+    orderOp: ascending ? '<' : '>',
+    prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
+    answer: ordered.join(ascending ? ' < ' : ' > '),
+  })
+
+  // Q1 — 5 grands nombres (mélanger d’abord, puis tirer l’ordre).
+  const first = int(rng, 1, 9)
+  let firstB = int(rng, 1, 9)
+  while (firstB === first) firstB = int(rng, 1, 9)
+  const a1 = first * 10_000 + int(rng, 1_000, 9_999)
+  let a2 = first * 10_000 + int(rng, 1_000, 9_999)
+  while (a2 % 100 === a1 % 100 || a2 === a1) a2 = first * 10_000 + int(rng, 1_000, 9_999)
+  const end2 = int(rng, 10, 99)
+  const b1 = firstB * 10_000 + int(rng, 10, 99) * 100 + end2
+  let b2Head = int(rng, 1, 9)
+  while (b2Head === firstB || b2Head === first) b2Head = int(rng, 1, 9)
+  const b2 = b2Head * 10_000 + int(rng, 10, 99) * 100 + end2
+  const mid = int(rng, 10, 99)
+  let cHead = int(rng, 1, 9)
+  while (cHead === first || cHead === firstB || cHead === b2Head) cHead = int(rng, 1, 9)
+  const cEnd = int(rng, 10, 99)
+  const c1 = cHead * 10_000 + mid * 100 + cEnd
+  const intNumbers = shuffle(rng, [a1, a2, b1, b2, c1])
+
+  // Une Q croissant, une Q décroissant (tirage après brassage — pas le 1er rng()).
+  const intAscending = rng() < 0.5
+  const intOrdered = [...intNumbers].sort((x, y) => (intAscending ? x - y : y - x))
+  const intItem = orderItem(
+    intAscending,
+    intNumbers.map(String),
+    intOrdered.map(String),
+  )
+
+  // Q2 — 5 décimaux, ordre opposé.
+  const x = int(rng, 1, 9)
+  const d1 = int(rng, 1, 9)
+  const d2 = int(rng, 1, 9)
+  let t1 = int(rng, 1, 9)
+  let h1 = int(rng, 1, 9)
+  let t2 = int(rng, 1, 9)
+  let h2 = int(rng, 1, 9)
+  while (t1 === t2 && h1 === h2) {
+    t2 = int(rng, 1, 9)
+    h2 = int(rng, 1, 9)
   }
-  const makeDec = (): MathItem => {
-    const x = int(rng, 1, 9)
-    const d1 = int(rng, 1, 9) // x,0x
-    const d2 = int(rng, 1, 9) // x,x
-    let t1 = int(rng, 1, 9)
-    let h1 = int(rng, 1, 9)
-    let t2 = int(rng, 1, 9)
-    let h2 = int(rng, 1, 9)
-    while (t1 === t2 && h1 === h2) {
-      t2 = int(rng, 1, 9)
-      h2 = int(rng, 1, 9)
-    }
-    // x,x0 numériquement égal à x,x si même dixième : forcer un dixième distinct.
-    let t0 = int(rng, 1, 9)
-    while (t0 === d2) t0 = int(rng, 1, 9)
-    const values = [
-      x + d1 / 100, // x,0x
-      x + d2 / 10, // x,x
-      x + t1 / 10 + h1 / 100, // x,xx
-      x + t2 / 10 + h2 / 100, // x,xx
-      x + t0 / 10, // x,x0  → affichage avec 0 des centièmes
-    ]
-    const show = (n: number, kind: '0x' | 'x' | 'xx' | 'x0'): string => {
-      if (kind === '0x') return `${x},0${Math.round((n - x) * 100)}`
-      if (kind === 'x') return `${x},${Math.round((n - x) * 10)}`
-      if (kind === 'x0') return `${x},${Math.round((n - x) * 10)}0`
-      const cents = Math.round((n - x) * 100)
-      return `${x},${String(cents).padStart(2, '0')}`
-    }
-    const kinds: Array<'0x' | 'x' | 'xx' | 'x0'> = ['0x', 'x', 'xx', 'xx', 'x0']
-    const labeled = values.map((v, i) => ({ v, text: show(v, kinds[i]!) }))
-    const shuffled = shuffle(rng, labeled)
-    const ascending = rng() < 0.5
-    const ordered = [...shuffled].sort((a, b) => (ascending ? a.v - b.v : b.v - a.v))
-    return {
-      layout: 'order',
-      sequence: shuffled.map((e) => e.text),
-      placeParts: ordered.map((e) => e.text),
-      orderOp: ascending ? '<' : '>',
-      prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
-      answer: ordered.map((e) => e.text).join(ascending ? ' < ' : ' > '),
-    }
+  let t0 = int(rng, 1, 9)
+  while (t0 === d2) t0 = int(rng, 1, 9)
+  const values = [
+    x + d1 / 100,
+    x + d2 / 10,
+    x + t1 / 10 + h1 / 100,
+    x + t2 / 10 + h2 / 100,
+    x + t0 / 10,
+  ]
+  const show = (n: number, kind: '0x' | 'x' | 'xx' | 'x0'): string => {
+    if (kind === '0x') return `${x},0${Math.round((n - x) * 100)}`
+    if (kind === 'x') return `${x},${Math.round((n - x) * 10)}`
+    if (kind === 'x0') return `${x},${Math.round((n - x) * 10)}0`
+    const cents = Math.round((n - x) * 100)
+    return `${x},${String(cents).padStart(2, '0')}`
   }
-  return [makeInt(), makeDec()]
+  const kinds: Array<'0x' | 'x' | 'xx' | 'x0'> = ['0x', 'x', 'xx', 'xx', 'x0']
+  const labeled = values.map((v, i) => ({ v, text: show(v, kinds[i]!) }))
+  const shuffled = shuffle(rng, labeled)
+  const decAscending = !intAscending
+  const decOrdered = [...shuffled].sort((a, b) =>
+    decAscending ? a.v - b.v : b.v - a.v,
+  )
+  const decItem = orderItem(
+    decAscending,
+    shuffled.map((e) => e.text),
+    decOrdered.map((e) => e.text),
+  )
+
+  return [intItem, decItem]
 }
 
 /** 3 additions + 3 soustractions (templates résultat / trou), opérandes 10–100. */

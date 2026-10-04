@@ -273,7 +273,7 @@ export const exerciseTypes: ExerciseType[] = [
     'tcm-ranger',
     'tcm-info',
     'Trier des nombres',
-    'Ranger 6 grands nombres, puis 5 nombres décimaux selon des motifs de chiffres.',
+    '5 grands nombres puis 5 décimaux ; une question croissant, l’autre décroissant (ordre tiré au hasard).',
     'Classez les nombres dans l’ordre demandé.',
     'ligne',
     { preferredColumns: 1 },
