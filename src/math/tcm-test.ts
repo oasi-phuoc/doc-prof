@@ -184,7 +184,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 32,
     label: 'Simplification algébrique',
-    blocks: [{ exerciseType: 'expressions-reduire', count: 4, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-expressions-reduire', count: 2, columns: 1 }],
   },
   {
     id: 33,
