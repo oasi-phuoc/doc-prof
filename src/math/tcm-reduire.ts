@@ -1,8 +1,8 @@
 /**
  * TCM ex. 32 — réduction d’expressions.
- * Q1 : termes à regrouper, sans · ni parenthèses, sans puissances.
- * Q2 : au moins deux · ; facteurs monômes ou (binomes) ; pas de puissance dans l’énoncé
- *      (les puissances peuvent apparaître dans la réponse après réduction).
+ * Q1 : somme de monômes, sans · ni puissance.
+ * Q2 : exactement deux · (trois facteurs) ; pas de puissance dans l’énoncé
+ *      (puissances possibles dans la réponse). 50 modèles.
  */
 import { int, pick, shuffle, type Rng } from './rng'
 import type { MathItem } from './types'
@@ -10,7 +10,76 @@ import type { MathItem } from './types'
 const SUPER: Record<number, string> = { 1: '', 2: '²', 3: '³', 4: '⁴' }
 const LETTERS = ['a', 'b', 'c', 'm', 'n', 'p', 't', 'v', 'x', 'y'] as const
 
+export const TCM_REDUIRE_Q2_COUNT = 50
+/** Conservé pour compat catalogue / tests éventuels. */
+export const TCM_REDUIRE_PAREN_COUNT = TCM_REDUIRE_Q2_COUNT
+
 type Mono = { coefficient: number; powers: Record<string, number> }
+
+type Factor =
+  | { kind: 'mono'; mono: Mono }
+  | { kind: 'paren'; left: Mono; right: Mono; op: '+' | '−' }
+
+/** Gabarit Q2 : trois slots → exactement deux « · ». */
+type SlotKind = 'lit' | 'const' | 'paren'
+type Q2Template = { id: string; slots: [SlotKind, SlotKind, SlotKind] }
+
+/**
+ * 50 modèles — chaque expression = facteur · facteur · facteur.
+ * Ex. 5x · 6c · 2 , 5x · (4x − v) · 3 , 4 · (5 + 4x) · y , (6y − t) · 5v · 2
+ */
+const Q2_TEMPLATES: Q2Template[] = [
+  { id: 'd01', slots: ['lit', 'lit', 'const'] },
+  { id: 'd02', slots: ['lit', 'paren', 'const'] },
+  { id: 'd03', slots: ['const', 'paren', 'lit'] },
+  { id: 'd04', slots: ['paren', 'lit', 'const'] },
+  { id: 'd05', slots: ['lit', 'const', 'paren'] },
+  { id: 'd06', slots: ['paren', 'const', 'lit'] },
+  { id: 'd07', slots: ['const', 'lit', 'paren'] },
+  { id: 'd08', slots: ['lit', 'paren', 'lit'] },
+  { id: 'd09', slots: ['paren', 'lit', 'lit'] },
+  { id: 'd10', slots: ['lit', 'lit', 'paren'] },
+  { id: 'd11', slots: ['const', 'lit', 'lit'] },
+  { id: 'd12', slots: ['lit', 'const', 'lit'] },
+  { id: 'd13', slots: ['paren', 'paren', 'const'] },
+  { id: 'd14', slots: ['const', 'paren', 'paren'] },
+  { id: 'd15', slots: ['paren', 'const', 'paren'] },
+  { id: 'd16', slots: ['lit', 'paren', 'const'] },
+  { id: 'd17', slots: ['paren', 'lit', 'const'] },
+  { id: 'd18', slots: ['const', 'paren', 'lit'] },
+  { id: 'd19', slots: ['lit', 'lit', 'const'] },
+  { id: 'd20', slots: ['lit', 'const', 'paren'] },
+  { id: 'd21', slots: ['paren', 'const', 'lit'] },
+  { id: 'd22', slots: ['const', 'lit', 'paren'] },
+  { id: 'd23', slots: ['lit', 'paren', 'lit'] },
+  { id: 'd24', slots: ['paren', 'lit', 'lit'] },
+  { id: 'd25', slots: ['lit', 'lit', 'paren'] },
+  { id: 'd26', slots: ['const', 'lit', 'lit'] },
+  { id: 'd27', slots: ['lit', 'const', 'lit'] },
+  { id: 'd28', slots: ['paren', 'paren', 'lit'] },
+  { id: 'd29', slots: ['lit', 'paren', 'paren'] },
+  { id: 'd30', slots: ['paren', 'lit', 'paren'] },
+  { id: 'd31', slots: ['lit', 'paren', 'const'] },
+  { id: 'd32', slots: ['paren', 'lit', 'const'] },
+  { id: 'd33', slots: ['const', 'paren', 'lit'] },
+  { id: 'd34', slots: ['lit', 'lit', 'const'] },
+  { id: 'd35', slots: ['lit', 'const', 'paren'] },
+  { id: 'd36', slots: ['paren', 'const', 'lit'] },
+  { id: 'd37', slots: ['const', 'lit', 'paren'] },
+  { id: 'd38', slots: ['lit', 'paren', 'lit'] },
+  { id: 'd39', slots: ['paren', 'lit', 'lit'] },
+  { id: 'd40', slots: ['lit', 'lit', 'paren'] },
+  { id: 'd41', slots: ['const', 'paren', 'const'] },
+  { id: 'd42', slots: ['paren', 'const', 'const'] },
+  { id: 'd43', slots: ['const', 'const', 'paren'] },
+  { id: 'd44', slots: ['lit', 'paren', 'const'] },
+  { id: 'd45', slots: ['paren', 'lit', 'const'] },
+  { id: 'd46', slots: ['const', 'paren', 'lit'] },
+  { id: 'd47', slots: ['lit', 'const', 'paren'] },
+  { id: 'd48', slots: ['paren', 'const', 'lit'] },
+  { id: 'd49', slots: ['lit', 'paren', 'lit'] },
+  { id: 'd50', slots: ['paren', 'lit', 'paren'] },
+]
 
 function monomialText(coefficient: number, literal: string): string {
   if (!literal) return String(coefficient)
@@ -27,9 +96,8 @@ function literalFromPowers(powers: Record<string, number>): string {
     .join('')
 }
 
-function monoDisplay(m: Mono, abs = false): string {
-  const coef = abs ? Math.abs(m.coefficient) : m.coefficient
-  return monomialText(coef, literalFromPowers(m.powers))
+function monoDisplay(m: Mono): string {
+  return monomialText(m.coefficient, literalFromPowers(m.powers))
 }
 
 function multiplyMonos(a: Mono, b: Mono): Mono {
@@ -38,20 +106,6 @@ function multiplyMonos(a: Mono, b: Mono): Mono {
     powers[letter] = (powers[letter] ?? 0) + exp
   }
   return { coefficient: a.coefficient * b.coefficient, powers }
-}
-
-function addMonos(terms: Mono[]): Mono[] {
-  const grouped = new Map<string, number>()
-  for (const term of terms) {
-    const key = literalFromPowers(term.powers)
-    grouped.set(key, (grouped.get(key) ?? 0) + term.coefficient)
-  }
-  return [...grouped.entries()]
-    .filter(([, coefficient]) => coefficient !== 0)
-    .map(([literal, coefficient]) => ({
-      coefficient,
-      powers: powersFromLiteralKey(literal),
-    }))
 }
 
 function powersFromLiteralKey(literal: string): Record<string, number> {
@@ -81,6 +135,20 @@ function powersFromLiteralKey(literal: string): Record<string, number> {
   return powers
 }
 
+function addMonos(terms: Mono[]): Mono[] {
+  const grouped = new Map<string, number>()
+  for (const term of terms) {
+    const key = literalFromPowers(term.powers)
+    grouped.set(key, (grouped.get(key) ?? 0) + term.coefficient)
+  }
+  return [...grouped.entries()]
+    .filter(([, coefficient]) => coefficient !== 0)
+    .map(([literal, coefficient]) => ({
+      coefficient,
+      powers: powersFromLiteralKey(literal),
+    }))
+}
+
 function polynomialText(terms: Mono[]): string {
   const merged = addMonos(terms)
   if (merged.length === 0) return '0'
@@ -103,29 +171,13 @@ function coef1to9(rng: Rng): number {
 }
 
 function pickLetters(rng: Rng, n: number): string[] {
-  const pool = shuffle(rng, [...LETTERS])
-  return pool.slice(0, n)
+  return shuffle(rng, [...LETTERS]).slice(0, n)
 }
-
-/** Monôme degré ≤ 1 (pas de puissance dans l’énoncé). */
-function randomMono(rng: Rng, letters: string[], opts?: { allowConst?: boolean; minCoef?: number }): Mono {
-  const minCoef = opts?.minCoef ?? 1
-  const coef = int(rng, Math.max(1, minCoef), 9)
-  const allowConst = opts?.allowConst ?? true
-  if (allowConst && rng() < 0.22) return { coefficient: Math.max(2, coef), powers: {} }
-  const letter = pick(rng, letters)
-  return { coefficient: coef, powers: { [letter]: 1 } }
-}
-
-type Factor =
-  | { kind: 'mono'; mono: Mono }
-  | { kind: 'paren'; left: Mono; right: Mono; op: '+' | '−' }
 
 function factorDisplay(f: Factor): string {
   if (f.kind === 'mono') return monoDisplay(f.mono)
   const l = monoDisplay(f.left)
   const r = monoDisplay({ ...f.right, coefficient: Math.abs(f.right.coefficient) })
-  // right coeff stored positive; op carries the sign
   return `(${l} ${f.op} ${r})`
 }
 
@@ -149,71 +201,62 @@ function expandProduct(factors: Factor[]): Mono[] {
 }
 
 function randomParen(rng: Rng, letters: string[]): Factor {
-  // Binôme avec au moins un littéral : (5 + 4x), (4x − v), (6y − t)…
   const shape = pick(rng, ['lit-const', 'const-lit', 'lit-lit'] as const)
   let left: Mono
   let right: Mono
   if (shape === 'lit-const') {
-    left = randomMono(rng, letters, { allowConst: false })
+    left = { coefficient: int(rng, 2, 9), powers: { [pick(rng, letters)]: 1 } }
     right = { coefficient: int(rng, 2, 9), powers: {} }
   } else if (shape === 'const-lit') {
     left = { coefficient: int(rng, 2, 9), powers: {} }
-    right = randomMono(rng, letters, { allowConst: false })
+    right = { coefficient: int(rng, 2, 9), powers: { [pick(rng, letters)]: 1 } }
   } else {
-    left = randomMono(rng, letters, { allowConst: false })
-    right = randomMono(rng, letters, { allowConst: false })
-    const l0 = Object.keys(left.powers)[0]
-    const r0 = Object.keys(right.powers)[0]
-    if (l0 && r0 && l0 === r0) {
-      const other = letters.find((l) => l !== l0) ?? letters[0]!
-      right = { coefficient: right.coefficient, powers: { [other]: 1 } }
-    }
+    const l0 = pick(rng, letters)
+    const r0 = letters.find((l) => l !== l0) ?? pick(rng, letters)
+    left = { coefficient: int(rng, 2, 9), powers: { [l0]: 1 } }
+    right = { coefficient: int(rng, 2, 9), powers: { [r0]: 1 } }
   }
   const op: '+' | '−' = rng() < 0.5 ? '+' : '−'
   return { kind: 'paren', left, right, op }
 }
 
-function randomLiteralMono(rng: Rng, letters: string[]): Factor {
-  return { kind: 'mono', mono: randomMono(rng, letters, { allowConst: false }) }
-}
-
-function randomConstMono(rng: Rng): Factor {
-  return { kind: 'mono', mono: { coefficient: int(rng, 2, 9), powers: {} } }
+function makeSlot(rng: Rng, slot: SlotKind, letters: string[]): Factor {
+  if (slot === 'paren') return randomParen(rng, letters)
+  if (slot === 'const') return { kind: 'mono', mono: { coefficient: int(rng, 2, 9), powers: {} } }
+  return {
+    kind: 'mono',
+    mono: { coefficient: int(rng, 2, 9), powers: { [pick(rng, letters)]: 1 } },
+  }
 }
 
 /**
- * Q2 : au moins deux · (trois facteurs), formes inspirées des exemples :
- * 5x · 6c · 2 , 5x · (4x − v) · 3 , 4 · (5 + 4x) · y , (6y − t) · 5v · 2
- * Tous ordres mono / constante / parenthèse ; pas de puissance dans l’énoncé.
+ * Q2 : exactement deux · (trois facteurs), 50 modèles, sans puissance dans l’énoncé.
  */
 function generateDotProductItem(rng: Rng): MathItem {
   const letters = pickLetters(rng, 4)
-  type Slot = 'lit' | 'const' | 'paren'
-  const patterns: Array<[Slot, Slot, Slot]> = [
-    ['lit', 'lit', 'const'], // 5x · 6c · 2
-    ['lit', 'paren', 'const'], // 5x · (4x − v) · 3
-    ['const', 'paren', 'lit'], // 4 · (5 + 4x) · y
-    ['paren', 'lit', 'const'], // (6y − t) · 5v · 2
-    ['lit', 'const', 'paren'],
-    ['paren', 'const', 'lit'],
-    ['const', 'lit', 'paren'],
-    ['lit', 'paren', 'lit'],
-    ['paren', 'lit', 'lit'],
+  const order = shuffle(rng, [...Q2_TEMPLATES])
+  for (const tpl of order) {
+    const factors = tpl.slots.map((slot) => makeSlot(rng, slot, letters))
+    // Toujours joindre par « · » — garantit exactement deux occurrences.
+    const prompt = `${factorDisplay(factors[0]!)} · ${factorDisplay(factors[1]!)} · ${factorDisplay(factors[2]!)}`
+    const dots = (prompt.match(/·/g) ?? []).length
+    if (dots !== 2) continue
+    if (/[²³⁴]/.test(prompt)) continue
+    const answer = polynomialText(expandProduct(factors))
+    return { layout: 'algebra', prompt, answer }
+  }
+  // Repli sûr : 5x · 6c · 2
+  const [u, v] = letters
+  const a = int(rng, 2, 9)
+  const b = int(rng, 2, 9)
+  const c = int(rng, 2, 9)
+  const factors: Factor[] = [
+    { kind: 'mono', mono: { coefficient: a, powers: { [u!]: 1 } } },
+    { kind: 'mono', mono: { coefficient: b, powers: { [v!]: 1 } } },
+    { kind: 'mono', mono: { coefficient: c, powers: {} } },
   ]
-  const slots = pick(rng, patterns)
-  const make = (slot: Slot): Factor => {
-    if (slot === 'paren') return randomParen(rng, letters)
-    if (slot === 'const') return randomConstMono(rng)
-    return randomLiteralMono(rng, letters)
-  }
-  const factors = slots.map(make)
-  const prompt = factors.map(factorDisplay).join(' · ')
-  // Sécurité : exactement / au moins deux ·
-  if ((prompt.match(/·/g) ?? []).length < 2) {
-    return generateDotProductItem(rng)
-  }
-  const answer = polynomialText(expandProduct(factors))
-  return { layout: 'algebra', prompt, answer }
+  const prompt = `${factorDisplay(factors[0]!)} · ${factorDisplay(factors[1]!)} · ${factorDisplay(factors[2]!)}`
+  return { layout: 'algebra', prompt, answer: polynomialText(expandProduct(factors)) }
 }
 
 /** Q1 : somme de monômes degré ≤ 1 (pas de puissance, pas de ·). */
@@ -231,7 +274,6 @@ function generateReduceNoPower(rng: Rng): MathItem {
       powers: letter ? { [letter]: 1 } : {},
     })
   }
-  // Au moins deux littéraux pour avoir quelque chose à regrouper.
   if (terms.filter((t) => Object.keys(t.powers).length > 0).length < 2) {
     terms[0] = { coefficient: coef1to9(rng), powers: { [letters[0]!]: 1 } }
     terms[1] = { coefficient: coef1to9(rng), powers: { [letters[0]!]: 1 } }
@@ -246,13 +288,13 @@ function generateReduceNoPower(rng: Rng): MathItem {
   return { layout: 'algebra', prompt: display, answer: polynomialText(terms) }
 }
 
-/** Lot TCM ex. 32 : Q1 sans puissance ; Q2 produit avec ≥ 2 ·, sans puissance dans l’énoncé. */
+/** Lot TCM ex. 32 : Q1 sans puissance ; Q2 avec exactement deux ·. */
 export function generateTcmReduireBatch(rng: Rng): MathItem[] {
-  // Q2 d’abord (plus de tirages) pour ne pas biaiser le RNG de Q1.
   const q2 = generateDotProductItem(rng)
   const q1 = generateReduceNoPower(rng)
   return [q1, q2]
 }
 
-/** Conservé pour compat catalogue / tests éventuels. */
-export const TCM_REDUIRE_PAREN_COUNT = 50
+export function tcmReduireTemplateCounts(): { q2: number } {
+  return { q2: Q2_TEMPLATES.length }
+}
