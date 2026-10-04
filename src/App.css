@@ -847,26 +847,38 @@ html,body,#root{
   position:relative;top:0.05em
 }
 .fraction-num,.fraction-den{
+  display:flex;align-items:center;justify-content:center;
   padding:0 4px;font-size:13pt;line-height:1.2;font-weight:700;
-  min-height:1.15em;box-sizing:border-box
+  min-height:1.35em;box-sizing:border-box
 }
 /* Barre de fraction = couleur du thème (pas de trait de réponse séparé). */
 .fraction-bar{
-  display:block;width:100%;min-width:1.35em;height:0;
-  border-top:2px solid var(--purple);margin:0.08em 0
+  display:block;width:100%;min-width:1.6em;height:0;flex:0 0 auto;
+  border-top:2px solid var(--purple);margin:0.1em 0
 }
 /* Case d’écriture num/den : pas de souligné — la barre centrale suffit. */
 .frac-write-slot{
-  display:inline-block;min-width:1.6em;min-height:1.15em;height:1.15em;
+  display:block;min-width:1.8em;width:100%;min-height:1.35em;height:1.35em;
   margin:0;padding:0 2px;border:0;background:transparent;
-  vertical-align:middle;text-align:center;box-sizing:border-box;
-  font-size:13pt;font-weight:700;line-height:1.15;color:inherit
+  text-align:center;box-sizing:border-box;
+  font-size:13pt;font-weight:700;line-height:1.35em;color:inherit
 }
-.frac-write-slot-inline{min-width:2.2em;border-bottom:1.5px solid var(--purple)}
+.frac-write-slot-inline{
+  display:inline-block;width:auto;min-width:2.2em;vertical-align:baseline;
+  border-bottom:1.5px solid var(--purple)
+}
+/* Réponse vide : hauteur symétrique au-dessus et en dessous de la barre. */
 .fraction-answer-blank{
-  min-width:2.2em;padding:0 2px
+  min-width:2.4em;padding:0 2px;top:0;
+  vertical-align:middle
 }
-.fraction-answer-blank .frac-write-slot{min-width:1.8em}
+.fraction-answer-blank .fraction-num,
+.fraction-answer-blank .fraction-den{
+  min-height:1.45em
+}
+.fraction-answer-blank .frac-write-slot{
+  min-width:2em;min-height:1.45em;height:1.45em;line-height:1.45em
+}
 
 .problem-block{
   display:flex;flex-direction:column;gap:8px;width:100%;min-width:0;
