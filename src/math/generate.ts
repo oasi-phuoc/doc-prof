@@ -35,6 +35,7 @@ import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { generateLengthConversionBatch, tryGenerateConversion } from './conversions'
+import { generateTcmConversionsBatch } from './tcm-conversions'
 import { generateTcmPrioriteBatch } from './tcm-priorite'
 import { generateTcmProportionKgBatch } from './tcm-proportion-kg'
 import { generateTcmReduireBatch } from './tcm-reduire'
@@ -1682,6 +1683,9 @@ function generateItems(
   if (typeId === 'tcm-expressions-evaluer') {
     return generateTcmEvaluerBatch(rng).items.slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-conversions-mixte') {
+    return generateTcmConversionsBatch(rng).slice(0, Math.max(1, count))
+  }
   if (typeId === 'tcm-proportion-kg') {
     return generateTcmProportionKgBatch(rng, count)
   }
@@ -1826,6 +1830,9 @@ function generateOne(
     }
     case 'tcm-expressions-evaluer': {
       return generateTcmEvaluerBatch(rng).items[0]!
+    }
+    case 'tcm-conversions-mixte': {
+      return generateTcmConversionsBatch(rng)[0]!
     }
     case 'tcm-proportion-kg': {
       return generateTcmProportionKgBatch(rng, 1)[0]!
