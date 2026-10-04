@@ -18,7 +18,12 @@ import {
   preColorFlat,
   ShapesRow,
 } from './math/FractionShape'
-import { FractionView, renderMathText } from './math/FractionView'
+import {
+  FractionAnswerBlank,
+  FractionView,
+  looksLikeFraction,
+  renderMathText,
+} from './math/FractionView'
 import { GattegnoChart } from './math/GattegnoChart'
 import { GeometryFigure } from './math/GeometryFigure'
 import { GlossaryFigure } from './math/GlossaryFigure'
@@ -1656,6 +1661,14 @@ function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   )
 }
 
+function FractionResultSlot({ answer, show }: { answer: string; show: boolean }) {
+  if (show) {
+    return looksLikeFraction(answer) ? <FractionView value={answer} /> : <span>{answer}</span>
+  }
+  // Élève : barre de fraction centrée (thème) pour écrire num et den — pas de trait dessous.
+  return <FractionAnswerBlank />
+}
+
 function ParsedEquationRow({
   a,
   op,
@@ -1673,28 +1686,37 @@ function ParsedEquationRow({
   const blankA = a === '□'
   const blankB = b === '□'
   const resultBlank = !blankA && !blankB
+  const fracContext = looksLikeFraction(a) || looksLikeFraction(b) || looksLikeFraction(answer)
   return (
     <div className="eq-row" aria-label="Calcul">
       <span className="eq-cell eq-num">
         {blankA ? (
-          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>
+            {show ? <FractionView value={answer} /> : '\u00a0'}
+          </span>
         ) : (
-          a
+          renderMathText(a)
         )}
       </span>
       <span className="eq-cell eq-op">{op}</span>
       <span className="eq-cell eq-num">
         {blankB ? (
-          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>{show ? answer : '\u00a0'}</span>
+          <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>
+            {show ? <FractionView value={answer} /> : '\u00a0'}
+          </span>
         ) : (
-          b
+          renderMathText(b)
         )}
       </span>
       <span className="eq-cell eq-eq">=</span>
       <span className="eq-cell eq-ans">
-        <span className={`answer-line-field ${show && resultBlank ? 'filled' : ''}`}>
-          {show && resultBlank ? answer : '\u00a0'}
-        </span>
+        {resultBlank && fracContext ? (
+          <FractionResultSlot answer={answer} show={show} />
+        ) : (
+          <span className={`answer-line-field ${show && resultBlank ? 'filled' : ''}`}>
+            {show && resultBlank ? answer : '\u00a0'}
+          </span>
+        )}
       </span>
     </div>
   )
@@ -1882,16 +1904,14 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
     )
   }
 
-  if (prompt.includes('□') || /\d+\/\d+/.test(prompt)) {
+  if (prompt.includes('□') || /[-−]?\d+\/[-−]?\d+/.test(prompt)) {
     return (
       <div className="inline-prompt equation">
         {renderMathText(prompt, show ? <FractionView value={item.answer} /> : '\u00a0')}
         {!prompt.includes('□') && (
           <>
             <span className="eq-space" />
-            <span className={`answer-line-field ${show ? 'filled' : ''}`}>
-              {show ? <FractionView value={item.answer} /> : '\u00a0'}
-            </span>
+            <FractionResultSlot answer={item.answer} show={show} />
           </>
         )}
       </div>
