@@ -300,7 +300,7 @@ export const exerciseTypes: ExerciseType[] = [
     'tcm-div-mixte',
     'tcm-info',
     'Divisions posées (entier et décimal)',
-    'Une division entière (5 chiffres ÷ 12–19) et une décimale (5 chiffres, 2–3 déc. avec un 0 ÷ 3–9), grilles 5+4.',
+    'Une division entière (4 chiffres ÷ 12–19) et une décimale (4 chiffres, 2–3 déc. avec un 0 ÷ 3–9), grilles 4+4.',
     'Effectuez les divisions en colonnes.',
     'colonne',
     { preferredColumns: 2 },

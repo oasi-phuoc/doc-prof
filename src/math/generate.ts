@@ -619,23 +619,27 @@ function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
 }
 
 /**
- * TCM ex. 19 : deux divisions posées (5 col dividende / 4 col quotient).
- * Gauche : entier 10 000–99 999 ÷ 12–19 (exact).
- * Droite : décimal 5 chiffres (2–3 décimales, avec un 0) ÷ 3–9 (exact).
+ * TCM ex. 19 : deux divisions posées (4 col dividende / 4 col quotient).
+ * Gauche : entier 1 000–9 999 ÷ 12–19 (exact).
+ * Droite : décimal 4 chiffres (2–3 décimales, avec un 0) ÷ 3–9 (exact).
  */
 function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
   const dInt = int(rng, 12, 19)
-  const qMin = Math.ceil(10_000 / dInt)
-  const qMax = Math.floor(99_999 / dInt)
+  const qMin = Math.ceil(1_000 / dInt)
+  const qMax = Math.floor(9_999 / dInt)
   const qInt = int(rng, qMin, qMax)
-  const left = withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 5, 4)
+  const left = withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 4, 4)
 
   let dDec = int(rng, 3, 9)
   let dividendDec = 0
   for (let guard = 0; guard < 120; guard++) {
     const places = pick(rng, [2, 3] as const)
-    const digs = [int(rng, 1, 9), int(rng, 0, 9), int(rng, 0, 9), int(rng, 0, 9), int(rng, 1, 9)]
-    if (!digs.includes(0)) digs[int(rng, 1, 3)] = 0
+    // 4 chiffres au total : 2 déc. → 2 entiers ; 3 déc. → 1 entier.
+    const digs =
+      places === 2
+        ? [int(rng, 1, 9), int(rng, 0, 9), int(rng, 0, 9), int(rng, 1, 9)]
+        : [int(rng, 1, 9), int(rng, 0, 9), int(rng, 0, 9), int(rng, 1, 9)]
+    if (!digs.includes(0)) digs[int(rng, 1, digs.length - 2)] = 0
     const scaled = digs.reduce((acc, d) => acc * 10 + d, 0)
     if (scaled % dDec !== 0) continue
     const value = scaled / 10 ** places
@@ -644,11 +648,11 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
     break
   }
   if (dividendDec <= 0) {
-    // Repli déterministe : 10,206 ÷ 3 = 3,402 (5 chiffres, 3 déc., un 0).
-    dividendDec = 10.206
+    // Repli déterministe : 12,06 ÷ 3 = 4,02 (4 chiffres, 2 déc., un 0).
+    dividendDec = 12.06
     dDec = 3
   }
-  const right = withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 5, 4)
+  const right = withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 4, 4)
   return [left, right]
 }
 
