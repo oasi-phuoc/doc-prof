@@ -947,8 +947,8 @@ html,body,#root{
   background-position:0 0
 }
 .draft-pad.draft-pad-short{--grid-rows:calc(3 * var(--sheet-columns, 1))}
-/* Géométrie dual (ex. 13, 23–25, 36–37) : grille 10 × 6, cases carrées. */
-.draft-pad.draft-pad-geo{--grid-cols:10;--grid-rows:6;margin-top:0}
+/* Géométrie dual (ex. 13, 23–25, 36–37) : grille 9 × 5, cases carrées. */
+.draft-pad.draft-pad-geo{--grid-cols:9;--grid-rows:5;margin-top:0}
 .draft-pad.plain{background-image:none;background-color:#fff}
 .algebra-stack{display:flex;flex-direction:column;gap:6px;width:100%}
 .convert-row{
@@ -1071,8 +1071,8 @@ html,body,#root{
 .geo-dual-pad{min-width:0;width:100%;align-self:start}
 .geo-dual-pad .draft-pad{
   width:100%;min-height:0;margin:0;
-  /* Cases carrées : ratio = cols/rows (10×6), jamais étiré par la ligne. */
-  aspect-ratio:10 / 6;height:auto;max-height:none;flex-shrink:0
+  /* Cases carrées : ratio = cols/rows (9×5), jamais étiré par la ligne. */
+  aspect-ratio:9 / 5;height:auto;max-height:none;flex-shrink:0
 }
 .geo-dual-answers{
   display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%;
