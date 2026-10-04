@@ -24,6 +24,7 @@ const FRENCH_TOPIC_ENTRIES: Topic[] = VOCAB_TOPIC_META.map((meta) => ({
 
 export const topics: Topic[] = [
   ...FRENCH_TOPIC_ENTRIES,
+  { id: 'tcm-info', label: 'Informations', domain: 'tcm' },
   { id: 'glossaire-algebre', label: 'Glossaire', domain: 'algèbre' },
   { id: 'nombres', label: 'Nombres naturels', domain: 'algèbre' },
   { id: 'addition', label: 'Additions', domain: 'algèbre' },
@@ -88,8 +89,12 @@ export const soutienFrTopics = topics.filter((topic) => topic.domain === 'soutie
 export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
-/** Thèmes maths utilisables dans le TCM (algèbre + géométrie). */
-export const tcmTopics = [...algebraTopics, ...geometryTopics]
+/** Thèmes maths utilisables dans le TCM (intro + algèbre + géométrie). */
+export const tcmTopics = [
+  ...topics.filter((topic) => topic.domain === 'tcm'),
+  ...algebraTopics,
+  ...geometryTopics,
+]
 
 const t = (
   id: string,
@@ -102,6 +107,15 @@ const t = (
 ): ExerciseType => ({ id, topic, label, description, instruction, visual, ...extra })
 
 export const exerciseTypes: ExerciseType[] = [
+  t(
+    'tcm-consignes',
+    'tcm-info',
+    'Consignes du test',
+    'Page d’informations et consignes du test de connaissance de mathématiques.',
+    'Lisez les consignes avant de commencer le test.',
+    'texte',
+    { preferredColumns: 1 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(

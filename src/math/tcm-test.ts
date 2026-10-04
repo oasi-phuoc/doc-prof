@@ -3,15 +3,19 @@
  * soutien-scolaire `PLACEMENT_MATH_EXERCISES` (38 exercices).
  * Chaque étape réutilise un type déjà présent en algèbre / géométrie.
  */
-import type { Difficulty, Domain, PageConfig } from './types'
+import type { Difficulty, Domain, ExerciseBlock, PageConfig } from './types'
 import { exerciseTypeById } from './catalog'
 
 export const TCM_DOMAIN: Domain = 'tcm'
+
+export const TCM_DOCUMENT_TITLE = 'Test de connaissance de mathématiques'
 
 type TcmBlockSpec = {
   exerciseType: string
   count: number
   columns?: 1 | 2 | 3
+  /** Points par question (défaut 1). */
+  pointsPerQuestion?: number
 }
 
 type TcmStepSpec = {
@@ -28,8 +32,12 @@ type TcmStepSpec = {
  */
 export const TCM_STEPS: readonly TcmStepSpec[] = [
   { id: 1, label: 'Compter les formes', blocks: [{ exerciseType: 'nombres-compter-formes', count: 2, columns: 2 }] },
-  { id: 2, label: 'Comparer (11–99)', blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2 }] },
-  { id: 3, label: 'Suites numériques', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 2 }] },
+  {
+    id: 2,
+    label: 'Comparer (11–99)',
+    blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
+  },
+  { id: 3, label: 'Suites numériques', blocks: [{ exerciseType: 'nombres-suite', count: 2, columns: 1 }] },
   {
     id: 4,
     label: 'Additions et soustractions',
@@ -226,7 +234,10 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
 ]
 
-function blockFromSpec(spec: TcmBlockSpec, difficulty: Difficulty = 'moyen') {
+/** Étapes regroupées sur une même feuille A4 (après la page consignes). */
+const TCM_PACKED_STEP_IDS: readonly number[] = [1, 2, 3]
+
+function blockFromSpec(spec: TcmBlockSpec, difficulty: Difficulty = 'moyen'): ExerciseBlock {
   const type = exerciseTypeById[spec.exerciseType]
   if (!type) {
     throw new Error(`TCM : type d’exercice inconnu « ${spec.exerciseType} »`)
@@ -238,22 +249,71 @@ function blockFromSpec(spec: TcmBlockSpec, difficulty: Difficulty = 'moyen') {
     difficulty,
     count: spec.count,
     columns: Math.max(1, Math.min(3, columns)) as 1 | 2 | 3,
+    ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
   }
 }
 
-/** Une page A4 = un exercice TCM (éventuellement plusieurs blocs). */
+function pageFromBlocks(blocks: ExerciseBlock[]): PageConfig {
+  const [first, ...rest] = blocks
+  if (!first) throw new Error('TCM : page sans bloc')
+  return {
+    domain: TCM_DOMAIN,
+    ...first,
+    extraBlocks: rest.length ? rest : undefined,
+  }
+}
+
+function buildConsignesPage(): PageConfig {
+  const type = exerciseTypeById['tcm-consignes']
+  if (!type) throw new Error('TCM : type tcm-consignes manquant')
+  return {
+    domain: TCM_DOMAIN,
+    topic: type.topic,
+    exerciseType: type.id,
+    difficulty: 'moyen',
+    count: 1,
+    columns: 1,
+    pointsPerQuestion: 0,
+  }
+}
+
+/** Feuille consignes + 38 exercices (1–3 regroupés sur une page). */
 export function buildTcmTestPages(): PageConfig[] {
-  return TCM_STEPS.map((step) => {
-    const [first, ...rest] = step.blocks.map((b) => blockFromSpec(b))
-    if (!first) throw new Error(`TCM : étape ${step.id} sans bloc`)
-    return {
-      domain: TCM_DOMAIN,
-      ...first,
-      extraBlocks: rest.length ? rest : undefined,
-    }
+  const byId = new Map(TCM_STEPS.map((step) => [step.id, step]))
+  const packed = TCM_PACKED_STEP_IDS.flatMap((id) => {
+    const step = byId.get(id)
+    if (!step) throw new Error(`TCM : étape ${id} introuvable`)
+    return step.blocks.map((b) => blockFromSpec(b))
   })
+
+  const packedIds = new Set(TCM_PACKED_STEP_IDS)
+  const rest = TCM_STEPS.filter((step) => !packedIds.has(step.id)).map((step) =>
+    pageFromBlocks(step.blocks.map((b) => blockFromSpec(b))),
+  )
+
+  return [buildConsignesPage(), pageFromBlocks(packed), ...rest]
 }
 
 export function isTcmDomain(domain: Domain | undefined): boolean {
   return domain === TCM_DOMAIN
+}
+
+export function isTcmConsignesType(exerciseType: string | undefined): boolean {
+  return exerciseType === 'tcm-consignes'
+}
+
+/** Total de points d’un bloc (ignore les items théorie / consignes). */
+export function blockPointsTotal(
+  items: ReadonlyArray<{ layout?: string }>,
+  pointsPerQuestion: number,
+): number {
+  if (pointsPerQuestion === 0) return 0
+  const n = items.filter((item) => item.layout !== 'theory').length
+  return n * pointsPerQuestion
+}
+
+export function formatPointsLabel(points: number): string {
+  const text = Number.isInteger(points) ? String(points) : String(points).replace('.', ',')
+  const unit = points > 1 ? 'points' : 'point'
+  return `${text} ${unit}`
 }

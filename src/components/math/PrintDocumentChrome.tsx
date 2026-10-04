@@ -165,9 +165,10 @@ export function DocumentFooter({
 }
 
 export function QuestionPoints({ points }: { points: number }) {
+  const label = Number.isInteger(points) ? String(points) : String(points).replace('.', ',')
   return (
     <span className="question-points">
-      {points} pt{points > 1 ? 's' : ''}
+      {label} pt{points > 1 ? 's' : ''}
     </span>
   )
 }

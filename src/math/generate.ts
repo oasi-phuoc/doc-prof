@@ -1145,6 +1145,78 @@ function generateOne(
   }
 }
 
+function generateTcmConsignes(): MathItem[] {
+  const levels: Array<[string, string]> = [
+    ['CSC', 'Additions et soustractions'],
+    ['CFR', 'Multiplications, divisions, périmètre et aire du rectangle'],
+    ['CAF', 'Nombres décimaux, fractions, périmètre et aire'],
+    ['CAP', 'Puissances et racines, relatifs, fractions et équations, périmètre et aire'],
+  ]
+  return [
+    {
+      layout: 'theory',
+      prompt: 'Informations',
+      answer: '',
+      theoryBlock: { kind: 'heading', text: 'Informations' },
+    },
+    {
+      layout: 'theory',
+      prompt: 'niveaux',
+      answer: '',
+      theoryBlock: {
+        kind: 'table',
+        headers: ['Niveau', 'Contenu évalué'],
+        rows: levels.map(([niveau, contenu]) => [niveau, contenu]),
+      },
+    },
+    {
+      layout: 'theory',
+      prompt: 'couverture',
+      answer: '',
+      theoryBlock: {
+        kind: 'list',
+        title: 'Organisation du test',
+        items: [
+          '38 exercices couvrant tous les niveaux de CSC jusqu’à CAP',
+          '90 minutes pour compléter le test',
+          'Score maximum : 100 points',
+        ],
+      },
+    },
+    {
+      layout: 'theory',
+      prompt: 'consignes',
+      answer: '',
+      theoryBlock: { kind: 'heading', text: 'Consignes', sub: true },
+    },
+    {
+      layout: 'theory',
+      prompt: 'consignes-liste',
+      answer: '',
+      theoryBlock: {
+        kind: 'list',
+        items: [
+          'Lisez chaque consigne attentivement avant de répondre.',
+          'Répondez directement sur la fiche, dans les espaces prévus.',
+          'Vous pouvez utiliser un brouillon ; reportez ensuite vos réponses sur la fiche.',
+          'Si vous ne savez pas répondre, passez à la question suivante et revenez-y plus tard.',
+          'Les exercices progressent du plus simple au plus avancé : continuez aussi loin que possible.',
+          'Vérifiez vos calculs quand vous avez terminé.',
+        ],
+      },
+    },
+    {
+      layout: 'theory',
+      prompt: 'materiel',
+      answer: '',
+      theoryBlock: {
+        kind: 'note',
+        text: 'Matériel autorisé : stylo, crayon, gomme et règle. Pas de calculatrice, sauf indication contraire.',
+      },
+    },
+  ]
+}
+
 function buildSingleBlock(
   config: PageConfig,
   seed: number,
@@ -1161,6 +1233,13 @@ function buildSingleBlock(
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
+  if (config.exerciseType === 'tcm-consignes') {
+    return {
+      title: 'Consignes',
+      instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
+      items: generateTcmConsignes(),
+    }
+  }
   if (config.exerciseType === 'reperage-droites') {
     const droites = generateDroites(config, rng)
     return { title: fallbackTitle, instruction: droites.instruction, items: droites.items }
@@ -1318,23 +1397,29 @@ function buildSingleBlock(
 
 export function buildPage(config: PageConfig, seed: number, startExercise = 1): WorksheetPage {
   const blocksIn = pageBlocks(config)
+  let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(config, block)
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local)
     const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
+    const isTcmConsignes = block.exerciseType === 'tcm-consignes'
+    const exerciseIndex = isTcmConsignes ? 0 : exerciseCursor++
     return {
-      exerciseIndex: startExercise + index,
-      title: isTheory
-        ? (result.instruction?.replace(/^Théorie — /, '') || `Théorie`)
-        : isJeux
-          ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${startExercise + index}`)
-          : `Exercice ${startExercise + index}`,
+      exerciseIndex,
+      title: isTcmConsignes
+        ? 'Consignes'
+        : isTheory
+          ? (result.instruction?.replace(/^Théorie — /, '') || `Théorie`)
+          : isJeux
+            ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${exerciseIndex}`)
+            : `Exercice ${exerciseIndex}`,
       instruction: result.instruction,
       items: result.items,
       columns: block.columns,
       exerciseType: block.exerciseType,
+      pointsPerQuestion: block.pointsPerQuestion,
       givens: result.givens,
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
@@ -1346,13 +1431,16 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const isTheoryPage = /gram-theorie-\d+$/.test(config.exerciseType)
+  const isTcmConsignesPage = config.exerciseType === 'tcm-consignes'
   return {
     ...config,
-    title: isTheoryPage
-      ? (first?.title ?? type?.label ?? 'Théorie')
-      : built.length > 1
-        ? (topic?.label ?? 'Exercices')
-        : (type?.label ?? topic?.label ?? 'Exercices'),
+    title: isTcmConsignesPage
+      ? 'Consignes'
+      : isTheoryPage
+        ? (first?.title ?? type?.label ?? 'Théorie')
+        : built.length > 1
+          ? (topic?.label ?? 'Exercices')
+          : (type?.label ?? topic?.label ?? 'Exercices'),
     instruction: first?.instruction ?? type?.instruction ?? 'Complétez.',
     items: built.flatMap((block) => block.items),
     blocks: built,
@@ -1366,7 +1454,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
   pages.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
-    exerciseNo += worksheet.blocks.length
+    exerciseNo += worksheet.blocks.filter((block) => block.exerciseType !== 'tcm-consignes').length
 
     const isCom =
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')

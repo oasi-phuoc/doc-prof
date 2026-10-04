@@ -3254,6 +3254,25 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:#fff;
   overflow:hidden;
 }
+/* TCM / multi-exercices : cadres plus bas pour tenir avec Comparer + Suites */
+.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-frame{
+  aspect-ratio:1 / 0.72;
+  max-height:48mm;
+}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:4px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-caption{font-size:13px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading{
+  margin-bottom:2px
+}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading h3{font-size:15px}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-heading p{font-size:12.5px;line-height:1.35}
+.worksheet-sheet:has(.exercise-block + .exercise-block) .exercise-item{
+  padding-top:4px;padding-bottom:4px
+}
+.worksheet-sheet:has(.layout-theory) .exercise-heading p{display:none}
+.worksheet-sheet:has(.layout-theory) .theory-grid{
+  gap:6px 0
+}
 .count-icon-token{
   position:absolute;
   color:var(--ink);

@@ -54,7 +54,13 @@ import {
   tcmTopics,
   typesForTopic,
 } from '@/math/catalog'
-import { buildTcmTestPages, isTcmDomain } from '@/math/tcm-test'
+import {
+  blockPointsTotal,
+  buildTcmTestPages,
+  formatPointsLabel,
+  isTcmDomain,
+  TCM_DOCUMENT_TITLE,
+} from '@/math/tcm-test'
 import {
   defaultCalliPhraseCount,
   defaultCalliWordCount,
@@ -281,6 +287,7 @@ function WorksheetSheet({
 }) {
   const sheetTitle = institutional.documentTitle.trim()
   const isJeuxSheet = page.domain === 'jeux'
+  const multiExercisePage = (page.blocks?.length ?? 0) > 1 || isTcmDomain(page.domain)
   const showHeader = pageNumber === 1 && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
@@ -336,7 +343,11 @@ function WorksheetSheet({
               (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
-          const blockHeading = sheetTitle || block.title
+          const blockHeading = multiExercisePage ? block.title : sheetTitle || block.title
+          const blockPts = blockPointsTotal(
+            block.items,
+            block.pointsPerQuestion ?? pointsPerQuestion,
+          )
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet ? null : (
@@ -370,8 +381,8 @@ function WorksheetSheet({
                     </p>
                   ) : null}
                 </div>
-                {evalMode ? (
-                  <span className="instruction-points">{block.items.length * pointsPerQuestion} points</span>
+                {evalMode && blockPts > 0 ? (
+                  <span className="instruction-points">{formatPointsLabel(blockPts)}</span>
                 ) : null}
               </header>
               )}
@@ -1609,7 +1620,20 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   )
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
   const sheetTotalPoints = useMemo(
-    () => worksheets.reduce((sum, page) => sum + page.items.length * pointsPerQuestion, 0),
+    () =>
+      worksheets.reduce(
+        (sum, page) =>
+          sum +
+          (page.blocks?.length
+            ? page.blocks.reduce(
+                (blockSum, block) =>
+                  blockSum +
+                  blockPointsTotal(block.items, block.pointsPerQuestion ?? pointsPerQuestion),
+                0,
+              )
+            : blockPointsTotal(page.items, page.pointsPerQuestion ?? pointsPerQuestion)),
+        0,
+      ),
     [worksheets, pointsPerQuestion],
   )
 
@@ -2346,10 +2370,13 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       setSheetIndex(0)
       setPages(buildTcmTestPages())
       setEvalMode(true)
+      setPointsPerQuestion(1)
       setMode('student')
-      setInstitutional((current) =>
-        current.course !== 'Mathématiques' ? { ...current, course: 'Mathématiques' } : current,
-      )
+      setInstitutional((current) => ({
+        ...current,
+        course: 'Mathématiques',
+        documentTitle: TCM_DOCUMENT_TITLE,
+      }))
       return
     }
     const type = firstTypeFor(next)

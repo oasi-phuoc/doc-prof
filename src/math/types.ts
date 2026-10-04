@@ -580,6 +580,11 @@ export type ExerciseBlock = {
   difficulty: Difficulty
   count: number
   columns: number
+  /**
+   * Points par question pour ce bloc (mode évaluation).
+   * Si absent, le total utilise le réglage global de la fiche.
+   */
+  pointsPerQuestion?: number
   /** Voc / Gram / Com — domaine français uniquement. */
   track?: FrenchTrack
   /** Phrase : Simple (er), Autres (2e/3e), ou Libre (édition). */
@@ -746,6 +751,8 @@ export type WorksheetBlock = {
   items: MathItem[]
   columns: number
   exerciseType: string
+  /** Points par question (propagé depuis ExerciseBlock). */
+  pointsPerQuestion?: number
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
