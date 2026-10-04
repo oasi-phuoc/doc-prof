@@ -219,7 +219,7 @@ html,body,#root{
 .column-grid.school{
   display:flex;flex-direction:column;align-items:stretch;gap:0;
   width:max-content;max-width:100%;margin-left:0;
-  font-variant-numeric:tabular-nums;font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-variant-numeric:tabular-nums;font-family:inherit;
 }
 .column-line{display:flex;align-items:center;gap:6px}
 .column-line-sign{
@@ -257,7 +257,7 @@ html,body,#root{
 .division-column.school{width:100%}
 .division-board{
   display:inline-flex;align-items:stretch;gap:0;
-  font-variant-numeric:tabular-nums;font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-variant-numeric:tabular-nums;font-family:inherit;
 }
 .division-work-side{display:flex;flex-direction:column;align-items:stretch;gap:0;width:max-content;max-width:100%}
 .division-answer-side{display:flex;flex-direction:column;align-items:stretch;gap:0;width:max-content;max-width:100%;padding-left:8px}
@@ -283,7 +283,7 @@ html,body,#root{
   width:100%;
   font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .compare-side{
   min-width:0;text-align:center;
@@ -312,7 +312,7 @@ html,body,#root{
   width:100%;
   font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .encadrement-blank{
   width:100%;min-width:3.5em;text-align:center;margin:0
@@ -329,7 +329,7 @@ html,body,#root{
   font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums
 }
-.select-pills-prompt{text-align:center;font-family:ui-monospace,Consolas,"Courier New",monospace}
+.select-pills-prompt{text-align:center;font-family:inherit;}
 .select-pills{display:grid;grid-template-columns:repeat(2,minmax(5.5em,1fr));gap:8px;min-width:12em}
 .select-pill{
   display:inline-flex;align-items:center;justify-content:center;
@@ -613,7 +613,7 @@ html,body,#root{
   width:100%;
   font-size:13pt;font-weight:600;
   font-variant-numeric:tabular-nums;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .order-blank{width:100%;min-width:2.8em;text-align:center;margin:0}
 .order-sep{text-align:center;font-weight:700;padding:0 0.1em}
@@ -661,7 +661,12 @@ html,body,#root{
   box-shadow:0 13px 30px #332c1e12;
 }
 .a4-frame .worksheet-sheet{position:absolute;top:0;left:0;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-sizing:border-box;overflow:hidden!important;display:flex;flex-direction:column;border:0;box-shadow:none;margin:0!important;transform-origin:top left;transform:scale(calc(100cqw / 210mm))!important}
-.worksheet-sheet{display:flex!important;flex-direction:column;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-sizing:border-box;overflow:hidden!important;background:#fff}
+.worksheet-sheet{
+  display:flex!important;flex-direction:column;
+  width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;
+  box-sizing:border-box;overflow:hidden!important;background:#fff;
+  font-family:'DM Sans',sans-serif;
+}
 /* Marges miroir (recto/verso) : page impaire 2,5 cm à gauche et 1 cm à droite ; page paire inversée. */
 .worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 2.5cm}
 .worksheet-sheet.sheet-even{padding:12mm 2.5cm 10mm 1cm}
@@ -760,7 +765,7 @@ html,body,#root{
   font-weight:600;
   line-height:1.55;
   font-variant-numeric:tabular-nums;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .eq-cell{min-width:0;text-align:center}
 .eq-num{text-align:center;padding:0}
@@ -863,7 +868,7 @@ html,body,#root{
 }
 .equation-correction{
   width:100%;border-collapse:collapse;
-  font-family:ui-monospace,Consolas,"Courier New",monospace;
+  font-family:inherit;
   font-size:11px;line-height:1.35
 }
 .equation-correction .eq-corr-op{
@@ -895,21 +900,21 @@ html,body,#root{
 .equation-line{
   justify-content:start;align-items:baseline;font-size:15px;line-height:1.5;
   font-weight:600;font-variant-numeric:tabular-nums;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .equation-system{
   display:grid;grid-template-columns:auto auto 1fr;align-items:center;
   column-gap:8px;width:fit-content;max-width:100%;margin:0 auto;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .equation-system-labels{
   display:flex;flex-direction:column;justify-content:space-around;
   align-items:flex-end;gap:2px;font-size:13px;font-weight:700;
-  font-family:Fraunces,Georgia,serif;color:var(--ink);line-height:1.5;height:100%
+  font-family:inherit;color:var(--ink);line-height:1.5;height:100%
 }
 .equation-system-brace{
   font-size:42px;line-height:0.9;font-weight:300;color:var(--ink);
-  font-family:Georgia,'Times New Roman',serif;padding:0 2px
+  font-family:inherit;padding:0 2px
 }
 .equation-system-eqs{
   display:flex;flex-direction:column;gap:4px;min-width:0
@@ -1207,7 +1212,7 @@ html,body,#root{
   width:100%;
   font-size:13pt;font-weight:600;line-height:1.55;
   font-variant-numeric:tabular-nums;
-  font-family:ui-monospace,Consolas,"Courier New",monospace
+  font-family:inherit;
 }
 .algebra-row.has-inline-eq{
   grid-template-columns:max-content minmax(4.5em,1fr)
@@ -2216,7 +2221,7 @@ html,body,#root{
   padding:3px 0;
   text-align:center;
   vertical-align:middle;
-  font-family:'DM Sans',ui-monospace,monospace;
+  font-family:'DM Sans',sans-serif;
   font-size:22px;
   font-weight:700;
   line-height:1.35;
@@ -2741,7 +2746,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   color:var(--jeux-ink);line-height:1
 }
 .game-series-label{
-  font-family:Fraunces,serif;font-size:11px;font-weight:600;line-height:1.15;
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;line-height:1.15;
   color:var(--jeux-ink);word-break:break-word;max-width:95%
 }
 .loto-panel.is-back.is-series{
@@ -2946,7 +2951,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)
 }
 .loto-panel-theme-label{
-  font-family:Fraunces,serif;font-size:22px;font-weight:600;line-height:1.1;color:var(--jeux-ink)
+  font-family:'DM Sans',sans-serif;font-size:22px;font-weight:600;line-height:1.1;color:var(--jeux-ink)
 }
 .loto-panel-theme-sub{font-size:11px;color:var(--muted);line-height:1.3;max-width:90%}
 .loto-panel-theme-grid{font-size:11px;font-weight:700;color:var(--jeux-accent)}
