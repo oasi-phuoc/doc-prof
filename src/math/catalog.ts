@@ -1124,17 +1124,13 @@ export function isDraftPadExercise(typeId: string): boolean {
     // TCM : géométrie périmètre/aire, calculs en ligne / algèbre, réduction, substitution.
     typeId.includes('peri-aire') ||
     typeId === 'tcm-expressions-reduire' ||
-<<<<<<< HEAD
+    typeId === 'tcm-expressions-evaluer' ||
     typeId === 'expressions-substituer' ||
     typeId === 'tcm-priorite-ops' ||
     typeId === 'tcm-fractions-mixte' ||
     typeId === 'tcm-puissances-mixte' ||
     typeId === 'tcm-relatifs-ops' ||
     typeId === 'tcm-ops-decimales'
-=======
-    typeId === 'tcm-expressions-evaluer' ||
-    typeId === 'expressions-substituer'
->>>>>>> origin/cursor/tcm-pack-32-33-0375
   )
 }
 
