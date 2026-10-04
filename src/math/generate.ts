@@ -770,6 +770,131 @@ function generateTcmRelatifsOpsBatch(rng: Rng): MathItem[] {
   ]
 }
 
+/** Fraction affichable (dénominateur > 0 ; numérateur éventuellement négatif). */
+function fracSigned(n: number, d: number): string {
+  let num = n
+  let den = d
+  if (den < 0) {
+    num = -num
+    den = -den
+  }
+  if (den === 0) den = 1
+  return num < 0 ? `-${Math.abs(num)}/${den}` : `${num}/${den}`
+}
+
+function fracAnswer(n: number, d: number): string {
+  const [sn, sd] = simplify(n, d)
+  if (sd === 1) return String(sn)
+  return fracSigned(sn, sd)
+}
+
+/** Fraction réductible (k ≥ 2) et sa forme simplifiée (num et den > 1). */
+function tcmReducibleFraction(rng: Rng): { n: number; d: number; sn: number; sd: number } {
+  for (let attempt = 0; attempt < 40; attempt++) {
+    const sn = int(rng, 2, 9)
+    const sd = int(rng, sn + 1, 14)
+    const g = gcd(sn, sd)
+    const a = sn / g
+    const b = sd / g
+    if (a <= 1 || b <= 1) continue
+    const k = int(rng, 2, 6)
+    return { n: a * k, d: b * k, sn: a, sd: b }
+  }
+  return { n: 4, d: 6, sn: 2, sd: 3 }
+}
+
+/** Deux fractions pour ×/÷ : au moins un numérateur relatif (négatif) ; parfois les deux. */
+function tcmSignedFracPair(rng: Rng): [{ n: number; d: number }, { n: number; d: number }] {
+  const one = (): { n: number; d: number } => ({
+    n: int(rng, 1, 6),
+    d: int(rng, 2, 9),
+  })
+  let a = one()
+  let b = one()
+  while (b.n === 0) b = one()
+
+  const both = rng() < 0.4
+  if (both) {
+    a = { ...a, n: -a.n }
+    b = { ...b, n: -b.n }
+  } else if (rng() < 0.5) {
+    a = { ...a, n: -a.n }
+  } else {
+    b = { ...b, n: -b.n }
+  }
+  return [a, b]
+}
+
+/**
+ * TCM ex. 30 — six questions fractions :
+ * 1) réduire avec num ou den déjà affiché (□) ;
+ * 2) réduire sans trou partiel ;
+ * 3) +  4) −  (fractions positives) ;
+ * 5) ×  6) ÷  avec ≥ 1 nombre relatif (numérateur signé ; parfois deux).
+ */
+function generateTcmFractionsMixteBatch(rng: Rng): MathItem[] {
+  const r1 = tcmReducibleFraction(rng)
+  const missNum = rng() < 0.5
+  const reducePartial: MathItem = {
+    layout: 'inline',
+    prompt: missNum
+      ? `${frac(r1.n, r1.d)} = □/${r1.sd}`
+      : `${frac(r1.n, r1.d)} = ${r1.sn}/□`,
+    answer: missNum ? String(r1.sn) : String(r1.sd),
+  }
+
+  const r2 = tcmReducibleFraction(rng)
+  const reduceFull: MathItem = {
+    layout: 'inline',
+    prompt: `${frac(r2.n, r2.d)} =`,
+    answer: fracAnswer(r2.sn, r2.sd),
+  }
+
+  // + : même dénominateur
+  const dAdd = int(rng, 4, 12)
+  const nAdd1 = int(rng, 1, dAdd - 2)
+  const nAdd2 = int(rng, 1, dAdd - nAdd1)
+  const addItem: MathItem = {
+    layout: 'inline',
+    prompt: `${frac(nAdd1, dAdd)} + ${frac(nAdd2, dAdd)} =`,
+    answer: fracAnswer(nAdd1 + nAdd2, dAdd),
+  }
+
+  // − : dénominateurs différents (dénominateur commun via produit)
+  const dSub1 = int(rng, 3, 9)
+  let dSub2 = int(rng, 3, 9)
+  while (dSub2 === dSub1) dSub2 = int(rng, 3, 9)
+  const nSub1 = int(rng, 1, dSub1 - 1)
+  const nSub2 = int(rng, 1, dSub2 - 1)
+  // Garantir résultat positif : comparer n1/d1 et n2/d2
+  const leftBigger = nSub1 * dSub2 >= nSub2 * dSub1
+  const sn1 = leftBigger ? nSub1 : nSub2
+  const sd1 = leftBigger ? dSub1 : dSub2
+  const sn2 = leftBigger ? nSub2 : nSub1
+  const sd2 = leftBigger ? dSub2 : dSub1
+  const subItem: MathItem = {
+    layout: 'inline',
+    prompt: `${frac(sn1, sd1)} − ${frac(sn2, sd2)} =`,
+    answer: fracAnswer(sn1 * sd2 - sn2 * sd1, sd1 * sd2),
+  }
+
+  const [m1, m2] = tcmSignedFracPair(rng)
+  const mulItem: MathItem = {
+    layout: 'inline',
+    prompt: `${fracSigned(m1.n, m1.d)} × ${fracSigned(m2.n, m2.d)} =`,
+    answer: fracAnswer(m1.n * m2.n, m1.d * m2.d),
+  }
+
+  const [v1, v2] = tcmSignedFracPair(rng)
+  const divItem: MathItem = {
+    layout: 'inline',
+    prompt: `${fracSigned(v1.n, v1.d)} ÷ ${fracSigned(v2.n, v2.d)} =`,
+    answer: fracAnswer(v1.n * v2.d, v1.d * v2.n),
+  }
+
+  return [reducePartial, reduceFull, addItem, subItem, mulItem, divItem]
+}
+
 /** Facteurs décimaux TCM ex. 26 (× / ÷ → résultat entier côté « facteur »). */
 const TCM_DEC_FACTORS = [0.01, 0.1, 0.2, 0.25, 0.5] as const
 
@@ -1467,6 +1592,9 @@ function generateItems(
   if (typeId === 'tcm-relatifs-ops') {
     return generateTcmRelatifsOpsBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-fractions-mixte') {
+    return generateTcmFractionsMixteBatch(rng).slice(0, Math.max(1, count))
+  }
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count)
@@ -1599,6 +1727,9 @@ function generateOne(
     }
     case 'tcm-relatifs-ops': {
       return generateTcmRelatifsOpsBatch(rng)[0]!
+    }
+    case 'tcm-fractions-mixte': {
+      return generateTcmFractionsMixteBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)

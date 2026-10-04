@@ -359,6 +359,15 @@ export const exerciseTypes: ExerciseType[] = [
     'ligne',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-fractions-mixte',
+    'tcm-info',
+    'Fractions (réduire et calculer)',
+    'Réduire (avec ou sans trou), puis + − × ÷ ; multiplication et division avec au moins un relatif.',
+    'Réduisez ou calculez. Simplifiez si possible.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(

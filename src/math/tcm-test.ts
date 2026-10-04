@@ -168,10 +168,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 30,
     label: 'Fractions',
-    blocks: [
-      { exerciseType: 'fractions-add', count: 4, columns: 2 },
-      { exerciseType: 'fractions-mul', count: 4, columns: 2 },
-    ],
+    blocks: [{ exerciseType: 'tcm-fractions-mixte', count: 6, columns: 2 }],
   },
   {
     id: 31,
