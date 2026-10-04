@@ -655,16 +655,18 @@ html,body,#root{
 .frac-shape-display{
   display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-width:2.2em
 }
+/* Ex. 20 : nombres en noir ; barre = couleur du thème. */
 .frac-shape-num,.frac-shape-den{
-  font-size:14pt;font-weight:800;line-height:1.1;color:var(--purple);font-variant-numeric:tabular-nums
+  font-size:14pt;font-weight:800;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums
 }
-.frac-shape-bar{display:block;width:1.6em;height:0;border-top:2px solid var(--ink)}
-.frac-shape-box{
+.frac-shape-bar{display:block;width:1.6em;height:0;border-top:2px solid var(--purple)}
+/* Ex. 21 : trous num/den sans cadre (barre thème seule). */
+.frac-shape-slot{
   display:inline-flex;align-items:center;justify-content:center;
-  width:1.7em;height:1.5em;border:1.5px solid var(--purple);border-radius:6px;
-  font-size:13pt;font-weight:700;line-height:1;color:var(--ink);box-sizing:border-box
+  min-width:1.7em;min-height:1.5em;padding:0 2px;
+  font-size:13pt;font-weight:700;line-height:1;color:var(--ink);
+  box-sizing:border-box;font-variant-numeric:tabular-nums
 }
-.frac-shape-box.filled{color:var(--purple)}
 .frac-shape-figure{
   flex:1 1 auto;min-width:0;height:100%;max-height:100%;
   display:flex;align-items:center;justify-content:center;overflow:hidden

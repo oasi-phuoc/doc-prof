@@ -1560,9 +1560,9 @@ function FractionShapeBlock({ item, mode }: { item: MathItem; mode: PreviewMode 
             </span>
           ) : (
             <span className="frac-shape-display">
-              <span className={`frac-shape-box ${show ? 'filled' : ''}`}>{show ? fs.n : '\u00a0'}</span>
+              <span className="frac-shape-slot">{show ? fs.n : '\u00a0'}</span>
               <span className="frac-shape-bar" aria-hidden />
-              <span className={`frac-shape-box ${show ? 'filled' : ''}`}>{show ? fs.d : '\u00a0'}</span>
+              <span className="frac-shape-slot">{show ? fs.d : '\u00a0'}</span>
             </span>
           )}
         </div>
