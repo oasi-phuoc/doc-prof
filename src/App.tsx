@@ -355,6 +355,17 @@ function WorksheetSheet({
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet ? null : (
               <header className="exercise-heading">
+                {onRegenerateBlock ? (
+                  <button
+                    type="button"
+                    className="no-print exercise-refresh-btn"
+                    aria-label="Régénérer cet exercice"
+                    title="Régénérer cet exercice"
+                    onClick={() => onRegenerateBlock(blockIndex)}
+                  >
+                    <RefreshIcon />
+                  </button>
+                ) : null}
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
                     <h3>{blockHeading}</h3>

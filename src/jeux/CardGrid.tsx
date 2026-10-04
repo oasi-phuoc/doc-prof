@@ -314,10 +314,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
   const borderVersoId =
     board.borderVersoId !== undefined ? board.borderVersoId : board.borderId
   const side = board.side
-<<<<<<< HEAD
   const alphaPhonics = Boolean(board.alphaPhonics)
-=======
->>>>>>> origin/cursor/theme-accents-jeux-0375
   const frame = board.frameColor?.trim()
   const boardStyle = {
     '--game-word-px': gameFontSizePx(board.fontSize, kind),
