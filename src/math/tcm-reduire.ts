@@ -48,20 +48,10 @@ function addMonos(terms: Mono[]): Mono[] {
   }
   return [...grouped.entries()]
     .filter(([, coefficient]) => coefficient !== 0)
-    .map(([literal, coefficient]) => {
-      const powers: Record<string, number> = {}
-      // Reparse literal into powers for consistency
-      for (const letter of literal.replace(/[²³⁴]/g, '')) {
-        if (/[a-z]/.test(letter)) {
-          const idx = literal.indexOf(letter)
-          const after = literal[idx + 1]
-          const exp = after === '²' ? 2 : after === '³' ? 3 : after === '⁴' ? 4 : 1
-          powers[letter] = exp
-        }
-      }
-      // Safer: store powers alongside — rebuild from key pattern
-      return { coefficient, powers: powersFromLiteralKey(literal) }
-    })
+    .map(([literal, coefficient]) => ({
+      coefficient,
+      powers: powersFromLiteralKey(literal),
+    }))
 }
 
 function powersFromLiteralKey(literal: string): Record<string, number> {
@@ -118,9 +108,11 @@ function pickLetters(rng: Rng, n: number): string[] {
 }
 
 /** Monôme degré ≤ 1 (pas de puissance dans l’énoncé). */
-function randomMono(rng: Rng, letters: string[]): Mono {
-  const coef = coef1to9(rng)
-  if (rng() < 0.25) return { coefficient: coef, powers: {} }
+function randomMono(rng: Rng, letters: string[], opts?: { allowConst?: boolean; minCoef?: number }): Mono {
+  const minCoef = opts?.minCoef ?? 1
+  const coef = int(rng, Math.max(1, minCoef), 9)
+  const allowConst = opts?.allowConst ?? true
+  if (allowConst && rng() < 0.22) return { coefficient: Math.max(2, coef), powers: {} }
   const letter = pick(rng, letters)
   return { coefficient: coef, powers: { [letter]: 1 } }
 }
@@ -157,48 +149,69 @@ function expandProduct(factors: Factor[]): Mono[] {
 }
 
 function randomParen(rng: Rng, letters: string[]): Factor {
-  const left = randomMono(rng, letters)
-  // Right: prefer a different shape (const or other letter)
-  let right = randomMono(rng, letters)
-  if (rng() < 0.4) right = { coefficient: coef1to9(rng), powers: {} }
+  // Binôme avec au moins un littéral : (5 + 4x), (4x − v), (6y − t)…
+  const shape = pick(rng, ['lit-const', 'const-lit', 'lit-lit'] as const)
+  let left: Mono
+  let right: Mono
+  if (shape === 'lit-const') {
+    left = randomMono(rng, letters, { allowConst: false })
+    right = { coefficient: int(rng, 2, 9), powers: {} }
+  } else if (shape === 'const-lit') {
+    left = { coefficient: int(rng, 2, 9), powers: {} }
+    right = randomMono(rng, letters, { allowConst: false })
+  } else {
+    left = randomMono(rng, letters, { allowConst: false })
+    right = randomMono(rng, letters, { allowConst: false })
+    const l0 = Object.keys(left.powers)[0]
+    const r0 = Object.keys(right.powers)[0]
+    if (l0 && r0 && l0 === r0) {
+      const other = letters.find((l) => l !== l0) ?? letters[0]!
+      right = { coefficient: right.coefficient, powers: { [other]: 1 } }
+    }
+  }
   const op: '+' | '−' = rng() < 0.5 ? '+' : '−'
   return { kind: 'paren', left, right, op }
 }
 
-function randomFactor(rng: Rng, letters: string[], allowParen: boolean): Factor {
-  if (allowParen && rng() < 0.55) return randomParen(rng, letters)
-  return { kind: 'mono', mono: randomMono(rng, letters) }
+function randomLiteralMono(rng: Rng, letters: string[]): Factor {
+  return { kind: 'mono', mono: randomMono(rng, letters, { allowConst: false }) }
+}
+
+function randomConstMono(rng: Rng): Factor {
+  return { kind: 'mono', mono: { coefficient: int(rng, 2, 9), powers: {} } }
 }
 
 /**
- * Q2 : trois facteurs reliés par deux · (tous ordres : mono/paren).
- * Ex. 5x · 6c · 2 , 5x · (4x − v) · 3 , 4 · (5 + 4x) · y , (6y − t) · 5v · 2
+ * Q2 : au moins deux · (trois facteurs), formes inspirées des exemples :
+ * 5x · 6c · 2 , 5x · (4x − v) · 3 , 4 · (5 + 4x) · y , (6y − t) · 5v · 2
+ * Tous ordres mono / constante / parenthèse ; pas de puissance dans l’énoncé.
  */
 function generateDotProductItem(rng: Rng): MathItem {
   const letters = pickLetters(rng, 4)
-  // Au moins une parenthèse parmi les trois, pour coller aux exemples variés.
-  const patterns: Array<[boolean, boolean, boolean]> = [
-    [false, false, false], // 5x · 6c · 2
-    [false, true, false], // 5x · (4x − v) · 3
-    [true, false, false], // (6y − t) · 5v · 2
-    [false, false, true],
-    [true, false, true],
-    [false, true, true],
+  type Slot = 'lit' | 'const' | 'paren'
+  const patterns: Array<[Slot, Slot, Slot]> = [
+    ['lit', 'lit', 'const'], // 5x · 6c · 2
+    ['lit', 'paren', 'const'], // 5x · (4x − v) · 3
+    ['const', 'paren', 'lit'], // 4 · (5 + 4x) · y
+    ['paren', 'lit', 'const'], // (6y − t) · 5v · 2
+    ['lit', 'const', 'paren'],
+    ['paren', 'const', 'lit'],
+    ['const', 'lit', 'paren'],
+    ['lit', 'paren', 'lit'],
+    ['paren', 'lit', 'lit'],
   ]
-  const [p0, p1, p2] = pick(rng, patterns)
-  const factors: Factor[] = [
-    randomFactor(rng, letters, p0),
-    randomFactor(rng, letters, p1),
-    randomFactor(rng, letters, p2),
-  ]
-  // Garantir au moins un monôme littéral et éviter 1 · 1 · 1 trivial.
-  if (factors.every((f) => f.kind === 'mono' && Object.keys(f.mono.powers).length === 0)) {
-    factors[0] = {
-      kind: 'mono',
-      mono: { coefficient: coef1to9(rng), powers: { [letters[0]!]: 1 } },
-    }
+  const slots = pick(rng, patterns)
+  const make = (slot: Slot): Factor => {
+    if (slot === 'paren') return randomParen(rng, letters)
+    if (slot === 'const') return randomConstMono(rng)
+    return randomLiteralMono(rng, letters)
   }
+  const factors = slots.map(make)
   const prompt = factors.map(factorDisplay).join(' · ')
+  // Sécurité : exactement / au moins deux ·
+  if ((prompt.match(/·/g) ?? []).length < 2) {
+    return generateDotProductItem(rng)
+  }
   const answer = polynomialText(expandProduct(factors))
   return { layout: 'algebra', prompt, answer }
 }
