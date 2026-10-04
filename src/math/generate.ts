@@ -253,6 +253,21 @@ function withFixedDivisionWidth(
   }
 }
 
+/** TCM ex. 12 / 19 : toujours 8 lignes sous le dividende (9 avec le dividende). */
+const TCM_DIV_WORK_ROWS = 8
+
+function withFixedDivisionWorkRows(item: MathItem, workRows = TCM_DIV_WORK_ROWS): MathItem {
+  const width = Math.max(1, item.digitsA?.length ?? 1)
+  const work = item.digitsPartials ?? []
+  const n = Math.max(workRows, work.length)
+  return {
+    ...item,
+    digitsPartials: Array.from({ length: n }, (_, i) =>
+      padDigitRow(work[i] ?? Array.from({ length: width }, () => ''), width),
+    ),
+  }
+}
+
 /**
  * TCM : une addition + une soustraction en colonnes (ordre aléatoire).
  * `digitCount` 3 → grille à 4 colonnes ; 4 → grille à 5 colonnes.
@@ -371,7 +386,9 @@ function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   const qMax = Math.floor(9999 / divB)
   const quot = int(rng, qMin, qMax)
   const dividend = divB * quot
-  const div = withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 5, 4)
+  const div = withFixedDivisionWorkRows(
+    withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 5, 4),
+  )
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }
 
@@ -633,7 +650,9 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
   const qMin = Math.ceil(1_000 / dInt)
   const qMax = Math.floor(9_999 / dInt)
   const qInt = int(rng, qMin, qMax)
-  const left = withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 4, 4)
+  const left = withFixedDivisionWorkRows(
+    withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 4, 4),
+  )
 
   let dDec = int(rng, 3, 9)
   let dividendDec = 0
@@ -657,7 +676,9 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
     dividendDec = 12.06
     dDec = 3
   }
-  const right = withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 4, 4)
+  const right = withFixedDivisionWorkRows(
+    withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 4, 4),
+  )
   return [left, right]
 }
 
