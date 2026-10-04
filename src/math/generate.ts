@@ -188,11 +188,12 @@ function generateTcmOperationsBatch(rng: Rng): MathItem[] {
   ]
   return shuffle(rng, kinds).map((kind) => {
     if (kind.op === '+') {
-      const a = int(rng, 10, 100)
-      const b = int(rng, 10, 100)
+      // Opérandes et somme dans 10–100.
+      const a = int(rng, 10, 90)
+      const b = int(rng, 10, 100 - a)
       return inlineOp('+', a, b, a + b, kind.missing)
     }
-    // Soustraction : résultat ≥ 0, opérandes dans 10–100.
+    // Soustraction : opérandes 10–100, résultat ≥ 0.
     const b = int(rng, 10, 100)
     const a = int(rng, b, 100)
     return inlineOp('−', a, b, a - b, kind.missing)
