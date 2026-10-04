@@ -950,7 +950,7 @@ html,body,#root{
 /* Géométrie dual (ex. 13, 23–25, 36–37) : grille 10 × 6, cases carrées. */
 .draft-pad.draft-pad-geo{--grid-cols:10;--grid-rows:6;margin-top:0}
 .draft-pad.plain{background-image:none;background-color:#fff}
-.algebra-stack{display:flex;flex-direction:column;gap:6px;width:100%}
+.algebra-stack{display:flex;flex-direction:column;gap:10px;width:100%}
 .convert-row{
   display:grid;grid-template-columns:6.2ch 4.2ch auto minmax(3.2em,1fr) 4.6ch;
   align-items:baseline;column-gap:6px;width:100%;font-variant-numeric:tabular-nums;font-weight:600
@@ -1006,6 +1006,7 @@ html,body,#root{
   font-weight:600;font-variant-numeric:tabular-nums;
   font-family:inherit;
 }
+.equation-line.has-frac{align-items:center}
 .equation-system{
   display:grid;grid-template-columns:auto auto 1fr;align-items:center;
   column-gap:8px;width:fit-content;max-width:100%;margin:0 auto;
@@ -1348,7 +1349,7 @@ html,body,#root{
   display:grid;
   grid-template-columns:max-content auto minmax(4.5em,1fr);
   column-gap:0.45em;
-  align-items:baseline;
+  align-items:center;
   width:100%;
   font-size:13pt;font-weight:600;line-height:1.55;
   font-variant-numeric:tabular-nums;
@@ -1358,7 +1359,12 @@ html,body,#root{
   grid-template-columns:max-content minmax(4.5em,1fr)
 }
 .algebra-expr{
-  display:grid;column-gap:0.12em;align-items:baseline;justify-content:start
+  display:grid;column-gap:0.12em;align-items:center;justify-content:start
+}
+/* Avec fraction : ( ), termes et ops centrés sur la barre (pas sur le numérateur). */
+.algebra-expr.has-frac,
+.algebra-row.has-frac{
+  align-items:center
 }
 .alg-token{display:inline-flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap}
 .alg-pad{min-width:1.1ch}

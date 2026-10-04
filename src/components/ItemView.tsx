@@ -1788,6 +1788,10 @@ function AlgebraToken({ token }: { token: string }) {
   return <span className="alg-token alg-num">{token}</span>
 }
 
+function tokenIsFrac(token: string): boolean {
+  return /^[-−]?(?:[A-Za-z]|\d+)\/[-−]?\d+$/.test(token)
+}
+
 export function AlgebraRow({
   item,
   mode,
@@ -1803,16 +1807,17 @@ export function AlgebraRow({
   const prompt = item.prompt ?? ''
   const hasEquals = prompt.includes('=')
   const tokens = tokenizeAlgebra(prompt)
+  const hasFrac = tokens.some(tokenIsFrac)
   const answerLabel = hasEquals ? `x = ${item.answer}` : item.answer
 
   return (
     <div className="algebra-stack">
     <div
-      className={`algebra-row${hasEquals ? ' has-inline-eq' : ''}`}
+      className={`algebra-row${hasEquals ? ' has-inline-eq' : ''}${hasFrac ? ' has-frac' : ''}`}
       aria-label="Expression algébrique"
     >
       <div
-        className="algebra-expr"
+        className={`algebra-expr${hasFrac ? ' has-frac' : ''}`}
         style={{ gridTemplateColumns: `repeat(${padLeft + tokens.length}, minmax(1.1ch, max-content))` }}
       >
         {Array.from({ length: padLeft }, (_, i) => (
@@ -2117,9 +2122,10 @@ function EquationBlock({
           <div className="equation-system-eqs">
             {promptLines.map((line, i) => {
               const tokens = tokenizeAlgebra(line)
+              const hasFrac = tokens.some(tokenIsFrac)
               return (
                 <div
-                  className="algebra-expr equation-line"
+                  className={`algebra-expr equation-line${hasFrac ? ' has-frac' : ''}`}
                   key={`sys-${i}`}
                   style={{
                     gridTemplateColumns: `repeat(${tokens.length}, minmax(1.1ch, max-content))`,
@@ -2137,9 +2143,10 @@ function EquationBlock({
         <div className="equation-prompt" aria-label="Équation">
           {promptLines.map((line, i) => {
             const tokens = tokenizeAlgebra(line)
+            const hasFrac = tokens.some(tokenIsFrac)
             return (
               <div
-                className="algebra-expr equation-line"
+                className={`algebra-expr equation-line${hasFrac ? ' has-frac' : ''}`}
                 key={`eq-${i}`}
                 style={{
                   gridTemplateColumns: `repeat(${tokens.length}, minmax(1.1ch, max-content))`,
