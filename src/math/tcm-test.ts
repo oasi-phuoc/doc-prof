@@ -153,10 +153,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 27,
     label: 'Puissances et racines',
-    blocks: [
-      { exerciseType: 'puissances-calcul', count: 2, columns: 2 },
-      { exerciseType: 'puissances-racine', count: 2, columns: 2 },
-    ],
+    blocks: [{ exerciseType: 'tcm-puissances-mixte', count: 4, columns: 2 }],
   },
   {
     id: 28,

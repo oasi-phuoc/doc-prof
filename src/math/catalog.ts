@@ -332,6 +332,15 @@ export const exerciseTypes: ExerciseType[] = [
     'ligne',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-puissances-mixte',
+    'tcm-info',
+    'Puissances et racines (mixte)',
+    'Puissance (base 1–9), racine carrée (≤ 144), décimal × 10ⁿ, entier ÷ 10ⁿ.',
+    'Calculez.',
+    'ligne',
+    { preferredColumns: 2 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(

@@ -656,6 +656,53 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
   return [left, right]
 }
 
+const TCM_POW_SUP = ['', '¹', '²', '³', '⁴'] as const
+
+/**
+ * TCM ex. 27 — quatre questions :
+ * 1) base 1–9 à la puissance 2, 3 ou 4 (puissance 4 → base 1–5) ;
+ * 2) √n avec n ≤ 144 et racine entière ;
+ * 3) décimal ∈ ]1 ; 10[ × 10^p (p = 1…4) ;
+ * 4) entier 100–9999 ÷ 10^p (p = 1…4).
+ */
+function generateTcmPuissancesMixteBatch(rng: Rng): MathItem[] {
+  const exp = pick(rng, [2, 3, 4] as const)
+  const base = exp === 4 ? int(rng, 1, 5) : int(rng, 1, 9)
+  const powerItem: MathItem = {
+    layout: 'inline',
+    prompt: `${base}${TCM_POW_SUP[exp]} =`,
+    answer: String(base ** exp),
+  }
+
+  const root = int(rng, 2, 12) // √4 … √144
+  const rootItem: MathItem = {
+    layout: 'inline',
+    prompt: `√${root * root} =`,
+    answer: String(root),
+  }
+
+  const pMul = int(rng, 1, 4)
+  let tenths = int(rng, 11, 99) // 1,1 … 9,9
+  while (tenths % 10 === 0) tenths = int(rng, 11, 99)
+  const dec = tenths / 10
+  // tenths/10 × 10^p = tenths × 10^(p-1) — exact, sans bruit flottant.
+  const mulItem: MathItem = {
+    layout: 'inline',
+    prompt: `${fmt(dec)} × 10${TCM_POW_SUP[pMul]} =`,
+    answer: fmt(tenths * 10 ** (pMul - 1)),
+  }
+
+  const pDiv = int(rng, 1, 4)
+  const whole = int(rng, 100, 9999)
+  const divItem: MathItem = {
+    layout: 'inline',
+    prompt: `${whole} ÷ 10${TCM_POW_SUP[pDiv]} =`,
+    answer: fmt(Number((whole / 10 ** pDiv).toFixed(pDiv))),
+  }
+
+  return [powerItem, rootItem, mulItem, divItem]
+}
+
 /** Facteurs décimaux TCM ex. 24 (× / ÷ → résultat entier côté « facteur »). */
 const TCM_DEC_FACTORS = [0.01, 0.1, 0.2, 0.25, 0.5] as const
 
@@ -1344,6 +1391,9 @@ function generateItems(
   if (typeId === 'tcm-ops-decimales') {
     return generateTcmOpsDecimalesBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-puissances-mixte') {
+    return generateTcmPuissancesMixteBatch(rng).slice(0, Math.max(1, count))
+  }
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count)
@@ -1467,6 +1517,9 @@ function generateOne(
     }
     case 'tcm-ops-decimales': {
       return generateTcmOpsDecimalesBatch(rng)[0]!
+    }
+    case 'tcm-puissances-mixte': {
+      return generateTcmPuissancesMixteBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
