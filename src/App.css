@@ -1366,6 +1366,12 @@ html,body,#root{
 .alg-letter{color:var(--purple);font-style:italic;font-family:'DM Sans',sans-serif;font-weight:700}
 .alg-frac{align-self:center;padding-inline:2px}
 .alg-frac .fraction-stack{top:0}
+.alg-frac-compound .fraction-num,
+.alg-frac-compound .fraction-den{
+  display:inline-flex;flex-direction:row;align-items:center;justify-content:center;
+  flex-wrap:nowrap;gap:0.12em;white-space:nowrap
+}
+.alg-frac-compound .alg-token{padding-inline:0}
 .eq-corr-lhs .fraction-stack,.eq-corr-rhs .fraction-stack,.eq-corr-body .fraction-stack{vertical-align:middle}
 /* Anciens trous compact dans une fraction : plus de souligné (barre thème). */
 .fraction-stack .answer-line-field.compact{

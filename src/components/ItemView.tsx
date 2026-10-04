@@ -20,6 +20,7 @@ import {
 } from './math/FractionShape'
 import {
   FractionAnswerBlank,
+  FractionStack,
   FractionView,
   looksLikeFraction,
   renderMathText,
@@ -1721,24 +1722,72 @@ function ParsedEquationRow({
   )
 }
 
+/** Marqueur interne pour une fraction composée (num)/(den) — un seul jeton pour l’alignement. */
+const COMPOUND_FRAC_MARK = '\uE000'
+
+export type AlgebraFracToken = { kind: 'frac'; num: string; den: string }
+export type AlgebraTokenPart = string | AlgebraFracToken
+
+/**
+ * Repère les fractions composées `(…)/(…)` (binômes scolaires, sans parenthèses imbriquées)
+ * et les remplace par un marqueur pour le découpage.
+ */
+function extractCompoundFractions(expression: string): {
+  masked: string
+  fracs: AlgebraFracToken[]
+} {
+  const fracs: AlgebraFracToken[] = []
+  // (num)/(den) — num et den sans parenthèses internes
+  const masked = expression.replace(/\(([^()]*)\)\s*\/\s*\(([^()]*)\)/g, (_, num: string, den: string) => {
+    fracs.push({ kind: 'frac', num: num.trim(), den: den.trim() })
+    return `${COMPOUND_FRAC_MARK}${fracs.length - 1}${COMPOUND_FRAC_MARK}`
+  })
+  return { masked, fracs }
+}
+
 /** Découpe une expression algébrique en atomes (chiffres, lettres, opérateurs…). */
 export function tokenizeAlgebra(expression: string): string[] {
+  const { masked, fracs } = extractCompoundFractions(expression)
   const tokens: string[] = []
-  const re =
-    /√\d+|√|[-−]?[A-Za-z]\/\d+|[-−]?\d+\/[-−]?\d+|\d+[¹²³⁴]|[A-Za-z][²³⁴]?|\d+(?:,\d+)?|[+\-−×÷·=/()[\]]/gu
+  const re = new RegExp(
+    `${COMPOUND_FRAC_MARK}\\d+${COMPOUND_FRAC_MARK}|√\\d+|√|[-−]?[A-Za-z]\\/\\d+|[-−]?\\d+\\/[-−]?\\d+|\\d+[¹²³⁴]|[A-Za-z][²³⁴]?|\\d+(?:,\\d+)?|[+\\-−×÷·=/()[\\]]`,
+    'gu',
+  )
   let last = 0
-  for (const match of expression.matchAll(re)) {
+  for (const match of masked.matchAll(re)) {
     const start = match.index ?? 0
     if (start > last) {
-      const gap = expression.slice(last, start).trim()
+      const gap = masked.slice(last, start).trim()
       if (gap) tokens.push(gap)
     }
-    tokens.push(match[0]!.replace(/-/g, '−'))
-    last = start + match[0]!.length
+    const raw = match[0]!
+    if (raw.startsWith(COMPOUND_FRAC_MARK)) {
+      const idx = Number(raw.slice(1, -1))
+      const frac = fracs[idx]
+      // Encodage stable pour App.tsx (longueur) et AlgebraToken.
+      tokens.push(
+        frac
+          ? `${COMPOUND_FRAC_MARK}FRAC:${frac.num}\uE001${frac.den}${COMPOUND_FRAC_MARK}`
+          : raw,
+      )
+    } else {
+      tokens.push(raw.replace(/-/g, '−'))
+    }
+    last = start + raw.length
   }
-  const tail = expression.slice(last).trim()
+  const tail = masked.slice(last).trim()
   if (tail) tokens.push(tail)
   return tokens
+}
+
+function parseCompoundFracToken(token: string): AlgebraFracToken | null {
+  if (!token.startsWith(COMPOUND_FRAC_MARK) || !token.endsWith(COMPOUND_FRAC_MARK)) return null
+  const inner = token.slice(1, -1)
+  if (!inner.startsWith('FRAC:')) return null
+  const body = inner.slice(5)
+  const sep = body.indexOf('\uE001')
+  if (sep < 0) return null
+  return { kind: 'frac', num: body.slice(0, sep), den: body.slice(sep + 1) }
 }
 
 function isAlgebraLetter(token: string): boolean {
@@ -1750,6 +1799,22 @@ function isAlgebraOp(token: string): boolean {
 }
 
 function AlgebraToken({ token }: { token: string }) {
+  const compound = parseCompoundFracToken(token)
+  if (compound) {
+    return (
+      <span className="alg-token alg-frac alg-frac-compound">
+        <FractionStack
+          ariaLabel={`${compound.num} sur ${compound.den}`}
+          num={tokenizeAlgebra(compound.num).map((t, i) => (
+            <AlgebraToken key={`n-${i}`} token={t} />
+          ))}
+          den={tokenizeAlgebra(compound.den).map((t, i) => (
+            <AlgebraToken key={`d-${i}`} token={t} />
+          ))}
+        />
+      </span>
+    )
+  }
   if (/^[-−]?(?:[A-Za-z]|\d+)\/[-−]?\d+$/.test(token)) {
     return (
       <span className="alg-token alg-frac">

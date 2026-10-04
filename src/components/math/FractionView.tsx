@@ -6,6 +6,27 @@ function displaySigned(part: string): string {
   return part.replace(/-/g, '−')
 }
 
+/** Fraction empilée (barre horizontale) : numérateur / dénominateur en nœuds React. */
+export function FractionStack({
+  num,
+  den,
+  className = '',
+  ariaLabel,
+}: {
+  num: ReactNode
+  den: ReactNode
+  className?: string
+  ariaLabel?: string
+}) {
+  return (
+    <span className={`fraction-stack ${className}`} aria-label={ariaLabel}>
+      <span className="fraction-num">{num}</span>
+      <span className="fraction-bar" />
+      <span className="fraction-den">{den}</span>
+    </span>
+  )
+}
+
 /** Affiche une fraction empilée (barre horizontale), ou du texte si ce n’est pas une fraction. */
 export function FractionView({ value, className = '' }: { value: string; className?: string }) {
   const trimmed = value.trim()
@@ -15,11 +36,12 @@ export function FractionView({ value, className = '' }: { value: string; classNa
   const num = displaySigned(trimmed.slice(0, slash).trim())
   const den = displaySigned(trimmed.slice(slash + 1).trim())
   return (
-    <span className={`fraction-stack ${className}`} aria-label={`${num} sur ${den}`}>
-      <span className="fraction-num">{num}</span>
-      <span className="fraction-bar" />
-      <span className="fraction-den">{den}</span>
-    </span>
+    <FractionStack
+      className={className}
+      ariaLabel={`${num} sur ${den}`}
+      num={num}
+      den={den}
+    />
   )
 }
 

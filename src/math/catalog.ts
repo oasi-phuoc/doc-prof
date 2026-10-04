@@ -378,6 +378,15 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 1 },
   ),
   t(
+    'tcm-expressions-evaluer',
+    'tcm-info',
+    'Évaluer des expressions (3 variables)',
+    'Q1 : sans puissance ni fraction (≥ 6 termes) ; Q2 : avec puissances et fractions empilées (binômes possibles), ≥ 6 termes dont 2 hors fraction. 50 modèles par question.',
+    'Évaluez chaque expression avec les trois valeurs indiquées.',
+    'ligne',
+    { preferredColumns: 1 },
+  ),
+  t(
     'tcm-proportion-kg',
     'tcm-info',
     'Règle de trois (kg)',
@@ -1115,6 +1124,7 @@ export function isDraftPadExercise(typeId: string): boolean {
     // TCM : géométrie périmètre/aire, réduction, substitution, règle de trois kg.
     typeId.includes('peri-aire') ||
     typeId === 'tcm-expressions-reduire' ||
+    typeId === 'tcm-expressions-evaluer' ||
     typeId === 'expressions-substituer'
   )
 }
