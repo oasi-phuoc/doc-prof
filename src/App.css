@@ -1037,6 +1037,10 @@ html,body,#root{
   fill:var(--purple);fill-opacity:1;stroke:none;font-size:13pt;font-weight:600;
   font-family:'DM Sans',sans-serif
 }
+/* TCM dual (ex. 13 / 24–26 / 36–37) : cotes à 10 pt. */
+.geo-dual-figure .geometry-figure .dim-label{
+  font-size:10pt
+}
 .geometry-figure.cotee{overflow:visible}
 .geometry-figure.composite-figure{width:min(100%,56mm)}
 .geometry-figure.composite-figure .dim-label{font-size:13pt}

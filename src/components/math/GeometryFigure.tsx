@@ -93,7 +93,7 @@ function HeightBracket({
       <line x1={bracketX} y1={yTop} x2={bracketX} y2={yBot} strokeWidth={1.5} />
       <line x1={bracketX - tick} y1={yTop} x2={bracketX + tick} y2={yTop} strokeWidth={1.5} />
       <line x1={bracketX - tick} y1={yBot} x2={bracketX + tick} y2={yBot} strokeWidth={1.5} />
-      <L x={bracketX + tick + 4} y={(yTop + yBot) / 2} anchor="start" baseline="middle">
+      <L x={bracketX + tick + 10} y={(yTop + yBot) / 2} anchor="start" baseline="middle">
         {label}
       </L>
     </g>
@@ -126,15 +126,15 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
   const circleDiameter = type === 'circle' && (d.diameter != null || (d.length != null && d.radius == null))
 
   const viewBox = paraPlacement
-    ? '0 0 350 145'
+    ? '0 0 350 158'
     : triPlacement
-      ? '0 0 295 145'
+      ? '0 0 295 162'
       : rhombusPlacement
-        ? '0 0 330 178'
+        ? '0 0 330 188'
         : trapPlacement
-          ? '0 0 360 145'
+          ? '0 0 360 160'
           : circleDiameter
-            ? '0 0 180 140'
+            ? '0 0 180 150'
             : '0 0 260 190'
 
   return (
@@ -160,12 +160,12 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           <>
             <rect x="40" y="48" width="170" height="82" />
             {(d.length != null || d.ask === 'length') && (
-              <L x={125} y={38}>
+              <L x={125} y={32}>
                 {d.ask === 'length' ? '?' : `${fmt(d.length!)} ${unit}`}
               </L>
             )}
             {(d.width != null || d.ask === 'width') && (
-              <L x={222} y={92} anchor="start">
+              <L x={228} y={92} anchor="start">
                 {d.ask === 'width' ? '?' : `${fmt(d.width!)} ${unit}`}
               </L>
             )}
@@ -176,10 +176,10 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           <>
             {/* Coords placement soutien Ex. 25 */}
             <polygon points="76,118 216,118 248,38 108,38" />
-            <L x={(108 + 248) / 2} y={30}>
+            <L x={(108 + 248) / 2} y={24}>
               {fmt(d.base!)} {unit}
             </L>
-            <L x={66} y={(118 + 38) / 2} anchor="end" baseline="middle">
+            <L x={58} y={(118 + 38) / 2} anchor="end" baseline="middle">
               {fmt(d.side!)} {unit}
             </L>
             <HeightBracket
@@ -229,13 +229,13 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           <>
             {/* Coords placement soutien Ex. 26 — scalène + a / b / c / h */}
             <polygon points="72,28 22,122 185,122" />
-            <L x={(22 + 185) / 2} y={136}>
+            <L x={(22 + 185) / 2} y={148}>
               a = {fmt(d.a!)} {unit}
             </L>
-            <L x={(72 + 185) / 2 + 8} y={(28 + 122) / 2 - 4} anchor="start">
+            <L x={(72 + 185) / 2 + 14} y={(28 + 122) / 2 - 4} anchor="start">
               b = {fmt(d.b!)} {unit}
             </L>
-            <L x={(72 + 22) / 2 - 8} y={(28 + 122) / 2 - 4} anchor="end">
+            <L x={(72 + 22) / 2 - 14} y={(28 + 122) / 2 - 4} anchor="end">
               c = {fmt(d.c!)} {unit}
             </L>
             <HeightBracket
@@ -432,13 +432,13 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           <>
             {/* Coords placement soutien Ex. 37 — a / b / c / h */}
             <polygon points="92,32 202,32 244,120 54,120" />
-            <L x={(92 + 202) / 2} y={25}>
+            <L x={(92 + 202) / 2} y={20}>
               a = {fmt(d.top!)} {unit}
             </L>
-            <L x={(54 + 244) / 2} y={134}>
+            <L x={(54 + 244) / 2} y={146}>
               b = {fmt(d.bottom!)} {unit}
             </L>
-            <L x={(54 + 92) / 2 - 8} y={(120 + 32) / 2} anchor="end" baseline="middle">
+            <L x={(54 + 92) / 2 - 14} y={(120 + 32) / 2} anchor="end" baseline="middle">
               c = {fmt(d.c ?? d.side!)} {unit}
             </L>
             <HeightBracket
@@ -509,7 +509,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           <>
             {/* Coords placement soutien Ex. 27 — c / d₁ / d₂ */}
             <polygon points="125,21 203,73 125,125 47,73" />
-            <L x={(125 + 47) / 2 - 12} y={(21 + 73) / 2} anchor="end" baseline="middle">
+            <L x={(125 + 47) / 2 - 18} y={(21 + 73) / 2} anchor="end" baseline="middle">
               c = {fmt(d.side!)} {unit}
             </L>
             {/* Bracket d₂ (vertical, droite) */}
@@ -520,7 +520,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
               <line x1={230} y1={21} x2={240} y2={21} strokeWidth={1.5} />
               <line x1={230} y1={125} x2={240} y2={125} strokeWidth={1.5} />
             </g>
-            <L x={244} y={73} anchor="start" baseline="middle">
+            <L x={250} y={73} anchor="start" baseline="middle">
               d₂ = {fmt(d.d2!)} {unit}
             </L>
             {/* Bracket d₁ (horizontal, bas) */}
@@ -531,7 +531,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
               <line x1={47} y1={143} x2={47} y2={153} strokeWidth={1.5} />
               <line x1={203} y1={143} x2={203} y2={153} strokeWidth={1.5} />
             </g>
-            <L x={125} y={165}>
+            <L x={125} y={174}>
               d₁ = {fmt(d.d1!)} {unit}
             </L>
           </>
@@ -571,7 +571,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <circle cx="90" cy="68" r="52" />
             <line x1={90 - 52} y1={68} x2={90 + 52} y2={68} fill="none" strokeWidth={1.5} />
             <circle cx="90" cy="68" r="2.5" fillOpacity={1} stroke="none" />
-            <L x={90} y={82}>
+            <L x={90} y={98}>
               d = {fmt(d.diameter ?? d.length!)} {unit}
             </L>
           </>
