@@ -1,6 +1,6 @@
 /**
  * TCM ex. 28 — priorité des opérations.
- * 50 modèles uniques : 25 avec () [] et + − × ÷ ;
+ * 50 modèles uniques (≥ 5 termes chacun) : 25 avec () [] et + − × ÷ ;
  * 25 avec en plus fractions empilées (n/d) et puissances ¹–³.
  * `/` = fraction empilée uniquement ; division d’expressions = `÷`.
  */
@@ -18,36 +18,41 @@ export type PrioriteTemplate = {
   pattern: string
 }
 
-/** 25 modèles sans fraction ni puissance. */
+/** Compte les opérandes numériques d’un modèle (≥ 5 exigé). */
+export function prioriteTermCount(pattern: string): number {
+  return (pattern.match(/\{[a-j]\}/g) ?? []).length
+}
+
+/** 25 modèles sans fraction ni puissance (≥ 5 termes). */
 export const TCM_PRIORITE_OPS: readonly PrioriteTemplate[] = [
-  { id: 'o01', kind: 'ops', pattern: '[({a} + {b}) × {c}] − {d}' },
-  { id: 'o02', kind: 'ops', pattern: '{a} + [({b} − {c}) × {d}]' },
-  { id: 'o03', kind: 'ops', pattern: '[({a} × {b}) − {c}] + {d}' },
-  { id: 'o04', kind: 'ops', pattern: '({a} + {b}) × [{c} − {d}]' },
-  { id: 'o05', kind: 'ops', pattern: '[{a} × ({b} + {c})] − {d}' },
-  { id: 'o06', kind: 'ops', pattern: '{a} × [({b} + {c}) − {d}]' },
-  { id: 'o07', kind: 'ops', pattern: '[({a} − {b}) × {c}] + {d}' },
-  { id: 'o08', kind: 'ops', pattern: '({a} − {b}) + [{c} × {d}]' },
-  { id: 'o09', kind: 'ops', pattern: '[{a} + ({b} × {c})] − {d}' },
-  { id: 'o10', kind: 'ops', pattern: '[({a} + {b}) − {c}] × {d}' },
-  { id: 'o11', kind: 'ops', pattern: '{a} − [({b} × {c}) − {d}]' },
-  { id: 'o12', kind: 'ops', pattern: '({a} × {b}) − [{c} + {d}]' },
-  { id: 'o13', kind: 'ops', pattern: '[{a} × {b}] + ({c} − {d})' },
-  { id: 'o14', kind: 'ops', pattern: '[({a} + {b}) × ({c} − {d})]' },
-  { id: 'o15', kind: 'ops', pattern: '{a} × ({b} + [{c} − {d}])' },
-  { id: 'o16', kind: 'ops', pattern: '({a} + [{b} × {c}]) − {d}' },
-  { id: 'o17', kind: 'ops', pattern: '[{a} − ({b} + {c})] × {d}' },
-  { id: 'o18', kind: 'ops', pattern: '[({a} × {b}) + {c}] − {d}' },
-  { id: 'o19', kind: 'ops', pattern: '[{a} + {b}] ÷ ({c}) + {d}' },
-  { id: 'o20', kind: 'ops', pattern: '({a} − {b}) × [{c} + {d}]' },
-  { id: 'o21', kind: 'ops', pattern: '[{a} + {b}] × ({c} − {d})' },
-  { id: 'o22', kind: 'ops', pattern: '[({a} × {b}) ÷ {c}] + {d}' },
-  { id: 'o23', kind: 'ops', pattern: '{a} × [{b} − ({c} − {d})]' },
+  { id: 'o01', kind: 'ops', pattern: '[({a} + {b}) × {c}] − {d} + {e}' },
+  { id: 'o02', kind: 'ops', pattern: '{a} + [({b} − {c}) × {d}] − {e}' },
+  { id: 'o03', kind: 'ops', pattern: '[({a} × {b}) − {c}] + {d} − {e}' },
+  { id: 'o04', kind: 'ops', pattern: '({a} + {b}) × [{c} − {d}] + {e}' },
+  { id: 'o05', kind: 'ops', pattern: '[{a} × ({b} + {c})] − {d} + {e}' },
+  { id: 'o06', kind: 'ops', pattern: '{a} × [({b} + {c}) − {d}] + {e}' },
+  { id: 'o07', kind: 'ops', pattern: '[({a} − {b}) × {c}] + {d} − {e}' },
+  { id: 'o08', kind: 'ops', pattern: '({a} − {b}) + [{c} × {d}] − {e}' },
+  { id: 'o09', kind: 'ops', pattern: '[{a} + ({b} × {c})] − {d} + {e}' },
+  { id: 'o10', kind: 'ops', pattern: '[({a} + {b}) − {c}] × {d} + {e}' },
+  { id: 'o11', kind: 'ops', pattern: '{a} − [({b} × {c}) − {d}] + {e}' },
+  { id: 'o12', kind: 'ops', pattern: '({a} × {b}) − [{c} + {d}] + {e}' },
+  { id: 'o13', kind: 'ops', pattern: '[{a} × {b}] + ({c} − {d}) + {e}' },
+  { id: 'o14', kind: 'ops', pattern: '[({a} + {b}) × ({c} − {d})] + {e}' },
+  { id: 'o15', kind: 'ops', pattern: '{a} × ({b} + [{c} − {d}]) − {e}' },
+  { id: 'o16', kind: 'ops', pattern: '({a} + [{b} × {c}]) − {d} + {e}' },
+  { id: 'o17', kind: 'ops', pattern: '[{a} − ({b} + {c})] × {d} + {e}' },
+  { id: 'o18', kind: 'ops', pattern: '[({a} × {b}) + {c}] − {d} + {e}' },
+  { id: 'o19', kind: 'ops', pattern: '[{a} + {b}] ÷ ({c}) + {d} − {e}' },
+  { id: 'o20', kind: 'ops', pattern: '({a} − {b}) × [{c} + {d}] − {e}' },
+  { id: 'o21', kind: 'ops', pattern: '[{a} + {b}] × ({c} − {d}) + {e}' },
+  { id: 'o22', kind: 'ops', pattern: '[({a} × {b}) ÷ {c}] + {d} − {e}' },
+  { id: 'o23', kind: 'ops', pattern: '{a} × [{b} − ({c} − {d})] + {e}' },
   { id: 'o24', kind: 'ops', pattern: '({a} + {b}) − [{c} × {d} − {e}]' },
   { id: 'o25', kind: 'ops', pattern: '[{a} × ({b} − {c})] + ({d} ÷ {e})' },
 ]
 
-/** 25 modèles avec fractions n/d (empilées) et puissances. */
+/** 25 modèles avec fractions n/d (empilées) et puissances (≥ 5 termes). */
 export const TCM_PRIORITE_FRAC_POW: readonly PrioriteTemplate[] = [
   { id: 'f01', kind: 'frac-pow', pattern: '[({a}/{b} + {c}) × {d}^{p}] − {e}' },
   { id: 'f02', kind: 'frac-pow', pattern: '({a} + {b}/{c}) × [{d}^{p} − {e}]' },
@@ -62,17 +67,17 @@ export const TCM_PRIORITE_FRAC_POW: readonly PrioriteTemplate[] = [
   { id: 'f11', kind: 'frac-pow', pattern: '({a}^{p} + {b}/{c}) − [{d} × {e}]' },
   { id: 'f12', kind: 'frac-pow', pattern: '[({a} − {b}/{c}) × {d}^{p}] + {e}' },
   { id: 'f13', kind: 'frac-pow', pattern: '({a}/{b}) × [{c}^{p} + ({d} − {e})]' },
-  { id: 'f14', kind: 'frac-pow', pattern: '[{a}^{p} − ({b}/{c})] × {d}' },
+  { id: 'f14', kind: 'frac-pow', pattern: '[{a}^{p} − ({b}/{c})] × {d} + {e}' },
   { id: 'f15', kind: 'frac-pow', pattern: '[({a} + {b}) × {c}^{p}] ÷ {d} − {e}/{f}' },
   { id: 'f16', kind: 'frac-pow', pattern: '({a} × {b}/{c}) + [{d}^{p} − {e}]' },
   { id: 'f17', kind: 'frac-pow', pattern: '[{a}/{b} + {c}/{d}] × {e}^{p}' },
   { id: 'f18', kind: 'frac-pow', pattern: '({a}^{p} × {b}/{c}) − [{d} + {e}]' },
-  { id: 'f19', kind: 'frac-pow', pattern: '[{a}/{b} × {c}^{p}] + {d}' },
+  { id: 'f19', kind: 'frac-pow', pattern: '[{a}/{b} × {c}^{p}] + {d} − {e}' },
   { id: 'f20', kind: 'frac-pow', pattern: '{a}/{b} × [({c}^{p} + {d}) ÷ {e}]' },
   { id: 'f21', kind: 'frac-pow', pattern: '[{a}^{p} + ({b} × {c}/{d})] − {e}' },
   { id: 'f22', kind: 'frac-pow', pattern: '({a}/{b} − {c}/{d}) × {e}^{p}' },
   { id: 'f23', kind: 'frac-pow', pattern: '[({a} × {b}^{p}) ÷ {c}] + {d}/{e}' },
-  { id: 'f24', kind: 'frac-pow', pattern: '({a} + {b}/{c}) × {d}^{p}' },
+  { id: 'f24', kind: 'frac-pow', pattern: '({a} + {b}/{c}) × {d}^{p} − {e}' },
   { id: 'f25', kind: 'frac-pow', pattern: '[{a}/{b} × {c}^{p}] − ({d}/{e})' },
 ]
 
@@ -187,8 +192,8 @@ export function generateTcmPrioriteBatch(rng: Rng): MathItem[] {
   const q1 =
     fillPrioriteTemplate(opsTpl, rng) ??
     fillPrioriteTemplate(TCM_PRIORITE_OPS[0]!, rng) ?? {
-      prompt: '[(2 + 3) × 4] − 1 =',
-      answer: '19',
+      prompt: '[(2 + 3) × 4] − 1 + 5 =',
+      answer: '24',
     }
   const q2 =
     fillPrioriteTemplate(fracTpl, rng) ??
