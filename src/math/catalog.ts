@@ -251,6 +251,15 @@ export const exerciseTypes: ExerciseType[] = [
     'colonne',
     { preferredColumns: 2 },
   ),
+  t(
+    'tcm-div-mixte',
+    'tcm-info',
+    'Divisions posées (entier et décimal)',
+    'Une division entière (5 chiffres ÷ 12–19) et une décimale (5 chiffres, 2–3 déc. avec un 0 ÷ 3–9), grilles 5+5.',
+    'Effectuez les divisions en colonnes.',
+    'colonne',
+    { preferredColumns: 2 },
+  ),
   t('nombres-chiffres', 'nombres', 'Écrire en chiffres', 'Le nombre est écrit en lettres, on l’écrit en chiffres.', 'Écrivez chaque nombre en chiffres.', 'texte', { preferredColumns: 1 }),
   t('nombres-lettres', 'nombres', 'Écrire en lettres', 'Le nombre est écrit en chiffres, on l’écrit en lettres (Suisse romande).', 'Écrivez chaque nombre en lettres.', 'texte', { preferredColumns: 1 }),
   t(

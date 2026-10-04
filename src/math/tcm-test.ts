@@ -112,8 +112,8 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 19,
-    label: 'Division décimale',
-    blocks: [{ exerciseType: 'decimaux-div-colonne', count: 2, columns: 1 }],
+    label: 'Divisions posées (entier et décimal)',
+    blocks: [{ exerciseType: 'tcm-div-mixte', count: 2, columns: 2 }],
   },
   { id: 20, label: 'Colorier les fractions', blocks: [{ exerciseType: 'fractions-identifier', count: 4, columns: 2 }] },
   { id: 21, label: 'Lire les fractions', blocks: [{ exerciseType: 'fractions-equivalentes', count: 4, columns: 2 }] },
@@ -235,7 +235,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
 /**
  * Étapes regroupées sur une même feuille A4 (après la page consignes).
  * Page 2 : 1–4 · Page 3 : 5–8 · Page 4 : 9–11 · Page 5 : 12+13+15 ·
- * Page 6 : 16 · Page 7 : 17+18.
+ * Page 6 : 16 · Page 7 : 17+18 · Page 8 : 19.
  */
 const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],
@@ -244,6 +244,7 @@ const TCM_PACKED_PAGES: readonly (readonly number[])[] = [
   [12, 13, 15],
   [16],
   [17, 18],
+  [19],
 ]
 
 function blockFromSpec(

@@ -395,7 +395,7 @@ function generateTcmRectPeriAire(rng: Rng): MathItem {
 
 /**
  * TCM ex. 15 : suites 6 termes, 4 trous, 2 visibles consécutifs.
- * Q1 : 10 000–99 999, écart 500–900 ×5 hors centaines.
+ * Q1 : 10 000–99 999, écart 500–900 ×5 hors centaines.
  * Q2 : 0–9,99, écart 0,05–0,95 ×0,05 hors dixièmes ronds.
  */
 function generateTcmSuites6Batch(rng: Rng): MathItem[] {
@@ -489,8 +489,42 @@ function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
 }
 
 /**
+ * TCM ex. 19 : deux divisions posées (5 col dividende / 5 col quotient).
+ * Gauche : entier 10 000–99 999 ÷ 12–19 (exact).
+ * Droite : décimal 5 chiffres (2–3 décimales, avec un 0) ÷ 3–9 (exact).
+ */
+function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
+  const dInt = int(rng, 12, 19)
+  const qMin = Math.ceil(10_000 / dInt)
+  const qMax = Math.floor(99_999 / dInt)
+  const qInt = int(rng, qMin, qMax)
+  const left = withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 5, 5)
+
+  let dDec = int(rng, 3, 9)
+  let dividendDec = 0
+  for (let guard = 0; guard < 120; guard++) {
+    const places = pick(rng, [2, 3] as const)
+    const digs = [int(rng, 1, 9), int(rng, 0, 9), int(rng, 0, 9), int(rng, 0, 9), int(rng, 1, 9)]
+    if (!digs.includes(0)) digs[int(rng, 1, 3)] = 0
+    const scaled = digs.reduce((acc, d) => acc * 10 + d, 0)
+    if (scaled % dDec !== 0) continue
+    const value = scaled / 10 ** places
+    if (decimalPlacesOf(value) !== places) continue
+    dividendDec = value
+    break
+  }
+  if (dividendDec <= 0) {
+    // Repli déterministe : 10,206 ÷ 3 = 3,402 (5 chiffres, 3 déc., un 0).
+    dividendDec = 10.206
+    dDec = 3
+  }
+  const right = withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 5, 5)
+  return [left, right]
+}
+
+/**
  * TCM ex. 16 : trier.
- * Q1 : 6 nombres 100 000–999 999 (paires début / fin / centre).
+ * Q1 : 6 nombres 100 000–999 999 (paires début / fin / centre).
  * Q2 : 5 décimaux motifs x,0x · x,x · x,xx · x,xx · x,x0.
  */
 function generateTcmRangerBatch(rng: Rng): MathItem[] {
@@ -1063,6 +1097,9 @@ function generateItems(
   if (typeId === 'tcm-mul-mixte') {
     return generateTcmMulMixteBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-div-mixte') {
+    return generateTcmDivMixteBatch(rng).slice(0, Math.max(1, count))
+  }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
     items.push(generateOne(typeId, rng, i, difficulty, range, shapes))
@@ -1145,6 +1182,9 @@ function generateOne(
     }
     case 'tcm-mul-mixte': {
       return generateTcmMulMixteBatch(rng)[0]!
+    }
+    case 'tcm-div-mixte': {
+      return generateTcmDivMixteBatch(rng)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)
