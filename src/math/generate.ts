@@ -34,6 +34,7 @@ import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { generateLengthConversionBatch, tryGenerateConversion } from './conversions'
 import { generateTcmPrioriteBatch } from './tcm-priorite'
+import { generateTcmProportionKgBatch } from './tcm-proportion-kg'
 import { generateTcmReduireBatch } from './tcm-reduire'
 import { tryGenerateFigure } from './figures-school'
 import { tryGenerateFrancaisBlock } from '@/francais/francais'
@@ -1476,6 +1477,9 @@ function generateItems(
   if (typeId === 'tcm-expressions-reduire') {
     return generateTcmReduireBatch(rng).slice(0, Math.max(1, count))
   }
+  if (typeId === 'tcm-proportion-kg') {
+    return generateTcmProportionKgBatch(rng, count)
+  }
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count)
@@ -1611,6 +1615,9 @@ function generateOne(
     }
     case 'tcm-expressions-reduire': {
       return generateTcmReduireBatch(rng)[0]!
+    }
+    case 'tcm-proportion-kg': {
+      return generateTcmProportionKgBatch(rng, 1)[0]!
     }
     case 'nombres-position': {
       const n = int(rng, 100, 9999)

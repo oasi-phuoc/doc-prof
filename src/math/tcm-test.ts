@@ -175,11 +175,8 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   },
   {
     id: 31,
-    label: 'Pourcentages et règle de trois',
-    blocks: [
-      { exerciseType: 'proportion-de', count: 1, columns: 2 },
-      { exerciseType: 'proportion-problemes', count: 1, columns: 1 },
-    ],
+    label: 'Règle de trois (kg)',
+    blocks: [{ exerciseType: 'tcm-proportion-kg', count: 2, columns: 1 }],
   },
   {
     id: 32,
