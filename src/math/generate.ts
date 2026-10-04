@@ -19,6 +19,8 @@ import {
   pairDiv,
   pairMul,
   pairSub,
+  pickWithPlaces,
+  roundToPlaces,
   upperBound,
   type NumberRange,
 } from './difficulty'
@@ -600,25 +602,35 @@ function generateTcmSuites6Batch(rng: Rng): MathItem[] {
   return [makeInt(), makeDec()]
 }
 
-/** TCM ex. 17 : une addition + une soustraction décimales (ordre aléatoire), grille 6 col. */
+/**
+ * TCM ex. 17 : + et − décimaux à poser (grille vide 6 col, calcul au-dessus).
+ * Soustraction : 1er nombre 1 ou 2 déc. ; 2e nombre = 1 décimale de plus.
+ */
 function generateTcmDecAddSubBatch(rng: Rng): MathItem[] {
   const addP = decimalAddPair(rng, 40)
-  const subP = decimalSubPair(rng, 40)
-  const add = withFixedColumnWidth(columnItem('+', addP.a, addP.b, addP.result, false), 6)
-  const sub = withFixedColumnWidth(columnItem('−', subP.a, subP.b, subP.result, false), 6)
+  const placesA = pick(rng, [1, 2] as const)
+  const placesB = placesA + 1
+  const subA = pickWithPlaces(rng, 5, 40, placesA)
+  const subBMax = Math.max(10 ** -placesB, subA - 10 ** -placesB)
+  let subB = pickWithPlaces(rng, 10 ** -placesB, subBMax, placesB)
+  if (subB >= subA) {
+    subB = pickWithPlaces(rng, 10 ** -placesB, Math.max(10 ** -placesB, subA / 2), placesB)
+  }
+  if (subB >= subA) {
+    subB = roundToPlaces(Math.max(10 ** -placesB, subA - 10 ** -placesB), placesB)
+  }
+  const subResult = roundToPlaces(subA - subB, placesB)
+  const add = withFixedColumnWidth(columnItem('+', addP.a, addP.b, addP.result, true), 6)
+  const sub = withFixedColumnWidth(columnItem('−', subA, subB, subResult, true), 6)
   return rng() < 0.5 ? [add, sub] : [sub, add]
 }
 
 /**
- * TCM ex. 18 : multiplication posée, grille 6 col.
- * Gauche : entier 100–999 × 11–99.
- * Droite : décimal 4 chiffres (2–3 décimales) × [1,1 ; 9,9] (pas ×,0).
+ * TCM ex. 18 : multiplications à poser (grille vide 6 col, calcul au-dessus).
+ * Entier 100–999 × 11–99 ; décimal 4 chiffres (2–3 déc.) × [1,1 ; 9,9].
  */
 function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
-  const aInt = int(rng, 100, 999)
-  const bInt = int(rng, 11, 99)
-  const mulInt = withFixedColumnWidth(columnItem('×', aInt, bInt, aInt * bInt, false), 6)
-
+  // D’abord le décimal (plusieurs tirages) pour éviter le biais LCG du 1er int(100,999).
   const placesA = pick(rng, [2, 3] as const)
   // 4 chiffres au total : 2 déc. → 2 entiers ; 3 déc. → 1 entier.
   const intDigits = 4 - placesA
@@ -635,7 +647,11 @@ function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
   while (bTenths % 10 === 0) bTenths = int(rng, 11, 99)
   const bDec = bTenths / 10
   const product = Math.round(aDec * bDec * 10 ** (placesA + 1)) / 10 ** (placesA + 1)
-  const mulDec = withFixedColumnWidth(columnItem('×', aDec, bDec, product, false), 6)
+  const mulDec = withFixedColumnWidth(columnItem('×', aDec, bDec, product, true), 6)
+
+  const aInt = int(rng, 100, 999)
+  const bInt = int(rng, 11, 99)
+  const mulInt = withFixedColumnWidth(columnItem('×', aInt, bInt, aInt * bInt, true), 6)
 
   return rng() < 0.5 ? [mulInt, mulDec] : [mulDec, mulInt]
 }
