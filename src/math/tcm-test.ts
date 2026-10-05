@@ -11,9 +11,6 @@ export const TCM_DOMAIN: Domain = 'tcm'
 
 export const TCM_DOCUMENT_TITLE = 'Test de connaissance de mathématiques'
 
-/** Score maximum annoncé sur la page consignes / grille d’évaluation. */
-export const TCM_MAX_SCORE = 100
-
 type TcmBlockSpec = {
   exerciseType: string
   count: number
@@ -92,7 +89,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 13,
     label: 'Rectangle (périmètre et aire)',
-    blocks: [{ exerciseType: 'tcm-rect-peri-aire', count: 1, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-rect-peri-aire', count: 1, columns: 1, pointsPerQuestion: 2 }],
   },
   {
     id: 15,
@@ -122,12 +119,12 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 20,
     label: 'Colorier les fractions',
-    blocks: [{ exerciseType: 'tcm-frac-color', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
+    blocks: [{ exerciseType: 'tcm-frac-color', count: 2, columns: 2, pointsPerQuestion: 1 }],
   },
   {
     id: 21,
     label: 'Lire les fractions',
-    blocks: [{ exerciseType: 'tcm-frac-read', count: 4, columns: 2, pointsPerQuestion: 0.5 }],
+    blocks: [{ exerciseType: 'tcm-frac-read', count: 2, columns: 2, pointsPerQuestion: 1 }],
   },
   {
     id: 22,
@@ -137,17 +134,17 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 23,
     label: 'Parallélogramme (périmètre et aire)',
-    blocks: [{ exerciseType: 'tcm-para-peri-aire', count: 1, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-para-peri-aire', count: 1, columns: 1, pointsPerQuestion: 2 }],
   },
   {
     id: 24,
     label: 'Triangle (périmètre et aire)',
-    blocks: [{ exerciseType: 'tcm-tri-peri-aire', count: 1, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-tri-peri-aire', count: 1, columns: 1, pointsPerQuestion: 2 }],
   },
   {
     id: 25,
     label: 'Losange (périmètre et aire)',
-    blocks: [{ exerciseType: 'tcm-rhombus-peri-aire', count: 1, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-rhombus-peri-aire', count: 1, columns: 1, pointsPerQuestion: 2 }],
   },
   {
     id: 26,
@@ -202,14 +199,30 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 36,
     label: 'Trapèze (périmètre et aire)',
-    blocks: [{ exerciseType: 'tcm-trap-peri-aire', count: 1, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-trap-peri-aire', count: 1, columns: 1, pointsPerQuestion: 2 }],
   },
   {
     id: 37,
     label: 'Cercle (périmètre et aire)',
-    blocks: [{ exerciseType: 'tcm-circle-peri-aire', count: 1, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-circle-peri-aire', count: 1, columns: 1, pointsPerQuestion: 2 }],
   },
 ]
+
+/** Points d’un bloc selon count × pointsPerQuestion (défaut 1). */
+function blockSpecPoints(spec: TcmBlockSpec): number {
+  return spec.count * (spec.pointsPerQuestion ?? 1)
+}
+
+/** Score maximum du test = somme des barèmes des étapes (pas un plafond fixe). */
+export function computeTcmMaxScore(steps: readonly TcmStepSpec[] = TCM_STEPS): number {
+  return steps.reduce(
+    (sum, step) => sum + step.blocks.reduce((s, b) => s + blockSpecPoints(b), 0),
+    0,
+  )
+}
+
+/** Score maximum annoncé (dérivé des barèmes TCM_STEPS). */
+export const TCM_MAX_SCORE = computeTcmMaxScore()
 
 /**
  * Étapes regroupées sur une même feuille A4 (après la page consignes).

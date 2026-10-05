@@ -49,6 +49,7 @@ import { tryGenerateMesure } from './mesures'
 import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
 import { genFracItems } from './fraction-shapes'
+import { TCM_MAX_SCORE } from './tcm-test'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type {
   AlgebraGiven,
@@ -1650,18 +1651,10 @@ function generateItems(
     return generateTcmDivMixteBatch(rng).slice(0, Math.max(1, count))
   }
   if (typeId === 'tcm-frac-color') {
-    return genFracItems(rng, Math.max(1, count)).map((item) => ({
-      layout: 'fraction-shape' as const,
-      fracShape: { ...item, mode: 'color' as const },
-      answer: `${item.n}/${item.d}`,
-    }))
+    return generateTcmFracShapeBatch(rng, count, 'color')
   }
   if (typeId === 'tcm-frac-read') {
-    return genFracItems(rng, Math.max(1, count)).map((item) => ({
-      layout: 'fraction-shape' as const,
-      fracShape: { ...item, mode: 'read' as const },
-      answer: `${item.n}/${item.d}`,
-    }))
+    return generateTcmFracShapeBatch(rng, count, 'read')
   }
   if (typeId === 'tcm-ops-decimales') {
     return generateTcmOpsDecimalesBatch(rng).slice(0, Math.max(1, count))
@@ -1799,20 +1792,10 @@ function generateOne(
       return generateTcmDivMixteBatch(rng)[0]!
     }
     case 'tcm-frac-color': {
-      const item = genFracItems(rng, 1)[0]!
-      return {
-        layout: 'fraction-shape',
-        fracShape: { ...item, mode: 'color' },
-        answer: `${item.n}/${item.d}`,
-      }
+      return generateTcmFracShapeBatch(rng, 1, 'color')[0]!
     }
     case 'tcm-frac-read': {
-      const item = genFracItems(rng, 1)[0]!
-      return {
-        layout: 'fraction-shape',
-        fracShape: { ...item, mode: 'read' },
-        answer: `${item.n}/${item.d}`,
-      }
+      return generateTcmFracShapeBatch(rng, 1, 'read')[0]!
     }
     case 'tcm-ops-decimales': {
       return generateTcmOpsDecimalesBatch(rng)[0]!
@@ -2424,6 +2407,36 @@ function generateOne(
   }
 }
 
+/**
+ * TCM ex. 20 / 21 — 2 questions :
+ * Q1 = une des 2 formes simples (ex-Q1 ou Q2) ;
+ * Q2 = une des 2 multi-formes (ex-Q3 ou Q4).
+ */
+function generateTcmFracShapeBatch(
+  rng: Rng,
+  count: number,
+  mode: 'color' | 'read',
+): MathItem[] {
+  const n = Math.max(1, count)
+  if (n >= 2) {
+    const pool = genFracItems(rng, 4)
+    const chosen = [pick(rng, [pool[0]!, pool[1]!]), pick(rng, [pool[2]!, pool[3]!])]
+    return chosen.slice(0, n).map((item) => ({
+      layout: 'fraction-shape' as const,
+      fracShape: { ...item, mode },
+      answer: `${item.n}/${item.d}`,
+    }))
+  }
+  const item = genFracItems(rng, 1)[0]!
+  return [
+    {
+      layout: 'fraction-shape' as const,
+      fracShape: { ...item, mode },
+      answer: `${item.n}/${item.d}`,
+    },
+  ]
+}
+
 function generateTcmConsignes(): MathItem[] {
   const levels: Array<[string, string]> = [
     ['CSC', 'Additions et soustractions'],
@@ -2431,6 +2444,8 @@ function generateTcmConsignes(): MathItem[] {
     ['CAF', 'Nombres décimaux, fractions, périmètre et aire'],
     ['CAP', 'Puissances et racines, relatifs, fractions et équations, périmètre et aire'],
   ]
+  const maxScore = TCM_MAX_SCORE
+  const scoreLabel = Number.isInteger(maxScore) ? String(maxScore) : String(maxScore).replace('.', ',')
   return [
     {
       layout: 'theory',
@@ -2458,7 +2473,7 @@ function generateTcmConsignes(): MathItem[] {
         items: [
           '35 exercices couvrant tous les niveaux de CSC jusqu’à CAP',
           '90 minutes pour compléter le test',
-          'Score maximum : 100 points',
+          `Score maximum : ${scoreLabel} points`,
         ],
       },
     },

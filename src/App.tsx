@@ -60,7 +60,6 @@ import {
   formatBlockPointsBadge,
   isTcmDomain,
   TCM_DOCUMENT_TITLE,
-  TCM_MAX_SCORE,
 } from '@/math/tcm-test'
 import {
   defaultCalliPhraseCount,
@@ -2623,7 +2622,8 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const chromeProps = {
     institutional,
     evalMode,
-    documentTotalPoints: isTcm ? TCM_MAX_SCORE : sheetTotalPoints,
+    // TCM : total = somme des barèmes de la fiche (plus de plafond fixe à 100).
+    documentTotalPoints: sheetTotalPoints,
     pointsPerQuestion,
   } as const
 
