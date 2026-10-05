@@ -2499,15 +2499,6 @@ function generateTcmConsignes(): MathItem[] {
         ],
       },
     },
-    {
-      layout: 'theory',
-      prompt: 'materiel',
-      answer: '',
-      theoryBlock: {
-        kind: 'note',
-        text: 'Matériel autorisé : stylo, crayon, gomme et règle. Pas de calculatrice, sauf indication contraire.',
-      },
-    },
   ]
 }
 
