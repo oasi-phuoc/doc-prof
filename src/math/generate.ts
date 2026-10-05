@@ -2451,7 +2451,7 @@ function generateTcmConsignes(): MathItem[] {
       layout: 'theory',
       prompt: 'Informations',
       answer: '',
-      theoryBlock: { kind: 'heading', text: 'Informations' },
+      theoryBlock: { kind: 'heading', text: '' },
     },
     {
       layout: 'theory',
@@ -2529,7 +2529,7 @@ function buildSingleBlock(
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
   if (config.exerciseType === 'tcm-consignes') {
     return {
-      title: 'Consignes',
+      title: 'Informations',
       instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
       items: generateTcmConsignes(),
     }
