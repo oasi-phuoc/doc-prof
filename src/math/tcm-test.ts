@@ -41,7 +41,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 2,
     label: 'Comparer (10–100)',
-    blocks: [{ exerciseType: 'tcm-comparer', count: 2, columns: 2, pointsPerQuestion: 0.5 }],
+    blocks: [{ exerciseType: 'tcm-comparer', count: 2, columns: 2, pointsPerQuestion: 1 }],
   },
   { id: 3, label: 'Suites numériques', blocks: [{ exerciseType: 'tcm-suite', count: 2, columns: 2 }] },
   {
