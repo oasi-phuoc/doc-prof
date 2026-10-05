@@ -159,7 +159,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 28,
     label: 'Priorité des opérations',
-    blocks: [{ exerciseType: 'tcm-priorite-ops', count: 2, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-priorite-ops', count: 2, columns: 1, pointsPerQuestion: 1.5 }],
   },
   {
     id: 29,
@@ -174,22 +174,22 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 31,
     label: 'Pourcentage et règle de trois',
-    blocks: [{ exerciseType: 'tcm-proportion-kg', count: 2, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-proportion-kg', count: 2, columns: 1, pointsPerQuestion: 1.5 }],
   },
   {
     id: 32,
     label: 'Simplification algébrique',
-    blocks: [{ exerciseType: 'tcm-expressions-reduire', count: 2, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-expressions-reduire', count: 2, columns: 1, pointsPerQuestion: 1.5 }],
   },
   {
     id: 33,
     label: 'Évaluer des expressions',
-    blocks: [{ exerciseType: 'tcm-expressions-evaluer', count: 2, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-expressions-evaluer', count: 2, columns: 1, pointsPerQuestion: 1.5 }],
   },
   {
     id: 34,
     label: 'Résoudre des équations',
-    blocks: [{ exerciseType: 'tcm-equations', count: 2, columns: 1 }],
+    blocks: [{ exerciseType: 'tcm-equations', count: 2, columns: 1, pointsPerQuestion: 1.5 }],
   },
   {
     id: 35,
