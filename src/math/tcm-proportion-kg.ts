@@ -93,6 +93,8 @@ function generatePercentItem(rng: Rng): MathItem {
 /**
  * Deux masses 10–99 (ni l’une ni l’autre ne divise l’autre)
  * + prix donné 10–99 tel que le prix cherché soit entier.
+ * Les 3 nombres affichés (kgA, priceA, kgB) sont distincts
+ * (évite « 51 kg → 51 francs » = 1 fr/kg, trop facile).
  */
 export function pickIndepKgPrice(rng: Rng): {
   kgA: number
@@ -100,7 +102,7 @@ export function pickIndepKgPrice(rng: Rng): {
   priceA: number
   priceB: number
 } {
-  for (let attempt = 0; attempt < 120; attempt++) {
+  for (let attempt = 0; attempt < 200; attempt++) {
     const kgA = int(rng, 10, 99)
     let kgB = int(rng, 10, 99)
     while (kgB === kgA) kgB = int(rng, 10, 99)
@@ -112,8 +114,12 @@ export function pickIndepKgPrice(rng: Rng): {
     if (minK > maxK) continue
     const k = int(rng, minK, maxK)
     const priceA = k * step
+    if (priceA < 10 || priceA > 99) continue
+    // kgA, priceA, kgB tous distincts (pas de 1 fr/kg ni de doublon avec kgB).
+    if (priceA === kgA || priceA === kgB) continue
     const priceB = (priceA * kgB) / kgA
-    if (!Number.isInteger(priceB) || priceB <= 0) continue
+    if (!Number.isInteger(priceB) || priceB < 10 || priceB > 99) continue
+    if (priceB === kgA || priceB === kgB || priceB === priceA) continue
     return { kgA, kgB, priceA, priceB }
   }
   return { kgA: 15, kgB: 28, priceA: 30, priceB: 56 }

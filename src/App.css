@@ -820,6 +820,14 @@ html,body,#root{
 .inline-prompt.equation.aligned-eq .answer-line-field{
   flex:none;display:block;width:100%;min-width:3em;margin:0
 }
+/* Puissance / racine (ex. 27 Q1–Q2) : trait = 3,8 em comme eq-row (Q3–Q4). */
+.inline-prompt.equation.aligned-eq.fixed-ans{
+  grid-template-columns:max-content auto 3.8em;
+  width:max-content;max-width:100%
+}
+.inline-prompt.equation.aligned-eq.fixed-ans .answer-line-field{
+  width:3.8em;min-width:3.8em;max-width:3.8em
+}
 .eq-row{
   display:grid;
   /* Opérandes / réponse −20 % ; op et = en largeur mini (pas la même que les nombres). */

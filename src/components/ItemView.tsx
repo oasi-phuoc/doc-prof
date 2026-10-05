@@ -2051,8 +2051,10 @@ function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   // « expr = » : expression à droite d’une colonne commune → = et traits alignés entre questions.
   if (endsWithEq) {
     const expr = prompt.trimEnd().replace(/=\s*$/, '').trimEnd()
+    // Sans opérateur binaire (ex. 2³, √144) : même largeur de trait que eq-row (× / ÷).
+    const unaryEq = !/[+\-−×÷]/.test(expr)
     return (
-      <div className="inline-prompt equation aligned-eq">
+      <div className={`inline-prompt equation aligned-eq${unaryEq ? ' fixed-ans' : ''}`}>
         <span className="eq-text">{renderMathText(expr)}</span>
         <span className="eq-sign">=</span>
         <span className={`answer-line-field ${show ? 'filled' : ''}`}>
