@@ -1484,14 +1484,29 @@ function OrderRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   return (
     <div className="order-block">
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
-      <div className="order-given" aria-label="Nombres à ranger">
-        {given.map((term, index) => (
-          <span className="order-given-term" key={`${term}-${index}`}>
-            {term}
-            {index < given.length - 1 ? <span className="order-given-sep">·</span> : null}
-          </span>
-        ))}
-      </div>
+      {item.orderBoxed ? (
+        <div className="order-answer-row order-given-boxes" aria-label="Nombres à ranger">
+          {Array.from({ length: slots }, (_, i) => (
+            <Fragment key={i}>
+              {i > 0 && (
+                <span className="order-sep is-ghost" aria-hidden>
+                  {sep}
+                </span>
+              )}
+              {given[i] != null ? <span className="order-given-box">{given[i]}</span> : <span />}
+            </Fragment>
+          ))}
+        </div>
+      ) : (
+        <div className="order-given" aria-label="Nombres à ranger">
+          {given.map((term, index) => (
+            <span className="order-given-term" key={`${term}-${index}`}>
+              {term}
+              {index < given.length - 1 ? <span className="order-given-sep">·</span> : null}
+            </span>
+          ))}
+        </div>
+      )}
       <div className="order-answer-row" aria-label="Réponse">
         {Array.from({ length: slots }, (_, i) => (
           <Fragment key={i}>
@@ -2292,7 +2307,7 @@ function GeoBlock({
         ? [item.calcAnswer, item.calcAnswerSecondary].filter(Boolean).join('\n')
         : null
     return (
-      <div className="geo-block geo-dual" aria-label="Périmètre et aire">
+      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}`} aria-label="Périmètre et aire">
         <div className="geo-dual-top">
           <div className="geo-dual-figure">
             {item.compositeScene ? (

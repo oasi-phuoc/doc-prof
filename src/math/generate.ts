@@ -19,6 +19,7 @@ import {
   pairDiv,
   pairMul,
   pairSub,
+  pickInRange,
   pickWithPlaces,
   roundToPlaces,
   upperBound,
@@ -199,13 +200,13 @@ function generateTcmQuatreOpsBatch(rng: Rng): MathItem[] {
   const mkAdd = (): MathItem => {
     const a = int(rng, 75, 450)
     const b = int(rng, 75, Math.max(75, 500 - a))
-    return inlineOp('+', a, b, a + b, 'result')
+    return inlineOp('+', a, b, a + b, pick(rng, ['a', 'b'] as const))
   }
   const mkSub = (): MathItem => {
     const b = int(rng, 75, 425)
     const result = int(rng, 75, Math.max(75, 500 - b))
     const a = b + result
-    return inlineOp('−', a, b, result, 'result')
+    return inlineOp('−', a, b, result, pick(rng, ['a', 'b'] as const))
   }
   const mkMul = (factors: readonly number[]): MathItem => {
     const b = pick(rng, factors)
@@ -381,7 +382,7 @@ function generateTcmDecompose9999Batch(rng: Rng, count: number): MathItem[] {
 
 /**
  * TCM ex. 12 : une multiplication (3 ch × 3–9, grille 5 col)
- * + une division (4 ch ÷ 3–9, dividende 5 col / quotient 4 col).
+ * + une division (4 ch ÷ 3–9, dividende 4 col / quotient 4 col).
  */
 function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   const mulB = int(rng, 3, 9)
@@ -393,7 +394,7 @@ function generateTcmMulDivColBatch(rng: Rng): MathItem[] {
   const quot = int(rng, qMin, qMax)
   const dividend = divB * quot
   const div = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 5, 4),
+    withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 4, 4),
   )
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }
@@ -410,6 +411,7 @@ function generateTcmRectPeriAire(rng: Rng): MathItem {
     figure: 'rectangle',
     dims: { length, width, unit: 'cm' },
     geoDualPads: true,
+    geoDualTight: true,
     calcAnswer: `2 × (${fmt(length)} + ${fmt(width)})`,
     calcAnswerSecondary: `${fmt(length)} × ${fmt(width)}`,
     propertyLines: [
@@ -661,7 +663,8 @@ function generateTcmMulMixteBatch(rng: Rng): MathItem[] {
 }
 
 /**
- * TCM ex. 19 : deux divisions posées (4 col dividende / 4 col quotient).
+ * TCM ex. 19 : deux divisions à poser (grilles vides, calcul au-dessus ;
+ * 4 col dividende / 4 col quotient).
  * Gauche : entier 1 000–9 999 ÷ 12–19 (exact).
  * Droite : décimal 4 chiffres (2–3 décimales, avec un 0) ÷ 3–9 (exact).
  */
@@ -671,7 +674,7 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
   const qMax = Math.floor(9_999 / dInt)
   const qInt = int(rng, qMin, qMax)
   const left = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, false), 4, 4),
+    withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, true), 4, 4),
   )
 
   let dDec = int(rng, 3, 9)
@@ -697,7 +700,7 @@ function generateTcmDivMixteBatch(rng: Rng): MathItem[] {
     dDec = 3
   }
   const right = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, false), 4, 4),
+    withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, true), 4, 4),
   )
   return [left, right]
 }
@@ -1069,6 +1072,7 @@ function generateTcmRangerBatch(rng: Rng): MathItem[] {
     layout: 'order',
     sequence,
     placeParts: ordered,
+    orderBoxed: true,
     orderOp: ascending ? '<' : '>',
     prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
     answer: ordered.join(ascending ? ' < ' : ' > '),
@@ -1179,6 +1183,14 @@ function generateTcmOperationsBatch(rng: Rng): MathItem[] {
 
 function fmt(n: number): string {
   return String(n).replace('.', ',')
+}
+
+/** Entier de la plage libre, borné à [lo, hi] (la plage prime sur le niveau). */
+function rangeInt(rng: Rng, range: NumberRange, lo: number, hi: number): number {
+  const a = Math.max(lo, Math.ceil(range.min))
+  const b = Math.min(hi, Math.floor(range.max))
+  if (b < a) return Math.min(hi, Math.max(lo, Math.round(range.max)))
+  return int(rng, a, b)
 }
 
 function gcd(a: number, b: number): number {
@@ -1358,6 +1370,38 @@ function columnItem(op: ArithOp, a: number, b: number, result: number, empty: bo
     digitsB: op === '×' ? digits(sb, w) : digitsDecimal(b, intW, places),
     digitsResult: digitsDecimal(result, intW, places),
     carries: computeCarries(op, sa, sb, w),
+    decimalPlaces: places > 0 ? places : undefined,
+    blankOperands: empty,
+    answer: fmt(result),
+  }
+}
+
+/**
+ * × 2 chiffres en colonnes : produits partiels (unités puis dizaines), puis somme.
+ * `a` peut être décimal : calcul sur l’entier mis à l’échelle, virgule sur `a` et le résultat.
+ */
+function twoDigitMulItem(a: number, b: number, empty: boolean): MathItem {
+  const places = decimalPlacesOf(a)
+  const scaledA = scaleInt(a, places)
+  const units = b % 10
+  const tens = Math.floor(b / 10)
+  const partialUnits = scaledA * units
+  const partialTens = scaledA * tens * 10
+  const scaledResult = scaledA * b
+  const result = roundToPlaces(a * b, places)
+  const w = Math.max(widthOf(scaledA, b, partialUnits, partialTens, scaledResult), places + 1)
+  return {
+    layout: empty ? 'column-empty' : 'column',
+    prompt: empty ? `${fmt(a)} × ${fmt(b)}` : undefined,
+    op: '×',
+    a,
+    b,
+    result,
+    digitsA: digitsDecimal(a, w - places, places),
+    digitsB: digits(b, w),
+    digitsPartials: [digits(partialUnits, w), digits(partialTens, w)],
+    digitsResult: digitsDecimal(result, w - places, places),
+    carries: computeCarries('×', scaledA, units, w),
     decimalPlaces: places > 0 ? places : undefined,
     blankOperands: empty,
     answer: fmt(result),
@@ -1688,7 +1732,7 @@ function generateItems(
   }
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
-    return generateLengthConversionBatch(rng, count)
+    return generateLengthConversionBatch(rng, count, range)
   }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
@@ -1707,18 +1751,18 @@ function generateOne(
 ): MathItem {
   const routed =
     tryGenerateFigure(typeId, index) ??
-    tryGenerateConversion(typeId, rng, difficulty) ??
+    tryGenerateConversion(typeId, rng, difficulty, range) ??
     tryGenerateMesure(typeId, rng, difficulty, range, shapes)
   if (routed) return routed
   const max = upperBound(difficulty, range)
   const nMax = range ? range.max : nombreBound(difficulty)
   switch (typeId) {
     case 'nombres-chiffres': {
-      const n = int(rng, 0, Math.min(999, nMax))
+      const n = range ? rangeInt(rng, range, 0, 999_999) : int(rng, 0, Math.min(999, nMax))
       return { layout: 'text', prompt: numberToFrench(n), answer: String(n) }
     }
     case 'nombres-lettres': {
-      const n = int(rng, 0, Math.min(999, nMax))
+      const n = range ? rangeInt(rng, range, 0, 999_999) : int(rng, 0, Math.min(999, nMax))
       return { layout: 'text', prompt: String(n), answer: numberToFrench(n) }
     }
     case 'nombres-compter-formes': {
@@ -1828,7 +1872,7 @@ function generateOne(
       return generateTcmProportionKgBatch(rng, 1)[0]!
     }
     case 'nombres-position': {
-      const n = int(rng, 100, 9999)
+      const n = range ? rangeInt(rng, range, 10, 9999) : int(rng, 100, 9999)
       const place = PLACE[int(rng, 0, Math.min(3, String(n).length - 1))]!
       const idx = { unités: 0, dizaines: 1, centaines: 2, milliers: 3 }[place]
       const digit = Math.floor(n / 10 ** idx) % 10
@@ -1839,31 +1883,16 @@ function generateOne(
       }
     }
     case 'nombres-decompose': {
-      const digits = index % 2 === 0 ? 3 : 4
-      const n =
-        digits === 3
-          ? (() => {
-              let v = int(rng, 111, 999)
-              while (v % 10 === 0) v = int(rng, 111, 999)
-              return v
-            })()
-          : (() => {
-              let v = int(rng, 1111, 9999)
-              while (v % 10 === 0) v = int(rng, 1111, 9999)
-              return v
-            })()
-      const u = n % 10
-      const d = Math.floor((n % 100) / 10)
-      const c = Math.floor((n % 1000) / 100)
-      const m = Math.floor(n / 1000)
-      const placeParts =
-        digits === 4
-          ? [String(m * 1000), String(c * 100), String(d * 10), String(u)]
-          : [String(c * 100), String(d * 10), String(u)]
-      const labels =
-        digits === 4
-          ? ['milliers', 'centaines', 'dizaines', 'unités']
-          : ['centaines', 'dizaines', 'unités']
+      const digitCount = index % 2 === 0 ? 3 : 4
+      const lo = digitCount === 3 ? 111 : 1111
+      const hi = digitCount === 3 ? 999 : 9999
+      let n = range ? rangeInt(rng, range, 11, 9999) : int(rng, lo, hi)
+      for (let guard = 0; guard < 20 && n % 10 === 0; guard++) {
+        n = range ? rangeInt(rng, range, 11, 9999) : int(rng, lo, hi)
+      }
+      const nDigits = String(n).split('')
+      const placeParts = nDigits.map((d, i) => String(Number(d) * 10 ** (nDigits.length - 1 - i)))
+      const labels = ['milliers', 'centaines', 'dizaines', 'unités'].slice(4 - nDigits.length)
       return {
         layout: 'place-value',
         prompt: n.toLocaleString('fr-CH'),
@@ -1873,18 +1902,20 @@ function generateOne(
       }
     }
     case 'nombres-comparer': {
-      const a = int(rng, 1, 999)
-      let b = int(rng, 1, 999)
+      const a = range ? pickInRange(rng, range) : int(rng, 1, 999)
+      let b = range ? pickInRange(rng, range) : int(rng, 1, 999)
       if (index % 5 === 0) b = a
       const answer = a < b ? '<' : a > b ? '>' : '='
-      return { layout: 'compare', left: String(a), right: String(b), answer }
+      return { layout: 'compare', left: fmt(a), right: fmt(b), answer }
     }
     case 'nombres-encadrer-10':
     case 'nombres-encadrer-100': {
       const unit = typeId === 'nombres-encadrer-10' ? 10 : 100
-      const hi = Math.max(unit * 2 + 1, max)
-      let n = int(rng, unit + 1, hi)
-      while (n % unit === 0) n = int(rng, unit + 1, hi)
+      const nLo = range ? Math.max(unit + 1, Math.ceil(range.min)) : unit + 1
+      const nHi = Math.max(nLo + 1, unit * 2 + 1, max)
+      let n = int(rng, nLo, nHi)
+      for (let guard = 0; guard < 40 && n % unit === 0; guard++) n = int(rng, nLo, nHi)
+      if (n % unit === 0) n += 1
       const lo = Math.floor(n / unit) * unit
       return {
         layout: 'encadrement',
@@ -1895,7 +1926,7 @@ function generateOne(
       }
     }
     case 'nombres-pair': {
-      const n = int(rng, 1, Math.min(999, max))
+      const n = range ? rangeInt(rng, range, 0, 999_999) : int(rng, 1, Math.min(999, max))
       return {
         layout: 'select',
         prompt: String(n),
@@ -1904,31 +1935,40 @@ function generateOne(
       }
     }
     case 'nombres-ranger': {
-      const pool = [
-        int(rng, 1, Math.min(50, max)),
-        int(rng, 10, Math.min(99, max)),
-        int(rng, 10, Math.min(99, max)),
-        int(rng, Math.min(100, max), Math.min(999, max)),
-        int(rng, Math.min(100, max), Math.min(999, max)),
-      ].map((n) => Math.min(n, max))
+      const pool = range
+        ? (() => {
+            const values: number[] = []
+            for (let guard = 0; guard < 60 && values.length < 5; guard++) {
+              const v = pickInRange(rng, range)
+              if (!values.includes(v) || guard > 40) values.push(v)
+            }
+            return values
+          })()
+        : [
+            int(rng, 1, Math.min(50, max)),
+            int(rng, 10, Math.min(99, max)),
+            int(rng, 10, Math.min(99, max)),
+            int(rng, Math.min(100, max), Math.min(999, max)),
+            int(rng, Math.min(100, max), Math.min(999, max)),
+          ].map((n) => Math.min(n, max))
       const numbers = shuffle(rng, pool)
       const ascending = rng() < 0.5
       const ordered = [...numbers].sort((a, b) => (ascending ? a - b : b - a))
       return {
         layout: 'order',
-        sequence: numbers.map(String),
-        placeParts: ordered.map(String),
+        sequence: numbers.map(fmt),
+        placeParts: ordered.map(fmt),
         orderOp: ascending ? '<' : '>',
         prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
-        answer: ordered.join(ascending ? ' < ' : ' > '),
+        answer: ordered.map(fmt).join(ascending ? ' < ' : ' > '),
       }
     }
     case 'nombres-suite': {
       const stepMax = difficulty === 'facile' ? 5 : difficulty === 'moyen' ? 9 : 15
-      const step = int(rng, 2, stepMax)
-      const start = int(rng, 1, difficulty === 'facile' ? 30 : 80)
+      const step = range?.decimals ? int(rng, 1, 9) / 10 : int(rng, 2, stepMax)
+      const start = range ? pickInRange(rng, range) : int(rng, 1, difficulty === 'facile' ? 30 : 80)
       const length = 8
-      const seq = Array.from({ length }, (_, k) => start + k * step)
+      const seq = Array.from({ length }, (_, k) => roundToPlaces(start + k * step, 2))
       const blankCount = 3
       const indexes = shuffle(
         rng,
@@ -1937,9 +1977,9 @@ function generateOne(
       const blanks = [...indexes].sort((a, b) => a - b)
       return {
         layout: 'sequence',
-        sequence: seq.map((n, k) => (blanks.includes(k) ? '□' : String(n))),
+        sequence: seq.map((n, k) => (blanks.includes(k) ? '□' : fmt(n))),
         blankIndexes: blanks,
-        answer: blanks.map((k) => String(seq[k]!)).join(' ; '),
+        answer: blanks.map((k) => fmt(seq[k]!)).join(' ; '),
       }
     }
     case 'addition-ligne': {
@@ -1962,8 +2002,8 @@ function generateOne(
       const right = q.result
       return {
         layout: 'compare',
-        left: `${p.a} + ${p.b}`,
-        right: `${q.a} + ${q.b}`,
+        left: `${fmt(p.a)} + ${fmt(p.b)}`,
+        right: `${fmt(q.a)} + ${fmt(q.b)}`,
         answer: left < right ? '<' : left > right ? '>' : '=',
       }
     }
@@ -1987,29 +2027,31 @@ function generateOne(
       const right = q.result
       return {
         layout: 'compare',
-        left: `${p.a} − ${p.b}`,
-        right: `${q.a} − ${q.b}`,
+        left: `${fmt(p.a)} − ${fmt(p.b)}`,
+        right: `${fmt(q.a)} − ${fmt(q.b)}`,
         answer: left < right ? '<' : left > right ? '>' : '=',
       }
     }
     case 'estimation-dizaine': {
-      let n = int(rng, 11, Math.min(99, max))
-      while (n % 10 === 0) n = int(rng, 11, Math.min(99, max))
-      return { layout: 'inline', prompt: `${n} ≈`, answer: String(roundTo(n, 10)) }
+      const draw = () => (range ? pickInRange(rng, range) : int(rng, 11, Math.min(99, max)))
+      let n = draw()
+      for (let guard = 0; guard < 20 && n % 10 === 0; guard++) n = draw()
+      return { layout: 'inline', prompt: `${fmt(n)} ≈`, answer: String(roundTo(n, 10)) }
     }
     case 'estimation-centaine': {
       const hi = Math.max(101, Math.min(999, max))
-      let n = int(rng, 101, hi)
-      while (n % 100 === 0) n = int(rng, 101, hi)
-      return { layout: 'inline', prompt: `${n} ≈`, answer: String(roundTo(n, 100)) }
+      const draw = () => (range ? pickInRange(rng, range) : int(rng, 101, hi))
+      let n = draw()
+      for (let guard = 0; guard < 20 && n % 100 === 0; guard++) n = draw()
+      return { layout: 'inline', prompt: `${fmt(n)} ≈`, answer: String(roundTo(n, 100)) }
     }
     case 'estimation-somme': {
       const p = pairAdd(rng, difficulty === 'facile' ? 'facile' : 'moyen', range)
-      return { layout: 'inline', prompt: `${p.a} + ${p.b} ≈`, answer: String(roundTo(p.a, 10) + roundTo(p.b, 10)) }
+      return { layout: 'inline', prompt: `${fmt(p.a)} + ${fmt(p.b)} ≈`, answer: String(roundTo(p.a, 10) + roundTo(p.b, 10)) }
     }
     case 'estimation-difference': {
       const p = pairSub(rng, difficulty === 'facile' ? 'facile' : 'moyen', range)
-      return { layout: 'inline', prompt: `${p.a} − ${p.b} ≈`, answer: String(roundTo(p.a, 10) - roundTo(p.b, 10)) }
+      return { layout: 'inline', prompt: `${fmt(p.a)} − ${fmt(p.b)} ≈`, answer: String(roundTo(p.a, 10) - roundTo(p.b, 10)) }
     }
     case 'multiplication-ligne': {
       const p = pairMul(rng, difficulty, range)
@@ -2024,30 +2066,13 @@ function generateOne(
       const p = columnMulPair(rng, difficulty, range)
       return columnItem('×', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
-    case 'multiplication-2chiffres': {
+    case 'multiplication-2chiffres':
+    case 'multiplication-2chiffres-poser': {
       const aMax = difficulty === 'facile' ? 49 : difficulty === 'moyen' ? 99 : 999
-      const a = int(rng, 12, aMax)
+      const a = range ? Math.max(range.decimals ? 0.1 : 1, pickInRange(rng, range)) : int(rng, 12, aMax)
       let b = int(rng, 12, difficulty === 'facile' ? 29 : 99)
       while (b % 10 === 0) b = int(rng, 12, difficulty === 'facile' ? 29 : 99)
-      const units = b % 10
-      const tens = Math.floor(b / 10)
-      const partialUnits = a * units
-      const partialTens = a * tens * 10
-      const result = a * b
-      const w = widthOf(a, b, partialUnits, partialTens, result)
-      return {
-        layout: 'column',
-        op: '×',
-        a,
-        b,
-        result,
-        digitsA: digits(a, w),
-        digitsB: digits(b, w),
-        digitsPartials: [digits(partialUnits, w), digits(partialTens, w)],
-        digitsResult: digits(result, w),
-        carries: computeCarries('×', a, units, w),
-        answer: String(result),
-      }
+      return twoDigitMulItem(a, b, typeId.endsWith('poser'))
     }
     case 'division-ligne': {
       const p = pairDiv(rng, difficulty, range)
@@ -2088,7 +2113,15 @@ function generateOne(
     case 'multiples-reconnaitre': {
       const base = int(rng, 2, 9)
       const yes = rng() < 0.5
-      const n = yes ? base * int(rng, 2, 12) : base * int(rng, 2, 12) + int(rng, 1, base - 1)
+      const n = range
+        ? (() => {
+            let v = rangeInt(rng, range, base, 999_999)
+            for (let guard = 0; guard < 30 && (v % base === 0) !== yes; guard++) v = rangeInt(rng, range, base, 999_999)
+            return v
+          })()
+        : yes
+          ? base * int(rng, 2, 12)
+          : base * int(rng, 2, 12) + int(rng, 1, base - 1)
       return { layout: 'inline', prompt: `${n} est-il un multiple de ${base} ?`, answer: n % base === 0 ? 'oui' : 'non' }
     }
     case 'multiples-diviseurs': {
@@ -2187,8 +2220,9 @@ function generateOne(
       return { layout: 'inline', prompt: `${frac(n1, d1)} ÷ ${frac(n2, d2)} =`, answer: sd === 1 ? String(sn) : frac(sn, sd) }
     }
     case 'decimaux-comparer': {
-      const a = dec(rng, 9, 2)
-      let b = dec(rng, 9, 2)
+      const decRange: NumberRange | undefined = range ? { ...range, decimals: true } : undefined
+      const a = decRange ? pickInRange(rng, decRange) : dec(rng, 9, 2)
+      let b = decRange ? pickInRange(rng, decRange) : dec(rng, 9, 2)
       if (index % 5 === 0) b = a
       return {
         layout: 'compare',
@@ -2199,22 +2233,24 @@ function generateOne(
     }
     case 'decimaux-add-colonne':
     case 'decimaux-add-colonne-poser': {
-      const p = decimalAddPair(rng, 40)
+      const p = range ? columnAddPair(rng, difficulty, { ...range, decimals: true }) : decimalAddPair(rng, 40)
       return columnItem('+', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'decimaux-sub-colonne':
     case 'decimaux-sub-colonne-poser': {
-      const p = decimalSubPair(rng, 40)
+      const p = range ? columnSubPair(rng, difficulty, { ...range, decimals: true }) : decimalSubPair(rng, 40)
       return columnItem('−', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'decimaux-mul-colonne':
     case 'decimaux-mul-colonne-poser': {
-      const p = decimalMulPair(rng, 20)
+      const p = range ? columnMulPair(rng, difficulty, { ...range, decimals: true }) : decimalMulPair(rng, 20)
       return columnItem('×', p.a, p.b, p.result, typeId.endsWith('poser'))
     }
     case 'decimaux-div-colonne':
     case 'decimaux-div-colonne-poser': {
-      const p = decimalDivPair(rng, difficulty === 'facile' ? 40 : difficulty === 'moyen' ? 120 : 400)
+      const p = range
+        ? columnDivPair(rng, { ...range, decimals: true })
+        : decimalDivPair(rng, difficulty === 'facile' ? 40 : difficulty === 'moyen' ? 120 : 400)
       return divisionColumnItem(p.a, p.b, typeId.endsWith('poser'))
     }
     case 'decimaux-mul-ligne': {
@@ -2229,7 +2265,7 @@ function generateOne(
       ] as const
       const pickF = pick(rng, [...factors])
       const maxK = difficulty === 'facile' ? 12 : difficulty === 'moyen' ? 40 : 120
-      const k = int(rng, 2, maxK)
+      const k = range ? rangeInt(rng, range, 1, 100_000) : int(rng, 2, maxK)
       const n = k * pickF.div
       return {
         layout: 'inline',
@@ -2249,8 +2285,8 @@ function generateOne(
       ] as const
       const pickF = pick(rng, [...factors])
       const maxN = difficulty === 'facile' ? 20 : difficulty === 'moyen' ? 80 : 200
-      const n = int(rng, 1, maxN)
-      const result = n * pickF.mul
+      const n = range ? pickInRange(rng, range) : int(rng, 1, maxN)
+      const result = roundToPlaces(n * pickF.mul, 3)
       return {
         layout: 'inline',
         prompt: `${fmt(n)} ÷ ${pickF.label} =`,
@@ -2271,46 +2307,57 @@ function generateOne(
     }
     case 'proportion-de': {
       const pct = pick(rng, [10, 20, 25, 50])
-      const n = pct === 25 ? int(rng, 2, 8) * 4 : int(rng, 2, 12) * 10
-      return { layout: 'inline', prompt: `${pct} % de ${n} =`, answer: String((pct * n) / 100) }
+      const n = range ? pickInRange(rng, range) : pct === 25 ? int(rng, 2, 8) * 4 : int(rng, 2, 12) * 10
+      return { layout: 'inline', prompt: `${pct} % de ${fmt(n)} =`, answer: fmt(roundToPlaces((pct * n) / 100, 4)) }
     }
     case 'proportion-var': {
-      const n = int(rng, 2, 12) * 10
+      const n = range ? pickInRange(rng, range) : int(rng, 2, 12) * 10
       const pct = pick(rng, [10, 20, 25])
       const up = rng() < 0.5
-      const result = up ? n * (1 + pct / 100) : n * (1 - pct / 100)
+      const result = roundToPlaces(up ? n * (1 + pct / 100) : n * (1 - pct / 100), 4)
       return {
         layout: 'inline',
-        prompt: up ? `${n} augmenté de ${pct} % =` : `${n} diminué de ${pct} % =`,
-        answer: String(result),
+        prompt: up ? `${fmt(n)} augmenté de ${pct} % =` : `${fmt(n)} diminué de ${pct} % =`,
+        answer: fmt(result),
       }
     }
     case 'proportion-problemes': {
-      const n = int(rng, 4, 12) * 10
+      const n = range ? pickInRange(rng, range) : int(rng, 4, 12) * 10
       const pct = pick(rng, [10, 20, 25, 50])
-      const result = n - (pct * n) / 100
+      const result = fmt(roundToPlaces(n - (pct * n) / 100, 4))
       return {
         layout: 'text',
-        prompt: `Un article coûte ${n} CHF. Pendant les soldes, il est réduit de ${pct} %. Quel est le nouveau prix ?`,
-        calcAnswer: `${n} − ${pct} %`,
+        prompt: `Un article coûte ${fmt(n)} CHF. Pendant les soldes, il est réduit de ${pct} %. Quel est le nouveau prix ?`,
+        calcAnswer: `${fmt(n)} − ${pct} %`,
         responseAnswer: `${result} CHF`,
         answer: `${result} CHF`,
       }
     }
     case 'relatifs-comparer': {
-      const a = int(rng, -20, 20)
-      let b = int(rng, -20, 20)
+      const signed = () => (range ? pickInRange(rng, range) * (rng() < 0.5 ? -1 : 1) : int(rng, -20, 20))
+      const a = signed()
+      let b = signed()
       if (index % 5 === 0) b = a
-      return { layout: 'compare', left: String(a), right: String(b), answer: a < b ? '<' : a > b ? '>' : '=' }
+      return { layout: 'compare', left: fmt(a), right: fmt(b), answer: a < b ? '<' : a > b ? '>' : '=' }
     }
     case 'relatifs-add': {
-      const a = int(rng, -15, 15)
-      const b = int(rng, -15, 15)
+      const signed = () => (range ? pickInRange(rng, range) * (rng() < 0.5 ? -1 : 1) : int(rng, -15, 15))
+      const a = signed()
+      const b = signed()
       const op: ArithOp = rng() < 0.5 ? '+' : '−'
-      const result = op === '+' ? a + b : a - b
-      return { layout: 'inline', prompt: `(${a}) ${op} (${b}) =`, answer: String(result) }
+      const result = roundToPlaces(op === '+' ? a + b : a - b, 4)
+      return { layout: 'inline', prompt: `(${fmt(a)}) ${op} (${fmt(b)}) =`, answer: fmt(result) }
     }
     case 'relatifs-mul': {
+      if (range) {
+        const a = pickInRange(rng, range) * (rng() < 0.5 ? -1 : 1) || 2
+        const b = int(rng, 2, 9) * (rng() < 0.5 ? -1 : 1)
+        if (rng() < 0.6) {
+          return { layout: 'inline', prompt: `(${fmt(a)}) × (${b}) =`, answer: fmt(roundToPlaces(a * b, 4)) }
+        }
+        const dividend = roundToPlaces(a * b, 4)
+        return { layout: 'inline', prompt: `(${fmt(dividend)}) ÷ (${b}) =`, answer: fmt(a) }
+      }
       const a = int(rng, -9, 9) || 2
       const b = int(rng, -9, 9) || 3
       const mul = rng() < 0.6
@@ -2323,10 +2370,10 @@ function generateOne(
       return { layout: 'inline', prompt: mul ? `(${a}) × (${b}) =` : `(${a}) ÷ (${b}) =`, answer: String(result) }
     }
     case 'puissances-calcul': {
-      const a = int(rng, 2, 9)
+      const a = range ? pickInRange(rng, range) : int(rng, 2, 9)
       const p = pick(rng, [2, 3])
-      const result = a ** p
-      return { layout: 'inline', prompt: `${a}${p === 2 ? '²' : '³'} =`, answer: String(result) }
+      const result = roundToPlaces(a ** p, 6)
+      return { layout: 'inline', prompt: `${fmt(a)}${p === 2 ? '²' : '³'} =`, answer: fmt(result) }
     }
     case 'puissances-10': {
       const p = int(rng, 1, 4)
@@ -2702,7 +2749,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
     return {
       exerciseIndex,
       title: isTcmConsignes
-        ? 'Consignes'
+        ? 'Informations'
         : isTheory
           ? (result.instruction?.replace(/^Théorie — /, '') || `Théorie`)
           : isJeux
@@ -2728,7 +2775,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   return {
     ...config,
     title: isTcmConsignesPage
-      ? 'Consignes'
+      ? 'Informations'
       : isTheoryPage
         ? (first?.title ?? type?.label ?? 'Théorie')
         : built.length > 1

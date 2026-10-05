@@ -1,3 +1,4 @@
+import { pickInRange, type NumberRange } from './difficulty'
 import { int, pick, shuffle, type Rng } from './rng'
 import type { Difficulty, MathItem } from './types'
 
@@ -34,7 +35,16 @@ function convert(
   difficulty: Difficulty,
   units: string[],
   factor: number,
+  range?: NumberRange,
 ): MathItem {
+  if (range) {
+    const fromIdx = int(rng, 0, units.length - 1)
+    const neighbors = [fromIdx - 1, fromIdx + 1].filter((n) => n >= 0 && n < units.length)
+    const toIdx = pick(rng, neighbors)
+    const value = pickInRange(rng, range)
+    const answer = toIdx < fromIdx ? value * factor : value / factor
+    return item(value, units[fromIdx]!, units[toIdx]!, answer, units[toIdx]!)
+  }
   if (difficulty === 'facile') {
     const fromIdx = int(rng, 1, units.length - 1)
     const toIdx = fromIdx - 1
@@ -71,7 +81,7 @@ function adjacentDirectedPairs(units: string[]): Array<[number, number]> {
  * - chaque couple d’unités (from→to) est unique dans le lot ;
  * - les deux dernières questions (5 et 6 si count ≥ 5) sont en décimal.
  */
-export function generateLengthConversionBatch(rng: Rng, count: number): MathItem[] {
+export function generateLengthConversionBatch(rng: Rng, count: number, range?: NumberRange): MathItem[] {
   const n = Math.max(1, count)
   const factor = stepFactor('length')
   const pairs = shuffle(rng, adjacentDirectedPairs(LENGTH))
@@ -91,7 +101,9 @@ export function generateLengthConversionBatch(rng: Rng, count: number): MathItem
     const towardSmaller = toIdx < fromIdx
     const decimal = index >= n - 2 && n >= 5
     let value: number
-    if (decimal) {
+    if (range) {
+      value = pickInRange(rng, range)
+    } else if (decimal) {
       let tenths = int(rng, 11, 99)
       while (tenths % 10 === 0) tenths = int(rng, 11, 99)
       value = tenths / 10
@@ -107,20 +119,21 @@ export function tryGenerateConversion(
   typeId: string,
   rng: Rng,
   difficulty: Difficulty,
+  range?: NumberRange,
 ): MathItem | null {
   switch (typeId) {
     case 'conversions-longueur':
-      return convert(rng, difficulty, LENGTH, stepFactor('length'))
+      return convert(rng, difficulty, LENGTH, stepFactor('length'), range)
     case 'conversions-aire':
-      return convert(rng, difficulty, AREA, stepFactor('area'))
+      return convert(rng, difficulty, AREA, stepFactor('area'), range)
     case 'conversions-volume':
-      return convert(rng, difficulty, VOLUME, stepFactor('volume'))
+      return convert(rng, difficulty, VOLUME, stepFactor('volume'), range)
     case 'conversions-capacite':
-      return convert(rng, difficulty, CAPACITY, stepFactor('capacity'))
+      return convert(rng, difficulty, CAPACITY, stepFactor('capacity'), range)
     case 'conversions-masse':
-      return convert(rng, difficulty, MASS, stepFactor('mass'))
+      return convert(rng, difficulty, MASS, stepFactor('mass'), range)
     case 'conversions-temps':
-      return convert(rng, difficulty, TIME, stepFactor('time'))
+      return convert(rng, difficulty, TIME, stepFactor('time'), range)
     default:
       return null
   }

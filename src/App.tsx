@@ -58,6 +58,8 @@ import {
   blockPointsTotal,
   buildTcmTestPages,
   formatBlockPointsBadge,
+  formatPointsLabel,
+  isTcmConsignesType,
   isTcmDomain,
   TCM_DOCUMENT_TITLE,
 } from '@/math/tcm-test'
@@ -1158,7 +1160,7 @@ function ReperageAxesFields({
 function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBlock> {
   const isProblem = type.id.includes('problemes')
   const isEquation = type.id.startsWith('equations-')
-  const isLongMul = type.id === 'multiplication-2chiffres'
+  const isLongMul = type.id.startsWith('multiplication-2chiffres')
   const isDivisionCol = type.id.startsWith('division-colonne')
   const isLectureDense = type.id.endsWith('-entourer') || type.id.endsWith('-cocher')
   const isLecture = type.topic === 'alphabet' || type.topic.startsWith('voyelle-')
@@ -2705,7 +2707,8 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   }
                 >
                   <span className="tab-number">{tabLabel}</span>
-                  {pages.length > 1 &&
+                  {!isTcm &&
+                  pages.length > 1 &&
                   !sheet.isContinuation &&
                   (sheet.configIndex ?? index) === pageIndex &&
                   safeSheetIndex === index ? (
@@ -2718,14 +2721,16 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 )
               })}
             </div>
-            <div className="page-structure-actions">
-              <button className="button secondary" type="button" onClick={addPage}>
-                + Page
-              </button>
-              <button className="button secondary" type="button" onClick={addExerciseOnPage}>
-                + Exercice
-              </button>
-            </div>
+            {isTcm ? null : (
+              <div className="page-structure-actions">
+                <button className="button secondary" type="button" onClick={addPage}>
+                  + Page
+                </button>
+                <button className="button secondary" type="button" onClick={addExerciseOnPage}>
+                  + Exercice
+                </button>
+              </div>
+            )}
             {pageExerciseBlocks.length > 1 ? (
               <div className="mode-toggle is-tabs page-tabs exercise-tabs" role="tablist" aria-label="Exercices de la page">
                 {pageExerciseBlocks.map((_, index) => {
@@ -2740,7 +2745,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     aria-label={`Exercice ${tabNo}`}
                   >
                     <span className="tab-number">{tabNo}</span>
-                    {pageExerciseBlocks.length > 1 && index === safeBlockIndex ? (
+                    {!isTcm && pageExerciseBlocks.length > 1 && index === safeBlockIndex ? (
                       <TabRemoveButton
                         label="Retirer cet exercice"
                         onRemove={() => {
@@ -2783,7 +2788,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     Évaluation
                   </button>
                 </div>
-                {evalMode && (
+                {evalMode && !isTcm && (
                   <label>
                     Points par question
                     <input
@@ -2819,13 +2824,15 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <option value="lecture">Lecture</option>
                 ) : null}
               </SelectBox>
-              <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>
-                {available.map((topic) => (
-                  <option value={topic.id} key={topic.id}>
-                    {topic.label}
-                  </option>
-                ))}
-              </SelectBox>
+              {isTcm ? null : (
+                <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>
+                  {available.map((topic) => (
+                    <option value={topic.id} key={topic.id}>
+                      {topic.label}
+                    </option>
+                  ))}
+                </SelectBox>
+              )}
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>
@@ -2887,6 +2894,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </div>
                 </div>
               ) : null}
+              {isTcm ? null : (
               <SelectBox
                 label="Type d’exercice"
                 value={activeBlock.exerciseType}
@@ -2938,6 +2946,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </option>
                 ))}
               </SelectBox>
+              )}
               {isCalliDomain ? (
                 <>
                   <div className="mode-toggle-block">
@@ -3594,6 +3603,38 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 ) : null}
               </label>
               )}
+              {isTcm && !isTcmConsignesType(activeBlock.exerciseType) ? (
+                <label className="select-shell">
+                  <span>Points par question</span>
+                  <input
+                    className="pill-input"
+                    type="number"
+                    inputMode="decimal"
+                    min={0.5}
+                    max={20}
+                    step={0.5}
+                    aria-label="Points par question de l’exercice sélectionné"
+                    value={activeBlock.pointsPerQuestion ?? 1}
+                    onChange={(event) => {
+                      const raw = Number(event.target.value.replace(',', '.'))
+                      if (!Number.isFinite(raw)) return
+                      const next = Math.max(0.5, Math.min(20, Math.round(raw * 2) / 2))
+                      updatePage({ pointsPerQuestion: next })
+                    }}
+                  />
+                  <small className="muted">
+                    Exercice{' '}
+                    {activeSheet?.blocks?.[safeBlockIndex]?.exerciseIndex ?? firstExerciseNo + safeBlockIndex} :{' '}
+                    {formatPointsLabel(
+                      blockPointsTotal(
+                        activeSheet?.blocks?.[safeBlockIndex]?.items ?? [],
+                        activeBlock.pointsPerQuestion ?? 1,
+                      ),
+                    )}{' '}
+                    · total du test : {formatPointsLabel(sheetTotalPoints)}
+                  </small>
+                </label>
+              ) : null}
               {isOralComprehensionExercise(activeBlock.exerciseType) ||
               activeBlock.exerciseType.includes('-com-ecrite') ||
               isGramTheory ? (

@@ -455,6 +455,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('multiplication-colonne', 'multiplication', 'En colonnes × 1 chiffre', 'Nombres déjà posés, multiplicateur à 1 chiffre.', 'Effectuez les multiplications en colonnes.', 'colonne', { preferredColumns: 2 }),
   t('multiplication-colonne-poser', 'multiplication', 'En colonnes à poser × 1 chiffre', 'Poser le calcul dans le tableau.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
   t('multiplication-2chiffres', 'multiplication', 'En colonnes × 2 chiffres', 'Produits partiels (unités puis dizaines), puis addition.', 'Effectuez les multiplications en colonnes. Écrivez les deux produits partiels, puis additionnez.', 'colonne', { preferredColumns: 1 }),
+  t('multiplication-2chiffres-poser', 'multiplication', 'En colonnes à poser × 2 chiffres', 'Poser le calcul dans le tableau vide, puis les deux produits partiels.', 'Posez les nombres, écrivez les deux produits partiels, puis additionnez.', 'colonne-vide', { preferredColumns: 2 }),
 
   t('division-ligne', 'division', 'En ligne', 'Calculer 56 ÷ 7 = ?', 'Calculez chaque quotient.', 'ligne'),
   t('division-trou', 'division', 'En ligne avec des trous', 'Compléter 56 ÷ ? = 8.', 'Complétez le nombre manquant.', 'trou'),

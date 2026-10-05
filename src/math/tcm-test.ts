@@ -341,12 +341,7 @@ export function formatPointsLabel(points: number): string {
   return `${text} ${unit}`
 }
 
-/** Badge d’exercice : met en avant un barème fractionnaire (ex. 0,5 pt × 4). */
+/** Badge d’exercice : total de l’exercice (questions notées × points par question). */
 export function formatBlockPointsBadge(perQuestion: number, questionCount: number): string {
-  const scored = questionCount // caller passes already-filtered count
-  const total = scored * perQuestion
-  if (perQuestion > 0 && perQuestion !== 1 && scored > 1) {
-    return `${formatPointsLabel(perQuestion)} × ${scored}`
-  }
-  return formatPointsLabel(total)
+  return formatPointsLabel(questionCount * perQuestion)
 }

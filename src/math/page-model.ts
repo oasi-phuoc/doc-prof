@@ -7,6 +7,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     difficulty: page.difficulty,
     count: page.count,
     columns: page.columns,
+    exerciseNo: page.exerciseNo,
+    pointsPerQuestion: page.pointsPerQuestion,
     track: page.track,
     verbGroup: page.verbGroup,
     contentSeed: page.contentSeed,

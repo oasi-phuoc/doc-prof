@@ -160,7 +160,12 @@ export function pairMul(
   range?: NumberRange,
 ): { a: number; b: number; result: number } {
   if (range) {
-    if (range.decimals) return columnMulPair(rng, difficulty, range)
+    if (range.decimals) {
+      const pa = int(rng, 1, 2)
+      const a = pickWithPlaces(rng, Math.max(range.min, 0.1), range.max, pa)
+      const b = pickWithPlaces(rng, Math.max(range.min, 0.1), range.max, 1)
+      return { a, b, result: roundToPlaces(a * b, pa + 1) }
+    }
     const a = Math.max(1, pickInRange(rng, range))
     const b = Math.max(1, pickInRange(rng, range))
     return { a, b, result: a * b }
@@ -178,10 +183,7 @@ export function pairDiv(
 ): { a: number; b: number; result: number } {
   if (range) {
     if (range.decimals) return columnDivPair(rng, range)
-    const intRange: NumberRange = { ...range, decimals: false }
-    const result = Math.max(2, Math.round(pickInRange(rng, intRange)))
-    const b = Math.max(2, Math.round(pickInRange(rng, intRange)))
-    return { a: result * b, b, result }
+    return intDivInRange(rng, range, 12)
   }
   const { qMax, dMax } = divQuotientBound(difficulty)
   const result = int(rng, 2, qMax)
@@ -352,8 +354,28 @@ export function columnDivPair(
   if (range.decimals) {
     return decimalDivExact(rng, range.min, range.max, Math.min(9, range.max))
   }
-  const b = int(rng, 2, Math.min(9, Math.max(2, Math.floor(range.max))))
-  const result = Math.max(2, Math.round(pickInRange(rng, { ...range, decimals: false })))
+  return intDivInRange(rng, range, 9)
+}
+
+/** Division entière exacte : le dividende reste dans la plage libre ; diviseur 2…bMax. */
+function intDivInRange(
+  rng: Rng,
+  range: NumberRange,
+  bMax: number,
+): { a: number; b: number; result: number } {
+  const lo = Math.max(2, Math.ceil(range.min))
+  const hi = Math.max(lo, Math.floor(range.max))
+  const bHi = Math.max(2, Math.min(bMax, Math.floor(hi / 2)))
+  for (let attempt = 0; attempt < 40; attempt++) {
+    const b = int(rng, 2, bHi)
+    const qMin = Math.max(1, Math.ceil(lo / b))
+    const qMax = Math.floor(hi / b)
+    if (qMax < qMin) continue
+    const result = int(rng, qMin, qMax)
+    return { a: result * b, b, result }
+  }
+  const b = 2
+  const result = Math.max(1, Math.floor(hi / b))
   return { a: result * b, b, result }
 }
 

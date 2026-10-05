@@ -619,6 +619,13 @@ html,body,#root{
   font-family:inherit;
 }
 .order-blank{width:100%;min-width:2.8em;text-align:center;margin:0}
+.order-given-boxes{align-items:stretch}
+.order-sep.is-ghost{visibility:hidden}
+.order-given-box{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;min-width:2.8em;box-sizing:border-box;padding:3px 4px;
+  border:1px solid var(--ink);text-align:center;white-space:nowrap
+}
 .order-sep{text-align:center;font-weight:700;padding:0 0.1em}
 
 .sequence-row{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
@@ -1093,6 +1100,7 @@ html,body,#root{
   display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%;
   padding-top:12px
 }
+.geo-dual.is-tight .geo-dual-answers{padding-top:6px}
 .geo-dual-answer{
   display:grid;grid-template-columns:max-content minmax(4em,1fr);
   align-items:baseline;column-gap:8px;width:100%

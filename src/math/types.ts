@@ -382,6 +382,8 @@ export type MathItem = {
   coordTask?: 'read' | 'place' | 'construct'
   /** Direction pour le rangement : ___ < ___ < ___ ou ___ > ___ > ___. */
   orderOp?: '<' | '>'
+  /** Rangement : nombres donnés en cadres, un cadre au-dessus de chaque trait. */
+  orderBoxed?: boolean
   calcAnswer?: string
   /** Second calcul (layout geo dual : aire à droite). */
   calcAnswerSecondary?: string
@@ -402,6 +404,8 @@ export type MathItem = {
   propertyLines?: { label: string; answer: string }[]
   /** Geo : deux cadres de brouillon côte à côte (périmètre / aire). */
   geoDualPads?: boolean
+  /** Geo dual : espace réduit de moitié entre la grille et les lignes Périmètre / Aire. */
+  geoDualTight?: boolean
   /**
    * Forme fractionnaire (TCM ex. 21/22, port soutien-scolaire).
    * `mode: 'color'` = fraction donnée, forme à colorier ;
