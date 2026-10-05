@@ -188,7 +188,7 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
   {
     id: 34,
     label: 'Résoudre des équations',
-    blocks: [{ exerciseType: 'equations-simple', count: 2, columns: 2 }],
+    blocks: [{ exerciseType: 'tcm-equations', count: 2, columns: 1 }],
   },
   {
     id: 35,

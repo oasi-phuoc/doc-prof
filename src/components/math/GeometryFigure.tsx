@@ -133,9 +133,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         ? '0 0 340 200'
         : trapPlacement
           ? '0 0 370 178'
-          : circleDiameter
-            ? '0 0 180 130'
-            : '0 0 260 190'
+          : '0 0 260 190'
 
   return (
     <svg
@@ -567,11 +565,13 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {circleDiameter && (
           <>
-            {/* TCM ex. 37 — diamètre ; r SVG 41 ≈ 58 × 0,7 (−30 %) */}
-            <circle cx="90" cy="52" r={41} />
-            <line x1={90 - 41} y1={52} x2={90 + 41} y2={52} fill="none" strokeWidth={1.5} />
-            <circle cx="90" cy="52" r="2.2" fillOpacity={1} stroke="none" />
-            <L x={90} y={106} baseline="hanging">
+            {/* TCM ex. 37 — diamètre (−30 %) ; trait ~équivalent visuel au trapèze (viewBox plus étroit). */}
+            <g strokeWidth="1.7" strokeLinejoin="round">
+              <circle cx="130" cy="78" r={41} />
+              <line x1={130 - 41} y1={78} x2={130 + 41} y2={78} fill="none" strokeWidth={1.1} />
+              <circle cx="130" cy="78" r="1.8" fillOpacity={1} stroke="none" />
+            </g>
+            <L x={130} y={132} baseline="hanging">
               d = {fmt(d.diameter ?? d.length!)} {unit}
             </L>
           </>

@@ -387,6 +387,15 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 1 },
   ),
   t(
+    'tcm-equations',
+    'tcm-info',
+    'Résoudre des équations',
+    'Q1 : x d’un seul côté (gauche ou droite), sans fraction — 50 modèles. Q2 : x des deux côtés, fractions possibles — 50 modèles. Grille sous l’équation, 1 colonne.',
+    'Résolvez chaque équation.',
+    'ligne',
+    { preferredColumns: 1 },
+  ),
+  t(
     'tcm-conversions-mixte',
     'tcm-info',
     'Conversions d’unités (mixte)',
@@ -399,7 +408,7 @@ export const exerciseTypes: ExerciseType[] = [
     'tcm-proportion-kg',
     'tcm-info',
     'Pourcentage et règle de trois',
-    '1) p % de n (p ∈ {10,20,25,40,60,75,80}, n 101–999 non multiple de 10) ; 2) a → b / c = … (a,c 3–9, b 11–99, sans multiples entre eux).',
+    'Règle de trois : n kg de … → p francs ; m kg de … → ____ (25 produits ; n, m, p ∈ [10 ; 99] ; réponse exacte).',
     'Complétez.',
     'texte',
     { preferredColumns: 1 },
@@ -1130,16 +1139,14 @@ export function isDraftPadExercise(typeId: string): boolean {
     typeId.startsWith('perimetres-') ||
     typeId.startsWith('aires-') ||
     typeId.startsWith('volumes-') ||
-    // TCM : géométrie périmètre/aire, calculs en ligne / algèbre, réduction, substitution.
+    // TCM : géométrie périmètre/aire, priorité, réduction, évaluation, équations.
+    // Pas de grille pour ops décimales / puissances / relatifs / fractions (ex. 26, 27, 29, 30).
     typeId.includes('peri-aire') ||
     typeId === 'tcm-expressions-reduire' ||
     typeId === 'tcm-expressions-evaluer' ||
+    typeId === 'tcm-equations' ||
     typeId === 'expressions-substituer' ||
-    typeId === 'tcm-priorite-ops' ||
-    typeId === 'tcm-fractions-mixte' ||
-    typeId === 'tcm-puissances-mixte' ||
-    typeId === 'tcm-relatifs-ops' ||
-    typeId === 'tcm-ops-decimales'
+    typeId === 'tcm-priorite-ops'
   )
 }
 
