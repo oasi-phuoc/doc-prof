@@ -59,7 +59,11 @@ export const TCM_STEPS: readonly TcmStepSpec[] = [
     label: 'Décomposer (11–99)',
     blocks: [{ exerciseType: 'tcm-decompose-99', count: 2, columns: 1 }],
   },
-  { id: 7, label: 'Comparer (101–999)', blocks: [{ exerciseType: 'nombres-comparer', count: 4, columns: 2 }] },
+  {
+    id: 7,
+    label: 'Comparer (101–999)',
+    blocks: [{ exerciseType: 'nombres-comparer', count: 2, columns: 2, pointsPerQuestion: 1 }],
+  },
   {
     id: 8,
     label: 'Grandes suites',
