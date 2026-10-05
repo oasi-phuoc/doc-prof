@@ -408,7 +408,7 @@ export const exerciseTypes: ExerciseType[] = [
     'tcm-proportion-kg',
     'tcm-info',
     'Pourcentage et règle de trois',
-    'Règle de trois : n kg de … → p francs ; m kg de … → ____ (25 produits ; n, m, p ∈ [10 ; 99] ; réponse exacte).',
+    '1) p % de n est égal à … (p ∈ {10,20,25,40,60,75,80}, n 101–999 non multiple de 10) ; 2) n kg de … → p francs / m kg → ____ (25 produits).',
     'Complétez.',
     'texte',
     { preferredColumns: 1 },

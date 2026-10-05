@@ -953,11 +953,10 @@ html,body,#root{
 .draft-pad.draft-pad-geo{--grid-cols:9;--grid-rows:5;margin-top:0}
 .draft-pad.plain{background-image:none;background-color:#fff}
 .algebra-stack{display:flex;flex-direction:column;gap:0;width:100%}
-/* TCM 32/33/34 : 10 px sous la donnée / expression, avant la grille. */
-.algebra-stack > .algebra-row{padding-bottom:10px}
-.sheet-instruction-main > .sheet-givens{margin-bottom:10px}
-/* Inline (fractions, etc.) : 10 px entre l’expression et la grille. */
-.exercise-item.layout-inline .item-content > .draft-pad{margin-top:10px}
+/* TCM 28 / 32–34 : 15 px sous la donnée / expression, avant le cadre brouillon. */
+.algebra-stack > .algebra-row{padding-bottom:15px}
+.sheet-instruction-main > .sheet-givens{margin-bottom:15px}
+.exercise-item.layout-inline .item-content > .draft-pad{margin-top:15px}
 .convert-row{
   display:grid;grid-template-columns:6.2ch 4.2ch auto minmax(3.2em,1fr) 4.6ch;
   align-items:baseline;column-gap:6px;width:100%;font-variant-numeric:tabular-nums;font-weight:600
@@ -1608,7 +1607,7 @@ html,body,#root{
 }
 .exercise-tabs button{position:relative}
 .sheet-instruction-main>.sheet-givens{
-  display:block;margin:10px 0 10px;padding:0;
+  display:block;margin:10px 0 15px;padding:0;
   font-size:13pt;font-weight:700;line-height:1.5;color:var(--ink)
 }
 .instruction-points{

@@ -1,10 +1,14 @@
 /**
- * TCM ex. 31 — règle de trois (masses en kg).
- * Style : « n kg de … → p francs » / « m kg de … → ____ »
- * 25 modèles ; n, m, p ∈ [10 ; 99] ; ni n|m ni m|n ; réponse exacte en francs.
+ * TCM ex. 31 — deux questions :
+ * 1) Pourcentage d’un nombre : « p % de n est égal à … »
+ *    p ∈ {10, 20, 25, 40, 60, 75, 80} ; n ∈ [101 ; 999], pas multiple de 10.
+ * 2) Règle de trois kg → francs : « n kg de … → p francs » / « m kg → ____ »
+ *    25 produits ; n, m, p ∈ [10 ; 99] ; ni n|m ni m|n ; réponse exacte.
  */
-import { int, type Rng } from './rng'
+import { int, pick, type Rng } from './rng'
 import type { MathItem } from './types'
+
+const PCT_CHOICES = [10, 20, 25, 40, 60, 75, 80] as const
 
 export type ProportionKgTemplate = {
   id: string
@@ -12,7 +16,7 @@ export type ProportionKgTemplate = {
   ofProduct: string
 }
 
-/** 25 modèles distincts (produits / formulations). */
+/** 25 modèles distincts (produits / formulations) — Q2. */
 export const TCM_PROPORTION_KG_TEMPLATES: readonly ProportionKgTemplate[] = [
   { id: 'k01', product: 'farine', ofProduct: 'de farine' },
   { id: 'k02', product: 'riz', ofProduct: 'de riz' },
@@ -58,6 +62,34 @@ function divides(a: number, b: number): boolean {
   return a !== 0 && b % a === 0
 }
 
+function fmtAnswer(n: number): string {
+  if (Number.isInteger(n)) return String(n)
+  return String(Math.round(n * 1000) / 1000).replace('.', ',')
+}
+
+/** n ∈ [101 ; 999], non multiple de 10 (pas une « dizaine » ronde). */
+function pickPercentBase(rng: Rng, pct: number): number {
+  for (let attempt = 0; attempt < 200; attempt++) {
+    let n = int(rng, 101, 999)
+    if (n % 10 === 0) continue
+    const raw = (pct * n) / 100
+    const rounded = Math.round(raw * 100) / 100
+    if (Math.abs(raw - rounded) < 1e-9) return n
+  }
+  return pct === 25 ? 248 : 245
+}
+
+function generatePercentItem(rng: Rng): MathItem {
+  const pct = pick(rng, [...PCT_CHOICES])
+  const n = pickPercentBase(rng, pct)
+  const value = (pct * n) / 100
+  return {
+    layout: 'text',
+    prompt: `${pct} % de ${n} est égal à`,
+    answer: fmtAnswer(value),
+  }
+}
+
 /**
  * Deux masses 10–99 (ni l’une ni l’autre ne divise l’autre)
  * + prix donné 10–99 tel que le prix cherché soit entier.
@@ -87,30 +119,18 @@ export function pickIndepKgPrice(rng: Rng): {
   return { kgA: 15, kgB: 28, priceA: 30, priceB: 56 }
 }
 
-function fillTemplate(
-  tpl: ProportionKgTemplate,
-  rng: Rng,
-): { prompt: string; answer: string } {
+function generateKgFrancsItem(rng: Rng): MathItem {
+  const tpl = pick(rng, [...TCM_PROPORTION_KG_TEMPLATES])
   const { kgA, kgB, priceA, priceB } = pickIndepKgPrice(rng)
-  const prompt = `${kgA} kg ${tpl.ofProduct} → ${priceA} francs\n${kgB} kg ${tpl.ofProduct} →`
-  return { prompt, answer: `${priceB} francs` }
+  return {
+    layout: 'text',
+    prompt: `${kgA} kg ${tpl.ofProduct} → ${priceA} francs\n${kgB} kg ${tpl.ofProduct} →`,
+    answer: `${priceB} francs`,
+  }
 }
 
-/** Lot TCM ex. 31 : 2 questions, modèles distincts parmi 25. */
+/** Lot TCM ex. 31 : Q1 pourcentage, Q2 kg → francs. */
 export function generateTcmProportionKgBatch(rng: Rng, count = 2): MathItem[] {
-  const n = Math.max(1, Math.min(count, TCM_PROPORTION_KG_TEMPLATES.length))
-  const pool = [...TCM_PROPORTION_KG_TEMPLATES]
-  const picked: ProportionKgTemplate[] = []
-  for (let i = 0; i < n; i++) {
-    const idx = int(rng, 0, pool.length - 1)
-    picked.push(pool.splice(idx, 1)[0]!)
-  }
-  return picked.map((tpl) => {
-    const filled = fillTemplate(tpl, rng)
-    return {
-      layout: 'text' as const,
-      prompt: filled.prompt,
-      answer: filled.answer,
-    }
-  })
+  const items = [generatePercentItem(rng), generateKgFrancsItem(rng)]
+  return items.slice(0, Math.max(1, Math.min(count, 2)))
 }
