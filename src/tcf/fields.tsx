@@ -74,12 +74,14 @@ export function NumberField({
   onChange,
   min = 0,
   max = 999,
+  step = 1,
 }: {
   label: string
   value: number | undefined
   onChange: (value: number) => void
   min?: number
   max?: number
+  step?: number
 }) {
   return (
     <label className="tcf-field is-number">
@@ -89,10 +91,11 @@ export function NumberField({
         type="number"
         min={min}
         max={max}
+        step={step}
         value={value ?? 0}
         onChange={(event) => {
-          const n = Number(event.target.value)
-          if (Number.isFinite(n)) onChange(Math.max(min, Math.min(max, Math.round(n))))
+          const n = Number(event.target.value.replace(',', '.'))
+          if (Number.isFinite(n)) onChange(Math.max(min, Math.min(max, Math.round(n / step) * step)))
         }}
       />
     </label>

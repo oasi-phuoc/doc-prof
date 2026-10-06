@@ -1,4 +1,4 @@
-import { createRng, pick, shuffle, type Rng } from '@/math/rng'
+import { pick, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import {
   TCF_COMPETENCES,
@@ -10,15 +10,16 @@ import {
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
   tcfTypeByTypeId,
+  tcfTypeId,
 } from './catalog'
+import type { TcfSerie } from './series'
 import { tcfBank, tcfExerciseById } from './loader'
 import { melangerChoix } from './melanger'
-import { TCF_LETTRES } from './templates'
+import { TCF_LETTRES, TCF_LETTRES_SITUATIONS } from './templates'
 import type {
   TcfChoixImage,
   TcfChoixRendu,
   TcfChoixTexte,
-  TcfCompetence,
   TcfExercise,
   TcfNbMots,
   TcfNiveau,
@@ -26,8 +27,8 @@ import type {
   TcfSheetItem,
 } from './types'
 
-function tcfItem(tcf: TcfSheetItem, scored: boolean, answer = ''): MathItem {
-  return { layout: 'tcf', tcf, noPoints: !scored, answer }
+function tcfItem(tcf: TcfSheetItem, scored: boolean, answer = '', points?: number): MathItem {
+  return { layout: 'tcf', tcf, noPoints: !scored, answer, ...(scored && points != null ? { points } : {}) }
 }
 
 /** Nombre de traits d’écriture selon le nombre de mots attendu. */
@@ -48,9 +49,12 @@ function questionItem(q: TcfQuestion, numero: number, rng: Rng): MathItem {
         nbLignes: q.nb_lignes ?? 2,
         reponseModele: q.reponse_modele,
         audioLabel,
+        image: q.image,
+        tableau: q.tableau,
       },
       true,
       q.reponse_modele ?? '',
+      q.points,
     )
   }
   const source: ReadonlyArray<TcfChoixTexte | TcfChoixImage> = q.choix
@@ -69,15 +73,19 @@ function questionItem(q: TcfQuestion, numero: number, rng: Rng): MathItem {
       mode: q.type_reponse === 'qcm_image' ? 'image' : 'texte',
       choix,
       audioLabel,
+      image: q.image,
     },
     true,
     choix.find((c) => c.correct)?.lettre ?? '',
+    q.points,
   )
 }
 
 /** Exercice → items de la fiche (support puis questions / zones de réponse). */
 export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
-  const support = (scored = false) => tcfItem({ kind: 'support', exercise: ex }, scored)
+  const support = (scored = false) => tcfItem({ kind: 'support', exercise: ex }, scored, '', ex.points)
+  /** Item noté unique de l’exercice (barème `ex.points`). */
+  const scoredItem = (tcf: TcfSheetItem) => tcfItem(tcf, true, '', ex.points)
   switch (ex.type_exercice) {
     case 'sms':
     case 'email':
@@ -94,33 +102,40 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
       }))
       return [
         support(),
-        tcfItem(
-          {
-            kind: 'images_a_cocher',
-            numero: 1,
-            // La consigne est déjà affichée sous le titre de l’exercice.
-            consigne: '',
-            score: ex.score ?? 'par_image',
-            images,
-          },
-          true,
-        ),
+        scoredItem({
+          kind: 'images_a_cocher',
+          numero: 1,
+          // La consigne est déjà affichée sous le titre de l’exercice.
+          consigne: '',
+          score: ex.score ?? 'par_image',
+          images,
+        }),
       ]
     }
+    case 'association_images':
+      return [
+        support(),
+        scoredItem({
+          kind: 'association',
+          nbDialogues: ex.support.nb_dialogues,
+          situations: ex.situations.map((s, i) => ({
+            lettre: TCF_LETTRES_SITUATIONS[i] ?? String(i + 1),
+            image: s.image,
+            dialogue: s.dialogue,
+          })),
+        }),
+      ]
     case 'formulaire':
-      return [tcfItem({ kind: 'formulaire', titre: ex.support.titre, champs: ex.support.champs }, true)]
+      return [scoredItem({ kind: 'formulaire', titre: ex.support.titre, champs: ex.support.champs })]
     case 'image_question':
       return [
         support(),
-        tcfItem(
-          {
-            kind: 'ecriture',
-            nbMots: ex.support.nb_mots,
-            nbLignes: linesForWords(ex.support.nb_mots, 3),
-            reponseModele: ex.support.reponse_modele,
-          },
-          true,
-        ),
+        scoredItem({
+          kind: 'ecriture',
+          nbMots: ex.support.nb_mots,
+          nbLignes: linesForWords(ex.support.nb_mots, 3),
+          reponseModele: ex.support.reponse_modele,
+        }),
       ]
     case 'sms_reponse':
     case 'email_reponse':
@@ -128,16 +143,13 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
       const fallback = ex.type_exercice === 'sms_reponse' ? 5 : ex.type_exercice === 'email_reponse' ? 8 : 12
       return [
         support(),
-        tcfItem(
-          {
-            kind: 'ecriture',
-            consigneSupplementaire: ex.consigne_supplementaire ?? undefined,
-            nbMots: ex.support.nb_mots,
-            nbLignes: linesForWords(ex.support.nb_mots, fallback),
-            reponseModele: ex.support.reponse_modele,
-          },
-          true,
-        ),
+        scoredItem({
+          kind: 'ecriture',
+          consigneSupplementaire: ex.consigne_supplementaire ?? undefined,
+          nbMots: ex.support.nb_mots,
+          nbLignes: linesForWords(ex.support.nb_mots, fallback),
+          reponseModele: ex.support.reponse_modele,
+        }),
       ]
     }
     case 'mots_theme':
@@ -145,10 +157,19 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
     case 'image_unique':
       // Oral : le support porte l’évaluation (un seul item noté).
       return [support(true)]
-    case 'dialogue':
+    case 'dialogue': {
+      const { audio, images, grille } = ex.support
       return [
-        tcfItem({ kind: 'dialogue', situation: ex.support.situation, repliques: ex.support.repliques }, true),
+        ...(audio || images?.length ? [support()] : []),
+        scoredItem({
+          kind: 'dialogue',
+          situation: ex.support.situation,
+          repliques: ex.support.repliques,
+          auCorrige: ex.support.repliques_au_corrige,
+        }),
+        ...(grille ? [tcfItem({ kind: 'grille', grille }, true, '', grille.points)] : []),
       ]
+    }
   }
 }
 
@@ -163,7 +184,7 @@ export function tryGenerateTcfBlock(
   const niveau = tcfNiveauFromDifficulty(config.difficulty)
   if (isTcfConsignesType(config.exerciseType)) {
     return {
-      instruction: 'Lisez ces informations avant de commencer le test.',
+      instruction: '',
       items: [tcfItem({ kind: 'informations', niveau }, false)],
     }
   }
@@ -229,31 +250,16 @@ export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageCo
 }
 
 /**
- * Test TCF : page Informations, puis tirage sans doublon dans la banque
- * (une page par exercice).
- * La graine est conservée par la fiche (recette = pages + graine).
+ * Série complète (test blanc) : page Informations puis une page par exercice,
+ * dans l’ordre de la série. Les exercices absents de la banque sont ignorés.
  */
-export function buildTcfTestPages(
-  niveau: TcfNiveau,
-  competences: readonly TcfCompetence[],
-  parCompetence: number,
-  seed: number,
-): PageConfig[] {
-  const rng = createRng(seed)
-  const pages: PageConfig[] = [tcfConsignesPage(niveau)]
-  for (const competence of competences) {
-    const pool = shuffle(rng, tcfBank(niveau, competence)).slice(0, Math.max(1, parCompetence))
-    if (pool.length === 0) {
-      const first = TCF_TYPES.find((m) => m.competence === competence)!
-      pages.push(tcfPage(first.typeId, niveau))
-      continue
-    }
-    for (const ex of pool) {
-      const typeId = TCF_TYPES.find(
-        (m) => m.competence === ex.competence && m.typeExercice === ex.type_exercice,
-      )!.typeId
-      pages.push(tcfPage(typeId, niveau, { tcfBankId: ex.id }))
-    }
+export function buildTcfSeriePages(serie: TcfSerie): PageConfig[] {
+  const pages: PageConfig[] = [tcfConsignesPage(serie.niveau)]
+  for (const id of serie.exercices) {
+    const ex = tcfExerciseById(id)
+    if (!ex || ex.niveau !== serie.niveau) continue
+    const typeId = tcfTypeId(ex.competence, ex.type_exercice)
+    if (typeId) pages.push(tcfPage(typeId, serie.niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 }))
   }
   return pages
 }

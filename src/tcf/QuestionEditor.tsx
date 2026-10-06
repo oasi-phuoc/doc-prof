@@ -27,7 +27,7 @@ export function QuestionEditor({
 }) {
   function changeType(type: TcfTypeReponse) {
     if (type === q.type_reponse) return
-    onChange({ ...emptyTcfQuestion(type), enonce: q.enonce, audio: q.audio })
+    onChange({ ...emptyTcfQuestion(type), enonce: q.enonce, audio: q.audio, points: q.points, image: q.image })
   }
 
   return (
@@ -72,15 +72,45 @@ export function QuestionEditor({
         </label>
       ) : null}
       <TextField label="Énoncé" value={q.enonce} multiline rows={2} onChange={(enonce) => onChange({ ...q, enonce })} />
+      <div className="tcf-row">
+        <NumberField
+          label="Points (0 = page)"
+          value={q.points ?? 0}
+          min={0}
+          max={20}
+          step={0.5}
+          onChange={(points) => onChange({ ...q, points: points > 0 ? points : undefined })}
+        />
+        <ImageField
+          label="Image sous l’énoncé (optionnelle)"
+          value={q.image ?? ''}
+          onChange={(image) => onChange({ ...q, image: image || undefined })}
+        />
+      </div>
 
       {q.type_reponse === 'lignes' ? (
         <>
           <NumberField
             label="Nombre de lignes"
             value={q.nb_lignes ?? 2}
-            min={1}
+            min={q.image || q.tableau?.length ? 0 : 1}
             max={12}
             onChange={(nb_lignes) => onChange({ ...q, nb_lignes })}
+          />
+          <TextField
+            label="Tableau à compléter (une ligne par case : libellé | réponse)"
+            value={(q.tableau ?? []).map((row) => `${row.label} | ${row.reponse}`).join('\n')}
+            multiline
+            rows={Math.max(2, (q.tableau?.length ?? 0) + 1)}
+            onChange={(text) => {
+              const tableau = text.trim()
+                ? text.split('\n').map((line) => {
+                    const [label = '', ...rest] = line.split('|')
+                    return { label: label.trim(), reponse: rest.join('|').trim() }
+                  })
+                : undefined
+              onChange({ ...q, tableau })
+            }}
           />
           <TextField
             label="Réponse modèle (corrigé)"

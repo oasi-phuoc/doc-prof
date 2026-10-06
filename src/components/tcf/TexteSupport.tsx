@@ -103,6 +103,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'complet':
+    case 'association_images':
       return (
         <div>
           <PlayerAudio src={ex.support.audio} />
@@ -131,10 +132,23 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'question_texte':
-      return <p className="tcf-question-text is-large">{ex.support.consigne}</p>
+      return (
+        <div>
+          <p className="tcf-question-text is-large">{ex.support.consigne}</p>
+          {ex.support.email ? (
+            <dl className="tcf-email-head is-compose">
+              <dt>À</dt>
+              <dd>{ex.support.email.a}</dd>
+              <dt>Objet</dt>
+              <dd>{ex.support.email.objet}</dd>
+            </dl>
+          ) : null}
+        </div>
+      )
     case 'mots_theme':
       return (
         <div className="tcf-po">
+          {ex.support.audio ? <PlayerAudio src={ex.support.audio} label="Questions de l’examinateur·trice" /> : null}
           {ex.support.theme ? <p className="tcf-po-theme">Thème : {ex.support.theme}</p> : null}
           <ul className="tcf-mots">
             {ex.support.mots
@@ -176,12 +190,33 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
     case 'image_unique':
       return (
         <div className="tcf-po">
+          {ex.support.questions?.length ? (
+            <ul className="tcf-po-questions">
+              {ex.support.questions.map((q) => (
+                <li key={q}>{q}</li>
+              ))}
+            </ul>
+          ) : null}
           <TcfImage src={ex.support.image} alt="Image à décrire" className="tcf-image is-large" />
           <Modele text={ex.support.reponse_modele} mode={mode} />
         </div>
       )
-    case 'formulaire':
     case 'dialogue':
+      return (
+        <div className="tcf-po">
+          {ex.support.audio ? <PlayerAudio src={ex.support.audio} label="Répliques de l’examinateur·trice" /> : null}
+          {ex.support.images?.length ? (
+            <ul className={`tcf-po-images is-${ex.support.images.length}`}>
+              {ex.support.images.map((src, i) => (
+                <li key={i}>
+                  <TcfImage src={src} alt={`Image ${i + 1}`} />
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      )
+    case 'formulaire':
       return null
   }
 }

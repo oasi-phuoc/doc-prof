@@ -14,5 +14,49 @@
     },
     "questions": [],
     "consigne_supplementaire": "Dites si vous venez et ce que vous apportez."
+  },
+  {
+    "id": "tcf-a1j-s1-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 Junior · série 1 · Concours de chant",
+    "consigne": "Votre professeur de musique vous propose de vous inscrire à un concours de chant. Remplissez le formulaire.",
+    "points": 10,
+    "support": {
+      "titre": "Concours de chant",
+      "champs": [
+        { "label": "Nom :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Prénom :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Date de naissance :", "type": "date", "corrige": "Réponse personnelle (ex. : 12.03.2011)" },
+        { "label": "Nationalité :", "type": "texte", "corrige": "Réponse personnelle (ex. : afghane, érythréenne…)" },
+        { "label": "Adresse en France :", "type": "texte", "corrige": "Numéro, rue, code postal et ville" },
+        { "label": "Courriel :", "type": "texte", "corrige": "Adresse électronique complète (avec @)" },
+        { "label": "Numéro de téléphone :", "type": "texte", "corrige": "Numéro complet" },
+        { "label": "Classe :", "type": "texte", "corrige": "Réponse personnelle (ex. : classe d’accueil)" },
+        { "label": "Dans quelle langue est-ce que vous chantez ?", "type": "texte", "corrige": "Ex. : en français, en arabe…" },
+        { "label": "De quel instrument de musique est-ce que vous jouez ?", "type": "texte", "corrige": "Ex. : de la guitare, du piano… (ou « aucun »)" },
+        { "label": "Quel est votre chanteur ou votre chanteuse préféré(e) ?", "type": "texte", "corrige": "Réponse personnelle" }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 Junior · série 1 · Repas chez moi",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 15,
+    "support": {
+      "consigne": "Vous invitez un ami à venir dîner chez vous. Écrivez un message de 40 mots.",
+      "nb_mots": { "min": 40 },
+      "email": { "a": "monami@email.com", "objet": "Repas chez moi" },
+      "reponse_modele": "Salut Karim,\nJe t’invite à dîner chez moi samedi à 19 heures. J’habite au 5 rue du Lac. Tu prends le bus 2 et tu descends à l’arrêt « Gare ». Ma maison est blanche, à côté de la boulangerie. Qu’est-ce que tu aimes manger ? Tu aimes le poulet ?\nÀ samedi !\nAmina"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous lui donnez le jour et l’heure.\nVous lui expliquez comment trouver votre maison.\nVous lui demandez ce qu’il aime manger."
   }
 ]

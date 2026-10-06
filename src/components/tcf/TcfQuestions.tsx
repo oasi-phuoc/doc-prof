@@ -1,14 +1,36 @@
+import { formatPointsLabel } from '@/math/tcm-test'
 import type { PreviewMode } from '@/math/types'
-import type { TcfChoixRendu } from '@/tcf/types'
+import type { TcfChoixRendu, TcfGrille, TcfLigneTableau } from '@/tcf/types'
 import { TcfImage } from './TexteSupport'
 
-function Enonce({ numero, enonce, audioLabel }: { numero: number; enonce: string; audioLabel?: string }) {
+/** Barème « / 1 point », visible seulement en mode évaluation (`.is-eval`). */
+export function TcfPoints({ points }: { points?: number }) {
+  return points != null ? <span className="tcf-pts">/ {formatPointsLabel(points)}</span> : null
+}
+
+function Enonce({
+  numero,
+  enonce,
+  audioLabel,
+  points,
+  image,
+}: {
+  numero: number
+  enonce: string
+  audioLabel?: string
+  points?: number
+  image?: string
+}) {
   return (
-    <p className="tcf-enonce">
-      <span className="tcf-num">{numero}.</span>
-      {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
-      {enonce}
-    </p>
+    <>
+      <p className="tcf-enonce">
+        <span className="tcf-num">{numero}.</span>
+        {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
+        <span className="tcf-enonce-text">{enonce}</span>
+        <TcfPoints points={points} />
+      </p>
+      {image ? <TcfImage src={image} alt={`Document de la question ${numero}`} className="tcf-image is-question" /> : null}
+    </>
   )
 }
 
@@ -17,23 +39,20 @@ function Lettre({ lettre, on }: { lettre: string; on: boolean }) {
   return <span className={`tcf-lettre${on ? ' is-correct' : ''}`}>{lettre}</span>
 }
 
+type QuestionHead = { numero: number; enonce: string; audioLabel?: string; points?: number; image?: string }
+
 export function QuestionQCMTexte({
-  numero,
-  enonce,
   choix,
-  audioLabel,
   mode,
-}: {
-  numero: number
-  enonce: string
+  ...head
+}: QuestionHead & {
   choix: TcfChoixRendu[]
-  audioLabel?: string
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
   return (
     <div className="tcf-question">
-      <Enonce numero={numero} enonce={enonce} audioLabel={audioLabel} />
+      <Enonce {...head} />
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
@@ -50,22 +69,17 @@ export function QuestionQCMTexte({
 }
 
 export function QuestionQCMImage({
-  numero,
-  enonce,
   choix,
-  audioLabel,
   mode,
-}: {
-  numero: number
-  enonce: string
+  ...head
+}: QuestionHead & {
   choix: TcfChoixRendu[]
-  audioLabel?: string
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
   return (
     <div className="tcf-question">
-      <Enonce numero={numero} enonce={enonce} audioLabel={audioLabel} />
+      <Enonce {...head} />
       <ul className={`tcf-qcm-images is-${choix.length}`}>
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
@@ -85,26 +99,38 @@ export function QuestionQCMImage({
 
 /** Traits de réponse pleine largeur (couleur du thème). Le modèle s’affiche au corrigé. */
 export function QuestionLignes({
-  numero,
-  enonce,
   nbLignes,
   reponseModele,
-  audioLabel,
+  tableau,
   mode,
-}: {
-  numero?: number
-  enonce?: string
+  ...head
+}: QuestionHead & {
   nbLignes: number
   reponseModele?: string
-  audioLabel?: string
+  tableau?: TcfLigneTableau[]
   mode: PreviewMode
 }) {
+  const show = mode === 'answers'
   return (
     <div className="tcf-question">
-      {numero != null && enonce != null ? (
-        <Enonce numero={numero} enonce={enonce} audioLabel={audioLabel} />
+      <Enonce {...head} />
+      {tableau?.length ? (
+        <table className="tcf-tableau">
+          <tbody>
+            {tableau.map((row, i) => (
+              <tr key={i}>
+                <th scope="row">{row.label}</th>
+                <td>{show ? row.reponse : ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : null}
-      <LignesReponse nbLignes={nbLignes} texte={mode === 'answers' ? reponseModele : undefined} />
+      {nbLignes > 0 ? (
+        <LignesReponse nbLignes={nbLignes} texte={show ? reponseModele : undefined} />
+      ) : show && reponseModele?.trim() ? (
+        <p className="tcf-lignes-modele">{reponseModele}</p>
+      ) : null}
     </div>
   )
 }
@@ -118,6 +144,52 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
         <span key={i} className="answer-line-field tcf-ligne" aria-hidden />
       ))}
     </div>
+  )
+}
+
+/** CO : situations illustrées, « Situation n° … » sous chaque image ; corrigé = n° ou « — ». */
+export function AssociationSituations({
+  situations,
+  mode,
+}: {
+  situations: Array<{ lettre: string; image: string; dialogue: number | null }>
+  mode: PreviewMode
+}) {
+  const show = mode === 'answers'
+  return (
+    <ul className="tcf-situations">
+      {situations.map((s) => (
+        <li key={s.lettre}>
+          <TcfImage src={s.image} alt={`Situation ${s.lettre}`} />
+          <span className="tcf-situation-foot">
+            <b>{s.lettre}.</b> Situation n°
+            <span className="answer-line-field compact tcf-situation-num">
+              {show ? (s.dialogue ?? '—') : ''}
+            </span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+/** Grille de l’oral (critères notés globalement). */
+export function GrilleOral({ grille }: { grille: TcfGrille }) {
+  return (
+    <table className="tcf-grille">
+      <tbody>
+        {grille.criteres.map((critere, i) => (
+          <tr key={critere}>
+            <th scope="row">{critere}</th>
+            {i === 0 ? (
+              <td rowSpan={grille.criteres.length} className="tcf-grille-points">
+                … / {formatPointsLabel(grille.points)}
+              </td>
+            ) : null}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }
 

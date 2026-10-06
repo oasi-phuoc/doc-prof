@@ -64,14 +64,13 @@ import {
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
 } from '@/tcf/catalog'
-import { buildTcfTestPages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
+import { buildTcfSeriePages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
+import { TCF_SERIES } from '@/tcf/series'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
-import { TcfTestPanel } from '@/tcf/TcfTestPanel'
 import { Chronometre } from '@/components/tcf/Chronometre'
 import {
   blockPointsTotal,
   buildTcmTestPages,
-  formatBlockPointsBadge,
   formatPointsLabel,
   isTcmConsignesType,
   isTcmDomain,
@@ -337,7 +336,7 @@ function WorksheetSheet({
     : page.columns
   return (
     <article
-      className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}`}
+      className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${evalMode ? ' is-eval' : ''}`}
       style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (
@@ -364,9 +363,8 @@ function WorksheetSheet({
           )
           const blockHeading = multiExercisePage ? block.title : sheetTitle || block.title
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
-          const scoredCount = block.items.filter((item) => item.layout !== 'theory' && !item.noPoints).length
           const blockPts = blockPointsTotal(block.items, perQ)
-          const pointsBadge = formatBlockPointsBadge(perQ, scoredCount)
+          const pointsBadge = formatPointsLabel(blockPts)
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet ? null : (
@@ -386,7 +384,7 @@ function WorksheetSheet({
                       </button>
                     ) : null}
                   </div>
-                  <p>{renderSoutienInstruction(block.instruction)}</p>
+                  {block.instruction ? <p>{renderSoutienInstruction(block.instruction)}</p> : null}
                   {block.givens && block.givens.length > 0 ? (
                     <p className="sheet-givens" aria-label="Valeurs des variables">
                       {block.givens.map((given, index) => (
@@ -2875,6 +2873,27 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   ))}
                 </SelectBox>
               ) : null}
+              {isTcf && TCF_SERIES.some((s) => s.niveau === tcfNiveau) ? (
+                <SelectBox
+                  label="Test complet"
+                  value=""
+                  onChange={(value) => {
+                    const serie = TCF_SERIES.find((s) => s.id === value)
+                    if (!serie) return
+                    setMode('student')
+                    setSheetIndex(0)
+                    setBlockIndex(0)
+                    setPages(buildTcfSeriePages(serie))
+                  }}
+                >
+                  <option value="">Charger une série…</option>
+                  {TCF_SERIES.filter((s) => s.niveau === tcfNiveau).map((s) => (
+                    <option value={s.id} key={s.id}>
+                      {s.label}
+                    </option>
+                  ))}
+                </SelectBox>
+              ) : null}
               {isTcm ? null : (
                 <SelectBox label={isTcf ? 'Compétence' : 'Thème'} value={activeBlock.topic} onChange={changeTopic}>
                   {available.map((topic) => (
@@ -3178,17 +3197,6 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                       onChangeMinutes={(tcfDureeMin) => updatePage({ tcfDureeMin })}
                     />
                   )}
-                  <TcfTestPanel
-                    niveau={tcfNiveau}
-                    onGenerate={(competences, parCompetence) => {
-                      const nextSeed = randomSeed()
-                      setSeed(nextSeed)
-                      setMode('student')
-                      setSheetIndex(0)
-                      setBlockIndex(0)
-                      setPages(buildTcfTestPages(tcfNiveau, competences, parCompetence, nextSeed))
-                    }}
-                  />
                 </>
               ) : null}
               {isReperage ||

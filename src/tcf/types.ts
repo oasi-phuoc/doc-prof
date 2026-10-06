@@ -19,6 +19,10 @@ type TcfQuestionBase = {
   enonce: string
   /** CO six_courts / trois_moyens : n° de l’audio concerné (1-based). */
   audio?: number
+  /** Barème de la question (sinon « points par question » de la page). */
+  points?: number
+  /** Image affichée sous l’énoncé (plan à compléter, document…). */
+  image?: string
 }
 
 export type TcfQuestionQcmTexte = TcfQuestionBase & {
@@ -36,10 +40,14 @@ export type TcfQuestionQcmImage = TcfQuestionBase & {
 
 export type TcfQuestionLignes = TcfQuestionBase & {
   type_reponse: 'lignes'
-  /** Traits pleine largeur (défaut 2). */
+  /** Traits pleine largeur (défaut 2 ; 0 si image ou tableau seuls). */
   nb_lignes?: number
   reponse_modele?: string
+  /** Tableau à compléter : libellé à gauche, case vide à droite (réponse au corrigé). */
+  tableau?: TcfLigneTableau[]
 }
+
+export type TcfLigneTableau = { label: string; reponse: string }
 
 export type TcfQuestion = TcfQuestionQcmTexte | TcfQuestionQcmImage | TcfQuestionLignes
 
@@ -60,6 +68,8 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
   questions: TcfQuestion[]
   /** PE sms / email / question : petit bloc sous le texte. */
   consigne_supplementaire?: string | null
+  /** Barème des exercices sans questions (formulaire, écriture, oral, images). */
+  points?: number
 }
 
 // —— CE ——
@@ -83,7 +93,17 @@ export type TcfCoImages = TcfBase<'CO', 'images_a_reconnaitre', { audio: string 
 export type TcfCoSixCourts = TcfBase<'CO', 'six_courts', { audios: string[] }>
 export type TcfCoTroisMoyens = TcfBase<'CO', 'trois_moyens', { audios: string[] }>
 export type TcfCoComplet = TcfBase<'CO', 'complet', { audio: string; transcription: string }>
-export type TcfCoExercise = TcfCoImages | TcfCoSixCourts | TcfCoTroisMoyens | TcfCoComplet
+
+/** Une situation illustrée ; `dialogue` = n° du dialogue qui correspond (null = aucun). */
+export type TcfSituation = { id: string; image: string; dialogue: number | null }
+export type TcfCoAssociation = TcfBase<
+  'CO',
+  'association_images',
+  { audio: string; nb_dialogues: number; transcription?: string }
+> & {
+  situations: TcfSituation[]
+}
+export type TcfCoExercise = TcfCoImages | TcfCoSixCourts | TcfCoTroisMoyens | TcfCoComplet | TcfCoAssociation
 
 // —— PE ——
 
@@ -121,7 +141,13 @@ export type TcfPeEmailReponse = TcfBase<
 export type TcfPeQuestionTexte = TcfBase<
   'PE',
   'question_texte',
-  { consigne: string; nb_mots: TcfNbMots; reponse_modele?: string }
+  {
+    consigne: string
+    nb_mots: TcfNbMots
+    reponse_modele?: string
+    /** Message à écrire présenté comme un e-mail (destinataire et objet imposés). */
+    email?: { a: string; objet: string }
+  }
 >
 export type TcfPeExercise =
   | TcfPeFormulaire
@@ -135,14 +161,33 @@ export type TcfPeExercise =
 export type TcfRepliqueLocuteur = 'examinateur' | 'eleve'
 export type TcfReplique = { locuteur: TcfRepliqueLocuteur; texte: string; variantes?: string[] }
 
+/** Grille de l’oral notée à part (ex. lexique, morphosyntaxe, phonologie). */
+export type TcfGrille = { points: number; criteres: string[] }
+
 export type TcfPoMotsTheme = TcfBase<
   'PO',
   'mots_theme',
-  { theme: string; mots: string[]; exemples_questions: string[] }
+  { theme: string; mots: string[]; exemples_questions: string[]; audio?: string }
 >
 export type TcfPoSequence = TcfBase<'PO', 'sequence_4_images', { images: string[]; reponse_modele: string }>
-export type TcfPoImageUnique = TcfBase<'PO', 'image_unique', { image: string; reponse_modele: string }>
-export type TcfPoDialogue = TcfBase<'PO', 'dialogue', { situation: string; repliques: TcfReplique[] }>
+export type TcfPoImageUnique = TcfBase<
+  'PO',
+  'image_unique',
+  { image: string; reponse_modele: string; questions?: string[] }
+>
+export type TcfPoDialogue = TcfBase<
+  'PO',
+  'dialogue',
+  {
+    situation: string
+    repliques: TcfReplique[]
+    audio?: string
+    images?: string[]
+    grille?: TcfGrille
+    /** Dialogue simulé : répliques affichées au corrigé seulement (fiche élève = situation). */
+    repliques_au_corrige?: boolean
+  }
+>
 export type TcfPoExercise = TcfPoMotsTheme | TcfPoSequence | TcfPoImageUnique | TcfPoDialogue
 
 export type TcfExercise = TcfCeExercise | TcfCoExercise | TcfPeExercise | TcfPoExercise
@@ -161,6 +206,7 @@ export type TcfSheetItem =
       mode: 'texte' | 'image'
       choix: TcfChoixRendu[]
       audioLabel?: string
+      image?: string
     }
   | {
       kind: 'lignes'
@@ -169,7 +215,15 @@ export type TcfSheetItem =
       nbLignes: number
       reponseModele?: string
       audioLabel?: string
+      image?: string
+      tableau?: TcfLigneTableau[]
     }
+  | {
+      kind: 'association'
+      nbDialogues: number
+      situations: Array<{ lettre: string; image: string; dialogue: number | null }>
+    }
+  | { kind: 'grille'; grille: TcfGrille }
   | {
       kind: 'images_a_cocher'
       numero: number
@@ -185,6 +239,6 @@ export type TcfSheetItem =
       nbLignes: number
       reponseModele?: string
     }
-  | { kind: 'dialogue'; situation: string; repliques: TcfReplique[] }
+  | { kind: 'dialogue'; situation: string; repliques: TcfReplique[]; auCorrige?: boolean }
   | { kind: 'vide'; message: string }
   | { kind: 'informations'; niveau: TcfNiveau }

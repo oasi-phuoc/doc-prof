@@ -93,38 +93,42 @@ const LOCUTEUR_LABEL: Record<TcfReplique['locuteur'], string> = {
 export function DialoguePO({
   situation,
   repliques,
+  auCorrige = false,
   mode,
 }: {
   situation: string
   repliques: TcfReplique[]
+  auCorrige?: boolean
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
   return (
     <div className="tcf-dialogue">
       {situation.trim() ? <p className="tcf-question-text">{situation}</p> : null}
-      <ol className="tcf-repliques">
-        {repliques.map((r, i) => (
-          <li key={i} className={`tcf-replique is-${r.locuteur}`}>
-            <b className="tcf-locuteur">{LOCUTEUR_LABEL[r.locuteur]} :</b>
-            {r.locuteur === 'examinateur' ? (
-              <span>{r.texte}</span>
-            ) : show ? (
-              <span>
-                {r.texte}
-                {(r.variantes ?? []).filter((v) => v.trim()).map((v, k) => (
-                  <span key={k} className="tcf-variante">
-                    {' '}
-                    ou : {v}
-                  </span>
-                ))}
-              </span>
-            ) : (
-              <span className="answer-line-field tcf-ligne" aria-hidden />
-            )}
-          </li>
-        ))}
-      </ol>
+      {auCorrige && !show ? null : (
+        <ol className={`tcf-repliques${auCorrige ? ' is-compact' : ''}`}>
+          {repliques.map((r, i) => (
+            <li key={i} className={`tcf-replique is-${r.locuteur}`}>
+              <b className="tcf-locuteur">{LOCUTEUR_LABEL[r.locuteur]} :</b>
+              {r.locuteur === 'examinateur' ? (
+                <span>{r.texte}</span>
+              ) : show ? (
+                <span>
+                  {r.texte}
+                  {(r.variantes ?? []).filter((v) => v.trim()).map((v, k) => (
+                    <span key={k} className="tcf-variante">
+                      {' '}
+                      ou : {v}
+                    </span>
+                  ))}
+                </span>
+              ) : (
+                <span className="answer-line-field tcf-ligne" aria-hidden />
+              )}
+            </li>
+          ))}
+        </ol>
+      )}
     </div>
   )
 }

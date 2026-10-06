@@ -18,5 +18,182 @@
       { "id": "i5", "image": "/lib/images/vocabulaire/logement/table.webp", "correct": false }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 1 · L’anniversaire",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s1/co1.mp3",
+      "transcription": "Bonjour, c’est Driss. Samedi, on fait une fête au restaurant pour l’anniversaire de mon frère, à midi et demi. Tu es invité. Viens chez moi à vélo à midi et mon père nous amène en voiture au restaurant. C’est au centre-ville. Après, on va jouer dans le parc à côté. Salut !"
+    },
+    "questions": [
+      {
+        "enonce": "C’est l’anniversaire…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Du frère de Driss", "correct": true },
+          { "id": "b", "texte": "Du père de Driss" },
+          { "id": "c", "texte": "De la mère de Driss" }
+        ]
+      },
+      {
+        "enonce": "Où est la fête ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Au restaurant, au centre-ville."
+      },
+      {
+        "enonce": "À quelle heure avez-vous rendez-vous chez Driss ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "À midi."
+      },
+      {
+        "enonce": "Comment allez-vous de chez Driss à la fête ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s1/co1-velo.webp" },
+          { "id": "b", "image": "a1j-s1/co1-voiture.webp", "correct": true },
+          { "id": "c", "image": "a1j-s1/co1-bus.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 1 · Au magasin de sport",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s1/co2.mp3",
+      "transcription": "Aujourd’hui, chez Sport Plus, 50 % de réduction sur les vêtements de tennis : short, t-shirt, chaussures. Vous pouvez aussi participer à notre grand jeu pour gagner le ballon de l’équipe de France de football. C’est facile : venez vite à l’accueil et répondez à deux questions."
+    },
+    "questions": [
+      {
+        "enonce": "Quel est le montant de la réduction ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "50 %."
+      },
+      {
+        "enonce": "Quels articles sont en promotion ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s1/co2-football.webp" },
+          { "id": "b", "image": "a1j-s1/co2-tennis.webp", "correct": true },
+          { "id": "c", "image": "a1j-s1/co2-natation.webp" }
+        ]
+      },
+      {
+        "enonce": "Que pouvez-vous gagner au jeu ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Un ballon de foot", "correct": true },
+          { "id": "b", "texte": "Un t-shirt de foot" },
+          { "id": "c", "texte": "Des chaussures de foot" }
+        ]
+      },
+      {
+        "enonce": "Où devez-vous aller pour participer au jeu ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "À l’accueil du magasin (Sport Plus)."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 1 · La recette",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s1/co3.mp3",
+      "transcription": "Salut, c’est Marie ! Voici la recette du gâteau au citron. Tu mélanges 100 g de beurre, 3 œufs et 100 g de farine dans un plat. Tu mets 50 g de sucre et du jus de citron. Tu mets 30 minutes dans le four. Tu peux manger le gâteau avec un yaourt."
+    },
+    "questions": [
+      {
+        "enonce": "Quel fruit Marie met-elle dans son gâteau ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "Du citron."
+      },
+      {
+        "enonce": "Que devez-vous mettre en premier dans le plat ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Des œufs" },
+          { "id": "b", "texte": "Du beurre", "correct": true },
+          { "id": "c", "texte": "De la farine" }
+        ]
+      },
+      {
+        "enonce": "Combien de temps le gâteau doit-il cuire dans le four ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "30 minutes."
+      },
+      {
+        "enonce": "Vous pouvez manger le gâteau avec…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Des fruits" },
+          { "id": "b", "texte": "Un yaourt", "correct": true },
+          { "id": "c", "texte": "De la glace" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 Junior · série 1 · À l’école",
+    "consigne": "Observez les situations et écoutez les 5 dialogues. Notez le numéro du dialogue (1 à 5) sous l’image. Attention : il y a 6 situations mais seulement 5 dialogues.",
+    "points": 10,
+    "support": {
+      "audio": "a1j-s1/co4.mp3",
+      "nb_dialogues": 5,
+      "transcription": "Dialogue 1 — On va faire des exercices de maths. Prenez votre livre page 54. — Monsieur, je n’ai pas mon livre. — Regarde sur le livre de ton voisin.\n\nDialogue 2 — Tiens, je te rends ton cahier d’anglais. Merci beaucoup ! — De rien. Tu comprends mieux le cours maintenant ? — Oui, merci.\n\nDialogue 3 — Qu’est-ce qu’il y a ce midi à la cantine ? — Des frites, c’est super ! — Oui, et de la glace en dessert, génial !\n\nDialogue 4 — Madame, il est où, le bureau du directeur, s’il vous plaît ? — Là-bas, regarde, à côté de la bibliothèque.\n\nDialogue 5 — On va en salle informatique ce matin. — C’est où ? — Au premier étage. Suivez-moi."
+    },
+    "questions": [],
+    "situations": [
+      { "id": "s1", "image": "a1j-s1/co4-situation-a.webp", "dialogue": 3 },
+      { "id": "s2", "image": "a1j-s1/co4-situation-b.webp", "dialogue": 4 },
+      { "id": "s3", "image": "a1j-s1/co4-situation-c.webp", "dialogue": null },
+      { "id": "s4", "image": "a1j-s1/co4-situation-d.webp", "dialogue": 1 },
+      { "id": "s5", "image": "a1j-s1/co4-situation-e.webp", "dialogue": 2 },
+      { "id": "s6", "image": "a1j-s1/co4-situation-f.webp", "dialogue": 5 }
+    ],
+    "consigne_supplementaire": null
   }
 ]

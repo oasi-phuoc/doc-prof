@@ -174,6 +174,88 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
           />
         </>
       )
+    case 'association_images': {
+      const n = ex.support.nb_dialogues
+      return (
+        <>
+          <AudioField label="Audio (tous les dialogues)" value={ex.support.audio} onChange={(audio) => set(withSupport(ex, { audio }))} />
+          <NumberField
+            label="Nombre de dialogues"
+            value={n}
+            min={1}
+            max={8}
+            onChange={(nb_dialogues) => set(withSupport(ex, { nb_dialogues: nb_dialogues ?? 1 }))}
+          />
+          <TextField
+            label="Transcription (corrigé)"
+            value={ex.support.transcription ?? ''}
+            multiline
+            rows={5}
+            onChange={(transcription) => set(withSupport(ex, { transcription }))}
+          />
+          <b>Situations ({ex.situations.length})</b>
+          <ul className="tcf-choix-list">
+            {ex.situations.map((s, i) => (
+              <li key={s.id} className="tcf-choix-row">
+                <ImageField
+                  label={`Situation ${i + 1}`}
+                  value={s.image}
+                  onChange={(image) =>
+                    set({ ...ex, situations: ex.situations.map((x, k) => (k === i ? { ...x, image } : x)) })
+                  }
+                />
+                <label className="tcf-field is-number">
+                  <span>Dialogue n°</span>
+                  <select
+                    className="pill-input"
+                    value={s.dialogue ?? ''}
+                    onChange={(event) => {
+                      const dialogue = event.target.value ? Number(event.target.value) : null
+                      set({ ...ex, situations: ex.situations.map((x, k) => (k === i ? { ...x, dialogue } : x)) })
+                    }}
+                  >
+                    <option value="">Aucun</option>
+                    {Array.from({ length: n }, (_, k) => (
+                      <option key={k} value={k + 1}>
+                        {k + 1}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <button
+                  type="button"
+                  className="calli-field-remove"
+                  aria-label={`Supprimer la situation ${i + 1}`}
+                  disabled={ex.situations.length <= 2}
+                  onClick={() => set({ ...ex, situations: ex.situations.filter((_, k) => k !== i) })}
+                >
+                  ×
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            className="tcf-btn"
+            onClick={() =>
+              set({
+                ...ex,
+                situations: [
+                  ...ex.situations,
+                  {
+                    id: `s${Math.max(0, ...ex.situations.map((s) => Number(s.id.replace(/\D/g, '')) || 0)) + 1}`,
+                    image: '',
+                    dialogue: null,
+                  },
+                ],
+              })
+            }
+          >
+            + ajouter une situation
+          </button>
+        </>
+      )
+    }
     case 'formulaire': {
       const champs = ex.support.champs
       const setChamps = (next: TcfChampFormulaire[]) => set(withSupport(ex, { champs: next }))
@@ -267,6 +349,18 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
       return (
         <>
           <TextField label="Question / texte" value={ex.support.consigne} multiline rows={3} onChange={(consigne) => set(withSupport(ex, { consigne }))} />
+          <div className="tcf-row">
+            <TextField
+              label="E-mail : destinataire (optionnel)"
+              value={ex.support.email?.a ?? ''}
+              onChange={(a) => set(withSupport(ex, { email: a || ex.support.email?.objet ? { a, objet: ex.support.email?.objet ?? '' } : undefined }))}
+            />
+            <TextField
+              label="E-mail : objet"
+              value={ex.support.email?.objet ?? ''}
+              onChange={(objet) => set(withSupport(ex, { email: objet || ex.support.email?.a ? { a: ex.support.email?.a ?? '', objet } : undefined }))}
+            />
+          </div>
           <NbMotsFields value={ex.support.nb_mots} onChange={(nb_mots) => set(withSupport(ex, { nb_mots }))} />
           <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele ?? ''} multiline rows={4} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
         </>
@@ -274,6 +368,7 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
     case 'mots_theme':
       return (
         <>
+          <AudioField label="Audio (optionnel)" value={ex.support.audio ?? ''} onChange={(audio) => set(withSupport(ex, { audio: audio || undefined }))} />
           <TextField label="Thème" value={ex.support.theme} onChange={(theme) => set(withSupport(ex, { theme }))} />
           <LinesField label="Mots (un par ligne)" values={ex.support.mots} onChange={(mots) => set(withSupport(ex, { mots }))} />
           <LinesField
@@ -301,15 +396,51 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
       return (
         <>
           <ImageField label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
+          <LinesField
+            label="Questions guides (une par ligne, optionnel)"
+            values={ex.support.questions ?? []}
+            onChange={(questions) => set(withSupport(ex, { questions }))}
+          />
           <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele} multiline rows={4} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
         </>
       )
     case 'dialogue': {
       const repliques = ex.support.repliques
       const setRepliques = (next: TcfReplique[]) => set(withSupport(ex, { repliques: next }))
+      const grille = ex.support.grille
       return (
         <>
           <TextField label="Situation" value={ex.support.situation} multiline rows={2} onChange={(situation) => set(withSupport(ex, { situation }))} />
+          <AudioField label="Audio (optionnel)" value={ex.support.audio ?? ''} onChange={(audio) => set(withSupport(ex, { audio: audio || undefined }))} />
+          <label className="tcf-choix-fixe">
+            <input
+              type="checkbox"
+              checked={ex.support.repliques_au_corrige === true}
+              onChange={(event) => set(withSupport(ex, { repliques_au_corrige: event.target.checked || undefined }))}
+            />
+            Répliques au corrigé seulement (dialogue simulé)
+          </label>
+          <LinesField
+            label="Images (chemins, une par ligne, optionnel)"
+            values={ex.support.images ?? []}
+            onChange={(images) => set(withSupport(ex, { images }))}
+          />
+          <div className="tcf-row">
+            <LinesField
+              label="Grille de l’oral : critères (un par ligne)"
+              values={grille?.criteres ?? []}
+              onChange={(criteres) =>
+                set(withSupport(ex, { grille: criteres.some((c) => c.trim()) ? { points: grille?.points ?? 1, criteres } : undefined }))
+              }
+            />
+            <NumberField
+              label="Points de la grille"
+              value={grille?.points}
+              min={0}
+              max={50}
+              onChange={(points) => (grille ? set(withSupport(ex, { grille: { ...grille, points: points ?? 0 } })) : undefined)}
+            />
+          </div>
           {repliques.map((r, i) => (
             <fieldset className="tcf-question-editor" key={i}>
               <legend>
@@ -367,8 +498,18 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
 }
 
 /** Nettoie les listes « une par ligne » avant export (lignes vides retirées). */
-function cleanForExport(ex: TcfExercise): TcfExercise {
+function cleanForExport(raw: TcfExercise): TcfExercise {
+  const ex: TcfExercise = {
+    ...raw,
+    questions: raw.questions.map((q) =>
+      q.type_reponse === 'lignes' && q.tableau
+        ? { ...q, tableau: q.tableau.filter((row) => row.label.trim()) }
+        : q,
+    ),
+  }
   switch (ex.type_exercice) {
+    case 'image_unique':
+      return withSupport(ex, { questions: (ex.support.questions ?? []).filter((q) => q.trim()) })
     case 'mots_theme':
       return withSupport(ex, {
         mots: ex.support.mots.filter((m) => m.trim()),
@@ -379,6 +520,10 @@ function cleanForExport(ex: TcfExercise): TcfExercise {
         repliques: ex.support.repliques.map((r) =>
           r.locuteur === 'eleve' ? { ...r, variantes: (r.variantes ?? []).filter((v) => v.trim()) } : r,
         ),
+        images: (ex.support.images ?? []).filter((src) => src.trim()),
+        grille: ex.support.grille
+          ? { ...ex.support.grille, criteres: ex.support.grille.criteres.filter((c) => c.trim()) }
+          : undefined,
       })
     case 'formulaire':
       return withSupport(ex, {
@@ -516,6 +661,17 @@ export function TcfExerciseEditor({
               value={exercise.consigne ?? ''}
               placeholder={meta.instruction}
               onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
+            />
+          ) : null}
+
+          {!usesQuestions ? (
+            <NumberField
+              label="Points de l’exercice (0 = page)"
+              value={exercise.points ?? 0}
+              min={0}
+              max={50}
+              step={0.5}
+              onChange={(points) => set({ ...exercise, points: points > 0 ? points : undefined })}
             />
           ) : null}
 

@@ -38,5 +38,250 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 1 · Le musée",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "titre": "Musée de la magie de Lille",
+      "texte": "Entrée 12 € / Moins de 16 ans : 8 €\n\n1. Réserver votre place sur internet (www.museemagie.fr). Choisir le jour, l’heure de la visite et le nombre de personnes. Ne pas oublier d’indiquer votre adresse électronique.\n\n2. Payer sur le site internet avec une carte bancaire.\n\n3. Vous recevez votre ticket par courriel. Vous devez l’imprimer et le présenter à l’accueil du musée.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quel est le tarif pour un enfant ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "8 € (moins de 16 ans)."
+      },
+      {
+        "enonce": "Vous devez réserver…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Par téléphone" },
+          { "id": "b", "texte": "Sur Internet", "correct": true },
+          { "id": "c", "texte": "À l’accueil" }
+        ]
+      },
+      {
+        "enonce": "Quelle information devez-vous donner ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Votre adresse électronique", "correct": true },
+          { "id": "b", "texte": "Votre adresse postale" },
+          { "id": "c", "texte": "Votre numéro de téléphone" }
+        ]
+      },
+      {
+        "enonce": "Comment faut-il payer ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s1/ce1-carte-bancaire.webp", "correct": true },
+          { "id": "b", "image": "a1j-s1/ce1-especes.webp" },
+          { "id": "c", "image": "a1j-s1/ce1-cheque.webp" }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous montrer à l’accueil ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le ticket imprimé (reçu par courriel)."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "sms",
+    "theme": "Test blanc A1 Junior · série 1 · Le cinéma à la plage",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "expediteur": "Timéo",
+      "texte": "Salut,\n\nLe cinéma à la plage commence vendredi ! Tu veux venir ? Nous allons voir le film « 10 jours sans maman » samedi soir avec mon père et mes sœurs. La séance est à 21 h 45. On se retrouve à 20 h 30 au restaurant italien « Pizza’la », rue Falois, pour dîner. De l’arrêt de bus, tu avances vers la mer et tu tournes à gauche après le théâtre.\n\nDis-moi vite. Ciao\nTiméo"
+    },
+    "questions": [
+      {
+        "enonce": "Quel jour est le film ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Samedi (soir)."
+      },
+      {
+        "enonce": "Timéo vous invite où ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s1/ce2-cinema-salle.webp" },
+          { "id": "b", "image": "a1j-s1/ce2-cinema-plage.webp", "correct": true },
+          { "id": "c", "image": "a1j-s1/ce2-cinema-3d.webp" }
+        ]
+      },
+      {
+        "enonce": "Timéo vient avec ses sœurs et…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Son frère" },
+          { "id": "b", "texte": "Sa mère" },
+          { "id": "c", "texte": "Son père", "correct": true }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 20 h 30 (au restaurant « Pizza’la »)."
+      },
+      {
+        "enonce": "Dessinez le chemin pour aller à l’entrée du théâtre.",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 0,
+        "image": "a1j-s1/ce2-plan.webp",
+        "reponse_modele": "Depuis l’arrêt de bus (rue Collins), on avance vers la plage le long du théâtre, puis on tourne à gauche dans la rue Falois."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 1 · L’atelier vidéo",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "titre": "Atelier vidéo",
+      "texte": "Animé par Josiane Courtier\n\nTous les jeudis de 17 h à 19 h du 1er février au 21 juin.\n\nUn atelier pour apprendre à faire des films avec un téléphone portable ! Vous allez apprendre à écrire un scénario, à filmer et à jouer comme des acteurs de cinéma ! Vos films vont être montrés pour la fête de l’école, le 21 juin.\n\nInscrivez-vous vite !\n\nDate limite d’inscription : le 15 janvier.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Qui anime l’atelier ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Josiane Courtier."
+      },
+      {
+        "enonce": "À quelle heure commence l’atelier ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 17 h (le jeudi)."
+      },
+      {
+        "enonce": "Quel objet faut-il pour filmer ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Un téléphone portable."
+      },
+      {
+        "enonce": "À quelle date peut-on voir le film ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "1er février" },
+          { "id": "b", "texte": "21 juin", "correct": true },
+          { "id": "c", "texte": "15 janvier" }
+        ]
+      },
+      {
+        "enonce": "Quand faut-il s’inscrire ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "En janvier", "correct": true },
+          { "id": "b", "texte": "En février" },
+          { "id": "c", "texte": "En juin" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s1-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 1 · La MLC",
+    "consigne": "Lisez cette annonce et répondez aux questions.",
+    "support": {
+      "titre": "Bienvenue à la Maison des loisirs et de la culture (MLC) !",
+      "texte": "La MLC est ouverte à tous ! Découvrez toutes nos activités : théâtre – robotique – danse – ping-pong – basket – cuisine…\n\nVous pouvez participer à la radio de la MLC. Salle 112.\n\nTarif : 23 euros/an\n\nLa MLC est ouverte pendant la semaine de 12 h à 21 h et le week-end de 9 h à 21 h.\n\nAdresse : 2 rue des Fleurs (devant la gare).",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "La MLC est accessible…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Uniquement aux enfants" },
+          { "id": "b", "texte": "Uniquement aux jeunes" },
+          { "id": "c", "texte": "À tout le monde", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quelle activité peut-on faire à la MLC ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Théâtre, robotique, danse, ping-pong, basket ou cuisine (une activité suffit)."
+      },
+      {
+        "enonce": "Où se trouve la radio de la MLC ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Salle 112."
+      },
+      {
+        "enonce": "Complétez le tableau.",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 0,
+        "tableau": [
+          { "label": "Tarif annuel", "reponse": "23 euros" },
+          { "label": "Heure d’ouverture en semaine", "reponse": "12 h" },
+          { "label": "Heure d’ouverture le week-end", "reponse": "9 h" },
+          { "label": "Heure de fermeture", "reponse": "21 h" }
+        ]
+      },
+      {
+        "enonce": "La MLC est devant…",
+        "type_reponse": "qcm_image",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s1/ce4-theatre.webp" },
+          { "id": "b", "image": "a1j-s1/ce4-ecole.webp" },
+          { "id": "c", "image": "a1j-s1/ce4-gare.webp", "correct": true }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

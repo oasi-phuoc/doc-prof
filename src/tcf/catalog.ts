@@ -112,6 +112,15 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     instruction: 'Écoutez le document, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
+  {
+    typeId: 'tcf-co-association',
+    competence: 'CO',
+    typeExercice: 'association_images',
+    label: 'Dialogues · situations illustrées',
+    description: 'Écouter plusieurs dialogues et noter le numéro du dialogue sous la situation (une image de trop).',
+    instruction: 'Observez les situations et écoutez les dialogues. Notez le numéro du dialogue sous l’image.',
+    reponses: [],
+  },
   // —— PE ——
   {
     typeId: 'tcf-pe-formulaire',
@@ -229,8 +238,8 @@ export const TCF_EXERCISE_TYPES: ExerciseType[] = [
     id: TCF_CONSIGNES_TYPE,
     topic: TCF_INFO_TOPIC,
     label: 'Informations du test',
-    description: 'Page d’informations : les quatre parties du test et les consignes.',
-    instruction: 'Lisez ces informations avant de commencer le test.',
+    description: 'Page d’informations : les quatre parties du test.',
+    instruction: '',
     visual: 'texte',
     preferredColumns: 1,
   },

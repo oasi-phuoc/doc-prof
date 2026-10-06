@@ -23,6 +23,7 @@ export function isTcfExerciseShape(raw: unknown): raw is TcfExercise {
   )
   if (!known || !isRecord(raw.support) || !Array.isArray(raw.questions)) return false
   if (raw.type_exercice === 'images_a_reconnaitre' && !Array.isArray(raw.images)) return false
+  if (raw.type_exercice === 'association_images' && !Array.isArray(raw.situations)) return false
   return true
 }
 
@@ -30,9 +31,14 @@ const blank = (value: string | null | undefined) => !value || !value.trim()
 
 function validateQuestion(q: TcfQuestion, label: string, errors: string[]) {
   if (blank(q.enonce)) errors.push(`${label} : l’énoncé est vide.`)
+  if (q.points != null && !(q.points > 0)) errors.push(`${label} : barème positif attendu.`)
   if (q.type_reponse === 'lignes') {
     const n = q.nb_lignes ?? 2
-    if (!Number.isInteger(n) || n < 1 || n > 12) errors.push(`${label} : nombre de lignes entre 1 et 12.`)
+    const min = q.image || q.tableau?.length ? 0 : 1
+    if (!Number.isInteger(n) || n < min || n > 12) errors.push(`${label} : nombre de lignes entre ${min} et 12.`)
+    q.tableau?.forEach((row, i) => {
+      if (blank(row.label)) errors.push(`${label}, tableau ligne ${i + 1} : libellé vide.`)
+    })
     return
   }
   const choix = q.choix
@@ -59,7 +65,10 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
   if (blank(ex.id)) errors.push('Identifiant manquant.')
 
   const usesQuestions =
-    ex.competence === 'CE' || (ex.competence === 'CO' && ex.type_exercice !== 'images_a_reconnaitre')
+    ex.competence === 'CE' ||
+    (ex.competence === 'CO' &&
+      ex.type_exercice !== 'images_a_reconnaitre' &&
+      ex.type_exercice !== 'association_images')
   if (usesQuestions) {
     if (ex.questions.length === 0) errors.push('Ajoutez au moins une question.')
     ex.questions.forEach((q, i) => validateQuestion(q, `Question ${i + 1}`, errors))
@@ -110,6 +119,24 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
     case 'complet':
       if (blank(ex.support.audio)) errors.push('Audio manquant.')
       break
+    case 'association_images': {
+      if (blank(ex.support.audio)) errors.push('Audio manquant.')
+      const n = ex.support.nb_dialogues
+      if (!Number.isInteger(n) || n < 1) errors.push('Nombre de dialogues : au moins 1.')
+      if (ex.situations.length < 2) errors.push('Au moins 2 situations.')
+      const ids = ex.situations.map((s) => s.id)
+      if (new Set(ids).size !== ids.length) errors.push('Identifiants de situations en double.')
+      ex.situations.forEach((s, i) => {
+        if (blank(s.image)) errors.push(`Situation ${i + 1} : image manquante.`)
+        if (s.dialogue != null && (s.dialogue < 1 || s.dialogue > n)) {
+          errors.push(`Situation ${i + 1} : n° de dialogue entre 1 et ${n}.`)
+        }
+      })
+      const used = ex.situations.map((s) => s.dialogue).filter((d): d is number => d != null)
+      if (new Set(used).size !== used.length) errors.push('Un même dialogue est attribué à deux situations.')
+      if (used.length < n) warnings.push(`${n - used.length} dialogue(s) sans situation : vérifiez que c’est voulu.`)
+      break
+    }
     case 'formulaire':
       if (ex.support.champs.length === 0) errors.push('Ajoutez au moins un champ.')
       ex.support.champs.forEach((c, i) => {
@@ -171,6 +198,7 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
   const images: string[] = []
   const audios: string[] = []
   ex.questions.forEach((q) => {
+    if (q.image) images.push(q.image)
     if (q.type_reponse === 'qcm_image') q.choix.forEach((c) => images.push(c.image))
   })
   switch (ex.type_exercice) {
@@ -187,6 +215,17 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
       break
     case 'complet':
       audios.push(ex.support.audio)
+      break
+    case 'association_images':
+      audios.push(ex.support.audio)
+      ex.situations.forEach((s) => images.push(s.image))
+      break
+    case 'mots_theme':
+      if (ex.support.audio) audios.push(ex.support.audio)
+      break
+    case 'dialogue':
+      if (ex.support.audio) audios.push(ex.support.audio)
+      images.push(...(ex.support.images ?? []))
       break
     case 'image_question':
     case 'image_unique':

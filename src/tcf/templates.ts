@@ -9,6 +9,7 @@ import type {
 
 /** Lettres de choix (attribuées APRÈS mélange, jamais stockées). */
 export const TCF_LETTRES = ['A', 'B', 'C', 'D'] as const
+export const TCF_LETTRES_SITUATIONS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'] as const
 export const TCF_QCM_MIN = 3
 export const TCF_QCM_MAX = 4
 export const TCF_IMAGES_A_COCHER = 5
@@ -107,6 +108,14 @@ export function emptyTcfExercise(
         competence: 'CO',
         type_exercice: 'complet',
         support: { audio: '', transcription: '' },
+      }
+    case 'association_images':
+      return {
+        ...base,
+        competence: 'CO',
+        type_exercice: 'association_images',
+        support: { audio: '', nb_dialogues: 5, transcription: '' },
+        situations: Array.from({ length: 6 }, (_, i) => ({ id: `s${i + 1}`, image: '', dialogue: null })),
       }
     case 'formulaire':
       return {

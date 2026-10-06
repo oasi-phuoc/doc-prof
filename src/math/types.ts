@@ -576,6 +576,8 @@ export type MathItem = {
   tcf?: import('@/tcf/types').TcfSheetItem
   /** Item non compté dans le total de points (support, message). */
   noPoints?: boolean
+  /** Barème propre à l’item (remplace les points par question du bloc). */
+  points?: number
 }
 
 export type CompositeLabel = {
