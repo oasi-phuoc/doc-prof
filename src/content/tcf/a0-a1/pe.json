@@ -281,5 +281,93 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 · série 3 · Club de remise en forme",
+    "consigne": "Vous voulez vous inscrire dans un club de sports. Remplissez la fiche de renseignements.",
+    "points": 10,
+    "support": {
+      "titre": "Club de remise en forme — Inscription",
+      "champs": [
+        {
+          "label": "Prénom :",
+          "type": "texte",
+          "corrige": "Réponse personnelle"
+        },
+        {
+          "label": "Adresse :",
+          "type": "texte",
+          "corrige": "Rue et numéro (ex. : rue du Lac 12)"
+        },
+        {
+          "label": "Ville :",
+          "type": "texte",
+          "corrige": "Réponse personnelle (ex. : Sion)"
+        },
+        {
+          "label": "Téléphone fixe :",
+          "type": "texte",
+          "corrige": "Un numéro de téléphone fixe (ex. : 027 123 45 67)"
+        },
+        {
+          "label": "Téléphone mobile :",
+          "type": "texte",
+          "corrige": "Un numéro de mobile (ex. : 079 123 45 67)"
+        },
+        {
+          "label": "Email :",
+          "type": "texte",
+          "corrige": "Adresse électronique complète (avec @)"
+        },
+        {
+          "label": "Date de naissance :",
+          "type": "date",
+          "corrige": "Réponse personnelle (ex. : 12.03.1990)"
+        },
+        {
+          "label": "Taille :",
+          "type": "texte",
+          "corrige": "Ex. : 1,70 m"
+        },
+        {
+          "label": "Poids :",
+          "type": "texte",
+          "corrige": "Ex. : 65 kg"
+        },
+        {
+          "label": "Sport(s) préféré(s) :",
+          "type": "texte",
+          "corrige": "Ex. : la natation, le football"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 · série 3 · Vacances entre amis",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 15,
+    "support": {
+      "consigne": "Vous êtes en vacances chez des amis. Vous écrivez un courriel à un(e) ami(e). Écrivez un message de 40 mots.",
+      "nb_mots": {
+        "min": 40
+      },
+      "email": {
+        "a": "monami@email.com",
+        "objet": "Vacances entre amis"
+      },
+      "reponse_modele": "Salut Karim,\nComment vas-tu ? Moi, je vais très bien. Je suis en vacances à Lausanne chez mes amis Sara et Yonas. Le matin, nous nous promenons au bord du lac. L’après-midi, nous faisons du vélo ou nous visitons des musées. Le soir, nous cuisinons ensemble.\nÀ bientôt,\nMariam"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous prenez de ses nouvelles.\nVous lui dites avec qui vous êtes.\nVous lui décrivez les activités que vous faites."
   }
 ]

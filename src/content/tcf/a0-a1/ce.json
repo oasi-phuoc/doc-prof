@@ -1315,5 +1315,393 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Test blanc A1 · série 3 · Le message de Léa",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "de": "lea.gould@gen.com",
+      "a": "Vous",
+      "objet": "Ce week-end",
+      "texte": "Salut,\nÇa va ? Je ne peux pas venir jouer au badminton jeudi soir parce que j’ai une réunion de travail.\nDimanche, mes deux frères viennent à la maison. Tu veux manger avec nous ? Rendez-vous à midi. Après, nous allons à la piscine.\nAppelle-moi vendredi, avant 20 h.\nBises,\nLéa"
+    },
+    "questions": [
+      {
+        "enonce": "Quel jour Léa est-elle indisponible ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Jeudi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Vendredi"
+          },
+          {
+            "id": "c",
+            "texte": "Dimanche"
+          }
+        ]
+      },
+      {
+        "enonce": "Pourquoi Léa est-elle indisponible ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s3/ce1-malade.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s3/ce1-reunion.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-s3/ce1-panne.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Qui vient chez Léa ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Ses deux frères."
+      },
+      {
+        "enonce": "À quelle heure avez-vous rendez-vous avec Léa ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À midi."
+      },
+      {
+        "enonce": "Dimanche, quelle activité Léa vous propose-t-elle de faire ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s3/ce1-athletisme.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s3/ce1-velo.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s3/ce1-natation.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 3 · Recherche chien",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "titre": "Recherche chien",
+      "texte": "Je recherche mon chien, perdu le jeudi 8 août. Il s’appelle Sammy. Il a 4 ans.\nIl est noir et blanc, il porte un collier rouge et marron.\n\nSi vous trouvez mon chien, appelez-moi au 06 78 26 03 29.\nSi vous voulez l’apporter chez moi, voici mon adresse : 4 impasse des Jacinthes.\nQuand vous partez de la place Foch, il faut prendre la rue de la Poterne, puis tourner à droite après le stade de foot. J’habite dans la 2e rue à gauche, dans la maison verte près de la piscine.\n\nMerci pour votre aide,\nDanièle",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quel animal Danièle cherche-t-elle ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s3/ce2-chat.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s3/ce2-canari.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s3/ce2-chien.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Depuis quand Danièle cherche-t-elle Sammy ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le 4 août"
+          },
+          {
+            "id": "b",
+            "texte": "Le 6 août"
+          },
+          {
+            "id": "c",
+            "texte": "Le 8 août",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "De quelle couleur est l’animal ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Noir et blanc."
+      },
+      {
+        "enonce": "Comment pouvez-vous contacter Danièle ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par SMS"
+          },
+          {
+            "id": "b",
+            "texte": "Par appel téléphonique",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Par message électronique"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel trajet devez-vous choisir ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Rue de la Poterne, puis stade de foot, puis rue des Jacinthes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Place Foch, puis stade de foot, puis rue de la Poterne"
+          },
+          {
+            "id": "c",
+            "texte": "Rue des Jacinthes, puis place Foch, puis rue de la Poterne"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Test blanc A1 · série 3 · La visite des clients",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "de": "directeur@creativite.fr",
+      "a": "Vous",
+      "objet": "Visite du 03/12",
+      "texte": "Bonjour,\nSix clients étrangers visitent notre entreprise le mercredi 3 décembre. Voici le programme :\n– 9 h 00 - 10 h 00 : présentation de l’entreprise dans la grande salle de réunion\n– 10 h 00 - 10 h 30 : pause (café et croissants servis dans la salle de pause)\n– 10 h 30 - 11 h 15 : visite des bureaux\n– 11 h 15 - 12 h 00 : visite des ateliers\n– 12 h 00 - 14 h 00 : déjeuner au Septime\n– 14 h 00 - 16 h 30 : présentation de nos nouveaux produits.\nPouvez-vous faire la visite des bureaux après la pause-café ?\nMonsieur Funès va faire la visite guidée des ateliers.\nMerci.\nCordialement,\nM. Django\nDirecteur"
+    },
+    "questions": [
+      {
+        "enonce": "À quelle date est la visite ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le mercredi 3 décembre."
+      },
+      {
+        "enonce": "Où est la présentation de l’entreprise ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans les ateliers"
+          },
+          {
+            "id": "b",
+            "texte": "Dans les bureaux"
+          },
+          {
+            "id": "c",
+            "texte": "Dans la salle de réunion",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous pouvez boire pendant la pause ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Du café."
+      },
+      {
+        "enonce": "À quelle heure finit la présentation des nouveaux produits ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 16 h 30."
+      },
+      {
+        "enonce": "Le directeur vous demande de faire visiter…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "l’atelier"
+          },
+          {
+            "id": "b",
+            "texte": "les bureaux",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "la salle de pause"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 3 · Le petit-déjeuner équilibré",
+    "consigne": "Lisez cet article et répondez aux questions.",
+    "support": {
+      "titre": "Conseils pour un petit-déjeuner équilibré",
+      "texte": "Prenez votre petit-déjeuner chaque matin, à la même heure. Si vous n’avez pas faim, mettez des biscuits ou un fruit dans votre sac, et mangez-les avant de travailler.\n\nLe matin, si vous n’avez pas le temps, vous pouvez préparer un bol de lait aux céréales. C’est un petit-déjeuner rapide, mais pas équilibré.\n\nVoici un exemple de petit-déjeuner équilibré :\n– un verre de lait ou un yaourt (pour les protéines) ;\n– un fruit ou un verre de jus de fruits (pour la vitamine C) ;\n– du pain grillé ou des céréales ;\n– une boisson chaude : du thé (avec du miel) ou du café.\n\nBon appétit !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "De quoi parle cet article ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "D’une recette de cuisine"
+          },
+          {
+            "id": "b",
+            "texte": "D’avis sur certains aliments"
+          },
+          {
+            "id": "c",
+            "texte": "De conseils pour bien manger",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Pour manger rapidement, qu’est-ce que vous pouvez préparer ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "De la confiture"
+          },
+          {
+            "id": "b",
+            "texte": "Un bol de céréales",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Une salade de fruits"
+          }
+        ]
+      },
+      {
+        "enonce": "Que pouvez-vous manger avant le travail ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s3/ce4-biscuits.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-s3/ce4-chocolat.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s3/ce4-laitages.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Dans quel aliment y a-t-il des protéines ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le café"
+          },
+          {
+            "id": "b",
+            "texte": "Les fruits"
+          },
+          {
+            "id": "c",
+            "texte": "Le yaourt",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Dans quel aliment y a-t-il de la vitamine C ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Dans les fruits ou le jus de fruits."
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

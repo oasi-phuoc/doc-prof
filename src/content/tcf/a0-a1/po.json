@@ -656,5 +656,154 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-po-1",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Test blanc A1 · série 3 · Entretien dirigé",
+    "consigne": "Entretien dirigé. Répondez aux questions du professeur sur vous, votre famille, vos goûts et vos activités.",
+    "points": 4,
+    "support": {
+      "theme": "Vous, votre famille, vos goûts et vos activités",
+      "mots": [
+        "Vous",
+        "Votre famille",
+        "Vos goûts",
+        "Vos activités"
+      ],
+      "exemples_questions": [
+        "Bonjour ! Comment vous appelez-vous ? Comment ça s’écrit ?",
+        "Quel âge avez-vous ? Quelle est votre date de naissance ?",
+        "De quel pays venez-vous ? Quelles langues parlez-vous ?",
+        "Où habitez-vous ? Avec qui ?",
+        "Vous avez des frères et sœurs ? Parlez-moi de votre famille.",
+        "Quel est votre métier ? Quel métier voulez-vous faire ?",
+        "Quel sport aimez-vous ? Vous faites du sport ?",
+        "Qu’est-ce que vous prenez au petit-déjeuner ?",
+        "Que faites-vous pendant vos vacances ?",
+        "Que faites-vous le week-end avec vos amis ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-po-2",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 · série 3 · Au café",
+    "consigne": "Décrivez les images.",
+    "points": 4,
+    "support": {
+      "image": "a1-s3/po2-cafe.webp",
+      "questions": [
+        "Que voyez-vous ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qui se passe ici ?"
+      ],
+      "reponse_modele": "Je vois une jeune femme et un serveur. Ils sont sur la terrasse d’un café. Sur l’image 1, la femme appelle le serveur et elle commande. Sur l’image 2, le serveur apporte une tasse de café. Sur l’image 3, il apporte un gâteau. Sur l’image 4, la femme paie avec sa carte bancaire."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-po-3",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 · série 3 · Sur la terrasse d’un café",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du serveur.",
+    "points": 8,
+    "support": {
+      "situation": "Vous êtes sur la terrasse d’un café. Vous posez des questions sur les prix des boissons. Vous choisissez et vous payez.",
+      "images": [
+        "a1-s3/po3-chocolat-chaud.webp",
+        "a1-s3/po3-cafe.webp",
+        "a1-s3/po3-the.webp",
+        "a1-s3/po3-smoothie.webp"
+      ],
+      "grille": {
+        "points": 9,
+        "criteres": [
+          "Lexique",
+          "Morphosyntaxe",
+          "Phonologie"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, qu’est-ce que je vous sers ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Qu’est-ce que vous avez comme boissons ?",
+          "variantes": [
+            "Bonjour, je peux voir la carte des boissons, s’il vous plaît ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons du chocolat chaud, du café, du thé et des smoothies aux fruits rouges."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien coûte un chocolat chaud ? Et un smoothie ?",
+          "variantes": [
+            "C’est combien, le thé ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le chocolat chaud coûte 5 francs et le smoothie 7 francs. Le café et le thé coûtent 4 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je vais prendre un chocolat chaud, s’il vous plaît.",
+          "variantes": [
+            "Je voudrais un thé au citron, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Vous désirez autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, un verre d’eau, s’il vous plaît. C’est combien en tout ?",
+          "variantes": [
+            "Non, merci. Je vous dois combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 5 francs, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je peux payer par carte ?",
+          "variantes": [
+            "Voilà 10 francs."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Merci et bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !",
+          "variantes": [
+            "Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]

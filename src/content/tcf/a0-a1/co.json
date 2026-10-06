@@ -1035,5 +1035,351 @@
       { "id": "i5", "image": "a1-s2/co5-lait.webp", "correct": true }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 3 · L’anniversaire de Gérard",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s3/co1.mp3",
+      "transcription": "Salut, c’est Gérard. Tu veux venir au restaurant mercredi soir pour mon anniversaire ? Charline et Anthony m’accompagnent. On a rendez-vous à 20 h 00. Je peux passer te chercher à 19 h 40. Le menu est à 16 euros. Rappelle-moi aujourd’hui au 07 58 58 81 90. Bisous !"
+    },
+    "questions": [
+      {
+        "enonce": "Où est-ce que Gérard vous propose d’aller ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s3/co1-terrasse.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s3/co1-restaurant.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-s3/co1-maison.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Gérard souhaite vous voir pour fêter…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Son anniversaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "L’obtention de son diplôme"
+          },
+          {
+            "id": "c",
+            "texte": "L’achat de son nouvel appartement"
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure Gérard vient-il vous chercher ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "19 h 40",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "20 h 00"
+          },
+          {
+            "id": "c",
+            "texte": "20 h 10"
+          }
+        ]
+      },
+      {
+        "enonce": "Combien coûte le menu ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "16 euros."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 3 · La météo en Belgique",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s3/co2.mp3",
+      "transcription": "Aujourd’hui, le vent souffle sur la Belgique, environ 25 km par heure sur tout le pays. Le soleil brille, mais il y a des nuages à l’est. Ce matin, il fait 11 degrés à Bruxelles et à Liège, 12 degrés à Namur, 13 degrés à Anvers et 10 degrés à Ostende. La qualité de l’air est bonne."
+    },
+    "questions": [
+      {
+        "enonce": "À quelle vitesse souffle le vent ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "11 km/h"
+          },
+          {
+            "id": "b",
+            "texte": "13 km/h"
+          },
+          {
+            "id": "c",
+            "texte": "25 km/h",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Ce matin, quel temps fait-il en Belgique ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s3/co2-meteo-a.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s3/co2-meteo-b.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s3/co2-meteo-c.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Dans quelle ville fait-il 12 °C ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Anvers"
+          },
+          {
+            "id": "b",
+            "texte": "Namur",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Liège"
+          }
+        ]
+      },
+      {
+        "enonce": "Comment est la qualité de l’air ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Elle est bonne."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 3 · Le code de l’immeuble",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s3/co3.mp3",
+      "transcription": "Bonjour, ici Mme Pierrette, la propriétaire. À partir de la semaine prochaine, les locataires doivent taper un code pour entrer dans l’immeuble. Vous devez taper le 51 89. Si vous oubliez votre code, demandez-le à Mme Raymond, la gardienne de l’immeuble. Elle est disponible tous les matins, du lundi au vendredi, de 9 h à midi et demi, sauf le mercredi. Bonne journée. Au revoir."
+    },
+    "questions": [
+      {
+        "enonce": "À partir de quand devez-vous utiliser un code ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Demain"
+          },
+          {
+            "id": "b",
+            "texte": "La semaine prochaine",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Le mois prochain"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel est le numéro du code ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "41 89"
+          },
+          {
+            "id": "b",
+            "texte": "51 89",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "61 89"
+          }
+        ]
+      },
+      {
+        "enonce": "Qui est Mme Raymond ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "La gardienne de l’immeuble."
+      },
+      {
+        "enonce": "Quel jour Mme Raymond est-elle indisponible ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le lundi"
+          },
+          {
+            "id": "b",
+            "texte": "Le mercredi",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Le vendredi"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 · série 3 · Petits dialogues",
+    "consigne": "Observez les situations et écoutez les 4 dialogues. Notez le numéro du dialogue (1 à 4) sous l’image. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1-s3/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Attention, Marine, c’est mon verre ! — Pardon ? — Tu es en train de boire mon jus d’orange. — Je suis désolée.\n\nDialogue 2 — Où sont les yaourts, s’il vous plaît ? — Dans le rayon frais, au fond du magasin. — Merci, monsieur.\n\nDialogue 3 — Il va faire beau cet après-midi. — Oui, j’ai écouté la météo. Il va faire 30 degrés. — Vraiment ? Je vais aller à la piscine, alors.\n\nDialogue 4 — Je suis en forme aujourd’hui. Je veux courir 10 km. — 10 km ? Mais tu es fou ? — Non, je ne suis pas fou. Je suis motivé."
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1-s3/co4-situation-a.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s2",
+        "image": "a1-s3/co4-situation-b.webp",
+        "dialogue": 2
+      },
+      {
+        "id": "s3",
+        "image": "a1-s3/co4-situation-c.webp",
+        "dialogue": 3
+      },
+      {
+        "id": "s4",
+        "image": "a1-s3/co4-situation-d.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s5",
+        "image": "a1-s3/co4-situation-e.webp",
+        "dialogue": 4
+      },
+      {
+        "id": "s6",
+        "image": "a1-s3/co4-situation-f.webp",
+        "dialogue": null
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s3-co-5",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Test blanc A1 · série 3 · Le sport à la maison",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "a1-s3/co5.mp3"
+    },
+    "questions": [],
+    "melanger": false,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "a1-s3/co5-bandeau.webp",
+        "correct": false
+      },
+      {
+        "id": "i2",
+        "image": "a1-s3/co5-corde-a-sauter.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "a1-s3/co5-tapis.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "a1-s3/co5-salle-sport.webp",
+        "correct": true
+      },
+      {
+        "id": "i5",
+        "image": "a1-s3/co5-barre-traction.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
