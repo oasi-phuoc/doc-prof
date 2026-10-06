@@ -1,1 +1,464 @@
-[]
+[
+  {
+    "id": "tcf-a2j-s1-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior · série 1 · Annonces dans des lieux publics",
+    "consigne": "Vous allez écouter des annonces dans des lieux publics. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2j-s1/co1.mp3",
+      "transcription": "Annonce 1 — Le spectacle va bientôt commencer. Merci de présenter votre billet à l’hôtesse, puis d’entrer dans la salle. Fermeture des portes dans 10 minutes.\n\nAnnonce 2 — La ligne 9 du métro est fermée pour travaux ce week-end. Des bus de remplacement circulent gratuitement de samedi 7 h à dimanche 23 h.\n\nAnnonce 3 — Chers élèves, bienvenue au musée de la Mer. Nous allons commencer par visiter l’exposition sur les bateaux. Attention, vous ne pouvez pas prendre de photos.\n\nAnnonce 4 — Aujourd’hui, notre librairie est en fête. Gagnez des dizaines de livres en répondant à des questions. Pour jouer, inscrivez-vous à l’accueil, derrière les caisses du magasin.\n\nAnnonce 5 — Bienvenue au parc Aquatica. Avant d’accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire.\n\nAnnonce 6 — Le zoo est ouvert jusqu’à 20 h. À 10 h, venez voir les bébés girafes. À 11 h, c’est le repas des lions. Et à 14 h, venez voir danser les dauphins."
+    },
+    "questions": [
+      {
+        "enonce": "Annonce 1 — Que devez-vous faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co1-billets-guichet.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co1-billets-hotesse.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co1-serveuse.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 2 — On vous propose de prendre quel moyen de transport ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co1-bus.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co1-metro.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co1-tram.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 3 — En premier lieu, vous allez visiter…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "un aquarium marin"
+          },
+          {
+            "id": "b",
+            "texte": "un musée de photos"
+          },
+          {
+            "id": "c",
+            "texte": "une exposition de bateaux",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 4 — On vous propose…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de participer à un jeu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "d’obtenir la carte du magasin"
+          },
+          {
+            "id": "c",
+            "texte": "d’acheter des livres moins chers"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 5 — Que faut-il faire en premier ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "mettre un bonnet"
+          },
+          {
+            "id": "b",
+            "texte": "prendre une douche"
+          },
+          {
+            "id": "c",
+            "texte": "changer de vêtements",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 6 — Que pouvez-vous voir à 11 heures ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co1-girafes.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co1-lion.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co1-dauphins.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s1-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior · série 1 · Annonces à la radio",
+    "consigne": "Vous entendez ces annonces à la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2j-s1/co2.mp3",
+      "transcription": "Document 1 — Le festival à Léop commence vendredi. Vous pourrez écouter des groupes de rock, de pop, de jazz et de musique électronique tous les soirs à 20 h sur la place Saint-Exupéry. Vous pouvez prendre vos places sur le site www.festivaleop.fr.\n\nDocument 2 — La ville organise le concours de photos « J’adore ma ville ». Pour participer, vous devez envoyer avant le 10 juin une photo de votre lieu préféré dans la ville. Vous pouvez gagner un magnifique appareil photo numérique.\n\nDocument 3 — À l’occasion de la Journée internationale des animaux, l’association Sauver la nature organise une grande manifestation samedi à 14 h devant la place de l’Hôtel de ville. De nombreuses animations auront lieu toute la journée."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Dans le festival, vous pouvez écouter…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de la salsa"
+          },
+          {
+            "id": "b",
+            "texte": "de la musique classique"
+          },
+          {
+            "id": "c",
+            "texte": "du rock",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 1 — À quelle heure commencent les concerts ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 20 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À 21 heures"
+          },
+          {
+            "id": "c",
+            "texte": "À 22 heures"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Quelle est la date limite pour participer ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le 10 juin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le 11 juin"
+          },
+          {
+            "id": "c",
+            "texte": "Le 12 juin"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Qu’est-ce que vous pouvez gagner ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co2-camera.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co2-appareil-photo.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co2-chevalet.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Quand est la manifestation ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Jeudi"
+          },
+          {
+            "id": "b",
+            "texte": "Vendredi"
+          },
+          {
+            "id": "c",
+            "texte": "Samedi",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Où est l’événement ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co2-chenil.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co2-hotel-de-ville.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co2-stade.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s1-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior · série 1 · Message sur le répondeur",
+    "consigne": "Vous allez écouter un message sur un répondeur. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2j-s1/co3.mp3",
+      "transcription": "Bonjour, ici le secrétariat du docteur Ladent. Je vous informe que le rendez-vous de Béatrice du vendredi 18 avril à 17 h est annulé, car le dentiste sera absent du 15 au 19 avril. Pourriez-vous me rappeler au 02 58 62 35 87, au cabinet du docteur, pour prendre un autre rendez-vous ? Le secrétariat est ouvert tous les jours de 10 h à 13 h, sauf le dimanche. J’attends votre appel. Bonne journée !"
+    },
+    "questions": [
+      {
+        "enonce": "Qui a laissé un message ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Béatrice"
+          },
+          {
+            "id": "b",
+            "texte": "Le docteur Ladent"
+          },
+          {
+            "id": "c",
+            "texte": "La secrétaire du docteur",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle information donne-t-on ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le rendez-vous est annulé",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le rendez-vous est le 18 avril"
+          },
+          {
+            "id": "c",
+            "texte": "Le rendez-vous est vendredi à 17 heures"
+          }
+        ]
+      },
+      {
+        "enonce": "Du 15 au 19 avril…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le dentiste est absent",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "le dentiste est disponible"
+          },
+          {
+            "id": "c",
+            "texte": "vous pouvez appeler le secrétariat"
+          }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co3-email.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co3-sms.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co3-telephone.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Le secrétariat est ouvert du lundi au…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "vendredi"
+          },
+          {
+            "id": "b",
+            "texte": "samedi",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "dimanche"
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure pouvez-vous aller au secrétariat ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/co3-11h.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/co3-14h.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/co3-17h.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s1-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior · série 1 · Conversations à l’école",
+    "consigne": "Vous entendez ces conversations à l’école. Associez chaque dialogue à la bonne situation. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "support": {
+      "audio": "a2j-s1/co4.mp3",
+      "transcription": "Dialogue 1 — Salut ! Tu as vu la prof de maths ? Je dois lui donner un document. — Oui, elle est dans la salle des professeurs. — Ah, très bien, merci, j’y vais.\n\nDialogue 2 — Salut Pauline, tu vas au cours de tennis ce soir ? — Oui, à 18 h. — On y va ensemble ? — D’accord, avec plaisir.\n\nDialogue 3 — Bonjour, madame, je voudrais savoir combien coûte la sortie au musée mercredi. — C’est 2 euros pour les moins de 15 ans. — Et comment je fais pour m’inscrire ? — Tu dois demander à tes parents de remplir cette fiche.\n\nDialogue 4 — Il y a des frites ce midi à la cantine. J’adore ça ! — Moi aussi. Et de la glace en dessert. — Super, on va se régaler !"
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Proposer d’accompagner quelqu’un — B. Exprimer ses goûts — C. Demander des informations — D. S’excuser — E. Proposer de l’aide — F. Chercher quelqu’un",
+        "type_reponse": "lignes",
+        "points": 7,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (2 points)",
+            "reponse": "F. Chercher quelqu’un"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "A. Proposer d’accompagner quelqu’un"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "C. Demander des informations"
+          },
+          {
+            "label": "Dialogue 4 (1 point)",
+            "reponse": "B. Exprimer ses goûts"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  }
+]

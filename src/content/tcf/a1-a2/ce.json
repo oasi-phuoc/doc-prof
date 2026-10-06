@@ -1,1 +1,428 @@
-[]
+[
+  {
+    "id": "tcf-a2j-s1-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 Junior · série 1 · Jeux d’évasion",
+    "consigne": "Vous voulez participer à un jeu d’évasion avec vos amis. Vous lisez les résumés des jeux. Quels jeux allez-vous proposer à vos amis ? Attention : il y a huit personnes mais seulement six documents.",
+    "support": {
+      "titre": "Jeux d’évasion",
+      "texte": "Jeu 1 — Vous êtes au Caire. Arriverez-vous à sortir des pyramides en moins d’une heure ? Pour réussir, vous devrez faire preuve de courage et résoudre la grande énigme de Toutankhamon.\n\nJeu 2 — Vous êtes enfermés dans le château de Versailles au temps de Louis XIV. Pour trouver la clé et sortir du château, vous devrez être très intelligents. Êtes-vous prêts pour l’aventure ?\n\nJeu 3 — Le célèbre inspecteur Sherlock Holmes vous demande de l’aide pour cette enquête. La couronne de la reine a disparu ! Vous avez une heure pour la retrouver.\n\nJeu 4 — Vivez un jeu d’évasion unique dans un vrai château avec une histoire qui fait peur. Monstres, vampires et morts-vivants veulent vous attraper. Vous avez une heure pour sortir !\n\nJeu 5 — Après un accident, vous êtes seuls dans un sous-marin au fond de l’océan. Il reste des bouteilles d’oxygène pour 60 minutes. Trouvez vite un moyen de réparer la machine !\n\nJeu 6 — Vous êtes en 2075 dans une école ultra-moderne. Vous êtes enfermés dans une salle de classe. Dans une heure, des robots très dangereux vont se réveiller. Vous devez trouver une solution pour sortir.\n\nVos amis :\nA. Sophia adore les histoires d’horreur.\nB. Gaétan aime beaucoup l’Antiquité grecque.\nC. Charles est passionné par l’histoire de France.\nD. Maxime s’intéresse à l’Égypte.\nE. Léa adore la mer et pratique la plongée sous-marine.\nF. Emma aime les histoires qui se passent dans le futur.\nG. Marion rêve de travailler dans la police.\nH. Joan est passionné de théâtre.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour chaque jeu, écrivez la lettre de l’ami·e à qui vous le proposez (1 point par jeu).",
+        "type_reponse": "lignes",
+        "points": 6,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Jeu 1",
+            "reponse": "D. Maxime"
+          },
+          {
+            "label": "Jeu 2",
+            "reponse": "C. Charles"
+          },
+          {
+            "label": "Jeu 3",
+            "reponse": "G. Marion"
+          },
+          {
+            "label": "Jeu 4",
+            "reponse": "A. Sophia"
+          },
+          {
+            "label": "Jeu 5",
+            "reponse": "E. Léa"
+          },
+          {
+            "label": "Jeu 6",
+            "reponse": "F. Emma"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s1-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Test blanc A2 Junior · série 1 · L’invitation de Maxime",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "de": "max12b@oal.com",
+      "a": "Vous",
+      "objet": "Invitation",
+      "texte": "Salut !\nJ’espère que tu vas bien. Ça fait longtemps qu’on ne s’est pas vus !!! Je vais fêter mon anniversaire samedi prochain. Tu es libre ? J’organise une petite fête à 17 h chez moi, avec ma famille et quelques amis. Ma grande sœur sera là, tu sais, celle qui étudie à Londres. Elle est venue spécialement pour me voir ! Je suis trop content ! Ensuite, on ira au Moov’up vers 21 h avec les copains du collège. C’est une discothèque pour ados, il y a de la super musique. On va rentrer à minuit. Si tu veux, tu peux dormir à la maison.\nJ’espère que tu vas venir ! Réponds-moi vite !\nCiao\nMaxime"
+    },
+    "questions": [
+      {
+        "enonce": "Maxime vous invite à une fête pour…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "son anniversaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "la fin d’année"
+          },
+          {
+            "id": "c",
+            "texte": "son retour de vacances"
+          }
+        ]
+      },
+      {
+        "enonce": "Où commence la fête ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au collège"
+          },
+          {
+            "id": "b",
+            "texte": "Dans un karaoké"
+          },
+          {
+            "id": "c",
+            "texte": "Chez Maxime",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "La grande sœur de Maxime va…",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "venir à la fête",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "rester à Londres"
+          },
+          {
+            "id": "c",
+            "texte": "partir en voyage"
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que le Moov’up ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/ce2-discotheque.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/ce2-bowling.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/ce2-cinema.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure allez-vous rentrer ?",
+        "type_reponse": "qcm_image",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s1/ce2-17h.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s1/ce2-22h.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s1/ce2-minuit.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s1-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 Junior · série 1 · En vacances chez un ami",
+    "consigne": "Vous êtes en vacances chez un ami. Lisez les documents et répondez aux questions.",
+    "support": {
+      "titre": "Trois documents dans la maison",
+      "texte": "Document 1 — Règles dans la salle de bains…\n1. Ne pas laisser couler l’eau dans la douche pendant le savonnage et se rincer rapidement.\n2. Laisser la douche propre.\n3. Vider la poubelle chaque mercredi soir.\n4. Ne pas laisser traîner de vêtements sales.\n5. Ranger correctement les serviettes sur le radiateur pour les faire sécher. Quand une serviette est sale, la mettre dans la machine à laver au sous-sol. Des serviettes propres sont rangées dans le placard.\nMerci !\n\nDocument 2 — Bonjour,\nJe suis déjà partie au travail. Pour le petit-déjeuner, il y a du pain dans la boîte à côté du four et des céréales dans le placard. Le lait est dans le frigo. Il y a aussi des fruits, ils viennent du marché, ils sont très bons !\nPourriez-vous aller au supermarché pour acheter du beurre et des œufs ? Merci beaucoup ! Je passerai à la boulangerie pour prendre du pain avant de rentrer.\nBonne journée,\nAnna\n\nDocument 3 — Comment utiliser le four ?\n• Pour allumer le four, appuyer sur le bouton rouge en haut.\n• Choisir la température avec le bouton + ou –.\n• Choisir la position de cuisson avec le bouton blanc : « chaleur tournante », « traditionnel » ou « grill ».\n• Vous pouvez régler la minuterie (bouton « horloge ») pour définir un temps de cuisson. Il y a 2 options :\n– option « sonnerie » : le four sonne quand la minuterie arrive à zéro, mais la cuisson continue ;\n– option « arrêt » : le four s’arrête tout seul quand la minuterie arrive à zéro.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Que faut-il faire quand on a fini de se doucher ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Nettoyer la douche",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Descendre le linge sale"
+          },
+          {
+            "id": "c",
+            "texte": "Prendre une serviette propre"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 1 — Où faut-il mettre les serviettes sales ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au sous-sol",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Sur le radiateur"
+          },
+          {
+            "id": "c",
+            "texte": "Dans le placard"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Qu’est-ce qui est à côté du four ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le lait"
+          },
+          {
+            "id": "b",
+            "texte": "Le pain",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Les céréales"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Où devez-vous aller ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au marché"
+          },
+          {
+            "id": "b",
+            "texte": "À la boulangerie"
+          },
+          {
+            "id": "c",
+            "texte": "Au supermarché",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Sur quel bouton faut-il appuyer pour choisir le type de cuisson ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le bouton + ou –"
+          },
+          {
+            "id": "b",
+            "texte": "Le bouton blanc",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Le bouton rouge"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Le four s’éteint tout seul quand…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "vous choisissez l’option « arrêt »",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "vous réglez la minuterie sur zéro"
+          },
+          {
+            "id": "c",
+            "texte": "vous appuyez sur le bouton « horloge »"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s1-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 Junior · série 1 · La fête de la Nature",
+    "consigne": "Vous êtes en vacances chez un ami français. Lisez le document et répondez aux questions.",
+    "support": {
+      "titre": "La fête de la Nature",
+      "texte": "Du 22 au 26 mai, dans de nombreuses villes de France, a lieu la douzième fête de la Nature.\n\nLa fête de la Nature, ce sont des manifestations pour tous, petits et grands, sur le thème de la nature : la forêt, le ciel, la mer, la campagne et les océans. On fait de grandes chasses au trésor, des promenades à travers les forêts et les parcs naturels, on observe le ciel, on visite des expositions, on observe des fleurs, des animaux, etc.\n\nÀ Mont-Bernanchon, vous pouvez observer les abeilles et goûter leur miel ! À Paris, une grande chasse au trésor est organisée pour les enfants. À Coubron, vous pouvez observer les oiseaux migrateurs et écouter leur chant.\n\nEt chez vous… ? Cherchez si la fête a lieu près de chez vous, choisissez la manifestation qui vous plaît et inscrivez-vous en ligne, c’est gratuit !\n\nInformations : https://fetedelanature.com/ ou 0820 14 78 96",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Où a lieu la fête de la Nature ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "En France",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "En Europe"
+          },
+          {
+            "id": "c",
+            "texte": "Dans le monde"
+          }
+        ]
+      },
+      {
+        "enonce": "C’est la première fois que la fête de la Nature a lieu. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Faux : c’est la douzième fête de la Nature."
+      },
+      {
+        "enonce": "À qui s’adresse la fête de la Nature ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À tout le monde",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Aux habitants des villes"
+          },
+          {
+            "id": "c",
+            "texte": "Aux habitants des campagnes"
+          }
+        ]
+      },
+      {
+        "enonce": "Il y a des activités spéciales pour les enfants. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Vrai : à Paris, une grande chasse au trésor est organisée pour les enfants."
+      },
+      {
+        "enonce": "Que peut-on faire à Coubron ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Manger du miel"
+          },
+          {
+            "id": "b",
+            "texte": "Regarder les oiseaux",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Se promener en forêt"
+          }
+        ]
+      },
+      {
+        "enonce": "Pour participer aux événements, il faut…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "payer sur place"
+          },
+          {
+            "id": "b",
+            "texte": "s’inscrire sur Internet",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "téléphoner pour réserver"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  }
+]
