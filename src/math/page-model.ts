@@ -59,6 +59,9 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     calliText: page.calliText,
     calliFont: page.calliFont,
     calliSize: page.calliSize,
+    tcfExercise: page.tcfExercise,
+    tcfBankId: page.tcfBankId,
+    tcfDureeMin: page.tcfDureeMin,
   }
 }
 

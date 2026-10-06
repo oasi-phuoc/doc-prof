@@ -19,10 +19,14 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
   { id: 'soutien-fr', label: 'Soutien FR' },
 ]
 
-/** Tous les domaines sélectionnables (TCM inclus). */
+/** Domaines réservés au compte admin (tests TCM / TCF). */
+export const ADMIN_ONLY_DOMAINS: readonly Domain[] = ['tcm', 'tcf']
+
+/** Tous les domaines sélectionnables (TCM et TCF inclus, sous TCM). */
 export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   ...REGULAR_DOMAIN_OPTIONS,
   { id: 'tcm', label: 'TCM' },
+  { id: 'tcf', label: 'TCF' },
 ]
 
 const REGULAR_DOMAIN_IDS: Domain[] = REGULAR_DOMAIN_OPTIONS.map((d) => d.id)
@@ -61,7 +65,7 @@ function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] 
   return domains.length > 0 ? domains : [...fallback]
 }
 
-/** Domaines FULL / PARTIAL : jamais TCM (réservé admin). */
+/** Domaines FULL / PARTIAL : jamais TCM ni TCF (réservés admin). */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   const list =
     account === 'full'
@@ -70,7 +74,7 @@ function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
           'algèbre',
           'géométrie',
         ])
-  return list.filter((d) => d !== 'tcm')
+  return list.filter((d) => !ADMIN_ONLY_DOMAINS.includes(d))
 }
 
 function adminDomainsFromEnv(): Domain[] {
@@ -115,5 +119,6 @@ export function domainsForAccount(account: AccessAccount | null): Domain[] {
 }
 
 export function accountCanAccessDomain(account: AccessAccount | null, domain: Domain): boolean {
+  if (ADMIN_ONLY_DOMAINS.includes(domain) && account !== 'admin') return false
   return domainsForAccount(account).includes(domain)
 }

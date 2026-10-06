@@ -8,6 +8,7 @@ import { CALLI_LIBRE_TOPIC, calligraphieTopics as calliTopicList } from '@/calli
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
+import { TCF_EXERCISE_TYPES, TCF_TOPICS } from '@/tcf/catalog'
 
 export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
   { id: 'voc', label: 'Voc' },
@@ -25,6 +26,7 @@ const FRENCH_TOPIC_ENTRIES: Topic[] = VOCAB_TOPIC_META.map((meta) => ({
 export const topics: Topic[] = [
   ...FRENCH_TOPIC_ENTRIES,
   { id: 'tcm-info', label: 'Informations', domain: 'tcm' },
+  ...TCF_TOPICS,
   { id: 'glossaire-algebre', label: 'Glossaire', domain: 'algèbre' },
   { id: 'nombres', label: 'Nombres naturels', domain: 'algèbre' },
   { id: 'addition', label: 'Additions', domain: 'algèbre' },
@@ -89,6 +91,8 @@ export const soutienFrTopics = topics.filter((topic) => topic.domain === 'soutie
 export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
+/** TCF : un thème par compétence (CE, CO, PE, PO). */
+export const tcfTopics = topics.filter((topic) => topic.domain === 'tcf')
 /** Thèmes maths utilisables dans le TCM (intro + algèbre + géométrie). */
 export const tcmTopics = [
   ...topics.filter((topic) => topic.domain === 'tcm'),
@@ -766,6 +770,7 @@ export const exerciseTypes: ExerciseType[] = [
     'texte',
     { preferredColumns: 1 },
   ),
+  ...TCF_EXERCISE_TYPES,
 ]
 
 const VOWEL_TOPICS = [
@@ -1174,14 +1179,16 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                 ? CALLI_LIBRE_TOPIC
                 : domain === 'soutien-fr'
                   ? 'soutien-a'
-                  : 'voyelle-a'
+                  : domain === 'tcf'
+                    ? 'tcf-ce'
+                    : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const type = firstTypeFor(domain)
   const count =
-    domain === 'jeux' || domain === 'calligraphie'
+    domain === 'jeux' || domain === 'calligraphie' || domain === 'tcf'
       ? 1
       : domain === 'lecture' || domain === 'soutien-fr' || domain === 'gattegno'
         ? 6

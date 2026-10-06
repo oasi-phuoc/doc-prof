@@ -8,6 +8,7 @@ export type Domain =
   | 'jeux'
   | 'calligraphie'
   | 'tcm'
+  | 'tcf'
 
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =
@@ -86,6 +87,7 @@ export type Layout =
   | 'calligraphy'
   | 'count-icons'
   | 'fraction-shape'
+  | 'tcf'
 
 /** Icône cible à compter (SVG N&B). */
 export type CountIconKind = 'note' | 'notes' | 'star' | 'heart' | 'leaf' | 'moon' | 'bolt' | 'flower'
@@ -570,6 +572,10 @@ export type MathItem = {
   }
   /** Compter les formes / icônes dans un cadre (nombres naturels). */
   countIcons?: CountIconScene
+  /** TCF : support, question ou zone de réponse (après tirage / mélange). */
+  tcf?: import('@/tcf/types').TcfSheetItem
+  /** Item non compté dans le total de points (support, message). */
+  noPoints?: boolean
 }
 
 export type CompositeLabel = {
@@ -763,6 +769,12 @@ export type ExerciseBlock = {
   calliFont?: string
   /** Taille d’écriture / espacement des carreaux (petit | moyen | grand). */
   calliSize?: string
+  /** TCF : exercice saisi par l’admin (remplace le tirage dans la banque). */
+  tcfExercise?: import('@/tcf/types').TcfExercise
+  /** TCF : exercice choisi dans la banque (sinon tirage selon la graine). */
+  tcfBankId?: string
+  /** TCF : durée indiquée sur la fiche (mode chronométré), en minutes. */
+  tcfDureeMin?: number
 }
 
 export type PageConfig = ExerciseBlock & {

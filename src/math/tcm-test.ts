@@ -327,11 +327,11 @@ export function isTcmConsignesType(exerciseType: string | undefined): boolean {
 
 /** Total de points d’un bloc (ignore les items théorie / consignes). */
 export function blockPointsTotal(
-  items: ReadonlyArray<{ layout?: string }>,
+  items: ReadonlyArray<{ layout?: string; noPoints?: boolean }>,
   pointsPerQuestion: number,
 ): number {
   if (pointsPerQuestion === 0) return 0
-  const n = items.filter((item) => item.layout !== 'theory').length
+  const n = items.filter((item) => item.layout !== 'theory' && !item.noPoints).length
   return n * pointsPerQuestion
 }
 

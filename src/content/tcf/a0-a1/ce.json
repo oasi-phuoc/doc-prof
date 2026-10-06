@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tcf-a0a1-ce-001",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "sms",
+    "theme": "Rendez-vous",
+    "support": {
+      "expediteur": "Léa",
+      "texte": "Salut ! Mon train arrive à 18 h à la gare. Tu peux venir me chercher ? Après, on va à la boulangerie acheter du pain pour le souper. Merci !"
+    },
+    "questions": [
+      {
+        "enonce": "À quelle heure arrive le train de Léa ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          { "id": "a", "texte": "À 18 h", "correct": true },
+          { "id": "b", "texte": "À 8 h" },
+          { "id": "c", "texte": "À 16 h" }
+        ]
+      },
+      {
+        "enonce": "Où Léa arrive-t-elle ?",
+        "type_reponse": "qcm_image",
+        "melanger": true,
+        "choix": [
+          { "id": "a", "image": "/lib/images/vocabulaire/transports/gare.webp", "correct": true },
+          { "id": "b", "image": "/lib/images/vocabulaire/achats/supermarche.webp" },
+          { "id": "c", "image": "/lib/images/vocabulaire/logement/cuisine.webp" }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que Léa veut acheter ?",
+        "type_reponse": "lignes",
+        "nb_lignes": 2,
+        "reponse_modele": "Elle veut acheter du pain."
+      }
+    ],
+    "consigne_supplementaire": null
+  }
+]

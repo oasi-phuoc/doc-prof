@@ -51,6 +51,7 @@ import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
 import { genFracItems } from './fraction-shapes'
 import { TCM_MAX_SCORE } from './tcm-test'
+import { tryGenerateTcfBlock } from '@/tcf/generate'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type {
   AlgebraGiven,
@@ -2571,6 +2572,10 @@ function buildSingleBlock(
       instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
       items: generateTcmConsignes(),
     }
+  }
+  const tcf = tryGenerateTcfBlock(config, rng)
+  if (tcf) {
+    return { title: fallbackTitle, instruction: tcf.instruction, items: tcf.items }
   }
   if (config.exerciseType === 'reperage-droites') {
     const droites = generateDroites(config, rng)

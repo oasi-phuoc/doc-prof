@@ -11,6 +11,7 @@ import { PHRASE_COLORS } from '@/francais/phrase-banks'
 import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { lessonPhonemeSegmentsFromGraphemes } from '@/francais/soutien/phoneme'
 import { CompositeFigure } from './math/CompositeFigure'
+import { TcfItemView } from './tcf/TcfItemView'
 import { CoordGrid, CoordShapeButton } from './math/CoordGrid'
 import {
   computeScale,
@@ -2805,7 +2806,8 @@ export function ItemView({
     item.layout === 'theory' ||
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
-    item.layout === 'calligraphy'
+    item.layout === 'calligraphy' ||
+    item.layout === 'tcf'
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
@@ -2911,6 +2913,7 @@ export function ItemView({
           <CalligraphyView item={item} />
         ) : null}
         {item.layout === 'count-icons' && <CountIconsBlock item={item} mode={mode} />}
+        {item.layout === 'tcf' && <TcfItemView item={item} mode={mode} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>

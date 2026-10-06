@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tcf-a0a1-po-001",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "À la boulangerie",
+    "support": {
+      "situation": "Vous êtes à la boulangerie. Vous achetez du pain et des croissants. L’examinateur·trice joue le rôle du boulanger ou de la boulangère.",
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonjour, qu’est-ce que vous désirez ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, je voudrais un pain, s’il vous plaît.",
+          "variantes": ["Bonjour, un pain, s’il vous plaît.", "Bonjour, j’aimerais un pain."]
+        },
+        { "locuteur": "examinateur", "texte": "Voilà. Et avec ceci ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Deux croissants, s’il vous plaît.",
+          "variantes": ["Je prends aussi deux croissants.", "C’est tout, merci."]
+        },
+        { "locuteur": "examinateur", "texte": "Ça fait 5 francs 40." },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci, au revoir !",
+          "variantes": ["Je peux payer par carte ?", "Tenez. Bonne journée !"]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  }
+]

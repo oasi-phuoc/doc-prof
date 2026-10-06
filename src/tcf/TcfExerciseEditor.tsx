@@ -1,0 +1,617 @@
+import { useMemo, useState } from 'react'
+import { tcfTypeByTypeId } from './catalog'
+import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
+import { tcfBank, tcfExerciseById } from './loader'
+import { QuestionEditor } from './QuestionEditor'
+import { emptyTcfExercise, emptyTcfQuestion, tcfExerciseId } from './templates'
+import { checkTcfMedia, validateTcfExercise } from './validate'
+import type {
+  TcfChampFormulaire,
+  TcfChampType,
+  TcfExercise,
+  TcfNbMots,
+  TcfNiveau,
+  TcfReplique,
+} from './types'
+
+type EditorPatch = { tcfExercise?: TcfExercise; tcfBankId?: string }
+
+/** Remplace le support en gardant le type exact de l’exercice. */
+function withSupport<E extends TcfExercise>(ex: E, patch: Partial<E['support']>): E {
+  return { ...ex, support: { ...ex.support, ...patch } }
+}
+
+const CHAMP_TYPES: ReadonlyArray<{ id: TcfChampType; label: string }> = [
+  { id: 'texte', label: 'Texte' },
+  { id: 'date', label: 'Date' },
+  { id: 'choix', label: 'Choix' },
+  { id: 'case', label: 'Case' },
+]
+
+function NbMotsFields({ value, onChange }: { value: TcfNbMots; onChange: (next: TcfNbMots) => void }) {
+  return (
+    <div className="tcf-row">
+      <NumberField label="Mots min." value={value.min} onChange={(min) => onChange({ ...value, min })} />
+      <NumberField label="Mots max." value={value.max} onChange={(max) => onChange({ ...value, max })} />
+    </div>
+  )
+}
+
+/** Champs spécifiques au type d’exercice (support). */
+function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) => void }) {
+  switch (ex.type_exercice) {
+    case 'sms':
+      return (
+        <>
+          <TextField label="Expéditeur" value={ex.support.expediteur} onChange={(expediteur) => set(withSupport(ex, { expediteur }))} />
+          <TextField label="Texte du SMS" value={ex.support.texte} multiline onChange={(texte) => set(withSupport(ex, { texte }))} />
+        </>
+      )
+    case 'email':
+      return (
+        <>
+          <TextField label="De" value={ex.support.de} onChange={(de) => set(withSupport(ex, { de }))} />
+          <TextField label="À" value={ex.support.a} onChange={(a) => set(withSupport(ex, { a }))} />
+          <TextField label="Objet" value={ex.support.objet} onChange={(objet) => set(withSupport(ex, { objet }))} />
+          <TextField label="Texte" value={ex.support.texte} multiline rows={6} onChange={(texte) => set(withSupport(ex, { texte }))} />
+        </>
+      )
+    case 'annonce':
+      return (
+        <>
+          <TextField label="Titre" value={ex.support.titre} onChange={(titre) => set(withSupport(ex, { titre }))} />
+          <TextField label="Texte" value={ex.support.texte} multiline rows={5} onChange={(texte) => set(withSupport(ex, { texte }))} />
+          <ImageField
+            label="Image (optionnelle)"
+            value={ex.support.image ?? ''}
+            onChange={(image) => set(withSupport(ex, { image: image || null }))}
+          />
+        </>
+      )
+    case 'images_a_reconnaitre':
+      return (
+        <>
+          <AudioField label="Audio" value={ex.support.audio} onChange={(audio) => set(withSupport(ex, { audio }))} />
+          <TextField
+            label="Consigne"
+            value={ex.consigne ?? ''}
+            placeholder="Écoutez et cochez les images qui correspondent."
+            onChange={(consigne) => set({ ...ex, consigne })}
+          />
+          <b>Images (exactement 5)</b>
+          <ul className="tcf-choix-list">
+            {ex.images.map((img, i) => (
+              <li key={img.id} className="tcf-choix-row">
+                <ImageField
+                  label={`Image ${i + 1}`}
+                  value={img.image}
+                  onChange={(image) =>
+                    set({ ...ex, images: ex.images.map((x, k) => (k === i ? { ...x, image } : x)) })
+                  }
+                />
+                <label className="tcf-choix-fixe">
+                  <input
+                    type="checkbox"
+                    checked={img.correct}
+                    onChange={(event) =>
+                      set({
+                        ...ex,
+                        images: ex.images.map((x, k) => (k === i ? { ...x, correct: event.target.checked } : x)),
+                      })
+                    }
+                  />
+                  à cocher
+                </label>
+                <label className="tcf-choix-fixe">
+                  <input
+                    type="checkbox"
+                    checked={img.fixe === true}
+                    onChange={(event) =>
+                      set({
+                        ...ex,
+                        images: ex.images.map((x, k) =>
+                          k === i ? { ...x, fixe: event.target.checked || undefined } : x,
+                        ),
+                      })
+                    }
+                  />
+                  fixe
+                </label>
+              </li>
+            ))}
+          </ul>
+          <div className="tcf-row">
+            <label className="tcf-choix-fixe">
+              <input
+                type="checkbox"
+                checked={ex.melanger !== false}
+                onChange={(event) => set({ ...ex, melanger: event.target.checked })}
+              />
+              Mélanger les images
+            </label>
+            <label className="tcf-field is-number">
+              <span>Notation</span>
+              <select
+                className="pill-input"
+                value={ex.score ?? 'par_image'}
+                onChange={(event) =>
+                  set({ ...ex, score: event.target.value === 'tout_ou_rien' ? 'tout_ou_rien' : 'par_image' })
+                }
+              >
+                <option value="par_image">Par image (sur 5)</option>
+                <option value="tout_ou_rien">Tout ou rien</option>
+              </select>
+            </label>
+          </div>
+        </>
+      )
+    case 'six_courts':
+    case 'trois_moyens':
+      return (
+        <>
+          {ex.support.audios.map((audio, i) => (
+            <AudioField
+              key={i}
+              label={`Audio ${i + 1}`}
+              value={audio}
+              onChange={(next) =>
+                set(withSupport(ex, { audios: ex.support.audios.map((a, k) => (k === i ? next : a)) }))
+              }
+            />
+          ))}
+        </>
+      )
+    case 'complet':
+      return (
+        <>
+          <AudioField label="Audio" value={ex.support.audio} onChange={(audio) => set(withSupport(ex, { audio }))} />
+          <TextField
+            label="Transcription (corrigé)"
+            value={ex.support.transcription}
+            multiline
+            rows={5}
+            onChange={(transcription) => set(withSupport(ex, { transcription }))}
+          />
+        </>
+      )
+    case 'formulaire': {
+      const champs = ex.support.champs
+      const setChamps = (next: TcfChampFormulaire[]) => set(withSupport(ex, { champs: next }))
+      return (
+        <>
+          <TextField label="Titre du formulaire" value={ex.support.titre ?? ''} onChange={(titre) => set(withSupport(ex, { titre }))} />
+          {champs.map((champ, i) => (
+            <fieldset className="tcf-question-editor" key={i}>
+              <legend>
+                Champ {i + 1}
+                <button
+                  type="button"
+                  className="calli-field-remove"
+                  aria-label={`Supprimer le champ ${i + 1}`}
+                  disabled={champs.length <= 1}
+                  onClick={() => setChamps(champs.filter((_, k) => k !== i))}
+                >
+                  ×
+                </button>
+              </legend>
+              <TextField
+                label="Libellé"
+                value={champ.label}
+                onChange={(label) => setChamps(champs.map((c, k) => (k === i ? { ...c, label } : c)))}
+              />
+              <div className="mode-toggle is-4" role="group" aria-label="Type de champ">
+                {CHAMP_TYPES.map((t) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    className={champ.type === t.id ? 'active' : ''}
+                    onClick={() => setChamps(champs.map((c, k) => (k === i ? { ...c, type: t.id } : c)))}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+              {champ.type === 'choix' ? (
+                <LinesField
+                  label="Options (une par ligne)"
+                  values={champ.options ?? []}
+                  onChange={(options) => setChamps(champs.map((c, k) => (k === i ? { ...c, options } : c)))}
+                />
+              ) : null}
+              <TextField
+                label={champ.type === 'case' ? 'Corrigé (oui / non)' : 'Corrigé'}
+                value={champ.corrige}
+                onChange={(corrige) => setChamps(champs.map((c, k) => (k === i ? { ...c, corrige } : c)))}
+              />
+            </fieldset>
+          ))}
+          <button type="button" className="tcf-btn" onClick={() => setChamps([...champs, { label: '', type: 'texte', corrige: '' }])}>
+            + ajouter un champ
+          </button>
+        </>
+      )
+    }
+    case 'image_question':
+      return (
+        <>
+          <ImageField label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
+          <TextField label="Question / consigne" value={ex.support.consigne} multiline rows={2} onChange={(consigne) => set(withSupport(ex, { consigne }))} />
+          <NbMotsFields value={ex.support.nb_mots} onChange={(nb_mots) => set(withSupport(ex, { nb_mots }))} />
+          <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele ?? ''} multiline rows={2} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
+        </>
+      )
+    case 'sms_reponse':
+      return (
+        <>
+          <TextField label="Expéditeur" value={ex.support.expediteur ?? ''} onChange={(expediteur) => set(withSupport(ex, { expediteur }))} />
+          <TextField label="SMS reçu" value={ex.support.sms_recu} multiline onChange={(sms_recu) => set(withSupport(ex, { sms_recu }))} />
+          <TextField label="Consigne" value={ex.support.consigne} multiline rows={2} onChange={(consigne) => set(withSupport(ex, { consigne }))} />
+          <NbMotsFields value={ex.support.nb_mots} onChange={(nb_mots) => set(withSupport(ex, { nb_mots }))} />
+          <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele ?? ''} multiline onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
+        </>
+      )
+    case 'email_reponse': {
+      const recu = ex.support.email_recu
+      return (
+        <>
+          <TextField label="De" value={recu.de} onChange={(de) => set(withSupport(ex, { email_recu: { ...recu, de } }))} />
+          <TextField label="Objet" value={recu.objet} onChange={(objet) => set(withSupport(ex, { email_recu: { ...recu, objet } }))} />
+          <TextField label="E-mail reçu" value={recu.texte} multiline rows={5} onChange={(texte) => set(withSupport(ex, { email_recu: { ...recu, texte } }))} />
+          <TextField label="Consigne" value={ex.support.consigne} multiline rows={2} onChange={(consigne) => set(withSupport(ex, { consigne }))} />
+          <NbMotsFields value={ex.support.nb_mots} onChange={(nb_mots) => set(withSupport(ex, { nb_mots }))} />
+          <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele ?? ''} multiline rows={4} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
+        </>
+      )
+    }
+    case 'question_texte':
+      return (
+        <>
+          <TextField label="Question / texte" value={ex.support.consigne} multiline rows={3} onChange={(consigne) => set(withSupport(ex, { consigne }))} />
+          <NbMotsFields value={ex.support.nb_mots} onChange={(nb_mots) => set(withSupport(ex, { nb_mots }))} />
+          <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele ?? ''} multiline rows={4} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
+        </>
+      )
+    case 'mots_theme':
+      return (
+        <>
+          <TextField label="Thème" value={ex.support.theme} onChange={(theme) => set(withSupport(ex, { theme }))} />
+          <LinesField label="Mots (un par ligne)" values={ex.support.mots} onChange={(mots) => set(withSupport(ex, { mots }))} />
+          <LinesField
+            label="Exemples de questions (corrigé, une par ligne)"
+            values={ex.support.exemples_questions}
+            onChange={(exemples_questions) => set(withSupport(ex, { exemples_questions }))}
+          />
+        </>
+      )
+    case 'sequence_4_images':
+      return (
+        <>
+          {ex.support.images.map((img, i) => (
+            <ImageField
+              key={i}
+              label={`Image ${i + 1}`}
+              value={img}
+              onChange={(next) => set(withSupport(ex, { images: ex.support.images.map((x, k) => (k === i ? next : x)) }))}
+            />
+          ))}
+          <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele} multiline rows={4} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
+        </>
+      )
+    case 'image_unique':
+      return (
+        <>
+          <ImageField label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
+          <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele} multiline rows={4} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
+        </>
+      )
+    case 'dialogue': {
+      const repliques = ex.support.repliques
+      const setRepliques = (next: TcfReplique[]) => set(withSupport(ex, { repliques: next }))
+      return (
+        <>
+          <TextField label="Situation" value={ex.support.situation} multiline rows={2} onChange={(situation) => set(withSupport(ex, { situation }))} />
+          {repliques.map((r, i) => (
+            <fieldset className="tcf-question-editor" key={i}>
+              <legend>
+                Réplique {i + 1}
+                <button
+                  type="button"
+                  className="calli-field-remove"
+                  aria-label={`Supprimer la réplique ${i + 1}`}
+                  disabled={repliques.length <= 1}
+                  onClick={() => setRepliques(repliques.filter((_, k) => k !== i))}
+                >
+                  ×
+                </button>
+              </legend>
+              <div className="mode-toggle" role="group" aria-label="Locuteur">
+                {(['examinateur', 'eleve'] as const).map((loc) => (
+                  <button
+                    key={loc}
+                    type="button"
+                    className={r.locuteur === loc ? 'active' : ''}
+                    onClick={() => setRepliques(repliques.map((x, k) => (k === i ? { ...x, locuteur: loc } : x)))}
+                  >
+                    {loc === 'examinateur' ? 'Examinateur·trice' : 'Élève'}
+                  </button>
+                ))}
+              </div>
+              <TextField
+                label="Texte"
+                value={r.texte}
+                multiline
+                rows={2}
+                onChange={(texte) => setRepliques(repliques.map((x, k) => (k === i ? { ...x, texte } : x)))}
+              />
+              {r.locuteur === 'eleve' ? (
+                <LinesField
+                  label="Autres réponses possibles (une par ligne)"
+                  values={r.variantes ?? []}
+                  onChange={(variantes) => setRepliques(repliques.map((x, k) => (k === i ? { ...x, variantes } : x)))}
+                />
+              ) : null}
+            </fieldset>
+          ))}
+          <div className="tcf-row">
+            <button type="button" className="tcf-btn" onClick={() => setRepliques([...repliques, { locuteur: 'examinateur', texte: '' }])}>
+              + réplique examinateur·trice
+            </button>
+            <button type="button" className="tcf-btn" onClick={() => setRepliques([...repliques, { locuteur: 'eleve', texte: '', variantes: [] }])}>
+              + réplique élève
+            </button>
+          </div>
+        </>
+      )
+    }
+  }
+}
+
+/** Nettoie les listes « une par ligne » avant export (lignes vides retirées). */
+function cleanForExport(ex: TcfExercise): TcfExercise {
+  switch (ex.type_exercice) {
+    case 'mots_theme':
+      return withSupport(ex, {
+        mots: ex.support.mots.filter((m) => m.trim()),
+        exemples_questions: ex.support.exemples_questions.filter((q) => q.trim()),
+      })
+    case 'dialogue':
+      return withSupport(ex, {
+        repliques: ex.support.repliques.map((r) =>
+          r.locuteur === 'eleve' ? { ...r, variantes: (r.variantes ?? []).filter((v) => v.trim()) } : r,
+        ),
+      })
+    case 'formulaire':
+      return withSupport(ex, {
+        champs: ex.support.champs.map((c) =>
+          c.type === 'choix' ? { ...c, options: (c.options ?? []).filter((o) => o.trim()) } : c,
+        ),
+      })
+    default:
+      return ex
+  }
+}
+
+/**
+ * Panneau admin TCF : choisir un exercice de la banque ou en saisir un.
+ * Parcours : Niveau → Compétence → Type d’exercice (sélecteurs du générateur),
+ * puis questions et types de réponse ici. Validation en direct, export JSON.
+ */
+export function TcfExerciseEditor({
+  niveau,
+  typeId,
+  exercise,
+  bankId,
+  onChange,
+}: {
+  niveau: TcfNiveau
+  typeId: string
+  exercise?: TcfExercise
+  bankId?: string
+  onChange: (patch: EditorPatch) => void
+}) {
+  const meta = tcfTypeByTypeId[typeId]
+  const bank = useMemo(
+    () => (meta ? tcfBank(niveau, meta.competence, meta.typeExercice) : []),
+    [meta, niveau],
+  )
+  // Résultats rattachés à la version de l’exercice : toute modification les efface.
+  const [mediaCheck, setMediaCheck] = useState<{ for: TcfExercise; errors: string[] } | null>(null)
+  const [copiedFor, setCopiedFor] = useState<TcfExercise | null>(null)
+  const mediaErrors = mediaCheck && mediaCheck.for === exercise ? mediaCheck.errors : null
+  const copied = copiedFor != null && copiedFor === exercise
+  const editing = exercise != null && meta != null && exercise.type_exercice === meta.typeExercice
+  const validation = useMemo(() => (editing ? validateTcfExercise(exercise) : null), [editing, exercise])
+
+  if (!meta) return null
+
+  const set = (next: TcfExercise) => onChange({ tcfExercise: { ...next, niveau } })
+
+  function startBlank() {
+    if (!meta) return
+    onChange({ tcfExercise: emptyTcfExercise(niveau, meta.competence, meta.typeExercice, tcfExerciseId(niveau, meta.competence, bank.length + 1)) })
+  }
+
+  function copyFromBank() {
+    const source = tcfExerciseById(bankId) ?? bank[0]
+    if (source) onChange({ tcfExercise: structuredClone(source) })
+  }
+
+  async function exportJson(kind: 'copy' | 'download') {
+    if (!exercise) return
+    const json = JSON.stringify(cleanForExport(exercise), null, 2)
+    if (kind === 'copy') {
+      await navigator.clipboard.writeText(json)
+      setCopiedFor(exercise)
+      return
+    }
+    const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }))
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${exercise.id || 'tcf-exercice'}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  const usesQuestions = meta.reponses.length > 0
+  const audioCount =
+    exercise?.type_exercice === 'six_courts' || exercise?.type_exercice === 'trois_moyens'
+      ? exercise.support.audios.length
+      : undefined
+  const hasConsigneSupp =
+    exercise?.type_exercice === 'sms_reponse' ||
+    exercise?.type_exercice === 'email_reponse' ||
+    exercise?.type_exercice === 'question_texte'
+
+  return (
+    <div className="quad-libre-block tcf-editor">
+      <b>Contenu de l’exercice</b>
+      <div className="mode-toggle" role="group" aria-label="Source du contenu">
+        <button type="button" className={editing ? '' : 'active'} onClick={() => onChange({ tcfExercise: undefined })}>
+          Banque
+        </button>
+        <button type="button" className={editing ? 'active' : ''} onClick={() => (editing ? undefined : bank.length ? copyFromBank() : startBlank())}>
+          Saisie
+        </button>
+      </div>
+
+      {!editing ? (
+        <>
+          <label className="tcf-field">
+            <span>Exercice ({bank.length} en banque · {niveau})</span>
+            <select
+              className="pill-input"
+              value={bankId ?? ''}
+              onChange={(event) => onChange({ tcfBankId: event.target.value || undefined })}
+            >
+              <option value="">Tirage selon la graine</option>
+              {bank.map((ex) => (
+                <option key={ex.id} value={ex.id}>
+                  {ex.id}
+                  {ex.theme ? ` · ${ex.theme}` : ''}
+                </option>
+              ))}
+            </select>
+          </label>
+          <div className="tcf-row">
+            <button type="button" className="tcf-btn" onClick={startBlank}>
+              Nouvel exercice vide
+            </button>
+            <button type="button" className="tcf-btn" disabled={bank.length === 0} onClick={copyFromBank}>
+              Modifier une copie
+            </button>
+          </div>
+          <small className="muted">
+            Banques : src/content/tcf/{'{a0-a1,a1-a2,a2-b1}'}/{'{ce,co,pe,po}'}.json · médias dans public/lib/tcf/.
+          </small>
+        </>
+      ) : (
+        <>
+          <div className="tcf-row">
+            <TextField label="Identifiant" value={exercise.id} onChange={(id) => set({ ...exercise, id })} />
+            <TextField label="Thème" value={exercise.theme ?? ''} onChange={(theme) => set({ ...exercise, theme })} />
+          </div>
+          {exercise.type_exercice !== 'images_a_reconnaitre' ? (
+            <TextField
+              label="Consigne (sinon consigne du type)"
+              value={exercise.consigne ?? ''}
+              placeholder={meta.instruction}
+              onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
+            />
+          ) : null}
+
+          <SupportEditor ex={exercise} set={set} />
+
+          {hasConsigneSupp ? (
+            <TextField
+              label="Consigne supplémentaire (sous le texte)"
+              value={exercise.consigne_supplementaire ?? ''}
+              multiline
+              rows={2}
+              onChange={(consigne_supplementaire) => set({ ...exercise, consigne_supplementaire })}
+            />
+          ) : null}
+
+          {usesQuestions ? (
+            <>
+              <b>Questions ({exercise.questions.length})</b>
+              {exercise.questions.map((q, i) => (
+                <QuestionEditor
+                  key={i}
+                  index={i}
+                  question={q}
+                  reponses={meta.reponses}
+                  audioCount={audioCount}
+                  onChange={(next) => set({ ...exercise, questions: exercise.questions.map((x, k) => (k === i ? next : x)) })}
+                  onRemove={() => set({ ...exercise, questions: exercise.questions.filter((_, k) => k !== i) })}
+                />
+              ))}
+              <button
+                type="button"
+                className="tcf-btn"
+                onClick={() => {
+                  const last = exercise.questions[exercise.questions.length - 1]
+                  const next = emptyTcfQuestion(last?.type_reponse ?? meta.reponses[0] ?? 'qcm_texte')
+                  set({ ...exercise, questions: [...exercise.questions, audioCount ? { ...next, audio: last?.audio ?? 1 } : next] })
+                }}
+              >
+                + ajouter une question
+              </button>
+            </>
+          ) : null}
+
+          {validation && validation.errors.length > 0 ? (
+            <ul className="tcf-errors" role="alert">
+              {validation.errors.map((e, i) => (
+                <li key={i}>{e}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="tcf-ok">Exercice valide.</p>
+          )}
+          {validation && validation.warnings.length > 0 ? (
+            <ul className="tcf-warnings">
+              {validation.warnings.map((w, i) => (
+                <li key={i}>{w}</li>
+              ))}
+            </ul>
+          ) : null}
+          {mediaErrors ? (
+            mediaErrors.length > 0 ? (
+              <ul className="tcf-errors" role="alert">
+                {mediaErrors.map((e, i) => (
+                  <li key={i}>{e}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="tcf-ok">Tous les fichiers référencés existent.</p>
+            )
+          ) : null}
+          <div className="tcf-row">
+            <button type="button" className="tcf-btn" onClick={() => void checkTcfMedia(exercise).then((errors) => setMediaCheck({ for: exercise, errors }))}>
+              Vérifier les fichiers
+            </button>
+            <button
+              type="button"
+              className="tcf-btn"
+              disabled={(validation?.errors.length ?? 0) > 0}
+              onClick={() => void exportJson('copy')}
+            >
+              {copied ? 'JSON copié' : 'Copier le JSON'}
+            </button>
+            <button
+              type="button"
+              className="tcf-btn"
+              disabled={(validation?.errors.length ?? 0) > 0}
+              onClick={() => void exportJson('download')}
+            >
+              Télécharger
+            </button>
+          </div>
+          <small className="muted">
+            L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans le fichier de banque du niveau et de la compétence.
+          </small>
+        </>
+      )}
+    </div>
+  )
+}

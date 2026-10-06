@@ -51,9 +51,22 @@ import {
   lectureTopics,
   soutienFrTopics,
   gattegnoTopics,
+  tcfTopics,
   tcmTopics,
   typesForTopic,
 } from '@/math/catalog'
+import {
+  TCF_DOCUMENT_TITLE,
+  TCF_DOMAIN,
+  TCF_NIVEAUX,
+  TCF_TYPES,
+  tcfDifficultyFromNiveau,
+  tcfNiveauFromDifficulty,
+} from '@/tcf/catalog'
+import { buildTcfTestPages, tcfPage } from '@/tcf/generate'
+import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
+import { TcfTestPanel } from '@/tcf/TcfTestPanel'
+import { Chronometre } from '@/components/tcf/Chronometre'
 import {
   blockPointsTotal,
   buildTcmTestPages,
@@ -349,7 +362,7 @@ function WorksheetSheet({
           )
           const blockHeading = multiExercisePage ? block.title : sheetTitle || block.title
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
-          const scoredCount = block.items.filter((item) => item.layout !== 'theory').length
+          const scoredCount = block.items.filter((item) => item.layout !== 'theory' && !item.noPoints).length
           const blockPts = blockPointsTotal(block.items, perQ)
           const pointsBadge = formatBlockPointsBadge(perQ, scoredCount)
           return (
@@ -1618,7 +1631,9 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   ? soutienFrTopics
                   : activePage.domain === 'tcm'
                     ? tcmTopics
-                    : lectureTopics
+                    : activePage.domain === TCF_DOMAIN
+                      ? tcfTopics
+                      : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -1919,6 +1934,8 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isCalliDomain = activePage.domain === 'calligraphie'
   const isSoutienFr = activePage.domain === 'soutien-fr'
   const isTcm = isTcmDomain(activePage.domain)
+  const isTcf = activePage.domain === TCF_DOMAIN
+  const tcfNiveau = tcfNiveauFromDifficulty(activeBlock.difficulty)
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
   const isSoutienMots = soutienKind === 'mots'
   const isSoutienMotsMeles = soutienKind === 'mots-meles'
@@ -2401,8 +2418,19 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       }))
       return
     }
+    if (next === TCF_DOMAIN) {
+      setSheetIndex(0)
+      setPages([tcfPage(TCF_TYPES[0]!.typeId, 'A0-A1')])
+      setMode('student')
+      setInstitutional((current) => ({
+        ...current,
+        course: 'Français',
+        documentTitle: TCF_DOCUMENT_TITLE,
+      }))
+      return
+    }
     const type = firstTypeFor(next)
-    const leavingTcm = isTcmDomain(activePage.domain)
+    const leavingTcm = isTcmDomain(activePage.domain) || activePage.domain === TCF_DOMAIN
     if (leavingTcm) {
       setSheetIndex(0)
       setPages([{ ...defaultPage(next), ...applyType(type), domain: next }])
@@ -2824,8 +2852,24 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <option value="lecture">Lecture</option>
                 ) : null}
               </SelectBox>
+              {isTcf ? (
+                <SelectBox
+                  label="Niveau"
+                  value={tcfNiveau}
+                  onChange={(value) => {
+                    const niveau = TCF_NIVEAUX.find((n) => n.id === value)?.id
+                    if (niveau) updatePage({ difficulty: tcfDifficultyFromNiveau(niveau), tcfBankId: undefined })
+                  }}
+                >
+                  {TCF_NIVEAUX.map((n) => (
+                    <option value={n.id} key={n.id}>
+                      {n.id}
+                    </option>
+                  ))}
+                </SelectBox>
+              ) : null}
               {isTcm ? null : (
-                <SelectBox label="Thème" value={activeBlock.topic} onChange={changeTopic}>
+                <SelectBox label={isTcf ? 'Compétence' : 'Thème'} value={activeBlock.topic} onChange={changeTopic}>
                   {available.map((topic) => (
                     <option value={topic.id} key={topic.id}>
                       {topic.label}
@@ -3112,6 +3156,32 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}
+              {isTcf ? (
+                <>
+                  <TcfExerciseEditor
+                    niveau={tcfNiveau}
+                    typeId={activeBlock.exerciseType}
+                    exercise={activeBlock.tcfExercise}
+                    bankId={activeBlock.tcfBankId}
+                    onChange={(patch) => updatePage(patch)}
+                  />
+                  <Chronometre
+                    minutes={activeBlock.tcfDureeMin}
+                    onChangeMinutes={(tcfDureeMin) => updatePage({ tcfDureeMin })}
+                  />
+                  <TcfTestPanel
+                    niveau={tcfNiveau}
+                    onGenerate={(competences, parCompetence) => {
+                      const nextSeed = randomSeed()
+                      setSeed(nextSeed)
+                      setMode('student')
+                      setSheetIndex(0)
+                      setBlockIndex(0)
+                      setPages(buildTcfTestPages(tcfNiveau, competences, parCompetence, nextSeed))
+                    }}
+                  />
+                </>
+              ) : null}
               {isReperage ||
               isPhraseDomain ||
               isJeuxDomain ||
@@ -3119,6 +3189,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               isVocabLearn ||
               isGramTheory ||
               isSoutienFr ||
+              isTcf ||
               isTcm ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
@@ -3483,6 +3554,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               isJeuxDomain ||
               isCalliDomain ||
               isSoutienMots ||
+              isTcf ||
               isSoutienMotsMeles ? null : (
               <label className="select-shell">
                 <span>
@@ -3603,7 +3675,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 ) : null}
               </label>
               )}
-              {isTcm && !isTcmConsignesType(activeBlock.exerciseType) ? (
+              {(isTcm && !isTcmConsignesType(activeBlock.exerciseType)) || (isTcf && evalMode) ? (
                 <label className="select-shell">
                   <span>Points par question</span>
                   <input
@@ -3733,7 +3805,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </small>
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr || isTcf ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
