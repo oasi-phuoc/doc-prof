@@ -283,5 +283,264 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 2 · Le gâteau au chocolat",
+    "consigne": "Lisez cette recette et répondez aux questions.",
+    "support": {
+      "titre": "Gâteau au chocolat",
+      "texte": "Préparation : 10 minutes\n\n100 grammes de sucre\n50 grammes de farine\n200 grammes de chocolat noir\n100 grammes de beurre\n3 œufs\n\nFaites fondre le chocolat dans une casserole avec le beurre.\nDans un saladier, ajoutez le sucre, les œufs et la farine. Mélangez.\nAjoutez le mélange chocolat/beurre.\nMélangez bien avec une fourchette.\nPlacez le mélange dans le plat à gâteau.\nFaites cuire au four 20 minutes.",
+      "image": "a1j-s2/ce1-ustensiles.webp"
+    },
+    "questions": [
+      {
+        "enonce": "Quelle est la quantité de farine ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "50 grammes."
+      },
+      {
+        "enonce": "Dans cette recette, vous utilisez…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/ce1-citrons.webp" },
+          { "id": "b", "image": "a1j-s2/ce1-lait.webp" },
+          { "id": "c", "image": "a1j-s2/ce1-oeufs.webp", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Dans la casserole, il y a…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le beurre et le chocolat", "correct": true },
+          { "id": "b", "texte": "Le sucre et le chocolat" },
+          { "id": "c", "texte": "La farine et le beurre" }
+        ]
+      },
+      {
+        "enonce": "Avec quoi devez-vous mélanger ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Avec une fourchette."
+      },
+      {
+        "enonce": "De quel matériel avez-vous besoin ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/ce1-assiette.webp" },
+          { "id": "b", "image": "a1j-s2/ce1-moule.webp", "correct": true },
+          { "id": "c", "image": "a1j-s2/ce1-poele.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "sms",
+    "theme": "Test blanc A1 Junior · série 2 · À la plage",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "expediteur": "Amélie",
+      "texte": "Salut,\n\nSamedi à 10 heures, je vais à la plage avec ma mère. Tu veux venir ? N’oublie pas la crème solaire ! On va déjeuner « Chez Lulu », c’est un super restaurant. Pour venir, tu prends le bus 12 et tu descends à l’arrêt « Plage ». Tu marches sur l’avenue Jean Jaurès puis tu tournes à gauche après le supermarché. Ensuite, c’est la première à droite.\n\nBises\nAmélie"
+    },
+    "questions": [
+      {
+        "enonce": "Amélie va à la plage…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Seule" },
+          { "id": "b", "texte": "Avec sa mère", "correct": true },
+          { "id": "c", "texte": "Avec ses deux parents" }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 10 heures (samedi)."
+      },
+      {
+        "enonce": "Que faut-il emporter ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Un sac de sport" },
+          { "id": "b", "texte": "Des jeux de plage" },
+          { "id": "c", "texte": "Une protection contre le soleil", "correct": true }
+        ]
+      },
+      {
+        "enonce": "À midi, vous allez…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Déjeuner chez une amie" },
+          { "id": "b", "texte": "Déjeuner dans un restaurant", "correct": true },
+          { "id": "c", "texte": "Faire un pique-nique sur la plage" }
+        ]
+      },
+      {
+        "enonce": "Quel chemin prendre pour aller au restaurant ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/ce2-chemin-a.webp", "correct": true },
+          { "id": "b", "image": "a1j-s2/ce2-chemin-b.webp" },
+          { "id": "c", "image": "a1j-s2/ce2-chemin-c.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 2 · Le panneau du collège",
+    "consigne": "Lisez les messages et répondez aux questions.",
+    "support": {
+      "titre": "Panneau d’affichage du collège",
+      "texte": "Le conseiller d’orientation vous accueille tous les lundis et les mercredis de 16 h à 17 h. Inscrivez-vous !\n\nExposition « La vie, demain » (classe 4e B) dans la médiathèque du 28 mai au 12 avril.\n\nLe ciné-club du collège, c’est 1 film par mois. Rendez-vous les jeudis à 17 h 30 au gymnase.\n\nRecherche professeur particulier de piano disponible le week-end. Contactez le 07 58 78 54 63.\n\nAttention ! En juin, la cantine ferme à 13 h au lieu de 13 h 30.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "À quelle heure peut-on aller au ciné-club ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "16 h 00" },
+          { "id": "b", "texte": "17 h 00" },
+          { "id": "c", "texte": "17 h 30", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quand commence l’exposition « La vie, demain » ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "En mai", "correct": true },
+          { "id": "b", "texte": "En avril" },
+          { "id": "c", "texte": "En juin" }
+        ]
+      },
+      {
+        "enonce": "En juin, à quelle heure ferme la cantine ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "À 13 h."
+      },
+      {
+        "enonce": "Quels jours peut-on aller chez le conseiller d’orientation ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Lundi et jeudi" },
+          { "id": "b", "texte": "Lundi et mercredi", "correct": true },
+          { "id": "c", "texte": "Jeudi et vendredi" }
+        ]
+      },
+      {
+        "enonce": "Le professeur de piano doit être disponible…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le samedi ou le dimanche", "correct": true },
+          { "id": "b", "texte": "La semaine" },
+          { "id": "c", "texte": "Le soir" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 2 · Le chessboxing",
+    "consigne": "Lisez cet article de journal et répondez aux questions.",
+    "support": {
+      "titre": "Chessboxing : un nouveau sport très original !",
+      "texte": "Pendant environ deux heures, deux joueurs pratiquent la boxe et jouent aux échecs.\n\nLe match commence par les échecs. Après 12 minutes, les joueurs se lèvent et pratiquent la boxe anglaise. Après une minute de pause, ils continuent la partie d’échecs.\n\nIl existe des compétitions internationales de chessboxing.\n\nPlus d’informations sur www.federation-chessboxing.fr",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Le chessboxing est un sport…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Récent", "correct": true },
+          { "id": "b", "texte": "Ancien" },
+          { "id": "c", "texte": "Traditionnel" }
+        ]
+      },
+      {
+        "enonce": "Combien de temps dure le match ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Environ deux heures."
+      },
+      {
+        "enonce": "Par quoi commence le match ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Par les échecs."
+      },
+      {
+        "enonce": "Les compétitions de chessboxing sont…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Nationales" },
+          { "id": "b", "texte": "Européennes" },
+          { "id": "c", "texte": "Mondiales", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Pour s’informer, il faut…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Appeler" },
+          { "id": "b", "texte": "Écrire un mail" },
+          { "id": "c", "texte": "Aller sur Internet", "correct": true }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

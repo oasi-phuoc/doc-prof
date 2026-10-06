@@ -58,5 +58,48 @@
     },
     "questions": [],
     "consigne_supplementaire": "Vous lui donnez le jour et l’heure.\nVous lui expliquez comment trouver votre maison.\nVous lui demandez ce qu’il aime manger."
+  },
+  {
+    "id": "tcf-a1j-s2-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 Junior · série 2 · Mon correspondant",
+    "consigne": "Vous voulez vous inscrire sur un site Internet pour trouver un correspondant francophone. Remplissez le formulaire.",
+    "points": 10,
+    "support": {
+      "titre": "www.mon-correspondant.com",
+      "champs": [
+        { "label": "Prénom :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Âge :", "type": "texte", "corrige": "Réponse personnelle (ex. : 14 ans)" },
+        { "label": "Ville :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Pays :", "type": "texte", "corrige": "Réponse personnelle (ex. : la Suisse)" },
+        { "label": "Courriel :", "type": "texte", "corrige": "Adresse électronique complète (avec @)" },
+        { "label": "Activité préférée 1 :", "type": "texte", "corrige": "Ex. : le football, la lecture…" },
+        { "label": "Activité préférée 2 :", "type": "texte", "corrige": "Ex. : la danse, les jeux vidéo…" },
+        { "label": "Chanteur / chanteuse préféré(e) :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Film préféré :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Couleur préférée :", "type": "texte", "corrige": "Ex. : le bleu, le rouge…" }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 Junior · série 2 · Mon meilleur ami",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 15,
+    "support": {
+      "consigne": "Vous envoyez un message à votre correspondant(e) français(e). Écrivez un message de 40 mots.",
+      "nb_mots": { "min": 40 },
+      "email": { "a": "moncorrespondant@email.com", "objet": "Mon/ma meilleur(e) ami(e)" },
+      "reponse_modele": "Salut Lucas,\nJe te parle de mon meilleur ami. Il s’appelle Samir et il a 14 ans. Il est grand et brun, il a les yeux noirs. Il est drôle et gentil. Le mercredi, nous jouons au football ensemble et le week-end, nous allons à la piscine.\nÀ bientôt !\nYonas"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous lui parlez de votre meilleur(e) ami(e).\nVous décrivez votre meilleur(e) ami(e).\nVous dites quelles activités vous faites ensemble."
   }
 ]

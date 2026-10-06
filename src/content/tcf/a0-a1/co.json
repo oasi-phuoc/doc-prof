@@ -195,5 +195,215 @@
       { "id": "s6", "image": "a1j-s1/co4-situation-f.webp", "dialogue": 5 }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 2 · La ferme",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s2/co1.mp3",
+      "transcription": "Bonjour, c’est Martin. Cet après-midi, on va visiter une ferme avec mes parents. On va voir les animaux et manger du fromage de chèvre. Tu veux venir avec nous ? C’est gratuit. On part à 14 h. On ne va pas rentrer trop tard, vers 18 h. Rappelle-moi au 02 89 64 32 21. À plus !"
+    },
+    "questions": [
+      {
+        "enonce": "Où va Martin cet après-midi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/co1-ferme.webp", "correct": true },
+          { "id": "b", "image": "a1j-s2/co1-zoo.webp" },
+          { "id": "c", "image": "a1j-s2/co1-delphinarium.webp" }
+        ]
+      },
+      {
+        "enonce": "Que va manger Martin ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/co1-miel.webp" },
+          { "id": "b", "image": "a1j-s2/co1-fromage-chevre.webp", "correct": true },
+          { "id": "c", "image": "a1j-s2/co1-glace.webp" }
+        ]
+      },
+      {
+        "enonce": "À quelle heure part Martin ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "À 14 h."
+      },
+      {
+        "enonce": "Que devez-vous faire ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Téléphoner à Martin", "correct": true },
+          { "id": "b", "texte": "Écrire un SMS à Martin" },
+          { "id": "c", "texte": "Envoyer un mail à Martin" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 2 · La fête du sport",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s2/co2.mp3",
+      "transcription": "Vous avez entre 12 et 17 ans et vous aimez le sport ? Aujourd’hui, vous pouvez essayer tous les sports gratuitement à la fête de la ville, place de la Mairie : judo à 9 h avec Damien, tennis à 10 h avec Chloé, basket à 14 h avec Anne. Et vous pouvez gagner un ballon !"
+    },
+    "questions": [
+      {
+        "enonce": "Pour participer aux activités, vous devez avoir entre…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "9 et 14 ans" },
+          { "id": "b", "texte": "10 et 15 ans" },
+          { "id": "c", "texte": "12 et 17 ans", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Où ont lieu les activités ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Place de la Mairie (à la fête de la ville)."
+      },
+      {
+        "enonce": "Quel sport pouvez-vous faire à 9 h ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/co2-basket.webp" },
+          { "id": "b", "image": "a1j-s2/co2-judo.webp", "correct": true },
+          { "id": "c", "image": "a1j-s2/co2-tennis.webp" }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous pouvez gagner ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/co2-ballon.webp", "correct": true },
+          { "id": "b", "image": "a1j-s2/co2-kimono.webp" },
+          { "id": "c", "image": "a1j-s2/co2-raquette.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 2 · Les poires Belle-Hélène",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s2/co3.mp3",
+      "transcription": "Alors, pour faire des poires Belle-Hélène, tu prends deux poires au sirop. Avec un couteau, tu les coupes en deux. Tu les mets dans un bol. Après, tu fais chauffer 50 g de chocolat pendant 30 secondes et tu mets le chocolat sur les poires. Et voilà ! Bon appétit !"
+    },
+    "questions": [
+      {
+        "enonce": "Quels fruits devez-vous prendre pour cette recette ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s2/co3-poires.webp", "correct": true },
+          { "id": "b", "image": "a1j-s2/co3-oranges.webp" },
+          { "id": "c", "image": "a1j-s2/co3-pommes.webp" }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire avec les fruits ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Les laver" },
+          { "id": "b", "texte": "Les couper", "correct": true },
+          { "id": "c", "texte": "Les faire chauffer" }
+        ]
+      },
+      {
+        "enonce": "Où devez-vous mettre les fruits ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Dans un bol", "correct": true },
+          { "id": "b", "texte": "Dans un saladier" },
+          { "id": "c", "texte": "Dans une casserole" }
+        ]
+      },
+      {
+        "enonce": "Quelle quantité de chocolat devez-vous mettre ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "50 g (50 grammes)."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 Junior · série 2 · Au collège",
+    "consigne": "Observez les situations et écoutez les 4 dialogues. Notez le numéro du dialogue (1 à 4) sous l’image. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1j-s2/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Dépêchez-vous, le bus nous attend, on va être en retard à la piscine ! — Oui, monsieur, on arrive.\n\nDialogue 2 — Ouah, il est super, ton téléphone ! Il est nouveau ? — Oui, c’est mon cadeau d’anniversaire. — Tu as de la chance.\n\nDialogue 3 — Allez, vous faites trois fois le tour du stade en courant. — Madame, je ne peux pas courir, j’ai mal aux pieds. — D’accord, assieds-toi là.\n\nDialogue 4 — Tu peux me prêter ton dictionnaire ? — Oui, tiens, prends-le. — Merci."
+    },
+    "questions": [],
+    "situations": [
+      { "id": "s1", "image": "a1j-s2/co4-situation-a.webp", "dialogue": null },
+      { "id": "s2", "image": "a1j-s2/co4-situation-b.webp", "dialogue": 2 },
+      { "id": "s3", "image": "a1j-s2/co4-situation-c.webp", "dialogue": 4 },
+      { "id": "s4", "image": "a1j-s2/co4-situation-d.webp", "dialogue": 3 },
+      { "id": "s5", "image": "a1j-s2/co4-situation-e.webp", "dialogue": 1 },
+      { "id": "s6", "image": "a1j-s2/co4-situation-f.webp", "dialogue": null }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-co-5",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Test blanc A1 Junior · série 2 · La fête chez Élise",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": { "audio": "a1j-s2/co5.mp3" },
+    "questions": [],
+    "melanger": false,
+    "score": "par_image",
+    "images": [
+      { "id": "i1", "image": "a1j-s2/co5-jus-orange.webp", "correct": true },
+      { "id": "i2", "image": "a1j-s2/co5-lunettes.webp", "correct": true },
+      { "id": "i3", "image": "a1j-s2/co5-echecs.webp", "correct": false },
+      { "id": "i4", "image": "a1j-s2/co5-raisin.webp", "correct": false },
+      { "id": "i5", "image": "a1j-s2/co5-raquette.webp", "correct": false }
+    ],
+    "consigne_supplementaire": null
   }
 ]

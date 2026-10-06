@@ -148,5 +148,112 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-po-1",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Test blanc A1 Junior · série 2 · Entretien dirigé",
+    "consigne": "Entretien dirigé. Répondez aux questions du professeur sur vous, votre famille, vos goûts et vos activités.",
+    "points": 4,
+    "support": {
+      "theme": "Vous, votre famille, vos goûts et vos activités",
+      "mots": ["Vous", "Votre famille", "Vos goûts", "Vos activités"],
+      "exemples_questions": [
+        "Comment vous appelez-vous ? Pouvez-vous épeler votre nom ?",
+        "Quel âge avez-vous ? Quand est votre anniversaire ?",
+        "D’où venez-vous ? Quelle est votre nationalité ?",
+        "Où habitez-vous ? Avec qui habitez-vous ?",
+        "Quelles langues parlez-vous ?",
+        "Combien de personnes y a-t-il dans votre famille ? Avez-vous des frères ou des sœurs ?",
+        "Que font vos parents ?",
+        "Quel est votre plat préféré ? Qu’est-ce que vous n’aimez pas manger ?",
+        "Quelle musique écoutez-vous ? Quel est votre film préféré ?",
+        "Quelle est votre matière préférée à l’école ?",
+        "Que faites-vous après l’école ? Et le week-end ?",
+        "Faites-vous du sport ? Lequel ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-po-2",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 Junior · série 2 · À la pizzeria",
+    "consigne": "Décrivez les images.",
+    "points": 4,
+    "support": {
+      "image": "a1j-s2/po2-pizzeria.webp",
+      "questions": ["Que voyez-vous ?", "Où sont les personnes ?", "Qu’est-ce qui se passe ici ?"],
+      "reponse_modele": "Je vois un monsieur âgé avec des lunettes et une serveuse. Ils sont dans un restaurant. Sur l’image 1, le monsieur entre dans le restaurant. Sur l’image 2, il est assis à une table et la serveuse lui donne la carte. Sur l’image 3, il mange et la serveuse lui sert du vin. Sur l’image 4, il paie l’addition et la serveuse débarrasse la table."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s2-po-3",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 Junior · série 2 · Commander une pizza",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du serveur.",
+    "points": 8,
+    "support": {
+      "situation": "Vous allez manger dans une pizzeria. Vous demandez au serveur des informations sur le choix de pizzas et les prix. Vous choisissez et vous payez.",
+      "images": [
+        "a1j-s2/po3-pizza-1.webp",
+        "a1j-s2/po3-pizza-2.webp",
+        "a1j-s2/po3-pizza-3.webp",
+        "a1j-s2/po3-pizza-4.webp"
+      ],
+      "grille": { "points": 9, "criteres": ["Lexique", "Morphosyntaxe", "Phonologie"] },
+      "repliques_au_corrige": true,
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonsoir, bienvenue à la pizzeria. Vous êtes combien ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonsoir, je suis seul(e).",
+          "variantes": ["Bonsoir, une table pour une personne, s’il vous plaît."]
+        },
+        { "locuteur": "examinateur", "texte": "Très bien, installez-vous ici. Voici la carte." },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Qu’est-ce que vous avez comme pizzas ?",
+          "variantes": ["Quelles pizzas est-ce que vous me conseillez ?"]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons une pizza quatre fromages, une pizza aux légumes, une pizza au salami et une pizza jambon-champignons."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien coûte la pizza aux légumes ? Et la pizza quatre fromages ?",
+          "variantes": ["C’est combien, la pizza jambon-champignons ?"]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La pizza aux légumes coûte 16 francs et la pizza quatre fromages coûte 18 francs. Les autres pizzas coûtent 17 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends la pizza quatre fromages, s’il vous plaît.",
+          "variantes": ["Je voudrais une pizza aux légumes, s’il vous plaît."]
+        },
+        { "locuteur": "examinateur", "texte": "Et comme boisson ?" },
+        { "locuteur": "eleve", "texte": "Une eau minérale, s’il vous plaît.", "variantes": ["Un jus de pomme, merci."] },
+        { "locuteur": "examinateur", "texte": "Voilà votre pizza. Bon appétit !" },
+        { "locuteur": "eleve", "texte": "Merci. L’addition, s’il vous plaît. Ça fait combien ?", "variantes": ["Je vous dois combien ?"] },
+        { "locuteur": "examinateur", "texte": "Ça fait 22 francs, s’il vous plaît." },
+        { "locuteur": "eleve", "texte": "Voilà. Je peux payer par carte ?", "variantes": ["Voici 25 francs."] },
+        { "locuteur": "examinateur", "texte": "Bien sûr. Merci et bonne soirée !" },
+        { "locuteur": "eleve", "texte": "Merci, au revoir !", "variantes": ["Bonne soirée !"] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]
