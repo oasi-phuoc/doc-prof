@@ -460,5 +460,467 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Annonces dans des lieux publics",
+    "consigne": "Vous allez Ã©couter des annonces dans des lieux publics. Il y a 2 Ã©coutes. Lisez les questions, puis rÃ©pondez.",
+    "support": {
+      "audio": "a2j-s2/co1.mp3",
+      "transcription": "Annonce 1 â€” Demain, vous allez Ã  la piscine avec votre professeure de sport, Mme Larouche. Nâ€™oubliez pas de prendre vos maillots de bain et vos serviettes.\n\nAnnonce 2 â€” Le rendez-vous pour la visite du Mont-Saint-Michel est Ã  8 h 30 devant lâ€™Ã©cole. Le voyage se fait en bus. Merci de prendre une casquette et une bouteille dâ€™eau.\n\nAnnonce 3 â€” Ã‰coutez, sâ€™il vous plaÃ®t : notre avion pour Paris a 40 minutes de retard. Vous pouvez visiter les magasins de lâ€™aÃ©roport. On se retrouve Ã  la porte B35 Ã  20 h.\n\nAnnonce 4 â€” Le magasin va fermer ses portes dans 20 minutes. Merci de terminer vos achats et de vous rapprocher des caisses automatiques situÃ©es au fond du magasin.\n\nAnnonce 5 â€” Bienvenue au musÃ©e. Il est interdit de toucher les peintures, de manger, de boire et de courir dans les salles. Merci de dÃ©poser les audioguides Ã  lâ€™accueil Ã  la fin de la visite.\n\nAnnonce 6 â€” Alerte rouge. Une tempÃªte est prÃ©vue pour demain, avec beaucoup de vent et des pluies trÃ¨s fortes. Vous devez rester chez vous. Lâ€™Ã©cole sera fermÃ©e toute la journÃ©e."
+    },
+    "questions": [
+      {
+        "enonce": "Annonce 1 â€” Que devez-vous prendre avec vous demain ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co1-lunettes-natation.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co1-palmes.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co1-maillot.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 2 â€” Comment voyagez-vous au Mont-Saint-Michel ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "En train"
+          },
+          {
+            "id": "b",
+            "texte": "En bus",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "En voiture"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 3 â€” Ã€ quelle porte devez-vous rejoindre le groupe ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "B20"
+          },
+          {
+            "id": "b",
+            "texte": "B35",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "B40"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 4 â€” OÃ¹ devez-vous aller ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co1-caisse-automatique.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co1-distributeur.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co1-caisse.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 5 â€” OÃ¹ faut-il dÃ©poser les audioguides ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Chez le gardien"
+          },
+          {
+            "id": "b",
+            "texte": "Ã€ lâ€™accueil",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Dans un sac"
+          }
+        ]
+      },
+      {
+        "enonce": "Annonce 6 â€” Quelle est la mÃ©tÃ©o de demain ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co1-meteo-eclaircies.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co1-meteo-neige.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co1-meteo-tempete.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Annonces Ã  la radio",
+    "consigne": "Vous entendez ces annonces Ã  la radio. Il y a 2 Ã©coutes. Lisez les questions, puis rÃ©pondez.",
+    "support": {
+      "audio": "a2j-s2/co2.mp3",
+      "transcription": "Document 1 â€” Aujourdâ€™hui, dans notre Ã©mission Â« Partage dâ€™ados Â», Pauline va nous expliquer comment elle rÃ©ussit toujours de trÃ¨s bonnes crÃªpes pour rÃ©galer toute sa famille. Alors, sortez vite de quoi Ã©crire pour prendre des notes et lancez-vous !\n\nDocument 2 â€” Beaucoup de nuages aujourdâ€™hui dans le sud de la France, mais il ne pleut pas. Demain, le vent va faire partir les nuages et nous apporter du soleil. Sortez les lunettes et les chapeaux !\n\nDocument 3 â€” Aujourdâ€™hui, Radiogen vous offre des places pour voir les meilleurs films de lâ€™annÃ©e. Pour gagner, appelez le 39 10 et dites Â« Radiogen Â». Vite, vous avez 15 minutes pour jouer !"
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 â€” Quel est le thÃ¨me de lâ€™Ã©mission ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Lâ€™Ã©cole"
+          },
+          {
+            "id": "b",
+            "texte": "Le sport"
+          },
+          {
+            "id": "c",
+            "texte": "La cuisine",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 1 â€” On vous demande de prendreâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "un stylo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "un ballon"
+          },
+          {
+            "id": "c",
+            "texte": "une poÃªle"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 â€” Quel temps fait-il aujourdâ€™hui dans le sud de la France ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co2-meteo-pluie.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co2-meteo-soleil.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co2-meteo-nuages.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 â€” Que faut-il porter demain ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co2-lunettes-soleil.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co2-doudoune.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co2-bottes.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 â€” Que pouvez-vous gagner ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Des places de cinÃ©ma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Des places de thÃ©Ã¢tre"
+          },
+          {
+            "id": "c",
+            "texte": "Des places de concert"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 â€” Pour jouer, il fautâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "tÃ©lÃ©phoner",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Ã©crire un mail"
+          },
+          {
+            "id": "c",
+            "texte": "envoyer un SMS"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Le message de LÃ©a",
+    "consigne": "Vous allez Ã©couter un message de votre amie LÃ©a sur un rÃ©pondeur. Il y a 2 Ã©coutes. Lisez les questions, puis rÃ©pondez.",
+    "support": {
+      "audio": "a2j-s2/co3.mp3",
+      "transcription": "Salut, câ€™est LÃ©a. Demain, je vais voir un match de rugby avec mon frÃ¨re au stade Gallo. Câ€™est Ã  15 h 30. Tu veux venir ? Rendez-vous Ã  15 h chez moi. Mon pÃ¨re va nous accompagner avec sa nouvelle voiture. Et aprÃ¨s, on ira Ã  pied au parc pour prendre notre goÃ»ter. Il y a de trÃ¨s bonnes glaces. Appelle-moi ce soir avant 18 h pour me donner ta rÃ©ponse."
+    },
+    "questions": [
+      {
+        "enonce": "LÃ©a vous propose deâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "jouer au rugby"
+          },
+          {
+            "id": "b",
+            "texte": "courir dans un parc"
+          },
+          {
+            "id": "c",
+            "texte": "voir un Ã©vÃ©nement sportif",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Ã€ quelle heure est le rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "15 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "15 h 30"
+          },
+          {
+            "id": "c",
+            "texte": "18 heures"
+          }
+        ]
+      },
+      {
+        "enonce": "Qui va vous emmener ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le pÃ¨re de LÃ©a",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le frÃ¨re de LÃ©a"
+          },
+          {
+            "id": "c",
+            "texte": "La mÃ¨re de LÃ©a"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel moyen de transport allez-vous prendre ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co3-bus.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co3-voiture.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co3-velo.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Quâ€™est-ce que LÃ©a vous propose de manger pour le goÃ»ter ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/co3-glace.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/co3-gateau.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/co3-sandwich.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez rÃ©pondre Ã  LÃ©a parâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "SMS"
+          },
+          {
+            "id": "b",
+            "texte": "courriel"
+          },
+          {
+            "id": "c",
+            "texte": "tÃ©lÃ©phone",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Conversations Ã  lâ€™Ã©cole",
+    "consigne": "Vous entendez ces conversations Ã  lâ€™Ã©cole. Associez chaque dialogue Ã  la bonne situation. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "support": {
+      "audio": "a2j-s2/co4.mp3",
+      "transcription": "Dialogue 1 â€” Tu as Ã©coutÃ© le dernier album de Geams ? â€” Non, pas encore. Il est comment ? â€” Il est vraiment trÃ¨s bien, tu devrais lâ€™Ã©couter. â€” Dâ€™accord, je vais suivre ton conseil. Merci.\n\nDialogue 2 â€” Tu nâ€™es pas venu hier au cours de natation ? â€” Non, je devais Ã©tudier. â€” Ah bon ? Quâ€™est-ce que tu devais Ã©tudier ? â€” Jâ€™avais un contrÃ´le de maths aujourdâ€™hui et je dois absolument avoir une bonne note.\n\nDialogue 3 â€” Le mois prochain, jâ€™organise une fÃªte chez moi. â€” Tu fÃªtes ton anniversaire ? â€” Oui, et tu es invitÃ©. Câ€™est le 28 mars, Ã  20 h. Tu viendras ? â€” Bien sÃ»r, je serai lÃ .\n\nDialogue 4 â€” Mon tÃ©lÃ©phone portable a un problÃ¨me : la sonnerie ne fonctionne plus. â€” Je connais quelquâ€™un qui peut le rÃ©parer. â€” Tu as son numÃ©ro de tÃ©lÃ©phone ? â€” Si tu veux, je tâ€™accompagne. Câ€™est tout prÃ¨s dâ€™ici."
+    },
+    "questions": [
+      {
+        "enonce": "Ã‰crivez la lettre de la situation Ã  cÃ´tÃ© de chaque dialogue.\nA. Accepter une invitation â€” B. Refuser une invitation â€” C. Donner une opinion â€” D. Proposer de lâ€™aide Ã  quelquâ€™un â€” E. Donner des explications â€” F. Sâ€™informer sur un itinÃ©raire",
+        "type_reponse": "lignes",
+        "points": 7,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (2 points)",
+            "reponse": "C. Donner une opinion"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "E. Donner des explications"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "A. Accepter une invitation"
+          },
+          {
+            "label": "Dialogue 4 (1 point)",
+            "reponse": "D. Proposer de lâ€™aide Ã  quelquâ€™un"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

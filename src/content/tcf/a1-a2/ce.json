@@ -424,5 +424,452 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· ActivitÃ©s pour les amis",
+    "consigne": "Vous voulez proposer des activitÃ©s Ã  vos amis. Vous lisez ces annonces dans le journal. Quelles activitÃ©s allez-vous proposer Ã  vos amis ? Attention : il y a huit personnes mais seulement six documents.",
+    "support": {
+      "titre": "Annonces du journal",
+      "texte": "Document 1 â€” La piscine Renan est ouverte de 9 h Ã  18 h en semaine et de 10 h Ã  minuit tous les week-ends ! www.piscinerenan.com\n\nDocument 2 â€” Le cinÃ©ma Renoir propose des tarifs rÃ©duits aux jeunes de moins de 18 ans. SÃ©ances dÃ¨s 10 h 30 tous les jours.\n\nDocument 3 â€” Ouverture dâ€™un espace informatique Ã  la bibliothÃ¨que Victor-Hugo. Connexion Ã  Internet gratuite pendant 2 h chaque jour !\n\nDocument 4 â€” Cours de cuisine pour les jeunes tous les mercredis dans la salle des fÃªtes. Inscriptions : www.coursdecuisine.fr\n\nDocument 5 â€” Vous voulez apprendre une langue Ã©trangÃ¨re ? La mairie propose des cours gratuits pendant les vacances ! Informations : 01 47 85 69 87\n\nDocument 6 â€” Le stade Piquemal est ouvert tous les jours de 8 h Ã  19 h. Venez avec vos amis, apportez votre ballon et jouez au football, au basket-ball, au handballâ€¦\n\nVos amis :\nA. Juliette voudrait faire un sport dâ€™Ã©quipe.\nB. Paul adore faire des jeux en ligne sur ordinateur.\nC. Laura voudrait apprendre Ã  faire de bons plats.\nD. Anna aime beaucoup le thÃ©Ã¢tre.\nE. Emma adore nager.\nF. Simon veut apprendre lâ€™espagnol.\nG. Gaspard aime beaucoup lire.\nH. MaÃ«l voudrait regarder un film.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour chaque document, Ã©crivez la lettre de lâ€™amiÂ·e Ã  qui vous proposez lâ€™activitÃ© (1 point par document).",
+        "type_reponse": "lignes",
+        "points": 6,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Document 1",
+            "reponse": "E. Emma"
+          },
+          {
+            "label": "Document 2",
+            "reponse": "H. MaÃ«l"
+          },
+          {
+            "label": "Document 3",
+            "reponse": "B. Paul"
+          },
+          {
+            "label": "Document 4",
+            "reponse": "C. Laura"
+          },
+          {
+            "label": "Document 5",
+            "reponse": "F. Simon"
+          },
+          {
+            "label": "Document 6",
+            "reponse": "A. Juliette"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Les vacances de Basile",
+    "consigne": "Lisez le message et rÃ©pondez aux questions.",
+    "support": {
+      "de": "basile@voila.net",
+      "a": "Vous",
+      "objet": "Vacances",
+      "texte": "Salut !\nÃ‡a va ?\nJe suis en vacances chez mes cousins. Mon frÃ¨re vient de finir ses examens, il arrive demain.\nMes cousins habitent une grande maison au milieu de la forÃªt. On fait des promenades Ã  vÃ©lo tous les jours et on fait souvent du basket, mais je ne suis pas trÃ¨s bon, je perds tous les matchs ! Je prÃ©fÃ¨re le foot ou le volley !\nLe voisin a une ferme avec des vaches, des cochons, des canardsâ€¦ On va ramasser les Å“ufs dans le poulailler tous les matins, mais ce que je prÃ©fÃ¨re, câ€™est donner Ã  manger aux lapins, ils sont tout doux !\nJe rentre Ã  la fin du mois. Je mâ€™amuse bien, mais je suis trÃ¨s heureux de retrouver ma maison : mon chien me manque !\nBises\nBasile"
+    },
+    "questions": [
+      {
+        "enonce": "Basile est parti en vacancesâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "dans un club"
+          },
+          {
+            "id": "b",
+            "texte": "chez des amis"
+          },
+          {
+            "id": "c",
+            "texte": "dans sa famille",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Le frÃ¨re de Basileâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "est dÃ©jÃ  parti en vacances"
+          },
+          {
+            "id": "b",
+            "texte": "ne prend pas de vacances"
+          },
+          {
+            "id": "c",
+            "texte": "va bientÃ´t venir en vacances",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "OÃ¹ Basile est-il en vacances ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/ce2-campagne.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/ce2-mer.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/ce2-montagne.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel sport Basile fait-il souvent ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Du football"
+          },
+          {
+            "id": "b",
+            "texte": "Du volleyball"
+          },
+          {
+            "id": "c",
+            "texte": "Du basketball",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Que prÃ©fÃ¨re Basile ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2j-s2/ce2-oeufs.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2j-s2/ce2-lapins.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2j-s2/ce2-vache.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Basileâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "aimerait partir dans un autre lieu"
+          },
+          {
+            "id": "b",
+            "texte": "est trÃ¨s content de rentrer chez lui",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "veut rester plus longtemps en vacances"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Chez votre amie Lisa",
+    "consigne": "Vous Ãªtes chez votre amie Lisa. Lisez les documents et rÃ©pondez aux questions.",
+    "support": {
+      "titre": "Trois documents chez Lisa",
+      "texte": "Document 1 â€” Courriel de maud78@mail.fr Ã  Lisa\nSalut Lisa !\nJe te propose de participer avec moi Ã  une course Ã  pied demain dans le parc du chÃ¢teau. La course commence Ã  10 h. Il faut arriver Ã  9 h 30 pour sâ€™inscrire, câ€™est Ã  lâ€™entrÃ©e du parc. AprÃ¨s, on va prÃ¨s du lac pour prendre le tee-shirt avec notre numÃ©ro de coureur et on sâ€™installe pour le dÃ©part. Apporte tes nouvelles baskets ! On va courir 5 km, lâ€™arrivÃ©e de la course est derriÃ¨re le chÃ¢teau. Il y a une montre Ã  gagner !\nÃ€ samedi !\nMaud\n\nDocument 2 â€” Jus du sportif\nLes fruits et les lÃ©gumes apportent beaucoup de vitamines. Avec cette recette de jus de fruits pour les sportifs, vous garderez la forme !\nIngrÃ©dients : une banane, une pomme, deux carottes, 1/2 concombre.\nÃ‰pluchez la banane, mais gardez la peau des autres fruits et lÃ©gumes, car câ€™est lÃ  que se trouvent toutes les vitamines ! Sâ€™ils sont bio, ne les lavez pas. Coupez les fruits et les lÃ©gumes en morceaux, mettez-les dans un bol mixeur et mÃ©langez pendant 30 secondes. Versez dans un grand verre.\nSi vous voulez Ã©viter dâ€™avoir faim dans la matinÃ©e, ajoutez du yaourt et des cÃ©rÃ©ales dans votre jus : câ€™est parfait pour le petit-dÃ©jeuner !\n\nDocument 3 â€” Comment rester en forme ?\nFaire du sport tous les jours, mÃªme peu de temps, est le meilleur moyen dâ€™Ãªtre en bonne santÃ© : course Ã  pied, vÃ©lo, gymâ€¦ MÃªme quand on a peu dâ€™argent, on peut trouver le sport qui nous plaÃ®t !\nBien manger est aussi trÃ¨s important : quand vous vous rÃ©veillez, commencez la journÃ©e avec un grand verre dâ€™eau et mangez des fruits, du pain ou des cÃ©rÃ©alesâ€¦ Mangez lentement et juste la quantitÃ© qui vous convient pour ne pas avoir faim Ã  10 h !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 â€” OÃ¹ faut-il aller pour sâ€™inscrire Ã  la course ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "PrÃ¨s du lac"
+          },
+          {
+            "id": "b",
+            "texte": "Ã€ lâ€™entrÃ©e du parc",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "DerriÃ¨re le chÃ¢teau"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 1 â€” Maud demande Ã  Lisa de venir avecâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "sa nouvelle montre"
+          },
+          {
+            "id": "b",
+            "texte": "son nouveau tee-shirt"
+          },
+          {
+            "id": "c",
+            "texte": "ses nouvelles chaussures",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 â€” Il faut commencer parâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "laver tous les fruits"
+          },
+          {
+            "id": "b",
+            "texte": "couper les fruits en morceaux"
+          },
+          {
+            "id": "c",
+            "texte": "enlever la peau de la banane",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 â€” On peut ajouter des ingrÃ©dients pour avoir une boisson plusâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "froide"
+          },
+          {
+            "id": "b",
+            "texte": "lÃ©gÃ¨re"
+          },
+          {
+            "id": "c",
+            "texte": "nourrissante",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 â€” Dâ€™aprÃ¨s le texte, pour faire du sport, il fautâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "avoir du temps libre"
+          },
+          {
+            "id": "b",
+            "texte": "dÃ©penser un peu dâ€™argent"
+          },
+          {
+            "id": "c",
+            "texte": "trouver lâ€™activitÃ© quâ€™on aime",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 â€” Que faut-il faire le matin au rÃ©veil ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Boire de lâ€™eau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Manger beaucoup"
+          },
+          {
+            "id": "c",
+            "texte": "Attendre avant de manger"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2j-s2-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Bigflo et Oli",
+    "consigne": "Vous lisez cet article dans le journal. RÃ©pondez aux questions.",
+    "support": {
+      "titre": "Bigflo et Oli, rappeurs des familles",
+      "texte": "Les frÃ¨res toulousains proposent un troisiÃ¨me album, Â« La Vie de rÃªve Â», qui est sorti le 23 novembre. Bigflo et Oli, 25 et 22 ans, sont les rappeurs les plus populaires de France.\n\nDans leur deuxiÃ¨me disque, Â« La Vraie Vie Â», sorti en juin 2017 et vendu Ã  450 000 exemplaires, les deux frÃ¨res racontaient leur envie de rÃ©ussir et de remplir de grandes salles de concerts. Cette fois, câ€™est le contraire : Â« La Vie de rÃªve Â» est lâ€™Å“uvre de deux jeunes adultes qui, aprÃ¨s avoir connu le succÃ¨s, voudraient maintenant retrouver une vie ordinaire, avec les soirÃ©es entre amis et les parties de jeux vidÃ©o.\n\nFlorian et Olivio Ordonez (leurs vrais noms) ont fait une Ã©cole de musique. Ils ne portent pas de vÃªtements Ã  la mode, de lunettes de soleil, ni de dents en or. La clÃ© de leur succÃ¨s, câ€™est un rap Â« accessible, familial et simple Â», trÃ¨s loin du rap de la plupart des autres rappeurs Ã  la mode.\n\nDâ€™aprÃ¨s un article du Parisien.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Bigflo et Oli sont desâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "acteurs"
+          },
+          {
+            "id": "b",
+            "texte": "danseurs"
+          },
+          {
+            "id": "c",
+            "texte": "chanteurs",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Ils sont trÃ¨s populairesâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Ã  Toulouse"
+          },
+          {
+            "id": "b",
+            "texte": "en France",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "dans le monde"
+          }
+        ]
+      },
+      {
+        "enonce": "Lâ€™album Â« La Vraie Vie Â» est sortiâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "en juin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "en novembre"
+          },
+          {
+            "id": "c",
+            "texte": "en dÃ©cembre"
+          }
+        ]
+      },
+      {
+        "enonce": "Â« La Vie de rÃªve Â» parle du rÃªve de succÃ¨s des deux frÃ¨res. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Faux : ils veulent retrouver une vie ordinaire (câ€™est Â« La Vraie Vie Â» qui parlait de leur envie de rÃ©ussir)."
+      },
+      {
+        "enonce": "Aujourdâ€™hui, Bigflo et Oli voudraient vivreâ€¦",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "une vie de star"
+          },
+          {
+            "id": "b",
+            "texte": "une vie normale",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "une vie dâ€™Ã©tudiants"
+          }
+        ]
+      },
+      {
+        "enonce": "Bigflo et Oli sont trÃ¨s populaires parce quâ€™ils sont restÃ©s simples. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Vrai : la clÃ© de leur succÃ¨s, câ€™est un rap Â« accessible, familial et simple Â»."
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
