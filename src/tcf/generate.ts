@@ -170,6 +170,15 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
         ...(grille ? [tcfItem({ kind: 'grille', grille }, true, '', grille.points)] : []),
       ]
     }
+    case 'dialogue_a_completer':
+      return [
+        scoredItem({
+          kind: 'dialogue',
+          situation: ex.support.situation ?? '',
+          repliques: ex.support.repliques,
+          interlocuteur: ex.support.interlocuteur,
+        }),
+      ]
   }
 }
 

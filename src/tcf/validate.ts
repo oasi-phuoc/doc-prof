@@ -176,7 +176,8 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
       if (blank(ex.support.image)) errors.push('Image manquante.')
       break
     case 'dialogue':
-      if (blank(ex.support.situation)) errors.push('La situation est vide.')
+    case 'dialogue_a_completer':
+      if (ex.type_exercice === 'dialogue' && blank(ex.support.situation)) errors.push('La situation est vide.')
       if (!ex.support.repliques.some((r) => r.locuteur === 'eleve')) {
         errors.push('Au moins une réplique de l’élève.')
       }

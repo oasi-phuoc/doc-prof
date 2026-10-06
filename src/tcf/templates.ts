@@ -160,6 +160,19 @@ export function emptyTcfExercise(
         support: { consigne: '', nb_mots: {}, reponse_modele: '' },
         consigne_supplementaire: '',
       }
+    case 'dialogue_a_completer':
+      return {
+        ...base,
+        competence: 'PE',
+        type_exercice: 'dialogue_a_completer',
+        support: {
+          interlocuteur: '',
+          repliques: [
+            { locuteur: 'examinateur', texte: '' },
+            { locuteur: 'eleve', texte: '', variantes: [] },
+          ],
+        },
+      }
     case 'mots_theme':
       return {
         ...base,

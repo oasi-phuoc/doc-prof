@@ -217,6 +217,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'formulaire':
+    case 'dialogue_a_completer':
       return null
   }
 }

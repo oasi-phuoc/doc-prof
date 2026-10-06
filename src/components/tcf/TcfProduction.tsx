@@ -89,18 +89,22 @@ const LOCUTEUR_LABEL: Record<TcfReplique['locuteur'], string> = {
   eleve: 'Vous',
 }
 
-/** Dialogue PO : lignes à la place des répliques de l’élève ; corrigé avec variantes. */
+/** Dialogue (PO ou PE) : lignes à la place des répliques de l’élève ; corrigé avec variantes. */
 export function DialoguePO({
   situation,
   repliques,
   auCorrige = false,
+  interlocuteur,
   mode,
 }: {
   situation: string
   repliques: TcfReplique[]
   auCorrige?: boolean
+  interlocuteur?: string
   mode: PreviewMode
 }) {
+  const label = (loc: TcfReplique['locuteur']) =>
+    loc === 'examinateur' && interlocuteur?.trim() ? interlocuteur.trim() : LOCUTEUR_LABEL[loc]
   const show = mode === 'answers'
   return (
     <div className="tcf-dialogue">
@@ -109,7 +113,7 @@ export function DialoguePO({
         <ol className={`tcf-repliques${auCorrige ? ' is-compact' : ''}`}>
           {repliques.map((r, i) => (
             <li key={i} className={`tcf-replique is-${r.locuteur}`}>
-              <b className="tcf-locuteur">{LOCUTEUR_LABEL[r.locuteur]} :</b>
+              <b className="tcf-locuteur">{label(r.locuteur)} :</b>
               {r.locuteur === 'examinateur' ? (
                 <span>{r.texte}</span>
               ) : show ? (

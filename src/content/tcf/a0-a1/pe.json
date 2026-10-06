@@ -144,5 +144,74 @@
     },
     "questions": [],
     "consigne_supplementaire": "Vous lui proposez de venir avec vous.\nVous lui dites où et quand vous allez.\nVous lui demandez quel cadeau acheter."
+  },
+  {
+    "id": "tcf-a1-s1-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 · série 1 · Abonnement sportif",
+    "consigne": "Vous voulez faire du sport après l’école et vous devez remplir ce formulaire d’abonnement.",
+    "points": 10,
+    "support": {
+      "titre": "Votre fiche d’abonnement",
+      "champs": [
+        { "label": "Prénom :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Date de naissance :", "type": "date", "corrige": "Réponse personnelle (ex. : 12.03.1990)" },
+        { "label": "Nationalité :", "type": "texte", "corrige": "Réponse personnelle (ex. : afghane, érythréenne…)" },
+        { "label": "Adresse électronique :", "type": "texte", "corrige": "Adresse électronique complète (avec @)" },
+        { "label": "Numéro de téléphone :", "type": "texte", "corrige": "Numéro complet" },
+        { "label": "Sport pratiqué :", "type": "texte", "corrige": "Ex. : la natation, le football…" },
+        { "label": "Durée de l’abonnement :", "type": "texte", "corrige": "Ex. : 3 mois, 1 an…" },
+        { "label": "Jour préféré :", "type": "texte", "corrige": "Ex. : le mercredi" },
+        { "label": "Nombre de séances par semaine :", "type": "texte", "corrige": "Ex. : 2" },
+        { "label": "N° de téléphone d’un médecin :", "type": "texte", "corrige": "Numéro complet" }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 · série 1 · Bonne année",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 10,
+    "support": {
+      "consigne": "Vous recevez une carte de vos amis français : « Bonne année ! Meilleurs vœux. Amitiés de France. Karine et Léo ». Vous répondez à vos amis. Écrivez un message de 40 mots.",
+      "nb_mots": { "min": 40 },
+      "email": { "a": "mesamis@email.com", "objet": "Invitation pour visiter ma ville" },
+      "reponse_modele": "Chers Karine et Léo,\nMerci pour votre carte ! Bonne année à vous aussi et meilleurs vœux. Venez me voir à Sion ! Vous pouvez venir du 10 au 15 juillet ou en août. Nous pouvons visiter la vieille ville, faire une promenade en montagne et manger une raclette.\nÀ bientôt !\nSamira"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous souhaitez une bonne année à vos amis.\nVous les invitez à venir dans votre ville.\nVous leur proposez des dates et des activités."
+  },
+  {
+    "id": "tcf-a1-s1-pe-3",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Test blanc A1 · série 1 · Basket au parc",
+    "consigne": "Un ami vous envoie des messages. Il vous propose une activité. Complétez le dialogue.",
+    "points": 5,
+    "support": {
+      "interlocuteur": "Votre ami",
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Salut Alex ! Comment ça va ?" },
+        { "locuteur": "eleve", "texte": "Salut ! Ça va bien, merci. Et toi ?", "variantes": ["Très bien, merci !"] },
+        { "locuteur": "examinateur", "texte": "Ça te dit d’aller faire du basket au parc ?" },
+        { "locuteur": "eleve", "texte": "Oui, bonne idée ! J’adore le basket.", "variantes": ["Oui, avec plaisir !"] },
+        { "locuteur": "examinateur", "texte": "Tu veux aller à quelle heure ?" },
+        { "locuteur": "eleve", "texte": "À 15 heures, ça te va ?", "variantes": ["Après le déjeuner, vers 14 heures."] },
+        { "locuteur": "examinateur", "texte": "Après, tu veux faire quoi ?" },
+        { "locuteur": "eleve", "texte": "On peut aller boire un verre au café.", "variantes": ["On peut manger une pizza ensemble."] },
+        { "locuteur": "examinateur", "texte": "C’est une bonne idée ! À tout à l’heure !" },
+        { "locuteur": "eleve", "texte": "À tout à l’heure !", "variantes": ["À plus tard !"] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]

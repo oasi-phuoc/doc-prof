@@ -37,6 +37,71 @@ function NbMotsFields({ value, onChange }: { value: TcfNbMots; onChange: (next: 
   )
 }
 
+function RepliquesFields({
+  repliques,
+  autreLabel,
+  onChange,
+}: {
+  repliques: TcfReplique[]
+  autreLabel: string
+  onChange: (next: TcfReplique[]) => void
+}) {
+  return (
+    <>
+      {repliques.map((r, i) => (
+        <fieldset className="tcf-question-editor" key={i}>
+          <legend>
+            Réplique {i + 1}
+            <button
+              type="button"
+              className="calli-field-remove"
+              aria-label={`Supprimer la réplique ${i + 1}`}
+              disabled={repliques.length <= 1}
+              onClick={() => onChange(repliques.filter((_, k) => k !== i))}
+            >
+              ×
+            </button>
+          </legend>
+          <div className="mode-toggle" role="group" aria-label="Locuteur">
+            {(['examinateur', 'eleve'] as const).map((loc) => (
+              <button
+                key={loc}
+                type="button"
+                className={r.locuteur === loc ? 'active' : ''}
+                onClick={() => onChange(repliques.map((x, k) => (k === i ? { ...x, locuteur: loc } : x)))}
+              >
+                {loc === 'examinateur' ? autreLabel : 'Élève'}
+              </button>
+            ))}
+          </div>
+          <TextField
+            label="Texte"
+            value={r.texte}
+            multiline
+            rows={2}
+            onChange={(texte) => onChange(repliques.map((x, k) => (k === i ? { ...x, texte } : x)))}
+          />
+          {r.locuteur === 'eleve' ? (
+            <LinesField
+              label="Autres réponses possibles (une par ligne)"
+              values={r.variantes ?? []}
+              onChange={(variantes) => onChange(repliques.map((x, k) => (k === i ? { ...x, variantes } : x)))}
+            />
+          ) : null}
+        </fieldset>
+      ))}
+      <div className="tcf-row">
+        <button type="button" className="tcf-btn" onClick={() => onChange([...repliques, { locuteur: 'examinateur', texte: '' }])}>
+          + réplique {autreLabel.toLowerCase()}
+        </button>
+        <button type="button" className="tcf-btn" onClick={() => onChange([...repliques, { locuteur: 'eleve', texte: '', variantes: [] }])}>
+          + réplique élève
+        </button>
+      </div>
+    </>
+  )
+}
+
 /** Champs spécifiques au type d’exercice (support). */
 function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) => void }) {
   switch (ex.type_exercice) {
@@ -441,59 +506,32 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
               onChange={(points) => (grille ? set(withSupport(ex, { grille: { ...grille, points: points ?? 0 } })) : undefined)}
             />
           </div>
-          {repliques.map((r, i) => (
-            <fieldset className="tcf-question-editor" key={i}>
-              <legend>
-                Réplique {i + 1}
-                <button
-                  type="button"
-                  className="calli-field-remove"
-                  aria-label={`Supprimer la réplique ${i + 1}`}
-                  disabled={repliques.length <= 1}
-                  onClick={() => setRepliques(repliques.filter((_, k) => k !== i))}
-                >
-                  ×
-                </button>
-              </legend>
-              <div className="mode-toggle" role="group" aria-label="Locuteur">
-                {(['examinateur', 'eleve'] as const).map((loc) => (
-                  <button
-                    key={loc}
-                    type="button"
-                    className={r.locuteur === loc ? 'active' : ''}
-                    onClick={() => setRepliques(repliques.map((x, k) => (k === i ? { ...x, locuteur: loc } : x)))}
-                  >
-                    {loc === 'examinateur' ? 'Examinateur·trice' : 'Élève'}
-                  </button>
-                ))}
-              </div>
-              <TextField
-                label="Texte"
-                value={r.texte}
-                multiline
-                rows={2}
-                onChange={(texte) => setRepliques(repliques.map((x, k) => (k === i ? { ...x, texte } : x)))}
-              />
-              {r.locuteur === 'eleve' ? (
-                <LinesField
-                  label="Autres réponses possibles (une par ligne)"
-                  values={r.variantes ?? []}
-                  onChange={(variantes) => setRepliques(repliques.map((x, k) => (k === i ? { ...x, variantes } : x)))}
-                />
-              ) : null}
-            </fieldset>
-          ))}
-          <div className="tcf-row">
-            <button type="button" className="tcf-btn" onClick={() => setRepliques([...repliques, { locuteur: 'examinateur', texte: '' }])}>
-              + réplique examinateur·trice
-            </button>
-            <button type="button" className="tcf-btn" onClick={() => setRepliques([...repliques, { locuteur: 'eleve', texte: '', variantes: [] }])}>
-              + réplique élève
-            </button>
-          </div>
+          <RepliquesFields repliques={repliques} autreLabel="Examinateur·trice" onChange={setRepliques} />
         </>
       )
     }
+    case 'dialogue_a_completer':
+      return (
+        <>
+          <TextField
+            label="Situation (optionnel)"
+            value={ex.support.situation ?? ''}
+            multiline
+            rows={2}
+            onChange={(situation) => set(withSupport(ex, { situation: situation || undefined }))}
+          />
+          <TextField
+            label="Nom de l’interlocuteur (ex. : Votre ami)"
+            value={ex.support.interlocuteur ?? ''}
+            onChange={(interlocuteur) => set(withSupport(ex, { interlocuteur: interlocuteur || undefined }))}
+          />
+          <RepliquesFields
+            repliques={ex.support.repliques}
+            autreLabel="Interlocuteur"
+            onChange={(repliques) => set(withSupport(ex, { repliques }))}
+          />
+        </>
+      )
   }
 }
 
@@ -524,6 +562,12 @@ function cleanForExport(raw: TcfExercise): TcfExercise {
         grille: ex.support.grille
           ? { ...ex.support.grille, criteres: ex.support.grille.criteres.filter((c) => c.trim()) }
           : undefined,
+      })
+    case 'dialogue_a_completer':
+      return withSupport(ex, {
+        repliques: ex.support.repliques.map((r) =>
+          r.locuteur === 'eleve' ? { ...r, variantes: (r.variantes ?? []).filter((v) => v.trim()) } : r,
+        ),
       })
     case 'formulaire':
       return withSupport(ex, {

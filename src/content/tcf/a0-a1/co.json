@@ -615,5 +615,215 @@
       { "id": "i5", "image": "a1j-s3/co5-serviettes.webp", "correct": true }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 1 · Le message de Gilles",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s1/co1.mp3",
+      "transcription": "Bonjour chère cousine, c’est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19 h ? Je t’invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17 h si tu es d’accord et je réserve une table pour 20 h. Bisous !"
+    },
+    "questions": [
+      {
+        "enonce": "Qui est Gilles ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Votre ami" },
+          { "id": "b", "texte": "Votre cousin", "correct": true },
+          { "id": "c", "texte": "Votre directeur" }
+        ]
+      },
+      {
+        "enonce": "Où est Gilles ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Dans votre ville, pour son travail (dans un hôtel)."
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "17 h 00" },
+          { "id": "b", "texte": "19 h 00" },
+          { "id": "c", "texte": "20 h 00", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s1/co1-lettre.webp" },
+          { "id": "b", "image": "a1-s1/co1-sms.webp", "correct": true },
+          { "id": "c", "image": "a1-s1/co1-ecrire.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 1 · L’annonce du magasin",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s1/co2.mp3",
+      "transcription": "Chers clients, courez vite au rayon librairie ! Depuis 14 h et jusqu’à 16 h seulement, pour un livre acheté, un deuxième offert. Et n’oubliez pas de demander à la caisse un bon pour participer au grand tirage au sort à 19 h et gagner deux entrées gratuites pour le festival du livre, qui commence demain."
+    },
+    "questions": [
+      {
+        "enonce": "Il faut courir où ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s1/co2-marche.webp" },
+          { "id": "b", "image": "a1-s1/co2-vetements.webp" },
+          { "id": "c", "image": "a1-s1/co2-librairie.webp", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Cette annonce est valable…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Entre 14 h et 19 h" },
+          { "id": "b", "texte": "Entre 14 h et 16 h", "correct": true },
+          { "id": "c", "texte": "Entre 16 h et 19 h" }
+        ]
+      },
+      {
+        "enonce": "Où pouvez-vous avoir un bon pour participer au jeu ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s1/co2-magasin-informatique.webp" },
+          { "id": "b", "image": "a1-s1/co2-caisse.webp", "correct": true },
+          { "id": "c", "image": "a1-s1/co2-sortie.webp" }
+        ]
+      },
+      {
+        "enonce": "Quand commence le festival ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Demain."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 1 · Le médecin du travail",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s1/co3.mp3",
+      "transcription": "Bonjour, c’est José, le secrétaire du directeur. Vous avez rendez-vous avec le médecin du travail lundi prochain. Pour votre rendez-vous, venez à 10 heures au deuxième étage. Vous pouvez parler de votre accident d’hier. Racontez votre visite à l’hôpital et montrez votre ordonnance. Si vous avez des questions, appelez-moi vendredi. Bonne journée !"
+    },
+    "questions": [
+      {
+        "enonce": "Qui vous laisse ce message ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Votre secrétaire" },
+          { "id": "b", "texte": "Le secrétaire du médecin" },
+          { "id": "c", "texte": "Le secrétaire du directeur", "correct": true }
+        ]
+      },
+      {
+        "enonce": "À quelle heure devez-vous aller au rendez-vous ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "À 10 heures (lundi prochain)."
+      },
+      {
+        "enonce": "Le rendez-vous, c’est pour parler de votre accident…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "de lundi" },
+          { "id": "b", "texte": "d’hier", "correct": true },
+          { "id": "c", "texte": "de vendredi" }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous prendre avec vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Votre ordonnance", "correct": true },
+          { "id": "b", "texte": "Votre pièce d’identité" },
+          { "id": "c", "texte": "Votre feuille de visite à l’hôpital" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 · série 1 · À la médiathèque",
+    "consigne": "Observez les situations et écoutez les 4 dialogues. Notez le numéro du dialogue (1 à 4) sous l’image. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1-s1/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Bonjour, je voudrais m’inscrire, s’il vous plaît. — Vous avez une pièce d’identité ? — Oui, et j’ai aussi une carte d’étudiant.\n\nDialogue 2 — Vous ne pouvez pas emprunter six DVD. — Ah bon ? C’est écrit sur le panneau ? — Non, c’est six livres et trois DVD.\n\nDialogue 3 — Bonjour, je cherche une méthode pour apprendre le chinois. — Toutes nos méthodes sont classées au rayon 25, derrière vous. — Ah, merci, je n’avais pas fait attention.\n\nDialogue 4 — C’est fermé ? Mais ça fait longtemps ? — Non, regardez le panneau : c’est une fermeture exceptionnelle. — Ah bon, merci, je reviendrai demain."
+    },
+    "questions": [],
+    "situations": [
+      { "id": "s1", "image": "a1-s1/co4-situation-a.webp", "dialogue": 4 },
+      { "id": "s2", "image": "a1-s1/co4-situation-b.webp", "dialogue": 1 },
+      { "id": "s3", "image": "a1-s1/co4-situation-c.webp", "dialogue": null },
+      { "id": "s4", "image": "a1-s1/co4-situation-d.webp", "dialogue": null },
+      { "id": "s5", "image": "a1-s1/co4-situation-e.webp", "dialogue": 2 },
+      { "id": "s6", "image": "a1-s1/co4-situation-f.webp", "dialogue": 3 }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-co-5",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Test blanc A1 · série 1 · Le sac du week-end",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": { "audio": "a1-s1/co5.mp3" },
+    "questions": [],
+    "melanger": false,
+    "score": "par_image",
+    "images": [
+      { "id": "i1", "image": "a1-s1/co5-lit.webp", "correct": true },
+      { "id": "i2", "image": "a1-s1/co5-gants.webp", "correct": true },
+      { "id": "i3", "image": "a1-s1/co5-papier-toilette.webp", "correct": false },
+      { "id": "i4", "image": "a1-s1/co5-tente.webp", "correct": false },
+      { "id": "i5", "image": "a1-s1/co5-dentifrice.webp", "correct": true }
+    ],
+    "consigne_supplementaire": null
   }
 ]

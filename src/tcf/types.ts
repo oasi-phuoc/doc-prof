@@ -149,17 +149,24 @@ export type TcfPeQuestionTexte = TcfBase<
     email?: { a: string; objet: string }
   }
 >
+/** Dialogue écrit : répliques de l’interlocuteur données, l’élève écrit les siennes. */
+export type TcfPeDialogue = TcfBase<
+  'PE',
+  'dialogue_a_completer',
+  { situation?: string; interlocuteur?: string; repliques: TcfReplique[] }
+>
 export type TcfPeExercise =
   | TcfPeFormulaire
   | TcfPeImageQuestion
   | TcfPeSmsReponse
   | TcfPeEmailReponse
   | TcfPeQuestionTexte
-
-// —— PO ——
+  | TcfPeDialogue
 
 export type TcfRepliqueLocuteur = 'examinateur' | 'eleve'
 export type TcfReplique = { locuteur: TcfRepliqueLocuteur; texte: string; variantes?: string[] }
+
+// —— PO ——
 
 /** Grille de l’oral notée à part (ex. lexique, morphosyntaxe, phonologie). */
 export type TcfGrille = { points: number; criteres: string[] }
@@ -239,6 +246,6 @@ export type TcfSheetItem =
       nbLignes: number
       reponseModele?: string
     }
-  | { kind: 'dialogue'; situation: string; repliques: TcfReplique[]; auCorrige?: boolean }
+  | { kind: 'dialogue'; situation: string; repliques: TcfReplique[]; auCorrige?: boolean; interlocuteur?: string }
   | { kind: 'vide'; message: string }
   | { kind: 'informations'; niveau: TcfNiveau }

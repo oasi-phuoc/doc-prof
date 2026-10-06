@@ -360,5 +360,153 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-po-1",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Test blanc A1 · série 1 · Entretien dirigé",
+    "consigne": "Entretien dirigé. Répondez aux questions du professeur sur vous, votre famille, vos goûts et vos activités.",
+    "points": 4,
+    "support": {
+      "theme": "Vous, votre famille, vos goûts et vos activités",
+      "mots": ["Vous", "Votre famille", "Vos goûts", "Vos activités"],
+      "exemples_questions": [
+        "Comment vous appelez-vous ? Pouvez-vous épeler votre nom ?",
+        "Quel âge avez-vous ? D’où venez-vous ?",
+        "Où habitez-vous ? Depuis combien de temps êtes-vous en Suisse ?",
+        "Quelles langues parlez-vous ?",
+        "Êtes-vous marié(e) ? Avez-vous des enfants ?",
+        "Avez-vous des frères et sœurs ? Où habitent-ils ?",
+        "Quel est votre métier ? Travaillez-vous ou étudiez-vous ?",
+        "Qu’est-ce que vous aimez manger ? Savez-vous cuisiner ?",
+        "Quelle musique aimez-vous ?",
+        "Que faites-vous le week-end ? Faites-vous du sport ?",
+        "Comment venez-vous au cours ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-po-2",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 · série 1 · À la boulangerie",
+    "consigne": "Décrivez les images.",
+    "points": 4,
+    "support": {
+      "image": "a1-s1/po2-boulangerie.webp",
+      "questions": ["Que voyez-vous ?", "Où sont les personnes ?", "Qu’est-ce qui se passe ici ?"],
+      "reponse_modele": "Je vois une dame âgée avec des lunettes et un jeune boulanger. Ils sont dans une boulangerie. Sur l’image 1, la dame entre et le boulanger dit bonjour. Sur l’image 2, elle regarde les pains et elle montre un pain. Sur l’image 3, le boulanger met une baguette dans un sac. Sur l’image 4, la dame paie et elle a un sac avec des croissants."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-po-3",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 · série 1 · Acheter du pain",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du vendeur.",
+    "points": 8,
+    "support": {
+      "situation": "Vous allez à la boulangerie. Vous demandez des informations au vendeur. Vous choisissez trois produits et vous payez.",
+      "images": [
+        "a1-s1/po3-croissants.webp",
+        "a1-s1/po3-tarte-citron.webp",
+        "a1-s1/po3-tarte-pommes.webp",
+        "a1-s1/po3-baguettes.webp"
+      ],
+      "grille": { "points": 9, "criteres": ["Lexique", "Morphosyntaxe", "Phonologie"] },
+      "repliques_au_corrige": true,
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonjour, madame / monsieur. Vous désirez ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Qu’est-ce que vous avez comme gâteaux ?",
+          "variantes": ["Bonjour, je voudrais du pain et un dessert, s’il vous plaît."]
+        },
+        { "locuteur": "examinateur", "texte": "Nous avons une tarte au citron meringuée et une tarte aux pommes. Il y a aussi des croissants." },
+        { "locuteur": "eleve", "texte": "Combien coûte la tarte aux pommes ?", "variantes": ["C’est combien, un croissant ?"] },
+        { "locuteur": "examinateur", "texte": "La tarte aux pommes coûte 3 francs 50 la part. Les croissants coûtent 1 franc 50." },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends une baguette, deux croissants et une part de tarte aux pommes, s’il vous plaît.",
+          "variantes": ["Je voudrais une tarte au citron, une baguette et deux croissants."]
+        },
+        { "locuteur": "examinateur", "texte": "Très bien. Vous désirez autre chose ?" },
+        { "locuteur": "eleve", "texte": "Non, merci. Ça fait combien ?", "variantes": ["C’est tout. Je vous dois combien ?"] },
+        { "locuteur": "examinateur", "texte": "Ça fait 9 francs 50, s’il vous plaît." },
+        { "locuteur": "eleve", "texte": "Voilà 10 francs.", "variantes": ["Je peux payer par carte ?"] },
+        { "locuteur": "examinateur", "texte": "Merci. Voici votre monnaie. Bonne journée !" },
+        { "locuteur": "eleve", "texte": "Merci, au revoir !", "variantes": ["Bonne journée !"] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-po-2b",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 · série 1 (variante) · Chez le médecin",
+    "consigne": "Décrivez les images.",
+    "points": 4,
+    "support": {
+      "image": "a1-s1/po2-medecin.webp",
+      "questions": ["Que voyez-vous ?", "Où sont les personnes ?", "Qu’est-ce qui se passe ici ?"],
+      "reponse_modele": "Je vois une femme et un médecin. Ils sont dans un cabinet médical. Sur l’image 1, le médecin dit bonjour à la patiente. Sur l’image 2, ils sont assis et ils parlent. Sur l’image 3, le médecin examine la femme avec un stéthoscope. Sur l’image 4, il donne une ordonnance et ils se serrent la main."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-po-3b",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 · série 1 (variante) · Chez le docteur",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du docteur.",
+    "points": 8,
+    "support": {
+      "situation": "Vous avez du mal à dormir. Vous allez chez le docteur et demandez un médicament pour vous aider. Vous suivez ses conseils et vous demandez une ordonnance.",
+      "images": [
+        "a1-s1/po3-insomnie-1.webp",
+        "a1-s1/po3-insomnie-2.webp",
+        "a1-s1/po3-insomnie-3.webp",
+        "a1-s1/po3-insomnie-4.webp"
+      ],
+      "grille": { "points": 9, "criteres": ["Lexique", "Morphosyntaxe", "Phonologie"] },
+      "repliques_au_corrige": true,
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonjour, asseyez-vous. Qu’est-ce qui ne va pas ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, docteur. Je dors très mal depuis deux semaines.",
+          "variantes": ["Bonjour. J’ai du mal à dormir la nuit."]
+        },
+        { "locuteur": "examinateur", "texte": "Vous vous couchez à quelle heure ? Vous buvez du café ?" },
+        { "locuteur": "eleve", "texte": "Je me couche à minuit. Je bois trois cafés par jour.", "variantes": ["Je regarde mon téléphone tard le soir."] },
+        { "locuteur": "examinateur", "texte": "Il faut arrêter le café après midi et ne pas regarder les écrans le soir." },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Est-ce que vous pouvez me donner un médicament pour dormir ?",
+          "variantes": ["Il y a un médicament pour m’aider ?"]
+        },
+        { "locuteur": "examinateur", "texte": "Oui, je vous donne des gouttes à base de plantes. Prenez 20 gouttes le soir, avant de dormir." },
+        { "locuteur": "eleve", "texte": "Pendant combien de temps ?", "variantes": ["Combien de fois par jour ?"] },
+        { "locuteur": "examinateur", "texte": "Pendant deux semaines. Revenez me voir si ça ne va pas mieux." },
+        { "locuteur": "eleve", "texte": "Merci. Vous pouvez me faire une ordonnance, s’il vous plaît ?", "variantes": ["J’ai besoin d’une ordonnance pour la pharmacie ?"] },
+        { "locuteur": "examinateur", "texte": "Bien sûr, voici votre ordonnance. Au revoir et bonne nuit !" },
+        { "locuteur": "eleve", "texte": "Merci, docteur. Au revoir !", "variantes": ["Merci beaucoup, bonne journée !"] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]

@@ -167,6 +167,15 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     instruction: 'Lisez la question et rédigez votre texte.',
     reponses: [],
   },
+  {
+    typeId: 'tcf-pe-dialogue',
+    competence: 'PE',
+    typeExercice: 'dialogue_a_completer',
+    label: 'Dialogue à compléter',
+    description: 'Écrire ses répliques dans un dialogue (répliques de l’interlocuteur données).',
+    instruction: 'Complétez le dialogue.',
+    reponses: [],
+  },
   // —— PO ——
   {
     typeId: 'tcf-po-mots-theme',

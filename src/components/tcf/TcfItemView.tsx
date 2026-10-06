@@ -39,7 +39,7 @@ export function TcfItemView({ item, mode }: { item: MathItem; mode: PreviewMode 
     case 'ecriture':
       return <ZoneEcriture {...tcf} mode={mode} />
     case 'dialogue':
-      return <DialoguePO situation={tcf.situation} repliques={tcf.repliques} auCorrige={tcf.auCorrige} mode={mode} />
+      return <DialoguePO {...tcf} mode={mode} />
     case 'grille':
       return <GrilleOral grille={tcf.grille} />
     case 'vide':

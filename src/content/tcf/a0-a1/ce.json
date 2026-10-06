@@ -808,5 +808,255 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Test blanc A1 · série 1 · À l’aéroport",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "de": "Pierre",
+      "a": "Vous",
+      "objet": "Aéroport",
+      "texte": "Salut,\n\nTon arrivée à Paris est toujours prévue demain à 11 h 45 ? Je viens te chercher à l’aéroport. Tu m’envoies un texto quand tu attends tes valises. Tu passes les contrôles et tu prends la porte B à droite. En face, il y a un ascenseur, tu montes au 1er étage et tu sors à la sortie 2. Ma voiture est bleue et toute neuve.\n\nÀ demain"
+    },
+    "questions": [
+      {
+        "enonce": "À quel moment votre vol arrive-t-il ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le matin", "correct": true },
+          { "id": "b", "texte": "L’après-midi" },
+          { "id": "c", "texte": "Le soir" }
+        ]
+      },
+      {
+        "enonce": "Où se trouve l’ascenseur ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "En face de la porte B", "correct": true },
+          { "id": "b", "texte": "À droite de la porte B" },
+          { "id": "c", "texte": "À droite des escaliers" }
+        ]
+      },
+      {
+        "enonce": "Quelle sortie devez-vous prendre ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "La sortie 2 (au 1er étage)."
+      },
+      {
+        "enonce": "Quelle est la voiture de Pierre ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s1/ce1-voiture-rouge.webp" },
+          { "id": "b", "image": "a1-s1/ce1-voiture-blanche.webp" },
+          { "id": "c", "image": "a1-s1/ce1-voiture-bleue.webp", "correct": true }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 1 · Le concert annulé",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "titre": "Service des remboursements",
+      "texte": "Bonjour,\n\nVotre achat en ligne de 4 places pour le concert de samedi prochain est bien annulé. Le délai est trop court pour un remboursement par Internet ou par courrier postal. Vous devez aller sur place avant vendredi.\n\nAttention, l’entrée se trouve rue de la Chancellerie. Bus H, arrêt « Justice ». Prenez tout droit l’avenue de Sceaux et tournez dans la deuxième rue à droite, rue de la Chancellerie. C’est au n° 3.\n\nService des remboursements",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Combien de billets avez-vous ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "4 billets (4 places)."
+      },
+      {
+        "enonce": "Quand a lieu l’événement ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Samedi prochain."
+      },
+      {
+        "enonce": "Pourquoi recevez-vous ce message ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Pour reporter une réservation" },
+          { "id": "b", "texte": "Pour confirmer une réservation" },
+          { "id": "c", "texte": "Pour annuler une réservation", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Venir sur place", "correct": true },
+          { "id": "b", "texte": "Aller sur Internet" },
+          { "id": "c", "texte": "Envoyer un courrier" }
+        ]
+      },
+      {
+        "enonce": "Quel est le chemin pour aller à l’entrée ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s1/ce2-chemin-a.webp" },
+          { "id": "b", "image": "a1-s1/ce2-chemin-b.webp", "correct": true },
+          { "id": "c", "image": "a1-s1/ce2-chemin-c.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 1 · Le premier jour au travail",
+    "consigne": "Lisez les messages et répondez aux questions.",
+    "support": {
+      "titre": "Nouveaux messages",
+      "texte": "Bienvenue dans l’entreprise ! Rendez-vous à 10 h 30 pour la pause-café. Vous allez rencontrer tous les collègues.\n\nBonjour, je suis votre directeur. Je vous propose de déjeuner ensemble à 12 h 30. À tout à l’heure.\n\nInvitation : réunion du département de 11 h 30 à 12 h 30. Salle A103, au 1er étage.\n\nAttention, le parking 1 est fermé pendant 2 mois. Vous pouvez utiliser le parking des visiteurs. C’est le parking 3.\n\nInformation importante : la salle du matériel (feuilles, stylos…) est au 3e étage. Au 2e étage, dans l’ancienne salle, c’est maintenant un bureau.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quels sont les horaires de la réunion ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "De 10 h 30 à 11 h 30" },
+          { "id": "b", "texte": "De 10 h 30 à 12 h 30" },
+          { "id": "c", "texte": "De 11 h 30 à 12 h 30", "correct": true }
+        ]
+      },
+      {
+        "enonce": "À quelle heure pouvez-vous parler à vos collègues ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 10 h 30 (à la pause-café)."
+      },
+      {
+        "enonce": "Avec qui déjeunez-vous pour votre premier jour ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Avec le directeur", "correct": true },
+          { "id": "b", "texte": "Avec tous les collègues" },
+          { "id": "c", "texte": "Avec le directeur et tous les collègues" }
+        ]
+      },
+      {
+        "enonce": "Pendant combien de temps le parking 1 est-il fermé ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Pendant 2 mois."
+      },
+      {
+        "enonce": "Où devez-vous aller pour prendre des cahiers et des stylos ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Au 1er étage" },
+          { "id": "b", "texte": "Au 2e étage" },
+          { "id": "c", "texte": "Au 3e étage", "correct": true }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s1-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 1 · La Saint-Valentin",
+    "consigne": "Lisez cet article de journal et répondez aux questions.",
+    "support": {
+      "titre": "Quel cadeau pour la Saint-Valentin ?",
+      "texte": "Dans de nombreux pays, le jour de la Saint-Valentin est la fête des amoureux. Tous les couples s’envoient des mots d’amour. En Inde, on offre des fleurs à sa belle-mère. Au Japon, les femmes offrent des chocolats à leur patron. En France, on aime aller dîner en couple dans un bon restaurant.\n\nLes cadeaux qui remportent le plus de succès sont :\n– en premier, du parfum ;\n– en deuxième, un bijou ;\n– et enfin, des fleurs.\n\nEt si vous êtes célibataire, pensez au cinéma, seul ou avec des amis !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour la Saint-Valentin, que font tous les couples ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Ils restent à la maison" },
+          { "id": "b", "texte": "Ils vont au restaurant" },
+          { "id": "c", "texte": "Ils s’écrivent des mots d’amour", "correct": true }
+        ]
+      },
+      {
+        "enonce": "En France, que fait-on pour la Saint-Valentin ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "On va au cinéma" },
+          { "id": "b", "texte": "On va dans un parc" },
+          { "id": "c", "texte": "On va au restaurant", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quel est l’objet le plus vendu pour cette fête ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Le parfum."
+      },
+      {
+        "enonce": "Au Japon, qu’offre-t-on à son directeur ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s1/ce4-fleurs.webp" },
+          { "id": "b", "image": "a1-s1/ce4-chocolats.webp", "correct": true },
+          { "id": "c", "image": "a1-s1/ce4-vin.webp" }
+        ]
+      },
+      {
+        "enonce": "L’article propose aux célibataires d’aller…",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "au cinéma", "correct": true },
+          { "id": "b", "texte": "au restaurant" },
+          { "id": "c", "texte": "chez des amis" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
