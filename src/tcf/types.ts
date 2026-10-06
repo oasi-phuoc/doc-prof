@@ -187,3 +187,4 @@ export type TcfSheetItem =
     }
   | { kind: 'dialogue'; situation: string; repliques: TcfReplique[] }
   | { kind: 'vide'; message: string }
+  | { kind: 'informations'; niveau: TcfNiveau }

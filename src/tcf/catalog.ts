@@ -209,20 +209,38 @@ export function tcfTypeId(competence: TcfCompetence, typeExercice: TcfTypeExerci
   return TCF_TYPES.find((m) => m.competence === competence && m.typeExercice === typeExercice)?.typeId
 }
 
-/** Thèmes du catalogue général = compétences. */
-export const TCF_TOPICS: Topic[] = TCF_COMPETENCES.map((c) => ({
-  id: c.topic,
-  label: c.label,
-  domain: TCF_DOMAIN,
-}))
+/** Page 1 du test : informations et consignes (non notée). */
+export const TCF_CONSIGNES_TYPE = 'tcf-consignes'
+export const TCF_INFO_TOPIC = 'tcf-info'
 
-/** Types du catalogue général (une entrée par type d’exercice TCF). */
-export const TCF_EXERCISE_TYPES: ExerciseType[] = TCF_TYPES.map((meta) => ({
-  id: meta.typeId,
-  topic: TCF_COMPETENCES.find((c) => c.id === meta.competence)!.topic,
-  label: meta.label,
-  description: meta.description,
-  instruction: meta.instruction,
-  visual: 'texte',
-  preferredColumns: 1,
-}))
+export function isTcfConsignesType(typeId: string | undefined): boolean {
+  return typeId === TCF_CONSIGNES_TYPE
+}
+
+/** Thèmes du catalogue général = Informations + compétences. */
+export const TCF_TOPICS: Topic[] = [
+  { id: TCF_INFO_TOPIC, label: 'Informations', domain: TCF_DOMAIN },
+  ...TCF_COMPETENCES.map((c) => ({ id: c.topic, label: c.label, domain: TCF_DOMAIN })),
+]
+
+/** Types du catalogue général (page Informations + un type par exercice TCF). */
+export const TCF_EXERCISE_TYPES: ExerciseType[] = [
+  {
+    id: TCF_CONSIGNES_TYPE,
+    topic: TCF_INFO_TOPIC,
+    label: 'Informations du test',
+    description: 'Page d’informations : les quatre parties du test et les consignes.',
+    instruction: 'Lisez ces informations avant de commencer le test.',
+    visual: 'texte',
+    preferredColumns: 1,
+  },
+  ...TCF_TYPES.map((meta) => ({
+    id: meta.typeId,
+    topic: TCF_COMPETENCES.find((c) => c.id === meta.competence)!.topic,
+    label: meta.label,
+    description: meta.description,
+    instruction: meta.instruction,
+    visual: 'texte' as const,
+    preferredColumns: 1,
+  })),
+]

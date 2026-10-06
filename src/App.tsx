@@ -60,10 +60,11 @@ import {
   TCF_DOMAIN,
   TCF_NIVEAUX,
   TCF_TYPES,
+  isTcfConsignesType,
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
 } from '@/tcf/catalog'
-import { buildTcfTestPages, tcfPage } from '@/tcf/generate'
+import { buildTcfTestPages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import { TcfTestPanel } from '@/tcf/TcfTestPanel'
 import { Chronometre } from '@/components/tcf/Chronometre'
@@ -302,7 +303,8 @@ function WorksheetSheet({
 }) {
   const sheetTitle = institutional.documentTitle.trim()
   const isJeuxSheet = page.domain === 'jeux'
-  const multiExercisePage = (page.blocks?.length ?? 0) > 1 || isTcmDomain(page.domain)
+  const multiExercisePage =
+    (page.blocks?.length ?? 0) > 1 || isTcmDomain(page.domain) || page.domain === TCF_DOMAIN
   const showHeader = pageNumber === 1 && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
@@ -2420,7 +2422,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
     if (next === TCF_DOMAIN) {
       setSheetIndex(0)
-      setPages([tcfPage(TCF_TYPES[0]!.typeId, 'A0-A1')])
+      setPages([tcfConsignesPage('A0-A1'), tcfPage(TCF_TYPES[0]!.typeId, 'A0-A1')])
       setMode('student')
       setInstitutional((current) => ({
         ...current,
@@ -2858,7 +2860,12 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   value={tcfNiveau}
                   onChange={(value) => {
                     const niveau = TCF_NIVEAUX.find((n) => n.id === value)?.id
-                    if (niveau) updatePage({ difficulty: tcfDifficultyFromNiveau(niveau), tcfBankId: undefined })
+                    if (!niveau) return
+                    // Un test TCF a un seul niveau : il s’applique à toutes les pages.
+                    const difficulty = tcfDifficultyFromNiveau(niveau)
+                    setPages((current) =>
+                      current.map((page) => ({ ...page, difficulty, tcfBankId: undefined })),
+                    )
                   }}
                 >
                   {TCF_NIVEAUX.map((n) => (
@@ -3165,10 +3172,12 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     bankId={activeBlock.tcfBankId}
                     onChange={(patch) => updatePage(patch)}
                   />
-                  <Chronometre
-                    minutes={activeBlock.tcfDureeMin}
-                    onChangeMinutes={(tcfDureeMin) => updatePage({ tcfDureeMin })}
-                  />
+                  {isTcfConsignesType(activeBlock.exerciseType) ? null : (
+                    <Chronometre
+                      minutes={activeBlock.tcfDureeMin}
+                      onChangeMinutes={(tcfDureeMin) => updatePage({ tcfDureeMin })}
+                    />
+                  )}
                   <TcfTestPanel
                     niveau={tcfNiveau}
                     onGenerate={(competences, parCompetence) => {
@@ -3675,7 +3684,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 ) : null}
               </label>
               )}
-              {(isTcm && !isTcmConsignesType(activeBlock.exerciseType)) || (isTcf && evalMode) ? (
+              {(isTcm && !isTcmConsignesType(activeBlock.exerciseType)) || (isTcf && evalMode && !isTcfConsignesType(activeBlock.exerciseType)) ? (
                 <label className="select-shell">
                   <span>Points par question</span>
                   <input

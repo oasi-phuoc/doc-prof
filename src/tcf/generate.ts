@@ -2,8 +2,11 @@ import { createRng, pick, shuffle, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import {
   TCF_COMPETENCES,
+  TCF_CONSIGNES_TYPE,
   TCF_DOMAIN,
+  TCF_INFO_TOPIC,
   TCF_TYPES,
+  isTcfConsignesType,
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
   tcfTypeByTypeId,
@@ -157,9 +160,15 @@ export function tryGenerateTcfBlock(
   config: PageConfig,
   rng: Rng,
 ): { instruction: string; items: MathItem[] } | null {
+  const niveau = tcfNiveauFromDifficulty(config.difficulty)
+  if (isTcfConsignesType(config.exerciseType)) {
+    return {
+      instruction: 'Lisez ces informations avant de commencer le test.',
+      items: [tcfItem({ kind: 'informations', niveau }, false)],
+    }
+  }
   const meta = tcfTypeByTypeId[config.exerciseType]
   if (!meta) return null
-  const niveau = tcfNiveauFromDifficulty(config.difficulty)
   const fromBank = () => {
     const chosen = tcfExerciseById(config.tcfBankId)
     if (chosen && chosen.type_exercice === meta.typeExercice && chosen.niveau === niveau) return chosen
@@ -191,6 +200,19 @@ export function tryGenerateTcfBlock(
   }
 }
 
+/** Page 1 : informations du test (non notée). */
+export function tcfConsignesPage(niveau: TcfNiveau): PageConfig {
+  return {
+    domain: TCF_DOMAIN,
+    topic: TCF_INFO_TOPIC,
+    exerciseType: TCF_CONSIGNES_TYPE,
+    difficulty: tcfDifficultyFromNiveau(niveau),
+    count: 1,
+    columns: 1,
+    pointsPerQuestion: 0,
+  }
+}
+
 /** Page TCF vierge pour un type donné. */
 export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageConfig> = {}): PageConfig {
   const meta = tcfTypeByTypeId[typeId] ?? TCF_TYPES[0]!
@@ -207,7 +229,8 @@ export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageCo
 }
 
 /**
- * Test TCF : tirage sans doublon dans la banque, une page par exercice.
+ * Test TCF : page Informations, puis tirage sans doublon dans la banque
+ * (une page par exercice).
  * La graine est conservée par la fiche (recette = pages + graine).
  */
 export function buildTcfTestPages(
@@ -217,7 +240,7 @@ export function buildTcfTestPages(
   seed: number,
 ): PageConfig[] {
   const rng = createRng(seed)
-  const pages: PageConfig[] = []
+  const pages: PageConfig[] = [tcfConsignesPage(niveau)]
   for (const competence of competences) {
     const pool = shuffle(rng, tcfBank(niveau, competence)).slice(0, Math.max(1, parCompetence))
     if (pool.length === 0) {

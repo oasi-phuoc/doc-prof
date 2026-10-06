@@ -52,6 +52,7 @@ import { makeWordProblem } from './problems'
 import { genFracItems } from './fraction-shapes'
 import { TCM_MAX_SCORE } from './tcm-test'
 import { tryGenerateTcfBlock } from '@/tcf/generate'
+import { isTcfConsignesType } from '@/tcf/catalog'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type {
   AlgebraGiven,
@@ -2732,6 +2733,11 @@ function buildSingleBlock(
   }
 }
 
+/** Page « Informations » d’un test (TCM, TCF) : ni numéro d’exercice ni points. */
+function isInfoPageType(typeId: string): boolean {
+  return typeId === 'tcm-consignes' || isTcfConsignesType(typeId)
+}
+
 export function buildPage(config: PageConfig, seed: number, startExercise = 1): WorksheetPage {
   const blocksIn = pageBlocks(config)
   let exerciseCursor = startExercise
@@ -2741,7 +2747,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
     const result = buildSingleBlock(single, seed + index * 10007 + local)
     const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
-    const isTcmConsignes = block.exerciseType === 'tcm-consignes'
+    const isTcmConsignes = isInfoPageType(block.exerciseType)
     let exerciseIndex = 0
     if (!isTcmConsignes) {
       if (block.exerciseNo != null) {
@@ -2776,7 +2782,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const isTheoryPage = /gram-theorie-\d+$/.test(config.exerciseType)
-  const isTcmConsignesPage = config.exerciseType === 'tcm-consignes'
+  const isTcmConsignesPage = isInfoPageType(config.exerciseType)
   return {
     ...config,
     title: isTcmConsignesPage
@@ -2799,7 +2805,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
   pages.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
-    const scoredBlocks = worksheet.blocks.filter((block) => block.exerciseType !== 'tcm-consignes')
+    const scoredBlocks = worksheet.blocks.filter((block) => !isInfoPageType(block.exerciseType))
     if (scoredBlocks.length) {
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1
     }

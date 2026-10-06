@@ -1,4 +1,5 @@
 import type { MathItem, PreviewMode } from '@/math/types'
+import { TcfInformations } from './TcfInformations'
 import { TexteSupport } from './TexteSupport'
 import { DialoguePO, FormulairePE, ZoneEcriture } from './TcfProduction'
 import { ImagesACocher, QuestionLignes, QuestionQCMImage, QuestionQCMTexte } from './TcfQuestions'
@@ -31,5 +32,7 @@ export function TcfItemView({ item, mode }: { item: MathItem; mode: PreviewMode 
       return <DialoguePO situation={tcf.situation} repliques={tcf.repliques} mode={mode} />
     case 'vide':
       return <p className="tcf-vide">{tcf.message}</p>
+    case 'informations':
+      return <TcfInformations niveau={tcf.niveau} />
   }
 }
