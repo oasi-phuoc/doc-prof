@@ -2313,5 +2313,311 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série A · Programme d’activités",
+    "consigne": "Vous lisez un programme d’activités. Associez chaque document à la personne correspondante. Attention : il y a 8 personnes mais seulement 6 documents.",
+    "support": {
+      "titre": "Programme d’activités",
+      "texte": "Document 1 — Danse\nCours de danse tous les lundis de 12 h 30 à 13 h 30. Débutants acceptés. Apportez une bouteille d’eau. Rendez-vous dans la salle B.\n\nDocument 2 — Club lecture\nChaque participant présente un livre en expliquant ce qu’il a aimé. Rendez-vous à 13 h dans la salle café tous les vendredis.\n\nDocument 3 — Course à pied\nVenez courir tous les midis de 12 h à 13 h. Plusieurs groupes de niveaux. Rendez-vous à côté du parking.\n\nDocument 4 — Apprenez à coudre\nSylvie, couturière à la retraite, vous propose d’apprendre à réparer vos vêtements. Tous les mercredis à 17 h 30, bureau B14.\n\nDocument 5 — Jeux de société\nLa bibliothèque organise des ateliers jeux tous les premiers lundis de chaque mois. Vous pourrez aussi emprunter des jeux.\n\nDocument 6 — Apprenez une langue étrangère\nDécouvrez le chinois avec Mei tous les jeudis à 13 h. Rendez-vous à l’accueil pour vous inscrire. Places limitées.\n\nLes personnes :\nA. Rabia adore jouer à des jeux avec ses amis.\nB. Paul veut aller en Chine cette année.\nC. Rami veut apprendre à nager.\nD. Jean adore courir dans la nature.\nE. Louisa aime faire du vélo et de la moto.\nF. Marie aime danser avec son mari.\nG. Hugo est passionné par la lecture.\nH. Rose veut apprendre à coudre.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour chaque document, écrivez la lettre de la personne correspondante (1 point par document).",
+        "type_reponse": "lignes",
+        "points": 6,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Document 1",
+            "reponse": "F. Marie"
+          },
+          {
+            "label": "Document 2",
+            "reponse": "G. Hugo"
+          },
+          {
+            "label": "Document 3",
+            "reponse": "D. Jean"
+          },
+          {
+            "label": "Document 4",
+            "reponse": "H. Rose"
+          },
+          {
+            "label": "Document 5",
+            "reponse": "A. Rabia"
+          },
+          {
+            "label": "Document 6",
+            "reponse": "B. Paul"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série A · La lettre de Louisa",
+    "consigne": "Lisez la lettre et répondez aux questions.",
+    "support": {
+      "titre": "Réservation d’un appartement",
+      "texte": "Madame Dineur,\n\nJe veux réserver votre appartement, rue Lavoisier 50, à Marseille, du 15 au 30 juillet. Nous sommes une famille de 5 personnes : 2 adultes et 3 enfants. Je vous envoie un chèque de 150 francs pour la réservation. Est-ce qu’il y a un parking ? Peut-on louer des draps et des serviettes ?\n\nPouvez-vous m’envoyer un SMS au 06 15 67 78 89 pour me répondre ?\nMerci de m’envoyer la confirmation par e-mail à louisa.a@gmail.com.\n\nCordialement,\nLouisa Atata",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "La réservation est pour combien de personnes ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "5 personnes (2 adultes et 3 enfants)."
+      },
+      {
+        "enonce": "De quoi a besoin Louisa ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "D’un parking.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "D’un jardin."
+          },
+          {
+            "id": "c",
+            "texte": "D’un garage à vélos."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel document est envoyé avec la lettre ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Un chèque (de 150 francs)."
+      },
+      {
+        "enonce": "Que veut louer Louisa ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/ce2-produits-menage.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/ce2-serviettes.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/ce2-velo.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Comment faut-il envoyer la confirmation ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par SMS."
+          },
+          {
+            "id": "b",
+            "texte": "Par courriel.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Par courrier."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série A · À la bibliothèque",
+    "consigne": "Vous travaillez dans une bibliothèque. Lisez les documents et répondez aux questions.",
+    "support": {
+      "titre": "Deux documents de la bibliothèque",
+      "texte": "Document 1 — Pour faire une nouvelle carte\n– Demandez à la personne sa pièce d’identité + 1 photo.\n– Complétez un formulaire sur l’ordinateur.\n– Imprimez le formulaire.\n– Faites-le signer à la personne.\n– Préparez une carte de bibliothèque en écrivant le nom et le prénom.\n– Ajoutez le numéro d’abonné qui se trouve en haut à droite du formulaire.\n– Collez la photo sur la carte d’abonné.\n\nDocument 2 — Procédure pour le retour des livres\n→ Demander la carte de bibliothèque.\n→ Taper le code d’abonné dans l’ordinateur.\n→ Vérifier le nombre de livres que la personne doit rendre.\n→ Contrôler les livres (pas abîmés, pas de page déchirée) : s’il y a un problème avec un livre, appelez le directeur.\n→ Écrire dans l’ordinateur que les livres sont rendus.\n→ Ranger les livres dans la bibliothèque.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Vous devez imprimer quoi ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le formulaire."
+      },
+      {
+        "enonce": "Document 1 — Où devez-vous ajouter le numéro d’abonné ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Sur la carte.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Sur la pièce d’identité."
+          },
+          {
+            "id": "c",
+            "texte": "Sur la photo."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Que devez-vous demander en premier ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Les livres."
+          },
+          {
+            "id": "b",
+            "texte": "Le code d’abonné."
+          },
+          {
+            "id": "c",
+            "texte": "La carte de la bibliothèque.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Vous devez faire quoi si un livre est abîmé ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Appeler le directeur."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série A · Les éléphants du Kenya",
+    "consigne": "Lisez l’article. Répondez aux questions.",
+    "support": {
+      "titre": "De plus en plus d’éléphants au Kenya",
+      "texte": "Au Kenya, il y a de plus en plus d’éléphants. En 30 ans, leur nombre a doublé. Maintenant, il y a 34 000 éléphants. C’est une bonne nouvelle pour la nature.\n\nEn 2020, seulement 7 éléphants ont été tués. En 2019, il y en avait 34, et en 2018, 80. C’est grâce aux nouvelles lois du gouvernement. Le ministre du Tourisme a dit : « Si quelqu’un tue un animal ou vend de l’ivoire, il ira en prison pour toujours. »\n\nCette règle aide beaucoup. Il y a plus de bébés éléphants. Cela rend heureux Peter Ndovi, un guide touristique. Il travaille depuis 30 ans dans le parc national de Tsavo.",
+      "image": "a2-sa/ce4-elephants.webp"
+    },
+    "questions": [
+      {
+        "enonce": "En 2020, il y a eu plus d’éléphants tués qu’en 2019. Vrai ou faux ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Faux : 7 éléphants tués en 2020, contre 34 en 2019."
+      },
+      {
+        "enonce": "Qui a changé les règles de la chasse ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le gouvernement du Kenya.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le ministère du Tourisme."
+          },
+          {
+            "id": "c",
+            "texte": "Les guides touristiques."
+          }
+        ]
+      },
+      {
+        "enonce": "Le gouvernement est très sévère avec les chasseurs. Vrai ou faux ? Justifiez avec une phrase du texte.",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "Vrai : « Si quelqu’un tue un animal ou vend de l’ivoire, il ira en prison pour toujours. »"
+      },
+      {
+        "enonce": "Que se passe-t-il chez les éléphants ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il y a de plus en plus de naissances.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Ils vivent plus longtemps."
+          },
+          {
+            "id": "c",
+            "texte": "Ils ont moins de maladies."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel est le sentiment de Peter Ndovi ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il est triste."
+          },
+          {
+            "id": "b",
+            "texte": "Il est inquiet."
+          },
+          {
+            "id": "c",
+            "texte": "Il est heureux.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

@@ -2448,5 +2448,383 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série A · Annonces publiques",
+    "consigne": "Vous écoutez des annonces publiques. Il y a 6 documents et 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sa/co1.mp3",
+      "transcription": "Document 1 — Votre attention, s’il vous plaît. Le train numéro 346, annoncé sur la voie 15, a un retard de 20 minutes. Merci de votre compréhension.\n\nDocument 2 — Chers spectateurs, le film « Tortue » est terminé. Nous espérons que vous l’avez aimé. Vous pouvez maintenant poser vos questions au réalisateur, qui est présent dans votre cinéma préféré. Bonne discussion !\n\nDocument 3 — Chers clients, prenez soin de vous pendant les vacances d’été : une paire de lunettes achetée, un chapeau offert et une crème solaire à moitié prix !\n\nDocument 4 — Chers parents, les familles sont les bienvenues dans notre zoo. Mais attention à vos enfants : ils ne sont pas autorisés à nourrir les animaux. Merci pour votre attention.\n\nDocument 5 — Chères visiteuses, chers visiteurs, pour la visite des appartements du roi, merci de laisser vos manteaux à l’accueil. Rendez-vous dans cinq minutes dans la cour du château.\n\nDocument 6 — Pour la fête de la musique, samedi 21 juin, les transports sont gratuits et fonctionnent toute la nuit, jusqu’à 6 heures du matin. Bon concert !"
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Que doivent faire les passagers ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Aller en voie 20."
+          },
+          {
+            "id": "b",
+            "texte": "Attendre le train.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Prendre une valise."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Vous allez faire quoi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/co1-questions-realisateur.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/co1-tournage.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/co1-dedicace.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Vous recevez quoi gratuitement ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Un chapeau."
+      },
+      {
+        "enonce": "Document 4 — Qu’est-ce qui est interdit ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/co1-courir.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/co1-poney.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/co1-nourrir-animaux.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 5 — Vous allez où pour visiter les appartements du roi ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans le hall."
+          },
+          {
+            "id": "b",
+            "texte": "Dans le parc."
+          },
+          {
+            "id": "c",
+            "texte": "Dans la cour.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 6 — Qu’est-ce qui est gratuit ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Les transports."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série A · À la radio",
+    "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sa/co2.mp3",
+      "transcription": "Document 1 — La librairie « Après l’école » vous propose une soirée spéciale le mercredi 15 juin. Venez rencontrer l’auteur Marc Galland, qui sort un nouveau livre, puis goûter une spécialité alsacienne, la région d’origine de Marc Galland. Inscription sur le site de la librairie.\n\nDocument 2 — Les habitants du village de Fontanges vous ouvrent leurs fermes le week-end prochain. Pour découvrir moutons, vaches et poules, venez avec vos enfants, mais sans votre chien ! N’oubliez pas de goûter les spécialités locales comme le fromage.\n\nDocument 3 — Vous aimez le sport ? Dimanche 7 juin, la ville de Nancy organise une course à pied. Inscrivez-vous au parcours hommes, femmes ou jeunes pour 5 euros. Rendez-vous au stade à 10 heures."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Quelle est la profession de Marc Galland ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Il est auteur (écrivain)."
+      },
+      {
+        "enonce": "Document 1 — Le mercredi 15 juin, vous allez…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/co2-manger.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/co2-boire.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/co2-ecrire.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Quels lieux visitez-vous à Fontanges le week-end prochain ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Des parcs."
+          },
+          {
+            "id": "b",
+            "texte": "Des fermes.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Des musées."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Quelle est la spécialité de Fontanges ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le fromage."
+      },
+      {
+        "enonce": "Document 3 — De quel sport s’agit-il ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/co2-football.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/co2-danse.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/co2-course.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Combien coûte l’inscription ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "5 €",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "7 €"
+          },
+          {
+            "id": "c",
+            "texte": "10 €"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série A · Le message de Madame Langlois",
+    "consigne": "Vous travaillez dans un hôtel. Vous écoutez ce message sur le répondeur téléphonique. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sa/co3.mp3",
+      "transcription": "Bonjour, je suis Madame Langlois. Je vous appelle pour réserver deux chambres doubles pour quatre personnes, du 5 au 7 juin. J’aimerais connaître le prix des chambres avec petit déjeuner et savoir s’il y a une baignoire dans les chambres. Est-ce que je peux régler par chèque ? Nous viendrons en voiture. Y a-t-il un parking gratuit à l’hôtel ? Merci de me rappeler au 06 71 20 98 80. J’attends votre appel. À bientôt."
+    },
+    "questions": [
+      {
+        "enonce": "Combien de chambres veut réserver Madame Langlois ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Deux chambres."
+      },
+      {
+        "enonce": "Quel type de chambre souhaite Madame Langlois ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Des chambres simples."
+          },
+          {
+            "id": "b",
+            "texte": "Des chambres doubles.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Des chambres familiales."
+          }
+        ]
+      },
+      {
+        "enonce": "Madame Langlois veut savoir s’il y a dans les chambres…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/co3-petit-dejeuner.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/co3-baignoire.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/co3-ordinateur.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Comment veut payer Madame Langlois ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Par chèque."
+      },
+      {
+        "enonce": "Avec quel moyen de transport va venir Madame Langlois ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sa/co3-train.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sa/co3-bus.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sa/co3-voiture.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Comment devez-vous contacter Madame Langlois ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par téléphone.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Par courriel."
+          },
+          {
+            "id": "c",
+            "texte": "Par courrier."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sa-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série A · Quatre dialogues",
+    "consigne": "Écoutez les 4 dialogues. Il y a 2 écoutes. Associez chaque dialogue à la situation correspondante. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "support": {
+      "audio": "a2-sa/co4.mp3",
+      "transcription": "Dialogue 1 — Alors, ton voyage en Guyane, c’était comment ? — Génial ! J’ai fait tout ce que je voulais et j’ai pris plein de photos. — Super ! Et la météo ? Bonne ? — Oui, j’ai eu du soleil tout le temps.\n\nDialogue 2 — Je ne comprends pas. Le magasin de journaux était fermé à midi. — C’est normal. Il ouvre seulement l’après-midi cette semaine. — Et tu sais à quelle heure ? — À quinze heures, je crois. Vérifie sur Internet. — D’accord.\n\nDialogue 3 — Salut Marc, ça va ? Tu fais quoi samedi ? — Rien, je crois. Je suis libre. Pourquoi ? — Ça te dit de venir avec moi au musée d’Histoire ? J’ai deux billets. — D’accord.\n\nDialogue 4 — Aujourd’hui, dans le bus, j’ai croisé Thomas. — C’est qui ? — Le frère de Sophie. Il a déménagé à Lyon pour ses études. Il est très sympa. — Invite-le à la maison, si tu veux."
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Conseiller — B. Proposer une sortie — C. Demander l’horaire — D. Présenter quelqu’un — E. Donner une autorisation — F. Parler des vacances",
+        "type_reponse": "lignes",
+        "points": 7,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (1 point)",
+            "reponse": "F. Parler des vacances"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "C. Demander l’horaire"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "B. Proposer une sortie"
+          },
+          {
+            "label": "Dialogue 4 (2 points)",
+            "reponse": "E. Donner une autorisation (accepter aussi D. Présenter quelqu’un)"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

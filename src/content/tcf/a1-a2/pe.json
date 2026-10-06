@@ -321,5 +321,109 @@
     },
     "questions": [],
     "consigne_supplementaire": "Barème (12 points) : réalisation de la tâche, cohérence et cohésion, adéquation sociolinguistique, lexique, morphosyntaxe. Moins de 30 mots : 0 point."
+  },
+  {
+    "id": "tcf-a2-sa-pe-1",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A2 · série A · Absent au cours",
+    "consigne": "Lisez la situation et écrivez votre courriel.",
+    "points": 5,
+    "support": {
+      "consigne": "Vous informez votre professeur par courriel que vous serez absent(e). Écrivez un courriel de 40 à 50 mots.",
+      "nb_mots": {
+        "min": 40,
+        "max": 50
+      },
+      "reponse_modele": "Bonjour Madame Favre,\nJe ne pourrai pas venir au cours le jeudi 12 mars, parce que j’ai un rendez-vous à l’hôpital avec mon fils. Est-ce que vous pouvez m’envoyer les devoirs et les leçons à faire pour mon retour, s’il vous plaît ?\nMerci beaucoup et bonne journée,\nAhmad"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Indiquez la date de votre absence.\nExpliquez la raison.\nDemandez les devoirs et les leçons à faire à votre retour.\nGrille (5 points) : consigne – les trois informations demandées (2) ; structure – salutation, formule de fin et longueur (1) ; langue et vocabulaire (1) ; orthographe et ponctuation (1)."
+  },
+  {
+    "id": "tcf-a2-sa-pe-2",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "email_reponse",
+    "theme": "Test blanc A2 · série A · L’anniversaire de Benjamin",
+    "consigne": "Vous recevez ce message d’un ami.",
+    "points": 10,
+    "support": {
+      "email_recu": {
+        "de": "benjaminqbc@lauriers.ca",
+        "objet": "Invitation",
+        "texte": "Salut, comment vas-tu ?\nDis-moi vite quand tu rentres. Je voudrais t’inviter à mon anniversaire. Je fais une énorme fête le 20 mai. J’espère que tu seras libre ?\nRéponds-moi vite.\nÀ plus\nTon copain Benjamin"
+      },
+      "consigne": "Répondez au message de Benjamin. Vous le remerciez et vous acceptez l’invitation. Vous lui demandez des précisions sur le lieu, l’horaire, etc. Vous lui proposez d’apporter quelque chose. (60 à 80 mots)",
+      "nb_mots": {
+        "min": 60,
+        "max": 80
+      },
+      "reponse_modele": "Salut Benjamin,\nJe vais très bien, merci ! Je rentre de vacances le 15 mai, donc je suis libre le 20. Merci beaucoup pour ton invitation, je viens avec plaisir ! La fête est où ? Chez toi ou dans une salle ? Elle commence à quelle heure ? Est-ce que je peux venir avec ma sœur ? Si tu veux, j’apporte un gâteau au chocolat ou des boissons. Dis-moi ce qui t’arrange.\nÀ bientôt,\nSamir"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : consigne – texte compréhensible et qui répond à la tâche (2) ; structure – salutation et longueur (2) ; langue – grammaire, conjugaison, syntaxe (3) ; lexique – vocabulaire (1) ; orthographe – mots corrects, ponctuation (2)."
+  },
+  {
+    "id": "tcf-a2-sa-pe-3",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Test blanc A2 · série A · À la boulangerie",
+    "consigne": "Vous entrez dans une boulangerie pour acheter du pain. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous voulez acheter des croissants et des baguettes. Vous n’avez pas d’espèces.\nLe dialogue commence ainsi :\nEmployé : « Bonjour. Est-ce que je peux vous aider ? »\nVous : « Bonjour. J’aimerais acheter du pain, s’il vous plaît. »",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Qu’est-ce que vous aimeriez acheter ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais deux baguettes et quatre croissants, s’il vous plaît.",
+          "variantes": [
+            "Une baguette et trois croissants, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez des allergies ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, je n’ai pas d’allergies, merci.",
+          "variantes": [
+            "Oui, je suis allergique aux noix. Il n’y a pas de noix dans les croissants ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Cela fera 10 CHF, s’il vous plaît. Comment vous payez ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je n’ai pas d’espèces. Je peux payer par carte ?",
+          "variantes": [
+            "Par carte bancaire, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Bonne dégustation !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Au revoir et bonne journée !",
+          "variantes": [
+            "Merci, à bientôt !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
   }
 ]
