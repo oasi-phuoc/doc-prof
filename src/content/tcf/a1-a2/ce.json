@@ -1254,5 +1254,430 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 1 · Des films pour mes amis",
+    "consigne": "Vous lisez ces descriptions et vous voulez proposer des films à vos amis. Répondez à la question.",
+    "support": {
+      "titre": "Films de la semaine",
+      "texte": "Document 1 — Mars 2199\nUne équipe de chercheurs va sur la planète Mars pour construire une ville, mais, sur cette planète, il y a un danger.\n\nDocument 2 — Jules et Monica\nMonica, avocate à Bruxelles, tombe amoureuse de Jules, le serveur de son café. Vont-ils pouvoir vivre leur amour ?\n\nDocument 3 — Le grand voyage\nC’est les vacances. Trois amis de 15 ans décident de partir en voyage en train pour découvrir la France.\n\nDocument 4 — SOS éléphants\nDes vétérinaires expliquent comment les activités humaines mettent en danger les grands éléphants d’Afrique.\n\nDocument 5 — La folie des étudiants\nDernière année d’études pour les étudiants en droit de l’université de Montréal. Un film drôle pour tous les âges.\n\nDocument 6 — Les deux soldats\n1915, guerre entre la France et l’Allemagne. Un soldat français et un soldat allemand se rencontrent et deviennent amis.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "À quelle personne allez-vous proposer chaque film ? Écrivez la lettre de la personne à côté de chaque document.\nA. Samir a envie de rire. — B. Patricia s’intéresse à l’histoire. — C. Gabriela adore la science-fiction. — D. Yasmine aime les films policiers. — E. Thomas aime regarder un dessin animé. — F. Kevin préfère les films avec des adolescents. — G. Christophe aime les histoires romantiques. — H. Sabrina veut voir un film sur les animaux.",
+        "type_reponse": "lignes",
+        "points": 6,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Document 1 (1 point)",
+            "reponse": "C. Gabriela"
+          },
+          {
+            "label": "Document 2 (1 point)",
+            "reponse": "G. Christophe"
+          },
+          {
+            "label": "Document 3 (1 point)",
+            "reponse": "F. Kevin"
+          },
+          {
+            "label": "Document 4 (1 point)",
+            "reponse": "H. Sabrina"
+          },
+          {
+            "label": "Document 5 (1 point)",
+            "reponse": "A. Samir"
+          },
+          {
+            "label": "Document 6 (1 point)",
+            "reponse": "B. Patricia"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 1 · La lettre de Nicolas",
+    "consigne": "Vous faites du basket-ball dans un club et vous recevez cette lettre. Répondez aux questions.",
+    "support": {
+      "titre": "Lettre de Nicolas",
+      "texte": "Salut,\nC’est bientôt les vacances ! Tu veux venir dans la maison de vacances de mes parents, à la montagne ? Elle est tout équipée : il y a des draps, des couvertures et des serviettes ; pense à prendre des habits chauds et des gants. Il y a beaucoup d’activités gratuites et si tu veux nous ferons des promenades à pied en forêt.\n\nJ’arriverai le 4 décembre, mais la première semaine ma tante va venir avec mon oncle. Tu peux venir le 11 décembre et rester jusqu’au 18 ? Mon frère part le 18. Il peut te ramener chez toi en voiture après.\n\nJe ne peux pas voir mes messages électroniques dans la maison. Contacte-moi par SMS parce qu’il est difficile de recevoir des appels.\n\nNicolas",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Où est la maison des parents de Nicolas ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/ce2-campagne.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/ce2-plage.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/ce2-montagne.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Nicolas vous demande d’apporter…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "un jeu de société."
+          },
+          {
+            "id": "b",
+            "texte": "une serviette de bain."
+          },
+          {
+            "id": "c",
+            "texte": "des vêtements d’hiver.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle activité est-ce que Nicolas vous propose ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/ce2-randonnee.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/ce2-velo.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/ce2-cheval.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Nicolas vous propose d’arriver le…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "4 décembre."
+          },
+          {
+            "id": "b",
+            "texte": "11 décembre.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "18 décembre."
+          }
+        ]
+      },
+      {
+        "enonce": "Qui peut vous conduire chez vous après les vacances ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "L’oncle de Nicolas."
+          },
+          {
+            "id": "b",
+            "texte": "Le frère de Nicolas.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "La mère de Nicolas."
+          }
+        ]
+      },
+      {
+        "enonce": "Nicolas vous demande de lui répondre par…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "texto.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "courriel."
+          },
+          {
+            "id": "c",
+            "texte": "téléphone."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 1 · Dans la famille d’accueil",
+    "consigne": "Vous êtes dans une famille d’accueil et vous lisez ces documents. Répondez aux questions.",
+    "support": {
+      "titre": "Documents de la famille d’accueil",
+      "texte": "Document 1 — Écrans et vie de famille : règles de la maison\n1. Jeux vidéo : vous pouvez jouer aux jeux vidéo sur la télévision du salon, mais seulement l’après-midi et le samedi matin. Ne laissez pas les jeux sur la table basse. Rangez-les dans l’armoire sous la télévision.\n2. Téléphones portables : il est interdit de les utiliser pendant les repas.\n3. Wi-Fi : la nuit, le Wi-Fi est débranché dans la maison. Alors, dormez bien !\n\nDocument 2 — Chocolats aux céréales (une recette facile, sans four !)\nIngrédients : 250 g de beurre, 250 g de sucre, 250 g de chocolat noir, 250 g de céréales.\nPréparation : faire fondre le beurre et le chocolat dans une casserole. Ajouter le sucre et mélanger. Ajouter les céréales et bien mélanger. Former des petites boules, et mettre au frigo pendant 2 heures. Quand les boules sont dures, c’est prêt !\n\nDocument 3 — Message de Marc\nBonjour,\nJe suis au travail. La poste m’a appelé, le livreur va passer entre 10 h et midi. Reste à la maison et ouvre-lui s’il te plaît, j’attends un colis urgent et Sophie est à l’école. Signe le document quand tu prends le colis. Il faut aussi mon numéro de carte d’identité, il est sur un papier avec le numéro de la commande, près du téléphone.\nMerci !\nMarc",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Document 1. Il faut mettre les jeux vidéo…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "sur la table."
+          },
+          {
+            "id": "b",
+            "texte": "dans l’armoire.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "à côté de la télévision."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 1. Quand les parents arrêtent-ils le Wi-Fi dans la maison ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Toutes les nuits.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le samedi matin."
+          },
+          {
+            "id": "c",
+            "texte": "Pendant les repas."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2. Que devez-vous mélanger en premier avec le beurre ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le sucre."
+          },
+          {
+            "id": "b",
+            "texte": "Le chocolat.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Les céréales."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2. Avant de manger ce dessert, vous devez le laisser reposer…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "sur la table."
+          },
+          {
+            "id": "b",
+            "texte": "dans le four."
+          },
+          {
+            "id": "c",
+            "texte": "au réfrigérateur.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3. Marc vous demande…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de recevoir un paquet important.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "de répondre à un appel téléphonique."
+          },
+          {
+            "id": "c",
+            "texte": "de prendre un rendez-vous pour Sophie."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3. Vous avez besoin du numéro…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de téléphone de Marc."
+          },
+          {
+            "id": "b",
+            "texte": "de la carte d’identité de Marc.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "du bon de commande de Marc."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 1 · Sorties en forêt à l’école de Fabas",
+    "consigne": "Vous lisez cet article de journal. Répondez aux questions.",
+    "support": {
+      "titre": "Sorties en forêt à l’école de Fabas",
+      "texte": "À Fabas, une petite ville dans le sud de la France, les élèves de l’école vont jouer en forêt et observer la nature. Les enfants y découvrent les animaux et les plantes.\n\nLa forêt n’est pas loin de l’école, à seulement 5 minutes de marche. Quand la météo est bonne, ils y vont 2 à 3 fois par semaine pour la pause de midi, à la place de la cantine.\n\nAu début du projet, certains parents n’étaient pas d’accord. Mais ils voient maintenant que leurs enfants sont plus concentrés pendant les cours et ils ont plein d’histoires à raconter. Et les professeurs voient aussi que les élèves améliorent leurs notes à l’école.\n\nL’école de Fabas est un exemple que de plus en plus d’écoles veulent suivre.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Avec les sorties en forêt, les enfants peuvent…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "faire du sport."
+          },
+          {
+            "id": "b",
+            "texte": "connaître la nature.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "travailler ensemble."
+          }
+        ]
+      },
+      {
+        "enonce": "La forêt est proche de l’école. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Vrai : elle est à seulement 5 minutes de marche."
+      },
+      {
+        "enonce": "Les enfants vont à la forêt tous les jours. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Faux : ils y vont 2 à 3 fois par semaine, quand la météo est bonne."
+      },
+      {
+        "enonce": "Les enfants vont dans la forêt pendant…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "les cours."
+          },
+          {
+            "id": "b",
+            "texte": "le déjeuner.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "le week-end."
+          }
+        ]
+      },
+      {
+        "enonce": "Avec les sorties en forêt, les élèves…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "sont plus en forme."
+          },
+          {
+            "id": "b",
+            "texte": "ont de meilleurs résultats.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "jouent mieux avec les autres."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

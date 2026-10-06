@@ -1328,5 +1328,467 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 1 · Annonces publiques",
+    "consigne": "Vous écoutez des annonces publiques. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s1/co1.mp3",
+      "transcription": "Document 1 — Chers élèves, le guichet de la bibliothèque est fermé. Pour rendre vos livres, merci d’utiliser la boîte qui se trouve près de l’entrée, à côté des ordinateurs.\n\nDocument 2 — Bonjour les enfants ! La visite du musée va commencer. La guide est là pour répondre à vos questions. Vous pouvez prendre des photos, mais les sacs ne sont pas autorisés, vous devez les laisser à l’accueil.\n\nDocument 3 — Votre attention s’il vous plaît. Changement de voie pour le train à destination de Bordeaux. Pour plus d’informations, merci de demander directement au guichet, face à la voie 10.\n\nDocument 4 — Cet été, la piscine change ses horaires. À partir de demain, elle ferme à minuit tous les vendredis. Venez prendre des cours de natation avec nos professeurs !\n\nDocument 5 — Le professeur de musique est en retard. Les élèves inscrits à son cours doivent attendre dans la salle de danse, à côté de la cafétéria.\n\nDocument 6 — À cause de la grève, le tramway est fermé. La mairie propose aujourd’hui des vélos gratuits. Un service spécial de bus est aussi disponible au même prix que le tramway."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1. Que devez-vous faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co1-guichet.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co1-ordinateurs.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co1-boite.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2. Qu’est-ce qui est interdit ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Entrer avec un sac.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Prendre des photos."
+          },
+          {
+            "id": "c",
+            "texte": "Poser des questions."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3. Qu’est-ce que vous devez faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co1-guichet-gare.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co1-controleur.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co1-quai.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 4. Cet été, la piscine propose de nouveaux horaires…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le matin."
+          },
+          {
+            "id": "b",
+            "texte": "le midi."
+          },
+          {
+            "id": "c",
+            "texte": "le soir.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 5. Où devez-vous attendre ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans l’entrée."
+          },
+          {
+            "id": "b",
+            "texte": "Dans la cafétéria."
+          },
+          {
+            "id": "c",
+            "texte": "Dans la salle de danse.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 6. Qu’est-ce qui est moins cher aujourd’hui ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co1-bus.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co1-tramway.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co1-velo.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 1 · À la radio",
+    "consigne": "Vous écoutez la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s1/co2.mp3",
+      "transcription": "Document 1 — Vendredi prochain, venez écouter le concert des plus belles musiques de films, avec un orchestre de 50 musiciens ! Réservez sur Internet pour payer votre place à moitié prix ! Attention, vous pouvez acheter seulement une seule place.\n\nDocument 2 — Chers ados ! C’est la semaine du livre sur Radio Jeunes. Tous les jours, à 20 heures, commencez votre soirée avec des textes lus par des comédiens. Si vous retrouvez les titres des livres, appelez-nous et gagnez un cadeau !\n\nDocument 3 — Aujourd’hui, le docteur David Dupré nous présente son livre de recettes pour adolescents : Bien manger avant les examens. Appelez-nous pour obtenir les réponses à toutes vos interrogations sur le sujet ! Les dix premiers appels seront en direct dans notre émission."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1. Quel événement est organisé ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co2-rock.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co2-orchestre.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co2-dj.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 1. Sur Internet, vous pouvez…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "acheter plus de places."
+          },
+          {
+            "id": "b",
+            "texte": "gagner une place gratuite."
+          },
+          {
+            "id": "c",
+            "texte": "payer les places moins cher.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2. L’événement se passe chaque jour…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le matin."
+          },
+          {
+            "id": "b",
+            "texte": "l’après-midi."
+          },
+          {
+            "id": "c",
+            "texte": "le soir.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2. Pour gagner un cadeau, il faut…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "lire des textes."
+          },
+          {
+            "id": "b",
+            "texte": "écrire des textes."
+          },
+          {
+            "id": "c",
+            "texte": "reconnaître des textes.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3. Vous pouvez…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "gagner un livre."
+          },
+          {
+            "id": "b",
+            "texte": "rencontrer l’invité."
+          },
+          {
+            "id": "c",
+            "texte": "poser des questions.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3. Quel est le thème de l’émission ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co2-cuisine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co2-sante.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co2-sport.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 1 · Le message de Malika",
+    "consigne": "Vous écoutez ce message sur un répondeur téléphonique. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s1/co3.mp3",
+      "transcription": "Salut, c’est Malika. Je te téléphone pour le cours de théâtre, samedi. L’heure a changé, le cours est avancé à 15 h parce qu’après, à 16 h, la professeure a une réunion avec ses collègues. Pour le cours, il faut apporter nos costumes. Je prends les gants et les lunettes. N’oublie pas les chapeaux. On peut aller au cours ensemble, en bus. Rendez-vous devant chez moi à 14 h 30 ? Rappelle-moi si tu es d’accord !"
+    },
+    "questions": [
+      {
+        "enonce": "Qu’est-ce qui a changé ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le lieu."
+          },
+          {
+            "id": "b",
+            "texte": "L’horaire.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "L’activité."
+          }
+        ]
+      },
+      {
+        "enonce": "Que fait la professeure à 16 heures ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Elle va donner un cours."
+          },
+          {
+            "id": "b",
+            "texte": "Elle a un rendez-vous personnel."
+          },
+          {
+            "id": "c",
+            "texte": "Elle rencontre d’autres professeurs.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous devez apporter ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co3-chapeau.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co3-gants.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co3-lunettes.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Malika vous propose…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de travailler ensemble."
+          },
+          {
+            "id": "b",
+            "texte": "d’aller au cours avec elle.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "de prendre des costumes chez elle."
+          }
+        ]
+      },
+      {
+        "enonce": "Où est-ce que Malika vous donne rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Devant le théâtre."
+          },
+          {
+            "id": "b",
+            "texte": "Devant sa maison.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Devant l’arrêt de bus."
+          }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire pour répondre à Malika ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s1/co3-sms.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s1/co3-mail.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s1/co3-telephone.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s1-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 1 · Quatre dialogues",
+    "consigne": "Vous écoutez 4 dialogues. Associez chaque dialogue à la situation correspondante. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "support": {
+      "audio": "a2p-s1/co4.mp3",
+      "transcription": "Dialogue 1 — Qu’est-ce que tu fais samedi ? — Je ne sais pas. Pourquoi ? — Tu veux venir avec moi voir la nouvelle exposition sur les mangas ? — Oui, avec plaisir, j’adore les bandes dessinées !\n\nDialogue 2 — Tu as le programme de la fête de l’école ? — Oui, sur mon téléphone. — Tu peux me dire quand commence le concert de hip-hop ? — Je crois que c’est après le concours de chansons. Attends, je regarde.\n\nDialogue 3 — Qu’est-ce que tu fais ? — Mes exercices de mathématiques. J’ai un contrôle demain et je n’y comprends rien ! — J’ai toujours aimé les maths. Si tu veux, je peux regarder avec toi et t’expliquer. — Ah, oui, super !\n\nDialogue 4 — C’est l’anniversaire de Juliette samedi. Qu’est-ce qu’on achète ? Je n’ai pas d’idée. Tu sais ce qu’elle aime, toi ? — Elle adore la musique. Pourquoi pas une place de concert ? — Oh, oui ! Parfait ! Tu as toujours de super idées !"
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Proposer de l’aide — B. Refuser une invitation — C. Inviter quelqu’un — D. S’excuser — E. Se renseigner sur un horaire — F. Choisir un cadeau",
+        "type_reponse": "lignes",
+        "points": 7,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (1 point)",
+            "reponse": "C. Inviter quelqu’un"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "E. Se renseigner sur un horaire"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "A. Proposer de l’aide"
+          },
+          {
+            "label": "Dialogue 4 (2 points)",
+            "reponse": "F. Choisir un cadeau"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
