@@ -542,5 +542,271 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "sms",
+    "theme": "Test blanc A1 Junior · série 3 · La climatisation",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "expediteur": "Catherine",
+      "texte": "Bonjour,\n\nJe suis en voyage. Je rentre tard ce soir. Il va faire très chaud aujourd’hui. Tu peux mettre de l’air froid si tu veux. La télécommande est sur l’étagère, à côté des livres. C’est une petite télécommande blanche. Il faut appuyer sur le bouton « allumer » puis sur le soleil. Ensuite, tu sélectionnes la température avec les flèches. C’est automatiquement sur 21°, mais je te conseille 24°.\n\nÀ ce soir !\nCatherine"
+    },
+    "questions": [
+      {
+        "enonce": "Catherine rentre…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Dans la journée" },
+          { "id": "b", "texte": "Tard dans la soirée", "correct": true },
+          { "id": "c", "texte": "Demain" }
+        ]
+      },
+      {
+        "enonce": "Où est la télécommande ?",
+        "type_reponse": "qcm_image",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/ce1-etagere.webp", "correct": true },
+          { "id": "b", "image": "a1j-s3/ce1-table.webp" },
+          { "id": "c", "image": "a1j-s3/ce1-chevet.webp" }
+        ]
+      },
+      {
+        "enonce": "Quelle est la bonne télécommande ?",
+        "type_reponse": "qcm_image",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/ce1-telecommande-a.webp" },
+          { "id": "b", "image": "a1j-s3/ce1-telecommande-b.webp", "correct": true },
+          { "id": "c", "image": "a1j-s3/ce1-telecommande-c.webp" }
+        ]
+      },
+      {
+        "enonce": "Pour sélectionner la température, il faut utiliser…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le bouton « allumer »" },
+          { "id": "b", "texte": "Les flèches", "correct": true },
+          { "id": "c", "texte": "Le bouton « soleil »" }
+        ]
+      },
+      {
+        "enonce": "Quelle température Catherine conseille-t-elle ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "24°."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "sms",
+    "theme": "Test blanc A1 Junior · série 3 · L’île aux Pirates",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "expediteur": "Emma",
+      "texte": "Salut,\n\nDimanche, nous allons prendre un bateau pour visiter l’île aux Pirates avec une amie de mes parents. Tu veux venir avec nous ? On va prendre le bateau de 10 h, mais il faut être au port à 9 h 30. Le trajet dure 30 minutes. De l’avenue de la Liberté, tu traverses la place Pantiero. À côté du Casino, il y a le port. C’est le bateau A16. Prends ton chapeau et ta crème solaire.\n\nBisous\nEmma"
+    },
+    "questions": [
+      {
+        "enonce": "Emma vous invite à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Visiter un bateau de pirates" },
+          { "id": "b", "texte": "Aller sur une île en bateau", "correct": true },
+          { "id": "c", "texte": "Pratiquer un sport nautique" }
+        ]
+      },
+      {
+        "enonce": "Quel jour est la sortie ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Dimanche."
+      },
+      {
+        "enonce": "Qui est avec Emma ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Ses parents" },
+          { "id": "b", "texte": "Des amis de l’école" },
+          { "id": "c", "texte": "Une amie de ses parents", "correct": true }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "9 h 30", "correct": true },
+          { "id": "b", "texte": "10 h 00" },
+          { "id": "c", "texte": "10 h 30" }
+        ]
+      },
+      {
+        "enonce": "Quel chemin devez-vous prendre pour retrouver Emma ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/ce2-chemin-a.webp" },
+          { "id": "b", "image": "a1j-s3/ce2-chemin-b.webp", "correct": true },
+          { "id": "c", "image": "a1j-s3/ce2-chemin-c.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 3 · À l’hôtel",
+    "consigne": "Lisez les messages et répondez aux questions.",
+    "support": {
+      "titre": "Informations de l’hôtel",
+      "texte": "Vendredi 20 h – 23 h : soirée tropicale en bord de mer. Discothèque, DJ, salsa.\n\nVisite guidée de la ville de 10 h à 11 h. Visite de nuit de 20 h à 21 h 30.\n\nPiscine. Étage 9. Ouverte de mai à septembre de 8 h à 21 h. Température de l’eau : 19°.\n\nCours de surf les mardis et jeudis, yoga le mercredi et volleyball le samedi.\n\nHoraire du petit-déjeuner : 7 h – 10 h du lundi au samedi. Dimanche : 8 h – 11 h.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quel mois la piscine est-elle ouverte ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Avril" },
+          { "id": "b", "texte": "Mai", "correct": true },
+          { "id": "c", "texte": "Octobre" }
+        ]
+      },
+      {
+        "enonce": "La visite de nuit dure combien de temps ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "1 h 30", "correct": true },
+          { "id": "b", "texte": "2 heures" },
+          { "id": "c", "texte": "2 h 30" }
+        ]
+      },
+      {
+        "enonce": "Quel jour a lieu la soirée tropicale ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Le vendredi."
+      },
+      {
+        "enonce": "À quelle heure commence le petit-déjeuner le dimanche ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "7 heures" },
+          { "id": "b", "texte": "8 heures", "correct": true },
+          { "id": "c", "texte": "10 heures" }
+        ]
+      },
+      {
+        "enonce": "Quel cours pouvez-vous suivre deux fois par semaine ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Volleyball" },
+          { "id": "b", "texte": "Yoga" },
+          { "id": "c", "texte": "Surf", "correct": true }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 Junior · série 3 · Le pass Paris",
+    "consigne": "Lisez cette annonce et répondez aux questions.",
+    "support": {
+      "titre": "Le pass Paris",
+      "texte": "À Paris, les touristes utilisent beaucoup les pass touristiques. Le pass Paris permet de :\n– visiter le musée du Louvre, le château de Versailles et l’Arc de Triomphe ;\n– profiter de promotions dans plus de 100 magasins de la ville ;\n– découvrir Paris en bus avec des explications en 8 langues.\n\nIl existe des pass 2, 3, 4 ou 6 jours. Pour plus d’informations, rendez-vous sur le site www.tourisme-paris.fr",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quel lieu pouvez-vous visiter avec le pass Paris ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "La tour Eiffel" },
+          { "id": "b", "texte": "Disneyland" },
+          { "id": "c", "texte": "Le musée du Louvre", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Avec le pass Paris, vous pouvez avoir des réductions dans…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Les restaurants de Paris" },
+          { "id": "b", "texte": "Les spectacles à Paris" },
+          { "id": "c", "texte": "Plusieurs magasins à Paris", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quel moyen de transport pouvez-vous prendre avec le pass Paris ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/ce4-bus.webp", "correct": true },
+          { "id": "b", "image": "a1j-s3/ce4-metro.webp" },
+          { "id": "c", "image": "a1j-s3/ce4-tram.webp" }
+        ]
+      },
+      {
+        "enonce": "Quelle est la durée maximale du pass Paris ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "6 jours."
+      },
+      {
+        "enonce": "Pour vous informer, vous devez…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Téléphoner" },
+          { "id": "b", "texte": "Aller sur Internet", "correct": true },
+          { "id": "c", "texte": "Aller à l’office du tourisme" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

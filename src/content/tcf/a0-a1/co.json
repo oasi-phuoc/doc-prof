@@ -405,5 +405,215 @@
       { "id": "i5", "image": "a1j-s2/co5-raquette.webp", "correct": false }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 3 · Le cours de musique",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s3/co1.mp3",
+      "transcription": "Salut, c’est Lisa. Je vais à un cours de piano samedi. C’est à l’école de musique et c’est 10 euros. Ça commence à 14 h. Tu veux venir ? Il faut envoyer un mail à la mairie pour s’inscrire. Rappelle-moi ce midi pour avoir plus d’informations. À tout à l’heure !"
+    },
+    "questions": [
+      {
+        "enonce": "Lisa vous propose de venir à un cours de…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/co1-violon.webp" },
+          { "id": "b", "image": "a1j-s3/co1-piano.webp", "correct": true },
+          { "id": "c", "image": "a1j-s3/co1-flute.webp" }
+        ]
+      },
+      {
+        "enonce": "Où est le cours ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "À l’école de musique."
+      },
+      {
+        "enonce": "À quelle heure commence le cours ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "10 heures" },
+          { "id": "b", "texte": "12 heures" },
+          { "id": "c", "texte": "14 heures", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Comment devez-vous faire pour vous inscrire ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Téléphoner" },
+          { "id": "b", "texte": "Aller à la mairie" },
+          { "id": "c", "texte": "Envoyer un courriel", "correct": true }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 3 · La visite du musée",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s3/co2.mp3",
+      "transcription": "Bonjour à tous. La visite du musée commence à 11 h. Vous devez laisser vos sacs à l’entrée et attendre la guide devant la salle 12. Après la visite, vous pouvez manger au restaurant du musée, au premier étage, et acheter le livre du musée à la boutique, à côté de la sortie."
+    },
+    "questions": [
+      {
+        "enonce": "À quelle heure commence la visite du musée ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "10 heures" },
+          { "id": "b", "texte": "11 heures", "correct": true },
+          { "id": "c", "texte": "12 heures" }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous laisser à l’entrée ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/co2-sac-a-dos.webp", "correct": true },
+          { "id": "b", "image": "a1j-s3/co2-parapluie.webp" },
+          { "id": "c", "image": "a1j-s3/co2-manteau.webp" }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous pouvez acheter à la boutique du musée ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/co2-livre.webp", "correct": true },
+          { "id": "b", "image": "a1j-s3/co2-mug.webp" },
+          { "id": "c", "image": "a1j-s3/co2-cartes-postales.webp" }
+        ]
+      },
+      {
+        "enonce": "Où est la boutique du musée ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "À côté de la sortie."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 Junior · série 3 · La réparation",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1j-s3/co3.mp3",
+      "transcription": "Bonjour, c’est Paul, du magasin Électro. Votre téléphone portable est réparé. Vous pouvez venir le chercher aujourd’hui au service après-vente du magasin. Vous devez payer 20 euros pour la réparation. On est au 18, rue du Petit-Pont. N’oubliez pas de prendre une carte d’identité avec vous."
+    },
+    "questions": [
+      {
+        "enonce": "Qu’est-ce que vous devez aller chercher ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1j-s3/co3-appareil-photo.webp" },
+          { "id": "b", "image": "a1j-s3/co3-telephone.webp", "correct": true },
+          { "id": "c", "image": "a1j-s3/co3-ordinateur.webp" }
+        ]
+      },
+      {
+        "enonce": "Où devez-vous aller dans le magasin ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Au service après-vente."
+      },
+      {
+        "enonce": "Combien allez-vous payer ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "15 €" },
+          { "id": "b", "texte": "18 €" },
+          { "id": "c", "texte": "20 €", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous prendre avec vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Vos papiers d’identité", "correct": true },
+          { "id": "b", "texte": "Votre ticket de caisse" },
+          { "id": "c", "texte": "Votre carte du magasin" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 Junior · série 3 · Au collège",
+    "consigne": "Observez les situations et écoutez les 4 dialogues. Notez le numéro du dialogue (1 à 4) sous l’image. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1j-s3/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Tu commences à quelle heure demain ? — À 10 h. Le prof de maths est absent. — Moi, je commence à 8 h. J’ai cours d’histoire.\n\nDialogue 2 — S’il vous plaît, vous ne jouez pas ici. Prenez votre ballon et allez dans la cour. — Oui, désolé, monsieur.\n\nDialogue 3 — Tu vas où ? — En cours de dessin. — Allez, dépêche-toi, tu es en retard !\n\nDialogue 4 — Tu rentres comment de l’école ? — En bus, et toi ? — Moi, à pied. J’habite juste à côté."
+    },
+    "questions": [],
+    "situations": [
+      { "id": "s1", "image": "a1j-s3/co4-situation-a.webp", "dialogue": 2 },
+      { "id": "s2", "image": "a1j-s3/co4-situation-b.webp", "dialogue": null },
+      { "id": "s3", "image": "a1j-s3/co4-situation-c.webp", "dialogue": 1 },
+      { "id": "s4", "image": "a1j-s3/co4-situation-d.webp", "dialogue": 4 },
+      { "id": "s5", "image": "a1j-s3/co4-situation-e.webp", "dialogue": null },
+      { "id": "s6", "image": "a1j-s3/co4-situation-f.webp", "dialogue": 3 }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-co-5",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Test blanc A1 Junior · série 3 · Le départ en vacances",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": { "audio": "a1j-s3/co5.mp3" },
+    "questions": [],
+    "melanger": false,
+    "score": "par_image",
+    "images": [
+      { "id": "i1", "image": "a1j-s3/co5-ping-pong.webp", "correct": false },
+      { "id": "i2", "image": "a1j-s3/co5-creme-solaire.webp", "correct": true },
+      { "id": "i3", "image": "a1j-s3/co5-tongs.webp", "correct": true },
+      { "id": "i4", "image": "a1j-s3/co5-chapeau.webp", "correct": true },
+      { "id": "i5", "image": "a1j-s3/co5-serviettes.webp", "correct": true }
+    ],
+    "consigne_supplementaire": null
   }
 ]

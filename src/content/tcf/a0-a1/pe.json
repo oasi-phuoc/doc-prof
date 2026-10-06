@@ -101,5 +101,48 @@
     },
     "questions": [],
     "consigne_supplementaire": "Vous lui parlez de votre meilleur(e) ami(e).\nVous décrivez votre meilleur(e) ami(e).\nVous dites quelles activités vous faites ensemble."
+  },
+  {
+    "id": "tcf-a1j-s3-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 Junior · série 3 · Jeu ciné",
+    "consigne": "Vous participez à un jeu pour gagner des places de cinéma gratuites. Complétez le formulaire d’inscription.",
+    "points": 10,
+    "support": {
+      "titre": "Jeu ciné",
+      "champs": [
+        { "label": "Prénom :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Date de naissance :", "type": "date", "corrige": "Réponse personnelle (ex. : 12.03.2011)" },
+        { "label": "Nationalité :", "type": "texte", "corrige": "Réponse personnelle (ex. : afghane, érythréenne…)" },
+        { "label": "Adresse complète en France :", "type": "texte", "corrige": "Numéro, rue, code postal et ville" },
+        { "label": "Numéro de téléphone :", "type": "texte", "corrige": "Numéro complet" },
+        { "label": "E-mail :", "type": "texte", "corrige": "Adresse électronique complète (avec @)" },
+        { "label": "Film préféré :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Acteur / actrice préféré(e) :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Nom du cinéma où vous allez généralement :", "type": "texte", "corrige": "Réponse personnelle (ou « je ne vais pas au cinéma »)" },
+        { "label": "Avec qui allez-vous au cinéma généralement ?", "type": "texte", "corrige": "Ex. : avec mes amis, avec ma famille…" }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1j-s3-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 Junior · série 3 · Cadeau pour le professeur",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 15,
+    "support": {
+      "consigne": "Vous écrivez un message à un(e) ami(e) pour aller acheter un cadeau pour votre professeur de français. Écrivez un message de 40 mots.",
+      "nb_mots": { "min": 40 },
+      "email": { "a": "monami@email.com", "objet": "Cadeau pour le professeur de français" },
+      "reponse_modele": "Salut Sara,\nC’est bientôt la fin de l’année. Tu veux venir avec moi acheter un cadeau pour notre professeur de français ? Je vais au centre commercial samedi après-midi, à 14 heures. Quel cadeau est-ce qu’on achète ? Des fleurs, un livre ou du chocolat ?\nÀ samedi !\nNadia"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous lui proposez de venir avec vous.\nVous lui dites où et quand vous allez.\nVous lui demandez quel cadeau acheter."
   }
 ]
