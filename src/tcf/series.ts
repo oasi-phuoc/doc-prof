@@ -8,6 +8,31 @@ export type TcfSerie = {
   exercices: readonly string[]
 }
 
+const PREP_A1_SUJETS_ORAL = [
+  ['', 'hôtel'],
+  ['b', 'magasin de vêtements'],
+  ['c', 'club de vacances'],
+  ['d', 'marché'],
+  ['e', 'théâtre'],
+  ['f', 'café'],
+  ['g', 'gare'],
+  ['h', 'magasin de fournitures'],
+  ['i', 'école'],
+  ['j', 'magasin de livres'],
+] as const
+
+/** Préparation A1 (format DELF) : une série par sujet de dialogue simulé. */
+function prepA1Series(n: number, nbCo: number): TcfSerie[] {
+  const p = `tcf-a1p-s${n}-`
+  const range = (k: number, c: string) => Array.from({ length: k }, (_, i) => `${p}${c}-${i + 1}`)
+  return PREP_A1_SUJETS_ORAL.map(([v, sujet], i) => ({
+    id: i === 0 ? `a1p-serie-${n}` : `a1p-serie-${n}-sujet-${i + 1}`,
+    label: `Préparation A1 · série ${n} (oral : ${sujet})`,
+    niveau: 'A0-A1',
+    exercices: [...range(nbCo, 'co'), ...range(4, 'ce'), ...range(2, 'pe'), `${p}po-1`, `${p}po-2`, `${p}po-3${v}`],
+  }))
+}
+
 export const TCF_SERIES: readonly TcfSerie[] = [
   {
     id: 'a1j-serie-1',
@@ -267,38 +292,6 @@ export const TCF_SERIES: readonly TcfSerie[] = [
       `tcf-a2-s1-po-3${v}`,
     ],
   })),
-  ...(
-    [
-      ['', 'hôtel'],
-      ['b', 'magasin de vêtements'],
-      ['c', 'club de vacances'],
-      ['d', 'marché'],
-      ['e', 'théâtre'],
-      ['f', 'café'],
-      ['g', 'gare'],
-      ['h', 'magasin de fournitures'],
-      ['i', 'école'],
-      ['j', 'magasin de livres'],
-    ] as const
-  ).map(([v, sujet], i) => ({
-    id: i === 0 ? 'a1p-serie-4' : `a1p-serie-4-sujet-${i + 1}`,
-    label: `Préparation A1 · série 4 (oral : ${sujet})`,
-    niveau: 'A0-A1' as const,
-    exercices: [
-      'tcf-a1p-s4-co-1',
-      'tcf-a1p-s4-co-2',
-      'tcf-a1p-s4-co-3',
-      'tcf-a1p-s4-co-4',
-      'tcf-a1p-s4-co-5',
-      'tcf-a1p-s4-ce-1',
-      'tcf-a1p-s4-ce-2',
-      'tcf-a1p-s4-ce-3',
-      'tcf-a1p-s4-ce-4',
-      'tcf-a1p-s4-pe-1',
-      'tcf-a1p-s4-pe-2',
-      'tcf-a1p-s4-po-1',
-      'tcf-a1p-s4-po-2',
-      `tcf-a1p-s4-po-3${v}`,
-    ],
-  })),
+  ...prepA1Series(3, 4),
+  ...prepA1Series(4, 5),
 ]

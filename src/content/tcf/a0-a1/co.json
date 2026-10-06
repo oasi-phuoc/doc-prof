@@ -2030,5 +2030,266 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A1 · série 3 · Le message de Solange",
+    "consigne": "Votre amie Solange vous laisse un message. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1p-s3/co1.mp3",
+      "transcription": "Allô ? C’est Solange. Je t’appelle pour confirmer le dîner samedi soir à la maison. Vous pouvez venir vers 20 h. Ah ! Est-ce que vous pouvez apporter deux baguettes ? Nous avons aussi invité Didier et Michelle… Ils apportent le dessert : une tarte aux pommes… Bon, alors à samedi !"
+    },
+    "questions": [
+      {
+        "enonce": "Solange vous invite à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "prendre le petit-déjeuner."
+          },
+          {
+            "id": "b",
+            "texte": "déjeuner."
+          },
+          {
+            "id": "c",
+            "texte": "dîner.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quel jour est le rendez-vous ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Samedi."
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s3/co1-8h.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s3/co1-12h.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s3/co1-20h.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous devez apporter ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Deux baguettes (du pain)."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A1 · série 3 · Annonce à l’aéroport",
+    "consigne": "Vous entendez cette annonce dans un aéroport. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1p-s3/co2.mp3",
+      "transcription": "Mesdames, Messieurs, votre attention, s’il vous plaît. Le vol AF335 au départ de Paris et à destination de Nice va partir à 15 h 40. Nous invitons tous les passagers à se présenter porte 28. Nous vous remercions de voyager sur la compagnie France Air et nous vous souhaitons un bon voyage."
+    },
+    "questions": [
+      {
+        "enonce": "Quel est le numéro du vol ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "AF335.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "AS305."
+          },
+          {
+            "id": "c",
+            "texte": "AR315."
+          }
+        ]
+      },
+      {
+        "enonce": "L’avion part de…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Lille."
+          },
+          {
+            "id": "b",
+            "texte": "Paris.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Nice."
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le vol ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 15 h 40."
+      },
+      {
+        "enonce": "Où doivent aller les passagers ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "À la porte 28."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A1 · série 3 · Le message de l’assistant",
+    "consigne": "Vous travaillez en France. Votre assistant vous laisse un message. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1p-s3/co3.mp3",
+      "transcription": "Bonsoir. Je vous rappelle vos rendez-vous de demain, mardi. À 11 h, vous avez rendez-vous chez le dentiste. À 12 h 30, vous allez déjeuner au Club des Arts avec Madame Seguin. Et à 16 h, vous devez revenir au bureau pour la réunion avec le directeur de l’entreprise Nysol. Bonne soirée !"
+    },
+    "questions": [
+      {
+        "enonce": "C’est le programme de la journée de…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "lundi."
+          },
+          {
+            "id": "b",
+            "texte": "mercredi."
+          },
+          {
+            "id": "c",
+            "texte": "mardi.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "À 11 h, vous avez rendez-vous…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "au bureau."
+          },
+          {
+            "id": "b",
+            "texte": "chez Madame Seguin."
+          },
+          {
+            "id": "c",
+            "texte": "chez le dentiste.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Où déjeunez-vous ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Au Club des Arts (au restaurant)."
+      },
+      {
+        "enonce": "À quelle heure est votre réunion avec l’entreprise Nysol ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "À 16 h."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Préparation A1 · série 3 · Petits dialogues",
+    "consigne": "Vous allez entendre 5 petits dialogues. Notez, sous chaque image, le numéro du dialogue qui correspond. Attention : il y a 6 images mais seulement 5 dialogues.",
+    "points": 10,
+    "support": {
+      "audio": "a1p-s3/co4.mp3",
+      "nb_dialogues": 5,
+      "transcription": "Dialogue 1 — Bonjour à tous et bienvenue à la formation. — Euh, je peux m’asseoir ici ? — Oui, bien sûr, prenez place, asseyez-vous. Vous avez des petites bouteilles d’eau si vous avez soif.\n\nDialogue 2 — Bonjour Dorian, ça va ? — Bonjour Madame Laurent ! Oui, ça va, merci. — Tu vas à l’université ? — Oui, je commence à 8 h 30. Il pleut beaucoup aujourd’hui !\n\nDialogue 3 — Bonjour Monsieur. — Bonjour. — Je suis le professeur Duquesnes. Où est la salle 33 ? — C’est ici, Monsieur.\n\nDialogue 4 — Moi, j’adore le peintre Monet. Et toi, qu’est-ce que tu penses de cette peinture ? — J’aime beaucoup cette exposition. Il est bien, ce musée ! Je vais revenir avec les enfants la semaine prochaine.\n\nDialogue 5 — Tu n’as pas de stylo ? — Non, je ne le trouve pas ! Il est peut-être chez moi. — Tiens, prends celui-ci. — Merci !"
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1p-s3/co4-situation-a.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s2",
+        "image": "a1p-s3/co4-situation-b.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s3",
+        "image": "a1p-s3/co4-situation-c.webp",
+        "dialogue": 4
+      },
+      {
+        "id": "s4",
+        "image": "a1p-s3/co4-situation-d.webp",
+        "dialogue": 3
+      },
+      {
+        "id": "s5",
+        "image": "a1p-s3/co4-situation-e.webp",
+        "dialogue": 5
+      },
+      {
+        "id": "s6",
+        "image": "a1p-s3/co4-situation-f.webp",
+        "dialogue": 2
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

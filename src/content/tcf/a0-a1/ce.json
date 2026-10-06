@@ -2506,5 +2506,336 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 3 · L’annonce d’Anna",
+    "consigne": "Vous lisez cette annonce dans un centre commercial. Répondez aux questions.",
+    "support": {
+      "titre": "Annonce",
+      "texte": "Bonjour,\nJe recherche une personne pour garder mes enfants de 1 et 7 ans.\nIl faut être disponible pour travailler les jeudis, vendredis et samedis soirs après 17 heures.\nVous devez habiter dans le centre de Limoges ou avoir une voiture.\nTarifs : 45 € pour une soirée.\nExpérience avec les enfants souhaitée.\nSi vous êtes intéressé, appelez-moi au 06 38 46 27 11.\nAnna Lemaître",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Cette annonce concerne quel travail ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s3/ce1-baby-sitting.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1p-s3/ce1-serveuse.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s3/ce1-journaliste.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel jour devez-vous travailler ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le lundi."
+          },
+          {
+            "id": "b",
+            "texte": "Le mercredi."
+          },
+          {
+            "id": "c",
+            "texte": "Le vendredi.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Il faut être disponible…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le matin."
+          },
+          {
+            "id": "b",
+            "texte": "le midi."
+          },
+          {
+            "id": "c",
+            "texte": "le soir.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Combien est-on payé pour une soirée ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "45 €."
+      },
+      {
+        "enonce": "Si vous êtes intéressé par l’annonce, que devez-vous faire ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Appeler Anna Lemaître au 06 38 46 27 11."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 3 · À la bibliothèque",
+    "consigne": "Vous êtes dans une bibliothèque et vous lisez ce panneau. Répondez aux questions.",
+    "support": {
+      "titre": "Bienvenue à la bibliothèque municipale !",
+      "texte": "• Au premier étage : les livres pour enfants, les journaux.\n• Au deuxième étage : les livres pour adultes, une salle de travail, une salle internet et la cafétéria.\n\nPour aller à la salle internet à partir de l’escalier, marchez jusqu’à l’accueil, puis tournez à gauche. La salle internet est la deuxième salle après les toilettes, à gauche.\n\nHoraires d’ouverture :\n– du lundi au vendredi : 8 h – 12 h\n– le samedi : 8 h – 19 h",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Les livres pour enfants sont…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "au premier étage, avec les journaux.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "au deuxième étage, à côté des toilettes."
+          },
+          {
+            "id": "c",
+            "texte": "au deuxième étage, derrière la salle internet."
+          }
+        ]
+      },
+      {
+        "enonce": "Dans la bibliothèque, il y a…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "une cafétéria.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "une salle de cinéma."
+          },
+          {
+            "id": "c",
+            "texte": "une salle de spectacle."
+          }
+        ]
+      },
+      {
+        "enonce": "Dessinez sur le plan le chemin pour aller à la salle internet et marquez d’une croix (X) la salle internet.",
+        "type_reponse": "lignes",
+        "points": 2,
+        "image": "a1p-s3/ce2-plan.webp",
+        "nb_lignes": 0,
+        "reponse_modele": "Escalier → tout droit jusqu’à l’accueil → à gauche → deuxième salle après les toilettes, à gauche (X). 2 points si l’itinéraire est tracé, 0 si seul le lieu d’arrivée est marqué."
+      },
+      {
+        "enonce": "À quelle heure la bibliothèque ouvre-t-elle le matin ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 8 h."
+      },
+      {
+        "enonce": "Quel jour est-ce que la bibliothèque est ouverte l’après-midi ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le samedi."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 3 · Les petites annonces",
+    "consigne": "Vous cherchez du travail et vous lisez ces annonces dans le journal. Répondez aux questions.",
+    "support": {
+      "titre": "Les petites annonces",
+      "texte": "« Sport plus » cherche un vendeur de chaussures à partir d’octobre.\n\nLe restaurant « Bon appétit » recherche des serveurs pour l’été (juin – septembre).\n\nMédecin recherche une secrétaire pour 3 semaines en août. Tél. : 04 44 57 65 00.\n\nURGENT ! Jeune homme cherche un/une professeur de danse pour apprendre la valse avant la date du mariage, le 30 mai. Tél. : 06 89 64 53 20.\n\nLe club de football de Briançon recherche un joueur (15-17 ans) du 1er septembre au 30 février. Contacter Michel au 04 92 21 43 28.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Qui propose un travail de serveur ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le restaurant « Bon appétit »."
+      },
+      {
+        "enonce": "Le médecin offre un travail pour combien de temps ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "3 semaines."
+      },
+      {
+        "enonce": "Quelle est la date du mariage ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le 30 mai."
+      },
+      {
+        "enonce": "Quand commence le travail à « Sport plus » ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "En octobre."
+      },
+      {
+        "enonce": "Michel travaille…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "dans un restaurant."
+          },
+          {
+            "id": "b",
+            "texte": "dans un club de sport.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "dans un magasin de chaussures."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 3 · Que faire à Paris ?",
+    "consigne": "Vous faites des études et vous voulez faire une sortie avec d’autres étudiants. Vous lisez cet article sur le site internet de l’université. Répondez aux questions.",
+    "support": {
+      "titre": "Que faire à Paris ?",
+      "texte": "S’il fait beau, l’après-midi vous pouvez aller au jardin du Luxembourg et, le soir, vous pouvez faire un tour en bateau jusqu’à la tour Eiffel.\n\nS’il pleut, allez visiter le musée Carnavalet sur l’histoire de Paris et finissez la journée avec une pièce de théâtre à la Comédie-Française…\n\nAu restaurant Paris Musical, près des Champs-Élysées, vous pouvez voir des spectacles et manger pour 21 €.\n\nRéservez vos billets dans le bureau 127 de l’université du lundi au vendredi (10 h – 18 h).",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "L’après-midi, s’il y a du soleil, l’article vous conseille…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de visiter un musée."
+          },
+          {
+            "id": "b",
+            "texte": "de faire un tour de bateau sur la Seine."
+          },
+          {
+            "id": "c",
+            "texte": "d’aller dans un parc.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quel musée vous conseille-t-on de visiter s’il pleut ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le musée Carnavalet (sur l’histoire de Paris)."
+      },
+      {
+        "enonce": "Le soir, s’il ne fait pas beau, on vous propose…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s3/ce4-theatre.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1p-s3/ce4-bateau.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s3/ce4-musee.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Le restaurant proposé dans l’article est à côté…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de la tour Eiffel."
+          },
+          {
+            "id": "b",
+            "texte": "du musée Carnavalet."
+          },
+          {
+            "id": "c",
+            "texte": "des Champs-Élysées.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Où pouvez-vous réserver ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Au bureau 127 de l’université."
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

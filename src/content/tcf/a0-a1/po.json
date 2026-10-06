@@ -1759,5 +1759,809 @@
     },
     "questions": [],
     "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-1",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Préparation A1 · série 3 · Entretien dirigé",
+    "consigne": "Entretien dirigé (1 minute environ). Répondez aux questions de l’examinateur sur vous, votre famille, vos goûts et vos activités.",
+    "points": 4,
+    "support": {
+      "theme": "Vous, votre famille, vos goûts et vos activités",
+      "mots": [
+        "Vous",
+        "Votre famille",
+        "Vos goûts",
+        "Vos activités"
+      ],
+      "exemples_questions": [
+        "Vous vous appelez comment ? Votre nom, comment ça s’écrit ?",
+        "Parlez-moi de votre famille. Vous êtes marié(e) ? Vous avez des enfants ? Quel âge ont-ils ?",
+        "Vous avez des frères et sœurs ? Ils habitent où ? Qu’est-ce qu’ils font ?",
+        "Quelle est votre nationalité ? Quelle est votre ville d’origine ?",
+        "Parlez-moi de votre appartement ou de votre maison.",
+        "Quelle est votre profession ? Vous aimez votre travail ?",
+        "Parlez-moi d’une journée habituelle. Vous vous levez à quelle heure ? Qu’est-ce que vous faites le soir ?",
+        "Vous habitez loin d’ici ?",
+        "Qu’est-ce que vous faites le samedi et le dimanche ? Vous aimez le sport ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s3-po-2",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Préparation A1 · série 3 · Échange d’informations",
+    "consigne": "Échange d’informations (2 minutes environ). Vous tirez 6 cartes. Vous posez des questions à l’examinateur avec les mots des cartes pour mieux le connaître.",
+    "points": 4,
+    "support": {
+      "theme": "Mieux connaître l’examinateur",
+      "mots": [
+        "Prénom ?",
+        "Travail ?",
+        "Téléphone ?",
+        "Voiture ?",
+        "Bureau ?",
+        "Famille ?",
+        "Adresse ?",
+        "Heure ?",
+        "Secrétaire ?",
+        "Appartement ?",
+        "Ordinateur ?",
+        "Nationalité ?",
+        "Train ?",
+        "École ?",
+        "Bibliothèque ?",
+        "Piscine ?",
+        "Banque ?",
+        "Parc ?",
+        "Stylo ?",
+        "Sortir ?",
+        "Langue ?",
+        "Restaurant ?",
+        "Danser ?",
+        "Livre ?"
+      ],
+      "exemples_questions": [
+        "Prénom : Quel est votre prénom ?",
+        "Travail : Vous travaillez où ? Vous aimez votre travail ?",
+        "Voiture : Vous avez une voiture ? De quelle couleur ?",
+        "Famille : Vous avez des enfants ?",
+        "Adresse : Vous habitez où ?",
+        "Langue : Vous parlez quelles langues ?",
+        "Restaurant : Vous allez souvent au restaurant ?",
+        "Danser : Vous aimez danser ?",
+        "Livre : Quel est votre livre préféré ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous pouvez poser une question sur le thème du mot. Exemple : « Famille ? » → « Est-ce que vous êtes marié ? »"
+  },
+  {
+    "id": "tcf-a1p-s3-po-3",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Réservation d’hôtel",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle du réceptionniste de l’hôtel.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en France. Vous allez dans un hôtel et vous demandez des renseignements (nombre de lits, télévision, ascenseur, connexion internet wifi, parking). Vous réservez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, bienvenue à l’hôtel. Je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais une chambre pour deux personnes, s’il vous plaît.",
+          "variantes": [
+            "Bonjour, vous avez une chambre pour une personne ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, bien sûr. C’est pour combien de nuits ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pour deux nuits. Il y a la télévision et le wifi dans la chambre ?",
+          "variantes": [
+            "Pour une nuit. Il y a un ascenseur ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a la télévision. La chambre coûte 99 € la nuit, 118 € avec le wifi, 125 € avec le wifi et le parking."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends la chambre avec le wifi et le parking, s’il vous plaît.",
+          "variantes": [
+            "Je prends la chambre avec le wifi."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Deux nuits à 125 €, ça fait 250 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 250 euros. Merci beaucoup, au revoir !",
+          "variantes": [
+            "Je peux payer par carte ?"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3b",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans un magasin de vêtements",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle du vendeur.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en France. Vous voulez acheter des vêtements pour votre famille. Vous allez dans un magasin, vous posez des questions sur les prix, les tailles ou les couleurs et vous achetez deux ou trois articles.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je cherche une veste pour mon mari. Elle coûte combien ?",
+          "variantes": [
+            "Bonjour, je voudrais un pantalon pour mon fils."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La veste coûte 39 €. Quelle taille ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Taille L, s’il vous plaît. Vous l’avez en bleu ?",
+          "variantes": [
+            "Taille M. Vous avez d’autres couleurs ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, en bleu et en noir. Autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais aussi deux paires de chaussettes et une jupe pour ma fille.",
+          "variantes": [
+            "C’est combien, les chaussures ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les chaussettes coûtent 3 € la paire et la jupe 16,50 €. Ça fait 61,50 € en tout."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 70 euros.",
+          "variantes": [
+            "Je peux payer par carte ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici votre monnaie : 8,50 €. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3c",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans un club de vacances",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle du responsable du club.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en France pour les vacances. Vous voulez vous inscrire dans un club de vacances. Vous posez des questions sur les tarifs et les activités proposées et vous réservez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, bienvenue au club ! Je peux vous renseigner ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Qu’est-ce qu’il y a comme activités ?",
+          "variantes": [
+            "Bonjour, il y a une piscine ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a la piscine, le tennis, la location de vélos et des soirées cinéma. Il y a aussi un restaurant le midi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est combien, la piscine ? Et le tennis ?",
+          "variantes": [
+            "Le restaurant coûte combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La piscine coûte 21 € pour 7 jours. Le tennis, 10 € de l’heure. Le restaurant, 12 € par jour ou 75 € pour 7 jours."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends la piscine pour 7 jours et une heure de tennis, s’il vous plaît.",
+          "variantes": [
+            "Je voudrais louer un vélo pour une journée."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien, ça fait 31 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 31 euros. Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3d",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Au marché",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle du vendeur.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en vacances en France. Vous allez au marché pour acheter des fruits et des légumes. Vous posez des questions sur les prix. Vous choisissez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Qu’est-ce que je vous sers ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Les bananes, c’est combien ?",
+          "variantes": [
+            "Bonjour, combien coûtent les oranges ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les bananes coûtent 2 € le kilo et les oranges 2,59 € le kilo."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais un kilo de bananes, s’il vous plaît.",
+          "variantes": [
+            "Je prends deux kilos d’oranges."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Et avec ça ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Une salade et un kilo de carottes, s’il vous plaît. Ça fait combien ?",
+          "variantes": [
+            "C’est tout, merci. Je vous dois combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La salade coûte 1 € et les carottes 1,39 € le kilo. Ça fait 4,39 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 5 euros."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici 61 centimes. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3e",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans un théâtre",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle de l’employé du théâtre.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en France pour les vacances et vous voulez voir un spectacle. Vous allez dans un magasin de vente de billets, vous vous renseignez sur les spectacles (horaires et prix). Vous choisissez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Qu’est-ce qu’il y a comme spectacles cette semaine ?",
+          "variantes": [
+            "Bonjour, vous avez des billets pour un concert ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a Casse-Noisette, un ballet, à 49 € ; Paris et l’amour, une pièce romantique, à 25 € ; Arthur, un spectacle pour rire, à 32 € ; et le Requiem de Mozart, un concert, à 46 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Paris et l’amour, c’est à quelle heure ?",
+          "variantes": [
+            "Le spectacle Arthur commence à quelle heure ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Samedi à 20 h."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais deux billets pour samedi, s’il vous plaît.",
+          "variantes": [
+            "Je prends un billet, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Deux billets à 25 €, ça fait 50 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 50 euros. Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3f",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans un café",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle du serveur.",
+    "points": 4,
+    "support": {
+      "situation": "Vous vivez en France. Vous allez au café. Vous posez des questions sur les prix des boissons, vous choisissez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, qu’est-ce que vous désirez ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. C’est combien, un café ?",
+          "variantes": [
+            "Bonjour, qu’est-ce que vous avez comme boissons ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le café coûte 2 €, le jus de fruits 4,20 € et l’eau 1,40 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais un café et un sandwich, s’il vous plaît.",
+          "variantes": [
+            "Je prends un jus de fruits, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le sandwich coûte 4,90 €. Autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, merci. Ça fait combien ?",
+          "variantes": [
+            "Une bouteille d’eau aussi, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 6,90 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 10 euros."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici votre monnaie : 3,10 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, bonne journée !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3g",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · À la gare",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle de l’employé de gare.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en France, en vacances à Paris. Vous voulez partir en week-end en train pour visiter le sud de la France. Vous allez à la gare, vous demandez des renseignements (villes, horaires, prix). Vous choisissez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais aller dans le sud de la France ce week-end. Il y a un train pour Marseille ?",
+          "variantes": [
+            "Bonjour, il y a un train pour Montpellier ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il y a un train pour Marseille à 7 h 06. Le billet coûte 70 €. Pour Montpellier, il y a un train à 8 h 45 à 45 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et pour Toulouse, c’est à quelle heure ?",
+          "variantes": [
+            "C’est combien pour Bordeaux ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour Toulouse, le train part à 6 h 58 et le billet coûte 65 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends un billet pour Montpellier, s’il vous plaît.",
+          "variantes": [
+            "Je voudrais un billet pour Marseille."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Ça fait 45 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 50 euros."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici 5 € et votre billet. Bon voyage !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3h",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans un magasin de fournitures",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle de l’employé du magasin.",
+    "points": 4,
+    "support": {
+      "situation": "Vous commencez un nouveau travail en France. Vous voulez acheter du matériel pour votre bureau. Vous allez dans un magasin, vous posez des questions sur les articles, vous choisissez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je cherche des cahiers et des stylos. C’est combien ?",
+          "variantes": [
+            "Bonjour, combien coûte cet agenda ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le cahier coûte 1,20 € ou 10 € les 10 cahiers. Le stylo coûte 2,50 € ou 20 € les 10 stylos."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends 10 cahiers et 10 stylos, s’il vous plaît.",
+          "variantes": [
+            "Je voudrais 2 stylos et un cahier."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, un agenda. Il coûte combien ?",
+          "variantes": [
+            "Non, merci. Ça fait combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "L’agenda coûte 9,80 €. Ça fait 39,80 € en tout."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 40 euros."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici 20 centimes. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3i",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans une école",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle du directeur de l’école.",
+    "points": 4,
+    "support": {
+      "situation": "Vous habitez en France et vous cherchez une école pour vos enfants. Vous entrez dans une école pour demander des renseignements (heures des cours, cours proposés, activités, prix). Vous inscrivez vos enfants et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je suis le directeur. Je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais inscrire mes deux enfants. Les cours commencent à quelle heure ?",
+          "variantes": [
+            "Bonjour, quels cours est-ce que vous proposez ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les cours commencent à 8 h et finissent à 16 h. Il y a aussi des activités : le musée d’histoire naturelle, le sport, la musique."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est combien, les activités ?",
+          "variantes": [
+            "Le cours de musique coûte combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le musée et le sport sont gratuits. Le cours de musique coûte 8 €. Il y a aussi des cours de mathématiques après l’école à 100 € par mois."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais inscrire mes enfants au cours de musique, s’il vous plaît.",
+          "variantes": [
+            "Je voudrais les cours de mathématiques pour mon fils."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien, deux enfants, ça fait 16 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 20 euros."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici 4 €. Au revoir !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
+  },
+  {
+    "id": "tcf-a1p-s3-po-3j",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Préparation A1 · série 3 · Dans un magasin de livres",
+    "consigne": "Dialogue simulé. Vous jouez le rôle du client. L’examinateur joue le rôle de l’employé du magasin.",
+    "points": 4,
+    "support": {
+      "situation": "Vous êtes en France et vous voulez acheter un livre. Vous allez dans un magasin de livres, vous vous renseignez, vous choisissez et vous payez.",
+      "grille": {
+        "points": 13,
+        "criteres": [
+          "Lexique (5) : mots et expressions adaptés aux trois parties",
+          "Morphosyntaxe (4) : phrases simples correctes",
+          "Maîtrise du système phonologique (4) : prononciation compréhensible"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je cherche un livre sur la musique. Vous avez ça ?",
+          "variantes": [
+            "Bonjour, vous avez des livres sur la nature ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, « Une histoire de la musique », à 18,30 €. Nous avons aussi « Protéger la nature » à 12 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et « La fille de papier », c’est combien ?",
+          "variantes": [
+            "C’est combien, le livre sur l’histoire de France ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "« La fille de papier » coûte 13,40 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends « Une histoire de la musique », s’il vous plaît.",
+          "variantes": [
+            "Je prends « Protéger la nature »."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Ça fait 18,30 €."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 20 euros."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici 1,70 €. Bonne lecture !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "N’oubliez pas de saluer et d’utiliser des formules de politesse. Vous payez avec les billets et les pièces."
   }
 ]
