@@ -267,4 +267,38 @@ export const TCF_SERIES: readonly TcfSerie[] = [
       `tcf-a2-s1-po-3${v}`,
     ],
   })),
+  ...(
+    [
+      ['', 'hôtel'],
+      ['b', 'magasin de vêtements'],
+      ['c', 'club de vacances'],
+      ['d', 'marché'],
+      ['e', 'théâtre'],
+      ['f', 'café'],
+      ['g', 'gare'],
+      ['h', 'magasin de fournitures'],
+      ['i', 'école'],
+      ['j', 'magasin de livres'],
+    ] as const
+  ).map(([v, sujet], i) => ({
+    id: i === 0 ? 'a1p-serie-4' : `a1p-serie-4-sujet-${i + 1}`,
+    label: `Préparation A1 · série 4 (oral : ${sujet})`,
+    niveau: 'A0-A1' as const,
+    exercices: [
+      'tcf-a1p-s4-co-1',
+      'tcf-a1p-s4-co-2',
+      'tcf-a1p-s4-co-3',
+      'tcf-a1p-s4-co-4',
+      'tcf-a1p-s4-co-5',
+      'tcf-a1p-s4-ce-1',
+      'tcf-a1p-s4-ce-2',
+      'tcf-a1p-s4-ce-3',
+      'tcf-a1p-s4-ce-4',
+      'tcf-a1p-s4-pe-1',
+      'tcf-a1p-s4-pe-2',
+      'tcf-a1p-s4-po-1',
+      'tcf-a1p-s4-po-2',
+      `tcf-a1p-s4-po-3${v}`,
+    ],
+  })),
 ]

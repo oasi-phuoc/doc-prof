@@ -453,5 +453,89 @@
     },
     "questions": [],
     "consigne_supplementaire": "Vous prenez de ses nouvelles.\nVous lui racontez ce que vous faites.\nVous lui décrivez le temps qu’il fait."
+  },
+  {
+    "id": "tcf-a1p-s4-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Préparation A1 · série 4 · Fiche d’hôtel",
+    "consigne": "Vous êtes en vacances en France. Vous remplissez ce formulaire dans un hôtel.",
+    "points": 10,
+    "support": {
+      "titre": "Fiche client",
+      "champs": [
+        {
+          "label": "Prénom :",
+          "type": "texte",
+          "corrige": "Réponse personnelle"
+        },
+        {
+          "label": "Date de naissance :",
+          "type": "date",
+          "corrige": "Une date cohérente (ex. : 12.03.1990)"
+        },
+        {
+          "label": "Nationalité :",
+          "type": "texte",
+          "corrige": "Une nationalité (ex. : afghane, érythréenne), pas le nom du pays"
+        },
+        {
+          "label": "Courriel :",
+          "type": "texte",
+          "corrige": "Une adresse électronique (ex. : nom@mail.ch)"
+        },
+        {
+          "label": "Adresse :",
+          "type": "texte",
+          "corrige": "Une adresse complète (rue, numéro, ville)"
+        },
+        {
+          "label": "Code postal :",
+          "type": "texte",
+          "corrige": "Ex. : 1950"
+        },
+        {
+          "label": "Pays :",
+          "type": "texte",
+          "corrige": "Le nom d’un pays"
+        },
+        {
+          "label": "Téléphone :",
+          "type": "texte",
+          "corrige": "Ex. : 079 123 45 67"
+        },
+        {
+          "label": "Profession :",
+          "type": "texte",
+          "corrige": "Le nom d’une profession"
+        },
+        {
+          "label": "Date :",
+          "type": "date",
+          "corrige": "La date du jour"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Préparation A1 · série 4 · Invitation au cinéma",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 15,
+    "support": {
+      "consigne": "Vous écrivez un message à un ami pour l’inviter à aller au cinéma ce week-end. Vous lui parlez des films que vous regardez ensemble. (40 mots minimum)",
+      "nb_mots": {
+        "min": 40
+      },
+      "reponse_modele": "Salut Karim,\nTu es libre samedi soir ? Je t’invite au cinéma ! Il y a un nouveau film d’action à 20 h. Tu te souviens ? Nous regardons souvent des films d’action ensemble et nous adorons ça. On se retrouve devant le cinéma à 19 h 45 ?\nÀ samedi !\nAli"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Barème (15 points) : réalisation de la tâche (3), cohérence et cohésion (3), adéquation sociolinguistique (3), lexique (3), morphosyntaxe (3). Moins de 20 mots : 0 point."
   }
 ]

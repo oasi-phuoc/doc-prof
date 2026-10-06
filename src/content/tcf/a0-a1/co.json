@@ -1642,5 +1642,393 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A1 · série 4 · Le message du club de sport",
+    "consigne": "Vous écoutez ce message sur votre téléphone. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1p-s4/co1.mp3",
+      "transcription": "Bonjour, je suis Monsieur Morel, du club de sport. J’appelle pour votre cours de danse du mercredi de 9 h à 11 h. Merci de venir au premier cours, mercredi 10 septembre, avec votre chèque de 160 € pour l’inscription. Apportez de l’eau, il fait chaud dans la salle. Bonne journée !"
+    },
+    "questions": [
+      {
+        "enonce": "Vous allez faire quelle activité ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/co1-basket.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/co1-karate.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/co1-danse.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Le premier cours se passe le…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "9 septembre."
+          },
+          {
+            "id": "b",
+            "texte": "10 septembre.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "11 septembre."
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que Monsieur Morel demande ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "De payer votre inscription.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "De rappeler le club de sport."
+          },
+          {
+            "id": "c",
+            "texte": "D’apporter votre carte d’identité."
+          }
+        ]
+      },
+      {
+        "enonce": "Il faut venir avec…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "un sac de sport."
+          },
+          {
+            "id": "b",
+            "texte": "une bouteille d’eau.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "une paire de chaussures."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A1 · série 4 · Annonce à l’aéroport",
+    "consigne": "Vous entendez cette annonce dans un aéroport. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1p-s4/co2.mp3",
+      "transcription": "Attention, ce message est pour les passagers du vol AF79 Paris-Madrid de 5 h 30. L’avion a un retard de 2 heures à cause de la neige. Merci d’attendre ici en salle 4. Il y a des journaux gratuits. Vous pouvez acheter à boire et à manger près du bureau d’information."
+    },
+    "questions": [
+      {
+        "enonce": "Ce message demande aux passagers…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de changer d’avion."
+          },
+          {
+            "id": "b",
+            "texte": "de rester en salle d’attente.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "d’aller au bureau d’information."
+          }
+        ]
+      },
+      {
+        "enonce": "Le retard est de…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "2 heures.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "4 heures."
+          },
+          {
+            "id": "c",
+            "texte": "5 heures."
+          }
+        ]
+      },
+      {
+        "enonce": "Pourquoi l’avion a-t-il du retard ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/co2-pluie.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/co2-orage.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/co2-neige.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que les passagers peuvent acheter près du bureau d’information ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/co2-journaux.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/co2-parfum.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/co2-repas.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A1 · série 4 · Le message de Romain",
+    "consigne": "Vous travaillez et votre collègue Romain vous laisse un message. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1p-s4/co3.mp3",
+      "transcription": "Bonjour, c’est Romain. Je ne suis pas au bureau aujourd’hui. J’ai un rendez-vous de travail chez M. Lafarge. Nous avons une réunion lundi 14 février, à 16 h, dans les bureaux de l’entreprise Imaweb. C’est au 15 rue du Docteur Lassalle. Je t’envoie le programme par mail ce soir. À bientôt !"
+    },
+    "questions": [
+      {
+        "enonce": "Pourquoi Romain est-il absent du bureau aujourd’hui ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il est en vacances."
+          },
+          {
+            "id": "b",
+            "texte": "Il est chez un client.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Il va chez le docteur."
+          }
+        ]
+      },
+      {
+        "enonce": "La réunion de lundi est à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "14 h."
+          },
+          {
+            "id": "b",
+            "texte": "15 h."
+          },
+          {
+            "id": "c",
+            "texte": "16 h.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "La réunion se passe dans…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "la grande salle."
+          },
+          {
+            "id": "b",
+            "texte": "une autre société.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "le bureau de Romain."
+          }
+        ]
+      },
+      {
+        "enonce": "Que va faire Romain ce soir ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Envoyer un message.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Préparer une réunion."
+          },
+          {
+            "id": "c",
+            "texte": "Appeler une entreprise."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Préparation A1 · série 4 · Petits dialogues",
+    "consigne": "Vous allez entendre 4 petits dialogues. Notez, sous chaque image, le numéro du dialogue qui correspond. Attention : il y a 6 images mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1p-s4/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Excusez-moi, est-ce que vous avez des dictionnaires de français, ici ? — Oui, ils sont à côté des livres de sciences, en haut. — Ah oui, je vois ! Merci beaucoup !\n\nDialogue 2 — Voici la salle des professeurs, je vais vous présenter vos collègues. — Merci, et bonjour à tous ! — Je vous présente Madame Faure, la nouvelle professeure de français du lycée.\n\nDialogue 3 — Excusez-moi, je suis bien dans le cours d’anglais ? — Oui, c’est ça. Je suis Monsieur Klein, votre professeur. Asseyez-vous, le cours a commencé. — Merci, je suis désolée pour mon retard !\n\nDialogue 4 — Moussa, tu comprends l’exercice de mathématiques ? Il est très difficile. — L’exercice 2 ? Oui, c’est simple. Je vais t’expliquer. — Merci, c’est sympa. Je n’aime pas les maths !"
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1p-s4/co4-situation-a.webp",
+        "dialogue": 3
+      },
+      {
+        "id": "s2",
+        "image": "a1p-s4/co4-situation-b.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s3",
+        "image": "a1p-s4/co4-situation-c.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s4",
+        "image": "a1p-s4/co4-situation-d.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s5",
+        "image": "a1p-s4/co4-situation-e.webp",
+        "dialogue": 2
+      },
+      {
+        "id": "s6",
+        "image": "a1p-s4/co4-situation-f.webp",
+        "dialogue": 4
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-co-5",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Préparation A1 · série 4 · Le message de Cathy",
+    "consigne": "Vous allez entendre un message. Quels objets sont nommés dans le message ? Cochez les images des objets que vous entendez.",
+    "points": 5,
+    "support": {
+      "audio": "a1p-s4/co5.mp3"
+    },
+    "questions": [],
+    "melanger": false,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "a1p-s4/co5-serviette.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "a1p-s4/co5-lunettes.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "a1p-s4/co5-telephone.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "a1p-s4/co5-chapeau.webp",
+        "correct": true
+      },
+      {
+        "id": "i5",
+        "image": "a1p-s4/co5-appareil-photo.webp",
+        "correct": true
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

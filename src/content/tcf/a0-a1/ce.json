@@ -2021,5 +2021,490 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Préparation A1 · série 4 · Le message de Laure",
+    "consigne": "Vous recevez ce message de votre amie. Lisez le message et répondez aux questions.",
+    "support": {
+      "de": "laure@mail.fr",
+      "a": "Vous",
+      "objet": "Cet après-midi",
+      "texte": "Salut !\nTu as du temps cet après-midi ? Je dois rester tard au bureau. Tu peux aller prendre mon fils à l’école à 16 h ? Vous pouvez aller au parc ou faire du vélo, Thomas adore ça ! J’arrive à la maison à 19 h, on peut manger ensemble ! Je ne peux pas répondre au téléphone, je finis la réunion à 18 h. Écris-moi un message.\nUn grand merci !\nBises\nLaure"
+    },
+    "questions": [
+      {
+        "enonce": "Pourquoi est-ce que Laure vous écrit ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Elle veut faire du vélo."
+          },
+          {
+            "id": "b",
+            "texte": "Elle doit travailler tard.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Elle cherche un bureau."
+          }
+        ]
+      },
+      {
+        "enonce": "Où devez-vous aller chercher Thomas ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au parc."
+          },
+          {
+            "id": "b",
+            "texte": "À l’école.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "À la maison."
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que Thomas aime faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/ce1-velo.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/ce1-tennis.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/ce1-football.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure Laure est-elle chez elle ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 16 heures."
+          },
+          {
+            "id": "b",
+            "texte": "À 18 heures."
+          },
+          {
+            "id": "c",
+            "texte": "À 19 heures.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Comment devez-vous contacter Laure ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/ce1-telephone.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/ce1-mail.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/ce1-sms.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 4 · Cours de français",
+    "consigne": "Vous êtes dans une école de langues. Vous lisez ce panneau. Répondez aux questions.",
+    "support": {
+      "titre": "Cours de français",
+      "texte": "À partir du 1er septembre, le bureau des inscriptions a une nouvelle adresse : 35 rue Pierre Dupré (à la sortie du bâtiment, tourner à gauche, prendre la 2e rue à droite, puis continuer tout droit) et un nouveau numéro de téléphone : 06 12 15 18 99.\n\nPour vous inscrire, venez nous voir.\nPour le premier cours, apportez une pièce d’identité.\n\nHoraires d’ouverture\nDu lundi au vendredi : 9 h – 12 h et 12 h 30 – 17 h\ncours@francais.com",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quel chemin prendre pour aller au bureau des inscriptions ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/ce2-chemin-a.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/ce2-chemin-b.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/ce2-chemin-c.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce qui change au bureau des inscriptions ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le numéro de téléphone.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Les horaires d’ouverture."
+          },
+          {
+            "id": "c",
+            "texte": "Le prix des cours de français."
+          }
+        ]
+      },
+      {
+        "enonce": "Pour s’inscrire au cours, il faut…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "téléphoner."
+          },
+          {
+            "id": "b",
+            "texte": "aller sur place.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "envoyer un mail."
+          }
+        ]
+      },
+      {
+        "enonce": "Pour le premier cours, vous devez prendre…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "votre diplôme."
+          },
+          {
+            "id": "b",
+            "texte": "votre passeport.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "votre carte bancaire."
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure ouvre le bureau des inscriptions ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 9 heures.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À 12 heures."
+          },
+          {
+            "id": "c",
+            "texte": "À 17 heures."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 4 · Le panneau d’affichage",
+    "consigne": "Vous travaillez et vous lisez ces annonces sur le panneau d’affichage de votre entreprise. Répondez aux questions.",
+    "support": {
+      "titre": "Panneau d’affichage",
+      "texte": "Cours de piano en ligne pendant les pauses déjeuner (1 cours = 30 minutes). www.apprenez-a-jouer.fr\n\nCiné-club : tous les premiers samedis du mois à 20 h. cinema.ensemble@net.fr\n\nCours de tennis, du lundi 12 au dimanche 18 novembre, de 18 h à 20 h. Écrivez-nous sur : bouge@net.fr\n\nAppartements à louer. Visites tous les samedis entre 10 h et 15 h (1 heure par visite). jedemenage@net.fr\n\nAtelier de conversation en anglais. Le vendredi de 18 h à 20 h, au Café des Langues !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Que pouvez-vous faire une fois par mois ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Voir un film.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Parler en anglais."
+          },
+          {
+            "id": "c",
+            "texte": "Apprendre la musique."
+          }
+        ]
+      },
+      {
+        "enonce": "Quand pouvez-vous prendre des cours de musique ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le matin."
+          },
+          {
+            "id": "b",
+            "texte": "Le midi.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Le soir."
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure commence l’atelier de conversation ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 10 heures."
+          },
+          {
+            "id": "b",
+            "texte": "À 18 heures.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "À 20 heures."
+          }
+        ]
+      },
+      {
+        "enonce": "Que pouvez-vous faire le samedi ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Travailler au restaurant."
+          },
+          {
+            "id": "b",
+            "texte": "Visiter des appartements.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Faire une activité sportive."
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure finit le cours de sport ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 16 heures."
+          },
+          {
+            "id": "b",
+            "texte": "À 18 heures."
+          },
+          {
+            "id": "c",
+            "texte": "À 20 heures.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1p-s4-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A1 · série 4 · Visitez le Liliom !",
+    "consigne": "Vous lisez cet article dans un journal. Répondez aux questions.",
+    "support": {
+      "titre": "Visitez le Liliom !",
+      "texte": "Comme chaque année, au mois de novembre, nous vous invitons à la Journée Portes ouvertes du Liliom, le plus vieux cinéma de la ville. Lundi prochain, de 10 h à 19 h, venez voir des grands films et parlez avec vos acteurs préférés ! Vous pouvez vous prendre en photo avec eux, faire des vidéos et les voir jouer. Attention, vous ne pouvez pas téléphoner ou manger dans le cinéma ! Vous êtes intéressé ? Pour réserver, téléphonez-nous avant jeudi.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "On peut visiter le Liliom…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "une fois par semaine."
+          },
+          {
+            "id": "b",
+            "texte": "une fois par mois."
+          },
+          {
+            "id": "c",
+            "texte": "une fois par an.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Pendant combien de temps le Liliom est-il ouvert aux visiteurs ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un jour.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Deux jours."
+          },
+          {
+            "id": "c",
+            "texte": "Trois jours."
+          }
+        ]
+      },
+      {
+        "enonce": "Au Liliom, les visiteurs peuvent aussi…",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "rencontrer des acteurs.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "prendre un cours de cinéma."
+          },
+          {
+            "id": "c",
+            "texte": "voir une exposition de photos."
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous pouvez faire dans le cinéma ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1p-s4/ce4-telephoner.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1p-s4/ce4-photo.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1p-s4/ce4-manger.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Comment est-ce que vous réservez ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par mail."
+          },
+          {
+            "id": "b",
+            "texte": "Sur place."
+          },
+          {
+            "id": "c",
+            "texte": "Par téléphone.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
