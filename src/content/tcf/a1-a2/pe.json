@@ -45,15 +45,15 @@
     "niveau": "A1-A2",
     "competence": "PE",
     "type_exercice": "question_texte",
-    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Le spectacle du week-end",
-    "consigne": "Lisez la situation et Ã©crivez votre message.",
+    "theme": "Test blanc A2 Junior · série 2 · Le spectacle du week-end",
+    "consigne": "Lisez la situation et écrivez votre message.",
     "points": 13,
     "support": {
-      "consigne": "Ce week-end, vous Ãªtes allÃ©(e) voir un spectacle. Vous Ã©crivez Ã  un ami pour lui raconter. Vous lui dites oÃ¹ vous Ãªtes allÃ©(e), comment, avec qui et ce que vous avez vu. Vous lui dites si vous avez aimÃ© ou non le spectacle et pourquoi. (60 mots minimum)",
+      "consigne": "Ce week-end, vous êtes allé(e) voir un spectacle. Vous écrivez à un ami pour lui raconter. Vous lui dites où vous êtes allé(e), comment, avec qui et ce que vous avez vu. Vous lui dites si vous avez aimé ou non le spectacle et pourquoi. (60 mots minimum)",
       "nb_mots": {
         "min": 60
       },
-      "reponse_modele": "Salut Elias,\nSamedi soir, je suis allÃ© voir un spectacle de cirque Ã  Sion avec ma sÅ“ur et mes cousins. Nous avons pris le bus, puis nous avons marchÃ© dix minutes. Nous avons vu des acrobates, des jongleurs et un clown trÃ¨s drÃ´le. Jâ€™ai beaucoup aimÃ© le spectacle, parce que les artistes Ã©taient incroyables et que la musique Ã©tait super. Tu dois absolument y aller !\nÃ€ bientÃ´t,\nAhmad"
+      "reponse_modele": "Salut Elias,\nSamedi soir, je suis allé voir un spectacle de cirque à Sion avec ma sœur et mes cousins. Nous avons pris le bus, puis nous avons marché dix minutes. Nous avons vu des acrobates, des jongleurs et un clown très drôle. J’ai beaucoup aimé le spectacle, parce que les artistes étaient incroyables et que la musique était super. Tu dois absolument y aller !\nÀ bientôt,\nAhmad"
     },
     "questions": [],
     "consigne_supplementaire": null
@@ -63,22 +63,140 @@
     "niveau": "A1-A2",
     "competence": "PE",
     "type_exercice": "email_reponse",
-    "theme": "Test blanc A2 Junior Â· sÃ©rie 1 Â· Lâ€™invitation de RÃ©mi",
-    "consigne": "Vous recevez ce message dâ€™un ami.",
+    "theme": "Test blanc A2 Junior · série 2 · L’invitation de Rémi",
+    "consigne": "Vous recevez ce message d’un ami.",
     "points": 12,
     "support": {
       "email_recu": {
         "de": "remilain@gmel.fr",
-        "objet": "Cet Ã©tÃ©",
-        "texte": "Salut !\nJe tâ€™invite Ã  venir passer une semaine chez moi Ã  MontrÃ©al, au Canada, cet Ã©tÃ©. On pourrait faire plein dâ€™activitÃ©s ! Quâ€™est-ce que tu en penses ?\nÃ€ bientÃ´t !\nRÃ©mi"
+        "objet": "Cet été",
+        "texte": "Salut !\nJe t’invite à venir passer une semaine chez moi à Montréal, au Canada, cet été. On pourrait faire plein d’activités ! Qu’est-ce que tu en penses ?\nÀ bientôt !\nRémi"
       },
-      "consigne": "Vous rÃ©pondez Ã  RÃ©mi. Vous refusez sa proposition et vous vous excusez. Vous lui expliquez pourquoi vous ne pouvez pas venir. Vous lui proposez de vous voir Ã  un autre moment. (60 mots minimum)",
+      "consigne": "Vous répondez à Rémi. Vous refusez sa proposition et vous vous excusez. Vous lui expliquez pourquoi vous ne pouvez pas venir. Vous lui proposez de vous voir à un autre moment. (60 mots minimum)",
       "nb_mots": {
         "min": 60
       },
-      "reponse_modele": "Salut RÃ©mi,\nMerci beaucoup pour ton invitation, câ€™est trÃ¨s gentil ! Malheureusement, je ne peux pas venir Ã  MontrÃ©al cet Ã©tÃ©. Je suis vraiment dÃ©solÃ©e. Je dois suivre un cours de franÃ§ais intensif en juillet et, en aoÃ»t, je pars en vacances avec ma famille. En plus, le billet dâ€™avion est trÃ¨s cher. Tu peux venir chez moi en Suisse pendant les vacances dâ€™automne ? On pourrait aller Ã  la montagne !\nGrosses bises,\nLina"
+      "reponse_modele": "Salut Rémi,\nMerci beaucoup pour ton invitation, c’est très gentil ! Malheureusement, je ne peux pas venir à Montréal cet été. Je suis vraiment désolée. Je dois suivre un cours de français intensif en juillet et, en août, je pars en vacances avec ma famille. En plus, le billet d’avion est très cher. Tu peux venir chez moi en Suisse pendant les vacances d’automne ? On pourrait aller à la montagne !\nGrosses bises,\nLina"
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-s1-pe-1",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A2 · série 1 · Réservation au restaurant",
+    "consigne": "Vous voulez manger avec vos amis au restaurant. Vous souhaitez réserver une table pour quatre personnes à l’extérieur. Deux personnes ne mangent pas de viande. Complétez le formulaire avec vos coordonnées.",
+    "points": 5,
+    "support": {
+      "titre": "Réservation",
+      "champs": [
+        {
+          "label": "NOM, Prénom :",
+          "type": "texte",
+          "corrige": "Réponse personnelle (NOM en majuscules)"
+        },
+        {
+          "label": "Adresse complète :",
+          "type": "texte",
+          "corrige": "Rue et numéro"
+        },
+        {
+          "label": "NPA, ville :",
+          "type": "texte",
+          "corrige": "Ex. : 1950 Sion"
+        },
+        {
+          "label": "Adresse e-mail :",
+          "type": "texte",
+          "corrige": "Adresse électronique complète (avec @)"
+        },
+        {
+          "label": "N° de téléphone :",
+          "type": "texte",
+          "corrige": "Ex. : 079 123 45 67"
+        },
+        {
+          "label": "Nombre de personnes :",
+          "type": "texte",
+          "corrige": "4"
+        },
+        {
+          "label": "Date de la réservation :",
+          "type": "date",
+          "corrige": "Une date future"
+        },
+        {
+          "label": "Heure de la réservation :",
+          "type": "texte",
+          "corrige": "Une heure de repas (ex. : 19 h 30)"
+        },
+        {
+          "label": "Menu :",
+          "type": "choix",
+          "options": [
+            "Sans gluten",
+            "Végétarien",
+            "Classique"
+          ],
+          "corrige": "Végétarien et Classique (deux personnes ne mangent pas de viande)"
+        },
+        {
+          "label": "Besoin de menus enfants ?",
+          "type": "choix",
+          "options": [
+            "Oui",
+            "Non"
+          ],
+          "corrige": "Non"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-s1-pe-2",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A2 · série 1 · Ma journée au club de sport",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 10,
+    "support": {
+      "consigne": "Vous avez participé à un cours de sport dans votre club. Vous écrivez un courriel à votre meilleur(e) ami(e) pour lui raconter votre journée. Vous lui donnez vos impressions sur cette journée. (60 à 80 mots)",
+      "nb_mots": {
+        "min": 60,
+        "max": 80
+      },
+      "reponse_modele": "Salut Amira,\nSamedi, j’ai participé à un cours de zumba dans mon club de sport. Le cours a commencé à 10 h et il a duré deux heures. La professeure était très dynamique et la musique était géniale. Nous avons beaucoup dansé et, à la fin, j’étais fatiguée mais très contente. J’ai aussi rencontré des personnes sympathiques. C’était une super journée ! La prochaine fois, tu viens avec moi ?\nBises,\nNadia"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : consigne – texte compréhensible et qui répond à la tâche (2) ; structure – salutation et longueur (2) ; langue – grammaire, conjugaison, syntaxe (3) ; lexique – vocabulaire (1) ; orthographe – mots corrects, ponctuation (2)."
+  },
+  {
+    "id": "tcf-a2-s1-pe-3",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "email_reponse",
+    "theme": "Test blanc A2 · série 1 · L’invitation de Jean-Baptiste",
+    "consigne": "Vous recevez cette invitation de la part de votre ami.",
+    "points": 10,
+    "support": {
+      "email_recu": {
+        "de": "JB@gmail.com",
+        "objet": "Invitation",
+        "texte": "Cher Gabriel,\nJe vais bientôt me marier et je voudrais te présenter ma future femme. Je t’invite avec ta femme samedi prochain pour dîner à 20 h.\nEst-ce que vous êtes disponibles ?\nRéponds-moi vite.\nÀ bientôt\nJean-Baptiste"
+      },
+      "consigne": "Vous répondez à Jean-Baptiste et vous refusez son invitation. Vous lui expliquez les raisons et vous lui proposez une autre sortie. (60 à 80 mots)",
+      "nb_mots": {
+        "min": 60,
+        "max": 80
+      },
+      "reponse_modele": "Cher Jean-Baptiste,\nFélicitations pour ton mariage, c’est une très belle nouvelle ! Merci beaucoup pour ton invitation. Malheureusement, samedi prochain, nous ne pouvons pas venir : nous partons chez les parents de ma femme à Genève pour le week-end. Nous sommes vraiment désolés. Est-ce que vous êtes libres le samedi suivant ? Nous pourrions aller au restaurant tous les quatre ou faire une promenade au bord du lac.\nÀ très bientôt,\nGabriel"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : consigne – texte compréhensible et qui répond à la tâche (2) ; structure – salutation et longueur (2) ; langue – grammaire, conjugaison, syntaxe (3) ; lexique – vocabulaire (1) ; orthographe – mots corrects, ponctuation (2)."
   }
 ]

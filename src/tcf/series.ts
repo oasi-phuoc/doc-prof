@@ -240,4 +240,31 @@ export const TCF_SERIES: readonly TcfSerie[] = [
       'tcf-a2j-s2-po-3',
     ],
   },
+  ...(
+    [
+      ['a2-serie-1', 'banque', ''],
+      ['a2-serie-1-sujet-2', 'médiathèque', 'b'],
+      ['a2-serie-1-sujet-3', 'poste', 'c'],
+    ] as const
+  ).map(([id, sujet, v]) => ({
+    id,
+    label: `Test blanc A2 · série 1 (oral : ${sujet})`,
+    niveau: 'A1-A2' as const,
+    exercices: [
+      'tcf-a2-s1-co-1',
+      'tcf-a2-s1-co-2',
+      'tcf-a2-s1-co-3',
+      'tcf-a2-s1-co-4',
+      'tcf-a2-s1-ce-1',
+      'tcf-a2-s1-ce-2',
+      'tcf-a2-s1-ce-3',
+      'tcf-a2-s1-ce-4',
+      'tcf-a2-s1-pe-1',
+      'tcf-a2-s1-pe-2',
+      'tcf-a2-s1-pe-3',
+      'tcf-a2-s1-po-1',
+      `tcf-a2-s1-po-2${v}`,
+      `tcf-a2-s1-po-3${v}`,
+    ],
+  })),
 ]
