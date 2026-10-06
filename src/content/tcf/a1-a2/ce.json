@@ -1679,5 +1679,322 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 2 · Les menus du restaurant",
+    "consigne": "Vous êtes au restaurant avec votre famille. Vous lisez les menus suivants. Répondez à la question.",
+    "support": {
+      "titre": "Nos menus",
+      "texte": "Menu n° 1 — Salade du jardin · Poisson en sauce et pommes de terre en gratin · Tarte aux pommes. Prix : 13 euros\n\nMenu n° 2 — Pâté · Rôti de veau avec riz · Mousse au chocolat. Prix : 15 euros\n\nMenu n° 3 — Assiette de crudités (carottes, tomates, olives, concombre) · Spaghetti à la viande · Dessert du jour. Prix : 11 euros\n\nMenu n° 4 — Assiette de charcuteries (saucisson, jambon) · Bifteck et légumes à la vapeur · Clafoutis aux cerises. Prix : 17 euros\n\nMenu n° 5 — Soupe froide de légumes · Saumon aux pâtes fraîches · Flan maison. Prix : 14 euros",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quel est le menu qui intéresse chaque personne ? Écrivez le numéro du menu.",
+        "type_reponse": "lignes",
+        "points": 5,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "A. Vous aimez beaucoup la viande et les desserts aux fruits.",
+            "reponse": "Menu n° 4"
+          },
+          {
+            "label": "B. Votre mère adore le poisson mais n’aime pas beaucoup les pâtes.",
+            "reponse": "Menu n° 1"
+          },
+          {
+            "label": "C. Votre frère aime les pâtes mais n’aime pas le poisson.",
+            "reponse": "Menu n° 3"
+          },
+          {
+            "label": "D. Votre père n’aime pas beaucoup les légumes et adore le chocolat.",
+            "reponse": "Menu n° 2"
+          },
+          {
+            "label": "E. Votre sœur aime le poisson et les pâtes.",
+            "reponse": "Menu n° 5"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Préparation A2 · série 2 · Les vacances de Gabrielle",
+    "consigne": "Vous recevez ce message électronique. Répondez aux questions.",
+    "support": {
+      "de": "gabrielle@gmail.com",
+      "a": "Vous",
+      "objet": "Vacances d’été",
+      "texte": "Bonjour !\nComment ça va ? Pour moi, tout va bien. Je t’écris pour te dire que je vais partir cet été en Corse avec ma famille. La Corse est une petite île au sud de la France, dans la mer Méditerranée. Mes parents disent que l’île est très jolie : il y a de très belles plages, on va pouvoir nager. Il paraît qu’on mange bien : l’une des spécialités de l’île est le fromage de chèvre. J’adore ça. Nous partons le 2 juillet en bateau, après les examens de mon frère, et nous rentrons en France le 30 juillet.\nEt toi, qu’est-ce que tu vas faire ?\nBises\nGabrielle"
+    },
+    "questions": [
+      {
+        "enonce": "Où Gabrielle va-t-elle passer ses vacances d’été ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Sur une île.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Dans un bateau."
+          },
+          {
+            "id": "c",
+            "texte": "Dans le nord de la France."
+          }
+        ]
+      },
+      {
+        "enonce": "En Corse, Gabrielle va pouvoir faire…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "du ski."
+          },
+          {
+            "id": "b",
+            "texte": "de la natation.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "de la gymnastique."
+          }
+        ]
+      },
+      {
+        "enonce": "Que va pouvoir manger Gabrielle en Corse ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Du fromage de chèvre."
+      },
+      {
+        "enonce": "Quand Gabrielle part-elle en vacances ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Le 2 juillet."
+      },
+      {
+        "enonce": "Le frère de Gabrielle…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "part en vacances juste après ses examens.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "ne part pas en vacances parce qu’il doit étudier."
+          },
+          {
+            "id": "c",
+            "texte": "part en vacances mais doit rentrer tôt pour ses examens."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 2 · La tarte Tatin",
+    "consigne": "Vous lisez la recette suivante. Répondez aux questions.",
+    "support": {
+      "titre": "Recette de la tarte Tatin",
+      "texte": "Durée de la préparation : environ 50 minutes. Pour 8 personnes.\n\nIngrédients : 8 à 10 pommes · 150 g de beurre · 150 à 200 g de sucre · 200 à 250 g de pâte · un peu de cannelle.\n\nPréparation\n1. Faire fondre le beurre et le sucre pour former du caramel. Verser dans un moule.\n2. Couper les pommes en petits morceaux et les mettre sur le caramel (attention : le caramel doit être déjà froid).\n3. Ajouter un peu de cannelle.\n4. Étaler la pâte au rouleau à pâtisserie et la mettre sur les pommes.\n5. Cuire environ 30 minutes au four à 180-200 °C.\n6. Quand la tarte est cuite, la sortir du four et la retourner pour la servir.\n\nLa tarte Tatin est délicieuse tiède, accompagnée d’une boule de glace à la vanille ou encore d’une cuillère de crème.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Dans cette recette, il y a…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s2/ce3-lait.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s2/ce3-sel.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s2/ce3-sucre.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Pour faire le caramel, il faut…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "du beurre.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "des pommes."
+          },
+          {
+            "id": "c",
+            "texte": "de la cannelle."
+          }
+        ]
+      },
+      {
+        "enonce": "Comment doit être le caramel au moment de mettre les pommes dans le moule ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Froid."
+      },
+      {
+        "enonce": "Combien de temps faut-il pour cuire la tarte ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Environ 30 minutes."
+      },
+      {
+        "enonce": "On vous conseille de manger la tarte accompagnée de…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "glace.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "chocolat."
+          },
+          {
+            "id": "c",
+            "texte": "jus de fruits."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 2 · Expo-sciences",
+    "consigne": "Vous lisez cet article sur un site internet. Répondez aux questions.",
+    "support": {
+      "titre": "Compétition « Expo-sciences », finale régionale, la Mauricie, Centre-du-Québec",
+      "texte": "Du 17 au 18 mars, découvrez les sciences avec de jeunes Québécois !\n\nLa compétition « Expo-sciences » permet à des jeunes âgés de 15 à 20 ans de présenter pendant deux jours aux visiteurs un projet scientifique qui les passionne. Elle permet aussi de montrer que les sciences et les technologies sont faciles et intéressantes.\n\nRendez-vous au cégep* de Drummondville pour participer à cet événement organisé chaque année par le Conseil du loisir scientifique.\n\nHeures d’ouverture au public\nSamedi 17 mars, de 13 h à 16 h 45.\nDimanche 18 mars, de 9 h 30 à 12 h et de 13 h à 14 h 15.\nCérémonie de remise de prix le dimanche à 14 h 30.\n\nDe nombreux prix\nHuit projets vont être sélectionnés pour la finale québécoise, du 19 au 22 avril, au centre culturel de l’université de Sherbrooke.\nAu total, des prix d’une valeur de 20 000 $ sont à gagner !\n\n* cégep : l’équivalent du « lycée » au Québec.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Combien de temps va durer la compétition « Expo-sciences » en Mauricie ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "2 jours.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "3 jours."
+          },
+          {
+            "id": "c",
+            "texte": "4 jours."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel âge minimum doit-on avoir pour participer à la compétition ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "15 ans."
+      },
+      {
+        "enonce": "Que doit-on présenter pour participer ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Un projet scientifique."
+      },
+      {
+        "enonce": "La compétition a lieu tous les ans. Vrai ou faux ? Justifiez en copiant la phrase du texte.",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 2,
+        "reponse_modele": "Vrai : « Rendez-vous au cégep de Drummondville pour participer à cet événement organisé chaque année. » (1,5 point seulement si le choix et la justification sont corrects.)"
+      },
+      {
+        "enonce": "La compétition est ouverte au public le samedi matin. Vrai ou faux ? Justifiez en copiant la phrase du texte.",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 2,
+        "reponse_modele": "Faux : « Samedi 17 mars, de 13 h à 16 h 45. » (1,5 point seulement si le choix et la justification sont corrects.)"
+      },
+      {
+        "enonce": "Les huit gagnants de Mauricie vont recevoir…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "un prix de 20 000 $ chacun."
+          },
+          {
+            "id": "b",
+            "texte": "une place pour la finale québécoise.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "une visite du centre culturel de Sherbrooke."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

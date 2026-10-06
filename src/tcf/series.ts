@@ -21,10 +21,23 @@ const PREP_A1_SUJETS_ORAL = [
   ['j', 'magasin de livres'],
 ] as const
 
+const prepIds = (p: string, k: number, c: string) => Array.from({ length: k }, (_, i) => `${p}${c}-${i + 1}`)
+
+/** Préparation A2 (format DELF) : les sujets d’oral sont listés sur la fiche. */
+function prepA2Serie(n: number): TcfSerie {
+  const p = `tcf-a2p-s${n}-`
+  return {
+    id: `a2p-serie-${n}`,
+    label: `Préparation A2 · série ${n}`,
+    niveau: 'A1-A2',
+    exercices: [...prepIds(p, 4, 'co'), ...prepIds(p, 4, 'ce'), ...prepIds(p, 2, 'pe'), ...prepIds(p, 3, 'po')],
+  }
+}
+
 /** Préparation A1 (format DELF) : une série par sujet de dialogue simulé. */
 function prepA1Series(n: number, nbCo: number): TcfSerie[] {
   const p = `tcf-a1p-s${n}-`
-  const range = (k: number, c: string) => Array.from({ length: k }, (_, i) => `${p}${c}-${i + 1}`)
+  const range = (k: number, c: string) => prepIds(p, k, c)
   return PREP_A1_SUJETS_ORAL.map(([v, sujet], i) => ({
     id: i === 0 ? `a1p-serie-${n}` : `a1p-serie-${n}-sujet-${i + 1}`,
     label: `Préparation A1 · série ${n} (oral : ${sujet})`,
@@ -294,24 +307,6 @@ export const TCF_SERIES: readonly TcfSerie[] = [
   })),
   ...prepA1Series(3, 4),
   ...prepA1Series(4, 5),
-  {
-    id: 'a2p-serie-1',
-    label: 'Préparation A2 · série 1',
-    niveau: 'A1-A2',
-    exercices: [
-      'tcf-a2p-s1-co-1',
-      'tcf-a2p-s1-co-2',
-      'tcf-a2p-s1-co-3',
-      'tcf-a2p-s1-co-4',
-      'tcf-a2p-s1-ce-1',
-      'tcf-a2p-s1-ce-2',
-      'tcf-a2p-s1-ce-3',
-      'tcf-a2p-s1-ce-4',
-      'tcf-a2p-s1-pe-1',
-      'tcf-a2p-s1-pe-2',
-      'tcf-a2p-s1-po-1',
-      'tcf-a2p-s1-po-2',
-      'tcf-a2p-s1-po-3',
-    ],
-  },
+  prepA2Serie(1),
+  prepA2Serie(2),
 ]

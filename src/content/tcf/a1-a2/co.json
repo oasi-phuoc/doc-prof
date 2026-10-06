@@ -1790,5 +1790,334 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 2 · Annonce avant le spectacle",
+    "consigne": "Vous écoutez une annonce. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s2/co1.mp3",
+      "transcription": "Mesdames, mesdemoiselles, messieurs, votre attention s’il vous plaît. Le spectacle va commencer dans 5 minutes. Nous vous invitons à vous asseoir à vos places et vous rappelons qu’il est interdit d’entrer dans la salle de théâtre avec des bouteilles d’eau ou de la nourriture. Avant d’entrer, nous vous rappelons également de bien vouloir éteindre vos téléphones portables. Nous vous souhaitons une bonne soirée."
+    },
+    "questions": [
+      {
+        "enonce": "Où entendez-vous ce message ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s2/co1-theatre.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s2/co1-cinema.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s2/co1-musee.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Ça va commencer dans combien de temps ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Dans 5 minutes."
+      },
+      {
+        "enonce": "Il est interdit d’entrer avec…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s2/co1-telephone.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s2/co1-eau.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2p-s2/co1-appareil-photo.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire avant d’entrer ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Éteindre son téléphone portable."
+      },
+      {
+        "enonce": "Ce message est diffusé…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le matin."
+          },
+          {
+            "id": "b",
+            "texte": "l’après-midi."
+          },
+          {
+            "id": "c",
+            "texte": "le soir.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 2 · Le message de Julie",
+    "consigne": "Vous écoutez le message de Julie. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s2/co2.mp3",
+      "transcription": "Salut, c’est Julie ! Je t’appelle pour te confirmer notre rendez-vous au cinéma ce soir à 18 h 00. Comme je te l’ai dit, mon père va venir nous chercher en voiture à 21 h 00 après le film et va nous ramener à la maison. Tu es toujours d’accord pour venir dormir chez moi ? Surtout, n’oublie pas ta brosse à dents et ton pyjama ! Allez, à ce soir ! Bisou !"
+    },
+    "questions": [
+      {
+        "enonce": "Où avez-vous rendez-vous avec Julie ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s2/co2-restaurant.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s2/co2-cinema.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2p-s2/co2-gare.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "18 heures.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "19 heures."
+          },
+          {
+            "id": "c",
+            "texte": "20 heures."
+          }
+        ]
+      },
+      {
+        "enonce": "Qui va venir vous chercher en voiture ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "La mère de Julie."
+          },
+          {
+            "id": "b",
+            "texte": "Le père de Julie.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Le frère de Julie."
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure vient-on vous chercher ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 21 h."
+      },
+      {
+        "enonce": "Où allez-vous dormir ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Chez Julie."
+      },
+      {
+        "enonce": "Que devez-vous apporter ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Une brosse à dents ou un pyjama."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 2 · La Fête de la musique",
+    "consigne": "Vous entendez cette information à la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s2/co3.mp3",
+      "transcription": "Bonjour à tous ! Eh oui, c’est bientôt l’été… Et le jour de l’été, le 21 juin, il fait chaud, mais qu’est-ce qu’on fête aussi partout en France ? La Fête de la musique, bien sûr ! Savez-vous depuis quand cette fête existe et quel est son but ? La Fête de la musique existe officiellement en France depuis 1983 et elle sert à promouvoir la musique, mais elle permet aussi à de nombreux talents de faire connaître leur musique au grand public puisque les groupes s’installent pour jouer dans les rues. Et c’est aussi une fête qui connaît un grand succès puisqu’elle est aujourd’hui célébrée dans 110 pays et plus de 340 villes du monde…"
+    },
+    "questions": [
+      {
+        "enonce": "Quel temps fait-il ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s2/co3-soleil.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s2/co3-pluie.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s2/co3-vent.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "La Fête de la musique, c’est…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le 20 juin."
+          },
+          {
+            "id": "b",
+            "texte": "le 21 juin.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "le 25 juin."
+          }
+        ]
+      },
+      {
+        "enonce": "Depuis quand cette fête existe-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "1923"
+          },
+          {
+            "id": "b",
+            "texte": "1943"
+          },
+          {
+            "id": "c",
+            "texte": "1983",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Où s’installent les musiciens pour jouer de la musique ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Dans les rues."
+      },
+      {
+        "enonce": "Combien de pays célèbrent la Fête de la musique ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "110 pays."
+      },
+      {
+        "enonce": "Combien de villes célèbrent la Fête de la musique ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Plus de 340 villes."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s2-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 2 · Dans la famille d’accueil",
+    "consigne": "Vous êtes dans une famille d’accueil. Vous entendez ces conversations. Il y a 2 écoutes. Associez chaque dialogue à la situation correspondante.",
+    "support": {
+      "audio": "a2p-s2/co4.mp3",
+      "transcription": "Dialogue 1 — Tu veux venir avec moi au stade ? — Tu vas faire quoi ? — Je vais jouer au foot avec mes amis, et après, on va manger une pizza chez José. — D’accord, avec plaisir !\n\nDialogue 2 — Jonathan, tu vas ranger ta chambre, s’il te plaît ! — Mais maman, je dois partir, j’ai rendez-vous avec mes amis ! — Non, tu ne sors pas avant d’avoir rangé ta chambre !\n\nDialogue 3 — Paul, tu pourrais me prêter ton ordinateur ce soir ? — Encore ! Pour quoi faire ? — Je dois faire des recherches sur internet pour mon cours d’histoire. — Bon, si tu veux…\n\nDialogue 4 — Elle est comment, la piscine où tu t’entraînes ? — Elle est très grande, c’est une piscine olympique. Elle fait 50 mètres de long et 20 mètres de large. L’eau est chaude, c’est très agréable pour nager ! — Super !"
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Donner un ordre — B. Demander un service — C. Proposer une sortie — D. Décrire quelque chose",
+        "type_reponse": "lignes",
+        "points": 8,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (2 points)",
+            "reponse": "C. Proposer une sortie"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "A. Donner un ordre"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "B. Demander un service"
+          },
+          {
+            "label": "Dialogue 4 (2 points)",
+            "reponse": "D. Décrire quelque chose"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
