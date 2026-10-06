@@ -508,5 +508,153 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-po-1",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Test blanc A1 · série 2 · Entretien dirigé",
+    "consigne": "Entretien dirigé. Répondez aux questions du professeur sur vous, votre famille, vos goûts et vos activités.",
+    "points": 4,
+    "support": {
+      "theme": "Vous, votre famille, vos goûts et vos activités",
+      "mots": ["Vous", "Votre famille", "Vos goûts", "Vos activités"],
+      "exemples_questions": [
+        "Bonjour ! Comment vous appelez-vous ? Comment ça s’écrit ?",
+        "Quelle est votre date de naissance ? Où êtes-vous né(e) ?",
+        "Quelle est votre nationalité ? Quelles langues parlez-vous ?",
+        "Où habitez-vous ? Vous habitez seul(e) ?",
+        "Parlez-moi de votre famille.",
+        "Quel travail faites-vous ? Quel travail voulez-vous faire ?",
+        "Qu’est-ce que vous aimez faire pendant votre temps libre ?",
+        "Quel est votre plat préféré ? Aimez-vous aller au restaurant ?",
+        "Où partez-vous en vacances ? Aimez-vous la montagne ?",
+        "Que faites-vous le dimanche ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-po-2",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 · série 2 · Au restaurant",
+    "consigne": "Décrivez les images.",
+    "points": 4,
+    "support": {
+      "image": "a1-s2/po2-restaurant.webp",
+      "questions": ["Que voyez-vous ?", "Où sont les personnes ?", "Qu’est-ce qui se passe ici ?"],
+      "reponse_modele": "Je vois une jeune femme et une serveuse. Elles sont dans un restaurant. Sur l’image 1, la serveuse donne la carte à la cliente. Sur l’image 2, la serveuse apporte une salade et un verre d’eau. Sur l’image 3, la femme mange. Sur l’image 4, elle paie avec sa carte bancaire."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-po-3",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 · série 2 · Commander au restaurant",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du serveur.",
+    "points": 8,
+    "support": {
+      "situation": "Vous allez au restaurant pour manger. Vous demandez des informations sur le menu au serveur. Vous choisissez les plats et vous payez.",
+      "images": [
+        "a1-s2/po3-poulet-salade.webp",
+        "a1-s2/po3-steak-frites.webp",
+        "a1-s2/po3-pates.webp",
+        "a1-s2/po3-crevettes.webp"
+      ],
+      "grille": { "points": 9, "criteres": ["Lexique", "Morphosyntaxe", "Phonologie"] },
+      "repliques_au_corrige": true,
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonjour, voici la carte. Vous avez choisi ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Qu’est-ce que vous avez comme plats aujourd’hui ?",
+          "variantes": ["Bonjour, qu’est-ce que vous me conseillez ?"]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons du poulet avec de la salade, un steak-frites, des pâtes à la tomate et des crevettes aux légumes."
+        },
+        { "locuteur": "eleve", "texte": "Combien coûte le steak-frites ? Et les pâtes ?", "variantes": ["C’est combien, le poulet ?"] },
+        { "locuteur": "examinateur", "texte": "Le steak-frites coûte 24 francs et les pâtes coûtent 18 francs." },
+        {
+          "locuteur": "eleve",
+          "texte": "Je vais prendre le steak-frites, s’il vous plaît. La viande bien cuite.",
+          "variantes": ["Je voudrais les pâtes à la tomate, s’il vous plaît."]
+        },
+        { "locuteur": "examinateur", "texte": "Très bien. Et comme boisson ?" },
+        { "locuteur": "eleve", "texte": "Une carafe d’eau, s’il vous plaît.", "variantes": ["Un jus d’orange, merci."] },
+        { "locuteur": "examinateur", "texte": "Vous voulez un dessert ?" },
+        { "locuteur": "eleve", "texte": "Non, merci. L’addition, s’il vous plaît.", "variantes": ["Oui, une glace à la vanille, s’il vous plaît."] },
+        { "locuteur": "examinateur", "texte": "Ça fait 24 francs, s’il vous plaît." },
+        { "locuteur": "eleve", "texte": "Je peux payer par carte ?", "variantes": ["Voilà 30 francs."] },
+        { "locuteur": "examinateur", "texte": "Bien sûr. Merci et bonne journée !" },
+        { "locuteur": "eleve", "texte": "Merci, au revoir !", "variantes": ["Bonne journée !"] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-po-2b",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 · série 2 (variante) · Au magasin de sport",
+    "consigne": "Décrivez les images.",
+    "points": 4,
+    "support": {
+      "image": "a1-s2/po2-magasin-ski.webp",
+      "questions": ["Que voyez-vous ?", "Où sont les personnes ?", "Qu’est-ce qui se passe ici ?"],
+      "reponse_modele": "Je vois un jeune homme et un vendeur. Ils sont dans un magasin de sport. Sur l’image 1, le vendeur dit bonjour au client. Sur l’image 2, il montre des skis ; il y a aussi des bonnets et des gants. Sur l’image 3, l’homme prend des skis, il est content. Sur l’image 4, il paie à la caisse."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-po-3b",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 · série 2 (variante) · Équipement de ski",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du vendeur.",
+    "points": 8,
+    "support": {
+      "situation": "Vous allez dans un magasin de sport. Vous demandez des équipements de ski. Vous vous informez sur le prix. Vous prenez des produits et vous payez.",
+      "images": [
+        "a1-s2/po3-batons.webp",
+        "a1-s2/po3-skis.webp",
+        "a1-s2/po3-chaussures-ski.webp",
+        "a1-s2/po3-bonnet-gants.webp"
+      ],
+      "grille": { "points": 9, "criteres": ["Lexique", "Morphosyntaxe", "Phonologie"] },
+      "repliques_au_corrige": true,
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonjour, je peux vous aider ?" },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je cherche un équipement pour faire du ski.",
+          "variantes": ["Bonjour, je voudrais acheter des skis, s’il vous plaît."]
+        },
+        { "locuteur": "examinateur", "texte": "Nous avons des skis, des chaussures de ski, des bâtons, des bonnets et des gants." },
+        { "locuteur": "eleve", "texte": "Combien coûtent les skis ? Et les chaussures ?", "variantes": ["C’est combien, les bâtons ?"] },
+        { "locuteur": "examinateur", "texte": "Les skis coûtent 300 francs et les chaussures 150 francs. Les bâtons coûtent 40 francs." },
+        { "locuteur": "eleve", "texte": "C’est un peu cher. Vous avez un bonnet et des gants ?", "variantes": ["Il y a une réduction ?"] },
+        { "locuteur": "examinateur", "texte": "Oui, le bonnet et les gants coûtent 35 francs ensemble. Quelle est votre pointure ?" },
+        { "locuteur": "eleve", "texte": "Je fais du 42. Je prends les chaussures, les bâtons, le bonnet et les gants.", "variantes": ["Je chausse du 39. Je prends les skis et les bâtons."] },
+        { "locuteur": "examinateur", "texte": "Très bien. Ça fait 225 francs, s’il vous plaît." },
+        { "locuteur": "eleve", "texte": "Je peux payer par carte ?", "variantes": ["Voilà 230 francs."] },
+        { "locuteur": "examinateur", "texte": "Bien sûr. Merci et bonnes vacances au ski !" },
+        { "locuteur": "eleve", "texte": "Merci, au revoir !", "variantes": ["Merci, bonne journée !"] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]

@@ -213,5 +213,73 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 · série 2 · À l’hôtel",
+    "consigne": "Vous allez en vacances en Allemagne. Vous arrivez à l’hôtel et vous devez remplir ce formulaire.",
+    "points": 10,
+    "support": {
+      "titre": "Fiche de l’hôtel",
+      "champs": [
+        { "label": "Prénom :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Date de naissance :", "type": "date", "corrige": "Réponse personnelle (ex. : 12.03.1990)" },
+        { "label": "Ville de naissance :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Nationalité :", "type": "texte", "corrige": "Réponse personnelle (ex. : afghane, érythréenne…)" },
+        { "label": "Adresse électronique :", "type": "texte", "corrige": "Adresse électronique complète (avec @)" },
+        { "label": "Situation familiale :", "type": "texte", "corrige": "Ex. : célibataire, marié(e)…" },
+        { "label": "Date d’arrivée :", "type": "date", "corrige": "Date cohérente" },
+        { "label": "Date de départ :", "type": "date", "corrige": "Date après la date d’arrivée" },
+        { "label": "Plat préféré :", "type": "texte", "corrige": "Réponse personnelle" },
+        { "label": "Numéro de chambre :", "type": "texte", "corrige": "Un numéro (ex. : 12)" }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 · série 2 · Carte postale",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 10,
+    "support": {
+      "consigne": "Vous êtes en vacances à la montagne, en Allemagne. Vous écrivez une carte postale à un(e) ami(e). Écrivez un message de 40 mots.",
+      "nb_mots": { "min": 40 },
+      "reponse_modele": "Chère Lina,\nComment vas-tu ? Moi, je suis en vacances à la montagne, en Allemagne, avec ma sœur et mon mari. Il fait beau et un peu froid. Le matin, nous marchons dans la forêt et l’après-midi, nous visitons les villages. Le soir, nous mangeons au restaurant.\nBisous,\nAmina"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous prenez de ses nouvelles.\nVous dites où et avec qui vous êtes.\nVous parlez de vos activités."
+  },
+  {
+    "id": "tcf-a1-s2-pe-3",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Test blanc A1 · série 2 · Aux urgences",
+    "consigne": "Vous êtes à la réception des urgences de l’hôpital. Vous avez eu un accident de vélo. Complétez le dialogue.",
+    "points": 5,
+    "support": {
+      "interlocuteur": "Employé",
+      "repliques": [
+        { "locuteur": "examinateur", "texte": "Bonjour. Que s’est-il passé ?" },
+        { "locuteur": "eleve", "texte": "Bonjour. Je suis tombé(e) de vélo.", "variantes": ["J’ai eu un accident de vélo."] },
+        { "locuteur": "examinateur", "texte": "Vous pouvez me donner votre nom et votre date de naissance, s’il vous plaît ?" },
+        { "locuteur": "eleve", "texte": "Je m’appelle Ali Rahimi. Je suis né le 3 mai 1995.", "variantes": ["Oui : Rahimi, Ali, né le 3 mai 1995."] },
+        { "locuteur": "examinateur", "texte": "Quand s’est passé l’accident ?" },
+        { "locuteur": "eleve", "texte": "Ce matin, vers 8 heures.", "variantes": ["Il y a une heure."] },
+        { "locuteur": "examinateur", "texte": "Vous ressentez des douleurs quelque part ?" },
+        { "locuteur": "eleve", "texte": "Oui, j’ai mal au bras et à la jambe.", "variantes": ["J’ai très mal au genou."] },
+        { "locuteur": "examinateur", "texte": "D’accord. Attendez ici un moment, s’il vous plaît." },
+        { "locuteur": "eleve", "texte": "D’accord, merci.", "variantes": ["Merci beaucoup."] }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]

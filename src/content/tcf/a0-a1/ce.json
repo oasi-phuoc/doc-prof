@@ -1058,5 +1058,262 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 2 · L’invitation",
+    "consigne": "Lisez l’invitation et répondez aux questions.",
+    "support": {
+      "titre": "Invitation",
+      "texte": "Nous sommes heureux de vous inviter à notre mariage. C’est le 21 juin.\nVous avez rendez-vous à 14 h 30 à la mairie.\nLa cérémonie à l’église est à 15 h 30.\nPour aller de la mairie à l’église, il faut marcher tout droit de la place de la mairie à la rue Leclerc.\nNos parents offrent le champagne à 16 h 30 dans la salle des Deux Colombes.\nMerci de nous répondre avant le 20 avril.\n\nGisela et Yves",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Gisela et Yves vous invitent à leur…",
+        "type_reponse": "qcm_image",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s2/ce1-anniversaire.webp" },
+          { "id": "b", "image": "a1-s2/ce1-mariage.webp", "correct": true },
+          { "id": "c", "image": "a1-s2/ce1-demenagement.webp" }
+        ]
+      },
+      {
+        "enonce": "Quel est le chemin pour aller à l’église ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Tout droit, de la mairie à la salle" },
+          { "id": "b", "texte": "Tout droit, de la rue Leclerc à l’église" },
+          { "id": "c", "texte": "Tout droit, de la mairie à la rue Leclerc", "correct": true }
+        ]
+      },
+      {
+        "enonce": "À quelle heure devez-vous aller à la mairie ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "À 14 h 30."
+      },
+      {
+        "enonce": "Avant quelle date devez-vous envoyer votre réponse ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le 20 avril", "correct": true },
+          { "id": "b", "texte": "Le 21 mai" },
+          { "id": "c", "texte": "Le 21 juin" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 2 · Plantes et fleurs",
+    "consigne": "Lisez l’affiche et répondez aux questions.",
+    "support": {
+      "titre": "Nouveau magasin : Plantes et Fleurs",
+      "texte": "Au rez-de-chaussée, retrouvez les petites plantes. Les grandes plantes sont à l’extérieur, à l’entrée du magasin.\n\nAu 1er étage, ce sont les fleurs. Vous choisissez les fleurs et nos 2 vendeurs préparent les bouquets.\n\nPour la 1re semaine d’ouverture, chaque client reçoit une rose !\n\nDirection Plantes et Fleurs : prenez la 2e rue à droite. Ensuite, prenez la 1re rue à gauche. Nous sommes en face de la boulangerie.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Où sont les fleurs ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Au rez-de-chaussée" },
+          { "id": "b", "texte": "Au 1er étage", "correct": true },
+          { "id": "c", "texte": "Au 2e étage" }
+        ]
+      },
+      {
+        "enonce": "Que trouvez-vous devant le magasin ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Les grandes plantes."
+      },
+      {
+        "enonce": "Que peuvent faire les vendeurs ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Préparer des bouquets de fleurs", "correct": true },
+          { "id": "b", "texte": "Choisir des fleurs pour les clients" },
+          { "id": "c", "texte": "Donner un bouquet à chaque client" }
+        ]
+      },
+      {
+        "enonce": "Qu’y a-t-il pendant la première semaine ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le magasin donne une rose à chaque client", "correct": true },
+          { "id": "b", "texte": "Le magasin donne un bouquet à chaque client" },
+          { "id": "c", "texte": "Le magasin donne une rose avec chaque plante" }
+        ]
+      },
+      {
+        "enonce": "Quel est le chemin pour aller au magasin ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s2/ce2-chemin-a.webp" },
+          { "id": "b", "image": "a1-s2/ce2-chemin-b.webp", "correct": true },
+          { "id": "c", "image": "a1-s2/ce2-chemin-c.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 2 · Les messages de l’entreprise",
+    "consigne": "Lisez les messages et répondez aux questions.",
+    "support": {
+      "titre": "Panneau d’information",
+      "texte": "Les cours d’anglais avec Samia commencent le 15 septembre. C’est en salle 12, au 1er étage.\n\nPour la commande de votre matériel papier, allez dans le bureau de Sophie, au 2e étage.\n\nFormation en informatique en novembre ! Tous les lundis à 9 h. Programme de décembre : travail sur l’écriture de messages.\n\nPour aller au musée, notre entreprise vous donne une carte avec 10 % de réduction. Profitez-en !\n\nFête de Julien pour ses 10 ans dans l’entreprise ! C’est jeudi, dans la salle café, à 10 h 30.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "En novembre, on vous propose de travailler…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "l’anglais" },
+          { "id": "b", "texte": "les messages" },
+          { "id": "c", "texte": "l’informatique", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Qui est le professeur d’anglais ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Samia."
+      },
+      {
+        "enonce": "À quelle heure est la fête jeudi ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "9 h" },
+          { "id": "b", "texte": "10 h" },
+          { "id": "c", "texte": "10 h 30", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Pour visiter un musée, l’entreprise propose une réduction de…",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "10 %", "correct": true },
+          { "id": "b", "texte": "12 %" },
+          { "id": "c", "texte": "15 %" }
+        ]
+      },
+      {
+        "enonce": "Au 2e étage, vous pouvez commander…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "un cahier", "correct": true },
+          { "id": "b", "texte": "un bureau" },
+          { "id": "c", "texte": "un ordinateur" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 2 · La salle informatique",
+    "consigne": "Lisez cet article de journal et répondez aux questions.",
+    "support": {
+      "titre": "Nouvelle salle informatique",
+      "texte": "Mercredi, le président de l’université va présenter la nouvelle salle informatique. Il y a 55 ordinateurs pour les étudiants et 10 ordinateurs pour les professeurs. C’est aussi une salle pour étudier les langues étrangères. L’ordinateur permet de travailler la compréhension orale. Le responsable de la salle est présent du lundi au jeudi à partir de 8 h. Le vendredi, la salle est fermée. La nourriture et les boissons sont interdites dans la salle. Les étudiants peuvent venir faire leurs devoirs en groupes. Des ordinateurs portables sont disponibles pour les cours.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Qui est présent mercredi dans la salle ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Le président de l’université", "correct": true },
+          { "id": "b", "texte": "Les professeurs de l’université" },
+          { "id": "c", "texte": "Tous les étudiants de l’université" }
+        ]
+      },
+      {
+        "enonce": "Avec les ordinateurs, que peut-on travailler ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "La production orale" },
+          { "id": "b", "texte": "La compréhension orale", "correct": true },
+          { "id": "c", "texte": "La compréhension écrite" }
+        ]
+      },
+      {
+        "enonce": "Qu’est-il interdit de faire dans la salle ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Manger et boire."
+      },
+      {
+        "enonce": "Que pouvez-vous avoir pour les cours ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s2/ce4-livre.webp" },
+          { "id": "b", "image": "a1-s2/ce4-tablette.webp" },
+          { "id": "c", "image": "a1-s2/ce4-ordinateur.webp", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quand le responsable est-il présent ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Du lundi au jeudi", "correct": true },
+          { "id": "b", "texte": "Du lundi au vendredi" },
+          { "id": "c", "texte": "Du lundi au samedi" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

@@ -825,5 +825,215 @@
       { "id": "i5", "image": "a1-s1/co5-dentifrice.webp", "correct": true }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 2 · Le message de Cyril",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s2/co1.mp3",
+      "transcription": "Salut, c’est Cyril ! Qu’est-ce que tu fais vendredi ? Moi, je rentre de vacances. Dis, tu veux aller au cinéma ? Regarde le programme des films sur le site Internet. Après, écris-moi un message : je ne peux pas répondre au téléphone. Je vais t’apporter un t-shirt souvenir de mes vacances. À bientôt !"
+    },
+    "questions": [
+      {
+        "enonce": "Quel jour Cyril vous propose-t-il d’aller au cinéma ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Vendredi."
+      },
+      {
+        "enonce": "Où pouvez-vous voir le programme ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "À l’entrée du cinéma" },
+          { "id": "b", "texte": "Dans le message de Cyril" },
+          { "id": "c", "texte": "Sur le site Internet du cinéma", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous faire ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Aller chez Cyril" },
+          { "id": "b", "texte": "Téléphoner à Cyril" },
+          { "id": "c", "texte": "Envoyer un message à Cyril", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quel souvenir Cyril va-t-il acheter ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s2/co1-pull.webp" },
+          { "id": "b", "image": "a1-s2/co1-tshirt.webp", "correct": true },
+          { "id": "c", "image": "a1-s2/co1-echarpe.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 2 · La fête des mères",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s2/co2.mp3",
+      "transcription": "Ce week-end, c’est la fête des mères ! Venez dans notre magasin. Nous sommes ouverts de 10 h à 19 h et il y a 15 % de réduction sur tous les produits. Venez vite, il y a plein d’idées pour vos cadeaux. Nous avons beaucoup de parfums pour les mamans et on vous propose un prix spécial de 25 euros sur tous les chapeaux."
+    },
+    "questions": [
+      {
+        "enonce": "Quelle est la fête ce week-end ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "La fête des pères" },
+          { "id": "b", "texte": "La fête des mères", "correct": true },
+          { "id": "c", "texte": "La fête des grands-mères" }
+        ]
+      },
+      {
+        "enonce": "De combien est la réduction sur les produits ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "15 %."
+      },
+      {
+        "enonce": "Quel cadeau pouvez-vous trouver dans le magasin ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s2/co2-bouquet.webp" },
+          { "id": "b", "image": "a1-s2/co2-gateau.webp" },
+          { "id": "c", "image": "a1-s2/co2-parfum.webp", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Quel objet coûte 25 euros ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "image": "a1-s2/co2-chapeau.webp", "correct": true },
+          { "id": "b", "image": "a1-s2/co2-sac.webp" },
+          { "id": "c", "image": "a1-s2/co2-parapluie.webp" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 2 · Bienvenue dans l’entreprise",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s2/co3.mp3",
+      "transcription": "Bienvenue dans l’entreprise ! Vous êtes dans le bâtiment principal, rue Louis-Pasteur. Pour le restaurant du personnel, allez rue Napoléon. Avec le téléphone sur votre bureau, vous pouvez appeler le service informatique : appelez le 68 06. Notez cette information. L’entreprise est fermée en décembre. Pour terminer, votre contrat est disponible au service du personnel. Bonne journée !"
+    },
+    "questions": [
+      {
+        "enonce": "Où est le restaurant du personnel ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Rue Napoléon", "correct": true },
+          { "id": "b", "texte": "Rue Léon-Blum" },
+          { "id": "c", "texte": "Rue Louis-Pasteur" }
+        ]
+      },
+      {
+        "enonce": "Quel est le numéro pour appeler le service informatique ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Le 68 06."
+      },
+      {
+        "enonce": "Quand l’entreprise ferme-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "En septembre" },
+          { "id": "b", "texte": "En novembre" },
+          { "id": "c", "texte": "En décembre", "correct": true }
+        ]
+      },
+      {
+        "enonce": "Pourquoi devez-vous aller au service du personnel ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          { "id": "a", "texte": "Pour prendre votre contrat", "correct": true },
+          { "id": "b", "texte": "Pour rencontrer le personnel" },
+          { "id": "c", "texte": "Pour avoir un ordinateur portable" }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 · série 2 · À l’université",
+    "consigne": "Observez les situations et écoutez les 4 dialogues. Notez le numéro du dialogue (1 à 4) sous l’image. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1-s2/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Tiens, mon stylo vert. — Oh, merci ! Qu’est-ce que je dois écrire en vert ? — Tu écris la date en haut de la feuille.\n\nDialogue 2 — Tous les jours, il y a de la viande au restaurant de l’université. — C’est vrai. Tu n’aimes pas la viande ? — Non, je ne mange pas de viande. Je vais sortir pour manger dehors.\n\nDialogue 3 — Regarde, c’est la professeure d’histoire. Elle est à l’entrée de la bibliothèque. — Ah oui, je la connais. C’est aussi ma professeure de géographie.\n\nDialogue 4 — Madame, je ne comprends pas l’exercice. — Alors, viens au tableau. On va faire l’exercice. — D’accord. Je prends mon livre ? — Oui, prends ton livre."
+    },
+    "questions": [],
+    "situations": [
+      { "id": "s1", "image": "a1-s2/co4-situation-a.webp", "dialogue": null },
+      { "id": "s2", "image": "a1-s2/co4-situation-b.webp", "dialogue": null },
+      { "id": "s3", "image": "a1-s2/co4-situation-c.webp", "dialogue": 2 },
+      { "id": "s4", "image": "a1-s2/co4-situation-d.webp", "dialogue": 4 },
+      { "id": "s5", "image": "a1-s2/co4-situation-e.webp", "dialogue": 3 },
+      { "id": "s6", "image": "a1-s2/co4-situation-f.webp", "dialogue": 1 }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s2-co-5",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Test blanc A1 · série 2 · Le menu du restaurant",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": { "audio": "a1-s2/co5.mp3" },
+    "questions": [],
+    "melanger": false,
+    "score": "par_image",
+    "images": [
+      { "id": "i1", "image": "a1-s2/co5-addition.webp", "correct": false },
+      { "id": "i2", "image": "a1-s2/co5-poisson.webp", "correct": true },
+      { "id": "i3", "image": "a1-s2/co5-bananes.webp", "correct": true },
+      { "id": "i4", "image": "a1-s2/co5-couverts.webp", "correct": false },
+      { "id": "i5", "image": "a1-s2/co5-lait.webp", "correct": true }
+    ],
+    "consigne_supplementaire": null
   }
 ]
