@@ -2119,5 +2119,334 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 4 · Annonce à l’aéroport",
+    "consigne": "Vous entendez cette annonce. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s4/co1.mp3",
+      "transcription": "Mesdames, messieurs, votre attention s’il vous plaît. Le vol AF 438 à destination de Paris va avoir environ 40 minutes de retard. La raison, ce sont les fortes pluies au départ de Madrid. Pour tout renseignement complémentaire, nous vous invitons à passer au bureau d’information de la compagnie. Nous vous remercions de votre compréhension et nous vous souhaitons une excellente journée."
+    },
+    "questions": [
+      {
+        "enonce": "Le retard va être de combien de temps ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "40 minutes."
+      },
+      {
+        "enonce": "Quelle est la cause de ce retard ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s4/co1-neige.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s4/co1-pluie.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2p-s4/co1-vent.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "L’avion en retard vient…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de Paris."
+          },
+          {
+            "id": "b",
+            "texte": "de Madrid.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "d’Italie."
+          }
+        ]
+      },
+      {
+        "enonce": "Pour avoir plus d’informations, que faut-il faire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s4/co1-bureau-information.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s4/co1-policier.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s4/co1-telephone.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Que vous souhaite la compagnie ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Une excellente journée."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 4 · Le message du magasin",
+    "consigne": "Vous entendez ce message sur votre téléphone. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s4/co2.mp3",
+      "transcription": "Bonjour ! Je suis Nicolas Dupond, je suis vendeur au magasin « Bureau déco ». Je vous appelle pour vous informer qu’à l’occasion des fêtes de Noël, nous offrons des promotions exceptionnelles à tous nos clients : 20, 30 et même 50 % de réduction sur la plupart de nos meubles ! Nous vous invitons à venir nous rendre visite au magasin, du lundi au samedi de 9 h à 20 h, ou à consulter notre site internet pour plus de renseignements."
+    },
+    "questions": [
+      {
+        "enonce": "Qu’est-ce que ce magasin vend ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s4/co2-sandwich.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2p-s4/co2-chaise.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2p-s4/co2-pantalon.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Le magasin offre des promotions parce que c’est bientôt…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Noël.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "les vacances."
+          },
+          {
+            "id": "c",
+            "texte": "votre anniversaire."
+          }
+        ]
+      },
+      {
+        "enonce": "Il y a des réductions jusqu’à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "5 %."
+          },
+          {
+            "id": "b",
+            "texte": "10 %."
+          },
+          {
+            "id": "c",
+            "texte": "50 %.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quels sont les jours d’ouverture du magasin ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Du lundi au samedi."
+      },
+      {
+        "enonce": "Le soir, le magasin ferme à quelle heure ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 20 h (8 heures du soir)."
+      },
+      {
+        "enonce": "Que pouvez-vous faire pour avoir plus d’informations ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Consulter le site internet ou aller au magasin."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 4 · Le Salon de la pâtisserie",
+    "consigne": "Vous entendez cette émission à la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2p-s4/co3.mp3",
+      "transcription": "Hier s’est terminé le Salon de la pâtisserie de Paris. Avant, les gourmands se retrouvaient au Salon Cuisinez mais depuis qu’il a fermé, c’est au Salon de la pâtisserie que le grand public, mais aussi les professionnels de la pâtisserie, vont goûter de délicieux desserts chocolatés ou fruités. Plus de 800 chefs pâtissiers sont présents pour dédicacer leurs livres mais aussi discuter avec le public de leur métier. Chaque année, vous pouvez acheter du matériel professionnel à bas prix et, nouveauté de cette année, vous pouvez suivre une classe avec un chef ! Le billet pour un adulte coûte 10 euros à l’entrée du salon mais seulement 8 euros si vous l’achetez avant, sur le site Internet du salon."
+    },
+    "questions": [
+      {
+        "enonce": "La journaliste parle d’un événement qui…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "est déjà fini.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "se passe en ce moment."
+          },
+          {
+            "id": "c",
+            "texte": "va commencer très bientôt."
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle est la spécialité du salon présentée dans l’émission ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s4/co3-cupcakes.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s4/co3-salade.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s4/co3-pates.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "À qui est réservé ce salon ? Donnez 2 réponses.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Aux professionnels (0,5 point) et au grand public (0,5 point)."
+      },
+      {
+        "enonce": "Que font les chefs présents au salon ? Ils…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "parlent de leur travail.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "participent à un concours."
+          },
+          {
+            "id": "c",
+            "texte": "cherchent de nouveaux employés."
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle nouvelle activité est proposée cette année au salon ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Suivre une classe (un cours) avec un chef."
+      },
+      {
+        "enonce": "Pour un adulte, quel est le prix d’une entrée achetée sur place ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "10 euros."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Préparation A2 · série 4 · En vacances chez des amis",
+    "consigne": "Vous êtes en vacances chez des amis. Vous entendez ces conversations. Il y a 2 écoutes. Associez chaque dialogue à la situation correspondante.",
+    "support": {
+      "audio": "a2p-s4/co4.mp3",
+      "transcription": "Dialogue 1 — Peux-tu me donner le numéro de ton spécialiste ? Je veux prendre rendez-vous pour mon dos. — Le docteur Lebrun ? Oui, bien sûr ! Attends, je le cherche.\n\nDialogue 2 — Je ne trouve pas les livres que j’ai pris à la bibliothèque… — Tu pourrais ranger ta chambre, ça t’aiderait à les retrouver !\n\nDialogue 3 — Je ne comprends rien à ce site d’achat en ligne ! — Est-ce que tu veux que je regarde avec toi ? — Oui, merci, c’est gentil !\n\nDialogue 4 — Je suis vraiment désolé : j’ai oublié d’acheter de la viande en rentrant ! — Ce n’est pas grave, on va manger autre chose."
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Proposer de l’aide — B. Informer — C. S’excuser — D. Conseiller quelque chose",
+        "type_reponse": "lignes",
+        "points": 8,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (2 points)",
+            "reponse": "B. Informer"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "D. Conseiller quelque chose"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "A. Proposer de l’aide"
+          },
+          {
+            "label": "Dialogue 4 (2 points)",
+            "reponse": "C. S’excuser"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

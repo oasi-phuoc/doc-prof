@@ -1996,5 +1996,322 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 4 · Les petites annonces de logement",
+    "consigne": "Vous lisez ces petites annonces de logement. Répondez à la question.",
+    "support": {
+      "titre": "Petites annonces · Logement",
+      "texte": "Annonce n° 1 — Loue appartement meublé dans centre-ville. Clair. Très calme. Très bon état général. Prix intéressant. www.loueimmo.fr\n\nAnnonce n° 2 — Petite maison à 10 minutes de la ville. Idéal pour famille de 4 personnes. Tél. : 02 60 38 54 10\n\nAnnonce n° 3 — Appartement boulevard Sextius, 3e étage. Soleil. Espace. Non meublé. 1 place de garage. Tél. le soir au : 02 60 26 71 59\n\nAnnonce n° 4 — Loue maison avec jardin à 45 minutes du centre-ville. 220 m². Bon état général. Contacter Sophie : 06 58 44 82 29\n\nAnnonce n° 5 — Petit appartement neuf. 45 m². Meublé. À 10 minutes à pied des universités. Prix intéressant. Tél. après 16 h au : 02 60 75 88 36",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quelle est l’annonce qui intéresse chaque personne ? Écrivez le numéro de l’annonce.",
+        "type_reponse": "lignes",
+        "points": 5,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "A. Bénédicte et Christophe cherchent une maison près de la ville. Ils ont 2 enfants.",
+            "reponse": "Annonce n° 2"
+          },
+          {
+            "label": "B. Albert cherche un appartement pas trop cher. Il est étudiant.",
+            "reponse": "Annonce n° 5"
+          },
+          {
+            "label": "C. Didier cherche un appartement assez grand. Il a une voiture.",
+            "reponse": "Annonce n° 3"
+          },
+          {
+            "label": "D. Émilie cherche un appartement en ville. Elle n’aime pas le bruit.",
+            "reponse": "Annonce n° 1"
+          },
+          {
+            "label": "E. Fred cherche une grande maison à l’extérieur de la ville. Il a 3 enfants, un chien et une voiture.",
+            "reponse": "Annonce n° 4"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Préparation A2 · série 4 · Votre voyage à Paris",
+    "consigne": "Vous recevez ce message électronique. Répondez aux questions.",
+    "support": {
+      "de": "voyage@malin.com",
+      "a": "Vous",
+      "objet": "Votre voyage à Paris",
+      "texte": "Madame, Monsieur,\nC’est avec grand plaisir que je vous envoie ce message pour vous décrire votre voyage à Paris en notre compagnie.\nÀ votre arrivée, le 7 juin prochain, nous allons vous accueillir à l’aéroport pour vous conduire à votre hôtel. Puis, du 8 au 17 juin, vous allez visiter la capitale de notre pays accompagnés de notre guide, Hervé, qui va vous faire découvrir les musées, les rues, les boutiques mais aussi les restaurants de Paris.\nN’oubliez pas votre appareil photo !\nLes températures en ce moment à Paris sont comprises entre 20 et 24 degrés. Un climat délicieux.\nÀ très bientôt.\nL’équipe de voyagemalin.com"
+    },
+    "questions": [
+      {
+        "enonce": "Quand allez-vous arriver à l’hôtel ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le 7 juin.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le 8 juin."
+          },
+          {
+            "id": "c",
+            "texte": "Le 17 juin."
+          }
+        ]
+      },
+      {
+        "enonce": "Hervé travaille…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "comme guide à Paris.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "dans un musée à Paris."
+          },
+          {
+            "id": "c",
+            "texte": "dans un restaurant à Paris."
+          }
+        ]
+      },
+      {
+        "enonce": "Que devez-vous emporter avec vous ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Un appareil photo."
+      },
+      {
+        "enonce": "Quelle est la température minimum à Paris en ce moment ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "20 degrés."
+      },
+      {
+        "enonce": "Selon l’agence, le climat de cette saison est…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "plutôt froid."
+          },
+          {
+            "id": "b",
+            "texte": "plutôt chaud."
+          },
+          {
+            "id": "c",
+            "texte": "plutôt agréable.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 4 · Guide d’achat de l’ordinateur portable",
+    "consigne": "Vous lisez cet article. Répondez aux questions.",
+    "support": {
+      "titre": "Guide d’achat de l’ordinateur portable",
+      "texte": "Utile dans la vie privée et professionnelle, quel est l’ordinateur portable idéal ? Suivez nos conseils !\n\nComparez !\nAvant de faire cet achat, vous devez comparer les ordinateurs en fonction du poids, de la taille, etc. Bref : réfléchir à l’utilisation que vous allez en avoir et non pas en fonction du prix, même mini !\n\nQuelques modèles :\n• L’Ordi-fami : si tout le monde l’utilise, il vous faut un ordinateur portable familial.\n• Le petit Ordi : si vous vous déplacez beaucoup, choisissez ce petit modèle léger.\n• L’Ordi-écolo fonctionne à l’énergie du soleil. Il vous permet donc de travailler aussi longtemps que vous voulez !\n• L’Ordi-média a une grande capacité de mémoire (1 To). Vous pouvez garder sans difficulté toute votre collection de musique, de vidéos et de photos.\n\nAttention : un ordinateur portable dure 5-7 ans en moyenne. Il faut bien le choisir !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "D’après l’article, aujourd’hui, l’ordinateur portable…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "coûte de moins en moins cher."
+          },
+          {
+            "id": "b",
+            "texte": "sert dans toutes les situations de la vie.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "est remplacé par les téléphones mobiles."
+          }
+        ]
+      },
+      {
+        "enonce": "D’après l’article, avant d’acheter un ordinateur portable, vous devez…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "vous informer sur les tarifs."
+          },
+          {
+            "id": "b",
+            "texte": "demander conseil à votre famille."
+          },
+          {
+            "id": "c",
+            "texte": "penser à vos besoins liés à l’ordinateur.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Le petit Ordi est idéal pour les personnes comme…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2p-s4/ce3-voyageur.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2p-s4/ce3-employe-bureau.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2p-s4/ce3-enfant-jeux.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel avantage présente l’Ordi-média ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Il a une grande capacité de mémoire (1 To)."
+      },
+      {
+        "enonce": "D’après l’article, combien de temps garde-t-on un ordinateur portable, en général ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "5 à 7 ans."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2p-s4-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Préparation A2 · série 4 · Le festival de Cannes",
+    "consigne": "Vous lisez cet article sur un site internet. Répondez aux questions.",
+    "support": {
+      "titre": "Le 65e festival de Cannes",
+      "texte": "Cette année, le soixante-cinquième Festival de Cannes, qui va avoir lieu du 16 au 27 juin, est différent avec de nombreux films sud-américains et asiatiques.\n\nLe directeur du festival a annoncé jeudi dernier la liste officielle des films choisis pour le concours : « 1 779 films – un chiffre plus important chaque année – ont été proposés mais seulement cinquante-quatre films originaires de vingt-six pays vont être présentés au final. » Un choix difficile mais important : le public français écoute souvent les professionnels de Cannes pour choisir le film qu’il va aller voir au cinéma.\n\nDepuis sa création, le 20 septembre 1946, pour fêter la fin de la guerre, cette fête du cinéma conduit toujours plus d’acteurs et de cinéastes sur le tapis rouge, heureux de monter les vingt-quatre marches devant les appareils photos des journalistes du monde entier.\n\nL’actrice française Bérénice Béjo, qui a gagné un prix pour son dernier film le 24 février dernier, va ouvrir la fête le 16 juin. Le président du festival va annoncer le grand gagnant le soir du 27 juin.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Les films présentés au festival de Cannes cette année sont surtout d’origine française. Vrai ou faux ? Justifiez en copiant la phrase du texte.",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 2,
+        "reponse_modele": "Faux : « [Le Festival] est différent avec de nombreux films sud-américains et asiatiques. » (1,5 point seulement si le choix et la justification sont corrects.)"
+      },
+      {
+        "enonce": "Cette année, le directeur du festival de Cannes a reçu…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "moins de films que les autres années."
+          },
+          {
+            "id": "b",
+            "texte": "autant de films que les autres années."
+          },
+          {
+            "id": "c",
+            "texte": "plus de films que les autres années.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Les Français ne s’intéressent pas trop aux films choisis au festival de Cannes. Vrai ou faux ? Justifiez en copiant la phrase du texte.",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 2,
+        "reponse_modele": "Faux : « Le public français écoute souvent les professionnels de Cannes pour choisir le film qu’il va aller voir au cinéma. » (1,5 point seulement si le choix et la justification sont corrects.)"
+      },
+      {
+        "enonce": "Pourquoi le festival a-t-il été créé en 1946 ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Pour fêter la fin de la guerre."
+      },
+      {
+        "enonce": "Où les acteurs sont-ils pris en photo ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "Sur les vingt-quatre marches (du tapis rouge)."
+      },
+      {
+        "enonce": "Bérénice Béjo va participer au festival de Cannes le…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "24 février."
+          },
+          {
+            "id": "b",
+            "texte": "16 juin.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "27 juin."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

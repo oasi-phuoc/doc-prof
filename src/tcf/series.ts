@@ -309,4 +309,5 @@ export const TCF_SERIES: readonly TcfSerie[] = [
   ...prepA1Series(4, 5),
   prepA2Serie(1),
   prepA2Serie(2),
+  prepA2Serie(4),
 ]
