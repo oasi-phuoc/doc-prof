@@ -1381,5 +1381,266 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 4 · Le pique-nique d’Alexia",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s4/co1.mp3",
+      "transcription": "Bonsoir, c’est Alexia. Dimanche prochain, je fais un pique-nique au parc. Océane et Quentin viennent avec moi. On peut se donner rendez-vous à 11 h devant chez toi ? J’apporte la salade. Quentin et Océane font des sandwichs. Est-ce que tu peux apporter les boissons ? Rappelle-moi ! Bisous ! À plus !"
+    },
+    "questions": [
+      {
+        "enonce": "Alexia vous invite quel jour ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Dimanche prochain."
+      },
+      {
+        "enonce": "Elle vous propose de faire…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/co1-montagne.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/co1-plage.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/co1-parc.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "À 11 h."
+      },
+      {
+        "enonce": "Qu’est-ce que vous devez apporter ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "La salade"
+          },
+          {
+            "id": "b",
+            "texte": "Les boissons",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Les sandwichs"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 4 · Info trafic",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s4/co2.mp3",
+      "transcription": "Radio Trafic, message aux conducteurs. Il faut faire attention sur l’autoroute A1. Il y a beaucoup de neige à Lille. La vitesse est limitée à 100 km/h sur 9 km. Pour plus d’informations, appelez le 09 10 80 13 72."
+    },
+    "questions": [
+      {
+        "enonce": "Sur quelle autoroute devez-vous faire attention ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "Sur l’autoroute A1."
+      },
+      {
+        "enonce": "Pour quelle raison ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/co2-bouchon.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/co2-panne.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/co2-neige.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "La vitesse est limitée à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "80 km/h"
+          },
+          {
+            "id": "b",
+            "texte": "90 km/h"
+          },
+          {
+            "id": "c",
+            "texte": "100 km/h",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Pour plus d’informations, quel numéro faut-il appeler ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 2,
+        "reponse_modele": "Le 09 10 80 13 72."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 · série 4 · Le message de la librairie",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-s4/co3.mp3",
+      "transcription": "Bonjour, c’est Simon, de la librairie Chapitre. Nous avons reçu votre dictionnaire. Vous pouvez venir le chercher aujourd’hui, à partir de 14 h. Notre magasin est ouvert du lundi au samedi, de 9 h à 18 h. Je vous souhaite une bonne journée. Au revoir."
+    },
+    "questions": [
+      {
+        "enonce": "Où devez-vous aller ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À la librairie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À la papeterie"
+          },
+          {
+            "id": "c",
+            "texte": "À la bibliothèque"
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que vous allez chercher ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/co3-agenda.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/co3-dessin.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/co3-dictionnaire.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quel jour ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "Aujourd’hui."
+      },
+      {
+        "enonce": "À partir de quelle heure ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "À partir de 14 h."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 · série 4 · Petits dialogues",
+    "consigne": "Observez les situations et écoutez les 5 dialogues. Notez le numéro du dialogue (1 à 5) sous l’image. Attention : il y a 6 situations mais seulement 5 dialogues.",
+    "points": 10,
+    "support": {
+      "audio": "a1-s4/co4.mp3",
+      "nb_dialogues": 5,
+      "transcription": "Dialogue 1 — Tu as vu mon nouveau sac ? — Oui, il est joli ! — Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.\n\nDialogue 2 — Pardon, monsieur, le cours d’italien, c’est dans quelle salle ? — Salle 12, au premier étage. — Merci.\n\nDialogue 3 — Bonjour, j’ai rendez-vous avec le docteur Charpentier à 11 heures. — Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.\n\nDialogue 4 — Bonjour, je m’appelle Célia Leblanc. Je suis la nouvelle secrétaire. — Bienvenue ! Je m’appelle Charlotte Colombe, je suis la comptable. — Enchantée.\n\nDialogue 5 — Je peux prendre un roman ? Je veux lire un nouveau livre. — Bien sûr, prends deux livres si tu veux."
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1-s4/co4-situation-a.webp",
+        "dialogue": 2
+      },
+      {
+        "id": "s2",
+        "image": "a1-s4/co4-situation-b.webp",
+        "dialogue": 4
+      },
+      {
+        "id": "s3",
+        "image": "a1-s4/co4-situation-c.webp",
+        "dialogue": 3
+      },
+      {
+        "id": "s4",
+        "image": "a1-s4/co4-situation-d.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s5",
+        "image": "a1-s4/co4-situation-e.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s6",
+        "image": "a1-s4/co4-situation-f.webp",
+        "dialogue": 5
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

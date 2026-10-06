@@ -369,5 +369,89 @@
     },
     "questions": [],
     "consigne_supplementaire": "Vous prenez de ses nouvelles.\nVous lui dites avec qui vous êtes.\nVous lui décrivez les activités que vous faites."
+  },
+  {
+    "id": "tcf-a1-s4-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 · série 4 · Demande de visa",
+    "consigne": "Vous voulez voyager en France. Remplissez cette demande de visa.",
+    "points": 10,
+    "support": {
+      "titre": "Demande de visa pour touriste",
+      "champs": [
+        {
+          "label": "Prénom :",
+          "type": "texte",
+          "corrige": "Réponse personnelle"
+        },
+        {
+          "label": "Nationalité :",
+          "type": "texte",
+          "corrige": "Réponse personnelle (ex. : afghane, érythréenne…)"
+        },
+        {
+          "label": "Adresse complète :",
+          "type": "texte",
+          "corrige": "Rue, numéro, code postal et ville"
+        },
+        {
+          "label": "Sexe :",
+          "type": "texte",
+          "corrige": "Féminin ou masculin"
+        },
+        {
+          "label": "Taille :",
+          "type": "texte",
+          "corrige": "Ex. : 1,70 m"
+        },
+        {
+          "label": "Couleur des yeux :",
+          "type": "texte",
+          "corrige": "Ex. : marron, bleus, verts"
+        },
+        {
+          "label": "Date de naissance :",
+          "type": "date",
+          "corrige": "Réponse personnelle (ex. : 12.03.1990)"
+        },
+        {
+          "label": "Ville de naissance :",
+          "type": "texte",
+          "corrige": "Réponse personnelle"
+        },
+        {
+          "label": "Pays de naissance :",
+          "type": "texte",
+          "corrige": "Réponse personnelle"
+        },
+        {
+          "label": "Votre passeport expire le :",
+          "type": "date",
+          "corrige": "Une date future (ex. : 15.08.2030)"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A1 · série 4 · Carte postale de la mer",
+    "consigne": "Lisez la situation et écrivez votre message.",
+    "points": 15,
+    "support": {
+      "consigne": "Vous êtes en vacances à la mer. Vous écrivez une carte postale à un(e) ami(e). Écrivez un message de 40 mots.",
+      "nb_mots": {
+        "min": 40
+      },
+      "reponse_modele": "Chère Fatima,\nComment vas-tu ? Moi, je suis en vacances à la mer, en Italie. Le matin, je nage et je joue au ballon sur la plage. L’après-midi, je visite la ville et je mange une glace. Il fait très chaud et le ciel est bleu.\nBisous,\nSonia"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Vous prenez de ses nouvelles.\nVous lui racontez ce que vous faites.\nVous lui décrivez le temps qu’il fait."
   }
 ]

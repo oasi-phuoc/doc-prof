@@ -805,5 +805,155 @@
     },
     "questions": [],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-po-1",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "mots_theme",
+    "theme": "Test blanc A1 · série 4 · Entretien dirigé",
+    "consigne": "Entretien dirigé. Répondez aux questions du professeur sur vous, votre famille, vos goûts et vos activités.",
+    "points": 4,
+    "support": {
+      "audio": "a1-s4/po1.mp3",
+      "theme": "Vous, votre famille, vos goûts et vos activités",
+      "mots": [
+        "Vous",
+        "Votre famille",
+        "Vos goûts",
+        "Vos activités"
+      ],
+      "exemples_questions": [
+        "Comment vous appelez-vous ? Votre nom de famille, comment ça s’écrit ?",
+        "Quel âge avez-vous ? D’où venez-vous ? Où êtes-vous né(e) ?",
+        "Quelle est votre profession ? Combien d’années avez-vous étudié à l’école ?",
+        "Vous êtes marié(e) ? Vous avez des enfants ? Des frères ou des sœurs ?",
+        "Dans quelle ville habitez-vous ? Avec qui vivez-vous ?",
+        "À quelle heure vous levez-vous le matin ? Vous soupez à quelle heure ?",
+        "Combien de langues parlez-vous ?",
+        "Quelle est votre boisson préférée ?",
+        "Qu’est-ce que vous faites le samedi et le dimanche ? Et avec vos amis ?",
+        "Vous aimez aller au cinéma ? Quel genre de films et de musique préférez-vous ?"
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-po-2",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_unique",
+    "theme": "Test blanc A1 · série 4 · Au guichet de la gare",
+    "consigne": "Décrivez l’image.",
+    "points": 4,
+    "support": {
+      "image": "a1-s4/po2-gare.webp",
+      "questions": [
+        "Que voyez-vous ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qui se passe ici ?"
+      ],
+      "reponse_modele": "Je vois une femme, un employé et d’autres personnes. Ils sont à la gare, au guichet. La femme achète un billet de train : l’employé lui donne le billet. Derrière elle, des personnes attendent dans la file."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-po-3",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Test blanc A1 · série 4 · À la boulangerie",
+    "consigne": "Dialogue simulé. Le professeur joue le rôle du boulanger ou de la boulangère.",
+    "points": 8,
+    "support": {
+      "situation": "Vous êtes à la boulangerie. Vous demandez les prix. Vous choisissez des produits et vous payez.",
+      "images": [
+        "a1-s4/po3-baguette.webp",
+        "a1-s4/po3-croissant.webp",
+        "a1-s4/po3-pain-au-chocolat.webp",
+        "a1-s4/po3-tarte.webp"
+      ],
+      "grille": {
+        "points": 9,
+        "criteres": [
+          "Lexique",
+          "Morphosyntaxe",
+          "Phonologie"
+        ]
+      },
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous désirez ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais une baguette, s’il vous plaît. C’est combien ?",
+          "variantes": [
+            "Bonjour, qu’est-ce que vous avez aujourd’hui ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La baguette coûte 2 francs. Autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien coûtent les croissants et les pains au chocolat ?",
+          "variantes": [
+            "C’est combien, la tarte aux pommes ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le croissant coûte 1 franc 50 et le pain au chocolat 2 francs. La tarte aux pommes coûte 15 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends deux croissants et un pain au chocolat, s’il vous plaît.",
+          "variantes": [
+            "Je voudrais aussi la tarte aux pommes."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. C’est tout ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, c’est tout. Ça fait combien ?",
+          "variantes": [
+            "Oui, merci. Je vous dois combien ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 7 francs, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà 10 francs.",
+          "variantes": [
+            "Je peux payer par carte ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Voici votre monnaie, 3 francs. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, au revoir !",
+          "variantes": [
+            "Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
   }
 ]

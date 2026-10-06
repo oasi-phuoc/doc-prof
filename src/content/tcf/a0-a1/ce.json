@@ -1703,5 +1703,323 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 4 · La notice VitaMinéraux",
+    "consigne": "Lisez la notice d’utilisation et répondez aux questions.",
+    "support": {
+      "titre": "VitaMinéraux — Notice",
+      "texte": "VitaMinéraux 100 gélules apporte des vitamines (A, C, D3 et E) et des minéraux (calcium, zinc, etc.) utiles pour votre corps. Ce produit est recommandé pour améliorer votre forme physique.\n\nComment prendre VitaMinéraux 100 gélules ?\nChaque matin, prendre 2 gélules avec un grand verre d’eau.\nC’est un programme de deux mois, à prendre de préférence en automne.\nPOUR ADULTES UNIQUEMENT.\n\nPour les enfants à partir de 4 ans, utiliser VitaMinéraux Junior.\nPrendre une cuillère de sirop le matin et une cuillère le soir. Trois saveurs disponibles : fraise, orange ou chocolat.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour quoi VitaMinéraux est-il conseillé ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 2,
+        "reponse_modele": "Pour améliorer la forme physique."
+      },
+      {
+        "enonce": "Dans VitaMinéraux, il n’y a pas de vitamine…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "B3",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "D3"
+          },
+          {
+            "id": "c",
+            "texte": "E"
+          }
+        ]
+      },
+      {
+        "enonce": "Comment un adulte doit-il prendre VitaMinéraux ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "2 gélules le soir"
+          },
+          {
+            "id": "b",
+            "texte": "2 gélules le matin",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "1 gélule le matin et 1 le soir"
+          }
+        ]
+      },
+      {
+        "enonce": "Pendant combien de temps faut-il prendre VitaMinéraux ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Pendant deux mois."
+      },
+      {
+        "enonce": "Quel goût a VitaMinéraux Junior ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/ce1-pomme.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/ce1-banane.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/ce1-orange.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "email",
+    "theme": "Test blanc A1 · série 4 · Le réveillon de Lola",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "de": "lola@fmail.ch",
+      "a": "Vous",
+      "objet": "Le réveillon du 31/12",
+      "texte": "Nous célébrons le Nouvel An, le 31 décembre, à 21 heures !\n\nLa fête n’est pas chez moi, mais au Refuge de Saugealles, à Épinlagues. Pour venir, c’est facile : quand tu es au Club de Golf de Lausanne, tu prends la route de Ballègue. Puis, tu tournes à gauche pour rester sur la route de Ballègue. Après, tu tournes à gauche et tu prends la route du Golf. Tu prends la 2e à droite et tu continues sur la route de Châlet-Boverat. Le refuge est à 1,5 km sur le chemin de Ballègue.\n\nDonne-moi ta réponse avant le 21 novembre parce que je dois réserver les plats et les boissons chez le traiteur avant le 30 novembre.\n\nApporte de la musique, nous allons danser toute la nuit ! 🙂\n\nBisous,\nLola"
+    },
+    "questions": [
+      {
+        "enonce": "Qu’est-ce que Lola veut fêter ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le Nouvel An."
+      },
+      {
+        "enonce": "À quelle heure ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "À 21 heures."
+      },
+      {
+        "enonce": "Avant quelle date devez-vous confirmer ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Avant le 21 novembre."
+      },
+      {
+        "enonce": "Dessinez sur le plan le trajet pour aller au Refuge.",
+        "type_reponse": "lignes",
+        "points": 2,
+        "image": "a1-s4/ce2-plan.webp",
+        "nb_lignes": 0,
+        "reponse_modele": "Club de Golf → route de Ballègue → à gauche (route de Ballègue) → à gauche, route du Golf → 2e à droite, route de Châlet-Boverat → chemin de Ballègue (1,5 km) jusqu’au refuge."
+      },
+      {
+        "enonce": "Lola vous demande d’apporter…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/ce2-decoration.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/ce2-musique.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/ce2-boissons.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 4 · Journée en montgolfière",
+    "consigne": "Lisez l’affiche et répondez aux questions.",
+    "support": {
+      "titre": "Journée en montgolfière",
+      "texte": "Pour participer à la sortie « Vol en montgolfière » du 6 juin à Rhode-Saint-Genèse (à 25 km de Bruxelles), vous devez :\n– vous inscrire au comité d’entreprise avant le 30 avril ;\n– payer 55 € par carte bancaire.\n\nPensez à prendre une casquette ou un chapeau, une paire de gants et des chaussures confortables.\nCette sortie est ouverte aux employés et aux enfants des employés.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quelle est la date de la sortie ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le 6 juin."
+      },
+      {
+        "enonce": "Où devez-vous vous inscrire ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Au comité d’entreprise."
+      },
+      {
+        "enonce": "Combien coûte la sortie ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "55 €."
+      },
+      {
+        "enonce": "Qu’est-ce que vous devez mettre le jour de la sortie ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/ce3-casquette.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/ce3-lunettes.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/ce3-chaussures.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Qui d’autre peut aller à cette sortie avec les employés ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Les enfants des employés."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-s4-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 · série 4 · La lecture et les jeunes",
+    "consigne": "Lisez cet article et répondez aux questions.",
+    "support": {
+      "titre": "La lecture et les jeunes",
+      "texte": "La Région Centre veut aider les jeunes à lire. Elle propose aux jeunes de 12 à 25 ans de recevoir un livre gratuit au mois de septembre.\n\nLes jeunes peuvent choisir entre 4 livres :\n– « Henri le petit sorcier », pour les 12-15 ans ;\n– « Le Tour du monde en 80 jours » de Jules Verne, un grand classique sur les voyages dans le monde entier ;\n– « Au bonheur des ogres » de Daniel Pennac, si on aime le mystère et l’humour dans la même histoire ;\n– « Le Malade imaginaire » de Molière, pour découvrir le théâtre classique français.\n\nPour recevoir un livre, il faut remplir un formulaire sur Internet : www.region-centre.fr/lecture",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Qui veut offrir un livre aux jeunes ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une école"
+          },
+          {
+            "id": "b",
+            "texte": "Une région",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Une bibliothèque"
+          }
+        ]
+      },
+      {
+        "enonce": "Quel livre est recommandé pour un jeune de 13 ans ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "« Henri le petit sorcier »."
+      },
+      {
+        "enonce": "Pour découvrir de nouveaux pays, quel livre faut-il lire ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "« Le Tour du monde en 80 jours »."
+      },
+      {
+        "enonce": "« Au bonheur des ogres » n’est pas un texte…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "drôle"
+          },
+          {
+            "id": "b",
+            "texte": "théâtral",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "mystérieux"
+          }
+        ]
+      },
+      {
+        "enonce": "Que faut-il faire pour recevoir un livre ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-s4/ce4-internet.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-s4/ce4-courrier.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-s4/ce4-telephone.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
