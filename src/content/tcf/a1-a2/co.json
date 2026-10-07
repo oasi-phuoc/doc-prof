@@ -2826,5 +2826,383 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série B · Annonces publiques",
+    "consigne": "Vous écoutez des annonces publiques. Il y a 6 documents et 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sb/co1.mp3",
+      "transcription": "Document 1 — Chers clients, êtes-vous contents des services de votre magasin ? Nos assistants vont venir vers vous pour vous poser des questions. Merci d’y répondre.\n\nDocument 2 — Aujourd’hui seulement, dans votre supermarché, grande promotion sur les carottes, salades et haricots. Rendez-vous dans le rayon fruits et légumes, près de la poissonnerie. À tout de suite !\n\nDocument 3 — Mesdames, messieurs, votre librairie est ouverte jusqu’à samedi. La semaine prochaine, pour cause de vacances, nous sommes fermés. Retrouvez votre librairie le lundi 12 mai.\n\nDocument 4 — Chers visiteurs, notre musée est heureux de vous présenter l’exposition de la photographe Magali Soubre. Venez voir ses magnifiques photos des sportifs français aux Jeux olympiques.\n\nDocument 5 — Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places. Le bar du théâtre vous accueille de 11 à 19 heures. Bonne journée !\n\nDocument 6 — Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo. Rendez-vous à la salle des fêtes à 21 heures. Entrée : 5 euros."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Vous allez faire quoi avec les assistants ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Découvrir le magasin."
+          },
+          {
+            "id": "b",
+            "texte": "Visiter le site internet."
+          },
+          {
+            "id": "c",
+            "texte": "Remplir un questionnaire.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Quel produit est moins cher aujourd’hui ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co1-legumes.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co1-fruits.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co1-poissons.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Pourquoi la librairie ferme ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Pour les vacances."
+      },
+      {
+        "enonce": "Document 4 — Quelle est la profession de Magali Soubre ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co1-guide-musee.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co1-sportive.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co1-photographe.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 5 — Quel guichet est ouvert pour acheter des billets ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Le guichet 12."
+      },
+      {
+        "enonce": "Document 6 — Que se passe-t-il le 22 mars ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co1-concert.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co1-bibliotheque.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co1-manege.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série B · À la radio",
+    "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sb/co2.mp3",
+      "transcription": "Document 1 — La ville de Toulon organise samedi 24 septembre une grande vente publique place Jean-Jaurès. Vous voulez vendre des tables ou des chaises que vous n’utilisez plus ? Inscrivez-vous à la mairie. Prix de la place : 5 euros.\n\nDocument 2 — Aujourd’hui, à la gare de Pau, une vache a retardé les départs de train pendant 6 heures. Les clients ont reçu un panier-repas pour attendre et les excuses de la SNCF.\n\nDocument 3 — Aujourd’hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux. Appelez vite Tony au 08 34 21 34 90. Les dix premiers gagnent des places de concert et des CD de Jayo."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Où se passe la vente ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Place Jean-Jaurès (à Toulon)."
+      },
+      {
+        "enonce": "Document 1 — Que pouvez-vous vendre ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co2-meubles.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co2-vetements.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co2-instruments.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Pourquoi les passagers ont attendu 6 heures ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il y a des travaux."
+          },
+          {
+            "id": "b",
+            "texte": "Il y a un animal sur les voies.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Il y a une panne d’ascenseur."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — La SNCF a donné quoi aux voyageurs ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Un panier-repas (et des excuses)."
+      },
+      {
+        "enonce": "Document 3 — Que pouvez-vous gagner ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co2-telephone.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co2-tshirt.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co2-cd.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Pourquoi la radio donne des cadeaux ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Parce que c’est son anniversaire.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Parce que c’est l’interview de Jayo."
+          },
+          {
+            "id": "c",
+            "texte": "Parce qu’il y a des nouveaux bureaux."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série B · Le message de Marie",
+    "consigne": "Vous écoutez ce message sur un répondeur téléphonique. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sb/co3.mp3",
+      "transcription": "Allô ? C’est Marie, du service des ressources humaines. Je te contacte au sujet des cours d’espagnol professionnel. La directrice a donné son accord si les cours ont lieu dans l’entreprise. Le professeur est argentin. Il viendra de 13 h à 14 h 30 tous les mardis. Si ça t’intéresse, tu dois m’envoyer un mail. Après, il y a un petit entretien avec le professeur pour connaître ton niveau. Bonne journée !"
+    },
+    "questions": [
+      {
+        "enonce": "La personne qui vous appelle…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "est votre directrice."
+          },
+          {
+            "id": "b",
+            "texte": "enseigne les langues étrangères."
+          },
+          {
+            "id": "c",
+            "texte": "travaille aux ressources humaines.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle langue est proposée ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "L’espagnol (professionnel)."
+      },
+      {
+        "enonce": "Où se passent les cours de langues ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Dans l’entreprise."
+      },
+      {
+        "enonce": "Les cours ont lieu…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "une fois par semaine.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "deux fois par semaine."
+          },
+          {
+            "id": "c",
+            "texte": "une fois toutes les deux semaines."
+          }
+        ]
+      },
+      {
+        "enonce": "Si vous voulez prendre des cours, vous devez faire quoi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co3-courriel.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co3-telephoner.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co3-lettre.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Pour connaître votre niveau, vous devez…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/co3-test-ordinateur.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/co3-entretien.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/co3-test-ecrit.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série B · Quatre dialogues",
+    "consigne": "Écoutez les 4 dialogues. Il y a 2 écoutes. Associez chaque dialogue à la situation correspondante. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "support": {
+      "audio": "a2-sb/co4.mp3",
+      "transcription": "Dialogue 1 — Alors, tu prends quoi ? Le sac vert ou le sac noir ? — Le noir ne me plaît pas trop. Je crois que j’aime mieux le vert. — C’est un bon choix. — Merci.\n\nDialogue 2 — Il est génial, ton nouvel aspirateur. — Oui, je l’ai acheté sur internet, et pas cher en plus. — Ah oui ? Combien il t’a coûté ? — 78 euros. — Ah, super, je vais acheter le même.\n\nDialogue 3 — La cuisine, c’est vraiment trop difficile pour moi. — Qu’est-ce qui se passe ? Je peux faire quelque chose ? — J’ai raté ma crème au chocolat. — Attends, je te montre. C’est très facile.\n\nDialogue 4 — Alors Emma, tes examens, tu as reçu les résultats ? — Oui Alex, j’ai réussi, je suis trop contente ! — Bravo, toutes mes félicitations, tu as bien travaillé. — Merci, c’est gentil."
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Demander un prix — B. Décrire un objet — C. Exprimer ses goûts — D. Proposer de l’aide — E. Féliciter — F. Parler de son métier",
+        "type_reponse": "lignes",
+        "points": 7,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (1 point)",
+            "reponse": "C. Exprimer ses goûts"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "A. Demander un prix"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "D. Proposer de l’aide"
+          },
+          {
+            "label": "Dialogue 4 (2 points)",
+            "reponse": "E. Féliciter"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

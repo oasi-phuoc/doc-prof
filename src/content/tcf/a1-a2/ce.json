@@ -2619,5 +2619,325 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série B · Programme d’ateliers",
+    "consigne": "Vous lisez un programme d’activités. Associez chaque document à la personne correspondante. Attention : il y a 8 personnes mais seulement 6 documents.",
+    "support": {
+      "titre": "Programme d’ateliers",
+      "texte": "Document 1\nDécouverte des ateliers artistiques tous les matins de 9 h à 12 h. À partir de 18 ans. Prévoir des vêtements non fragiles.\n\nDocument 2\nDécouverte des ateliers de musique le samedi et le dimanche de 9 h à 17 h. Prévoir une tenue confortable. Attention : places limitées. Réservé aux adultes.\n\nDocument 3\nDécouverte de l’atelier de peinture pour les enfants, le mercredi et le samedi de 14 h à 17 h. Réservé aux enfants de 8 à 12 ans.\n\nDocument 4\nDécouverte des ateliers de chant, pour adultes et enfants, le mardi et le jeudi après-midi de 14 h à 16 h. Inscription aux 2 jours obligatoire.\n\nDocument 5\nDécouverte de l’atelier relaxation le dimanche de 18 h à 20 h. Prévoir une serviette de bain et une tenue très confortable.\n\nDocument 6\nDécouverte de l’atelier marche en forêt et découverte des animaux. Dimanche matin à 7 h. Durée : 2 h 30. Réservé aux bons marcheurs.\n\nLes personnes :\nA. Oscar est disponible le soir après 20 h.\nB. Myriam peut venir le matin, en semaine.\nC. Frank n’est pas disponible pendant la semaine.\nD. Mady est disponible de 12 h à 14 h la semaine.\nE. Alessio peut venir seulement l’après-midi.\nF. Nicole veut inscrire son fils le mercredi.\nG. Pablo aime se lever tôt.\nH. Marcello veut venir en soirée.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour chaque document, écrivez la lettre de la personne correspondante (1 point par document).",
+        "type_reponse": "lignes",
+        "points": 6,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Document 1",
+            "reponse": "B. Myriam"
+          },
+          {
+            "label": "Document 2",
+            "reponse": "C. Frank"
+          },
+          {
+            "label": "Document 3",
+            "reponse": "F. Nicole"
+          },
+          {
+            "label": "Document 4",
+            "reponse": "E. Alessio"
+          },
+          {
+            "label": "Document 5",
+            "reponse": "H. Marcello"
+          },
+          {
+            "label": "Document 6",
+            "reponse": "G. Pablo"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série B · La lettre d’Isabelle",
+    "consigne": "Lisez la lettre et répondez aux questions.",
+    "support": {
+      "titre": "Une fête surprise pour Marie",
+      "texte": "Bonjour à tous,\n\nJe vous écris pour vous inviter à l’anniversaire de Marie, qui va avoir 30 ans le 15 mars. Je voudrais lui organiser une fête surprise le samedi 20 mars. Je vous demande de faire attention quand vous allez lui souhaiter son anniversaire le 15 mars. La fête d’anniversaire surprise aura lieu le samedi 20 mars à 20 h chez Alberto (18, rue St-Gabriel).\n\nPouvez-vous apporter quelque chose à boire ou à manger ? Pour son cadeau, nous allons préparer une boîte où vous pourrez mettre un peu d’argent pour un voyage en Chine. C’est le rêve de Marie.\n\nMerci de confirmer votre présence avant le 10 février.\n\nIsabelle",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pourquoi on vous envoie cette lettre ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Pour vous inviter.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Pour organiser une fête."
+          },
+          {
+            "id": "c",
+            "texte": "Pour vous annoncer quelque chose."
+          }
+        ]
+      },
+      {
+        "enonce": "Quand a lieu l’événement ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le samedi 20 mars, à 20 h."
+      },
+      {
+        "enonce": "Où a lieu l’événement ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Chez Alberto, 18, rue St-Gabriel."
+      },
+      {
+        "enonce": "Il faut mettre quoi dans la boîte ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sb/ce2-boite.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sb/ce2-argent.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a2-sb/ce2-carte.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Il faut faire quoi avant le 10 février ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Confirmer votre présence.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Appeler Marie."
+          },
+          {
+            "id": "c",
+            "texte": "Acheter un cadeau."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série B · À la salle de sport",
+    "consigne": "Vous travaillez dans une salle de sport. Lisez les documents et répondez aux questions.",
+    "support": {
+      "titre": "Deux documents de la salle de sport",
+      "texte": "Document 1 — Message de Paul\nMarie, je dois partir, peux-tu nettoyer la salle ? Commence par passer l’aspirateur dans toutes les salles : cours collectifs + appareils de musculation. Lave les vitres avec le produit bleu et les appareils avec le produit désinfectant. Ramasse les objets oubliés et rapporte-les à l’accueil. Enfin, vérifie qu’il y a du savon et du papier dans les toilettes.\nMerci et bon courage.\nPaul\n\nDocument 2 — Numéros utiles\nSi un appareil de sport est cassé : contactez le technicien au 06 78 89 89 78.\nSi vous voyez un problème dans la salle (peinture ou électricité) : appelez le réparateur au 01 56 78 78 89 et prévenez aussi le directeur.\nSi un client est malade, contactez le docteur Doussi (06 78 54 56 56).\nSi un client fait un malaise, téléphonez immédiatement au numéro 15.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Avec quoi il faut nettoyer les appareils ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Avec le produit désinfectant."
+      },
+      {
+        "enonce": "Document 1 — Il faut apporter quoi à l’accueil ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Les gobelets usagés."
+          },
+          {
+            "id": "b",
+            "texte": "Les affaires trouvées.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Les produits utilisés."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Si un client est malade, vous devez faire quoi ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Prévenir le directeur."
+          },
+          {
+            "id": "b",
+            "texte": "Appeler un docteur.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Contacter sa famille."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Il faut contacter qui pour un appareil cassé ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le technicien (au 06 78 89 89 78)."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sb-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série B · Le FabLab",
+    "consigne": "Lisez l’affiche. Répondez aux questions.",
+    "support": {
+      "titre": "Un FabLab dans votre ville",
+      "texte": "Un FabLab, qu’est-ce que c’est ?\nC’est un atelier de fabrication collaboratif dans lequel vous pourrez utiliser gratuitement des machines et des outils.\n\nQue trouve-t-on dans un FabLab ?\nDes imprimantes 3D, mais aussi des découpeuses laser, des soudeuses, des logiciels informatiques adaptés. Vous pouvez les utiliser sur place ou les emporter à domicile.\n\nUn FabLab, pour faire quoi ?\nPour venir utiliser ou réparer une machine, ou fabriquer vous-même un meuble ou un objet utile (une étagère, une maison pour les oiseaux…).\n\nVenir au FabLab, pourquoi ?\nParce que vous aimez le bricolage, vous aimez partager, vous voulez faire des économies.\n\nEn plus…\nVotre FabLab organise des ateliers pour les enfants et des animations avec les commerçants voisins.\n\nOù se trouve votre FabLab ?\n50, rue Lavoisier (métro St-Maurice). Ouvert tous les jours de 12 h à 21 h.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Il y a quoi de nouveau dans votre ville ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un magasin de bricolage."
+          },
+          {
+            "id": "b",
+            "texte": "Un atelier de bricolage.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Une école de bricolage."
+          }
+        ]
+      },
+      {
+        "enonce": "Que propose ce FabLab ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Des activités pour les enfants.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Des stages chez les commerçants."
+          },
+          {
+            "id": "c",
+            "texte": "Des formations chez les professionnels."
+          }
+        ]
+      },
+      {
+        "enonce": "Vous pouvez acheter des outils dans ce FabLab. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Faux : on peut utiliser gratuitement les machines et les outils (sur place ou à domicile)."
+      },
+      {
+        "enonce": "Que pouvez-vous faire dans ce FabLab ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Créer des meubles.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Réparer des jouets."
+          },
+          {
+            "id": "c",
+            "texte": "Acheter des meubles."
+          }
+        ]
+      },
+      {
+        "enonce": "Pourquoi on vient dans ce FabLab ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Pour prendre des cours de bricolage."
+          },
+          {
+            "id": "b",
+            "texte": "Pour faire des économies.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Pour trouver du travail."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
