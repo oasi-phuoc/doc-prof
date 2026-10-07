@@ -2837,5 +2837,335 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série A · La nouvelle voisine",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "titre": "Message de votre voisine",
+      "texte": "Bonjour,\n\nJe suis votre nouvelle voisine. J’habite dans l’appartement 5, au 4e étage.\nJe vous invite à manger chez moi vendredi à 18 h 30.\nJe fais le repas et le dessert. Vous pouvez apporter les boissons.\nSi vous pouvez venir, dites-le-moi avant jeudi avec un message dans ma boîte aux lettres.\n\nIsabelle",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "À quel étage habite votre nouvelle voisine ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au 1er étage."
+          },
+          {
+            "id": "b",
+            "texte": "Au 4e étage.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Au 5e étage."
+          }
+        ]
+      },
+      {
+        "enonce": "Isabelle vous invite à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "manger chez elle.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "boire un verre chez elle."
+          },
+          {
+            "id": "c",
+            "texte": "aller au restaurant."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel jour est le rendez-vous ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Vendredi (à 18 h 30)."
+      },
+      {
+        "enonce": "Vous devez apporter quoi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpa/ce1-tarte.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpa/ce1-poisson.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpa/ce1-boissons.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série A · Visitez Porrentruy",
+    "consigne": "Lisez cet article et répondez aux questions.",
+    "support": {
+      "titre": "Visitez la ville de Porrentruy !",
+      "texte": "Canton : Jura — Nombre d’habitants : 6600 — Code postal : 2900\n\nPorrentruy est une petite ville dans le canton du Jura, en Suisse. Elle est proche de la France.\n\nDécouvrez la ville à pied. Partez de la place de la Mairie, prenez la rue Saint-Paul vers l’église. Quand vous arrivez à l’église, tournez à gauche. L’école est à votre droite. Continuez tout droit et vous arrivez à la maison de Madame Lesieur, la plus vieille maison de la ville !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "La ville se trouve dans quel canton ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Valais."
+          },
+          {
+            "id": "b",
+            "texte": "Jura.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Genève."
+          }
+        ]
+      },
+      {
+        "enonce": "Il y a combien d’habitants à Porrentruy ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "6600 habitants."
+      },
+      {
+        "enonce": "Porrentruy est proche de…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "l’Allemagne."
+          },
+          {
+            "id": "b",
+            "texte": "l’Italie."
+          },
+          {
+            "id": "c",
+            "texte": "la France.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quel est le bon chemin pour aller chez Madame Lesieur ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpa/ce2-chemin-a.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpa/ce2-chemin-b.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-tpa/ce2-chemin-c.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série A · Petites annonces",
+    "consigne": "Lisez les annonces et répondez aux questions.",
+    "support": {
+      "titre": "Petites annonces",
+      "texte": "Vous voulez travailler le week-end ? Nous cherchons un serveur. Restaurant Le Miracle.\n\nVous jouez de la guitare ? Rejoignez notre groupe Olé. Contrat de 20 h par semaine, du mercredi au vendredi soir.\n\nJe cherche un professeur d’anglais. Je suis disponible le mercredi après-midi. Appelez-moi au 06 06 78 43 21. Corinne.\n\nNotre agence cherche une personne pour répondre au téléphone. Temps plein, 35 h par semaine, du lundi au vendredi. 06 98 65 34 91.\n\nOffre d’emploi : cuisinier. Du lundi au vendredi, de 11 h à 15 h. Contactez Evelyne (06 67 32 32 01).",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Vous voulez faire de la musique. Vous pouvez travailler…",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "15 h par semaine."
+          },
+          {
+            "id": "b",
+            "texte": "20 h par semaine.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "35 h par semaine."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel numéro de téléphone appelez-vous pour travailler à midi ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le 06 67 32 32 01 (Evelyne)."
+      },
+      {
+        "enonce": "Quel jour pouvez-vous donner des cours d’anglais ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le mercredi (après-midi)."
+      },
+      {
+        "enonce": "Pour répondre au téléphone, vous devez travailler…",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "du lundi au vendredi.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "du lundi au dimanche."
+          },
+          {
+            "id": "c",
+            "texte": "du mercredi au vendredi."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série A · Le restaurant universitaire",
+    "consigne": "Lisez cet article de journal et répondez aux questions.",
+    "support": {
+      "titre": "Les étudiants aiment leur restaurant universitaire",
+      "texte": "Dans l’université de Lille, le restaurant universitaire est un lieu important. Il est ouvert de 8 h à 18 h 30. Il propose des petits-déjeuners le matin, un repas complet le midi pour seulement 4 € et des pâtisseries et des boissons toute la journée. Les étudiants retrouvent leurs amis. Ils peuvent jouer, lire, faire leurs devoirs et aussi rencontrer les professeurs. Les étudiants sont plus souvent au restaurant qu’à la bibliothèque !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "L’article parle…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de la vie universitaire."
+          },
+          {
+            "id": "b",
+            "texte": "du restaurant universitaire.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "de la bibliothèque universitaire."
+          }
+        ]
+      },
+      {
+        "enonce": "Quand le restaurant est-il ouvert ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le matin et le midi."
+          },
+          {
+            "id": "b",
+            "texte": "Le midi et l’après-midi."
+          },
+          {
+            "id": "c",
+            "texte": "Toute la journée.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Combien coûte le déjeuner ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "4 €."
+      },
+      {
+        "enonce": "Où sont les étudiants le plus souvent ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpa/ce4-universite.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpa/ce4-bibliotheque.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpa/ce4-restaurant.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

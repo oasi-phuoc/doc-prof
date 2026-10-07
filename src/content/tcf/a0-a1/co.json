@@ -2291,5 +2291,315 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 tout public · série A · Le message de Catherine",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-tpa/co1.mp3",
+      "transcription": "C’est Catherine. Je suis encore à mon bureau. Est-ce que tu peux aller à l’école à 16 h 45 pour prendre Margot ? Après, passe à la boulangerie pour acheter du pain. Pour le repas de ce soir, je vais préparer de la soupe. Merci. À tout à l’heure."
+    },
+    "questions": [
+      {
+        "enonce": "Où est Catherine ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "À son bureau."
+      },
+      {
+        "enonce": "À quelle heure devez-vous prendre Margot à l’école ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpa/co1-16h15.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpa/co1-16h30.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpa/co1-16h45.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez aller où après l’école ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À la pharmacie."
+          },
+          {
+            "id": "b",
+            "texte": "À l’hôpital."
+          },
+          {
+            "id": "c",
+            "texte": "À la boulangerie.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez acheter quoi ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Du pain."
+      },
+      {
+        "enonce": "Pour le repas, Catherine va préparer…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "de la soupe.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "de la salade."
+          },
+          {
+            "id": "c",
+            "texte": "des légumes."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 tout public · série A · L’opéra Mozart",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-tpa/co2.mp3",
+      "transcription": "Ce soir, au Théâtre de la Ville, retrouvez la première de l’opéra Mozart. L’opéra est présent dans notre ville seulement samedi et dimanche. Pour réserver vos places, téléphonez au 03 20 14 78 81. Le prix des places commence à 10 euros, alors téléphonez vite !"
+    },
+    "questions": [
+      {
+        "enonce": "Où a lieu l’opéra Mozart ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpa/co2-mairie.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpa/co2-cinema.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpa/co2-theatre.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quels jours l’opéra est-il présent dans la ville ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Samedi et dimanche."
+      },
+      {
+        "enonce": "Vous devez faire quoi pour réserver des places ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpa/co2-telephone.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-tpa/co2-ordinateur.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpa/co2-guichet.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Le prix des places commence à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "8 €."
+          },
+          {
+            "id": "b",
+            "texte": "10 €.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "12 €."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 tout public · série A · Le restaurant Au Colibri",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-tpa/co3.mp3",
+      "transcription": "C’est Monsieur Garcia, le directeur du restaurant Au Colibri. Je voudrais vous inviter à un entretien pour le poste de serveur. Si vous êtes intéressé, merci de me répondre avant le 18 juin. Il faut m’envoyer votre CV par courrier postal au restaurant. L’adresse est 1036, rue Baudelaire. Merci."
+    },
+    "questions": [
+      {
+        "enonce": "Vous êtes invité à un entretien pour quel poste ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Serveur.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Vendeur."
+          },
+          {
+            "id": "c",
+            "texte": "Directeur."
+          }
+        ]
+      },
+      {
+        "enonce": "Il faut répondre avant quelle date ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Avant le 18 juin."
+      },
+      {
+        "enonce": "Quel document devez-vous envoyer ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un CV.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Une carte postale."
+          },
+          {
+            "id": "c",
+            "texte": "Une pièce d’identité."
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle est l’adresse du restaurant ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "1086, rue Voltaire."
+          },
+          {
+            "id": "b",
+            "texte": "1306, rue Flaubert."
+          },
+          {
+            "id": "c",
+            "texte": "1036, rue Baudelaire.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpa-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 tout public · série A · Petits dialogues",
+    "consigne": "Vous allez entendre 4 petits dialogues. Notez, sous chaque image, le numéro du dialogue qui correspond. Attention : il y a 6 images mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1-tpa/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Je n’aime pas le restaurant de l’université. — Où est-ce que tu manges, alors ? — Je préfère me préparer mes repas.\n\nDialogue 2 — Papa, est-ce que tu peux m’aider avec mes devoirs ? — D’accord. Qu’est-ce que tu fais ? — Ce sont des exercices de mathématiques.\n\nDialogue 3 — Éric, où vas-tu ? — Je vais à la bibliothèque. Je dois emprunter des livres.\n\nDialogue 4 — Qui est la femme avec tous les livres, là-bas ? — C’est Madame Vega, la nouvelle professeure de français."
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1-tpa/co4-situation-a.webp",
+        "dialogue": 2
+      },
+      {
+        "id": "s2",
+        "image": "a1-tpa/co4-situation-b.webp",
+        "dialogue": 4
+      },
+      {
+        "id": "s3",
+        "image": "a1-tpa/co4-situation-c.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s4",
+        "image": "a1-tpa/co4-situation-d.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s5",
+        "image": "a1-tpa/co4-situation-e.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s6",
+        "image": "a1-tpa/co4-situation-f.webp",
+        "dialogue": 3
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
