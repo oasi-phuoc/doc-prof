@@ -68,3 +68,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 ## Terminé, c'est quand
 
 Lint et build passent ; l'aperçu reste A4 quelle que soit la densité ; l'impression utilise les mêmes feuilles ; rien n'est copié d'une référence ; la description de la PR liste ce qui a changé et comment le vérifier.
+
+## Cursor Cloud specific instructions
+
+Lors de la mise en place de l’environnement Cloud Agent, ne pas démontrer le fonctionnement de bout en bout dans le navigateur (accueil, accès, génération d’une fiche). L’installation, `npm run lint`, `npm run build` et une réponse du serveur de dev suffisent.
