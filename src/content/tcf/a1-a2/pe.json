@@ -529,5 +529,109 @@
     },
     "questions": [],
     "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a2-sc-pe-1",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "question_texte",
+    "theme": "Test blanc A2 · série C · Billets de concert",
+    "consigne": "Lisez la situation et écrivez votre courriel.",
+    "points": 5,
+    "support": {
+      "consigne": "Vous achetez des billets pour un concert en ligne. Écrivez un courriel de 40 à 50 mots.",
+      "nb_mots": {
+        "min": 40,
+        "max": 50
+      },
+      "reponse_modele": "Bonjour,\nJe voudrais acheter trois billets pour le concert du samedi 14 juin. Quel est le prix total pour trois personnes ? Pouvez-vous aussi me dire comment venir à la salle ? Est-ce qu’il y a un bus ou un train le soir ?\nMerci et bonne journée,\nLina Rossi"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Indiquez la date et le nombre de billets.\nDemandez le prix total.\nDemandez les moyens de transport disponibles.\nGrille (5 points) : consigne – les trois informations demandées (2) ; structure – salutation, formule de fin et longueur (1) ; langue et vocabulaire (1) ; orthographe et ponctuation (1)."
+  },
+  {
+    "id": "tcf-a2-sc-pe-2",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "email_reponse",
+    "theme": "Test blanc A2 · série C · La fête de Solange",
+    "consigne": "Vous recevez un message de votre amie Solange.",
+    "points": 10,
+    "support": {
+      "email_recu": {
+        "de": "Solange",
+        "objet": "Fête de la musique",
+        "texte": "Salut,\nJe fais une fête le 21 juin pour la fête de la musique. On commence à 13 heures : on va manger et faire du sport l’après-midi. Le soir, on reste ensemble, on va faire de la musique et danser.\nApporte un plat pour le midi ou pour le soir, et aussi un instrument de musique !\nDis-moi si tu viens. À très vite,\nSolange"
+      },
+      "consigne": "Répondez à Solange. Vous acceptez son invitation, mais vous devez arriver le soir en train. Vous lui expliquez pourquoi. Vous lui demandez son adresse à partir de la gare et vous dites ce que vous apportez. (60 à 80 mots)",
+      "nb_mots": {
+        "min": 60,
+        "max": 80
+      },
+      "reponse_modele": "Salut Solange,\nMerci beaucoup pour ton invitation, je viens avec plaisir ! Mais je ne peux pas arriver à 13 heures, parce que je travaille jusqu’à 17 heures le 21 juin. Je vais prendre le train et j’arrive vers 19 heures. Tu peux m’envoyer ton adresse et m’expliquer le chemin depuis la gare ? J’apporte une salade de riz pour le soir et ma guitare.\nÀ bientôt,\nYasmine"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : consigne – texte compréhensible et qui répond à la tâche (2) ; structure – salutation et longueur (2) ; langue – grammaire, conjugaison, syntaxe (3) ; lexique – vocabulaire (1) ; orthographe – mots corrects, ponctuation (2)."
+  },
+  {
+    "id": "tcf-a2-sc-pe-3",
+    "niveau": "A1-A2",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Test blanc A2 · série C · Réserver une chambre d’hôtel",
+    "consigne": "Vous appelez un hôtel pour réserver une chambre. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Vous êtes en vacances les 10, 11 et 12 mars. Vous ne prenez pas le petit-déjeuner à l’hôtel.\nLe dialogue commence ainsi :\nEmployé : « Bonjour, hôtel du Soleil. Que puis-je faire pour vous ? »\nVous : « Bonjour. J’aimerais réserver une chambre pour deux nuits, s’il vous plaît. »",
+      "interlocuteur": "L’employé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour quelle date ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Du 10 au 12 mars, s’il vous plaît.",
+          "variantes": [
+            "Pour les nuits du 10 et du 11 mars."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "La chambre disponible est à 80 francs la nuit. Cela vous convient ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, cela me convient. Je la prends.",
+          "variantes": [
+            "Oui, c’est parfait, merci."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Souhaitez-vous le petit-déjeuner inclus ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non merci, je ne prends pas de petit-déjeuner.",
+          "variantes": [
+            "Non, je ne mange pas le matin."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’aurais besoin de votre courriel pour confirmer la réservation, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bien sûr : c’est samira.haddad@mail.ch. Merci et au revoir !",
+          "variantes": [
+            "Mon adresse est paul.martin@gmail.com."
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
   }
 ]

@@ -2939,5 +2939,339 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-ce-1",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série C · Programme d’activités",
+    "consigne": "Vous lisez un programme d’activités. Associez chaque document à la personne correspondante. Attention : il y a 8 personnes mais seulement 6 documents.",
+    "support": {
+      "titre": "Programme d’activités",
+      "texte": "Document 1\nLa discothèque Le Twist fête ses 10 ans ! Soirée spéciale avec DJ jusqu’à 1 heure du matin.\n\nDocument 2\nDimanche, grande brocante rue Martin : meubles, vêtements, jeux, tout à petits prix !\n\nDocument 3\nDécouverte de la ville à vélo avec des étudiants en histoire. Elle n’aura plus de secret pour vous !\n\nDocument 4\nLa bibliothèque vous invite à rencontrer Djamil Bendaoud, célèbre écrivain, pour parler de son dernier roman. Entrée gratuite, 15 heures.\n\nDocument 5\nCompétitions de basket-ball et de tennis ouvertes à tous, samedi, à la salle Agora. Inscription obligatoire.\n\nDocument 6\nGâteaux aux noix, crêpes au chocolat… Venez goûter nos spécialités locales au marché (place des Halles), samedi, 17 heures. Entrée libre.\n\nLes personnes :\nA. Antoine souhaite connaître la ville.\nB. Jordan est passionné de sport.\nC. Nicole adore danser.\nD. Claire a besoin d’une nouvelle table.\nE. Tatiana aime beaucoup lire.\nF. Chris voudrait profiter de la nature.\nG. Natalia adore faire les magasins.\nH. Thibaud est très gourmand.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Pour chaque document, écrivez la lettre de la personne correspondante (1 point par document).",
+        "type_reponse": "lignes",
+        "points": 6,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Document 1",
+            "reponse": "C. Nicole"
+          },
+          {
+            "label": "Document 2",
+            "reponse": "D. Claire"
+          },
+          {
+            "label": "Document 3",
+            "reponse": "A. Antoine"
+          },
+          {
+            "label": "Document 4",
+            "reponse": "E. Tatiana"
+          },
+          {
+            "label": "Document 5",
+            "reponse": "B. Jordan"
+          },
+          {
+            "label": "Document 6",
+            "reponse": "H. Thibaud"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-ce-2",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série C · Le courriel d’Amanda",
+    "consigne": "Lisez le courriel et répondez aux questions.",
+    "support": {
+      "titre": "Des nouvelles d’Amanda",
+      "texte": "Salut !\n\nComment vas-tu ? Moi, ça va très bien ! Je passe un bon moment à Cambo (c’est dans le sud de la France). Il n’y a pas trop de touristes et il fait beau. Mais la vie avec les autres jeunes, et surtout les activités du club, ce n’est pas toujours intéressant… Mes parents viennent me chercher dimanche et nous partons en Espagne voir mon grand frère, qui y travaille comme serveur depuis quelques mois. Je vais pouvoir manger des paellas et parler espagnol !\n\nEt toi ? N’oublie pas de me rapporter un cadeau ! On se voit fin août pour se montrer nos photos… et repartir à l’école ! J’ai trop envie d’entrer en classe de 3e !\n\nBises,\nAmanda",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Où est Amanda quand elle écrit son courriel ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "En France.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "En Belgique."
+          },
+          {
+            "id": "c",
+            "texte": "En Espagne."
+          }
+        ]
+      },
+      {
+        "enonce": "Pourquoi Amanda passe de bonnes vacances ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "La mer est chaude."
+          },
+          {
+            "id": "b",
+            "texte": "Il y a peu de monde.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Les activités sont super."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel est le métier du frère d’Amanda ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Il est serveur."
+      },
+      {
+        "enonce": "Qu’est-ce qu’Amanda vous demande à la fin de son courriel ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "De lui téléphoner."
+          },
+          {
+            "id": "b",
+            "texte": "De lui envoyer des photos."
+          },
+          {
+            "id": "c",
+            "texte": "De lui acheter quelque chose.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Que pense Amanda de la rentrée scolaire ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sc/ce2-content.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a2-sc/ce2-neutre.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sc/ce2-triste.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-ce-3",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série C · Recette et message",
+    "consigne": "Lisez les documents et répondez aux questions.",
+    "support": {
+      "titre": "Deux documents",
+      "texte": "Document 1 — Gâteau au chocolat\nPréchauffez le four 15 minutes à 180 degrés.\n– Mélangez les œufs (jaunes et blancs) avec le sucre, puis ajoutez le beurre.\n– Mettez la farine, puis tout doucement le lait.\n– Faites cuire le chocolat à feu doux et mélangez-le avec la préparation.\n– Surveillez la cuisson.\n– Piquez un couteau au bout de 35 minutes pour vérifier que le gâteau est cuit.\n\nDocument 2 — Message de Maria\nCoucou !\nAvant de partir, peux-tu donner à manger au chat ? Il a besoin de 2 cuillères de pâté, qui se trouve dans le frigo.\nIl faut aussi sortir la poubelle et mettre un nouveau sac (tu en trouveras dans le grand placard).\nAh, et n’oublie pas de fermer les volets des chambres à l’étage, à cause du soleil.\nBonne journée !\nMaria",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Comment il faut cuire le gâteau au chocolat ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Au four, à 180 degrés, environ 35 minutes."
+      },
+      {
+        "enonce": "Document 1 — Il faut ajouter la farine avant…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "le lait.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "les œufs."
+          },
+          {
+            "id": "c",
+            "texte": "le beurre."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Où se trouve le repas du chat ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans le frigo.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Dans le placard."
+          },
+          {
+            "id": "c",
+            "texte": "Dans la chambre."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Pourquoi il faut fermer les volets ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "À cause du soleil."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-ce-4",
+    "niveau": "A1-A2",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A2 · série C · Noël dans votre ville",
+    "consigne": "Lisez l’article. Répondez aux questions.",
+    "support": {
+      "titre": "Noël dans votre ville !",
+      "texte": "En décembre, il y a des spectacles de lumière et de musique. C’est gratuit ! Les spectacles ont lieu le vendredi et le samedi soir à 18 heures, devant la mairie. Pendant les vacances, les enfants de moins de 12 ans peuvent faire du patin à glace sur une patinoire, place Mitterrand. Les plus grands font du ski devant la grande roue.\n\nTous les jours à 17 heures, à la bibliothèque, les parents et les enfants écoutent des histoires. Les étudiants rendent visite aux personnes âgées qui sont seules à Noël.\n\nLe 17 décembre, le Père Noël arrive en traîneau pour ouvrir le marché de Noël. Les habitants achètent des cadeaux pour leur famille.",
+      "image": "a2-sc/ce4-marche-noel.webp"
+    },
+    "questions": [
+      {
+        "enonce": "Cet article s’adresse…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "aux habitants de la ville.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "seulement aux enfants de la ville."
+          },
+          {
+            "id": "c",
+            "texte": "aux employés de la mairie de la ville."
+          }
+        ]
+      },
+      {
+        "enonce": "Que pouvez-vous voir le vendredi soir à 18 heures ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un marché."
+          },
+          {
+            "id": "b",
+            "texte": "Un spectacle.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Une compétition."
+          }
+        ]
+      },
+      {
+        "enonce": "La ville ouvrira le marché de Noël le 17 décembre. Vrai ou faux ? Justifiez.",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Vrai : « Le 17 décembre, le Père Noël arrive en traîneau pour ouvrir le marché de Noël. »"
+      },
+      {
+        "enonce": "À qui est destinée la piste de ski ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Aux bébés."
+          },
+          {
+            "id": "b",
+            "texte": "Aux enfants de moins de 12 ans."
+          },
+          {
+            "id": "c",
+            "texte": "Aux jeunes plus âgés.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Que font les étudiants pendant les vacances de Noël ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Ils gardent des enfants."
+          },
+          {
+            "id": "b",
+            "texte": "Ils préparent des gâteaux."
+          },
+          {
+            "id": "c",
+            "texte": "Ils vont voir des personnes âgées.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

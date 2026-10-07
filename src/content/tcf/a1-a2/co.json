@@ -3204,5 +3204,383 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-co-1",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série C · Annonces publiques",
+    "consigne": "Vous écoutez des annonces publiques. Il y a 6 documents et 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sc/co1.mp3",
+      "transcription": "Document 1 — Les élèves de la cantine peuvent passer maintenant à la cuisine. Les desserts sont finalement arrivés, mais avec du retard. Pour nous excuser, vous pouvez prendre un dessert et aussi un fruit.\n\nDocument 2 — Chers passagers, le bus s’arrêtera à la prochaine station pour un contrôle du moteur. Vous êtes tous invités à descendre du bus et à prendre le suivant. Personne ne continue.\n\nDocument 3 — Ce soir, nous invitons tous les vacanciers à nous retrouver au bar de la plage. Un photographe professionnel proposera des portraits de famille avec les costumes de votre choix.\n\nDocument 4 — Les clients qui ont le ticket avec les numéros de 1 à 20 peuvent venir chercher leur cadeau au premier étage. Les autres vont recevoir un t-shirt de notre magasin.\n\nDocument 5 — Nous préparons déjà vos vacances d’hiver. Attention : à partir du 20 décembre, les horaires des trains vont changer. Vous pouvez déjà trouver les nouveaux horaires sur notre appli train.fr.\n\nDocument 6 — La salle de sport ouvrira seulement à partir de 13 h les lundi et mardi de cette semaine. Une entreprise viendra ces deux matins-là installer le nouveau matériel sportif."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — La cantine vous offre aujourd’hui un dessert et…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sc/co1-frites.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sc/co1-glace.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sc/co1-banane.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Au prochain arrêt, vous devrez…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "attendre."
+          },
+          {
+            "id": "b",
+            "texte": "descendre.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "marcher."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Pourquoi le bar propose de mettre des costumes ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Pour faire des photos (des portraits de famille)."
+      },
+      {
+        "enonce": "Document 4 — Vous avez le ticket numéro 30. Vous allez recevoir…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sc/co1-cadeau.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sc/co1-casquette.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sc/co1-tshirt.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 5 — Où peut-on trouver les nouveaux horaires ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Sur l’appli train.fr."
+      },
+      {
+        "enonce": "Document 6 — Vous pouvez venir dans votre salle de sport…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "à partir du mercredi."
+          },
+          {
+            "id": "b",
+            "texte": "le lundi et le mardi matin."
+          },
+          {
+            "id": "c",
+            "texte": "le lundi et le mardi après-midi.",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-co-2",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série C · À la radio",
+    "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sc/co2.mp3",
+      "transcription": "Document 1 — Grand projet pour la francophonie : vous allez fabriquer votre dictionnaire francophone ! Vous habitez dans un pays ou sur un continent francophone et vous utilisez des mots ou des expressions que les autres ne connaissent pas ? Envoyez vos exemples sur notre site internet.\n\nDocument 2 — Bonsoir. Aujourd’hui, nous recevons Mila, une élève du lycée qui a quitté son pays à cause de la guerre. Alors Mila, tu es ici parce que tu as écrit un petit livre qui raconte les premiers mois de ta vie chez nous.\n\nDocument 3 — Bonjour, nous sommes le 6 avril et c’est la Journée internationale du sport. Dans toute la région, on vous propose des activités sportives, parce que le sport est le symbole de la santé, mais aussi de la paix et de la solidarité."
+    },
+    "questions": [
+      {
+        "enonce": "Document 1 — Le document vous propose de participer à la rédaction de…",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Un dictionnaire francophone."
+      },
+      {
+        "enonce": "Document 1 — Vous pouvez envoyer au site de l’émission…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "votre vocabulaire francophone.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "une question sur la francophonie."
+          },
+          {
+            "id": "c",
+            "texte": "la description d’un pays francophone."
+          }
+        ]
+      },
+      {
+        "enonce": "Document 2 — Pourquoi Mila est interviewée ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Parce qu’elle a écrit un petit livre (sur ses premiers mois ici)."
+      },
+      {
+        "enonce": "Document 2 — Le journaliste veut parler avec Mila de…",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sc/co2-maison.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sc/co2-famille.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sc/co2-livre.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Le 6 avril est présenté comme la fête du sport…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "dans la ville."
+          },
+          {
+            "id": "b",
+            "texte": "dans la région."
+          },
+          {
+            "id": "c",
+            "texte": "dans le monde.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Document 3 — Le sport développe aussi le thème de…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "la paix.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "la beauté."
+          },
+          {
+            "id": "c",
+            "texte": "la performance."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-co-3",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série C · Le message de Myriam",
+    "consigne": "Vous écoutez ce message sur un répondeur téléphonique. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a2-sc/co3.mp3",
+      "transcription": "Salut Lisa, c’est Myriam. C’est bon, mes parents sont d’accord pour les vacances ! On peut passer deux semaines d’été chez mes cousins, au bord de la mer. Et en plus, ils veulent bien qu’on voyage seulement toutes les deux, pas de parents avec nous. Mon père va demain au guichet de la compagnie pour acheter les tickets de bus. Pour connaître l’heure exacte de départ, demande à tes parents de téléphoner chez moi ce soir. Rappelle-moi vite pour qu’on organise notre programme là-bas."
+    },
+    "questions": [
+      {
+        "enonce": "Myriam laisse un message à Lisa pour…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "demander un service."
+          },
+          {
+            "id": "b",
+            "texte": "donner une information.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "proposer un rendez-vous."
+          }
+        ]
+      },
+      {
+        "enonce": "Où les deux filles peuvent-elles se retrouver en été ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a2-sc/co3-montagne.webp"
+          },
+          {
+            "id": "b",
+            "image": "a2-sc/co3-piscine.webp"
+          },
+          {
+            "id": "c",
+            "image": "a2-sc/co3-plage.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Avec quel transport les filles vont partir en voyage ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "En bus."
+      },
+      {
+        "enonce": "Pourquoi Myriam est contente ? Les deux filles peuvent voyager…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "sans adulte.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "avec leurs parents."
+          },
+          {
+            "id": "c",
+            "texte": "avec un seul parent."
+          }
+        ]
+      },
+      {
+        "enonce": "Pourquoi les parents de Lisa doivent téléphoner à Myriam ?",
+        "type_reponse": "lignes",
+        "points": 1,
+        "nb_lignes": 1,
+        "reponse_modele": "Pour connaître l’heure exacte du départ."
+      },
+      {
+        "enonce": "Myriam demande à Lisa de lui téléphoner pour…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "connaître le programme."
+          },
+          {
+            "id": "b",
+            "texte": "préparer le programme.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "confirmer le programme."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a2-sc-co-4",
+    "niveau": "A1-A2",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A2 · série C · Quatre dialogues",
+    "consigne": "Écoutez les 4 dialogues. Il y a 2 écoutes. Associez chaque dialogue à la situation correspondante. Attention : il y a 6 situations mais seulement 4 dialogues.",
+    "support": {
+      "audio": "a2-sc/co4.mp3",
+      "transcription": "Dialogue 1 — Martin, tu me prêtes ton téléphone ? Je voudrais appeler ma sœur. — Mais Sophie, ta sœur est en vacances ? — Oui, à l’étranger. — Euh… Je n’ai plus de crédit et mon téléphone ne fonctionne plus.\n\nDialogue 2 — Maman, j’ai vraiment mal à la tête ce matin. — Mais tu as cours, et cet après-midi, tu as un devoir de maths. — Alors je vais au lycée à 13 heures. — C’est sûr ? — Mais maman, ne t’inquiète pas, c’est sûr.\n\nDialogue 3 — Paul, je ne viens pas en musique. Je n’ai rien préparé. — Écoute, Mehmet, le prof est sympa. — Oui, mais je n’ai rien fait. — Dis que tu as eu un problème familial, alors. — Ah oui, c’est une bonne excuse. Merci, Paul.\n\nDialogue 4 — Allô, mon chéri, tu as oublié notre déjeuner ! — Mamie, pardon, mais ce matin, le bus a eu un accident. — D’accord, mais le déjeuner ? — À midi, j’ai dû rester au lycée à cause de mon retard. — Préviens-moi la prochaine fois."
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez la lettre de la situation à côté de chaque dialogue.\nA. Conseiller — B. Promettre — C. Présenter quelqu’un — D. Refuser — E. Accepter — F. Raconter",
+        "type_reponse": "lignes",
+        "points": 7,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Dialogue 1 (1 point)",
+            "reponse": "D. Refuser"
+          },
+          {
+            "label": "Dialogue 2 (2 points)",
+            "reponse": "B. Promettre"
+          },
+          {
+            "label": "Dialogue 3 (2 points)",
+            "reponse": "A. Conseiller"
+          },
+          {
+            "label": "Dialogue 4 (2 points)",
+            "reponse": "F. Raconter"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
