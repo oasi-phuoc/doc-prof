@@ -7,6 +7,7 @@ import { DEFAULT_GAME_FONT_SIZE, gameFontSizeById, gameFontSizePx } from './font
 import { resolveGameImageSrc } from './image-resolve'
 import { resolveEntries } from './parse'
 import { isJeuxType } from './templates'
+import { VOCAB_IMAGE_THEMES } from './vocab-images'
 import type { GameBoard, GameCard, GameEntry, GamePanel, ScatterWord } from './types'
 
 export type JeuxBatch = {
@@ -99,6 +100,9 @@ function lotoThemeLabel(topicId?: string): { label: string; sub?: string } {
   if (!topicId || topicId === 'tous' || topicId === 'libre') {
     return { label: 'Loto', sub: 'Vocabulaire' }
   }
+  const folder = topicId.replace(/^(jeux|fr)-/, '')
+  const theme = VOCAB_IMAGE_THEMES.find((t) => t.id === folder)
+  if (theme) return { label: theme.label, sub: 'Vocabulaire' }
   const meta = VOCAB_TOPIC_META.find((t) => t.id === topicId)
   if (!meta) return { label: 'Loto', sub: 'Vocabulaire' }
   return { label: meta.label, sub: meta.vocab }
@@ -470,7 +474,7 @@ function buildIntrusFromTheme(
   // Mode libre déjà structuré : garder les 4 mots, re-tirer l’intrus.
   if (entries.some((e) => e.words && e.words.length > 0)) {
     const base = normalizeIntrusGroups(entries)
-    const outsiders = outsiderWordsFor(topicId ?? 'fr-nourriture', undefined, 80)
+    const outsiders = outsiderWordsFor(topicId ?? 'fruits', undefined, 80)
     return base.map((g) => {
       const used = new Set([...g.words, g.intrus].map((w) => w.toLowerCase()))
       const pool = shuffle(
@@ -486,7 +490,7 @@ function buildIntrusFromTheme(
   if (themeWords.length === 0) {
     return normalizeIntrusGroups(entries)
   }
-  const outsiders = outsiderWordsFor(topicId ?? 'fr-nourriture', undefined, 80)
+  const outsiders = outsiderWordsFor(topicId ?? 'fruits', undefined, 80)
   const themeSet = new Set(themeWords.map((w) => w.toLowerCase()))
   const outsiderPool = outsiders.filter((o) => !themeSet.has(o.toLowerCase()))
   const fallbackOutsiders = ['table', 'crayon', 'nuage', 'balai', 'valise', 'quai', 'fièvre', 'oreiller', 'janvier']

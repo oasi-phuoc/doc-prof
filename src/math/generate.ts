@@ -43,7 +43,6 @@ import { generateTcmReduireBatch } from './tcm-reduire'
 import { generateTcmEvaluerBatch } from './tcm-evaluer'
 import { generateTcmEquationsBatch } from './tcm-equations'
 import { tryGenerateFigure } from './figures-school'
-import { tryGenerateFrancaisBlock } from '@/francais/francais'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
 import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { tryGenerateMesure } from './mesures'
@@ -2662,24 +2661,6 @@ function buildSingleBlock(
       instruction: algebra.instruction ?? type?.instruction ?? 'Calculez.',
       items: algebra.items,
       givens: algebra.givens,
-    }
-  }
-  const francais = tryGenerateFrancaisBlock(config.exerciseType, config.count, rng, {
-    vocabRows: config.vocabRows,
-    vocabCols: config.vocabCols,
-    vocabSelected: config.vocabSelected,
-    vocabSubgroup: config.vocabSubgroup,
-    vocabCustomEntries: config.vocabCustomEntries,
-    vocabLineCh: config.vocabLineCh,
-    difficulty: config.difficulty,
-  })
-  if (francais) {
-    return {
-      title: fallbackTitle,
-      instruction: francais.instruction ?? type?.instruction ?? 'Complétez.',
-      items: francais.items,
-      document: francais.document,
-      bankQuestionCap: francais.bankQuestionCap,
     }
   }
   const jeux = tryGenerateJeuxBatch(config.exerciseType, rng, {

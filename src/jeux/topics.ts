@@ -1,6 +1,6 @@
-/** Thèmes Grilles de cartes = thèmes français avec banque Voc + mode Libre. */
+/** Thèmes Grilles de cartes = dossiers d’images Voc + mode Libre. */
 import type { Topic } from '@/math/types'
-import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
+import { VOCAB_IMAGE_THEMES } from './vocab-images'
 
 export const JEUX_LIBRE_TOPIC = 'jeux-libre'
 
@@ -11,14 +11,14 @@ export function jeuxTopicIdFromFr(frTopicId: string): string {
   return `${JEUX_TOPIC_PREFIX}${frTopicId.replace(/^fr-/, '')}`
 }
 
-/** `jeux-famille` → `fr-famille` ; libre → undefined. */
+/** `jeux-fruits` → `fruits` (dossier d’images) ; libre → undefined. */
 export function frTopicFromJeuxTopic(jeuxTopic: string): string | undefined {
   if (!jeuxTopic || jeuxTopic === JEUX_LIBRE_TOPIC) return undefined
-  if (jeuxTopic.startsWith('fr-')) return jeuxTopic
+  if (jeuxTopic.startsWith('fr-')) return jeuxTopic.slice(3)
   if (jeuxTopic.startsWith(JEUX_TOPIC_PREFIX)) {
-    return `fr-${jeuxTopic.slice(JEUX_TOPIC_PREFIX.length)}`
+    return jeuxTopic.slice(JEUX_TOPIC_PREFIX.length)
   }
-  return undefined
+  return jeuxTopic
 }
 
 export function isJeuxTopicId(topic: string): boolean {
@@ -29,12 +29,12 @@ export function isJeuxLibreTopic(topic: string): boolean {
   return topic === JEUX_LIBRE_TOPIC
 }
 
-/** Thèmes avec lexique (Invitation / Quotidien / Travail exclus s’ils sont vides). */
+/** Un thème par dossier d’images Voc. */
 export const jeuxTopicsFromFr: Topic[] = [
-  ...VOCAB_TOPIC_BANKS.map((meta) => ({
-    id: jeuxTopicIdFromFr(meta.id),
-    label: meta.label,
+  ...VOCAB_IMAGE_THEMES.map((theme) => ({
+    id: jeuxTopicIdFromFr(theme.id),
+    label: theme.label,
     domain: 'jeux' as const,
-  })).sort((a, b) => a.label.localeCompare(b.label, 'fr')),
+  })),
   { id: JEUX_LIBRE_TOPIC, label: 'Libre', domain: 'jeux' },
 ]

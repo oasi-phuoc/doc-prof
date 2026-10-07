@@ -1,6 +1,4 @@
-/** Banques mots/images pour les fiches-jeux (thème FR + lecture). */
-import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
-import { vocabLearnWordsFor, vocabSubgroupsFor } from '@/francais/vocab-learn'
+/** Banques mots/images pour les fiches-jeux (dossiers Voc + lecture). */
 import { createRng, shuffle } from '@/math/rng'
 import { cluesForWord } from './clues'
 import { resolveGameImageSrc } from './image-resolve'
@@ -8,6 +6,7 @@ import { LECTURE_WORDS_BY_TOPIC, lectureWordsForTopic, type LectureWord } from '
 import { entriesToText } from './parse'
 import { templateFor } from './templates'
 import type { GameEntry } from './types'
+import { VOCAB_IMAGE_THEMES } from './vocab-images'
 
 export type GameSource = 'theme' | 'lecture' | 'libre'
 
@@ -24,29 +23,26 @@ export function isGameBankType(typeId: string): boolean {
   )
 }
 
-/** Thème FR par défaut (beaucoup d’images vocab + lecture). */
-export const DEFAULT_GAME_TOPIC = 'fr-nourriture'
+/** Thème d’images Voc par défaut. */
+export const DEFAULT_GAME_TOPIC = 'fruits'
 
-export function themeBankItems(topicId: string, subgroupId?: string): BankItem[] {
-  const byLabel = new Map<string, BankItem>()
-  for (const w of vocabLearnWordsFor(topicId, subgroupId)) {
-    byLabel.set(w.label.toLowerCase(), {
-      id: w.id,
+function folderId(topicId: string): string {
+  return topicId.replace(/^jeux-/, '').replace(/^fr-/, '')
+}
+
+export function themeBankItems(topicId: string): BankItem[] {
+  const id = folderId(topicId)
+  const theme =
+    VOCAB_IMAGE_THEMES.find((t) => t.id === id) ??
+    VOCAB_IMAGE_THEMES.find((t) => t.id === DEFAULT_GAME_TOPIC)
+  if (!theme) return []
+  return theme.words
+    .map((w) => ({
+      id: `img-${theme.id}-${w.label}`,
       label: w.label,
-      imageSrc: resolveGameImageSrc(w.label, w.imageSrc),
-    })
-  }
-  // Images lecture en secours pour les libellés déjà dans la liste uniquement.
-  // Ne pas ajouter d’autres mots lecture (sinon Fruits affiche aussi Légumes, etc.).
-  for (const w of lectureWordsForTopic(topicId)) {
-    const key = w.label.toLowerCase()
-    const prev = byLabel.get(key)
-    if (!prev) continue
-    if (!prev.imageSrc && w.imageSrc) {
-      byLabel.set(key, { ...prev, imageSrc: resolveGameImageSrc(w.label, w.imageSrc) })
-    }
-  }
-  return [...byLabel.values()].sort((a, b) => a.label.localeCompare(b.label, 'fr'))
+      imageSrc: w.src,
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr'))
 }
 
 export function lectureBankItems(topicId?: string): BankItem[] {
@@ -58,24 +54,14 @@ export function lectureBankItems(topicId?: string): BankItem[] {
 }
 
 export function lectureTopicOptions(): Array<{ id: string; label: string }> {
-  const labelFor = (id: string) =>
-    id === 'autres'
-      ? 'Autres'
-      : (VOCAB_TOPIC_META.find((t) => t.id === id)?.label ?? id.replace(/^fr-/, ''))
-  const topicIds = Object.keys(LECTURE_WORDS_BY_TOPIC).filter((id) => id !== 'autres')
+  const labelFor = (id: string) => VOCAB_IMAGE_THEMES.find((t) => t.id === id)?.label ?? id
+  const topicIds = Object.keys(LECTURE_WORDS_BY_TOPIC)
   topicIds.sort((a, b) => labelFor(a).localeCompare(labelFor(b), 'fr'))
-  return [
-    { id: 'tous', label: 'Tous les mots' },
-    ...topicIds.map((id) => ({ id, label: labelFor(id) })),
-    ...(LECTURE_WORDS_BY_TOPIC.autres?.length ? [{ id: 'autres', label: 'Autres' }] : []),
-  ]
+  return [{ id: 'tous', label: 'Tous les mots' }, ...topicIds.map((id) => ({ id, label: labelFor(id) }))]
 }
 
 export function themeTopicOptions(): Array<{ id: string; label: string }> {
-  return VOCAB_TOPIC_META.filter((t) => t.subgroups.length > 0).map((t) => ({
-    id: t.id,
-    label: t.label,
-  }))
+  return VOCAB_IMAGE_THEMES.map((t) => ({ id: t.id, label: t.label }))
 }
 
 export function padGameEntries(entries: GameEntry[], count: number): GameEntry[] {
@@ -121,12 +107,10 @@ export function defaultThemeGameContent(
   const tpl = templateFor(typeId)
   const count = tpl?.entryCount ?? 12
   const topic = frTopicId?.trim() || DEFAULT_GAME_TOPIC
-  const subgroup = vocabSubgroupsFor(topic)[0]?.id
-  const items = themeBankItems(topic, subgroup)
+  const items = themeBankItems(topic)
   const picked = items.slice(0, Math.min(count, items.length))
   const gameEntries = entriesFromBankItems(picked, picked.length, undefined, {
     topicId: topic,
-    subgroupId: subgroup,
     withClues: typeId === 'jeux-devinettes',
   })
   return {
@@ -188,26 +172,7 @@ export function reshuffleGameContent(
     return customIds.includes(key) && e.text.trim()
   })
 
-  let subgroup: string | undefined
-  let items: BankItem[]
-  if (source === 'lecture') {
-    items = lectureBankItems(topic)
-  } else {
-    const groups = vocabSubgroupsFor(topic)
-    let bestId = groups[0]?.id
-    let bestHit = -1
-    for (const g of groups) {
-      const bank = themeBankItems(topic, g.id)
-      const ids = new Set(bank.map((b) => b.id))
-      const hit = (current.gameSelectedIds ?? []).filter((id) => ids.has(id)).length
-      if (hit > bestHit) {
-        bestHit = hit
-        bestId = g.id
-      }
-    }
-    subgroup = bestId
-    items = themeBankItems(topic, subgroup)
-  }
+  const items: BankItem[] = source === 'lecture' ? lectureBankItems(topic) : themeBankItems(topic)
 
   const room = Math.max(0, maxCards - customEntries.length)
   const want = Math.min(room, items.length)
@@ -217,7 +182,6 @@ export function reshuffleGameContent(
   const picked = shuffle(rng, [...items]).slice(0, take)
   const bankEntries = entriesFromBankItems(picked, picked.length, current.gameEntries, {
     topicId: topic,
-    subgroupId: subgroup,
     withClues,
   })
   const gameEntries = [...bankEntries, ...customEntries]

@@ -10,7 +10,6 @@ export type AccessAccount = 'admin' | 'full' | 'partial'
 
 /** Domaines « normales » (hors TCM réservé admin). */
 export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
-  { id: 'français', label: 'Français' },
   { id: 'algèbre', label: 'Algèbre' },
   { id: 'géométrie', label: 'Géométrie' },
   { id: 'gattegno', label: 'Gattegno' },

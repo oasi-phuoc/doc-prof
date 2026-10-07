@@ -1,5 +1,4 @@
 import { useId, useMemo, useRef, useState } from 'react'
-import { vocabSubgroupsFor } from '@/francais/vocab-learn'
 import {
   DEFAULT_GAME_TOPIC,
   entriesFromBankItems,
@@ -375,21 +374,17 @@ export function GameContentPanel({
   const baseId = useId()
   const fileRefs = useRef<Array<HTMLInputElement | null>>([])
   const [error, setError] = useState<string | null>(null)
-  const [subgroup, setSubgroup] = useState<string | undefined>()
   const withImages = templateHasImages(template)
   const bankMode = isGameBankType(typeId) && withImages
   const source = gameSource ?? 'theme'
   const topicId = gameTopic ?? DEFAULT_GAME_TOPIC
   const maxCards = template.entryCount
 
-  const themeSubgroups = useMemo(() => vocabSubgroupsFor(topicId), [topicId])
-  const activeSubgroup = subgroup ?? themeSubgroups[0]?.id
-
   const bankItems: BankItem[] = useMemo(() => {
-    if (source === 'theme') return themeBankItems(topicId, activeSubgroup)
+    if (source === 'theme') return themeBankItems(topicId)
     if (source === 'lecture') return lectureBankItems(topicId)
     return []
-  }, [source, topicId, activeSubgroup])
+  }, [source, topicId])
 
   const selectedIds = gameSelectedIds ?? []
   const topicOptions = source === 'lecture' ? lectureTopicOptions() : themeTopicOptions()
@@ -451,7 +446,6 @@ export function GameContentPanel({
     const nextEntries = [
       ...entriesFromBankItems(bankPicked, bankPicked.length, resolveEntries(typeId, entries), {
         topicId,
-        subgroupId: activeSubgroup,
         withClues: typeId === 'jeux-devinettes',
       }),
       ...customEntries,
@@ -570,7 +564,7 @@ export function GameContentPanel({
     const nextTopic = topicId === 'tous' && next === 'theme' ? DEFAULT_GAME_TOPIC : topicId
     const items =
       next === 'theme'
-        ? themeBankItems(nextTopic, vocabSubgroupsFor(nextTopic)[0]?.id)
+        ? themeBankItems(nextTopic)
         : lectureBankItems(nextTopic === 'tous' ? 'tous' : nextTopic)
     const defaults = items.slice(0, maxCards)
     applySelection(
@@ -627,31 +621,6 @@ export function GameContentPanel({
               {topicOptions.map((t) => (
                 <option key={t.id} value={t.id}>
                   {t.label}
-                </option>
-              ))}
-            </select>
-          </label>
-        ) : null}
-
-        {source === 'theme' && themeSubgroups.length > 1 ? (
-          <label className="select-shell">
-            <span>Liste</span>
-            <select
-              className="pill-input"
-              value={activeSubgroup ?? ''}
-              onChange={(event) => {
-                const sg = event.target.value
-                setSubgroup(sg)
-                const items = themeBankItems(topicId, sg)
-                applySelection(
-                  items.slice(0, maxCards).map((w) => w.id),
-                  items,
-                )
-              }}
-            >
-              {themeSubgroups.map((g) => (
-                <option key={g.id} value={g.id}>
-                  {g.label}
                 </option>
               ))}
             </select>

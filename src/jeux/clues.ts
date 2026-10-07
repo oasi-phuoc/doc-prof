@@ -5,6 +5,7 @@
 import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
 import { vocabLearnWordsFor, vocabSubgroupsFor } from '@/francais/vocab-learn'
+import { VOCAB_IMAGE_THEMES } from './vocab-images'
 
 const CATEGORY_LEAK =
   /\b(fruit|fruits|légume|légumes|animal|animaux|couleur|couleurs|vêtement|vêtements|métier|métiers|boisson|boissons|meuble|meubles|sport|sports|moyen de transport|transports?)\b/gi
@@ -122,6 +123,13 @@ export function outsiderWordsFor(
   subgroupId: string | undefined,
   limit = 40,
 ): string[] {
+  const folder = topicId.replace(/^(jeux|fr)-/, '')
+  if (VOCAB_IMAGE_THEMES.some((t) => t.id === folder)) {
+    const pool = VOCAB_IMAGE_THEMES.filter((t) => t.id !== folder && t.id !== 'autre').flatMap((t) =>
+      t.words.map((w) => w.label),
+    )
+    return [...new Set(pool)].slice(0, limit)
+  }
   const groups = vocabSubgroupsFor(topicId)
   const others = groups.filter((g) => g.id !== subgroupId)
   const words = (others.length ? others : groups).flatMap((g) => g.words.map((w) => w.label))

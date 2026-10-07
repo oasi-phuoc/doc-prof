@@ -1,7 +1,5 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import { SOUTIEN_KINDS } from '@/francais/soutien/kinds'
-import { GRAMMAR_THEORY_BY_TOPIC } from '@/francais/grammar-theory-banks'
-import { VOCAB_TOPIC_META } from '@/francais/vocab-registry'
 import { defaultCalliText } from '@/calligraphie/defaults'
 import { DEFAULT_CALLI_FONT, DEFAULT_CALLI_SIZE } from '@/calligraphie/fonts'
 import { CALLI_LIBRE_TOPIC, calligraphieTopics as calliTopicList } from '@/calligraphie/topics'
@@ -10,21 +8,7 @@ import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
 import { TCF_EXERCISE_TYPES, TCF_TOPICS } from '@/tcf/catalog'
 
-export const FRENCH_TRACKS: Array<{ id: FrenchTrack; label: string }> = [
-  { id: 'voc', label: 'Voc' },
-  { id: 'gram', label: 'Gram' },
-  { id: 'com', label: 'Com' },
-]
-
-/** Thèmes français (libellés sans déterminant, ordre alpha). */
-const FRENCH_TOPIC_ENTRIES: Topic[] = VOCAB_TOPIC_META.map((meta) => ({
-  id: meta.id,
-  label: meta.label,
-  domain: 'français' as const,
-}))
-
 export const topics: Topic[] = [
-  ...FRENCH_TOPIC_ENTRIES,
   { id: 'tcm-info', label: 'Informations', domain: 'tcm' },
   ...TCF_TOPICS,
   { id: 'glossaire-algebre', label: 'Glossaire', domain: 'algèbre' },
@@ -83,7 +67,6 @@ export const topics: Topic[] = [
 ]
 
 export const topicById = Object.fromEntries(topics.map((topic) => [topic.id, topic])) as Record<string, Topic>
-export const frenchTopics = topics.filter((topic) => topic.domain === 'français')
 export const algebraTopics = topics.filter((topic) => topic.domain === 'algèbre')
 export const geometryTopics = topics.filter((topic) => topic.domain === 'géométrie')
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
@@ -869,186 +852,6 @@ for (const v of SOUTIEN_VOWELS) {
   }
 }
 
-const FRENCH_THEMES: Array<{ id: string; grammar: string; vocab: string }> = VOCAB_TOPIC_META.map(
-  (meta) => ({ id: meta.id, grammar: meta.grammar, vocab: meta.vocab }),
-)
-
-const FRENCH_KINDS: Array<{
-  suffix: string
-  track: FrenchTrack
-  label: string
-  description: (theme: (typeof FRENCH_THEMES)[number]) => string
-  instruction: string
-  visual: ExerciseType['visual']
-}> = [
-  {
-    suffix: 'voc-mots',
-    track: 'voc',
-    label: 'Mots à apprendre',
-    description: (theme) => `Tableau image + mot pour mémoriser le lexique (${theme.vocab}).`,
-    instruction: 'Observez les images et apprenez les mots.',
-    visual: 'texte',
-  },
-  {
-    suffix: 'voc-assoc-image',
-    track: 'voc',
-    label: 'Association mot–image',
-    description: (theme) => `Relier chaque image au mot (${theme.vocab}).`,
-    instruction: 'Reliez chaque image au bon mot.',
-    visual: 'ligne',
-  },
-  {
-    suffix: 'voc-assoc-def',
-    track: 'voc',
-    label: 'Association mot–définition',
-    description: (theme) => `Relier chaque définition au mot (${theme.vocab}).`,
-    instruction: 'Reliez chaque définition au bon mot.',
-    visual: 'ligne',
-  },
-  {
-    suffix: 'voc-qcm-def',
-    track: 'voc',
-    label: 'QCM définition',
-    description: (theme) => `Choisir le mot qui correspond à la définition (${theme.vocab}).`,
-    instruction: 'Lisez la définition. Choisissez le bon mot.',
-    visual: 'ligne',
-  },
-  {
-    suffix: 'voc-trous',
-    track: 'voc',
-    label: 'Texte à trous',
-    description: (theme) => `Compléter la phrase avec le bon mot (${theme.vocab}).`,
-    instruction: 'Complétez chaque phrase avec le bon mot.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'voc-def-ecrire',
-    track: 'voc',
-    label: 'Mot d’après la définition',
-    description: (theme) => `Écrire le mot correspondant à la définition (${theme.vocab}).`,
-    instruction: 'Lisez la définition. Écrivez le mot.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'voc-phrase',
-    track: 'voc',
-    label: 'Utiliser le mot dans une phrase',
-    description: (theme) => `Produire une phrase avec chaque mot (${theme.vocab}).`,
-    instruction: 'Écrivez une phrase avec chaque mot.',
-    visual: 'texte',
-  },
-  {
-    suffix: 'voc-dictee',
-    track: 'voc',
-    label: 'Dictée',
-    description: (theme) => `Écrire le mot ou la phrase dictée (${theme.vocab}).`,
-    instruction: 'Écoutez. Écrivez le mot ou la phrase dictée.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'voc-syllabes',
-    track: 'voc',
-    label: 'Syllabes',
-    description: (theme) => `Reconstituer le mot à partir des syllabes (${theme.vocab}).`,
-    instruction: 'Remettez les syllabes dans l’ordre pour former le mot.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'voc-syn-ant',
-    track: 'voc',
-    label: 'Synonyme / antonyme',
-    description: (theme) => `Donner un synonyme ou un antonyme quand c’est possible (${theme.vocab}).`,
-    instruction: 'Donnez le synonyme ou l’antonyme demandé.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'voc-genre',
-    track: 'voc',
-    label: 'Masculin / féminin',
-    description: (theme) => `Écrire la forme masculine ou féminine quand c’est possible (${theme.vocab}).`,
-    instruction: 'Écrivez la forme masculine ou féminine demandée.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'gram-trous',
-    track: 'gram',
-    label: 'Texte à trous',
-    description: (theme) => `Compléter la forme grammaticale : ${theme.grammar}.`,
-    instruction: 'Complétez la phrase.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'gram-conjuguer',
-    track: 'gram',
-    label: 'Conjuguer',
-    description: (theme) => `Conjuguer selon le point de la fiche : ${theme.grammar}.`,
-    instruction: 'Conjuguez le verbe entre parenthèses.',
-    visual: 'trou',
-  },
-  {
-    suffix: 'gram-choisir',
-    track: 'gram',
-    label: 'Choisir la forme',
-    description: (theme) => `Choisir la forme correcte : ${theme.grammar}.`,
-    instruction: 'Choisissez la forme correcte.',
-    visual: 'ligne',
-  },
-  {
-    suffix: 'com-orale',
-    track: 'com',
-    label: 'Compréhension orale',
-    description: () =>
-      'Écouter un enregistrement du thème (même audios que le soutien scolaire), puis répondre aux QCM. Pastille pour texte libre ou images si disponibles. Transcription au corrigé.',
-    instruction: 'Écoutez l’enregistrement. Répondez aux questions.',
-    visual: 'ligne',
-  },
-  {
-    suffix: 'com-ecrite',
-    track: 'com',
-    label: 'Compréhension écrite',
-    description: () => 'Lire un texte du thème, puis répondre uniquement aux QCM.',
-    instruction: 'Lisez le texte. Répondez aux questions.',
-    visual: 'ligne',
-  },
-  {
-    suffix: 'com-dialogue',
-    track: 'com',
-    label: 'Dialogue à compléter',
-    description: () => 'Réemployer le thème dans un échange guidé.',
-    instruction: 'Complétez le dialogue.',
-    visual: 'trou',
-  },
-]
-
-for (const theme of FRENCH_THEMES) {
-  // Théories en tête de la piste Gram (avant Texte à trous).
-  const theories = GRAMMAR_THEORY_BY_TOPIC[theme.id] ?? []
-  for (const theory of theories) {
-    const multi = theories.length > 1
-    const label = multi ? `Théorie ${theory.index} — ${theory.title}` : `Théorie — ${theory.title}`
-    const description = `Fiche de théorie grammaticale : ${theory.title} (${theme.grammar}).`
-    exerciseTypes.push(
-      t(
-        `${theme.id}-gram-theorie-${theory.index}`,
-        theme.id,
-        label,
-        description,
-        'Lisez la théorie.',
-        'texte',
-        { preferredColumns: 1, track: 'gram' },
-      ),
-    )
-  }
-  for (const kind of FRENCH_KINDS) {
-    exerciseTypes.push(
-      t(`${theme.id}-${kind.suffix}`, theme.id, kind.label, kind.description(theme), kind.instruction, kind.visual, {
-        preferredColumns: 1,
-        track: kind.track,
-      }),
-    )
-  }
-}
-
 const PHRASE_THEMES = [
   { topic: 'phrase-simple', label: 'Simple' },
   { topic: 'phrase-negation', label: 'Négation simple' },
@@ -1158,16 +961,13 @@ export function isDraftPadExercise(typeId: string): boolean {
 
 export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack): ExerciseType {
   if (topic) {
-    const preferred = domain === 'français' ? (track ?? 'voc') : track
-    const list = typesForTopic(topic, preferred)
+    const list = typesForTopic(topic, track)
     if (list[0]) return list[0]
     const any = typesForTopic(topic)
     if (any[0]) return any[0]
   }
   const fallbackTopic =
-    domain === 'français'
-      ? 'fr-presenter'
-      : domain === 'algèbre' || domain === 'tcm'
+    domain === 'algèbre' || domain === 'tcm' || domain === 'français'
         ? 'addition'
         : domain === 'géométrie'
           ? 'aires'
@@ -1192,11 +992,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
       ? 1
       : domain === 'lecture' || domain === 'soutien-fr' || domain === 'gattegno'
         ? 6
-        : domain === 'français'
-          ? type.track === 'com'
-            ? 4
-            : 6
-          : isDraftPadExercise(type.id)
+        : isDraftPadExercise(type.id)
             ? 2
             : 8
   const gameEntries = domain === 'jeux' ? defaultEntriesFor(type.id) : undefined

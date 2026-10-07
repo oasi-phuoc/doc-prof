@@ -41,8 +41,6 @@ import {
   defaultPage,
   exerciseTypeById,
   firstTypeFor,
-  FRENCH_TRACKS,
-  frenchTopics,
   geometryTopics,
   isDraftPadExercise,
   isQuadExercise,
@@ -204,7 +202,6 @@ import type {
   Domain,
   ExerciseBlock,
   ExerciseType,
-  FrenchTrack,
   PageConfig,
   PhraseVerbGroup,
   PreviewMode,
@@ -1615,9 +1612,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     return related.length > 0 ? related : null
   }, [activePage.domain, worksheets, pageIndex])
   const available =
-    activePage.domain === 'français'
-      ? frenchTopics
-      : activePage.domain === 'algèbre'
+    activePage.domain === 'algèbre'
         ? algebraTopics
         : activePage.domain === 'géométrie'
           ? geometryTopics
@@ -2511,11 +2506,6 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     updatePage({ topic, ...applyType(type) })
   }
 
-  function changeTrack(track: FrenchTrack) {
-    const type = typesForTopic(activeBlock.topic, track)[0] ?? firstTypeFor('français', activeBlock.topic, track)
-    updatePage({ track, ...applyType(type, activeBlock) })
-  }
-
   function generate() {
     const nextSeed = randomSeed()
     setSeed(nextSeed)
@@ -2946,23 +2936,6 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   onChangeItems={(phraseItems) => updatePage({ phraseItems })}
                   onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
                 />
-              ) : null}
-              {activePage.domain === 'français' ? (
-                <div className="mode-toggle-block">
-                  <b>Voc · Gram · Com</b>
-                  <div className="mode-toggle is-3" role="group" aria-label="Vocabulaire, grammaire ou communication">
-                    {FRENCH_TRACKS.map((track) => (
-                      <button
-                        key={track.id}
-                        type="button"
-                        className={(activeBlock.track ?? 'voc') === track.id ? 'active' : ''}
-                        onClick={() => changeTrack(track.id)}
-                      >
-                        {track.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
               ) : null}
               {isTcm ? null : (
               <SelectBox
