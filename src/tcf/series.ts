@@ -335,6 +335,12 @@ export const TCF_SERIES: readonly TcfSerie[] = [
     niveau: 'A0-A1',
     exercices: [...prepIds('tcf-a1-tpb-', 4, 'co'), ...prepIds('tcf-a1-tpb-', 4, 'ce'), ...prepIds('tcf-a1-tpb-', 3, 'pe')],
   },
+  {
+    id: 'a1-scolaire-sem1-2024',
+    label: 'TCF A1.1-A1 scolaire · semestre 1 2024-2025 (sans oral)',
+    niveau: 'A0-A1',
+    exercices: [...prepIds('tcf-a1-sem1-', 4, 'co'), ...prepIds('tcf-a1-sem1-', 4, 'ce'), ...prepIds('tcf-a1-sem1-', 4, 'pe')],
+  },
   ...prepA1Series(3, 4),
   ...prepA1Series(4, 5),
   prepA2Serie(1),

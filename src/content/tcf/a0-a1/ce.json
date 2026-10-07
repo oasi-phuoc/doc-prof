@@ -3497,5 +3497,268 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Les règles de l’école",
+    "consigne": "Regardez les pictogrammes. Écrivez le numéro du pictogramme à côté de chaque phrase.",
+    "support": {
+      "titre": "Les pictogrammes de l’école",
+      "texte": "Observez les 5 pictogrammes numérotés.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez le numéro du pictogramme qui correspond à chaque phrase (1 point par phrase).",
+        "type_reponse": "lignes",
+        "points": 5,
+        "nb_lignes": 0,
+        "tableau": [
+          {
+            "label": "Porter des tenues adaptées",
+            "reponse": "4"
+          },
+          {
+            "label": "Manger dans les zones autorisées",
+            "reponse": "3"
+          },
+          {
+            "label": "Laisser la salle de classe en ordre",
+            "reponse": "2"
+          },
+          {
+            "label": "Sortir du bâtiment par ici",
+            "reponse": "5"
+          },
+          {
+            "label": "Ne pas jeter les déchets dans les toilettes",
+            "reponse": "1"
+          }
+        ],
+        "image": "a1-sem1/ce1-pictogrammes.webp"
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · L’invitation de Jules",
+    "consigne": "Tu es à l’école en Suisse. Un ami te donne une invitation. Lisez l’invitation et répondez aux questions.",
+    "support": {
+      "titre": "Invitation",
+      "texte": "Bonjour,\n\nC’est mon dernier jour dans cette école. Je t’invite à une fête chez moi, dimanche 24 juin à 14 h 30. On va se déguiser, se maquiller, danser et chanter. On va manger des glaces et des bonbons. Toi, tu peux apporter un jus de fruits.\n\nÀ dimanche !\n\nJules",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "À quelle heure est la fête ?",
+        "type_reponse": "qcm_image",
+        "points": 3,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-sem1/ce2-14h30.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-sem1/ce2-12h30.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-sem1/ce2-15h30.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que tu vas faire à la fête ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-sem1/ce2-football.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-sem1/ce2-danse.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-sem1/ce2-cartes.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Qu’est-ce que tu peux apporter à la fête ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-sem1/ce2-tarte.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-sem1/ce2-bonbons.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-sem1/ce2-jus.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Qui écrit la lettre d’invitation ?",
+        "type_reponse": "qcm_texte",
+        "points": 3,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "La maîtresse de classe."
+          },
+          {
+            "id": "b",
+            "texte": "La maman de Jules."
+          },
+          {
+            "id": "c",
+            "texte": "Un ami de classe.",
+            "correct": true
+          },
+          {
+            "id": "d",
+            "texte": "Le responsable de l’école."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · La carte postale de Célia",
+    "consigne": "Vous êtes en vacances. Vous recevez une carte postale à la maison. Lisez le message de Célia et répondez aux questions.",
+    "support": {
+      "titre": "Vacances chez ma tante",
+      "texte": "Aujourd’hui : je vais à la piscine.\nDemain : je marche dans la forêt.\nJeudi : je vais au restaurant.\n\nJe t’appelle après mes vacances !\nBisous,\nCélia",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Qu’est-ce que Célia fait aujourd’hui ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-sem1/ce3-parc-attractions.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-sem1/ce3-piscine.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-sem1/ce3-plage.webp"
+          }
+        ]
+      },
+      {
+        "enonce": "Chez qui va Célia pendant les vacances ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Chez sa tante."
+      },
+      {
+        "enonce": "Où va Célia jeudi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-sem1/ce3-foret.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-sem1/ce3-kayak.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-sem1/ce3-restaurant.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Célia veut…",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "te téléphoner.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "t’inviter chez elle."
+          },
+          {
+            "id": "c",
+            "texte": "te faire un cadeau."
+          },
+          {
+            "id": "d",
+            "texte": "t’emmener au cinéma."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · La promenade en montagne",
+    "consigne": "Vous allez faire une promenade en montagne. Lisez la liste et retrouvez les objets.",
+    "support": {
+      "titre": "Ma liste",
+      "texte": "J’ai besoin…\n– de chaussures ;\n– d’un sac à dos ;\n– de lunettes de soleil ;\n– d’une bouteille d’eau.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Écrivez les numéros des 4 objets de la liste (1 point par objet).",
+        "type_reponse": "lignes",
+        "points": 4,
+        "nb_lignes": 1,
+        "reponse_modele": "6 (chaussures), 11 (sacs à dos), 10 (lunettes de soleil), 3 (bouteille d’eau).",
+        "image": "a1-sem1/ce4-objets.webp"
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

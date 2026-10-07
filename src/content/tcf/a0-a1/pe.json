@@ -918,5 +918,146 @@
     },
     "questions": [],
     "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a1-sem1-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Cours de natation à Sion",
+    "consigne": "Vous vous inscrivez à un cours de natation à la piscine de Sion. Remplissez le formulaire.",
+    "points": 9,
+    "support": {
+      "titre": "École de natation — Bulletin d’inscription",
+      "champs": [
+        {
+          "label": "Nom et prénom :",
+          "type": "texte",
+          "corrige": "Réponse personnelle (nom et prénom)"
+        },
+        {
+          "label": "Rue et numéro :",
+          "type": "texte",
+          "corrige": "Une rue et un numéro (ex. : rue du Rhône 12)"
+        },
+        {
+          "label": "Code postal :",
+          "type": "texte",
+          "corrige": "Un code postal suisse à 4 chiffres (ex. : 1950)"
+        },
+        {
+          "label": "Localité :",
+          "type": "texte",
+          "corrige": "Une ville ou un village (ex. : Sion)"
+        },
+        {
+          "label": "Date de naissance :",
+          "type": "date",
+          "corrige": "Une date cohérente (ex. : 12.03.2010)"
+        },
+        {
+          "label": "Nationalité :",
+          "type": "texte",
+          "corrige": "Une nationalité (ex. : afghane, érythréenne), pas le nom du pays"
+        },
+        {
+          "label": "Téléphone :",
+          "type": "texte",
+          "corrige": "Ex. : 079 123 45 67"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Barème : 9 points (1 point par champ correct ; 2 points supplémentaires pour l’orthographe et la cohérence de l’ensemble)."
+  },
+  {
+    "id": "tcf-a1-sem1-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "image_question",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Mon week-end",
+    "consigne": "Vous écrivez à un ami. Vous lui parlez des 5 choses que vous aimez faire le week-end. Vous pouvez vous aider de l’image.",
+    "points": 5,
+    "support": {
+      "image": "a1-sem1/pe2-activites.webp",
+      "consigne": "Écrivez à un ami. Commencez par « Salut, » et écrivez 5 choses que vous aimez faire le week-end (une par ligne).",
+      "nb_mots": {
+        "min": 15,
+        "max": 40
+      },
+      "reponse_modele": "Salut,\nLe week-end, j’aime :\n– dormir tard ;\n– faire du sport avec mes amis ;\n– aller au cinéma ;\n– cuisiner avec ma famille ;\n– me promener en ville.\nÀ bientôt !"
+    },
+    "questions": [],
+    "consigne_supplementaire": "Barème : 1 point par activité correcte et compréhensible (5 points)."
+  },
+  {
+    "id": "tcf-a1-sem1-pe-3",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "image_question",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Au magasin de vêtements",
+    "consigne": "Vous allez dans un magasin de vêtements. Vous achetez des habits.",
+    "points": 5,
+    "support": {
+      "image": "a1-sem1/pe3-magasin.webp",
+      "consigne": "Qu’est-ce que vous achetez ? Écrivez 5 mots.",
+      "nb_mots": {
+        "min": 5,
+        "max": 10
+      },
+      "reponse_modele": "Un pantalon, une robe, une veste, un t-shirt, des chaussures (1 point par vêtement)."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-pe-4",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Tu as l’air malade",
+    "consigne": "Vous rencontrez un ami dans la rue. Il prend de vos nouvelles. Répondez-lui.",
+    "points": 6,
+    "support": {
+      "situation": "Le dialogue commence ainsi :\nVotre ami : « Salut ! Tu as l’air malade. Est-ce que ça va ? »\nVous : « Salut ! Non, je ne vais pas bien. J’ai mal à la tête. »",
+      "interlocuteur": "Votre ami",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Oh non ! Tu as pris rendez-vous chez le médecin ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, j’ai pris rendez-vous ce matin.",
+          "variantes": [
+            "Non, pas encore. Je vais téléphoner tout à l’heure."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Quand vas-tu chez le médecin ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’y vais demain à 10 heures.",
+          "variantes": [
+            "Cet après-midi, à 15 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’espère que tu te sentiras vite mieux ! À bientôt !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, c’est gentil. À bientôt !",
+          "variantes": [
+            "Merci beaucoup. Bonne journée !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (6 points) : chaque réplique répond à l’ami et respecte la situation (3 × 2)."
   }
 ]

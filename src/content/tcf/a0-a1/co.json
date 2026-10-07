@@ -2946,5 +2946,316 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Quatre messages",
+    "consigne": "Vous allez entendre 4 messages. Vous entendrez chaque message deux fois. Notez, sous chaque image, le numéro du message qui correspond.",
+    "points": 4,
+    "support": {
+      "audio": "a1-sem1/co1.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Message 1 — Chers clients, opération exceptionnelle : les chaussures sont soldées à moins 50 % pendant une heure !\n\nMessage 2 — Nous allons atterrir dans quelques minutes. Veuillez rester assis et attendre l’arrêt de l’avion. Merci.\n\nMessage 3 — Vous avez 5 minutes pour faire cet exercice.\n\nMessage 4 — Bonjour, la réunion va commencer. Vous pouvez vous asseoir dans la salle."
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1-sem1/co1-situation-a.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s2",
+        "image": "a1-sem1/co1-situation-b.webp",
+        "dialogue": 3
+      },
+      {
+        "id": "s3",
+        "image": "a1-sem1/co1-situation-c.webp",
+        "dialogue": 4
+      },
+      {
+        "id": "s4",
+        "image": "a1-sem1/co1-situation-d.webp",
+        "dialogue": 2
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Quatre petits dialogues",
+    "consigne": "Vous allez entendre 4 petits dialogues. Vous entendrez chaque dialogue deux fois. Lisez les questions et cochez la bonne réponse.",
+    "support": {
+      "audio": "a1-sem1/co2.mp3",
+      "transcription": "Dialogue 1 — Le midi, vous pouvez manger au restaurant de l’entreprise. — Ah oui ? Et le restaurant ouvre à quelle heure ? — À 11 h 30. — 11 h 30, d’accord. À tout à l’heure !\n\nDialogue 2 — Bonjour Monsieur, c’est combien le kilo de cerises ? — 6 euros 40. — 6 euros 40 ? J’en veux 500 grammes. — Très bien, voilà.\n\nDialogue 3 — Pour la visite médicale, prenez rendez-vous avec le médecin du travail. C’est le docteur Chéret. Son téléphone est le 01 48 24 32. — 01 48 24 32. Merci, je téléphone tout de suite.\n\nDialogue 4 — Bonjour, est-ce que je pourrais essayer cette robe, s’il vous plaît ? — Oui, bien sûr. Quelle est votre taille ? — 38. — 38, voilà."
+    },
+    "questions": [
+      {
+        "enonce": "Dialogue 1 — À quelle heure ouvre le restaurant ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "11 h"
+          },
+          {
+            "id": "b",
+            "texte": "11 h 30",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "12 h"
+          },
+          {
+            "id": "d",
+            "texte": "12 h 30"
+          }
+        ]
+      },
+      {
+        "enonce": "Dialogue 2 — Combien coûte un kilo de cerises ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "5,30 €"
+          },
+          {
+            "id": "b",
+            "texte": "5,40 €"
+          },
+          {
+            "id": "c",
+            "texte": "6,30 €"
+          },
+          {
+            "id": "d",
+            "texte": "6,40 €",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Dialogue 3 — Quel est le numéro de téléphone du médecin ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "01 48 24 32",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "01 58 24 22"
+          },
+          {
+            "id": "c",
+            "texte": "01 48 34 32"
+          },
+          {
+            "id": "d",
+            "texte": "01 48 24 52"
+          }
+        ]
+      },
+      {
+        "enonce": "Dialogue 4 — Quelle est la taille de la dame ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "18"
+          },
+          {
+            "id": "b",
+            "texte": "28"
+          },
+          {
+            "id": "c",
+            "texte": "38",
+            "correct": true
+          },
+          {
+            "id": "d",
+            "texte": "48"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Le message de Léa",
+    "consigne": "Vous allez entendre le message de votre amie Léa. Vous entendrez le message deux fois. Lisez les questions et répondez.",
+    "support": {
+      "audio": "a1-sem1/co3.mp3",
+      "transcription": "Bonjour Marie, c’est Léa. Je t’appelle pour t’inviter samedi à mon anniversaire, chez mes grands-parents. C’est près du centre. Rendez-vous à midi devant le cinéma des Arts. Tu peux apporter un jus de fruits ? Merci, et à samedi ! Ah ! Mon téléphone, c’est le 01 40 60 54. Ciao !"
+    },
+    "questions": [
+      {
+        "enonce": "Léa invite Marie…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "au cinéma."
+          },
+          {
+            "id": "b",
+            "texte": "au restaurant."
+          },
+          {
+            "id": "c",
+            "texte": "à son anniversaire.",
+            "correct": true
+          },
+          {
+            "id": "d",
+            "texte": "à la piscine."
+          }
+        ]
+      },
+      {
+        "enonce": "À quelle heure est le rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "11 h"
+          },
+          {
+            "id": "b",
+            "texte": "11 h 30"
+          },
+          {
+            "id": "c",
+            "texte": "12 h",
+            "correct": true
+          },
+          {
+            "id": "d",
+            "texte": "12 h 30"
+          }
+        ]
+      },
+      {
+        "enonce": "Que doit apporter Marie ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Un jus de fruits."
+      },
+      {
+        "enonce": "Quel est le numéro de téléphone de Léa ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "01 40 60 54"
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-sem1-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "TCF A1.1-A1 scolaire · semestre 1 · Une émission de radio",
+    "consigne": "Vous allez entendre une émission de radio. Vous entendrez le message deux fois. Lisez les questions et répondez.",
+    "support": {
+      "audio": "a1-sem1/co4.mp3",
+      "transcription": "Chers auditeurs, bonsoir ! NRJ, votre radio préférée, offre 30 places pour le concert de U2, vendredi 29 février, au Palais des Sports de Paris. Pour gagner vos places, c’est facile : appelez-nous vite au 01 01 40 50 60 et préparez-vous pour votre soirée rock !"
+    },
+    "questions": [
+      {
+        "enonce": "La radio NRJ offre combien de places ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "30 places."
+      },
+      {
+        "enonce": "La radio NRJ offre des places pour…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "un film."
+          },
+          {
+            "id": "b",
+            "texte": "un musée."
+          },
+          {
+            "id": "c",
+            "texte": "un concert.",
+            "correct": true
+          },
+          {
+            "id": "d",
+            "texte": "un zoo."
+          }
+        ]
+      },
+      {
+        "enonce": "Quelle est la date de l’événement ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le vendredi 29 février."
+      },
+      {
+        "enonce": "Pour participer, il faut…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "venir à la radio."
+          },
+          {
+            "id": "b",
+            "texte": "écrire à la radio."
+          },
+          {
+            "id": "c",
+            "texte": "appeler la radio.",
+            "correct": true
+          },
+          {
+            "id": "d",
+            "texte": "envoyer un courriel à la radio."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
