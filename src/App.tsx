@@ -57,13 +57,13 @@ import {
   TCF_DOCUMENT_TITLE,
   TCF_DOMAIN,
   TCF_NIVEAUX,
-  TCF_TYPES,
+  TCF_SLOTS,
   isTcfConsignesType,
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
 } from '@/tcf/catalog'
-import { buildTcfSeriePages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
-import { TCF_SERIES } from '@/tcf/series'
+import { buildTcfRandomTestPages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
+import { tcfBank } from '@/tcf/loader'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import { Chronometre } from '@/components/tcf/Chronometre'
 import {
@@ -2415,7 +2415,7 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
     if (next === TCF_DOMAIN) {
       setSheetIndex(0)
-      setPages([tcfConsignesPage('A0-A1'), tcfPage(TCF_TYPES[0]!.typeId, 'A0-A1')])
+      setPages([tcfConsignesPage('A0-A1'), tcfPage(TCF_SLOTS[0]!.typeId, 'A0-A1')])
       setMode('student')
       setInstitutional((current) => ({
         ...current,
@@ -2863,26 +2863,23 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isTcf && TCF_SERIES.some((s) => s.niveau === tcfNiveau) ? (
-                <SelectBox
-                  label="Test complet"
-                  value=""
-                  onChange={(value) => {
-                    const serie = TCF_SERIES.find((s) => s.id === value)
-                    if (!serie) return
-                    setMode('student')
-                    setSheetIndex(0)
-                    setBlockIndex(0)
-                    setPages(buildTcfSeriePages(serie))
-                  }}
-                >
-                  <option value="">Charger une série…</option>
-                  {TCF_SERIES.filter((s) => s.niveau === tcfNiveau).map((s) => (
-                    <option value={s.id} key={s.id}>
-                      {s.label}
-                    </option>
-                  ))}
-                </SelectBox>
+              {isTcf && tcfBank(tcfNiveau).length > 0 ? (
+                <div className="mode-toggle-block">
+                  <b>Test complet</b>
+                  <button
+                    type="button"
+                    className="tcf-btn"
+                    title="CO : exercices 1 à 4 ou 5 · CE : 4 exercices · PE : 3 exercices · PO : 1 exercice"
+                    onClick={() => {
+                      setMode('student')
+                      setSheetIndex(0)
+                      setBlockIndex(0)
+                      setPages(buildTcfRandomTestPages(tcfNiveau, randomSeed()))
+                    }}
+                  >
+                    Tirer un test au hasard
+                  </button>
+                </div>
               ) : null}
               {isTcm ? null : (
                 <SelectBox label={isTcf ? 'Compétence' : 'Thème'} value={activeBlock.topic} onChange={changeTopic}>
@@ -2937,9 +2934,9 @@ function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
                 />
               ) : null}
-              {isTcm ? null : (
+              {isTcm || (isTcf && typeChoices.length <= 1) ? null : (
               <SelectBox
-                label="Type d’exercice"
+                label={isTcf ? 'Exercice' : 'Type d’exercice'}
                 value={activeBlock.exerciseType}
                 onChange={(value) => {
                   const type = exerciseTypeById[value]

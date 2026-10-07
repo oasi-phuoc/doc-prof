@@ -1,25 +1,28 @@
-import { pick, type Rng } from '@/math/rng'
+import { createRng, pick, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import {
   TCF_COMPETENCES,
   TCF_CONSIGNES_TYPE,
   TCF_DOMAIN,
   TCF_INFO_TOPIC,
-  TCF_TYPES,
+  TCF_SLOTS,
+  type TcfSlotMeta,
   isTcfConsignesType,
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
+  tcfPosition,
+  tcfSlotByTypeId,
   tcfTypeByTypeId,
-  tcfTypeId,
+  tcfTypeMeta,
 } from './catalog'
-import type { TcfSerie } from './series'
-import { tcfBank, tcfExerciseById } from './loader'
+import { tcfBank, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
 import { TCF_LETTRES, TCF_LETTRES_SITUATIONS } from './templates'
 import type {
   TcfChoixImage,
   TcfChoixRendu,
   TcfChoixTexte,
+  TcfCompetence,
   TcfExercise,
   TcfNbMots,
   TcfNiveau,
@@ -197,35 +200,36 @@ export function tryGenerateTcfBlock(
       items: [tcfItem({ kind: 'informations', niveau }, false)],
     }
   }
-  const meta = tcfTypeByTypeId[config.exerciseType]
-  if (!meta) return null
+  const slot = tcfSlotByTypeId[config.exerciseType]
+  // Anciennes recettes : un type d’exercice précis au lieu d’un emplacement.
+  const legacy = slot ? undefined : tcfTypeByTypeId[config.exerciseType]
+  if (!slot && !legacy) return null
+  const competence = (slot ?? legacy)!.competence
+  const pool = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
   const fromBank = () => {
-    const chosen = tcfExerciseById(config.tcfBankId)
-    if (chosen && chosen.type_exercice === meta.typeExercice && chosen.niveau === niveau) return chosen
-    const pool = tcfBank(niveau, meta.competence, meta.typeExercice)
-    return pool.length > 0 ? pick(rng, pool) : undefined
+    const chosen = pool.find((ex) => ex.id === config.tcfBankId)
+    return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
   }
-  const ex =
-    config.tcfExercise && config.tcfExercise.type_exercice === meta.typeExercice
-      ? config.tcfExercise
-      : fromBank()
+  const ex = config.tcfExercise && config.tcfExercise.competence === competence ? config.tcfExercise : fromBank()
   const duree = config.tcfDureeMin && config.tcfDureeMin > 0 ? ` Durée : ${config.tcfDureeMin} min.` : ''
+  const fallbackInstruction = (slot ?? legacy)!.instruction
   if (!ex) {
     return {
-      instruction: meta.instruction + duree,
+      instruction: fallbackInstruction + duree,
       items: [
         tcfItem(
           {
             kind: 'vide',
-            message: `Aucun exercice « ${meta.label} » en ${niveau} dans la banque. Saisissez-le dans le panneau TCF ou ajoutez-le dans src/content/tcf.`,
+            message: `Aucun exercice « ${(slot ?? legacy)!.label} » en ${niveau} dans la banque. Saisissez-le dans le panneau TCF ou ajoutez-le dans src/content/tcf.`,
           },
           false,
         ),
       ],
     }
   }
+  const instruction = ex.consigne?.trim() || tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction || fallbackInstruction
   return {
-    instruction: (ex.consigne?.trim() || meta.instruction) + duree,
+    instruction: instruction + duree,
     items: tcfExerciseItems(ex, rng),
   }
 }
@@ -243,14 +247,14 @@ export function tcfConsignesPage(niveau: TcfNiveau): PageConfig {
   }
 }
 
-/** Page TCF vierge pour un type donné. */
+/** Page TCF vierge pour un emplacement donné. */
 export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageConfig> = {}): PageConfig {
-  const meta = tcfTypeByTypeId[typeId] ?? TCF_TYPES[0]!
-  const topic = TCF_COMPETENCES.find((c) => c.id === meta.competence)!.topic
+  const slot = tcfSlotByTypeId[typeId] ?? TCF_SLOTS[0]!
+  const topic = TCF_COMPETENCES.find((c) => c.id === slot.competence)!.topic
   return {
     domain: TCF_DOMAIN,
     topic,
-    exerciseType: meta.typeId,
+    exerciseType: slot.typeId,
     difficulty: tcfDifficultyFromNiveau(niveau),
     count: 1,
     columns: 1,
@@ -259,16 +263,49 @@ export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageCo
 }
 
 /**
- * Série complète (test blanc) : page Informations puis une page par exercice,
- * dans l’ordre de la série. Les exercices absents de la banque sont ignorés.
+ * Choisit `count` exercices distincts en suivant leur numéro d’origine
+ * (exercice 1, puis 2…) et en évitant de répéter un même type.
  */
-export function buildTcfSeriePages(serie: TcfSerie): PageConfig[] {
-  const pages: PageConfig[] = [tcfConsignesPage(serie.niveau)]
-  for (const id of serie.exercices) {
-    const ex = tcfExerciseById(id)
-    if (!ex || ex.niveau !== serie.niveau) continue
-    const typeId = tcfTypeId(ex.competence, ex.type_exercice)
-    if (typeId) pages.push(tcfPage(typeId, serie.niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 }))
+function pickByPosition(pool: readonly TcfExercise[], count: number, rng: Rng): TcfExercise[] {
+  const chosen: TcfExercise[] = []
+  for (let position = 1; position <= count; position++) {
+    const remaining = pool.filter((ex) => !chosen.includes(ex))
+    if (remaining.length === 0) break
+    const atPosition = remaining.filter((ex) => tcfPosition(ex.id) === position)
+    const candidates = atPosition.length > 0 ? atPosition : remaining
+    const newType = candidates.filter((ex) => !chosen.some((c) => c.type_exercice === ex.type_exercice))
+    chosen.push(pick(rng, newType.length > 0 ? newType : candidates))
+  }
+  return chosen
+}
+
+/**
+ * Test complet tiré au hasard dans la banque du niveau : Informations,
+ * CO exercices 1 à 4 (+ 5 une fois sur deux s’il existe), 4 CE, 3 PE, 1 PO.
+ */
+export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageConfig[] {
+  const rng = createRng(seed)
+  const page = (typeId: string, ex: TcfExercise) => tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 })
+  // Les exemples sans numéro d’origine (`…-001`) ne viennent d’aucun test : exclus du tirage.
+  const numberedBank = (n: TcfNiveau, slot: TcfSlotMeta) =>
+    tcfSlotBank(n, slot).filter((ex) => tcfPosition(ex.id) != null)
+  const pages: PageConfig[] = [tcfConsignesPage(niveau)]
+  for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO')) {
+    const pool = numberedBank(niveau, slot)
+    if (pool.length === 0 || (slot.numero === 5 && rng() < 0.5)) continue
+    pages.push(page(slot.typeId, pick(rng, pool)))
+  }
+  const slotOf = (competence: TcfCompetence) => TCF_SLOTS.find((s) => s.competence === competence)!
+  for (const [competence, count] of [['CE', 4], ['PE', 3]] as const) {
+    const slot = slotOf(competence)
+    for (const ex of pickByPosition(numberedBank(niveau, slot), count, rng)) pages.push(page(slot.typeId, ex))
+  }
+  const po = slotOf('PO')
+  const poPool = numberedBank(niveau, po)
+  const positions = [...new Set(poPool.map((ex) => tcfPosition(ex.id)))]
+  if (positions.length > 0) {
+    const position = pick(rng, positions)
+    pages.push(page(po.typeId, pick(rng, poPool.filter((ex) => tcfPosition(ex.id) === position))))
   }
   return pages
 }

@@ -1,4 +1,4 @@
-import { TCF_NIVEAUX } from './catalog'
+import { TCF_NIVEAUX, tcfPosition, type TcfSlotMeta } from './catalog'
 import { isTcfExerciseShape, validateTcfExercise } from './validate'
 import type { TcfCompetence, TcfExercise, TcfNiveau, TcfTypeExercice } from './types'
 
@@ -48,6 +48,13 @@ export function tcfBank(
       ex.niveau === niveau &&
       (competence == null || ex.competence === competence) &&
       (typeExercice == null || ex.type_exercice === typeExercice),
+  )
+}
+
+/** Exercices proposés pour un emplacement (CO : même numéro que dans l’audio). */
+export function tcfSlotBank(niveau: TcfNiveau, slot: TcfSlotMeta): TcfExercise[] {
+  return tcfBank(niveau, slot.competence).filter(
+    (ex) => slot.numero == null || (ex.competence === 'CO' && tcfPosition(ex.id) === slot.numero),
   )
 }
 

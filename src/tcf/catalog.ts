@@ -20,8 +20,8 @@ export function tcfDifficultyFromNiveau(niveau: TcfNiveau): Difficulty {
 }
 
 export const TCF_COMPETENCES: ReadonlyArray<{ id: TcfCompetence; label: string; topic: string }> = [
-  { id: 'CE', label: 'Compréhension écrite (CE)', topic: 'tcf-ce' },
   { id: 'CO', label: 'Compréhension orale (CO)', topic: 'tcf-co' },
+  { id: 'CE', label: 'Compréhension écrite (CE)', topic: 'tcf-ce' },
   { id: 'PE', label: 'Production écrite (PE)', topic: 'tcf-pe' },
   { id: 'PO', label: 'Production orale (PO)', topic: 'tcf-po' },
 ]
@@ -223,8 +223,65 @@ export function isTcfType(typeId: string | undefined): boolean {
   return typeId != null && typeId in tcfTypeByTypeId
 }
 
-export function tcfTypeId(competence: TcfCompetence, typeExercice: TcfTypeExercice): string | undefined {
-  return TCF_TYPES.find((m) => m.competence === competence && m.typeExercice === typeExercice)?.typeId
+export function tcfTypeMeta(competence: TcfCompetence, typeExercice: TcfTypeExercice): TcfTypeMeta | undefined {
+  return TCF_TYPES.find((m) => m.competence === competence && m.typeExercice === typeExercice)
+}
+
+/**
+ * Emplacement du générateur : une compétence, et pour la CO le numéro
+ * d’exercice annoncé dans l’audio (« Exercice 1 »…). Le contenu vient de la banque.
+ */
+export type TcfSlotMeta = {
+  typeId: string
+  competence: TcfCompetence
+  numero?: number
+  label: string
+  description: string
+  instruction: string
+}
+
+export const TCF_CO_NUMEROS = [1, 2, 3, 4, 5] as const
+
+export const TCF_SLOTS: readonly TcfSlotMeta[] = [
+  ...TCF_CO_NUMEROS.map((numero) => ({
+    typeId: `tcf-co-ex-${numero}`,
+    competence: 'CO' as const,
+    numero,
+    label: `Exercice ${numero}`,
+    description: `Compréhension orale : exercice ${numero} des documents audio.`,
+    instruction: 'Écoutez le document, puis répondez aux questions.',
+  })),
+  {
+    typeId: 'tcf-ce',
+    competence: 'CE',
+    label: 'Exercices de compréhension écrite',
+    description: 'Tous les exercices de compréhension écrite de la banque.',
+    instruction: 'Lisez le document, puis répondez aux questions.',
+  },
+  {
+    typeId: 'tcf-pe',
+    competence: 'PE',
+    label: 'Exercices de production écrite',
+    description: 'Tous les exercices de production écrite de la banque.',
+    instruction: 'Répondez par écrit.',
+  },
+  {
+    typeId: 'tcf-po',
+    competence: 'PO',
+    label: 'Exercices de production orale',
+    description: 'Tous les exercices de production orale de la banque.',
+    instruction: 'Préparez-vous pour l’épreuve orale.',
+  },
+]
+
+export const tcfSlotByTypeId: Readonly<Record<string, TcfSlotMeta>> = Object.fromEntries(
+  TCF_SLOTS.map((slot) => [slot.typeId, slot]),
+)
+
+/** Numéro de l’exercice dans son document d’origine (`…-co-3`, `…-po-2b` → 3, 2). */
+export function tcfPosition(id: string): number | undefined {
+  const match = id.match(/-(?:co|ce|pe|po)-(\d)[a-z]?$/)
+  return match ? Number(match[1]) : undefined
 }
 
 /** Page 1 du test : informations et consignes (non notée). */
@@ -241,7 +298,7 @@ export const TCF_TOPICS: Topic[] = [
   ...TCF_COMPETENCES.map((c) => ({ id: c.topic, label: c.label, domain: TCF_DOMAIN })),
 ]
 
-/** Types du catalogue général (page Informations + un type par exercice TCF). */
+/** Types du catalogue général (page Informations + emplacements par compétence). */
 export const TCF_EXERCISE_TYPES: ExerciseType[] = [
   {
     id: TCF_CONSIGNES_TYPE,
@@ -252,12 +309,12 @@ export const TCF_EXERCISE_TYPES: ExerciseType[] = [
     visual: 'texte',
     preferredColumns: 1,
   },
-  ...TCF_TYPES.map((meta) => ({
-    id: meta.typeId,
-    topic: TCF_COMPETENCES.find((c) => c.id === meta.competence)!.topic,
-    label: meta.label,
-    description: meta.description,
-    instruction: meta.instruction,
+  ...TCF_SLOTS.map((slot) => ({
+    id: slot.typeId,
+    topic: TCF_COMPETENCES.find((c) => c.id === slot.competence)!.topic,
+    label: slot.label,
+    description: slot.description,
+    instruction: slot.instruction,
     visual: 'texte' as const,
     preferredColumns: 1,
   })),

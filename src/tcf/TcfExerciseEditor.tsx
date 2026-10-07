@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
-import { tcfTypeByTypeId } from './catalog'
+import { TCF_TYPES, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
-import { tcfBank, tcfExerciseById } from './loader'
+import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { QuestionEditor } from './QuestionEditor'
+import { tcfExerciseLabel } from './sources'
 import { emptyTcfExercise, emptyTcfQuestion, tcfExerciseId } from './templates'
 import { checkTcfMedia, validateTcfExercise } from './validate'
 import type {
@@ -12,6 +13,7 @@ import type {
   TcfNbMots,
   TcfNiveau,
   TcfReplique,
+  TcfTypeExercice,
 } from './types'
 
 type EditorPatch = { tcfExercise?: TcfExercise; tcfBankId?: string }
@@ -582,8 +584,8 @@ function cleanForExport(raw: TcfExercise): TcfExercise {
 
 /**
  * Panneau admin TCF : choisir un exercice de la banque ou en saisir un.
- * Parcours : Niveau → Compétence → Type d’exercice (sélecteurs du générateur),
- * puis questions et types de réponse ici. Validation en direct, export JSON.
+ * Parcours : Niveau → Compétence → Exercice (CO : numéro de l’audio),
+ * puis l’exercice de la banque ici. Saisie : validation en direct, export JSON.
  */
 export function TcfExerciseEditor({
   niveau,
@@ -598,26 +600,26 @@ export function TcfExerciseEditor({
   bankId?: string
   onChange: (patch: EditorPatch) => void
 }) {
-  const meta = tcfTypeByTypeId[typeId]
-  const bank = useMemo(
-    () => (meta ? tcfBank(niveau, meta.competence, meta.typeExercice) : []),
-    [meta, niveau],
-  )
+  const slot = tcfSlotByTypeId[typeId]
+  const bank = useMemo(() => (slot ? tcfSlotBank(niveau, slot) : []), [slot, niveau])
+  const types = useMemo(() => TCF_TYPES.filter((t) => t.competence === slot?.competence), [slot])
   // Résultats rattachés à la version de l’exercice : toute modification les efface.
   const [mediaCheck, setMediaCheck] = useState<{ for: TcfExercise; errors: string[] } | null>(null)
   const [copiedFor, setCopiedFor] = useState<TcfExercise | null>(null)
   const mediaErrors = mediaCheck && mediaCheck.for === exercise ? mediaCheck.errors : null
   const copied = copiedFor != null && copiedFor === exercise
-  const editing = exercise != null && meta != null && exercise.type_exercice === meta.typeExercice
+  const editing = exercise != null && slot != null && exercise.competence === slot.competence
+  const meta = editing ? tcfTypeMeta(exercise.competence, exercise.type_exercice) : undefined
   const validation = useMemo(() => (editing ? validateTcfExercise(exercise) : null), [editing, exercise])
 
-  if (!meta) return null
+  if (!slot) return null
 
   const set = (next: TcfExercise) => onChange({ tcfExercise: { ...next, niveau } })
 
-  function startBlank() {
-    if (!meta) return
-    onChange({ tcfExercise: emptyTcfExercise(niveau, meta.competence, meta.typeExercice, tcfExerciseId(niveau, meta.competence, bank.length + 1)) })
+  function startBlank(typeExercice: TcfTypeExercice = types[0]!.typeExercice) {
+    if (!slot) return
+    const total = tcfBank(niveau, slot.competence).length
+    onChange({ tcfExercise: emptyTcfExercise(niveau, slot.competence, typeExercice, tcfExerciseId(niveau, slot.competence, total + 1)) })
   }
 
   function copyFromBank() {
@@ -641,7 +643,7 @@ export function TcfExerciseEditor({
     URL.revokeObjectURL(url)
   }
 
-  const usesQuestions = meta.reponses.length > 0
+  const usesQuestions = (meta?.reponses.length ?? 0) > 0
   const audioCount =
     exercise?.type_exercice === 'six_courts' || exercise?.type_exercice === 'trois_moyens'
       ? exercise.support.audios.length
@@ -666,7 +668,7 @@ export function TcfExerciseEditor({
       {!editing ? (
         <>
           <label className="tcf-field">
-            <span>Exercice ({bank.length} en banque · {niveau})</span>
+            <span>Exercice de la banque ({bank.length} · {niveau})</span>
             <select
               className="pill-input"
               value={bankId ?? ''}
@@ -675,14 +677,13 @@ export function TcfExerciseEditor({
               <option value="">Tirage selon la graine</option>
               {bank.map((ex) => (
                 <option key={ex.id} value={ex.id}>
-                  {ex.id}
-                  {ex.theme ? ` · ${ex.theme}` : ''}
+                  {tcfExerciseLabel(ex)}
                 </option>
               ))}
             </select>
           </label>
           <div className="tcf-row">
-            <button type="button" className="tcf-btn" onClick={startBlank}>
+            <button type="button" className="tcf-btn" onClick={() => startBlank()}>
               Nouvel exercice vide
             </button>
             <button type="button" className="tcf-btn" disabled={bank.length === 0} onClick={copyFromBank}>
@@ -695,6 +696,20 @@ export function TcfExerciseEditor({
         </>
       ) : (
         <>
+          <label className="tcf-field">
+            <span>Type d’exercice (le changer vide le contenu)</span>
+            <select
+              className="pill-input"
+              value={exercise.type_exercice}
+              onChange={(event) => startBlank(event.target.value as TcfTypeExercice)}
+            >
+              {types.map((t) => (
+                <option key={t.typeId} value={t.typeExercice}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
+          </label>
           <div className="tcf-row">
             <TextField label="Identifiant" value={exercise.id} onChange={(id) => set({ ...exercise, id })} />
             <TextField label="Thème" value={exercise.theme ?? ''} onChange={(theme) => set({ ...exercise, theme })} />
@@ -703,7 +718,7 @@ export function TcfExerciseEditor({
             <TextField
               label="Consigne (sinon consigne du type)"
               value={exercise.consigne ?? ''}
-              placeholder={meta.instruction}
+              placeholder={meta?.instruction ?? slot.instruction}
               onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
             />
           ) : null}
@@ -739,7 +754,7 @@ export function TcfExerciseEditor({
                   key={i}
                   index={i}
                   question={q}
-                  reponses={meta.reponses}
+                  reponses={meta?.reponses ?? []}
                   audioCount={audioCount}
                   onChange={(next) => set({ ...exercise, questions: exercise.questions.map((x, k) => (k === i ? next : x)) })}
                   onRemove={() => set({ ...exercise, questions: exercise.questions.filter((_, k) => k !== i) })}
@@ -750,7 +765,7 @@ export function TcfExerciseEditor({
                 className="tcf-btn"
                 onClick={() => {
                   const last = exercise.questions[exercise.questions.length - 1]
-                  const next = emptyTcfQuestion(last?.type_reponse ?? meta.reponses[0] ?? 'qcm_texte')
+                  const next = emptyTcfQuestion(last?.type_reponse ?? meta?.reponses[0] ?? 'qcm_texte')
                   set({ ...exercise, questions: [...exercise.questions, audioCount ? { ...next, audio: last?.audio ?? 1 } : next] })
                 }}
               >
