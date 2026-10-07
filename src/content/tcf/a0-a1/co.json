@@ -2601,5 +2601,350 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-co-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 tout public · série B · Le message d’Annie",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-tpb/co1.mp3",
+      "transcription": "C’est Annie. Tu vas bien ? Samedi, c’est la fête d’anniversaire de Laurie, tu te souviens ? On t’attend au restaurant à 13 heures. Pour venir, prends le bus ligne 12. Tu descends au parc. Est-ce que tu peux apporter des ballons ? Moi, je m’occupe des cadeaux. À samedi !"
+    },
+    "questions": [
+      {
+        "enonce": "C’est l’anniversaire de qui ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Annie."
+          },
+          {
+            "id": "b",
+            "texte": "Sandy."
+          },
+          {
+            "id": "c",
+            "texte": "Laurie.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quand est l’anniversaire ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Vendredi."
+          },
+          {
+            "id": "b",
+            "texte": "Samedi.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Dimanche."
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez être à quelle heure au restaurant ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "À 13 heures."
+      },
+      {
+        "enonce": "Vous allez comment au restaurant ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpb/co1-metro.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpb/co1-taxi.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpb/co1-bus.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez apporter quoi ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Des ballons.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Des gâteaux."
+          },
+          {
+            "id": "c",
+            "texte": "Des cadeaux."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-co-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 tout public · série B · À la gare",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-tpb/co2.mp3",
+      "transcription": "Mesdames, messieurs, votre attention, s’il vous plaît. Le train TGV numéro 8756 à destination de Lorient partira à 9 h 06, quai numéro 7. Le bar se trouve dans la voiture 15. Vous pouvez acheter des sandwichs et des boissons. Avant de monter dans le train, préparez votre billet. Merci."
+    },
+    "questions": [
+      {
+        "enonce": "Quel est le numéro du train TGV ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "8675"
+          },
+          {
+            "id": "b",
+            "texte": "8765"
+          },
+          {
+            "id": "c",
+            "texte": "8756",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Le train est à destination de quelle ville ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Lorient.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Orléans."
+          },
+          {
+            "id": "c",
+            "texte": "Besançon."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel est le numéro du quai pour le départ du train ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le quai 7."
+      },
+      {
+        "enonce": "Vous pouvez acheter quoi dans le train ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpb/co2-poulet-frites.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpb/co2-glace.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpb/co2-sandwich.webp",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez préparer quoi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpb/co2-billet.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-tpb/co2-valise.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpb/co2-passeport.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-co-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "complet",
+    "theme": "Test blanc A1 tout public · série B · L’agence pour l’emploi",
+    "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
+    "support": {
+      "audio": "a1-tpb/co3.mp3",
+      "transcription": "Bonjour, c’est Madame Le Roi, de l’Agence pour l’emploi. Une entreprise de service cherche un commercial. Allez sur notre site internet pour répondre à l’offre d’emploi, référence A749, avant mercredi 2 juin. N’oubliez pas de m’envoyer une photocopie de votre dernier diplôme pour votre dossier. Merci beaucoup. Au revoir."
+    },
+    "questions": [
+      {
+        "enonce": "L’entreprise cherche quel employé ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un serveur."
+          },
+          {
+            "id": "b",
+            "texte": "Un vendeur."
+          },
+          {
+            "id": "c",
+            "texte": "Un commercial.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Il faut répondre avant quelle date ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Avant le mercredi 2 juin."
+      },
+      {
+        "enonce": "Où devez-vous répondre à l’offre ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par téléphone."
+          },
+          {
+            "id": "b",
+            "texte": "Sur le site internet.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "À l’agence."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel document devez-vous envoyer ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un CV."
+          },
+          {
+            "id": "b",
+            "texte": "Une photocopie de votre dernier diplôme.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Une pièce d’identité."
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-co-4",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "association_images",
+    "theme": "Test blanc A1 tout public · série B · Petits dialogues",
+    "consigne": "Vous allez entendre 4 petits dialogues. Notez, sous chaque image, le numéro du dialogue qui correspond. Attention : il y a 6 images mais seulement 4 dialogues.",
+    "points": 8,
+    "support": {
+      "audio": "a1-tpb/co4.mp3",
+      "nb_dialogues": 4,
+      "transcription": "Dialogue 1 — Excuse-moi, j’ai cours de sport. Je cherche la piscine de l’université. Où est-ce qu’elle est ? — Derrière toi ! Regarde ! — Oh ! Merci !\n\nDialogue 2 — Bonjour, j’ai rendez-vous avec Monsieur Richard, le professeur de français de ma fille. — Bonjour. Oui, il est dans la classe au premier étage, à gauche, salle 25.\n\nDialogue 3 — Qu’est-ce que tu fais, Samy ? — Je cherche mon livre de mathématiques. — Il n’est pas dans ton sac ? — Non, je ne le trouve pas. Il doit être chez moi.\n\nDialogue 4 — Alors, qui veut venir avec moi au tableau pour faire l’exercice ? — Moi, Madame, s’il vous plaît ! — D’accord, allez, viens."
+    },
+    "questions": [],
+    "situations": [
+      {
+        "id": "s1",
+        "image": "a1-tpb/co4-situation-a.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s2",
+        "image": "a1-tpb/co4-situation-b.webp",
+        "dialogue": 4
+      },
+      {
+        "id": "s3",
+        "image": "a1-tpb/co4-situation-c.webp",
+        "dialogue": 3
+      },
+      {
+        "id": "s4",
+        "image": "a1-tpb/co4-situation-d.webp",
+        "dialogue": null
+      },
+      {
+        "id": "s5",
+        "image": "a1-tpb/co4-situation-e.webp",
+        "dialogue": 1
+      },
+      {
+        "id": "s6",
+        "image": "a1-tpb/co4-situation-f.webp",
+        "dialogue": 2
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]

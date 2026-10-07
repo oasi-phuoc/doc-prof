@@ -329,6 +329,12 @@ export const TCF_SERIES: readonly TcfSerie[] = [
     niveau: 'A0-A1',
     exercices: [...prepIds('tcf-a1-tpa-', 4, 'co'), ...prepIds('tcf-a1-tpa-', 4, 'ce'), ...prepIds('tcf-a1-tpa-', 3, 'pe')],
   },
+  {
+    id: 'a1-tout-public-b',
+    label: 'Test blanc A1 tout public · série B (sans oral)',
+    niveau: 'A0-A1',
+    exercices: [...prepIds('tcf-a1-tpb-', 4, 'co'), ...prepIds('tcf-a1-tpb-', 4, 'ce'), ...prepIds('tcf-a1-tpb-', 3, 'pe')],
+  },
   ...prepA1Series(3, 4),
   ...prepA1Series(4, 5),
   prepA2Serie(1),

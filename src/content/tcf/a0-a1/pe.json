@@ -767,5 +767,156 @@
     },
     "questions": [],
     "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
+  },
+  {
+    "id": "tcf-a1-tpb-pe-1",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "formulaire",
+    "theme": "Test blanc A1 tout public · série B · Cours de musique",
+    "consigne": "Vous êtes en Suisse et vous voulez prendre des cours de musique. Vous remplissez ce formulaire pour votre assistante sociale.",
+    "points": 10,
+    "support": {
+      "titre": "Inscription aux cours de musique",
+      "champs": [
+        {
+          "label": "Nom et prénom :",
+          "type": "texte",
+          "corrige": "Réponse personnelle (nom et prénom)"
+        },
+        {
+          "label": "Date de naissance :",
+          "type": "date",
+          "corrige": "Une date cohérente (ex. : 12.03.1990)"
+        },
+        {
+          "label": "Nationalité :",
+          "type": "texte",
+          "corrige": "Une nationalité (ex. : afghane, érythréenne), pas le nom du pays"
+        },
+        {
+          "label": "Sexe :",
+          "type": "choix",
+          "options": [
+            "Féminin",
+            "Masculin"
+          ],
+          "corrige": "Une case cochée"
+        },
+        {
+          "label": "Nombre de frères et sœurs :",
+          "type": "texte",
+          "corrige": "Un nombre en chiffres ou en lettres"
+        },
+        {
+          "label": "Adresse complète :",
+          "type": "texte",
+          "corrige": "Une adresse complète (rue, numéro, code postal, ville)"
+        },
+        {
+          "label": "Numéro de portable :",
+          "type": "texte",
+          "corrige": "Ex. : 079 123 45 67"
+        },
+        {
+          "label": "Instrument de musique :",
+          "type": "texte",
+          "corrige": "Un instrument (ex. : guitare, piano)"
+        },
+        {
+          "label": "Vous êtes disponible quels jours ?",
+          "type": "texte",
+          "corrige": "Un ou plusieurs jours de la semaine"
+        },
+        {
+          "label": "Vous êtes disponible à quelle heure ?",
+          "type": "texte",
+          "corrige": "Une heure cohérente (ex. : 18 h)"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-pe-2",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "image_question",
+    "theme": "Test blanc A1 tout public · série B · Le chemin du conservatoire",
+    "consigne": "Vous êtes inscrit aux cours de musique. Votre assistante vous explique le chemin. Complétez le texte à l’aide des images.",
+    "points": 5,
+    "support": {
+      "image": "a1-tpb/pe2-images.webp",
+      "consigne": "Quand tu sors du foyer, il faut prendre à gauche au bout de la rue. Continue tout droit jusqu’à la (1) ________. Après, tu passes devant le magasin de (2) ________, puis tu traverses le petit (3) ________. Le conservatoire sera sur ta droite. C’est un grand bâtiment (4) ________.\nJe peux t’y emmener en (5) ________ quand j’ai le temps. Tu peux aussi prendre le bus numéro 13.\nBon trajet !",
+      "nb_mots": {
+        "min": 5,
+        "max": 5
+      },
+      "reponse_modele": "(1) boulangerie — (2) chaussures — (3) parc — (4) vert — (5) voiture (1 point par mot)."
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-pe-3",
+    "niveau": "A0-A1",
+    "competence": "PE",
+    "type_exercice": "dialogue_a_completer",
+    "theme": "Test blanc A1 tout public · série B · À l’arrêt de bus",
+    "consigne": "Vous prenez le bus pour aller aux cours de musique. À l’arrêt de bus, une personne vous demande des informations. Complétez le dialogue.",
+    "points": 10,
+    "support": {
+      "situation": "Le dialogue commence ainsi :\nLa personne : « Bonjour, excusez-moi. Ce bus va à la gare ? »\nVous : « Bonjour, ce n’est pas le bon bus. Vous devez prendre le numéro 5. »",
+      "interlocuteur": "La personne",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Où va ce bus ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ce bus va au conservatoire, au centre-ville.",
+          "variantes": [
+            "Il va au centre-ville."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ah, d’accord. La gare, c’est loin d’ici ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, ce n’est pas très loin.",
+          "variantes": [
+            "Oui, c’est assez loin."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Cela prend combien de temps pour aller en bus ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Environ dix minutes.",
+          "variantes": [
+            "À peu près un quart d’heure."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Votre bus arrive bientôt ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, il arrive dans deux minutes. Bonne journée !",
+          "variantes": [
+            "Non, dans dix minutes. Au revoir !"
+          ]
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Grille (10 points) : chaque réplique répond à la question et respecte la situation (4 × 1,5) ; politesse et registre (2) ; langue et orthographe (2)."
   }
 ]

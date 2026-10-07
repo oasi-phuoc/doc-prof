@@ -3167,5 +3167,335 @@
       }
     ],
     "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-ce-1",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série B · L’invitation de Louise",
+    "consigne": "Lisez le message et répondez aux questions.",
+    "support": {
+      "titre": "Message de Louise",
+      "texte": "Salut Guillaume,\n\nJ’ai 40 ans la semaine prochaine, le 9 avril ! On fait une fête samedi prochain vers 19 heures. J’habite au 6e étage, appartement numéro 12.\nJe vais préparer à manger. Vous pouvez apporter les boissons.\nSi vous êtes disponible, merci de me répondre avant jeudi avec un message dans ma boîte aux lettres.\n\nLouise",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Ce message est une invitation à…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "une soirée entre voisins."
+          },
+          {
+            "id": "b",
+            "texte": "une soirée d’anniversaire.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "une soirée de présentation."
+          }
+        ]
+      },
+      {
+        "enonce": "À quel étage habite Louise ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Au 6e étage."
+      },
+      {
+        "enonce": "Vous devez répondre avant…",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "19 heures."
+          },
+          {
+            "id": "b",
+            "texte": "jeudi.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "samedi soir."
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez apporter quoi ?",
+        "type_reponse": "qcm_image",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpb/ce1-pain.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpb/ce1-gateau.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpb/ce1-boisson.webp",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-ce-2",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série B · Le camping Les Flots bleus",
+    "consigne": "Lisez cet article et répondez aux questions.",
+    "support": {
+      "titre": "Camping Les Flots bleus",
+      "texte": "www.camping-flots-bleus-nord-suisse.ch\n\nPour les vacances, venez dans le nord de la Suisse ! Prix spécial pour le mois de juin : 350 CHF pour une semaine.\n\nVous devez arriver le samedi. Notre camping est très grand. Quand vous êtes à l’accueil, allez tout droit, tournez à gauche et passez devant le bar. Après le bar, prenez à droite. Il y a le tennis. Après, vous trouverez notre grande piscine. Les enfants peuvent jouer au football avec un professionnel.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Où est le camping ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans le nord de la Suisse.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Dans le centre de la Suisse."
+          },
+          {
+            "id": "c",
+            "texte": "Dans le sud de la Suisse."
+          }
+        ]
+      },
+      {
+        "enonce": "Quel sport les enfants peuvent-ils faire ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Du football (avec un professionnel)."
+      },
+      {
+        "enonce": "Quel jour devez-vous arriver ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Jeudi."
+          },
+          {
+            "id": "b",
+            "texte": "Vendredi."
+          },
+          {
+            "id": "c",
+            "texte": "Samedi.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Quel est le chemin pour aller à la piscine ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpb/ce2-chemin-a.webp"
+          },
+          {
+            "id": "b",
+            "image": "a1-tpb/ce2-chemin-b.webp",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "image": "a1-tpb/ce2-chemin-c.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-ce-3",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série B · Les informations de l’hôtel",
+    "consigne": "Lisez les informations de l’hôtel et répondez aux questions.",
+    "support": {
+      "titre": "Informations de l’hôtel",
+      "texte": "Ordinateurs disponibles de 11 h à 20 h (Internet gratuit). Pour le code de la porte, demandez à la réception. Salle au 1er étage.\n\nProgramme de nos événements : vendredi soir, dîner « mexicain » ; samedi midi, déjeuner « indien » avec des danseurs.\n\nPetit-déjeuner de 6 h 30 à 9 h. Déjeuner de 12 h à 14 h. Dîner de 19 h à 22 h. Restaurant au 2e étage.\n\nNotre coach sportif est présent du jeudi au samedi, pendant 2 h à partir de 8 h. Réservez à la réception.\n\nVous êtes en voyage professionnel ? Nous offrons 15 % de réduction sur votre séjour et 10 % au restaurant.",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quand devez-vous venir pour découvrir la danse indienne ?",
+        "type_reponse": "lignes",
+        "points": 2,
+        "nb_lignes": 1,
+        "reponse_modele": "Le samedi midi."
+      },
+      {
+        "enonce": "Quels sont les horaires pour manger le midi au restaurant ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "De 10 h à 14 h."
+          },
+          {
+            "id": "b",
+            "texte": "De 11 h à 14 h."
+          },
+          {
+            "id": "c",
+            "texte": "De 12 h à 14 h.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "enonce": "Vous devez faire quoi avant d’utiliser un ordinateur de l’hôtel ?",
+        "type_reponse": "qcm_texte",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Aller à la réception.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Aller à la salle des ordinateurs."
+          },
+          {
+            "id": "c",
+            "texte": "Aller sur le site internet de l’hôtel."
+          }
+        ]
+      },
+      {
+        "enonce": "Pendant combien de temps pouvez-vous faire du sport avec le coach ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "2 heures."
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1-tpb-ce-4",
+    "niveau": "A0-A1",
+    "competence": "CE",
+    "type_exercice": "annonce",
+    "theme": "Test blanc A1 tout public · série B · Les festivals",
+    "consigne": "Lisez cet article de journal et répondez aux questions.",
+    "support": {
+      "titre": "Un festival, deux festivals, trois festivals…",
+      "texte": "L’été, c’est la saison des festivals musicaux. Vous pouvez trouver un festival pour chaque style, de la musique électronique à la musique classique. Sur notre site internet, nous parlons de douze festivals. Ce sont les plus célèbres de France. Dans chaque description, notre article en ligne présente la ville, les dates et les horaires de chaque festival. Cliquez sur l’inscription à nos articles et recevez une réduction pour le billet de votre prochain festival !",
+      "image": null
+    },
+    "questions": [
+      {
+        "enonce": "Quelle est la saison des festivals ?",
+        "type_reponse": "lignes",
+        "points": 1.5,
+        "nb_lignes": 1,
+        "reponse_modele": "L’été."
+      },
+      {
+        "enonce": "Où pouvez-vous trouver plus d’informations ?",
+        "type_reponse": "qcm_texte",
+        "points": 1.5,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans le journal."
+          },
+          {
+            "id": "b",
+            "texte": "Sur le site internet du journal.",
+            "correct": true
+          },
+          {
+            "id": "c",
+            "texte": "Sur le site internet de chaque festival."
+          }
+        ]
+      },
+      {
+        "enonce": "Vous recevez quoi avec l’inscription ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une réduction pour un billet.",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Des billets pour les 12 festivals."
+          },
+          {
+            "id": "c",
+            "texte": "Un livre sur le prochain festival."
+          }
+        ]
+      },
+      {
+        "enonce": "L’article parle de festivals de quoi ?",
+        "type_reponse": "qcm_image",
+        "points": 2,
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "image": "a1-tpb/ce4-concert.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "a1-tpb/ce4-cinema.webp"
+          },
+          {
+            "id": "c",
+            "image": "a1-tpb/ce4-danse.webp"
+          }
+        ]
+      }
+    ],
+    "consigne_supplementaire": null
   }
 ]
