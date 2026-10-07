@@ -12,6 +12,9 @@ const SOURCES: ReadonlyArray<[RegExp, (m: RegExpMatchArray) => string]> = [
   [/^tcf-a2-s(\d+)$/, (m) => `Test blanc A2 · série ${m[1]}`],
   [/^tcf-a2-s([a-z])$/, (m) => `Test blanc A2 · série ${m[1]!.toUpperCase()}`],
   [/^tcf-a2p-s(\d+)$/, (m) => `Préparation A2 · série ${m[1]}`],
+  [/^tcf-ss-a1-s(\d+)$/, (m) => `Soutien scolaire CO A1 · série ${m[1]}`],
+  [/^tcf-ss-a2-s(\d+)$/, (m) => `Soutien scolaire CO A2 · série ${m[1]}`],
+  [/^tcf-ss-b1-s(\d+)$/, (m) => `Soutien scolaire CO B1 · série ${m[1]}`],
 ]
 
 /** Libellé d’un exercice dans le sélecteur de banque : source, numéro, thème. */

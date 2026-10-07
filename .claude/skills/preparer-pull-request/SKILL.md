@@ -1,51 +1,42 @@
 ---
 name: preparer-pull-request
 description: >-
-  Prépare une pull request : lint, build, contrôle déterminisme / A4 / copies,
-  rédaction du corps de PR. À utiliser quand on dit préparer, ouvrir ou
-  finaliser une PR.
-disable-model-invocation: true
+  Finalise le travail git sur doc-prof : commit et push. Par défaut push
+  direct sur origin/main sans lint/build/aperçu. N’ouvrir une PR que si
+  demandé explicitement.
 ---
 
-# Préparer une pull request
+# Finaliser (push main)
 
-Lancer explicitement (`/preparer-pull-request`).
+## Défaut (doc-prof)
 
-## Vérifications
+Sauf demande explicite contraire :
 
-Dans l'ordre :
+1. Commit descriptif
+2. **Push direct sur `origin/main`** (pas de branche feature, pas de PR)
+3. **Ne pas** lancer `lint`, `build`, tests, aperçu A4, screenshots ni démos vidéo
+4. L’utilisateur teste lui-même dans l’UI
 
-1. `npm run lint`
-2. `npm run build`
+Raccourci Cursor : `/no-test` (déjà le comportement par défaut ici).
 
-Si des tests Vitest existent pour le générateur : les lancer aussi.
+## Si l’utilisateur demande une PR
 
-## Revue du diff
+Alors seulement :
 
-Signaler / bloquer :
+1. Branche `cursor/<nom>-…` si besoin
+2. Push de la branche
+3. Ouvrir / mettre à jour la PR (corps court : summary + comment vérifier à la main)
 
-- `Math.random()` ou `Date.now()` dans `src/math/generate.ts` (ou helper de tirage).
-- Feuille A4 qui redevient fluide (`min-height` content-driven, scale mobile hors `.a4-frame`).
-- Cadres / boîtes de réponse réintroduits à la place des soulignés.
-- Texte, logo ou figure **copiés** d'une référence externe.
-- Secrets / clés dans le client.
+Ne pas ajouter de plan de test automatisé ni d’artefacts d’aperçu sauf demande.
 
-Si le rendu fiche a changé → skill `test-impression`.  
-Si consignes / problèmes ont changé → skill `relecture-enonce`.
+## Revue rapide du diff (sans bloquer sur lint/build)
 
-## Corps de PR
+Signaler si évident :
 
-```markdown
-## Summary
-- …
-
-## Test plan
-- [ ] npm run lint && npm run build
-- [ ] Aperçu A4 stable (peu / beaucoup de questions)
-- [ ] Impression PDF : en-tête, footer bas, corrigé
-- [ ] …
-```
+- `Math.random()` / `Date.now()` dans un générateur
+- Secrets / clés dans le client
+- Contenu copié d’une référence externe
 
 ## Terminé quand
 
-Checks verts · description claire · pas de secret · A4 respecté.
+Changements commités et poussés sur `origin/main` (ou PR si demandée).

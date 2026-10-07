@@ -60,11 +60,12 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Phrases Gattegno (modèles uniques, français réel) | `phrase-gattegno` |
 | Phrases calligraphie (10/mot, authentiques, une ligne) | `calligraphie-phrases` |
 | Compréhension écrite A1/A2/B1 (CECRL / FALC) | `comprehension-ecrite` |
+| CO TCF depuis soutien-scolaire (banques `co.json`) | `comprehension-orale` |
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
 | Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) | `medias-image-audio` |
 | Aperçu A4 fixe + impression | `test-impression` |
-| Préparer une pull request | `preparer-pull-request` |
+| Finaliser / push `main` (pas de lint·build·PR sauf demande) | `preparer-pull-request` |
 
 ## Terminé, c'est quand
 
-Lint et build passent ; l'aperçu reste A4 quelle que soit la densité ; l'impression utilise les mêmes feuilles ; rien n'est copié d'une référence ; la description de la PR liste ce qui a changé et comment le vérifier.
+Sauf demande contraire : commit + **push direct sur `origin/main`** (skill `preparer-pull-request` / `comprehension-orale`) — pas de lint, build, aperçu ni PR. L’utilisateur teste lui-même. Rien n’est copié d’une référence externe.
