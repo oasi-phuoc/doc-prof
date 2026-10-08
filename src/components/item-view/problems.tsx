@@ -293,10 +293,18 @@ export function PlaceValueRow({ item, mode }: { item: MathItem; mode: PreviewMod
   )
 }
 
+/** Texte de correction sur la ligne : développement (étapes) ou réponse seule. */
+function stackedLineAnswer(item: MathItem): string {
+  const steps = item.development?.filter(Boolean) ?? []
+  if (steps.length > 0) return steps.join(' = ')
+  return item.answer ?? ''
+}
+
 export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const prompt = item.prompt ?? ''
   const lines = prompt.split('\n')
+  const lineAnswer = stackedLineAnswer(item)
   // Style rule de trois kg : « n kg … → p francs » puis « m kg … → ____ ».
   const lastTrim = lines.length >= 2 ? lines[lines.length - 1]!.trimEnd() : ''
   const isProportionArrow =
@@ -306,8 +314,9 @@ export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMod
     const last = lastTrim
     const answer = item.answer ?? ''
     const unitMatch = answer.match(/^(.*?)\s+(francs?|CHF)\s*$/i)
-    const value = unitMatch ? unitMatch[1]!.trim() : answer
     const unitLabel = unitMatch ? unitMatch[2] : null
+    // Développement sur la ligne (ex. « (28 × 30) ÷ 15 = 56 ») ; sinon valeur seule.
+    const shown = lineAnswer.replace(/\s+francs?\s*$/i, '').trim()
     return (
       <div className="prompt-stack proportion-kg-stack">
         {head.map((line, i) => (
@@ -318,7 +327,7 @@ export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMod
         <div className="proportion-kg-question" aria-label="Question">
           <span className="prompt-stack-text">{last}</span>
           <span className={`answer-line-field ${show ? 'filled' : ''}`}>
-            {show ? value : '\u00a0'}
+            {show ? shown : '\u00a0'}
           </span>
           {unitLabel ? <span className="proportion-kg-unit">{unitLabel}</span> : null}
         </div>
@@ -329,7 +338,7 @@ export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMod
     <div className="prompt-stack">
       <p className="prompt-stack-text">{prompt}</p>
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
-        {show ? item.answer : '\u00a0'}
+        {show ? lineAnswer : '\u00a0'}
       </span>
     </div>
   )
@@ -366,9 +375,16 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
   }
 
   if (prompt.includes('□') || /[-−]?\d+\/[-−]?\d+/.test(prompt)) {
+    const filledFrac = show ? (
+      <span className="filled-answer">
+        <FractionView value={item.answer} />
+      </span>
+    ) : (
+      '\u00a0'
+    )
     return (
       <div className="inline-prompt equation">
-        {renderMathText(prompt, show ? <FractionView value={item.answer} /> : '\u00a0')}
+        {renderMathText(prompt, filledFrac)}
         {!prompt.includes('□') && (
           <>
             <span className="eq-space" />

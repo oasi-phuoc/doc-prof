@@ -83,10 +83,14 @@ function generatePercentItem(rng: Rng): MathItem {
   const pct = pick(rng, [...PCT_CHOICES])
   const n = pickPercentBase(rng, pct)
   const value = (pct * n) / 100
+  const answer = fmtAnswer(value)
+  // Développement sur la ligne de réponse : p/100 × n = résultat.
+  const development = [`${pct}/100 × ${n}`, answer]
   return {
     layout: 'text',
     prompt: `${pct} % de ${n} est égal à`,
-    answer: fmtAnswer(value),
+    answer,
+    development,
   }
 }
 
@@ -128,10 +132,14 @@ export function pickIndepKgPrice(rng: Rng): {
 function generateKgFrancsItem(rng: Rng): MathItem {
   const tpl = pick(rng, [...TCM_PROPORTION_KG_TEMPLATES])
   const { kgA, kgB, priceA, priceB } = pickIndepKgPrice(rng)
+  const answer = `${priceB} francs`
+  // Règle de trois : (m × p) ÷ n = résultat (sur la ligne de réponse).
+  const development = [`(${kgB} × ${priceA}) ÷ ${kgA}`, String(priceB)]
   return {
     layout: 'text',
     prompt: `${kgA} kg ${tpl.ofProduct} → ${priceA} francs\n${kgB} kg ${tpl.ofProduct} →`,
-    answer: `${priceB} francs`,
+    answer,
+    development,
   }
 }
 

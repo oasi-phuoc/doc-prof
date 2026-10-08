@@ -27,11 +27,12 @@ function DigitRow({
       {cells.map((digit, index) => {
         const shown = empty ? (showAnswer ? answerDigits?.[index] ?? '' : '') : digit
         const showComma = index === unitsIdx && (!empty || showAnswer)
+        const isAnswer = Boolean(empty && showAnswer)
         return (
           <span
             className={`digit-cell ${empty && !showAnswer ? 'blank' : ''} ${carry ? 'carry' : ''}${
               showComma ? ' has-comma' : ''
-            }`}
+            }${isAnswer ? ' is-answer' : ''}`}
             key={index}
           >
             {shown}
