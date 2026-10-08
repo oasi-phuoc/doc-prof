@@ -923,28 +923,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     })
   }
 
-  const addPage = () => {
-    const first = blockFromPage(activePage)
-    const next: PageConfig = {
-      domain: activePage.domain,
-      ...first,
-      extraBlocks: activePage.extraBlocks?.map((block) => ({ ...block })),
-    }
-    setPages((current) => [...current, next])
-    setSheetIndex(worksheets.length) // will clamp after recompute; prefer end
-    setBlockIndex(0)
-  }
-
-  const removePage = (configIdx: number) => {
-    setPages((current) => {
-      if (current.length <= 1) return current
-      return current.filter((_, pageIdx) => pageIdx !== configIdx)
-    })
-    setSheetIndex(0)
-    setBlockIndex(0)
-  }
-
-  const addExerciseOnPage = () => {
+  /** Prochain type du même thème (même logique que « + Exercice »). */
+  const createNextExerciseBlock = (): ExerciseBlock | null => {
     const currentTypes = typesForTopic(
       activeBlock.topic,
       activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -954,10 +934,10 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       currentTypes[(currentIdx + 1) % Math.max(currentTypes.length, 1)] ??
       currentTypes[0] ??
       firstTypeFor(activePage.domain, activeBlock.topic, activeBlock.track)
-    if (!nextType) return
+    if (!nextType) return null
     const fields = applyType(nextType, activeBlock)
     const count = Math.min(fields.count ?? 4, 4)
-    const newBlock: ExerciseBlock = {
+    return {
       topic: nextType.topic,
       exerciseType: nextType.id,
       difficulty: activeBlock.difficulty,
@@ -1025,6 +1005,34 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       quadLibre: isQuadExercise(nextType.id) ? activeBlock.quadLibre : undefined,
       quadShapes: isQuadExercise(nextType.id) ? activeBlock.quadShapes : undefined,
     }
+  }
+
+  const addPage = () => {
+    const newBlock = createNextExerciseBlock()
+    if (!newBlock) return
+    // Nouvelle page = un seul exercice (le suivant), pas une copie de la page précédente.
+    const next: PageConfig = {
+      domain: activePage.domain,
+      ...newBlock,
+      extraBlocks: undefined,
+    }
+    setPages((current) => [...current, next])
+    setSheetIndex(worksheets.length)
+    setBlockIndex(0)
+  }
+
+  const removePage = (configIdx: number) => {
+    setPages((current) => {
+      if (current.length <= 1) return current
+      return current.filter((_, pageIdx) => pageIdx !== configIdx)
+    })
+    setSheetIndex(0)
+    setBlockIndex(0)
+  }
+
+  const addExerciseOnPage = () => {
+    const newBlock = createNextExerciseBlock()
+    if (!newBlock) return
     setPages((current) =>
       current.map((page, index) => (index === pageIndex ? addPageBlock(page, newBlock) : page)),
     )
