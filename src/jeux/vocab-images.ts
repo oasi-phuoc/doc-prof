@@ -3072,8 +3072,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/agente-entretien.webp"
       },
       {
+        "label": "agriculteur",
+        "src": "/lib/images/vocabulaire/metiers/agriculteur.webp"
+      },
+      {
         "label": "agricultrice",
         "src": "/lib/images/vocabulaire/metiers/agricultrice.webp"
+      },
+      {
+        "label": "aide-soignante",
+        "src": "/lib/images/vocabulaire/metiers/aide-soignante.webp"
       },
       {
         "label": "architecte",
@@ -3096,8 +3104,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/bouchère.webp"
       },
       {
+        "label": "boulanger",
+        "src": "/lib/images/vocabulaire/metiers/boulanger.webp"
+      },
+      {
         "label": "boulangère",
         "src": "/lib/images/vocabulaire/metiers/boulangère.webp"
+      },
+      {
+        "label": "caissier",
+        "src": "/lib/images/vocabulaire/metiers/caissier.webp"
       },
       {
         "label": "caissière",
@@ -3110,6 +3126,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "charpentière",
         "src": "/lib/images/vocabulaire/metiers/charpentière.webp"
+      },
+      {
+        "label": "chauffeur-de-bus",
+        "src": "/lib/images/vocabulaire/metiers/chauffeur-de-bus.webp"
       },
       {
         "label": "chauffeuse",
@@ -3128,12 +3148,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/coiffeuse.webp"
       },
       {
+        "label": "comptable",
+        "src": "/lib/images/vocabulaire/metiers/comptable.webp"
+      },
+      {
         "label": "concierge",
         "src": "/lib/images/vocabulaire/metiers/concierge.webp"
       },
       {
         "label": "controleur",
         "src": "/lib/images/vocabulaire/metiers/controleur.webp"
+      },
+      {
+        "label": "cuisinier",
+        "src": "/lib/images/vocabulaire/metiers/cuisinier.webp"
       },
       {
         "label": "cuisinière",
@@ -3152,6 +3180,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/docteur.webp"
       },
       {
+        "label": "enseignant",
+        "src": "/lib/images/vocabulaire/metiers/enseignant.webp"
+      },
+      {
+        "label": "facteur",
+        "src": "/lib/images/vocabulaire/metiers/facteur.webp"
+      },
+      {
         "label": "factrice",
         "src": "/lib/images/vocabulaire/metiers/factrice.webp"
       },
@@ -3164,12 +3200,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/fleuriste.webp"
       },
       {
+        "label": "infirmier",
+        "src": "/lib/images/vocabulaire/metiers/infirmier.webp"
+      },
+      {
         "label": "infirmière",
         "src": "/lib/images/vocabulaire/metiers/infirmière.webp"
       },
       {
+        "label": "informaticien",
+        "src": "/lib/images/vocabulaire/metiers/informaticien.webp"
+      },
+      {
         "label": "ingénieure",
         "src": "/lib/images/vocabulaire/metiers/ingénieure.webp"
+      },
+      {
+        "label": "jardinier",
+        "src": "/lib/images/vocabulaire/metiers/jardinier.webp"
       },
       {
         "label": "jardinière",
@@ -3184,6 +3232,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/juge.webp"
       },
       {
+        "label": "livreur",
+        "src": "/lib/images/vocabulaire/metiers/livreur.webp"
+      },
+      {
         "label": "livreuse",
         "src": "/lib/images/vocabulaire/metiers/livreuse.webp"
       },
@@ -3192,8 +3244,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/maçonne.webp"
       },
       {
+        "label": "menuisier",
+        "src": "/lib/images/vocabulaire/metiers/menuisier.webp"
+      },
+      {
         "label": "musicienne",
         "src": "/lib/images/vocabulaire/metiers/musicienne.webp"
+      },
+      {
+        "label": "mécanicien",
+        "src": "/lib/images/vocabulaire/metiers/mécanicien.webp"
       },
       {
         "label": "mécanicienne",
@@ -3202,6 +3262,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "médecin",
         "src": "/lib/images/vocabulaire/metiers/médecin.webp"
+      },
+      {
+        "label": "ouvrier",
+        "src": "/lib/images/vocabulaire/metiers/ouvrier.webp"
       },
       {
         "label": "paysan",
@@ -3224,12 +3288,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/pilote.webp"
       },
       {
+        "label": "plombier",
+        "src": "/lib/images/vocabulaire/metiers/plombier.webp"
+      },
+      {
         "label": "plombière",
         "src": "/lib/images/vocabulaire/metiers/plombière.webp"
       },
       {
+        "label": "policier",
+        "src": "/lib/images/vocabulaire/metiers/policier.webp"
+      },
+      {
         "label": "policière",
         "src": "/lib/images/vocabulaire/metiers/policière.webp"
+      },
+      {
+        "label": "pompier",
+        "src": "/lib/images/vocabulaire/metiers/pompier.webp"
       },
       {
         "label": "pompière",
@@ -3244,12 +3320,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/pêcheuse.webp"
       },
       {
+        "label": "réceptionniste",
+        "src": "/lib/images/vocabulaire/metiers/réceptionniste.webp"
+      },
+      {
         "label": "scientifique",
         "src": "/lib/images/vocabulaire/metiers/scientifique.webp"
       },
       {
         "label": "secrétaire",
         "src": "/lib/images/vocabulaire/metiers/secrétaire.webp"
+      },
+      {
+        "label": "serveur",
+        "src": "/lib/images/vocabulaire/metiers/serveur.webp"
       },
       {
         "label": "serveuse",
@@ -3264,6 +3348,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/trapéziste.webp"
       },
       {
+        "label": "vendeur",
+        "src": "/lib/images/vocabulaire/metiers/vendeur.webp"
+      },
+      {
         "label": "vendeuse",
         "src": "/lib/images/vocabulaire/metiers/vendeuse.webp"
       },
@@ -3272,12 +3360,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/vétérinaire.webp"
       },
       {
+        "label": "électricien",
+        "src": "/lib/images/vocabulaire/metiers/électricien.webp"
+      },
+      {
         "label": "électricienne",
         "src": "/lib/images/vocabulaire/metiers/électricienne.webp"
       },
       {
         "label": "épicière",
         "src": "/lib/images/vocabulaire/metiers/épicière.webp"
+      },
+      {
+        "label": "étudiant",
+        "src": "/lib/images/vocabulaire/metiers/étudiant.webp"
       }
     ]
   },
@@ -5840,8 +5936,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/crayon.webp"
       },
       {
+        "label": "devoirs",
+        "src": "/lib/images/vocabulaire/ecole-bureau/devoirs.webp"
+      },
+      {
         "label": "dictionnaire",
         "src": "/lib/images/vocabulaire/ecole-bureau/dictionnaire.webp"
+      },
+      {
+        "label": "diplôme",
+        "src": "/lib/images/vocabulaire/ecole-bureau/diplôme.webp"
       },
       {
         "label": "encre",
@@ -5854,6 +5958,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "equerre",
         "src": "/lib/images/vocabulaire/ecole-bureau/equerre.webp"
+      },
+      {
+        "label": "examen",
+        "src": "/lib/images/vocabulaire/ecole-bureau/examen.webp"
+      },
+      {
+        "label": "feuille-de-papier",
+        "src": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp"
       },
       {
         "label": "feutre",
@@ -5928,6 +6040,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/règle.webp"
       },
       {
+        "label": "salle-de-classe",
+        "src": "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp"
+      },
+      {
         "label": "scotch",
         "src": "/lib/images/vocabulaire/ecole-bureau/scotch.webp"
       },
@@ -5952,8 +6068,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/tampon.webp"
       },
       {
+        "label": "trombone",
+        "src": "/lib/images/vocabulaire/ecole-bureau/trombone.webp"
+      },
+      {
         "label": "trousse",
         "src": "/lib/images/vocabulaire/ecole-bureau/trousse.webp"
+      },
+      {
+        "label": "élève",
+        "src": "/lib/images/vocabulaire/ecole-bureau/élève.webp"
       },
       {
         "label": "équerre",
@@ -6488,10 +6612,14 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "compas": "/lib/images/vocabulaire/ecole-bureau/compas.webp",
   "craie": "/lib/images/vocabulaire/ecole-bureau/craie.webp",
   "crayon": "/lib/images/vocabulaire/ecole-bureau/crayon.webp",
+  "devoirs": "/lib/images/vocabulaire/ecole-bureau/devoirs.webp",
   "dictionnaire": "/lib/images/vocabulaire/ecole-bureau/dictionnaire.webp",
+  "diplôme": "/lib/images/vocabulaire/ecole-bureau/diplôme.webp",
   "encre": "/lib/images/vocabulaire/ecole-bureau/encre.webp",
   "encyclopédie": "/lib/images/vocabulaire/ecole-bureau/encyclopédie.webp",
   "equerre": "/lib/images/vocabulaire/ecole-bureau/equerre.webp",
+  "examen": "/lib/images/vocabulaire/ecole-bureau/examen.webp",
+  "feuille-de-papier": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp",
   "feutre": "/lib/images/vocabulaire/ecole-bureau/feutre.webp",
   "globe": "/lib/images/vocabulaire/ecole-bureau/globe.webp",
   "gomme": "/lib/images/vocabulaire/ecole-bureau/gomme.webp",
@@ -6510,13 +6638,16 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "rapporteur": "/lib/images/vocabulaire/ecole-bureau/rapporteur.webp",
   "regle": "/lib/images/vocabulaire/ecole-bureau/regle.webp",
   "règle": "/lib/images/vocabulaire/ecole-bureau/règle.webp",
+  "salle-de-classe": "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp",
   "scotch": "/lib/images/vocabulaire/ecole-bureau/scotch.webp",
   "stylo": "/lib/images/vocabulaire/ecole-bureau/stylo.webp",
   "surligneur": "/lib/images/vocabulaire/ecole-bureau/surligneur.webp",
   "tableau": "/lib/images/vocabulaire/ecole-bureau/tableau.webp",
   "taille-crayon": "/lib/images/vocabulaire/ecole-bureau/taille-crayon.webp",
   "tampon": "/lib/images/vocabulaire/ecole-bureau/tampon.webp",
+  "trombone": "/lib/images/vocabulaire/ecole-bureau/trombone.webp",
   "trousse": "/lib/images/vocabulaire/ecole-bureau/trousse.webp",
+  "élève": "/lib/images/vocabulaire/ecole-bureau/élève.webp",
   "équerre": "/lib/images/vocabulaire/ecole-bureau/équerre.webp",
   "aspirateur": "/lib/images/vocabulaire/electromenager/aspirateur.webp",
   "bouilloire": "/lib/images/vocabulaire/electromenager/bouilloire.webp",
@@ -6908,58 +7039,82 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "éclaircie": "/lib/images/vocabulaire/meteo/éclaircie.webp",
   "actrice": "/lib/images/vocabulaire/metiers/actrice.webp",
   "agente-entretien": "/lib/images/vocabulaire/metiers/agente-entretien.webp",
+  "agriculteur": "/lib/images/vocabulaire/metiers/agriculteur.webp",
   "agricultrice": "/lib/images/vocabulaire/metiers/agricultrice.webp",
+  "aide-soignante": "/lib/images/vocabulaire/metiers/aide-soignante.webp",
   "architecte": "/lib/images/vocabulaire/metiers/architecte.webp",
   "astronaute": "/lib/images/vocabulaire/metiers/astronaute.webp",
   "avocate": "/lib/images/vocabulaire/metiers/avocate.webp",
   "boucher": "/lib/images/vocabulaire/metiers/boucher.webp",
   "bouchère": "/lib/images/vocabulaire/metiers/bouchère.webp",
+  "boulanger": "/lib/images/vocabulaire/metiers/boulanger.webp",
   "boulangère": "/lib/images/vocabulaire/metiers/boulangère.webp",
+  "caissier": "/lib/images/vocabulaire/metiers/caissier.webp",
   "caissière": "/lib/images/vocabulaire/metiers/caissière.webp",
   "chanteuse": "/lib/images/vocabulaire/metiers/chanteuse.webp",
   "charpentière": "/lib/images/vocabulaire/metiers/charpentière.webp",
+  "chauffeur-de-bus": "/lib/images/vocabulaire/metiers/chauffeur-de-bus.webp",
   "chauffeuse": "/lib/images/vocabulaire/metiers/chauffeuse.webp",
   "clown": "/lib/images/vocabulaire/metiers/clown.webp",
   "coiffeur": "/lib/images/vocabulaire/metiers/coiffeur.webp",
   "coiffeuse": "/lib/images/vocabulaire/metiers/coiffeuse.webp",
+  "comptable": "/lib/images/vocabulaire/metiers/comptable.webp",
   "concierge": "/lib/images/vocabulaire/metiers/concierge.webp",
   "controleur": "/lib/images/vocabulaire/metiers/controleur.webp",
+  "cuisinier": "/lib/images/vocabulaire/metiers/cuisinier.webp",
   "cuisinière": "/lib/images/vocabulaire/metiers/cuisinière.webp",
   "danseuse": "/lib/images/vocabulaire/metiers/danseuse.webp",
   "dentiste": "/lib/images/vocabulaire/metiers/dentiste.webp",
   "docteur": "/lib/images/vocabulaire/metiers/docteur.webp",
+  "enseignant": "/lib/images/vocabulaire/metiers/enseignant.webp",
+  "facteur": "/lib/images/vocabulaire/metiers/facteur.webp",
   "factrice": "/lib/images/vocabulaire/metiers/factrice.webp",
   "fermière": "/lib/images/vocabulaire/metiers/fermière.webp",
   "fleuriste": "/lib/images/vocabulaire/metiers/fleuriste.webp",
+  "infirmier": "/lib/images/vocabulaire/metiers/infirmier.webp",
   "infirmière": "/lib/images/vocabulaire/metiers/infirmière.webp",
+  "informaticien": "/lib/images/vocabulaire/metiers/informaticien.webp",
   "ingénieure": "/lib/images/vocabulaire/metiers/ingénieure.webp",
+  "jardinier": "/lib/images/vocabulaire/metiers/jardinier.webp",
   "jardinière": "/lib/images/vocabulaire/metiers/jardinière.webp",
   "journaliste": "/lib/images/vocabulaire/metiers/journaliste.webp",
   "juge": "/lib/images/vocabulaire/metiers/juge.webp",
+  "livreur": "/lib/images/vocabulaire/metiers/livreur.webp",
   "livreuse": "/lib/images/vocabulaire/metiers/livreuse.webp",
   "maçonne": "/lib/images/vocabulaire/metiers/maçonne.webp",
+  "menuisier": "/lib/images/vocabulaire/metiers/menuisier.webp",
   "musicienne": "/lib/images/vocabulaire/metiers/musicienne.webp",
+  "mécanicien": "/lib/images/vocabulaire/metiers/mécanicien.webp",
   "mécanicienne": "/lib/images/vocabulaire/metiers/mécanicienne.webp",
   "médecin": "/lib/images/vocabulaire/metiers/médecin.webp",
+  "ouvrier": "/lib/images/vocabulaire/metiers/ouvrier.webp",
   "paysan": "/lib/images/vocabulaire/metiers/paysan.webp",
   "peintre": "/lib/images/vocabulaire/metiers/peintre.webp",
   "pharmacienne": "/lib/images/vocabulaire/metiers/pharmacienne.webp",
   "photographe": "/lib/images/vocabulaire/metiers/photographe.webp",
   "pilote": "/lib/images/vocabulaire/metiers/pilote.webp",
+  "plombier": "/lib/images/vocabulaire/metiers/plombier.webp",
   "plombière": "/lib/images/vocabulaire/metiers/plombière.webp",
+  "policier": "/lib/images/vocabulaire/metiers/policier.webp",
   "policière": "/lib/images/vocabulaire/metiers/policière.webp",
+  "pompier": "/lib/images/vocabulaire/metiers/pompier.webp",
   "pompière": "/lib/images/vocabulaire/metiers/pompière.webp",
   "professeure": "/lib/images/vocabulaire/metiers/professeure.webp",
   "pêcheuse": "/lib/images/vocabulaire/metiers/pêcheuse.webp",
+  "réceptionniste": "/lib/images/vocabulaire/metiers/réceptionniste.webp",
   "scientifique": "/lib/images/vocabulaire/metiers/scientifique.webp",
   "secrétaire": "/lib/images/vocabulaire/metiers/secrétaire.webp",
+  "serveur": "/lib/images/vocabulaire/metiers/serveur.webp",
   "serveuse": "/lib/images/vocabulaire/metiers/serveuse.webp",
   "steward": "/lib/images/vocabulaire/metiers/steward.webp",
   "trapéziste": "/lib/images/vocabulaire/metiers/trapéziste.webp",
+  "vendeur": "/lib/images/vocabulaire/metiers/vendeur.webp",
   "vendeuse": "/lib/images/vocabulaire/metiers/vendeuse.webp",
   "vétérinaire": "/lib/images/vocabulaire/metiers/vétérinaire.webp",
+  "électricien": "/lib/images/vocabulaire/metiers/électricien.webp",
   "électricienne": "/lib/images/vocabulaire/metiers/électricienne.webp",
   "épicière": "/lib/images/vocabulaire/metiers/épicière.webp",
+  "étudiant": "/lib/images/vocabulaire/metiers/étudiant.webp",
   "accordéon": "/lib/images/vocabulaire/musique/accordéon.webp",
   "banjo": "/lib/images/vocabulaire/musique/banjo.webp",
   "batterie": "/lib/images/vocabulaire/musique/batterie.webp",
@@ -6978,7 +7133,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "saxophone": "/lib/images/vocabulaire/musique/saxophone.webp",
   "tambour": "/lib/images/vocabulaire/musique/tambour.webp",
   "tambourin": "/lib/images/vocabulaire/musique/tambourin.webp",
-  "trombone": "/lib/images/vocabulaire/musique/trombone.webp",
   "trompette": "/lib/images/vocabulaire/musique/trompette.webp",
   "violon": "/lib/images/vocabulaire/musique/violon.webp",
   "violoncelle": "/lib/images/vocabulaire/musique/violoncelle.webp",
