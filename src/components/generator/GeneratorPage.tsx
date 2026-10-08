@@ -55,6 +55,9 @@ import {
   soutienFrTopics,
   gattegnoTopics,
   grammaireTopics,
+  vocabulaireTopics,
+  societeTopics,
+  santeTopics,
   tcfTopics,
   tcmTopics,
   typesForTopic,
@@ -78,6 +81,7 @@ import {
   formatPointsLabel,
   isTcmConsignesType,
   isTcmDomain,
+  tcmClassLevelForDomain,
   TCM_DOCUMENT_TITLE,
 } from '@/tcm/test'
 import {
@@ -255,17 +259,23 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             ? gattegnoTopics
             : activePage.domain === 'grammaire'
               ? grammaireTopics
-              : activePage.domain === 'jeux'
-                ? jeuxTopics
-                : activePage.domain === 'calligraphie'
-                  ? calligraphieTopics
-                  : activePage.domain === 'soutien-fr'
-                    ? soutienFrTopics
-                    : activePage.domain === 'tcm'
-                      ? tcmTopics
-                      : activePage.domain === TCF_DOMAIN
-                        ? tcfTopics
-                        : lectureTopics
+              : activePage.domain === 'vocabulaire'
+                ? vocabulaireTopics
+                : activePage.domain === 'société'
+                  ? societeTopics
+                  : activePage.domain === 'santé'
+                    ? santeTopics
+                    : activePage.domain === 'jeux'
+                      ? jeuxTopics
+                      : activePage.domain === 'calligraphie'
+                        ? calligraphieTopics
+                        : activePage.domain === 'soutien-fr'
+                          ? soutienFrTopics
+                          : isTcmDomain(activePage.domain)
+                            ? tcmTopics
+                            : activePage.domain === TCF_DOMAIN
+                              ? tcfTopics
+                              : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -1081,14 +1091,16 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     setBlockIndex(0)
     if (isTcmDomain(next)) {
       setSheetIndex(0)
-      setPages(buildTcmTestPages())
+      setPages(buildTcmTestPages(next))
       setEvalMode(true)
       setPointsPerQuestion(1)
       setMode('student')
+      const classLevel = tcmClassLevelForDomain(next)
       setInstitutional((current) => ({
         ...current,
         course: 'Mathématiques',
         documentTitle: TCM_DOCUMENT_TITLE,
+        ...(classLevel ? { classLevel } : {}),
       }))
       return
     }
@@ -1117,6 +1129,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       next === 'soutien-fr' ||
       next === 'gattegno' ||
       next === 'grammaire' ||
+      next === 'vocabulaire' ||
+      next === 'société' ||
+      next === 'santé' ||
       next === 'jeux' ||
       next === 'calligraphie'
     ) {

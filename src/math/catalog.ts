@@ -7,7 +7,10 @@ import { GRAMMAIRE_EXERCISE_TYPES, GRAMMAIRE_TOPICS } from '@/grammaire/catalog'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
+import { SANTE_EXERCISE_TYPES, SANTE_TOPICS } from '@/sante/catalog'
+import { SOCIETE_EXERCISE_TYPES, SOCIETE_TOPICS } from '@/societe/catalog'
 import { TCF_EXERCISE_TYPES, TCF_TOPICS } from '@/tcf/catalog'
+import { VOCABULAIRE_EXERCISE_TYPES, VOCABULAIRE_TOPICS } from '@/vocabulaire/catalog'
 
 export const topics: Topic[] = [
   { id: 'tcm-info', label: 'Informations', domain: 'tcm' },
@@ -63,6 +66,10 @@ export const topics: Topic[] = [
   { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'gattegno' },
   // —— Grammaire FALC (théorie SCAI) ——
   ...GRAMMAIRE_TOPICS,
+  // —— Vocabulaire / Société / Sciences et santé (squelettes) ——
+  ...VOCABULAIRE_TOPICS,
+  ...SOCIETE_TOPICS,
+  ...SANTE_TOPICS,
   // —— Grilles de cartes (thèmes FR + Libre) ——
   ...jeuxTopicsFromFr,
   // —— Calligraphie (thèmes FR + Libre) ——
@@ -76,11 +83,14 @@ export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture'
 export const soutienFrTopics = topics.filter((topic) => topic.domain === 'soutien-fr')
 export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
 export const grammaireTopics = topics.filter((topic) => topic.domain === 'grammaire')
+export const vocabulaireTopics = topics.filter((topic) => topic.domain === 'vocabulaire')
+export const societeTopics = topics.filter((topic) => topic.domain === 'société')
+export const santeTopics = topics.filter((topic) => topic.domain === 'santé')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
 /** TCF : un thème par compétence (CE, CO, PE, PO). */
 export const tcfTopics = topics.filter((topic) => topic.domain === 'tcf')
-/** Thèmes maths utilisables dans le TCM (intro + algèbre + géométrie). */
+/** Thèmes maths utilisables dans le TCM / ACM (intro + algèbre + géométrie). */
 export const tcmTopics = [
   ...topics.filter((topic) => topic.domain === 'tcm'),
   ...algebraTopics,
@@ -759,6 +769,9 @@ export const exerciseTypes: ExerciseType[] = [
   ),
   ...TCF_EXERCISE_TYPES,
   ...GRAMMAIRE_EXERCISE_TYPES,
+  ...VOCABULAIRE_EXERCISE_TYPES,
+  ...SOCIETE_EXERCISE_TYPES,
+  ...SANTE_EXERCISE_TYPES,
 ]
 
 const VOWEL_TOPICS = [
@@ -972,7 +985,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
     if (any[0]) return any[0]
   }
   const fallbackTopic =
-    domain === 'algèbre' || domain === 'tcm' || domain === 'français'
+    domain === 'algèbre' || domain === 'tcm' || domain === 'tcm-csc' || domain === 'tcm-cfr' || domain === 'français'
         ? 'addition'
         : domain === 'géométrie'
           ? 'aires'
@@ -980,22 +993,34 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
             ? 'phrase-simple'
             : domain === 'grammaire'
               ? 'gram-se-presenter'
-              : domain === 'jeux'
-                ? JEUX_LIBRE_TOPIC
-                : domain === 'calligraphie'
-                  ? CALLI_LIBRE_TOPIC
-                  : domain === 'soutien-fr'
-                    ? 'soutien-a'
-                    : domain === 'tcf'
-                      ? 'tcf-ce'
-                      : 'voyelle-a'
+              : domain === 'vocabulaire'
+                ? 'vocabulaire-a-venir'
+                : domain === 'société'
+                  ? 'societe-a-venir'
+                  : domain === 'santé'
+                    ? 'sante-a-venir'
+                    : domain === 'jeux'
+                      ? JEUX_LIBRE_TOPIC
+                      : domain === 'calligraphie'
+                        ? CALLI_LIBRE_TOPIC
+                        : domain === 'soutien-fr'
+                          ? 'soutien-a'
+                          : domain === 'tcf'
+                            ? 'tcf-ce'
+                            : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const type = firstTypeFor(domain)
   const count =
-    domain === 'jeux' || domain === 'calligraphie' || domain === 'tcf' || domain === 'grammaire'
+    domain === 'jeux' ||
+    domain === 'calligraphie' ||
+    domain === 'tcf' ||
+    domain === 'grammaire' ||
+    domain === 'vocabulaire' ||
+    domain === 'société' ||
+    domain === 'santé'
       ? 1
       : domain === 'lecture' || domain === 'soutien-fr' || domain === 'gattegno'
         ? 6

@@ -20,6 +20,9 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/tcf/` | Tests TCF (banques JSON, éditeur, rendu) |
 | `src/francais/` | FLE : Voc/Gram/Com, Phrase, Lecture, Soutien |
 | `src/grammaire/` | Théorie FALC (SCAI) — thèmes + fiches ; exercices à venir — `README.md` |
+| `src/vocabulaire/` | Domaine Vocabulaire (squelette) — `README.md` |
+| `src/societe/` | Domaine Société (squelette) — `README.md` |
+| `src/sante/` | Domaine Sciences et santé (squelette) — `README.md` |
 | `src/jeux/` | Fiches-jeux — planning `docs/plan-domaine-jeux.md` |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |

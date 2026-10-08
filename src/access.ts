@@ -8,29 +8,63 @@ import type { Domain } from '@/math/types'
  */
 export type AccessAccount = 'admin' | 'full' | 'partial'
 
-/** Domaines « normales » (hors TCM réservé admin). */
+/**
+ * Domaines « réguliers » — ordre alphabétique par libellé.
+ * (Les tests TCF / ACM / TCM sont pinés en bas de liste.)
+ */
 export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'algèbre', label: 'Algèbre' },
-  { id: 'géométrie', label: 'Géométrie' },
+  { id: 'calligraphie', label: 'Calligraphie' },
   { id: 'gattegno', label: 'Gattegno' },
+  { id: 'géométrie', label: 'Géométrie' },
   { id: 'grammaire', label: 'Grammaire' },
   { id: 'jeux', label: 'Grilles de cartes' },
-  { id: 'calligraphie', label: 'Calligraphie' },
+  { id: 'santé', label: 'Sciences et santé' },
+  { id: 'société', label: 'Société' },
   { id: 'soutien-fr', label: 'Soutien FR' },
+  { id: 'vocabulaire', label: 'Vocabulaire' },
 ]
 
-/** Domaines réservés au compte admin (tests TCM / TCF). */
-export const ADMIN_ONLY_DOMAINS: readonly Domain[] = ['tcm', 'tcf']
+/**
+ * Domaines réservés au compte admin (tests).
+ * Ordre d’affichage exact : tcf → tcm-csc → tcm-cfr → tcm.
+ *
+ * ACM = libellé demandé pour les variantes institutionnelles TCM
+ * (env `tcm-csc` / `tcm-cfr` — pas d’id `acm` distinct).
+ */
+export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
+  { id: 'tcf', label: 'TCF' },
+  { id: 'tcm-csc', label: 'ACM CSC' },
+  { id: 'tcm-cfr', label: 'ACM CFR' },
+  { id: 'tcm', label: 'TCM' },
+]
 
-/** Tous les domaines sélectionnables (TCM et TCF inclus, sous TCM). */
+export const ADMIN_ONLY_DOMAINS: readonly Domain[] = ADMIN_ONLY_DOMAIN_OPTIONS.map((d) => d.id)
+
+/** Tous les domaines sélectionnables (ordre d’affichage final). */
 export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   ...REGULAR_DOMAIN_OPTIONS,
-  { id: 'tcm', label: 'TCM' },
-  { id: 'tcf', label: 'TCF' },
+  ...ADMIN_ONLY_DOMAIN_OPTIONS,
 ]
 
 const REGULAR_DOMAIN_IDS: Domain[] = REGULAR_DOMAIN_OPTIONS.map((d) => d.id)
 const ALL_DOMAIN_IDS: Domain[] = ACCESS_DOMAIN_OPTIONS.map((d) => d.id)
+
+/** Alias ASCII / variantes acceptées dans les listes d’env. */
+const DOMAIN_ALIASES: Readonly<Record<string, Domain>> = {
+  algebre: 'algèbre',
+  geometrie: 'géométrie',
+  francais: 'français',
+  societe: 'société',
+  sante: 'santé',
+  'tcm_csc': 'tcm-csc',
+  'tcm_cfr': 'tcm-cfr',
+  acm: 'tcm-csc',
+  'acm-csc': 'tcm-csc',
+  'acm-cfr': 'tcm-cfr',
+  'acm_csc': 'tcm-csc',
+  'acm_cfr': 'tcm-cfr',
+}
 
 const ACCESS_COOKIE = 'clairfle-fiche-access'
 const ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 365
@@ -51,8 +85,14 @@ function passwordMap(): Readonly<Record<string, AccessAccount>> {
   }
 }
 
-function isDomain(value: unknown): value is Domain {
-  return typeof value === 'string' && ALL_DOMAIN_IDS.includes(value as Domain)
+function resolveDomainToken(raw: string): Domain | null {
+  const trimmed = raw.trim()
+  if (!trimmed) return null
+  if (ALL_DOMAIN_IDS.includes(trimmed as Domain)) return trimmed as Domain
+  const lower = trimmed.toLowerCase()
+  if (ALL_DOMAIN_IDS.includes(lower as Domain)) return lower as Domain
+  const aliased = DOMAIN_ALIASES[lower]
+  return aliased ?? null
 }
 
 function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] {
@@ -61,11 +101,18 @@ function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] 
     .split(/[,;|]/)
     .map((part) => part.trim())
     .filter(Boolean)
-  const domains = parts.filter(isDomain)
+  const domains: Domain[] = []
+  const seen = new Set<Domain>()
+  for (const part of parts) {
+    const domain = resolveDomainToken(part)
+    if (!domain || seen.has(domain)) continue
+    seen.add(domain)
+    domains.push(domain)
+  }
   return domains.length > 0 ? domains : [...fallback]
 }
 
-/** Domaines FULL / PARTIAL : jamais TCM ni TCF (réservés admin). */
+/** Domaines FULL / PARTIAL : jamais TCM / ACM / TCF (réservés admin). */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   const list =
     account === 'full'
@@ -79,6 +126,12 @@ function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
 
 function adminDomainsFromEnv(): Domain[] {
   return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_ADMIN, [...ALL_DOMAIN_IDS])
+}
+
+/** Réordonne selon `ACCESS_DOMAIN_OPTIONS` (alpha + pin tests en bas). */
+function orderDomains(domains: Domain[]): Domain[] {
+  const allowed = new Set(domains)
+  return ACCESS_DOMAIN_OPTIONS.map((d) => d.id).filter((id) => allowed.has(id))
 }
 
 export function resolveAccountFromPassword(password: string): AccessAccount | null {
@@ -111,11 +164,11 @@ export function hasAccessCookie(): boolean {
   return readAccessAccount() != null
 }
 
-/** Domaines autorisés pour le compte connecté. */
+/** Domaines autorisés pour le compte connecté (ordre d’affichage). */
 export function domainsForAccount(account: AccessAccount | null): Domain[] {
   if (!account) return []
-  if (account === 'admin') return adminDomainsFromEnv()
-  return domainsFromEnv(account)
+  if (account === 'admin') return orderDomains(adminDomainsFromEnv())
+  return orderDomains(domainsFromEnv(account))
 }
 
 export function accountCanAccessDomain(account: AccessAccount | null, domain: Domain): boolean {

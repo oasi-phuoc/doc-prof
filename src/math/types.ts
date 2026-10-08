@@ -8,7 +8,12 @@ export type Domain =
   | 'jeux'
   | 'calligraphie'
   | 'grammaire'
+  | 'vocabulaire'
+  | 'société'
+  | 'santé'
   | 'tcm'
+  | 'tcm-csc'
+  | 'tcm-cfr'
   | 'tcf'
 
 /** Catégories grammaire en couleur (Gattegno). */
