@@ -1288,6 +1288,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/couteau.webp"
       },
       {
+        "label": "couvercle",
+        "src": "/lib/images/vocabulaire/cuisine/couvercle.webp"
+      },
+      {
         "label": "couvert",
         "src": "/lib/images/vocabulaire/cuisine/couvert.webp"
       },
@@ -1312,6 +1316,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/evier.webp"
       },
       {
+        "label": "fouet",
+        "src": "/lib/images/vocabulaire/cuisine/fouet.webp"
+      },
+      {
         "label": "fourchette",
         "src": "/lib/images/vocabulaire/cuisine/fourchette.webp"
       },
@@ -1324,12 +1332,36 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/marmite.webp"
       },
       {
+        "label": "moule-à-gâteau",
+        "src": "/lib/images/vocabulaire/cuisine/moule-à-gâteau.webp"
+      },
+      {
+        "label": "nappe",
+        "src": "/lib/images/vocabulaire/cuisine/nappe.webp"
+      },
+      {
+        "label": "ouvre-boîte",
+        "src": "/lib/images/vocabulaire/cuisine/ouvre-boîte.webp"
+      },
+      {
         "label": "passoire",
         "src": "/lib/images/vocabulaire/cuisine/passoire.webp"
       },
       {
+        "label": "pichet",
+        "src": "/lib/images/vocabulaire/cuisine/pichet.webp"
+      },
+      {
+        "label": "planche-à-découper",
+        "src": "/lib/images/vocabulaire/cuisine/planche-à-découper.webp"
+      },
+      {
         "label": "plat",
         "src": "/lib/images/vocabulaire/cuisine/plat.webp"
+      },
+      {
+        "label": "plateau",
+        "src": "/lib/images/vocabulaire/cuisine/plateau.webp"
       },
       {
         "label": "poele",
@@ -1344,8 +1376,28 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/rouleau.webp"
       },
       {
+        "label": "râpe",
+        "src": "/lib/images/vocabulaire/cuisine/râpe.webp"
+      },
+      {
+        "label": "saladier",
+        "src": "/lib/images/vocabulaire/cuisine/saladier.webp"
+      },
+      {
         "label": "spatule",
         "src": "/lib/images/vocabulaire/cuisine/spatule.webp"
+      },
+      {
+        "label": "tasse",
+        "src": "/lib/images/vocabulaire/cuisine/tasse.webp"
+      },
+      {
+        "label": "théière",
+        "src": "/lib/images/vocabulaire/cuisine/théière.webp"
+      },
+      {
+        "label": "tire-bouchon",
+        "src": "/lib/images/vocabulaire/cuisine/tire-bouchon.webp"
       },
       {
         "label": "ustensile",
@@ -2146,6 +2198,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/coton-tige.webp"
       },
       {
+        "label": "coupe-ongles",
+        "src": "/lib/images/vocabulaire/hygiene/coupe-ongles.webp"
+      },
+      {
+        "label": "crème-hydratante",
+        "src": "/lib/images/vocabulaire/hygiene/crème-hydratante.webp"
+      },
+      {
         "label": "dentifrice",
         "src": "/lib/images/vocabulaire/hygiene/dentifrice.webp"
       },
@@ -2158,6 +2218,18 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/déodorant.webp"
       },
       {
+        "label": "fil-dentaire",
+        "src": "/lib/images/vocabulaire/hygiene/fil-dentaire.webp"
+      },
+      {
+        "label": "gant-de-toilette",
+        "src": "/lib/images/vocabulaire/hygiene/gant-de-toilette.webp"
+      },
+      {
+        "label": "gel-douche",
+        "src": "/lib/images/vocabulaire/hygiene/gel-douche.webp"
+      },
+      {
         "label": "hygiène",
         "src": "/lib/images/vocabulaire/hygiene/hygiène.webp"
       },
@@ -2166,8 +2238,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/lavabo.webp"
       },
       {
+        "label": "lessive",
+        "src": "/lib/images/vocabulaire/hygiene/lessive.webp"
+      },
+      {
         "label": "lotion",
         "src": "/lib/images/vocabulaire/hygiene/lotion.webp"
+      },
+      {
+        "label": "mouchoirs",
+        "src": "/lib/images/vocabulaire/hygiene/mouchoirs.webp"
       },
       {
         "label": "papier-toilette",
@@ -2180,6 +2260,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "peigne",
         "src": "/lib/images/vocabulaire/hygiene/peigne.webp"
+      },
+      {
+        "label": "pince-à-épiler",
+        "src": "/lib/images/vocabulaire/hygiene/pince-à-épiler.webp"
       },
       {
         "label": "rasoir",
@@ -5908,8 +5992,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/calculatrice.webp"
       },
       {
+        "label": "cantine",
+        "src": "/lib/images/vocabulaire/ecole-bureau/cantine.webp"
+      },
+      {
         "label": "cartable",
         "src": "/lib/images/vocabulaire/ecole-bureau/cartable.webp"
+      },
+      {
+        "label": "casier",
+        "src": "/lib/images/vocabulaire/ecole-bureau/casier.webp"
       },
       {
         "label": "ciseaux",
@@ -6020,6 +6112,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/post-it.webp"
       },
       {
+        "label": "projecteur",
+        "src": "/lib/images/vocabulaire/ecole-bureau/projecteur.webp"
+      },
+      {
         "label": "punaise",
         "src": "/lib/images/vocabulaire/ecole-bureau/punaise.webp"
       },
@@ -6054,6 +6150,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "surligneur",
         "src": "/lib/images/vocabulaire/ecole-bureau/surligneur.webp"
+      },
+      {
+        "label": "tableau-blanc",
+        "src": "/lib/images/vocabulaire/ecole-bureau/tableau-blanc.webp"
       },
       {
         "label": "tableau",
@@ -6102,6 +6202,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/cafetiere.webp"
       },
       {
+        "label": "chauffe-eau",
+        "src": "/lib/images/vocabulaire/electromenager/chauffe-eau.webp"
+      },
+      {
         "label": "climatiseur",
         "src": "/lib/images/vocabulaire/electromenager/climatiseur.webp"
       },
@@ -6124,6 +6228,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "frigo",
         "src": "/lib/images/vocabulaire/electromenager/frigo.webp"
+      },
+      {
+        "label": "grille-pain",
+        "src": "/lib/images/vocabulaire/electromenager/grille-pain.webp"
+      },
+      {
+        "label": "hotte",
+        "src": "/lib/images/vocabulaire/electromenager/hotte.webp"
       },
       {
         "label": "lave-linge",
@@ -6154,8 +6266,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/mixeur.webp"
       },
       {
+        "label": "plaque-de-cuisson",
+        "src": "/lib/images/vocabulaire/electromenager/plaque-de-cuisson.webp"
+      },
+      {
+        "label": "robot-de-cuisine",
+        "src": "/lib/images/vocabulaire/electromenager/robot-de-cuisine.webp"
+      },
+      {
         "label": "réfrigerateur",
         "src": "/lib/images/vocabulaire/electromenager/réfrigerateur.webp"
+      },
+      {
+        "label": "sèche-linge",
+        "src": "/lib/images/vocabulaire/electromenager/sèche-linge.webp"
       },
       {
         "label": "ventilateur",
@@ -6553,21 +6677,34 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bol": "/lib/images/vocabulaire/cuisine/bol.webp",
   "casserole": "/lib/images/vocabulaire/cuisine/casserole.webp",
   "couteau": "/lib/images/vocabulaire/cuisine/couteau.webp",
+  "couvercle": "/lib/images/vocabulaire/cuisine/couvercle.webp",
   "couvert": "/lib/images/vocabulaire/cuisine/couvert.webp",
   "cuillere": "/lib/images/vocabulaire/cuisine/cuillere.webp",
   "dosette": "/lib/images/vocabulaire/cuisine/dosette.webp",
   "doseur": "/lib/images/vocabulaire/cuisine/doseur.webp",
   "entonnoir": "/lib/images/vocabulaire/cuisine/entonnoir.webp",
   "evier": "/lib/images/vocabulaire/cuisine/evier.webp",
+  "fouet": "/lib/images/vocabulaire/cuisine/fouet.webp",
   "fourchette": "/lib/images/vocabulaire/cuisine/fourchette.webp",
   "louche": "/lib/images/vocabulaire/cuisine/louche.webp",
   "marmite": "/lib/images/vocabulaire/cuisine/marmite.webp",
+  "moule-à-gâteau": "/lib/images/vocabulaire/cuisine/moule-à-gâteau.webp",
+  "nappe": "/lib/images/vocabulaire/cuisine/nappe.webp",
+  "ouvre-boîte": "/lib/images/vocabulaire/cuisine/ouvre-boîte.webp",
   "passoire": "/lib/images/vocabulaire/cuisine/passoire.webp",
+  "pichet": "/lib/images/vocabulaire/cuisine/pichet.webp",
+  "planche-à-découper": "/lib/images/vocabulaire/cuisine/planche-à-découper.webp",
   "plat": "/lib/images/vocabulaire/cuisine/plat.webp",
+  "plateau": "/lib/images/vocabulaire/cuisine/plateau.webp",
   "poele": "/lib/images/vocabulaire/cuisine/poele.webp",
   "recette": "/lib/images/vocabulaire/cuisine/recette.webp",
   "rouleau": "/lib/images/vocabulaire/cuisine/rouleau.webp",
+  "râpe": "/lib/images/vocabulaire/cuisine/râpe.webp",
+  "saladier": "/lib/images/vocabulaire/cuisine/saladier.webp",
   "spatule": "/lib/images/vocabulaire/cuisine/spatule.webp",
+  "tasse": "/lib/images/vocabulaire/cuisine/tasse.webp",
+  "théière": "/lib/images/vocabulaire/cuisine/théière.webp",
+  "tire-bouchon": "/lib/images/vocabulaire/cuisine/tire-bouchon.webp",
   "ustensile": "/lib/images/vocabulaire/cuisine/ustensile.webp",
   "verre": "/lib/images/vocabulaire/cuisine/verre.webp",
   "wok": "/lib/images/vocabulaire/cuisine/wok.webp",
@@ -6605,7 +6742,9 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bureau": "/lib/images/vocabulaire/ecole-bureau/bureau.webp",
   "cahier": "/lib/images/vocabulaire/ecole-bureau/cahier.webp",
   "calculatrice": "/lib/images/vocabulaire/ecole-bureau/calculatrice.webp",
+  "cantine": "/lib/images/vocabulaire/ecole-bureau/cantine.webp",
   "cartable": "/lib/images/vocabulaire/ecole-bureau/cartable.webp",
+  "casier": "/lib/images/vocabulaire/ecole-bureau/casier.webp",
   "ciseaux": "/lib/images/vocabulaire/ecole-bureau/ciseaux.webp",
   "classeur": "/lib/images/vocabulaire/ecole-bureau/classeur.webp",
   "colle": "/lib/images/vocabulaire/ecole-bureau/colle.webp",
@@ -6633,6 +6772,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "porte-documents": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp",
   "porte-mine": "/lib/images/vocabulaire/ecole-bureau/porte-mine.webp",
   "post-it": "/lib/images/vocabulaire/ecole-bureau/post-it.webp",
+  "projecteur": "/lib/images/vocabulaire/ecole-bureau/projecteur.webp",
   "punaise": "/lib/images/vocabulaire/ecole-bureau/punaise.webp",
   "pupitre": "/lib/images/vocabulaire/ecole-bureau/pupitre.webp",
   "rapporteur": "/lib/images/vocabulaire/ecole-bureau/rapporteur.webp",
@@ -6642,6 +6782,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "scotch": "/lib/images/vocabulaire/ecole-bureau/scotch.webp",
   "stylo": "/lib/images/vocabulaire/ecole-bureau/stylo.webp",
   "surligneur": "/lib/images/vocabulaire/ecole-bureau/surligneur.webp",
+  "tableau-blanc": "/lib/images/vocabulaire/ecole-bureau/tableau-blanc.webp",
   "tableau": "/lib/images/vocabulaire/ecole-bureau/tableau.webp",
   "taille-crayon": "/lib/images/vocabulaire/ecole-bureau/taille-crayon.webp",
   "tampon": "/lib/images/vocabulaire/ecole-bureau/tampon.webp",
@@ -6652,12 +6793,15 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "aspirateur": "/lib/images/vocabulaire/electromenager/aspirateur.webp",
   "bouilloire": "/lib/images/vocabulaire/electromenager/bouilloire.webp",
   "cafetiere": "/lib/images/vocabulaire/electromenager/cafetiere.webp",
+  "chauffe-eau": "/lib/images/vocabulaire/electromenager/chauffe-eau.webp",
   "climatiseur": "/lib/images/vocabulaire/electromenager/climatiseur.webp",
   "congelateur": "/lib/images/vocabulaire/electromenager/congelateur.webp",
   "cuisiniere": "/lib/images/vocabulaire/electromenager/cuisiniere.webp",
   "fer-a-repasser": "/lib/images/vocabulaire/electromenager/fer-a-repasser.webp",
   "four": "/lib/images/vocabulaire/electromenager/four.webp",
   "frigo": "/lib/images/vocabulaire/electromenager/frigo.webp",
+  "grille-pain": "/lib/images/vocabulaire/electromenager/grille-pain.webp",
+  "hotte": "/lib/images/vocabulaire/electromenager/hotte.webp",
   "lave-linge": "/lib/images/vocabulaire/electromenager/lave-linge.webp",
   "lave-vaiselle": "/lib/images/vocabulaire/electromenager/lave-vaiselle.webp",
   "lave-vaisselle": "/lib/images/vocabulaire/electromenager/lave-vaisselle.webp",
@@ -6665,7 +6809,10 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "micro-onde": "/lib/images/vocabulaire/electromenager/micro-onde.webp",
   "micro-ondes": "/lib/images/vocabulaire/electromenager/micro-ondes.webp",
   "mixeur": "/lib/images/vocabulaire/electromenager/mixeur.webp",
+  "plaque-de-cuisson": "/lib/images/vocabulaire/electromenager/plaque-de-cuisson.webp",
+  "robot-de-cuisine": "/lib/images/vocabulaire/electromenager/robot-de-cuisine.webp",
   "réfrigerateur": "/lib/images/vocabulaire/electromenager/réfrigerateur.webp",
+  "sèche-linge": "/lib/images/vocabulaire/electromenager/sèche-linge.webp",
   "ventilateur": "/lib/images/vocabulaire/electromenager/ventilateur.webp",
   "basilic": "/lib/images/vocabulaire/epices-herbes/basilic.webp",
   "coriandre": "/lib/images/vocabulaire/epices-herbes/coriandre.webp",
@@ -6817,15 +6964,23 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "brosse-a-dents": "/lib/images/vocabulaire/hygiene/brosse-a-dents.webp",
   "brosse": "/lib/images/vocabulaire/hygiene/brosse.webp",
   "coton-tige": "/lib/images/vocabulaire/hygiene/coton-tige.webp",
+  "coupe-ongles": "/lib/images/vocabulaire/hygiene/coupe-ongles.webp",
+  "crème-hydratante": "/lib/images/vocabulaire/hygiene/crème-hydratante.webp",
   "dentifrice": "/lib/images/vocabulaire/hygiene/dentifrice.webp",
   "douche": "/lib/images/vocabulaire/hygiene/douche.webp",
   "déodorant": "/lib/images/vocabulaire/hygiene/déodorant.webp",
+  "fil-dentaire": "/lib/images/vocabulaire/hygiene/fil-dentaire.webp",
+  "gant-de-toilette": "/lib/images/vocabulaire/hygiene/gant-de-toilette.webp",
+  "gel-douche": "/lib/images/vocabulaire/hygiene/gel-douche.webp",
   "hygiène": "/lib/images/vocabulaire/hygiene/hygiène.webp",
   "lavabo": "/lib/images/vocabulaire/hygiene/lavabo.webp",
+  "lessive": "/lib/images/vocabulaire/hygiene/lessive.webp",
   "lotion": "/lib/images/vocabulaire/hygiene/lotion.webp",
+  "mouchoirs": "/lib/images/vocabulaire/hygiene/mouchoirs.webp",
   "papier-toilette": "/lib/images/vocabulaire/hygiene/papier-toilette.webp",
   "parfum": "/lib/images/vocabulaire/hygiene/parfum.webp",
   "peigne": "/lib/images/vocabulaire/hygiene/peigne.webp",
+  "pince-à-épiler": "/lib/images/vocabulaire/hygiene/pince-à-épiler.webp",
   "rasoir": "/lib/images/vocabulaire/hygiene/rasoir.webp",
   "robinet": "/lib/images/vocabulaire/hygiene/robinet.webp",
   "savon": "/lib/images/vocabulaire/hygiene/savon.webp",
