@@ -229,6 +229,62 @@ function makeSlot(rng: Rng, slot: SlotKind, letters: string[]): Factor {
   }
 }
 
+/** Étapes de réduction pour un produit de 3 facteurs (deux ·). */
+function developDotProduct(factors: Factor[]): string[] {
+  const prompt = `${factorDisplay(factors[0]!)} · ${factorDisplay(factors[1]!)} · ${factorDisplay(factors[2]!)}`
+  const answer = polynomialText(expandProduct(factors))
+  const steps = [prompt]
+  // Produit des deux premiers facteurs, puis × le troisième.
+  const partial = expandProduct(factors.slice(0, 2))
+  const mid = `${polynomialText(partial)} · ${factorDisplay(factors[2]!)}`
+  if (mid !== prompt && mid !== answer) steps.push(mid)
+  if (answer !== steps[steps.length - 1]) steps.push(answer)
+  return steps
+}
+
+/** Étapes : regrouper les monômes semblables, puis résultat. */
+function developReduceSum(terms: Mono[], display: string): string[] {
+  const answer = polynomialText(terms)
+  const steps = [display]
+  const byKey = new Map<string, Mono[]>()
+  for (const term of terms) {
+    const key = literalFromPowers(term.powers) || '1'
+    const list = byKey.get(key) ?? []
+    list.push(term)
+    byKey.set(key, list)
+  }
+  // Afficher un regroupement seulement s’il y a vraiment des semblables à fusionner.
+  const needsGroup = [...byKey.values()].some((list) => list.length > 1)
+  if (needsGroup) {
+    const grouped = [...byKey.entries()]
+      .map(([, list]) => {
+        if (list.length === 1) return monoDisplay(list[0]!)
+        return `(${list
+          .map((term, index) => {
+            const body = monoDisplay({ ...term, coefficient: Math.abs(term.coefficient) })
+            if (index === 0) return term.coefficient < 0 ? `−${body}` : body
+            return `${term.coefficient < 0 ? '−' : '+'} ${body}`
+          })
+          .join(' ')})`
+      })
+      .join(' + ')
+      .replace(/\+ −/g, '− ')
+    if (grouped !== display && grouped !== answer) steps.push(grouped)
+  }
+  if (answer !== steps[steps.length - 1]) steps.push(answer)
+  return steps
+}
+
+function algebraDevItem(prompt: string, answer: string, development: string[]): MathItem {
+  return {
+    layout: 'algebra',
+    prompt,
+    answer,
+    development,
+    calcAnswer: development.join('\n'),
+  }
+}
+
 /**
  * Q2 : exactement deux · (trois facteurs), 50 modèles, sans puissance dans l’énoncé.
  */
@@ -243,7 +299,7 @@ function generateDotProductItem(rng: Rng): MathItem {
     if (dots !== 2) continue
     if (/[²³⁴]/.test(prompt)) continue
     const answer = polynomialText(expandProduct(factors))
-    return { layout: 'algebra', prompt, answer }
+    return algebraDevItem(prompt, answer, developDotProduct(factors))
   }
   // Repli sûr : 5x · 6c · 2
   const [u, v] = letters
@@ -256,7 +312,8 @@ function generateDotProductItem(rng: Rng): MathItem {
     { kind: 'mono', mono: { coefficient: c, powers: {} } },
   ]
   const prompt = `${factorDisplay(factors[0]!)} · ${factorDisplay(factors[1]!)} · ${factorDisplay(factors[2]!)}`
-  return { layout: 'algebra', prompt, answer: polynomialText(expandProduct(factors)) }
+  const answer = polynomialText(expandProduct(factors))
+  return algebraDevItem(prompt, answer, developDotProduct(factors))
 }
 
 /** Q1 : somme de monômes degré ≤ 1 (pas de puissance, pas de ·). */
@@ -285,7 +342,8 @@ function generateReduceNoPower(rng: Rng): MathItem {
       return `${term.coefficient < 0 ? '−' : '+'} ${body}`
     })
     .join(' ')
-  return { layout: 'algebra', prompt: display, answer: polynomialText(terms) }
+  const answer = polynomialText(terms)
+  return algebraDevItem(display, answer, developReduceSum(terms, display))
 }
 
 /** Lot TCM ex. 32 : Q1 sans puissance ; Q2 avec exactement deux ·. */

@@ -180,13 +180,47 @@ export function evalEvaluerExpression(expr: string, vars: Record<string, number>
   return Function(`"use strict"; return (${js});`)() as number
 }
 
+function fmtSigned(n: number): string {
+  return String(n).replace('.', ',').replace('-', '−')
+}
+
+/** Remplace les lettres (et puissances) par leurs valeurs numériques. */
+function substituteEvaluerPrompt(prompt: string, vars: Record<string, number>): string {
+  let out = prompt
+  // Plus longues d’abord (² / ³ avant lettre nue).
+  const letters = Object.keys(vars).sort((a, b) => b.length - a.length)
+  for (const letter of letters) {
+    const value = vars[letter]!
+    const v = fmtSigned(value)
+    const wrapped = value < 0 ? `(${v})` : v
+    out = out.replace(new RegExp(`${letter}³`, 'g'), `${wrapped}³`)
+    out = out.replace(new RegExp(`${letter}²`, 'g'), `${wrapped}²`)
+    // Coeff collé : 2a → 2×(valeur) ; lettre seule → valeur.
+    out = out.replace(new RegExp(`(\\d)${letter}\\b`, 'g'), `$1×${wrapped}`)
+    out = out.replace(new RegExp(`\\b${letter}\\b`, 'g'), wrapped)
+  }
+  return out
+}
+
+function developEvaluerSteps(
+  prompt: string,
+  answer: string,
+  vars: Record<string, number>,
+): string[] {
+  const substituted = substituteEvaluerPrompt(prompt, vars)
+  const steps = [prompt]
+  if (substituted !== prompt) steps.push(substituted)
+  if (answer !== steps[steps.length - 1]) steps.push(answer)
+  return steps
+}
+
 function fillTemplate(
   template: Template,
   letters: [string, string, string],
   values: [number, number, number],
   rng: Rng,
   preferInteger: boolean,
-): { prompt: string; answer: string } | null {
+): { prompt: string; answer: string; development: string[] } | null {
   const [U, V, W] = letters
   const vars: Record<string, number> = {
     [U]: values[0],
@@ -223,7 +257,12 @@ function fillTemplate(
     // Décimaux : garder au plus 2 décimales « propres ».
     if (!preferInteger && Math.abs(value - Math.round(value * 100) / 100) > 1e-8) continue
 
-    return { prompt, answer: formatAnswer(value) }
+    const answer = formatAnswer(value)
+    return {
+      prompt,
+      answer,
+      development: developEvaluerSteps(prompt, answer, vars),
+    }
   }
   return null
 }
@@ -234,7 +273,7 @@ function fillFromPool(
   values: [number, number, number],
   rng: Rng,
   preferInteger: boolean,
-): { prompt: string; answer: string } | null {
+): { prompt: string; answer: string; development: string[] } | null {
   const order = shuffle(rng, [...templates])
   for (const tpl of order) {
     const filled = fillTemplate(tpl, letters, values, rng, preferInteger)
@@ -250,8 +289,15 @@ function fillFromPool(
   return null
 }
 
-function makeItem(prompt: string, answer: string): MathItem {
-  return { layout: 'algebra', prompt, answer }
+function makeItem(prompt: string, answer: string, development?: string[]): MathItem {
+  const steps = development?.length ? development : [prompt, answer]
+  return {
+    layout: 'algebra',
+    prompt,
+    answer,
+    development: steps,
+    calcAnswer: steps.join('\n'),
+  }
 }
 
 /** Lot TCM ex. 33 : 2 questions, 3 inconnues communes, 50 modèles/question. */
@@ -271,20 +317,35 @@ export function generateTcmEvaluerBatch(rng: Rng): TcmEvaluerBatch {
   const q1Preferred = pick(rng, Q1_TEMPLATES)
   const q2Preferred = pick(rng, Q2_TEMPLATES)
 
+  const vars: Record<string, number> = {
+    [picked[0]]: values[0],
+    [picked[1]]: values[1],
+    [picked[2]]: values[2],
+  }
+
+  const q1FallbackPrompt = `${2}${picked[0]} + ${3}${picked[1]} − ${4}${picked[2]} + 5 + ${2}${picked[0]} − ${picked[1]}`
+  const q1FallbackAnswer = formatAnswer(
+    2 * values[0] + 3 * values[1] - 4 * values[2] + 5 + 2 * values[0] - values[1],
+  )
+  const q2FallbackPrompt = `(${2}${picked[0]}² + ${3}${picked[1]})/(${5} − ${1}${picked[2]}) + ${2}${picked[0]} × ${3}`
+  const q2FallbackAnswer = formatAnswer(
+    (2 * values[0] * values[0] + 3 * values[1]) / (5 - values[2]) + 2 * values[0] * 3,
+  )
+
   const q1 =
     fillTemplate(q1Preferred, picked, values, rng, true) ??
     fillFromPool(Q1_TEMPLATES, picked, values, rng, true) ?? {
-      prompt: `${2}${picked[0]} + ${3}${picked[1]} − ${4}${picked[2]} + 5 + ${2}${picked[0]} − ${picked[1]}`,
-      answer: formatAnswer(2 * values[0] + 3 * values[1] - 4 * values[2] + 5 + 2 * values[0] - values[1]),
+      prompt: q1FallbackPrompt,
+      answer: q1FallbackAnswer,
+      development: developEvaluerSteps(q1FallbackPrompt, q1FallbackAnswer, vars),
     }
 
   const q2 =
     fillTemplate(q2Preferred, picked, values, rng, true) ??
     fillFromPool(Q2_TEMPLATES, picked, values, rng, true) ?? {
-      prompt: `(${2}${picked[0]}² + ${3}${picked[1]})/(${5} − ${1}${picked[2]}) + ${2}${picked[0]} × ${3}`,
-      answer: formatAnswer(
-        (2 * values[0] * values[0] + 3 * values[1]) / (5 - values[2]) + 2 * values[0] * 3,
-      ),
+      prompt: q2FallbackPrompt,
+      answer: q2FallbackAnswer,
+      development: developEvaluerSteps(q2FallbackPrompt, q2FallbackAnswer, vars),
     }
 
   const givens: AlgebraGiven[] = [
@@ -294,7 +355,10 @@ export function generateTcmEvaluerBatch(rng: Rng): TcmEvaluerBatch {
   ]
 
   return {
-    items: [makeItem(q1.prompt, q1.answer), makeItem(q2.prompt, q2.answer)],
+    items: [
+      makeItem(q1.prompt, q1.answer, q1.development),
+      makeItem(q2.prompt, q2.answer, q2.development),
+    ],
     givens,
     instruction:
       'Évaluez chaque expression avec les trois valeurs indiquées. Les deux questions utilisent les mêmes valeurs.',

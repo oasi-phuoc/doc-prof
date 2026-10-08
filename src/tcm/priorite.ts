@@ -145,13 +145,98 @@ function exponent(rng: Rng): number {
 }
 
 /**
+ * Une étape de simplification : parenthèses/crochets les plus internes,
+ * sinon puissances, sinon ×÷, sinon +− de gauche à droite.
+ */
+function simplifyOnePrioriteStep(expr: string): string | null {
+  // Innermost [] or ()
+  const bracket = /[\[(]([^\[\]()]+)[\])]/u.exec(expr)
+  if (bracket && bracket.index != null) {
+    const inner = bracket[1]!.trim()
+    try {
+      const value = evalPrioriteExpression(inner)
+      const formatted = formatAnswer(value)
+      return `${expr.slice(0, bracket.index)}${formatted}${expr.slice(bracket.index + bracket[0].length)}`
+    } catch {
+      /* continue */
+    }
+  }
+
+  // Unicode powers: 2³ → 8
+  const pow = /(\d+)([¹²³])/u.exec(expr)
+  if (pow && pow.index != null) {
+    const base = Number(pow[1])
+    const e = '¹²³'.indexOf(pow[2]!) + 1
+    const formatted = formatAnswer(base ** e)
+    return `${expr.slice(0, pow.index)}${formatted}${expr.slice(pow.index + pow[0].length)}`
+  }
+
+  // Fraction n/d alone or in a product/sum context — resolve leftmost simple fraction
+  const frac = /(^|[^\d])(\d+)\/(\d+)(?!\d)/u.exec(expr)
+  if (frac && frac.index != null) {
+    const prefix = frac[1] ?? ''
+    const n = Number(frac[2])
+    const d = Number(frac[3])
+    if (d !== 0) {
+      const formatted = formatAnswer(n / d)
+      const start = frac.index + prefix.length
+      return `${expr.slice(0, start)}${formatted}${expr.slice(start + frac[2]!.length + 1 + frac[3]!.length)}`
+    }
+  }
+
+  // × or ÷ (leftmost)
+  const mul = /(-?\d+(?:,\d+)?)(\s*[×÷]\s*)(-?\d+(?:,\d+)?)/u.exec(expr)
+  if (mul && mul.index != null) {
+    const a = Number(mul[1]!.replace(',', '.'))
+    const op = mul[2]!.trim()
+    const b = Number(mul[3]!.replace(',', '.'))
+    const value = op === '×' ? a * b : a / b
+    const formatted = formatAnswer(value)
+    return `${expr.slice(0, mul.index)}${formatted}${expr.slice(mul.index + mul[0].length)}`
+  }
+
+  // + or − (leftmost, not unary)
+  const add = /(-?\d+(?:,\d+)?)(\s*[+−]\s*)(-?\d+(?:,\d+)?)/u.exec(expr)
+  if (add && add.index != null) {
+    const a = Number(add[1]!.replace(',', '.'))
+    const op = add[2]!.trim()
+    const b = Number(add[3]!.replace(',', '.'))
+    const value = op === '+' ? a + b : a - b
+    const formatted = formatAnswer(value)
+    return `${expr.slice(0, add.index)}${formatted}${expr.slice(add.index + add[0].length)}`
+  }
+
+  return null
+}
+
+/** Étapes intermédiaires pour le corrigé (priorité des opérations). */
+export function developPrioriteSteps(prompt: string): string[] {
+  let expr = prompt.replace(/\s*=\s*$/u, '').trim()
+  if (!expr) return []
+  const steps = [expr]
+  for (let i = 0; i < 24; i++) {
+    const next = simplifyOnePrioriteStep(expr)
+    if (!next || next === expr) break
+    expr = next.replace(/\s+/g, ' ').trim()
+    if (steps[steps.length - 1] !== expr) steps.push(expr)
+  }
+  try {
+    const final = formatAnswer(evalPrioriteExpression(steps[0]!))
+    if (steps[steps.length - 1] !== final) steps.push(final)
+  } catch {
+    /* ignore */
+  }
+  return steps
+}
+
+/**
  * Remplit un modèle : lettres a–j → 1–9 ; p,q,r → exposants 1–3.
  * `{x}^{p}` devient `x¹`/`x²`/`x³` ; `{a}/{b}` reste pour le rendu empilé.
  */
 export function fillPrioriteTemplate(
   template: PrioriteTemplate,
   rng: Rng,
-): { prompt: string; answer: string } | null {
+): { prompt: string; answer: string; development: string[] } | null {
   for (let attempt = 0; attempt < 80; attempt++) {
     const vals: Record<string, number> = {}
     for (const ch of 'abcdefghij') vals[ch] = digit(rng)
@@ -179,9 +264,22 @@ export function fillPrioriteTemplate(
     if (Math.abs(value) > 2000) continue
     if (template.kind === 'ops' && Math.abs(value - Math.round(value)) > 1e-8) continue
 
-    return { prompt: `${prompt} =`, answer: formatAnswer(value) }
+    const answer = formatAnswer(value)
+    const development = developPrioriteSteps(prompt)
+    return { prompt: `${prompt} =`, answer, development }
   }
   return null
+}
+
+function prioriteItem(prompt: string, answer: string, development?: string[]): MathItem {
+  const steps = development?.length ? development : developPrioriteSteps(prompt)
+  return {
+    layout: 'algebra',
+    prompt,
+    answer,
+    development: steps,
+    calcAnswer: steps.join('\n'),
+  }
 }
 
 /** Lot TCM ex. 28 : Q1 modèle ops, Q2 modèle frac+puissance. */
@@ -194,16 +292,18 @@ export function generateTcmPrioriteBatch(rng: Rng): MathItem[] {
     fillPrioriteTemplate(TCM_PRIORITE_OPS[0]!, rng) ?? {
       prompt: '[(2 + 3) × 4] − 1 + 5 =',
       answer: '24',
+      development: developPrioriteSteps('[(2 + 3) × 4] − 1 + 5'),
     }
   const q2 =
     fillPrioriteTemplate(fracTpl, rng) ??
     fillPrioriteTemplate(TCM_PRIORITE_FRAC_POW[0]!, rng) ?? {
       prompt: '[(1/2 + 3) × 2²] − 1 =',
       answer: '13',
+      development: developPrioriteSteps('[(1/2 + 3) × 2²] − 1'),
     }
 
   return [
-    { layout: 'algebra', prompt: q1.prompt, answer: q1.answer },
-    { layout: 'algebra', prompt: q2.prompt, answer: q2.answer },
+    prioriteItem(q1.prompt, q1.answer, q1.development),
+    prioriteItem(q2.prompt, q2.answer, q2.development),
   ]
 }

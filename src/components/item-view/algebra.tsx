@@ -294,6 +294,9 @@ export function tokenIsFrac(token: string): boolean {
   return /^[-−]?(?:[A-Za-z]|\d+)\/[-−]?\d+$/.test(token)
 }
 
+/** Lignes utiles par colonne dans la grille courte (aligné sur --grid-rows short × 1 col). */
+const ALGEBRA_DEV_ROWS_PER_COL = 3
+
 export function AlgebraRow({
   item,
   mode,
@@ -311,7 +314,7 @@ export function AlgebraRow({
   const tokens = tokenizeAlgebra(prompt)
   const hasFrac = tokens.some(tokenIsFrac)
   // Équation à résoudre (x = …) vs calcul / réduction (réponse numérique ou polynôme).
-  const isSolveEq = Boolean(item.development?.length || item.unknowns?.length || item.responseAnswer)
+  const isSolveEq = Boolean(item.unknowns?.length || item.responseAnswer)
   const answerLabel = isSolveEq
     ? (item.responseAnswer ?? `x = ${item.answer}`)
     : item.answer
@@ -358,7 +361,10 @@ export function AlgebraRow({
   )
 }
 
-/** Développement / étapes dans la grille (style peri-aire / équations). */
+/**
+ * Développement dans la grille : colonne opérations (alignée) + équations.
+ * Si ça dépasse le nombre de lignes de la grille, on ouvre une colonne suivante.
+ */
 function AlgebraDevelopmentLines({
   lines,
   operations,
@@ -366,12 +372,35 @@ function AlgebraDevelopmentLines({
   lines: string[]
   operations: string[]
 }) {
+  const hasOps = operations.some((op) => op.trim().length > 0)
+  const rows: { op: string; line: string }[] = lines.map((line, i) => ({
+    op: (operations[i] ?? '').trim(),
+    line,
+  }))
+  const colCount = Math.max(1, Math.ceil(rows.length / ALGEBRA_DEV_ROWS_PER_COL))
+  const columns: (typeof rows)[] = Array.from({ length: colCount }, (_, c) =>
+    rows.slice(c * ALGEBRA_DEV_ROWS_PER_COL, (c + 1) * ALGEBRA_DEV_ROWS_PER_COL),
+  )
+  const maxOpLen = Math.max(2, ...rows.map((r) => r.op.length))
+
   return (
-    <div className="algebra-dev-lines" aria-label="Développement">
-      {lines.map((line, i) => (
-        <div className="algebra-dev-line" key={`${line}-${i}`}>
-          {operations[i] ? <span className="algebra-dev-op">{operations[i]}</span> : null}
-          <strong className="filled-answer draft-pad-answer">{line}</strong>
+    <div
+      className={`algebra-dev-columns${hasOps ? ' has-ops' : ''}`}
+      style={{ gridTemplateColumns: `repeat(${colCount}, minmax(0, 1fr))` }}
+      aria-label="Développement"
+    >
+      {columns.map((col, ci) => (
+        <div className="algebra-dev-col" key={`dev-col-${ci}`}>
+          {col.map((row, ri) => (
+            <div className="algebra-dev-row" key={`dev-${ci}-${ri}-${row.line}`}>
+              {hasOps ? (
+                <span className="algebra-dev-op" style={{ width: `${maxOpLen + 0.5}ch` }}>
+                  {row.op || '\u00a0'}
+                </span>
+              ) : null}
+              <strong className="filled-answer algebra-dev-eq">{row.line}</strong>
+            </div>
+          ))}
         </div>
       ))}
     </div>
