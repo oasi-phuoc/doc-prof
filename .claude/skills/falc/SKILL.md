@@ -1,222 +1,271 @@
 ---
 name: falc
 description: >-
-  Cadre FALC (Facile à Lire et à Comprendre) : principes, règles de rédaction
-  et de mise en page, frontières avec comprehension-ecrite. À utiliser pour
-  la théorie FALC, la rédaction accessible, ou l’alignement de contenus
-  ClairFLE sur ce cadre — pas pour les banques Com CECRL (voir
-  comprehension-ecrite).
+  Cadre FALC pour fiches de théorie de français : préparer, structure type,
+  règles d’écriture, mise en page, checklist, traductions langues d’origine.
+  À utiliser pour créer / relire une théorie FALC ou une aide bilingue —
+  pas pour les banques Com CECRL (voir comprehension-ecrite).
 ---
 
-# Cadre FALC (Facile à Lire et à Comprendre)
+# Cadre FALC — théorie de français
 
-Skill **cadre** : définit l’esprit et les règles utiles à ClairFLE.  
-Ce n’est **pas** une certification, ni une copie d’un référentiel externe.  
-Les règles ci-dessous reprennent des **pratiques courantes** de rédaction accessible, formulées de façon pédagogique pour l’équipe.
+Skill **cadre** pour créer des **fiches de théorie** en FALC (Facile à Lire et à Comprendre).  
+Ce n’est **pas** une certification ni une copie d’un référentiel externe.  
+Les règles ci-dessous sont le **mode opératoire ClairFLE** pour la théorie français accessible.
 
-> **Théorie à enrichir** — Phuoc Van (et l’équipe) peuvent compléter les sections marquées « À compléter » sans réécrire le cadre.
+Frontière : textes **Com** (compréhension écrite A1–B1) → skill `comprehension-ecrite`.  
+Ce skill = **théorie / règles / entraînement FALC** (+ traductions d’aide).
+
+---
 
 ## Quand utiliser ce skill
 
 Utiliser `falc` dès qu’on :
 
-- définit, approfondit ou aligne la **théorie FALC** du projet ;
-- rédige ou relit un texte pour le rendre **plus accessible** (consignes, notices, contenus élèves, aides) ;
-- décide d’une **mise en page** lisible (phrases courtes, aération, ordre des infos) ;
-- clarifie ce qui est **FALC au sens large** vs ce qui est **spécifique FLE / CECRL**.
+- crée ou relit une **fiche de théorie** de français en FALC ;
+- découpe un programme en **une notion = une fiche** ;
+- applique la **structure type**, les **règles d’écriture**, la **mise en page** ou la **checklist** ci-dessous ;
+- ajoute une **traduction d’aide** dans la langue d’origine de l’élève (base = texte français).
 
 **Ne pas** utiliser `falc` à la place de :
 
 | Besoin | Skill |
 |---|---|
-| Textes / questions Com · compréhension écrite A1–A2–B1, banques, fourchettes de mots | `comprehension-ecrite` |
+| Textes / questions Com · compréhension écrite A1–A2–B1 | `comprehension-ecrite` |
 | Libellés UI enseignant·e | `texte-interface` |
-| Relire un énoncé maths (vouvoiement, clarté scolaire) | `relecture-enonce` |
+| Relire un énoncé maths | `relecture-enonce` |
 | Push sur `main` | `preparer-pull-request` |
 
 ### Frontière avec `comprehension-ecrite`
 
-| | `falc` (ce skill) | `comprehension-ecrite` |
+| | `falc` | `comprehension-ecrite` |
 |---|---|---|
-| Objet | Cadre **général** de clarté / accessibilité | Règles **opérationnelles** des textes Com FLE |
-| Public cible du contenu | Toute personne qui lit avec difficulté ; application ClairFLE large | Apprenant·e·s FLE A1 / A2 / B1 |
-| Niveaux | Niveaux d’**application** FALC (ci-dessous) | Niveaux **CECRL** (`facile`→A1, etc.) |
-| Banques / code | Pas de banque ici | `comprehension-ecrite.ts` + banques |
-
-En pratique :
-
-- Pour **créer / corriger un texte Com**, suivre d’abord `comprehension-ecrite` (longueur, structures, questions).
-- Pour **expliquer pourquoi** une formulation est plus claire, ou pour **tout contenu hors Com** (consignes, notices, soutiens, textes accessibles), s’appuyer sur `falc`.
-- Les deux sont **compatibles** : `comprehension-ecrite` cite déjà l’esprit FALC (« info essentielle d’abord ») ; ce skill porte le **cadre**, sans dupliquer les tableaux CECRL.
+| Objet | Fiches **théorie** FALC (+ aide traduite) | Textes **Com** FLE + questions |
+| Niveaux | Public pré-A1 / A1 / A2… + niveau de lecture | CECRL A1 / A2 / B1 (`difficulty`) |
+| Adresse | « je » / « tu » dans la fiche élève | Consignes scolaires vouvoiées côté items |
 
 ---
 
-## 1. Qu’est-ce que le FALC (cadre projet)
+## 1. Préparer
 
-**FALC** = **Facile à Lire et à Comprendre**.
+Avant d’écrire, fixer **trois points** :
 
-Objectif ClairFLE : produire des écrits (et des mises en page) que le plus grand nombre peut **lire**, **comprendre** et **utiliser** sans effort inutile — y compris des personnes en situation de handicap intellectuel, des lecteurs peu habitués, des débutant·e·s en français, ou des élèves en difficulté de lecture.
+1. **Le public**
+   - Niveau CECRL (pré-A1, A1, A2…).
+   - Niveau de lecture (débutant lecture, lecteur fragile, lecture fluide).
+   - **Langue d’origine** si une aide bilingue est prévue (voir §7).
 
-Principes directeurs (esprit, non exhaustif) :
+2. **L’objectif**
+   - **Une seule compétence** par fiche  
+     (ex. conjuguer au présent, reconnaître un nom, écrire une phrase).
 
-1. **Une idée à la fois** — une phrase = une information principale.
-2. **L’essentiel d’abord** — qui, quoi, quand, où, puis le détail.
-3. **Mots connus** — préférer le vocabulaire courant ; expliquer un mot difficile s’il est indispensable.
-4. **Phrases courtes et directes** — ordre sujet–verbe–complément quand c’est possible.
-5. **Cohérence** — même mot pour la même chose (éviter les synonymes qui embrouillent).
-6. **Mise en page qui aide** — aération, titres clairs, listes si utile, contraste lisible.
-7. **Respect** — ton digne ; pas de langage infantilisant ni de simplification qui déforme le sens.
+3. **Le découpage**
+   - **Une notion = une fiche** (1 à 2 pages maximum).
+   - Notion trop grande → plusieurs fiches  
+     (ex. « Le présent : les verbes en -er », puis « être et avoir »).
 
-### À compléter — Théorie / définition élargie
+### À compléter — Programme / ordre des notions
 
-<!-- Emplacement pour la théorie officielle ou interne que Phuoc Van ajoutera. -->
+- [ ] Liste ordonnée des notions (simple → complexe) pour le parcours ClairFLE
+- [ ] Prérequis entre fiches
 
-- [ ] Historique et enjeux du FALC (projet / institution)
-- [ ] Publics concernés (détail)
-- [ ] Lien éventuel avec d’autres cadres d’accessibilité (sans citation verbatim externe)
-- [ ] Vocabulaire métier ClairFLE lié au FALC
-
-*(Remplacer cette liste par le contenu théorique validé.)*
+*(À compléter au fil du contenu théorique.)*
 
 ---
 
-## 2. Règles de rédaction (cadre)
+## 2. Structure type d’une fiche
+
+Ordre fixe des blocs :
+
+| Bloc | Contenu |
+|---|---|
+| **Titre** | Court et concret (« Le présent des verbes en -er ») |
+| **Ce que je vais apprendre** | 1 à 2 phrases |
+| **Je regarde** | 1 exemple simple + pictogramme ou image |
+| **J’explique** | La règle en **3 à 5 phrases** courtes |
+| **Je retiens** | Encadré (couleur) avec l’essentiel |
+| **Tableau ou schéma** | La règle sous forme visuelle |
+| **Attention !** | **Un seul** piège ou exception fréquente |
+| **Je m’entraîne** | **3 à 5** exercices progressifs |
+| **Ce que j’ai appris** | Liste à cocher |
+
+### À compléter — Exemples de fiches validées
+
+- [ ] Liens / chemins vers 1–2 fiches modèles validées
+- [ ] Variantes selon le niveau (pré-A1 vs A2)
+
+*(À compléter.)*
+
+---
+
+## 3. Règles d’écriture FALC
 
 ### Faire
 
-- Phrases **courtes** ; une idée principale par phrase.
-- Ordre **clair** : information importante en premier.
-- Mots **simples** et **concrets** ; répéter le même terme pour la même chose.
-- Verbes à la **voix active** quand c’est naturel.
-- Temps et formes **habituels** (présent, passé composé basique, etc.) selon le public.
-- Exemples **concrets** si une notion est abstraite.
-- Listes à puces pour des étapes ou des choix.
-- Expliquer ou illustrer un mot rare **juste après** sa première apparition, si on ne peut pas l’éviter.
+- **Une idée par phrase**, **10 à 12 mots maximum**.
+- Ordre simple : **sujet, verbe, complément**. Pas de phrase longue.
+- Mots **simples et courants**.
+- Un mot difficile (« verbe », « sujet », « conjuguer ») est **expliqué la première fois**, puis **toujours le même mot**.
+- **Le même mot pour la même idée** : pas « verbe » puis « action » pour la même chose.
+- Adresse directe : **« tu »** ou **« je »** (« Je retiens », « Tu écris »).
+- Exemples **concrets**, tirés de la vie réelle (travail, logistique, quotidien).
+- **Listes** plutôt que paragraphes ; **une information par ligne**.
+- Termes de grammaire **toujours** accompagnés d’un **exemple**.
 
 ### Ne pas faire
 
-- Phrases à **plusieurs subordonnées** empilées.
-- **Métaphores**, ironie, jeux de mots, doubles sens.
-- **Jargon** non expliqué, sigles non développés.
-- **Synonymes** successifs pour la même chose (« l’élève / l’apprenant / le jeune »).
-- Formulations **négatives doubles** ou ambigües (« ne… que », litotes).
-- Blocs de texte **denses** sans respiration.
-- Présenter une simplification comme une **certification FALC** ou une norme officielle du projet (sauf si validé ailleurs).
+- Négation compliquée, passif, sous-entendu.
+- Métaphores, ironie, jeux de mots.
+- Synonymes qui embrouillent.
+- Plusieurs exceptions dans le même « Attention ! ».
+- Présenter la fiche comme « certifiée FALC » officielle.
 
-### Checklist rédaction rapide
-
-- [ ] Une idée par phrase ?
-- [ ] Info essentielle en premier ?
-- [ ] Même mot pour la même chose ?
-- [ ] Pas de métaphore / jargon opaque ?
-- [ ] Sens conservé (pas de simplification trompeuse) ?
-
-### À compléter — Théorie / lexique & grammaire
-
-<!-- Emplacement pour listes de mots à préférer / éviter, exemples contrastés, etc. -->
+### À compléter — Lexique métier
 
 - [ ] Tableau « préférer / éviter » (exemples ClairFLE)
-- [ ] Règles de négation, de questions, de consignes
-- [ ] Cas particuliers (nombres, dates, consignes maths / FLE)
+- [ ] Glossaire des termes grammaticaux avec définition FALC + exemple
 
 *(À compléter.)*
 
 ---
 
-## 3. Mise en page et présentation
+## 4. Mise en page
 
-Objectifs : **aider le regard**, **séparer les idées**, **ne pas surcharger**.
+| Règle | Detail |
+|---|---|
+| Police | Sans empattement (Arial, Verdana, Calibri ou équivalent projet) |
+| Taille | **14 minimum** |
+| Interligne | Aéré (**1,5**) |
+| Alignement | **À gauche** (jamais justifié sur une fiche théorie FALC) |
+| Blanc | Beaucoup d’espace ; **un retour à la ligne à chaque phrase** |
+| Encadrés | Pour « Je retiens » et « Attention » |
+| Fonds | Pas de texte sur fond coloré **foncé** ni sur image |
 
-### Faire
+### Code couleur (constant sur toutes les fiches)
 
-- Titres et sous-titres **explicites**.
-- Paragraphes **courts** ; une idée par paragraphe quand c’est pertinent.
-- **Aération** : espaces entre blocs ; éviter les murs de texte.
-- Listes pour les étapes, les règles, les options.
-- Police et taille **lisibles** sur fiche A4 (contraste fort, surtout N&B).
-- Images / pictogrammes **utiles** (clarifient le sens) — la couleur ne porte jamais seule l’info (principe ClairFLE).
-- Alignement et numérotation **stables** (exercices 1, 2… ; consignes sous le titre).
+Exemple à conserver d’une fiche à l’autre :
 
-### Ne pas faire
+| Rôle | Couleur |
+|---|---|
+| Sujet | bleu |
+| Verbe | rouge |
+| Terminaison | vert |
 
-- Fond chargé, motifs qui gênent la lecture.
-- Trop de styles (gras + italique + souligné partout).
-- Encadrer chaque phrase « pour faire joli » si ça ne structure pas.
-- Couper une phrase ou une étape entre deux pages sans nécessité.
-- Compacter le contenu pour « caser » plus d’items au détriment de la lisibilité (feuille A4 fixe : voir aussi `test-impression`).
+**Rappel ClairFLE :** la couleur **ne porte jamais seule** l’information (N&B).  
+Toujours doubler : libellé, gras, soulignement ou position dans un tableau.
 
-### À compléter — Théorie / mise en page ClairFLE
+### Pictogrammes cohérents
 
-<!-- Emplacement pour gabarits, exemples de fiches, règles typographiques projet. -->
+| Pictogramme | Sens |
+|---|---|
+| Loupe | Je regarde / j’observe |
+| Crayon | Je m’entraîne |
+| Ampoule | Je retiens |
+| Point d’exclamation | Attention |
 
-- [ ] Gabarits FALC (consigne, notice, aide élève…)
-- [ ] Règles typo / CSS projet (`App.css`) à respecter en mode accessible
-- [ ] Exemples avant / après (captures ou fragments)
+### À compléter — Implémentation UI / CSS
+
+- [ ] Classes CSS projet pour encadrés, code couleur, pictos
+- [ ] Compatibilité impression A4 (`test-impression`) et N&B
+
+*(À compléter quand le rendu fiche théorie sera branché dans le générateur.)*
+
+---
+
+## 5. Processus de création
+
+1. Lister les notions du programme ; ordonner **simple → complexe**.
+2. Rédiger la règle en **une phrase**, puis la **simplifier encore**.
+3. Choisir **2 à 3** exemples très clairs.
+4. Construire le **tableau ou schéma**.
+5. Créer les exercices : **reconnaître → compléter → produire** (avec un **exemple résolu**).
+6. Relire avec la **checklist** (§6).
+7. Ajouter la **traduction d’aide** si une langue d’origine est choisie (§7).
+8. Tester avec **1 ou 2 apprenants** ; ajuster ce qui est mal compris.
+
+---
+
+## 6. Checklist de relecture
+
+- [ ] Une seule notion dans la fiche
+- [ ] Phrases courtes (≤ 12 mots)
+- [ ] Mots difficiles expliqués ; vocabulaire constant
+- [ ] Exemple **avant** la règle (« Je regarde » puis « J’explique »)
+- [ ] Encadré « Je retiens » présent
+- [ ] Code couleur et pictogrammes cohérents (et lisibles sans couleur seule)
+- [ ] Police ≥ 14, texte à gauche, mise en page aérée
+- [ ] Exercices progressifs avec exemple résolu
+- [ ] Testé avec un apprenant (quand possible)
+- [ ] Traduction d’aide présente si langue d’origine demandée (§7)
+
+---
+
+## 7. Traduction d’aide (langue d’origine)
+
+**Principe :** le texte **source** est toujours le **français** de la fiche.  
+À chaque création / révision, on peut fournir une **traduction d’aide** dans la langue d’origine de l’élève pour soutenir la compréhension — **pas** pour remplacer l’apprentissage du français.
+
+### Langues supportées (liste projet)
+
+| Code | Langue |
+|---|---|
+| `en` | anglais |
+| `ar` | arabe |
+| `am` | amharique |
+| `fa-AF` | dari |
+| `es` | espagnol |
+| `pt` | portugais |
+| `it` | italien |
+| `fa` | persan |
+| `ps` | pachto |
+| `ru` | russe |
+| `so` | somali |
+| `tr` | turc |
+| `ti` | tigrinya |
+| `uk` | ukrainien |
+
+### Règles de traduction
+
+1. **Base = français FALC** déjà validé (phrases courtes, même découpage).
+2. Traduire **bloc par bloc** (titre, « Ce que je vais apprendre », règle, « Je retiens », « Attention », consignes d’exercices).
+3. Garder les **exemples français** visibles ; la traduction explique / glose, elle ne remplace pas l’exemple en français sauf consigne contraire.
+4. Termes grammaticaux : reprise du **même terme français** + glose courte dans la langue d’origine la première fois.
+5. Scripts non latins (arabe, amharique, tigrinya, etc.) : sens clair ; **sens de lecture** respecté ; ne pas mélanger dans la même ligne sans séparation nette.
+6. Ne **pas** inventer de contenu pédagogique nouveau dans la traduction.
+7. Si une langue manque ou est incertaine : indiquer clairement « traduction à valider » plutôt que d’improviser un faux label officiel.
+
+### Format attendu (contenu / banque)
+
+Pour chaque bloc FR, prévoir un objet d’aide du type :
+
+```text
+fr: <texte français FALC>
+helpLang: <code langue>
+help: <traduction d’aide>
+```
+
+### À compléter — stock / UI
+
+- [ ] Où stocker les traductions (fichiers, champs JSON, UI générateur)
+- [ ] Choix de la langue d’origine dans le générateur
+- [ ] Affichage fiche : FR seul / FR + aide / aide sous chaque bloc
 
 *(À compléter.)*
 
 ---
 
-## 4. Niveaux d’application (indicatif)
+## 8. Sources et limites
 
-Le FALC n’est **pas** un barème CECRL. Pour ClairFLE, on peut distinguer des **degrés d’application** selon le support :
-
-| Degré | Usage typique | Intensité des règles |
-|---|---|---|
-| **A — Strict** | Notices, aides, consignes pour public en grande difficulté de lecture | Phrases très courtes, vocabulaire minimal, mise en page très aérée |
-| **B — Standard** | Contenu pédagogique accessible « par défaut » | Règles des sections 2–3 ; une idée / phrase ; mots courants |
-| **C — Adapté FLE** | Textes Com / supports FLE (A1–B1) | Suivre **`comprehension-ecrite`** pour longueur & structures ; garder l’esprit FALC (clarté, info d’abord) |
-
-Choisir le degré **selon le public et le type de fiche**, pas selon un score inventé.
-
-### À compléter — Théorie / niveaux & validation
-
-- [ ] Critères de passage A → B → C (équipes, validation humaine)
-- [ ] Exemples détaillés par degré
-- [ ] Lien éventuel avec mode évaluation / points (si pertinent)
-
-*(À compléter.)*
-
----
-
-## 5. Alignement contenus ClairFLE
-
-Quand on aligne un contenu existant sur ce cadre :
-
-1. Identifier le **degré** (A / B / C).
-2. Relire avec la checklist rédaction + mise en page.
-3. Si c’est un texte **Com**, appliquer aussi `comprehension-ecrite`.
-4. Si c’est une **consigne maths / FLE** générique, croiser avec `relecture-enonce` ou `texte-interface` selon le destinataire (élève vs enseignant·e).
-5. Ne **pas** inventer de mentions « certifié FALC » dans l’UI ou les fiches.
-
-### À compléter — Théorie / process projet
-
-- [ ] Qui valide un texte « conforme cadre FALC » ?
-- [ ] Où stocker les exemples validés (docs / banques)
-- [ ] Roadmap contenu théorique
-
-*(À compléter.)*
-
----
-
-## 6. Sources et limites
-
-- Pas de **citations verbatim** d’un référentiel externe dans ce skill.
-- Pas de prétention à une **homologation** ou un label officiel via ClairFLE.
-- En cas de doute juridique / institutionnel : documenter dans les sections « À compléter », ne pas improviser.
-
-### À compléter — Références internes
-
-- [ ] Liens vers docs projet (chemins relatifs une fois existants)
-- [ ] Notes d’atelier / décisions d’équipe
-
-*(À compléter.)*
+- Pas de citations verbatim d’un référentiel externe.
+- Pas de label « certifié FALC » dans l’UI ou les fiches.
+- Traductions = **aide pédagogique** ; validation humaine recommandée pour les langues à faible couverture.
 
 ---
 
 ## Terminé quand
 
-- Cadre (principes, rédaction, mise en page, faire / ne pas faire, degrés) **lisible et utilisable**.
-- Sections **À compléter** laissées nettes pour la théorie à venir.
-- Frontière avec `comprehension-ecrite` **explicite**.
-- Aucune certification / copie de référence externe présentée comme officielle.
+- Fiche = **une notion**, structure type complète, checklist OK.
+- Écriture FALC (≤ 12 mots / phrase, vocabulaire constant, exemple avant règle).
+- Mise en page aérée, code couleur + pictos cohérents (info aussi sans couleur).
+- Traduction d’aide fournie **si** une langue d’origine est demandée, à partir du français.
+- Frontière avec `comprehension-ecrite` respectée.
