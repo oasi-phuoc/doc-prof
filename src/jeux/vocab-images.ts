@@ -520,6 +520,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/billet.webp"
       },
       {
+        "label": "boîte-aux-lettres",
+        "src": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp"
+      },
+      {
         "label": "carte-de-credit",
         "src": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp"
       },
@@ -536,8 +540,32 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/coffre-fort.webp"
       },
       {
+        "label": "colis",
+        "src": "/lib/images/vocabulaire/argent-administration/colis.webp"
+      },
+      {
+        "label": "distributeur-de-billets",
+        "src": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
+      },
+      {
+        "label": "dossier",
+        "src": "/lib/images/vocabulaire/argent-administration/dossier.webp"
+      },
+      {
         "label": "enveloppe",
         "src": "/lib/images/vocabulaire/argent-administration/enveloppe.webp"
+      },
+      {
+        "label": "facture",
+        "src": "/lib/images/vocabulaire/argent-administration/facture.webp"
+      },
+      {
+        "label": "formulaire",
+        "src": "/lib/images/vocabulaire/argent-administration/formulaire.webp"
+      },
+      {
+        "label": "pièce-de-monnaie",
+        "src": "/lib/images/vocabulaire/argent-administration/pièce-de-monnaie.webp"
       },
       {
         "label": "portefeuille",
@@ -548,8 +576,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/prix.webp"
       },
       {
+        "label": "signature",
+        "src": "/lib/images/vocabulaire/argent-administration/signature.webp"
+      },
+      {
+        "label": "ticket-de-caisse",
+        "src": "/lib/images/vocabulaire/argent-administration/ticket-de-caisse.webp"
+      },
+      {
         "label": "timbre",
         "src": "/lib/images/vocabulaire/argent-administration/timbre.webp"
+      },
+      {
+        "label": "tirelire",
+        "src": "/lib/images/vocabulaire/argent-administration/tirelire.webp"
       }
     ]
   },
@@ -876,6 +916,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/cheveux.webp"
       },
       {
+        "label": "cil",
+        "src": "/lib/images/vocabulaire/corps/cil.webp"
+      },
+      {
         "label": "coeur",
         "src": "/lib/images/vocabulaire/corps/coeur.webp"
       },
@@ -900,6 +944,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/epaule.webp"
       },
       {
+        "label": "front",
+        "src": "/lib/images/vocabulaire/corps/front.webp"
+      },
+      {
         "label": "genou",
         "src": "/lib/images/vocabulaire/corps/genou.webp"
       },
@@ -912,12 +960,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/jambe.webp"
       },
       {
+        "label": "joue",
+        "src": "/lib/images/vocabulaire/corps/joue.webp"
+      },
+      {
         "label": "langue",
         "src": "/lib/images/vocabulaire/corps/langue.webp"
       },
       {
+        "label": "lèvres",
+        "src": "/lib/images/vocabulaire/corps/lèvres.webp"
+      },
+      {
         "label": "main",
         "src": "/lib/images/vocabulaire/corps/main.webp"
+      },
+      {
+        "label": "menton",
+        "src": "/lib/images/vocabulaire/corps/menton.webp"
       },
       {
         "label": "muscle",
@@ -944,6 +1004,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/poing.webp"
       },
       {
+        "label": "sourcil",
+        "src": "/lib/images/vocabulaire/corps/sourcil.webp"
+      },
+      {
         "label": "tete",
         "src": "/lib/images/vocabulaire/corps/tete.webp"
       },
@@ -954,6 +1018,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "ventre",
         "src": "/lib/images/vocabulaire/corps/ventre.webp"
+      },
+      {
+        "label": "visage",
+        "src": "/lib/images/vocabulaire/corps/visage.webp"
       },
       {
         "label": "épaule",
@@ -1248,6 +1316,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Famille et personnes",
     "words": [
       {
+        "label": "adolescent",
+        "src": "/lib/images/vocabulaire/famille-personnes/adolescent.webp"
+      },
+      {
         "label": "ami",
         "src": "/lib/images/vocabulaire/famille-personnes/ami.webp"
       },
@@ -1256,12 +1328,32 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/famille-personnes/bébé.webp"
       },
       {
+        "label": "collègues",
+        "src": "/lib/images/vocabulaire/famille-personnes/collègues.webp"
+      },
+      {
+        "label": "couple",
+        "src": "/lib/images/vocabulaire/famille-personnes/couple.webp"
+      },
+      {
+        "label": "cousins",
+        "src": "/lib/images/vocabulaire/famille-personnes/cousins.webp"
+      },
+      {
+        "label": "enfant",
+        "src": "/lib/images/vocabulaire/famille-personnes/enfant.webp"
+      },
+      {
         "label": "femme",
         "src": "/lib/images/vocabulaire/famille-personnes/femme.webp"
       },
       {
         "label": "fille",
         "src": "/lib/images/vocabulaire/famille-personnes/fille.webp"
+      },
+      {
+        "label": "frère",
+        "src": "/lib/images/vocabulaire/famille-personnes/frère.webp"
       },
       {
         "label": "garçon",
@@ -1276,6 +1368,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/famille-personnes/grand-pere.webp"
       },
       {
+        "label": "grands-parents",
+        "src": "/lib/images/vocabulaire/famille-personnes/grands-parents.webp"
+      },
+      {
         "label": "homme",
         "src": "/lib/images/vocabulaire/famille-personnes/homme.webp"
       },
@@ -1284,20 +1380,52 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/famille-personnes/jeune.webp"
       },
       {
+        "label": "jumeaux",
+        "src": "/lib/images/vocabulaire/famille-personnes/jumeaux.webp"
+      },
+      {
         "label": "maman",
         "src": "/lib/images/vocabulaire/famille-personnes/maman.webp"
+      },
+      {
+        "label": "mariés",
+        "src": "/lib/images/vocabulaire/famille-personnes/mariés.webp"
       },
       {
         "label": "mere",
         "src": "/lib/images/vocabulaire/famille-personnes/mere.webp"
       },
       {
+        "label": "oncle",
+        "src": "/lib/images/vocabulaire/famille-personnes/oncle.webp"
+      },
+      {
         "label": "papa",
         "src": "/lib/images/vocabulaire/famille-personnes/papa.webp"
       },
       {
+        "label": "parents",
+        "src": "/lib/images/vocabulaire/famille-personnes/parents.webp"
+      },
+      {
         "label": "pere",
         "src": "/lib/images/vocabulaire/famille-personnes/pere.webp"
+      },
+      {
+        "label": "personne-âgée",
+        "src": "/lib/images/vocabulaire/famille-personnes/personne-âgée.webp"
+      },
+      {
+        "label": "sœur",
+        "src": "/lib/images/vocabulaire/famille-personnes/sœur.webp"
+      },
+      {
+        "label": "tante",
+        "src": "/lib/images/vocabulaire/famille-personnes/tante.webp"
+      },
+      {
+        "label": "voisins",
+        "src": "/lib/images/vocabulaire/famille-personnes/voisins.webp"
       }
     ]
   },
@@ -5614,14 +5742,24 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "éléphant": "/lib/images/vocabulaire/animaux-sauvages/éléphant.webp",
   "addition": "/lib/images/vocabulaire/argent-administration/addition.webp",
   "billet": "/lib/images/vocabulaire/argent-administration/billet.webp",
+  "boîte-aux-lettres": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp",
   "carte-de-credit": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp",
   "carte-detudiant": "/lib/images/vocabulaire/argent-administration/carte-detudiant.webp",
   "carte-didentite": "/lib/images/vocabulaire/argent-administration/carte-didentite.webp",
   "coffre-fort": "/lib/images/vocabulaire/argent-administration/coffre-fort.webp",
+  "colis": "/lib/images/vocabulaire/argent-administration/colis.webp",
+  "distributeur-de-billets": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp",
+  "dossier": "/lib/images/vocabulaire/argent-administration/dossier.webp",
   "enveloppe": "/lib/images/vocabulaire/argent-administration/enveloppe.webp",
+  "facture": "/lib/images/vocabulaire/argent-administration/facture.webp",
+  "formulaire": "/lib/images/vocabulaire/argent-administration/formulaire.webp",
+  "pièce-de-monnaie": "/lib/images/vocabulaire/argent-administration/pièce-de-monnaie.webp",
   "portefeuille": "/lib/images/vocabulaire/argent-administration/portefeuille.webp",
   "prix": "/lib/images/vocabulaire/argent-administration/prix.webp",
+  "signature": "/lib/images/vocabulaire/argent-administration/signature.webp",
+  "ticket-de-caisse": "/lib/images/vocabulaire/argent-administration/ticket-de-caisse.webp",
   "timbre": "/lib/images/vocabulaire/argent-administration/timbre.webp",
+  "tirelire": "/lib/images/vocabulaire/argent-administration/tirelire.webp",
   "activité": "/lib/images/vocabulaire/autre/activité.webp",
   "age": "/lib/images/vocabulaire/autre/age.webp",
   "annexe": "/lib/images/vocabulaire/autre/annexe.webp",
@@ -5697,26 +5835,33 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bras": "/lib/images/vocabulaire/corps/bras.webp",
   "cerveau": "/lib/images/vocabulaire/corps/cerveau.webp",
   "cheveux": "/lib/images/vocabulaire/corps/cheveux.webp",
+  "cil": "/lib/images/vocabulaire/corps/cil.webp",
   "coeur": "/lib/images/vocabulaire/corps/coeur.webp",
   "cou": "/lib/images/vocabulaire/corps/cou.webp",
   "dent": "/lib/images/vocabulaire/corps/dent.webp",
   "doigt": "/lib/images/vocabulaire/corps/doigt.webp",
   "dos": "/lib/images/vocabulaire/corps/dos.webp",
   "epaule": "/lib/images/vocabulaire/corps/epaule.webp",
+  "front": "/lib/images/vocabulaire/corps/front.webp",
   "genou": "/lib/images/vocabulaire/corps/genou.webp",
   "index": "/lib/images/vocabulaire/corps/index.webp",
   "jambe": "/lib/images/vocabulaire/corps/jambe.webp",
+  "joue": "/lib/images/vocabulaire/corps/joue.webp",
   "langue": "/lib/images/vocabulaire/corps/langue.webp",
+  "lèvres": "/lib/images/vocabulaire/corps/lèvres.webp",
   "main": "/lib/images/vocabulaire/corps/main.webp",
+  "menton": "/lib/images/vocabulaire/corps/menton.webp",
   "muscle": "/lib/images/vocabulaire/corps/muscle.webp",
   "nez": "/lib/images/vocabulaire/corps/nez.webp",
   "oeil": "/lib/images/vocabulaire/corps/oeil.webp",
   "oreille": "/lib/images/vocabulaire/corps/oreille.webp",
   "pied": "/lib/images/vocabulaire/corps/pied.webp",
   "poing": "/lib/images/vocabulaire/corps/poing.webp",
+  "sourcil": "/lib/images/vocabulaire/corps/sourcil.webp",
   "tete": "/lib/images/vocabulaire/corps/tete.webp",
   "tête": "/lib/images/vocabulaire/corps/tête.webp",
   "ventre": "/lib/images/vocabulaire/corps/ventre.webp",
+  "visage": "/lib/images/vocabulaire/corps/visage.webp",
   "épaule": "/lib/images/vocabulaire/corps/épaule.webp",
   "œil": "/lib/images/vocabulaire/corps/œil.webp",
   "azur": "/lib/images/vocabulaire/couleurs/azur.webp",
@@ -5860,19 +6005,34 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "thym": "/lib/images/vocabulaire/epices-herbes/thym.webp",
   "vanille": "/lib/images/vocabulaire/epices-herbes/vanille.webp",
   "wasabi": "/lib/images/vocabulaire/epices-herbes/wasabi.webp",
+  "adolescent": "/lib/images/vocabulaire/famille-personnes/adolescent.webp",
   "ami": "/lib/images/vocabulaire/famille-personnes/ami.webp",
   "bébé": "/lib/images/vocabulaire/famille-personnes/bébé.webp",
+  "collègues": "/lib/images/vocabulaire/famille-personnes/collègues.webp",
+  "couple": "/lib/images/vocabulaire/famille-personnes/couple.webp",
+  "cousins": "/lib/images/vocabulaire/famille-personnes/cousins.webp",
+  "enfant": "/lib/images/vocabulaire/famille-personnes/enfant.webp",
   "femme": "/lib/images/vocabulaire/famille-personnes/femme.webp",
   "fille": "/lib/images/vocabulaire/famille-personnes/fille.webp",
+  "frère": "/lib/images/vocabulaire/famille-personnes/frère.webp",
   "garçon": "/lib/images/vocabulaire/famille-personnes/garçon.webp",
   "grand-mere": "/lib/images/vocabulaire/famille-personnes/grand-mere.webp",
   "grand-pere": "/lib/images/vocabulaire/famille-personnes/grand-pere.webp",
+  "grands-parents": "/lib/images/vocabulaire/famille-personnes/grands-parents.webp",
   "homme": "/lib/images/vocabulaire/famille-personnes/homme.webp",
   "jeune": "/lib/images/vocabulaire/famille-personnes/jeune.webp",
+  "jumeaux": "/lib/images/vocabulaire/famille-personnes/jumeaux.webp",
   "maman": "/lib/images/vocabulaire/famille-personnes/maman.webp",
+  "mariés": "/lib/images/vocabulaire/famille-personnes/mariés.webp",
   "mere": "/lib/images/vocabulaire/famille-personnes/mere.webp",
+  "oncle": "/lib/images/vocabulaire/famille-personnes/oncle.webp",
   "papa": "/lib/images/vocabulaire/famille-personnes/papa.webp",
+  "parents": "/lib/images/vocabulaire/famille-personnes/parents.webp",
   "pere": "/lib/images/vocabulaire/famille-personnes/pere.webp",
+  "personne-âgée": "/lib/images/vocabulaire/famille-personnes/personne-âgée.webp",
+  "sœur": "/lib/images/vocabulaire/famille-personnes/sœur.webp",
+  "tante": "/lib/images/vocabulaire/famille-personnes/tante.webp",
+  "voisins": "/lib/images/vocabulaire/famille-personnes/voisins.webp",
   "carré": "/lib/images/vocabulaire/formes/carré.webp",
   "cercle": "/lib/images/vocabulaire/formes/cercle.webp",
   "croix": "/lib/images/vocabulaire/formes/croix.webp",
