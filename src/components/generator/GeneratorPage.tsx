@@ -3166,21 +3166,22 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </svg>
                   </button>
                 )}
-                <button
-                  className="print-chip is-icon is-generate"
-                  type="button"
-                  onClick={generate}
-                  disabled={libreMode}
-                  aria-label={libreMode ? 'Générer indisponible en mode libre' : 'Générer'}
-                  title={libreMode ? 'Indisponible en mode libre' : 'Générer'}
-                >
-                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-                    <path
-                      fill="currentColor"
-                      d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.1A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
-                    />
-                  </svg>
-                </button>
+                {libreMode ? null : (
+                  <button
+                    className="print-chip is-icon is-generate"
+                    type="button"
+                    onClick={generate}
+                    aria-label="Générer"
+                    title="Générer"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.1A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                      />
+                    </svg>
+                  </button>
+                )}
                 <button
                   className="print-chip is-icon is-generate"
                   type="button"
