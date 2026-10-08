@@ -78,7 +78,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Cadre FALC (fiches théorie FR + traductions d’aide) | `falc` |
 | CO TCF depuis soutien-scolaire (banques `co.json`) | `comprehension-orale` |
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
-| Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) | `medias-image-audio` |
+| Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) ; scènes PO TCF / fide (décor quotidien, pas fond blanc) | `medias-image-audio` |
 | Aperçu A4 fixe + impression | `test-impression` |
 | Finaliser / push `main` (pas de lint·build·PR sauf demande) | `preparer-pull-request` |
 

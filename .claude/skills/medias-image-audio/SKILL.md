@@ -1,18 +1,32 @@
 ---
 name: medias-image-audio
 description: >-
-  Génère ou complète les médias vocabulaire ClairFLE : images réalistes
-  (fond blanc, sujet centré, 800×600 WebP) et audios TTS (voix féminine
-  edge-tts DeniseNeural à −25 %). À utiliser dès qu’on crée, régénère ou
-  aligne une image / un MP3 de mot (Soutien, Voc, Jeux, lecture).
+  Génère ou complète les médias ClairFLE : (1) images vocabulaire réalistes
+  (fond blanc, sujet centré, 800×600 WebP) et audios TTS (DeniseNeural −25 %) ;
+  (2) illustrations de scènes pour la production orale TCF / préparation
+  fide·DELF (décors quotidiens Suisse romande, pas de fond blanc studio).
+  À utiliser dès qu’on crée, régénère ou aligne une image / un MP3 de mot
+  (Soutien, Voc, Jeux, lecture) ou une image de scène PO TCF.
 ---
 
-# Médias image + audio (vocabulaire FLE)
+# Médias image + audio (vocabulaire FLE + scènes PO TCF)
 
 Référentiel des médias déjà en vigueur dans `public/lib/` (importés depuis
-`soutien-scolaire` via `scripts/copy-lib-medias.mjs`).
+`soutien-scolaire` via `scripts/copy-lib-medias.mjs` pour le vocabulaire ;
+scènes TCF sous `public/lib/tcf/images/`).
+
+**Deux régimes d’image distincts** — ne pas les mélanger :
+
+| Usage | Fond / décor | Objectif pédagogique |
+|---|---|---|
+| **Vocabulaire** (Soutien, Voc, Jeux, lecture) | Fond **blanc pur**, sujet isolé | Identifier un mot |
+| **Scènes PO TCF** (fide / DELF) | Décor **quotidien réaliste** (Suisse romande) | Décrire une situation, jouer un rôle |
+
+---
 
 ## Chemins ClairFLE
+
+### Vocabulaire
 
 | Type | Chemin | Format |
 |---|---|---|
@@ -28,12 +42,25 @@ Référentiel des médias déjà en vigueur dans `public/lib/` (importés depuis
   (`src/francais/soutien/images.ts`, `audio.ts`) — l’audio dérive du même
   thème/slug que l’image.
 
+### Scènes PO TCF
+
+| Type | Chemin | Format |
+|---|---|---|
+| Image | `public/lib/tcf/images/{serie}/{slug}.webp` | WebP |
+
+- **Série** : dossier déjà utilisé dans les banques (`a1-s1`, `a2-s1`, `a1j-s1`, …).
+- **Slug** : préfixe compétence + rôle (`po2-banque`, `po2-mediatheque`, …) —
+  aligné sur le voisinage du dossier et sur le champ `support.image` des
+  banques `src/content/tcf/*/po.json`.
+- Résolution runtime : `tcfImageSrc` (`src/tcf/media.ts`) — chemin relatif
+  `serie/slug.webp` → `/lib/tcf/images/…`.
+
 Ne pas inventer un autre arbre (`/assets/…` est l’ancien chemin
 soutien-scolaire ; ici c’est **`/lib/…`**).
 
 ---
 
-## Images
+## Images vocabulaire
 
 ### Spécification visuelle (obligatoire)
 
@@ -66,7 +93,92 @@ ou `cover` centré si le sujet remplit déjà le cadre sans découpe utile).
 
 ---
 
-## Audio (TTS)
+## Scènes PO TCF (fide / DELF)
+
+À utiliser dès qu’on génère ou régénère une **illustration de situation** pour
+la production orale TCF (types `image_unique`, planches multi-images, supports
+de dialogue / interaction), en préparation **fide** ou esprit **DELF**
+(action concrète, rôles clairs, adultes, quotidien).
+
+**Ne pas appliquer le fond blanc vocabulaire** à ces scènes : le brief ci-dessous
+**prime** sur la section Images vocabulaire.
+
+### Intention pédagogique (cadre ClairFLE)
+
+- Mettre au centre une **action de la vie courante** que l’apprenant peut
+  décrire ou jouer (demander, proposer, expliquer un besoin).
+- Rendre **lisibles les rôles** (usager / prestataire, voisin·e, collègue, etc.)
+  par la posture et les gestes, pas par des étiquettes.
+- Choisir un **décor suisse romand banal** (guichet, commerce, bureau, cage
+  d’escalier, cuisine, salle d’attente…) — pas de carte postale touristique
+  (chalet, vache, drapeau, panorama alpin comme décor principal).
+- S’adresser à des **adultes** : registre sobre de manuel de langue moderne,
+  sans infantilisation ni stéréotypes de genre, d’origine ou de corps.
+- Limiter le bruit visuel : peu d’objets, tous utiles à la tâche communicative.
+
+### Spécification visuelle
+
+1. **Style** : illustration ou photo **réaliste et sobre** ; traits propres ;
+   couleurs naturelles ; pas de manga, pas de cartoon enfantin.
+2. **Format** : ratio **4:3** (carré large) — viser **800 × 600** px WebP ~85,
+   cohérent avec le stock `public/lib/tcf/images/`.
+3. **Lieu** : Suisse romande du quotidien, authentique, non touristique.
+4. **Personnages** : adultes (tous âges, origines et corps variés), traités
+   avec respect, jamais caricaturés ; **deux personnes maximum** au premier
+   plan ; positions et gestes qui montrent clairement qui fait quoi et pourquoi.
+5. **Objets** : uniquement ceux nécessaires à la tâche (ticket, formulaire,
+   pain, dossier…).
+6. **Interdits** : aucun texte, lettre, chiffre ni logo incrusté ; pas de
+   décor cliché « Suisse postcard » ; pas de ton enfantin.
+
+Niveau cible typique des consignes PO A1–A2 : formuler la scène pour un
+public **A2** sauf demande contraire (série junior : adapter l’âge des
+personnages si le support l’exige, sans basculer en style enfantin).
+
+### Prompt maître (à coller avant chaque scène)
+
+Reformulation ClairFLE à préfixer **avant** la description de la scène
+(ne pas coller un brief externe non cadré) :
+
+> Illustration réaliste et sobre pour adultes apprenant le français (niveau A2),
+> style manuel de langue moderne, traits propres, couleurs naturelles,
+> format 4:3. Situation du quotidien en Suisse romande, authentique et non
+> touristique : lieux ordinaires (guichet, commerce, bureau, cage d’escalier,
+> cuisine, salle d’attente). Personnages adultes, de tous âges, origines et
+> corps variés, traités avec respect, jamais caricaturés. Deux personnes
+> maximum au premier plan, positions et gestes qui montrent clairement qui
+> fait quoi et pourquoi. Peu d’objets, tous utiles à la tâche communicative.
+> Aucun texte, lettre, chiffre ni logo. Pas de chalet, vache ou drapeau en
+> décor, pas de ton enfantin.
+>
+> Scène : [description concrète de la situation PO — lieu, rôles, action]
+
+### Procédure
+
+1. Lire le support PO dans `src/content/tcf/{niveau}/po.json` (situation,
+   questions « Que voyez-vous ? », thème).
+2. Rédiger une **scène** en une ou deux phrases (qui / où / quoi) alignée sur
+   la tâche orale, sans spoiler une réponse modèle mot à mot inutile.
+3. Générer avec le **prompt maître** + scène ; exporter WebP 800×600.
+4. Placer sous `public/lib/tcf/images/{serie}/{slug}.webp`.
+5. Référencer dans `support.image` (chemin relatif `serie/slug.webp`).
+6. Contrôle : rôles lisibles N&B approximatif, pas de texte, pas de cliché
+   touristique, pas de fond blanc studio.
+
+### Contrôles qualité (PO)
+
+- On comprend l’action et les rôles sans lire la consigne.
+- Décor banal suisse romand, pas postcard.
+- ≤ 2 personnes au premier plan ; diversité respectueuse.
+- Aucun texte / logo ; pas d’infantilisation.
+- Chemin et slug cohérents avec la série TCF voisine.
+
+---
+
+## Audio (TTS) — vocabulaire uniquement
+
+Les scènes PO TCF n’imposent pas de TTS image ; l’audio PO éventuel suit les
+chemins `public/lib/tcf/audio/` et les banques (hors scope de cette section).
 
 ### Outil et voix (ClairFLE)
 
@@ -130,9 +242,20 @@ Pour un **nouveau mot** Voc / Soutien / Jeux :
 3. Entrée banque avec `imageSrc` → `/lib/images/vocabulaire/...`.
 4. Contrôle : aperçu fiche + QR audio (type 15) si pertinent.
 
+Pour une **nouvelle scène PO TCF** : image seule selon la section
+« Scènes PO TCF » — pas de fond blanc, pas d’obligation TTS vocabulaire.
+
 ## Terminé quand
+
+**Vocabulaire**
 
 - Image : 800×600 (ou cohérente au thème), fond blanc, sujet centré, WebP.
 - Audio : MP3 96k, **DeniseNeural −25 %**, chemin aligné.
 - Pas d’écrasement d’anciens MP3 sans accord.
 - Résolution OK via `soutienImageFor` / `soutienAudioFor`.
+
+**Scène PO TCF**
+
+- Image 4:3 WebP sous `public/lib/tcf/images/{serie}/`, brief fide respecté
+  (action, rôles, décor banal, adultes, sans texte).
+- Référencée dans `po.json` ; résolution OK via `tcfImageSrc`.
