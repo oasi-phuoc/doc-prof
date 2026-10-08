@@ -4152,8 +4152,32 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/orientation/au-bout-de.webp"
       },
       {
+        "label": "dans",
+        "src": "/lib/images/vocabulaire/orientation/dans.webp"
+      },
+      {
+        "label": "derrière",
+        "src": "/lib/images/vocabulaire/orientation/derrière.webp"
+      },
+      {
+        "label": "devant",
+        "src": "/lib/images/vocabulaire/orientation/devant.webp"
+      },
+      {
         "label": "droite",
         "src": "/lib/images/vocabulaire/orientation/droite.webp"
+      },
+      {
+        "label": "en-bas",
+        "src": "/lib/images/vocabulaire/orientation/en-bas.webp"
+      },
+      {
+        "label": "en-haut",
+        "src": "/lib/images/vocabulaire/orientation/en-haut.webp"
+      },
+      {
+        "label": "entre",
+        "src": "/lib/images/vocabulaire/orientation/entre.webp"
       },
       {
         "label": "est",
@@ -4188,12 +4212,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/orientation/ouest.webp"
       },
       {
+        "label": "sous",
+        "src": "/lib/images/vocabulaire/orientation/sous.webp"
+      },
+      {
         "label": "sud",
         "src": "/lib/images/vocabulaire/orientation/sud.webp"
       },
       {
+        "label": "sur",
+        "src": "/lib/images/vocabulaire/orientation/sur.webp"
+      },
+      {
         "label": "tout-droit",
         "src": "/lib/images/vocabulaire/orientation/tout-droit.webp"
+      },
+      {
+        "label": "à-côté-de",
+        "src": "/lib/images/vocabulaire/orientation/à-côté-de.webp"
       }
     ]
   },
@@ -4256,6 +4292,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/afghanistan.webp"
       },
       {
+        "label": "algérie",
+        "src": "/lib/images/vocabulaire/pays/algérie.webp"
+      },
+      {
         "label": "allemagne",
         "src": "/lib/images/vocabulaire/pays/allemagne.webp"
       },
@@ -4272,12 +4312,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/belgique.webp"
       },
       {
+        "label": "cameroun",
+        "src": "/lib/images/vocabulaire/pays/cameroun.webp"
+      },
+      {
         "label": "canada",
         "src": "/lib/images/vocabulaire/pays/canada.webp"
       },
       {
         "label": "chine",
         "src": "/lib/images/vocabulaire/pays/chine.webp"
+      },
+      {
+        "label": "congo",
+        "src": "/lib/images/vocabulaire/pays/congo.webp"
       },
       {
         "label": "drapeau",
@@ -4304,12 +4352,28 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/grece.webp"
       },
       {
+        "label": "irak",
+        "src": "/lib/images/vocabulaire/pays/irak.webp"
+      },
+      {
         "label": "iran",
         "src": "/lib/images/vocabulaire/pays/iran.webp"
       },
       {
         "label": "italie",
         "src": "/lib/images/vocabulaire/pays/italie.webp"
+      },
+      {
+        "label": "mali",
+        "src": "/lib/images/vocabulaire/pays/mali.webp"
+      },
+      {
+        "label": "maroc",
+        "src": "/lib/images/vocabulaire/pays/maroc.webp"
+      },
+      {
+        "label": "nigeria",
+        "src": "/lib/images/vocabulaire/pays/nigeria.webp"
       },
       {
         "label": "pologne",
@@ -4324,12 +4388,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/somalie.webp"
       },
       {
+        "label": "soudan",
+        "src": "/lib/images/vocabulaire/pays/soudan.webp"
+      },
+      {
         "label": "suisse",
         "src": "/lib/images/vocabulaire/pays/suisse.webp"
       },
       {
         "label": "syrie",
         "src": "/lib/images/vocabulaire/pays/syrie.webp"
+      },
+      {
+        "label": "sénégal",
+        "src": "/lib/images/vocabulaire/pays/sénégal.webp"
+      },
+      {
+        "label": "tunisie",
+        "src": "/lib/images/vocabulaire/pays/tunisie.webp"
       },
       {
         "label": "turquie",
@@ -4342,6 +4418,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "vietnam",
         "src": "/lib/images/vocabulaire/pays/vietnam.webp"
+      },
+      {
+        "label": "éthiopie",
+        "src": "/lib/images/vocabulaire/pays/éthiopie.webp"
       }
     ]
   },
@@ -4896,12 +4976,36 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/appareil-photo.webp"
       },
       {
+        "label": "batterie-externe",
+        "src": "/lib/images/vocabulaire/technologie/batterie-externe.webp"
+      },
+      {
+        "label": "carte-sim",
+        "src": "/lib/images/vocabulaire/technologie/carte-sim.webp"
+      },
+      {
+        "label": "casque-audio",
+        "src": "/lib/images/vocabulaire/technologie/casque-audio.webp"
+      },
+      {
         "label": "chargeur",
         "src": "/lib/images/vocabulaire/technologie/chargeur.webp"
       },
       {
         "label": "clavier",
         "src": "/lib/images/vocabulaire/technologie/clavier.webp"
+      },
+      {
+        "label": "clé-usb",
+        "src": "/lib/images/vocabulaire/technologie/clé-usb.webp"
+      },
+      {
+        "label": "câble",
+        "src": "/lib/images/vocabulaire/technologie/câble.webp"
+      },
+      {
+        "label": "disque-dur",
+        "src": "/lib/images/vocabulaire/technologie/disque-dur.webp"
       },
       {
         "label": "dynamo",
@@ -4936,6 +5040,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/manette.webp"
       },
       {
+        "label": "ordinateur-portable",
+        "src": "/lib/images/vocabulaire/technologie/ordinateur-portable.webp"
+      },
+      {
         "label": "ordinateur",
         "src": "/lib/images/vocabulaire/technologie/ordinateur.webp"
       },
@@ -4956,8 +5064,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/robot.webp"
       },
       {
+        "label": "routeur",
+        "src": "/lib/images/vocabulaire/technologie/routeur.webp"
+      },
+      {
         "label": "smartphone",
         "src": "/lib/images/vocabulaire/technologie/smartphone.webp"
+      },
+      {
+        "label": "souris-d-ordinateur",
+        "src": "/lib/images/vocabulaire/technologie/souris-d-ordinateur.webp"
       },
       {
         "label": "stylet",
@@ -5002,6 +5118,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "écouteurs",
         "src": "/lib/images/vocabulaire/technologie/écouteurs.webp"
+      },
+      {
+        "label": "écran",
+        "src": "/lib/images/vocabulaire/technologie/écran.webp"
       }
     ]
   },
@@ -6194,6 +6314,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/aspirateur.webp"
       },
       {
+        "label": "balance-de-cuisine",
+        "src": "/lib/images/vocabulaire/electromenager/balance-de-cuisine.webp"
+      },
+      {
         "label": "bouilloire",
         "src": "/lib/images/vocabulaire/electromenager/bouilloire.webp"
       },
@@ -6252,6 +6376,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "machine-a-laver",
         "src": "/lib/images/vocabulaire/electromenager/machine-a-laver.webp"
+      },
+      {
+        "label": "machine-à-café",
+        "src": "/lib/images/vocabulaire/electromenager/machine-à-café.webp"
       },
       {
         "label": "micro-onde",
@@ -6791,6 +6919,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "élève": "/lib/images/vocabulaire/ecole-bureau/élève.webp",
   "équerre": "/lib/images/vocabulaire/ecole-bureau/équerre.webp",
   "aspirateur": "/lib/images/vocabulaire/electromenager/aspirateur.webp",
+  "balance-de-cuisine": "/lib/images/vocabulaire/electromenager/balance-de-cuisine.webp",
   "bouilloire": "/lib/images/vocabulaire/electromenager/bouilloire.webp",
   "cafetiere": "/lib/images/vocabulaire/electromenager/cafetiere.webp",
   "chauffe-eau": "/lib/images/vocabulaire/electromenager/chauffe-eau.webp",
@@ -6806,6 +6935,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "lave-vaiselle": "/lib/images/vocabulaire/electromenager/lave-vaiselle.webp",
   "lave-vaisselle": "/lib/images/vocabulaire/electromenager/lave-vaisselle.webp",
   "machine-a-laver": "/lib/images/vocabulaire/electromenager/machine-a-laver.webp",
+  "machine-à-café": "/lib/images/vocabulaire/electromenager/machine-à-café.webp",
   "micro-onde": "/lib/images/vocabulaire/electromenager/micro-onde.webp",
   "micro-ondes": "/lib/images/vocabulaire/electromenager/micro-ondes.webp",
   "mixeur": "/lib/images/vocabulaire/electromenager/mixeur.webp",
@@ -7432,7 +7562,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "quetzal": "/lib/images/vocabulaire/oiseaux/quetzal.webp",
   "toucan": "/lib/images/vocabulaire/oiseaux/toucan.webp",
   "au-bout-de": "/lib/images/vocabulaire/orientation/au-bout-de.webp",
+  "dans": "/lib/images/vocabulaire/orientation/dans.webp",
+  "derrière": "/lib/images/vocabulaire/orientation/derrière.webp",
+  "devant": "/lib/images/vocabulaire/orientation/devant.webp",
   "droite": "/lib/images/vocabulaire/orientation/droite.webp",
+  "en-bas": "/lib/images/vocabulaire/orientation/en-bas.webp",
+  "en-haut": "/lib/images/vocabulaire/orientation/en-haut.webp",
+  "entre": "/lib/images/vocabulaire/orientation/entre.webp",
   "est": "/lib/images/vocabulaire/orientation/est.webp",
   "flèche": "/lib/images/vocabulaire/orientation/flèche.webp",
   "gauche": "/lib/images/vocabulaire/orientation/gauche.webp",
@@ -7441,8 +7577,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "la-bas": "/lib/images/vocabulaire/orientation/la-bas.webp",
   "nord": "/lib/images/vocabulaire/orientation/nord.webp",
   "ouest": "/lib/images/vocabulaire/orientation/ouest.webp",
+  "sous": "/lib/images/vocabulaire/orientation/sous.webp",
   "sud": "/lib/images/vocabulaire/orientation/sud.webp",
+  "sur": "/lib/images/vocabulaire/orientation/sur.webp",
   "tout-droit": "/lib/images/vocabulaire/orientation/tout-droit.webp",
+  "à-côté-de": "/lib/images/vocabulaire/orientation/à-côté-de.webp",
   "arrosoir": "/lib/images/vocabulaire/outils/arrosoir.webp",
   "brouette": "/lib/images/vocabulaire/outils/brouette.webp",
   "clou": "/lib/images/vocabulaire/outils/clou.webp",
@@ -7455,28 +7594,39 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "tuyau": "/lib/images/vocabulaire/outils/tuyau.webp",
   "échelle": "/lib/images/vocabulaire/outils/échelle.webp",
   "afghanistan": "/lib/images/vocabulaire/pays/afghanistan.webp",
+  "algérie": "/lib/images/vocabulaire/pays/algérie.webp",
   "allemagne": "/lib/images/vocabulaire/pays/allemagne.webp",
   "angleterre": "/lib/images/vocabulaire/pays/angleterre.webp",
   "autriche": "/lib/images/vocabulaire/pays/autriche.webp",
   "belgique": "/lib/images/vocabulaire/pays/belgique.webp",
+  "cameroun": "/lib/images/vocabulaire/pays/cameroun.webp",
   "canada": "/lib/images/vocabulaire/pays/canada.webp",
   "chine": "/lib/images/vocabulaire/pays/chine.webp",
+  "congo": "/lib/images/vocabulaire/pays/congo.webp",
   "drapeau": "/lib/images/vocabulaire/pays/drapeau.webp",
   "erythree": "/lib/images/vocabulaire/pays/erythree.webp",
   "espagne": "/lib/images/vocabulaire/pays/espagne.webp",
   "etats-unis": "/lib/images/vocabulaire/pays/etats-unis.webp",
   "france": "/lib/images/vocabulaire/pays/france.webp",
   "grece": "/lib/images/vocabulaire/pays/grece.webp",
+  "irak": "/lib/images/vocabulaire/pays/irak.webp",
   "iran": "/lib/images/vocabulaire/pays/iran.webp",
   "italie": "/lib/images/vocabulaire/pays/italie.webp",
+  "mali": "/lib/images/vocabulaire/pays/mali.webp",
+  "maroc": "/lib/images/vocabulaire/pays/maroc.webp",
+  "nigeria": "/lib/images/vocabulaire/pays/nigeria.webp",
   "pologne": "/lib/images/vocabulaire/pays/pologne.webp",
   "portugal": "/lib/images/vocabulaire/pays/portugal.webp",
   "somalie": "/lib/images/vocabulaire/pays/somalie.webp",
+  "soudan": "/lib/images/vocabulaire/pays/soudan.webp",
   "suisse": "/lib/images/vocabulaire/pays/suisse.webp",
   "syrie": "/lib/images/vocabulaire/pays/syrie.webp",
+  "sénégal": "/lib/images/vocabulaire/pays/sénégal.webp",
+  "tunisie": "/lib/images/vocabulaire/pays/tunisie.webp",
   "turquie": "/lib/images/vocabulaire/pays/turquie.webp",
   "ukraine": "/lib/images/vocabulaire/pays/ukraine.webp",
   "vietnam": "/lib/images/vocabulaire/pays/vietnam.webp",
+  "éthiopie": "/lib/images/vocabulaire/pays/éthiopie.webp",
   "arbre": "/lib/images/vocabulaire/plantes/arbre.webp",
   "azalée": "/lib/images/vocabulaire/plantes/azalée.webp",
   "bambou": "/lib/images/vocabulaire/plantes/bambou.webp",
@@ -7608,8 +7758,14 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "windsurf": "/lib/images/vocabulaire/sports/windsurf.webp",
   "yoga": "/lib/images/vocabulaire/sports/yoga.webp",
   "appareil-photo": "/lib/images/vocabulaire/technologie/appareil-photo.webp",
+  "batterie-externe": "/lib/images/vocabulaire/technologie/batterie-externe.webp",
+  "carte-sim": "/lib/images/vocabulaire/technologie/carte-sim.webp",
+  "casque-audio": "/lib/images/vocabulaire/technologie/casque-audio.webp",
   "chargeur": "/lib/images/vocabulaire/technologie/chargeur.webp",
   "clavier": "/lib/images/vocabulaire/technologie/clavier.webp",
+  "clé-usb": "/lib/images/vocabulaire/technologie/clé-usb.webp",
+  "câble": "/lib/images/vocabulaire/technologie/câble.webp",
+  "disque-dur": "/lib/images/vocabulaire/technologie/disque-dur.webp",
   "dynamo": "/lib/images/vocabulaire/technologie/dynamo.webp",
   "electricite": "/lib/images/vocabulaire/technologie/electricite.webp",
   "enceinte": "/lib/images/vocabulaire/technologie/enceinte.webp",
@@ -7618,12 +7774,15 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "imprimante": "/lib/images/vocabulaire/technologie/imprimante.webp",
   "interview": "/lib/images/vocabulaire/technologie/interview.webp",
   "manette": "/lib/images/vocabulaire/technologie/manette.webp",
+  "ordinateur-portable": "/lib/images/vocabulaire/technologie/ordinateur-portable.webp",
   "ordinateur": "/lib/images/vocabulaire/technologie/ordinateur.webp",
   "pile": "/lib/images/vocabulaire/technologie/pile.webp",
   "pixel": "/lib/images/vocabulaire/technologie/pixel.webp",
   "radio": "/lib/images/vocabulaire/technologie/radio.webp",
   "robot": "/lib/images/vocabulaire/technologie/robot.webp",
+  "routeur": "/lib/images/vocabulaire/technologie/routeur.webp",
   "smartphone": "/lib/images/vocabulaire/technologie/smartphone.webp",
+  "souris-d-ordinateur": "/lib/images/vocabulaire/technologie/souris-d-ordinateur.webp",
   "stylet": "/lib/images/vocabulaire/technologie/stylet.webp",
   "tablette": "/lib/images/vocabulaire/technologie/tablette.webp",
   "télécommande": "/lib/images/vocabulaire/technologie/télécommande.webp",
@@ -7635,6 +7794,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "wifi": "/lib/images/vocabulaire/technologie/wifi.webp",
   "zoom": "/lib/images/vocabulaire/technologie/zoom.webp",
   "écouteurs": "/lib/images/vocabulaire/technologie/écouteurs.webp",
+  "écran": "/lib/images/vocabulaire/technologie/écran.webp",
   "anniversaire": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp",
   "année": "/lib/images/vocabulaire/temps-calendrier/année.webp",
   "après-midi": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp",
