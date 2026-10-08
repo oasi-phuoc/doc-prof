@@ -1593,17 +1593,20 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     >
                       Autres
                     </button>
-                    <button
-                      type="button"
-                      className={activeBlock.verbGroup === 'libre' ? 'active' : ''}
-                      onClick={() => setVerbGroup('libre')}
-                    >
-                      Libre
-                    </button>
+                    {libreMode ? null : (
+                      <button
+                        type="button"
+                        className={activeBlock.verbGroup === 'libre' ? 'active' : ''}
+                        onClick={() => setVerbGroup('libre')}
+                      >
+                        Libre
+                      </button>
+                    )}
                   </div>
                 </div>
               ) : null}
-              {isPhraseDomain &&
+              {!libreMode &&
+              isPhraseDomain &&
               !isPhraseChart &&
               activeBlock.verbGroup === 'libre' &&
               isPhraseLibreEditable(activeBlock.exerciseType) ? (
@@ -1754,6 +1757,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                       ))}
                     </SelectBox>
                   ) : null}
+                  {libreMode ? null : (
                   <div className="quad-libre-block">
                     <b>{calliIsPhrases ? 'Phrases' : 'Mots'}</b>
                     <ul
@@ -1808,9 +1812,10 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                           : `Petit ${defaultCalliWordCount('petit')} · Moyen ${defaultCalliWordCount('moyen')} · Grand ${defaultCalliWordCount('grand')} · Générer tire des mots du thème ; vous pouvez saisir une phrase.`}
                     </small>
                   </div>
+                  )}
                 </>
               ) : null}
-              {isJeuxDomain && jeuxTemplate ? (
+              {!libreMode && isJeuxDomain && jeuxTemplate ? (
                 <GameContentPanel
                   typeId={activeBlock.exerciseType}
                   template={jeuxTemplate}
@@ -1839,13 +1844,15 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               ) : null}
               {isTcf ? (
                 <>
-                  <TcfExerciseEditor
-                    niveau={tcfNiveau}
-                    typeId={activeBlock.exerciseType}
-                    exercise={activeBlock.tcfExercise}
-                    bankId={activeBlock.tcfBankId}
-                    onChange={(patch) => updatePage(patch)}
-                  />
+                  {!libreMode ? (
+                    <TcfExerciseEditor
+                      niveau={tcfNiveau}
+                      typeId={activeBlock.exerciseType}
+                      exercise={activeBlock.tcfExercise}
+                      bankId={activeBlock.tcfBankId}
+                      onChange={(patch) => updatePage(patch)}
+                    />
+                  ) : null}
                   {isTcfConsignesType(activeBlock.exerciseType) ? null : (
                     <Chronometre
                       minutes={activeBlock.tcfDureeMin}
@@ -1876,7 +1883,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </option>
                   ))}
                 </SelectBox>
-                {isNumberLibreDomain ? (
+                {!libreMode && isNumberLibreDomain ? (
                   <button
                     type="button"
                     className={`niveau-libre-btn${activeBlock.numberLibre ? ' active' : ''}`}
@@ -1895,7 +1902,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </button>
                 ) : null}
               </div>
-              {isNumberLibreDomain && activeBlock.numberLibre ? (
+              {!libreMode && isNumberLibreDomain && activeBlock.numberLibre ? (
                 <div className="number-libre-fields">
                   <label className="select-shell">
                     <span>De</span>
@@ -1975,7 +1982,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <small className="muted">
                     Libre : choisissez d’autres mots du son, ou changez le mot et l’image.
                   </small>
-                  {activeBlock.soutienMotsLibre ? (
+                  {!libreMode && activeBlock.soutienMotsLibre ? (
                     <SoutienMotsLibreEditor
                       entries={
                         activeBlock.soutienMotsEntries?.length
@@ -2027,7 +2034,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <small className="muted">
                     Libre : choisissez la partie à cacher, ou ajoutez mot + image.
                   </small>
-                  {activeBlock.soutienCompleterLibre ? (
+                  {!libreMode && activeBlock.soutienCompleterLibre ? (
                     <SoutienCompleterLibreEditor
                       entries={
                         activeBlock.soutienCompleterEntries?.length

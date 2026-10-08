@@ -23,7 +23,8 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/components/ItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) — maths et français |
 | `src/components/math/PrintDocumentChrome.tsx` | En-tête institutionnel / personnalisé, pied, points d'éval |
 | `src/components/math/GeometryFigure.tsx`, `FractionView.tsx`, `CoordGrid.tsx` | Visuels scolaires |
-| `src/App.tsx` | Générateur UI : SelectBox Domaine → Thème → Type, pages, aperçu |
+| `src/App.tsx` | Routage landing / accès / générateur |
+| `src/components/generator/` | UI générateur (panneaux, topbar, mode libre, feuille A4) — voir `README.md` |
 | `src/App.css` | Feuille A4 fixe, layouts école, impression |
 
 ## Principes non négociables
