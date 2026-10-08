@@ -4292,6 +4292,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/afghanistan.webp"
       },
       {
+        "label": "albanie",
+        "src": "/lib/images/vocabulaire/pays/albanie.webp"
+      },
+      {
         "label": "algérie",
         "src": "/lib/images/vocabulaire/pays/algérie.webp"
       },
@@ -4308,8 +4312,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/autriche.webp"
       },
       {
+        "label": "bangladesh",
+        "src": "/lib/images/vocabulaire/pays/bangladesh.webp"
+      },
+      {
         "label": "belgique",
         "src": "/lib/images/vocabulaire/pays/belgique.webp"
+      },
+      {
+        "label": "bosnie",
+        "src": "/lib/images/vocabulaire/pays/bosnie.webp"
+      },
+      {
+        "label": "brésil",
+        "src": "/lib/images/vocabulaire/pays/brésil.webp"
       },
       {
         "label": "cameroun",
@@ -4324,8 +4340,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/chine.webp"
       },
       {
+        "label": "colombie",
+        "src": "/lib/images/vocabulaire/pays/colombie.webp"
+      },
+      {
         "label": "congo",
         "src": "/lib/images/vocabulaire/pays/congo.webp"
+      },
+      {
+        "label": "corée-du-sud",
+        "src": "/lib/images/vocabulaire/pays/corée-du-sud.webp"
+      },
+      {
+        "label": "croatie",
+        "src": "/lib/images/vocabulaire/pays/croatie.webp"
+      },
+      {
+        "label": "danemark",
+        "src": "/lib/images/vocabulaire/pays/danemark.webp"
       },
       {
         "label": "drapeau",
@@ -4352,6 +4384,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/grece.webp"
       },
       {
+        "label": "inde",
+        "src": "/lib/images/vocabulaire/pays/inde.webp"
+      },
+      {
         "label": "irak",
         "src": "/lib/images/vocabulaire/pays/irak.webp"
       },
@@ -4360,8 +4396,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/iran.webp"
       },
       {
+        "label": "irlande",
+        "src": "/lib/images/vocabulaire/pays/irlande.webp"
+      },
+      {
         "label": "italie",
         "src": "/lib/images/vocabulaire/pays/italie.webp"
+      },
+      {
+        "label": "japon",
+        "src": "/lib/images/vocabulaire/pays/japon.webp"
+      },
+      {
+        "label": "kosovo",
+        "src": "/lib/images/vocabulaire/pays/kosovo.webp"
+      },
+      {
+        "label": "liban",
+        "src": "/lib/images/vocabulaire/pays/liban.webp"
       },
       {
         "label": "mali",
@@ -4372,8 +4424,28 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/maroc.webp"
       },
       {
+        "label": "mexique",
+        "src": "/lib/images/vocabulaire/pays/mexique.webp"
+      },
+      {
         "label": "nigeria",
         "src": "/lib/images/vocabulaire/pays/nigeria.webp"
+      },
+      {
+        "label": "norvège",
+        "src": "/lib/images/vocabulaire/pays/norvège.webp"
+      },
+      {
+        "label": "pakistan",
+        "src": "/lib/images/vocabulaire/pays/pakistan.webp"
+      },
+      {
+        "label": "pays-bas",
+        "src": "/lib/images/vocabulaire/pays/pays-bas.webp"
+      },
+      {
+        "label": "philippines",
+        "src": "/lib/images/vocabulaire/pays/philippines.webp"
       },
       {
         "label": "pologne",
@@ -4384,6 +4456,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/portugal.webp"
       },
       {
+        "label": "roumanie",
+        "src": "/lib/images/vocabulaire/pays/roumanie.webp"
+      },
+      {
+        "label": "serbie",
+        "src": "/lib/images/vocabulaire/pays/serbie.webp"
+      },
+      {
         "label": "somalie",
         "src": "/lib/images/vocabulaire/pays/somalie.webp"
       },
@@ -4392,8 +4472,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/soudan.webp"
       },
       {
+        "label": "sri-lanka",
+        "src": "/lib/images/vocabulaire/pays/sri-lanka.webp"
+      },
+      {
         "label": "suisse",
         "src": "/lib/images/vocabulaire/pays/suisse.webp"
+      },
+      {
+        "label": "suède",
+        "src": "/lib/images/vocabulaire/pays/suède.webp"
       },
       {
         "label": "syrie",
@@ -4402,6 +4490,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "sénégal",
         "src": "/lib/images/vocabulaire/pays/sénégal.webp"
+      },
+      {
+        "label": "thaïlande",
+        "src": "/lib/images/vocabulaire/pays/thaïlande.webp"
       },
       {
         "label": "tunisie",
@@ -7594,34 +7686,57 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "tuyau": "/lib/images/vocabulaire/outils/tuyau.webp",
   "échelle": "/lib/images/vocabulaire/outils/échelle.webp",
   "afghanistan": "/lib/images/vocabulaire/pays/afghanistan.webp",
+  "albanie": "/lib/images/vocabulaire/pays/albanie.webp",
   "algérie": "/lib/images/vocabulaire/pays/algérie.webp",
   "allemagne": "/lib/images/vocabulaire/pays/allemagne.webp",
   "angleterre": "/lib/images/vocabulaire/pays/angleterre.webp",
   "autriche": "/lib/images/vocabulaire/pays/autriche.webp",
+  "bangladesh": "/lib/images/vocabulaire/pays/bangladesh.webp",
   "belgique": "/lib/images/vocabulaire/pays/belgique.webp",
+  "bosnie": "/lib/images/vocabulaire/pays/bosnie.webp",
+  "brésil": "/lib/images/vocabulaire/pays/brésil.webp",
   "cameroun": "/lib/images/vocabulaire/pays/cameroun.webp",
   "canada": "/lib/images/vocabulaire/pays/canada.webp",
   "chine": "/lib/images/vocabulaire/pays/chine.webp",
+  "colombie": "/lib/images/vocabulaire/pays/colombie.webp",
   "congo": "/lib/images/vocabulaire/pays/congo.webp",
+  "corée-du-sud": "/lib/images/vocabulaire/pays/corée-du-sud.webp",
+  "croatie": "/lib/images/vocabulaire/pays/croatie.webp",
+  "danemark": "/lib/images/vocabulaire/pays/danemark.webp",
   "drapeau": "/lib/images/vocabulaire/pays/drapeau.webp",
   "erythree": "/lib/images/vocabulaire/pays/erythree.webp",
   "espagne": "/lib/images/vocabulaire/pays/espagne.webp",
   "etats-unis": "/lib/images/vocabulaire/pays/etats-unis.webp",
   "france": "/lib/images/vocabulaire/pays/france.webp",
   "grece": "/lib/images/vocabulaire/pays/grece.webp",
+  "inde": "/lib/images/vocabulaire/pays/inde.webp",
   "irak": "/lib/images/vocabulaire/pays/irak.webp",
   "iran": "/lib/images/vocabulaire/pays/iran.webp",
+  "irlande": "/lib/images/vocabulaire/pays/irlande.webp",
   "italie": "/lib/images/vocabulaire/pays/italie.webp",
+  "japon": "/lib/images/vocabulaire/pays/japon.webp",
+  "kosovo": "/lib/images/vocabulaire/pays/kosovo.webp",
+  "liban": "/lib/images/vocabulaire/pays/liban.webp",
   "mali": "/lib/images/vocabulaire/pays/mali.webp",
   "maroc": "/lib/images/vocabulaire/pays/maroc.webp",
+  "mexique": "/lib/images/vocabulaire/pays/mexique.webp",
   "nigeria": "/lib/images/vocabulaire/pays/nigeria.webp",
+  "norvège": "/lib/images/vocabulaire/pays/norvège.webp",
+  "pakistan": "/lib/images/vocabulaire/pays/pakistan.webp",
+  "pays-bas": "/lib/images/vocabulaire/pays/pays-bas.webp",
+  "philippines": "/lib/images/vocabulaire/pays/philippines.webp",
   "pologne": "/lib/images/vocabulaire/pays/pologne.webp",
   "portugal": "/lib/images/vocabulaire/pays/portugal.webp",
+  "roumanie": "/lib/images/vocabulaire/pays/roumanie.webp",
+  "serbie": "/lib/images/vocabulaire/pays/serbie.webp",
   "somalie": "/lib/images/vocabulaire/pays/somalie.webp",
   "soudan": "/lib/images/vocabulaire/pays/soudan.webp",
+  "sri-lanka": "/lib/images/vocabulaire/pays/sri-lanka.webp",
   "suisse": "/lib/images/vocabulaire/pays/suisse.webp",
+  "suède": "/lib/images/vocabulaire/pays/suède.webp",
   "syrie": "/lib/images/vocabulaire/pays/syrie.webp",
   "sénégal": "/lib/images/vocabulaire/pays/sénégal.webp",
+  "thaïlande": "/lib/images/vocabulaire/pays/thaïlande.webp",
   "tunisie": "/lib/images/vocabulaire/pays/tunisie.webp",
   "turquie": "/lib/images/vocabulaire/pays/turquie.webp",
   "ukraine": "/lib/images/vocabulaire/pays/ukraine.webp",
