@@ -100,7 +100,11 @@ export function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode 
 
 export function FractionResultSlot({ answer, show }: { answer: string; show: boolean }) {
   if (show) {
-    return looksLikeFraction(answer) ? <FractionView value={answer} /> : <span>{answer}</span>
+    return (
+      <span className="filled-answer">
+        {looksLikeFraction(answer) ? <FractionView value={answer} /> : answer}
+      </span>
+    )
   }
   // Élève : barre de fraction centrée (thème) pour écrire num et den — pas de trait dessous.
   return <FractionAnswerBlank />
