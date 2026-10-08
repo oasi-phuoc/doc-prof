@@ -78,7 +78,7 @@ import {
   isTcmConsignesType,
   isTcmDomain,
   TCM_DOCUMENT_TITLE,
-} from '@/math/tcm-test'
+} from '@/tcm/test'
 import {
   defaultCalliPhraseCount,
   defaultCalliWordCount,

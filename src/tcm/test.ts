@@ -4,8 +4,8 @@
  * Chaque étape réutilise un type déjà présent en algèbre / géométrie
  * (ou un type TCM dédié pour les premiers exercices).
  */
-import type { Difficulty, Domain, ExerciseBlock, PageConfig } from './types'
-import { exerciseTypeById, isDraftPadExercise } from './catalog'
+import type { Difficulty, Domain, ExerciseBlock, PageConfig } from '@/math/types'
+import { exerciseTypeById, isDraftPadExercise } from '@/math/catalog'
 
 export const TCM_DOMAIN: Domain = 'tcm'
 

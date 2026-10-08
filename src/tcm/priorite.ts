@@ -4,8 +4,8 @@
  * 25 avec en plus fractions empilées (n/d) et puissances ¹–³.
  * `/` = fraction empilée uniquement ; division d’expressions = `÷`.
  */
-import { int, pick, type Rng } from './rng'
-import type { MathItem } from './types'
+import { int, pick, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
 
 const SUP = ['', '¹', '²', '³'] as const
 

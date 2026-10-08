@@ -3,8 +3,8 @@
  * masse (kg), capacité (L), temps (h), aire (m²) ou volume (m³) au hasard.
  * Valeur entière ou décimale tirée au sort pour chaque question.
  */
-import { int, pick, type Rng } from './rng'
-import type { MathItem } from './types'
+import { int, pick, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
 
 type UnitPair = {
   from: string

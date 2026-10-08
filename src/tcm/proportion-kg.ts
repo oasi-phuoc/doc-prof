@@ -5,8 +5,8 @@
  * 2) Règle de trois kg → francs : « n kg de … → p francs » / « m kg → ____ »
  *    25 produits ; n, m, p ∈ [10 ; 99] ; ni n|m ni m|n ; réponse exacte.
  */
-import { int, pick, type Rng } from './rng'
-import type { MathItem } from './types'
+import { int, pick, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
 
 const PCT_CHOICES = [10, 20, 25, 40, 60, 75, 80] as const
 

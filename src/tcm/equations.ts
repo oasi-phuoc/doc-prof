@@ -4,8 +4,8 @@
  * Q1 : x d’un seul côté (gauche ou droite), sans fraction — 50 modèles.
  * Q2 : x des deux côtés, fractions possibles — 50 modèles.
  */
-import { int, pick, shuffle, type Rng } from './rng'
-import type { MathItem } from './types'
+import { int, pick, shuffle, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
 
 export const TCM_EQ_Q1_COUNT = 50
 export const TCM_EQ_Q2_COUNT = 50

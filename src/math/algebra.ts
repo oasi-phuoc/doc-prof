@@ -1,5 +1,5 @@
 import { int, pick, shuffle, type Rng } from './rng'
-import { generateTcmEvaluerBatch } from './tcm-evaluer'
+import { generateTcmEvaluerBatch } from '@/tcm/evaluer'
 import type { AlgebraGiven, Difficulty, MathItem } from './types'
 
 export type { AlgebraGiven }

@@ -5,8 +5,8 @@
  *      ≥ 6 termes dont ≥ 2 hors de la fraction, reliés par + − ×.
  * 50 modèles par question.
  */
-import { int, pick, shuffle, type Rng } from './rng'
-import type { AlgebraGiven, MathItem } from './types'
+import { int, pick, shuffle, type Rng } from '@/math/rng'
+import type { AlgebraGiven, MathItem } from '@/math/types'
 
 export type TcmEvaluerBatch = {
   items: MathItem[]

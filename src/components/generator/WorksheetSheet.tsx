@@ -8,7 +8,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { isDraftPadExercise } from '@/math/catalog'
 import { TCF_DOMAIN } from '@/tcf/catalog'
-import { blockPointsTotal, formatPointsLabel, isTcmDomain } from '@/math/tcm-test'
+import { blockPointsTotal, formatPointsLabel, isTcmDomain } from '@/tcm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,

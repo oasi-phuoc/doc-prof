@@ -4,8 +4,8 @@
  * Q2 : exactement deux · (trois facteurs) ; pas de puissance dans l’énoncé
  *      (puissances possibles dans la réponse). 50 modèles.
  */
-import { int, pick, shuffle, type Rng } from './rng'
-import type { MathItem } from './types'
+import { int, pick, shuffle, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
 
 const SUPER: Record<number, string> = { 1: '', 2: '²', 3: '³', 4: '⁴' }
 const LETTERS = ['a', 'b', 'c', 'm', 'n', 'p', 't', 'v', 'x', 'y'] as const
