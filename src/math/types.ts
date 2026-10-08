@@ -777,6 +777,13 @@ export type ExerciseBlock = {
   tcfBankId?: string
   /** TCF : durée indiquée sur la fiche (mode chronométré), en minutes. */
   tcfDureeMin?: number
+  /**
+   * Mode libre global (tous domaines) : items édités à la main.
+   * S’ils sont présents, ils remplacent le tirage pour l’affichage / l’impression.
+   */
+  libreItems?: MathItem[]
+  /** Mode libre global : consigne saisie (écrase l’instruction tirée). */
+  libreInstruction?: string
 }
 
 export type PageConfig = ExerciseBlock & {

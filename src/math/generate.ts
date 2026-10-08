@@ -2729,6 +2729,13 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
     const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTcmConsignes = isInfoPageType(block.exerciseType)
+    const libre =
+      Array.isArray(block.libreItems) && block.libreItems.length > 0
+        ? {
+            items: block.libreItems,
+            instruction: block.libreInstruction ?? result.instruction,
+          }
+        : null
     let exerciseIndex = 0
     if (!isTcmConsignes) {
       if (block.exerciseNo != null) {
@@ -2743,12 +2750,12 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
       title: isTcmConsignes
         ? 'Informations'
         : isTheory
-          ? (result.instruction?.replace(/^Théorie — /, '') || `Théorie`)
+          ? ((libre?.instruction ?? result.instruction)?.replace(/^Théorie — /, '') || `Théorie`)
           : isJeux
             ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${exerciseIndex}`)
             : `Exercice ${exerciseIndex}`,
-      instruction: result.instruction,
-      items: result.items,
+      instruction: libre?.instruction ?? result.instruction,
+      items: libre?.items ?? result.items,
       columns: block.columns,
       exerciseType: block.exerciseType,
       pointsPerQuestion: block.pointsPerQuestion,
