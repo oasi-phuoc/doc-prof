@@ -3162,31 +3162,29 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 <h2>Votre activité est prête.</h2>
               </div>
               <div className="result-head-actions no-print">
-                <button
-                  className="print-chip is-icon is-validate"
-                  type="button"
-                  onClick={validateManual}
-                  aria-label="Valider les changements"
-                  title="Valider les changements"
-                >
-                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-                    <path
-                      fill="currentColor"
-                      d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
-                    />
-                  </svg>
-                </button>
+                {libreMode ? null : (
+                  <button
+                    className="print-chip is-icon is-validate"
+                    type="button"
+                    onClick={validateManual}
+                    aria-label="Valider les changements"
+                    title="Valider les changements"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+                      />
+                    </svg>
+                  </button>
+                )}
                 <button
                   className="print-chip is-icon is-generate"
                   type="button"
                   onClick={generate}
                   disabled={libreMode}
                   aria-label={libreMode ? 'Générer indisponible en mode libre' : 'Générer'}
-                  title={
-                    libreMode
-                      ? 'Indisponible en mode libre — utilisez Valider'
-                      : 'Générer'
-                  }
+                  title={libreMode ? 'Indisponible en mode libre' : 'Générer'}
                 >
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                     <path
