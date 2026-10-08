@@ -59,7 +59,13 @@ export function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode 
   const missing = item.missing ?? 'result'
   const aText = missing === 'a' && !show ? null : formatOperand(item.a)
   const bText = missing === 'b' && !show ? null : formatOperand(item.b)
-  const resultShown = missing === 'result' ? (show ? item.answer : null) : formatOperand(item.result) || item.answer
+  const resultMissing = missing === 'result'
+  // Quand le trou est sur a ou b, on affiche le résultat en clair (pas de 2ᵉ trait).
+  const resultShown = resultMissing
+    ? show
+      ? item.answer
+      : null
+    : formatOperand(item.result) || (show ? item.answer : formatOperand(item.result))
 
   return (
     <div className="eq-row" aria-label="Calcul">
@@ -80,10 +86,13 @@ export function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode 
       </span>
       <span className="eq-cell eq-eq">=</span>
       <span className="eq-cell eq-ans">
-        {/* Toujours un trait de réponse après « = » (élève et corrigé). */}
-        <span className={`answer-line-field ${show && resultShown != null ? 'filled' : ''}`}>
-          {resultShown ?? '\u00a0'}
-        </span>
+        {resultMissing ? (
+          <span className={`answer-line-field ${show && resultShown != null ? 'filled' : ''}`}>
+            {resultShown ?? '\u00a0'}
+          </span>
+        ) : (
+          <span className={show ? 'filled-answer' : undefined}>{resultShown}</span>
+        )}
       </span>
     </div>
   )
@@ -301,7 +310,15 @@ export function AlgebraRow({
   const hasEquals = prompt.includes('=')
   const tokens = tokenizeAlgebra(prompt)
   const hasFrac = tokens.some(tokenIsFrac)
-  const answerLabel = hasEquals ? `x = ${item.answer}` : item.answer
+  // Équation à résoudre (x = …) vs calcul / réduction (réponse numérique ou polynôme).
+  const isSolveEq = Boolean(item.development?.length || item.unknowns?.length || item.responseAnswer)
+  const answerLabel = isSolveEq
+    ? (item.responseAnswer ?? `x = ${item.answer}`)
+    : item.answer
+  const development =
+    item.development ?? (item.calcAnswer ? item.calcAnswer.split('\n').filter(Boolean) : [])
+  const operations = item.operations ?? []
+  const padCorrection = development.length > 0 || (show && Boolean(item.calcAnswer || item.answer))
 
   return (
     <div className="algebra-stack">
@@ -326,9 +343,37 @@ export function AlgebraRow({
       </span>
     </div>
     <div
-      className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`}
+      className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}${
+        show && padCorrection ? ' has-correction' : ''
+      }`}
       aria-label="Zone de brouillon"
-    />
+    >
+      {show && development.length > 0 ? (
+        <AlgebraDevelopmentLines lines={development} operations={operations} />
+      ) : show && (item.calcAnswer || item.answer) ? (
+        <strong className="filled-answer draft-pad-answer">{item.calcAnswer ?? item.answer}</strong>
+      ) : null}
+    </div>
+    </div>
+  )
+}
+
+/** Développement / étapes dans la grille (style peri-aire / équations). */
+function AlgebraDevelopmentLines({
+  lines,
+  operations,
+}: {
+  lines: string[]
+  operations: string[]
+}) {
+  return (
+    <div className="algebra-dev-lines" aria-label="Développement">
+      {lines.map((line, i) => (
+        <div className="algebra-dev-line" key={`${line}-${i}`}>
+          {operations[i] ? <span className="algebra-dev-op">{operations[i]}</span> : null}
+          <strong className="filled-answer draft-pad-answer">{line}</strong>
+        </div>
+      ))}
     </div>
   )
 }

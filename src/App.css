@@ -634,7 +634,7 @@ html,body,#root{
   border:0;border-bottom:1.5px solid var(--purple);min-width:2.8em;
   box-sizing:border-box;line-height:1.35
 }
-.sequence-term.blank.filled{color:var(--ink)}
+.sequence-term.blank.filled{color:var(--purple)}
 /* Suites TCM : cases à largeur fixe (5 chiffres) + 10 px entre termes. */
 .sequence-row.sequence-digits-5{
   flex-wrap:nowrap;gap:10px;width:100%;justify-content:flex-start
@@ -759,8 +759,8 @@ html,body,#root{
 .answer-line-field.compact{
   display:inline-block;width:auto;min-width:2.8em;margin:0 2px;vertical-align:baseline;text-align:center
 }
-.answer-line-field.filled{border-bottom-color:var(--purple);color:var(--ink)}
-.filled-answer{font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.answer-line-field.filled{border-bottom-color:var(--purple);color:var(--purple)}
+.filled-answer{font-weight:700;font-variant-numeric:tabular-nums;color:var(--purple)}
 .write-line{display:block;width:100%;border:0;border-bottom:1.5px solid var(--purple);height:var(--ex-answer-h);margin-top:var(--ex-prompt-gap);background:transparent;border-radius:0}
 .write-line.long{flex:1;display:block;width:100%;height:var(--ex-answer-h);margin-top:0;border-bottom:1.5px solid var(--purple)}
 
@@ -1101,6 +1101,13 @@ html,body,#root{
   padding-top:12px
 }
 .geo-dual.is-tight .geo-dual-answers{padding-top:6px}
+/* TCM ex. 13 : rectangle −25 % (forme seule) ; cotes gardent 10 pt. */
+.geo-dual.is-tight .geo-dual-figure .geometry-figure{
+  width:75%;max-width:75%;margin-inline:auto
+}
+.geo-dual.is-tight .geo-dual-figure .geometry-figure .dim-label{
+  font-size:4.704mm /* 3,528 mm / 0,75 → taille visuelle inchangée après scale CSS */
+}
 .geo-dual-answer{
   display:grid;grid-template-columns:max-content minmax(4em,1fr);
   align-items:baseline;column-gap:8px;width:100%
@@ -1121,6 +1128,13 @@ html,body,#root{
 .geo-dual-figure .geometry-figure .dim-label{
   font-size:3.528mm
 }
+.algebra-dev-lines{display:flex;flex-direction:column;gap:4px;padding:4px 6px;width:100%}
+.algebra-dev-line{display:flex;align-items:baseline;gap:8px;width:100%}
+.algebra-dev-op{
+  flex:0 0 auto;min-width:2.5em;text-align:right;
+  color:var(--purple);font-size:10px;font-weight:600
+}
+.algebra-dev-line .draft-pad-answer{padding:0;flex:1 1 auto}
 .geometry-figure.cotee{overflow:visible}
 .geometry-figure.composite-figure{width:min(100%,56mm)}
 .geometry-figure.composite-figure .dim-label{font-size:13pt}
@@ -1467,7 +1481,7 @@ html,body,#root{
   }
   .syllable-vowel,.phrase-bubble .syllable-vowel{color:var(--purple)!important}
   .answer-line-field,.write-line,.sequence-term.blank{border-bottom-color:var(--purple)!important}
-  .filled-answer,.inline-blank{color:#000!important}
+  .filled-answer,.inline-blank,.answer-line-field.filled{color:var(--purple)!important}
   .geometry-figure,.coord-grid{color:#000}
   .item-number{background:transparent!important;border:0!important;color:var(--purple)!important}
   /* Gattegno : fonds colorés des bulles / pastilles (sinon seuls les contours restent). */
@@ -3643,7 +3657,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 
 /* —— Topbar : outils icônes (couleur, pied, mode libre, déconnexion) —— */
-.topbar-tools{display:flex;align-items:center;gap:8px}
+.topbar{overflow:visible}
+.topbar-tools{display:flex;align-items:center;gap:8px;overflow:visible;position:relative;z-index:50}
 .topbar-icon-btn{
   width:40px;height:40px;padding:0;border:1px solid var(--line);border-radius:999px;
   background:#fff;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;
@@ -3657,18 +3672,24 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   background:var(--lavender);box-shadow:0 0 0 2px color-mix(in srgb,var(--purple) 18%,#fff)
 }
 .topbar-icon-btn.is-logout{color:var(--muted)}
-.topbar-color-wrap{position:relative}
+.topbar-color-wrap{position:relative;overflow:visible}
 .topbar-color-btn{padding:0}
 .topbar-color-swatch{
   width:18px;height:18px;border-radius:999px;border:2px solid #fff;
   box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 22%,transparent)
 }
 .topbar-color-menu{
-  position:absolute;top:calc(100% + 8px);right:0;z-index:40;
-  min-width:220px;padding:12px;border:1px solid var(--line);border-radius:16px;
-  background:#fff;box-shadow:0 12px 28px #322b1e18
+  position:absolute;top:calc(100% + 8px);right:0;left:auto;z-index:80;
+  width:max-content;max-width:min(280px,calc(100vw - 24px));
+  min-width:0;padding:10px;border:1px solid var(--line);border-radius:16px;
+  background:#fff;box-shadow:0 12px 28px #322b1e18;overflow:visible;
+  box-sizing:border-box
 }
-.theme-color-choices.is-compact{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+/* Padding + overflow visible : l’anneau de sélection (.active, 4px) ne doit pas être coupé */
+.theme-color-choices.is-compact{
+  display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:5px;
+  overflow:visible;-webkit-overflow-scrolling:auto
+}
 
 /* —— Workspace desktop : fiche fixe + panneaux scrollables —— */
 @media (min-width:851px){
@@ -3733,9 +3754,10 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   }
 }
 @media (max-width:850px){
-  .topbar-tools{gap:6px}
+  .topbar-tools{gap:6px;overflow:visible}
   .topbar-icon-btn{width:36px;height:36px}
-  .topbar-color-menu{right:auto;left:0}
+  /* Ancré à droite du bouton (pas left:0) pour rester dans l’écran */
+  .topbar-color-menu{right:0;left:auto}
   .side-tool-panel{
     border-top:1px solid var(--line);border-left:0;padding:0
   }
