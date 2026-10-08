@@ -2502,6 +2502,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/ascenseur.webp"
       },
       {
+        "label": "balcon",
+        "src": "/lib/images/vocabulaire/maison/balcon.webp"
+      },
+      {
         "label": "berceau",
         "src": "/lib/images/vocabulaire/maison/berceau.webp"
       },
@@ -2518,6 +2522,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/canape.webp"
       },
       {
+        "label": "cave",
+        "src": "/lib/images/vocabulaire/maison/cave.webp"
+      },
+      {
         "label": "chaise",
         "src": "/lib/images/vocabulaire/maison/chaise.webp"
       },
@@ -2532,6 +2540,22 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "commode",
         "src": "/lib/images/vocabulaire/maison/commode.webp"
+      },
+      {
+        "label": "couloir",
+        "src": "/lib/images/vocabulaire/maison/couloir.webp"
+      },
+      {
+        "label": "coussin",
+        "src": "/lib/images/vocabulaire/maison/coussin.webp"
+      },
+      {
+        "label": "couverture",
+        "src": "/lib/images/vocabulaire/maison/couverture.webp"
+      },
+      {
+        "label": "cuisine",
+        "src": "/lib/images/vocabulaire/maison/cuisine.webp"
       },
       {
         "label": "escalier",
@@ -2558,8 +2582,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/foyer.webp"
       },
       {
+        "label": "garage",
+        "src": "/lib/images/vocabulaire/maison/garage.webp"
+      },
+      {
         "label": "grange",
         "src": "/lib/images/vocabulaire/maison/grange.webp"
+      },
+      {
+        "label": "grenier",
+        "src": "/lib/images/vocabulaire/maison/grenier.webp"
       },
       {
         "label": "igloo",
@@ -2568,6 +2600,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "interrupteur",
         "src": "/lib/images/vocabulaire/maison/interrupteur.webp"
+      },
+      {
+        "label": "jardin",
+        "src": "/lib/images/vocabulaire/maison/jardin.webp"
       },
       {
         "label": "lampe",
@@ -2588,6 +2624,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "mur",
         "src": "/lib/images/vocabulaire/maison/mur.webp"
+      },
+      {
+        "label": "oreiller",
+        "src": "/lib/images/vocabulaire/maison/oreiller.webp"
       },
       {
         "label": "penderie",
@@ -2614,6 +2654,22 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/rideau.webp"
       },
       {
+        "label": "salle-de-bain",
+        "src": "/lib/images/vocabulaire/maison/salle-de-bain.webp"
+      },
+      {
+        "label": "salon",
+        "src": "/lib/images/vocabulaire/maison/salon.webp"
+      },
+      {
+        "label": "serrure",
+        "src": "/lib/images/vocabulaire/maison/serrure.webp"
+      },
+      {
+        "label": "sonnette",
+        "src": "/lib/images/vocabulaire/maison/sonnette.webp"
+      },
+      {
         "label": "table-de-nuit",
         "src": "/lib/images/vocabulaire/maison/table-de-nuit.webp"
       },
@@ -2634,8 +2690,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/thermostat.webp"
       },
       {
+        "label": "toilettes",
+        "src": "/lib/images/vocabulaire/maison/toilettes.webp"
+      },
+      {
         "label": "toit",
         "src": "/lib/images/vocabulaire/maison/toit.webp"
+      },
+      {
+        "label": "volet",
+        "src": "/lib/images/vocabulaire/maison/volet.webp"
       },
       {
         "label": "wigwam",
@@ -4898,6 +4962,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/boutique.webp"
       },
       {
+        "label": "café",
+        "src": "/lib/images/vocabulaire/ville/café.webp"
+      },
+      {
         "label": "carrefour",
         "src": "/lib/images/vocabulaire/ville/carrefour.webp"
       },
@@ -4930,6 +4998,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/feu-rouge.webp"
       },
       {
+        "label": "fontaine",
+        "src": "/lib/images/vocabulaire/ville/fontaine.webp"
+      },
+      {
         "label": "gare",
         "src": "/lib/images/vocabulaire/ville/gare.webp"
       },
@@ -4950,6 +5022,22 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/hopital.webp"
       },
       {
+        "label": "hôtel",
+        "src": "/lib/images/vocabulaire/ville/hôtel.webp"
+      },
+      {
+        "label": "immeuble",
+        "src": "/lib/images/vocabulaire/ville/immeuble.webp"
+      },
+      {
+        "label": "lampadaire",
+        "src": "/lib/images/vocabulaire/ville/lampadaire.webp"
+      },
+      {
+        "label": "laverie",
+        "src": "/lib/images/vocabulaire/ville/laverie.webp"
+      },
+      {
         "label": "librairie",
         "src": "/lib/images/vocabulaire/ville/librairie.webp"
       },
@@ -4964,6 +5052,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "marché",
         "src": "/lib/images/vocabulaire/ville/marché.webp"
+      },
+      {
+        "label": "mosquée",
+        "src": "/lib/images/vocabulaire/ville/mosquée.webp"
       },
       {
         "label": "musee",
@@ -5004,6 +5096,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "piscine",
         "src": "/lib/images/vocabulaire/ville/piscine.webp"
+      },
+      {
+        "label": "piste-cyclable",
+        "src": "/lib/images/vocabulaire/ville/piste-cyclable.webp"
       },
       {
         "label": "pizzéria",
@@ -5054,6 +5150,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/stade.webp"
       },
       {
+        "label": "station-service",
+        "src": "/lib/images/vocabulaire/ville/station-service.webp"
+      },
+      {
         "label": "station",
         "src": "/lib/images/vocabulaire/ville/station.webp"
       },
@@ -5068,6 +5168,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "tribunal",
         "src": "/lib/images/vocabulaire/ville/tribunal.webp"
+      },
+      {
+        "label": "trottoir",
+        "src": "/lib/images/vocabulaire/ville/trottoir.webp"
       },
       {
         "label": "université",
@@ -5294,6 +5398,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/chemise.webp"
       },
       {
+        "label": "costume",
+        "src": "/lib/images/vocabulaire/vetements/costume.webp"
+      },
+      {
         "label": "cravate",
         "src": "/lib/images/vocabulaire/vetements/cravate.webp"
       },
@@ -5304,6 +5412,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "debardeur",
         "src": "/lib/images/vocabulaire/vetements/debardeur.webp"
+      },
+      {
+        "label": "doudoune",
+        "src": "/lib/images/vocabulaire/vetements/doudoune.webp"
       },
       {
         "label": "echarpe",
@@ -5324,6 +5436,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "gilet",
         "src": "/lib/images/vocabulaire/vetements/gilet.webp"
+      },
+      {
+        "label": "imperméable",
+        "src": "/lib/images/vocabulaire/vetements/imperméable.webp"
+      },
+      {
+        "label": "jean",
+        "src": "/lib/images/vocabulaire/vetements/jean.webp"
       },
       {
         "label": "jupe",
@@ -5372,6 +5492,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "soutien-gorge",
         "src": "/lib/images/vocabulaire/vetements/soutien-gorge.webp"
+      },
+      {
+        "label": "sweat",
+        "src": "/lib/images/vocabulaire/vetements/sweat.webp"
       },
       {
         "label": "t-shirt",
@@ -6393,40 +6517,56 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "appartement": "/lib/images/vocabulaire/maison/appartement.webp",
   "armoire": "/lib/images/vocabulaire/maison/armoire.webp",
   "ascenseur": "/lib/images/vocabulaire/maison/ascenseur.webp",
+  "balcon": "/lib/images/vocabulaire/maison/balcon.webp",
   "berceau": "/lib/images/vocabulaire/maison/berceau.webp",
   "buffet": "/lib/images/vocabulaire/maison/buffet.webp",
   "bungalow": "/lib/images/vocabulaire/maison/bungalow.webp",
   "canape": "/lib/images/vocabulaire/maison/canape.webp",
+  "cave": "/lib/images/vocabulaire/maison/cave.webp",
   "chaise": "/lib/images/vocabulaire/maison/chaise.webp",
   "chambre": "/lib/images/vocabulaire/maison/chambre.webp",
   "cheminée": "/lib/images/vocabulaire/maison/cheminée.webp",
   "commode": "/lib/images/vocabulaire/maison/commode.webp",
+  "couloir": "/lib/images/vocabulaire/maison/couloir.webp",
+  "coussin": "/lib/images/vocabulaire/maison/coussin.webp",
+  "couverture": "/lib/images/vocabulaire/maison/couverture.webp",
+  "cuisine": "/lib/images/vocabulaire/maison/cuisine.webp",
   "escalier": "/lib/images/vocabulaire/maison/escalier.webp",
   "etage": "/lib/images/vocabulaire/maison/etage.webp",
   "etagere": "/lib/images/vocabulaire/maison/etagere.webp",
   "fauteuil": "/lib/images/vocabulaire/maison/fauteuil.webp",
   "fenêtre": "/lib/images/vocabulaire/maison/fenêtre.webp",
   "foyer": "/lib/images/vocabulaire/maison/foyer.webp",
+  "garage": "/lib/images/vocabulaire/maison/garage.webp",
   "grange": "/lib/images/vocabulaire/maison/grange.webp",
+  "grenier": "/lib/images/vocabulaire/maison/grenier.webp",
   "igloo": "/lib/images/vocabulaire/maison/igloo.webp",
   "interrupteur": "/lib/images/vocabulaire/maison/interrupteur.webp",
+  "jardin": "/lib/images/vocabulaire/maison/jardin.webp",
   "lampe": "/lib/images/vocabulaire/maison/lampe.webp",
   "lit": "/lib/images/vocabulaire/maison/lit.webp",
   "maison": "/lib/images/vocabulaire/maison/maison.webp",
   "miroir": "/lib/images/vocabulaire/maison/miroir.webp",
   "mur": "/lib/images/vocabulaire/maison/mur.webp",
+  "oreiller": "/lib/images/vocabulaire/maison/oreiller.webp",
   "penderie": "/lib/images/vocabulaire/maison/penderie.webp",
   "porte-manteau": "/lib/images/vocabulaire/maison/porte-manteau.webp",
   "porte": "/lib/images/vocabulaire/maison/porte.webp",
   "prise": "/lib/images/vocabulaire/maison/prise.webp",
   "radiateur": "/lib/images/vocabulaire/maison/radiateur.webp",
   "rideau": "/lib/images/vocabulaire/maison/rideau.webp",
+  "salle-de-bain": "/lib/images/vocabulaire/maison/salle-de-bain.webp",
+  "salon": "/lib/images/vocabulaire/maison/salon.webp",
+  "serrure": "/lib/images/vocabulaire/maison/serrure.webp",
+  "sonnette": "/lib/images/vocabulaire/maison/sonnette.webp",
   "table-de-nuit": "/lib/images/vocabulaire/maison/table-de-nuit.webp",
   "table": "/lib/images/vocabulaire/maison/table.webp",
   "tabouret": "/lib/images/vocabulaire/maison/tabouret.webp",
   "tapis": "/lib/images/vocabulaire/maison/tapis.webp",
   "thermostat": "/lib/images/vocabulaire/maison/thermostat.webp",
+  "toilettes": "/lib/images/vocabulaire/maison/toilettes.webp",
   "toit": "/lib/images/vocabulaire/maison/toit.webp",
+  "volet": "/lib/images/vocabulaire/maison/volet.webp",
   "wigwam": "/lib/images/vocabulaire/maison/wigwam.webp",
   "acrylique": "/lib/images/vocabulaire/materiaux/acrylique.webp",
   "bois": "/lib/images/vocabulaire/materiaux/bois.webp",
@@ -6971,14 +7111,18 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chaussons": "/lib/images/vocabulaire/vetements/chaussons.webp",
   "chaussures": "/lib/images/vocabulaire/vetements/chaussures.webp",
   "chemise": "/lib/images/vocabulaire/vetements/chemise.webp",
+  "costume": "/lib/images/vocabulaire/vetements/costume.webp",
   "cravate": "/lib/images/vocabulaire/vetements/cravate.webp",
   "culotte": "/lib/images/vocabulaire/vetements/culotte.webp",
   "debardeur": "/lib/images/vocabulaire/vetements/debardeur.webp",
+  "doudoune": "/lib/images/vocabulaire/vetements/doudoune.webp",
   "echarpe": "/lib/images/vocabulaire/vetements/echarpe.webp",
   "fez": "/lib/images/vocabulaire/vetements/fez.webp",
   "foulard": "/lib/images/vocabulaire/vetements/foulard.webp",
   "gants": "/lib/images/vocabulaire/vetements/gants.webp",
   "gilet": "/lib/images/vocabulaire/vetements/gilet.webp",
+  "imperméable": "/lib/images/vocabulaire/vetements/imperméable.webp",
+  "jean": "/lib/images/vocabulaire/vetements/jean.webp",
   "jupe": "/lib/images/vocabulaire/vetements/jupe.webp",
   "legging": "/lib/images/vocabulaire/vetements/legging.webp",
   "maillot": "/lib/images/vocabulaire/vetements/maillot.webp",
@@ -6991,6 +7135,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "short": "/lib/images/vocabulaire/vetements/short.webp",
   "soulier": "/lib/images/vocabulaire/vetements/soulier.webp",
   "soutien-gorge": "/lib/images/vocabulaire/vetements/soutien-gorge.webp",
+  "sweat": "/lib/images/vocabulaire/vetements/sweat.webp",
   "t-shirt": "/lib/images/vocabulaire/vetements/t-shirt.webp",
   "talon": "/lib/images/vocabulaire/vetements/talon.webp",
   "uniforme": "/lib/images/vocabulaire/vetements/uniforme.webp",
@@ -7014,15 +7159,21 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "comptoire": "/lib/images/vocabulaire/ville/comptoire.webp",
   "eglise": "/lib/images/vocabulaire/ville/eglise.webp",
   "feu-rouge": "/lib/images/vocabulaire/ville/feu-rouge.webp",
+  "fontaine": "/lib/images/vocabulaire/ville/fontaine.webp",
   "gare": "/lib/images/vocabulaire/ville/gare.webp",
   "gratte-ciel": "/lib/images/vocabulaire/ville/gratte-ciel.webp",
   "guichet": "/lib/images/vocabulaire/ville/guichet.webp",
   "gymnase": "/lib/images/vocabulaire/ville/gymnase.webp",
   "hopital": "/lib/images/vocabulaire/ville/hopital.webp",
+  "hôtel": "/lib/images/vocabulaire/ville/hôtel.webp",
+  "immeuble": "/lib/images/vocabulaire/ville/immeuble.webp",
+  "lampadaire": "/lib/images/vocabulaire/ville/lampadaire.webp",
+  "laverie": "/lib/images/vocabulaire/ville/laverie.webp",
   "librairie": "/lib/images/vocabulaire/ville/librairie.webp",
   "magasin": "/lib/images/vocabulaire/ville/magasin.webp",
   "mairie": "/lib/images/vocabulaire/ville/mairie.webp",
   "marché": "/lib/images/vocabulaire/ville/marché.webp",
+  "mosquée": "/lib/images/vocabulaire/ville/mosquée.webp",
   "musee": "/lib/images/vocabulaire/ville/musee.webp",
   "panneau": "/lib/images/vocabulaire/ville/panneau.webp",
   "papeterie": "/lib/images/vocabulaire/ville/papeterie.webp",
@@ -7033,6 +7184,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "phare": "/lib/images/vocabulaire/ville/phare.webp",
   "pharmacie": "/lib/images/vocabulaire/ville/pharmacie.webp",
   "piscine": "/lib/images/vocabulaire/ville/piscine.webp",
+  "piste-cyclable": "/lib/images/vocabulaire/ville/piste-cyclable.webp",
   "pizzéria": "/lib/images/vocabulaire/ville/pizzéria.webp",
   "place": "/lib/images/vocabulaire/ville/place.webp",
   "poissonnerie": "/lib/images/vocabulaire/ville/poissonnerie.webp",
@@ -7045,10 +7197,12 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "salle-de-sport": "/lib/images/vocabulaire/ville/salle-de-sport.webp",
   "salon-de-coiffure": "/lib/images/vocabulaire/ville/salon-de-coiffure.webp",
   "stade": "/lib/images/vocabulaire/ville/stade.webp",
+  "station-service": "/lib/images/vocabulaire/ville/station-service.webp",
   "station": "/lib/images/vocabulaire/ville/station.webp",
   "supermarche": "/lib/images/vocabulaire/ville/supermarche.webp",
   "theatre": "/lib/images/vocabulaire/ville/theatre.webp",
   "tribunal": "/lib/images/vocabulaire/ville/tribunal.webp",
+  "trottoir": "/lib/images/vocabulaire/ville/trottoir.webp",
   "université": "/lib/images/vocabulaire/ville/université.webp",
   "usine": "/lib/images/vocabulaire/ville/usine.webp",
   "ville": "/lib/images/vocabulaire/ville/ville.webp",
