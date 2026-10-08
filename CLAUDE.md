@@ -71,7 +71,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Phrases Gattegno (modèles uniques, français réel) | `phrase-gattegno` |
 | Phrases calligraphie (10/mot, authentiques, une ligne) | `calligraphie-phrases` |
 | Compréhension écrite A1/A2/B1 (CECRL / FALC) | `comprehension-ecrite` |
-| Cadre FALC (théorie, rédaction accessible) | `falc` |
+| Cadre FALC (fiches théorie FR + traductions d’aide) | `falc` |
 | CO TCF depuis soutien-scolaire (banques `co.json`) | `comprehension-orale` |
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
 | Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) | `medias-image-audio` |
