@@ -44,6 +44,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/joyau.webp"
       },
       {
+        "label": "lunettes-de-soleil",
+        "src": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp"
+      },
+      {
         "label": "lunettes",
         "src": "/lib/images/vocabulaire/accessoires/lunettes.webp"
       },
@@ -60,12 +64,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/parapluie.webp"
       },
       {
+        "label": "porte-monnaie",
+        "src": "/lib/images/vocabulaire/accessoires/porte-monnaie.webp"
+      },
+      {
         "label": "sac-a-dos",
         "src": "/lib/images/vocabulaire/accessoires/sac-a-dos.webp"
       },
       {
         "label": "sac-a-main",
         "src": "/lib/images/vocabulaire/accessoires/sac-a-main.webp"
+      },
+      {
+        "label": "sac-de-course",
+        "src": "/lib/images/vocabulaire/accessoires/sac-de-course.webp"
       },
       {
         "label": "topaze",
@@ -126,12 +138,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/conserve.webp"
       },
       {
+        "label": "couscous",
+        "src": "/lib/images/vocabulaire/aliments/couscous.webp"
+      },
+      {
         "label": "creme",
         "src": "/lib/images/vocabulaire/aliments/creme.webp"
       },
       {
         "label": "croissant",
         "src": "/lib/images/vocabulaire/aliments/croissant.webp"
+      },
+      {
+        "label": "céréales",
+        "src": "/lib/images/vocabulaire/aliments/céréales.webp"
       },
       {
         "label": "farine",
@@ -162,6 +182,18 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/ingredient.webp"
       },
       {
+        "label": "jambon",
+        "src": "/lib/images/vocabulaire/aliments/jambon.webp"
+      },
+      {
+        "label": "kebab",
+        "src": "/lib/images/vocabulaire/aliments/kebab.webp"
+      },
+      {
+        "label": "ketchup",
+        "src": "/lib/images/vocabulaire/aliments/ketchup.webp"
+      },
+      {
         "label": "mayonnaise",
         "src": "/lib/images/vocabulaire/aliments/mayonnaise.webp"
       },
@@ -174,8 +206,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/miel.webp"
       },
       {
+        "label": "moutarde",
+        "src": "/lib/images/vocabulaire/aliments/moutarde.webp"
+      },
+      {
+        "label": "nouilles",
+        "src": "/lib/images/vocabulaire/aliments/nouilles.webp"
+      },
+      {
         "label": "oeuf",
         "src": "/lib/images/vocabulaire/aliments/oeuf.webp"
+      },
+      {
+        "label": "omelette",
+        "src": "/lib/images/vocabulaire/aliments/omelette.webp"
       },
       {
         "label": "pain-au-chocolat",
@@ -202,6 +246,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/pâtes.webp"
       },
       {
+        "label": "quiche",
+        "src": "/lib/images/vocabulaire/aliments/quiche.webp"
+      },
+      {
         "label": "riz",
         "src": "/lib/images/vocabulaire/aliments/riz.webp"
       },
@@ -210,8 +258,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/saignant.webp"
       },
       {
+        "label": "salade-composée",
+        "src": "/lib/images/vocabulaire/aliments/salade-composée.webp"
+      },
+      {
         "label": "sandwich",
         "src": "/lib/images/vocabulaire/aliments/sandwich.webp"
+      },
+      {
+        "label": "saucisse",
+        "src": "/lib/images/vocabulaire/aliments/saucisse.webp"
+      },
+      {
+        "label": "saumon",
+        "src": "/lib/images/vocabulaire/aliments/saumon.webp"
       },
       {
         "label": "soupe",
@@ -222,12 +282,28 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/sucre.webp"
       },
       {
+        "label": "sushi",
+        "src": "/lib/images/vocabulaire/aliments/sushi.webp"
+      },
+      {
+        "label": "tartine",
+        "src": "/lib/images/vocabulaire/aliments/tartine.webp"
+      },
+      {
+        "label": "thon",
+        "src": "/lib/images/vocabulaire/aliments/thon.webp"
+      },
+      {
         "label": "viande",
         "src": "/lib/images/vocabulaire/aliments/viande.webp"
       },
       {
         "label": "viennoiserie",
         "src": "/lib/images/vocabulaire/aliments/viennoiserie.webp"
+      },
+      {
+        "label": "vinaigre",
+        "src": "/lib/images/vocabulaire/aliments/vinaigre.webp"
       },
       {
         "label": "wrap",
@@ -780,6 +856,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Boissons",
     "words": [
       {
+        "label": "bière",
+        "src": "/lib/images/vocabulaire/boissons/bière.webp"
+      },
+      {
         "label": "boisson",
         "src": "/lib/images/vocabulaire/boissons/boisson.webp"
       },
@@ -798,6 +878,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "citronnade",
         "src": "/lib/images/vocabulaire/boissons/citronnade.webp"
+      },
+      {
+        "label": "eau-gazeuse",
+        "src": "/lib/images/vocabulaire/boissons/eau-gazeuse.webp"
       },
       {
         "label": "eau",
@@ -842,6 +926,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "tisane",
         "src": "/lib/images/vocabulaire/boissons/tisane.webp"
+      },
+      {
+        "label": "vin",
+        "src": "/lib/images/vocabulaire/boissons/vin.webp"
       },
       {
         "label": "whisky",
@@ -5350,12 +5438,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/bonnet.webp"
       },
       {
+        "label": "bottes-de-pluie",
+        "src": "/lib/images/vocabulaire/vetements/bottes-de-pluie.webp"
+      },
+      {
         "label": "bottes",
         "src": "/lib/images/vocabulaire/vetements/bottes.webp"
       },
       {
         "label": "bottines",
         "src": "/lib/images/vocabulaire/vetements/bottines.webp"
+      },
+      {
+        "label": "bouton",
+        "src": "/lib/images/vocabulaire/vetements/bouton.webp"
       },
       {
         "label": "béret",
@@ -5396,6 +5492,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "chemise",
         "src": "/lib/images/vocabulaire/vetements/chemise.webp"
+      },
+      {
+        "label": "chemisier",
+        "src": "/lib/images/vocabulaire/vetements/chemisier.webp"
+      },
+      {
+        "label": "collant",
+        "src": "/lib/images/vocabulaire/vetements/collant.webp"
       },
       {
         "label": "costume",
@@ -5454,6 +5558,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/legging.webp"
       },
       {
+        "label": "maillot-de-bain",
+        "src": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp"
+      },
+      {
         "label": "maillot",
         "src": "/lib/images/vocabulaire/vetements/maillot.webp"
       },
@@ -5478,6 +5586,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/robe.webp"
       },
       {
+        "label": "salopette",
+        "src": "/lib/images/vocabulaire/vetements/salopette.webp"
+      },
+      {
         "label": "sandales",
         "src": "/lib/images/vocabulaire/vetements/sandales.webp"
       },
@@ -5494,6 +5606,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/soutien-gorge.webp"
       },
       {
+        "label": "survêtement",
+        "src": "/lib/images/vocabulaire/vetements/survêtement.webp"
+      },
+      {
         "label": "sweat",
         "src": "/lib/images/vocabulaire/vetements/sweat.webp"
       },
@@ -5502,8 +5618,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/t-shirt.webp"
       },
       {
+        "label": "tablier",
+        "src": "/lib/images/vocabulaire/vetements/tablier.webp"
+      },
+      {
         "label": "talon",
         "src": "/lib/images/vocabulaire/vetements/talon.webp"
+      },
+      {
+        "label": "tongs",
+        "src": "/lib/images/vocabulaire/vetements/tongs.webp"
       },
       {
         "label": "uniforme",
@@ -5858,12 +5982,15 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "collier": "/lib/images/vocabulaire/accessoires/collier.webp",
   "couronne": "/lib/images/vocabulaire/accessoires/couronne.webp",
   "joyau": "/lib/images/vocabulaire/accessoires/joyau.webp",
+  "lunettes-de-soleil": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp",
   "lunettes": "/lib/images/vocabulaire/accessoires/lunettes.webp",
   "montre": "/lib/images/vocabulaire/accessoires/montre.webp",
   "noeud-papillon": "/lib/images/vocabulaire/accessoires/noeud-papillon.webp",
   "parapluie": "/lib/images/vocabulaire/accessoires/parapluie.webp",
+  "porte-monnaie": "/lib/images/vocabulaire/accessoires/porte-monnaie.webp",
   "sac-a-dos": "/lib/images/vocabulaire/accessoires/sac-a-dos.webp",
   "sac-a-main": "/lib/images/vocabulaire/accessoires/sac-a-main.webp",
+  "sac-de-course": "/lib/images/vocabulaire/accessoires/sac-de-course.webp",
   "topaze": "/lib/images/vocabulaire/accessoires/topaze.webp",
   "zircon": "/lib/images/vocabulaire/accessoires/zircon.webp",
   "a-point": "/lib/images/vocabulaire/aliments/a-point.webp",
@@ -5877,8 +6004,10 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chorizo": "/lib/images/vocabulaire/aliments/chorizo.webp",
   "confiture": "/lib/images/vocabulaire/aliments/confiture.webp",
   "conserve": "/lib/images/vocabulaire/aliments/conserve.webp",
+  "couscous": "/lib/images/vocabulaire/aliments/couscous.webp",
   "creme": "/lib/images/vocabulaire/aliments/creme.webp",
   "croissant": "/lib/images/vocabulaire/aliments/croissant.webp",
+  "céréales": "/lib/images/vocabulaire/aliments/céréales.webp",
   "farine": "/lib/images/vocabulaire/aliments/farine.webp",
   "frites": "/lib/images/vocabulaire/aliments/frites.webp",
   "fromage": "/lib/images/vocabulaire/aliments/fromage.webp",
@@ -5886,23 +6015,37 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "hamburger": "/lib/images/vocabulaire/aliments/hamburger.webp",
   "huile": "/lib/images/vocabulaire/aliments/huile.webp",
   "ingredient": "/lib/images/vocabulaire/aliments/ingredient.webp",
+  "jambon": "/lib/images/vocabulaire/aliments/jambon.webp",
+  "kebab": "/lib/images/vocabulaire/aliments/kebab.webp",
+  "ketchup": "/lib/images/vocabulaire/aliments/ketchup.webp",
   "mayonnaise": "/lib/images/vocabulaire/aliments/mayonnaise.webp",
   "menu": "/lib/images/vocabulaire/aliments/menu.webp",
   "miel": "/lib/images/vocabulaire/aliments/miel.webp",
+  "moutarde": "/lib/images/vocabulaire/aliments/moutarde.webp",
+  "nouilles": "/lib/images/vocabulaire/aliments/nouilles.webp",
   "oeuf": "/lib/images/vocabulaire/aliments/oeuf.webp",
+  "omelette": "/lib/images/vocabulaire/aliments/omelette.webp",
   "pain-au-chocolat": "/lib/images/vocabulaire/aliments/pain-au-chocolat.webp",
   "pain": "/lib/images/vocabulaire/aliments/pain.webp",
   "petit-dejeuner": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp",
   "pizza": "/lib/images/vocabulaire/aliments/pizza.webp",
   "poulet": "/lib/images/vocabulaire/aliments/poulet.webp",
   "pâtes": "/lib/images/vocabulaire/aliments/pâtes.webp",
+  "quiche": "/lib/images/vocabulaire/aliments/quiche.webp",
   "riz": "/lib/images/vocabulaire/aliments/riz.webp",
   "saignant": "/lib/images/vocabulaire/aliments/saignant.webp",
+  "salade-composée": "/lib/images/vocabulaire/aliments/salade-composée.webp",
   "sandwich": "/lib/images/vocabulaire/aliments/sandwich.webp",
+  "saucisse": "/lib/images/vocabulaire/aliments/saucisse.webp",
+  "saumon": "/lib/images/vocabulaire/aliments/saumon.webp",
   "soupe": "/lib/images/vocabulaire/aliments/soupe.webp",
   "sucre": "/lib/images/vocabulaire/aliments/sucre.webp",
+  "sushi": "/lib/images/vocabulaire/aliments/sushi.webp",
+  "tartine": "/lib/images/vocabulaire/aliments/tartine.webp",
+  "thon": "/lib/images/vocabulaire/aliments/thon.webp",
   "viande": "/lib/images/vocabulaire/aliments/viande.webp",
   "viennoiserie": "/lib/images/vocabulaire/aliments/viennoiserie.webp",
+  "vinaigre": "/lib/images/vocabulaire/aliments/vinaigre.webp",
   "wrap": "/lib/images/vocabulaire/aliments/wrap.webp",
   "yaourt": "/lib/images/vocabulaire/aliments/yaourt.webp",
   "œuf": "/lib/images/vocabulaire/aliments/œuf.webp",
@@ -6056,11 +6199,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "zombie": "/lib/images/vocabulaire/autre/zombie.webp",
   "zorro": "/lib/images/vocabulaire/autre/zorro.webp",
   "zouave": "/lib/images/vocabulaire/autre/zouave.webp",
+  "bière": "/lib/images/vocabulaire/boissons/bière.webp",
   "boisson": "/lib/images/vocabulaire/boissons/boisson.webp",
   "bouteille-deau": "/lib/images/vocabulaire/boissons/bouteille-deau.webp",
   "café": "/lib/images/vocabulaire/boissons/café.webp",
   "chocolat-chaud": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp",
   "citronnade": "/lib/images/vocabulaire/boissons/citronnade.webp",
+  "eau-gazeuse": "/lib/images/vocabulaire/boissons/eau-gazeuse.webp",
   "eau": "/lib/images/vocabulaire/boissons/eau.webp",
   "infusion": "/lib/images/vocabulaire/boissons/infusion.webp",
   "jus": "/lib/images/vocabulaire/boissons/jus.webp",
@@ -6072,6 +6217,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "soda": "/lib/images/vocabulaire/boissons/soda.webp",
   "thé": "/lib/images/vocabulaire/boissons/thé.webp",
   "tisane": "/lib/images/vocabulaire/boissons/tisane.webp",
+  "vin": "/lib/images/vocabulaire/boissons/vin.webp",
   "whisky": "/lib/images/vocabulaire/boissons/whisky.webp",
   "astéroïde": "/lib/images/vocabulaire/ciel-espace/astéroïde.webp",
   "comète": "/lib/images/vocabulaire/ciel-espace/comète.webp",
@@ -7099,8 +7245,10 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "beret": "/lib/images/vocabulaire/vetements/beret.webp",
   "blouson": "/lib/images/vocabulaire/vetements/blouson.webp",
   "bonnet": "/lib/images/vocabulaire/vetements/bonnet.webp",
+  "bottes-de-pluie": "/lib/images/vocabulaire/vetements/bottes-de-pluie.webp",
   "bottes": "/lib/images/vocabulaire/vetements/bottes.webp",
   "bottines": "/lib/images/vocabulaire/vetements/bottines.webp",
+  "bouton": "/lib/images/vocabulaire/vetements/bouton.webp",
   "béret": "/lib/images/vocabulaire/vetements/béret.webp",
   "calecon": "/lib/images/vocabulaire/vetements/calecon.webp",
   "caleçon": "/lib/images/vocabulaire/vetements/caleçon.webp",
@@ -7111,6 +7259,8 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chaussons": "/lib/images/vocabulaire/vetements/chaussons.webp",
   "chaussures": "/lib/images/vocabulaire/vetements/chaussures.webp",
   "chemise": "/lib/images/vocabulaire/vetements/chemise.webp",
+  "chemisier": "/lib/images/vocabulaire/vetements/chemisier.webp",
+  "collant": "/lib/images/vocabulaire/vetements/collant.webp",
   "costume": "/lib/images/vocabulaire/vetements/costume.webp",
   "cravate": "/lib/images/vocabulaire/vetements/cravate.webp",
   "culotte": "/lib/images/vocabulaire/vetements/culotte.webp",
@@ -7125,19 +7275,24 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "jean": "/lib/images/vocabulaire/vetements/jean.webp",
   "jupe": "/lib/images/vocabulaire/vetements/jupe.webp",
   "legging": "/lib/images/vocabulaire/vetements/legging.webp",
+  "maillot-de-bain": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp",
   "maillot": "/lib/images/vocabulaire/vetements/maillot.webp",
   "manteau": "/lib/images/vocabulaire/vetements/manteau.webp",
   "pantalon": "/lib/images/vocabulaire/vetements/pantalon.webp",
   "pull": "/lib/images/vocabulaire/vetements/pull.webp",
   "pyjama": "/lib/images/vocabulaire/vetements/pyjama.webp",
   "robe": "/lib/images/vocabulaire/vetements/robe.webp",
+  "salopette": "/lib/images/vocabulaire/vetements/salopette.webp",
   "sandales": "/lib/images/vocabulaire/vetements/sandales.webp",
   "short": "/lib/images/vocabulaire/vetements/short.webp",
   "soulier": "/lib/images/vocabulaire/vetements/soulier.webp",
   "soutien-gorge": "/lib/images/vocabulaire/vetements/soutien-gorge.webp",
+  "survêtement": "/lib/images/vocabulaire/vetements/survêtement.webp",
   "sweat": "/lib/images/vocabulaire/vetements/sweat.webp",
   "t-shirt": "/lib/images/vocabulaire/vetements/t-shirt.webp",
+  "tablier": "/lib/images/vocabulaire/vetements/tablier.webp",
   "talon": "/lib/images/vocabulaire/vetements/talon.webp",
+  "tongs": "/lib/images/vocabulaire/vetements/tongs.webp",
   "uniforme": "/lib/images/vocabulaire/vetements/uniforme.webp",
   "veste": "/lib/images/vocabulaire/vetements/veste.webp",
   "zipper": "/lib/images/vocabulaire/vetements/zipper.webp",
