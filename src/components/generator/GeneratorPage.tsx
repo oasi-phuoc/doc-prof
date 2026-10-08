@@ -3186,7 +3186,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                     <path
                       fill="currentColor"
-                      d="M12 6V3L8 7l4 4V8c2.8 0 5 2.2 5 5a5 5 0 0 1-9.9 1H5.1A7 7 0 0 0 19 13c0-3.9-3.1-7-7-7zm-5 4v3l4-4-4-4v3c-2.8 0-5 2.2-5 5a5 5 0 0 0 9.9 1h1.1A7 7 0 0 1 7 10z"
+                      d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.1A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
                     />
                   </svg>
                 </button>
