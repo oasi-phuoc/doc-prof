@@ -14,11 +14,12 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Zone | Rôle |
 |---|---|
 | `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`) |
-| `src/math/generate.ts` | `buildPage(config, seed)` → délègue maths / `@/francais` / `@/tcm` / `@/tcf` / `@/jeux` |
+| `src/math/generate.ts` | `buildPage(config, seed)` → délègue maths / `@/francais` / `@/tcm` / `@/tcf` / `@/jeux` / `@/grammaire` |
 | `src/math/` | Générateurs maths purs (algèbre, géométrie, repérage, `rng`, `types`) — **sans TCM** |
 | `src/tcm/` | Test de connaissance de maths (dossier dédié, comme `tcf/`) — `README.md` |
 | `src/tcf/` | Tests TCF (banques JSON, éditeur, rendu) |
 | `src/francais/` | FLE : Voc/Gram/Com, Phrase, Lecture, Soutien |
+| `src/grammaire/` | Théorie FALC (SCAI) — thèmes + fiches ; exercices à venir — `README.md` |
 | `src/jeux/` | Fiches-jeux — planning `docs/plan-domaine-jeux.md` |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |

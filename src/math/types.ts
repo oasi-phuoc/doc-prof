@@ -7,6 +7,7 @@ export type Domain =
   | 'gattegno'
   | 'jeux'
   | 'calligraphie'
+  | 'grammaire'
   | 'tcm'
   | 'tcf'
 

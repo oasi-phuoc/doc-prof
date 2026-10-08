@@ -3,6 +3,7 @@ import { SOUTIEN_KINDS } from '@/francais/soutien/kinds'
 import { defaultCalliText } from '@/calligraphie/defaults'
 import { DEFAULT_CALLI_FONT, DEFAULT_CALLI_SIZE } from '@/calligraphie/fonts'
 import { CALLI_LIBRE_TOPIC, calligraphieTopics as calliTopicList } from '@/calligraphie/topics'
+import { GRAMMAIRE_EXERCISE_TYPES, GRAMMAIRE_TOPICS } from '@/grammaire/catalog'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
@@ -60,6 +61,8 @@ export const topics: Topic[] = [
   { id: 'phrase-adverbe', label: 'Adverbe', domain: 'gattegno' },
   { id: 'phrase-negation-adverbe', label: 'Négation avec adverbe', domain: 'gattegno' },
   { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'gattegno' },
+  // —— Grammaire FALC (théorie SCAI) ——
+  ...GRAMMAIRE_TOPICS,
   // —— Grilles de cartes (thèmes FR + Libre) ——
   ...jeuxTopicsFromFr,
   // —— Calligraphie (thèmes FR + Libre) ——
@@ -72,6 +75,7 @@ export const geometryTopics = topics.filter((topic) => topic.domain === 'géomé
 export const lectureTopics = topics.filter((topic) => topic.domain === 'lecture')
 export const soutienFrTopics = topics.filter((topic) => topic.domain === 'soutien-fr')
 export const gattegnoTopics = topics.filter((topic) => topic.domain === 'gattegno')
+export const grammaireTopics = topics.filter((topic) => topic.domain === 'grammaire')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
 /** TCF : un thème par compétence (CE, CO, PE, PO). */
@@ -754,6 +758,7 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 1 },
   ),
   ...TCF_EXERCISE_TYPES,
+  ...GRAMMAIRE_EXERCISE_TYPES,
 ]
 
 const VOWEL_TOPICS = [
@@ -973,22 +978,24 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
           ? 'aires'
           : domain === 'gattegno'
             ? 'phrase-simple'
-            : domain === 'jeux'
-              ? JEUX_LIBRE_TOPIC
-              : domain === 'calligraphie'
-                ? CALLI_LIBRE_TOPIC
-                : domain === 'soutien-fr'
-                  ? 'soutien-a'
-                  : domain === 'tcf'
-                    ? 'tcf-ce'
-                    : 'voyelle-a'
+            : domain === 'grammaire'
+              ? 'gram-se-presenter'
+              : domain === 'jeux'
+                ? JEUX_LIBRE_TOPIC
+                : domain === 'calligraphie'
+                  ? CALLI_LIBRE_TOPIC
+                  : domain === 'soutien-fr'
+                    ? 'soutien-a'
+                    : domain === 'tcf'
+                      ? 'tcf-ce'
+                      : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const type = firstTypeFor(domain)
   const count =
-    domain === 'jeux' || domain === 'calligraphie' || domain === 'tcf'
+    domain === 'jeux' || domain === 'calligraphie' || domain === 'tcf' || domain === 'grammaire'
       ? 1
       : domain === 'lecture' || domain === 'soutien-fr' || domain === 'gattegno'
         ? 6

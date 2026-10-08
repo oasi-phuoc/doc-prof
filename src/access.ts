@@ -13,6 +13,7 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
   { id: 'algèbre', label: 'Algèbre' },
   { id: 'géométrie', label: 'Géométrie' },
   { id: 'gattegno', label: 'Gattegno' },
+  { id: 'grammaire', label: 'Grammaire' },
   { id: 'jeux', label: 'Grilles de cartes' },
   { id: 'calligraphie', label: 'Calligraphie' },
   { id: 'soutien-fr', label: 'Soutien FR' },

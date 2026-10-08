@@ -1,0 +1,50 @@
+import type { GrammaireTheoryDoc } from '../types'
+
+/** Théorie FALC — thème gram-argumenter. Français seul (pas de traductions). */
+export const argumenterDocs: GrammaireTheoryDoc[] = [
+  {
+    id: 'k1',
+    typeId: 'gram-k1-theorie',
+    index: 1,
+    title: 'Approuver et désapprouver',
+    topic: 'gram-argumenter',
+    public: 'A2',
+    objectif: 'Donner mon avis pour ou contre.',
+    blocks: [
+    { kind: 'heading', text: 'Approuver et désapprouver' },
+    { kind: 'paragraph', text: 'Je dis mon avis clairement.' },
+    { kind: 'heading', text: 'Je regarde', sub: true },
+    { kind: 'rule', text: 'Exemple', examples: [{ correct: 'Je suis d’accord.' }, { correct: 'Je suis contre.' }, { correct: 'À mon avis, c’est juste.' }] },
+    { kind: 'heading', text: 'J’explique', sub: true },
+    { kind: 'paragraph', text: 'Avis : je pense que, à mon avis, selon moi…' },
+    { kind: 'paragraph', text: 'Pour : je suis d’accord, je suis pour.' },
+    { kind: 'paragraph', text: 'Contre : je suis contre, je désapprouve.' },
+    { kind: 'note', text: 'Je retiens : une opinion = une formule claire.' },
+    { kind: 'list', title: 'Formules', items: ['Je pense que…', 'À mon avis…', 'Je suis d’accord.', 'Je suis contre.'] },
+    { kind: 'note', text: 'Attention ! Après je pense que, conjugue le verbe suivant.' },
+    ],
+  },
+  {
+    id: 'k2',
+    typeId: 'gram-k2-theorie',
+    index: 2,
+    title: 'Les connecteurs',
+    topic: 'gram-argumenter',
+    public: 'A2',
+    objectif: 'Organiser mon texte avec des connecteurs.',
+    blocks: [
+    { kind: 'heading', text: 'Les connecteurs' },
+    { kind: 'paragraph', text: 'J’organise mes idées avec des mots de liaison.' },
+    { kind: 'heading', text: 'Je regarde', sub: true },
+    { kind: 'rule', text: 'Exemple', examples: [{ correct: 'Par exemple, le bus est en retard.' }, { correct: 'Par contre, le train est à l’heure.' }] },
+    { kind: 'heading', text: 'J’explique', sub: true },
+    { kind: 'paragraph', text: 'Exemple : par exemple, ainsi.' },
+    { kind: 'paragraph', text: 'Opposition : par contre, à l’opposé.' },
+    { kind: 'paragraph', text: 'Condition : si, à condition de.' },
+    { kind: 'paragraph', text: 'Reformulation : c’est-à-dire, autrement dit.' },
+    { kind: 'note', text: 'Je retiens : un connecteur = un rôle.' },
+    { kind: 'table', headers: ['Rôle', 'Connecteurs'], rows: [['exemple', 'par exemple, ainsi'], ['opposition', 'par contre, à l’inverse'], ['condition', 'si, à condition de'], ['reformulation', 'c’est-à-dire']] },
+    { kind: 'note', text: 'Attention ! Un connecteur par idée, en FALC.' },
+    ],
+  },
+]

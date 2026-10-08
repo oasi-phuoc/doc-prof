@@ -45,6 +45,9 @@ import { makeWordProblem } from './problems'
 import { TCM_MAX_SCORE } from '@/tcm/test'
 import { tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfConsignesType } from '@/tcf/catalog'
+import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
+import { isGrammaireTheoryType } from '@/grammaire/types'
+import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
 import type {
   AlgebraGiven,
@@ -1328,6 +1331,14 @@ function buildSingleBlock(
   if (tcf) {
     return { title: fallbackTitle, instruction: tcf.instruction, items: tcf.items }
   }
+  const grammaire = tryGenerateGrammaireBlock(config)
+  if (grammaire) {
+    return {
+      title: fallbackTitle,
+      instruction: grammaire.instruction,
+      items: grammaire.items,
+    }
+  }
   if (config.exerciseType === 'reperage-droites') {
     const droites = generateDroites(config, rng)
     return { title: fallbackTitle, instruction: droites.instruction, items: droites.items }
@@ -1477,7 +1488,7 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
     const single = pageAsConfig(config, block)
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local)
-    const isTheory = /gram-theorie-\d+$/.test(block.exerciseType)
+    const isTheory = isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTcmConsignes = isInfoPageType(block.exerciseType)
     const libre =
@@ -1520,7 +1531,8 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
   const first = built[0]
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
-  const isTheoryPage = /gram-theorie-\d+$/.test(config.exerciseType)
+  const isTheoryPage =
+    isGrammarTheoryType(config.exerciseType) || isGrammaireTheoryType(config.exerciseType)
   const isTcmConsignesPage = isInfoPageType(config.exerciseType)
   return {
     ...config,
@@ -1551,7 +1563,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
 
     const isCom =
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')
-    const isTheory = /gram-theorie-\d+$/.test(page.exerciseType)
+    const isTheory =
+      isGrammarTheoryType(page.exerciseType) || isGrammaireTheoryType(page.exerciseType)
     const isJeuxDuplex =
       page.exerciseType === 'jeux-vocabulaire' ||
       page.exerciseType === 'jeux-devinettes' ||

@@ -54,6 +54,7 @@ import {
   lectureTopics,
   soutienFrTopics,
   gattegnoTopics,
+  grammaireTopics,
   tcfTopics,
   tcmTopics,
   typesForTopic,
@@ -252,17 +253,19 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
           ? geometryTopics
           : activePage.domain === 'gattegno'
             ? gattegnoTopics
-            : activePage.domain === 'jeux'
-              ? jeuxTopics
-              : activePage.domain === 'calligraphie'
-                ? calligraphieTopics
-                : activePage.domain === 'soutien-fr'
-                  ? soutienFrTopics
-                  : activePage.domain === 'tcm'
-                    ? tcmTopics
-                    : activePage.domain === TCF_DOMAIN
-                      ? tcfTopics
-                      : lectureTopics
+            : activePage.domain === 'grammaire'
+              ? grammaireTopics
+              : activePage.domain === 'jeux'
+                ? jeuxTopics
+                : activePage.domain === 'calligraphie'
+                  ? calligraphieTopics
+                  : activePage.domain === 'soutien-fr'
+                    ? soutienFrTopics
+                    : activePage.domain === 'tcm'
+                      ? tcmTopics
+                      : activePage.domain === TCF_DOMAIN
+                        ? tcfTopics
+                        : lectureTopics
   const typeChoices = typesForTopic(
     activeBlock.topic,
     activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
@@ -1113,6 +1116,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       next === 'lecture' ||
       next === 'soutien-fr' ||
       next === 'gattegno' ||
+      next === 'grammaire' ||
       next === 'jeux' ||
       next === 'calligraphie'
     ) {

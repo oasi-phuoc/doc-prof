@@ -18,5 +18,8 @@ export type GrammarTheoryDoc = {
 }
 
 export function isGrammarTheoryType(typeId: string): boolean {
-  return /^(fr-[a-z]+)-gram-theorie-\d+$/.test(typeId)
+  return (
+    /^(fr-[a-z]+)-gram-theorie-\d+$/.test(typeId) ||
+    /^gram-[a-z0-9]+-theorie$/.test(typeId)
+  )
 }
