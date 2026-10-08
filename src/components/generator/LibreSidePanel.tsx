@@ -251,6 +251,7 @@ export function LibreSidePanel({
             onChange={(patch) => updatePage(patch)}
           />
         ) : null}
+        {/* Un seul éditeur générique — évite le doublon (ex. domaines nombres). */}
         {!isPhraseDomain &&
         !isCalliDomain &&
         !isJeuxDomain &&
@@ -258,32 +259,6 @@ export function LibreSidePanel({
         soutienKind !== 'mots' &&
         soutienKind !== 'completer' &&
         !(isDroites || isConstruire) ? (
-          <GenericLibreEditor
-            instruction={
-              activeBlock.libreInstruction ??
-              activeSheet?.blocks[safeBlockIndex]?.instruction ??
-              ''
-            }
-            items={
-              activeBlock.libreItems ??
-              activeSheet?.blocks[safeBlockIndex]?.items ??
-              []
-            }
-            onChangeInstruction={(libreInstruction) =>
-              updatePage({ libreInstruction })
-            }
-            onChangeItems={(libreItems) => updatePage({ libreItems })}
-          />
-        ) : null}
-        {!isPhraseDomain &&
-        !isCalliDomain &&
-        !isJeuxDomain &&
-        !isTcf &&
-        (soutienKind === 'mots' ||
-          soutienKind === 'completer' ||
-          isDroites ||
-          isConstruire ||
-          isNumberLibreDomain) ? (
           <GenericLibreEditor
             instruction={
               activeBlock.libreInstruction ??

@@ -755,6 +755,40 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const questionsInputOverflow = questionsOverflow || bankOverflow
   const isQuadType = isQuadExercise(activeBlock.exerciseType)
   const isNumberLibreDomain = activePage.domain === 'algèbre' || activePage.domain === 'géométrie'
+
+  // Mode libre générique : reprend le tirage dans libreItems après Générer / Valider.
+  useEffect(() => {
+    if (!libreMode) return
+    if (isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) return
+    if (isCalliDomain || isJeuxDomain || isTcf) return
+    if (activeBlock.libreItems && activeBlock.libreItems.length > 0) return
+    const block = activeSheet?.blocks[safeBlockIndex]
+    if (!block?.items?.length) return
+    setPages((current) =>
+      current.map((page, index) =>
+        index === pageIndex
+          ? setPageBlock(page, safeBlockIndex, {
+              libreItems: block.items,
+              libreInstruction: block.instruction,
+            })
+          : page,
+      ),
+    )
+  }, [
+    libreMode,
+    isPhraseDomain,
+    isCalliDomain,
+    isJeuxDomain,
+    isTcf,
+    activeBlock.exerciseType,
+    activeBlock.libreItems,
+    activeBlock.contentSeed,
+    seed,
+    activeSheet,
+    safeBlockIndex,
+    pageIndex,
+  ])
+
   const quadPool = activeBlock.exerciseType.startsWith('volumes-')
     ? VOLUME_QUAD_FIGURES
     : activeBlock.exerciseType.startsWith('aires-')
@@ -1148,6 +1182,67 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     updatePage({ topic, ...applyType(type) })
   }
 
+  /** Applique les changements manuels (mode libre / réglages) à la fiche. */
+  function validateManual() {
+    setPages((current) => {
+      const page = current[pageIndex]
+      if (!page) return current
+      const block = pageBlocks(page)[safeBlockIndex]
+      if (!block) return current
+      const nextLocal = (block.contentSeed ?? 0) + 1
+
+      // Contenu libre déjà saisi : on le fige explicitement (nouvelles refs) pour forcer l’aperçu.
+      if (libreMode && Array.isArray(block.libreItems) && block.libreItems.length > 0) {
+        return current.map((p, i) =>
+          i !== pageIndex
+            ? p
+            : setPageBlock(p, safeBlockIndex, {
+                contentSeed: nextLocal,
+                libreItems: block.libreItems!.map((item) => ({ ...item })),
+                libreInstruction: block.libreInstruction,
+              }),
+        )
+      }
+      if (libreMode && Array.isArray(block.phraseItems) && block.phraseItems.length > 0) {
+        return current.map((p, i) =>
+          i !== pageIndex
+            ? p
+            : setPageBlock(p, safeBlockIndex, {
+                contentSeed: nextLocal,
+                phraseItems: block.phraseItems!.map((item) => ({ ...item })),
+                phraseInstruction: block.phraseInstruction,
+              }),
+        )
+      }
+
+      // Sinon : régénère avec les paramètres courants, puis reprend le résultat en overlay libre.
+      const cleared = setPageBlock(page, safeBlockIndex, {
+        contentSeed: nextLocal,
+        libreItems: undefined,
+        libreInstruction: undefined,
+      })
+      if (!libreMode) {
+        return current.map((p, i) => (i !== pageIndex ? p : cleared))
+      }
+      const built = buildWorksheets(
+        current.map((p, i) => (i !== pageIndex ? p : cleared)),
+        seed,
+      )[pageIndex]
+      const builtBlock = built?.blocks[safeBlockIndex]
+      if (!builtBlock) {
+        return current.map((p, i) => (i !== pageIndex ? p : cleared))
+      }
+      return current.map((p, i) =>
+        i !== pageIndex
+          ? p
+          : setPageBlock(cleared, safeBlockIndex, {
+              libreItems: builtBlock.items.map((item) => ({ ...item })),
+              libreInstruction: builtBlock.instruction,
+            }),
+      )
+    })
+  }
+
   function generate() {
     const nextSeed = randomSeed()
     setSeed(nextSeed)
@@ -1171,19 +1266,31 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       updatePage({ phraseItems: undefined, phraseInstruction: undefined, contentSeed: nextSeed })
       return
     }
-    if (!isJeuxType(activeBlock.exerciseType)) return
-    const reshuffled = reshuffleGameContent(activeBlock.exerciseType, nextSeed, {
-      gameSource: activeBlock.gameSource,
-      gameTopic: activeBlock.gameTopic,
-      gameSelectedIds: activeBlock.gameSelectedIds,
-      gameEntries: activeBlock.gameEntries,
-    })
-    updatePage({
-      gameEntries: reshuffled.gameEntries,
-      gameText: reshuffled.gameText,
-      gameSelectedIds: reshuffled.gameSelectedIds,
-      contentSeed: nextSeed,
-    })
+    if (isJeuxType(activeBlock.exerciseType)) {
+      const reshuffled = reshuffleGameContent(activeBlock.exerciseType, nextSeed, {
+        gameSource: activeBlock.gameSource,
+        gameTopic: activeBlock.gameTopic,
+        gameSelectedIds: activeBlock.gameSelectedIds,
+        gameEntries: activeBlock.gameEntries,
+      })
+      updatePage({
+        gameEntries: reshuffled.gameEntries,
+        gameText: reshuffled.gameText,
+        gameSelectedIds: reshuffled.gameSelectedIds,
+        contentSeed: nextSeed,
+      })
+      return
+    }
+    // Maths / autres : nouveau tirage (lève l’overlay libre pour que la graine s’applique).
+    if (libreMode) {
+      updatePage({
+        contentSeed: nextSeed,
+        libreItems: undefined,
+        libreInstruction: undefined,
+      })
+      return
+    }
+    updatePage({ contentSeed: nextSeed })
   }
 
   /** Régénère uniquement l’exercice ciblé (les autres blocs / pages restent inchangés). */
@@ -1361,6 +1468,11 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 return next
               })
             }}
+            previewMode={mode}
+            onTogglePreviewMode={() =>
+              setMode((m) => (m === 'student' ? 'answers' : 'student'))
+            }
+            showPreviewToggle={!(isCalliDomain || isJeuxDomain)}
             onLogout={onLogout}
           />
         }
@@ -3050,26 +3162,55 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 <h2>Votre activité est prête.</h2>
               </div>
               <div className="result-head-actions no-print">
-                {isCalliDomain || isJeuxDomain ? null : (
-                  <div className="mode-toggle preview-mode-toggle" role="tablist" aria-label="Mode d’aperçu">
-                    <button type="button" className={mode === 'student' ? 'active' : ''} onClick={() => setMode('student')}>
-                      Fiche élève
-                    </button>
-                    <button type="button" className={mode === 'answers' ? 'active' : ''} onClick={() => setMode('answers')}>
-                      Corrigé
-                    </button>
-                  </div>
-                )}
-                <button className="print-chip is-generate" type="button" onClick={generate}>
-                  Générer
+                <button
+                  className="print-chip is-icon is-validate"
+                  type="button"
+                  onClick={validateManual}
+                  aria-label="Valider les changements"
+                  title="Valider les changements"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                    <path
+                      fill="currentColor"
+                      d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+                    />
+                  </svg>
                 </button>
                 <button
-                  className="print-chip is-generate"
+                  className="print-chip is-icon is-generate"
+                  type="button"
+                  onClick={generate}
+                  aria-label="Générer"
+                  title="Générer"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                    <path
+                      fill="currentColor"
+                      d="M12 6V3L8 7l4 4V8c2.8 0 5 2.2 5 5a5 5 0 0 1-9.9 1H5.1A7 7 0 0 0 19 13c0-3.9-3.1-7-7-7zm-5 4v3l4-4-4-4v3c-2.8 0-5 2.2-5 5a5 5 0 0 0 9.9 1h1.1A7 7 0 0 1 7 10z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="print-chip is-icon is-generate"
                   type="button"
                   onClick={printAll}
-                  aria-label={isCalliDomain || isJeuxDomain ? 'Imprimer la fiche' : 'Imprimer la fiche et le corrigé'}
+                  aria-label={
+                    isCalliDomain || isJeuxDomain
+                      ? 'Imprimer la fiche'
+                      : 'Imprimer la fiche et le corrigé'
+                  }
+                  title={
+                    isCalliDomain || isJeuxDomain
+                      ? 'Imprimer la fiche'
+                      : 'Imprimer la fiche et le corrigé'
+                  }
                 >
-                  Imprimer
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                    <path
+                      fill="currentColor"
+                      d="M18 3H6v4h12V3zm1 6H5a3 3 0 0 0-3 3v5h4v4h12v-4h4v-5a3 3 0 0 0-3-3zm-3 11H8v-5h8v5zm3-7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>

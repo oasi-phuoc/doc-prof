@@ -205,6 +205,9 @@ export function TopbarTools({
   onToggleFooter,
   libreOpen,
   onToggleLibre,
+  previewMode,
+  onTogglePreviewMode,
+  showPreviewToggle = true,
   onLogout,
 }: {
   themeColor: string
@@ -213,11 +216,40 @@ export function TopbarTools({
   onToggleFooter: () => void
   libreOpen: boolean
   onToggleLibre: () => void
+  /** Mode d’aperçu : fiche élève (student) ou corrigé (answers). */
+  previewMode: 'student' | 'answers'
+  onTogglePreviewMode: () => void
+  /** Masqué pour calligraphie / jeux (pas de corrigé). */
+  showPreviewToggle?: boolean
   onLogout: () => void
 }) {
+  const isCorrige = previewMode === 'answers'
   return (
     <div className="topbar-tools">
       <ColorMenu themeColor={themeColor} onChange={onThemeColor} />
+      {showPreviewToggle ? (
+        <IconBtn
+          label={isCorrige ? 'Corrigé (cliquer pour fiche élève)' : 'Fiche élève (cliquer pour corrigé)'}
+          active={isCorrige}
+          onClick={onTogglePreviewMode}
+        >
+          {isCorrige ? (
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+              <path
+                fill="currentColor"
+                d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+              />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+              <path
+                fill="currentColor"
+                d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5zM8 12h8v2H8v-2zm0 4h8v2H8v-2zm0-8h4v2H8V8z"
+              />
+            </svg>
+          )}
+        </IconBtn>
+      ) : null}
       <IconBtn label="En-tête et pied de page" active={footerOpen} onClick={onToggleFooter}>
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path

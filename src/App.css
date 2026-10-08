@@ -991,6 +991,9 @@ html,body,#root{
   overflow:auto;aspect-ratio:auto;min-height:4.5cm;height:auto;
   background-image:none;padding:4px 2px
 }
+.draft-pad.draft-pad-short.has-correction{
+  min-height:0;height:auto;aspect-ratio:auto
+}
 .equation-correction{
   width:100%;border-collapse:collapse;
   font-family:inherit;
@@ -1002,7 +1005,7 @@ html,body,#root{
 }
 .equation-correction .eq-corr-body{
   vertical-align:top;text-align:left;padding:1px 2px 1px 8px;
-  border-left:2px solid var(--purple);color:var(--ink)
+  border-left:2px solid var(--purple);color:var(--purple)
 }
 .equation-correction .eq-corr-eq{
   display:inline-flex;align-items:baseline;white-space:nowrap
@@ -1629,12 +1632,6 @@ html,body,#root{
 }
 .coord-page-palette>b{font-size:13px;font-weight:800;letter-spacing:-.02em}
 .coord-page-palette .coord-palette{grid-template-columns:1fr 1fr}
-.print-chip.is-generate{background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)}
-.print-chip.is-generate:hover{filter:brightness(0.92);color:var(--theme-on,#fff);background:var(--purple)}
-.print-chip.is-generate:active{
-  background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff);
-  filter:brightness(0.85)
-}
 .exercise-tabs button{position:relative}
 .sheet-instruction-main>.sheet-givens{
   display:block;margin:10px 0 15px;padding:0;
@@ -1648,27 +1645,37 @@ html,body,#root{
   flex:0 0 auto;margin-left:auto;align-self:flex-start;
   font-size:13pt;font-weight:700;color:var(--ink);white-space:nowrap;line-height:1.7
 }
-.result-head-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-/* Générer / Imprimer : même boîte (largeur + hauteur). */
-.result-head-actions .print-chip.is-generate{
+.result-head-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+/* Valider / Générer / Imprimer : pastilles icône (même taille). */
+.result-head-actions .print-chip.is-icon{
   box-sizing:border-box;
-  width:7.75rem;min-width:7.75rem;max-width:7.75rem;
-  min-height:40px;height:40px;padding:0 16px;
-  justify-content:center;
+  width:40px;min-width:40px;max-width:40px;
+  min-height:40px;height:40px;padding:0;
+  justify-content:center;border-radius:999px
 }
 .print-chip{
   display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:8px 16px;
   border:1px solid color-mix(in srgb, var(--purple) 40%, #fff);border-radius:999px;background:#fff;color:var(--purple);
   font-size:13px;font-weight:700;cursor:pointer;box-shadow:none
 }
+.print-chip.is-validate{
+  border-color:color-mix(in srgb, var(--purple) 55%, #fff);
+  background:color-mix(in srgb, var(--purple) 8%, #fff)
+}
 .print-chip:hover{
   border-color:var(--purple);
   background:color-mix(in srgb, var(--purple) 10%, #fff);
   color:var(--purple)
 }
-.print-chip:active{
+.print-chip:active,
+.print-chip.is-generate:active,
+.print-chip.is-validate:active{
   background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)
 }
+.print-chip.is-generate{
+  background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)
+}
+.print-chip.is-generate:hover{filter:brightness(0.92);color:var(--theme-on,#fff);background:var(--purple)}
 .print-chip:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 .print-chip svg{flex:0 0 auto}
 .theme-color-block{display:flex;flex-direction:column;gap:8px;margin-top:12px}
