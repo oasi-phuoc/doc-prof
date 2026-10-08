@@ -3180,8 +3180,13 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   className="print-chip is-icon is-generate"
                   type="button"
                   onClick={generate}
-                  aria-label="Générer"
-                  title="Générer"
+                  disabled={libreMode}
+                  aria-label={libreMode ? 'Générer indisponible en mode libre' : 'Générer'}
+                  title={
+                    libreMode
+                      ? 'Indisponible en mode libre — utilisez Valider'
+                      : 'Générer'
+                  }
                 >
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                     <path

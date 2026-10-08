@@ -1675,7 +1675,18 @@ html,body,#root{
 .print-chip.is-generate{
   background:var(--purple);border-color:var(--purple);color:var(--theme-on,#fff)
 }
-.print-chip.is-generate:hover{filter:brightness(0.92);color:var(--theme-on,#fff);background:var(--purple)}
+.print-chip.is-generate:hover:not(:disabled){filter:brightness(0.92);color:var(--theme-on,#fff);background:var(--purple)}
+.print-chip:disabled,
+.print-chip.is-generate:disabled{
+  opacity:.38;cursor:not-allowed;filter:none;
+  background:color-mix(in srgb,var(--ink) 12%,#fff);
+  border-color:var(--line);color:var(--muted)
+}
+.print-chip:disabled:hover,
+.print-chip.is-generate:disabled:hover{
+  filter:none;background:color-mix(in srgb,var(--ink) 12%,#fff);
+  border-color:var(--line);color:var(--muted)
+}
 .print-chip:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 .print-chip svg{flex:0 0 auto}
 .theme-color-block{display:flex;flex-direction:column;gap:8px;margin-top:12px}
