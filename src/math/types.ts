@@ -11,6 +11,7 @@ export type Domain =
   | 'vocabulaire'
   | 'société'
   | 'santé'
+  | 'acm'
   | 'tcm'
   | 'tcm-csc'
   | 'tcm-cfr'

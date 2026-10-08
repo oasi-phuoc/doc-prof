@@ -47,8 +47,11 @@ import { tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfConsignesType } from '@/tcf/catalog'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
+import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
+import { tryGenerateTcmCfrBlock } from '@/tcm-cfr/generate'
+import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
 import { tryGenerateVocabulaireBlock } from '@/vocabulaire/generate'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
@@ -1364,6 +1367,30 @@ function buildSingleBlock(
       title: fallbackTitle,
       instruction: sante.instruction,
       items: sante.items,
+    }
+  }
+  const acm = tryGenerateAcmBlock(config)
+  if (acm) {
+    return {
+      title: fallbackTitle,
+      instruction: acm.instruction,
+      items: acm.items,
+    }
+  }
+  const tcmCsc = tryGenerateTcmCscBlock(config)
+  if (tcmCsc) {
+    return {
+      title: fallbackTitle,
+      instruction: tcmCsc.instruction,
+      items: tcmCsc.items,
+    }
+  }
+  const tcmCfr = tryGenerateTcmCfrBlock(config)
+  if (tcmCfr) {
+    return {
+      title: fallbackTitle,
+      instruction: tcmCfr.instruction,
+      items: tcmCfr.items,
     }
   }
   if (config.exerciseType === 'reperage-droites') {

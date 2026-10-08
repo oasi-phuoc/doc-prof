@@ -14,7 +14,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Zone | Rôle |
 |---|---|
 | `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`) |
-| `src/math/generate.ts` | `buildPage(config, seed)` → délègue maths / `@/francais` / `@/tcm` / `@/tcf` / `@/jeux` / `@/grammaire` |
+| `src/math/generate.ts` | `buildPage(config, seed)` → délègue maths / `@/francais` / `@/tcm` / `@/tcf` / `@/jeux` / `@/grammaire` / squelettes (`acm`, `vocabulaire`…) |
 | `src/math/` | Générateurs maths purs (algèbre, géométrie, repérage, `rng`, `types`) — **sans TCM** |
 | `src/tcm/` | Test de connaissance de maths (dossier dédié, comme `tcf/`) — `README.md` |
 | `src/tcf/` | Tests TCF (banques JSON, éditeur, rendu) |
@@ -23,6 +23,9 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/vocabulaire/` | Domaine Vocabulaire (squelette) — `README.md` |
 | `src/societe/` | Domaine Société (squelette) — `README.md` |
 | `src/sante/` | Domaine Sciences et santé (squelette) — `README.md` |
+| `src/acm/` | Activités créatives et manuelles (squelette) — `README.md` |
+| `src/tcm-csc/` | Stub TCM CSC (vide, admin) — `README.md` |
+| `src/tcm-cfr/` | Stub TCM CFR (vide, admin) — `README.md` |
 | `src/jeux/` | Fiches-jeux — planning `docs/plan-domaine-jeux.md` |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |

@@ -7,9 +7,12 @@ import { GRAMMAIRE_EXERCISE_TYPES, GRAMMAIRE_TOPICS } from '@/grammaire/catalog'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
+import { ACM_EXERCISE_TYPES, ACM_TOPICS } from '@/acm/catalog'
 import { SANTE_EXERCISE_TYPES, SANTE_TOPICS } from '@/sante/catalog'
 import { SOCIETE_EXERCISE_TYPES, SOCIETE_TOPICS } from '@/societe/catalog'
 import { TCF_EXERCISE_TYPES, TCF_TOPICS } from '@/tcf/catalog'
+import { TCM_CFR_EXERCISE_TYPES, TCM_CFR_TOPICS } from '@/tcm-cfr/catalog'
+import { TCM_CSC_EXERCISE_TYPES, TCM_CSC_TOPICS } from '@/tcm-csc/catalog'
 import { VOCABULAIRE_EXERCISE_TYPES, VOCABULAIRE_TOPICS } from '@/vocabulaire/catalog'
 
 export const topics: Topic[] = [
@@ -66,10 +69,14 @@ export const topics: Topic[] = [
   { id: 'phrase-conjonctions', label: 'Conjonctions', domain: 'gattegno' },
   // —— Grammaire FALC (théorie SCAI) ——
   ...GRAMMAIRE_TOPICS,
-  // —— Vocabulaire / Société / Sciences et santé (squelettes) ——
+  // —— Vocabulaire / Société / Santé / ACM (squelettes) ——
   ...VOCABULAIRE_TOPICS,
   ...SOCIETE_TOPICS,
   ...SANTE_TOPICS,
+  ...ACM_TOPICS,
+  // —— TCM CSC / TCM CFR (stubs vides, pas une copie de TCM) ——
+  ...TCM_CSC_TOPICS,
+  ...TCM_CFR_TOPICS,
   // —— Grilles de cartes (thèmes FR + Libre) ——
   ...jeuxTopicsFromFr,
   // —— Calligraphie (thèmes FR + Libre) ——
@@ -86,11 +93,14 @@ export const grammaireTopics = topics.filter((topic) => topic.domain === 'gramma
 export const vocabulaireTopics = topics.filter((topic) => topic.domain === 'vocabulaire')
 export const societeTopics = topics.filter((topic) => topic.domain === 'société')
 export const santeTopics = topics.filter((topic) => topic.domain === 'santé')
+export const acmTopics = topics.filter((topic) => topic.domain === 'acm')
+export const tcmCscTopics = topics.filter((topic) => topic.domain === 'tcm-csc')
+export const tcmCfrTopics = topics.filter((topic) => topic.domain === 'tcm-cfr')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
 /** TCF : un thème par compétence (CE, CO, PE, PO). */
 export const tcfTopics = topics.filter((topic) => topic.domain === 'tcf')
-/** Thèmes maths utilisables dans le TCM / ACM (intro + algèbre + géométrie). */
+/** Thèmes maths utilisables dans le TCM (intro + algèbre + géométrie). */
 export const tcmTopics = [
   ...topics.filter((topic) => topic.domain === 'tcm'),
   ...algebraTopics,
@@ -772,6 +782,9 @@ export const exerciseTypes: ExerciseType[] = [
   ...VOCABULAIRE_EXERCISE_TYPES,
   ...SOCIETE_EXERCISE_TYPES,
   ...SANTE_EXERCISE_TYPES,
+  ...ACM_EXERCISE_TYPES,
+  ...TCM_CSC_EXERCISE_TYPES,
+  ...TCM_CFR_EXERCISE_TYPES,
 ]
 
 const VOWEL_TOPICS = [
@@ -985,7 +998,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
     if (any[0]) return any[0]
   }
   const fallbackTopic =
-    domain === 'algèbre' || domain === 'tcm' || domain === 'tcm-csc' || domain === 'tcm-cfr' || domain === 'français'
+    domain === 'algèbre' || domain === 'tcm' || domain === 'français'
         ? 'addition'
         : domain === 'géométrie'
           ? 'aires'
@@ -999,15 +1012,21 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                   ? 'societe-a-venir'
                   : domain === 'santé'
                     ? 'sante-a-venir'
-                    : domain === 'jeux'
-                      ? JEUX_LIBRE_TOPIC
-                      : domain === 'calligraphie'
-                        ? CALLI_LIBRE_TOPIC
-                        : domain === 'soutien-fr'
-                          ? 'soutien-a'
-                          : domain === 'tcf'
-                            ? 'tcf-ce'
-                            : 'voyelle-a'
+                    : domain === 'acm'
+                      ? 'acm-a-venir'
+                      : domain === 'tcm-csc'
+                        ? 'tcm-csc-a-venir'
+                        : domain === 'tcm-cfr'
+                          ? 'tcm-cfr-a-venir'
+                          : domain === 'jeux'
+                            ? JEUX_LIBRE_TOPIC
+                            : domain === 'calligraphie'
+                              ? CALLI_LIBRE_TOPIC
+                              : domain === 'soutien-fr'
+                                ? 'soutien-a'
+                                : domain === 'tcf'
+                                  ? 'tcf-ce'
+                                  : 'voyelle-a'
   return typesForTopic(fallbackTopic)[0]!
 }
 
@@ -1020,7 +1039,10 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
     domain === 'grammaire' ||
     domain === 'vocabulaire' ||
     domain === 'société' ||
-    domain === 'santé'
+    domain === 'santé' ||
+    domain === 'acm' ||
+    domain === 'tcm-csc' ||
+    domain === 'tcm-cfr'
       ? 1
       : domain === 'lecture' || domain === 'soutien-fr' || domain === 'gattegno'
         ? 6

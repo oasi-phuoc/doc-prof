@@ -10,9 +10,10 @@ export type AccessAccount = 'admin' | 'full' | 'partial'
 
 /**
  * Domaines « réguliers » — ordre alphabétique par libellé.
- * (Les tests TCF / ACM / TCM sont pinés en bas de liste.)
+ * (Les tests TCF / TCM CSC / TCM CFR / TCM sont pinés en bas de liste.)
  */
 export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
+  { id: 'acm', label: 'Activités créatives et manuelles' },
   { id: 'algèbre', label: 'Algèbre' },
   { id: 'calligraphie', label: 'Calligraphie' },
   { id: 'gattegno', label: 'Gattegno' },
@@ -28,14 +29,11 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
 /**
  * Domaines réservés au compte admin (tests).
  * Ordre d’affichage exact : tcf → tcm-csc → tcm-cfr → tcm.
- *
- * ACM = libellé demandé pour les variantes institutionnelles TCM
- * (env `tcm-csc` / `tcm-cfr` — pas d’id `acm` distinct).
  */
 export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'tcf', label: 'TCF' },
-  { id: 'tcm-csc', label: 'ACM CSC' },
-  { id: 'tcm-cfr', label: 'ACM CFR' },
+  { id: 'tcm-csc', label: 'TCM CSC' },
+  { id: 'tcm-cfr', label: 'TCM CFR' },
   { id: 'tcm', label: 'TCM' },
 ]
 
@@ -59,11 +57,6 @@ const DOMAIN_ALIASES: Readonly<Record<string, Domain>> = {
   sante: 'santé',
   'tcm_csc': 'tcm-csc',
   'tcm_cfr': 'tcm-cfr',
-  acm: 'tcm-csc',
-  'acm-csc': 'tcm-csc',
-  'acm-cfr': 'tcm-cfr',
-  'acm_csc': 'tcm-csc',
-  'acm_cfr': 'tcm-cfr',
 }
 
 const ACCESS_COOKIE = 'clairfle-fiche-access'
@@ -112,7 +105,7 @@ function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] 
   return domains.length > 0 ? domains : [...fallback]
 }
 
-/** Domaines FULL / PARTIAL : jamais TCM / ACM / TCF (réservés admin). */
+/** Domaines FULL / PARTIAL : jamais TCF / TCM CSC / TCM CFR / TCM (réservés admin). */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   const list =
     account === 'full'

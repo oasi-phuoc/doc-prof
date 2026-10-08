@@ -14,8 +14,9 @@ Miroir de `src/tcf/` : domaine à part, **pas** dans `src/math/`.
 | `reduire.ts` | Réduire des expressions |
 | `index.ts` | Réexports |
 
-## Variantes ACM (env)
+## Domaines voisins (stubs séparés)
 
-Les ids d’accès `tcm-csc` et `tcm-cfr` (libellés UI **ACM CSC** / **ACM CFR**) réutilisent la même recette TCM via `isTcmDomain`, et préremplissent le niveau de classe CSC / CFR. Pas d’id `acm` distinct dans le code — Phuoc Van a exposé `tcm-csc` / `tcm-cfr` dans les env.
+- `src/tcm-csc/` / `src/tcm-cfr/` — stubs admin **vides** (pas une copie de cette recette)
+- `src/acm/` — **Activités créatives et manuelles** (domaine distinct, pas un test maths)
 
 Imports : `@/tcm/test`, `@/tcm/items`, `@/tcm/evaluer`, ou `@/tcm`.

@@ -9,9 +9,6 @@ import { exerciseTypeById, isDraftPadExercise } from '@/math/catalog'
 
 export const TCM_DOMAIN: Domain = 'tcm'
 
-/** Variantes institutionnelles ACM (env `tcm-csc` / `tcm-cfr`). */
-export const TCM_VARIANT_DOMAINS: readonly Domain[] = ['tcm-csc', 'tcm-cfr']
-
 export const TCM_DOCUMENT_TITLE = 'Test de connaissance de mathématiques'
 
 type TcmBlockSpec = {
@@ -276,21 +273,21 @@ function blockFromSpec(
   }
 }
 
-function pageFromBlocks(blocks: ExerciseBlock[], domain: Domain = TCM_DOMAIN): PageConfig {
+function pageFromBlocks(blocks: ExerciseBlock[]): PageConfig {
   const [first, ...rest] = blocks
   if (!first) throw new Error('TCM : page sans bloc')
   return {
-    domain,
+    domain: TCM_DOMAIN,
     ...first,
     extraBlocks: rest.length ? rest : undefined,
   }
 }
 
-function buildConsignesPage(domain: Domain = TCM_DOMAIN): PageConfig {
+function buildConsignesPage(): PageConfig {
   const type = exerciseTypeById['tcm-consignes']
   if (!type) throw new Error('TCM : type tcm-consignes manquant')
   return {
-    domain,
+    domain: TCM_DOMAIN,
     topic: type.topic,
     exerciseType: type.id,
     difficulty: 'moyen',
@@ -300,12 +297,8 @@ function buildConsignesPage(domain: Domain = TCM_DOMAIN): PageConfig {
   }
 }
 
-/**
- * Feuille consignes + exercices (pages regroupées via TCM_PACKED_PAGES).
- * `domain` : `tcm` (défaut) ou variante ACM `tcm-csc` / `tcm-cfr`.
- */
-export function buildTcmTestPages(domain: Domain = TCM_DOMAIN): PageConfig[] {
-  const resolved = isTcmDomain(domain) ? domain : TCM_DOMAIN
+/** Feuille consignes + exercices (pages regroupées via TCM_PACKED_PAGES). */
+export function buildTcmTestPages(): PageConfig[] {
   const byId = new Map(TCM_STEPS.map((step) => [step.id, step]))
   const packedPages = TCM_PACKED_PAGES.map((ids) => {
     const blocks = ids.flatMap((id) => {
@@ -313,29 +306,19 @@ export function buildTcmTestPages(domain: Domain = TCM_DOMAIN): PageConfig[] {
       if (!step) throw new Error(`TCM : étape ${id} introuvable`)
       return step.blocks.map((b) => blockFromSpec(b, 'moyen', id))
     })
-    return pageFromBlocks(blocks, resolved)
+    return pageFromBlocks(blocks)
   })
 
   const packedIds = new Set(TCM_PACKED_PAGES.flat())
   const rest = TCM_STEPS.filter((step) => !packedIds.has(step.id)).map((step) =>
-    pageFromBlocks(
-      step.blocks.map((b) => blockFromSpec(b, 'moyen', step.id)),
-      resolved,
-    ),
+    pageFromBlocks(step.blocks.map((b) => blockFromSpec(b, 'moyen', step.id))),
   )
 
-  return [buildConsignesPage(resolved), ...packedPages, ...rest]
+  return [buildConsignesPage(), ...packedPages, ...rest]
 }
 
 export function isTcmDomain(domain: Domain | undefined): boolean {
-  return domain === TCM_DOMAIN || domain === 'tcm-csc' || domain === 'tcm-cfr'
-}
-
-/** Niveau de classe institutionnel associé à une variante ACM / TCM. */
-export function tcmClassLevelForDomain(domain: Domain | undefined): 'CSC' | 'CFR' | undefined {
-  if (domain === 'tcm-csc') return 'CSC'
-  if (domain === 'tcm-cfr') return 'CFR'
-  return undefined
+  return domain === TCM_DOMAIN
 }
 
 export function isTcmConsignesType(exerciseType: string | undefined): boolean {

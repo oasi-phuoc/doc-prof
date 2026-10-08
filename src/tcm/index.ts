@@ -2,7 +2,6 @@
 
 export {
   TCM_DOMAIN,
-  TCM_VARIANT_DOMAINS,
   TCM_DOCUMENT_TITLE,
   TCM_MAX_SCORE,
   TCM_STEPS,
@@ -11,7 +10,6 @@ export {
   formatPointsLabel,
   isTcmConsignesType,
   isTcmDomain,
-  tcmClassLevelForDomain,
 } from './test'
 
 export { generateTcmConversionsBatch } from './conversions'
