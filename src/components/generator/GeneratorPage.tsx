@@ -1451,20 +1451,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   if (soutienKind === 'mots') patch.soutienMotsLibre = true
                   if (soutienKind === 'completer') patch.soutienCompleterLibre = true
                   updatePage(patch)
-                } else {
-                  updatePage({
-                    libreItems: undefined,
-                    libreInstruction: undefined,
-                    coordLibre: false,
-                    numberLibre: false,
-                    verbGroup:
-                      activeBlock.verbGroup === 'libre' ? 'er' : activeBlock.verbGroup,
-                    phraseItems: undefined,
-                    phraseInstruction: undefined,
-                    soutienMotsLibre: false,
-                    soutienCompleterLibre: false,
-                  })
                 }
+                // Fermeture : on garde le contenu libre (pas de régénération de la fiche).
                 return next
               })
             }}
@@ -3339,19 +3327,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               tcfNiveau={tcfNiveau}
               updatePage={updatePage}
               onClose={() => {
+                // Ferme le panneau sans effacer le contenu libre ni régénérer la fiche.
                 setLibreMode(false)
-                updatePage({
-                  libreItems: undefined,
-                  libreInstruction: undefined,
-                  coordLibre: false,
-                  numberLibre: false,
-                  verbGroup:
-                    activeBlock.verbGroup === 'libre' ? 'er' : activeBlock.verbGroup,
-                  phraseItems: undefined,
-                  phraseInstruction: undefined,
-                  soutienMotsLibre: false,
-                  soutienCompleterLibre: false,
-                })
               }}
             />
           ) : null}
