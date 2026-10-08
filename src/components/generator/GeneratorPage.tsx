@@ -4,17 +4,14 @@ import {
   useRef,
   useState,
   type CSSProperties,
-  type ReactNode,
 } from 'react'
 import {
   ACCESS_DOMAIN_OPTIONS,
   accountCanAccessDomain,
-  clearAccessAccount,
   domainsForAccount,
   readAccessAccount,
 } from '@/access'
-import { CoordGrid, CoordShapeButton } from '@/components/math/CoordGrid'
-import { GenericLibreEditor } from '@/components/generator/GenericLibreEditor'
+import { CoordGrid } from '@/components/math/CoordGrid'
 import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FormesPalette, ReperageAxesFields } from '@/components/generator/FormesPalette'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
@@ -23,7 +20,10 @@ import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { TabRemoveButton } from '@/components/generator/TabRemoveButton'
 import { VocabAddWordRow } from '@/components/generator/VocabAddWordRow'
-import { WorksheetSheet } from '@/components/generator/WorksheetSheet'
+import {
+  WorksheetSheet,
+  defaultCoordQuestionReply,
+} from '@/components/generator/WorksheetSheet'
 import {
   THEME_STORAGE_KEY,
   contrastOnTheme,
@@ -37,16 +37,8 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
-import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
 import {
-  CLASS_LEVELS,
-  CLASS_NUMBERS,
-  COURSES,
   DEFAULT_INSTITUTIONAL,
-  DEFAULT_INSTITUTIONAL_LOGO,
-  DocumentFooter,
-  InstitutionalDocumentHeader,
-  SheetBody,
   type InstitutionalHeader,
 } from '@/components/math/PrintDocumentChrome'
 import {
@@ -107,19 +99,16 @@ import {
   reshuffleCalliContent,
 } from '@/calligraphie/generate'
 import { frTopicFromCalliTopic, isCalliLibreTopic } from '@/calligraphie/topics'
-import { frTopicFromJeuxTopic, isJeuxLibreTopic } from '@/jeux/topics'
 import {
   defaultVocabSelected,
   defaultVocabSubgroup,
   isVocabLearnType,
   isVocabPoolType,
   isVocabProductionType,
-  makeCustomVocabWord,
   vocabLearnWordsFor,
   vocabSubgroupsFor,
   type VocabWordEntry,
 } from '@/francais/vocab-learn'
-import { readGameImageFile, GAME_IMAGE_ACCEPT } from '@/jeux/image'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankByTopic } from '@/francais/soutien/banks'
@@ -137,24 +126,15 @@ import {
   CoordQuestionsLibreEditor,
   resizeCoordQuestionsLibre,
 } from '@/math/CoordQuestionsLibreEditor'
-import { defaultThemeGameContent, isGameBankType, reshuffleGameContent } from '@/jeux/bank'
+import { reshuffleGameContent } from '@/jeux/bank'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import { entriesToText } from '@/jeux/parse'
 import { isJeuxType, templateFor } from '@/jeux/templates'
 import {
-  AXES_DEFAULT_COLS,
-  AXES_DEFAULT_ROWS,
-  CELL_MM_OPTIONS,
   COORD_SHAPES,
-  COORD_SHAPE_LABEL,
-  DEFAULT_CELL_MM,
-  DEFAULT_FORMES_CELL_MM,
-  DEFAULT_UNIT_SQUARES,
   FORMES_CELL_MM_OPTIONS,
-  clampAxesCols,
-  clampAxesRows,
   clampFormesCellMm,
   clampFormesCols,
   clampFormesRows,
@@ -172,8 +152,6 @@ import {
   isReperagePage,
   markOnGrid,
   remapMarksToOrigin,
-  maxAxesColsForCell,
-  maxAxesRowsForCell,
   maxFormesColsForCell,
   maxFormesRowsForCell,
   nextPointLabel,
@@ -207,19 +185,13 @@ import {
 import { randomSeed } from '@/math/rng'
 import type {
   CoordAxis,
-  CoordCellMm,
-  CoordReply,
   CoordShape,
-  CoordUnitSquares,
   Difficulty,
   Domain,
   ExerciseBlock,
-  ExerciseType,
   PageConfig,
   PhraseVerbGroup,
   PreviewMode,
-  WorksheetBlock,
-  WorksheetPage,
 } from '@/math/types'
 
 /** Remettre à `true` pour réafficher Lecture dans le sélecteur Domaine. */
@@ -3196,6 +3168,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               soutienKind={soutienKind}
               soutienType1Words={soutienType1Words}
               soutienType1WordPool={soutienType1WordPool}
+              soutienCompletes={soutienBank?.completes ?? []}
+              soutienBankWords={soutienBank?.words ?? []}
               calliIsPhrases={calliIsPhrases}
               calliFields={calliFields}
               setCalliFieldAt={setCalliFieldAt}

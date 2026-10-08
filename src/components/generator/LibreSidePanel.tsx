@@ -1,6 +1,7 @@
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
 import type { GameTemplate } from '@/jeux/templates'
 import { PhraseLibreEditor, isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
+import type { SoutienComplete } from '@/francais/soutien/banks'
 import {
   defaultSoutienMotsEntries,
   SoutienMotsLibreEditor,
@@ -35,6 +36,8 @@ export type LibreSidePanelProps = {
   soutienKind: string | undefined
   soutienType1Words: readonly string[]
   soutienType1WordPool: readonly string[]
+  soutienCompletes: readonly SoutienComplete[]
+  soutienBankWords: readonly string[]
   calliIsPhrases: boolean
   calliFields: string[]
   setCalliFieldAt: (index: number, value: string) => void
@@ -61,6 +64,8 @@ export function LibreSidePanel({
   soutienKind,
   soutienType1Words,
   soutienType1WordPool,
+  soutienCompletes,
+  soutienBankWords,
   calliIsPhrases,
   calliFields,
   setCalliFieldAt,
@@ -147,9 +152,11 @@ export function LibreSidePanel({
                 {soutienKind === 'completer' ? (
                   <SoutienCompleterLibreEditor
                     entries={
-                      activeBlock.soutienCompleterEntries ??
-                      defaultSoutienCompleterEntries(soutienType1Words)
+                      activeBlock.soutienCompleterEntries?.length
+                        ? activeBlock.soutienCompleterEntries
+                        : defaultSoutienCompleterEntries(soutienCompletes)
                     }
+                    suggestedWords={soutienBankWords}
                     onChange={(soutienCompleterEntries) =>
                       updatePage({ soutienCompleterEntries })
                     }
