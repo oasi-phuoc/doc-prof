@@ -3757,10 +3757,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   }
   .workspace{
     flex:1 1 auto;min-height:0;max-width:none;width:100%;margin:0;
-    display:flex;align-items:stretch;
+    display:flex;align-items:stretch;justify-content:center;
     grid-template-columns:none;
     overflow:hidden
   }
+  /* Mode libre ouvert : pack à gauche, le panneau libre absorbe le reste (~50 %+). */
+  .workspace.has-libre-panel{justify-content:flex-start}
   .settings-panel{
     flex:0 0 300px;width:300px;max-width:300px;
     height:100%;max-height:100%;
@@ -3768,6 +3770,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
     border-radius:18px 0 0 18px;
     -webkit-overflow-scrolling:touch
   }
+  /* Aperçu : largeur fixe (560) — ne grandit plus quand le mode libre est fermé. */
   .result-panel{
     flex:0 0 560px;width:560px;max-width:560px;
     height:100%;max-height:100%;
@@ -3777,14 +3780,22 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   .workspace.has-libre-panel .result-panel,
   .workspace.has-footer-panel .result-panel{border-radius:0}
   .workspace:not(.has-libre-panel):not(.has-footer-panel) .result-panel{
-    border-radius:0 18px 18px 0;flex:1 1 auto;width:auto;max-width:none
+    border-radius:0 18px 18px 0
   }
+  /* Pied / en-tête : largeur fixe comme les paramètres. */
   .side-tool-panel{
     flex:0 0 300px;width:300px;max-width:300px;
     height:100%;max-height:100%;
     display:flex;flex-direction:column;
     border-left:1px solid var(--line);background:#fff;
     overflow:hidden
+  }
+  .side-tool-panel.is-footer{
+    flex:0 0 300px;width:300px;min-width:300px;max-width:300px
+  }
+  /* Mode libre : min 300 px, prend tout le reste à droite. */
+  .workspace.has-libre-panel .side-tool-panel.is-libre{
+    flex:1 1 auto;width:auto;min-width:300px;max-width:none
   }
   .side-tool-panel.is-footer:last-child,
   .side-tool-panel.is-libre:last-child{border-radius:0 18px 18px 0}
