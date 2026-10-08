@@ -900,6 +900,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Corps",
     "words": [
       {
+        "label": "barbe",
+        "src": "/lib/images/vocabulaire/corps/barbe.webp"
+      },
+      {
         "label": "bouche",
         "src": "/lib/images/vocabulaire/corps/bouche.webp"
       },
@@ -916,6 +920,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/cheveux.webp"
       },
       {
+        "label": "cheville",
+        "src": "/lib/images/vocabulaire/corps/cheville.webp"
+      },
+      {
         "label": "cil",
         "src": "/lib/images/vocabulaire/corps/cil.webp"
       },
@@ -926,6 +934,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "cou",
         "src": "/lib/images/vocabulaire/corps/cou.webp"
+      },
+      {
+        "label": "coude",
+        "src": "/lib/images/vocabulaire/corps/coude.webp"
       },
       {
         "label": "dent",
@@ -942,6 +954,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "epaule",
         "src": "/lib/images/vocabulaire/corps/epaule.webp"
+      },
+      {
+        "label": "estomac",
+        "src": "/lib/images/vocabulaire/corps/estomac.webp"
       },
       {
         "label": "front",
@@ -980,6 +996,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/menton.webp"
       },
       {
+        "label": "moustache",
+        "src": "/lib/images/vocabulaire/corps/moustache.webp"
+      },
+      {
         "label": "muscle",
         "src": "/lib/images/vocabulaire/corps/muscle.webp"
       },
@@ -992,16 +1012,40 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/oeil.webp"
       },
       {
+        "label": "ongle",
+        "src": "/lib/images/vocabulaire/corps/ongle.webp"
+      },
+      {
         "label": "oreille",
         "src": "/lib/images/vocabulaire/corps/oreille.webp"
+      },
+      {
+        "label": "orteil",
+        "src": "/lib/images/vocabulaire/corps/orteil.webp"
+      },
+      {
+        "label": "os",
+        "src": "/lib/images/vocabulaire/corps/os.webp"
+      },
+      {
+        "label": "peau",
+        "src": "/lib/images/vocabulaire/corps/peau.webp"
       },
       {
         "label": "pied",
         "src": "/lib/images/vocabulaire/corps/pied.webp"
       },
       {
+        "label": "poignet",
+        "src": "/lib/images/vocabulaire/corps/poignet.webp"
+      },
+      {
         "label": "poing",
         "src": "/lib/images/vocabulaire/corps/poing.webp"
+      },
+      {
+        "label": "poumon",
+        "src": "/lib/images/vocabulaire/corps/poumon.webp"
       },
       {
         "label": "sourcil",
@@ -4116,6 +4160,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/brulure.webp"
       },
       {
+        "label": "béquilles",
+        "src": "/lib/images/vocabulaire/sante/béquilles.webp"
+      },
+      {
         "label": "comprime",
         "src": "/lib/images/vocabulaire/sante/comprime.webp"
       },
@@ -4126,6 +4174,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "douleur",
         "src": "/lib/images/vocabulaire/sante/douleur.webp"
+      },
+      {
+        "label": "fauteuil-roulant",
+        "src": "/lib/images/vocabulaire/sante/fauteuil-roulant.webp"
       },
       {
         "label": "fievre",
@@ -4144,6 +4196,18 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/infection.webp"
       },
       {
+        "label": "mal-de-tête",
+        "src": "/lib/images/vocabulaire/sante/mal-de-tête.webp"
+      },
+      {
+        "label": "mal-de-ventre",
+        "src": "/lib/images/vocabulaire/sante/mal-de-ventre.webp"
+      },
+      {
+        "label": "masque",
+        "src": "/lib/images/vocabulaire/sante/masque.webp"
+      },
+      {
         "label": "medicament",
         "src": "/lib/images/vocabulaire/sante/medicament.webp"
       },
@@ -4160,12 +4224,40 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/pansement.webp"
       },
       {
+        "label": "pilulier",
+        "src": "/lib/images/vocabulaire/sante/pilulier.webp"
+      },
+      {
+        "label": "plâtre",
+        "src": "/lib/images/vocabulaire/sante/plâtre.webp"
+      },
+      {
         "label": "pommade",
         "src": "/lib/images/vocabulaire/sante/pommade.webp"
       },
       {
+        "label": "radiographie",
+        "src": "/lib/images/vocabulaire/sante/radiographie.webp"
+      },
+      {
         "label": "rhume",
         "src": "/lib/images/vocabulaire/sante/rhume.webp"
+      },
+      {
+        "label": "seringue",
+        "src": "/lib/images/vocabulaire/sante/seringue.webp"
+      },
+      {
+        "label": "sirop",
+        "src": "/lib/images/vocabulaire/sante/sirop.webp"
+      },
+      {
+        "label": "stéthoscope",
+        "src": "/lib/images/vocabulaire/sante/stéthoscope.webp"
+      },
+      {
+        "label": "tensiomètre",
+        "src": "/lib/images/vocabulaire/sante/tensiomètre.webp"
       },
       {
         "label": "thermometre",
@@ -4174,6 +4266,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "toux",
         "src": "/lib/images/vocabulaire/sante/toux.webp"
+      },
+      {
+        "label": "trousse-de-secours",
+        "src": "/lib/images/vocabulaire/sante/trousse-de-secours.webp"
       },
       {
         "label": "vaccin",
@@ -4766,6 +4862,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Ville",
     "words": [
       {
+        "label": "arrêt-de-bus",
+        "src": "/lib/images/vocabulaire/ville/arrêt-de-bus.webp"
+      },
+      {
         "label": "avenue",
         "src": "/lib/images/vocabulaire/ville/avenue.webp"
       },
@@ -4784,6 +4884,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "bibliotheque",
         "src": "/lib/images/vocabulaire/ville/bibliotheque.webp"
+      },
+      {
+        "label": "boucherie",
+        "src": "/lib/images/vocabulaire/ville/boucherie.webp"
       },
       {
         "label": "boulangerie",
@@ -4854,6 +4958,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/magasin.webp"
       },
       {
+        "label": "mairie",
+        "src": "/lib/images/vocabulaire/ville/mairie.webp"
+      },
+      {
+        "label": "marché",
+        "src": "/lib/images/vocabulaire/ville/marché.webp"
+      },
+      {
         "label": "musee",
         "src": "/lib/images/vocabulaire/ville/musee.webp"
       },
@@ -4902,6 +5014,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/place.webp"
       },
       {
+        "label": "poissonnerie",
+        "src": "/lib/images/vocabulaire/ville/poissonnerie.webp"
+      },
+      {
         "label": "pont",
         "src": "/lib/images/vocabulaire/ville/pont.webp"
       },
@@ -4930,6 +5046,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/salle-de-sport.webp"
       },
       {
+        "label": "salon-de-coiffure",
+        "src": "/lib/images/vocabulaire/ville/salon-de-coiffure.webp"
+      },
+      {
         "label": "stade",
         "src": "/lib/images/vocabulaire/ville/stade.webp"
       },
@@ -4950,6 +5070,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/tribunal.webp"
       },
       {
+        "label": "université",
+        "src": "/lib/images/vocabulaire/ville/université.webp"
+      },
+      {
         "label": "usine",
         "src": "/lib/images/vocabulaire/ville/usine.webp"
       },
@@ -4964,6 +5088,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "zoo",
         "src": "/lib/images/vocabulaire/ville/zoo.webp"
+      },
+      {
+        "label": "école",
+        "src": "/lib/images/vocabulaire/ville/école.webp"
       }
     ]
   },
@@ -5831,17 +5959,21 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "satellite": "/lib/images/vocabulaire/ciel-espace/satellite.webp",
   "saturne": "/lib/images/vocabulaire/ciel-espace/saturne.webp",
   "téléscope": "/lib/images/vocabulaire/ciel-espace/téléscope.webp",
+  "barbe": "/lib/images/vocabulaire/corps/barbe.webp",
   "bouche": "/lib/images/vocabulaire/corps/bouche.webp",
   "bras": "/lib/images/vocabulaire/corps/bras.webp",
   "cerveau": "/lib/images/vocabulaire/corps/cerveau.webp",
   "cheveux": "/lib/images/vocabulaire/corps/cheveux.webp",
+  "cheville": "/lib/images/vocabulaire/corps/cheville.webp",
   "cil": "/lib/images/vocabulaire/corps/cil.webp",
   "coeur": "/lib/images/vocabulaire/corps/coeur.webp",
   "cou": "/lib/images/vocabulaire/corps/cou.webp",
+  "coude": "/lib/images/vocabulaire/corps/coude.webp",
   "dent": "/lib/images/vocabulaire/corps/dent.webp",
   "doigt": "/lib/images/vocabulaire/corps/doigt.webp",
   "dos": "/lib/images/vocabulaire/corps/dos.webp",
   "epaule": "/lib/images/vocabulaire/corps/epaule.webp",
+  "estomac": "/lib/images/vocabulaire/corps/estomac.webp",
   "front": "/lib/images/vocabulaire/corps/front.webp",
   "genou": "/lib/images/vocabulaire/corps/genou.webp",
   "index": "/lib/images/vocabulaire/corps/index.webp",
@@ -5851,12 +5983,19 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "lèvres": "/lib/images/vocabulaire/corps/lèvres.webp",
   "main": "/lib/images/vocabulaire/corps/main.webp",
   "menton": "/lib/images/vocabulaire/corps/menton.webp",
+  "moustache": "/lib/images/vocabulaire/corps/moustache.webp",
   "muscle": "/lib/images/vocabulaire/corps/muscle.webp",
   "nez": "/lib/images/vocabulaire/corps/nez.webp",
   "oeil": "/lib/images/vocabulaire/corps/oeil.webp",
+  "ongle": "/lib/images/vocabulaire/corps/ongle.webp",
   "oreille": "/lib/images/vocabulaire/corps/oreille.webp",
+  "orteil": "/lib/images/vocabulaire/corps/orteil.webp",
+  "os": "/lib/images/vocabulaire/corps/os.webp",
+  "peau": "/lib/images/vocabulaire/corps/peau.webp",
   "pied": "/lib/images/vocabulaire/corps/pied.webp",
+  "poignet": "/lib/images/vocabulaire/corps/poignet.webp",
   "poing": "/lib/images/vocabulaire/corps/poing.webp",
+  "poumon": "/lib/images/vocabulaire/corps/poumon.webp",
   "sourcil": "/lib/images/vocabulaire/corps/sourcil.webp",
   "tete": "/lib/images/vocabulaire/corps/tete.webp",
   "tête": "/lib/images/vocabulaire/corps/tête.webp",
@@ -6649,21 +6788,33 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "antibiotique": "/lib/images/vocabulaire/sante/antibiotique.webp",
   "blessure": "/lib/images/vocabulaire/sante/blessure.webp",
   "brulure": "/lib/images/vocabulaire/sante/brulure.webp",
+  "béquilles": "/lib/images/vocabulaire/sante/béquilles.webp",
   "comprime": "/lib/images/vocabulaire/sante/comprime.webp",
   "coupure": "/lib/images/vocabulaire/sante/coupure.webp",
   "douleur": "/lib/images/vocabulaire/sante/douleur.webp",
+  "fauteuil-roulant": "/lib/images/vocabulaire/sante/fauteuil-roulant.webp",
   "fievre": "/lib/images/vocabulaire/sante/fievre.webp",
   "fracture": "/lib/images/vocabulaire/sante/fracture.webp",
   "gelule": "/lib/images/vocabulaire/sante/gelule.webp",
   "infection": "/lib/images/vocabulaire/sante/infection.webp",
+  "mal-de-tête": "/lib/images/vocabulaire/sante/mal-de-tête.webp",
+  "mal-de-ventre": "/lib/images/vocabulaire/sante/mal-de-ventre.webp",
+  "masque": "/lib/images/vocabulaire/sante/masque.webp",
   "medicament": "/lib/images/vocabulaire/sante/medicament.webp",
   "nausee": "/lib/images/vocabulaire/sante/nausee.webp",
   "ordonnance": "/lib/images/vocabulaire/sante/ordonnance.webp",
   "pansement": "/lib/images/vocabulaire/sante/pansement.webp",
+  "pilulier": "/lib/images/vocabulaire/sante/pilulier.webp",
+  "plâtre": "/lib/images/vocabulaire/sante/plâtre.webp",
   "pommade": "/lib/images/vocabulaire/sante/pommade.webp",
+  "radiographie": "/lib/images/vocabulaire/sante/radiographie.webp",
   "rhume": "/lib/images/vocabulaire/sante/rhume.webp",
+  "seringue": "/lib/images/vocabulaire/sante/seringue.webp",
+  "stéthoscope": "/lib/images/vocabulaire/sante/stéthoscope.webp",
+  "tensiomètre": "/lib/images/vocabulaire/sante/tensiomètre.webp",
   "thermometre": "/lib/images/vocabulaire/sante/thermometre.webp",
   "toux": "/lib/images/vocabulaire/sante/toux.webp",
+  "trousse-de-secours": "/lib/images/vocabulaire/sante/trousse-de-secours.webp",
   "vaccin": "/lib/images/vocabulaire/sante/vaccin.webp",
   "virus": "/lib/images/vocabulaire/sante/virus.webp",
   "vitamine": "/lib/images/vocabulaire/sante/vitamine.webp",
@@ -6846,11 +6997,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "veste": "/lib/images/vocabulaire/vetements/veste.webp",
   "zipper": "/lib/images/vocabulaire/vetements/zipper.webp",
   "écharpe": "/lib/images/vocabulaire/vetements/écharpe.webp",
+  "arrêt-de-bus": "/lib/images/vocabulaire/ville/arrêt-de-bus.webp",
   "avenue": "/lib/images/vocabulaire/ville/avenue.webp",
   "banc": "/lib/images/vocabulaire/ville/banc.webp",
   "banque": "/lib/images/vocabulaire/ville/banque.webp",
   "bazar": "/lib/images/vocabulaire/ville/bazar.webp",
   "bibliotheque": "/lib/images/vocabulaire/ville/bibliotheque.webp",
+  "boucherie": "/lib/images/vocabulaire/ville/boucherie.webp",
   "boulangerie": "/lib/images/vocabulaire/ville/boulangerie.webp",
   "boutique": "/lib/images/vocabulaire/ville/boutique.webp",
   "carrefour": "/lib/images/vocabulaire/ville/carrefour.webp",
@@ -6868,6 +7021,8 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "hopital": "/lib/images/vocabulaire/ville/hopital.webp",
   "librairie": "/lib/images/vocabulaire/ville/librairie.webp",
   "magasin": "/lib/images/vocabulaire/ville/magasin.webp",
+  "mairie": "/lib/images/vocabulaire/ville/mairie.webp",
+  "marché": "/lib/images/vocabulaire/ville/marché.webp",
   "musee": "/lib/images/vocabulaire/ville/musee.webp",
   "panneau": "/lib/images/vocabulaire/ville/panneau.webp",
   "papeterie": "/lib/images/vocabulaire/ville/papeterie.webp",
@@ -6880,6 +7035,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "piscine": "/lib/images/vocabulaire/ville/piscine.webp",
   "pizzéria": "/lib/images/vocabulaire/ville/pizzéria.webp",
   "place": "/lib/images/vocabulaire/ville/place.webp",
+  "poissonnerie": "/lib/images/vocabulaire/ville/poissonnerie.webp",
   "pont": "/lib/images/vocabulaire/ville/pont.webp",
   "poste": "/lib/images/vocabulaire/ville/poste.webp",
   "quartier": "/lib/images/vocabulaire/ville/quartier.webp",
@@ -6887,15 +7043,18 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "rond-point": "/lib/images/vocabulaire/ville/rond-point.webp",
   "rue": "/lib/images/vocabulaire/ville/rue.webp",
   "salle-de-sport": "/lib/images/vocabulaire/ville/salle-de-sport.webp",
+  "salon-de-coiffure": "/lib/images/vocabulaire/ville/salon-de-coiffure.webp",
   "stade": "/lib/images/vocabulaire/ville/stade.webp",
   "station": "/lib/images/vocabulaire/ville/station.webp",
   "supermarche": "/lib/images/vocabulaire/ville/supermarche.webp",
   "theatre": "/lib/images/vocabulaire/ville/theatre.webp",
   "tribunal": "/lib/images/vocabulaire/ville/tribunal.webp",
+  "université": "/lib/images/vocabulaire/ville/université.webp",
   "usine": "/lib/images/vocabulaire/ville/usine.webp",
   "ville": "/lib/images/vocabulaire/ville/ville.webp",
   "vitrine": "/lib/images/vocabulaire/ville/vitrine.webp",
   "zoo": "/lib/images/vocabulaire/ville/zoo.webp",
+  "école": "/lib/images/vocabulaire/ville/école.webp",
   "aeroport": "/lib/images/vocabulaire/voyage/aeroport.webp",
   "aller-retour": "/lib/images/vocabulaire/voyage/aller-retour.webp",
   "arrivee": "/lib/images/vocabulaire/voyage/arrivee.webp",
