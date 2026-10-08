@@ -21,9 +21,19 @@ export type InstitutionalHeader = {
 
 export const DEFAULT_INSTITUTIONAL_LOGO = valaisLogo
 
+/**
+ * Année scolaire en cours (Suisse / rentrée août) : à partir d’août → A/(A+1),
+ * sinon (janvier–juillet) → (A−1)/A. Ex. octobre 2026 → « 2026-2027 ».
+ */
+export function currentSchoolYear(date = new Date()): string {
+  const year = date.getFullYear()
+  const start = date.getMonth() >= 7 ? year : year - 1 // mois 0-index : 7 = août
+  return `${start}-${start + 1}`
+}
+
 export const DEFAULT_INSTITUTIONAL: InstitutionalHeader = {
   schoolName: "Classe d'accueil",
-  schoolYear: '2025-2026',
+  schoolYear: currentSchoolYear(),
   schoolTagline: '',
   orgLine1: 'Département de la santé, des affaires sociales et de la culture',
   orgLine2: "Service de l'action sociale",
