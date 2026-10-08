@@ -868,16 +868,36 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/boissons/bouteille-deau.webp"
       },
       {
+        "label": "café-au-lait",
+        "src": "/lib/images/vocabulaire/boissons/café-au-lait.webp"
+      },
+      {
         "label": "café",
         "src": "/lib/images/vocabulaire/boissons/café.webp"
+      },
+      {
+        "label": "canette",
+        "src": "/lib/images/vocabulaire/boissons/canette.webp"
+      },
+      {
+        "label": "carafe",
+        "src": "/lib/images/vocabulaire/boissons/carafe.webp"
       },
       {
         "label": "chocolat-chaud",
         "src": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp"
       },
       {
+        "label": "cidre",
+        "src": "/lib/images/vocabulaire/boissons/cidre.webp"
+      },
+      {
         "label": "citronnade",
         "src": "/lib/images/vocabulaire/boissons/citronnade.webp"
+      },
+      {
+        "label": "cocktail",
+        "src": "/lib/images/vocabulaire/boissons/cocktail.webp"
       },
       {
         "label": "eau-gazeuse",
@@ -890,6 +910,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "infusion",
         "src": "/lib/images/vocabulaire/boissons/infusion.webp"
+      },
+      {
+        "label": "jus-d-orange",
+        "src": "/lib/images/vocabulaire/boissons/jus-d-orange.webp"
       },
       {
         "label": "jus",
@@ -918,6 +942,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "soda",
         "src": "/lib/images/vocabulaire/boissons/soda.webp"
+      },
+      {
+        "label": "thé-glacé",
+        "src": "/lib/images/vocabulaire/boissons/thé-glacé.webp"
       },
       {
         "label": "thé",
@@ -2290,12 +2318,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/album.webp"
       },
       {
+        "label": "barbecue",
+        "src": "/lib/images/vocabulaire/loisirs/barbecue.webp"
+      },
+      {
         "label": "billard",
         "src": "/lib/images/vocabulaire/loisirs/billard.webp"
       },
       {
         "label": "bille",
         "src": "/lib/images/vocabulaire/loisirs/bille.webp"
+      },
+      {
+        "label": "bricolage",
+        "src": "/lib/images/vocabulaire/loisirs/bricolage.webp"
+      },
+      {
+        "label": "camping",
+        "src": "/lib/images/vocabulaire/loisirs/camping.webp"
       },
       {
         "label": "cerceau",
@@ -2310,8 +2350,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/corde-a-sauter.webp"
       },
       {
+        "label": "couture",
+        "src": "/lib/images/vocabulaire/loisirs/couture.webp"
+      },
+      {
         "label": "danse",
         "src": "/lib/images/vocabulaire/loisirs/danse.webp"
+      },
+      {
+        "label": "dessin",
+        "src": "/lib/images/vocabulaire/loisirs/dessin.webp"
       },
       {
         "label": "domino",
@@ -2338,8 +2386,24 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/hobby.webp"
       },
       {
+        "label": "jardinage",
+        "src": "/lib/images/vocabulaire/loisirs/jardinage.webp"
+      },
+      {
+        "label": "jeu-de-cartes",
+        "src": "/lib/images/vocabulaire/loisirs/jeu-de-cartes.webp"
+      },
+      {
+        "label": "jeu-de-société",
+        "src": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp"
+      },
+      {
         "label": "jeu",
         "src": "/lib/images/vocabulaire/loisirs/jeu.webp"
+      },
+      {
+        "label": "jeux-vidéo",
+        "src": "/lib/images/vocabulaire/loisirs/jeux-vidéo.webp"
       },
       {
         "label": "jouet",
@@ -2352,6 +2416,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "labyrinthe",
         "src": "/lib/images/vocabulaire/loisirs/labyrinthe.webp"
+      },
+      {
+        "label": "lecture",
+        "src": "/lib/images/vocabulaire/loisirs/lecture.webp"
       },
       {
         "label": "loto",
@@ -2378,16 +2446,32 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/photographie.webp"
       },
       {
+        "label": "pique-nique",
+        "src": "/lib/images/vocabulaire/loisirs/pique-nique.webp"
+      },
+      {
         "label": "poupée",
         "src": "/lib/images/vocabulaire/loisirs/poupée.webp"
+      },
+      {
+        "label": "promenade",
+        "src": "/lib/images/vocabulaire/loisirs/promenade.webp"
       },
       {
         "label": "puzzle",
         "src": "/lib/images/vocabulaire/loisirs/puzzle.webp"
       },
       {
+        "label": "pêche-à-la-ligne",
+        "src": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp"
+      },
+      {
         "label": "scene",
         "src": "/lib/images/vocabulaire/loisirs/scene.webp"
+      },
+      {
+        "label": "shopping",
+        "src": "/lib/images/vocabulaire/loisirs/shopping.webp"
       },
       {
         "label": "spectacle",
@@ -2400,6 +2484,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "toupie",
         "src": "/lib/images/vocabulaire/loisirs/toupie.webp"
+      },
+      {
+        "label": "tricot",
+        "src": "/lib/images/vocabulaire/loisirs/tricot.webp"
       },
       {
         "label": "yoyo",
@@ -4860,6 +4948,14 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/autobus.webp"
       },
       {
+        "label": "autocar",
+        "src": "/lib/images/vocabulaire/transports/autocar.webp"
+      },
+      {
+        "label": "autoroute",
+        "src": "/lib/images/vocabulaire/transports/autoroute.webp"
+      },
+      {
         "label": "avion",
         "src": "/lib/images/vocabulaire/transports/avion.webp"
       },
@@ -4884,8 +4980,20 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/camion.webp"
       },
       {
+        "label": "camionnette",
+        "src": "/lib/images/vocabulaire/transports/camionnette.webp"
+      },
+      {
         "label": "caravane",
         "src": "/lib/images/vocabulaire/transports/caravane.webp"
+      },
+      {
+        "label": "ceinture-de-sécurité",
+        "src": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp"
+      },
+      {
+        "label": "embouteillage",
+        "src": "/lib/images/vocabulaire/transports/embouteillage.webp"
       },
       {
         "label": "ferry",
@@ -4932,12 +5040,32 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/navire.webp"
       },
       {
+        "label": "panneau-stop",
+        "src": "/lib/images/vocabulaire/transports/panneau-stop.webp"
+      },
+      {
         "label": "paquebot",
         "src": "/lib/images/vocabulaire/transports/paquebot.webp"
       },
       {
+        "label": "pneu",
+        "src": "/lib/images/vocabulaire/transports/pneu.webp"
+      },
+      {
+        "label": "poussette",
+        "src": "/lib/images/vocabulaire/transports/poussette.webp"
+      },
+      {
+        "label": "péage",
+        "src": "/lib/images/vocabulaire/transports/péage.webp"
+      },
+      {
         "label": "scooter",
         "src": "/lib/images/vocabulaire/transports/scooter.webp"
+      },
+      {
+        "label": "siège-auto",
+        "src": "/lib/images/vocabulaire/transports/siège-auto.webp"
       },
       {
         "label": "sous-marin",
@@ -6202,12 +6330,18 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bière": "/lib/images/vocabulaire/boissons/bière.webp",
   "boisson": "/lib/images/vocabulaire/boissons/boisson.webp",
   "bouteille-deau": "/lib/images/vocabulaire/boissons/bouteille-deau.webp",
+  "café-au-lait": "/lib/images/vocabulaire/boissons/café-au-lait.webp",
   "café": "/lib/images/vocabulaire/boissons/café.webp",
+  "canette": "/lib/images/vocabulaire/boissons/canette.webp",
+  "carafe": "/lib/images/vocabulaire/boissons/carafe.webp",
   "chocolat-chaud": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp",
+  "cidre": "/lib/images/vocabulaire/boissons/cidre.webp",
   "citronnade": "/lib/images/vocabulaire/boissons/citronnade.webp",
+  "cocktail": "/lib/images/vocabulaire/boissons/cocktail.webp",
   "eau-gazeuse": "/lib/images/vocabulaire/boissons/eau-gazeuse.webp",
   "eau": "/lib/images/vocabulaire/boissons/eau.webp",
   "infusion": "/lib/images/vocabulaire/boissons/infusion.webp",
+  "jus-d-orange": "/lib/images/vocabulaire/boissons/jus-d-orange.webp",
   "jus": "/lib/images/vocabulaire/boissons/jus.webp",
   "lait": "/lib/images/vocabulaire/boissons/lait.webp",
   "limonade": "/lib/images/vocabulaire/boissons/limonade.webp",
@@ -6215,6 +6349,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "sirop": "/lib/images/vocabulaire/boissons/sirop.webp",
   "smoothie": "/lib/images/vocabulaire/boissons/smoothie.webp",
   "soda": "/lib/images/vocabulaire/boissons/soda.webp",
+  "thé-glacé": "/lib/images/vocabulaire/boissons/thé-glacé.webp",
   "thé": "/lib/images/vocabulaire/boissons/thé.webp",
   "tisane": "/lib/images/vocabulaire/boissons/tisane.webp",
   "vin": "/lib/images/vocabulaire/boissons/vin.webp",
@@ -6630,34 +6765,49 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "échalote": "/lib/images/vocabulaire/legumes/échalote.webp",
   "épinard": "/lib/images/vocabulaire/legumes/épinard.webp",
   "album": "/lib/images/vocabulaire/loisirs/album.webp",
+  "barbecue": "/lib/images/vocabulaire/loisirs/barbecue.webp",
   "billard": "/lib/images/vocabulaire/loisirs/billard.webp",
   "bille": "/lib/images/vocabulaire/loisirs/bille.webp",
+  "bricolage": "/lib/images/vocabulaire/loisirs/bricolage.webp",
+  "camping": "/lib/images/vocabulaire/loisirs/camping.webp",
   "cerceau": "/lib/images/vocabulaire/loisirs/cerceau.webp",
   "cerf-volant": "/lib/images/vocabulaire/loisirs/cerf-volant.webp",
   "corde-a-sauter": "/lib/images/vocabulaire/loisirs/corde-a-sauter.webp",
+  "couture": "/lib/images/vocabulaire/loisirs/couture.webp",
   "danse": "/lib/images/vocabulaire/loisirs/danse.webp",
+  "dessin": "/lib/images/vocabulaire/loisirs/dessin.webp",
   "domino": "/lib/images/vocabulaire/loisirs/domino.webp",
   "dé": "/lib/images/vocabulaire/loisirs/dé.webp",
   "exposition": "/lib/images/vocabulaire/loisirs/exposition.webp",
   "festival": "/lib/images/vocabulaire/loisirs/festival.webp",
   "hamac": "/lib/images/vocabulaire/loisirs/hamac.webp",
   "hobby": "/lib/images/vocabulaire/loisirs/hobby.webp",
+  "jardinage": "/lib/images/vocabulaire/loisirs/jardinage.webp",
+  "jeu-de-cartes": "/lib/images/vocabulaire/loisirs/jeu-de-cartes.webp",
+  "jeu-de-société": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp",
   "jeu": "/lib/images/vocabulaire/loisirs/jeu.webp",
+  "jeux-vidéo": "/lib/images/vocabulaire/loisirs/jeux-vidéo.webp",
   "jouet": "/lib/images/vocabulaire/loisirs/jouet.webp",
   "kaléidoscope": "/lib/images/vocabulaire/loisirs/kaléidoscope.webp",
   "labyrinthe": "/lib/images/vocabulaire/loisirs/labyrinthe.webp",
+  "lecture": "/lib/images/vocabulaire/loisirs/lecture.webp",
   "loto": "/lib/images/vocabulaire/loisirs/loto.webp",
   "marionnette": "/lib/images/vocabulaire/loisirs/marionnette.webp",
   "peinture": "/lib/images/vocabulaire/loisirs/peinture.webp",
   "peluche": "/lib/images/vocabulaire/loisirs/peluche.webp",
   "photo": "/lib/images/vocabulaire/loisirs/photo.webp",
   "photographie": "/lib/images/vocabulaire/loisirs/photographie.webp",
+  "pique-nique": "/lib/images/vocabulaire/loisirs/pique-nique.webp",
   "poupée": "/lib/images/vocabulaire/loisirs/poupée.webp",
+  "promenade": "/lib/images/vocabulaire/loisirs/promenade.webp",
   "puzzle": "/lib/images/vocabulaire/loisirs/puzzle.webp",
+  "pêche-à-la-ligne": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp",
   "scene": "/lib/images/vocabulaire/loisirs/scene.webp",
+  "shopping": "/lib/images/vocabulaire/loisirs/shopping.webp",
   "spectacle": "/lib/images/vocabulaire/loisirs/spectacle.webp",
   "tente": "/lib/images/vocabulaire/loisirs/tente.webp",
   "toupie": "/lib/images/vocabulaire/loisirs/toupie.webp",
+  "tricot": "/lib/images/vocabulaire/loisirs/tricot.webp",
   "yoyo": "/lib/images/vocabulaire/loisirs/yoyo.webp",
   "échecs": "/lib/images/vocabulaire/loisirs/échecs.webp",
   "appartement": "/lib/images/vocabulaire/maison/appartement.webp",
@@ -7204,13 +7354,18 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "été": "/lib/images/vocabulaire/temps-calendrier/été.webp",
   "ambulance": "/lib/images/vocabulaire/transports/ambulance.webp",
   "autobus": "/lib/images/vocabulaire/transports/autobus.webp",
+  "autocar": "/lib/images/vocabulaire/transports/autocar.webp",
+  "autoroute": "/lib/images/vocabulaire/transports/autoroute.webp",
   "avion": "/lib/images/vocabulaire/transports/avion.webp",
   "bateau": "/lib/images/vocabulaire/transports/bateau.webp",
   "bicyclette": "/lib/images/vocabulaire/transports/bicyclette.webp",
   "bulldozer": "/lib/images/vocabulaire/transports/bulldozer.webp",
   "bus": "/lib/images/vocabulaire/transports/bus.webp",
   "camion": "/lib/images/vocabulaire/transports/camion.webp",
+  "camionnette": "/lib/images/vocabulaire/transports/camionnette.webp",
   "caravane": "/lib/images/vocabulaire/transports/caravane.webp",
+  "ceinture-de-sécurité": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp",
+  "embouteillage": "/lib/images/vocabulaire/transports/embouteillage.webp",
   "ferry": "/lib/images/vocabulaire/transports/ferry.webp",
   "helicoptere": "/lib/images/vocabulaire/transports/helicoptere.webp",
   "hydravion": "/lib/images/vocabulaire/transports/hydravion.webp",
@@ -7222,8 +7377,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "moto": "/lib/images/vocabulaire/transports/moto.webp",
   "métro": "/lib/images/vocabulaire/transports/métro.webp",
   "navire": "/lib/images/vocabulaire/transports/navire.webp",
+  "panneau-stop": "/lib/images/vocabulaire/transports/panneau-stop.webp",
   "paquebot": "/lib/images/vocabulaire/transports/paquebot.webp",
+  "pneu": "/lib/images/vocabulaire/transports/pneu.webp",
+  "poussette": "/lib/images/vocabulaire/transports/poussette.webp",
+  "péage": "/lib/images/vocabulaire/transports/péage.webp",
   "scooter": "/lib/images/vocabulaire/transports/scooter.webp",
+  "siège-auto": "/lib/images/vocabulaire/transports/siège-auto.webp",
   "sous-marin": "/lib/images/vocabulaire/transports/sous-marin.webp",
   "taxi": "/lib/images/vocabulaire/transports/taxi.webp",
   "tracteur": "/lib/images/vocabulaire/transports/tracteur.webp",
