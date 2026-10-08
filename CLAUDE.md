@@ -13,19 +13,29 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 
 | Zone | Rôle |
 |---|---|
-| `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`). Français : thèmes communicatifs + `track` Voc/Gram/Com |
-| `src/math/generate.ts` | `buildPage(config, seed)` → `WorksheetPage` (pur, via `rng`) ; délègue au français via `@/francais/*` |
-| `src/math/` | Générateurs maths (algèbre, géométrie, repérage, `rng`, `types`, `difficulty`) |
-| `src/francais/` | Générateurs et banques FLE : Voc/Gram/Com, Phrase, Lecture, nombres en lettres |
-| `src/jeux/` | Fiches-jeux (templates cartes / plateaux / étiquettes) — planning `docs/plan-domaine-jeux.md` |
+| `src/math/catalog.ts` | Domaines, thèmes (`topics`), types d'exercices (`exerciseTypes`) |
+| `src/math/generate.ts` | `buildPage(config, seed)` → délègue maths / `@/francais` / `@/tcm` / `@/tcf` / `@/jeux` |
+| `src/math/` | Générateurs maths purs (algèbre, géométrie, repérage, `rng`, `types`) — **sans TCM** |
+| `src/tcm/` | Test de connaissance de maths (dossier dédié, comme `tcf/`) — `README.md` |
+| `src/tcf/` | Tests TCF (banques JSON, éditeur, rendu) |
+| `src/francais/` | FLE : Voc/Gram/Com, Phrase, Lecture, Soutien |
+| `src/jeux/` | Fiches-jeux — planning `docs/plan-domaine-jeux.md` |
 | `src/math/rng.ts` | `createRng`, `int`, `pick`, `shuffle` — jamais `Math.random()` dans un générateur |
 | `src/math/types.ts` | `Layout`, `MathItem`, `PageConfig`, `WorksheetPage`… |
-| `src/components/ItemView.tsx` | Rendu d'un item selon `layout` (élève / corrigé) — maths et français |
+| `src/components/ItemView.tsx` | Dispatcher ; layouts dans `src/components/item-view/` |
 | `src/components/math/PrintDocumentChrome.tsx` | En-tête institutionnel / personnalisé, pied, points d'éval |
 | `src/components/math/GeometryFigure.tsx`, `FractionView.tsx`, `CoordGrid.tsx` | Visuels scolaires |
 | `src/App.tsx` | Routage landing / accès / générateur |
-| `src/components/generator/` | UI générateur (panneaux, topbar, mode libre, feuille A4) — voir `README.md` |
+| `src/components/generator/` | UI générateur — `README.md` |
 | `src/App.css` | Feuille A4 fixe, layouts école, impression |
+
+### Fichiers volumineux — quand scinder
+
+| Cas | Action |
+|---|---|
+| **\> ~800 lignes de logique** (UI, générateur, rendu) | Scinder par responsabilité (`ItemView` → `item-view/*`, `App` → `generator/*`) |
+| **Banques de données** (`problem-banks.ts`, `vocab-images.ts`, `soutien/banks.ts`) | OK volumineux si purs tableaux ; scinder par thème seulement si l’édition devient pénible |
+| **Nouveau domaine** (TCM, TCF, Jeux…) | Dossier `src/<domaine>/` dédié — **ne pas** empiler dans `math/` ou `francais/` |
 
 ## Principes non négociables
 
