@@ -141,6 +141,7 @@ export function FooterSidePanel({
             value={institutional.classLevel}
             onChange={(value) => setInstitutional({ ...institutional, classLevel: value })}
           >
+            <option value="">—</option>
             {CLASS_LEVELS.map((level) => (
               <option key={level} value={level}>
                 {level}
@@ -154,6 +155,7 @@ export function FooterSidePanel({
               setInstitutional({ ...institutional, classNumber: value })
             }
           >
+            <option value="">—</option>
             {CLASS_NUMBERS.map((n) => (
               <option key={n} value={n}>
                 {n}

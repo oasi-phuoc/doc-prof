@@ -29,8 +29,8 @@ export const DEFAULT_INSTITUTIONAL: InstitutionalHeader = {
   orgLine2: "Service de l'action sociale",
   orgLine3: "Office de l'asile",
   orgLine4: 'Centre de formation "Le Botza"',
-  classLevel: 'CSC',
-  classNumber: '01',
+  classLevel: '',
+  classNumber: '',
   course: 'Mathématiques',
   documentTitle: '',
   reference: '',
@@ -93,9 +93,9 @@ export function InstitutionalDocumentHeader({
         </div>
       </div>
       <div className="doc-header-course">
-        <p>
-          {config.classLevel} {config.classNumber}
-        </p>
+        {(config.classLevel.trim() || config.classNumber.trim()) ? (
+          <p>{[config.classLevel.trim(), config.classNumber.trim()].filter(Boolean).join(' ')}</p>
+        ) : null}
         <p>Cours {config.course}</p>
       </div>
       <div className="doc-student-block">
