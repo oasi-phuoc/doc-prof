@@ -1652,6 +1652,192 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     ]
   },
   {
+    "id": "heure-horloge",
+    "label": "Heure et horloge",
+    "words": [
+      {
+        "label": "cadran-solaire",
+        "src": "/lib/images/vocabulaire/heure-horloge/cadran-solaire.webp"
+      },
+      {
+        "label": "cinq-heures-dix",
+        "src": "/lib/images/vocabulaire/heure-horloge/cinq-heures-dix.webp"
+      },
+      {
+        "label": "cinq-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/cinq-heures.webp"
+      },
+      {
+        "label": "coucou",
+        "src": "/lib/images/vocabulaire/heure-horloge/coucou.webp"
+      },
+      {
+        "label": "deux-heures-et-demie",
+        "src": "/lib/images/vocabulaire/heure-horloge/deux-heures-et-demie.webp"
+      },
+      {
+        "label": "deux-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/deux-heures.webp"
+      },
+      {
+        "label": "dix-heures-moins-cinq",
+        "src": "/lib/images/vocabulaire/heure-horloge/dix-heures-moins-cinq.webp"
+      },
+      {
+        "label": "dix-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+      },
+      {
+        "label": "dix-huit-heures-trente",
+        "src": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp"
+      },
+      {
+        "label": "dix-sept-heures-quarante-cinq",
+        "src": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-quarante-cinq.webp"
+      },
+      {
+        "label": "emploi-du-temps",
+        "src": "/lib/images/vocabulaire/heure-horloge/emploi-du-temps.webp"
+      },
+      {
+        "label": "horaires",
+        "src": "/lib/images/vocabulaire/heure-horloge/horaires.webp"
+      },
+      {
+        "label": "horloge",
+        "src": "/lib/images/vocabulaire/heure-horloge/horloge.webp"
+      },
+      {
+        "label": "huit-heures-moins-vingt",
+        "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-moins-vingt.webp"
+      },
+      {
+        "label": "huit-heures-quinze",
+        "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-quinze.webp"
+      },
+      {
+        "label": "huit-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+      },
+      {
+        "label": "midi-et-quart",
+        "src": "/lib/images/vocabulaire/heure-horloge/midi-et-quart.webp"
+      },
+      {
+        "label": "midi",
+        "src": "/lib/images/vocabulaire/heure-horloge/midi.webp"
+      },
+      {
+        "label": "minuit",
+        "src": "/lib/images/vocabulaire/heure-horloge/minuit.webp"
+      },
+      {
+        "label": "minuteur",
+        "src": "/lib/images/vocabulaire/heure-horloge/minuteur.webp"
+      },
+      {
+        "label": "neuf-heures-moins-dix",
+        "src": "/lib/images/vocabulaire/heure-horloge/neuf-heures-moins-dix.webp"
+      },
+      {
+        "label": "neuf-heures-quarante-cinq",
+        "src": "/lib/images/vocabulaire/heure-horloge/neuf-heures-quarante-cinq.webp"
+      },
+      {
+        "label": "neuf-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+      },
+      {
+        "label": "onze-heures-et-demie",
+        "src": "/lib/images/vocabulaire/heure-horloge/onze-heures-et-demie.webp"
+      },
+      {
+        "label": "onze-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+      },
+      {
+        "label": "pendule",
+        "src": "/lib/images/vocabulaire/heure-horloge/pendule.webp"
+      },
+      {
+        "label": "quatorze-heures-trente",
+        "src": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp"
+      },
+      {
+        "label": "quatre-heures-cinq",
+        "src": "/lib/images/vocabulaire/heure-horloge/quatre-heures-cinq.webp"
+      },
+      {
+        "label": "quatre-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/quatre-heures.webp"
+      },
+      {
+        "label": "réveil-numérique",
+        "src": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp"
+      },
+      {
+        "label": "sablier",
+        "src": "/lib/images/vocabulaire/heure-horloge/sablier.webp"
+      },
+      {
+        "label": "seize-heures-quinze",
+        "src": "/lib/images/vocabulaire/heure-horloge/seize-heures-quinze.webp"
+      },
+      {
+        "label": "sept-heures-trente",
+        "src": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
+      },
+      {
+        "label": "sept-heures-vingt-cinq",
+        "src": "/lib/images/vocabulaire/heure-horloge/sept-heures-vingt-cinq.webp"
+      },
+      {
+        "label": "sept-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+      },
+      {
+        "label": "six-heures-vingt",
+        "src": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
+      },
+      {
+        "label": "six-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
+      },
+      {
+        "label": "treize-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp"
+      },
+      {
+        "label": "trois-heures-moins-le-quart",
+        "src": "/lib/images/vocabulaire/heure-horloge/trois-heures-moins-le-quart.webp"
+      },
+      {
+        "label": "trois-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/trois-heures.webp"
+      },
+      {
+        "label": "une-heure-et-quart",
+        "src": "/lib/images/vocabulaire/heure-horloge/une-heure-et-quart.webp"
+      },
+      {
+        "label": "une-heure",
+        "src": "/lib/images/vocabulaire/heure-horloge/une-heure.webp"
+      },
+      {
+        "label": "vingt-deux-heures-trente",
+        "src": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+      },
+      {
+        "label": "vingt-et-une-heures-quinze",
+        "src": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
+      },
+      {
+        "label": "vingt-heures",
+        "src": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+      }
+    ]
+  },
+  {
     "id": "hygiene",
     "label": "Hygiène",
     "words": [
@@ -2688,8 +2874,28 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Météo",
     "words": [
       {
+        "label": "arc-en-ciel",
+        "src": "/lib/images/vocabulaire/meteo/arc-en-ciel.webp"
+      },
+      {
+        "label": "averse",
+        "src": "/lib/images/vocabulaire/meteo/averse.webp"
+      },
+      {
         "label": "blizzard",
         "src": "/lib/images/vocabulaire/meteo/blizzard.webp"
+      },
+      {
+        "label": "brouillard",
+        "src": "/lib/images/vocabulaire/meteo/brouillard.webp"
+      },
+      {
+        "label": "canicule",
+        "src": "/lib/images/vocabulaire/meteo/canicule.webp"
+      },
+      {
+        "label": "ciel-couvert",
+        "src": "/lib/images/vocabulaire/meteo/ciel-couvert.webp"
       },
       {
         "label": "cyclone",
@@ -2704,16 +2910,44 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/meteo/flocon.webp"
       },
       {
+        "label": "givre",
+        "src": "/lib/images/vocabulaire/meteo/givre.webp"
+      },
+      {
         "label": "goutte",
         "src": "/lib/images/vocabulaire/meteo/goutte.webp"
+      },
+      {
+        "label": "grêle",
+        "src": "/lib/images/vocabulaire/meteo/grêle.webp"
+      },
+      {
+        "label": "neige",
+        "src": "/lib/images/vocabulaire/meteo/neige.webp"
       },
       {
         "label": "nuage",
         "src": "/lib/images/vocabulaire/meteo/nuage.webp"
       },
       {
+        "label": "orage",
+        "src": "/lib/images/vocabulaire/meteo/orage.webp"
+      },
+      {
+        "label": "parapluie-ouvert",
+        "src": "/lib/images/vocabulaire/meteo/parapluie-ouvert.webp"
+      },
+      {
+        "label": "pluie",
+        "src": "/lib/images/vocabulaire/meteo/pluie.webp"
+      },
+      {
         "label": "soleil",
         "src": "/lib/images/vocabulaire/meteo/soleil.webp"
+      },
+      {
+        "label": "température",
+        "src": "/lib/images/vocabulaire/meteo/température.webp"
       },
       {
         "label": "tempête",
@@ -2728,8 +2962,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/meteo/typhon.webp"
       },
       {
+        "label": "vent",
+        "src": "/lib/images/vocabulaire/meteo/vent.webp"
+      },
+      {
         "label": "zéphyr",
         "src": "/lib/images/vocabulaire/meteo/zéphyr.webp"
+      },
+      {
+        "label": "éclaircie",
+        "src": "/lib/images/vocabulaire/meteo/éclaircie.webp"
       }
     ]
   },
@@ -2904,12 +3146,40 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Nombres et mesures",
     "words": [
       {
+        "label": "cent",
+        "src": "/lib/images/vocabulaire/nombres-mesures/cent.webp"
+      },
+      {
+        "label": "cinq",
+        "src": "/lib/images/vocabulaire/nombres-mesures/cinq.webp"
+      },
+      {
+        "label": "cinquante",
+        "src": "/lib/images/vocabulaire/nombres-mesures/cinquante.webp"
+      },
+      {
         "label": "deux",
         "src": "/lib/images/vocabulaire/nombres-mesures/deux.webp"
       },
       {
+        "label": "dix-huit",
+        "src": "/lib/images/vocabulaire/nombres-mesures/dix-huit.webp"
+      },
+      {
+        "label": "dix-neuf",
+        "src": "/lib/images/vocabulaire/nombres-mesures/dix-neuf.webp"
+      },
+      {
+        "label": "dix-sept",
+        "src": "/lib/images/vocabulaire/nombres-mesures/dix-sept.webp"
+      },
+      {
         "label": "dix",
         "src": "/lib/images/vocabulaire/nombres-mesures/dix.webp"
+      },
+      {
+        "label": "douzaine",
+        "src": "/lib/images/vocabulaire/nombres-mesures/douzaine.webp"
       },
       {
         "label": "douze",
@@ -2924,16 +3194,56 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nombres-mesures/huit.webp"
       },
       {
+        "label": "huitante",
+        "src": "/lib/images/vocabulaire/nombres-mesures/huitante.webp"
+      },
+      {
         "label": "kilogramme",
         "src": "/lib/images/vocabulaire/nombres-mesures/kilogramme.webp"
+      },
+      {
+        "label": "litre",
+        "src": "/lib/images/vocabulaire/nombres-mesures/litre.webp"
+      },
+      {
+        "label": "mille",
+        "src": "/lib/images/vocabulaire/nombres-mesures/mille.webp"
+      },
+      {
+        "label": "moitié",
+        "src": "/lib/images/vocabulaire/nombres-mesures/moitié.webp"
+      },
+      {
+        "label": "mètre",
+        "src": "/lib/images/vocabulaire/nombres-mesures/mètre.webp"
+      },
+      {
+        "label": "neuf",
+        "src": "/lib/images/vocabulaire/nombres-mesures/neuf.webp"
+      },
+      {
+        "label": "nonante",
+        "src": "/lib/images/vocabulaire/nombres-mesures/nonante.webp"
       },
       {
         "label": "onze",
         "src": "/lib/images/vocabulaire/nombres-mesures/onze.webp"
       },
       {
+        "label": "pour-cent",
+        "src": "/lib/images/vocabulaire/nombres-mesures/pour-cent.webp"
+      },
+      {
+        "label": "quarante",
+        "src": "/lib/images/vocabulaire/nombres-mesures/quarante.webp"
+      },
+      {
         "label": "quatorze",
         "src": "/lib/images/vocabulaire/nombres-mesures/quatorze.webp"
+      },
+      {
+        "label": "quatre",
+        "src": "/lib/images/vocabulaire/nombres-mesures/quatre.webp"
       },
       {
         "label": "quinze",
@@ -2944,12 +3254,40 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nombres-mesures/seize.webp"
       },
       {
+        "label": "sept",
+        "src": "/lib/images/vocabulaire/nombres-mesures/sept.webp"
+      },
+      {
+        "label": "septante",
+        "src": "/lib/images/vocabulaire/nombres-mesures/septante.webp"
+      },
+      {
         "label": "six",
         "src": "/lib/images/vocabulaire/nombres-mesures/six.webp"
       },
       {
+        "label": "soixante",
+        "src": "/lib/images/vocabulaire/nombres-mesures/soixante.webp"
+      },
+      {
         "label": "treize",
         "src": "/lib/images/vocabulaire/nombres-mesures/treize.webp"
+      },
+      {
+        "label": "trente",
+        "src": "/lib/images/vocabulaire/nombres-mesures/trente.webp"
+      },
+      {
+        "label": "trois",
+        "src": "/lib/images/vocabulaire/nombres-mesures/trois.webp"
+      },
+      {
+        "label": "un",
+        "src": "/lib/images/vocabulaire/nombres-mesures/un.webp"
+      },
+      {
+        "label": "vingt",
+        "src": "/lib/images/vocabulaire/nombres-mesures/vingt.webp"
       },
       {
         "label": "zéro",
@@ -4028,8 +4366,32 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Temps et calendrier",
     "words": [
       {
+        "label": "anniversaire",
+        "src": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
+      },
+      {
+        "label": "année",
+        "src": "/lib/images/vocabulaire/temps-calendrier/année.webp"
+      },
+      {
+        "label": "après-midi",
+        "src": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp"
+      },
+      {
+        "label": "automne",
+        "src": "/lib/images/vocabulaire/temps-calendrier/automne.webp"
+      },
+      {
+        "label": "calendrier",
+        "src": "/lib/images/vocabulaire/temps-calendrier/calendrier.webp"
+      },
+      {
         "label": "dimanche",
         "src": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp"
+      },
+      {
+        "label": "fête",
+        "src": "/lib/images/vocabulaire/temps-calendrier/fête.webp"
       },
       {
         "label": "hiver",
@@ -4048,12 +4410,64 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/temps-calendrier/lundi.webp"
       },
       {
+        "label": "mardi",
+        "src": "/lib/images/vocabulaire/temps-calendrier/mardi.webp"
+      },
+      {
+        "label": "matin",
+        "src": "/lib/images/vocabulaire/temps-calendrier/matin.webp"
+      },
+      {
+        "label": "mercredi",
+        "src": "/lib/images/vocabulaire/temps-calendrier/mercredi.webp"
+      },
+      {
+        "label": "mois",
+        "src": "/lib/images/vocabulaire/temps-calendrier/mois.webp"
+      },
+      {
+        "label": "nouvel-an",
+        "src": "/lib/images/vocabulaire/temps-calendrier/nouvel-an.webp"
+      },
+      {
+        "label": "noël",
+        "src": "/lib/images/vocabulaire/temps-calendrier/noël.webp"
+      },
+      {
         "label": "nuit",
         "src": "/lib/images/vocabulaire/temps-calendrier/nuit.webp"
       },
       {
+        "label": "printemps",
+        "src": "/lib/images/vocabulaire/temps-calendrier/printemps.webp"
+      },
+      {
+        "label": "pâques",
+        "src": "/lib/images/vocabulaire/temps-calendrier/pâques.webp"
+      },
+      {
+        "label": "samedi",
+        "src": "/lib/images/vocabulaire/temps-calendrier/samedi.webp"
+      },
+      {
         "label": "semaine",
         "src": "/lib/images/vocabulaire/temps-calendrier/semaine.webp"
+      },
+      {
+        "label": "soir",
+        "src": "/lib/images/vocabulaire/temps-calendrier/soir.webp"
+      },
+      {
+        "label": "vendredi",
+        "src": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp"
+      },
+      {
+        "label": "week-end",
+        "src": "/lib/images/vocabulaire/temps-calendrier/week-end.webp"
+      },
+      {
+        "label": "été",
+        "src": "/lib/images/vocabulaire/temps-calendrier/été.webp"
       }
     ]
   },
@@ -5053,6 +5467,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
   }
 ]
 
+/** label (minuscule) → src, première occurrence. */
 export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bague": "/lib/images/vocabulaire/accessoires/bague.webp",
   "bijou": "/lib/images/vocabulaire/accessoires/bijou.webp",
@@ -5518,6 +5933,51 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "prune": "/lib/images/vocabulaire/fruits/prune.webp",
   "pêche": "/lib/images/vocabulaire/fruits/pêche.webp",
   "raisin": "/lib/images/vocabulaire/fruits/raisin.webp",
+  "cadran-solaire": "/lib/images/vocabulaire/heure-horloge/cadran-solaire.webp",
+  "cinq-heures-dix": "/lib/images/vocabulaire/heure-horloge/cinq-heures-dix.webp",
+  "cinq-heures": "/lib/images/vocabulaire/heure-horloge/cinq-heures.webp",
+  "coucou": "/lib/images/vocabulaire/heure-horloge/coucou.webp",
+  "deux-heures-et-demie": "/lib/images/vocabulaire/heure-horloge/deux-heures-et-demie.webp",
+  "deux-heures": "/lib/images/vocabulaire/heure-horloge/deux-heures.webp",
+  "dix-heures-moins-cinq": "/lib/images/vocabulaire/heure-horloge/dix-heures-moins-cinq.webp",
+  "dix-heures": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
+  "dix-huit-heures-trente": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp",
+  "dix-sept-heures-quarante-cinq": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-quarante-cinq.webp",
+  "emploi-du-temps": "/lib/images/vocabulaire/heure-horloge/emploi-du-temps.webp",
+  "horaires": "/lib/images/vocabulaire/heure-horloge/horaires.webp",
+  "horloge": "/lib/images/vocabulaire/heure-horloge/horloge.webp",
+  "huit-heures-moins-vingt": "/lib/images/vocabulaire/heure-horloge/huit-heures-moins-vingt.webp",
+  "huit-heures-quinze": "/lib/images/vocabulaire/heure-horloge/huit-heures-quinze.webp",
+  "huit-heures": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp",
+  "midi-et-quart": "/lib/images/vocabulaire/heure-horloge/midi-et-quart.webp",
+  "midi": "/lib/images/vocabulaire/heure-horloge/midi.webp",
+  "minuit": "/lib/images/vocabulaire/heure-horloge/minuit.webp",
+  "minuteur": "/lib/images/vocabulaire/heure-horloge/minuteur.webp",
+  "neuf-heures-moins-dix": "/lib/images/vocabulaire/heure-horloge/neuf-heures-moins-dix.webp",
+  "neuf-heures-quarante-cinq": "/lib/images/vocabulaire/heure-horloge/neuf-heures-quarante-cinq.webp",
+  "neuf-heures": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp",
+  "onze-heures-et-demie": "/lib/images/vocabulaire/heure-horloge/onze-heures-et-demie.webp",
+  "onze-heures": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp",
+  "pendule": "/lib/images/vocabulaire/heure-horloge/pendule.webp",
+  "quatorze-heures-trente": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp",
+  "quatre-heures-cinq": "/lib/images/vocabulaire/heure-horloge/quatre-heures-cinq.webp",
+  "quatre-heures": "/lib/images/vocabulaire/heure-horloge/quatre-heures.webp",
+  "réveil-numérique": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp",
+  "sablier": "/lib/images/vocabulaire/heure-horloge/sablier.webp",
+  "seize-heures-quinze": "/lib/images/vocabulaire/heure-horloge/seize-heures-quinze.webp",
+  "sept-heures-trente": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp",
+  "sept-heures-vingt-cinq": "/lib/images/vocabulaire/heure-horloge/sept-heures-vingt-cinq.webp",
+  "sept-heures": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp",
+  "six-heures-vingt": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp",
+  "six-heures": "/lib/images/vocabulaire/heure-horloge/six-heures.webp",
+  "treize-heures": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp",
+  "trois-heures-moins-le-quart": "/lib/images/vocabulaire/heure-horloge/trois-heures-moins-le-quart.webp",
+  "trois-heures": "/lib/images/vocabulaire/heure-horloge/trois-heures.webp",
+  "une-heure-et-quart": "/lib/images/vocabulaire/heure-horloge/une-heure-et-quart.webp",
+  "une-heure": "/lib/images/vocabulaire/heure-horloge/une-heure.webp",
+  "vingt-deux-heures-trente": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp",
+  "vingt-et-une-heures-quinze": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp",
+  "vingt-heures": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp",
   "baignoire": "/lib/images/vocabulaire/hygiene/baignoire.webp",
   "brosse-a-dents": "/lib/images/vocabulaire/hygiene/brosse-a-dents.webp",
   "brosse": "/lib/images/vocabulaire/hygiene/brosse.webp",
@@ -5686,17 +6146,31 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "soie": "/lib/images/vocabulaire/materiaux/soie.webp",
   "velours": "/lib/images/vocabulaire/materiaux/velours.webp",
   "zinc": "/lib/images/vocabulaire/materiaux/zinc.webp",
+  "arc-en-ciel": "/lib/images/vocabulaire/meteo/arc-en-ciel.webp",
+  "averse": "/lib/images/vocabulaire/meteo/averse.webp",
   "blizzard": "/lib/images/vocabulaire/meteo/blizzard.webp",
+  "brouillard": "/lib/images/vocabulaire/meteo/brouillard.webp",
+  "canicule": "/lib/images/vocabulaire/meteo/canicule.webp",
+  "ciel-couvert": "/lib/images/vocabulaire/meteo/ciel-couvert.webp",
   "cyclone": "/lib/images/vocabulaire/meteo/cyclone.webp",
   "eclair": "/lib/images/vocabulaire/meteo/eclair.webp",
   "flocon": "/lib/images/vocabulaire/meteo/flocon.webp",
+  "givre": "/lib/images/vocabulaire/meteo/givre.webp",
   "goutte": "/lib/images/vocabulaire/meteo/goutte.webp",
+  "grêle": "/lib/images/vocabulaire/meteo/grêle.webp",
+  "neige": "/lib/images/vocabulaire/meteo/neige.webp",
   "nuage": "/lib/images/vocabulaire/meteo/nuage.webp",
+  "orage": "/lib/images/vocabulaire/meteo/orage.webp",
+  "parapluie-ouvert": "/lib/images/vocabulaire/meteo/parapluie-ouvert.webp",
+  "pluie": "/lib/images/vocabulaire/meteo/pluie.webp",
   "soleil": "/lib/images/vocabulaire/meteo/soleil.webp",
+  "température": "/lib/images/vocabulaire/meteo/température.webp",
   "tempête": "/lib/images/vocabulaire/meteo/tempête.webp",
   "tornade": "/lib/images/vocabulaire/meteo/tornade.webp",
   "typhon": "/lib/images/vocabulaire/meteo/typhon.webp",
+  "vent": "/lib/images/vocabulaire/meteo/vent.webp",
   "zéphyr": "/lib/images/vocabulaire/meteo/zéphyr.webp",
+  "éclaircie": "/lib/images/vocabulaire/meteo/éclaircie.webp",
   "actrice": "/lib/images/vocabulaire/metiers/actrice.webp",
   "agente-entretien": "/lib/images/vocabulaire/metiers/agente-entretien.webp",
   "agricultrice": "/lib/images/vocabulaire/metiers/agricultrice.webp",
@@ -5815,18 +6289,42 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "volcan": "/lib/images/vocabulaire/nature/volcan.webp",
   "étang": "/lib/images/vocabulaire/nature/étang.webp",
   "île": "/lib/images/vocabulaire/nature/île.webp",
+  "cent": "/lib/images/vocabulaire/nombres-mesures/cent.webp",
+  "cinq": "/lib/images/vocabulaire/nombres-mesures/cinq.webp",
+  "cinquante": "/lib/images/vocabulaire/nombres-mesures/cinquante.webp",
   "deux": "/lib/images/vocabulaire/nombres-mesures/deux.webp",
+  "dix-huit": "/lib/images/vocabulaire/nombres-mesures/dix-huit.webp",
+  "dix-neuf": "/lib/images/vocabulaire/nombres-mesures/dix-neuf.webp",
+  "dix-sept": "/lib/images/vocabulaire/nombres-mesures/dix-sept.webp",
   "dix": "/lib/images/vocabulaire/nombres-mesures/dix.webp",
+  "douzaine": "/lib/images/vocabulaire/nombres-mesures/douzaine.webp",
   "douze": "/lib/images/vocabulaire/nombres-mesures/douze.webp",
   "gramme": "/lib/images/vocabulaire/nombres-mesures/gramme.webp",
   "huit": "/lib/images/vocabulaire/nombres-mesures/huit.webp",
+  "huitante": "/lib/images/vocabulaire/nombres-mesures/huitante.webp",
   "kilogramme": "/lib/images/vocabulaire/nombres-mesures/kilogramme.webp",
+  "litre": "/lib/images/vocabulaire/nombres-mesures/litre.webp",
+  "mille": "/lib/images/vocabulaire/nombres-mesures/mille.webp",
+  "moitié": "/lib/images/vocabulaire/nombres-mesures/moitié.webp",
+  "mètre": "/lib/images/vocabulaire/nombres-mesures/mètre.webp",
+  "neuf": "/lib/images/vocabulaire/nombres-mesures/neuf.webp",
+  "nonante": "/lib/images/vocabulaire/nombres-mesures/nonante.webp",
   "onze": "/lib/images/vocabulaire/nombres-mesures/onze.webp",
+  "pour-cent": "/lib/images/vocabulaire/nombres-mesures/pour-cent.webp",
+  "quarante": "/lib/images/vocabulaire/nombres-mesures/quarante.webp",
   "quatorze": "/lib/images/vocabulaire/nombres-mesures/quatorze.webp",
+  "quatre": "/lib/images/vocabulaire/nombres-mesures/quatre.webp",
   "quinze": "/lib/images/vocabulaire/nombres-mesures/quinze.webp",
   "seize": "/lib/images/vocabulaire/nombres-mesures/seize.webp",
+  "sept": "/lib/images/vocabulaire/nombres-mesures/sept.webp",
+  "septante": "/lib/images/vocabulaire/nombres-mesures/septante.webp",
   "six": "/lib/images/vocabulaire/nombres-mesures/six.webp",
+  "soixante": "/lib/images/vocabulaire/nombres-mesures/soixante.webp",
   "treize": "/lib/images/vocabulaire/nombres-mesures/treize.webp",
+  "trente": "/lib/images/vocabulaire/nombres-mesures/trente.webp",
+  "trois": "/lib/images/vocabulaire/nombres-mesures/trois.webp",
+  "un": "/lib/images/vocabulaire/nombres-mesures/un.webp",
+  "vingt": "/lib/images/vocabulaire/nombres-mesures/vingt.webp",
   "zéro": "/lib/images/vocabulaire/nombres-mesures/zéro.webp",
   "allumette": "/lib/images/vocabulaire/objets/allumette.webp",
   "ampoule": "/lib/images/vocabulaire/objets/ampoule.webp",
@@ -6081,13 +6579,32 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "wifi": "/lib/images/vocabulaire/technologie/wifi.webp",
   "zoom": "/lib/images/vocabulaire/technologie/zoom.webp",
   "écouteurs": "/lib/images/vocabulaire/technologie/écouteurs.webp",
+  "anniversaire": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp",
+  "année": "/lib/images/vocabulaire/temps-calendrier/année.webp",
+  "après-midi": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp",
+  "automne": "/lib/images/vocabulaire/temps-calendrier/automne.webp",
+  "calendrier": "/lib/images/vocabulaire/temps-calendrier/calendrier.webp",
   "dimanche": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp",
+  "fête": "/lib/images/vocabulaire/temps-calendrier/fête.webp",
   "hiver": "/lib/images/vocabulaire/temps-calendrier/hiver.webp",
   "jeudi": "/lib/images/vocabulaire/temps-calendrier/jeudi.webp",
   "jour": "/lib/images/vocabulaire/temps-calendrier/jour.webp",
   "lundi": "/lib/images/vocabulaire/temps-calendrier/lundi.webp",
+  "mardi": "/lib/images/vocabulaire/temps-calendrier/mardi.webp",
+  "matin": "/lib/images/vocabulaire/temps-calendrier/matin.webp",
+  "mercredi": "/lib/images/vocabulaire/temps-calendrier/mercredi.webp",
+  "mois": "/lib/images/vocabulaire/temps-calendrier/mois.webp",
+  "nouvel-an": "/lib/images/vocabulaire/temps-calendrier/nouvel-an.webp",
+  "noël": "/lib/images/vocabulaire/temps-calendrier/noël.webp",
   "nuit": "/lib/images/vocabulaire/temps-calendrier/nuit.webp",
+  "printemps": "/lib/images/vocabulaire/temps-calendrier/printemps.webp",
+  "pâques": "/lib/images/vocabulaire/temps-calendrier/pâques.webp",
+  "samedi": "/lib/images/vocabulaire/temps-calendrier/samedi.webp",
   "semaine": "/lib/images/vocabulaire/temps-calendrier/semaine.webp",
+  "soir": "/lib/images/vocabulaire/temps-calendrier/soir.webp",
+  "vendredi": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp",
+  "week-end": "/lib/images/vocabulaire/temps-calendrier/week-end.webp",
+  "été": "/lib/images/vocabulaire/temps-calendrier/été.webp",
   "ambulance": "/lib/images/vocabulaire/transports/ambulance.webp",
   "autobus": "/lib/images/vocabulaire/transports/autobus.webp",
   "avion": "/lib/images/vocabulaire/transports/avion.webp",
