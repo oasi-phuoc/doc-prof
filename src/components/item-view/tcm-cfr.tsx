@@ -1,5 +1,9 @@
 import { useCallback, useMemo, useState } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
+import {
+  tcmCfrAudioDownloadName,
+  tcmCfrAudioKindFromParts,
+} from '@/tcm-cfr/audio-nombres'
 import { mirrorPoint, type GridPt } from '@/tcm-cfr/symetrie'
 
 /** Concatène des MP3 (mêmes paramètres TTS) en un Blob téléchargeable. */
@@ -56,7 +60,7 @@ export function AudioDictationBlock({
     if (!url) return
     const a = document.createElement('a')
     a.href = url
-    a.download = `tcm-cfr-audio-${item.answer || 'dictée'}.mp3`
+    a.download = tcmCfrAudioDownloadName({ kind: tcmCfrAudioKindFromParts(parts) })
     a.click()
   }
 
