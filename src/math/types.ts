@@ -194,6 +194,17 @@ export type CoordScene = {
   originRow?: number
   /** Masquer axes, labels x/y et graduations (origine à deviner). */
   hideAxes?: boolean
+  /** Masquer uniquement numérotation et libellés x/y (axes visibles). */
+  hideAxisLabels?: boolean
+  /** Flèches aux extrémités positives des axes. */
+  axisArrows?: boolean
+  /**
+   * Nombre de colonnes avec traits de grille visibles (≤ `cols`).
+   * Au-delà : espace pour prolonger l’axe sans traits (ex. 21–22).
+   */
+  visibleCols?: number
+  /** Nombre de lignes avec traits de grille visibles (≤ `rows`). */
+  visibleRows?: number
   /** Afficher l’origine (éditeur / corrigé). */
   showOrigin?: boolean
   /** Pas de la grille (1 ou 0,5). */

@@ -712,7 +712,7 @@ function genEx26(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 27 — quadrant I 20×20, axes fléchés non gradués. */
+/** Ex. 27 — cadran I : grille 20×20 visible, axes prolongés à 22 avec flèches. */
 function genEx27(rng: Rng): MathItem[] {
   const ptsPlace: Array<{ x: number; y: number; label: string }> = []
   const ptsRead: Array<{ x: number; y: number; label: string }> = []
@@ -738,16 +738,20 @@ function genEx27(rng: Rng): MathItem[] {
         '1. Graduez et nommez les axes sur le plan.\n2. Placez les points suivants sur le plan.\n3. Écrivez les coordonnées des points suivants.',
       coordScene: {
         variant: 'axes',
-        cols: 20,
-        rows: 20,
+        cols: 22,
+        rows: 22,
+        visibleCols: 20,
+        visibleRows: 20,
         axis: 'numeric',
-        rangeX: 20,
-        rangeY: 20,
+        rangeX: 22,
+        rangeY: 22,
         originCol: 0,
         originRow: 0,
         hideAxes: false,
+        hideAxisLabels: true,
+        axisArrows: true,
         showOrigin: true,
-        cellMm: 3,
+        cellMm: 6,
         unitSquares: 1,
         marks: [
           ...ptsPlace.map((p) => ({

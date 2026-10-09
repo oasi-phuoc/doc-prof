@@ -358,12 +358,20 @@ function AxesScene({
   const rangeY = scene.rangeY ?? scene.range ?? 5
   const cols = scene.cols || Math.round(2 * rangeX * unit)
   const rows = scene.rows || Math.round(2 * rangeY * unit)
+  const visibleCols = Math.min(cols, scene.visibleCols ?? cols)
+  const visibleRows = Math.min(rows, scene.visibleRows ?? rows)
   const originCol = scene.originCol ?? cols / 2
   const originRow = scene.originRow ?? rows / 2
   const hideAxes = Boolean(scene.hideAxes)
+  const showAxisLabels = !hideAxes && !scene.hideAxisLabels
+  const axisArrows = Boolean(scene.axisArrows) && !hideAxes
   const showOrigin = Boolean(scene.showOrigin)
   const step = scene.step ?? 1
-  const { padL, padR, padT, padB } = mmPads('axes')
+  const basePads = mmPads('axes')
+  const padL = basePads.padL
+  const padR = basePads.padR + (axisArrows ? 3 : 0)
+  const padT = basePads.padT + (axisArrows ? 3 : 0)
+  const padB = basePads.padB
   const gridW = cols * cellMm
   const gridH = rows * cellMm
   const svgW = padL + gridW + padR
@@ -387,6 +395,13 @@ function AxesScene({
   const tickY = Array.from({ length: rows + 1 }, (_, row) => mathAtRow(row)).filter(
     (v) => Number.isInteger(v) && v !== 0 && v % labelStepY === 0 && Number.isInteger(v / step),
   )
+  const visibleTopY = rowY(visibleRows)
+  const visibleRightX = colX(visibleCols)
+  const axisTipX = colX(cols)
+  const axisTipY = rowY(rows)
+  const originSvg = to(0, 0)
+  const arrowLen = Math.max(2.2, cellMm * 0.45)
+  const arrowHalf = Math.max(1.1, cellMm * 0.22)
 
   return (
     <svg
@@ -398,40 +413,78 @@ function AxesScene({
       aria-label={hideAxes ? 'Quadrillage sans axes' : 'Repère à quatre cadrans'}
     >
       {fineN
-        ? Array.from({ length: cols * fineN + 1 }, (_, i) => {
+        ? Array.from({ length: visibleCols * fineN + 1 }, (_, i) => {
             if (i % fineN === 0) return null
             const cx = padL + (i / fineN) * cellMm
-            return <line key={`fx-${i}`} x1={cx} y1={padT} x2={cx} y2={padT + gridH} className="grid-line-fine" />
+            return (
+              <line
+                key={`fx-${i}`}
+                x1={cx}
+                y1={visibleTopY}
+                x2={cx}
+                y2={rowY(0)}
+                className="grid-line-fine"
+              />
+            )
           })
         : null}
       {fineN
-        ? Array.from({ length: rows * fineN + 1 }, (_, i) => {
+        ? Array.from({ length: visibleRows * fineN + 1 }, (_, i) => {
             if (i % fineN === 0) return null
-            const cy = padT + (i / fineN) * cellMm
-            return <line key={`fy-${i}`} x1={padL} y1={cy} x2={padL + gridW} y2={cy} className="grid-line-fine" />
+            const cy = padT + ((rows - visibleRows) * cellMm) + (i / fineN) * cellMm
+            return (
+              <line
+                key={`fy-${i}`}
+                x1={padL}
+                y1={cy}
+                x2={visibleRightX}
+                y2={cy}
+                className="grid-line-fine"
+              />
+            )
           })
         : null}
-      {Array.from({ length: cols + 1 }, (_, col) => (
-        <line
-          key={`vx-${col}`}
-          x1={colX(col)}
-          y1={padT}
-          x2={colX(col)}
-          y2={padT + gridH}
-          className={!hideAxes && col === originCol ? 'axis-line' : 'grid-line'}
-        />
-      ))}
-      {Array.from({ length: rows + 1 }, (_, row) => (
-        <line
-          key={`hy-${row}`}
-          x1={padL}
-          y1={rowY(row)}
-          x2={padL + gridW}
-          y2={rowY(row)}
-          className={!hideAxes && row === originRow ? 'axis-line' : 'grid-line'}
-        />
-      ))}
-      {!hideAxes
+      {Array.from({ length: cols + 1 }, (_, col) => {
+        const isAxis = !hideAxes && col === originCol
+        if (!isAxis && col > visibleCols) return null
+        return (
+          <line
+            key={`vx-${col}`}
+            x1={colX(col)}
+            y1={isAxis ? axisTipY : visibleTopY}
+            x2={colX(col)}
+            y2={rowY(0)}
+            className={isAxis ? 'axis-line' : 'grid-line'}
+          />
+        )
+      })}
+      {Array.from({ length: rows + 1 }, (_, row) => {
+        const isAxis = !hideAxes && row === originRow
+        if (!isAxis && row > visibleRows) return null
+        return (
+          <line
+            key={`hy-${row}`}
+            x1={padL}
+            y1={rowY(row)}
+            x2={isAxis ? axisTipX : visibleRightX}
+            y2={rowY(row)}
+            className={isAxis ? 'axis-line' : 'grid-line'}
+          />
+        )
+      })}
+      {axisArrows ? (
+        <g className="axis-arrows" aria-hidden>
+          <polygon
+            className="axis-arrow"
+            points={`${axisTipX},${originSvg.cy} ${axisTipX - arrowLen},${originSvg.cy - arrowHalf} ${axisTipX - arrowLen},${originSvg.cy + arrowHalf}`}
+          />
+          <polygon
+            className="axis-arrow"
+            points={`${originSvg.cx},${axisTipY} ${originSvg.cx - arrowHalf},${axisTipY + arrowLen} ${originSvg.cx + arrowHalf},${axisTipY + arrowLen}`}
+          />
+        </g>
+      ) : null}
+      {showAxisLabels
         ? tickX.map((v) => {
             const onX = to(v, 0)
             return (
@@ -441,7 +494,7 @@ function AxesScene({
             )
           })
         : null}
-      {!hideAxes
+      {showAxisLabels
         ? tickY.map((v) => {
             const onY = to(0, v)
             return (
@@ -451,12 +504,12 @@ function AxesScene({
             )
           })
         : null}
-      {!hideAxes ? (
+      {showAxisLabels ? (
         <text x={padL + gridW + 0.8} y={to(0, 0).cy - 1.2} className="axis-label" fontSize={3.4}>
           x
         </text>
       ) : null}
-      {!hideAxes ? (
+      {showAxisLabels ? (
         <text x={to(0, 0).cx + 1.4} y={padT - 0.6} className="axis-label" fontSize={3.4}>
           y
         </text>
