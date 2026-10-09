@@ -213,9 +213,16 @@ officielle est **DeniseNeural** avec ralentissement **−25 %**.
 
 ### Audios des nombres
 
-`public/lib/audio/nombre/{n}.mp3` (1 à 100), même voix et même débit. Texte lu =
-écriture suisse romande de `numberToFrench` (`src/francais/french-numbers.ts` :
-septante, huitante, nonante), pas les chiffres.
+`public/lib/audio/nombre/{n}.mp3` : 1 à 100, centaines 200 à 900 (« deux cents »…)
+et 1000 (« mille »), même voix et même débit. Texte lu = écriture suisse romande de
+`numberToFrench` (`src/francais/french-numbers.ts` : septante, huitante, nonante),
+pas les chiffres.
+
+Combinaison : un audio `nombre/100-12` (ou `/lib/audio/nombre/100-12.mp3`) enchaîne
+`100.mp3` puis `12.mp3` dans `PlayerAudio` (`tcfAudioSequence`, `src/tcf/media.ts`).
+`nombreAudioCombinaison(n)` donne le chemin pour un entier de 1 à 9999
+(345 → `nombre/300-45`, 2012 → `nombre/2-1000-12`). Pas de QR imprimé pour une
+combinaison (aucun fichier unique) ; ne pas générer de MP3 pour les nombres composés.
 
 ### Paramètres audio
 

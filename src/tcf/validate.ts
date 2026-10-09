@@ -1,5 +1,5 @@
 import { TCF_TYPES } from './catalog'
-import { tcfAudioSrc, tcfImageSrc } from './media'
+import { tcfAudioSequence, tcfAudioSrc, tcfImageSrc } from './media'
 import { TCF_IMAGES_A_COCHER, TCF_QCM_MAX, TCF_QCM_MIN } from './templates'
 import type { TcfExercise, TcfQuestion } from './types'
 
@@ -264,7 +264,7 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
     default:
       break
   }
-  return [...images.map(tcfImageSrc), ...audios.map(tcfAudioSrc)].filter(
+  return [...images.map(tcfImageSrc), ...audios.flatMap((a) => tcfAudioSequence(a) ?? [tcfAudioSrc(a)])].filter(
     (src) => src && !src.startsWith('data:'),
   )
 }
