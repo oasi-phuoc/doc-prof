@@ -108,23 +108,28 @@ function HeightBracket({
 export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDims }) {
   if (!type || !ALL.includes(type)) return null
   const d = dims ?? {}
+  const bare = Boolean(d.bare)
   const unit = u(dims)
   const kind = d.triangleKind ?? 'scalene'
-  const hasHeight = d.height != null
-  const forArea = hasHeight || (type === 'triangle' && d.base != null && d.a == null)
+  const hasHeight = !bare && d.height != null
+  const forArea = !bare && (hasHeight || (type === 'triangle' && d.base != null && d.a == null))
 
   /** Styles placement TCM : toutes les cotes utiles sur une figure. */
-  const paraPlacement = type === 'parallelogram' && d.base != null && d.side != null && d.height != null
+  const paraPlacement =
+    !bare && type === 'parallelogram' && d.base != null && d.side != null && d.height != null
   const triPlacement =
-    type === 'triangle' && d.a != null && d.b != null && d.c != null && d.height != null
-  const rhombusPlacement = type === 'rhombus' && d.side != null && d.d1 != null && d.d2 != null
+    !bare && type === 'triangle' && d.a != null && d.b != null && d.c != null && d.height != null
+  const rhombusPlacement =
+    !bare && type === 'rhombus' && d.side != null && d.d1 != null && d.d2 != null
   const trapPlacement =
+    !bare &&
     type === 'trapezoid' &&
     d.top != null &&
     d.bottom != null &&
     (d.c != null || d.side != null) &&
     d.height != null
-  const circleDiameter = type === 'circle' && (d.diameter != null || (d.length != null && d.radius == null))
+  const circleDiameter =
+    !bare && type === 'circle' && (d.diameter != null || (d.length != null && d.radius == null))
 
   const viewBox = paraPlacement
     ? '0 0 350 168'
@@ -251,7 +256,9 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'triangle' && !triPlacement && kind === 'right' && (
           <>
             <polygon points="48,152 210,152 48,42" />
-            <polyline points="48,136 64,136 64,152" fill="none" strokeWidth="1.6" />
+            {!bare ? (
+              <polyline points="48,136 64,136 64,152" fill="none" strokeWidth="1.6" />
+            ) : null}
             {forArea && d.base != null && d.height != null ? (
               <>
                 <line
@@ -462,7 +469,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                     : '85,42 185,42 225,150 45,150'
               }
             />
-            {d.trapezoidKind === 'rectangle' && (
+            {!bare && d.trapezoidKind === 'rectangle' && (
               <polyline points="48,134 64,134 64,150" fill="none" strokeWidth="1.6" />
             )}
             {hasHeight && (
@@ -477,27 +484,27 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
                 strokeOpacity="0.85"
               />
             )}
-            {d.top != null && (
+            {!bare && d.top != null && (
               <L x={135} y={30}>
                 {fmt(d.top)} {unit}
               </L>
             )}
-            {(d.bottom != null || d.base != null) && (
+            {!bare && (d.bottom != null || d.base != null) && (
               <L x={135} y={172}>
                 {fmt(d.bottom ?? d.base!)} {unit}
               </L>
             )}
-            {(d.height != null || d.ask === 'height') && (
+            {!bare && (d.height != null || d.ask === 'height') && (
               <L x={196} y={100} anchor="start">
                 {d.ask === 'height' ? 'h = ?' : `h = ${fmt(d.height!)} ${unit}`}
               </L>
             )}
-            {d.a != null && (
+            {!bare && d.a != null && (
               <L x={52} y={100} anchor="end">
                 {fmt(d.a)} {unit}
               </L>
             )}
-            {(d.b != null || d.ask === 'b') && (
+            {!bare && (d.b != null || d.ask === 'b') && (
               <L x={220} y={100} anchor="start">
                 {d.ask === 'b' ? '?' : `${fmt(d.b!)} ${unit}`}
               </L>
@@ -582,19 +589,23 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         {type === 'circle' && !circleDiameter && (
           <>
             <circle cx="130" cy="88" r="58" />
-            <line x1="130" y1="88" x2="188" y2="88" fill="none" strokeWidth="2" />
-            <line
-              x1="130"
-              y1="30"
-              x2="130"
-              y2="146"
-              fill="none"
-              strokeWidth="1.5"
-              strokeDasharray="5 4"
-              strokeOpacity="0.7"
-            />
-            <circle cx="130" cy="88" r="2.4" fillOpacity="1" stroke="none" />
-            {(d.radius != null || d.ask === 'radius') && (
+            {!bare ? (
+              <>
+                <line x1="130" y1="88" x2="188" y2="88" fill="none" strokeWidth="2" />
+                <line
+                  x1="130"
+                  y1="30"
+                  x2="130"
+                  y2="146"
+                  fill="none"
+                  strokeWidth="1.5"
+                  strokeDasharray="5 4"
+                  strokeOpacity="0.7"
+                />
+                <circle cx="130" cy="88" r="2.4" fillOpacity="1" stroke="none" />
+              </>
+            ) : null}
+            {!bare && (d.radius != null || d.ask === 'radius') && (
               <L x={130} y={172}>
                 {d.ask === 'radius' ? 'r = ?' : `r = ${fmt(d.radius!)} ${unit}`}
               </L>

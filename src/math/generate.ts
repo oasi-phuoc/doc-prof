@@ -587,10 +587,11 @@ function generateItems(
   difficulty: Difficulty,
   range?: NumberRange,
   shapes?: Figure[],
+  worksheetSeed?: number,
 ): MathItem[] {
   const tcm = tryGenerateTcmItems(typeId, count, rng)
   if (tcm) return tcm
-  const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng)
+  const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng, worksheetSeed)
   if (tcmCfr) return tcmCfr
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
@@ -1253,6 +1254,7 @@ function generateOne(
 function buildSingleBlock(
   config: PageConfig,
   seed: number,
+  worksheetSeed = seed,
 ): {
   title: string
   instruction: string
@@ -1472,6 +1474,7 @@ function buildSingleBlock(
       difficulty,
       numberRangeFrom(config),
       config.quadLibre ? config.quadShapes : undefined,
+      worksheetSeed,
     ),
   }
 }
@@ -1486,13 +1489,18 @@ function isInfoPageType(typeId: string): boolean {
   )
 }
 
-export function buildPage(config: PageConfig, seed: number, startExercise = 1): WorksheetPage {
+export function buildPage(
+  config: PageConfig,
+  seed: number,
+  startExercise = 1,
+  worksheetSeed = seed,
+): WorksheetPage {
   const blocksIn = pageBlocks(config)
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(config, block)
     const local = block.contentSeed ?? 0
-    const result = buildSingleBlock(single, seed + index * 10007 + local)
+    const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const isTheory = isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTcmConsignes = isInfoPageType(block.exerciseType)
@@ -1562,7 +1570,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
   const out: WorksheetPage[] = []
 
   pages.forEach((page, index) => {
-    const worksheet = buildPage(page, seed + index * 7919, exerciseNo)
+    const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed)
     const scoredBlocks = worksheet.blocks.filter((block) => !isInfoPageType(block.exerciseType))
     if (scoredBlocks.length) {
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1

@@ -652,13 +652,19 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
   }
 
-  /** Playlists audio de la page active (TCM CFR ex. 1–2). */
+  /** Playlists audio TCM CFR (page active, sinon toutes les feuilles du test). */
   function currentTcmCfrAudioPlaylists(): string[][] {
-    const block = activeSheet?.blocks[safeBlockIndex]
-    if (!block) return []
-    return block.items
-      .map((item) => item.audioParts ?? (item.audioSrc ? [item.audioSrc] : []))
-      .filter((parts): parts is string[] => parts.length > 0)
+    const fromSheet = (sheet: (typeof worksheets)[number] | undefined): string[][] => {
+      if (!sheet) return []
+      return sheet.blocks.flatMap((block) =>
+        block.items
+          .map((item) => item.audioParts ?? (item.audioSrc ? [item.audioSrc] : []))
+          .filter((parts): parts is string[] => parts.length > 0),
+      )
+    }
+    const local = fromSheet(activeSheet)
+    if (local.length > 0) return local
+    return worksheets.flatMap((sheet) => fromSheet(sheet))
   }
 
   async function downloadActiveTcmCfrAudios() {
@@ -712,7 +718,6 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isTcf = activePage.domain === TCF_DOMAIN
   /** Page 1 Informations (TCM / CFR / CSC) : pas de Questions ni Colonnes. */
   const isTcmInfoPage = isTcmFamilyConsignesType(activeBlock.exerciseType)
-  const tcmCfrHasAudio = isTcmCfr && currentTcmCfrAudioPlaylists().length > 0
   const tcfNiveau = tcfNiveauFromDifficulty(activeBlock.difficulty)
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
   const isSoutienMots = soutienKind === 'mots'
@@ -3362,29 +3367,19 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </svg>
                   </button>
                 )}
-                {isTcf ? (
+                {isTcf || isTcmCfr ? (
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
-                    onClick={() => void downloadActiveTcfAudios()}
+                    onClick={() =>
+                      void (isTcf ? downloadActiveTcfAudios() : downloadActiveTcmCfrAudios())
+                    }
                     aria-label="Télécharger les audios de la fiche"
-                    title="Télécharger les audios de la fiche"
-                  >
-                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-                      <path
-                        fill="currentColor"
-                        d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L11 13.59V4a1 1 0 0 1 1-1zM5 18a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"
-                      />
-                    </svg>
-                  </button>
-                ) : null}
-                {tcmCfrHasAudio ? (
-                  <button
-                    className="print-chip is-icon is-generate"
-                    type="button"
-                    onClick={() => void downloadActiveTcmCfrAudios()}
-                    aria-label="Télécharger les audios de la fiche"
-                    title="Télécharger les audios (nombres ou multiplications)"
+                    title={
+                      isTcf
+                        ? 'Télécharger les audios de la fiche'
+                        : 'Télécharger les audios (nombres ou multiplications)'
+                    }
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                       <path

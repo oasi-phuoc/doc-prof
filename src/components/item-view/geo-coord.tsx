@@ -58,6 +58,34 @@ export function GeoBlock({
       </div>
     )
   }
+  if (item.geoNameCard) {
+    const lines = item.propertyLines ?? []
+    return (
+      <div className="geo-block geo-name-card" aria-label="Forme et réponses">
+        <div className="geo-name-card-inner">
+          <div className="geo-name-card-figure">
+            {item.compositeScene ? (
+              <CompositeFigure scene={item.compositeScene} />
+            ) : (
+              <GeometryFigure type={item.figure} dims={item.dims} />
+            )}
+          </div>
+          <div className="geo-name-card-answers">
+            {lines.map((line) => (
+              <div className="property-line" key={line.label}>
+                <span className="property-label">{line.label} :</span>
+                {show ? (
+                  <strong className="filled-answer property-answer">{line.answer}</strong>
+                ) : (
+                  <span className="answer-line-field property-blank">{'\u00a0'}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="geo-block">
       {item.compositeScene ? (

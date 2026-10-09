@@ -1,6 +1,7 @@
 /**
  * Figures de symétrie axiale (axe vertical) pour TCM CFR.
  * Quadrillage 20 × 10 cases, axe au milieu (x = 10), figure d’un seul côté.
+ * Traits d’une case d’épaisseur (escaliers, lettres).
  */
 import { pick, type Rng } from '@/math/rng'
 
@@ -30,218 +31,185 @@ function T(
 }
 
 /**
- * Dix silhouettes reconnaissables (géométrie originale).
+ * Silhouettes à 1 case d’épaisseur (géométrie originale).
  * Toutes définies à gauche de l’axe, sans le toucher (x max ≤ 9).
- * `pickSymmetryTemplate` peut les retourner à droite par symétrie.
  */
 export const SYMMETRY_TEMPLATES: readonly SymmetryTemplate[] = [
-  // 1. Bateau à voile
-  T('bateau', 'left', [
-    [
-      { x: 1, y: 2 },
-      { x: 8, y: 2 },
-      { x: 7, y: 1 },
-      { x: 2, y: 1 },
-      { x: 1, y: 2 },
-    ],
-    [
-      { x: 4, y: 2 },
-      { x: 4, y: 9 },
-    ],
-    [
-      { x: 1, y: 3 },
-      { x: 4, y: 3 },
-      { x: 4, y: 9 },
-      { x: 1, y: 3 },
-    ],
-    [
-      { x: 4, y: 5 },
-      { x: 7, y: 5 },
-      { x: 4, y: 9 },
-      { x: 4, y: 5 },
-    ],
-  ]),
-
-  // 2. Maison
-  T('maison', 'left', [
-    [
-      { x: 1, y: 1 },
-      { x: 8, y: 1 },
-      { x: 8, y: 5 },
-      { x: 1, y: 5 },
-      { x: 1, y: 1 },
-    ],
-    [
-      { x: 1, y: 5 },
-      { x: 4.5, y: 9 },
-      { x: 8, y: 5 },
-    ],
-    [
-      { x: 3, y: 1 },
-      { x: 3, y: 4 },
-      { x: 5, y: 4 },
-      { x: 5, y: 1 },
-    ],
-    [
-      { x: 6, y: 3 },
-      { x: 6, y: 4 },
-      { x: 7, y: 4 },
-      { x: 7, y: 3 },
-      { x: 6, y: 3 },
-    ],
-  ]),
-
-  // 3. Arbre
-  T('arbre', 'left', [
-    [
-      { x: 4, y: 1 },
-      { x: 4, y: 4 },
-    ],
-    [
-      { x: 3, y: 1 },
-      { x: 5, y: 1 },
-    ],
-    [
-      { x: 1, y: 4 },
-      { x: 7, y: 4 },
-      { x: 6, y: 6 },
-      { x: 4, y: 9 },
-      { x: 2, y: 6 },
-      { x: 1, y: 4 },
-    ],
-  ]),
-
-  // 4. Flèche (pointe vers l’axe)
-  T('fleche', 'left', [
-    [
-      { x: 1, y: 4 },
-      { x: 5, y: 4 },
-      { x: 5, y: 2 },
-      { x: 9, y: 5 },
-      { x: 5, y: 8 },
-      { x: 5, y: 6 },
-      { x: 1, y: 6 },
-      { x: 1, y: 4 },
-    ],
-  ]),
-
-  // 5. Lettre E
-  T('lettre-e', 'left', [
-    [
-      { x: 2, y: 1 },
-      { x: 2, y: 9 },
-      { x: 8, y: 9 },
-    ],
-    [
-      { x: 2, y: 5 },
-      { x: 6, y: 5 },
-    ],
-    [
-      { x: 2, y: 1 },
-      { x: 8, y: 1 },
-    ],
-  ]),
-
-  // 6. Escaliers
+  // Escaliers (1 case)
   T('escaliers', 'left', [
     [
       { x: 1, y: 1 },
-      { x: 3, y: 1 },
+      { x: 2, y: 1 },
+      { x: 2, y: 2 },
+      { x: 3, y: 2 },
       { x: 3, y: 3 },
-      { x: 5, y: 3 },
+      { x: 4, y: 3 },
+      { x: 4, y: 4 },
+      { x: 5, y: 4 },
       { x: 5, y: 5 },
-      { x: 7, y: 5 },
+      { x: 6, y: 5 },
+      { x: 6, y: 6 },
+      { x: 7, y: 6 },
       { x: 7, y: 7 },
-      { x: 9, y: 7 },
+      { x: 8, y: 7 },
+      { x: 8, y: 8 },
+      { x: 9, y: 8 },
       { x: 9, y: 9 },
     ],
   ]),
 
-  // 7. Drapeau
-  T('drapeau', 'left', [
+  // Lettre E (contour 1 case)
+  T('lettre-e', 'left', [
     [
       { x: 2, y: 1 },
-      { x: 2, y: 9 },
-    ],
-    [
-      { x: 2, y: 9 },
-      { x: 8, y: 9 },
-      { x: 8, y: 6 },
-      { x: 2, y: 6 },
-    ],
-  ]),
-
-  // 8. Fusée
-  T('fusee', 'left', [
-    [
-      { x: 3, y: 2 },
-      { x: 6, y: 2 },
-      { x: 6, y: 7 },
-      { x: 4.5, y: 9 },
-      { x: 3, y: 7 },
-      { x: 3, y: 2 },
-    ],
-    [
-      { x: 3, y: 2 },
-      { x: 1, y: 1 },
-      { x: 3, y: 1 },
-    ],
-    [
-      { x: 6, y: 2 },
       { x: 8, y: 1 },
-      { x: 6, y: 1 },
-    ],
-    [
-      { x: 4.5, y: 4 },
-      { x: 4.5, y: 6 },
-    ],
-  ]),
-
-  // 9. Poisson
-  T('poisson', 'left', [
-    [
-      { x: 1, y: 5 },
-      { x: 3, y: 7 },
-      { x: 6, y: 8 },
-      { x: 8, y: 6 },
-      { x: 9, y: 5 },
-      { x: 8, y: 4 },
-      { x: 6, y: 2 },
-      { x: 3, y: 3 },
-      { x: 1, y: 5 },
-    ],
-    [
-      { x: 1, y: 5 },
-      { x: 0, y: 7 },
-      { x: 0, y: 3 },
-      { x: 1, y: 5 },
-    ],
-    [
-      { x: 7, y: 5.5 },
-      { x: 7.5, y: 5.5 },
+      { x: 8, y: 2 },
+      { x: 3, y: 2 },
+      { x: 3, y: 4 },
+      { x: 7, y: 4 },
+      { x: 7, y: 5 },
+      { x: 3, y: 5 },
+      { x: 3, y: 8 },
+      { x: 8, y: 8 },
+      { x: 8, y: 9 },
+      { x: 2, y: 9 },
+      { x: 2, y: 1 },
     ],
   ]),
 
-  // 10. Clé
-  T('cle', 'left', [
+  // Lettre C
+  T('lettre-c', 'left', [
     [
-      { x: 2, y: 7 },
-      { x: 4, y: 9 },
-      { x: 6, y: 9 },
-      { x: 8, y: 7 },
-      { x: 8, y: 5 },
-      { x: 6, y: 3 },
-      { x: 4, y: 3 },
-      { x: 2, y: 5 },
-      { x: 2, y: 7 },
+      { x: 8, y: 2 },
+      { x: 8, y: 1 },
+      { x: 3, y: 1 },
+      { x: 2, y: 2 },
+      { x: 2, y: 8 },
+      { x: 3, y: 9 },
+      { x: 8, y: 9 },
+      { x: 8, y: 8 },
+      { x: 3, y: 8 },
+      { x: 3, y: 2 },
+      { x: 8, y: 2 },
     ],
+  ]),
+
+  // Lettre F
+  T('lettre-f', 'left', [
     [
-      { x: 5, y: 3 },
-      { x: 5, y: 1 },
+      { x: 2, y: 1 },
+      { x: 8, y: 1 },
+      { x: 8, y: 2 },
+      { x: 3, y: 2 },
+      { x: 3, y: 4 },
+      { x: 7, y: 4 },
+      { x: 7, y: 5 },
+      { x: 3, y: 5 },
+      { x: 3, y: 9 },
+      { x: 2, y: 9 },
+      { x: 2, y: 1 },
+    ],
+  ]),
+
+  // Lettre H
+  T('lettre-h', 'left', [
+    [
+      { x: 2, y: 1 },
+      { x: 3, y: 1 },
+      { x: 3, y: 4 },
+      { x: 7, y: 4 },
+      { x: 7, y: 1 },
+      { x: 8, y: 1 },
+      { x: 8, y: 9 },
+      { x: 7, y: 9 },
+      { x: 7, y: 5 },
+      { x: 3, y: 5 },
+      { x: 3, y: 9 },
+      { x: 2, y: 9 },
+      { x: 2, y: 1 },
+    ],
+  ]),
+
+  // Lettre I
+  T('lettre-i', 'left', [
+    [
+      { x: 3, y: 1 },
       { x: 7, y: 1 },
       { x: 7, y: 2 },
       { x: 6, y: 2 },
-      { x: 6, y: 1.5 },
+      { x: 6, y: 8 },
+      { x: 7, y: 8 },
+      { x: 7, y: 9 },
+      { x: 3, y: 9 },
+      { x: 3, y: 8 },
+      { x: 4, y: 8 },
+      { x: 4, y: 2 },
+      { x: 3, y: 2 },
+      { x: 3, y: 1 },
+    ],
+  ]),
+
+  // Lettre L
+  T('lettre-l', 'left', [
+    [
+      { x: 2, y: 1 },
+      { x: 3, y: 1 },
+      { x: 3, y: 8 },
+      { x: 8, y: 8 },
+      { x: 8, y: 9 },
+      { x: 2, y: 9 },
+      { x: 2, y: 1 },
+    ],
+  ]),
+
+  // Lettre T
+  T('lettre-t', 'left', [
+    [
+      { x: 1, y: 1 },
+      { x: 9, y: 1 },
+      { x: 9, y: 2 },
+      { x: 6, y: 2 },
+      { x: 6, y: 9 },
+      { x: 4, y: 9 },
+      { x: 4, y: 2 },
+      { x: 1, y: 2 },
+      { x: 1, y: 1 },
+    ],
+  ]),
+
+  // Lettre U
+  T('lettre-u', 'left', [
+    [
+      { x: 2, y: 1 },
+      { x: 3, y: 1 },
+      { x: 3, y: 7 },
+      { x: 4, y: 8 },
+      { x: 6, y: 8 },
+      { x: 7, y: 7 },
+      { x: 7, y: 1 },
+      { x: 8, y: 1 },
+      { x: 8, y: 8 },
+      { x: 7, y: 9 },
+      { x: 3, y: 9 },
+      { x: 2, y: 8 },
+      { x: 2, y: 1 },
+    ],
+  ]),
+
+  // Lettre Z
+  T('lettre-z', 'left', [
+    [
+      { x: 2, y: 1 },
+      { x: 8, y: 1 },
+      { x: 8, y: 2 },
+      { x: 4, y: 2 },
+      { x: 8, y: 8 },
+      { x: 8, y: 9 },
+      { x: 2, y: 9 },
+      { x: 2, y: 8 },
+      { x: 6, y: 8 },
+      { x: 2, y: 2 },
+      { x: 2, y: 1 },
     ],
   ]),
 ]

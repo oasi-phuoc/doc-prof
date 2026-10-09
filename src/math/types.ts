@@ -311,6 +311,8 @@ export type FigureDims = {
   trapezoidKind?: 'rectangle' | 'isosceles' | 'scalene'
   /** Cote à trouver : affichée « ? » sur la figure. */
   ask?: 'side' | 'length' | 'width' | 'height' | 'radius' | 'a' | 'b' | 'c' | 'base' | 'top'
+  /** Forme seule : pas de cotes, pas de marque d’angle droit, pas de rayon. */
+  bare?: boolean
 }
 
 export type DivisionStep = {
@@ -433,6 +435,8 @@ export type MathItem = {
   geoDualPads?: boolean
   /** Geo dual : espace réduit de moitié entre la grille et les lignes Périmètre / Aire. */
   geoDualTight?: boolean
+  /** Cadre forme + traits (TCM CFR ex. 16–17) : figure à gauche, réponses à droite. */
+  geoNameCard?: boolean
   /**
    * Forme fractionnaire (TCM ex. 21/22, port soutien-scolaire).
    * `mode: 'color'` = fraction donnée, forme à colorier ;

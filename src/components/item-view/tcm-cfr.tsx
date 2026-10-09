@@ -147,7 +147,7 @@ export function SegmentMeasureBlock({
           )
         })}
       </div>
-      <p className="column-prompt" style={{ marginTop: '0.8em' }}>
+      <p className="column-prompt tcm-cfr-segment-cochez">
         Cochez la bonne réponse :
       </p>
       {qPrompts.map((q, qi) => (

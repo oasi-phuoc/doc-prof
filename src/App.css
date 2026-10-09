@@ -4040,7 +4040,25 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcm-cfr-segment-num{font-weight:700;min-width:1.6em}
 .tcm-cfr-segment-line-wrap{flex:1;min-width:0}
 .tcm-cfr-segment-line{height:0;border-top:2.5px solid var(--ink,#222);max-width:100%}
+.tcm-cfr-segment-cochez{margin-top:15px;padding-top:0}
 .tcm-cfr-segment-qcm{margin-top:6px}
+/* TCM CFR ex. 16–17 : cadre forme | traits, hauteur uniforme. */
+.geo-block.geo-name-card{
+  border:1px solid var(--ink,#222);padding:8px 10px;width:100%;box-sizing:border-box
+}
+.geo-name-card-inner{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:12px;align-items:center;width:100%
+}
+.geo-name-card-figure{
+  display:flex;justify-content:center;align-items:center;min-height:42mm;width:100%
+}
+.geo-name-card-figure .geometry-figure{
+  height:38mm;width:auto;max-width:100%
+}
+.geo-name-card-answers{
+  display:flex;flex-direction:column;gap:8px;min-width:0;width:100%
+}
+.exercise-item.layout-geo:has(.geo-name-card){margin-bottom:8px}
 .tcm-cfr-qcm-choices{display:flex;gap:22px;margin-top:6px;align-items:flex-start}
 .tcm-cfr-qcm-choice{
   display:inline-flex;flex-direction:column;align-items:center;gap:4px;
