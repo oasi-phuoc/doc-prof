@@ -38,8 +38,8 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 13, label: 'Lire fractions', blocks: [{ exerciseType: 'tcm-cfr-ex13', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
   { id: 14, label: 'Problème magasin', blocks: [{ exerciseType: 'tcm-cfr-ex14', count: 2, columns: 1, pointsPerQuestion: 3 }] },
   { id: 15, label: 'Problème mécanicien', blocks: [{ exerciseType: 'tcm-cfr-ex15', count: 2, columns: 1, pointsPerQuestion: 3 }] },
-  { id: 16, label: 'Figures et propriétés', blocks: [{ exerciseType: 'tcm-cfr-ex16', count: 3, columns: 1, pointsPerQuestion: 1 }] },
-  { id: 17, label: 'Nommer des formes', blocks: [{ exerciseType: 'tcm-cfr-ex17', count: 3, columns: 1, pointsPerQuestion: 0.5 }] },
+  { id: 16, label: 'Figures et propriétés', blocks: [{ exerciseType: 'tcm-cfr-ex16', count: 3, columns: 1, pointsPerQuestion: 2 }] },
+  { id: 17, label: 'Nommer des formes', blocks: [{ exerciseType: 'tcm-cfr-ex17', count: 3, columns: 1, pointsPerQuestion: 1 }] },
   { id: 18, label: 'Symétrie axiale', blocks: [{ exerciseType: 'tcm-cfr-ex18', count: 1, columns: 1, pointsPerQuestion: 3 }] },
   { id: 19, label: 'Mesurer des segments', blocks: [{ exerciseType: 'tcm-cfr-ex19', count: 1, columns: 1, pointsPerQuestion: 4 }] },
   { id: 20, label: 'Conversions', blocks: [{ exerciseType: 'tcm-cfr-ex20', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
@@ -49,7 +49,7 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 24, label: 'Triangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex24', count: 1, columns: 1, pointsPerQuestion: 4 }] },
   { id: 25, label: 'Côté du carré', blocks: [{ exerciseType: 'tcm-cfr-ex25', count: 1, columns: 1, pointsPerQuestion: 2 }] },
   { id: 26, label: 'Côté du rectangle', blocks: [{ exerciseType: 'tcm-cfr-ex26', count: 1, columns: 1, pointsPerQuestion: 2 }] },
-  { id: 27, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 3 }] },
+  { id: 27, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
   { id: 28, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5 }] },
 ]
 

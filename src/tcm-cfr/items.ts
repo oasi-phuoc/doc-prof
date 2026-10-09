@@ -357,12 +357,15 @@ function money(n: number): string {
   return fmt(Math.round(n * 100) / 100)
 }
 
-/** Ex. 14 — pool de 10 problèmes courses (2 parties, nombres variables). */
+/**
+ * Ex. 14 — pool de 10 problèmes courses (2 parties, 5–8 phrases narratives).
+ * Modèle : récit détaillé type Nadia (magasin), nombres variables.
+ */
 const EX14_TEMPLATES: readonly ProblemTemplate[] = [
   (rng) => {
     const a = oneDecimal(rng, 20, 60)
-    const b = oneDecimal(rng, 30, 80)
-    const c = oneDecimal(rng, 15, 50)
+    const b = oneDecimal(rng, 30, 90)
+    const c = oneDecimal(rng, 15, 55)
     const total = Math.round((a + b + c) * 100) / 100
     const d1 = oneDecimal(rng, 15, 35)
     const d2 = oneDecimal(rng, 20, 45)
@@ -372,13 +375,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const reste = Math.round((budget - spent) * 100) / 100
     return [
       {
-        prompt: `Nadia va au magasin avec ${budget} francs dans son porte-monnaie. Dans son panier, elle prend du riz à ${money(a)} francs et du poulet à ${money(b)} francs. Elle ajoute des carottes à ${money(c)} francs. Elle se rend à la caisse.\n\nQuelle somme paye-t-elle ?`,
+        prompt: `Nadia va au magasin avec ${budget} francs dans son porte-monnaie. Dans son panier, elle prend du riz à ${money(a)} francs et du poulet à ${money(b)} francs. Elle ajoute des carottes à ${money(c)} francs dans son panier. Elle se rend à la caisse.\n\nQuelle somme paye-t-elle ?`,
         calcAnswer: `${money(a)} + ${money(b)} + ${money(c)} = ${money(total)}`,
         responseAnswer: `Nadia paye ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Nadia sort du magasin mais elle a oublié d’acheter à boire. Elle retourne dans le magasin. Elle hésite entre un soda à ${money(d1)} francs et de l’eau gazeuse à ${money(d2)} francs. Elle prend la moins chère.\n\nCombien d’argent reste-t-il après ses courses ?`,
+        prompt: `Nadia sort du magasin mais elle a oublié d’acheter à boire. Elle retourne dans le magasin. Elle hésite entre 2 boissons, un soda à ${money(d1)} francs ou de l’eau gazeuse à ${money(d2)} francs. Elle prend la moins chère.\n\nCombien d’argent reste-t-il après ses courses ?`,
         calcAnswer: `${budget} − ${money(total)} − ${money(drink)} = ${money(reste)}`,
         responseAnswer: `Il reste ${money(reste)} francs.`,
         answer: money(reste),
@@ -386,23 +389,23 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     ]
   },
   (rng) => {
-    const pain = oneDecimal(rng, 12, 35)
-    const fromage = oneDecimal(rng, 25, 70)
-    const fruit = oneDecimal(rng, 15, 45)
+    const pain = oneDecimal(rng, 15, 35)
+    const fromage = oneDecimal(rng, 30, 80)
+    const fruit = oneDecimal(rng, 20, 50)
     const total = Math.round((pain + fromage + fruit) * 100) / 100
-    const bus = oneDecimal(rng, 20, 40)
+    const bus = oneDecimal(rng, 25, 45)
     const spent = Math.round((total + bus) * 100) / 100
     const budget = Math.ceil(spent) + pick(rng, [5, 10, 15])
     const reste = Math.round((budget - spent) * 100) / 100
     return [
       {
-        prompt: `Omar a ${budget} francs. Il achète du pain à ${money(pain)} francs, du fromage à ${money(fromage)} francs et des fruits à ${money(fruit)} francs.\n\nCombien paye-t-il à la caisse ?`,
+        prompt: `Omar part faire ses courses avec ${budget} francs dans son portefeuille. Il entre dans la boulangerie du quartier. Il choisit un pain à ${money(pain)} francs. Puis il ajoute du fromage à ${money(fromage)} francs et un sachet de fruits à ${money(fruit)} francs. Il paie à la caisse.\n\nCombien paye-t-il pour ses courses ?`,
         calcAnswer: `${money(pain)} + ${money(fromage)} + ${money(fruit)} = ${money(total)}`,
         responseAnswer: `Omar paye ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `En rentrant, Omar prend le bus. Le ticket coûte ${money(bus)} francs.\n\nCombien lui reste-t-il ?`,
+        prompt: `Omar quitte le magasin et se dirige vers l’arrêt de bus. Il doit rentrer chez lui. Le ticket de bus coûte ${money(bus)} francs. Il paie son ticket avec l’argent qui lui reste.\n\nCombien d’argent lui reste-t-il après le trajet ?`,
         calcAnswer: `${budget} − ${money(total)} − ${money(bus)} = ${money(reste)}`,
         responseAnswer: `Il lui reste ${money(reste)} francs.`,
         answer: money(reste),
@@ -419,13 +422,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const reste = Math.round((budget - paye) * 100) / 100
     return [
       {
-        prompt: `Léa veut acheter un pull à ${money(pull)} francs et des chaussettes à ${money(chaussettes)} francs.\n\nQuel est le prix total avant réduction ?`,
+        prompt: `Léa entre dans un magasin de vêtements. Elle a ${budget} francs sur elle. Elle regarde les rayons pendant un moment. Elle choisit un pull à ${money(pull)} francs. Elle prend aussi des chaussettes à ${money(chaussettes)} francs.\n\nQuel est le prix total avant réduction ?`,
         calcAnswer: `${money(pull)} + ${money(chaussettes)} = ${money(total)}`,
         responseAnswer: `Le total est ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Le magasin offre une réduction de ${money(reduction)} francs. Léa paie avec ${budget} francs.\n\nCombien lui reste-t-il ?`,
+        prompt: `À la caisse, la vendeuse annonce une réduction de ${money(reduction)} francs. Léa est contente. Elle paie avec son argent. Elle range le reste dans son porte-monnaie.\n\nCombien lui reste-t-il après l’achat ?`,
         calcAnswer: `${money(total)} − ${money(reduction)} = ${money(paye)} ; ${budget} − ${money(paye)} = ${money(reste)}`,
         responseAnswer: `Il lui reste ${money(reste)} francs.`,
         answer: money(reste),
@@ -440,13 +443,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const rendu = Math.round((billet - total) * 100) / 100
     return [
       {
-        prompt: `Yanis achète ${n} cahiers à ${money(prix)} francs chacun.\n\nCombien doit-il payer ?`,
+        prompt: `Yanis a besoin de matériel pour l’école. Il se rend à la papeterie près de chez lui. Il regarde les cahiers en rayon. Il décide d’acheter ${n} cahiers. Chaque cahier coûte ${money(prix)} francs.\n\nCombien doit-il payer pour les cahiers ?`,
         calcAnswer: `${n} × ${money(prix)} = ${money(total)}`,
         responseAnswer: `Yanis doit payer ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Il donne un billet de ${billet} francs.\n\nCombien la caissière lui rend-elle ?`,
+        prompt: `Yanis tend un billet de ${billet} francs à la caissière. La caissière prend le billet. Elle prépare la monnaie. Elle lui rend le reste.\n\nCombien la caissière lui rend-elle ?`,
         calcAnswer: `${billet} − ${money(total)} = ${money(rendu)}`,
         responseAnswer: `On lui rend ${money(rendu)} francs.`,
         answer: money(rendu),
@@ -462,13 +465,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const manque = Math.round((total - budget) * 100) / 100
     return [
       {
-        prompt: `Sara achète ${nLait} briques de lait à ${money(lait)} francs chacune et un pain à ${money(pain)} francs.\n\nQuel est le montant des courses ?`,
+        prompt: `Sara va à l’épicerie du village. Elle prend un panier. Elle met ${nLait} briques de lait à ${money(lait)} francs chacune dans le panier. Elle ajoute un pain à ${money(pain)} francs. Elle se dirige vers la caisse.\n\nQuel est le montant des courses ?`,
         calcAnswer: `${nLait} × ${money(lait)} + ${money(pain)} = ${money(total)}`,
         responseAnswer: `Les courses coûtent ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Sara n’a que ${budget} francs sur elle.\n\nCombien lui manque-t-il ?`,
+        prompt: `Sara ouvre son porte-monnaie. Elle n’a que ${budget} francs sur elle. Elle compte encore une fois. Il lui manque de l’argent pour payer.\n\nCombien lui manque-t-il ?`,
         calcAnswer: `${money(total)} − ${budget} = ${money(manque)}`,
         responseAnswer: `Il lui manque ${money(manque)} francs.`,
         answer: money(manque),
@@ -480,18 +483,17 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const b = oneDecimal(rng, 30, 70)
     const c = oneDecimal(rng, 20, 60)
     const total = Math.round((a + b + c) * 100) / 100
-    const parts = 2
-    const share = Math.round((total / parts) * 100) / 100
+    const share = Math.round((total / 2) * 100) / 100
     return [
       {
-        prompt: `Deux amies partagent l’addition d’un café. Les boissons coûtent ${money(a)} francs, les gâteaux ${money(b)} francs et les thés ${money(c)} francs.\n\nQuel est le total de l’addition ?`,
+        prompt: `Deux amies s’installent à la terrasse d’un café. Elles commandent des boissons pour ${money(a)} francs. Elles ajoutent des gâteaux pour ${money(b)} francs. Elles prennent aussi des thés pour ${money(c)} francs. L’addition arrive sur la table.\n\nQuel est le total de l’addition ?`,
         calcAnswer: `${money(a)} + ${money(b)} + ${money(c)} = ${money(total)}`,
         responseAnswer: `L’addition est de ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Elles partagent la note en ${parts} parts égales.\n\nCombien chacune paie-t-elle ?`,
-        calcAnswer: `${money(total)} ÷ ${parts} = ${money(share)}`,
+        prompt: `Les deux amies veulent partager la note. Elles divisent le montant en deux parts égales. Chacune paie la même somme. Elles laissent l’argent sur la table.\n\nCombien chacune paie-t-elle ?`,
+        calcAnswer: `${money(total)} ÷ 2 = ${money(share)}`,
         responseAnswer: `Chacune paie ${money(share)} francs.`,
         answer: money(share),
       },
@@ -505,13 +507,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const rendu = Math.round((billet - total) * 100) / 100
     return [
       {
-        prompt: `À la market, Hugo achète ${money(kg)} kg de pommes à ${money(prixKg)} francs le kilo.\n\nCombien paie-t-il ?`,
+        prompt: `Hugo va au marché le samedi matin. Il regarde les étals de fruits. Il choisit des pommes. Il en prend ${money(kg)} kg. Le kilo de pommes coûte ${money(prixKg)} francs.\n\nCombien paie-t-il pour les pommes ?`,
         calcAnswer: `${money(kg)} × ${money(prixKg)} = ${money(total)}`,
         responseAnswer: `Hugo paie ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Il tend un billet de ${billet} francs.\n\nCombien lui rend-on ?`,
+        prompt: `Hugo sort un billet de ${billet} francs. Le marchand prend le billet. Il calcule la monnaie. Il rend le reste à Hugo.\n\nCombien le marchand lui rend-il ?`,
         calcAnswer: `${billet} − ${money(total)} = ${money(rendu)}`,
         responseAnswer: `On lui rend ${money(rendu)} francs.`,
         answer: money(rendu),
@@ -527,13 +529,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const reste = Math.round((budget - total) * 100) / 100
     return [
       {
-        prompt: `Inès achète un livre à ${money(livre)} francs et ${nStylo} stylos à ${money(stylo)} francs chacun.\n\nCombien dépense-t-elle ?`,
+        prompt: `Inès entre dans une librairie. Elle a ${budget} francs dans son sac. Elle cherche un livre pour l’école. Elle trouve un livre à ${money(livre)} francs. Elle prend aussi ${nStylo} stylos à ${money(stylo)} francs chacun.\n\nCombien dépense-t-elle en tout ?`,
         calcAnswer: `${money(livre)} + ${nStylo} × ${money(stylo)} = ${money(total)}`,
         responseAnswer: `Inès dépense ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Elle avait ${budget} francs.\n\nCombien lui reste-t-il ?`,
+        prompt: `Inès paie à la caisse. Elle range ses achats dans son sac. Elle vérifie l’argent qui lui reste. Elle est contente de ses achats.\n\nCombien lui reste-t-il ?`,
         calcAnswer: `${budget} − ${money(total)} = ${money(reste)}`,
         responseAnswer: `Il lui reste ${money(reste)} francs.`,
         answer: money(reste),
@@ -545,18 +547,17 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const n = int(rng, 2, 4)
     const boisson = oneDecimal(rng, 20, 50)
     const total = Math.round((pizza * n + boisson) * 100) / 100
-    const personnes = n
-    const share = Math.round((total / personnes) * 100) / 100
+    const share = Math.round((total / n) * 100) / 100
     return [
       {
-        prompt: `Pour le repas, la famille commande ${n} pizzas à ${money(pizza)} francs chacune et une boisson à ${money(boisson)} francs.\n\nQuel est le prix total ?`,
+        prompt: `La famille a faim ce soir. Les enfants veulent des pizzas. Les parents commandent ${n} pizzas à ${money(pizza)} francs chacune. Ils ajoutent une grande boisson à ${money(boisson)} francs. Le livreur apporte la commande.\n\nQuel est le prix total ?`,
         calcAnswer: `${n} × ${money(pizza)} + ${money(boisson)} = ${money(total)}`,
         responseAnswer: `Le total est ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Le montant est partagé également entre ${personnes} personnes.\n\nCombien chacune paie-t-elle ?`,
-        calcAnswer: `${money(total)} ÷ ${personnes} = ${money(share)}`,
+        prompt: `Les parents décident de partager le montant. Ils divisent le total en ${n} parts égales. Chaque personne paie sa part. Tout le monde est d’accord.\n\nCombien chacune paie-t-elle ?`,
+        calcAnswer: `${money(total)} ÷ ${n} = ${money(share)}`,
         responseAnswer: `Chacune paie ${money(share)} francs.`,
         answer: money(share),
       },
@@ -572,13 +573,13 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
     const ecart = Math.round((plusCher - moinsCher) * 100) / 100
     return [
       {
-        prompt: `Trois articles coûtent ${money(a)} francs, ${money(b)} francs et ${money(c)} francs.\n\nQuel est le prix total ?`,
+        prompt: `Sofia fait des courses pour préparer un repas. Elle met trois articles dans son panier. Le premier coûte ${money(a)} francs. Le deuxième coûte ${money(b)} francs. Le troisième coûte ${money(c)} francs. Elle arrive à la caisse.\n\nQuel est le prix total des trois articles ?`,
         calcAnswer: `${money(a)} + ${money(b)} + ${money(c)} = ${money(total)}`,
         responseAnswer: `Le total est ${money(total)} francs.`,
         answer: money(total),
       },
       {
-        prompt: `Quelle est la différence entre l’article le plus cher et le moins cher ?`,
+        prompt: `Sofia regarde les prix sur son ticket. Elle compare l’article le plus cher et le moins cher. Elle veut connaître la différence. Elle fait le calcul.\n\nQuelle est la différence entre l’article le plus cher et le moins cher ?`,
         calcAnswer: `${money(plusCher)} − ${money(moinsCher)} = ${money(ecart)}`,
         responseAnswer: `La différence est ${money(ecart)} francs.`,
         answer: money(ecart),
@@ -587,25 +588,27 @@ const EX14_TEMPLATES: readonly ProblemTemplate[] = [
   },
 ]
 
-/** Ex. 15 — pool de 10 problèmes salaire / partage (2 parties). */
+/**
+ * Ex. 15 — pool de 10 problèmes travail / partage (2 parties, 5–8 phrases).
+ * Modèle : récit détaillé type Karim (mécanicien), nombres variables.
+ */
 const EX15_TEMPLATES: readonly ProblemTemplate[] = [
   (rng) => {
     const rate = int(rng, 6, 12)
     const hours = pick(rng, [4, 8])
     const gain = rate * hours
     const half = gain / 2
-    const friends = 2
-    const share = half / friends
+    const share = half / 2
     return [
       {
-        prompt: `Karim est mécanicien. Il gagne ${rate} francs par heure. Aujourd’hui, il travaille pendant ${hours} heures.\n\nCombien d’argent a-t-il gagné aujourd’hui ?`,
+        prompt: `Karim est mécanicien. Il travaille dans un garage et gagne ${rate} francs par heure. Aujourd’hui, il travaille pendant ${hours} heures.\n\nAujourd’hui, combien d’argent a-t-il gagné ?`,
         calcAnswer: `${rate} × ${hours} = ${gain}`,
         responseAnswer: `Karim a gagné ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Le jour suivant, Karim propose de donner la moitié de cet argent à ses amis Ahmed et Yeva. Danil refuse. La moitié est donc partagée également entre Ahmed et Yeva.\n\nCombien d’argent reçoit Yeva ?`,
-        calcAnswer: `${gain} ÷ 2 = ${half} ; ${half} ÷ ${friends} = ${share}`,
+        prompt: `Le jour suivant, Karim retrouve Ahmed, Yeva et Danil dans un parc. Il propose de donner la moitié de l’argent gagné à ses 3 amis. Danil refuse, il ne veut pas d’argent. La moitié de l’argent de Karim est donc partagée avec le reste de ses amis. Ils reçoivent le même montant.\n\nCombien d’argent reçoit Yeva ?`,
+        calcAnswer: `${gain} ÷ 2 = ${half} ; ${half} ÷ 2 = ${share}`,
         responseAnswer: `Yeva reçoit ${share} francs.`,
         answer: String(share),
       },
@@ -619,13 +622,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const save = gain - keep
     return [
       {
-        prompt: `Maya travaille ${hours} heures et gagne ${rate} francs par heure.\n\nCombien gagne-t-elle ?`,
+        prompt: `Maya travaille dans un magasin de vêtements. Elle aide les clients toute la journée. Elle est payée ${rate} francs par heure. Aujourd’hui, elle travaille pendant ${hours} heures.\n\nCombien d’argent a-t-elle gagné aujourd’hui ?`,
         calcAnswer: `${hours} × ${rate} = ${gain}`,
-        responseAnswer: `Maya gagne ${gain} francs.`,
+        responseAnswer: `Maya a gagné ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Elle garde la moitié de cet argent et place le reste à la banque.\n\nCombien place-t-elle à la banque ?`,
+        prompt: `Le soir, Maya rentre chez elle. Elle compte son argent. Elle décide de garder la moitié pour ses dépenses. Elle place le reste à la banque. Elle fait le calcul soigneusement.\n\nCombien place-t-elle à la banque ?`,
         calcAnswer: `${gain} − ${keep} = ${save}`,
         responseAnswer: `Elle place ${save} francs à la banque.`,
         answer: String(save),
@@ -640,13 +643,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const reste = gain - lunch * days
     return [
       {
-        prompt: `Tom aide dans un magasin pendant ${days} jours. Il gagne ${perDay} francs par jour.\n\nCombien gagne-t-il en tout ?`,
+        prompt: `Tom aide dans un magasin pendant les vacances. Il range les rayons et accueille les clients. Il travaille pendant ${days} jours. Chaque jour, il gagne ${perDay} francs.\n\nCombien d’argent gagne-t-il en tout ?`,
         calcAnswer: `${days} × ${perDay} = ${gain}`,
         responseAnswer: `Tom gagne ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Chaque jour, il dépense ${lunch} francs pour le repas.\n\nCombien lui reste-t-il à la fin ?`,
+        prompt: `Chaque jour de travail, Tom achète son repas. Le repas coûte ${lunch} francs. Il paie son repas avec son salaire. À la fin des ${days} jours, il regarde ce qui lui reste.\n\nCombien lui reste-t-il à la fin ?`,
         calcAnswer: `${gain} − ${days} × ${lunch} = ${reste}`,
         responseAnswer: `Il lui reste ${reste} francs.`,
         answer: String(reste),
@@ -655,19 +658,19 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
   },
   (rng) => {
     const rate = int(rng, 10, 18)
-    const hours = int(rng, 6, 10)
+    const hours = pick(rng, [4, 6, 8, 10])
     const gain = rate * hours
     const gift = int(rng, 10, 25)
     const reste = gain - gift
     return [
       {
-        prompt: `Amina donne des cours pendant ${hours} heures à ${rate} francs l’heure.\n\nCombien gagne-t-elle ?`,
+        prompt: `Amina donne des cours de français. Elle prépare ses leçons avec soin. Elle donne des cours pendant ${hours} heures. Elle gagne ${rate} francs par heure.\n\nCombien d’argent a-t-elle gagné ?`,
         calcAnswer: `${hours} × ${rate} = ${gain}`,
-        responseAnswer: `Amina gagne ${gain} francs.`,
+        responseAnswer: `Amina a gagné ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Elle offre ${gift} francs à sa sœur.\n\nCombien lui reste-t-il ?`,
+        prompt: `Amina rentre chez elle contente. Elle pense à sa sœur. Elle décide de lui offrir ${gift} francs. Elle garde le reste pour elle.\n\nCombien lui reste-t-il après le cadeau ?`,
         calcAnswer: `${gain} − ${gift} = ${reste}`,
         responseAnswer: `Il lui reste ${reste} francs.`,
         answer: String(reste),
@@ -682,13 +685,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const sold = total - keep
     return [
       {
-        prompt: `Un jardinier récolte ${boxes} caisses de ${perBox} pommes chacune.\n\nCombien de pommes a-t-il en tout ?`,
+        prompt: `Un jardinier travaille dans son verger. Il récolte des pommes toute la matinée. Il remplit ${boxes} caisses. Chaque caisse contient ${perBox} pommes.\n\nCombien de pommes a-t-il récoltées en tout ?`,
         calcAnswer: `${boxes} × ${perBox} = ${total}`,
-        responseAnswer: `Il a ${total} pommes.`,
+        responseAnswer: `Il a récolté ${total} pommes.`,
         answer: String(total),
       },
       {
-        prompt: `Il en garde ${keep} et vend le reste.\n\nCombien de pommes vend-il ?`,
+        prompt: `Le jardinier garde ${keep} pommes pour sa famille. Il met le reste dans sa camionnette. Il part vendre les pommes au marché. Les clients viennent les acheter.\n\nCombien de pommes vend-il ?`,
         calcAnswer: `${total} − ${keep} = ${sold}`,
         responseAnswer: `Il vend ${sold} pommes.`,
         answer: String(sold),
@@ -703,13 +706,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const reste = gain - third
     return [
       {
-        prompt: `Luis travaille ${hours} heures à ${rate} francs l’heure.\n\nCombien gagne-t-il ?`,
+        prompt: `Luis travaille dans un atelier de menuiserie. Il fabrique des meubles. Il travaille pendant ${hours} heures aujourd’hui. Il est payé ${rate} francs par heure.\n\nCombien d’argent gagne-t-il aujourd’hui ?`,
         calcAnswer: `${hours} × ${rate} = ${gain}`,
         responseAnswer: `Luis gagne ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Il donne le tiers de cet argent à ses parents et garde le reste.\n\nCombien garde-t-il ?`,
+        prompt: `En rentrant, Luis parle avec ses parents. Il décide de leur donner le tiers de son argent. Il garde le reste pour lui. Il range l’argent dans deux enveloppes.\n\nCombien garde-t-il pour lui ?`,
         calcAnswer: `${gain} ÷ 3 = ${third} ; ${gain} − ${third} = ${reste}`,
         responseAnswer: `Il garde ${reste} francs.`,
         answer: String(reste),
@@ -724,13 +727,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const reste = gain - buy
     return [
       {
-        prompt: `Nora range des rayons pendant ${weeks} semaines. Elle gagne ${perWeek} francs par semaine.\n\nCombien gagne-t-elle au total ?`,
+        prompt: `Nora trouve un travail temporaire dans un supermarché. Elle range les rayons chaque semaine. Elle travaille pendant ${weeks} semaines. Elle gagne ${perWeek} francs par semaine.\n\nCombien gagne-t-elle au total ?`,
         calcAnswer: `${weeks} × ${perWeek} = ${gain}`,
         responseAnswer: `Nora gagne ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Avec cet argent, elle achète un livre à ${buy} francs.\n\nCombien lui reste-t-il ?`,
+        prompt: `Nora veut s’acheter un livre. Elle entre dans une librairie. Elle trouve un livre à ${buy} francs. Elle paie avec l’argent de son travail.\n\nCombien lui reste-t-il après l’achat ?`,
         calcAnswer: `${gain} − ${buy} = ${reste}`,
         responseAnswer: `Il lui reste ${reste} francs.`,
         answer: String(reste),
@@ -745,13 +748,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const share = gain / parts
     return [
       {
-        prompt: `Paul gagne ${rate} francs par heure et travaille ${hours} heures.\n\nCombien a-t-il gagné ?`,
+        prompt: `Paul travaille comme livreur. Il livre des colis dans la ville. Il gagne ${rate} francs par heure. Aujourd’hui, il travaille pendant ${hours} heures.\n\nCombien d’argent a-t-il gagné ?`,
         calcAnswer: `${rate} × ${hours} = ${gain}`,
         responseAnswer: `Paul a gagné ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Il partage cet argent également entre ${parts} personnes de sa famille.\n\nCombien chacune reçoit-elle ?`,
+        prompt: `Paul rentre chez lui. Il retrouve sa famille. Il propose de partager son argent également entre ${parts} personnes. Chacun reçoit la même somme.\n\nCombien chacune reçoit-elle ?`,
         calcAnswer: `${gain} ÷ ${parts} = ${share}`,
         responseAnswer: `Chacune reçoit ${share} francs.`,
         answer: String(share),
@@ -766,13 +769,13 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
     const gain = hours * rate
     return [
       {
-        prompt: `Rita travaille ${morning} heures le matin et ${afternoon} heures l’après-midi.\n\nCombien d’heures travaille-t-elle en tout ?`,
+        prompt: `Rita travaille dans un restaurant. Le matin, elle prépare la salle pendant ${morning} heures. L’après-midi, elle sert les clients pendant ${afternoon} heures. Elle est fatiguée mais contente.\n\nCombien d’heures travaille-t-elle en tout ?`,
         calcAnswer: `${morning} + ${afternoon} = ${hours}`,
         responseAnswer: `Rita travaille ${hours} heures.`,
         answer: String(hours),
       },
       {
-        prompt: `Elle est payée ${rate} francs par heure.\n\nCombien gagne-t-elle ce jour-là ?`,
+        prompt: `Rita est payée ${rate} francs par heure. Le patron calcule son salaire. Il lui donne son argent le soir. Rita range l’argent dans son sac.\n\nCombien gagne-t-elle ce jour-là ?`,
         calcAnswer: `${hours} × ${rate} = ${gain}`,
         responseAnswer: `Elle gagne ${gain} francs.`,
         answer: String(gain),
@@ -781,19 +784,19 @@ const EX15_TEMPLATES: readonly ProblemTemplate[] = [
   },
   (rng) => {
     const rate = int(rng, 6, 11)
-    const hours = int(rng, 6, 10)
+    const hours = pick(rng, [6, 8, 10])
     const gain = rate * hours
     const tip = int(rng, 5, 15)
     const total = gain + tip
     return [
       {
-        prompt: `Sam aide au restaurant. Il travaille ${hours} heures à ${rate} francs l’heure.\n\nCombien gagne-t-il sans le pourboire ?`,
+        prompt: `Sam aide au restaurant le week-end. Il sert les tables et range la cuisine. Il travaille pendant ${hours} heures. Il gagne ${rate} francs par heure sans le pourboire.\n\nCombien gagne-t-il sans le pourboire ?`,
         calcAnswer: `${hours} × ${rate} = ${gain}`,
         responseAnswer: `Sam gagne ${gain} francs.`,
         answer: String(gain),
       },
       {
-        prompt: `Un client lui laisse ${tip} francs de pourboire.\n\nCombien a-t-il en tout ?`,
+        prompt: `Un client est très content du service. Il laisse ${tip} francs de pourboire à Sam. Sam ajoute ce pourboire à son salaire. Il compte tout son argent.\n\nCombien a-t-il en tout ?`,
         calcAnswer: `${gain} + ${tip} = ${total}`,
         responseAnswer: `Il a ${total} francs en tout.`,
         answer: String(total),
