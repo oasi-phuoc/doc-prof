@@ -235,6 +235,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   }
 
   const worksheets = useMemo(() => buildWorksheets(pages, seed), [pages, seed])
+  const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(null)
   const safeSheetIndex = Math.min(sheetIndex, Math.max(0, worksheets.length - 1))
   const activeSheet = worksheets[safeSheetIndex] ?? worksheets[0]
   const pageIndex = activeSheet?.configIndex ?? Math.min(sheetIndex, Math.max(0, pages.length - 1))
@@ -242,14 +243,27 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const pageExerciseBlocks = pageBlocks(activePage)
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
+  /**
+   * Mode libre : aperçu et impression montrent la dernière version validée (bouton Valider).
+   * Exception : saisie au clic sur la fiche (repérage), qui reste en direct.
+   */
+  const previewSource =
+    libreMode && !activeBlock.coordLibre && libreSnapshot && libreSnapshot.length === pages.length
+      ? libreSnapshot
+      : null
+  const previewWorksheets = useMemo(
+    () => (previewSource ? buildWorksheets(previewSource, seed) : worksheets),
+    [previewSource, seed, worksheets],
+  )
+  const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
   const jeuxPreviewSheets = useMemo(() => {
     if (activePage.domain !== 'jeux') return null
-    const related = worksheets
+    const related = previewWorksheets
       .map((sheet, index) => ({ sheet, index }))
       .filter(({ sheet }) => (sheet.configIndex ?? 0) === pageIndex)
     return related.length > 0 ? related : null
-  }, [activePage.domain, worksheets, pageIndex])
+  }, [activePage.domain, previewWorksheets, pageIndex])
   const available =
     activePage.domain === 'algèbre'
         ? algebraTopics
@@ -289,7 +303,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
   const sheetTotalPoints = useMemo(
     () =>
-      worksheets.reduce(
+      previewWorksheets.reduce(
         (sum, page) =>
           sum +
           (page.blocks?.length
@@ -302,7 +316,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             : blockPointsTotal(page.items, page.pointsPerQuestion ?? pointsPerQuestion)),
         0,
       ),
-    [worksheets, pointsPerQuestion],
+    [previewWorksheets, pointsPerQuestion],
   )
 
   useEffect(() => {
@@ -351,7 +365,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       observer.disconnect()
     }
   }, [
-    worksheets,
+    previewWorksheets,
     pageIndex,
     sheetIndex,
     mode,
@@ -1212,7 +1226,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   function validateManual() {
     const phraseEditable = isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)
     const ownEditor = phraseEditable || isCalliDomain || isJeuxDomain || isTcf
-    setPages((current) => {
+    const apply = (current: PageConfig[]): PageConfig[] => {
       const page = current[pageIndex]
       if (!page) return current
       const block = pageBlocks(page)[safeBlockIndex]
@@ -1290,7 +1304,10 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               libreInstruction: builtBlock.instruction,
             }),
       )
-    })
+    }
+    const next = apply(pages)
+    setPages(next)
+    if (libreMode) setLibreSnapshot(next)
   }
 
   /** TCF : Générer tire un test complet au hasard dans la banque du niveau. */
@@ -1485,6 +1502,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             onToggleLibre={() => {
               setLibreMode((prev) => {
                 const next = !prev
+                setLibreSnapshot(next ? pages : null)
                 if (next) {
                   const sheetBlock = activeSheet?.blocks[safeBlockIndex]
                   const seedItems = activeBlock.libreItems?.length
@@ -3252,7 +3270,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                             page={sheet}
                             pageNumber={index + 1}
                             sheetIndex={index + 1}
-                            total={worksheets.length}
+                            total={previewWorksheets.length}
                             {...sheetProps}
                           />
                         </div>
@@ -3262,11 +3280,11 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <div className="sheet-stage">
                     <div className="a4-frame" ref={previewFrameRef}>
                       <WorksheetSheet
-                        key={`${worksheets[safeSheetIndex]?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
-                        page={worksheets[safeSheetIndex]!}
+                        key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
+                        page={previewSheet!}
                         pageNumber={safeSheetIndex + 1}
                         sheetIndex={safeSheetIndex + 1}
-                        total={worksheets.length}
+                        total={previewWorksheets.length}
                         interactiveDraftGrids={pageExerciseBlocks.some((b) =>
                           isProblemExercise(b.exerciseType),
                         )}
@@ -3306,26 +3324,26 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             </div>
             {/* Impression : fiches élèves ; corrigés seulement s’il y en a */}
             <div className="sheet-stage print-only-sheets" aria-hidden>
-              {worksheets.map((page, index) => (
+              {previewWorksheets.map((page, index) => (
                 <WorksheetSheet
                   key={`print-student-${page.exerciseType}-${seed}-${index}`}
                   page={page}
                   pageNumber={index + 1}
                   sheetIndex={index + 1}
-                  total={worksheets.length}
+                  total={previewWorksheets.length}
                   {...chromeProps}
                   mode="student"
                 />
               ))}
               {isCalliDomain || isJeuxDomain
                 ? null
-                : worksheets.map((page, index) => (
+                : previewWorksheets.map((page, index) => (
                     <WorksheetSheet
                       key={`print-answers-${page.exerciseType}-${seed}-${index}`}
                       page={page}
                       pageNumber={index + 1}
-                      sheetIndex={worksheets.length + index + 1}
-                      total={worksheets.length}
+                      sheetIndex={previewWorksheets.length + index + 1}
+                      total={previewWorksheets.length}
                       {...chromeProps}
                       mode="answers"
                     />
@@ -3361,6 +3379,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               onClose={() => {
                 // Ferme le panneau sans effacer le contenu libre ni régénérer la fiche.
                 setLibreMode(false)
+                setLibreSnapshot(null)
               }}
             />
           ) : null}
