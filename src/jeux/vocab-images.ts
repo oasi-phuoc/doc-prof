@@ -544,10 +544,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/nouilles.webp"
       },
       {
-        "label": "oeuf",
-        "src": "/lib/images/vocabulaire/aliments/oeuf.webp"
-      },
-      {
         "label": "omelette",
         "src": "/lib/images/vocabulaire/aliments/omelette.webp"
       },
@@ -690,10 +686,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/animaux-aquatiques/dauphin.webp"
       },
       {
-        "label": "etoile-de-mer",
-        "src": "/lib/images/vocabulaire/animaux-aquatiques/etoile-de-mer.webp"
-      },
-      {
         "label": "hippocampe",
         "src": "/lib/images/vocabulaire/animaux-aquatiques/hippocampe.webp"
       },
@@ -704,10 +696,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "huitre",
         "src": "/lib/images/vocabulaire/animaux-aquatiques/huitre.webp"
-      },
-      {
-        "label": "meduse",
-        "src": "/lib/images/vocabulaire/animaux-aquatiques/meduse.webp"
       },
       {
         "label": "morse",
@@ -784,14 +772,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/animaux-sauvages/crocodile.webp"
       },
       {
-        "label": "ecureuil",
-        "src": "/lib/images/vocabulaire/animaux-sauvages/ecureuil.webp"
-      },
-      {
-        "label": "elephant",
-        "src": "/lib/images/vocabulaire/animaux-sauvages/elephant.webp"
-      },
-      {
         "label": "gazelle",
         "src": "/lib/images/vocabulaire/animaux-sauvages/gazelle.webp"
       },
@@ -814,10 +794,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "grizzly",
         "src": "/lib/images/vocabulaire/animaux-sauvages/grizzly.webp"
-      },
-      {
-        "label": "herisson",
-        "src": "/lib/images/vocabulaire/animaux-sauvages/herisson.webp"
       },
       {
         "label": "hyène",
@@ -910,10 +886,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "wombat",
         "src": "/lib/images/vocabulaire/animaux-sauvages/wombat.webp"
-      },
-      {
-        "label": "zebre",
-        "src": "/lib/images/vocabulaire/animaux-sauvages/zebre.webp"
       },
       {
         "label": "zèbre",
@@ -1332,10 +1304,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ciel-espace/comète.webp"
       },
       {
-        "label": "fusee",
-        "src": "/lib/images/vocabulaire/ciel-espace/fusee.webp"
-      },
-      {
         "label": "fusée",
         "src": "/lib/images/vocabulaire/ciel-espace/fusée.webp"
       },
@@ -1346,6 +1314,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "lune",
         "src": "/lib/images/vocabulaire/ciel-espace/lune.webp"
+      },
+      {
+        "label": "navette-spatiale",
+        "src": "/lib/images/vocabulaire/ciel-espace/navette-spatiale.webp"
       },
       {
         "label": "planète",
@@ -1422,10 +1394,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/dos.webp"
       },
       {
-        "label": "epaule",
-        "src": "/lib/images/vocabulaire/corps/epaule.webp"
-      },
-      {
         "label": "estomac",
         "src": "/lib/images/vocabulaire/corps/estomac.webp"
       },
@@ -1478,10 +1446,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/corps/nez.webp"
       },
       {
-        "label": "oeil",
-        "src": "/lib/images/vocabulaire/corps/oeil.webp"
-      },
-      {
         "label": "ongle",
         "src": "/lib/images/vocabulaire/corps/ongle.webp"
       },
@@ -1520,10 +1484,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "sourcil",
         "src": "/lib/images/vocabulaire/corps/sourcil.webp"
-      },
-      {
-        "label": "tete",
-        "src": "/lib/images/vocabulaire/corps/tete.webp"
       },
       {
         "label": "tête",
@@ -1800,10 +1760,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/desserts/cookie.webp"
       },
       {
-        "label": "crepe",
-        "src": "/lib/images/vocabulaire/desserts/crepe.webp"
-      },
-      {
         "label": "crêpe",
         "src": "/lib/images/vocabulaire/desserts/crêpe.webp"
       },
@@ -1824,10 +1780,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/desserts/flan.webp"
       },
       {
-        "label": "gateau",
-        "src": "/lib/images/vocabulaire/desserts/gateau.webp"
-      },
-      {
         "label": "gauffre",
         "src": "/lib/images/vocabulaire/desserts/gauffre.webp"
       },
@@ -1838,6 +1790,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "glace",
         "src": "/lib/images/vocabulaire/desserts/glace.webp"
+      },
+      {
+        "label": "gâteau-d-anniversaire",
+        "src": "/lib/images/vocabulaire/desserts/gâteau-d-anniversaire.webp"
       },
       {
         "label": "gâteau",
@@ -2030,10 +1986,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "cheval",
         "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/cheval.webp"
-      },
-      {
-        "label": "chevre",
-        "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/chevre.webp"
       },
       {
         "label": "chien",
@@ -2336,16 +2288,8 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/fruits/papaye.webp"
       },
       {
-        "label": "pasteque",
-        "src": "/lib/images/vocabulaire/fruits/pasteque.webp"
-      },
-      {
         "label": "pastèque",
         "src": "/lib/images/vocabulaire/fruits/pastèque.webp"
-      },
-      {
-        "label": "peche",
-        "src": "/lib/images/vocabulaire/fruits/peche.webp"
       },
       {
         "label": "poire",
@@ -2742,10 +2686,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/insectes-petites-betes/fourmi.webp"
       },
       {
-        "label": "guepe",
-        "src": "/lib/images/vocabulaire/insectes-petites-betes/guepe.webp"
-      },
-      {
         "label": "guêpe",
         "src": "/lib/images/vocabulaire/insectes-petites-betes/guêpe.webp"
       },
@@ -3074,10 +3014,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/legumes/echalotte.webp"
       },
       {
-        "label": "epinard",
-        "src": "/lib/images/vocabulaire/legumes/epinard.webp"
-      },
-      {
         "label": "fenouil",
         "src": "/lib/images/vocabulaire/legumes/fenouil.webp"
       },
@@ -3096,10 +3032,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "légume",
         "src": "/lib/images/vocabulaire/legumes/légume.webp"
-      },
-      {
-        "label": "mais",
-        "src": "/lib/images/vocabulaire/legumes/mais.webp"
       },
       {
         "label": "maïs",
@@ -4046,10 +3978,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nature/colline.webp"
       },
       {
-        "label": "desert",
-        "src": "/lib/images/vocabulaire/nature/desert.webp"
-      },
-      {
         "label": "dune",
         "src": "/lib/images/vocabulaire/nature/dune.webp"
       },
@@ -4062,10 +3990,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nature/falaise.webp"
       },
       {
-        "label": "feu",
-        "src": "/lib/images/vocabulaire/nature/feu.webp"
-      },
-      {
         "label": "flamme",
         "src": "/lib/images/vocabulaire/nature/flamme.webp"
       },
@@ -4076,10 +4000,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "foin",
         "src": "/lib/images/vocabulaire/nature/foin.webp"
-      },
-      {
-        "label": "foret",
-        "src": "/lib/images/vocabulaire/nature/foret.webp"
       },
       {
         "label": "forêt",
@@ -4100,10 +4020,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "horizon",
         "src": "/lib/images/vocabulaire/nature/horizon.webp"
-      },
-      {
-        "label": "ile",
-        "src": "/lib/images/vocabulaire/nature/ile.webp"
       },
       {
         "label": "lac",
@@ -4140,10 +4056,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "prairie",
         "src": "/lib/images/vocabulaire/nature/prairie.webp"
-      },
-      {
-        "label": "riviere",
-        "src": "/lib/images/vocabulaire/nature/riviere.webp"
       },
       {
         "label": "rivière",
@@ -4362,10 +4274,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/biberon.webp"
       },
       {
-        "label": "boite",
-        "src": "/lib/images/vocabulaire/objets/boite.webp"
-      },
-      {
         "label": "bougie",
         "src": "/lib/images/vocabulaire/objets/bougie.webp"
       },
@@ -4554,10 +4462,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "paon",
         "src": "/lib/images/vocabulaire/oiseaux/paon.webp"
-      },
-      {
-        "label": "pelican",
-        "src": "/lib/images/vocabulaire/oiseaux/pelican.webp"
       },
       {
         "label": "perdrix",
@@ -5392,6 +5296,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/course.webp"
       },
       {
+        "label": "cyclisme",
+        "src": "/lib/images/vocabulaire/sports/cyclisme.webp"
+      },
+      {
         "label": "equipement-de-sport",
         "src": "/lib/images/vocabulaire/sports/equipement-de-sport.webp"
       },
@@ -5474,10 +5382,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "piste",
         "src": "/lib/images/vocabulaire/sports/piste.webp"
-      },
-      {
-        "label": "randonnee",
-        "src": "/lib/images/vocabulaire/sports/randonnee.webp"
       },
       {
         "label": "randonnée",
@@ -5906,10 +5810,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/guichet-de-gare.webp"
       },
       {
-        "label": "helicoptere",
-        "src": "/lib/images/vocabulaire/transports/helicoptere.webp"
-      },
-      {
         "label": "hydravion",
         "src": "/lib/images/vocabulaire/transports/hydravion.webp"
       },
@@ -5920,14 +5820,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "klaxon",
         "src": "/lib/images/vocabulaire/transports/klaxon.webp"
-      },
-      {
-        "label": "metro",
-        "src": "/lib/images/vocabulaire/transports/metro.webp"
-      },
-      {
-        "label": "montgolfiere",
-        "src": "/lib/images/vocabulaire/transports/montgolfiere.webp"
       },
       {
         "label": "montgolfière",
@@ -6012,10 +5904,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "téléphérique",
         "src": "/lib/images/vocabulaire/transports/téléphérique.webp"
-      },
-      {
-        "label": "velo",
-        "src": "/lib/images/vocabulaire/transports/velo.webp"
       },
       {
         "label": "voilier",
@@ -6500,10 +6388,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/baskets.webp"
       },
       {
-        "label": "beret",
-        "src": "/lib/images/vocabulaire/vetements/beret.webp"
-      },
-      {
         "label": "blouson",
         "src": "/lib/images/vocabulaire/vetements/blouson.webp"
       },
@@ -6530,10 +6414,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "béret",
         "src": "/lib/images/vocabulaire/vetements/béret.webp"
-      },
-      {
-        "label": "calecon",
-        "src": "/lib/images/vocabulaire/vetements/calecon.webp"
       },
       {
         "label": "caleçon",
@@ -6594,10 +6474,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "doudoune",
         "src": "/lib/images/vocabulaire/vetements/doudoune.webp"
-      },
-      {
-        "label": "echarpe",
-        "src": "/lib/images/vocabulaire/vetements/echarpe.webp"
       },
       {
         "label": "fez",
@@ -6822,10 +6698,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/encyclopédie.webp"
       },
       {
-        "label": "equerre",
-        "src": "/lib/images/vocabulaire/ecole-bureau/equerre.webp"
-      },
-      {
         "label": "examen",
         "src": "/lib/images/vocabulaire/ecole-bureau/examen.webp"
       },
@@ -6900,10 +6772,6 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "rapporteur",
         "src": "/lib/images/vocabulaire/ecole-bureau/rapporteur.webp"
-      },
-      {
-        "label": "regle",
-        "src": "/lib/images/vocabulaire/ecole-bureau/regle.webp"
       },
       {
         "label": "règle",
@@ -7262,7 +7130,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "miel": "/lib/images/vocabulaire/aliments/miel.webp",
   "moutarde": "/lib/images/vocabulaire/aliments/moutarde.webp",
   "nouilles": "/lib/images/vocabulaire/aliments/nouilles.webp",
-  "oeuf": "/lib/images/vocabulaire/aliments/oeuf.webp",
   "omelette": "/lib/images/vocabulaire/aliments/omelette.webp",
   "pain-au-chocolat": "/lib/images/vocabulaire/aliments/pain-au-chocolat.webp",
   "pain": "/lib/images/vocabulaire/aliments/pain.webp",
@@ -7297,11 +7164,9 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "crabe": "/lib/images/vocabulaire/animaux-aquatiques/crabe.webp",
   "crevette": "/lib/images/vocabulaire/animaux-aquatiques/crevette.webp",
   "dauphin": "/lib/images/vocabulaire/animaux-aquatiques/dauphin.webp",
-  "etoile-de-mer": "/lib/images/vocabulaire/animaux-aquatiques/etoile-de-mer.webp",
   "hippocampe": "/lib/images/vocabulaire/animaux-aquatiques/hippocampe.webp",
   "homard": "/lib/images/vocabulaire/animaux-aquatiques/homard.webp",
   "huitre": "/lib/images/vocabulaire/animaux-aquatiques/huitre.webp",
-  "meduse": "/lib/images/vocabulaire/animaux-aquatiques/meduse.webp",
   "morse": "/lib/images/vocabulaire/animaux-aquatiques/morse.webp",
   "méduse": "/lib/images/vocabulaire/animaux-aquatiques/méduse.webp",
   "otarie": "/lib/images/vocabulaire/animaux-aquatiques/otarie.webp",
@@ -7318,7 +7183,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chat": "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp",
   "chenil": "/lib/images/vocabulaire/animaux-ferme-compagnie/chenil.webp",
   "cheval": "/lib/images/vocabulaire/animaux-ferme-compagnie/cheval.webp",
-  "chevre": "/lib/images/vocabulaire/animaux-ferme-compagnie/chevre.webp",
   "chien": "/lib/images/vocabulaire/animaux-ferme-compagnie/chien.webp",
   "chèvre": "/lib/images/vocabulaire/animaux-ferme-compagnie/chèvre.webp",
   "cochon": "/lib/images/vocabulaire/animaux-ferme-compagnie/cochon.webp",
@@ -7343,15 +7207,12 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "coyote": "/lib/images/vocabulaire/animaux-sauvages/coyote.webp",
   "crapaud": "/lib/images/vocabulaire/animaux-sauvages/crapaud.webp",
   "crocodile": "/lib/images/vocabulaire/animaux-sauvages/crocodile.webp",
-  "ecureuil": "/lib/images/vocabulaire/animaux-sauvages/ecureuil.webp",
-  "elephant": "/lib/images/vocabulaire/animaux-sauvages/elephant.webp",
   "gazelle": "/lib/images/vocabulaire/animaux-sauvages/gazelle.webp",
   "gecko": "/lib/images/vocabulaire/animaux-sauvages/gecko.webp",
   "girafe": "/lib/images/vocabulaire/animaux-sauvages/girafe.webp",
   "gorille": "/lib/images/vocabulaire/animaux-sauvages/gorille.webp",
   "grenouille": "/lib/images/vocabulaire/animaux-sauvages/grenouille.webp",
   "grizzly": "/lib/images/vocabulaire/animaux-sauvages/grizzly.webp",
-  "herisson": "/lib/images/vocabulaire/animaux-sauvages/herisson.webp",
   "hyène": "/lib/images/vocabulaire/animaux-sauvages/hyène.webp",
   "hérisson": "/lib/images/vocabulaire/animaux-sauvages/hérisson.webp",
   "iguane": "/lib/images/vocabulaire/animaux-sauvages/iguane.webp",
@@ -7375,7 +7236,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "wallaby": "/lib/images/vocabulaire/animaux-sauvages/wallaby.webp",
   "wapiti": "/lib/images/vocabulaire/animaux-sauvages/wapiti.webp",
   "wombat": "/lib/images/vocabulaire/animaux-sauvages/wombat.webp",
-  "zebre": "/lib/images/vocabulaire/animaux-sauvages/zebre.webp",
   "zèbre": "/lib/images/vocabulaire/animaux-sauvages/zèbre.webp",
   "écureuil": "/lib/images/vocabulaire/animaux-sauvages/écureuil.webp",
   "éléphant": "/lib/images/vocabulaire/animaux-sauvages/éléphant.webp",
@@ -7474,10 +7334,10 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "whisky": "/lib/images/vocabulaire/boissons/whisky.webp",
   "astéroïde": "/lib/images/vocabulaire/ciel-espace/astéroïde.webp",
   "comète": "/lib/images/vocabulaire/ciel-espace/comète.webp",
-  "fusee": "/lib/images/vocabulaire/ciel-espace/fusee.webp",
   "fusée": "/lib/images/vocabulaire/ciel-espace/fusée.webp",
   "galaxie": "/lib/images/vocabulaire/ciel-espace/galaxie.webp",
   "lune": "/lib/images/vocabulaire/ciel-espace/lune.webp",
+  "navette-spatiale": "/lib/images/vocabulaire/ciel-espace/navette-spatiale.webp",
   "planète": "/lib/images/vocabulaire/ciel-espace/planète.webp",
   "satellite": "/lib/images/vocabulaire/ciel-espace/satellite.webp",
   "saturne": "/lib/images/vocabulaire/ciel-espace/saturne.webp",
@@ -7495,7 +7355,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "dent": "/lib/images/vocabulaire/corps/dent.webp",
   "doigt": "/lib/images/vocabulaire/corps/doigt.webp",
   "dos": "/lib/images/vocabulaire/corps/dos.webp",
-  "epaule": "/lib/images/vocabulaire/corps/epaule.webp",
   "estomac": "/lib/images/vocabulaire/corps/estomac.webp",
   "front": "/lib/images/vocabulaire/corps/front.webp",
   "genou": "/lib/images/vocabulaire/corps/genou.webp",
@@ -7509,7 +7368,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "moustache": "/lib/images/vocabulaire/corps/moustache.webp",
   "muscle": "/lib/images/vocabulaire/corps/muscle.webp",
   "nez": "/lib/images/vocabulaire/corps/nez.webp",
-  "oeil": "/lib/images/vocabulaire/corps/oeil.webp",
   "ongle": "/lib/images/vocabulaire/corps/ongle.webp",
   "oreille": "/lib/images/vocabulaire/corps/oreille.webp",
   "orteil": "/lib/images/vocabulaire/corps/orteil.webp",
@@ -7520,7 +7378,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "poing": "/lib/images/vocabulaire/corps/poing.webp",
   "poumon": "/lib/images/vocabulaire/corps/poumon.webp",
   "sourcil": "/lib/images/vocabulaire/corps/sourcil.webp",
-  "tete": "/lib/images/vocabulaire/corps/tete.webp",
   "tête": "/lib/images/vocabulaire/corps/tête.webp",
   "ventre": "/lib/images/vocabulaire/corps/ventre.webp",
   "visage": "/lib/images/vocabulaire/corps/visage.webp",
@@ -7585,16 +7442,15 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "brownie": "/lib/images/vocabulaire/desserts/brownie.webp",
   "chocolat": "/lib/images/vocabulaire/desserts/chocolat.webp",
   "cookie": "/lib/images/vocabulaire/desserts/cookie.webp",
-  "crepe": "/lib/images/vocabulaire/desserts/crepe.webp",
   "crêpe": "/lib/images/vocabulaire/desserts/crêpe.webp",
   "cupcake": "/lib/images/vocabulaire/desserts/cupcake.webp",
   "dessert": "/lib/images/vocabulaire/desserts/dessert.webp",
   "donut": "/lib/images/vocabulaire/desserts/donut.webp",
   "flan": "/lib/images/vocabulaire/desserts/flan.webp",
-  "gateau": "/lib/images/vocabulaire/desserts/gateau.webp",
   "gauffre": "/lib/images/vocabulaire/desserts/gauffre.webp",
   "gaufre": "/lib/images/vocabulaire/desserts/gaufre.webp",
   "glace": "/lib/images/vocabulaire/desserts/glace.webp",
+  "gâteau-d-anniversaire": "/lib/images/vocabulaire/desserts/gâteau-d-anniversaire.webp",
   "gâteau": "/lib/images/vocabulaire/desserts/gâteau.webp",
   "macaron": "/lib/images/vocabulaire/desserts/macaron.webp",
   "madeleine": "/lib/images/vocabulaire/desserts/madeleine.webp",
@@ -7627,7 +7483,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "diplôme": "/lib/images/vocabulaire/ecole-bureau/diplôme.webp",
   "encre": "/lib/images/vocabulaire/ecole-bureau/encre.webp",
   "encyclopédie": "/lib/images/vocabulaire/ecole-bureau/encyclopédie.webp",
-  "equerre": "/lib/images/vocabulaire/ecole-bureau/equerre.webp",
   "examen": "/lib/images/vocabulaire/ecole-bureau/examen.webp",
   "feuille-de-papier": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp",
   "feutre": "/lib/images/vocabulaire/ecole-bureau/feutre.webp",
@@ -7647,7 +7502,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "punaise": "/lib/images/vocabulaire/ecole-bureau/punaise.webp",
   "pupitre": "/lib/images/vocabulaire/ecole-bureau/pupitre.webp",
   "rapporteur": "/lib/images/vocabulaire/ecole-bureau/rapporteur.webp",
-  "regle": "/lib/images/vocabulaire/ecole-bureau/regle.webp",
   "règle": "/lib/images/vocabulaire/ecole-bureau/règle.webp",
   "salle-de-classe": "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp",
   "scotch": "/lib/images/vocabulaire/ecole-bureau/scotch.webp",
@@ -7783,9 +7637,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "oranges": "/lib/images/vocabulaire/fruits/oranges.webp",
   "pamplemousse": "/lib/images/vocabulaire/fruits/pamplemousse.webp",
   "papaye": "/lib/images/vocabulaire/fruits/papaye.webp",
-  "pasteque": "/lib/images/vocabulaire/fruits/pasteque.webp",
   "pastèque": "/lib/images/vocabulaire/fruits/pastèque.webp",
-  "peche": "/lib/images/vocabulaire/fruits/peche.webp",
   "poire": "/lib/images/vocabulaire/fruits/poire.webp",
   "pomme": "/lib/images/vocabulaire/fruits/pomme.webp",
   "prune": "/lib/images/vocabulaire/fruits/prune.webp",
@@ -7880,7 +7732,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "criquet": "/lib/images/vocabulaire/insectes-petites-betes/criquet.webp",
   "escargot": "/lib/images/vocabulaire/insectes-petites-betes/escargot.webp",
   "fourmi": "/lib/images/vocabulaire/insectes-petites-betes/fourmi.webp",
-  "guepe": "/lib/images/vocabulaire/insectes-petites-betes/guepe.webp",
   "guêpe": "/lib/images/vocabulaire/insectes-petites-betes/guêpe.webp",
   "hanneton": "/lib/images/vocabulaire/insectes-petites-betes/hanneton.webp",
   "libellule": "/lib/images/vocabulaire/insectes-petites-betes/libellule.webp",
@@ -7911,13 +7762,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "courgette": "/lib/images/vocabulaire/legumes/courgette.webp",
   "céleri": "/lib/images/vocabulaire/legumes/céleri.webp",
   "echalotte": "/lib/images/vocabulaire/legumes/echalotte.webp",
-  "epinard": "/lib/images/vocabulaire/legumes/epinard.webp",
   "fenouil": "/lib/images/vocabulaire/legumes/fenouil.webp",
   "haricot": "/lib/images/vocabulaire/legumes/haricot.webp",
   "laitue": "/lib/images/vocabulaire/legumes/laitue.webp",
   "lentille": "/lib/images/vocabulaire/legumes/lentille.webp",
   "légume": "/lib/images/vocabulaire/legumes/légume.webp",
-  "mais": "/lib/images/vocabulaire/legumes/mais.webp",
   "maïs": "/lib/images/vocabulaire/legumes/maïs.webp",
   "navet": "/lib/images/vocabulaire/legumes/navet.webp",
   "oignon": "/lib/images/vocabulaire/legumes/oignon.webp",
@@ -8193,21 +8042,17 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "cascade": "/lib/images/vocabulaire/nature/cascade.webp",
   "champ": "/lib/images/vocabulaire/nature/champ.webp",
   "colline": "/lib/images/vocabulaire/nature/colline.webp",
-  "desert": "/lib/images/vocabulaire/nature/desert.webp",
   "dune": "/lib/images/vocabulaire/nature/dune.webp",
   "désert": "/lib/images/vocabulaire/nature/désert.webp",
   "falaise": "/lib/images/vocabulaire/nature/falaise.webp",
-  "feu": "/lib/images/vocabulaire/nature/feu.webp",
   "flamme": "/lib/images/vocabulaire/nature/flamme.webp",
   "fleuve": "/lib/images/vocabulaire/nature/fleuve.webp",
   "foin": "/lib/images/vocabulaire/nature/foin.webp",
-  "foret": "/lib/images/vocabulaire/nature/foret.webp",
   "forêt": "/lib/images/vocabulaire/nature/forêt.webp",
   "glacier": "/lib/images/vocabulaire/nature/glacier.webp",
   "gouffre": "/lib/images/vocabulaire/nature/gouffre.webp",
   "grotte": "/lib/images/vocabulaire/nature/grotte.webp",
   "horizon": "/lib/images/vocabulaire/nature/horizon.webp",
-  "ile": "/lib/images/vocabulaire/nature/ile.webp",
   "lac": "/lib/images/vocabulaire/nature/lac.webp",
   "marais": "/lib/images/vocabulaire/nature/marais.webp",
   "mer": "/lib/images/vocabulaire/nature/mer.webp",
@@ -8217,7 +8062,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "paysage": "/lib/images/vocabulaire/nature/paysage.webp",
   "plage": "/lib/images/vocabulaire/nature/plage.webp",
   "prairie": "/lib/images/vocabulaire/nature/prairie.webp",
-  "riviere": "/lib/images/vocabulaire/nature/riviere.webp",
   "rivière": "/lib/images/vocabulaire/nature/rivière.webp",
   "rizière": "/lib/images/vocabulaire/nature/rizière.webp",
   "rocher": "/lib/images/vocabulaire/nature/rocher.webp",
@@ -8269,7 +8113,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "balai": "/lib/images/vocabulaire/objets/balai.webp",
   "balance": "/lib/images/vocabulaire/objets/balance.webp",
   "biberon": "/lib/images/vocabulaire/objets/biberon.webp",
-  "boite": "/lib/images/vocabulaire/objets/boite.webp",
   "bougie": "/lib/images/vocabulaire/objets/bougie.webp",
   "bouteille": "/lib/images/vocabulaire/objets/bouteille.webp",
   "boîte": "/lib/images/vocabulaire/objets/boîte.webp",
@@ -8316,7 +8159,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "nid": "/lib/images/vocabulaire/oiseaux/nid.webp",
   "oiseau": "/lib/images/vocabulaire/oiseaux/oiseau.webp",
   "paon": "/lib/images/vocabulaire/oiseaux/paon.webp",
-  "pelican": "/lib/images/vocabulaire/oiseaux/pelican.webp",
   "perdrix": "/lib/images/vocabulaire/oiseaux/perdrix.webp",
   "perroquet": "/lib/images/vocabulaire/oiseaux/perroquet.webp",
   "pie": "/lib/images/vocabulaire/oiseaux/pie.webp",
@@ -8515,6 +8357,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chronomètre": "/lib/images/vocabulaire/sports/chronomètre.webp",
   "cible": "/lib/images/vocabulaire/sports/cible.webp",
   "course": "/lib/images/vocabulaire/sports/course.webp",
+  "cyclisme": "/lib/images/vocabulaire/sports/cyclisme.webp",
   "equipement-de-sport": "/lib/images/vocabulaire/sports/equipement-de-sport.webp",
   "escalade": "/lib/images/vocabulaire/sports/escalade.webp",
   "filet": "/lib/images/vocabulaire/sports/filet.webp",
@@ -8536,7 +8379,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "palmes": "/lib/images/vocabulaire/sports/palmes.webp",
   "patins": "/lib/images/vocabulaire/sports/patins.webp",
   "piste": "/lib/images/vocabulaire/sports/piste.webp",
-  "randonnee": "/lib/images/vocabulaire/sports/randonnee.webp",
   "randonnée": "/lib/images/vocabulaire/sports/randonnée.webp",
   "raquette-de-tennis": "/lib/images/vocabulaire/sports/raquette-de-tennis.webp",
   "raquette": "/lib/images/vocabulaire/sports/raquette.webp",
@@ -8639,12 +8481,9 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "embouteillage": "/lib/images/vocabulaire/transports/embouteillage.webp",
   "ferry": "/lib/images/vocabulaire/transports/ferry.webp",
   "guichet-de-gare": "/lib/images/vocabulaire/transports/guichet-de-gare.webp",
-  "helicoptere": "/lib/images/vocabulaire/transports/helicoptere.webp",
   "hydravion": "/lib/images/vocabulaire/transports/hydravion.webp",
   "hélicoptère": "/lib/images/vocabulaire/transports/hélicoptère.webp",
   "klaxon": "/lib/images/vocabulaire/transports/klaxon.webp",
-  "metro": "/lib/images/vocabulaire/transports/metro.webp",
-  "montgolfiere": "/lib/images/vocabulaire/transports/montgolfiere.webp",
   "montgolfière": "/lib/images/vocabulaire/transports/montgolfière.webp",
   "moto": "/lib/images/vocabulaire/transports/moto.webp",
   "métro": "/lib/images/vocabulaire/transports/métro.webp",
@@ -8666,7 +8505,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "trotinette": "/lib/images/vocabulaire/transports/trotinette.webp",
   "trottinette": "/lib/images/vocabulaire/transports/trottinette.webp",
   "téléphérique": "/lib/images/vocabulaire/transports/téléphérique.webp",
-  "velo": "/lib/images/vocabulaire/transports/velo.webp",
   "voilier": "/lib/images/vocabulaire/transports/voilier.webp",
   "voiture": "/lib/images/vocabulaire/transports/voiture.webp",
   "volant": "/lib/images/vocabulaire/transports/volant.webp",
@@ -8675,7 +8513,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "wagonnet": "/lib/images/vocabulaire/transports/wagonnet.webp",
   "yacht": "/lib/images/vocabulaire/transports/yacht.webp",
   "baskets": "/lib/images/vocabulaire/vetements/baskets.webp",
-  "beret": "/lib/images/vocabulaire/vetements/beret.webp",
   "blouson": "/lib/images/vocabulaire/vetements/blouson.webp",
   "bonnet": "/lib/images/vocabulaire/vetements/bonnet.webp",
   "bottes-de-pluie": "/lib/images/vocabulaire/vetements/bottes-de-pluie.webp",
@@ -8683,7 +8520,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bottines": "/lib/images/vocabulaire/vetements/bottines.webp",
   "bouton": "/lib/images/vocabulaire/vetements/bouton.webp",
   "béret": "/lib/images/vocabulaire/vetements/béret.webp",
-  "calecon": "/lib/images/vocabulaire/vetements/calecon.webp",
   "caleçon": "/lib/images/vocabulaire/vetements/caleçon.webp",
   "casquette": "/lib/images/vocabulaire/vetements/casquette.webp",
   "chapeau": "/lib/images/vocabulaire/vetements/chapeau.webp",
@@ -8699,7 +8535,6 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "culotte": "/lib/images/vocabulaire/vetements/culotte.webp",
   "debardeur": "/lib/images/vocabulaire/vetements/debardeur.webp",
   "doudoune": "/lib/images/vocabulaire/vetements/doudoune.webp",
-  "echarpe": "/lib/images/vocabulaire/vetements/echarpe.webp",
   "fez": "/lib/images/vocabulaire/vetements/fez.webp",
   "foulard": "/lib/images/vocabulaire/vetements/foulard.webp",
   "gants": "/lib/images/vocabulaire/vetements/gants.webp",
