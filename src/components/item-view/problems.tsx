@@ -6,7 +6,7 @@ import {
   preColorFlat,
   ShapesRow,
 } from '../math/FractionShape'
-import { FractionView, renderMathText } from '../math/FractionView'
+import { FractionView, looksLikeFraction, renderMathText } from '../math/FractionView'
 import {
   AlgebraToken,
   EquationRow,
@@ -359,12 +359,30 @@ export function ConvertRow({ item, mode }: { item: MathItem; mode: PreviewMode }
   )
 }
 
+const OP_NAME_SYMBOLS = new Set(['+', '−', '-', '×', '÷', '*', '/'])
+
 export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const prompt = item.prompt ?? ''
   const show = mode === 'answers'
 
   if (item.op && item.a != null && item.b != null) {
     return <EquationRow item={item} mode={mode} />
+  }
+
+  // Nommer l’opération : [+] ________ (signe encadré, trait sur la même ligne).
+  const opSymbol = (item.op ?? prompt.trim()).replace(/-/g, '−').replace(/\*/g, '×').replace(/\//g, '÷')
+  if (
+    (item.op && item.a == null && item.b == null) ||
+    (OP_NAME_SYMBOLS.has(prompt.trim()) && !prompt.includes('='))
+  ) {
+    return (
+      <div className="op-name-row" aria-label="Nommer l’opération">
+        <span className="op-name-box">{opSymbol}</span>
+        <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+          {show ? item.answer : '\u00a0'}
+        </span>
+      </div>
+    )
   }
 
   const parsed = parseBinaryEquation(prompt)
@@ -414,13 +432,20 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
     const expr = prompt.trimEnd().replace(/=\s*$/, '').trimEnd()
     // Sans opérateur binaire (ex. 2³, √144) : même largeur de trait que eq-row (× / ÷).
     const unaryEq = !/[+\-−×÷]/.test(expr)
+    const fracAnswer = looksLikeFraction(item.answer)
     return (
-      <div className={`inline-prompt equation aligned-eq${unaryEq ? ' fixed-ans' : ''}`}>
+      <div
+        className={`inline-prompt equation aligned-eq${unaryEq ? ' fixed-ans' : ''}${fracAnswer ? ' frac-ans' : ''}`}
+      >
         <span className="eq-text">{renderMathText(expr)}</span>
         <span className="eq-sign">=</span>
-        <span className={`answer-line-field ${show ? 'filled' : ''}`}>
-          {show ? <FractionView value={item.answer} /> : '\u00a0'}
-        </span>
+        {fracAnswer ? (
+          <FractionResultSlot answer={item.answer} show={show} />
+        ) : (
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+            {show ? <FractionView value={item.answer} /> : '\u00a0'}
+          </span>
+        )}
       </div>
     )
   }

@@ -1,29 +1,11 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
-import {
-  tcmCfrAudioDownloadName,
-  tcmCfrAudioKindFromParts,
-} from '@/tcm-cfr/audio-nombres'
 import { mirrorPoint, type GridPt } from '@/tcm-cfr/symetrie'
 
-/** Concatène des MP3 (mêmes paramètres TTS) en un Blob téléchargeable. */
-async function concatMp3(urls: string[]): Promise<Blob> {
-  const buffers: ArrayBuffer[] = []
-  for (const url of urls) {
-    const res = await fetch(url)
-    if (!res.ok) throw new Error(`Audio introuvable : ${url}`)
-    buffers.push(await res.arrayBuffer())
-  }
-  const total = buffers.reduce((n, b) => n + b.byteLength, 0)
-  const out = new Uint8Array(total)
-  let offset = 0
-  for (const buf of buffers) {
-    out.set(new Uint8Array(buf), offset)
-    offset += buf.byteLength
-  }
-  return new Blob([out], { type: 'audio/mpeg' })
-}
-
+/**
+ * Dictée audio TCM CFR (ex. 1–2) : uniquement la zone de réponse sur la fiche.
+ * Écoute / téléchargement via le bouton de la barre d’aperçu (à côté de Générer).
+ */
 export function AudioDictationBlock({
   item,
   mode,
@@ -32,69 +14,8 @@ export function AudioDictationBlock({
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
-  const partsKey = (item.audioParts ?? (item.audioSrc ? [item.audioSrc] : [])).join('|')
-  const parts = useMemo(
-    () => (partsKey ? partsKey.split('|') : []),
-    [partsKey],
-  )
-  const [busy, setBusy] = useState(false)
-  const [objectUrl, setObjectUrl] = useState<string | null>(null)
-
-  const playlistSrc = objectUrl ?? parts[0] ?? ''
-
-  const ensureConcat = useCallback(async () => {
-    if (objectUrl || parts.length <= 1) return objectUrl ?? parts[0] ?? ''
-    setBusy(true)
-    try {
-      const blob = await concatMp3(parts)
-      const url = URL.createObjectURL(blob)
-      setObjectUrl(url)
-      return url
-    } finally {
-      setBusy(false)
-    }
-  }, [objectUrl, parts])
-
-  const onDownload = async () => {
-    const url = await ensureConcat()
-    if (!url) return
-    const a = document.createElement('a')
-    a.href = url
-    a.download = tcmCfrAudioDownloadName({ kind: tcmCfrAudioKindFromParts(parts) })
-    a.click()
-  }
-
-  const onPlayAll = async () => {
-    const url = await ensureConcat()
-    if (!url) return
-    const audio = document.querySelector<HTMLAudioElement>(
-      `audio[data-cfr-audio="${parts.join('|')}"]`,
-    )
-    if (audio) {
-      audio.src = url
-      void audio.play()
-    }
-  }
-
   return (
     <div className="tcm-cfr-audio-dictation">
-      <div className="tcm-cfr-audio-controls">
-        <audio
-          className="oral-audio"
-          controls
-          preload="none"
-          src={playlistSrc}
-          data-cfr-audio={parts.join('|')}
-        >
-          Écoutez l’enregistrement.
-        </audio>
-        <button type="button" className="tcm-cfr-audio-btn" onClick={() => void onPlayAll()} disabled={busy || parts.length === 0}>
-          Écouter
-        </button>
-        <button type="button" className="tcm-cfr-audio-btn" onClick={() => void onDownload()} disabled={busy || parts.length === 0}>
-          Télécharger
-        </button>
-      </div>
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
         {show ? item.answer : '\u00a0'}
       </span>
@@ -192,6 +113,8 @@ export function SymmetryGridBlock({
   )
 }
 
+const SEGMENT_LETTERS = ['a', 'b', 'c'] as const
+
 export function SegmentMeasureBlock({
   item,
   mode,
@@ -210,9 +133,10 @@ export function SegmentMeasureBlock({
       <div className="tcm-cfr-segment-frame">
         {segments.map((seg, i) => {
           const widthMm = Math.min(160, seg.mm)
+          const letter = SEGMENT_LETTERS[i] ?? String.fromCharCode(97 + i)
           return (
             <div className="tcm-cfr-segment-row" key={`seg-${i}`}>
-              <span className="tcm-cfr-segment-num">{i + 1}.</span>
+              <span className="tcm-cfr-segment-num">{letter}.</span>
               <div className="tcm-cfr-segment-line-wrap">
                 <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm` }} />
               </div>
@@ -228,16 +152,14 @@ export function SegmentMeasureBlock({
       </p>
       {qPrompts.map((q, qi) => (
         <div className="tcm-cfr-segment-qcm" key={`q-${qi}`}>
-          <p className="prompt-stack-text">
-            {qi + 1}. {q}
-          </p>
+          <p className="prompt-stack-text">{q}</p>
           <div className="tcm-cfr-qcm-choices">
-            {[1, 2, 3].map((n) => {
-              const checked = show && answers[qi] === String(n)
+            {SEGMENT_LETTERS.map((letter) => {
+              const checked = show && answers[qi] === letter
               return (
-                <label key={n} className={`tcm-cfr-qcm-choice${checked ? ' is-checked' : ''}`}>
+                <label key={letter} className={`tcm-cfr-qcm-choice${checked ? ' is-checked' : ''}`}>
+                  <span className="tcm-cfr-qcm-letter">{letter}</span>
                   <span className={`listen-check-box${checked ? ' checked' : ''}`} />
-                  {n}
                 </label>
               )
             })}

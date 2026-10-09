@@ -50,8 +50,9 @@ export function OrderRow({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   const parts = item.placeParts ?? []
   const sep = item.orderOp === '>' ? '>' : '<'
   const slots = Math.max(parts.length, given.length, 5)
+  const compact = Boolean(item.orderCompact)
   return (
-    <div className="order-block">
+    <div className={`order-block${compact ? ' order-compact' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       {item.orderBoxed ? (
         <div className="order-answer-row order-given-boxes" aria-label="Nombres à ranger">

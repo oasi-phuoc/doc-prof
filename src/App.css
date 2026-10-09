@@ -844,6 +844,19 @@ html,body,#root{
 .inline-prompt.equation.aligned-eq.fixed-ans .answer-line-field{
   width:3.8em;min-width:3.8em;max-width:3.8em
 }
+/* Réponse fraction : barre horizontale à la hauteur du « = ». */
+.inline-prompt.equation.aligned-eq.frac-ans{
+  align-items:center
+}
+.inline-prompt.equation.aligned-eq.frac-ans .eq-sign{
+  line-height:1;align-self:center
+}
+.inline-prompt.equation.aligned-eq.frac-ans .fraction-stack{
+  top:0;align-self:center
+}
+.inline-prompt.equation.aligned-eq.fixed-ans.frac-ans{
+  grid-template-columns:max-content auto max-content
+}
 .eq-row{
   display:grid;
   /* Opérandes / réponse −20 % ; op et = en largeur mini (pas la même que les nombres). */
@@ -998,6 +1011,20 @@ html,body,#root{
 }
 .convert-eq{font-weight:700}
 .convert-unit{font-weight:600}
+/* TCM CFR ex. 6 — signe d’opération encadré, trait de réponse sur la même ligne. */
+.op-name-row{
+  display:flex;align-items:center;gap:10px;width:100%;min-width:0;
+  font-size:13pt;font-weight:600;line-height:1.4
+}
+.op-name-box{
+  display:inline-flex;align-items:center;justify-content:center;
+  flex:0 0 auto;min-width:1.7em;min-height:1.7em;padding:0.12em 0.4em;
+  border:1.5px solid var(--ink);box-sizing:border-box;
+  font-size:16pt;font-weight:700;line-height:1;text-align:center
+}
+.op-name-row .answer-line-field{
+  flex:1 1 auto;width:auto;min-width:4em;display:block;margin:0
+}
 .property-lines{display:flex;flex-direction:column;gap:6px;width:100%}
 .property-line{display:grid;grid-template-columns:max-content minmax(4em,1fr);align-items:baseline;column-gap:8px}
 .property-label{font-weight:600}
@@ -1482,7 +1509,7 @@ html,body,#root{
   .digit-cell{border-color:#d0ccd8!important}
   .digit-cell.carry{border-color:#ddd9e3!important}
   .column-rule{border-bottom-color:var(--purple)!important}
-  .sequence-term,.compare-circle,.select-pill,.digit-cell,.letter-cell{border-color:#000!important}
+  .sequence-term,.compare-circle,.select-pill,.digit-cell,.letter-cell,.op-name-box,.order-given-box{border-color:#000!important}
   .letter-table,.letter-table td{border:none!important}
   .letter-table-cell.selected{border-color:#000!important}
   .letter-table-cell--lower,.letter-table-cell--upper{text-decoration:none!important}
@@ -3976,7 +4003,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcm-cfr-audio-btn:disabled{opacity:.5;cursor:default}
 .tcm-cfr-symmetry{width:100%}
-.tcm-cfr-symmetry-svg{width:100%;max-width:320px;height:auto;display:block;margin:0 auto}
+/* Grille 20×10 : largeur utile de la fiche A4. */
+.tcm-cfr-symmetry-svg{width:100%;max-width:170mm;height:auto;display:block;margin:0 auto}
 .tcm-cfr-grid-line{stroke:#c8c4d0;stroke-width:0.7}
 .tcm-cfr-figure-line{stroke:var(--ink,#222);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .tcm-cfr-figure-image{stroke:var(--ink,#222);stroke-width:2;stroke-dasharray:4 3;stroke-linejoin:round;stroke-linecap:round}
@@ -3987,9 +4015,14 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcm-cfr-segment-line-wrap{flex:1;min-width:0}
 .tcm-cfr-segment-line{height:0;border-top:2.5px solid var(--ink,#222);max-width:100%}
 .tcm-cfr-segment-qcm{margin-top:6px}
-.tcm-cfr-qcm-choices{display:flex;gap:16px;margin-top:4px}
-.tcm-cfr-qcm-choice{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.tcm-cfr-qcm-choices{display:flex;gap:22px;margin-top:6px;align-items:flex-start}
+.tcm-cfr-qcm-choice{
+  display:inline-flex;flex-direction:column;align-items:center;gap:4px;
+  font-weight:600;line-height:1.1
+}
+.tcm-cfr-qcm-letter{font-size:12pt;font-weight:700}
 .tcm-cfr-qcm-choice.is-checked{color:var(--purple,#5b3a8c)}
+.tcm-cfr-qcm-choice.is-checked .listen-check-box{border-color:var(--purple,#5b3a8c)}
 .tcm-cfr-metro{width:100%}
 .tcm-cfr-metro-svg{width:100%;max-width:100%;height:auto;display:block;margin:0 0 10px}
 .tcm-cfr-metro-cell{fill:none;stroke:#d8d4de;stroke-width:0.6}

@@ -398,6 +398,8 @@ export type MathItem = {
   orderOp?: '<' | '>'
   /** Rangement : nombres donnés en cadres, un cadre au-dessus de chaque trait. */
   orderBoxed?: boolean
+  /** Rangement compact (cadres/traits étroits, une ligne — max. ~3 chiffres). */
+  orderCompact?: boolean
   calcAnswer?: string
   /** Second calcul (layout geo dual : aire à droite). */
   calcAnswerSecondary?: string

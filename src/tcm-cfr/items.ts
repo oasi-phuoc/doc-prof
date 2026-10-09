@@ -37,14 +37,14 @@ function oneDecimal(rng: Rng, loTenths: number, hiTenths: number): number {
   return t / 10
 }
 
-/** Ex. 1 — 5 nombres audio 1–1000. */
+/** Ex. 1 — 5 nombres audio 11–99. */
 function genEx01(rng: Rng, count: number): MathItem[] {
   const used = new Set<number>()
   return Array.from({ length: Math.max(1, count) }, () => {
-    let n = int(rng, 1, 1000)
+    let n = int(rng, 11, 99)
     let guard = 0
     while (used.has(n) && guard < 40) {
-      n = int(rng, 1, 1000)
+      n = int(rng, 11, 99)
       guard++
     }
     used.add(n)
@@ -86,6 +86,8 @@ function genEx03(rng: Rng): MathItem[] {
     sequence,
     placeParts: ordered,
     orderBoxed: true,
+    /** Cadres / traits compacts (max. 3 chiffres) pour tenir sur une ligne. */
+    orderCompact: true,
     orderOp: ascending ? '<' : '>',
     prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
     answer: ordered.join(ascending ? ' < ' : ' > '),
@@ -222,7 +224,7 @@ function genEx05(rng: Rng): MathItem[] {
     : [decomp(big, true), decomp(small, false)]
 }
 
-/** Ex. 6 — nommer + × ÷ −. */
+/** Ex. 6 — nommer + × ÷ − (signe encadré, trait sur la même ligne). */
 function genEx06(rng: Rng): MathItem[] {
   const ops: Array<{ op: ArithOp; word: string }> = [
     { op: '+', word: 'plus' },
@@ -231,7 +233,8 @@ function genEx06(rng: Rng): MathItem[] {
     { op: '÷', word: 'diviser' },
   ]
   return shuffle(rng, ops).map(({ op, word }) => ({
-    layout: 'text' as const,
+    layout: 'inline' as const,
+    op,
     prompt: op,
     answer: word,
   }))
@@ -316,7 +319,7 @@ function genEx11(rng: Rng, count: number): MathItem[] {
   return shuffle(rng, FRACTION_WORDS)
     .slice(0, Math.max(1, count))
     .map(({ term, n, d }) => ({
-      layout: 'text' as const,
+      layout: 'inline' as const,
       prompt: `${term} =`,
       answer: `${n}/${d}`,
     }))
@@ -507,6 +510,7 @@ function genEx19(rng: Rng): MathItem[] {
     unit: units[i]!,
     display: units[i] === 'cm' ? fmt(mm / 10) : String(mm),
   }))
+  const letters = ['a', 'b', 'c'] as const
   const longest = segments.reduce((best, s, i) => (s.mm > segments[best]!.mm ? i : best), 0)
   const shortest = segments.reduce((best, s, i) => (s.mm < segments[best]!.mm ? i : best), 0)
   const qLongFirst = rng() < 0.5
@@ -526,8 +530,8 @@ function genEx19(rng: Rng): MathItem[] {
             'Quel segment est le plus long ?',
           ],
       answer: qLongFirst
-        ? `${longest + 1} ; ${shortest + 1}`
-        : `${shortest + 1} ; ${longest + 1}`,
+        ? `${letters[longest]} ; ${letters[shortest]}`
+        : `${letters[shortest]} ; ${letters[longest]}`,
       labels: segments.map((s) => `${s.display} ${s.unit}`),
     },
   ]
