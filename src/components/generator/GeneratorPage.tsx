@@ -3307,7 +3307,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </svg>
                   </button>
                 )}
-                {isTcf && !libreMode ? (
+                {isTcf ? (
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
