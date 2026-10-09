@@ -9,6 +9,39 @@ function nbMotsLabel({ min = 0, max = 0 }: TcfNbMots): string {
   return ''
 }
 
+const RIBBON_ICONS: string[][] = [
+  ['M8 4h8v3H8zM6 6H5v15h14V6h-1', 'M9 12h6M9 16h6'],
+  ['M16 7l-6.5 6.5a2 2 0 0 0 3 3L19 10a4 4 0 0 0-6-6l-7 7a6 6 0 0 0 9 9l5-5'],
+  ['M4 20h4L19 9l-4-4L4 16v4Z', 'M13 7l4 4'],
+  ['M6 21V4M6 4h11l-2 4 2 4H6'],
+  ['M12 4v10M12 18v2'],
+]
+
+/** Bandeau d’outils simplifié d’une fenêtre « nouveau message » (décor, non interactif). */
+function MailRibbon() {
+  return (
+    <div className="tcf-mail-ribbon" aria-hidden>
+      <svg viewBox="0 0 24 24">
+        {RIBBON_ICONS[0].map((d) => (
+          <path key={d} d={d} />
+        ))}
+      </svg>
+      <span className="tcf-mail-sep" />
+      <b>G</b>
+      <i>I</i>
+      <u>S</u>
+      <span className="tcf-mail-sep" />
+      {RIBBON_ICONS.slice(1).map((paths, i) => (
+        <svg key={i} viewBox="0 0 24 24">
+          {paths.map((d) => (
+            <path key={d} d={d} />
+          ))}
+        </svg>
+      ))}
+    </div>
+  )
+}
+
 /** Zone d’écriture : consigne supplémentaire, traits (cadre téléphone ou e-mail) et compteur de mots. */
 export function ZoneEcriture({
   cadre,
@@ -42,12 +75,23 @@ export function ZoneEcriture({
         </div>
       ) : cadre === 'email' ? (
         <div className="tcf-email is-compose">
-          <dl className="tcf-email-head">
-            <dt>À</dt>
-            <dd>{email?.a ?? ''}</dd>
-            <dt>Objet</dt>
-            <dd>{email?.objet ?? ''}</dd>
-          </dl>
+          <MailRibbon />
+          <div className="tcf-mail-head">
+            <span className="tcf-mail-send">
+              <svg viewBox="0 0 24 24" aria-hidden>
+                <path d="M3 20 21 12 3 4l3 8-3 8Zm3-8h15" />
+              </svg>
+              Envoyer
+            </span>
+            <div className="tcf-mail-fields">
+              <span className="tcf-mail-btn">À</span>
+              <span className="tcf-mail-value">{email?.a ?? ''}</span>
+              <span className="tcf-mail-btn">Cc</span>
+              <span className="tcf-mail-value" />
+              <span className="tcf-mail-label">Objet</span>
+              <span className="tcf-mail-value">{email?.objet ?? ''}</span>
+            </div>
+          </div>
           <div className="tcf-email-body">{lignes}</div>
         </div>
       ) : (

@@ -3663,7 +3663,6 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-grille th,.tcf-grille td{border:1px solid var(--ink);padding:4px 10px;text-align:left}
 .tcf-grille th{font-weight:600}
 .tcf-grille-points{width:32%;text-align:center!important;font-weight:700}
-.tcf-email-head.is-compose{border:1px solid var(--ink);margin-bottom:4px}
 .tcf-po-questions{margin:0;padding-left:1.2em;font-weight:600}
 .tcf-po-images{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .tcf-po-images .tcf-image{height:24mm}
@@ -3700,6 +3699,18 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-phone-button{position:absolute;bottom:3mm;left:50%;width:7mm;height:7mm;margin-left:-3.5mm;border:1px solid var(--ink);border-radius:50%}
 .tcf-phone-screen{padding:2mm 4mm;border:1px solid var(--ink);border-radius:2mm}
 .tcf-email.is-compose .tcf-email-body{padding:2px 10px 6px}
+/* PE : fenêtre « nouveau message » (bandeau simplifié, Envoyer, À / Cc / Objet) */
+.tcf-mail-ribbon{display:flex;align-items:center;gap:3mm;padding:1.5mm 3mm;border-bottom:1px solid var(--line);color:var(--muted);font-size:9pt}
+.tcf-mail-ribbon svg{width:4.2mm;height:4.2mm;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tcf-mail-ribbon b,.tcf-mail-ribbon i,.tcf-mail-ribbon u{font-family:Georgia,serif;line-height:1}
+.tcf-mail-sep{width:1px;height:4.5mm;background:var(--line)}
+.tcf-mail-head{display:flex;gap:3mm;align-items:stretch;padding:2mm 3mm;border-bottom:1px solid var(--ink)}
+.tcf-mail-send{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1mm;width:15mm;border:1px solid var(--ink);border-radius:1.5mm;font-size:8.5pt}
+.tcf-mail-send svg{width:5mm;height:5mm;fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.tcf-mail-fields{flex:1;display:grid;grid-template-columns:13mm 1fr;align-items:end;gap:1.2mm 2.5mm}
+.tcf-mail-btn{display:flex;align-items:center;justify-content:center;height:5.5mm;border:1px solid var(--ink);border-radius:1mm;font-size:8.5pt}
+.tcf-mail-label{text-align:center;font-size:8.5pt;padding-bottom:.5mm}
+.tcf-mail-value{min-height:5.5mm;display:flex;align-items:flex-end;padding:0 1mm .5mm;border-bottom:1px solid var(--ink);font-size:9.5pt}
 
 /* —— TCF : page 1 Informations (icônes en couleur du thème) —— */
 .tcf-info{display:flex;flex-direction:column;gap:10px}
