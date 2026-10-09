@@ -129,7 +129,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
   const viewBox = paraPlacement
     ? '0 0 350 168'
     : triPlacement
-      ? '0 0 300 180'
+      ? '0 0 330 180'
       : rhombusPlacement
         ? '0 0 340 200'
         : trapPlacement
@@ -231,7 +231,8 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <L x={(22 + 185) / 2} y={148} baseline="hanging">
               a = {fmt(d.a!)} {unit}
             </L>
-            <L x={(72 + 185) / 2 + 20} y={(28 + 122) / 2 - 4} anchor="start">
+            {/* Cote b le long du côté, décalée vers l’intérieur pour ne pas chevaucher h. */}
+            <L x={(72 + 185) / 2 - 2} y={(28 + 122) / 2 - 10} anchor="middle">
               b = {fmt(d.b!)} {unit}
             </L>
             <L x={(72 + 22) / 2 - 20} y={(28 + 122) / 2 - 4} anchor="end">
@@ -241,7 +242,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
               shapeRightX={185}
               yTop={28}
               yBot={122}
-              bracketX={215}
+              bracketX={245}
               label={`h = ${fmt(d.height!)} ${unit}`}
             />
           </>

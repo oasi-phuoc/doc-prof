@@ -577,7 +577,7 @@ function genEx21(rng: Rng, count: number): MathItem[] {
     const dd = d / g
     const value = nn / dd
     return {
-      layout: 'text' as const,
+      layout: 'inline' as const,
       prompt: `${nn}/${dd} =`,
       answer: fmt(Math.round(value * 1000) / 1000),
     }
@@ -644,11 +644,11 @@ function genEx23(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 24 — triangle décimal. */
+/** Ex. 24 — triangle (a, c, h décimaux ; b entier). */
 function genEx24(rng: Rng): MathItem[] {
   const a = oneDecimal(rng, 50, 120)
-  let b = oneDecimal(rng, 40, 110)
-  while (Math.abs(b - a) < 0.05) b = oneDecimal(rng, 40, 110)
+  let b = int(rng, 4, 12)
+  while (Math.abs(b - a) < 0.05) b = int(rng, 4, 12)
   let c = oneDecimal(rng, 40, 110)
   while (Math.abs(c - a) < 0.05 || Math.abs(c - b) < 0.05) c = oneDecimal(rng, 40, 110)
   const h = oneDecimal(rng, 20, 60)
@@ -666,7 +666,7 @@ function genEx24(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 25 — aire du carré → côté. */
+/** Ex. 25 — aire du carré → côté (cote absente ; brouillon comme ex. 22). */
 function genEx25(rng: Rng): MathItem[] {
   const side = int(rng, 3, 12)
   const area = side * side
@@ -674,8 +674,11 @@ function genEx25(rng: Rng): MathItem[] {
     {
       layout: 'geo',
       figure: 'square',
-      dims: { side, length: side, unit: 'cm' },
+      // Pas de cote affichée : c’est la valeur cherchée.
+      dims: { unit: 'cm' },
       prompt: `L’aire de ce carré est ${area} cm². Quelle est la longueur d’un côté ?`,
+      geoDualPads: true,
+      geoDualTight: true,
       calcAnswer: `√${area} = ${side}`,
       propertyLines: [{ label: 'Côté', answer: `${side} cm` }],
       answer: `${side} cm`,
@@ -683,7 +686,7 @@ function genEx25(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 26 — aire rectangle + un côté → autre côté. */
+/** Ex. 26 — aire rectangle + un côté → autre côté (cote cherchée masquée). */
 function genEx26(rng: Rng): MathItem[] {
   const length = int(rng, 4, 14)
   let width = int(rng, 2, 10)
@@ -697,8 +700,11 @@ function genEx26(rng: Rng): MathItem[] {
     {
       layout: 'geo',
       figure: 'rectangle',
-      dims: { length, width, unit: 'cm' },
+      // Afficher uniquement le côté connu ; masquer celui cherché.
+      dims: giveLength ? { length, unit: 'cm' } : { width, unit: 'cm' },
       prompt: `L’aire de ce rectangle est ${area} cm². La ${knownLabel} mesure ${known} cm. Quelle est la longueur de l’autre côté ?`,
+      geoDualPads: true,
+      geoDualTight: true,
       calcAnswer: `${area} ÷ ${known} = ${unknown}`,
       propertyLines: [{ label: 'Côté', answer: `${unknown} cm` }],
       answer: `${unknown} cm`,

@@ -20,7 +20,8 @@ export function GeoBlock({
         ? [item.calcAnswer, item.calcAnswerSecondary].filter(Boolean).join('\n')
         : null
     return (
-      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}`} aria-label="Périmètre et aire">
+      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}`} aria-label="Figure et calcul">
+        {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
         <div className="geo-dual-top">
           <div className="geo-dual-figure">
             {item.compositeScene ? (
