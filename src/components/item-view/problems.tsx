@@ -392,7 +392,11 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
     )
   }
 
-  if (prompt.includes('□') || /[-−]?\d+\/[-−]?\d+/.test(prompt)) {
+  const endsWithEq = prompt.trimEnd().endsWith('=')
+  const hasEq = prompt.includes('=')
+  // Fraction dans l’énoncé sans « = » final (ou avec □) : rendu empilé + éventuel trou.
+  // « n/d = » (réponse décimale ou fraction) passe par le bloc aligned-eq plus bas.
+  if (prompt.includes('□') || (/[-−]?\d+\/[-−]?\d+/.test(prompt) && !endsWithEq)) {
     const filledFrac = show ? (
       <span className="filled-answer">
         <FractionView value={item.answer} />
@@ -412,9 +416,6 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
       </div>
     )
   }
-
-  const endsWithEq = prompt.trimEnd().endsWith('=')
-  const hasEq = prompt.includes('=')
   // Phrase / consigne sans « = » : énoncé au-dessus, trait pleine largeur dessous.
   if (!hasEq) {
     return (
