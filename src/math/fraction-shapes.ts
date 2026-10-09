@@ -39,6 +39,28 @@ function pickMultiShapeCfg(rng: Rng): { kind: ShapeKind; d: number } {
   return shuffle(rng, pickers)[0]!()
 }
 
+/** Uniquement formes simples (une copie) — TCM CFR ex. 12 / 13. */
+export function genFracSingleItems(rng: Rng, count: number): FracShapeItem[] {
+  const items: FracShapeItem[] = []
+  const usedKinds = new Set<ShapeKind>()
+  const usedConfigs = new Set<string>()
+  for (let i = 0; i < count; i++) {
+    let cfg = pickSingleShapeCfg(rng)
+    let tries = 0
+    while (
+      (usedKinds.has(cfg.kind) || usedConfigs.has(`${cfg.kind}-${cfg.d}`)) &&
+      tries < 60
+    ) {
+      cfg = pickSingleShapeCfg(rng)
+      tries++
+    }
+    usedKinds.add(cfg.kind)
+    usedConfigs.add(`${cfg.kind}-${cfg.d}`)
+    items.push({ ...cfg, n: int(rng, 1, Math.max(1, cfg.d - 1)), copies: 1, multi: false })
+  }
+  return items
+}
+
 /** Première moitié : formes simples ; seconde : multi-formes (comme soutien). */
 export function genFracItems(rng: Rng, count: number): FracShapeItem[] {
   const items: FracShapeItem[] = []

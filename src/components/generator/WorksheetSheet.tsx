@@ -9,6 +9,7 @@ import {
 import { isDraftPadExercise } from '@/math/catalog'
 import { TCF_DOMAIN } from '@/tcf/catalog'
 import { blockPointsTotal, formatPointsLabel, isTcmDomain } from '@/tcm/test'
+import { isTcmCfrDomain } from '@/tcm-cfr/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
@@ -109,7 +110,10 @@ export function WorksheetSheet({
   const sheetTitle = institutional.documentTitle.trim()
   const isJeuxSheet = page.domain === 'jeux'
   const multiExercisePage =
-    (page.blocks?.length ?? 0) > 1 || isTcmDomain(page.domain) || page.domain === TCF_DOMAIN
+    (page.blocks?.length ?? 0) > 1 ||
+    isTcmDomain(page.domain) ||
+    isTcmCfrDomain(page.domain) ||
+    page.domain === TCF_DOMAIN
   const showHeader = pageNumber === 1 && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(

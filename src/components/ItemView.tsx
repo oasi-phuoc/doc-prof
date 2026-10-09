@@ -11,6 +11,12 @@ import { ColumnOp, DivisionColumn } from './item-view/columns'
 import { CompareRow, EncadrementRow, OrderRow, SequenceRow } from './item-view/compare'
 import { CoordBlock, GeoBlock } from './item-view/geo-coord'
 import {
+  AudioDictationBlock,
+  MetroMapBlock,
+  SegmentMeasureBlock,
+  SymmetryGridBlock,
+} from './item-view/tcm-cfr'
+import {
   ConvertRow,
   FractionShapeBlock,
   InlinePrompt,
@@ -221,8 +227,12 @@ export function ItemView({
         ) : null}
         {item.layout === 'count-icons' && <CountIconsBlock item={item} mode={mode} />}
         {item.layout === 'tcf' && <TcfItemView item={item} mode={mode} />}
+        {item.layout === 'audio-dictation' && <AudioDictationBlock item={item} mode={mode} />}
+        {item.layout === 'symmetry-grid' && <SymmetryGridBlock item={item} mode={mode} />}
+        {item.layout === 'segment-measure' && <SegmentMeasureBlock item={item} mode={mode} />}
+        {item.layout === 'metro-map' && <MetroMapBlock item={item} mode={mode} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
-        {item.audioSrc ? (
+        {item.audioSrc && item.layout !== 'audio-dictation' ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
             Écoutez l’enregistrement.
           </audio>
