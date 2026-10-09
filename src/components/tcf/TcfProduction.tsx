@@ -1,4 +1,5 @@
 import type { PreviewMode } from '@/math/types'
+import { isTcfBaremeConsigne } from '@/tcf/formes'
 import type { TcfChampFormulaire, TcfNbMots, TcfReplique } from '@/tcf/types'
 import { LignesReponse } from './TcfQuestions'
 
@@ -62,19 +63,20 @@ export function ZoneEcriture({
 }) {
   const attendu = nbMotsLabel(nbMots)
   const lignes = <LignesReponse nbLignes={nbLignes} texte={mode === 'answers' ? reponseModele : undefined} />
+  const showConsigne =
+    Boolean(consigneSupplementaire?.trim()) && !isTcfBaremeConsigne(consigneSupplementaire)
+  const fillPage = cadre === 'message' || cadre === 'email'
   return (
-    <div className="tcf-ecriture">
-      {consigneSupplementaire?.trim() ? (
-        <p className="tcf-consigne-supp">{consigneSupplementaire}</p>
-      ) : null}
+    <div className={`tcf-ecriture${fillPage ? ' is-fill' : ''}`}>
+      {showConsigne ? <p className="tcf-consigne-supp">{consigneSupplementaire}</p> : null}
       {cadre === 'message' ? (
-        <div className="tcf-phone">
+        <div className="tcf-phone is-fill">
           <span className="tcf-phone-speaker" aria-hidden />
           <div className="tcf-phone-screen">{lignes}</div>
           <span className="tcf-phone-button" aria-hidden />
         </div>
       ) : cadre === 'email' ? (
-        <div className="tcf-email is-compose">
+        <div className="tcf-email is-compose is-fill">
           <MailRibbon />
           <div className="tcf-mail-head">
             <span className="tcf-mail-send">
@@ -177,7 +179,7 @@ export function DialoguePO({
   const show = mode === 'answers'
   if (bulles) {
     return (
-      <div className="tcf-dialogue">
+      <div className="tcf-dialogue is-fill is-chat">
         {situation.trim() ? <p className="tcf-question-text">{situation}</p> : null}
         <ol className="tcf-chat">
           {repliques.map((r, i) => (

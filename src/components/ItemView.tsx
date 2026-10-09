@@ -1,5 +1,7 @@
 import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
 import type { GlossaryFigureId } from '@/math/glossary-banks'
+import { TCF_FORME_LABELS } from '@/tcf/formes'
+import type { TcfTypeReponse } from '@/tcf/types'
 import { CardGrid } from '@/jeux/CardGrid'
 import type { GameBoard } from '@/jeux/types'
 import { CalligraphyView } from './math/CalligraphyView'
@@ -60,6 +62,10 @@ export function ItemView({
   onToggleDraftGrid,
   oralAnswerMode,
   onCycleOralAnswerMode,
+  tcfFormMode,
+  onSelectTcfForm,
+  tcfPageBreakAfter,
+  onToggleTcfPageBreak,
   coordEdit,
 }: {
   item: MathItem
@@ -72,6 +78,12 @@ export function ItemView({
   onToggleDraftGrid?: () => void
   oralAnswerMode?: 'qcm' | 'text' | 'images'
   onCycleOralAnswerMode?: () => void
+  /** TCF : forme active Texte / Image / Phrase. */
+  tcfFormMode?: TcfTypeReponse
+  onSelectTcfForm?: (form: TcfTypeReponse) => void
+  /** TCF : saut de page après cette question. */
+  tcfPageBreakAfter?: boolean
+  onToggleTcfPageBreak?: () => void
   coordEdit?: {
     selectedKind: CoordShape | null
     placingOrigin?: boolean
@@ -93,6 +105,17 @@ export function ItemView({
   const oralItem = isOralSelect ? { ...item, answerMode: resolvedOralMode } : item
   const oralModeLabel =
     resolvedOralMode === 'text' ? 'Texte' : resolvedOralMode === 'images' ? 'Images' : 'QCM'
+  const tcfFormSelect =
+    item.layout === 'tcf' && (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')
+      ? item.tcf.formSelect
+      : undefined
+  const tcfActiveForm = tcfFormMode ?? tcfFormSelect?.active
+  const showTcfFormChips = Boolean(tcfFormSelect && onSelectTcfForm)
+  const showTcfPageChip = Boolean(
+    onToggleTcfPageBreak &&
+      item.layout === 'tcf' &&
+      (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes'),
+  )
   const hideNumber =
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
@@ -147,6 +170,48 @@ export function ItemView({
         >
           {oralModeLabel}
         </button>
+      ) : null}
+      {showTcfFormChips || showTcfPageChip ? (
+        <div className="no-print draft-grid-chip-margin tcf-margin-chips" role="group" aria-label="Options TCF">
+          {showTcfFormChips && tcfFormSelect
+            ? (['qcm_texte', 'qcm_image', 'lignes'] as const).map((form) => {
+                const filled = tcfFormSelect.filled.includes(form)
+                const active = tcfActiveForm === form
+                return (
+                  <button
+                    key={form}
+                    type="button"
+                    className={`draft-grid-chip tcf-form-chip ${active ? 'on' : 'off'}`}
+                    disabled={!filled}
+                    aria-pressed={active}
+                    title={
+                      filled
+                        ? `Afficher la réponse « ${TCF_FORME_LABELS[form]} »`
+                        : `Forme « ${TCF_FORME_LABELS[form]} » non renseignée`
+                    }
+                    onClick={() => filled && onSelectTcfForm?.(form)}
+                  >
+                    {TCF_FORME_LABELS[form]}
+                  </button>
+                )
+              })
+            : null}
+          {showTcfPageChip ? (
+            <button
+              type="button"
+              className={`draft-grid-chip tcf-page-chip ${tcfPageBreakAfter ? 'on' : 'off'}`}
+              aria-pressed={Boolean(tcfPageBreakAfter)}
+              title={
+                tcfPageBreakAfter
+                  ? 'Saut de page après cette question (activé)'
+                  : 'Ajouter un saut de page après cette question'
+              }
+              onClick={onToggleTcfPageBreak}
+            >
+              Page
+            </button>
+          ) : null}
+        </div>
       ) : null}
       {item.coordScene || hideNumber ? null : <div className="item-number">{index + 1}.</div>}
       <div className="item-content">
@@ -220,7 +285,9 @@ export function ItemView({
           <CalligraphyView item={item} />
         ) : null}
         {item.layout === 'count-icons' && <CountIconsBlock item={item} mode={mode} />}
-        {item.layout === 'tcf' && <TcfItemView item={item} mode={mode} />}
+        {item.layout === 'tcf' && (
+          <TcfItemView item={item} mode={mode} tcfFormMode={tcfActiveForm} />
+        )}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>

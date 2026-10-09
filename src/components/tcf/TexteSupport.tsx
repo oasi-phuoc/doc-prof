@@ -1,7 +1,6 @@
 import type { PreviewMode } from '@/math/types'
 import { tcfImageSrc } from '@/tcf/media'
 import type { TcfExercise } from '@/tcf/types'
-import { PlayerAudio } from './PlayerAudio'
 
 /** Paragraphes : une ligne vide sépare deux paragraphes. */
 function Paragraphs({ text }: { text: string }) {
@@ -92,24 +91,13 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'images_a_reconnaitre':
-      return <PlayerAudio src={ex.support.audio} />
     case 'six_courts':
     case 'trois_moyens':
-      return (
-        <div className={`tcf-audio-list is-${ex.support.audios.length}`}>
-          {ex.support.audios.map((src, i) => (
-            <PlayerAudio key={i} src={src} label={`Audio ${i + 1}`} />
-          ))}
-        </div>
-      )
+      // Audios / QR masqués sur la fiche — téléchargement via le bouton aperçu.
+      return null
     case 'complet':
     case 'association_images':
-      return (
-        <div>
-          <PlayerAudio src={ex.support.audio} />
-          <Modele text={ex.support.transcription} mode={mode} title="Transcription" />
-        </div>
-      )
+      return <Modele text={ex.support.transcription} mode={mode} title="Transcription" />
     case 'image_question':
       return (
         <div className="tcf-pe-image">
@@ -216,7 +204,6 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
     case 'mots_theme':
       return (
         <div className="tcf-po">
-          {ex.support.audio ? <PlayerAudio src={ex.support.audio} label="Questions de l’examinateur·trice" /> : null}
           {ex.support.theme ? <p className="tcf-po-theme">Thème : {ex.support.theme}</p> : null}
           <ul className="tcf-mots">
             {ex.support.mots
@@ -270,20 +257,17 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'dialogue':
-      return (
+      return ex.support.images?.length ? (
         <div className="tcf-po">
-          {ex.support.audio ? <PlayerAudio src={ex.support.audio} label="Répliques de l’examinateur·trice" /> : null}
-          {ex.support.images?.length ? (
-            <ul className={`tcf-po-images is-${ex.support.images.length}`}>
-              {ex.support.images.map((src, i) => (
-                <li key={i}>
-                  <TcfImage src={src} alt={`Image ${i + 1}`} />
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          <ul className={`tcf-po-images is-${ex.support.images.length}`}>
+            {ex.support.images.map((src, i) => (
+              <li key={i}>
+                <TcfImage src={src} alt={`Image ${i + 1}`} />
+              </li>
+            ))}
+          </ul>
         </div>
-      )
+      ) : null
     case 'formulaire':
     case 'dialogue_a_completer':
       return null

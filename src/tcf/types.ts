@@ -14,6 +14,23 @@ export type TcfTypeReponse = 'qcm_texte' | 'qcm_image' | 'lignes'
 export type TcfChoixTexte = { id: string; texte: string; correct?: boolean; fixe?: boolean }
 export type TcfChoixImage = { id: string; image: string; correct?: boolean; fixe?: boolean }
 
+/** Variante QCM texte stockée hors de la forme active. */
+export type TcfFormeQcmTexte = { melanger?: boolean; choix: TcfChoixTexte[] }
+/** Variante QCM image stockée hors de la forme active. */
+export type TcfFormeQcmImage = { melanger?: boolean; choix: TcfChoixImage[] }
+/** Variante « phrase / lignes » stockée hors de la forme active. */
+export type TcfFormeLignes = {
+  nb_lignes?: number
+  reponse_modele?: string
+  tableau?: TcfLigneTableau[]
+}
+
+export type TcfQuestionFormes = {
+  qcm_texte?: TcfFormeQcmTexte
+  qcm_image?: TcfFormeQcmImage
+  lignes?: TcfFormeLignes
+}
+
 type TcfQuestionBase = {
   /** Énoncé affiché au-dessus de la réponse. */
   enonce: string
@@ -23,6 +40,11 @@ type TcfQuestionBase = {
   points?: number
   /** Image affichée sous l’énoncé (plan à compléter, document…). */
   image?: string
+  /**
+   * Autres formes de réponse (Texte / Image / Phrase) en plus de `type_reponse`.
+   * Les boutons marge ne proposent que les formes remplies.
+   */
+  formes?: TcfQuestionFormes
 }
 
 export type TcfQuestionQcmTexte = TcfQuestionBase & {
@@ -50,6 +72,26 @@ export type TcfQuestionLignes = TcfQuestionBase & {
 export type TcfLigneTableau = { label: string; reponse: string }
 
 export type TcfQuestion = TcfQuestionQcmTexte | TcfQuestionQcmImage | TcfQuestionLignes
+
+/** Sélecteur de forme sur la fiche (marge Texte / Image / Phrase). */
+export type TcfFormSelect = {
+  active: TcfTypeReponse
+  filled: TcfTypeReponse[]
+  variants: Partial<
+    Record<
+      TcfTypeReponse,
+      {
+        kind: 'qcm' | 'lignes'
+        mode?: 'texte' | 'image'
+        choix?: TcfChoixRendu[]
+        nbLignes?: number
+        reponseModele?: string
+        tableau?: TcfLigneTableau[]
+        answer: string
+      }
+    >
+  >
+}
 
 /** Bornes de mots (production écrite). 0 = non précisé. */
 export type TcfNbMots = { min?: number; max?: number }
@@ -248,6 +290,8 @@ export type TcfSheetItem =
       choix: TcfChoixRendu[]
       audioLabel?: string
       image?: string
+      /** Sélecteur Texte / Image / Phrase (marge). */
+      formSelect?: TcfFormSelect
     }
   | {
       kind: 'lignes'
@@ -258,6 +302,7 @@ export type TcfSheetItem =
       audioLabel?: string
       image?: string
       tableau?: TcfLigneTableau[]
+      formSelect?: TcfFormSelect
     }
   | {
       kind: 'association'

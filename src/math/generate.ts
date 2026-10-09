@@ -44,7 +44,7 @@ import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
 import { TCM_MAX_SCORE } from '@/tcm/test'
 import { tryGenerateTcfBlock } from '@/tcf/generate'
-import { isTcfConsignesType } from '@/tcf/catalog'
+import { isTcfConsignesType, TCF_DOMAIN } from '@/tcf/catalog'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { tryGenerateAcmBlock } from '@/acm/generate'
@@ -1579,6 +1579,8 @@ export function buildPage(config: PageConfig, seed: number, startExercise = 1): 
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
       oralAnswerModes: block.oralAnswerModes,
+      tcfFormModes: block.tcfFormModes,
+      tcfPageBreakAfter: block.tcfPageBreakAfter,
       bankQuestionCap: result.bankQuestionCap,
     }
   })
@@ -1684,6 +1686,61 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       }
       return
     }
+    // TCF : sauts de page manuels après certaines questions (marge « Page »).
+    if (page.domain === TCF_DOMAIN) {
+      const sourceBlock = worksheet.blocks[0]
+      const breaks = sourceBlock?.tcfPageBreakAfter ?? page.tcfPageBreakAfter
+      const items = sourceBlock?.items ?? worksheet.items
+      const cutAfter = new Set<number>()
+      breaks?.forEach((on, i) => {
+        if (on && i < items.length - 1) cutAfter.add(i)
+      })
+      if (cutAfter.size > 0 && sourceBlock) {
+        const segments: number[][] = []
+        let current: number[] = []
+        items.forEach((_, i) => {
+          current.push(i)
+          if (cutAfter.has(i)) {
+            segments.push(current)
+            current = []
+          }
+        })
+        if (current.length) segments.push(current)
+        segments.forEach((indexes, part) => {
+          const sliceItems = indexes.map((i) => items[i]!)
+          const offset = indexes[0] ?? 0
+          out.push({
+            ...worksheet,
+            title: part === 0 ? worksheet.title : `${worksheet.title} — suite`,
+            instruction:
+              part === 0 ? worksheet.instruction : 'Continuez. Répondez aux questions suivantes.',
+            items: sliceItems,
+            blocks: [
+              {
+                ...sourceBlock,
+                title:
+                  part === 0
+                    ? sourceBlock.title
+                    : `${sourceBlock.title.replace(/ \(suite\)$/, '')} (suite)`,
+                instruction:
+                  part === 0
+                    ? sourceBlock.instruction
+                    : 'Continuez. Répondez aux questions suivantes.',
+                items: sliceItems,
+                itemOffset: offset,
+                // Tableaux complets : les callbacks UI rajoutent itemOffset.
+                tcfPageBreakAfter: breaks,
+                tcfFormModes: sourceBlock.tcfFormModes,
+              },
+            ],
+            configIndex: index,
+            isContinuation: part > 0,
+          })
+        })
+        return
+      }
+    }
+
     // Théorie : ~6 blocs par feuille A4 (titres + tableaux densent vite).
     const pageCap = isTheory ? 6 : 4
     const totalItems = worksheet.items.length

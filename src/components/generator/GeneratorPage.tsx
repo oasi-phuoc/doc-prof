@@ -73,9 +73,17 @@ import {
   isTcfConsignesType,
   tcfDifficultyFromNiveau,
   tcfNiveauFromDifficulty,
+  tcfSlotByTypeId,
+  tcfTypeByTypeId,
 } from '@/tcf/catalog'
+import {
+  downloadTcfAudios,
+  tcfExerciseAudioRefs,
+} from '@/tcf/download-audios'
 import { buildTcfRandomTestPages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
+import { tcfBank, tcfSlotBank } from '@/tcf/loader'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
+import type { TcfCompetence, TcfExercise, TcfTypeReponse } from '@/tcf/types'
 import {
   blockPointsTotal,
   buildTcmTestPages,
@@ -553,12 +561,87 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
         const sheetBlock = sheet?.blocks[targetBlock]
         const item = sheetBlock?.items[itemIndex]
         const imagesAvailable = Boolean(item?.imagesAvailable)
-        const offset = sheet?.isContinuation ? 4 : 0
+        const offset = sheetBlock?.itemOffset ?? (sheet?.isContinuation ? 4 : 0)
         const modeIndex = itemIndex + offset
         modes[modeIndex] = cycleOralMode(modes[modeIndex] ?? 'qcm', imagesAvailable)
         return setPageBlock(page, targetBlock, { oralAnswerModes: modes })
       }),
     )
+  }
+
+  const selectTcfForm = (itemIndex: number, form: TcfTypeReponse, targetBlock = safeBlockIndex) => {
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
+        const sheet = worksheets[safeSheetIndex]
+        const sheetBlock = sheet?.blocks[targetBlock]
+        const offset = sheetBlock?.itemOffset ?? 0
+        const modeIndex = itemIndex + offset
+        const len = Math.max(block.tcfFormModes?.length ?? 0, modeIndex + 1, sheetBlock?.items.length ?? 0)
+        const modes: Array<TcfTypeReponse | undefined> = Array.from({ length: len }, (_, i) => block.tcfFormModes?.[i])
+        modes[modeIndex] = form
+        return setPageBlock(page, targetBlock, { tcfFormModes: modes })
+      }),
+    )
+  }
+
+  const toggleTcfPageBreak = (itemIndex: number, targetBlock = safeBlockIndex) => {
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
+        const sheet = worksheets[safeSheetIndex]
+        const sheetBlock = sheet?.blocks[targetBlock]
+        const offset = sheetBlock?.itemOffset ?? 0
+        const modeIndex = itemIndex + offset
+        const totalItems = Math.max(
+          block.tcfPageBreakAfter?.length ?? 0,
+          modeIndex + 1,
+          activeSheet?.blocks[targetBlock]?.items.length ?? 0,
+        )
+        const breaks = Array.from({ length: totalItems }, (_, i) => block.tcfPageBreakAfter?.[i] ?? false)
+        breaks[modeIndex] = !breaks[modeIndex]
+        return setPageBlock(page, targetBlock, { tcfPageBreakAfter: breaks })
+      }),
+    )
+  }
+
+  /** Exercice TCF courant (banque / édition) pour télécharger ses audios. */
+  function currentTcfExercise(): TcfExercise | undefined {
+    if (activeBlock.tcfExercise) return activeBlock.tcfExercise
+    const niveau = tcfNiveau
+    const slot = tcfSlotByTypeId[activeBlock.exerciseType]
+    const legacy = slot ? undefined : tcfTypeByTypeId[activeBlock.exerciseType]
+    if (!slot && !legacy) return undefined
+    const bank = slot
+      ? tcfSlotBank(niveau, slot)
+      : tcfBank(niveau, legacy!.competence, legacy!.typeExercice)
+    const shownId =
+      activeSheet?.blocks[safeBlockIndex]?.items.find((item) => item.tcfExerciseId)?.tcfExerciseId
+    const id = activeBlock.tcfBankId ?? shownId
+    return id ? bank.find((ex) => ex.id === id) : bank[0]
+  }
+
+  async function downloadActiveTcfAudios() {
+    const ex = currentTcfExercise()
+    if (!ex) return
+    const refs = tcfExerciseAudioRefs(ex)
+    if (refs.length === 0) return
+    const exerciseNo =
+      activeSheet?.blocks[safeBlockIndex]?.exerciseIndex ??
+      activeBlock.exerciseNo ??
+      pageIndex + 1
+    try {
+      await downloadTcfAudios({
+        niveau: ex.niveau,
+        competence: ex.competence as TcfCompetence,
+        exerciseNo,
+        audioRefs: refs,
+      })
+    } catch {
+      // Échec réseau / fichier manquant : silencieux (l’enseignant·e voit l’absence de téléchargement).
+    }
   }
 
   const setAllDraftGrids = (value: boolean) => {
@@ -1312,10 +1395,12 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
 
   /** TCF : Générer tire un test complet au hasard dans la banque du niveau. */
   function drawTcfTest() {
+    const nextSeed = randomSeed()
+    setSeed(nextSeed)
     setMode('student')
     setSheetIndex(0)
     setBlockIndex(0)
-    setPages(buildTcfRandomTestPages(tcfNiveau, randomSeed()))
+    setPages(buildTcfRandomTestPages(tcfNiveau, nextSeed))
   }
 
   function generate() {
@@ -1411,6 +1496,13 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             gameEntries: reshuffled.gameEntries,
             gameText: reshuffled.gameText,
             gameSelectedIds: reshuffled.gameSelectedIds,
+          }
+        } else if (page.domain === TCF_DOMAIN) {
+          // Relâche le tirage figé pour re-mélanger (ex. 3 thèmes PO).
+          patch = {
+            ...patch,
+            libreItems: undefined,
+            libreInstruction: undefined,
           }
         }
         return setPageBlock(page, targetBlock, patch)
@@ -3215,6 +3307,22 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </svg>
                   </button>
                 )}
+                {isTcf && !libreMode ? (
+                  <button
+                    className="print-chip is-icon is-generate"
+                    type="button"
+                    onClick={() => void downloadActiveTcfAudios()}
+                    aria-label="Télécharger les audios de la fiche"
+                    title="Télécharger les audios de la fiche"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L11 13.59V4a1 1 0 0 1 1-1zM5 18a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+                  </button>
+                ) : null}
                 {libreMode ? null : (
                   <button
                     className="print-chip is-icon is-generate"
@@ -3291,6 +3399,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                         onToggleDraftGrid={toggleDraftGrid}
                         interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                         onCycleOralAnswerMode={cycleOralAnswerMode}
+                        interactiveTcfOptions={isTcf}
+                        onSelectTcfForm={selectTcfForm}
+                        onToggleTcfPageBreak={toggleTcfPageBreak}
                         coordEdit={
                           (isFormes && activeBlock.coordLibre) ||
                           (isCadrans && activeBlock.coordLibre) ||

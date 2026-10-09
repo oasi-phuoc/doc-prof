@@ -17,6 +17,7 @@ import type {
   WorksheetBlock,
   WorksheetPage,
 } from '@/math/types'
+import type { TcfTypeReponse } from '@/tcf/types'
 
 export function defaultCoordQuestionReply(exerciseType: string): CoordReply {
   return isReperageConstruire(exerciseType) ? 'draw' : 'text'
@@ -76,6 +77,9 @@ export function WorksheetSheet({
   onToggleDraftGrid,
   interactiveOralModes = false,
   onCycleOralAnswerMode,
+  interactiveTcfOptions = false,
+  onSelectTcfForm,
+  onToggleTcfPageBreak,
   onRegenerateBlock,
   coordEdit,
 }: {
@@ -96,6 +100,10 @@ export function WorksheetSheet({
   /** Pastille QCM / texte / images pour la compréhension orale. */
   interactiveOralModes?: boolean
   onCycleOralAnswerMode?: (index: number, blockIndex?: number) => void
+  /** TCF : formes Texte/Image/Phrase + saut de page en marge. */
+  interactiveTcfOptions?: boolean
+  onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex?: number) => void
+  onToggleTcfPageBreak?: (index: number, blockIndex?: number) => void
   /** Bouton refresh : régénère uniquement cet exercice. */
   onRegenerateBlock?: (blockIndex: number) => void
   coordEdit?: {
@@ -266,10 +274,18 @@ export function WorksheetSheet({
                   const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
+                  const sourceIndex = index + (block.itemOffset ?? 0)
+                  const tcfFormMode =
+                    block.tcfFormModes?.[sourceIndex] ?? page.tcfFormModes?.[sourceIndex]
+                  const tcfPageBreakAfter =
+                    block.tcfPageBreakAfter?.[sourceIndex] ?? page.tcfPageBreakAfter?.[sourceIndex]
                   const blockAllowsDraftGrid = isDraftPadExercise(block.exerciseType)
+                  const isTcfQuestion =
+                    item.layout === 'tcf' &&
+                    (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')
                   return (
                     <ItemView
-                      key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}`}
+                      key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={item}
                       mode={mode}
                       index={index}
@@ -284,6 +300,18 @@ export function WorksheetSheet({
                       onCycleOralAnswerMode={
                         interactiveOralModes && onCycleOralAnswerMode && item.selectVariant === 'oral'
                           ? () => onCycleOralAnswerMode(index, blockIndex)
+                          : undefined
+                      }
+                      tcfFormMode={isTcfQuestion ? tcfFormMode : undefined}
+                      onSelectTcfForm={
+                        interactiveTcfOptions && isTcfQuestion && onSelectTcfForm
+                          ? (form) => onSelectTcfForm(index, form, blockIndex)
+                          : undefined
+                      }
+                      tcfPageBreakAfter={isTcfQuestion ? Boolean(tcfPageBreakAfter) : undefined}
+                      onToggleTcfPageBreak={
+                        interactiveTcfOptions && isTcfQuestion && onToggleTcfPageBreak
+                          ? () => onToggleTcfPageBreak(index, blockIndex)
                           : undefined
                       }
                       coordEdit={coordEdit}

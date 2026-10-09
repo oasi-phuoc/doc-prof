@@ -660,6 +660,15 @@ export type ExerciseBlock = {
   /** Modes de réponse par question (compréhension orale) : QCM / texte / images. */
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   /**
+   * TCF : forme de réponse par item (qcm_texte / qcm_image / lignes).
+   * Index = rang de l’item dans le bloc.
+   */
+  tcfFormModes?: Array<'qcm_texte' | 'qcm_image' | 'lignes' | undefined>
+  /**
+   * TCF : saut de page après l’item d’index i (questions trop longues).
+   */
+  tcfPageBreakAfter?: boolean[]
+  /**
    * Compréhension orale / écrite : les questions qui ne tiennent pas sur la fiche
    * continuent sur la page suivante (saut de page automatique).
    */
@@ -821,6 +830,13 @@ export type WorksheetBlock = {
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
+  tcfFormModes?: Array<'qcm_texte' | 'qcm_image' | 'lignes' | undefined>
+  tcfPageBreakAfter?: boolean[]
+  /**
+   * Décalage des index d’items vers la PageConfig d’origine
+   * (feuilles « suite » CO/TCF).
+   */
+  itemOffset?: number
   /** Nombre max de questions distinctes dans la banque du document tiré (CO/CE). */
   bankQuestionCap?: number
 }

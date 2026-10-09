@@ -15,6 +15,7 @@ import {
   tcfTypeByTypeId,
   tcfTypeMeta,
 } from './catalog'
+import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
 import { TCF_PE_GROUPS, TCF_PO_GROUPS, tcfGroupId } from './sources'
@@ -25,10 +26,12 @@ import type {
   TcfChoixTexte,
   TcfCompetence,
   TcfExercise,
+  TcfFormSelect,
   TcfNbMots,
   TcfNiveau,
   TcfQuestion,
   TcfSheetItem,
+  TcfTypeReponse,
 } from './types'
 
 function tcfItem(tcf: TcfSheetItem, scored: boolean, answer = '', points?: number): MathItem {
@@ -42,24 +45,18 @@ function linesForWords(nbMots: TcfNbMots, fallback: number): number {
   return Math.max(3, Math.min(16, Math.ceil(max / 9)))
 }
 
-function questionItem(q: TcfQuestion, numero: number, rng: Rng): MathItem {
-  const audioLabel = q.audio != null ? `Audio ${q.audio}` : undefined
+function buildFormVariant(
+  q: TcfQuestion,
+  rng: Rng,
+): NonNullable<TcfFormSelect['variants'][TcfTypeReponse]> {
   if (q.type_reponse === 'lignes') {
-    return tcfItem(
-      {
-        kind: 'lignes',
-        numero,
-        enonce: q.enonce,
-        nbLignes: q.nb_lignes ?? 2,
-        reponseModele: q.reponse_modele,
-        audioLabel,
-        image: q.image,
-        tableau: q.tableau,
-      },
-      true,
-      q.reponse_modele ?? '',
-      q.points,
-    )
+    return {
+      kind: 'lignes',
+      nbLignes: q.nb_lignes ?? 2,
+      reponseModele: q.reponse_modele,
+      tableau: q.tableau,
+      answer: q.reponse_modele ?? '',
+    }
   }
   const source: ReadonlyArray<TcfChoixTexte | TcfChoixImage> = q.choix
   const ordered = melangerChoix(source, rng, q.melanger !== false)
@@ -69,35 +66,90 @@ function questionItem(q: TcfQuestion, numero: number, rng: Rng): MathItem {
     image: 'image' in c ? c.image : undefined,
     correct: c.correct === true,
   }))
+  return {
+    kind: 'qcm',
+    mode: q.type_reponse === 'qcm_image' ? 'image' : 'texte',
+    choix,
+    answer: choix.find((c) => c.correct)?.lettre ?? '',
+  }
+}
+
+function questionItem(q: TcfQuestion, numero: number, rng: Rng, activeOverride?: TcfTypeReponse): MathItem {
+  const filled = filledForms(q)
+  const active =
+    activeOverride && filled.includes(activeOverride) ? activeOverride : q.type_reponse
+  const resolved = resolveQuestionForm(q, active)
+  const audioLabel = resolved.audio != null ? `Audio ${resolved.audio}` : undefined
+  const variants: TcfFormSelect['variants'] = {}
+  for (const form of filled) {
+    const variantQ = resolveQuestionForm(q, form)
+    variants[form] = buildFormVariant(variantQ, rng)
+  }
+  const formSelect: TcfFormSelect | undefined =
+    filled.length > 0
+      ? { active: resolved.type_reponse, filled, variants }
+      : undefined
+  const variant = variants[resolved.type_reponse] ?? buildFormVariant(resolved, rng)
+  if (variant.kind === 'lignes') {
+    return tcfItem(
+      {
+        kind: 'lignes',
+        numero,
+        enonce: resolved.enonce,
+        nbLignes: variant.nbLignes ?? 2,
+        reponseModele: variant.reponseModele,
+        audioLabel,
+        image: resolved.image,
+        tableau: variant.tableau,
+        formSelect,
+      },
+      true,
+      variant.answer,
+      resolved.points,
+    )
+  }
   return tcfItem(
     {
       kind: 'qcm',
       numero,
-      enonce: q.enonce,
-      mode: q.type_reponse === 'qcm_image' ? 'image' : 'texte',
-      choix,
+      enonce: resolved.enonce,
+      mode: variant.mode ?? 'texte',
+      choix: variant.choix ?? [],
       audioLabel,
-      image: q.image,
+      image: resolved.image,
+      formSelect,
     },
     true,
-    choix.find((c) => c.correct)?.lettre ?? '',
-    q.points,
+    variant.answer,
+    resolved.points,
   )
 }
 
 /** Exercice → items de la fiche (support puis questions / zones de réponse). */
-export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
+export function tcfExerciseItems(
+  ex: TcfExercise,
+  rng: Rng,
+  formModes?: Array<TcfTypeReponse | undefined>,
+): MathItem[] {
   const support = (scored = false) => tcfItem({ kind: 'support', exercise: ex }, scored, '', ex.points)
   /** Item noté unique de l’exercice (barème `ex.points`). */
   const scoredItem = (tcf: TcfSheetItem) => tcfItem(tcf, true, '', ex.points)
+  const consigneSupp = isTcfBaremeConsigne(ex.consigne_supplementaire)
+    ? undefined
+    : (ex.consigne_supplementaire ?? undefined)
   switch (ex.type_exercice) {
     case 'sms':
     case 'email':
     case 'annonce':
     case 'six_courts':
     case 'trois_moyens':
-    case 'complet':
-      return [support(), ...ex.questions.map((q, i) => questionItem(q, i + 1, rng))]
+    case 'complet': {
+      // formModes indexés sur les items complets (0 = support) → questions à partir de 1.
+      return [
+        support(),
+        ...ex.questions.map((q, i) => questionItem(q, i + 1, rng, formModes?.[i + 1])),
+      ]
+    }
     case 'images_a_reconnaitre': {
       const images = melangerChoix(ex.images, rng, ex.melanger !== false).map((img) => ({
         id: img.id,
@@ -158,7 +210,7 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
           kind: 'ecriture',
           cadre: email ? 'email' : 'message',
           email,
-          consigneSupplementaire: ex.consigne_supplementaire ?? undefined,
+          consigneSupplementaire: consigneSupp,
           nbMots: ex.support.nb_mots,
           nbLignes: linesForWords(ex.support.nb_mots, fallback),
           reponseModele: ex.support.reponse_modele,
@@ -166,7 +218,15 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
       ]
     }
     case 'trois_themes': {
-      const themes = shuffle(rng, ex.support.themes.filter((t) => t.theme.trim()))
+      // Toujours recharger la banque complète si l’exercice a déjà été réduit à 3 thèmes.
+      let pool = ex.support.themes.filter((t) => t.theme.trim())
+      if (pool.length <= 3) {
+        const bankEx = tcfBank(ex.niveau, 'PO', 'trois_themes').find((e) => e.id === ex.id)
+        if (bankEx?.type_exercice === 'trois_themes' && bankEx.support.themes.length > pool.length) {
+          pool = bankEx.support.themes.filter((t) => t.theme.trim())
+        }
+      }
+      const themes = shuffle(rng, pool)
         .slice(0, 3)
         .map((t) => ({ ...t, images: shuffle(rng, t.images.filter((src) => src.trim())).slice(0, 4) }))
       return [tcfItem({ kind: 'support', exercise: { ...ex, support: { themes } } }, true, '', ex.points)]
@@ -250,7 +310,10 @@ export function tryGenerateTcfBlock(
   const instruction = ex.consigne?.trim() || tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction || fallbackInstruction
   return {
     instruction,
-    items: tcfExerciseItems(ex, rng).map((item) => ({ ...item, tcfExerciseId: ex.id })),
+    items: tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
+      ...item,
+      tcfExerciseId: ex.id,
+    })),
   }
 }
 

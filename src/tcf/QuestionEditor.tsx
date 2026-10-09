@@ -1,6 +1,7 @@
 import { TCF_REPONSES } from './catalog'
 import { ImageField, NumberField, TextField } from './fields'
-import { TCF_LETTRES, TCF_QCM_MAX, TCF_QCM_MIN, emptyTcfQuestion } from './templates'
+import { filledForms, switchQuestionForm, TCF_FORME_LABELS } from './formes'
+import { TCF_LETTRES, TCF_QCM_MAX, TCF_QCM_MIN } from './templates'
 import type { TcfQuestion, TcfTypeReponse } from './types'
 
 const CHOICE_IDS = ['a', 'b', 'c', 'd'] as const
@@ -8,6 +9,8 @@ const CHOICE_IDS = ['a', 'b', 'c', 'd'] as const
 /**
  * Édition d’une question CE / CO : type de réponse, énoncé (au-dessus),
  * puis réponse (QCM texte / images : 3 choix, 4e optionnel ; ou lignes).
+ * Chaque question peut avoir jusqu’à 3 formes (Texte / Image / Phrase) ;
+ * le basculement préserve les formes déjà saisies.
  */
 export function QuestionEditor({
   index,
@@ -27,8 +30,9 @@ export function QuestionEditor({
 }) {
   function changeType(type: TcfTypeReponse) {
     if (type === q.type_reponse) return
-    onChange({ ...emptyTcfQuestion(type), enonce: q.enonce, audio: q.audio, points: q.points, image: q.image })
+    onChange(switchQuestionForm(q, type))
   }
+  const filled = filledForms(q)
 
   return (
     <fieldset className="tcf-question-editor">
@@ -50,11 +54,21 @@ export function QuestionEditor({
             type="button"
             className={q.type_reponse === r.id ? 'active' : ''}
             onClick={() => changeType(r.id)}
+            title={
+              filled.includes(r.id) || r.id === q.type_reponse
+                ? `Forme ${TCF_FORME_LABELS[r.id]}`
+                : `Créer la forme ${TCF_FORME_LABELS[r.id]} (vide pour l’instant)`
+            }
           >
-            {r.label}
+            {TCF_FORME_LABELS[r.id]}
+            {filled.includes(r.id) && r.id !== q.type_reponse ? ' ·' : ''}
           </button>
         ))}
       </div>
+      <p className="muted" style={{ margin: 0, fontSize: 11 }}>
+        Trois formes possibles (Texte / Image / Phrase). Basculez pour remplir les autres ; sur la
+        fiche, seuls les boutons des formes remplies sont actifs.
+      </p>
       {audioCount ? (
         <label className="tcf-field is-number">
           <span>Audio n°</span>
