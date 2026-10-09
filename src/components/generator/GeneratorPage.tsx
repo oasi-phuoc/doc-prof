@@ -1210,12 +1210,36 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
 
   /** Applique les changements manuels (mode libre / réglages) à la fiche. */
   function validateManual() {
+    const phraseEditable = isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)
+    const ownEditor = phraseEditable || isCalliDomain || isJeuxDomain || isTcf
     setPages((current) => {
       const page = current[pageIndex]
       if (!page) return current
       const block = pageBlocks(page)[safeBlockIndex]
       if (!block) return current
       const nextLocal = (block.contentSeed ?? 0) + 1
+
+      if (libreMode && phraseEditable && Array.isArray(block.phraseItems) && block.phraseItems.length > 0) {
+        return current.map((p, i) =>
+          i !== pageIndex
+            ? p
+            : setPageBlock(p, safeBlockIndex, {
+                contentSeed: nextLocal,
+                phraseItems: block.phraseItems!.map((item) => ({ ...item })),
+                phraseInstruction: block.phraseInstruction,
+                libreItems: undefined,
+                libreInstruction: undefined,
+              }),
+        )
+      }
+
+      // Éditeur dédié (TCF, calligraphie, jeux, phrases) : ses valeurs sont déjà dans la page ;
+      // on retire tout contenu figé pour que l’aperçu se reconstruise à partir d’elles.
+      if (libreMode && ownEditor) {
+        return current.map((p, i) =>
+          i !== pageIndex ? p : setPageBlock(p, safeBlockIndex, { libreItems: undefined, libreInstruction: undefined }),
+        )
+      }
 
       // Contenu libre déjà saisi : on le fige explicitement (nouvelles refs) pour forcer l’aperçu.
       if (libreMode && Array.isArray(block.libreItems) && block.libreItems.length > 0) {
