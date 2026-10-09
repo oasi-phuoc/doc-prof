@@ -240,13 +240,16 @@ function genEx06(rng: Rng): MathItem[] {
   }))
 }
 
-/** Ex. 7 / 8 — 2 + et 2 −, nombres 100–9999 dans la grille (7 colonnes). */
-function genAddSubFour(rng: Rng): MathItem[] {
+/**
+ * Ex. 7 / 8 — 2 + et 2 −, nombres 100–9999 (7 colonnes).
+ * `empty` : calcul au-dessus, grille vide (l’élève pose les chiffres).
+ */
+function genAddSubFour(rng: Rng, empty: boolean): MathItem[] {
   const width = 7
   const mkAdd = (): MathItem => {
     const a = int(rng, 100, 9999)
     const b = int(rng, 100, 9999)
-    return withFixedColumnWidth(columnItem('+', a, b, a + b, false), width)
+    return withFixedColumnWidth(columnItem('+', a, b, a + b, empty), width)
   }
   const mkSub = (): MathItem => {
     let a = int(rng, 100, 9999)
@@ -256,7 +259,7 @@ function genAddSubFour(rng: Rng): MathItem[] {
       a = int(rng, 100, 9999)
       b = int(rng, 100, Math.min(a, 9999))
     }
-    return withFixedColumnWidth(columnItem('−', a, b, a - b, false), width)
+    return withFixedColumnWidth(columnItem('−', a, b, a - b, empty), width)
   }
   return shuffle(rng, [mkAdd(), mkAdd(), mkSub(), mkSub()])
 }
@@ -288,19 +291,35 @@ function genEx10(rng: Rng): MathItem[] {
 
 const FRACTION_WORDS: Array<{ term: string; n: number; d: number }> = [
   { term: 'un demi', n: 1, d: 2 },
+  { term: 'trois demis', n: 3, d: 2 },
+  { term: 'cinq demis', n: 5, d: 2 },
   { term: 'un tiers', n: 1, d: 3 },
   { term: 'deux tiers', n: 2, d: 3 },
+  { term: 'quatre tiers', n: 4, d: 3 },
+  { term: 'cinq tiers', n: 5, d: 3 },
   { term: 'un quart', n: 1, d: 4 },
   { term: 'trois quarts', n: 3, d: 4 },
+  { term: 'cinq quarts', n: 5, d: 4 },
+  { term: 'sept quarts', n: 7, d: 4 },
   { term: 'un cinquième', n: 1, d: 5 },
   { term: 'deux cinquièmes', n: 2, d: 5 },
   { term: 'trois cinquièmes', n: 3, d: 5 },
+  { term: 'quatre cinquièmes', n: 4, d: 5 },
+  { term: 'six cinquièmes', n: 6, d: 5 },
+  { term: 'sept cinquièmes', n: 7, d: 5 },
   { term: 'un sixième', n: 1, d: 6 },
   { term: 'cinq sixièmes', n: 5, d: 6 },
+  { term: 'sept sixièmes', n: 7, d: 6 },
   { term: 'un huitième', n: 1, d: 8 },
   { term: 'trois huitièmes', n: 3, d: 8 },
+  { term: 'cinq huitièmes', n: 5, d: 8 },
+  { term: 'neuf huitièmes', n: 9, d: 8 },
   { term: 'un dixième', n: 1, d: 10 },
+  { term: 'trois dixièmes', n: 3, d: 10 },
   { term: 'sept dixièmes', n: 7, d: 10 },
+  { term: 'neuf dixièmes', n: 9, d: 10 },
+  { term: 'onze dixièmes', n: 11, d: 10 },
+  { term: 'treize dixièmes', n: 13, d: 10 },
 ]
 
 /** Ex. 11 — termes → fraction verticale (numérateurs et dénominateurs tous distincts). */
@@ -1306,8 +1325,8 @@ export function tryGenerateTcmCfrItems(
   if (typeId === 'tcm-cfr-ex04') return genEx04(rng, count)
   if (typeId === 'tcm-cfr-ex05') return genEx05(rng).slice(0, Math.max(1, count))
   if (typeId === 'tcm-cfr-ex06') return genEx06(rng).slice(0, Math.max(1, count))
-  if (typeId === 'tcm-cfr-ex07') return genAddSubFour(rng).slice(0, Math.max(1, count))
-  if (typeId === 'tcm-cfr-ex08') return genAddSubFour(rng).slice(0, Math.max(1, count))
+  if (typeId === 'tcm-cfr-ex07') return genAddSubFour(rng, false).slice(0, Math.max(1, count))
+  if (typeId === 'tcm-cfr-ex08') return genAddSubFour(rng, true).slice(0, Math.max(1, count))
   if (typeId === 'tcm-cfr-ex09') return genEx09(rng).slice(0, Math.max(1, count))
   if (typeId === 'tcm-cfr-ex10') return genEx10(rng).slice(0, Math.max(1, count))
   if (typeId === 'tcm-cfr-ex11') return genEx11(rng, count)

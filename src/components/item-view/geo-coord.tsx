@@ -213,7 +213,7 @@ export function CoordBlock({
               const coords = m?.[2] ?? q.answer.replace(/[()]/g, '')
               return (
                 <span className="coord-cfr-place-box" key={`place-${label}-${i}`}>
-                  {label}({coords.trim()})
+                  <span className="coord-cfr-letter">{label}</span>({coords.trim()})
                 </span>
               )
             })}
@@ -225,7 +225,7 @@ export function CoordBlock({
               const label = m?.[1] ?? q.prompt.trim().slice(-1)
               return (
                 <span className="coord-cfr-read-box" key={`read-${label}-${i}`}>
-                  {label}({' '}
+                  <span className="coord-cfr-letter">{label}</span>({' '}
                   {show ? (
                     <strong className="filled-answer">{q.answer.replace(/[()]/g, '').split(';')[0]?.trim()}</strong>
                   ) : (

@@ -134,7 +134,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
   const viewBox = paraPlacement
     ? '0 0 350 168'
     : triPlacement
-      ? '0 0 330 180'
+      ? '0 0 390 180'
       : rhombusPlacement
         ? '0 0 340 200'
         : trapPlacement
@@ -231,13 +231,13 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
 
         {triPlacement && (
           <>
-            {/* Coords placement soutien Ex. 26 — scalène + a / b / c / h */}
+            {/* Scalène + a / b / c / h — b hors figure, h décalé vers la droite (cadre). */}
             <polygon points="72,28 22,122 185,122" />
             <L x={(22 + 185) / 2} y={148} baseline="hanging">
               a = {fmt(d.a!)} {unit}
             </L>
-            {/* Cote b le long du côté, décalée vers l’intérieur pour ne pas chevaucher h. */}
-            <L x={(72 + 185) / 2 - 2} y={(28 + 122) / 2 - 10} anchor="middle">
+            {/* Cote b à l’extérieur du côté droit (hors polygone). */}
+            <L x={(72 + 185) / 2 + 28} y={(28 + 122) / 2 - 14} anchor="start">
               b = {fmt(d.b!)} {unit}
             </L>
             <L x={(72 + 22) / 2 - 20} y={(28 + 122) / 2 - 4} anchor="end">
@@ -247,7 +247,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
               shapeRightX={185}
               yTop={28}
               yBot={122}
-              bracketX={245}
+              bracketX={300}
               label={`h = ${fmt(d.height!)} ${unit}`}
             />
           </>

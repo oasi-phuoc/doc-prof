@@ -447,6 +447,14 @@ function AxesScene({
       {Array.from({ length: cols + 1 }, (_, col) => {
         const isAxis = !hideAxes && col === originCol
         if (!isAxis && col > visibleCols) return null
+        // TCM CFR : ligne maths −1 invisible (comme 21 / 22 hors zone visible).
+        if (
+          !isAxis &&
+          scene.originZeroInNegCell &&
+          Math.abs(mathAtCol(col) - -1) < 1e-9
+        ) {
+          return null
+        }
         return (
           <line
             key={`vx-${col}`}
@@ -461,6 +469,13 @@ function AxesScene({
       {Array.from({ length: rows + 1 }, (_, row) => {
         const isAxis = !hideAxes && row === originRow
         if (!isAxis && row > visibleRows) return null
+        if (
+          !isAxis &&
+          scene.originZeroInNegCell &&
+          Math.abs(mathAtRow(row) - -1) < 1e-9
+        ) {
+          return null
+        }
         return (
           <line
             key={`hy-${row}`}
@@ -472,6 +487,45 @@ function AxesScene({
           />
         )
       })}
+      {/* Graduations : trait un peu plus épais tous les 2 carrés (axes). */}
+      {!hideAxes
+        ? Array.from({ length: Math.floor(visibleCols / 2) }, (_, i) => {
+            const col = originCol + (i + 1) * 2
+            if (col <= 0 || col > visibleCols || col === originCol) return null
+            const cx = colX(col)
+            const oy = originSvg.cy
+            const tick = Math.max(1.1, cellMm * 0.28)
+            return (
+              <line
+                key={`tick-x-${col}`}
+                x1={cx}
+                y1={oy - tick}
+                x2={cx}
+                y2={oy + tick}
+                className="axis-tick"
+              />
+            )
+          })
+        : null}
+      {!hideAxes
+        ? Array.from({ length: Math.floor(visibleRows / 2) }, (_, i) => {
+            const row = originRow + (i + 1) * 2
+            if (row <= 0 || row > visibleRows || row === originRow) return null
+            const cy = rowY(row)
+            const ox = originSvg.cx
+            const tick = Math.max(1.1, cellMm * 0.28)
+            return (
+              <line
+                key={`tick-y-${row}`}
+                x1={ox - tick}
+                y1={cy}
+                x2={ox + tick}
+                y2={cy}
+                className="axis-tick"
+              />
+            )
+          })
+        : null}
       {axisArrows ? (
         <g className="axis-arrows" aria-hidden>
           <polygon

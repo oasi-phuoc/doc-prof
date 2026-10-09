@@ -326,7 +326,12 @@ export function MetroMapBlock({
       <ol className="tcm-cfr-metro-questions">
         {questions.map((q, i) => (
           <li key={`mq-${i}`}>
-            <p className="prompt-stack-text">{q.prompt}</p>
+            <div className="tcm-cfr-metro-q-head">
+              <span className="tcm-cfr-metro-q-num" aria-hidden>
+                {i + 1}.
+              </span>
+              <p className="prompt-stack-text">{q.prompt}</p>
+            </div>
             <span className={`answer-line-field ${show ? 'filled' : ''}`}>
               {show ? q.answer : '\u00a0'}
             </span>

@@ -42,7 +42,7 @@ export const TCM_CFR_EXERCISE_TYPES: ExerciseType[] = [
   t('tcm-cfr-ex05', 'tcm-cfr-test', '5 — Décomposer', 'Décomposer un nombre (3 et 4 chiffres).', 'Décomposez chaque nombre.', 1),
   t('tcm-cfr-ex06', 'tcm-cfr-test', '6 — Nommer les opérations', 'Écrire le nom des opérations.', 'Écrivez le nom des opérations.', 2),
   t('tcm-cfr-ex07', 'tcm-cfr-test', '7 — Colonnes + et −', 'Additions et soustractions posées.', 'Posez et calculez.', 2),
-  t('tcm-cfr-ex08', 'tcm-cfr-test', '8 — Colonnes + et − (suite)', 'Additions et soustractions posées.', 'Posez et calculez.', 2),
+  t('tcm-cfr-ex08', 'tcm-cfr-test', '8 — Colonnes + et − (suite)', 'Additions et soustractions à poser (nombres hors grille).', 'Posez les nombres dans la grille, puis calculez.', 2),
   t('tcm-cfr-ex09', 'tcm-cfr-test', '9 — × et ÷ posées', 'Multiplication et division en colonnes.', 'Posez et calculez.', 2),
   t('tcm-cfr-ex10', 'tcm-cfr-test', '10 — × et ÷ (hors grille)', 'Multiplication et division à poser (nombres hors grille).', 'Posez et calculez.', 2),
   t('tcm-cfr-ex11', 'tcm-cfr-test', '11 — Fractions en lettres', 'Écrire la fraction correspondant au terme.', 'Pour chaque terme, écrivez la fraction correspondante.', 2),
