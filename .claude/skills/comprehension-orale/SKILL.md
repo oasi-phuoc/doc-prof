@@ -47,6 +47,47 @@ Comme les autres CO TCF `complet` : `support.audio` (chemin absolu
 `/lib/audio/comprehension/…`), `support.transcription`, `questions[]` en
 `qcm_texte` (3 choix, une bonne réponse).
 
+## Images des CO (et des CE TCF)
+
+**Une seule banque d’images : `public/lib/images/vocabulaire/{theme}/{slug}.webp`.**
+Aucune image CO n’est rangée dans `public/lib/tcf/images/{serie}/` : le même vélo,
+le même bus ou la même pluie servent à toutes les séries.
+
+Dans les banques JSON, le champ `image` (choix QCM, situations, support) porte le
+**chemin absolu** : `"/lib/images/vocabulaire/transports/velo.webp"`.
+
+### Avant d’ajouter une image
+
+1. Chercher l’objet ou l’action dans `public/lib/images/vocabulaire/` (ou l’index
+   `src/jeux/vocab-images.ts`), **accents ignorés** (`echecs` = `échecs`).
+2. Si une image existe **et montre bien la même chose**, la réutiliser. Pièges vus :
+   - `billet` = billet de train ; billet de banque → `billet-de-banque` ;
+   - `ballon` = ballon de baudruche ; ballon de foot → `ballon-de-football` ;
+   - `telephone` = téléphone fixe ; portable → `smartphone` ;
+   - `raquette` = raquette de ping-pong ; tennis → `raquette-de-tennis` ;
+   - horloges : à aiguilles (`huit-heures`) ≠ numériques (`vingt-heures`,
+     `huit-heures-numerique`) — ne jamais mélanger 8 h et 20 h sur un cadran à aiguilles.
+3. Sinon, créer l’image dans le bon thème (normes « Images vocabulaire » du skill
+   `medias-image-audio` : fond blanc, sujet centré, 800×600 WebP).
+   - **Slug = l’objet ou l’action** montré (`lunettes-de-natation`, `nourrir-les-animaux`),
+     sans préfixe `co1-`, sans nom de série, sans lettre (`situation-a`, `meteo-b` interdits).
+   - Personnes en action, scènes de dialogue (exercice `association_images`) → thème
+     **`actions`** (`preter-un-stylo`, `demander-a-l-accueil`, `reunion`…).
+   - Pluriel seulement s’il change ce qu’on voit (`oranges`, `billets-de-spectacle`).
+4. Régénérer l’index : `node scripts/build-vocab-images-index.mjs` (nouveau thème →
+   l’ajouter à `THEME_LABELS` dans ce script).
+
+### Contrôles
+
+- Dans **un même exercice**, toutes les images sont différentes (les choix d’un QCM,
+  les situations d’une association).
+- Une même image peut revenir dans d’autres exercices et d’autres séries : c’est voulu.
+- Pas d’image en double dans `vocabulaire/` : si deux fichiers montrent la même chose,
+  garder un seul fichier et pointer les exercices dessus.
+- Exceptions qui restent dans `public/lib/tcf/images/{serie}/` : les **documents
+  propres à un sujet** (planche numérotée, plan, pictogrammes, affiche ou ticket avec
+  texte à lire). Tout objet ou action isolé va dans `vocabulaire/`.
+
 ## Workflow agent (doc-prof)
 
 Sauf demande explicite contraire :

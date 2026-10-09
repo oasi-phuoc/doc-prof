@@ -13,6 +13,7 @@ const OUT = join(ROOT, 'src/jeux/vocab-images.ts')
 
 const THEME_LABELS = {
   accessoires: 'Accessoires',
+  actions: 'Actions et situations',
   aliments: 'Aliments',
   'animaux-aquatiques': 'Animaux aquatiques',
   'animaux-sauvages': 'Animaux sauvages',

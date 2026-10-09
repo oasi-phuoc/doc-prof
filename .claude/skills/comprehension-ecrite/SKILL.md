@@ -8,6 +8,22 @@ description: >-
 
 # Compréhension écrite (CECRL / FALC)
 
+## Images des CE TCF
+
+Les CE TCF (`src/content/tcf/*/ce.json`) prennent leurs images dans
+**`public/lib/images/vocabulaire/{theme}/{slug}.webp`** (chemin absolu dans le JSON :
+`"/lib/images/vocabulaire/vetements/echarpe.webp"`), comme les CO. Même règle que
+la section « Images des CO » du skill `comprehension-orale` :
+
+1. Chercher d’abord l’objet ou l’action dans `vocabulaire/` (accents ignorés) et
+   réutiliser l’image si elle montre la même chose.
+2. Sinon la créer dans le bon thème (`actions` pour une personne en action ou une
+   scène), slug = l’objet ou l’action, sans préfixe `ce1-` ni nom de série, puis
+   `node scripts/build-vocab-images-index.mjs`.
+3. Dans un même exercice, toutes les images sont différentes.
+4. Restent dans `public/lib/tcf/images/{serie}/` uniquement les documents propres au
+   sujet : plan, pictogrammes, planche numérotée, affiche ou ticket avec texte à lire.
+
 Source code : `src/francais/comprehension-ecrite.ts` (règles) +
 `src/francais/comprehension-ecrite-banks.ts` (textes).  
 Niveau fiche : `difficulty` `facile` → A1, `moyen` → A2, `avance` → B1.

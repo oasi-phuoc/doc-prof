@@ -58,6 +58,13 @@ scènes TCF sous `public/lib/tcf/images/`).
 Ne pas inventer un autre arbre (`/assets/…` est l’ancien chemin
 soutien-scolaire ; ici c’est **`/lib/…`**).
 
+### Images CE / CO TCF
+
+Les objets et actions des CE et CO TCF **ne sont pas** rangés par série : ils
+vivent dans `public/lib/images/vocabulaire/{theme}/` (thème `actions` pour les
+personnes en action et les scènes de dialogue) et sont réutilisés d’une série à
+l’autre. Règles détaillées : skill `comprehension-orale`, section « Images des CO ».
+
 ---
 
 ## Images vocabulaire
