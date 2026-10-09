@@ -606,6 +606,15 @@ html,body,#root{
 }
 
 .order-block{display:flex;flex-direction:column;gap:var(--ex-prompt-gap);width:100%;min-width:0}
+/* TCM CFR ex. 3 : 7 cadres/traits sur une ligne (nombres ≤ 3 chiffres). */
+.order-block.order-compact .order-answer-row{
+  grid-template-columns:repeat(7,minmax(0,1fr)) auto;
+  grid-template-columns:minmax(2.2em,1fr) auto minmax(2.2em,1fr) auto minmax(2.2em,1fr) auto minmax(2.2em,1fr) auto minmax(2.2em,1fr) auto minmax(2.2em,1fr) auto minmax(2.2em,1fr);
+  column-gap:0.12em;font-size:11pt
+}
+.order-block.order-compact .order-blank{min-width:2.2em;padding:0 1px}
+.order-block.order-compact .order-given-box{min-width:2.2em;padding:2px 1px;font-size:11pt}
+.order-block.order-compact .order-sep{padding:0 0.02em;font-size:11pt}
 .order-given{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;
   font-size:13pt;font-weight:600;font-variant-numeric:tabular-nums
