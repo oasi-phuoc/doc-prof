@@ -92,12 +92,14 @@ import {
   isTcmDomain,
   TCM_DOCUMENT_TITLE,
 } from '@/tcm/test'
+import { isTcmFamilyConsignesType } from '@/tcm/informations'
 import {
   buildTcmCfrTestPages,
   isTcmCfrConsignesType,
   isTcmCfrDomain,
   TCM_CFR_DOCUMENT_TITLE,
 } from '@/tcm-cfr/test'
+import { downloadTcmCfrAudios } from '@/tcm-cfr/audio-nombres'
 import {
   defaultCalliPhraseCount,
   defaultCalliWordCount,
@@ -650,6 +652,25 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
   }
 
+  /** Playlists audio de la page active (TCM CFR ex. 1–2). */
+  function currentTcmCfrAudioPlaylists(): string[][] {
+    const block = activeSheet?.blocks[safeBlockIndex]
+    if (!block) return []
+    return block.items
+      .map((item) => item.audioParts ?? (item.audioSrc ? [item.audioSrc] : []))
+      .filter((parts): parts is string[] => parts.length > 0)
+  }
+
+  async function downloadActiveTcmCfrAudios() {
+    const playlists = currentTcmCfrAudioPlaylists()
+    if (playlists.length === 0) return
+    try {
+      await downloadTcmCfrAudios(playlists)
+    } catch {
+      // Échec réseau / fichier manquant : silencieux.
+    }
+  }
+
   const setAllDraftGrids = (value: boolean) => {
     updatePage({
       problemDraftGrids: Array.from({ length: activeBlock.count }, () => value),
@@ -689,6 +710,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   /** TCM / TCM CFR : test multi-pages packé, UI simplifiée. */
   const isTcmLike = isTcm || isTcmCfr
   const isTcf = activePage.domain === TCF_DOMAIN
+  /** Page 1 Informations (TCM / CFR / CSC) : pas de Questions ni Colonnes. */
+  const isTcmInfoPage = isTcmFamilyConsignesType(activeBlock.exerciseType)
+  const tcmCfrHasAudio = isTcmCfr && currentTcmCfrAudioPlaylists().length > 0
   const tcfNiveau = tcfNiveauFromDifficulty(activeBlock.difficulty)
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
   const isSoutienMots = soutienKind === 'mots'
@@ -2508,6 +2532,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               isCalliDomain ||
               isSoutienMots ||
               isTcf ||
+              isTcmInfoPage ||
               isSoutienMotsMeles ? null : (
               <label className="select-shell">
                 <span>
@@ -2763,7 +2788,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </small>
                 </div>
               ) : null}
-              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr || isTcf ? null : (
+              {isPhraseChart || isVocabLearn || isVocabPool || isGramTheory || isJeuxDomain || isCalliDomain || isSoutienFr || isTcf || isTcmInfoPage ? null : (
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
@@ -3344,6 +3369,22 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     onClick={() => void downloadActiveTcfAudios()}
                     aria-label="Télécharger les audios de la fiche"
                     title="Télécharger les audios de la fiche"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L11 13.59V4a1 1 0 0 1 1-1zM5 18a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+                  </button>
+                ) : null}
+                {tcmCfrHasAudio ? (
+                  <button
+                    className="print-chip is-icon is-generate"
+                    type="button"
+                    onClick={() => void downloadActiveTcmCfrAudios()}
+                    aria-label="Télécharger les audios de la fiche"
+                    title="Télécharger les audios (nombres ou multiplications)"
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                       <path

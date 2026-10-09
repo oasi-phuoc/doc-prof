@@ -802,22 +802,10 @@ function genEx28(rng: Rng): MathItem[] {
   ]
 }
 
-function consignesItem(): MathItem {
-  return {
-    layout: 'theory',
-    noPoints: true,
-    answer: '',
-    theoryBlock: {
-      kind: 'paragraph',
-      text:
-        'Ce test évalue vos connaissances en mathématiques. Lisez chaque consigne. Pour les exercices avec audio, écoutez puis écrivez. Montrez vos calculs lorsque c’est demandé. Bonne chance.',
-    },
-  }
-}
-
 export function tryGenerateTcmCfrItems(typeId: string, count: number, rng: Rng): MathItem[] | null {
   if (!isTcmCfrType(typeId)) return null
-  if (typeId === 'tcm-cfr-consignes') return [consignesItem()]
+  // Page Informations : générée via `generateTcmInformations` dans `math/generate.ts`.
+  if (typeId === 'tcm-cfr-consignes') return []
   if (typeId === 'tcm-cfr-ex01') return genEx01(rng, count)
   if (typeId === 'tcm-cfr-ex02') return genEx02(rng, count)
   if (typeId === 'tcm-cfr-ex03') return genEx03(rng).slice(0, Math.max(1, count))

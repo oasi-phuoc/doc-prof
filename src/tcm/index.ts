@@ -15,6 +15,11 @@ export {
 export { generateTcmConversionsBatch } from './conversions'
 export { generateTcmEquationsBatch } from './equations'
 export { generateTcmEvaluerBatch } from './evaluer'
+export {
+  generateTcmInformations,
+  isTcmFamilyConsignesType,
+  type TcmInfoVariant,
+} from './informations'
 export { tryGenerateTcmItems } from './items'
 export { generateTcmPrioriteBatch } from './priorite'
 export { generateTcmProportionKgBatch } from './proportion-kg'

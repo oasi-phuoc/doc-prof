@@ -43,6 +43,7 @@ import { tryGenerateMesure } from './mesures'
 import { pageAsConfig, pageBlocks } from './page-model'
 import { makeWordProblem } from './problems'
 import { TCM_MAX_SCORE } from '@/tcm/test'
+import { generateTcmInformations } from '@/tcm/informations'
 import { tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfConsignesType, TCF_DOMAIN } from '@/tcf/catalog'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
@@ -51,8 +52,9 @@ import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
-import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
+import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
+import { isTcmCscConsignesType } from '@/tcm-csc/test'
 import { tryGenerateVocabulaireBlock } from '@/vocabulaire/generate'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { createRng, int, pick, shuffle, type Rng } from './rng'
@@ -1248,71 +1250,6 @@ function generateOne(
   }
 }
 
-function generateTcmConsignes(): MathItem[] {
-  const levels: Array<[string, string]> = [
-    ['CSC', 'Additions et soustractions'],
-    ['CFR', 'Multiplications, divisions, périmètre et aire du rectangle'],
-    ['CAF', 'Nombres décimaux, fractions, périmètre et aire'],
-    ['CAP', 'Puissances et racines, relatifs, fractions et équations, périmètre et aire'],
-  ]
-  const maxScore = TCM_MAX_SCORE
-  const scoreLabel = Number.isInteger(maxScore) ? String(maxScore) : String(maxScore).replace('.', ',')
-  return [
-    {
-      layout: 'theory',
-      prompt: 'Informations',
-      answer: '',
-      theoryBlock: { kind: 'heading', text: '' },
-    },
-    {
-      layout: 'theory',
-      prompt: 'niveaux',
-      answer: '',
-      theoryBlock: {
-        kind: 'table',
-        headers: ['Niveau', 'Contenu évalué'],
-        rows: levels.map(([niveau, contenu]) => [niveau, contenu]),
-      },
-    },
-    {
-      layout: 'theory',
-      prompt: 'couverture',
-      answer: '',
-      theoryBlock: {
-        kind: 'list',
-        title: 'Organisation du test',
-        items: [
-          '35 exercices couvrant tous les niveaux de CSC jusqu’à CAP',
-          '90 minutes pour compléter le test',
-          `Score maximum : ${scoreLabel} points`,
-        ],
-      },
-    },
-    {
-      layout: 'theory',
-      prompt: 'consignes',
-      answer: '',
-      theoryBlock: { kind: 'heading', text: 'Consignes', sub: true },
-    },
-    {
-      layout: 'theory',
-      prompt: 'consignes-liste',
-      answer: '',
-      theoryBlock: {
-        kind: 'list',
-        items: [
-          'Lisez chaque consigne attentivement avant de répondre.',
-          'Répondez directement sur la fiche, dans les espaces prévus.',
-          'Vous pouvez utiliser un brouillon ; reportez ensuite vos réponses sur la fiche.',
-          'Si vous ne savez pas répondre, passez à la question suivante et revenez-y plus tard.',
-          'Les exercices progressent du plus simple au plus avancé : continuez aussi loin que possible.',
-          'Vérifiez vos calculs quand vous avez terminé.',
-        ],
-      },
-    },
-  ]
-}
-
 function buildSingleBlock(
   config: PageConfig,
   seed: number,
@@ -1333,7 +1270,14 @@ function buildSingleBlock(
     return {
       title: 'Informations',
       instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
-      items: generateTcmConsignes(),
+      items: generateTcmInformations('tcm', TCM_MAX_SCORE),
+    }
+  }
+  if (isTcmCscConsignesType(config.exerciseType)) {
+    return {
+      title: 'Informations',
+      instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
+      items: generateTcmInformations('tcm-csc', 0),
     }
   }
   const tcf = tryGenerateTcfBlock(config, rng)
@@ -1389,11 +1333,10 @@ function buildSingleBlock(
     }
   }
   if (isTcmCfrConsignesType(config.exerciseType)) {
-    const items = tryGenerateTcmCfrItems(config.exerciseType, 1, rng) ?? []
     return {
-      title: fallbackTitle,
-      instruction: type?.instruction ?? 'Lisez les consignes.',
-      items,
+      title: 'Informations',
+      instruction: type?.instruction ?? 'Lisez les consignes avant de commencer le test.',
+      items: generateTcmInformations('tcm-cfr', TCM_CFR_MAX_SCORE),
     }
   }
   if (config.exerciseType === 'reperage-droites') {
@@ -1533,9 +1476,14 @@ function buildSingleBlock(
   }
 }
 
-/** Page « Informations » d’un test (TCM, TCF) : ni numéro d’exercice ni points. */
+/** Page « Informations » d’un test (TCM / CFR / CSC / TCF) : ni numéro d’exercice ni points. */
 function isInfoPageType(typeId: string): boolean {
-  return typeId === 'tcm-consignes' || isTcmCfrConsignesType(typeId) || isTcfConsignesType(typeId)
+  return (
+    typeId === 'tcm-consignes' ||
+    isTcmCfrConsignesType(typeId) ||
+    isTcmCscConsignesType(typeId) ||
+    isTcfConsignesType(typeId)
+  )
 }
 
 export function buildPage(config: PageConfig, seed: number, startExercise = 1): WorksheetPage {

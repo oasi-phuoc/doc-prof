@@ -1,14 +1,17 @@
 # TCM CSC
 
-Stub admin pour une variante institutionnelle CSC du test maths.
+Variante institutionnelle CSC du test maths.
 
 | Fichier | Rôle |
 |---|---|
-| `catalog.ts` | Thème + type placeholder |
+| `catalog.ts` | Thèmes + type consignes + placeholder |
+| `test.ts` | `buildTcmCscTestPages` (page Informations) |
 | `generate.ts` | `tryGenerateTcmCscBlock` |
+| `informations` partagée | `src/tcm/informations.ts` (même structure que TCM / CFR) |
 
 ## Notes
 
 - Id env / code : `tcm-csc` (libellé UI **TCM CSC**)
-- **Pas** une copie conforme de `src/tcm/` — contenu à préparer ; plus tard, *des* exercices TCM pourront être repris
+- Page 1 = Informations (sans contrôles Questions / Colonnes)
+- Exercices CSC à préparer ; plus tard, *des* exercices TCM pourront être repris
 - Distinct du domaine **ACM** (`src/acm/`, Activités créatives et manuelles)
