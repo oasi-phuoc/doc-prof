@@ -21,15 +21,14 @@ export function tcmCfrSemestre(date = new Date()): 'Semestre-1' | 'Semestre-2' {
 /**
  * Nom de fichier au téléchargement :
  * `TCM-CFR_Exercice-1_NOMBRE_Semestre-1.mp3`
- * `TCM-CFR_Exercice-2_multiplication_Semestre-2.mp3`
+ * `TCM-CFR_Exercice-2_MULTIPLICATION_Semestre-2.mp3`
  */
 export function tcmCfrAudioDownloadName(opts: {
   kind: TcmCfrAudioKind
   date?: Date
 }): string {
   const exerciseNo = opts.kind === 'MULTIPLICATION' ? 2 : 1
-  const label = opts.kind === 'MULTIPLICATION' ? 'multiplication' : 'NOMBRE'
-  return `TCM-CFR_Exercice-${exerciseNo}_${label}_${tcmCfrSemestre(opts.date)}.mp3`
+  return `TCM-CFR_Exercice-${exerciseNo}_${opts.kind}_${tcmCfrSemestre(opts.date)}.mp3`
 }
 
 /** Déduit NOMBRE / MULTIPLICATION à partir de la playlist (présence de `fois.mp3`). */
