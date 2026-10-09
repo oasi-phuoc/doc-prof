@@ -434,6 +434,21 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
     // Sans opérateur binaire (ex. 2³, √144) : même largeur de trait que eq-row (× / ÷).
     const unaryEq = !/[+\-−×÷]/.test(expr)
     const fracAnswer = looksLikeFraction(item.answer)
+    const lhsIsFrac = looksLikeFraction(expr)
+    // « n/d = ____ » (ex. fractions → décimal) : fraction empilée + trait sur la même ligne.
+    if (lhsIsFrac && !fracAnswer) {
+      return (
+        <div className="inline-prompt equation frac-eq-decimal" aria-label="Fraction et réponse">
+          <span className="frac-eq-lhs">
+            <FractionView value={expr.trim()} />
+          </span>
+          <span className="eq-sign">=</span>
+          <span className={`answer-line-field ${show ? 'filled' : ''}`}>
+            {show ? item.answer : '\u00a0'}
+          </span>
+        </div>
+      )
+    }
     return (
       <div
         className={`inline-prompt equation aligned-eq${unaryEq ? ' fixed-ans' : ''}${fracAnswer ? ' frac-ans' : ''}`}
