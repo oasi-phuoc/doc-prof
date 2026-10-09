@@ -3717,7 +3717,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-info-lead{margin:4px 0 0;font-weight:700}
 .tcf-info-parties{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .tcf-info-partie{display:flex;align-items:flex-start;gap:14px}
-.tcf-competence-icon{flex:0 0 auto;display:block;width:15mm;height:15mm;object-fit:contain}
+.tcf-competence-icon{flex:0 0 auto;display:block;width:15mm;height:15mm;background:var(--purple);-webkit-mask:no-repeat center/contain;mask:no-repeat center/contain;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .tcf-info-partie-title{margin:0 0 2px;font-size:1.05em}
 .tcf-info-partie-title b{color:var(--purple)}
 .tcf-info-partie-text{margin:0;text-align:justify;line-height:1.35}
