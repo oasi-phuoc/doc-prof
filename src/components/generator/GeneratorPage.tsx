@@ -76,7 +76,7 @@ import {
 } from '@/tcf/catalog'
 import { buildTcfRandomTestPages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
 import { tcfBank } from '@/tcf/loader'
-import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
+import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
 import { Chronometre } from '@/components/tcf/Chronometre'
 import {
   blockPointsTotal,
@@ -1978,15 +1978,14 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               ) : null}
               {isTcf ? (
                 <>
-                  {!libreMode ? (
-                    <TcfExerciseEditor
-                      niveau={tcfNiveau}
-                      typeId={activeBlock.exerciseType}
-                      exercise={activeBlock.tcfExercise}
-                      bankId={activeBlock.tcfBankId}
-                      onChange={(patch) => updatePage(patch)}
-                    />
-                  ) : null}
+                  <TcfBankPicker
+                    niveau={tcfNiveau}
+                    typeId={activeBlock.exerciseType}
+                    scenario={activeBlock.tcfScenario}
+                    bankId={activeBlock.tcfBankId}
+                    edited={activeBlock.tcfExercise != null}
+                    onChange={(patch) => updatePage(patch)}
+                  />
                   {isTcfConsignesType(activeBlock.exerciseType) ? null : (
                     <Chronometre
                       minutes={activeBlock.tcfDureeMin}

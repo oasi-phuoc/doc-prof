@@ -166,6 +166,10 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
         errors.push('Thème ou mots requis.')
       }
       break
+    case 'trois_mots':
+      if (blank(ex.support.theme)) errors.push('Thème requis.')
+      if (ex.support.mots.filter((m) => !blank(m)).length < 3) errors.push('Au moins 3 mots.')
+      break
     case 'sequence_4_images':
       if (ex.support.images.length !== 4) errors.push('Exactement 4 images.')
       ex.support.images.forEach((img, i) => {

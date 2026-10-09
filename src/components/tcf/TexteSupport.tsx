@@ -146,9 +146,12 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'mots_theme':
+    case 'trois_mots':
       return (
         <div className="tcf-po">
-          {ex.support.audio ? <PlayerAudio src={ex.support.audio} label="Questions de l’examinateur·trice" /> : null}
+          {ex.type_exercice === 'mots_theme' && ex.support.audio ? (
+            <PlayerAudio src={ex.support.audio} label="Questions de l’examinateur·trice" />
+          ) : null}
           {ex.support.theme ? <p className="tcf-po-theme">Thème : {ex.support.theme}</p> : null}
           <ul className="tcf-mots">
             {ex.support.mots

@@ -21,8 +21,12 @@ la section « Images des CO » du skill `comprehension-orale` :
    scène), slug = l’objet ou l’action, sans préfixe `ce1-` ni nom de série, puis
    `node scripts/build-vocab-images-index.mjs`.
 3. Dans un même exercice, toutes les images sont différentes.
-4. Restent dans `public/lib/tcf/images/{serie}/` uniquement les documents propres au
-   sujet : plan, pictogrammes, planche numérotée, affiche ou ticket avec texte à lire.
+4. Seuls les documents propres au sujet (plan, pictogrammes, planche numérotée, affiche
+   ou ticket avec texte à lire) vont dans `public/lib/images/documents/{slug}.webp`.
+   Il n’y a plus de `public/lib/tcf/`.
+5. Chaque exercice porte `scenario` + `scene` (voir skill `comprehension-orale`) ;
+   un exercice CE = **un seul texte** ; un document à plusieurs textes est découpé en
+   plusieurs exercices courts (2–3 questions).
 
 Source code : `src/francais/comprehension-ecrite.ts` (règles) +
 `src/francais/comprehension-ecrite-banks.ts` (textes).  

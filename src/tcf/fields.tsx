@@ -104,7 +104,7 @@ export function NumberField({
 
 /**
  * Image : import d’un fichier (data URL, stockée dans la fiche) ou nom de fichier
- * rangé dans `public/lib/tcf/images/` (à privilégier pour les banques JSON).
+ * rangé sous `public/lib/images/` (à privilégier pour les banques JSON).
  */
 export function ImageField({
   label,
@@ -151,7 +151,7 @@ export function ImageField({
           className="pill-input"
           type="text"
           value={value.startsWith('data:') ? '' : value}
-          placeholder={value.startsWith('data:') ? 'Image importée' : 'pomme.webp ou /lib/…'}
+          placeholder={value.startsWith('data:') ? 'Image importée' : '/lib/images/vocabulaire/…'}
           aria-label={`Fichier : ${label}`}
           onChange={(event) => onChange(event.target.value)}
         />
@@ -161,7 +161,7 @@ export function ImageField({
   )
 }
 
-/** Audio : nom du MP3 dans `public/lib/tcf/audio/` (ou chemin / URL), écoute à l’écran. */
+/** Audio : MP3 sous `public/lib/audio/` (ou chemin / URL), écoute à l’écran. */
 export function AudioField({
   label,
   value,
@@ -179,7 +179,7 @@ export function AudioField({
         className="pill-input"
         type="text"
         value={value}
-        placeholder="a0a1-co-001.mp3 ou /lib/…"
+        placeholder="/lib/audio/comprehension/…"
         onChange={(event) => onChange(event.target.value)}
       />
       {src ? <audio className="tcf-audio-player" controls preload="none" src={src} /> : null}

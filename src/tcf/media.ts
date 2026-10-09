@@ -1,10 +1,10 @@
 /**
  * Chemins des médias TCF.
  * - data URL, URL http(s) ou chemin absolu (`/lib/...`) : utilisés tels quels ;
- * - nom de fichier seul (`pomme.png`) : rangé dans `public/lib/tcf/images|audio/`.
+ * - chemin relatif (`vocabulaire/fruits/pomme.webp`) : sous `public/lib/images|audio/`.
  */
-export const TCF_IMAGE_DIR = '/lib/tcf/images/'
-export const TCF_AUDIO_DIR = '/lib/tcf/audio/'
+export const TCF_IMAGE_DIR = '/lib/images/'
+export const TCF_AUDIO_DIR = '/lib/audio/'
 
 function resolve(src: string, dir: string): string {
   const s = src.trim()

@@ -62,6 +62,10 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
   competence: C
   type_exercice: T
   theme?: string
+  /** Id de `TCF_SCENARIOS` (loisirs, école…). */
+  scenario?: string
+  /** Scène affichée dans le sélecteur (« À la plage ») ; numérotée si elle se répète. */
+  scene?: string
   /** Consigne affichée sous le titre (sinon consigne du type). */
   consigne?: string
   support: S
@@ -176,6 +180,12 @@ export type TcfPoMotsTheme = TcfBase<
   'mots_theme',
   { theme: string; mots: string[]; exemples_questions: string[]; audio?: string }
 >
+/** Trois mots tirés au hasard (graine) dans `mots` : l’élève pose des questions sur le thème. */
+export type TcfPoTroisMots = TcfBase<
+  'PO',
+  'trois_mots',
+  { theme: string; mots: string[]; exemples_questions: string[] }
+>
 export type TcfPoSequence = TcfBase<'PO', 'sequence_4_images', { images: string[]; reponse_modele: string }>
 export type TcfPoImageUnique = TcfBase<
   'PO',
@@ -195,7 +205,7 @@ export type TcfPoDialogue = TcfBase<
     repliques_au_corrige?: boolean
   }
 >
-export type TcfPoExercise = TcfPoMotsTheme | TcfPoSequence | TcfPoImageUnique | TcfPoDialogue
+export type TcfPoExercise = TcfPoMotsTheme | TcfPoTroisMots | TcfPoSequence | TcfPoImageUnique | TcfPoDialogue
 
 export type TcfExercise = TcfCeExercise | TcfCoExercise | TcfPeExercise | TcfPoExercise
 export type TcfTypeExercice = TcfExercise['type_exercice']

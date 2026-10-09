@@ -3,7 +3,7 @@ import { TCF_TYPES, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { QuestionEditor } from './QuestionEditor'
-import { tcfExerciseLabel } from './sources'
+import { tcfScenarioGroups, type TcfScenarioGroup } from './sources'
 import { emptyTcfExercise, emptyTcfQuestion, tcfExerciseId } from './templates'
 import { checkTcfMedia, validateTcfExercise } from './validate'
 import type {
@@ -16,7 +16,7 @@ import type {
   TcfTypeExercice,
 } from './types'
 
-type EditorPatch = { tcfExercise?: TcfExercise; tcfBankId?: string }
+type EditorPatch = { tcfExercise?: TcfExercise; tcfBankId?: string; tcfScenario?: string }
 
 /** Remplace le support en gardant le type exact de l’exercice. */
 function withSupport<E extends TcfExercise>(ex: E, patch: Partial<E['support']>): E {
@@ -445,6 +445,22 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
           />
         </>
       )
+    case 'trois_mots':
+      return (
+        <>
+          <TextField label="Thème" value={ex.support.theme} onChange={(theme) => set(withSupport(ex, { theme }))} />
+          <LinesField
+            label="Mots du thème (un par ligne, 3 tirés au hasard)"
+            values={ex.support.mots}
+            onChange={(mots) => set(withSupport(ex, { mots }))}
+          />
+          <LinesField
+            label="Exemples de questions (corrigé, une par ligne)"
+            values={ex.support.exemples_questions}
+            onChange={(exemples_questions) => set(withSupport(ex, { exemples_questions }))}
+          />
+        </>
+      )
     case 'sequence_4_images':
       return (
         <>
@@ -551,6 +567,7 @@ function cleanForExport(raw: TcfExercise): TcfExercise {
     case 'image_unique':
       return withSupport(ex, { questions: (ex.support.questions ?? []).filter((q) => q.trim()) })
     case 'mots_theme':
+    case 'trois_mots':
       return withSupport(ex, {
         mots: ex.support.mots.filter((m) => m.trim()),
         exemples_questions: ex.support.exemples_questions.filter((q) => q.trim()),
@@ -583,36 +600,118 @@ function cleanForExport(raw: TcfExercise): TcfExercise {
 }
 
 /**
- * Panneau admin TCF : choisir un exercice de la banque ou en saisir un.
- * Parcours : Niveau → Compétence → Exercice (CO : numéro de l’audio),
- * puis l’exercice de la banque ici. Saisie : validation en direct, export JSON.
+ * Choix de l’exercice dans la banque (panneau de gauche) :
+ * Scénario (loisirs, école…) puis Exercice, libellé par sa scène.
+ */
+export function TcfBankPicker({
+  niveau,
+  typeId,
+  scenario,
+  bankId,
+  edited,
+  onChange,
+}: {
+  niveau: TcfNiveau
+  typeId: string
+  scenario?: string
+  bankId?: string
+  edited: boolean
+  onChange: (patch: EditorPatch) => void
+}) {
+  const slot = tcfSlotByTypeId[typeId]
+  const bank = useMemo(() => (slot ? tcfSlotBank(niveau, slot) : []), [slot, niveau])
+  const groups = useMemo(() => tcfScenarioGroups(bank), [bank])
+  if (!slot || bank.length === 0) return null
+  const shown = scenario ? groups.filter((g) => g.id === scenario) : groups
+  const options = (group: TcfScenarioGroup) =>
+    group.items.map(({ exercise, label }) => (
+      <option key={exercise.id} value={exercise.id}>
+        {label}
+      </option>
+    ))
+
+  return (
+    <div className="quad-libre-block tcf-editor">
+      <label className="tcf-field">
+        <span>Scénario</span>
+        <select
+          className="pill-input"
+          value={scenario ?? ''}
+          onChange={(event) => onChange({ tcfScenario: event.target.value || undefined, tcfBankId: undefined, tcfExercise: undefined })}
+        >
+          <option value="">Tous les scénarios ({bank.length})</option>
+          {groups.map((g) => (
+            <option key={g.id} value={g.id}>
+              {g.label} ({g.items.length})
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className="tcf-field">
+        <span>Exercice</span>
+        <select
+          className="pill-input"
+          value={bankId ?? ''}
+          onChange={(event) => onChange({ tcfBankId: event.target.value || undefined, tcfExercise: undefined })}
+        >
+          <option value="">Tirage selon la graine</option>
+          {shown.length === 1
+            ? options(shown[0]!)
+            : shown.map((g) => (
+                <optgroup key={g.id} label={g.label}>
+                  {options(g)}
+                </optgroup>
+              ))}
+        </select>
+      </label>
+      {edited ? <small className="muted">Exercice modifié en mode libre : choisir un exercice ici remet celui de la banque.</small> : null}
+    </div>
+  )
+}
+
+/**
+ * Mode libre (panneau de droite) : l’exercice affiché est modifiable directement.
+ * Sans modification, on part d’une copie de l’exercice de la banque affiché.
  */
 export function TcfExerciseEditor({
   niveau,
   typeId,
-  exercise,
+  exercise: edits,
   bankId,
+  shownId,
   onChange,
 }: {
   niveau: TcfNiveau
   typeId: string
   exercise?: TcfExercise
   bankId?: string
+  /** Exercice de banque affiché sur la fiche (tirage selon la graine). */
+  shownId?: string
   onChange: (patch: EditorPatch) => void
 }) {
   const slot = tcfSlotByTypeId[typeId]
   const bank = useMemo(() => (slot ? tcfSlotBank(niveau, slot) : []), [slot, niveau])
   const types = useMemo(() => TCF_TYPES.filter((t) => t.competence === slot?.competence), [slot])
+  const edited = edits != null && slot != null && edits.competence === slot.competence
+  const fallback = useMemo(() => {
+    if (!slot) return undefined
+    const source = [tcfExerciseById(bankId), tcfExerciseById(shownId), bank[0]].find(
+      (ex) => ex != null && ex.competence === slot.competence,
+    )
+    if (source) return structuredClone(source)
+    const first = TCF_TYPES.find((t) => t.competence === slot.competence)!
+    return emptyTcfExercise(niveau, slot.competence, first.typeExercice, tcfExerciseId(niveau, slot.competence, 1))
+  }, [slot, bankId, shownId, bank, niveau])
+  const current = edited ? edits : fallback
   // Résultats rattachés à la version de l’exercice : toute modification les efface.
   const [mediaCheck, setMediaCheck] = useState<{ for: TcfExercise; errors: string[] } | null>(null)
   const [copiedFor, setCopiedFor] = useState<TcfExercise | null>(null)
-  const mediaErrors = mediaCheck && mediaCheck.for === exercise ? mediaCheck.errors : null
-  const copied = copiedFor != null && copiedFor === exercise
-  const editing = exercise != null && slot != null && exercise.competence === slot.competence
-  const meta = editing ? tcfTypeMeta(exercise.competence, exercise.type_exercice) : undefined
-  const validation = useMemo(() => (editing ? validateTcfExercise(exercise) : null), [editing, exercise])
+  const mediaErrors = mediaCheck && mediaCheck.for === current ? mediaCheck.errors : null
+  const copied = copiedFor != null && copiedFor === current
+  const meta = current ? tcfTypeMeta(current.competence, current.type_exercice) : undefined
+  const validation = useMemo(() => (current ? validateTcfExercise(current) : null), [current])
 
-  if (!slot) return null
+  if (!slot || !current) return null
 
   const set = (next: TcfExercise) => onChange({ tcfExercise: { ...next, niveau } })
 
@@ -622,12 +721,8 @@ export function TcfExerciseEditor({
     onChange({ tcfExercise: emptyTcfExercise(niveau, slot.competence, typeExercice, tcfExerciseId(niveau, slot.competence, total + 1)) })
   }
 
-  function copyFromBank() {
-    const source = tcfExerciseById(bankId) ?? bank[0]
-    if (source) onChange({ tcfExercise: structuredClone(source) })
-  }
-
   async function exportJson(kind: 'copy' | 'download') {
+    const exercise = current
     if (!exercise) return
     const json = JSON.stringify(cleanForExport(exercise), null, 2)
     if (kind === 'copy') {
@@ -643,59 +738,32 @@ export function TcfExerciseEditor({
     URL.revokeObjectURL(url)
   }
 
+  const exercise = current
   const usesQuestions = (meta?.reponses.length ?? 0) > 0
   const audioCount =
-    exercise?.type_exercice === 'six_courts' || exercise?.type_exercice === 'trois_moyens'
+    exercise.type_exercice === 'six_courts' || exercise.type_exercice === 'trois_moyens'
       ? exercise.support.audios.length
       : undefined
   const hasConsigneSupp =
-    exercise?.type_exercice === 'sms_reponse' ||
-    exercise?.type_exercice === 'email_reponse' ||
-    exercise?.type_exercice === 'question_texte'
+    exercise.type_exercice === 'sms_reponse' ||
+    exercise.type_exercice === 'email_reponse' ||
+    exercise.type_exercice === 'question_texte'
 
   return (
     <div className="quad-libre-block tcf-editor">
-      <b>Contenu de l’exercice</b>
-      <div className="mode-toggle" role="group" aria-label="Source du contenu">
-        <button type="button" className={editing ? '' : 'active'} onClick={() => onChange({ tcfExercise: undefined })}>
-          Banque
+      <b>Exercice TCF</b>
+      <div className="tcf-row">
+        <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
+          Revenir à la banque
         </button>
-        <button type="button" className={editing ? 'active' : ''} onClick={() => (editing ? undefined : bank.length ? copyFromBank() : startBlank())}>
-          Saisie
+        <button type="button" className="tcf-btn" onClick={() => startBlank()}>
+          Nouvel exercice vide
         </button>
       </div>
-
-      {!editing ? (
-        <>
-          <label className="tcf-field">
-            <span>Exercice de la banque ({bank.length} · {niveau})</span>
-            <select
-              className="pill-input"
-              value={bankId ?? ''}
-              onChange={(event) => onChange({ tcfBankId: event.target.value || undefined })}
-            >
-              <option value="">Tirage selon la graine</option>
-              {bank.map((ex) => (
-                <option key={ex.id} value={ex.id}>
-                  {tcfExerciseLabel(ex)}
-                </option>
-              ))}
-            </select>
-          </label>
-          <div className="tcf-row">
-            <button type="button" className="tcf-btn" onClick={() => startBlank()}>
-              Nouvel exercice vide
-            </button>
-            <button type="button" className="tcf-btn" disabled={bank.length === 0} onClick={copyFromBank}>
-              Modifier une copie
-            </button>
-          </div>
-          <small className="muted">
-            Banques : src/content/tcf/{'{a0-a1,a1-a2,a2-b1}'}/{'{ce,co,pe,po}'}.json · médias dans public/lib/tcf/.
-          </small>
-        </>
-      ) : (
-        <>
+      <small className="muted">
+        {edited ? 'Exercice modifié : la fiche affiche cette version.' : 'Exercice de la banque : toute modification crée une version libre.'}
+      </small>
+      <>
           <label className="tcf-field">
             <span>Type d’exercice (le changer vide le contenu)</span>
             <select
@@ -823,10 +891,9 @@ export function TcfExerciseEditor({
             </button>
           </div>
           <small className="muted">
-            L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans le fichier de banque du niveau et de la compétence.
+            L’export est bloqué tant qu’il reste des erreurs. Collez le JSON dans src/content/tcf/{niveau.toLowerCase()}/{slot.competence.toLowerCase()}.json.
           </small>
-        </>
-      )}
+      </>
     </div>
   )
 }

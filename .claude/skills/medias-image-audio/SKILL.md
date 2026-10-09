@@ -13,7 +13,8 @@ description: >-
 
 Référentiel des médias déjà en vigueur dans `public/lib/` (importés depuis
 `soutien-scolaire` via `scripts/copy-lib-medias.mjs` pour le vocabulaire ;
-scènes TCF sous `public/lib/tcf/images/`).
+documents TCF sous `public/lib/images/documents/`, audios TCF sous
+`public/lib/audio/comprehension/`). Il n’y a plus de `public/lib/tcf/`.
 
 **Deux régimes d’image distincts** — ne pas les mélanger :
 
@@ -46,14 +47,15 @@ scènes TCF sous `public/lib/tcf/images/`).
 
 | Type | Chemin | Format |
 |---|---|---|
-| Image | `public/lib/tcf/images/{serie}/{slug}.webp` | WebP |
+| Image (objet, action, lieu) | `public/lib/images/vocabulaire/{theme}/{slug}.webp` | WebP |
+| Image (document propre au sujet) | `public/lib/images/documents/{slug}.webp` | WebP |
+| Audio de test | `public/lib/audio/comprehension/{scénario}/{scène}[-n].mp3` | MP3 |
 
-- **Série** : dossier déjà utilisé dans les banques (`a1-s1`, `a2-s1`, `a1j-s1`, …).
-- **Slug** : préfixe compétence + rôle (`po2-banque`, `po2-mediatheque`, …) —
-  aligné sur le voisinage du dossier et sur le champ `support.image` des
-  banques `src/content/tcf/*/po.json`.
-- Résolution runtime : `tcfImageSrc` (`src/tcf/media.ts`) — chemin relatif
-  `serie/slug.webp` → `/lib/tcf/images/…`.
+- **Slug** : ce que l’image montre (`guichet-de-banque`), jamais un nom de série
+  ni un préfixe `po2-`.
+- Les banques portent le **chemin absolu** (`/lib/images/…`, `/lib/audio/…`).
+  `tcfImageSrc` / `tcfAudioSrc` (`src/tcf/media.ts`) résolvent un chemin relatif
+  sous `/lib/images/` et `/lib/audio/`.
 
 Ne pas inventer un autre arbre (`/assets/…` est l’ancien chemin
 soutien-scolaire ; ici c’est **`/lib/…`**).
@@ -128,7 +130,7 @@ de dialogue / interaction), en préparation **fide** ou esprit **DELF**
 1. **Style** : illustration ou photo **réaliste et sobre** ; traits propres ;
    couleurs naturelles ; pas de manga, pas de cartoon enfantin.
 2. **Format** : ratio **4:3** (carré large) — viser **800 × 600** px WebP ~85,
-   cohérent avec le stock `public/lib/tcf/images/`.
+   cohérent avec le stock `public/lib/images/`.
 3. **Lieu** : Suisse romande du quotidien, authentique, non touristique.
 4. **Personnages** : adultes (tous âges, origines et corps variés), traités
    avec respect, jamais caricaturés ; **deux personnes maximum** au premier
@@ -167,8 +169,9 @@ Reformulation ClairFLE à préfixer **avant** la description de la scène
 2. Rédiger une **scène** en une ou deux phrases (qui / où / quoi) alignée sur
    la tâche orale, sans spoiler une réponse modèle mot à mot inutile.
 3. Générer avec le **prompt maître** + scène ; exporter WebP 800×600.
-4. Placer sous `public/lib/tcf/images/{serie}/{slug}.webp`.
-5. Référencer dans `support.image` (chemin relatif `serie/slug.webp`).
+4. Placer sous `public/lib/images/vocabulaire/actions/{slug}.webp` (scène) ou
+   `public/lib/images/documents/{slug}.webp` (document).
+5. Référencer dans `support.image` par chemin absolu.
 6. Contrôle : rôles lisibles N&B approximatif, pas de texte, pas de cliché
    touristique, pas de fond blanc studio.
 
@@ -185,7 +188,7 @@ Reformulation ClairFLE à préfixer **avant** la description de la scène
 ## Audio (TTS) — vocabulaire uniquement
 
 Les scènes PO TCF n’imposent pas de TTS image ; l’audio PO éventuel suit les
-chemins `public/lib/tcf/audio/` et les banques (hors scope de cette section).
+chemins `public/lib/audio/comprehension/` et les banques (hors scope de cette section).
 
 ### Outil et voix (ClairFLE)
 
@@ -263,6 +266,6 @@ Pour une **nouvelle scène PO TCF** : image seule selon la section
 
 **Scène PO TCF**
 
-- Image 4:3 WebP sous `public/lib/tcf/images/{serie}/`, brief fide respecté
+- Image 4:3 WebP sous `public/lib/images/`, brief fide respecté
   (action, rôles, décor banal, adultes, sans texte).
 - Référencée dans `po.json` ; résolution OK via `tcfImageSrc`.

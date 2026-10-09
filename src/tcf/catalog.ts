@@ -187,6 +187,15 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     reponses: [],
   },
   {
+    typeId: 'tcf-po-trois-mots',
+    competence: 'PO',
+    typeExercice: 'trois_mots',
+    label: '3 mots au hasard : poser des questions',
+    description: 'Trois mots d’un thème tirés au hasard : l’élève pose des questions à l’examinateur·trice sur ce sujet.',
+    instruction: 'Voici trois mots. Posez des questions à l’examinateur sur ce sujet.',
+    reponses: [],
+  },
+  {
     typeId: 'tcf-po-sequence',
     competence: 'PO',
     typeExercice: 'sequence_4_images',
@@ -277,6 +286,29 @@ export const TCF_SLOTS: readonly TcfSlotMeta[] = [
 export const tcfSlotByTypeId: Readonly<Record<string, TcfSlotMeta>> = Object.fromEntries(
   TCF_SLOTS.map((slot) => [slot.typeId, slot]),
 )
+
+/** Scénarios qui regroupent les exercices de chaque compétence dans le sélecteur. */
+export const TCF_SCENARIOS: ReadonlyArray<{ id: string; label: string }> = [
+  { id: 'loisirs', label: 'Les loisirs' },
+  { id: 'ecole', label: 'L’école' },
+  { id: 'lieux-publics', label: 'Les lieux publics' },
+  { id: 'magasins', label: 'Les magasins' },
+  { id: 'radio', label: 'La radio' },
+  { id: 'maison', label: 'La maison' },
+  { id: 'vie-quotidienne', label: 'La vie quotidienne' },
+  { id: 'vacances', label: 'Les vacances' },
+  { id: 'travail', label: 'Le travail' },
+  { id: 'sante', label: 'La santé' },
+  { id: 'transports', label: 'Les transports' },
+  { id: 'fetes', label: 'Les fêtes et invitations' },
+  { id: 'actualite', label: 'L’actualité' },
+]
+
+export const TCF_SCENARIO_AUTRE = { id: 'autre', label: 'Autres' } as const
+
+export function tcfScenarioLabel(id: string | undefined): string {
+  return TCF_SCENARIOS.find((s) => s.id === id)?.label ?? TCF_SCENARIO_AUTRE.label
+}
 
 /** Numéro de l’exercice dans son document d’origine (`…-co-3`, `…-po-2b` → 3, 2). */
 export function tcfPosition(id: string): number | undefined {

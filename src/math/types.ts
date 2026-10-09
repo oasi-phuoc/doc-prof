@@ -581,6 +581,8 @@ export type MathItem = {
   countIcons?: CountIconScene
   /** TCF : support, question ou zone de réponse (après tirage / mélange). */
   tcf?: import('@/tcf/types').TcfSheetItem
+  /** TCF : id de l’exercice de banque affiché (copie modifiable en mode libre). */
+  tcfExerciseId?: string
   /** Item non compté dans le total de points (support, message). */
   noPoints?: boolean
   /** Barème propre à l’item (remplace les points par question du bloc). */
@@ -782,6 +784,8 @@ export type ExerciseBlock = {
   tcfExercise?: import('@/tcf/types').TcfExercise
   /** TCF : exercice choisi dans la banque (sinon tirage selon la graine). */
   tcfBankId?: string
+  /** TCF : scénario qui limite la banque (id de `TCF_SCENARIOS`). */
+  tcfScenario?: string
   /** TCF : durée indiquée sur la fiche (mode chronométré), en minutes. */
   tcfDureeMin?: number
   /**

@@ -1,439 +1,1208 @@
 [
   {
-    "id": "tcf-a2j-s1-po-1",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "mots_theme",
-    "theme": "Test blanc A2 Junior · série 1 · Entretien dirigé",
-    "consigne": "Entretien dirigé. Présentez-vous, puis répondez aux questions du professeur.",
-    "points": 4,
-    "support": {
-      "theme": "Vous, votre famille, votre école et vos loisirs",
-      "mots": [
-        "Vous",
-        "Votre famille",
-        "Votre école",
-        "Vos loisirs"
-      ],
-      "exemples_questions": [
-        "Présentez-vous : votre nom, votre âge, votre pays.",
-        "Depuis combien de temps habitez-vous en Suisse ?",
-        "Avec qui habitez-vous ? Parlez-moi de votre famille.",
-        "Dans quelle école êtes-vous ? Quelle est votre matière préférée ? Pourquoi ?",
-        "Comment venez-vous à l’école ?",
-        "Que faites-vous après l’école ?",
-        "Quel sport aimez-vous ? Vous en faites souvent ?",
-        "Qu’avez-vous fait le week-end dernier ?",
-        "Quel métier voulez-vous faire plus tard ?",
-        "Que ferez-vous pendant les prochaines vacances ?"
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2j-s1-po-2",
+    "id": "delf-a2j-po-001",
     "niveau": "A1-A2",
     "competence": "PO",
     "type_exercice": "dialogue",
-    "theme": "Test blanc A2 Junior · série 1 · Monologue suivi",
-    "consigne": "Monologue suivi. Choisissez un sujet et parlez pendant 1 à 2 minutes.",
-    "points": 5,
+    "theme": "Une sortie au cinéma",
+    "scenario": "loisirs",
+    "scene": "Au cinéma",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Sujet 1 — Restaurant\nQuel est votre restaurant préféré ? Quels plats préférez-vous manger dans ce restaurant ? Quand y allez-vous ? Avec qui ?\n\nSujet 2 — Votre école\nDécrivez votre école. Comment sont les bâtiments et les salles de classe ? Y a-t-il un endroit pour faire du sport et des salles spéciales (par exemple salle des fêtes, salle d’informatique…) ? Quel est votre endroit préféré dans l’école ?",
+      "situation": "Vous vivez en Suisse et vous voulez passer un moment au cinéma avec un ami suisse. Ensemble, vous choisissez le film, l’endroit, l’horaire et la façon de vous y rendre.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : deux affiches de films, « La nouvelle guerre des boutons » (aventure) et « Intouchables » (comédie).",
       "repliques_au_corrige": true,
       "repliques": [
         {
           "locuteur": "eleve",
-          "texte": "Sujet 1 : Mon restaurant préféré, c’est une petite pizzeria près de chez moi. J’aime beaucoup la pizza aux quatre fromages et les lasagnes. J’y vais une fois par mois, le samedi soir, avec ma famille. Pour mon anniversaire, j’y vais avec mes amis. Les serveurs sont très gentils et ce n’est pas cher.",
+          "texte": "Salut ! Tu veux aller au cinéma avec moi ce week-end ?",
           "variantes": [
-            "Sujet 2 : Mon école est grande, avec trois bâtiments et une cour. Les salles de classe sont claires, avec un tableau blanc. Il y a une salle de gym, un terrain de foot et une salle d’informatique. Mon endroit préféré, c’est la bibliothèque, parce qu’elle est calme et que j’aime lire."
+            "Salut ! Ça te dit, une séance de cinéma samedi ?"
           ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, bonne idée ! Qu’est-ce qu’on va voir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il y a « Intouchables », c’est une comédie, ou « La nouvelle guerre des boutons », un film d’aventure. Tu préfères lequel ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Moi, j’aime bien les comédies."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, on va voir « Intouchables ». On va au cinéma du centre-ville ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il est bien. Il y a une séance à 14 h et une à 17 h."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je préfère 17 h, le matin je fais du sport. Ça te va ?",
+          "variantes": [
+            "17 h, c’est parfait pour moi. Et pour toi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, ça me va. Comment est-ce qu’on y va ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "On peut prendre le bus 5 ensemble. On se retrouve à l’arrêt devant chez moi à 16 h 30 ?",
+          "variantes": [
+            "On y va à vélo ? Rendez-vous devant la gare à 16 h 30."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, à samedi !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, à samedi !"
         }
       ]
     },
     "questions": [],
-    "consigne_supplementaire": null
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
   },
   {
-    "id": "tcf-a2j-s1-po-3",
+    "id": "delf-a2j-po-002",
     "niveau": "A1-A2",
     "competence": "PO",
     "type_exercice": "dialogue",
-    "theme": "Test blanc A2 Junior · série 1 · Exercice en interaction",
-    "consigne": "Exercice en interaction. Choisissez un sujet. Le professeur est votre ami.",
-    "points": 6,
+    "theme": "Une visite de musée",
+    "scenario": "loisirs",
+    "scene": "Au musée",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Sujet 1 — Vous voulez jouer à un jeu avec un ami. Vous parlez pour choisir le jeu (durée, nombre de parties, nombre de joueurs, but…).\n\nSujet 2 — Vous voulez organiser un pique-nique avec un ami. Vous discutez de l’organisation (lieu, jour, personnes que vous allez inviter, choses à apporter…).",
-      "images": [
-        "a2j-s1/po3-jeux.webp"
-      ],
-      "grille": {
-        "points": 10,
-        "criteres": [
-          "Lexique",
-          "Morphosyntaxe",
-          "Phonologie"
-        ]
-      },
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "examinateur",
-          "texte": "Salut ! On joue à un jeu cet après-midi ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Oui, bonne idée ! On peut jouer au Cluedo, au Trivial Pursuit ou au Scrabble. Tu préfères lequel ?",
-          "variantes": [
-            "D’accord ! Tu connais le Cluedo ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Je ne sais pas. On est combien ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "On est quatre avec mes cousins. Les trois jeux sont possibles : le Scrabble, c’est de 2 à 4 joueurs.",
-          "variantes": [
-            "On est six, alors on ne peut pas jouer au Scrabble."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Et une partie dure combien de temps ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Pour le Cluedo, de 15 minutes à 1 heure. On peut faire deux ou trois parties.",
-          "variantes": [
-            "Le Trivial Pursuit, c’est de 45 minutes à 1 heure."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "C’est quoi, le but du Cluedo ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Il faut résoudre une enquête policière. C’est super ! On choisit le Cluedo ?",
-          "variantes": [
-            "Au Scrabble, il faut former des mots avec des lettres. C’est bien pour le français !"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "D’accord, on joue au Cluedo !"
-        }
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2j-s2-po-1",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "mots_theme",
-    "theme": "Test blanc A2 Junior · série 2 · Entretien dirigé",
-    "consigne": "Entretien dirigé. Présentez-vous, puis répondez aux questions du professeur.",
-    "points": 4,
-    "support": {
-      "theme": "Vous, votre famille, votre école et vos loisirs",
-      "mots": [
-        "Vous",
-        "Votre famille",
-        "Votre école",
-        "Vos loisirs"
-      ],
-      "exemples_questions": [
-        "Présentez-vous : votre nom, votre âge, votre pays.",
-        "Quelles langues parlez-vous ?",
-        "Où habitez-vous ? Comment est votre quartier ?",
-        "Parlez-moi de votre famille.",
-        "Qu’est-ce que vous aimez le plus à l’école ?",
-        "Qu’est-ce que vous faites le mercredi après-midi ?",
-        "Quelle musique écoutez-vous ?",
-        "Qu’avez-vous fait pendant les dernières vacances ?",
-        "Quel est votre plat préféré ?",
-        "Que voulez-vous faire plus tard ?"
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2j-s2-po-2",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Test blanc A2 Junior · série 2 · Monologue suivi",
-    "consigne": "Monologue suivi. Choisissez un sujet et parlez pendant 1 à 2 minutes.",
-    "points": 5,
-    "support": {
-      "situation": "Sujet 1 — Jour préféré\nQuel est votre jour de la semaine préféré ? Expliquez pourquoi. Dites ce que vous faites habituellement ce jour-là.\n\nSujet 2 — Meilleur(e) ami(e)\nParlez de votre meilleur(e) ami(e). Comment s’appelle-t-il/elle ? Comment vous connaissez-vous ? Que faites-vous ensemble ?",
+      "situation": "Vous passez quelques jours chez un ami à Lausanne. Vous avez envie de visiter un musée de la ville avec lui. Vous discutez des visites possibles, vous choisissez, puis vous fixez un moment pour y aller.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : deux photos, le Muséum d’histoire naturelle (nature, animaux) et le Musée d’archéologie (Égypte ancienne).",
       "repliques_au_corrige": true,
       "repliques": [
         {
           "locuteur": "eleve",
-          "texte": "Sujet 1 : Mon jour préféré, c’est le samedi, parce qu’il n’y a pas d’école et que je peux me lever tard. Le matin, je prends un bon petit-déjeuner avec ma famille. L’après-midi, je joue au foot avec mes amis au stade. Le soir, nous regardons un film ensemble à la maison.",
+          "texte": "Dis, j’aimerais bien visiter un musée pendant mon séjour. Tu as une idée ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il y a le Muséum d’histoire naturelle et le Musée d’archéologie."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Qu’est-ce qu’on peut voir au Muséum d’histoire naturelle ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Des animaux, des plantes, des minéraux… Et au Musée d’archéologie, il y a une exposition sur l’Égypte ancienne."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "L’Égypte ancienne, ça m’intéresse beaucoup ! On va au Musée d’archéologie ?",
           "variantes": [
-            "Sujet 2 : Ma meilleure amie s’appelle Sara. Nous nous connaissons depuis deux ans : nous sommes dans la même classe. Elle est gentille et très drôle. Ensemble, nous faisons nos devoirs, nous écoutons de la musique et, le week-end, nous allons nous promener en ville."
+            "J’adore les animaux, je préfère le Muséum d’histoire naturelle."
           ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Quand est-ce que tu veux y aller ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Demain après-midi, c’est possible ? Le musée est ouvert ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il ouvre à 14 h. L’entrée coûte 8 francs pour les jeunes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ce n’est pas cher. On part de la maison à 13 h 30 ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait, on prend le métro."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, j’ai hâte !"
         }
       ]
     },
     "questions": [],
-    "consigne_supplementaire": null
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
   },
   {
-    "id": "tcf-a2j-s2-po-3",
+    "id": "delf-a2j-po-003",
     "niveau": "A1-A2",
     "competence": "PO",
     "type_exercice": "dialogue",
-    "theme": "Test blanc A2 Junior · série 2 · Exercice en interaction",
-    "consigne": "Exercice en interaction. Choisissez un sujet. Le professeur est votre ami.",
-    "points": 6,
+    "theme": "Une fête à préparer",
+    "scenario": "fetes",
+    "scene": "La fête",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Sujet 1 — Cadeau pour votre professeur de français\nC’est bientôt la fin de l’année scolaire. Avec un ami, vous voulez offrir un cadeau à votre professeur de français. Vous discutez pour décider ce que vous allez lui offrir et vous vous mettez d’accord pour aller acheter le cadeau ensemble (heure, lieu, moyen de transport…).\n\nSujet 2 — Vêtements pour un mariage\nVous êtes invité(e) à un mariage. Vous ne savez pas comment vous habiller. Vous demandez de l’aide à un ami. Vous discutez avec lui pour choisir quels vêtements mettre.",
-      "grille": {
-        "points": 10,
-        "criteres": [
-          "Lexique",
-          "Morphosyntaxe",
-          "Phonologie"
-        ]
-      },
+      "situation": "Un ami suisse organise une fête chez lui et vous lui proposez votre aide. Vous discutez de tout ce qu’il y a à prévoir : invitations, musique, boissons, etc.\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Tu organises une fête samedi ? Je peux t’aider, si tu veux.",
+          "variantes": [
+            "Tu as besoin d’aide pour ta fête ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oh oui, merci ! Il y a beaucoup de choses à faire."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Tu invites combien de personnes ? On peut écrire les invitations ensemble."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Une vingtaine. On envoie un message à tout le monde ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, c’est plus simple. Je m’occupe de la musique : je prépare une liste de chansons."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Super ! Et pour les boissons ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "On peut acheter des jus de fruits et de l’eau au supermarché. Je viens avec toi vendredi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. Et pour manger ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Chaque invité peut apporter quelque chose : un gâteau, des chips… Moi, je fais une tarte.",
+          "variantes": [
+            "On peut commander des pizzas, c’est facile."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonne idée ! Merci beaucoup pour ton aide."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Avec plaisir ! À vendredi pour les courses."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-004",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Un cadeau d’anniversaire",
+    "scenario": "fetes",
+    "scene": "L’anniversaire",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "L’anniversaire de Paul approche. Avec un ami suisse, vous réfléchissez au cadeau à lui offrir. Parlez du prix, de qui l’achète et de quand. Vous pouvez aussi proposer d’autres idées que celles des images.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : trois images, un billet de cinéma, un jeu vidéo, un casque audio.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Tu sais, c’est bientôt l’anniversaire de Paul. Qu’est-ce qu’on lui offre ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je ne sais pas… Tu as une idée ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il adore la musique. Un casque audio, peut-être ?",
+          "variantes": [
+            "On peut lui offrir un jeu vidéo, il joue tout le temps !"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, mais c’est cher, non ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un bon casque coûte environ 60 francs. Si on paie chacun 30 francs, c’est possible."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Sinon, on peut aussi lui offrir un billet de cinéma."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, mais c’est un petit cadeau. Le casque, c’est mieux, il va l’utiliser tous les jours."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Tu as raison. Qui va l’acheter ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je peux aller au magasin d’électronique mercredi après l’école. Tu viens avec moi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, mercredi, c’est bon pour moi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, rendez-vous à 14 h devant le magasin !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-005",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Un spectacle",
+    "scenario": "loisirs",
+    "scene": "Le spectacle",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous souhaitez aller voir un spectacle avec un ami. Ensemble, vous choisissez lequel, le jour, l’heure et le lieu de rendez-vous. Les images vous aident, mais vous pouvez proposer un autre spectacle.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : deux affiches, un concert de la chanteuse Jenifer et le spectacle de cirque « Juracirque ».",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Tu veux aller voir un spectacle avec moi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, pourquoi pas ! Lequel ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il y a le concert de Jenifer et le cirque « Juracirque ». Tu aimes le cirque ?",
+          "variantes": [
+            "Tu préfères un concert ou le cirque ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bof, je préfère la musique."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Alors on va au concert de Jenifer. Il y a deux dates : vendredi soir et samedi soir."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Samedi, c’est mieux pour moi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Le concert commence à 20 h. Les places coûtent 45 francs."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est un peu cher, mais ça va. On se retrouve où ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Devant la salle de concert à 19 h 15 ? Il y aura beaucoup de monde.",
+          "variantes": [
+            "On se retrouve à la gare à 19 h et on y va ensemble ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, à samedi !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je réserve les places ce soir sur Internet. À samedi !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-006",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Où manger à midi ?",
+    "scenario": "vie-quotidienne",
+    "scene": "Au restaurant",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous êtes en vacances chez votre correspondant en Suisse. Vous devez vous mettre d’accord sur l’endroit où vous allez déjeuner.\nL’examinateur joue le rôle du correspondant.\nSupports possibles : trois photos, un hamburger avec des frites, un hot-dog, une pizza.",
       "repliques_au_corrige": true,
       "repliques": [
         {
           "locuteur": "examinateur",
-          "texte": "Salut ! C’est bientôt la fin de l’année. On offre un cadeau à notre prof de français ?"
+          "texte": "Il est midi ! Où est-ce qu’on va manger ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Oui, bonne idée ! On peut lui offrir un livre ou des fleurs. Qu’est-ce que tu en penses ?",
+          "texte": "J’ai faim ! Il y a une pizzeria près d’ici ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, mais il y a aussi un snack avec des hamburgers et un stand de hot-dogs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je n’aime pas beaucoup les hot-dogs. Toi, qu’est-ce que tu préfères ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Moi, j’adore les hamburgers-frites !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Moi, je préfère la pizza, c’est mon plat préféré.",
           "variantes": [
-            "D’accord ! Elle aime beaucoup le chocolat, on peut lui acheter une boîte de chocolats."
+            "Les hamburgers, c’est bien, mais on en a mangé hier."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Des fleurs, c’est joli, mais un livre, c’est plus original."
+          "texte": "Bon… La pizzeria est un peu plus chère, non ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Alors, un livre en français ! On peut aussi écrire une carte avec toute la classe.",
-          "variantes": [
-            "D’accord pour un livre. Chaque élève peut donner deux francs."
-          ]
+          "texte": "Une pizza coûte 16 francs, un menu hamburger environ 14 francs. Ce n’est pas très différent."
         },
         {
           "locuteur": "examinateur",
-          "texte": "Super. On va l’acheter quand ?"
+          "texte": "D’accord, va pour la pizzeria. Et ce soir, hamburger ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Mercredi après-midi, à 14 h ? On se retrouve devant l’école.",
-          "variantes": [
-            "Samedi matin, à 10 h, à la gare ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "D’accord. On y va comment ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "On prend le bus jusqu’à la librairie du centre-ville. C’est rapide.",
-          "variantes": [
-            "On peut y aller à pied, ce n’est pas loin."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Parfait, à mercredi !"
+          "texte": "Promis, ce soir, c’est toi qui choisis !"
         }
       ]
     },
     "questions": [],
-    "consigne_supplementaire": null
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
   },
   {
-    "id": "tcf-a2-s1-po-1",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "mots_theme",
-    "theme": "Test blanc A2 · série 1 · Entretien dirigé",
-    "consigne": "Entretien dirigé. Répondez aux questions du professeur sur vous, votre famille, votre travail et vos activités.",
-    "points": 4,
-    "support": {
-      "theme": "Vous, votre famille, votre travail et vos loisirs",
-      "mots": [
-        "Vous",
-        "Votre famille",
-        "Votre travail",
-        "Vos loisirs"
-      ],
-      "exemples_questions": [
-        "Pouvez-vous vous présenter ?",
-        "Depuis combien de temps êtes-vous en Suisse ? Pourquoi avez-vous choisi le Valais ?",
-        "Parlez-moi de votre famille.",
-        "Quel travail faisiez-vous dans votre pays ? Quel travail aimeriez-vous faire ici ?",
-        "Comment se passe une journée habituelle pour vous ?",
-        "Pourquoi apprenez-vous le français ? Qu’est-ce qui est difficile ?",
-        "Qu’aimez-vous faire pendant votre temps libre ?",
-        "Qu’avez-vous fait le week-end dernier ?",
-        "Quels sont vos projets pour l’année prochaine ?",
-        "Quelle différence voyez-vous entre la vie ici et dans votre pays ?"
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2-s1-po-2",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "image_unique",
-    "theme": "Test blanc A2 · série 1 · À la banque",
-    "consigne": "Décrivez l’image.",
-    "points": 4,
-    "support": {
-      "image": "a2-s1/po2-banque.webp",
-      "questions": [
-        "Que voyez-vous ?",
-        "Où sont les personnes ?",
-        "Qu’est-ce qui se passe ici ?"
-      ],
-      "reponse_modele": "Je vois un jeune homme et une employée. Ils sont à l’accueil d’une banque. Le jeune homme parle avec l’employée : il demande peut-être des informations pour ouvrir un compte. Il y a des documents sur le comptoir. Derrière, d’autres clients attendent."
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2-s1-po-3",
+    "id": "delf-a2j-po-007",
     "niveau": "A1-A2",
     "competence": "PO",
     "type_exercice": "dialogue",
-    "theme": "Test blanc A2 · série 1 · Ouvrir un compte bancaire",
-    "consigne": "Lisez la consigne à voix haute (3 points), puis jouez le dialogue. Le professeur joue le rôle de l’employé de la banque.",
-    "points": 3,
+    "theme": "Travailler ensemble",
+    "scenario": "ecole",
+    "scene": "Les devoirs",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous allez dans une banque qui est à côté de chez vous pour ouvrir un compte bancaire. Vous demandez des informations sur la procédure, les prix, l’accès sur Internet et les documents à apporter pour ouvrir votre compte.",
-      "grille": {
-        "points": 14,
-        "criteres": [
-          "Maîtrise de la langue (7) : fait des phrases, grammaire, conjugaison",
-          "Lexique (4) : vocabulaire adapté à la situation, variété des mots",
-          "Prononciation (3) : clarté, fluidité"
-        ]
-      },
+      "situation": "À l’école en Suisse, vous n’avez pas compris un exercice de maths. Vous proposez à un camarade de travailler ensemble : vous fixez le jour, l’heure et l’endroit.\nL’examinateur joue le rôle du camarade.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Tu as compris l’exercice de maths pour vendredi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, c’est sur les fractions. Pourquoi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Moi, je n’ai rien compris… Tu peux m’aider ? On peut travailler ensemble.",
+          "variantes": [
+            "Tu veux faire l’exercice avec moi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Quand est-ce que tu es libre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Mercredi après-midi, ça te va ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Mercredi, j’ai entraînement de foot. Jeudi après l’école ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Jeudi, c’est parfait. À quelle heure ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vers 16 h 30 ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. On travaille où ? À la bibliothèque de l’école ou chez moi ?",
+          "variantes": [
+            "Tu veux venir chez moi ? Ma mère fait un goûter."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À la bibliothèque, c’est calme."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, merci beaucoup ! À jeudi, 16 h 30, à la bibliothèque."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-008",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Une activité après les cours",
+    "scenario": "ecole",
+    "scene": "Les activités de l’école",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Votre école suisse propose plusieurs activités après les cours. Avec un camarade, vous décidez laquelle choisir, puis vous fixez le jour et l’heure. Même sans préférence réelle, jouez le jeu et exprimez des goûts.\nL’examinateur joue le rôle du camarade.\nSupports possibles : images d’activités, informatique, théâtre, pompons de cheerleading, patinage, basket, football, tennis.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Tu as vu les activités de l’école après les cours ? On en choisit une ensemble ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui ! Il y a beaucoup de choix. Tu aimes quoi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’adore le sport. Le basket ou le tennis, par exemple.",
+          "variantes": [
+            "Moi, j’aime bien le théâtre, et toi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le tennis, je ne sais pas jouer. Et l’informatique ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bof, je suis déjà devant l’ordinateur à la maison. Le basket, ça te plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, pourquoi pas ! C’est quel jour ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il y a des cours le lundi à 16 h et le mercredi à 14 h."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le lundi, j’ai musique. Le mercredi, c’est bien."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Moi aussi. Alors on s’inscrit au basket le mercredi à 14 h ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord ! On s’inscrit où ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Au secrétariat. On y va ensemble à la récréation ?"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-009",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Un cadeau pour la professeure ou le professeur",
+    "scenario": "ecole",
+    "scene": "Le cadeau du professeur",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "C’est bientôt la Fête internationale du professeur. Avec un camarade, vous décidez d’offrir un cadeau à votre professeur de français : vous choisissez le cadeau, vous parlez du prix et vous décidez quand aller l’acheter.\nL’examinateur joue le rôle du camarade.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Tu sais que c’est bientôt la Fête du professeur ? On fait un cadeau à notre prof de français ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonne idée ! Mais quoi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elle adore lire. On peut lui offrir un livre.",
+          "variantes": [
+            "Pourquoi pas des fleurs et une carte signée par toute la classe ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, mais lequel ? Elle a déjà beaucoup de livres."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "On peut demander conseil à la librairie. Ou bien un joli carnet et un stylo."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le carnet, c’est bien. Ça coûte combien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Environ 25 francs. Si toute la classe donne 1 franc, c’est facile."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Et on écrit une carte aussi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, tout le monde signe la carte. On va à la papeterie samedi matin ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Samedi matin, je suis libre. À 10 h ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, rendez-vous à 10 h devant la papeterie !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-010",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Accueillir un nouvel élève",
+    "scenario": "ecole",
+    "scene": "Le nouvel élève",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Un nouvel élève arrive dans votre classe. Vous lui présentez l’école : horaires, restaurant scolaire, règlement, professeurs, élèves, etc.\nL’examinateur joue le rôle du nouvel élève.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Bienvenue dans notre classe ! Je m’appelle Alex. Et toi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut, moi c’est Hugo. Je ne connais personne ici…"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ne t’inquiète pas, tout le monde est sympa. Je vais te présenter l’école."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci ! Les cours commencent à quelle heure ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ils commencent à 8 h et finissent à 16 h 30. Le mercredi après-midi, il n’y a pas cours.",
+          "variantes": [
+            "On commence à 8 h tous les jours, sauf le mercredi, on finit à midi."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Et pour manger à midi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il y a une cantine au rez-de-chaussée. Le repas coûte 8 francs, c’est plutôt bon."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Il y a des règles importantes ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui : le téléphone est interdit en classe et il faut être à l’heure. Les professeurs sont stricts, mais gentils."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Et le prof de maths ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "M. Favre ? Il explique bien. Si tu as des questions, tu peux me demander !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci beaucoup, tu es sympa !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+  },
+  {
+    "id": "delf-a2j-po-011",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Au centre commercial",
+    "scenario": "magasins",
+    "scene": "Au centre commercial",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "En vacances en Suisse, vous entrez dans un centre commercial pour faire du shopping et aller au cinéma. Au point d’information, vous demandez où se trouvent le cinéma et les magasins qui vous intéressent, ainsi que les horaires d’ouverture.\nL’examinateur joue le rôle de l’employé.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Madame. Excusez-moi, où se trouve le cinéma, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Le cinéma est au deuxième étage, à côté des restaurants."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Je cherche aussi un magasin de vêtements et un magasin de sport.",
+          "variantes": [
+            "Est-ce qu’il y a un magasin de chaussures ici ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les magasins de vêtements sont au premier étage. Le magasin de sport est au rez-de-chaussée, près de l’entrée nord."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. À quelle heure ferment les magasins ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ils sont ouverts de 9 h à 19 h, et jusqu’à 21 h le jeudi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et le cinéma, il est ouvert le soir ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, la dernière séance commence à 21 h 30."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce qu’il y a un ascenseur pour monter au deuxième étage ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, juste à droite, après la pharmacie."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, Madame. Bonne journée !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-012",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Les transports en commun",
+    "scenario": "transports",
+    "scene": "Dans le métro",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous passez des vacances à Bruxelles avec vos parents et vous voulez un abonnement pour les transports de la ville. Au guichet du métro, vous vous renseignez sur les formules et les prix, puis vous en choisissez une.\nL’examinateur joue le rôle de l’employé.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Monsieur. Je voudrais un abonnement pour le métro et le bus, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous restez combien de temps à Bruxelles ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Une semaine, avec mes parents. Qu’est-ce que vous avez comme formules ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a la carte d’un jour, la carte de trois jours et l’abonnement d’une semaine."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien coûte l’abonnement d’une semaine ?",
+          "variantes": [
+            "Quel est le prix de la carte de trois jours ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "L’abonnement d’une semaine coûte 25 euros pour un adulte et 15 euros pour un jeune. Il marche dans le métro, le bus et le tram."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai 15 ans, j’ai droit au prix jeune ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, jusqu’à 25 ans. Il faut montrer une pièce d’identité."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait. Alors je prends deux abonnements adultes et un abonnement jeune, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Ça fait 65 euros."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voici. Merci beaucoup, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-013",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "À la poste",
+    "scenario": "lieux-publics",
+    "scene": "À la poste",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "En vacances en Suisse avec votre famille, vous avez acheté des cadeaux pour vos amis et vous voulez les envoyer par la poste. Vous demandez à l’employé le prix, la durée et la sécurité de l’envoi.\nL’examinateur joue le rôle de l’employé.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Madame. Je voudrais envoyer ce colis au Portugal, s’il vous plaît. Ce sont des cadeaux pour mes amis."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Je le pèse… Il fait 2 kilos."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien ça coûte ?",
+          "variantes": [
+            "Quel est le prix pour ce colis ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "En envoi normal, c’est 32 francs. En envoi rapide, c’est 55 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et ça prend combien de temps ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Une semaine en envoi normal, trois jours en envoi rapide."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce que l’envoi est sûr ? Il y a du chocolat et une montre."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec le suivi, vous pouvez voir sur Internet où est votre colis. Et il est assuré."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien, je prends l’envoi normal avec le suivi."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voici votre reçu avec le numéro de suivi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, Madame. Au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-014",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "À la gare",
+    "scenario": "transports",
+    "scene": "À la gare",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous êtes à Genève et vous voulez voyager jusqu’à Zurich. À la gare, vous demandez les horaires et les prix des billets de train.\nL’examinateur joue le rôle de l’employé.\nHoraires Genève – Zurich :\nDépart 06 h 36 – arrivée 09 h 57 (3 h 21) : 48 francs\nDépart 08 h 02 – arrivée 11 h 24 (3 h 22) : 56 francs\nDépart 09 h 37 – arrivée 12 h 57 (3 h 20) : 65 francs\nDépart 10 h 07 – arrivée 13 h 11 (3 h 04) : 65 francs\nDépart 11 h 36 – arrivée 14 h 57 (3 h 21) : 72 francs\nDépart 14 h 06 – arrivée 17 h 11 (3 h 05) : 77 francs\nDépart 16 h 38 – arrivée 19 h 57 (3 h 19) : 66 francs\nDépart 18 h 35 – arrivée 21 h 57 (3 h 22) : 48 francs",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Monsieur. Je voudrais aller à Zurich demain. Quels sont les horaires, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous voulez partir le matin ou l’après-midi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le matin, mais pas trop tôt."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a un train à 8 h 02, un à 9 h 37 et un à 10 h 07."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le train de 10 h 07 arrive à quelle heure ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À 13 h 11. C’est le plus rapide : 3 h 04."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et combien coûte le billet ?",
+          "variantes": [
+            "C’est quel prix pour ce train ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "65 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est un peu cher. Il y a des billets moins chers ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le train de 6 h 36 coûte 48 francs, et celui de 18 h 35 aussi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "6 h 36, c’est trop tôt pour moi. Je prends le train de 10 h 07, merci."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Voici votre billet, le train part de la voie 4. Bon voyage !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-015",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Au bureau des objets trouvés",
+    "scenario": "lieux-publics",
+    "scene": "Aux objets trouvés",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Pendant vos vacances à Montréal, vous avez oublié votre sac à la gare. Vous vous rendez aux « Objets trouvés » et vous décrivez votre sac à l’employé.\nL’examinateur joue le rôle de l’employé.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Monsieur. J’ai perdu mon sac à la gare ce matin. Est-ce que quelqu’un l’a rapporté ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Je vais regarder. Comment est votre sac ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est un sac à dos bleu foncé, assez grand, avec une poche devant.",
+          "variantes": [
+            "C’est un sac de sport noir avec des bandes rouges."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il est en tissu ou en cuir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "En tissu. Il y a un petit porte-clés en forme de chat sur la fermeture."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Qu’est-ce qu’il y a dans le sac ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un pull gris, une bouteille d’eau, un livre en français et mon porte-monnaie."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Où l’avez-vous oublié exactement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Dans la salle d’attente, vers 9 h, près des distributeurs."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ah, j’ai un sac bleu ici… C’est le vôtre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, c’est mon sac ! Voici mon passeport. Merci beaucoup, Monsieur, bonne journée !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-016",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Louer un vélo",
+    "scenario": "transports",
+    "scene": "Le vélo",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous êtes à Genève et vous aimeriez louer un vélo pour vous promener dans un grand parc. Chez le loueur, vous demandez les conditions, les prix, les horaires et quels sont les parcs les plus proches.\nL’examinateur joue le rôle du loueur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Madame. Je voudrais louer un vélo pour l’après-midi, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Pas de problème. Vous avez quel âge ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai 15 ans. Est-ce que je peux louer un vélo seul ?",
+          "variantes": [
+            "Quelles sont les conditions pour louer un vélo ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, mais il faut une pièce d’identité et une caution de 50 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Combien coûte la location ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "5 francs l’heure ou 20 francs la journée. Le casque est gratuit."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Vous êtes ouverts jusqu’à quelle heure ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "De 8 h à 19 h, tous les jours."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je voudrais me promener dans un grand parc. Lequel est le plus proche ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le parc de la Grange est à 10 minutes à vélo, au bord du lac. Le parc des Bastions est aussi tout près."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, je vais au parc de la Grange. Je prends le vélo pour quatre heures, alors. Merci beaucoup, Madame !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-017",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "À l’Office du tourisme",
+    "scenario": "vacances",
+    "scene": "À l’office du tourisme",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "En vacances à Bruxelles avec votre famille, vous entrez à l’Office du tourisme. Vous posez des questions sur les sorties, les visites et les musées de la ville.\nL’examinateur joue le rôle de l’employé.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Madame. Nous sommes en vacances pour trois jours. Qu’est-ce qu’il y a à visiter ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Il y a la Grand-Place, l’Atomium, le Manneken-Pis…"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce qu’il y a des musées intéressants pour les jeunes ?",
+          "variantes": [
+            "Vous pouvez me conseiller un musée ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, le Musée de la bande dessinée est très apprécié. Il y a aussi le Musée des sciences naturelles."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’adore la BD ! Combien coûte l’entrée ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "12 euros pour les adultes et 8 euros pour les jeunes. Il est ouvert tous les jours de 10 h à 18 h."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et le soir, qu’est-ce qu’on peut faire ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a des concerts gratuits sur la Grand-Place ce week-end."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! Vous avez un plan de la ville, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr, voilà. Il est gratuit."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, Madame. Au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-018",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Au restaurant",
+    "scenario": "vie-quotidienne",
+    "scene": "Au restaurant",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Avec votre famille, vous êtes dans un restaurant en Suisse. Vous interrogez le serveur sur le menu : les plats, les ingrédients, les prix…\nL’examinateur joue le rôle du serveur.\nMenu du restaurant Chez Dédé — 15 francs\nEntrées : soupe de poisson ; salade de tomates ; pâté de campagne\nPlats : pâtes à la bolognaise ; poulet frites ; poisson du jour\nDesserts : mousse au chocolat ; crêpes au sucre ; fruits",
       "repliques_au_corrige": true,
       "repliques": [
         {
           "locuteur": "examinateur",
-          "texte": "Bonjour, que puis-je faire pour vous ?"
+          "texte": "Bonsoir ! Vous avez choisi ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Bonjour, je voudrais ouvrir un compte bancaire. Comment ça se passe ?",
+          "texte": "Bonsoir Monsieur. Pas encore. Le menu coûte combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "15 francs : une entrée, un plat et un dessert."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Qu’est-ce qu’il y a dans le pâté de campagne ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est de la viande de porc avec des herbes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je ne mange pas de porc. Je vais prendre la salade de tomates, alors.",
           "variantes": [
-            "Bonjour, j’aimerais des informations pour ouvrir un compte."
+            "Je prends la soupe de poisson, s’il vous plaît."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "C’est simple : vous prenez rendez-vous avec un conseiller et vous signez le contrat."
+          "texte": "Très bien. Et comme plat ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Combien coûte le compte par mois ?",
-          "variantes": [
-            "Est-ce qu’il y a des frais ?"
-          ]
+          "texte": "C’est quoi, le poisson du jour ?"
         },
         {
           "locuteur": "examinateur",
-          "texte": "Le compte coûte 5 francs par mois, avec une carte bancaire."
+          "texte": "Aujourd’hui, c’est de la perche du lac, avec du riz."
         },
         {
           "locuteur": "eleve",
-          "texte": "Est-ce que je peux consulter mon compte sur Internet ?",
-          "variantes": [
-            "Il y a une application pour le téléphone ?"
-          ]
+          "texte": "Parfait, je prends le poisson du jour. Et comme dessert, la mousse au chocolat."
         },
         {
           "locuteur": "examinateur",
-          "texte": "Oui, avec notre application, vous pouvez tout faire en ligne."
+          "texte": "Et à boire ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Quels documents est-ce que je dois apporter ?",
-          "variantes": [
-            "De quoi avez-vous besoin pour ouvrir le compte ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Votre pièce d’identité ou votre permis de séjour, et une attestation de domicile."
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "D’accord. Je peux prendre rendez-vous pour jeudi ?",
-          "variantes": [
-            "Merci, je reviens demain avec mes documents."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Bien sûr, jeudi à 10 h. Au revoir !"
+          "texte": "Une carafe d’eau, s’il vous plaît. Merci !"
         }
       ]
     },
     "questions": [],
-    "consigne_supplementaire": null
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
   },
   {
-    "id": "tcf-a2-s1-po-2b",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "image_unique",
-    "theme": "Test blanc A2 · série 1 · À la médiathèque",
-    "consigne": "Décrivez l’image.",
-    "points": 4,
-    "support": {
-      "image": "a2-s1/po2-mediatheque.webp",
-      "questions": [
-        "Que voyez-vous ?",
-        "Où sont les personnes ?",
-        "Qu’est-ce qui se passe ici ?"
-      ],
-      "reponse_modele": "Je vois une jeune femme et un employé. Ils sont à l’accueil d’une médiathèque, à Sion. La jeune femme donne des livres à l’employé : elle rend ou emprunte des livres. Derrière, il y a des étagères avec beaucoup de livres."
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2-s1-po-3b",
+    "id": "delf-a2j-po-019",
     "niveau": "A1-A2",
     "competence": "PO",
     "type_exercice": "dialogue",
-    "theme": "Test blanc A2 · série 1 · S’inscrire à la médiathèque",
-    "consigne": "Lisez la consigne à voix haute (3 points), puis jouez le dialogue. Le professeur joue le rôle de l’employé de la médiathèque.",
-    "points": 3,
+    "theme": "Acheter des vêtements",
+    "scenario": "magasins",
+    "scene": "Au magasin de vêtements",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous voulez vous inscrire à la médiathèque de Sion. Vous demandez des informations sur les types de documents disponibles, la durée des emprunts, les prix et les documents à apporter pour l’inscription.",
-      "grille": {
-        "points": 14,
-        "criteres": [
-          "Maîtrise de la langue (7) : fait des phrases, grammaire, conjugaison",
-          "Lexique (4) : vocabulaire adapté à la situation, variété des mots",
-          "Prononciation (3) : clarté, fluidité"
-        ]
-      },
+      "situation": "En vacances en Suisse, vous voulez offrir des vêtements à votre meilleur ami. Dans un magasin, vous demandez au vendeur les tailles, les couleurs et les prix.\nL’examinateur joue le rôle du vendeur.\nSupports possibles : deux photos, un T-shirt bleu et une chemise à carreaux.",
       "repliques_au_corrige": true,
       "repliques": [
         {
@@ -442,169 +1211,462 @@
         },
         {
           "locuteur": "eleve",
-          "texte": "Bonjour, je voudrais m’inscrire à la médiathèque, s’il vous plaît.",
+          "texte": "Bonjour Monsieur. Oui, je cherche un cadeau pour mon meilleur ami."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons ce T-shirt bleu et cette chemise à carreaux."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien coûte le T-shirt ?",
           "variantes": [
-            "Bonjour, comment est-ce qu’on s’inscrit ici ?"
+            "Quel est le prix de la chemise ?"
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Avec plaisir. Qu’est-ce que vous aimeriez emprunter ?"
+          "texte": "Le T-shirt coûte 25 francs et la chemise 45 francs."
         },
         {
           "locuteur": "eleve",
-          "texte": "Qu’est-ce que vous avez comme documents ?",
-          "variantes": [
-            "Vous avez des livres en français facile ?"
-          ]
+          "texte": "Le T-shirt existe dans d’autres couleurs ?"
         },
         {
           "locuteur": "examinateur",
-          "texte": "Nous avons des livres, des journaux, des films, de la musique et des livres audio."
+          "texte": "Oui, en blanc, en noir et en rouge."
         },
         {
           "locuteur": "eleve",
-          "texte": "Je peux garder les livres combien de temps ?",
-          "variantes": [
-            "Combien de documents est-ce que je peux emprunter ?"
-          ]
+          "texte": "Mon ami aime le noir. Vous avez la taille M ?"
         },
         {
           "locuteur": "examinateur",
-          "texte": "Quatre semaines, et vous pouvez prendre dix documents."
+          "texte": "Oui, voilà, en taille M. Si la taille ne va pas, il peut l’échanger pendant 30 jours."
         },
         {
           "locuteur": "eleve",
-          "texte": "Combien coûte l’inscription ?",
-          "variantes": [
-            "C’est gratuit ?"
-          ]
+          "texte": "Très bien, je prends le T-shirt noir en M. Je peux payer par carte ?"
         },
         {
           "locuteur": "examinateur",
-          "texte": "C’est 30 francs par an pour les adultes."
+          "texte": "Oui, bien sûr. Je fais un paquet cadeau ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Quels documents est-ce que je dois apporter ?",
-          "variantes": [
-            "Vous avez besoin de mon permis ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Une pièce d’identité et une attestation de domicile."
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Merci beaucoup, je reviens demain.",
-          "variantes": [
-            "D’accord, merci et bonne journée."
-          ]
+          "texte": "Oui, s’il vous plaît. Merci beaucoup, au revoir !"
         }
       ]
     },
     "questions": [],
-    "consigne_supplementaire": null
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
   },
   {
-    "id": "tcf-a2-s1-po-2c",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "image_unique",
-    "theme": "Test blanc A2 · série 1 · À la poste",
-    "consigne": "Décrivez l’image.",
-    "points": 4,
-    "support": {
-      "image": "a2-s1/po2-poste.webp",
-      "questions": [
-        "Que voyez-vous ?",
-        "Où sont les personnes ?",
-        "Qu’est-ce qui se passe ici ?"
-      ],
-      "reponse_modele": "Je vois un homme âgé et une employée. Ils sont au guichet de la poste. L’homme donne une lettre ou un document à l’employée : il veut l’envoyer. Derrière, il y a des affiches et d’autres guichets."
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2-s1-po-3c",
+    "id": "delf-a2j-po-020",
     "niveau": "A1-A2",
     "competence": "PO",
     "type_exercice": "dialogue",
-    "theme": "Test blanc A2 · série 1 · Envoyer un colis",
-    "consigne": "Lisez la consigne à voix haute (3 points), puis jouez le dialogue. Le professeur joue le rôle de l’employé de la poste.",
-    "points": 3,
+    "theme": "Changer la décoration de sa chambre",
+    "scenario": "magasins",
+    "scene": "Le magasin de décoration",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous allez à la poste pour envoyer un colis. Vous demandez des informations sur les prix d’envoi, les délais de livraison, les différents types d’envoi et les documents nécessaires pour envoyer votre colis.",
-      "grille": {
-        "points": 14,
-        "criteres": [
-          "Maîtrise de la langue (7) : fait des phrases, grammaire, conjugaison",
-          "Lexique (4) : vocabulaire adapté à la situation, variété des mots",
-          "Prononciation (3) : clarté, fluidité"
-        ]
-      },
+      "situation": "Vous avez envie de renouveler la décoration de votre chambre. Dans un magasin de décoration, vous demandez conseil au vendeur (couleurs, objets…).\nL’examinateur joue le rôle du vendeur.\nSupports possibles : quatre photos, des pots de peinture, une lampe rouge, un globe terrestre, une horloge verte.",
       "repliques_au_corrige": true,
       "repliques": [
         {
           "locuteur": "examinateur",
-          "texte": "Bonjour, c’est pour quoi ?"
+          "texte": "Bonjour, je peux vous aider ?"
         },
         {
           "locuteur": "eleve",
-          "texte": "Bonjour, je voudrais envoyer ce colis en Italie. C’est combien ?",
+          "texte": "Bonjour Madame. Je voudrais changer la décoration de ma chambre. Vous pouvez me conseiller ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec plaisir ! Elle est de quelle couleur, votre chambre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Les murs sont blancs et les meubles sont en bois clair."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous pouvez peindre un mur en vert ou en bleu, c’est très à la mode."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’aime bien le bleu. Combien coûte un pot de peinture ?",
           "variantes": [
-            "Bonjour, combien coûte l’envoi d’un colis ?"
+            "Le vert, ça me plaît. C’est quel prix, ce pot ?"
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Il pèse 2 kilos. En économique, c’est 30 francs ; en prioritaire, 45 francs."
+          "texte": "18 francs pour un mur."
         },
         {
           "locuteur": "eleve",
-          "texte": "Il arrive quand ?",
+          "texte": "Vous avez aussi des objets pour mon bureau ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, ce globe terrestre ou cette horloge verte, par exemple."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le globe est super, j’adore la géographie ! Je prends la peinture bleue et le globe."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 47 francs, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci beaucoup pour vos conseils, Madame !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-021",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Choisir un téléphone portable",
+    "scenario": "magasins",
+    "scene": "Le magasin de téléphones",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "En vacances à Montréal, vous voulez acheter un nouveau téléphone portable. Dans le magasin, vous interrogez le vendeur sur le prix, la taille et les fonctions des modèles, puis vous en choisissez un d’après ses réponses.\nL’examinateur joue le rôle du vendeur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous cherchez quelque chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Monsieur. Je voudrais un nouveau téléphone portable, pas trop cher."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons deux modèles intéressants : le Nova à 199 dollars et le Sky à 349 dollars."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Quelle est la différence entre les deux ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le Sky a un plus grand écran et un meilleur appareil photo."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et la batterie, elle dure combien de temps ?",
           "variantes": [
-            "Combien de temps faut-il pour la livraison ?"
+            "Est-ce que le Nova prend de bonnes photos ?"
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "En économique, en 6 à 8 jours ; en prioritaire, en 3 jours."
+          "texte": "Deux jours pour le Nova, un jour et demi pour le Sky."
         },
         {
           "locuteur": "eleve",
-          "texte": "Il y a d’autres types d’envoi ?",
+          "texte": "Je prends des photos, mais pas beaucoup. Je vais prendre le Nova."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bon choix. Il y a une garantie de deux ans."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait. Je peux payer par carte ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, Monsieur. Au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-022",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Chez le marchand de journaux",
+    "scenario": "magasins",
+    "scene": "Au kiosque",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Chez un marchand de journaux en Suisse, vous voulez acheter des magazines. Vous demandez au vendeur ce qu’ils contiennent et combien ils coûtent.\nL’examinateur joue le rôle du vendeur.\nSupports possibles : trois couvertures, « Le Monde des ados », « Stars Live » et « Science & Vie Junior » (numéro spécial sur les grandes catastrophes).",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Madame. Je cherche des magazines pour les jeunes. Qu’est-ce que vous me conseillez ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a « Le Monde des ados », « Stars Live » et « Science & Vie Junior »."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Qu’est-ce qu’il y a dans « Le Monde des ados » ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Des articles sur l’actualité, des jeux et des BD."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et « Stars Live », c’est sur quoi ?",
           "variantes": [
-            "Je peux suivre mon colis sur Internet ?"
+            "Il parle de quoi, « Stars Live » ?"
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Oui, il y a aussi l’envoi recommandé, avec un numéro de suivi."
+          "texte": "Sur les chanteurs et les acteurs, avec des posters."
         },
         {
           "locuteur": "eleve",
-          "texte": "Qu’est-ce que je dois remplir ?",
+          "texte": "« Science & Vie Junior », c’est un numéro spécial ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, sur les grandes catastrophes : volcans, tremblements de terre…"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ça m’intéresse ! Combien coûtent ces magazines ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "« Le Monde des ados » coûte 5 francs, « Stars Live » 4 francs et « Science & Vie Junior » 7 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends « Science & Vie Junior » et « Le Monde des ados », s’il vous plaît. Ça fait 12 francs ? Voilà, merci, au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-023",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "À la librairie",
+    "scenario": "magasins",
+    "scene": "À la librairie",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous entrez dans une librairie en Suisse pour acheter des livres à votre famille d’accueil. Vous posez des questions au libraire (genre, prix…) et vous choisissez plusieurs livres.\nL’examinateur joue le rôle du libraire.\nSupports possibles : trois couvertures, « Le polar suisse », « L’Histoire de la Suisse en BD » et « Photographie contemporaine, mode d’emploi ».",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Monsieur. Je voudrais offrir des livres à ma famille d’accueil."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec plaisir. Qu’est-ce qu’ils aiment ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le père adore les romans policiers. Vous avez quelque chose ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, « Le polar suisse » : une enquête à Genève, très bien écrite."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il coûte combien ?",
           "variantes": [
-            "Vous avez besoin de ma pièce d’identité ?"
+            "Quel est son prix ?"
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Remplissez ce formulaire de douane avec l’adresse et le contenu du colis."
+          "texte": "24 francs."
         },
         {
           "locuteur": "eleve",
-          "texte": "D’accord. Je prends l’envoi prioritaire. Je peux payer par carte ?",
+          "texte": "Et pour les enfants ? Ils ont 10 et 12 ans."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "« L’Histoire de la Suisse en BD » plaît beaucoup aux enfants. Il coûte 19 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! La mère aime la photographie. Ce livre-là, c’est pour les débutants ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, « Photographie contemporaine, mode d’emploi » explique tout simplement. Il coûte 32 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, je prends les trois livres. Vous pouvez faire des paquets cadeaux ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Ça fait 75 francs."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2j-po-024",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Acheter une valise",
+    "scenario": "magasins",
+    "scene": "Le magasin de bagages",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "En vacances en Suisse avec votre famille, votre valise est cassée. Vous entrez dans un magasin de bagages et vous interrogez le vendeur (prix, taille, poids…) pour faire votre choix.\nL’examinateur joue le rôle du vendeur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour Madame. Ma valise est cassée, je dois en acheter une nouvelle."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous voulez une petite valise pour la cabine ou une grande ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Une grande, nous partons en avion dans une semaine.",
           "variantes": [
-            "Je choisis l’économique, voilà 30 francs."
+            "Une valise moyenne, pas trop lourde."
           ]
         },
         {
           "locuteur": "examinateur",
-          "texte": "Oui, bien sûr. Merci, au revoir !"
+          "texte": "Nous avons ce modèle rigide à 89 francs et ce modèle en tissu à 65 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Laquelle est la plus légère ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Celle en tissu : elle pèse 3 kilos. La rigide pèse 4 kilos, mais elle est plus solide."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elle fait quelle taille, la valise rigide ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "75 centimètres. Elle a quatre roues et un cadenas."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends la valise rigide, elle est plus solide pour l’avion."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Ça fait 89 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci beaucoup, Madame. Au revoir !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+  },
+  {
+    "id": "delf-a2r-po-001",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Activité sportive",
+    "scenario": "loisirs",
+    "scene": "Le club de sport",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous voulez vous inscrire à une activité sportive avec votre ami suisse. Vous vous mettez d’accord sur l’activité que vous allez faire ensemble (quel jour, quel sport, à quelle heure).\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Alors, tu veux toujours faire du sport avec moi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui ! J’aimerais bien qu’on s’inscrive ensemble à une activité. Tu préfères quel sport ?",
+          "variantes": [
+            "Oui, bien sûr ! Qu’est-ce que tu aimerais faire comme sport ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Moi, j’aime bien la natation. Et toi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "La natation, c’est bien, mais je préfère le badminton. On peut jouer à deux, c’est plus amusant.",
+          "variantes": [
+            "Je n’aime pas trop nager. Pourquoi pas le tennis ou le badminton ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, va pour le badminton ! On y va quel jour ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Moi, je suis libre le mardi et le jeudi soir. Et toi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le mardi, je travaille tard. Le jeudi, ça me va."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, alors jeudi. À quelle heure ? Il y a un cours à 18 h 30 et un autre à 20 h."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Plutôt à 18 h 30, je ne veux pas rentrer trop tard."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Je nous inscris demain sur Internet. Ça coûte 120 francs pour trois mois.",
+          "variantes": [
+            "Très bien, je m’occupe de l’inscription. On se retrouve jeudi devant la salle de sport !"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Super, merci ! À jeudi !"
         }
       ]
     },
@@ -612,410 +1674,2039 @@
     "consigne_supplementaire": null
   },
   {
-    "id": "tcf-a2p-s1-po-1",
+    "id": "delf-a2r-po-002",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "mots_theme",
-    "theme": "Préparation A2 · série 1 · Entretien dirigé",
-    "consigne": "Entretien dirigé, sans préparation (1 minute 30 environ). Après avoir salué l’examinateur, vous vous présentez : vous parlez de vous, de votre famille, de vos amis, de vos études, de vos goûts…",
-    "points": 4,
+    "type_exercice": "dialogue",
+    "theme": "Cadeau souvenir",
+    "scenario": "vacances",
+    "scene": "Le souvenir de vacances",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "theme": "Se présenter, parler de soi",
+      "situation": "Vous passez quelques jours à Zermatt avec un ami suisse et vous voulez ramener un souvenir à votre famille. Vous demandez conseil à votre ami.\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Dis, je voudrais rapporter un souvenir à ma famille. Tu as une idée ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr ! Qu’est-ce qu’ils aiment, tes parents ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ma mère adore le chocolat et mon père aime beaucoup la montagne."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors, pour ta mère, du chocolat suisse, c’est parfait !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonne idée. Où est-ce que je peux en acheter ? C’est cher ?",
+          "variantes": [
+            "Il y a un bon magasin de chocolat à Zermatt ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a une chocolaterie dans la rue principale. Une boîte coûte environ 20 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et pour mon père ? Peut-être une carte postale du Cervin ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Une carte, c’est un peu petit. Tu peux acheter un livre de photos des Alpes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est une très bonne idée ! Et pour ma petite sœur, qu’est-ce que tu me conseilles ?",
+          "variantes": [
+            "Super ! J’ai aussi une petite sœur de dix ans. Tu as une idée pour elle ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Une petite peluche en forme de marmotte. Les enfants adorent ça !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait ! On va faire les magasins cet après-midi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, allons-y après le déjeuner."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-003",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Fête chez un voisin",
+    "scenario": "fetes",
+    "scene": "La fête",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous habitez à Lausanne. Votre voisin vous propose de faire une fête chez lui. Vous discutez de l’organisation de la fête (nombre de personnes, plats, musique, horaire).\nL’examinateur joue le rôle du voisin.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! J’ai envie d’organiser une fête chez moi samedi prochain. Tu m’aides ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oh oui, avec plaisir ! On invite combien de personnes ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je pensais à une vingtaine de personnes. Mon appartement est assez grand."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. On invite aussi les autres voisins de l’immeuble ? Comme ça, personne ne va se plaindre du bruit !",
+          "variantes": [
+            "Vingt personnes, c’est bien. Et les autres voisins, on les invite ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonne idée ! Et pour manger, qu’est-ce qu’on fait ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "On peut faire un buffet. Moi, je prépare une salade et des quiches. Tu peux acheter du pain et du fromage ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, et je m’occupe aussi des boissons. Et pour la musique ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai une grande enceinte. Je peux préparer une liste de chansons pour danser.",
+          "variantes": [
+            "Mon cousin est DJ. Je peux lui demander de venir ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Super ! La fête commence à quelle heure, d’après toi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À 19 heures, c’est bien. Et on baisse la musique à 22 heures, pour les voisins qui dorment."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait, c’est d’accord !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-004",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Week-end avec un ami",
+    "scenario": "vacances",
+    "scene": "À la montagne",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Un ami suisse vous invite à passer un week-end chez lui, à la montagne. Vous lui posez des questions sur le week-end (prix, transports, activités, logement).\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Ça te dit de venir chez moi à la montagne le week-end prochain ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oh, merci, c’est très gentil ! Ça coûte combien, à peu près ?",
+          "variantes": [
+            "Avec plaisir ! Mais est-ce que ça va coûter cher ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pas grand-chose : tu dors chez moi, tu paies seulement le train et un peu pour les repas."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et comment je viens chez toi ? Il y a un train direct ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Tu prends le train jusqu’à Martigny, puis le bus. Le voyage dure environ deux heures."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Où est-ce que je vais dormir ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’ai une petite chambre d’amis dans mon chalet, avec un lit et une salle de bains."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! Qu’est-ce qu’on va faire pendant le week-end ?",
+          "variantes": [
+            "Et quelles activités on peut faire là-bas ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Samedi, on peut faire une randonnée, et dimanche, aller aux bains thermaux."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Génial ! Qu’est-ce que je dois apporter ? Des chaussures de marche ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, de bonnes chaussures, une veste chaude et ton maillot de bain."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait. Merci encore, j’ai hâte d’y être !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-005",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Restaurant",
+    "scenario": "loisirs",
+    "scene": "Au restaurant",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous voulez inviter votre ami suisse au restaurant. Vous discutez avec lui et vous lui posez des questions pour fixer votre rendez-vous (jour, heure, type de restaurant qu’il préfère).\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! J’aimerais t’inviter au restaurant pour te remercier de ton aide. Tu es libre quand ?",
+          "variantes": [
+            "Dis, ça te dirait d’aller au restaurant avec moi ? C’est moi qui invite !"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est gentil ! Cette semaine, je suis libre vendredi ou samedi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Vendredi soir, ça te va ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, vendredi, c’est parfait."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Tu préfères quel type de restaurant ? Italien, chinois ou plutôt une cuisine suisse ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’adore la cuisine italienne, surtout les pizzas !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, je connais une très bonne pizzeria près de la gare. On se retrouve à quelle heure ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vers 19 h 30, c’est bien pour moi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. On se retrouve directement devant le restaurant ou à la gare ?",
+          "variantes": [
+            "Tu veux que je passe te chercher chez toi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Devant le restaurant, c’est plus simple."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, je réserve une table pour deux. À vendredi !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci, à vendredi !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-006",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Gâteau d’anniversaire",
+    "scenario": "fetes",
+    "scene": "L’anniversaire",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Avec votre ami suisse, vous voulez préparer un gâteau pour l’anniversaire d’un autre ami. Vous lui demandez des conseils pour faire le gâteau (ingrédients, quantités, allergies, pour combien de personnes).\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Pour l’anniversaire de Léo samedi, on pourrait préparer un gâteau ensemble. Tu as une recette ?",
+          "variantes": [
+            "Tu sais faire des gâteaux ? J’aimerais en préparer un pour l’anniversaire de Léo."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je fais un très bon gâteau au chocolat."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! Qu’est-ce qu’il faut comme ingrédients ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Du chocolat noir, du beurre, du sucre, de la farine et des œufs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il faut combien de chocolat et combien d’œufs ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour un gâteau, 200 grammes de chocolat et quatre œufs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Nous serons environ quinze personnes. Un gâteau, c’est assez ?",
+          "variantes": [
+            "Il y aura quinze invités. Il faut faire deux gâteaux, non ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, il faut en faire deux. Alors, on double les quantités."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Attention, Sara est allergique aux noix. Il n’y a pas de noix dans ta recette ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, pas de noix. Tu peux être tranquille."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. J’achète les ingrédients demain. On cuisine chez toi vendredi soir ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, à vendredi !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-007",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Animal de compagnie",
+    "scenario": "vie-quotidienne",
+    "scene": "Les animaux",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous vivez à Fribourg. Vous demandez à votre ami suisse de garder votre animal de compagnie quelques jours. Vous lui expliquez ce qu’il doit faire (nourriture, promenade, jeux).\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Je pars quelques jours à Genève la semaine prochaine. Est-ce que tu peux garder mon chien ?",
+          "variantes": [
+            "J’ai un service à te demander : tu pourrais garder mon chien du lundi au jeudi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, pas de problème. Qu’est-ce que je dois faire ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il mange deux fois par jour, le matin et le soir. Je te laisse ses croquettes."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Il mange combien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un bol le matin et un bol le soir. Et il faut toujours lui laisser de l’eau fraîche."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Et pour la promenade ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il faut le sortir trois fois par jour, au moins vingt minutes. Il adore le parc au bord de la Sarine."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il aime jouer ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, beaucoup ! Il adore courir après une balle. Sa balle préférée est dans son panier.",
+          "variantes": [
+            "Oui, il aime jouer avec sa corde. Mais attention : il ne faut jamais lui donner de chocolat !"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Je viens le chercher quand ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Dimanche soir, si tu veux. Merci beaucoup, c’est vraiment gentil !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-008",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Service au voisin",
+    "scenario": "maison",
+    "scene": "Les voisins",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Votre voisin ne peut pas sortir de chez lui pendant plusieurs jours. Vous lui proposez de faire ses courses ou de l’aider. Vous lui demandez ce dont il a besoin.\nL’examinateur joue le rôle du voisin.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, Monsieur Dubois. J’ai appris que vous êtes malade. Est-ce que je peux vous aider ?",
+          "variantes": [
+            "Bonjour ! Vous ne pouvez pas sortir en ce moment ? Je peux faire vos courses, si vous voulez."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oh, c’est très gentil. Je me suis cassé la jambe et je ne peux pas sortir pendant une semaine."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je vais au supermarché cet après-midi. De quoi avez-vous besoin ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il me faut du pain, du lait, des fruits et du fromage."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Quels fruits préférez-vous ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Des pommes et des bananes, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Vous avez besoin d’autre chose ? Des médicaments à la pharmacie ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, si ce n’est pas trop difficile. J’ai une ordonnance du médecin."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pas de problème, donnez-moi l’ordonnance. Je peux aussi descendre votre poubelle, si vous voulez.",
+          "variantes": [
+            "Bien sûr. Et je peux aussi promener votre chien le soir."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci beaucoup ! Je vous donne 50 francs pour les courses ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, merci. Je reviens vers 17 heures avec tout ça."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-009",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Soirée avec un ami",
+    "scenario": "loisirs",
+    "scene": "La sortie entre amis",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous souhaitez passer une soirée avec votre ami. Vous lui demandez ce qu’il aime faire (restaurant, cinéma, repas à la maison, balade, etc.).\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Salut ! Ça te dit de passer une soirée ensemble samedi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, avec plaisir ! Qu’est-ce que tu proposes ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je ne sais pas. Qu’est-ce que tu aimes faire le soir ? Le cinéma, le restaurant ?",
+          "variantes": [
+            "Tu préfères sortir ou rester à la maison ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’aime bien le cinéma, mais j’y suis allé hier."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et un restaurant ? Tu aimes la cuisine indienne ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pas trop, c’est un peu épicé pour moi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Alors je peux préparer un repas chez moi. Tu aimes la fondue ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’adore la fondue !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! Avant le repas, on peut faire une petite balade au bord du lac, si tu veux.",
+          "variantes": [
+            "Et après le repas, on peut jouer à un jeu de société."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonne idée. J’arrive à quelle heure ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Viens vers 18 heures. On se promène d’abord, puis on mange vers 19 h 30."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait, à samedi !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-010",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Groupe de musique",
+    "scenario": "loisirs",
+    "scene": "Le groupe de musique",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous souhaitez jouer de la musique dans un groupe. Vous avez rencontré un musicien. Vous lui posez des questions sur le type de musique qu’il joue, ses instruments, ses répétitions.\nL’examinateur joue le rôle du musicien.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour ! On m’a dit que vous jouez dans un groupe. Je cherche justement un groupe pour faire de la musique."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ah oui ? Vous jouez de quel instrument ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je joue de la guitare depuis cinq ans. Et vous, quel type de musique jouez-vous ?",
+          "variantes": [
+            "Je chante et je joue un peu de piano. Votre groupe joue quel style de musique ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous jouons surtout du rock et un peu de blues."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, j’adore le rock ! Il y a combien de musiciens dans le groupe ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous sommes quatre : un chanteur, un bassiste, un batteur et moi, au clavier."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Vous cherchez un guitariste ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, justement ! Notre guitariste est parti l’année dernière."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Génial ! Vous répétez quand et où ?",
+          "variantes": [
+            "Et les répétitions, c’est quel jour ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le mercredi soir, de 19 h à 22 h, dans une salle près de la gare."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le mercredi, c’est parfait pour moi. Est-ce que je peux venir à la prochaine répétition ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr, venez mercredi avec votre guitare !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-011",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Film",
+    "scenario": "loisirs",
+    "scene": "Au cinéma",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Un ami vous propose de regarder un nouveau film demain, mais vous ne le connaissez pas. Vous lui demandez quel genre de film c’est. Vous lui parlez de vos films préférés et vous lui proposez un autre film.\nL’examinateur joue le rôle de l’ami.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Salut ! Demain soir, on regarde le nouveau film « Le Dernier Sommet » ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je ne connais pas ce film. C’est quel genre de film ?",
+          "variantes": [
+            "« Le Dernier Sommet » ? Je n’en ai jamais entendu parler. Ça parle de quoi ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est un film d’aventure. Des alpinistes essaient de monter au sommet d’une montagne."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il y a beaucoup d’action ? Je n’aime pas trop les films qui font peur."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il y a un peu de suspense. Toi, tu aimes quels films ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Moi, je préfère les comédies et les films romantiques. J’adore rire !",
+          "variantes": [
+            "Mes films préférés, ce sont les comédies et les dessins animés."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ah, je vois. Tu as une autre idée, alors ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "On pourrait regarder « Les Vacances de Mia ». C’est une comédie très drôle sur une famille en vacances."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je ne l’ai pas vu. D’accord, essayons !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! On le regarde chez moi ? Je prépare du pop-corn."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, j’arrive à 20 heures."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-012",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Au cinéma",
+    "scenario": "loisirs",
+    "scene": "Au cinéma",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous êtes à Lausanne. Vous voulez voir un film. Vous allez au cinéma et vous posez des questions au vendeur (titre du film, horaire, genre, durée, prix).\nL’examinateur joue le rôle du vendeur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, je voudrais voir un film ce soir. Qu’est-ce que vous avez comme films ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ce soir, nous avons « Le Grand Lac », un film d’aventure, et « Deux cœurs à Genève », une comédie romantique."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "« Le Grand Lac », il commence à quelle heure ?",
+          "variantes": [
+            "La comédie romantique, c’est à quelle heure ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a une séance à 18 h 15 et une autre à 20 h 45."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et il dure combien de temps ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Deux heures environ."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Alors, je prends la séance de 18 h 15. C’est combien, la place ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est 18 francs, ou 14 francs avec une carte d’étudiant."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai une carte d’étudiant, la voilà. Je peux payer par carte bancaire ?",
+          "variantes": [
+            "Voici ma carte d’étudiant. Je voudrais deux places, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, bien sûr. Voici votre billet, c’est la salle 3."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, bonne soirée !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-013",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Fournitures scolaires",
+    "scenario": "magasins",
+    "scene": "À la papeterie",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "C’est la rentrée scolaire en Suisse. Vous avez besoin de fournitures. Vous allez dans un magasin et vous demandez des renseignements au vendeur (objets, prix, couleurs).\nL’examinateur joue le rôle du vendeur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous cherchez quelque chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, oui. C’est la rentrée et il me faut des cahiers, des stylos et une trousse pour mon fils.",
+          "variantes": [
+            "Bonjour. Je commence un cours la semaine prochaine et j’ai besoin de fournitures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les cahiers sont ici. Vous voulez des grands ou des petits carreaux ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Des grands carreaux, s’il vous plaît. Combien coûte un cahier ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "2 francs 50 pièce, ou 10 francs le lot de cinq."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je prends le lot de cinq. Et les trousses, vous avez quelles couleurs ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons des trousses bleues, rouges et noires, à 8 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Une trousse bleue, s’il vous plaît. Et pour les stylos ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voici un paquet de quatre stylos de couleur à 6 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait. Ça fait combien en tout ?",
+          "variantes": [
+            "Très bien, je prends tout. Je peux payer par carte ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait 24 francs, s’il vous plaît."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-014",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Prendre le train",
+    "scenario": "transports",
+    "scene": "À la gare",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous êtes à Sion et vous voulez prendre le train pour aller à Berne. Vous allez à la gare pour demander des renseignements à l’agent d’accueil (prix, horaires, temps de trajet, quai).\nL’examinateur joue le rôle de l’agent d’accueil.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, je voudrais aller à Berne. Quand part le prochain train, s’il vous plaît ?",
+          "variantes": [
+            "Bonjour, excusez-moi. Je dois aller à Berne aujourd’hui. Il y a un train bientôt ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Le prochain train part à 10 h 34."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est un train direct ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, vous devez changer de train à Lausanne."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le voyage dure combien de temps ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Environ deux heures. Vous arrivez à Berne à 12 h 26."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et combien coûte le billet ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Un aller simple en deuxième classe coûte 58 francs. Avec l’abonnement demi-tarif, c’est 29 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai le demi-tarif. Je voudrais un aller-retour, s’il vous plaît.",
+          "variantes": [
+            "Je n’ai pas le demi-tarif. Je prends un aller simple, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà, ça fait 58 francs pour l’aller-retour."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Le train part de quel quai ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Du quai 3. Bon voyage !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-015",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Magasin de vêtements",
+    "scenario": "magasins",
+    "scene": "Au magasin de vêtements",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Un ami vous invite à passer des vacances à la montagne. Vous avez besoin de vêtements. Vous allez au magasin et vous demandez des conseils au vendeur (types de vêtements, couleurs, prix).\nL’examinateur joue le rôle du vendeur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je pars en vacances à la montagne et j’ai besoin de vêtements chauds."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Vous partez en été ou en hiver ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "En hiver, en février. Qu’est-ce que vous me conseillez ?",
+          "variantes": [
+            "En hiver. Il va faire très froid, je crois. Qu’est-ce qu’il me faut ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il vous faut une veste chaude, un pull en laine, un bonnet et des gants."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Vous avez des vestes imperméables ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, voici une veste de ski. Nous l’avons en noir, en rouge et en bleu."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je préfère le bleu. Elle coûte combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Elle coûte 149 francs. Elle est en promotion cette semaine."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est un peu cher. Vous avez quelque chose de moins cher ?",
+          "variantes": [
+            "D’accord. Je peux l’essayer ? Je fais du M."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, ce modèle-là coûte 89 francs. Il est aussi très chaud."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, je prends celle-là en bleu, avec un bonnet. Merci !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-016",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Achats sur Internet",
+    "scenario": "magasins",
+    "scene": "L’achat en ligne",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous avez acheté des produits sur Internet. Malheureusement, ils arrivent cassés. Vous allez au magasin pour expliquer votre problème et chercher une solution (remboursement, échange).\nL’examinateur joue le rôle du responsable du service clients.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, que puis-je faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. J’ai commandé deux verres et une lampe sur votre site Internet, mais ils sont arrivés cassés.",
+          "variantes": [
+            "Bonjour, j’ai un problème avec ma commande en ligne : les produits sont arrivés cassés."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je suis désolé. Vous avez votre numéro de commande ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voilà. C’est la commande 45 812, du 3 mars."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Qu’est-ce qui est cassé exactement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un des deux verres et la lampe. Regardez, j’ai pris des photos."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "En effet. Je peux vous proposer un échange ou un remboursement."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pour la lampe, je préfère un remboursement. Elle coûte 65 francs."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Et pour le verre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pour le verre, je voudrais un échange. Vous en avez en magasin ?",
+          "variantes": [
+            "Pour le verre aussi, je préfère un remboursement."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je vous le donne tout de suite. Vous recevrez votre argent dans cinq jours."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien, merci beaucoup pour votre aide."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-017",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Au restaurant",
+    "scenario": "loisirs",
+    "scene": "Au restaurant",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous êtes dans un restaurant à Lausanne avec des amis. Vous demandez la carte et vous posez des questions au serveur (plat du jour, prix). Vous choisissez ce que vous voulez manger.\nL’examinateur joue le rôle du serveur.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonsoir, vous êtes combien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonsoir, nous sommes quatre. Est-ce qu’on peut avoir la carte, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr, voici la carte."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Quel est le plat du jour ?",
+          "variantes": [
+            "Merci. Qu’est-ce que vous nous conseillez aujourd’hui ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Aujourd’hui, ce sont des filets de perche avec des frites et une salade."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ça coûte combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le plat du jour est à 24 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et vous avez un plat végétarien ? Mon amie ne mange pas de viande."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, nous avons un risotto aux champignons à 21 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Alors trois plats du jour et un risotto, s’il vous plaît.",
+          "variantes": [
+            "Alors, pour moi, le plat du jour, et pour mon amie, le risotto."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Et comme boisson ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Une grande bouteille d’eau minérale, s’il vous plaît."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-018",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "À la banque",
+    "scenario": "lieux-publics",
+    "scene": "À la banque",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous venez d’arriver en Suisse et vous voulez ouvrir un compte bancaire. Vous posez des questions au conseiller pour avoir plus d’informations (papiers, documents, cartes, assurances).\nL’examinateur joue le rôle du conseiller bancaire.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, asseyez-vous. Que puis-je faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je viens d’arriver en Suisse et je voudrais ouvrir un compte bancaire."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Vous travaillez ici ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, je commence un travail à Lausanne le mois prochain. Quels documents faut-il ?",
+          "variantes": [
+            "Oui. De quels papiers avez-vous besoin pour ouvrir le compte ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il me faut votre passeport, votre permis de séjour et votre contrat de travail."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai mon passeport et mon contrat. Le permis de séjour arrive la semaine prochaine. C’est possible ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, vous pourrez l’apporter plus tard."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce que je vais recevoir une carte bancaire ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, une carte de débit gratuite. Une carte de crédit coûte 50 francs par an."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "La carte de débit me suffit. Est-ce que vous proposez aussi des assurances ?",
+          "variantes": [
+            "Je prends seulement la carte de débit. Et il y a des frais pour le compte ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, nous avons une assurance pour le logement. Je vous donne une brochure."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup. Je reviens avec mes documents demain."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-019",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "École de langue",
+    "scenario": "ecole",
+    "scene": "Le cours de langue",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous voulez vous inscrire dans une école de langue française. Vous avez rendez-vous avec le directeur de l’école. Vous lui posez des questions (cours, horaires, prix).\nL’examinateur joue le rôle du directeur de l’école.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, entrez. Je vous écoute."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais m’inscrire à un cours de français. Quels cours proposez-vous ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons des cours en groupe et des cours individuels, du niveau A1 au niveau C1."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je crois que mon niveau est A2. Comment est-ce que je peux connaître mon niveau exact ?",
+          "variantes": [
+            "J’ai déjà un peu étudié le français. Il faut passer un test ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous passez un petit test écrit et oral avant le début du cours."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Les cours ont lieu quand ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le matin de 9 h à 12 h, ou le soir de 18 h à 20 h, du lundi au jeudi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je travaille la journée, donc je préfère le soir. Combien coûte le cours ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le cours du soir coûte 480 francs pour dix semaines."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le prix comprend les livres ?",
+          "variantes": [
+            "Est-ce que je peux payer en deux fois ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, le livre coûte 35 francs en plus."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Je voudrais m’inscrire pour la session de septembre, s’il vous plaît."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-020",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Salon du travail",
+    "scenario": "travail",
+    "scene": "L’offre d’emploi",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous allez au salon du travail à Lausanne avec un camarade de classe. Vous rencontrez un chef cuisinier qui cherche du personnel. Vous lui posez des questions (horaires, salaire, tâches).\nL’examinateur joue le rôle du chef cuisinier.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, Monsieur. J’ai vu que vous cherchez du personnel pour votre restaurant.",
+          "variantes": [
+            "Bonjour. Vous cherchez des employés pour votre restaurant ? La cuisine me passionne."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, nous cherchons un aide-cuisinier. Vous avez de l’expérience ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, j’ai travaillé deux ans dans un restaurant dans mon pays. Quelles sont les tâches ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Préparer les légumes, aider le chef pour les plats et nettoyer la cuisine."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Quels sont les horaires de travail ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Du mardi au samedi, de 10 h à 14 h et de 18 h à 22 h."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce que je dois travailler le dimanche ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, le restaurant est fermé le dimanche et le lundi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et quel est le salaire ?",
+          "variantes": [
+            "Le salaire est de combien par mois ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "4 200 francs par mois, et les repas sont offerts."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est intéressant. Comment est-ce que je peux poser ma candidature ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Envoyez-moi votre CV par courriel. Voici ma carte."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-021",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Demande d’aide",
+    "scenario": "travail",
+    "scene": "Au bureau",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Votre collègue est malade et ne peut pas venir travailler. Il vous demande de l’aider à faire son travail. Vous lui posez des questions (tâches, horaires, matériel).\nL’examinateur joue le rôle du collègue.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Allô ? Salut, c’est Marc. Je suis malade et je ne peux pas venir au bureau aujourd’hui. Tu peux m’aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Salut Marc ! J’espère que ce n’est pas grave. Bien sûr, qu’est-ce que je dois faire ?",
+          "variantes": [
+            "Pas de problème, je t’aide. Qu’est-ce qu’il faut faire en priorité ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il faut répondre aux courriels des clients et préparer la réunion de demain."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. La réunion est à quelle heure ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Demain à 9 heures, dans la salle 2. Il faut imprimer les documents pour dix personnes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Où est-ce que je trouve les documents ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ils sont sur mon ordinateur, dans le dossier « Réunion »."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je n’ai pas ton mot de passe. Comment je fais ?",
+          "variantes": [
+            "Et pour ouvrir ton ordinateur, j’ai besoin de ton mot de passe ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Demande à Julie, la secrétaire, elle va t’aider."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et les clients, je dois les appeler ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, réponds seulement par courriel, avant 17 heures."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien, je m’en occupe. Repose-toi bien !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-022",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Nouveau travail",
+    "scenario": "travail",
+    "scene": "Le nouveau travail",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Vous venez de commencer à travailler dans une nouvelle entreprise. Vous rencontrez votre nouveau collègue. Vous lui posez des questions sur l’entreprise (horaires, cantine, collègues, patron, congés).\nL’examinateur joue le rôle du collègue.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour ! Je commence aujourd’hui au service comptabilité. Je m’appelle Alex."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour Alex, bienvenue ! Moi, c’est Thomas. Je travaille ici depuis cinq ans."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Quels sont les horaires de travail ici ?",
+          "variantes": [
+            "Vous pouvez me dire à quelle heure on commence le matin ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "On commence entre 8 h et 9 h, et on finit entre 17 h et 18 h. Les horaires sont flexibles."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Et pour le déjeuner, il y a une cantine ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, au rez-de-chaussée. Un repas coûte 11 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et les collègues et le patron, ils sont comment ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les collègues sont très sympas. Le patron, Monsieur Rochat, est exigeant, mais juste."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bon à savoir ! Et pour les congés, on a combien de semaines par an ?",
+          "variantes": [
+            "Dernière question : comment est-ce qu’on demande des vacances ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Cinq semaines. Vous devez les demander au patron deux mois avant."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup pour toutes ces informations !"
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a2r-po-023",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "dialogue",
+    "theme": "Journée de formation",
+    "scenario": "travail",
+    "scene": "La formation",
+    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
+    "support": {
+      "situation": "Votre patron propose aux employés une journée de formation en informatique. Vous êtes intéressé(e). Vous posez des questions à votre patron sur cette formation (date, lieu, durée, contenu).\nL’examinateur joue le rôle du patron.",
+      "repliques_au_corrige": true,
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, Madame Keller. J’ai lu votre message sur la formation en informatique. Elle m’intéresse beaucoup."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien ! Vous avez des questions ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Quand a lieu la formation ?",
+          "variantes": [
+            "Oui, plusieurs. D’abord, c’est quel jour ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le jeudi 14 novembre."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et où est-ce qu’elle se passe ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Dans la salle de réunion du 2e étage, ici, dans l’entreprise."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elle dure combien de temps ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Toute la journée, de 8 h 30 à 16 h 30, avec une pause à midi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Qu’est-ce qu’on va apprendre ?",
+          "variantes": [
+            "Quel est le programme de la formation ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous allez apprendre à utiliser le nouveau logiciel de gestion et les tableaux de calcul."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait. Je voudrais m’inscrire, s’il vous plaît."
+        }
+      ]
+    },
+    "questions": [],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "tcf-a1a2-po-mots-ecole",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "L’école",
+    "scenario": "ecole",
+    "scene": "L’école",
+    "support": {
+      "theme": "L’école",
       "mots": [
-        "Vous",
-        "Votre famille",
-        "Vos amis",
-        "Vos études",
-        "Vos goûts",
-        "Vos loisirs"
+        "cartable",
+        "professeur",
+        "récréation",
+        "cantine",
+        "devoirs",
+        "horaire",
+        "matière préférée",
+        "bibliothèque",
+        "trousse",
+        "camarades"
       ],
       "exemples_questions": [
-        "Vous vous appelez comment ?",
-        "Présentez-moi votre famille.",
-        "Parlez-moi du lieu où vous habitez.",
-        "Quels sont vos loisirs préférés ?",
-        "Que faites-vous quand vous rencontrez vos amis ?"
+        "Comment s’appelle votre école ?",
+        "À quelle heure commencent les cours ?",
+        "Qu’est-ce que vous faites pendant la récréation ?",
+        "Combien d’heures de devoirs avez-vous par semaine ?",
+        "Quelle matière aimez-vous le moins et pourquoi ?"
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
-    "id": "tcf-a2p-s1-po-2",
+    "id": "tcf-a1a2-po-mots-loisirs",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Préparation A2 · série 1 · Monologue suivi",
-    "consigne": "Monologue suivi, avec préparation (2 minutes environ). Vous tirez au sort 2 sujets et vous en choisissez 1. Vous vous exprimez sur le sujet. L’examinateur peut ensuite vous poser des questions.",
-    "points": 4,
+    "type_exercice": "trois_mots",
+    "theme": "Les loisirs",
+    "scenario": "loisirs",
+    "scene": "Les loisirs",
     "support": {
-      "situation": "Sujet 1 · Pays : Décrivez votre pays. Qu’est-ce que vous aimez dans votre pays ? Y a-t-il des choses que vous n’aimez pas ?\nSujet 2 · Famille : Décrivez votre famille. Avec qui vivez-vous ? Faites-vous souvent des fêtes de famille ? À quelle(s) occasion(s) ?\nSujet 3 · Vêtements : Où achetez-vous vos vêtements en général ? Avec qui ? Quel type de vêtements aimez-vous porter ? Pourquoi ?\nSujet 4 · Radio : Quand écoutez-vous la radio ? Quelles stations ou émissions connaissez-vous ? Que pensez-vous des programmes proposés ?\nSujet 5 · Animaux : Quels animaux aimez-vous ? Avez-vous un animal domestique ? Lequel ? Comment s’appelle-t-il ? Décrivez-le.\nSujet 6 · Sport : Quels sports pratiquez-vous ? Quand ? Où ? Avec qui ? Racontez.\nSujet 7 · Loisirs : Que faites-vous pendant votre temps libre ? Où ? Avec qui ? Racontez.\nSujet 8 · Concert : Quels types de concerts aimez-vous ? Pourquoi ? Y allez-vous souvent ? Quel est le dernier concert que vous avez vu ?\nSujet 9 · Acteur : Quel(le) est votre acteur ou actrice préféré(e) ? Décrivez-le ou la. Dans quels films joue-t-il ou elle ?\nSujet 10 · Plat préféré : Quel est votre plat préféré ? Décrivez-le. Quand le mangez-vous ? Qui le cuisine ?\nSujet 11 · Ordinateur : À quelle occasion utilisez-vous un ordinateur ? Que faites-vous sur l’ordinateur ? Avez-vous un ordinateur chez vous ?\nSujet 12 · Matière à l’école : Quelle est votre matière préférée ? Pourquoi ? Comment se passe un cours dans cette matière ? Racontez.\nSujet 13 · École : Dans quelle école êtes-vous ? Décrivez-la. Qu’est-ce que vous aimez et n’aimez pas dans votre école ? Pourquoi ?\nSujet 14 · Métier : Quel métier font vos parents ? Et vous, quel métier aimeriez-vous faire plus tard ? Pourquoi ?\nSujet 15 · Journée de classe : Décrivez une journée habituelle à l’école. À quelle heure partez-vous le matin ? Comment y allez-vous ? À quelle heure terminez-vous ?",
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "eleve",
-          "texte": "Sujet 7 · Loisirs — Pendant mon temps libre, j’aime beaucoup faire du sport et cuisiner. Le mercredi après-midi, je joue au football avec mes amis au parc, près de chez moi. Le week-end, je cuisine avec ma mère des plats de mon pays, par exemple du riz avec du poulet. J’aime aussi regarder des films sur mon téléphone le soir. Je préfère les films d’action parce qu’ils sont amusants.",
-          "variantes": [
-            "Sujet 10 · Plat préféré — Mon plat préféré, c’est l’injera avec des légumes. C’est un grand pain rond et plat. On le mange avec les mains, en famille, le dimanche. C’est ma grand-mère qui le cuisine, parce qu’elle fait le meilleur injera !"
-          ]
-        }
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2p-s1-po-3",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Préparation A2 · série 1 · Exercice en interaction",
-    "consigne": "Exercice en interaction, avec préparation (3 à 4 minutes). Vous tirez au sort 2 sujets et vous en choisissez 1. Vous jouez la situation avec l’examinateur. N’oubliez pas de saluer et d’utiliser les règles de politesse.",
-    "points": 4,
-    "support": {
-      "situation": "Sujet 1 · Visite d’un ami : Vous recevez chez vous un ami français qui ne connaît pas votre ville. Vous lui proposez des activités pour découvrir votre ville. Vous vous mettez d’accord sur un programme. (L’examinateur joue l’ami.)\nSujet 2 · Dans un hôtel en France : Vous arrivez dans un hôtel avec votre famille. Vous êtes le seul à parler français. Vous posez des questions au réceptionniste sur les activités et les services (taxi, restaurant, visites…). (L’examinateur joue le réceptionniste.)\nSujet 3 · Fête de famille : Samedi, vous organisez une fête de famille. Vous demandez à un ami français de vous aider. Vous discutez pour savoir qui fait quoi. (L’examinateur joue l’ami.)\nSujet 4 · Pique-nique : Vous voulez organiser un pique-nique ce week-end avec un ami français. Vous choisissez ensemble le lieu, l’heure et ce qu’il faut apporter. (L’examinateur joue l’ami.)\nSujet 5 · Recette de cuisine : Vous proposez à un ami français de venir chez vous cuisiner un plat de votre pays. Vous vous mettez d’accord sur qui fait quoi. (L’examinateur joue l’ami.)\nSujet 6 · Chez le docteur : Vous êtes en vacances en France et vous êtes malade depuis deux jours. Vous expliquez au docteur ce que vous avez. (L’examinateur joue le docteur.)\nSujet 7 · Anniversaire d’un ami : Vous êtes invité à l’anniversaire d’un ami français. Vous proposez à son frère de l’aider à préparer la fête et vous lui demandez des idées de cadeau. (L’examinateur joue le frère.)\nSujet 8 · Sac perdu : Vous avez oublié un sac dans le bus. Vous allez à l’accueil de la société de bus et vous expliquez ce qui s’est passé. (L’examinateur joue l’employé.)\nSujet 9 · Travail pour l’été en France : Vous aimeriez travailler cet été en France. Vous demandez conseil à votre professeur de français. Vous expliquez ce que vous aimez et quel travail vous cherchez. (L’examinateur joue le professeur.)\nSujet 10 · École française : Vous venez d’arriver en France. Vous avez rendez-vous avec le directeur d’une école. Vous vous présentez, vous parlez de vos études et vous posez des questions sur l’école (cours, horaires, repas…). (L’examinateur joue le directeur.)\nSujet 11 · Devoirs : Un ami de votre classe a été malade pendant une semaine. Vous passez chez lui pour lui expliquer les devoirs à faire. (L’examinateur joue l’ami.)",
-      "grille": {
-        "points": 13,
-        "criteres": [
-          "Lexique (5) : vocabulaire adapté et varié pour les trois parties",
-          "Morphosyntaxe (4) : structures simples correctes, quelques structures plus complexes",
-          "Maîtrise du système phonologique (4) : prononciation compréhensible"
-        ]
-      },
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "examinateur",
-          "texte": "Salut ! Alors, ce pique-nique, on le fait quand ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Salut ! Je propose dimanche, s’il fait beau. Tu es libre ?",
-          "variantes": [
-            "Bonjour ! Samedi, ça te va ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Oui, dimanche, c’est parfait. On va où ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "On peut aller au bord du lac. Il y a des tables et des arbres.",
-          "variantes": [
-            "Au parc, à côté de la gare, c’est pratique."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Bonne idée ! À quelle heure ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "On se retrouve à 11 h 30 devant chez moi, et on y va en bus. D’accord ?",
-          "variantes": [
-            "Rendez-vous à midi directement au lac ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "D’accord. Qu’est-ce que j’apporte ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Moi, je prépare des sandwichs et une salade. Toi, tu peux apporter les boissons et des fruits ?",
-          "variantes": [
-            "Tu peux prendre une couverture et un ballon ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Pas de problème. Et s’il pleut ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "S’il pleut, on mange chez moi et on regarde un film. À dimanche !",
-          "variantes": [
-            "On change de jour. Je t’envoie un message samedi soir."
-          ]
-        }
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2p-s2-po-1",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "mots_theme",
-    "theme": "Préparation A2 · série 2 · Entretien dirigé",
-    "consigne": "Entretien dirigé, sans préparation (1 minute 30 environ). Après avoir salué l’examinateur, vous vous présentez : vous parlez de vous, de votre famille, de vos amis, de vos études, de vos goûts…",
-    "points": 4,
-    "support": {
-      "theme": "Se présenter, parler de soi",
+      "theme": "Les loisirs",
       "mots": [
-        "Vous",
-        "Votre famille",
-        "Vos amis",
-        "Vos études",
-        "Vos goûts",
-        "Vos loisirs"
+        "week-end",
+        "cinéma",
+        "musique",
+        "jeux vidéo",
+        "lecture",
+        "amis",
+        "dessin",
+        "promenade",
+        "concert",
+        "piscine"
       ],
       "exemples_questions": [
-        "Vous vous appelez comment ?",
-        "Présentez-moi votre famille.",
-        "Parlez-moi du lieu où vous habitez.",
-        "Quels sont vos loisirs préférés ?",
-        "Que faites-vous quand vous rencontrez vos amis ?"
+        "Que faites-vous pendant votre temps libre ?",
+        "Quel est le dernier film que vous avez vu ?",
+        "Vous allez souvent à des concerts ?",
+        "Avec qui sortez-vous le samedi ?",
+        "Quel livre me conseillez-vous ?"
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
-    "id": "tcf-a2p-s2-po-2",
+    "id": "tcf-a1a2-po-mots-maison",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Préparation A2 · série 2 · Monologue suivi",
-    "consigne": "Monologue suivi, avec préparation (2 minutes environ). Vous tirez au sort 2 sujets et vous en choisissez 1. Vous vous exprimez sur le sujet. L’examinateur peut ensuite vous poser des questions.",
-    "points": 4,
+    "type_exercice": "trois_mots",
+    "theme": "La maison",
+    "scenario": "maison",
+    "scene": "La maison",
     "support": {
-      "situation": "Sujet 1 · Pays : Décrivez votre pays. Qu’est-ce que vous aimez dans votre pays ? Y a-t-il des choses que vous n’aimez pas ?\nSujet 2 · Famille : Décrivez votre famille. Avec qui vivez-vous ? Faites-vous souvent des fêtes de famille ? À quelle(s) occasion(s) ?\nSujet 3 · Vêtements : Où achetez-vous vos vêtements en général ? Avec qui ? Quel type de vêtements aimez-vous porter ? Pourquoi ?\nSujet 4 · Radio : Quand écoutez-vous la radio ? Quelles stations ou émissions connaissez-vous ? Que pensez-vous des programmes proposés ?\nSujet 5 · Animaux : Quels animaux aimez-vous ? Avez-vous un animal domestique ? Lequel ? Comment s’appelle-t-il ? Décrivez-le.\nSujet 6 · Sport : Quels sports pratiquez-vous ? Quand ? Où ? Avec qui ? Racontez.\nSujet 7 · Loisirs : Que faites-vous pendant votre temps libre ? Où ? Avec qui ? Racontez.\nSujet 8 · Concert : Quels types de concerts aimez-vous ? Pourquoi ? Y allez-vous souvent ? Quel est le dernier concert que vous avez vu ?\nSujet 9 · Acteur : Quel(le) est votre acteur ou actrice préféré(e) ? Décrivez-le ou la. Dans quels films joue-t-il ou elle ?\nSujet 10 · Plat préféré : Quel est votre plat préféré ? Décrivez-le. Quand le mangez-vous ? Qui le cuisine ?\nSujet 11 · Ordinateur : À quelle occasion utilisez-vous un ordinateur ? Que faites-vous sur l’ordinateur ? Avez-vous un ordinateur chez vous ?\nSujet 12 · Matière à l’école : Quelle est votre matière préférée ? Pourquoi ? Comment se passe un cours dans cette matière ? Racontez.\nSujet 13 · École : Dans quelle école êtes-vous ? Décrivez-la. Qu’est-ce que vous aimez et n’aimez pas dans votre école ? Pourquoi ?\nSujet 14 · Métier : Quel métier font vos parents ? Et vous, quel métier aimeriez-vous faire plus tard ? Pourquoi ?\nSujet 15 · Journée de classe : Décrivez une journée habituelle à l’école. À quelle heure partez-vous le matin ? Comment y allez-vous ? À quelle heure terminez-vous ?",
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "eleve",
-          "texte": "Sujet 7 · Loisirs — Pendant mon temps libre, j’aime beaucoup faire du sport et cuisiner. Le mercredi après-midi, je joue au football avec mes amis au parc, près de chez moi. Le week-end, je cuisine avec ma mère des plats de mon pays, par exemple du riz avec du poulet. J’aime aussi regarder des films sur mon téléphone le soir. Je préfère les films d’action parce qu’ils sont amusants.",
-          "variantes": [
-            "Sujet 10 · Plat préféré — Mon plat préféré, c’est l’injera avec des légumes. C’est un grand pain rond et plat. On le mange avec les mains, en famille, le dimanche. C’est ma grand-mère qui le cuisine, parce qu’elle fait le meilleur injera !"
-          ]
-        }
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2p-s2-po-3",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Préparation A2 · série 2 · Exercice en interaction",
-    "consigne": "Exercice en interaction, avec préparation (3 à 4 minutes). Vous tirez au sort 2 sujets et vous en choisissez 1. Vous jouez la situation avec l’examinateur. N’oubliez pas de saluer et d’utiliser les règles de politesse.",
-    "points": 4,
-    "support": {
-      "situation": "Sujet 1 · Visite d’un ami : Vous recevez chez vous un ami français qui ne connaît pas votre ville. Vous lui proposez des activités pour découvrir votre ville. Vous vous mettez d’accord sur un programme. (L’examinateur joue l’ami.)\nSujet 2 · Dans un hôtel en France : Vous arrivez dans un hôtel avec votre famille. Vous êtes le seul à parler français. Vous posez des questions au réceptionniste sur les activités et les services (taxi, restaurant, visites…). (L’examinateur joue le réceptionniste.)\nSujet 3 · Fête de famille : Samedi, vous organisez une fête de famille. Vous demandez à un ami français de vous aider. Vous discutez pour savoir qui fait quoi. (L’examinateur joue l’ami.)\nSujet 4 · Pique-nique : Vous voulez organiser un pique-nique ce week-end avec un ami français. Vous choisissez ensemble le lieu, l’heure et ce qu’il faut apporter. (L’examinateur joue l’ami.)\nSujet 5 · Recette de cuisine : Vous proposez à un ami français de venir chez vous cuisiner un plat de votre pays. Vous vous mettez d’accord sur qui fait quoi. (L’examinateur joue l’ami.)\nSujet 6 · Chez le docteur : Vous êtes en vacances en France et vous êtes malade depuis deux jours. Vous expliquez au docteur ce que vous avez. (L’examinateur joue le docteur.)\nSujet 7 · Anniversaire d’un ami : Vous êtes invité à l’anniversaire d’un ami français. Vous proposez à son frère de l’aider à préparer la fête et vous lui demandez des idées de cadeau. (L’examinateur joue le frère.)\nSujet 8 · Sac perdu : Vous avez oublié un sac dans le bus. Vous allez à l’accueil de la société de bus et vous expliquez ce qui s’est passé. (L’examinateur joue l’employé.)\nSujet 9 · Travail pour l’été en France : Vous aimeriez travailler cet été en France. Vous demandez conseil à votre professeur de français. Vous expliquez ce que vous aimez et quel travail vous cherchez. (L’examinateur joue le professeur.)\nSujet 10 · École française : Vous venez d’arriver en France. Vous avez rendez-vous avec le directeur d’une école. Vous vous présentez, vous parlez de vos études et vous posez des questions sur l’école (cours, horaires, repas…). (L’examinateur joue le directeur.)\nSujet 11 · Devoirs : Un ami de votre classe a été malade pendant une semaine. Vous passez chez lui pour lui expliquer les devoirs à faire. (L’examinateur joue l’ami.)",
-      "grille": {
-        "points": 13,
-        "criteres": [
-          "Lexique (5) : vocabulaire adapté et varié pour les trois parties",
-          "Morphosyntaxe (4) : structures simples correctes, quelques structures plus complexes",
-          "Maîtrise du système phonologique (4) : prononciation compréhensible"
-        ]
-      },
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "examinateur",
-          "texte": "Salut ! Alors, ce pique-nique, on le fait quand ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Salut ! Je propose dimanche, s’il fait beau. Tu es libre ?",
-          "variantes": [
-            "Bonjour ! Samedi, ça te va ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Oui, dimanche, c’est parfait. On va où ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "On peut aller au bord du lac. Il y a des tables et des arbres.",
-          "variantes": [
-            "Au parc, à côté de la gare, c’est pratique."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Bonne idée ! À quelle heure ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "On se retrouve à 11 h 30 devant chez moi, et on y va en bus. D’accord ?",
-          "variantes": [
-            "Rendez-vous à midi directement au lac ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "D’accord. Qu’est-ce que j’apporte ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Moi, je prépare des sandwichs et une salade. Toi, tu peux apporter les boissons et des fruits ?",
-          "variantes": [
-            "Tu peux prendre une couverture et un ballon ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Pas de problème. Et s’il pleut ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "S’il pleut, on mange chez moi et on regarde un film. À dimanche !",
-          "variantes": [
-            "On change de jour. Je t’envoie un message samedi soir."
-          ]
-        }
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a2p-s4-po-1",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "mots_theme",
-    "theme": "Préparation A2 · série 4 · Entretien dirigé",
-    "consigne": "Entretien dirigé, sans préparation (1 minute 30 environ). Après avoir salué l’examinateur, vous vous présentez : vous parlez de vous, de votre famille, de votre travail ou de vos études, de vos goûts…",
-    "points": 4,
-    "support": {
-      "theme": "Se présenter, parler de soi",
+      "theme": "La maison",
       "mots": [
-        "Vous",
-        "Votre famille",
-        "Votre logement",
-        "Votre travail ou vos études",
-        "Vos goûts",
-        "Vos loisirs"
+        "chambre",
+        "cuisine",
+        "jardin",
+        "appartement",
+        "étage",
+        "voisins",
+        "salon",
+        "balcon",
+        "rangement",
+        "quartier"
       ],
       "exemples_questions": [
-        "Vous vous appelez comment ?",
-        "Depuis quand habitez-vous ici ?",
-        "Présentez-moi votre famille.",
-        "Que faites-vous dans la vie ?",
-        "Qu’est-ce que vous aimez faire le week-end ?"
+        "Combien de pièces y a-t-il dans votre appartement ?",
+        "Comment est votre chambre ?",
+        "Vous connaissez vos voisins ?",
+        "Qu’est-ce que vous aimez dans votre quartier ?",
+        "Qui fait le rangement chez vous ?"
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
-    "id": "tcf-a2p-s4-po-2",
+    "id": "tcf-a1a2-po-mots-restaurant",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Préparation A2 · série 4 · Monologue suivi",
-    "consigne": "Monologue suivi, avec préparation (2 minutes environ). Vous tirez au sort 2 sujets et vous en choisissez 1. Vous vous exprimez sur le sujet. L’examinateur peut ensuite vous poser des questions.",
-    "points": 4,
+    "type_exercice": "trois_mots",
+    "theme": "Au restaurant",
+    "scenario": "lieux-publics",
+    "scene": "Au restaurant",
     "support": {
-      "situation": "Sujet 1 · Logement : Où habitez-vous ? Décrivez votre logement. Dites ce que vous aimez et ce que vous n’aimez pas dans votre quartier. Expliquez pourquoi.\nSujet 2 · Mer ou montagne ? : Où préférez-vous aller en vacances ? À la mer ou à la montagne ? Pourquoi ? Racontez vos dernières vacances dans l’un des deux endroits.\nSujet 3 · Amis : Décrivez votre meilleur(e) ami(e). Que faites-vous ensemble ? Racontez.\nSujet 4 · Sport : Quel(s) sport(s) pratiquez-vous ? Pourquoi ? Avec qui faites-vous du sport ? Où allez-vous en général ?\nSujet 5 · Magasins : Faites-vous souvent les magasins ? Pourquoi ? Qu’est-ce que vous achetez en général ? Expliquez.\nSujet 6 · Cinéma : Quels films préférez-vous ? Pourquoi ? Racontez un film que vous avez vu au cinéma.\nSujet 7 · Avion : Avez-vous déjà pris l’avion ? Avec qui ? Pour aller où ? Racontez la dernière fois que vous avez pris l’avion.\nSujet 8 · Restaurant : Allez-vous souvent au restaurant ? Pourquoi ? Avec qui y allez-vous en général ? Décrivez votre restaurant préféré.\nSujet 9 · Journée de travail : Quelle est votre profession ? Aimez-vous votre travail ? Pourquoi ? Décrivez votre journée de travail en général.\nSujet 10 · Ordinateur : Utilisez-vous un ordinateur pour le travail ? Pourquoi ? L’ordinateur vous aide-t-il dans votre travail ? Comment ? Expliquez.\nSujet 11 · Lieu de travail : Où travaillez-vous ? Aimez-vous votre lieu de travail ? Décrivez les avantages et les inconvénients de votre lieu de travail.\nSujet 12 · Livres : Aimez-vous lire ? Quel genre de lecture aimez-vous ? Pourquoi ? Parlez de votre livre préféré.\nSujet 13 · Études : Quelles études avez-vous faites ? Pourquoi ? Où avez-vous étudié ? Aimez-vous étudier ? Expliquez.\nSujet 14 · Français : Où avez-vous étudié le français ? Avec qui ? Pourquoi la langue française vous intéresse-t-elle ? Expliquez.\nSujet 15 · Professeur : Décrivez votre professeur préféré. Pourquoi l’aimez-vous ? Racontez un souvenir avec ce professeur.",
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "eleve",
-          "texte": "Sujet 1 · Logement — J’habite à Sion, dans un petit appartement au deuxième étage. Il y a une cuisine, un salon, une chambre et une salle de bains. J’aime mon appartement parce qu’il est clair et calme. Dans mon quartier, il y a un supermarché, une boulangerie et un parc pour se promener. Je n’aime pas le bruit des voitures le matin, parce que la route est juste à côté de chez moi.",
-          "variantes": [
-            "Sujet 4 · Sport — Je joue au football deux fois par semaine avec des amis de mon cours de français. Nous allons au terrain à côté de l’école. J’aime le football parce que c’est un sport d’équipe et ça me fait du bien. Le dimanche matin, je cours aussi au bord du Rhône, seul ou avec mon voisin."
-          ]
-        }
+      "theme": "Au restaurant",
+      "mots": [
+        "menu",
+        "serveur",
+        "plat du jour",
+        "dessert",
+        "boisson",
+        "addition",
+        "réservation",
+        "table",
+        "végétarien",
+        "pourboire"
+      ],
+      "exemples_questions": [
+        "Quel est votre restaurant préféré ?",
+        "Qu’est-ce que vous commandez d’habitude ?",
+        "Il faut réserver une table ?",
+        "Le plat du jour coûte combien ?",
+        "Vous laissez un pourboire au serveur ?"
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
-    "id": "tcf-a2p-s4-po-3",
+    "id": "tcf-a1a2-po-mots-vacances",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
-    "theme": "Préparation A2 · série 4 · Exercice en interaction",
-    "consigne": "Exercice en interaction, avec préparation (3 à 4 minutes). Vous tirez au sort 2 sujets et vous en choisissez 1. Vous jouez la situation avec l’examinateur. N’oubliez pas de saluer et d’utiliser les règles de politesse.",
-    "points": 4,
+    "type_exercice": "trois_mots",
+    "theme": "Les vacances",
+    "scenario": "vacances",
+    "scene": "Les vacances",
     "support": {
-      "situation": "Sujet 1 · Recherche de logement : Vous allez habiter en France pour votre travail. Vous entrez dans une agence immobilière pour expliquer le type de logement que vous recherchez (nombre de chambres, jardin, etc.). (L’examinateur joue l’agent immobilier.)\nSujet 2 · Vacances à la montagne : Vous voulez partir en vacances en France à la montagne. Vous posez des questions à un ami français sur les prix, les lieux, le climat, etc. (L’examinateur joue votre ami.)\nSujet 3 · Ordinateur : Vous habitez en France et vous voulez acheter un ordinateur. Vous demandez des renseignements dans un magasin sur le prix, la taille, la qualité, etc. (L’examinateur joue le vendeur.)\nSujet 4 · Animal domestique : Vous voulez adopter un chien. La chienne de votre ami français vient d’avoir des bébés. Vous lui posez des questions pour en savoir plus (type de chien, couleur, alimentation, exercice, etc.). (L’examinateur joue votre ami.)\nSujet 5 · Théâtre : Vous êtes en France chez des amis français. Vous voulez aller au théâtre. Avec l’un de vos amis, vous regardez sur internet les différents spectacles proposés et vous en choisissez un. (L’examinateur joue votre ami.)\nSujet 6 · Au restaurant : Vous êtes en France pour les vacances. C’est l’heure du déjeuner. Vous entrez dans un restaurant. Vous demandez la carte et vous choisissez votre repas. (L’examinateur joue le serveur.)\nSujet 7 · À la gare routière : Vous êtes en France pour les vacances et vous voulez prendre le bus pour aller de Paris à Versailles. À la gare routière, vous posez des questions sur les tarifs et les horaires des bus et vous choisissez un trajet. (L’examinateur joue l’employé de la gare.)\nSujet 8 · Accident : Vous êtes en France et vous conduisez. Vous avez un accident de voiture. Un agent de police vient vous voir pour savoir ce qui s’est passé. Vous lui racontez votre accident. (L’examinateur joue l’agent de police.)\nSujet 9 · Entretien d’embauche : Vous êtes en France et vous cherchez un travail. Vous avez un entretien avec le directeur d’une grande entreprise. Vous vous présentez et vous lui parlez de vos motivations. (L’examinateur joue le directeur.)\nSujet 10 · Panne d’ordinateur : Vous travaillez en France. Soudain, votre ordinateur tombe en panne et vous devez terminer un travail urgent. Vous demandez de l’aide à un collègue, spécialiste en informatique, et vous lui expliquez votre problème. (L’examinateur joue votre collègue.)\nSujet 11 · Accident de travail : Vous travaillez en France et vous venez d’avoir un accident pendant vos heures de travail. Vous rencontrez le responsable de votre entreprise pour lui expliquer votre accident et savoir ce que vous devez faire. (L’examinateur joue le responsable.)\nSujet 12 · À la garderie : Vous vivez en France et vous cherchez une garderie pour vos enfants. Vous allez dans une garderie pour demander des renseignements (horaires, prix, activités). (L’examinateur joue le responsable de la garderie.)\nSujet 13 · Réunion de rentrée des classes : Vous vivez en France avec votre famille. À la réunion de rentrée de l’école de vos enfants, vous posez des questions au directeur sur le matériel scolaire, les horaires et les activités de l’année. (L’examinateur joue le directeur de l’école.)\nSujet 14 · À la bibliothèque : Vous vivez en France. Vous voulez vous inscrire à la bibliothèque de votre quartier. Vous demandez des renseignements au responsable sur les horaires, les prix et le choix des livres. (L’examinateur joue le responsable de la bibliothèque.)\nSujet 15 · Université : Vous voulez partir étudier en France. Vous demandez conseil à un ami français. Vous lui posez des questions sur la vie étudiante en France (universités, horaires, prix, activités, etc.). (L’examinateur joue votre ami.)",
-      "grille": {
-        "points": 13,
-        "criteres": [
-          "Lexique (5) : vocabulaire adapté et varié pour les trois parties",
-          "Morphosyntaxe (4) : structures simples correctes, quelques structures plus complexes",
-          "Maîtrise du système phonologique (4) : prononciation compréhensible"
-        ]
-      },
-      "repliques_au_corrige": true,
-      "repliques": [
-        {
-          "locuteur": "examinateur",
-          "texte": "Bonjour, bienvenue ! Vous êtes combien ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Bonjour ! Je suis seul. Est-ce que je peux avoir la carte, s’il vous plaît ?",
-          "variantes": [
-            "Bonjour, une table pour une personne, s’il vous plaît."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Voilà la carte. Vous voulez boire quelque chose ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Oui, une carafe d’eau, s’il vous plaît. Qu’est-ce que vous me conseillez aujourd’hui ?",
-          "variantes": [
-            "Un jus d’orange, s’il vous plaît. Quel est le plat du jour ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Le plat du jour, c’est un poulet rôti avec des frites, à 18 euros."
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Très bien, je prends le plat du jour. Il y a une entrée avec ?",
-          "variantes": [
-            "Je préfère le poisson. Il est servi avec quoi ?"
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Non, mais nous avons une salade verte à 6 euros."
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "D’accord, je prends aussi la salade, s’il vous plaît.",
-          "variantes": [
-            "Non merci, seulement le plat."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Et comme dessert ?"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Une mousse au chocolat, s’il vous plaît. Je peux payer par carte ?",
-          "variantes": [
-            "Pas de dessert, merci. L’addition, s’il vous plaît."
-          ]
-        },
-        {
-          "locuteur": "examinateur",
-          "texte": "Oui, bien sûr. Bon appétit !"
-        },
-        {
-          "locuteur": "eleve",
-          "texte": "Merci beaucoup !"
-        }
+      "theme": "Les vacances",
+      "mots": [
+        "plage",
+        "montagne",
+        "valise",
+        "hôtel",
+        "camping",
+        "train",
+        "souvenirs",
+        "photos",
+        "été",
+        "pays"
+      ],
+      "exemples_questions": [
+        "Où êtes-vous allé pendant les dernières vacances ?",
+        "Comment avez-vous voyagé ?",
+        "Qu’est-ce que vous mettez dans votre valise ?",
+        "Vous préférez le camping ou l’hôtel ?",
+        "Quel pays voulez-vous visiter ?"
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-sport",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "Le sport",
+    "scenario": "loisirs",
+    "scene": "Le sport",
+    "support": {
+      "theme": "Le sport",
+      "mots": [
+        "football",
+        "vélo",
+        "natation",
+        "équipe",
+        "entraînement",
+        "match",
+        "ski",
+        "salle de sport",
+        "course",
+        "ballon"
+      ],
+      "exemples_questions": [
+        "Quel sport pratiquez-vous ?",
+        "Combien de fois par semaine vous entraînez-vous ?",
+        "Vous jouez dans une équipe ?",
+        "Vous regardez les matchs à la télévision ?",
+        "Depuis quand faites-vous ce sport ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-famille",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "La famille",
+    "scenario": "vie-quotidienne",
+    "scene": "La famille",
+    "support": {
+      "theme": "La famille",
+      "mots": [
+        "frère",
+        "sœur",
+        "parents",
+        "grands-parents",
+        "cousins",
+        "anniversaire",
+        "repas",
+        "animal",
+        "âge",
+        "métier"
+      ],
+      "exemples_questions": [
+        "Combien de personnes y a-t-il dans votre famille ?",
+        "Que font vos parents comme métier ?",
+        "Vous voyez souvent vos cousins ?",
+        "Comment fêtez-vous les anniversaires ?",
+        "Qu’est-ce que vous faites ensemble le dimanche ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-transports",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "Les transports",
+    "scenario": "transports",
+    "scene": "Les transports",
+    "support": {
+      "theme": "Les transports",
+      "mots": [
+        "bus",
+        "train",
+        "gare",
+        "billet",
+        "horaire",
+        "voiture",
+        "trottinette",
+        "arrêt",
+        "abonnement",
+        "retard"
+      ],
+      "exemples_questions": [
+        "Comment allez-vous à l’école ou au travail ?",
+        "Combien de temps dure le trajet ?",
+        "Vous avez un abonnement de bus ?",
+        "Le train est souvent en retard ?",
+        "Où est l’arrêt le plus proche de chez vous ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-ville",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "La ville",
+    "scenario": "lieux-publics",
+    "scene": "La ville",
+    "support": {
+      "theme": "La ville",
+      "mots": [
+        "parc",
+        "musée",
+        "poste",
+        "pharmacie",
+        "marché",
+        "place",
+        "rue",
+        "mairie",
+        "lac",
+        "centre-ville"
+      ],
+      "exemples_questions": [
+        "Qu’est-ce qu’il y a à visiter dans votre ville ?",
+        "Le marché a lieu quel jour ?",
+        "Comment va-t-on au centre-ville ?",
+        "Vous allez souvent au musée ?",
+        "Qu’est-ce qui manque dans votre quartier ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-courses",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "Les courses",
+    "scenario": "magasins",
+    "scene": "Les courses",
+    "support": {
+      "theme": "Les courses",
+      "mots": [
+        "supermarché",
+        "boulangerie",
+        "prix",
+        "liste",
+        "fruits",
+        "légumes",
+        "caisse",
+        "sac",
+        "vêtements",
+        "taille"
+      ],
+      "exemples_questions": [
+        "Où faites-vous vos courses ?",
+        "Vous faites une liste avant de partir ?",
+        "Quel est le prix d’un kilo de pommes ?",
+        "Vous payez en espèces ou par carte ?",
+        "Quelle taille faites-vous pour un pull ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-meteo",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "La météo",
+    "scenario": "vie-quotidienne",
+    "scene": "La météo",
+    "support": {
+      "theme": "La météo",
+      "mots": [
+        "soleil",
+        "pluie",
+        "neige",
+        "froid",
+        "chaud",
+        "saison",
+        "parapluie",
+        "orage",
+        "vent",
+        "température"
+      ],
+      "exemples_questions": [
+        "Quel temps fait-il aujourd’hui ?",
+        "Quelle saison préférez-vous et pourquoi ?",
+        "Que faites-vous quand il pleut ?",
+        "Quelle température fait-il en été chez vous ?",
+        "Vous avez peur des orages ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-travail",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "Le travail",
+    "scenario": "travail",
+    "scene": "Le travail",
+    "support": {
+      "theme": "Le travail",
+      "mots": [
+        "métier",
+        "bureau",
+        "collègues",
+        "horaires",
+        "salaire",
+        "stage",
+        "patron",
+        "uniforme",
+        "pause",
+        "entreprise"
+      ],
+      "exemples_questions": [
+        "Quel métier voulez-vous faire plus tard ?",
+        "Vous avez déjà fait un stage ?",
+        "Quels sont vos horaires de travail ?",
+        "Comment sont vos collègues ?",
+        "Vous portez un uniforme au travail ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-sante",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "La santé",
+    "scenario": "sante",
+    "scene": "La santé",
+    "support": {
+      "theme": "La santé",
+      "mots": [
+        "médecin",
+        "pharmacie",
+        "rendez-vous",
+        "fièvre",
+        "mal de tête",
+        "médicament",
+        "hôpital",
+        "dentiste",
+        "sommeil",
+        "fruits"
+      ],
+      "exemples_questions": [
+        "Vous allez souvent chez le médecin ?",
+        "Que faites-vous quand vous avez de la fièvre ?",
+        "Comment prenez-vous rendez-vous chez le dentiste ?",
+        "Combien d’heures dormez-vous par nuit ?",
+        "Qu’est-ce que vous faites pour rester en forme ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-animaux",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "Les animaux",
+    "scenario": "vie-quotidienne",
+    "scene": "Les animaux",
+    "support": {
+      "theme": "Les animaux",
+      "mots": [
+        "chien",
+        "chat",
+        "lapin",
+        "oiseau",
+        "poisson",
+        "ferme",
+        "zoo",
+        "nourriture",
+        "promenade",
+        "vétérinaire"
+      ],
+      "exemples_questions": [
+        "Quel animal avez-vous chez vous ?",
+        "Qui promène le chien ?",
+        "Qu’est-ce que votre animal mange ?",
+        "Vous êtes déjà allé dans une ferme ?",
+        "Combien coûte une visite chez le vétérinaire ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-mots-fetes",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_mots",
+    "theme": "Les fêtes",
+    "scenario": "fetes",
+    "scene": "Les fêtes",
+    "support": {
+      "theme": "Les fêtes",
+      "mots": [
+        "anniversaire",
+        "cadeau",
+        "gâteau",
+        "invitation",
+        "Noël",
+        "musique",
+        "décoration",
+        "invités",
+        "costume",
+        "repas"
+      ],
+      "exemples_questions": [
+        "Comment avez-vous fêté votre dernier anniversaire ?",
+        "Combien d’invités y avait-il ?",
+        "Quel cadeau aimeriez-vous recevoir ?",
+        "Qui prépare le repas de fête ?",
+        "Vous portez un costume pour le carnaval ?"
+      ]
+    },
+    "questions": []
   }
 ]

@@ -1,4 +1,4 @@
-import { createRng, pick, type Rng } from '@/math/rng'
+import { createRng, pick, shuffle, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import {
   TCF_COMPETENCES,
@@ -155,6 +155,10 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
         }),
       ]
     }
+    case 'trois_mots': {
+      const mots = shuffle(rng, ex.support.mots.filter((m) => m.trim())).slice(0, 3)
+      return [tcfItem({ kind: 'support', exercise: { ...ex, support: { ...ex.support, mots } } }, true, '', ex.points)]
+    }
     case 'mots_theme':
     case 'sequence_4_images':
     case 'image_unique':
@@ -205,9 +209,11 @@ export function tryGenerateTcfBlock(
   const legacy = slot ? undefined : tcfTypeByTypeId[config.exerciseType]
   if (!slot && !legacy) return null
   const competence = (slot ?? legacy)!.competence
-  const pool = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
+  const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
+  const inScenario = config.tcfScenario ? bank.filter((ex) => (ex.scenario ?? 'autre') === config.tcfScenario) : bank
+  const pool = inScenario.length > 0 ? inScenario : bank
   const fromBank = () => {
-    const chosen = pool.find((ex) => ex.id === config.tcfBankId)
+    const chosen = bank.find((ex) => ex.id === config.tcfBankId)
     return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
   }
   const ex = config.tcfExercise && config.tcfExercise.competence === competence ? config.tcfExercise : fromBank()
@@ -230,7 +236,7 @@ export function tryGenerateTcfBlock(
   const instruction = ex.consigne?.trim() || tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction || fallbackInstruction
   return {
     instruction: instruction + duree,
-    items: tcfExerciseItems(ex, rng),
+    items: tcfExerciseItems(ex, rng).map((item) => ({ ...item, tcfExerciseId: ex.id })),
   }
 }
 
@@ -265,13 +271,17 @@ export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageCo
 /**
  * Choisit `count` exercices distincts en suivant leur numéro d’origine
  * (exercice 1, puis 2…) et en évitant de répéter un même type.
+ * Les exercices sans numéro d’origine (sujets DELF) sont candidats à toutes les positions.
  */
 function pickByPosition(pool: readonly TcfExercise[], count: number, rng: Rng): TcfExercise[] {
   const chosen: TcfExercise[] = []
   for (let position = 1; position <= count; position++) {
     const remaining = pool.filter((ex) => !chosen.includes(ex))
     if (remaining.length === 0) break
-    const atPosition = remaining.filter((ex) => tcfPosition(ex.id) === position)
+    const atPosition = remaining.filter((ex) => {
+      const origin = tcfPosition(ex.id)
+      return origin === position || origin == null
+    })
     const candidates = atPosition.length > 0 ? atPosition : remaining
     const newType = candidates.filter((ex) => !chosen.some((c) => c.type_exercice === ex.type_exercice))
     chosen.push(pick(rng, newType.length > 0 ? newType : candidates))
@@ -286,9 +296,9 @@ function pickByPosition(pool: readonly TcfExercise[], count: number, rng: Rng): 
 export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageConfig[] {
   const rng = createRng(seed)
   const page = (typeId: string, ex: TcfExercise) => tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 })
-  // Les exemples sans numéro d’origine (`…-001`) ne viennent d’aucun test : exclus du tirage.
+  // Les exemples de démonstration (`tcf-a0a1-ce-001`) ne viennent d’aucun test : exclus du tirage.
   const numberedBank = (n: TcfNiveau, slot: TcfSlotMeta) =>
-    tcfSlotBank(n, slot).filter((ex) => tcfPosition(ex.id) != null)
+    tcfSlotBank(n, slot).filter((ex) => !/^tcf-[a-z0-9]+-(?:co|ce|pe|po)-\d{3}$/.test(ex.id))
   const pages: PageConfig[] = [tcfConsignesPage(niveau)]
   for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO')) {
     const pool = numberedBank(niveau, slot)
@@ -302,10 +312,6 @@ export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageCo
   }
   const po = slotOf('PO')
   const poPool = numberedBank(niveau, po)
-  const positions = [...new Set(poPool.map((ex) => tcfPosition(ex.id)))]
-  if (positions.length > 0) {
-    const position = pick(rng, positions)
-    pages.push(page(po.typeId, pick(rng, poPool.filter((ex) => tcfPosition(ex.id) === position))))
-  }
+  if (poPool.length > 0) pages.push(page(po.typeId, pick(rng, poPool)))
   return pages
 }

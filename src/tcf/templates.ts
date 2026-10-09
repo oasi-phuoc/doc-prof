@@ -180,6 +180,13 @@ export function emptyTcfExercise(
         type_exercice: 'mots_theme',
         support: { theme: '', mots: ['', ''], exemples_questions: [''] },
       }
+    case 'trois_mots':
+      return {
+        ...base,
+        competence: 'PO',
+        type_exercice: 'trois_mots',
+        support: { theme: '', mots: ['', '', ''], exemples_questions: [''] },
+      }
     case 'sequence_4_images':
       return {
         ...base,

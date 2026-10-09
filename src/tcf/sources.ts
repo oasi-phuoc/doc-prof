@@ -1,31 +1,46 @@
+import { TCF_SCENARIOS, TCF_SCENARIO_AUTRE, tcfScenarioLabel } from './catalog'
 import type { TcfExercise } from './types'
 
-/** Document d’origine d’un exercice, déduit du préfixe de son identifiant. */
-const SOURCES: ReadonlyArray<[RegExp, (m: RegExpMatchArray) => string]> = [
-  [/^tcf-a0a1$/, () => 'Exemple'],
-  [/^tcf-a1j-s(\d+)$/, (m) => `Test blanc A1 Junior · série ${m[1]}`],
-  [/^tcf-a1-s(\d+)$/, (m) => `Test blanc A1 · série ${m[1]}`],
-  [/^tcf-a1p-s(\d+)$/, (m) => `Préparation A1 · série ${m[1]}`],
-  [/^tcf-a1-tp([a-z])$/, (m) => `Test blanc A1 tout public · série ${m[1]!.toUpperCase()}`],
-  [/^tcf-a1-sem1$/, () => 'TCF A1.1-A1 scolaire · semestre 1 2024-2025'],
-  [/^tcf-a2j-s(\d+)$/, (m) => `Test blanc A2 Junior · série ${m[1]}`],
-  [/^tcf-a2-s(\d+)$/, (m) => `Test blanc A2 · série ${m[1]}`],
-  [/^tcf-a2-s([a-z])$/, (m) => `Test blanc A2 · série ${m[1]!.toUpperCase()}`],
-  [/^tcf-a2p-s(\d+)$/, (m) => `Préparation A2 · série ${m[1]}`],
-  [/^tcf-ss-a1-s(\d+)$/, (m) => `Soutien scolaire CO A1 · série ${m[1]}`],
-  [/^tcf-ss-a2-s(\d+)$/, (m) => `Soutien scolaire CO A2 · série ${m[1]}`],
-  [/^tcf-ss-b1-s(\d+)$/, (m) => `Soutien scolaire CO B1 · série ${m[1]}`],
-]
+/** Scène de l’exercice ; à défaut, dernière partie du thème (« Test blanc · série 1 · Au marché »). */
+export function tcfScene(ex: TcfExercise): string {
+  const scene = ex.scene?.trim()
+  if (scene) return scene
+  const fromTheme = ex.theme?.split('·').pop()?.trim()
+  return fromTheme || ex.id
+}
 
-/** Libellé d’un exercice dans le sélecteur de banque : source, numéro, thème. */
-export function tcfExerciseLabel(ex: TcfExercise): string {
-  const match = ex.id.match(/^(.*)-(?:co|ce|pe|po)-([^-]+)$/)
-  const prefix = match?.[1] ?? ex.id
-  const found = SOURCES.map(([re, label]) => {
-    const m = prefix.match(re)
-    return m ? label(m) : null
-  }).find((label) => label != null)
-  const source = found ?? prefix
-  const numero = match ? ` · ex. ${match[2]}` : ''
-  return `${source}${numero}${ex.theme ? ` · ${ex.theme}` : ''}`
+/** Libellés du sélecteur : la scène, numérotée quand elle se répète (« À la plage - 2 »). */
+export function tcfExerciseLabels(exercises: readonly TcfExercise[]): Map<string, string> {
+  const totals = new Map<string, number>()
+  for (const ex of exercises) totals.set(tcfScene(ex), (totals.get(tcfScene(ex)) ?? 0) + 1)
+  const seen = new Map<string, number>()
+  const labels = new Map<string, string>()
+  for (const ex of exercises) {
+    const scene = tcfScene(ex)
+    const n = (seen.get(scene) ?? 0) + 1
+    seen.set(scene, n)
+    labels.set(ex.id, (totals.get(scene) ?? 0) > 1 ? `${scene} - ${n}` : scene)
+  }
+  return labels
+}
+
+export type TcfScenarioGroup = {
+  id: string
+  label: string
+  items: Array<{ exercise: TcfExercise; label: string }>
+}
+
+/** Exercices regroupés par scénario (ordre de `TCF_SCENARIOS`), triés par scène. */
+export function tcfScenarioGroups(exercises: readonly TcfExercise[]): TcfScenarioGroup[] {
+  const known = new Set(TCF_SCENARIOS.map((s) => s.id))
+  const scenarioOf = (ex: TcfExercise) => (ex.scenario && known.has(ex.scenario) ? ex.scenario : TCF_SCENARIO_AUTRE.id)
+  const sorted = [...exercises].sort((a, b) => tcfScene(a).localeCompare(tcfScene(b), 'fr'))
+  const labels = tcfExerciseLabels(sorted)
+  return [...TCF_SCENARIOS, TCF_SCENARIO_AUTRE]
+    .map((s) => ({
+      id: s.id,
+      label: tcfScenarioLabel(s.id),
+      items: sorted.filter((ex) => scenarioOf(ex) === s.id).map((exercise) => ({ exercise, label: labels.get(exercise.id)! })),
+    }))
+    .filter((g) => g.items.length > 0)
 }
