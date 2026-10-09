@@ -652,19 +652,15 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
   }
 
-  /** Playlists audio TCM CFR (page active, sinon toutes les feuilles du test). */
+  /** Playlists audio TCM CFR du test entier (ex. 1 nombres + ex. 2 multiplications). */
   function currentTcmCfrAudioPlaylists(): string[][] {
-    const fromSheet = (sheet: (typeof worksheets)[number] | undefined): string[][] => {
-      if (!sheet) return []
-      return sheet.blocks.flatMap((block) =>
+    return worksheets.flatMap((sheet) =>
+      sheet.blocks.flatMap((block) =>
         block.items
           .map((item) => item.audioParts ?? (item.audioSrc ? [item.audioSrc] : []))
           .filter((parts): parts is string[] => parts.length > 0),
-      )
-    }
-    const local = fromSheet(activeSheet)
-    if (local.length > 0) return local
-    return worksheets.flatMap((sheet) => fromSheet(sheet))
+      ),
+    )
   }
 
   async function downloadActiveTcmCfrAudios() {

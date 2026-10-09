@@ -7,6 +7,9 @@ const MESURES_DIR = '/lib/audio/vocabulaire/nombres-mesures'
 
 export const FOIS_AUDIO = `${NOMBRE_DIR}/fois.mp3`
 
+/** Silence de 6 s entre chaque nombre / chaque calcul au téléchargement. */
+export const SILENCE_6S_AUDIO = `${NOMBRE_DIR}/silence-6s.mp3`
+
 export type TcmCfrAudioKind = 'NOMBRE' | 'MULTIPLICATION'
 
 /** Semestre scolaire : 1 = août–décembre, 2 = janvier–juillet. */
@@ -16,19 +19,17 @@ export function tcmCfrSemestre(date = new Date()): 'Semestre-1' | 'Semestre-2' {
 }
 
 /**
- * Nom de fichier au téléchargement, même esprit que TCF :
+ * Nom de fichier au téléchargement :
  * `TCM-CFR_Exercice-1_NOMBRE_Semestre-1.mp3`
- * `TCM-CFR_Exercice-2_MULTIPLICATION_Semestre-2.mp3`
+ * `TCM-CFR_Exercice-2_multiplication_Semestre-2.mp3`
  */
 export function tcmCfrAudioDownloadName(opts: {
   kind: TcmCfrAudioKind
   date?: Date
-  /** Suffixe si plusieurs audios (ex. `_Audio-1`). */
-  suffix?: string
 }): string {
   const exerciseNo = opts.kind === 'MULTIPLICATION' ? 2 : 1
-  const base = `TCM-CFR_Exercice-${exerciseNo}_${opts.kind}_${tcmCfrSemestre(opts.date)}`
-  return `${base}${opts.suffix ?? ''}.mp3`
+  const label = opts.kind === 'MULTIPLICATION' ? 'multiplication' : 'NOMBRE'
+  return `TCM-CFR_Exercice-${exerciseNo}_${label}_${tcmCfrSemestre(opts.date)}.mp3`
 }
 
 /** Déduit NOMBRE / MULTIPLICATION à partir de la playlist (présence de `fois.mp3`). */
@@ -56,6 +57,28 @@ export async function concatMp3(urls: string[]): Promise<Blob> {
   return new Blob([out], { type: 'audio/mpeg' })
 }
 
+/**
+ * Enchaîne plusieurs playlists (un nombre ou un calcul chacune)
+ * avec 6 secondes de silence entre elles.
+ */
+export async function concatPlaylistsWithGap(
+  playlists: readonly (readonly string[])[],
+  gapUrl = SILENCE_6S_AUDIO,
+): Promise<Blob> {
+  const urls: string[] = []
+  for (let i = 0; i < playlists.length; i++) {
+    urls.push(...playlists[i]!)
+    if (i < playlists.length - 1) urls.push(gapUrl)
+  }
+  if (urls.length === 0) return new Blob([], { type: 'audio/mpeg' })
+  if (urls.length === 1) {
+    const res = await fetch(urls[0]!)
+    if (!res.ok) throw new Error(`Audio introuvable : ${urls[0]}`)
+    return res.blob()
+  }
+  return concatMp3(urls)
+}
+
 async function downloadBlob(blob: Blob, filename: string) {
   const objectUrl = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -68,19 +91,36 @@ async function downloadBlob(blob: Blob, filename: string) {
   URL.revokeObjectURL(objectUrl)
 }
 
-/** Télécharge les audios d’une fiche TCM CFR (un fichier par question). */
-export async function downloadTcmCfrAudios(playlists: readonly (readonly string[])[]): Promise<number> {
+/**
+ * Télécharge les audios TCM CFR groupés :
+ * 1 fichier nombres (6 s entre chaque) + 1 fichier multiplications (6 s entre chaque).
+ */
+export async function downloadTcmCfrAudios(
+  playlists: readonly (readonly string[])[],
+): Promise<number> {
   const nonEmpty = playlists.filter((p) => p.length > 0)
   if (nonEmpty.length === 0) return 0
-  const kind = tcmCfrAudioKindFromParts(nonEmpty[0]!)
-  for (let i = 0; i < nonEmpty.length; i++) {
-    const parts = nonEmpty[i]!
-    const blob = parts.length === 1 ? await (await fetch(parts[0]!)).blob() : await concatMp3([...parts])
-    const suffix = nonEmpty.length === 1 ? '' : `_Audio-${i + 1}`
-    await downloadBlob(blob, tcmCfrAudioDownloadName({ kind, suffix }))
-    if (i < nonEmpty.length - 1) await new Promise((r) => setTimeout(r, 120))
+
+  const byKind: Record<TcmCfrAudioKind, string[][]> = {
+    NOMBRE: [],
+    MULTIPLICATION: [],
   }
-  return nonEmpty.length
+  for (const parts of nonEmpty) {
+    byKind[tcmCfrAudioKindFromParts(parts)].push([...parts])
+  }
+
+  let downloaded = 0
+  for (const kind of ['NOMBRE', 'MULTIPLICATION'] as const) {
+    const group = byKind[kind]
+    if (group.length === 0) continue
+    const blob = await concatPlaylistsWithGap(group)
+    await downloadBlob(blob, tcmCfrAudioDownloadName({ kind }))
+    downloaded += 1
+    if (kind === 'NOMBRE' && byKind.MULTIPLICATION.length > 0) {
+      await new Promise((r) => setTimeout(r, 150))
+    }
+  }
+  return downloaded
 }
 
 /** Chemins MP3 à enchaîner pour lire `n` (1–1000). */
