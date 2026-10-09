@@ -986,7 +986,14 @@ export function isDraftPadExercise(typeId: string): boolean {
     typeId === 'tcm-expressions-evaluer' ||
     typeId === 'tcm-equations' ||
     typeId === 'expressions-substituer' ||
-    typeId === 'tcm-priorite-ops'
+    typeId === 'tcm-priorite-ops' ||
+    typeId === 'tcm-cfr-ex14' ||
+    typeId === 'tcm-cfr-ex15' ||
+    typeId === 'tcm-cfr-ex22' ||
+    typeId === 'tcm-cfr-ex23' ||
+    typeId === 'tcm-cfr-ex24' ||
+    typeId === 'tcm-cfr-ex25' ||
+    typeId === 'tcm-cfr-ex26'
   )
 }
 
@@ -1017,7 +1024,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                       : domain === 'tcm-csc'
                         ? 'tcm-csc-a-venir'
                         : domain === 'tcm-cfr'
-                          ? 'tcm-cfr-a-venir'
+                          ? 'tcm-cfr-info'
                           : domain === 'jeux'
                             ? JEUX_LIBRE_TOPIC
                             : domain === 'calligraphie'

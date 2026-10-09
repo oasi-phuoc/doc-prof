@@ -455,7 +455,7 @@ export function ProblemBlock({
         </div>
       </div>
       <div className="problem-response-line">
-        <span className="response-label">Réponse :</span>
+        <span className="response-label">Phrase réponse :</span>
         {show ? (
           <strong className="filled-answer response-value">{item.responseAnswer ?? item.answer}</strong>
         ) : (

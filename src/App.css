@@ -3967,4 +3967,34 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 @container libre (min-width:620px){
   .side-tool-panel.is-libre .tcf-editor>.tcf-field:not(:has(textarea)){grid-column:auto}
 }
+/* —— TCM CFR : dictée audio, symétrie, segments, métro —— */
+.tcm-cfr-audio-dictation{display:flex;flex-direction:column;gap:8px;width:100%}
+.tcm-cfr-audio-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tcm-cfr-audio-btn{
+  border:1px solid var(--line,#c8c4d0);background:#fff;color:var(--ink);font:inherit;font-size:12px;
+  padding:4px 10px;cursor:pointer;border-radius:0
+}
+.tcm-cfr-audio-btn:disabled{opacity:.5;cursor:default}
+.tcm-cfr-symmetry{width:100%}
+.tcm-cfr-symmetry-svg{width:100%;max-width:320px;height:auto;display:block;margin:0 auto}
+.tcm-cfr-grid-line{stroke:#c8c4d0;stroke-width:0.7}
+.tcm-cfr-figure-line{stroke:var(--ink,#222);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tcm-cfr-figure-image{stroke:var(--ink,#222);stroke-width:2;stroke-dasharray:4 3;stroke-linejoin:round;stroke-linecap:round}
+.tcm-cfr-segments{width:100%}
+.tcm-cfr-segment-frame{border:1px solid #c8c4d0;padding:10px 12px;display:flex;flex-direction:column;gap:10px}
+.tcm-cfr-segment-row{display:flex;align-items:center;gap:10px}
+.tcm-cfr-segment-num{font-weight:700;min-width:1.6em}
+.tcm-cfr-segment-line-wrap{flex:1;min-width:0}
+.tcm-cfr-segment-line{height:0;border-top:2.5px solid var(--ink,#222);max-width:100%}
+.tcm-cfr-segment-qcm{margin-top:6px}
+.tcm-cfr-qcm-choices{display:flex;gap:16px;margin-top:4px}
+.tcm-cfr-qcm-choice{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.tcm-cfr-qcm-choice.is-checked{color:var(--purple,#5b3a8c)}
+.tcm-cfr-metro{width:100%}
+.tcm-cfr-metro-svg{width:100%;max-width:100%;height:auto;display:block;margin:0 0 10px}
+.tcm-cfr-metro-cell{fill:none;stroke:#d8d4de;stroke-width:0.6}
+.tcm-cfr-metro-label{font-size:11px;fill:var(--ink,#222);font-weight:600}
+.tcm-cfr-metro-station{font-size:8px;font-weight:700}
+.tcm-cfr-metro-questions{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.tcm-cfr-metro-questions li{margin:0}
 /* End */

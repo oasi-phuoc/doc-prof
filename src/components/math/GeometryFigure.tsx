@@ -15,6 +15,7 @@ const ALL: Figure[] = [
   'cone',
   'sphere',
   'oval',
+  'pentagon',
 ]
 
 function u(dims?: FigureDims) {
@@ -665,6 +666,17 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
         )}
 
         {type === 'oval' && <ellipse cx="130" cy="95" rx="78" ry="48" />}
+
+        {type === 'pentagon' && (
+          <>
+            <polygon points="130,28 210,88 178,168 82,168 50,88" />
+            {d.side != null && (
+              <L x={130} y={178}>
+                {fmt(d.side)} {unit}
+              </L>
+            )}
+          </>
+        )}
 
         {type === 'cone' && (
           <>

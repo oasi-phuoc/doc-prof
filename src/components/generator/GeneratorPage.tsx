@@ -93,6 +93,12 @@ import {
   TCM_DOCUMENT_TITLE,
 } from '@/tcm/test'
 import {
+  buildTcmCfrTestPages,
+  isTcmCfrConsignesType,
+  isTcmCfrDomain,
+  TCM_CFR_DOCUMENT_TITLE,
+} from '@/tcm-cfr/test'
+import {
   defaultCalliPhraseCount,
   defaultCalliWordCount,
   isCalliPhrasesType,
@@ -654,7 +660,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const setAllTcmDraftGrids = (value: boolean) => {
     setPages((current) =>
       current.map((page) => {
-        if (!isTcmDomain(page.domain)) return page
+        if (!isTcmDomain(page.domain) && !isTcmCfrDomain(page.domain)) return page
         let next = page
         pageBlocks(page).forEach((block, bi) => {
           if (!isDraftPadExercise(block.exerciseType)) return
@@ -679,6 +685,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isCalliDomain = activePage.domain === 'calligraphie'
   const isSoutienFr = activePage.domain === 'soutien-fr'
   const isTcm = isTcmDomain(activePage.domain)
+  const isTcmCfr = isTcmCfrDomain(activePage.domain)
+  /** TCM / TCM CFR : test multi-pages packé, UI simplifiée. */
+  const isTcmLike = isTcm || isTcmCfr
   const isTcf = activePage.domain === TCF_DOMAIN
   const tcfNiveau = tcfNiveauFromDifficulty(activeBlock.difficulty)
   const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
@@ -1205,6 +1214,19 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       }))
       return
     }
+    if (isTcmCfrDomain(next)) {
+      setSheetIndex(0)
+      setPages(buildTcmCfrTestPages())
+      setEvalMode(true)
+      setPointsPerQuestion(1)
+      setMode('student')
+      setInstitutional((current) => ({
+        ...current,
+        course: 'Mathématiques',
+        documentTitle: TCM_CFR_DOCUMENT_TITLE,
+      }))
+      return
+    }
     if (next === TCF_DOMAIN) {
       setSheetIndex(0)
       setPages([tcfConsignesPage('A0-A1'), tcfPage(TCF_SLOTS[0]!.typeId, 'A0-A1')])
@@ -1219,7 +1241,10 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       return
     }
     const type = firstTypeFor(next)
-    const leavingTcm = isTcmDomain(activePage.domain) || activePage.domain === TCF_DOMAIN
+    const leavingTcm =
+      isTcmDomain(activePage.domain) ||
+      isTcmCfrDomain(activePage.domain) ||
+      activePage.domain === TCF_DOMAIN
     if (leavingTcm) {
       setSheetIndex(0)
       setPages([{ ...defaultPage(next), ...applyType(type), domain: next }])
@@ -1686,7 +1711,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   }
                 >
                   <span className="tab-number">{tabLabel}</span>
-                  {!isTcm &&
+                  {!isTcmLike &&
                   pages.length > 1 &&
                   !sheet.isContinuation &&
                   (sheet.configIndex ?? index) === pageIndex &&
@@ -1700,7 +1725,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 )
               })}
             </div>
-            {isTcm ? null : (
+            {isTcmLike ? null : (
               <div className="page-structure-actions">
                 <button className="button secondary" type="button" onClick={addPage}>
                   + Page
@@ -1724,7 +1749,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     aria-label={`Exercice ${tabNo}`}
                   >
                     <span className="tab-number">{tabNo}</span>
-                    {!isTcm && pageExerciseBlocks.length > 1 && index === safeBlockIndex ? (
+                    {!isTcmLike && pageExerciseBlocks.length > 1 && index === safeBlockIndex ? (
                       <TabRemoveButton
                         label="Retirer cet exercice"
                         onRemove={() => {
@@ -1767,7 +1792,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     Évaluation
                   </button>
                 </div>
-                {evalMode && !isTcm && (
+                {evalMode && !isTcmLike && (
                   <label>
                     Points par question
                     <input
@@ -1824,7 +1849,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isTcm ? null : (
+              {isTcmLike ? null : (
                 <SelectBox label={isTcf ? 'Compétence' : 'Thème'} value={activeBlock.topic} onChange={changeTopic}>
                   {available.map((topic) => (
                     <option value={topic.id} key={topic.id}>
@@ -1880,7 +1905,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
                 />
               ) : null}
-              {isTcm || (isTcf && typeChoices.length <= 1) ? null : (
+              {isTcmLike || (isTcf && typeChoices.length <= 1) ? null : (
               <SelectBox
                 label={isTcf ? 'Exercice' : 'Type d’exercice'}
                 value={activeBlock.exerciseType}
@@ -2118,7 +2143,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               isGramTheory ||
               isSoutienFr ||
               isTcf ||
-              isTcm ? null : (
+              isTcmLike ? null : (
               <>
               <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
@@ -2603,7 +2628,12 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 ) : null}
               </label>
               )}
-              {(isTcm && !isTcmConsignesType(activeBlock.exerciseType)) || (isTcf && evalMode && !isTcfConsignesType(activeBlock.exerciseType)) ? (
+              {(isTcmLike &&
+                !(
+                  isTcmConsignesType(activeBlock.exerciseType) ||
+                  isTcmCfrConsignesType(activeBlock.exerciseType)
+                )) ||
+              (isTcf && evalMode && !isTcfConsignesType(activeBlock.exerciseType)) ? (
                 <label className="select-shell">
                   <span>Points par question</span>
                   <input
@@ -3212,13 +3242,13 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </p>
                 </div>
               ) : null}
-              {isTcm ? (
+              {isTcmLike ? (
                 <div className="mode-toggle-block">
                   <b>Grilles de calcul</b>
                   <div className="mode-toggle" role="group" aria-label="Grilles de calcul de toute la fiche">
                     {(() => {
                       const draftBlocks = pages.flatMap((page) =>
-                        isTcmDomain(page.domain)
+                        (isTcmDomain(page.domain) || isTcmCfrDomain(page.domain))
                           ? pageBlocks(page).filter((b) => isDraftPadExercise(b.exerciseType))
                           : [],
                       )

@@ -51,6 +51,7 @@ export type Figure =
   | 'cone'
   | 'sphere'
   | 'oval'
+  | 'pentagon'
 
 export type Layout =
   | 'inline'
@@ -64,6 +65,10 @@ export type Layout =
   | 'place-value'
   | 'geo'
   | 'coord'
+  | 'audio-dictation'
+  | 'symmetry-grid'
+  | 'segment-measure'
+  | 'metro-map'
   | 'algebra'
   | 'equation'
   | 'encadrement'
@@ -432,6 +437,27 @@ export type MathItem = {
   convert?: { value: string; from: string; to: string }
   /** Enregistrement à écouter (compréhension orale). */
   audioSrc?: string
+  /** Playlist audio (dictée de nombres / multiplications) — téléchargeable. */
+  audioParts?: string[]
+  /** Figure de symétrie axiale (TCM CFR). */
+  symmetryFigure?: {
+    id: string
+    cols: number
+    rows: number
+    axisX: number
+    side: 'left' | 'right'
+    polylines: Array<Array<{ x: number; y: number }>>
+  }
+  /** Segments à mesurer (TCM CFR). */
+  segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string }>
+  /** Plan de métro (TCM CFR). */
+  metroMap?: {
+    id: string
+    cols: string[]
+    rows: number[]
+    lines: Array<{ id: string; name: string; color: string; cells: string[] }>
+  }
+  metroQuestions?: Array<{ prompt: string; answer: string }>
   /** Mots étiquetés (grammaire en couleur). */
   tokens?: PhraseToken[]
   /** Séquence de pastilles (type 3). */

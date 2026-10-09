@@ -50,7 +50,8 @@ import { isGrammaireTheoryType } from '@/grammaire/types'
 import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
-import { tryGenerateTcmCfrBlock } from '@/tcm-cfr/generate'
+import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
+import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
 import { tryGenerateVocabulaireBlock } from '@/vocabulaire/generate'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
@@ -587,6 +588,8 @@ function generateItems(
 ): MathItem[] {
   const tcm = tryGenerateTcmItems(typeId, count, rng)
   if (tcm) return tcm
+  const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng)
+  if (tcmCfr) return tcmCfr
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count, range)
@@ -1385,12 +1388,12 @@ function buildSingleBlock(
       items: tcmCsc.items,
     }
   }
-  const tcmCfr = tryGenerateTcmCfrBlock(config)
-  if (tcmCfr) {
+  if (isTcmCfrConsignesType(config.exerciseType)) {
+    const items = tryGenerateTcmCfrItems(config.exerciseType, 1, rng) ?? []
     return {
       title: fallbackTitle,
-      instruction: tcmCfr.instruction,
-      items: tcmCfr.items,
+      instruction: type?.instruction ?? 'Lisez les consignes.',
+      items,
     }
   }
   if (config.exerciseType === 'reperage-droites') {
@@ -1532,7 +1535,7 @@ function buildSingleBlock(
 
 /** Page « Informations » d’un test (TCM, TCF) : ni numéro d’exercice ni points. */
 function isInfoPageType(typeId: string): boolean {
-  return typeId === 'tcm-consignes' || isTcfConsignesType(typeId)
+  return typeId === 'tcm-consignes' || isTcmCfrConsignesType(typeId) || isTcfConsignesType(typeId)
 }
 
 export function buildPage(config: PageConfig, seed: number, startExercise = 1): WorksheetPage {

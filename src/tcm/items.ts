@@ -166,9 +166,53 @@ function columnMulDecimalItem(a: number, b: number, result: number, empty: boole
   }
 }
 
-function columnItem(op: ArithOp, a: number, b: number, result: number, empty: boolean): MathItem {
+/**
+ * × 2 chiffres (dizaines) : produits partiels unités + dizaines, comme les × décimales.
+ * `a` peut être décimal : calcul sur l’entier mis à l’échelle.
+ */
+function twoDigitMulItem(a: number, b: number, empty: boolean): MathItem {
+  const places = decimalPlacesOf(a)
+  const scaledA = scaleInt(a, places)
+  const units = b % 10
+  const tens = Math.floor(b / 10)
+  const partialUnits = scaledA * units
+  const partialTens = scaledA * tens * 10
+  const scaledResult = scaledA * b
+  const result = Math.round(a * b * 10 ** places) / 10 ** places
+  const w = Math.max(
+    1,
+    String(scaledA).length,
+    String(b).length,
+    String(partialUnits).length,
+    String(partialTens).length,
+    String(scaledResult).length,
+    places + 1,
+  )
+  return {
+    layout: empty ? 'column-empty' : 'column',
+    prompt: empty ? `${fmt(a)} × ${fmt(b)}` : undefined,
+    op: '×',
+    a,
+    b,
+    result,
+    digitsA: digitsDecimal(a, w - places, places),
+    digitsB: digits(b, w),
+    digitsPartials: [digits(partialUnits, w), digits(partialTens, w)],
+    digitsResult: digitsDecimal(result, w - places, places),
+    carries: computeCarries('×', scaledA, units, w),
+    decimalPlaces: places > 0 ? places : undefined,
+    blankOperands: empty,
+    answer: fmt(result),
+  }
+}
+
+export function columnItem(op: ArithOp, a: number, b: number, result: number, empty: boolean): MathItem {
   if (op === '×' && (decimalPlacesOf(a) > 0 || decimalPlacesOf(b) > 0) && decimalPlacesOf(b) > 0) {
     return columnMulDecimalItem(a, b, result, empty)
+  }
+  // × entier à 2 chiffres (dizaines) : lignes intermédiaires comme les décimales.
+  if (op === '×' && decimalPlacesOf(b) === 0 && Math.round(Math.abs(b)) >= 10) {
+    return twoDigitMulItem(a, Math.round(Math.abs(b)), empty)
   }
   const places =
     op === '×'
@@ -303,7 +347,7 @@ function placeDigitsAtEnd(value: string, width: number, endCol: number): string[
   return row
 }
 
-function divisionColumnItem(dividend: number, divisor: number, empty: boolean): MathItem {
+export function divisionColumnItem(dividend: number, divisor: number, empty: boolean): MathItem {
   const places = Math.max(decimalPlacesOf(dividend), decimalPlacesOf(dividend / divisor))
   const scale = 10 ** places
   const scaledDividend = scaleInt(dividend, places)
@@ -467,7 +511,7 @@ function generateTcmQuatreOpsBatch(rng: Rng): MathItem[] {
 }
 
 /** Force une largeur fixe de chiffres (ex. 4 colonnes pour des 3 chiffres). */
-function withFixedColumnWidth(item: MathItem, width: number): MathItem {
+export function withFixedColumnWidth(item: MathItem, width: number): MathItem {
   return {
     ...item,
     digitsA: padDigitRow(item.digitsA, width),
@@ -482,7 +526,7 @@ function withFixedColumnWidth(item: MathItem, width: number): MathItem {
  * Division posée à largeurs fixes : dividende / travail / reste = `dividendWidth`,
  * quotient = `quotientWidth`. Le reste est aligné sous les unités (dernière colonne).
  */
-function withFixedDivisionWidth(
+export function withFixedDivisionWidth(
   item: MathItem,
   dividendWidth: number,
   quotientWidth: number,
@@ -500,7 +544,7 @@ function withFixedDivisionWidth(
 /** TCM ex. 12 / 19 : toujours 8 lignes sous le dividende (9 avec le dividende). */
 const TCM_DIV_WORK_ROWS = 8
 
-function withFixedDivisionWorkRows(item: MathItem, workRows = TCM_DIV_WORK_ROWS): MathItem {
+export function withFixedDivisionWorkRows(item: MathItem, workRows = TCM_DIV_WORK_ROWS): MathItem {
   const width = Math.max(1, item.digitsA?.length ?? 1)
   const work = item.digitsPartials ?? []
   const n = Math.max(workRows, work.length)
