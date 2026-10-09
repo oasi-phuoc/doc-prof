@@ -3811,6 +3811,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   .workspace:not(.has-libre-panel):not(.has-footer-panel) .result-panel{
     border-radius:0 18px 18px 0
   }
+  /* Mode normal : traits de délimitation à gauche des paramètres et à droite de l’aperçu. */
+  .workspace:not(.has-libre-panel):not(.has-footer-panel) .settings-panel{border-left:1px solid var(--line)}
+  .workspace:not(.has-libre-panel):not(.has-footer-panel) .result-panel{border-right:1px solid var(--line)}
   /* Pied / en-tête : largeur fixe comme les paramètres. */
   .side-tool-panel{
     flex:0 0 300px;width:300px;max-width:300px;
