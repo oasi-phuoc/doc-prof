@@ -207,8 +207,15 @@ export type CoordScene = {
   visibleRows?: number
   /** Afficher l’origine (éditeur / corrigé). */
   showOrigin?: boolean
+  /**
+   * Afficher « 0 » au centre du carré (−1 ; −1) plutôt que « O » sur l’origine.
+   * Nécessite une marge d’au moins `unitSquares` cases sous/à gauche de l’origine.
+   */
+  originZeroInNegCell?: boolean
   /** Pas de la grille (1 ou 0,5). */
   step?: number
+  /** Pas des graduations numériques (en unités maths). */
+  labelStep?: number
   /** Droites colorées (repérage). */
   lines?: CoordLine[]
   /** Traits et polygones à construire (corrigé). */

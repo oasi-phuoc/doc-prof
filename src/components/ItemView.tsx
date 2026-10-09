@@ -143,7 +143,11 @@ export function ItemView({
     item.layout === 'glossary' ||
     item.layout === 'card-grid' ||
     item.layout === 'calligraphy' ||
-    item.layout === 'tcf'
+    item.layout === 'tcf' ||
+    item.layout === 'metro-map' ||
+    item.layout === 'symmetry-grid' ||
+    item.layout === 'segment-measure' ||
+    item.layout === 'audio-dictation'
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${

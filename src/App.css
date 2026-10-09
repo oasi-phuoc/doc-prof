@@ -4072,6 +4072,23 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcm-cfr-metro-cell{fill:none;stroke:#d8d4de;stroke-width:0.6}
 .tcm-cfr-metro-label{font-size:11px;fill:var(--ink,#222);font-weight:600}
 .tcm-cfr-metro-station{font-size:8px;font-weight:700}
-.tcm-cfr-metro-questions{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
-.tcm-cfr-metro-questions li{margin:0}
+.tcm-cfr-metro-questions{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:8px;list-style:decimal}
+.tcm-cfr-metro-questions li{margin:0;display:flex;flex-direction:column;gap:4px}
+.tcm-cfr-metro-questions .prompt-stack-text{margin:0}
+/* TCM CFR ex. 27 : consignes numérotées au-dessus du plan. */
+.coord-block.is-cfr-plan{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.coord-cfr-briefing{width:100%;display:flex;flex-direction:column;gap:6px}
+.coord-cfr-briefing .column-prompt{margin:0}
+.coord-cfr-place-boxes,.coord-cfr-read-boxes{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:2px 0 4px
+}
+.coord-cfr-place-box{
+  border:1px solid var(--ink,#222);padding:3px 10px;font-weight:700;font-variant-numeric:tabular-nums;
+  font-size:12pt;line-height:1.3
+}
+.coord-cfr-read-box{
+  display:inline-flex;align-items:baseline;gap:2px;font-weight:700;font-size:12pt;
+  font-variant-numeric:tabular-nums
+}
+.coord-cfr-read-box .answer-line-field.compact{min-width:2.2em;width:2.2em}
 /* End */

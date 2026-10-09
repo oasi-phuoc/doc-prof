@@ -61,6 +61,6 @@ export const TCM_CFR_EXERCISE_TYPES: ExerciseType[] = [
   t('tcm-cfr-ex24', 'tcm-cfr-test', '24 — Triangle (décimaux)', 'Périmètre et aire d’un triangle (décimaux).', 'Calculez le périmètre et l’aire.', 1),
   t('tcm-cfr-ex25', 'tcm-cfr-test', '25 — Côté du carré', 'Retrouver le côté à partir de l’aire.', 'Trouvez la longueur du côté.', 1),
   t('tcm-cfr-ex26', 'tcm-cfr-test', '26 — Côté du rectangle', 'Retrouver un côté à partir de l’aire.', 'Trouvez la longueur du côté manquant.', 1),
-  t('tcm-cfr-ex27', 'tcm-cfr-test', '27 — Repérage (cadran I)', 'Graduer, placer et lire des points (quadrant I).', 'Travaillez sur le plan.', 1),
+  t('tcm-cfr-ex27', 'tcm-cfr-test', '27 — Repérage (cadran I)', 'Graduer, placer et lire des points (quadrant I).', '', 1),
   t('tcm-cfr-ex28', 'tcm-cfr-test', '28 — Plan de métro', 'Lire un plan de métro (coordonnées).', 'Répondez aux questions. Écrivez uniquement les coordonnées.', 1),
 ]

@@ -185,13 +185,65 @@ export function CoordBlock({
                 showCoord: Boolean(mark.given || show),
               })),
             }
-          : scene
+          : {
+              ...scene,
+              // Corrigé : montrer les graduations même si l’élève doit les tracer.
+              hideAxisLabels: show ? false : scene.hideAxisLabels,
+              showOrigin: Boolean(scene.showOrigin || (show && scene.originZeroInNegCell)),
+              marks: scene.marks.filter((mark) => show || mark.reveal !== 'answer'),
+            }
+  const promptAbove = Boolean(scene?.variant === 'axes' && item.prompt && scene.hideAxisLabels)
+  const placeList = questions.filter((q) => /Placez|placez/.test(q.prompt))
+  const readList = questions.filter((q) => /Écrivez|coordonnées/.test(q.prompt) && !/Placez|placez/.test(q.prompt))
+  const useCfrPlan = promptAbove && (placeList.length > 0 || readList.length > 0)
   return (
     <div
       className={`coord-block${scene ? ' has-scene' : ''}${hasLines || isConstruct ? ' has-lines' : ''}${
         (hasLines || isConstruct) && questions.length >= 7 ? ' is-dense' : ''
-      }${scene ? ' is-centered' : ''}`}
+      }${scene ? ' is-centered' : ''}${useCfrPlan ? ' is-cfr-plan' : ''}`}
     >
+      {useCfrPlan ? (
+        <div className="coord-cfr-briefing">
+          <p className="column-prompt">1. Graduez et nommez les axes du plan.</p>
+          <p className="column-prompt">2. Placez les points suivants sur le plan.</p>
+          <div className="coord-cfr-place-boxes">
+            {placeList.map((q, i) => {
+              const m = q.prompt.match(/([A-Z])\s*\(([^)]+)\)/i)
+              const label = m?.[1] ?? String.fromCharCode(65 + i)
+              const coords = m?.[2] ?? q.answer.replace(/[()]/g, '')
+              return (
+                <span className="coord-cfr-place-box" key={`place-${label}-${i}`}>
+                  {label}({coords.trim()})
+                </span>
+              )
+            })}
+          </div>
+          <p className="column-prompt">3. Écrivez les coordonnées des points suivants.</p>
+          <div className="coord-cfr-read-boxes">
+            {readList.map((q, i) => {
+              const m = q.prompt.match(/point\s+([A-Z])/i)
+              const label = m?.[1] ?? q.prompt.trim().slice(-1)
+              return (
+                <span className="coord-cfr-read-box" key={`read-${label}-${i}`}>
+                  {label}({' '}
+                  {show ? (
+                    <strong className="filled-answer">{q.answer.replace(/[()]/g, '').split(';')[0]?.trim()}</strong>
+                  ) : (
+                    <span className="answer-line-field compact">{'\u00a0'}</span>
+                  )}
+                  {' ; '}
+                  {show ? (
+                    <strong className="filled-answer">{q.answer.replace(/[()]/g, '').split(';')[1]?.trim()}</strong>
+                  ) : (
+                    <span className="answer-line-field compact">{'\u00a0'}</span>
+                  )}
+                  {' )'}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      ) : null}
       <CoordGrid
         point={item.point}
         pointImage={item.pointImage}
@@ -214,7 +266,7 @@ export function CoordBlock({
         onPlaceOrigin={coordEdit?.onPlaceOrigin}
         onRemove={coordEdit?.onRemove}
       />
-      {columns || questions.length > 0 || (!isConstruct && Boolean(item.prompt || item.answer)) ? (
+      {useCfrPlan ? null : columns || questions.length > 0 || (!isConstruct && Boolean(item.prompt || item.answer)) ? (
       <div className="coord-side">
         {columns ? (
           <div className="coord-transform-cols">

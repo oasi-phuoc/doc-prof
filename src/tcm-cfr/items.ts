@@ -303,15 +303,36 @@ const FRACTION_WORDS: Array<{ term: string; n: number; d: number }> = [
   { term: 'sept dixièmes', n: 7, d: 10 },
 ]
 
-/** Ex. 11 — termes → fraction verticale. */
+/** Ex. 11 — termes → fraction verticale (numérateurs et dénominateurs tous distincts). */
 function genEx11(rng: Rng, count: number): MathItem[] {
-  return shuffle(rng, FRACTION_WORDS)
-    .slice(0, Math.max(1, count))
-    .map(({ term, n, d }) => ({
-      layout: 'inline' as const,
-      prompt: `${term} =`,
-      answer: `${n}/${d}`,
-    }))
+  const need = Math.max(1, count)
+  const pool = shuffle(rng, FRACTION_WORDS)
+  const picked: typeof FRACTION_WORDS = []
+  const usedN = new Set<number>()
+  const usedD = new Set<number>()
+  for (const entry of pool) {
+    if (picked.length >= need) break
+    if (usedN.has(entry.n) || usedD.has(entry.d)) continue
+    usedN.add(entry.n)
+    usedD.add(entry.d)
+    picked.push(entry)
+  }
+  // Repli si le pool ne suffit pas (ne devrait pas arriver avec count ≤ 4).
+  for (const entry of pool) {
+    if (picked.length >= need) break
+    if (picked.some((p) => p.term === entry.term)) continue
+    if (usedN.has(entry.n) && usedD.has(entry.d)) continue
+    if (!usedN.has(entry.n) && !usedD.has(entry.d)) {
+      usedN.add(entry.n)
+      usedD.add(entry.d)
+      picked.push(entry)
+    }
+  }
+  return picked.map(({ term, n, d }) => ({
+    layout: 'inline' as const,
+    prompt: `${term} =`,
+    answer: `${n}/${d}`,
+  }))
 }
 
 /** Ex. 12 / 13 — formes simples distinctes. */
@@ -1144,47 +1165,81 @@ function genEx26(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 27 — cadran I : grille 20×20 visible, axes prolongés à 22 avec flèches. */
+/** Ex. 27 — cadran I : 1 u/case ou 1 u/2 cases ; consignes numérotées ; 0 en (−1;−1). */
 function genEx27(rng: Rng): MathItem[] {
-  const ptsPlace: Array<{ x: number; y: number; label: string }> = []
-  const ptsRead: Array<{ x: number; y: number; label: string }> = []
+  const unitSquares = rng() < 0.5 ? 1 : 2
+  // Marge d’une unité (carré (−1;−1) pour le « 0 ») + 20 cases visibles + 2 pour les flèches.
+  const originCol = unitSquares
+  const originRow = unitSquares
+  const visibleCells = 20
+  const positiveCells = visibleCells - unitSquares
+  const maxUnit = Math.floor(positiveCells / unitSquares)
+  const cols = 22
+  const rows = 22
+  // Graduation : un trait tous les 2 carrés → 2 u si 1 u/case, 1 u si 1 u/2 cases.
+  const labelStep = unitSquares === 1 ? 2 : 1
+
+  const placeLetters = shuffle(rng, 'ABCDEGHJKLMNPQRST'.split('')).slice(0, 3)
+  const readLetters = shuffle(
+    rng,
+    'ABCDEGHJKLMNPQRSTUVWXYZ'.split('').filter((l) => !placeLetters.includes(l)),
+  ).slice(0, 3)
+
+  type Pt = { x: number; y: number; label: string }
   const used = new Set<string>()
-  const take = (bag: typeof ptsPlace, label: string) => {
-    let x = int(rng, 1, 18)
-    let y = int(rng, 1, 18)
+  const take = (label: string, onAxis: boolean): Pt => {
+    let x = 0
+    let y = 0
     let g = 0
-    while (used.has(`${x},${y}`) && g < 40) {
-      x = int(rng, 1, 18)
-      y = int(rng, 1, 18)
+    do {
+      if (onAxis) {
+        if (rng() < 0.5) {
+          x = int(rng, 1, maxUnit)
+          y = 0
+        } else {
+          x = 0
+          y = int(rng, 1, maxUnit)
+        }
+      } else {
+        x = int(rng, 1, maxUnit)
+        y = int(rng, 1, maxUnit)
+      }
       g++
-    }
+    } while (used.has(`${x},${y}`) && g < 60)
     used.add(`${x},${y}`)
-    bag.push({ x, y, label })
+    return { x, y, label }
   }
-  ;['A', 'B', 'C'].forEach((l) => take(ptsPlace, l))
-  ;['D', 'E', 'F'].forEach((l) => take(ptsRead, l))
+
+  const allLabels = [...placeLetters, ...readLetters]
+  const axisIndex = int(rng, 0, allLabels.length - 1)
+  const ptsPlace: Pt[] = placeLetters.map((label, i) => take(label, i === axisIndex))
+  const ptsRead: Pt[] = readLetters.map((label, i) =>
+    take(label, placeLetters.length + i === axisIndex),
+  )
+
   return [
     {
       layout: 'coord',
-      prompt:
-        '1. Graduez et nommez les axes sur le plan.\n2. Placez les points suivants sur le plan.\n3. Écrivez les coordonnées des points suivants.',
+      prompt: 'cfr-plan',
       coordScene: {
         variant: 'axes',
-        cols: 22,
-        rows: 22,
-        visibleCols: 20,
-        visibleRows: 20,
+        cols,
+        rows,
+        visibleCols: visibleCells,
+        visibleRows: visibleCells,
         axis: 'numeric',
-        rangeX: 22,
-        rangeY: 22,
-        originCol: 0,
-        originRow: 0,
+        rangeX: maxUnit + 1,
+        rangeY: maxUnit + 1,
+        originCol,
+        originRow,
         hideAxes: false,
         hideAxisLabels: true,
         axisArrows: true,
         showOrigin: true,
+        originZeroInNegCell: true,
         cellMm: 6,
-        unitSquares: 1,
+        unitSquares,
+        labelStep,
         marks: [
           ...ptsPlace.map((p) => ({
             x: p.x,
@@ -1204,7 +1259,7 @@ function genEx27(rng: Rng): MathItem[] {
       },
       coordQuestions: [
         ...ptsPlace.map((p) => ({
-          prompt: `Placez le point ${p.label}(${p.x} ; ${p.y}).`,
+          prompt: `Placez ${p.label}(${p.x} ; ${p.y})`,
           answer: `(${p.x} ; ${p.y})`,
           reply: 'pair' as const,
         })),
@@ -1226,7 +1281,6 @@ function genEx28(rng: Rng): MathItem[] {
   return [
     {
       layout: 'metro-map' as const,
-      prompt: 'Répondez aux questions. Écrivez uniquement les coordonnées.',
       metroMap: map,
       metroQuestions: questions,
       answer: questions.map((q) => q.answer).join(' ; '),

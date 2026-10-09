@@ -1,7 +1,7 @@
 /**
  * Figures de symétrie axiale (axe vertical) pour TCM CFR.
  * Quadrillage 20 × 10 cases, axe au milieu (x = 10), figure d’un seul côté.
- * Traits d’une case d’épaisseur (escaliers, lettres).
+ * Traits d’une case d’épaisseur (lettres).
  */
 import { pick, type Rng } from '@/math/rng'
 
@@ -35,29 +35,6 @@ function T(
  * Toutes définies à gauche de l’axe, sans le toucher (x max ≤ 9).
  */
 export const SYMMETRY_TEMPLATES: readonly SymmetryTemplate[] = [
-  // Escaliers (1 case)
-  T('escaliers', 'left', [
-    [
-      { x: 1, y: 1 },
-      { x: 2, y: 1 },
-      { x: 2, y: 2 },
-      { x: 3, y: 2 },
-      { x: 3, y: 3 },
-      { x: 4, y: 3 },
-      { x: 4, y: 4 },
-      { x: 5, y: 4 },
-      { x: 5, y: 5 },
-      { x: 6, y: 5 },
-      { x: 6, y: 6 },
-      { x: 7, y: 6 },
-      { x: 7, y: 7 },
-      { x: 8, y: 7 },
-      { x: 8, y: 8 },
-      { x: 9, y: 8 },
-      { x: 9, y: 9 },
-    ],
-  ]),
-
   // Lettre E (contour 1 case)
   T('lettre-e', 'left', [
     [

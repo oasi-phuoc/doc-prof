@@ -192,6 +192,55 @@ function cellCenter(
   }
 }
 
+/** Décalage d’étiquette pour éviter les chevauchements (ordre de priorité). */
+function metroLabelOffsets(
+  map: NonNullable<MathItem['metroMap']>,
+  width: number,
+  height: number,
+  pad: number,
+): Map<string, { dx: number; dy: number; boxW: number }> {
+  const placed: Array<{ id: string; x: number; y: number; w: number; h: number }> = []
+  const out = new Map<string, { dx: number; dy: number; boxW: number }>()
+  const candidates = [
+    { dx: 0, dy: -16 },
+    { dx: 0, dy: 14 },
+    { dx: 22, dy: -4 },
+    { dx: -22, dy: -4 },
+    { dx: 18, dy: 12 },
+    { dx: -18, dy: 12 },
+    { dx: 0, dy: -28 },
+    { dx: 0, dy: 26 },
+  ]
+  for (const line of map.lines) {
+    const anchor = cellCenter(line.cells[0]!, map.cols, map.rows, width, height, pad)
+    const boxW = Math.max(40, Math.min(72, 8 + line.name.length * 5.2))
+    const boxH = 13
+    let best = candidates[0]!
+    for (const cand of candidates) {
+      const x = anchor.x + cand.dx
+      const y = anchor.y + cand.dy
+      const box = { x: x - boxW / 2, y: y - boxH / 2, w: boxW, h: boxH }
+      const hits = placed.some(
+        (p) =>
+          box.x < p.x + p.w + 2 &&
+          box.x + box.w + 2 > p.x &&
+          box.y < p.y + p.h + 2 &&
+          box.y + box.h + 2 > p.y,
+      )
+      if (!hits) {
+        best = cand
+        placed.push({ id: line.id, ...box })
+        break
+      }
+      if (cand === candidates[candidates.length - 1]) {
+        placed.push({ id: line.id, x: box.x, y: box.y, w: box.w, h: box.h })
+      }
+    }
+    out.set(line.id, { ...best, boxW })
+  }
+  return out
+}
+
 export function MetroMapBlock({
   item,
   mode,
@@ -206,10 +255,10 @@ export function MetroMapBlock({
   const width = 420
   const height = 280
   const pad = 28
+  const labelPos = metroLabelOffsets(map, width, height, pad)
 
   return (
     <div className="tcm-cfr-metro">
-      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
       <svg className="tcm-cfr-metro-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Plan de métro">
         {/* Grille */}
         {map.cols.map((col, ci) => {
@@ -247,7 +296,10 @@ export function MetroMapBlock({
         {map.lines.map((line) => {
           const pts = line.cells.map((c) => cellCenter(c, map.cols, map.rows, width, height, pad))
           const d = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ')
-          const labelAt = pts[0]!
+          const anchor = pts[0]!
+          const off = labelPos.get(line.id) ?? { dx: 0, dy: -16, boxW: 56 }
+          const lx = anchor.x + off.dx
+          const ly = anchor.y + off.dy
           return (
             <g key={line.id}>
               <path d={d} fill="none" stroke={line.color} strokeWidth={4} strokeLinejoin="round" strokeLinecap="round" />
@@ -255,16 +307,16 @@ export function MetroMapBlock({
                 <circle key={`${line.id}-n${i}`} cx={p.x} cy={p.y} r={3.5} fill={line.color} stroke="#fff" strokeWidth={1} />
               ))}
               <rect
-                x={labelAt.x - 28}
-                y={labelAt.y - 18}
-                width={56}
-                height={14}
+                x={lx - off.boxW / 2}
+                y={ly - 7}
+                width={off.boxW}
+                height={13}
                 rx={2}
                 fill="#fff"
                 stroke={line.color}
                 strokeWidth={1.2}
               />
-              <text x={labelAt.x} y={labelAt.y - 7} textAnchor="middle" className="tcm-cfr-metro-station" fill={line.color}>
+              <text x={lx} y={ly + 3} textAnchor="middle" className="tcm-cfr-metro-station" fill={line.color}>
                 {line.name}
               </text>
             </g>

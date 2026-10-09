@@ -386,8 +386,8 @@ function AxesScene({
   const mathAtRow = (row: number) => Math.round(((row - originRow) / unit) * 1000) / 1000
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
   const fineN = scene.fineGrid ? 5 : 0
-  const labelStepX = rangeX >= 20 ? 4 : rangeX >= 12 ? 2 : 1
-  const labelStepY = rangeY >= 20 ? 4 : rangeY >= 12 ? 2 : 1
+  const labelStepX = scene.labelStep ?? (rangeX >= 20 ? 4 : rangeX >= 12 ? 2 : 1)
+  const labelStepY = scene.labelStep ?? (rangeY >= 20 ? 4 : rangeY >= 12 ? 2 : 1)
   const dashScale = cellMm / 5
   const tickX = Array.from({ length: cols + 1 }, (_, col) => mathAtCol(col)).filter(
     (v) => Number.isInteger(v) && v !== 0 && v % labelStepX === 0 && Number.isInteger(v / step),
@@ -516,23 +516,37 @@ function AxesScene({
       ) : null}
       {showOrigin ? (
         <g className="coord-origin">
-          <line
-            x1={to(0, 0).cx - cellMm * 0.45}
-            y1={to(0, 0).cy}
-            x2={to(0, 0).cx + cellMm * 0.45}
-            y2={to(0, 0).cy}
-            className="origin-mark"
-          />
-          <line
-            x1={to(0, 0).cx}
-            y1={to(0, 0).cy - cellMm * 0.45}
-            x2={to(0, 0).cx}
-            y2={to(0, 0).cy + cellMm * 0.45}
-            className="origin-mark"
-          />
-          <text x={to(0, 0).cx + 1.5} y={to(0, 0).cy - 1.4} className="origin-label" fontSize={3.4}>
-            O
-          </text>
+          {scene.originZeroInNegCell ? (
+            <text
+              x={to(-0.5, -0.5).cx}
+              y={to(-0.5, -0.5).cy + 1.1}
+              className="origin-label"
+              textAnchor="middle"
+              fontSize={3.4}
+            >
+              0
+            </text>
+          ) : (
+            <>
+              <line
+                x1={to(0, 0).cx - cellMm * 0.45}
+                y1={to(0, 0).cy}
+                x2={to(0, 0).cx + cellMm * 0.45}
+                y2={to(0, 0).cy}
+                className="origin-mark"
+              />
+              <line
+                x1={to(0, 0).cx}
+                y1={to(0, 0).cy - cellMm * 0.45}
+                x2={to(0, 0).cx}
+                y2={to(0, 0).cy + cellMm * 0.45}
+                className="origin-mark"
+              />
+              <text x={to(0, 0).cx + 1.5} y={to(0, 0).cy - 1.4} className="origin-label" fontSize={3.4}>
+                O
+              </text>
+            </>
+          )}
         </g>
       ) : null}
       {(scene.lines ?? []).map((line) => {
