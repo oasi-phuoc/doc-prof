@@ -3667,14 +3667,46 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-po-questions{margin:0;padding-left:1.2em;font-weight:600}
 .tcf-po-images{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .tcf-po-images .tcf-image{height:24mm}
+.tcf-trois-themes{gap:10px}
+.tcf-po-theme-block{display:flex;flex-direction:column;gap:4px}
+.tcf-trois-themes .tcf-po-images .tcf-image{height:30mm}
+.tcf-exemples{margin:2px 0 0;padding:4px 10px 4px 2em;font-size:.88em}
+.tcf-entretien-questions{columns:2;column-gap:10mm}
+.tcf-interaction .tcf-text{margin:2px 0}
+/* PO A0-A1 : 4 images en chronologie décalée (1 haut gauche, 2 droite, 3 gauche, 4 bas droite) */
+.tcf-timeline{list-style:none;margin:4px 0 6px;padding:0;display:grid;grid-template-columns:repeat(2,62mm);grid-template-rows:repeat(5,24mm);column-gap:8mm;justify-content:center}
+.tcf-timeline-step{position:relative;grid-row:span 2}
+.tcf-timeline-step:nth-child(1){grid-area:1/1/3/2}
+.tcf-timeline-step:nth-child(2){grid-area:2/2/4/3}
+.tcf-timeline-step:nth-child(3){grid-area:3/1/5/2}
+.tcf-timeline-step:nth-child(4){grid-area:4/2/6/3}
+.tcf-timeline-step .tcf-image{height:46mm;object-fit:cover;border:1px solid var(--ink)}
+.tcf-timeline.is-compact{grid-template-columns:repeat(2,46mm);grid-template-rows:repeat(5,17.5mm)}
+.tcf-timeline.is-compact .tcf-timeline-step .tcf-image{height:34.5mm}
+.tcf-timeline-num{position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:grid;place-items:center;font-weight:800;font-size:10pt}
+/* PE : échange de messages (bulles), cadre téléphone, e-mail à écrire */
+.tcf-chat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.tcf-chat-row{display:flex;flex-direction:column;max-width:72%}
+.tcf-chat-row.is-examinateur{align-self:flex-start;align-items:flex-start}
+.tcf-chat-row.is-eleve{align-self:flex-end;align-items:flex-end;width:72%}
+.tcf-chat-name{font-size:.78em;font-weight:700;color:var(--muted);margin:0 6px 1px}
+.tcf-chat-bubble{padding:6px 12px;border:1.5px solid var(--purple);line-height:1.35}
+.tcf-chat-row.is-examinateur .tcf-chat-bubble{border-radius:14px 14px 14px 3px;background:var(--lavender)}
+.tcf-chat-row.is-eleve .tcf-chat-bubble{box-sizing:border-box;width:100%;border-radius:14px 14px 3px 14px;background:#fff;display:flex;flex-direction:column;gap:0}
+.tcf-chat-line{display:block;height:8mm;border-bottom:1px solid var(--purple)}
+.tcf-chat-answer{font-weight:600;color:var(--purple)}
+.tcf-phone{position:relative;align-self:center;width:105mm;box-sizing:border-box;padding:9mm 5mm 12mm;border:2px solid var(--ink);border-radius:9mm}
+.tcf-phone-speaker{position:absolute;top:3.5mm;left:50%;width:16mm;height:1.6mm;margin-left:-8mm;border:1px solid var(--ink);border-radius:1mm}
+.tcf-phone-button{position:absolute;bottom:3mm;left:50%;width:7mm;height:7mm;margin-left:-3.5mm;border:1px solid var(--ink);border-radius:50%}
+.tcf-phone-screen{padding:2mm 4mm;border:1px solid var(--ink);border-radius:2mm}
+.tcf-email.is-compose .tcf-email-body{padding:2px 10px 6px}
 
 /* —— TCF : page 1 Informations (icônes en couleur du thème) —— */
 .tcf-info{display:flex;flex-direction:column;gap:10px}
 .tcf-info-lead{margin:4px 0 0;font-weight:700}
 .tcf-info-parties{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .tcf-info-partie{display:flex;align-items:flex-start;gap:14px}
-.tcf-competence-icon{flex:0 0 auto;display:block;width:15mm;height:15mm;color:var(--purple)}
-.tcf-competence-icon svg{display:block;width:100%;height:100%}
+.tcf-competence-icon{flex:0 0 auto;display:block;width:15mm;height:15mm;object-fit:contain}
 .tcf-info-partie-title{margin:0 0 2px;font-size:1.05em}
 .tcf-info-partie-title b{color:var(--purple)}
 .tcf-info-partie-text{margin:0;text-align:justify;line-height:1.35}
@@ -3702,12 +3734,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-errors{color:var(--red)}
 .tcf-warnings{color:var(--yellow)}
 .tcf-ok{margin:0;font-size:12px;color:var(--green);font-weight:600}
-.tcf-chrono{display:flex;flex-direction:column;gap:6px}
-.tcf-chrono-run{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.tcf-chrono-time{font-variant-numeric:tabular-nums;font-size:20px;font-weight:800}
-.tcf-chrono-time.is-done{color:var(--red)}
 @media print{
   .tcf-sms-bubble{background:#fff!important}
+  .tcf-chat-row.is-examinateur .tcf-chat-bubble{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .tcf-images-cocher li.is-correct,.tcf-images-cocher li.is-wrong{border-color:#000!important}
 }
 
@@ -3840,4 +3869,31 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .libre-item-num{font-size:12px;font-weight:700;color:var(--ink)}
 .libre-options{display:flex;flex-direction:column;gap:6px}
 .libre-options>b{font-size:12px;color:var(--ink)}
+/* Mode libre (panneau de droite) : les champs suivent la largeur disponible.
+   Listes de questions en grille auto (2, 3… colonnes), champs côte à côte s’il y a la place. */
+.side-tool-panel.is-libre .side-tool-panel-body{container-type:inline-size;container-name:libre}
+.side-tool-panel.is-libre :is(.libre-item-list,.phrase-libre-list,.calli-fields,.tcf-choix-list){
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px 12px;align-items:start
+}
+.side-tool-panel.is-libre .phrase-libre-list{max-height:none;overflow:visible}
+.side-tool-panel.is-libre .libre-item-card{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;align-items:end
+}
+.side-tool-panel.is-libre .libre-item-card>.libre-item-num,
+.side-tool-panel.is-libre .libre-item-card>.libre-options{grid-column:1 / -1}
+.side-tool-panel.is-libre .libre-options{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px 8px
+}
+.side-tool-panel.is-libre .libre-options>b{grid-column:1 / -1}
+.side-tool-panel.is-libre .tcf-editor{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px 12px;align-items:start
+}
+.side-tool-panel.is-libre .tcf-editor>:not(.tcf-question-editor){grid-column:1 / -1}
+.side-tool-panel.is-libre .tcf-row>.tcf-field{flex:1 1 200px}
+.side-tool-panel.is-libre .number-libre-fields{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.side-tool-panel.is-libre .libre-textarea,
+.side-tool-panel.is-libre .tcf-textarea{max-width:900px}
+@container libre (min-width:620px){
+  .side-tool-panel.is-libre .tcf-editor>.tcf-field:not(:has(textarea)){grid-column:auto}
+}
 /* End */

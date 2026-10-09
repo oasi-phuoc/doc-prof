@@ -1,5 +1,59 @@
-import { TCF_SCENARIOS, TCF_SCENARIO_AUTRE, tcfScenarioLabel } from './catalog'
-import type { TcfExercise } from './types'
+import { TCF_SCENARIOS, TCF_SCENARIO_AUTRE } from './catalog'
+import type { TcfCompetence, TcfExercise } from './types'
+
+type TcfGroup = { id: string; label: string }
+
+/** PE : thèmes d’exercices (type de texte à produire). */
+export const TCF_PE_GROUPS: readonly TcfGroup[] = [
+  { id: 'formulaire', label: 'Formulaire' },
+  { id: 'dialogue', label: 'Dialogue' },
+  { id: 'message', label: 'Message' },
+  { id: 'email', label: 'E-mail' },
+]
+
+/** PO : parties de l’épreuve orale (dans l’ordre du test). */
+export const TCF_PO_GROUPS: readonly TcfGroup[] = [
+  { id: 'entretien', label: 'Entretien dirigé' },
+  { id: 'questions', label: 'Poser des questions' },
+  { id: 'image', label: 'Image et interaction' },
+  { id: 'interaction', label: 'Jeux de rôle' },
+]
+
+/** Groupes du sélecteur : thèmes (PE), parties (PO) ou scénarios (CO, CE). */
+export function tcfGroups(competence: TcfCompetence): readonly TcfGroup[] {
+  if (competence === 'PE') return TCF_PE_GROUPS
+  if (competence === 'PO') return TCF_PO_GROUPS
+  return [...TCF_SCENARIOS, TCF_SCENARIO_AUTRE]
+}
+
+export function tcfGroupId(ex: TcfExercise): string {
+  switch (ex.type_exercice) {
+    case 'formulaire':
+      return 'formulaire'
+    case 'dialogue_a_completer':
+      return 'dialogue'
+    case 'email_reponse':
+      return 'email'
+    case 'question_texte':
+      return ex.support.email ? 'email' : 'message'
+    case 'sms_reponse':
+    case 'image_question':
+      return 'message'
+    case 'entretien':
+      return 'entretien'
+    case 'trois_themes':
+    case 'mots_theme':
+      return 'questions'
+    case 'image_interaction':
+    case 'image_unique':
+    case 'sequence_4_images':
+      return 'image'
+    case 'dialogue':
+      return 'interaction'
+    default:
+      return ex.scenario && TCF_SCENARIOS.some((s) => s.id === ex.scenario) ? ex.scenario : TCF_SCENARIO_AUTRE.id
+  }
+}
 
 /** Scène de l’exercice ; à défaut, dernière partie du thème (« Test blanc · série 1 · Au marché »). */
 export function tcfScene(ex: TcfExercise): string {
@@ -30,17 +84,17 @@ export type TcfScenarioGroup = {
   items: Array<{ exercise: TcfExercise; label: string }>
 }
 
-/** Exercices regroupés par scénario (ordre de `TCF_SCENARIOS`), triés par scène. */
+/** Exercices regroupés (thème PE, partie PO, scénario CO/CE), triés par scène. */
 export function tcfScenarioGroups(exercises: readonly TcfExercise[]): TcfScenarioGroup[] {
-  const known = new Set(TCF_SCENARIOS.map((s) => s.id))
-  const scenarioOf = (ex: TcfExercise) => (ex.scenario && known.has(ex.scenario) ? ex.scenario : TCF_SCENARIO_AUTRE.id)
+  const competence = exercises[0]?.competence
+  if (!competence) return []
   const sorted = [...exercises].sort((a, b) => tcfScene(a).localeCompare(tcfScene(b), 'fr'))
   const labels = tcfExerciseLabels(sorted)
-  return [...TCF_SCENARIOS, TCF_SCENARIO_AUTRE]
-    .map((s) => ({
-      id: s.id,
-      label: tcfScenarioLabel(s.id),
-      items: sorted.filter((ex) => scenarioOf(ex) === s.id).map((exercise) => ({ exercise, label: labels.get(exercise.id)! })),
+  return tcfGroups(competence)
+    .map((g) => ({
+      id: g.id,
+      label: g.label,
+      items: sorted.filter((ex) => tcfGroupId(ex) === g.id).map((exercise) => ({ exercise, label: labels.get(exercise.id)! })),
     }))
     .filter((g) => g.items.length > 0)
 }

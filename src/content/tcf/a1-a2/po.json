@@ -1,16 +1,2425 @@
 [
   {
+    "id": "tcf-a1a2-po-entretien",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "entretien",
+    "theme": "Entretien dirigé",
+    "scene": "Entretien dirigé",
+    "support": {
+      "questions": [
+        "Bonjour ! Comment vous appelez-vous ? Quel est votre nom de famille ?",
+        "Quelle est votre nationalité ? Parlez-moi de votre pays.",
+        "Depuis quand habitez-vous en Suisse ?",
+        "Où habitez-vous ? Décrivez votre logement.",
+        "Avec qui vivez-vous ? Parlez-moi de votre famille.",
+        "Quelles langues parlez-vous ? Pourquoi apprenez-vous le français ?",
+        "Qu’est-ce que vous faites dans la vie ? Quel métier avez-vous fait avant ?",
+        "Comment se passe une journée normale pour vous ?",
+        "Qu’avez-vous fait le week-end dernier ?",
+        "Quels sont vos loisirs ?",
+        "Quels sont vos projets pour l’année prochaine ?"
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-trois-themes",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "trois_themes",
+    "theme": "Poser des questions",
+    "scene": "Trois thèmes au hasard",
+    "support": {
+      "themes": [
+        {
+          "theme": "L’école",
+          "images": [
+            "/lib/images/vocabulaire/ecole-bureau/cartable.webp",
+            "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp",
+            "/lib/images/vocabulaire/ecole-bureau/cantine.webp",
+            "/lib/images/vocabulaire/ecole-bureau/devoirs.webp",
+            "/lib/images/vocabulaire/ecole-bureau/trousse.webp",
+            "/lib/images/vocabulaire/ecole-bureau/élève.webp",
+            "/lib/images/vocabulaire/ecole-bureau/tableau.webp",
+            "/lib/images/vocabulaire/ecole-bureau/examen.webp"
+          ],
+          "exemples_questions": [
+            "Comment s’appelle votre école ?",
+            "À quelle heure commencent les cours ?",
+            "Qu’est-ce que vous faites pendant la récréation ?",
+            "Combien d’heures de devoirs avez-vous par semaine ?",
+            "Quelle matière aimez-vous le moins et pourquoi ?"
+          ]
+        },
+        {
+          "theme": "Les loisirs",
+          "images": [
+            "/lib/images/vocabulaire/loisirs/lecture.webp",
+            "/lib/images/vocabulaire/loisirs/dessin.webp",
+            "/lib/images/vocabulaire/loisirs/jeux-vidéo.webp",
+            "/lib/images/vocabulaire/loisirs/promenade.webp",
+            "/lib/images/vocabulaire/loisirs/cinema-3d.webp",
+            "/lib/images/vocabulaire/loisirs/jeu-de-société.webp",
+            "/lib/images/vocabulaire/loisirs/photographie.webp",
+            "/lib/images/vocabulaire/loisirs/pique-nique.webp"
+          ],
+          "exemples_questions": [
+            "Que faites-vous pendant votre temps libre ?",
+            "Quel est le dernier film que vous avez vu ?",
+            "Vous allez souvent à des concerts ?",
+            "Avec qui sortez-vous le samedi ?",
+            "Quel livre me conseillez-vous ?"
+          ]
+        },
+        {
+          "theme": "La maison",
+          "images": [
+            "/lib/images/vocabulaire/maison/chambre.webp",
+            "/lib/images/vocabulaire/maison/cuisine.webp",
+            "/lib/images/vocabulaire/maison/jardin.webp",
+            "/lib/images/vocabulaire/maison/appartement.webp",
+            "/lib/images/vocabulaire/maison/balcon.webp",
+            "/lib/images/vocabulaire/maison/salon.webp",
+            "/lib/images/vocabulaire/maison/salle-de-bain.webp",
+            "/lib/images/vocabulaire/maison/escalier.webp"
+          ],
+          "exemples_questions": [
+            "Combien de pièces y a-t-il dans votre appartement ?",
+            "Comment est votre chambre ?",
+            "Vous connaissez vos voisins ?",
+            "Qu’est-ce que vous aimez dans votre quartier ?",
+            "Qui fait le rangement chez vous ?"
+          ]
+        },
+        {
+          "theme": "Au restaurant",
+          "images": [
+            "/lib/images/vocabulaire/ville/restaurant.webp",
+            "/lib/images/vocabulaire/aliments/menu.webp",
+            "/lib/images/vocabulaire/metiers/serveur.webp",
+            "/lib/images/vocabulaire/aliments/pizza.webp",
+            "/lib/images/vocabulaire/aliments/salade-composée.webp",
+            "/lib/images/vocabulaire/cuisine/assiette.webp",
+            "/lib/images/vocabulaire/aliments/frites.webp",
+            "/lib/images/vocabulaire/ville/terrasse.webp"
+          ],
+          "exemples_questions": [
+            "Quel est votre restaurant préféré ?",
+            "Qu’est-ce que vous commandez d’habitude ?",
+            "Il faut réserver une table ?",
+            "Le plat du jour coûte combien ?",
+            "Vous laissez un pourboire au serveur ?"
+          ]
+        },
+        {
+          "theme": "Les vacances",
+          "images": [
+            "/lib/images/vocabulaire/voyage/valise.webp",
+            "/lib/images/vocabulaire/voyage/passeport.webp",
+            "/lib/images/vocabulaire/voyage/aeroport.webp",
+            "/lib/images/vocabulaire/loisirs/camping.webp",
+            "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+            "/lib/images/vocabulaire/ville/hôtel.webp",
+            "/lib/images/vocabulaire/transports/train.webp",
+            "/lib/images/vocabulaire/sports/randonnée.webp"
+          ],
+          "exemples_questions": [
+            "Où êtes-vous allé pendant les dernières vacances ?",
+            "Comment avez-vous voyagé ?",
+            "Qu’est-ce que vous mettez dans votre valise ?",
+            "Vous préférez le camping ou l’hôtel ?",
+            "Quel pays voulez-vous visiter ?"
+          ]
+        },
+        {
+          "theme": "Le sport",
+          "images": [
+            "/lib/images/vocabulaire/sports/football.webp",
+            "/lib/images/vocabulaire/sports/natation.webp",
+            "/lib/images/vocabulaire/sports/ski.webp",
+            "/lib/images/vocabulaire/sports/tennis.webp",
+            "/lib/images/vocabulaire/sports/cyclisme.webp",
+            "/lib/images/vocabulaire/sports/basketball.webp",
+            "/lib/images/vocabulaire/ville/salle-de-sport.webp",
+            "/lib/images/vocabulaire/sports/course.webp"
+          ],
+          "exemples_questions": [
+            "Quel sport pratiquez-vous ?",
+            "Combien de fois par semaine vous entraînez-vous ?",
+            "Vous jouez dans une équipe ?",
+            "Vous regardez les matchs à la télévision ?",
+            "Depuis quand faites-vous ce sport ?"
+          ]
+        },
+        {
+          "theme": "La famille",
+          "images": [
+            "/lib/images/vocabulaire/famille-personnes/famille.webp",
+            "/lib/images/vocabulaire/famille-personnes/parents.webp",
+            "/lib/images/vocabulaire/famille-personnes/grands-parents.webp",
+            "/lib/images/vocabulaire/famille-personnes/frère.webp",
+            "/lib/images/vocabulaire/famille-personnes/bébé.webp",
+            "/lib/images/vocabulaire/famille-personnes/cousins.webp",
+            "/lib/images/vocabulaire/famille-personnes/couple.webp",
+            "/lib/images/vocabulaire/famille-personnes/enfant.webp"
+          ],
+          "exemples_questions": [
+            "Combien de personnes y a-t-il dans votre famille ?",
+            "Que font vos parents comme métier ?",
+            "Vous voyez souvent vos cousins ?",
+            "Comment fêtez-vous les anniversaires ?",
+            "Qu’est-ce que vous faites ensemble le dimanche ?"
+          ]
+        },
+        {
+          "theme": "Les transports",
+          "images": [
+            "/lib/images/vocabulaire/transports/bus.webp",
+            "/lib/images/vocabulaire/transports/train.webp",
+            "/lib/images/vocabulaire/transports/vélo.webp",
+            "/lib/images/vocabulaire/transports/tram.webp",
+            "/lib/images/vocabulaire/transports/voiture.webp",
+            "/lib/images/vocabulaire/transports/trottinette.webp",
+            "/lib/images/vocabulaire/ville/gare.webp",
+            "/lib/images/vocabulaire/ville/arrêt-de-bus.webp"
+          ],
+          "exemples_questions": [
+            "Comment allez-vous à l’école ou au travail ?",
+            "Combien de temps dure le trajet ?",
+            "Vous avez un abonnement de bus ?",
+            "Le train est souvent en retard ?",
+            "Où est l’arrêt le plus proche de chez vous ?"
+          ]
+        },
+        {
+          "theme": "La ville",
+          "images": [
+            "/lib/images/vocabulaire/ville/parc.webp",
+            "/lib/images/vocabulaire/ville/musee.webp",
+            "/lib/images/vocabulaire/ville/poste.webp",
+            "/lib/images/vocabulaire/ville/pharmacie.webp",
+            "/lib/images/vocabulaire/ville/marché.webp",
+            "/lib/images/vocabulaire/ville/mairie.webp",
+            "/lib/images/vocabulaire/ville/centre-ville.webp",
+            "/lib/images/vocabulaire/ville/fontaine.webp"
+          ],
+          "exemples_questions": [
+            "Qu’est-ce qu’il y a à visiter dans votre ville ?",
+            "Le marché a lieu quel jour ?",
+            "Comment va-t-on au centre-ville ?",
+            "Vous allez souvent au musée ?",
+            "Qu’est-ce qui manque dans votre quartier ?"
+          ]
+        },
+        {
+          "theme": "Les courses",
+          "images": [
+            "/lib/images/vocabulaire/ville/supermarche.webp",
+            "/lib/images/vocabulaire/ville/boulangerie.webp",
+            "/lib/images/vocabulaire/ville/caisse.webp",
+            "/lib/images/vocabulaire/ville/marché.webp",
+            "/lib/images/vocabulaire/ville/boucherie.webp",
+            "/lib/images/vocabulaire/aliments/pain.webp",
+            "/lib/images/vocabulaire/ville/boutique.webp",
+            "/lib/images/vocabulaire/actions/soldes-de-chaussures.webp"
+          ],
+          "exemples_questions": [
+            "Où faites-vous vos courses ?",
+            "Vous faites une liste avant de partir ?",
+            "Quel est le prix d’un kilo de pommes ?",
+            "Vous payez en espèces ou par carte ?",
+            "Quelle taille faites-vous pour un pull ?"
+          ]
+        },
+        {
+          "theme": "La météo",
+          "images": [
+            "/lib/images/vocabulaire/meteo/soleil.webp",
+            "/lib/images/vocabulaire/meteo/pluie.webp",
+            "/lib/images/vocabulaire/meteo/neige.webp",
+            "/lib/images/vocabulaire/meteo/orage.webp",
+            "/lib/images/vocabulaire/meteo/vent.webp",
+            "/lib/images/vocabulaire/meteo/parapluie-ouvert.webp",
+            "/lib/images/vocabulaire/meteo/nuage.webp",
+            "/lib/images/vocabulaire/meteo/arc-en-ciel.webp"
+          ],
+          "exemples_questions": [
+            "Quel temps fait-il aujourd’hui ?",
+            "Quelle saison préférez-vous et pourquoi ?",
+            "Que faites-vous quand il pleut ?",
+            "Quelle température fait-il en été chez vous ?",
+            "Vous avez peur des orages ?"
+          ]
+        },
+        {
+          "theme": "Le travail",
+          "images": [
+            "/lib/images/vocabulaire/metiers/employe-de-bureau.webp",
+            "/lib/images/vocabulaire/metiers/infirmière.webp",
+            "/lib/images/vocabulaire/metiers/cuisinier.webp",
+            "/lib/images/vocabulaire/metiers/vendeuse.webp",
+            "/lib/images/vocabulaire/metiers/mécanicien.webp",
+            "/lib/images/vocabulaire/actions/reunion.webp",
+            "/lib/images/vocabulaire/actions/entretien-d-embauche.webp",
+            "/lib/images/vocabulaire/metiers/boulanger.webp"
+          ],
+          "exemples_questions": [
+            "Quel métier voulez-vous faire plus tard ?",
+            "Vous avez déjà fait un stage ?",
+            "Quels sont vos horaires de travail ?",
+            "Comment sont vos collègues ?",
+            "Vous portez un uniforme au travail ?"
+          ]
+        },
+        {
+          "theme": "La santé",
+          "images": [
+            "/lib/images/vocabulaire/metiers/médecin.webp",
+            "/lib/images/vocabulaire/ville/pharmacie.webp",
+            "/lib/images/vocabulaire/sante/fievre.webp",
+            "/lib/images/vocabulaire/sante/mal-de-tête.webp",
+            "/lib/images/vocabulaire/sante/medicament.webp",
+            "/lib/images/vocabulaire/ville/hopital.webp",
+            "/lib/images/vocabulaire/metiers/dentiste.webp",
+            "/lib/images/vocabulaire/sante/thermometre.webp"
+          ],
+          "exemples_questions": [
+            "Vous allez souvent chez le médecin ?",
+            "Que faites-vous quand vous avez de la fièvre ?",
+            "Comment prenez-vous rendez-vous chez le dentiste ?",
+            "Combien d’heures dormez-vous par nuit ?",
+            "Qu’est-ce que vous faites pour rester en forme ?"
+          ]
+        },
+        {
+          "theme": "Les animaux",
+          "images": [
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/chien.webp",
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp",
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/lapin.webp",
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/cheval.webp",
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/vache.webp",
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/ferme.webp",
+            "/lib/images/vocabulaire/animaux-ferme-compagnie/poule.webp",
+            "/lib/images/vocabulaire/metiers/vétérinaire.webp"
+          ],
+          "exemples_questions": [
+            "Quel animal avez-vous chez vous ?",
+            "Qui promène le chien ?",
+            "Qu’est-ce que votre animal mange ?",
+            "Vous êtes déjà allé dans une ferme ?",
+            "Combien coûte une visite chez le vétérinaire ?"
+          ]
+        },
+        {
+          "theme": "Les fêtes",
+          "images": [
+            "/lib/images/vocabulaire/loisirs/decoration-de-fete.webp",
+            "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
+            "/lib/images/vocabulaire/loisirs/festival.webp",
+            "/lib/images/vocabulaire/loisirs/spectacle.webp",
+            "/lib/images/vocabulaire/loisirs/discotheque.webp",
+            "/lib/images/vocabulaire/loisirs/danse.webp",
+            "/lib/images/vocabulaire/objets/cadeau.webp"
+          ],
+          "exemples_questions": [
+            "Comment avez-vous fêté votre dernier anniversaire ?",
+            "Combien d’invités y avait-il ?",
+            "Quel cadeau aimeriez-vous recevoir ?",
+            "Qui prépare le repas de fête ?",
+            "Vous portez un costume pour le carnaval ?"
+          ]
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-accident",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "L’accident de vélo",
+    "scenario": "vie-quotidienne",
+    "scene": "L’accident de vélo",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/accident.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la jeune fille ?",
+        "Qu’est-ce qui s’est passé ?",
+        "À qui est-ce qu’elle téléphone, à votre avis ?"
+      ],
+      "description_modele": "Je vois une adolescente assise par terre, sur un trottoir, près d’un parc. Derrière elle, il y a un arbre, une barrière blanche et des fleurs. Son vélo est couché sur le sol à côté d’elle. Elle tient son genou blessé et elle téléphone. Dans le cercle, on voit une femme au téléphone, elle a l’air inquiète. Peut-être que c’est sa maman et que la jeune fille est tombée de vélo.",
+      "je_suis": "votre maman",
+      "vous_etes": "une adolescente ou un adolescent",
+      "lieu": "au téléphone",
+      "vous_voulez": "raconter votre chute à vélo et demander de l’aide",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Allô ? Qu’est-ce qui se passe ? Tu as une drôle de voix."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Maman, je suis tombée de vélo. J’ai très mal au genou.",
+          "variantes": [
+            "Allô maman, j’ai eu un petit accident de vélo. Mon genou me fait mal."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oh là là ! Où est-ce que tu es maintenant ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je suis par terre sur le trottoir, près du parc, à côté de la boulangerie."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Est-ce que tu saignes ? Tu peux marcher ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Mon genou saigne un peu. Je peux me lever, mais je ne peux pas rouler à vélo.",
+          "variantes": [
+            "Il y a un peu de sang. Je peux marcher, mais doucement."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Ne bouge pas, je vais venir te chercher en voiture."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci maman. Tu pourrais prendre un pansement, s’il te plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. J’arrive dans dix minutes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, je t’attends ici avec mon vélo. À tout de suite !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-bibliotheque",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la bibliothèque",
+    "scenario": "lieux-publics",
+    "scene": "À la bibliothèque",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/bibliotheque.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que la jeune femme fait avec les livres ?"
+      ],
+      "description_modele": "Je vois l’accueil d’une bibliothèque. Il y a beaucoup d’étagères avec des livres et quelques plantes. Une jeune femme avec un sac à dos est devant le comptoir. Elle donne trois livres à la bibliothécaire. La bibliothécaire sourit, elle a l’air gentille. Peut-être que la jeune femme rend ses livres et qu’elle veut en emprunter d’autres.",
+      "je_suis": "la bibliothécaire",
+      "vous_etes": "un lecteur ou une lectrice",
+      "lieu": "à l’accueil de la bibliothèque",
+      "vous_voulez": "rendre vos livres et en emprunter d’autres",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour madame. Je voudrais rendre ces trois livres, s’il vous plaît.",
+          "variantes": [
+            "Bonjour, je viens rendre mes livres."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Vous avez votre carte de lecteur ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, la voici. J’ai rendu les livres un jour en retard, c’est un problème ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, ce n’est pas grave pour un jour. Vous voulez emprunter autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, je cherche un livre facile en français pour apprendre la langue.",
+          "variantes": [
+            "Oui, je voudrais un roman simple en français, pour débutants."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons des livres en français facile au premier étage."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! Je peux en prendre combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous pouvez emprunter cinq livres pendant trois semaines."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, je vais monter voir. Merci beaucoup !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-boucherie",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la boucherie",
+    "scenario": "magasins",
+    "scene": "À la boucherie",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/boucherie.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qui sont ces deux personnes ?",
+        "Qu’est-ce que la cliente demande, à votre avis ?"
+      ],
+      "description_modele": "Je vois une boucherie. Derrière le comptoir, il y a un boucher avec une barbe et une blouse blanche. Dans la vitrine, il y a beaucoup de viande. Au mur, on voit des saucisses et des jambons. Une femme avec un sac et une écharpe montre la viande avec son doigt. Peut-être qu’elle demande un morceau pour un repas de famille.",
+      "je_suis": "le boucher",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une boucherie du quartier",
+      "vous_voulez": "acheter de la viande pour un repas de famille",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour madame, bonjour monsieur. Qu’est-ce que je vous sers ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais du bœuf pour six personnes, s’il vous plaît.",
+          "variantes": [
+            "Bonjour, il me faudrait de la viande de bœuf pour six personnes."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour un rôti ou pour faire des steaks ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pour un rôti. Nous allons faire un repas de famille dimanche."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vous conseille ce morceau-là. Un kilo et demi, ça vous va ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, très bien. Et je voudrais aussi quatre saucisses.",
+          "variantes": [
+            "D’accord. Ajoutez aussi quatre saucisses, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Avec ceci ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est tout, merci. Ça fait combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait septante-deux francs cinquante."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je peux payer par carte ? Merci et bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-boulangerie",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la boulangerie",
+    "scenario": "magasins",
+    "scene": "À la boulangerie",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/boulangerie.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Qui est dans la boulangerie ?",
+        "Qu’est-ce que la famille regarde ?"
+      ],
+      "description_modele": "Je vois une boulangerie avec beaucoup de pains différents. Il y a des baguettes dans un panier et des pains dans la vitrine. Une boulangère avec un tablier est derrière le comptoir. Elle présente un grand gâteau à la crème et aux fraises. Un homme et deux enfants regardent le gâteau, ils ont l’air contents. Peut-être que c’est un gâteau pour un anniversaire.",
+      "je_suis": "la boulangère",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une boulangerie",
+      "vous_voulez": "acheter un gâteau d’anniversaire et du pain",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Qu’est-ce qui vous ferait plaisir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour madame. Je voudrais un gâteau pour l’anniversaire de ma fille.",
+          "variantes": [
+            "Bonjour, je cherche un gâteau d’anniversaire, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ce gâteau à la crème et aux fraises est pour huit personnes. Il vous plaît ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, il est très beau ! Les enfants l’ont tout de suite aimé."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je peux écrire un prénom dessus, si vous voulez."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oh oui, ce serait gentil ! Elle s’appelle Lina, elle va avoir sept ans.",
+          "variantes": [
+            "Avec plaisir. Vous pourriez écrire « Joyeux anniversaire Lina » ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pas de problème. Il vous faut autre chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, deux baguettes et un pain complet, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors, ça fait quarante-trois francs nonante."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà cinquante francs. Merci beaucoup, au revoir !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-bus",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À l’arrêt de bus",
+    "scenario": "transports",
+    "scene": "À l’arrêt de bus",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/bus.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux hommes ?",
+        "Qu’est-ce que l’homme a dans les mains ?",
+        "Qu’est-ce que le jeune homme explique, à votre avis ?"
+      ],
+      "description_modele": "Je vois un arrêt de bus dans une rue avec des arbres. Il y a un abri avec un banc, un plan et les horaires. Un homme avec un sac à dos tient un plan dans ses mains. Un jeune homme en pull gris montre une direction avec son bras. Ils parlent et ils sourient. Peut-être que l’homme est un touriste et qu’il demande son chemin.",
+      "je_suis": "un habitant du quartier",
+      "vous_etes": "un touriste ou une touriste",
+      "lieu": "à un arrêt de bus",
+      "vous_voulez": "savoir quel bus prendre pour aller à la gare",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Vous avez l’air perdu. Je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, oui merci. Je voudrais aller à la gare. Quel bus est-ce que je dois prendre ?",
+          "variantes": [
+            "Bonjour. Excusez-moi, quel bus va à la gare, s’il vous plaît ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous pouvez prendre le bus numéro 7. Il s’arrête juste ici."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ah, très bien. Il passe souvent ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Toutes les dix minutes. Le prochain arrive dans cinq minutes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et où est-ce que je peux acheter un billet ?",
+          "variantes": [
+            "Je peux acheter mon billet dans le bus ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il y a un distributeur là-bas, à droite. Ou bien avec l’application sur votre téléphone."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Le trajet dure combien de temps ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Environ un quart d’heure. Vous descendez au terminus."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, vous m’avez beaucoup aidé. Merci et bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-cafe",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la terrasse du café",
+    "scenario": "loisirs",
+    "scene": "À la terrasse du café",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/cafe.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la jeune femme ?",
+        "Qu’est-ce que le serveur fait ?"
+      ],
+      "description_modele": "Je vois la terrasse d’un café, sous un grand parasol. Il y a des petites tables rondes et des chaises. Une jeune femme est assise à une table, elle a une limonade avec une paille. Un serveur avec un gilet noir et un nœud papillon lui apporte une coupe de glace. Il tient un plateau dans l’autre main. Peut-être qu’il fait beau et qu’elle a envie d’une glace.",
+      "je_suis": "le serveur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la terrasse d’un café",
+      "vous_voulez": "commander une boisson et une glace",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Vous avez choisi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais une limonade, s’il vous plaît.",
+          "variantes": [
+            "Oui, une limonade bien fraîche, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Et avec ça, vous désirez manger quelque chose ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Qu’est-ce que vous avez comme glaces ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons vanille, chocolat, fraise et citron. Et une coupe maison avec trois boules."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je vais prendre la coupe maison, avec chocolat, vanille et fraise.",
+          "variantes": [
+            "Alors, la coupe maison, s’il vous plaît, avec de la chantilly."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait. Je vous apporte ça tout de suite."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Est-ce que je pourrais avoir un verre d’eau aussi ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Voilà votre coupe, bonne dégustation !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, elle a l’air délicieuse ! Je vous paierai tout à l’heure."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-chaussure",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au magasin de chaussures",
+    "scenario": "magasins",
+    "scene": "Au magasin de chaussures",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/chaussure.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux hommes ?",
+        "Qu’est-ce que le client fait ?",
+        "Qu’est-ce que le vendeur lui dit, à votre avis ?"
+      ],
+      "description_modele": "Je vois un magasin de chaussures. Sur les étagères, il y a beaucoup de chaussures et quelques sacs. Un jeune homme est assis sur un banc et il regarde une chaussure en cuir marron. Le vendeur est accroupi devant lui, il porte un badge et il explique quelque chose. Par terre, il y a d’autres paires de chaussures. Peut-être que le client essaie des chaussures pour une occasion spéciale.",
+      "je_suis": "le vendeur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de chaussures",
+      "vous_voulez": "essayer et acheter des chaussures en cuir",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Vous cherchez quelque chose en particulier ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je cherche des chaussures élégantes pour un mariage.",
+          "variantes": [
+            "Bonjour, je voudrais des chaussures en cuir pour une fête."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Quelle pointure faites-vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je fais du 42. Je peux essayer ce modèle marron ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Voilà. Elles vous vont bien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elles sont un peu petites. Vous les avez en 43 ?",
+          "variantes": [
+            "Elles me serrent un peu. Est-ce que vous avez la pointure au-dessus ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je vais vous les chercher. Voilà, essayez celles-ci."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est parfait, elles sont très confortables. Elles coûtent combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Elles sont à cent vingt-neuf francs, mais aujourd’hui il y a dix pour cent de réduction."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, je les prends ! Je vais payer à la caisse."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-cinema",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au cinéma",
+    "scenario": "loisirs",
+    "scene": "Au cinéma",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/cinema.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les jeunes ?",
+        "Qu’est-ce que la jeune fille donne à l’employée ?"
+      ],
+      "description_modele": "Je vois l’entrée d’un cinéma. Il y a des affiches de films sur les murs et du pop-corn sur le comptoir. Un jeune homme et une jeune fille sont devant la caisse. La jeune fille donne une carte à l’employée. L’employée sourit et prend la carte. Peut-être que les jeunes achètent deux billets pour voir un film ensemble.",
+      "je_suis": "l’employée de la caisse",
+      "vous_etes": "un spectateur ou une spectatrice",
+      "lieu": "à la caisse d’un cinéma",
+      "vous_voulez": "acheter deux billets pour un film ce soir",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonsoir ! Quel film voulez-vous voir ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonsoir. Je voudrais deux places pour le film d’aventure, s’il vous plaît.",
+          "variantes": [
+            "Bonsoir, deux billets pour le film d’aventure, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour la séance de 18 h 30 ou celle de 21 heures ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Pour 18 h 30. Le film est en version française ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, à 18 h 30 il est en français. Vous avez une carte étudiant ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, nous sommes étudiants tous les deux. Voilà nos cartes.",
+          "variantes": [
+            "Oui, voici nos cartes d’étudiant."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors ça fait vingt-six francs pour les deux places."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et je voudrais aussi un grand pop-corn, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. C’est la salle numéro 3, à gauche. Bon film !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, bonne soirée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-club",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au club de sport",
+    "scenario": "loisirs",
+    "scene": "Au club de sport",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/club.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est le jeune homme ?",
+        "Qu’est-ce que les personnes font dans la salle ?",
+        "Qu’est-ce que la jeune femme écrit, à votre avis ?"
+      ],
+      "description_modele": "Je vois l’accueil d’un club de sport. Un jeune homme avec un grand sac de sport est devant le comptoir. Une jeune femme en veste de sport est assise et elle écrit sur une feuille. Derrière, dans une grande salle, des personnes en kimono blanc font du judo. Au mur, il y a des photos et des kimonos accrochés. Peut-être que le jeune homme veut s’inscrire au club.",
+      "je_suis": "la responsable de l’accueil",
+      "vous_etes": "un nouveau membre ou une nouvelle membre",
+      "lieu": "à l’accueil d’un club de judo",
+      "vous_voulez": "vous inscrire à un cours pour débutants",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Bienvenue au club. Qu’est-ce que je peux faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais m’inscrire au cours de judo, s’il vous plaît.",
+          "variantes": [
+            "Bonjour, j’aimerais commencer le judo. Comment est-ce qu’on s’inscrit ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec plaisir. Vous avez déjà fait du judo ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, jamais. Mais j’ai fait du football pendant cinq ans."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors vous allez commencer avec le cours débutants, le mardi et le jeudi à 19 heures."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Ça coûte combien par mois ?",
+          "variantes": [
+            "D’accord. Quel est le prix de l’inscription ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est cinquante francs par mois. Le premier cours est gratuit."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super ! Est-ce que je dois acheter un kimono ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour le premier cours, nous vous prêtons un kimono. Vous me donnez votre nom ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je m’appelle Karim Haddad. Je vais venir mardi prochain. Merci !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-coiffeur",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Chez la coiffeuse",
+    "scenario": "vie-quotidienne",
+    "scene": "Chez la coiffeuse",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/coiffeur.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux femmes ?",
+        "Qu’est-ce que la coiffeuse a dans les mains ?"
+      ],
+      "description_modele": "Je vois un salon de coiffure. Il y a un grand miroir, des produits pour les cheveux et un lavabo. Une femme aux cheveux mi-longs est assise dans un fauteuil, avec une cape sur les épaules. La coiffeuse est debout à côté d’elle, avec un tablier. Elle a un peigne et des ciseaux dans les mains. Peut-être qu’elles parlent de la nouvelle coupe de la cliente.",
+      "je_suis": "la coiffeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un salon de coiffure",
+      "vous_voulez": "vous faire couper les cheveux",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Installez-vous. Qu’est-ce que je vous fais aujourd’hui ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais une coupe, s’il vous plaît. Pas trop courte.",
+          "variantes": [
+            "Bonjour, j’aimerais me faire couper les cheveux, mais pas trop."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Je coupe combien de centimètres ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Environ cinq centimètres. Je voudrais les cheveux aux épaules."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. On fait aussi un shampoing avant ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, volontiers. Combien coûte la coupe avec le shampoing ?",
+          "variantes": [
+            "Oui, s’il vous plaît. Quel est le prix avec le shampoing ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ça fait soixante-cinq francs avec le brushing."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. La dernière fois, la coupe était trop courte devant, alors faites attention, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pas de souci, je vais couper doucement. Vous me dites si ça vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, c’est très gentil."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-ecole",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Le retard à l’école",
+    "scenario": "ecole",
+    "scene": "Le retard à l’école",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/ecole.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux personnes ?",
+        "Comment est la femme ?",
+        "Qu’est-ce que le garçon explique, à votre avis ?"
+      ],
+      "description_modele": "Je vois la porte d’une salle de classe. Dans la classe, il y a des tables, des chaises et un tableau. Une enseignante est devant la porte, elle a la main sur la hanche. Elle n’a pas l’air contente. Un adolescent avec un sac à dos lui parle et il fait un geste avec la main. Peut-être qu’il est en retard et qu’il explique pourquoi.",
+      "je_suis": "l’enseignante",
+      "vous_etes": "un élève ou une élève",
+      "lieu": "devant la porte de la classe",
+      "vous_voulez": "vous excuser pour votre retard et expliquer pourquoi",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous êtes en retard de vingt minutes !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour madame. Excusez-moi, je suis vraiment désolé.",
+          "variantes": [
+            "Pardon madame, je suis désolé pour le retard."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Qu’est-ce qui s’est passé ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai raté le bus de 7 h 30 et le suivant est arrivé en retard."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est la deuxième fois cette semaine."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je sais. Demain, je vais partir de la maison plus tôt.",
+          "variantes": [
+            "Oui, je sais. À partir de demain, je vais me lever plus tôt."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Vous avez manqué le début de l’exercice de mathématiques."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce que je pourrais avoir la feuille ? Je vais la faire à la maison."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je vous la donne. Allez vous asseoir maintenant."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci madame, et encore pardon."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-fuite",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "La fuite d’eau",
+    "scenario": "maison",
+    "scene": "La fuite d’eau",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/fuite.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la femme ?",
+        "Quel est le problème ?",
+        "À qui est-ce qu’elle téléphone, à votre avis ?"
+      ],
+      "description_modele": "Je vois une cuisine avec un évier, des assiettes et des plantes. Sous l’évier, le placard est ouvert et un tuyau fuit. L’eau coule dans un seau et sur le sol. Une jeune femme regarde la fuite, elle a l’air inquiète, et elle téléphone. Dans le cercle, on voit un homme avec une casquette et une grande clé. Peut-être que c’est un plombier et qu’elle lui demande de venir vite.",
+      "je_suis": "le plombier",
+      "vous_etes": "un ou une locataire",
+      "lieu": "au téléphone",
+      "vous_voulez": "faire réparer une fuite d’eau sous l’évier de votre cuisine",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Allô, entreprise de plomberie, bonjour !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour monsieur. J’ai une fuite d’eau sous l’évier de ma cuisine !",
+          "variantes": [
+            "Bonjour, il y a de l’eau qui coule sous mon évier, c’est urgent !"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord. Il y a beaucoup d’eau ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, le tuyau fuit. J’ai mis un seau, mais il y a de l’eau partout par terre."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez fermé le robinet d’arrivée d’eau ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, je ne sais pas où il est. Vous pourriez m’expliquer ?",
+          "variantes": [
+            "Non, pas encore. Il se trouve où, en général ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "En général, il est sous l’évier, à côté du tuyau. Tournez-le vers la droite."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà, c’est fait, l’eau ne coule plus. Vous pouvez venir quand ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vais passer cet après-midi, vers 15 heures. Quelle est votre adresse ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’habite rue du Lac 12, au deuxième étage. Merci beaucoup, à tout à l’heure !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-gare",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au guichet de la gare",
+    "scenario": "transports",
+    "scene": "Au guichet de la gare",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/gare.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la dame âgée ?",
+        "Qui est derrière la vitre ?",
+        "Qu’est-ce que la dame veut faire, à votre avis ?"
+      ],
+      "description_modele": "Je vois le guichet d’une gare. Au fond, il y a un train rouge, des voyageurs sur le quai et une grande horloge. Une dame âgée aux cheveux gris, avec un manteau beige, une écharpe et un sac en cuir, tient son porte-monnaie. Derrière la vitre, une employée souriante en gilet bleu foncé lui donne un billet. À droite, il y a des dépliants sur le comptoir. Peut-être que la dame achète un billet pour rendre visite à sa famille.",
+      "je_suis": "l’employée du guichet",
+      "vous_etes": "un voyageur ou une voyageuse",
+      "lieu": "au guichet de la gare",
+      "vous_voulez": "acheter un billet de train aller-retour",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour madame, bonjour monsieur. Où est-ce que vous voulez aller ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais un billet pour Montreux, s’il vous plaît.",
+          "variantes": [
+            "Bonjour, un billet pour Montreux, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Un aller simple ou un aller-retour ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un aller-retour, en deuxième classe. Je vais rentrer ce soir."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez un abonnement demi-tarif ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, je l’ai acheté l’année passée. Le voici.",
+          "variantes": [
+            "Oui, voilà ma carte demi-tarif."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors ça fait vingt-huit francs quarante."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le prochain train part à quelle heure, et sur quel quai ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À 10 h 15, sur le quai 4. Il est direct."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, madame. Bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-hopital",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Visite à l’hôpital",
+    "scenario": "sante",
+    "scene": "Visite à l’hôpital",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/hopital.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la femme ?",
+        "Qu’est-ce que la visiteuse apporte ?"
+      ],
+      "description_modele": "Je vois une chambre d’hôpital. Une femme est assise dans son lit, elle porte une chemise d’hôpital. Sur la table de nuit, il y a un verre d’eau et un petit vase de fleurs. Une jeune femme aux cheveux bouclés, en pull beige, est debout à côté du lit et elle tient un grand bouquet de fleurs. La femme dans le lit met la main sur son cœur, elle est touchée. Peut-être que c’est une amie qui vient lui rendre visite.",
+      "je_suis": "une amie qui est hospitalisée",
+      "vous_etes": "un visiteur ou une visiteuse",
+      "lieu": "dans une chambre d’hôpital",
+      "vous_voulez": "prendre des nouvelles de votre amie et lui offrir des fleurs",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Oh, bonjour ! Quelle bonne surprise !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour ! Je vous ai apporté des fleurs. Comment allez-vous ?",
+          "variantes": [
+            "Bonjour, ces fleurs sont pour vous. Vous allez mieux ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci, elles sont magnifiques ! Je vais un peu mieux aujourd’hui."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ça me fait plaisir. Qu’est-ce que le médecin a dit ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "L’opération s’est bien passée. Je dois rester encore trois jours."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Vous avez besoin de quelque chose ? Je peux vous apporter des affaires.",
+          "variantes": [
+            "Est-ce que je peux faire quelque chose pour vous ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, vous pourriez m’apporter un livre et mes lunettes ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bien sûr, je vais passer chez vous et je reviendrai demain."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci, vous êtes vraiment gentille."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est normal. Reposez-vous bien, à demain !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-hotel",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la réception de l’hôtel",
+    "scenario": "vacances",
+    "scene": "À la réception de l’hôtel",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/hotel.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la famille ?",
+        "Combien de personnes il y a dans la famille ?",
+        "Qu’est-ce que la réceptionniste montre ?"
+      ],
+      "description_modele": "Je vois la réception d’un hôtel. Il y a une famille avec un père, une mère et deux enfants. Ils ont des valises et un sac à dos, et la petite fille tient un ours en peluche. La réceptionniste, en veste bleu foncé, est derrière le comptoir : elle sourit et elle montre un plan de la ville. Sur le comptoir, il y a une sonnette et, au mur, un tableau avec un lac. Peut-être que la famille arrive en vacances et qu’elle a réservé une chambre.",
+      "je_suis": "la réceptionniste de l’hôtel",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la réception d’un hôtel",
+      "vous_voulez": "prendre la chambre que vous avez réservée pour votre famille",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour et bienvenue ! Je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Nous avons réservé une chambre pour quatre personnes, au nom de Diallo.",
+          "variantes": [
+            "Bonjour, j’ai une réservation au nom de Diallo, pour une famille de quatre."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je vois. Une chambre familiale pour trois nuits. Vous avez une pièce d’identité ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici mon passeport. Le petit-déjeuner est compris ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il est servi de 7 heures à 10 heures, au rez-de-chaussée."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Très bien. Est-ce qu’il y a le wifi dans la chambre ?",
+          "variantes": [
+            "Parfait. Et le wifi, c’est gratuit ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, il est gratuit. Le code est sur ce papier, avec le plan de la ville."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Vous pourriez nous conseiller une activité pour les enfants ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous pouvez faire une promenade en bateau sur le lac. Voici votre clé, chambre 204."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, nous allons faire ça demain. Merci beaucoup !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-immobilier",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À l’agence immobilière",
+    "scenario": "maison",
+    "scene": "À l’agence immobilière",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/immobilier.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que la femme montre à l’homme ?",
+        "À votre avis, qu’est-ce que l’homme cherche ?"
+      ],
+      "description_modele": "Je vois un bureau avec une grande fenêtre. Sur la fenêtre, il y a beaucoup de photos de maisons et d’immeubles : c’est une agence immobilière. Une femme blonde en veste grise est assise derrière le bureau, elle sourit et elle montre le plan d’un appartement avec un stylo. À côté du plan, il y a la photo d’un immeuble. En face d’elle, un homme en veste en jean écoute avec attention. Peut-être qu’il cherche un nouvel appartement pour sa famille.",
+      "je_suis": "l’agente immobilière",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une agence immobilière",
+      "vous_voulez": "louer un appartement de trois pièces pour votre famille",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Asseyez-vous. Qu’est-ce que je peux faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour madame. Je cherche un appartement de trois pièces à louer, pour ma femme, mes deux enfants et moi.",
+          "variantes": [
+            "Bonjour. Je voudrais louer un trois pièces pour ma famille, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Quel est votre budget par mois ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je peux payer environ mille six cents francs par mois, charges comprises."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "J’ai un appartement ici, regardez le plan. Il y a deux chambres, un salon et un balcon. Le loyer est de mille cinq cent nonante francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il a l’air bien. Est-ce qu’il est près d’une école et d’un arrêt de bus ?",
+          "variantes": [
+            "C’est joli. L’école et le bus sont loin ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, l’école est à cinq minutes à pied. Vous voulez le visiter ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, volontiers. Est-ce que je pourrais le visiter samedi matin ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Samedi à dix heures, c’est possible. Apportez une copie de votre permis et vos trois dernières fiches de salaire."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, je vais préparer les documents. Merci beaucoup, au revoir !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-marche",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au marché",
+    "scenario": "magasins",
+    "scene": "Au marché",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/marche.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que le vendeur vend ?",
+        "Qu’est-ce que la femme fait ?"
+      ],
+      "description_modele": "Je vois un marché en plein air, sur la place d’une petite ville. Il y a des stands avec des parasols blancs et des gens qui se promènent. Au premier plan, un vendeur barbu avec un tablier vend des fruits et des légumes : des tomates, des carottes, des pommes et des salades. Il donne une pomme rouge à une jeune femme et il sourit. La femme a un grand panier plein de légumes. Peut-être qu’elle fait ses courses pour la semaine.",
+      "je_suis": "le marchand de fruits et légumes",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "au marché",
+      "vous_voulez": "acheter des fruits et des légumes pour la semaine",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Qu’est-ce qu’il vous faut aujourd’hui ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour monsieur. Je voudrais un kilo de tomates et une botte de carottes, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. Un kilo de tomates et des carottes, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Goûtez cette pomme, elle vient d’une ferme à côté."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, elle est très bonne ! Elle coûte combien, le kilo ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Trois francs septante le kilo."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Alors j’en prends deux kilos. Et une salade aussi, s’il vous plaît.",
+          "variantes": [
+            "Je vais prendre deux kilos de pommes et une salade."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Ça fait seize francs nonante en tout."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Est-ce que je peux payer avec Twint ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr, voici le code. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, vous aussi. Je reviendrai samedi prochain !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-medecin",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Chez le médecin",
+    "scenario": "sante",
+    "scene": "Chez le médecin",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/medecin.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Comment va la jeune femme ?",
+        "Qu’est-ce que la médecin fait ?"
+      ],
+      "description_modele": "Je vois un cabinet médical. Il y a un bureau, un ordinateur, des plantes, des classeurs et un tableau au mur. Une médecin en blouse blanche, avec un stéthoscope, est assise derrière le bureau et elle écoute. En face d’elle, une jeune femme en pull beige tient sa tête avec sa main et ferme les yeux. Elle a l’air malade et fatiguée. Peut-être qu’elle a mal à la tête depuis plusieurs jours.",
+      "je_suis": "la médecin",
+      "vous_etes": "un patient ou une patiente",
+      "lieu": "dans un cabinet médical",
+      "vous_voulez": "expliquer que vous avez mal à la tête depuis plusieurs jours",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, asseyez-vous. Qu’est-ce qui ne va pas ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour docteure. J’ai très mal à la tête depuis quatre jours.",
+          "variantes": [
+            "Bonjour. Depuis quatre jours, j’ai mal à la tête."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez de la fièvre ? Vous dormez bien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, je n’ai pas de fièvre, mais je dors mal. Je suis très fatiguée."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Est-ce que vous avez déjà pris des médicaments ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, j’ai pris du paracétamol hier soir, mais ça n’a pas aidé.",
+          "variantes": [
+            "J’ai pris un comprimé hier, mais j’ai toujours mal."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous travaillez beaucoup devant un écran ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, huit heures par jour à l’ordinateur. Qu’est-ce que je dois faire ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Faites des pauses, buvez beaucoup d’eau. Je vais aussi vous donner une ordonnance. Revenez dans une semaine si ça continue."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, je vais faire attention. Merci beaucoup, docteure."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-mot-de-passe",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Le mot de passe oublié",
+    "scenario": "ecole",
+    "scene": "Le mot de passe oublié",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/mot-de-passe.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’on voit sur l’écran de l’ordinateur ?",
+        "Pourquoi le jeune homme a-t-il l’air embêté ?"
+      ],
+      "description_modele": "Je vois une salle de cours avec une étagère, des classeurs, un globe et une plante. Un jeune homme en sweat gris est assis à une table. Il se gratte la tête et il ouvre la main : il a l’air perdu. Sur l’écran de l’ordinateur portable, on voit un cadenas rouge et un mot de passe caché. Une femme est assise en face de lui et elle montre l’écran avec un stylo. Peut-être que c’est son enseignante et qu’elle va l’aider.",
+      "je_suis": "l’enseignante",
+      "vous_etes": "un apprenant ou une apprenante",
+      "lieu": "dans une salle de l’école",
+      "vous_voulez": "demander de l’aide parce que vous avez oublié votre mot de passe",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Vous avez l’air embêté. Qu’est-ce qui se passe ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour madame. Je n’arrive pas à me connecter à la plateforme. J’ai oublié mon mot de passe.",
+          "variantes": [
+            "Bonjour. J’ai oublié mon mot de passe, je ne peux pas me connecter."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ce n’est pas grave. Vous avez essayé combien de fois ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’ai essayé trois fois. Maintenant, l’écran dit « Connexion impossible »."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Regardez ici : cliquez sur « Mot de passe oublié ? »."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et après, qu’est-ce que je dois faire ?",
+          "variantes": [
+            "Voilà, c’est fait. Et maintenant ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous allez recevoir un e-mail. Vous avez votre téléphone avec vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Ah, j’ai reçu l’e-mail ! Je choisis un nouveau mot de passe ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, avec au moins huit caractères. Et notez-le dans un endroit sûr."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ça marche, je suis connecté ! Merci beaucoup pour votre aide."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-pediatre",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Chez la pédiatre",
+    "scenario": "sante",
+    "scene": "Chez la pédiatre",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/pediatre.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qui sont les personnes, à votre avis ?",
+        "Qu’est-ce que la médecin montre à la petite fille ?"
+      ],
+      "description_modele": "Je vois un cabinet de médecin pour enfants. Il y a des dessins d’animaux au mur et des ours en peluche. Un homme en pull gris est assis avec une petite fille sur ses genoux. C’est peut-être son père. Une médecin en blouse blanche sourit et montre à l’enfant le dessin d’un ours. La petite fille regarde la médecin, elle n’a pas l’air d’avoir peur.",
+      "je_suis": "la pédiatre",
+      "vous_etes": "le père ou la mère d’une petite fille",
+      "lieu": "dans le cabinet de la pédiatre",
+      "vous_voulez": "expliquer que votre fille tousse depuis trois jours",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Bonjour, ma grande ! Qu’est-ce qui vous amène aujourd’hui ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour docteure. Ma fille tousse beaucoup depuis trois jours, surtout la nuit.",
+          "variantes": [
+            "Bonjour. Elle tousse depuis trois jours, surtout la nuit."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Elle a de la fièvre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, hier soir elle avait trente-huit et demi."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Est-ce qu’elle mange et boit normalement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elle boit bien, mais elle ne mange pas beaucoup. Elle est fatiguée.",
+          "variantes": [
+            "Elle boit, mais elle a peu d’appétit."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vais l’examiner. Elle va à la crèche ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, trois jours par semaine. Est-ce qu’elle peut y aller demain ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, gardez-la à la maison jusqu’à la fin de la semaine. Je vous prescris un sirop."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, je vais passer à la pharmacie tout de suite. Merci, docteure !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-pharmacie",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la pharmacie",
+    "scenario": "sante",
+    "scene": "À la pharmacie",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/pharmacie.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’il y a sur le comptoir ?",
+        "Qu’est-ce que la jeune femme demande, à votre avis ?"
+      ],
+      "description_modele": "Je vois une pharmacie. Derrière le comptoir, il y a des étagères avec beaucoup de boîtes et de flacons blancs. Une pharmacienne aux cheveux blancs, avec des lunettes et une blouse blanche, parle avec une jeune femme. La jeune femme porte un bébé dans ses bras et elle a un sac à l’épaule. Sur le comptoir, il y a une boîte de médicaments et une feuille. Peut-être que le bébé est malade et que la mère demande un conseil.",
+      "je_suis": "la pharmacienne",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une pharmacie",
+      "vous_voulez": "acheter un médicament contre la fièvre pour votre bébé",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour madame, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Mon bébé a de la fièvre depuis ce matin. Je voudrais un médicament pour lui, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. J’aimerais quelque chose contre la fièvre pour mon bébé."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Il a quel âge ? Et combien il pèse ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il a dix mois et il pèse neuf kilos."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vous conseille ce sirop. Vous donnez la dose indiquée sur la boîte, trois fois par jour maximum."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Est-ce que je dois aller chez le pédiatre aussi ?",
+          "variantes": [
+            "Il faut aller chez le médecin ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Si la fièvre dure plus de deux jours ou s’il ne boit pas, appelez le pédiatre."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci pour les conseils. Combien coûte le sirop ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Neuf francs nonante. Vous payez par carte ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, par carte, s’il vous plaît. Merci et bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-police",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au poste de police",
+    "scenario": "lieux-publics",
+    "scene": "Au poste de police",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/police.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que le policier fait ?",
+        "À votre avis, pourquoi la jeune femme est-elle là ?"
+      ],
+      "description_modele": "Je vois un bureau de police. Il y a un comptoir, un ordinateur, des classeurs et une casquette de policier sur le comptoir. Un policier aux cheveux blancs, en uniforme bleu foncé, est assis et il écrit sur une feuille. Une jeune femme en pull beige est debout devant le comptoir. Elle parle et elle fait un geste avec la main, elle a l’air inquiète. Peut-être qu’on lui a volé quelque chose et qu’elle fait une déclaration.",
+      "je_suis": "le policier",
+      "vous_etes": "un habitant ou une habitante de la ville",
+      "lieu": "au poste de police",
+      "vous_voulez": "déclarer le vol de votre portemonnaie",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour madame. Qu’est-ce que je peux faire pour vous ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour monsieur. Je voudrais déclarer un vol. On m’a volé mon portemonnaie.",
+          "variantes": [
+            "Bonjour. Mon portemonnaie a été volé, je viens faire une déclaration."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je suis désolé. Quand et où est-ce que c’est arrivé ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ce matin, vers neuf heures, dans le bus numéro sept. Il y avait beaucoup de monde."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Qu’est-ce qu’il y avait dans le portemonnaie ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il y avait ma carte bancaire, mon permis de séjour et environ septante francs.",
+          "variantes": [
+            "Ma carte de banque, mon permis et septante francs."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez déjà bloqué votre carte bancaire ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, j’ai appelé ma banque tout de suite. Qu’est-ce que je dois faire pour mon permis ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vous donne une attestation de déclaration. Avec ce papier, vous irez au contrôle des habitants pour demander un nouveau permis."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, je vais y aller demain. Merci beaucoup, monsieur."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-rendez-vous",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Prendre rendez-vous par téléphone",
+    "scenario": "sante",
+    "scene": "Prendre rendez-vous par téléphone",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/rendez-vous.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la dame âgée ?",
+        "Avec qui parle-t-elle au téléphone, à votre avis ?",
+        "Qu’est-ce que la femme dans le cercle fait ?"
+      ],
+      "description_modele": "Je vois une dame âgée dans son salon. Elle est assise à une table ronde et elle téléphone avec un téléphone fixe. Sur la table, il y a un carnet, un stylo, des lunettes et un vase avec des fleurs. Dans un cercle, on voit une jeune femme en blouse blanche dans un bureau. Elle téléphone aussi et elle écrit. Peut-être que c’est l’assistante d’un médecin et que la dame prend un rendez-vous.",
+      "je_suis": "l’assistante médicale",
+      "vous_etes": "un patient ou une patiente",
+      "lieu": "au téléphone",
+      "vous_voulez": "prendre rendez-vous chez le médecin pour la semaine prochaine",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Cabinet du docteur Favre, bonjour !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour madame. Je voudrais prendre rendez-vous avec le docteur, s’il vous plaît.",
+          "variantes": [
+            "Bonjour. J’aimerais un rendez-vous chez le docteur, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. C’est pour une urgence ou pour un contrôle ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est pour un contrôle. J’ai besoin de renouveler mon ordonnance pour la tension."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je peux vous proposer mardi prochain à quatorze heures trente."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Mardi après-midi, c’est difficile. Est-ce que vous auriez un rendez-vous le matin ?",
+          "variantes": [
+            "Le mardi, ça ne va pas. Vous avez quelque chose le matin ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Jeudi à neuf heures quinze, ça vous convient ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, c’est parfait. Je note : jeudi, neuf heures quinze."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Votre nom et votre date de naissance, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je m’appelle Maria Lopes, je suis née le douze mars mille neuf cent cinquante. Merci, au revoir !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-restaurant",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au restaurant",
+    "scenario": "loisirs",
+    "scene": "Au restaurant",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/restaurant.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que le serveur fait ?",
+        "Qu’est-ce qu’il y a sur la table ?"
+      ],
+      "description_modele": "Je vois un restaurant élégant, avec des nappes blanches, des tableaux et des lampes. Une jeune femme et un jeune homme sont assis à une table. Sur la table, il y a des verres, des couverts, une bougie et un petit vase avec des fleurs. Un serveur avec un gilet et un nœud papillon pose une assiette de viande avec de la salade devant l’homme. Les deux clients sourient. Peut-être qu’ils fêtent quelque chose ensemble.",
+      "je_suis": "le serveur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un restaurant",
+      "vous_voulez": "commander un repas et payer l’addition",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonsoir ! Vous avez choisi ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonsoir. Oui, je voudrais le steak avec de la salade, s’il vous plaît.",
+          "variantes": [
+            "Bonsoir, pour moi le steak-salade, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Quelle cuisson pour la viande ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À point, s’il vous plaît. Et une carafe d’eau pour la table."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. … Voilà votre steak. Bon appétit ! … Tout s’est bien passé ? Vous voulez un dessert ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’était délicieux, merci. Nous allons partager une mousse au chocolat.",
+          "variantes": [
+            "C’était très bon. Une mousse au chocolat pour deux, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec plaisir. Je vous apporte aussi l’addition ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, s’il vous plaît. Est-ce que je pourrais payer par carte ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Ça fait septante-huit francs."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-telephone",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Appeler le médecin",
+    "scenario": "sante",
+    "scene": "Appeler le médecin",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/telephone.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est le jeune homme ?",
+        "Avec qui parle-t-il au téléphone ?",
+        "À votre avis, pourquoi est-ce qu’il appelle ?"
+      ],
+      "description_modele": "Je vois un jeune homme assis sur un canapé, dans un salon. Il téléphone avec un téléphone fixe et il tient un mouchoir dans la main. Il a le nez rouge, il a l’air malade. Sur la table basse, il y a un carnet, un téléphone portable et une tasse. Dans un cercle, on voit un médecin avec une blouse blanche et un stéthoscope : il écoute au téléphone et il écrit des notes. Peut-être que le jeune homme explique ses symptômes.",
+      "je_suis": "le médecin",
+      "vous_etes": "un patient ou une patiente",
+      "lieu": "au téléphone",
+      "vous_voulez": "expliquer vos symptômes et savoir si vous devez venir au cabinet",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Allô, docteur Rochat, je vous écoute."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour docteur. Je ne me sens pas bien depuis hier. J’ai mal à la gorge et je tousse.",
+          "variantes": [
+            "Bonjour. Depuis hier, j’ai mal à la gorge et je tousse beaucoup."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Est-ce que vous avez de la fièvre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, ce matin j’avais trente-huit degrés. J’ai aussi mal à la tête."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez du mal à respirer ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Non, je respire bien. Est-ce que je dois venir au cabinet ?",
+          "variantes": [
+            "Non. Il faut que je vienne vous voir ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pour l’instant, restez au lit et buvez beaucoup. Si la fièvre monte, venez demain matin."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Est-ce que vous pourriez me faire un certificat pour mon travail ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je vous l’envoie par e-mail aujourd’hui."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, docteur. Je vais rappeler demain si ça ne va pas mieux."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-train",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Le contrôle dans le train",
+    "scenario": "transports",
+    "scene": "Le contrôle dans le train",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/train.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qui est l’homme en uniforme ?",
+        "Qu’est-ce que le jeune homme donne ?"
+      ],
+      "description_modele": "Je vois l’intérieur d’un train. Par la fenêtre, on voit des arbres et le paysage passe vite. Un jeune homme en pull clair est assis près de la fenêtre, avec un sac à dos à côté de lui. Il montre son billet et sa carte d’identité. Un contrôleur en uniforme bleu foncé, avec une casquette et une sacoche, prend les documents pour les vérifier. Il y a des valises en haut et d’autres voyageurs plus loin. Peut-être que le jeune homme part en week-end.",
+      "je_suis": "le contrôleur",
+      "vous_etes": "un voyageur ou une voyageuse",
+      "lieu": "dans le train",
+      "vous_voulez": "montrer votre billet et demander des informations sur votre correspondance",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, contrôle des billets, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour monsieur. Voici mon billet et ma carte d’identité.",
+          "variantes": [
+            "Bonjour, voilà mon billet et ma pièce d’identité."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Vous avez un demi-tarif ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, il est sur mon téléphone. Je vous le montre ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, s’il vous plaît. … Très bien, c’est en ordre."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Excusez-moi, j’ai une correspondance à la prochaine gare. Le train a du retard ?",
+          "variantes": [
+            "Pardon, est-ce qu’on est à l’heure ? Je dois changer de train."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons cinq minutes de retard. Votre correspondance part à quelle heure ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "À dix heures douze, sur le quai quatre. Est-ce que je vais l’avoir ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, la correspondance attend. Le quai quatre est juste en face."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super, merci beaucoup pour l’information. Bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-travail",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "La pause au travail",
+    "scenario": "travail",
+    "scene": "La pause au travail",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/travail.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux femmes ?",
+        "Qu’est-ce qu’elles font ?",
+        "À votre avis, de quoi parlent-elles ?"
+      ],
+      "description_modele": "Je vois une petite cuisine dans un bureau. Il y a une machine à café, des tasses sur une étagère et des plantes. Derrière une vitre, on voit des bureaux avec des ordinateurs. Deux femmes sont debout et elles boivent un café. Elles se regardent et elles sourient. Peut-être que ce sont des collègues qui font une pause et que la plus jeune est nouvelle dans l’entreprise.",
+      "je_suis": "une collègue de travail",
+      "vous_etes": "un nouveau collègue ou une nouvelle collègue",
+      "lieu": "dans la cuisine du bureau, pendant la pause",
+      "vous_voulez": "faire connaissance et poser des questions sur l’entreprise",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour ! Vous êtes nouvelle ici, non ? Je ne vous ai jamais vue."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour ! Oui, j’ai commencé lundi. Je travaille à la comptabilité.",
+          "variantes": [
+            "Bonjour, oui, c’est ma première semaine. Je suis à la comptabilité."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bienvenue ! Moi, je suis aux ressources humaines. Vous voulez un café ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, volontiers. Comment marche la machine ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "C’est simple : vous mettez la tasse ici et vous appuyez sur le bouton vert."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Est-ce que les gens mangent ici à midi ?",
+          "variantes": [
+            "Et à midi, où est-ce qu’on mange ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, beaucoup de collègues mangent à cette table. Il y a aussi un petit restaurant en face."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Super. Demain, je vais apporter mon repas et manger avec vous, si vous voulez bien."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec plaisir ! Si vous avez des questions, mon bureau est au deuxième étage."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est très gentil, merci. À demain !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-vetement",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Dans un magasin de vêtements",
+    "scenario": "magasins",
+    "scene": "Dans un magasin de vêtements",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/vetement.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux femmes ?",
+        "Qu’est-ce que la vendeuse tient dans la main ?",
+        "Qu’est-ce que la cliente fait ?"
+      ],
+      "description_modele": "Je vois un magasin de vêtements. Il y a des habits sur des cintres, un grand miroir et une cabine d’essayage. Une femme porte une chemise blanche et un pantalon large beige. Elle sort de la cabine et elle tient son pantalon à la taille : il est peut-être un peu grand. Une vendeuse souriante lui montre une veste grise sur un cintre. Peut-être que la vendeuse propose la veste avec le pantalon.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de vêtements",
+      "vous_voulez": "essayer une veste et demander une autre taille",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors, le pantalon vous va bien ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, il est confortable, mais il est un peu grand à la taille.",
+          "variantes": [
+            "Il est joli, mais un peu trop large."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je peux vous apporter la taille en dessous. Et regardez cette veste, elle irait bien avec."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elle est belle ! Est-ce que je peux l’essayer ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Vous faites quelle taille ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’habitude, je fais du trente-huit. Vous l’avez dans une autre couleur ?",
+          "variantes": [
+            "Je prends du trente-huit. Elle existe en bleu ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, en bleu marine et en gris. Je vous apporte les deux."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Elle coûte combien, la veste ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Cent vingt-neuf francs, et cette semaine il y a vingt pour cent de réduction."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est intéressant. Je vais essayer la grise avec le pantalon plus petit."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
     "id": "delf-a2j-po-001",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Une sortie au cinéma",
     "scenario": "loisirs",
     "scene": "Au cinéma",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous vivez en Suisse et vous voulez passer un moment au cinéma avec un ami suisse. Ensemble, vous choisissez le film, l’endroit, l’horaire et la façon de vous y rendre.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : deux affiches de films, « La nouvelle guerre des boutons » (aventure) et « Intouchables » (comédie).",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-001.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux amis ?",
+        "Qu’est-ce qu’on voit sur les deux affiches ?",
+        "À votre avis, quel film est-ce qu’ils vont voir ?"
+      ],
+      "description_modele": "Je vois le hall d’un cinéma. À gauche, il y a une machine à pop-corn. Au mur, il y a deux grandes affiches de films : sur la première, des jeunes marchent dans une forêt ; sur la deuxième, deux hommes rient, et l’un est en fauteuil roulant. Un jeune homme aux cheveux bouclés, en veste verte, montre les affiches du doigt. Son ami, un jeune homme roux en pull bleu, sourit et tient son téléphone. Peut-être qu’ils choisissent un film pour le week-end.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "au cinéma",
+      "vous_voulez": "choisir un film et organiser la sortie avec votre ami",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -41,7 +2450,7 @@
         },
         {
           "locuteur": "eleve",
-          "texte": "Je préfère 17 h, le matin je fais du sport. Ça te va ?",
+          "texte": "Je préfère 17 h, au début de l’après-midi je fais du sport. Ça te va ?",
           "variantes": [
             "17 h, c’est parfait pour moi. Et pour toi ?"
           ]
@@ -67,21 +2476,31 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-002",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Une visite de musée",
     "scenario": "loisirs",
     "scene": "Au musée",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous passez quelques jours chez un ami à Lausanne. Vous avez envie de visiter un musée de la ville avec lui. Vous discutez des visites possibles, vous choisissez, puis vous fixez un moment pour y aller.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : deux photos, le Muséum d’histoire naturelle (nature, animaux) et le Musée d’archéologie (Égypte ancienne).",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-002.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux amis ?",
+        "Qu’est-ce qu’il y a sur l’écran de la tablette ?",
+        "À votre avis, quel musée la femme préfère ?"
+      ],
+      "description_modele": "Je vois une cuisine dans un appartement en ville. Par la fenêtre, on voit des toits et des immeubles. Une femme aux cheveux bouclés, en pull jaune, et un homme en chemise à carreaux sont assis à une table. Ils regardent une tablette : il y a la photo d’un squelette de dinosaure et la photo de statues de l’Égypte ancienne. La femme montre la photo de l’Égypte avec le doigt et elle sourit. Peut-être qu’elle veut visiter le musée d’archéologie avec son ami.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "chez votre ami, à Lausanne",
+      "vous_voulez": "choisir un musée et fixer un moment pour la visite",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -132,21 +2551,31 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-003",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Une fête à préparer",
     "scenario": "fetes",
     "scene": "La fête",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Un ami suisse organise une fête chez lui et vous lui proposez votre aide. Vous discutez de tout ce qu’il y a à prévoir : invitations, musique, boissons, etc.\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-003.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux hommes ?",
+        "Qu’est-ce qu’il y a sur la table et par terre ?",
+        "À votre avis, qu’est-ce qu’ils préparent ?"
+      ],
+      "description_modele": "Je vois un salon avec un canapé gris et une fenêtre. Au mur, il y a une guirlande de petits drapeaux de couleur. Deux hommes sont assis sur le canapé : un homme blond en pull vert écrit dans un carnet, et un homme brun en chemise bleue parle et compte sur ses doigts. Sur la table basse, il y a un carnet, un téléphone, une petite enceinte et un sachet de ballons. Par terre, il y a une caisse avec des bouteilles de jus et d’eau. Peut-être qu’ils préparent une fête pour samedi.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "chez votre ami",
+      "vous_voulez": "aider votre ami à préparer sa fête",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -200,21 +2629,31 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-004",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Un cadeau d’anniversaire",
     "scenario": "fetes",
     "scene": "L’anniversaire",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "L’anniversaire de Paul approche. Avec un ami suisse, vous réfléchissez au cadeau à lui offrir. Parlez du prix, de qui l’achète et de quand. Vous pouvez aussi proposer d’autres idées que celles des images.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : trois images, un billet de cinéma, un jeu vidéo, un casque audio.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-004.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les deux personnes ?",
+        "Qu’est-ce qu’il y a dans la vitrine ?",
+        "À votre avis, qu’est-ce qu’ils veulent acheter ?"
+      ],
+      "description_modele": "Je vois une rue piétonne en ville et la vitrine d’un magasin d’électronique. Dans la vitrine, il y a un casque audio, un jeu vidéo et une manette. Une jeune femme avec un foulard bleu montre le casque audio du doigt. À côté d’elle, un jeune homme en parka verte tient son portefeuille ouvert, il réfléchit. Peut-être qu’ils cherchent un cadeau d’anniversaire pour un ami et qu’ils regardent les prix.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "devant un magasin d’électronique",
+      "vous_voulez": "choisir avec lui un cadeau d’anniversaire pour Paul",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -265,21 +2704,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-005",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Un spectacle",
     "scenario": "loisirs",
     "scene": "Le spectacle",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous souhaitez aller voir un spectacle avec un ami. Ensemble, vous choisissez lequel, le jour, l’heure et le lieu de rendez-vous. Les images vous aident, mais vous pouvez proposer un autre spectacle.\nL’examinateur joue le rôle de l’ami.\nSupports possibles : deux affiches, un concert de la chanteuse Jenifer et le spectacle de cirque « Juracirque ».",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-005.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une rue en ville, devant un panneau d’affichage. Il y a deux affiches : un concert d’une chanteuse et un spectacle de cirque. Une jeune femme en manteau jaune montre l’affiche du concert. Un homme en veste bleue sourit et regarde son téléphone. Derrière eux, il y a un tram. Peut-être qu’ils choisissent une date pour aller au concert ensemble.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "dans la rue, devant des affiches",
+      "vous_voulez": "aller voir un spectacle ensemble",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -333,21 +2781,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-006",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Où manger à midi ?",
     "scenario": "vie-quotidienne",
     "scene": "Au restaurant",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous êtes en vacances chez votre correspondant en Suisse. Vous devez vous mettre d’accord sur l’endroit où vous allez déjeuner.\nL’examinateur joue le rôle du correspondant.\nSupports possibles : trois photos, un hamburger avec des frites, un hot-dog, une pizza.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-006.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une rue piétonne, à midi. Il y a une pizzeria avec un four à pizza, un snack avec des photos de hamburgers et de frites, et un stand de hot-dogs. Un jeune homme avec un sac à dos montre la pizzeria. Une jeune femme blonde montre le snack. Peut-être qu’ils ne sont pas d’accord sur l’endroit où manger.",
+      "je_suis": "votre correspondant",
+      "vous_etes": "son correspondant ou sa correspondante",
+      "lieu": "dans une rue piétonne, à midi",
+      "vous_voulez": "choisir un endroit pour déjeuner",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -394,21 +2851,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-007",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Travailler ensemble",
     "scenario": "ecole",
     "scene": "Les devoirs",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "À l’école en Suisse, vous n’avez pas compris un exercice de maths. Vous proposez à un camarade de travailler ensemble : vous fixez le jour, l’heure et l’endroit.\nL’examinateur joue le rôle du camarade.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-007.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans la bibliothèque d’une école. Deux élèves sont assis à une table. Une fille montre un cahier avec des cercles coupés en parts : ce sont des fractions. Un garçon roux écoute et tient un crayon. Il y a des sacs d’école par terre et une horloge au mur. Peut-être que la fille aide le garçon à comprendre l’exercice.",
+      "je_suis": "votre camarade de classe",
+      "vous_etes": "son camarade ou sa camarade",
+      "lieu": "à l’école",
+      "vous_voulez": "faire l’exercice de maths ensemble",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -462,21 +2928,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-008",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Une activité après les cours",
     "scenario": "ecole",
     "scene": "Les activités de l’école",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Votre école suisse propose plusieurs activités après les cours. Avec un camarade, vous décidez laquelle choisir, puis vous fixez le jour et l’heure. Même sans préférence réelle, jouez le jeu et exprimez des goûts.\nL’examinateur joue le rôle du camarade.\nSupports possibles : images d’activités, informatique, théâtre, pompons de cheerleading, patinage, basket, football, tennis.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-008.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans le couloir d’une école, à côté des casiers. Deux élèves regardent un tableau d’affichage. Sur le tableau, il y a six images : le basket, le tennis, le football, l’informatique, le théâtre et le patinage. Le garçon montre une image avec le doigt. La fille regarde et sourit. Peut-être qu’ils choisissent un sport ensemble.",
+      "je_suis": "votre camarade de classe",
+      "vous_etes": "son camarade ou sa camarade",
+      "lieu": "dans le couloir de l’école",
+      "vous_voulez": "choisir une activité après les cours",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -527,21 +3002,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-009",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Un cadeau pour la professeure ou le professeur",
     "scenario": "ecole",
     "scene": "Le cadeau du professeur",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "C’est bientôt la Fête internationale du professeur. Avec un camarade, vous décidez d’offrir un cadeau à votre professeur de français : vous choisissez le cadeau, vous parlez du prix et vous décidez quand aller l’acheter.\nL’examinateur joue le rôle du camarade.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-009.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une papeterie. Il y a des carnets, des cartes et des stylos sur les étagères. Une jeune fille tient un joli carnet marron et un stylo. Un garçon aux cheveux bouclés tient une carte et un porte-monnaie ouvert. Ils parlent ensemble. Peut-être qu’ils achètent un cadeau pour quelqu’un.",
+      "je_suis": "votre camarade de classe",
+      "vous_etes": "son camarade ou sa camarade",
+      "lieu": "dans une papeterie",
+      "vous_voulez": "choisir un cadeau pour votre professeure de français",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -592,21 +3076,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-010",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Accueillir un nouvel élève",
     "scenario": "ecole",
     "scene": "Le nouvel élève",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Un nouvel élève arrive dans votre classe. Vous lui présentez l’école : horaires, restaurant scolaire, règlement, professeurs, élèves, etc.\nL’examinateur joue le rôle du nouvel élève.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-010.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une salle de classe, avant le cours. Il y a des tables, des chaises et un tableau blanc. Un garçon souriant tend la main. Un autre garçon est près de la porte avec son sac à dos. Il a l’air timide. Peut-être que c’est un nouvel élève et que le premier garçon lui souhaite la bienvenue.",
+      "je_suis": "le nouvel élève",
+      "vous_etes": "un élève ou une élève de la classe",
+      "lieu": "dans une salle de classe",
+      "vous_voulez": "présenter l’école au nouvel élève",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -661,21 +3154,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : avec un ami ou un camarade, utilisez « tu »."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-011",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Au centre commercial",
     "scenario": "magasins",
     "scene": "Au centre commercial",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "En vacances en Suisse, vous entrez dans un centre commercial pour faire du shopping et aller au cinéma. Au point d’information, vous demandez où se trouvent le cinéma et les magasins qui vous intéressent, ainsi que les horaires d’ouverture.\nL’examinateur joue le rôle de l’employé.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-011.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un grand centre commercial. Il y a un comptoir d’information, un escalator et un ascenseur en verre. Une employée en veste bleue montre l’escalator avec la main. Un jeune homme avec un sac à dos écoute. Aux étages, on voit des magasins de vêtements et de chaussures. Peut-être que le jeune homme cherche un magasin ou le cinéma.",
+      "je_suis": "l’employée du point d’information",
+      "vous_etes": "un touriste ou une touriste",
+      "lieu": "dans un centre commercial",
+      "vous_voulez": "trouver le cinéma et des magasins",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -726,21 +3228,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-012",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Les transports en commun",
     "scenario": "transports",
     "scene": "Dans le métro",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous passez des vacances à Bruxelles avec vos parents et vous voulez un abonnement pour les transports de la ville. Au guichet du métro, vous vous renseignez sur les formules et les prix, puis vous en choisissez une.\nL’examinateur joue le rôle de l’employé.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-012.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une station de métro. Un employé est derrière la vitre du guichet. Il montre trois cartes de couleurs différentes : bleue, verte et rouge. Un adolescent tient sa carte d’identité. Derrière lui, il y a ses parents avec une valise. Peut-être qu’ils sont en vacances et qu’ils achètent des cartes pour les transports.",
+      "je_suis": "l’employé du métro",
+      "vous_etes": "un jeune touriste ou une jeune touriste",
+      "lieu": "au guichet du métro, à Bruxelles",
+      "vous_voulez": "acheter des abonnements pour votre famille",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -791,21 +3302,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-013",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "À la poste",
     "scenario": "lieux-publics",
     "scene": "À la poste",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "En vacances en Suisse avec votre famille, vous avez acheté des cadeaux pour vos amis et vous voulez les envoyer par la poste. Vous demandez à l’employé le prix, la durée et la sécurité de l’envoi.\nL’examinateur joue le rôle de l’employé.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-013.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes au guichet d’un bureau de poste. Une employée aux cheveux gris met un colis sur la balance. Un jeune homme avec un sac à dos montre le colis et parle. Derrière l’employée, il y a des cartons sur les étagères. Le jeune homme a l’air un peu inquiet. Peut-être qu’il demande le prix ou la durée de l’envoi.",
+      "je_suis": "l’employée de la poste",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la poste",
+      "vous_voulez": "envoyer un colis à vos amis",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -856,21 +3376,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-014",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "À la gare",
     "scenario": "transports",
     "scene": "À la gare",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous êtes à Genève et vous voulez voyager jusqu’à Zurich. À la gare, vous demandez les horaires et les prix des billets de train.\nL’examinateur joue le rôle de l’employé.\nHoraires Genève – Zurich :\nDépart 06 h 36 – arrivée 09 h 57 (3 h 21) : 48 francs\nDépart 08 h 02 – arrivée 11 h 24 (3 h 22) : 56 francs\nDépart 09 h 37 – arrivée 12 h 57 (3 h 20) : 65 francs\nDépart 10 h 07 – arrivée 13 h 11 (3 h 04) : 65 francs\nDépart 11 h 36 – arrivée 14 h 57 (3 h 21) : 72 francs\nDépart 14 h 06 – arrivée 17 h 11 (3 h 05) : 77 francs\nDépart 16 h 38 – arrivée 19 h 57 (3 h 19) : 66 francs\nDépart 18 h 35 – arrivée 21 h 57 (3 h 22) : 48 francs",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-014.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une grande gare. Il y a une grande horloge et des voyageurs. Un employé aux cheveux gris est derrière le guichet, devant un ordinateur. Il donne un billet à une jeune femme. Elle a une valise et un porte-monnaie à la main. Peut-être qu’elle part en voyage en train aujourd’hui.",
+      "je_suis": "l’employé de la gare",
+      "vous_etes": "un voyageur ou une voyageuse",
+      "lieu": "à la gare de Genève",
+      "vous_voulez": "acheter un billet de train pour Zurich",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -925,21 +3454,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-015",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Au bureau des objets trouvés",
     "scenario": "lieux-publics",
     "scene": "Aux objets trouvés",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Pendant vos vacances à Montréal, vous avez oublié votre sac à la gare. Vous vous rendez aux « Objets trouvés » et vous décrivez votre sac à l’employé.\nL’examinateur joue le rôle de l’employé.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-015.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes au bureau des objets trouvés. Sur les étagères, il y a des parapluies, des casquettes et des sacs. Un employé barbu pose un sac à dos bleu foncé sur le comptoir. Sur le sac, il y a un petit porte-clés en forme de chat. Une jeune femme sourit et tient un passeport. Peut-être que c’est son sac et qu’elle est contente de le retrouver.",
+      "je_suis": "l’employé des objets trouvés",
+      "vous_etes": "un voyageur ou une voyageuse",
+      "lieu": "au bureau des objets trouvés de la gare",
+      "vous_voulez": "retrouver votre sac",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -990,21 +3528,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-016",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Louer un vélo",
     "scenario": "transports",
     "scene": "Le vélo",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous êtes à Genève et vous aimeriez louer un vélo pour vous promener dans un grand parc. Chez le loueur, vous demandez les conditions, les prix, les horaires et quels sont les parcs les plus proches.\nL’examinateur joue le rôle du loueur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-016.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes devant un magasin de location de vélos, au bord d’un lac. Il y a beaucoup de vélos bleus. Une femme rousse donne un casque à un adolescent. Le garçon est sur un vélo bleu. Derrière, il y a un parc avec de grands arbres. Peut-être qu’il va se promener à vélo dans le parc.",
+      "je_suis": "la loueuse de vélos",
+      "vous_etes": "un jeune client ou une jeune cliente",
+      "lieu": "chez un loueur de vélos, à Genève",
+      "vous_voulez": "louer un vélo pour l’après-midi",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -1055,21 +3602,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-017",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "À l’Office du tourisme",
     "scenario": "vacances",
     "scene": "À l’office du tourisme",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "En vacances à Bruxelles avec votre famille, vous entrez à l’Office du tourisme. Vous posez des questions sur les sorties, les visites et les musées de la ville.\nL’examinateur joue le rôle de l’employé.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-017.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un office du tourisme. Une employée souriante montre un plan de la ville. Une adolescente avec un sac à dos regarde le plan. Sur le comptoir, il y a des cartes postales avec des paysages. Derrière, près de la porte, il y a ses parents. Peut-être que la famille cherche des idées de visites.",
+      "je_suis": "l’employée de l’Office du tourisme",
+      "vous_etes": "un jeune touriste ou une jeune touriste",
+      "lieu": "à l’Office du tourisme de Bruxelles",
+      "vous_voulez": "connaître les visites et les sorties de la ville",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -1120,21 +3676,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-018",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Au restaurant",
     "scenario": "vie-quotidienne",
     "scene": "Au restaurant",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Avec votre famille, vous êtes dans un restaurant en Suisse. Vous interrogez le serveur sur le menu : les plats, les ingrédients, les prix…\nL’examinateur joue le rôle du serveur.\nMenu du restaurant Chez Dédé — 15 francs\nEntrées : soupe de poisson ; salade de tomates ; pâté de campagne\nPlats : pâtes à la bolognaise ; poulet frites ; poisson du jour\nDesserts : mousse au chocolat ; crêpes au sucre ; fruits",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-018.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un petit restaurant, le soir. Un serveur avec un tablier noir tient un carnet et un stylo. Une jeune femme avec un foulard lit la carte et pose une question. Sur la table, il y a une carafe d’eau et des verres. Derrière elle, il y a deux personnes de sa famille. Peut-être qu’elle demande ce qu’il y a dans un plat.",
+      "je_suis": "le serveur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "au restaurant",
+      "vous_voulez": "choisir votre menu",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1189,21 +3754,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-019",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Acheter des vêtements",
     "scenario": "magasins",
     "scene": "Au magasin de vêtements",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "En vacances en Suisse, vous voulez offrir des vêtements à votre meilleur ami. Dans un magasin, vous demandez au vendeur les tailles, les couleurs et les prix.\nL’examinateur joue le rôle du vendeur.\nSupports possibles : deux photos, un T-shirt bleu et une chemise à carreaux.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-019.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un magasin de vêtements. Un vendeur montre un T-shirt bleu. À côté, il y a une chemise à carreaux. Un jeune homme blond réfléchit, la main sous le menton. Sur la table, il y a des T-shirts blancs, noirs et rouges. Peut-être qu’il ne sait pas quel vêtement choisir.",
+      "je_suis": "le vendeur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de vêtements",
+      "vous_voulez": "acheter un cadeau pour votre meilleur ami",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1258,21 +3832,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-020",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Changer la décoration de sa chambre",
     "scenario": "magasins",
     "scene": "Le magasin de décoration",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous avez envie de renouveler la décoration de votre chambre. Dans un magasin de décoration, vous demandez conseil au vendeur (couleurs, objets…).\nL’examinateur joue le rôle du vendeur.\nSupports possibles : quatre photos, des pots de peinture, une lampe rouge, un globe terrestre, une horloge verte.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-020.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un magasin de décoration. Une vendeuse aux cheveux gris montre des couleurs bleues et vertes. Un jeune homme écoute avec attention. Sur les étagères, il y a des pots de peinture, une lampe rouge et un globe terrestre. Au mur, il y a une horloge verte. Peut-être qu’il veut peindre un mur de sa chambre.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de décoration",
+      "vous_voulez": "changer la décoration de votre chambre",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1327,21 +3910,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-021",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Choisir un téléphone portable",
     "scenario": "magasins",
     "scene": "Le magasin de téléphones",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "En vacances à Montréal, vous voulez acheter un nouveau téléphone portable. Dans le magasin, vous interrogez le vendeur sur le prix, la taille et les fonctions des modèles, puis vous en choisissez un d’après ses réponses.\nL’examinateur joue le rôle du vendeur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-021.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un magasin de téléphones. Un vendeur en chemise bleue est assis à une table. Il tient deux téléphones : un petit et un grand. Une femme aux cheveux bouclés montre le petit téléphone. Derrière eux, il y a d’autres téléphones sur des étagères. Peut-être qu’elle préfère le modèle le moins cher.",
+      "je_suis": "le vendeur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de téléphones, à Montréal",
+      "vous_voulez": "acheter un nouveau téléphone portable",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1396,21 +3988,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-022",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Chez le marchand de journaux",
     "scenario": "magasins",
     "scene": "Au kiosque",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Chez un marchand de journaux en Suisse, vous voulez acheter des magazines. Vous demandez au vendeur ce qu’ils contiennent et combien ils coûtent.\nL’examinateur joue le rôle du vendeur.\nSupports possibles : trois couvertures, « Le Monde des ados », « Stars Live » et « Science & Vie Junior » (numéro spécial sur les grandes catastrophes).",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-022.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes devant un kiosque à journaux, dans une rue. Une vendeuse avec des lunettes montre un magazine avec un volcan. Un adolescent tient déjà deux magazines et des pièces de monnaie. Il y a d’autres magazines, avec un chanteur et des jeunes. Le garçon écoute la vendeuse. Peut-être qu’il va acheter le magazine sur le volcan.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un kiosque",
+      "vous_voulez": "acheter des magazines",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -1461,21 +4062,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-023",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "À la librairie",
     "scenario": "magasins",
     "scene": "À la librairie",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous entrez dans une librairie en Suisse pour acheter des livres à votre famille d’accueil. Vous posez des questions au libraire (genre, prix…) et vous choisissez plusieurs livres.\nL’examinateur joue le rôle du libraire.\nSupports possibles : trois couvertures, « Le polar suisse », « L’Histoire de la Suisse en BD » et « Photographie contemporaine, mode d’emploi ».",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-023.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une librairie. Il y a beaucoup de livres sur les étagères. Un libraire aux cheveux gris montre trois livres sur le comptoir. Un livre a un appareil photo sur la couverture, un autre est une bande dessinée. Une jeune femme sourit et montre les livres. Il y a aussi un rouleau de papier cadeau. Peut-être qu’elle achète des cadeaux.",
+      "je_suis": "le libraire",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une librairie",
+      "vous_voulez": "offrir des livres à votre famille d’accueil",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -1530,21 +4140,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2j-po-024",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Acheter une valise",
     "scenario": "magasins",
     "scene": "Le magasin de bagages",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "En vacances en Suisse avec votre famille, votre valise est cassée. Vous entrez dans un magasin de bagages et vous interrogez le vendeur (prix, taille, poids…) pour faire votre choix.\nL’examinateur joue le rôle du vendeur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2j-024.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un magasin de bagages. Une vendeuse présente deux valises : une valise grise rigide avec un cadenas et une valise bleue en tissu. Un homme tient les poignées des deux valises. À côté, il y a une vieille valise noire, cassée. Il y a d’autres valises sur les étagères. Peut-être que l’homme compare les valises pour son voyage en avion.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de bagages",
+      "vous_voulez": "acheter une nouvelle valise",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1599,21 +4218,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": "Rappel : utilisez « vous », n’oubliez pas de saluer et de remercier."
+    "questions": []
   },
   {
     "id": "delf-a2r-po-001",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Activité sportive",
     "scenario": "loisirs",
     "scene": "Le club de sport",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous voulez vous inscrire à une activité sportive avec votre ami suisse. Vous vous mettez d’accord sur l’activité que vous allez faire ensemble (quel jour, quel sport, à quelle heure).\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-001.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe à l’accueil d’un centre sportif. Il y a deux personnes : une femme aux cheveux noirs et un homme blond avec un sac de sport. Ils regardent ensemble un dépliant avec des dessins de sports. Derrière la vitre, on voit une salle avec un filet et des raquettes de badminton. Ils discutent pour choisir une activité. Peut-être qu’ils vont s’inscrire ensemble à un cours de badminton.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "dans un centre sportif",
+      "vous_voulez": "vous inscrire à une activité sportive avec moi",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1670,21 +4298,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-002",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Cadeau souvenir",
     "scenario": "vacances",
     "scene": "Le souvenir de vacances",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous passez quelques jours à Zermatt avec un ami suisse et vous voulez ramener un souvenir à votre famille. Vous demandez conseil à votre ami.\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-002.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une petite rue d’un village de montagne, en été. Deux hommes regardent la vitrine d’un magasin. Dans la vitrine, il y a des boîtes de chocolat, un livre de photos des montagnes et une peluche en forme de marmotte. L’homme aux cheveux gris montre la vitrine avec le doigt. Le jeune homme réfléchit, il hésite. Peut-être qu’il cherche un souvenir pour sa famille.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "à Zermatt, devant un magasin de souvenirs",
+      "vous_voulez": "acheter un souvenir pour votre famille",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -1742,21 +4379,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-003",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Fête chez un voisin",
     "scenario": "fetes",
     "scene": "La fête",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous habitez à Lausanne. Votre voisin vous propose de faire une fête chez lui. Vous discutez de l’organisation de la fête (nombre de personnes, plats, musique, horaire).\nL’examinateur joue le rôle du voisin.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-003.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans un immeuble, devant la porte d’un appartement. Un homme aux cheveux bruns frisés parle avec sa voisine. Il fait un grand geste, il a l’air content. La femme sourit et tient un carnet et un stylo pour prendre des notes. Derrière eux, on voit une table avec des plats et une enceinte pour la musique. Peut-être qu’ils préparent une fête ensemble.",
+      "je_suis": "votre voisin",
+      "vous_etes": "son voisin ou sa voisine",
+      "lieu": "dans notre immeuble, à Lausanne",
+      "vous_voulez": "organiser une fête avec moi",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1810,21 +4456,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-004",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Week-end avec un ami",
     "scenario": "vacances",
     "scene": "À la montagne",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Un ami suisse vous invite à passer un week-end chez lui, à la montagne. Vous lui posez des questions sur le week-end (prix, transports, activités, logement).\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-004.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes à un arrêt de bus, dans un village de montagne. Derrière les personnes, il y a un bus jaune et des montagnes avec de la neige. Un homme avec une barbe grise accueille une femme. Ils se serrent la main et ils sourient. La femme porte un sac à dos et une écharpe rouge. Peut-être qu’elle arrive pour passer le week-end chez son ami.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "dans mon village, à la montagne",
+      "vous_voulez": "passer le week-end chez moi",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -1882,21 +4537,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-005",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Restaurant",
     "scenario": "loisirs",
     "scene": "Au restaurant",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous voulez inviter votre ami suisse au restaurant. Vous discutez avec lui et vous lui posez des questions pour fixer votre rendez-vous (jour, heure, type de restaurant qu’il préfère).\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-005.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans une rue, devant un restaurant. Il y a une terrasse avec des tables et quelques clients. Une femme en manteau marron montre l’entrée du restaurant avec la main. Un homme avec des lunettes arrive et lui fait un signe de la main. Ils ont l’air contents de se voir. Peut-être qu’elle l’invite à manger une pizza.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "devant une pizzeria, près de la gare",
+      "vous_voulez": "m’inviter au restaurant",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -1954,21 +4618,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-006",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Gâteau d’anniversaire",
     "scenario": "fetes",
     "scene": "L’anniversaire",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Avec votre ami suisse, vous voulez préparer un gâteau pour l’anniversaire d’un autre ami. Vous lui demandez des conseils pour faire le gâteau (ingrédients, quantités, allergies, pour combien de personnes).\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-006.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans la cuisine d’un appartement. Un homme avec un tablier casse un œuf dans un grand saladier. À côté de lui, une femme tient une tablette de chocolat noir et lui pose une question. Sur la table, il y a du beurre, de la farine, du sucre, des œufs, une balance et un moule à gâteau. Ils préparent un gâteau ensemble. Peut-être que c’est un gâteau au chocolat pour un anniversaire.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "dans ma cuisine",
+      "vous_voulez": "préparer un gâteau pour l’anniversaire de Léo",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -2026,21 +4699,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-007",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Animal de compagnie",
     "scenario": "vie-quotidienne",
     "scene": "Les animaux",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous vivez à Fribourg. Vous demandez à votre ami suisse de garder votre animal de compagnie quelques jours. Vous lui expliquez ce qu’il doit faire (nourriture, promenade, jeux).\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-007.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans l’entrée d’un appartement. Une femme en manteau donne la laisse de son chien et un sac à un homme roux. L’homme prend la laisse et il sourit. Le chien est brun, il est assis par terre. Il y a un panier avec une balle, une gamelle et une valise près de la porte. Peut-être que la femme part en voyage et que son ami va garder le chien.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "chez vous, à Fribourg",
+      "vous_voulez": "me demander de garder votre chien",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -2094,21 +4776,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-008",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Service au voisin",
     "scenario": "maison",
     "scene": "Les voisins",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Votre voisin ne peut pas sortir de chez lui pendant plusieurs jours. Vous lui proposez de faire ses courses ou de l’aider. Vous lui demandez ce dont il a besoin.\nL’examinateur joue le rôle du voisin.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-008.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes devant la porte d’un appartement, dans un immeuble. Un homme âgé aux cheveux blancs a une jambe dans le plâtre. Il marche avec des béquilles. Une femme lui parle et fait un geste avec la main. Elle tient un papier et elle a un grand sac en tissu sur l’épaule. Peut-être qu’elle propose de faire les courses pour son voisin.",
+      "je_suis": "votre voisin, Monsieur Dubois",
+      "vous_etes": "son voisin ou sa voisine",
+      "lieu": "devant la porte de mon appartement",
+      "vous_voulez": "m’aider et faire mes courses",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -2162,21 +4853,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-009",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Soirée avec un ami",
     "scenario": "loisirs",
     "scene": "La sortie entre amis",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous souhaitez passer une soirée avec votre ami. Vous lui demandez ce qu’il aime faire (restaurant, cinéma, repas à la maison, balade, etc.).\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-009.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe au bord d’un lac, en fin de journée. Il y a des arbres et des bancs le long de la promenade. Une femme et un homme se promènent ensemble. La femme parle et fait un geste avec la main ; elle a un sac avec du pain. L’homme réfléchit et il sourit. Peut-être qu’elle l’invite à manger chez elle ce soir.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "au bord du lac",
+      "vous_voulez": "passer une soirée avec moi",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -2234,21 +4934,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-010",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Groupe de musique",
     "scenario": "loisirs",
     "scene": "Le groupe de musique",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous souhaitez jouer de la musique dans un groupe. Vous avez rencontré un musicien. Vous lui posez des questions sur le type de musique qu’il joue, ses instruments, ses répétitions.\nL’examinateur joue le rôle du musicien.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-010.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une salle de musique. Au fond, il y a une batterie, des amplificateurs et un clavier. Un homme aux longs cheveux gris parle et montre la salle avec la main. En face de lui, une jeune femme porte une guitare dans son étui, sur le dos. Elle écoute avec attention. Peut-être qu’elle veut jouer dans le groupe de cet homme.",
+      "je_suis": "le musicien",
+      "vous_etes": "une personne qui cherche un groupe",
+      "lieu": "dans une salle de répétition",
+      "vous_voulez": "jouer de la musique dans mon groupe",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -2306,21 +5015,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-011",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Film",
     "scenario": "loisirs",
     "scene": "Au cinéma",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Un ami vous propose de regarder un nouveau film demain, mais vous ne le connaissez pas. Vous lui demandez quel genre de film c’est. Vous lui parlez de vos films préférés et vous lui proposez un autre film.\nL’examinateur joue le rôle de l’ami.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-011.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans un salon. Un homme et une femme sont assis sur un canapé devant la télévision. À l’écran, on voit des alpinistes dans la neige, sur une grande montagne. L’homme tient la télécommande et montre l’écran. La femme fait une grimace, elle n’a pas l’air d’accord. Sur la table, il y a un bol de pop-corn : peut-être qu’ils choisissent un film pour la soirée.",
+      "je_suis": "votre ami",
+      "vous_etes": "son ami ou son amie",
+      "lieu": "dans le salon",
+      "vous_voulez": "choisir un film avec moi",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2374,21 +5092,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-012",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Au cinéma",
     "scenario": "loisirs",
     "scene": "Au cinéma",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous êtes à Lausanne. Vous voulez voir un film. Vous allez au cinéma et vous posez des questions au vendeur (titre du film, horaire, genre, durée, prix).\nL’examinateur joue le rôle du vendeur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-012.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes à la caisse d’un cinéma. Au mur, il y a des affiches de films. Derrière le guichet, un jeune homme aux cheveux bruns frisés donne un billet. Une femme en manteau noir montre une carte d’étudiant et tient une carte bancaire. Sur le comptoir, il y a un terminal de paiement. Peut-être qu’elle achète une place à prix réduit pour un film ce soir.",
+      "je_suis": "le vendeur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la caisse d’un cinéma, à Lausanne",
+      "vous_voulez": "acheter un billet pour un film ce soir",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2446,21 +5173,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-013",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Fournitures scolaires",
     "scenario": "magasins",
     "scene": "À la papeterie",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "C’est la rentrée scolaire en Suisse. Vous avez besoin de fournitures. Vous allez dans un magasin et vous demandez des renseignements au vendeur (objets, prix, couleurs).\nL’examinateur joue le rôle du vendeur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-013.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans une papeterie. Sur les étagères, il y a des cahiers, des trousses et des stylos de toutes les couleurs. Une vendeuse avec des lunettes montre trois trousses : une rouge, une bleue et une noire. Un homme tient des cahiers sous le bras. Il montre la trousse bleue avec le doigt. Peut-être qu’il achète des fournitures pour la rentrée de son enfant.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une papeterie",
+      "vous_voulez": "acheter des fournitures scolaires pour votre fils",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2514,21 +5250,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-014",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Prendre le train",
     "scenario": "transports",
     "scene": "À la gare",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous êtes à Sion et vous voulez prendre le train pour aller à Berne. Vous allez à la gare pour demander des renseignements à l’agent d’accueil (prix, horaires, temps de trajet, quai).\nL’examinateur joue le rôle de l’agent d’accueil.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-014.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans le hall d’une gare. Par la fenêtre, on voit un train rouge sur un quai. Un employé en veste bleue est derrière un guichet. Il montre la direction des quais avec la main. Une femme avec un foulard et une petite valise tient un billet et elle écoute. Peut-être qu’elle demande à quelle heure part son train.",
+      "je_suis": "l’agent d’accueil de la gare",
+      "vous_etes": "un voyageur ou une voyageuse",
+      "lieu": "à la gare de Sion",
+      "vous_voulez": "prendre le train pour Berne",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -2586,21 +5331,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-015",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Magasin de vêtements",
     "scenario": "magasins",
     "scene": "Au magasin de vêtements",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Un ami vous invite à passer des vacances à la montagne. Vous avez besoin de vêtements. Vous allez au magasin et vous demandez des conseils au vendeur (types de vêtements, couleurs, prix).\nL’examinateur joue le rôle du vendeur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-015.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans un magasin de vêtements. Il y a des vestes noires, rouges et bleues, des bonnets, des gants et des pulls sur les étagères. Un vendeur montre une veste bleue chaude. Un client touche la manche de la veste. Il regarde le tissu avec attention. Peut-être qu’il cherche des vêtements pour partir à la montagne en hiver.",
+      "je_suis": "le vendeur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de vêtements",
+      "vous_voulez": "acheter des vêtements chauds pour vos vacances à la montagne",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2658,21 +5412,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-016",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Achats sur Internet",
     "scenario": "magasins",
     "scene": "L’achat en ligne",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous avez acheté des produits sur Internet. Malheureusement, ils arrivent cassés. Vous allez au magasin pour expliquer votre problème et chercher une solution (remboursement, échange).\nL’examinateur joue le rôle du responsable du service clients.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-016.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes au service clients d’un magasin. Sur le comptoir, il y a un carton ouvert, une lampe cassée et deux verres ; un des verres est fissuré. Une femme montre une photo sur son téléphone. L’employé regarde les objets cassés. Il a l’air désolé. Peut-être que la femme veut un échange ou un remboursement.",
+      "je_suis": "le responsable du service clients",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "au service clients du magasin",
+      "vous_voulez": "échanger ou vous faire rembourser des produits cassés",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2730,21 +5493,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-017",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Au restaurant",
     "scenario": "loisirs",
     "scene": "Au restaurant",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous êtes dans un restaurant à Lausanne avec des amis. Vous demandez la carte et vous posez des questions au serveur (plat du jour, prix). Vous choisissez ce que vous voulez manger.\nL’examinateur joue le rôle du serveur.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-017.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe le soir dans un restaurant. Les tables ont des nappes blanches. Un homme assis à une table tient la carte et pose une question au serveur. Le serveur porte un tablier noir ; il écrit dans un petit carnet. Derrière, on voit d’autres personnes assises. Peut-être que le client demande quel est le plat du jour.",
+      "je_suis": "le serveur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un restaurant, à Lausanne",
+      "vous_voulez": "commander à manger pour vous et vos amis",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2802,21 +5574,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-018",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "À la banque",
     "scenario": "lieux-publics",
     "scene": "À la banque",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous venez d’arriver en Suisse et vous voulez ouvrir un compte bancaire. Vous posez des questions au conseiller pour avoir plus d’informations (papiers, documents, cartes, assurances).\nL’examinateur joue le rôle du conseiller bancaire.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-018.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans un bureau, à la banque. Une femme en veste claire est assise derrière le bureau. Elle tient une carte bancaire et une brochure. En face d’elle, un jeune homme est assis ; il pose son passeport et des papiers sur le bureau. Il y a un ordinateur et une plante. Peut-être que le jeune homme veut ouvrir un compte bancaire.",
+      "je_suis": "la conseillère bancaire",
+      "vous_etes": "un nouveau client ou une nouvelle cliente",
+      "lieu": "à la banque",
+      "vous_voulez": "ouvrir un compte bancaire",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2874,21 +5655,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-019",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "École de langue",
     "scenario": "ecole",
     "scene": "Le cours de langue",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous voulez vous inscrire dans une école de langue française. Vous avez rendez-vous avec le directeur de l’école. Vous lui posez des questions (cours, horaires, prix).\nL’examinateur joue le rôle du directeur de l’école.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-019.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "La scène se passe dans le bureau d’une école. Derrière la porte vitrée, on voit une salle de classe avec des tables et un tableau blanc. Un homme âgé avec une barbe blanche et des lunettes est assis au bureau. Il tient des feuilles et un livre. En face de lui, une femme écoute et prend des notes dans un cahier. Peut-être qu’elle veut s’inscrire à un cours de langue.",
+      "je_suis": "le directeur de l’école",
+      "vous_etes": "une future élève ou un futur élève",
+      "lieu": "dans une école de langue",
+      "vous_voulez": "vous inscrire à un cours de français",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -2946,21 +5736,30 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-020",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Salon du travail",
     "scenario": "travail",
     "scene": "L’offre d’emploi",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous allez au salon du travail à Lausanne avec un camarade de classe. Vous rencontrez un chef cuisinier qui cherche du personnel. Vous lui posez des questions (horaires, salaire, tâches).\nL’examinateur joue le rôle du chef cuisinier.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-020.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?"
+      ],
+      "description_modele": "Nous sommes dans une grande salle avec beaucoup de stands et de visiteurs. Sur un stand, il y a une photo d’une cuisine de restaurant. Un cuisinier en veste blanche donne une carte de visite à un jeune homme. Le jeune homme porte une chemise verte et il tient un dossier. Il écoute avec intérêt. Peut-être qu’il cherche un travail dans la restauration.",
+      "je_suis": "le chef cuisinier",
+      "vous_etes": "un candidat ou une candidate",
+      "lieu": "au salon du travail, à Lausanne",
+      "vous_voulez": "travailler dans mon restaurant",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -3018,21 +5817,31 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-021",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Demande d’aide",
     "scenario": "travail",
     "scene": "Au bureau",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Votre collègue est malade et ne peut pas venir travailler. Il vous demande de l’aider à faire son travail. Vous lui posez des questions (tâches, horaires, matériel).\nL’examinateur joue le rôle du collègue.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-021.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la femme ?",
+        "Qu’est-ce qu’elle fait ?",
+        "À votre avis, à qui est-ce qu’elle parle ?"
+      ],
+      "description_modele": "La scène se passe dans un bureau. Une femme est debout à côté d’un bureau vide. Elle téléphone avec son portable et elle prend des notes dans un carnet. Sur le bureau, il y a un ordinateur, une tasse et une pile de dossiers. Derrière la porte vitrée, on voit une salle de réunion avec une table et des chaises. Peut-être qu’un collègue est malade et qu’il lui explique son travail.",
+      "je_suis": "votre collègue Marc",
+      "vous_etes": "son collègue ou sa collègue",
+      "lieu": "au bureau",
+      "vous_voulez": "aider Marc et savoir quel travail faire",
       "repliques": [
         {
           "locuteur": "examinateur",
@@ -3090,21 +5899,31 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-022",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Nouveau travail",
     "scenario": "travail",
     "scene": "Le nouveau travail",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Vous venez de commencer à travailler dans une nouvelle entreprise. Vous rencontrez votre nouveau collègue. Vous lui posez des questions sur l’entreprise (horaires, cantine, collègues, patron, congés).\nL’examinateur joue le rôle du collègue.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-022.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "À votre avis, qui est le nouvel employé ?"
+      ],
+      "description_modele": "La scène se passe dans les bureaux d’une entreprise. Il y a deux hommes au premier plan. Un jeune homme porte un sac et un badge. Un homme plus âgé, aux cheveux gris, lui serre la main et sourit. Avec l’autre main, il montre un bureau avec un ordinateur et une plante. Peut-être que le jeune homme commence son nouveau travail aujourd’hui.",
+      "je_suis": "votre nouveau collègue",
+      "vous_etes": "un nouvel employé ou une nouvelle employée",
+      "lieu": "dans une entreprise, au service comptabilité",
+      "vous_voulez": "poser des questions sur l’entreprise",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -3158,21 +5977,31 @@
         }
       ]
     },
-    "questions": [],
-    "consigne_supplementaire": null
+    "questions": []
   },
   {
     "id": "delf-a2r-po-023",
     "niveau": "A1-A2",
     "competence": "PO",
-    "type_exercice": "dialogue",
+    "type_exercice": "image_interaction",
     "theme": "Journée de formation",
     "scenario": "travail",
     "scene": "La formation",
-    "consigne": "Exercice en interaction. Jouez la situation avec l’examinateur.",
     "support": {
-      "situation": "Votre patron propose aux employés une journée de formation en informatique. Vous êtes intéressé(e). Vous posez des questions à votre patron sur cette formation (date, lieu, durée, contenu).\nL’examinateur joue le rôle du patron.",
-      "repliques_au_corrige": true,
+      "images": [
+        "/lib/images/comprehension/po-a2/a2r-023.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "À votre avis, de quoi est-ce qu’ils parlent ?"
+      ],
+      "description_modele": "La scène se passe dans un bureau. Une femme est assise derrière un bureau avec un ordinateur portable et un agenda. C’est peut-être la patronne. Un homme est debout devant elle : il tient une feuille et il lui pose une question. Par la porte ouverte, on voit une salle de réunion avec des ordinateurs portables sur une grande table. Peut-être qu’ils parlent d’une formation en informatique.",
+      "je_suis": "votre patronne, Madame Keller",
+      "vous_etes": "un employé ou une employée",
+      "lieu": "dans mon bureau, dans l’entreprise",
+      "vous_voulez": "avoir des informations sur la formation en informatique et vous inscrire",
       "repliques": [
         {
           "locuteur": "eleve",
@@ -3224,487 +6053,6 @@
           "locuteur": "eleve",
           "texte": "Parfait. Je voudrais m’inscrire, s’il vous plaît."
         }
-      ]
-    },
-    "questions": [],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "tcf-a1a2-po-mots-ecole",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "L’école",
-    "scenario": "ecole",
-    "scene": "L’école",
-    "support": {
-      "theme": "L’école",
-      "mots": [
-        "cartable",
-        "professeur",
-        "récréation",
-        "cantine",
-        "devoirs",
-        "horaire",
-        "matière préférée",
-        "bibliothèque",
-        "trousse",
-        "camarades"
-      ],
-      "exemples_questions": [
-        "Comment s’appelle votre école ?",
-        "À quelle heure commencent les cours ?",
-        "Qu’est-ce que vous faites pendant la récréation ?",
-        "Combien d’heures de devoirs avez-vous par semaine ?",
-        "Quelle matière aimez-vous le moins et pourquoi ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-loisirs",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Les loisirs",
-    "scenario": "loisirs",
-    "scene": "Les loisirs",
-    "support": {
-      "theme": "Les loisirs",
-      "mots": [
-        "week-end",
-        "cinéma",
-        "musique",
-        "jeux vidéo",
-        "lecture",
-        "amis",
-        "dessin",
-        "promenade",
-        "concert",
-        "piscine"
-      ],
-      "exemples_questions": [
-        "Que faites-vous pendant votre temps libre ?",
-        "Quel est le dernier film que vous avez vu ?",
-        "Vous allez souvent à des concerts ?",
-        "Avec qui sortez-vous le samedi ?",
-        "Quel livre me conseillez-vous ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-maison",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "La maison",
-    "scenario": "maison",
-    "scene": "La maison",
-    "support": {
-      "theme": "La maison",
-      "mots": [
-        "chambre",
-        "cuisine",
-        "jardin",
-        "appartement",
-        "étage",
-        "voisins",
-        "salon",
-        "balcon",
-        "rangement",
-        "quartier"
-      ],
-      "exemples_questions": [
-        "Combien de pièces y a-t-il dans votre appartement ?",
-        "Comment est votre chambre ?",
-        "Vous connaissez vos voisins ?",
-        "Qu’est-ce que vous aimez dans votre quartier ?",
-        "Qui fait le rangement chez vous ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-restaurant",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Au restaurant",
-    "scenario": "lieux-publics",
-    "scene": "Au restaurant",
-    "support": {
-      "theme": "Au restaurant",
-      "mots": [
-        "menu",
-        "serveur",
-        "plat du jour",
-        "dessert",
-        "boisson",
-        "addition",
-        "réservation",
-        "table",
-        "végétarien",
-        "pourboire"
-      ],
-      "exemples_questions": [
-        "Quel est votre restaurant préféré ?",
-        "Qu’est-ce que vous commandez d’habitude ?",
-        "Il faut réserver une table ?",
-        "Le plat du jour coûte combien ?",
-        "Vous laissez un pourboire au serveur ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-vacances",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Les vacances",
-    "scenario": "vacances",
-    "scene": "Les vacances",
-    "support": {
-      "theme": "Les vacances",
-      "mots": [
-        "plage",
-        "montagne",
-        "valise",
-        "hôtel",
-        "camping",
-        "train",
-        "souvenirs",
-        "photos",
-        "été",
-        "pays"
-      ],
-      "exemples_questions": [
-        "Où êtes-vous allé pendant les dernières vacances ?",
-        "Comment avez-vous voyagé ?",
-        "Qu’est-ce que vous mettez dans votre valise ?",
-        "Vous préférez le camping ou l’hôtel ?",
-        "Quel pays voulez-vous visiter ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-sport",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Le sport",
-    "scenario": "loisirs",
-    "scene": "Le sport",
-    "support": {
-      "theme": "Le sport",
-      "mots": [
-        "football",
-        "vélo",
-        "natation",
-        "équipe",
-        "entraînement",
-        "match",
-        "ski",
-        "salle de sport",
-        "course",
-        "ballon"
-      ],
-      "exemples_questions": [
-        "Quel sport pratiquez-vous ?",
-        "Combien de fois par semaine vous entraînez-vous ?",
-        "Vous jouez dans une équipe ?",
-        "Vous regardez les matchs à la télévision ?",
-        "Depuis quand faites-vous ce sport ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-famille",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "La famille",
-    "scenario": "vie-quotidienne",
-    "scene": "La famille",
-    "support": {
-      "theme": "La famille",
-      "mots": [
-        "frère",
-        "sœur",
-        "parents",
-        "grands-parents",
-        "cousins",
-        "anniversaire",
-        "repas",
-        "animal",
-        "âge",
-        "métier"
-      ],
-      "exemples_questions": [
-        "Combien de personnes y a-t-il dans votre famille ?",
-        "Que font vos parents comme métier ?",
-        "Vous voyez souvent vos cousins ?",
-        "Comment fêtez-vous les anniversaires ?",
-        "Qu’est-ce que vous faites ensemble le dimanche ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-transports",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Les transports",
-    "scenario": "transports",
-    "scene": "Les transports",
-    "support": {
-      "theme": "Les transports",
-      "mots": [
-        "bus",
-        "train",
-        "gare",
-        "billet",
-        "horaire",
-        "voiture",
-        "trottinette",
-        "arrêt",
-        "abonnement",
-        "retard"
-      ],
-      "exemples_questions": [
-        "Comment allez-vous à l’école ou au travail ?",
-        "Combien de temps dure le trajet ?",
-        "Vous avez un abonnement de bus ?",
-        "Le train est souvent en retard ?",
-        "Où est l’arrêt le plus proche de chez vous ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-ville",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "La ville",
-    "scenario": "lieux-publics",
-    "scene": "La ville",
-    "support": {
-      "theme": "La ville",
-      "mots": [
-        "parc",
-        "musée",
-        "poste",
-        "pharmacie",
-        "marché",
-        "place",
-        "rue",
-        "mairie",
-        "lac",
-        "centre-ville"
-      ],
-      "exemples_questions": [
-        "Qu’est-ce qu’il y a à visiter dans votre ville ?",
-        "Le marché a lieu quel jour ?",
-        "Comment va-t-on au centre-ville ?",
-        "Vous allez souvent au musée ?",
-        "Qu’est-ce qui manque dans votre quartier ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-courses",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Les courses",
-    "scenario": "magasins",
-    "scene": "Les courses",
-    "support": {
-      "theme": "Les courses",
-      "mots": [
-        "supermarché",
-        "boulangerie",
-        "prix",
-        "liste",
-        "fruits",
-        "légumes",
-        "caisse",
-        "sac",
-        "vêtements",
-        "taille"
-      ],
-      "exemples_questions": [
-        "Où faites-vous vos courses ?",
-        "Vous faites une liste avant de partir ?",
-        "Quel est le prix d’un kilo de pommes ?",
-        "Vous payez en espèces ou par carte ?",
-        "Quelle taille faites-vous pour un pull ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-meteo",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "La météo",
-    "scenario": "vie-quotidienne",
-    "scene": "La météo",
-    "support": {
-      "theme": "La météo",
-      "mots": [
-        "soleil",
-        "pluie",
-        "neige",
-        "froid",
-        "chaud",
-        "saison",
-        "parapluie",
-        "orage",
-        "vent",
-        "température"
-      ],
-      "exemples_questions": [
-        "Quel temps fait-il aujourd’hui ?",
-        "Quelle saison préférez-vous et pourquoi ?",
-        "Que faites-vous quand il pleut ?",
-        "Quelle température fait-il en été chez vous ?",
-        "Vous avez peur des orages ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-travail",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Le travail",
-    "scenario": "travail",
-    "scene": "Le travail",
-    "support": {
-      "theme": "Le travail",
-      "mots": [
-        "métier",
-        "bureau",
-        "collègues",
-        "horaires",
-        "salaire",
-        "stage",
-        "patron",
-        "uniforme",
-        "pause",
-        "entreprise"
-      ],
-      "exemples_questions": [
-        "Quel métier voulez-vous faire plus tard ?",
-        "Vous avez déjà fait un stage ?",
-        "Quels sont vos horaires de travail ?",
-        "Comment sont vos collègues ?",
-        "Vous portez un uniforme au travail ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-sante",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "La santé",
-    "scenario": "sante",
-    "scene": "La santé",
-    "support": {
-      "theme": "La santé",
-      "mots": [
-        "médecin",
-        "pharmacie",
-        "rendez-vous",
-        "fièvre",
-        "mal de tête",
-        "médicament",
-        "hôpital",
-        "dentiste",
-        "sommeil",
-        "fruits"
-      ],
-      "exemples_questions": [
-        "Vous allez souvent chez le médecin ?",
-        "Que faites-vous quand vous avez de la fièvre ?",
-        "Comment prenez-vous rendez-vous chez le dentiste ?",
-        "Combien d’heures dormez-vous par nuit ?",
-        "Qu’est-ce que vous faites pour rester en forme ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-animaux",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Les animaux",
-    "scenario": "vie-quotidienne",
-    "scene": "Les animaux",
-    "support": {
-      "theme": "Les animaux",
-      "mots": [
-        "chien",
-        "chat",
-        "lapin",
-        "oiseau",
-        "poisson",
-        "ferme",
-        "zoo",
-        "nourriture",
-        "promenade",
-        "vétérinaire"
-      ],
-      "exemples_questions": [
-        "Quel animal avez-vous chez vous ?",
-        "Qui promène le chien ?",
-        "Qu’est-ce que votre animal mange ?",
-        "Vous êtes déjà allé dans une ferme ?",
-        "Combien coûte une visite chez le vétérinaire ?"
-      ]
-    },
-    "questions": []
-  },
-  {
-    "id": "tcf-a1a2-po-mots-fetes",
-    "niveau": "A1-A2",
-    "competence": "PO",
-    "type_exercice": "trois_mots",
-    "theme": "Les fêtes",
-    "scenario": "fetes",
-    "scene": "Les fêtes",
-    "support": {
-      "theme": "Les fêtes",
-      "mots": [
-        "anniversaire",
-        "cadeau",
-        "gâteau",
-        "invitation",
-        "Noël",
-        "musique",
-        "décoration",
-        "invités",
-        "costume",
-        "repas"
-      ],
-      "exemples_questions": [
-        "Comment avez-vous fêté votre dernier anniversaire ?",
-        "Combien d’invités y avait-il ?",
-        "Quel cadeau aimeriez-vous recevoir ?",
-        "Qui prépare le repas de fête ?",
-        "Vous portez un costume pour le carnaval ?"
       ]
     },
     "questions": []

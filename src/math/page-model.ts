@@ -61,7 +61,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     calliSize: page.calliSize,
     tcfExercise: page.tcfExercise,
     tcfBankId: page.tcfBankId,
-    tcfDureeMin: page.tcfDureeMin,
+    tcfScenario: page.tcfScenario,
     libreItems: page.libreItems,
     libreInstruction: page.libreInstruction,
   }

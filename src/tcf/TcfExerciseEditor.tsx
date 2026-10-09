@@ -12,6 +12,7 @@ import type {
   TcfExercise,
   TcfNbMots,
   TcfNiveau,
+  TcfPoTheme,
   TcfReplique,
   TcfTypeExercice,
 } from './types'
@@ -445,19 +446,82 @@ function SupportEditor({ ex, set }: { ex: TcfExercise; set: (next: TcfExercise) 
           />
         </>
       )
-    case 'trois_mots':
+    case 'entretien':
+      return (
+        <LinesField
+          label="Questions de l’examinateur (corrigé, une par ligne)"
+          values={ex.support.questions}
+          onChange={(questions) => set(withSupport(ex, { questions }))}
+        />
+      )
+    case 'trois_themes': {
+      const themes = ex.support.themes
+      const setTheme = (i: number, patch: Partial<TcfPoTheme>) =>
+        set(withSupport(ex, { themes: themes.map((t, k) => (k === i ? { ...t, ...patch } : t)) }))
       return (
         <>
-          <TextField label="Thème" value={ex.support.theme} onChange={(theme) => set(withSupport(ex, { theme }))} />
-          <LinesField
-            label="Mots du thème (un par ligne, 3 tirés au hasard)"
-            values={ex.support.mots}
-            onChange={(mots) => set(withSupport(ex, { mots }))}
+          <small className="muted">3 thèmes et 4 images par thème sont tirés au hasard.</small>
+          {themes.map((t, i) => (
+            <div className="tcf-question-editor" key={i}>
+              <div className="tcf-row">
+                <TextField label={`Thème ${i + 1}`} value={t.theme} onChange={(theme) => setTheme(i, { theme })} />
+                <button
+                  type="button"
+                  className="tcf-btn"
+                  onClick={() => set(withSupport(ex, { themes: themes.filter((_, k) => k !== i) }))}
+                >
+                  Retirer
+                </button>
+              </div>
+              <LinesField label="Images (chemins, une par ligne)" values={t.images} onChange={(images) => setTheme(i, { images })} />
+              <LinesField
+                label="Exemples de questions (corrigé)"
+                values={t.exemples_questions}
+                onChange={(exemples_questions) => setTheme(i, { exemples_questions })}
+              />
+            </div>
+          ))}
+          <button
+            type="button"
+            className="tcf-btn"
+            onClick={() => set(withSupport(ex, { themes: [...themes, { theme: '', images: [''], exemples_questions: [''] }] }))}
+          >
+            + ajouter un thème
+          </button>
+        </>
+      )
+    }
+    case 'image_interaction':
+      return (
+        <>
+          {ex.support.images.map((img, i) => (
+            <ImageField
+              key={i}
+              label={ex.support.images.length > 1 ? `Image ${i + 1}` : 'Image'}
+              value={img}
+              onChange={(next) => set(withSupport(ex, { images: ex.support.images.map((x, k) => (k === i ? next : x)) }))}
+            />
+          ))}
+          <LinesField label="Questions de description (une par ligne)" values={ex.support.questions} onChange={(questions) => set(withSupport(ex, { questions }))} />
+          <TextField
+            label="Description modèle (corrigé)"
+            value={ex.support.description_modele}
+            multiline
+            rows={3}
+            onChange={(description_modele) => set(withSupport(ex, { description_modele }))}
           />
-          <LinesField
-            label="Exemples de questions (corrigé, une par ligne)"
-            values={ex.support.exemples_questions}
-            onChange={(exemples_questions) => set(withSupport(ex, { exemples_questions }))}
+          <div className="tcf-row">
+            <TextField label="Je suis (examinateur)" value={ex.support.je_suis} onChange={(je_suis) => set(withSupport(ex, { je_suis }))} />
+            <TextField label="Vous êtes (candidat)" value={ex.support.vous_etes} onChange={(vous_etes) => set(withSupport(ex, { vous_etes }))} />
+          </div>
+          <div className="tcf-row">
+            <TextField label="Nous sommes (lieu)" value={ex.support.lieu} onChange={(lieu) => set(withSupport(ex, { lieu }))} />
+            <TextField label="Vous voulez" value={ex.support.vous_voulez} onChange={(vous_voulez) => set(withSupport(ex, { vous_voulez }))} />
+          </div>
+          <RepliquesFields
+            repliques={ex.support.repliques}
+            autreLabel="Examinateur·trice"
+            onChange={(repliques) => set(withSupport(ex, { repliques }))}
           />
         </>
       )
@@ -566,8 +630,24 @@ function cleanForExport(raw: TcfExercise): TcfExercise {
   switch (ex.type_exercice) {
     case 'image_unique':
       return withSupport(ex, { questions: (ex.support.questions ?? []).filter((q) => q.trim()) })
+    case 'entretien':
+      return withSupport(ex, { questions: ex.support.questions.filter((q) => q.trim()) })
+    case 'trois_themes':
+      return withSupport(ex, {
+        themes: ex.support.themes
+          .filter((t) => t.theme.trim())
+          .map((t) => ({
+            ...t,
+            images: t.images.filter((src) => src.trim()),
+            exemples_questions: t.exemples_questions.filter((q) => q.trim()),
+          })),
+      })
+    case 'image_interaction':
+      return withSupport(ex, {
+        images: ex.support.images.filter((src) => src.trim()),
+        questions: ex.support.questions.filter((q) => q.trim()),
+      })
     case 'mots_theme':
-    case 'trois_mots':
       return withSupport(ex, {
         mots: ex.support.mots.filter((m) => m.trim()),
         exemples_questions: ex.support.exemples_questions.filter((q) => q.trim()),
@@ -630,16 +710,20 @@ export function TcfBankPicker({
       </option>
     ))
 
+  const byTheme = slot.competence === 'PE' || slot.competence === 'PO'
+
   return (
     <div className="quad-libre-block tcf-editor">
       <label className="tcf-field">
-        <span>Scénario</span>
+        <span>{byTheme ? 'Thème' : 'Scénario'}</span>
         <select
           className="pill-input"
           value={scenario ?? ''}
           onChange={(event) => onChange({ tcfScenario: event.target.value || undefined, tcfBankId: undefined, tcfExercise: undefined })}
         >
-          <option value="">Tous les scénarios ({bank.length})</option>
+          <option value="">
+            {byTheme ? 'Tous les thèmes' : 'Tous les scénarios'} ({bank.length})
+          </option>
           {groups.map((g) => (
             <option key={g.id} value={g.id}>
               {g.label} ({g.items.length})
@@ -654,7 +738,7 @@ export function TcfBankPicker({
           value={bankId ?? ''}
           onChange={(event) => onChange({ tcfBankId: event.target.value || undefined, tcfExercise: undefined })}
         >
-          <option value="">Tirage selon la graine</option>
+          <option value="">Tout</option>
           {shown.length === 1
             ? options(shown[0]!)
             : shown.map((g) => (

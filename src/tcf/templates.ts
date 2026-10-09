@@ -180,12 +180,33 @@ export function emptyTcfExercise(
         type_exercice: 'mots_theme',
         support: { theme: '', mots: ['', ''], exemples_questions: [''] },
       }
-    case 'trois_mots':
+    case 'entretien':
+      return { ...base, competence: 'PO', type_exercice: 'entretien', support: { questions: [''] } }
+    case 'trois_themes':
       return {
         ...base,
         competence: 'PO',
-        type_exercice: 'trois_mots',
-        support: { theme: '', mots: ['', '', ''], exemples_questions: [''] },
+        type_exercice: 'trois_themes',
+        support: { themes: [{ theme: '', images: ['', '', '', ''], exemples_questions: [''] }] },
+      }
+    case 'image_interaction':
+      return {
+        ...base,
+        competence: 'PO',
+        type_exercice: 'image_interaction',
+        support: {
+          images: niveau === 'A0-A1' ? ['', '', '', ''] : [''],
+          questions: ['Qu’est-ce que vous voyez ?', 'Où sont les personnes ?', 'Qu’est-ce qu’elles font ?'],
+          description_modele: '',
+          je_suis: '',
+          vous_etes: '',
+          lieu: '',
+          vous_voulez: '',
+          repliques: [
+            { locuteur: 'examinateur', texte: '' },
+            { locuteur: 'eleve', texte: '', variantes: [] },
+          ],
+        },
       }
     case 'sequence_4_images':
       return {

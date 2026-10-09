@@ -180,11 +180,28 @@ export type TcfPoMotsTheme = TcfBase<
   'mots_theme',
   { theme: string; mots: string[]; exemples_questions: string[]; audio?: string }
 >
-/** Trois mots tirés au hasard (graine) dans `mots` : l’élève pose des questions sur le thème. */
-export type TcfPoTroisMots = TcfBase<
+/** Entretien dirigé : consigne sur la fiche, questions de l’examinateur au corrigé. */
+export type TcfPoEntretien = TcfBase<'PO', 'entretien', { questions: string[] }>
+export type TcfPoTheme = { theme: string; images: string[]; exemples_questions: string[] }
+/** Trois thèmes tirés au hasard (graine), 4 images chacun : l’élève pose des questions. */
+export type TcfPoTroisThemes = TcfBase<'PO', 'trois_themes', { themes: TcfPoTheme[] }>
+/**
+ * Image à décrire, puis jeu de rôle sur le sujet de l’image (déroulement au corrigé).
+ * A0-A1 : 4 images séquentielles (chronologie) ; A1-A2 : une seule image.
+ */
+export type TcfPoImageInteraction = TcfBase<
   'PO',
-  'trois_mots',
-  { theme: string; mots: string[]; exemples_questions: string[] }
+  'image_interaction',
+  {
+    images: string[]
+    questions: string[]
+    description_modele: string
+    je_suis: string
+    vous_etes: string
+    lieu: string
+    vous_voulez: string
+    repliques: TcfReplique[]
+  }
 >
 export type TcfPoSequence = TcfBase<'PO', 'sequence_4_images', { images: string[]; reponse_modele: string }>
 export type TcfPoImageUnique = TcfBase<
@@ -205,7 +222,14 @@ export type TcfPoDialogue = TcfBase<
     repliques_au_corrige?: boolean
   }
 >
-export type TcfPoExercise = TcfPoMotsTheme | TcfPoTroisMots | TcfPoSequence | TcfPoImageUnique | TcfPoDialogue
+export type TcfPoExercise =
+  | TcfPoMotsTheme
+  | TcfPoEntretien
+  | TcfPoTroisThemes
+  | TcfPoImageInteraction
+  | TcfPoSequence
+  | TcfPoImageUnique
+  | TcfPoDialogue
 
 export type TcfExercise = TcfCeExercise | TcfCoExercise | TcfPeExercise | TcfPoExercise
 export type TcfTypeExercice = TcfExercise['type_exercice']
@@ -251,11 +275,22 @@ export type TcfSheetItem =
   | { kind: 'formulaire'; titre?: string; champs: TcfChampFormulaire[] }
   | {
       kind: 'ecriture'
+      /** Cadre autour des traits : téléphone (message) ou e-mail (en-tête À / Objet). */
+      cadre?: 'message' | 'email'
+      email?: { a: string; objet: string }
       consigneSupplementaire?: string
       nbMots: TcfNbMots
       nbLignes: number
       reponseModele?: string
     }
-  | { kind: 'dialogue'; situation: string; repliques: TcfReplique[]; auCorrige?: boolean; interlocuteur?: string }
+  | {
+      kind: 'dialogue'
+      situation: string
+      repliques: TcfReplique[]
+      auCorrige?: boolean
+      interlocuteur?: string
+      /** Échange de messages en bulles (PE). */
+      bulles?: boolean
+    }
   | { kind: 'vide'; message: string }
   | { kind: 'informations'; niveau: TcfNiveau }

@@ -17,13 +17,13 @@ const PARTIES: ReadonlyArray<{ id: TcfCompetence; titre: string; texte: string; 
   {
     id: 'PE',
     titre: 'production écrite',
-    texte: 'Rédiger des textes (formulaires, messages, lettres) adaptés à la situation.',
+    texte: 'Remplir un formulaire, compléter un dialogue, écrire un message et un e-mail.',
     deroulement: 'Écrivez sur les lignes et respectez le nombre de mots indiqué.',
   },
   {
     id: 'PO',
     titre: 'production orale',
-    texte: 'S’exprimer à l’oral : répondre, décrire, raconter et dialoguer.',
+    texte: 'Entretien dirigé, poser des questions sur un thème, décrire une image puis jouer une situation.',
     deroulement: 'Face à l’examinateur·trice ; la fiche sert de support.',
   },
 ]

@@ -9,14 +9,18 @@ function nbMotsLabel({ min = 0, max = 0 }: TcfNbMots): string {
   return ''
 }
 
-/** Zone d’écriture : consigne supplémentaire, traits et compteur de mots. */
+/** Zone d’écriture : consigne supplémentaire, traits (cadre téléphone ou e-mail) et compteur de mots. */
 export function ZoneEcriture({
+  cadre,
+  email,
   consigneSupplementaire,
   nbMots,
   nbLignes,
   reponseModele,
   mode,
 }: {
+  cadre?: 'message' | 'email'
+  email?: { a: string; objet: string }
   consigneSupplementaire?: string
   nbMots: TcfNbMots
   nbLignes: number
@@ -24,12 +28,31 @@ export function ZoneEcriture({
   mode: PreviewMode
 }) {
   const attendu = nbMotsLabel(nbMots)
+  const lignes = <LignesReponse nbLignes={nbLignes} texte={mode === 'answers' ? reponseModele : undefined} />
   return (
     <div className="tcf-ecriture">
       {consigneSupplementaire?.trim() ? (
         <p className="tcf-consigne-supp">{consigneSupplementaire}</p>
       ) : null}
-      <LignesReponse nbLignes={nbLignes} texte={mode === 'answers' ? reponseModele : undefined} />
+      {cadre === 'message' ? (
+        <div className="tcf-phone">
+          <span className="tcf-phone-speaker" aria-hidden />
+          <div className="tcf-phone-screen">{lignes}</div>
+          <span className="tcf-phone-button" aria-hidden />
+        </div>
+      ) : cadre === 'email' ? (
+        <div className="tcf-email is-compose">
+          <dl className="tcf-email-head">
+            <dt>À</dt>
+            <dd>{email?.a ?? ''}</dd>
+            <dt>Objet</dt>
+            <dd>{email?.objet ?? ''}</dd>
+          </dl>
+          <div className="tcf-email-body">{lignes}</div>
+        </div>
+      ) : (
+        lignes
+      )}
       <p className="tcf-compteur">
         Nombre de mots : <span className="answer-line-field compact" aria-hidden />
         {attendu ? <span className="muted"> ({attendu})</span> : null}
@@ -95,17 +118,45 @@ export function DialoguePO({
   repliques,
   auCorrige = false,
   interlocuteur,
+  bulles = false,
   mode,
 }: {
   situation: string
   repliques: TcfReplique[]
   auCorrige?: boolean
   interlocuteur?: string
+  bulles?: boolean
   mode: PreviewMode
 }) {
   const label = (loc: TcfReplique['locuteur']) =>
     loc === 'examinateur' && interlocuteur?.trim() ? interlocuteur.trim() : LOCUTEUR_LABEL[loc]
   const show = mode === 'answers'
+  if (bulles) {
+    return (
+      <div className="tcf-dialogue">
+        {situation.trim() ? <p className="tcf-question-text">{situation}</p> : null}
+        <ol className="tcf-chat">
+          {repliques.map((r, i) => (
+            <li key={i} className={`tcf-chat-row is-${r.locuteur}`}>
+              <span className="tcf-chat-name">{label(r.locuteur)}</span>
+              <div className="tcf-chat-bubble">
+                {r.locuteur === 'examinateur' ? (
+                  r.texte
+                ) : show ? (
+                  <span className="tcf-chat-answer">{r.texte}</span>
+                ) : (
+                  <>
+                    <span className="tcf-chat-line" aria-hidden />
+                    <span className="tcf-chat-line" aria-hidden />
+                  </>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )
+  }
   return (
     <div className="tcf-dialogue">
       {situation.trim() ? <p className="tcf-question-text">{situation}</p> : null}

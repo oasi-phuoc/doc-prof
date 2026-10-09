@@ -17,6 +17,7 @@ import {
 } from './catalog'
 import { tcfBank, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
+import { TCF_PE_GROUPS, TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { TCF_LETTRES, TCF_LETTRES_SITUATIONS } from './templates'
 import type {
   TcfChoixImage,
@@ -135,6 +136,7 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
         support(),
         scoredItem({
           kind: 'ecriture',
+          cadre: 'message',
           nbMots: ex.support.nb_mots,
           nbLignes: linesForWords(ex.support.nb_mots, 3),
           reponseModele: ex.support.reponse_modele,
@@ -144,10 +146,18 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
     case 'email_reponse':
     case 'question_texte': {
       const fallback = ex.type_exercice === 'sms_reponse' ? 5 : ex.type_exercice === 'email_reponse' ? 8 : 12
+      const email =
+        ex.type_exercice === 'email_reponse'
+          ? { a: ex.support.email_recu.de, objet: `RE : ${ex.support.email_recu.objet}` }
+          : ex.type_exercice === 'question_texte'
+            ? ex.support.email
+            : undefined
       return [
         support(),
         scoredItem({
           kind: 'ecriture',
+          cadre: email ? 'email' : 'message',
+          email,
           consigneSupplementaire: ex.consigne_supplementaire ?? undefined,
           nbMots: ex.support.nb_mots,
           nbLignes: linesForWords(ex.support.nb_mots, fallback),
@@ -155,10 +165,14 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
         }),
       ]
     }
-    case 'trois_mots': {
-      const mots = shuffle(rng, ex.support.mots.filter((m) => m.trim())).slice(0, 3)
-      return [tcfItem({ kind: 'support', exercise: { ...ex, support: { ...ex.support, mots } } }, true, '', ex.points)]
+    case 'trois_themes': {
+      const themes = shuffle(rng, ex.support.themes.filter((t) => t.theme.trim()))
+        .slice(0, 3)
+        .map((t) => ({ ...t, images: shuffle(rng, t.images.filter((src) => src.trim())).slice(0, 4) }))
+      return [tcfItem({ kind: 'support', exercise: { ...ex, support: { themes } } }, true, '', ex.points)]
     }
+    case 'entretien':
+    case 'image_interaction':
     case 'mots_theme':
     case 'sequence_4_images':
     case 'image_unique':
@@ -184,6 +198,7 @@ export function tcfExerciseItems(ex: TcfExercise, rng: Rng): MathItem[] {
           situation: ex.support.situation ?? '',
           repliques: ex.support.repliques,
           interlocuteur: ex.support.interlocuteur,
+          bulles: true,
         }),
       ]
   }
@@ -210,18 +225,17 @@ export function tryGenerateTcfBlock(
   if (!slot && !legacy) return null
   const competence = (slot ?? legacy)!.competence
   const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
-  const inScenario = config.tcfScenario ? bank.filter((ex) => (ex.scenario ?? 'autre') === config.tcfScenario) : bank
+  const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
   const pool = inScenario.length > 0 ? inScenario : bank
   const fromBank = () => {
     const chosen = bank.find((ex) => ex.id === config.tcfBankId)
     return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
   }
   const ex = config.tcfExercise && config.tcfExercise.competence === competence ? config.tcfExercise : fromBank()
-  const duree = config.tcfDureeMin && config.tcfDureeMin > 0 ? ` Durée : ${config.tcfDureeMin} min.` : ''
   const fallbackInstruction = (slot ?? legacy)!.instruction
   if (!ex) {
     return {
-      instruction: fallbackInstruction + duree,
+      instruction: fallbackInstruction,
       items: [
         tcfItem(
           {
@@ -235,7 +249,7 @@ export function tryGenerateTcfBlock(
   }
   const instruction = ex.consigne?.trim() || tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction || fallbackInstruction
   return {
-    instruction: instruction + duree,
+    instruction,
     items: tcfExerciseItems(ex, rng).map((item) => ({ ...item, tcfExerciseId: ex.id })),
   }
 }
@@ -291,7 +305,8 @@ function pickByPosition(pool: readonly TcfExercise[], count: number, rng: Rng): 
 
 /**
  * Test complet tiré au hasard dans la banque du niveau : Informations,
- * CO exercices 1 à 4 (+ 5 une fois sur deux s’il existe), 4 CE, 3 PE, 1 PO.
+ * CO exercices 1 à 4, 4 CE, PE (formulaire, dialogue, message, e-mail),
+ * PO (entretien dirigé, questions sur 3 thèmes, image et interaction).
  */
 export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageConfig[] {
   const rng = createRng(seed)
@@ -300,18 +315,23 @@ export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageCo
   const numberedBank = (n: TcfNiveau, slot: TcfSlotMeta) =>
     tcfSlotBank(n, slot).filter((ex) => !/^tcf-[a-z0-9]+-(?:co|ce|pe|po)-\d{3}$/.test(ex.id))
   const pages: PageConfig[] = [tcfConsignesPage(niveau)]
-  for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO')) {
+  for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO' && (s.numero ?? 0) <= 4)) {
     const pool = numberedBank(niveau, slot)
-    if (pool.length === 0 || (slot.numero === 5 && rng() < 0.5)) continue
-    pages.push(page(slot.typeId, pick(rng, pool)))
+    if (pool.length > 0) pages.push(page(slot.typeId, pick(rng, pool)))
   }
   const slotOf = (competence: TcfCompetence) => TCF_SLOTS.find((s) => s.competence === competence)!
-  for (const [competence, count] of [['CE', 4], ['PE', 3]] as const) {
+  const ce = slotOf('CE')
+  for (const ex of pickByPosition(numberedBank(niveau, ce), 4, rng)) pages.push(page(ce.typeId, ex))
+  for (const [competence, groups] of [
+    ['PE', TCF_PE_GROUPS],
+    ['PO', TCF_PO_GROUPS.filter((g) => g.id !== 'interaction')],
+  ] as const) {
     const slot = slotOf(competence)
-    for (const ex of pickByPosition(numberedBank(niveau, slot), count, rng)) pages.push(page(slot.typeId, ex))
+    const pool = numberedBank(niveau, slot)
+    for (const group of groups) {
+      const inGroup = pool.filter((ex) => tcfGroupId(ex) === group.id)
+      if (inGroup.length > 0) pages.push(page(slot.typeId, pick(rng, inGroup)))
+    }
   }
-  const po = slotOf('PO')
-  const poPool = numberedBank(niveau, po)
-  if (poPool.length > 0) pages.push(page(po.typeId, pick(rng, poPool)))
   return pages
 }

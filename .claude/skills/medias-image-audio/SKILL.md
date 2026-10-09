@@ -169,9 +169,17 @@ Reformulation ClairFLE à préfixer **avant** la description de la scène
 2. Rédiger une **scène** en une ou deux phrases (qui / où / quoi) alignée sur
    la tâche orale, sans spoiler une réponse modèle mot à mot inutile.
 3. Générer avec le **prompt maître** + scène ; exporter WebP 800×600.
-4. Placer sous `public/lib/images/vocabulaire/actions/{slug}.webp` (scène) ou
-   `public/lib/images/documents/{slug}.webp` (document).
-5. Référencer dans `support.image` par chemin absolu.
+4. Placer l’image « à décrire » (type `image_interaction`) sous :
+   - **A0-A1** : **4 images séquentielles** de la même situation (début → fin),
+     `public/lib/images/comprehension/po-a1/{slug}-{1..4}.webp`. Mêmes personnages
+     (visage, vêtements) et même lieu sur les 4 : générer l’étape 1, puis la passer
+     en image de référence pour les étapes 2 à 4. Rendu en chronologie décalée
+     (1 haut gauche, 2 droite, 3 gauche, 4 bas droite).
+   - **A1-A2** : **une seule image**, `public/lib/images/comprehension/po-a2/{slug}.webp`.
+   - Autres scènes : `public/lib/images/vocabulaire/actions/{slug}.webp` ;
+     documents : `public/lib/images/documents/{slug}.webp`.
+5. Référencer dans `support.images` (ou `support.image` pour les autres types)
+   par chemin absolu. Aucun numéro ni bulle dessiné dans l’image.
 6. Contrôle : rôles lisibles N&B approximatif, pas de texte, pas de cliché
    touristique, pas de fond blanc studio.
 
@@ -202,6 +210,12 @@ Référence soutien-scolaire : `scripts/generate-missing-word-audio.py`
 
 **Ne pas utiliser Piper Siwis** pour les nouveaux audios ClairFLE : la voix
 officielle est **DeniseNeural** avec ralentissement **−25 %**.
+
+### Audios des nombres
+
+`public/lib/audio/nombre/{n}.mp3` (1 à 100), même voix et même débit. Texte lu =
+écriture suisse romande de `numberToFrench` (`src/francais/french-numbers.ts` :
+septante, huitante, nonante), pas les chiffres.
 
 ### Paramètres audio
 

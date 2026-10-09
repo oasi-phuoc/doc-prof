@@ -132,26 +132,91 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       )
     case 'question_texte':
+      return <p className="tcf-question-text is-large">{ex.support.consigne}</p>
+    case 'entretien':
+      return mode === 'answers' ? (
+        <div className="tcf-modele">
+          <b>Questions possibles de l’examinateur :</b>
+          <ul className="tcf-entretien-questions">
+            {ex.support.questions.filter((q) => q.trim()).map((q, i) => (
+              <li key={i}>{q}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null
+    case 'trois_themes':
       return (
-        <div>
-          <p className="tcf-question-text is-large">{ex.support.consigne}</p>
-          {ex.support.email ? (
-            <dl className="tcf-email-head is-compose">
-              <dt>À</dt>
-              <dd>{ex.support.email.a}</dd>
-              <dt>Objet</dt>
-              <dd>{ex.support.email.objet}</dd>
-            </dl>
+        <div className="tcf-po tcf-trois-themes">
+          {ex.support.themes.map((t, i) => (
+            <section key={i} className="tcf-po-theme-block">
+              <p className="tcf-po-theme">
+                Thème {i + 1} : {t.theme}
+              </p>
+              <ul className="tcf-po-images is-4">
+                {t.images.map((src, k) => (
+                  <li key={k}>
+                    <TcfImage src={src} alt="" />
+                  </li>
+                ))}
+              </ul>
+              {mode === 'answers' && t.exemples_questions.some((q) => q.trim()) ? (
+                <ul className="tcf-modele tcf-exemples">
+                  {t.exemples_questions.filter((q) => q.trim()).map((q, k) => (
+                    <li key={k}>{q}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </section>
+          ))}
+        </div>
+      )
+    case 'image_interaction': {
+      const s = ex.support
+      return (
+        <div className="tcf-po">
+          <ul className="tcf-po-questions">
+            {s.questions.filter((q) => q.trim()).map((q, i) => (
+              <li key={i}>{q}</li>
+            ))}
+          </ul>
+          {s.images.length > 1 ? (
+            <ol className={mode === 'answers' ? 'tcf-timeline is-compact' : 'tcf-timeline'}>
+              {s.images.map((src, i) => (
+                <li key={i} className="tcf-timeline-step">
+                  <span className="tcf-timeline-num">{i + 1}</span>
+                  <TcfImage src={src} alt={`${ex.scene ?? ex.theme} - ${i + 1}`} className="tcf-image" />
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <TcfImage src={s.images[0]} alt="Image à décrire" className="tcf-image is-large" />
+          )}
+          <Modele text={s.description_modele} mode={mode} title="Description possible" />
+          {mode === 'answers' ? (
+            <div className="tcf-modele tcf-interaction">
+              <b>Interaction</b>
+              <p className="tcf-text">Nous allons maintenant passer à l’interaction sur le sujet de cette image.</p>
+              <p className="tcf-text">
+                Je suis {s.je_suis}. Vous êtes {s.vous_etes}. Nous sommes {s.lieu}. Vous voulez {s.vous_voulez}.
+              </p>
+              {s.repliques.length ? (
+                <ol className="tcf-repliques is-compact">
+                  {s.repliques.map((r, i) => (
+                    <li key={i} className={`tcf-replique is-${r.locuteur}`}>
+                      <b className="tcf-locuteur">{r.locuteur === 'eleve' ? 'Candidat·e' : 'Examinateur·trice'} :</b> {r.texte}
+                    </li>
+                  ))}
+                </ol>
+              ) : null}
+            </div>
           ) : null}
         </div>
       )
+    }
     case 'mots_theme':
-    case 'trois_mots':
       return (
         <div className="tcf-po">
-          {ex.type_exercice === 'mots_theme' && ex.support.audio ? (
-            <PlayerAudio src={ex.support.audio} label="Questions de l’examinateur·trice" />
-          ) : null}
+          {ex.support.audio ? <PlayerAudio src={ex.support.audio} label="Questions de l’examinateur·trice" /> : null}
           {ex.support.theme ? <p className="tcf-po-theme">Thème : {ex.support.theme}</p> : null}
           <ul className="tcf-mots">
             {ex.support.mots

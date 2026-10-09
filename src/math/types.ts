@@ -786,8 +786,6 @@ export type ExerciseBlock = {
   tcfBankId?: string
   /** TCF : scénario qui limite la banque (id de `TCF_SCENARIOS`). */
   tcfScenario?: string
-  /** TCF : durée indiquée sur la fiche (mode chronométré), en minutes. */
-  tcfDureeMin?: number
   /**
    * Mode libre global (tous domaines) : items édités à la main.
    * S’ils sont présents, ils remplacent le tirage pour l’affichage / l’impression.

@@ -75,9 +75,7 @@ import {
   tcfNiveauFromDifficulty,
 } from '@/tcf/catalog'
 import { buildTcfRandomTestPages, tcfConsignesPage, tcfPage } from '@/tcf/generate'
-import { tcfBank } from '@/tcf/loader'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
-import { Chronometre } from '@/components/tcf/Chronometre'
 import {
   blockPointsTotal,
   buildTcmTestPages,
@@ -1113,6 +1111,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     if (next === TCF_DOMAIN) {
       setSheetIndex(0)
       setPages([tcfConsignesPage('A0-A1'), tcfPage(TCF_SLOTS[0]!.typeId, 'A0-A1')])
+      setEvalMode(true)
+      setPointsPerQuestion(1)
       setMode('student')
       setInstitutional((current) => ({
         ...current,
@@ -1267,6 +1267,14 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
             }),
       )
     })
+  }
+
+  /** TCF : Générer tire un test complet au hasard dans la banque du niveau. */
+  function drawTcfTest() {
+    setMode('student')
+    setSheetIndex(0)
+    setBlockIndex(0)
+    setPages(buildTcfRandomTestPages(tcfNiveau, randomSeed()))
   }
 
   function generate() {
@@ -1682,24 +1690,6 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isTcf && tcfBank(tcfNiveau).length > 0 ? (
-                <div className="mode-toggle-block">
-                  <b>Test complet</b>
-                  <button
-                    type="button"
-                    className="tcf-btn"
-                    title="CO : exercices 1 à 4 ou 5 · CE : 4 exercices · PE : 3 exercices · PO : 1 exercice"
-                    onClick={() => {
-                      setMode('student')
-                      setSheetIndex(0)
-                      setBlockIndex(0)
-                      setPages(buildTcfRandomTestPages(tcfNiveau, randomSeed()))
-                    }}
-                  >
-                    Tirer un test au hasard
-                  </button>
-                </div>
-              ) : null}
               {isTcm ? null : (
                 <SelectBox label={isTcf ? 'Compétence' : 'Thème'} value={activeBlock.topic} onChange={changeTopic}>
                   {available.map((topic) => (
@@ -1977,22 +1967,14 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 />
               ) : null}
               {isTcf ? (
-                <>
-                  <TcfBankPicker
-                    niveau={tcfNiveau}
-                    typeId={activeBlock.exerciseType}
-                    scenario={activeBlock.tcfScenario}
-                    bankId={activeBlock.tcfBankId}
-                    edited={activeBlock.tcfExercise != null}
-                    onChange={(patch) => updatePage(patch)}
-                  />
-                  {isTcfConsignesType(activeBlock.exerciseType) ? null : (
-                    <Chronometre
-                      minutes={activeBlock.tcfDureeMin}
-                      onChangeMinutes={(tcfDureeMin) => updatePage({ tcfDureeMin })}
-                    />
-                  )}
-                </>
+                <TcfBankPicker
+                  niveau={tcfNiveau}
+                  typeId={activeBlock.exerciseType}
+                  scenario={activeBlock.tcfScenario}
+                  bankId={activeBlock.tcfBankId}
+                  edited={activeBlock.tcfExercise != null}
+                  onChange={(patch) => updatePage(patch)}
+                />
               ) : null}
               {isReperage ||
               isPhraseDomain ||
@@ -3175,7 +3157,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 <h2>Votre activité est prête.</h2>
               </div>
               <div className="result-head-actions no-print">
-                {libreMode ? null : (
+                {!libreMode ? null : (
                   <button
                     className="print-chip is-icon is-validate"
                     type="button"
@@ -3195,9 +3177,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
-                    onClick={generate}
-                    aria-label="Générer"
-                    title="Générer"
+                    onClick={isTcf ? drawTcfTest : generate}
+                    aria-label={isTcf ? 'Tirer un test au hasard' : 'Générer'}
+                    title={isTcf ? 'Tirer un test au hasard' : 'Générer'}
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                       <path

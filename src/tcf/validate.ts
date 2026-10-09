@@ -166,9 +166,25 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
         errors.push('Thème ou mots requis.')
       }
       break
-    case 'trois_mots':
-      if (blank(ex.support.theme)) errors.push('Thème requis.')
-      if (ex.support.mots.filter((m) => !blank(m)).length < 3) errors.push('Au moins 3 mots.')
+    case 'entretien':
+      if (ex.support.questions.every((q) => blank(q))) errors.push('Au moins une question d’entretien.')
+      break
+    case 'trois_themes': {
+      const themes = ex.support.themes.filter((t) => !blank(t.theme))
+      if (themes.length < 3) errors.push('Au moins 3 thèmes.')
+      themes.forEach((t) => {
+        if (t.images.filter((src) => !blank(src)).length < 4) errors.push(`Thème « ${t.theme} » : au moins 4 images.`)
+      })
+      break
+    }
+    case 'image_interaction':
+      if (!ex.support.images.some((src) => !blank(src))) errors.push('Image manquante.')
+      if (ex.niveau === 'A0-A1' && ex.support.images.filter((src) => !blank(src)).length !== 4) {
+        warnings.push('A0-A1 : 4 images séquentielles attendues.')
+      }
+      if (blank(ex.support.je_suis) || blank(ex.support.vous_etes) || blank(ex.support.lieu) || blank(ex.support.vous_voulez)) {
+        errors.push('Déroulement incomplet (je suis, vous êtes, lieu, vous voulez).')
+      }
       break
     case 'sequence_4_images':
       if (ex.support.images.length !== 4) errors.push('Exactement 4 images.')
@@ -235,6 +251,12 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
     case 'image_question':
     case 'image_unique':
       images.push(ex.support.image)
+      break
+    case 'image_interaction':
+      images.push(...ex.support.images)
+      break
+    case 'trois_themes':
+      ex.support.themes.forEach((t) => images.push(...t.images))
       break
     case 'sequence_4_images':
       images.push(...ex.support.images)
