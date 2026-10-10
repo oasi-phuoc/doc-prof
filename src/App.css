@@ -1022,7 +1022,7 @@ html,body,#root{
   background-position:0 0
 }
 .draft-pad.draft-pad-short{--grid-rows:calc(3 * var(--sheet-columns, 1))}
-/* Géométrie dual (ex. 13, 23–25, 36–37) : grille 9 × 5, cases carrées. */
+/* Géométrie dual (ex. 22–26 CFR, etc.) : grille 9 × 4, cases carrées. */
 .draft-pad.draft-pad-geo{--grid-cols:9;--grid-rows:4;margin-top:0}
 .draft-pad.plain{background-image:none;background-color:#fff}
 .algebra-stack{display:flex;flex-direction:column;gap:0;width:100%}
@@ -1171,15 +1171,22 @@ html,body,#root{
 .geo-dual-top{
   display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;width:100%
 }
+/* Hauteur du bloc = celle du brouillon 9×4 (pas la figure plus haute). */
+.geo-dual.is-tight .geo-dual-top{align-items:stretch}
 .geo-dual-figure{
   display:flex;justify-content:center;align-items:center;width:100%;min-width:0;margin:0
 }
+.geo-dual.is-tight .geo-dual-figure{
+  aspect-ratio:9 / 4;min-height:0;max-height:100%;overflow:hidden;align-self:stretch
+}
 .geo-dual-pad{min-width:0;width:100%;align-self:start}
+.geo-dual.is-tight .geo-dual-pad{align-self:stretch;display:flex;flex-direction:column}
 .geo-dual-pad .draft-pad{
   width:100%;min-height:0;margin:0;
   /* Cases carrées : ratio = cols/rows (9×4), jamais étiré par la ligne. */
   aspect-ratio:9 / 4;height:auto;max-height:none;flex-shrink:0
 }
+.geo-dual.is-tight .geo-dual-pad .draft-pad{flex:1 1 auto;height:100%;aspect-ratio:auto;max-height:100%}
 .geo-dual-answers{
   display:grid;grid-template-columns:1fr 1fr;gap:15px;width:100%;
   /* Espace sous le cadre de développement des calculs (ex. 22–26). */
@@ -1188,7 +1195,7 @@ html,body,#root{
 .geo-dual.is-tight .geo-dual-answers{padding-top:30px}
 /* TCM ex. 13 : rectangle −25 % (forme seule) ; cotes gardent 10 pt. */
 .geo-dual.is-tight .geo-dual-figure .geometry-figure{
-  width:75%;max-width:75%;margin-inline:auto
+  width:75%;max-width:75%;max-height:100%;height:auto;margin-inline:auto
 }
 .geo-dual.is-tight .geo-dual-figure .geometry-figure .dim-label{
   font-size:4.704mm /* 3,528 mm / 0,75 → taille visuelle inchangée après scale CSS */
