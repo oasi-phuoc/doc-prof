@@ -165,33 +165,34 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
                 : isLectureDense
                   ? { count: 4 }
                   : soutienKind === 'lettres'
-                    ? { count: 6 }
+                    ? { count: 5 }
                     : soutienKind === 'syllabes'
-                      ? { count: 5 }
-                      : soutienKind === 'relier' ||
-                          soutienKind === 'completer' ||
-                          soutienKind === 'ecouter' ||
-                          soutienKind === 'ecouter-image' ||
-                          soutienKind === 'syllabe-son' ||
-                          soutienKind === 'lettres-phrase' ||
-                          soutienKind === 'determinants' ||
-                          soutienKind === 'dictee' ||
-                          soutienKind === 'compter' ||
-                          soutienKind === 'ordre' ||
-                          soutienKind === 'lire' ||
-                          soutienKind === 'associer-audio'
-                        ? {
-                            count:
-                              soutienKind === 'lettres-phrase' || soutienKind === 'ordre'
-                                ? 6
-                                : soutienKind === 'ecouter-image'
-                                  ? 9
-                                  : soutienKind === 'compter'
-                                    ? 5
-                                    : soutienKind === 'lire'
-                                      ? 10
-                                      : 8,
-                          }
+                      ? { count: 3 }
+                      : soutienKind === 'relier'
+                        ? { count: 12 }
+                        : soutienKind === 'completer' ||
+                            soutienKind === 'ecouter' ||
+                            soutienKind === 'ecouter-image' ||
+                            soutienKind === 'syllabe-son' ||
+                            soutienKind === 'lettres-phrase' ||
+                            soutienKind === 'determinants' ||
+                            soutienKind === 'dictee' ||
+                            soutienKind === 'compter' ||
+                            soutienKind === 'ordre' ||
+                            soutienKind === 'lire' ||
+                            soutienKind === 'associer-audio'
+                          ? {
+                              count:
+                                soutienKind === 'lettres-phrase' || soutienKind === 'ordre'
+                                  ? 6
+                                  : soutienKind === 'ecouter-image'
+                                    ? 9
+                                    : soutienKind === 'compter'
+                                      ? 5
+                                      : soutienKind === 'lire'
+                                        ? 10
+                                        : 8,
+                            }
                         : isLecture || isSoutienFr
                           ? { count: 6 }
                         : isGeoCalc || isCountIcons
@@ -302,8 +303,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
       ? {
           columns:
             prev?.exerciseType === type.id
-              ? Math.min(2, Math.max(1, prev.columns ?? 1))
-              : 1,
+              ? Math.min(2, Math.max(1, prev.columns ?? 2))
+              : 2,
         }
       : soutienKind === 'completer' ||
           soutienKind === 'ecouter' ||

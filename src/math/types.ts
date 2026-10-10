@@ -508,7 +508,7 @@ export type MathItem = {
   vocabWriteHint?: string
   /** Phrase lue à voix haute (dictée), affichée au corrigé. */
   vocabDictee?: string
-  /** Soutien FR type 5 : grille image + Un/Une + mot à trous (syllabe). */
+  /** Soutien FR type 5 : grille image + Un/Une + mot à trous (syllabe) + QR audio. */
   syllableCompletes?: Array<{
     article: string
     before: string
@@ -516,6 +516,7 @@ export type MathItem = {
     after: string
     word: string
     imageSrc?: string
+    audioSrc?: string
   }>
   /** Soutien FR type 8 : image + mini-tableau (une case par syllabe). */
   syllableSoundItems?: Array<{

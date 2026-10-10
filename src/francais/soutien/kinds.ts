@@ -11,7 +11,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'lettres',
     label: '2 · Reconnaître la lettre',
-    description: 'Tableau de lettres en cercles ; 8 colonnes ; 6 lignes par défaut (max. 15).',
+    description: 'Tableau de lettres en cercles ; 8 colonnes ; 5 lignes par défaut (max. 15).',
     instruction: 'Entourez toutes les lettres demandées.',
     preferredColumns: 1 as const,
   },
@@ -19,7 +19,7 @@ export const SOUTIEN_KINDS = [
     id: 'syllabes',
     label: '3 · Lecture de syllabes',
     description:
-      'Deux blocs cadrés (script + Playwrite) : 5 lignes par défaut, moitié CV et moitié doubles sans nasal.',
+      'Deux blocs cadrés (script + Playwrite) : 3 lignes par défaut, moitié CV et moitié doubles sans nasal.',
     instruction: 'Lisez les syllabes ci-dessous.',
     preferredColumns: 1 as const,
   },
@@ -27,7 +27,7 @@ export const SOUTIEN_KINDS = [
     id: 'relier',
     label: '4 · Relier les parties',
     description:
-      'Jusqu’à 16 mots (type 1) ; n° · partie · ● · espace · ● · partie ; 1 ou 2 tableaux.',
+      'Mots du type 1 uniquement ; 12 mots / 2 colonnes par défaut ; parties à relier.',
     instruction: 'Reliez les parties et formez un mot.',
     preferredColumns: 1 as const,
   },
@@ -35,8 +35,8 @@ export const SOUTIEN_KINDS = [
     id: 'completer',
     label: '5 · Compléter les mots',
     description:
-      'Cartes image + Un/Une + trait (bord thème) ; jusqu’à 18 mots ; colonnes 1–3 ; mode libre.',
-    instruction: 'Complétez les mots à l’aide de l’image.',
+      'Mots type 1 ; blanc CV/VC 2 lettres + QR ; cadre type 1 ; audio téléchargeable.',
+    instruction: 'Écoutez et Complétez les mots.',
     preferredColumns: 1 as const,
   },
   {

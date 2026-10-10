@@ -363,13 +363,15 @@ export function compoundsForType1Words(
   )
   const out: SoutienCompound[] = []
   const seen = new Set<string>()
-  for (const raw of words.slice(0, 16)) {
+  for (const raw of words.slice(0, 24)) {
     const word = displayVocabLabel(raw)
+    // Pas de mots composés multi-mots (table de nuit) : découpe ambiguë.
+    if (/\s/.test(word)) continue
     const key = raw.trim().toLowerCase()
     const displayKey = word.toLowerCase()
     if (!key || seen.has(key) || seen.has(displayKey)) continue
     const existing = byWord.get(key) ?? byWord.get(displayKey)
-    if (existing) {
+    if (existing && !/\s/.test(existing.word)) {
       seen.add(key)
       seen.add(displayKey)
       out.push({ ...existing, word: displayVocabLabel(existing.word) })

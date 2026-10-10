@@ -4,6 +4,7 @@ import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
 import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { soutienBankById, type SoutienVowelBank } from './banks'
 import { soutienAudioFor } from './audio'
+import { completesFromType1Words } from './complete-blank'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
 import {
@@ -40,15 +41,16 @@ export function type1WordPool(bank: SoutienVowelBank): string[] {
 }
 
 /**
- * Mots type 1 (16) : banque + Voc filtrés par la lettre de la leçon.
+ * Mots type 1 : banque + Voc filtrés par la lettre de la leçon.
  * Avec `rng` : tirage aléatoire (priorité aux mots avec image).
  */
-export function type1Words(bank: SoutienVowelBank, rng?: Rng): string[] {
+export function type1Words(bank: SoutienVowelBank, rng?: Rng, count = 16): string[] {
+  const want = Math.max(1, Math.min(24, Math.round(count) || 16))
   const pool = type1WordPool(bank)
   const withImg = pool.filter((w) => Boolean(soutienImageFor(w)))
-  const source = withImg.length >= 16 ? withImg : pool
-  if (!rng) return source.slice(0, 16)
-  return shuffle(rng, [...source]).slice(0, Math.min(16, source.length))
+  const source = withImg.length >= want ? withImg : pool
+  if (!rng) return source.slice(0, want)
+  return shuffle(rng, [...source]).slice(0, Math.min(want, source.length))
 }
 
 export type SoutienBatch = {
@@ -111,7 +113,7 @@ function otherWords(bank: SoutienVowelBank): string[] {
 function letterGrid(rng: Rng, bank: SoutienVowelBank, rowCount: number): MathItem {
   /** 8 colonnes : cercles + padding 10 px tiennent sur l’A4. */
   const cols = 8
-  const rows = Math.max(1, Math.min(15, Math.round(rowCount) || 6))
+  const rows = Math.max(1, Math.min(15, Math.round(rowCount) || 5))
   const size = cols * rows
   /** ~¼ des cases = lettre / digramme cible. */
   const targetCount = Math.max(4, Math.min(size - cols, Math.round(size * 0.24)))
@@ -156,7 +158,7 @@ const SYLLABLE_CONS = ['b', 'c', 'd', 'f', 'g', 'l', 'm', 'n', 'p', 'r', 's', 't
 
 /** Lignes par bloc pour le type 3 (script + Playwrite, même contenu). */
 function syllableBlockRows(rowCount: number): number {
-  return Math.max(1, Math.min(10, Math.round(rowCount) || 5))
+  return Math.max(1, Math.min(10, Math.round(rowCount) || 3))
 }
 
 const SYLLABLE_VOWELS = ['a', 'e', 'i', 'o', 'u', 'y'] as const
@@ -341,7 +343,7 @@ function genKind(
     case 'syllabes': {
       /**
        * Deux blocs (script + Playwrite), même contenu.
-       * `count` = lignes par bloc (défaut 5×5) ; moitié CV, moitié doubles sans nasal.
+       * `count` = lignes par bloc (défaut 3) ; moitié CV, moitié doubles sans nasal.
        */
       const cols = 5
       const rows = syllableBlockRows(n)
@@ -363,14 +365,16 @@ function genKind(
     }
     case 'relier': {
       /**
-       * Jusqu’à 16 paires (= mots du type 1) ; 1 ou 2 colonnes.
-       * En 2 colonnes : 1er tableau à gauche, 2e à droite ; mélange indépendant.
+       * Uniquement les mots du type 1 (même banque / tirage Voc) ;
+       * défaut 12 mots en 2 colonnes.
        */
       const want = Math.max(1, Math.min(16, n))
-      const type1 = type1Words(bank, rng)
-      const pool = compoundsForType1Words(bank, type1)
+      const colCount = options?.columns === 1 ? 1 : 2
+      // Tirage type 1 élargi, puis composés seulement sur ces mots (pas d’autres).
+      const type1 = type1Words(bank, rng, Math.max(16, want))
+      const singleToken = type1.filter((w) => !/\s/.test(displayVocabLabel(w)))
+      const pool = compoundsForType1Words(bank, singleToken)
       const compounds = shuffle(rng, pool).slice(0, Math.min(want, pool.length))
-      const colCount = options?.columns === 2 ? 2 : 1
       const mid = colCount === 2 ? Math.ceil(compounds.length / 2) : compounds.length
       const groups =
         colCount === 2
@@ -408,7 +412,7 @@ function genKind(
       }
     }
     case 'completer': {
-      /** Grille image + Un/Une + trait ; colonnes 1–3 ; count = nb de mots. */
+      /** Grille image + Un/Une + trait CV/VC + QR ; mots = type 1 uniquement. */
       const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 2) || 2))
       const libre =
         Boolean(options?.soutienCompleterLibre) &&
@@ -425,28 +429,31 @@ function genKind(
               return {
                 article: row.article.trim() || 'Un',
                 before: row.before,
-                blank: row.blank,
+                blank: row.blank.slice(0, 2),
                 after: row.after,
                 word,
                 imageSrc: row.imageSrc || soutienImageFor(raw) || soutienImageFor(word),
+                audioSrc: soutienAudioFor(raw) ?? soutienAudioFor(word),
               }
             })
-        : shuffle(rng, [...bank.completes])
-            .slice(0, Math.min(want, bank.completes.length))
-            .map((row) => {
-              const word = displayVocabLabel(row.word)
-              return {
+        : (() => {
+            const type1 = type1Words(bank, rng, Math.max(18, want))
+            const built = completesFromType1Words(bank, type1)
+            return shuffle(rng, built)
+              .slice(0, Math.min(want, built.length))
+              .map((row) => ({
                 article: row.article,
                 before: row.before,
                 blank: row.blank,
                 after: row.after,
-                word,
-                imageSrc: soutienImageFor(row.word) || soutienImageFor(word),
-              }
-            })
+                word: row.word,
+                imageSrc: soutienImageFor(row.word),
+                audioSrc: soutienAudioFor(row.word),
+              }))
+          })()
       const rows = Math.max(1, Math.ceil(pool.length / cols))
       return {
-        instruction: 'Complétez les mots à l’aide de l’image.',
+        instruction: 'Écoutez et Complétez les mots.',
         preferredColumns: 1,
         items: [
           {

@@ -133,7 +133,10 @@ import {
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankById } from '@/francais/soutien/banks'
-import { downloadSoutienMotsAudio } from '@/francais/soutien/download-mots-audio'
+import {
+  downloadSoutienCompleterAudio,
+  downloadSoutienMotsAudio,
+} from '@/francais/soutien/download-mots-audio'
 import { type1WordPool, type1Words } from '@/francais/soutien/generate'
 import { parseSoutienType, SOUTIEN_KINDS } from '@/francais/soutien/kinds'
 import {
@@ -712,6 +715,34 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       'mots'
     try {
       await downloadSoutienMotsAudio({ words, bankId })
+    } catch {
+      // Échec réseau / fichier manquant : silencieux.
+    }
+  }
+
+  /** Mots du type 5 (compléter) pour l’audio téléchargeable. */
+  function currentSoutienCompleterWords(): string[] {
+    const fromSheet =
+      activeSheet?.blocks[safeBlockIndex]?.items.find(
+        (item) => item.layout === 'syllable-complete',
+      )?.syllableCompletes ?? []
+    const labels = fromSheet.map((e) => e.word.trim()).filter(Boolean)
+    if (labels.length > 0) return labels
+    if (activeBlock.soutienCompleterLibre && activeBlock.soutienCompleterEntries?.length) {
+      return activeBlock.soutienCompleterEntries.map((e) => e.word.trim()).filter(Boolean)
+    }
+    return []
+  }
+
+  async function downloadActiveSoutienCompleterAudio() {
+    const words = currentSoutienCompleterWords()
+    if (words.length === 0) return
+    const bankId =
+      parseSoutienType(activeBlock.exerciseType)?.bankId ??
+      soutienSelection?.sound.bankId ??
+      'completer'
+    try {
+      await downloadSoutienCompleterAudio({ words, bankId })
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -2733,16 +2764,18 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 />
                 {soutienKind === 'lettres' ? (
                   <small className="muted">
-                    Nombre de lignes du tableau (8 lettres par ligne, max. 15 · défaut 6).
+                    Nombre de lignes du tableau (8 lettres par ligne, max. 15 · défaut 5).
                   </small>
                 ) : null}
                 {soutienKind === 'syllabes' ? (
                   <small className="muted">
-                    Lignes par bloc (script et Playwrite · 5 syllabes par ligne · défaut 5).
+                    Lignes par bloc (script et Playwrite · 5 syllabes par ligne · défaut 3).
                   </small>
                 ) : null}
                 {isSoutienRelier ? (
-                  <small className="muted">Jusqu’à 16 mots (selon la banque du son).</small>
+                  <small className="muted">
+                    Mots du type 1 uniquement (max. 16 · défaut 12 · 2 colonnes).
+                  </small>
                 ) : null}
                 {isSoutienCompleter && !activeBlock.soutienCompleterLibre ? (
                   <small className="muted">Nombre de mots à compléter (max. 18).</small>
@@ -3506,7 +3539,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </svg>
                   </button>
                 )}
-                {isTcf || isTcmCfr || (isSoutienFr && isSoutienMots) ? (
+                {isTcf ||
+                isTcmCfr ||
+                (isSoutienFr && (isSoutienMots || isSoutienCompleter)) ? (
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
@@ -3515,7 +3550,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                         ? downloadActiveTcfAudios()
                         : isTcmCfr
                           ? downloadActiveTcmCfrAudios()
-                          : downloadActiveSoutienMotsAudio())
+                          : isSoutienCompleter
+                            ? downloadActiveSoutienCompleterAudio()
+                            : downloadActiveSoutienMotsAudio())
                     }
                     aria-label="Télécharger les audios de la fiche"
                     title={
@@ -3523,7 +3560,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                         ? 'Télécharger les audios de la fiche'
                         : isTcmCfr
                           ? 'Télécharger les audios (nombres ou multiplications)'
-                          : 'Télécharger l’audio (consigne + 16 mots)'
+                          : isSoutienCompleter
+                            ? 'Télécharger l’audio (Écoutez et complétez + mots, 6 s)'
+                            : 'Télécharger l’audio (consigne + 16 mots)'
                     }
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>

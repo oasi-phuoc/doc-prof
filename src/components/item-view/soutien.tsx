@@ -501,6 +501,34 @@ export function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: Pr
   const show = mode === 'answers'
   const paint = (text: string) =>
     graphemes.length ? highlightThemeLetters(text, graphemes) : text
+  const [qrSrcs, setQrSrcs] = useState<string[]>(() => rows.map(() => ''))
+  const audioKey = rows.map((r) => r.audioSrc ?? '').join('|')
+  useEffect(() => {
+    let cancelled = false
+    const srcs = audioKey.split('|')
+    const run = async () => {
+      const next = await Promise.all(
+        srcs.map(async (audioSrc) => {
+          if (!audioSrc) return ''
+          try {
+            return await QRCode.toDataURL(soutienAudioAbsoluteUrl(audioSrc), {
+              margin: 0,
+              width: 72,
+              errorCorrectionLevel: 'M',
+              color: { dark: '#111111', light: '#ffffff' },
+            })
+          } catch {
+            return ''
+          }
+        }),
+      )
+      if (!cancelled) setQrSrcs(next)
+    }
+    void run()
+    return () => {
+      cancelled = true
+    }
+  }, [audioKey])
   return (
     <div className="syllable-complete-block" aria-label="Compléter les mots">
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
@@ -509,7 +537,7 @@ export function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: Pr
         style={{ '--sc-cols': cols } as CSSProperties}
       >
         {rows.map((row, index) => {
-          const blankCh = Math.max(2, Math.min(6, row.blank.length + 1))
+          const blankCh = Math.max(2, Math.min(4, row.blank.length + 1))
           return (
             <div className="syllable-complete-card" key={`sc-${index}-${row.word}`}>
               <div className="syllable-complete-image">
@@ -533,12 +561,13 @@ export function SyllableCompleteBlock({ item, mode }: { item: MathItem; mode: Pr
                 {row.after ? (
                   <span className="syllable-complete-affix">{paint(row.after)}</span>
                 ) : null}
-                {show ? (
-                  <span className="syllable-complete-full">
-                    {' '}
-                    ({paint(row.article)} {paint(row.word)})
-                  </span>
-                ) : null}
+              </div>
+              <div className="syllable-complete-qr">
+                {qrSrcs[index] ? (
+                  <img src={qrSrcs[index]} alt={row.word ? `Audio ${row.word}` : ''} />
+                ) : (
+                  <span className="syllable-complete-qr-ph" aria-hidden />
+                )}
               </div>
             </div>
           )
