@@ -1194,8 +1194,10 @@ function genEx27(rng: Rng): MathItem[] {
   // Le nombre de cases positives reste fixe ; seule l’échelle change.
   const unitSquares = rng() < 0.5 ? 1 : 2
   const maxUnit = positiveCells / unitSquares
-  const originCol = unitSquares
-  const originRow = unitSquares
+  // Marge négative (−1) toujours 2 cases + trait à −1 + « 0 » au centre — identique
+  // pour les deux graduations (1 u/case et 1 u/2 cases). Ne pas lier à unitSquares.
+  const originCol = 2
+  const originRow = 2
   // Pas de cases « flèche » en plus : la dernière graduation = +24 (ou +12 si 1 u/2 cases).
   // Les flèches dépassent dans le padding SVG, pas dans des cases supplémentaires.
   const visibleCols = originCol + positiveCells

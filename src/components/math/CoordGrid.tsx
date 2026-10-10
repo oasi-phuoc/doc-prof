@@ -397,11 +397,13 @@ function AxesScene({
   )
   const visibleTopY = rowY(visibleRows)
   const visibleRightX = colX(visibleCols)
-  const axisTipX = colX(cols)
-  const axisTipY = rowY(rows)
   const originSvg = to(0, 0)
   const arrowLen = Math.max(2.2, cellMm * 0.45)
   const arrowHalf = Math.max(1.1, cellMm * 0.22)
+  // Cadran I (marge −1) : flèches un peu au-delà de la dernière case, sans case ni graduation supplémentaires.
+  const axisOvershoot = scene.originZeroInNegCell ? Math.max(arrowLen + 0.4, cellMm * 0.55) : 0
+  const axisTipX = colX(cols) + axisOvershoot
+  const axisTipY = rowY(rows) - axisOvershoot
 
   return (
     <svg
@@ -512,24 +514,25 @@ function AxesScene({
                   />
                 )
               }),
-              ...(scene.originZeroInNegCell
-                ? Array.from({ length: Math.ceil(originCol / tickEvery) }, (_, i) => {
-                    const col = originCol - (i + 1) * tickEvery
-                    if (col < 0) return null
-                    const cx = colX(col)
-                    const oy = originSvg.cy
-                    const tick = Math.max(1.1, cellMm * 0.28)
-                    return (
-                      <line
-                        key={`tick-x-neg-${col}`}
-                        x1={cx}
-                        y1={oy - tick}
-                        x2={cx}
-                        y2={oy + tick}
-                        className="axis-tick"
-                      />
-                    )
-                  })
+              // Marge −1 : un seul trait au bout des 2 cases négatives (indépendant de unitSquares).
+              ...(scene.originZeroInNegCell && originCol > 0
+                ? [
+                    (() => {
+                      const cx = colX(0)
+                      const oy = originSvg.cy
+                      const tick = Math.max(1.1, cellMm * 0.28)
+                      return (
+                        <line
+                          key="tick-x-neg-1"
+                          x1={cx}
+                          y1={oy - tick}
+                          x2={cx}
+                          y2={oy + tick}
+                          className="axis-tick"
+                        />
+                      )
+                    })(),
+                  ]
                 : []),
             ]
           })()
@@ -556,24 +559,24 @@ function AxesScene({
                   />
                 )
               }),
-              ...(scene.originZeroInNegCell
-                ? Array.from({ length: Math.ceil(originRow / tickEvery) }, (_, i) => {
-                    const row = originRow - (i + 1) * tickEvery
-                    if (row < 0) return null
-                    const cy = rowY(row)
-                    const ox = originSvg.cx
-                    const tick = Math.max(1.1, cellMm * 0.28)
-                    return (
-                      <line
-                        key={`tick-y-neg-${row}`}
-                        x1={ox - tick}
-                        y1={cy}
-                        x2={ox + tick}
-                        y2={cy}
-                        className="axis-tick"
-                      />
-                    )
-                  })
+              ...(scene.originZeroInNegCell && originRow > 0
+                ? [
+                    (() => {
+                      const cy = rowY(0)
+                      const ox = originSvg.cx
+                      const tick = Math.max(1.1, cellMm * 0.28)
+                      return (
+                        <line
+                          key="tick-y-neg-1"
+                          x1={ox - tick}
+                          y1={cy}
+                          x2={ox + tick}
+                          y2={cy}
+                          className="axis-tick"
+                        />
+                      )
+                    })(),
+                  ]
                 : []),
             ]
           })()
@@ -624,8 +627,8 @@ function AxesScene({
         <g className="coord-origin">
           {scene.originZeroInNegCell ? (
             <text
-              x={to(-0.5, -0.5).cx}
-              y={to(-0.5, -0.5).cy + 1.1}
+              x={colX(originCol / 2)}
+              y={rowY(originRow / 2) + 1.1}
               className="origin-label"
               textAnchor="middle"
               fontSize={3.4}
