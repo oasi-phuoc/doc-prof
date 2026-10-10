@@ -4084,10 +4084,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcm-cfr-metro-label{font-size:11px;fill:var(--ink,#222);font-weight:600}
 .tcm-cfr-metro-station{font-size:8px;font-weight:700}
 .tcm-cfr-metro-questions{margin:0;padding:0;display:flex;flex-direction:column;gap:8px;list-style:none}
-.tcm-cfr-metro-questions li{margin:0;display:flex;flex-direction:column;gap:4px}
+.tcm-cfr-metro-questions li{margin:0;display:flex;flex-direction:column;gap:4px;padding-bottom:15px}
 .tcm-cfr-metro-q-head{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:6px;align-items:baseline}
 .tcm-cfr-metro-q-num{color:var(--purple,#5b3a8c);font-weight:700;font-size:12pt;line-height:1.35}
 .tcm-cfr-metro-questions .prompt-stack-text{margin:0}
+.tcm-cfr-metro-questions .answer-line-field{margin-bottom:0}
 /* TCM CFR ex. 27 : consignes numérotées au-dessus du plan. */
 .coord-block.is-cfr-plan{display:flex;flex-direction:column;gap:8px;align-items:stretch}
 .coord-cfr-briefing{width:100%;display:flex;flex-direction:column;gap:6px}

@@ -51,7 +51,8 @@ function line(
 
 /**
  * Plans distincts (A–K × 1–7). Étiquette = première case.
- * 4 lignes coudées (non droites) à 10 cellules ; autres traits 6–8 cellules.
+ * 4 lignes coudées à 10 cellules ; autres traits 6–8 cellules.
+ * Deux lignes partagent au plus une case (croisement unique).
  * Gares : Monthey, Vouvry, Martigny, Sion, Sierre, Vétroz, Ardon, Botza,
  * Synecom, Fully, Riddes, Saillon.
  */
@@ -62,13 +63,13 @@ export const METRO_MAPS: readonly MetroMap[] = [
     rows: [...ROWS],
     lines: [
       line('monthey_1', 'Monthey', C.blue, ['B7', 'C6', 'D5', 'E5', 'F5', 'G5', 'H5', 'I6', 'J7', 'K7']),
-      line('vouvry_1', 'Vouvry', C.orange, ['A4', 'B4', 'C4', 'D4', 'E4', 'F4']),
-      line('martigny_1', 'Martigny', C.green, ['A1', 'B2', 'C3', 'D3', 'E3', 'F3', 'G3', 'H4', 'I5', 'J6']),
-      line('sion_1', 'Sion', C.rose, ['B2', 'C2', 'D2', 'E2', 'F2', 'G2', 'H2']),
-      line('sierre_1', 'Sierre', C.cyan, ['K1', 'J2', 'I3', 'H3', 'G3', 'F3', 'E3', 'D4', 'C5', 'B6']),
-      line('vetroz_1', 'Vétroz', C.red, ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7']),
-      line('ardon_1', 'Ardon', C.yellow, ['A7', 'B6', 'C5', 'D5', 'E5', 'F5', 'G5', 'H4', 'I3', 'J2']),
-      line('botza_1', 'Botza', C.violet, ['C7', 'C6', 'C5', 'C4', 'C3', 'C2']),
+      line('vouvry_1', 'Vouvry', C.orange, ['A1', 'B2', 'C3', 'D3', 'E3', 'F3', 'G3', 'H4', 'I5', 'J6']),
+      line('martigny_1', 'Martigny', C.green, ['A3', 'B4', 'C5', 'D6', 'E6', 'F6', 'G6', 'H5', 'I4', 'J3']),
+      line('sion_1', 'Sion', C.rose, ['K7', 'K6', 'K5', 'J4', 'I3', 'H2', 'G1', 'F1', 'E1', 'D1']),
+      line('sierre_1', 'Sierre', C.cyan, ['A2', 'B2', 'C2', 'D2', 'E2', 'F2']),
+      line('vetroz_1', 'Vétroz', C.red, ['F2', 'G2', 'H2', 'I2', 'J2', 'K2']),
+      line('ardon_1', 'Ardon', C.yellow, ['A4', 'B4', 'C4', 'D4', 'E4', 'F4']),
+      line('botza_1', 'Botza', C.violet, ['F4', 'G4', 'H4', 'I4', 'J4', 'K4']),
     ],
   },
   {
@@ -76,14 +77,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('vouvry_2', 'Vouvry', C.blue, ['B2', 'C3', 'D4', 'E5', 'F5', 'G5', 'H5', 'I5', 'J6', 'K7']),
-      line('martigny_2', 'Martigny', C.orange, ['K6', 'J6', 'I6', 'H6', 'G6', 'F6']),
-      line('sion_2', 'Sion', C.green, ['J6', 'I6', 'H6', 'G6', 'F5', 'E4', 'D3', 'C2', 'B2', 'A2']),
-      line('sierre_2', 'Sierre', C.rose, ['A5', 'B5', 'C5', 'D5', 'E5', 'F5', 'G5']),
-      line('vetroz_2', 'Vétroz', C.cyan, ['B1', 'C2', 'D3', 'E4', 'F4', 'G4', 'H4', 'I4', 'J5', 'K6']),
-      line('ardon_2', 'Ardon', C.red, ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7']),
-      line('botza_2', 'Botza', C.yellow, ['J7', 'I6', 'H5', 'G4', 'F4', 'E4', 'D4', 'C4', 'B5', 'A6']),
-      line('synecom_2', 'Synecom', C.violet, ['K3', 'J3', 'I3', 'H3', 'G3', 'F3', 'E3']),
+      line('vouvry_2', 'Vouvry', C.blue, ['J6', 'I5', 'H4', 'G3', 'F3', 'E3', 'D3', 'C3', 'B2', 'A1']),
+      line('martigny_2', 'Martigny', C.orange, ['J2', 'I3', 'H4', 'G5', 'F5', 'E5', 'D5', 'C5', 'B6', 'A7']),
+      line('sion_2', 'Sion', C.green, ['J7', 'I6', 'H5', 'G4', 'F4', 'E4', 'D4', 'C4', 'B5', 'A6']),
+      line('sierre_2', 'Sierre', C.rose, ['J3', 'I4', 'H5', 'G6', 'F6', 'E6', 'D6', 'C5', 'B4', 'A3']),
+      line('vetroz_2', 'Vétroz', C.cyan, ['G1', 'F1', 'E1', 'D1', 'C1', 'B1', 'A1']),
+      line('ardon_2', 'Ardon', C.red, ['A2', 'B2', 'C2', 'D2', 'E2', 'F2']),
+      line('botza_2', 'Botza', C.yellow, ['F2', 'G2', 'H2', 'I2', 'J2', 'K2']),
+      line('synecom_2', 'Synecom', C.violet, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7']),
     ],
   },
   {
@@ -91,14 +92,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('martigny_3', 'Martigny', C.blue, ['J1', 'I1', 'H1', 'G2', 'F3', 'E4', 'D5', 'C5', 'B5', 'A5']),
-      line('sion_3', 'Sion', C.orange, ['D7', 'D6', 'D5', 'D4', 'D3', 'D2', 'D1']),
-      line('sierre_3', 'Sierre', C.green, ['A4', 'B4', 'C4', 'D5', 'E6', 'F7', 'G7', 'H7', 'I6', 'J5']),
-      line('vetroz_3', 'Vétroz', C.rose, ['B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1']),
-      line('ardon_3', 'Ardon', C.cyan, ['A2', 'B2', 'C2', 'D3', 'E4', 'F5', 'G6', 'H6', 'I6', 'J6']),
-      line('botza_3', 'Botza', C.red, ['F2', 'F3', 'F4', 'F5', 'F6', 'F7']),
-      line('synecom_3', 'Synecom', C.yellow, ['A3', 'B4', 'C5', 'D6', 'E6', 'F6', 'G6', 'H5', 'I4', 'J3']),
-      line('fully_3', 'Fully', C.violet, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7', 'G7', 'H7']),
+      line('martigny_3', 'Martigny', C.blue, ['A1', 'B2', 'C3', 'D3', 'E3', 'F3', 'G3', 'H4', 'I5', 'J6']),
+      line('sion_3', 'Sion', C.orange, ['A7', 'B6', 'C5', 'D5', 'E5', 'F5', 'G5', 'H4', 'I3', 'J2']),
+      line('sierre_3', 'Sierre', C.green, ['A6', 'B5', 'C4', 'D4', 'E4', 'F4', 'G4', 'H3', 'I2', 'J1']),
+      line('vetroz_3', 'Vétroz', C.rose, ['K4', 'J4', 'I4', 'H5', 'G6', 'F7', 'E7', 'D7', 'C6', 'B5']),
+      line('ardon_3', 'Ardon', C.cyan, ['B2', 'C2', 'D2', 'E2', 'F2', 'G2', 'H2']),
+      line('botza_3', 'Botza', C.red, ['A6', 'B6', 'C6', 'D6', 'E6', 'F6']),
+      line('synecom_3', 'Synecom', C.yellow, ['F6', 'G6', 'H6', 'I6', 'J6', 'K6']),
+      line('fully_3', 'Fully', C.violet, ['F7', 'G7', 'H7', 'I7', 'J7', 'K7']),
     ],
   },
   {
@@ -106,14 +107,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('sion_4', 'Sion', C.blue, ['B7', 'C6', 'D5', 'E5', 'F5', 'G5', 'H5', 'I6', 'J7', 'K7']),
-      line('sierre_4', 'Sierre', C.orange, ['A4', 'B4', 'C4', 'D4', 'E4', 'F4']),
-      line('vetroz_4', 'Vétroz', C.green, ['A1', 'B2', 'C3', 'D3', 'E3', 'F3', 'G3', 'H4', 'I5', 'J6']),
-      line('ardon_4', 'Ardon', C.rose, ['B2', 'C2', 'D2', 'E2', 'F2', 'G2', 'H2']),
-      line('botza_4', 'Botza', C.cyan, ['K1', 'J2', 'I3', 'H3', 'G3', 'F3', 'E3', 'D4', 'C5', 'B6']),
-      line('synecom_4', 'Synecom', C.red, ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7']),
-      line('fully_4', 'Fully', C.yellow, ['A7', 'B6', 'C5', 'D5', 'E5', 'F5', 'G5', 'H4', 'I3', 'J2']),
-      line('riddes_4', 'Riddes', C.violet, ['C7', 'C6', 'C5', 'C4', 'C3', 'C2']),
+      line('sion_4', 'Sion', C.blue, ['J2', 'I3', 'H4', 'G5', 'F5', 'E5', 'D5', 'C5', 'B6', 'A7']),
+      line('sierre_4', 'Sierre', C.orange, ['J6', 'I6', 'H6', 'G6', 'F5', 'E4', 'D3', 'C2', 'B2', 'A2']),
+      line('vetroz_4', 'Vétroz', C.green, ['K5', 'J5', 'I5', 'H5', 'G4', 'F3', 'E2', 'D1', 'C1', 'B1']),
+      line('ardon_4', 'Ardon', C.rose, ['J5', 'I6', 'H7', 'G7', 'F7', 'E6', 'D5', 'C4', 'B4', 'A4']),
+      line('botza_4', 'Botza', C.cyan, ['I2', 'H2', 'G2', 'F2', 'E2', 'D2']),
+      line('synecom_4', 'Synecom', C.red, ['A3', 'B3', 'C3', 'D3', 'E3', 'F3']),
+      line('fully_4', 'Fully', C.yellow, ['F3', 'G3', 'H3', 'I3', 'J3', 'K3']),
+      line('riddes_4', 'Riddes', C.violet, ['C4', 'D4', 'E4', 'F4', 'G4', 'H4']),
     ],
   },
   {
@@ -121,14 +122,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('monthey_5', 'Monthey', C.blue, ['B2', 'C3', 'D4', 'E5', 'F5', 'G5', 'H5', 'I5', 'J6', 'K7']),
-      line('vouvry_5', 'Vouvry', C.orange, ['K6', 'J6', 'I6', 'H6', 'G6', 'F6']),
-      line('martigny_5', 'Martigny', C.green, ['J6', 'I6', 'H6', 'G6', 'F5', 'E4', 'D3', 'C2', 'B2', 'A2']),
-      line('sion_5', 'Sion', C.rose, ['A5', 'B5', 'C5', 'D5', 'E5', 'F5', 'G5']),
-      line('sierre_5', 'Sierre', C.cyan, ['B1', 'C2', 'D3', 'E4', 'F4', 'G4', 'H4', 'I4', 'J5', 'K6']),
-      line('vetroz_5', 'Vétroz', C.red, ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7']),
-      line('ardon_5', 'Ardon', C.yellow, ['J7', 'I6', 'H5', 'G4', 'F4', 'E4', 'D4', 'C4', 'B5', 'A6']),
-      line('botza_5', 'Botza', C.violet, ['K3', 'J3', 'I3', 'H3', 'G3', 'F3', 'E3']),
+      line('sierre_5', 'Sierre', C.blue, ['K7', 'J6', 'I5', 'H5', 'G5', 'F5', 'E5', 'D4', 'C3', 'B2']),
+      line('vetroz_5', 'Vétroz', C.orange, ['K6', 'J5', 'I4', 'H4', 'G4', 'F4', 'E4', 'D3', 'C2', 'B1']),
+      line('ardon_5', 'Ardon', C.green, ['A4', 'B4', 'C4', 'D5', 'E6', 'F7', 'G7', 'H7', 'I6', 'J5']),
+      line('botza_5', 'Botza', C.rose, ['K2', 'J2', 'I2', 'H3', 'G4', 'F5', 'E6', 'D6', 'C6', 'B6']),
+      line('synecom_5', 'Synecom', C.cyan, ['C3', 'D3', 'E3', 'F3', 'G3', 'H3', 'I3', 'J3']),
+      line('fully_5', 'Fully', C.red, ['F6', 'G6', 'H6', 'I6', 'J6', 'K6']),
+      line('riddes_5', 'Riddes', C.yellow, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7']),
+      line('saillon_5', 'Saillon', C.violet, ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
     ],
   },
   {
@@ -136,14 +137,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('vouvry_6', 'Vouvry', C.blue, ['J1', 'I1', 'H1', 'G2', 'F3', 'E4', 'D5', 'C5', 'B5', 'A5']),
-      line('martigny_6', 'Martigny', C.orange, ['D7', 'D6', 'D5', 'D4', 'D3', 'D2', 'D1']),
-      line('sion_6', 'Sion', C.green, ['A4', 'B4', 'C4', 'D5', 'E6', 'F7', 'G7', 'H7', 'I6', 'J5']),
-      line('sierre_6', 'Sierre', C.rose, ['B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1']),
-      line('vetroz_6', 'Vétroz', C.cyan, ['A2', 'B2', 'C2', 'D3', 'E4', 'F5', 'G6', 'H6', 'I6', 'J6']),
-      line('ardon_6', 'Ardon', C.red, ['F2', 'F3', 'F4', 'F5', 'F6', 'F7']),
-      line('botza_6', 'Botza', C.yellow, ['A3', 'B4', 'C5', 'D6', 'E6', 'F6', 'G6', 'H5', 'I4', 'J3']),
-      line('synecom_6', 'Synecom', C.violet, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7', 'G7', 'H7']),
+      line('vetroz_6', 'Vétroz', C.blue, ['B6', 'C6', 'D6', 'E6', 'F5', 'G4', 'H3', 'I2', 'J2', 'K2']),
+      line('ardon_6', 'Ardon', C.orange, ['A5', 'B5', 'C5', 'D5', 'E4', 'F3', 'G2', 'H1', 'I1', 'J1']),
+      line('botza_6', 'Botza', C.green, ['B5', 'C6', 'D7', 'E7', 'F7', 'G6', 'H5', 'I4', 'J4', 'K4']),
+      line('synecom_6', 'Synecom', C.rose, ['J6', 'I6', 'H6', 'G6', 'F5', 'E4', 'D3', 'C2', 'B2', 'A2']),
+      line('fully_6', 'Fully', C.cyan, ['J3', 'I3', 'H3', 'G3', 'F3', 'E3', 'D3']),
+      line('riddes_6', 'Riddes', C.red, ['A4', 'B4', 'C4', 'D4', 'E4', 'F4']),
+      line('saillon_6', 'Saillon', C.yellow, ['D5', 'E5', 'F5', 'G5', 'H5', 'I5']),
+      line('monthey_6', 'Monthey', C.violet, ['F7', 'G7', 'H7', 'I7', 'J7', 'K7']),
     ],
   },
   {
@@ -151,14 +152,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('martigny_7', 'Martigny', C.blue, ['B7', 'C6', 'D5', 'E5', 'F5', 'G5', 'H5', 'I6', 'J7', 'K7']),
-      line('sion_7', 'Sion', C.orange, ['A4', 'B4', 'C4', 'D4', 'E4', 'F4']),
-      line('sierre_7', 'Sierre', C.green, ['A1', 'B2', 'C3', 'D3', 'E3', 'F3', 'G3', 'H4', 'I5', 'J6']),
-      line('vetroz_7', 'Vétroz', C.rose, ['B2', 'C2', 'D2', 'E2', 'F2', 'G2', 'H2']),
-      line('ardon_7', 'Ardon', C.cyan, ['K1', 'J2', 'I3', 'H3', 'G3', 'F3', 'E3', 'D4', 'C5', 'B6']),
-      line('botza_7', 'Botza', C.red, ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7']),
-      line('synecom_7', 'Synecom', C.yellow, ['A7', 'B6', 'C5', 'D5', 'E5', 'F5', 'G5', 'H4', 'I3', 'J2']),
-      line('fully_7', 'Fully', C.violet, ['C7', 'C6', 'C5', 'C4', 'C3', 'C2']),
+      line('ardon_7', 'Ardon', C.blue, ['K6', 'J5', 'I4', 'H4', 'G4', 'F4', 'E4', 'D3', 'C2', 'B1']),
+      line('botza_7', 'Botza', C.orange, ['A4', 'B4', 'C4', 'D5', 'E6', 'F7', 'G7', 'H7', 'I6', 'J5']),
+      line('synecom_7', 'Synecom', C.green, ['K2', 'J2', 'I2', 'H3', 'G4', 'F5', 'E6', 'D6', 'C6', 'B6']),
+      line('fully_7', 'Fully', C.rose, ['K1', 'J1', 'I1', 'H2', 'G3', 'F4', 'E5', 'D5', 'C5', 'B5']),
+      line('riddes_7', 'Riddes', C.cyan, ['E5', 'F5', 'G5', 'H5', 'I5', 'J5']),
+      line('saillon_7', 'Saillon', C.red, ['F6', 'G6', 'H6', 'I6', 'J6', 'K6']),
+      line('monthey_7', 'Monthey', C.yellow, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7']),
+      line('vouvry_7', 'Vouvry', C.violet, ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
     ],
   },
   {
@@ -166,14 +167,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('sion_8', 'Sion', C.blue, ['B2', 'C3', 'D4', 'E5', 'F5', 'G5', 'H5', 'I5', 'J6', 'K7']),
-      line('sierre_8', 'Sierre', C.orange, ['K6', 'J6', 'I6', 'H6', 'G6', 'F6']),
-      line('vetroz_8', 'Vétroz', C.green, ['J6', 'I6', 'H6', 'G6', 'F5', 'E4', 'D3', 'C2', 'B2', 'A2']),
-      line('ardon_8', 'Ardon', C.rose, ['A5', 'B5', 'C5', 'D5', 'E5', 'F5', 'G5']),
-      line('botza_8', 'Botza', C.cyan, ['B1', 'C2', 'D3', 'E4', 'F4', 'G4', 'H4', 'I4', 'J5', 'K6']),
-      line('synecom_8', 'Synecom', C.red, ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7']),
-      line('fully_8', 'Fully', C.yellow, ['J7', 'I6', 'H5', 'G4', 'F4', 'E4', 'D4', 'C4', 'B5', 'A6']),
-      line('riddes_8', 'Riddes', C.violet, ['K3', 'J3', 'I3', 'H3', 'G3', 'F3', 'E3']),
+      line('botza_8', 'Botza', C.blue, ['J7', 'I6', 'H5', 'G4', 'F4', 'E4', 'D4', 'C4', 'B5', 'A6']),
+      line('synecom_8', 'Synecom', C.orange, ['B6', 'C6', 'D6', 'E6', 'F5', 'G4', 'H3', 'I2', 'J2', 'K2']),
+      line('fully_8', 'Fully', C.green, ['H7', 'G7', 'F7', 'E7', 'D6', 'C5', 'B4', 'A3', 'A2', 'A1']),
+      line('riddes_8', 'Riddes', C.rose, ['D1', 'E1', 'F1', 'G1', 'H2', 'I3', 'J4', 'K5', 'K6', 'K7']),
+      line('saillon_8', 'Saillon', C.cyan, ['A5', 'B5', 'C5', 'D5', 'E5', 'F5']),
+      line('monthey_8', 'Monthey', C.red, ['F5', 'G5', 'H5', 'I5', 'J5', 'K5']),
+      line('vouvry_8', 'Vouvry', C.yellow, ['E6', 'F6', 'G6', 'H6', 'I6', 'J6']),
+      line('martigny_8', 'Martigny', C.violet, ['B1', 'B2', 'B3', 'B4', 'B5', 'B6']),
     ],
   },
   {
@@ -181,14 +182,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('monthey_9', 'Monthey', C.blue, ['J1', 'I1', 'H1', 'G2', 'F3', 'E4', 'D5', 'C5', 'B5', 'A5']),
-      line('vouvry_9', 'Vouvry', C.orange, ['D7', 'D6', 'D5', 'D4', 'D3', 'D2', 'D1']),
-      line('martigny_9', 'Martigny', C.green, ['A4', 'B4', 'C4', 'D5', 'E6', 'F7', 'G7', 'H7', 'I6', 'J5']),
-      line('sion_9', 'Sion', C.rose, ['B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1']),
-      line('sierre_9', 'Sierre', C.cyan, ['A2', 'B2', 'C2', 'D3', 'E4', 'F5', 'G6', 'H6', 'I6', 'J6']),
-      line('vetroz_9', 'Vétroz', C.red, ['F2', 'F3', 'F4', 'F5', 'F6', 'F7']),
-      line('ardon_9', 'Ardon', C.yellow, ['A3', 'B4', 'C5', 'D6', 'E6', 'F6', 'G6', 'H5', 'I4', 'J3']),
-      line('botza_9', 'Botza', C.violet, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7', 'G7', 'H7']),
+      line('synecom_9', 'Synecom', C.blue, ['J1', 'I1', 'H1', 'G2', 'F3', 'E4', 'D5', 'C5', 'B5', 'A5']),
+      line('fully_9', 'Fully', C.orange, ['K4', 'J4', 'I4', 'H5', 'G6', 'F7', 'E7', 'D7', 'C6', 'B5']),
+      line('riddes_9', 'Riddes', C.green, ['A2', 'B2', 'C2', 'D3', 'E4', 'F5', 'G6', 'H6', 'I6', 'J6']),
+      line('saillon_9', 'Saillon', C.rose, ['A1', 'B1', 'C1', 'D2', 'E3', 'F4', 'G5', 'H5', 'I5', 'J5']),
+      line('monthey_9', 'Monthey', C.cyan, ['A6', 'B6', 'C6', 'D6', 'E6', 'F6']),
+      line('vouvry_9', 'Vouvry', C.red, ['F7', 'G7', 'H7', 'I7', 'J7', 'K7']),
+      line('martigny_9', 'Martigny', C.yellow, ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+      line('sion_9', 'Sion', C.violet, ['B1', 'B2', 'B3', 'B4', 'B5', 'B6']),
     ],
   },
   {
@@ -196,14 +197,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('vouvry_10', 'Vouvry', C.blue, ['B7', 'C6', 'D5', 'E5', 'F5', 'G5', 'H5', 'I6', 'J7', 'K7']),
-      line('martigny_10', 'Martigny', C.orange, ['A4', 'B4', 'C4', 'D4', 'E4', 'F4']),
-      line('sion_10', 'Sion', C.green, ['A1', 'B2', 'C3', 'D3', 'E3', 'F3', 'G3', 'H4', 'I5', 'J6']),
-      line('sierre_10', 'Sierre', C.rose, ['B2', 'C2', 'D2', 'E2', 'F2', 'G2', 'H2']),
-      line('vetroz_10', 'Vétroz', C.cyan, ['K1', 'J2', 'I3', 'H3', 'G3', 'F3', 'E3', 'D4', 'C5', 'B6']),
-      line('ardon_10', 'Ardon', C.red, ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7']),
-      line('botza_10', 'Botza', C.yellow, ['A7', 'B6', 'C5', 'D5', 'E5', 'F5', 'G5', 'H4', 'I3', 'J2']),
-      line('synecom_10', 'Synecom', C.violet, ['C7', 'C6', 'C5', 'C4', 'C3', 'C2']),
+      line('fully_10', 'Fully', C.blue, ['J5', 'I6', 'H7', 'G7', 'F7', 'E6', 'D5', 'C4', 'B4', 'A4']),
+      line('riddes_10', 'Riddes', C.orange, ['B6', 'C6', 'D6', 'E6', 'F5', 'G4', 'H3', 'I2', 'J2', 'K2']),
+      line('saillon_10', 'Saillon', C.green, ['B5', 'C5', 'D5', 'E5', 'F4', 'G3', 'H2', 'I1', 'J1', 'K1']),
+      line('monthey_10', 'Monthey', C.rose, ['D1', 'E1', 'F1', 'G1', 'H2', 'I3', 'J4', 'K5', 'K6', 'K7']),
+      line('vouvry_10', 'Vouvry', C.cyan, ['F6', 'G6', 'H6', 'I6', 'J6', 'K6']),
+      line('martigny_10', 'Martigny', C.red, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7']),
+      line('sion_10', 'Sion', C.yellow, ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+      line('sierre_10', 'Sierre', C.violet, ['B1', 'B2', 'B3', 'B4', 'B5', 'B6']),
     ],
   },
   {
@@ -211,14 +212,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('martigny_11', 'Martigny', C.blue, ['B2', 'C3', 'D4', 'E5', 'F5', 'G5', 'H5', 'I5', 'J6', 'K7']),
-      line('sion_11', 'Sion', C.orange, ['K6', 'J6', 'I6', 'H6', 'G6', 'F6']),
-      line('sierre_11', 'Sierre', C.green, ['J6', 'I6', 'H6', 'G6', 'F5', 'E4', 'D3', 'C2', 'B2', 'A2']),
-      line('vetroz_11', 'Vétroz', C.rose, ['A5', 'B5', 'C5', 'D5', 'E5', 'F5', 'G5']),
-      line('ardon_11', 'Ardon', C.cyan, ['B1', 'C2', 'D3', 'E4', 'F4', 'G4', 'H4', 'I4', 'J5', 'K6']),
-      line('botza_11', 'Botza', C.red, ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7']),
-      line('synecom_11', 'Synecom', C.yellow, ['J7', 'I6', 'H5', 'G4', 'F4', 'E4', 'D4', 'C4', 'B5', 'A6']),
-      line('fully_11', 'Fully', C.violet, ['K3', 'J3', 'I3', 'H3', 'G3', 'F3', 'E3']),
+      line('riddes_11', 'Riddes', C.blue, ['K2', 'J2', 'I2', 'H3', 'G4', 'F5', 'E6', 'D6', 'C6', 'B6']),
+      line('saillon_11', 'Saillon', C.orange, ['K1', 'J1', 'I1', 'H2', 'G3', 'F4', 'E5', 'D5', 'C5', 'B5']),
+      line('monthey_11', 'Monthey', C.green, ['A1', 'A2', 'A3', 'B4', 'C5', 'D6', 'E7', 'F7', 'G7', 'H7']),
+      line('vouvry_11', 'Vouvry', C.rose, ['K7', 'K6', 'K5', 'J4', 'I3', 'H2', 'G1', 'F1', 'E1', 'D1']),
+      line('martigny_11', 'Martigny', C.cyan, ['J6', 'I6', 'H6', 'G6', 'F6', 'E6']),
+      line('sion_11', 'Sion', C.red, ['B1', 'B2', 'B3', 'B4', 'B5', 'B6']),
+      line('sierre_11', 'Sierre', C.yellow, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6']),
+      line('vetroz_11', 'Vétroz', C.violet, ['D1', 'D2', 'D3', 'D4', 'D5', 'D6']),
     ],
   },
   {
@@ -226,14 +227,14 @@ export const METRO_MAPS: readonly MetroMap[] = [
     cols: [...COLS],
     rows: [...ROWS],
     lines: [
-      line('sion_12', 'Sion', C.blue, ['J1', 'I1', 'H1', 'G2', 'F3', 'E4', 'D5', 'C5', 'B5', 'A5']),
-      line('sierre_12', 'Sierre', C.orange, ['D7', 'D6', 'D5', 'D4', 'D3', 'D2', 'D1']),
-      line('vetroz_12', 'Vétroz', C.green, ['A4', 'B4', 'C4', 'D5', 'E6', 'F7', 'G7', 'H7', 'I6', 'J5']),
-      line('ardon_12', 'Ardon', C.rose, ['B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1']),
-      line('botza_12', 'Botza', C.cyan, ['A2', 'B2', 'C2', 'D3', 'E4', 'F5', 'G6', 'H6', 'I6', 'J6']),
-      line('synecom_12', 'Synecom', C.red, ['F2', 'F3', 'F4', 'F5', 'F6', 'F7']),
-      line('fully_12', 'Fully', C.yellow, ['A3', 'B4', 'C5', 'D6', 'E6', 'F6', 'G6', 'H5', 'I4', 'J3']),
-      line('riddes_12', 'Riddes', C.violet, ['A7', 'B7', 'C7', 'D7', 'E7', 'F7', 'G7', 'H7']),
+      line('saillon_12', 'Saillon', C.blue, ['B3', 'C4', 'D5', 'E6', 'F6', 'G6', 'H6', 'I5', 'J4', 'K3']),
+      line('monthey_12', 'Monthey', C.orange, ['J5', 'I5', 'H5', 'G5', 'F4', 'E3', 'D2', 'C1', 'B1', 'A1']),
+      line('vouvry_12', 'Vouvry', C.green, ['H1', 'G1', 'F1', 'E1', 'D2', 'C3', 'B4', 'A5', 'A6', 'A7']),
+      line('martigny_12', 'Martigny', C.rose, ['A6', 'B5', 'C4', 'D4', 'E4', 'F4', 'G4', 'H3', 'I2', 'J1']),
+      line('sion_12', 'Sion', C.cyan, ['C7', 'D7', 'E7', 'F7', 'G7', 'H7', 'I7']),
+      line('sierre_12', 'Sierre', C.red, ['B1', 'B2', 'B3', 'B4', 'B5', 'B6']),
+      line('vetroz_12', 'Vétroz', C.yellow, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6']),
+      line('ardon_12', 'Ardon', C.violet, ['D1', 'D2', 'D3', 'D4', 'D5', 'D6']),
     ],
   },
 ]
@@ -254,14 +255,16 @@ function findIntersections(a: MetroLine, b: MetroLine): MetroCell[] {
 
 type Crossing = { a: MetroLine; b: MetroLine; cell: MetroCell }
 
-function allCrossings(map: MetroMap): Crossing[] {
+/** Croisements à un seul point (pas de chevauchement de segments). */
+function singlePointCrossings(map: MetroMap): Crossing[] {
   const out: Crossing[] = []
   for (let i = 0; i < map.lines.length; i++) {
     for (let j = i + 1; j < map.lines.length; j++) {
       const a = map.lines[i]!
       const b = map.lines[j]!
-      for (const cell of findIntersections(a, b)) {
-        out.push({ a, b, cell })
+      const cells = findIntersections(a, b)
+      if (cells.length === 1) {
+        out.push({ a, b, cell: cells[0]! })
       }
     }
   }
@@ -274,15 +277,25 @@ function formatCellList(cells: MetroCell[]): string {
 
 /**
  * Exactement 5 questions, ordre mélangé, libellés « gare » / « métro de ».
+ * La question de croisement n’utilise que des paires à un seul point commun.
  */
 export function generateMetroQuestions(rng: Rng, map: MetroMap): MetroQuestion[] {
   const lines = shuffle(rng, map.lines)
-  const crossings = shuffle(rng, allCrossings(map))
+  const crossings = shuffle(rng, singlePointCrossings(map))
 
   const lineForLabel = lines[0]!
   const crossing =
     crossings[0] ??
     (() => {
+      // Repli : première intersection trouvée (ne devrait pas arriver).
+      for (let i = 0; i < map.lines.length; i++) {
+        for (let j = i + 1; j < map.lines.length; j++) {
+          const a = map.lines[i]!
+          const b = map.lines[j]!
+          const cells = findIntersections(a, b)
+          if (cells.length === 1) return { a, b, cell: cells[0]! }
+        }
+      }
       const a = map.lines[0]!
       const b = map.lines[1]!
       return { a, b, cell: a.cells.find((c) => b.cells.includes(c)) ?? a.cells[0]! }
