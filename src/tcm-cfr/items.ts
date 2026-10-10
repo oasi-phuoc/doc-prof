@@ -991,7 +991,6 @@ function genEx19(rng: Rng): MathItem[] {
   return [
     {
       layout: 'segment-measure' as const,
-      prompt: 'Mesurez les segments avec la règle.',
       segments,
       selectVariant: 'pills',
       options: qLongFirst

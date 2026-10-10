@@ -129,7 +129,6 @@ export function SegmentMeasureBlock({
 
   return (
     <div className="tcm-cfr-segments">
-      {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
       <div className="tcm-cfr-segment-frame">
         {segments.map((seg, i) => {
           const widthMm = Math.min(160, seg.mm)
@@ -150,12 +149,14 @@ export function SegmentMeasureBlock({
           )
         })}
       </div>
-      <p className="column-prompt tcm-cfr-segment-cochez">
-        Cochez la bonne réponse :
-      </p>
       {qPrompts.map((q, qi) => (
         <div className="tcm-cfr-segment-qcm" key={`q-${qi}`}>
-          <p className="prompt-stack-text">{q}</p>
+          <div className="tcm-cfr-segment-q-head">
+            <span className="tcm-cfr-segment-q-num" aria-hidden>
+              {qi + 1}.
+            </span>
+            <p className="prompt-stack-text">{q}</p>
+          </div>
           <div className="tcm-cfr-qcm-choices">
             {SEGMENT_LETTERS.map((letter) => {
               const checked = show && answers[qi] === letter

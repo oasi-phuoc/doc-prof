@@ -4051,8 +4051,10 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcm-cfr-segment-line{height:0;border-top:2.5px solid var(--ink,#222);max-width:100%}
 .tcm-cfr-segment-answer{display:inline-flex;align-items:baseline;gap:6px;flex-shrink:0}
 .tcm-cfr-segment-unit{font-weight:600;font-size:12pt;color:var(--ink,#222)}
-.tcm-cfr-segment-cochez{margin-top:15px;padding-top:0}
-.tcm-cfr-segment-qcm{margin-top:6px}
+.tcm-cfr-segment-qcm{margin-top:15px;display:flex;flex-direction:column;gap:6px}
+.tcm-cfr-segment-qcm + .tcm-cfr-segment-qcm{margin-top:30px}
+.tcm-cfr-segment-q-head{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:6px;align-items:baseline}
+.tcm-cfr-segment-q-num{color:var(--purple,#5b3a8c);font-weight:700;font-size:12pt;line-height:1.35}
 /* TCM CFR ex. 16–17 : cadre forme | traits, hauteur uniforme. */
 .geo-block.geo-name-card{
   border:1px solid var(--ink,#222);padding:8px 10px;width:100%;box-sizing:border-box
