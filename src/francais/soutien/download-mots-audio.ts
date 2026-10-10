@@ -18,7 +18,14 @@ export const SOUTIEN_MOTS_CONSIGNE_AUDIO =
 export const SOUTIEN_COMPLETER_CONSIGNE_AUDIO =
   '/lib/audio/soutien/consigne-ecoutez-completez.mp3'
 
-export { soutienAudioDownloadName, soutienAudioNameSegment } from './download-name'
+export {
+  audioNameSegment,
+  soutienAudioDownloadName,
+  soutienAudioNameSegment,
+  tcmCfrAudioDownloadName,
+  tcfAudioDownloadName,
+  tcfAudioFileBase,
+} from './download-name'
 
 /** @deprecated Préférer `soutienAudioDownloadName`. */
 export function soutienMotsAudioDownloadName(

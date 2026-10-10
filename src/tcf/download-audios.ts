@@ -1,32 +1,18 @@
 /**
  * Téléchargement des audios d’une fiche TCF, avec nommage scolaire.
  * Ex. : TCF_A1-A2_CO_Exercice-1_26-27_Semestre-1.mp3
+ *
+ * Templates de noms : `@/francais/soutien/download-name`.
  */
+import {
+  tcfAnneeSemestre,
+  tcfAudioDownloadName,
+  tcfAudioFileBase as tcfAudioFileBaseShared,
+} from '@/francais/soutien/download-name'
 import { tcfAudioSequence, tcfAudioSrc } from './media'
 import type { TcfCompetence, TcfExercise, TcfNiveau } from './types'
 
-/** Année scolaire (août → juillet) et semestre (1 = août–déc., 2 = janv.–juin). */
-export function tcfAnneeSemestre(date = new Date()): { annee: string; semestre: 'Semestre-1' | 'Semestre-2' } {
-  const month = date.getMonth() // 0 = janv.
-  const year = date.getFullYear()
-  // Juillet : rattachement au semestre 2 de l’année scolaire qui se termine.
-  if (month >= 7) {
-    // août (7) … décembre
-    const y1 = year % 100
-    const y2 = (year + 1) % 100
-    return {
-      annee: `${String(y1).padStart(2, '0')}-${String(y2).padStart(2, '0')}`,
-      semestre: month >= 7 && month <= 11 ? 'Semestre-1' : 'Semestre-2',
-    }
-  }
-  // janvier (0) … juin (5) ; juillet (6) → Semestre-2
-  const y1 = (year - 1) % 100
-  const y2 = year % 100
-  return {
-    annee: `${String(y1).padStart(2, '0')}-${String(y2).padStart(2, '0')}`,
-    semestre: 'Semestre-2',
-  }
-}
+export { tcfAnneeSemestre, tcfAudioDownloadName } from '@/francais/soutien/download-name'
 
 export function tcfAudioFileBase(opts: {
   niveau: TcfNiveau
@@ -34,8 +20,7 @@ export function tcfAudioFileBase(opts: {
   exerciseNo: number
   date?: Date
 }): string {
-  const { annee, semestre } = tcfAnneeSemestre(opts.date)
-  return `TCF_${opts.niveau}_${opts.competence}_Exercice-${opts.exerciseNo}_${annee}_${semestre}`
+  return tcfAudioFileBaseShared(opts)
 }
 
 /** Chemins audio (relatifs ou résolus) référencés par l’exercice. */
@@ -103,7 +88,14 @@ export async function downloadTcfAudios(opts: {
   for (let i = 0; i < urls.length; i++) {
     const url = urls[i]!
     const ext = url.match(/\.([a-z0-9]+)(?:\?|$)/i)?.[1] ?? 'mp3'
-    const name = urls.length === 1 ? `${base}.${ext}` : `${base}_Audio-${i + 1}.${ext}`
+    const name = tcfAudioDownloadName({
+      niveau: opts.niveau,
+      competence: opts.competence,
+      exerciseNo: opts.exerciseNo,
+      audioIndex: i + 1,
+      audioCount: urls.length,
+      ext,
+    })
     await downloadOne(url, name)
     // Laisse le navigateur enchaîner les téléchargements.
     if (i < urls.length - 1) await new Promise((r) => setTimeout(r, 120))
