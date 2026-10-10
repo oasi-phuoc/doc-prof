@@ -1191,14 +1191,16 @@ function genEx26(rng: Rng): MathItem[] {
 /** Ex. 27 — cadran I : 1 u/case ou 1 u/2 cases ; consignes numérotées ; 0 en (−1;−1). */
 function genEx27(rng: Rng): MathItem[] {
   const unitSquares = rng() < 0.5 ? 1 : 2
-  // Marge d’une unité (carré (−1;−1) pour le « 0 ») + 20 cases visibles + 2 pour les flèches.
+  const maxUnit = 24
   const originCol = unitSquares
   const originRow = unitSquares
-  const visibleCells = 20
-  const positiveCells = visibleCells - unitSquares
-  const maxUnit = Math.floor(positiveCells / unitSquares)
-  const cols = 22
-  const rows = 22
+  const arrowPad = 2
+  const visibleCols = originCol + maxUnit * unitSquares + arrowPad
+  const visibleRows = visibleCols
+  const cols = visibleCols
+  const rows = visibleRows
+  const maxGridMm = 168
+  const cellMm = Math.max(3, Math.min(6, Math.floor((maxGridMm / visibleCols) * 10) / 10))
   // Graduation : un trait tous les 2 carrés → 2 u si 1 u/case, 1 u si 1 u/2 cases.
   const labelStep = unitSquares === 1 ? 2 : 1
 
@@ -1248,8 +1250,8 @@ function genEx27(rng: Rng): MathItem[] {
         variant: 'axes',
         cols,
         rows,
-        visibleCols: visibleCells,
-        visibleRows: visibleCells,
+        visibleCols,
+        visibleRows,
         axis: 'numeric',
         rangeX: maxUnit + 1,
         rangeY: maxUnit + 1,
@@ -1260,7 +1262,7 @@ function genEx27(rng: Rng): MathItem[] {
         axisArrows: true,
         showOrigin: true,
         originZeroInNegCell: true,
-        cellMm: 6,
+        cellMm,
         unitSquares,
         labelStep,
         marks: [

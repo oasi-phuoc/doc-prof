@@ -447,12 +447,8 @@ function AxesScene({
       {Array.from({ length: cols + 1 }, (_, col) => {
         const isAxis = !hideAxes && col === originCol
         if (!isAxis && col > visibleCols) return null
-        // TCM CFR : ligne maths −1 invisible (comme 21 / 22 hors zone visible).
-        if (
-          !isAxis &&
-          scene.originZeroInNegCell &&
-          Math.abs(mathAtCol(col) - -1) < 1e-9
-        ) {
+        // TCM CFR cadran I : pas de quadrillage en x < 0 (marge −1), axes seuls + graduations.
+        if (!isAxis && scene.originZeroInNegCell && mathAtCol(col) < -1e-9) {
           return null
         }
         return (
@@ -469,11 +465,7 @@ function AxesScene({
       {Array.from({ length: rows + 1 }, (_, row) => {
         const isAxis = !hideAxes && row === originRow
         if (!isAxis && row > visibleRows) return null
-        if (
-          !isAxis &&
-          scene.originZeroInNegCell &&
-          Math.abs(mathAtRow(row) - -1) < 1e-9
-        ) {
+        if (!isAxis && scene.originZeroInNegCell && mathAtRow(row) < -1e-9) {
           return null
         }
         return (
@@ -489,42 +481,84 @@ function AxesScene({
       })}
       {/* Graduations : trait un peu plus épais tous les 2 carrés (axes). */}
       {!hideAxes
-        ? Array.from({ length: Math.floor(visibleCols / 2) }, (_, i) => {
-            const col = originCol + (i + 1) * 2
-            if (col <= 0 || col > visibleCols || col === originCol) return null
-            const cx = colX(col)
-            const oy = originSvg.cy
-            const tick = Math.max(1.1, cellMm * 0.28)
-            return (
-              <line
-                key={`tick-x-${col}`}
-                x1={cx}
-                y1={oy - tick}
-                x2={cx}
-                y2={oy + tick}
-                className="axis-tick"
-              />
-            )
-          })
+        ? [
+            ...Array.from({ length: Math.floor(visibleCols / 2) }, (_, i) => {
+              const col = originCol + (i + 1) * 2
+              if (col <= 0 || col > visibleCols || col === originCol) return null
+              const cx = colX(col)
+              const oy = originSvg.cy
+              const tick = Math.max(1.1, cellMm * 0.28)
+              return (
+                <line
+                  key={`tick-x-${col}`}
+                  x1={cx}
+                  y1={oy - tick}
+                  x2={cx}
+                  y2={oy + tick}
+                  className="axis-tick"
+                />
+              )
+            }),
+            ...(scene.originZeroInNegCell
+              ? Array.from({ length: Math.ceil(originCol / 2) }, (_, i) => {
+                  const col = originCol - (i + 1) * 2
+                  if (col < 0) return null
+                  const cx = colX(col)
+                  const oy = originSvg.cy
+                  const tick = Math.max(1.1, cellMm * 0.28)
+                  return (
+                    <line
+                      key={`tick-x-neg-${col}`}
+                      x1={cx}
+                      y1={oy - tick}
+                      x2={cx}
+                      y2={oy + tick}
+                      className="axis-tick"
+                    />
+                  )
+                })
+              : []),
+          ]
         : null}
       {!hideAxes
-        ? Array.from({ length: Math.floor(visibleRows / 2) }, (_, i) => {
-            const row = originRow + (i + 1) * 2
-            if (row <= 0 || row > visibleRows || row === originRow) return null
-            const cy = rowY(row)
-            const ox = originSvg.cx
-            const tick = Math.max(1.1, cellMm * 0.28)
-            return (
-              <line
-                key={`tick-y-${row}`}
-                x1={ox - tick}
-                y1={cy}
-                x2={ox + tick}
-                y2={cy}
-                className="axis-tick"
-              />
-            )
-          })
+        ? [
+            ...Array.from({ length: Math.floor(visibleRows / 2) }, (_, i) => {
+              const row = originRow + (i + 1) * 2
+              if (row <= 0 || row > visibleRows || row === originRow) return null
+              const cy = rowY(row)
+              const ox = originSvg.cx
+              const tick = Math.max(1.1, cellMm * 0.28)
+              return (
+                <line
+                  key={`tick-y-${row}`}
+                  x1={ox - tick}
+                  y1={cy}
+                  x2={ox + tick}
+                  y2={cy}
+                  className="axis-tick"
+                />
+              )
+            }),
+            ...(scene.originZeroInNegCell
+              ? Array.from({ length: Math.ceil(originRow / 2) }, (_, i) => {
+                  const row = originRow - (i + 1) * 2
+                  if (row < 0) return null
+                  const cy = rowY(row)
+                  const ox = originSvg.cx
+                  const tick = Math.max(1.1, cellMm * 0.28)
+                  return (
+                    <line
+                      key={`tick-y-neg-${row}`}
+                      x1={ox - tick}
+                      y1={cy}
+                      x2={ox + tick}
+                      y2={cy}
+                      className="axis-tick"
+                    />
+                  )
+                })
+              : []),
+          ]
         : null}
       {axisArrows ? (
         <g className="axis-arrows" aria-hidden>
