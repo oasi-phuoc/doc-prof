@@ -1,5 +1,6 @@
-/** Banques Soutien FR — voyelles (livret CSC). Images résolues via vocabulaire. */
-import type { VowelId } from '../lecture-banks'
+/** Banques Soutien FR — voyelles (livret CSC) + auto consonnes / complexes. Images via vocabulaire. */
+import { buildAutoSoutienBank } from './auto-banks'
+import { allSoutienBankDefs, findSoutienByBankId } from './themes'
 
 export type SoutienScramble = { sentence: string; word: string; letters: string }
 /** Mot à compléter : Un/Une + [before]____[after] → word (syllabe = consonant+voyelle). */
@@ -26,7 +27,8 @@ export type SoutienCompound = { parts: readonly [string, string]; word: string }
 export type SoutienSyllableItem = { word: string; parts: readonly string[] }
 
 export type SoutienVowelBank = {
-  id: VowelId
+  /** Identifiant banque : `a`, `c-k`, `ch`… */
+  id: string
   topic: string
   letterUpper: string
   letterLower: string
@@ -1888,7 +1890,31 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
   },
 ]
 
+const AUTO_BANK_CACHE = new Map<string, SoutienVowelBank>()
+
+/** Banque par identifiant (`a`, `c-k`, `ch`…). Voyelles = CSC ; autres = auto. */
+export function soutienBankById(bankId: string): SoutienVowelBank | undefined {
+  const vowel = SOUTIEN_VOWEL_BANKS.find((b) => b.id === bankId)
+  if (vowel) {
+    // Topic catalogue = thème voyelles (rétrocompat topic soutien-a accepté ailleurs).
+    return { ...vowel, topic: 'soutien-voyelles' }
+  }
+  const cached = AUTO_BANK_CACHE.get(bankId)
+  if (cached) return cached
+  const found = findSoutienByBankId(bankId)
+  if (!found) return undefined
+  const bank = buildAutoSoutienBank(found.theme.id, found.letter, found.sound)
+  AUTO_BANK_CACHE.set(bankId, bank)
+  return bank
+}
+
+/** @deprecated Préférer `soutienBankById` — conserve la résolution par ancien topic voyelle. */
 export function soutienBankByTopic(topic: string): SoutienVowelBank | undefined {
-  return SOUTIEN_VOWEL_BANKS.find((b) => b.topic === topic)
+  const byLegacy = SOUTIEN_VOWEL_BANKS.find((b) => b.topic === topic)
+  if (byLegacy) return soutienBankById(byLegacy.id)
+  // Thème seul : première lettre du thème
+  const first = allSoutienBankDefs().find((d) => d.themeId === topic)
+  if (first) return soutienBankById(first.sound.bankId)
+  return undefined
 }
 

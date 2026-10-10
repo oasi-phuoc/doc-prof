@@ -132,9 +132,14 @@ import {
 } from '@/francais/vocab-learn'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
-import { soutienBankByTopic } from '@/francais/soutien/banks'
+import { soutienBankById } from '@/francais/soutien/banks'
 import { type1WordPool, type1Words } from '@/francais/soutien/generate'
-import { parseSoutienType } from '@/francais/soutien/kinds'
+import { parseSoutienType, SOUTIEN_KINDS } from '@/francais/soutien/kinds'
+import {
+  resolveSoutienSelection,
+  soutienExerciseTypeId,
+  soutienThemeById,
+} from '@/francais/soutien/themes'
 import {
   defaultSoutienMotsEntries,
   SoutienMotsLibreEditor,
@@ -312,10 +317,21 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                                   : activePage.domain === TCF_DOMAIN
                                     ? tcfTopics
                                     : lectureTopics
-  const typeChoices = typesForTopic(
-    activeBlock.topic,
-    activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
-  )
+  const typeChoices =
+    activePage.domain === 'soutien-fr'
+      ? (() => {
+          const bankId =
+            parseSoutienType(activeBlock.exerciseType)?.bankId ??
+            resolveSoutienSelection(activeBlock.topic, activeBlock.exerciseType)?.sound.bankId ??
+            'a'
+          return SOUTIEN_KINDS.map(
+            (kind) => exerciseTypeById[soutienExerciseTypeId(bankId, kind.id)],
+          ).filter((t): t is NonNullable<typeof t> => Boolean(t))
+        })()
+      : typesForTopic(
+          activeBlock.topic,
+          activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
+        )
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
   const sheetTotalPoints = useMemo(
     () =>
@@ -715,7 +731,11 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   /** Page 1 Informations (TCM / CFR / CSC) : pas de Questions ni Colonnes. */
   const isTcmInfoPage = isTcmFamilyConsignesType(activeBlock.exerciseType)
   const tcfNiveau = tcfNiveauFromDifficulty(activeBlock.difficulty)
-  const soutienKind = isSoutienFr ? parseSoutienType(activeBlock.exerciseType)?.kind : undefined
+  const soutienParsed = isSoutienFr ? parseSoutienType(activeBlock.exerciseType) : null
+  const soutienKind = soutienParsed?.kind
+  const soutienSelection = isSoutienFr
+    ? resolveSoutienSelection(activeBlock.topic, activeBlock.exerciseType)
+    : null
   const isSoutienMots = soutienKind === 'mots'
   const isSoutienMotsMeles = soutienKind === 'mots-meles'
   const isSoutienCompleter = soutienKind === 'completer'
@@ -801,7 +821,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     soutienKind === 'syllabe-son'
   /** Type 7 : grille images 3–5 colonnes (fluide). */
   const isSoutienCols345 = soutienKind === 'ecouter-image'
-  const soutienBank = isSoutienFr ? soutienBankByTopic(activeBlock.topic) : undefined
+  const soutienBank = isSoutienFr
+    ? soutienBankById(soutienParsed?.bankId ?? soutienSelection?.sound.bankId ?? 'a')
+    : undefined
   const soutienType1Words = soutienBank ? type1Words(soutienBank) : []
   /** Pool complet du son (au-delà des 16 défauts) pour le mode libre type 1. */
   const soutienType1WordPool = soutienBank ? type1WordPool(soutienBank) : []
@@ -1308,6 +1330,19 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- bascule unique sur domaine / droits
   }, [accessAccount, activePage.domain, allowedDomains])
 
+  // Soutien FR : migrer les anciens topics voyelle (soutien-a…) vers le thème Voyelles.
+  useEffect(() => {
+    if (activePage.domain !== 'soutien-fr') return
+    const sel = resolveSoutienSelection(activeBlock.topic, activeBlock.exerciseType)
+    if (!sel) return
+    if (activeBlock.topic === sel.theme.id) return
+    const kind = parseSoutienType(activeBlock.exerciseType)?.kind ?? 'mots'
+    const nextId = soutienExerciseTypeId(sel.sound.bankId, kind)
+    if (!exerciseTypeById[nextId]) return
+    updatePage({ topic: sel.theme.id, exerciseType: nextId })
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- normalisation ponctuelle du topic
+  }, [activePage.domain, activeBlock.topic, activeBlock.exerciseType])
+
   function changeTopic(topic: string) {
     if (activePage.domain === 'calligraphie') {
       const kind = isCalliPhrasesType(activeBlock.exerciseType) ? 'calli-phrases' : 'calli-mots'
@@ -1333,9 +1368,13 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     if (activePage.domain === 'soutien-fr') {
       const parsed = parseSoutienType(activeBlock.exerciseType)
       const kind = parsed?.kind ?? 'mots'
-      const nextId = `soutien-${topic.replace(/^soutien-/, '')}-${kind}`
+      const theme = soutienThemeById(topic)
+      const firstSound = theme?.letters[0]?.sounds[0]
+      const nextId = firstSound
+        ? soutienExerciseTypeId(firstSound.bankId, kind)
+        : `soutien-a-${kind}`
       const type = exerciseTypeById[nextId] ?? firstTypeFor('soutien-fr', topic)
-      // Changer de voyelle : repartir de la banque (ne pas garder les mots libres de l’autre son).
+      // Changer de thème : première lettre, repartir de la banque.
       updatePage({
         topic,
         ...applyType(type, {
@@ -1353,6 +1392,49 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       typesForTopic(topic, activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined)[0] ??
       firstTypeFor(activePage.domain, topic, activeBlock.track)
     updatePage({ topic, ...applyType(type) })
+  }
+
+  function changeSoutienLetter(letterId: string) {
+    if (!soutienSelection) return
+    const letter = soutienSelection.theme.letters.find((l) => l.id === letterId)
+    if (!letter) return
+    const sound = letter.sounds[0]!
+    const kind = soutienParsed?.kind ?? 'mots'
+    const nextId = soutienExerciseTypeId(sound.bankId, kind)
+    const type = exerciseTypeById[nextId]
+    if (!type) return
+    updatePage({
+      topic: soutienSelection.theme.id,
+      ...applyType(type, {
+        ...activeBlock,
+        topic: soutienSelection.theme.id,
+        soutienMotsLibre: false,
+        soutienMotsEntries: undefined,
+        soutienCompleterLibre: false,
+        soutienCompleterEntries: undefined,
+      }),
+    })
+  }
+
+  function changeSoutienSound(soundId: string) {
+    if (!soutienSelection) return
+    const sound = soutienSelection.letter.sounds.find((s) => s.id === soundId)
+    if (!sound) return
+    const kind = soutienParsed?.kind ?? 'mots'
+    const nextId = soutienExerciseTypeId(sound.bankId, kind)
+    const type = exerciseTypeById[nextId]
+    if (!type) return
+    updatePage({
+      topic: soutienSelection.theme.id,
+      ...applyType(type, {
+        ...activeBlock,
+        topic: soutienSelection.theme.id,
+        soutienMotsLibre: false,
+        soutienMotsEntries: undefined,
+        soutienCompleterLibre: false,
+        soutienCompleterEntries: undefined,
+      }),
+    })
   }
 
   /** Applique les changements manuels (mode libre / réglages) à la fiche. */
@@ -1875,7 +1957,11 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 </SelectBox>
               ) : null}
               {isTcmLike ? null : (
-                <SelectBox label={isTcf ? 'Compétence' : 'Thème'} value={activeBlock.topic} onChange={changeTopic}>
+                <SelectBox
+                  label={isTcf ? 'Compétence' : 'Thème'}
+                  value={soutienSelection?.theme.id ?? activeBlock.topic}
+                  onChange={changeTopic}
+                >
                   {available.map((topic) => (
                     <option value={topic.id} key={topic.id}>
                       {topic.label}
@@ -1883,6 +1969,40 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   ))}
                 </SelectBox>
               )}
+              {isSoutienFr && soutienSelection ? (
+                <SelectBox
+                  label="Lettre"
+                  value={soutienSelection.letter.id}
+                  onChange={changeSoutienLetter}
+                >
+                  {soutienSelection.theme.letters.map((letter) => (
+                    <option value={letter.id} key={letter.id}>
+                      {letter.label}
+                    </option>
+                  ))}
+                </SelectBox>
+              ) : null}
+              {isSoutienFr && soutienSelection && soutienSelection.letter.sounds.length > 1 ? (
+                <div className="mode-toggle-block">
+                  <b>Son</b>
+                  <div
+                    className={`mode-toggle is-${Math.min(4, soutienSelection.letter.sounds.length)}`}
+                    role="group"
+                    aria-label="Son de la lettre"
+                  >
+                    {soutienSelection.letter.sounds.map((sound) => (
+                      <button
+                        key={sound.id}
+                        type="button"
+                        className={soutienSelection.sound.id === sound.id ? 'active' : ''}
+                        onClick={() => changeSoutienSound(sound.id)}
+                      >
+                        {sound.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
               {isPhraseDomain && !isPhraseChart ? (
                 <div className="mode-toggle-block">
                   <b>Verbes</b>

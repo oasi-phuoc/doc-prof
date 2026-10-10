@@ -52,11 +52,16 @@ export function lessonLetterGraphemes(bank: SoutienVowelBank): readonly string[]
 
 /**
  * Graphèmes pour le son (surlignage audio).
- * Pour /o/ : o, ô + au, eau (pool complexe lecture).
+ * Pour /o/ (voyelle o) : o, ô + au, eau (pool complexe lecture).
  */
 export function lessonSoundGraphemes(bank: SoutienVowelBank): readonly string[] {
   if (bank.id === 'o') return [...bank.graphemes, 'au', 'eau']
   return bank.graphemes
+}
+
+/** True si la banque est une voyelle simple A–Y (logique Alpha « voyelle simple »). */
+export function isSoutienVowelBank(bank: SoutienVowelBank): boolean {
+  return /^[aeiouy]$/.test(bank.id)
 }
 
 function teachingPhonemes(label: string): readonly string[] | null {
@@ -95,57 +100,124 @@ function lessonLetterTargets(bank: SoutienVowelBank): Set<string> {
 }
 
 /**
- * Segment Alpha = voyelle simple de la leçon (pas an / au / eau / on…).
- * Même logique que le coloriage Alpha des cartes vocabulaire.
+ * Segment Alpha = cible de la leçon.
+ * Voyelles : voyelle simple (pas an / au / eau / on…).
+ * Consonnes / complexes : graphème (lettre ou digramme) dans le segment ou le texte.
  */
 export function isLessonSimpleVowelSegment(
   segmentText: string,
   tone: string,
   bank: SoutienVowelBank,
 ): boolean {
-  if (tone !== 'vowel') return false
-  if (segmentText.length !== 1) return false
-  return lessonLetterTargets(bank).has(normalizeLetter(segmentText))
+  if (isSoutienVowelBank(bank)) {
+    if (tone !== 'vowel') return false
+    if (segmentText.length !== 1) return false
+    return lessonLetterTargets(bank).has(normalizeLetter(segmentText))
+  }
+  const lower = segmentText.toLowerCase()
+  for (const g of bank.graphemes) {
+    if (g.length === 1) {
+      if (normalizeLetter(segmentText) === normalizeLetter(g)) return true
+    } else if (lower === g.toLowerCase() || lower.includes(g.toLowerCase())) {
+      return true
+    }
+  }
+  return false
 }
 
-/** Compte les phonèmes simples de la leçon dans un texte (Alpha). */
+/** Compte les occurrences du son / graphème de la leçon dans un texte. */
 export function countLessonPhonemeInText(text: string, bank: SoutienVowelBank): number {
+  if (isSoutienVowelBank(bank)) {
+    let n = 0
+    for (const seg of tokenizeAlpha(text)) {
+      if (isLessonSimpleVowelSegment(seg.text, seg.tone, bank)) n += 1
+    }
+    return n
+  }
+  // Consonnes / complexes : compter les graphèmes (longs d’abord).
+  const needles = [...bank.graphemes].sort((a, b) => b.length - a.length)
+  const lower = text.toLowerCase()
   let n = 0
-  for (const seg of tokenizeAlpha(text)) {
-    if (isLessonSimpleVowelSegment(seg.text, seg.tone, bank)) n += 1
+  let i = 0
+  while (i < lower.length) {
+    let matched = 0
+    for (const g of needles) {
+      if (lower.startsWith(g.toLowerCase(), i)) {
+        matched = g.length
+        break
+      }
+    }
+    if (matched > 0) {
+      n += 1
+      i += matched
+    } else {
+      i += 1
+    }
   }
   return n
 }
 
-/** Découpe Alpha + marquage des voyelles simples de la leçon. */
+/** Découpe Alpha + marquage des cibles de la leçon. */
 export function lessonPhonemeSegments(
   text: string,
   bank: SoutienVowelBank,
 ): ReadonlyArray<{ text: string; hit: boolean }> {
-  return tokenizeAlpha(text).map((seg) => ({
-    text: seg.text,
-    hit: isLessonSimpleVowelSegment(seg.text, seg.tone, bank),
-  }))
+  if (isSoutienVowelBank(bank)) {
+    return tokenizeAlpha(text).map((seg) => ({
+      text: seg.text,
+      hit: isLessonSimpleVowelSegment(seg.text, seg.tone, bank),
+    }))
+  }
+  return lessonPhonemeSegmentsFromGraphemes(text, bank.graphemes)
 }
 
 /**
  * Variante à partir des seuls graphèmes (rendu UI sans objet banque).
- * Les graphèmes multi-lettres (au, eau) sont ignorés : on ne colorie que la lettre simple.
+ * Voyelles simples : Alpha tone vowel.
+ * Multi-lettres / consonnes : coincement de graphèmes (longs d’abord).
  */
 export function lessonPhonemeSegmentsFromGraphemes(
   text: string,
   graphemes: readonly string[],
 ): ReadonlyArray<{ text: string; hit: boolean }> {
-  const targets = new Set(
-    graphemes.filter((g) => g.length === 1).map((g) => normalizeLetter(g)),
-  )
-  if (targets.size === 0) {
-    return [{ text, hit: false }]
+  const multi = graphemes.filter((g) => g.length > 1)
+  const single = graphemes.filter((g) => g.length === 1).map((g) => normalizeLetter(g))
+  const onlySimpleVowels =
+    multi.length === 0 &&
+    single.length > 0 &&
+    single.every((g) => 'aeiouy'.includes(g))
+
+  if (onlySimpleVowels) {
+    const targets = new Set(single)
+    return tokenizeAlpha(text).map((seg) => ({
+      text: seg.text,
+      hit: seg.tone === 'vowel' && seg.text.length === 1 && targets.has(normalizeLetter(seg.text)),
+    }))
   }
-  return tokenizeAlpha(text).map((seg) => ({
-    text: seg.text,
-    hit: seg.tone === 'vowel' && seg.text.length === 1 && targets.has(normalizeLetter(seg.text)),
-  }))
+
+  // Découpe par graphèmes (longs d’abord), sinon caractère par caractère.
+  const needles = [...graphemes].filter(Boolean).sort((a, b) => b.length - a.length)
+  if (needles.length === 0) return [{ text, hit: false }]
+  const out: Array<{ text: string; hit: boolean }> = []
+  let i = 0
+  while (i < text.length) {
+    const restLower = text.slice(i).toLowerCase()
+    let matched: string | null = null
+    for (const g of needles) {
+      if (restLower.startsWith(g.toLowerCase())) {
+        matched = text.slice(i, i + g.length)
+        break
+      }
+    }
+    if (matched) {
+      out.push({ text: matched, hit: true })
+      i += matched.length
+    } else {
+      out.push({ text: text[i]!, hit: false })
+      i += 1
+    }
+  }
+  return out
 }
 
 /**
@@ -175,22 +247,43 @@ function labelsWithPhoneme(bank: SoutienVowelBank): string[] {
   return out
 }
 
+/** Clé pool complexe associée à un bankId (sons complexes + /o/ voyelle). */
+function complexPoolKeyForBank(bank: SoutienVowelBank): string | undefined {
+  if (bank.id === 'o') return 'au-eau'
+  const map: Record<string, string> = {
+    ou: 'ou',
+    an: 'an-en',
+    in: 'in-ain',
+    on: 'on',
+    au: 'au-eau',
+    oi: 'oi',
+    ch: 'ch',
+    ph: 'ph',
+    gn: 'gn',
+    ill: 'ill',
+  }
+  return map[bank.id]
+}
+
 /**
- * Mots écrits (type 1) : phonème exact + lettre de la leçon.
+ * Mots écrits (type 1) : phonème exact + lettre / graphème de la leçon.
  * Ex. /o/ → tomate, robot (lettre o) ; pas bateau / chaud (au, eau).
  */
 export function lessonWordsByLetter(bank: SoutienVowelBank): string[] {
   const fromSound = labelsWithPhoneme(bank).filter((w) => wordHasLessonLetter(w, bank))
-  // Enrichir avec le pool graphème lettre (y, etc.) si disponible.
   const letterPools = GRAPHEME_WORD_POOLS.letters as Record<string, readonly string[]>
   const letterPool = letterPools[bank.letterLower] ?? []
+  const complexKey = complexPoolKeyForBank(bank)
+  const complexPools = GRAPHEME_WORD_POOLS.complex as Record<string, readonly string[]>
+  const complexPool = complexKey ? (complexPools[complexKey] ?? []) : []
   const seen = new Set(fromSound.map((w) => w.toLowerCase()))
   const out = [...fromSound]
-  for (const w of letterPool) {
+  for (const w of [...letterPool, ...complexPool]) {
     const key = w.toLowerCase()
     if (seen.has(key)) continue
-    // Pool lettre : garder seulement si le phonème lecture est confirmé.
-    if (!wordHasLessonSound(w, bank)) continue
+    // Pool : garder si phonème confirmé, ou si complexe (pool déjà filtré).
+    if (!complexKey && !wordHasLessonSound(w, bank)) continue
+    if (complexKey && !wordHasLessonLetter(w, bank) && !wordHasLessonSound(w, bank)) continue
     seen.add(key)
     out.push(w)
   }
@@ -199,20 +292,22 @@ export function lessonWordsByLetter(bank: SoutienVowelBank): string[] {
 
 /**
  * Mots audio : phonème exact (au / eau admis pour /o/).
- * Enrichit aussi avec le pool complexe au-eau pour /o/.
+ * Enrichit aussi avec les pools complexes.
  */
 export function lessonWordsBySound(bank: SoutienVowelBank): string[] {
   const base = labelsWithPhoneme(bank)
-  if (bank.id !== 'o') return preferBankOrder(bank, base)
+  const complexKey = complexPoolKeyForBank(bank)
+  if (!complexKey) return preferBankOrder(bank, base)
   const complexPools = GRAPHEME_WORD_POOLS.complex as Record<string, readonly string[]>
-  const auEau = complexPools['au-eau'] ?? []
+  const pool = complexPools[complexKey] ?? []
   const seen = new Set(base.map((w) => w.toLowerCase()))
   const out = [...base]
-  for (const w of auEau) {
+  const phoneme = lessonPhoneme(bank)
+  for (const w of pool) {
     const key = w.toLowerCase()
     if (seen.has(key)) continue
     const item = LECTURE_BY_LABEL.get(key)
-    if (item && !item.phonemes.includes('/o/')) continue
+    if (item && !item.phonemes.includes(phoneme)) continue
     seen.add(key)
     out.push(w)
   }

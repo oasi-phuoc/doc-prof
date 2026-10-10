@@ -1,8 +1,7 @@
-import { wordHasGrapheme, type VowelBank } from '@/francais/lecture-banks'
 import { int, pick, shuffle, type Rng } from '@/math/rng'
 import { tagged } from '@/francais/phrase-sentences'
 import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
-import { soutienBankByTopic, type SoutienVowelBank } from './banks'
+import { soutienBankById, type SoutienVowelBank } from './banks'
 import { soutienAudioFor } from './audio'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
@@ -13,6 +12,7 @@ import {
   lessonSoundGraphemes,
   lessonWordsByLetter,
   lessonWordsBySound,
+  wordHasLessonLetter,
   wordHasLessonSound,
 } from './phoneme'
 import { buildWordSearch, wordSearchHitCells } from './word-search'
@@ -74,21 +74,6 @@ export type SoutienGenerateOptions = {
 
 const DISTRACTOR_LETTERS = 'bcdfghjklmnpqrstvwxzBCDFGHIJKLMNPQRSTVWXZ'.split('')
 
-function asVowelBank(bank: SoutienVowelBank): VowelBank {
-  return {
-    id: bank.id,
-    topic: bank.topic,
-    letterUpper: bank.letterUpper,
-    letterLower: bank.letterLower,
-    sound: bank.sound,
-    label: bank.label,
-    graphemes: bank.graphemes,
-    words: bank.words,
-    syllables: bank.syllables,
-    compounds: bank.compounds,
-  }
-}
-
 function otherWords(bank: SoutienVowelBank): string[] {
   const own = new Set(lessonWordsBySound(bank).map((w) => w.toLowerCase()))
   const fallback = [
@@ -118,16 +103,27 @@ function letterGrid(rng: Rng, bank: SoutienVowelBank, rowCount: number): MathIte
   const cols = 10
   const rows = Math.max(1, Math.min(15, Math.round(rowCount) || 5))
   const size = cols * rows
-  /** ~¼ des cases = lettre cible, borné pour rester lisible. */
+  /** ~¼ des cases = lettre / digramme cible. */
   const targetCount = Math.max(4, Math.min(size - cols, Math.round(size * 0.24)))
+  const isDigraph = bank.letterLower.length > 1
   const cells: string[] = []
   for (let i = 0; i < targetCount; i++) {
     cells.push(pick(rng, [bank.letterUpper, bank.letterLower]))
   }
+  const digraphDistractors = ['ch', 'ph', 'ou', 'oi', 'an', 'in', 'on', 'au', 'gn', 'ill', 'qu', 'eu']
   while (cells.length < size) {
-    let d = pick(rng, DISTRACTOR_LETTERS)
-    while (d.toLowerCase() === bank.letterLower) d = pick(rng, DISTRACTOR_LETTERS)
-    cells.push(d)
+    if (isDigraph) {
+      let d = pick(rng, digraphDistractors)
+      while (d.toLowerCase() === bank.letterLower.toLowerCase()) {
+        d = pick(rng, digraphDistractors)
+      }
+      // Mélanger maj / min
+      cells.push(int(rng, 0, 1) === 0 ? d.toLocaleUpperCase('fr-FR') : d)
+    } else {
+      let d = pick(rng, DISTRACTOR_LETTERS)
+      while (d.toLowerCase() === bank.letterLower) d = pick(rng, DISTRACTOR_LETTERS)
+      cells.push(d)
+    }
   }
   return {
     layout: 'letter-grid',
@@ -155,14 +151,14 @@ function evenSyllableRows(rowCount: number): number {
   return rows
 }
 
+const SYLLABLE_VOWELS = ['a', 'e', 'i', 'o', 'u', 'y'] as const
+
 /**
  * Syllabes type 3 :
- * - moitié CV (consonne + voyelle du thème)
- * - moitié doubles : CVC / VCV, ou CVCV si CVC ferait un nasal (pan→pana, pin→pino…)
- * Toujours alternance consonne/voyelle ; jamais digramme ni nasal type pan/pon/pin.
+ * - Voyelle : moitié CV (consonne + voyelle) + doubles sans nasal.
+ * - Consonne / digramme : moitié grapheme+V + doubles autour du graphème.
  */
-function buildSyllableReadingList(rng: Rng, vowel: string, total: number): string[] {
-  const v = vowel.toLowerCase()
+function buildSyllableReadingList(rng: Rng, bank: SoutienVowelBank, total: number): string[] {
   const half = Math.floor(total / 2)
   const seen = new Set<string>()
   const simple: string[] = []
@@ -175,43 +171,76 @@ function buildSyllableReadingList(rng: Rng, vowel: string, total: number): strin
     return true
   }
 
-  let guard = 0
-  while (simple.length < half && guard < half * 40) {
-    guard += 1
-    const s = `${pick(rng, [...SYLLABLE_CONS])}${v}`
-    if (!tryAdd(simple, s) && simple.length > 0 && guard > half * 20) {
-      simple.push(s) // doublon toléré si le pool est saturé
+  const isVowelLesson = /^[aeiouy]$/.test(bank.id)
+  if (isVowelLesson) {
+    const v = bank.letterLower
+    let guard = 0
+    while (simple.length < half && guard < half * 40) {
+      guard += 1
+      const s = `${pick(rng, [...SYLLABLE_CONS])}${v}`
+      if (!tryAdd(simple, s) && simple.length > 0 && guard > half * 20) {
+        simple.push(s)
+      }
     }
-  }
-  while (simple.length < half) {
-    simple.push(`${pick(rng, [...SYLLABLE_CONS])}${v}`)
-  }
+    while (simple.length < half) {
+      simple.push(`${pick(rng, [...SYLLABLE_CONS])}${v}`)
+    }
 
-  guard = 0
-  while (doubles.length < half && guard < half * 50) {
-    guard += 1
-    const kind = int(rng, 0, 2) // 0 VCV · 1 CVC/CVCV · 2 CVCV
-    let s: string
-    if (kind === 0) {
-      s = `${v}${pick(rng, [...SYLLABLE_CONS])}${v}`
-    } else if (kind === 1) {
+    guard = 0
+    while (doubles.length < half && guard < half * 50) {
+      guard += 1
+      const kind = int(rng, 0, 2)
+      let s: string
+      if (kind === 0) {
+        s = `${v}${pick(rng, [...SYLLABLE_CONS])}${v}`
+      } else if (kind === 1) {
+        const c1 = pick(rng, [...SYLLABLE_CONS])
+        const c2 = pick(rng, [...SYLLABLE_CONS])
+        s = /[nm]/i.test(c2) ? `${c1}${v}${c2}${v}` : `${c1}${v}${c2}`
+      } else {
+        const c1 = pick(rng, [...SYLLABLE_CONS])
+        const c2 = pick(rng, [...SYLLABLE_CONS])
+        s = `${c1}${v}${c2}${v}`
+      }
+      if (!tryAdd(doubles, s) && doubles.length > 0 && guard > half * 25) {
+        doubles.push(s)
+      }
+    }
+    while (doubles.length < half) {
       const c1 = pick(rng, [...SYLLABLE_CONS])
       const c2 = pick(rng, [...SYLLABLE_CONS])
-      // pan / pin / pon / pun… → pana / pino / pono (pas de nasal)
-      s = /[nm]/i.test(c2) ? `${c1}${v}${c2}${v}` : `${c1}${v}${c2}`
-    } else {
-      const c1 = pick(rng, [...SYLLABLE_CONS])
-      const c2 = pick(rng, [...SYLLABLE_CONS])
-      s = `${c1}${v}${c2}${v}`
+      doubles.push(/[nm]/i.test(c2) ? `${c1}${v}${c2}${v}` : `${c1}${v}${c2}`)
     }
-    if (!tryAdd(doubles, s) && doubles.length > 0 && guard > half * 25) {
-      doubles.push(s)
+  } else {
+    const g = bank.letterLower
+    let guard = 0
+    while (simple.length < half && guard < half * 40) {
+      guard += 1
+      const v = pick(rng, [...SYLLABLE_VOWELS])
+      const s = `${g}${v}`
+      if (!tryAdd(simple, s) && simple.length > 0 && guard > half * 20) {
+        simple.push(s)
+      }
     }
-  }
-  while (doubles.length < half) {
-    const c1 = pick(rng, [...SYLLABLE_CONS])
-    const c2 = pick(rng, [...SYLLABLE_CONS])
-    doubles.push(/[nm]/i.test(c2) ? `${c1}${v}${c2}${v}` : `${c1}${v}${c2}`)
+    while (simple.length < half) {
+      simple.push(`${g}${pick(rng, [...SYLLABLE_VOWELS])}`)
+    }
+    guard = 0
+    while (doubles.length < half && guard < half * 50) {
+      guard += 1
+      const v1 = pick(rng, [...SYLLABLE_VOWELS])
+      const v2 = pick(rng, [...SYLLABLE_VOWELS])
+      const kind = int(rng, 0, 2)
+      const s =
+        kind === 0 ? `${v1}${g}${v2}` : kind === 1 ? `${g}${v1}${g}` : `${g}${v1}${g}${v2}`
+      if (!tryAdd(doubles, s) && doubles.length > 0 && guard > half * 25) {
+        doubles.push(s)
+      }
+    }
+    while (doubles.length < half) {
+      const v = pick(rng, [...SYLLABLE_VOWELS])
+      doubles.push(`${g}${v}${g}`)
+    }
   }
 
   return shuffle(rng, [...simple.slice(0, half), ...doubles.slice(0, half)])
@@ -295,7 +324,7 @@ function genKind(
        */
       const cols = 5
       const rows = evenSyllableRows(n)
-      const list = buildSyllableReadingList(rng, bank.letterLower, cols * rows)
+      const list = buildSyllableReadingList(rng, bank, cols * rows)
       return {
         instruction: 'Lisez les syllabes ci-dessous.',
         preferredColumns: 1,
@@ -494,11 +523,11 @@ function genKind(
       const need = Math.max(1, Math.min(18, n))
       const withSound = shuffle(
         rng,
-        bank.syllableItems.filter((item) => wordHasGrapheme(item.word, asVowelBank(bank))),
+        bank.syllableItems.filter((item) => wordHasLessonLetter(item.word, bank)),
       )
       const without = shuffle(
         rng,
-        bank.syllableItems.filter((item) => !wordHasGrapheme(item.word, asVowelBank(bank))),
+        bank.syllableItems.filter((item) => !wordHasLessonLetter(item.word, bank)),
       )
       const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.7)))
       const chosenPos = withSound.slice(0, posCount)
@@ -518,7 +547,7 @@ function genKind(
             layout: 'syllable-sound',
             syllableSoundItems: chosen.map((item) => {
               const parts = [...item.parts]
-              const hitIndex = parts.findIndex((p) => wordHasGrapheme(p, asVowelBank(bank)))
+              const hitIndex = parts.findIndex((p) => wordHasLessonLetter(p, bank))
               return {
                 word: item.word,
                 parts,
@@ -529,7 +558,7 @@ function genKind(
             answer: chosen
               .map((item) => {
                 const parts = item.parts
-                const hit = parts.find((p) => wordHasGrapheme(p, asVowelBank(bank)))
+                const hit = parts.find((p) => wordHasLessonLetter(p, bank))
                 return hit ? `${item.word} → ${hit}` : item.word
               })
               .join(' · '),
@@ -757,7 +786,7 @@ export function tryGenerateSoutienBatch(
 ): SoutienBatch | null {
   const parsed = parseSoutienType(exerciseType)
   if (!parsed) return null
-  const bank = soutienBankByTopic(`soutien-${parsed.vowel}`)
+  const bank = soutienBankById(parsed.bankId)
   if (!bank) return null
   const batch = genKind(parsed.kind, bank, count, rng, difficulty, options)
   // Consigne une seule fois (en-tête d’exercice) — pas de prompt sous chaque item.

@@ -1,4 +1,4 @@
-/** 16 types d’exercice Soutien FR — identiques pour chaque document (voyelle). */
+/** 16 types d’exercice Soutien FR — identiques pour chaque document (lettre / son). */
 export const SOUTIEN_KINDS = [
   {
     id: 'mots',
@@ -127,13 +127,20 @@ export const SOUTIEN_KINDS = [
 
 export type SoutienKindId = (typeof SOUTIEN_KINDS)[number]['id']
 
+const KIND_IDS_LONGEST = [...SOUTIEN_KINDS.map((k) => k.id)].sort((a, b) => b.length - a.length)
+
 export function parseSoutienType(
   typeId: string,
-): { vowel: string; kind: SoutienKindId } | null {
-  const m =
-    /^soutien-([aeiouy])-(mots|lettres|syllabes|relier|completer|ecouter-image|ecouter|syllabe-son|lettres-phrase|determinants|dictee|compter|ordre|lire|associer-audio|mots-meles)$/.exec(
-      typeId,
-    )
-  if (!m) return null
-  return { vowel: m[1]!, kind: m[2] as SoutienKindId }
+): { bankId: string; kind: SoutienKindId; vowel?: string } | null {
+  if (!typeId.startsWith('soutien-')) return null
+  const rest = typeId.slice('soutien-'.length)
+  for (const kind of KIND_IDS_LONGEST) {
+    const suffix = `-${kind}`
+    if (!rest.endsWith(suffix)) continue
+    const bankId = rest.slice(0, -suffix.length)
+    if (!bankId) return null
+    const vowel = /^[aeiouy]$/.test(bankId) ? bankId : undefined
+    return { bankId, kind: kind as SoutienKindId, vowel }
+  }
+  return null
 }

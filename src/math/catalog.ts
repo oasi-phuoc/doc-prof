@@ -1,5 +1,6 @@
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import { SOUTIEN_KINDS } from '@/francais/soutien/kinds'
+import { allSoutienBankDefs } from '@/francais/soutien/themes'
 import { defaultCalliText } from '@/calligraphie/defaults'
 import { DEFAULT_CALLI_FONT, DEFAULT_CALLI_SIZE } from '@/calligraphie/fonts'
 import { CALLI_LIBRE_TOPIC, calligraphieTopics as calliTopicList } from '@/calligraphie/topics'
@@ -49,12 +50,11 @@ export const topics: Topic[] = [
   { id: 'voyelle-u', label: 'Voyelle U · son /y/', domain: 'lecture' },
   { id: 'voyelle-e', label: 'Voyelle E · son /ə/', domain: 'lecture' },
   { id: 'voyelle-y', label: 'Voyelle Y · son /i/', domain: 'lecture' },
-  { id: 'soutien-a', label: 'Voyelle A · son /a/', domain: 'soutien-fr' },
-  { id: 'soutien-o', label: 'Voyelle O · son /o/', domain: 'soutien-fr' },
-  { id: 'soutien-i', label: 'Voyelle I · son /i/', domain: 'soutien-fr' },
-  { id: 'soutien-u', label: 'Voyelle U · son /y/', domain: 'soutien-fr' },
-  { id: 'soutien-e', label: 'Voyelle E · son /ə/', domain: 'soutien-fr' },
-  { id: 'soutien-y', label: 'Voyelle Y · son /i/', domain: 'soutien-fr' },
+  { id: 'soutien-voyelles', label: 'Voyelles', domain: 'soutien-fr' },
+  { id: 'soutien-consonnes-i', label: 'Consonnes I', domain: 'soutien-fr' },
+  { id: 'soutien-consonnes-ii', label: 'Consonnes II', domain: 'soutien-fr' },
+  { id: 'soutien-consonnes-iii', label: 'Consonnes III', domain: 'soutien-fr' },
+  { id: 'soutien-sons-complexes', label: 'Sons complexes', domain: 'soutien-fr' },
   { id: 'phrase-tableaux', label: 'Tableaux Gattegno', domain: 'gattegno' },
   { id: 'phrase-simple', label: 'Simple', domain: 'gattegno' },
   { id: 'phrase-negation', label: 'Négation simple', domain: 'gattegno' },
@@ -857,24 +857,15 @@ for (const v of VOWEL_TOPICS) {
   )
 }
 
-/** Soutien FR : 15 types identiques pour chaque document voyelle. */
-const SOUTIEN_VOWELS = [
-  { id: 'a', topic: 'soutien-a', sound: '/a/' },
-  { id: 'o', topic: 'soutien-o', sound: '/o/' },
-  { id: 'i', topic: 'soutien-i', sound: '/i/' },
-  { id: 'u', topic: 'soutien-u', sound: '/y/' },
-  { id: 'e', topic: 'soutien-e', sound: '/ə/' },
-  { id: 'y', topic: 'soutien-y', sound: '/i/' },
-] as const
-
-for (const v of SOUTIEN_VOWELS) {
+/** Soutien FR : 16 types × chaque lettre / son (thèmes Voyelles → Sons complexes). */
+for (const def of allSoutienBankDefs()) {
   for (const kind of SOUTIEN_KINDS) {
     exerciseTypes.push(
       t(
-        `soutien-${v.id}-${kind.id}`,
-        v.topic,
+        `soutien-${def.sound.bankId}-${kind.id}`,
+        def.themeId,
         kind.label,
-        kind.description.replace('le son', `le son ${v.sound}`),
+        kind.description.replace('le son', `le son ${def.sound.phoneme}`),
         kind.instruction,
         'texte',
         { preferredColumns: kind.preferredColumns },
@@ -1030,7 +1021,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                             : domain === 'calligraphie'
                               ? CALLI_LIBRE_TOPIC
                               : domain === 'soutien-fr'
-                                ? 'soutien-a'
+                                ? 'soutien-voyelles'
                                 : domain === 'tcf'
                                   ? 'tcf-ce'
                                   : 'voyelle-a'
