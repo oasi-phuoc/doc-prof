@@ -1,5 +1,5 @@
 /**
- * Audio téléchargeable Soutien FR types 6 et 7 :
+ * Audio téléchargeable Soutien FR types 6, 7 et 8 :
  * consigne (+ son) · 6 s · Numéro n · 2 s · mot · 6 s · …
  */
 import { SILENCE_6S_AUDIO, concatMp3 } from '@/tcm-cfr/audio-nombres'
@@ -11,6 +11,8 @@ const SOUTIEN_DIR = '/lib/audio/soutien'
 export const SOUTIEN_SILENCE_6S = SILENCE_6S_AUDIO
 export const SOUTIEN_SILENCE_2S = `${SOUTIEN_DIR}/silence-2s.mp3`
 export const SOUTIEN_ECOUTER_CONSIGNE = `${SOUTIEN_DIR}/consigne-ecoutez-cochez.mp3`
+/** Type 8 — « À quelle syllabe entendez-vous le son ? » */
+export const SOUTIEN_SYLLABE_SON_CONSIGNE = `${SOUTIEN_DIR}/consigne-syllabe-son.mp3`
 
 /** Phonème banque → fichier `sons/{slug}.mp3`. */
 const SOUND_SLUG: Record<string, string> = {
@@ -83,6 +85,8 @@ export async function downloadSoutienEcouterAudio(opts: {
   themeLabel: string
   letterLabel: string
   exerciseNo: number
+  /** Consigne MP3 (défaut type 6/7). */
+  consigneSrc?: string
 }): Promise<number> {
   const entries = opts.words
     .map((w, i) => {
@@ -94,7 +98,7 @@ export async function downloadSoutienEcouterAudio(opts: {
     .slice(0, 30)
   if (entries.length === 0) return 0
 
-  const urls: string[] = [SOUTIEN_ECOUTER_CONSIGNE]
+  const urls: string[] = [opts.consigneSrc ?? SOUTIEN_ECOUTER_CONSIGNE]
   const son = opts.phoneme ? soutienSonAudioFor(opts.phoneme) : undefined
   if (son) urls.push(son)
 

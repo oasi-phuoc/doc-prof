@@ -1,5 +1,6 @@
 /** Banques Soutien FR — voyelles (livret CSC) + auto consonnes / complexes. Images via vocabulaire. */
 import { buildAutoSoutienBank } from './auto-banks'
+import { syllableItemFr } from './syllabify-fr'
 import { allSoutienBankDefs, findSoutienByBankId } from './themes'
 
 export type SoutienScramble = { sentence: string; word: string; letters: string }
@@ -1892,18 +1893,38 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
 
 const AUTO_BANK_CACHE = new Map<string, SoutienVowelBank>()
 
+/** Recalcule les items type 8 (syllabes scolaires, sans monosyllabes). */
+function withFixedSyllableItems(bank: SoutienVowelBank): SoutienVowelBank {
+  const seen = new Set<string>()
+  const out: SoutienSyllableItem[] = []
+  const push = (raw: string) => {
+    const key = raw.trim().toLowerCase()
+    if (!key || seen.has(key)) return
+    const item = syllableItemFr(raw)
+    if (!item) return
+    seen.add(key)
+    out.push({ word: raw.trim(), parts: item.parts })
+  }
+  for (const w of bank.words) push(w)
+  for (const row of bank.syllableItems) push(row.word)
+  for (const c of bank.completes) push(c.word)
+  return { ...bank, syllableItems: out }
+}
+
 /** Banque par identifiant (`a`, `c-k`, `ch`…). Voyelles = CSC ; autres = auto. */
 export function soutienBankById(bankId: string): SoutienVowelBank | undefined {
   const vowel = SOUTIEN_VOWEL_BANKS.find((b) => b.id === bankId)
   if (vowel) {
     // Topic catalogue = thème voyelles (rétrocompat topic soutien-a accepté ailleurs).
-    return { ...vowel, topic: 'soutien-voyelles' }
+    return withFixedSyllableItems({ ...vowel, topic: 'soutien-voyelles' })
   }
   const cached = AUTO_BANK_CACHE.get(bankId)
   if (cached) return cached
   const found = findSoutienByBankId(bankId)
   if (!found) return undefined
-  const bank = buildAutoSoutienBank(found.theme.id, found.letter, found.sound)
+  const bank = withFixedSyllableItems(
+    buildAutoSoutienBank(found.theme.id, found.letter, found.sound),
+  )
   AUTO_BANK_CACHE.set(bankId, bank)
   return bank
 }

@@ -525,6 +525,7 @@ export type MathItem = {
     /** Index de la syllabe qui porte le son (−1 si aucune). */
     hitIndex: number
     imageSrc?: string
+    audioSrc?: string
   }>
   /** Soutien FR type 9 : phrase + image + trait + lettres mélangées. */
   phraseScrambles?: Array<{

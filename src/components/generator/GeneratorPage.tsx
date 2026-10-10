@@ -133,7 +133,10 @@ import {
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankById } from '@/francais/soutien/banks'
-import { downloadSoutienEcouterAudio } from '@/francais/soutien/download-ecouter-audio'
+import {
+  downloadSoutienEcouterAudio,
+  SOUTIEN_SYLLABE_SON_CONSIGNE,
+} from '@/francais/soutien/download-ecouter-audio'
 import {
   downloadSoutienCompleterAudio,
   downloadSoutienMotsAudio,
@@ -769,17 +772,25 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
   }
 
-  /** Mots + audios des types 6 / 7 pour la playlist téléchargeable. */
+  /** Mots + audios des types 6 / 7 / 8 pour la playlist téléchargeable. */
   function currentSoutienEcouterWords(): {
     words: string[]
     audioSrcs: string[]
   } {
-    const item = activeSheet?.blocks[safeBlockIndex]?.items.find(
-      (row) => row.layout === 'listen-check',
-    )
-    const words = (item?.options ?? []).map((w) => w.trim()).filter(Boolean)
-    const audioSrcs = (item?.optionAudioSrcs ?? []).map((src) => src ?? '')
-    return { words, audioSrcs }
+    const blockItems = activeSheet?.blocks[safeBlockIndex]?.items ?? []
+    const listen = blockItems.find((row) => row.layout === 'listen-check')
+    if (listen) {
+      const words = (listen.options ?? []).map((w) => w.trim()).filter(Boolean)
+      const audioSrcs = (listen.optionAudioSrcs ?? []).map((src) => src ?? '')
+      return { words, audioSrcs }
+    }
+    const syllabe = blockItems.find((row) => row.layout === 'syllable-sound')
+    if (syllabe?.syllableSoundItems?.length) {
+      const words = syllabe.syllableSoundItems.map((row) => row.word.trim()).filter(Boolean)
+      const audioSrcs = syllabe.syllableSoundItems.map((row) => row.audioSrc ?? '')
+      return { words, audioSrcs }
+    }
+    return { words: [], audioSrcs: [] }
   }
 
   async function downloadActiveSoutienEcouterAudio() {
@@ -789,11 +800,13 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     const bankId = parsed?.bankId ?? 'ecouter'
     const bank = soutienBankById(bankId)
     const meta = soutienAudioFileMeta()
+    const isSyllabeSon = parsed?.kind === 'syllabe-son'
     try {
       await downloadSoutienEcouterAudio({
         words,
         audioSrcs,
         phoneme: bank?.sound,
+        consigneSrc: isSyllabeSon ? SOUTIEN_SYLLABE_SON_CONSIGNE : undefined,
         ...meta,
       })
     } catch {
@@ -852,7 +865,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isSoutienMotsMeles = soutienKind === 'mots-meles'
   const isSoutienCompleter = soutienKind === 'completer'
   const isSoutienEcouter =
-    soutienKind === 'ecouter' || soutienKind === 'ecouter-image'
+    soutienKind === 'ecouter' ||
+    soutienKind === 'ecouter-image' ||
+    soutienKind === 'syllabe-son'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
   /** Types 4–11 / 15 : le champ compte des mots (pas des « questions » génériques). */
@@ -2844,7 +2859,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   </small>
                 ) : null}
                 {soutienKind === 'syllabe-son' ? (
-                  <small className="muted">Nombre de cartes (max. 18).</small>
+                  <small className="muted">
+                    Cartes (mots ≥ 2 syllabes · max. 18 · audio téléchargeable).
+                  </small>
                 ) : null}
                 {soutienKind === 'lettres-phrase' ? (
                   <small className="muted">
@@ -3623,7 +3640,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                           : isSoutienCompleter
                             ? 'Télécharger l’audio (Écoutez et complétez + mots, 6 s)'
                             : isSoutienEcouter
-                              ? 'Télécharger l’audio (consigne + Numéro + mots, 6 s)'
+                              ? soutienKind === 'syllabe-son'
+                                ? 'Télécharger l’audio (syllabe du son + Numéro + mots, 6 s)'
+                                : 'Télécharger l’audio (consigne + Numéro + mots, 6 s)'
                               : 'Télécharger l’audio (consigne + 16 mots)'
                     }
                   >

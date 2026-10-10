@@ -5,7 +5,6 @@
  * Templates de noms : `@/francais/soutien/download-name`.
  */
 import {
-  tcfAnneeSemestre,
   tcfAudioDownloadName,
   tcfAudioFileBase as tcfAudioFileBaseShared,
 } from '@/francais/soutien/download-name'

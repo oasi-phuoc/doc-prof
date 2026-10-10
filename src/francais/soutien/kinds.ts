@@ -58,7 +58,8 @@ export const SOUTIEN_KINDS = [
   {
     id: 'syllabe-son',
     label: '8 · Syllabe du son',
-    description: 'Grille fluide (1–3 colonnes) ; jusqu’à 18 cartes ; syllabes au corrigé.',
+    description:
+      'Grille (1–3 col.) ; mots ≥ 2 syllabes ; découpe scolaire ; audio téléchargeable.',
     instruction: 'À quelle syllabe entendez-vous le son ?',
     preferredColumns: 1 as const,
   },

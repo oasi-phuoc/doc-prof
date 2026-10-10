@@ -559,24 +559,23 @@ function genKind(
       }
     }
     case 'syllabe-son': {
-      /** Grille fluide ; count = nb de cartes ; colonnes 1–3. */
+      /** Grille fluide ; count = nb de cartes ; colonnes 1–3 ; ≥ 2 syllabes avec le son. */
       const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 3) || 3))
       const need = Math.max(1, Math.min(18, n))
-      const withSound = shuffle(
+      const pool = shuffle(
         rng,
-        bank.syllableItems.filter((item) => wordHasLessonLetter(item.word, bank)),
+        bank.syllableItems.filter(
+          (item) =>
+            item.parts.length >= 2 &&
+            (wordHasLessonLetter(item.word, bank) || wordHasLessonSound(item.word, bank)),
+        ),
       )
-      const without = shuffle(
-        rng,
-        bank.syllableItems.filter((item) => !wordHasLessonLetter(item.word, bank)),
-      )
-      const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.7)))
-      const chosenPos = withSound.slice(0, posCount)
-      const chosenNeg = without.slice(0, Math.max(0, need - chosenPos.length))
-      let chosen = shuffle(rng, [...chosenPos, ...chosenNeg]).slice(0, need)
+      let chosen = pool.slice(0, need)
       if (chosen.length < need) {
         const rest = bank.syllableItems.filter(
-          (item) => !chosen.some((t) => t.word.toLowerCase() === item.word.toLowerCase()),
+          (item) =>
+            item.parts.length >= 2 &&
+            !chosen.some((t) => t.word.toLowerCase() === item.word.toLowerCase()),
         )
         chosen = [...chosen, ...shuffle(rng, rest)].slice(0, need)
       }
@@ -595,6 +594,7 @@ function genKind(
                 parts,
                 hitIndex: hitIndex >= 0 ? hitIndex : -1,
                 imageSrc: soutienImageFor(item.word) || soutienImageFor(word),
+                audioSrc: soutienAudioFor(item.word) ?? soutienAudioFor(word),
               }
             }),
             answer: chosen

@@ -15,6 +15,7 @@ import type {
   SoutienSyllableItem,
   SoutienVowelBank,
 } from './banks'
+import { syllableItemFr } from './syllabify-fr'
 import type { SoutienLetterOption, SoutienSoundOption } from './themes'
 
 const KEEP_SHORT = new Set([
@@ -211,12 +212,21 @@ function buildCompounds(words: readonly string[]): SoutienCompound[] {
   return out
 }
 
+/** Type 8 : découpe scolaire ; exclut les monosyllabes. */
 function buildSyllableItems(words: readonly string[]): SoutienSyllableItem[] {
-  return words.slice(0, 24).map((raw) => {
-    const word = displayVocabLabel(raw)
-    const parts = autoSplit(word)
-    return { word, parts: parts ? [parts[0], parts[1]] : [word] }
-  })
+  const seen = new Set<string>()
+  const out: SoutienSyllableItem[] = []
+  for (const raw of words) {
+    const display = displayVocabLabel(raw)
+    const key = display.toLowerCase()
+    if (!key || seen.has(key)) continue
+    const item = syllableItemFr(display) ?? syllableItemFr(raw)
+    if (!item) continue
+    seen.add(key)
+    out.push({ word: raw.trim(), parts: item.parts })
+    if (out.length >= 36) break
+  }
+  return out
 }
 
 function buildScrambles(words: readonly string[]): SoutienScramble[] {

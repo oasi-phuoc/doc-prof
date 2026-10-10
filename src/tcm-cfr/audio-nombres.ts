@@ -7,7 +7,6 @@
  */
 import {
   tcmCfrAudioDownloadName,
-  tcmCfrSemestre,
   type TcmCfrAudioKind,
 } from '@/francais/soutien/download-name'
 
