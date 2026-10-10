@@ -5,6 +5,10 @@
  */
 import { SILENCE_6S_AUDIO, concatMp3 } from '@/tcm-cfr/audio-nombres'
 import { soutienAudioFor } from './audio'
+import {
+  soutienAudioDownloadName,
+  type SoutienAudioDownloadNameOpts,
+} from './download-name'
 
 /** Consigne type 1 (DeniseNeural −25 %). */
 export const SOUTIEN_MOTS_CONSIGNE_AUDIO =
@@ -14,18 +18,21 @@ export const SOUTIEN_MOTS_CONSIGNE_AUDIO =
 export const SOUTIEN_COMPLETER_CONSIGNE_AUDIO =
   '/lib/audio/soutien/consigne-ecoutez-completez.mp3'
 
-export function soutienMotsAudioDownloadName(opts?: {
-  bankId?: string
-  date?: Date
-  kind?: 'mots' | 'completer'
-}): string {
-  const bank = opts?.bankId?.replace(/[^a-z0-9-]/gi, '') || 'mots'
-  const label = opts?.kind === 'completer' ? 'Completer' : 'Mots'
-  const d = opts?.date ?? new Date()
-  const y = d.getFullYear()
-  const m = String(d.getMonth() + 1).padStart(2, '0')
-  const day = String(d.getDate()).padStart(2, '0')
-  return `Soutien-FR_${label}_${bank}_${y}${m}${day}.mp3`
+export { soutienAudioDownloadName, soutienAudioNameSegment } from './download-name'
+
+/** @deprecated Préférer `soutienAudioDownloadName`. */
+export function soutienMotsAudioDownloadName(
+  opts?: Partial<SoutienAudioDownloadNameOpts> & {
+    bankId?: string
+    kind?: 'mots' | 'completer'
+  },
+): string {
+  return soutienAudioDownloadName({
+    themeLabel: opts?.themeLabel ?? opts?.bankId ?? 'SOUTIEN',
+    letterLabel: opts?.letterLabel ?? 'X',
+    exerciseNo: opts?.exerciseNo ?? 1,
+    date: opts?.date,
+  })
 }
 
 async function downloadBlob(blob: Blob, filename: string) {
@@ -46,10 +53,11 @@ async function downloadBlob(blob: Blob, filename: string) {
  */
 export async function downloadSoutienMotsAudio(opts: {
   words: readonly string[]
-  bankId?: string
+  themeLabel: string
+  letterLabel: string
+  exerciseNo: number
   /** Consigne audio (défaut type 1). */
   consigneSrc?: string
-  kind?: 'mots' | 'completer'
 }): Promise<number> {
   const wordAudios = opts.words
     .map((w) => soutienAudioFor(w))
@@ -64,7 +72,11 @@ export async function downloadSoutienMotsAudio(opts: {
   const blob = await concatMp3(urls)
   await downloadBlob(
     blob,
-    soutienMotsAudioDownloadName({ bankId: opts.bankId, kind: opts.kind }),
+    soutienAudioDownloadName({
+      themeLabel: opts.themeLabel,
+      letterLabel: opts.letterLabel,
+      exerciseNo: opts.exerciseNo,
+    }),
   )
   return wordAudios.length
 }
@@ -72,12 +84,15 @@ export async function downloadSoutienMotsAudio(opts: {
 /** Audio type 5 : consigne « Écoutez et complétez… » + mots, 6 s d’intervalle. */
 export async function downloadSoutienCompleterAudio(opts: {
   words: readonly string[]
-  bankId?: string
+  themeLabel: string
+  letterLabel: string
+  exerciseNo: number
 }): Promise<number> {
   return downloadSoutienMotsAudio({
     words: opts.words,
-    bankId: opts.bankId,
+    themeLabel: opts.themeLabel,
+    letterLabel: opts.letterLabel,
+    exerciseNo: opts.exerciseNo,
     consigneSrc: SOUTIEN_COMPLETER_CONSIGNE_AUDIO,
-    kind: 'completer',
   })
 }

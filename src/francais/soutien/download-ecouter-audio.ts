@@ -4,6 +4,7 @@
  */
 import { SILENCE_6S_AUDIO, concatMp3 } from '@/tcm-cfr/audio-nombres'
 import { soutienAudioFor } from './audio'
+import { soutienAudioDownloadName } from './download-name'
 
 const SOUTIEN_DIR = '/lib/audio/soutien'
 
@@ -58,20 +59,6 @@ export function soutienSonAudioFor(phoneme: string): string | undefined {
   return `${SOUTIEN_DIR}/sons/${slug}.mp3`
 }
 
-function downloadName(opts: {
-  kind: 'ecouter' | 'ecouter-image'
-  bankId?: string
-  date?: Date
-}): string {
-  const bank = opts.bankId?.replace(/[^a-z0-9-]/gi, '') || 'son'
-  const label = opts.kind === 'ecouter-image' ? 'Ecouter-image' : 'Ecouter'
-  const d = opts.date ?? new Date()
-  const y = d.getFullYear()
-  const m = String(d.getMonth() + 1).padStart(2, '0')
-  const day = String(d.getDate()).padStart(2, '0')
-  return `Soutien-FR_${label}_${bank}_${y}${m}${day}.mp3`
-}
-
 async function downloadBlob(blob: Blob, filename: string) {
   const objectUrl = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -93,8 +80,9 @@ export async function downloadSoutienEcouterAudio(opts: {
   /** Chemins audio déjà résolus (fiche) ; sinon lookup par libellé. */
   audioSrcs?: readonly (string | undefined | null)[]
   phoneme?: string
-  bankId?: string
-  kind?: 'ecouter' | 'ecouter-image'
+  themeLabel: string
+  letterLabel: string
+  exerciseNo: number
 }): Promise<number> {
   const entries = opts.words
     .map((w, i) => {
@@ -121,7 +109,11 @@ export async function downloadSoutienEcouterAudio(opts: {
   const blob = await concatMp3(urls)
   await downloadBlob(
     blob,
-    downloadName({ kind: opts.kind ?? 'ecouter', bankId: opts.bankId }),
+    soutienAudioDownloadName({
+      themeLabel: opts.themeLabel,
+      letterLabel: opts.letterLabel,
+      exerciseNo: opts.exerciseNo,
+    }),
   )
   return entries.length
 }

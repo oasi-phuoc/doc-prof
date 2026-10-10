@@ -141,6 +141,7 @@ import {
 import { type1WordPool, type1Words } from '@/francais/soutien/generate'
 import { parseSoutienType, SOUTIEN_KINDS } from '@/francais/soutien/kinds'
 import {
+  findSoutienByBankId,
   resolveSoutienSelection,
   soutienExerciseTypeId,
   soutienThemeById,
@@ -707,15 +708,37 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     return soutienType1Words
   }
 
+  /** Métadonnées pour le nom de fichier audio Soutien FR. */
+  function soutienAudioFileMeta(): {
+    themeLabel: string
+    letterLabel: string
+    exerciseNo: number
+  } {
+    const sel =
+      resolveSoutienSelection(activeBlock.topic, activeBlock.exerciseType) ??
+      (activeBlock.exerciseType
+        ? (() => {
+            const bankId = parseSoutienType(activeBlock.exerciseType)?.bankId
+            return bankId ? findSoutienByBankId(bankId) : null
+          })()
+        : null)
+    const exerciseNo =
+      activeSheet?.blocks[safeBlockIndex]?.exerciseIndex ??
+      activeBlock.exerciseNo ??
+      firstExerciseNo + safeBlockIndex
+    return {
+      themeLabel: sel?.theme.label ?? 'Soutien',
+      letterLabel: sel?.letter.letterUpper ?? sel?.letter.label ?? 'X',
+      exerciseNo,
+    }
+  }
+
   async function downloadActiveSoutienMotsAudio() {
     const words = currentSoutienMotsWords()
     if (words.length === 0) return
-    const bankId =
-      parseSoutienType(activeBlock.exerciseType)?.bankId ??
-      soutienSelection?.sound.bankId ??
-      'mots'
+    const meta = soutienAudioFileMeta()
     try {
-      await downloadSoutienMotsAudio({ words, bankId })
+      await downloadSoutienMotsAudio({ words, ...meta })
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -738,12 +761,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   async function downloadActiveSoutienCompleterAudio() {
     const words = currentSoutienCompleterWords()
     if (words.length === 0) return
-    const bankId =
-      parseSoutienType(activeBlock.exerciseType)?.bankId ??
-      soutienSelection?.sound.bankId ??
-      'completer'
+    const meta = soutienAudioFileMeta()
     try {
-      await downloadSoutienCompleterAudio({ words, bankId })
+      await downloadSoutienCompleterAudio({ words, ...meta })
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -768,14 +788,13 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     const parsed = parseSoutienType(activeBlock.exerciseType)
     const bankId = parsed?.bankId ?? 'ecouter'
     const bank = soutienBankById(bankId)
-    const kind = parsed?.kind === 'ecouter-image' ? 'ecouter-image' : 'ecouter'
+    const meta = soutienAudioFileMeta()
     try {
       await downloadSoutienEcouterAudio({
         words,
         audioSrcs,
         phoneme: bank?.sound,
-        bankId,
-        kind,
+        ...meta,
       })
     } catch {
       // Échec réseau / fichier manquant : silencieux.
@@ -2070,7 +2089,7 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 >
                   {soutienSelection.theme.letters.map((letter) => (
                     <option value={letter.id} key={letter.id}>
-                      {letter.label}
+                      {letter.letterUpper}
                     </option>
                   ))}
                 </SelectBox>

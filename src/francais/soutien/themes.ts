@@ -23,7 +23,7 @@ export type SoutienSoundOption = {
 export type SoutienLetterOption = {
   /** Identifiant lettre / digramme (ex. `a`, `c`, `ch`). */
   id: string
-  /** Libellé UI (ex. `A`, `b`, `ch`). */
+  /** Libellé UI (toujours majuscules : `A`, `B`, `CH`). */
   label: string
   letterUpper: string
   letterLower: string
@@ -68,10 +68,11 @@ function cons(
   graphemes?: readonly string[],
   letterPoolKey?: string,
 ): SoutienLetterOption {
+  const upper = id.toLocaleUpperCase('fr-FR')
   return {
     id,
-    label: id,
-    letterUpper: id.toLocaleUpperCase('fr-FR'),
+    label: upper,
+    letterUpper: upper,
     letterLower: id,
     sounds: [
       {
@@ -95,10 +96,11 @@ function multiCons(
     graphemes?: readonly string[]
   }>,
 ): SoutienLetterOption {
+  const upper = id.toLocaleUpperCase('fr-FR')
   return {
     id,
-    label: id,
-    letterUpper: id.toLocaleUpperCase('fr-FR'),
+    label: upper,
+    letterUpper: upper,
     letterLower: id,
     sounds: sounds.map((s) => ({
       id: s.id,
@@ -123,7 +125,7 @@ function complex(
   const upper = letterUpper ?? id.toLocaleUpperCase('fr-FR')
   return {
     id,
-    label: id,
+    label: upper,
     letterUpper: upper,
     letterLower: lower,
     sounds: [
