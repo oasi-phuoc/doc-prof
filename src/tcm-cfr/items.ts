@@ -1187,14 +1187,17 @@ function genEx26(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 27 — cadran I : 1 u/case ou 1 u/2 cases ; consignes numérotées ; 0 en (−1;−1). */
+/** Ex. 27 — cadran I : toujours 24×24 cases positives ; graduation 1 u/case ou 1 u/2 cases. */
 function genEx27(rng: Rng): MathItem[] {
+  const positiveCells = 24
+  // Deux types de graduation : 1 unité = 1 case (max 24) ou 1 unité = 2 cases (max 12).
+  // Le nombre de cases positives reste fixe ; seule l’échelle change.
   const unitSquares = rng() < 0.5 ? 1 : 2
-  const maxUnit = 24
+  const maxUnit = positiveCells / unitSquares
   const originCol = unitSquares
   const originRow = unitSquares
   const arrowPad = 2
-  const visibleCols = originCol + maxUnit * unitSquares + arrowPad
+  const visibleCols = originCol + positiveCells + arrowPad
   const visibleRows = visibleCols
   const cols = visibleCols
   const rows = visibleRows
@@ -1202,7 +1205,7 @@ function genEx27(rng: Rng): MathItem[] {
   const cellMmAllowed = [10, 8, 6, 5, 4, 3] as const
   const cellMm =
     cellMmAllowed.find((mm) => visibleCols * mm <= maxGridMm + 0.5) ?? 3
-  // Graduation : un trait tous les 2 carrés → 2 u si 1 u/case, 1 u si 1 u/2 cases.
+  // Traits de graduation tous les 2 carrés → 2 u (1 u/case) ou 1 u (1 u/2 cases).
   const labelStep = unitSquares === 1 ? 2 : 1
 
   const placeLetters = shuffle(rng, 'ABCDEGHJKLMNPQRST'.split('')).slice(0, 3)
