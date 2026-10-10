@@ -940,10 +940,10 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
     sound: '/y/',
     label: 'Voyelle U',
     graphemes: ["u", "û"],
-    words: ["alumette", "voiture", "jumelles", "laitue", "jus", "buffet", "usine", "flûte", "fruit", "ambulance", "zébu", "jupe", "chaussure", "tulipe", "bus", "légume"],
+    words: ["allumette", "voiture", "jumelles", "laitue", "jus", "buffet", "usine", "flûte", "fruit", "ambulance", "zébu", "jupe", "chaussure", "tulipe", "bus", "légume"],
     syllables: ["mu", "nu", "tu", "pu", "vu", "bu", "cu", "ru", "lu", "su", "qud", "nub", "utut", "pup", "vur", "mudu", "fug", "fudu", "sutu", "muc", "um", "up", "ul", "nu", "tu", "ru", "us", "mu", "uq", "lu"],
     compounds: [
-      { parts: ['a', 'lumette'] as const, word: 'alumette' },
+      { parts: ['al', 'lumette'] as const, word: 'allumette' },
       { parts: ['voi', 'ture'] as const, word: 'voiture' },
       { parts: ['ju', 'melles'] as const, word: 'jumelles' },
       { parts: ['lai', 'tue'] as const, word: 'laitue' },

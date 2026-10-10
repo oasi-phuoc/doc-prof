@@ -1144,6 +1144,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/autre/mythe.webp"
       },
       {
+        "label": "mythologie",
+        "src": "/lib/images/vocabulaire/autre/mythologie.webp"
+      },
+      {
         "label": "oxygène",
         "src": "/lib/images/vocabulaire/autre/oxygène.webp"
       },
@@ -2068,12 +2072,28 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Ferme et compagnie",
     "words": [
       {
+        "label": "agneau",
+        "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/agneau.webp"
+      },
+      {
+        "label": "agneaux",
+        "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/agneaux.webp"
+      },
+      {
+        "label": "ane",
+        "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/ane.webp"
+      },
+      {
         "label": "animal",
         "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/animal.webp"
       },
       {
         "label": "animaux",
         "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/animaux.webp"
+      },
+      {
+        "label": "brebis",
+        "src": "/lib/images/vocabulaire/animaux-ferme-compagnie/brebis.webp"
       },
       {
         "label": "canard",
@@ -3328,6 +3348,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/chaise.webp"
       },
       {
+        "label": "chalet",
+        "src": "/lib/images/vocabulaire/maison/chalet.webp"
+      },
+      {
         "label": "chambre",
         "src": "/lib/images/vocabulaire/maison/chambre.webp"
       },
@@ -4060,6 +4084,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/meteo/canicule.webp"
       },
       {
+        "label": "chaud",
+        "src": "/lib/images/vocabulaire/meteo/chaud.webp"
+      },
+      {
         "label": "ciel-couvert",
         "src": "/lib/images/vocabulaire/meteo/ciel-couvert.webp"
       },
@@ -4074,6 +4102,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "flocon",
         "src": "/lib/images/vocabulaire/meteo/flocon.webp"
+      },
+      {
+        "label": "froid",
+        "src": "/lib/images/vocabulaire/meteo/froid.webp"
       },
       {
         "label": "givre",
@@ -4380,6 +4412,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nombres-mesures/nonante.webp"
       },
       {
+        "label": "numero",
+        "src": "/lib/images/vocabulaire/nombres-mesures/numero.webp"
+      },
+      {
         "label": "onze",
         "src": "/lib/images/vocabulaire/nombres-mesures/onze.webp"
       },
@@ -4564,6 +4600,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "loupe",
         "src": "/lib/images/vocabulaire/objets/loupe.webp"
+      },
+      {
+        "label": "ordures",
+        "src": "/lib/images/vocabulaire/objets/ordures.webp"
       },
       {
         "label": "palette",
@@ -5744,6 +5784,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/football.webp"
       },
       {
+        "label": "gymnaste",
+        "src": "/lib/images/vocabulaire/sports/gymnaste.webp"
+      },
+      {
         "label": "gymnastique",
         "src": "/lib/images/vocabulaire/sports/gymnastique.webp"
       },
@@ -6308,6 +6352,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "moto",
         "src": "/lib/images/vocabulaire/transports/moto.webp"
+      },
+      {
+        "label": "motocyclette",
+        "src": "/lib/images/vocabulaire/transports/motocyclette.webp"
       },
       {
         "label": "métro",
@@ -7092,6 +7140,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/sandales.webp"
       },
       {
+        "label": "semelle",
+        "src": "/lib/images/vocabulaire/vetements/semelle.webp"
+      },
+      {
         "label": "short",
         "src": "/lib/images/vocabulaire/vetements/short.webp"
       },
@@ -7736,8 +7788,12 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "requin": "/lib/images/vocabulaire/animaux-aquatiques/requin.webp",
   "walrus": "/lib/images/vocabulaire/animaux-aquatiques/walrus.webp",
   "étoile-de-mer": "/lib/images/vocabulaire/animaux-aquatiques/étoile-de-mer.webp",
+  "agneau": "/lib/images/vocabulaire/animaux-ferme-compagnie/agneau.webp",
+  "agneaux": "/lib/images/vocabulaire/animaux-ferme-compagnie/agneaux.webp",
+  "ane": "/lib/images/vocabulaire/animaux-ferme-compagnie/ane.webp",
   "animal": "/lib/images/vocabulaire/animaux-ferme-compagnie/animal.webp",
   "animaux": "/lib/images/vocabulaire/animaux-ferme-compagnie/animaux.webp",
+  "brebis": "/lib/images/vocabulaire/animaux-ferme-compagnie/brebis.webp",
   "canard": "/lib/images/vocabulaire/animaux-ferme-compagnie/canard.webp",
   "chat": "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp",
   "chenil": "/lib/images/vocabulaire/animaux-ferme-compagnie/chenil.webp",
@@ -7849,6 +7905,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "mince": "/lib/images/vocabulaire/autre/mince.webp",
   "morceau": "/lib/images/vocabulaire/autre/morceau.webp",
   "mythe": "/lib/images/vocabulaire/autre/mythe.webp",
+  "mythologie": "/lib/images/vocabulaire/autre/mythologie.webp",
   "oxygène": "/lib/images/vocabulaire/autre/oxygène.webp",
   "ozone": "/lib/images/vocabulaire/autre/ozone.webp",
   "paix": "/lib/images/vocabulaire/autre/paix.webp",
@@ -8441,6 +8498,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "canape": "/lib/images/vocabulaire/maison/canape.webp",
   "cave": "/lib/images/vocabulaire/maison/cave.webp",
   "chaise": "/lib/images/vocabulaire/maison/chaise.webp",
+  "chalet": "/lib/images/vocabulaire/maison/chalet.webp",
   "chambre": "/lib/images/vocabulaire/maison/chambre.webp",
   "cheminée": "/lib/images/vocabulaire/maison/cheminée.webp",
   "commode": "/lib/images/vocabulaire/maison/commode.webp",
@@ -8510,10 +8568,12 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "blizzard": "/lib/images/vocabulaire/meteo/blizzard.webp",
   "brouillard": "/lib/images/vocabulaire/meteo/brouillard.webp",
   "canicule": "/lib/images/vocabulaire/meteo/canicule.webp",
+  "chaud": "/lib/images/vocabulaire/meteo/chaud.webp",
   "ciel-couvert": "/lib/images/vocabulaire/meteo/ciel-couvert.webp",
   "cyclone": "/lib/images/vocabulaire/meteo/cyclone.webp",
   "eclair": "/lib/images/vocabulaire/meteo/eclair.webp",
   "flocon": "/lib/images/vocabulaire/meteo/flocon.webp",
+  "froid": "/lib/images/vocabulaire/meteo/froid.webp",
   "givre": "/lib/images/vocabulaire/meteo/givre.webp",
   "goutte": "/lib/images/vocabulaire/meteo/goutte.webp",
   "grêle": "/lib/images/vocabulaire/meteo/grêle.webp",
@@ -8694,6 +8754,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "mètre": "/lib/images/vocabulaire/nombres-mesures/mètre.webp",
   "neuf": "/lib/images/vocabulaire/nombres-mesures/neuf.webp",
   "nonante": "/lib/images/vocabulaire/nombres-mesures/nonante.webp",
+  "numero": "/lib/images/vocabulaire/nombres-mesures/numero.webp",
   "onze": "/lib/images/vocabulaire/nombres-mesures/onze.webp",
   "pour-cent": "/lib/images/vocabulaire/nombres-mesures/pour-cent.webp",
   "quarante": "/lib/images/vocabulaire/nombres-mesures/quarante.webp",
@@ -8738,6 +8799,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "jumelles": "/lib/images/vocabulaire/objets/jumelles.webp",
   "lampe-de-poche": "/lib/images/vocabulaire/objets/lampe-de-poche.webp",
   "loupe": "/lib/images/vocabulaire/objets/loupe.webp",
+  "ordures": "/lib/images/vocabulaire/objets/ordures.webp",
   "palette": "/lib/images/vocabulaire/objets/palette.webp",
   "panier-courses": "/lib/images/vocabulaire/objets/panier-courses.webp",
   "panier": "/lib/images/vocabulaire/objets/panier.webp",
@@ -9019,6 +9081,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "escalade": "/lib/images/vocabulaire/sports/escalade.webp",
   "filet": "/lib/images/vocabulaire/sports/filet.webp",
   "football": "/lib/images/vocabulaire/sports/football.webp",
+  "gymnaste": "/lib/images/vocabulaire/sports/gymnaste.webp",
   "gymnastique": "/lib/images/vocabulaire/sports/gymnastique.webp",
   "haltère": "/lib/images/vocabulaire/sports/haltère.webp",
   "handball": "/lib/images/vocabulaire/sports/handball.webp",
@@ -9154,6 +9217,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "metro": "/lib/images/vocabulaire/transports/metro.webp",
   "montgolfière": "/lib/images/vocabulaire/transports/montgolfière.webp",
   "moto": "/lib/images/vocabulaire/transports/moto.webp",
+  "motocyclette": "/lib/images/vocabulaire/transports/motocyclette.webp",
   "métro": "/lib/images/vocabulaire/transports/métro.webp",
   "navire": "/lib/images/vocabulaire/transports/navire.webp",
   "panne-de-voiture": "/lib/images/vocabulaire/transports/panne-de-voiture.webp",
@@ -9233,6 +9297,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "robe": "/lib/images/vocabulaire/vetements/robe.webp",
   "salopette": "/lib/images/vocabulaire/vetements/salopette.webp",
   "sandales": "/lib/images/vocabulaire/vetements/sandales.webp",
+  "semelle": "/lib/images/vocabulaire/vetements/semelle.webp",
   "short": "/lib/images/vocabulaire/vetements/short.webp",
   "soulier": "/lib/images/vocabulaire/vetements/soulier.webp",
   "soutien-gorge": "/lib/images/vocabulaire/vetements/soutien-gorge.webp",

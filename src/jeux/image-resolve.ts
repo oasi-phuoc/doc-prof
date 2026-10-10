@@ -3,14 +3,30 @@
  */
 import { VOCAB_IMAGE_BY_LABEL } from './vocab-images'
 
+function stripAccents(s: string): string {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+
 function lookup(label: string): string | undefined {
   const key = label.trim().toLowerCase()
   if (!key) return undefined
-  return (
-    VOCAB_IMAGE_BY_LABEL[key] ??
-    VOCAB_IMAGE_BY_LABEL[key.replace(/ /g, '-')] ??
-    VOCAB_IMAGE_BY_LABEL[key.replace(/-/g, ' ')]
-  )
+  const candidates = [
+    key,
+    key.replace(/ /g, '-'),
+    key.replace(/-/g, ' '),
+    stripAccents(key),
+    stripAccents(key).replace(/ /g, '-'),
+  ]
+  // Singulier / pluriel simple (chaussure ↔ chaussures).
+  if (key.endsWith('s') && key.length > 3) candidates.push(key.slice(0, -1), stripAccents(key.slice(0, -1)))
+  else candidates.push(`${key}s`, `${stripAccents(key)}s`)
+  // Typo fréquente banque U.
+  if (key === 'alumette' || stripAccents(key) === 'alumette') candidates.push('allumette')
+  for (const c of candidates) {
+    const hit = VOCAB_IMAGE_BY_LABEL[c]
+    if (hit) return hit
+  }
+  return undefined
 }
 
 /**
