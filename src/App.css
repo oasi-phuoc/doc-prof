@@ -519,7 +519,7 @@ html,body,#root{
   box-shadow:inset 0 0 0 1.5px var(--purple)
 }
 
-/* Soutien FR type 2 — tableau sans bordure, sans soulignement des lettres */
+/* Soutien FR type 2 — cercle (#d8dde6 comme cartes type 1) + padding +10 px */
 .letter-table{
   width:100%;
   border-collapse:collapse;
@@ -529,7 +529,7 @@ html,body,#root{
 }
 .letter-table td{
   border:none;
-  padding:4px 2px;
+  padding:14px 12px; /* 4+10 / 2+10 */
   text-align:center;
   vertical-align:middle;
 }
@@ -537,28 +537,43 @@ html,body,#root{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:1.35em;
-  min-height:1.5em;
+  width:1.85em;
+  height:1.85em;
+  min-width:1.85em;
+  min-height:1.85em;
+  padding:0;
+  border:1px solid #d8dde6;
+  border-radius:50%;
   font-size:16px;
   font-weight:600;
-  line-height:1.2;
+  line-height:1;
   color:var(--ink);
   box-sizing:border-box;
   text-decoration:none;
+  background:#fff;
 }
 .letter-table-cell--lower,
 .letter-table-cell--upper{
   text-decoration:none;
 }
 .letter-table-cell.selected{
-  border:1.75px solid var(--ink);
-  border-radius:50%;
-  padding:1px 4px;
+  border-color:var(--purple);
+  background:color-mix(in srgb,var(--purple) 12%,#fff);
+  box-shadow:inset 0 0 0 1px var(--purple);
 }
 
-/* Soutien FR type 3 — deux tableaux 4×5 sans bordure (script + Playwrite) */
+/* Soutien FR type 3 — cadre par bloc (#d8dde6) ; +10 px entre lignes */
 .syllable-table-block{
-  display:flex;flex-direction:column;gap:10px;width:100%;min-width:0
+  display:flex;flex-direction:column;gap:12px;width:100%;min-width:0
+}
+.syllable-table-frame{
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #d8dde6;
+  border-radius:8px;
+  background:#fff;
+  padding:8px 10px;
+  overflow:hidden;
 }
 .syllable-table{
   width:100%;
@@ -569,7 +584,7 @@ html,body,#root{
 }
 .syllable-table td{
   border:none;
-  padding:6px 4px;
+  padding:16px 4px; /* 6+10 vertical */
   text-align:center;
   vertical-align:middle;
 }
@@ -1548,8 +1563,10 @@ html,body,#root{
   .sequence-term,.select-pill,.digit-cell,.letter-cell{border-color:#000!important}
   .compare-circle,.op-name-box,.order-given-box,.geo-block.geo-name-card,.frac-shape-card{border-color:#c8c4d0!important}
   .letter-table,.letter-table td{border:none!important}
-  .letter-table-cell.selected{border-color:#000!important}
+  .letter-table-cell{border-color:#d8dde6!important}
+  .letter-table-cell.selected{border-color:var(--purple)!important}
   .letter-table-cell--lower,.letter-table-cell--upper{text-decoration:none!important}
+  .syllable-table-frame{border-color:#d8dde6!important}
   .syllable-table,.syllable-table td{border:none!important}
   .syllable-vowel{color:var(--purple)!important}
   .syllable-cons{color:#000!important}
@@ -4143,4 +4160,37 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .coord-block.is-cfr-plan .point-label{fill:var(--purple,#5b3a8c);font-weight:700}
 .coord-cfr-read-box .answer-line-field.compact{min-width:2.2em;width:2.2em;flex:0 0 auto}
 .coord-grid.is-fixed-mm .axis-tick{stroke:#111;stroke-width:0.32}
+
+/* Soutien FR : consignes + mots en 14 pt */
+.worksheet-sheet.is-soutien-fr .exercise-heading p,
+.worksheet-sheet.is-soutien-fr .column-prompt,
+.worksheet-sheet.is-soutien-fr .item-content,
+.worksheet-sheet.is-soutien-fr .sheet-body:has(.layout-vocab-table) .exercise-heading p,
+.worksheet-sheet.is-soutien-fr .vocab-card-word,
+.worksheet-sheet.is-soutien-fr .vocab-match-text,
+.worksheet-sheet.is-soutien-fr .syllable-match-left,
+.worksheet-sheet.is-soutien-fr .syllable-match-right,
+.worksheet-sheet.is-soutien-fr .listen-check-line,
+.worksheet-sheet.is-soutien-fr .listen-check-caption,
+.worksheet-sheet.is-soutien-fr .syllable-complete-text,
+.worksheet-sheet.is-soutien-fr .syllable-complete-full,
+.worksheet-sheet.is-soutien-fr .phrase-scramble-text,
+.worksheet-sheet.is-soutien-fr .phrase-scramble-letters,
+.worksheet-sheet.is-soutien-fr .determinant-fill-text,
+.worksheet-sheet.is-soutien-fr .dictee-write-line,
+.worksheet-sheet.is-soutien-fr .count-sound-prompt,
+.worksheet-sheet.is-soutien-fr .read-phrases-text,
+.worksheet-sheet.is-soutien-fr .audio-match-word,
+.worksheet-sheet.is-soutien-fr .audio-match-word-text,
+.worksheet-sheet.is-soutien-fr .word-search-list-cell,
+.worksheet-sheet.is-soutien-fr .word-search-list-word,
+.worksheet-sheet.is-soutien-fr .letter-table-cell,
+.worksheet-sheet.is-soutien-fr .syllable-table--script .syllable-table-cell,
+.worksheet-sheet.is-soutien-fr .phrase-word,
+.worksheet-sheet.is-soutien-fr .phrase-order-answer{
+  font-size:14pt
+}
+.worksheet-sheet.is-soutien-fr .vocab-card-word{
+  white-space:normal;line-height:1.2;overflow:visible;text-overflow:clip
+}
 /* End */

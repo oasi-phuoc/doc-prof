@@ -11,7 +11,7 @@ export const SOUTIEN_KINDS = [
   {
     id: 'lettres',
     label: '2 · Reconnaître la lettre',
-    description: 'Tableau de lettres sans numérotation ; jusqu’à 15 lignes.',
+    description: 'Tableau de lettres en cercles ; 8 colonnes ; 6 lignes par défaut (max. 15).',
     instruction: 'Entourez toutes les lettres demandées.',
     preferredColumns: 1 as const,
   },
@@ -19,7 +19,7 @@ export const SOUTIEN_KINDS = [
     id: 'syllabes',
     label: '3 · Lecture de syllabes',
     description:
-      'Deux tableaux (script + Playwrite) : lignes paires, moitié CV et moitié doubles sans nasal.',
+      'Deux blocs cadrés (script + Playwrite) : 5 lignes par défaut, moitié CV et moitié doubles sans nasal.',
     instruction: 'Lisez les syllabes ci-dessous.',
     preferredColumns: 1 as const,
   },

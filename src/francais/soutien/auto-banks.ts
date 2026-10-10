@@ -2,6 +2,7 @@
  * Banques auto pour consonnes / sons complexes (à partir des pools + lecture).
  * Les voyelles restent dans SOUTIEN_VOWEL_BANKS (contenu pédagogique CSC).
  */
+import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { resolveGameImageSrc } from '@/jeux/image-resolve'
 import { GRAPHEME_WORD_POOLS } from './grapheme-word-pools'
 import { LECTURE_WORD_ITEMS } from './lecture-word-items'
@@ -148,12 +149,14 @@ function wordsForSound(sound: SoutienSoundOption, letter: SoutienLetterOption): 
     if (resolveGameImageSrc(w)) withImg.push(w)
     else without.push(w)
   }
+  // Slugs conservés pour image / phonème ; l’affichage applique displayVocabLabel.
   return [...withImg, ...without]
 }
 
 function buildCompletes(words: readonly string[], graphemes: readonly string[]): SoutienComplete[] {
   const out: SoutienComplete[] = []
-  for (const word of words.slice(0, 18)) {
+  for (const raw of words.slice(0, 18)) {
+    const word = displayVocabLabel(raw)
     const lower = word.toLowerCase()
     let blank = ''
     let before = ''
@@ -199,7 +202,8 @@ function buildCompletes(words: readonly string[], graphemes: readonly string[]):
 
 function buildCompounds(words: readonly string[]): SoutienCompound[] {
   const out: SoutienCompound[] = []
-  for (const word of words.slice(0, 16)) {
+  for (const raw of words.slice(0, 16)) {
+    const word = displayVocabLabel(raw)
     const parts = autoSplit(word)
     if (!parts || !parts[0] || !parts[1]) continue
     out.push({ parts: [parts[0], parts[1]], word })
@@ -208,23 +212,28 @@ function buildCompounds(words: readonly string[]): SoutienCompound[] {
 }
 
 function buildSyllableItems(words: readonly string[]): SoutienSyllableItem[] {
-  return words.slice(0, 24).map((word) => {
+  return words.slice(0, 24).map((raw) => {
+    const word = displayVocabLabel(raw)
     const parts = autoSplit(word)
     return { word, parts: parts ? [parts[0], parts[1]] : [word] }
   })
 }
 
 function buildScrambles(words: readonly string[]): SoutienScramble[] {
-  return words.slice(0, 20).map((word) => ({
-    sentence: `Voici le mot ${word} dans la phrase.`,
-    word,
-    letters: scrambleLetters(word),
-  }))
+  return words.slice(0, 20).map((raw) => {
+    const word = displayVocabLabel(raw)
+    return {
+      sentence: `Voici le mot ${word} dans la phrase.`,
+      word,
+      letters: scrambleLetters(word),
+    }
+  })
 }
 
 function buildDeterminants(words: readonly string[]): SoutienDet[] {
   const out: SoutienDet[] = []
-  for (const word of words.slice(0, 16)) {
+  for (const raw of words.slice(0, 16)) {
+    const word = displayVocabLabel(raw)
     const art = articleFor(word) === 'Une' ? 'La' : 'Le'
     const sentence = `${art} ${word} est sur la table.`
     out.push({
@@ -236,18 +245,23 @@ function buildDeterminants(words: readonly string[]): SoutienDet[] {
 }
 
 function buildPhrases(words: readonly string[]): string[] {
-  return words.slice(0, 16).map((w) => `Je vois ${articleFor(w).toLowerCase()} ${w} ici.`)
+  return words.slice(0, 16).map((raw) => {
+    const w = displayVocabLabel(raw)
+    return `Je vois ${articleFor(w).toLowerCase()} ${w} ici.`
+  })
 }
 
 function buildAudioPairs(words: readonly string[]): SoutienAudio[] {
-  return words.slice(0, 12).map((word, i) => ({
-    word,
-    other: words[(i + 3) % Math.max(words.length, 1)] ?? word,
-  }))
+  return words.slice(0, 12).map((raw, i) => {
+    const word = displayVocabLabel(raw)
+    const otherRaw = words[(i + 3) % Math.max(words.length, 1)] ?? raw
+    return { word, other: displayVocabLabel(otherRaw) }
+  })
 }
 
 function buildOrderSentences(words: readonly string[]): (readonly string[])[] {
-  return words.slice(0, 12).map((w) => {
+  return words.slice(0, 12).map((raw) => {
+    const w = displayVocabLabel(raw)
     const art = articleFor(w) === 'Une' ? 'la/determinant' : 'le/determinant'
     return [`je/pronom`, `vois/verbe`, art, `${w}/nom`, `./interjection`] as const
   })
@@ -282,6 +296,7 @@ export function buildAutoSoutienBank(
     sound: sound.phoneme,
     label: `${letter.label} · ${sound.label}`,
     graphemes: sound.graphemes,
+    // Slugs bruts (lookup image / phonème) ; l’affichage fiche applique displayVocabLabel.
     words: seed.slice(0, 24),
     syllables: buildSyllables(letter, sound),
     compounds: buildCompounds(seed),
@@ -293,6 +308,6 @@ export function buildAutoSoutienBank(
     audioPairs: buildAudioPairs(seed),
     syllableItems: buildSyllableItems(seed),
     orderSentences: buildOrderSentences(seed),
-    wordSearchWords: seed.slice(0, 12),
+    wordSearchWords: seed.slice(0, 12).map(displayVocabLabel),
   }
 }

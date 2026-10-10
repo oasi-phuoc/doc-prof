@@ -165,9 +165,9 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
                 : isLectureDense
                   ? { count: 4 }
                   : soutienKind === 'lettres'
-                    ? { count: 5 }
+                    ? { count: 6 }
                     : soutienKind === 'syllabes'
-                      ? { count: 4 }
+                      ? { count: 5 }
                       : soutienKind === 'relier' ||
                           soutienKind === 'completer' ||
                           soutienKind === 'ecouter' ||

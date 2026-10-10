@@ -6,6 +6,7 @@
  * - Audio : phonème seul (ex. /o/ inclut au, eau → bateau, chaud…).
  * - Types 12 / 14 : découpe Alpha (an/au/eau… exclus du /a/ simple).
  */
+import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { normalizeLetter } from '@/francais/lecture-banks'
 import { VOCAB_TOPIC_BANKS } from '@/francais/vocab-registry'
 import { tokenizeAlpha } from '@/jeux/alpha-phonics'
@@ -362,18 +363,22 @@ export function compoundsForType1Words(
   )
   const out: SoutienCompound[] = []
   const seen = new Set<string>()
-  for (const word of words.slice(0, 16)) {
-    const key = word.trim().toLowerCase()
-    if (!key || seen.has(key)) continue
-    const existing = byWord.get(key)
+  for (const raw of words.slice(0, 16)) {
+    const word = displayVocabLabel(raw)
+    const key = raw.trim().toLowerCase()
+    const displayKey = word.toLowerCase()
+    if (!key || seen.has(key) || seen.has(displayKey)) continue
+    const existing = byWord.get(key) ?? byWord.get(displayKey)
     if (existing) {
       seen.add(key)
-      out.push(existing)
+      seen.add(displayKey)
+      out.push({ ...existing, word: displayVocabLabel(existing.word) })
       continue
     }
     const parts = autoSplitWord(word)
     if (!parts || !parts[0] || !parts[1]) continue
     seen.add(key)
+    seen.add(displayKey)
     out.push({ parts: [parts[0], parts[1]], word })
   }
   return out

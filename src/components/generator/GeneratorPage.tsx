@@ -2715,35 +2715,30 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                           : undefined
                   }
                   type="number"
-                  min={soutienKind === 'syllabes' ? 2 : 1}
+                  min={1}
                   max={maxQuestions}
-                  step={soutienKind === 'syllabes' ? 2 : 1}
+                  step={1}
                   value={
                     isSoutienDetLocked ? (soutienType5Count as number) : activeBlock.count
                   }
                   readOnly={isSoutienDetLocked}
                   onChange={(event) => {
                     if (isSoutienDetLocked) return
-                    let next = Math.max(
-                      soutienKind === 'syllabes' ? 2 : 1,
+                    const next = Math.max(
+                      1,
                       Math.min(maxQuestions, Number(event.target.value) || 1),
                     )
-                    // Type 3 : toujours un nombre pair de lignes (les deux blocs).
-                    if (soutienKind === 'syllabes' && next % 2 !== 0) {
-                      next = Math.min(maxQuestions, next + 1)
-                    }
                     updatePage({ count: next })
                   }}
                 />
                 {soutienKind === 'lettres' ? (
                   <small className="muted">
-                    Nombre de lignes du tableau (10 lettres par ligne, max. 15).
+                    Nombre de lignes du tableau (8 lettres par ligne, max. 15 · défaut 6).
                   </small>
                 ) : null}
                 {soutienKind === 'syllabes' ? (
                   <small className="muted">
-                    Lignes paires pour les deux tableaux (5 syllabes par ligne · moitié CV, moitié
-                    doubles).
+                    Lignes par bloc (script et Playwrite · 5 syllabes par ligne · défaut 5).
                   </small>
                 ) : null}
                 {isSoutienRelier ? (

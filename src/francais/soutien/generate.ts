@@ -1,6 +1,7 @@
 import { int, pick, shuffle, type Rng } from '@/math/rng'
 import { tagged } from '@/francais/phrase-sentences'
 import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
+import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { soutienBankById, type SoutienVowelBank } from './banks'
 import { soutienAudioFor } from './audio'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
@@ -34,6 +35,7 @@ export function type1WordPool(bank: SoutienVowelBank): string[] {
   const fromBank = pool.filter((w) => bankSet.has(w.toLowerCase()))
   const fromVocabImg = withImg.filter((w) => !bankSet.has(w.toLowerCase()))
   const fromVocabRest = without.filter((w) => !bankSet.has(w.toLowerCase()))
+  // Slugs conservés pour image / phonème ; affichage via displayVocabLabel.
   return [...fromBank, ...fromVocabImg, ...fromVocabRest]
 }
 
@@ -107,8 +109,9 @@ function otherWords(bank: SoutienVowelBank): string[] {
 
 /** Type 2 : tableau cols×rows ; le nombre de questions = nombre de lignes (max 15). */
 function letterGrid(rng: Rng, bank: SoutienVowelBank, rowCount: number): MathItem {
-  const cols = 10
-  const rows = Math.max(1, Math.min(15, Math.round(rowCount) || 5))
+  /** 8 colonnes : cercles + padding 10 px tiennent sur l’A4. */
+  const cols = 8
+  const rows = Math.max(1, Math.min(15, Math.round(rowCount) || 6))
   const size = cols * rows
   /** ~¼ des cases = lettre / digramme cible. */
   const targetCount = Math.max(4, Math.min(size - cols, Math.round(size * 0.24)))
@@ -151,11 +154,9 @@ function countSoundInPhrase(phrase: string, bank: SoutienVowelBank): number {
 /** Consonnes simples (pas de digrammes CH/GN/PH/QU). */
 const SYLLABLE_CONS = ['b', 'c', 'd', 'f', 'g', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'z'] as const
 
-/** Lignes paires pour le type 3 (les deux tableaux script + Playwrite). */
-function evenSyllableRows(rowCount: number): number {
-  let rows = Math.max(2, Math.min(10, Math.round(rowCount) || 4))
-  if (rows % 2 !== 0) rows = Math.min(10, rows + 1)
-  return rows
+/** Lignes par bloc pour le type 3 (script + Playwrite, même contenu). */
+function syllableBlockRows(rowCount: number): number {
+  return Math.max(1, Math.min(10, Math.round(rowCount) || 5))
 }
 
 const SYLLABLE_VOWELS = ['a', 'e', 'i', 'o', 'u', 'y'] as const
@@ -288,25 +289,28 @@ function genKind(
             .filter((e) => e.label.trim())
             .slice(0, 16)
             .map((e, index) => {
-              const label = e.label.trim()
+              const raw = e.label.trim()
+              const label = displayVocabLabel(raw)
               return {
                 id: e.id || `soutien-libre-${index}`,
                 label,
-                imageSrc: e.imageSrc || soutienImageFor(label),
-                audioSrc: soutienAudioFor(label),
+                imageSrc: e.imageSrc || soutienImageFor(raw) || soutienImageFor(label),
+                audioSrc: soutienAudioFor(raw) ?? soutienAudioFor(label),
               }
             })
         : null
       /** Tirage aléatoire 16 mots (image prioritaire) — se régénère avec la graine. */
-      const words = libreEntries
+      const rawWords = libreEntries
         ? libreEntries.map((e) => e.label)
         : type1Words(bank, rng)
       const entries =
         libreEntries ??
-        soutienEntriesWithImages(words).map((e) => ({
+        soutienEntriesWithImages(rawWords).map((e) => ({
           ...e,
           audioSrc: soutienAudioFor(e.label),
+          label: displayVocabLabel(e.label),
         }))
+      const words = entries.map((e) => e.label)
       const total = Math.max(1, Math.min(16, entries.length))
       /** Grille 4×4 pour tenir sur l’A4 avec en-tête et pied. */
       const cols = 4
@@ -336,11 +340,11 @@ function genKind(
       }
     case 'syllabes': {
       /**
-       * Deux tableaux (script + Playwrite), même contenu.
-       * `count` = lignes paires (4→4×5, 6→6×5) ; moitié CV, moitié doubles sans nasal.
+       * Deux blocs (script + Playwrite), même contenu.
+       * `count` = lignes par bloc (défaut 5×5) ; moitié CV, moitié doubles sans nasal.
        */
       const cols = 5
-      const rows = evenSyllableRows(n)
+      const rows = syllableBlockRows(n)
       const list = buildSyllableReadingList(rng, bank, cols * rows)
       return {
         instruction: 'Lisez les syllabes ci-dessous.',
@@ -415,24 +419,31 @@ function genKind(
         ? (options!.soutienCompleterEntries ?? [])
             .filter((e) => e.word.trim() && e.blank.trim())
             .slice(0, want)
-            .map((row) => ({
-              article: row.article.trim() || 'Un',
-              before: row.before,
-              blank: row.blank,
-              after: row.after,
-              word: row.word.trim(),
-              imageSrc: row.imageSrc || soutienImageFor(row.word),
-            }))
+            .map((row) => {
+              const raw = row.word.trim()
+              const word = displayVocabLabel(raw)
+              return {
+                article: row.article.trim() || 'Un',
+                before: row.before,
+                blank: row.blank,
+                after: row.after,
+                word,
+                imageSrc: row.imageSrc || soutienImageFor(raw) || soutienImageFor(word),
+              }
+            })
         : shuffle(rng, [...bank.completes])
             .slice(0, Math.min(want, bank.completes.length))
-            .map((row) => ({
-              article: row.article,
-              before: row.before,
-              blank: row.blank,
-              after: row.after,
-              word: row.word,
-              imageSrc: soutienImageFor(row.word),
-            }))
+            .map((row) => {
+              const word = displayVocabLabel(row.word)
+              return {
+                article: row.article,
+                before: row.before,
+                blank: row.blank,
+                after: row.after,
+                word,
+                imageSrc: soutienImageFor(row.word) || soutienImageFor(word),
+              }
+            })
       const rows = Math.max(1, Math.ceil(pool.length / cols))
       return {
         instruction: 'Complétez les mots à l’aide de l’image.',
@@ -469,16 +480,18 @@ function genKind(
       const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
       const checked = optionsList.filter((w) => positiveSet.has(w.toLowerCase()))
       const audios = optionsList.map((w) => soutienAudioFor(w))
+      const shown = optionsList.map(displayVocabLabel)
+      const shownChecked = checked.map(displayVocabLabel)
       return {
         instruction: `Écoutez les mots et cochez quand vous entendez le son ${bank.sound}.`,
         preferredColumns: 1,
         items: [
           {
             layout: 'listen-check',
-            options: optionsList,
+            options: shown,
             optionAudioSrcs: audios.map((a) => a ?? ''),
-            labels: checked,
-            answer: checked.join(' · '),
+            labels: shownChecked,
+            answer: shownChecked.join(' · '),
             letterGridCols: cols,
             themeGraphemes: [...lessonSoundGraphemes(bank)],
           },
@@ -517,17 +530,19 @@ function genKind(
       const images = pool.map((w) => soutienImageFor(w)!)
       const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
       const checked = pool.filter((w) => positiveSet.has(w.toLowerCase()))
+      const shown = pool.map(displayVocabLabel)
+      const shownChecked = checked.map(displayVocabLabel)
       return {
         instruction: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
         preferredColumns: 1,
         items: [
           {
             layout: 'listen-check',
-            options: pool,
+            options: shown,
             optionImages: images,
             imagesAvailable: true,
-            labels: checked,
-            answer: checked.join(' · '),
+            labels: shownChecked,
+            answer: shownChecked.join(' · '),
             letterGridCols: cols,
             themeGraphemes: [...lessonSoundGraphemes(bank)],
           },
@@ -565,18 +580,20 @@ function genKind(
             syllableSoundItems: chosen.map((item) => {
               const parts = [...item.parts]
               const hitIndex = parts.findIndex((p) => wordHasLessonLetter(p, bank))
+              const word = displayVocabLabel(item.word)
               return {
-                word: item.word,
+                word,
                 parts,
                 hitIndex: hitIndex >= 0 ? hitIndex : -1,
-                imageSrc: soutienImageFor(item.word),
+                imageSrc: soutienImageFor(item.word) || soutienImageFor(word),
               }
             }),
             answer: chosen
               .map((item) => {
                 const parts = item.parts
                 const hit = parts.find((p) => wordHasLessonLetter(p, bank))
-                return hit ? `${item.word} → ${hit}` : item.word
+                const word = displayVocabLabel(item.word)
+                return hit ? `${word} → ${hit}` : word
               })
               .join(' · '),
             letterGridCols: cols,
@@ -608,15 +625,16 @@ function genKind(
                 rng,
                 [...row.word.toLocaleUpperCase('fr-FR')].filter((ch) => /\p{L}/u.test(ch)),
               ).join(' ')
+              const word = displayVocabLabel(row.word)
               return {
                 before,
                 after,
-                word: row.word,
+                word,
                 letters,
-                imageSrc: soutienImageFor(row.word),
+                imageSrc: soutienImageFor(row.word) || soutienImageFor(word),
               }
             }),
-            answer: rows.map((row) => row.word).join(' · '),
+            answer: rows.map((row) => displayVocabLabel(row.word)).join(' · '),
             themeGraphemes: [...bank.graphemes],
           },
         ],
@@ -654,10 +672,9 @@ function genKind(
       /** Grille 2 colonnes ; count = nb de mots ; trait continu, sans bordure. */
       const want = Math.max(1, Math.min(16, n))
       const pool = type1Words(bank, rng)
-      const words = shuffle(rng, pool.length ? pool : [...bank.words]).slice(
-        0,
-        Math.min(want, pool.length || bank.words.length),
-      )
+      const words = shuffle(rng, pool.length ? pool : [...bank.words])
+        .slice(0, Math.min(want, pool.length || bank.words.length))
+        .map(displayVocabLabel)
       return {
         instruction: 'Dictée. Écrivez les mots correctement !',
         preferredColumns: 1,
@@ -745,11 +762,8 @@ function genKind(
         0,
         Math.min(want, bank.audioPairs.length),
       )
-      const listenWords = pairs.map((p) => p.word)
-      const showWords = shuffle(
-        rng,
-        pairs.map((p) => p.word),
-      )
+      const listenWords = pairs.map((p) => displayVocabLabel(p.word))
+      const showWords = shuffle(rng, [...listenWords])
       return {
         instruction: 'Écoutez (QR) et reliez au bon mot.',
         preferredColumns: 1,
@@ -758,7 +772,7 @@ function genKind(
             layout: 'audio-match',
             audioMatchRows: listenWords.map((listenWord, i) => ({
               listenWord,
-              audioSrc: soutienAudioFor(listenWord),
+              audioSrc: soutienAudioFor(pairs[i]!.word) ?? soutienAudioFor(listenWord),
               showWord: showWords[i] ?? listenWord,
             })),
             answer: listenWords.map((w, i) => `${i + 1} → ${w}`).join(' · '),
@@ -769,7 +783,12 @@ function genKind(
     }
     case 'mots-meles': {
       /** Liste 12 mots + grille 15×15 (H/V) ; lettres sans accents ni ligatures. */
-      const puzzle = buildWordSearch(rng, bank.wordSearchWords, 15, 12)
+      const puzzle = buildWordSearch(
+        rng,
+        bank.wordSearchWords.map(displayVocabLabel),
+        15,
+        12,
+      )
       const hits = [...wordSearchHitCells(puzzle.placements)]
       return {
         instruction: 'Entourez les mots dans la grille.',

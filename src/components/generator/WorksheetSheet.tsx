@@ -152,9 +152,10 @@ export function WorksheetSheet({
   )
     ? 1
     : page.columns
+  const isSoutienFr = page.domain === 'soutien-fr'
   return (
     <article
-      className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${evalMode ? ' is-eval' : ''}`}
+      className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${evalMode ? ' is-eval' : ''}`}
       style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (

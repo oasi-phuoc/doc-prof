@@ -1,6 +1,7 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import QRCode from 'qrcode'
 import type { MathItem, PreviewMode } from '@/math/types'
+import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { highlightThemeLetters } from './highlights'
 
@@ -66,9 +67,12 @@ export function VocabTable({ item }: { item: MathItem }) {
             </div>
             <div className="vocab-card-word">
               {entry?.label
-                ? highlight
-                  ? highlightThemeLetters(entry.label, themeLetters)
-                  : entry.label
+                ? (() => {
+                    const label = displayVocabLabel(entry.label)
+                    return highlight
+                      ? highlightThemeLetters(label, themeLetters)
+                      : label
+                  })()
                 : ''}
             </div>
           </div>
@@ -363,7 +367,7 @@ export function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMod
     }
   }
   const isTable = item.letterGridVariant === 'table'
-  const cols = Math.max(1, item.letterGridCols ?? (isTable ? 10 : 8))
+  const cols = Math.max(1, item.letterGridCols ?? (isTable ? 8 : 8))
 
   if (isTable) {
     const rows: string[][] = []
@@ -434,24 +438,26 @@ export function SyllableTableBlock({ item }: { item: MathItem }) {
   }
 
   const renderTable = (variant: 'script' | 'playwrite') => (
-    <table
-      className={`syllable-table syllable-table--${variant}`}
-      aria-label={variant === 'script' ? 'Syllabes en script' : 'Syllabes en écriture Playwrite'}
-    >
-      <tbody>
-        {rows.map((row, rIdx) => (
-          <tr key={`${variant}-r-${rIdx}`}>
-            {row.map((syllable, cIdx) => (
-              <td key={`${variant}-${rIdx}-${cIdx}-${syllable}`}>
-                <span className="syllable-table-cell">
-                  {highlightThemeLetters(syllable, graphemes)}
-                </span>
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="syllable-table-frame">
+      <table
+        className={`syllable-table syllable-table--${variant}`}
+        aria-label={variant === 'script' ? 'Syllabes en script' : 'Syllabes en écriture Playwrite'}
+      >
+        <tbody>
+          {rows.map((row, rIdx) => (
+            <tr key={`${variant}-r-${rIdx}`}>
+              {row.map((syllable, cIdx) => (
+                <td key={`${variant}-${rIdx}-${cIdx}-${syllable}`}>
+                  <span className="syllable-table-cell">
+                    {highlightThemeLetters(syllable, graphemes)}
+                  </span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 
   return (

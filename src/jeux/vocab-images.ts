@@ -24,7 +24,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/bijou.webp"
       },
       {
-        "label": "boucles-d-oreilles",
+        "label": "boucles d'oreilles",
         "src": "/lib/images/vocabulaire/accessoires/boucles-d-oreilles.webp"
       },
       {
@@ -52,7 +52,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/joyau.webp"
       },
       {
-        "label": "lunettes-de-soleil",
+        "label": "lunettes de soleil",
         "src": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp"
       },
       {
@@ -68,7 +68,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/montre.webp"
       },
       {
-        "label": "noeud-papillon",
+        "label": "noeud papillon",
         "src": "/lib/images/vocabulaire/accessoires/noeud-papillon.webp"
       },
       {
@@ -76,19 +76,19 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/parapluie.webp"
       },
       {
-        "label": "porte-monnaie",
+        "label": "porte monnaie",
         "src": "/lib/images/vocabulaire/accessoires/porte-monnaie.webp"
       },
       {
-        "label": "sac-a-dos",
+        "label": "sac à dos",
         "src": "/lib/images/vocabulaire/accessoires/sac-a-dos.webp"
       },
       {
-        "label": "sac-a-main",
+        "label": "sac à main",
         "src": "/lib/images/vocabulaire/accessoires/sac-a-main.webp"
       },
       {
-        "label": "sac-de-course",
+        "label": "sac de course",
         "src": "/lib/images/vocabulaire/accessoires/sac-de-course.webp"
       },
       {
@@ -106,39 +106,39 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Actions et situations",
     "words": [
       {
-        "label": "acheter-un-billet-au-guichet",
+        "label": "acheter un billet au guichet",
         "src": "/lib/images/vocabulaire/actions/acheter-un-billet-au-guichet.webp"
       },
       {
-        "label": "aider-aux-devoirs",
+        "label": "aider aux devoirs",
         "src": "/lib/images/vocabulaire/actions/aider-aux-devoirs.webp"
       },
       {
-        "label": "aller-a-la-bibliotheque",
+        "label": "aller à la bibliotheque",
         "src": "/lib/images/vocabulaire/actions/aller-a-la-bibliotheque.webp"
       },
       {
-        "label": "aller-a-la-piscine",
+        "label": "aller à la piscine",
         "src": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp"
       },
       {
-        "label": "aller-en-cours",
+        "label": "aller en cours",
         "src": "/lib/images/vocabulaire/actions/aller-en-cours.webp"
       },
       {
-        "label": "arriver-en-retard",
+        "label": "arriver en retard",
         "src": "/lib/images/vocabulaire/actions/arriver-en-retard.webp"
       },
       {
-        "label": "avoir-mal-aux-pieds",
+        "label": "avoir mal aux pieds",
         "src": "/lib/images/vocabulaire/actions/avoir-mal-aux-pieds.webp"
       },
       {
-        "label": "baby-sitting",
+        "label": "baby sitting",
         "src": "/lib/images/vocabulaire/actions/baby-sitting.webp"
       },
       {
-        "label": "boire-le-jus-d-une-amie",
+        "label": "boire le jus d'une amie",
         "src": "/lib/images/vocabulaire/actions/boire-le-jus-d-une-amie.webp"
       },
       {
@@ -146,15 +146,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/boire.webp"
       },
       {
-        "label": "cafe-entre-amis",
+        "label": "cafe entre amis",
         "src": "/lib/images/vocabulaire/actions/cafe-entre-amis.webp"
       },
       {
-        "label": "chercher-dans-son-sac",
+        "label": "chercher dans son sac",
         "src": "/lib/images/vocabulaire/actions/chercher-dans-son-sac.webp"
       },
       {
-        "label": "chercher-une-salle",
+        "label": "chercher une salle",
         "src": "/lib/images/vocabulaire/actions/chercher-une-salle.webp"
       },
       {
@@ -162,7 +162,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/chuchoter.webp"
       },
       {
-        "label": "courir-vers-le-bus",
+        "label": "courir vers le bus",
         "src": "/lib/images/vocabulaire/actions/courir-vers-le-bus.webp"
       },
       {
@@ -170,11 +170,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/courir.webp"
       },
       {
-        "label": "cours-au-tableau-blanc",
+        "label": "cours au tableau blanc",
         "src": "/lib/images/vocabulaire/actions/cours-au-tableau-blanc.webp"
       },
       {
-        "label": "cours-d-anglais",
+        "label": "cours d'anglais",
         "src": "/lib/images/vocabulaire/actions/cours-d-anglais.webp"
       },
       {
@@ -186,15 +186,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/dedicace.webp"
       },
       {
-        "label": "demander-a-l-accueil",
+        "label": "demander à l accueil",
         "src": "/lib/images/vocabulaire/actions/demander-a-l-accueil.webp"
       },
       {
-        "label": "demander-un-rayon",
+        "label": "demander un rayon",
         "src": "/lib/images/vocabulaire/actions/demander-un-rayon.webp"
       },
       {
-        "label": "demander-une-salle",
+        "label": "demander une salle",
         "src": "/lib/images/vocabulaire/actions/demander-une-salle.webp"
       },
       {
@@ -202,15 +202,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/demenagement.webp"
       },
       {
-        "label": "deux-etudiants",
+        "label": "deux etudiants",
         "src": "/lib/images/vocabulaire/actions/deux-etudiants.webp"
       },
       {
-        "label": "discuter-assises",
+        "label": "discuter assises",
         "src": "/lib/images/vocabulaire/actions/discuter-assises.webp"
       },
       {
-        "label": "discuter-entre-amies",
+        "label": "discuter entre amies",
         "src": "/lib/images/vocabulaire/actions/discuter-entre-amies.webp"
       },
       {
@@ -222,31 +222,31 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/ecrire.webp"
       },
       {
-        "label": "eleve-au-tableau",
+        "label": "eleve au tableau",
         "src": "/lib/images/vocabulaire/actions/eleve-au-tableau.webp"
       },
       {
-        "label": "emprunter-des-dvd",
+        "label": "emprunter des dvd",
         "src": "/lib/images/vocabulaire/actions/emprunter-des-dvd.webp"
       },
       {
-        "label": "entretien-d-embauche",
+        "label": "entretien d'embauche",
         "src": "/lib/images/vocabulaire/actions/entretien-d-embauche.webp"
       },
       {
-        "label": "envoyer-dans-la-cour",
+        "label": "envoyer dans la cour",
         "src": "/lib/images/vocabulaire/actions/envoyer-dans-la-cour.webp"
       },
       {
-        "label": "exercice-chronometre",
+        "label": "exercice chronometre",
         "src": "/lib/images/vocabulaire/actions/exercice-chronometre.webp"
       },
       {
-        "label": "expliquer-un-exercice",
+        "label": "expliquer un exercice",
         "src": "/lib/images/vocabulaire/actions/expliquer-un-exercice.webp"
       },
       {
-        "label": "faire-ses-devoirs",
+        "label": "faire ses devoirs",
         "src": "/lib/images/vocabulaire/actions/faire-ses-devoirs.webp"
       },
       {
@@ -254,31 +254,31 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/formation.webp"
       },
       {
-        "label": "groupe-d-etudiants",
+        "label": "groupe d'etudiants",
         "src": "/lib/images/vocabulaire/actions/groupe-d-etudiants.webp"
       },
       {
-        "label": "indiquer-un-bureau",
+        "label": "indiquer un bureau",
         "src": "/lib/images/vocabulaire/actions/indiquer-un-bureau.webp"
       },
       {
-        "label": "indiquer-un-rayon",
+        "label": "indiquer un rayon",
         "src": "/lib/images/vocabulaire/actions/indiquer-un-rayon.webp"
       },
       {
-        "label": "lever-la-main",
+        "label": "lever la main",
         "src": "/lib/images/vocabulaire/actions/lever-la-main.webp"
       },
       {
-        "label": "lire-a-la-bibliotheque",
+        "label": "lire à la bibliotheque",
         "src": "/lib/images/vocabulaire/actions/lire-a-la-bibliotheque.webp"
       },
       {
-        "label": "lire-dans-un-fauteuil",
+        "label": "lire dans un fauteuil",
         "src": "/lib/images/vocabulaire/actions/lire-dans-un-fauteuil.webp"
       },
       {
-        "label": "lire-l-emploi-du-temps",
+        "label": "lire l'emploi du temps",
         "src": "/lib/images/vocabulaire/actions/lire-l-emploi-du-temps.webp"
       },
       {
@@ -294,103 +294,103 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/marcher.webp"
       },
       {
-        "label": "monter-l-escalier",
+        "label": "monter l'escalier",
         "src": "/lib/images/vocabulaire/actions/monter-l-escalier.webp"
       },
       {
-        "label": "montrer-le-chemin",
+        "label": "montrer le chemin",
         "src": "/lib/images/vocabulaire/actions/montrer-le-chemin.webp"
       },
       {
-        "label": "montrer-son-billet",
+        "label": "montrer son billet",
         "src": "/lib/images/vocabulaire/actions/montrer-son-billet.webp"
       },
       {
-        "label": "montrer-son-sac",
+        "label": "montrer son sac",
         "src": "/lib/images/vocabulaire/actions/montrer-son-sac.webp"
       },
       {
-        "label": "montrer-son-telephone",
+        "label": "montrer son telephone",
         "src": "/lib/images/vocabulaire/actions/montrer-son-telephone.webp"
       },
       {
-        "label": "nager-a-la-piscine",
+        "label": "nager à la piscine",
         "src": "/lib/images/vocabulaire/actions/nager-a-la-piscine.webp"
       },
       {
-        "label": "nourrir-les-animaux",
+        "label": "nourrir les animaux",
         "src": "/lib/images/vocabulaire/actions/nourrir-les-animaux.webp"
       },
       {
-        "label": "parler-au-professeur",
+        "label": "parler au professeur",
         "src": "/lib/images/vocabulaire/actions/parler-au-professeur.webp"
       },
       {
-        "label": "partager-un-livre",
+        "label": "partager un livre",
         "src": "/lib/images/vocabulaire/actions/partager-un-livre.webp"
       },
       {
-        "label": "passagers-d-avion",
+        "label": "passagers d'avion",
         "src": "/lib/images/vocabulaire/actions/passagers-d-avion.webp"
       },
       {
-        "label": "plateau-a-la-cantine",
+        "label": "plateau à la cantine",
         "src": "/lib/images/vocabulaire/actions/plateau-a-la-cantine.webp"
       },
       {
-        "label": "plateau-de-viande",
+        "label": "plateau de viande",
         "src": "/lib/images/vocabulaire/actions/plateau-de-viande.webp"
       },
       {
-        "label": "porte-fermee",
+        "label": "porte fermee",
         "src": "/lib/images/vocabulaire/actions/porte-fermee.webp"
       },
       {
-        "label": "prendre-un-livre",
+        "label": "prendre un livre",
         "src": "/lib/images/vocabulaire/actions/prendre-un-livre.webp"
       },
       {
-        "label": "preparer-un-repas",
+        "label": "preparer un repas",
         "src": "/lib/images/vocabulaire/actions/preparer-un-repas.webp"
       },
       {
-        "label": "presenter-des-collegues",
+        "label": "presenter des collegues",
         "src": "/lib/images/vocabulaire/actions/presenter-des-collegues.webp"
       },
       {
-        "label": "preter-un-livre",
+        "label": "preter un livre",
         "src": "/lib/images/vocabulaire/actions/preter-un-livre.webp"
       },
       {
-        "label": "preter-un-stylo",
+        "label": "preter un stylo",
         "src": "/lib/images/vocabulaire/actions/preter-un-stylo.webp"
       },
       {
-        "label": "professeure-a-la-bibliotheque",
+        "label": "professeure à la bibliotheque",
         "src": "/lib/images/vocabulaire/actions/professeure-a-la-bibliotheque.webp"
       },
       {
-        "label": "professeure-avec-des-livres",
+        "label": "professeure avec des livres",
         "src": "/lib/images/vocabulaire/actions/professeure-avec-des-livres.webp"
       },
       {
-        "label": "questions-au-realisateur",
+        "label": "questions au realisateur",
         "src": "/lib/images/vocabulaire/actions/questions-au-realisateur.webp"
       },
       {
-        "label": "regarder-une-peinture",
+        "label": "regarder une peinture",
         "src": "/lib/images/vocabulaire/actions/regarder-une-peinture.webp"
       },
       {
-        "label": "rencontre-devant-l-ecole",
+        "label": "rencontre devant l'ecole",
         "src": "/lib/images/vocabulaire/actions/rencontre-devant-l-ecole.webp"
       },
       {
-        "label": "rendre-un-cahier",
+        "label": "rendre un cahier",
         "src": "/lib/images/vocabulaire/actions/rendre-un-cahier.webp"
       },
       {
-        "label": "rentrer-a-pied",
+        "label": "rentrer à pied",
         "src": "/lib/images/vocabulaire/actions/rentrer-a-pied.webp"
       },
       {
@@ -398,27 +398,27 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/reunion.webp"
       },
       {
-        "label": "s-echauffer",
+        "label": "s echauffer",
         "src": "/lib/images/vocabulaire/actions/s-echauffer.webp"
       },
       {
-        "label": "s-inscrire-au-guichet",
+        "label": "s inscrire au guichet",
         "src": "/lib/images/vocabulaire/actions/s-inscrire-au-guichet.webp"
       },
       {
-        "label": "salle-informatique",
+        "label": "salle informatique",
         "src": "/lib/images/vocabulaire/actions/salle-informatique.webp"
       },
       {
-        "label": "se-saluer-sous-la-pluie",
+        "label": "se saluer sous la pluie",
         "src": "/lib/images/vocabulaire/actions/se-saluer-sous-la-pluie.webp"
       },
       {
-        "label": "se-serrer-la-main",
+        "label": "se serrer la main",
         "src": "/lib/images/vocabulaire/actions/se-serrer-la-main.webp"
       },
       {
-        "label": "soldes-de-chaussures",
+        "label": "soldes de chaussures",
         "src": "/lib/images/vocabulaire/actions/soldes-de-chaussures.webp"
       },
       {
@@ -426,15 +426,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/actions/telephoner.webp"
       },
       {
-        "label": "test-sur-ordinateur",
+        "label": "test sur ordinateur",
         "src": "/lib/images/vocabulaire/actions/test-sur-ordinateur.webp"
       },
       {
-        "label": "tournage-de-film",
+        "label": "tournage de film",
         "src": "/lib/images/vocabulaire/actions/tournage-de-film.webp"
       },
       {
-        "label": "visite-guidee",
+        "label": "visite guidee",
         "src": "/lib/images/vocabulaire/actions/visite-guidee.webp"
       }
     ]
@@ -444,7 +444,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Aliments",
     "words": [
       {
-        "label": "a-point",
+        "label": "a point",
         "src": "/lib/images/vocabulaire/aliments/a-point.webp"
       },
       {
@@ -464,7 +464,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/beurre.webp"
       },
       {
-        "label": "bien-cuit",
+        "label": "bien cuit",
         "src": "/lib/images/vocabulaire/aliments/bien-cuit.webp"
       },
       {
@@ -512,7 +512,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/frites.webp"
       },
       {
-        "label": "fromage-de-chevre",
+        "label": "fromage de chevre",
         "src": "/lib/images/vocabulaire/aliments/fromage-de-chevre.webp"
       },
       {
@@ -576,7 +576,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/omelette.webp"
       },
       {
-        "label": "pain-au-chocolat",
+        "label": "pain au chocolat",
         "src": "/lib/images/vocabulaire/aliments/pain-au-chocolat.webp"
       },
       {
@@ -584,7 +584,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/pain.webp"
       },
       {
-        "label": "petit-dejeuner",
+        "label": "petit dejeuner",
         "src": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp"
       },
       {
@@ -592,7 +592,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/pizza.webp"
       },
       {
-        "label": "plateau-repas",
+        "label": "plateau repas",
         "src": "/lib/images/vocabulaire/aliments/plateau-repas.webp"
       },
       {
@@ -604,7 +604,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/popcorn.webp"
       },
       {
-        "label": "poulet-frites",
+        "label": "poulet frites",
         "src": "/lib/images/vocabulaire/aliments/poulet-frites.webp"
       },
       {
@@ -612,7 +612,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/poulet.webp"
       },
       {
-        "label": "produits-laitiers",
+        "label": "produits laitiers",
         "src": "/lib/images/vocabulaire/aliments/produits-laitiers.webp"
       },
       {
@@ -632,7 +632,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/saignant.webp"
       },
       {
-        "label": "salade-composée",
+        "label": "salade composée",
         "src": "/lib/images/vocabulaire/aliments/salade-composée.webp"
       },
       {
@@ -774,7 +774,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/animaux-aquatiques/walrus.webp"
       },
       {
-        "label": "étoile-de-mer",
+        "label": "étoile de mer",
         "src": "/lib/images/vocabulaire/animaux-aquatiques/étoile-de-mer.webp"
       }
     ]
@@ -954,7 +954,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/avis.webp"
       },
       {
-        "label": "billet-de-banque",
+        "label": "billet de banque",
         "src": "/lib/images/vocabulaire/argent-administration/billet-de-banque.webp"
       },
       {
@@ -962,23 +962,23 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/billet.webp"
       },
       {
-        "label": "boîte-aux-lettres",
+        "label": "boîte aux lettres",
         "src": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp"
       },
       {
-        "label": "carte-d-identite",
+        "label": "carte d'identite",
         "src": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp"
       },
       {
-        "label": "carte-de-credit",
+        "label": "carte de credit",
         "src": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp"
       },
       {
-        "label": "carte-detudiant",
+        "label": "carte detudiant",
         "src": "/lib/images/vocabulaire/argent-administration/carte-detudiant.webp"
       },
       {
-        "label": "carte-didentite",
+        "label": "carte didentite",
         "src": "/lib/images/vocabulaire/argent-administration/carte-didentite.webp"
       },
       {
@@ -986,7 +986,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/chequier.webp"
       },
       {
-        "label": "coffre-fort",
+        "label": "coffre fort",
         "src": "/lib/images/vocabulaire/argent-administration/coffre-fort.webp"
       },
       {
@@ -994,11 +994,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/colis.webp"
       },
       {
-        "label": "distributeur-de-billets",
+        "label": "distributeur de billets",
         "src": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
       },
       {
-        "label": "dossier-administratif",
+        "label": "dossier administratif",
         "src": "/lib/images/vocabulaire/argent-administration/dossier-administratif.webp"
       },
       {
@@ -1022,11 +1022,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/formulaire.webp"
       },
       {
-        "label": "permis-de-sejour",
+        "label": "permis de sejour",
         "src": "/lib/images/vocabulaire/argent-administration/permis-de-sejour.webp"
       },
       {
-        "label": "pièce-de-monnaie",
+        "label": "pièce de monnaie",
         "src": "/lib/images/vocabulaire/argent-administration/pièce-de-monnaie.webp"
       },
       {
@@ -1058,7 +1058,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/argent-administration/taxe.webp"
       },
       {
-        "label": "ticket-de-caisse",
+        "label": "ticket de caisse",
         "src": "/lib/images/vocabulaire/argent-administration/ticket-de-caisse.webp"
       },
       {
@@ -1096,7 +1096,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/autre/cote.webp"
       },
       {
-        "label": "cow-boy",
+        "label": "cow boy",
         "src": "/lib/images/vocabulaire/autre/cow-boy.webp"
       },
       {
@@ -1270,11 +1270,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/boissons/boisson.webp"
       },
       {
-        "label": "bouteille-deau",
+        "label": "bouteille deau",
         "src": "/lib/images/vocabulaire/boissons/bouteille-deau.webp"
       },
       {
-        "label": "café-au-lait",
+        "label": "café au lait",
         "src": "/lib/images/vocabulaire/boissons/café-au-lait.webp"
       },
       {
@@ -1290,7 +1290,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/boissons/carafe.webp"
       },
       {
-        "label": "chocolat-chaud",
+        "label": "chocolat chaud",
         "src": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp"
       },
       {
@@ -1306,7 +1306,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/boissons/cocktail.webp"
       },
       {
-        "label": "eau-gazeuse",
+        "label": "eau gazeuse",
         "src": "/lib/images/vocabulaire/boissons/eau-gazeuse.webp"
       },
       {
@@ -1318,7 +1318,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/boissons/infusion.webp"
       },
       {
-        "label": "jus-d-orange",
+        "label": "jus d'orange",
         "src": "/lib/images/vocabulaire/boissons/jus-d-orange.webp"
       },
       {
@@ -1350,7 +1350,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/boissons/soda.webp"
       },
       {
-        "label": "thé-glacé",
+        "label": "thé glacé",
         "src": "/lib/images/vocabulaire/boissons/thé-glacé.webp"
       },
       {
@@ -1396,7 +1396,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ciel-espace/lune.webp"
       },
       {
-        "label": "navette-spatiale",
+        "label": "navette spatiale",
         "src": "/lib/images/vocabulaire/ciel-espace/navette-spatiale.webp"
       },
       {
@@ -1682,7 +1682,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/casserole.webp"
       },
       {
-        "label": "couteau-de-cuisine",
+        "label": "couteau de cuisine",
         "src": "/lib/images/vocabulaire/cuisine/couteau-de-cuisine.webp"
       },
       {
@@ -1734,7 +1734,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/marmite.webp"
       },
       {
-        "label": "moule-à-gâteau",
+        "label": "moule à gâteau",
         "src": "/lib/images/vocabulaire/cuisine/moule-à-gâteau.webp"
       },
       {
@@ -1746,7 +1746,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/nappe.webp"
       },
       {
-        "label": "ouvre-boîte",
+        "label": "ouvre boîte",
         "src": "/lib/images/vocabulaire/cuisine/ouvre-boîte.webp"
       },
       {
@@ -1758,7 +1758,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/pichet.webp"
       },
       {
-        "label": "planche-à-découper",
+        "label": "planche à découper",
         "src": "/lib/images/vocabulaire/cuisine/planche-à-découper.webp"
       },
       {
@@ -1778,7 +1778,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/recette.webp"
       },
       {
-        "label": "rouleau-a-patisserie",
+        "label": "rouleau à patisserie",
         "src": "/lib/images/vocabulaire/cuisine/rouleau-a-patisserie.webp"
       },
       {
@@ -1806,7 +1806,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/tasse.webp"
       },
       {
-        "label": "thermometre-de-cuisine",
+        "label": "thermometre de cuisine",
         "src": "/lib/images/vocabulaire/cuisine/thermometre-de-cuisine.webp"
       },
       {
@@ -1814,7 +1814,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/théière.webp"
       },
       {
-        "label": "tire-bouchon",
+        "label": "tire bouchon",
         "src": "/lib/images/vocabulaire/cuisine/tire-bouchon.webp"
       },
       {
@@ -1826,7 +1826,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/cuisine/ustensile.webp"
       },
       {
-        "label": "ustensiles-de-patisserie",
+        "label": "ustensiles de patisserie",
         "src": "/lib/images/vocabulaire/cuisine/ustensiles-de-patisserie.webp"
       },
       {
@@ -1852,7 +1852,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/desserts/biscuit.webp"
       },
       {
-        "label": "boite-de-chocolats",
+        "label": "boite de chocolats",
         "src": "/lib/images/vocabulaire/desserts/boite-de-chocolats.webp"
       },
       {
@@ -1904,7 +1904,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/desserts/glace.webp"
       },
       {
-        "label": "gâteau-d-anniversaire",
+        "label": "gâteau d'anniversaire",
         "src": "/lib/images/vocabulaire/desserts/gâteau-d-anniversaire.webp"
       },
       {
@@ -1924,7 +1924,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/desserts/meringue.webp"
       },
       {
-        "label": "mille-feuille",
+        "label": "mille feuille",
         "src": "/lib/images/vocabulaire/desserts/mille-feuille.webp"
       },
       {
@@ -1932,7 +1932,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/desserts/muffin.webp"
       },
       {
-        "label": "salade-de-fruits",
+        "label": "salade de fruits",
         "src": "/lib/images/vocabulaire/desserts/salade-de-fruits.webp"
       },
       {
@@ -2006,15 +2006,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/famille-personnes/garçon.webp"
       },
       {
-        "label": "grand-mere",
+        "label": "grand mere",
         "src": "/lib/images/vocabulaire/famille-personnes/grand-mere.webp"
       },
       {
-        "label": "grand-pere",
+        "label": "grand pere",
         "src": "/lib/images/vocabulaire/famille-personnes/grand-pere.webp"
       },
       {
-        "label": "grands-parents",
+        "label": "grands parents",
         "src": "/lib/images/vocabulaire/famille-personnes/grands-parents.webp"
       },
       {
@@ -2062,7 +2062,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/famille-personnes/pere.webp"
       },
       {
-        "label": "personne-âgée",
+        "label": "personne âgée",
         "src": "/lib/images/vocabulaire/famille-personnes/personne-âgée.webp"
       },
       {
@@ -2320,7 +2320,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/fruits/coing.webp"
       },
       {
-        "label": "corbeille-de-fruits",
+        "label": "corbeille de fruits",
         "src": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp"
       },
       {
@@ -2396,7 +2396,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/fruits/noisette.webp"
       },
       {
-        "label": "noix-de-coco",
+        "label": "noix de coco",
         "src": "/lib/images/vocabulaire/fruits/noix-de-coco.webp"
       },
       {
@@ -2458,15 +2458,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Heure et horloge",
     "words": [
       {
-        "label": "cadran-solaire",
+        "label": "cadran solaire",
         "src": "/lib/images/vocabulaire/heure-horloge/cadran-solaire.webp"
       },
       {
-        "label": "cinq-heures-dix",
+        "label": "cinq heures dix",
         "src": "/lib/images/vocabulaire/heure-horloge/cinq-heures-dix.webp"
       },
       {
-        "label": "cinq-heures",
+        "label": "cinq heures",
         "src": "/lib/images/vocabulaire/heure-horloge/cinq-heures.webp"
       },
       {
@@ -2474,51 +2474,51 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/coucou.webp"
       },
       {
-        "label": "deux-heures-et-demie",
+        "label": "deux heures et demie",
         "src": "/lib/images/vocabulaire/heure-horloge/deux-heures-et-demie.webp"
       },
       {
-        "label": "deux-heures",
+        "label": "deux heures",
         "src": "/lib/images/vocabulaire/heure-horloge/deux-heures.webp"
       },
       {
-        "label": "dix-heures-moins-cinq",
+        "label": "dix heures moins cinq",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-heures-moins-cinq.webp"
       },
       {
-        "label": "dix-heures",
+        "label": "dix heures",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
       },
       {
-        "label": "dix-huit-heures-trente",
+        "label": "dix huit heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp"
       },
       {
-        "label": "dix-huit-heures",
+        "label": "dix huit heures",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
       },
       {
-        "label": "dix-neuf-heures",
+        "label": "dix neuf heures",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
       },
       {
-        "label": "dix-sept-heures-quarante-cinq",
+        "label": "dix sept heures quarante cinq",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-quarante-cinq.webp"
       },
       {
-        "label": "dix-sept-heures",
+        "label": "dix sept heures",
         "src": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
       },
       {
-        "label": "douze-heures-trente",
+        "label": "douze heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/douze-heures-trente.webp"
       },
       {
-        "label": "douze-heures",
+        "label": "douze heures",
         "src": "/lib/images/vocabulaire/heure-horloge/douze-heures.webp"
       },
       {
-        "label": "emploi-du-temps",
+        "label": "emploi du temps",
         "src": "/lib/images/vocabulaire/heure-horloge/emploi-du-temps.webp"
       },
       {
@@ -2530,23 +2530,23 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/horloge.webp"
       },
       {
-        "label": "huit-heures-moins-vingt",
+        "label": "huit heures moins vingt",
         "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-moins-vingt.webp"
       },
       {
-        "label": "huit-heures-numerique",
+        "label": "huit heures numerique",
         "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp"
       },
       {
-        "label": "huit-heures-quinze",
+        "label": "huit heures quinze",
         "src": "/lib/images/vocabulaire/heure-horloge/huit-heures-quinze.webp"
       },
       {
-        "label": "huit-heures",
+        "label": "huit heures",
         "src": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
       },
       {
-        "label": "midi-et-quart",
+        "label": "midi et quart",
         "src": "/lib/images/vocabulaire/heure-horloge/midi-et-quart.webp"
       },
       {
@@ -2554,7 +2554,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/midi.webp"
       },
       {
-        "label": "minuit-numerique",
+        "label": "minuit numerique",
         "src": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp"
       },
       {
@@ -2566,27 +2566,27 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/minuteur.webp"
       },
       {
-        "label": "neuf-heures-moins-dix",
+        "label": "neuf heures moins dix",
         "src": "/lib/images/vocabulaire/heure-horloge/neuf-heures-moins-dix.webp"
       },
       {
-        "label": "neuf-heures-quarante-cinq",
+        "label": "neuf heures quarante cinq",
         "src": "/lib/images/vocabulaire/heure-horloge/neuf-heures-quarante-cinq.webp"
       },
       {
-        "label": "neuf-heures",
+        "label": "neuf heures",
         "src": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
       },
       {
-        "label": "onze-heures-et-demie",
+        "label": "onze heures et demie",
         "src": "/lib/images/vocabulaire/heure-horloge/onze-heures-et-demie.webp"
       },
       {
-        "label": "onze-heures-numerique",
+        "label": "onze heures numerique",
         "src": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp"
       },
       {
-        "label": "onze-heures",
+        "label": "onze heures",
         "src": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
       },
       {
@@ -2594,31 +2594,31 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/pendule.webp"
       },
       {
-        "label": "quatorze-heures-trente",
+        "label": "quatorze heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp"
       },
       {
-        "label": "quatorze-heures",
+        "label": "quatorze heures",
         "src": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
       },
       {
-        "label": "quatre-heures-cinq",
+        "label": "quatre heures cinq",
         "src": "/lib/images/vocabulaire/heure-horloge/quatre-heures-cinq.webp"
       },
       {
-        "label": "quatre-heures",
+        "label": "quatre heures",
         "src": "/lib/images/vocabulaire/heure-horloge/quatre-heures.webp"
       },
       {
-        "label": "quinze-heures-trente",
+        "label": "quinze heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp"
       },
       {
-        "label": "quinze-heures",
+        "label": "quinze heures",
         "src": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
       },
       {
-        "label": "réveil-numérique",
+        "label": "réveil numérique",
         "src": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp"
       },
       {
@@ -2626,79 +2626,79 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/heure-horloge/sablier.webp"
       },
       {
-        "label": "seize-heures-quarante-cinq",
+        "label": "seize heures quarante cinq",
         "src": "/lib/images/vocabulaire/heure-horloge/seize-heures-quarante-cinq.webp"
       },
       {
-        "label": "seize-heures-quinze",
+        "label": "seize heures quinze",
         "src": "/lib/images/vocabulaire/heure-horloge/seize-heures-quinze.webp"
       },
       {
-        "label": "seize-heures-trente",
+        "label": "seize heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/seize-heures-trente.webp"
       },
       {
-        "label": "seize-heures",
+        "label": "seize heures",
         "src": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
       },
       {
-        "label": "sept-heures-trente",
+        "label": "sept heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
       },
       {
-        "label": "sept-heures-vingt-cinq",
+        "label": "sept heures vingt cinq",
         "src": "/lib/images/vocabulaire/heure-horloge/sept-heures-vingt-cinq.webp"
       },
       {
-        "label": "sept-heures",
+        "label": "sept heures",
         "src": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
       },
       {
-        "label": "six-heures-vingt",
+        "label": "six heures vingt",
         "src": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
       },
       {
-        "label": "six-heures",
+        "label": "six heures",
         "src": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
       },
       {
-        "label": "treize-heures",
+        "label": "treize heures",
         "src": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp"
       },
       {
-        "label": "trois-heures-moins-le-quart",
+        "label": "trois heures moins le quart",
         "src": "/lib/images/vocabulaire/heure-horloge/trois-heures-moins-le-quart.webp"
       },
       {
-        "label": "trois-heures",
+        "label": "trois heures",
         "src": "/lib/images/vocabulaire/heure-horloge/trois-heures.webp"
       },
       {
-        "label": "une-heure-et-quart",
+        "label": "une heure et quart",
         "src": "/lib/images/vocabulaire/heure-horloge/une-heure-et-quart.webp"
       },
       {
-        "label": "une-heure",
+        "label": "une heure",
         "src": "/lib/images/vocabulaire/heure-horloge/une-heure.webp"
       },
       {
-        "label": "vingt-deux-heures-trente",
+        "label": "vingt deux heures trente",
         "src": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
       },
       {
-        "label": "vingt-deux-heures",
+        "label": "vingt deux heures",
         "src": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
       },
       {
-        "label": "vingt-et-une-heures-quinze",
+        "label": "vingt et une heures quinze",
         "src": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
       },
       {
-        "label": "vingt-et-une-heures",
+        "label": "vingt et une heures",
         "src": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
       },
       {
-        "label": "vingt-heures",
+        "label": "vingt heures",
         "src": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
       }
     ]
@@ -2712,11 +2712,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/baignoire.webp"
       },
       {
-        "label": "brosse-a-cheveux",
+        "label": "brosse à cheveux",
         "src": "/lib/images/vocabulaire/hygiene/brosse-a-cheveux.webp"
       },
       {
-        "label": "brosse-a-dents",
+        "label": "brosse à dents",
         "src": "/lib/images/vocabulaire/hygiene/brosse-a-dents.webp"
       },
       {
@@ -2724,23 +2724,23 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/brosse.webp"
       },
       {
-        "label": "ciseaux-de-coiffure",
+        "label": "ciseaux de coiffure",
         "src": "/lib/images/vocabulaire/hygiene/ciseaux-de-coiffure.webp"
       },
       {
-        "label": "coton-tige",
+        "label": "coton tige",
         "src": "/lib/images/vocabulaire/hygiene/coton-tige.webp"
       },
       {
-        "label": "coupe-ongles",
+        "label": "coupe ongles",
         "src": "/lib/images/vocabulaire/hygiene/coupe-ongles.webp"
       },
       {
-        "label": "creme-solaire",
+        "label": "creme solaire",
         "src": "/lib/images/vocabulaire/hygiene/creme-solaire.webp"
       },
       {
-        "label": "crème-hydratante",
+        "label": "crème hydratante",
         "src": "/lib/images/vocabulaire/hygiene/crème-hydratante.webp"
       },
       {
@@ -2756,15 +2756,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/déodorant.webp"
       },
       {
-        "label": "fil-dentaire",
+        "label": "fil dentaire",
         "src": "/lib/images/vocabulaire/hygiene/fil-dentaire.webp"
       },
       {
-        "label": "gant-de-toilette",
+        "label": "gant de toilette",
         "src": "/lib/images/vocabulaire/hygiene/gant-de-toilette.webp"
       },
       {
-        "label": "gel-douche",
+        "label": "gel douche",
         "src": "/lib/images/vocabulaire/hygiene/gel-douche.webp"
       },
       {
@@ -2788,7 +2788,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/mouchoirs.webp"
       },
       {
-        "label": "papier-toilette",
+        "label": "papier toilette",
         "src": "/lib/images/vocabulaire/hygiene/papier-toilette.webp"
       },
       {
@@ -2800,7 +2800,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/peigne.webp"
       },
       {
-        "label": "pince-à-épiler",
+        "label": "pince à épiler",
         "src": "/lib/images/vocabulaire/hygiene/pince-à-épiler.webp"
       },
       {
@@ -2816,7 +2816,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/savon.webp"
       },
       {
-        "label": "seau-et-serpilliere",
+        "label": "seau et serpilliere",
         "src": "/lib/images/vocabulaire/hygiene/seau-et-serpilliere.webp"
       },
       {
@@ -2832,7 +2832,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/hygiene/spray.webp"
       },
       {
-        "label": "sèche-cheveux",
+        "label": "sèche cheveux",
         "src": "/lib/images/vocabulaire/hygiene/sèche-cheveux.webp"
       }
     ]
@@ -2894,7 +2894,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/insectes-petites-betes/luciole.webp"
       },
       {
-        "label": "mante-religieuse",
+        "label": "mante religieuse",
         "src": "/lib/images/vocabulaire/insectes-petites-betes/mante-religieuse.webp"
       },
       {
@@ -2926,7 +2926,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/insectes-petites-betes/scorpion.webp"
       },
       {
-        "label": "ver-de-terre",
+        "label": "ver de terre",
         "src": "/lib/images/vocabulaire/insectes-petites-betes/ver-de-terre.webp"
       }
     ]
@@ -2952,7 +2952,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/bille.webp"
       },
       {
-        "label": "billets-de-spectacle",
+        "label": "billets de spectacle",
         "src": "/lib/images/vocabulaire/loisirs/billets-de-spectacle.webp"
       },
       {
@@ -2968,7 +2968,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/cerceau.webp"
       },
       {
-        "label": "cerf-volant",
+        "label": "cerf volant",
         "src": "/lib/images/vocabulaire/loisirs/cerf-volant.webp"
       },
       {
@@ -2976,15 +2976,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/chevalet.webp"
       },
       {
-        "label": "cinema-3d",
+        "label": "cinema 3d",
         "src": "/lib/images/vocabulaire/loisirs/cinema-3d.webp"
       },
       {
-        "label": "cinema-en-plein-air",
+        "label": "cinema en plein air",
         "src": "/lib/images/vocabulaire/loisirs/cinema-en-plein-air.webp"
       },
       {
-        "label": "corde-a-sauter",
+        "label": "corde à sauter",
         "src": "/lib/images/vocabulaire/loisirs/corde-a-sauter.webp"
       },
       {
@@ -2996,7 +2996,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/danse.webp"
       },
       {
-        "label": "decoration-de-fete",
+        "label": "decoration de fete",
         "src": "/lib/images/vocabulaire/loisirs/decoration-de-fete.webp"
       },
       {
@@ -3016,7 +3016,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/dé.webp"
       },
       {
-        "label": "enfant-qui-joue",
+        "label": "enfant qui joue",
         "src": "/lib/images/vocabulaire/loisirs/enfant-qui-joue.webp"
       },
       {
@@ -3040,11 +3040,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/jardinage.webp"
       },
       {
-        "label": "jeu-de-cartes",
+        "label": "jeu de cartes",
         "src": "/lib/images/vocabulaire/loisirs/jeu-de-cartes.webp"
       },
       {
-        "label": "jeu-de-société",
+        "label": "jeu de société",
         "src": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp"
       },
       {
@@ -3052,7 +3052,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/jeu.webp"
       },
       {
-        "label": "jeux-vidéo",
+        "label": "jeux vidéo",
         "src": "/lib/images/vocabulaire/loisirs/jeux-vidéo.webp"
       },
       {
@@ -3080,7 +3080,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/manege.webp"
       },
       {
-        "label": "marche-de-noel",
+        "label": "marche de noel",
         "src": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp"
       },
       {
@@ -3088,7 +3088,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/marionnette.webp"
       },
       {
-        "label": "parc-d-attractions",
+        "label": "parc d'attractions",
         "src": "/lib/images/vocabulaire/loisirs/parc-d-attractions.webp"
       },
       {
@@ -3108,7 +3108,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/photographie.webp"
       },
       {
-        "label": "pique-nique",
+        "label": "pique nique",
         "src": "/lib/images/vocabulaire/loisirs/pique-nique.webp"
       },
       {
@@ -3124,7 +3124,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/puzzle.webp"
       },
       {
-        "label": "pêche-à-la-ligne",
+        "label": "pêche à la ligne",
         "src": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp"
       },
       {
@@ -3194,7 +3194,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/legumes/brocoli.webp"
       },
       {
-        "label": "cagette-de-legumes",
+        "label": "cagette de legumes",
         "src": "/lib/images/vocabulaire/legumes/cagette-de-legumes.webp"
       },
       {
@@ -3206,7 +3206,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/legumes/champignon.webp"
       },
       {
-        "label": "chou-fleur",
+        "label": "chou fleur",
         "src": "/lib/images/vocabulaire/legumes/chou-fleur.webp"
       },
       {
@@ -3266,11 +3266,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/legumes/oignon.webp"
       },
       {
-        "label": "patate-douce",
+        "label": "patate douce",
         "src": "/lib/images/vocabulaire/legumes/patate-douce.webp"
       },
       {
-        "label": "petit-pois",
+        "label": "petit pois",
         "src": "/lib/images/vocabulaire/legumes/petit-pois.webp"
       },
       {
@@ -3282,7 +3282,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/legumes/poireau.webp"
       },
       {
-        "label": "pois-chiche",
+        "label": "pois chiche",
         "src": "/lib/images/vocabulaire/legumes/pois-chiche.webp"
       },
       {
@@ -3290,7 +3290,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/legumes/poivron.webp"
       },
       {
-        "label": "pomme-de-terre",
+        "label": "pomme de terre",
         "src": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp"
       },
       {
@@ -3480,7 +3480,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/penderie.webp"
       },
       {
-        "label": "porte-manteau",
+        "label": "porte manteau",
         "src": "/lib/images/vocabulaire/maison/porte-manteau.webp"
       },
       {
@@ -3492,7 +3492,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/prise.webp"
       },
       {
-        "label": "produits-menagers",
+        "label": "produits menagers",
         "src": "/lib/images/vocabulaire/maison/produits-menagers.webp"
       },
       {
@@ -3500,7 +3500,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/radiateur.webp"
       },
       {
-        "label": "rez-de-chaussee",
+        "label": "rez de chaussee",
         "src": "/lib/images/vocabulaire/maison/rez-de-chaussee.webp"
       },
       {
@@ -3508,7 +3508,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/rideau.webp"
       },
       {
-        "label": "salle-de-bain",
+        "label": "salle de bain",
         "src": "/lib/images/vocabulaire/maison/salle-de-bain.webp"
       },
       {
@@ -3524,7 +3524,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/maison/sonnette.webp"
       },
       {
-        "label": "table-de-nuit",
+        "label": "table de nuit",
         "src": "/lib/images/vocabulaire/maison/table-de-nuit.webp"
       },
       {
@@ -3668,7 +3668,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/musique/flûte.webp"
       },
       {
-        "label": "groupe-de-rock",
+        "label": "groupe de rock",
         "src": "/lib/images/vocabulaire/musique/groupe-de-rock.webp"
       },
       {
@@ -3766,7 +3766,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/actrice.webp"
       },
       {
-        "label": "agente-entretien",
+        "label": "agente entretien",
         "src": "/lib/images/vocabulaire/metiers/agente-entretien.webp"
       },
       {
@@ -3778,7 +3778,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/agricultrice.webp"
       },
       {
-        "label": "aide-soignante",
+        "label": "aide soignante",
         "src": "/lib/images/vocabulaire/metiers/aide-soignante.webp"
       },
       {
@@ -3826,7 +3826,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/charpentière.webp"
       },
       {
-        "label": "chauffeur-de-bus",
+        "label": "chauffeur de bus",
         "src": "/lib/images/vocabulaire/metiers/chauffeur-de-bus.webp"
       },
       {
@@ -3878,7 +3878,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/metiers/docteur.webp"
       },
       {
-        "label": "employe-de-bureau",
+        "label": "employe de bureau",
         "src": "/lib/images/vocabulaire/metiers/employe-de-bureau.webp"
       },
       {
@@ -4084,7 +4084,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Météo",
     "words": [
       {
-        "label": "arc-en-ciel",
+        "label": "arc en ciel",
         "src": "/lib/images/vocabulaire/meteo/arc-en-ciel.webp"
       },
       {
@@ -4108,7 +4108,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/meteo/chaud.webp"
       },
       {
-        "label": "ciel-couvert",
+        "label": "ciel couvert",
         "src": "/lib/images/vocabulaire/meteo/ciel-couvert.webp"
       },
       {
@@ -4156,7 +4156,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/meteo/orage.webp"
       },
       {
-        "label": "parapluie-ouvert",
+        "label": "parapluie ouvert",
         "src": "/lib/images/vocabulaire/meteo/parapluie-ouvert.webp"
       },
       {
@@ -4164,7 +4164,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/meteo/pluie.webp"
       },
       {
-        "label": "soleil-nuages-vent",
+        "label": "soleil nuages vent",
         "src": "/lib/images/vocabulaire/meteo/soleil-nuages-vent.webp"
       },
       {
@@ -4372,15 +4372,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nombres-mesures/deux.webp"
       },
       {
-        "label": "dix-huit",
+        "label": "dix huit",
         "src": "/lib/images/vocabulaire/nombres-mesures/dix-huit.webp"
       },
       {
-        "label": "dix-neuf",
+        "label": "dix neuf",
         "src": "/lib/images/vocabulaire/nombres-mesures/dix-neuf.webp"
       },
       {
-        "label": "dix-sept",
+        "label": "dix sept",
         "src": "/lib/images/vocabulaire/nombres-mesures/dix-sept.webp"
       },
       {
@@ -4448,7 +4448,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nombres-mesures/onze.webp"
       },
       {
-        "label": "pour-cent",
+        "label": "pour cent",
         "src": "/lib/images/vocabulaire/nombres-mesures/pour-cent.webp"
       },
       {
@@ -4534,7 +4534,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/balai.webp"
       },
       {
-        "label": "balance-commerciale",
+        "label": "balance commerciale",
         "src": "/lib/images/vocabulaire/objets/balance-commerciale.webp"
       },
       {
@@ -4574,7 +4574,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/cadenas.webp"
       },
       {
-        "label": "caisse-enregistreuse",
+        "label": "caisse enregistreuse",
         "src": "/lib/images/vocabulaire/objets/caisse-enregistreuse.webp"
       },
       {
@@ -4602,7 +4602,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/corde.webp"
       },
       {
-        "label": "etiquette-prix",
+        "label": "etiquette prix",
         "src": "/lib/images/vocabulaire/objets/etiquette-prix.webp"
       },
       {
@@ -4610,7 +4610,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/extincteur.webp"
       },
       {
-        "label": "film-etirable",
+        "label": "film etirable",
         "src": "/lib/images/vocabulaire/objets/film-etirable.webp"
       },
       {
@@ -4622,7 +4622,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/jumelles.webp"
       },
       {
-        "label": "lampe-de-poche",
+        "label": "lampe de poche",
         "src": "/lib/images/vocabulaire/objets/lampe-de-poche.webp"
       },
       {
@@ -4638,7 +4638,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/palette.webp"
       },
       {
-        "label": "panier-courses",
+        "label": "panier courses",
         "src": "/lib/images/vocabulaire/objets/panier-courses.webp"
       },
       {
@@ -4658,7 +4658,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/plateau.webp"
       },
       {
-        "label": "porte-cles",
+        "label": "porte cles",
         "src": "/lib/images/vocabulaire/objets/porte-cles.webp"
       },
       {
@@ -4674,7 +4674,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/objets/réveil.webp"
       },
       {
-        "label": "sac-plastique",
+        "label": "sac plastique",
         "src": "/lib/images/vocabulaire/objets/sac-plastique.webp"
       },
       {
@@ -4744,7 +4744,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/oiseaux/faucon.webp"
       },
       {
-        "label": "flamant-rose",
+        "label": "flamant rose",
         "src": "/lib/images/vocabulaire/oiseaux/flamant-rose.webp"
       },
       {
@@ -4826,7 +4826,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Orientation",
     "words": [
       {
-        "label": "au-bout-de",
+        "label": "au bout de",
         "src": "/lib/images/vocabulaire/orientation/au-bout-de.webp"
       },
       {
@@ -4846,11 +4846,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/orientation/droite.webp"
       },
       {
-        "label": "en-bas",
+        "label": "en bas",
         "src": "/lib/images/vocabulaire/orientation/en-bas.webp"
       },
       {
-        "label": "en-haut",
+        "label": "en haut",
         "src": "/lib/images/vocabulaire/orientation/en-haut.webp"
       },
       {
@@ -4874,11 +4874,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/orientation/ici.webp"
       },
       {
-        "label": "jusqu-a",
+        "label": "jusqu a",
         "src": "/lib/images/vocabulaire/orientation/jusqu-a.webp"
       },
       {
-        "label": "la-bas",
+        "label": "la bas",
         "src": "/lib/images/vocabulaire/orientation/la-bas.webp"
       },
       {
@@ -4902,11 +4902,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/orientation/sur.webp"
       },
       {
-        "label": "tout-droit",
+        "label": "tout droit",
         "src": "/lib/images/vocabulaire/orientation/tout-droit.webp"
       },
       {
-        "label": "à-côté-de",
+        "label": "à côté de",
         "src": "/lib/images/vocabulaire/orientation/à-côté-de.webp"
       }
     ]
@@ -4928,15 +4928,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/brouette.webp"
       },
       {
-        "label": "caisse-a-outils",
+        "label": "caisse à outils",
         "src": "/lib/images/vocabulaire/outils/caisse-a-outils.webp"
       },
       {
-        "label": "casque-anti-bruit",
+        "label": "casque anti bruit",
         "src": "/lib/images/vocabulaire/outils/casque-anti-bruit.webp"
       },
       {
-        "label": "casque-de-chantier",
+        "label": "casque de chantier",
         "src": "/lib/images/vocabulaire/outils/casque-de-chantier.webp"
       },
       {
@@ -4948,19 +4948,19 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/cisaille.webp"
       },
       {
-        "label": "ciseau-a-bois",
+        "label": "ciseau à bois",
         "src": "/lib/images/vocabulaire/outils/ciseau-a-bois.webp"
       },
       {
-        "label": "cle-a-molette",
+        "label": "cle à molette",
         "src": "/lib/images/vocabulaire/outils/cle-a-molette.webp"
       },
       {
-        "label": "cle-a-pipe",
+        "label": "cle à pipe",
         "src": "/lib/images/vocabulaire/outils/cle-a-pipe.webp"
       },
       {
-        "label": "cle-dynamometrique",
+        "label": "cle dynamometrique",
         "src": "/lib/images/vocabulaire/outils/cle-dynamometrique.webp"
       },
       {
@@ -4984,7 +4984,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/fourche.webp"
       },
       {
-        "label": "gants-de-travail",
+        "label": "gants de travail",
         "src": "/lib/images/vocabulaire/outils/gants-de-travail.webp"
       },
       {
@@ -5000,11 +5000,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/lime.webp"
       },
       {
-        "label": "lunettes-de-protection",
+        "label": "lunettes de protection",
         "src": "/lib/images/vocabulaire/outils/lunettes-de-protection.webp"
       },
       {
-        "label": "mallette-a-outils",
+        "label": "mallette à outils",
         "src": "/lib/images/vocabulaire/outils/mallette-a-outils.webp"
       },
       {
@@ -5012,11 +5012,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/marteau.webp"
       },
       {
-        "label": "masque-de-soudure",
+        "label": "masque de soudure",
         "src": "/lib/images/vocabulaire/outils/masque-de-soudure.webp"
       },
       {
-        "label": "metre-ruban",
+        "label": "metre ruban",
         "src": "/lib/images/vocabulaire/outils/metre-ruban.webp"
       },
       {
@@ -5024,11 +5024,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/multimetre.webp"
       },
       {
-        "label": "niveau-a-bulle",
+        "label": "niveau à bulle",
         "src": "/lib/images/vocabulaire/outils/niveau-a-bulle.webp"
       },
       {
-        "label": "papier-de-verre",
+        "label": "papier de verre",
         "src": "/lib/images/vocabulaire/outils/papier-de-verre.webp"
       },
       {
@@ -5040,15 +5040,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/perceuse.webp"
       },
       {
-        "label": "pince-coupante",
+        "label": "pince coupante",
         "src": "/lib/images/vocabulaire/outils/pince-coupante.webp"
       },
       {
-        "label": "pince-universelle",
+        "label": "pince universelle",
         "src": "/lib/images/vocabulaire/outils/pince-universelle.webp"
       },
       {
-        "label": "pot-de-peinture",
+        "label": "pot de peinture",
         "src": "/lib/images/vocabulaire/outils/pot-de-peinture.webp"
       },
       {
@@ -5060,7 +5060,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/rateau.webp"
       },
       {
-        "label": "rouleau-a-peindre",
+        "label": "rouleau à peindre",
         "src": "/lib/images/vocabulaire/outils/rouleau-a-peindre.webp"
       },
       {
@@ -5072,7 +5072,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/secateur.webp"
       },
       {
-        "label": "serre-joint",
+        "label": "serre joint",
         "src": "/lib/images/vocabulaire/outils/serre-joint.webp"
       },
       {
@@ -5162,7 +5162,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/congo.webp"
       },
       {
-        "label": "corée-du-sud",
+        "label": "corée du sud",
         "src": "/lib/images/vocabulaire/pays/corée-du-sud.webp"
       },
       {
@@ -5186,7 +5186,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/espagne.webp"
       },
       {
-        "label": "etats-unis",
+        "label": "etats unis",
         "src": "/lib/images/vocabulaire/pays/etats-unis.webp"
       },
       {
@@ -5254,7 +5254,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/pakistan.webp"
       },
       {
-        "label": "pays-bas",
+        "label": "pays bas",
         "src": "/lib/images/vocabulaire/pays/pays-bas.webp"
       },
       {
@@ -5286,7 +5286,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/pays/soudan.webp"
       },
       {
-        "label": "sri-lanka",
+        "label": "sri lanka",
         "src": "/lib/images/vocabulaire/pays/sri-lanka.webp"
       },
       {
@@ -5508,7 +5508,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/plantes/sapin.webp"
       },
       {
-        "label": "saule-pleureur",
+        "label": "saule pleureur",
         "src": "/lib/images/vocabulaire/plantes/saule-pleureur.webp"
       },
       {
@@ -5562,15 +5562,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/blessure.webp"
       },
       {
-        "label": "blouse-blanche",
+        "label": "blouse blanche",
         "src": "/lib/images/vocabulaire/sante/blouse-blanche.webp"
       },
       {
-        "label": "blouse-de-laboratoire",
+        "label": "blouse de laboratoire",
         "src": "/lib/images/vocabulaire/sante/blouse-de-laboratoire.webp"
       },
       {
-        "label": "boite-de-medicaments",
+        "label": "boite de medicaments",
         "src": "/lib/images/vocabulaire/sante/boite-de-medicaments.webp"
       },
       {
@@ -5586,7 +5586,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/béquilles.webp"
       },
       {
-        "label": "carte-d-assurance",
+        "label": "carte d'assurance",
         "src": "/lib/images/vocabulaire/sante/carte-d-assurance.webp"
       },
       {
@@ -5602,7 +5602,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/douleur.webp"
       },
       {
-        "label": "fauteuil-roulant",
+        "label": "fauteuil roulant",
         "src": "/lib/images/vocabulaire/sante/fauteuil-roulant.webp"
       },
       {
@@ -5626,11 +5626,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/infection.webp"
       },
       {
-        "label": "mal-de-tête",
+        "label": "mal de tête",
         "src": "/lib/images/vocabulaire/sante/mal-de-tête.webp"
       },
       {
-        "label": "mal-de-ventre",
+        "label": "mal de ventre",
         "src": "/lib/images/vocabulaire/sante/mal-de-ventre.webp"
       },
       {
@@ -5646,7 +5646,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/medicament.webp"
       },
       {
-        "label": "miroir-dentaire",
+        "label": "miroir dentaire",
         "src": "/lib/images/vocabulaire/sante/miroir-dentaire.webp"
       },
       {
@@ -5710,11 +5710,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sante/toux.webp"
       },
       {
-        "label": "trousse-de-secours",
+        "label": "trousse de secours",
         "src": "/lib/images/vocabulaire/sante/trousse-de-secours.webp"
       },
       {
-        "label": "trousse-de-soins",
+        "label": "trousse de soins",
         "src": "/lib/images/vocabulaire/sante/trousse-de-soins.webp"
       },
       {
@@ -5748,7 +5748,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/balle.webp"
       },
       {
-        "label": "ballon-de-football",
+        "label": "ballon de football",
         "src": "/lib/images/vocabulaire/sports/ballon-de-football.webp"
       },
       {
@@ -5756,7 +5756,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/ballon.webp"
       },
       {
-        "label": "barre-de-traction",
+        "label": "barre de traction",
         "src": "/lib/images/vocabulaire/sports/barre-de-traction.webp"
       },
       {
@@ -5804,7 +5804,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/cyclisme.webp"
       },
       {
-        "label": "equipement-de-sport",
+        "label": "equipement de sport",
         "src": "/lib/images/vocabulaire/sports/equipement-de-sport.webp"
       },
       {
@@ -5860,7 +5860,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/kayak.webp"
       },
       {
-        "label": "lunettes-de-natation",
+        "label": "lunettes de natation",
         "src": "/lib/images/vocabulaire/sports/lunettes-de-natation.webp"
       },
       {
@@ -5896,7 +5896,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/randonnée.webp"
       },
       {
-        "label": "raquette-de-tennis",
+        "label": "raquette de tennis",
         "src": "/lib/images/vocabulaire/sports/raquette-de-tennis.webp"
       },
       {
@@ -5932,7 +5932,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/sportive.webp"
       },
       {
-        "label": "tapis-de-yoga",
+        "label": "tapis de yoga",
         "src": "/lib/images/vocabulaire/sports/tapis-de-yoga.webp"
       },
       {
@@ -5952,7 +5952,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/sports/wakeboard.webp"
       },
       {
-        "label": "water-polo",
+        "label": "water polo",
         "src": "/lib/images/vocabulaire/sports/water-polo.webp"
       },
       {
@@ -5970,11 +5970,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Technologie",
     "words": [
       {
-        "label": "appareil-photo",
+        "label": "appareil photo",
         "src": "/lib/images/vocabulaire/technologie/appareil-photo.webp"
       },
       {
-        "label": "batterie-externe",
+        "label": "batterie externe",
         "src": "/lib/images/vocabulaire/technologie/batterie-externe.webp"
       },
       {
@@ -5982,15 +5982,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/camera.webp"
       },
       {
-        "label": "carte-bancaire",
+        "label": "carte bancaire",
         "src": "/lib/images/vocabulaire/technologie/carte-bancaire.webp"
       },
       {
-        "label": "carte-sim",
+        "label": "carte sim",
         "src": "/lib/images/vocabulaire/technologie/carte-sim.webp"
       },
       {
-        "label": "casque-audio",
+        "label": "casque audio",
         "src": "/lib/images/vocabulaire/technologie/casque-audio.webp"
       },
       {
@@ -6006,7 +6006,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/clavier.webp"
       },
       {
-        "label": "clé-usb",
+        "label": "clé usb",
         "src": "/lib/images/vocabulaire/technologie/clé-usb.webp"
       },
       {
@@ -6018,11 +6018,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/câble.webp"
       },
       {
-        "label": "disque-dur",
+        "label": "disque dur",
         "src": "/lib/images/vocabulaire/technologie/disque-dur.webp"
       },
       {
-        "label": "distributeur-de-billets",
+        "label": "distributeur de billets",
         "src": "/lib/images/vocabulaire/technologie/distributeur-de-billets.webp"
       },
       {
@@ -6042,7 +6042,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/fax.webp"
       },
       {
-        "label": "gaine-electrique",
+        "label": "gaine electrique",
         "src": "/lib/images/vocabulaire/technologie/gaine-electrique.webp"
       },
       {
@@ -6066,11 +6066,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/interview.webp"
       },
       {
-        "label": "jeu-video",
+        "label": "jeu video",
         "src": "/lib/images/vocabulaire/technologie/jeu-video.webp"
       },
       {
-        "label": "lecteur-de-code-barres",
+        "label": "lecteur de code barres",
         "src": "/lib/images/vocabulaire/technologie/lecteur-de-code-barres.webp"
       },
       {
@@ -6078,7 +6078,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/manette.webp"
       },
       {
-        "label": "ordinateur-portable",
+        "label": "ordinateur portable",
         "src": "/lib/images/vocabulaire/technologie/ordinateur-portable.webp"
       },
       {
@@ -6086,7 +6086,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/ordinateur.webp"
       },
       {
-        "label": "ordinateurs-de-bureau",
+        "label": "ordinateurs de bureau",
         "src": "/lib/images/vocabulaire/technologie/ordinateurs-de-bureau.webp"
       },
       {
@@ -6098,7 +6098,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/pixel.webp"
       },
       {
-        "label": "prise-electrique",
+        "label": "prise electrique",
         "src": "/lib/images/vocabulaire/technologie/prise-electrique.webp"
       },
       {
@@ -6122,7 +6122,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/sms.webp"
       },
       {
-        "label": "souris-d-ordinateur",
+        "label": "souris d'ordinateur",
         "src": "/lib/images/vocabulaire/technologie/souris-d-ordinateur.webp"
       },
       {
@@ -6134,7 +6134,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/tablette.webp"
       },
       {
-        "label": "telephone-portable",
+        "label": "telephone portable",
         "src": "/lib/images/vocabulaire/technologie/telephone-portable.webp"
       },
       {
@@ -6150,7 +6150,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/technologie/télévision.webp"
       },
       {
-        "label": "walkie-talkie",
+        "label": "walkie talkie",
         "src": "/lib/images/vocabulaire/technologie/walkie-talkie.webp"
       },
       {
@@ -6192,7 +6192,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/temps-calendrier/année.webp"
       },
       {
-        "label": "après-midi",
+        "label": "après midi",
         "src": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp"
       },
       {
@@ -6244,7 +6244,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/temps-calendrier/mois.webp"
       },
       {
-        "label": "nouvel-an",
+        "label": "nouvel an",
         "src": "/lib/images/vocabulaire/temps-calendrier/nouvel-an.webp"
       },
       {
@@ -6280,7 +6280,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp"
       },
       {
-        "label": "week-end",
+        "label": "week end",
         "src": "/lib/images/vocabulaire/temps-calendrier/week-end.webp"
       },
       {
@@ -6306,7 +6306,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/autocar.webp"
       },
       {
-        "label": "automate-a-billets",
+        "label": "automate à billets",
         "src": "/lib/images/vocabulaire/transports/automate-a-billets.webp"
       },
       {
@@ -6346,11 +6346,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/caravane.webp"
       },
       {
-        "label": "carte-journaliere",
+        "label": "carte journaliere",
         "src": "/lib/images/vocabulaire/transports/carte-journaliere.webp"
       },
       {
-        "label": "ceinture-de-sécurité",
+        "label": "ceinture de sécurité",
         "src": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp"
       },
       {
@@ -6362,7 +6362,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/ferry.webp"
       },
       {
-        "label": "guichet-de-gare",
+        "label": "guichet de gare",
         "src": "/lib/images/vocabulaire/transports/guichet-de-gare.webp"
       },
       {
@@ -6402,11 +6402,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/navire.webp"
       },
       {
-        "label": "panne-de-voiture",
+        "label": "panne de voiture",
         "src": "/lib/images/vocabulaire/transports/panne-de-voiture.webp"
       },
       {
-        "label": "panneau-stop",
+        "label": "panneau stop",
         "src": "/lib/images/vocabulaire/transports/panneau-stop.webp"
       },
       {
@@ -6430,11 +6430,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/scooter.webp"
       },
       {
-        "label": "siège-auto",
+        "label": "siège auto",
         "src": "/lib/images/vocabulaire/transports/siège-auto.webp"
       },
       {
-        "label": "sous-marin",
+        "label": "sous marin",
         "src": "/lib/images/vocabulaire/transports/sous-marin.webp"
       },
       {
@@ -6442,7 +6442,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/taxi.webp"
       },
       {
-        "label": "ticket-de-bus",
+        "label": "ticket de bus",
         "src": "/lib/images/vocabulaire/transports/ticket-de-bus.webp"
       },
       {
@@ -6486,15 +6486,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/transports/voilier.webp"
       },
       {
-        "label": "voiture-blanche",
+        "label": "voiture blanche",
         "src": "/lib/images/vocabulaire/transports/voiture-blanche.webp"
       },
       {
-        "label": "voiture-bleue",
+        "label": "voiture bleue",
         "src": "/lib/images/vocabulaire/transports/voiture-bleue.webp"
       },
       {
-        "label": "voiture-rouge",
+        "label": "voiture rouge",
         "src": "/lib/images/vocabulaire/transports/voiture-rouge.webp"
       },
       {
@@ -6528,7 +6528,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
     "label": "Ville",
     "words": [
       {
-        "label": "arrêt-de-bus",
+        "label": "arrêt de bus",
         "src": "/lib/images/vocabulaire/ville/arrêt-de-bus.webp"
       },
       {
@@ -6568,7 +6568,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/boutique.webp"
       },
       {
-        "label": "bureau-d-information",
+        "label": "bureau d'information",
         "src": "/lib/images/vocabulaire/ville/bureau-d-information.webp"
       },
       {
@@ -6576,7 +6576,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/café.webp"
       },
       {
-        "label": "caisse-automatique",
+        "label": "caisse automatique",
         "src": "/lib/images/vocabulaire/ville/caisse-automatique.webp"
       },
       {
@@ -6588,7 +6588,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/carrefour.webp"
       },
       {
-        "label": "centre-ville",
+        "label": "centre ville",
         "src": "/lib/images/vocabulaire/ville/centre-ville.webp"
       },
       {
@@ -6608,7 +6608,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/comptoire.webp"
       },
       {
-        "label": "distributeur-automatique",
+        "label": "distributeur automatique",
         "src": "/lib/images/vocabulaire/ville/distributeur-automatique.webp"
       },
       {
@@ -6616,7 +6616,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/eglise.webp"
       },
       {
-        "label": "feu-rouge",
+        "label": "feu rouge",
         "src": "/lib/images/vocabulaire/ville/feu-rouge.webp"
       },
       {
@@ -6628,11 +6628,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/gare.webp"
       },
       {
-        "label": "gratte-ciel",
+        "label": "gratte ciel",
         "src": "/lib/images/vocabulaire/ville/gratte-ciel.webp"
       },
       {
-        "label": "guichet-de-commune",
+        "label": "guichet de commune",
         "src": "/lib/images/vocabulaire/ville/guichet-de-commune.webp"
       },
       {
@@ -6668,7 +6668,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/librairie.webp"
       },
       {
-        "label": "magasin-informatique",
+        "label": "magasin informatique",
         "src": "/lib/images/vocabulaire/ville/magasin-informatique.webp"
       },
       {
@@ -6712,7 +6712,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/parking.webp"
       },
       {
-        "label": "passage-pieton",
+        "label": "passage pieton",
         "src": "/lib/images/vocabulaire/ville/passage-pieton.webp"
       },
       {
@@ -6732,7 +6732,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/piscine.webp"
       },
       {
-        "label": "piste-cyclable",
+        "label": "piste cyclable",
         "src": "/lib/images/vocabulaire/ville/piste-cyclable.webp"
       },
       {
@@ -6764,7 +6764,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/restaurant.webp"
       },
       {
-        "label": "rond-point",
+        "label": "rond point",
         "src": "/lib/images/vocabulaire/ville/rond-point.webp"
       },
       {
@@ -6772,15 +6772,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/rue.webp"
       },
       {
-        "label": "salle-d-attente",
+        "label": "salle d'attente",
         "src": "/lib/images/vocabulaire/ville/salle-d-attente.webp"
       },
       {
-        "label": "salle-de-sport",
+        "label": "salle de sport",
         "src": "/lib/images/vocabulaire/ville/salle-de-sport.webp"
       },
       {
-        "label": "salon-de-coiffure",
+        "label": "salon de coiffure",
         "src": "/lib/images/vocabulaire/ville/salon-de-coiffure.webp"
       },
       {
@@ -6792,7 +6792,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/stade.webp"
       },
       {
-        "label": "station-service",
+        "label": "station service",
         "src": "/lib/images/vocabulaire/ville/station-service.webp"
       },
       {
@@ -6858,7 +6858,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/voyage/aeroport.webp"
       },
       {
-        "label": "aller-retour",
+        "label": "aller retour",
         "src": "/lib/images/vocabulaire/voyage/aller-retour.webp"
       },
       {
@@ -6874,7 +6874,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/voyage/boussole.webp"
       },
       {
-        "label": "carte-d-embarquement",
+        "label": "carte d'embarquement",
         "src": "/lib/images/vocabulaire/voyage/carte-d-embarquement.webp"
       },
       {
@@ -6882,15 +6882,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/voyage/carte.webp"
       },
       {
-        "label": "cartes-postales",
+        "label": "cartes postales",
         "src": "/lib/images/vocabulaire/voyage/cartes-postales.webp"
       },
       {
-        "label": "chambre-double",
+        "label": "chambre double",
         "src": "/lib/images/vocabulaire/voyage/chambre-double.webp"
       },
       {
-        "label": "chambre-simple",
+        "label": "chambre simple",
         "src": "/lib/images/vocabulaire/voyage/chambre-simple.webp"
       },
       {
@@ -6898,7 +6898,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/voyage/correspondance.webp"
       },
       {
-        "label": "demi-pension",
+        "label": "demi pension",
         "src": "/lib/images/vocabulaire/voyage/demi-pension.webp"
       },
       {
@@ -6934,7 +6934,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/voyage/passeport.webp"
       },
       {
-        "label": "pension-complete",
+        "label": "pension complete",
         "src": "/lib/images/vocabulaire/voyage/pension-complete.webp"
       },
       {
@@ -7004,7 +7004,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/bonnet.webp"
       },
       {
-        "label": "bottes-de-pluie",
+        "label": "bottes de pluie",
         "src": "/lib/images/vocabulaire/vetements/bottes-de-pluie.webp"
       },
       {
@@ -7024,7 +7024,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/béret.webp"
       },
       {
-        "label": "cabine-d-essayage",
+        "label": "cabine d'essayage",
         "src": "/lib/images/vocabulaire/vetements/cabine-d-essayage.webp"
       },
       {
@@ -7052,7 +7052,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/chaussons.webp"
       },
       {
-        "label": "chaussures-de-securite",
+        "label": "chaussures de securite",
         "src": "/lib/images/vocabulaire/vetements/chaussures-de-securite.webp"
       },
       {
@@ -7108,7 +7108,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/gants.webp"
       },
       {
-        "label": "gilet-de-securite",
+        "label": "gilet de securite",
         "src": "/lib/images/vocabulaire/vetements/gilet-de-securite.webp"
       },
       {
@@ -7136,7 +7136,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/legging.webp"
       },
       {
-        "label": "maillot-de-bain",
+        "label": "maillot de bain",
         "src": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp"
       },
       {
@@ -7148,11 +7148,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/manteau.webp"
       },
       {
-        "label": "miroir-cabine",
+        "label": "miroir cabine",
         "src": "/lib/images/vocabulaire/vetements/miroir-cabine.webp"
       },
       {
-        "label": "panier-magasin",
+        "label": "panier magasin",
         "src": "/lib/images/vocabulaire/vetements/panier-magasin.webp"
       },
       {
@@ -7192,7 +7192,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/soulier.webp"
       },
       {
-        "label": "soutien-gorge",
+        "label": "soutien gorge",
         "src": "/lib/images/vocabulaire/vetements/soutien-gorge.webp"
       },
       {
@@ -7204,7 +7204,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/vetements/sweat.webp"
       },
       {
-        "label": "t-shirt",
+        "label": "t shirt",
         "src": "/lib/images/vocabulaire/vetements/t-shirt.webp"
       },
       {
@@ -7342,7 +7342,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/exercice.webp"
       },
       {
-        "label": "feuille-de-papier",
+        "label": "feuille de papier",
         "src": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp"
       },
       {
@@ -7386,15 +7386,15 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/pinceau.webp"
       },
       {
-        "label": "porte-documents",
+        "label": "porte documents",
         "src": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp"
       },
       {
-        "label": "porte-mine",
+        "label": "porte mine",
         "src": "/lib/images/vocabulaire/ecole-bureau/porte-mine.webp"
       },
       {
-        "label": "post-it",
+        "label": "post it",
         "src": "/lib/images/vocabulaire/ecole-bureau/post-it.webp"
       },
       {
@@ -7426,7 +7426,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/règle.webp"
       },
       {
-        "label": "salle-de-classe",
+        "label": "salle de classe",
         "src": "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp"
       },
       {
@@ -7442,7 +7442,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/surligneur.webp"
       },
       {
-        "label": "tableau-blanc",
+        "label": "tableau blanc",
         "src": "/lib/images/vocabulaire/ecole-bureau/tableau-blanc.webp"
       },
       {
@@ -7450,7 +7450,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/tableau.webp"
       },
       {
-        "label": "taille-crayon",
+        "label": "taille crayon",
         "src": "/lib/images/vocabulaire/ecole-bureau/taille-crayon.webp"
       },
       {
@@ -7488,7 +7488,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/aspirateur.webp"
       },
       {
-        "label": "balance-de-cuisine",
+        "label": "balance de cuisine",
         "src": "/lib/images/vocabulaire/electromenager/balance-de-cuisine.webp"
       },
       {
@@ -7500,7 +7500,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/cafetiere.webp"
       },
       {
-        "label": "chauffe-eau",
+        "label": "chauffe eau",
         "src": "/lib/images/vocabulaire/electromenager/chauffe-eau.webp"
       },
       {
@@ -7516,7 +7516,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/cuisiniere.webp"
       },
       {
-        "label": "fer-a-repasser",
+        "label": "fer à repasser",
         "src": "/lib/images/vocabulaire/electromenager/fer-a-repasser.webp"
       },
       {
@@ -7528,7 +7528,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/frigo.webp"
       },
       {
-        "label": "grille-pain",
+        "label": "grille pain",
         "src": "/lib/images/vocabulaire/electromenager/grille-pain.webp"
       },
       {
@@ -7536,31 +7536,31 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/hotte.webp"
       },
       {
-        "label": "lave-linge",
+        "label": "lave linge",
         "src": "/lib/images/vocabulaire/electromenager/lave-linge.webp"
       },
       {
-        "label": "lave-vaiselle",
+        "label": "lave vaiselle",
         "src": "/lib/images/vocabulaire/electromenager/lave-vaiselle.webp"
       },
       {
-        "label": "lave-vaisselle",
+        "label": "lave vaisselle",
         "src": "/lib/images/vocabulaire/electromenager/lave-vaisselle.webp"
       },
       {
-        "label": "machine-a-laver",
+        "label": "machine à laver",
         "src": "/lib/images/vocabulaire/electromenager/machine-a-laver.webp"
       },
       {
-        "label": "machine-à-café",
+        "label": "machine à café",
         "src": "/lib/images/vocabulaire/electromenager/machine-à-café.webp"
       },
       {
-        "label": "micro-onde",
+        "label": "micro onde",
         "src": "/lib/images/vocabulaire/electromenager/micro-onde.webp"
       },
       {
-        "label": "micro-ondes",
+        "label": "micro ondes",
         "src": "/lib/images/vocabulaire/electromenager/micro-ondes.webp"
       },
       {
@@ -7568,7 +7568,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/mixeur.webp"
       },
       {
-        "label": "plaque-de-cuisson",
+        "label": "plaque de cuisson",
         "src": "/lib/images/vocabulaire/electromenager/plaque-de-cuisson.webp"
       },
       {
@@ -7576,7 +7576,7 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/refrigerateur.webp"
       },
       {
-        "label": "robot-de-cuisine",
+        "label": "robot de cuisine",
         "src": "/lib/images/vocabulaire/electromenager/robot-de-cuisine.webp"
       },
       {
@@ -7584,11 +7584,11 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/electromenager/réfrigerateur.webp"
       },
       {
-        "label": "seche-cheveux",
+        "label": "seche cheveux",
         "src": "/lib/images/vocabulaire/electromenager/seche-cheveux.webp"
       },
       {
-        "label": "sèche-linge",
+        "label": "sèche linge",
         "src": "/lib/images/vocabulaire/electromenager/sèche-linge.webp"
       },
       {
@@ -7663,6 +7663,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bague": "/lib/images/vocabulaire/accessoires/bague.webp",
   "bandeau": "/lib/images/vocabulaire/accessoires/bandeau.webp",
   "bijou": "/lib/images/vocabulaire/accessoires/bijou.webp",
+  "boucles d'oreilles": "/lib/images/vocabulaire/accessoires/boucles-d-oreilles.webp",
   "boucles-d-oreilles": "/lib/images/vocabulaire/accessoires/boucles-d-oreilles.webp",
   "bracelet": "/lib/images/vocabulaire/accessoires/bracelet.webp",
   "casque": "/lib/images/vocabulaire/accessoires/casque.webp",
@@ -7670,106 +7671,183 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "collier": "/lib/images/vocabulaire/accessoires/collier.webp",
   "couronne": "/lib/images/vocabulaire/accessoires/couronne.webp",
   "joyau": "/lib/images/vocabulaire/accessoires/joyau.webp",
+  "lunettes de soleil": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp",
   "lunettes-de-soleil": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp",
   "lunettes": "/lib/images/vocabulaire/accessoires/lunettes.webp",
   "luxe": "/lib/images/vocabulaire/accessoires/luxe.webp",
   "montre": "/lib/images/vocabulaire/accessoires/montre.webp",
+  "noeud papillon": "/lib/images/vocabulaire/accessoires/noeud-papillon.webp",
   "noeud-papillon": "/lib/images/vocabulaire/accessoires/noeud-papillon.webp",
   "parapluie": "/lib/images/vocabulaire/accessoires/parapluie.webp",
+  "porte monnaie": "/lib/images/vocabulaire/accessoires/porte-monnaie.webp",
   "porte-monnaie": "/lib/images/vocabulaire/accessoires/porte-monnaie.webp",
+  "sac à dos": "/lib/images/vocabulaire/accessoires/sac-a-dos.webp",
   "sac-a-dos": "/lib/images/vocabulaire/accessoires/sac-a-dos.webp",
+  "sac à main": "/lib/images/vocabulaire/accessoires/sac-a-main.webp",
   "sac-a-main": "/lib/images/vocabulaire/accessoires/sac-a-main.webp",
+  "sac de course": "/lib/images/vocabulaire/accessoires/sac-de-course.webp",
   "sac-de-course": "/lib/images/vocabulaire/accessoires/sac-de-course.webp",
   "topaze": "/lib/images/vocabulaire/accessoires/topaze.webp",
   "zircon": "/lib/images/vocabulaire/accessoires/zircon.webp",
+  "acheter un billet au guichet": "/lib/images/vocabulaire/actions/acheter-un-billet-au-guichet.webp",
   "acheter-un-billet-au-guichet": "/lib/images/vocabulaire/actions/acheter-un-billet-au-guichet.webp",
+  "aider aux devoirs": "/lib/images/vocabulaire/actions/aider-aux-devoirs.webp",
   "aider-aux-devoirs": "/lib/images/vocabulaire/actions/aider-aux-devoirs.webp",
+  "aller à la bibliotheque": "/lib/images/vocabulaire/actions/aller-a-la-bibliotheque.webp",
   "aller-a-la-bibliotheque": "/lib/images/vocabulaire/actions/aller-a-la-bibliotheque.webp",
+  "aller à la piscine": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp",
   "aller-a-la-piscine": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp",
+  "aller en cours": "/lib/images/vocabulaire/actions/aller-en-cours.webp",
   "aller-en-cours": "/lib/images/vocabulaire/actions/aller-en-cours.webp",
+  "arriver en retard": "/lib/images/vocabulaire/actions/arriver-en-retard.webp",
   "arriver-en-retard": "/lib/images/vocabulaire/actions/arriver-en-retard.webp",
+  "avoir mal aux pieds": "/lib/images/vocabulaire/actions/avoir-mal-aux-pieds.webp",
   "avoir-mal-aux-pieds": "/lib/images/vocabulaire/actions/avoir-mal-aux-pieds.webp",
+  "baby sitting": "/lib/images/vocabulaire/actions/baby-sitting.webp",
   "baby-sitting": "/lib/images/vocabulaire/actions/baby-sitting.webp",
+  "boire le jus d'une amie": "/lib/images/vocabulaire/actions/boire-le-jus-d-une-amie.webp",
   "boire-le-jus-d-une-amie": "/lib/images/vocabulaire/actions/boire-le-jus-d-une-amie.webp",
   "boire": "/lib/images/vocabulaire/actions/boire.webp",
+  "cafe entre amis": "/lib/images/vocabulaire/actions/cafe-entre-amis.webp",
   "cafe-entre-amis": "/lib/images/vocabulaire/actions/cafe-entre-amis.webp",
+  "chercher dans son sac": "/lib/images/vocabulaire/actions/chercher-dans-son-sac.webp",
   "chercher-dans-son-sac": "/lib/images/vocabulaire/actions/chercher-dans-son-sac.webp",
+  "chercher une salle": "/lib/images/vocabulaire/actions/chercher-une-salle.webp",
   "chercher-une-salle": "/lib/images/vocabulaire/actions/chercher-une-salle.webp",
   "chuchoter": "/lib/images/vocabulaire/actions/chuchoter.webp",
+  "courir vers le bus": "/lib/images/vocabulaire/actions/courir-vers-le-bus.webp",
   "courir-vers-le-bus": "/lib/images/vocabulaire/actions/courir-vers-le-bus.webp",
   "courir": "/lib/images/vocabulaire/actions/courir.webp",
+  "cours au tableau blanc": "/lib/images/vocabulaire/actions/cours-au-tableau-blanc.webp",
   "cours-au-tableau-blanc": "/lib/images/vocabulaire/actions/cours-au-tableau-blanc.webp",
+  "cours d'anglais": "/lib/images/vocabulaire/actions/cours-d-anglais.webp",
   "cours-d-anglais": "/lib/images/vocabulaire/actions/cours-d-anglais.webp",
   "cuisiner": "/lib/images/vocabulaire/actions/cuisiner.webp",
   "dedicace": "/lib/images/vocabulaire/actions/dedicace.webp",
+  "demander à l accueil": "/lib/images/vocabulaire/actions/demander-a-l-accueil.webp",
   "demander-a-l-accueil": "/lib/images/vocabulaire/actions/demander-a-l-accueil.webp",
+  "demander un rayon": "/lib/images/vocabulaire/actions/demander-un-rayon.webp",
   "demander-un-rayon": "/lib/images/vocabulaire/actions/demander-un-rayon.webp",
+  "demander une salle": "/lib/images/vocabulaire/actions/demander-une-salle.webp",
   "demander-une-salle": "/lib/images/vocabulaire/actions/demander-une-salle.webp",
   "demenagement": "/lib/images/vocabulaire/actions/demenagement.webp",
+  "deux etudiants": "/lib/images/vocabulaire/actions/deux-etudiants.webp",
   "deux-etudiants": "/lib/images/vocabulaire/actions/deux-etudiants.webp",
+  "discuter assises": "/lib/images/vocabulaire/actions/discuter-assises.webp",
   "discuter-assises": "/lib/images/vocabulaire/actions/discuter-assises.webp",
+  "discuter entre amies": "/lib/images/vocabulaire/actions/discuter-entre-amies.webp",
   "discuter-entre-amies": "/lib/images/vocabulaire/actions/discuter-entre-amies.webp",
   "dormir": "/lib/images/vocabulaire/actions/dormir.webp",
   "ecrire": "/lib/images/vocabulaire/actions/ecrire.webp",
+  "eleve au tableau": "/lib/images/vocabulaire/actions/eleve-au-tableau.webp",
   "eleve-au-tableau": "/lib/images/vocabulaire/actions/eleve-au-tableau.webp",
+  "emprunter des dvd": "/lib/images/vocabulaire/actions/emprunter-des-dvd.webp",
   "emprunter-des-dvd": "/lib/images/vocabulaire/actions/emprunter-des-dvd.webp",
+  "entretien d'embauche": "/lib/images/vocabulaire/actions/entretien-d-embauche.webp",
   "entretien-d-embauche": "/lib/images/vocabulaire/actions/entretien-d-embauche.webp",
+  "envoyer dans la cour": "/lib/images/vocabulaire/actions/envoyer-dans-la-cour.webp",
   "envoyer-dans-la-cour": "/lib/images/vocabulaire/actions/envoyer-dans-la-cour.webp",
+  "exercice chronometre": "/lib/images/vocabulaire/actions/exercice-chronometre.webp",
   "exercice-chronometre": "/lib/images/vocabulaire/actions/exercice-chronometre.webp",
+  "expliquer un exercice": "/lib/images/vocabulaire/actions/expliquer-un-exercice.webp",
   "expliquer-un-exercice": "/lib/images/vocabulaire/actions/expliquer-un-exercice.webp",
+  "faire ses devoirs": "/lib/images/vocabulaire/actions/faire-ses-devoirs.webp",
   "faire-ses-devoirs": "/lib/images/vocabulaire/actions/faire-ses-devoirs.webp",
   "formation": "/lib/images/vocabulaire/actions/formation.webp",
+  "groupe d'etudiants": "/lib/images/vocabulaire/actions/groupe-d-etudiants.webp",
   "groupe-d-etudiants": "/lib/images/vocabulaire/actions/groupe-d-etudiants.webp",
+  "indiquer un bureau": "/lib/images/vocabulaire/actions/indiquer-un-bureau.webp",
   "indiquer-un-bureau": "/lib/images/vocabulaire/actions/indiquer-un-bureau.webp",
+  "indiquer un rayon": "/lib/images/vocabulaire/actions/indiquer-un-rayon.webp",
   "indiquer-un-rayon": "/lib/images/vocabulaire/actions/indiquer-un-rayon.webp",
+  "lever la main": "/lib/images/vocabulaire/actions/lever-la-main.webp",
   "lever-la-main": "/lib/images/vocabulaire/actions/lever-la-main.webp",
+  "lire à la bibliotheque": "/lib/images/vocabulaire/actions/lire-a-la-bibliotheque.webp",
   "lire-a-la-bibliotheque": "/lib/images/vocabulaire/actions/lire-a-la-bibliotheque.webp",
+  "lire dans un fauteuil": "/lib/images/vocabulaire/actions/lire-dans-un-fauteuil.webp",
   "lire-dans-un-fauteuil": "/lib/images/vocabulaire/actions/lire-dans-un-fauteuil.webp",
+  "lire l'emploi du temps": "/lib/images/vocabulaire/actions/lire-l-emploi-du-temps.webp",
   "lire-l-emploi-du-temps": "/lib/images/vocabulaire/actions/lire-l-emploi-du-temps.webp",
   "manger": "/lib/images/vocabulaire/actions/manger.webp",
   "manifestation": "/lib/images/vocabulaire/actions/manifestation.webp",
   "marcher": "/lib/images/vocabulaire/actions/marcher.webp",
+  "monter l'escalier": "/lib/images/vocabulaire/actions/monter-l-escalier.webp",
   "monter-l-escalier": "/lib/images/vocabulaire/actions/monter-l-escalier.webp",
+  "montrer le chemin": "/lib/images/vocabulaire/actions/montrer-le-chemin.webp",
   "montrer-le-chemin": "/lib/images/vocabulaire/actions/montrer-le-chemin.webp",
+  "montrer son billet": "/lib/images/vocabulaire/actions/montrer-son-billet.webp",
   "montrer-son-billet": "/lib/images/vocabulaire/actions/montrer-son-billet.webp",
+  "montrer son sac": "/lib/images/vocabulaire/actions/montrer-son-sac.webp",
   "montrer-son-sac": "/lib/images/vocabulaire/actions/montrer-son-sac.webp",
+  "montrer son telephone": "/lib/images/vocabulaire/actions/montrer-son-telephone.webp",
   "montrer-son-telephone": "/lib/images/vocabulaire/actions/montrer-son-telephone.webp",
+  "nager à la piscine": "/lib/images/vocabulaire/actions/nager-a-la-piscine.webp",
   "nager-a-la-piscine": "/lib/images/vocabulaire/actions/nager-a-la-piscine.webp",
+  "nourrir les animaux": "/lib/images/vocabulaire/actions/nourrir-les-animaux.webp",
   "nourrir-les-animaux": "/lib/images/vocabulaire/actions/nourrir-les-animaux.webp",
+  "parler au professeur": "/lib/images/vocabulaire/actions/parler-au-professeur.webp",
   "parler-au-professeur": "/lib/images/vocabulaire/actions/parler-au-professeur.webp",
+  "partager un livre": "/lib/images/vocabulaire/actions/partager-un-livre.webp",
   "partager-un-livre": "/lib/images/vocabulaire/actions/partager-un-livre.webp",
+  "passagers d'avion": "/lib/images/vocabulaire/actions/passagers-d-avion.webp",
   "passagers-d-avion": "/lib/images/vocabulaire/actions/passagers-d-avion.webp",
+  "plateau à la cantine": "/lib/images/vocabulaire/actions/plateau-a-la-cantine.webp",
   "plateau-a-la-cantine": "/lib/images/vocabulaire/actions/plateau-a-la-cantine.webp",
+  "plateau de viande": "/lib/images/vocabulaire/actions/plateau-de-viande.webp",
   "plateau-de-viande": "/lib/images/vocabulaire/actions/plateau-de-viande.webp",
+  "porte fermee": "/lib/images/vocabulaire/actions/porte-fermee.webp",
   "porte-fermee": "/lib/images/vocabulaire/actions/porte-fermee.webp",
+  "prendre un livre": "/lib/images/vocabulaire/actions/prendre-un-livre.webp",
   "prendre-un-livre": "/lib/images/vocabulaire/actions/prendre-un-livre.webp",
+  "preparer un repas": "/lib/images/vocabulaire/actions/preparer-un-repas.webp",
   "preparer-un-repas": "/lib/images/vocabulaire/actions/preparer-un-repas.webp",
+  "presenter des collegues": "/lib/images/vocabulaire/actions/presenter-des-collegues.webp",
   "presenter-des-collegues": "/lib/images/vocabulaire/actions/presenter-des-collegues.webp",
+  "preter un livre": "/lib/images/vocabulaire/actions/preter-un-livre.webp",
   "preter-un-livre": "/lib/images/vocabulaire/actions/preter-un-livre.webp",
+  "preter un stylo": "/lib/images/vocabulaire/actions/preter-un-stylo.webp",
   "preter-un-stylo": "/lib/images/vocabulaire/actions/preter-un-stylo.webp",
+  "professeure à la bibliotheque": "/lib/images/vocabulaire/actions/professeure-a-la-bibliotheque.webp",
   "professeure-a-la-bibliotheque": "/lib/images/vocabulaire/actions/professeure-a-la-bibliotheque.webp",
+  "professeure avec des livres": "/lib/images/vocabulaire/actions/professeure-avec-des-livres.webp",
   "professeure-avec-des-livres": "/lib/images/vocabulaire/actions/professeure-avec-des-livres.webp",
+  "questions au realisateur": "/lib/images/vocabulaire/actions/questions-au-realisateur.webp",
   "questions-au-realisateur": "/lib/images/vocabulaire/actions/questions-au-realisateur.webp",
+  "regarder une peinture": "/lib/images/vocabulaire/actions/regarder-une-peinture.webp",
   "regarder-une-peinture": "/lib/images/vocabulaire/actions/regarder-une-peinture.webp",
+  "rencontre devant l'ecole": "/lib/images/vocabulaire/actions/rencontre-devant-l-ecole.webp",
   "rencontre-devant-l-ecole": "/lib/images/vocabulaire/actions/rencontre-devant-l-ecole.webp",
+  "rendre un cahier": "/lib/images/vocabulaire/actions/rendre-un-cahier.webp",
   "rendre-un-cahier": "/lib/images/vocabulaire/actions/rendre-un-cahier.webp",
+  "rentrer à pied": "/lib/images/vocabulaire/actions/rentrer-a-pied.webp",
   "rentrer-a-pied": "/lib/images/vocabulaire/actions/rentrer-a-pied.webp",
   "reunion": "/lib/images/vocabulaire/actions/reunion.webp",
+  "s echauffer": "/lib/images/vocabulaire/actions/s-echauffer.webp",
   "s-echauffer": "/lib/images/vocabulaire/actions/s-echauffer.webp",
+  "s inscrire au guichet": "/lib/images/vocabulaire/actions/s-inscrire-au-guichet.webp",
   "s-inscrire-au-guichet": "/lib/images/vocabulaire/actions/s-inscrire-au-guichet.webp",
+  "salle informatique": "/lib/images/vocabulaire/actions/salle-informatique.webp",
   "salle-informatique": "/lib/images/vocabulaire/actions/salle-informatique.webp",
+  "se saluer sous la pluie": "/lib/images/vocabulaire/actions/se-saluer-sous-la-pluie.webp",
   "se-saluer-sous-la-pluie": "/lib/images/vocabulaire/actions/se-saluer-sous-la-pluie.webp",
+  "se serrer la main": "/lib/images/vocabulaire/actions/se-serrer-la-main.webp",
   "se-serrer-la-main": "/lib/images/vocabulaire/actions/se-serrer-la-main.webp",
+  "soldes de chaussures": "/lib/images/vocabulaire/actions/soldes-de-chaussures.webp",
   "soldes-de-chaussures": "/lib/images/vocabulaire/actions/soldes-de-chaussures.webp",
   "telephoner": "/lib/images/vocabulaire/actions/telephoner.webp",
+  "test sur ordinateur": "/lib/images/vocabulaire/actions/test-sur-ordinateur.webp",
   "test-sur-ordinateur": "/lib/images/vocabulaire/actions/test-sur-ordinateur.webp",
+  "tournage de film": "/lib/images/vocabulaire/actions/tournage-de-film.webp",
   "tournage-de-film": "/lib/images/vocabulaire/actions/tournage-de-film.webp",
+  "visite guidee": "/lib/images/vocabulaire/actions/visite-guidee.webp",
   "visite-guidee": "/lib/images/vocabulaire/actions/visite-guidee.webp",
+  "a point": "/lib/images/vocabulaire/aliments/a-point.webp",
   "a-point": "/lib/images/vocabulaire/aliments/a-point.webp",
   "alimentation": "/lib/images/vocabulaire/aliments/alimentation.webp",
   "aliments": "/lib/images/vocabulaire/aliments/aliments.webp",
   "baguette": "/lib/images/vocabulaire/aliments/baguette.webp",
   "beurre": "/lib/images/vocabulaire/aliments/beurre.webp",
+  "bien cuit": "/lib/images/vocabulaire/aliments/bien-cuit.webp",
   "bien-cuit": "/lib/images/vocabulaire/aliments/bien-cuit.webp",
   "brioche": "/lib/images/vocabulaire/aliments/brioche.webp",
   "chips": "/lib/images/vocabulaire/aliments/chips.webp",
@@ -7782,6 +7860,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "céréales": "/lib/images/vocabulaire/aliments/céréales.webp",
   "farine": "/lib/images/vocabulaire/aliments/farine.webp",
   "frites": "/lib/images/vocabulaire/aliments/frites.webp",
+  "fromage de chevre": "/lib/images/vocabulaire/aliments/fromage-de-chevre.webp",
   "fromage-de-chevre": "/lib/images/vocabulaire/aliments/fromage-de-chevre.webp",
   "fromage": "/lib/images/vocabulaire/aliments/fromage.webp",
   "gratin": "/lib/images/vocabulaire/aliments/gratin.webp",
@@ -7798,20 +7877,26 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "moutarde": "/lib/images/vocabulaire/aliments/moutarde.webp",
   "nouilles": "/lib/images/vocabulaire/aliments/nouilles.webp",
   "omelette": "/lib/images/vocabulaire/aliments/omelette.webp",
+  "pain au chocolat": "/lib/images/vocabulaire/aliments/pain-au-chocolat.webp",
   "pain-au-chocolat": "/lib/images/vocabulaire/aliments/pain-au-chocolat.webp",
   "pain": "/lib/images/vocabulaire/aliments/pain.webp",
+  "petit dejeuner": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp",
   "petit-dejeuner": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp",
   "pizza": "/lib/images/vocabulaire/aliments/pizza.webp",
+  "plateau repas": "/lib/images/vocabulaire/aliments/plateau-repas.webp",
   "plateau-repas": "/lib/images/vocabulaire/aliments/plateau-repas.webp",
   "poisson": "/lib/images/vocabulaire/aliments/poisson.webp",
   "popcorn": "/lib/images/vocabulaire/aliments/popcorn.webp",
+  "poulet frites": "/lib/images/vocabulaire/aliments/poulet-frites.webp",
   "poulet-frites": "/lib/images/vocabulaire/aliments/poulet-frites.webp",
   "poulet": "/lib/images/vocabulaire/aliments/poulet.webp",
+  "produits laitiers": "/lib/images/vocabulaire/aliments/produits-laitiers.webp",
   "produits-laitiers": "/lib/images/vocabulaire/aliments/produits-laitiers.webp",
   "pâtes": "/lib/images/vocabulaire/aliments/pâtes.webp",
   "quiche": "/lib/images/vocabulaire/aliments/quiche.webp",
   "riz": "/lib/images/vocabulaire/aliments/riz.webp",
   "saignant": "/lib/images/vocabulaire/aliments/saignant.webp",
+  "salade composée": "/lib/images/vocabulaire/aliments/salade-composée.webp",
   "salade-composée": "/lib/images/vocabulaire/aliments/salade-composée.webp",
   "sandwich": "/lib/images/vocabulaire/aliments/sandwich.webp",
   "saucisse": "/lib/images/vocabulaire/aliments/saucisse.webp",
@@ -7845,6 +7930,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "raie": "/lib/images/vocabulaire/animaux-aquatiques/raie.webp",
   "requin": "/lib/images/vocabulaire/animaux-aquatiques/requin.webp",
   "walrus": "/lib/images/vocabulaire/animaux-aquatiques/walrus.webp",
+  "étoile de mer": "/lib/images/vocabulaire/animaux-aquatiques/étoile-de-mer.webp",
   "étoile-de-mer": "/lib/images/vocabulaire/animaux-aquatiques/étoile-de-mer.webp",
   "agneau": "/lib/images/vocabulaire/animaux-ferme-compagnie/agneau.webp",
   "agneaux": "/lib/images/vocabulaire/animaux-ferme-compagnie/agneaux.webp",
@@ -7915,24 +8001,35 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "addition": "/lib/images/vocabulaire/argent-administration/addition.webp",
   "attestation": "/lib/images/vocabulaire/argent-administration/attestation.webp",
   "avis": "/lib/images/vocabulaire/argent-administration/avis.webp",
+  "billet de banque": "/lib/images/vocabulaire/argent-administration/billet-de-banque.webp",
   "billet-de-banque": "/lib/images/vocabulaire/argent-administration/billet-de-banque.webp",
   "billet": "/lib/images/vocabulaire/argent-administration/billet.webp",
+  "boîte aux lettres": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp",
   "boîte-aux-lettres": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp",
+  "carte d'identite": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp",
   "carte-d-identite": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp",
+  "carte de credit": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp",
   "carte-de-credit": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp",
+  "carte detudiant": "/lib/images/vocabulaire/argent-administration/carte-detudiant.webp",
   "carte-detudiant": "/lib/images/vocabulaire/argent-administration/carte-detudiant.webp",
+  "carte didentite": "/lib/images/vocabulaire/argent-administration/carte-didentite.webp",
   "carte-didentite": "/lib/images/vocabulaire/argent-administration/carte-didentite.webp",
   "chequier": "/lib/images/vocabulaire/argent-administration/chequier.webp",
+  "coffre fort": "/lib/images/vocabulaire/argent-administration/coffre-fort.webp",
   "coffre-fort": "/lib/images/vocabulaire/argent-administration/coffre-fort.webp",
   "colis": "/lib/images/vocabulaire/argent-administration/colis.webp",
+  "distributeur de billets": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp",
   "distributeur-de-billets": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp",
+  "dossier administratif": "/lib/images/vocabulaire/argent-administration/dossier-administratif.webp",
   "dossier-administratif": "/lib/images/vocabulaire/argent-administration/dossier-administratif.webp",
   "dossier": "/lib/images/vocabulaire/argent-administration/dossier.webp",
   "enveloppe": "/lib/images/vocabulaire/argent-administration/enveloppe.webp",
   "especes": "/lib/images/vocabulaire/argent-administration/especes.webp",
   "facture": "/lib/images/vocabulaire/argent-administration/facture.webp",
   "formulaire": "/lib/images/vocabulaire/argent-administration/formulaire.webp",
+  "permis de sejour": "/lib/images/vocabulaire/argent-administration/permis-de-sejour.webp",
   "permis-de-sejour": "/lib/images/vocabulaire/argent-administration/permis-de-sejour.webp",
+  "pièce de monnaie": "/lib/images/vocabulaire/argent-administration/pièce-de-monnaie.webp",
   "pièce-de-monnaie": "/lib/images/vocabulaire/argent-administration/pièce-de-monnaie.webp",
   "portefeuille": "/lib/images/vocabulaire/argent-administration/portefeuille.webp",
   "prix": "/lib/images/vocabulaire/argent-administration/prix.webp",
@@ -7941,6 +8038,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "signature": "/lib/images/vocabulaire/argent-administration/signature.webp",
   "tampon": "/lib/images/vocabulaire/argent-administration/tampon.webp",
   "taxe": "/lib/images/vocabulaire/argent-administration/taxe.webp",
+  "ticket de caisse": "/lib/images/vocabulaire/argent-administration/ticket-de-caisse.webp",
   "ticket-de-caisse": "/lib/images/vocabulaire/argent-administration/ticket-de-caisse.webp",
   "timbre": "/lib/images/vocabulaire/argent-administration/timbre.webp",
   "tirelire": "/lib/images/vocabulaire/argent-administration/tirelire.webp",
@@ -7949,6 +8047,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "annexe": "/lib/images/vocabulaire/autre/annexe.webp",
   "choix": "/lib/images/vocabulaire/autre/choix.webp",
   "cote": "/lib/images/vocabulaire/autre/cote.webp",
+  "cow boy": "/lib/images/vocabulaire/autre/cow-boy.webp",
   "cow-boy": "/lib/images/vocabulaire/autre/cow-boy.webp",
   "cyborg": "/lib/images/vocabulaire/autre/cyborg.webp",
   "dragon": "/lib/images/vocabulaire/autre/dragon.webp",
@@ -7991,18 +8090,23 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "zouave": "/lib/images/vocabulaire/autre/zouave.webp",
   "bière": "/lib/images/vocabulaire/boissons/bière.webp",
   "boisson": "/lib/images/vocabulaire/boissons/boisson.webp",
+  "bouteille deau": "/lib/images/vocabulaire/boissons/bouteille-deau.webp",
   "bouteille-deau": "/lib/images/vocabulaire/boissons/bouteille-deau.webp",
+  "café au lait": "/lib/images/vocabulaire/boissons/café-au-lait.webp",
   "café-au-lait": "/lib/images/vocabulaire/boissons/café-au-lait.webp",
   "café": "/lib/images/vocabulaire/boissons/café.webp",
   "canette": "/lib/images/vocabulaire/boissons/canette.webp",
   "carafe": "/lib/images/vocabulaire/boissons/carafe.webp",
+  "chocolat chaud": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp",
   "chocolat-chaud": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp",
   "cidre": "/lib/images/vocabulaire/boissons/cidre.webp",
   "citronnade": "/lib/images/vocabulaire/boissons/citronnade.webp",
   "cocktail": "/lib/images/vocabulaire/boissons/cocktail.webp",
+  "eau gazeuse": "/lib/images/vocabulaire/boissons/eau-gazeuse.webp",
   "eau-gazeuse": "/lib/images/vocabulaire/boissons/eau-gazeuse.webp",
   "eau": "/lib/images/vocabulaire/boissons/eau.webp",
   "infusion": "/lib/images/vocabulaire/boissons/infusion.webp",
+  "jus d'orange": "/lib/images/vocabulaire/boissons/jus-d-orange.webp",
   "jus-d-orange": "/lib/images/vocabulaire/boissons/jus-d-orange.webp",
   "jus": "/lib/images/vocabulaire/boissons/jus.webp",
   "lait": "/lib/images/vocabulaire/boissons/lait.webp",
@@ -8011,6 +8115,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "sirop": "/lib/images/vocabulaire/boissons/sirop.webp",
   "smoothie": "/lib/images/vocabulaire/boissons/smoothie.webp",
   "soda": "/lib/images/vocabulaire/boissons/soda.webp",
+  "thé glacé": "/lib/images/vocabulaire/boissons/thé-glacé.webp",
   "thé-glacé": "/lib/images/vocabulaire/boissons/thé-glacé.webp",
   "thé": "/lib/images/vocabulaire/boissons/thé.webp",
   "tisane": "/lib/images/vocabulaire/boissons/tisane.webp",
@@ -8021,6 +8126,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "fusée": "/lib/images/vocabulaire/ciel-espace/fusée.webp",
   "galaxie": "/lib/images/vocabulaire/ciel-espace/galaxie.webp",
   "lune": "/lib/images/vocabulaire/ciel-espace/lune.webp",
+  "navette spatiale": "/lib/images/vocabulaire/ciel-espace/navette-spatiale.webp",
   "navette-spatiale": "/lib/images/vocabulaire/ciel-espace/navette-spatiale.webp",
   "planète": "/lib/images/vocabulaire/ciel-espace/planète.webp",
   "satellite": "/lib/images/vocabulaire/ciel-espace/satellite.webp",
@@ -8088,6 +8194,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "bocal": "/lib/images/vocabulaire/cuisine/bocal.webp",
   "bol": "/lib/images/vocabulaire/cuisine/bol.webp",
   "casserole": "/lib/images/vocabulaire/cuisine/casserole.webp",
+  "couteau de cuisine": "/lib/images/vocabulaire/cuisine/couteau-de-cuisine.webp",
   "couteau-de-cuisine": "/lib/images/vocabulaire/cuisine/couteau-de-cuisine.webp",
   "couteau": "/lib/images/vocabulaire/cuisine/couteau.webp",
   "couvercle": "/lib/images/vocabulaire/cuisine/couvercle.webp",
@@ -8101,17 +8208,21 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "fourchette": "/lib/images/vocabulaire/cuisine/fourchette.webp",
   "louche": "/lib/images/vocabulaire/cuisine/louche.webp",
   "marmite": "/lib/images/vocabulaire/cuisine/marmite.webp",
+  "moule à gâteau": "/lib/images/vocabulaire/cuisine/moule-à-gâteau.webp",
   "moule-à-gâteau": "/lib/images/vocabulaire/cuisine/moule-à-gâteau.webp",
   "mug": "/lib/images/vocabulaire/cuisine/mug.webp",
   "nappe": "/lib/images/vocabulaire/cuisine/nappe.webp",
+  "ouvre boîte": "/lib/images/vocabulaire/cuisine/ouvre-boîte.webp",
   "ouvre-boîte": "/lib/images/vocabulaire/cuisine/ouvre-boîte.webp",
   "passoire": "/lib/images/vocabulaire/cuisine/passoire.webp",
   "pichet": "/lib/images/vocabulaire/cuisine/pichet.webp",
+  "planche à découper": "/lib/images/vocabulaire/cuisine/planche-à-découper.webp",
   "planche-à-découper": "/lib/images/vocabulaire/cuisine/planche-à-découper.webp",
   "plat": "/lib/images/vocabulaire/cuisine/plat.webp",
   "plateau": "/lib/images/vocabulaire/cuisine/plateau.webp",
   "poele": "/lib/images/vocabulaire/cuisine/poele.webp",
   "recette": "/lib/images/vocabulaire/cuisine/recette.webp",
+  "rouleau à patisserie": "/lib/images/vocabulaire/cuisine/rouleau-a-patisserie.webp",
   "rouleau-a-patisserie": "/lib/images/vocabulaire/cuisine/rouleau-a-patisserie.webp",
   "rouleau": "/lib/images/vocabulaire/cuisine/rouleau.webp",
   "râpe": "/lib/images/vocabulaire/cuisine/râpe.webp",
@@ -8119,16 +8230,20 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "spatule": "/lib/images/vocabulaire/cuisine/spatule.webp",
   "tablier": "/lib/images/vocabulaire/cuisine/tablier.webp",
   "tasse": "/lib/images/vocabulaire/cuisine/tasse.webp",
+  "thermometre de cuisine": "/lib/images/vocabulaire/cuisine/thermometre-de-cuisine.webp",
   "thermometre-de-cuisine": "/lib/images/vocabulaire/cuisine/thermometre-de-cuisine.webp",
   "théière": "/lib/images/vocabulaire/cuisine/théière.webp",
+  "tire bouchon": "/lib/images/vocabulaire/cuisine/tire-bouchon.webp",
   "tire-bouchon": "/lib/images/vocabulaire/cuisine/tire-bouchon.webp",
   "toque": "/lib/images/vocabulaire/cuisine/toque.webp",
   "ustensile": "/lib/images/vocabulaire/cuisine/ustensile.webp",
+  "ustensiles de patisserie": "/lib/images/vocabulaire/cuisine/ustensiles-de-patisserie.webp",
   "ustensiles-de-patisserie": "/lib/images/vocabulaire/cuisine/ustensiles-de-patisserie.webp",
   "verre": "/lib/images/vocabulaire/cuisine/verre.webp",
   "wok": "/lib/images/vocabulaire/cuisine/wok.webp",
   "beignet": "/lib/images/vocabulaire/desserts/beignet.webp",
   "biscuit": "/lib/images/vocabulaire/desserts/biscuit.webp",
+  "boite de chocolats": "/lib/images/vocabulaire/desserts/boite-de-chocolats.webp",
   "boite-de-chocolats": "/lib/images/vocabulaire/desserts/boite-de-chocolats.webp",
   "bonbon": "/lib/images/vocabulaire/desserts/bonbon.webp",
   "brownie": "/lib/images/vocabulaire/desserts/brownie.webp",
@@ -8142,13 +8257,16 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "gauffre": "/lib/images/vocabulaire/desserts/gauffre.webp",
   "gaufre": "/lib/images/vocabulaire/desserts/gaufre.webp",
   "glace": "/lib/images/vocabulaire/desserts/glace.webp",
+  "gâteau d'anniversaire": "/lib/images/vocabulaire/desserts/gâteau-d-anniversaire.webp",
   "gâteau-d-anniversaire": "/lib/images/vocabulaire/desserts/gâteau-d-anniversaire.webp",
   "gâteau": "/lib/images/vocabulaire/desserts/gâteau.webp",
   "macaron": "/lib/images/vocabulaire/desserts/macaron.webp",
   "madeleine": "/lib/images/vocabulaire/desserts/madeleine.webp",
   "meringue": "/lib/images/vocabulaire/desserts/meringue.webp",
+  "mille feuille": "/lib/images/vocabulaire/desserts/mille-feuille.webp",
   "mille-feuille": "/lib/images/vocabulaire/desserts/mille-feuille.webp",
   "muffin": "/lib/images/vocabulaire/desserts/muffin.webp",
+  "salade de fruits": "/lib/images/vocabulaire/desserts/salade-de-fruits.webp",
   "salade-de-fruits": "/lib/images/vocabulaire/desserts/salade-de-fruits.webp",
   "sucette": "/lib/images/vocabulaire/desserts/sucette.webp",
   "tarte": "/lib/images/vocabulaire/desserts/tarte.webp",
@@ -8177,6 +8295,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "encyclopédie": "/lib/images/vocabulaire/ecole-bureau/encyclopédie.webp",
   "examen": "/lib/images/vocabulaire/ecole-bureau/examen.webp",
   "exercice": "/lib/images/vocabulaire/ecole-bureau/exercice.webp",
+  "feuille de papier": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp",
   "feuille-de-papier": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp",
   "feutre": "/lib/images/vocabulaire/ecole-bureau/feutre.webp",
   "globe": "/lib/images/vocabulaire/ecole-bureau/globe.webp",
@@ -8188,8 +8307,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "papier": "/lib/images/vocabulaire/ecole-bureau/papier.webp",
   "perforatrice": "/lib/images/vocabulaire/ecole-bureau/perforatrice.webp",
   "pinceau": "/lib/images/vocabulaire/ecole-bureau/pinceau.webp",
+  "porte documents": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp",
   "porte-documents": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp",
+  "porte mine": "/lib/images/vocabulaire/ecole-bureau/porte-mine.webp",
   "porte-mine": "/lib/images/vocabulaire/ecole-bureau/porte-mine.webp",
+  "post it": "/lib/images/vocabulaire/ecole-bureau/post-it.webp",
   "post-it": "/lib/images/vocabulaire/ecole-bureau/post-it.webp",
   "prefixe": "/lib/images/vocabulaire/ecole-bureau/prefixe.webp",
   "projecteur": "/lib/images/vocabulaire/ecole-bureau/projecteur.webp",
@@ -8198,12 +8320,15 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "pupitre": "/lib/images/vocabulaire/ecole-bureau/pupitre.webp",
   "rapporteur": "/lib/images/vocabulaire/ecole-bureau/rapporteur.webp",
   "règle": "/lib/images/vocabulaire/ecole-bureau/règle.webp",
+  "salle de classe": "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp",
   "salle-de-classe": "/lib/images/vocabulaire/ecole-bureau/salle-de-classe.webp",
   "scotch": "/lib/images/vocabulaire/ecole-bureau/scotch.webp",
   "stylo": "/lib/images/vocabulaire/ecole-bureau/stylo.webp",
   "surligneur": "/lib/images/vocabulaire/ecole-bureau/surligneur.webp",
+  "tableau blanc": "/lib/images/vocabulaire/ecole-bureau/tableau-blanc.webp",
   "tableau-blanc": "/lib/images/vocabulaire/ecole-bureau/tableau-blanc.webp",
   "tableau": "/lib/images/vocabulaire/ecole-bureau/tableau.webp",
+  "taille crayon": "/lib/images/vocabulaire/ecole-bureau/taille-crayon.webp",
   "taille-crayon": "/lib/images/vocabulaire/ecole-bureau/taille-crayon.webp",
   "texte": "/lib/images/vocabulaire/ecole-bureau/texte.webp",
   "trombone": "/lib/images/vocabulaire/ecole-bureau/trombone.webp",
@@ -8211,31 +8336,46 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "élève": "/lib/images/vocabulaire/ecole-bureau/élève.webp",
   "équerre": "/lib/images/vocabulaire/ecole-bureau/équerre.webp",
   "aspirateur": "/lib/images/vocabulaire/electromenager/aspirateur.webp",
+  "balance de cuisine": "/lib/images/vocabulaire/electromenager/balance-de-cuisine.webp",
   "balance-de-cuisine": "/lib/images/vocabulaire/electromenager/balance-de-cuisine.webp",
   "bouilloire": "/lib/images/vocabulaire/electromenager/bouilloire.webp",
   "cafetiere": "/lib/images/vocabulaire/electromenager/cafetiere.webp",
+  "chauffe eau": "/lib/images/vocabulaire/electromenager/chauffe-eau.webp",
   "chauffe-eau": "/lib/images/vocabulaire/electromenager/chauffe-eau.webp",
   "climatiseur": "/lib/images/vocabulaire/electromenager/climatiseur.webp",
   "congelateur": "/lib/images/vocabulaire/electromenager/congelateur.webp",
   "cuisiniere": "/lib/images/vocabulaire/electromenager/cuisiniere.webp",
+  "fer à repasser": "/lib/images/vocabulaire/electromenager/fer-a-repasser.webp",
   "fer-a-repasser": "/lib/images/vocabulaire/electromenager/fer-a-repasser.webp",
   "four": "/lib/images/vocabulaire/electromenager/four.webp",
   "frigo": "/lib/images/vocabulaire/electromenager/frigo.webp",
+  "grille pain": "/lib/images/vocabulaire/electromenager/grille-pain.webp",
   "grille-pain": "/lib/images/vocabulaire/electromenager/grille-pain.webp",
   "hotte": "/lib/images/vocabulaire/electromenager/hotte.webp",
+  "lave linge": "/lib/images/vocabulaire/electromenager/lave-linge.webp",
   "lave-linge": "/lib/images/vocabulaire/electromenager/lave-linge.webp",
+  "lave vaiselle": "/lib/images/vocabulaire/electromenager/lave-vaiselle.webp",
   "lave-vaiselle": "/lib/images/vocabulaire/electromenager/lave-vaiselle.webp",
+  "lave vaisselle": "/lib/images/vocabulaire/electromenager/lave-vaisselle.webp",
   "lave-vaisselle": "/lib/images/vocabulaire/electromenager/lave-vaisselle.webp",
+  "machine à laver": "/lib/images/vocabulaire/electromenager/machine-a-laver.webp",
   "machine-a-laver": "/lib/images/vocabulaire/electromenager/machine-a-laver.webp",
+  "machine à café": "/lib/images/vocabulaire/electromenager/machine-à-café.webp",
   "machine-à-café": "/lib/images/vocabulaire/electromenager/machine-à-café.webp",
+  "micro onde": "/lib/images/vocabulaire/electromenager/micro-onde.webp",
   "micro-onde": "/lib/images/vocabulaire/electromenager/micro-onde.webp",
+  "micro ondes": "/lib/images/vocabulaire/electromenager/micro-ondes.webp",
   "micro-ondes": "/lib/images/vocabulaire/electromenager/micro-ondes.webp",
   "mixeur": "/lib/images/vocabulaire/electromenager/mixeur.webp",
+  "plaque de cuisson": "/lib/images/vocabulaire/electromenager/plaque-de-cuisson.webp",
   "plaque-de-cuisson": "/lib/images/vocabulaire/electromenager/plaque-de-cuisson.webp",
   "refrigerateur": "/lib/images/vocabulaire/electromenager/refrigerateur.webp",
+  "robot de cuisine": "/lib/images/vocabulaire/electromenager/robot-de-cuisine.webp",
   "robot-de-cuisine": "/lib/images/vocabulaire/electromenager/robot-de-cuisine.webp",
   "réfrigerateur": "/lib/images/vocabulaire/electromenager/réfrigerateur.webp",
+  "seche cheveux": "/lib/images/vocabulaire/electromenager/seche-cheveux.webp",
   "seche-cheveux": "/lib/images/vocabulaire/electromenager/seche-cheveux.webp",
+  "sèche linge": "/lib/images/vocabulaire/electromenager/sèche-linge.webp",
   "sèche-linge": "/lib/images/vocabulaire/electromenager/sèche-linge.webp",
   "ventilateur": "/lib/images/vocabulaire/electromenager/ventilateur.webp",
   "basilic": "/lib/images/vocabulaire/epices-herbes/basilic.webp",
@@ -8264,8 +8404,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "fille": "/lib/images/vocabulaire/famille-personnes/fille.webp",
   "frère": "/lib/images/vocabulaire/famille-personnes/frère.webp",
   "garçon": "/lib/images/vocabulaire/famille-personnes/garçon.webp",
+  "grand mere": "/lib/images/vocabulaire/famille-personnes/grand-mere.webp",
   "grand-mere": "/lib/images/vocabulaire/famille-personnes/grand-mere.webp",
+  "grand pere": "/lib/images/vocabulaire/famille-personnes/grand-pere.webp",
   "grand-pere": "/lib/images/vocabulaire/famille-personnes/grand-pere.webp",
+  "grands parents": "/lib/images/vocabulaire/famille-personnes/grands-parents.webp",
   "grands-parents": "/lib/images/vocabulaire/famille-personnes/grands-parents.webp",
   "homme": "/lib/images/vocabulaire/famille-personnes/homme.webp",
   "jeune": "/lib/images/vocabulaire/famille-personnes/jeune.webp",
@@ -8278,6 +8421,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "papa": "/lib/images/vocabulaire/famille-personnes/papa.webp",
   "parents": "/lib/images/vocabulaire/famille-personnes/parents.webp",
   "pere": "/lib/images/vocabulaire/famille-personnes/pere.webp",
+  "personne âgée": "/lib/images/vocabulaire/famille-personnes/personne-âgée.webp",
   "personne-âgée": "/lib/images/vocabulaire/famille-personnes/personne-âgée.webp",
   "sœur": "/lib/images/vocabulaire/famille-personnes/sœur.webp",
   "tante": "/lib/images/vocabulaire/famille-personnes/tante.webp",
@@ -8310,6 +8454,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "citron": "/lib/images/vocabulaire/fruits/citron.webp",
   "clémentine": "/lib/images/vocabulaire/fruits/clémentine.webp",
   "coing": "/lib/images/vocabulaire/fruits/coing.webp",
+  "corbeille de fruits": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp",
   "corbeille-de-fruits": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp",
   "datte": "/lib/images/vocabulaire/fruits/datte.webp",
   "figue": "/lib/images/vocabulaire/fruits/figue.webp",
@@ -8329,6 +8474,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "mûre": "/lib/images/vocabulaire/fruits/mûre.webp",
   "nectarine": "/lib/images/vocabulaire/fruits/nectarine.webp",
   "noisette": "/lib/images/vocabulaire/fruits/noisette.webp",
+  "noix de coco": "/lib/images/vocabulaire/fruits/noix-de-coco.webp",
   "noix-de-coco": "/lib/images/vocabulaire/fruits/noix-de-coco.webp",
   "noix": "/lib/images/vocabulaire/fruits/noix.webp",
   "noyau": "/lib/images/vocabulaire/fruits/noyau.webp",
@@ -8343,98 +8489,165 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "prune": "/lib/images/vocabulaire/fruits/prune.webp",
   "pêche": "/lib/images/vocabulaire/fruits/pêche.webp",
   "raisin": "/lib/images/vocabulaire/fruits/raisin.webp",
+  "cadran solaire": "/lib/images/vocabulaire/heure-horloge/cadran-solaire.webp",
   "cadran-solaire": "/lib/images/vocabulaire/heure-horloge/cadran-solaire.webp",
+  "cinq heures dix": "/lib/images/vocabulaire/heure-horloge/cinq-heures-dix.webp",
   "cinq-heures-dix": "/lib/images/vocabulaire/heure-horloge/cinq-heures-dix.webp",
+  "cinq heures": "/lib/images/vocabulaire/heure-horloge/cinq-heures.webp",
   "cinq-heures": "/lib/images/vocabulaire/heure-horloge/cinq-heures.webp",
   "coucou": "/lib/images/vocabulaire/heure-horloge/coucou.webp",
+  "deux heures et demie": "/lib/images/vocabulaire/heure-horloge/deux-heures-et-demie.webp",
   "deux-heures-et-demie": "/lib/images/vocabulaire/heure-horloge/deux-heures-et-demie.webp",
+  "deux heures": "/lib/images/vocabulaire/heure-horloge/deux-heures.webp",
   "deux-heures": "/lib/images/vocabulaire/heure-horloge/deux-heures.webp",
+  "dix heures moins cinq": "/lib/images/vocabulaire/heure-horloge/dix-heures-moins-cinq.webp",
   "dix-heures-moins-cinq": "/lib/images/vocabulaire/heure-horloge/dix-heures-moins-cinq.webp",
+  "dix heures": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
   "dix-heures": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
+  "dix huit heures trente": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp",
   "dix-huit-heures-trente": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp",
+  "dix huit heures": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp",
   "dix-huit-heures": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp",
+  "dix neuf heures": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
   "dix-neuf-heures": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
+  "dix sept heures quarante cinq": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-quarante-cinq.webp",
   "dix-sept-heures-quarante-cinq": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-quarante-cinq.webp",
+  "dix sept heures": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp",
   "dix-sept-heures": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp",
+  "douze heures trente": "/lib/images/vocabulaire/heure-horloge/douze-heures-trente.webp",
   "douze-heures-trente": "/lib/images/vocabulaire/heure-horloge/douze-heures-trente.webp",
+  "douze heures": "/lib/images/vocabulaire/heure-horloge/douze-heures.webp",
   "douze-heures": "/lib/images/vocabulaire/heure-horloge/douze-heures.webp",
+  "emploi du temps": "/lib/images/vocabulaire/heure-horloge/emploi-du-temps.webp",
   "emploi-du-temps": "/lib/images/vocabulaire/heure-horloge/emploi-du-temps.webp",
   "horaires": "/lib/images/vocabulaire/heure-horloge/horaires.webp",
   "horloge": "/lib/images/vocabulaire/heure-horloge/horloge.webp",
+  "huit heures moins vingt": "/lib/images/vocabulaire/heure-horloge/huit-heures-moins-vingt.webp",
   "huit-heures-moins-vingt": "/lib/images/vocabulaire/heure-horloge/huit-heures-moins-vingt.webp",
+  "huit heures numerique": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp",
   "huit-heures-numerique": "/lib/images/vocabulaire/heure-horloge/huit-heures-numerique.webp",
+  "huit heures quinze": "/lib/images/vocabulaire/heure-horloge/huit-heures-quinze.webp",
   "huit-heures-quinze": "/lib/images/vocabulaire/heure-horloge/huit-heures-quinze.webp",
+  "huit heures": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp",
   "huit-heures": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp",
+  "midi et quart": "/lib/images/vocabulaire/heure-horloge/midi-et-quart.webp",
   "midi-et-quart": "/lib/images/vocabulaire/heure-horloge/midi-et-quart.webp",
   "midi": "/lib/images/vocabulaire/heure-horloge/midi.webp",
+  "minuit numerique": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp",
   "minuit-numerique": "/lib/images/vocabulaire/heure-horloge/minuit-numerique.webp",
   "minuit": "/lib/images/vocabulaire/heure-horloge/minuit.webp",
   "minuteur": "/lib/images/vocabulaire/heure-horloge/minuteur.webp",
+  "neuf heures moins dix": "/lib/images/vocabulaire/heure-horloge/neuf-heures-moins-dix.webp",
   "neuf-heures-moins-dix": "/lib/images/vocabulaire/heure-horloge/neuf-heures-moins-dix.webp",
+  "neuf heures quarante cinq": "/lib/images/vocabulaire/heure-horloge/neuf-heures-quarante-cinq.webp",
   "neuf-heures-quarante-cinq": "/lib/images/vocabulaire/heure-horloge/neuf-heures-quarante-cinq.webp",
+  "neuf heures": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp",
   "neuf-heures": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp",
+  "onze heures et demie": "/lib/images/vocabulaire/heure-horloge/onze-heures-et-demie.webp",
   "onze-heures-et-demie": "/lib/images/vocabulaire/heure-horloge/onze-heures-et-demie.webp",
+  "onze heures numerique": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp",
   "onze-heures-numerique": "/lib/images/vocabulaire/heure-horloge/onze-heures-numerique.webp",
+  "onze heures": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp",
   "onze-heures": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp",
   "pendule": "/lib/images/vocabulaire/heure-horloge/pendule.webp",
+  "quatorze heures trente": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp",
   "quatorze-heures-trente": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp",
+  "quatorze heures": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp",
   "quatorze-heures": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp",
+  "quatre heures cinq": "/lib/images/vocabulaire/heure-horloge/quatre-heures-cinq.webp",
   "quatre-heures-cinq": "/lib/images/vocabulaire/heure-horloge/quatre-heures-cinq.webp",
+  "quatre heures": "/lib/images/vocabulaire/heure-horloge/quatre-heures.webp",
   "quatre-heures": "/lib/images/vocabulaire/heure-horloge/quatre-heures.webp",
+  "quinze heures trente": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp",
   "quinze-heures-trente": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp",
+  "quinze heures": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp",
   "quinze-heures": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp",
+  "réveil numérique": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp",
   "réveil-numérique": "/lib/images/vocabulaire/heure-horloge/réveil-numérique.webp",
   "sablier": "/lib/images/vocabulaire/heure-horloge/sablier.webp",
+  "seize heures quarante cinq": "/lib/images/vocabulaire/heure-horloge/seize-heures-quarante-cinq.webp",
   "seize-heures-quarante-cinq": "/lib/images/vocabulaire/heure-horloge/seize-heures-quarante-cinq.webp",
+  "seize heures quinze": "/lib/images/vocabulaire/heure-horloge/seize-heures-quinze.webp",
   "seize-heures-quinze": "/lib/images/vocabulaire/heure-horloge/seize-heures-quinze.webp",
+  "seize heures trente": "/lib/images/vocabulaire/heure-horloge/seize-heures-trente.webp",
   "seize-heures-trente": "/lib/images/vocabulaire/heure-horloge/seize-heures-trente.webp",
+  "seize heures": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp",
   "seize-heures": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp",
+  "sept heures trente": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp",
   "sept-heures-trente": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp",
+  "sept heures vingt cinq": "/lib/images/vocabulaire/heure-horloge/sept-heures-vingt-cinq.webp",
   "sept-heures-vingt-cinq": "/lib/images/vocabulaire/heure-horloge/sept-heures-vingt-cinq.webp",
+  "sept heures": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp",
   "sept-heures": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp",
+  "six heures vingt": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp",
   "six-heures-vingt": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp",
+  "six heures": "/lib/images/vocabulaire/heure-horloge/six-heures.webp",
   "six-heures": "/lib/images/vocabulaire/heure-horloge/six-heures.webp",
+  "treize heures": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp",
   "treize-heures": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp",
+  "trois heures moins le quart": "/lib/images/vocabulaire/heure-horloge/trois-heures-moins-le-quart.webp",
   "trois-heures-moins-le-quart": "/lib/images/vocabulaire/heure-horloge/trois-heures-moins-le-quart.webp",
+  "trois heures": "/lib/images/vocabulaire/heure-horloge/trois-heures.webp",
   "trois-heures": "/lib/images/vocabulaire/heure-horloge/trois-heures.webp",
+  "une heure et quart": "/lib/images/vocabulaire/heure-horloge/une-heure-et-quart.webp",
   "une-heure-et-quart": "/lib/images/vocabulaire/heure-horloge/une-heure-et-quart.webp",
+  "une heure": "/lib/images/vocabulaire/heure-horloge/une-heure.webp",
   "une-heure": "/lib/images/vocabulaire/heure-horloge/une-heure.webp",
+  "vingt deux heures trente": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp",
   "vingt-deux-heures-trente": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp",
+  "vingt deux heures": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp",
   "vingt-deux-heures": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp",
+  "vingt et une heures quinze": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp",
   "vingt-et-une-heures-quinze": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp",
+  "vingt et une heures": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp",
   "vingt-et-une-heures": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp",
+  "vingt heures": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp",
   "vingt-heures": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp",
   "baignoire": "/lib/images/vocabulaire/hygiene/baignoire.webp",
+  "brosse à cheveux": "/lib/images/vocabulaire/hygiene/brosse-a-cheveux.webp",
   "brosse-a-cheveux": "/lib/images/vocabulaire/hygiene/brosse-a-cheveux.webp",
+  "brosse à dents": "/lib/images/vocabulaire/hygiene/brosse-a-dents.webp",
   "brosse-a-dents": "/lib/images/vocabulaire/hygiene/brosse-a-dents.webp",
   "brosse": "/lib/images/vocabulaire/hygiene/brosse.webp",
+  "ciseaux de coiffure": "/lib/images/vocabulaire/hygiene/ciseaux-de-coiffure.webp",
   "ciseaux-de-coiffure": "/lib/images/vocabulaire/hygiene/ciseaux-de-coiffure.webp",
+  "coton tige": "/lib/images/vocabulaire/hygiene/coton-tige.webp",
   "coton-tige": "/lib/images/vocabulaire/hygiene/coton-tige.webp",
+  "coupe ongles": "/lib/images/vocabulaire/hygiene/coupe-ongles.webp",
   "coupe-ongles": "/lib/images/vocabulaire/hygiene/coupe-ongles.webp",
+  "creme solaire": "/lib/images/vocabulaire/hygiene/creme-solaire.webp",
   "creme-solaire": "/lib/images/vocabulaire/hygiene/creme-solaire.webp",
+  "crème hydratante": "/lib/images/vocabulaire/hygiene/crème-hydratante.webp",
   "crème-hydratante": "/lib/images/vocabulaire/hygiene/crème-hydratante.webp",
   "dentifrice": "/lib/images/vocabulaire/hygiene/dentifrice.webp",
   "douche": "/lib/images/vocabulaire/hygiene/douche.webp",
   "déodorant": "/lib/images/vocabulaire/hygiene/déodorant.webp",
+  "fil dentaire": "/lib/images/vocabulaire/hygiene/fil-dentaire.webp",
   "fil-dentaire": "/lib/images/vocabulaire/hygiene/fil-dentaire.webp",
+  "gant de toilette": "/lib/images/vocabulaire/hygiene/gant-de-toilette.webp",
   "gant-de-toilette": "/lib/images/vocabulaire/hygiene/gant-de-toilette.webp",
+  "gel douche": "/lib/images/vocabulaire/hygiene/gel-douche.webp",
   "gel-douche": "/lib/images/vocabulaire/hygiene/gel-douche.webp",
   "hygiène": "/lib/images/vocabulaire/hygiene/hygiène.webp",
   "lavabo": "/lib/images/vocabulaire/hygiene/lavabo.webp",
   "lessive": "/lib/images/vocabulaire/hygiene/lessive.webp",
   "lotion": "/lib/images/vocabulaire/hygiene/lotion.webp",
   "mouchoirs": "/lib/images/vocabulaire/hygiene/mouchoirs.webp",
+  "papier toilette": "/lib/images/vocabulaire/hygiene/papier-toilette.webp",
   "papier-toilette": "/lib/images/vocabulaire/hygiene/papier-toilette.webp",
   "parfum": "/lib/images/vocabulaire/hygiene/parfum.webp",
   "peigne": "/lib/images/vocabulaire/hygiene/peigne.webp",
+  "pince à épiler": "/lib/images/vocabulaire/hygiene/pince-à-épiler.webp",
   "pince-à-épiler": "/lib/images/vocabulaire/hygiene/pince-à-épiler.webp",
   "rasoir": "/lib/images/vocabulaire/hygiene/rasoir.webp",
   "robinet": "/lib/images/vocabulaire/hygiene/robinet.webp",
   "savon": "/lib/images/vocabulaire/hygiene/savon.webp",
+  "seau et serpilliere": "/lib/images/vocabulaire/hygiene/seau-et-serpilliere.webp",
   "seau-et-serpilliere": "/lib/images/vocabulaire/hygiene/seau-et-serpilliere.webp",
   "serviette": "/lib/images/vocabulaire/hygiene/serviette.webp",
   "shampoing": "/lib/images/vocabulaire/hygiene/shampoing.webp",
   "spray": "/lib/images/vocabulaire/hygiene/spray.webp",
+  "sèche cheveux": "/lib/images/vocabulaire/hygiene/sèche-cheveux.webp",
   "sèche-cheveux": "/lib/images/vocabulaire/hygiene/sèche-cheveux.webp",
   "abeille": "/lib/images/vocabulaire/insectes-petites-betes/abeille.webp",
   "araignée": "/lib/images/vocabulaire/insectes-petites-betes/araignée.webp",
@@ -8449,6 +8662,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "libellule": "/lib/images/vocabulaire/insectes-petites-betes/libellule.webp",
   "limace": "/lib/images/vocabulaire/insectes-petites-betes/limace.webp",
   "luciole": "/lib/images/vocabulaire/insectes-petites-betes/luciole.webp",
+  "mante religieuse": "/lib/images/vocabulaire/insectes-petites-betes/mante-religieuse.webp",
   "mante-religieuse": "/lib/images/vocabulaire/insectes-petites-betes/mante-religieuse.webp",
   "mouche": "/lib/images/vocabulaire/insectes-petites-betes/mouche.webp",
   "moustique": "/lib/images/vocabulaire/insectes-petites-betes/moustique.webp",
@@ -8457,6 +8671,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "sauterelle": "/lib/images/vocabulaire/insectes-petites-betes/sauterelle.webp",
   "scarabée": "/lib/images/vocabulaire/insectes-petites-betes/scarabée.webp",
   "scorpion": "/lib/images/vocabulaire/insectes-petites-betes/scorpion.webp",
+  "ver de terre": "/lib/images/vocabulaire/insectes-petites-betes/ver-de-terre.webp",
   "ver-de-terre": "/lib/images/vocabulaire/insectes-petites-betes/ver-de-terre.webp",
   "ail": "/lib/images/vocabulaire/legumes/ail.webp",
   "artichaut": "/lib/images/vocabulaire/legumes/artichaut.webp",
@@ -8464,9 +8679,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "aubergine": "/lib/images/vocabulaire/legumes/aubergine.webp",
   "betterave": "/lib/images/vocabulaire/legumes/betterave.webp",
   "brocoli": "/lib/images/vocabulaire/legumes/brocoli.webp",
+  "cagette de legumes": "/lib/images/vocabulaire/legumes/cagette-de-legumes.webp",
   "cagette-de-legumes": "/lib/images/vocabulaire/legumes/cagette-de-legumes.webp",
   "carotte": "/lib/images/vocabulaire/legumes/carotte.webp",
   "champignon": "/lib/images/vocabulaire/legumes/champignon.webp",
+  "chou fleur": "/lib/images/vocabulaire/legumes/chou-fleur.webp",
   "chou-fleur": "/lib/images/vocabulaire/legumes/chou-fleur.webp",
   "chou": "/lib/images/vocabulaire/legumes/chou.webp",
   "citrouille": "/lib/images/vocabulaire/legumes/citrouille.webp",
@@ -8482,12 +8699,16 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "maïs": "/lib/images/vocabulaire/legumes/maïs.webp",
   "navet": "/lib/images/vocabulaire/legumes/navet.webp",
   "oignon": "/lib/images/vocabulaire/legumes/oignon.webp",
+  "patate douce": "/lib/images/vocabulaire/legumes/patate-douce.webp",
   "patate-douce": "/lib/images/vocabulaire/legumes/patate-douce.webp",
+  "petit pois": "/lib/images/vocabulaire/legumes/petit-pois.webp",
   "petit-pois": "/lib/images/vocabulaire/legumes/petit-pois.webp",
   "piment": "/lib/images/vocabulaire/legumes/piment.webp",
   "poireau": "/lib/images/vocabulaire/legumes/poireau.webp",
+  "pois chiche": "/lib/images/vocabulaire/legumes/pois-chiche.webp",
   "pois-chiche": "/lib/images/vocabulaire/legumes/pois-chiche.webp",
   "poivron": "/lib/images/vocabulaire/legumes/poivron.webp",
+  "pomme de terre": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp",
   "pomme-de-terre": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp",
   "potiron": "/lib/images/vocabulaire/legumes/potiron.webp",
   "radis": "/lib/images/vocabulaire/legumes/radis.webp",
@@ -8500,31 +8721,41 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "barbecue": "/lib/images/vocabulaire/loisirs/barbecue.webp",
   "billard": "/lib/images/vocabulaire/loisirs/billard.webp",
   "bille": "/lib/images/vocabulaire/loisirs/bille.webp",
+  "billets de spectacle": "/lib/images/vocabulaire/loisirs/billets-de-spectacle.webp",
   "billets-de-spectacle": "/lib/images/vocabulaire/loisirs/billets-de-spectacle.webp",
   "bricolage": "/lib/images/vocabulaire/loisirs/bricolage.webp",
   "camping": "/lib/images/vocabulaire/loisirs/camping.webp",
   "cerceau": "/lib/images/vocabulaire/loisirs/cerceau.webp",
+  "cerf volant": "/lib/images/vocabulaire/loisirs/cerf-volant.webp",
   "cerf-volant": "/lib/images/vocabulaire/loisirs/cerf-volant.webp",
   "chevalet": "/lib/images/vocabulaire/loisirs/chevalet.webp",
+  "cinema 3d": "/lib/images/vocabulaire/loisirs/cinema-3d.webp",
   "cinema-3d": "/lib/images/vocabulaire/loisirs/cinema-3d.webp",
+  "cinema en plein air": "/lib/images/vocabulaire/loisirs/cinema-en-plein-air.webp",
   "cinema-en-plein-air": "/lib/images/vocabulaire/loisirs/cinema-en-plein-air.webp",
+  "corde à sauter": "/lib/images/vocabulaire/loisirs/corde-a-sauter.webp",
   "corde-a-sauter": "/lib/images/vocabulaire/loisirs/corde-a-sauter.webp",
   "couture": "/lib/images/vocabulaire/loisirs/couture.webp",
   "danse": "/lib/images/vocabulaire/loisirs/danse.webp",
+  "decoration de fete": "/lib/images/vocabulaire/loisirs/decoration-de-fete.webp",
   "decoration-de-fete": "/lib/images/vocabulaire/loisirs/decoration-de-fete.webp",
   "dessin": "/lib/images/vocabulaire/loisirs/dessin.webp",
   "discotheque": "/lib/images/vocabulaire/loisirs/discotheque.webp",
   "domino": "/lib/images/vocabulaire/loisirs/domino.webp",
   "dé": "/lib/images/vocabulaire/loisirs/dé.webp",
+  "enfant qui joue": "/lib/images/vocabulaire/loisirs/enfant-qui-joue.webp",
   "enfant-qui-joue": "/lib/images/vocabulaire/loisirs/enfant-qui-joue.webp",
   "exposition": "/lib/images/vocabulaire/loisirs/exposition.webp",
   "festival": "/lib/images/vocabulaire/loisirs/festival.webp",
   "hamac": "/lib/images/vocabulaire/loisirs/hamac.webp",
   "hobby": "/lib/images/vocabulaire/loisirs/hobby.webp",
   "jardinage": "/lib/images/vocabulaire/loisirs/jardinage.webp",
+  "jeu de cartes": "/lib/images/vocabulaire/loisirs/jeu-de-cartes.webp",
   "jeu-de-cartes": "/lib/images/vocabulaire/loisirs/jeu-de-cartes.webp",
+  "jeu de société": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp",
   "jeu-de-société": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp",
   "jeu": "/lib/images/vocabulaire/loisirs/jeu.webp",
+  "jeux vidéo": "/lib/images/vocabulaire/loisirs/jeux-vidéo.webp",
   "jeux-vidéo": "/lib/images/vocabulaire/loisirs/jeux-vidéo.webp",
   "jouet": "/lib/images/vocabulaire/loisirs/jouet.webp",
   "kaléidoscope": "/lib/images/vocabulaire/loisirs/kaléidoscope.webp",
@@ -8532,17 +8763,21 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "lecture": "/lib/images/vocabulaire/loisirs/lecture.webp",
   "loto": "/lib/images/vocabulaire/loisirs/loto.webp",
   "manege": "/lib/images/vocabulaire/loisirs/manege.webp",
+  "marche de noel": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
   "marche-de-noel": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
   "marionnette": "/lib/images/vocabulaire/loisirs/marionnette.webp",
+  "parc d'attractions": "/lib/images/vocabulaire/loisirs/parc-d-attractions.webp",
   "parc-d-attractions": "/lib/images/vocabulaire/loisirs/parc-d-attractions.webp",
   "peinture": "/lib/images/vocabulaire/loisirs/peinture.webp",
   "peluche": "/lib/images/vocabulaire/loisirs/peluche.webp",
   "photo": "/lib/images/vocabulaire/loisirs/photo.webp",
   "photographie": "/lib/images/vocabulaire/loisirs/photographie.webp",
+  "pique nique": "/lib/images/vocabulaire/loisirs/pique-nique.webp",
   "pique-nique": "/lib/images/vocabulaire/loisirs/pique-nique.webp",
   "poupée": "/lib/images/vocabulaire/loisirs/poupée.webp",
   "promenade": "/lib/images/vocabulaire/loisirs/promenade.webp",
   "puzzle": "/lib/images/vocabulaire/loisirs/puzzle.webp",
+  "pêche à la ligne": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp",
   "pêche-à-la-ligne": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp",
   "relax": "/lib/images/vocabulaire/loisirs/relax.webp",
   "scene": "/lib/images/vocabulaire/loisirs/scene.webp",
@@ -8591,17 +8826,22 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "mur": "/lib/images/vocabulaire/maison/mur.webp",
   "oreiller": "/lib/images/vocabulaire/maison/oreiller.webp",
   "penderie": "/lib/images/vocabulaire/maison/penderie.webp",
+  "porte manteau": "/lib/images/vocabulaire/maison/porte-manteau.webp",
   "porte-manteau": "/lib/images/vocabulaire/maison/porte-manteau.webp",
   "porte": "/lib/images/vocabulaire/maison/porte.webp",
   "prise": "/lib/images/vocabulaire/maison/prise.webp",
+  "produits menagers": "/lib/images/vocabulaire/maison/produits-menagers.webp",
   "produits-menagers": "/lib/images/vocabulaire/maison/produits-menagers.webp",
   "radiateur": "/lib/images/vocabulaire/maison/radiateur.webp",
+  "rez de chaussee": "/lib/images/vocabulaire/maison/rez-de-chaussee.webp",
   "rez-de-chaussee": "/lib/images/vocabulaire/maison/rez-de-chaussee.webp",
   "rideau": "/lib/images/vocabulaire/maison/rideau.webp",
+  "salle de bain": "/lib/images/vocabulaire/maison/salle-de-bain.webp",
   "salle-de-bain": "/lib/images/vocabulaire/maison/salle-de-bain.webp",
   "salon": "/lib/images/vocabulaire/maison/salon.webp",
   "serrure": "/lib/images/vocabulaire/maison/serrure.webp",
   "sonnette": "/lib/images/vocabulaire/maison/sonnette.webp",
+  "table de nuit": "/lib/images/vocabulaire/maison/table-de-nuit.webp",
   "table-de-nuit": "/lib/images/vocabulaire/maison/table-de-nuit.webp",
   "table": "/lib/images/vocabulaire/maison/table.webp",
   "tabouret": "/lib/images/vocabulaire/maison/tabouret.webp",
@@ -8628,12 +8868,14 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "soie": "/lib/images/vocabulaire/materiaux/soie.webp",
   "velours": "/lib/images/vocabulaire/materiaux/velours.webp",
   "zinc": "/lib/images/vocabulaire/materiaux/zinc.webp",
+  "arc en ciel": "/lib/images/vocabulaire/meteo/arc-en-ciel.webp",
   "arc-en-ciel": "/lib/images/vocabulaire/meteo/arc-en-ciel.webp",
   "averse": "/lib/images/vocabulaire/meteo/averse.webp",
   "blizzard": "/lib/images/vocabulaire/meteo/blizzard.webp",
   "brouillard": "/lib/images/vocabulaire/meteo/brouillard.webp",
   "canicule": "/lib/images/vocabulaire/meteo/canicule.webp",
   "chaud": "/lib/images/vocabulaire/meteo/chaud.webp",
+  "ciel couvert": "/lib/images/vocabulaire/meteo/ciel-couvert.webp",
   "ciel-couvert": "/lib/images/vocabulaire/meteo/ciel-couvert.webp",
   "cyclone": "/lib/images/vocabulaire/meteo/cyclone.webp",
   "eclair": "/lib/images/vocabulaire/meteo/eclair.webp",
@@ -8646,8 +8888,10 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "neige": "/lib/images/vocabulaire/meteo/neige.webp",
   "nuage": "/lib/images/vocabulaire/meteo/nuage.webp",
   "orage": "/lib/images/vocabulaire/meteo/orage.webp",
+  "parapluie ouvert": "/lib/images/vocabulaire/meteo/parapluie-ouvert.webp",
   "parapluie-ouvert": "/lib/images/vocabulaire/meteo/parapluie-ouvert.webp",
   "pluie": "/lib/images/vocabulaire/meteo/pluie.webp",
+  "soleil nuages vent": "/lib/images/vocabulaire/meteo/soleil-nuages-vent.webp",
   "soleil-nuages-vent": "/lib/images/vocabulaire/meteo/soleil-nuages-vent.webp",
   "soleil": "/lib/images/vocabulaire/meteo/soleil.webp",
   "température": "/lib/images/vocabulaire/meteo/température.webp",
@@ -8658,9 +8902,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "zéphyr": "/lib/images/vocabulaire/meteo/zéphyr.webp",
   "éclaircie": "/lib/images/vocabulaire/meteo/éclaircie.webp",
   "actrice": "/lib/images/vocabulaire/metiers/actrice.webp",
+  "agente entretien": "/lib/images/vocabulaire/metiers/agente-entretien.webp",
   "agente-entretien": "/lib/images/vocabulaire/metiers/agente-entretien.webp",
   "agriculteur": "/lib/images/vocabulaire/metiers/agriculteur.webp",
   "agricultrice": "/lib/images/vocabulaire/metiers/agricultrice.webp",
+  "aide soignante": "/lib/images/vocabulaire/metiers/aide-soignante.webp",
   "aide-soignante": "/lib/images/vocabulaire/metiers/aide-soignante.webp",
   "architecte": "/lib/images/vocabulaire/metiers/architecte.webp",
   "astronaute": "/lib/images/vocabulaire/metiers/astronaute.webp",
@@ -8673,6 +8919,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "caissière": "/lib/images/vocabulaire/metiers/caissière.webp",
   "chanteuse": "/lib/images/vocabulaire/metiers/chanteuse.webp",
   "charpentière": "/lib/images/vocabulaire/metiers/charpentière.webp",
+  "chauffeur de bus": "/lib/images/vocabulaire/metiers/chauffeur-de-bus.webp",
   "chauffeur-de-bus": "/lib/images/vocabulaire/metiers/chauffeur-de-bus.webp",
   "chauffeuse": "/lib/images/vocabulaire/metiers/chauffeuse.webp",
   "clown": "/lib/images/vocabulaire/metiers/clown.webp",
@@ -8686,6 +8933,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "danseuse": "/lib/images/vocabulaire/metiers/danseuse.webp",
   "dentiste": "/lib/images/vocabulaire/metiers/dentiste.webp",
   "docteur": "/lib/images/vocabulaire/metiers/docteur.webp",
+  "employe de bureau": "/lib/images/vocabulaire/metiers/employe-de-bureau.webp",
   "employe-de-bureau": "/lib/images/vocabulaire/metiers/employe-de-bureau.webp",
   "enseignant": "/lib/images/vocabulaire/metiers/enseignant.webp",
   "facteur": "/lib/images/vocabulaire/metiers/facteur.webp",
@@ -8743,6 +8991,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "concert": "/lib/images/vocabulaire/musique/concert.webp",
   "dj": "/lib/images/vocabulaire/musique/dj.webp",
   "flûte": "/lib/images/vocabulaire/musique/flûte.webp",
+  "groupe de rock": "/lib/images/vocabulaire/musique/groupe-de-rock.webp",
   "groupe-de-rock": "/lib/images/vocabulaire/musique/groupe-de-rock.webp",
   "guitare": "/lib/images/vocabulaire/musique/guitare.webp",
   "harmonica": "/lib/images/vocabulaire/musique/harmonica.webp",
@@ -8804,8 +9053,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "cinq": "/lib/images/vocabulaire/nombres-mesures/cinq.webp",
   "cinquante": "/lib/images/vocabulaire/nombres-mesures/cinquante.webp",
   "deux": "/lib/images/vocabulaire/nombres-mesures/deux.webp",
+  "dix huit": "/lib/images/vocabulaire/nombres-mesures/dix-huit.webp",
   "dix-huit": "/lib/images/vocabulaire/nombres-mesures/dix-huit.webp",
+  "dix neuf": "/lib/images/vocabulaire/nombres-mesures/dix-neuf.webp",
   "dix-neuf": "/lib/images/vocabulaire/nombres-mesures/dix-neuf.webp",
+  "dix sept": "/lib/images/vocabulaire/nombres-mesures/dix-sept.webp",
   "dix-sept": "/lib/images/vocabulaire/nombres-mesures/dix-sept.webp",
   "dix": "/lib/images/vocabulaire/nombres-mesures/dix.webp",
   "douzaine": "/lib/images/vocabulaire/nombres-mesures/douzaine.webp",
@@ -8823,6 +9075,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "nonante": "/lib/images/vocabulaire/nombres-mesures/nonante.webp",
   "numero": "/lib/images/vocabulaire/nombres-mesures/numero.webp",
   "onze": "/lib/images/vocabulaire/nombres-mesures/onze.webp",
+  "pour cent": "/lib/images/vocabulaire/nombres-mesures/pour-cent.webp",
   "pour-cent": "/lib/images/vocabulaire/nombres-mesures/pour-cent.webp",
   "quarante": "/lib/images/vocabulaire/nombres-mesures/quarante.webp",
   "quatorze": "/lib/images/vocabulaire/nombres-mesures/quatorze.webp",
@@ -8843,6 +9096,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "ampoule": "/lib/images/vocabulaire/objets/ampoule.webp",
   "badge": "/lib/images/vocabulaire/objets/badge.webp",
   "balai": "/lib/images/vocabulaire/objets/balai.webp",
+  "balance commerciale": "/lib/images/vocabulaire/objets/balance-commerciale.webp",
   "balance-commerciale": "/lib/images/vocabulaire/objets/balance-commerciale.webp",
   "balance": "/lib/images/vocabulaire/objets/balance.webp",
   "biberon": "/lib/images/vocabulaire/objets/biberon.webp",
@@ -8853,29 +9107,36 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "caddie": "/lib/images/vocabulaire/objets/caddie.webp",
   "cadeau": "/lib/images/vocabulaire/objets/cadeau.webp",
   "cadenas": "/lib/images/vocabulaire/objets/cadenas.webp",
+  "caisse enregistreuse": "/lib/images/vocabulaire/objets/caisse-enregistreuse.webp",
   "caisse-enregistreuse": "/lib/images/vocabulaire/objets/caisse-enregistreuse.webp",
   "caisse": "/lib/images/vocabulaire/objets/caisse.webp",
   "chaîne": "/lib/images/vocabulaire/objets/chaîne.webp",
   "cle": "/lib/images/vocabulaire/objets/cle.webp",
   "coffre": "/lib/images/vocabulaire/objets/coffre.webp",
   "corde": "/lib/images/vocabulaire/objets/corde.webp",
+  "etiquette prix": "/lib/images/vocabulaire/objets/etiquette-prix.webp",
   "etiquette-prix": "/lib/images/vocabulaire/objets/etiquette-prix.webp",
   "extincteur": "/lib/images/vocabulaire/objets/extincteur.webp",
+  "film etirable": "/lib/images/vocabulaire/objets/film-etirable.webp",
   "film-etirable": "/lib/images/vocabulaire/objets/film-etirable.webp",
   "journaux": "/lib/images/vocabulaire/objets/journaux.webp",
   "jumelles": "/lib/images/vocabulaire/objets/jumelles.webp",
+  "lampe de poche": "/lib/images/vocabulaire/objets/lampe-de-poche.webp",
   "lampe-de-poche": "/lib/images/vocabulaire/objets/lampe-de-poche.webp",
   "loupe": "/lib/images/vocabulaire/objets/loupe.webp",
   "ordures": "/lib/images/vocabulaire/objets/ordures.webp",
   "palette": "/lib/images/vocabulaire/objets/palette.webp",
+  "panier courses": "/lib/images/vocabulaire/objets/panier-courses.webp",
   "panier-courses": "/lib/images/vocabulaire/objets/panier-courses.webp",
   "panier": "/lib/images/vocabulaire/objets/panier.webp",
   "paquet": "/lib/images/vocabulaire/objets/paquet.webp",
   "parasol": "/lib/images/vocabulaire/objets/parasol.webp",
+  "porte cles": "/lib/images/vocabulaire/objets/porte-cles.webp",
   "porte-cles": "/lib/images/vocabulaire/objets/porte-cles.webp",
   "pot": "/lib/images/vocabulaire/objets/pot.webp",
   "poubelle": "/lib/images/vocabulaire/objets/poubelle.webp",
   "réveil": "/lib/images/vocabulaire/objets/réveil.webp",
+  "sac plastique": "/lib/images/vocabulaire/objets/sac-plastique.webp",
   "sac-plastique": "/lib/images/vocabulaire/objets/sac-plastique.webp",
   "sachet": "/lib/images/vocabulaire/objets/sachet.webp",
   "seau": "/lib/images/vocabulaire/objets/seau.webp",
@@ -8892,6 +9153,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "cygne": "/lib/images/vocabulaire/oiseaux/cygne.webp",
   "dodo": "/lib/images/vocabulaire/oiseaux/dodo.webp",
   "faucon": "/lib/images/vocabulaire/oiseaux/faucon.webp",
+  "flamant rose": "/lib/images/vocabulaire/oiseaux/flamant-rose.webp",
   "flamant-rose": "/lib/images/vocabulaire/oiseaux/flamant-rose.webp",
   "hibou": "/lib/images/vocabulaire/oiseaux/hibou.webp",
   "hirondelle": "/lib/images/vocabulaire/oiseaux/hirondelle.webp",
@@ -8911,65 +9173,91 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "pélican": "/lib/images/vocabulaire/oiseaux/pélican.webp",
   "quetzal": "/lib/images/vocabulaire/oiseaux/quetzal.webp",
   "toucan": "/lib/images/vocabulaire/oiseaux/toucan.webp",
+  "au bout de": "/lib/images/vocabulaire/orientation/au-bout-de.webp",
   "au-bout-de": "/lib/images/vocabulaire/orientation/au-bout-de.webp",
   "dans": "/lib/images/vocabulaire/orientation/dans.webp",
   "derrière": "/lib/images/vocabulaire/orientation/derrière.webp",
   "devant": "/lib/images/vocabulaire/orientation/devant.webp",
   "droite": "/lib/images/vocabulaire/orientation/droite.webp",
+  "en bas": "/lib/images/vocabulaire/orientation/en-bas.webp",
   "en-bas": "/lib/images/vocabulaire/orientation/en-bas.webp",
+  "en haut": "/lib/images/vocabulaire/orientation/en-haut.webp",
   "en-haut": "/lib/images/vocabulaire/orientation/en-haut.webp",
   "entre": "/lib/images/vocabulaire/orientation/entre.webp",
   "est": "/lib/images/vocabulaire/orientation/est.webp",
   "flèche": "/lib/images/vocabulaire/orientation/flèche.webp",
   "gauche": "/lib/images/vocabulaire/orientation/gauche.webp",
   "ici": "/lib/images/vocabulaire/orientation/ici.webp",
+  "jusqu a": "/lib/images/vocabulaire/orientation/jusqu-a.webp",
   "jusqu-a": "/lib/images/vocabulaire/orientation/jusqu-a.webp",
+  "la bas": "/lib/images/vocabulaire/orientation/la-bas.webp",
   "la-bas": "/lib/images/vocabulaire/orientation/la-bas.webp",
   "nord": "/lib/images/vocabulaire/orientation/nord.webp",
   "ouest": "/lib/images/vocabulaire/orientation/ouest.webp",
   "sous": "/lib/images/vocabulaire/orientation/sous.webp",
   "sud": "/lib/images/vocabulaire/orientation/sud.webp",
   "sur": "/lib/images/vocabulaire/orientation/sur.webp",
+  "tout droit": "/lib/images/vocabulaire/orientation/tout-droit.webp",
   "tout-droit": "/lib/images/vocabulaire/orientation/tout-droit.webp",
+  "à côté de": "/lib/images/vocabulaire/orientation/à-côté-de.webp",
   "à-côté-de": "/lib/images/vocabulaire/orientation/à-côté-de.webp",
   "arrosoir": "/lib/images/vocabulaire/outils/arrosoir.webp",
   "axe": "/lib/images/vocabulaire/outils/axe.webp",
   "brouette": "/lib/images/vocabulaire/outils/brouette.webp",
+  "caisse à outils": "/lib/images/vocabulaire/outils/caisse-a-outils.webp",
   "caisse-a-outils": "/lib/images/vocabulaire/outils/caisse-a-outils.webp",
+  "casque anti bruit": "/lib/images/vocabulaire/outils/casque-anti-bruit.webp",
   "casque-anti-bruit": "/lib/images/vocabulaire/outils/casque-anti-bruit.webp",
+  "casque de chantier": "/lib/images/vocabulaire/outils/casque-de-chantier.webp",
   "casque-de-chantier": "/lib/images/vocabulaire/outils/casque-de-chantier.webp",
   "chalumeau": "/lib/images/vocabulaire/outils/chalumeau.webp",
   "cisaille": "/lib/images/vocabulaire/outils/cisaille.webp",
+  "ciseau à bois": "/lib/images/vocabulaire/outils/ciseau-a-bois.webp",
   "ciseau-a-bois": "/lib/images/vocabulaire/outils/ciseau-a-bois.webp",
+  "cle à molette": "/lib/images/vocabulaire/outils/cle-a-molette.webp",
   "cle-a-molette": "/lib/images/vocabulaire/outils/cle-a-molette.webp",
+  "cle à pipe": "/lib/images/vocabulaire/outils/cle-a-pipe.webp",
   "cle-a-pipe": "/lib/images/vocabulaire/outils/cle-a-pipe.webp",
+  "cle dynamometrique": "/lib/images/vocabulaire/outils/cle-dynamometrique.webp",
   "cle-dynamometrique": "/lib/images/vocabulaire/outils/cle-dynamometrique.webp",
   "clou": "/lib/images/vocabulaire/outils/clou.webp",
   "cric": "/lib/images/vocabulaire/outils/cric.webp",
   "diable": "/lib/images/vocabulaire/outils/diable.webp",
   "fixe": "/lib/images/vocabulaire/outils/fixe.webp",
   "fourche": "/lib/images/vocabulaire/outils/fourche.webp",
+  "gants de travail": "/lib/images/vocabulaire/outils/gants-de-travail.webp",
   "gants-de-travail": "/lib/images/vocabulaire/outils/gants-de-travail.webp",
   "hache": "/lib/images/vocabulaire/outils/hache.webp",
   "joint": "/lib/images/vocabulaire/outils/joint.webp",
+  "lunettes de protection": "/lib/images/vocabulaire/outils/lunettes-de-protection.webp",
   "lunettes-de-protection": "/lib/images/vocabulaire/outils/lunettes-de-protection.webp",
+  "mallette à outils": "/lib/images/vocabulaire/outils/mallette-a-outils.webp",
   "mallette-a-outils": "/lib/images/vocabulaire/outils/mallette-a-outils.webp",
   "marteau": "/lib/images/vocabulaire/outils/marteau.webp",
+  "masque de soudure": "/lib/images/vocabulaire/outils/masque-de-soudure.webp",
   "masque-de-soudure": "/lib/images/vocabulaire/outils/masque-de-soudure.webp",
+  "metre ruban": "/lib/images/vocabulaire/outils/metre-ruban.webp",
   "metre-ruban": "/lib/images/vocabulaire/outils/metre-ruban.webp",
   "multimetre": "/lib/images/vocabulaire/outils/multimetre.webp",
+  "niveau à bulle": "/lib/images/vocabulaire/outils/niveau-a-bulle.webp",
   "niveau-a-bulle": "/lib/images/vocabulaire/outils/niveau-a-bulle.webp",
+  "papier de verre": "/lib/images/vocabulaire/outils/papier-de-verre.webp",
   "papier-de-verre": "/lib/images/vocabulaire/outils/papier-de-verre.webp",
   "pelle": "/lib/images/vocabulaire/outils/pelle.webp",
   "perceuse": "/lib/images/vocabulaire/outils/perceuse.webp",
+  "pince coupante": "/lib/images/vocabulaire/outils/pince-coupante.webp",
   "pince-coupante": "/lib/images/vocabulaire/outils/pince-coupante.webp",
+  "pince universelle": "/lib/images/vocabulaire/outils/pince-universelle.webp",
   "pince-universelle": "/lib/images/vocabulaire/outils/pince-universelle.webp",
+  "pot de peinture": "/lib/images/vocabulaire/outils/pot-de-peinture.webp",
   "pot-de-peinture": "/lib/images/vocabulaire/outils/pot-de-peinture.webp",
   "rabot": "/lib/images/vocabulaire/outils/rabot.webp",
   "rateau": "/lib/images/vocabulaire/outils/rateau.webp",
+  "rouleau à peindre": "/lib/images/vocabulaire/outils/rouleau-a-peindre.webp",
   "rouleau-a-peindre": "/lib/images/vocabulaire/outils/rouleau-a-peindre.webp",
   "scie": "/lib/images/vocabulaire/outils/scie.webp",
   "secateur": "/lib/images/vocabulaire/outils/secateur.webp",
+  "serre joint": "/lib/images/vocabulaire/outils/serre-joint.webp",
   "serre-joint": "/lib/images/vocabulaire/outils/serre-joint.webp",
   "siphon": "/lib/images/vocabulaire/outils/siphon.webp",
   "tournevis": "/lib/images/vocabulaire/outils/tournevis.webp",
@@ -8991,12 +9279,14 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chine": "/lib/images/vocabulaire/pays/chine.webp",
   "colombie": "/lib/images/vocabulaire/pays/colombie.webp",
   "congo": "/lib/images/vocabulaire/pays/congo.webp",
+  "corée du sud": "/lib/images/vocabulaire/pays/corée-du-sud.webp",
   "corée-du-sud": "/lib/images/vocabulaire/pays/corée-du-sud.webp",
   "croatie": "/lib/images/vocabulaire/pays/croatie.webp",
   "danemark": "/lib/images/vocabulaire/pays/danemark.webp",
   "drapeau": "/lib/images/vocabulaire/pays/drapeau.webp",
   "erythree": "/lib/images/vocabulaire/pays/erythree.webp",
   "espagne": "/lib/images/vocabulaire/pays/espagne.webp",
+  "etats unis": "/lib/images/vocabulaire/pays/etats-unis.webp",
   "etats-unis": "/lib/images/vocabulaire/pays/etats-unis.webp",
   "france": "/lib/images/vocabulaire/pays/france.webp",
   "grece": "/lib/images/vocabulaire/pays/grece.webp",
@@ -9014,6 +9304,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "nigeria": "/lib/images/vocabulaire/pays/nigeria.webp",
   "norvège": "/lib/images/vocabulaire/pays/norvège.webp",
   "pakistan": "/lib/images/vocabulaire/pays/pakistan.webp",
+  "pays bas": "/lib/images/vocabulaire/pays/pays-bas.webp",
   "pays-bas": "/lib/images/vocabulaire/pays/pays-bas.webp",
   "philippines": "/lib/images/vocabulaire/pays/philippines.webp",
   "pologne": "/lib/images/vocabulaire/pays/pologne.webp",
@@ -9022,6 +9313,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "serbie": "/lib/images/vocabulaire/pays/serbie.webp",
   "somalie": "/lib/images/vocabulaire/pays/somalie.webp",
   "soudan": "/lib/images/vocabulaire/pays/soudan.webp",
+  "sri lanka": "/lib/images/vocabulaire/pays/sri-lanka.webp",
   "sri-lanka": "/lib/images/vocabulaire/pays/sri-lanka.webp",
   "suisse": "/lib/images/vocabulaire/pays/suisse.webp",
   "suède": "/lib/images/vocabulaire/pays/suède.webp",
@@ -9076,6 +9368,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "poirier": "/lib/images/vocabulaire/plantes/poirier.webp",
   "pommier": "/lib/images/vocabulaire/plantes/pommier.webp",
   "sapin": "/lib/images/vocabulaire/plantes/sapin.webp",
+  "saule pleureur": "/lib/images/vocabulaire/plantes/saule-pleureur.webp",
   "saule-pleureur": "/lib/images/vocabulaire/plantes/saule-pleureur.webp",
   "sequoia": "/lib/images/vocabulaire/plantes/sequoia.webp",
   "tournesol": "/lib/images/vocabulaire/plantes/tournesol.webp",
@@ -9088,27 +9381,35 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "allergie": "/lib/images/vocabulaire/sante/allergie.webp",
   "antibiotique": "/lib/images/vocabulaire/sante/antibiotique.webp",
   "blessure": "/lib/images/vocabulaire/sante/blessure.webp",
+  "blouse blanche": "/lib/images/vocabulaire/sante/blouse-blanche.webp",
   "blouse-blanche": "/lib/images/vocabulaire/sante/blouse-blanche.webp",
+  "blouse de laboratoire": "/lib/images/vocabulaire/sante/blouse-de-laboratoire.webp",
   "blouse-de-laboratoire": "/lib/images/vocabulaire/sante/blouse-de-laboratoire.webp",
+  "boite de medicaments": "/lib/images/vocabulaire/sante/boite-de-medicaments.webp",
   "boite-de-medicaments": "/lib/images/vocabulaire/sante/boite-de-medicaments.webp",
   "brassard": "/lib/images/vocabulaire/sante/brassard.webp",
   "brulure": "/lib/images/vocabulaire/sante/brulure.webp",
   "béquilles": "/lib/images/vocabulaire/sante/béquilles.webp",
+  "carte d'assurance": "/lib/images/vocabulaire/sante/carte-d-assurance.webp",
   "carte-d-assurance": "/lib/images/vocabulaire/sante/carte-d-assurance.webp",
   "comprime": "/lib/images/vocabulaire/sante/comprime.webp",
   "coupure": "/lib/images/vocabulaire/sante/coupure.webp",
   "douleur": "/lib/images/vocabulaire/sante/douleur.webp",
+  "fauteuil roulant": "/lib/images/vocabulaire/sante/fauteuil-roulant.webp",
   "fauteuil-roulant": "/lib/images/vocabulaire/sante/fauteuil-roulant.webp",
   "fievre": "/lib/images/vocabulaire/sante/fievre.webp",
   "fracture": "/lib/images/vocabulaire/sante/fracture.webp",
   "gelule": "/lib/images/vocabulaire/sante/gelule.webp",
   "grippe": "/lib/images/vocabulaire/sante/grippe.webp",
   "infection": "/lib/images/vocabulaire/sante/infection.webp",
+  "mal de tête": "/lib/images/vocabulaire/sante/mal-de-tête.webp",
   "mal-de-tête": "/lib/images/vocabulaire/sante/mal-de-tête.webp",
+  "mal de ventre": "/lib/images/vocabulaire/sante/mal-de-ventre.webp",
   "mal-de-ventre": "/lib/images/vocabulaire/sante/mal-de-ventre.webp",
   "malade": "/lib/images/vocabulaire/sante/malade.webp",
   "masque": "/lib/images/vocabulaire/sante/masque.webp",
   "medicament": "/lib/images/vocabulaire/sante/medicament.webp",
+  "miroir dentaire": "/lib/images/vocabulaire/sante/miroir-dentaire.webp",
   "miroir-dentaire": "/lib/images/vocabulaire/sante/miroir-dentaire.webp",
   "nausee": "/lib/images/vocabulaire/sante/nausee.webp",
   "ordonnance": "/lib/images/vocabulaire/sante/ordonnance.webp",
@@ -9124,7 +9425,9 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "tensiomètre": "/lib/images/vocabulaire/sante/tensiomètre.webp",
   "thermometre": "/lib/images/vocabulaire/sante/thermometre.webp",
   "toux": "/lib/images/vocabulaire/sante/toux.webp",
+  "trousse de secours": "/lib/images/vocabulaire/sante/trousse-de-secours.webp",
   "trousse-de-secours": "/lib/images/vocabulaire/sante/trousse-de-secours.webp",
+  "trousse de soins": "/lib/images/vocabulaire/sante/trousse-de-soins.webp",
   "trousse-de-soins": "/lib/images/vocabulaire/sante/trousse-de-soins.webp",
   "vaccin": "/lib/images/vocabulaire/sante/vaccin.webp",
   "virus": "/lib/images/vocabulaire/sante/virus.webp",
@@ -9132,8 +9435,10 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "arc": "/lib/images/vocabulaire/sports/arc.webp",
   "athletisme": "/lib/images/vocabulaire/sports/athletisme.webp",
   "balle": "/lib/images/vocabulaire/sports/balle.webp",
+  "ballon de football": "/lib/images/vocabulaire/sports/ballon-de-football.webp",
   "ballon-de-football": "/lib/images/vocabulaire/sports/ballon-de-football.webp",
   "ballon": "/lib/images/vocabulaire/sports/ballon.webp",
+  "barre de traction": "/lib/images/vocabulaire/sports/barre-de-traction.webp",
   "barre-de-traction": "/lib/images/vocabulaire/sports/barre-de-traction.webp",
   "basket": "/lib/images/vocabulaire/sports/basket.webp",
   "basketball": "/lib/images/vocabulaire/sports/basketball.webp",
@@ -9146,6 +9451,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "cible": "/lib/images/vocabulaire/sports/cible.webp",
   "course": "/lib/images/vocabulaire/sports/course.webp",
   "cyclisme": "/lib/images/vocabulaire/sports/cyclisme.webp",
+  "equipement de sport": "/lib/images/vocabulaire/sports/equipement-de-sport.webp",
   "equipement-de-sport": "/lib/images/vocabulaire/sports/equipement-de-sport.webp",
   "escalade": "/lib/images/vocabulaire/sports/escalade.webp",
   "filet": "/lib/images/vocabulaire/sports/filet.webp",
@@ -9160,6 +9466,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "judo": "/lib/images/vocabulaire/sports/judo.webp",
   "karate": "/lib/images/vocabulaire/sports/karate.webp",
   "kayak": "/lib/images/vocabulaire/sports/kayak.webp",
+  "lunettes de natation": "/lib/images/vocabulaire/sports/lunettes-de-natation.webp",
   "lunettes-de-natation": "/lib/images/vocabulaire/sports/lunettes-de-natation.webp",
   "médaille": "/lib/images/vocabulaire/sports/médaille.webp",
   "natation": "/lib/images/vocabulaire/sports/natation.webp",
@@ -9169,6 +9476,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "patins": "/lib/images/vocabulaire/sports/patins.webp",
   "piste": "/lib/images/vocabulaire/sports/piste.webp",
   "randonnée": "/lib/images/vocabulaire/sports/randonnée.webp",
+  "raquette de tennis": "/lib/images/vocabulaire/sports/raquette-de-tennis.webp",
   "raquette-de-tennis": "/lib/images/vocabulaire/sports/raquette-de-tennis.webp",
   "raquette": "/lib/images/vocabulaire/sports/raquette.webp",
   "rugby": "/lib/images/vocabulaire/sports/rugby.webp",
@@ -9178,57 +9486,75 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "snowboard": "/lib/images/vocabulaire/sports/snowboard.webp",
   "sport": "/lib/images/vocabulaire/sports/sport.webp",
   "sportive": "/lib/images/vocabulaire/sports/sportive.webp",
+  "tapis de yoga": "/lib/images/vocabulaire/sports/tapis-de-yoga.webp",
   "tapis-de-yoga": "/lib/images/vocabulaire/sports/tapis-de-yoga.webp",
   "tennis": "/lib/images/vocabulaire/sports/tennis.webp",
   "trophée": "/lib/images/vocabulaire/sports/trophée.webp",
   "volleyball": "/lib/images/vocabulaire/sports/volleyball.webp",
   "wakeboard": "/lib/images/vocabulaire/sports/wakeboard.webp",
+  "water polo": "/lib/images/vocabulaire/sports/water-polo.webp",
   "water-polo": "/lib/images/vocabulaire/sports/water-polo.webp",
   "windsurf": "/lib/images/vocabulaire/sports/windsurf.webp",
   "yoga": "/lib/images/vocabulaire/sports/yoga.webp",
+  "appareil photo": "/lib/images/vocabulaire/technologie/appareil-photo.webp",
   "appareil-photo": "/lib/images/vocabulaire/technologie/appareil-photo.webp",
+  "batterie externe": "/lib/images/vocabulaire/technologie/batterie-externe.webp",
   "batterie-externe": "/lib/images/vocabulaire/technologie/batterie-externe.webp",
   "camera": "/lib/images/vocabulaire/technologie/camera.webp",
+  "carte bancaire": "/lib/images/vocabulaire/technologie/carte-bancaire.webp",
   "carte-bancaire": "/lib/images/vocabulaire/technologie/carte-bancaire.webp",
+  "carte sim": "/lib/images/vocabulaire/technologie/carte-sim.webp",
   "carte-sim": "/lib/images/vocabulaire/technologie/carte-sim.webp",
+  "casque audio": "/lib/images/vocabulaire/technologie/casque-audio.webp",
   "casque-audio": "/lib/images/vocabulaire/technologie/casque-audio.webp",
   "cd": "/lib/images/vocabulaire/technologie/cd.webp",
   "chargeur": "/lib/images/vocabulaire/technologie/chargeur.webp",
   "clavier": "/lib/images/vocabulaire/technologie/clavier.webp",
+  "clé usb": "/lib/images/vocabulaire/technologie/clé-usb.webp",
   "clé-usb": "/lib/images/vocabulaire/technologie/clé-usb.webp",
   "courriel": "/lib/images/vocabulaire/technologie/courriel.webp",
   "câble": "/lib/images/vocabulaire/technologie/câble.webp",
+  "disque dur": "/lib/images/vocabulaire/technologie/disque-dur.webp",
   "disque-dur": "/lib/images/vocabulaire/technologie/disque-dur.webp",
   "dynamo": "/lib/images/vocabulaire/technologie/dynamo.webp",
   "electricite": "/lib/images/vocabulaire/technologie/electricite.webp",
   "enceinte": "/lib/images/vocabulaire/technologie/enceinte.webp",
   "fax": "/lib/images/vocabulaire/technologie/fax.webp",
+  "gaine electrique": "/lib/images/vocabulaire/technologie/gaine-electrique.webp",
   "gaine-electrique": "/lib/images/vocabulaire/technologie/gaine-electrique.webp",
   "gazoduc": "/lib/images/vocabulaire/technologie/gazoduc.webp",
   "imprimante": "/lib/images/vocabulaire/technologie/imprimante.webp",
   "internet": "/lib/images/vocabulaire/technologie/internet.webp",
   "interview": "/lib/images/vocabulaire/technologie/interview.webp",
+  "jeu video": "/lib/images/vocabulaire/technologie/jeu-video.webp",
   "jeu-video": "/lib/images/vocabulaire/technologie/jeu-video.webp",
+  "lecteur de code barres": "/lib/images/vocabulaire/technologie/lecteur-de-code-barres.webp",
   "lecteur-de-code-barres": "/lib/images/vocabulaire/technologie/lecteur-de-code-barres.webp",
   "manette": "/lib/images/vocabulaire/technologie/manette.webp",
+  "ordinateur portable": "/lib/images/vocabulaire/technologie/ordinateur-portable.webp",
   "ordinateur-portable": "/lib/images/vocabulaire/technologie/ordinateur-portable.webp",
   "ordinateur": "/lib/images/vocabulaire/technologie/ordinateur.webp",
+  "ordinateurs de bureau": "/lib/images/vocabulaire/technologie/ordinateurs-de-bureau.webp",
   "ordinateurs-de-bureau": "/lib/images/vocabulaire/technologie/ordinateurs-de-bureau.webp",
   "pile": "/lib/images/vocabulaire/technologie/pile.webp",
   "pixel": "/lib/images/vocabulaire/technologie/pixel.webp",
+  "prise electrique": "/lib/images/vocabulaire/technologie/prise-electrique.webp",
   "prise-electrique": "/lib/images/vocabulaire/technologie/prise-electrique.webp",
   "radio": "/lib/images/vocabulaire/technologie/radio.webp",
   "robot": "/lib/images/vocabulaire/technologie/robot.webp",
   "routeur": "/lib/images/vocabulaire/technologie/routeur.webp",
   "smartphone": "/lib/images/vocabulaire/technologie/smartphone.webp",
   "sms": "/lib/images/vocabulaire/technologie/sms.webp",
+  "souris d'ordinateur": "/lib/images/vocabulaire/technologie/souris-d-ordinateur.webp",
   "souris-d-ordinateur": "/lib/images/vocabulaire/technologie/souris-d-ordinateur.webp",
   "stylet": "/lib/images/vocabulaire/technologie/stylet.webp",
   "tablette": "/lib/images/vocabulaire/technologie/tablette.webp",
+  "telephone portable": "/lib/images/vocabulaire/technologie/telephone-portable.webp",
   "telephone-portable": "/lib/images/vocabulaire/technologie/telephone-portable.webp",
   "télécommande": "/lib/images/vocabulaire/technologie/télécommande.webp",
   "téléphone": "/lib/images/vocabulaire/technologie/téléphone.webp",
   "télévision": "/lib/images/vocabulaire/technologie/télévision.webp",
+  "walkie talkie": "/lib/images/vocabulaire/technologie/walkie-talkie.webp",
   "walkie-talkie": "/lib/images/vocabulaire/technologie/walkie-talkie.webp",
   "walkman": "/lib/images/vocabulaire/technologie/walkman.webp",
   "webcam": "/lib/images/vocabulaire/technologie/webcam.webp",
@@ -9238,6 +9564,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "écran": "/lib/images/vocabulaire/technologie/écran.webp",
   "anniversaire": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp",
   "année": "/lib/images/vocabulaire/temps-calendrier/année.webp",
+  "après midi": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp",
   "après-midi": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp",
   "automne": "/lib/images/vocabulaire/temps-calendrier/automne.webp",
   "calendrier": "/lib/images/vocabulaire/temps-calendrier/calendrier.webp",
@@ -9251,6 +9578,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "matin": "/lib/images/vocabulaire/temps-calendrier/matin.webp",
   "mercredi": "/lib/images/vocabulaire/temps-calendrier/mercredi.webp",
   "mois": "/lib/images/vocabulaire/temps-calendrier/mois.webp",
+  "nouvel an": "/lib/images/vocabulaire/temps-calendrier/nouvel-an.webp",
   "nouvel-an": "/lib/images/vocabulaire/temps-calendrier/nouvel-an.webp",
   "noël": "/lib/images/vocabulaire/temps-calendrier/noël.webp",
   "nuit": "/lib/images/vocabulaire/temps-calendrier/nuit.webp",
@@ -9260,11 +9588,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "semaine": "/lib/images/vocabulaire/temps-calendrier/semaine.webp",
   "soir": "/lib/images/vocabulaire/temps-calendrier/soir.webp",
   "vendredi": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp",
+  "week end": "/lib/images/vocabulaire/temps-calendrier/week-end.webp",
   "week-end": "/lib/images/vocabulaire/temps-calendrier/week-end.webp",
   "été": "/lib/images/vocabulaire/temps-calendrier/été.webp",
   "ambulance": "/lib/images/vocabulaire/transports/ambulance.webp",
   "autobus": "/lib/images/vocabulaire/transports/autobus.webp",
   "autocar": "/lib/images/vocabulaire/transports/autocar.webp",
+  "automate à billets": "/lib/images/vocabulaire/transports/automate-a-billets.webp",
   "automate-a-billets": "/lib/images/vocabulaire/transports/automate-a-billets.webp",
   "autoroute": "/lib/images/vocabulaire/transports/autoroute.webp",
   "avion": "/lib/images/vocabulaire/transports/avion.webp",
@@ -9275,10 +9605,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "camion": "/lib/images/vocabulaire/transports/camion.webp",
   "camionnette": "/lib/images/vocabulaire/transports/camionnette.webp",
   "caravane": "/lib/images/vocabulaire/transports/caravane.webp",
+  "carte journaliere": "/lib/images/vocabulaire/transports/carte-journaliere.webp",
   "carte-journaliere": "/lib/images/vocabulaire/transports/carte-journaliere.webp",
+  "ceinture de sécurité": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp",
   "ceinture-de-sécurité": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp",
   "embouteillage": "/lib/images/vocabulaire/transports/embouteillage.webp",
   "ferry": "/lib/images/vocabulaire/transports/ferry.webp",
+  "guichet de gare": "/lib/images/vocabulaire/transports/guichet-de-gare.webp",
   "guichet-de-gare": "/lib/images/vocabulaire/transports/guichet-de-gare.webp",
   "hydravion": "/lib/images/vocabulaire/transports/hydravion.webp",
   "hélicoptère": "/lib/images/vocabulaire/transports/hélicoptère.webp",
@@ -9289,16 +9622,21 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "motocyclette": "/lib/images/vocabulaire/transports/motocyclette.webp",
   "métro": "/lib/images/vocabulaire/transports/métro.webp",
   "navire": "/lib/images/vocabulaire/transports/navire.webp",
+  "panne de voiture": "/lib/images/vocabulaire/transports/panne-de-voiture.webp",
   "panne-de-voiture": "/lib/images/vocabulaire/transports/panne-de-voiture.webp",
+  "panneau stop": "/lib/images/vocabulaire/transports/panneau-stop.webp",
   "panneau-stop": "/lib/images/vocabulaire/transports/panneau-stop.webp",
   "paquebot": "/lib/images/vocabulaire/transports/paquebot.webp",
   "pneu": "/lib/images/vocabulaire/transports/pneu.webp",
   "poussette": "/lib/images/vocabulaire/transports/poussette.webp",
   "péage": "/lib/images/vocabulaire/transports/péage.webp",
   "scooter": "/lib/images/vocabulaire/transports/scooter.webp",
+  "siège auto": "/lib/images/vocabulaire/transports/siège-auto.webp",
   "siège-auto": "/lib/images/vocabulaire/transports/siège-auto.webp",
+  "sous marin": "/lib/images/vocabulaire/transports/sous-marin.webp",
   "sous-marin": "/lib/images/vocabulaire/transports/sous-marin.webp",
   "taxi": "/lib/images/vocabulaire/transports/taxi.webp",
+  "ticket de bus": "/lib/images/vocabulaire/transports/ticket-de-bus.webp",
   "ticket-de-bus": "/lib/images/vocabulaire/transports/ticket-de-bus.webp",
   "tracteur": "/lib/images/vocabulaire/transports/tracteur.webp",
   "train": "/lib/images/vocabulaire/transports/train.webp",
@@ -9310,8 +9648,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "valideur": "/lib/images/vocabulaire/transports/valideur.webp",
   "velo": "/lib/images/vocabulaire/transports/velo.webp",
   "voilier": "/lib/images/vocabulaire/transports/voilier.webp",
+  "voiture blanche": "/lib/images/vocabulaire/transports/voiture-blanche.webp",
   "voiture-blanche": "/lib/images/vocabulaire/transports/voiture-blanche.webp",
+  "voiture bleue": "/lib/images/vocabulaire/transports/voiture-bleue.webp",
   "voiture-bleue": "/lib/images/vocabulaire/transports/voiture-bleue.webp",
+  "voiture rouge": "/lib/images/vocabulaire/transports/voiture-rouge.webp",
   "voiture-rouge": "/lib/images/vocabulaire/transports/voiture-rouge.webp",
   "voiture": "/lib/images/vocabulaire/transports/voiture.webp",
   "volant": "/lib/images/vocabulaire/transports/volant.webp",
@@ -9322,11 +9663,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "baskets": "/lib/images/vocabulaire/vetements/baskets.webp",
   "blouson": "/lib/images/vocabulaire/vetements/blouson.webp",
   "bonnet": "/lib/images/vocabulaire/vetements/bonnet.webp",
+  "bottes de pluie": "/lib/images/vocabulaire/vetements/bottes-de-pluie.webp",
   "bottes-de-pluie": "/lib/images/vocabulaire/vetements/bottes-de-pluie.webp",
   "bottes": "/lib/images/vocabulaire/vetements/bottes.webp",
   "bottines": "/lib/images/vocabulaire/vetements/bottines.webp",
   "bouton": "/lib/images/vocabulaire/vetements/bouton.webp",
   "béret": "/lib/images/vocabulaire/vetements/béret.webp",
+  "cabine d'essayage": "/lib/images/vocabulaire/vetements/cabine-d-essayage.webp",
   "cabine-d-essayage": "/lib/images/vocabulaire/vetements/cabine-d-essayage.webp",
   "caleçon": "/lib/images/vocabulaire/vetements/caleçon.webp",
   "casquette": "/lib/images/vocabulaire/vetements/casquette.webp",
@@ -9334,6 +9677,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "chaussettes": "/lib/images/vocabulaire/vetements/chaussettes.webp",
   "chausson": "/lib/images/vocabulaire/vetements/chausson.webp",
   "chaussons": "/lib/images/vocabulaire/vetements/chaussons.webp",
+  "chaussures de securite": "/lib/images/vocabulaire/vetements/chaussures-de-securite.webp",
   "chaussures-de-securite": "/lib/images/vocabulaire/vetements/chaussures-de-securite.webp",
   "chaussures": "/lib/images/vocabulaire/vetements/chaussures.webp",
   "chemise": "/lib/images/vocabulaire/vetements/chemise.webp",
@@ -9348,6 +9692,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "fez": "/lib/images/vocabulaire/vetements/fez.webp",
   "foulard": "/lib/images/vocabulaire/vetements/foulard.webp",
   "gants": "/lib/images/vocabulaire/vetements/gants.webp",
+  "gilet de securite": "/lib/images/vocabulaire/vetements/gilet-de-securite.webp",
   "gilet-de-securite": "/lib/images/vocabulaire/vetements/gilet-de-securite.webp",
   "gilet": "/lib/images/vocabulaire/vetements/gilet.webp",
   "imperméable": "/lib/images/vocabulaire/vetements/imperméable.webp",
@@ -9355,10 +9700,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "jupe": "/lib/images/vocabulaire/vetements/jupe.webp",
   "kimono": "/lib/images/vocabulaire/vetements/kimono.webp",
   "legging": "/lib/images/vocabulaire/vetements/legging.webp",
+  "maillot de bain": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp",
   "maillot-de-bain": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp",
   "maillot": "/lib/images/vocabulaire/vetements/maillot.webp",
   "manteau": "/lib/images/vocabulaire/vetements/manteau.webp",
+  "miroir cabine": "/lib/images/vocabulaire/vetements/miroir-cabine.webp",
   "miroir-cabine": "/lib/images/vocabulaire/vetements/miroir-cabine.webp",
+  "panier magasin": "/lib/images/vocabulaire/vetements/panier-magasin.webp",
   "panier-magasin": "/lib/images/vocabulaire/vetements/panier-magasin.webp",
   "pantalon": "/lib/images/vocabulaire/vetements/pantalon.webp",
   "pull": "/lib/images/vocabulaire/vetements/pull.webp",
@@ -9369,9 +9717,11 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "semelle": "/lib/images/vocabulaire/vetements/semelle.webp",
   "short": "/lib/images/vocabulaire/vetements/short.webp",
   "soulier": "/lib/images/vocabulaire/vetements/soulier.webp",
+  "soutien gorge": "/lib/images/vocabulaire/vetements/soutien-gorge.webp",
   "soutien-gorge": "/lib/images/vocabulaire/vetements/soutien-gorge.webp",
   "survêtement": "/lib/images/vocabulaire/vetements/survêtement.webp",
   "sweat": "/lib/images/vocabulaire/vetements/sweat.webp",
+  "t shirt": "/lib/images/vocabulaire/vetements/t-shirt.webp",
   "t-shirt": "/lib/images/vocabulaire/vetements/t-shirt.webp",
   "talon": "/lib/images/vocabulaire/vetements/talon.webp",
   "tongs": "/lib/images/vocabulaire/vetements/tongs.webp",
@@ -9380,6 +9730,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "vetements": "/lib/images/vocabulaire/vetements/vetements.webp",
   "zipper": "/lib/images/vocabulaire/vetements/zipper.webp",
   "écharpe": "/lib/images/vocabulaire/vetements/écharpe.webp",
+  "arrêt de bus": "/lib/images/vocabulaire/ville/arrêt-de-bus.webp",
   "arrêt-de-bus": "/lib/images/vocabulaire/ville/arrêt-de-bus.webp",
   "avenue": "/lib/images/vocabulaire/ville/avenue.webp",
   "bagne": "/lib/images/vocabulaire/ville/bagne.webp",
@@ -9390,20 +9741,27 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "boucherie": "/lib/images/vocabulaire/ville/boucherie.webp",
   "boulangerie": "/lib/images/vocabulaire/ville/boulangerie.webp",
   "boutique": "/lib/images/vocabulaire/ville/boutique.webp",
+  "bureau d'information": "/lib/images/vocabulaire/ville/bureau-d-information.webp",
   "bureau-d-information": "/lib/images/vocabulaire/ville/bureau-d-information.webp",
+  "caisse automatique": "/lib/images/vocabulaire/ville/caisse-automatique.webp",
   "caisse-automatique": "/lib/images/vocabulaire/ville/caisse-automatique.webp",
   "carrefour": "/lib/images/vocabulaire/ville/carrefour.webp",
+  "centre ville": "/lib/images/vocabulaire/ville/centre-ville.webp",
   "centre-ville": "/lib/images/vocabulaire/ville/centre-ville.webp",
   "château": "/lib/images/vocabulaire/ville/château.webp",
   "cinema": "/lib/images/vocabulaire/ville/cinema.webp",
   "commissariat": "/lib/images/vocabulaire/ville/commissariat.webp",
   "comptoire": "/lib/images/vocabulaire/ville/comptoire.webp",
+  "distributeur automatique": "/lib/images/vocabulaire/ville/distributeur-automatique.webp",
   "distributeur-automatique": "/lib/images/vocabulaire/ville/distributeur-automatique.webp",
   "eglise": "/lib/images/vocabulaire/ville/eglise.webp",
+  "feu rouge": "/lib/images/vocabulaire/ville/feu-rouge.webp",
   "feu-rouge": "/lib/images/vocabulaire/ville/feu-rouge.webp",
   "fontaine": "/lib/images/vocabulaire/ville/fontaine.webp",
   "gare": "/lib/images/vocabulaire/ville/gare.webp",
+  "gratte ciel": "/lib/images/vocabulaire/ville/gratte-ciel.webp",
   "gratte-ciel": "/lib/images/vocabulaire/ville/gratte-ciel.webp",
+  "guichet de commune": "/lib/images/vocabulaire/ville/guichet-de-commune.webp",
   "guichet-de-commune": "/lib/images/vocabulaire/ville/guichet-de-commune.webp",
   "guichet": "/lib/images/vocabulaire/ville/guichet.webp",
   "gymnase": "/lib/images/vocabulaire/ville/gymnase.webp",
@@ -9413,6 +9771,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "lampadaire": "/lib/images/vocabulaire/ville/lampadaire.webp",
   "laverie": "/lib/images/vocabulaire/ville/laverie.webp",
   "librairie": "/lib/images/vocabulaire/ville/librairie.webp",
+  "magasin informatique": "/lib/images/vocabulaire/ville/magasin-informatique.webp",
   "magasin-informatique": "/lib/images/vocabulaire/ville/magasin-informatique.webp",
   "magasin": "/lib/images/vocabulaire/ville/magasin.webp",
   "mairie": "/lib/images/vocabulaire/ville/mairie.webp",
@@ -9424,11 +9783,13 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "parc": "/lib/images/vocabulaire/ville/parc.webp",
   "parcometre": "/lib/images/vocabulaire/ville/parcometre.webp",
   "parking": "/lib/images/vocabulaire/ville/parking.webp",
+  "passage pieton": "/lib/images/vocabulaire/ville/passage-pieton.webp",
   "passage-pieton": "/lib/images/vocabulaire/ville/passage-pieton.webp",
   "patisserie": "/lib/images/vocabulaire/ville/patisserie.webp",
   "phare": "/lib/images/vocabulaire/ville/phare.webp",
   "pharmacie": "/lib/images/vocabulaire/ville/pharmacie.webp",
   "piscine": "/lib/images/vocabulaire/ville/piscine.webp",
+  "piste cyclable": "/lib/images/vocabulaire/ville/piste-cyclable.webp",
   "piste-cyclable": "/lib/images/vocabulaire/ville/piste-cyclable.webp",
   "pizzéria": "/lib/images/vocabulaire/ville/pizzéria.webp",
   "place": "/lib/images/vocabulaire/ville/place.webp",
@@ -9437,13 +9798,18 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "poste": "/lib/images/vocabulaire/ville/poste.webp",
   "quartier": "/lib/images/vocabulaire/ville/quartier.webp",
   "restaurant": "/lib/images/vocabulaire/ville/restaurant.webp",
+  "rond point": "/lib/images/vocabulaire/ville/rond-point.webp",
   "rond-point": "/lib/images/vocabulaire/ville/rond-point.webp",
   "rue": "/lib/images/vocabulaire/ville/rue.webp",
+  "salle d'attente": "/lib/images/vocabulaire/ville/salle-d-attente.webp",
   "salle-d-attente": "/lib/images/vocabulaire/ville/salle-d-attente.webp",
+  "salle de sport": "/lib/images/vocabulaire/ville/salle-de-sport.webp",
   "salle-de-sport": "/lib/images/vocabulaire/ville/salle-de-sport.webp",
+  "salon de coiffure": "/lib/images/vocabulaire/ville/salon-de-coiffure.webp",
   "salon-de-coiffure": "/lib/images/vocabulaire/ville/salon-de-coiffure.webp",
   "sortie": "/lib/images/vocabulaire/ville/sortie.webp",
   "stade": "/lib/images/vocabulaire/ville/stade.webp",
+  "station service": "/lib/images/vocabulaire/ville/station-service.webp",
   "station-service": "/lib/images/vocabulaire/ville/station-service.webp",
   "station": "/lib/images/vocabulaire/ville/station.webp",
   "supermarche": "/lib/images/vocabulaire/ville/supermarche.webp",
@@ -9459,16 +9825,22 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "zoo": "/lib/images/vocabulaire/ville/zoo.webp",
   "école": "/lib/images/vocabulaire/ville/école.webp",
   "aeroport": "/lib/images/vocabulaire/voyage/aeroport.webp",
+  "aller retour": "/lib/images/vocabulaire/voyage/aller-retour.webp",
   "aller-retour": "/lib/images/vocabulaire/voyage/aller-retour.webp",
   "arrivee": "/lib/images/vocabulaire/voyage/arrivee.webp",
   "bagage": "/lib/images/vocabulaire/voyage/bagage.webp",
   "boussole": "/lib/images/vocabulaire/voyage/boussole.webp",
+  "carte d'embarquement": "/lib/images/vocabulaire/voyage/carte-d-embarquement.webp",
   "carte-d-embarquement": "/lib/images/vocabulaire/voyage/carte-d-embarquement.webp",
   "carte": "/lib/images/vocabulaire/voyage/carte.webp",
+  "cartes postales": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
   "cartes-postales": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+  "chambre double": "/lib/images/vocabulaire/voyage/chambre-double.webp",
   "chambre-double": "/lib/images/vocabulaire/voyage/chambre-double.webp",
+  "chambre simple": "/lib/images/vocabulaire/voyage/chambre-simple.webp",
   "chambre-simple": "/lib/images/vocabulaire/voyage/chambre-simple.webp",
   "correspondance": "/lib/images/vocabulaire/voyage/correspondance.webp",
+  "demi pension": "/lib/images/vocabulaire/voyage/demi-pension.webp",
   "demi-pension": "/lib/images/vocabulaire/voyage/demi-pension.webp",
   "depart": "/lib/images/vocabulaire/voyage/depart.webp",
   "destination": "/lib/images/vocabulaire/voyage/destination.webp",
@@ -9478,6 +9850,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "escale": "/lib/images/vocabulaire/voyage/escale.webp",
   "horaire": "/lib/images/vocabulaire/voyage/horaire.webp",
   "passeport": "/lib/images/vocabulaire/voyage/passeport.webp",
+  "pension complete": "/lib/images/vocabulaire/voyage/pension-complete.webp",
   "pension-complete": "/lib/images/vocabulaire/voyage/pension-complete.webp",
   "quai": "/lib/images/vocabulaire/voyage/quai.webp",
   "reception": "/lib/images/vocabulaire/voyage/reception.webp",

@@ -62,6 +62,25 @@ const THEME_LABELS = {
 
 const byCodePoint = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
 
+/** Slug fichier → libellé affiché (espaces, pas de tirets « de / d’ / à »). */
+function displayVocabLabel(raw) {
+  let s = String(raw || '').trim()
+  if (!s || !s.includes('-')) return s
+  s = s.replace(/-des-/gi, ' des ')
+  s = s.replace(/-de-/gi, ' de ')
+  s = s.replace(/-du-/gi, ' du ')
+  s = s.replace(/-aux-/gi, ' aux ')
+  s = s.replace(/-au-/gi, ' au ')
+  s = s.replace(/-en-/gi, ' en ')
+  s = s.replace(/-a-/gi, ' à ')
+  s = s.replace(/-d-/gi, " d'")
+  s = s.replace(/-l-/gi, " l'")
+  s = s.replace(/-/g, ' ')
+  s = s.replace(/\s+/g, ' ').trim()
+  s = s.replace(/([dlmnstc])'\s+/gi, "$1'")
+  return s
+}
+
 const themes = readdirSync(IMG_DIR, { withFileTypes: true })
   .filter((d) => d.isDirectory())
   .map((d) => d.name)
@@ -71,10 +90,14 @@ const themes = readdirSync(IMG_DIR, { withFileTypes: true })
     const files = readdirSync(join(IMG_DIR, id))
       .filter((f) => f.endsWith('.webp'))
       .sort(byCodePoint)
-    const words = files.map((f) => ({
-      label: f.slice(0, -'.webp'.length),
-      src: `/lib/images/vocabulaire/${id}/${f}`,
-    }))
+    const words = files.map((f) => {
+      const slug = f.slice(0, -'.webp'.length)
+      return {
+        label: displayVocabLabel(slug),
+        src: `/lib/images/vocabulaire/${id}/${f}`,
+        slug,
+      }
+    })
     return { id, label, words }
   })
   .sort((a, b) => byCodePoint(a.label, b.label))
@@ -83,7 +106,13 @@ const byLabel = {}
 for (const theme of [...themes].sort((a, b) => byCodePoint(a.id, b.id))) {
   for (const word of theme.words) {
     if (!(word.label in byLabel)) byLabel[word.label] = word.src
+    // Garder aussi le slug tireté pour la résolution d’images / audios.
+    if (word.slug && !(word.slug in byLabel)) byLabel[word.slug] = word.src
   }
+}
+// Ne pas exposer `slug` dans le tableau thèmes exporté.
+for (const theme of themes) {
+  theme.words = theme.words.map(({ label, src }) => ({ label, src }))
 }
 
 const out =

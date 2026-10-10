@@ -27,8 +27,12 @@ function lookup(label: string): string | undefined {
     key,
     key.replace(/ /g, '-'),
     key.replace(/-/g, ' '),
+    // « boucles d'oreilles » ↔ « boucles-d-oreilles »
+    key.replace(/'/g, '-').replace(/ /g, '-').replace(/-+/g, '-'),
+    key.replace(/'/g, ''),
     ascii,
     ascii.replace(/ /g, '-'),
+    ascii.replace(/'/g, '-').replace(/ /g, '-').replace(/-+/g, '-'),
   ]
   // Singulier / pluriel simple (chaussure ↔ chaussures).
   if (key.endsWith('s') && key.length > 3) {
