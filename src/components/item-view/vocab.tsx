@@ -5,16 +5,45 @@ import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { highlightThemeLetters } from './highlights'
 
 export function VocabTable({ item }: { item: MathItem }) {
-  const rows = Math.max(1, item.vocabRows ?? 3)
-  const cols = Math.max(1, item.vocabCols ?? 3)
+  const rows = Math.max(1, item.vocabRows ?? 4)
+  const cols = Math.max(1, item.vocabCols ?? 4)
   const entries = item.vocabEntries ?? []
   const cells = Array.from({ length: rows * cols }, (_, index) => entries[index] ?? null)
   const themeLetters = item.labels ?? []
   const highlight = themeLetters.length > 0
+  const [qrSrcs, setQrSrcs] = useState<string[]>(() => cells.map(() => ''))
+
+  const audioKey = cells.map((e) => e?.audioSrc ?? '').join('|')
+  useEffect(() => {
+    let cancelled = false
+    const srcs = audioKey.split('|')
+    const run = async () => {
+      const next = await Promise.all(
+        srcs.map(async (audioSrc) => {
+          if (!audioSrc) return ''
+          try {
+            return await QRCode.toDataURL(soutienAudioAbsoluteUrl(audioSrc), {
+              margin: 0,
+              width: 72,
+              errorCorrectionLevel: 'M',
+              color: { dark: '#111111', light: '#ffffff' },
+            })
+          } catch {
+            return ''
+          }
+        }),
+      )
+      if (!cancelled) setQrSrcs(next)
+    }
+    void run()
+    return () => {
+      cancelled = true
+    }
+  }, [audioKey])
 
   return (
     <div
-      className={`vocab-table${highlight ? ' vocab-table--theme-letters' : ''}`}
+      className={`vocab-table${highlight ? ' vocab-table--theme-letters' : ''} vocab-table--qr`}
       style={{ '--vocab-cols': cols, '--vocab-rows': rows } as CSSProperties}
       aria-label="Mots à apprendre"
     >
@@ -27,12 +56,21 @@ export function VocabTable({ item }: { item: MathItem }) {
               <span className="vocab-card-empty" aria-hidden />
             )}
           </div>
-          <div className="vocab-card-word">
-            {entry?.label
-              ? highlight
-                ? highlightThemeLetters(entry.label, themeLetters)
-                : entry.label
-              : ''}
+          <div className="vocab-card-footer">
+            <div className="vocab-card-qr">
+              {qrSrcs[index] ? (
+                <img src={qrSrcs[index]} alt={entry?.label ? `Audio ${entry.label}` : ''} />
+              ) : (
+                <span className="vocab-card-qr-ph" aria-hidden />
+              )}
+            </div>
+            <div className="vocab-card-word">
+              {entry?.label
+                ? highlight
+                  ? highlightThemeLetters(entry.label, themeLetters)
+                  : entry.label
+                : ''}
+            </div>
           </div>
         </div>
       ))}

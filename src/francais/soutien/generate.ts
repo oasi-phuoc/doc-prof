@@ -37,9 +37,16 @@ export function type1WordPool(bank: SoutienVowelBank): string[] {
   return [...fromBank, ...fromVocabImg, ...fromVocabRest]
 }
 
-/** Mots type 1 (16) : banque + Voc filtrés par la lettre de la leçon. */
-export function type1Words(bank: SoutienVowelBank): string[] {
-  return type1WordPool(bank).slice(0, 16)
+/**
+ * Mots type 1 (16) : banque + Voc filtrés par la lettre de la leçon.
+ * Avec `rng` : tirage aléatoire (priorité aux mots avec image).
+ */
+export function type1Words(bank: SoutienVowelBank, rng?: Rng): string[] {
+  const pool = type1WordPool(bank)
+  const withImg = pool.filter((w) => Boolean(soutienImageFor(w)))
+  const source = withImg.length >= 16 ? withImg : pool
+  if (!rng) return source.slice(0, 16)
+  return shuffle(rng, [...source]).slice(0, Math.min(16, source.length))
 }
 
 export type SoutienBatch = {
@@ -280,20 +287,30 @@ function genKind(
         ? (options!.soutienMotsEntries ?? [])
             .filter((e) => e.label.trim())
             .slice(0, 16)
-            .map((e, index) => ({
-              id: e.id || `soutien-libre-${index}`,
-              label: e.label.trim(),
-              imageSrc: e.imageSrc || soutienImageFor(e.label),
-            }))
+            .map((e, index) => {
+              const label = e.label.trim()
+              return {
+                id: e.id || `soutien-libre-${index}`,
+                label,
+                imageSrc: e.imageSrc || soutienImageFor(label),
+                audioSrc: soutienAudioFor(label),
+              }
+            })
         : null
-      /** Banque leçon + Voc filtrés par la lettre (pas par sous-thème). */
+      /** Tirage aléatoire 16 mots (image prioritaire) — se régénère avec la graine. */
       const words = libreEntries
         ? libreEntries.map((e) => e.label)
-        : type1Words(bank)
-      const entries = libreEntries ?? soutienEntriesWithImages(words)
+        : type1Words(bank, rng)
+      const entries =
+        libreEntries ??
+        soutienEntriesWithImages(words).map((e) => ({
+          ...e,
+          audioSrc: soutienAudioFor(e.label),
+        }))
       const total = Math.max(1, Math.min(16, entries.length))
-      const cols = Math.min(4, total)
-      const rows = Math.ceil(total / cols)
+      /** Grille 4×4 pour tenir sur l’A4 avec en-tête et pied. */
+      const cols = 4
+      const rows = Math.max(1, Math.ceil(total / cols))
       return {
         instruction: `On entend le son ${bank.sound} dans ces mots.`,
         preferredColumns: 1,
@@ -346,7 +363,7 @@ function genKind(
        * En 2 colonnes : 1er tableau à gauche, 2e à droite ; mélange indépendant.
        */
       const want = Math.max(1, Math.min(16, n))
-      const type1 = type1Words(bank)
+      const type1 = type1Words(bank, rng)
       const pool = compoundsForType1Words(bank, type1)
       const compounds = shuffle(rng, pool).slice(0, Math.min(want, pool.length))
       const colCount = options?.columns === 2 ? 2 : 1
@@ -636,7 +653,7 @@ function genKind(
     case 'dictee': {
       /** Grille 2 colonnes ; count = nb de mots ; trait continu, sans bordure. */
       const want = Math.max(1, Math.min(16, n))
-      const pool = type1Words(bank)
+      const pool = type1Words(bank, rng)
       const words = shuffle(rng, pool.length ? pool : [...bank.words]).slice(
         0,
         Math.min(want, pool.length || bank.words.length),

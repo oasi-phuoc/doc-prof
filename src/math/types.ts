@@ -492,8 +492,8 @@ export type MathItem = {
   writeLines?: number
   /** Variante du tableau Gattegno. */
   chartMode?: 'labels' | 'words' | 'outline'
-  /** Tableau de mots à apprendre (image + libellé). */
-  vocabEntries?: Array<{ id: string; label: string; imageSrc?: string }>
+  /** Tableau de mots à apprendre (image + libellé + audio QR). */
+  vocabEntries?: Array<{ id: string; label: string; imageSrc?: string; audioSrc?: string }>
   vocabRows?: number
   vocabCols?: number
   /** Association Voc : mode image ou texte. */

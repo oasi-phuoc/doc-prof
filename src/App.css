@@ -1946,17 +1946,17 @@ html,body,#root{
 }
 /* Cartes Voc « Mots à apprendre » : taille fixe calée sur un plein 4×4 A4. */
 .sheet-body:has(.layout-vocab-table){
-  padding-bottom:20px
+  padding-bottom:8px
 }
 .sheet-body:has(.layout-vocab-table)>.exercise-block{
   flex:1 1 auto;min-height:0;margin:0;
   display:flex;flex-direction:column
 }
 .sheet-body:has(.layout-vocab-table) .exercise-heading{
-  margin:0 0 4px
+  margin:0 0 2px
 }
 .sheet-body:has(.layout-vocab-table) .exercise-heading p{
-  margin:2px 0 0
+  margin:1px 0 0;font-size:0.92em
 }
 .sheet-body:has(.layout-vocab-table) .exercise-grid{
   flex:1 1 auto;min-height:0;
@@ -1971,44 +1971,68 @@ html,body,#root{
 .exercise-item.layout-vocab-table .item-content{
   width:100%;flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden
 }
+/* Type 1 Soutien : 4×4 cartes sur A4 (en-tête + pied inclus). */
 .vocab-table{
-  --vocab-card-w:38mm;
-  --vocab-card-h:40mm;
-  --vocab-card-gap:3.5mm;
+  --vocab-card-w:42mm;
+  --vocab-card-h:46mm;
+  --vocab-card-gap:2.5mm;
   width:100%;height:100%;min-height:0;box-sizing:border-box;
   display:grid;
-  grid-template-columns:repeat(var(--vocab-cols,3),var(--vocab-card-w));
-  grid-template-rows:repeat(var(--vocab-rows,3),var(--vocab-card-h));
+  grid-template-columns:repeat(var(--vocab-cols,4),minmax(0,1fr));
+  grid-template-rows:repeat(var(--vocab-rows,4),minmax(0,1fr));
   gap:var(--vocab-card-gap);
-  justify-content:center;
-  align-content:start;
-  overflow:hidden;padding:2px 0 0
+  justify-content:stretch;
+  align-content:stretch;
+  overflow:hidden;padding:1px 0 0
 }
 .vocab-card{
-  width:var(--vocab-card-w);height:var(--vocab-card-h);
+  width:100%;height:100%;min-height:0;min-width:0;
   box-sizing:border-box;flex:none;
   display:flex;flex-direction:column;align-items:stretch;
-  border-radius:10px;background:#fff;
+  border-radius:8px;background:#fff;
   border:1px solid #d8dde6;
-  overflow:hidden;padding:3mm 2.5mm 2mm
+  overflow:hidden;padding:1.5mm 1.5mm 1mm
 }
 .vocab-card-image{
   flex:1 1 auto;min-height:0;
   display:flex;align-items:center;justify-content:center;
   /* Soutien FR type 1 (et vocab) : fond blanc du bloc image */
-  background:#fff;border-radius:7px;padding:1.5mm;box-sizing:border-box
+  background:#fff;border-radius:5px;padding:1mm;box-sizing:border-box
 }
 .vocab-card-image img{
   width:100%;height:100%;max-height:100%;object-fit:contain;display:block
 }
 .vocab-card-empty{
-  display:block;width:100%;height:100%;min-height:12mm
+  display:block;width:100%;height:100%;min-height:8mm
+}
+/* Ligne 2 : QR (écoute) | mot */
+.vocab-card-footer{
+  flex:0 0 auto;
+  display:grid;
+  grid-template-columns:9mm minmax(0,1fr);
+  gap:1.5mm;
+  align-items:center;
+  margin-top:1mm;
+  min-height:9mm
+}
+.vocab-card-qr{
+  width:9mm;height:9mm;
+  display:flex;align-items:center;justify-content:center;
+  flex:none
+}
+.vocab-card-qr img{
+  width:100%;height:100%;object-fit:contain;display:block
+}
+.vocab-card-qr-ph{
+  display:block;width:100%;height:100%;
+  border:1px dashed #c5cad3;border-radius:2px;box-sizing:border-box
 }
 .vocab-card-word{
-  flex:0 0 auto;margin-top:1.5mm;
-  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;
-  line-height:1.2;color:var(--ink);text-align:center;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+  flex:0 0 auto;margin:0;
+  font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;
+  line-height:1.15;color:var(--ink);text-align:left;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  min-width:0
 }
 .vocab-word-list{
   display:flex;flex-direction:column;gap:2px;

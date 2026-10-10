@@ -133,6 +133,7 @@ import {
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankById } from '@/francais/soutien/banks'
+import { downloadSoutienMotsAudio } from '@/francais/soutien/download-mots-audio'
 import { type1WordPool, type1Words } from '@/francais/soutien/generate'
 import { parseSoutienType, SOUTIEN_KINDS } from '@/francais/soutien/kinds'
 import {
@@ -684,6 +685,33 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     if (playlists.length === 0) return
     try {
       await downloadTcmCfrAudios(playlists)
+    } catch {
+      // Échec réseau / fichier manquant : silencieux.
+    }
+  }
+
+  /** Mots affichés du type 1 Soutien (pour l’audio téléchargeable). */
+  function currentSoutienMotsWords(): string[] {
+    const fromSheet =
+      activeSheet?.blocks[safeBlockIndex]?.items.find((item) => item.layout === 'vocab-table')
+        ?.vocabEntries ?? []
+    const labels = fromSheet.map((e) => e.label.trim()).filter(Boolean)
+    if (labels.length > 0) return labels
+    if (activeBlock.soutienMotsLibre && activeBlock.soutienMotsEntries?.length) {
+      return activeBlock.soutienMotsEntries.map((e) => e.label.trim()).filter(Boolean)
+    }
+    return soutienType1Words
+  }
+
+  async function downloadActiveSoutienMotsAudio() {
+    const words = currentSoutienMotsWords()
+    if (words.length === 0) return
+    const bankId =
+      parseSoutienType(activeBlock.exerciseType)?.bankId ??
+      soutienSelection?.sound.bankId ??
+      'mots'
+    try {
+      await downloadSoutienMotsAudio({ words, bankId })
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -3483,18 +3511,24 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                     </svg>
                   </button>
                 )}
-                {isTcf || isTcmCfr ? (
+                {isTcf || isTcmCfr || (isSoutienFr && isSoutienMots) ? (
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
                     onClick={() =>
-                      void (isTcf ? downloadActiveTcfAudios() : downloadActiveTcmCfrAudios())
+                      void (isTcf
+                        ? downloadActiveTcfAudios()
+                        : isTcmCfr
+                          ? downloadActiveTcmCfrAudios()
+                          : downloadActiveSoutienMotsAudio())
                     }
                     aria-label="Télécharger les audios de la fiche"
                     title={
                       isTcf
                         ? 'Télécharger les audios de la fiche'
-                        : 'Télécharger les audios (nombres ou multiplications)'
+                        : isTcmCfr
+                          ? 'Télécharger les audios (nombres ou multiplications)'
+                          : 'Télécharger l’audio (consigne + 16 mots)'
                     }
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
