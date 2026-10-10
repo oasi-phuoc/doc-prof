@@ -133,6 +133,7 @@ import {
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
 import { soutienBankById } from '@/francais/soutien/banks'
+import { downloadSoutienEcouterAudio } from '@/francais/soutien/download-ecouter-audio'
 import {
   downloadSoutienCompleterAudio,
   downloadSoutienMotsAudio,
@@ -748,6 +749,39 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     }
   }
 
+  /** Mots + audios des types 6 / 7 pour la playlist téléchargeable. */
+  function currentSoutienEcouterWords(): {
+    words: string[]
+    audioSrcs: string[]
+  } {
+    const item = activeSheet?.blocks[safeBlockIndex]?.items.find(
+      (row) => row.layout === 'listen-check',
+    )
+    const words = (item?.options ?? []).map((w) => w.trim()).filter(Boolean)
+    const audioSrcs = (item?.optionAudioSrcs ?? []).map((src) => src ?? '')
+    return { words, audioSrcs }
+  }
+
+  async function downloadActiveSoutienEcouterAudio() {
+    const { words, audioSrcs } = currentSoutienEcouterWords()
+    if (words.length === 0) return
+    const parsed = parseSoutienType(activeBlock.exerciseType)
+    const bankId = parsed?.bankId ?? 'ecouter'
+    const bank = soutienBankById(bankId)
+    const kind = parsed?.kind === 'ecouter-image' ? 'ecouter-image' : 'ecouter'
+    try {
+      await downloadSoutienEcouterAudio({
+        words,
+        audioSrcs,
+        phoneme: bank?.sound,
+        bankId,
+        kind,
+      })
+    } catch {
+      // Échec réseau / fichier manquant : silencieux.
+    }
+  }
+
   const setAllDraftGrids = (value: boolean) => {
     updatePage({
       problemDraftGrids: Array.from({ length: activeBlock.count }, () => value),
@@ -798,6 +832,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isSoutienMots = soutienKind === 'mots'
   const isSoutienMotsMeles = soutienKind === 'mots-meles'
   const isSoutienCompleter = soutienKind === 'completer'
+  const isSoutienEcouter =
+    soutienKind === 'ecouter' || soutienKind === 'ecouter-image'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
   /** Types 4–11 / 15 : le champ compte des mots (pas des « questions » génériques). */
@@ -959,12 +995,10 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
               ? 10
               : soutienKind === 'relier'
                 ? 16
-                : soutienKind === 'completer' ||
-                    soutienKind === 'ecouter' ||
-                    soutienKind === 'syllabe-son'
+                : soutienKind === 'completer' || soutienKind === 'syllabe-son'
                   ? 18
-                  : soutienKind === 'ecouter-image'
-                    ? 20
+                  : soutienKind === 'ecouter' || soutienKind === 'ecouter-image'
+                    ? 30
                     : soutienKind === 'lettres-phrase' ||
                         soutienKind === 'determinants' ||
                         soutienKind === 'dictee'
@@ -2781,10 +2815,14 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                   <small className="muted">Nombre de mots à compléter (max. 18).</small>
                 ) : null}
                 {soutienKind === 'ecouter' ? (
-                  <small className="muted">Mots à écouter / écrire (max. 18).</small>
+                  <small className="muted">
+                    Mots à écouter / écrire (défaut 9 · max. 30).
+                  </small>
                 ) : null}
                 {soutienKind === 'ecouter-image' ? (
-                  <small className="muted">Images à écouter / cocher (max. 20).</small>
+                  <small className="muted">
+                    Images à écouter / cocher (défaut 20 · max. 30).
+                  </small>
                 ) : null}
                 {soutienKind === 'syllabe-son' ? (
                   <small className="muted">Nombre de cartes (max. 18).</small>
@@ -3541,7 +3579,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                 )}
                 {isTcf ||
                 isTcmCfr ||
-                (isSoutienFr && (isSoutienMots || isSoutienCompleter)) ? (
+                (isSoutienFr &&
+                  (isSoutienMots || isSoutienCompleter || isSoutienEcouter)) ? (
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
@@ -3552,7 +3591,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                           ? downloadActiveTcmCfrAudios()
                           : isSoutienCompleter
                             ? downloadActiveSoutienCompleterAudio()
-                            : downloadActiveSoutienMotsAudio())
+                            : isSoutienEcouter
+                              ? downloadActiveSoutienEcouterAudio()
+                              : downloadActiveSoutienMotsAudio())
                     }
                     aria-label="Télécharger les audios de la fiche"
                     title={
@@ -3562,7 +3603,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                           ? 'Télécharger les audios (nombres ou multiplications)'
                           : isSoutienCompleter
                             ? 'Télécharger l’audio (Écoutez et complétez + mots, 6 s)'
-                            : 'Télécharger l’audio (consigne + 16 mots)'
+                            : isSoutienEcouter
+                              ? 'Télécharger l’audio (consigne + Numéro + mots, 6 s)'
+                              : 'Télécharger l’audio (consigne + 16 mots)'
                     }
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>

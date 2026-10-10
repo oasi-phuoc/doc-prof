@@ -185,13 +185,15 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
                               count:
                                 soutienKind === 'lettres-phrase' || soutienKind === 'ordre'
                                   ? 6
-                                  : soutienKind === 'ecouter-image'
+                                  : soutienKind === 'ecouter'
                                     ? 9
-                                    : soutienKind === 'compter'
-                                      ? 5
-                                      : soutienKind === 'lire'
-                                        ? 10
-                                        : 8,
+                                    : soutienKind === 'ecouter-image'
+                                      ? 20
+                                      : soutienKind === 'compter'
+                                        ? 5
+                                        : soutienKind === 'lire'
+                                          ? 10
+                                          : 8,
                             }
                         : isLecture || isSoutienFr
                           ? { count: 6 }

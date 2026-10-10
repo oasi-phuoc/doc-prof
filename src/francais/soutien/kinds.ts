@@ -42,14 +42,16 @@ export const SOUTIEN_KINDS = [
   {
     id: 'ecouter',
     label: '6 · Entendre le son',
-    description: 'Grille fluide (1–3 colonnes) avec QR audio ; cocher et écrire le mot.',
+    description:
+      'Grille (1–3 col.) + QR ; 9 mots par défaut (max. 30) ; corrigé thème ; audio téléchargeable.',
     instruction: 'Écoutez les mots et cochez quand vous entendez le son.',
     preferredColumns: 1 as const,
   },
   {
     id: 'ecouter-image',
     label: '7 · Entendre avec image',
-    description: 'Grille images fluide (3–5 colonnes) ; n° et case centrés, réponse dessous.',
+    description:
+      'Grille images (3–5 col.) ; cadre type 1 ; 20 par défaut (max. 30) ; audio téléchargeable.',
     instruction: 'Écoutez. Cochez quand vous entendez le son (regardez l’image).',
     preferredColumns: 1 as const,
   },

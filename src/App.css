@@ -1574,9 +1574,14 @@ html,body,#root{
   .syllable-match-table td.syllable-match-num{color:var(--purple)!important}
   .syllable-complete-card{border:1px solid #d8dde6!important}
   .syllable-complete-blank{border-bottom-color:var(--purple)!important}
-  .listen-check-grid,.listen-check-cell,.listen-check-image-cell,.listen-check-image{border:none!important}
+  .listen-check-grid,.listen-check-image{border:none!important}
+  .listen-check-cell{border-color:transparent!important}
+  .listen-check-cell.is-hit{border-color:var(--purple)!important}
+  .listen-check-image-cell{border:1px solid #d8dde6!important}
+  .listen-check-image-cell.is-hit{border-color:var(--purple)!important}
   .listen-check-num{color:var(--purple)!important}
   .listen-check-box{border-color:#000!important}
+  .listen-check-box.checked{border-color:var(--purple)!important;color:var(--purple)!important}
   .syllable-sound-grid,.syllable-sound-card,.syllable-sound-image,.syllable-sound-num{border:none!important}
   .syllable-sound-num{color:var(--purple)!important}
   .syllable-mini-table td{border-color:#000!important}
@@ -2229,8 +2234,14 @@ html,body,#root{
   width:100%;
   min-width:0;
   padding:6px 4px;
-  border:none;
+  border:1px solid transparent;
+  border-radius:8px;
   box-sizing:border-box;
+}
+/* Corrigé type 6 : cadre + case cochée en couleur thème. */
+.listen-check-cell.is-hit{
+  border-color:var(--purple);
+  background:color-mix(in srgb,var(--purple) 6%,#fff);
 }
 .listen-check-block--audio .listen-check-cell{
   grid-template-columns:14mm 1.5em 1.15em minmax(0,1fr);
@@ -2253,7 +2264,11 @@ html,body,#root{
   font-size:11px;font-weight:700;line-height:1;color:var(--ink);
   box-sizing:border-box;background:#fff;
 }
-.listen-check-box.checked{background:color-mix(in srgb,var(--purple) 12%,#fff)}
+.listen-check-box.checked{
+  border-color:var(--purple);
+  color:var(--purple);
+  background:color-mix(in srgb,var(--purple) 12%,#fff);
+}
 .listen-check-line{
   display:block;min-width:0;width:100%;
   border-bottom:1.5px solid #c5c9d0;
@@ -2262,6 +2277,10 @@ html,body,#root{
   padding:0 2px;line-height:1.2;
 }
 .listen-check-line.filled{border-bottom-color:var(--purple)}
+.listen-check-cell.is-hit .listen-check-line.filled{
+  border-bottom-color:var(--purple);
+  color:var(--ink);
+}
 
 /* Type 7 — grille images pleine largeur A4 (3–5 col.) */
 .listen-check-block--images{
@@ -2272,7 +2291,7 @@ html,body,#root{
   width:100%!important;
   max-width:100%;
   border:none;
-  gap:8px 12px;
+  gap:0 12px; /* padding inter-lignes réduit (−10 px vs avant) */
   align-items:stretch;
   justify-items:stretch;
   grid-auto-rows:1fr;
@@ -2281,10 +2300,15 @@ html,body,#root{
 .listen-check-image-cell{
   display:flex;flex-direction:column;
   min-width:0;min-height:0;width:100%;height:100%;
-  border:none;
+  border:1px solid #d8dde6; /* cadre type 1 */
+  border-radius:8px;
+  padding:4px;
   box-sizing:border-box;
   background:#fff;
   justify-self:stretch;
+}
+.listen-check-image-cell.is-hit{
+  border-color:var(--purple);
 }
 .listen-check-image{
   flex:1 1 auto;

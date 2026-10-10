@@ -432,7 +432,10 @@ export function ListenCheckBlock({ item, mode }: { item: MathItem; mode: Preview
           const hit = positives.has(word.toLowerCase())
           if (withImages) {
             return (
-              <div className="listen-check-image-cell" key={`lci-${index}-${word}`}>
+              <div
+                className={`listen-check-image-cell${show && hit ? ' is-hit' : ''}`}
+                key={`lci-${index}-${word}`}
+              >
                 <div className="listen-check-image">
                   {images[index] ? (
                     <img src={images[index]} alt="" />
@@ -462,7 +465,10 @@ export function ListenCheckBlock({ item, mode }: { item: MathItem; mode: Preview
             )
           }
           return (
-            <div className="listen-check-cell" key={`lc-${index}-${word}`}>
+            <div
+              className={`listen-check-cell${show && hit ? ' is-hit' : ''}`}
+              key={`lc-${index}-${word}`}
+            >
               {withAudio ? (
                 <span className="listen-check-qr">
                   {qrSrcs[index] ? (

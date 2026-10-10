@@ -470,7 +470,7 @@ function genKind(
     case 'ecouter': {
       /** Grille : n° + case + trait (+ QR) ; positifs = son (au/eau admis pour /o/). */
       const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 3) || 3))
-      const need = Math.max(1, Math.min(18, n))
+      const need = Math.max(1, Math.min(30, n))
       const soundPool = lessonWordsBySound(bank)
       const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.55)))
       const negCount = Math.max(0, need - posCount)
@@ -508,7 +508,7 @@ function genKind(
     case 'ecouter-image': {
       /** Grille images fluide ; positifs = son (au/eau admis pour /o/). */
       const cols = Math.max(3, Math.min(5, Math.round(options?.columns ?? 3) || 3))
-      const need = Math.max(1, Math.min(20, n))
+      const need = Math.max(1, Math.min(30, n))
       const withImg = (list: readonly string[]) =>
         list.filter((w) => Boolean(soutienImageFor(w)))
       const soundPool = lessonWordsBySound(bank)
@@ -535,18 +535,20 @@ function genKind(
       }
       pool = pool.slice(0, need)
       const images = pool.map((w) => soutienImageFor(w)!)
+      const audios = pool.map((w) => soutienAudioFor(w))
       const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
       const checked = pool.filter((w) => positiveSet.has(w.toLowerCase()))
       const shown = pool.map(displayVocabLabel)
       const shownChecked = checked.map(displayVocabLabel)
       return {
-        instruction: `Écoutez. Cochez quand vous entendez le son ${bank.sound}.`,
+        instruction: `Écoutez les mots et cochez quand vous entendez le son ${bank.sound}.`,
         preferredColumns: 1,
         items: [
           {
             layout: 'listen-check',
             options: shown,
             optionImages: images,
+            optionAudioSrcs: audios.map((a) => a ?? ''),
             imagesAvailable: true,
             labels: shownChecked,
             answer: shownChecked.join(' · '),
