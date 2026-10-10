@@ -636,7 +636,8 @@ html,body,#root{
 .order-given-box{
   display:flex;align-items:center;justify-content:center;
   width:100%;min-width:2.8em;box-sizing:border-box;padding:3px 4px;
-  border:1px solid var(--ink);text-align:center;white-space:nowrap
+  /* Même trait que brouillon / cadres fraction (ex. 13). */
+  border:1px solid #c8c4d0;text-align:center;white-space:nowrap
 }
 .order-sep{text-align:center;font-weight:700;padding:0 0.1em}
 
@@ -663,7 +664,7 @@ html,body,#root{
 /* TCM fractions formes (soutien-scolaire ex. 21/22) — cadres à hauteur identique. */
 .frac-shape-card{
   width:100%;min-width:0;height:34mm;min-height:34mm;max-height:34mm;
-  border:1px solid var(--line);border-radius:12px;
+  border:1px solid #c8c4d0;border-radius:12px;
   padding:6px 10px;box-sizing:border-box;background:#fff;
   display:flex;align-items:center
 }
@@ -1544,7 +1545,8 @@ html,body,#root{
   .digit-cell{border-color:#d0ccd8!important}
   .digit-cell.carry{border-color:#ddd9e3!important}
   .column-rule{border-bottom-color:var(--purple)!important}
-  .sequence-term,.compare-circle,.select-pill,.digit-cell,.letter-cell,.op-name-box,.order-given-box{border-color:#000!important}
+  .sequence-term,.compare-circle,.select-pill,.digit-cell,.letter-cell,.op-name-box{border-color:#000!important}
+  .order-given-box,.geo-block.geo-name-card,.frac-shape-card{border-color:#c8c4d0!important}
   .letter-table,.letter-table td{border:none!important}
   .letter-table-cell.selected{border-color:#000!important}
   .letter-table-cell--lower,.letter-table-cell--upper{text-decoration:none!important}
@@ -4055,9 +4057,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcm-cfr-segment-qcm + .tcm-cfr-segment-qcm{margin-top:30px}
 .tcm-cfr-segment-q-head{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:6px;align-items:baseline}
 .tcm-cfr-segment-q-num{color:var(--purple,#5b3a8c);font-weight:700;font-size:12pt;line-height:1.35}
-/* TCM CFR ex. 16–17 : cadre forme | traits, hauteur uniforme. */
+/* TCM CFR ex. 17–18 : cadre forme | traits, hauteur uniforme (trait = brouillon). */
 .geo-block.geo-name-card{
-  border:1px solid var(--ink,#222);padding:8px 10px;width:100%;box-sizing:border-box
+  border:1px solid #c8c4d0;padding:8px 10px;width:100%;box-sizing:border-box
 }
 .geo-name-card-inner{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:12px;align-items:center;width:100%
