@@ -479,86 +479,92 @@ function AxesScene({
           />
         )
       })}
-      {/* Graduations : trait un peu plus épais tous les 2 carrés (axes). */}
+      {/* Graduations : un trait par pas d’unité d’axe (unitSquares × labelStep cases). */}
       {!hideAxes
-        ? [
-            ...Array.from({ length: Math.floor(visibleCols / 2) }, (_, i) => {
-              const col = originCol + (i + 1) * 2
-              if (col <= 0 || col > visibleCols || col === originCol) return null
-              const cx = colX(col)
-              const oy = originSvg.cy
-              const tick = Math.max(1.1, cellMm * 0.28)
-              return (
-                <line
-                  key={`tick-x-${col}`}
-                  x1={cx}
-                  y1={oy - tick}
-                  x2={cx}
-                  y2={oy + tick}
-                  className="axis-tick"
-                />
-              )
-            }),
-            ...(scene.originZeroInNegCell
-              ? Array.from({ length: Math.ceil(originCol / 2) }, (_, i) => {
-                  const col = originCol - (i + 1) * 2
-                  if (col < 0) return null
-                  const cx = colX(col)
-                  const oy = originSvg.cy
-                  const tick = Math.max(1.1, cellMm * 0.28)
-                  return (
-                    <line
-                      key={`tick-x-neg-${col}`}
-                      x1={cx}
-                      y1={oy - tick}
-                      x2={cx}
-                      y2={oy + tick}
-                      className="axis-tick"
-                    />
-                  )
-                })
-              : []),
-          ]
+        ? (() => {
+            const tickEvery = Math.max(1, Math.round(unit * labelStepX))
+            return [
+              ...Array.from({ length: Math.floor(visibleCols / tickEvery) }, (_, i) => {
+                const col = originCol + (i + 1) * tickEvery
+                if (col <= 0 || col > visibleCols || col === originCol) return null
+                const cx = colX(col)
+                const oy = originSvg.cy
+                const tick = Math.max(1.1, cellMm * 0.28)
+                return (
+                  <line
+                    key={`tick-x-${col}`}
+                    x1={cx}
+                    y1={oy - tick}
+                    x2={cx}
+                    y2={oy + tick}
+                    className="axis-tick"
+                  />
+                )
+              }),
+              ...(scene.originZeroInNegCell
+                ? Array.from({ length: Math.ceil(originCol / tickEvery) }, (_, i) => {
+                    const col = originCol - (i + 1) * tickEvery
+                    if (col < 0) return null
+                    const cx = colX(col)
+                    const oy = originSvg.cy
+                    const tick = Math.max(1.1, cellMm * 0.28)
+                    return (
+                      <line
+                        key={`tick-x-neg-${col}`}
+                        x1={cx}
+                        y1={oy - tick}
+                        x2={cx}
+                        y2={oy + tick}
+                        className="axis-tick"
+                      />
+                    )
+                  })
+                : []),
+            ]
+          })()
         : null}
       {!hideAxes
-        ? [
-            ...Array.from({ length: Math.floor(visibleRows / 2) }, (_, i) => {
-              const row = originRow + (i + 1) * 2
-              if (row <= 0 || row > visibleRows || row === originRow) return null
-              const cy = rowY(row)
-              const ox = originSvg.cx
-              const tick = Math.max(1.1, cellMm * 0.28)
-              return (
-                <line
-                  key={`tick-y-${row}`}
-                  x1={ox - tick}
-                  y1={cy}
-                  x2={ox + tick}
-                  y2={cy}
-                  className="axis-tick"
-                />
-              )
-            }),
-            ...(scene.originZeroInNegCell
-              ? Array.from({ length: Math.ceil(originRow / 2) }, (_, i) => {
-                  const row = originRow - (i + 1) * 2
-                  if (row < 0) return null
-                  const cy = rowY(row)
-                  const ox = originSvg.cx
-                  const tick = Math.max(1.1, cellMm * 0.28)
-                  return (
-                    <line
-                      key={`tick-y-neg-${row}`}
-                      x1={ox - tick}
-                      y1={cy}
-                      x2={ox + tick}
-                      y2={cy}
-                      className="axis-tick"
-                    />
-                  )
-                })
-              : []),
-          ]
+        ? (() => {
+            const tickEvery = Math.max(1, Math.round(unit * labelStepY))
+            return [
+              ...Array.from({ length: Math.floor(visibleRows / tickEvery) }, (_, i) => {
+                const row = originRow + (i + 1) * tickEvery
+                if (row <= 0 || row > visibleRows || row === originRow) return null
+                const cy = rowY(row)
+                const ox = originSvg.cx
+                const tick = Math.max(1.1, cellMm * 0.28)
+                return (
+                  <line
+                    key={`tick-y-${row}`}
+                    x1={ox - tick}
+                    y1={cy}
+                    x2={ox + tick}
+                    y2={cy}
+                    className="axis-tick"
+                  />
+                )
+              }),
+              ...(scene.originZeroInNegCell
+                ? Array.from({ length: Math.ceil(originRow / tickEvery) }, (_, i) => {
+                    const row = originRow - (i + 1) * tickEvery
+                    if (row < 0) return null
+                    const cy = rowY(row)
+                    const ox = originSvg.cx
+                    const tick = Math.max(1.1, cellMm * 0.28)
+                    return (
+                      <line
+                        key={`tick-y-neg-${row}`}
+                        x1={ox - tick}
+                        y1={cy}
+                        x2={ox + tick}
+                        y2={cy}
+                        className="axis-tick"
+                      />
+                    )
+                  })
+                : []),
+            ]
+          })()
         : null}
       {axisArrows ? (
         <g className="axis-arrows" aria-hidden>
