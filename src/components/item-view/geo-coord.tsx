@@ -204,8 +204,12 @@ export function CoordBlock({
     >
       {useCfrPlan ? (
         <div className="coord-cfr-briefing">
-          <p className="column-prompt">1. Graduez et nommez les axes du plan.</p>
-          <p className="column-prompt">2. Placez les points suivants sur le plan.</p>
+          <p className="column-prompt">
+            <span className="coord-cfr-step-num">1.</span> Graduez et nommez les axes du plan.
+          </p>
+          <p className="column-prompt">
+            <span className="coord-cfr-step-num">2.</span> Placez les points suivants sur le plan.
+          </p>
           <div className="coord-cfr-place-boxes">
             {placeList.map((q, i) => {
               const m = q.prompt.match(/([A-Z])\s*\(([^)]+)\)/i)
@@ -218,7 +222,9 @@ export function CoordBlock({
               )
             })}
           </div>
-          <p className="column-prompt">3. Écrivez les coordonnées des points suivants.</p>
+          <p className="column-prompt">
+            <span className="coord-cfr-step-num">3.</span> Écrivez les coordonnées des points suivants.
+          </p>
           <div className="coord-cfr-read-boxes">
             {readList.map((q, i) => {
               const m = q.prompt.match(/point\s+([A-Z])/i)

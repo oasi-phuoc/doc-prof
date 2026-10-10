@@ -4092,8 +4092,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .coord-block.is-cfr-plan{display:flex;flex-direction:column;gap:8px;align-items:stretch}
 .coord-cfr-briefing{width:100%;display:flex;flex-direction:column;gap:6px}
 .coord-cfr-briefing .column-prompt{margin:0}
+.coord-cfr-step-num{color:var(--purple,#5b3a8c);font-weight:700}
 .coord-cfr-place-boxes,.coord-cfr-read-boxes{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:stretch;margin:2px 0 4px
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:stretch;
+  /* 10 px au-dessus des cadres de points, 30 px après. */
+  margin:10px 0 30px;padding:0
 }
 .coord-cfr-place-box,.coord-cfr-read-box{
   box-sizing:border-box;border:1px solid var(--ink,#222);padding:6px 8px;
