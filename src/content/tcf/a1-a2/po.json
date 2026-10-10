@@ -6056,5 +6056,1470 @@
       ]
     },
     "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-formulaire-admin",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Remplir un formulaire administratif",
+    "scenario": "administration",
+    "scene": "À la commune",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/formulaire-admin.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "De quoi ont-elles besoin, à votre avis ?"
+      ],
+      "description_modele": "Je vois un guichet de commune. Une employée est assise derrière le comptoir. Un usager est debout devant elle : il tient un stylo et regarde un formulaire. L’employée lui montre où écrire. Peut-être qu’il remplit une demande officielle.",
+      "je_suis": "l’employée de la commune",
+      "vous_etes": "un usager ou une usagère",
+      "lieu": "au guichet de la commune",
+      "vous_voulez": "remplir un formulaire et demander de l’aide",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais remplir ce formulaire, s’il vous plaît.",
+          "variantes": [
+            "Bonjour, j’ai besoin d’aide pour ce document."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Vous avez une pièce d’identité ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici ma carte d’identité."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Écrivez votre nom ici, et votre adresse là."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Comment j’écris mon numéro de téléphone ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Dans cette case, avec l’indicatif du pays."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Est-ce que c’est tout ?",
+          "variantes": [
+            "C’est bon, je peux signer ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, signez en bas et rendez-moi le formulaire."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci beaucoup pour votre aide !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-appareil-defectueux",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Rendre un appareil défectueux",
+    "scenario": "achats",
+    "scene": "Au magasin d’électroménager",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/appareil-defectueux.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qu’est-ce que le client apporte ?",
+        "Que veut-il, à votre avis ?"
+      ],
+      "description_modele": "Je vois un magasin d’électroménager. Un client pose un appareil sur le comptoir et parle à un vendeur. Le vendeur regarde l’appareil. Peut-être que l’appareil ne fonctionne pas et que le client veut le rendre ou l’échanger.",
+      "je_suis": "le vendeur",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin d’électroménager",
+      "vous_voulez": "rendre un appareil qui ne marche plus",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. J’ai acheté cet appareil la semaine dernière, mais il ne marche plus.",
+          "variantes": [
+            "Bonjour, je voudrais rendre ce grille-pain : il est cassé."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ah bon ? Qu’est-ce qui ne fonctionne pas ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il ne s’allume plus. J’ai essayé plusieurs fois."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez le ticket de caisse ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici le ticket et la garantie."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Vous préférez un échange ou un remboursement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je préfère un échange, s’il vous plaît.",
+          "variantes": [
+            "Un remboursement, s’il vous plaît."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "D’accord, je m’en occupe."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-courses-supermarche",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Faire les courses",
+    "scenario": "achats",
+    "scene": "Au supermarché",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/courses-supermarche.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Qu’est-ce qu’il y a dans le caddie ?"
+      ],
+      "description_modele": "Je vois l’allée d’un supermarché. Une personne pousse un caddie rempli de courses. Une autre personne choisit un produit sur une étagère. Elles font leurs courses alimentaires.",
+      "je_suis": "un client ou une cliente dans le magasin",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un supermarché",
+      "vous_voulez": "demander où se trouve un produit",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, vous savez où sont les yaourts ?",
+          "variantes": [
+            "Excusez-moi, où est le rayon des fruits ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, au fond, à gauche, près des fromages."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Et le pain, c’est où ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À l’entrée, juste à droite."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, merci beaucoup !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "De rien. Bonne journée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-billet-bus-automate",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Acheter un billet à l’automate",
+    "scenario": "transports",
+    "scene": "À l’arrêt de bus",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/billet-bus-automate.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la personne ?",
+        "Qu’est-ce qu’elle fait ?",
+        "Avec quoi paie-t-elle ?"
+      ],
+      "description_modele": "Je vois un arrêt de bus. Une personne utilise un automate à billets et tient une carte bancaire. Un bus arrive en arrière-plan. Elle achète probablement un ticket de bus.",
+      "je_suis": "un passant qui connaît les transports",
+      "vous_etes": "une personne qui prend le bus",
+      "lieu": "à l’arrêt de bus, devant l’automate",
+      "vous_voulez": "acheter un billet et demander de l’aide",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, vous pouvez m’aider ? Je ne sais pas acheter un billet.",
+          "variantes": [
+            "Excusez-moi, comment on utilise cet automate ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Vous voulez un billet pour une heure ou une carte journalière ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Un billet pour une heure, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Appuyez ici, puis payez avec votre carte."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord… Ça y est. Merci !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "N’oubliez pas de le valider dans le bus."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci pour l’info. Bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-distributeur-billets",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Retirer de l’argent au distributeur",
+    "scenario": "banque",
+    "scene": "Au distributeur de billets",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/distributeur-billets.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qu’est-ce que la personne fait ?",
+        "Qu’est-ce qu’elle tient dans la main ?"
+      ],
+      "description_modele": "Je vois une personne devant un distributeur automatique de billets. Elle tient une carte bancaire. Une autre personne attend derrière. Elle retire de l’argent.",
+      "je_suis": "un agent de sécurité de la banque",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "devant le distributeur de billets",
+      "vous_voulez": "retirer de l’argent et demander de l’aide si besoin",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, le distributeur n’accepte pas ma carte. Vous pouvez m’aider ?",
+          "variantes": [
+            "Excusez-moi, je n’arrive pas à retirer de l’argent."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez tapé votre code ? Attention aux regards autour."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, mais l’écran dit que la carte est refusée."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Essayez un autre distributeur, ou venez au guichet demain matin."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. À quelle heure ouvre le guichet ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "À 9 heures."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-cabine-essayage",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Essayer des vêtements",
+    "scenario": "achats",
+    "scene": "Dans la cabine d’essayage",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/cabine-essayage.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que la cliente fait ?",
+        "Que demande-t-elle, à votre avis ?"
+      ],
+      "description_modele": "Je vois un magasin de vêtements. Une cliente sort d’une cabine d’essayage avec un habit. Elle parle à une vendeuse près des miroirs. Peut-être qu’elle demande une autre taille.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de vêtements, près des cabines",
+      "vous_voulez": "essayer un vêtement et demander une autre taille",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Alors, ça vous va ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est un peu petit. Vous avez une taille au-dessus ?",
+          "variantes": [
+            "C’est trop grand. Vous avez plus petit ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, je vais chercher. Vous préférez quelle couleur ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Le même modèle, en bleu, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Vous pouvez réessayer."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Où sont les cabines ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Juste derrière vous, à gauche."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, je réessaie tout de suite."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-livraison-colis",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Recevoir un colis",
+    "scenario": "logement",
+    "scene": "Devant la porte",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/livraison-colis.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Qui sont les personnes ?",
+        "Qu’est-ce que le livreur apporte ?",
+        "Où se passe la scène ?"
+      ],
+      "description_modele": "Je vois le palier d’un immeuble. Un livreur remet un colis à une habitante qui ouvre sa porte. Ils échangent peut-être une signature.",
+      "je_suis": "le livreur",
+      "vous_etes": "l’habitant ou l’habitante",
+      "lieu": "devant votre porte d’appartement",
+      "vous_voulez": "recevoir votre colis",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, livraison pour Madame Dupont ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, c’est moi. C’est mon colis ?",
+          "variantes": [
+            "Bonjour, oui, je vous attendais."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pouvez-vous signer ici, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bien sûr. Il faut une pièce d’identité ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Non, juste la signature."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci et bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-laverie",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la laverie",
+    "scenario": "vie-quotidienne",
+    "scene": "À la laverie automatique",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/laverie.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Quels objets voyez-vous ?"
+      ],
+      "description_modele": "Je vois une laverie. Une personne met du linge dans une machine. Une autre plie des habits. Il y a des machines et des paniers.",
+      "je_suis": "une personne qui connaît la laverie",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans une laverie automatique",
+      "vous_voulez": "laver votre linge et comprendre comment payer",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, comment on paie les machines ?",
+          "variantes": [
+            "Excusez-moi, cette machine est libre ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec des pièces ou par carte, sur le panneau à côté."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et ça dure combien de temps ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Environ 40 minutes pour le lavage."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci ! Il y a du savon ?",
+          "variantes": [
+            "Où est le distributeur de lessive ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, juste à l’entrée."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, merci beaucoup."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-dentiste",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Chez le dentiste",
+    "scenario": "sante",
+    "scene": "Au cabinet dentaire",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/dentiste.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qui sont les personnes ?",
+        "Que fait le patient ?"
+      ],
+      "description_modele": "Je vois un cabinet dentaire. Un patient est assis sur le fauteuil. Un dentiste en blouse parle avec lui près des instruments.",
+      "je_suis": "le dentiste",
+      "vous_etes": "un patient ou une patiente",
+      "lieu": "chez le dentiste",
+      "vous_voulez": "expliquer un problème de dents",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, qu’est-ce qui vous amène ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. J’ai mal à une dent depuis hier.",
+          "variantes": [
+            "Bonjour, j’ai une dent qui me fait très mal."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Montrez-moi laquelle. Depuis quand exactement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Depuis hier soir. La douleur est forte quand je mange."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vais regarder. Vous êtes disponible pour un soin aujourd’hui ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, s’il vous plaît. Combien ça coûte ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vous donnerai un devis après l’examen."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, merci."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-opticien",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Chez l’opticien",
+    "scenario": "sante",
+    "scene": "Chez l’opticien",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/opticien.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce que la cliente fait ?",
+        "Que fait l’opticien ?"
+      ],
+      "description_modele": "Je vois un magasin d’optique. Une cliente essaie des lunettes devant un miroir. Un opticien l’aide à choisir.",
+      "je_suis": "l’opticien",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "chez l’opticien",
+      "vous_voulez": "choisir des lunettes",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous cherchez des lunettes de vue ou de soleil ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Des lunettes de vue. J’ai mon ordonnance.",
+          "variantes": [
+            "Bonjour, je voudrais essayer des montures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Essayez celle-ci."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Elles me vont ? Vous avez une autre forme ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, regardez ce modèle plus fin."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Je préfère celui-ci. Combien ça coûte ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je calcule avec votre assurance."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, merci."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-veterinaire",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Chez le vétérinaire",
+    "scenario": "sante",
+    "scene": "Chez le vétérinaire",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/veterinaire.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Qui sont les personnes ?",
+        "Quel animal voyez-vous ?",
+        "Que se passe-t-il ?"
+      ],
+      "description_modele": "Je vois un cabinet vétérinaire. Une personne tient un chat dans une cage de transport. Une vétérinaire examine l’animal.",
+      "je_suis": "la vétérinaire",
+      "vous_etes": "le propriétaire de l’animal",
+      "lieu": "chez le vétérinaire",
+      "vous_voulez": "expliquer le problème de votre animal",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, qu’est-ce qui ne va pas pour votre chat ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Il ne mange presque plus depuis deux jours.",
+          "variantes": [
+            "Il est très fatigué et il miaule beaucoup."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Depuis quand exactement ? Il a de la fièvre ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Depuis lundi. Je n’ai pas pris sa température."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je vais l’examiner. Vous pouvez le sortir de la cage."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. C’est grave, vous pensez ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "On va voir. Je vous dirai juste après."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-garage-voiture",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au garage",
+    "scenario": "transports",
+    "scene": "Au garage automobile",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/garage-voiture.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qui sont les personnes ?",
+        "Que font-elles ?"
+      ],
+      "description_modele": "Je vois un garage. Un client parle à un mécanicien près d’une voiture. Peut-être qu’il explique une panne.",
+      "je_suis": "le mécanicien",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "au garage",
+      "vous_voulez": "faire réparer votre voiture",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, quel est le problème avec la voiture ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Il y a un bruit bizarre quand je freine.",
+          "variantes": [
+            "La voiture ne démarre plus ce matin."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Je peux la regarder cet après-midi. Vous avez besoin d’une voiture de remplacement ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, si possible. Combien de temps ça prendra ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Environ deux jours, selon les pièces."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Pouvez-vous m’appeler quand c’est prêt ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Laissez-moi votre numéro."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà. Merci !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-assurance",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À l’assurance",
+    "scenario": "administration",
+    "scene": "Au bureau d’assurance",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/assurance.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "De quoi parlent-elles, à votre avis ?"
+      ],
+      "description_modele": "Je vois un bureau. Un conseiller explique un dossier à un client assis en face. Ils parlent probablement d’un contrat d’assurance.",
+      "je_suis": "le conseiller",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "au bureau d’assurance",
+      "vous_voulez": "poser des questions sur votre contrat",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous avez reçu notre courrier ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Je ne comprends pas cette facture.",
+          "variantes": [
+            "Bonjour, je voudrais changer mon contrat."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Montrez-moi le document. Voici ce que ça veut dire…"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Et est-ce que je peux payer en plusieurs fois ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, en trois fois sans frais."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait. Que dois-je signer ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Cette page, en bas."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci pour les explications."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-cles-oubliees",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Les clés oubliées",
+    "scenario": "logement",
+    "scene": "Devant chez le voisin",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/cles-oubliees.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Que fait la personne devant la porte ?",
+        "Pourquoi sonne-t-elle, à votre avis ?"
+      ],
+      "description_modele": "Je vois un palier d’immeuble. Une personne sonne chez le voisin parce qu’elle a oublié ses clés. Le voisin ouvre la porte.",
+      "je_suis": "le voisin ou la voisine",
+      "vous_etes": "l’habitant qui a oublié ses clés",
+      "lieu": "sur le palier",
+      "vous_voulez": "demander de l’aide pour rentrer chez vous",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, excusez-moi… J’ai oublié mes clés. Vous pouvez m’aider ?",
+          "variantes": [
+            "Bonjour, je suis enfermée dehors. Est-ce que je peux téléphoner chez vous ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oh là là ! Vous voulez appeler quelqu’un ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, mon mari. Il a un double des clés."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Entrez, vous pouvez téléphoner depuis chez moi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, c’est très gentil !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "De rien. Vous voulez un verre d’eau en attendant ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, avec plaisir. Merci."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-parcmetre",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Payer le stationnement",
+    "scenario": "transports",
+    "scene": "Au parcmètre",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/parcmetre.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la personne ?",
+        "Qu’est-ce qu’elle fait ?",
+        "Qu’y a-t-il à côté ?"
+      ],
+      "description_modele": "Je vois une rue. Une personne paie au parcmètre près d’une voiture. Elle tient probablement une carte.",
+      "je_suis": "un agent de police municipale",
+      "vous_etes": "un automobiliste",
+      "lieu": "dans la rue, près du parcmètre",
+      "vous_voulez": "payer le stationnement",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, comment on paie ici ?",
+          "variantes": [
+            "Excusez-moi, le parcmètre n’accepte pas ma carte."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous pouvez payer par carte ou avec l’application sur le téléphone."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est combien pour deux heures ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Quatre francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci. Je dois coller un ticket sur le pare-brise ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, bien visible."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord, merci !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-inscription-creche",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Inscrire un enfant à la crèche",
+    "scenario": "famille",
+    "scene": "À la crèche",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/inscription-creche.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Qui sont les personnes ?",
+        "Où est la scène ?",
+        "Que veulent-elles, à votre avis ?"
+      ],
+      "description_modele": "Je vois l’accueil d’une crèche. Un parent tient un enfant par la main et parle à une éducatrice derrière le comptoir.",
+      "je_suis": "l’éducatrice",
+      "vous_etes": "un parent",
+      "lieu": "à l’accueil de la crèche",
+      "vous_voulez": "inscrire votre enfant",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous venez pour une inscription ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Je voudrais inscrire mon fils pour le mois prochain.",
+          "variantes": [
+            "Bonjour, il reste de la place pour ma fille ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Quel âge a-t-il ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Il a deux ans."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Remplissez ce formulaire et apportez le carnet de santé."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Quels horaires proposez-vous ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "De 7 h 30 à 18 h 30, du lundi au vendredi."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, merci."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-retrait-colis-poste",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Retirer un colis à la poste",
+    "scenario": "administration",
+    "scene": "À la poste",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/retrait-colis-poste.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qu’est-ce que l’employé donne ?",
+        "Que veut le client ?"
+      ],
+      "description_modele": "Je vois un guichet de poste. Un employé remet un colis à un client. Le client vient retirer son colis.",
+      "je_suis": "l’employé de la poste",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la poste",
+      "vous_voulez": "retirer votre colis",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous venez chercher un colis ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici mon avis de retrait.",
+          "variantes": [
+            "Bonjour, j’ai reçu un message pour un colis."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Votre pièce d’identité, s’il vous plaît."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Voilà ma carte."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Merci. Signez ici."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est fait. Merci beaucoup !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-supermarche-caisse",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la caisse du supermarché",
+    "scenario": "achats",
+    "scene": "À la caisse",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/supermarche-caisse.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Qui sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Comment le client paie-t-il ?"
+      ],
+      "description_modele": "Je vois une caisse de supermarché. Une caissière scanne des produits. Un client paie avec une carte bancaire.",
+      "je_suis": "la caissière",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la caisse du supermarché",
+      "vous_voulez": "payer vos courses",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour. Vous avez la carte de fidélité ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Non, je n’en ai pas. Je paie par carte.",
+          "variantes": [
+            "Oui, voici ma carte. Je paie en espèces."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Le total est de 42 francs."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Pouvez-vous me donner un sac, s’il vous plaît ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, 20 centimes le sac."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Ça va. Merci, bonne journée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-bruit-voisin",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Le bruit du voisin",
+    "scenario": "logement",
+    "scene": "Chez le voisin",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/bruit-voisin.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Que fait la personne ?",
+        "De quoi vont-elles parler, à votre avis ?"
+      ],
+      "description_modele": "Je vois un palier. Un voisin sonne poliment à la porte d’un autre pour parler. L’autre ouvre.",
+      "je_suis": "le voisin qui fait du bruit",
+      "vous_etes": "le voisin gêné par le bruit",
+      "lieu": "sur le palier",
+      "vous_voulez": "demander calmement moins de bruit",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonsoir, excusez-moi… Il y a beaucoup de bruit ce soir.",
+          "variantes": [
+            "Bonsoir, pourriez-vous baisser un peu la musique ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Ah, désolé ! On dérange ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, j’ai un enfant qui dort. C’est possible de baisser ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr, on le fait tout de suite."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup, c’est gentil."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pardon encore. Bonne soirée !"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonne soirée !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-panne-ascenseur",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "La panne d’ascenseur",
+    "scenario": "logement",
+    "scene": "Dans le hall",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/panne-ascenseur.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Quel est le problème ?",
+        "Que portent-elles ?"
+      ],
+      "description_modele": "Je vois le hall d’un immeuble. Deux personnes regardent l’ascenseur hors service. L’une tient des sacs de courses.",
+      "je_suis": "un voisin",
+      "vous_etes": "un habitant avec des courses",
+      "lieu": "dans le hall de l’immeuble",
+      "vous_voulez": "demander de l’aide pour monter les courses",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, l’ascenseur est en panne ?",
+          "variantes": [
+            "Bonjour, vous savez jusqu’à quand l’ascenseur est bloqué ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, jusqu’à demain matin."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "J’habite au quatrième. Vous pouvez m’aider avec un sac ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr, montons ensemble."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci, c’est très gentil !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "De rien."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-pharmacie-ordonnance",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "À la pharmacie avec une ordonnance",
+    "scenario": "sante",
+    "scene": "À la pharmacie",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/pharmacie-ordonnance.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qu’est-ce que le client donne ?",
+        "Que fait la pharmacienne ?"
+      ],
+      "description_modele": "Je vois une pharmacie. Un client tend une ordonnance à une pharmacienne derrière le comptoir.",
+      "je_suis": "la pharmacienne",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "à la pharmacie",
+      "vous_voulez": "acheter des médicaments avec une ordonnance",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous avez une ordonnance ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici. Le médecin m’a prescrit ces médicaments.",
+          "variantes": [
+            "Bonjour, pouvez-vous préparer mon ordonnance ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Très bien. Vous avez la carte d’assurance ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, la voici."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Prenez un comprimé le matin et un le soir."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Y a-t-il des effets secondaires ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfois un peu de fatigue. Buvez beaucoup d’eau."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci pour les conseils."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-controle-technique",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Au contrôle technique",
+    "scenario": "transports",
+    "scene": "Au contrôle technique",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/controle-technique.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Qui sont les personnes ?",
+        "Que font-elles ?"
+      ],
+      "description_modele": "Je vois un hangar. Un agent discute avec un conducteur près d’une voiture. Ils parlent du contrôle du véhicule.",
+      "je_suis": "l’agent du contrôle",
+      "vous_etes": "un conducteur ou une conductrice",
+      "lieu": "au contrôle technique",
+      "vous_voulez": "passer le contrôle de votre voiture",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous venez pour le contrôle ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Voici les papiers de la voiture.",
+          "variantes": [
+            "Bonjour, j’ai rendez-vous à 10 heures."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait. Attendez dans la salle, ça prend environ 30 minutes."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et si quelque chose ne passe pas ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "On vous explique et vous avez un délai pour réparer."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Compris. Merci."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-inscription-cours-langue",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "S’inscrire à un cours de français",
+    "scenario": "ecole",
+    "scene": "À l’école de langues",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/inscription-cours-langue.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Que veut la personne, à votre avis ?"
+      ],
+      "description_modele": "Je vois le secrétariat d’une école. Une secrétaire aide une adulte à s’inscrire avec un dossier sur le bureau.",
+      "je_suis": "la secrétaire",
+      "vous_etes": "un apprenant ou une apprenante",
+      "lieu": "à l’accueil de l’école de langues",
+      "vous_voulez": "vous inscrire à un cours de français",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, vous voulez vous inscrire ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Je cherche un cours de français le soir.",
+          "variantes": [
+            "Bonjour, quels cours avez-vous pour débutants ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Nous avons un cours A2 le mardi et le jeudi de 18 h à 20 h."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "C’est combien ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "400 francs pour le trimestre."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Quels documents faut-il ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Une pièce d’identité et le formulaire rempli."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, je m’inscris."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a1a2-po-img-demenagement",
+    "niveau": "A1-A2",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Le déménagement",
+    "scenario": "logement",
+    "scene": "Devant l’immeuble",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a2/demenagement.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où est la scène ?",
+        "Que portent les personnes ?",
+        "Que se passe-t-il ?"
+      ],
+      "description_modele": "Je vois deux adultes qui portent un carton devant un immeuble. Un véhicule est ouvert en arrière-plan. Ils déménagent.",
+      "je_suis": "un voisin qui aide",
+      "vous_etes": "la personne qui déménage",
+      "lieu": "devant l’immeuble",
+      "vous_voulez": "demander de l’aide pour porter un carton",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour, vous pouvez m’aider à monter ce carton ?",
+          "variantes": [
+            "Pardon, l’ascenseur est libre ? On déménage."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Bien sûr. Vous allez à quel étage ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Au troisième. Merci beaucoup !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Pas de problème. Attention, c’est lourd."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui. Vous voulez un verre d’eau après ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Avec plaisir."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci encore pour votre aide !"
+        }
+      ]
+    },
+    "questions": []
   }
 ]

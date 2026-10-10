@@ -6171,5 +6171,261 @@
       ]
     },
     "questions": []
+  },
+  {
+    "id": "tcf-a0a1-po-img-formulaire-admin",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Remplir un formulaire administratif",
+    "scenario": "administration",
+    "scene": "À la commune",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a1/formulaire-admin-1.webp",
+        "/lib/images/comprehension/po-a1/formulaire-admin-2.webp",
+        "/lib/images/comprehension/po-a1/formulaire-admin-3.webp",
+        "/lib/images/comprehension/po-a1/formulaire-admin-4.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Que se passe-t-il au début, puis à la fin ?"
+      ],
+      "description_modele": "D’abord, une femme entre dans la commune et regarde le guichet. Ensuite, elle parle à l’employé et tient un formulaire. Puis, elle remplit le document avec un stylo pendant que l’employé montre où écrire. À la fin, elle rend le formulaire rempli.",
+      "je_suis": "l’employé de la commune",
+      "vous_etes": "un usager ou une usagère",
+      "lieu": "au guichet de la commune",
+      "vous_voulez": "remplir un formulaire",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais remplir ce formulaire.",
+          "variantes": [
+            "Bonjour, j’ai besoin d’aide pour ce papier."
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Vous avez une pièce d’identité ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, voici ma carte."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Écrivez votre nom ici."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Et l’adresse ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Là, dans cette case."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci beaucoup !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a0a1-po-img-billet-bus-automate",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Acheter un billet à l’automate",
+    "scenario": "transports",
+    "scene": "À l’arrêt de bus",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a1/billet-bus-automate-1.webp",
+        "/lib/images/comprehension/po-a1/billet-bus-automate-2.webp",
+        "/lib/images/comprehension/po-a1/billet-bus-automate-3.webp",
+        "/lib/images/comprehension/po-a1/billet-bus-automate-4.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Que se passe-t-il au début, puis à la fin ?"
+      ],
+      "description_modele": "D’abord, un homme arrive à l’arrêt de bus et regarde l’automate. Ensuite, il paie avec sa carte. Puis, il prend son ticket. À la fin, il monte dans le bus avec son billet.",
+      "je_suis": "un passant",
+      "vous_etes": "une personne qui prend le bus",
+      "lieu": "à l’arrêt de bus",
+      "vous_voulez": "acheter un billet de bus",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, comment on achète un billet ?",
+          "variantes": [
+            "Excusez-moi, vous pouvez m’aider avec l’automate ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Appuyez ici, puis payez avec votre carte."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Comme ça ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui. Prenez le ticket."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci ! Je dois le valider ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Oui, dans le bus."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Parfait, merci !"
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a0a1-po-img-distributeur-billets",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Retirer de l’argent au distributeur",
+    "scenario": "banque",
+    "scene": "Au distributeur de billets",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a1/distributeur-billets-1.webp",
+        "/lib/images/comprehension/po-a1/distributeur-billets-2.webp",
+        "/lib/images/comprehension/po-a1/distributeur-billets-3.webp",
+        "/lib/images/comprehension/po-a1/distributeur-billets-4.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Que se passe-t-il au début, puis à la fin ?"
+      ],
+      "description_modele": "D’abord, une femme arrive devant le distributeur. Ensuite, elle met sa carte. Puis, elle tape son code. À la fin, elle retire des billets et les range dans son portefeuille.",
+      "je_suis": "un agent de la banque",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "devant le distributeur",
+      "vous_voulez": "retirer de l’argent",
+      "repliques": [
+        {
+          "locuteur": "eleve",
+          "texte": "Pardon, le distributeur ne marche pas.",
+          "variantes": [
+            "Excusez-moi, comment on retire de l’argent ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Mettez votre carte, puis tapez votre code."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Combien je peux retirer ?"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Choisissez le montant à l’écran."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "D’accord. Merci !"
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "N’oubliez pas votre carte."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, merci beaucoup."
+        }
+      ]
+    },
+    "questions": []
+  },
+  {
+    "id": "tcf-a0a1-po-img-cabine-essayage",
+    "niveau": "A0-A1",
+    "competence": "PO",
+    "type_exercice": "image_interaction",
+    "theme": "Essayer des vêtements",
+    "scenario": "achats",
+    "scene": "Dans un magasin de vêtements",
+    "support": {
+      "images": [
+        "/lib/images/comprehension/po-a1/cabine-essayage-1.webp",
+        "/lib/images/comprehension/po-a1/cabine-essayage-2.webp",
+        "/lib/images/comprehension/po-a1/cabine-essayage-3.webp",
+        "/lib/images/comprehension/po-a1/cabine-essayage-4.webp"
+      ],
+      "questions": [
+        "Qu’est-ce que vous voyez ?",
+        "Où sont les personnes ?",
+        "Qu’est-ce qu’elles font ?",
+        "Que se passe-t-il au début, puis à la fin ?"
+      ],
+      "description_modele": "D’abord, une cliente entre dans le magasin. Ensuite, elle prend un vêtement avec l’aide de la vendeuse. Puis, elle entre dans la cabine d’essayage. À la fin, elle sort et montre le vêtement à la vendeuse.",
+      "je_suis": "la vendeuse",
+      "vous_etes": "un client ou une cliente",
+      "lieu": "dans un magasin de vêtements",
+      "vous_voulez": "essayer un vêtement",
+      "repliques": [
+        {
+          "locuteur": "examinateur",
+          "texte": "Bonjour, je peux vous aider ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Bonjour. Je voudrais essayer ce pull.",
+          "variantes": [
+            "Bonjour, où sont les cabines ?"
+          ]
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Les cabines sont là-bas. Quelle taille ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Une taille M, s’il vous plaît."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Voilà. Ça vous va ?"
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Oui, ça me va. Je le prends."
+        },
+        {
+          "locuteur": "examinateur",
+          "texte": "Parfait, je vous attends à la caisse."
+        },
+        {
+          "locuteur": "eleve",
+          "texte": "Merci !"
+        }
+      ]
+    },
+    "questions": []
   }
 ]
