@@ -451,13 +451,18 @@ function AxesScene({
         if (!isAxis && scene.originZeroInNegCell && mathAtCol(col) < -1e-9) {
           return null
         }
+        // Pas de trait de grille au bord extérieur (sous la flèche) : la flèche suffit.
+        if (!isAxis && scene.originZeroInNegCell && col === cols) {
+          return null
+        }
+        const yPositiveOnly = Boolean(scene.originZeroInNegCell) && !isAxis
         return (
           <line
             key={`vx-${col}`}
             x1={colX(col)}
             y1={isAxis ? axisTipY : visibleTopY}
             x2={colX(col)}
-            y2={rowY(0)}
+            y2={yPositiveOnly ? originSvg.cy : rowY(0)}
             className={isAxis ? 'axis-line' : 'grid-line'}
           />
         )
@@ -468,10 +473,14 @@ function AxesScene({
         if (!isAxis && scene.originZeroInNegCell && mathAtRow(row) < -1e-9) {
           return null
         }
+        if (!isAxis && scene.originZeroInNegCell && row === rows) {
+          return null
+        }
+        const xPositiveOnly = Boolean(scene.originZeroInNegCell) && !isAxis
         return (
           <line
             key={`hy-${row}`}
-            x1={padL}
+            x1={xPositiveOnly ? originSvg.cx : padL}
             y1={rowY(row)}
             x2={isAxis ? axisTipX : visibleRightX}
             y2={rowY(row)}
@@ -486,7 +495,9 @@ function AxesScene({
             return [
               ...Array.from({ length: Math.floor(visibleCols / tickEvery) }, (_, i) => {
                 const col = originCol + (i + 1) * tickEvery
-                if (col <= 0 || col > visibleCols || col === originCol) return null
+                // Inclure la dernière unité (ex. +24) ; exclure tout au-delà du bord.
+                if (col <= 0 || col > cols || col === originCol) return null
+                if (col > visibleCols) return null
                 const cx = colX(col)
                 const oy = originSvg.cy
                 const tick = Math.max(1.1, cellMm * 0.28)
@@ -529,7 +540,8 @@ function AxesScene({
             return [
               ...Array.from({ length: Math.floor(visibleRows / tickEvery) }, (_, i) => {
                 const row = originRow + (i + 1) * tickEvery
-                if (row <= 0 || row > visibleRows || row === originRow) return null
+                if (row <= 0 || row > rows || row === originRow) return null
+                if (row > visibleRows) return null
                 const cy = rowY(row)
                 const ox = originSvg.cx
                 const tick = Math.max(1.1, cellMm * 0.28)

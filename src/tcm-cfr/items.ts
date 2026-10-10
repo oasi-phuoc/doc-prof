@@ -1196,8 +1196,9 @@ function genEx27(rng: Rng): MathItem[] {
   const maxUnit = positiveCells / unitSquares
   const originCol = unitSquares
   const originRow = unitSquares
-  const arrowPad = 2
-  const visibleCols = originCol + positiveCells + arrowPad
+  // Pas de cases « flèche » en plus : la dernière graduation = +24 (ou +12 si 1 u/2 cases).
+  // Les flèches dépassent dans le padding SVG, pas dans des cases supplémentaires.
+  const visibleCols = originCol + positiveCells
   const visibleRows = visibleCols
   const cols = visibleCols
   const rows = visibleRows
