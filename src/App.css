@@ -1571,7 +1571,7 @@ html,body,#root{
   .syllable-vowel{color:var(--purple)!important}
   .syllable-cons{color:#000!important}
   .syllable-match-table,.syllable-match-table td{border:none!important}
-  .syllable-match-num{color:var(--purple)!important}
+  .syllable-match-table td.syllable-match-num{color:var(--purple)!important}
   .syllable-complete-card{border:1px solid #d8dde6!important}
   .syllable-complete-blank{border-bottom-color:var(--purple)!important}
   .listen-check-grid,.listen-check-cell,.listen-check-image-cell,.listen-check-image{border:none!important}
@@ -2163,9 +2163,10 @@ html,body,#root{
   line-height:1.3;
   color:var(--ink);
 }
-.syllable-match-num{
+/* Spécificité > `.syllable-match-table td` (sinon reste en --ink). */
+.syllable-match-table td.syllable-match-num{
   width:1.8em;
-  color:var(--purple); /* couleur thème */
+  color:var(--purple);
   font-weight:700;
   text-align:left;
   white-space:nowrap;
