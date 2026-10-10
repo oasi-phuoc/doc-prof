@@ -442,6 +442,8 @@ export type MathItem = {
   geoDualPads?: boolean
   /** Geo dual : espace réduit de moitié entre la grille et les lignes Périmètre / Aire. */
   geoDualTight?: boolean
+  /** Masquer le numéro de question (ex. problème géométrie 25–26). */
+  hideItemNumber?: boolean
   /** Cadre forme + traits (TCM CFR ex. 16–17) : figure à gauche, réponses à droite. */
   geoNameCard?: boolean
   /**

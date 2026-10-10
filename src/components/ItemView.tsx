@@ -123,6 +123,7 @@ export function ItemView({
       (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes'),
   )
   const hideNumber =
+    Boolean(item.hideItemNumber) ||
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
