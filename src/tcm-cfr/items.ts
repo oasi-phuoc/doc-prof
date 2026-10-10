@@ -956,13 +956,12 @@ function genEx17(rng: Rng, worksheetSeed: number): MathItem[] {
   return shuffle(rng, [form1, form2, form3]).map((fig) => namedFigureCard(fig, false))
 }
 
-/** Ex. 18 — symétrie axiale. */
+/** Ex. 14 (type ex18) — symétrie axiale ; consigne via le catalogue uniquement. */
 function genEx18(rng: Rng): MathItem[] {
   const tpl = pickSymmetryTemplate(rng)
   return [
     {
       layout: 'symmetry-grid' as const,
-      prompt: 'Reproduisez la figure par symétrie axiale par rapport à l’axe.',
       symmetryFigure: tpl,
       answer: tpl.id,
     },
