@@ -140,8 +140,11 @@ export function SegmentMeasureBlock({
               <div className="tcm-cfr-segment-line-wrap">
                 <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm` }} />
               </div>
-              <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>
-                {show ? `${seg.display} ${seg.unit}` : '\u00a0'}
+              <span className="tcm-cfr-segment-answer">
+                <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>
+                  {show ? seg.display : '\u00a0'}
+                </span>
+                <span className="tcm-cfr-segment-unit">{seg.unit}</span>
               </span>
             </div>
           )
