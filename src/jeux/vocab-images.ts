@@ -60,6 +60,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/accessoires/lunettes.webp"
       },
       {
+        "label": "luxe",
+        "src": "/lib/images/vocabulaire/accessoires/luxe.webp"
+      },
+      {
         "label": "montre",
         "src": "/lib/images/vocabulaire/accessoires/montre.webp"
       },
@@ -556,6 +560,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/aliments/miel.webp"
       },
       {
+        "label": "mixte",
+        "src": "/lib/images/vocabulaire/aliments/mixte.webp"
+      },
+      {
         "label": "moutarde",
         "src": "/lib/images/vocabulaire/aliments/moutarde.webp"
       },
@@ -1044,6 +1052,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "tampon",
         "src": "/lib/images/vocabulaire/argent-administration/tampon.webp"
+      },
+      {
+        "label": "taxe",
+        "src": "/lib/images/vocabulaire/argent-administration/taxe.webp"
       },
       {
         "label": "ticket-de-caisse",
@@ -1564,6 +1576,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "visage",
         "src": "/lib/images/vocabulaire/corps/visage.webp"
+      },
+      {
+        "label": "yeux",
+        "src": "/lib/images/vocabulaire/corps/yeux.webp"
       },
       {
         "label": "épaule",
@@ -3112,6 +3128,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp"
       },
       {
+        "label": "relax",
+        "src": "/lib/images/vocabulaire/loisirs/relax.webp"
+      },
+      {
         "label": "scene",
         "src": "/lib/images/vocabulaire/loisirs/scene.webp"
       },
@@ -4222,6 +4242,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/nature/falaise.webp"
       },
       {
+        "label": "feu",
+        "src": "/lib/images/vocabulaire/nature/feu.webp"
+      },
+      {
         "label": "flamme",
         "src": "/lib/images/vocabulaire/nature/flamme.webp"
       },
@@ -4390,6 +4414,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "litre",
         "src": "/lib/images/vocabulaire/nombres-mesures/litre.webp"
+      },
+      {
+        "label": "maximum",
+        "src": "/lib/images/vocabulaire/nombres-mesures/maximum.webp"
       },
       {
         "label": "mille",
@@ -4892,6 +4920,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/outils/arrosoir.webp"
       },
       {
+        "label": "axe",
+        "src": "/lib/images/vocabulaire/outils/axe.webp"
+      },
+      {
         "label": "brouette",
         "src": "/lib/images/vocabulaire/outils/brouette.webp"
       },
@@ -4942,6 +4974,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "diable",
         "src": "/lib/images/vocabulaire/outils/diable.webp"
+      },
+      {
+        "label": "fixe",
+        "src": "/lib/images/vocabulaire/outils/fixe.webp"
       },
       {
         "label": "fourche",
@@ -6500,6 +6536,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ville/avenue.webp"
       },
       {
+        "label": "bagne",
+        "src": "/lib/images/vocabulaire/ville/bagne.webp"
+      },
+      {
         "label": "banc",
         "src": "/lib/images/vocabulaire/ville/banc.webp"
       },
@@ -7298,6 +7338,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/examen.webp"
       },
       {
+        "label": "exercice",
+        "src": "/lib/images/vocabulaire/ecole-bureau/exercice.webp"
+      },
+      {
         "label": "feuille-de-papier",
         "src": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp"
       },
@@ -7354,8 +7398,16 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
         "src": "/lib/images/vocabulaire/ecole-bureau/post-it.webp"
       },
       {
+        "label": "prefixe",
+        "src": "/lib/images/vocabulaire/ecole-bureau/prefixe.webp"
+      },
+      {
         "label": "projecteur",
         "src": "/lib/images/vocabulaire/ecole-bureau/projecteur.webp"
+      },
+      {
+        "label": "préfixe",
+        "src": "/lib/images/vocabulaire/ecole-bureau/préfixe.webp"
       },
       {
         "label": "punaise",
@@ -7404,6 +7456,10 @@ export const VOCAB_IMAGE_THEMES: VocabImageTheme[] = [
       {
         "label": "tampon",
         "src": "/lib/images/vocabulaire/ecole-bureau/tampon.webp"
+      },
+      {
+        "label": "texte",
+        "src": "/lib/images/vocabulaire/ecole-bureau/texte.webp"
       },
       {
         "label": "trombone",
@@ -7616,6 +7672,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "joyau": "/lib/images/vocabulaire/accessoires/joyau.webp",
   "lunettes-de-soleil": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp",
   "lunettes": "/lib/images/vocabulaire/accessoires/lunettes.webp",
+  "luxe": "/lib/images/vocabulaire/accessoires/luxe.webp",
   "montre": "/lib/images/vocabulaire/accessoires/montre.webp",
   "noeud-papillon": "/lib/images/vocabulaire/accessoires/noeud-papillon.webp",
   "parapluie": "/lib/images/vocabulaire/accessoires/parapluie.webp",
@@ -7737,6 +7794,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "mayonnaise": "/lib/images/vocabulaire/aliments/mayonnaise.webp",
   "menu": "/lib/images/vocabulaire/aliments/menu.webp",
   "miel": "/lib/images/vocabulaire/aliments/miel.webp",
+  "mixte": "/lib/images/vocabulaire/aliments/mixte.webp",
   "moutarde": "/lib/images/vocabulaire/aliments/moutarde.webp",
   "nouilles": "/lib/images/vocabulaire/aliments/nouilles.webp",
   "omelette": "/lib/images/vocabulaire/aliments/omelette.webp",
@@ -7882,6 +7940,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "rib": "/lib/images/vocabulaire/argent-administration/rib.webp",
   "signature": "/lib/images/vocabulaire/argent-administration/signature.webp",
   "tampon": "/lib/images/vocabulaire/argent-administration/tampon.webp",
+  "taxe": "/lib/images/vocabulaire/argent-administration/taxe.webp",
   "ticket-de-caisse": "/lib/images/vocabulaire/argent-administration/ticket-de-caisse.webp",
   "timbre": "/lib/images/vocabulaire/argent-administration/timbre.webp",
   "tirelire": "/lib/images/vocabulaire/argent-administration/tirelire.webp",
@@ -8006,6 +8065,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "tête": "/lib/images/vocabulaire/corps/tête.webp",
   "ventre": "/lib/images/vocabulaire/corps/ventre.webp",
   "visage": "/lib/images/vocabulaire/corps/visage.webp",
+  "yeux": "/lib/images/vocabulaire/corps/yeux.webp",
   "épaule": "/lib/images/vocabulaire/corps/épaule.webp",
   "œil": "/lib/images/vocabulaire/corps/œil.webp",
   "azur": "/lib/images/vocabulaire/couleurs/azur.webp",
@@ -8116,6 +8176,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "encre": "/lib/images/vocabulaire/ecole-bureau/encre.webp",
   "encyclopédie": "/lib/images/vocabulaire/ecole-bureau/encyclopédie.webp",
   "examen": "/lib/images/vocabulaire/ecole-bureau/examen.webp",
+  "exercice": "/lib/images/vocabulaire/ecole-bureau/exercice.webp",
   "feuille-de-papier": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp",
   "feutre": "/lib/images/vocabulaire/ecole-bureau/feutre.webp",
   "globe": "/lib/images/vocabulaire/ecole-bureau/globe.webp",
@@ -8130,7 +8191,9 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "porte-documents": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp",
   "porte-mine": "/lib/images/vocabulaire/ecole-bureau/porte-mine.webp",
   "post-it": "/lib/images/vocabulaire/ecole-bureau/post-it.webp",
+  "prefixe": "/lib/images/vocabulaire/ecole-bureau/prefixe.webp",
   "projecteur": "/lib/images/vocabulaire/ecole-bureau/projecteur.webp",
+  "préfixe": "/lib/images/vocabulaire/ecole-bureau/préfixe.webp",
   "punaise": "/lib/images/vocabulaire/ecole-bureau/punaise.webp",
   "pupitre": "/lib/images/vocabulaire/ecole-bureau/pupitre.webp",
   "rapporteur": "/lib/images/vocabulaire/ecole-bureau/rapporteur.webp",
@@ -8142,6 +8205,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "tableau-blanc": "/lib/images/vocabulaire/ecole-bureau/tableau-blanc.webp",
   "tableau": "/lib/images/vocabulaire/ecole-bureau/tableau.webp",
   "taille-crayon": "/lib/images/vocabulaire/ecole-bureau/taille-crayon.webp",
+  "texte": "/lib/images/vocabulaire/ecole-bureau/texte.webp",
   "trombone": "/lib/images/vocabulaire/ecole-bureau/trombone.webp",
   "trousse": "/lib/images/vocabulaire/ecole-bureau/trousse.webp",
   "élève": "/lib/images/vocabulaire/ecole-bureau/élève.webp",
@@ -8480,6 +8544,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "promenade": "/lib/images/vocabulaire/loisirs/promenade.webp",
   "puzzle": "/lib/images/vocabulaire/loisirs/puzzle.webp",
   "pêche-à-la-ligne": "/lib/images/vocabulaire/loisirs/pêche-à-la-ligne.webp",
+  "relax": "/lib/images/vocabulaire/loisirs/relax.webp",
   "scene": "/lib/images/vocabulaire/loisirs/scene.webp",
   "shopping": "/lib/images/vocabulaire/loisirs/shopping.webp",
   "spectacle": "/lib/images/vocabulaire/loisirs/spectacle.webp",
@@ -8708,6 +8773,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "dune": "/lib/images/vocabulaire/nature/dune.webp",
   "désert": "/lib/images/vocabulaire/nature/désert.webp",
   "falaise": "/lib/images/vocabulaire/nature/falaise.webp",
+  "feu": "/lib/images/vocabulaire/nature/feu.webp",
   "flamme": "/lib/images/vocabulaire/nature/flamme.webp",
   "fleuve": "/lib/images/vocabulaire/nature/fleuve.webp",
   "foin": "/lib/images/vocabulaire/nature/foin.webp",
@@ -8749,6 +8815,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "huitante": "/lib/images/vocabulaire/nombres-mesures/huitante.webp",
   "kilogramme": "/lib/images/vocabulaire/nombres-mesures/kilogramme.webp",
   "litre": "/lib/images/vocabulaire/nombres-mesures/litre.webp",
+  "maximum": "/lib/images/vocabulaire/nombres-mesures/maximum.webp",
   "mille": "/lib/images/vocabulaire/nombres-mesures/mille.webp",
   "moitié": "/lib/images/vocabulaire/nombres-mesures/moitié.webp",
   "mètre": "/lib/images/vocabulaire/nombres-mesures/mètre.webp",
@@ -8866,6 +8933,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "tout-droit": "/lib/images/vocabulaire/orientation/tout-droit.webp",
   "à-côté-de": "/lib/images/vocabulaire/orientation/à-côté-de.webp",
   "arrosoir": "/lib/images/vocabulaire/outils/arrosoir.webp",
+  "axe": "/lib/images/vocabulaire/outils/axe.webp",
   "brouette": "/lib/images/vocabulaire/outils/brouette.webp",
   "caisse-a-outils": "/lib/images/vocabulaire/outils/caisse-a-outils.webp",
   "casque-anti-bruit": "/lib/images/vocabulaire/outils/casque-anti-bruit.webp",
@@ -8879,6 +8947,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "clou": "/lib/images/vocabulaire/outils/clou.webp",
   "cric": "/lib/images/vocabulaire/outils/cric.webp",
   "diable": "/lib/images/vocabulaire/outils/diable.webp",
+  "fixe": "/lib/images/vocabulaire/outils/fixe.webp",
   "fourche": "/lib/images/vocabulaire/outils/fourche.webp",
   "gants-de-travail": "/lib/images/vocabulaire/outils/gants-de-travail.webp",
   "hache": "/lib/images/vocabulaire/outils/hache.webp",
@@ -9313,6 +9382,7 @@ export const VOCAB_IMAGE_BY_LABEL: Record<string, string> = {
   "écharpe": "/lib/images/vocabulaire/vetements/écharpe.webp",
   "arrêt-de-bus": "/lib/images/vocabulaire/ville/arrêt-de-bus.webp",
   "avenue": "/lib/images/vocabulaire/ville/avenue.webp",
+  "bagne": "/lib/images/vocabulaire/ville/bagne.webp",
   "banc": "/lib/images/vocabulaire/ville/banc.webp",
   "banque": "/lib/images/vocabulaire/ville/banque.webp",
   "bazar": "/lib/images/vocabulaire/ville/bazar.webp",

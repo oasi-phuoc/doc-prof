@@ -7,23 +7,48 @@ function stripAccents(s: string): string {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
+/** Index sans accents → src (première occurrence). */
+const VOCAB_IMAGE_BY_ASCII: Record<string, string> = (() => {
+  const map: Record<string, string> = {}
+  for (const [label, src] of Object.entries(VOCAB_IMAGE_BY_LABEL)) {
+    const ascii = stripAccents(label)
+    if (!(ascii in map)) map[ascii] = src
+    const dashed = ascii.replace(/ /g, '-')
+    if (!(dashed in map)) map[dashed] = src
+  }
+  return map
+})()
+
 function lookup(label: string): string | undefined {
   const key = label.trim().toLowerCase()
   if (!key) return undefined
+  const ascii = stripAccents(key)
   const candidates = [
     key,
     key.replace(/ /g, '-'),
     key.replace(/-/g, ' '),
-    stripAccents(key),
-    stripAccents(key).replace(/ /g, '-'),
+    ascii,
+    ascii.replace(/ /g, '-'),
   ]
   // Singulier / pluriel simple (chaussure ↔ chaussures).
-  if (key.endsWith('s') && key.length > 3) candidates.push(key.slice(0, -1), stripAccents(key.slice(0, -1)))
-  else candidates.push(`${key}s`, `${stripAccents(key)}s`)
+  if (key.endsWith('s') && key.length > 3) {
+    candidates.push(key.slice(0, -1), stripAccents(key.slice(0, -1)))
+  } else {
+    candidates.push(`${key}s`, `${ascii}s`)
+  }
   // Typo fréquente banque U.
-  if (key === 'alumette' || stripAccents(key) === 'alumette') candidates.push('allumette')
+  if (key === 'alumette' || ascii === 'alumette') candidates.push('allumette')
+  // Alias pédagogiques Soutien ↔ Voc.
+  const aliases: Record<string, string> = {
+    boxer: 'boxeur',
+    mixer: 'mixeur',
+    yeux: 'œil',
+    oeil: 'œil',
+  }
+  const alias = aliases[ascii] ?? aliases[key]
+  if (alias) candidates.push(alias, stripAccents(alias))
   for (const c of candidates) {
-    const hit = VOCAB_IMAGE_BY_LABEL[c]
+    const hit = VOCAB_IMAGE_BY_LABEL[c] ?? VOCAB_IMAGE_BY_ASCII[c]
     if (hit) return hit
   }
   return undefined

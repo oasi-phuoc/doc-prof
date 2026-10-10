@@ -2,6 +2,7 @@
  * Banques auto pour consonnes / sons complexes (à partir des pools + lecture).
  * Les voyelles restent dans SOUTIEN_VOWEL_BANKS (contenu pédagogique CSC).
  */
+import { resolveGameImageSrc } from '@/jeux/image-resolve'
 import { GRAPHEME_WORD_POOLS } from './grapheme-word-pools'
 import { LECTURE_WORD_ITEMS } from './lecture-word-items'
 import type {
@@ -14,6 +15,45 @@ import type {
   SoutienVowelBank,
 } from './banks'
 import type { SoutienLetterOption, SoutienSoundOption } from './themes'
+
+const KEEP_SHORT = new Set([
+  'jet',
+  'feu',
+  'donjon',
+  'jonc',
+  'joli',
+  'boxe',
+  'axe',
+  'luxe',
+  'taxe',
+  'texte',
+  'fixe',
+  'mixte',
+  'relax',
+])
+
+function isUsefulWord(word: string): boolean {
+  const w = word.trim().toLowerCase()
+  if (w.length < 2) return false
+  if (KEEP_SHORT.has(w)) return true
+  // Verbes conjugués / infinitifs / formes nues issus des pools (alignaient, aligne…).
+  if (/(aient|ait|ent|ons|ez)$/i.test(w) && w.length > 4) return false
+  if (/er$/i.test(w) && w.length >= 5) {
+    if (!LECTURE_WORD_ITEMS.some((it) => it.label.toLowerCase() === w)) return false
+  }
+  // Adjectifs / mots peu imageables des pools x.
+  if (w === 'vexant' || w === 'zonard') return false
+  // Formes nues type « aligne / assigne / alignes » (pas dans la banque lecture).
+  if (
+    /e[s]?$/i.test(w) &&
+    w.length >= 5 &&
+    !LECTURE_WORD_ITEMS.some((it) => it.label.toLowerCase() === w) &&
+    /^(align|assign|gagn)/i.test(w)
+  ) {
+    return false
+  }
+  return true
+}
 
 const VOWELS = ['a', 'e', 'i', 'o', 'u', 'y'] as const
 
@@ -54,17 +94,21 @@ function wordsForSound(sound: SoutienSoundOption, letter: SoutienLetterOption): 
   const out: string[] = []
   const push = (w: string) => {
     const key = w.trim().toLowerCase()
-    if (!key || seen.has(key)) return
+    if (!key || seen.has(key) || !isUsefulWord(w)) return
     seen.add(key)
     out.push(w.trim())
   }
 
   // 1) Items lecture avec le phonème
+  // /gz/ (x) est rare dans la banque lecture : accepter aussi « ex + voyelle » (examen…).
+  const acceptExVowelGz = sound.bankId === 'x-gz'
   for (const item of LECTURE_WORD_ITEMS) {
-    if (!item.phonemes.includes(sound.phoneme)) continue
+    const lower = item.label.toLowerCase()
+    const hasPhoneme = item.phonemes.includes(sound.phoneme)
+    const exVowelGz = acceptExVowelGz && /^ex[aeiouyàâäéèêëïîôöùûü]/i.test(lower)
+    if (!hasPhoneme && !exVowelGz) continue
     // Pour multi-sons (c/g/s/x) : exiger aussi la lettre écrite
     if (letter.sounds.length > 1 || letter.id.length === 1) {
-      const lower = item.label.toLowerCase()
       const hasLetter = sound.graphemes.some((g) => {
         if (g.length > 1) return lower.includes(g.toLowerCase())
         return [...lower].some((ch) => ch.normalize('NFC') === g.normalize('NFC'))
@@ -74,7 +118,7 @@ function wordsForSound(sound: SoutienSoundOption, letter: SoutienLetterOption): 
         if (!lower.includes('h')) continue
       } else if (!hasLetter && letter.id.length <= 2) {
         // Digrammes complexes : le pool / phonème suffit souvent
-        if (!sound.complexPoolKey) continue
+        if (!sound.complexPoolKey && !exVowelGz) continue
       }
     }
     push(item.label)
@@ -97,7 +141,14 @@ function wordsForSound(sound: SoutienSoundOption, letter: SoutienLetterOption): 
     }
   }
 
-  return out
+  // Priorité aux mots déjà illustrés (type 1 / écouter-image).
+  const withImg: string[] = []
+  const without: string[] = []
+  for (const w of out) {
+    if (resolveGameImageSrc(w)) withImg.push(w)
+    else without.push(w)
+  }
+  return [...withImg, ...without]
 }
 
 function buildCompletes(words: readonly string[], graphemes: readonly string[]): SoutienComplete[] {
