@@ -31,6 +31,7 @@ import { generateDroites } from './coord-droites'
 import { tryGenerateReperage } from './coord-reperage'
 import { generateTransformations, isTransformationExercise } from './coord-transformations'
 import { tryGenerateSoutienBatch } from '@/francais/soutien/generate'
+import { parseSoutienType } from '@/francais/soutien/kinds'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
@@ -1382,6 +1383,7 @@ function buildSingleBlock(
     columns: config.columns,
     soutienCompleterLibre: config.soutienCompleterLibre,
     soutienCompleterEntries: config.soutienCompleterEntries,
+    excludeWords: config.soutienExcludeWords,
   })
   if (soutien) {
     return {
@@ -1565,11 +1567,46 @@ export function buildPage(
   }
 }
 
+/** Mots déjà tirés en types 1 (vocab) et 5 (compléter) sur toute la série. */
+function collectSoutienReservedWords(pages: PageConfig[], seed: number): string[] {
+  const reserved = new Set<string>()
+  pages.forEach((page, pageIndex) => {
+    const pageSeed = seed + pageIndex * 7919
+    pageBlocks(page).forEach((block, blockIndex) => {
+      const kind = parseSoutienType(block.exerciseType)?.kind
+      if (kind !== 'mots' && kind !== 'completer') return
+      const single = pageAsConfig(page, block)
+      const local = block.contentSeed ?? 0
+      const result = buildSingleBlock(single, pageSeed + blockIndex * 10007 + local, seed)
+      for (const item of result.items) {
+        if (kind === 'mots' && item.layout === 'vocab-table') {
+          for (const entry of item.vocabEntries ?? []) {
+            const label = entry.label?.trim()
+            if (label) reserved.add(label.toLowerCase())
+          }
+        }
+        if (kind === 'completer' && item.layout === 'syllable-complete') {
+          for (const row of item.syllableCompletes ?? []) {
+            const word = row.word?.trim()
+            if (word) reserved.add(word.toLowerCase())
+          }
+        }
+      }
+    })
+  })
+  return [...reserved]
+}
+
 export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
+  const reserved = collectSoutienReservedWords(pages, seed)
+  const pagesWithExclude =
+    reserved.length > 0
+      ? pages.map((page) => ({ ...page, soutienExcludeWords: reserved }))
+      : pages
 
-  pages.forEach((page, index) => {
+  pagesWithExclude.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed)
     const scoredBlocks = worksheet.blocks.filter((block) => !isInfoPageType(block.exerciseType))
     if (scoredBlocks.length) {

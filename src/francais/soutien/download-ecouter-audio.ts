@@ -13,6 +13,8 @@ export const SOUTIEN_SILENCE_2S = `${SOUTIEN_DIR}/silence-2s.mp3`
 export const SOUTIEN_ECOUTER_CONSIGNE = `${SOUTIEN_DIR}/consigne-ecoutez-cochez.mp3`
 /** Type 8 — « À quelle syllabe entendez-vous le son ? » */
 export const SOUTIEN_SYLLABE_SON_CONSIGNE = `${SOUTIEN_DIR}/consigne-syllabe-son.mp3`
+/** Type 9 — « Écrivez le mot correct à l’aide des lettres. » */
+export const SOUTIEN_LETTRES_PHRASE_CONSIGNE = `${SOUTIEN_DIR}/consigne-lettres-phrase.mp3`
 
 /** Phonème banque → fichier `sons/{slug}.mp3`. */
 const SOUND_SLUG: Record<string, string> = {

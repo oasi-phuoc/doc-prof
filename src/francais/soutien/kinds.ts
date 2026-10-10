@@ -67,7 +67,7 @@ export const SOUTIEN_KINDS = [
     id: 'lettres-phrase',
     label: '9 · Mot dans la phrase',
     description:
-      'Phrases + lettres mélangées ; voyelle simple colorée (Alpha : pas an/au/eau…).',
+      'Phrases illustratives ; lettres sous le trait ; hors mots types 1 et 5 ; audio phrases.',
     instruction: 'Écrivez le mot correct à l’aide des lettres.',
     preferredColumns: 1 as const,
   },

@@ -1588,6 +1588,7 @@ html,body,#root{
   .phrase-scramble-table,.phrase-scramble-table td,.phrase-scramble-num,.phrase-scramble-image{border:none!important}
   .phrase-scramble-num{color:var(--purple)!important}
   .phrase-scramble-blank{border-bottom-color:var(--purple)!important}
+  .phrase-scramble-letters{margin-top:15px!important}
   .determinant-fill-table,.determinant-fill-table td{border:none!important}
   .determinant-fill-num,.det-choice,.exercise-heading .det-choice{color:var(--purple)!important}
   .determinant-blank{border-bottom-color:var(--purple)!important}
@@ -2386,7 +2387,7 @@ html,body,#root{
   color:var(--purple);
 }
 
-/* Soutien FR type 9 — n° + image + phrase (hauteurs égales, sans bordure) */
+/* Soutien FR type 9 — n° + image + phrase ; lettres sous le trait (+15 px) */
 .phrase-scramble-block{
   display:flex;flex-direction:column;gap:6px;width:100%;min-width:0
 }
@@ -2394,23 +2395,27 @@ html,body,#root{
   width:100%;border-collapse:collapse;border:none;table-layout:fixed
 }
 .phrase-scramble-table tr{
-  height:22mm
+  height:auto
 }
 .phrase-scramble-table td{
-  border:none;padding:4px 6px;vertical-align:middle;height:22mm;box-sizing:border-box
+  border:none;padding:6px 6px;vertical-align:middle;box-sizing:border-box
 }
 .phrase-scramble-num{
   width:1.8em;font-size:14px;font-weight:700;color:var(--purple);
-  text-align:left;white-space:nowrap
+  text-align:left;white-space:nowrap;vertical-align:top;padding-top:10px
 }
 .phrase-scramble-image{
-  width:22mm;text-align:center
+  width:32mm;text-align:center;vertical-align:middle
 }
 .phrase-scramble-image img{
-  max-width:18mm;max-height:18mm;object-fit:contain;display:inline-block
+  max-width:27mm;max-height:27mm;object-fit:contain;display:inline-block /* +50 % vs 18 mm */
 }
 .phrase-scramble-text{
-  font-size:13px;font-weight:400;line-height:1.35;color:var(--ink)
+  font-size:13px;font-weight:400;line-height:1.35;color:var(--ink);
+  vertical-align:middle
+}
+.phrase-scramble-line{
+  display:block;width:100%
 }
 .phrase-scramble-sentence{
   display:inline;hyphens:auto
@@ -2429,7 +2434,9 @@ html,body,#root{
 }
 .phrase-scramble-blank.filled{border-bottom-style:solid}
 .phrase-scramble-letters{
-  font-weight:400;letter-spacing:.04em;white-space:nowrap;color:var(--ink)
+  display:block;
+  margin-top:15px; /* padding entre le trait et les lettres mélangées */
+  font-weight:400;letter-spacing:.04em;white-space:normal;color:var(--ink)
 }
 
 /* Soutien FR type 10 — déterminants ; sans bordure ; trait continu */

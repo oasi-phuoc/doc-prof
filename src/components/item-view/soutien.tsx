@@ -289,19 +289,19 @@ export function PhraseScrambleBlock({ item, mode }: { item: MathItem; mode: Prev
                   )}
                 </td>
                 <td className="phrase-scramble-text">
-                  <span className="phrase-scramble-sentence">
-                    {paint(row.before)}
-                    <span
-                      className={`phrase-scramble-blank${show ? ' filled' : ''}`}
-                      style={{ width: `${blankCh}ch` }}
-                    >
-                      {show ? paint(row.word) : '\u00a0'}
+                  <div className="phrase-scramble-line">
+                    <span className="phrase-scramble-sentence">
+                      {paint(row.before)}
+                      <span
+                        className={`phrase-scramble-blank${show ? ' filled' : ''}`}
+                        style={{ width: `${blankCh}ch` }}
+                      >
+                        {show ? paint(row.word) : '\u00a0'}
+                      </span>
+                      {paint(row.after)}
                     </span>
-                    {paint(row.after)}{' '}
-                    <span className="phrase-scramble-letters">
-                      ({paint(row.letters)})
-                    </span>
-                  </span>
+                  </div>
+                  <div className="phrase-scramble-letters">({paint(row.letters)})</div>
                 </td>
               </tr>
             )

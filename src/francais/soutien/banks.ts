@@ -1,5 +1,6 @@
 /** Banques Soutien FR — voyelles (livret CSC) + auto consonnes / complexes. Images via vocabulaire. */
 import { buildAutoSoutienBank } from './auto-banks'
+import { buildScrambleBank } from './phrase-scramble-build'
 import { syllableItemFr } from './syllabify-fr'
 import { allSoutienBankDefs, findSoutienByBankId } from './themes'
 
@@ -1893,7 +1894,7 @@ export const SOUTIEN_VOWEL_BANKS: readonly SoutienVowelBank[] = [
 
 const AUTO_BANK_CACHE = new Map<string, SoutienVowelBank>()
 
-/** Recalcule les items type 8 (syllabes scolaires, sans monosyllabes). */
+/** Recalcule type 8 (syllabes) + type 9 (phrases illustratives). */
 function withFixedSyllableItems(bank: SoutienVowelBank): SoutienVowelBank {
   const seen = new Set<string>()
   const out: SoutienSyllableItem[] = []
@@ -1908,7 +1909,17 @@ function withFixedSyllableItems(bank: SoutienVowelBank): SoutienVowelBank {
   for (const w of bank.words) push(w)
   for (const row of bank.syllableItems) push(row.word)
   for (const c of bank.completes) push(c.word)
-  return { ...bank, syllableItems: out }
+  const scrambleWords = [
+    ...bank.words,
+    ...bank.scrambles.map((s) => s.word),
+    ...bank.completes.map((c) => c.word),
+  ]
+  const scrambles = buildScrambleBank(scrambleWords, bank.sound, 24)
+  return {
+    ...bank,
+    syllableItems: out,
+    scrambles: scrambles.length > 0 ? scrambles : bank.scrambles,
+  }
 }
 
 /** Banque par identifiant (`a`, `c-k`, `ch`…). Voyelles = CSC ; autres = auto. */

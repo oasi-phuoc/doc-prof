@@ -135,6 +135,7 @@ import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibre
 import { soutienBankById } from '@/francais/soutien/banks'
 import {
   downloadSoutienEcouterAudio,
+  SOUTIEN_LETTRES_PHRASE_CONSIGNE,
   SOUTIEN_SYLLABE_SON_CONSIGNE,
 } from '@/francais/soutien/download-ecouter-audio'
 import {
@@ -790,6 +791,12 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
       const audioSrcs = syllabe.syllableSoundItems.map((row) => row.audioSrc ?? '')
       return { words, audioSrcs }
     }
+    const phrase = blockItems.find((row) => row.layout === 'phrase-scramble')
+    if (phrase?.phraseScrambles?.length) {
+      const words = phrase.phraseScrambles.map((row) => row.word.trim()).filter(Boolean)
+      const audioSrcs = phrase.phraseScrambles.map((row) => row.audioSrc ?? '')
+      return { words, audioSrcs }
+    }
     return { words: [], audioSrcs: [] }
   }
 
@@ -800,13 +807,20 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
     const bankId = parsed?.bankId ?? 'ecouter'
     const bank = soutienBankById(bankId)
     const meta = soutienAudioFileMeta()
-    const isSyllabeSon = parsed?.kind === 'syllabe-son'
+    const consigneSrc =
+      parsed?.kind === 'syllabe-son'
+        ? SOUTIEN_SYLLABE_SON_CONSIGNE
+        : parsed?.kind === 'lettres-phrase'
+          ? SOUTIEN_LETTRES_PHRASE_CONSIGNE
+          : undefined
+    /** Types 6–8 : annoncer le son après la consigne ; type 9 = phrases seules. */
+    const withSon = parsed?.kind !== 'lettres-phrase'
     try {
       await downloadSoutienEcouterAudio({
         words,
         audioSrcs,
-        phoneme: bank?.sound,
-        consigneSrc: isSyllabeSon ? SOUTIEN_SYLLABE_SON_CONSIGNE : undefined,
+        phoneme: withSon ? bank?.sound : undefined,
+        consigneSrc,
         ...meta,
       })
     } catch {
@@ -867,7 +881,8 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
   const isSoutienEcouter =
     soutienKind === 'ecouter' ||
     soutienKind === 'ecouter-image' ||
-    soutienKind === 'syllabe-son'
+    soutienKind === 'syllabe-son' ||
+    soutienKind === 'lettres-phrase'
   const isSoutienRelier = soutienKind === 'relier'
   const isSoutienLignes = soutienKind === 'lettres' || soutienKind === 'syllabes'
   /** Types 4–11 / 15 : le champ compte des mots (pas des « questions » génériques). */
@@ -3642,7 +3657,9 @@ export function GeneratorPage({ onLogout }: { onLogout: () => void }) {
                             : isSoutienEcouter
                               ? soutienKind === 'syllabe-son'
                                 ? 'Télécharger l’audio (syllabe du son + Numéro + mots, 6 s)'
-                                : 'Télécharger l’audio (consigne + Numéro + mots, 6 s)'
+                                : soutienKind === 'lettres-phrase'
+                                  ? 'Télécharger l’audio (phrases + Numéro, 6 s)'
+                                  : 'Télécharger l’audio (consigne + Numéro + mots, 6 s)'
                               : 'Télécharger l’audio (consigne + 16 mots)'
                     }
                   >

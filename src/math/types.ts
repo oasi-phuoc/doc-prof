@@ -534,6 +534,10 @@ export type MathItem = {
     word: string
     letters: string
     imageSrc?: string
+    /** Audio de la phrase complète (DeniseNeural −25 %). */
+    audioSrc?: string
+    /** Phrase entière (pour téléchargement / debug). */
+    sentence?: string
   }>
   /** Soutien FR type 10 : phrases à compléter (le / la / l’ / les). */
   determinantFills?: Array<{
@@ -834,6 +838,11 @@ export type ExerciseBlock = {
     word: string
     imageSrc?: string
   }>
+  /**
+   * Soutien FR type 9 : mots à exclure (déjà tirés en types 1 et 5
+   * sur la fiche / la série). Rempli par `buildWorksheets`.
+   */
+  soutienExcludeWords?: string[]
   /**
    * Domaine Calligraphie : un mot ou une phrase par ligne
    * (texte brut du panneau enseignant·e).

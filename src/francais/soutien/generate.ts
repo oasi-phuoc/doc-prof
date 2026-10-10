@@ -8,6 +8,10 @@ import { completesFromType1Words } from './complete-blank'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import { parseSoutienType, type SoutienKindId } from './kinds'
 import {
+  buildPhrasesForWord,
+  soutienPhraseAudioPath,
+} from './phrase-scramble-build'
+import {
   ALL_VOCAB_LABELS,
   compoundsForType1Words,
   countLessonPhonemeInText,
@@ -81,6 +85,8 @@ export type SoutienGenerateOptions = {
   /** Type 5 : mode libre. */
   soutienCompleterLibre?: boolean
   soutienCompleterEntries?: ReadonlyArray<SoutienCompleterEntry>
+  /** Type 9 : mots déjà tirés (types 1 et 5) à exclure. */
+  excludeWords?: readonly string[]
 }
 
 const DISTRACTOR_LETTERS = 'bcdfghjklmnpqrstvwxzBCDFGHIJKLMNPQRSTVWXZ'.split('')
@@ -612,12 +618,48 @@ function genKind(
       }
     }
     case 'lettres-phrase': {
-      /** Phrases à trous ; count = nb de mots / lignes ; lettres remélangées à chaque tirage. */
+      /** Phrases illustratives ; exclut mots types 1 et 5 ; lettres sous le trait. */
       const want = Math.max(1, Math.min(16, n))
-      const rows = shuffle(rng, [...bank.scrambles]).slice(
-        0,
-        Math.min(want, bank.scrambles.length),
+      const exclude = new Set(
+        (options?.excludeWords ?? []).map((w) => displayVocabLabel(w).toLowerCase()),
       )
+      const fromBank = bank.scrambles.filter(
+        (row) => !exclude.has(displayVocabLabel(row.word).toLowerCase()),
+      )
+      /** Compléter avec d’autres mots du son (hors exclus), phrases regenerées. */
+      const extraWords = type1WordPool(bank).filter(
+        (w) => !exclude.has(displayVocabLabel(w).toLowerCase()),
+      )
+      const byWord = new Map<string, (typeof fromBank)[number][]>()
+      for (const row of fromBank) {
+        const key = displayVocabLabel(row.word).toLowerCase()
+        const list = byWord.get(key) ?? []
+        list.push(row)
+        byWord.set(key, list)
+      }
+      for (const raw of extraWords) {
+        const key = displayVocabLabel(raw).toLowerCase()
+        if (byWord.has(key)) continue
+        const phrases = buildPhrasesForWord(raw, bank.sound, byWord.size)
+        if (phrases.length === 0) continue
+        byWord.set(
+          key,
+          phrases.map((sentence) => ({
+            sentence,
+            word: displayVocabLabel(raw),
+            letters: '',
+          })),
+        )
+      }
+      const wordKeys = shuffle(rng, [...byWord.keys()])
+      const chosenKeys = wordKeys.slice(0, Math.min(want, wordKeys.length))
+      const rows = chosenKeys
+        .map((key) => {
+          const variants = byWord.get(key) ?? []
+          if (variants.length === 0) return null
+          return pick(rng, variants)
+        })
+        .filter((row): row is NonNullable<typeof row> => Boolean(row))
       return {
         instruction: 'Écrivez le mot correct à l’aide des lettres.',
         preferredColumns: 1,
@@ -625,26 +667,31 @@ function genKind(
           {
             layout: 'phrase-scramble',
             phraseScrambles: rows.map((row) => {
+              const word = displayVocabLabel(row.word)
               const lower = row.sentence.toLowerCase()
-              const w = row.word.toLowerCase()
+              const w = word.toLowerCase()
               const idx = lower.indexOf(w)
               const before = idx >= 0 ? row.sentence.slice(0, idx) : `${row.sentence} `
-              const after = idx >= 0 ? row.sentence.slice(idx + row.word.length) : ''
+              const after =
+                idx >= 0 ? row.sentence.slice(idx + word.length) : ''
               const letters = shuffle(
                 rng,
-                [...row.word.toLocaleUpperCase('fr-FR')].filter((ch) => /\p{L}/u.test(ch)),
+                [...word.toLocaleUpperCase('fr-FR')].filter((ch) => /\p{L}/u.test(ch)),
               ).join(' ')
-              const word = displayVocabLabel(row.word)
+              const sentence =
+                idx >= 0 ? row.sentence : `${before}${word}${after}`.trim()
               return {
                 before,
                 after,
                 word,
                 letters,
                 imageSrc: soutienImageFor(row.word) || soutienImageFor(word),
+                audioSrc: soutienPhraseAudioPath(sentence),
+                sentence,
               }
             }),
             answer: rows.map((row) => displayVocabLabel(row.word)).join(' · '),
-            themeGraphemes: [...bank.graphemes],
+            themeGraphemes: [...lessonSoundGraphemes(bank)],
           },
         ],
       }

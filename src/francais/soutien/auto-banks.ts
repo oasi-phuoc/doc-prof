@@ -15,6 +15,7 @@ import type {
   SoutienSyllableItem,
   SoutienVowelBank,
 } from './banks'
+import { buildScrambleBank } from './phrase-scramble-build'
 import { syllableItemFr } from './syllabify-fr'
 import type { SoutienLetterOption, SoutienSoundOption } from './themes'
 
@@ -82,13 +83,6 @@ function autoSplit(word: string): readonly [string, string] | null {
     if (vowels.test(w[i]!)) return [w.slice(0, i + 1), w.slice(i + 1)] as const
   }
   return [w.slice(0, mid), w.slice(mid)] as const
-}
-
-function scrambleLetters(word: string): string {
-  const letters = [...word.toLocaleUpperCase('fr-FR')].filter((ch) => /\p{L}/u.test(ch))
-  // Mélange déterministe simple (rotation) — le generate mélange déjà à chaque tirage.
-  if (letters.length < 2) return letters.join('')
-  return [...letters.slice(1), letters[0]!].join('')
 }
 
 function wordsForSound(sound: SoutienSoundOption, letter: SoutienLetterOption): string[] {
@@ -229,15 +223,8 @@ function buildSyllableItems(words: readonly string[]): SoutienSyllableItem[] {
   return out
 }
 
-function buildScrambles(words: readonly string[]): SoutienScramble[] {
-  return words.slice(0, 20).map((raw) => {
-    const word = displayVocabLabel(raw)
-    return {
-      sentence: `Voici le mot ${word} dans la phrase.`,
-      word,
-      letters: scrambleLetters(word),
-    }
-  })
+function buildScrambles(words: readonly string[], phoneme: string): SoutienScramble[] {
+  return buildScrambleBank(words, phoneme, 20)
 }
 
 function buildDeterminants(words: readonly string[]): SoutienDet[] {
@@ -311,7 +298,7 @@ export function buildAutoSoutienBank(
     syllables: buildSyllables(letter, sound),
     compounds: buildCompounds(seed),
     completes: buildCompletes(seed, sound.graphemes),
-    scrambles: buildScrambles(seed),
+    scrambles: buildScrambles(seed, sound.phoneme),
     determinants: buildDeterminants(seed),
     countPhrases: buildPhrases(seed),
     readPhrases: buildPhrases(seed),
