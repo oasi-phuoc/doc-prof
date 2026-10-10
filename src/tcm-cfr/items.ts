@@ -1200,7 +1200,9 @@ function genEx27(rng: Rng): MathItem[] {
   const cols = visibleCols
   const rows = visibleRows
   const maxGridMm = 168
-  const cellMm = Math.max(3, Math.min(6, Math.floor((maxGridMm / visibleCols) * 10) / 10))
+  const cellMmAllowed = [10, 8, 6, 5, 4, 3] as const
+  const cellMm =
+    cellMmAllowed.find((mm) => visibleCols * mm <= maxGridMm + 0.5) ?? 3
   // Graduation : un trait tous les 2 carrés → 2 u si 1 u/case, 1 u si 1 u/2 cases.
   const labelStep = unitSquares === 1 ? 2 : 1
 
