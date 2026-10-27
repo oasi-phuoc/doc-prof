@@ -65,7 +65,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         blocks: [
           { kind: 'paragraph', text: 'Je retiens les six formes du verbe {c}être{/c} au présent.' },
           { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'Être'],
+          { kind: 'table', colHeader: true, rowHeader: false, headers: ['Personne', 'Être'],
             rows: [
               ['je', '{c}suis{/c}'],
               ['tu', '{c}es{/c}'],
@@ -75,6 +75,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
               ['ils / elles', '{c}sont{/c}'],
             ],
           },
+          { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: '{c}Attention : {/c} Ne pas confondre les formes {c}es{/c}-{c}est{/c} et {c}êtes{/c}-{c}est{/c}.' },
           { kind: 'examples', items: [
             { text: 'Je dis : « Vous {c}êtes{/c} ici. »', wrong: '« Vous est ici. »' },
@@ -116,9 +117,9 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         blocks: [
           { kind: 'paragraph', text: 'Le verbe {c}avoir{/c} est un verbe {c}irrégulier{/c}. Sa forme change selon la personne.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je l’utilise pour la possession et beaucoup d’expressions.' },
+          { kind: 'paragraph', text: 'Je l’utilise pour la {c}possession{/c} et beaucoup d’{c}expressions{/c}.' },
           { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'examples', marker: 'puces', label: 'Expressions fréquentes', 
+          { kind: 'examples', marker: 'puces', 
             items: [
             '{tab:+1+} {g}Je parle de …{/g} | {g}Exemples{/g}',
             '{tab:1>}{c}Possession{/c} | J’ai {c}un téléphone{/c}.',
@@ -141,19 +142,9 @@ export const presentDocs: GrammaireTheoryDoc[] = [
               '{tab:1<}Il / Elle {c}a{/c} faim. | Ils / Elles {c}ont{/c} faim.',
             ],
           },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: 'Avec certaines sensations et expressions, j’utilise {c}avoir{/c} et non {c}être{/c}.' },
-          { kind: 'examples', marker: 'puces',
-            items: [
-              '{tab:+1+} {g}Sensation{/g} | {g}Expression{/g}',
-              '{tab:1<}Avoir faim/soif | Avoir raison/tort',
-              '{tab:1<}Avoir froid/chaud | Avoir besoin de',
-              '{tab:1<}Avoir peur | Avoir mal à',
-            ],
-          },
-          
         ],
       },
+      {kind: 'page'},
       {
         kind: 'section',
         role: 'retenir',
@@ -196,6 +187,17 @@ export const presentDocs: GrammaireTheoryDoc[] = [
               { text: 'Je dis : « J’{c}ai{/c} 20 ans. »', wrong: '« Je suis 20 ans. »' },
             ],
           },
+          { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: 'Avec certaines sensations et expressions, j’utilise {c}avoir{/c} et non {c}être{/c}.' },
+          { kind: 'examples', marker: 'puces',
+            items: [
+              '{tab:+1+} {g}Sensation{/g} | {g}Expression{/g}',
+              '{tab:1<}Avoir faim/soif | Avoir raison/tort',
+              '{tab:1<}Avoir froid/chaud | Avoir besoin de',
+              '{tab:1<}Avoir peur | Avoir mal à',
+            ],
+          },
+          
         ],
       },
     ],

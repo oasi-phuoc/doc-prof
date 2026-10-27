@@ -342,7 +342,7 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     blocks: [
       { kind: 'heading', text: 'Parler de sa famille' },
       { kind: 'paragraph', text: '{ligne/4}' },
-      { kind: 'paragraph', text: 'Pour parler de ma famille, j’utilise les {c}déterminants possessifs{/c}.' },
+      { kind: 'paragraph', text: 'Pour parler de ma famille, j’utilise les {g}déterminants possessifs{/g}.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
         kind: 'section',
@@ -363,16 +363,17 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
           { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Je choisis le déterminant selon la personne {c}qui parle{/c} et le {c}nom de la personne{/c} de ma famille.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Le déterminant change selon le nom : masculin, féminin ou pluriel.' },
+          { kind: 'paragraph', text: 'Le déterminant change selon le nom {c}masculin{/c}, {c}féminin{/c} ou {c}pluriel{/c}.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'examples', marker: 'puces', items: [
-            '{tab:+2++}Je parle de… | J’utilise… | Exemple',
+            '{tab:+2++}{g}Je parle de …{/g} | {g}J’utilise …{/g} | {g}Exemples{/g}',
             '{tab:2+>}Un homme | {c}mon{/c} | {c}mon{/c} père',
             '{tab:2+>}Une femme | {c}ma{/c} | {c}ma{/c} mère',
             '{tab:2+>}Plusieurs personnes | {c}mes{/c} | {c}mes{/c} parents',
           ]},
         ],
       },
+      {kind: 'page'},
       {
         kind: 'section',
         role: 'retenir',
@@ -381,10 +382,10 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
           { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Pour bien choisir, je regarde : ' },
           { kind: 'examples', marker: 'numeros', items: [
-            '{tab:2++}{c}Qui parle{/c} ?| Le pronom sujet | : je, tu, il, elle, nous, vous, ils, elles.',
-            '{tab:2++}{c}Quel est le nom{/c} ? | Le genre du nom | : masculin, féminin, pluriel',
+            '{tab:1>}Qui parle ?| Le pronom {c}sujet{/c}',
+            '{tab:1>}Quel est le nom ? | Le {c}genre{/c} du nom',
           ]},
-          { kind: 'table', colHeader: true, rowHeader: true,
+          { kind: 'table', colHeader: true, rowHeader: false,
             headers: ['Personne', 'Masculin', 'Féminin', 'Pluriel'],
             rows: [
               ['Je', '{c}mon{/c} père', '{c}ma{/c} mère', '{c}mes{/c} parents'],

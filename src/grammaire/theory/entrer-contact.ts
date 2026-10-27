@@ -42,13 +42,12 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
             ],
           },
         { kind: 'paragraph', text: '{ligne/2}' },
-        { kind: 'paragraph', text: 'J’utilise {c}vous{/c} pour parler {c}poliment{/c} à une personne que {c}je ne connais pas bien{/c}.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'paragraph', text: '{c}Vous{/c} peut aussi parler à {c}plusieurs personnes{/c}.' },
-                { kind: 'examples',  marker: 'puces',
+        { kind: 'paragraph', text: 'J’utilise {c}vous{/c} pour parler {c}poliment{/c} à une personne que {c}je ne connais pas bien{/c} ou à {c}plusieurs personnes{/c}.' },
+        { kind: 'paragraph', text: '{ligne/2}' },
+        { kind: 'examples',  marker: 'puces',
             items: [
               '{tab:+1+}{g}Je parle avec …{/g} | {g}Exemples{/g}',
-              '{tab:1>}Une {c}personne inconnue{/c} | Bonjour, vous ({c}une personne dans la rue{/c}) allez bien ?',
+              '{tab:1>}Une {c}personne inconnue{/c} | Vous ({c}une femme dans la rue{/c}) allez bien ?',
               '{tab:1>}Un {c}professeur{/c} | Vous ({c}M. Van{/c}) pouvez répéter ?',
               '{tab:1>}Un {c}médecin{/c} | Vous ({c}Dr. Grandjean{/c}) avez mal où ?',
               '{tab:1>}Plusieurs {c}personnes{/c} | Vous ({c}Mohammed et Ibrahim{/c}) êtes prêts ?'
@@ -61,10 +60,11 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       kind: 'section',
       role: 'retenir',
       blocks: [
-        { kind: 'paragraph', text: '{c}tu{/c} = une personne proche.' },
+        { kind: 'paragraph', text: '{c}tu{/c} = une personne {c}proche{/c} (ami, famille).' },
         { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'paragraph', text: '{c}Vous{/c} = forme de politesse ou plusieurs personnes.' },
-        { kind: 'table', colHeader: true, rowHeader: true,
+        { kind: 'paragraph', text: '{c}vous{/c} = forme de {c}politesse{/c} ou {c}plusieurs personnes{/c}.' },
+        { kind: 'paragraph', text: '{ligne/2}' },
+        { kind: 'table', colHeader: true, rowHeader: false,
           headers: ['Tu', 'Vous'],
           rows: [
             ['un ami', 'une personne inconnue'],
@@ -73,8 +73,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
           ] },
         { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'astuce', text: 'Écoute aussi la façon dont la personne te parle.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'attention', text: '{c}Vous{/c} sert aussi pour plusieurs personnes.' }
       ],
     },
     ],
@@ -98,8 +96,8 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       blocks: [
         { kind: 'examples', items: [
           '{tab:1<}Bonjour ! | Bonsoir !',
-          '{tab:1<}Salut !', 'Au revoir !',
-          '{tab:1<}À bientôt !', 'Bonne journée !'
+          '{tab:1<}Salut ! | Au revoir !',
+          '{tab:1<}À bientôt ! | Bonne journée !'
         ] }
       ],
     },
@@ -107,28 +105,27 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       kind: 'section',
       role: 'expliquer',
       blocks: [
-        { kind: 'paragraph', text: 'Je dis {c}bonjour{/c} quand j’arrive pendant la journée.' },
+        { kind: 'paragraph', text: 'Je dis {c}bonjour{/c} ou {c}bonsoir{/c} quand je salue une personne.' },
         { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'paragraph', text: 'Je dis {c}bonsoir{/c} quand j’arrive le soir.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'paragraph', text: 'Je dis {c}au revoir{/c} quand je pars.' },
+        { kind: 'paragraph', text: 'Je peux dire {c}au revoir{/c} de différents manières selon la situation.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'examples', marker: 'puces',
             items: [
               '{tab:+1+}{g}Situation{/g} | {g}Expression{/g}',
-              '{tab:1>}J’arrive le matin | Bonjour !',
-              '{tab:1>}J’arrive le soir | Bonsoir !',
+              '{tab:1>}J’arrive {c}le matin{/c} | Bonjour !',
+              '{tab:1>}J’arrive {c}le soir{/c} | Bonsoir !',
               '{tab:1>}Je pars | Au revoir !',
-              '{tab:1>}Je pars et je pense revoir la personne | À bientôt !',
-              '{tab:1>}Je quitte une personne pendant la journée | Bonne journée !'
+              '{tab:1>}Je pars et je pense {c}revoir la personne{/c} | À bientôt !',
+              '{tab:1>}Je pars {c}pendant la journée{/c} | Bonne journée !'
             ],
           },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: '{c}Bonjour{/c}, {c}bonsoir{/c} et {c}au revoir{/c} conviennent avec {c}tu{/c} et {c}vous{/c}.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: '{c}Salut{/c} est familier. Je l’utilise surtout avec mes amis, ma famille ou les personnes que je connais bien.' },
+          { kind: 'paragraph', text: '{c}Salut{/c} est {c}familier{/c}. Je l’utilise surtout avec mes amis ou ma famille.' },
         ],
     },
+    { kind: 'page' },
     {
       kind: 'section',
       role: 'retenir',
@@ -184,11 +181,9 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         kind: 'section',
         role: 'expliquer',
         blocks: [
-          { kind: 'paragraph', text: 'Quand une personne m’aide ou me donne quelque chose, je peut la remercier de différentes manières.' },
+          { kind: 'paragraph', text: 'Je {c}remercie{/c} une personne quand elle {c}m’aide{/c} ou {c}me donne quelque chose{/c}.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je peux dire {c}merci{/c} ou {c}merci beaucoup{/c} pour remercier davantage.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je peux aussi dire {c}je te remercie{/c} ({c}un ami{/c}) et {c}je vous remercie{/c} ({c}politesse{/c}).' },
+          { kind: 'paragraph', text: 'Je peux dire {c}merci{/c}, {c}merci beaucoup{/c}, {c}je te remercie{/c} (familier) ou {c}je vous remercie{/c} (politesse).' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
@@ -199,11 +194,9 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
               '{tab:1>}Un vendeur me donne mon sac | {c}Je vous remercie !{/c}'
             ],
           },
-          { kind: 'paragraph', text: 'Quand une personne me remercie, je peux répondre de différentes manières.' },
+          { kind: 'paragraph', text: 'Je réponds quand une personne me remercie.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je peux dire {c}de rien{/c} ou {c}avec plaisir{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je peux aussi dire {c}je t’en prie{/c} ({c}un ami{/c}) et {c}je vous en prie{/c} ({c}politesse{/c}).' },
+          { kind: 'paragraph', text: ', {c}je t’en prie{/c} (familier) et {c}je vous en prie{/c} (politesse).' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
@@ -228,8 +221,8 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
           {
             kind: 'table',
             colHeader: true,
-            rowHeader: true,
-            headers: ['Je remercie', 'Je réponds'],
+            rowHeader: false,
+            headers: ['Je remercie une personne', 'Je réponds à un merci'],
             rows: [
               ['Merci !', 'De rien !'],
               ['Merci beaucoup !', 'Avec plaisir !'],
@@ -238,12 +231,12 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
             ],
           },
           { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: '{c}Attention :{/c}' },
+          { kind: 'paragraph', text: '{c}Attention :{/c} Je regarde à qui je réponds.' },
           { kind: 'paragraph', text: '{ligne/4}' },
           {
             kind: 'table',
             colHeader: true,
-            rowHeader: true,
+            rowHeader: false,
             headers: ['Familier', 'Politesse'],
             rows: [
               ['Je te remercie !', 'Je vous remercie !'],
