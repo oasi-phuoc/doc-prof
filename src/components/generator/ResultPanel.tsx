@@ -354,7 +354,8 @@ export function ResultPanel({
                         onToggleDraftGrid={toggleDraftGrid}
                         interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                         onCycleOralAnswerMode={cycleOralAnswerMode}
-                        interactiveTcfOptions={isTcf}
+                        interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
+                        interactiveTcfPageBreaks={isTcf}
                         onSelectTcfForm={selectTcfForm}
                         onToggleTcfPageBreak={toggleTcfPageBreak}
                         coordEdit={

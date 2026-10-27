@@ -82,6 +82,7 @@ export function WorksheetSheet({
   interactiveOralModes = false,
   onCycleOralAnswerMode,
   interactiveTcfOptions = false,
+  interactiveTcfPageBreaks = false,
   onSelectTcfForm,
   onToggleTcfPageBreak,
   onRegenerateBlock,
@@ -105,8 +106,10 @@ export function WorksheetSheet({
   /** Pastille QCM / texte / images pour la compréhension orale. */
   interactiveOralModes?: boolean
   onCycleOralAnswerMode?: (index: number, blockIndex?: number) => void
-  /** TCF : icônes formes (marge gauche) + saut de page (marge droite). */
+  /** Affiche les icônes de formats disponibles sur les questions TCF. */
   interactiveTcfOptions?: boolean
+  /** Affiche le contrôle de saut de page réservé aux fiches TCF. */
+  interactiveTcfPageBreaks?: boolean
   onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex?: number) => void
   onToggleTcfPageBreak?: (index: number, blockIndex?: number) => void
   /** Bouton refresh : régénère uniquement cet exercice. */
@@ -335,7 +338,10 @@ export function WorksheetSheet({
                       }
                       tcfPageBreakBefore={isTcfQuestion ? tcfPageBreakBefore : undefined}
                       onToggleTcfPageBreak={
-                        interactiveTcfOptions && isTcfQuestion && sourceIndex > 0 && onToggleTcfPageBreak
+                        interactiveTcfPageBreaks &&
+                        isTcfQuestion &&
+                        sourceIndex > 0 &&
+                        onToggleTcfPageBreak
                           ? () => onToggleTcfPageBreak(index, blockIndex)
                           : undefined
                       }
