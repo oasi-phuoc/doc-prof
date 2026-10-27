@@ -12,28 +12,67 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
     objectif: 'Choisir tu ou vous.',
     blocks: [
     { kind: 'heading', text: 'Tu et vous' },
-    { kind: 'paragraph', text: 'Je choisis tu ou vous selon la personne.' },
+    { kind: 'paragraph', text: '{ligne/4}' },
+    { kind: 'paragraph', text: 'Je choisis {g}tu{/g} ou {g}vous{/g} selon la personne.' },
+    { kind: 'paragraph', text: '{ligne/2}' },
     {
       kind: 'section',
       role: 'regarder',
       blocks: [
-        { kind: 'examples', items: ['Salut, ça va ? (tu)', 'Bonjour, comment allez-vous ? (vous)'] }
+        { kind: 'examples', items: [
+          '{tab:1<}Salut, ça va ? | Bonjour, comment allez-vous ?',
+          '{tab:1<}Tu vas bien ? | Vous allez bien ?',
+          '{tab:1<}Comment tu t’appelles ? | Comment vous appelez-vous ?'
+        ]}
       ],
     },
     {
       kind: 'section',
       role: 'expliquer',
       blocks: [
-        { kind: 'paragraph', text: 'Tu : ami, famille, enfant, autre élève.' },
-        { kind: 'paragraph', text: 'Vous : inconnu, professeur, personne plus âgée, chef, vendeur.' }
+        { kind: 'paragraph', text: 'J’utilise {c}tu{/c} pour parler à une personne que {c}je connais bien{/c}.' },
+        { kind: 'paragraph', text: '{ligne/2}' },
+        { kind: 'examples', marker: 'puces',
+            items: [
+              '{tab:+1+}{g}Je parle avec …{/g} | {g}Exemples{/g}',
+              '{tab:1>}Un ami | Salut, tu vas bien ?',
+              '{tab:1>}Un membre de la famille | Tu comprends ?',
+              '{tab:1>}Un enfant | Tu as quel âge ?',
+              '{tab:1>}Un autre élève | Tu habites où ? '
+            ],
+          },
+        { kind: 'paragraph', text: '{ligne/2}' },
+        { kind: 'paragraph', text: 'J’utilise {c}vous{/c} pour parler {c}poliment{/c} à une personne que {c}je ne connais pas bien{/c}.' },
+        { kind: 'paragraph', text: '{ligne/4}' },
+        { kind: 'paragraph', text: '{c}Vous{/c} peut aussi parler à {c}plusieurs personnes{/c}.' },
+                { kind: 'examples',  marker: 'puces',
+            items: [
+              '{tab:+1+}{g}Je parle avec …{/g} | {g}Exemples{/g}',
+              '{tab:1>}Une personne inconnue | Bonjour, vous allez bien ?',
+              '{tab:1>}Un professeur | Vous pouvez répéter ?',
+              '{tab:1>}Un médecin | Vous avez mal où ?',
+              '{tab:1>}Plusieurs personnes | Vous êtes prêts ?'
+            ],
+          },
       ],
     },
     {
       kind: 'section',
       role: 'retenir',
       blocks: [
-        { kind: 'paragraph', text: 'tu = proche. Vous = politesse.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Tu', 'Vous'], rows: [['un ami', 'une personne inconnue'], ['la famille', 'un professeur'], ['un enfant', 'un médecin / un chef']] },
+        { kind: 'paragraph', text: 'tu = une personne proche.' },
+        { kind: 'paragraph', text: '{ligne/4}' },
+        { kind: 'paragraph', text: 'Vous = forme de politesse ou plusieurs personnes.' },
+        { kind: 'table', colHeader: true, rowHeader: true,
+          headers: ['Tu', 'Vous'],
+          rows: [
+            ['un ami', 'une personne inconnue'],
+            ['un élève', 'un professeur'],
+            ['un enfant', 'un médecin']
+          ] },
+        { kind: 'paragraph', text: '{ligne/4}' },
+        { kind: 'astuce', text: 'Écoute aussi la façon dont la personne te parle.' },
+        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'attention', text: 'Vous sert aussi pour plusieurs personnes.' }
       ],
     },
@@ -49,30 +88,66 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
     objectif: 'Saluer à l’arrivée et au départ.',
     blocks: [
     { kind: 'heading', text: 'Les salutations' },
-    { kind: 'paragraph', text: 'Je salue quand j’arrive et quand je pars.' },
+    { kind: 'paragraph', text: '{ligne/4}' },
+    { kind: 'paragraph', text: 'Je salue une personne quand j’arrive et quand je pars.' },
+    { kind: 'paragraph', text: '{ligne/2}' },
     {
       kind: 'section',
       role: 'regarder',
       blocks: [
-        { kind: 'examples', items: ['Bonjour !', 'Au revoir !', 'Salut ! (tu)'] }
+        { kind: 'examples', items: [
+          '{tab:1<}Bonjour ! | Bonsoir !',
+          '{tab:1<}Salut !', 'Au revoir !',
+          '{tab:1<}À bientôt !', 'Bonne journée !'
+        ] }
       ],
     },
     {
       kind: 'section',
       role: 'expliquer',
       blocks: [
-        { kind: 'paragraph', text: 'J’adapte selon tu ou vous.' },
-        { kind: 'paragraph', text: 'Bonjour et au revoir marchent avec tu et vous.' },
-        { kind: 'paragraph', text: 'Salut, ciao, à plus : plutôt avec tu.' }
-      ],
+        { kind: 'paragraph', text: 'Je dis {c}bonjour{/c} quand j’arrive pendant la journée.' },
+        { kind: 'paragraph', text: '{ligne/4}' },
+        { kind: 'paragraph', text: 'Je dis {c}bonsoir{/c} quand j’arrive le soir.' },
+        { kind: 'paragraph', text: '{ligne/4}' },
+        { kind: 'paragraph', text: 'Je dis {c}au revoir{/c} quand je pars.' },
+        { kind: 'paragraph', text: '{ligne/2}' },
+        { kind: 'examples', marker: 'puces',
+            items: [
+              '{tab:+1+}{g}Situation{/g} | {g}Expression{/g}',
+              '{tab:1>}J’arrive le matin | Bonjour !',
+              '{tab:1>}J’arrive le soir | Bonsoir !',
+              '{tab:1>}Je pars | Au revoir !',
+              '{tab:1>}Je pars et je pense revoir la personne | À bientôt !',
+              '{tab:1>}Je quitte une personne pendant la journée | Bonne journée !'
+            ],
+          },
+          { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: '{c}Bonjour{/c}, {c}bonsoir{/c} et {c}au revoir{/c} conviennent avec {c}tu{/c} et {c}vous{/c}.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: '{c}Salut{/c} est familier. Je l’utilise surtout avec mes amis, ma famille ou les personnes que je connais bien.' },
+        ],
     },
     {
       kind: 'section',
       role: 'retenir',
       blocks: [
-        { kind: 'paragraph', text: 'arriver → bonjour. Partir → au revoir.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Arriver', 'Partir'], rows: [['Bonjour !', 'Au revoir !'], ['Bonsoir !', 'À bientôt !'], ['Salut ! (tu)', 'Bonne journée !']] },
-        { kind: 'attention', text: 'Hello et ciao sont très familiers (tu).' }
+        { kind: 'paragraph', text: 'Quand je pars, je dis au revoir.' },
+        { kind: 'paragraph', text: '{ligne/4}' },
+        { kind: 'paragraph', text: 'Quand j’arrive, je dis bonjour ou bonsoir.' },
+        { kind: 'paragraph', text: '{ligne/2}' },
+        { kind: 'table', colHeader: true, rowHeader: true,
+            headers: ['Quand j’arrive', 'Quand je pars'],
+            rows: [
+              ['Bonjour !', 'Au revoir !'],
+              ['Bonsoir !', 'À bientôt !'],
+              ['Salut ! (familier)', 'Salut ! (familier)'],
+              ['—', 'Bonne journée !'],
+              ['—', 'Bonne soirée !'],
+            ],
+          },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'attention', text: '{c}Hello{/c} et {c}ciao{/c} sont très familiers.' }
       ],
     },
     ],
@@ -87,32 +162,83 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
     objectif: 'Dire merci et répondre.',
     blocks: [
     { kind: 'heading', text: 'Les remerciements' },
-    { kind: 'paragraph', text: 'Je dis merci. Je sais répondre à un merci.' },
+    { kind: 'paragraph', text: '{ligne/4}' },
+    { kind: 'paragraph', text: 'Je remercie une personne et je sais répondre à un merci.' },
+    { kind: 'paragraph', text: '{ligne/2}' },
     {
       kind: 'section',
       role: 'regarder',
       blocks: [
-        { kind: 'examples', items: ['Merci beaucoup !', 'De rien !'] }
+        {
+          kind: 'examples',
+          items: [
+            '{tab:1<}Merci ! | De rien !',
+            '{tab:1<}Merci beaucoup ! | Avec plaisir !',
+            '{tab:1<}C’est gentil de votre part ! | Je vous en prie !',
+          ],
+        },
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Merci et merci beaucoup marchent avec tu et vous.' },
-        { kind: 'paragraph', text: 'Je te remercie (tu). Je vous remercie (vous).' },
-        { kind: 'paragraph', text: 'Réponses : de rien, avec plaisir, je t’en prie / je vous en prie.' }
-      ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'merci → de rien / avec plaisir.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Dire merci', 'Répondre'], rows: [['Merci !', 'De rien !'], ['Merci beaucoup !', 'Avec plaisir !'], ['Je vous remercie !', 'Je vous en prie !']] },
-        { kind: 'attention', text: 'Adapte tu / vous dans je te / je vous.' }
-      ],
-    },
+      },
+      {
+        kind: 'section',
+        role: 'expliquer',
+        blocks: [
+          { kind: 'paragraph', text: 'Je dis {c}merci{/c} quand une personne m’aide ou me donne quelque chose.' },
+          { kind: 'paragraph', text: 'Je peux dire {c}merci beaucoup{/c} pour remercier davantage.' },
+          {
+            kind: 'examples',
+            items: [
+              '{tab:1<}Un ami m’aide : Merci ! | De rien !',
+              '{tab:1<}Une personne me donne un document : Merci beaucoup ! | Avec plaisir !',
+              '{tab:1<}Un vendeur me donne mon sac : Merci ! | Je vous en prie !'
+            ],
+          },
+          { kind: 'paragraph', text: 'Quand une personne me remercie, je peux répondre {c}de rien{/c} ou {c}avec plaisir{/c}.' },
+          { kind: 'paragraph', text: 'Je peux aussi dire {c}je te remercie{/c} avec {c}tu{/c} et {c}je vous remercie{/c} avec {c}vous{/c}.' },
+          {
+            kind: 'examples',
+            items: [
+              'Merci pour ton aide. — De rien !',
+              'Merci beaucoup. — Avec plaisir !',
+              'Je vous remercie. — Je vous en prie !'
+            ],
+          },
+        ],
+      },
+      { kind: 'page' },
+      {
+        kind: 'section',
+        role: 'retenir',
+        blocks: [
+          { kind: 'paragraph', text: 'Pour remercier, je dis {c}merci{/c} ou {c}merci beaucoup{/c}.' },
+          { kind: 'paragraph', text: 'Pour répondre, je dis {c}de rien{/c}, {c}avec plaisir{/c} ou {c}je vous en prie{/c}.' },
+          {
+            kind: 'table',
+            colHeader: true,
+            rowHeader: true,
+            headers: ['Je remercie', 'Je réponds'],
+            rows: [
+              ['Merci !', 'De rien !'],
+              ['Merci beaucoup !', 'Avec plaisir !'],
+              ['Je te remercie !', 'Je t’en prie !'],
+              ['Je vous remercie !', 'Je vous en prie !'],
+            ],
+          },
+          {
+            kind: 'attention',
+            text: 'J’utilise {c}je t’en prie{/c} avec {c}tu{/c} et {c}je vous en prie{/c} avec {c}vous{/c}.'
+          },
+          {
+            kind: 'examples',
+            items: [
+              'Tu m’aides. — Merci !',
+              'De rien !',
+              'Vous m’aidez. — Je vous remercie !',
+              'Je vous en prie !'
+            ],
+          },
+        ],
+      },
     ],
   },
 ]
