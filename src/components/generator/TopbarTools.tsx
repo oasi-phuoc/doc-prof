@@ -198,9 +198,75 @@ function ColorMenu({
   )
 }
 
+function FontSizeMenu({
+  fontSize,
+  onChange,
+}: {
+  fontSize: number
+  onChange: (size: number) => void
+}) {
+  const [open, setOpen] = useState(false)
+  const boxRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    const close = (event: MouseEvent) => {
+      if (!boxRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', close)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', close)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
+
+  return (
+    <div className="topbar-font-size-wrap" ref={boxRef}>
+      <button
+        type="button"
+        className={`topbar-icon-btn${open ? ' active' : ''}`}
+        aria-label={`Taille de la police : ${fontSize} pixels`}
+        title={`Taille de la police : ${fontSize} px`}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        onClick={() => setOpen((value) => !value)}
+      >
+        <span className="font-size-icon" aria-hidden="true">A</span>
+      </button>
+      {open ? (
+        <div className="topbar-font-size-menu" role="dialog" aria-label="Taille de la police">
+          <label htmlFor="base-font-size">
+            <span>Taille de la police</span>
+            <output htmlFor="base-font-size">{fontSize} px</output>
+          </label>
+          <input
+            id="base-font-size"
+            type="range"
+            min="12"
+            max="20"
+            step="1"
+            value={fontSize}
+            onChange={(event) => onChange(Number(event.currentTarget.value))}
+          />
+          <div className="font-size-range-labels" aria-hidden="true">
+            <span>12 px</span>
+            <span>20 px</span>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 export function TopbarTools({
   themeColor,
   onThemeColor,
+  fontSize,
+  onFontSizeChange,
   footerOpen,
   onToggleFooter,
   libreOpen,
@@ -212,6 +278,8 @@ export function TopbarTools({
 }: {
   themeColor: string
   onThemeColor: (color: string) => void
+  fontSize: number
+  onFontSizeChange: (size: number) => void
   footerOpen: boolean
   onToggleFooter: () => void
   libreOpen: boolean
@@ -226,6 +294,7 @@ export function TopbarTools({
   const isCorrige = previewMode === 'answers'
   return (
     <div className="topbar-tools">
+      <FontSizeMenu fontSize={fontSize} onChange={onFontSizeChange} />
       <ColorMenu themeColor={themeColor} onChange={onThemeColor} />
       {showPreviewToggle ? (
         <IconBtn

@@ -18,6 +18,7 @@ import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
+import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
 import {
   ALPHA_SOUTIEN_REFERENCE,
   isAlphaSoutienDomain,
@@ -90,6 +91,7 @@ export function GeneratorPage({
   const [seed, setSeed] = useState(() => openedFiche?.recipe.seed ?? randomSeed())
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const [themeColor, setThemeColor] = useState(readThemeColor)
+  const [fontSize, setFontSize] = useState(readBaseFontSize)
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
@@ -102,6 +104,10 @@ export function GeneratorPage({
 
   const applyThemeColor = (color: string) => {
     setThemeColor(color)
+  }
+
+  const changeFontSize = (size: number) => {
+    setFontSize(applyBaseFontSize(size))
   }
 
   const worksheets = useMemo(() => buildWorksheets(pages, seed), [pages, seed])
@@ -516,6 +522,8 @@ export function GeneratorPage({
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}
+            fontSize={fontSize}
+            onFontSizeChange={changeFontSize}
             footerOpen={footerPanelOpen}
             onToggleFooter={() => setFooterPanelOpen((v) => !v)}
             libreOpen={libreMode}

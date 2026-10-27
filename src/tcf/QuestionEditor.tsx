@@ -68,7 +68,7 @@ export function QuestionEditor({
           ))}
         </div>
       </legend>
-      <p className="muted" style={{ margin: 0, fontSize: 11 }}>
+      <p className="muted" style={{ margin: 0, fontSize: 'calc(11px * var(--app-font-scale, 1))' }}>
         Trois formes (Texte / Image / Phrase) : basculez pour les remplir. Sur la fiche, les
         icônes sont en colonne dans la marge gauche ; seules les formes remplies sont actives.
       </p>
