@@ -1007,7 +1007,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
           : domain === 'gattegno'
             ? 'phrase-simple'
             : domain === 'grammaire'
-              ? 'gram-se-presenter'
+              ? 'gram-entrer-contact'
               : domain === 'vocabulaire'
                 ? 'vocabulaire-a-venir'
                 : domain === 'société'
