@@ -5,9 +5,9 @@ import { ALL_GRAM_SUBTHEMES, buildGrammairePracticeTypes } from './exercises/cat
 export const GRAMMAIRE_DOMAIN = 'grammaire' as const
 
 export const GRAMMAIRE_TOPICS: Topic[] = [
+  { id: 'gram-entrer-contact', label: 'Entrer en contact', domain: 'grammaire' },
   { id: 'gram-se-presenter', label: 'Se présenter', domain: 'grammaire' },
   { id: 'gram-present', label: 'Conjuguer au présent', domain: 'grammaire' },
-  { id: 'gram-entrer-contact', label: 'Entrer en contact', domain: 'grammaire' },
   { id: 'gram-questions', label: 'Poser une question', domain: 'grammaire' },
   { id: 'gram-activite', label: 'Parler d’une activité', domain: 'grammaire' },
   { id: 'gram-espace', label: 'Se situer dans l’espace', domain: 'grammaire' },
