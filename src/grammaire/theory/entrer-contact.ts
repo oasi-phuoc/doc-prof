@@ -20,9 +20,9 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       role: 'regarder',
       blocks: [
         { kind: 'examples', items: [
-          '{tab:1<}Salut, ça va ? | Bonjour, comment allez-vous ?',
-          '{tab:1<}Tu vas bien ? | Vous allez bien ?',
-          '{tab:1<}Comment tu t’appelles ? | Comment vous appelez-vous ?'
+          '{tab:1<}Salut, comment {c}tu{/c} vas ? | Bonjour, comment allez-{c}vous{/c} ?',
+          '{tab:1<}{c}Tu{/c} vas bien ? | {c}Vous{/c} allez bien ?',
+          '{tab:1<}Comment {c}tu{/c} t’appelles ? | Comment {c}vous{/c} appelez-vous ?'
         ]}
       ],
     },
@@ -35,10 +35,10 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         { kind: 'examples', marker: 'puces',
             items: [
               '{tab:+1+}{g}Je parle avec …{/g} | {g}Exemples{/g}',
-              '{tab:1>}Un ami | Salut, tu vas bien ?',
-              '{tab:1>}Un membre de la famille | Tu comprends ?',
-              '{tab:1>}Un enfant | Tu as quel âge ?',
-              '{tab:1>}Un autre élève | Tu habites où ? '
+              '{tab:1>}Un {c}ami{/c} | Salut, tu ({c}Sacha{/c}) vas bien ?',
+              '{tab:1>}Un membre de la {c}famille{/c} | Tu ({c}Mon frère{/c}) comprends ?',
+              '{tab:1>}Un {c}enfant{/c} | Tu ({c}Eliott, 5 ans{/c}) as quel âge ?',
+              '{tab:1>}Un autre {c}élève{/c} de la classe | Tu ({c}Dawit{/c}) habites où ? '
             ],
           },
         { kind: 'paragraph', text: '{ligne/2}' },
@@ -48,21 +48,22 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
                 { kind: 'examples',  marker: 'puces',
             items: [
               '{tab:+1+}{g}Je parle avec …{/g} | {g}Exemples{/g}',
-              '{tab:1>}Une personne inconnue | Bonjour, vous allez bien ?',
-              '{tab:1>}Un professeur | Vous pouvez répéter ?',
-              '{tab:1>}Un médecin | Vous avez mal où ?',
-              '{tab:1>}Plusieurs personnes | Vous êtes prêts ?'
+              '{tab:1>}Une {c}personne inconnue{/c} | Bonjour, vous ({c}une personne dans la rue{/c}) allez bien ?',
+              '{tab:1>}Un {c}professeur{/c} | Vous ({c}M. Van{/c}) pouvez répéter ?',
+              '{tab:1>}Un {c}médecin{/c} | Vous ({c}Dr. Grandjean{/c}) avez mal où ?',
+              '{tab:1>}Plusieurs {c}personnes{/c} | Vous ({c}Mohammed et Ibrahim{/c}) êtes prêts ?'
             ],
           },
       ],
     },
+    {kind: 'page'},
     {
       kind: 'section',
       role: 'retenir',
       blocks: [
-        { kind: 'paragraph', text: 'tu = une personne proche.' },
+        { kind: 'paragraph', text: '{c}tu{/c} = une personne proche.' },
         { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'paragraph', text: 'Vous = forme de politesse ou plusieurs personnes.' },
+        { kind: 'paragraph', text: '{c}Vous{/c} = forme de politesse ou plusieurs personnes.' },
         { kind: 'table', colHeader: true, rowHeader: true,
           headers: ['Tu', 'Vous'],
           rows: [
@@ -73,7 +74,7 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'astuce', text: 'Écoute aussi la façon dont la personne te parle.' },
         { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'attention', text: 'Vous sert aussi pour plusieurs personnes.' }
+        { kind: 'attention', text: '{c}Vous{/c} sert aussi pour plusieurs personnes.' }
       ],
     },
     ],
@@ -183,24 +184,34 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         kind: 'section',
         role: 'expliquer',
         blocks: [
-          { kind: 'paragraph', text: 'Je dis {c}merci{/c} quand une personne m’aide ou me donne quelque chose.' },
-          { kind: 'paragraph', text: 'Je peux dire {c}merci beaucoup{/c} pour remercier davantage.' },
+          { kind: 'paragraph', text: 'Quand une personne m’aide ou me donne quelque chose, je peut la remercier de différentes manières.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Je peux dire {c}merci{/c} ou {c}merci beaucoup{/c} pour remercier davantage.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Je peux aussi dire {c}je te remercie{/c} ({c}un ami{/c}) et {c}je vous remercie{/c} ({c}politesse{/c}).' },
+          { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
             items: [
-              '{tab:1<}Un ami m’aide : Merci ! | De rien !',
-              '{tab:1<}Une personne me donne un document : Merci beaucoup ! | Avec plaisir !',
-              '{tab:1<}Un vendeur me donne mon sac : Merci ! | Je vous en prie !'
+              '{tab:+1+}{g}Situation{/g} | {g}Je dis …{/g}',
+              '{tab:1>}Un ami m’aide | {c}Merci !{/c}',
+              '{tab:1>}Une personne me donne un document | {c}Merci beaucoup !{/c}',
+              '{tab:1>}Un vendeur me donne mon sac | {c}Je vous remercie !{/c}'
             ],
           },
-          { kind: 'paragraph', text: 'Quand une personne me remercie, je peux répondre {c}de rien{/c} ou {c}avec plaisir{/c}.' },
-          { kind: 'paragraph', text: 'Je peux aussi dire {c}je te remercie{/c} avec {c}tu{/c} et {c}je vous remercie{/c} avec {c}vous{/c}.' },
+          { kind: 'paragraph', text: 'Quand une personne me remercie, je peux répondre de différentes manières.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Je peux dire {c}de rien{/c} ou {c}avec plaisir{/c}.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Je peux aussi dire {c}je t’en prie{/c} ({c}un ami{/c}) et {c}je vous en prie{/c} ({c}politesse{/c}).' },
+          { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
             items: [
-              'Merci pour ton aide. — De rien !',
-              'Merci beaucoup. — Avec plaisir !',
-              'Je vous remercie. — Je vous en prie !'
+              '{tab:+1+}{g}Situation{/g} | {g}Je dis …{/g}',
+              '{tab:1>}Merci pour ton aide. | {c}De rien !{/c}',
+              '{tab:1>}Merci beaucoup. | {c}Avec plaisir !{/c}',
+              '{tab:1>}Je vous remercie. | {c}Je vous en prie !{/c}'
             ],
           },
         ],
@@ -210,8 +221,10 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         kind: 'section',
         role: 'retenir',
         blocks: [
-          { kind: 'paragraph', text: 'Pour remercier, je dis {c}merci{/c} ou {c}merci beaucoup{/c}.' },
+          { kind: 'paragraph', text: 'Pour remercier, je dis {c}merci{/c}, {c}merci beaucoup{/c} ou {c}je vous remercie{/c}.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Pour répondre, je dis {c}de rien{/c}, {c}avec plaisir{/c} ou {c}je vous en prie{/c}.' },
+          { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'table',
             colHeader: true,
@@ -224,19 +237,19 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
               ['Je vous remercie !', 'Je vous en prie !'],
             ],
           },
+          { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: '{c}Attention :{/c}' },
+          { kind: 'paragraph', text: '{ligne/4}' },
           {
-            kind: 'attention',
-            text: 'J’utilise {c}je t’en prie{/c} avec {c}tu{/c} et {c}je vous en prie{/c} avec {c}vous{/c}.'
-          },
-          {
-            kind: 'examples',
-            items: [
-              'Tu m’aides. — Merci !',
-              'De rien !',
-              'Vous m’aidez. — Je vous remercie !',
-              'Je vous en prie !'
+            kind: 'table',
+            colHeader: true,
+            rowHeader: true,
+            headers: ['Familier', 'Politesse'],
+            rows: [
+              ['Je te remercie !', 'Je vous remercie !'],
+              ['Je t’en prie ! ', 'Je vous en prie !'],
             ],
-          },
+          }
         ],
       },
     ],

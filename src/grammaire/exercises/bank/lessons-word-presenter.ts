@@ -9,7 +9,10 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
     'Compléter avec je, tu, il, elle, nous, vous, ils ou elles',
     'Complétez avec je, tu, il, elle, nous, vous, ils ou elles.',
     [
-      fill('Julien Minot — Bonjour ___ m’appelle Julien. ___ suis professeur de français. Et vous, ___ vous appelez comment ?', 'je / je / vous'),
+      fill('Bonjour ___ m’appelle Alicia Minot.', 'je'),
+      fill('Bonjour ___ m’appelle Charlotte Legrand.', 'je'),
+      fill('___ suis professeur de français.' , 'je'),
+      fill('___ vous appelez comment ?', 'vous'),
       fill('Charlotte Legrand — Enchantée Julien. ___ m’appelle Charlotte. Moi aussi, ___ suis professeur de français.', 'je / je'),
       fill('Et voici Isabelle Martel. ___ est professeure de français aussi.', 'Elle'),
       fill('Julien Minot — ___ êtes française ?', 'Vous'),

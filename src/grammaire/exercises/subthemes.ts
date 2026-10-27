@@ -14,7 +14,7 @@ export const GRAM_SUBTHEMES: GramSubtheme[] = [
   // —— Se présenter (famille regroupée ; identité → fiche théorie a1 « Qui suis-je ? ») ——
   {
     id: 'famille',
-    label: 'Famille',
+    label: 'Parler de sa famille',
     topic: 'gram-se-presenter',
     theoryTypeIds: ['gram-famille-theorie'],
   },
