@@ -33,7 +33,7 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
         { kind: 'paragraph', text: 'J’utilise les différents {c}verbes{/c} pour décrire qui je suis. Un {c}verbe{/c}, c’est un mot d’{c}action{/c} ou d’{c}état{/c}.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'examples', marker: 'puces', items: [
-          '{tab:2++}{g}Verbe{/g} | {g}Mots{/g} | {g}Exemples{/g}',
+          '{tab:+2++}{g}Verbe{/g} | {g}Mots{/g} | {g}Exemples{/g}',
           '{tab:2+>}S’appeler | + {c}prénom{/c} | Je m’appelle {c}Fatima{/c}.', 
           '{tab:2+>}Avoir | + {c}âge{/c} | J’ai {c}16 ans{/c}.', 
           '{tab:2+>}Être | + {c}nationalité{/c} | Je suis {c}syrienne{/c}.', 

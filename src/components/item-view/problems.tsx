@@ -10,6 +10,7 @@ import {
   theoryHasLigne,
   theorySegments,
   theoryTabRows,
+  theoryTableColWidths,
 } from './theory-marks'
 import { fmt } from '@/math/column-arith'
 import { MoneyChangeBoard } from './money-change'
@@ -367,8 +368,15 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
     const rows = block.rows ?? []
     const colHeader = block.colHeader !== false && headers.some(Boolean)
     const rowHeader = block.rowHeader !== false
+    const colCount = Math.max(headers.length, ...rows.map((row) => row.length), 1)
+    const colWidths = theoryTableColWidths(colCount, block.widths)
     return (
       <table className={`theory-table${colHeader ? ' has-col-head' : ''}${rowHeader ? ' has-row-head' : ''}`}>
+        <colgroup>
+          {colWidths.map((width, index) => (
+            <col key={index} className="theory-col" style={{ width }} />
+          ))}
+        </colgroup>
         {colHeader ? (
           <thead>
             <tr>

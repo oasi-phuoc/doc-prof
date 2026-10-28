@@ -77,7 +77,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}être{/c}.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'examples', marker: 'puces', items[
+          { kind: 'examples', marker: 'puces', items: [
             '{tab:+1+}{g}Je l’utilise pour …{/g}',
             '{tab:1<}l’{c}indentité{/c} | la {c}nationalité{/c}',
             '{tab:1<}le {c}métier{/c} | la {c}description{/c}',
@@ -172,7 +172,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}avoir{/c}.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'examples', marker: 'puces', items[
+          { kind: 'examples', marker: 'puces', items: [
             '{tab:+1+}{g}Je l’utilise pour …{/g}',
             '{tab:1<}la {c}possession{/c} | l’{c}âge{/c}',
             '{tab:1<}la {c}famille{/c} | la {c}sensation{/c}',
@@ -238,7 +238,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
           { kind: 'paragraph', text: 'Pour conjuguer un verbe :'},
           { kind: 'examples', marker: 'numeros',
             items: [
-              '{tab:1>}Je regarde le {c}verbe{/c} à l’infinitif | {c}Parler{/c}'
+              '{tab:1>}Je regarde le {c}verbe{/c} à l’infinitif | {c}Parler{/c}',
               '{tab:1<}Je retire la {c}terminaison{/c} | Parl{c}-er{/c}',
               '{tab:1<}Je garde le {c}début du verbe{/c} | {c}Parl-{/c} ',
               '{tab:1<}Je rajoute la {c}terminaison{/c} du présent | Je parl{c}e{/c}',
@@ -268,7 +268,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         blocks: [  
           { kind: 'paragraph', text: 'Je trouve le radical quand j’enlève {c}er{/c} de l’infinitif.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je rajoute les terminaison : -e, -es, -e, -ons, -ez, -ent pour former le verbe.' }
+          { kind: 'paragraph', text: 'Je rajoute les terminaison : -e, -es, -e, -ons, -ez, -ent pour former le verbe.' },
           { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'parler'],
             rows: [
               ['je', 'parle'],

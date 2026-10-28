@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
 import { applyExerciseFromAudioBank, tcfAudioEntries, type TcfAudioEntry } from './audio-bank'
-import { TCF_TYPES, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
+import { TCF_TYPES, tcfDefaultTypeReponse, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
 import { drawTcfSeries } from './draw-series'
 import { tcfBank, tcfBankAllLevels, tcfExerciseById, tcfSlotBank } from './loader'
@@ -1014,7 +1014,10 @@ export function TcfExerciseEditor({
                 className="tcf-btn"
                 onClick={() => {
                   const last = exercise.questions[exercise.questions.length - 1]
-                  const next = emptyTcfQuestion(last?.type_reponse ?? meta?.reponses[0] ?? 'qcm_texte')
+                  const next = emptyTcfQuestion(
+                    last?.type_reponse ??
+                      (meta ? tcfDefaultTypeReponse(meta.competence) : 'qcm_texte'),
+                  )
                   set({ ...exercise, questions: [...exercise.questions, audioCount ? { ...next, audio: last?.audio ?? 1 } : next] })
                 }}
               >

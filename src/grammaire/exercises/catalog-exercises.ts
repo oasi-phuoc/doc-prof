@@ -1,6 +1,6 @@
 import type { ExerciseType } from '@/math/types'
 import { GRAMMAIRE_THEORY_DOCS } from '../theory'
-import { GRAM_EXERCISE_KINDS } from './kinds'
+import { GRAM_EXERCISE_KINDS, gramKindById } from './kinds'
 import {
   GRAM_SUBTHEMES,
   gramExerciseTypeId,
@@ -8,6 +8,7 @@ import {
   theorySubthemeId,
 } from './subthemes'
 import { bankSize, lessonForType } from './bank'
+import { isQuiSuisJeKind, QUI_SUIS_JE_KIND_IDS } from './qui-suis-je'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
 function theoryDerivedSubthemes(): Array<{
@@ -54,9 +55,15 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
   const seen = new Set<string>()
 
   for (const sub of ALL_GRAM_SUBTHEMES) {
-    for (const kind of GRAM_EXERCISE_KINDS) {
+    const kinds =
+      sub.id === 'a1'
+        ? QUI_SUIS_JE_KIND_IDS.map((id) => gramKindById(id)).filter(
+            (kind): kind is NonNullable<typeof kind> => Boolean(kind),
+          )
+        : GRAM_EXERCISE_KINDS
+    for (const kind of kinds) {
       const id = gramExerciseTypeId(sub.id, kind.id)
-      if (bankSize(id) <= 0) continue
+      if (bankSize(id) <= 0 && !(sub.id === 'a1' && isQuiSuisJeKind(kind.id))) continue
       if (seen.has(id)) continue
       seen.add(id)
       const les = lessonForType(id)

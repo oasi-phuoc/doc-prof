@@ -73,10 +73,32 @@ function buildFormVariant(
   }
 }
 
-function questionItem(q: TcfQuestion, numero: number, rng: Rng, activeOverride?: TcfTypeReponse): MathItem {
+function defaultQuestionForm(
+  q: TcfQuestion,
+  filled: TcfTypeReponse[],
+  competence?: TcfCompetence,
+  exerciseId?: string,
+): TcfTypeReponse {
+  const isTcfBank = !exerciseId || exerciseId.startsWith('tcf-')
+  if (isTcfBank && (competence === 'CE' || competence === 'CO') && filled.includes('qcm_texte')) {
+    return 'qcm_texte'
+  }
+  return q.type_reponse
+}
+
+function questionItem(
+  q: TcfQuestion,
+  numero: number,
+  rng: Rng,
+  activeOverride?: TcfTypeReponse,
+  competence?: TcfCompetence,
+  exerciseId?: string,
+): MathItem {
   const filled = filledForms(q)
   const active =
-    activeOverride && filled.includes(activeOverride) ? activeOverride : q.type_reponse
+    activeOverride && filled.includes(activeOverride)
+      ? activeOverride
+      : defaultQuestionForm(q, filled, competence, exerciseId)
   const resolved = resolveQuestionForm(q, active)
   const audioLabel = resolved.audio != null ? `Audio ${resolved.audio}` : undefined
   const variants: TcfFormSelect['variants'] = {}
@@ -146,7 +168,9 @@ export function tcfExerciseItems(
       // formModes indexés sur les items complets (0 = support) → questions à partir de 1.
       return [
         support(),
-        ...ex.questions.map((q, i) => questionItem(q, i + 1, rng, formModes?.[i + 1])),
+        ...ex.questions.map((q, i) =>
+          questionItem(q, i + 1, rng, formModes?.[i + 1], ex.competence, ex.id),
+        ),
       ]
     }
     case 'images_a_reconnaitre': {

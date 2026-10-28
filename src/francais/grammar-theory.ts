@@ -21,7 +21,19 @@ export type GrammarTheoryBlock =
   /** Colonnes alignées. `puce` ajoute une puce dans l’espace de tabulation. */
   | { kind: 'tab'; rows: string[][]; tab?: number; fleche?: boolean; puce?: boolean }
   | { kind: 'list'; title?: string; items: string[] }
-  | { kind: 'table'; headers: string[]; rows: string[][]; colHeader?: boolean; rowHeader?: boolean }
+  | {
+      kind: 'table'
+      headers: string[]
+      rows: string[][]
+      colHeader?: boolean
+      rowHeader?: boolean
+      /**
+       * Largeurs de colonnes. Nombre = pourcentage (50, 33…). Chaîne CSS (`8em`, `30%`).
+       * Défaut : parts égales (50/50, 33/33/33…). `table-layout: auto` laisse
+       * une colonne s’élargir si le texte le demande.
+       */
+      widths?: Array<number | string>
+    }
   | { kind: 'attention'; text: string }
   | { kind: 'astuce'; text: string }
   /** Coupe manuelle : la suite commence sur la feuille suivante. */
