@@ -7,6 +7,7 @@ import {
   hslToHex,
   hueFromPointer,
 } from '@/components/generator/theme'
+import { MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE } from '@/components/generator/typography'
 
 function IconBtn({
   label,
@@ -229,8 +230,8 @@ function FontSizeMenu({
       <button
         type="button"
         className={`topbar-icon-btn${open ? ' active' : ''}`}
-        aria-label={`Taille de la police : ${fontSize} pixels`}
-        title={`Taille de la police : ${fontSize} px`}
+        aria-label={`Taille du texte de la fiche : ${fontSize} pixels`}
+        title={`Taille du texte de la fiche : ${fontSize} px`}
         aria-expanded={open}
         aria-haspopup="dialog"
         onClick={() => setOpen((value) => !value)}
@@ -238,23 +239,23 @@ function FontSizeMenu({
         <span className="font-size-icon" aria-hidden="true">A</span>
       </button>
       {open ? (
-        <div className="topbar-font-size-menu" role="dialog" aria-label="Taille de la police">
+        <div className="topbar-font-size-menu" role="dialog" aria-label="Taille du texte de la fiche">
           <label htmlFor="base-font-size">
-            <span>Taille de la police</span>
+            <span>Taille du texte de la fiche</span>
             <output htmlFor="base-font-size">{fontSize} px</output>
           </label>
           <input
             id="base-font-size"
             type="range"
-            min="12"
-            max="20"
+            min={MIN_BASE_FONT_SIZE}
+            max={MAX_BASE_FONT_SIZE}
             step="1"
             value={fontSize}
             onChange={(event) => onChange(Number(event.currentTarget.value))}
           />
           <div className="font-size-range-labels" aria-hidden="true">
-            <span>12 px</span>
-            <span>20 px</span>
+            <span>{MIN_BASE_FONT_SIZE} px</span>
+            <span>{MAX_BASE_FONT_SIZE} px</span>
           </div>
         </div>
       ) : null}
