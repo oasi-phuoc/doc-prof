@@ -245,30 +245,30 @@ export const presentDocs: GrammaireTheoryDoc[] = [
             ],
           }, 
           { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: 'Les terminaisons sont les mêmes pour les verbes réguliers en -er.' },
+          { kind: 'paragraph', text: 'Les {c}terminaisons{/c} sont les mêmes pour les verbes réguliers en -er.' },
           {
             kind: 'examples',
             marker: 'puces',
             items: [
-              '{tab:+2+} {g}Personne{/g} | {g}Terminaison{/g} | {g}Verbe{/g}',
-              '{tab:2>}Je | -e',
-              '{tab:2>}Tu | -es',
-              '{tab:2>}Il / Elle / On | -e',
-              '{tab:2>}Nous | -ons',
-              '{tab:2>}Vous | -ez',
-              '{tab:2>}Ils / Elles | -ent',
+              '{tab:+2++} {g}Personne{/g} | {g}Terminaison{/g} | {g}Parler{/g}',
+              '{tab:2+>}Je | -{c}e{/c} | Je parl{c}e{/c}',
+              '{tab:2+>}Tu | -{c}es{/c} | Tu parl{c}es{/c}',
+              '{tab:2+>}Il / Elle / On | -{c}e{/c} | Elle parl{c}e{/c}',
+              '{tab:2+>}Nous | -{c}ons{/c} | Nous parl{c}ons{/c}',
+              '{tab:2+>}Vous | -{c}ez{/c} | Vous parl{c}ez{/c}',
+              '{tab:2+>}Ils / Elles | -{c}ent{/c} | Ils parl{c}ent{/c}',
             ],
           },
-          
-          { kind: 'paragraph', text: 'Radical = infinitif sans -er. Puis j’ajoute la terminaison.' },
-          { kind: 'paragraph', text: 'Terminaisons : -e, -es, -e, -ons, -ez, -ent.' }
+
         ],
       },
       {
         kind: 'section',
         role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'radical + e / es / e / ons / ez / ent.' },
+        blocks: [  
+          { kind: 'paragraph', text: 'Je trouve le radical quand j’enlève {c}er{/c} de l’infinitif.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Je rajoute les terminaison : -e, -es, -e, -ons, -ez, -ent pour former le verbe.' }
           { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'parler'],
             rows: [
               ['je', 'parle'],
@@ -279,7 +279,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
               ['ils / elles', 'parlent'],
             ],
           },
-          { kind: 'attention', text: 'Aller est en -er mais il est irrégulier (fiche suivante).' }
+          { kind: 'paragraph', text: '{c}Attention : {/c} Le verbe {c}aller{/c} termine en -{c}er{/c} mais il est {c}irrégulier{/c}.' }
         ],
       },
     ],
