@@ -10,7 +10,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { isDraftPadExercise } from '@/math/catalog'
-import { TCF_DOMAIN } from '@/tcf/catalog'
+import { isTpfFamilyDomain } from '@/tcf/catalog'
 import { blockPointsTotal, formatPointsLabel, isTpmDomain } from '@/tpm/test'
 import { isTcmCfrDomain } from '@/tcm-cfr/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
@@ -130,7 +130,7 @@ export function WorksheetSheet({
     (page.blocks?.length ?? 0) > 1 ||
     isTpmDomain(page.domain) ||
     isTcmCfrDomain(page.domain) ||
-    page.domain === TCF_DOMAIN ||
+    isTpfFamilyDomain(page.domain) ||
     page.domain === 'soutien-fr' ||
     page.domain === 'alphabetisation'
   const showHeader = pageNumber === 1 && !isJeuxSheet

@@ -50,7 +50,7 @@ import {
   PERI_QUAD_FIGURES,
   VOLUME_QUAD_FIGURES,
 } from '@/math/mesures'
-import { TCF_DOMAIN, tcfNiveauFromDifficulty } from '@/tcf/catalog'
+import { isTpfFamilyDomain, tcfNiveauForConfig } from '@/tcf/catalog'
 import { isTpmDomain } from '@/tpm/test'
 import { isTcmCfrDomain } from '@/tcm-cfr/test'
 import { isTpmFamilyConsignesType } from '@/tpm/informations'
@@ -95,10 +95,10 @@ const isTcmCfr = isTcmCfrDomain(activePage.domain)
 const isTcmCsc = activePage.domain === 'tcm-csc'
 /** TPM / TCM CFR / TCM CSC : test multi-pages packé, UI simplifiée + mode libre dédié. */
 const isTpmLike = isTpm || isTcmCfr || isTcmCsc
-const isTcf = activePage.domain === TCF_DOMAIN
+const isTcf = isTpfFamilyDomain(activePage.domain)
 /** Page 1 Informations (TPM / CFR / CSC) : pas de Questions ni Colonnes. */
 const isTpmInfoPage = isTpmFamilyConsignesType(activeBlock.exerciseType)
-const tcfNiveau = tcfNiveauFromDifficulty(activeBlock.difficulty)
+const tcfNiveau = tcfNiveauForConfig(activePage.domain, activeBlock.difficulty)
 const soutienParsed = isSoutienFr
   ? parseSoutienType(activeBlock.exerciseType)
   : isAlphabetisation

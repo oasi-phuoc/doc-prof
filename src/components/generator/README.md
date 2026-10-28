@@ -8,14 +8,14 @@ Découpage de l’ancien monolithe `App.tsx` / `GeneratorPage.tsx` pour le déve
 | `generator-derived.ts` | Helpers purs : thèmes, typeChoices, maxQuestions, total points |
 | `generator-block-context.ts` | Drapeaux / dérivés du bloc actif (`deriveBlockContext`) |
 | `useQuestionsOverflow.ts` | ResizeObserver : débordement A4 |
-| `useGeneratorAudio.ts` | Collecteurs + téléchargements audio (soutien / TCF / TCM CFR) |
-| `useGenerateActions.ts` | Valider, tirer TCF / série soutien, générer, régénérer un bloc |
+| `useGeneratorAudio.ts` | Collecteurs + téléchargements audio (soutien / TPF-TCF / TCM CFR) |
+| `useGenerateActions.ts` | Valider, tirer TPF / TCF / série soutien, générer, régénérer un bloc |
 | `useCoordEditing.ts` | Outil repérage : origine, marques, axes |
 | `usePageConfig.ts` | `updatePage`, sync mode libre, grilles / modes oraux / TCF |
 | `usePageNavigation.ts` | Domaine / thème / pages / exercices (+ effets de migration) |
 | `SettingsPanel.tsx` | Aside paramètres (compose les champs ci-dessous) |
 | `PageStructureTabs.tsx` | Titre panneau + onglets feuilles / exercices |
-| `DomainThemeTypeFields.tsx` | Mode, domaine, thème, type, phrase, jeux, TCF, niveau, quad |
+| `DomainThemeTypeFields.tsx` | Mode, domaine, thème, type, phrase, jeux, TPF / TCF, quad |
 | `CalliSettingsPanel.tsx` | Réglages calligraphie |
 | `SoutienVocabFields.tsx` | Soutien mots / compléter + pool vocabulaire |
 | `QuestionsColumnsFields.tsx` | Questions / points / saut de page / colonnes |

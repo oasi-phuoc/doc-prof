@@ -19,7 +19,7 @@ import {
   typesForTopic,
   vocabulaireTopics,
 } from '@/math/catalog'
-import { TCF_DOMAIN } from '@/tcf/catalog'
+import { isTpfFamilyDomain } from '@/tcf/catalog'
 import { blockPointsTotal, isTpmDomain } from '@/tpm/test'
 import {
   ALPHA_LETTER_KINDS,
@@ -80,7 +80,7 @@ export function topicsForDomain(domain: Domain) {
                                 ? logiqueTopics
                                 : isTpmDomain(domain)
                                   ? tpmTopics
-                                  : domain === TCF_DOMAIN
+                                  : isTpfFamilyDomain(domain)
                                     ? tcfTopics
                                     : algebraTopics
 }

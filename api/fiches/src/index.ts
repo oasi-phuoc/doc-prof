@@ -19,7 +19,16 @@ interface Env {
 
 type Account = 'admin' | 'full' | 'partial'
 
-const ADMIN_ONLY = new Set(['tcf', 'tcm-csc', 'tcm-cfr', 'tpm', 'tcm'])
+const ADMIN_ONLY = new Set([
+  'tpf',
+  'tcf-csc',
+  'tcf-cfr',
+  'tcf',
+  'tcm-csc',
+  'tcm-cfr',
+  'tpm',
+  'tcm',
+])
 
 function migrateTpmToken(value: string): string {
   if (value === 'tpm-csc' || value.startsWith('tpm-csc-') || value.startsWith('tpm-csc_')) {
@@ -63,7 +72,9 @@ const ALL_DOMAINS = [
   'tpm',
   'tcm-csc',
   'tcm-cfr',
-  'tcf',
+  'tpf',
+  'tcf-csc',
+  'tcf-cfr',
 ] as const
 
 const MAX_BODY = 800_000

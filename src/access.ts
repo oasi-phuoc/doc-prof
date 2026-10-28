@@ -10,7 +10,7 @@ export type AccessAccount = 'admin' | 'full' | 'partial'
 
 /**
  * Domaines « réguliers » — ordre alphabétique par libellé.
- * (Les tests TCF / TCM CSC / TCM CFR / TPM sont pinés en bas de liste.)
+ * (Les tests TPF / TCF CSC / TCF CFR / TCM CSC / TCM CFR / TPM sont pinés en bas de liste.)
  */
 export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'acm', label: 'ACM' },
@@ -30,10 +30,12 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
 
 /**
  * Domaines réservés au compte admin (tests).
- * Ordre d’affichage exact : tcf → tcm-csc → tcm-cfr → tpm.
+ * Ordre d’affichage exact : tpf → tcf-csc → tcf-cfr → tcm-csc → tcm-cfr → tpm.
  */
 export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
-  { id: 'tcf', label: 'TCF' },
+  { id: 'tpf', label: 'TPF' },
+  { id: 'tcf-csc', label: 'TCF CSC' },
+  { id: 'tcf-cfr', label: 'TCF CFR' },
   { id: 'tcm-csc', label: 'TCM CSC' },
   { id: 'tcm-cfr', label: 'TCM CFR' },
   { id: 'tpm', label: 'TPM' },
@@ -66,6 +68,11 @@ const DOMAIN_ALIASES: Readonly<Record<string, Domain>> = {
   'tpm-csc': 'tcm-csc',
   'tpm-cfr': 'tcm-cfr',
   tcm: 'tpm',
+  tcf: 'tpf',
+  tpf_csc: 'tcf-csc',
+  tpf_cfr: 'tcf-cfr',
+  'tpf-csc': 'tcf-csc',
+  'tpf-cfr': 'tcf-cfr',
 }
 
 const ACCESS_COOKIE = 'clairfle-fiche-access'
@@ -118,7 +125,7 @@ function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] 
  * Domaines FULL / PARTIAL.
  * - **full** : toujours tous les domaines réguliers du catalogue (alphabetisation,
  *   grammaire, acm…), même si `VITE_ACCESS_DOMAINS_FULL` est une ancienne liste
- *   incomplète. Jamais TCF / TPM / TCM CSC / TCM CFR.
+ *   incomplète. Jamais TPF / TCF CSC / TCF CFR / TPM / TCM CSC / TCM CFR.
  * - **partial** : liste env (défaut algèbre + géométrie) ; admin-only filtrés.
  */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {

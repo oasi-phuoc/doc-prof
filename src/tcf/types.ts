@@ -1,5 +1,5 @@
 /**
- * TCF — Test de connaissances de français.
+ * Banque TPF / TCF — Test de placement (TPF) et tests de connaissance (TCF CSC / CFR).
  * Types des exercices saisis par l’admin et stockés en JSON
  * (`src/tcf/content/{a0-a1,a1-a2,a2-b1}/{ce,co,pe,po}.json`).
  * Unions discriminées sur `competence`, `type_exercice` et `type_reponse`.

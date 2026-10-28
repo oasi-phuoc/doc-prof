@@ -18,7 +18,9 @@ export type Domain =
   | 'tpm'
   | 'tcm-csc'
   | 'tcm-cfr'
-  | 'tcf'
+  | 'tpf'
+  | 'tcf-csc'
+  | 'tcf-cfr'
 
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =

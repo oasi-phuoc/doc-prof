@@ -28,7 +28,7 @@ const PARTIES: ReadonlyArray<{ id: TcfCompetence; titre: string; texte: string; 
   },
 ]
 
-/** Page 1 du TCF : les quatre parties du test. */
+/** Page 1 du TPF / TCF : les quatre parties du test. */
 export function TcfInformations() {
   return (
     <div className="tcf-info">

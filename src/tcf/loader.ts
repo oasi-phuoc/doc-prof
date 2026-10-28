@@ -57,12 +57,18 @@ export function tcfBankAllLevels(competence: TcfCompetence): TcfExercise[] {
 }
 
 /** Exercices proposés pour un emplacement (CO et CE : même numéro d’épreuve). */
-export function tcfSlotBank(niveau: TcfNiveau, slot: TcfSlotMeta): TcfExercise[] {
-  return tcfBank(niveau, slot.competence).filter((ex) => {
-    if (slot.numero == null) return true
-    if (ex.competence !== 'CO' && ex.competence !== 'CE') return true
-    return tcfPosition(ex.id) === slot.numero
-  })
+export function tcfSlotBank(
+  niveau: TcfNiveau | readonly TcfNiveau[],
+  slot: TcfSlotMeta,
+): TcfExercise[] {
+  const niveaux = Array.isArray(niveau) ? niveau : [niveau]
+  return niveaux.flatMap((n) =>
+    tcfBank(n, slot.competence).filter((ex) => {
+      if (slot.numero == null) return true
+      if (ex.competence !== 'CO' && ex.competence !== 'CE') return true
+      return tcfPosition(ex.id) === slot.numero
+    }),
+  )
 }
 
 export function tcfExerciseById(id: string | undefined): TcfExercise | undefined {

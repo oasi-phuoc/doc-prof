@@ -17,7 +17,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | `src/math/generate.ts` | `buildPage(config, seed)` → délègue maths / `@/francais` / `@/tpm` / `@/tcf` / `@/jeux` / `@/grammaire` / squelettes (`acm`, `vocabulaire`…) |
 | `src/math/` | Générateurs maths purs (algèbre, géométrie, repérage, `rng`, `types`) — **sans TPM** |
 | `src/tpm/` | Test de placement de mathématiques (dossier dédié, comme `tcf/`) — `README.md` |
-| `src/tcf/` | Tests TCF (banques JSON, éditeur, rendu) |
+| `src/tcf/` | TPF / TCF CSC / TCF CFR : banque commune, éditeur, rendu — `README.md` |
 | `src/francais/` | FLE : Voc/Gram/Com, Phrase, Soutien |
 | `src/alphabetisation/` | Alphabétisation (ex-Lecture) — lettres, syllabes, mots, phrases |
 | `src/grammaire/` | Théorie FALC (SCAI) — thèmes + fiches ; exercices à venir — `README.md` |
@@ -44,7 +44,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 |---|---|
 | **\> ~800 lignes de logique** (UI, générateur, rendu) | Scinder par responsabilité (`ItemView` → `item-view/*`, `App` → `generator/*`) |
 | **Banques de données** (`problem-banks.ts`, `vocab-images.ts`, `soutien/banks.ts`) | OK volumineux si purs tableaux ; scinder par thème seulement si l’édition devient pénible |
-| **Nouveau domaine** (TPM, TCF, Jeux…) | Dossier `src/<domaine>/` dédié — **ne pas** empiler dans `math/` ou `francais/` |
+| **Nouveau domaine** (TPM, TPF / TCF, Jeux…) | Dossier `src/<domaine>/` dédié — **ne pas** empiler dans `math/` ou `francais/` |
 
 ## Principes non négociables
 

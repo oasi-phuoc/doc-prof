@@ -22,7 +22,7 @@ import { pageAsConfig, pageBlocks } from './page-model'
 import { TPM_MAX_SCORE } from '@/tpm/test'
 import { generateTpmInformations } from '@/tpm/informations'
 import { tryGenerateTcfBlock } from '@/tcf/generate'
-import { isTcfConsignesType, TCF_DOMAIN } from '@/tcf/catalog'
+import { isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { tryGenerateAcmBlock } from '@/acm/generate'
@@ -326,7 +326,7 @@ function givensFromEvaluerLibre(items: MathItem[]): AlgebraGiven[] | undefined {
   return givens.length > 0 ? givens : undefined
 }
 
-/** Page « Informations » d’un test (TPM / CFR / CSC / TCF) : ni numéro d’exercice ni points. */
+/** Page « Informations » d’un test (TPM / CFR / CSC / TPF / TCF) : ni numéro d’exercice ni points. */
 function isInfoPageType(typeId: string): boolean {
   return (
     typeId === 'tpm-consignes' ||
@@ -555,8 +555,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       }
       return
     }
-    // TCF : sauts de page manuels après certaines questions (marge « Page »).
-    if (page.domain === TCF_DOMAIN) {
+    // TPF / TCF : sauts de page manuels après certaines questions (marge « Page »).
+    if (isTpfFamilyDomain(page.domain)) {
       const sourceBlock = worksheet.blocks[0]
       const breaks = sourceBlock?.tcfPageBreakAfter ?? page.tcfPageBreakAfter
       const items = sourceBlock?.items ?? worksheet.items
