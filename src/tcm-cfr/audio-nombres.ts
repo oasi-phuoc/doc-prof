@@ -3,21 +3,30 @@
  * `public/lib/audio/nombre/{1..100}.mp3` + cent / mille (vocabulaire).
  *
  * Noms de fichiers : voir `@/francais/soutien/download-name`
- * (`TCM-CFR_Exercice-1_NOMBRE_Semestre-1.wav`, …).
+ * (`TCM-CFR_NOMBRE-MULTIPLICATION_Semestre-1.zip` avec les deux WAV).
  *
  * Les playlists groupées sont décodées puis réencodées en un seul WAV :
  * coller des MP3 bout à bout casse durée / barre de progression.
  */
 import {
   tcmCfrAudioDownloadName,
+  tcmCfrAudioZipDownloadName,
   type TcmCfrAudioKind,
 } from '@/francais/soutien/download-name'
+import { zipStoreBlob } from '@/lib/zip-store'
 
 export {
   tcmCfrAudioDownloadName,
+  tcmCfrAudioZipDownloadName,
   tcmCfrSemestre,
   type TcmCfrAudioKind,
 } from '@/francais/soutien/download-name'
+
+export type TcmCfrAudioPlaylist = {
+  parts: readonly string[]
+  kind?: TcmCfrAudioKind
+  exerciseNo?: number
+}
 
 const NOMBRE_DIR = '/lib/audio/nombre'
 const MESURES_DIR = '/lib/audio/vocabulaire/nombres-mesures'
@@ -164,36 +173,77 @@ async function downloadBlob(blob: Blob, filename: string) {
   URL.revokeObjectURL(objectUrl)
 }
 
-/**
- * Télécharge les audios TCM CFR groupés :
- * 1 fichier nombres (6 s entre chaque) + 1 fichier multiplications (6 s entre chaque).
- */
-export async function downloadTcmCfrAudios(
-  playlists: readonly (readonly string[])[],
-): Promise<number> {
-  const nonEmpty = playlists.filter((p) => p.length > 0)
-  if (nonEmpty.length === 0) return 0
+export type TcmCfrAudioGroup = {
+  kind: TcmCfrAudioKind
+  parts: string[][]
+  exerciseNo?: number
+}
 
-  const byKind: Record<TcmCfrAudioKind, string[][]> = {
-    NOMBRE: [],
-    MULTIPLICATION: [],
+function asPlaylist(
+  input: readonly string[] | TcmCfrAudioPlaylist,
+): TcmCfrAudioPlaylist | null {
+  if (Array.isArray(input)) {
+    return input.length > 0 ? { parts: input } : null
   }
-  for (const parts of nonEmpty) {
-    byKind[tcmCfrAudioKindFromParts(parts)].push([...parts])
-  }
+  const row = input as TcmCfrAudioPlaylist
+  return row.parts.length > 0 ? row : null
+}
 
-  let downloaded = 0
-  for (const kind of ['NOMBRE', 'MULTIPLICATION'] as const) {
+/** Groupe les playlists nombres / multiplications (type d’exercice ou `fois.mp3`). */
+export function groupTcmCfrPlaylists(
+  playlists: readonly (readonly string[] | TcmCfrAudioPlaylist)[],
+): TcmCfrAudioGroup[] {
+  const byKind: Record<TcmCfrAudioKind, TcmCfrAudioGroup> = {
+    NOMBRE: { kind: 'NOMBRE', parts: [] },
+    MULTIPLICATION: { kind: 'MULTIPLICATION', parts: [] },
+  }
+  for (const raw of playlists) {
+    const row = asPlaylist(raw)
+    if (!row) continue
+    const kind = row.kind ?? tcmCfrAudioKindFromParts(row.parts)
     const group = byKind[kind]
-    if (group.length === 0) continue
-    const blob = await concatPlaylistsWithGap(group)
-    await downloadBlob(blob, tcmCfrAudioDownloadName({ kind }))
-    downloaded += 1
-    if (kind === 'NOMBRE' && byKind.MULTIPLICATION.length > 0) {
-      await new Promise((r) => setTimeout(r, 150))
+    group.parts.push([...row.parts])
+    if (group.exerciseNo == null && row.exerciseNo != null && row.exerciseNo > 0) {
+      group.exerciseNo = row.exerciseNo
     }
   }
-  return downloaded
+  return (['NOMBRE', 'MULTIPLICATION'] as const)
+    .map((kind) => byKind[kind])
+    .filter((group) => group.parts.length > 0)
+}
+
+/**
+ * Télécharge les audios TCM CFR groupés :
+ * nombres + multiplications dans un ZIP (un WAV chacun, 6 s entre les items).
+ * Un seul fichier si un seul type est présent.
+ */
+export async function downloadTcmCfrAudios(
+  playlists: readonly (readonly string[] | TcmCfrAudioPlaylist)[],
+): Promise<number> {
+  const groups = groupTcmCfrPlaylists(playlists)
+  if (groups.length === 0) return 0
+
+  const files: { name: string; blob: Blob }[] = []
+  for (const group of groups) {
+    try {
+      const blob = await concatPlaylistsWithGap(group.parts)
+      files.push({
+        name: tcmCfrAudioDownloadName({ kind: group.kind, exerciseNo: group.exerciseNo }),
+        blob,
+      })
+    } catch {
+      // Un type manquant n’empêche pas l’autre (ex. `fois.mp3` illisible).
+    }
+  }
+  if (files.length === 0) return 0
+  if (files.length === 1) {
+    await downloadBlob(files[0]!.blob, files[0]!.name)
+    return 1
+  }
+
+  const zip = await zipStoreBlob(files.map((file) => ({ name: file.name, data: file.blob })))
+  await downloadBlob(zip, tcmCfrAudioZipDownloadName())
+  return files.length
 }
 
 /** Chemins MP3 à enchaîner pour lire `n` (1–1000). */
