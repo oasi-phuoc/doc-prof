@@ -248,7 +248,7 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
           '{tab:+2++}{g}Nom du pays{/g} | {g}Préposition{/g} | {g}Exemples{/g}',
           '{tab:2+>}Pays masculin | {c}du{/c} | Elle vient {c}du{/c} {c}Brésil{/c}',
           '{tab:2+>}Pays féminin | {c}de{/c} | Elle vient {c}de{/c} {c}Suisse{/c}',
-          '{tab:2+>}Pays avec une voyelle | {c}d’{/c} | Elle vient {c}d’{/c} Ukraine',
+          '{tab:2+>}Avec une voyelle | {c}d’{/c} | Elle vient {c}d’{/c} Ukraine',
           '{tab:2+>}Pays au pluriel | {c}des{/c} | Elle vient {c}des{/c} Etats-unis',
         ] },
       ],

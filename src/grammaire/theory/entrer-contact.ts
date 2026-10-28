@@ -130,11 +130,11 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       kind: 'section',
       role: 'retenir',
       blocks: [
-        { kind: 'paragraph', text: 'Quand je pars, je dis au revoir.' },
+        { kind: 'paragraph', text: 'Quand je {c}pars{/c}, je dis {c}au revoir{/c}.' },
         { kind: 'paragraph', text: '{ligne/4}' },
-        { kind: 'paragraph', text: 'Quand j’arrive, je dis bonjour ou bonsoir.' },
+        { kind: 'paragraph', text: 'Quand j’{c}arrive{/c}, je dis {c}bonjour{/c} ou {c}bonsoir{/c}.' },
         { kind: 'paragraph', text: '{ligne/2}' },
-        { kind: 'table', colHeader: true, rowHeader: true,
+        { kind: 'table', colHeader: true, rowHeader: false,
             headers: ['Quand j’arrive', 'Quand je pars'],
             rows: [
               ['Bonjour !', 'Au revoir !'],
@@ -145,7 +145,7 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
             ],
           },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'attention', text: '{c}Hello{/c} et {c}ciao{/c} sont très familiers.' }
+          { kind: 'paragraph', text: '{c}Attention : {/c}{c}Hello{/c} et {c}ciao{/c} sont très familiers.' }
       ],
     },
     ],
@@ -196,7 +196,7 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
           },
           { kind: 'paragraph', text: 'Je réponds quand une personne me remercie.' },
           { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: ', {c}je t’en prie{/c} (familier) et {c}je vous en prie{/c} (politesse).' },
+          { kind: 'paragraph', text: '{c}je t’en prie{/c} (familier) et {c}je vous en prie{/c} (politesse).' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
