@@ -11,10 +11,9 @@ import {
 import { parseCalliLines } from '@/calligraphie/defaults'
 import { reshuffleGameContent } from '@/jeux/bank'
 import { isJeuxType } from '@/jeux/templates'
-import { TCF_DOMAIN } from '@/tcf/catalog'
+import { isTpfFamilyDomain } from '@/tcf/catalog'
 import { drawTcfSeries } from '@/tcf/draw-series'
-import { buildTcfRandomTestPages } from '@/tcf/generate'
-import type { TcfNiveau } from '@/tcf/types'
+import { buildTpfFamilyTestPages } from '@/tcf/generate'
 import { buildWorksheets } from '@/math/generate'
 import { pageBlocks, setPageBlock } from '@/math/page-model'
 import { randomSeed } from '@/math/rng'
@@ -41,7 +40,6 @@ export type UseGenerateActionsParams = {
   seed: number
   libreMode: boolean
   activeBlock: ExerciseBlock
-  tcfNiveau: TcfNiveau
   calliFieldsLength: number
   isPhraseDomain: boolean
   isCalliDomain: boolean
@@ -66,7 +64,6 @@ export function useGenerateActions({
   seed,
   libreMode,
   activeBlock,
-  tcfNiveau,
   calliFieldsLength,
   isPhraseDomain,
   isCalliDomain,
@@ -170,14 +167,15 @@ export function useGenerateActions({
     if (libreMode) setLibreSnapshot(next)
   }
 
-  /** TCF : Générer tire un test complet au hasard dans la banque du niveau. */
+  /** TPF / TCF : Générer tire un test complet (niveaux du domaine, banque commune). */
   function drawTcfTest() {
     const nextSeed = randomSeed()
     setSeed(nextSeed)
     setMode('student')
     setSheetIndex(0)
     setBlockIndex(0)
-    setPages(buildTcfRandomTestPages(tcfNiveau, nextSeed))
+    const domain = pages[pageIndex]?.domain ?? pages[0]?.domain ?? 'tpf'
+    setPages(buildTpfFamilyTestPages(domain, nextSeed))
   }
 
   /** Soutien FR : Générer prépare les 12 fiches du son sélectionné. */
@@ -316,7 +314,7 @@ export function useGenerateActions({
             gameText: reshuffled.gameText,
             gameSelectedIds: reshuffled.gameSelectedIds,
           }
-        } else if (page.domain === TCF_DOMAIN && block.tcfExercise) {
+        } else if (isTpfFamilyDomain(page.domain) && block.tcfExercise) {
           const pinned = block.tcfExercise
           patch = {
             ...patch,
@@ -326,7 +324,7 @@ export function useGenerateActions({
             libreInstruction: undefined,
           }
         } else if (
-          page.domain === TCF_DOMAIN ||
+          isTpfFamilyDomain(page.domain) ||
           isTpmFamilyExercise(block.exerciseType) ||
           page.domain === 'tpm' ||
           page.domain === 'tcm-cfr' ||

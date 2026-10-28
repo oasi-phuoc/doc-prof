@@ -16,7 +16,13 @@ import { ACM_EXERCISE_TYPES, ACM_TOPICS } from '@/acm/catalog'
 import { LOGIQUE_EXERCISE_TYPES, LOGIQUE_TOPICS } from '@/logique/catalog'
 import { SANTE_EXERCISE_TYPES, SANTE_TOPICS } from '@/sante/catalog'
 import { SOCIETE_EXERCISE_TYPES, SOCIETE_TOPICS } from '@/societe/catalog'
-import { TCF_EXERCISE_TYPES, TCF_TOPICS } from '@/tcf/catalog'
+import {
+  TCF_EXERCISE_TYPES,
+  TCF_TOPICS,
+  isTpfFamilyDomain,
+  tcfDifficultyFromNiveau,
+  tpfNiveauxForDomain,
+} from '@/tcf/catalog'
 import { TCM_CFR_EXERCISE_TYPES, TCM_CFR_TOPICS } from '@/tcm-cfr/catalog'
 import { TCM_CSC_EXERCISE_TYPES, TCM_CSC_TOPICS } from '@/tcm-csc/catalog'
 import { VOCABULAIRE_EXERCISE_TYPES, VOCABULAIRE_TOPICS } from '@/vocabulaire/catalog'
@@ -101,8 +107,8 @@ export const tcmCscTopics = topics.filter((topic) => topic.domain === 'tcm-csc')
 export const tcmCfrTopics = topics.filter((topic) => topic.domain === 'tcm-cfr')
 export const jeuxTopics = topics.filter((topic) => topic.domain === 'jeux')
 export const calligraphieTopics = topics.filter((topic) => topic.domain === 'calligraphie')
-/** TCF : un thème par compétence (CE, CO, PE, PO). */
-export const tcfTopics = topics.filter((topic) => topic.domain === 'tcf')
+/** TPF / TCF : un thème par compétence (CE, CO, PE, PO) — banque commune. */
+export const tcfTopics = topics.filter((topic) => topic.domain === 'tpf')
 /** Thèmes maths utilisables dans le TPM (intro + algèbre + géométrie). */
 export const tpmTopics = [
   ...topics.filter((topic) => topic.domain === 'tpm'),
@@ -1030,8 +1036,8 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                                 ? 'soutien-voyelles'
                                 : domain === 'alphabetisation'
                                   ? 'alpha-voyelles'
-                                  : domain === 'tcf'
-                                    ? 'tcf-ce'
+                                  : isTpfFamilyDomain(domain)
+                                    ? 'tcf-info'
                                     : 'addition'
   return typesForTopic(fallbackTopic)[0]!
 }
@@ -1041,7 +1047,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
   const count =
     domain === 'jeux' ||
     domain === 'calligraphie' ||
-    domain === 'tcf' ||
+    isTpfFamilyDomain(domain) ||
     domain === 'grammaire' ||
     domain === 'vocabulaire' ||
     domain === 'société' ||
@@ -1063,7 +1069,9 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
     domain,
     topic: type.topic,
     exerciseType: type.id,
-    difficulty: 'moyen',
+    difficulty: isTpfFamilyDomain(domain)
+      ? tcfDifficultyFromNiveau(tpfNiveauxForDomain(domain)[0]!)
+      : 'moyen',
     count,
     columns: type.preferredColumns ?? 2,
     track: type.track,

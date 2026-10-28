@@ -19,10 +19,7 @@ import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import type { GameTemplate } from '@/jeux/templates'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
-import {
-  TCF_NIVEAUX,
-  tcfMenuLabel,
-} from '@/tcf/catalog'
+import { tcfMenuLabel } from '@/tcf/catalog'
 import type { TcfNiveau } from '@/tcf/types'
 import type { Dispatch, SetStateAction } from 'react'
 import type {
@@ -58,7 +55,6 @@ export type DomainThemeTypeFieldsProps = {
   accessAccount: string | null
   isTcf: boolean
   tcfNiveau: TcfNiveau
-  loadTcfSeries: (niveau: TcfNiveau) => void
   soutienSelection:
     | ReturnType<typeof resolveSoutienSelection>
     | ReturnType<typeof resolveAlphaSelection>
@@ -113,7 +109,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     allowedDomains,
     isTcf,
     tcfNiveau,
-    loadTcfSeries,
     soutienSelection,
     activeBlock,
     changeTopic,
@@ -204,23 +199,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ),
                 )}
               </SelectBox>
-              {isTcf ? (
-                <SelectBox
-                  label="Niveau"
-                  value={tcfNiveau}
-                  onChange={(value) => {
-                    const niveau = TCF_NIVEAUX.find((n) => n.id === value)?.id
-                    if (!niveau || niveau === tcfNiveau) return
-                    loadTcfSeries(niveau)
-                  }}
-                >
-                  {TCF_NIVEAUX.map((n) => (
-                    <option value={n.id} key={n.id}>
-                      {n.id}
-                    </option>
-                  ))}
-                </SelectBox>
-              ) : null}
               {isTpmLike ? null : (
                 <SelectBox
                   label={isTcf ? 'Compétence' : 'Thème'}

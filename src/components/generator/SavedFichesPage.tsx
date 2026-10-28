@@ -18,11 +18,12 @@ import type { Domain } from '@/math/types'
 type Library = 'fiches' | 'tcf' | 'tpm' | 'alpha' | 'soutien'
 
 const TPM_DOMAINS = new Set<Domain>(['tpm', 'tcm-csc', 'tcm-cfr'])
+const TPF_FAMILY_DOMAINS = new Set<Domain>(['tpf', 'tcf-csc', 'tcf-cfr'])
 
 function ficheLibrary(fiche: SavedFiche): Library {
   if (fiche.recipe.bookKind === 'alpha' || fiche.recipe.bookKind === 'soutien') return fiche.recipe.bookKind
   const domains = fiche.domains
-  if (domains.length > 0 && domains.every((domain) => domain === 'tcf')) return 'tcf'
+  if (domains.length > 0 && domains.every((domain) => TPF_FAMILY_DOMAINS.has(domain))) return 'tcf'
   if (domains.length > 0 && domains.every((domain) => TPM_DOMAINS.has(domain))) return 'tpm'
   return 'fiches'
 }
@@ -44,7 +45,9 @@ function emptyCopy(library: Library, fiches: SavedFiche[], query: string): strin
     return searching ? 'Aucun livre ne correspond à la recherche.' : 'Aucun livre enregistré pour le moment.'
   }
   if (library === 'tcf') {
-    return searching ? 'Aucune fiche TCF ne correspond à la recherche.' : 'Aucune fiche TCF enregistrée pour le moment.'
+    return searching
+      ? 'Aucune fiche TPF / TCF ne correspond à la recherche.'
+      : 'Aucune fiche TPF / TCF enregistrée pour le moment.'
   }
   if (library === 'tpm') {
     return searching ? 'Aucune fiche TCM ne correspond à la recherche.' : 'Aucune fiche TCM enregistrée pour le moment.'
@@ -261,7 +264,7 @@ export function SavedFichesPage({
                 Fiches
               </button>
               <button type="button" className={library === 'tcf' ? 'active' : ''} onClick={() => chooseLibrary('tcf')}>
-                TCF
+                TPF
               </button>
               <button type="button" className={library === 'tpm' ? 'active' : ''} onClick={() => chooseLibrary('tpm')}>
                 TCM

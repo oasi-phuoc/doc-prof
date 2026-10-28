@@ -3,19 +3,23 @@ import type { MathItem, PageConfig } from '@/math/types'
 import {
   TCF_COMPETENCES,
   TCF_CONSIGNES_TYPE,
-  TCF_DOMAIN,
   TCF_INFO_TOPIC,
   TCF_SLOTS,
-  type TcfSlotMeta,
+  TPF_DOMAIN,
+  type TpfFamilyDomain,
+  canonicalTpfFamilyDomain,
   isTcfConsignesType,
   tcfDifficultyFromNiveau,
-  tcfNiveauFromDifficulty,
+  tcfNiveauForConfig,
   tcfSlotByTypeId,
   tcfTypeByTypeId,
   tcfTypeMeta,
+  tpfFamilyLabel,
+  tpfNiveauxForDomain,
+  type TcfSlotMeta,
 } from './catalog'
 import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
-import { tcfBank, tcfSlotBank } from './loader'
+import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
 import { TCF_PE_GROUPS, TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { TCF_LETTRES, TCF_LETTRES_SITUATIONS } from './templates'
@@ -292,14 +296,14 @@ export function tcfExerciseItems(
 }
 
 /**
- * Bloc TCF : exercice saisi (mode libre) ou tiré de la banque du niveau.
- * Retourne null si le type n’est pas un type TCF.
+ * Bloc TPF / TCF : exercice saisi (mode libre) ou tiré de la banque du niveau.
+ * Retourne null si le type n’est pas un type TPF / TCF.
  */
 export function tryGenerateTcfBlock(
   config: PageConfig,
   rng: Rng,
 ): { instruction: string; items: MathItem[] } | null {
-  const niveau = tcfNiveauFromDifficulty(config.difficulty)
+  const niveau = tcfNiveauForConfig(config.domain, config.difficulty)
   if (isTcfConsignesType(config.exerciseType)) {
     return {
       instruction: '',
@@ -315,6 +319,8 @@ export function tryGenerateTcfBlock(
   const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
   const pool = inScenario.length > 0 ? inScenario : bank
   const fromBank = () => {
+    const pinned = tcfExerciseById(config.tcfBankId)
+    if (pinned && pinned.competence === competence) return pinned
     const chosen = bank.find((ex) => ex.id === config.tcfBankId)
     return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
   }
@@ -327,7 +333,7 @@ export function tryGenerateTcfBlock(
         tcfItem(
           {
             kind: 'vide',
-            message: `Aucun exercice « ${(slot ?? legacy)!.label} » en ${niveau} dans la banque. Saisissez-le dans le panneau TCF ou ajoutez-le dans src/tcf/content.`,
+            message: `Aucun exercice « ${(slot ?? legacy)!.label} » en ${niveau} dans la banque. Saisissez-le dans le panneau ${tpfFamilyLabel(config.domain)} ou ajoutez-le dans src/tcf/content.`,
           },
           false,
         ),
@@ -345,9 +351,12 @@ export function tryGenerateTcfBlock(
 }
 
 /** Page 1 : informations du test (non notée). */
-export function tcfConsignesPage(niveau: TcfNiveau): PageConfig {
+export function tcfConsignesPage(
+  niveau: TcfNiveau,
+  domain: TpfFamilyDomain = TPF_DOMAIN,
+): PageConfig {
   return {
-    domain: TCF_DOMAIN,
+    domain,
     topic: TCF_INFO_TOPIC,
     exerciseType: TCF_CONSIGNES_TYPE,
     difficulty: tcfDifficultyFromNiveau(niveau),
@@ -357,12 +366,17 @@ export function tcfConsignesPage(niveau: TcfNiveau): PageConfig {
   }
 }
 
-/** Page TCF vierge pour un emplacement donné. */
-export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageConfig> = {}): PageConfig {
+/** Page TPF / TCF vierge pour un emplacement donné. */
+export function tcfPage(
+  typeId: string,
+  niveau: TcfNiveau,
+  extra: Partial<PageConfig> = {},
+  domain: TpfFamilyDomain = TPF_DOMAIN,
+): PageConfig {
   const slot = tcfSlotByTypeId[typeId] ?? TCF_SLOTS[0]!
   const topic = TCF_COMPETENCES.find((c) => c.id === slot.competence)!.topic
   return {
-    domain: TCF_DOMAIN,
+    domain,
     topic,
     exerciseType: slot.typeId,
     difficulty: tcfDifficultyFromNiveau(niveau),
@@ -372,19 +386,19 @@ export function tcfPage(typeId: string, niveau: TcfNiveau, extra: Partial<PageCo
   }
 }
 
-/**
- * Test complet tiré au hasard dans la banque du niveau : Informations,
- * CO selon le déroulé du niveau (A1 : 5 exercices, A2 : 4), 4 CE,
- * PE (formulaire, dialogue, message, e-mail),
- * PO (entretien dirigé, questions sur 3 thèmes, image et interaction).
- */
-export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageConfig[] {
-  const rng = createRng(seed)
-  const page = (typeId: string, ex: TcfExercise) => tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 })
-  // Les exemples de démonstration (`tcf-a0a1-ce-001`) ne viennent d’aucun test : exclus du tirage.
-  const numberedBank = (n: TcfNiveau, slot: TcfSlotMeta) =>
-    tcfSlotBank(n, slot).filter((ex) => !/^tcf-[a-z0-9]+-(?:co|ce|pe|po)-\d{3}$/.test(ex.id))
-  const pages: PageConfig[] = [tcfConsignesPage(niveau)]
+/** Les exemples de démonstration (`tcf-a0a1-ce-001`) ne viennent d’aucun test. */
+function numberedBank(n: TcfNiveau, slot: TcfSlotMeta) {
+  return tcfSlotBank(n, slot).filter((ex) => !/^tcf-[a-z0-9]+-(?:co|ce|pe|po)-\d{3}$/.test(ex.id))
+}
+
+function appendNiveauExercisePages(
+  pages: PageConfig[],
+  niveau: TcfNiveau,
+  rng: Rng,
+  domain: TpfFamilyDomain,
+) {
+  const page = (typeId: string, ex: TcfExercise) =>
+    tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 }, domain)
   const coMax = niveau === 'A0-A1' ? 5 : 4
   for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO' && (s.numero ?? 0) <= coMax)) {
     const all = numberedBank(niveau, slot)
@@ -409,6 +423,37 @@ export function buildTcfRandomTestPages(niveau: TcfNiveau, seed: number): PageCo
       const inGroup = pool.filter((ex) => tcfGroupId(ex) === group.id)
       if (inGroup.length > 0) pages.push(page(slot.typeId, pick(rng, inGroup)))
     }
+  }
+}
+
+/**
+ * Test complet tiré au hasard dans la banque du niveau : Informations,
+ * CO selon le déroulé du niveau (A1 : 5 exercices, A2 : 4), 4 CE,
+ * PE (formulaire, dialogue, message, e-mail),
+ * PO (entretien dirigé, questions sur 3 thèmes, image et interaction).
+ */
+export function buildTcfRandomTestPages(
+  niveau: TcfNiveau,
+  seed: number,
+  domain: TpfFamilyDomain = TPF_DOMAIN,
+): PageConfig[] {
+  const rng = createRng(seed)
+  const pages: PageConfig[] = [tcfConsignesPage(niveau, domain)]
+  appendNiveauExercisePages(pages, niveau, rng, domain)
+  return pages
+}
+
+/**
+ * Recette du domaine : TCF-CSC = A0-A1, TCF-CFR = A1-A2,
+ * TPF = les trois niveaux (placement, A2-B1 compris).
+ */
+export function buildTpfFamilyTestPages(domain: string, seed: number): PageConfig[] {
+  const d = canonicalTpfFamilyDomain(domain)
+  const niveaux = tpfNiveauxForDomain(d)
+  const rng = createRng(seed)
+  const pages: PageConfig[] = [tcfConsignesPage(niveaux[0]!, d)]
+  for (const niveau of niveaux) {
+    appendNiveauExercisePages(pages, niveau, rng, d)
   }
   return pages
 }

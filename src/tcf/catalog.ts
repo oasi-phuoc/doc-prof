@@ -1,10 +1,58 @@
 import type { Difficulty, ExerciseType, Topic } from '@/math/types'
 import type { TcfCompetence, TcfNiveau, TcfTypeExercice, TcfTypeReponse } from './types'
 
-export const TCF_DOMAIN = 'tcf' as const
-export const TCF_DOCUMENT_TITLE = 'Test de connaissances de français'
+/** TPF — Test de placement de français (tous les niveaux, y compris A2-B1). */
+export const TPF_DOMAIN = 'tpf' as const
+/** TCF CSC — Test de connaissance de français, niveau A0-A1. */
+export const TCF_CSC_DOMAIN = 'tcf-csc' as const
+/** TCF CFR — Test de connaissance de français, niveau A1-A2. */
+export const TCF_CFR_DOMAIN = 'tcf-cfr' as const
 
-/** Niveau TCF ↔ réglage « Niveau » existant (facile / moyen / avancé). */
+export const TPF_FAMILY_DOMAINS = [TPF_DOMAIN, TCF_CSC_DOMAIN, TCF_CFR_DOMAIN] as const
+export type TpfFamilyDomain = (typeof TPF_FAMILY_DOMAINS)[number]
+
+export function isTpfFamilyDomain(domain: string | undefined): domain is TpfFamilyDomain {
+  return domain === TPF_DOMAIN || domain === TCF_CSC_DOMAIN || domain === TCF_CFR_DOMAIN
+}
+
+/** Ancien id `tcf` → TPF. */
+export function canonicalTpfFamilyDomain(domain: string | undefined): TpfFamilyDomain {
+  if (domain === TCF_CSC_DOMAIN || domain === TCF_CFR_DOMAIN) return domain
+  return TPF_DOMAIN
+}
+
+export const TPF_DOCUMENT_TITLE = 'Test de placement de français'
+export const TCF_CSC_DOCUMENT_TITLE = 'Test de connaissance de français — CSC'
+export const TCF_CFR_DOCUMENT_TITLE = 'Test de connaissance de français — CFR'
+
+export function tpfDocumentTitle(domain: string | undefined): string {
+  if (domain === TCF_CSC_DOMAIN) return TCF_CSC_DOCUMENT_TITLE
+  if (domain === TCF_CFR_DOMAIN) return TCF_CFR_DOCUMENT_TITLE
+  return TPF_DOCUMENT_TITLE
+}
+
+export function tpfFamilyLabel(domain: string | undefined): string {
+  if (domain === TCF_CSC_DOMAIN) return 'TCF CSC'
+  if (domain === TCF_CFR_DOMAIN) return 'TCF CFR'
+  return 'TPF'
+}
+
+/**
+ * Niveaux de la banque pour ce domaine.
+ * TPF : A0-A1, A1-A2 et A2-B1. TCF-CSC : A0-A1. TCF-CFR : A1-A2.
+ */
+export function tpfNiveauxForDomain(domain: string | undefined): readonly TcfNiveau[] {
+  if (domain === TCF_CSC_DOMAIN) return ['A0-A1']
+  if (domain === TCF_CFR_DOMAIN) return ['A1-A2']
+  return ['A0-A1', 'A1-A2', 'A2-B1']
+}
+
+/** @deprecated Utiliser TPF_DOMAIN. */
+export const TCF_DOMAIN = TPF_DOMAIN
+/** @deprecated Utiliser TPF_DOCUMENT_TITLE. */
+export const TCF_DOCUMENT_TITLE = TPF_DOCUMENT_TITLE
+
+/** Niveau TPF / TCF ↔ réglage « Niveau » existant (facile / moyen / avancé). */
 export const TCF_NIVEAUX: ReadonlyArray<{ id: TcfNiveau; difficulty: Difficulty; dossier: string }> = [
   { id: 'A0-A1', difficulty: 'facile', dossier: 'a0-a1' },
   { id: 'A1-A2', difficulty: 'moyen', dossier: 'a1-a2' },
@@ -17,6 +65,16 @@ export function tcfNiveauFromDifficulty(difficulty: Difficulty | undefined): Tcf
 
 export function tcfDifficultyFromNiveau(niveau: TcfNiveau): Difficulty {
   return TCF_NIVEAUX.find((n) => n.id === niveau)?.difficulty ?? 'facile'
+}
+
+/** Niveau effectif d’une page : borné aux niveaux du domaine (CSC / CFR verrouillés). */
+export function tcfNiveauForConfig(
+  domain: string | undefined,
+  difficulty: Difficulty | undefined,
+): TcfNiveau {
+  const allowed = tpfNiveauxForDomain(domain)
+  const fromDiff = tcfNiveauFromDifficulty(difficulty)
+  return allowed.includes(fromDiff) ? fromDiff : allowed[0]!
 }
 
 export const TCF_COMPETENCES: ReadonlyArray<{ id: TcfCompetence; label: string; topic: string }> = [
@@ -407,10 +465,10 @@ export function isTcfConsignesType(typeId: string | undefined): boolean {
   return typeId === TCF_CONSIGNES_TYPE
 }
 
-/** Thèmes du catalogue général = Informations + compétences. */
+/** Thèmes du catalogue général = Informations + compétences (domaine TPF ; CSC/CFR les réutilisent). */
 export const TCF_TOPICS: Topic[] = [
-  { id: TCF_INFO_TOPIC, label: 'Informations', domain: TCF_DOMAIN },
-  ...TCF_COMPETENCES.map((c) => ({ id: c.topic, label: c.label, domain: TCF_DOMAIN })),
+  { id: TCF_INFO_TOPIC, label: 'Informations', domain: TPF_DOMAIN },
+  ...TCF_COMPETENCES.map((c) => ({ id: c.topic, label: c.label, domain: TPF_DOMAIN })),
 ]
 
 /** Types du catalogue général (page Informations + emplacements par compétence). */

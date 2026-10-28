@@ -12,12 +12,11 @@ import {
   typesForTopic,
 } from '@/math/catalog'
 import {
-  TCF_DOCUMENT_TITLE,
-  TCF_DOMAIN,
+  isTpfFamilyDomain,
+  tpfDocumentTitle,
 } from '@/tcf/catalog'
-import { buildTcfRandomTestPages } from '@/tcf/generate'
+import { buildTpfFamilyTestPages } from '@/tcf/generate'
 import { randomSeed } from '@/math/rng'
-import type { TcfNiveau } from '@/tcf/types'
 import {
   buildTpmTestPages,
   isTpmDomain,
@@ -108,19 +107,19 @@ export function usePageNavigation({
   setInstitutional,
   setSeed,
 }: UsePageNavigationParams) {
-  function loadTcfSeries(niveau: TcfNiveau) {
+  function loadTpfFamilySeries(domain: Domain) {
     const nextSeed = randomSeed()
     setSeed(nextSeed)
     setSheetIndex(0)
     setBlockIndex(0)
-    setPages(buildTcfRandomTestPages(niveau, nextSeed))
+    setPages(buildTpfFamilyTestPages(domain, nextSeed))
     setEvalMode(true)
     setPointsPerQuestion(1)
     setMode('student')
     setInstitutional((current) => ({
       ...current,
       course: 'Français',
-      documentTitle: TCF_DOCUMENT_TITLE,
+      documentTitle: tpfDocumentTitle(domain),
     }))
   }
   /** Prochain type du même thème (même logique que « + Exercice »). */
@@ -284,15 +283,15 @@ export function usePageNavigation({
       }))
       return
     }
-    if (next === TCF_DOMAIN) {
-      loadTcfSeries('A0-A1')
+    if (isTpfFamilyDomain(next)) {
+      loadTpfFamilySeries(next)
       return
     }
     const type = firstTypeFor(next)
     const leavingTpm =
       isTpmDomain(activePage.domain) ||
       isTcmCfrDomain(activePage.domain) ||
-      activePage.domain === TCF_DOMAIN
+      isTpfFamilyDomain(activePage.domain)
     if (leavingTpm) {
       setSheetIndex(0)
       setPages([{ ...defaultPage(next), ...applyType(type), domain: next }])
@@ -562,7 +561,6 @@ export function usePageNavigation({
     removePage,
     addExerciseOnPage,
     changeDomain,
-    loadTcfSeries,
     changeTopic,
     changeSoutienLetter,
     changeSoutienSound,

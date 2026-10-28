@@ -41,6 +41,16 @@ function isPage(value: unknown): value is PageConfig {
   return typeof value.domain === 'string' && typeof value.exerciseType === 'string'
 }
 
+/** Ancien domaine TCF → TPF. */
+export function migrateTpfToken(value: string): string {
+  if (value === 'tcf') return 'tpf'
+  return value
+}
+
+export function migrateDomainToken(value: string): string {
+  return migrateTpfToken(migrateTpmToken(value))
+}
+
 /**
  * Ancien code du test principal (`tcm` → `tpm`).
  * TCM CSC et TCM CFR restent `tcm-csc` / `tcm-cfr`.
@@ -73,14 +83,14 @@ export function migrateTpmToken(value: string): string {
 function migratePage(page: PageConfig): PageConfig {
   const extra = page.extraBlocks?.map((block) => ({
     ...block,
-    topic: migrateTpmToken(block.topic),
-    exerciseType: migrateTpmToken(block.exerciseType),
+    topic: migrateDomainToken(block.topic),
+    exerciseType: migrateDomainToken(block.exerciseType),
   }))
   return {
     ...page,
-    domain: migrateTpmToken(page.domain) as Domain,
-    topic: migrateTpmToken(page.topic),
-    exerciseType: migrateTpmToken(page.exerciseType),
+    domain: migrateDomainToken(page.domain) as Domain,
+    topic: migrateDomainToken(page.topic),
+    exerciseType: migrateDomainToken(page.exerciseType),
     extraBlocks: extra,
   }
 }
