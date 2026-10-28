@@ -44,7 +44,12 @@ type TcfTypeMeta = {
   reponses: readonly TcfTypeReponse[]
 }
 
+/** CE / CO : QCM texte d’abord (forme par défaut). */
 const ALL_REPONSES = ['qcm_texte', 'qcm_image', 'lignes'] as const
+
+export function tcfDefaultTypeReponse(competence: TcfCompetence): TcfTypeReponse {
+  return competence === 'CE' || competence === 'CO' ? 'qcm_texte' : 'lignes'
+}
 
 export const TCF_TYPES: readonly TcfTypeMeta[] = [
   // —— CE ——

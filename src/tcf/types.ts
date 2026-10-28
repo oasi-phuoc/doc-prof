@@ -110,6 +110,8 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
   scene?: string
   /** Consigne affichée sous le titre (sinon consigne du type). */
   consigne?: string
+  /** Pastilles de mots / verbes au-dessus des questions. */
+  mots_banque?: string[]
   support: S
   questions: TcfQuestion[]
   /** PE sms / email / question : petit bloc sous le texte. */
@@ -174,6 +176,8 @@ export type TcfPeImageQuestion = TcfBase<
     consigne: string
     nb_mots: TcfNbMots
     reponse_modele?: string
+    /** Carte d’identité sous le portrait. */
+    fiche?: { nom: string; lignes: Array<{ label: string; valeur: string }> }
   }
 >
 export type TcfPeSmsReponse = TcfBase<

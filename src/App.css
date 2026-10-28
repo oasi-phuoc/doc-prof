@@ -579,8 +579,10 @@ html,body,#root{
   content:"";display:block;width:.55em;height:.55em;margin-top:.45em;
   border-radius:50%;background:var(--purple)
 }
+.theory-tabs .theory-tab-marker.is-empty::before{content:none;display:none;background:none}
 .theory-tabs.is-numeros{counter-reset:theory-tab}
 .theory-tabs.is-numeros tr{counter-increment:theory-tab}
+.theory-tabs.is-numeros tr.is-omit-marker{counter-increment:none}
 .theory-tabs.is-numeros .theory-tab-marker{
   width:1.4em;min-width:1.4em;font-weight:700;color:var(--purple)
 }
@@ -643,8 +645,9 @@ html,body,#root{
 .theory-ex-bad{color:var(--muted);font-weight:400}
 .theory-ex-bad-icon{color:var(--theory-accent,var(--purple));font-size:.85em;margin-right:.2em}
 .theory-table{
-  width:100%;border-collapse:collapse;font-size:var(--theory-size);margin:0;line-height:1.4
+  width:100%;border-collapse:collapse;table-layout:auto;font-size:var(--theory-size);margin:0;line-height:1.4
 }
+.theory-table col.theory-col{min-width:0}
 .theory-table>thead>tr>th,.theory-table>tbody>tr>th,.theory-table>tbody>tr>td{
   border:1px solid var(--ink);padding:4px 8px;text-align:left;vertical-align:top
 }
@@ -4038,9 +4041,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   max-height:51mm;
 }
 .worksheet-sheet:has(.exercise-block + .exercise-block) .count-icons-block{gap:5px}
-.worksheet-sheet:has(.layout-theory) .exercise-heading p{display:none}
-.worksheet-sheet:has(.layout-theory) .exercise-heading h3{display:none}
-.worksheet-sheet:has(.layout-theory) .exercise-heading-title-row{justify-content:flex-end;min-height:0}
+.exercise-block:has(.layout-theory) .exercise-heading{display:none}
+.exercise-block:has(.layout-theory){padding-top:0}
 .worksheet-sheet:has(.layout-theory) .theory-grid{
   gap:0
 }
@@ -4108,6 +4110,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-audio-list .tcf-audio-qr{width:16mm;height:16mm}
 .tcf-question{display:flex;flex-direction:column;gap:6px;margin-top:4px}
 .tcf-enonce{margin:0;font-weight:600}
+.tcf-enonce-text{white-space:pre-wrap}
 .tcf-verbe-theme{color:var(--purple);font-weight:700}
 /* 2e forme d’écriture : trait 50 px dans la phrase à la place de ___ / _ _ _. */
 .answer-line-field.tcf-blank-inline{
@@ -4149,6 +4152,20 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-pe-images li{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:1mm}
 .tcf-pe-images .tcf-image{width:100%;height:28mm}
 .tcf-pe-image-num{font-weight:800}
+.tcf-portrait-card{
+  display:grid;grid-template-columns:42mm minmax(0,1fr);gap:0;width:100%;
+  max-width:95mm;border:1.5px solid var(--ink);overflow:hidden
+}
+.tcf-portrait-photo{width:100%;height:48mm;object-fit:cover;display:block}
+.tcf-portrait-body{display:flex;flex-direction:column;min-width:0}
+.tcf-portrait-name{
+  margin:0;padding:4px 8px;background:color-mix(in srgb,var(--ink) 12%,#fff);
+  font-weight:800;font-size:calc(11pt * var(--app-font-scale, 1))
+}
+.tcf-portrait-fields{margin:0;padding:4px 8px 6px;display:grid;gap:1px}
+.tcf-portrait-fields>div{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:baseline}
+.tcf-portrait-fields dt{margin:0;font-weight:400;color:var(--ink)}
+.tcf-portrait-fields dd{margin:0;font-weight:700;color:var(--purple)}
 .tcf-ecriture{display:flex;flex-direction:column;gap:6px}
 .tcf-ecriture.is-fill{flex:1 1 auto;min-height:0;gap:0}
 .tcf-ecriture.is-fill .tcf-compteur{margin-top:8px}
@@ -4175,6 +4192,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-po-theme{margin:0;font-weight:700;text-align:center}
 .tcf-mots{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .tcf-mot{padding:6px 14px;border:1.5px solid var(--ink)}
+.tcf-mots.is-theme{margin:0 0 8px}
+.tcf-mots.is-theme .tcf-mot{
+  border-radius:999px;color:var(--purple);font-weight:700;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 .tcf-sequence{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .tcf-sequence li{position:relative;border:1px solid var(--ink);padding:4px}
 .tcf-sequence .tcf-image{height:55mm}

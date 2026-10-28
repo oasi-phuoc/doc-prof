@@ -10,9 +10,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { isDraftPadExercise } from '@/math/catalog'
-import { TCF_DOMAIN } from '@/tcf/catalog'
-import { blockPointsTotal, formatPointsLabel, isTpmDomain } from '@/tpm/test'
-import { isTcmCfrDomain } from '@/tcm-cfr/test'
+import { blockPointsTotal, formatPointsLabel } from '@/tpm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
@@ -124,15 +122,7 @@ export function WorksheetSheet({
     onRemove: (x: number, y: number) => void
   }
 }) {
-  const sheetTitle = institutional.documentTitle.trim()
   const isJeuxSheet = page.domain === 'jeux'
-  const multiExercisePage =
-    (page.blocks?.length ?? 0) > 1 ||
-    isTpmDomain(page.domain) ||
-    isTcmCfrDomain(page.domain) ||
-    page.domain === TCF_DOMAIN ||
-    page.domain === 'soutien-fr' ||
-    page.domain === 'alphabetisation'
   const showHeader = pageNumber === 1 && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
@@ -195,13 +185,14 @@ export function WorksheetSheet({
               (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
-          const blockHeading = multiExercisePage ? block.title : sheetTitle || block.title
+          const blockHeading = block.title
+          const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
-              {isJeuxSheet ? null : (
+              {isJeuxSheet || isTheoryBlock ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">

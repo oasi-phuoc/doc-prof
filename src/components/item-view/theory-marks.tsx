@@ -1,18 +1,38 @@
 import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 
-/** `{g}…{/g}` gras · `{c}…{/c}` couleur · `{s}…{/s}` souligné · `/n` retour · `{ligne}` / `{ligne/N}` · après `{tab:N}`, `+` vide, `>` flèche, `<` puce, `-` tiret, dans l’ordre des colonnes. `+` devant `N` supprime le premier marqueur. */
+/** `{g}…{/g}` gras · `{c}…{/c}` couleur · `{s}…{/s}` souligné · `/n` retour · `{ligne}` / `{ligne/N}` · après `{tab:N}`, `+` vide, `>` flèche, `<` puce, `-` tiret, dans l’ordre des colonnes. `+` devant `N` (`{tab:+1+}` ou `{tab :+1+}`, espace optionnel autour de `:`) enlève la puce / le numéro de la ligne. */
 const MARK = /\{(g|c|s)\}([\s\S]*?)\{\/\1\}|\/n/g
 const LIGNE = /\{ligne(?:\/([234]))?\}/gi
-const TAB = /\{tab:(\+?)(\d+)(?:\s*([+><-]+|fleche))?(?:\s*(puce))?\}/gi
+const TAB = /\{tab\s*:\s*(\+?)(\d+)(?:\s*([+><-]+|fleche))?(?:\s*(puce))?\}/gi
 
 type TheoryTabMarker = 'arrow' | 'bullet' | 'trait' | null
-export type TheoryTabRow = { n: number; markers: TheoryTabMarker[]; cells: string[] }
+export type TheoryTabRow = {
+  n: number
+  markers: TheoryTabMarker[]
+  cells: string[]
+  /** `{tab:+N…}` : pas de puce / numéro de liste sur cette ligne. */
+  omitListMarker?: boolean
+}
 type TheoryPiece = { kind: 'text'; text: string } | { kind: 'tabs'; rows: TheoryTabRow[] }
 type TheorySegment = { gap: true; divisor: 1 | 2 | 3 | 4 } | { gap: false; text: string }
 
 export function theoryHasLigne(text: string): boolean {
   return /\{ligne(?:\/[234])?\}/i.test(text)
+}
+
+/** Largeurs de colonnes d’un bloc `table` : parts égales, ou `widths` (nombre = %, sinon CSS). */
+export function theoryTableColWidths(colCount: number, widths?: Array<number | string>): string[] {
+  const n = Math.max(1, colCount)
+  const equal = `${(100 / n).toFixed(4)}%`
+  if (!widths?.length) return Array.from({ length: n }, () => equal)
+  return Array.from({ length: n }, (_, i) => {
+    const w = widths[i]
+    if (w == null) return equal
+    if (typeof w === 'number') return `${w}%`
+    const trimmed = w.trim()
+    return trimmed || equal
+  })
 }
 
 /** Découpe le texte autour de `{ligne}` et `{ligne/2}`, `/3` ou `/4`. */
@@ -63,11 +83,15 @@ function theoryPieces(text: string): TheoryPiece[] {
       .split(rowText.includes('|') ? '|' : ',')
       .map((cell) => cell.trim())
     const markerSequence = match[3]?.toLowerCase() === 'fleche' ? '>' : match[3] ?? (match[4] ? '<' : '')
-    let markers = [...markerSequence].map((symbol): TheoryTabMarker =>
+    const markers = [...markerSequence].map((symbol): TheoryTabMarker =>
       symbol === '>' ? 'arrow' : symbol === '<' ? 'bullet' : symbol === '-' ? 'trait' : null,
     )
-    if (match[1] === '+') markers = markers.slice(1)
-    rows.push({ n: Math.max(1, Number(match[2]) || 1), markers, cells })
+    rows.push({
+      n: Math.max(1, Number(match[2]) || 1),
+      markers,
+      cells,
+      omitListMarker: match[1] === '+',
+    })
     cursor = end
   })
   flushRows()
@@ -95,8 +119,13 @@ export function TheoryTabs({
     <table className={`theory-tabs${marker ? ` is-${marker}` : ''}${hasMarkers ? ' is-marked' : ''}`}>
       <tbody>
         {rows.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {marker ? <td className="theory-tab-marker" aria-hidden="true" /> : null}
+          <tr key={rowIndex} className={row.omitListMarker ? 'is-omit-marker' : undefined}>
+            {marker ? (
+              <td
+                className={`theory-tab-marker${row.omitListMarker ? ' is-empty' : ''}`}
+                aria-hidden="true"
+              />
+            ) : null}
             {Array.from({ length: cols }, (_, cellIndex) => (
               <Fragment key={cellIndex}>
                 {cellIndex > 0 ? (

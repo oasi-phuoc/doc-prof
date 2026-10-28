@@ -71,39 +71,88 @@ function Modele({ text, mode, title = 'Réponse possible' }: { text?: string; mo
   )
 }
 
+function MotsBanque({ mots }: { mots?: string[] }) {
+  const list = (mots ?? []).map((mot) => mot.trim()).filter(Boolean)
+  if (list.length === 0) return null
+  return (
+    <ul className="tcf-mots is-theme">
+      {list.map((mot, i) => (
+        <li key={`${mot}-${i}`} className="tcf-mot">
+          {mot}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
 export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mode: PreviewMode }) {
+  const banque = <MotsBanque mots={ex.mots_banque} />
   switch (ex.type_exercice) {
     case 'sms':
-      return <SmsBubble from={ex.support.expediteur} text={ex.support.texte} />
+      return (
+        <>
+          {banque}
+          <SmsBubble from={ex.support.expediteur} text={ex.support.texte} />
+        </>
+      )
     case 'email':
-      return <EmailBox {...ex.support} />
+      return (
+        <>
+          {banque}
+          <EmailBox {...ex.support} />
+        </>
+      )
     case 'annonce':
       return (
-        <div className="tcf-annonce">
-          {ex.support.titre ? <p className="tcf-annonce-title">{ex.support.titre}</p> : null}
-          <div className="tcf-annonce-body">
-            {ex.support.image ? <TcfImage src={ex.support.image} alt={ex.support.titre} /> : null}
-            <div>
-              <Paragraphs text={ex.support.texte} />
+        <>
+          {banque}
+          <div className="tcf-annonce">
+            {ex.support.titre ? <p className="tcf-annonce-title">{ex.support.titre}</p> : null}
+            <div className="tcf-annonce-body">
+              {ex.support.image ? <TcfImage src={ex.support.image} alt={ex.support.titre} /> : null}
+              <div>
+                <Paragraphs text={ex.support.texte} />
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )
     case 'images_a_reconnaitre':
     case 'six_courts':
     case 'trois_moyens':
       // Audios / QR masqués sur la fiche — téléchargement via le bouton aperçu.
-      return null
+      return banque
     case 'complet':
     case 'association_images':
-      return <Modele text={ex.support.transcription} mode={mode} title="Transcription" />
+      return (
+        <>
+          {banque}
+          <Modele text={ex.support.transcription} mode={mode} title="Transcription" />
+        </>
+      )
     case 'image_question': {
       const photos = (ex.support.images ?? []).map((src) => src.trim()).filter(Boolean)
       const numbered = /\(1\)/.test(ex.support.consigne)
+      const fiche = ex.support.fiche
       return (
         <div className="tcf-pe-image">
-          {photos.length > 0 ? (
+          {fiche ? (
+            <div className="tcf-portrait-card">
+              <TcfImage src={ex.support.image} alt={fiche.nom} className="tcf-portrait-photo" />
+              <div className="tcf-portrait-body">
+                <p className="tcf-portrait-name">{fiche.nom}</p>
+                <dl className="tcf-portrait-fields">
+                  {fiche.lignes.map((ligne) => (
+                    <div key={`${ligne.label}-${ligne.valeur}`}>
+                      <dt>{ligne.label}</dt>
+                      <dd>{ligne.valeur}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          ) : photos.length > 0 ? (
             <ol className="tcf-pe-images">
               {photos.map((src, i) => (
                 <li key={src}>
@@ -115,7 +164,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
           ) : (
             <TcfImage src={ex.support.image} alt="Image de l’exercice" />
           )}
-          <p className="tcf-question-text">{ex.support.consigne}</p>
+          {ex.support.consigne.trim() ? <p className="tcf-question-text">{ex.support.consigne}</p> : null}
         </div>
       )
     }

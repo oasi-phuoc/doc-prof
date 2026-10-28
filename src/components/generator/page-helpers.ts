@@ -20,6 +20,8 @@ import {
   vocabLearnWordsFor,
 } from '@/francais/vocab-learn'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
+import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
+import { QUI_SUIS_JE_DEFAULT_COUNT, isQuiSuisJeKind } from '@/grammaire/exercises/qui-suis-je'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -70,6 +72,11 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     type.id.includes('-com-orale') || type.id.includes('-com-ecrite')
   const isTheory = isGrammarTheoryType(type.id) || isGrammaireTheoryType(type.id)
   const isGramEx = isGrammaireExerciseType(type.id)
+  const gramParsed = isGramEx ? parseGramExerciseType(type.id) : null
+  const quiSuisJeCount =
+    gramParsed && gramParsed.subId === 'a1' && isQuiSuisJeKind(gramParsed.kindId)
+      ? QUI_SUIS_JE_DEFAULT_COUNT[gramParsed.kindId]
+      : undefined
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
   const isVocabLearn = isVocabLearnType(type.id)
   const isVocabPool = isVocabPoolType(type.id)
@@ -170,7 +177,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
           : isPhraseChart || isVocabLearn || isJeux || isCalli || isTheory
             ? { count: 1 }
             : isGramEx
-              ? { count: 6 }
+              ? { count: quiSuisJeCount ?? 6 }
             : isVocabPool
               ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
               : isPhrase

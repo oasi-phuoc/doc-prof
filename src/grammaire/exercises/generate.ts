@@ -12,6 +12,11 @@ import { parseGramExerciseType } from './subthemes'
 import { bankForType, lessonForType } from './bank'
 import { gramItemsToTcfExercise } from './to-tcf'
 import { isGrammaireExerciseType } from './types'
+import {
+  buildQuiSuisJeExercise,
+  isQuiSuisJeKind,
+  quiSuisJeBankCap,
+} from './qui-suis-je'
 
 /** Génère un bloc d’exercices grammaire (déterministe), rendu TCF. */
 export function tryGenerateGrammaireExerciseBlock(
@@ -26,6 +31,22 @@ export function tryGenerateGrammaireExerciseBlock(
   if (!kind) return null
 
   const rng = createRng(seed)
+  if (parsed.subId === 'a1' && isQuiSuisJeKind(parsed.kindId) && !config.tcfExercise) {
+    const exercise = buildQuiSuisJeExercise({
+      kindId: parsed.kindId,
+      typeId,
+      rng,
+      count: Math.max(1, config.count),
+    })
+    return {
+      instruction: exercise.consigne?.trim() || kind.instruction,
+      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
+        ...item,
+        tcfExerciseId: exercise.id,
+      })),
+      bankQuestionCap: quiSuisJeBankCap(parsed.kindId),
+    }
+  }
   if (config.tcfExercise) {
     const ex = config.tcfExercise
     return {

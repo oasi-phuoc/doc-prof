@@ -4,67 +4,6 @@ import type { GramLesson } from '../types'
 
 export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
   lesson(
-    'a1',
-    'fill-conj',
-    'Compléter avec je, tu, il, elle, nous, vous, ils ou elles',
-    'Complétez avec je, tu, il, elle, nous, vous, ils ou elles.',
-    [
-      fill('Bonjour ___ m’appelle Alicia Minot.', 'je'),
-      fill('Bonjour ___ m’appelle Charlotte Legrand.', 'je'),
-      fill('___ suis professeur de français.' , 'je'),
-      fill('___ vous appelez comment ?', 'vous'),
-      fill('Charlotte Legrand — Enchantée Julien. ___ m’appelle Charlotte. Moi aussi, ___ suis professeur de français.', 'je / je'),
-      fill('Et voici Isabelle Martel. ___ est professeure de français aussi.', 'Elle'),
-      fill('Julien Minot — ___ êtes française ?', 'Vous'),
-      fill('Isabelle Martel — Non, ___ suis canadienne.', 'je'),
-      fill('Francesca (et Alessandro) — ___ nous appelons Francesca et Alessandro. ___ sommes italiens. Et toi, ___ t’appelles comment ?', 'Nous / Nous / tu'),
-      fill('Sarah — Enchantée ! ___ m’appelle Sarah et ___ suis américaine.', 'je / je'),
-    ],
-  ),
-  lesson(
-    'a1',
-    'qcm-verbe',
-    'Choisir s’appeler ou être',
-    'Complétez avec s’appeler ou être à la forme correcte.',
-    [
-      qcm('Isabelle Martel — Bonjour je ___ Isabelle. Je ___ canadienne.', 'm’appelle / suis', [
-        'm’appelle / suis',
-        'suis / m’appelle',
-        'appelle / es',
-      ]),
-      qcm('Arthur Lambert — Moi, je ___ Arthur.', 'm’appelle', ['m’appelle', 'suis', 's’appelle']),
-      qcm('Isabelle Martel — Vous ___ français ?', 'êtes', ['êtes', 'êtes appelé', 'appelez']),
-      qcm('Arthur Lambert — Non, je ___ belge.', 'suis', ['suis', 'm’appelle', 'es']),
-      qcm('Lin — Salut ! Je ___ Lin. Je ___ chinoise.', 'm’appelle / suis', ['m’appelle / suis', 'suis / m’appelle', 'appelle / es']),
-      qcm('Lin — Et toi, tu t’appelles comment ? Zoe — Moi, je ___ Zoe.', 'm’appelle', ['m’appelle', 'suis', 's’appelle']),
-      qcm('Lin — Tu ___ anglaise ? Zoe — Non, je ___ australienne.', 'es / suis', ['es / suis', 'suis / es', 'êtes / suis']),
-      qcm('Charlotte Legrand — Nous nous ___ Charlotte et Isabelle. Nous ___ professeures de français.', 'appelons / sommes', [
-        'appelons / sommes',
-        'sommes / appelons',
-        'appelez / êtes',
-      ]),
-      qcm('Elena (et Ivan) — Moi, je ___ Elena et il ___ Ivan. Nous ___ étudiants.', 'm’appelle / s’appelle / sommes', [
-        'm’appelle / s’appelle / sommes',
-        'suis / est / appelons',
-        'm’appelle / est / êtes',
-      ]),
-      qcm('Aiko — Diego et Pablo, ils ___ italiens ? Erik — Non, Diego ___ mexicain et Pablo ___ argentin.', 'sont / est / est', [
-        'sont / est / est',
-        'est / sont / sont',
-        's’appellent / est / est',
-      ]),
-    ],
-  ),
-  lesson('a1', 'ecrire', 'Écrire une présentation', 'Écrivez une phrase avec le verbe et le mot proposés.', [
-    writeItem('s’appeler', 'Julien Minot'),
-    writeItem('être', 'professeur de français'),
-    writeItem('être', 'canadienne'),
-    writeItem('s’appeler', 'Francesca et Alessandro'),
-    writeItem('être', 'italiens'),
-    writeItem('être', 'américaine'),
-  ]),
-
-  lesson(
     'a3',
     'fill-conj',
     'Compléter les nationalités',
@@ -241,56 +180,6 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
       fill('Alessandro — Lin, qui sont les personnes avec Monsieur Minot ? Lin — ___ les professeurs de français de l’école.', 'Ce sont'),
       fill('C’est Flora (♀). Elle est ___. Elle est ___.', 'étudiante / argentine'),
       fill('C’est Michael (♂). Il est ___. Il est ___.', 'étudiant / américain'),
-    ],
-  ),
-
-  lesson(
-    'a1',
-    'qcm-verbe',
-    'Associer la question et la réponse',
-    'Associez la question et la réponse.',
-    [
-      qcm('Quel est votre âge ?', 'J’ai 25 ans.', ['J’ai 25 ans.', 'Je suis mexicain.', 'J’ai un niveau A1.']),
-      qcm('Quelle est votre nationalité ?', 'Je suis mexicain.', ['Je suis mexicain.', 'J’ai 25 ans.', 'C’est le 06 28 15 64 18.']),
-      qcm('Quel est votre niveau de français ?', 'J’ai un niveau A1.', ['J’ai un niveau A1.', 'Je m’appelle Diego Gonzales.', 'J’ai 25 ans.']),
-      qcm('Quel est votre numéro de téléphone portable ?', 'C’est le 06 28 15 64 18.', [
-        'C’est le 06 28 15 64 18.',
-        'Je m’appelle Diego Gonzales.',
-        'Je suis mexicain.',
-      ]),
-      qcm('Quels sont vos nom et prénom ?', 'Je m’appelle Diego Gonzales.', [
-        'Je m’appelle Diego Gonzales.',
-        'J’ai un niveau A1.',
-        'C’est le 06 28 15 64 18.',
-      ]),
-    ],
-  ),
-  lesson(
-    'a1',
-    'fill-conj',
-    'Compléter avec quel / quelle / quels / quelles',
-    'Complétez le dialogue avec la forme correcte de quel.',
-    [
-      fill('L’employé — ___ sont vos nom et prénom ?', 'Quels'),
-      fill('Mei — Je m’appelle Mei Wang. L’employé — Très bien. ___ est votre nationalité ?', 'Quelle'),
-      fill('L’employé — ___ est votre date de naissance ?', 'Quelle'),
-      fill('L’employé — ___ est votre adresse ?', 'Quelle'),
-      fill('L’employé — Euh, ___ ville ?', 'quelle'),
-      fill('L’employé — Et ___ est le code postal ?', 'quel'),
-      fill('L’employé — Ok, merci. ___ sont vos numéros de téléphone ?', 'Quels'),
-    ],
-  ),
-  lesson(
-    'a1',
-    'ecrire',
-    'Écrire les questions d’identité',
-    'Écrivez les questions à partir des réponses.',
-    [
-      fill('Je m’appelle Erik Petterson. → ?', 'Quels sont vos nom et prénom ? / Comment vous appelez-vous ?'),
-      fill('J’ai 26 ans. → ?', 'Quel est votre âge ? / Quel âge avez-vous ?'),
-      fill('Je suis suédois. → ?', 'Quelle est votre nationalité ?'),
-      fill('C’est le 06 12 46 87 34. → ?', 'Quel est votre numéro de téléphone portable ?'),
-      fill('C’est erik.petterson@email.fr → ?', 'Quelle est votre adresse email ?'),
     ],
   ),
 
