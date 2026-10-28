@@ -50,12 +50,13 @@ Dans un paragraphe, un exemple, une astuce, une attention ou une case de tableau
 | `{g}mot{/g}` | gras |
 | `{c}mot{/c}` | gras et couleur du thème |
 | `{s}mot{/s}` | souligné de la couleur du thème |
-| `{ligne}` | un interligne complet entre deux éléments |
-| `{ligne/2}` | un demi-interligne |
-| `{ligne/3}` | un tiers d’interligne |
-| `{ligne/4}` | un quart d’interligne |
+| `{ligne}` | un interligne complet à la place du défaut |
+| `{ligne/2}` | un demi-interligne à la place du défaut |
+| `{ligne/3}` | un tiers d’interligne à la place du défaut |
 
-Les blocs de théorie sont collés. Ces balises ajoutent l’espace indiqué, seules dans un paragraphe ou dans une phrase.
+Entre deux kinds, l’espace par défaut est un quart d’interligne (`ligne/4`). `{ligne}`, `{ligne/2}` et `{ligne/3}` **remplacent** cet espace (ils ne s’ajoutent pas). Ne pas écrire `{ligne/4}` : c’est déjà le défaut.
+
+Deux paragraphes de texte qui se suivent sont fusionnés en un seul (un espace, pas de retour). Pour un interligne plus grand, intercaler `{ligne}` ou `{ligne/2}`. Dans une phrase, `{ligne}` force encore un saut.
 
 Exemple : `J’utilise {c}être{/c}, {g}habiter{/g} et {s}parler{/s}.`  
 Ligne vide : `{ kind: 'paragraph', text: '{ligne}' }` ou `…Martigny.{ligne}Je parle français.`

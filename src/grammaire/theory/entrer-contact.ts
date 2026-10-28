@@ -12,7 +12,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
     objectif: 'Choisir tu ou vous.',
     blocks: [
     { kind: 'heading', text: 'Tu et vous' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je choisis {g}tu{/g} ou {g}vous{/g} selon la personne.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -61,7 +60,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       role: 'retenir',
       blocks: [
         { kind: 'paragraph', text: '{c}tu{/c} = une personne {c}proche{/c} (ami, famille).' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: '{c}vous{/c} = forme de {c}politesse{/c} ou {c}plusieurs personnes{/c}.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'table', colHeader: true, rowHeader: false,
@@ -71,7 +69,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
             ['un élève', 'un professeur'],
             ['un enfant', 'un médecin']
           ] },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'astuce', text: 'Écoute aussi la façon dont la personne te parle.' },
       ],
     },
@@ -87,7 +84,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
     objectif: 'Saluer à l’arrivée et au départ.',
     blocks: [
     { kind: 'heading', text: 'Les salutations' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je salue une personne quand j’arrive et quand je pars.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -106,7 +102,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       role: 'expliquer',
       blocks: [
         { kind: 'paragraph', text: 'Je dis {c}bonjour{/c} ou {c}bonsoir{/c} quand je salue une personne.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: 'Je peux dire {c}au revoir{/c} de différents manières selon la situation.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'examples', marker: 'puces',
@@ -121,7 +116,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
           },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: '{c}Bonjour{/c}, {c}bonsoir{/c} et {c}au revoir{/c} conviennent avec {c}tu{/c} et {c}vous{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: '{c}Salut{/c} est {c}familier{/c}. Je l’utilise surtout avec mes amis ou ma famille.' },
         ],
     },
@@ -131,7 +125,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
       role: 'retenir',
       blocks: [
         { kind: 'paragraph', text: 'Quand je {c}pars{/c}, je dis {c}au revoir{/c}.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: 'Quand j’{c}arrive{/c}, je dis {c}bonjour{/c} ou {c}bonsoir{/c}.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'table', colHeader: true, rowHeader: false,
@@ -144,7 +137,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
               ['—', 'Bonne soirée !'],
             ],
           },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: '{c}Attention : {/c}{c}Hello{/c} et {c}ciao{/c} sont très familiers.' }
       ],
     },
@@ -160,7 +152,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
     objectif: 'Dire merci et répondre.',
     blocks: [
     { kind: 'heading', text: 'Les remerciements' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je remercie une personne et je sais répondre à un merci.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -212,7 +203,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         role: 'retenir',
         blocks: [
           { kind: 'paragraph', text: 'Pour remercier, je dis {c}merci{/c}, {c}merci beaucoup{/c} ou {c}je vous remercie{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Pour répondre, je dis {c}de rien{/c}, {c}avec plaisir{/c} ou {c}je vous en prie{/c}.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
@@ -229,7 +219,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
           },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: '{c}Attention :{/c} Je regarde à qui je réponds.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           {
             kind: 'table',
             colHeader: true,

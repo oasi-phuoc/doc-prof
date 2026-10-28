@@ -12,7 +12,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     objectif: 'Me présenter avec être, habiter, parler, s’appeler.',
     blocks: [
     { kind: 'heading', text: 'Qui suis-je ?' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Pour me présenter, je donne des {g}informations simples{/g}.' },
 	  { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -83,7 +82,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     objectif: 'Choisir le pronom sujet qui remplace une personne.',
     blocks: [
       { kind: 'heading', text: 'Pronoms sujet' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Un pronom sujet remplace une personne, un groupe de personnes ou un nom.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -129,7 +127,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
           { kind: 'paragraph', text: '{ligne/2}' },
 
           { kind: 'paragraph', text: 'Le pronom sujet se place {c}devant le verbe{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Pour {c}trouver le sujet{/c} de la phrase :'},
           { kind: 'examples', marker: 'numeros', 
             items: ['Je regarde le {c}verbe{/c}', 'Je pose la question : {c}Qui fait cela ?{/c} ou {c}Qui est comme ça ?{/c}.' ] },
@@ -148,7 +145,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     objectif: 'Accorder l’adjectif de nationalité.',
     blocks: [
     { kind: 'heading', text: 'Adjectifs de nationalité' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je dis ma nationalité au masculin ou au féminin.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -167,9 +163,7 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
       role: 'expliquer',
       blocks: [
         { kind: 'paragraph', text: 'En général, pour former le féminin, je rajoute un {c}e{/c}.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: 'Si l’adjectif finit par {c}en{/c}, je double la consonne et je rajoute un {c}e{/c}.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: 'Si le masculin finit déjà par {c}e{/c}, le féminin {c}ne change pas{/c}.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'table', colHeader: true, rowHeader: true, 
@@ -220,7 +214,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     objectif: 'Dire d’où je viens avec venir de.',
     blocks: [
     { kind: 'heading', text: 'Provenance' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je dis ma provenance avec le verbe {c}venir{/c} et la préposition {c}de{/c}.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -240,7 +233,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
       blocks: [
         { kind: 'paragraph', text: 'Pour dire mon pays d’origine, j’utilise le verbe {c}venir{/c}.' },
         { kind: 'paragraph', text: 'Je dis : je viens du Sénégal, de Chine ou d’Irak.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: 'J’utilise {c}du{/c}, {c}de{/c}, {c}d’{/c} ou {c}des{/c}.' },
         { kind: 'paragraph', text: 'Le mot {c}de{/c} change selon le nom du pays.' },
         { kind: 'paragraph', text: '{ligne/2}' },
@@ -259,7 +251,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
       role: 'retenir',
       blocks: [
         { kind: 'paragraph', text: 'J’utilise {c}Venir de{/c} pour dire d’où je viens.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'paragraph', text: 'La préposition {c}de{/c} change de forme selon le genre du pays.' },
         { kind: 'paragraph', text: '{ligne/2}' },
         { kind: 'table', colHeader: true, rowHeader: true, 
@@ -306,7 +297,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
       role: 'expliquer',
       blocks: [
         { kind: 'paragraph', text: 'En français, j’utilise {c}avoir{/c} + nombre + an(s).' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'attention', text: 'Je ne dis pas « je suis 25 ans ».' },
       ],
     },
@@ -315,7 +305,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
       role: 'retenir',
       blocks: [
         { kind: 'paragraph', text: 'Je dis mon âge avec le verbe {c}avoir{/c} + {c}nombre{/c} + {c}an(s){/c}.' },
-        { kind: 'paragraph', text: '{ligne/4}' },
         { kind: 'table', colHeader: true, rowHeader: true,
           headers: ['Personne', 'Forme', 'Exemple'],
           rows: [
@@ -341,7 +330,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     objectif: 'Parler de sa famille avec les déterminants possessifs.',
     blocks: [
       { kind: 'heading', text: 'Parler de sa famille' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Pour parler de ma famille, j’utilise les {g}déterminants possessifs{/g}.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -360,9 +348,7 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
         role: 'expliquer',
         blocks: [
           { kind: 'paragraph', text: 'Le {c}déterminant possessif{/c} indique avec qui une personne est en relation.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Je choisis le déterminant selon la personne {c}qui parle{/c} et le {c}nom de la personne{/c} de ma famille.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Le déterminant change selon le nom {c}masculin{/c}, {c}féminin{/c} ou {c}pluriel{/c}.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'examples', marker: 'puces', items: [
@@ -379,7 +365,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
         role: 'retenir',
         blocks: [
           { kind: 'paragraph', text: 'Le déterminant possessif se place {c}devant{/c} le nom.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Pour bien choisir, je regarde : ' },
           { kind: 'examples', marker: 'numeros', items: [
             '{tab:1>}Qui parle ?| Le pronom {c}sujet{/c}',
@@ -396,9 +381,7 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
               ['Ils / Elles', '{c}leur{/c} père', '{c}leur{/c} mère', '{c}leurs{/c} parents'],
             ],
           },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'astuce', text: 'ma, ta et sa devant une voyelle change en mon, ton et son'},
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'examples', marker: 'puces', items: [
             { text: 'Je dis : « {c}Mon{/c} amie. »', wrong: 'Ma amie.' },
             { text: 'Je dis : « {c}Ton{/c} étudiante. »', wrong: 'Ta étudiante.' },

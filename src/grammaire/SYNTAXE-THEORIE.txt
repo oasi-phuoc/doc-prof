@@ -136,9 +136,11 @@ Le marqueur /n fonctionne aussi dans les exemples et les cellules de tableau.
 Dans une cellule, le texte reste dans la meme cellule et passe a la ligne.
 Il fonctionne aussi dans un texte en gras, couleur ou souligne.
 
-Pour separer les idees en paragraphes distincts, utiliser plusieurs blocs :
+Deux paragraphes de texte qui se suivent sont fusionnes en un seul
+(un espace, pas de retour). Pour un interligne, intercaler {ligne} ou {ligne/2} :
 
   { kind: 'paragraph', text: 'Premiere idee.' },
+  { kind: 'paragraph', text: '{ligne/2}' },
   { kind: 'paragraph', text: 'Deuxieme idee.' },
 
 Un retour a la ligne tape directement dans la chaine n'est pas le marqueur :
@@ -271,11 +273,15 @@ Exemple :
 
 La couleur ne doit jamais porter seule une information.
 
-LIGNES D'ECRITURE
-  {ligne}     ligne standard
-  {ligne/2}   ligne deux fois plus petite
-  {ligne/3}   ligne trois fois plus petite
-  {ligne/4}   ligne quatre fois plus petite
+ESPACEMENT ENTRE KINDS
+  Par defaut : un quart d'interligne (ligne/4) entre deux kinds.
+  {ligne}     remplace le defaut par un interligne complet
+  {ligne/2}   remplace le defaut par un demi-interligne
+  {ligne/3}   remplace le defaut par un tiers d'interligne
+
+Ne pas ecrire {ligne/4} : c'est deja l'espace par defaut.
+Ces balises, seules dans un paragraphe, remplacent l'espace entre les kinds
+voisins. Dans une phrase, {ligne} force encore un saut.
 
 Exemple :
   { kind: 'paragraph', text: '{ligne/2}' }

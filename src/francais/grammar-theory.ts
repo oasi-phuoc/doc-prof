@@ -90,6 +90,46 @@ function stripLead(text: string, re: RegExp): string {
   return text.replace(re, '').replace(/^\s+/, '')
 }
 
+/** Interligne d’un paragraphe qui ne contient que `{ligne}` / `{ligne/2}` / `{ligne/3}` / `{ligne/4}`. */
+export type TheoryLigneDivisor = 1 | 2 | 3 | 4
+
+const THEORY_SPACER = /^\{ligne(?:\/([234]))?\}$/i
+
+export function theorySpacerDivisor(text: string): TheoryLigneDivisor | null {
+  const match = THEORY_SPACER.exec(text.trim())
+  if (!match) return null
+  if (match[1] === '2') return 2
+  if (match[1] === '3') return 3
+  if (match[1] === '4') return 4
+  return 1
+}
+
+function spacerParagraphText(divisor: Exclude<TheoryLigneDivisor, 4>): string {
+  return divisor === 1 ? '{ligne}' : `{ligne/${divisor}}`
+}
+
+/** Paragraphes de texte collés ; `{ligne/4}` ignoré (défaut entre kinds) ; `{ligne}` / `/2` / `/3` restent un interligne. */
+function pushTheoryParagraph(out: GrammarTheoryBlock[], text: string) {
+  const parts = text
+    .split(/\n{2,}/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+  for (const part of parts) {
+    const spacer = theorySpacerDivisor(part)
+    if (spacer === 4) continue
+    if (spacer) {
+      out.push({ kind: 'paragraph', text: spacerParagraphText(spacer) })
+      continue
+    }
+    const last = out[out.length - 1]
+    if (last?.kind === 'paragraph' && theorySpacerDivisor(last.text) == null) {
+      out[out.length - 1] = { kind: 'paragraph', text: `${last.text.trimEnd()} ${part}` }
+      continue
+    }
+    out.push({ kind: 'paragraph', text: part })
+  }
+}
+
 /** Aligne les blocs hérités sur les styles unifiés (titre, texte, exemples, tableau, attention, astuce). */
 export function normalizeTheoryBlocks(blocks: GrammarTheoryBlock[]): GrammarTheoryBlock[] {
   const out: GrammarTheoryBlock[] = []
@@ -136,10 +176,10 @@ export function normalizeTheoryBlocks(blocks: GrammarTheoryBlock[]): GrammarTheo
       if (/^je retiens\s*:/i.test(raw)) {
         out.push({ kind: 'heading', text: 'Je retiens', sub: true })
         const rest = stripLead(raw, /^je retiens\s*:\s*/i)
-        if (rest) out.push({ kind: 'paragraph', text: rest })
+        if (rest) pushTheoryParagraph(out, rest)
         continue
       }
-      out.push({ kind: 'paragraph', text: raw })
+      pushTheoryParagraph(out, raw)
       continue
     }
     if (block.kind === 'table') {
@@ -163,18 +203,7 @@ export function normalizeTheoryBlocks(blocks: GrammarTheoryBlock[]): GrammarTheo
       continue
     }
     if (block.kind === 'paragraph') {
-      const parts = block.text
-        .split(/\n{2,}/)
-        .map((part) => part.trim())
-        .filter(Boolean)
-      if (parts.length === 0) continue
-      const joined = parts.join('\n\n')
-      const last = out[out.length - 1]
-      if (last?.kind === 'paragraph') {
-        out[out.length - 1] = { kind: 'paragraph', text: `${last.text}\n\n${joined}` }
-        continue
-      }
-      out.push({ kind: 'paragraph', text: joined })
+      pushTheoryParagraph(out, block.text)
       continue
     }
     out.push(block)

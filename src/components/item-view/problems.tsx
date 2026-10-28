@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
+import { theorySpacerDivisor, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import {
   TheoryFlow,
   TheoryInlineContent,
@@ -269,6 +269,14 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
     )
   }
   if (block.kind === 'paragraph') {
+    const spacer = theorySpacerDivisor(block.text ?? '')
+    if (spacer) {
+      return (
+        <div className="theory-kind-gap">
+          <TheoryLigne divisor={spacer} />
+        </div>
+      )
+    }
     return (
       <div className="theory-text">
         <TheoryFlow text={block.text ?? ''} className="theory-paragraph" />

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 
-/** `{g}…{/g}` gras · `{c}…{/c}` couleur · `{s}…{/s}` souligné · `/n` retour · `{ligne}` / `{ligne/N}` · après `{tab:N}`, `+` vide, `>` flèche, `<` puce, `-` tiret, dans l’ordre des colonnes. `+` devant `N` (`{tab:+1+}` ou `{tab :+1+}`, espace optionnel autour de `:`) enlève la puce / le numéro de la ligne. */
+/** `{g}…{/g}` gras · `{c}…{/c}` couleur · `{s}…{/s}` souligné · `/n` retour · `{ligne}` / `{ligne/2}` / `{ligne/3}` (remplacent l’espace défaut `ligne/4` entre kinds) · après `{tab:N}`, `+` vide, `>` flèche, `<` puce, `-` tiret, dans l’ordre des colonnes. `+` devant `N` (`{tab:+1+}` ou `{tab :+1+}`, espace optionnel autour de `:`) enlève la puce / le numéro de la ligne. */
 const MARK = /\{(g|c|s)\}([\s\S]*?)\{\/\1\}|\/n/g
 const LIGNE = /\{ligne(?:\/([234]))?\}/gi
 const TAB = /\{tab\s*:\s*(\+?)(\d+)(?:\s*([+><-]+|fleche))?(?:\s*(puce))?\}/gi

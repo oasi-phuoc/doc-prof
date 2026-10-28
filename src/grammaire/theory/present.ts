@@ -17,7 +17,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Conjuguer être au présent.',
     blocks: [
       { kind: 'heading', text: 'Le verbe être' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je conjugue {g}être{/g} au présent.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -76,14 +75,12 @@ export const presentDocs: GrammaireTheoryDoc[] = [
           },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}être{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'examples', marker: 'puces', items: [
             '{tab:+1+}{g}Je l’utilise pour …{/g}',
             '{tab:1<}l’{c}indentité{/c} | la {c}nationalité{/c}',
             '{tab:1<}le {c}métier{/c} | la {c}description{/c}',
             '{tab:1<}la {c}situation{/c} | ',
           ]},
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: '{c}Attention : {/c} Ne pas confondre les formes {c}es{/c}-{c}est{/c} et {c}êtes{/c}-{c}est{/c}.' },
           { kind: 'examples', items: [
             { text: 'Je dis : « Vous {c}êtes{/c} ici. »', wrong: '« Vous est ici. »' },
@@ -103,7 +100,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Conjuguer avoir au présent.',
     blocks: [
       { kind: 'heading', text: 'Le verbe avoir' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je conjugue avoir au présent.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -136,7 +132,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
             '{tab:1>}{c}Besoins{/c} | Nous avons {c}besoin d’aide{/c}.',
             '{tab:1>}{c}Expressions{/c} | Ils ont {c}de la chance{/c}.',
           ]},
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Je choisis la {c}bonne forme{/c} du verbe selon la personne.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
@@ -171,14 +166,12 @@ export const presentDocs: GrammaireTheoryDoc[] = [
           },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}avoir{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'examples', marker: 'puces', items: [
             '{tab:+1+}{g}Je l’utilise pour …{/g}',
             '{tab:1<}la {c}possession{/c} | l’{c}âge{/c}',
             '{tab:1<}la {c}famille{/c} | la {c}sensation{/c}',
             '{tab:1<}le {c}besoin{/c} | les {c}expressions{/c}',
           ]},
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: '{c}Attention :{/c}' },
           {
             kind: 'examples',
@@ -212,7 +205,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Conjuguer un verbe régulier en -er au présent.',
     blocks: [
       { kind: 'heading', text: 'Les verbes en -er' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je conjugue un verbe du 1er groupe {c}-er{/c} au présent.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -267,7 +259,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         role: 'retenir',
         blocks: [  
           { kind: 'paragraph', text: 'Je trouve le radical quand j’enlève {c}er{/c} de l’infinitif.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Je rajoute les terminaison : -e, -es, -e, -ons, -ez, -ent pour former le verbe.' },
           { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'parler'],
             rows: [
@@ -294,7 +285,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Reconnaître les changements orthographiques des verbes en -er.',
     blocks: [
       { kind: 'heading', text: 'Les verbes en -er particuliers' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Certains verbes en -er changent l’écriture.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -349,7 +339,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Dire où je vais (pays, continent, ville).',
     blocks: [
       { kind: 'heading', text: 'Aller : destination (pays et villes)' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je dis ma destination avec le verbe aller.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -391,7 +380,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Dire où je vais (lieux, chez quelqu’un).',
     blocks: [
       { kind: 'heading', text: 'Aller : lieux et chez' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je vais à un lieu. Je vais chez une personne.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -431,7 +419,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Conjuguer les modèles principaux des verbes en -ir.',
     blocks: [
       { kind: 'heading', text: 'Les verbes en -ir' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je conjugue un verbe en -ir selon son modèle.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -484,7 +471,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Conjuguer les modèles fréquents en -re et -oir.',
     blocks: [
       { kind: 'heading', text: 'Les verbes en -re et -oir' },
-      { kind: 'paragraph', text: '{ligne/4}' },
       { kind: 'paragraph', text: 'Je conjugue des verbes fréquents hors du 1er groupe.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
@@ -560,7 +546,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Former une phrase négative avec ne … pas.',
     blocks: [
     { kind: 'heading', text: 'La négation ne … pas' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je mets ne et pas autour du verbe.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
@@ -600,7 +585,6 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     objectif: 'Utiliser jamais, plus, rien, personne…',
     blocks: [
     { kind: 'heading', text: 'Autres négations' },
-    { kind: 'paragraph', text: '{ligne/4}' },
     { kind: 'paragraph', text: 'Je choisis la bonne négation selon le sens.' },
     { kind: 'paragraph', text: '{ligne/2}' },
     {
