@@ -4,6 +4,11 @@ import type { TcfCompetence, TcfNiveau, TcfTypeExercice, TcfTypeReponse } from '
 export const TCF_DOMAIN = 'tcf' as const
 export const TCF_DOCUMENT_TITLE = 'Test de connaissances de français'
 
+/** TPF / TCF / TCF-CSC / TCF-CFR — même banque, même téléchargement audio. */
+export function isTcfAudioDomain(domain: string | undefined): boolean {
+  return domain === 'tcf' || domain === 'tpf' || domain === 'tcf-csc' || domain === 'tcf-cfr'
+}
+
 /** Niveau TCF ↔ réglage « Niveau » existant (facile / moyen / avancé). */
 export const TCF_NIVEAUX: ReadonlyArray<{ id: TcfNiveau; difficulty: Difficulty; dossier: string }> = [
   { id: 'A0-A1', difficulty: 'facile', dossier: 'a0-a1' },

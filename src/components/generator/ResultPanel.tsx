@@ -188,10 +188,10 @@ export function ResultPanel({
                               ? downloadActiveSoutienEcouterAudio()
                               : downloadActiveSoutienMotsAudio())
                     }
-                    aria-label="Télécharger les audios de la fiche"
+                    aria-label="Télécharger tous les audios de la fiche"
                     title={
                       isTcf || isGrammaireExercise
-                        ? 'Télécharger les audios de la fiche'
+                        ? 'Télécharger tous les audios de la fiche'
                         : isTcmCfr
                           ? 'Télécharger les audios (nombres ou multiplications)'
                           : isSoutienCompleter

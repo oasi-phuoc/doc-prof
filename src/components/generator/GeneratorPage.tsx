@@ -266,6 +266,7 @@ export function GeneratorPage({
     pageIndex,
     firstExerciseNo,
     tcfNiveau: ctx.tcfNiveau,
+    domain: activePage.domain,
     soutienType1Words: ctx.soutienType1Words,
   })
 
