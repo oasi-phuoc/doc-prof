@@ -35,8 +35,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         kind: 'section',
         role: 'expliquer',
         blocks: [
-          { kind: 'paragraph', text: 'Le verbe {c}être{/c} est un verbe {c}irrégulier{/c}. Sa forme change selon la personne.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Le verbe {c}être{/c} est un verbe {c}irrégulier{/c}.' },
           { kind: 'paragraph', text: 'J’utilise le verbe être pour {c}donner des informations{/c} sur une personne.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'examples', marker: 'puces', items : [
@@ -76,6 +75,15 @@ export const presentDocs: GrammaireTheoryDoc[] = [
             ],
           },
           { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}être{/c}.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'examples', marker: 'puces', items[
+            '{tab:+1+}{g}Je l’utilise pour …{/g}',
+            '{tab:1<}l’{c}indentité{/c} | la {c}nationalité{/c}',
+            '{tab:1<}le {c}métier{/c} | la {c}description{/c}',
+            '{tab:1<}la {c}situation{/c} | ',
+          ]},
+          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: '{c}Attention : {/c} Ne pas confondre les formes {c}es{/c}-{c}est{/c} et {c}êtes{/c}-{c}est{/c}.' },
           { kind: 'examples', items: [
             { text: 'Je dis : « Vous {c}êtes{/c} ici. »', wrong: '« Vous est ici. »' },
@@ -115,8 +123,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         kind: 'section',
         role: 'expliquer',
         blocks: [
-          { kind: 'paragraph', text: 'Le verbe {c}avoir{/c} est un verbe {c}irrégulier{/c}. Sa forme change selon la personne.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: 'Le verbe {c}avoir{/c} est un verbe {c}irrégulier{/c}.' },
           { kind: 'paragraph', text: 'Je l’utilise pour la {c}possession{/c} et beaucoup d’{c}expressions{/c}.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'examples', marker: 'puces', 
@@ -129,7 +136,7 @@ export const presentDocs: GrammaireTheoryDoc[] = [
             '{tab:1>}{c}Besoins{/c} | Nous avons {c}besoin d’aide{/c}.',
             '{tab:1>}{c}Expressions{/c} | Ils ont {c}de la chance{/c}.',
           ]},
-          { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: '{ligne/4}' },
           { kind: 'paragraph', text: 'Je choisis la {c}bonne forme{/c} du verbe selon la personne.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
@@ -151,34 +158,28 @@ export const presentDocs: GrammaireTheoryDoc[] = [
         blocks: [
           { kind: 'paragraph', text: 'Je retiens les six formes du verbe {c}avoir{/c} au présent.' },
           { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'avoir'],
+          { kind: 'table', colHeader: true, rowHeader: false, 
+            headers: ['Personne', 'avoir'],
             rows: [
-              ['j’', 'ai'],
-              ['tu', 'as'],
-              ['il / elle / on', 'a'],
-              ['nous', 'avons'],
-              ['vous', 'avez'],
-              ['ils / elles', 'ont'],
+              ['j’', '{c}ai{/c}'],
+              ['tu', '{c}as{/c}'],
+              ['il / elle / on', '{c}a{/c}'],
+              ['nous', '{c}avons{/c}'],
+              ['vous', '{c}avez{/c}'],
+              ['ils / elles', '{c}ont{/c}'],
             ],
           },
           { kind: 'paragraph', text: '{ligne/2}' },
           { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}avoir{/c}.' },
-          {
-            kind: 'table',
-            colHeader: true,
-            rowHeader: true,
-            headers: ['Utilisation', 'Exemple'],
-            rows: [
-              ['Possession', 'J’{c}ai{/c} un téléphone.'],
-              ['Âge', 'Elle {c}a{/c} 25 ans.'],
-              ['Famille', 'Nous {c}avons{/c} deux enfants.'],
-              ['Sensation', 'Tu {c}as{/c} froid.'],
-              ['Besoin', 'Il {c}a{/c} besoin d’aide.'],
-              ['Expression', 'Elle {c}a{/c} de la chance.'],
-            ],
-          },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'astuce', text: 'Devant une voyelle, {c}je ai{/c} devient {c}j’ai{/c}.' },
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'examples', marker: 'puces', items[
+            '{tab:+1+}{g}Je l’utilise pour …{/g}',
+            '{tab:1<}la {c}possession{/c} | l’{c}âge{/c}',
+            '{tab:1<}la {c}famille{/c} | la {c}sensation{/c}',
+            '{tab:1<}le {c}besoin{/c} | les {c}expressions{/c}',
+          ]},
+          { kind: 'paragraph', text: '{ligne/4}' },
+          { kind: 'paragraph', text: '{c}Attention :{/c}' },
           {
             kind: 'examples',
             items: [
@@ -192,12 +193,11 @@ export const presentDocs: GrammaireTheoryDoc[] = [
           { kind: 'examples', marker: 'puces',
             items: [
               '{tab:+1+} {g}Sensation{/g} | {g}Expression{/g}',
-              '{tab:1<}Avoir faim/soif | Avoir raison/tort',
-              '{tab:1<}Avoir froid/chaud | Avoir besoin de',
-              '{tab:1<}Avoir peur | Avoir mal à',
+              '{tab:1<}Avoir {c}faim{/c} / {c}soif{/c} | Avoir {c}raison/tort{/c}',
+              '{tab:1<}Avoir {c}froid{/c} / {c}chaud{/c} | Avoir {c}besoin de{/c}',
+              '{tab:1<}Avoir {c}peur{/c} | Avoir {c}mal à{/c}',
             ],
-          },
-          
+          }, 
         ],
       },
     ],
@@ -206,28 +206,60 @@ export const presentDocs: GrammaireTheoryDoc[] = [
     id: 'm4',
     typeId: 'gram-m4-theorie',
     index: 4,
-    title: 'Les verbes en -er',
+    title: 'Les verbes en -er au présent',
     topic: 'gram-present',
     public: 'A1',
     objectif: 'Conjuguer un verbe régulier en -er au présent.',
     blocks: [
       { kind: 'heading', text: 'Les verbes en -er' },
       { kind: 'paragraph', text: '{ligne/4}' },
-      { kind: 'paragraph', text: 'Je conjugue un verbe du 1er groupe au présent.' },
+      { kind: 'paragraph', text: 'Je conjugue un verbe du 1er groupe {c}-er{/c} au présent.' },
       { kind: 'paragraph', text: '{ligne/2}' },
       {
         kind: 'section',
         role: 'regarder',
         blocks: [
-          { kind: 'examples', items: ['Je parle français.', 'Nous regardons la télé.'],
-          }
-        ],
+        {
+          kind: 'examples',
+          marker: 'puces',
+          items: [
+            '{tab:1<}Je {c}parle{/c} français. | Tu {c}travailles{/c} à Sion.',
+            '{tab:1<}Il {c}habite{/c} en Suisse. | Nous {c}aimons{/c} le café.',
+            '{tab:1<}Vous {c}regardez{/c} la télévision. | Elles {c}écoutent{/c} de la musique.',
+          ],
+        },
+      ],
       },
       {
         kind: 'section',
         role: 'expliquer',
         blocks: [
-          { kind: 'paragraph', text: 'Le présent sert pour maintenant, une habitude, une description.' },
+          { kind: 'paragraph', text: 'J’utilise le présent pour parler d’une action qui se passe maintenant, une habitude ou une description.'},
+          { kind: 'paragraph', text: 'Pour conjuguer un verbe :'},
+          { kind: 'examples', marker: 'numeros',
+            items: [
+              '{tab:1>}Je regarde le {c}verbe{/c} à l’infinitif | {c}Parler{/c}'
+              '{tab:1<}Je retire la {c}terminaison{/c} | Parl{c}-er{/c}',
+              '{tab:1<}Je garde le {c}début du verbe{/c} | {c}Parl-{/c} ',
+              '{tab:1<}Je rajoute la {c}terminaison{/c} du présent | Je parl{c}e{/c}',
+            ],
+          }, 
+          { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: 'Les terminaisons sont les mêmes pour les verbes réguliers en -er.' },
+          {
+            kind: 'examples',
+            marker: 'puces',
+            items: [
+              '{tab:+2+} {g}Personne{/g} | {g}Terminaison{/g} | {g}Verbe{/g}',
+              '{tab:2>}Je | -e',
+              '{tab:2>}Tu | -es',
+              '{tab:2>}Il / Elle / On | -e',
+              '{tab:2>}Nous | -ons',
+              '{tab:2>}Vous | -ez',
+              '{tab:2>}Ils / Elles | -ent',
+            ],
+          },
+          
           { kind: 'paragraph', text: 'Radical = infinitif sans -er. Puis j’ajoute la terminaison.' },
           { kind: 'paragraph', text: 'Terminaisons : -e, -es, -e, -ons, -ez, -ent.' }
         ],

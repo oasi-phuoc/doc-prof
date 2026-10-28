@@ -182,8 +182,6 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
         role: 'expliquer',
         blocks: [
           { kind: 'paragraph', text: 'Je {c}remercie{/c} une personne quand elle {c}m’aide{/c} ou {c}me donne quelque chose{/c}.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: 'Je peux dire {c}merci{/c}, {c}merci beaucoup{/c}, {c}je te remercie{/c} (familier) ou {c}je vous remercie{/c} (politesse).' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
@@ -194,9 +192,8 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
               '{tab:1>}Un vendeur me donne mon sac | {c}Je vous remercie !{/c}'
             ],
           },
-          { kind: 'paragraph', text: 'Je réponds quand une personne me remercie.' },
-          { kind: 'paragraph', text: '{ligne/4}' },
-          { kind: 'paragraph', text: '{c}je t’en prie{/c} (familier) et {c}je vous en prie{/c} (politesse).' },
+          { kind: 'paragraph', text: '{ligne/2}' },
+          { kind: 'paragraph', text: 'Je {c}réponds{/c} quand une {c}personne me remercie{/c}.' },
           { kind: 'paragraph', text: '{ligne/2}' },
           {
             kind: 'examples',
@@ -242,7 +239,8 @@ export const entrerContactDocs: GrammaireTheoryDoc[] = [
               ['Je te remercie !', 'Je vous remercie !'],
               ['Je t’en prie ! ', 'Je vous en prie !'],
             ],
-          }
+          },
+          { kind: 'paragraph', text: '{ligne/2}' },
         ],
       },
     ],
