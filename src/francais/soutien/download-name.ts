@@ -5,8 +5,9 @@
  *   SOUTIEN-FR_VOYELLES_A_Exercice-1_10.10.2026.wav
  *
  * TCM CFR (playlist groupée, WAV continu) :
- *   TCM-CFR_Exercice-1_NOMBRE_Semestre-1.wav
- *   TCM-CFR_Exercice-2_MULTIPLICATION_Semestre-2.wav
+ *   TCM-CFR_NOMBRE-MULTIPLICATION_Semestre-1.zip
+ *     TCM-CFR_Exercice-1_NOMBRE_Semestre-1.wav
+ *     TCM-CFR_Exercice-2_MULTIPLICATION_Semestre-1.wav
  *
  * TCF :
  *   TCF_A1-A2_CO_Exercice-1_26-27_Semestre-1.mp3
@@ -113,12 +114,17 @@ export function tcmCfrSemestre(date = new Date()): 'Semestre-1' | 'Semestre-2' {
 }
 
 /**
- * TCM-CFR_Exercice-{1|2}_{NOMBRE|MULTIPLICATION}_Semestre-{1|2}.wav
+ * TCM-CFR_Exercice-{n}_{NOMBRE|MULTIPLICATION}_Semestre-{1|2}.wav
  */
 export function tcmCfrAudioDownloadName(opts: TcmCfrAudioDownloadNameOpts): string {
   const exerciseNo =
     opts.exerciseNo ?? (opts.kind === 'MULTIPLICATION' ? 2 : 1)
   return `TCM-CFR_Exercice-${exerciseNoSafe(exerciseNo)}_${opts.kind}_${audioSemestreScolaire(opts.date)}.wav`
+}
+
+/** Archive unique : nombres + multiplications (évite le 2ᵉ téléchargement bloqué). */
+export function tcmCfrAudioZipDownloadName(date = new Date()): string {
+  return `TCM-CFR_NOMBRE-MULTIPLICATION_${audioSemestreScolaire(date)}.zip`
 }
 
 // ─── TCF ──────────────────────────────────────────────────────────────────

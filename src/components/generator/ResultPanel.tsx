@@ -193,7 +193,7 @@ export function ResultPanel({
                       isTcf || isGrammaireExercise
                         ? 'Télécharger les audios de la fiche'
                         : isTcmCfr
-                          ? 'Télécharger les audios (nombres ou multiplications)'
+                          ? 'Télécharger les audios (nombres et multiplications)'
                           : isSoutienCompleter
                             ? 'Télécharger l’audio (Écoutez et complétez + mots, 6 s)'
                             : isSoutienEcouter

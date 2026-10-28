@@ -5,7 +5,12 @@ import {
 import { tcfBank, tcfSlotBank } from '@/tcf/loader'
 import { tcfSlotByTypeId, tcfTypeByTypeId } from '@/tcf/catalog'
 import type { TcfCompetence, TcfExercise, TcfNiveau } from '@/tcf/types'
-import { downloadTcmCfrAudios } from '@/tcm-cfr/audio-nombres'
+import {
+  downloadTcmCfrAudios,
+  tcmCfrAudioKindFromParts,
+  type TcmCfrAudioKind,
+  type TcmCfrAudioPlaylist,
+} from '@/tcm-cfr/audio-nombres'
 import { soutienBankById } from '@/francais/soutien/banks'
 import {
   downloadSoutienEcouterAudio,
@@ -92,14 +97,25 @@ export function useGeneratorAudio({
     }
   }
 
-  /** Playlists audio TCM CFR du test entier (ex. 1 nombres + ex. 2 multiplications). */
-  function currentTcmCfrAudioPlaylists(): string[][] {
+  /** Playlists audio TCM CFR du test entier (nombres + multiplications). */
+  function currentTcmCfrAudioPlaylists(): TcmCfrAudioPlaylist[] {
     return worksheets.flatMap((sheet) =>
-      sheet.blocks.flatMap((block) =>
-        block.items
+      sheet.blocks.flatMap((block) => {
+        const fromType: TcmCfrAudioKind | undefined =
+          block.exerciseType === 'tcm-cfr-ex02'
+            ? 'MULTIPLICATION'
+            : block.exerciseType === 'tcm-cfr-ex01'
+              ? 'NOMBRE'
+              : undefined
+        return block.items
           .map((item) => item.audioParts ?? (item.audioSrc ? [item.audioSrc] : []))
-          .filter((parts): parts is string[] => parts.length > 0),
-      ),
+          .filter((parts): parts is string[] => parts.length > 0)
+          .map((parts) => ({
+            parts,
+            kind: fromType ?? tcmCfrAudioKindFromParts(parts),
+            exerciseNo: block.exerciseIndex > 0 ? block.exerciseIndex : undefined,
+          }))
+      }),
     )
   }
 
