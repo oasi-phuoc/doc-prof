@@ -15,6 +15,11 @@ export function isTpfFamilyDomain(domain: string | undefined): domain is TpfFami
   return domain === TPF_DOMAIN || domain === TCF_CSC_DOMAIN || domain === TCF_CFR_DOMAIN
 }
 
+/** TPF / TCF-CSC / TCF-CFR, plus l’ancien id `tcf`. */
+export function isTcfAudioDomain(domain: string | undefined): boolean {
+  return isTpfFamilyDomain(domain) || domain === 'tcf'
+}
+
 /** Ancien id `tcf` → TPF. */
 export function canonicalTpfFamilyDomain(domain: string | undefined): TpfFamilyDomain {
   if (domain === TCF_CSC_DOMAIN || domain === TCF_CFR_DOMAIN) return domain

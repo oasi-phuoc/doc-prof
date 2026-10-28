@@ -1,23 +1,34 @@
 /**
- * Téléchargement des audios d’une fiche TCF, avec nommage scolaire.
- * Ex. : TCF_A1-A2_CO_Exercice-1_26-27_Semestre-1.mp3
+ * Téléchargement des audios d’une fiche TPF / TCF.
+ * Tous les MP3 de la fiche (4–5 pour un test CO) partent dans un ZIP,
+ * pour que le navigateur ne bloque pas le 2ᵉ fichier.
  *
  * Templates de noms : `@/francais/soutien/download-name`.
  */
 import {
   tcfAudioDownloadName,
   tcfAudioFileBase as tcfAudioFileBaseShared,
+  tcfAudioZipDownloadName,
+  type TcfAudioFamilyPrefix,
 } from '@/francais/soutien/download-name'
+import { zipStoreBlob } from '@/lib/zip-store'
+import { tcfExerciseById } from './loader'
 import { tcfAudioSequence, tcfAudioSrc } from './media'
 import type { TcfCompetence, TcfExercise, TcfNiveau } from './types'
 
-export { tcfAnneeSemestre, tcfAudioDownloadName } from '@/francais/soutien/download-name'
+export {
+  tcfAnneeSemestre,
+  tcfAudioDownloadName,
+  tcfAudioFamilyPrefix,
+  tcfAudioZipDownloadName,
+} from '@/francais/soutien/download-name'
 
 export function tcfAudioFileBase(opts: {
   niveau: TcfNiveau
   competence: TcfCompetence
   exerciseNo: number
   date?: Date
+  prefix?: TcfAudioFamilyPrefix
 }): string {
   return tcfAudioFileBaseShared(opts)
 }
@@ -59,10 +70,101 @@ export function tcfAudioDownloadUrls(refs: string[]): string[] {
   return urls
 }
 
-async function downloadOne(url: string, filename: string) {
+export type TcfAudioJob = {
+  niveau: TcfNiveau
+  competence: TcfCompetence
+  exerciseNo: number
+  audioRefs: string[]
+  exerciseId?: string
+}
+
+type TcfAudioItemSource = {
+  tcf?: { kind?: string; exercise?: TcfExercise }
+  tcfExerciseId?: string
+}
+
+export function tcfExerciseFromItems(items: readonly TcfAudioItemSource[]): TcfExercise | undefined {
+  for (const item of items) {
+    const tcf = item.tcf
+    if (tcf?.kind === 'support' && tcf.exercise) return tcf.exercise
+  }
+  const id = items.find((item) => item.tcfExerciseId)?.tcfExerciseId
+  return tcfExerciseById(id)
+}
+
+/** Exercices audio de toutes les feuilles (test entier : 4–5 CO typiquement). */
+export function collectTcfAudioJobs(
+  sheets: readonly { blocks: readonly { exerciseIndex?: number; items: readonly TcfAudioItemSource[] }[] }[],
+): TcfAudioJob[] {
+  const jobs: TcfAudioJob[] = []
+  const seen = new Set<string>()
+  for (const sheet of sheets) {
+    for (const block of sheet.blocks) {
+      const ex = tcfExerciseFromItems(block.items)
+      if (!ex) continue
+      const audioRefs = tcfExerciseAudioRefs(ex)
+      if (audioRefs.length === 0) continue
+      const key = ex.id || audioRefs.join('|')
+      if (seen.has(key)) continue
+      seen.add(key)
+      jobs.push({
+        niveau: ex.niveau,
+        competence: ex.competence,
+        exerciseNo: block.exerciseIndex && block.exerciseIndex > 0 ? block.exerciseIndex : jobs.length + 1,
+        audioRefs,
+        exerciseId: ex.id,
+      })
+    }
+  }
+  return jobs
+}
+
+export type TcfNamedAudio = {
+  name: string
+  url: string
+}
+
+/** Liste des fichiers à mettre dans le ZIP (sans fetch). */
+export function listTcfAudioDownloadFiles(
+  jobs: readonly TcfAudioJob[],
+  prefix: TcfAudioFamilyPrefix = 'TCF',
+  date?: Date,
+): TcfNamedAudio[] {
+  const files: TcfNamedAudio[] = []
+  const used = new Set<string>()
+  for (const job of jobs) {
+    const urls = tcfAudioDownloadUrls(job.audioRefs)
+    for (let i = 0; i < urls.length; i++) {
+      const url = urls[i]!
+      const ext = url.match(/\.([a-z0-9]+)(?:\?|$)/i)?.[1] ?? 'mp3'
+      let name = tcfAudioDownloadName({
+        prefix,
+        niveau: job.niveau,
+        competence: job.competence,
+        exerciseNo: job.exerciseNo,
+        audioIndex: i + 1,
+        audioCount: urls.length,
+        ext,
+        date,
+      })
+      if (used.has(name)) {
+        const stem = name.replace(/\.[^.]+$/, '')
+        name = `${stem}_${used.size + 1}.${ext}`
+      }
+      used.add(name)
+      files.push({ name, url })
+    }
+  }
+  return files
+}
+
+async function fetchAudioBlob(url: string): Promise<Blob> {
   const res = await fetch(url)
   if (!res.ok) throw new Error(`Audio introuvable : ${url}`)
-  const blob = await res.blob()
+  return res.blob()
+}
+
+async function downloadBlob(blob: Blob, filename: string) {
   const objectUrl = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = objectUrl
@@ -74,30 +176,56 @@ async function downloadOne(url: string, filename: string) {
   URL.revokeObjectURL(objectUrl)
 }
 
-/** Télécharge les audios ; un seul fichier garde le nom de base, plusieurs sont suffixés. */
-export async function downloadTcfAudios(opts: {
+export type DownloadTcfAudiosOpts = {
   niveau: TcfNiveau
   competence: TcfCompetence
   exerciseNo: number
   audioRefs: string[]
-}): Promise<{ count: number; base: string }> {
-  const urls = tcfAudioDownloadUrls(opts.audioRefs)
-  const base = tcfAudioFileBase(opts)
-  if (urls.length === 0) return { count: 0, base }
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i]!
-    const ext = url.match(/\.([a-z0-9]+)(?:\?|$)/i)?.[1] ?? 'mp3'
-    const name = tcfAudioDownloadName({
-      niveau: opts.niveau,
-      competence: opts.competence,
-      exerciseNo: opts.exerciseNo,
-      audioIndex: i + 1,
-      audioCount: urls.length,
-      ext,
-    })
-    await downloadOne(url, name)
-    // Laisse le navigateur enchaîner les téléchargements.
-    if (i < urls.length - 1) await new Promise((r) => setTimeout(r, 120))
+  prefix?: TcfAudioFamilyPrefix
+  date?: Date
+}
+
+/** Télécharge les audios d’un exercice, ou d’une liste de jobs (fiche / test). */
+export async function downloadTcfAudios(
+  opts: DownloadTcfAudiosOpts | {
+    jobs: readonly TcfAudioJob[]
+    prefix?: TcfAudioFamilyPrefix
+    niveau?: string
+    date?: Date
+  },
+): Promise<{ count: number; base: string }> {
+  const prefix = opts.prefix ?? 'TCF'
+  const date = 'date' in opts ? opts.date : undefined
+  const jobs: TcfAudioJob[] =
+    'jobs' in opts
+      ? [...opts.jobs]
+      : [
+          {
+            niveau: opts.niveau,
+            competence: opts.competence,
+            exerciseNo: opts.exerciseNo,
+            audioRefs: opts.audioRefs,
+          },
+        ]
+  const files = listTcfAudioDownloadFiles(jobs, prefix, date)
+  const zipNiveau = ('jobs' in opts ? opts.niveau : undefined) ?? jobs[0]?.niveau ?? 'NIVEAU'
+  const base = tcfAudioZipDownloadName({ prefix, niveau: zipNiveau, date })
+  if (files.length === 0) return { count: 0, base }
+
+  const packed: { name: string; blob: Blob }[] = []
+  for (const file of files) {
+    try {
+      packed.push({ name: file.name, blob: await fetchAudioBlob(file.url) })
+    } catch {
+      // Fichier manquant : on continue les autres.
+    }
   }
-  return { count: urls.length, base }
+  if (packed.length === 0) return { count: 0, base }
+  if (packed.length === 1) {
+    await downloadBlob(packed[0]!.blob, packed[0]!.name)
+    return { count: 1, base: packed[0]!.name }
+  }
+  const zip = await zipStoreBlob(packed.map((file) => ({ name: file.name, data: file.blob })))
+  await downloadBlob(zip, base)
+  return { count: packed.length, base }
 }

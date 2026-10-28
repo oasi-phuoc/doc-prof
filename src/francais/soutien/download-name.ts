@@ -9,9 +9,10 @@
  *     TCM-CFR_Exercice-1_NOMBRE_Semestre-1.wav
  *     TCM-CFR_Exercice-2_MULTIPLICATION_Semestre-1.wav
  *
- * TCF :
- *   TCF_A1-A2_CO_Exercice-1_26-27_Semestre-1.mp3
- *   (+ `_Audio-2` si plusieurs fichiers)
+ * TCF / TPF (un ZIP par fiche de test, 4–5 MP3 typiquement) :
+ *   TCF_A1-A2_Audios_26-27_Semestre-1.zip
+ *     TCF_A1-A2_CO_Exercice-1_26-27_Semestre-1.mp3
+ *   TPF_A0-A1_Audios_26-27_Semestre-1.zip
  */
 
 // ─── Commun ───────────────────────────────────────────────────────────────
@@ -129,6 +130,13 @@ export function tcmCfrAudioZipDownloadName(date = new Date()): string {
 
 // ─── TCF ──────────────────────────────────────────────────────────────────
 
+export type TcfAudioFamilyPrefix = 'TCF' | 'TPF'
+
+/** TPF = test de placement ; TCF / TCF-CSC / TCF-CFR = connaissance. */
+export function tcfAudioFamilyPrefix(domain: string | undefined): TcfAudioFamilyPrefix {
+  return domain === 'tpf' ? 'TPF' : 'TCF'
+}
+
 export type TcfAudioDownloadNameOpts = {
   /** Ex. `A1-A2`, `B1`, `B2`. */
   niveau: string
@@ -136,6 +144,8 @@ export type TcfAudioDownloadNameOpts = {
   competence: string
   exerciseNo: number
   date?: Date
+  /** Défaut `TCF`. `TPF` pour le test de placement. */
+  prefix?: TcfAudioFamilyPrefix
 }
 
 /** Alias historique TCF. */
@@ -152,9 +162,25 @@ export function tcfAnneeSemestre(date = new Date()): {
  */
 export function tcfAudioFileBase(opts: TcfAudioDownloadNameOpts): string {
   const { annee, semestre } = audioAnneeSemestreScolaire(opts.date)
+  const prefix = opts.prefix ?? 'TCF'
   const niveau = String(opts.niveau).trim() || 'NIVEAU'
   const competence = String(opts.competence).trim() || 'COMP'
-  return `TCF_${niveau}_${competence}_Exercice-${exerciseNoSafe(opts.exerciseNo)}_${annee}_${semestre}`
+  return `${prefix}_${niveau}_${competence}_Exercice-${exerciseNoSafe(opts.exerciseNo)}_${annee}_${semestre}`
+}
+
+/**
+ * Archive unique de la fiche :
+ * TCF_A1-A2_Audios_26-27_Semestre-1.zip
+ */
+export function tcfAudioZipDownloadName(opts: {
+  niveau: string
+  prefix?: TcfAudioFamilyPrefix
+  date?: Date
+}): string {
+  const { annee, semestre } = audioAnneeSemestreScolaire(opts.date)
+  const prefix = opts.prefix ?? 'TCF'
+  const niveau = String(opts.niveau).trim() || 'NIVEAU'
+  return `${prefix}_${niveau}_Audios_${annee}_${semestre}.zip`
 }
 
 /**

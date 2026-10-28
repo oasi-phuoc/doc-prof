@@ -1,5 +1,7 @@
 import {
+  collectTcfAudioJobs,
   downloadTcfAudios,
+  tcfAudioFamilyPrefix,
   tcfExerciseAudioRefs,
 } from '@/tcf/download-audios'
 import { tcfBank, tcfSlotBank } from '@/tcf/loader'
@@ -44,6 +46,8 @@ export type UseGeneratorAudioParams = {
   pageIndex: number
   firstExerciseNo: number
   tcfNiveau: TcfNiveau
+  /** Domaine courant (`tcf`, `tpf`, `tcf-csc`, `tcf-cfr`) pour le préfixe TCF/TPF. */
+  domain?: string
   /** Mots type 1 Soutien (fallback si la fiche n’a pas encore de tableau). */
   soutienType1Words: string[]
 }
@@ -56,6 +60,7 @@ export function useGeneratorAudio({
   pageIndex,
   firstExerciseNo,
   tcfNiveau,
+  domain,
   soutienType1Words,
 }: UseGeneratorAudioParams) {
   /** Exercice TCF courant (banque / édition) pour télécharger ses audios. */
@@ -77,20 +82,32 @@ export function useGeneratorAudio({
   }
 
   async function downloadActiveTcfAudios() {
-    const ex = currentTcfExercise()
-    if (!ex) return
-    const refs = tcfExerciseAudioRefs(ex)
-    if (refs.length === 0) return
-    const exerciseNo =
-      activeSheet?.blocks[safeBlockIndex]?.exerciseIndex ??
-      activeBlock.exerciseNo ??
-      pageIndex + 1
+    const prefix = tcfAudioFamilyPrefix(domain)
+    let jobs = collectTcfAudioJobs(worksheets)
+    if (jobs.length === 0) {
+      const ex = currentTcfExercise()
+      if (!ex) return
+      const refs = tcfExerciseAudioRefs(ex)
+      if (refs.length === 0) return
+      const exerciseNo =
+        activeSheet?.blocks[safeBlockIndex]?.exerciseIndex ??
+        activeBlock.exerciseNo ??
+        pageIndex + 1
+      jobs = [
+        {
+          niveau: ex.niveau,
+          competence: ex.competence as TcfCompetence,
+          exerciseNo,
+          audioRefs: refs,
+          exerciseId: ex.id,
+        },
+      ]
+    }
     try {
       await downloadTcfAudios({
-        niveau: ex.niveau,
-        competence: ex.competence as TcfCompetence,
-        exerciseNo,
-        audioRefs: refs,
+        jobs,
+        prefix,
+        niveau: jobs[0]?.niveau ?? tcfNiveau,
       })
     } catch {
       // Échec réseau / fichier manquant : silencieux (l’enseignant·e voit l’absence de téléchargement).
