@@ -14,6 +14,8 @@ interface Env {
   ACCESS_ADMIN?: string
   ACCESS_FULL?: string
   ACCESS_PARTIAL?: string
+  ACCESS_DOMAINS_ADMIN?: string
+  ACCESS_DOMAINS_FULL?: string
   ACCESS_DOMAINS_PARTIAL?: string
 }
 
@@ -121,18 +123,38 @@ function bearer(request: Request): string {
   return match?.[1]?.trim() ?? ''
 }
 
+function parseDomainCsv(raw: string | undefined): string[] {
+  if (!raw?.trim()) return []
+  const out: string[] = []
+  const seen = new Set<string>()
+  for (const part of raw.split(/[,;|]/)) {
+    const token = migrateTpmToken(part.trim())
+    const domain = token === 'tcf' ? 'tpf' : token
+    if (!domain || seen.has(domain)) continue
+    seen.add(domain)
+    out.push(domain)
+  }
+  return out
+}
+
+function regularDomains(): string[] {
+  return ALL_DOMAINS.filter((domain) => !ADMIN_ONLY.has(domain))
+}
+
 function partialDomains(env: Env): Set<string> {
-  const raw = env.ACCESS_DOMAINS_PARTIAL?.trim() || 'algèbre,géométrie'
-  const domains = raw
-    .split(/[,;|]/)
-    .map((part) => part.trim())
-    .filter((part) => part.length > 0 && !ADMIN_ONLY.has(part))
+  const domains = parseDomainCsv(env.ACCESS_DOMAINS_PARTIAL)
   return new Set(domains.length > 0 ? domains : ['algèbre', 'géométrie'])
 }
 
 function allowedDomains(account: Account, env: Env): Set<string> {
-  if (account === 'admin') return new Set(ALL_DOMAINS)
-  if (account === 'full') return new Set(ALL_DOMAINS.filter((domain) => !ADMIN_ONLY.has(domain)))
+  if (account === 'admin') {
+    const fromEnv = parseDomainCsv(env.ACCESS_DOMAINS_ADMIN)
+    return new Set(fromEnv.length > 0 ? [...ALL_DOMAINS, ...fromEnv] : ALL_DOMAINS)
+  }
+  if (account === 'full') {
+    const fromEnv = parseDomainCsv(env.ACCESS_DOMAINS_FULL)
+    return new Set(fromEnv.length > 0 ? fromEnv : regularDomains())
+  }
   return partialDomains(env)
 }
 

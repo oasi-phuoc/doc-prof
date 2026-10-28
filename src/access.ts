@@ -121,22 +121,26 @@ function parseDomainList(raw: string | undefined, fallback: Domain[]): Domain[] 
   return domains.length > 0 ? domains : [...fallback]
 }
 
+/** Parse une liste env et la réordonne (tests pinés en bas). */
+export function parseAccessDomainList(raw: string | undefined): Domain[] {
+  return orderDomains(parseDomainList(raw, []))
+}
+
 /**
- * Domaines FULL / PARTIAL.
- * - **full** : toujours tous les domaines réguliers du catalogue (alphabetisation,
- *   grammaire, acm…), même si `VITE_ACCESS_DOMAINS_FULL` est une ancienne liste
- *   incomplète. Jamais TPF / TCF CSC / TCF CFR / TPM / TCM CSC / TCM CFR.
- * - **partial** : liste env (défaut algèbre + géométrie) ; admin-only filtrés.
+ * Domaines FULL / PARTIAL d’après l’env (source de vérité).
+ * - **full** : `VITE_ACCESS_DOMAINS_FULL` (TCF / TCM autorisés s’ils y figurent).
+ *   Liste vide ou absente → domaines réguliers seulement.
+ * - **partial** : `VITE_ACCESS_DOMAINS_PARTIAL` (défaut algèbre + géométrie).
  */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   if (account === 'full') {
-    return [...REGULAR_DOMAIN_IDS]
+    const fromEnv = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [])
+    return fromEnv.length > 0 ? fromEnv : [...REGULAR_DOMAIN_IDS]
   }
-  const list = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
+  return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
     'algèbre',
     'géométrie',
   ])
-  return list.filter((d) => !ADMIN_ONLY_DOMAINS.includes(d))
 }
 
 /**
@@ -195,6 +199,5 @@ export function domainsForAccount(account: AccessAccount | null): Domain[] {
 }
 
 export function accountCanAccessDomain(account: AccessAccount | null, domain: Domain): boolean {
-  if (ADMIN_ONLY_DOMAINS.includes(domain) && account !== 'admin') return false
   return domainsForAccount(account).includes(domain)
 }

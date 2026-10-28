@@ -6,7 +6,7 @@ interface ImportMetaEnv {
   readonly VITE_ACCESS_PARTIAL?: string
   /** Domaines du compte admin (peut inclure tpm). */
   readonly VITE_ACCESS_DOMAINS_ADMIN?: string
-  /** Liste de domaines séparés par des virgules (ex. français,algèbre,géométrie,…). */
+  /** Liste de domaines FULL (virgules). Peut inclure tcf-csc, tcf-cfr, tcm-csc, tcm-cfr. */
   readonly VITE_ACCESS_DOMAINS_FULL?: string
   /** Liste de domaines séparés par des virgules (ex. algèbre,géométrie). */
   readonly VITE_ACCESS_DOMAINS_PARTIAL?: string
