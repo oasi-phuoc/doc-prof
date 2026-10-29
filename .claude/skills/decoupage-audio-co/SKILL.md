@@ -19,7 +19,8 @@ Ce skill = **coupe + banque multi-pistes**.
 
 ## Règles non négociables
 
-1. **1 piste = 1 document = 1 écoute** (la 2ᵉ écoute d’examen est abandonnée).
+1. **1 piste = 1 document = 1 écoute** — si l’annonce est jouée deux fois dans
+   le fichier source, **ne garder que la 1ʳᵉ** (ignorer la 2ᵉ écoute).
 2. **Début** = fin du bip + **0,5 s** (pas de bip dans le fichier final).
 3. **Fin** = dernière phrase du document + **1 s**.
 4. **Retirer** intros / consignes orales (« Épreuve blanche… », « Exercice 1… »,

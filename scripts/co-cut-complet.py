@@ -167,10 +167,21 @@ def cut_mp3(src: Path, dest: Path, start: float, end: float) -> None:
 
 def clean_transcription(text: str) -> str:
     t = text.strip()
+    # Couper tout le blabla avant le corps (Exercice / Document / consignes orales)
+    m = re.search(
+        r"(?:Document\s+\d+\.?\s*)+(?:Lisez[^.]*\.\s*)?(?:Écoutez[^.]*\.\s*)?(?:puis répondez\.?\s*)?",
+        t,
+        flags=re.I,
+    )
+    # Si "Document N" n'est qu'un label en tête, le retirer ; sinon retirer intros répétées
     t = re.sub(r"^(Exercice\s+\d+\.?\s*)+", "", t, flags=re.I)
-    t = re.sub(r"^(Document\s+\d+\.?\s*)+", "", t, flags=re.I)
+    t = re.sub(r"^Lisez les questions\.?\s*", "", t, flags=re.I)
     t = re.sub(r"^Lisez la question\.?\s*", "", t, flags=re.I)
+    t = re.sub(r"^Écoutez l[\'']enregistrement[,.]?\s*puis répondez\.?\s*", "", t, flags=re.I)
     t = re.sub(r"^Écoutez le document[,.]?\s*puis répondez\.?\s*", "", t, flags=re.I)
+    t = re.sub(r"^Vous (?:allez )?écouter[^.]*\.\s*", "", t, flags=re.I)
+    t = re.sub(r"^Répondez aux questions\.?\s*", "", t, flags=re.I)
+    t = re.sub(r"^(Document\s+\d+\.?\s*)+", "", t, flags=re.I)
     return t.strip()
 
 def document_nums(ex: dict) -> list[int]:
