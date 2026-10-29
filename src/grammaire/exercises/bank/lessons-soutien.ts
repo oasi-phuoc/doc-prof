@@ -4,7 +4,7 @@ import type { GramLesson } from '../types'
 
 export const GRAM_LESSONS_SOUTIEN: GramLesson[] = [
   lesson(
-    "a7",
+    "a8",
     'fill-conj',
     "Compléter la phrase",
     "Complétez la phrase avec la forme qui convient.",
@@ -57,7 +57,7 @@ export const GRAM_LESSONS_SOUTIEN: GramLesson[] = [
     ],
   ),
   lesson(
-    "a7",
+    "a8",
     'qcm-verbe',
     "Choisir la bonne forme",
     "Choisissez la bonne réponse.",
@@ -110,7 +110,7 @@ export const GRAM_LESSONS_SOUTIEN: GramLesson[] = [
     ],
   ),
   lesson(
-    "a7",
+    "a8",
     'ordre',
     "Remettre les mots dans l’ordre",
     "Remettez les mots dans l’ordre.",
@@ -148,7 +148,7 @@ export const GRAM_LESSONS_SOUTIEN: GramLesson[] = [
     ],
   ),
   lesson(
-    "a7",
+    "a8",
     'associer',
     "Associer",
     "Associez chaque élément à la réponse qui convient.",
@@ -161,7 +161,7 @@ export const GRAM_LESSONS_SOUTIEN: GramLesson[] = [
     ],
   ),
   lesson(
-    "a7",
+    "a8",
     'ecrire',
     "Écrire une phrase",
     "Écrivez une phrase avec le verbe et le mot proposés.",

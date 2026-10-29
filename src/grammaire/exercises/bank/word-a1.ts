@@ -96,7 +96,7 @@ export const GRAM_LESSONS_WORD_A1: GramLesson[] = [
     fill("Shreya — Non, samedi après-midi, je ___ cours de yoga, mais je", "a"),
     fill("___ libre le soir.", "est"),
   ]),
-  lesson("a7", "qcm-conj", "Barrez la forme incorrecte et souligner la forme correcte.", "Barrez la forme incorrecte et souligner la forme correcte.", [
+  lesson("a8", "qcm-conj", "Barrez la forme incorrecte et souligner la forme correcte.", "Barrez la forme incorrecte et souligner la forme correcte.", [
     qcm("Martin ne est pas / n’est pas anglais, il est allemand.", "n’est pas anglais, il est allemand.", ["Martin ne est pas", "n’est pas anglais, il est allemand.", "Martin ne est pas"]),
     qcm("Amy et Michael ne sont pas / ne sont canadiens, ils sont américains.", "Amy et Michael ne sont pas", ["Amy et Michael ne sont pas", "ne sont canadiens, ils sont américains.", "ne sont canadiens, ils sont américains."]),
     qcm("J’ai ne pas / Je n’ai pas cours le vendredi.", "Je n’ai pas cours le vendredi.", ["J’ai ne pas", "Je n’ai pas cours le vendredi.", "J’ai ne pas"]),
@@ -106,7 +106,7 @@ export const GRAM_LESSONS_WORD_A1: GramLesson[] = [
     qcm("Marta et Elif ne ont pas / n’ont pas cours l’après-midi.", "n’ont pas cours l’après-midi.", ["Marta et Elif ne ont pas", "n’ont pas cours l’après-midi.", "Marta et Elif ne ont pas"]),
     qcm("Vous ne avez pas / n’avez pas cours le jeudi matin.", "n’avez pas cours le jeudi matin.", ["Vous ne avez pas", "n’avez pas cours le jeudi matin.", "Vous ne avez pas"]),
   ]),
-  lesson("a7", "negatif", "Répondez aux questions à la forme négative.", "Répondez aux questions à la forme négative.", [
+  lesson("a8", "negatif", "Répondez aux questions à la forme négative.", "Répondez aux questions à la forme négative.", [
     fill("Il est français ?", "Il n’est pas français ."),
     fill("Non, il ___ français.", "…"),
     fill("Tu es libre le samedi ?", "Non, je ne suis pas libre le samedi ."),

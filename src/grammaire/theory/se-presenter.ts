@@ -275,52 +275,6 @@ export const sePresenterDocs: GrammaireTheoryDoc[] = [
     ],
   },
   {
-    id: 'a7',
-    typeId: 'gram-a7-theorie',
-    index: 7,
-    title: 'Dire son âge',
-    topic: 'gram-se-presenter',
-    public: 'pré-A1 / A1',
-    objectif: 'Dire mon âge avec avoir + ans.',
-    blocks: [
-    { kind: 'heading', text: 'Dire son âge' },
-    { kind: 'paragraph', text: 'Je dis mon âge avec le verbe avoir.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['{tab:1>}Quel {c}âge{/c} as-tu ? | J’ai {c}25 ans{/a}.'] },
-      ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'En français, j’utilise {c}avoir{/c} + nombre + an(s).' },
-        { kind: 'attention', text: 'Je ne dis pas « je suis 25 ans ».' },
-      ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'Je dis mon âge avec le verbe {c}avoir{/c} + {c}nombre{/c} + {c}an(s){/c}.' },
-        { kind: 'table', colHeader: true, rowHeader: true,
-          headers: ['Personne', 'Forme', 'Exemple'],
-          rows: [
-            ['je', '{c}ai{/c}', 'J’{c}ai{/c} 15 ans.'],
-            ['tu', '{c}as{/c}', 'Tu {c}as{/c} 12 ans.'],
-            ['il / elle / on', '{c}a{/c}', 'Elle {c}a{/c} 45 ans.'],
-            ['nous', '{c}avons{/c}', 'Nous {c}avons{/c} 27 ans.'],
-            ['vous', '{c}avez{/c}', 'Vous {c}avez{/c} 50 ans.'],
-            ['ils / elles', '{c}ont{/c}', 'Ils {c}ont{/c} 20 ans.']
-          ] },
-        { kind: 'astuce', text: 'Un an → an. Plusieurs années → an{c}s{/c}.' },
-      ],
-    },
-    ],
-  },
-  {
     id: 'famille',
     typeId: 'gram-famille-theorie',
     index: 10,

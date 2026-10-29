@@ -40,7 +40,7 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
     ],
   ),
 
-  lesson('a7', 'qcm-conj', 'Barrer la forme incorrecte', 'Choisissez la forme correcte (élision de ne).', [
+  lesson('a8', 'qcm-conj', 'Barrer la forme incorrecte', 'Choisissez la forme correcte (élision de ne).', [
     qcm('Martin ___ anglais, il est allemand.', 'n’est pas', ['n’est pas', 'ne est pas', 'ne sont pas']),
     qcm('Amy et Michael ___ canadiens, ils sont américains.', 'ne sont pas', ['ne sont pas', 'ne sont', 'n’est pas']),
     qcm('___ cours le vendredi.', 'Je n’ai pas', ['Je n’ai pas', 'J’ai ne pas', 'Je ne ai pas']),
@@ -50,7 +50,7 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
     qcm('Marta et Elif ___ cours l’après-midi.', 'n’ont pas', ['n’ont pas', 'ne ont pas', 'n’a pas']),
     qcm('Vous ___ cours le jeudi matin.', 'n’avez pas', ['n’avez pas', 'ne avez pas', 'n’a pas']),
   ]),
-  lesson('a7', 'negatif', 'Répondre à la forme négative', 'Répondez aux questions à la forme négative.', [
+  lesson('a8', 'negatif', 'Répondre à la forme négative', 'Répondez aux questions à la forme négative.', [
     fill('Il est français ?', 'Non, il n’est pas français.'),
     fill('Tu es libre le samedi ?', 'Non, je ne suis pas libre le samedi.'),
     fill('Vous êtes étudiants ?', 'Non, nous ne sommes pas étudiants.'),
@@ -59,7 +59,7 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
     fill('Tu t’appelles Zoe ?', 'Non, je ne m’appelle pas Zoe, je m’appelle Elena.'),
   ]),
   lesson(
-    'a7',
+    'a8',
     'fill-conj',
     'Conjuguer à la forme négative',
     'Conjuguez les verbes à la forme négative. Attention à l’élision.',
@@ -76,7 +76,7 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
       fill('Tilda — Il ___ (ne pas être) suédois, il est allemand.', 'n’est pas'),
     ],
   ),
-  lesson('a7', 'affirmatif', 'Enlever ne … pas', 'Mettez la phrase à la forme affirmative.', [
+  lesson('a8', 'affirmatif', 'Enlever ne … pas', 'Mettez la phrase à la forme affirmative.', [
     fill('Elle n’est pas française.', 'Elle est française.'),
     fill('Il n’est pas québécois.', 'Il est québécois.'),
     fill('Je n’ai pas cours le matin.', 'J’ai cours le matin.'),

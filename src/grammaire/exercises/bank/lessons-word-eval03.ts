@@ -200,7 +200,7 @@ export const GRAM_LESSONS_WORD_EVAL03: GramLesson[] = [
     ],
   ),
   lesson(
-    'a7',
+    'a8',
     'negatif',
     'Répondre à la forme négative',
     'Écoutez s’il y a un enregistrement, puis répondez.',
@@ -216,7 +216,7 @@ export const GRAM_LESSONS_WORD_EVAL03: GramLesson[] = [
     ],
   ),
   lesson(
-    'a7',
+    'a8',
     'qcm-verbe',
     'Choisir d’après l’écoute',
     'Écoutez, puis choisissez la bonne réponse.',

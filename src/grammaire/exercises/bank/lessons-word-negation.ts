@@ -4,7 +4,7 @@ import type { GramLesson } from '../types'
 
 export const GRAM_LESSONS_WORD_NEGATION: GramLesson[] = [
   lesson(
-    'a7',
+    'a8',
     'fill-conj',
     'Conjuguer à la forme négative',
     'Complétez avec être ou avoir à la forme négative. Attention à de / d’.',
@@ -21,7 +21,7 @@ export const GRAM_LESSONS_WORD_NEGATION: GramLesson[] = [
     ],
   ),
   lesson(
-    'a7',
+    'a8',
     'negatif',
     'Répondre à la forme négative',
     'Mettez la phrase à la forme négative, ou répondez par non.',
@@ -43,7 +43,7 @@ export const GRAM_LESSONS_WORD_NEGATION: GramLesson[] = [
     ],
   ),
   lesson(
-    'a7',
+    'a8',
     'ordre',
     'Remettre la négation dans l’ordre',
     'Remettez les mots dans l’ordre.',
