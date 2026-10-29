@@ -317,7 +317,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
             ))}
           </ul>
           {s.images.length > 1 ? (
-            <ol className="tcf-timeline">
+            <ol className={`tcf-timeline${mode === 'answers' ? ' is-compact' : ''}`}>
               {s.images.map((src, i) => (
                 <li key={i} className="tcf-timeline-step">
                   <span className="tcf-timeline-num">{i + 1}</span>

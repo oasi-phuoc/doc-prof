@@ -4293,7 +4293,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-grille th,.tcf-grille td{border:1px solid var(--ink);padding:4px 10px;text-align:left}
 .tcf-grille th{font-weight:600}
 .tcf-grille-points{width:32%;text-align:center!important;font-weight:700}
-.tcf-po-questions{margin:0 0 50px;padding-left:1.2em;font-weight:600}
+.tcf-po-questions{margin:0 0 8px;padding-left:1.2em;font-weight:600}
 .tcf-po-images{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .tcf-po-images .tcf-image{height:24mm}
 .tcf-trois-themes{
@@ -4326,15 +4326,21 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   display:flex;flex-direction:column;justify-content:space-between
 }
 .tcf-entretien-dialogue p{margin:0 0 1mm}
-/* PO : 4 scènes, 50 px entre chaque image. */
-.tcf-timeline{list-style:none;margin:50px 0 6px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:50px}
-.tcf-timeline-step{position:relative}
-.tcf-timeline-step:nth-child(2){margin-top:50px}
-.tcf-timeline-step:nth-child(3){margin-top:100px}
-.tcf-timeline-step:nth-child(4){margin-top:150px}
-.tcf-po .tcf-image.is-large{margin-top:50px}
-.tcf-timeline-step .tcf-image{height:42mm;width:100%;object-fit:cover;border:1px solid var(--ink)}
-.tcf-timeline.is-compact .tcf-timeline-step .tcf-image{height:28mm}
+/* PO : 4 scènes en grille 2×2 — pas de décalage vertical (sinon coupe sous l’A4 en corrigé). */
+.tcf-timeline{
+  list-style:none;margin:6px 0;padding:0;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px 10px;flex:0 0 auto
+}
+.tcf-timeline-step{position:relative;min-width:0}
+.tcf-po .tcf-image.is-large{margin-top:8px}
+.tcf-timeline-step .tcf-image{
+  height:48mm;width:100%;object-fit:contain;object-position:center;
+  border:1px solid var(--ink);background:#fff
+}
+/* Corrigé : place pour le modèle de description sous les 4 images. */
+.tcf-timeline.is-compact .tcf-timeline-step .tcf-image{height:36mm}
+.tcf-po:has(.tcf-modele) .tcf-timeline .tcf-image{height:36mm}
 .tcf-timeline-num{position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;background:#fff;border:1.5px solid var(--purple);color:var(--purple);display:grid;place-items:center;font-weight:800;font-size:calc(10pt * var(--app-font-scale, 1))}
 /* PE : échange de messages (bulles), cadre téléphone, e-mail à écrire */
 .tcf-chat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
