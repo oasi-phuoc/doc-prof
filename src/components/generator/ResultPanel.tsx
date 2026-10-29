@@ -1,4 +1,5 @@
 import type { RefObject } from 'react'
+import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
 import { WorksheetSheet } from '@/components/generator/WorksheetSheet'
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
@@ -328,8 +329,7 @@ export function ResultPanel({
                   {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
                     <div className="sheet-stage is-jeux-stack">
                       {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
-                        <div
-                          className="a4-frame"
+                        <A4Frame
                           key={`jeux-prev-${sheet.exerciseType}-${seed}-${index}`}
                           ref={stackIdx === 0 ? previewFrameRef : undefined}
                         >
@@ -340,12 +340,12 @@ export function ResultPanel({
                             total={previewWorksheets.length}
                             {...sheetProps}
                           />
-                        </div>
+                        </A4Frame>
                       ))}
                     </div>
                   ) : (
                   <div className="sheet-stage">
-                    <div className="a4-frame" ref={previewFrameRef}>
+                    <A4Frame ref={previewFrameRef}>
                       <WorksheetSheet
                         key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
                         page={previewSheet!}
@@ -379,12 +379,12 @@ export function ResultPanel({
                         }
                         {...sheetProps}
                       />
-                    </div>
+                    </A4Frame>
                     {sheetProps.mode === 'answers'
                       ? imageInteractionsOf(previewSheet).map((exercise) => (
-                          <div className="a4-frame" key={`po-interaction-${exercise.id}`}>
+                          <A4Frame key={`po-interaction-${exercise.id}`}>
                             <InteractionCorrigeSheet exercise={exercise} />
-                          </div>
+                          </A4Frame>
                         ))
                       : null}
                   </div>
