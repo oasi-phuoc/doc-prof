@@ -22,6 +22,10 @@ import {
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 import { QUI_SUIS_JE_DEFAULT_COUNT, isQuiSuisJeKind } from '@/grammaire/exercises/qui-suis-je'
+import {
+  NATIONALITE_DEFAULT_COUNT,
+  isNationaliteKind,
+} from '@/grammaire/exercises/nationalite'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -76,7 +80,9 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   const quiSuisJeCount =
     gramParsed && gramParsed.subId === 'a1' && isQuiSuisJeKind(gramParsed.kindId)
       ? QUI_SUIS_JE_DEFAULT_COUNT[gramParsed.kindId]
-      : undefined
+      : gramParsed && gramParsed.subId === 'a3' && isNationaliteKind(gramParsed.kindId)
+        ? NATIONALITE_DEFAULT_COUNT[gramParsed.kindId]
+        : undefined
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
   const isVocabLearn = isVocabLearnType(type.id)
   const isVocabPool = isVocabPoolType(type.id)
@@ -164,6 +170,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     topic: type.topic,
     track: type.track,
     columns: type.preferredColumns ?? 2,
+    libreItems: undefined,
+    libreInstruction: undefined,
     ...(isDecompose
       ? { count: 6, columns: 1 }
       : isOpTable

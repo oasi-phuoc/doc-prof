@@ -20,6 +20,7 @@ import { GRAM_LESSONS_WORD_A2 } from './word-a2'
 const CURATED_SUB_IDS = new Set([
   'a1',
   'a2',
+  'a3',
   'a6',
   'a7',
   'famille',

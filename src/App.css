@@ -1954,6 +1954,9 @@ html,body,#root{
 .exercise-heading-title-row{
   display:flex;align-items:flex-end;justify-content:flex-start;gap:8px;flex-wrap:wrap
 }
+.exercise-heading-audio{
+  width:min(220px,100%);height:28px;margin:0 0 2px;flex:0 1 auto
+}
 .exercise-heading h3{margin:0;font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em;color:var(--ink)}
 .exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify}
 /* Refresh en bas à droite du titre « Exercice N » (aperçu seulement). */
@@ -4122,19 +4125,31 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-audio-list .tcf-audio-qr{width:16mm;height:16mm}
 .tcf-question{display:flex;flex-direction:column;gap:6px;margin-top:4px}
 .tcf-enonce{margin:0;font-weight:600}
-.tcf-enonce-text{white-space:pre-wrap}
 .tcf-verbe-theme{color:var(--purple);font-weight:700}
-/* 2e forme d’écriture : trait 50 px dans la phrase à la place de ___ / _ _ _. */
+/* Trait dans la phrase : ≥200 px, s’étend jusqu’à la marge quand la ligne le permet. */
+.tcf-enonce-text{
+  display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:0 .12em;
+  flex:1;min-width:0;width:100%;white-space:pre-wrap
+}
 .answer-line-field.tcf-blank-inline{
-  display:inline-block;width:50px;min-width:50px;max-width:100%;
-  min-height:1.05em;height:1.05em;margin:0 .18em;padding:0 2px 1px;
-  vertical-align:baseline;text-align:center;line-height:1.05em;font-weight:600
+  display:inline-block;flex:1 1 200px;width:auto;min-width:200px;max-width:100%;
+  min-height:1.05em;height:1.05em;margin:0;padding:0 2px 1px;
+  vertical-align:baseline;text-align:left;line-height:1.05em;font-weight:600
 }
 .answer-line-field.tcf-blank-inline.filled{
-  width:auto;min-width:50px;height:auto;color:var(--purple);white-space:nowrap
+  flex:0 1 auto;width:auto;min-width:200px;height:auto;color:var(--purple);white-space:nowrap
+}
+.tcf-blank-dots{
+  display:inline;margin:0 .12em;font-weight:700;letter-spacing:.05em;color:var(--ink)
 }
 .exercise-item.layout-tcf:not(:has(.item-content > *)){display:none;padding:0;margin:0;min-height:0;border:0}
-.tcf-num{margin-right:6px}
+.tcf-num{margin-right:6px;font-weight:700;color:var(--purple)}
+.tcf-question.tcf-q-beside{flex-direction:row;align-items:flex-start;gap:10px;width:100%}
+.tcf-q-beside-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.tcf-image.is-beside{
+  flex:0 0 auto;width:28mm;height:22mm;object-fit:cover;object-position:center top;
+  border:1px solid var(--ink);display:block
+}
 .tcf-audio-tag{display:inline-block;margin-right:6px;padding:0 6px;border:1px solid var(--ink);border-radius:4px;font-size:.8em;font-weight:700}
 .tcf-qcm-texte{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .tcf-qcm-texte li{display:flex;align-items:center;gap:8px}
@@ -4165,7 +4180,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-pe-images{list-style:none;margin:0;padding:0;display:flex;gap:4mm;width:100%}
 .tcf-pe-images li{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:1mm}
 .tcf-pe-images .tcf-image{width:100%;height:28mm}
-.tcf-pe-image-num{font-weight:800}
+.tcf-pe-image-num{font-weight:800;color:var(--purple)}
 .tcf-portrait-card{
   display:grid;grid-template-columns:42mm minmax(0,1fr);gap:0;width:100%;
   max-width:95mm;margin:0 auto;border:1.5px solid var(--ink);overflow:hidden
@@ -4186,25 +4201,29 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-consigne-supp{margin:0;padding:6px 10px;border-left:3px solid var(--purple);font-size:.9em;font-style:italic}
 .tcf-ecriture.is-fill .tcf-consigne-supp{margin:0 0 30px}
 .tcf-compteur{margin:2px 0 0;font-size:.85em;flex:0 0 auto}
-.tcf-formulaire{display:flex;flex-direction:column;gap:14px;border:1.5px solid var(--ink);padding:10px 12px}
+.tcf-formulaire{display:flex;flex-direction:column;gap:10px;border:1.5px solid var(--ink);padding:10px 12px;overflow:hidden;box-sizing:border-box}
 .tcf-formulaire-title{margin:0 0 4px;font-weight:800;text-align:center}
-.tcf-champ{display:flex;align-items:flex-end;gap:10px}
-.tcf-champ-label{flex:0 0 38%;font-weight:600}
-.tcf-champ-line{flex:1;min-height:7mm}
+.tcf-champ{display:flex;align-items:flex-end;gap:8px;width:100%;min-width:0;box-sizing:border-box}
+.tcf-champ-label{flex:0 1 auto;max-width:34%;font-weight:600;white-space:nowrap}
+.tcf-champ-line{flex:1;min-width:0;min-height:7mm}
 .tcf-champ-line.is-date{
   flex:0 0 auto;width:auto;max-width:100%;min-width:0;border-bottom:0;
   display:inline-flex;align-items:flex-end;gap:3px;justify-content:flex-start
 }
 .tcf-champ-date-sep{flex:0 0 auto;padding:0 1px;font-weight:700;line-height:7mm}
-.tcf-champ-boxes{display:inline-flex;flex-wrap:wrap;gap:2px;align-items:center;flex:0 0 auto}
+.tcf-champ-boxes{
+  display:grid;grid-template-columns:repeat(18,minmax(0,1fr));gap:2px;
+  width:100%;min-width:0;box-sizing:border-box
+}
+.tcf-champ-line.is-multi .tcf-champ-boxes{grid-template-rows:repeat(2,7mm)}
 .tcf-champ-box{
   display:inline-flex;align-items:center;justify-content:center;
-  width:5.5mm;height:7mm;border:1.2px solid var(--ink);box-sizing:border-box;
-  font-weight:700;color:var(--purple);line-height:1;flex:0 0 auto
+  width:auto;min-width:0;height:7mm;border:1.2px solid var(--ink);box-sizing:border-box;
+  font-weight:700;color:var(--purple);line-height:1
 }
 .tcf-champ-line.is-boxes{
-  flex:1;border-bottom:0;display:flex;flex-wrap:wrap;gap:2px;align-items:center;
-  width:auto;min-width:0
+  flex:1 1 auto;border-bottom:0;display:flex;align-items:center;
+  width:auto;min-width:0;max-width:100%;overflow:hidden
 }
 .tcf-champ-options{display:flex;flex-wrap:wrap;gap:6px 16px}
 .tcf-champ-option{display:inline-flex;align-items:center;gap:6px}
@@ -4235,8 +4254,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-modele ul{margin:4px 0 0;padding-left:1.2em}
 .tcf-vide{margin:0;padding:10px;border:1px dashed var(--muted);color:var(--muted)}
 .tcf-text,.tcf-consigne-supp,.tcf-lignes-modele{white-space:pre-line}
-.tcf-enonce{display:flex;align-items:baseline;gap:0}
-.tcf-enonce-text{flex:1;min-width:0}
+.tcf-enonce{display:flex;align-items:baseline;gap:0;width:100%}
 .tcf-pts{flex:0 0 auto;margin-left:12px;font-weight:700;white-space:nowrap}
 .worksheet-sheet:not(.is-eval) .tcf-pts{display:none}
 .tcf-image.is-question{height:auto;max-height:72mm}
@@ -4297,7 +4315,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-po .tcf-image.is-large{margin-top:50px}
 .tcf-timeline-step .tcf-image{height:42mm;width:100%;object-fit:cover;border:1px solid var(--ink)}
 .tcf-timeline.is-compact .tcf-timeline-step .tcf-image{height:28mm}
-.tcf-timeline-num{position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:grid;place-items:center;font-weight:800;font-size:calc(10pt * var(--app-font-scale, 1))}
+.tcf-timeline-num{position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;background:#fff;border:1.5px solid var(--purple);color:var(--purple);display:grid;place-items:center;font-weight:800;font-size:calc(10pt * var(--app-font-scale, 1))}
 /* PE : échange de messages (bulles), cadre téléphone, e-mail à écrire */
 .tcf-chat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .tcf-chat-row{display:flex;flex-direction:column;max-width:72%}

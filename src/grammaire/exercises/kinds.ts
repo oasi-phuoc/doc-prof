@@ -148,6 +148,41 @@ export const GRAM_EXERCISE_KINDS = [
     instruction: 'Observez les images. Décrivez les images.',
     layout: 'write' as const,
   },
+  {
+    id: 'nat-image',
+    label: 'Je suis… (avec image)',
+    description: 'Image de nationalité à gauche, phrase « Je suis ___ » à droite. QCM ou texte.',
+    instruction: 'Observez l’image. Complétez la phrase.',
+    layout: 'qcm' as const,
+  },
+  {
+    id: 'nat-feminin',
+    label: 'Mettre au féminin',
+    description: 'Réécrire la phrase avec l’adjectif de nationalité au féminin.',
+    instruction: 'Mettez la phrase au féminin.',
+    layout: 'fill' as const,
+  },
+  {
+    id: 'nat-masculin',
+    label: 'Mettre au masculin',
+    description: 'Réécrire la phrase avec l’adjectif de nationalité au masculin.',
+    instruction: 'Mettez la phrase au masculin.',
+    layout: 'fill' as const,
+  },
+  {
+    id: 'nat-pluriel',
+    label: 'Mettre au pluriel',
+    description: 'Réécrire la phrase avec l’adjectif de nationalité au pluriel.',
+    instruction: 'Mettez la phrase au pluriel.',
+    layout: 'fill' as const,
+  },
+  {
+    id: 'nat-accorder',
+    label: 'Accorder l’adjectif',
+    description: 'Choisir la forme correcte selon le pronom (masculin, féminin ou pluriel).',
+    instruction: 'Accordez l’adjectif de nationalité correctement.',
+    layout: 'qcm' as const,
+  },
 ] as const
 
 export type GramExerciseKindId = (typeof GRAM_EXERCISE_KINDS)[number]['id']
