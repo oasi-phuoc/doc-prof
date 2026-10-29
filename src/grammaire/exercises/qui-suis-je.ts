@@ -1,5 +1,7 @@
 /** Exercices A1 « Qui suis-je ? » — tirage déterministe, rendu TCF. */
 import { int, pick, shuffle, type Rng } from '@/math/rng'
+import type { MathItem } from '@/math/types'
+import { joinPhrase, tagged } from '@/francais/phrase-sentences'
 import { tcfBank } from '@/tcf/loader'
 import type {
   TcfExercise,
@@ -21,14 +23,11 @@ const CHOICE_IDS = ['a', 'b', 'c'] as const
 
 export const QUI_SUIS_JE_KIND_IDS = [
   'infos-perso',
-  'infos-perso-qcm',
   'verbe-pastilles',
-  'verbe-pastilles-qcm',
-  'mots-melanges',
+  'ordre',
   'repondre-phrase',
   'ecrire-question',
   'formulaire',
-  'ordre',
   'co-audio',
   'ce-texte',
   'portrait',
@@ -43,14 +42,11 @@ export function isQuiSuisJeKind(kindId: string): kindId is QuiSuisJeKindId {
 
 export const QUI_SUIS_JE_DEFAULT_COUNT: Record<QuiSuisJeKindId, number> = {
   'infos-perso': 7,
-  'infos-perso-qcm': 7,
   'verbe-pastilles': 7,
-  'verbe-pastilles-qcm': 7,
-  'mots-melanges': 8,
+  ordre: 6,
   'repondre-phrase': 7,
   'ecrire-question': 7,
   formulaire: 1,
-  ordre: 6,
   'co-audio': 5,
   'ce-texte': 5,
   portrait: 1,
@@ -60,13 +56,9 @@ export const QUI_SUIS_JE_DEFAULT_COUNT: Record<QuiSuisJeKindId, number> = {
 export function quiSuisJeBankCap(kindId: QuiSuisJeKindId): number {
   switch (kindId) {
     case 'infos-perso':
-    case 'infos-perso-qcm':
       return INFO_SLOTS.length
     case 'verbe-pastilles':
-    case 'verbe-pastilles-qcm':
       return VERBE_SLOTS.length
-    case 'mots-melanges':
-      return MOTS_SETS.reduce((n, set) => n + set.items.length, 0)
     case 'repondre-phrase':
       return QUESTIONS_IDENTITE.length
     case 'ecrire-question':
@@ -138,7 +130,7 @@ const INFO_SLOTS = [
     options: ['suisse', 'portugais', 'italienne'],
   },
   {
-    prompt: 'J’ai ___ ans (âge).',
+    prompt: 'J’ai ___ (âge) ans.',
     hint: 'âge',
     answer: '(votre âge)',
     options: ['19 ans', '24 ans', '31 ans'],
@@ -198,60 +190,21 @@ const QUESTIONS_IDENTITE = [
 ]
 
 const ORDRE_PHRASES = [
-  'Je m’appelle Nina.',
-  'J’ai vingt ans.',
-  'Je suis belge.',
-  'Je viens de Belgique.',
-  'J’habite à Martigny.',
-  'Je parle français.',
-  'Elle s’appelle Fatima.',
-  'Il est syrien.',
-  'Nous habitons à Sion.',
-  'Vous êtes professeure.',
-  'Ils parlent arabe.',
-  'Tu t’appelles Léo.',
-]
+  'Je/pronom m’appelle/verbe Nina/nom',
+  'J’/pronom ai/verbe vingt/adjectif ans/nom',
+  'Je/pronom suis/verbe belge/adjectif',
+  'Je/pronom viens/verbe de/preposition Belgique/nom',
+  'J’/pronom habite/verbe à/preposition Martigny/nom',
+  'Je/pronom parle/verbe français/nom',
+  'Elle/pronom s’appelle/verbe Fatima/nom',
+  'Il/pronom est/verbe syrien/adjectif',
+  'Nous/pronom habitons/verbe à/preposition Sion/nom',
+  'Vous/pronom êtes/verbe professeure/nom',
+  'Ils/pronom parlent/verbe arabe/nom',
+  'Tu/pronom t’appelles/verbe Léo/nom',
+] as const
 
-type MotSet = { mots: string[]; dialogue?: boolean; items: Array<{ prompt: string; answer: string }> }
 
-const MOTS_SETS: MotSet[] = [
-  {
-    mots: ['25 ans', 'Léo', 'Mon numéro', 'quel âge', 'nationalité', 'm’appelle'],
-    dialogue: true,
-    items: [
-      { prompt: 'Vous avez ___ ?', answer: 'quel âge' },
-      { prompt: 'J’ai ___.', answer: '25 ans' },
-      { prompt: 'Enchanté, moi c’est ___.', answer: 'Léo' },
-      { prompt: 'Quelle est ta ___ ?', answer: 'nationalité' },
-      { prompt: 'Je ___ Nicolas.', answer: 'm’appelle' },
-      { prompt: '___, c’est le 07 14 54 19 30.', answer: 'Mon numéro' },
-    ],
-  },
-  {
-    mots: ['Ali', 'prénom', 'parle', 'Maroc', 'écoute', 'jours', 'pied', 'suis'],
-    items: [
-      { prompt: 'Ali ___ six langues.', answer: 'parle' },
-      { prompt: 'Ali a traversé le Mali à ___.', answer: 'pied' },
-      { prompt: 'J’apprends à écrire mon ___.', answer: 'prénom' },
-      { prompt: 'J’___ de la musique.', answer: 'écoute' },
-      { prompt: 'Vous devez attendre 30 ___.', answer: 'jours' },
-      { prompt: 'Nina vient du ___.', answer: 'Maroc' },
-      { prompt: 'Bonjour, je m’appelle ___.', answer: 'Ali' },
-      { prompt: 'Je ___ né à Paris.', answer: 'suis' },
-    ],
-  },
-  {
-    mots: ['suis', 'habite', 'parle', 'viens', 'm’appelle', 'ai'],
-    items: [
-      { prompt: 'Bonjour, je ___ Sara.', answer: 'm’appelle' },
-      { prompt: 'Je ___ portugaise.', answer: 'suis' },
-      { prompt: 'J’___ 21 ans.', answer: 'ai' },
-      { prompt: 'Je ___ du Portugal.', answer: 'viens' },
-      { prompt: 'Je ___ portugais et un peu français.', answer: 'parle' },
-      { prompt: 'J’___ à Sierre.', answer: 'habite' },
-    ],
-  },
-]
 
 type CoSet = {
   id: string
@@ -693,14 +646,14 @@ function fillQuestion(
   }
 }
 
-function scramble(rng: Rng, phrase: string): { prompt: string; answer: string } {
-  const answer = phrase.trim()
-  const tokens = answer
-    .replace(/([.?!])/g, ' $1')
-    .split(/\s+/)
-    .filter(Boolean)
-  const mixed = shuffle(rng, tokens)
-  return { prompt: mixed.join(' – '), answer }
+function scrambleTagged(rng: Rng, taggedSource: string): {
+  tokens: ReturnType<typeof tagged>
+  answer: string
+} {
+  const ordered = tagged(taggedSource)
+  const answer = joinPhrase(ordered)
+  const mixed = shuffle(rng, ordered.map((token) => ({ ...token })))
+  return { tokens: mixed, answer }
 }
 
 function take<T>(rng: Rng, list: readonly T[], count: number): T[] {
@@ -716,6 +669,33 @@ function wrap(
   return { ...exercise, id: `gram-${typeId}`, consigne }
 }
 
+/** UI des formes de réponse pour Qui suis-je. */
+export type QuiSuisJeFormUi = 'none' | 'margin3' | 'header2'
+
+export function quiSuisJeFormUi(kindId: string): QuiSuisJeFormUi {
+  if (kindId === 'co-audio' || kindId === 'ce-texte') return 'margin3'
+  if (kindId === 'infos-perso' || kindId === 'verbe-pastilles') return 'header2'
+  return 'none'
+}
+
+/** Remettre dans l’ordre — bulles Gattegno (couleurs par nature). */
+export function buildQuiSuisJeOrdreItems(opts: {
+  rng: Rng
+  count: number
+}): MathItem[] {
+  const rows = take(opts.rng, ORDRE_PHRASES, opts.count)
+  return rows.map((source) => {
+    const { tokens, answer } = scrambleTagged(opts.rng, source)
+    return {
+      layout: 'phrase-order' as const,
+      tokens,
+      labels: tagged(source).map((t) => t.text),
+      responseAnswer: answer,
+      answer,
+    }
+  })
+}
+
 export function buildQuiSuisJeExercise(opts: {
   kindId: QuiSuisJeKindId
   typeId: string
@@ -724,9 +704,7 @@ export function buildQuiSuisJeExercise(opts: {
 }): TcfExercise {
   const { kindId, typeId, rng, count } = opts
   switch (kindId) {
-    case 'infos-perso':
-    case 'infos-perso-qcm': {
-      const preferQcm = kindId === 'infos-perso-qcm'
+    case 'infos-perso': {
       const slots = take(rng, INFO_SLOTS, count)
       return wrap(typeId, 'Complétez les phrases avec vos informations personnelles.', {
         id: '',
@@ -735,18 +713,16 @@ export function buildQuiSuisJeExercise(opts: {
         type_exercice: 'complet',
         support: { audio: '', transcription: '' },
         questions: slots.map((slot) =>
-          fillQuestion(slot.prompt, preferQcm ? slot.options[0]! : slot.answer, [...slot.options], preferQcm),
+          fillQuestion(slot.prompt, slot.answer, [...slot.options], false),
         ),
       })
     }
-    case 'verbe-pastilles':
-    case 'verbe-pastilles-qcm': {
-      const preferQcm = kindId === 'verbe-pastilles-qcm'
+    case 'verbe-pastilles': {
       const who = identite(rng)
       const slots = take(rng, VERBE_SLOTS, count)
       const questions = slots.map((slot) => {
         const options = distracteurs(slot.verbe, VERBES_BANQUE, 3, rng)
-        return fillQuestion(slot.prompt(who), slot.verbe, options, preferQcm)
+        return fillQuestion(slot.prompt(who), slot.verbe, options, false)
       })
       return wrap(typeId, 'Complétez les phrases avec le verbe correct.', {
         id: '',
@@ -756,35 +732,6 @@ export function buildQuiSuisJeExercise(opts: {
         mots_banque: shuffle(rng, [...VERBES_BANQUE]),
         support: { audio: '', transcription: '' },
         questions,
-      })
-    }
-    case 'mots-melanges': {
-      const set = pick(rng, MOTS_SETS)
-      const items = take(rng, set.items, Math.min(count, set.items.length))
-      if (set.dialogue) {
-        const enonce = set.items.map((item, i) => `${i + 1}. ${item.prompt}`).join('\n')
-        const answer = set.items.map((item) => item.answer).join(' / ')
-        return wrap(typeId, 'Complétez le dialogue avec les mots proposés.', {
-          id: '',
-          niveau: 'A1-A2',
-          competence: 'CO',
-          type_exercice: 'complet',
-          mots_banque: shuffle(rng, set.mots),
-          support: { audio: '', transcription: '' },
-          questions: [fillQuestion(enonce, answer, undefined, false)],
-        })
-      }
-      return wrap(typeId, 'Complétez avec les mots proposés.', {
-        id: '',
-        niveau: 'A1-A2',
-        competence: 'CO',
-        type_exercice: 'complet',
-        mots_banque: shuffle(rng, set.mots),
-        support: { audio: '', transcription: '' },
-        questions: items.map((item) => {
-          const options = distracteurs(item.answer, set.mots, 3, rng)
-          return fillQuestion(item.prompt, item.answer, options, false)
-        }),
       })
     }
     case 'repondre-phrase': {
@@ -846,14 +793,14 @@ export function buildQuiSuisJeExercise(opts: {
       )
     }
     case 'ordre': {
-      const rows = take(rng, ORDRE_PHRASES, count).map((phrase) => scramble(rng, phrase))
+      // Rendu via buildQuiSuisJeOrdreItems (phrase-order) — pas TCF.
       return wrap(typeId, 'Remettez les mots dans l’ordre pour faire une phrase.', {
         id: '',
         niveau: 'A1-A2',
         competence: 'CO',
         type_exercice: 'complet',
         support: { audio: '', transcription: '' },
-        questions: rows.map((row) => lignes(row.prompt, row.answer, 1)),
+        questions: [],
       })
     }
     case 'co-audio': {
@@ -890,7 +837,7 @@ export function buildQuiSuisJeExercise(opts: {
         `${pron} a ${person.age} ans.`,
         `${pron} a ${ami} ${person.amiNationalite}.`,
       ].join('\n')
-      return wrap(typeId, 'Présentez la personne comme dans l’exemple.', {
+      return wrap(typeId, 'Présentez la personne avec les informations suivantes :', {
         id: '',
         niveau: 'A1-A2',
         competence: 'PE',
@@ -915,7 +862,7 @@ export function buildQuiSuisJeExercise(opts: {
       })
     }
     case 'po-images':
-      return wrap(typeId, 'Observez les images. Présentez-vous comme dans l’exemple.', {
+      return wrap(typeId, 'Observez les images. Décrivez les images.', {
         id: '',
         niveau: 'A1-A2',
         competence: 'PO',

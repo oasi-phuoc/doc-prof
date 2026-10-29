@@ -36,6 +36,7 @@ export type QuestionsColumnsFieldsProps = {
   isVocabPool: boolean
   isGramTheory: boolean
   isGrammaireDomain: boolean
+  isGrammaireExercise: boolean
   isLogique: boolean
   isJeuxDomain: boolean
   isCalliDomain: boolean
@@ -80,6 +81,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     isVocabPool,
     isGramTheory,
     isGrammaireDomain,
+    isGrammaireExercise,
     isLogique,
     isJeuxDomain,
     isCalliDomain,
@@ -452,6 +454,23 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         key={value}
                         type="button"
                         className={(activeBlock.columns ?? 4) === value ? 'active' : ''}
+                        onClick={() => updatePage({ columns: value })}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+              {isGrammaireExercise && !isGramTheory ? (
+                <div className="mode-toggle-block">
+                  <b>Colonnes</b>
+                  <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
+                    {[1, 2].map((value) => (
+                      <button
+                        key={value}
+                        type="button"
+                        className={(activeBlock.columns ?? 1) === value ? 'active' : ''}
                         onClick={() => updatePage({ columns: value })}
                       >
                         {value}

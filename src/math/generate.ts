@@ -387,6 +387,7 @@ export function buildPage(
       givens: libreGivens ?? result.givens,
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
+      formulaireLetterGrid: block.formulaireLetterGrid,
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,
       tcfPageBreakAfter: block.tcfPageBreakAfter,

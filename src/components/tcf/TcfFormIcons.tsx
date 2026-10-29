@@ -72,25 +72,31 @@ const FORM_ICONS: Record<TcfTypeReponse, () => ReactElement> = {
 const ALL_FORMS = ['qcm_texte', 'qcm_image', 'lignes'] as const
 
 /**
- * Icônes Texte / Image / Phrase — marge gauche, colonne verticale (aperçu).
- * Les 3 sont toujours visibles ; seules les formes remplies sont cliquables.
+ * Icônes Texte / Image / Phrase — marge gauche, colonne verticale (aperçu),
+ * ou rangée horizontale (titre d’exercice).
+ * Par défaut les 3 sont visibles ; `forms` peut restreindre (ex. sans image).
+ * Seules les formes remplies sont cliquables.
  */
 export function TcfFormMarginIcons({
   filled,
   active,
   onSelect,
+  forms = ALL_FORMS,
+  layout = 'margin',
 }: {
   filled: readonly TcfTypeReponse[]
   active: TcfTypeReponse
   onSelect: (form: TcfTypeReponse) => void
+  forms?: readonly TcfTypeReponse[]
+  layout?: 'margin' | 'inline'
 }) {
+  const className =
+    layout === 'inline'
+      ? 'no-print tcf-inline-form-icons'
+      : 'no-print draft-grid-chip-margin tcf-margin-form-icons'
   return (
-    <div
-      className="no-print draft-grid-chip-margin tcf-margin-form-icons"
-      role="group"
-      aria-label="Forme de réponse"
-    >
-      {ALL_FORMS.map((form) => {
+    <div className={className} role="group" aria-label="Forme de réponse">
+      {forms.map((form) => {
         const available = filled.includes(form)
         const on = active === form
         const Icon = FORM_ICONS[form]

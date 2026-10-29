@@ -844,6 +844,8 @@ export type ExerciseBlock = {
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
   problemDraftGrids?: boolean[]
+  /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
+  formulaireLetterGrid?: boolean
   /** Modes de réponse par question (compréhension orale) : QCM / texte / images. */
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   /**
@@ -1037,6 +1039,7 @@ export type WorksheetBlock = {
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
+  formulaireLetterGrid?: boolean
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   tcfFormModes?: Array<'qcm_texte' | 'qcm_image' | 'lignes' | undefined>
   tcfPageBreakAfter?: boolean[]

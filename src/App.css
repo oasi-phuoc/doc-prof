@@ -4137,8 +4137,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-qcm-texte li{display:flex;align-items:center;gap:8px}
 .tcf-case{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;border:1.5px solid var(--ink);font-size:.85em;line-height:1;flex:0 0 auto}
 .tcf-case.is-large{width:7mm;height:7mm;font-size:1.1em}
+.tcf-case.is-filled{background:var(--ink);border-color:var(--ink);color:transparent}
 .tcf-lettre{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;font-weight:700;border-radius:50%;flex:0 0 auto}
-.tcf-lettre.is-correct{border:2px solid var(--ink)}
 .tcf-qcm-images{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .tcf-qcm-images.is-4{grid-template-columns:repeat(4,1fr)}
 .tcf-qcm-images li{display:flex;flex-direction:column;align-items:center;gap:4px}
@@ -4151,6 +4151,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-score-note{margin:0;font-size:.85em;color:var(--muted)}
 .tcf-lignes{display:flex;flex-direction:column;gap:2px}
 .tcf-ligne{height:9mm;min-height:9mm}
+.tcf-ligne.is-plain{border-bottom-color:transparent}
+.tcf-ligne.filled.is-plain{color:var(--purple);font-weight:600}
 .tcf-lignes-modele{margin:0;font-weight:600;color:var(--purple)}
 .tcf-question-text{margin:4px 0;font-weight:600}
 .tcf-dialogue>.tcf-question-text{white-space:pre-line}
@@ -4181,14 +4183,23 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-consigne-supp{margin:0;padding:6px 10px;border-left:3px solid var(--purple);font-size:.9em;font-style:italic}
 .tcf-ecriture.is-fill .tcf-consigne-supp{margin:0 0 30px}
 .tcf-compteur{margin:2px 0 0;font-size:.85em;flex:0 0 auto}
-.tcf-formulaire{display:flex;flex-direction:column;gap:8px;border:1.5px solid var(--ink);padding:10px 12px}
+.tcf-formulaire{display:flex;flex-direction:column;gap:14px;border:1.5px solid var(--ink);padding:10px 12px}
 .tcf-formulaire-title{margin:0 0 4px;font-weight:800;text-align:center}
 .tcf-champ{display:flex;align-items:flex-end;gap:10px}
 .tcf-champ-label{flex:0 0 38%;font-weight:600}
 .tcf-champ-line{flex:1;min-height:7mm}
-.tcf-champ-line.is-date{flex:0 0 40mm}
+.tcf-champ-line.is-date{flex:0 0 auto;min-width:58mm;border-bottom:0;display:inline-flex;align-items:flex-end;gap:2px}
+.tcf-champ-date-sep{flex:0 0 auto;padding:0 2px;font-weight:700;line-height:7mm}
+.tcf-champ-boxes{display:inline-flex;flex-wrap:wrap;gap:2px;align-items:center;flex:1}
+.tcf-champ-box{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:5.5mm;height:7mm;border:1.2px solid var(--ink);box-sizing:border-box;
+  font-weight:700;color:var(--purple);line-height:1
+}
 .tcf-champ-options{display:flex;flex-wrap:wrap;gap:6px 16px}
 .tcf-champ-option{display:inline-flex;align-items:center;gap:6px}
+.tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0 0 1px}
+.tcf-inline-form-icons .tcf-form-icon-btn{width:22px;height:22px}
 .tcf-dialogue{display:flex;flex-direction:column;gap:6px}
 .tcf-dialogue.is-fill{flex:1 1 auto;min-height:0}
 .tcf-dialogue.is-chat .tcf-chat{flex:1 1 auto;min-height:0}

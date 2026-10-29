@@ -14,6 +14,7 @@ import { gramItemsToTcfExercise } from './to-tcf'
 import { isGrammaireExerciseType } from './types'
 import {
   buildQuiSuisJeExercise,
+  buildQuiSuisJeOrdreItems,
   isQuiSuisJeKind,
   quiSuisJeBankCap,
 } from './qui-suis-je'
@@ -32,6 +33,13 @@ export function tryGenerateGrammaireExerciseBlock(
 
   const rng = createRng(seed)
   if (parsed.subId === 'a1' && isQuiSuisJeKind(parsed.kindId) && !config.tcfExercise) {
+    if (parsed.kindId === 'ordre') {
+      return {
+        instruction: kind.instruction,
+        items: buildQuiSuisJeOrdreItems({ rng, count: Math.max(1, config.count) }),
+        bankQuestionCap: quiSuisJeBankCap(parsed.kindId),
+      }
+    }
     const exercise = buildQuiSuisJeExercise({
       kindId: parsed.kindId,
       typeId,

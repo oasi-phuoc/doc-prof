@@ -99,9 +99,9 @@ function Enonce({
   )
 }
 
-/** Pastille de lettre : entourée au corrigé pour la bonne réponse (lisible en N&B). */
-function Lettre({ lettre, on }: { lettre: string; on: boolean }) {
-  return <span className={`tcf-lettre${on ? ' is-correct' : ''}`}>{lettre}</span>
+/** Pastille de lettre (sans entourage au corrigé — le remplissage est sur `.tcf-case`). */
+function Lettre({ lettre }: { lettre: string }) {
+  return <span className="tcf-lettre">{lettre}</span>
 }
 
 type QuestionHead = {
@@ -127,10 +127,8 @@ export function QuestionQCMTexte({
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
-            <span className="tcf-case" aria-hidden>
-              {show && c.correct ? '✔' : ''}
-            </span>
-            <Lettre lettre={c.lettre} on={show && c.correct} />
+            <span className={`tcf-case${show && c.correct ? ' is-filled' : ''}`} aria-hidden />
+            <Lettre lettre={c.lettre} />
             <span>{c.texte}</span>
           </li>
         ))}
@@ -156,10 +154,8 @@ export function QuestionQCMImage({
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
             <TcfImage src={c.image ?? ''} alt={`Choix ${c.lettre}`} />
             <span className="tcf-qcm-image-foot">
-              <span className="tcf-case" aria-hidden>
-                {show && c.correct ? '✔' : ''}
-              </span>
-              <Lettre lettre={c.lettre} on={show && c.correct} />
+              <span className={`tcf-case${show && c.correct ? ' is-filled' : ''}`} aria-hidden />
+              <Lettre lettre={c.lettre} />
             </span>
           </li>
         ))}
@@ -201,7 +197,7 @@ export function QuestionLignes({
       {inline ? null : nbLignes > 0 ? (
         <LignesReponse nbLignes={nbLignes} texte={show ? reponseModele : undefined} />
       ) : show && reponseModele?.trim() ? (
-        <p className="tcf-lignes-modele">{reponseModele}</p>
+        <LignesReponse nbLignes={1} texte={reponseModele} />
       ) : null}
     </div>
   )
@@ -209,9 +205,19 @@ export function QuestionLignes({
 
 export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: string }) {
   const n = Math.max(1, nbLignes)
+  const answer = texte?.trim()
+  if (answer) {
+    return (
+      <div className="tcf-lignes">
+        <span className="answer-line-field tcf-ligne filled is-plain">{answer}</span>
+        {Array.from({ length: Math.max(0, n - 1) }, (_, i) => (
+          <span key={i} className="answer-line-field tcf-ligne is-plain" aria-hidden />
+        ))}
+      </div>
+    )
+  }
   return (
     <div className="tcf-lignes">
-      {texte?.trim() ? <p className="tcf-lignes-modele">{texte}</p> : null}
       {Array.from({ length: n }, (_, i) => (
         <span key={i} className="answer-line-field tcf-ligne" aria-hidden />
       ))}

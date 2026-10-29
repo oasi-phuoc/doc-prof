@@ -52,18 +52,27 @@ export function TcfItemView({
   item,
   mode,
   tcfFormMode,
+  formulaireLetterGrid,
+  hideMotsBanque,
 }: {
   item: MathItem
   mode: PreviewMode
   tcfFormMode?: TcfTypeReponse
+  formulaireLetterGrid?: boolean
+  hideMotsBanque?: boolean
 }) {
   const raw = item.tcf
   if (!raw) return null
   const tcf = withActiveForm(raw, tcfFormMode)
   const points = item.points
   switch (tcf.kind) {
-    case 'support':
-      return <TexteSupport exercise={tcf.exercise} mode={mode} />
+    case 'support': {
+      const exercise =
+        hideMotsBanque && tcf.exercise.mots_banque
+          ? { ...tcf.exercise, mots_banque: undefined }
+          : tcf.exercise
+      return <TexteSupport exercise={exercise} mode={mode} />
+    }
     case 'qcm':
       return tcf.mode === 'image' ? (
         <QuestionQCMImage {...tcf} points={points} mode={mode} />
@@ -77,7 +86,14 @@ export function TcfItemView({
     case 'association':
       return <AssociationSituations situations={tcf.situations} mode={mode} />
     case 'formulaire':
-      return <FormulairePE titre={tcf.titre} champs={tcf.champs} mode={mode} />
+      return (
+        <FormulairePE
+          titre={tcf.titre}
+          champs={tcf.champs}
+          mode={mode}
+          letterGrid={formulaireLetterGrid}
+        />
+      )
     case 'ecriture':
       return <ZoneEcriture {...tcf} mode={mode} />
     case 'dialogue':

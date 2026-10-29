@@ -68,6 +68,7 @@ export type SettingsPanelProps = {
   changeSoutienLetter: (letterId: string) => void
   changeSoutienSound: (soundId: string) => void
   isGrammaireDomain: boolean
+  isGrammaireExercise: boolean
   isLogique: boolean
   gramSubthemes: Array<{ id: string; label: string }>
   gramSubtheme: { id: string; label: string } | undefined
@@ -275,6 +276,7 @@ export function SettingsPanel(p: SettingsPanelProps) {
           isVocabPool={p.isVocabPool}
           isGramTheory={p.isGramTheory}
           isGrammaireDomain={p.isGrammaireDomain}
+          isGrammaireExercise={p.isGrammaireExercise}
           isLogique={p.isLogique}
           isJeuxDomain={p.isJeuxDomain}
           isCalliDomain={p.isCalliDomain}

@@ -66,6 +66,8 @@ export type ResultPanelProps = {
   toggleDraftGrid: (itemIndex: number, targetBlock?: number) => void
   cycleOralAnswerMode: (itemIndex: number, targetBlock?: number) => void
   selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number) => void
+  selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number) => void
+  toggleFormulaireLetterGrid: (targetBlock?: number) => void
   toggleTcfPageBreak: (itemIndex: number, targetBlock?: number) => void
   isFormes: boolean
   isCadrans: boolean
@@ -119,6 +121,8 @@ export function ResultPanel({
   toggleDraftGrid,
   cycleOralAnswerMode,
   selectTcfForm,
+  selectTcfFormForExercise,
+  toggleFormulaireLetterGrid,
   toggleTcfPageBreak,
   isFormes,
   isCadrans,
@@ -357,6 +361,8 @@ export function ResultPanel({
                         interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
                         interactiveTcfPageBreaks={isTcf}
                         onSelectTcfForm={selectTcfForm}
+                        onSelectTcfFormForExercise={selectTcfFormForExercise}
+                        onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
                         onToggleTcfPageBreak={toggleTcfPageBreak}
                         coordEdit={
                           (isFormes && activeBlock.coordLibre) ||

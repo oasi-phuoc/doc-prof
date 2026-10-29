@@ -107,15 +107,60 @@ export function ZoneEcriture({
   )
 }
 
+function ChampBoxes({
+  chars,
+  show,
+}: {
+  chars: string[]
+  show: boolean
+}) {
+  return (
+    <span className="tcf-champ-boxes" aria-hidden={!show}>
+      {chars.map((ch, i) => (
+        <span key={i} className="tcf-champ-box">
+          {show ? ch : ''}
+        </span>
+      ))}
+    </span>
+  )
+}
+
+function dateBoxGroups(corrige: string, show: boolean) {
+  const digits = corrige.replace(/\D/g, '')
+  const d = digits.slice(0, 2).padEnd(2, ' ')
+  const m = digits.slice(2, 4).padEnd(2, ' ')
+  const y = digits.slice(4, 8).padEnd(4, ' ')
+  const fill = (raw: string) => [...raw].map((c) => (c === ' ' ? '' : c))
+  return (
+    <span className="answer-line-field tcf-champ-line is-date">
+      <ChampBoxes chars={fill(d)} show={show} />
+      <span className="tcf-champ-date-sep">/</span>
+      <ChampBoxes chars={fill(m)} show={show} />
+      <span className="tcf-champ-date-sep">/</span>
+      <ChampBoxes chars={fill(y)} show={show} />
+    </span>
+  )
+}
+
+function textBoxes(corrige: string, show: boolean, minBoxes = 12) {
+  const chars = [...corrige.replace(/\s+/g, ' ').trim()]
+  const n = Math.max(minBoxes, chars.length || minBoxes)
+  const cells = Array.from({ length: n }, (_, i) => chars[i] ?? '')
+  return <ChampBoxes chars={cells} show={show} />
+}
+
 /** Formulaire PE : un champ par ligne ; le corrigé affiche la réponse attendue. */
 export function FormulairePE({
   titre,
   champs,
   mode,
+  letterGrid = false,
 }: {
   titre?: string
   champs: TcfChampFormulaire[]
   mode: PreviewMode
+  /** Cases à remplir (une lettre / chiffre par case) à la place des traits. */
+  letterGrid?: boolean
 }) {
   const show = mode === 'answers'
   return (
@@ -130,21 +175,28 @@ export function FormulairePE({
                 const on = show && opt.trim().toLowerCase() === champ.corrige.trim().toLowerCase()
                 return (
                   <span key={opt} className="tcf-champ-option">
-                    <span className="tcf-case" aria-hidden>
-                      {on ? '✔' : ''}
-                    </span>
+                    <span className={`tcf-case${on ? ' is-filled' : ''}`} aria-hidden />
                     {opt}
                   </span>
                 )
               })}
             </span>
           ) : champ.type === 'case' ? (
-            <span className="tcf-case" aria-hidden>
-              {show && /^(oui|x|vrai|1)$/i.test(champ.corrige.trim()) ? '✔' : ''}
-            </span>
+            <span
+              className={`tcf-case${
+                show && /^(oui|x|vrai|1)$/i.test(champ.corrige.trim()) ? ' is-filled' : ''
+              }`}
+              aria-hidden
+            />
+          ) : champ.type === 'date' || letterGrid ? (
+            champ.type === 'date' ? (
+              dateBoxGroups(champ.corrige, show)
+            ) : (
+              textBoxes(champ.corrige, show)
+            )
           ) : (
-            <span className={`answer-line-field tcf-champ-line${champ.type === 'date' ? ' is-date' : ''}`}>
-              {show ? champ.corrige : champ.type === 'date' ? '\u00a0\u00a0/\u00a0\u00a0/' : ''}
+            <span className="answer-line-field tcf-champ-line">
+              {show ? champ.corrige : ''}
             </span>
           )}
         </div>

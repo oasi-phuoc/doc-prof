@@ -10,7 +10,7 @@ export type AccessAccount = 'admin' | 'full' | 'partial'
 
 /**
  * Domaines « réguliers » — ordre alphabétique par libellé.
- * (Les tests TPF / TCF CSC / TCF CFR / TCM CSC / TCM CFR / TPM sont pinés en bas de liste.)
+ * (Les tests TCF CSC / TCF CFR / TCM CSC / TCM CFR / TPF / TPM sont pinés en bas de liste.)
  */
 export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'acm', label: 'ACM' },
@@ -30,14 +30,14 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
 
 /**
  * Domaines réservés au compte admin (tests).
- * Ordre d’affichage exact : tpf → tcf-csc → tcf-cfr → tcm-csc → tcm-cfr → tpm.
+ * Ordre d’affichage exact : tcf-csc → tcf-cfr → tcm-csc → tcm-cfr → tpf → tpm.
  */
 export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
-  { id: 'tpf', label: 'TPF' },
   { id: 'tcf-csc', label: 'TCF CSC' },
   { id: 'tcf-cfr', label: 'TCF CFR' },
   { id: 'tcm-csc', label: 'TCM CSC' },
   { id: 'tcm-cfr', label: 'TCM CFR' },
+  { id: 'tpf', label: 'TPF' },
   { id: 'tpm', label: 'TPM' },
 ]
 

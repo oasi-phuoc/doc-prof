@@ -257,6 +257,43 @@ export function usePageConfig({
     )
   }
 
+  /** Applique la même forme (QCM / texte) à toutes les questions de l’exercice. */
+  const selectTcfFormForExercise = (form: TcfTypeReponse, targetBlock = safeBlockIndex) => {
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
+        const sheet = worksheets[safeSheetIndex]
+        const sheetBlock = sheet?.blocks[targetBlock]
+        const offset = sheetBlock?.itemOffset ?? 0
+        const items = sheetBlock?.items ?? []
+        const len = Math.max(block.tcfFormModes?.length ?? 0, items.length + offset, 1)
+        const modes: Array<TcfTypeReponse | undefined> = Array.from(
+          { length: len },
+          (_, i) => block.tcfFormModes?.[i],
+        )
+        items.forEach((item, itemIndex) => {
+          if (item.layout === 'tcf' && (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')) {
+            modes[itemIndex + offset] = form
+          }
+        })
+        return setPageBlock(page, targetBlock, { tcfFormModes: modes })
+      }),
+    )
+  }
+
+  const toggleFormulaireLetterGrid = (targetBlock = safeBlockIndex) => {
+    setPages((current) =>
+      current.map((page, index) => {
+        if (index !== pageIndex) return page
+        const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
+        return setPageBlock(page, targetBlock, {
+          formulaireLetterGrid: !block.formulaireLetterGrid,
+        })
+      }),
+    )
+  }
+
   const toggleTcfPageBreak = (itemIndex: number, targetBlock = safeBlockIndex) => {
     setPages((current) =>
       current.map((page, index) => {
@@ -342,6 +379,8 @@ export function usePageConfig({
     toggleDraftGrid,
     cycleOralAnswerMode,
     selectTcfForm,
+    selectTcfFormForExercise,
+    toggleFormulaireLetterGrid,
     toggleTcfPageBreak,
     setAllDraftGrids,
     setAllTpmDraftGrids,

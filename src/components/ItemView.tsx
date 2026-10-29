@@ -78,6 +78,10 @@ export function ItemView({
   onSelectTcfForm,
   tcfPageBreakBefore,
   onToggleTcfPageBreak,
+  hideTcfFormIcons = false,
+  formulaireLetterGrid = false,
+  onToggleFormulaireLetterGrid,
+  hideMotsBanque = false,
   coordEdit,
 }: {
   item: MathItem
@@ -96,6 +100,11 @@ export function ItemView({
   /** TCF : cette question (et les suivantes) commence une nouvelle page. */
   tcfPageBreakBefore?: boolean
   onToggleTcfPageBreak?: () => void
+  /** Masquer les icônes de forme en marge (ex. dual form sur le titre). */
+  hideTcfFormIcons?: boolean
+  formulaireLetterGrid?: boolean
+  onToggleFormulaireLetterGrid?: () => void
+  hideMotsBanque?: boolean
   coordEdit?: {
     selectedKind: CoordShape | null
     placingOrigin?: boolean
@@ -122,8 +131,12 @@ export function ItemView({
       ? item.tcf.formSelect
       : undefined
   const tcfActiveForm = tcfFormMode ?? tcfFormSelect?.active
-  /** Comme Page : toujours en marge dès que la question a un sélecteur de forme. */
-  const showTcfFormIcons = Boolean(tcfFormSelect && onSelectTcfForm && tcfActiveForm)
+  /** Comme Page : en marge sauf si le sélecteur est sur le titre d’exercice. */
+  const showTcfFormIcons = Boolean(
+    !hideTcfFormIcons && tcfFormSelect && onSelectTcfForm && tcfActiveForm,
+  )
+  const isFormulaire =
+    item.layout === 'tcf' && item.tcf?.kind === 'formulaire'
   const showTcfPageChip = Boolean(
     onToggleTcfPageBreak &&
       item.layout === 'tcf' &&
@@ -173,6 +186,23 @@ export function ItemView({
           aria-pressed={draftGrid}
         >
           {draftGrid ? 'Grille' : 'Sans'}
+        </button>
+      ) : null}
+      {isFormulaire && onToggleFormulaireLetterGrid ? (
+        <button
+          type="button"
+          className={`no-print draft-grid-chip draft-grid-chip-margin ${
+            formulaireLetterGrid ? 'on' : 'off'
+          }`}
+          onClick={onToggleFormulaireLetterGrid}
+          aria-pressed={formulaireLetterGrid}
+          title={
+            formulaireLetterGrid
+              ? 'Cases lettre / chiffre (une par case)'
+              : 'Lignes de réponse classiques'
+          }
+        >
+          Grille
         </button>
       ) : null}
       {isOralSelect && onCycleOralAnswerMode ? (
@@ -298,7 +328,13 @@ export function ItemView({
         ) : null}
         {item.layout === 'count-icons' && <CountIconsBlock item={item} mode={mode} />}
         {item.layout === 'tcf' && (
-          <TcfItemView item={item} mode={mode} tcfFormMode={tcfActiveForm} />
+          <TcfItemView
+            item={item}
+            mode={mode}
+            tcfFormMode={tcfActiveForm}
+            formulaireLetterGrid={formulaireLetterGrid}
+            hideMotsBanque={hideMotsBanque}
+          />
         )}
         {item.layout === 'logique' && <LogiqueBlock item={item} mode={mode} />}
         {item.layout === 'audio-dictation' && <AudioDictationBlock item={item} mode={mode} />}

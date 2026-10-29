@@ -20,6 +20,12 @@ import type {
   WorksheetPage,
 } from '@/math/types'
 import type { TcfTypeReponse } from '@/tcf/types'
+import { TcfFormMarginIcons } from '@/components/tcf/TcfFormIcons'
+import {
+  isGramDualFormExercise,
+  isGramMarginFormExercise,
+} from '@/grammaire/exercises/qui-suis-je-ui'
+import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 
 export function defaultCoordQuestionReply(exerciseType: string): CoordReply {
   return isReperageConstruire(exerciseType) ? 'draw' : 'text'
@@ -82,7 +88,9 @@ export function WorksheetSheet({
   interactiveTcfOptions = false,
   interactiveTcfPageBreaks = false,
   onSelectTcfForm,
+  onSelectTcfFormForExercise,
   onToggleTcfPageBreak,
+  onToggleFormulaireLetterGrid,
   onRegenerateBlock,
   showExerciseRefresh = true,
   coordEdit,
@@ -109,7 +117,10 @@ export function WorksheetSheet({
   /** Affiche le contrôle de saut de page réservé aux fiches TCF. */
   interactiveTcfPageBreaks?: boolean
   onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex?: number) => void
+  /** Qui suis-je Infos/Verbe : bascule QCM ↔ texte pour tout l’exercice. */
+  onSelectTcfFormForExercise?: (form: TcfTypeReponse, blockIndex?: number) => void
   onToggleTcfPageBreak?: (index: number, blockIndex?: number) => void
+  onToggleFormulaireLetterGrid?: (blockIndex: number) => void
   /** Bouton refresh : régénère uniquement cet exercice. */
   onRegenerateBlock?: (blockIndex: number) => void
   /** Afficher le refresh à côté du titre (désactivé en mode libre). */
@@ -190,6 +201,33 @@ export function WorksheetSheet({
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
+          const dualForm = isGramDualFormExercise(block.exerciseType)
+          const marginForm = isGramMarginFormExercise(block.exerciseType)
+          const firstQuestion = block.items.find(
+            (item) =>
+              item.layout === 'tcf' && (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes'),
+          )
+          const dualFormSelect =
+            dualForm && firstQuestion?.layout === 'tcf'
+              ? firstQuestion.tcf &&
+                (firstQuestion.tcf.kind === 'qcm' || firstQuestion.tcf.kind === 'lignes')
+                ? firstQuestion.tcf.formSelect
+                : undefined
+              : undefined
+          const dualActive =
+            dualFormSelect &&
+            (block.tcfFormModes?.[
+              block.items.findIndex(
+                (item) =>
+                  item.layout === 'tcf' &&
+                  (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes'),
+              ) + (block.itemOffset ?? 0)
+            ] ??
+              dualFormSelect.active)
+          const hideBanque =
+            parseGramExerciseType(block.exerciseType)?.kindId === 'verbe-pastilles' &&
+            (dualActive === 'qcm_texte' ||
+              (dualActive == null && dualFormSelect?.active === 'qcm_texte'))
           return (
             <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
               {isJeuxSheet || isTheoryBlock ? null : (
@@ -207,6 +245,20 @@ export function WorksheetSheet({
                       >
                         <RefreshIcon />
                       </button>
+                    ) : null}
+                    {dualForm &&
+                    dualFormSelect &&
+                    dualActive &&
+                    onSelectTcfFormForExercise ? (
+                      <TcfFormMarginIcons
+                        filled={dualFormSelect.filled.filter(
+                          (f) => f === 'qcm_texte' || f === 'lignes',
+                        )}
+                        active={dualActive}
+                        forms={['qcm_texte', 'lignes']}
+                        layout="inline"
+                        onSelect={(form) => onSelectTcfFormForExercise(form, blockIndex)}
+                      />
                     ) : null}
                   </div>
                   {block.instruction ? <p>{renderSoutienInstruction(block.instruction)}</p> : null}
@@ -302,6 +354,12 @@ export function WorksheetSheet({
                   const isTcfQuestion =
                     item.layout === 'tcf' &&
                     (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')
+                  const showMarginForms =
+                    interactiveTcfOptions &&
+                    isTcfQuestion &&
+                    !dualForm &&
+                    (marginForm || !parseGramExerciseType(block.exerciseType))
+                  const isFormulaireItem = item.layout === 'tcf' && item.tcf?.kind === 'formulaire'
                   return (
                     <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
@@ -322,8 +380,9 @@ export function WorksheetSheet({
                           : undefined
                       }
                       tcfFormMode={isTcfQuestion ? tcfFormMode : undefined}
+                      hideTcfFormIcons={dualForm || !showMarginForms}
                       onSelectTcfForm={
-                        interactiveTcfOptions && isTcfQuestion && onSelectTcfForm
+                        showMarginForms && onSelectTcfForm
                           ? (form) => onSelectTcfForm(index, form, blockIndex)
                           : undefined
                       }
@@ -336,6 +395,13 @@ export function WorksheetSheet({
                           ? () => onToggleTcfPageBreak(index, blockIndex)
                           : undefined
                       }
+                      formulaireLetterGrid={Boolean(block.formulaireLetterGrid)}
+                      onToggleFormulaireLetterGrid={
+                        isFormulaireItem && onToggleFormulaireLetterGrid
+                          ? () => onToggleFormulaireLetterGrid(blockIndex)
+                          : undefined
+                      }
+                      hideMotsBanque={hideBanque}
                       coordEdit={coordEdit}
                     />
                   )
