@@ -21,9 +21,9 @@ export function crc32(data: Uint8Array): number {
   return (c ^ 0xffffffff) >>> 0
 }
 
-function concatBytes(chunks: readonly Uint8Array[]): Uint8Array {
+function concatBytes(chunks: readonly Uint8Array[]): Uint8Array<ArrayBuffer> {
   const total = chunks.reduce((n, c) => n + c.length, 0)
-  const out = new Uint8Array(total)
+  const out = new Uint8Array(new ArrayBuffer(total))
   let offset = 0
   for (const chunk of chunks) {
     out.set(chunk, offset)
@@ -32,14 +32,14 @@ function concatBytes(chunks: readonly Uint8Array[]): Uint8Array {
   return out
 }
 
-function u16(n: number): Uint8Array {
-  const b = new Uint8Array(2)
+function u16(n: number): Uint8Array<ArrayBuffer> {
+  const b = new Uint8Array(new ArrayBuffer(2))
   new DataView(b.buffer).setUint16(0, n, true)
   return b
 }
 
-function u32(n: number): Uint8Array {
-  const b = new Uint8Array(4)
+function u32(n: number): Uint8Array<ArrayBuffer> {
+  const b = new Uint8Array(new ArrayBuffer(4))
   new DataView(b.buffer).setUint32(0, n, true)
   return b
 }
@@ -60,8 +60,12 @@ export type ZipStoreEntry = {
   data: Uint8Array | ArrayBuffer | Blob
 }
 
-async function toBytes(data: ZipStoreEntry['data']): Promise<Uint8Array> {
-  if (data instanceof Uint8Array) return data
+async function toBytes(data: ZipStoreEntry['data']): Promise<Uint8Array<ArrayBuffer>> {
+  if (data instanceof Uint8Array) {
+    const copy = new Uint8Array(new ArrayBuffer(data.byteLength))
+    copy.set(data)
+    return copy
+  }
   if (data instanceof ArrayBuffer) return new Uint8Array(data)
   return new Uint8Array(await data.arrayBuffer())
 }
@@ -136,7 +140,6 @@ export async function zipStoreBlob(
     u32(offset),
     u16(0),
   ])
-  return new Blob([concatBytes([...locals, centralDir, eocd])], {
-    type: 'application/zip',
-  })
+  const zip = concatBytes([...locals, centralDir, eocd])
+  return new Blob([zip], { type: 'application/zip' })
 }
