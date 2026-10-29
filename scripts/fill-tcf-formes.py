@@ -514,10 +514,11 @@ def resolve_hour(text: str) -> str | None:
         bases = ["midi", "douze"]
     if h == 0:
         bases = ["minuit"]
+    # CE/CO QCM image : uniquement horloges analogiques (pas *-numerique).
     cands: list[str] = []
     for b in bases:
         if mi == 0:
-            cands += [f"{b}-heures", f"{b}-heures-numerique", b]
+            cands += [f"{b}-heures", b]
         elif mi == 30:
             cands += [f"{b}-heures-trente", f"{b}-heures-et-demie", "midi-et-demie"]
         elif mi == 15:
@@ -527,8 +528,13 @@ def resolve_hour(text: str) -> str | None:
         else:
             cands += [f"{b}-heures"]
     for c in cands:
+        if "numerique" in c:
+            continue
         if c in BY_SLUG:
-            return BY_SLUG[c]
+            src = BY_SLUG[c]
+            if "numerique" in src:
+                continue
+            return src
     return None
 
 

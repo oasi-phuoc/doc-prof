@@ -147,8 +147,9 @@ Dans les banques JSON, le champ `image` (choix QCM, situations, support) porte l
    - `ballon` = ballon de baudruche ; ballon de foot → `ballon-de-football` ;
    - `telephone` = téléphone fixe ; portable → `smartphone` ;
    - `raquette` = raquette de ping-pong ; tennis → `raquette-de-tennis` ;
-   - horloges : à aiguilles (`huit-heures`) ≠ numériques (`vingt-heures`,
-     `huit-heures-numerique`) — ne jamais mélanger 8 h et 20 h sur un cadran à aiguilles.
+   - horloges QCM image CE/CO : **uniquement analogiques** (`huit-heures`,
+     `vingt-heures`…) — jamais `*-numerique` ni réveil numérique. Sur un cadran
+     à aiguilles, 8 h et 20 h sont identiques : ne pas les opposer dans le même QCM.
 3. Sinon, créer l’image dans le bon thème (normes « Images vocabulaire » du skill
    `medias-image-audio` : fond blanc, sujet centré, 800×600 WebP).
    - **Slug = l’objet ou l’action** montré (`lunettes-de-natation`, `nourrir-les-animaux`),
