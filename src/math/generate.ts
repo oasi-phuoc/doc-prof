@@ -22,7 +22,7 @@ import { pageAsConfig, pageBlocks } from './page-model'
 import { TPM_MAX_SCORE } from '@/tpm/test'
 import { generateTpmInformations } from '@/tpm/informations'
 import { resolveTcfExercise, tryGenerateTcfBlock } from '@/tcf/generate'
-import { isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
+import { isTcfAudioDomain, isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
 import { splitMultiDocumentAnnonce } from '@/tcf/split-documents'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
@@ -51,7 +51,7 @@ import { generateItems } from './generate-items'
 
 /** CE instructions multi-docs → un bloc Exercice par document. */
 function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConfig {
-  if (!isTpfFamilyDomain(page.domain) && page.domain !== 'tcf') return page
+  if (!isTcfAudioDomain(page.domain)) return page
   const blocks = pageBlocks(page)
   const out: ExerciseBlock[] = []
   let changed = false

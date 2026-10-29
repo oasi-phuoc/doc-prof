@@ -85,7 +85,11 @@ export function isAssociationAnnonce(ex: TcfCeAnnonce): boolean {
 }
 
 export function associationTableau(q: TcfQuestion): TcfLigneTableau[] | undefined {
-  const tab = q.tableau?.filter((row) => /Document\s+\d+/i.test(row.label))
+  const raw =
+    q.type_reponse === 'lignes'
+      ? q.tableau
+      : q.formes?.lignes?.tableau
+  const tab = raw?.filter((row: TcfLigneTableau) => /Document\s+\d+/i.test(row.label))
   return tab && tab.length >= 2 ? tab : undefined
 }
 

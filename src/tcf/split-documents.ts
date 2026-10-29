@@ -67,7 +67,7 @@ export function splitMultiDocumentAnnonce(ex: TcfExercise): TcfCeAnnonce[] | nul
   }
   if ([...byDoc.keys()].length < 2) return null
 
-  const consigne = singularizeConsigne(ex.consigne)
+  const consigne = singularizeConsigne(ex.consigne ?? '')
   const parts: TcfCeAnnonce[] = []
   for (const doc of docs) {
     const questions = byDoc.get(doc.numero)
