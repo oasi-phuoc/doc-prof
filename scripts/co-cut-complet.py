@@ -164,6 +164,15 @@ def cut_mp3(src: Path, dest: Path, start: float, end: float) -> None:
     )
 
 
+
+def clean_transcription(text: str) -> str:
+    t = text.strip()
+    t = re.sub(r"^(Exercice\s+\d+\.?\s*)+", "", t, flags=re.I)
+    t = re.sub(r"^(Document\s+\d+\.?\s*)+", "", t, flags=re.I)
+    t = re.sub(r"^Lisez la question\.?\s*", "", t, flags=re.I)
+    t = re.sub(r"^Écoutez le document[,.]?\s*puis répondez\.?\s*", "", t, flags=re.I)
+    return t.strip()
+
 def document_nums(ex: dict) -> list[int]:
     nums = []
     for q in ex.get("questions", []):
@@ -314,7 +323,7 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
         return False
     if ex["support"].get("audios"):
         print(f"SKIP {ex_id}: already multi-audio")
-        return False
+        return True
     docs = document_nums(ex)
     if len(docs) < 2:
         print(f"SKIP {ex_id}: fewer than 2 Document N")
@@ -374,7 +383,7 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
                 half = len(dedup) // 2
                 if dedup[:half] == dedup[half:]:
                     dedup = dedup[:half]
-            transcriptions.append(" ".join(dedup) if dedup else text)
+            transcriptions.append(clean_transcription(" ".join(dedup) if dedup else text))
             print(f"  wrote {dest.name}  tr={transcriptions[-1][:80]}…")
 
         refs = [lib_ref(p) for p in out_paths]

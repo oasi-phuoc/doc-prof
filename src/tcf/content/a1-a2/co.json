@@ -278,8 +278,16 @@
     "scene": "Les annonces à la radio",
     "consigne": "Vous entendez ces annonces à la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1.mp3",
-      "transcription": "Document 1 — Le festival à Léop commence vendredi.\nVous pourrez écouter des groupes de rock, de pop, de jazz et de musique électronique tous les soirs à 20 h sur la place Saint-Exupéry.\nVous pouvez prendre vos places sur le site www.festivaleop.fr.\nDocument 2 — La ville organise le concours de photos « J’adore ma ville ».\nPour participer, vous devez envoyer avant le 10 juin une photo de votre lieu préféré dans la ville.\nVous pouvez gagner un magnifique appareil photo numérique.\nDocument 3 — À l’occasion de la Journée internationale des animaux, l’association Sauver la nature organise une grande manifestation samedi à 14 h devant la place de l’Hôtel de ville.\nDe nombreuses animations auront lieu toute la journée."
+      "transcription": [
+        "Le Festival Alehop commence vendredi. Vous pourrez écouter des groupes de rock, de pop, de jazz et de musique électronique tous les soirs à 20 h sur la place Saint-Exupéry. Vous pouvez prendre vos places sur le site www.festivalalehop.fr.",
+        "La Ville organise le concours de photos « J'adore ma ville ». Pour participer, vous devez envoyer avant le 10 juin une photo de votre lieu préféré dans la ville. Vous pouvez gagner un magnifique appareil photo numérique.",
+        "À l'occasion de la Journée internationale des animaux, l'association Sauver la nature organise une grande manifestation samedi à 14 h devant la place de l'hôtel de ville. De nombreuses animations auront lieu toute la journée."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-1.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-2.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -307,7 +315,8 @@
             "nb_lignes": 1,
             "reponse_modele": "du rock"
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1 — À quelle heure commencent les concerts ?",
@@ -352,7 +361,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2 — Quelle est la date limite pour participer ?",
@@ -379,7 +389,8 @@
             "nb_lignes": 1,
             "reponse_modele": "Le 10 juin"
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2 — Qu’est-ce que vous pouvez gagner ?",
@@ -424,7 +435,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3 — Quand est la manifestation ?",
@@ -469,7 +481,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3 — Où est l’événement ?",
@@ -514,7 +527,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
@@ -1189,8 +1203,16 @@
     "scene": "Les annonces à la radio",
     "consigne": "Vous entendez ces annonces à la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2.mp3",
-      "transcription": "Document 1 — Aujourd’hui, dans notre émission « Partage d’ados », Pauline va nous expliquer comment elle réussit toujours de très bonnes crêpes pour régaler toute sa famille.\nAlors, sortez vite de quoi écrire pour prendre des notes et lancez-vous !\nDocument 2 — Beaucoup de nuages aujourd’hui dans le sud de la France, mais il ne pleut pas.\nDemain, le vent va faire partir les nuages et nous apporter du soleil.\nSortez les lunettes et les chapeaux !\nDocument 3 — Aujourd’hui, Radiogen vous offre des places pour voir les meilleurs films de l’année.\nPour gagner, appelez le 39 10 et dites « Radiogen ».\nVite, vous avez 15 minutes pour jouer !"
+      "transcription": [
+        "Aujourd’hui, dans notre émission « Partage d’ados », Pauline va nous expliquer comment elle réussit toujours de très bonnes crêpes pour régaler toute sa famille.\nAlors, sortez vite de quoi écrire pour prendre des notes et lancez-vous !",
+        "Beaucoup de nuages aujourd’hui dans le sud de la France, mais il ne pleut pas.\nDemain, le vent va faire partir les nuages et nous apporter du soleil.\nSortez les lunettes et les chapeaux !",
+        "Aujourd’hui, Radiogen vous offre des places pour voir les meilleurs films de l’année.\nPour gagner, appelez le 39 10 et dites « Radiogen ».\nVite, vous avez 15 minutes pour jouer !"
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-1.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-2.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -1236,7 +1258,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1 — On vous demande de prendre…",
@@ -1281,7 +1304,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2 — Quel temps fait-il aujourd’hui dans le sud de la France ?",
@@ -1326,7 +1350,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2 — Que faut-il porter demain ?",
@@ -1371,7 +1396,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3 — Que pouvez-vous gagner ?",
@@ -1416,7 +1442,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3 — Pour jouer, il faut…",
@@ -1443,7 +1470,8 @@
             "nb_lignes": 1,
             "reponse_modele": "téléphoner"
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
