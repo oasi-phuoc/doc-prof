@@ -931,12 +931,14 @@ html,body,#root{
   align-items:stretch;
   gap:0;
   padding:28px;
+  /* CE long / chips marge : ne jamais élargir ni décaler l’UI. */
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 .sheet-preview-wrap .sheet-stage{
   padding:0;
-  /* Pas de scroll horizontal : un overflow d’exo ne décale plus l’aperçu. */
-  overflow-x:hidden;
-  overflow-y:visible;
+  /* Clip net : un exo trop long ne décale plus l’aperçu (ni X ni Y). */
+  overflow:hidden;
   flex:1 1 auto;
   width:100%;
   min-width:0;
@@ -952,7 +954,8 @@ html,body,#root{
   aspect-ratio:210/297;
   height:auto;
   position:relative;
-  overflow:hidden;
+  /* clip : le surplus (CE texte+questions) ne grossit pas le scroll des parents. */
+  overflow:clip;
   background:#fff;
   border:1px solid #dfdcd6;
   box-shadow:0 13px 30px #332c1e12;
@@ -978,11 +981,11 @@ html,body,#root{
   flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;
   font-size:calc(13pt * var(--app-font-scale, 1));
 }
-/* Aperçu : chip grille dans la marge ; le clip reste sur .worksheet-sheet / .a4-frame. */
-.a4-frame .sheet-body{overflow:visible}
+/* Aperçu : chips dans la marge (overflow visible) ; le cadre .a4-frame clippe le surplus. */
+.a4-frame .sheet-body{overflow:visible;max-width:100%;min-width:0}
 .sheet-body .exercise-grid{
   flex:0 0 auto;min-height:0;overflow:visible;align-content:start;
-  gap:var(--ex-grid-gap);grid-auto-rows:max-content
+  gap:var(--ex-grid-gap);grid-auto-rows:max-content;max-width:100%;width:100%
 }
 .answer-line-field{
   display:block;width:100%;min-width:0;min-height:var(--ex-answer-h);height:auto;
@@ -4097,12 +4100,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 /* —— TCF : fiche (support, questions, production) —— */
 /* Support / production pleine largeur ; questions suivent --sheet-columns. */
 .layout-tcf.is-tcf-full{grid-column:1 / -1}
-.exercise-item.layout-tcf{position:relative;overflow:visible;width:100%;align-self:stretch;min-width:0}
-.layout-tcf .item-content{flex:1 1 auto;width:100%;min-width:0}
+.exercise-item.layout-tcf{position:relative;overflow:visible;width:100%;max-width:100%;align-self:stretch;min-width:0;box-sizing:border-box}
+.layout-tcf .item-content{flex:1 1 auto;width:100%;min-width:0;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
 .worksheet-sheet .exercise-grid:has(.layout-tcf){
   grid-template-columns:repeat(var(--sheet-columns, 1), minmax(0, 1fr))!important;
 }
-.tcf-text{margin:0 0 6px;text-align:justify;line-height:1.4}
+.tcf-text{margin:0 0 6px;text-align:justify;line-height:1.4;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
 .tcf-sms{max-width:78%;margin-bottom:6px}
 .tcf-sms-from{margin:0 0 4px;font-size:.85em;font-weight:700;color:var(--muted)}
 .tcf-sms-bubble{padding:8px 12px;border:1.5px solid var(--purple);border-radius:14px 14px 14px 3px;background:var(--lavender)}
@@ -4111,9 +4114,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-email-head dt{font-weight:700}
 .tcf-email-head dd{margin:0}
 .tcf-email-body{padding:8px 10px}
-.tcf-annonce{border:2px solid var(--ink);padding:8px 12px;margin-bottom:6px}
+.tcf-annonce{border:2px solid var(--ink);padding:8px 12px;margin-bottom:6px;max-width:100%;box-sizing:border-box;overflow:hidden}
 .tcf-annonce-title{margin:0 0 6px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.03em}
-.tcf-annonce-body{display:flex;gap:12px;align-items:flex-start}
+.tcf-annonce-body{display:flex;gap:12px;align-items:flex-start;min-width:0;max-width:100%}
 .tcf-annonce-body .tcf-image{width:34mm;height:26mm}
 .tcf-image{display:block;width:100%;height:28mm;object-fit:contain;background:#fff}
 .tcf-image.is-large{height:90mm}
