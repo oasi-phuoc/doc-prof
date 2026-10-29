@@ -204,7 +204,10 @@ function dualQcmTrait(
   }
 }
 
-/** CO Ali — questions fixes (audio CSC LECON-01_03.01_AUDIO-3). */
+/**
+ * CO Ali — questions fixes (QCM + trait + image).
+ * Audio à déposer : CSC_FR_LECON-01_03.01_AUDIO-3 → {@link NAT_CO_ALI_AUDIO}.
+ */
 const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
   dualQcmTrait('D’où vient Ali ?', 'Je ne sais pas', [
     'Marseille',
@@ -212,11 +215,28 @@ const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
     'Je ne sais pas',
   ]),
   dualQcmTrait('Où Ali habite-t-il ?', 'Paris', ['Marseille', 'Paris', 'Mali']),
-  dualQcmTrait('Comment est-il allé en France ?', 'À pied', [
-    'En bateau',
-    'En voiture',
+  dualQcmTrait(
+    'Comment il est allé en France ?',
     'À pied',
-  ]),
+    ['En bateau', 'En voiture', 'À pied'],
+    [
+      {
+        id: 'a',
+        image: '/lib/images/vocabulaire/transports/bateau.webp',
+        correct: false,
+      },
+      {
+        id: 'b',
+        image: '/lib/images/vocabulaire/transports/voiture.webp',
+        correct: false,
+      },
+      {
+        id: 'c',
+        image: '/lib/images/vocabulaire/actions/rentrer-a-pied.webp',
+        correct: true,
+      },
+    ],
+  ),
   dualQcmTrait(
     'Ali a traversé le Mali, le Sénégal et ___ ?',
     'Le Maroc',
@@ -242,11 +262,11 @@ const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
 ]
 
 const NAT_CO_ALI_TRANSCRIPTION = [
-  'Léon : Ali est arrivé à Marseille à l’âge de 14 ans.',
-  'Nina : Ah !',
-  'Léon : Ali a traversé le Mali, le Sénégal, le Maroc, la France à pied !',
-  'Nina : Ah ! Vous habitez à Paris Ali ?',
-  'Ali : Oui, madame, voilà l’adresse.',
+  'Léon :\tAli est arrivé à Marseille à l’âge de 14 ans',
+  'Nina :\tAh !',
+  'Léon :\tAli a traversé le Mali, le Sénégal, le Maroc, la France à pied !',
+  'Nina :\tAh ! Vous habitez à Paris Ali ?',
+  'Ali :\tOui, madame, voilà l’adresse.',
 ].join('\n')
 
 function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
