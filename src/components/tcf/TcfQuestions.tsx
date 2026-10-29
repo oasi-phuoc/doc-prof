@@ -103,6 +103,7 @@ export function TcfPoints({ points }: { points?: number }) {
 
 function Enonce({
   numero,
+  numeroLabel,
   enonce,
   audioLabel,
   points,
@@ -110,6 +111,8 @@ function Enonce({
   blankStyle = 'line',
 }: {
   numero: number
+  /** Remplace le numéro (ex. « a » → « a. »). */
+  numeroLabel?: string
   enonce: string
   audioLabel?: string
   points?: number
@@ -119,9 +122,10 @@ function Enonce({
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
+  const label = (numeroLabel ?? String(numero)).trim()
   return (
     <p className="tcf-enonce">
-      <span className="tcf-num">{numero}.</span>
+      <span className="tcf-num">{label}.</span>
       {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
       <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
         {renderEnonceText(enonce, fills, blankStyle)}
@@ -171,6 +175,7 @@ function Lettre({ lettre }: { lettre: string }) {
 
 type QuestionHead = {
   numero: number
+  numeroLabel?: string
   enonce: string
   audioLabel?: string
   points?: number

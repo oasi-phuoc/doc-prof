@@ -22,6 +22,7 @@ function withActiveForm(tcf: TcfSheetItem, formMode?: TcfTypeReponse): TcfSheetI
   if (!variant) return { ...tcf, formSelect: { ...fs, active } }
   const head = {
     numero: tcf.numero,
+    numeroLabel: tcf.numeroLabel,
     enonce: tcf.enonce,
     audioLabel: tcf.audioLabel,
     image: tcf.image,

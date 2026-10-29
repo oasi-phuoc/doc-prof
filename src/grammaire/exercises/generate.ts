@@ -28,6 +28,11 @@ import {
   isProvenanceKind,
   provenanceBankCap,
 } from './provenance'
+import {
+  buildFamilleExercise,
+  isFamilleKind,
+  familleBankCap,
+} from './famille'
 
 /** Génère un bloc d’exercices grammaire (déterministe), rendu TCF. */
 export function tryGenerateGrammaireExerciseBlock(
@@ -95,6 +100,22 @@ export function tryGenerateGrammaireExerciseBlock(
         tcfExerciseId: exercise.id,
       })),
       bankQuestionCap: provenanceBankCap(parsed.kindId),
+    }
+  }
+  if (parsed.subId === 'famille' && isFamilleKind(parsed.kindId) && !config.tcfExercise) {
+    const exercise = buildFamilleExercise({
+      kindId: parsed.kindId,
+      typeId,
+      rng,
+      count: Math.max(1, config.count),
+    })
+    return {
+      instruction: exercise.consigne?.trim() || kind.instruction,
+      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
+        ...item,
+        tcfExerciseId: exercise.id,
+      })),
+      bankQuestionCap: familleBankCap(parsed.kindId),
     }
   }
   if (config.tcfExercise) {

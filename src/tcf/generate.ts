@@ -120,6 +120,7 @@ function questionItem(
       {
         kind: 'lignes',
         numero,
+        numeroLabel: resolved.numero_label,
         enonce: resolved.enonce,
         nbLignes: variant.nbLignes ?? 2,
         reponseModele: variant.reponseModele,
@@ -138,6 +139,7 @@ function questionItem(
     {
       kind: 'qcm',
       numero,
+      numeroLabel: resolved.numero_label,
       enonce: resolved.enonce,
       mode: variant.mode ?? 'texte',
       choix: variant.choix ?? [],

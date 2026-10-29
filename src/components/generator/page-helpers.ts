@@ -30,6 +30,10 @@ import {
   PROVENANCE_DEFAULT_COUNT,
   isProvenanceKind,
 } from '@/grammaire/exercises/provenance'
+import {
+  FAMILLE_DEFAULT_COUNT,
+  isFamilleKind,
+} from '@/grammaire/exercises/famille'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -106,7 +110,9 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
         ? NATIONALITE_DEFAULT_COUNT[gramParsed.kindId]
         : gramParsed && gramParsed.subId === 'a6' && isProvenanceKind(gramParsed.kindId)
           ? PROVENANCE_DEFAULT_COUNT[gramParsed.kindId]
-          : undefined
+          : gramParsed && gramParsed.subId === 'famille' && isFamilleKind(gramParsed.kindId)
+            ? FAMILLE_DEFAULT_COUNT[gramParsed.kindId]
+            : undefined
   const isFrenchLang = type.track === 'voc' || type.track === 'gram'
   const isVocabLearn = isVocabLearnType(type.id)
   const isVocabPool = isVocabPoolType(type.id)

@@ -42,6 +42,8 @@ type TcfQuestionBase = {
   image?: string
   /** Plusieurs images à côté de la question (ex. personne + pays). */
   images?: string[]
+  /** Libellé de numérotation (ex. « a ») à la place du numéro. */
+  numero_label?: string
   /**
    * Autres formes de réponse (Texte / Image / Phrase) en plus de `type_reponse`.
    * Sur la fiche, les 3 icônes sont en marge gauche ; seules les formes remplies sont actives.
@@ -332,6 +334,8 @@ export type TcfSheetItem =
   | {
       kind: 'qcm'
       numero: number
+      /** Remplace `numero.` (ex. « a ») quand présent. */
+      numeroLabel?: string
       enonce: string
       mode: 'texte' | 'image'
       choix: TcfChoixRendu[]
@@ -344,6 +348,8 @@ export type TcfSheetItem =
   | {
       kind: 'lignes'
       numero: number
+      /** Remplace `numero.` (ex. « a ») quand présent. */
+      numeroLabel?: string
       enonce: string
       nbLignes: number
       reponseModele?: string

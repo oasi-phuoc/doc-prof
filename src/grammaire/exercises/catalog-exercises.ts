@@ -11,6 +11,7 @@ import { bankSize, lessonForType } from './bank'
 import { isQuiSuisJeKind, QUI_SUIS_JE_KIND_IDS } from './qui-suis-je'
 import { isNationaliteKind, NATIONALITE_KIND_IDS } from './nationalite'
 import { isProvenanceKind, PROVENANCE_KIND_IDS } from './provenance'
+import { isFamilleKind, FAMILLE_KIND_IDS } from './famille'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
 function theoryDerivedSubthemes(): Array<{
@@ -70,14 +71,19 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
             ? PROVENANCE_KIND_IDS.map((id) => gramKindById(id)).filter(
                 (kind): kind is NonNullable<typeof kind> => Boolean(kind),
               )
-            : GRAM_EXERCISE_KINDS
+            : sub.id === 'famille'
+              ? FAMILLE_KIND_IDS.map((id) => gramKindById(id)).filter(
+                  (kind): kind is NonNullable<typeof kind> => Boolean(kind),
+                )
+              : GRAM_EXERCISE_KINDS
     for (const kind of kinds) {
       const id = gramExerciseTypeId(sub.id, kind.id)
       if (
         bankSize(id) <= 0 &&
         !(sub.id === 'a1' && isQuiSuisJeKind(kind.id)) &&
         !(sub.id === 'a3' && isNationaliteKind(kind.id)) &&
-        !(sub.id === 'a6' && isProvenanceKind(kind.id))
+        !(sub.id === 'a6' && isProvenanceKind(kind.id)) &&
+        !(sub.id === 'famille' && isFamilleKind(kind.id))
       )
         continue
       if (seen.has(id)) continue

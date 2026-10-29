@@ -1,5 +1,5 @@
 /** Exercices mot à mot — Grammaire.docx ch. 1–2 + fiches CSC famille. */
-import { fill, lesson, qcm, writeItem } from './helpers'
+import { fill, lesson, qcm } from './helpers'
 import type { GramLesson } from '../types'
 
 export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
@@ -145,98 +145,5 @@ export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
     ],
   ),
 
-  lesson(
-    'famille',
-    'fill-conj',
-    'Compléter mon père, ma mère, mes parents',
-    'Complétez les dialogues avec mon père, ma mère ou mes parents.',
-    [
-      fill('Kumar — Qu’est-ce qu’ils font dans la vie, tes parents ? Serena — ___ est vendeur et ___ est ouvrière.', 'Mon père / ma mère'),
-      fill('Kumar — ___ est infirmière et ___ est journaliste.', 'Ma mère / mon père'),
-      fill('Tae Hee — Ils font quoi tes parents dans la vie ? Lin — ___ sont pharmaciens.', 'Mes parents'),
-      fill('Tae Hee — ___ est médecin et ___ est avocat.', 'Ma mère / mon père'),
-      fill('Hiro — Qu’est-ce qu’ils font comme travail tes parents ? Amy — ___ est journaliste et ___ est photographe.', 'Ma mère / mon père'),
-      fill('Hiro — ___ est vétérinaire et ___ est professeur.', 'Ma mère / mon père'),
-      fill('Marta — Ils font quoi comme travail tes parents ? Tilda — ___ est pilote d’avion et ___ est vétérinaire.', 'Mon père / ma mère'),
-      fill('Marta — ___ sont médecins.', 'Mes parents'),
-    ],
-  ),
-  lesson('famille', 'qcm-verbe', 'Choisir le membre de la famille', 'Choisissez le mot de famille qui convient.', [
-    qcm('Zoe — Tu as des frères et sœurs ? Sarah — J’ai un ___.', 'frère', ['frère', 'sœur', 'père']),
-    qcm('Zoe — J’ai une ___. Elle est grande, elle a les cheveux blonds.', 'sœur', ['sœur', 'frère', 'mère']),
-    qcm('Marta — Tu ressembles à ton père ou à ta ___ ?', 'mère', ['mère', 'sœur', 'tante']),
-    qcm('Ivan — Je ressemble à ma ___. Nous sommes blonds tous les deux.', 'mère', ['mère', 'sœur', 'fille']),
-    qcm('Hiro — Vous vous ressemblez, ton ___ et toi ?', 'frère', ['frère', 'père', 'oncle']),
-    qcm('Dans ma famille, nous sommes cinq personnes. Mon père est ingénieur et ma mère est professeure. Je n’ai pas de sœurs mais deux ___.', 'frères', [
-      'frères',
-      'sœurs',
-      'oncles',
-    ]),
-    qcm('Le frère de ma mère, Danylo, a deux filles. Mes ___ s’appellent Marta et Iryna.', 'cousines', ['cousines', 'sœurs', 'tantes']),
-    qcm('Combien Katia a de cousines ?', 'Katia a deux cousines.', [
-      'Katia a deux cousines.',
-      'Katia a deux sœurs.',
-      'Katia a cinq frères.',
-    ]),
-    qcm('Comment s’appelle l’oncle de Katia ?', 'L’oncle de Katia s’appelle Danylo.', [
-      'L’oncle de Katia s’appelle Danylo.',
-      'L’oncle de Katia s’appelle Mykola.',
-      'L’oncle de Katia s’appelle Petro.',
-    ]),
-    qcm('Quel est la profession du père de Katia ?', 'Le père de Katia est ingénieur.', [
-      'Le père de Katia est ingénieur.',
-      'Le père de Katia est professeur.',
-      'Le père de Katia est dessinateur.',
-    ]),
-  ]),
-  lesson(
-    'famille',
-    'ordre',
-    'Remettre les mots dans l’ordre',
-    'Mettez les mots dans l’ordre pour faire une phrase.',
-    [
-      fill('travaille – un – garage. – père – petit – Mon – dans', 'Mon père travaille dans un petit garage.'),
-      fill('grand – est – Sa – pas – mère – infirmère. – n’', 'Sa mère n’est pas grande infirmère.'),
-      fill('lève – les – se – tôt. – matin – oncle – leur – tous', 'Leur oncle se lève tôt tous les matins.'),
-      fill('belle – sœur – une – achète – Ma – voiture. – grande', 'Ma belle-sœur achète une grande voiture.'),
-      fill('belle-mère – n’ – belle – pas – du – est – tout. – Ma', 'Ma belle-mère n’est pas belle du tout.'),
-    ],
-  ),
-  lesson('famille', 'ecrire', 'Présenter sa famille', 'Écoutez s’il y a un enregistrement, puis écrivez une phrase.', [
-    writeItem('être', 'ingénieur', { audioSrc: '/lib/audio/grammaire/eval/lecon-02-04-01-a.mp3' }),
-    writeItem('avoir', 'deux frères', { audioSrc: '/lib/audio/grammaire/eval/lecon-02-04-01-b.mp3' }),
-    writeItem('s’appeler', 'Danylo'),
-    writeItem('être', 'professeure'),
-    writeItem('avoir', 'deux cousines'),
-    writeItem('ressembler', 'à ma mère'),
-  ]),
-
-  lesson('famille', 'qcm-verbe', 'Choisir la situation familiale', 'Choisissez la situation familiale.', [
-    qcm('Nathalie est ___.', 'mariée', ['mariée', 'célibataire', 'pacsée']),
-    qcm('John est ___ et roux.', 'grand', ['grand', 'petit', 'brun']),
-    qcm('Megan a ___.', 'un fils et une fille', ['un fils et une fille', 'un fils', 'deux filles']),
-    qcm('[][] mari → masculin, singulier. marié → ___.', 'masculin singulier', ['masculin singulier', 'féminin pluriel', 'féminin singulier']),
-    qcm('veufs → ___.', 'masculin pluriel', ['masculin pluriel', 'féminin singulier', 'masculin singulier']),
-    qcm('célibataire → le mot est ___.', 'identique au masculin et au féminin', [
-      'identique au masculin et au féminin',
-      'seulement masculin',
-      'seulement féminin',
-    ]),
-  ]),
-  lesson('famille', 'fill-conj', 'Accorder marié / célibataire / veuf', 'Complétez avec la forme accordée.', [
-    fill('Il est marié. Elle est ___.', 'mariée'),
-    fill('Il est célibataire. Elle est ___.', 'célibataire'),
-    fill('Il est veuf. Ils sont ___.', 'veufs'),
-    fill('Elle est veuve. Elles sont ___.', 'veuves'),
-    fill('Mon frère est marié. Sa femme est professeure.', 'marié'),
-    fill('J’ai deux filles. Elles sont encore étudiantes.', 'étudiantes'),
-  ]),
-  lesson('famille', 'ecrire', 'Dire sa situation familiale', 'Écrivez une phrase avec le verbe et le mot proposés.', [
-    writeItem('être', 'marié'),
-    writeItem('être', 'célibataire'),
-    writeItem('être', 'pacsée'),
-    writeItem('avoir', 'un fils'),
-    writeItem('avoir', 'deux filles'),
-    writeItem('être', 'veuve'),
-  ]),
+  // « Parler de sa famille » : exercices dédiés dans famille.ts (plus de banque ici).
 ]
