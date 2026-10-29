@@ -465,25 +465,25 @@ const CO_SETS: CoSet[] = [
     id: 'audio-1-vf',
     audio: `${AUD}/lecon-02-01-02-audio-1.mp3`,
     transcription:
-      'Audio CSC_FR_LECON-02_01.02_AUDIO-1 — à déposer. (Présentation de la famille Duprès.)',
+      'Je m’appelle Irina Dupré-Ortega. Dupré, c’est le nom de ma mère. Elle est française. Elle habite à Fougères. Mon père s’appelle Federico Ortega. C’est un musicien espagnol. J’ai deux sœurs. Elles sont médecins. Mon fils, Thomas, a six ans. Il parle français et espagnol.',
     questions: [
-      vf('Duprès c’est le nom de son père.', true),
-      vf('Sa mère est française.', false),
-      vf('Sa mère habite à Fugère.', false),
+      vf('Duprès c’est le nom de son père.', false),
+      vf('Sa mère est française.', true),
+      vf('Sa mère habite à Fugère.', true),
       vf('Ses deux sœurs sont infirmières.', false),
       vf('Son fils Thomas a dix ans.', false),
-      vf('Thomas parle trois langues.', true),
+      vf('Thomas parle trois langues.', false),
     ],
   },
   {
     id: 'audio-2-lettres',
     audio: `${AUD}/lecon-02-01-03-audio-2.mp3`,
     transcription:
-      'Audio CSC_FR_LECON-02_01.03_AUDIO-2 — à déposer. (Compléter avec des mots de famille.)',
+      'a. Sa femme est musicienne.\nb. Leur tante a trois enfants.\nc. Votre oncle est professeur ?\nd. Nos parents ont 50 ans.',
     questions: [
-      lignes('Sa ___ est musicienne.', 'sœur', 0, 'a'),
+      lignes('Sa ___ est musicienne.', 'femme', 0, 'a'),
       lignes('Leur tante a trois ___.', 'enfants', 0, 'b'),
-      lignes('Votre ___ est professeur ?', 'cousin', 0, 'c'),
+      lignes('Votre ___ est professeur ?', 'oncle', 0, 'c'),
       lignes('Nos ___ ont 50 ans.', 'parents', 0, 'd'),
     ],
   },
@@ -491,12 +491,12 @@ const CO_SETS: CoSet[] = [
     id: 'audio-3-fabien',
     audio: `${AUD}/lecon-02-02-01-audio-3.mp3`,
     transcription:
-      'Audio CSC_FR_LECON-02_02.01_AUDIO-3 — à déposer. (Photo : Fabien, Simon, Flavie, Sébastien.)',
+      'Papa, maman, voici mon ami Fabien, il est étudiant dans mon université. Fabien, voici mes parents, Simon et Flavie, et le grand brun, c’est mon frère Sébastien.',
     questions: [
       dualQcmTrait('Fabien est ___.', 'un ami', ['un ami', 'une amie']),
-      dualQcmTrait('Fabien est ___.', 'professeur', ['professeur', 'étudiant']),
-      dualQcmTrait('Simon est ___.', 'le frère', ['le père', 'le frère']),
-      dualQcmTrait('Flavie est ___ de Sébastien.', 'l’amie', ['l’amie', 'la mère']),
+      dualQcmTrait('Fabien est ___.', 'étudiant', ['professeur', 'étudiant']),
+      dualQcmTrait('Simon est ___.', 'le père', ['le père', 'le frère']),
+      dualQcmTrait('Flavie est ___ de Sébastien.', 'la mère', ['l’amie', 'la mère']),
       dualQcmTrait('Sébastien est ___.', 'le frère', ['le père', 'le frère']),
       dualQcmTrait('Sébastien est ___.', 'brun', ['blond', 'brun']),
     ],
@@ -505,21 +505,21 @@ const CO_SETS: CoSet[] = [
     id: 'audio-4-photo',
     audio: `${AUD}/lecon-02-02-01-audio-4.mp3`,
     transcription:
-      'Audio CSC_FR_LECON-02_02.01_AUDIO-4 — à déposer. (Description d’une photo de famille.)',
+      'Regarde, voici la photo d’anniversaire de mes 18 ans. La jeune fille blonde, c’est moi. Et voici papa, ton papi. Le petit roux, c’est mon frère Thomas. Il est veuf.',
     questions: [
       vf('On parle d’une photo de mariage.', false),
       vf('La personne qui parle est sur la photo.', true),
-      vf('Elle est blonde.', false),
-      vf('Thomas est le père.', true),
-      vf('C’est le petit blond.', true),
-      vf('Thomas est veuf.', false),
+      vf('Elle est blonde.', true),
+      vf('Thomas est le père.', false),
+      vf('C’est le petit blond.', false),
+      vf('Thomas est veuf.', true),
     ],
   },
   {
     id: 'audio-5-familles',
     audio: `${AUD}/lecon-02-02-01-audio-5.mp3`,
     transcription:
-      'Audio CSC_FR_LECON-02_02.01_AUDIO-5 — à déposer. (Les familles françaises.)',
+      'En général, les familles françaises ont un ou deux enfants. Les parents sont jeunes, ils ont entre 30 et 35 ans et sont souvent mariés ou pacsés. Mais ils peuvent aussi être séparés ou divorcés.',
     questions: [
       dualQcmTrait('On parle des familles ___.', 'françaises', ['anglaises', 'françaises']),
       dualQcmTrait('Elles ont ___.', 'un ou deux enfants', ['un enfant', 'un ou deux enfants']),
@@ -536,7 +536,7 @@ const CO_SETS: CoSet[] = [
     id: 'audio-nina',
     audio: `${AUD}/lecon-02-02-01-audio-1.mp3`,
     transcription:
-      'Fatima, regarde la photo sur mon téléphone. C’est ma famille. Là c’est mon frère, Farid.\nWaouh, le bel homme ! Il est célibataire ?\nNon, il est marié. Et là, c’est sa femme, Fanny.\nMoi, je suis célibataire et heureuse avec mes enfants, en famille monoparentale\n… et nombreuse ! Vive les enfants.',
+      'Fatima, regarde la photo sur mon téléphone. C’est ma famille. Là c’est mon frère, Farid.\nWaouh, le bel homme ! Il est célibataire ?\nNon, il est marié. Et là, c’est sa femme, Fanny.\nMoi, je suis célibataire et heureuse avec mes enfants, en famille monoparentale… et nombreuse ! Vive les enfants.',
     questions: [
       lignes('Avec qui parle Nina ?', 'Fatima'),
       lignes('Comment s’appelle le frère de Nina ?', 'Farid'),
