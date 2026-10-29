@@ -1,5 +1,6 @@
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import {
+  clearLibreContentFreeze,
   cycleOralMode,
   isOralComprehensionExercise,
   isProblemExercise,
@@ -89,7 +90,8 @@ export function usePageConfig({
           const count = patch.count ?? fixed.count
           fixed = {
             ...fixed,
-            // Nouveau type / nombre de questions → retirer le brouillon libre pour retirer.
+            // Changement de type → lever le contenu figé (sinon refresh / type restent bloqués après le mode libre).
+            ...(patch.exerciseType != null ? clearLibreContentFreeze() : {}),
             phraseItems:
               patch.exerciseType != null || patch.count != null ? undefined : fixed.phraseItems,
             phraseInstruction:

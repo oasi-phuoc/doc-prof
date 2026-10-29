@@ -11,8 +11,6 @@ import {
 import { parseCalliLines } from '@/calligraphie/defaults'
 import { reshuffleGameContent } from '@/jeux/bank'
 import { isJeuxType } from '@/jeux/templates'
-import { isTpfFamilyDomain } from '@/tcf/catalog'
-import { drawTcfSeries } from '@/tcf/draw-series'
 import { buildTpfFamilyTestPages } from '@/tcf/generate'
 import { buildWorksheets } from '@/math/generate'
 import { pageBlocks, setPageBlock } from '@/math/page-model'
@@ -23,6 +21,7 @@ import type {
   PreviewMode,
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
+import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { isTpmFamilyExercise, recalcTpmLibreItems } from '@/tpm/libre-recalc'
 
 export type UseGenerateActionsParams = {
@@ -224,6 +223,7 @@ export function useGenerateActions({
     const nextSeed = randomSeed()
     setSeed(nextSeed)
     setMode('student')
+    const release = clearLibreContentFreeze()
     if (isCalligraphieType(activeBlock.exerciseType)) {
       const nextText = reshuffleCalliContent(nextSeed, {
         exerciseType: activeBlock.exerciseType,
@@ -235,12 +235,18 @@ export function useGenerateActions({
         vocabSubgroup: activeBlock.vocabSubgroup,
         countHint: Math.max(parseCalliLines(activeBlock.calliText).length, calliFieldsLength),
       })
-      updatePage({ calliText: nextText, contentSeed: nextSeed })
+      updatePage({ ...release, calliText: nextText, contentSeed: nextSeed, coordLibre: false })
       return
     }
     if (activeBlock.verbGroup === 'libre' && isPhraseLibreEditable(activeBlock.exerciseType)) {
       // Nouveau tirage banque → l’effet resynchronise phraseItems.
-      updatePage({ phraseItems: undefined, phraseInstruction: undefined, contentSeed: nextSeed })
+      updatePage({
+        ...release,
+        phraseItems: undefined,
+        phraseInstruction: undefined,
+        contentSeed: nextSeed,
+        coordLibre: false,
+      })
       return
     }
     if (isJeuxType(activeBlock.exerciseType)) {
@@ -251,18 +257,20 @@ export function useGenerateActions({
         gameEntries: activeBlock.gameEntries,
       })
       updatePage({
+        ...release,
         gameEntries: reshuffled.gameEntries,
         gameText: reshuffled.gameText,
         gameSelectedIds: reshuffled.gameSelectedIds,
         contentSeed: nextSeed,
+        coordLibre: false,
       })
       return
     }
-    // Maths / autres : nouveau tirage (lève toujours l’overlay libre pour que la graine s’applique).
+    // Tous domaines : lève l’overlay libre (sinon la graine / le type ne s’appliquent plus).
     updatePage({
+      ...release,
       contentSeed: nextSeed,
-      libreItems: undefined,
-      libreInstruction: undefined,
+      coordLibre: false,
     })
   }
 
@@ -276,7 +284,13 @@ export function useGenerateActions({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock]
         if (!block) return page
-        let patch: Partial<ExerciseBlock> = { contentSeed: nextSeed }
+        const release = clearLibreContentFreeze()
+        let patch: Partial<ExerciseBlock> = {
+          ...release,
+          contentSeed: nextSeed,
+          // Repérage : reprend un tirage banque (les marques figées bloqueraient le refresh).
+          coordLibre: false,
+        }
         if (isCalligraphieType(block.exerciseType)) {
           patch = {
             ...patch,
@@ -309,22 +323,6 @@ export function useGenerateActions({
             gameEntries: reshuffled.gameEntries,
             gameText: reshuffled.gameText,
             gameSelectedIds: reshuffled.gameSelectedIds,
-          }
-        } else if (isTpfFamilyDomain(page.domain) && block.tcfExercise) {
-          const pinned = block.tcfExercise
-          patch = {
-            ...patch,
-            tcfExercise: drawTcfSeries(pinned.niveau, pinned.competence, pinned.type_exercice),
-            tcfBankId: undefined,
-            libreItems: undefined,
-            libreInstruction: undefined,
-          }
-        } else {
-          // Tous domaines : relâche le tirage figé (sinon refresh / type bloqués après le mode libre).
-          patch = {
-            ...patch,
-            libreItems: undefined,
-            libreInstruction: undefined,
           }
         }
         return setPageBlock(page, targetBlock, patch)

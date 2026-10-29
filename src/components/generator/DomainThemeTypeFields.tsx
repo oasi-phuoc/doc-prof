@@ -2,7 +2,7 @@ import {
   ACCESS_DOMAIN_OPTIONS,
 } from '@/access'
 import { SelectBox } from '@/components/generator/SelectBox'
-import { applyType } from '@/components/generator/page-helpers'
+import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { exerciseTypeById } from '@/math/catalog'
 import {
@@ -339,6 +339,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                         ? remapMarksToOrigin(activeBlock.coordMarks ?? [], stored, center, unit)
                         : activeBlock.coordMarks
                       updatePage({
+                        ...clearLibreContentFreeze(),
                         exerciseType: value,
                         topic: type.topic,
                         track: type.track,
@@ -346,18 +347,15 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                         coordMarks: remapped,
                         coordOriginCol: toComposer ? center.col : undefined,
                         coordOriginRow: toComposer ? center.row : undefined,
-                        libreItems: undefined,
-                        libreInstruction: undefined,
                       })
                       return
                     }
                     updatePage({
+                      ...clearLibreContentFreeze(),
                       exerciseType: value,
                       topic: type.topic,
                       track: type.track,
                       coordLibre: activeBlock.coordLibre,
-                      libreItems: undefined,
-                      libreInstruction: undefined,
                     })
                     return
                   }

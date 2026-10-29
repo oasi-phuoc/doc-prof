@@ -50,6 +50,24 @@ import { isTransformationExercise } from '@/math/coord-transformations'
 import { isDraftPadExercise } from '@/math/catalog'
 import type { ExerciseBlock, ExerciseType } from '@/math/types'
 
+/**
+ * Relâche le contenu figé par le mode libre.
+ * Sans ça, après sortie du panneau libre, refresh et changement de type
+ * restent bloqués (libreItems / tcfExercise / banques soutien écrasent le tirage).
+ */
+export function clearLibreContentFreeze(): Partial<ExerciseBlock> {
+  return {
+    libreItems: undefined,
+    libreInstruction: undefined,
+    tcfExercise: undefined,
+    tcfBankId: undefined,
+    soutienMotsLibre: false,
+    soutienMotsEntries: undefined,
+    soutienCompleterLibre: false,
+    soutienCompleterEntries: undefined,
+  }
+}
+
 export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBlock> {
   const isProblem = type.id.includes('problemes')
   const isOpTable =
@@ -170,8 +188,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     topic: type.topic,
     track: type.track,
     columns: type.preferredColumns ?? 2,
-    libreItems: undefined,
-    libreInstruction: undefined,
+    ...clearLibreContentFreeze(),
     ...(isDecompose
       ? { count: 6, columns: 1 }
       : isOpTable
