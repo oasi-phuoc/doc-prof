@@ -1,115 +1,81 @@
 ---
 name: decoupage-audio-co
 description: >-
-  Découpe un audio CO `complet` multi-documents en pistes mini (audio 1..n),
-  aligne transcriptions, retire intros/bips. À utiliser dès qu’on ajoute un
-  nouvel audio d’annonce / radio / informations avec plusieurs « Document N »,
-  ou qu’on relance le découpage d’une piste existante.
+  Découpe un audio CO multi-dialogues / multi-documents en pistes mini
+  (complet, association_images, et futurs six_courts / trois_moyens groupés),
+  aligne transcriptions, retire intros/bips. À utiliser dès qu’un seul MP3
+  contient plusieurs dialogues ou « Document N ».
 ---
 
-# Découpage audio CO complet (multi-documents)
+# Découpage audio CO (multi-pistes)
 
-Pour les exercices TCF / TPF **`type_exercice: complet`** dont **un seul MP3**
-contient plusieurs documents (annonces, infos radio…). On produit **une piste
-par document**, comme les CO `six_courts` / `trois_moyens`.
+Un **seul MP3** contient plusieurs documents / dialogues → produire **une
+piste par unité**, comme les CO multi-supports.
 
-Frontière : transcription Whisper seule → skill `comprehension-orale`.  
-Import banques soutien → aussi `comprehension-orale`.  
+| Type banque | Script | Champ après |
+|---|---|---|
+| `complet` multi-Document | `scripts/co-cut-complet.py` | `audios[]` + `transcription[]` + `questions[].audio` |
+| `association_images` | `scripts/co-cut-association.py` | `audios[]` + `transcription[]` (`situations[].dialogue` inchangé) |
+| `six_courts` / `trois_moyens` | — | **Pas d’entrées en banque** : le sélecteur tire des `complet` courts (1 ou 2 questions). Si un jour un MP3 groupé arrive : même règles, `support.audios` à 6 ou 3. |
+
+Frontière : Whisper seul → `comprehension-orale`.  
 Ce skill = **coupe + banque multi-pistes**.
 
 ## Règles non négociables
 
-1. **1 piste = 1 document = 1 écoute** — si l’annonce est jouée deux fois dans
-   le fichier source, **ne garder que la 1ʳᵉ** (ignorer la 2ᵉ écoute).
+1. **1 piste = 1 document/dialogue = 1 écoute** — si le passage est joué deux
+   fois, **ne garder que la 1ʳᵉ**.
 2. **Début** = fin du bip + **0,5 s** (pas de bip dans le fichier final).
-3. **Fin** = dernière phrase du document + **1 s**.
-4. **Retirer** intros / consignes orales (« Épreuve blanche… », « Exercice 1… »,
-   « Document N. Lisez la question… »).
-5. **Banque** : `support.audios[]` + `support.transcription: string[]` (une par
-   piste) + chaque question porte `audio: N` (= n° du Document).
-6. **Remplacer** le gros MP3 : créer `stem-1.mp3`…`stem-n.mp3`, mettre à jour
-   la banque, **supprimer** `stem.mp3` (plus de référence).
-7. Détection : **Whisper `large-v3`** (skill `comprehension-orale`) + repères
-   (« Document N », bip, silences). Relire les cas douteux à l’oreille.
-8. Jamais de contenu copié d’une référence externe.
+3. **Fin** = dernière phrase + **1 s**.
+4. **Retirer** intros / consignes (« Épreuve blanche… », « Dialogue N… »,
+   « Message numéro… », « Lisez… »).
+5. **Remplacer** le gros MP3 par `stem-1.mp3`…`stem-n.mp3`, puis le supprimer.
+6. Détection : Whisper **`large-v3`** + silences / bip ; relecture si
+   « Sous-titrage Société Radio-Canada » ou piste < ~4 s.
+7. Rien de copié d’une référence externe.
 
-## Forme banque (après)
-
-```json
-{
-  "type_exercice": "complet",
-  "support": {
-    "audios": [
-      "/lib/audio/tcf/co/radio/exemple-1.mp3",
-      "/lib/audio/tcf/co/radio/exemple-2.mp3"
-    ],
-    "transcription": [
-      "Texte du document 1 sans intro.",
-      "Texte du document 2 sans intro."
-    ]
-  },
-  "questions": [
-    { "enonce": "Document 1 — …", "audio": 1 },
-    { "enonce": "Document 1 — …", "audio": 1 },
-    { "enonce": "Document 2 — …", "audio": 2 }
-  ]
-}
-```
-
-Mono-document : garder `support.audio` (string) + `transcription` (string) —
-pas besoin de découper.
-
-## Pipeline (nouvel audio)
-
-1. Placer le MP3 sous `public/lib/audio/tcf/co/{scénario}/…`.
-2. Créer / mettre l’exercice `complet` dans `src/tcf/content/*/co.json`
-   (questions avec « Document N » dans l’énoncé).
-3. Lancer le script (ou découpe manuelle équivalente) :
+## Complet
 
 ```bash
+python3 scripts/co-cut-complet.py --list
 python3 scripts/co-cut-complet.py --exercise tcf-a2-s1-co-1
-# ou tous les multi-Document encore en mono-piste :
 python3 scripts/co-cut-complet.py --all-pending
 ```
 
-4. Écouter chaque `stem-N.mp3` (début/fin propres).
-5. Relire les transcriptions Whisper ; corriger chiffres, noms, « Document N ».
-6. Vérifier `audio: N` sur chaque question (= Document N).
-7. Commit + `git push origin main` (skill `pousser-main`).
+`support.audios[]` + `transcription: string[]` + `questions[].audio = N`.
 
-## Détection des coupures
+## Association (situations illustrées)
 
-### Style examen (long, ~3–10 min)
-
-Structure typique :
-
-```
-intro orale → « Document N. Lisez… » → ~15 s silence → BIP (~1,5 s)
-→ pause → annonce (écoute 1) → ~11 s → BIP → écoute 2 → document suivant…
+```bash
+python3 scripts/co-cut-association.py --list
+python3 scripts/co-cut-association.py --exercise tcf-a1-s3-co-4
+python3 scripts/co-cut-association.py --all-pending
 ```
 
-Repères : `ffmpeg silencedetect`, pics d’énergie (bip), Whisper sur **clips
-courts** (pas tout le fichier d’un coup si > 3 min — risque d’hallucination).
+`nb_dialogues` et `situations[].dialogue` restent les n° 1-based ; les pistes
+`audios[i]` correspondent au dialogue `i+1`.
 
-### Style déjà compact (~1 min, 3 docs)
+## six_courts / trois_moyens
 
-Silences ~2–3 s entre documents ; souvent **pas** d’intro ni de double écoute.
-Couper sur les silences ; Whisper chaque segment.
+Dans le catalogue UI : « 6 audios courts » / « 3 audios moyens », mais le
+tirage (`draw-series.ts`) prend un **`complet`** avec 1 ou 2 questions — pas
+une banque dédiée. Rien à découper tant qu’il n’existe pas d’exercice
+`type_exercice: six_courts|trois_moyens` avec un MP3 groupé.
 
-## Nommage fichiers
+Si un tel exercice est ajouté : même pipeline (1 piste / extrait, 1 écoute),
+`support.audios` de longueur 6 ou 3, `questions[].audio` 1-based.
 
-| Avant | Après |
-|---|---|
-| `les-annonces-publiques-3.mp3` | `les-annonces-publiques-3-1.mp3` … `-6.mp3` |
-| `loisirs-3.mp3` | `loisirs-3-1.mp3` … `-3.mp3` |
+## Images à reconnaître
 
-Chemin banque : `/lib/audio/tcf/co/…` (absolu).
+En général **une seule piste** pour les 5 images. Si le fichier a une intro
+d’examen + 2 écoutes du même contenu : tronquer (1 écoute, sans intro) en
+gardant `support.audio` (string) — pas de multi-pistes.
 
-## Checklist nouvel audio
+## Checklist
 
-- [ ] Multi-documents ? sinon laisser `support.audio` mono
-- [ ] Coupes : pas de bip, pas d’intro, +0,5 s / +1 s
-- [ ] Une transcription propre par piste
-- [ ] `questions[].audio` = n° Document
+- [ ] Multi-unités dans un seul MP3 ?
+- [ ] Coupes sans bip / sans intro / +0,5 s / +1 s / 1 écoute
+- [ ] Transcription propre par piste
+- [ ] Références banque (`audio: N` ou `dialogue: N`) alignées
 - [ ] Gros fichier source retiré
-- [ ] Push `origin/main`
+- [ ] `git push origin main` (skill `pousser-main`)

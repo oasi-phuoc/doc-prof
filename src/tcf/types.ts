@@ -156,10 +156,19 @@ export type TcfCoComplet = TcfBase<
 
 /** Une situation illustrée ; `dialogue` = n° du dialogue qui correspond (null = aucun). */
 export type TcfSituation = { id: string; image: string; dialogue: number | null }
+/**
+ * Association : une piste unique (`audio`) ou une piste par dialogue (`audios`),
+ * alignée sur `nb_dialogues` / `situations[].dialogue`.
+ */
 export type TcfCoAssociation = TcfBase<
   'CO',
   'association_images',
-  { audio: string; nb_dialogues: number; transcription?: string }
+  {
+    audio?: string
+    audios?: string[]
+    nb_dialogues: number
+    transcription?: string | string[]
+  }
 > & {
   situations: TcfSituation[]
 }

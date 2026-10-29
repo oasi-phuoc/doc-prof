@@ -1,5 +1,6 @@
 import { TCF_TYPES } from './catalog'
 import { hasInlineBlank } from './inline-blank'
+import { tcfAssociationAudioRefs } from './association-audio'
 import { tcfCompletAudioCount, tcfCompletAudioRefs, tcfCompletTranscriptions } from './complet-audio'
 import { tcfAudioSequence, tcfAudioSrc, tcfImageSrc } from './media'
 import { TCF_IMAGES_A_COCHER, TCF_QCM_MAX, TCF_QCM_MIN } from './templates'
@@ -142,7 +143,21 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
       break
     }
     case 'association_images': {
-      if (blank(ex.support.audio)) errors.push('Audio manquant.')
+      const refs = tcfAssociationAudioRefs(ex)
+      if (refs.length === 0) errors.push('Audio manquant.')
+      const multi = (ex.support.audios?.length ?? 0) > 0
+      if (multi) {
+        ex.support.audios!.forEach((a, i) => {
+          if (blank(a)) errors.push(`Audio ${i + 1} manquant.`)
+        })
+        if (ex.support.audios!.length !== ex.support.nb_dialogues) {
+          warnings.push(
+            `Pistes (${ex.support.audios!.length}) ≠ nb_dialogues (${ex.support.nb_dialogues}).`,
+          )
+        }
+      } else if (blank(ex.support.audio)) {
+        errors.push('Audio manquant.')
+      }
       const n = ex.support.nb_dialogues
       if (!Number.isInteger(n) || n < 1) errors.push('Nombre de dialogues : au moins 1.')
       if (ex.situations.length < 2) errors.push('Au moins 2 situations.')
@@ -262,7 +277,7 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
       audios.push(...tcfCompletAudioRefs(ex))
       break
     case 'association_images':
-      audios.push(ex.support.audio)
+      audios.push(...tcfAssociationAudioRefs(ex))
       ex.situations.forEach((s) => images.push(s.image))
       break
     case 'mots_theme':

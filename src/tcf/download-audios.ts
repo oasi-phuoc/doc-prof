@@ -12,6 +12,7 @@ import {
   type TcfAudioFamilyPrefix,
 } from '@/francais/soutien/download-name'
 import { zipStoreBlob } from '@/lib/zip-store'
+import { tcfAssociationAudioRefs } from './association-audio'
 import { tcfCompletAudioRefs } from './complet-audio'
 import { tcfExerciseById } from './loader'
 import { tcfAudioSequence, tcfAudioSrc } from './media'
@@ -39,8 +40,10 @@ export function tcfExerciseAudioRefs(ex: TcfExercise): string[] {
   const audios: string[] = []
   switch (ex.type_exercice) {
     case 'images_a_reconnaitre':
-    case 'association_images':
       if (ex.support.audio?.trim()) audios.push(ex.support.audio)
+      break
+    case 'association_images':
+      audios.push(...tcfAssociationAudioRefs(ex))
       break
     case 'complet':
       audios.push(...tcfCompletAudioRefs(ex))

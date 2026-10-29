@@ -147,7 +147,22 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       return (
         <>
           {banque}
-          <Modele text={ex.support.transcription} mode={mode} title="Transcription" />
+          <Modele
+            text={
+              Array.isArray(ex.support.transcription)
+                ? ex.support.transcription
+                    .map((t, i) =>
+                      /^(Dialogue|Message)\s+\d+/i.test(t.trim())
+                        ? t.trim()
+                        : `Dialogue ${i + 1} — ${t.trim()}`,
+                    )
+                    .filter(Boolean)
+                    .join('\n\n')
+                : ex.support.transcription
+            }
+            mode={mode}
+            title="Transcription"
+          />
         </>
       )
     case 'image_question': {

@@ -225,6 +225,17 @@ def detect_exam_style_cuts(mono: Path, n_docs: int) -> list[tuple[float, float]]
     if len(reading) < n_docs:
         # Élargir un peu (13,5–17 s) sans descendre aux silences « entre 2 écoutes ».
         reading = [(s, e, d) for s, e, d in long_sil if 13.5 <= d <= 17.0]
+    # Parfois le 1er document a une lecture plus courte (~9–11 s) : compléter
+    # avec le silence ~10 s qui précède le premier silence ~15 s.
+    if len(reading) == n_docs - 1 and n_docs >= 2:
+        first_long = reading[0][0]
+        short_reads = [
+            (s, e, d)
+            for s, e, d in silences
+            if 8.5 <= d <= 11.5 and e < first_long - 1.0
+        ]
+        if short_reads:
+            reading = [short_reads[-1]] + reading
     if len(reading) != n_docs:
         return None
 

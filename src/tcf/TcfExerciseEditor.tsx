@@ -316,15 +316,36 @@ function SupportEditor({
     }
     case 'association_images': {
       const n = ex.support.nb_dialogues
+      const multi = (ex.support.audios?.length ?? 0) > 0
       return (
         <>
-          <AudioField
-            label="Audio (tous les dialogues)"
-            value={ex.support.audio}
-            onChange={(audio) => set(withSupport(ex, { audio }))}
-            bankEntries={audioBank}
-            onPickFromBank={pickAudio}
-          />
+          {multi ? (
+            ex.support.audios!.map((audio, i) => (
+              <AudioField
+                key={i}
+                label={`Dialogue / audio ${i + 1}`}
+                value={audio}
+                onChange={(next) =>
+                  set(
+                    withSupport(ex, {
+                      audios: ex.support.audios!.map((a, k) => (k === i ? next : a)),
+                      audio: undefined,
+                    }),
+                  )
+                }
+                bankEntries={audioBank}
+                onPickFromBank={pickAudio}
+              />
+            ))
+          ) : (
+            <AudioField
+              label="Audio (tous les dialogues)"
+              value={ex.support.audio ?? ''}
+              onChange={(audio) => set(withSupport(ex, { audio, audios: undefined }))}
+              bankEntries={audioBank}
+              onPickFromBank={pickAudio}
+            />
+          )}
           <NumberField
             label="Nombre de dialogues"
             value={n}
@@ -332,13 +353,44 @@ function SupportEditor({
             max={8}
             onChange={(nb_dialogues) => set(withSupport(ex, { nb_dialogues: nb_dialogues ?? 1 }))}
           />
-          <TextField
-            label="Transcription (corrigé)"
-            value={ex.support.transcription ?? ''}
-            multiline
-            rows={5}
-            onChange={(transcription) => set(withSupport(ex, { transcription }))}
-          />
+          {multi ? (
+            ex.support.audios!.map((_, i) => {
+              const trs = Array.isArray(ex.support.transcription)
+                ? ex.support.transcription
+                : [typeof ex.support.transcription === 'string' ? ex.support.transcription : '']
+              return (
+                <TextField
+                  key={`atr-${i}`}
+                  label={`Transcription ${i + 1}`}
+                  value={trs[i] ?? ''}
+                  multiline
+                  rows={3}
+                  onChange={(next) => {
+                    const current = Array.isArray(ex.support.transcription)
+                      ? [...ex.support.transcription]
+                      : ex.support.audios!.map((__, k) =>
+                          k === 0 ? String(ex.support.transcription ?? '') : '',
+                        )
+                    while (current.length < ex.support.audios!.length) current.push('')
+                    current[i] = next
+                    set(withSupport(ex, { transcription: current }))
+                  }}
+                />
+              )
+            })
+          ) : (
+            <TextField
+              label="Transcription (corrigé)"
+              value={
+                typeof ex.support.transcription === 'string'
+                  ? ex.support.transcription
+                  : (ex.support.transcription?.[0] ?? '')
+              }
+              multiline
+              rows={5}
+              onChange={(transcription) => set(withSupport(ex, { transcription }))}
+            />
+          )}
           <b>Situations ({ex.situations.length})</b>
           <ul className="tcf-choix-list">
             {ex.situations.map((s, i) => (
