@@ -399,7 +399,16 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
 
         refs = [lib_ref(p) for p in out_paths]
         update_exercise(ex, refs, transcriptions)
-        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        # Recharger la banque juste avant écriture (évite d’écraser d’autres exercices
+        # traités en parallèle / corrigés entre-temps).
+        fresh = json.loads(path.read_text(encoding="utf-8"))
+        for i, item in enumerate(fresh):
+            if item.get("id") == ex_id:
+                fresh[i] = ex
+                break
+        else:
+            fresh.append(ex)
+        path.write_text(json.dumps(fresh, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"  updated {path.relative_to(ROOT)}")
 
         if not keep_source:
