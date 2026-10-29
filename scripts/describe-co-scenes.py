@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Ajoute une description de scène (pour génération d’image / vidéo externe)
+Ajoute une description de scénario vidéo (pour génération externe)
 à chaque audio CO court (1Q) / moyen (2Q).
 
-Ne génère PAS d’images. Met à jour :
+Ne génère PAS d’images ni de vidéos. Met à jour :
 - support.image_description (mono) ou support.images_descriptions[] (multi)
 - public/lib/images/tcf/co/scenes/manifest.json
 - public/lib/images/tcf/co/scenes/README.md
@@ -77,14 +77,15 @@ def clean_dialogue(text: str) -> str:
     return t.strip()
 
 
-def dialogue_beats(transcription: str, max_beats: int = 4) -> list[str]:
+def dialogue_beats(transcription: str, max_beats: int = 8) -> list[str]:
     t = clean_dialogue(transcription)
     if not t:
         return []
+    # Prefer line breaks (speaker turns) then sentence ends
     raw = re.split(r"\n+|\s*[—–]\s*|(?<=[.!?])\s+", t)
     beats: list[str] = []
     for p in raw:
-        p = p.strip(" .;:")
+        p = p.strip(" .;:-")
         if len(p) < 3:
             continue
         beats.append(p[0].upper() + p[1:])
@@ -101,28 +102,43 @@ def build_description(
     transcription: str,
     kind: str,
 ) -> str:
+    """Brief de scénario vidéo pour un outil de génération externe (pas d’image ici)."""
     lieu = LIEU_PAR_DOSSIER.get(dossier) or SCENARIO_LIEU.get(scenario) or "dans un lieu de vie quotidienne"
     titre = (scene or "").strip()
-    beats = dialogue_beats(transcription)
+    max_beats = 5 if kind == "court" else 8
+    beats = dialogue_beats(transcription, max_beats=max_beats)
+    duree = "8–15 s" if kind == "court" else "15–30 s"
+
+    head = f"Scénario vidéo (audio CO {kind}"
+    if titre:
+        head += f", « {titre} »"
+    head += f", durée indicative {duree})"
+
     if beats:
-        echange = " → ".join(beats)
-        action = (
-            "Deux personnes (ou un usager et un agent) sont en interaction. "
-            f"Fil de la scène : {echange}."
+        # Alternance A/B pour guider le montage
+        repliques: list[str] = []
+        for i, b in enumerate(beats):
+            loc = "A" if i % 2 == 0 else "B"
+            repliques.append(f"{loc} : « {b} »")
+        deroule = (
+            "Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) "
+            f"se parlent {lieu}. "
+            "Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : "
+            + " ; ".join(repliques)
+            + "."
         )
     else:
-        action = "Deux personnes discutent dans ce décor."
-    head = f"Scène audio {kind}"
-    if titre:
-        head += f" « {titre} »"
-    return (
-        f"{head}. "
-        f"Lieu : {lieu}. "
-        f"{action} "
-        f"À illustrer en une seule image (ou plan fixe vidéo) : bande dessinée réaliste, "
-        f"décor quotidien lisible, personnages expressifs, pas de texte ni de sous-titres à l’écran, "
-        f"pas de fond blanc studio."
+        deroule = (
+            f"Deux personnages adultes se parlent {lieu}, "
+            "gestes et regards cohérents avec l’audio."
+        )
+
+    style = (
+        "Style : bande dessinée réaliste animée, décor quotidien lisible, "
+        "personnages expressifs, bouche et gestes synchronisés au rythme des répliques. "
+        "Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
     )
+    return f"{head}. {deroule} {style}"
 
 
 
@@ -242,9 +258,10 @@ def main() -> None:
     lines = [
         "# Scènes CO — audios courts et moyens",
         "",
-        "Images de **scène / scénario** pour chaque audio CO à 1 question (court)",
-        "ou 2 questions (moyen). À générer ailleurs (image ou vidéo), puis déposer",
-        "ici en **WebP** (bande dessinée réaliste, décor quotidien — pas fond blanc).",
+        "Briefs de **scénario vidéo** pour chaque audio CO à 1 question (court)",
+        "ou 2 questions (moyen). Générer les vidéos (ou images) **ailleurs**, puis",
+        "déposer ici un **WebP** de scène (bande dessinée réaliste, décor quotidien —",
+        "pas fond blanc) si besoin pour la fiche.",
         "",
         "Convention de nommage :",
         "",
@@ -253,8 +270,8 @@ def main() -> None:
         "image  /lib/images/tcf/co/scenes/{dossier-slug}/{stem-slug}.webp",
         "```",
         "",
-        "Chaque ligne ci-dessous donne le **fichier attendu** et la **description**",
-        "du scénario à utiliser dans l’outil de génération.",
+        "Chaque entrée donne le **fichier attendu** et la **description du scénario**",
+        "de l’audio (personnages A/B, répliques, style) pour l’outil de génération.",
         "",
         f"**{len(rows)} scènes** ({sum(1 for r in rows if r['kind']=='court')} court, "
         f"{sum(1 for r in rows if r['kind']=='moyen')} moyen).",
