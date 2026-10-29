@@ -1,9 +1,14 @@
-import type { RefObject } from 'react'
+import { useMemo, type RefObject } from 'react'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
 import { WorksheetSheet } from '@/components/generator/WorksheetSheet'
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
+import { TranscriptionAppendixSheet } from '@/components/tcf/TranscriptionAppendixSheet'
 import { imageInteractionsOf } from '@/tcf/interaction-lines'
+import {
+  collectWorksheetTranscriptions,
+  paginateTranscriptions,
+} from '@/tcf/transcriptions'
 import { isOralComprehensionExercise, isProblemExercise } from '@/components/generator/page-helpers'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type {
@@ -136,6 +141,18 @@ export function ResultPanel({
   placeOrigin,
   removeCoordMark,
 }: ResultPanelProps) {
+  const transcriptionPacks = useMemo(
+    () => paginateTranscriptions(collectWorksheetTranscriptions(previewWorksheets)),
+    [previewWorksheets],
+  )
+  const answersBaseCount = isCalliDomain || isJeuxDomain ? 0 : previewWorksheets.length
+  /** Corrigé : pages exercices + pages transcriptions (interactions PO sans pied numéroté). */
+  const corrigeTotalPages = answersBaseCount + transcriptionPacks.length
+  const showTranscriptionPreview =
+    sheetProps.mode === 'answers' &&
+    transcriptionPacks.length > 0 &&
+    safeSheetIndex >= Math.max(0, previewWorksheets.length - 1)
+
   return (
           <section className="result-panel">
             <div className="result-head">
@@ -387,6 +404,20 @@ export function ResultPanel({
                           </A4Frame>
                         ))
                       : null}
+                    {showTranscriptionPreview
+                      ? transcriptionPacks.map((entries, i) => (
+                          <A4Frame key={`transcription-prev-${i}`}>
+                            <TranscriptionAppendixSheet
+                              entries={entries}
+                              pageNumber={answersBaseCount + i + 1}
+                              totalPages={corrigeTotalPages}
+                              institutional={chromeProps.institutional}
+                              appendixIndex={i + 1}
+                              appendixTotal={transcriptionPacks.length}
+                            />
+                          </A4Frame>
+                        ))
+                      : null}
                   </div>
                   )}
                   {isFormes && activeBlock.coordLibre ? (
@@ -433,6 +464,17 @@ export function ResultPanel({
                   <InteractionCorrigeSheet key={`print-interaction-${exercise.id}`} exercise={exercise} />
                 )),
               )}
+              {transcriptionPacks.map((entries, i) => (
+                <TranscriptionAppendixSheet
+                  key={`print-transcription-${i}`}
+                  entries={entries}
+                  pageNumber={answersBaseCount + i + 1}
+                  totalPages={corrigeTotalPages}
+                  institutional={chromeProps.institutional}
+                  appendixIndex={i + 1}
+                  appendixTotal={transcriptionPacks.length}
+                />
+              ))}
             </div>
           </section>
 

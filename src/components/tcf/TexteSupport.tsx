@@ -210,45 +210,13 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
               ))}
             </ul>
           ) : null}
-          <Modele
-            text={
-              Array.isArray(ex.support.transcription)
-                ? ex.support.transcription
-                    .map((t, i) =>
-                      /^Document\s+\d+/i.test(t.trim()) ? t.trim() : `Document ${i + 1} — ${t.trim()}`,
-                    )
-                    .filter(Boolean)
-                    .join('\n\n')
-                : ex.support.transcription
-            }
-            mode={mode}
-            title="Transcription"
-          />
+          {/* Transcriptions regroupées en fin de corrigé (TranscriptionAppendixSheet). */}
         </>
       )
     }
     case 'association_images':
-      return (
-        <>
-          {banque}
-          <Modele
-            text={
-              Array.isArray(ex.support.transcription)
-                ? ex.support.transcription
-                    .map((t, i) =>
-                      /^(Dialogue|Message)\s+\d+/i.test(t.trim())
-                        ? t.trim()
-                        : `Dialogue ${i + 1} — ${t.trim()}`,
-                    )
-                    .filter(Boolean)
-                    .join('\n\n')
-                : ex.support.transcription
-            }
-            mode={mode}
-            title="Transcription"
-          />
-        </>
-      )
+      // Transcriptions regroupées en fin de corrigé (TranscriptionAppendixSheet).
+      return banque
     case 'image_question': {
       const photos = (ex.support.images ?? []).map((src) => src.trim()).filter(Boolean)
       const numbered = /\(1\)/.test(ex.support.consigne)

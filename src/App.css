@@ -4338,6 +4338,17 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-sequence-num{position:absolute;top:4px;left:4px;display:inline-flex;align-items:center;justify-content:center;width:1.6em;height:1.6em;border:1.5px solid var(--ink);border-radius:50%;background:#fff;font-weight:700}
 .tcf-modele{padding:6px 10px;border:1px dashed var(--purple);color:var(--ink)}
 .tcf-modele ul{margin:4px 0 0;padding-left:1.2em}
+/* Annexe corrigé : transcriptions audio en fin de document. */
+.tcf-transcriptions-body{display:flex;flex-direction:column;gap:8px;min-height:0}
+.tcf-transcriptions{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tcf-transcription-block{
+  break-inside:avoid;padding:6px 0 8px;border-bottom:1px solid var(--line)
+}
+.tcf-transcription-block:last-child{border-bottom:0;padding-bottom:0}
+.tcf-transcription-block h4{
+  margin:0 0 4px;font-size:calc(12pt * var(--app-font-scale, 1));font-weight:800;color:var(--purple)
+}
+.tcf-transcription-block .tcf-text{font-size:.95em;line-height:1.35}
 .tcf-vide{margin:0;padding:10px;border:1px dashed var(--muted);color:var(--muted)}
 .tcf-text,.tcf-consigne-supp,.tcf-lignes-modele{white-space:pre-line}
 .tcf-enonce{display:flex;align-items:baseline;gap:0;width:100%}
