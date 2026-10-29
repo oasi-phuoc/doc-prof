@@ -298,8 +298,13 @@ export function WorksheetSheet({
                         Grille
                       </button>
                     ) : null}
+                    {evalMode && blockPts > 0 ? (
+                      <span className="instruction-points">{pointsBadge}</span>
+                    ) : null}
                   </div>
-                  {block.instruction ? <p>{renderSoutienInstruction(block.instruction)}</p> : null}
+                  {block.instruction ? (
+                    <p className="exercise-instruction">{renderSoutienInstruction(block.instruction)}</p>
+                  ) : null}
                   {block.exerciseType === 'addition-decompose' ? <DecomposeExample op="+" /> : null}
                   {block.exerciseType === 'soustraction-decompose' ? <DecomposeExample op="−" /> : null}
                   {block.givens && block.givens.length > 0 ? (
@@ -315,9 +320,6 @@ export function WorksheetSheet({
                     </p>
                   ) : null}
                 </div>
-                {evalMode && blockPts > 0 ? (
-                  <span className="instruction-points">{pointsBadge}</span>
-                ) : null}
               </header>
               )}
               {block.document ? (

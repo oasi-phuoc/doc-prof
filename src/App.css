@@ -1964,6 +1964,8 @@ html,body,#root{
 }
 .exercise-heading h3{margin:0;font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em;color:var(--ink)}
 .exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify;white-space:pre-line}
+/* Consigne pleine largeur (points dans la title-row, plus de retrait à droite). */
+.exercise-heading .exercise-instruction{width:100%;max-width:100%;text-align:justify}
 /* Refresh en bas à droite du titre « Exercice N » (aperçu seulement). */
 .exercise-refresh-btn{
   width:22px;height:22px;padding:0;margin:0 0 1px;border:1px solid var(--line);
@@ -4118,6 +4120,53 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-annonce-title{margin:0 0 6px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.03em}
 .tcf-annonce-body{display:flex;gap:12px;align-items:flex-start;min-width:0;max-width:100%}
 .tcf-annonce-body .tcf-image{width:34mm;height:26mm}
+/* CE « Lire pour s’orienter » : un bloc par document + tableau personnes → N°. */
+.tcf-assoc{display:flex;flex-direction:column;gap:5px;width:100%;max-width:100%;min-width:0}
+.tcf-assoc .tcf-annonce-title{margin-bottom:2px}
+.tcf-assoc-docs{
+  list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;width:100%
+}
+.tcf-assoc-doc{
+  position:relative;margin:0;padding:6px 8px 6px 22px;
+  border:1.5px solid var(--ink);box-sizing:border-box;width:100%;max-width:100%
+}
+.tcf-assoc-doc .tcf-text{margin:0;font-size:.95em;line-height:1.35}
+.tcf-assoc-doc-num{
+  position:absolute;top:4px;left:4px;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:1.15em;height:1.15em;padding:0 1px;
+  font-weight:800;font-size:.95em;line-height:1;color:var(--purple);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-assoc-doc-title{margin:0 0 2px;font-weight:700;font-size:.95em}
+.tcf-assoc-people-title{margin:4px 0 2px;font-weight:800}
+.tcf-assoc-people{
+  width:100%;border-collapse:collapse;table-layout:fixed;margin:0
+}
+.tcf-assoc-people th,.tcf-assoc-people td{
+  border:1px solid var(--ink);padding:3px 8px;vertical-align:middle;
+  font-size:.92em;line-height:1.35;text-align:left
+}
+.tcf-assoc-people th{width:78%;font-weight:500}
+.tcf-assoc-people td{width:22%;white-space:nowrap}
+.tcf-assoc-letter{
+  font-weight:800;color:var(--purple);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-assoc-num-label{
+  font-weight:800;color:var(--purple);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-assoc-answer{
+  display:inline-flex;align-items:baseline;gap:4px;width:100%
+}
+.tcf-assoc-num-line{
+  display:inline-block;flex:1 1 auto;width:auto;min-width:1.6em;
+  margin:0;padding:0 2px 1px;vertical-align:baseline;text-align:center;
+  border-bottom:1.75px solid var(--purple);font-weight:800;color:var(--purple);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-assoc-num-line.filled{color:var(--purple)}
 .tcf-image{display:block;width:100%;height:28mm;object-fit:contain;background:#fff}
 .tcf-image.is-large{height:90mm}
 .tcf-image.is-empty{border:1px dashed var(--muted)}

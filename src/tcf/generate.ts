@@ -18,6 +18,7 @@ import {
   tpfNiveauxForDomain,
   type TcfSlotMeta,
 } from './catalog'
+import { isAssociationAnnonce } from './association-documents'
 import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
@@ -167,9 +168,18 @@ export function tcfExerciseItems(
     ? undefined
     : (ex.consigne_supplementaire ?? undefined)
   switch (ex.type_exercice) {
+    case 'annonce': {
+      // Lire pour s’orienter (docs + personnes) : réponses dans le tableau du support.
+      if (isAssociationAnnonce(ex)) return [support(true)]
+      return [
+        support(),
+        ...ex.questions.map((q, i) =>
+          questionItem(q, i + 1, rng, formModes?.[i + 1], ex.competence, ex.id),
+        ),
+      ]
+    }
     case 'sms':
     case 'email':
-    case 'annonce':
     case 'six_courts':
     case 'trois_moyens':
     case 'complet': {

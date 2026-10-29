@@ -1,6 +1,10 @@
 import type { PreviewMode } from '@/math/types'
+import {
+  associationAnswersFromExercise,
+  parseAssociationDocuments,
+} from '@/tcf/association-documents'
 import { tcfImageSrc } from '@/tcf/media'
-import type { TcfExercise } from '@/tcf/types'
+import type { TcfCeAnnonce, TcfExercise } from '@/tcf/types'
 
 /** Paragraphes : une ligne vide sépare deux paragraphes. */
 function Paragraphs({ text }: { text: string }) {
@@ -103,7 +107,60 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
           <EmailBox {...ex.support} />
         </>
       )
-    case 'annonce':
+    case 'annonce': {
+      const association = parseAssociationDocuments(ex.support.texte)
+      if (association) {
+        const answers = associationAnswersFromExercise(ex as TcfCeAnnonce)
+        const show = mode === 'answers'
+        return (
+          <>
+            {banque}
+            <div className="tcf-assoc">
+              {ex.support.titre ? <p className="tcf-annonce-title">{ex.support.titre}</p> : null}
+              {ex.support.image ? (
+                <TcfImage src={ex.support.image} alt={ex.support.titre} className="tcf-image" />
+              ) : null}
+              <ul className="tcf-assoc-docs">
+                {association.documents.map((doc) => (
+                  <li key={doc.numero} className="tcf-assoc-doc">
+                    <span className="tcf-assoc-doc-num" aria-hidden>
+                      {doc.numero}
+                    </span>
+                    {doc.titre ? <p className="tcf-assoc-doc-title">{doc.titre}</p> : null}
+                    <Paragraphs text={doc.texte} />
+                  </li>
+                ))}
+              </ul>
+              <p className="tcf-assoc-people-title">Les personnes :</p>
+              <table className="tcf-assoc-people">
+                <tbody>
+                  {association.personnes.map((p) => {
+                    const num = answers[p.lettre]
+                    const fill = show && num != null ? String(num) : ''
+                    return (
+                      <tr key={p.lettre}>
+                        <th scope="row">
+                          <span className="tcf-assoc-letter">{p.lettre}.</span> {p.texte}
+                        </th>
+                        <td>
+                          <span className="tcf-assoc-answer">
+                            <span className="tcf-assoc-num-label">N° :</span>
+                            <span
+                              className={`answer-line-field tcf-assoc-num-line${fill ? ' filled' : ''}`}
+                            >
+                              {fill || '\u00a0'}
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )
+      }
       return (
         <>
           {banque}
@@ -118,6 +175,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
           </div>
         </>
       )
+    }
     case 'images_a_reconnaitre':
     case 'six_courts':
     case 'trois_moyens':
