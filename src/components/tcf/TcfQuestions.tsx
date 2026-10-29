@@ -342,7 +342,7 @@ export function GrilleOral({ grille }: { grille: TcfGrille }) {
   )
 }
 
-/** CO : 5 images, case sous chacune ; corrigé ✔ (à cocher) / ✘ (à laisser vide). */
+/** CO objets A1 : 5 images (2 par ligne, dernière centrée), Oui / Non sous chacune. */
 export function ImagesACocher({
   numero,
   consigne,
@@ -367,9 +367,22 @@ export function ImagesACocher({
             className={show ? (img.correct ? 'is-correct' : 'is-wrong') : undefined}
           >
             <TcfImage src={img.image} alt={`Image ${i + 1}`} />
-            <span className="tcf-case is-large" aria-label={show ? (img.correct ? 'à cocher' : 'à laisser vide') : undefined}>
-              {show ? (img.correct ? '✔' : '✘') : ''}
-            </span>
+            <div className="tcf-yn" aria-label={show ? (img.correct ? 'Oui' : 'Non') : undefined}>
+              <span className="tcf-yn-option">
+                <span
+                  className={`tcf-case is-large${show && img.correct ? ' is-filled' : ''}`}
+                  aria-hidden
+                />
+                <span className="tcf-yn-label">Oui</span>
+              </span>
+              <span className="tcf-yn-option">
+                <span
+                  className={`tcf-case is-large${show && !img.correct ? ' is-filled' : ''}`}
+                  aria-hidden
+                />
+                <span className="tcf-yn-label">Non</span>
+              </span>
+            </div>
           </li>
         ))}
       </ul>

@@ -345,15 +345,6 @@ const CE_A1 = [
   'Lire pour s’informer',
 ] as const
 
-const CE_A1_POINTS = [6, 6, 6, 7] as const
-
-const CE_A1_DESC = [
-  'Domaine personnel. Lettre, carte postale, courriel, carte d’invitation ou mode d’emploi. Questionnaire de 5 questions, 6 points.',
-  'Domaine public. Affiche, publicité, brochure, horaires, prospectus ou panneau d’affichage. Questionnaire de 5 questions, 6 points.',
-  'Domaine professionnel. Courrier, instructions, mode d’emploi, brochure ou programme. Questionnaire de 5 questions, 6 points.',
-  'Domaine éducationnel ou public. Affiche, brochure, programme d’un événement ou article de presse. Questionnaire de 5 questions, 7 points.',
-] as const
-
 const CE_A2 = [
   'Lire pour s’orienter',
   'Lire une correspondance',
@@ -361,12 +352,21 @@ const CE_A2 = [
   'Lire pour s’informer',
 ] as const
 
-const CO_DEROULE = [
-  'A1 : identifier un événement (messages, questionnaire). A2 : comprendre des annonces et des instructions (6 QCM).',
-  'A1 : identifier une activité (météo, radio, annonces). A2 : comprendre une émission de radio (6 QCM).',
-  'A1 : comprendre des instructions (messages). A2 : comprendre un message sur répondeur (6 QCM).',
-  'A1 : identifier des situations (dialogues et images). A2 : comprendre une discussion (appariement).',
-  'A1 : identifier des objets (messages et images). En A2, l’oral s’arrête à l’exercice 4.',
+/** Libellés courts CO A1 (CSC / TPF A0-A1) — même style que CE. */
+const CO_A1 = [
+  'Identifier un événement',
+  'Identifier une activité',
+  'Comprendre des instructions',
+  'Identifier des situations',
+  'Identifier des objets',
+] as const
+
+/** Libellés courts CO A2 (CFR / TPF A1-A2). */
+const CO_A2 = [
+  'Comprendre des annonces et des instructions',
+  'Comprendre une émission de radio',
+  'Comprendre un message sur répondeur',
+  'Comprendre une discussion',
 ] as const
 
 export const TCF_SLOTS: readonly TcfSlotMeta[] = [
@@ -375,7 +375,7 @@ export const TCF_SLOTS: readonly TcfSlotMeta[] = [
     competence: 'CO' as const,
     numero,
     label: `Exercice ${numero}`,
-    description: CO_DEROULE[numero - 1] ?? `Compréhension orale : exercice ${numero}.`,
+    description: CO_A1[numero - 1] ?? `Compréhension orale : exercice ${numero}.`,
     instruction: 'Écoutez le document, puis répondez aux questions.',
   })),
   ...([1, 2, 3, 4] as const).map((numero) => ({
@@ -383,7 +383,7 @@ export const TCF_SLOTS: readonly TcfSlotMeta[] = [
     competence: 'CE' as const,
     numero,
     label: `Exercice ${numero}`,
-    description: CE_A1_DESC[numero - 1]!,
+    description: CE_A1[numero - 1]!,
     instruction: 'Lisez le document. Cochez la bonne réponse.',
   })),
   {
@@ -415,20 +415,25 @@ export const tcfSlotByTypeId: Readonly<Record<string, TcfSlotMeta>> = {
   [TCF_CE_LEGACY.typeId]: TCF_CE_LEGACY,
 }
 
-/** Libellé du menu Exercice pour la compréhension écrite, selon le niveau. */
+/** Libellé du menu Exercice (CE / CO) : « Exercice N · description », sans points. */
 export function tcfMenuLabel(typeId: string, niveau: TcfNiveau): string | undefined {
   const slot = tcfSlotByTypeId[typeId]
-  if (!slot || slot.competence !== 'CE' || slot.numero == null) return undefined
-  if (niveau === 'A0-A1') {
-    const name = CE_A1[slot.numero - 1]
-    const points = CE_A1_POINTS[slot.numero - 1]
-    return name ? `Exercice ${slot.numero} · ${name} (${points} points)` : undefined
+  if (!slot || slot.numero == null) return undefined
+  if (slot.competence === 'CE') {
+    const name =
+      niveau === 'A1-A2' || niveau === 'A2-B1'
+        ? CE_A2[slot.numero - 1]
+        : CE_A1[slot.numero - 1]
+    return name ? `Exercice ${slot.numero} · ${name}` : `Exercice ${slot.numero}`
   }
-  if (niveau === 'A1-A2') {
-    const name = CE_A2[slot.numero - 1]
-    return name ? `Exercice ${slot.numero} · ${name}` : undefined
+  if (slot.competence === 'CO') {
+    const name =
+      niveau === 'A1-A2' || niveau === 'A2-B1'
+        ? CO_A2[slot.numero - 1]
+        : CO_A1[slot.numero - 1]
+    return name ? `Exercice ${slot.numero} · ${name}` : `Exercice ${slot.numero}`
   }
-  return `Exercice ${slot.numero}`
+  return undefined
 }
 
 /** Scénarios qui regroupent les exercices de chaque compétence dans le sélecteur. */

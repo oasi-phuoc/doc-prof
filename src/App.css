@@ -4227,11 +4227,25 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-qcm-images.is-4{grid-template-columns:repeat(4,1fr)}
 .tcf-qcm-images li{display:flex;flex-direction:column;align-items:center;gap:4px}
 .tcf-qcm-image-foot{display:flex;align-items:center;gap:6px}
-.tcf-images-cocher{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.tcf-images-cocher li{display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px;border:2px solid transparent}
+/* CO objets A1 : 2 images / ligne, 5ᵉ centrée ; Oui / Non sous chaque image. */
+.tcf-images-cocher{
+  list-style:none;margin:0;padding:0;width:100%;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;
+  justify-items:stretch
+}
+.tcf-images-cocher li{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:6px 8px;border:2px solid transparent;box-sizing:border-box;min-width:0;width:100%
+}
+.tcf-images-cocher li:last-child:nth-child(odd){
+  grid-column:1 / -1;justify-self:center;width:calc((100% - 14px) / 2);max-width:100%
+}
 .tcf-images-cocher li.is-correct{border-color:var(--green)}
 .tcf-images-cocher li.is-wrong{border-color:var(--red)}
-.tcf-images-cocher .tcf-image{height:24mm}
+.tcf-images-cocher .tcf-image{width:100%;height:38mm;object-fit:contain}
+.tcf-yn{display:flex;align-items:center;justify-content:center;gap:14px;width:100%}
+.tcf-yn-option{display:inline-flex;align-items:center;gap:5px}
+.tcf-yn-label{font-weight:700;font-size:.95em}
 .tcf-score-note{margin:0;font-size:.85em;color:var(--muted)}
 .tcf-lignes{display:flex;flex-direction:column;gap:2px}
 .tcf-ligne{height:9mm;min-height:9mm}
