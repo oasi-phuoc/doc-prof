@@ -21,8 +21,9 @@ import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { pageAsConfig, pageBlocks } from './page-model'
 import { TPM_MAX_SCORE } from '@/tpm/test'
 import { generateTpmInformations } from '@/tpm/informations'
-import { tryGenerateTcfBlock } from '@/tcf/generate'
+import { resolveTcfExercise, tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
+import { splitMultiDocumentAnnonce } from '@/tcf/split-documents'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
@@ -39,6 +40,7 @@ import { sanitizeItemNumberNoise } from './column-arith'
 import { createRng, shuffle } from './rng'
 import type {
   AlgebraGiven,
+  ExerciseBlock,
   MathItem,
   PageConfig,
   WorksheetBlock,
@@ -46,6 +48,42 @@ import type {
   WorksheetPage,
 } from './types'
 import { generateItems } from './generate-items'
+
+/** CE instructions multi-docs → un bloc Exercice par document. */
+function expandTcfInstructionDocuments(page: PageConfig, seed: number): PageConfig {
+  if (!isTpfFamilyDomain(page.domain) && page.domain !== 'tcf') return page
+  const blocks = pageBlocks(page)
+  const out: ExerciseBlock[] = []
+  let changed = false
+  blocks.forEach((block, index) => {
+    const local = block.contentSeed ?? 0
+    const rng = createRng(seed + index * 10007 + local)
+    const ex = resolveTcfExercise(pageAsConfig(page, block), rng)
+    const parts = ex ? splitMultiDocumentAnnonce(ex) : null
+    if (!parts) {
+      out.push(block)
+      return
+    }
+    changed = true
+    for (const part of parts) {
+      out.push({
+        ...block,
+        tcfExercise: part,
+        tcfBankId: part.id,
+        tcfFormModes: undefined,
+      })
+    }
+  })
+  if (!changed) return page
+  const [first, ...extra] = out
+  if (!first) return page
+  return {
+    ...page,
+    ...first,
+    domain: page.domain,
+    extraBlocks: extra.length ? extra : undefined,
+  }
+}
 
 function buildSingleBlock(
   config: PageConfig,
@@ -343,10 +381,12 @@ export function buildPage(
   startExercise = 1,
   worksheetSeed = seed,
 ): WorksheetPage {
-  const blocksIn = pageBlocks(config)
+  // CE « Lire des instructions » : 1 document = 1 exercice (pas 2 docs dans le même).
+  const page = expandTcfInstructionDocuments(config, seed)
+  const blocksIn = pageBlocks(page)
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
-    const single = pageAsConfig(config, block)
+    const single = pageAsConfig(page, block)
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const isTheory = isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)

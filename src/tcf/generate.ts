@@ -309,6 +309,24 @@ export function tcfExerciseItems(
   }
 }
 
+/** Exercice TCF résolu pour un bloc (banque épinglée, édition libre, ou tirage). */
+export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | undefined {
+  const niveau = tcfNiveauForConfig(config.domain, config.difficulty)
+  if (isTcfConsignesType(config.exerciseType)) return undefined
+  const slot = tcfSlotByTypeId[config.exerciseType]
+  const legacy = slot ? undefined : tcfTypeByTypeId[config.exerciseType]
+  if (!slot && !legacy) return undefined
+  const competence = (slot ?? legacy)!.competence
+  if (config.tcfExercise && config.tcfExercise.competence === competence) return config.tcfExercise
+  const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
+  const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
+  const pool = inScenario.length > 0 ? inScenario : bank
+  const pinned = tcfExerciseById(config.tcfBankId)
+  if (pinned && pinned.competence === competence) return pinned
+  const chosen = bank.find((ex) => ex.id === config.tcfBankId)
+  return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
+}
+
 /**
  * Bloc TPF / TCF : exercice saisi (mode libre) ou tiré de la banque du niveau.
  * Retourne null si le type n’est pas un type TPF / TCF.
@@ -328,17 +346,7 @@ export function tryGenerateTcfBlock(
   // Anciennes recettes : un type d’exercice précis au lieu d’un emplacement.
   const legacy = slot ? undefined : tcfTypeByTypeId[config.exerciseType]
   if (!slot && !legacy) return null
-  const competence = (slot ?? legacy)!.competence
-  const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
-  const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
-  const pool = inScenario.length > 0 ? inScenario : bank
-  const fromBank = () => {
-    const pinned = tcfExerciseById(config.tcfBankId)
-    if (pinned && pinned.competence === competence) return pinned
-    const chosen = bank.find((ex) => ex.id === config.tcfBankId)
-    return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
-  }
-  const ex = config.tcfExercise && config.tcfExercise.competence === competence ? config.tcfExercise : fromBank()
+  const ex = resolveTcfExercise(config, rng)
   const fallbackInstruction = (slot ?? legacy)!.instruction
   if (!ex) {
     return {
