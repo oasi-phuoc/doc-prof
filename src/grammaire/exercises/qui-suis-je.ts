@@ -327,126 +327,151 @@ function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
   return { enonce, type_reponse: 'lignes', nb_lignes: nb, reponse_modele: modele }
 }
 
+function tableau(
+  enonce: string,
+  rows: Array<{ label: string; reponse: string }>,
+): TcfQuestionLignes {
+  return { enonce, type_reponse: 'lignes', nb_lignes: 0, tableau: rows }
+}
+
+/** Audios CSC leçon 01 · 05.03–05.06 (Qui suis-je ?). */
 const CO_SETS: CoSet[] = [
   {
-    id: 'lena',
-    audio: '/lib/audio/grammaire/presenter/lena.mp3',
+    id: 'audrey',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-03-audio-1.mp3',
     transcription:
-      'Bonjour, je m’appelle Léna. Je suis française, de Lyon. J’ai vingt-huit ans. Je parle français et anglais.',
+      'Je m’appelle Audrey. J’habite à Odawara. Je suis française. Je suis du Nord. Je parle français, anglais et un peu japonais. J’ai 29 ans. J’aime bien dessiner et j’aime bien aller au musée.',
     questions: [
-      qcm('Elle s’appelle comment ?', 'Léna', ['Léna', 'Léa', 'Lina'], true, { modele: 'Léna' }),
+      qcm('Elle s’appelle comment ?', 'Audrey', ['Aurélien', 'Audrey', 'Aurélie'], true, {
+        modele: 'Audrey',
+      }),
       qcm('Quelle est sa nationalité ?', 'Française', ['Suisse', 'Française', 'Allemande'], true, {
         modele: 'Française',
       }),
-      qcm('Elle est de quelle ville ?', 'Lyon', ['Lyon', 'Nantes', 'Perpignan'], true, { modele: 'Lyon' }),
+      qcm('Elle est de quelle région ?', 'Nord', ['Nord', 'Côtes d’Armor', 'Perpignan'], true, {
+        modele: 'Nord',
+      }),
       qcm(
         'Elle parle quelles langues ?',
-        'Français et anglais',
+        'Français, anglais et japonais',
         ['Français et anglais', 'Français, anglais et japonais', 'Français, anglais et polonais'],
         true,
-        { modele: 'Français et anglais' },
+        { modele: 'Français, anglais et japonais' },
       ),
-      qcm('Elle a quel âge ?', '28 ans', ['27 ans', '28 ans', '29 ans'], true, { modele: '28 ans' }),
+      qcm('Elle a quel âge ?', '29 ans', ['27 ans', '28 ans', '29 ans'], true, { modele: '29 ans' }),
     ],
   },
   {
-    id: 'karim',
-    audio: '/lib/audio/grammaire/presenter/karim.mp3',
+    id: 'paul-bernard-lignes',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-03-audio-2.mp3',
     transcription:
-      'Salut, moi c’est Karim Haddad. Je suis marocain. Je suis cuisinier. J’habite à Sion.',
+      '— Vous êtes monsieur ? — Je suis Paul Bernard. Mon prénom est Paul et mon nom de famille est Bernard. — Vous êtes anglais ? — Non, je suis canadien. Je suis de Vancouver. — Vous êtes en France pour le travail ? — Oui et non, je suis écrivain, je suis toujours en vacances.',
     questions: [
-      lignes('Quel est son prénom ?', 'Karim'),
-      lignes('Quel est son nom de famille ?', 'Haddad'),
-      lignes('Quelle est sa nationalité ?', 'Marocain'),
-      lignes('Quelle est sa profession ?', 'Cuisinier'),
+      lignes('Quel est son prénom ?', 'Paul'),
+      lignes('Quel est son nom de famille ?', 'Bernard'),
+      lignes('Quelle est sa nationalité ?', 'Canadien'),
+      lignes('Quelle est sa profession ?', 'Écrivain'),
     ],
   },
   {
-    id: 'bernard',
-    audio: '/lib/audio/grammaire/presenter/bernard.mp3',
+    id: 'paul-bernard-vf',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-03-audio-2.mp3',
     transcription:
-      'Hello, my name is… ah, pardon. Je m’appelle Benoît, pas Bernard. Je suis canadien, de Montréal. Je suis journaliste.',
+      '— Vous êtes monsieur ? — Je suis Paul Bernard. Mon prénom est Paul et mon nom de famille est Bernard. — Vous êtes anglais ? — Non, je suis canadien. Je suis de Vancouver. — Vous êtes en France pour le travail ? — Oui et non, je suis écrivain, je suis toujours en vacances.',
     questions: [
       vf('Il est anglais.', false),
       vf('Son prénom est Bernard.', false),
-      vf('Il est de Montréal.', true),
-      vf('Il est journaliste.', true),
+      vf('Il est de Vancouver.', true),
+      vf('Il est écrivain.', true),
     ],
   },
   {
     id: 'bus',
-    audio: '/lib/audio/grammaire/presenter/bus.mp3',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-04-audio-1.mp3',
     transcription:
-      '— Noémie, tu connais Léo ? — Non, enchantée. — Moi c’est Barbara, je prends le bus. Noémie travaille encore. Léo n’habite pas avec Barbara.',
+      '— Tiens, bonjour Noémie, ça fait plaisir de te voir. Ça va ? — Oui, bien. Merci. Et toi ? — Pas mal, merci. Tu vas au travail ? — Oui, je vais prendre le bus. — Au fait, vous vous connaissez ? — Non. — Alors, voici Léo, mon voisin. Noémie, une ancienne collègue. — Bonjour. — Eh bien, mon bus arrive. Je vous laisse. Bonne journée, et à bientôt ! — Au revoir, à la prochaine ! Dis bonjour à Renaud de ma part !',
     questions: [
       vf('Noémie et Léo se connaissent.', false),
-      vf('Barbara va prendre le bus.', true),
-      vf('Noémie est en train de travailler.', true),
+      vf('Barbara va prendre le bus.', false),
+      vf('Noémie est en train de travailler.', false),
       vf('Noémie et Barbara sont amies.', false),
       vf('Léo habite avec Barbara.', false),
     ],
   },
   {
-    id: 'carte',
-    audio: '/lib/audio/grammaire/presenter/carte.mp3',
+    id: 'nael',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-04-audio-2.mp3',
     transcription:
-      '— C’est pour une carte de visite. Votre nom de famille ? — Sola. — Et le prénom ? — Jean. — Tu es l’ami de Camille ? — Oui. — Salut, ça va ?',
+      'Bonjour à tous. Je suis votre professeur. Je m’appelle Nael Kervelek. Nael, N-A-E-L. C’est mon prénom. Et Kervelek, K-E-R-V-E-L-E-K. C’est mon nom. Je suis français et j’ai 34 ans. — Monsieur, vous pouvez répéter s’il vous plaît ?',
     questions: [
-      qcm('La femme dit :', 'C’est pour une carte de visite.', [
-        'C’est pour un passeport.',
-        'C’est pour une carte de visite.',
-        'C’est pour une carte d’identité.',
+      tableau('Complétez la fiche.', [
+        { label: 'Nom', reponse: 'Kervelek' },
+        { label: 'Prénom', reponse: 'Nael' },
+        { label: 'Nationalité', reponse: 'Français' },
+        { label: 'Âge', reponse: '34 ans' },
+        { label: 'Profession', reponse: 'Professeur' },
       ]),
-      qcm('La femme demande', 'le nom de famille', ['le prénom', 'le nom de famille', 'l’adresse']),
-      qcm('L’homme s’appelle', 'Sola', ['Zola', 'Sola', 'Salla']),
-      qcm('Le prénom de l’homme est', 'Jean', ['Jacques', 'Jean', 'Julien']),
-      qcm('La femme dit :', 'Tu es l’ami de Camille.', [
-        'Tu es le mari de Camille.',
-        'Tu es l’ami de Camille.',
-        'Tu es le frère de Camille.',
-      ]),
-      qcm('Elle demande :', 'Salut, ça va ?', ['Bonjour, ça va ?', 'Salut, ça va ?', 'Vous allez bien ?']),
-    ],
-  },
-  {
-    id: 'annie',
-    audio: '/lib/audio/grammaire/presenter/annie.mp3',
-    transcription:
-      'Annie Gatineau a quarante-deux ans. Elle est vendeuse. Nadine Gatineau est serveuse. Elle est belge.',
-    questions: [
-      qcm('Le nom de famille d’Annie est…', 'Gatineau', ['Schultz', 'Gatineau', 'Patineau']),
-      qcm('Annie a…', '42 ans', ['37 ans', '42 ans', '24 ans']),
-      qcm('Elle est…', 'vendeuse', ['pharmacienne', 'vendeuse', 'serveuse']),
-      qcm('Le nom de famille de Nadine est…', 'Gatineau', ['Patineau', 'Gatineau', 'Schultz']),
-      qcm('Nadine est…', 'serveuse', ['pharmacienne', 'serveuse', 'vendeuse']),
-      qcm('Elle est…', 'belge', ['belge', 'suisse', 'française']),
-    ],
-  },
-  {
-    id: 'nina-felix',
-    audio: '/lib/audio/grammaire/presenter/nina-felix.mp3',
-    transcription:
-      '— Je m’appelle Nina. Lui, c’est Félix, un ami de mon frère. Il est brésilien. Moi, je suis étudiante.',
-    questions: [
-      qcm('La femme s’appelle…', 'Nina', ['Sophie', 'Nina', 'Léna']),
-      qcm('L’homme s’appelle…', 'Félix', ['Félipe', 'Félix', 'Felix']),
-      qcm('C’est un ami…', 'du frère', ['de la sœur', 'du frère', 'du père']),
-      qcm('Il est…', 'brésilien', ['brésilien', 'italien', 'espagnol']),
-      qcm('La femme est…', 'étudiante', ['ingénieure', 'étudiante', 'professeure']),
     ],
   },
   {
     id: 'repondeur',
-    audio: '/lib/audio/grammaire/presenter/repondeur.mp3',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-04-audio-4.mp3',
     transcription:
-      'Vous êtes bien chez Luc et Tania. Merci de laisser votre prénom après le signal. Le numéro est le 027 322 11 50. Au revoir.',
+      'Vous êtes bien au 01 39 10 22 50. Bienvenue chez Lucie et Thomas ! Laissez votre nom, prénom et un numéro de téléphone s’il vous plaît.',
     questions: [
       vf('Vous écoutez un message.', true),
       vf('Le numéro est le 01 39 11 22 50.', false),
-      vf('Vous êtes chez Luc et Tania.', true),
+      vf('Vous êtes chez Luc et Tania.', false),
       vf('Vous laissez votre prénom.', true),
       vf('Vous donnez votre adresse.', false),
-      vf('Le dernier mot est « au revoir ».', true),
+      vf('Le dernier mot est « au revoir ».', false),
+    ],
+  },
+  {
+    id: 'passeport',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-05-audio-1.mp3',
+    transcription:
+      '— Bonjour, monsieur. C’est pour un passeport ? Votre nom de famille, s’il vous plaît. — Zola. Z-O-L-A. — Mais… tu es Dominique, non ? — Oui. — Ah, Jacques. Jacques Zola. Tu es l’ami de Camille, non ? Salut, ça va ?',
+    questions: [
+      qcm('La femme dit :', 'C’est pour un passeport.', [
+        'C’est pour un passeport.',
+        'C’est pour une carte de visite.',
+      ], false),
+      qcm('La femme demande', 'le nom de famille', ['le prénom', 'le nom de famille'], false),
+      qcm('L’homme s’appelle', 'Zola', ['Zola', 'Sola'], false),
+      qcm('Le prénom de l’homme est', 'Jacques', ['Jacques', 'Jean'], false),
+      qcm('La femme dit :', 'Tu es l’ami de Camille.', [
+        'Tu es le mari de Camille.',
+        'Tu es l’ami de Camille.',
+      ], false),
+      qcm('Elle demande :', 'Salut, ça va ?', ['Bonjour, ça va ?', 'Salut, ça va ?'], false),
+    ],
+  },
+  {
+    id: 'annie-nadine',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-05-audio-2.mp3',
+    transcription:
+      'Et voici deux amies, Annie et Nadine. Annie Schultz, vous avez 37 ans, vous êtes suisse et vous êtes vendeuse. Et vous, Nadine Gatineau, vous êtes pharmacienne, vous êtes belge et vous avez 42 ans. C’est bien ça ?',
+    questions: [
+      qcm('Le nom de famille d’Annie est…', 'Schultz', ['Schultz', 'Gatineau'], false),
+      qcm('Annie a…', '37 ans', ['37 ans', '42 ans'], false),
+      qcm('Elle est…', 'vendeuse', ['pharmacienne', 'vendeuse'], false),
+      qcm('Le nom de famille de Nadine est…', 'Gatineau', ['Patineau', 'Gatineau'], false),
+      qcm('Nadine est…', 'pharmacienne', ['pharmacienne', 'serveuse'], false),
+      qcm('Elle est…', 'belge', ['belge', 'suisse'], false),
+    ],
+  },
+  {
+    id: 'nina-felipe',
+    audio: '/lib/audio/grammaire/presenter/lecon-01-05-06-audio-1.mp3',
+    transcription:
+      '— Mais… c’est Sophie ! Sophie ! Bonjour ! — Non ! Moi c’est Nina ! — Pardon, Madame ! — Tu peux dire Nina, pas Madame ! J’ai 25 ans ! — Et Sophie ? — C’est ma sœur ! — Ah ! Enchanté Nina ! Moi c’est Felipe ! — Enchantée Felipe ! Tu es l’ami brésilien de ma sœur ? — Oui ! Je suis étudiant avec elle ! — Super ! Et toi ? Tu es étudiante aussi ? — Non ! Moi je travaille déjà ! Je suis ingénieure !',
+    questions: [
+      qcm('La femme s’appelle…', 'Nina', ['Sophie', 'Nina'], false),
+      qcm('L’homme s’appelle…', 'Félipe', ['Félipe', 'Felix'], false),
+      qcm('C’est un ami…', 'de la sœur', ['de la sœur', 'du frère'], false),
+      qcm('Il est…', 'brésilien', ['brésilien', 'italien'], false),
+      qcm('La femme est…', 'ingénieure', ['ingénieure', 'étudiante'], false),
     ],
   },
 ]
