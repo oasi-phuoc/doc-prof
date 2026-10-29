@@ -1,13 +1,20 @@
 /** Exercices A1 « Qui suis-je ? » — tirage déterministe, rendu TCF. */
 import { int, pick, shuffle, type Rng } from '@/math/rng'
+import { tcfBank } from '@/tcf/loader'
 import type {
-  TcfChampFormulaire,
   TcfExercise,
+  TcfPeFormulaire,
   TcfQuestion,
   TcfQuestionLignes,
   TcfQuestionQcmTexte,
 } from '@/tcf/types'
 import type { GramExerciseKindId } from './kinds'
+
+/** Formulaires PE de la banque TPF (A0-A1 + A1-A2), partagés avec le domaine TPF. */
+const TPF_FORMULAIRES: readonly TcfPeFormulaire[] = [
+  ...tcfBank('A0-A1', 'PE', 'formulaire'),
+  ...tcfBank('A1-A2', 'PE', 'formulaire'),
+].filter((ex): ex is TcfPeFormulaire => ex.type_exercice === 'formulaire')
 
 const SCHOOL_YEAR = 2026
 const CHOICE_IDS = ['a', 'b', 'c'] as const
@@ -65,7 +72,7 @@ export function quiSuisJeBankCap(kindId: QuiSuisJeKindId): number {
     case 'ecrire-question':
       return 24
     case 'formulaire':
-      return FORMULAIRES.length
+      return TPF_FORMULAIRES.length
     case 'ordre':
       return ORDRE_PHRASES.length
     case 'co-audio':
@@ -242,49 +249,6 @@ const MOTS_SETS: MotSet[] = [
       { prompt: 'Je ___ du Portugal.', answer: 'viens' },
       { prompt: 'Je ___ portugais et un peu français.', answer: 'parle' },
       { prompt: 'J’___ à Sierre.', answer: 'habite' },
-    ],
-  },
-]
-
-const FORMULAIRES: Array<{ titre: string; champs: TcfChampFormulaire[] }> = [
-  {
-    titre: 'Fiche d’accueil',
-    champs: [
-      { label: 'Nom de famille', type: 'texte', corrige: '' },
-      { label: 'Prénom', type: 'texte', corrige: '' },
-      { label: 'Sexe', type: 'choix', options: ['Homme', 'Femme'], corrige: '' },
-      { label: 'Âge', type: 'texte', corrige: '' },
-      { label: 'Date de naissance', type: 'date', corrige: '' },
-      { label: 'Nationalité', type: 'texte', corrige: '' },
-      { label: 'Adresse', type: 'texte', corrige: '' },
-      { label: 'Code postal', type: 'texte', corrige: '' },
-      { label: 'Téléphone', type: 'texte', corrige: '' },
-      { label: 'Courriel', type: 'texte', corrige: '' },
-      { label: 'Date d’arrivée en Suisse', type: 'date', corrige: '' },
-    ],
-  },
-  {
-    titre: 'Inscription au cours',
-    champs: [
-      { label: 'Nom', type: 'texte', corrige: '' },
-      { label: 'Prénom', type: 'texte', corrige: '' },
-      { label: 'Date de naissance', type: 'date', corrige: '' },
-      { label: 'Langue parlée à la maison', type: 'texte', corrige: '' },
-      { label: 'Téléphone', type: 'texte', corrige: '' },
-      { label: 'Courriel', type: 'texte', corrige: '' },
-      { label: 'Ville', type: 'texte', corrige: '' },
-    ],
-  },
-  {
-    titre: 'Fiche professionnelle',
-    champs: [
-      { label: 'Nom de famille', type: 'texte', corrige: '' },
-      { label: 'Prénom', type: 'texte', corrige: '' },
-      { label: 'Nationalité', type: 'texte', corrige: '' },
-      { label: 'Profession', type: 'texte', corrige: '' },
-      { label: 'Téléphone', type: 'texte', corrige: '' },
-      { label: 'Courriel', type: 'texte', corrige: '' },
-      { label: 'Adresse', type: 'texte', corrige: '' },
     ],
   },
 ]
@@ -856,15 +820,30 @@ export function buildQuiSuisJeExercise(opts: {
       })
     }
     case 'formulaire': {
-      const form = pick(rng, FORMULAIRES)
-      return wrap(typeId, 'Remplissez le formulaire avec vos informations.', {
-        id: '',
-        niveau: 'A1-A2',
-        competence: 'PE',
-        type_exercice: 'formulaire',
-        support: { titre: form.titre, champs: form.champs },
-        questions: [],
-      })
+      if (TPF_FORMULAIRES.length === 0) {
+        return wrap(typeId, 'Remplissez le formulaire.', {
+          id: '',
+          niveau: 'A0-A1',
+          competence: 'PE',
+          type_exercice: 'formulaire',
+          support: { titre: 'Formulaire', champs: [{ label: 'Nom', type: 'texte', corrige: '' }] },
+          questions: [],
+        })
+      }
+      const form = pick(rng, TPF_FORMULAIRES)
+      return wrap(
+        typeId,
+        form.consigne?.trim() || 'Remplissez le formulaire.',
+        {
+          ...form,
+          id: '',
+          support: {
+            titre: form.support.titre,
+            champs: form.support.champs.map((champ) => ({ ...champ })),
+          },
+          questions: [],
+        },
+      )
     }
     case 'ordre': {
       const rows = take(rng, ORDRE_PHRASES, count).map((phrase) => scramble(rng, phrase))

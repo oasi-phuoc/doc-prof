@@ -137,8 +137,8 @@ export const GRAM_EXERCISE_KINDS = [
   {
     id: 'formulaire',
     label: 'Remplir un formulaire',
-    description: 'Formulaire d’identité à compléter.',
-    instruction: 'Remplissez le formulaire avec vos informations.',
+    description: 'Formulaires PE de la banque TPF (A0-A1 / A1-A2).',
+    instruction: 'Remplissez le formulaire.',
     layout: 'write' as const,
   },
   {
