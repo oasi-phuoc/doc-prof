@@ -54,8 +54,8 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Enrichir catalogue thèmes / types | `contenu-catalogue` |
 | Relire énoncés et consignes | `relecture-enonce` |
 | Aperçu A4 fixe + impression | `test-impression` |
-| Préparer une pull request | `preparer-pull-request` |
+| Finaliser / push `main` (auto, pas de lint·build·PR) | `pousser-main` |
 
 ## Terminé, c'est quand
 
-Lint et build passent ; l'aperçu reste A4 quelle que soit la densité ; l'impression utilise les mêmes feuilles ; rien n'est copié d'une référence ; la description de la PR liste ce qui a changé et comment le vérifier.
+Dès la fin de la tâche : commit + **`git push origin main`** (skill `pousser-main`) — pas de branche feature, pas de PR, pas de lint/build/aperçu. L’utilisateur teste lui-même. Une PR seulement si demandée explicitement. Rien n’est copié d’une référence externe.

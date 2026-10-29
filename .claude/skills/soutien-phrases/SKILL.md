@@ -144,7 +144,7 @@ Aligné sur `countLessonPhonemeInText` / `check-soutien-phrases.mjs` :
 - `Math.random()` / `Date.now()` dans la génération de fiche (tirage =
   `createRng(seed)` côté app ; le JSON est stable).
 - Commit `scripts/__pycache__/` ou MP3 hors sujet.
-- PR : push `main` via `preparer-pull-request`.
+- Fin de tâche : push `main` via `pousser-main` (pas de PR).
 
 ## Terminé quand
 

@@ -149,10 +149,10 @@ Dans les banques JSON, le champ `image` (choix QCM, situations, support) porte l
 
 ## Workflow agent (doc-prof)
 
-Sauf demande explicite contraire :
+Sauf demande explicite contraire : skill **`pousser-main`** —
 
 - **Pas** de `lint`, `build`, aperçu A4, screenshots, enregistrements ni plan de test.
-- **Pas** de branche / PR : commit et **push direct sur `origin/main`**.
+- **Pas** de branche / PR : commit et **`git push origin main`**.
 - L’utilisateur teste lui-même dans l’UI.
 
 Raccourci Cursor pour ignorer les tests : `/no-test` (même effet ici par défaut).

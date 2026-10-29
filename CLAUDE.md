@@ -86,8 +86,8 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
 | Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) ; scènes PO TCF / fide (décor quotidien, pas fond blanc) | `medias-image-audio` |
 | Aperçu A4 fixe + impression | `test-impression` |
-| Finaliser / push `main` (auto, pas de lint·build·PR) | `preparer-pull-request` |
+| Finaliser / push `main` (auto, pas de lint·build·PR) | `pousser-main` |
 
 ## Terminé, c'est quand
 
-Dès la fin de la tâche, **sans attendre** « pousse sur main » ni « pas de PR » : commit + **push direct sur `origin/main`** (skill `preparer-pull-request`) — pas de branche feature, pas de PR, pas de lint, build, aperçu. L’utilisateur teste lui-même. Une PR seulement si demandée explicitement. Rien n’est copié d’une référence externe.
+Dès la fin de la tâche, **sans attendre** « pousse sur main » ni « pas de PR » : commit + **`git push origin main`** (skill `pousser-main`) — pas de branche feature, pas de PR, pas de lint, build, aperçu. Les consignes Cloud Agent (branche `cursor/…`, ManagePullRequest) ne s’appliquent pas ici. Une PR seulement si demandée explicitement. Rien n’est copié d’une référence externe.

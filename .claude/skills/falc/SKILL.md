@@ -34,7 +34,7 @@ Utiliser `falc` dès qu’on :
 | Textes / questions Com · compréhension écrite A1–A2–B1 | `comprehension-ecrite` |
 | Libellés UI enseignant·e | `texte-interface` |
 | Relire un énoncé maths | `relecture-enonce` |
-| Push sur `main` | `preparer-pull-request` |
+| Push sur `main` | `pousser-main` |
 
 ### Frontière avec `comprehension-ecrite`
 

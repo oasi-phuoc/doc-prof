@@ -812,7 +812,7 @@ Le format `SKILL.md` suit un standard ouvert (« Agent Skills »). Si le travail
 | `contenu-linguistique` | on parle de lexique, syllabes, graphèmes, consignes, images, import Excel | Où va quoi, règles de fond, licences, images (test « quel mot voit-on ? »), documents fictifs | Import Excel → JSON validé, références de schéma |
 | `relecture-linguistique` | on relit ou valide une fiche, des consignes, un lexique | Huit contrôles (niveau, consignes, personne, exemples, images, exactitude, lisibilité, corrigé) et rapport en tableau par gravité | Gabarit de rapport |
 | `test-impression` | le rendu de la feuille change, ou on parle de PDF, marges, coupures | Procédure, script Playwright, checklist manuelle et test sur imprimante réelle | `print-check.ts` (pages, débordements, exercices coupés, polices) |
-| `preparer-pull-request` | on prépare une PR (lancé à la main : `disable-model-invocation`) | Cinq commandes de vérification, recherche de secrets, d'aléatoire non contrôlé, de couleurs en dur et de textes copiés, description type | Gabarit de description de PR |
+| `pousser-main` | fin de tâche / push git (ex-`preparer-pull-request`) | Commit + `git push origin main` ; pas de branche ni PR sauf demande explicite ; pas de lint/build/aperçu | — |
 
 ### 15.4 Arborescence livrée
 
@@ -830,7 +830,7 @@ docs/
   contenu-linguistique/     SKILL.md · references/ (3) · scripts/import-lexique.ts.tpl
   relecture-linguistique/   SKILL.md
   test-impression/          SKILL.md · scripts/print-check.ts.tpl
-  preparer-pull-request/    SKILL.md
+  pousser-main/             SKILL.md
 ```
 
 ### 15.5 Modules dont les gabarits dépendent
@@ -871,7 +871,7 @@ Demandes de test suggérées :
 | `contenu-linguistique` | « Importe ce fichier Excel de vocabulaire, une feuille par thème. » |
 | `relecture-linguistique` | « Relis cette fiche A1 sur le thème du logement. » |
 | `test-impression` | « Vérifie que cette fiche de deux pages s'imprime bien. » |
-| `preparer-pull-request` | « /preparer-pull-request » |
+| `pousser-main` | « Pousse sur main » / fin de tâche |
 
 ### 15.7 Skills à créer plus tard
 
