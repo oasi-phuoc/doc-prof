@@ -25,7 +25,7 @@ export const PROVENANCE_DEFAULT_COUNT: Record<ProvenanceKindId, number> = {
   'prov-phrases': 4,
 }
 
-export function provenanceBankCap(kindId: ProvenanceKindId): number {
+export function provenanceBankCap(_kindId: ProvenanceKindId): number {
   return PAYS.length
 }
 
