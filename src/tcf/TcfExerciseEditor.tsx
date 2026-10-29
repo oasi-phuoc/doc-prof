@@ -256,6 +256,7 @@ function SupportEditor({
     case 'complet': {
       const multi = (ex.support.audios?.length ?? 0) > 0
       if (multi) {
+        const sceneImages = ex.support.images ?? ex.support.audios!.map(() => '')
         return (
           <>
             {ex.support.audios!.map((audio, i) => (
@@ -268,6 +269,19 @@ function SupportEditor({
                 }
                 bankEntries={audioBank}
                 onPickFromBank={pickAudio}
+              />
+            ))}
+            {ex.support.audios!.map((_, i) => (
+              <ImageField
+                key={`scene-${i}`}
+                label={`Scène audio ${i + 1}`}
+                value={sceneImages[i] ?? ''}
+                onChange={(next) => {
+                  const images = ex.support.audios!.map((__, k) =>
+                    k === i ? next : (ex.support.images?.[k] ?? ''),
+                  )
+                  set(withSupport(ex, { images, image: undefined }))
+                }}
               />
             ))}
             {ex.support.audios!.map((_, i) => {
@@ -303,6 +317,11 @@ function SupportEditor({
             onChange={(audio) => set(withSupport(ex, { audio, audios: undefined }))}
             bankEntries={audioBank}
             onPickFromBank={pickAudio}
+          />
+          <ImageField
+            label="Scène de l’audio"
+            value={ex.support.image ?? ''}
+            onChange={(image) => set(withSupport(ex, { image, images: undefined }))}
           />
           <TextField
             label="Transcription (corrigé)"

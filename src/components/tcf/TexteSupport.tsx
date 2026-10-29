@@ -123,10 +123,35 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
     case 'trois_moyens':
       // Audios / QR masqués sur la fiche — téléchargement via le bouton aperçu.
       return banque
-    case 'complet':
+    case 'complet': {
+      const sceneImages = (
+        ex.support.images?.length
+          ? ex.support.images
+          : ex.support.image
+            ? [ex.support.image]
+            : []
+      )
+        .map((src) => src.trim())
+        .filter(Boolean)
       return (
         <>
           {banque}
+          {sceneImages.length === 1 ? (
+            <TcfImage
+              src={sceneImages[0]!}
+              alt={ex.scene?.trim() || 'Scène de l’audio'}
+              className="tcf-image is-large"
+            />
+          ) : null}
+          {sceneImages.length > 1 ? (
+            <ul className={`tcf-po-images is-${Math.min(sceneImages.length, 4)}`}>
+              {sceneImages.map((src, i) => (
+                <li key={`${src}-${i}`}>
+                  <TcfImage src={src} alt={`Scène audio ${i + 1}`} />
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <Modele
             text={
               Array.isArray(ex.support.transcription)
@@ -143,6 +168,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
           />
         </>
       )
+    }
     case 'association_images':
       return (
         <>

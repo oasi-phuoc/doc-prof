@@ -1,7 +1,12 @@
 import { TCF_TYPES } from './catalog'
 import { hasInlineBlank } from './inline-blank'
 import { tcfAssociationAudioRefs } from './association-audio'
-import { tcfCompletAudioCount, tcfCompletAudioRefs, tcfCompletTranscriptions } from './complet-audio'
+import {
+  tcfCompletAudioCount,
+  tcfCompletAudioRefs,
+  tcfCompletSceneImageRefs,
+  tcfCompletTranscriptions,
+} from './complet-audio'
 import { tcfAudioSequence, tcfAudioSrc, tcfImageSrc } from './media'
 import { TCF_IMAGES_A_COCHER, TCF_QCM_MAX, TCF_QCM_MIN } from './templates'
 import type { TcfExercise, TcfQuestion } from './types'
@@ -275,6 +280,7 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
       break
     case 'complet':
       audios.push(...tcfCompletAudioRefs(ex))
+      images.push(...tcfCompletSceneImageRefs(ex))
       break
     case 'association_images':
       audios.push(...tcfAssociationAudioRefs(ex))

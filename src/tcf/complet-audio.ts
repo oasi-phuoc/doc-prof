@@ -46,3 +46,11 @@ export function tcfCompletTranscriptionText(ex: TcfCoComplet): string {
     })
     .join('\n\n')
 }
+
+/** Chemins des scènes (alignés sur les pistes audio). */
+export function tcfCompletSceneImageRefs(ex: TcfCoComplet): string[] {
+  const many = ex.support.images?.map((a) => a.trim()).filter(Boolean)
+  if (many && many.length > 0) return many
+  const one = ex.support.image?.trim()
+  return one ? [one] : []
+}

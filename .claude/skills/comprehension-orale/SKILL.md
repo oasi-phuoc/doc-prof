@@ -112,8 +112,25 @@ Avec `faster-whisper` : `WhisperModel("large-v3", …)` puis
 
 ## Images des CO (et des CE TCF)
 
-**Une seule banque d’images : `public/lib/images/vocabulaire/{theme}/{slug}.webp`.**
-Aucune image CO n’est rangée par série : le même vélo, le même bus ou la même pluie
+### Scènes des audios courts / moyens
+
+Les CO **1 question** (court) et **2 questions** (moyen) portent une image de
+**scène** (décor de l’audio), distincte du vocabulaire fond blanc :
+
+```
+audio  /lib/audio/tcf/co/{dossier}/{stem}.mp3
+image  /lib/images/tcf/co/scenes/{dossier-slug}/{stem-slug}.webp
+```
+
+- Champ banque : `support.image` (mono) ou `support.images[]` (aligné sur `audios`).
+- Dossier + liste des fichiers à déposer : `public/lib/images/tcf/co/scenes/README.md`
+  (script `scripts/link-co-scene-images.py`).
+- Style : bande dessinée réaliste (comme les scènes PO) — **pas** fond blanc.
+
+### Vocabulaire (QCM / associations)
+
+**Banque objets / actions : `public/lib/images/vocabulaire/{theme}/{slug}.webp`.**
+Aucune de ces images n’est rangée par série : le même vélo, le même bus ou la même pluie
 servent à toutes les séries.
 
 Dans les banques JSON, le champ `image` (choix QCM, situations, support) porte le

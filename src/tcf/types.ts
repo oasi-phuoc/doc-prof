@@ -143,6 +143,7 @@ export type TcfCoTroisMoyens = TcfBase<'CO', 'trois_moyens', { audios: string[] 
 /**
  * CO complet : une piste (`audio`) ou plusieurs documents découpés (`audios`).
  * `transcription` est une string (mono) ou un tableau aligné sur `audios` (une par piste).
+ * `image` / `images` : scène de l’audio (courts / moyens) — une piste = une image.
  */
 export type TcfCoComplet = TcfBase<
   'CO',
@@ -150,6 +151,10 @@ export type TcfCoComplet = TcfBase<
   {
     audio?: string
     audios?: string[]
+    /** Scène illustrant l’audio unique (courts / moyens mono). */
+    image?: string
+    /** Scènes alignées sur `audios` (une par piste). */
+    images?: string[]
     transcription: string | string[]
   }
 >
