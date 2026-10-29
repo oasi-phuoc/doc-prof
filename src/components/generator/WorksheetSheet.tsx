@@ -20,8 +20,7 @@ import type {
   WorksheetPage,
 } from '@/math/types'
 import type { TcfTypeReponse } from '@/tcf/types'
-import { tcfAudioSrc } from '@/tcf/media'
-import { tcfExerciseAudioRefs } from '@/tcf/download-audios'
+import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { TcfFormMarginIcons } from '@/components/tcf/TcfFormIcons'
 import {
   isGramDualFormExercise,
@@ -29,24 +28,10 @@ import {
 } from '@/grammaire/exercises/qui-suis-je-ui'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 
-/** Audios de l’exercice (support TCF, document, items) pour le lecteur du corrigé. */
+/** Audios du corrigé : figés sur le bloc, sinon recalculés depuis les items. */
 function blockCorrigeAudios(block: WorksheetBlock): string[] {
-  const out: string[] = []
-  const push = (raw?: string | null) => {
-    const src = raw?.trim()
-    if (!src) return
-    const resolved = tcfAudioSrc(src) || src
-    if (resolved && !out.includes(resolved)) out.push(resolved)
-  }
-  push(block.document?.audioSrc)
-  for (const item of block.items) {
-    push(item.audioSrc)
-    const tcf = item.tcf
-    if (tcf?.kind === 'support') {
-      for (const ref of tcfExerciseAudioRefs(tcf.exercise)) push(ref)
-    }
-  }
-  return out
+  if (block.corrigeAudios?.length) return block.corrigeAudios
+  return collectCorrigeAudioSrcs(block.items, block.document?.audioSrc)
 }
 
 export function defaultCoordQuestionReply(exerciseType: string): CoordReply {

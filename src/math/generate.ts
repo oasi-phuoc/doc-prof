@@ -23,6 +23,7 @@ import { TPM_MAX_SCORE } from '@/tpm/test'
 import { generateTpmInformations } from '@/tpm/informations'
 import { tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
+import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { tryGenerateAcmBlock } from '@/acm/generate'
@@ -368,7 +369,9 @@ export function buildPage(
       }
     }
     const rawItems = libre?.items ?? result.items
+    const items = rawItems.map((item) => sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem)
     const libreGivens = givensFromEvaluerLibre(rawItems)
+    const corrigeAudios = collectCorrigeAudioSrcs(items, result.document?.audioSrc)
     return {
       exerciseIndex,
       title: isTpmConsignes
@@ -380,7 +383,7 @@ export function buildPage(
             : `Exercice ${exerciseIndex}`,
       instruction: libre?.instruction ?? result.instruction,
       // Filet anti bruit binaire (7,2700000000000005) sur toutes les fiches.
-      items: rawItems.map((item) => sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem),
+      items,
       columns: block.columns,
       exerciseType: block.exerciseType,
       pointsPerQuestion: block.pointsPerQuestion,
@@ -392,6 +395,7 @@ export function buildPage(
       tcfFormModes: block.tcfFormModes,
       tcfPageBreakAfter: block.tcfPageBreakAfter,
       bankQuestionCap: result.bankQuestionCap,
+      corrigeAudios: corrigeAudios.length ? corrigeAudios : undefined,
     }
   })
   const first = built[0]

@@ -1050,6 +1050,11 @@ export type WorksheetBlock = {
   itemOffset?: number
   /** Nombre max de questions distinctes dans la banque du document tiré (CO/CE). */
   bankQuestionCap?: number
+  /**
+   * Audios du corrigé (à droite du titre Exercice N).
+   * Figés à la génération pour survivre aux feuilles « suite » sans item support.
+   */
+  corrigeAudios?: string[]
 }
 
 export type WorksheetPage = PageConfig & {

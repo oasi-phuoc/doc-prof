@@ -98,6 +98,56 @@ export function tcfExerciseFromItems(items: readonly TcfAudioItemSource[]): TcfE
   return tcfExerciseById(id)
 }
 
+type CorrigeAudioItem = TcfAudioItemSource & {
+  audioSrc?: string
+  audioParts?: string[]
+  vocabEntries?: Array<{ audioSrc?: string }>
+  syllableCompletes?: Array<{ audioSrc?: string }>
+  syllablePronounceRows?: Array<{ audioSrc?: string }>
+  syllableSoundItems?: Array<{ audioSrc?: string }>
+  phraseScrambles?: Array<{ audioSrc?: string }>
+  audioMatchRows?: Array<{ audioSrc?: string }>
+  audioOrder?: { clips?: Array<{ audioSrc?: string }> }
+}
+
+/**
+ * Audios à coller à droite du titre « Exercice N » sur le corrigé
+ * (support TCF, document, items, QRs soutien / alphabétisation).
+ */
+export function collectCorrigeAudioSrcs(
+  items: readonly CorrigeAudioItem[],
+  documentAudioSrc?: string | null,
+): string[] {
+  const out: string[] = []
+  const push = (raw?: string | null) => {
+    const src = raw?.trim()
+    if (!src) return
+    const resolved = tcfAudioSrc(src) || src
+    if (resolved && !out.includes(resolved)) out.push(resolved)
+  }
+  push(documentAudioSrc)
+  for (const item of items) {
+    push(item.audioSrc)
+    for (const part of item.audioParts ?? []) push(part)
+    for (const row of item.vocabEntries ?? []) push(row.audioSrc)
+    for (const row of item.syllableCompletes ?? []) push(row.audioSrc)
+    for (const row of item.syllablePronounceRows ?? []) push(row.audioSrc)
+    for (const row of item.syllableSoundItems ?? []) push(row.audioSrc)
+    for (const row of item.phraseScrambles ?? []) push(row.audioSrc)
+    for (const row of item.audioMatchRows ?? []) push(row.audioSrc)
+    for (const clip of item.audioOrder?.clips ?? []) push(clip.audioSrc)
+    const tcf = item.tcf
+    if (tcf?.kind === 'support' && tcf.exercise) {
+      for (const ref of tcfExerciseAudioRefs(tcf.exercise)) push(ref)
+    }
+  }
+  if (out.length === 0) {
+    const ex = tcfExerciseFromItems(items)
+    if (ex) for (const ref of tcfExerciseAudioRefs(ex)) push(ref)
+  }
+  return out
+}
+
 /** Exercices audio de toutes les feuilles (test entier : 4–5 CO typiquement). */
 export function collectTcfAudioJobs(
   sheets: readonly { blocks: readonly { exerciseIndex?: number; items: readonly TcfAudioItemSource[] }[] }[],

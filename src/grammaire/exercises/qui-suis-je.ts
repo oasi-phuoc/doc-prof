@@ -214,7 +214,9 @@ type CoSet = {
 }
 
 function vf(enonce: string, vrai: boolean): TcfQuestionQcmTexte {
-  return qcm(enonce, vrai ? 'Vrai' : 'Faux', ['Vrai', 'Faux', 'Je ne sais pas'], false)
+  const answer = vrai ? 'Vrai' : 'Faux'
+  // Toujours 3 options (dont « Je ne sais pas ») + variante trait pour le sélecteur de forme.
+  return qcm(enonce, answer, ['Vrai', 'Faux', 'Je ne sais pas'], false, { modele: answer })
 }
 
 function qcm(
