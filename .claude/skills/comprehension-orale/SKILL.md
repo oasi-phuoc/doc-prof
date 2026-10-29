@@ -123,9 +123,11 @@ image  /lib/images/tcf/co/scenes/{dossier-slug}/{stem-slug}.webp
 ```
 
 - Champ banque : `support.image` (mono) ou `support.images[]` (aligné sur `audios`).
-- Dossier + liste des fichiers à déposer : `public/lib/images/tcf/co/scenes/README.md`
-  (script `scripts/link-co-scene-images.py`).
-- Style : bande dessinée réaliste (comme les scènes PO) — **pas** fond blanc.
+- Brief de génération : `support.image_description` / `support.images_descriptions[]`
+  + liste complète dans `public/lib/images/tcf/co/scenes/README.md` et `manifest.json`
+  (scripts `link-co-scene-images.py`, `describe-co-scenes.py`).
+- Style : bande dessinée réaliste (comme les scènes PO) — **pas** fond blanc ;
+  ne pas générer les images ici, seulement les descriptions.
 
 ### Vocabulaire (QCM / associations)
 

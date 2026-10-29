@@ -155,6 +155,10 @@ export type TcfCoComplet = TcfBase<
     image?: string
     /** Scènes alignées sur `audios` (une par piste). */
     images?: string[]
+    /** Brief de génération pour `image` (scénario de l’écoute). */
+    image_description?: string
+    /** Briefs alignés sur `images` / `audios`. */
+    images_descriptions?: string[]
     transcription: string | string[]
   }
 >
