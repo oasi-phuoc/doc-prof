@@ -25,6 +25,7 @@ function withActiveForm(tcf: TcfSheetItem, formMode?: TcfTypeReponse): TcfSheetI
     enonce: tcf.enonce,
     audioLabel: tcf.audioLabel,
     image: tcf.image,
+    images: tcf.images,
     formSelect: { ...fs, active },
   }
   if (variant.kind === 'lignes') {

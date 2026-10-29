@@ -62,7 +62,7 @@ export function filledForms(q: TcfQuestion): TcfTypeReponse[] {
 }
 
 function asQuestion(
-  base: Pick<TcfQuestion, 'enonce' | 'audio' | 'points' | 'image' | 'formes'>,
+  base: Pick<TcfQuestion, 'enonce' | 'audio' | 'points' | 'image' | 'images' | 'formes'>,
   type: TcfTypeReponse,
   forme: TcfFormeQcmTexte | TcfFormeQcmImage | TcfFormeLignes,
 ): TcfQuestion {
@@ -73,6 +73,7 @@ function asQuestion(
       audio: base.audio,
       points: base.points,
       image: base.image,
+      images: base.images,
       formes: base.formes,
       type_reponse: 'lignes',
       nb_lignes: f.nb_lignes,
@@ -87,6 +88,7 @@ function asQuestion(
       audio: base.audio,
       points: base.points,
       image: base.image,
+      images: base.images,
       formes: base.formes,
       type_reponse: 'qcm_image',
       melanger: f.melanger,
@@ -99,6 +101,7 @@ function asQuestion(
     audio: base.audio,
     points: base.points,
     image: base.image,
+    images: base.images,
     formes: base.formes,
     type_reponse: 'qcm_texte',
     melanger: f.melanger,
@@ -122,7 +125,14 @@ export function switchQuestionForm(q: TcfQuestion, next: TcfTypeReponse): TcfQue
   delete formes[next]
   const nextFormes = Object.keys(formes).length ? formes : undefined
   return asQuestion(
-    { enonce: q.enonce, audio: q.audio, points: q.points, image: q.image, formes: nextFormes },
+    {
+      enonce: q.enonce,
+      audio: q.audio,
+      points: q.points,
+      image: q.image,
+      images: q.images,
+      formes: nextFormes,
+    },
     next,
     target,
   )

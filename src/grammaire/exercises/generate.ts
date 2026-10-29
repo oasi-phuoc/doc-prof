@@ -23,6 +23,11 @@ import {
   isNationaliteKind,
   nationaliteBankCap,
 } from './nationalite'
+import {
+  buildProvenanceExercise,
+  isProvenanceKind,
+  provenanceBankCap,
+} from './provenance'
 
 /** Génère un bloc d’exercices grammaire (déterministe), rendu TCF. */
 export function tryGenerateGrammaireExerciseBlock(
@@ -74,6 +79,22 @@ export function tryGenerateGrammaireExerciseBlock(
         tcfExerciseId: exercise.id,
       })),
       bankQuestionCap: nationaliteBankCap(parsed.kindId),
+    }
+  }
+  if (parsed.subId === 'a6' && isProvenanceKind(parsed.kindId) && !config.tcfExercise) {
+    const exercise = buildProvenanceExercise({
+      kindId: parsed.kindId,
+      typeId,
+      rng,
+      count: Math.max(1, config.count),
+    })
+    return {
+      instruction: exercise.consigne?.trim() || kind.instruction,
+      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
+        ...item,
+        tcfExerciseId: exercise.id,
+      })),
+      bankQuestionCap: provenanceBankCap(parsed.kindId),
     }
   }
   if (config.tcfExercise) {

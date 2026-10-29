@@ -3,41 +3,7 @@ import { fill, lesson, qcm, writeItem } from './helpers'
 import type { GramLesson } from '../types'
 
 export const GRAM_LESSONS_WORD_PRESENTER: GramLesson[] = [
-  lesson(
-    'a6',
-    'qcm-verbe',
-    'Associer le sujet et avoir',
-    'Associez le sujet avec le verbe. Une seule possibilité.',
-    [
-      qcm('Zoe ___ .', 'a 23 ans', ['a 23 ans', 'avons cours tous les jours', 'ai rendez-vous avec un tuteur']),
-      qcm('Sarah et Edward ___ .', 'ont un niveau A1', ['ont un niveau A1', 'avez du temps le samedi ?', 'a 23 ans']),
-      qcm('Nous ___ .', 'avons cours tous les jours', ['avons cours tous les jours', 'ont un niveau A1', 'a 23 ans']),
-      qcm('Vous ___ ?', 'avez du temps le samedi', ['avez du temps le samedi', 'ai rendez-vous avec un tuteur', 'a 23 ans']),
-      qcm('J’___ .', 'ai rendez-vous avec un tuteur', ['ai rendez-vous avec un tuteur', 'avons cours tous les jours', 'ont un niveau A1']),
-    ],
-  ),
-  lesson(
-    'a6',
-    'fill-conj',
-    'Compléter avec avoir',
-    'Complétez les dialogues avec le verbe avoir à la forme correcte. Faites l’élision si nécessaire.',
-    [
-      fill('Alessandro — Tu ___ 20 ans ?', 'as'),
-      fill('Aiko — Non, je ___ 24 ans. Et toi ?', 'ai'),
-      fill('Alessandro — Moi aussi je ___ 24 ans. Nous ___ le même âge !', 'ai / avons'),
-      fill('Erik — Marta, tu ___ cours le vendredi matin ?', 'as'),
-      fill('Marta — Non, je ___ rendez-vous avec Benjamin, le tuteur. Et toi ?', 'ai'),
-      fill('Erik — Non, je ___ un niveau A1. Les étudiants de A1 ___ cours le lundi et le mercredi.', 'ai / ont'),
-      fill('Le vendredi, nous ___ du temps libre.', 'avons'),
-      fill('Elif — Bonjour Sophie, vous ___ des disponibilités le mardi ?', 'avez'),
-      fill('Sophie — Oui, je ___ du temps libre l’après-midi.', 'ai'),
-      fill('Elif — Il ___ des disponibilités le matin ou l’après-midi ?', 'a'),
-      fill('Sophie — Il ___ des disponibilités le matin.', 'a'),
-      fill('Zoe ___ rendez-vous avec des amis samedi soir.', 'a'),
-      fill('Les étudiants ___ jeunes. Ils ___ 20 ans.', 'sont / ont'),
-      fill('Elena ___ russe. Elle ___ étudiante. Elle ___ 25 ans.', 'est / est / a'),
-    ],
-  ),
+  // a6 « Dire sa provenance » : exercices dédiés dans provenance.ts (plus de banque ici).
 
   lesson(
     'etre',

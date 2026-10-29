@@ -131,24 +131,34 @@ function Enonce({
   )
 }
 
-/** Image à gauche, énoncé (+ réponses) à droite. */
+/** Image(s) à gauche, énoncé (+ réponses) à droite. */
 function QuestionShell({
   image,
+  images,
   numero,
   children,
 }: {
   image?: string
+  images?: string[]
   numero: number
   children: ReactNode
 }) {
-  if (!image) return <div className="tcf-question">{children}</div>
+  const pics = (images?.length ? images : image ? [image] : [])
+    .map((src) => src.trim())
+    .filter(Boolean)
+  if (!pics.length) return <div className="tcf-question">{children}</div>
   return (
     <div className="tcf-question tcf-q-beside">
-      <TcfImage
-        src={image}
-        alt={`Image de la question ${numero}`}
-        className="tcf-image is-question is-beside"
-      />
+      <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
+        {pics.map((src, i) => (
+          <TcfImage
+            key={`${src}-${i}`}
+            src={src}
+            alt={`Image ${i + 1} de la question ${numero}`}
+            className="tcf-image is-question is-beside"
+          />
+        ))}
+      </div>
       <div className="tcf-q-beside-body">{children}</div>
     </div>
   )
@@ -165,6 +175,7 @@ type QuestionHead = {
   audioLabel?: string
   points?: number
   image?: string
+  images?: string[]
 }
 
 export function QuestionQCMTexte({
@@ -177,7 +188,7 @@ export function QuestionQCMTexte({
 }) {
   const show = mode === 'answers'
   return (
-    <QuestionShell image={head.image} numero={head.numero}>
+    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
       <Enonce {...head} blankStyle="dots" />
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
@@ -202,7 +213,7 @@ export function QuestionQCMImage({
 }) {
   const show = mode === 'answers'
   return (
-    <QuestionShell image={head.image} numero={head.numero}>
+    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
       <Enonce {...head} blankStyle="dots" />
       <ul className={`tcf-qcm-images is-${choix.length}`}>
         {choix.map((c) => (
@@ -235,7 +246,7 @@ export function QuestionLignes({
   const show = mode === 'answers'
   const inline = hasInlineBlank(head.enonce)
   return (
-    <QuestionShell image={head.image} numero={head.numero}>
+    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
       <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
       {tableau?.length ? (
         <table className="tcf-tableau">

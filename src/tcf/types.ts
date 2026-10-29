@@ -40,6 +40,8 @@ type TcfQuestionBase = {
   points?: number
   /** Image affichée sous l’énoncé (plan à compléter, document…). */
   image?: string
+  /** Plusieurs images à côté de la question (ex. personne + pays). */
+  images?: string[]
   /**
    * Autres formes de réponse (Texte / Image / Phrase) en plus de `type_reponse`.
    * Sur la fiche, les 3 icônes sont en marge gauche ; seules les formes remplies sont actives.
@@ -335,6 +337,7 @@ export type TcfSheetItem =
       choix: TcfChoixRendu[]
       audioLabel?: string
       image?: string
+      images?: string[]
       /** Sélecteur Texte / Image / Phrase (marge). */
       formSelect?: TcfFormSelect
     }
@@ -346,6 +349,7 @@ export type TcfSheetItem =
       reponseModele?: string
       audioLabel?: string
       image?: string
+      images?: string[]
       tableau?: TcfLigneTableau[]
       formSelect?: TcfFormSelect
     }

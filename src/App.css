@@ -1958,7 +1958,7 @@ html,body,#root{
   width:min(260px,100%);height:32px;margin:0 0 1px;flex:1 1 180px;max-width:280px
 }
 .exercise-heading h3{margin:0;font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em;color:var(--ink)}
-.exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify}
+.exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify;white-space:pre-line}
 /* Refresh en bas à droite du titre « Exercice N » (aperçu seulement). */
 .exercise-refresh-btn{
   width:22px;height:22px;padding:0;margin:0 0 1px;border:1px solid var(--line);
@@ -4155,10 +4155,13 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-num{margin-right:6px;font-weight:700;color:var(--purple)}
 .tcf-question.tcf-q-beside{flex-direction:row;align-items:flex-start;gap:10px;width:100%}
 .tcf-q-beside-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.tcf-q-beside-images{flex:0 0 auto;display:flex;flex-direction:column;gap:4px}
+.tcf-q-beside-images.is-multi{flex-direction:row;flex-wrap:wrap;max-width:60mm}
 .tcf-image.is-beside{
   flex:0 0 auto;width:28mm;height:22mm;object-fit:cover;object-position:center top;
   border:1px solid var(--ink);display:block
 }
+.tcf-q-beside-images.is-multi .tcf-image.is-beside{width:26mm;height:20mm}
 .tcf-audio-tag{display:inline-block;margin-right:6px;padding:0 6px;border:1px solid var(--ink);border-radius:4px;font-size:.8em;font-weight:700}
 .tcf-qcm-texte{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .tcf-qcm-texte li{display:flex;align-items:center;gap:8px}

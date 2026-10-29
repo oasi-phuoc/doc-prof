@@ -190,6 +190,35 @@ export const GRAM_EXERCISE_KINDS = [
     instruction: 'Écoutez et répondez aux questions.',
     layout: 'qcm' as const,
   },
+  {
+    id: 'prov-pays',
+    label: 'Je viens de… (avec image)',
+    description: 'Image d’un pays : compléter « Je viens de/du/d’/des ___ » (QCM ou trait).',
+    instruction: 'Observez l’image. Complétez la phrase.',
+    layout: 'qcm' as const,
+  },
+  {
+    id: 'prov-prep',
+    label: 'Choisir la préposition',
+    description: 'Phrase « Je viens ___ Brésil » : de, du, d’ ou des (QCM ou trait).',
+    instruction: 'Choisissez la bonne préposition.',
+    layout: 'qcm' as const,
+  },
+  {
+    id: 'prov-verbe',
+    label: 'Conjuguer venir',
+    description: 'Phrase « Je ___ du Brésil » : forme du verbe venir (QCM ou trait).',
+    instruction: 'Conjuguez le verbe venir.',
+    layout: 'qcm' as const,
+  },
+  {
+    id: 'prov-phrases',
+    label: 'Écrire deux phrases',
+    description: 'Images personne(s) + pays : écrire venir de + nationalité.',
+    instruction:
+      'Observez les images. Écrivez deux phrases (venir de + nationalité).\nExemple : Elles viennent de France. Elles sont françaises.',
+    layout: 'write' as const,
+  },
 ] as const
 
 export type GramExerciseKindId = (typeof GRAM_EXERCISE_KINDS)[number]['id']
