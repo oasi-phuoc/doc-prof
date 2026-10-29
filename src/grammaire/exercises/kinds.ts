@@ -183,6 +183,13 @@ export const GRAM_EXERCISE_KINDS = [
     instruction: 'Accordez l’adjectif de nationalité correctement.',
     layout: 'qcm' as const,
   },
+  {
+    id: 'nat-co',
+    label: 'Écouter (Ali)',
+    description: 'Compréhension orale : parcours d’Ali (QCM, trait, images pays).',
+    instruction: 'Écoutez et répondez aux questions.',
+    layout: 'qcm' as const,
+  },
 ] as const
 
 export type GramExerciseKindId = (typeof GRAM_EXERCISE_KINDS)[number]['id']

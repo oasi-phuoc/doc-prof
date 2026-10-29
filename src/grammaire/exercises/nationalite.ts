@@ -1,6 +1,8 @@
 /** Exercices A3 « Adjectifs de nationalité » — tirage déterministe, rendu TCF. */
 import { pick, shuffle, type Rng } from '@/math/rng'
 import type {
+  TcfChoixImage,
+  TcfChoixTexte,
   TcfExercise,
   TcfQuestion,
   TcfQuestionLignes,
@@ -9,12 +11,16 @@ import type { GramExerciseKindId } from './kinds'
 
 const CHOICE_IDS = ['a', 'b', 'c'] as const
 
+/** Audio CSC_FR_LECON-01_03.01_AUDIO-3 — à déposer sous ce chemin. */
+export const NAT_CO_ALI_AUDIO = '/lib/audio/grammaire/presenter/lecon-01-03-01-audio-3.mp3'
+
 export const NATIONALITE_KIND_IDS = [
   'nat-image',
   'nat-feminin',
   'nat-masculin',
   'nat-pluriel',
   'nat-accorder',
+  'nat-co',
 ] as const satisfies readonly GramExerciseKindId[]
 
 export type NationaliteKindId = (typeof NATIONALITE_KIND_IDS)[number]
@@ -29,14 +35,18 @@ export const NATIONALITE_DEFAULT_COUNT: Record<NationaliteKindId, number> = {
   'nat-masculin': 6,
   'nat-pluriel': 6,
   'nat-accorder': 6,
+  'nat-co': 4,
 }
 
-export function nationaliteBankCap(_kindId: NationaliteKindId): number {
+export function nationaliteBankCap(kindId: NationaliteKindId): number {
+  if (kindId === 'nat-co') return NAT_CO_ALI_QUESTIONS.length
   return NATIONALITES.length
 }
 
-export function nationaliteFormUi(kindId: string): 'none' | 'header2' {
-  return kindId === 'nat-image' ? 'header2' : 'none'
+export function nationaliteFormUi(kindId: string): 'none' | 'header2' | 'margin3' {
+  if (kindId === 'nat-image') return 'header2'
+  if (kindId === 'nat-co') return 'margin3'
+  return 'none'
 }
 
 type Nationalite = {
@@ -168,6 +178,77 @@ function fillQuestion(
   }
 }
 
+function dualQcmTrait(
+  enonce: string,
+  answer: string,
+  options: string[],
+  imageChoices?: TcfChoixImage[],
+): TcfQuestion {
+  const choix: TcfChoixTexte[] = options.slice(0, 3).map((texte, index) => ({
+    id: CHOICE_IDS[index] ?? `c${index}`,
+    texte,
+    correct: texte === answer,
+  }))
+  const inline = /_{3,}/.test(enonce)
+  return {
+    enonce,
+    type_reponse: 'qcm_texte',
+    melanger: true,
+    choix,
+    formes: {
+      lignes: { nb_lignes: inline ? 0 : 1, reponse_modele: answer },
+      ...(imageChoices?.length
+        ? { qcm_image: { melanger: true, choix: imageChoices } }
+        : {}),
+    },
+  }
+}
+
+/** CO Ali — questions fixes (audio CSC LECON-01_03.01_AUDIO-3). */
+const NAT_CO_ALI_QUESTIONS: TcfQuestion[] = [
+  dualQcmTrait('D’où vient Ali ?', 'Je ne sais pas', [
+    'Marseille',
+    'Sénégal',
+    'Je ne sais pas',
+  ]),
+  dualQcmTrait('Où Ali habite-t-il ?', 'Paris', ['Marseille', 'Paris', 'Mali']),
+  dualQcmTrait('Comment est-il allé en France ?', 'À pied', [
+    'En bateau',
+    'En voiture',
+    'À pied',
+  ]),
+  dualQcmTrait(
+    'Ali a traversé le Mali, le Sénégal et ___ ?',
+    'Le Maroc',
+    ['Le Maroc', 'L’Italie', 'La Suisse'],
+    [
+      {
+        id: 'a',
+        image: '/lib/images/vocabulaire/pays/maroc.webp',
+        correct: true,
+      },
+      {
+        id: 'b',
+        image: '/lib/images/vocabulaire/pays/italie.webp',
+        correct: false,
+      },
+      {
+        id: 'c',
+        image: '/lib/images/vocabulaire/pays/suisse.webp',
+        correct: false,
+      },
+    ],
+  ),
+]
+
+const NAT_CO_ALI_TRANSCRIPTION = [
+  'Léon : Ali est arrivé à Marseille à l’âge de 14 ans.',
+  'Nina : Ah !',
+  'Léon : Ali a traversé le Mali, le Sénégal, le Maroc, la France à pied !',
+  'Nina : Ah ! Vous habitez à Paris Ali ?',
+  'Ali : Oui, madame, voilà l’adresse.',
+].join('\n')
+
 function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
   return { enonce, type_reponse: 'lignes', nb_lignes: nb, reponse_modele: modele }
 }
@@ -193,6 +274,25 @@ export function buildNationaliteExercise(opts: {
   const rows = takeNats(rng, count)
 
   switch (kindId) {
+    case 'nat-co': {
+      const questions = NAT_CO_ALI_QUESTIONS.slice(
+        0,
+        Math.min(Math.max(1, count), NAT_CO_ALI_QUESTIONS.length),
+      ).map((q) => ({ ...q }))
+      // Tirage déterministe : ordre des questions fixe ; mélange des choix via melanger.
+      void rng
+      return wrap(typeId, 'Écoutez et répondez aux questions.', {
+        id: '',
+        niveau: 'A1-A2',
+        competence: 'CO',
+        type_exercice: 'complet',
+        support: {
+          audio: NAT_CO_ALI_AUDIO,
+          transcription: NAT_CO_ALI_TRANSCRIPTION,
+        },
+        questions,
+      })
+    }
     case 'nat-image': {
       const questions = rows.map((nat) => {
         const fem = rng() < 0.5
