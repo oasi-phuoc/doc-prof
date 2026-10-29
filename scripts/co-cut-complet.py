@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Découpe les CO complet multi-Document en pistes mini (1 écoute / document).
+Découpe les CO complet multi-unités (Document / Annonce / Dialogue) en pistes mini
+(1 écoute / unité).
 
 Règles : début = fin bip + 0,5 s ; fin = dernière phrase + 1 s ; retire intros.
 Met à jour src/tcf/content/*/co.json (audios[] + transcription[] + audio:N).
@@ -24,6 +25,100 @@ CONTENT = ROOT / "src" / "tcf" / "content"
 PAD_AFTER_BEEP = 0.5
 PAD_AFTER_LAST = 1.0
 WHISPER_MODEL = "large-v3"
+UNIT_RE = re.compile(
+    r"(?:Document|Annonce|Dialogue(?:\s+numéro)?)\s+(\d+)",
+    re.I,
+)
+
+# Coupes manuelles (start, end) — 1ʳᵉ écoute seulement, pads inclus côté appelant.
+# Clé = id exercice. Valeurs = fenêtres brutes (speech) ; +PAD_AFTER_LAST à l’export.
+MANUAL_CUTS: dict[str, list[tuple[float, float]]] = {
+    # Annonces compactes (1 écoute)
+    "tcf-a2j-s1-co-1": [
+        (4.5, 16.4),
+        (18.6, 32.6),
+        (37.8, 47.4),
+        (52.9, 63.6),
+        (66.5, 79.5),
+        (84.8, 95.5),
+    ],
+    "tcf-a2j-s2-co-1": [
+        (0.15, 14.3),
+        (19.6, 29.45),
+        (31.95, 46.3),
+        (48.75, 59.6),
+        (65.25, 76.05),
+        (81.6, 90.9),
+    ],
+    # mag3 / vq21 : 1ʳᵉ île = intro → 6 suivantes
+    "tcf-ss-a2-s3-co-3": [
+        (15.75, 26.1),
+        (31.45, 43.8),
+        (48.8, 63.0),
+        (67.7, 77.6),
+        (82.4, 92.85),
+        (98.0, 109.8),
+    ],
+    "tcf-ss-a2-s48-co-3": [
+        (15.0, 24.35),
+        (29.8, 39.5),
+        (42.45, 52.65),
+        (57.9, 69.15),
+        (74.85, 89.65),
+        (92.75, 104.05),
+    ],
+    "tcf-ss-a2-s7-co-3": [
+        (1.6, 13.8),
+        (16.4, 24.8),
+        (26.9, 35.5),
+        (37.7, 49.7),
+        (51.6, 65.0),
+        (67.0, 82.2),
+    ],
+    # Quatre dialogues (1ʳᵉ écoute)
+    "tcf-a2p-s1-co-4": [
+        (3.9, 17.9),
+        (20.9, 36.9),
+        (42.0, 57.5),
+        (62.8, 80.1),
+    ],
+    "tcf-a2p-s2-co-4": [
+        (0.4, 15.6),
+        (21.5, 35.7),
+        (42.5, 57.0),
+        (64.3, 81.2),
+    ],
+    "tcf-a2-s1-co-4": [
+        (61.9, 73.6),
+        (76.8, 93.0),
+        (96.2, 109.5),
+        (112.6, 127.2),
+    ],
+    "tcf-a2-sa-co-4": [
+        (62.8, 77.9),
+        (81.0, 98.2),
+        (103.9, 117.9),
+        (121.2, 135.4),
+    ],
+    "tcf-a2-sb-co-4": [
+        (62.4, 72.7),
+        (75.9, 90.5),
+        (93.7, 108.0),
+        (111.2, 127.0),
+    ],
+    "tcf-a2-sc-co-4": [
+        (40.5, 54.5),
+        (112.5, 130.1),
+        (181.5, 201.6),
+        (255.5, 269.6),
+    ],
+    "tcf-a1-sem1-co-2": [
+        (54.5, 71.2),
+        (101.7, 118.2),
+        (150.2, 164.3),
+        (194.1, 204.2),
+    ],
+}
 
 
 def run(cmd: list[str], **kw) -> subprocess.CompletedProcess:
@@ -167,13 +262,6 @@ def cut_mp3(src: Path, dest: Path, start: float, end: float) -> None:
 
 def clean_transcription(text: str) -> str:
     t = text.strip()
-    # Couper tout le blabla avant le corps (Exercice / Document / consignes orales)
-    m = re.search(
-        r"(?:Document\s+\d+\.?\s*)+(?:Lisez[^.]*\.\s*)?(?:Écoutez[^.]*\.\s*)?(?:puis répondez\.?\s*)?",
-        t,
-        flags=re.I,
-    )
-    # Si "Document N" n'est qu'un label en tête, le retirer ; sinon retirer intros répétées
     t = re.sub(r"^(Exercice\s+\d+\.?\s*)+", "", t, flags=re.I)
     t = re.sub(r"^Lisez les questions\.?\s*", "", t, flags=re.I)
     t = re.sub(r"^Lisez la question\.?\s*", "", t, flags=re.I)
@@ -181,18 +269,75 @@ def clean_transcription(text: str) -> str:
     t = re.sub(r"^Écoutez le document[,.]?\s*puis répondez\.?\s*", "", t, flags=re.I)
     t = re.sub(r"^Vous (?:allez )?écouter[^.]*\.\s*", "", t, flags=re.I)
     t = re.sub(r"^Répondez aux questions\.?\s*", "", t, flags=re.I)
-    t = re.sub(r"^(Document\s+\d+\.?\s*)+", "", t, flags=re.I)
+    t = re.sub(
+        r"^(?:Document|Annonce|Dialogue(?:\s+numéro)?)\s+\d+\s*[—\-–:.]?\s*",
+        "",
+        t,
+        flags=re.I,
+    )
     return t.strip()
 
+
 def document_nums(ex: dict) -> list[int]:
-    nums = []
+    """N° d’unités (Document / Annonce / Dialogue) présents dans l’exercice."""
+    nums: list[int] = []
+
+    def add(n: int) -> None:
+        if n not in nums:
+            nums.append(n)
+
     for q in ex.get("questions", []):
-        m = re.search(r"Document\s+(\d+)", q.get("enonce", ""), re.I)
-        if m:
-            n = int(m.group(1))
-            if n not in nums:
-                nums.append(n)
+        if not isinstance(q, dict):
+            continue
+        for m in UNIT_RE.finditer(q.get("enonce", "") or ""):
+            add(int(m.group(1)))
+        for row in q.get("tableau") or []:
+            if isinstance(row, dict):
+                for m in UNIT_RE.finditer(row.get("label", "") or ""):
+                    add(int(m.group(1)))
+    if len(nums) >= 2:
+        return sorted(nums)
+
+    # Repli : labels dans la transcription banque
+    tr = ex.get("support", {}).get("transcription") or ""
+    text = "\n".join(tr) if isinstance(tr, list) else str(tr)
+    for m in UNIT_RE.finditer(text):
+        add(int(m.group(1)))
     return sorted(nums)
+
+
+def split_bank_transcription(tr: str | list, n: int) -> list[str] | None:
+    """Découpe une transcription banque en n textes (sans labels)."""
+    if isinstance(tr, list):
+        parts = [clean_transcription(p) for p in tr if str(p).strip()]
+        if len(parts) >= n:
+            return parts[:n]
+        return None
+    text = (tr or "").strip()
+    if not text:
+        return None
+    # Annonce/Dialogue/Document numérotés
+    if UNIT_RE.search(text):
+        m = UNIT_RE.search(text)
+        assert m
+        text = text[m.start() :]
+        parts = re.split(
+            r"\s*(?:Document|Annonce|Dialogue(?:\s+numéro)?)\s+\d+\s*[—\-–:.]?\s*",
+            text,
+            flags=re.I,
+        )
+        parts = [clean_transcription(p) for p in parts if p.strip()]
+        parts = [p for p in parts if len(p) > 15]
+        if len(parts) >= 2 * n and parts[:n] == parts[n : 2 * n]:
+            return parts[:n]
+        if len(parts) >= n:
+            return parts[:n]
+    # Paragraphes (annonces collège sans labels)
+    paras = [clean_transcription(p) for p in re.split(r"\n\s*\n", text) if p.strip()]
+    paras = [p for p in paras if len(p) > 20]
+    if len(paras) >= n:
+        return paras[:n]
+    return None
 
 
 def public_path(audio_ref: str) -> Path:
@@ -326,11 +471,29 @@ def update_exercise(ex: dict, audio_refs: list[str], transcriptions: list[str]) 
     support["audios"] = audio_refs
     support["transcription"] = transcriptions
     for q in ex["questions"]:
-        m = re.search(r"Document\s+(\d+)", q.get("enonce", ""), re.I)
+        if not isinstance(q, dict):
+            continue
+        m = UNIT_RE.search(q.get("enonce", "") or "")
         if m:
             q["audio"] = int(m.group(1))
-        elif docs:
+        elif docs and len(ex["questions"]) == len(docs):
+            # 1 question / unité dans l’ordre
+            idx = ex["questions"].index(q)
+            if 0 <= idx < len(docs):
+                q["audio"] = docs[idx]
+        elif docs and len(audio_refs) == 1:
             q["audio"] = docs[0]
+
+
+def finalize_cuts(raw: list[tuple[float, float]], duration: float) -> list[tuple[float, float]]:
+    """Ajoute PAD_AFTER_LAST et borne à la durée."""
+    out = []
+    for a, b in raw:
+        end = round(min(duration, b + PAD_AFTER_LAST), 2)
+        start = round(max(0.0, a), 2)
+        if end > start + 1.5:
+            out.append((start, end))
+    return out
 
 
 def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = False) -> bool:
@@ -348,7 +511,7 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
         return True
     docs = document_nums(ex)
     if len(docs) < 2:
-        print(f"SKIP {ex_id}: fewer than 2 Document N")
+        print(f"SKIP {ex_id}: fewer than 2 units (Document/Annonce/Dialogue)")
         return False
     audio_ref = ex["support"].get("audio") or ""
     src = public_path(audio_ref)
@@ -357,26 +520,40 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
         return False
 
     n = max(docs)
-    print(f"\n=== {ex_id}  {src.name}  docs=1..{n}  dur={ffprobe_duration(src):.1f}s ===")
+    duration = ffprobe_duration(src)
+    print(f"\n=== {ex_id}  {src.name}  units=1..{n}  dur={duration:.1f}s ===")
 
     with tempfile.TemporaryDirectory(prefix="co-cut-") as tmp:
         tmp_p = Path(tmp)
         mono = tmp_p / "mono.wav"
         to_mono16(src, mono)
-        cuts = detect_exam_style_cuts(mono, n)
-        style = "exam"
-        if not cuts:
-            cuts = detect_compact_cuts(mono, n)
-            style = "compact"
-        if not cuts:
-            print(f"ERROR: could not detect {n} cuts for {ex_id}", file=sys.stderr)
+
+        style = "auto"
+        if ex_id in MANUAL_CUTS:
+            cuts = finalize_cuts(MANUAL_CUTS[ex_id], duration)
+            style = "manual"
+        else:
+            cuts = detect_exam_style_cuts(mono, n)
+            style = "exam"
+            if not cuts:
+                cuts = detect_compact_cuts(mono, n)
+                style = "compact"
+        if not cuts or len(cuts) != n:
+            print(
+                f"ERROR: could not detect {n} cuts for {ex_id} (got {0 if not cuts else len(cuts)})",
+                file=sys.stderr,
+            )
             return False
         print(f"style={style}")
         for i, (a, b) in enumerate(cuts, 1):
-            print(f"  Doc{i}: {a:.2f} → {b:.2f} ({b - a:.1f}s)")
+            print(f"  Unit{i}: {a:.2f} → {b:.2f} ({b - a:.1f}s)")
 
         if dry_run:
             return True
+
+        bank_trs = split_bank_transcription(ex["support"].get("transcription") or "", n)
+        if bank_trs:
+            print(f"  bank transcriptions: {len(bank_trs)}")
 
         stem = src.stem
         parent = src.parent
@@ -386,32 +563,30 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
             dest = parent / f"{stem}-{i}.mp3"
             cut_mp3(src, dest, a, b)
             out_paths.append(dest)
-            # Whisper each clip
-            clip_wav = tmp_p / f"clip{i}.wav"
-            to_mono16(dest, clip_wav)
-            try:
-                text = whisper_txt(clip_wav, tmp_p / f"w{i}")
-            except subprocess.CalledProcessError as e:
-                print(f"WARN whisper failed doc{i}: {e}", file=sys.stderr)
-                text = ""
-            # Clean repeated lines (double listen leak) — keep unique consecutive
-            lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-            dedup = []
-            for ln in lines:
-                if not dedup or dedup[-1] != ln:
-                    dedup.append(ln)
-            # If exact duplicate of first half, keep half
-            if len(dedup) >= 2 and len(dedup) % 2 == 0:
-                half = len(dedup) // 2
-                if dedup[:half] == dedup[half:]:
-                    dedup = dedup[:half]
-            transcriptions.append(clean_transcription(" ".join(dedup) if dedup else text))
+            if bank_trs and i <= len(bank_trs):
+                transcriptions.append(bank_trs[i - 1])
+            else:
+                clip_wav = tmp_p / f"clip{i}.wav"
+                to_mono16(dest, clip_wav)
+                try:
+                    text = whisper_txt(clip_wav, tmp_p / f"w{i}")
+                except subprocess.CalledProcessError as e:
+                    print(f"WARN whisper failed unit{i}: {e}", file=sys.stderr)
+                    text = ""
+                lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+                dedup: list[str] = []
+                for ln in lines:
+                    if not dedup or dedup[-1] != ln:
+                        dedup.append(ln)
+                if len(dedup) >= 2 and len(dedup) % 2 == 0:
+                    half = len(dedup) // 2
+                    if dedup[:half] == dedup[half:]:
+                        dedup = dedup[:half]
+                transcriptions.append(clean_transcription(" ".join(dedup) if dedup else text))
             print(f"  wrote {dest.name}  tr={transcriptions[-1][:80]}…")
 
         refs = [lib_ref(p) for p in out_paths]
         update_exercise(ex, refs, transcriptions)
-        # Recharger la banque juste avant écriture (évite d’écraser d’autres exercices
-        # traités en parallèle / corrigés entre-temps).
         fresh = json.loads(path.read_text(encoding="utf-8"))
         for i, item in enumerate(fresh):
             if item.get("id") == ex_id:
@@ -445,7 +620,16 @@ def list_pending() -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--exercise", help="Exercise id to process")
-    ap.add_argument("--all-pending", action="store_true", help="All multi-Document still mono")
+    ap.add_argument(
+        "--all-pending",
+        action="store_true",
+        help="All multi-unit still mono (Document/Annonce/Dialogue)",
+    )
+    ap.add_argument(
+        "--manual",
+        action="store_true",
+        help="Only exercises with MANUAL_CUTS defined",
+    )
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--keep-source", action="store_true", help="Do not delete original MP3")
     ap.add_argument("--list", action="store_true")
@@ -453,11 +637,14 @@ def main() -> int:
 
     if args.list:
         for i in list_pending():
-            print(i)
+            mark = " [manual]" if i in MANUAL_CUTS else ""
+            print(f"{i}{mark}")
         return 0
 
     targets = []
-    if args.all_pending:
+    if args.manual:
+        targets = [i for i in MANUAL_CUTS if i in load_banks()]
+    elif args.all_pending:
         targets = list_pending()
     elif args.exercise:
         targets = [args.exercise]

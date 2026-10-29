@@ -6730,8 +6730,18 @@
     "scene": "Les situations du quotidien",
     "consigne": "Vous allez entendre 4 petits dialogues. Vous entendrez chaque dialogue deux fois. Lisez les questions et cochez la bonne réponse.",
     "support": {
-      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3.mp3",
-      "transcription": "exerces numéro 2.\nVous allez entendre quatre petits dialogues.\nVous entendrez chaque dialogue deux fois.\nÉcoutez, lisez les questions et cochez la case qui correspond à la bonne réponse.\nVous avez maintenant 30 secondes.\nAttention.\nNous commençons.\nDialogue numéro 1.\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nDialogue numéro 2.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nDialogue numéro 3.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\n01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nDialogue numéro 4.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà."
+      "transcription": [
+        "Le midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?",
+        "Bonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.\nBonjour monsieur.\nC'est combien le kilo de se risent?\n6,40.\n6,40.\nJ'en veux 500 grammes.\nTrès bien.\nVoilà.",
+        "Pour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.\nPour la visite médicale, prenez rendez-vous avec le médecin du travail.\nC'est le docteur chéré.\nSon téléphone est le 01, 48, 24, 32.\n01, 48, 24, 32.\nMerci.\nJe téléphone tout de suite.",
+        "Bonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà.\nBonjour.\nEst-ce que je pourrais essayer cette robe s'il vous plaît?\nOui, bien sûr.\nQuelle est votre taille?\n38.\n38.\nVoilà."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-1.mp3",
+        "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-2.mp3",
+        "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-3.mp3",
+        "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-3-4.mp3"
+      ]
     },
     "questions": [
       {
@@ -6763,7 +6773,8 @@
             "nb_lignes": 1,
             "reponse_modele": "11 h 30"
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Dialogue 2 — Combien coûte un kilo de cerises ?",
@@ -6794,7 +6805,8 @@
             "nb_lignes": 1,
             "reponse_modele": "6,40 €"
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Dialogue 3 — Quel est le numéro de téléphone du médecin ?",
@@ -6825,7 +6837,8 @@
             "nb_lignes": 1,
             "reponse_modele": "01 48 24 32"
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Dialogue 4 — Quelle est la taille de la dame ?",
@@ -6856,7 +6869,8 @@
             "nb_lignes": 1,
             "reponse_modele": "38"
           }
-        }
+        },
+        "audio": 4
       }
     ],
     "consigne_supplementaire": null

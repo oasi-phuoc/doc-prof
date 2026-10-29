@@ -39,7 +39,9 @@ export function tcfCompletTranscriptionText(ex: TcfCoComplet): string {
   if (parts.length <= 1) return parts[0] ?? ''
   return parts
     .map((text, i) => {
-      const labeled = /^Document\s+\d+/i.test(text) ? text : `Document ${i + 1} — ${text}`
+      const labeled = /^(Document|Annonce|Dialogue)\s+\d+/i.test(text)
+        ? text
+        : `Document ${i + 1} — ${text}`
       return labeled
     })
     .join('\n\n')
