@@ -2256,8 +2256,16 @@
     "scene": "Les annonces à la radio",
     "consigne": "Vous allez écouter des documents sonores. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3.mp3",
-      "transcription": "Document 1 — Le cinéma Le Dandy rouvre lundi prochain, après 5 mois de travaux.\nRendez-vous à 20 h pour découvrir ses films et ses nouvelles salles.\nPour fêter sa réouverture, le cinéma offre une place gratuite pour une place achetée.\nDocument 2 — Ne manquez pas les promotions dans votre magasin de vêtements sur les écharpes et les manteaux.\nAchetez un bonnet, un deuxième vous est offert.\nEn février, ouverture exceptionnelle les dimanches 10 et 17, de 9 heures à 19 heures.\nDocument 3 — Vous avez entre 18 et 25 ans ?\nAvec votre banque Le Crédit, recevez gratuitement un chéquier, et la carte bancaire est à moitié prix.\nPour cela, venez avant le 15 juillet dans notre agence, rue du 18-Juin."
+      "transcription": [
+        "Le cinéma Le Dandy rouvre lundi prochain après 5 mois de travaux. Rendez-vous à 20h pour découvrir ses films et ses nouvelles salles. Pour fêter sa réouverture, le cinéma offre une place gratuite pour une place achetée.",
+        "Ne manquez pas les promotions dans votre magasin de vêtements sur les écharpes et les manteaux. Achetez un bonnet. Un deuxième vous est offert. En février, ouverture exceptionnelle les dimanches 10 et 17 de 9h à 19h.",
+        "Vous avez entre 18 et 25 ans ? Avec votre banque Le Crédit, recevez gratuitement un chéquier et la carte bancaire est à moitié prix. Pour cela, venez avant le 15 juillet dans notre agence rue du 18 juin."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3-1.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3-2.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-3-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -2303,7 +2311,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1 — Que recevez-vous si vous achetez une place ?",
@@ -2348,7 +2357,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2 — Que recevez-vous gratuitement si vous achetez un bonnet ?",
@@ -2393,7 +2403,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2 — À quelle heure ferme le magasin le dimanche ?",
@@ -2438,7 +2449,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3 — Qu’est-ce que la banque donne aux jeunes ?",
@@ -2483,7 +2495,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3 — Jusqu’à quelle date pouvez-vous aller à la banque ?",
@@ -2510,7 +2523,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
@@ -5650,8 +5664,16 @@
     "scene": "Les informations",
     "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-informations-1.mp3",
-      "transcription": "Document 1 — La librairie « Après l’école » vous propose une soirée spéciale le mercredi 15 juin.\nVenez rencontrer l’auteur Marc Galland, qui sort un nouveau livre, puis goûter une spécialité alsacienne, la région d’origine de Marc Galland.\nInscription sur le site de la librairie.\nDocument 2 — Les habitants du village de Fontanges vous ouvrent leurs fermes le week-end prochain.\nPour découvrir moutons, vaches et poules, venez avec vos enfants, mais sans votre chien !\nN’oubliez pas de goûter les spécialités locales comme le fromage.\nDocument 3 — Vous aimez le sport ?\nDimanche 7 juin, la ville de Nancy organise une course à pied.\nInscrivez-vous au parcours hommes, femmes ou jeunes pour 5 euros.\nRendez-vous au stade à 10 heures."
+      "transcription": [
+        "Sous-titrage Société Radio-Canada",
+        "Les habitants du village de Fontange vous ouvrent leur ferme le week-end prochain. Pour découvrir moutons, vaches et poules, venez avec vos enfants, mais sans votre chien. N'oubliez pas de goûter les spécialités locales comme le fromage.",
+        "Vous aimez le sport ? Dimanche 7 juin, la ville de Nancy organise une course à pied. Inscrivez-vous au parcours Hommes, Femmes ou Jeunes pour 5 euros. Rendez-vous au stade à 10 heures."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-informations-1-1.mp3",
+        "/lib/audio/tcf/co/radio/les-informations-1-2.mp3",
+        "/lib/audio/tcf/co/radio/les-informations-1-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -5679,7 +5701,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1 — Le mercredi 15 juin, vous allez…",
@@ -5724,7 +5747,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2 — Quels lieux visitez-vous à Fontanges le week-end prochain ?",
@@ -5769,7 +5793,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2 — Quelle est la spécialité de Fontanges ?",
@@ -5814,7 +5839,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3 — De quel sport s’agit-il ?",
@@ -5859,7 +5885,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3 — Combien coûte l’inscription ?",
@@ -5886,7 +5913,8 @@
             "nb_lignes": 1,
             "reponse_modele": "5 €"
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
@@ -6521,8 +6549,16 @@
     "scene": "Les informations",
     "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-informations-2.mp3",
-      "transcription": "Document 1 — La ville de Toulon organise samedi 24 septembre une grande vente publique place Jean-Jaurès.\nVous voulez vendre des tables ou des chaises que vous n’utilisez plus ?\nInscrivez-vous à la mairie.\nPrix de la place : 5 euros.\nDocument 2 — Aujourd’hui, à la gare de Pau, une vache a retardé les départs de train pendant 6 heures.\nLes clients ont reçu un panier-repas pour attendre et les excuses de la SNCF.\nDocument 3 — Aujourd’hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux.\nAppelez vite Tony au 08 34 21 34 90.\nLes dix premiers gagnent des places de concert et des CD de Jayo."
+      "transcription": [
+        "La Ville de Toulon organise samedi 24 septembre une grande vente publique Place Jean Jaurès. Vous voulez vendre des tables ou des chaises que vous n'utilisez plus ? Inscrivez-vous à la mairie. Prix de la place, 5 euros.",
+        "Aujourd'hui, à la gare de Pau, une vache a retardé les départs de train pendant 6 heures. Les clients ont reçu un panier repas pour attendre et les excuses de la SNCF.",
+        "Aujourd'hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux. Appelez vite Tony au 08 34 21 34 90. Les dix premiers gagnent des places de concert et des CD de Jaillot."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-informations-2-1.mp3",
+        "/lib/audio/tcf/co/radio/les-informations-2-2.mp3",
+        "/lib/audio/tcf/co/radio/les-informations-2-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -6568,7 +6604,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1 — Que pouvez-vous vendre ?",
@@ -6613,7 +6650,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2 — Pourquoi les passagers ont attendu 6 heures ?",
@@ -6658,7 +6696,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2 — La SNCF a donné quoi aux voyageurs ?",
@@ -6703,7 +6742,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3 — Que pouvez-vous gagner ?",
@@ -6748,7 +6788,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3 — Pourquoi la radio donne des cadeaux ?",
@@ -6793,7 +6834,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
