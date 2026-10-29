@@ -110,12 +110,19 @@ export function ZoneEcriture({
 function ChampBoxes({
   chars,
   show,
+  columns,
 }: {
   chars: string[]
   show: boolean
+  /** Colonnes fixes pour coller à la bordure sans déborder. */
+  columns?: number
 }) {
   return (
-    <span className="tcf-champ-boxes" aria-hidden={!show}>
+    <span
+      className="tcf-champ-boxes"
+      style={columns ? { gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` } : undefined}
+      aria-hidden={!show}
+    >
       {chars.map((ch, i) => (
         <span key={i} className="tcf-champ-box">
           {show ? ch : ''}
@@ -133,29 +140,36 @@ function dateBoxGroups(corrige: string, show: boolean) {
   const fill = (raw: string) => [...raw].map((c) => (c === ' ' ? '' : c))
   return (
     <span className="tcf-champ-line is-date">
-      <ChampBoxes chars={fill(d)} show={show} />
+      <ChampBoxes chars={fill(d)} show={show} columns={2} />
       <span className="tcf-champ-date-sep">/</span>
-      <ChampBoxes chars={fill(m)} show={show} />
+      <ChampBoxes chars={fill(m)} show={show} columns={2} />
       <span className="tcf-champ-date-sep">/</span>
-      <ChampBoxes chars={fill(y)} show={show} />
+      <ChampBoxes chars={fill(y)} show={show} columns={4} />
     </span>
   )
 }
+
+/** Une rangée de cases : nombre fixe pour rester dans la bordure du formulaire. */
+const FORM_BOXES_PER_ROW = 16
 
 function textBoxes(corrige: string, show: boolean, rows = 1) {
-  const perRow = 18
+  const perRow = FORM_BOXES_PER_ROW
+  const capacity = rows * perRow
   const chars = [...corrige.replace(/\s+/g, ' ').trim()]
-  const n = Math.max(rows * perRow, chars.length)
-  const cells = Array.from({ length: n }, (_, i) => chars[i] ?? '')
+  // Capacité fixe : les consignes longues du corrigé ne doivent pas ajouter de cases hors cadre.
+  const cells = Array.from({ length: capacity }, (_, i) => (show ? chars[i] ?? '' : ''))
   return (
     <span className={`tcf-champ-line is-boxes${rows > 1 ? ' is-multi' : ''}`}>
-      <ChampBoxes chars={cells} show={show} />
+      <ChampBoxes chars={cells} show={show} columns={perRow} />
     </span>
   )
 }
 
-function isAdresseLabel(label: string): boolean {
-  return /adresse/i.test(label)
+/** Adresse postale (pas e-mail / courriel) → 2 rangées de cases. */
+function isAdressePostaleLabel(label: string): boolean {
+  const t = label.toLowerCase()
+  if (/e-?mail|électronique|courriel|\bmail\b/.test(t)) return false
+  return /\badresse\b/.test(t)
 }
 
 /** Formulaire PE : un champ par ligne ; le corrigé affiche la réponse attendue. */
@@ -175,8 +189,13 @@ export function FormulairePE({
   return (
     <div className="tcf-formulaire">
       {titre?.trim() ? <p className="tcf-formulaire-title">{titre}</p> : null}
-      {champs.map((champ, i) => (
-        <div className="tcf-champ" key={`${champ.label}-${i}`}>
+      {champs.map((champ, i) => {
+        const adresseRows = isAdressePostaleLabel(champ.label)
+        return (
+        <div
+          className={`tcf-champ${adresseRows ? ' is-adresse' : ''}`}
+          key={`${champ.label}-${i}`}
+        >
           <span className="tcf-champ-label">{champ.label}</span>
           {champ.type === 'choix' ? (
             <span className="tcf-champ-options">
@@ -201,15 +220,23 @@ export function FormulairePE({
             champ.type === 'date' ? (
               dateBoxGroups(champ.corrige, show)
             ) : (
-              textBoxes(champ.corrige, show, isAdresseLabel(champ.label) ? 2 : 1)
+              textBoxes(champ.corrige, show, adresseRows ? 2 : 1)
             )
+          ) : adresseRows ? (
+            <span className="tcf-champ-line is-traits-multi">
+              <span className="answer-line-field tcf-champ-line">
+                {show ? champ.corrige : ''}
+              </span>
+              <span className="answer-line-field tcf-champ-line" aria-hidden />
+            </span>
           ) : (
             <span className="answer-line-field tcf-champ-line">
               {show ? champ.corrige : ''}
             </span>
           )}
         </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
