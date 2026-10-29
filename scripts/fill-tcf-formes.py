@@ -16,9 +16,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VOCAB = ROOT / "public/lib/images/vocabulaire"
-BANKS = list((ROOT / "src/content/tcf").glob("*/ce.json")) + list(
-    (ROOT / "src/content/tcf").glob("*/co.json")
-)
+CONTENT = ROOT / "src/tcf/content"
+BANKS = sorted(CONTENT.glob("*/ce.json")) + sorted(CONTENT.glob("*/co.json"))
 
 HOUR_NAMES = {
     0: "minuit",
@@ -254,6 +253,105 @@ ALIASES: dict[str, str] = {
     "la semaine prochaine": "temps-calendrier/calendrier",
     "ce week-end": "temps-calendrier/calendrier",
     "le week-end": "temps-calendrier/calendrier",
+
+    # Compléments fréquents CE/CO
+    "il pleut": "meteo/pluie",
+    "il neige": "meteo/neige",
+    "il fait beau": "meteo/soleil",
+    "il fait chaud": "meteo/chaud",
+    "il fait froid": "meteo/froid",
+    "au bar": "ville/café",
+    "le bar": "ville/café",
+    "bar": "ville/café",
+    "ses cles": "objets/porte-cles",
+    "ses clés": "objets/porte-cles",
+    "les cles": "objets/porte-cles",
+    "les clés": "objets/porte-cles",
+    "cles": "objets/porte-cles",
+    "clés": "objets/porte-cles",
+    "une lettre": "argent-administration/boîte-aux-lettres",
+    "la lettre": "argent-administration/boîte-aux-lettres",
+    "lettre": "argent-administration/boîte-aux-lettres",
+    "un sac": "accessoires/sac-a-main",
+    "le sac": "accessoires/sac-a-main",
+    "sac": "accessoires/sac-a-main",
+    "un voisin": "famille-personnes/voisins",
+    "une voisine": "famille-personnes/voisins",
+    "le voisin": "famille-personnes/voisins",
+    "voisin": "famille-personnes/voisins",
+    "voisine": "famille-personnes/voisins",
+    "un professeur": "metiers/professeure",
+    "le professeur": "metiers/professeure",
+    "professeur": "metiers/professeure",
+    "la geographie": "ecole-bureau/globe",
+    "la géographie": "ecole-bureau/globe",
+    "geographie": "ecole-bureau/globe",
+    "géographie": "ecole-bureau/globe",
+    "un match de foot": "sports/football",
+    "match de foot": "sports/football",
+    "le foot": "sports/football",
+    "foot": "sports/football",
+    "le football": "sports/football",
+    "football": "sports/football",
+    "le surf": "sports/windsurf",
+    "surf": "sports/windsurf",
+    "le diner": "aliments/plateau-repas",
+    "le dîner": "aliments/plateau-repas",
+    "diner": "aliments/plateau-repas",
+    "dîner": "aliments/plateau-repas",
+    "une comedie": "ville/cinema",
+    "une comédie": "ville/cinema",
+    "comedie": "ville/cinema",
+    "comédie": "ville/cinema",
+    "un documentaire": "ville/cinema",
+    "documentaire": "ville/cinema",
+    "elle est fatiguee": "actions/dormir",
+    "elle est fatiguée": "actions/dormir",
+    "il est fatigue": "actions/dormir",
+    "il est fatigué": "actions/dormir",
+    "fatiguee": "actions/dormir",
+    "fatiguée": "actions/dormir",
+    "a paris": "pays/france",
+    "à paris": "pays/france",
+    "paris": "pays/france",
+    "a lyon": "pays/france",
+    "à lyon": "pays/france",
+    "lyon": "pays/france",
+    "a marseille": "pays/france",
+    "à marseille": "pays/france",
+    "marseille": "pays/france",
+    "philosophie": "ecole-bureau/livre",
+    "la philosophie": "ecole-bureau/livre",
+    "le rap": "musique/musique",
+    "rap": "musique/musique",
+    "1 heure": "heure-horloge/une-heure",
+    "une heure": "heure-horloge/une-heure",
+
+    "envoyer un sms": "technologie/sms",
+    "un sms": "technologie/sms",
+    "sms": "technologie/sms",
+    "au centre commercial": "loisirs/shopping",
+    "centre commercial": "loisirs/shopping",
+    "une piece d'identite": "argent-administration/carte-d-identite",
+    "une pièce d'identité": "argent-administration/carte-d-identite",
+    "piece d'identite": "argent-administration/carte-d-identite",
+    "pièce d'identité": "argent-administration/carte-d-identite",
+    "faire la vaisselle": "electromenager/lave-vaisselle",
+    "la vaisselle": "electromenager/lave-vaisselle",
+    "vaisselle": "electromenager/lave-vaisselle",
+    "du rock": "musique/groupe-de-rock",
+    "le rock": "musique/groupe-de-rock",
+    "rock": "musique/groupe-de-rock",
+    "d'un repas": "aliments/plateau-repas",
+    "un repas": "aliments/plateau-repas",
+    "repas": "aliments/plateau-repas",
+    "des dossiers": "argent-administration/dossier",
+    "dossiers": "argent-administration/dossier",
+    "elle classe des dossiers": "argent-administration/dossier",
+    "en telephonant": "actions/telephoner",
+    "en téléphonant": "actions/telephoner",
+    "telephoner": "actions/telephoner",
+    "téléphoner": "actions/telephoner",
 }
 
 
@@ -435,39 +533,84 @@ def resolve_hour(text: str) -> str | None:
 
 
 
+_DET_PREFIX = re.compile(
+    r"^(?:"
+    r"votre|vos|ton|ta|tes|son|sa|ses|leur|leurs|mon|ma|mes|notre|nos|"
+    r"au|a la|a l'|dans le|dans la|dans l'|dans un|dans une|"
+    r"en|par|sur|chez|vers|pour|"
+    r"le|la|les|un|une|des|du|de la|de l'|d'"
+    r")\s+",
+    re.I,
+)
+
+
 def resolve_image(text: str) -> str | None:
+    """Résout un libellé QCM vers une image vocabulaire — strict (pas de faux amis)."""
     if not text or is_abstract(text):
         return None
     hour = resolve_hour(text)
     if hour:
         return hour
     raw = text.strip()
+    low = norm_key(raw)
+    stripped = low
+    for _ in range(3):
+        nxt = _DET_PREFIX.sub("", stripped).strip()
+        if nxt == stripped:
+            break
+        stripped = nxt
     keys = [
-        norm_key(raw),
+        low,
         slugify(raw),
-        slugify(re.sub(r"^(au|a la|a l'|a l’|dans le|dans la|dans un|dans une|en|par|sur|le|la|les|un|une|des|du|de la|de l'|de l’)\s+", "", norm_key(raw), flags=re.I)),
+        stripped,
+        slugify(stripped),
+        re.sub(r"[.!?]+$", "", low).strip(),
+        re.sub(r"[.!?]+$", "", stripped).strip(),
     ]
-    # strip trailing punctuation
-    for k in list(keys):
-        keys.append(re.sub(r"[.!?]+$", "", k).strip())
+    # Bi-grammes / uni-grammes exacts (ex. « numero de telephone » → telephone)
+    words = [w for w in stripped.split() if len(w) > 2]
+    if len(words) >= 2:
+        keys.append(" ".join(words[-2:]))
+        keys.append(slugify(" ".join(words[-2:])))
+    if len(words) == 1:
+        keys.append(words[0])
+        keys.append(slugify(words[0]))
+
+    seen: set[str] = set()
     for k in keys:
-        if not k:
+        if not k or k in seen:
             continue
+        seen.add(k)
         if k in BY_LABEL:
             return BY_LABEL[k]
         if k in BY_SLUG:
             return BY_SLUG[k]
-    # contained vocab label (longest first)
-    low = norm_key(raw)
+
+    # Mot entier = slug / libellé vocab (ex. « Du frère de Driss » → frère)
     best = None
     best_len = 0
-    for label, path in BY_LABEL.items():
-        if " " not in label and "-" not in label and len(label) < 4:
+    for w in words:
+        if len(w) < 4:
             continue
+        path = BY_LABEL.get(w) or BY_SLUG.get(w) or BY_LABEL.get(slugify(w))
+        if path and len(w) > best_len:
+            best, best_len = path, len(w)
+    if best:
+        return best
+
+    # Phrase vocab contenue, avec peu de mots autour
+    content_len = len(stripped)
+    for label, path in BY_LABEL.items():
         lab = label.replace("-", " ")
-        if len(lab) >= 4 and lab in low and len(lab) > best_len:
-            best = path
-            best_len = len(lab)
+        if len(lab) < 5:
+            continue
+        if lab == stripped:
+            return path
+        if content_len and lab in stripped:
+            extra = stripped.replace(lab, "", 1).strip()
+            extra_words = [w for w in extra.split() if w]
+            if len(extra_words) <= 2 and len(lab) >= max(5, best_len) and len(lab) >= content_len * 0.45:
+                best, best_len = path, len(lab)
     return best
 
 
@@ -511,6 +654,18 @@ def try_qcm_image_from_textes(textes: list[str]) -> dict | None:
             pass
         choix.append(item)
     return None  # rebuilt below
+
+
+def isFormeFilled_qcm_image(forme: dict | None) -> bool:
+    if not forme:
+        return False
+    return any((c.get("image") or "").strip() for c in forme.get("choix") or [])
+
+
+def isFormeFilled_qcm_texte(forme: dict | None) -> bool:
+    if not forme:
+        return False
+    return any((c.get("texte") or "").strip() for c in forme.get("choix") or [])
 
 
 def build_qcm_image(choices: list[tuple[str, bool]]) -> dict | None:
@@ -637,9 +792,23 @@ def enrich_question(q: dict, stats: Counter) -> dict:
             pairs[0] = (pairs[0][0], True)
         img_forme = build_qcm_image(pairs)
         if img_forme:
+            prev = formes.get("qcm_image")
             formes["qcm_image"] = img_forme
-            stats["added_qcm_image"] += 1
+            if isFormeFilled_qcm_image(prev):
+                # Réécrit si le mapping a changé (évite images obsolètes / fausses)
+                prev_imgs = [c.get("image") for c in (prev or {}).get("choix") or []]
+                new_imgs = [c.get("image") for c in img_forme.get("choix") or []]
+                if prev_imgs != new_imgs:
+                    stats["fixed_qcm_image"] += 1
+                else:
+                    stats["keep_qcm_image"] += 1
+            else:
+                stats["added_qcm_image"] += 1
         else:
+            if isFormeFilled_qcm_image(formes.get("qcm_image")):
+                # Ancienne forme image non alignée sur les textes → on retire
+                formes.pop("qcm_image", None)
+                stats["removed_bad_qcm_image"] += 1
             stats["skip_qcm_image"] += 1
             for texte, _ in pairs:
                 if not resolve_image(texte) and not is_abstract(texte):
@@ -650,15 +819,18 @@ def enrich_question(q: dict, stats: Counter) -> dict:
         pairs = [((c.get("image") or "").strip(), bool(c.get("correct"))) for c in choix]
         if not any(c for _, c in pairs) and pairs:
             pairs[0] = (pairs[0][0], True)
-        formes["qcm_texte"] = build_qcm_texte_from_images(pairs)
-        stats["added_qcm_texte"] += 1
+        if not isFormeFilled_qcm_texte(formes.get("qcm_texte")):
+            formes["qcm_texte"] = build_qcm_texte_from_images(pairs)
+            stats["added_qcm_texte"] += 1
+        else:
+            stats["keep_qcm_texte"] += 1
 
     elif t == "lignes":
         qt, qi = try_forms_from_lignes(reponse)
-        if qt:
+        if qt and not isFormeFilled_qcm_texte(formes.get("qcm_texte")):
             formes["qcm_texte"] = qt
             stats["added_qcm_texte_from_lignes"] += 1
-        if qi:
+        if qi and not isFormeFilled_qcm_image(formes.get("qcm_image")):
             formes["qcm_image"] = qi
             stats["added_qcm_image_from_lignes"] += 1
         if not qt and not qi:
