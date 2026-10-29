@@ -20,12 +20,34 @@ import type {
   WorksheetPage,
 } from '@/math/types'
 import type { TcfTypeReponse } from '@/tcf/types'
+import { tcfAudioSrc } from '@/tcf/media'
+import { tcfExerciseAudioRefs } from '@/tcf/download-audios'
 import { TcfFormMarginIcons } from '@/components/tcf/TcfFormIcons'
 import {
   isGramDualFormExercise,
   isGramMarginFormExercise,
 } from '@/grammaire/exercises/qui-suis-je-ui'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
+
+/** Audios de l’exercice (support TCF, document, items) pour le lecteur du corrigé. */
+function blockCorrigeAudios(block: WorksheetBlock): string[] {
+  const out: string[] = []
+  const push = (raw?: string | null) => {
+    const src = raw?.trim()
+    if (!src) return
+    const resolved = tcfAudioSrc(src) || src
+    if (resolved && !out.includes(resolved)) out.push(resolved)
+  }
+  push(block.document?.audioSrc)
+  for (const item of block.items) {
+    push(item.audioSrc)
+    const tcf = item.tcf
+    if (tcf?.kind === 'support') {
+      for (const ref of tcfExerciseAudioRefs(tcf.exercise)) push(ref)
+    }
+  }
+  return out
+}
 
 export function defaultCoordQuestionReply(exerciseType: string): CoordReply {
   return isReperageConstruire(exerciseType) ? 'draw' : 'text'
@@ -235,6 +257,19 @@ export function WorksheetSheet({
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
                     <h3>{blockHeading}</h3>
+                    {mode === 'answers'
+                      ? blockCorrigeAudios(block).map((src) => (
+                          <audio
+                            key={src}
+                            className="oral-audio exercise-heading-audio no-print"
+                            controls
+                            preload="none"
+                            src={src}
+                          >
+                            Écoutez l’enregistrement.
+                          </audio>
+                        ))
+                      : null}
                     {onRegenerateBlock && showExerciseRefresh ? (
                       <button
                         type="button"

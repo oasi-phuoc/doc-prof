@@ -214,7 +214,7 @@ type CoSet = {
 }
 
 function vf(enonce: string, vrai: boolean): TcfQuestionQcmTexte {
-  return qcm(enonce, vrai ? 'Vrai' : 'Faux', ['Vrai', 'Faux'], false)
+  return qcm(enonce, vrai ? 'Vrai' : 'Faux', ['Vrai', 'Faux', 'Je ne sais pas'], false)
 }
 
 function qcm(
@@ -242,13 +242,6 @@ function qcm(
 
 function lignes(enonce: string, modele: string, nb = 1): TcfQuestionLignes {
   return { enonce, type_reponse: 'lignes', nb_lignes: nb, reponse_modele: modele }
-}
-
-function tableau(
-  enonce: string,
-  rows: Array<{ label: string; reponse: string }>,
-): TcfQuestionLignes {
-  return { enonce, type_reponse: 'lignes', nb_lignes: 0, tableau: rows }
 }
 
 /** Audios CSC leçon 01 · 05.03–05.06 (Qui suis-je ?). */
@@ -321,13 +314,11 @@ const CO_SETS: CoSet[] = [
     transcription:
       'Bonjour à tous. Je suis votre professeur. Je m’appelle Nael Kervelek. Nael, N-A-E-L. C’est mon prénom. Et Kervelek, K-E-R-V-E-L-E-K. C’est mon nom. Je suis français et j’ai 34 ans. — Monsieur, vous pouvez répéter s’il vous plaît ?',
     questions: [
-      tableau('Complétez la fiche.', [
-        { label: 'Nom', reponse: 'Kervelek' },
-        { label: 'Prénom', reponse: 'Nael' },
-        { label: 'Nationalité', reponse: 'Français' },
-        { label: 'Âge', reponse: '34 ans' },
-        { label: 'Profession', reponse: 'Professeur' },
-      ]),
+      lignes('Nom : ___', 'Kervelek', 0),
+      lignes('Prénom : ___', 'Nael', 0),
+      lignes('Nationalité : ___', 'Français', 0),
+      lignes('Âge : ___', '34 ans', 0),
+      lignes('Profession : ___', 'Professeur', 0),
     ],
   },
   {

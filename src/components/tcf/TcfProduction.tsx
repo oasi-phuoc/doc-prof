@@ -142,15 +142,20 @@ function dateBoxGroups(corrige: string, show: boolean) {
   )
 }
 
-function textBoxes(corrige: string, show: boolean, minBoxes = 14) {
+function textBoxes(corrige: string, show: boolean, rows = 1) {
+  const perRow = 18
   const chars = [...corrige.replace(/\s+/g, ' ').trim()]
-  const n = Math.max(minBoxes, chars.length || minBoxes)
+  const n = Math.max(rows * perRow, chars.length)
   const cells = Array.from({ length: n }, (_, i) => chars[i] ?? '')
   return (
-    <span className="tcf-champ-line is-boxes">
+    <span className={`tcf-champ-line is-boxes${rows > 1 ? ' is-multi' : ''}`}>
       <ChampBoxes chars={cells} show={show} />
     </span>
   )
+}
+
+function isAdresseLabel(label: string): boolean {
+  return /adresse/i.test(label)
 }
 
 /** Formulaire PE : un champ par ligne ; le corrigé affiche la réponse attendue. */
@@ -196,7 +201,7 @@ export function FormulairePE({
             champ.type === 'date' ? (
               dateBoxGroups(champ.corrige, show)
             ) : (
-              textBoxes(champ.corrige, show)
+              textBoxes(champ.corrige, show, isAdresseLabel(champ.label) ? 2 : 1)
             )
           ) : (
             <span className="answer-line-field tcf-champ-line">

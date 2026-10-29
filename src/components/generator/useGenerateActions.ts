@@ -258,16 +258,12 @@ export function useGenerateActions({
       })
       return
     }
-    // Maths / autres : nouveau tirage (lève l’overlay libre pour que la graine s’applique).
-    if (libreMode) {
-      updatePage({
-        contentSeed: nextSeed,
-        libreItems: undefined,
-        libreInstruction: undefined,
-      })
-      return
-    }
-    updatePage({ contentSeed: nextSeed })
+    // Maths / autres : nouveau tirage (lève toujours l’overlay libre pour que la graine s’applique).
+    updatePage({
+      contentSeed: nextSeed,
+      libreItems: undefined,
+      libreInstruction: undefined,
+    })
   }
 
   /** Régénère uniquement l’exercice ciblé (les autres blocs / pages restent inchangés). */
@@ -323,16 +319,8 @@ export function useGenerateActions({
             libreItems: undefined,
             libreInstruction: undefined,
           }
-        } else if (
-          isTpfFamilyDomain(page.domain) ||
-          isTpmFamilyExercise(block.exerciseType) ||
-          page.domain === 'tpm' ||
-          page.domain === 'tcm-cfr' ||
-          page.domain === 'tcm-csc' ||
-          page.domain === 'algèbre' ||
-          page.domain === 'géométrie'
-        ) {
-          // Relâche le tirage figé pour re-mélanger (libre inclus).
+        } else {
+          // Tous domaines : relâche le tirage figé (sinon refresh / type bloqués après le mode libre).
           patch = {
             ...patch,
             libreItems: undefined,

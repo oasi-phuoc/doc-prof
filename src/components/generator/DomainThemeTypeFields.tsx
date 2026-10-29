@@ -346,6 +346,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                         coordMarks: remapped,
                         coordOriginCol: toComposer ? center.col : undefined,
                         coordOriginRow: toComposer ? center.row : undefined,
+                        libreItems: undefined,
+                        libreInstruction: undefined,
                       })
                       return
                     }
@@ -354,6 +356,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                       topic: type.topic,
                       track: type.track,
                       coordLibre: activeBlock.coordLibre,
+                      libreItems: undefined,
+                      libreInstruction: undefined,
                     })
                     return
                   }
