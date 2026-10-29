@@ -14,12 +14,12 @@ function enough(niveau: TcfNiveau, items: TcfExercise[], min: number): TcfExerci
 }
 
 function complets(questions: number): TcfExercise[] {
-  return tcfBankAllLevels('CO').filter(
-    (ex) =>
-      ex.type_exercice === 'complet' &&
-      ex.questions.length === questions &&
-      ex.support.audio.trim().length > 0,
-  )
+  return tcfBankAllLevels('CO').filter((ex) => {
+    if (ex.type_exercice !== 'complet' || ex.questions.length !== questions) return false
+    const multi = ex.support.audios?.some((a) => a.trim().length > 0)
+    const one = ex.support.audio?.trim()
+    return Boolean(multi || one)
+  })
 }
 
 /**

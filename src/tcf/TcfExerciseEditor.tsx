@@ -253,25 +253,67 @@ function SupportEditor({
           ))}
         </>
       )
-    case 'complet':
+    case 'complet': {
+      const multi = (ex.support.audios?.length ?? 0) > 0
+      if (multi) {
+        return (
+          <>
+            {ex.support.audios!.map((audio, i) => (
+              <AudioField
+                key={i}
+                label={`Audio ${i + 1}`}
+                value={audio}
+                onChange={(next) =>
+                  set(withSupport(ex, { audios: ex.support.audios!.map((a, k) => (k === i ? next : a)), audio: undefined }))
+                }
+                bankEntries={audioBank}
+                onPickFromBank={pickAudio}
+              />
+            ))}
+            {ex.support.audios!.map((_, i) => {
+              const trs = Array.isArray(ex.support.transcription)
+                ? ex.support.transcription
+                : [typeof ex.support.transcription === 'string' ? ex.support.transcription : '']
+              return (
+                <TextField
+                  key={`tr-${i}`}
+                  label={`Transcription ${i + 1} (corrigé)`}
+                  value={trs[i] ?? ''}
+                  multiline
+                  rows={3}
+                  onChange={(next) => {
+                    const current = Array.isArray(ex.support.transcription)
+                      ? [...ex.support.transcription]
+                      : ex.support.audios!.map((__, k) => (k === 0 ? String(ex.support.transcription ?? '') : ''))
+                    while (current.length < ex.support.audios!.length) current.push('')
+                    current[i] = next
+                    set(withSupport(ex, { transcription: current }))
+                  }}
+                />
+              )
+            })}
+          </>
+        )
+      }
       return (
         <>
           <AudioField
             label="Audio"
-            value={ex.support.audio}
-            onChange={(audio) => set(withSupport(ex, { audio }))}
+            value={ex.support.audio ?? ''}
+            onChange={(audio) => set(withSupport(ex, { audio, audios: undefined }))}
             bankEntries={audioBank}
             onPickFromBank={pickAudio}
           />
           <TextField
             label="Transcription (corrigé)"
-            value={ex.support.transcription}
+            value={typeof ex.support.transcription === 'string' ? ex.support.transcription : ex.support.transcription?.[0] ?? ''}
             multiline
             rows={5}
             onChange={(transcription) => set(withSupport(ex, { transcription }))}
           />
         </>
       )
+    }
     case 'association_images': {
       const n = ex.support.nb_dialogues
       return (
@@ -898,7 +940,9 @@ export function TcfExerciseEditor({
   const audioCount =
     exercise.type_exercice === 'six_courts' || exercise.type_exercice === 'trois_moyens'
       ? exercise.support.audios.length
-      : undefined
+      : exercise.type_exercice === 'complet' && (exercise.support.audios?.length ?? 0) > 0
+        ? exercise.support.audios!.length
+        : undefined
   const hasConsigneSupp =
     exercise.type_exercice === 'sms_reponse' ||
     exercise.type_exercice === 'email_reponse' ||

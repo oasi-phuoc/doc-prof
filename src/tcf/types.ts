@@ -34,7 +34,7 @@ export type TcfQuestionFormes = {
 type TcfQuestionBase = {
   /** Énoncé affiché au-dessus de la réponse. */
   enonce: string
-  /** CO six_courts / trois_moyens : n° de l’audio concerné (1-based). */
+  /** CO multi-pistes (six_courts / trois_moyens / complet découpé) : n° d’audio 1-based. */
   audio?: number
   /** Barème de la question (sinon « points par question » de la page). */
   points?: number
@@ -140,7 +140,19 @@ export type TcfCoImages = TcfBase<'CO', 'images_a_reconnaitre', { audio: string 
 }
 export type TcfCoSixCourts = TcfBase<'CO', 'six_courts', { audios: string[] }>
 export type TcfCoTroisMoyens = TcfBase<'CO', 'trois_moyens', { audios: string[] }>
-export type TcfCoComplet = TcfBase<'CO', 'complet', { audio: string; transcription: string }>
+/**
+ * CO complet : une piste (`audio`) ou plusieurs documents découpés (`audios`).
+ * `transcription` est une string (mono) ou un tableau aligné sur `audios` (une par piste).
+ */
+export type TcfCoComplet = TcfBase<
+  'CO',
+  'complet',
+  {
+    audio?: string
+    audios?: string[]
+    transcription: string | string[]
+  }
+>
 
 /** Une situation illustrée ; `dialogue` = n° du dialogue qui correspond (null = aucun). */
 export type TcfSituation = { id: string; image: string; dialogue: number | null }

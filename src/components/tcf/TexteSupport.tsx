@@ -124,6 +124,25 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
       // Audios / QR masqués sur la fiche — téléchargement via le bouton aperçu.
       return banque
     case 'complet':
+      return (
+        <>
+          {banque}
+          <Modele
+            text={
+              Array.isArray(ex.support.transcription)
+                ? ex.support.transcription
+                    .map((t, i) =>
+                      /^Document\s+\d+/i.test(t.trim()) ? t.trim() : `Document ${i + 1} — ${t.trim()}`,
+                    )
+                    .filter(Boolean)
+                    .join('\n\n')
+                : ex.support.transcription
+            }
+            mode={mode}
+            title="Transcription"
+          />
+        </>
+      )
     case 'association_images':
       return (
         <>

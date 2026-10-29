@@ -62,6 +62,10 @@ Comme les autres CO TCF `complet` : `support.audio` (chemin absolu
 `/lib/audio/tcf/co/…`), `support.transcription`, `questions[]` en
 `qcm_texte` (3 choix, une bonne réponse).
 
+**Multi-documents** (plusieurs « Document N » dans un seul MP3) : découper en
+pistes `support.audios[]` + `transcription: string[]` + `questions[].audio`
+— skill **`decoupage-audio-co`** (script `scripts/co-cut-complet.py`).
+
 ## Transcription depuis un audio (Whisper)
 
 Dès qu’il faut **créer ou corriger** une `support.transcription` (CO TCF,

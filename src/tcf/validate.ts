@@ -1,5 +1,6 @@
 import { TCF_TYPES } from './catalog'
 import { hasInlineBlank } from './inline-blank'
+import { tcfCompletAudioCount, tcfCompletAudioRefs, tcfCompletTranscriptions } from './complet-audio'
 import { tcfAudioSequence, tcfAudioSrc, tcfImageSrc } from './media'
 import { TCF_IMAGES_A_COCHER, TCF_QCM_MAX, TCF_QCM_MIN } from './templates'
 import type { TcfExercise, TcfQuestion } from './types'
@@ -117,9 +118,29 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
       })
       break
     }
-    case 'complet':
-      if (blank(ex.support.audio)) errors.push('Audio manquant.')
+    case 'complet': {
+      const refs = tcfCompletAudioRefs(ex)
+      if (refs.length === 0) errors.push('Audio manquant.')
+      const multi = (ex.support.audios?.length ?? 0) > 0
+      if (multi) {
+        ex.support.audios!.forEach((a, i) => {
+          if (blank(a)) errors.push(`Audio ${i + 1} manquant.`)
+        })
+        const n = tcfCompletAudioCount(ex)
+        const tr = tcfCompletTranscriptions(ex)
+        if (tr.length > 0 && tr.length !== n) {
+          warnings.push(`Transcriptions (${tr.length}) ≠ pistes (${n}) : alignez une transcription par audio.`)
+        }
+        ex.questions.forEach((q, i) => {
+          if (q.audio != null && (q.audio < 1 || q.audio > n)) {
+            errors.push(`Question ${i + 1} : n° d’audio entre 1 et ${n}.`)
+          }
+        })
+      } else if (blank(ex.support.audio)) {
+        errors.push('Audio manquant.')
+      }
       break
+    }
     case 'association_images': {
       if (blank(ex.support.audio)) errors.push('Audio manquant.')
       const n = ex.support.nb_dialogues
@@ -238,7 +259,7 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
       audios.push(...ex.support.audios)
       break
     case 'complet':
-      audios.push(ex.support.audio)
+      audios.push(...tcfCompletAudioRefs(ex))
       break
     case 'association_images':
       audios.push(ex.support.audio)

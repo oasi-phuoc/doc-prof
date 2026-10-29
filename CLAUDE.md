@@ -83,6 +83,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Compréhension écrite A1/A2/B1 (CECRL / FALC) | `comprehension-ecrite` |
 | Cadre FALC (fiches théorie FR + traductions d’aide) | `falc` |
 | CO TCF / transcription audio (Whisper `large-v3`, banques `co.json`) | `comprehension-orale` |
+| Découper audio CO complet multi-documents → pistes `audio: 1..n` | `decoupage-audio-co` |
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
 | Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) ; scènes PO TCF / fide (décor quotidien, pas fond blanc) | `medias-image-audio` |
 | Aperçu A4 fixe + impression | `test-impression` |
