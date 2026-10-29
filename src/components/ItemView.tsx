@@ -137,6 +137,12 @@ export function ItemView({
   )
   const isFormulaire =
     item.layout === 'tcf' && item.tcf?.kind === 'formulaire'
+  /** Support / production : pleine largeur ; QCM / lignes suivent les colonnes. */
+  const tcfFullWidth =
+    item.layout === 'tcf' &&
+    item.tcf != null &&
+    item.tcf.kind !== 'qcm' &&
+    item.tcf.kind !== 'lignes'
   const showTcfPageChip = Boolean(
     onToggleTcfPageBreak &&
       item.layout === 'tcf' &&
@@ -176,7 +182,7 @@ export function ItemView({
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
         isOralSelect ? ' is-oral' : ''
-      }`}
+      }${tcfFullWidth ? ' is-tcf-full' : ''}`}
     >
       {isDraftPad && onToggleDraftGrid ? (
         <button

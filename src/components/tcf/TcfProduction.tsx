@@ -132,7 +132,7 @@ function dateBoxGroups(corrige: string, show: boolean) {
   const y = digits.slice(4, 8).padEnd(4, ' ')
   const fill = (raw: string) => [...raw].map((c) => (c === ' ' ? '' : c))
   return (
-    <span className="answer-line-field tcf-champ-line is-date">
+    <span className="tcf-champ-line is-date">
       <ChampBoxes chars={fill(d)} show={show} />
       <span className="tcf-champ-date-sep">/</span>
       <ChampBoxes chars={fill(m)} show={show} />
@@ -142,11 +142,15 @@ function dateBoxGroups(corrige: string, show: boolean) {
   )
 }
 
-function textBoxes(corrige: string, show: boolean, minBoxes = 12) {
+function textBoxes(corrige: string, show: boolean, minBoxes = 14) {
   const chars = [...corrige.replace(/\s+/g, ' ').trim()]
   const n = Math.max(minBoxes, chars.length || minBoxes)
   const cells = Array.from({ length: n }, (_, i) => chars[i] ?? '')
-  return <ChampBoxes chars={cells} show={show} />
+  return (
+    <span className="tcf-champ-line is-boxes">
+      <ChampBoxes chars={cells} show={show} />
+    </span>
+  )
 }
 
 /** Formulaire PE : un champ par ligne ; le corrigé affiche la réponse attendue. */

@@ -260,6 +260,24 @@ export function WorksheetSheet({
                         onSelect={(form) => onSelectTcfFormForExercise(form, blockIndex)}
                       />
                     ) : null}
+                    {parseGramExerciseType(block.exerciseType)?.kindId === 'formulaire' &&
+                    onToggleFormulaireLetterGrid ? (
+                      <button
+                        type="button"
+                        className={`no-print draft-grid-chip ${
+                          block.formulaireLetterGrid ? 'on' : 'off'
+                        }`}
+                        onClick={() => onToggleFormulaireLetterGrid(blockIndex)}
+                        aria-pressed={Boolean(block.formulaireLetterGrid)}
+                        title={
+                          block.formulaireLetterGrid
+                            ? 'Cases lettre / chiffre (une par case)'
+                            : 'Lignes de réponse classiques'
+                        }
+                      >
+                        Grille
+                      </button>
+                    ) : null}
                   </div>
                   {block.instruction ? <p>{renderSoutienInstruction(block.instruction)}</p> : null}
                   {block.exerciseType === 'addition-decompose' ? <DecomposeExample op="+" /> : null}
@@ -332,7 +350,7 @@ export function WorksheetSheet({
                       ].includes(item.layout),
                     )
                       ? 1
-                      : block.columns,
+                      : (block.columns ?? 1),
                   } as CSSProperties
                 }
               >
