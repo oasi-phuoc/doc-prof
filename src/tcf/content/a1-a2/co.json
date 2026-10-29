@@ -1204,9 +1204,9 @@
     "consigne": "Vous entendez ces annonces à la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "transcription": [
-        "Exercice 2. Document 1. Aujourd'hui, dans notre émission Partage d'ados, Pauline va nous expliquer comment elle réussit toujours de très bonnes crêpes pour régaler toute sa famille. Alors sortez vite de quoi écrire pour prendre des notes et lancez-vous !",
-        "Document 2 Beaucoup de nuages aujourd'hui dans le sud de la France, mais il ne pleut pas. Demain, le vent va faire partir les nuages et nous apporter du soleil. Alors sortez les lunettes et les chapeaux.",
-        "Document 3"
+        "Aujourd’hui, dans notre émission « Partage d’ados », Pauline va nous expliquer comment elle réussit toujours de très bonnes crêpes pour régaler toute sa famille. Alors, sortez vite de quoi écrire pour prendre des notes et lancez-vous !",
+        "Beaucoup de nuages aujourd’hui dans le sud de la France, mais il ne pleut pas. Demain, le vent va faire partir les nuages et nous apporter du soleil. Sortez les lunettes et les chapeaux !",
+        "Aujourd’hui, Radiogen vous offre des places pour voir les meilleurs films de l’année. Pour gagner, appelez le 39 10 et dites « Radiogen ». Vite, vous avez 15 minutes pour jouer !"
       ],
       "audios": [
         "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-1.mp3",
@@ -2852,8 +2852,22 @@
     "scene": "Les annonces publiques",
     "consigne": "Vous écoutez des annonces publiques. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-4.mp3",
-      "transcription": "Document 1 — Chers élèves, le guichet de la bibliothèque est fermé.\nPour rendre vos livres, merci d’utiliser la boîte qui se trouve près de l’entrée, à côté des ordinateurs.\nDocument 2 — Bonjour les enfants !\nLa visite du musée va commencer.\nLa guide est là pour répondre à vos questions.\nVous pouvez prendre des photos, mais les sacs ne sont pas autorisés, vous devez les laisser à l’accueil.\nDocument 3 — Votre attention s’il vous plaît.\nChangement de voie pour le train à destination de Bordeaux.\nPour plus d’informations, merci de demander directement au guichet, face à la voie 10.\nDocument 4 — Cet été, la piscine change ses horaires.\nÀ partir de demain, elle ferme à minuit tous les vendredis.\nVenez prendre des cours de natation avec nos professeurs !\nDocument 5 — Le professeur de musique est en retard.\nLes élèves inscrits à son cours doivent attendre dans la salle de danse, à côté de la cafétéria.\nDocument 6 — À cause de la grève, le tramway est fermé.\nLa mairie propose aujourd’hui des vélos gratuits.\nUn service spécial de bus est aussi disponible au même prix que le tramway."
+      "transcription": [
+        "Chers élèves, le guichet de la bibliothèque est fermé.\nPour rendre vos livres, merci d'utiliser la boîte qui se trouve près de l'entrée, à côté des ordinateurs.",
+        "Bonjour les enfants, la visite du musée va commencer.\nLa guide est là pour répondre à vos questions.\nVous pouvez prendre des photos, mais les sacs ne sont pas autorisés.\nVous devez les laisser à l'accueil.",
+        "Votre attention s'il vous plaît.\nChangement de voie pour le train à destination de Bordeaux.\nPour plus d'informations, merci de demander directement au guichet face à la voie 10.",
+        "Cet été, la piscine change ses horaires.\nA partir de demain, elle ferme à minuit tous les vendredis.\nVenez prendre des cours de natation avec nos professeurs.",
+        "Le professeur de musique est en retard. Les élèves inscrits à son cours doivent attendre dans la salle de danse, à côté de la cafétéria.",
+        "À cause de la grève, le tramway est fermé. La mairie propose aujourd'hui des vélos gratuits. Un service spécial de bus est aussi disponible au même prix que le tramway."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-annonces-publiques-4-1.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-publiques-4-2.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-publiques-4-3.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-publiques-4-4.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-publiques-4-5.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-publiques-4-6.mp3"
+      ]
     },
     "questions": [
       {
@@ -2899,7 +2913,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2. Qu’est-ce qui est interdit ?",
@@ -2944,7 +2959,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3. Qu’est-ce que vous devez faire ?",
@@ -2989,7 +3005,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 4. Cet été, la piscine propose de nouveaux horaires…",
@@ -3034,7 +3051,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 4
       },
       {
         "enonce": "Document 5. Où devez-vous attendre ?",
@@ -3079,7 +3097,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 5
       },
       {
         "enonce": "Document 6. Qu’est-ce qui est moins cher aujourd’hui ?",
@@ -3124,7 +3143,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 6
       }
     ],
     "consigne_supplementaire": null
@@ -3139,8 +3159,16 @@
     "scene": "Les annonces à la radio",
     "consigne": "Vous écoutez la radio. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4.mp3",
-      "transcription": "Document 1 — Vendredi prochain, venez écouter le concert des plus belles musiques de films, avec un orchestre de 50 musiciens !\nRéservez sur Internet pour payer votre place à moitié prix !\nAttention, vous pouvez acheter seulement une seule place.\nDocument 2 — Chers ados !\nC’est la semaine du livre sur Radio Jeunes.\nTous les jours, à 20 heures, commencez votre soirée avec des textes lus par des comédiens.\nSi vous retrouvez les titres des livres, appelez-nous et gagnez un cadeau !\nDocument 3 — Aujourd’hui, le docteur David Dupré nous présente son livre de recettes pour adolescents : Bien manger avant les examens.\nAppelez-nous pour obtenir les réponses à toutes vos interrogations sur le sujet !\nLes dix premiers appels seront en direct dans notre émission."
+      "transcription": [
+        "Vendredi prochain, venez écouter le concert des plus belles musiques de film avec un orchestre de 50 musiciens.\nRéservez sur Internet pour payer votre place à moitié prix.\nAttention, vous pouvez acheter seulement une seule place.",
+        "Chers ados, c'est la semaine du livre sur Radio Jeune.\nTous les jours, à 20h, commencez votre soirée avec des textes lus par des comédiens.\nSi vous retrouvez les titres des livres, appelez-nous et gagnez un cadeau !",
+        "Aujourd'hui, le Dr David Dupré nous présente son livre de recettes pour adolescents « Bien manger avant les examens ».\nAppelez-nous pour obtenir les réponses à toutes vos interrogations sur le sujet.\nLes dix premiers appels seront en direct dans notre émission."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4-1.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4-2.mp3",
+        "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-4-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -3186,7 +3214,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1. Sur Internet, vous pouvez…",
@@ -3213,7 +3242,8 @@
             "nb_lignes": 1,
             "reponse_modele": "payer les places moins cher."
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2. L’événement se passe chaque jour…",
@@ -3258,7 +3288,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2. Pour gagner un cadeau, il faut…",
@@ -3285,7 +3316,8 @@
             "nb_lignes": 1,
             "reponse_modele": "reconnaître des textes."
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3. Vous pouvez…",
@@ -3312,7 +3344,8 @@
             "nb_lignes": 1,
             "reponse_modele": "poser des questions."
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3. Quel est le thème de l’émission ?",
@@ -3357,7 +3390,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
@@ -5665,9 +5699,9 @@
     "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "transcription": [
-        "Sous-titrage Société Radio-Canada",
-        "Les habitants du village de Fontange vous ouvrent leur ferme le week-end prochain. Pour découvrir moutons, vaches et poules, venez avec vos enfants, mais sans votre chien. N'oubliez pas de goûter les spécialités locales comme le fromage.",
-        "Vous aimez le sport ? Dimanche 7 juin, la ville de Nancy organise une course à pied. Inscrivez-vous au parcours Hommes, Femmes ou Jeunes pour 5 euros. Rendez-vous au stade à 10 heures."
+        "La librairie « Après l’école » vous propose une soirée spéciale le mercredi 15 juin.\nVenez rencontrer l’auteur Marc Galland, qui sort un nouveau livre, puis goûter une spécialité alsacienne, la région d’origine de Marc Galland.\nInscription sur le site de la librairie.",
+        "Les habitants du village de Fontanges vous ouvrent leurs fermes le week-end prochain.\nPour découvrir moutons, vaches et poules, venez avec vos enfants, mais sans votre chien !\nN’oubliez pas de goûter les spécialités locales comme le fromage.",
+        "Vous aimez le sport ?\nDimanche 7 juin, la ville de Nancy organise une course à pied.\nInscrivez-vous au parcours hommes, femmes ou jeunes pour 5 euros.\nRendez-vous au stade à 10 heures."
       ],
       "audios": [
         "/lib/audio/tcf/co/radio/les-informations-1-1.mp3",
@@ -7416,8 +7450,16 @@
     "scene": "Les informations",
     "consigne": "Vous écoutez la radio. Il y a 3 documents et 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
-      "audio": "/lib/audio/tcf/co/radio/les-informations-3.mp3",
-      "transcription": "Document 1 — Grand projet pour la francophonie : vous allez fabriquer votre dictionnaire francophone !\nVous habitez dans un pays ou sur un continent francophone et vous utilisez des mots ou des expressions que les autres ne connaissent pas ?\nEnvoyez vos exemples sur notre site internet.\nDocument 2 — Bonsoir.\nAujourd’hui, nous recevons Mila, une élève du lycée qui a quitté son pays à cause de la guerre.\nAlors Mila, tu es ici parce que tu as écrit un petit livre qui raconte les premiers mois de ta vie chez nous.\nDocument 3 — Bonjour, nous sommes le 6 avril et c’est la Journée internationale du sport.\nDans toute la région, on vous propose des activités sportives, parce que le sport est le symbole de la santé, mais aussi de la paix et de la solidarité."
+      "transcription": [
+        "Grand projet pour la francophonie !\nVous allez fabriquer votre dictionnaire francophone.\nVous habitez dans un pays ou sur un continent francophone\net vous utilisez des mots ou des expressions que les autres ne connaissent pas ?\nEnvoyez vos exemples sur notre site Internet.",
+        "Bonsoir. Aujourd'hui, nous recevons Mila, une élève du lycée qui a quitté son pays à cause de la guerre.\nAlors Mila, tu es ici parce que tu as écrit un petit livre qui raconte les premiers mois de ta vie chez nous.",
+        "Bonjour, nous sommes le 6 avril et c'est la journée internationale du sport.\nDans toute la région, on vous propose des activités sportives parce que le sport est le symbole de la santé, mais aussi de la paix et de la solidarité."
+      ],
+      "audios": [
+        "/lib/audio/tcf/co/radio/les-informations-3-1.mp3",
+        "/lib/audio/tcf/co/radio/les-informations-3-2.mp3",
+        "/lib/audio/tcf/co/radio/les-informations-3-3.mp3"
+      ]
     },
     "questions": [
       {
@@ -7463,7 +7505,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 1 — Vous pouvez envoyer au site de l’émission…",
@@ -7490,7 +7533,8 @@
             "nb_lignes": 1,
             "reponse_modele": "votre vocabulaire francophone."
           }
-        }
+        },
+        "audio": 1
       },
       {
         "enonce": "Document 2 — Pourquoi Mila est interviewée ?",
@@ -7535,7 +7579,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 2 — Le journaliste veut parler avec Mila de…",
@@ -7580,7 +7625,8 @@
               }
             ]
           }
-        }
+        },
+        "audio": 2
       },
       {
         "enonce": "Document 3 — Le 6 avril est présenté comme la fête du sport…",
@@ -7607,7 +7653,8 @@
             "nb_lignes": 1,
             "reponse_modele": "dans le monde."
           }
-        }
+        },
+        "audio": 3
       },
       {
         "enonce": "Document 3 — Le sport développe aussi le thème de…",
@@ -7634,7 +7681,8 @@
             "nb_lignes": 1,
             "reponse_modele": "la paix."
           }
-        }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null
