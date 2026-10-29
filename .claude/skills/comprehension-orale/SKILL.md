@@ -1,9 +1,11 @@
 ---
 name: comprehension-orale
 description: >-
-  Importe et maintient les CO (compréhension orale) TCF depuis le repo
-  soutien-scolaire. À utiliser dès qu’on parle de CO TCF, banques
-  src/tcf/content/*/co.json, audios soutien, ou import des questions orales.
+  Importe et maintient les CO (compréhension orale) TCF / TPF / grammaire :
+  banques, audios, questions, et transcriptions (Whisper). À utiliser dès
+  qu’on parle de CO TCF, banques src/tcf/content/*/co.json, audios soutien,
+  import des questions orales, ou rédaction / correction d’une
+  support.transcription à partir d’un MP3.
 ---
 
 # Compréhension orale TCF (soutien-scolaire)
@@ -59,6 +61,50 @@ qui ont transcript **et** pool de questions, et écrit des exercices `complet`
 Comme les autres CO TCF `complet` : `support.audio` (chemin absolu
 `/lib/audio/tcf/co/…`), `support.transcription`, `questions[]` en
 `qcm_texte` (3 choix, une bonne réponse).
+
+## Transcription depuis un audio (Whisper)
+
+Dès qu’il faut **créer ou corriger** une `support.transcription` (CO TCF,
+grammaire Qui suis-je, CSC, etc.) à partir d’un MP3 :
+
+### Modèle obligatoire
+
+Utiliser **le Whisper le plus précis disponible** — jamais `tiny`, `base` ni
+`small` pour une transcription finale destinée à la banque.
+
+| Priorité | Moteur | Modèle |
+|---|---|---|
+| **1 — standard** | `openai-whisper` (`pip install openai-whisper`) | **`large-v3`** |
+| 2 — repli GPU / mémoire | `faster-whisper` | **`large-v3`** |
+| Interdit en final | — | `tiny`, `base`, `small`, `medium` (sauf brouillon jetable) |
+
+`large-v3` prime sur `large-v2` / `large` / `turbo`. Si `large-v3` est
+indisponible (mémoire, install), le signaler et utiliser le plus grand modèle
+installable (`large-v2` puis `large`) — **pas** redescendre à `base` pour
+remplir la banque.
+
+### Paramètres
+
+- Langue forcée : **`French`** (`--language French` / `language="fr"`).
+- Tâche : **`transcribe`** (pas `translate`).
+- Prétraitement conseillé : `ffmpeg` → WAV mono **16 kHz** avant Whisper.
+- Relire le texte : noms propres, chiffres, VF / QCM doivent coller à
+  l’audio ; retirer les annonces de piste (« Page 15, exercice… ») si elles
+  ne font pas partie du document pédagogique.
+- Preferer une source écrite officielle (corrigé, site auteur) quand elle
+  existe ; Whisper sert alors de contrôle, pas de copie aveugle.
+
+### Exemple (`openai-whisper`)
+
+```bash
+pip install -q openai-whisper
+ffmpeg -y -i audio.mp3 -ac 1 -ar 16000 /tmp/co.wav
+whisper /tmp/co.wav --model large-v3 --language French --task transcribe \
+  --output_dir /tmp/co-out --output_format txt
+```
+
+Avec `faster-whisper` : `WhisperModel("large-v3", …)` puis
+`model.transcribe(path, language="fr", task="transcribe")`.
 
 ## Images des CO (et des CE TCF)
 

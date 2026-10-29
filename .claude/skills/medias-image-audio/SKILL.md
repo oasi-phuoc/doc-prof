@@ -219,6 +219,10 @@ Préfixer **avant** la description (et toujours joindre la référence de style)
 Les scènes PO TCF n’imposent pas de TTS image ; l’audio PO éventuel suit les
 chemins `public/lib/audio/tcf/co/` et les banques (hors scope de cette section).
 
+**Transcription** (STT, texte à partir d’un MP3) → skill `comprehension-orale`,
+section « Transcription depuis un audio (Whisper) » : modèle **`large-v3`**,
+jamais `tiny` / `base` / `small` en final.
+
 ### Outil et voix (ClairFLE)
 
 | Priorité | Outil | Voix | Débit |
