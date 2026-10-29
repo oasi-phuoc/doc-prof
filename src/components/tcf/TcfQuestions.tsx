@@ -11,14 +11,32 @@ import { TcfImage } from './TexteSupport'
 
 const INLINE_BLANK_RE = /_{3,}|_ _ _/g
 
-function InlineBlank({ fill, asDots }: { fill?: string; asDots?: boolean }) {
+function InlineBlank({
+  fill,
+  asDots,
+  toMargin,
+}: {
+  fill?: string
+  asDots?: boolean
+  /** Trait jusqu’à la marge (fiche « Nom : ___ »). */
+  toMargin?: boolean
+}) {
   const shown = fill?.trim()
   if (asDots && !shown) return <span className="tcf-blank-dots">. . .</span>
   return (
-    <span className={`answer-line-field tcf-blank-inline${shown ? ' filled' : ''}`}>
+    <span
+      className={`answer-line-field tcf-blank-inline${shown ? ' filled' : ''}${
+        toMargin && !shown ? ' is-to-margin' : ''
+      }`}
+    >
       {shown || '\u00a0'}
     </span>
   )
+}
+
+/** Une seule consigne du type « Nom : ___ » → trait jusqu’à la marge. */
+function isLabelBlankPrompt(text: string): boolean {
+  return /^\s*[^_\n]{1,40}:\s*_{3,}\s*$/.test(text)
 }
 
 function themedParen(inner: string): ReactNode {
@@ -44,6 +62,7 @@ function renderEnonceText(
   fills: string[] = [],
   blankStyle: 'line' | 'dots' = 'line',
 ): ReactNode {
+  const toMargin = blankStyle === 'line' && isLabelBlankPrompt(text)
   const nodes: ReactNode[] = []
   let last = 0
   let blankIndex = 0
@@ -57,6 +76,7 @@ function renderEnonceText(
         key={`b${key}`}
         fill={fills[blankIndex]}
         asDots={blankStyle === 'dots'}
+        toMargin={toMargin}
       />,
     )
     blankIndex += 1
@@ -98,11 +118,14 @@ function Enonce({
   blankStyle?: 'line' | 'dots'
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
+  const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
   return (
     <p className="tcf-enonce">
       <span className="tcf-num">{numero}.</span>
       {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
-      <span className="tcf-enonce-text">{renderEnonceText(enonce, fills, blankStyle)}</span>
+      <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
+        {renderEnonceText(enonce, fills, blankStyle)}
+      </span>
       <TcfPoints points={points} />
     </p>
   )
