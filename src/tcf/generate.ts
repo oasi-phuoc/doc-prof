@@ -492,7 +492,9 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
     return withQuestionPoints(composed, config.tcfQuestionPoints)
   }
   const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
-  const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
+  // CE : pas de filtre scénario (sélecteur unique « Exercice »).
+  const useScenario = competence !== 'CE' && Boolean(config.tcfScenario)
+  const inScenario = useScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
   const pool = inScenario.length > 0 ? inScenario : bank
   const pinned = tcfExerciseById(config.tcfBankId)
   if (pinned && pinned.competence === competence) {
