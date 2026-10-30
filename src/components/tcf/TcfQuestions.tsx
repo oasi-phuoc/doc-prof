@@ -15,11 +15,14 @@ function InlineBlank({
   fill,
   asDots,
   toMargin,
+  short,
 }: {
   fill?: string
   asDots?: boolean
   /** Trait jusqu’à la marge (fiche « Nom : ___ »). */
   toMargin?: boolean
+  /** Trait court (50 px) — prépositions, etc. */
+  short?: boolean
 }) {
   const shown = fill?.trim()
   if (asDots && !shown) return <span className="tcf-blank-dots">. . .</span>
@@ -27,7 +30,7 @@ function InlineBlank({
     <span
       className={`answer-line-field tcf-blank-inline${shown ? ' filled' : ''}${
         toMargin && !shown ? ' is-to-margin' : ''
-      }`}
+      }${short && !shown ? ' is-short' : ''}`}
     >
       {shown || '\u00a0'}
     </span>
@@ -54,13 +57,14 @@ function themedParen(inner: string): ReactNode {
 }
 
 /**
- * `___` / `_ _ _` → trait 200 px (couleur du thème), ou « . . . » en mode QCM.
- * Verbe entre parenthèses après un blanc : couleur du thème, pas les parenthèses.
+ * `___` / `_ _ _` → trait 200 px (50 px si réponse courte), ou « . . . » en mode QCM.
+ * Verbe entre parenthèses immédiatement après un blanc : couleur du thème.
  */
 function renderEnonceText(
   text: string,
   fills: string[] = [],
   blankStyle: 'line' | 'dots' = 'line',
+  blankSizeHints: string[] = [],
 ): ReactNode {
   const toMargin = blankStyle === 'line' && isLabelBlankPrompt(text)
   const nodes: ReactNode[] = []
@@ -71,12 +75,15 @@ function renderEnonceText(
   let match: RegExpExecArray | null
   while ((match = INLINE_BLANK_RE.exec(text))) {
     if (match.index > last) nodes.push(text.slice(last, match.index))
+    const hint = (fills[blankIndex] ?? blankSizeHints[blankIndex] ?? '').trim()
+    const short = blankStyle === 'line' && hint.length > 0 && hint.length <= 4
     nodes.push(
       <InlineBlank
         key={`b${key}`}
         fill={fills[blankIndex]}
         asDots={blankStyle === 'dots'}
         toMargin={toMargin}
+        short={short}
       />,
     )
     blankIndex += 1
@@ -108,6 +115,7 @@ function Enonce({
   audioLabel,
   points,
   blankAnswers,
+  blankSizeHint,
   blankStyle = 'line',
 }: {
   numero: number
@@ -118,9 +126,12 @@ function Enonce({
   points?: number
   image?: string
   blankAnswers?: string
+  /** Indice de longueur pour dimensionner le trait (ex. préposition courte). */
+  blankSizeHint?: string
   blankStyle?: 'line' | 'dots'
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
+  const hints = answersForInlineBlanks(blankSizeHint, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
   const label = (numeroLabel ?? String(numero)).trim()
   return (
@@ -128,42 +139,54 @@ function Enonce({
       <span className="tcf-num">{label}.</span>
       {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
       <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
-        {renderEnonceText(enonce, fills, blankStyle)}
+        {renderEnonceText(enonce, fills, blankStyle, hints)}
       </span>
       <TcfPoints points={points} />
     </p>
   )
 }
 
-/** Image(s) à gauche, énoncé (+ réponses) à droite. */
+/** Énoncé au-dessus ; image(s) à gauche des réponses. */
 function QuestionShell({
   image,
   images,
   numero,
+  enonceSlot,
   children,
 }: {
   image?: string
   images?: string[]
   numero: number
+  enonceSlot?: ReactNode
   children: ReactNode
 }) {
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
-  if (!pics.length) return <div className="tcf-question">{children}</div>
-  return (
-    <div className="tcf-question tcf-q-beside">
-      <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
-        {pics.map((src, i) => (
-          <TcfImage
-            key={`${src}-${i}`}
-            src={src}
-            alt={`Image ${i + 1} de la question ${numero}`}
-            className="tcf-image is-question is-beside"
-          />
-        ))}
+  if (!pics.length) {
+    return (
+      <div className="tcf-question">
+        {enonceSlot}
+        {children}
       </div>
-      <div className="tcf-q-beside-body">{children}</div>
+    )
+  }
+  return (
+    <div className="tcf-question tcf-q-enonce-above">
+      {enonceSlot}
+      <div className="tcf-q-beside">
+        <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
+          {pics.map((src, i) => (
+            <TcfImage
+              key={`${src}-${i}`}
+              src={src}
+              alt={`Image ${i + 1} de la question ${numero}`}
+              className="tcf-image is-question is-beside"
+            />
+          ))}
+        </div>
+        <div className="tcf-q-beside-body">{children}</div>
+      </div>
     </div>
   )
 }
@@ -193,8 +216,12 @@ export function QuestionQCMTexte({
 }) {
   const show = mode === 'answers'
   return (
-    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
-      <Enonce {...head} blankStyle="dots" />
+    <QuestionShell
+      image={head.image}
+      images={head.images}
+      numero={head.numero}
+      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+    >
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
@@ -218,8 +245,12 @@ export function QuestionQCMImage({
 }) {
   const show = mode === 'answers'
   return (
-    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
-      <Enonce {...head} blankStyle="dots" />
+    <QuestionShell
+      image={head.image}
+      images={head.images}
+      numero={head.numero}
+      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+    >
       <ul className={`tcf-qcm-images is-${choix.length}`}>
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
@@ -251,8 +282,18 @@ export function QuestionLignes({
   const show = mode === 'answers'
   const inline = hasInlineBlank(head.enonce)
   return (
-    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
-      <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
+    <QuestionShell
+      image={head.image}
+      images={head.images}
+      numero={head.numero}
+      enonceSlot={
+        <Enonce
+          {...head}
+          blankAnswers={show && inline ? reponseModele : undefined}
+          blankSizeHint={inline ? reponseModele : undefined}
+        />
+      }
+    >
       {tableau?.length ? (
         <table className="tcf-tableau">
           <tbody>

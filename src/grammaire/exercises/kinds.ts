@@ -151,7 +151,7 @@ export const GRAM_EXERCISE_KINDS = [
   {
     id: 'nat-image',
     label: 'Je suis… (avec image)',
-    description: 'Image de nationalité à gauche, phrase « Je suis ___ » à droite. QCM ou texte.',
+    description: '« Je suis » au-dessus de l’image de nationalité et des cases à cocher. QCM ou texte.',
     instruction: 'Observez l’image. Complétez la phrase.',
     layout: 'qcm' as const,
   },
@@ -193,14 +193,14 @@ export const GRAM_EXERCISE_KINDS = [
   {
     id: 'prov-pays',
     label: 'Je viens de… (avec image)',
-    description: 'Image d’un pays : compléter « Je viens de/du/d’/des ___ » (QCM ou trait).',
+    description: '« Je viens de » au-dessus de l’image du pays et des cases à cocher (QCM ou trait).',
     instruction: 'Observez l’image. Complétez la phrase.',
     layout: 'qcm' as const,
   },
   {
     id: 'prov-prep',
     label: 'Choisir la préposition',
-    description: 'Phrase « Je viens ___ Brésil » : de, du, d’ ou des (QCM ou trait).',
+    description: 'Phrase « Je viens ___ France (féminin) » : de, du, d’ ou des (QCM ou trait court).',
     instruction: 'Choisissez la bonne préposition.',
     layout: 'qcm' as const,
   },
