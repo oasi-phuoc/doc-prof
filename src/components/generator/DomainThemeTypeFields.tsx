@@ -18,6 +18,7 @@ import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibre
 import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import type { GameTemplate } from '@/jeux/templates'
+import { TcfCoAudioSlotsPicker, tcfCoAudioSlotCount } from '@/tcf/co-audio-slots'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
 import { tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
 import type { TcfNiveau } from '@/tcf/types'
@@ -398,7 +399,16 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(next) => updatePage(next)}
                 />
               ) : null}
-              {isTcf ? (
+              {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
+                <TcfCoAudioSlotsPicker
+                  niveau={tcfNiveau}
+                  typeId={activeBlock.exerciseType}
+                  slots={activeBlock.tcfAudioSlots}
+                  questionCount={activeBlock.tcfQuestionCount}
+                  onChange={(patch) => updatePage(patch)}
+                />
+              ) : null}
+              {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) == null ? (
                 <TcfBankPicker
                   niveau={tcfNiveau}
                   typeId={activeBlock.exerciseType}

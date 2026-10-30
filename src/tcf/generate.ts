@@ -19,7 +19,12 @@ import {
   type TcfSlotMeta,
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
-import { drawSixCourtsCompose, drawTroisMoyensCompose } from './draw-series'
+import {
+  drawSixCourtsCompose,
+  drawTroisMoyensCompose,
+  drawUnLongCompose,
+  TCF_LONG_DEFAULT_QUESTIONS,
+} from './draw-series'
 import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
@@ -424,6 +429,17 @@ export function tcfExerciseItems(
   }
 }
 
+/** Applique les points individuels saisis dans les paramètres. */
+function withQuestionPoints(ex: TcfExercise, points: number[] | undefined): TcfExercise {
+  if (!points?.length) return ex
+  const next = structuredClone(ex)
+  next.questions = next.questions.map((q, i) => {
+    const p = points[i]
+    return p != null && Number.isFinite(p) ? { ...q, points: p } : q
+  })
+  return next
+}
+
 /** Exercice TCF résolu pour un bloc (banque épinglée, édition libre, ou tirage). */
 export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | undefined {
   const niveau = tcfNiveauForConfig(config.domain, config.difficulty)
@@ -432,28 +448,46 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
   const legacy = slot ? undefined : tcfTypeByTypeId[config.exerciseType]
   if (!slot && !legacy) return undefined
   const competence = (slot ?? legacy)!.competence
-  if (config.tcfExercise && config.tcfExercise.competence === competence) return config.tcfExercise
+  if (config.tcfExercise && config.tcfExercise.competence === competence) {
+    return withQuestionPoints(config.tcfExercise, config.tcfQuestionPoints)
+  }
+  const composeOpts = {
+    audioSlots: config.tcfAudioSlots,
+    questionCount: config.tcfQuestionCount,
+  }
   // CSC / TPF CO exercice 1 (« Événement ») : 6 audios tagués `court` + 1 Q chacune.
   if (slot?.competence === 'CO' && slot.numero === 1) {
-    return (
-      drawSixCourtsCompose(niveau, rng) ??
+    const composed =
+      drawSixCourtsCompose(niveau, rng, composeOpts) ??
       emptyTcfExercise(niveau, 'CO', 'six_courts', tcfExerciseId(niveau, 'CO', 1))
-    )
+    return withQuestionPoints(composed, config.tcfQuestionPoints)
   }
   // CSC / TPF CO exercice 2 (« Activité ») : 3 audios tagués `moyen` + 2 Q chacune.
   if (slot?.competence === 'CO' && slot.numero === 2) {
-    return (
-      drawTroisMoyensCompose(niveau, rng) ??
+    const composed =
+      drawTroisMoyensCompose(niveau, rng, composeOpts) ??
       emptyTcfExercise(niveau, 'CO', 'trois_moyens', tcfExerciseId(niveau, 'CO', 2))
-    )
+    return withQuestionPoints(composed, config.tcfQuestionPoints)
+  }
+  // CSC / TPF CO exercice 3 (« Instructions ») : 1 audio `long` + N questions (défaut 5).
+  if (slot?.competence === 'CO' && slot.numero === 3) {
+    const composed =
+      drawUnLongCompose(niveau, rng, {
+        ...composeOpts,
+        questionCount: config.tcfQuestionCount ?? TCF_LONG_DEFAULT_QUESTIONS,
+      }) ?? emptyTcfExercise(niveau, 'CO', 'complet', tcfExerciseId(niveau, 'CO', 3))
+    return withQuestionPoints(composed, config.tcfQuestionPoints)
   }
   const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
   const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
   const pool = inScenario.length > 0 ? inScenario : bank
   const pinned = tcfExerciseById(config.tcfBankId)
-  if (pinned && pinned.competence === competence) return pinned
+  if (pinned && pinned.competence === competence) {
+    return withQuestionPoints(pinned, config.tcfQuestionPoints)
+  }
   const chosen = bank.find((ex) => ex.id === config.tcfBankId)
-  return chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
+  const source = chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
+  return source ? withQuestionPoints(source, config.tcfQuestionPoints) : undefined
 }
 
 /**
@@ -578,6 +612,28 @@ function appendNiveauExercisePages(
             slot.typeId,
             niveau,
             { tcfExercise: composed, pointsPerQuestion: 1, columns: 1 },
+            domain,
+          ),
+        )
+      }
+      continue
+    }
+    // Exercice 3 : 1 audio `long` × N questions.
+    if (slot.numero === 3) {
+      const composed = drawUnLongCompose(niveau, rng, {
+        questionCount: TCF_LONG_DEFAULT_QUESTIONS,
+      })
+      if (composed) {
+        pages.push(
+          tcfPage(
+            slot.typeId,
+            niveau,
+            {
+              tcfExercise: composed,
+              pointsPerQuestion: 1,
+              tcfQuestionCount: TCF_LONG_DEFAULT_QUESTIONS,
+              columns: 1,
+            },
             domain,
           ),
         )

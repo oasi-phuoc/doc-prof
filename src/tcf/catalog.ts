@@ -176,7 +176,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'complet',
     label: 'Audio complet',
-    description: 'Un document audio complet, avec questions.',
+    description: '1 piste taguée « long », N questions tirées du pool (défaut 5, QCM texte).',
     instruction: 'Écoutez le document, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
