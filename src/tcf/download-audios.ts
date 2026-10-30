@@ -1,7 +1,7 @@
 /**
  * Téléchargement des audios d’une fiche TPF / TCF.
- * Tous les MP3 de la fiche (4–5 pour un test CO) partent dans un ZIP,
- * pour que le navigateur ne bloque pas le 2ᵉ fichier.
+ * CO CSC : une piste groupée WAV par exercice (consignes + mélodie +
+ * documents × 2 écoutes). Plusieurs exercices → ZIP.
  *
  * Templates de noms : `@/francais/soutien/download-name`.
  */
@@ -12,11 +12,13 @@ import {
   type TcfAudioFamilyPrefix,
 } from '@/francais/soutien/download-name'
 import { zipStoreBlob } from '@/lib/zip-store'
+import { concatMp3 } from '@/tcm-cfr/audio-nombres'
 import { tcfAssociationAudioRefs } from './association-audio'
+import { buildTcfCoPlaylist } from './co-audio-playlist'
 import { tcfCompletAudioRefs } from './complet-audio'
 import { tcfExerciseById } from './loader'
 import { tcfAudioSequence, tcfAudioSrc } from './media'
-import type { TcfCompetence, TcfExercise, TcfNiveau } from './types'
+import type { TcfCompetence, TcfExercise, TcfNiveau, TcfTypeExercice } from './types'
 
 export {
   tcfAnneeSemestre,
@@ -82,6 +84,8 @@ export type TcfAudioJob = {
   exerciseNo: number
   audioRefs: string[]
   exerciseId?: string
+  /** Pour composer la piste groupée (consignes CO). */
+  typeExercice?: TcfTypeExercice
 }
 
 type TcfAudioItemSource = {
@@ -169,6 +173,7 @@ export function collectTcfAudioJobs(
         exerciseNo: block.exerciseIndex && block.exerciseIndex > 0 ? block.exerciseIndex : jobs.length + 1,
         audioRefs,
         exerciseId: ex.id,
+        typeExercice: ex.type_exercice,
       })
     }
   }
@@ -180,7 +185,27 @@ export type TcfNamedAudio = {
   url: string
 }
 
-/** Liste des fichiers à mettre dans le ZIP (sans fetch). */
+/** True si l’exercice CO a une piste groupée (consignes + documents). */
+export function tcfJobUsesGroupedPlaylist(job: TcfAudioJob): boolean {
+  if (job.competence !== 'CO') return false
+  return (
+    job.typeExercice === 'six_courts' ||
+    job.typeExercice === 'trois_moyens' ||
+    job.typeExercice === 'complet' ||
+    job.typeExercice === 'association_images' ||
+    job.typeExercice === 'images_a_reconnaitre'
+  )
+}
+
+/** URLs ordonnées de la piste groupée (ou fichiers bruts si hors modèle CSC). */
+export function tcfJobPlaylistUrls(job: TcfAudioJob): string[] {
+  if (tcfJobUsesGroupedPlaylist(job)) {
+    return buildTcfCoPlaylist(job.typeExercice, job.audioRefs)
+  }
+  return tcfAudioDownloadUrls(job.audioRefs)
+}
+
+/** Liste des fichiers bruts (hors concat) — tests / debug. */
 export function listTcfAudioDownloadFiles(
   jobs: readonly TcfAudioJob[],
   prefix: TcfAudioFamilyPrefix = 'TCF',
@@ -189,17 +214,18 @@ export function listTcfAudioDownloadFiles(
   const files: TcfNamedAudio[] = []
   const used = new Set<string>()
   for (const job of jobs) {
-    const urls = tcfAudioDownloadUrls(job.audioRefs)
+    const urls = tcfJobPlaylistUrls(job)
+    const grouped = tcfJobUsesGroupedPlaylist(job)
     for (let i = 0; i < urls.length; i++) {
       const url = urls[i]!
-      const ext = url.match(/\.([a-z0-9]+)(?:\?|$)/i)?.[1] ?? 'mp3'
+      const ext = grouped ? 'wav' : (url.match(/\.([a-z0-9]+)(?:\?|$)/i)?.[1] ?? 'mp3')
       let name = tcfAudioDownloadName({
         prefix,
         niveau: job.niveau,
         competence: job.competence,
         exerciseNo: job.exerciseNo,
-        audioIndex: i + 1,
-        audioCount: urls.length,
+        audioIndex: grouped ? 1 : i + 1,
+        audioCount: grouped ? 1 : urls.length,
         ext,
         date,
       })
@@ -209,6 +235,7 @@ export function listTcfAudioDownloadFiles(
       }
       used.add(name)
       files.push({ name, url })
+      if (grouped) break // un seul fichier concaténé par job
     }
   }
   return files
@@ -263,19 +290,67 @@ export async function downloadTcfAudios(
             audioRefs: opts.audioRefs,
           },
         ]
-  const files = listTcfAudioDownloadFiles(jobs, prefix, date)
   const zipNiveau = ('jobs' in opts ? opts.niveau : undefined) ?? jobs[0]?.niveau ?? 'NIVEAU'
   const base = tcfAudioZipDownloadName({ prefix, niveau: zipNiveau, date })
-  if (files.length === 0) return { count: 0, base }
+  if (jobs.length === 0) return { count: 0, base }
 
   const packed: { name: string; blob: Blob }[] = []
-  for (const file of files) {
+  const usedNames = new Set<string>()
+
+  for (const job of jobs) {
+    const urls = tcfJobPlaylistUrls(job)
+    if (urls.length === 0) continue
+    const grouped = tcfJobUsesGroupedPlaylist(job)
+    let name = tcfAudioDownloadName({
+      prefix,
+      niveau: job.niveau,
+      competence: job.competence,
+      exerciseNo: job.exerciseNo,
+      audioIndex: 1,
+      audioCount: 1,
+      ext: grouped ? 'wav' : 'mp3',
+      date,
+    })
+    if (usedNames.has(name)) {
+      const stem = name.replace(/\.[^.]+$/, '')
+      const ext = name.split('.').pop() ?? 'wav'
+      name = `${stem}_${usedNames.size + 1}.${ext}`
+    }
+    usedNames.add(name)
     try {
-      packed.push({ name: file.name, blob: await fetchAudioBlob(file.url) })
+      if (grouped) {
+        packed.push({ name, blob: await concatMp3(urls) })
+      } else {
+        // Hors modèle CSC : un fichier par ref (comportement historique).
+        const rawFiles = tcfAudioDownloadUrls(job.audioRefs)
+        for (let i = 0; i < rawFiles.length; i++) {
+          const url = rawFiles[i]!
+          let partName = tcfAudioDownloadName({
+            prefix,
+            niveau: job.niveau,
+            competence: job.competence,
+            exerciseNo: job.exerciseNo,
+            audioIndex: i + 1,
+            audioCount: rawFiles.length,
+            date,
+          })
+          if (usedNames.has(partName)) {
+            const stem = partName.replace(/\.[^.]+$/, '')
+            partName = `${stem}_${usedNames.size + 1}.mp3`
+          }
+          usedNames.add(partName)
+          try {
+            packed.push({ name: partName, blob: await fetchAudioBlob(url) })
+          } catch {
+            // Fichier manquant : on continue.
+          }
+        }
+      }
     } catch {
-      // Fichier manquant : on continue les autres.
+      // Échec concat / fichier manquant : on continue les autres exercices.
     }
   }
+
   if (packed.length === 0) return { count: 0, base }
   if (packed.length === 1) {
     await downloadBlob(packed[0]!.blob, packed[0]!.name)

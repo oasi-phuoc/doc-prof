@@ -100,6 +100,7 @@ export function useGeneratorAudio({
           exerciseNo,
           audioRefs: refs,
           exerciseId: ex.id,
+          typeExercice: ex.type_exercice,
         },
       ]
     }
