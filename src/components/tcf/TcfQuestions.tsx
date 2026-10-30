@@ -15,14 +15,11 @@ function InlineBlank({
   fill,
   asDots,
   toMargin,
-  short,
 }: {
   fill?: string
   asDots?: boolean
   /** Trait jusqu’à la marge (fiche « Nom : ___ »). */
   toMargin?: boolean
-  /** Trait court (50 px) — prépositions, etc. */
-  short?: boolean
 }) {
   const shown = fill?.trim()
   if (asDots && !shown) return <span className="tcf-blank-dots">. . .</span>
@@ -30,7 +27,7 @@ function InlineBlank({
     <span
       className={`answer-line-field tcf-blank-inline${shown ? ' filled' : ''}${
         toMargin && !shown ? ' is-to-margin' : ''
-      }${short && !shown ? ' is-short' : ''}`}
+      }`}
     >
       {shown || '\u00a0'}
     </span>
@@ -57,14 +54,13 @@ function themedParen(inner: string): ReactNode {
 }
 
 /**
- * `___` / `_ _ _` → trait 200 px (50 px si réponse courte), ou « . . . » en mode QCM.
+ * `___` / `_ _ _` → trait (largeur `--tcf-blank-inline-px`, défaut 200), ou « . . . » en QCM.
  * Verbe entre parenthèses immédiatement après un blanc : couleur du thème.
  */
 function renderEnonceText(
   text: string,
   fills: string[] = [],
   blankStyle: 'line' | 'dots' = 'line',
-  blankSizeHints: string[] = [],
 ): ReactNode {
   const toMargin = blankStyle === 'line' && isLabelBlankPrompt(text)
   const nodes: ReactNode[] = []
@@ -75,15 +71,12 @@ function renderEnonceText(
   let match: RegExpExecArray | null
   while ((match = INLINE_BLANK_RE.exec(text))) {
     if (match.index > last) nodes.push(text.slice(last, match.index))
-    const hint = (fills[blankIndex] ?? blankSizeHints[blankIndex] ?? '').trim()
-    const short = blankStyle === 'line' && hint.length > 0 && hint.length <= 4
     nodes.push(
       <InlineBlank
         key={`b${key}`}
         fill={fills[blankIndex]}
         asDots={blankStyle === 'dots'}
         toMargin={toMargin}
-        short={short}
       />,
     )
     blankIndex += 1
@@ -115,7 +108,6 @@ function Enonce({
   audioLabel,
   points,
   blankAnswers,
-  blankSizeHint,
   blankStyle = 'line',
 }: {
   numero: number
@@ -126,12 +118,9 @@ function Enonce({
   points?: number
   image?: string
   blankAnswers?: string
-  /** Indice de longueur pour dimensionner le trait (ex. préposition courte). */
-  blankSizeHint?: string
   blankStyle?: 'line' | 'dots'
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
-  const hints = answersForInlineBlanks(blankSizeHint, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
   const label = (numeroLabel ?? String(numero)).trim()
   return (
@@ -139,7 +128,7 @@ function Enonce({
       <span className="tcf-num">{label}.</span>
       {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
       <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
-        {renderEnonceText(enonce, fills, blankStyle, hints)}
+        {renderEnonceText(enonce, fills, blankStyle)}
       </span>
       <TcfPoints points={points} />
     </p>
@@ -287,11 +276,7 @@ export function QuestionLignes({
       images={head.images}
       numero={head.numero}
       enonceSlot={
-        <Enonce
-          {...head}
-          blankAnswers={show && inline ? reponseModele : undefined}
-          blankSizeHint={inline ? reponseModele : undefined}
-        />
+        <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
       }
     >
       {tableau?.length ? (

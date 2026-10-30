@@ -8,6 +8,13 @@ import { isTcfConsignesType } from '@/tcf/catalog'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
 import { SOUTIEN_LEVEL_FILTERS } from '@/francais/soutien/phrases-data'
+import {
+  clampInlineBlankPx,
+  hasInlineBlank,
+  INLINE_BLANK_PX_DEFAULT,
+  INLINE_BLANK_PX_MAX,
+  INLINE_BLANK_PX_MIN,
+} from '@/tcf/inline-blank'
 
 export type QuestionsColumnsFieldsProps = {
   activeBlock: ExerciseBlock
@@ -97,6 +104,18 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     firstExerciseNo,
     sheetTotalPoints,
   } = props
+  const sheetItems = activeSheet?.blocks?.[safeBlockIndex]?.items
+  const sheetHasInlineBlank = sheetItems?.some((item) => {
+    const enonce =
+      item.tcf && (item.tcf.kind === 'qcm' || item.tcf.kind === 'lignes')
+        ? item.tcf.enonce
+        : undefined
+    return Boolean(enonce && hasInlineBlank(enonce))
+  })
+  const showInlineBlankWidth =
+    isGrammaireExercise &&
+    !isGramTheory &&
+    (sheetItems == null || sheetItems.length === 0 || Boolean(sheetHasInlineBlank))
   return (
     <>
               {isPhraseChart ||
@@ -478,6 +497,31 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     ))}
                   </div>
                 </div>
+              ) : null}
+              {showInlineBlankWidth ? (
+                <label className="select-shell">
+                  <span>Longueur du trait</span>
+                  <input
+                    className="pill-input"
+                    type="number"
+                    inputMode="numeric"
+                    min={INLINE_BLANK_PX_MIN}
+                    max={INLINE_BLANK_PX_MAX}
+                    step={5}
+                    aria-label="Longueur du trait de réponse dans la phrase, en pixels"
+                    value={clampInlineBlankPx(activeBlock.inlineBlankPx)}
+                    onChange={(event) => {
+                      const next = clampInlineBlankPx(Number(event.target.value))
+                      updatePage({
+                        inlineBlankPx: next === INLINE_BLANK_PX_DEFAULT ? undefined : next,
+                      })
+                    }}
+                  />
+                  <small className="muted">
+                    Traits dans la phrase ({INLINE_BLANK_PX_MIN}–{INLINE_BLANK_PX_MAX} px ·
+                    défaut {INLINE_BLANK_PX_DEFAULT}). En QCM, le blanc reste « . . . ».
+                  </small>
+                </label>
               ) : null}
               {isPhraseChart ||
               isVocabLearn ||

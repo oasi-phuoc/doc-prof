@@ -1,5 +1,17 @@
 /** Blanc dans l’énoncé : `___` (banques) ou `_ _ _` (saisie libre). */
 
+/** Largeur par défaut du trait inline (px). */
+export const INLINE_BLANK_PX_DEFAULT = 200
+/** Largeur minimale réglable (px). */
+export const INLINE_BLANK_PX_MIN = 25
+/** Largeur maximale réglable (px). */
+export const INLINE_BLANK_PX_MAX = 500
+
+export function clampInlineBlankPx(value: number | undefined | null): number {
+  if (value == null || !Number.isFinite(value)) return INLINE_BLANK_PX_DEFAULT
+  return Math.max(INLINE_BLANK_PX_MIN, Math.min(INLINE_BLANK_PX_MAX, Math.round(value)))
+}
+
 export function hasInlineBlank(text: string): boolean {
   return /_{3,}|_ _ _/.test(text)
 }
