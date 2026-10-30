@@ -114,6 +114,11 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
   scene?: string
   /** Consigne affichée sous le titre (sinon consigne du type). */
   consigne?: string
+  /**
+   * Tags audio additionnels (CO), fusionnés avec les tags dérivés
+   * (`scenario`, `court`, `moyen`, `long`). Une piste peut en cumuler plusieurs.
+   */
+  tags?: string[]
   /** Pastilles de mots / verbes au-dessus des questions. */
   mots_banque?: string[]
   support: S

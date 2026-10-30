@@ -102,7 +102,7 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
           <span className="tcf-vocab-picker-label">{entry.label}</span>
           <span className="tcf-vocab-picker-theme">
             Type : {type} · Durée : {durationText} · Niveau : {ex.niveau}
-            {tagBits ? ` · Tag : ${tagBits}` : ''}
+            {tagBits ? ` · Tag${tagBits.includes(',') ? 's' : ''} : ${tagBits}` : ''}
           </span>
           <span className="tcf-vocab-picker-theme">
             Scénario : {scenarioLabel(scenarioOf(entry))} · Scène : {tcfScene(ex)}

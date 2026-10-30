@@ -1,6 +1,7 @@
 /**
  * Paramètres CO ex. 1 / 2 / 3 / 4 : N listes déroulantes d’audios tagués
  * (court × 6, moyen × 3, long × 1, scenario × 4), regroupés par scénario.
+ * Une piste peut cumuler plusieurs tags (ex. scenario + court).
  */
 import { useMemo } from 'react'
 import {

@@ -352,7 +352,9 @@ function SupportEditor({
       return (
         <>
           <p className="tcf-vocab-picker-theme" style={{ margin: 0 }}>
-            Audios tagués « scénario » uniquement (petits dialogues découpés : une piste = une situation).
+            Audios tagués « scénario » (une piste = une situation). Un même audio peut aussi
+            porter « court » / « moyen » / « long » s’il a des questions, et rester sélectionnable
+            dans les autres exercices CO.
           </p>
           {slotAudios.map((audio, i) => (
             <AudioField
