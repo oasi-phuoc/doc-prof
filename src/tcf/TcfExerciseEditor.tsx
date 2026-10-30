@@ -416,7 +416,7 @@ function SupportEditor({
                   }
                 />
                 <label className="tcf-field is-number">
-                  <span>Dialogue n°</span>
+                  <span>Audio n°</span>
                   <select
                     className="pill-input"
                     value={s.dialogue ?? ''}

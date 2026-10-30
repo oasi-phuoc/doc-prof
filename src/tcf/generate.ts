@@ -20,6 +20,7 @@ import {
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
 import {
+  drawAssociationCompose,
   drawSixCourtsCompose,
   drawTroisMoyensCompose,
   drawUnLongCompose,
@@ -437,6 +438,11 @@ function withQuestionPoints(ex: TcfExercise, points: number[] | undefined): TcfE
     const p = points[i]
     return p != null && Number.isFinite(p) ? { ...q, points: p } : q
   })
+  // Association : 1 point par image (6 lignes) → total sur l’item unique.
+  if (next.type_exercice === 'association_images') {
+    const sum = points.reduce((acc, p) => acc + (p != null && Number.isFinite(p) ? p : 0), 0)
+    if (sum > 0) next.points = sum
+  }
   return next
 }
 
@@ -476,6 +482,13 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
         ...composeOpts,
         questionCount: config.tcfQuestionCount ?? TCF_LONG_DEFAULT_QUESTIONS,
       }) ?? emptyTcfExercise(niveau, 'CO', 'complet', tcfExerciseId(niveau, 'CO', 3))
+    return withQuestionPoints(composed, config.tcfQuestionPoints)
+  }
+  // CSC / TPF CO exercice 4 (« Situations ») : 4 audios `scenario` + 6 images (2 leurres).
+  if (slot?.competence === 'CO' && slot.numero === 4) {
+    const composed =
+      drawAssociationCompose(niveau, rng, composeOpts) ??
+      emptyTcfExercise(niveau, 'CO', 'association_images', tcfExerciseId(niveau, 'CO', 4))
     return withQuestionPoints(composed, config.tcfQuestionPoints)
   }
   const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
@@ -634,6 +647,21 @@ function appendNiveauExercisePages(
               tcfQuestionCount: TCF_LONG_DEFAULT_QUESTIONS,
               columns: 1,
             },
+            domain,
+          ),
+        )
+      }
+      continue
+    }
+    // Exercice 4 : 4 audios `scenario` + 6 images (dont 2 leurres).
+    if (slot.numero === 4) {
+      const composed = drawAssociationCompose(niveau, rng)
+      if (composed) {
+        pages.push(
+          tcfPage(
+            slot.typeId,
+            niveau,
+            { tcfExercise: composed, pointsPerQuestion: 1, columns: 1 },
             domain,
           ),
         )
