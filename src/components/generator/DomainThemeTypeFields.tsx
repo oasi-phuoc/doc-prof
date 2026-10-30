@@ -19,7 +19,7 @@ import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import type { GameTemplate } from '@/jeux/templates'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
-import { tcfMenuLabel } from '@/tcf/catalog'
+import { tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
 import type { TcfNiveau } from '@/tcf/types'
 import type { Dispatch, SetStateAction } from 'react'
 import type {
@@ -362,7 +362,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   updatePage(applyType(type, activeBlock))
                 }}
               >
-                {typeChoices.map((type) => (
+                {typeChoices
+                  .filter((type) => !isTcf || tcfSlotShownInMenu(type.id, tcfNiveau))
+                  .map((type) => (
                   <option value={type.id} key={type.id}>
                     {tcfMenuLabel(type.id, tcfNiveau) ?? type.label}
                   </option>

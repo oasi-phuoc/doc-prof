@@ -340,43 +340,29 @@ export type TcfSlotMeta = {
 
 export const TCF_CO_NUMEROS = [1, 2, 3, 4, 5] as const
 
+/** CE A0-A1 (CSC) — menu sans « Exercice » ni numéro. */
 const CE_A1 = [
-  'Suivre des instructions simples',
-  'Lire pour s’orienter dans l’espace',
-  'Lire pour s’orienter dans le temps',
-  'Lire pour s’informer',
+  'Instructions',
+  'S’orienter, espace',
+  'S’orienter, temps',
+  'S’informer',
 ] as const
 
-const CE_A2 = [
-  'Lire pour s’orienter',
-  'Lire une correspondance',
-  'Lire des instructions',
-  'Lire pour s’informer',
-] as const
+/** CE A1-A2 (CFR). */
+const CE_A2 = ['S’orienter', 'Correspondance', 'Instructions', 'S’informer'] as const
 
-/** Libellés courts CO A1 (CSC / TPF A0-A1) — même style que CE. */
-const CO_A1 = [
-  'Identifier un événement',
-  'Identifier une activité',
-  'Comprendre des instructions',
-  'Identifier des situations',
-  'Identifier des objets',
-] as const
+/** CO A0-A1 (CSC / TPF) — 5 emplacements. */
+const CO_A1 = ['Événement', 'Activité', 'Instructions', 'Situations', 'Objets'] as const
 
-/** Libellés courts CO A2 (CFR / TPF A1-A2). */
-const CO_A2 = [
-  'Comprendre des annonces et des instructions',
-  'Comprendre une émission de radio',
-  'Comprendre un message sur répondeur',
-  'Comprendre une discussion',
-] as const
+/** CO A1-A2 (CFR / TPF) — 4 emplacements (pas d’exercice 5). */
+const CO_A2 = ['Annonces et instructions', 'Radio', 'Message', 'Discussion'] as const
 
 export const TCF_SLOTS: readonly TcfSlotMeta[] = [
   ...TCF_CO_NUMEROS.map((numero) => ({
     typeId: `tcf-co-ex-${numero}`,
     competence: 'CO' as const,
     numero,
-    label: `Exercice ${numero}`,
+    label: CO_A1[numero - 1] ?? `Exercice ${numero}`,
     description: CO_A1[numero - 1] ?? `Compréhension orale : exercice ${numero}.`,
     instruction: 'Écoutez le document, puis répondez aux questions.',
   })),
@@ -384,7 +370,7 @@ export const TCF_SLOTS: readonly TcfSlotMeta[] = [
     typeId: `tcf-ce-ex-${numero}`,
     competence: 'CE' as const,
     numero,
-    label: `Exercice ${numero}`,
+    label: CE_A1[numero - 1]!,
     description: CE_A1[numero - 1]!,
     instruction: 'Lisez le document. Cochez la bonne réponse.',
   })),
@@ -417,25 +403,32 @@ export const tcfSlotByTypeId: Readonly<Record<string, TcfSlotMeta>> = {
   [TCF_CE_LEGACY.typeId]: TCF_CE_LEGACY,
 }
 
-/** Libellé du menu Exercice (CE / CO) : « Exercice N · description », sans points. */
+/**
+ * Libellé du menu Exercice (CE / CO) : nom court seul, sans « Exercice » ni numéro.
+ * `undefined` = emplacement absent à ce niveau (ex. CO 5 en A1-A2 / CFR).
+ */
 export function tcfMenuLabel(typeId: string, niveau: TcfNiveau): string | undefined {
   const slot = tcfSlotByTypeId[typeId]
   if (!slot || slot.numero == null) return undefined
   if (slot.competence === 'CE') {
-    const name =
-      niveau === 'A1-A2' || niveau === 'A2-B1'
-        ? CE_A2[slot.numero - 1]
-        : CE_A1[slot.numero - 1]
-    return name ? `Exercice ${slot.numero} · ${name}` : `Exercice ${slot.numero}`
+    return niveau === 'A1-A2' || niveau === 'A2-B1'
+      ? CE_A2[slot.numero - 1]
+      : CE_A1[slot.numero - 1]
   }
   if (slot.competence === 'CO') {
-    const name =
-      niveau === 'A1-A2' || niveau === 'A2-B1'
-        ? CO_A2[slot.numero - 1]
-        : CO_A1[slot.numero - 1]
-    return name ? `Exercice ${slot.numero} · ${name}` : `Exercice ${slot.numero}`
+    return niveau === 'A1-A2' || niveau === 'A2-B1'
+      ? CO_A2[slot.numero - 1]
+      : CO_A1[slot.numero - 1]
   }
   return undefined
+}
+
+/** True si l’emplacement CE/CO a un libellé pour ce niveau (filtre la liste déroulante). */
+export function tcfSlotShownInMenu(typeId: string, niveau: TcfNiveau): boolean {
+  const slot = tcfSlotByTypeId[typeId]
+  if (!slot || slot.numero == null) return true
+  if (slot.competence !== 'CE' && slot.competence !== 'CO') return true
+  return tcfMenuLabel(typeId, niveau) != null
 }
 
 /** Scénarios qui regroupent les exercices de chaque compétence dans le sélecteur. */
