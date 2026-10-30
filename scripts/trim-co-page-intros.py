@@ -28,7 +28,13 @@ INTRO_HEAD = re.compile(
     r"le[cç]on|le\s*son|"
     r"activit[eé]|exercice|exercise|"
     r"compr[eé]hension|partie|document|"
-    r"pour\s+communiquer"
+    r"pour\s+communiquer|"
+    r"vous\s+allez|"
+    r"vous\s+écoutez|"
+    r"écoutez|"
+    r"lisez|"
+    r"associez|"
+    r"delf|épreuve|preuve\s+blanche"
     r")\b",
     re.I,
 )
@@ -81,7 +87,8 @@ def to_wav(mp3: Path, wav: Path, duration: float | None = None) -> None:
 def detect_cut(model, mp3: Path) -> tuple[float | None, str]:
     with tempfile.TemporaryDirectory() as tmp:
         head = Path(tmp) / "head.wav"
-        to_wav(mp3, head, 14.0)
+        # Consignes d’épreuve (« Vous allez entendre… ») peuvent dépasser 14 s.
+        to_wav(mp3, head, 28.0)
         segments, _ = model.transcribe(str(head), language="fr", vad_filter=False, word_timestamps=True)
         segs = list(segments)
         if not segs:
@@ -95,29 +102,29 @@ def detect_cut(model, mp3: Path) -> tuple[float | None, str]:
             heard_parts.append(text)
             if i == 0 and not INTRO_HEAD.search(text):
                 # Pas d’annonce détectée en tête.
-                ec = energy_cut(head)
-                # Si silence net mais pas d’intro STT, on ne coupe pas (contenu utile).
                 return None, " ".join(heard_parts)
-            if INTRO_HEAD.search(text) or (
+            meta_seg = bool(INTRO_HEAD.search(text)) or (
                 i > 0
-                and re.search(r"\b(exercice|activit[eé]|page|document)\b", text, re.I)
-                and len(text) < 80
-            ):
+                and re.search(
+                    r"\b(exercice|activit[eé]|page|document|écoutez|lisez|associez|vous allez)\b",
+                    text,
+                    re.I,
+                )
+                and len(text) < 120
+            )
+            if meta_seg:
                 intro_end = float(seg.end)
-                # Si le même segment contient déjà du dialogue après la virgule méta…
-                # ex. « Exercice 17. Salut, c'est Ismail »
-                if i == 0 and re.search(
-                    r"(exercice|activit[eé]|page)\s*\d+.*[.!?]\s+\S{3,}",
+                # « Exercice 17. Salut, c'est Ismail » — dialogue collé après la méta.
+                if re.search(
+                    r"(exercice|activit[eé]|page|exercise)\s*\d+.*[.!?]\s+\S{3,}",
                     text,
                     re.I,
                 ):
-                    # Couper juste après le premier point / fin de phrase méta.
                     m = re.search(
                         r"(?i)(page[^.!?]{0,40}|le[cç]on[^.!?]{0,40}|activit[eé]\s*\d+|exercice\s*\d+|exercise\s*\d+)[.!]?",
                         text,
                     )
                     if m and seg.words:
-                        # approx: proportion de caractères
                         ratio = min(1.0, (m.end()) / max(1, len(text)))
                         intro_end = float(seg.start) + (float(seg.end) - float(seg.start)) * ratio
                         break
@@ -128,15 +135,15 @@ def detect_cut(model, mp3: Path) -> tuple[float | None, str]:
         if intro_end is None:
             return None, " ".join(heard_parts)
 
-        ec = energy_cut(head)
+        ec = energy_cut(head, max_scan=26.0)
         cut = intro_end
-        if ec is not None and abs(ec - intro_end) < 3.5:
+        if ec is not None and abs(ec - intro_end) < 5.0:
             # Silence après l’annonce : préférer le début du discours principal.
             cut = max(intro_end, ec) if ec >= intro_end - 0.4 else ec
             if ec >= intro_end - 0.15:
                 cut = ec
-        # Garde-fous
-        if cut < 1.2 or cut > 12.5:
+        # Garde-fous (intros d’épreuve parfois ~20 s)
+        if cut < 1.2 or cut > 24.0:
             return None, " ".join(heard_parts)
         return round(cut, 2), " ".join(heard_parts)
 
@@ -180,15 +187,12 @@ def main() -> int:
         from faster_whisper import WhisperModel
 
     model = WhisperModel("tiny", device="cpu", compute_type="int8")
-    # Uniquement les audios soutien (facile-a1__*, moyen-a2__*, difficile-b1__*).
-    # Les séries de test (`a-la-plage.mp3`, …) gardent leurs consignes orales.
-    files = sorted(
-        f
-        for f in AUDIO_ROOT.glob("*/*.mp3")
-        if f.name.startswith(("facile-a1__", "moyen-a2__", "difficile-b1__"))
-    )
+    # Tous les MP3 CO référencés par la banque (soutien + temporaire + scènes),
+    # pour retirer « Activité N / Exercice N / Page… / Lisez… ».
+    files = sorted({f for f in AUDIO_ROOT.glob("*/*.mp3")})
+    # Priorité : temporaire + stems soutien ; filtre --only peut restreindre.
     if args.only:
-        files = [f for f in files if args.only in f.name]
+        files = [f for f in files if args.only in str(f.relative_to(ROOT))]
     if args.limit:
         files = files[: args.limit]
 
