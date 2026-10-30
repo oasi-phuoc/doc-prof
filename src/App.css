@@ -4297,8 +4297,9 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-champ-date-sep{flex:0 0 auto;padding:0 1px;font-weight:700;line-height:7mm}
 /* Mode traits : chaque segment jj / mm / aaaa = 50 px. */
+.answer-line-field.tcf-champ-date-seg,
 .tcf-champ-date-seg{
-  flex:0 0 50px;width:50px;min-width:50px;max-width:50px;
+  display:inline-block;flex:0 0 50px;width:50px;min-width:50px;max-width:50px;
   min-height:7mm;text-align:center;font-weight:700;color:var(--purple);
   border-radius:0;box-sizing:border-box
 }
