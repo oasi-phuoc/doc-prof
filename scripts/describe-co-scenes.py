@@ -166,15 +166,17 @@ def main() -> None:
             if ex.get("type_exercice") != "complet":
                 continue
             nq = len(ex.get("questions") or [])
-            if nq not in (1, 2):
-                continue
             support = ex.setdefault("support", {})
-            kind = "court" if nq == 1 else "moyen"
+            audios = support.get("audios")
+            is_multi = isinstance(audios, list) and any(str(a).strip() for a in audios)
+            # Court / moyen (1–2 Q) + tous les multi-pistes (scènes à décrire).
+            if not is_multi and nq not in (1, 2):
+                continue
+            kind = "court" if nq == 1 and not is_multi else "moyen"
             scene = (ex.get("scene") or "").strip()
             scenario = (ex.get("scenario") or "").strip()
 
-            audios = support.get("audios")
-            if isinstance(audios, list) and any(str(a).strip() for a in audios):
+            if is_multi:
                 refs = [str(a).strip() for a in audios if str(a).strip()]
                 images = support.get("images") or []
                 descs: list[str] = []
