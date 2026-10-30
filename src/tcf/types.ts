@@ -329,6 +329,36 @@ export type TcfTypeExercice = TcfExercise['type_exercice']
 
 export type TcfChoixRendu = { lettre: string; texte?: string; image?: string; correct: boolean }
 
+/** Une question à l’intérieur d’un cadre Audio (trois moyens). */
+export type TcfCadreQuestion =
+  | {
+      kind: 'qcm'
+      numero: number
+      numeroLabel?: string
+      enonce: string
+      mode: 'texte' | 'image'
+      choix: TcfChoixRendu[]
+      image?: string
+      images?: string[]
+      formSelect?: TcfFormSelect
+      points?: number
+      answer: string
+    }
+  | {
+      kind: 'lignes'
+      numero: number
+      numeroLabel?: string
+      enonce: string
+      nbLignes: number
+      reponseModele?: string
+      image?: string
+      images?: string[]
+      tableau?: TcfLigneTableau[]
+      formSelect?: TcfFormSelect
+      points?: number
+      answer: string
+    }
+
 export type TcfSheetItem =
   | { kind: 'support'; exercise: TcfExercise }
   | {
@@ -340,6 +370,8 @@ export type TcfSheetItem =
       mode: 'texte' | 'image'
       choix: TcfChoixRendu[]
       audioLabel?: string
+      /** Cadre autour de la question avec pastille Audio N (six courts). */
+      audioFrame?: boolean
       image?: string
       images?: string[]
       /** Sélecteur Texte / Image / Phrase (marge). */
@@ -354,10 +386,18 @@ export type TcfSheetItem =
       nbLignes: number
       reponseModele?: string
       audioLabel?: string
+      /** Cadre autour de la question avec pastille Audio N (six courts). */
+      audioFrame?: boolean
       image?: string
       images?: string[]
       tableau?: TcfLigneTableau[]
       formSelect?: TcfFormSelect
+    }
+  | {
+      /** Trois moyens : un cadre Audio N contenant plusieurs questions. */
+      kind: 'audio_cadre'
+      audioLabel: string
+      questions: TcfCadreQuestion[]
     }
   | {
       kind: 'association'

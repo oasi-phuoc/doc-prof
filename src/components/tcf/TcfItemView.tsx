@@ -5,6 +5,7 @@ import { TexteSupport } from './TexteSupport'
 import { DialoguePO, FormulairePE, ZoneEcriture } from './TcfProduction'
 import {
   AssociationSituations,
+  AudioCadre,
   GrilleOral,
   ImagesACocher,
   QuestionLignes,
@@ -25,6 +26,7 @@ function withActiveForm(tcf: TcfSheetItem, formMode?: TcfTypeReponse): TcfSheetI
     numeroLabel: tcf.numeroLabel,
     enonce: tcf.enonce,
     audioLabel: tcf.audioLabel,
+    audioFrame: tcf.audioFrame,
     image: tcf.image,
     images: tcf.images,
     formSelect: { ...fs, active },
@@ -83,6 +85,8 @@ export function TcfItemView({
       )
     case 'lignes':
       return <QuestionLignes {...tcf} points={points} mode={mode} />
+    case 'audio_cadre':
+      return <AudioCadre audioLabel={tcf.audioLabel} questions={tcf.questions} mode={mode} />
     case 'images_a_cocher':
       return <ImagesACocher {...tcf} mode={mode} />
     case 'association':

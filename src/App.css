@@ -4220,6 +4220,28 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-q-beside-images.is-multi .tcf-image.is-beside{width:26mm;height:20mm}
 .tcf-audio-tag{display:inline-block;margin-right:6px;padding:0 6px;border:1px solid var(--ink);border-radius:4px;font-size:.8em;font-weight:700}
+/* Six courts / trois moyens : cadres Audio N. */
+.tcf-question.is-audio-frame{
+  position:relative;margin-top:10px;padding:10px 8px 8px;
+  border:1.5px solid var(--ink);box-sizing:border-box;width:100%;max-width:100%
+}
+.tcf-audio-frame-tag{
+  position:absolute;top:0;right:8px;transform:translateY(-50%);
+  display:inline-block;padding:0 7px;border:1.5px solid var(--ink);background:#fff;
+  font-size:.78em;font-weight:800;line-height:1.35;white-space:nowrap;z-index:1;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-question.is-audio-frame .tcf-enonce{font-weight:600;font-size:.95em;line-height:1.3}
+.tcf-question.is-audio-frame .tcf-qcm-texte{gap:3px}
+.tcf-question.is-audio-frame .tcf-qcm-texte li{gap:6px;font-size:.92em;line-height:1.25}
+/* Trois moyens : plusieurs questions dans le même cadre. */
+.tcf-audio-cadre-body{display:flex;flex-direction:column;gap:8px}
+.tcf-question.is-audio-cadre .tcf-question{margin-top:0;border:0;padding:0}
+.tcf-question.is-audio-cadre .tcf-question .tcf-audio-frame-tag{display:none}
+/* Paramètres : points individuels CO ex. 1–3. */
+.tcf-question-points{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
+.tcf-question-points>b{font-size:.92em}
+.tcf-co-audio-slots{display:flex;flex-direction:column;gap:8px}
 .tcf-qcm-texte{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .tcf-qcm-texte li{display:flex;align-items:center;gap:8px}
 .tcf-case{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;border:1.5px solid var(--ink);font-size:.85em;line-height:1;flex:0 0 auto}
@@ -4386,10 +4408,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-tableau td{font-weight:600;color:var(--purple)}
 .tcf-situations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 12px}
 .tcf-situations.is-4{grid-template-columns:repeat(2,1fr)}
-.tcf-situations.is-6{grid-template-columns:repeat(3,1fr)}
+.tcf-situations.is-6{grid-template-columns:repeat(2,1fr)} /* 2 images / ligne × 3 */
 .tcf-situations.is-8{grid-template-columns:repeat(4,1fr)}
 .tcf-situations li{display:flex;flex-direction:column;gap:4px;min-width:0}
 .tcf-situations .tcf-image{height:36mm}
+.tcf-situations.is-6 .tcf-image{height:42mm}
 .tcf-situation-foot{display:flex;align-items:flex-end;gap:4px;width:100%}
 .tcf-dialogue-label{flex:0 0 auto;font-size:.92em;font-weight:600;color:var(--ink);white-space:nowrap}
 .tcf-situation-num{

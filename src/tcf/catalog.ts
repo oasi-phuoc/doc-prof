@@ -158,7 +158,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'six_courts',
     label: '6 audios courts',
-    description: 'Un audio court, avec une seule question.',
+    description: '6 pistes taguées « court » tirées au hasard, une question chacune (QCM texte).',
     instruction: 'Écoutez chaque extrait, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
@@ -167,7 +167,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'trois_moyens',
     label: '3 audios moyens',
-    description: 'Un audio moyen, avec deux questions.',
+    description: '3 pistes taguées « moyen » tirées au hasard, deux questions chacune (QCM texte).',
     instruction: 'Écoutez chaque extrait, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
@@ -176,7 +176,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'complet',
     label: 'Audio complet',
-    description: 'Un document audio complet, avec questions.',
+    description: '1 piste taguée « long », N questions tirées du pool (défaut 5, QCM texte).',
     instruction: 'Écoutez le document, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
@@ -186,9 +186,9 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'association_images',
     label: 'Conversations / situations',
     description:
-      '4 petits dialogues tirés au hasard parmi la banque, avec 6 ou 8 scènes (dont leurres). Notez le n° sous chaque image.',
+      '4 audios tagués « scenario » (image liée) + 2 scènes leurres. Grille 2×3, Audio n° sous chaque image (6 × 1 pt).',
     instruction:
-      'Vous allez entendre 4 petits dialogues correspondant à 4 situations différentes. Associez chaque dialogue à une image. Attention : il y a 6 ou 8 images mais seulement 4 dialogues.',
+      'Vous allez entendre 4 petits dialogues correspondant à 4 situations différentes. Associez chaque audio à une image. Attention : il y a 6 images mais seulement 4 audios.',
     reponses: [],
   },
   // —— PE ——

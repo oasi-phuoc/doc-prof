@@ -6,7 +6,7 @@ import {
   countInlineBlanks,
   hasInlineBlank,
 } from '@/tcf/inline-blank'
-import type { TcfChoixRendu, TcfGrille, TcfLigneTableau } from '@/tcf/types'
+import type { TcfCadreQuestion, TcfChoixRendu, TcfGrille, TcfLigneTableau } from '@/tcf/types'
 import { TcfImage } from './TexteSupport'
 
 const INLINE_BLANK_RE = /_{3,}|_ _ _/g
@@ -106,27 +106,33 @@ function Enonce({
   numeroLabel,
   enonce,
   audioLabel,
+  audioFrame,
   points,
   blankAnswers,
   blankStyle = 'line',
+  showNumero = true,
 }: {
   numero: number
   /** Remplace le numéro (ex. « a » → « a. »). */
   numeroLabel?: string
   enonce: string
   audioLabel?: string
+  /** Pastille Audio N déjà en coin de cadre : ne pas la répéter dans l’énoncé. */
+  audioFrame?: boolean
   points?: number
   image?: string
   blankAnswers?: string
   blankStyle?: 'line' | 'dots'
+  /** Afficher le numéro (désactivé pour six courts seul dans le cadre). */
+  showNumero?: boolean
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
   const label = (numeroLabel ?? String(numero)).trim()
   return (
     <p className="tcf-enonce">
-      <span className="tcf-num">{label}.</span>
-      {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
+      {showNumero ? <span className="tcf-num">{label}.</span> : null}
+      {audioLabel && !audioFrame ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
       <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
         {renderEnonceText(enonce, fills, blankStyle)}
       </span>
@@ -141,27 +147,36 @@ function QuestionShell({
   images,
   numero,
   enonceSlot,
+  audioLabel,
+  audioFrame,
   children,
 }: {
   image?: string
   images?: string[]
   numero: number
   enonceSlot?: ReactNode
+  audioLabel?: string
+  audioFrame?: boolean
   children: ReactNode
 }) {
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
+  const frameClass = audioFrame ? ' is-audio-frame' : ''
+  const corner =
+    audioFrame && audioLabel ? <span className="tcf-audio-frame-tag">{audioLabel}</span> : null
   if (!pics.length) {
     return (
-      <div className="tcf-question">
+      <div className={`tcf-question${frameClass}`}>
+        {corner}
         {enonceSlot}
         {children}
       </div>
     )
   }
   return (
-    <div className="tcf-question tcf-q-enonce-above">
+    <div className={`tcf-question tcf-q-enonce-above${frameClass}`}>
+      {corner}
       {enonceSlot}
       <div className="tcf-q-beside">
         <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
@@ -190,9 +205,11 @@ type QuestionHead = {
   numeroLabel?: string
   enonce: string
   audioLabel?: string
+  audioFrame?: boolean
   points?: number
   image?: string
   images?: string[]
+  showNumero?: boolean
 }
 
 export function QuestionQCMTexte({
@@ -209,7 +226,15 @@ export function QuestionQCMTexte({
       image={head.image}
       images={head.images}
       numero={head.numero}
-      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+      audioLabel={head.audioLabel}
+      audioFrame={head.audioFrame}
+      enonceSlot={
+        <Enonce
+          {...head}
+          blankStyle="dots"
+          showNumero={head.showNumero ?? !head.audioFrame}
+        />
+      }
     >
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
@@ -238,7 +263,15 @@ export function QuestionQCMImage({
       image={head.image}
       images={head.images}
       numero={head.numero}
-      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+      audioLabel={head.audioLabel}
+      audioFrame={head.audioFrame}
+      enonceSlot={
+        <Enonce
+          {...head}
+          blankStyle="dots"
+          showNumero={head.showNumero ?? !head.audioFrame}
+        />
+      }
     >
       <ul className={`tcf-qcm-images is-${choix.length}`}>
         {choix.map((c) => (
@@ -275,8 +308,14 @@ export function QuestionLignes({
       image={head.image}
       images={head.images}
       numero={head.numero}
+      audioLabel={head.audioLabel}
+      audioFrame={head.audioFrame}
       enonceSlot={
-        <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
+        <Enonce
+          {...head}
+          blankAnswers={show && inline ? reponseModele : undefined}
+          showNumero={head.showNumero ?? !head.audioFrame}
+        />
       }
     >
       {tableau?.length ? (
@@ -297,6 +336,71 @@ export function QuestionLignes({
         <LignesReponse nbLignes={1} texte={reponseModele} />
       ) : null}
     </QuestionShell>
+  )
+}
+
+/** Cadre Audio N contenant plusieurs questions (trois audios moyens). */
+export function AudioCadre({
+  audioLabel,
+  questions,
+  mode,
+}: {
+  audioLabel: string
+  questions: TcfCadreQuestion[]
+  mode: PreviewMode
+}) {
+  return (
+    <div className="tcf-question is-audio-frame is-audio-cadre">
+      <span className="tcf-audio-frame-tag">{audioLabel}</span>
+      <div className="tcf-audio-cadre-body">
+        {questions.map((q) =>
+          q.kind === 'qcm' ? (
+            q.mode === 'image' ? (
+              <QuestionQCMImage
+                key={q.numero}
+                numero={q.numero}
+                numeroLabel={q.numeroLabel}
+                enonce={q.enonce}
+                choix={q.choix}
+                image={q.image}
+                images={q.images}
+                points={q.points}
+                showNumero
+                mode={mode}
+              />
+            ) : (
+              <QuestionQCMTexte
+                key={q.numero}
+                numero={q.numero}
+                numeroLabel={q.numeroLabel}
+                enonce={q.enonce}
+                choix={q.choix}
+                image={q.image}
+                images={q.images}
+                points={q.points}
+                showNumero
+                mode={mode}
+              />
+            )
+          ) : (
+            <QuestionLignes
+              key={q.numero}
+              numero={q.numero}
+              numeroLabel={q.numeroLabel}
+              enonce={q.enonce}
+              nbLignes={q.nbLignes}
+              reponseModele={q.reponseModele}
+              tableau={q.tableau}
+              image={q.image}
+              images={q.images}
+              points={q.points}
+              showNumero
+              mode={mode}
+            />
+          ),
+        )}
+      </div>
+    </div>
   )
 }
 
@@ -322,7 +426,7 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
   )
 }
 
-/** CO : scènes illustrées, « Dialogue n° : ___ » (trait couleur) sous chaque image. */
+/** CO : scènes illustrées, « Audio n° : ___ » (trait couleur) sous chaque image. */
 export function AssociationSituations({
   situations,
   mode,
@@ -339,7 +443,7 @@ export function AssociationSituations({
         <li key={`${s.lettre}-${i}`}>
           <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
           <span className="tcf-situation-foot">
-            <span className="tcf-dialogue-label">Dialogue n°&nbsp;:</span>
+            <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
             <span className="answer-line-field compact tcf-situation-num">
               {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
             </span>
