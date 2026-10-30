@@ -823,8 +823,9 @@ function cleanForExport(raw: TcfExercise): TcfExercise {
 }
 
 /**
- * Choix de l’exercice dans la banque (panneau de gauche) :
- * Scénario (loisirs, école…) puis Exercice, libellé par sa scène.
+ * Choix de l’exercice dans la banque (panneau de gauche).
+ * CE : uniquement « Exercice » (tous les items, regroupés par scénario).
+ * PE / PO / CO restants : filtre Thème / Scénario + Exercice.
  */
 export function TcfBankPicker({
   niveau,
@@ -845,7 +846,10 @@ export function TcfBankPicker({
   const bank = useMemo(() => (slot ? tcfSlotBank(niveau, slot) : []), [slot, niveau])
   const groups = useMemo(() => tcfScenarioGroups(bank), [bank])
   if (!slot || bank.length === 0) return null
-  const shown = scenario ? groups.filter((g) => g.id === scenario) : groups
+
+  /** CE : pas de filtre Scénario — la liste Exercice montre toute la banque. */
+  const hideScenarioFilter = slot.competence === 'CE'
+  const shown = hideScenarioFilter ? groups : scenario ? groups.filter((g) => g.id === scenario) : groups
   const options = (group: TcfScenarioGroup) =>
     group.items.map(({ exercise, label }) => (
       <option key={exercise.id} value={exercise.id}>
@@ -857,23 +861,31 @@ export function TcfBankPicker({
 
   return (
     <div className="quad-libre-block tcf-editor">
-      <label className="tcf-field">
-        <span>{byTheme ? 'Thème' : 'Scénario'}</span>
-        <select
-          className="pill-input"
-          value={scenario ?? ''}
-          onChange={(event) => onChange({ tcfScenario: event.target.value || undefined, tcfBankId: undefined, tcfExercise: undefined })}
-        >
-          <option value="">
-            {byTheme ? 'Tous les thèmes' : 'Tous les scénarios'} ({bank.length})
-          </option>
-          {groups.map((g) => (
-            <option key={g.id} value={g.id}>
-              {g.label} ({g.items.length})
+      {hideScenarioFilter ? null : (
+        <label className="tcf-field">
+          <span>{byTheme ? 'Thème' : 'Scénario'}</span>
+          <select
+            className="pill-input"
+            value={scenario ?? ''}
+            onChange={(event) =>
+              onChange({
+                tcfScenario: event.target.value || undefined,
+                tcfBankId: undefined,
+                tcfExercise: undefined,
+              })
+            }
+          >
+            <option value="">
+              {byTheme ? 'Tous les thèmes' : 'Tous les scénarios'} ({bank.length})
             </option>
-          ))}
-        </select>
-      </label>
+            {groups.map((g) => (
+              <option key={g.id} value={g.id}>
+                {g.label} ({g.items.length})
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
       <label className="tcf-field">
         <span>Exercice</span>
         <select
@@ -891,7 +903,11 @@ export function TcfBankPicker({
               ))}
         </select>
       </label>
-      {edited ? <small className="muted">Exercice modifié en mode libre : choisir un exercice ici remet celui de la banque.</small> : null}
+      {edited ? (
+        <small className="muted">
+          Exercice modifié en mode libre : choisir un exercice ici remet celui de la banque.
+        </small>
+      ) : null}
     </div>
   )
 }
