@@ -13,6 +13,12 @@ import type { TcfExercise, TcfQuestion } from './types'
 
 export type TcfValidation = { errors: string[]; warnings: string[] }
 
+/** Options optionnelles (évite un import circulaire avec la banque). */
+export type TcfValidateOptions = {
+  /** Chemins autorisés pour association (tag `scenario`). */
+  scenarioAudioPaths?: ReadonlySet<string>
+}
+
 const NIVEAUX = new Set(['A0-A1', 'A1-A2', 'A2-B1'])
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -67,7 +73,7 @@ function validateQuestion(q: TcfQuestion, label: string, errors: string[]) {
 }
 
 /** Validation complète (bloquante = errors ; non bloquante = warnings). */
-export function validateTcfExercise(ex: TcfExercise): TcfValidation {
+export function validateTcfExercise(ex: TcfExercise, options?: TcfValidateOptions): TcfValidation {
   const errors: string[] = []
   const warnings: string[] = []
   if (blank(ex.id)) errors.push('Identifiant manquant.')
@@ -162,6 +168,20 @@ export function validateTcfExercise(ex: TcfExercise): TcfValidation {
         }
       } else if (blank(ex.support.audio)) {
         errors.push('Audio manquant.')
+      } else {
+        warnings.push(
+          'Association : préférez des pistes découpées taguées « scénario » (une piste par dialogue).',
+        )
+      }
+      const scenarioPaths = options?.scenarioAudioPaths
+      if (scenarioPaths && scenarioPaths.size > 0) {
+        refs.forEach((path, i) => {
+          if (!blank(path) && !scenarioPaths.has(path.trim())) {
+            errors.push(
+              `Audio ${i + 1} : seul un dialogue tagué « scénario » est accepté pour reconnaître la situation.`,
+            )
+          }
+        })
       }
       const n = ex.support.nb_dialogues
       if (!Number.isInteger(n) || n < 1) errors.push('Nombre de dialogues : au moins 1.')

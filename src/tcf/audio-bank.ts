@@ -1,3 +1,5 @@
+import { TCF_AUDIO_TAG_SCENARIO, tcfAudioHasTag, type TcfAudioTag } from './audio-tags'
+import { isTcfCoAssociation, tcfAssociationTranscriptions } from './association-audio'
 import type { TcfExercise } from './types'
 
 export type TcfAudioEntry = {
@@ -7,7 +9,13 @@ export type TcfAudioEntry = {
   label: string
   /** Thème ou type pour la recherche. */
   meta: string
+  /** Tags (ex. `scenario` = dialogue découpé pour association images). */
+  tags: TcfAudioTag[]
+  /** N° de dialogue 1-based si tag `scenario`. */
+  dialogueIndex?: number
 }
+
+export { TCF_AUDIO_TAG_SCENARIO, tcfAudioHasTag }
 
 /** Accents courants dans les stems / dossiers audio. */
 const AUDIO_WORD_ACCENTS: Record<string, string> = {
@@ -121,11 +129,60 @@ export function tcfAudioBaseLabel(exercise: TcfExercise, audio: string): string 
   return tcfAudioBaseFromPath(audio)
 }
 
+type RawAudioRow = {
+  audio: string
+  exercise: TcfExercise
+  base: string
+  stem: string
+  tags: TcfAudioTag[]
+  dialogueIndex?: number
+}
+
+/**
+ * Entrées audio issues d’un pack association : une entrée par dialogue découpé,
+ * taguée `scenario` (scénario + scène), pour le sélecteur d’association uniquement.
+ */
+function associationScenarioRows(exercise: TcfExercise): RawAudioRow[] {
+  if (!isTcfCoAssociation(exercise)) return []
+  const audios = (exercise.support.audios ?? []).map((a) => a.trim()).filter(Boolean)
+  if (audios.length < 2) return []
+  const trs = tcfAssociationTranscriptions(exercise)
+  const base = tcfAudioBaseLabel(exercise, audios[0]!)
+  return audios.map((audio, i) => {
+    const dialogueIndex = i + 1
+    const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
+    const tr = trs[i]?.trim()
+    return {
+      audio,
+      exercise,
+      base: `${base} · dialogue ${dialogueIndex}`,
+      stem: tr ? `${stem} ${tr.slice(0, 80)}` : stem,
+      tags: [TCF_AUDIO_TAG_SCENARIO],
+      dialogueIndex,
+    }
+  })
+}
+
 /** Index des audios de la banque (dédupliqués par chemin, premier exercice gardé). */
 export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
   const seen = new Set<string>()
-  const raw: Array<{ audio: string; exercise: TcfExercise; base: string; stem: string }> = []
+  const raw: RawAudioRow[] = []
+
+  // 1) Dialogues association découpés → tag scénario (prioritaires sur le chemin)
   for (const exercise of exercises) {
+    for (const row of associationScenarioRows(exercise)) {
+      if (seen.has(row.audio)) continue
+      seen.add(row.audio)
+      raw.push(row)
+    }
+  }
+
+  // 2) Autres audios CO (complet, objets…) sans tag scénario
+  for (const exercise of exercises) {
+    if (isTcfCoAssociation(exercise) && (exercise.support.audios?.length ?? 0) >= 2) {
+      // Déjà indexés comme dialogues scénario
+      continue
+    }
     for (const audio of tcfExerciseAudios(exercise)) {
       if (seen.has(audio)) continue
       seen.add(audio)
@@ -135,6 +192,7 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
         exercise,
         base: tcfAudioBaseLabel(exercise, audio),
         stem,
+        tags: [],
       })
     }
   }
@@ -151,8 +209,8 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
   }
   for (const list of byBase.values()) {
     list.sort((a, b) => {
-      const na = audioStemNumber(a.audio)
-      const nb = audioStemNumber(b.audio)
+      const na = a.dialogueIndex ?? audioStemNumber(a.audio)
+      const nb = b.dialogueIndex ?? audioStemNumber(b.audio)
       if (na != null && nb != null && na !== nb) return na - nb
       if (na != null && nb == null) return -1
       if (na == null && nb != null) return 1
@@ -165,15 +223,42 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
     const list = byBase.get(row.base)!
     const total = counts.get(row.base) ?? 1
     const index = list.indexOf(row) + 1
-    const label = total > 1 ? `${row.base} ${index}` : row.base
+    // Les dialogues scénario ont déjà « · dialogue N » dans base
+    const label =
+      tcfAudioHasTag(row.tags, TCF_AUDIO_TAG_SCENARIO) || total <= 1
+        ? row.base
+        : `${row.base} ${index}`
+    const tagBits = row.tags.length ? `tag:${row.tags.join(',')}` : ''
     out.push({
       audio: row.audio,
       exercise: row.exercise,
       label,
-      meta: [row.exercise.theme, row.exercise.type_exercice, row.stem, row.exercise.id].filter(Boolean).join(' · '),
+      meta: [
+        row.exercise.theme,
+        row.exercise.type_exercice,
+        row.exercise.scenario,
+        row.exercise.scene,
+        tagBits,
+        row.stem,
+        row.exercise.id,
+      ]
+        .filter(Boolean)
+        .join(' · '),
+      tags: row.tags,
+      dialogueIndex: row.dialogueIndex,
     })
   }
   return out.sort((a, b) => a.label.localeCompare(b.label, 'fr', { numeric: true }))
+}
+
+/** Audios tagués `scenario` (petits dialogues d’association). */
+export function tcfScenarioAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
+  return tcfAudioEntries(exercises).filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO))
+}
+
+/** Chemins des dialogues scénario (pour validation). */
+export function tcfScenarioAudioPaths(exercises: readonly TcfExercise[]): Set<string> {
+  return new Set(tcfScenarioAudioEntries(exercises).map((e) => e.audio))
 }
 
 /**
@@ -186,5 +271,60 @@ export function applyExerciseFromAudioBank(current: TcfExercise, source: TcfExer
     ...next,
     id: current.id,
     niveau: current.niveau,
+  }
+}
+
+/**
+ * Place un dialogue scénario découpé dans le créneau `slotIndex` (0-based)
+ * d’un exercice association — sans remplacer tout le pack.
+ */
+export function applyAssociationDialogueSlot(
+  current: TcfExercise,
+  entry: TcfAudioEntry,
+  slotIndex: number,
+): TcfExercise {
+  if (!isTcfCoAssociation(current)) return current
+  const n = Math.max(current.support.nb_dialogues, slotIndex + 1)
+  const audios = Array.from({ length: n }, (_, i) => current.support.audios?.[i] ?? '')
+  const trsSource = Array.isArray(current.support.transcription)
+    ? [...current.support.transcription]
+    : [typeof current.support.transcription === 'string' ? current.support.transcription : '']
+  while (trsSource.length < n) trsSource.push('')
+  audios[slotIndex] = entry.audio
+  const srcTrs = tcfAssociationTranscriptions(
+    isTcfCoAssociation(entry.exercise) ? entry.exercise : (entry.exercise as never),
+  )
+  const fromEntry =
+    entry.dialogueIndex != null ? srcTrs[entry.dialogueIndex - 1] : srcTrs[0]
+  trsSource[slotIndex] = fromEntry?.trim() || trsSource[slotIndex] || ''
+
+  // Image de situation liée au dialogue source, si présente
+  let situations = current.situations.map((s) => ({ ...s }))
+  if (isTcfCoAssociation(entry.exercise) && entry.dialogueIndex != null) {
+    const srcSit = entry.exercise.situations.find((s) => s.dialogue === entry.dialogueIndex)
+    if (srcSit?.image.trim()) {
+      const targetDial = slotIndex + 1
+      const hit = situations.findIndex((s) => s.dialogue === targetDial)
+      if (hit >= 0) {
+        situations[hit] = { ...situations[hit]!, image: srcSit.image }
+      } else {
+        const empty = situations.findIndex((s) => s.dialogue == null && !s.image.trim())
+        if (empty >= 0) {
+          situations[empty] = { ...situations[empty]!, image: srcSit.image, dialogue: targetDial }
+        }
+      }
+    }
+  }
+
+  return {
+    ...current,
+    support: {
+      ...current.support,
+      audio: undefined,
+      audios,
+      nb_dialogues: n,
+      transcription: trsSource,
+    },
+    situations,
   }
 }

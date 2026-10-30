@@ -114,7 +114,9 @@ export function emptyTcfExercise(
         ...base,
         competence: 'CO',
         type_exercice: 'association_images',
-        support: { audio: '', nb_dialogues: 5, transcription: '' },
+        consigne:
+          'Vous allez entendre 4 petits dialogues, correspondant à 4 situations différentes. Associez chaque dialogue à une image. Attention : il y a 6 images mais seulement 4 dialogues. Notez le numéro du dialogue sous chaque image (Dialogue n° : ___).',
+        support: { audios: [], nb_dialogues: 4, transcription: [] },
         situations: Array.from({ length: 6 }, (_, i) => ({ id: `s${i + 1}`, image: '', dialogue: null })),
       }
     case 'formulaire':

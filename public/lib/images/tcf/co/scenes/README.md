@@ -1416,3 +1416,375 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-4.webp`
 - **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3`
 - **Description** : Scénario vidéo (audio CO court, « Les nouvelles — dialogue 4 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans une situation de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Aujourd'hui, dans le bus, j'ai croisé Thomas » ; B : « Ce qui ? » ; A : « Le frère de Sophie » ; B : « Il a déménagé à Lyon pour ses études » ; A : « Il est très sympa ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## Associations — dialogues illustrés
+
+Scènes pour les CO **association_images** (conversations entre locuteurs).
+Générer les WebP **ailleurs**, puis déposer le fichier au chemin indiqué.
+
+**Description = scène seule** (lieu, personnages, action visible) — **pas de répliques**,
+pas de citation de dialogue. Style : bande dessinée réaliste, décor quotidien,
+pas de texte à l’écran, pas de fond blanc.
+
+**36 scènes** à produire pour les packs A1-A2 convertis (+ leurres).
+
+## `les-dialogues-du-quotidien-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-s1-co-4`
+- **Scène** : Les dialogues du quotidien — 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-1.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-1.mp3`
+- **Description** : À un arrêt de bus en ville : un adulte demande son chemin, l’autre pointe une rue du doigt ; place et immeubles derrière. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-dialogues-du-quotidien-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-s1-co-4`
+- **Scène** : Les dialogues du quotidien — 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-2.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-2.mp3`
+- **Description** : Deux amis dehors discutent de leurs projets du week-end ; l’un propose une activité, ciel nuageux, tenue décontractée. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-dialogues-du-quotidien-3.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-s1-co-4`
+- **Scène** : Les dialogues du quotidien — 3
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-3.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-3.mp3`
+- **Description** : Devant une porte de chambre fermée : un adulte empêche l’autre d’entrer, geste de la main, couloir domestique. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-dialogues-du-quotidien-4.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-s1-co-4`
+- **Scène** : Les dialogues du quotidien — 4
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-4.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-4.mp3`
+- **Description** : Deux voisins ou amis se remercient près d’une laisse / chien ; sourire, devanture d’immeuble. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-dialogues-du-quotidien-leurre-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-s1-co-4`
+- **Scène** : Les dialogues du quotidien — leurre 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-leurre-1.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Deux adultes se saluent chaleureusement sur le seuil d’un appartement ; l’hôte ouvre la porte, sourire, hall d’immeuble simple. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-dialogues-du-quotidien-leurre-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-s1-co-4`
+- **Scène** : Les dialogues du quotidien — leurre 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-leurre-2.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Une personne montre un parc urbain de la main depuis un banc ; interlocuteur écoute, arbres et allée en arrière-plan. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-sortie-entre-amis-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s1-co-4`
+- **Scène** : La sortie entre amis — 1
+- **Scénario** : loisirs
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/la-sortie-entre-amis-1.webp`
+- **Audio** : `/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-1.mp3`
+- **Description** : Deux amis : l’un invite l’autre à une sortie ; téléphone ou prospectus à la main, rue ou hall. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-sortie-entre-amis-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s1-co-4`
+- **Scène** : La sortie entre amis — 2
+- **Scénario** : loisirs
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/la-sortie-entre-amis-2.webp`
+- **Audio** : `/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-2.mp3`
+- **Description** : Un élève montre le programme d’une fête scolaire sur son téléphone à un camarade, couloir d’école. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-sortie-entre-amis-3.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s1-co-4`
+- **Scène** : La sortie entre amis — 3
+- **Scénario** : loisirs
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/la-sortie-entre-amis-3.webp`
+- **Audio** : `/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-3.mp3`
+- **Description** : À un bureau / table : un jeune fait des exercices, l’autre propose de l’aide avec un cahier. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-sortie-entre-amis-4.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s1-co-4`
+- **Scène** : La sortie entre amis — 4
+- **Scénario** : loisirs
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/la-sortie-entre-amis-4.webp`
+- **Audio** : `/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-4.mp3`
+- **Description** : Devant un présentoir de cadeaux : deux amis hésitent pour un anniversaire, magasin lumineux. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-sortie-entre-amis-leurre-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s1-co-4`
+- **Scène** : La sortie entre amis — leurre 1
+- **Scénario** : loisirs
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/la-sortie-entre-amis-leurre-1.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Au guichet d’une salle des fêtes : un adulte consulte un horaire affiché, un autre attend derrière. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-sortie-entre-amis-leurre-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s1-co-4`
+- **Scène** : La sortie entre amis — leurre 2
+- **Scénario** : loisirs
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/la-sortie-entre-amis-leurre-2.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Deux adultes ; l’un refuse poliment une invitation d’un geste de la main, café en terrasse. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-d-accueil-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s2-co-4`
+- **Scène** : La famille d’accueil — 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-d-accueil-1.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-1.mp3`
+- **Description** : Deux jeunes près d’un stade : l’un propose d’aller jouer au foot, ballon sous le bras. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-d-accueil-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s2-co-4`
+- **Scène** : La famille d’accueil — 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-d-accueil-2.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-2.mp3`
+- **Description** : Cuisine ou salon : un parent donne un ordre ferme à un ado (ranger), geste autoritaire mais calme. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-d-accueil-3.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s2-co-4`
+- **Scène** : La famille d’accueil — 3
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-d-accueil-3.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-3.mp3`
+- **Description** : Chambre / bureau : un ado demande à emprunter un ordinateur portable, l’autre hésite. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-d-accueil-4.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s2-co-4`
+- **Scène** : La famille d’accueil — 4
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-d-accueil-4.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-4.mp3`
+- **Description** : Vestiaire ou bord de bassin : conversation sur une piscine d’entraînement, serviette visible. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-d-accueil-leurre-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s2-co-4`
+- **Scène** : La famille d’accueil — leurre 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-d-accueil-leurre-1.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Au bord d’un terrain de sport : un adulte décrit une piscine couverte au loin, l’autre écoute. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-d-accueil-leurre-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2p-s2-co-4`
+- **Scène** : La famille d’accueil — leurre 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-d-accueil-leurre-2.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Salon familial : un parent range des affaires pendant qu’un ado proteste près du canapé. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-nouvelles-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sa-co-4`
+- **Scène** : Les nouvelles — 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3`
+- **Description** : Café ou salon : une personne raconte un voyage lointain à une amie, photos sur téléphone. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-nouvelles-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sa-co-4`
+- **Scène** : Les nouvelles — 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3`
+- **Description** : Devant un commerce fermé : deux passants parlent des horaires, façade de magasin. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-nouvelles-3.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sa-co-4`
+- **Scène** : Les nouvelles — 3
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3`
+- **Description** : Deux amis dehors : l’un propose une sortie improvisée, l’autre est libre. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-nouvelles-4.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sa-co-4`
+- **Scène** : Les nouvelles — 4
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-4.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3`
+- **Description** : Dans les transports : conversation où l’on présente / évoque le frère d’une connaissance. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-nouvelles-leurre-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sa-co-4`
+- **Scène** : Les nouvelles — leurre 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-1.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Devant un kiosque fermé à midi : deux passants commentent la grille baissée, rue commerçante. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-nouvelles-leurre-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sa-co-4`
+- **Scène** : Les nouvelles — leurre 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Dans un bus : deux usagers se reconnaissent et se présentent discrètement, sièges en arrière-plan. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-achats-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sb-co-4`
+- **Scène** : Les achats — 1
+- **Scénario** : magasins
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/les-achats-1.webp`
+- **Audio** : `/lib/audio/tcf/co/magasins/les-achats-1.mp3`
+- **Description** : Magasin d’accessoires : deux personnes comparent des sacs de couleurs différentes. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-achats-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sb-co-4`
+- **Scène** : Les achats — 2
+- **Scénario** : magasins
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/les-achats-2.webp`
+- **Audio** : `/lib/audio/tcf/co/magasins/les-achats-2.mp3`
+- **Description** : Salon : démonstration d’un aspirateur récemment acheté sur Internet. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-achats-3.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sb-co-4`
+- **Scène** : Les achats — 3
+- **Scénario** : magasins
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/les-achats-3.webp`
+- **Audio** : `/lib/audio/tcf/co/magasins/les-achats-3.mp3`
+- **Description** : Cuisine en désordre léger : quelqu’un avoue que cuisiner est difficile, ami qui écoute. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-achats-4.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sb-co-4`
+- **Scène** : Les achats — 4
+- **Scénario** : magasins
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/les-achats-4.webp`
+- **Audio** : `/lib/audio/tcf/co/magasins/les-achats-4.mp3`
+- **Description** : Sur le campus ou café : une étudiante annonce ses résultats d’examens à un ami, joie discrète. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-achats-leurre-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sb-co-4`
+- **Scène** : Les achats — leurre 1
+- **Scénario** : magasins
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/les-achats-leurre-1.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Rayon sacs d’un magasin : une cliente compare un sac vert et un sac noir, vendeuse à proximité. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `les-achats-leurre-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sb-co-4`
+- **Scène** : Les achats — leurre 2
+- **Scénario** : magasins
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/les-achats-leurre-2.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Cuisine équipée : un adulte montre un aspirateur neuf, l’autre félicite, carton ouvert. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-2-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sc-co-4`
+- **Scène** : La famille 2 — 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-1.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-2-1.mp3`
+- **Description** : Salon : un ado demande à emprunter un téléphone pour appeler sa sœur, parent qui réfléchit. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-2-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sc-co-4`
+- **Scène** : La famille 2 — 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-2.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-2-2.mp3`
+- **Description** : Cuisine le matin : un jeune se plaint d’un mal de tête, parent qui rappelle les cours. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-2-3.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sc-co-4`
+- **Scène** : La famille 2 — 3
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-3.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-2-3.mp3`
+- **Description** : Couloir d’école de musique : un élève non préparé parle avec un camarade avant le cours. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-2-4.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sc-co-4`
+- **Scène** : La famille 2 — 4
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-4.webp`
+- **Audio** : `/lib/audio/tcf/co/vie-quotidienne/la-famille-2-4.mp3`
+- **Description** : Téléphone à l’oreille en ville : conversation d’excuse pour un déjeuner oublié avec une aînée. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-2-leurre-1.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sc-co-4`
+- **Scène** : La famille 2 — leurre 1
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Entrée d’école de musique : un élève refuse d’entrer en cours, camarade qui insiste gentiment. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+
+## `la-famille-2-leurre-2.webp`
+
+- **Kind** : association
+- **Exercice** : `tcf-a2-sc-co-4`
+- **Scène** : La famille 2 — leurre 2
+- **Scénario** : vie-quotidienne
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp`
+- **Audio** : _(leurre — aucune piste)_
+- **Description** : Table de restaurant : une grand-mère au téléphone semble déçue, assiette devant elle. Style : bande dessinée réaliste, décor quotidien lisible, personnages expressifs. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
+

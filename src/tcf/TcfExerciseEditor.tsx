@@ -1,7 +1,14 @@
 import { useMemo, useState } from 'react'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
-import { applyExerciseFromAudioBank, tcfAudioEntries, type TcfAudioEntry } from './audio-bank'
+import {
+  applyAssociationDialogueSlot,
+  applyExerciseFromAudioBank,
+  TCF_AUDIO_TAG_SCENARIO,
+  tcfAudioEntries,
+  tcfAudioHasTag,
+  type TcfAudioEntry,
+} from './audio-bank'
 import { TCF_TYPES, tcfDefaultTypeReponse, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
 import { drawTcfSeries } from './draw-series'
@@ -334,82 +341,69 @@ function SupportEditor({
       )
     }
     case 'association_images': {
-      const n = ex.support.nb_dialogues
-      const multi = (ex.support.audios?.length ?? 0) > 0
+      const n = Math.max(ex.support.nb_dialogues, 1)
+      const scenarioBank =
+        audioEntries && audioEntries.length > 0
+          ? audioEntries.filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO))
+          : undefined
+      const slotAudios = Array.from({ length: n }, (_, i) => ex.support.audios?.[i] ?? '')
+      const pickScenarioSlot = (slotIndex: number) => (entry: TcfAudioEntry) =>
+        set(applyAssociationDialogueSlot(ex, entry, slotIndex))
       return (
         <>
-          {multi ? (
-            ex.support.audios!.map((audio, i) => (
-              <AudioField
-                key={i}
-                label={`Dialogue / audio ${i + 1}`}
-                value={audio}
-                onChange={(next) =>
-                  set(
-                    withSupport(ex, {
-                      audios: ex.support.audios!.map((a, k) => (k === i ? next : a)),
-                      audio: undefined,
-                    }),
-                  )
-                }
-                bankEntries={audioBank}
-                onPickFromBank={pickAudio}
-              />
-            ))
-          ) : (
+          <p className="tcf-vocab-picker-theme" style={{ margin: 0 }}>
+            Audios tagués « scénario » uniquement (petits dialogues découpés : une piste = une situation).
+          </p>
+          {slotAudios.map((audio, i) => (
             <AudioField
-              label="Audio (tous les dialogues)"
-              value={ex.support.audio ?? ''}
-              onChange={(audio) => set(withSupport(ex, { audio, audios: undefined }))}
-              bankEntries={audioBank}
-              onPickFromBank={pickAudio}
+              key={i}
+              label={`Dialogue / audio ${i + 1}`}
+              value={audio}
+              onChange={(next) => {
+                const audios = Array.from({ length: n }, (_, k) =>
+                  k === i ? next : (ex.support.audios?.[k] ?? ''),
+                )
+                set(withSupport(ex, { audios, audio: undefined, nb_dialogues: n }))
+              }}
+              bankEntries={scenarioBank}
+              onPickFromBank={pickScenarioSlot(i)}
             />
-          )}
+          ))}
           <NumberField
             label="Nombre de dialogues"
             value={n}
             min={1}
             max={8}
-            onChange={(nb_dialogues) => set(withSupport(ex, { nb_dialogues: nb_dialogues ?? 1 }))}
+            onChange={(nb_dialogues) => {
+              const nextN = nb_dialogues ?? 1
+              const audios = Array.from({ length: nextN }, (_, i) => ex.support.audios?.[i] ?? '')
+              set(withSupport(ex, { nb_dialogues: nextN, audios, audio: undefined }))
+            }}
           />
-          {multi ? (
-            ex.support.audios!.map((_, i) => {
-              const trs = Array.isArray(ex.support.transcription)
-                ? ex.support.transcription
-                : [typeof ex.support.transcription === 'string' ? ex.support.transcription : '']
-              return (
-                <TextField
-                  key={`atr-${i}`}
-                  label={`Transcription ${i + 1}`}
-                  value={trs[i] ?? ''}
-                  multiline
-                  rows={3}
-                  onChange={(next) => {
-                    const current = Array.isArray(ex.support.transcription)
-                      ? [...ex.support.transcription]
-                      : ex.support.audios!.map((__, k) =>
-                          k === 0 ? String(ex.support.transcription ?? '') : '',
-                        )
-                    while (current.length < ex.support.audios!.length) current.push('')
-                    current[i] = next
-                    set(withSupport(ex, { transcription: current }))
-                  }}
-                />
-              )
-            })
-          ) : (
-            <TextField
-              label="Transcription (corrigé)"
-              value={
-                typeof ex.support.transcription === 'string'
-                  ? ex.support.transcription
-                  : (ex.support.transcription?.[0] ?? '')
-              }
-              multiline
-              rows={5}
-              onChange={(transcription) => set(withSupport(ex, { transcription }))}
-            />
-          )}
+          {slotAudios.map((_, i) => {
+            const trs = Array.isArray(ex.support.transcription)
+              ? ex.support.transcription
+              : [typeof ex.support.transcription === 'string' ? ex.support.transcription : '']
+            return (
+              <TextField
+                key={`atr-${i}`}
+                label={`Transcription ${i + 1}`}
+                value={trs[i] ?? ''}
+                multiline
+                rows={3}
+                onChange={(next) => {
+                  const current = Array.isArray(ex.support.transcription)
+                    ? [...ex.support.transcription]
+                    : slotAudios.map((__, k) =>
+                        k === 0 ? String(ex.support.transcription ?? '') : '',
+                      )
+                  while (current.length < n) current.push('')
+                  current[i] = next
+                  set(withSupport(ex, { transcription: current }))
+                }}
+              />
+            )
+          })}
           <b>Situations ({ex.situations.length})</b>
           <ul className="tcf-choix-list">
             {ex.situations.map((s, i) => (
@@ -959,13 +953,31 @@ export function TcfExerciseEditor({
       slot?.competence === 'CO' || isGrammaire ? tcfAudioEntries(tcfBankAllLevels('CO')) : [],
     [slot?.competence, isGrammaire],
   )
+  const scenarioAudioPaths = useMemo(
+    () =>
+      new Set(
+        coAudioEntries
+          .filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO))
+          .map((e) => e.audio),
+      ),
+    [coAudioEntries],
+  )
   // Résultats rattachés à la version de l’exercice : toute modification les efface.
   const [mediaCheck, setMediaCheck] = useState<{ for: TcfExercise; errors: string[] } | null>(null)
   const [copiedFor, setCopiedFor] = useState<TcfExercise | null>(null)
   const mediaErrors = mediaCheck && mediaCheck.for === current ? mediaCheck.errors : null
   const copied = copiedFor != null && copiedFor === current
   const meta = current ? tcfTypeMeta(current.competence, current.type_exercice) : undefined
-  const validation = useMemo(() => (current ? validateTcfExercise(current) : null), [current])
+  const validation = useMemo(
+    () =>
+      current
+        ? validateTcfExercise(current, {
+            scenarioAudioPaths:
+              current.type_exercice === 'association_images' ? scenarioAudioPaths : undefined,
+          })
+        : null,
+    [current, scenarioAudioPaths],
+  )
 
   if (!current || (!isGrammaire && !slot)) return null
 
