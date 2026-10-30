@@ -1,13 +1,16 @@
-import { createRng, int, randomSeed, shuffle } from '@/math/rng'
-import { tcfScenarioAudioEntries } from './audio-bank'
+import { createRng, int, pick, randomSeed, shuffle, type Rng } from '@/math/rng'
+import { tcfCourtAudioEntries, tcfScenarioAudioEntries, type TcfAudioEntry } from './audio-bank'
 import { isTcfCoAssociation } from './association-audio'
+import { filledForms, switchQuestionForm } from './formes'
 import { tcfBank, tcfBankAllLevels } from './loader'
 import { emptyTcfExercise, tcfExerciseId } from './templates'
 import type {
   TcfCoAssociation,
+  TcfCoSixCourts,
   TcfCompetence,
   TcfExercise,
   TcfNiveau,
+  TcfQuestion,
   TcfSituation,
   TcfTypeExercice,
 } from './types'
@@ -16,19 +19,18 @@ function withNiveau(ex: TcfExercise, niveau: TcfNiveau): TcfExercise {
   return { ...structuredClone(ex), niveau }
 }
 
-/** Le niveau courant s’il a assez d’exercices, sinon tous les niveaux. */
-function enough(niveau: TcfNiveau, items: TcfExercise[], min: number): TcfExercise[] {
-  const here = items.filter((ex) => ex.niveau === niveau)
+/** Le niveau courant s’il a assez d’entrées, sinon tous les niveaux. */
+function enoughEntries(niveau: TcfNiveau, items: TcfAudioEntry[], min: number): TcfAudioEntry[] {
+  const here = items.filter((e) => e.exercise.niveau === niveau)
   return here.length >= min ? here : items
 }
 
-function complets(questions: number): TcfExercise[] {
-  return tcfBankAllLevels('CO').filter((ex) => {
-    if (ex.type_exercice !== 'complet' || ex.questions.length !== questions) return false
-    const multi = ex.support.audios?.some((a) => a.trim().length > 0)
-    const one = ex.support.audio?.trim()
-    return Boolean(multi || one)
-  })
+/** Préfère QCM texte (défaut CSC) si une variante Texte est remplie. */
+function asQcmTextePrefer(q: TcfQuestion): TcfQuestion {
+  const clone = structuredClone(q)
+  if (clone.type_reponse === 'qcm_texte') return clone
+  if (filledForms(clone).includes('qcm_texte')) return switchQuestionForm(clone, 'qcm_texte')
+  return clone
 }
 
 type DialogueUnit = {
@@ -134,11 +136,43 @@ function drawAssociationCompose(niveau: TcfNiveau, rng: ReturnType<typeof create
 }
 
 /**
- * Un audio au hasard pour le type choisi.
- * Court : un seul extrait, une question. Moyen : un seul extrait, deux questions.
- * On ne recolle pas plusieurs mini-audios dans le même exercice.
- * Images objets : un exercice déjà défini (5 objets).
- * Association : 4 dialogues tirés dans la banque + scènes leurres.
+ * Compose « 6 audios courts » : tire 6 pistes taguées `court`, une question
+ * au hasard dans le pool de chaque piste (QCM texte par défaut).
+ */
+export function drawSixCourtsCompose(
+  niveau: TcfNiveau,
+  rng: Rng = createRng(randomSeed()),
+): TcfCoSixCourts | null {
+  const pool = enoughEntries(niveau, tcfCourtAudioEntries(tcfBankAllLevels('CO')), 6)
+  if (pool.length < 6) return null
+  const picked = shuffle(rng, pool).slice(0, 6)
+  const questions: TcfQuestion[] = picked.map((entry, i) => {
+    const fromPool = entry.questionPool ?? []
+    const chosen = pick(rng, fromPool)
+    const q = asQcmTextePrefer(chosen)
+    return { ...q, audio: i + 1 }
+  })
+  return {
+    id: `tcf-co-six-courts-draw-${niveau.toLowerCase()}`,
+    niveau,
+    competence: 'CO',
+    type_exercice: 'six_courts',
+    theme: 'Mini-audios',
+    scenario: 'vie-quotidienne',
+    scene: 'Six extraits courts',
+    consigne: 'Écoutez chaque extrait, puis répondez aux questions.',
+    points: 6,
+    support: { audios: picked.map((e) => e.audio) },
+    questions,
+    consigne_supplementaire: null,
+  }
+}
+
+/**
+ * Un tirage pour le type choisi.
+ * six_courts : 6 pistes `court` + 1 question chacune.
+ * trois_moyens : pour l’instant un complet à 2 questions (mono).
+ * Images objets / association : composition dédiée.
  */
 export function drawTcfSeries(
   niveau: TcfNiveau,
@@ -149,9 +183,18 @@ export function drawTcfSeries(
   const blank = () =>
     emptyTcfExercise(niveau, competence, typeExercice, tcfExerciseId(niveau, competence, 1))
 
-  if (competence === 'CO' && (typeExercice === 'six_courts' || typeExercice === 'trois_moyens')) {
-    const questions = typeExercice === 'six_courts' ? 1 : 2
-    const source = shuffle(rng, enough(niveau, complets(questions), 1))[0]
+  if (competence === 'CO' && typeExercice === 'six_courts') {
+    return drawSixCourtsCompose(niveau, rng) ?? blank()
+  }
+
+  if (competence === 'CO' && typeExercice === 'trois_moyens') {
+    const ready = tcfBankAllLevels('CO').filter((ex) => {
+      if (ex.type_exercice !== 'complet' || ex.questions.length !== 2) return false
+      const multi = ex.support.audios?.some((a) => a.trim().length > 0)
+      const one = ex.support.audio?.trim()
+      return Boolean(!multi && one)
+    })
+    const source = shuffle(rng, ready)[0]
     return source ? withNiveau(source, niveau) : blank()
   }
 

@@ -19,11 +19,12 @@ import {
   type TcfSlotMeta,
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
+import { drawSixCourtsCompose } from './draw-series'
 import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
 import { TCF_PE_GROUPS, TCF_PO_GROUPS, tcfGroupId } from './sources'
-import { TCF_LETTRES, TCF_LETTRES_SITUATIONS } from './templates'
+import { emptyTcfExercise, TCF_LETTRES, TCF_LETTRES_SITUATIONS, tcfExerciseId } from './templates'
 import type {
   TcfChoixImage,
   TcfChoixRendu,
@@ -98,6 +99,8 @@ function questionItem(
   activeOverride?: TcfTypeReponse,
   competence?: TcfCompetence,
   exerciseId?: string,
+  /** Cadre « Audio N » (six audios courts). */
+  audioFrame = false,
 ): MathItem {
   const filled = filledForms(q)
   const active =
@@ -126,6 +129,7 @@ function questionItem(
         nbLignes: variant.nbLignes ?? 2,
         reponseModele: variant.reponseModele,
         audioLabel,
+        audioFrame: audioFrame && Boolean(audioLabel),
         image: resolved.image,
         images: resolved.images,
         tableau: variant.tableau,
@@ -145,6 +149,7 @@ function questionItem(
       mode: variant.mode ?? 'texte',
       choix: variant.choix ?? [],
       audioLabel,
+      audioFrame: audioFrame && Boolean(audioLabel),
       image: resolved.image,
       images: resolved.images,
       formSelect,
@@ -184,10 +189,11 @@ export function tcfExerciseItems(
     case 'trois_moyens':
     case 'complet': {
       // formModes indexés sur les items complets (0 = support) → questions à partir de 1.
+      const framed = ex.type_exercice === 'six_courts'
       return [
         support(),
         ...ex.questions.map((q, i) =>
-          questionItem(q, i + 1, rng, formModes?.[i + 1], ex.competence, ex.id),
+          questionItem(q, i + 1, rng, formModes?.[i + 1], ex.competence, ex.id, framed),
         ),
       ]
     }
@@ -318,6 +324,13 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
   if (!slot && !legacy) return undefined
   const competence = (slot ?? legacy)!.competence
   if (config.tcfExercise && config.tcfExercise.competence === competence) return config.tcfExercise
+  // CSC / TPF CO exercice 1 (« Événement ») : 6 audios tagués `court` + 1 Q chacune.
+  if (slot?.competence === 'CO' && slot.numero === 1) {
+    return (
+      drawSixCourtsCompose(niveau, rng) ??
+      emptyTcfExercise(niveau, 'CO', 'six_courts', tcfExerciseId(niveau, 'CO', 1))
+    )
+  }
   const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
   const inScenario = config.tcfScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
   const pool = inScenario.length > 0 ? inScenario : bank
@@ -397,13 +410,15 @@ export function tcfPage(
 ): PageConfig {
   const slot = tcfSlotByTypeId[typeId] ?? TCF_SLOTS[0]!
   const topic = TCF_COMPETENCES.find((c) => c.id === slot.competence)!.topic
+  // CO ex. 1 = 6 cadres Audio : 2 colonnes pour tenir sur une A4.
+  const defaultColumns = slot.competence === 'CO' && slot.numero === 1 ? 2 : 1
   return {
     domain,
     topic,
     exerciseType: slot.typeId,
     difficulty: tcfDifficultyFromNiveau(niveau),
     count: 1,
-    columns: 1,
+    columns: defaultColumns,
     ...extra,
   }
 }
@@ -419,10 +434,25 @@ function appendNiveauExercisePages(
   rng: Rng,
   domain: TpfFamilyDomain,
 ) {
-  const page = (typeId: string, ex: TcfExercise) =>
-    tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1 }, domain)
+  const page = (typeId: string, ex: TcfExercise, extra: Partial<PageConfig> = {}) =>
+    tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1, ...extra }, domain)
   const coMax = niveau === 'A0-A1' ? 5 : 4
   for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO' && (s.numero ?? 0) <= coMax)) {
+    // Exercice 1 : composition déterministe (6 audios `court`), pas un pack banque figé.
+    if (slot.numero === 1) {
+      const composed = drawSixCourtsCompose(niveau, rng)
+      if (composed) {
+        pages.push(
+          tcfPage(
+            slot.typeId,
+            niveau,
+            { tcfExercise: composed, pointsPerQuestion: 1, columns: 2 },
+            domain,
+          ),
+        )
+      }
+      continue
+    }
     const all = numberedBank(niveau, slot)
     const tagged = all.filter((ex) => /-ex\d+-/.test(ex.id))
     const pool = tagged.length > 0 ? tagged : all

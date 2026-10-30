@@ -340,6 +340,8 @@ export type TcfSheetItem =
       mode: 'texte' | 'image'
       choix: TcfChoixRendu[]
       audioLabel?: string
+      /** Cadre autour de la question avec pastille Audio N (six courts). */
+      audioFrame?: boolean
       image?: string
       images?: string[]
       /** Sélecteur Texte / Image / Phrase (marge). */
@@ -354,6 +356,8 @@ export type TcfSheetItem =
       nbLignes: number
       reponseModele?: string
       audioLabel?: string
+      /** Cadre autour de la question avec pastille Audio N (six courts). */
+      audioFrame?: boolean
       image?: string
       images?: string[]
       tableau?: TcfLigneTableau[]

@@ -106,6 +106,7 @@ function Enonce({
   numeroLabel,
   enonce,
   audioLabel,
+  audioFrame,
   points,
   blankAnswers,
   blankStyle = 'line',
@@ -115,6 +116,8 @@ function Enonce({
   numeroLabel?: string
   enonce: string
   audioLabel?: string
+  /** Pastille Audio N déjà en coin de cadre : ne pas la répéter dans l’énoncé. */
+  audioFrame?: boolean
   points?: number
   image?: string
   blankAnswers?: string
@@ -125,8 +128,8 @@ function Enonce({
   const label = (numeroLabel ?? String(numero)).trim()
   return (
     <p className="tcf-enonce">
-      <span className="tcf-num">{label}.</span>
-      {audioLabel ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
+      {audioFrame ? null : <span className="tcf-num">{label}.</span>}
+      {audioLabel && !audioFrame ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
       <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
         {renderEnonceText(enonce, fills, blankStyle)}
       </span>
@@ -141,27 +144,36 @@ function QuestionShell({
   images,
   numero,
   enonceSlot,
+  audioLabel,
+  audioFrame,
   children,
 }: {
   image?: string
   images?: string[]
   numero: number
   enonceSlot?: ReactNode
+  audioLabel?: string
+  audioFrame?: boolean
   children: ReactNode
 }) {
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
+  const frameClass = audioFrame ? ' is-audio-frame' : ''
+  const corner =
+    audioFrame && audioLabel ? <span className="tcf-audio-frame-tag">{audioLabel}</span> : null
   if (!pics.length) {
     return (
-      <div className="tcf-question">
+      <div className={`tcf-question${frameClass}`}>
+        {corner}
         {enonceSlot}
         {children}
       </div>
     )
   }
   return (
-    <div className="tcf-question tcf-q-enonce-above">
+    <div className={`tcf-question tcf-q-enonce-above${frameClass}`}>
+      {corner}
       {enonceSlot}
       <div className="tcf-q-beside">
         <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
@@ -190,6 +202,7 @@ type QuestionHead = {
   numeroLabel?: string
   enonce: string
   audioLabel?: string
+  audioFrame?: boolean
   points?: number
   image?: string
   images?: string[]
@@ -209,6 +222,8 @@ export function QuestionQCMTexte({
       image={head.image}
       images={head.images}
       numero={head.numero}
+      audioLabel={head.audioLabel}
+      audioFrame={head.audioFrame}
       enonceSlot={<Enonce {...head} blankStyle="dots" />}
     >
       <ul className="tcf-qcm-texte">
@@ -238,6 +253,8 @@ export function QuestionQCMImage({
       image={head.image}
       images={head.images}
       numero={head.numero}
+      audioLabel={head.audioLabel}
+      audioFrame={head.audioFrame}
       enonceSlot={<Enonce {...head} blankStyle="dots" />}
     >
       <ul className={`tcf-qcm-images is-${choix.length}`}>
@@ -275,6 +292,8 @@ export function QuestionLignes({
       image={head.image}
       images={head.images}
       numero={head.numero}
+      audioLabel={head.audioLabel}
+      audioFrame={head.audioFrame}
       enonceSlot={
         <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
       }

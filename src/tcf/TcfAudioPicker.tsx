@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import {
+  TCF_AUDIO_TAG_COURT,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
   type TcfAudioEntry,
@@ -81,6 +82,13 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
   const type = tcfTypeMeta('CO', ex.type_exercice)?.label ?? ex.type_exercice
   const durationText = duration === undefined ? '…' : duration === null ? '—' : formatDuration(duration)
   const isScenario = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_SCENARIO)
+  const isCourt = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_COURT)
+  const tagBits = [
+    isScenario ? 'scénario' : '',
+    isCourt ? 'court' : '',
+  ]
+    .filter(Boolean)
+    .join(', ')
   return (
     <li ref={ref}>
       <button type="button" className="tcf-vocab-picker-item is-audio" onClick={() => onPick(entry)}>
@@ -88,7 +96,7 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
           <span className="tcf-vocab-picker-label">{entry.label}</span>
           <span className="tcf-vocab-picker-theme">
             Type : {type} · Durée : {durationText} · Niveau : {ex.niveau}
-            {isScenario ? ' · Tag : scénario' : ''}
+            {tagBits ? ` · Tag : ${tagBits}` : ''}
           </span>
           <span className="tcf-vocab-picker-theme">
             Scénario : {scenarioLabel(scenarioOf(entry))} · Scène : {tcfScene(ex)}
@@ -126,6 +134,7 @@ export function TcfAudioPicker({
   const [query, setQuery] = useState('')
   const [scenario, setScenario] = useState('')
   const [niveau, setNiveau] = useState('')
+  const [tag, setTag] = useState('')
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
@@ -152,9 +161,23 @@ export function TcfAudioPicker({
     return TCF_NIVEAUX.filter((n) => present.has(n.id))
   }, [entries])
 
+  const tagOptions = useMemo(() => {
+    const present = new Set<string>()
+    for (const e of entries) {
+      for (const t of e.tags) present.add(t)
+    }
+    return [
+      { id: TCF_AUDIO_TAG_COURT, label: 'court' },
+      { id: TCF_AUDIO_TAG_SCENARIO, label: 'scénario' },
+    ].filter((t) => present.has(t.id))
+  }, [entries])
+
   const hits = useMemo(() => {
     const pool = entries.filter(
-      (e) => (!scenario || scenarioOf(e) === scenario) && (!niveau || e.exercise.niveau === niveau),
+      (e) =>
+        (!scenario || scenarioOf(e) === scenario) &&
+        (!niveau || e.exercise.niveau === niveau) &&
+        (!tag || tcfAudioHasTag(e.tags, tag)),
     )
     const q = norm(query)
     if (!q) return pool
@@ -180,7 +203,7 @@ export function TcfAudioPicker({
     }
     scored.sort((a, b) => b.score - a.score || a.entry.label.localeCompare(b.entry.label, 'fr', { numeric: true }))
     return scored.map((s) => s.entry)
-  }, [entries, query, scenario, niveau])
+  }, [entries, query, scenario, niveau, tag])
 
   if (!open) return null
 
@@ -233,6 +256,21 @@ export function TcfAudioPicker({
             </option>
           ))}
         </select>
+        {tagOptions.length > 0 ? (
+          <select
+            className="pill-input tcf-vocab-picker-search"
+            value={tag}
+            aria-label="Filtrer par tag"
+            onChange={(e) => setTag(e.target.value)}
+          >
+            <option value="">Tous les tags</option>
+            {tagOptions.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+        ) : null}
         <p className="tcf-vocab-picker-theme" style={{ margin: 0 }}>
           {hits.length} audio{hits.length > 1 ? 's' : ''} · En choisissant un audio, les questions et la transcription
           de cet exercice sont chargées.

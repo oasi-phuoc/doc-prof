@@ -158,7 +158,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'six_courts',
     label: '6 audios courts',
-    description: 'Un audio court, avec une seule question.',
+    description: '6 pistes taguées « court » tirées au hasard, une question chacune (QCM texte).',
     instruction: 'Écoutez chaque extrait, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
