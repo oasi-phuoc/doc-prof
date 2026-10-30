@@ -296,7 +296,7 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
   )
 }
 
-/** CO : situations illustrées, « Situation n° … » sous chaque image ; corrigé = n° ou « — ». */
+/** CO : scènes illustrées, « Dialogue n° : ___ » (trait couleur) sous chaque image. */
 export function AssociationSituations({
   situations,
   mode,
@@ -305,15 +305,17 @@ export function AssociationSituations({
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
+  const n = situations.length
+  const gridClass = n >= 8 ? 'is-8' : n >= 6 ? 'is-6' : n === 4 ? 'is-4' : ''
   return (
-    <ul className="tcf-situations">
-      {situations.map((s) => (
-        <li key={s.lettre}>
-          <TcfImage src={s.image} alt={`Situation ${s.lettre}`} />
+    <ul className={`tcf-situations${gridClass ? ` ${gridClass}` : ''}`}>
+      {situations.map((s, i) => (
+        <li key={`${s.lettre}-${i}`}>
+          <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
           <span className="tcf-situation-foot">
-            <b>{s.lettre}.</b> Situation n°
+            <span className="tcf-dialogue-label">Dialogue n°&nbsp;:</span>
             <span className="answer-line-field compact tcf-situation-num">
-              {show ? (s.dialogue ?? '—') : ''}
+              {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
             </span>
           </span>
         </li>

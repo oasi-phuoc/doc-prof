@@ -184,9 +184,11 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeId: 'tcf-co-association',
     competence: 'CO',
     typeExercice: 'association_images',
-    label: 'Situations illustrées',
-    description: 'Écouter les dialogues déjà prêts et noter le numéro sous chaque situation.',
-    instruction: 'Observez les situations et écoutez les dialogues. Notez le numéro du dialogue sous l’image.',
+    label: 'Conversations / situations',
+    description:
+      '4 petits dialogues tirés au hasard parmi la banque, avec 6 ou 8 scènes (dont leurres). Notez le n° sous chaque image.',
+    instruction:
+      'Vous allez entendre 4 petits dialogues correspondant à 4 situations différentes. Associez chaque dialogue à une image. Attention : il y a 6 ou 8 images mais seulement 4 dialogues.',
     reponses: [],
   },
   // —— PE ——
