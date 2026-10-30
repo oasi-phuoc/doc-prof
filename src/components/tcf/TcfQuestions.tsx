@@ -6,7 +6,7 @@ import {
   countInlineBlanks,
   hasInlineBlank,
 } from '@/tcf/inline-blank'
-import type { TcfChoixRendu, TcfGrille, TcfLigneTableau } from '@/tcf/types'
+import type { TcfCadreQuestion, TcfChoixRendu, TcfGrille, TcfLigneTableau } from '@/tcf/types'
 import { TcfImage } from './TexteSupport'
 
 const INLINE_BLANK_RE = /_{3,}|_ _ _/g
@@ -110,6 +110,7 @@ function Enonce({
   points,
   blankAnswers,
   blankStyle = 'line',
+  showNumero = true,
 }: {
   numero: number
   /** Remplace le numéro (ex. « a » → « a. »). */
@@ -122,13 +123,15 @@ function Enonce({
   image?: string
   blankAnswers?: string
   blankStyle?: 'line' | 'dots'
+  /** Afficher le numéro (désactivé pour six courts seul dans le cadre). */
+  showNumero?: boolean
 }) {
   const fills = answersForInlineBlanks(blankAnswers, countInlineBlanks(enonce))
   const fillBlank = blankStyle === 'line' && isLabelBlankPrompt(enonce)
   const label = (numeroLabel ?? String(numero)).trim()
   return (
     <p className="tcf-enonce">
-      {audioFrame ? null : <span className="tcf-num">{label}.</span>}
+      {showNumero ? <span className="tcf-num">{label}.</span> : null}
       {audioLabel && !audioFrame ? <span className="tcf-audio-tag">{audioLabel}</span> : null}
       <span className={`tcf-enonce-text${fillBlank ? ' is-fill-blank' : ''}`}>
         {renderEnonceText(enonce, fills, blankStyle)}
@@ -206,6 +209,7 @@ type QuestionHead = {
   points?: number
   image?: string
   images?: string[]
+  showNumero?: boolean
 }
 
 export function QuestionQCMTexte({
@@ -224,7 +228,13 @@ export function QuestionQCMTexte({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
-      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+      enonceSlot={
+        <Enonce
+          {...head}
+          blankStyle="dots"
+          showNumero={head.showNumero ?? !head.audioFrame}
+        />
+      }
     >
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
@@ -255,7 +265,13 @@ export function QuestionQCMImage({
       numero={head.numero}
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
-      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+      enonceSlot={
+        <Enonce
+          {...head}
+          blankStyle="dots"
+          showNumero={head.showNumero ?? !head.audioFrame}
+        />
+      }
     >
       <ul className={`tcf-qcm-images is-${choix.length}`}>
         {choix.map((c) => (
@@ -295,7 +311,11 @@ export function QuestionLignes({
       audioLabel={head.audioLabel}
       audioFrame={head.audioFrame}
       enonceSlot={
-        <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
+        <Enonce
+          {...head}
+          blankAnswers={show && inline ? reponseModele : undefined}
+          showNumero={head.showNumero ?? !head.audioFrame}
+        />
       }
     >
       {tableau?.length ? (
@@ -316,6 +336,71 @@ export function QuestionLignes({
         <LignesReponse nbLignes={1} texte={reponseModele} />
       ) : null}
     </QuestionShell>
+  )
+}
+
+/** Cadre Audio N contenant plusieurs questions (trois audios moyens). */
+export function AudioCadre({
+  audioLabel,
+  questions,
+  mode,
+}: {
+  audioLabel: string
+  questions: TcfCadreQuestion[]
+  mode: PreviewMode
+}) {
+  return (
+    <div className="tcf-question is-audio-frame is-audio-cadre">
+      <span className="tcf-audio-frame-tag">{audioLabel}</span>
+      <div className="tcf-audio-cadre-body">
+        {questions.map((q) =>
+          q.kind === 'qcm' ? (
+            q.mode === 'image' ? (
+              <QuestionQCMImage
+                key={q.numero}
+                numero={q.numero}
+                numeroLabel={q.numeroLabel}
+                enonce={q.enonce}
+                choix={q.choix}
+                image={q.image}
+                images={q.images}
+                points={q.points}
+                showNumero
+                mode={mode}
+              />
+            ) : (
+              <QuestionQCMTexte
+                key={q.numero}
+                numero={q.numero}
+                numeroLabel={q.numeroLabel}
+                enonce={q.enonce}
+                choix={q.choix}
+                image={q.image}
+                images={q.images}
+                points={q.points}
+                showNumero
+                mode={mode}
+              />
+            )
+          ) : (
+            <QuestionLignes
+              key={q.numero}
+              numero={q.numero}
+              numeroLabel={q.numeroLabel}
+              enonce={q.enonce}
+              nbLignes={q.nbLignes}
+              reponseModele={q.reponseModele}
+              tableau={q.tableau}
+              image={q.image}
+              images={q.images}
+              points={q.points}
+              showNumero
+              mode={mode}
+            />
+          ),
+        )}
+      </div>
+    </div>
   )
 }
 
