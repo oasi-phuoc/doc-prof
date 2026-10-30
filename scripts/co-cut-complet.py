@@ -29,10 +29,67 @@ UNIT_RE = re.compile(
     r"(?:Document|Annonce|Dialogue(?:\s+numéro)?)\s+(\d+)",
     re.I,
 )
+# Annonces / messages numérotés « 1. … 2. … » (ex. DELF A2 pistes radio).
+NUMBERED_UNIT_RE = re.compile(r"(?m)^\s*(\d+)\.\s+\S")
 
 # Coupes manuelles (start, end) — 1ʳᵉ écoute seulement, pads inclus côté appelant.
 # Clé = id exercice. Valeurs = fenêtres brutes (speech) ; +PAD_AFTER_LAST à l’export.
 MANUAL_CUTS: dict[str, list[tuple[float, float]]] = {
+    # DELF A2 2021 — deux annonces dans un seul MP3
+    "delf-a2-2021-co-ex2-15": [
+        (4.0, 13.1),
+        (16.5, 23.5),
+    ],
+    # 1ʳᵉ écoute seulement (la piste rejoue l’annonce 1 après ~14 s)
+    "delf-a2-2021-co-ex1-33": [
+        (6.0, 13.5),
+        (38.5, 50.0),
+    ],
+    # Annonces courtes numérotées (après intro / bip « 1. »)
+    "delf-a2-2021-co-ex1-01": [
+        (29.0, 35.0),
+        (37.0, 42.0),
+        (44.0, 50.0),
+        (52.0, 58.5),
+    ],
+    "delf-a2-2021-co-ex1-02": [
+        (3.0, 7.0),
+        (10.0, 13.0),
+        (16.0, 20.0),
+        (23.0, 29.0),
+        (31.0, 37.0),
+    ],
+    "delf-a2-2021-co-ex1-03": [
+        (8.5, 19.8),
+        (23.0, 38.0),
+        (40.3, 61.8),
+        (68.0, 82.8),
+    ],
+    "delf-a2-2021-co-ex1-08": [
+        (3.5, 6.0),
+        (8.5, 12.0),
+        (14.5, 20.0),
+        (22.5, 27.5),
+    ],
+    "delf-a2-2021-co-ex3-17": [
+        (9.0, 17.0),
+        (19.0, 25.0),
+        (27.0, 35.0),
+        (37.0, 42.0),
+    ],
+    "delf-a2-2021-co-ex3-21": [
+        (4.0, 11.0),
+        (13.0, 20.0),
+        (22.0, 30.0),
+        (32.0, 38.5),
+    ],
+    "delf-a2-2021-co-ex3-23": [
+        (3.5, 11.5),
+        (14.0, 18.5),
+        (20.5, 26.5),
+        (29.5, 35.0),
+        (38.0, 43.0),
+    ],
     # Annonces compactes (1 écoute)
     "tcf-a2j-s1-co-1": [
         (4.5, 16.4),
@@ -278,8 +335,21 @@ def clean_transcription(text: str) -> str:
     return t.strip()
 
 
+def numbered_units_in_text(text: str) -> list[int]:
+    """Suite 1..n si la transcription est une liste « 1. … 2. … ».
+
+    Plafond 8 : au-delà, souvent une grille Q/R d’entretien (pistes 47/49),
+    pas des documents audio distincts à découper.
+    """
+    found = [int(m.group(1)) for m in NUMBERED_UNIT_RE.finditer(text or "")]
+    if len(found) < 2 or len(found) > 8:
+        return []
+    expected = list(range(1, len(found) + 1))
+    return expected if found == expected else []
+
+
 def document_nums(ex: dict) -> list[int]:
-    """N° d’unités (Document / Annonce / Dialogue) présents dans l’exercice."""
+    """N° d’unités (Document / Annonce / Dialogue / liste 1. 2.) présents dans l’exercice."""
     nums: list[int] = []
 
     def add(n: int) -> None:
@@ -303,6 +373,12 @@ def document_nums(ex: dict) -> list[int]:
     text = "\n".join(tr) if isinstance(tr, list) else str(tr)
     for m in UNIT_RE.finditer(text):
         add(int(m.group(1)))
+    if len(nums) >= 2:
+        return sorted(nums)
+
+    numbered = numbered_units_in_text(text)
+    if numbered:
+        return numbered
     return sorted(nums)
 
 
@@ -332,6 +408,15 @@ def split_bank_transcription(tr: str | list, n: int) -> list[str] | None:
             return parts[:n]
         if len(parts) >= n:
             return parts[:n]
+    # Liste « 1. … 2. … »
+    if NUMBERED_UNIT_RE.search(text):
+        parts = re.split(r"(?m)^\s*\d+\.\s+", text)
+        parts = [clean_transcription(p) for p in parts if p.strip()]
+        parts = [re.sub(r"\s+", " ", p).strip() for p in parts]
+        parts = [p for p in parts if len(p) > 12]
+        if len(parts) >= n:
+            return parts[:n]
+
     # Paragraphes (annonces collège sans labels)
     paras = [clean_transcription(p) for p in re.split(r"\n\s*\n", text) if p.strip()]
     paras = [p for p in paras if len(p) > 20]

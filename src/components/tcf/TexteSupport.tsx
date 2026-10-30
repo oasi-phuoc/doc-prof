@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { PreviewMode } from '@/math/types'
 import {
   associationAnswersFromExercise,
@@ -57,10 +58,15 @@ function EmailBox({ de, a, objet, texte }: { de: string; a?: string; objet: stri
 
 function TcfImage({ src, alt, className = 'tcf-image' }: { src: string; alt: string; className?: string }) {
   const resolved = tcfImageSrc(src)
-  return resolved ? (
-    <img className={className} src={resolved} alt={alt} />
-  ) : (
-    <span className={`${className} is-empty`} aria-hidden />
+  const [failed, setFailed] = useState(false)
+  if (!resolved || failed) return null
+  return (
+    <img
+      className={className}
+      src={resolved}
+      alt={alt}
+      onError={() => setFailed(true)}
+    />
   )
 }
 
