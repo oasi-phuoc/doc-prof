@@ -75,7 +75,9 @@ export function ItemView({
   oralAnswerMode,
   onCycleOralAnswerMode,
   tcfFormMode,
+  tcfFormModes,
   onSelectTcfForm,
+  onSelectTcfFormAt,
   tcfPageBreakBefore,
   onToggleTcfPageBreak,
   hideTcfFormIcons = false,
@@ -96,7 +98,11 @@ export function ItemView({
   onCycleOralAnswerMode?: () => void
   /** TCF : forme active Texte / Image / Phrase. */
   tcfFormMode?: TcfTypeReponse
+  /** Modes par index global (cadres multi-questions). */
+  tcfFormModes?: Array<TcfTypeReponse | undefined>
   onSelectTcfForm?: (form: TcfTypeReponse) => void
+  /** TCF : sélection de forme par index global (ex. questions dans un cadre Audio). */
+  onSelectTcfFormAt?: (modeIndex: number, form: TcfTypeReponse) => void
   /** TCF : cette question (et les suivantes) commence une nouvelle page. */
   tcfPageBreakBefore?: boolean
   onToggleTcfPageBreak?: () => void
@@ -338,6 +344,8 @@ export function ItemView({
             item={item}
             mode={mode}
             tcfFormMode={tcfActiveForm}
+            tcfFormModes={tcfFormModes}
+            onSelectTcfFormAt={onSelectTcfFormAt}
             formulaireLetterGrid={formulaireLetterGrid}
             hideMotsBanque={hideMotsBanque}
           />

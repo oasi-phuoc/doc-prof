@@ -307,6 +307,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     const typeId = activeBlock.exerciseType
                     const n = tcfCoComposeQuestionCount(typeId, activeBlock.tcfQuestionCount)
                     const canDiff = tcfCoCanDifferentiatePoints(typeId)
+                    const byImage = tcfCoAudioSlotCount(typeId) === 4
+                    const pointsLabel = byImage ? 'Points par image' : 'Points par question'
                     const differentiated =
                       canDiff &&
                       Array.isArray(activeBlock.tcfQuestionPoints) &&
@@ -327,20 +329,20 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         · total du test : {formatPointsLabel(sheetTotalPoints)}
                       </small>
                     )
-                    // Ex. 4 (images) : toujours une ligne par image.
-                    if (!canDiff || differentiated) {
-                      return (
-                        <>
-                          <div className="tcf-question-points-head">
-                            <b>
-                              {tcfCoAudioSlotCount(typeId) === 4
-                                ? 'Points par image'
-                                : 'Points par question'}
-                            </b>
-                            {canDiff ? (
+                    return (
+                      <>
+                        {canDiff ? (
+                          <div className="mode-toggle-block">
+                            <b>{pointsLabel}</b>
+                            <div
+                              className="mode-toggle"
+                              role="group"
+                              aria-label={`${pointsLabel} : identiques ou différents`}
+                            >
                               <button
                                 type="button"
-                                className="text-link"
+                                className={!differentiated ? 'active' : undefined}
+                                aria-pressed={!differentiated}
                                 onClick={() =>
                                   updatePage({
                                     tcfQuestionPoints: undefined,
@@ -348,13 +350,31 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                                   })
                                 }
                               >
-                                Uniforme
+                                Identiques
                               </button>
-                            ) : null}
+                              <button
+                                type="button"
+                                className={differentiated ? 'active' : undefined}
+                                aria-pressed={differentiated}
+                                onClick={() =>
+                                  updatePage({
+                                    tcfQuestionPoints: Array.from({ length: n }, () => uniform),
+                                  })
+                                }
+                              >
+                                Différents
+                              </button>
+                            </div>
                           </div>
-                          {Array.from({ length: n }, (_, i) => {
+                        ) : (
+                          <b>{pointsLabel}</b>
+                        )}
+                        {differentiated ? (
+                          Array.from({ length: n }, (_, i) => {
                             const pts =
-                              activeBlock.tcfQuestionPoints?.[i] ?? activeBlock.pointsPerQuestion ?? 1
+                              activeBlock.tcfQuestionPoints?.[i] ??
+                              activeBlock.pointsPerQuestion ??
+                              1
                             const rowLabel = tcfCoPointsRowLabel(typeId, i)
                             return (
                               <label className="select-shell" key={`q-pts-${i}`}>
@@ -385,44 +405,34 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                                 />
                               </label>
                             )
-                          })}
-                          {totalHint}
-                        </>
-                      )
-                    }
-                    // Ex. 1 / 2 / 3 : 1 point uniforme par défaut, bouton pour différencier.
-                    return (
-                      <>
-                        <label className="select-shell">
-                          <span>Points par question</span>
-                          <input
-                            className="pill-input"
-                            type="number"
-                            inputMode="decimal"
-                            min={0.5}
-                            max={20}
-                            step={0.5}
-                            aria-label="Points par question"
-                            value={uniform}
-                            onChange={(event) => {
-                              const raw = Number(event.target.value.replace(',', '.'))
-                              if (!Number.isFinite(raw)) return
-                              const next = Math.max(0.5, Math.min(20, Math.round(raw * 2) / 2))
-                              updatePage({ pointsPerQuestion: next, tcfQuestionPoints: undefined })
-                            }}
-                          />
-                        </label>
-                        <button
-                          type="button"
-                          className="text-link"
-                          onClick={() =>
-                            updatePage({
-                              tcfQuestionPoints: Array.from({ length: n }, () => uniform),
-                            })
-                          }
-                        >
-                          Différencier par question
-                        </button>
+                          })
+                        ) : (
+                          <label className="select-shell">
+                            <span className="visually-hidden">{pointsLabel}</span>
+                            <input
+                              className="pill-input"
+                              type="number"
+                              inputMode="decimal"
+                              min={0.5}
+                              max={20}
+                              step={0.5}
+                              aria-label={pointsLabel}
+                              value={uniform}
+                              onChange={(event) => {
+                                const raw = Number(event.target.value.replace(',', '.'))
+                                if (!Number.isFinite(raw)) return
+                                const next = Math.max(
+                                  0.5,
+                                  Math.min(20, Math.round(raw * 2) / 2),
+                                )
+                                updatePage({
+                                  pointsPerQuestion: next,
+                                  tcfQuestionPoints: undefined,
+                                })
+                              }}
+                            />
+                          </label>
+                        )}
                         {totalHint}
                       </>
                     )

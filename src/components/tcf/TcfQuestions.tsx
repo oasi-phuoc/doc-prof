@@ -6,7 +6,14 @@ import {
   countInlineBlanks,
   hasInlineBlank,
 } from '@/tcf/inline-blank'
-import type { TcfCadreQuestion, TcfChoixRendu, TcfGrille, TcfLigneTableau } from '@/tcf/types'
+import type {
+  TcfCadreQuestion,
+  TcfChoixRendu,
+  TcfGrille,
+  TcfLigneTableau,
+  TcfTypeReponse,
+} from '@/tcf/types'
+import { TcfFormMarginIcons } from './TcfFormIcons'
 import { TcfImage } from './TexteSupport'
 
 const INLINE_BLANK_RE = /_{3,}|_ _ _/g
@@ -344,37 +351,67 @@ export function AudioCadre({
   audioLabel,
   questions,
   mode,
+  onSelectForm,
 }: {
   audioLabel: string
   questions: TcfCadreQuestion[]
   mode: PreviewMode
+  onSelectForm?: (modeIndex: number, form: TcfTypeReponse) => void
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
       <span className="tcf-audio-frame-tag">{audioLabel}</span>
       <div className="tcf-audio-cadre-body">
-        {questions.map((q) =>
-          q.kind === 'qcm' ? (
-            q.mode === 'image' ? (
-              <QuestionQCMImage
-                key={q.numero}
-                numero={q.numero}
-                numeroLabel={q.numeroLabel}
-                enonce={q.enonce}
-                choix={q.choix}
-                image={q.image}
-                images={q.images}
-                points={q.points}
-                showNumero
-                mode={mode}
+        {questions.map((q) => {
+          const formSelect = q.formSelect
+          const active = formSelect?.active
+          const formIcons =
+            onSelectForm && formSelect && active && q.formModeIndex != null ? (
+              <TcfFormMarginIcons
+                filled={formSelect.filled}
+                active={active}
+                layout="inline"
+                onSelect={(form) => onSelectForm(q.formModeIndex!, form)}
               />
+            ) : null
+          const body =
+            q.kind === 'qcm' ? (
+              q.mode === 'image' ? (
+                <QuestionQCMImage
+                  key={q.numero}
+                  numero={q.numero}
+                  numeroLabel={q.numeroLabel}
+                  enonce={q.enonce}
+                  choix={q.choix}
+                  image={q.image}
+                  images={q.images}
+                  points={q.points}
+                  showNumero
+                  mode={mode}
+                />
+              ) : (
+                <QuestionQCMTexte
+                  key={q.numero}
+                  numero={q.numero}
+                  numeroLabel={q.numeroLabel}
+                  enonce={q.enonce}
+                  choix={q.choix}
+                  image={q.image}
+                  images={q.images}
+                  points={q.points}
+                  showNumero
+                  mode={mode}
+                />
+              )
             ) : (
-              <QuestionQCMTexte
+              <QuestionLignes
                 key={q.numero}
                 numero={q.numero}
                 numeroLabel={q.numeroLabel}
                 enonce={q.enonce}
-                choix={q.choix}
+                nbLignes={q.nbLignes}
+                reponseModele={q.reponseModele}
+                tableau={q.tableau}
                 image={q.image}
                 images={q.images}
                 points={q.points}
@@ -382,23 +419,13 @@ export function AudioCadre({
                 mode={mode}
               />
             )
-          ) : (
-            <QuestionLignes
-              key={q.numero}
-              numero={q.numero}
-              numeroLabel={q.numeroLabel}
-              enonce={q.enonce}
-              nbLignes={q.nbLignes}
-              reponseModele={q.reponseModele}
-              tableau={q.tableau}
-              image={q.image}
-              images={q.images}
-              points={q.points}
-              showNumero
-              mode={mode}
-            />
-          ),
-        )}
+          return (
+            <div key={q.numero} className="tcf-audio-cadre-q">
+              {formIcons}
+              {body}
+            </div>
+          )
+        })}
       </div>
     </div>
   )

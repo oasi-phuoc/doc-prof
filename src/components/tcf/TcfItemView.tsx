@@ -1,5 +1,5 @@
 import type { MathItem, PreviewMode } from '@/math/types'
-import type { TcfSheetItem, TcfTypeReponse } from '@/tcf/types'
+import type { TcfCadreQuestion, TcfSheetItem, TcfTypeReponse } from '@/tcf/types'
 import { TcfInformations } from './TcfInformations'
 import { TexteSupport } from './TexteSupport'
 import { DialoguePO, FormulairePE, ZoneEcriture } from './TcfProduction'
@@ -49,6 +49,44 @@ function withActiveForm(tcf: TcfSheetItem, formMode?: TcfTypeReponse): TcfSheetI
   }
 }
 
+/** Même logique pour une question dans un cadre Audio (trois moyens). */
+function withCadreActiveForm(
+  q: TcfCadreQuestion,
+  formMode?: TcfTypeReponse,
+): TcfCadreQuestion {
+  const fs = q.formSelect
+  if (!fs) return q
+  const active = formMode && fs.filled.includes(formMode) ? formMode : fs.active
+  const variant = fs.variants[active]
+  if (!variant) return { ...q, formSelect: { ...fs, active } }
+  const head = {
+    numero: q.numero,
+    numeroLabel: q.numeroLabel,
+    enonce: q.enonce,
+    image: q.image,
+    images: q.images,
+    formSelect: { ...fs, active },
+    formModeIndex: q.formModeIndex,
+    points: q.points,
+    answer: q.answer,
+  }
+  if (variant.kind === 'lignes') {
+    return {
+      kind: 'lignes',
+      ...head,
+      nbLignes: variant.nbLignes ?? 2,
+      reponseModele: variant.reponseModele,
+      tableau: variant.tableau,
+    }
+  }
+  return {
+    kind: 'qcm',
+    ...head,
+    mode: variant.mode ?? 'texte',
+    choix: variant.choix ?? [],
+  }
+}
+
 /**
  * Rendu d’un item TCF (layout `tcf`). Fiche élève et corrigé partagent
  * les mêmes items (mêmes choix mélangés) : seul `mode` change.
@@ -57,12 +95,17 @@ export function TcfItemView({
   item,
   mode,
   tcfFormMode,
+  tcfFormModes,
+  onSelectTcfFormAt,
   formulaireLetterGrid,
   hideMotsBanque,
 }: {
   item: MathItem
   mode: PreviewMode
   tcfFormMode?: TcfTypeReponse
+  /** Modes par index global (ex. 2 : questions dans les cadres). */
+  tcfFormModes?: Array<TcfTypeReponse | undefined>
+  onSelectTcfFormAt?: (modeIndex: number, form: TcfTypeReponse) => void
   formulaireLetterGrid?: boolean
   hideMotsBanque?: boolean
 }) {
@@ -86,8 +129,25 @@ export function TcfItemView({
       )
     case 'lignes':
       return <QuestionLignes {...tcf} points={points} mode={mode} />
-    case 'audio_cadre':
-      return <AudioCadre audioLabel={tcf.audioLabel} questions={tcf.questions} mode={mode} />
+    case 'audio_cadre': {
+      const questions = tcf.questions.map((q) => {
+        const idx = q.formModeIndex
+        const override = idx != null ? tcfFormModes?.[idx] : undefined
+        return withCadreActiveForm(q, override)
+      })
+      return (
+        <AudioCadre
+          audioLabel={tcf.audioLabel}
+          questions={questions}
+          mode={mode}
+          onSelectForm={
+            onSelectTcfFormAt
+              ? (modeIndex, form) => onSelectTcfFormAt(modeIndex, form)
+              : undefined
+          }
+        />
+      )
+    }
     case 'images_a_cocher':
       return <ImagesACocher {...tcf} mode={mode} />
     case 'association':

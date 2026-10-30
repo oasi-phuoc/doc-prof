@@ -341,6 +341,8 @@ export type TcfCadreQuestion =
       image?: string
       images?: string[]
       formSelect?: TcfFormSelect
+      /** Index dans `tcfFormModes` (question globale, 1-based). */
+      formModeIndex?: number
       points?: number
       answer: string
     }
@@ -355,6 +357,8 @@ export type TcfCadreQuestion =
       images?: string[]
       tableau?: TcfLigneTableau[]
       formSelect?: TcfFormSelect
+      /** Index dans `tcfFormModes` (question globale, 1-based). */
+      formModeIndex?: number
       points?: number
       answer: string
     }

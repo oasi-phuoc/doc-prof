@@ -32,6 +32,7 @@ import { melangerChoix } from './melanger'
 import { TCF_PE_GROUPS, TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { emptyTcfExercise, TCF_LETTRES, TCF_LETTRES_SITUATIONS, tcfExerciseId } from './templates'
 import type {
+  TcfCadreQuestion,
   TcfChoixImage,
   TcfChoixRendu,
   TcfChoixTexte,
@@ -166,6 +167,86 @@ function questionItem(
   )
 }
 
+/** Contenu d’une question pour un cadre multi-questions (trois moyens). */
+function cadreQuestionInner(
+  q: TcfQuestion,
+  localNumero: number,
+  rng: Rng,
+  activeOverride: TcfTypeReponse | undefined,
+  competence: TcfCompetence,
+  exerciseId: string,
+  /** Index dans `tcfFormModes` (n° de question globale, 1-based). */
+  formModeIndex: number,
+): TcfCadreQuestion {
+  const filled = filledForms(q)
+  const active =
+    activeOverride && filled.includes(activeOverride)
+      ? activeOverride
+      : defaultQuestionForm(q, filled, competence, exerciseId)
+  const resolved = resolveQuestionForm(q, active)
+  const variants: TcfFormSelect['variants'] = {}
+  for (const form of filled) {
+    const variantQ = resolveQuestionForm(q, form)
+    variants[form] = buildFormVariant(variantQ, rng)
+  }
+  const formSelect: TcfFormSelect | undefined =
+    filled.length > 0
+      ? { active: resolved.type_reponse, filled, variants }
+      : undefined
+  const variant = variants[resolved.type_reponse] ?? buildFormVariant(resolved, rng)
+  if (variant.kind === 'lignes') {
+    return {
+      kind: 'lignes',
+      numero: localNumero,
+      numeroLabel: resolved.numero_label,
+      enonce: resolved.enonce,
+      nbLignes: variant.nbLignes ?? 2,
+      reponseModele: variant.reponseModele,
+      image: resolved.image,
+      images: resolved.images,
+      tableau: variant.tableau,
+      formSelect,
+      formModeIndex,
+      points: resolved.points,
+      answer: variant.answer,
+    }
+  }
+  return {
+    kind: 'qcm',
+    numero: localNumero,
+    numeroLabel: resolved.numero_label,
+    enonce: resolved.enonce,
+    mode: variant.mode ?? 'texte',
+    choix: variant.choix ?? [],
+    image: resolved.image,
+    images: resolved.images,
+    formSelect,
+    formModeIndex,
+    points: resolved.points,
+    answer: variant.answer,
+  }
+}
+
+/** Grouper les questions par n° d’audio (ordre d’apparition). */
+function groupQuestionsByAudio(questions: readonly TcfQuestion[]): Array<{
+  audio: number
+  questions: TcfQuestion[]
+}> {
+  const groups: Array<{ audio: number; questions: TcfQuestion[] }> = []
+  const indexByAudio = new Map<number, number>()
+  for (const q of questions) {
+    const audio = q.audio ?? groups.length + 1
+    const existing = indexByAudio.get(audio)
+    if (existing == null) {
+      indexByAudio.set(audio, groups.length)
+      groups.push({ audio, questions: [q] })
+    } else {
+      groups[existing]!.questions.push(q)
+    }
+  }
+  return groups
+}
+
 /** Exercice → items de la fiche (support puis questions / zones de réponse). */
 export function tcfExerciseItems(
   ex: TcfExercise,
@@ -203,25 +284,36 @@ export function tcfExerciseItems(
       ]
     }
     case 'trois_moyens': {
-      // Comme ex. 1 : une question = un cadre Audio N (formats QCM/texte en marge).
-      // Deux questions partagent le même libellé Audio N (q.audio).
+      // Un cadre Audio N = 2 questions (3 cadres). formModes indexés sur les questions globales.
+      const groups = groupQuestionsByAudio(ex.questions)
+      let globalIndex = 0
       return [
         support(),
-        ...ex.questions.map((q, i) => {
-          const item = questionItem(
-            q,
-            i + 1,
-            rng,
-            formModes?.[i + 1],
-            ex.competence,
-            ex.id,
+        ...groups.map((group) => {
+          const inner = group.questions.map((q, local) => {
+            globalIndex += 1
+            return cadreQuestionInner(
+              q,
+              local + 1,
+              rng,
+              formModes?.[globalIndex],
+              ex.competence,
+              ex.id,
+              globalIndex,
+            )
+          })
+          const answer = inner.map((q) => q.answer).filter(Boolean).join(' · ')
+          const points = inner.reduce((sum, q) => sum + (q.points ?? 0), 0) || undefined
+          return tcfItem(
+            {
+              kind: 'audio_cadre',
+              audioLabel: `Audio ${group.audio}`,
+              questions: inner,
+            },
             true,
+            answer,
+            points,
           )
-          // Numéro visible dans le cadre (2 questions par audio).
-          if (item.tcf && (item.tcf.kind === 'qcm' || item.tcf.kind === 'lignes')) {
-            return { ...item, tcf: { ...item.tcf, showNumero: true } }
-          }
-          return item
         }),
       ]
     }

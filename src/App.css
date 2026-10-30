@@ -4222,13 +4222,13 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-audio-tag{display:inline-block;margin-right:6px;padding:0 6px;border:1px solid var(--ink);border-radius:4px;font-size:.8em;font-weight:700}
 /* Six courts / trois moyens : cadres Audio N. */
 .tcf-question.is-audio-frame{
-  position:relative;margin-top:10px;padding:10px 8px 8px;
+  position:relative;margin-top:20px;padding:10px 8px 8px;
   border:1.5px solid var(--ink);box-sizing:border-box;width:100%;max-width:100%
 }
 .tcf-audio-frame-tag{
   position:absolute;top:0;left:8px;right:auto;transform:translateY(-50%);
-  display:inline-block;padding:0 7px;border:1.5px solid var(--ink);background:#fff;
-  font-size:.78em;font-weight:800;line-height:1.35;white-space:nowrap;z-index:1;
+  display:inline-block;padding:0 7px;border:1.5px solid var(--purple);background:#fff;
+  color:var(--purple);font-size:.78em;font-weight:800;line-height:1.35;white-space:nowrap;z-index:1;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
 .tcf-question.is-audio-frame .tcf-enonce{font-weight:600;font-size:.95em;line-height:1.3}
@@ -4236,17 +4236,13 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-question.is-audio-frame .tcf-qcm-texte li{gap:6px;font-size:.92em;line-height:1.25}
 /* Trois moyens : plusieurs questions dans le même cadre. */
 .tcf-audio-cadre-body{display:flex;flex-direction:column;gap:8px}
+.tcf-audio-cadre-q{display:flex;flex-direction:column;gap:4px}
+.tcf-audio-cadre-q .tcf-inline-form-icons{align-self:flex-start;margin:0 0 2px}
 .tcf-question.is-audio-cadre .tcf-question{margin-top:0;border:0;padding:0}
 .tcf-question.is-audio-cadre .tcf-question .tcf-audio-frame-tag{display:none}
-/* Paramètres : points individuels CO ex. 1–3 (uniforme ↔ différencier). */
+/* Paramètres : points CO Identiques / Différents. */
 .tcf-question-points{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
-.tcf-question-points>b,.tcf-question-points-head>b{font-size:.92em}
-.tcf-question-points-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.tcf-question-points .text-link{
-  align-self:flex-start;border:0;background:transparent;padding:0;cursor:pointer;
-  color:var(--purple);font-weight:700;font-size:calc(12px * var(--app-font-scale, 1));text-align:left
-}
-.tcf-question-points .text-link:hover{text-decoration:underline}
+.tcf-question-points>b,.tcf-question-points .mode-toggle-block>b{font-size:.92em}
 .tcf-co-audio-slots{display:flex;flex-direction:column;gap:8px}
 .tcf-qcm-texte{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .tcf-qcm-texte li{display:flex;align-items:center;gap:8px}
@@ -4261,12 +4257,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 /* CO objets A1 : 2 images / ligne, 5ᵉ centrée ; Oui / Non sous chaque image. */
 .tcf-images-cocher{
   list-style:none;margin:0;padding:0;width:100%;
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px;
   justify-items:stretch
 }
 .tcf-images-cocher li{
   position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;
-  margin-top:8px;padding:12px 8px 8px;border:1.5px solid var(--ink);box-sizing:border-box;min-width:0;width:100%
+  margin-top:16px;padding:12px 8px 8px;border:1.5px solid var(--ink);box-sizing:border-box;min-width:0;width:100%
 }
 .tcf-images-cocher li:last-child:nth-child(odd){
   grid-column:1 / -1;justify-self:center;width:calc((100% - 14px) / 2);max-width:100%
@@ -4427,18 +4423,18 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-tableau th,.tcf-tableau td{border:1px solid var(--ink);padding:0 10px;height:9mm;text-align:left}
 .tcf-tableau th{width:55%;font-weight:600}
 .tcf-tableau td{font-weight:600;color:var(--purple)}
-.tcf-situations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 12px}
+.tcf-situations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px 12px}
 .tcf-situations.is-4{grid-template-columns:repeat(2,1fr)}
 .tcf-situations.is-6{grid-template-columns:repeat(2,1fr)} /* 2 images / ligne × 3 */
 .tcf-situations.is-8{grid-template-columns:repeat(4,1fr)}
 .tcf-situations li{
   position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;
-  margin-top:8px;padding:12px 8px 8px;border:1.5px solid var(--ink);box-sizing:border-box
+  margin-top:16px;padding:12px 8px 8px;border:1.5px solid var(--ink);box-sizing:border-box
 }
 .tcf-situations .tcf-audio-frame-tag{left:8px}
 .tcf-situations .tcf-image{height:36mm}
 .tcf-situations.is-6 .tcf-image{height:42mm}
-.tcf-situation-foot{display:flex;align-items:flex-end;gap:4px;width:100%;justify-content:flex-start}
+.tcf-situation-foot{display:flex;align-items:flex-end;justify-content:center;gap:4px;width:100%}
 .tcf-dialogue-label{flex:0 0 auto;font-size:.92em;font-weight:600;color:var(--ink);white-space:nowrap}
 .tcf-situation-num{
   flex:0 0 50px;width:50px;min-width:50px;max-width:50px;

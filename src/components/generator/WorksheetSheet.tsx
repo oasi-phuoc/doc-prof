@@ -407,12 +407,20 @@ export function WorksheetSheet({
                   const isTcfQuestion =
                     item.layout === 'tcf' &&
                     (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')
+                  const isTcfAudioCadre =
+                    item.layout === 'tcf' && item.tcf?.kind === 'audio_cadre'
                   const showMarginForms =
                     interactiveTcfOptions &&
                     isTcfQuestion &&
                     !dualForm &&
                     (marginForm || !parseGramExerciseType(block.exerciseType))
+                  const showCadreForms =
+                    interactiveTcfOptions &&
+                    isTcfAudioCadre &&
+                    !dualForm &&
+                    (marginForm || !parseGramExerciseType(block.exerciseType))
                   const isFormulaireItem = item.layout === 'tcf' && item.tcf?.kind === 'formulaire'
+                  const itemOffset = block.itemOffset ?? 0
                   return (
                     <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
@@ -433,10 +441,21 @@ export function WorksheetSheet({
                           : undefined
                       }
                       tcfFormMode={isTcfQuestion ? tcfFormMode : undefined}
+                      tcfFormModes={
+                        isTcfAudioCadre
+                          ? (block.tcfFormModes ?? page.tcfFormModes)
+                          : undefined
+                      }
                       hideTcfFormIcons={dualForm || !showMarginForms}
                       onSelectTcfForm={
                         showMarginForms && onSelectTcfForm
                           ? (form) => onSelectTcfForm(index, form, blockIndex)
+                          : undefined
+                      }
+                      onSelectTcfFormAt={
+                        showCadreForms && onSelectTcfForm
+                          ? (modeIndex, form) =>
+                              onSelectTcfForm(modeIndex - itemOffset, form, blockIndex)
                           : undefined
                       }
                       tcfPageBreakBefore={isTcfQuestion ? tcfPageBreakBefore : undefined}
