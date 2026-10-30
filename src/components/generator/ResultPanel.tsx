@@ -213,7 +213,7 @@ export function ResultPanel({
                     aria-label="Télécharger tous les audios de la fiche"
                     title={
                       isTcf || isGrammaireExercise
-                        ? 'Télécharger tous les audios de la fiche'
+                        ? 'Télécharger les pistes groupées (consignes + audios)'
                         : isTcmCfr
                           ? 'Télécharger les audios (nombres et multiplications)'
                           : isSoutienCompleter

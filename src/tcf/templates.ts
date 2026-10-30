@@ -115,7 +115,7 @@ export function emptyTcfExercise(
         competence: 'CO',
         type_exercice: 'association_images',
         consigne:
-          'Vous allez entendre 4 petits dialogues, correspondant à 4 situations différentes. Associez chaque audio à une image. Attention : il y a 6 images mais seulement 4 audios. Notez le numéro de l’audio sous chaque image (Audio n° : ___).',
+          'Vous allez entendre quatre petits dialogues correspondant à quatre situations différentes. Il y a 15 secondes de pause après chaque dialogue. Notez, sous chaque image, le numéro du dialogue qui correspond. Puis vous allez entendre à nouveau les dialogues. Vous pouvez compléter vos réponses. Regardez les images. Attention, il y a six images (A, B, C, D, E et F) mais seulement quatre dialogues.',
         support: { audios: [], nb_dialogues: 4, transcription: [] },
         situations: Array.from({ length: 6 }, (_, i) => ({ id: `s${i + 1}`, image: '', dialogue: null })),
       }

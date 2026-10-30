@@ -222,9 +222,10 @@ export function drawAssociationCompose(
     scenario: 'vie-quotidienne',
     scene: 'Situations illustrées',
     consigne:
-      `Vous allez entendre 4 petits dialogues, correspondant à 4 situations différentes. ` +
-      `Associez chaque audio à une image. Attention : il y a 6 images mais seulement 4 audios. ` +
-      `Notez le numéro de l’audio sous l’image (Audio n° : ___).`,
+      `Vous allez entendre quatre petits dialogues correspondant à quatre situations différentes. ` +
+      `Il y a 15 secondes de pause après chaque dialogue. Notez, sous chaque image, le numéro du dialogue qui correspond. ` +
+      `Puis vous allez entendre à nouveau les dialogues. Vous pouvez compléter vos réponses. Regardez les images. ` +
+      `Attention, il y a six images (A, B, C, D, E et F) mais seulement quatre dialogues.`,
     points: 6,
     support: {
       nb_dialogues: 4,
@@ -264,7 +265,9 @@ export function drawSixCourtsCompose(
     theme: 'Mini-audios',
     scenario: 'vie-quotidienne',
     scene: 'Six extraits courts',
-    consigne: 'Écoutez chaque extrait, puis répondez aux questions.',
+    consigne:
+      'Vous allez écouter six documents différents. Il y a 2 écoutes. ' +
+      'Avant chaque écoute, vous entendez le son suivant. Lisez les questions. Écoutez le document puis répondez.',
     points: 6,
     support: { audios: picked.map((e) => e.audio) },
     questions,
@@ -303,7 +306,9 @@ export function drawTroisMoyensCompose(
     theme: 'Audios moyens',
     scenario: 'vie-quotidienne',
     scene: 'Trois extraits moyens',
-    consigne: 'Écoutez chaque extrait, puis répondez aux questions.',
+    consigne:
+      'Vous allez écouter trois documents différents. Il y a 2 écoutes. ' +
+      'Avant chaque écoute, vous entendez le son suivant. Lisez les questions. Écoutez le document puis répondez.',
     points: 6,
     support: { audios: picked.map((e) => e.audio) },
     questions,
@@ -342,7 +347,9 @@ export function drawUnLongCompose(
     theme: entry.exercise.theme ?? 'Document audio',
     scenario: entry.exercise.scenario ?? 'vie-quotidienne',
     scene: entry.label,
-    consigne: 'Écoutez le document, puis répondez aux questions.',
+    consigne:
+      'Vous allez écouter un seul document. Il y a 2 écoutes. ' +
+      'Avant chaque écoute, vous entendez le son suivant. Lisez les questions. Écoutez le document, puis répondez.',
     points: n,
     support: { audio: entry.audio, transcription },
     questions: chosen,
