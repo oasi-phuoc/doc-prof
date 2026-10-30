@@ -152,7 +152,11 @@ function fillQuestion(
   preferQcm: boolean,
   image?: string,
 ): TcfQuestion {
-  const lignesForme = { nb_lignes: 0 as const, reponse_modele: answer }
+  const inline = /_{3,}/.test(enonce)
+  const lignesForme = {
+    nb_lignes: inline ? (0 as const) : (1 as const),
+    reponse_modele: answer,
+  }
   const choix = options.slice(0, 3).map((texte, index) => ({
     id: CHOICE_IDS[index] ?? `c${index}`,
     texte,
@@ -319,7 +323,7 @@ export function buildNationaliteExercise(opts: {
         const answer = fem ? nat.f : nat.m
         const other = fem ? nat.m : nat.f
         const options = spellingOptions(answer, other === answer ? pluralOf(answer) : other, rng)
-        return fillQuestion('Je suis ___.', answer, options, true, imageSrc(answer))
+        return fillQuestion('Je suis', answer, options, true, imageSrc(answer))
       })
       return wrap(typeId, 'Observez l’image. Complétez la phrase.', {
         id: '',

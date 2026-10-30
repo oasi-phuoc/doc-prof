@@ -27,6 +27,7 @@ import {
   isGramMarginFormExercise,
 } from '@/grammaire/exercises/qui-suis-je-ui'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
+import { clampInlineBlankPx } from '@/tcf/inline-blank'
 
 /** Audios du corrigé : figés sur le bloc, sinon recalculés depuis les items. */
 function blockCorrigeAudios(block: WorksheetBlock): string[] {
@@ -49,6 +50,8 @@ export function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
       exerciseType: page.exerciseType,
       givens: page.givens,
       problemDraftGrids: page.problemDraftGrids,
+      formulaireLetterGrid: page.formulaireLetterGrid,
+      inlineBlankPx: page.inlineBlankPx,
       oralAnswerModes: page.oralAnswerModes,
     },
   ]
@@ -235,8 +238,18 @@ export function WorksheetSheet({
             parseGramExerciseType(block.exerciseType)?.kindId === 'verbe-pastilles' &&
             (dualActive === 'qcm_texte' ||
               (dualActive == null && dualFormSelect?.active === 'qcm_texte'))
+          const blankPx =
+            block.inlineBlankPx != null ? clampInlineBlankPx(block.inlineBlankPx) : undefined
           return (
-            <section className="exercise-block" key={`${block.exerciseType}-${block.exerciseIndex}`}>
+            <section
+              className="exercise-block"
+              key={`${block.exerciseType}-${block.exerciseIndex}`}
+              style={
+                blankPx != null
+                  ? ({ '--tcf-blank-inline-px': `${blankPx}px` } as CSSProperties)
+                  : undefined
+              }
+            >
               {isJeuxSheet || isTheoryBlock ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">

@@ -16,6 +16,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     phraseInstruction: page.phraseInstruction,
     problemDraftGrids: page.problemDraftGrids,
     formulaireLetterGrid: page.formulaireLetterGrid,
+    inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,
     tcfFormModes: page.tcfFormModes,
     tcfPageBreakAfter: page.tcfPageBreakAfter,

@@ -846,6 +846,11 @@ export type ExerciseBlock = {
   problemDraftGrids?: boolean[]
   /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
   formulaireLetterGrid?: boolean
+  /**
+   * Grammaire : largeur du trait inline dans l’énoncé (`___`), en px (25–500).
+   * Défaut 200. Ignoré si l’énoncé n’a pas de blanc inline.
+   */
+  inlineBlankPx?: number
   /** Modes de réponse par question (compréhension orale) : QCM / texte / images. */
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   /**
@@ -1040,6 +1045,8 @@ export type WorksheetBlock = {
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
   formulaireLetterGrid?: boolean
+  /** Largeur du trait inline (px), propagée depuis ExerciseBlock. */
+  inlineBlankPx?: number
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   tcfFormModes?: Array<'qcm_texte' | 'qcm_image' | 'lignes' | undefined>
   tcfPageBreakAfter?: boolean[]

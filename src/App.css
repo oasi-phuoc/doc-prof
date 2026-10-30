@@ -4180,17 +4180,18 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-question{display:flex;flex-direction:column;gap:6px;margin-top:4px}
 .tcf-enonce{margin:0;font-weight:600}
 .tcf-verbe-theme{color:var(--purple);font-weight:700}
-/* Trait dans la phrase : 200 px (×4 vs 50). En QCM → « . . . » (.tcf-blank-dots). */
+/* Trait dans la phrase : --tcf-blank-inline-px (défaut 200). En QCM → « . . . ». */
 .tcf-enonce-text{
   display:inline;flex:1;min-width:0;white-space:pre-wrap
 }
 .answer-line-field.tcf-blank-inline{
-  display:inline-block;width:200px;min-width:200px;max-width:100%;
+  display:inline-block;
+  width:var(--tcf-blank-inline-px, 200px);min-width:var(--tcf-blank-inline-px, 200px);max-width:100%;
   min-height:1.05em;height:1.05em;margin:0 .18em;padding:0 2px 1px;
   vertical-align:baseline;text-align:center;line-height:1.05em;font-weight:600
 }
 .answer-line-field.tcf-blank-inline.filled{
-  width:auto;min-width:200px;height:auto;color:var(--purple);white-space:nowrap
+  width:auto;min-width:var(--tcf-blank-inline-px, 200px);height:auto;color:var(--purple);white-space:nowrap
 }
 /* Fiche type « Nom : ___ » : trait jusqu’à la marge. */
 .answer-line-field.tcf-blank-inline.is-to-margin{
@@ -4207,6 +4208,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .exercise-item.layout-tcf:not(:has(.item-content > *)){display:none;padding:0;margin:0;min-height:0;border:0}
 .tcf-num{margin-right:6px;font-weight:700;color:var(--purple)}
+.tcf-question.tcf-q-enonce-above{display:flex;flex-direction:column;gap:6px;width:100%}
+.tcf-q-beside{display:flex;flex-direction:row;align-items:flex-start;gap:10px;width:100%}
 .tcf-question.tcf-q-beside{flex-direction:row;align-items:flex-start;gap:10px;width:100%}
 .tcf-q-beside-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
 .tcf-q-beside-images{flex:0 0 auto;display:flex;flex-direction:column;gap:4px}

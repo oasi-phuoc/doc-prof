@@ -36,37 +36,40 @@ export function provenanceFormUi(kindId: string): 'none' | 'header2' | 'margin3'
 
 type Prep = 'du' | 'de' | 'd’' | 'des'
 
+type GenrePays = 'masculin' | 'féminin'
+
 type Pays = {
   pays: string
   /** Fichier sous /lib/images/vocabulaire/pays/ */
   slug: string
   prep: Prep
+  genre: GenrePays
   m: string
   f: string
 }
 
 /** Banque alignée sur les images vocabulaire /pays. */
 const PAYS: readonly Pays[] = [
-  { pays: 'France', slug: 'france', prep: 'de', m: 'français', f: 'française' },
-  { pays: 'Suisse', slug: 'suisse', prep: 'de', m: 'suisse', f: 'suisse' },
-  { pays: 'Belgique', slug: 'belgique', prep: 'de', m: 'belge', f: 'belge' },
-  { pays: 'Chine', slug: 'chine', prep: 'de', m: 'chinois', f: 'chinoise' },
-  { pays: 'Brésil', slug: 'brésil', prep: 'du', m: 'brésilien', f: 'brésilienne' },
-  { pays: 'Portugal', slug: 'portugal', prep: 'du', m: 'portugais', f: 'portugaise' },
-  { pays: 'Japon', slug: 'japon', prep: 'du', m: 'japonais', f: 'japonaise' },
-  { pays: 'Maroc', slug: 'maroc', prep: 'du', m: 'marocain', f: 'marocaine' },
-  { pays: 'Canada', slug: 'canada', prep: 'du', m: 'canadien', f: 'canadienne' },
-  { pays: 'Sénégal', slug: 'sénégal', prep: 'du', m: 'sénégalais', f: 'sénégalaise' },
-  { pays: 'Vietnam', slug: 'vietnam', prep: 'du', m: 'vietnamien', f: 'vietnamienne' },
-  { pays: 'Mexique', slug: 'mexique', prep: 'du', m: 'mexicain', f: 'mexicaine' },
-  { pays: 'Italie', slug: 'italie', prep: 'd’', m: 'italien', f: 'italienne' },
-  { pays: 'Espagne', slug: 'espagne', prep: 'd’', m: 'espagnol', f: 'espagnole' },
-  { pays: 'Allemagne', slug: 'allemagne', prep: 'd’', m: 'allemand', f: 'allemande' },
-  { pays: 'Autriche', slug: 'autriche', prep: 'd’', m: 'autrichien', f: 'autrichienne' },
-  { pays: 'Ukraine', slug: 'ukraine', prep: 'd’', m: 'ukrainien', f: 'ukrainienne' },
-  { pays: 'Iran', slug: 'iran', prep: 'd’', m: 'iranien', f: 'iranienne' },
-  { pays: 'États-Unis', slug: 'etats-unis', prep: 'des', m: 'américain', f: 'américaine' },
-  { pays: 'Pays-Bas', slug: 'pays-bas', prep: 'des', m: 'néerlandais', f: 'néerlandaise' },
+  { pays: 'France', slug: 'france', prep: 'de', genre: 'féminin', m: 'français', f: 'française' },
+  { pays: 'Suisse', slug: 'suisse', prep: 'de', genre: 'féminin', m: 'suisse', f: 'suisse' },
+  { pays: 'Belgique', slug: 'belgique', prep: 'de', genre: 'féminin', m: 'belge', f: 'belge' },
+  { pays: 'Chine', slug: 'chine', prep: 'de', genre: 'féminin', m: 'chinois', f: 'chinoise' },
+  { pays: 'Brésil', slug: 'brésil', prep: 'du', genre: 'masculin', m: 'brésilien', f: 'brésilienne' },
+  { pays: 'Portugal', slug: 'portugal', prep: 'du', genre: 'masculin', m: 'portugais', f: 'portugaise' },
+  { pays: 'Japon', slug: 'japon', prep: 'du', genre: 'masculin', m: 'japonais', f: 'japonaise' },
+  { pays: 'Maroc', slug: 'maroc', prep: 'du', genre: 'masculin', m: 'marocain', f: 'marocaine' },
+  { pays: 'Canada', slug: 'canada', prep: 'du', genre: 'masculin', m: 'canadien', f: 'canadienne' },
+  { pays: 'Sénégal', slug: 'sénégal', prep: 'du', genre: 'masculin', m: 'sénégalais', f: 'sénégalaise' },
+  { pays: 'Vietnam', slug: 'vietnam', prep: 'du', genre: 'masculin', m: 'vietnamien', f: 'vietnamienne' },
+  { pays: 'Mexique', slug: 'mexique', prep: 'du', genre: 'masculin', m: 'mexicain', f: 'mexicaine' },
+  { pays: 'Italie', slug: 'italie', prep: 'd’', genre: 'féminin', m: 'italien', f: 'italienne' },
+  { pays: 'Espagne', slug: 'espagne', prep: 'd’', genre: 'féminin', m: 'espagnol', f: 'espagnole' },
+  { pays: 'Allemagne', slug: 'allemagne', prep: 'd’', genre: 'féminin', m: 'allemand', f: 'allemande' },
+  { pays: 'Autriche', slug: 'autriche', prep: 'd’', genre: 'féminin', m: 'autrichien', f: 'autrichienne' },
+  { pays: 'Ukraine', slug: 'ukraine', prep: 'd’', genre: 'féminin', m: 'ukrainien', f: 'ukrainienne' },
+  { pays: 'Iran', slug: 'iran', prep: 'd’', genre: 'masculin', m: 'iranien', f: 'iranienne' },
+  { pays: 'États-Unis', slug: 'etats-unis', prep: 'des', genre: 'masculin', m: 'américain', f: 'américaine' },
+  { pays: 'Pays-Bas', slug: 'pays-bas', prep: 'des', genre: 'masculin', m: 'néerlandais', f: 'néerlandaise' },
 ]
 
 type PersonneVue = {
@@ -176,7 +179,7 @@ export function buildProvenanceExercise(opts: {
       const questions = rows.map((p) => {
         const distractors = distractorPays(rng, p, 2).map((d) => d.pays)
         const options = shuffle(rng, [p.pays, ...distractors])
-        return dualQcmTrait(`Je viens ${p.prep} ___.`, p.pays, options, paysImage(p.slug))
+        return dualQcmTrait('Je viens de', p.pays, options, paysImage(p.slug))
       })
       return wrap(typeId, 'Observez l’image. Complétez la phrase.', {
         id: '',
@@ -194,7 +197,11 @@ export function buildProvenanceExercise(opts: {
           PREPS.filter((prep) => prep !== p.prep),
         ).slice(0, 2)
         const options = shuffle(rng, [p.prep, ...wrong])
-        return dualQcmTrait(`Je viens ___ ${p.pays}.`, p.prep, options)
+        return dualQcmTrait(
+          `Je viens ___ ${p.pays} (${p.genre}).`,
+          p.prep,
+          options,
+        )
       })
       return wrap(typeId, 'Choisissez la bonne préposition.', {
         id: '',

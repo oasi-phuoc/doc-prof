@@ -54,8 +54,8 @@ function themedParen(inner: string): ReactNode {
 }
 
 /**
- * `___` / `_ _ _` → trait 200 px (couleur du thème), ou « . . . » en mode QCM.
- * Verbe entre parenthèses après un blanc : couleur du thème, pas les parenthèses.
+ * `___` / `_ _ _` → trait (largeur `--tcf-blank-inline-px`, défaut 200), ou « . . . » en QCM.
+ * Verbe entre parenthèses immédiatement après un blanc : couleur du thème.
  */
 function renderEnonceText(
   text: string,
@@ -135,35 +135,47 @@ function Enonce({
   )
 }
 
-/** Image(s) à gauche, énoncé (+ réponses) à droite. */
+/** Énoncé au-dessus ; image(s) à gauche des réponses. */
 function QuestionShell({
   image,
   images,
   numero,
+  enonceSlot,
   children,
 }: {
   image?: string
   images?: string[]
   numero: number
+  enonceSlot?: ReactNode
   children: ReactNode
 }) {
   const pics = (images?.length ? images : image ? [image] : [])
     .map((src) => src.trim())
     .filter(Boolean)
-  if (!pics.length) return <div className="tcf-question">{children}</div>
-  return (
-    <div className="tcf-question tcf-q-beside">
-      <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
-        {pics.map((src, i) => (
-          <TcfImage
-            key={`${src}-${i}`}
-            src={src}
-            alt={`Image ${i + 1} de la question ${numero}`}
-            className="tcf-image is-question is-beside"
-          />
-        ))}
+  if (!pics.length) {
+    return (
+      <div className="tcf-question">
+        {enonceSlot}
+        {children}
       </div>
-      <div className="tcf-q-beside-body">{children}</div>
+    )
+  }
+  return (
+    <div className="tcf-question tcf-q-enonce-above">
+      {enonceSlot}
+      <div className="tcf-q-beside">
+        <div className={`tcf-q-beside-images${pics.length > 1 ? ' is-multi' : ''}`}>
+          {pics.map((src, i) => (
+            <TcfImage
+              key={`${src}-${i}`}
+              src={src}
+              alt={`Image ${i + 1} de la question ${numero}`}
+              className="tcf-image is-question is-beside"
+            />
+          ))}
+        </div>
+        <div className="tcf-q-beside-body">{children}</div>
+      </div>
     </div>
   )
 }
@@ -193,8 +205,12 @@ export function QuestionQCMTexte({
 }) {
   const show = mode === 'answers'
   return (
-    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
-      <Enonce {...head} blankStyle="dots" />
+    <QuestionShell
+      image={head.image}
+      images={head.images}
+      numero={head.numero}
+      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+    >
       <ul className="tcf-qcm-texte">
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
@@ -218,8 +234,12 @@ export function QuestionQCMImage({
 }) {
   const show = mode === 'answers'
   return (
-    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
-      <Enonce {...head} blankStyle="dots" />
+    <QuestionShell
+      image={head.image}
+      images={head.images}
+      numero={head.numero}
+      enonceSlot={<Enonce {...head} blankStyle="dots" />}
+    >
       <ul className={`tcf-qcm-images is-${choix.length}`}>
         {choix.map((c) => (
           <li key={c.lettre} className={show && c.correct ? 'is-correct' : undefined}>
@@ -251,8 +271,14 @@ export function QuestionLignes({
   const show = mode === 'answers'
   const inline = hasInlineBlank(head.enonce)
   return (
-    <QuestionShell image={head.image} images={head.images} numero={head.numero}>
-      <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
+    <QuestionShell
+      image={head.image}
+      images={head.images}
+      numero={head.numero}
+      enonceSlot={
+        <Enonce {...head} blankAnswers={show && inline ? reponseModele : undefined} />
+      }
+    >
       {tableau?.length ? (
         <table className="tcf-tableau">
           <tbody>
