@@ -27,6 +27,7 @@ function withActiveForm(tcf: TcfSheetItem, formMode?: TcfTypeReponse): TcfSheetI
     enonce: tcf.enonce,
     audioLabel: tcf.audioLabel,
     audioFrame: tcf.audioFrame,
+    showNumero: tcf.showNumero,
     image: tcf.image,
     images: tcf.images,
     formSelect: { ...fs, active },

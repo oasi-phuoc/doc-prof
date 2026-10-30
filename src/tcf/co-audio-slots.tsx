@@ -46,6 +46,12 @@ export function tcfCoPointsRowLabel(typeId: string, index: number): string {
   return tcfCoAudioSlotCount(typeId) === 4 ? `Image ${index + 1}` : `Question ${index + 1}`
 }
 
+/** Ex. 1 / 2 / 3 : points uniformes par défaut, différenciables à la demande. */
+export function tcfCoCanDifferentiatePoints(typeId: string): boolean {
+  const n = tcfCoAudioSlotCount(typeId)
+  return n === 6 || n === 3 || n === 1
+}
+
 function poolForSlots(slotCount: TcfCoAudioSlotCount): TcfAudioEntry[] {
   const all = tcfBankAllLevels('CO')
   if (slotCount === 6) return tcfCourtAudioEntries(all)

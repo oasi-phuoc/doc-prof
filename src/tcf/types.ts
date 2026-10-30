@@ -372,6 +372,8 @@ export type TcfSheetItem =
       audioLabel?: string
       /** Cadre autour de la question avec pastille Audio N (six courts). */
       audioFrame?: boolean
+      /** Forcer l’affichage du n° dans un cadre Audio (ex. 2 : 2 Q / audio). */
+      showNumero?: boolean
       image?: string
       images?: string[]
       /** Sélecteur Texte / Image / Phrase (marge). */
@@ -388,6 +390,8 @@ export type TcfSheetItem =
       audioLabel?: string
       /** Cadre autour de la question avec pastille Audio N (six courts). */
       audioFrame?: boolean
+      /** Forcer l’affichage du n° dans un cadre Audio (ex. 2 : 2 Q / audio). */
+      showNumero?: boolean
       image?: string
       images?: string[]
       tableau?: TcfLigneTableau[]

@@ -426,7 +426,7 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
   )
 }
 
-/** CO : scènes illustrées, « Audio n° : ___ » (trait couleur) sous chaque image. */
+/** CO : scènes illustrées en cadre, pastille Situation A–F, « Audio n° : ___ » (50 px). */
 export function AssociationSituations({
   situations,
   mode,
@@ -441,10 +441,11 @@ export function AssociationSituations({
     <ul className={`tcf-situations${gridClass ? ` ${gridClass}` : ''}`}>
       {situations.map((s, i) => (
         <li key={`${s.lettre}-${i}`}>
+          <span className="tcf-audio-frame-tag">Situation {s.lettre}</span>
           <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
           <span className="tcf-situation-foot">
             <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
-            <span className="answer-line-field compact tcf-situation-num">
+            <span className="answer-line-field tcf-situation-num">
               {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
             </span>
           </span>
@@ -474,7 +475,9 @@ export function GrilleOral({ grille }: { grille: TcfGrille }) {
   )
 }
 
-/** CO objets A1 : 5 images (2 par ligne, dernière centrée), Oui / Non sous chacune. */
+const OBJET_LETTRES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'] as const
+
+/** CO objets A1 : 5 images cadrées (2 / ligne, 5ᵉ centrée), pastille Objet A–E, Oui / Non. */
 export function ImagesACocher({
   numero,
   consigne,
@@ -498,7 +501,8 @@ export function ImagesACocher({
             key={img.id}
             className={show ? (img.correct ? 'is-correct' : 'is-wrong') : undefined}
           >
-            <TcfImage src={img.image} alt={`Image ${i + 1}`} />
+            <span className="tcf-audio-frame-tag">Objet {OBJET_LETTRES[i] ?? i + 1}</span>
+            <TcfImage src={img.image} alt={`Objet ${OBJET_LETTRES[i] ?? i + 1}`} />
             <div className="tcf-yn" aria-label={show ? (img.correct ? 'Oui' : 'Non') : undefined}>
               <span className="tcf-yn-option">
                 <span
