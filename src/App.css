@@ -4293,9 +4293,22 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-champ-line{flex:1 1 0;min-width:0;min-height:7mm;max-width:100%}
 .tcf-champ-line.is-date{
   flex:0 0 auto;width:auto;max-width:100%;min-width:0;border-bottom:0;
-  display:inline-flex;align-items:flex-end;gap:3px;justify-content:flex-start
+  display:inline-flex;align-items:flex-end;gap:4px;justify-content:flex-start
 }
 .tcf-champ-date-sep{flex:0 0 auto;padding:0 1px;font-weight:700;line-height:7mm}
+/* Mode traits : chaque segment jj / mm / aaaa = 50 px. */
+.tcf-champ-date-seg{
+  flex:0 0 50px;width:50px;min-width:50px;max-width:50px;
+  min-height:7mm;text-align:center;font-weight:700;color:var(--purple);
+  border-radius:0;box-sizing:border-box
+}
+/* Mode grille date : groupes de cases carrées (2 / 2 / 4). */
+.tcf-champ-line.is-date.is-boxes-date .tcf-champ-boxes{
+  width:auto;flex:0 0 auto;gap:1.5px
+}
+.tcf-champ-line.is-date.is-boxes-date .tcf-champ-box{
+  width:6.5mm;min-width:6.5mm;max-width:6.5mm;height:6.5mm
+}
 .tcf-champ-boxes{
   display:grid;grid-template-columns:repeat(16,minmax(0,1fr));gap:1.5px;
   width:100%;min-width:0;max-width:100%;box-sizing:border-box

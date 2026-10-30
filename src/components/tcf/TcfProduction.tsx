@@ -132,19 +132,41 @@ function ChampBoxes({
   )
 }
 
-function dateBoxGroups(corrige: string, show: boolean) {
+/** Découpe une date en jj / mm / aaaa (chiffres uniquement). */
+function dateParts(corrige: string): { d: string; m: string; y: string } {
   const digits = corrige.replace(/\D/g, '')
-  const d = digits.slice(0, 2).padEnd(2, ' ')
-  const m = digits.slice(2, 4).padEnd(2, ' ')
-  const y = digits.slice(4, 8).padEnd(4, ' ')
-  const fill = (raw: string) => [...raw].map((c) => (c === ' ' ? '' : c))
+  return {
+    d: digits.slice(0, 2),
+    m: digits.slice(2, 4),
+    y: digits.slice(4, 8),
+  }
+}
+
+/** Mode lignes : _______ / _______ / _______ (chaque trait = 50 px). */
+function dateTraitGroups(corrige: string, show: boolean) {
+  const { d, m, y } = dateParts(corrige)
   return (
-    <span className="tcf-champ-line is-date">
-      <ChampBoxes chars={fill(d)} show={show} columns={2} />
+    <span className="tcf-champ-line is-date is-traits">
+      <span className="answer-line-field tcf-champ-date-seg">{show ? d : ''}</span>
       <span className="tcf-champ-date-sep">/</span>
-      <ChampBoxes chars={fill(m)} show={show} columns={2} />
+      <span className="answer-line-field tcf-champ-date-seg">{show ? m : ''}</span>
       <span className="tcf-champ-date-sep">/</span>
-      <ChampBoxes chars={fill(y)} show={show} columns={4} />
+      <span className="answer-line-field tcf-champ-date-seg">{show ? y : ''}</span>
+    </span>
+  )
+}
+
+/** Mode grille : 2 cases / 2 cases / 4 cases (jj / mm / aaaa). */
+function dateBoxGroups(corrige: string, show: boolean) {
+  const { d, m, y } = dateParts(corrige)
+  const pad = (raw: string, n: number) => [...raw.padEnd(n, ' ')].map((c) => (c === ' ' ? '' : c))
+  return (
+    <span className="tcf-champ-line is-date is-boxes-date">
+      <ChampBoxes chars={pad(d, 2)} show={show} columns={2} />
+      <span className="tcf-champ-date-sep">/</span>
+      <ChampBoxes chars={pad(m, 2)} show={show} columns={2} />
+      <span className="tcf-champ-date-sep">/</span>
+      <ChampBoxes chars={pad(y, 4)} show={show} columns={4} />
     </span>
   )
 }
@@ -216,12 +238,10 @@ export function FormulairePE({
               }`}
               aria-hidden
             />
-          ) : champ.type === 'date' || letterGrid ? (
-            champ.type === 'date' ? (
-              dateBoxGroups(champ.corrige, show)
-            ) : (
-              textBoxes(champ.corrige, show, adresseRows ? 2 : 1)
-            )
+          ) : champ.type === 'date' ? (
+            letterGrid ? dateBoxGroups(champ.corrige, show) : dateTraitGroups(champ.corrige, show)
+          ) : letterGrid ? (
+            textBoxes(champ.corrige, show, adresseRows ? 2 : 1)
           ) : adresseRows ? (
             <span className="tcf-champ-line is-traits-multi">
               <span className="answer-line-field tcf-champ-line">
