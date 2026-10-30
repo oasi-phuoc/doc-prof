@@ -1,4 +1,6 @@
 import { createRng, int, randomSeed, shuffle } from '@/math/rng'
+import { tcfScenarioAudioEntries } from './audio-bank'
+import { isTcfCoAssociation } from './association-audio'
 import { tcfBank, tcfBankAllLevels } from './loader'
 import { emptyTcfExercise, tcfExerciseId } from './templates'
 import type {
@@ -36,31 +38,26 @@ type DialogueUnit = {
   sourceId: string
 }
 
-/** Unité dialogue = 1 piste audio + 1 scène associée (hors leurres). */
+/** Unité dialogue = 1 piste audio taguée `scenario` + 1 scène associée (hors leurres). */
 function associationDialoguePool(): DialogueUnit[] {
   const out: DialogueUnit[] = []
-  for (const ex of tcfBankAllLevels('CO')) {
-    if (ex.type_exercice !== 'association_images') continue
-    const audios = (ex.support.audios ?? []).map((a) => a.trim()).filter(Boolean)
-    if (audios.length === 0) continue
+  for (const entry of tcfScenarioAudioEntries(tcfBankAllLevels('CO'))) {
+    if (!isTcfCoAssociation(entry.exercise) || entry.dialogueIndex == null) continue
+    const ex = entry.exercise
+    const sit = ex.situations.find((s) => s.dialogue === entry.dialogueIndex)
+    if (!sit?.image.trim()) continue
     const trRaw = ex.support.transcription
     const trs = Array.isArray(trRaw)
       ? trRaw.map((t) => String(t))
-      : audios.map((_, i) => (i === 0 ? String(trRaw ?? '') : ''))
-    for (const sit of ex.situations) {
-      if (sit.dialogue == null) continue
-      const idx = sit.dialogue - 1
-      const audio = audios[idx]
-      if (!audio || !sit.image.trim()) continue
-      out.push({
-        audio,
-        transcription: (trs[idx] ?? '').trim(),
-        image: sit.image.trim(),
-        sourceId: ex.id,
-      })
-    }
+      : [String(trRaw ?? '')]
+    const idx = entry.dialogueIndex - 1
+    out.push({
+      audio: entry.audio,
+      transcription: (trs[idx] ?? '').trim(),
+      image: sit.image.trim(),
+      sourceId: ex.id,
+    })
   }
-  // Dédupliquer par chemin audio
   const seen = new Set<string>()
   return out.filter((u) => {
     if (seen.has(u.audio)) return false

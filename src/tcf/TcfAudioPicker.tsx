@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
-import type { TcfAudioEntry } from './audio-bank'
+import {
+  TCF_AUDIO_TAG_SCENARIO,
+  tcfAudioHasTag,
+  type TcfAudioEntry,
+} from './audio-bank'
 import { TCF_NIVEAUX, TCF_SCENARIOS, TCF_SCENARIO_AUTRE, tcfTypeMeta } from './catalog'
 import { tcfAudioSrc } from './media'
 import { tcfGroupId, tcfScene } from './sources'
@@ -76,6 +80,7 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
   const ex = entry.exercise
   const type = tcfTypeMeta('CO', ex.type_exercice)?.label ?? ex.type_exercice
   const durationText = duration === undefined ? '…' : duration === null ? '—' : formatDuration(duration)
+  const isScenario = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_SCENARIO)
   return (
     <li ref={ref}>
       <button type="button" className="tcf-vocab-picker-item is-audio" onClick={() => onPick(entry)}>
@@ -83,6 +88,7 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
           <span className="tcf-vocab-picker-label">{entry.label}</span>
           <span className="tcf-vocab-picker-theme">
             Type : {type} · Durée : {durationText} · Niveau : {ex.niveau}
+            {isScenario ? ' · Tag : scénario' : ''}
           </span>
           <span className="tcf-vocab-picker-theme">
             Scénario : {scenarioLabel(scenarioOf(entry))} · Scène : {tcfScene(ex)}
@@ -157,9 +163,14 @@ export function TcfAudioPicker({
       const label = norm(entry.label)
       const stem = norm(entry.audio.split('/').pop() ?? '')
       const haystack = norm(
-        [entry.meta, entry.audio, tcfScene(entry.exercise), scenarioLabel(scenarioOf(entry)), entry.exercise.niveau].join(
-          ' ',
-        ),
+        [
+          entry.meta,
+          entry.audio,
+          entry.tags.join(' '),
+          tcfScene(entry.exercise),
+          scenarioLabel(scenarioOf(entry)),
+          entry.exercise.niveau,
+        ].join(' '),
       )
       let score = 0
       if (label === q || stem === q) score = 100
