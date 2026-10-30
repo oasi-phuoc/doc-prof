@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import {
   TCF_AUDIO_TAG_COURT,
+  TCF_AUDIO_TAG_LONG,
   TCF_AUDIO_TAG_MOYEN,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
@@ -85,10 +86,12 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
   const isScenario = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_SCENARIO)
   const isCourt = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_COURT)
   const isMoyen = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_MOYEN)
+  const isLong = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_LONG)
   const tagBits = [
     isScenario ? 'scénario' : '',
     isCourt ? 'court' : '',
     isMoyen ? 'moyen' : '',
+    isLong ? 'long' : '',
   ]
     .filter(Boolean)
     .join(', ')
@@ -172,6 +175,7 @@ export function TcfAudioPicker({
     return [
       { id: TCF_AUDIO_TAG_COURT, label: 'court' },
       { id: TCF_AUDIO_TAG_MOYEN, label: 'moyen' },
+      { id: TCF_AUDIO_TAG_LONG, label: 'long' },
       { id: TCF_AUDIO_TAG_SCENARIO, label: 'scénario' },
     ].filter((t) => present.has(t.id))
   }, [entries])

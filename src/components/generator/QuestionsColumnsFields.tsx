@@ -5,6 +5,10 @@ import {
 } from '@/tpm/test'
 import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
 import { isTcfConsignesType } from '@/tcf/catalog'
+import {
+  tcfCoAudioSlotCount,
+  tcfCoComposeQuestionCount,
+} from '@/tcf/co-audio-slots'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
 import { SOUTIEN_LEVEL_FILTERS } from '@/francais/soutien/phrases-data'
@@ -256,12 +260,110 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 ) : null}
               </label>
               )}
-              {(isTpmLike &&
-                !(
-                  isTpmConsignesType(activeBlock.exerciseType) ||
-                  isTcmCfrConsignesType(activeBlock.exerciseType)
-                )) ||
-              (isTcf && evalMode && !isTcfConsignesType(activeBlock.exerciseType)) ? (
+              {isTpmLike &&
+              !(
+                isTpmConsignesType(activeBlock.exerciseType) ||
+                isTcmCfrConsignesType(activeBlock.exerciseType)
+              ) ? (
+                <label className="select-shell">
+                  <span>Points par question</span>
+                  <input
+                    className="pill-input"
+                    type="number"
+                    inputMode="decimal"
+                    min={0.5}
+                    max={20}
+                    step={0.5}
+                    aria-label="Points par question de l’exercice sélectionné"
+                    value={activeBlock.pointsPerQuestion ?? 1}
+                    onChange={(event) => {
+                      const raw = Number(event.target.value.replace(',', '.'))
+                      if (!Number.isFinite(raw)) return
+                      const next = Math.max(0.5, Math.min(20, Math.round(raw * 2) / 2))
+                      updatePage({ pointsPerQuestion: next })
+                    }}
+                  />
+                  <small className="muted">
+                    Exercice{' '}
+                    {activeSheet?.blocks?.[safeBlockIndex]?.exerciseIndex ?? firstExerciseNo + safeBlockIndex} :{' '}
+                    {formatPointsLabel(
+                      blockPointsTotal(
+                        activeSheet?.blocks?.[safeBlockIndex]?.items ?? [],
+                        activeBlock.pointsPerQuestion ?? 1,
+                      ),
+                    )}{' '}
+                    · total du test : {formatPointsLabel(sheetTotalPoints)}
+                  </small>
+                </label>
+              ) : null}
+              {isTcf &&
+              evalMode &&
+              !isTcfConsignesType(activeBlock.exerciseType) &&
+              tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
+                <div className="tcf-question-points">
+                  <b>Points par question</b>
+                  {Array.from(
+                    {
+                      length: tcfCoComposeQuestionCount(
+                        activeBlock.exerciseType,
+                        activeBlock.tcfQuestionCount,
+                      ),
+                    },
+                    (_, i) => {
+                      const pts = activeBlock.tcfQuestionPoints?.[i] ?? activeBlock.pointsPerQuestion ?? 1
+                      return (
+                        <label className="select-shell" key={`q-pts-${i}`}>
+                          <span>Question {i + 1}</span>
+                          <input
+                            className="pill-input"
+                            type="number"
+                            inputMode="decimal"
+                            min={0.5}
+                            max={20}
+                            step={0.5}
+                            aria-label={`Points de la question ${i + 1}`}
+                            value={pts}
+                            onChange={(event) => {
+                              const raw = Number(event.target.value.replace(',', '.'))
+                              if (!Number.isFinite(raw)) return
+                              const nextPts = Math.max(0.5, Math.min(20, Math.round(raw * 2) / 2))
+                              const n = tcfCoComposeQuestionCount(
+                                activeBlock.exerciseType,
+                                activeBlock.tcfQuestionCount,
+                              )
+                              const next = Array.from({ length: n }, (_, k) =>
+                                k === i
+                                  ? nextPts
+                                  : (activeBlock.tcfQuestionPoints?.[k] ??
+                                    activeBlock.pointsPerQuestion ??
+                                    1),
+                              )
+                              updatePage({ tcfQuestionPoints: next })
+                            }}
+                          />
+                        </label>
+                      )
+                    },
+                  )}
+                  <small className="muted">
+                    Exercice{' '}
+                    {activeSheet?.blocks?.[safeBlockIndex]?.exerciseIndex ??
+                      firstExerciseNo + safeBlockIndex}{' '}
+                    :{' '}
+                    {formatPointsLabel(
+                      blockPointsTotal(
+                        activeSheet?.blocks?.[safeBlockIndex]?.items ?? [],
+                        activeBlock.pointsPerQuestion ?? 1,
+                      ),
+                    )}{' '}
+                    · total du test : {formatPointsLabel(sheetTotalPoints)}
+                  </small>
+                </div>
+              ) : null}
+              {isTcf &&
+              evalMode &&
+              !isTcfConsignesType(activeBlock.exerciseType) &&
+              tcfCoAudioSlotCount(activeBlock.exerciseType) == null ? (
                 <label className="select-shell">
                   <span>Points par question</span>
                   <input
