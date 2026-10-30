@@ -4335,10 +4335,30 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   border-radius:999px;color:var(--purple);font-weight:700;
   -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-.tcf-sequence{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.tcf-sequence li{position:relative;border:1px solid var(--ink);padding:4px}
-.tcf-sequence .tcf-image{height:55mm}
-.tcf-sequence-num{position:absolute;top:4px;left:4px;display:inline-flex;align-items:center;justify-content:center;width:1.6em;height:1.6em;border:1.5px solid var(--ink);border-radius:50%;background:#fff;font-weight:700}
+/* PO séquence : croquis décalé 1→2→3→4, bordure couleur collée à l’image. */
+.tcf-sequence{
+  list-style:none;margin:4px auto 6px;padding:0;
+  display:grid;grid-template-columns:repeat(2,72mm);grid-template-rows:repeat(5,22mm);
+  column-gap:8mm;justify-content:center;max-width:100%
+}
+.tcf-sequence li{position:relative;min-width:0;grid-row:span 2;padding:0;border:0;background:transparent}
+.tcf-sequence li:nth-child(1){grid-area:1 / 1 / 3 / 2}
+.tcf-sequence li:nth-child(2){grid-area:2 / 2 / 4 / 3}
+.tcf-sequence li:nth-child(3){grid-area:3 / 1 / 5 / 2}
+.tcf-sequence li:nth-child(4){grid-area:4 / 2 / 6 / 3}
+.tcf-sequence .tcf-image{
+  display:block;width:100%;height:42mm;object-fit:cover;object-position:center;
+  border:2px solid var(--purple);background:transparent;padding:0;margin:0;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-sequence-num{
+  position:absolute;top:-2mm;left:-2mm;z-index:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:6mm;height:6mm;border:1.5px solid var(--purple);border-radius:50%;
+  background:#fff;color:var(--purple);font-weight:800;
+  font-size:calc(10pt * var(--app-font-scale, 1));
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 .tcf-modele{padding:6px 10px;border:1px dashed var(--purple);color:var(--ink)}
 .tcf-modele ul{margin:4px 0 0;padding-left:1.2em}
 /* Annexe corrigé : transcriptions audio en fin de document. */
@@ -4420,22 +4440,38 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   display:flex;flex-direction:column;justify-content:space-between
 }
 .tcf-entretien-dialogue p{margin:0 0 1mm}
-/* PO : 4 scènes en grille 2×2 — pas de décalage vertical (sinon coupe sous l’A4 en corrigé). */
+/* PO : 4 scènes en croquis décalé (1 haut-gauche → 2 droite → 3 gauche → 4 bas-droite). */
 .tcf-timeline{
-  list-style:none;margin:6px 0;padding:0;
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px 10px;flex:0 0 auto
+  list-style:none;margin:4px auto 6px;padding:0;flex:0 0 auto;
+  display:grid;grid-template-columns:repeat(2,72mm);grid-template-rows:repeat(5,22mm);
+  column-gap:8mm;justify-content:center;max-width:100%
 }
-.tcf-timeline-step{position:relative;min-width:0}
+.tcf-timeline-step{position:relative;min-width:0;grid-row:span 2;padding:0;border:0;background:transparent}
+.tcf-timeline-step:nth-child(1){grid-area:1 / 1 / 3 / 2}
+.tcf-timeline-step:nth-child(2){grid-area:2 / 2 / 4 / 3}
+.tcf-timeline-step:nth-child(3){grid-area:3 / 1 / 5 / 2}
+.tcf-timeline-step:nth-child(4){grid-area:4 / 2 / 6 / 3}
 .tcf-po .tcf-image.is-large{margin-top:8px}
+/* Bordure couleur collée à l’image : cover (pas de bande blanche latérale). */
 .tcf-timeline-step .tcf-image{
-  height:48mm;width:100%;object-fit:contain;object-position:center;
-  border:1px solid var(--ink);background:#fff
+  display:block;width:100%;height:42mm;object-fit:cover;object-position:center;
+  border:2px solid var(--purple);background:transparent;padding:0;margin:0;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
 }
-/* Corrigé : place pour le modèle de description sous les 4 images. */
-.tcf-timeline.is-compact .tcf-timeline-step .tcf-image{height:36mm}
-.tcf-po:has(.tcf-modele) .tcf-timeline .tcf-image{height:36mm}
-.tcf-timeline-num{position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;background:#fff;border:1.5px solid var(--purple);color:var(--purple);display:grid;place-items:center;font-weight:800;font-size:calc(10pt * var(--app-font-scale, 1))}
+/* Corrigé : grille un peu plus basse pour laisser place au modèle sous les 4 images. */
+.tcf-timeline.is-compact,
+.tcf-po:has(.tcf-modele) .tcf-timeline{
+  grid-template-columns:repeat(2,62mm);grid-template-rows:repeat(5,17mm)
+}
+.tcf-timeline.is-compact .tcf-timeline-step .tcf-image,
+.tcf-po:has(.tcf-modele) .tcf-timeline .tcf-image{height:32mm}
+.tcf-timeline-num{
+  position:absolute;top:-2mm;left:-2mm;z-index:1;width:6mm;height:6mm;border-radius:50%;
+  background:#fff;border:1.5px solid var(--purple);color:var(--purple);
+  display:grid;place-items:center;font-weight:800;
+  font-size:calc(10pt * var(--app-font-scale, 1));
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
 /* PE : échange de messages (bulles), cadre téléphone, e-mail à écrire */
 .tcf-chat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .tcf-chat-row{display:flex;flex-direction:column;max-width:72%}
