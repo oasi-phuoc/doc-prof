@@ -2991,7 +2991,7 @@
     "points": 5,
     "support": {
       "audio": "/lib/audio/tcf/co/loisirs/au-restaurant.mp3",
-      "transcription": "Quelles objets sont données dans le message?\nVous entendez le nom de l'objet?\nCocher ou oui?\nSinon, cocher non.\nPuis, vous allez entendre à nouveau le message.\nVous pouvez compléter vos réponses.\nAllô?\nJe suis devant le menu du restaurant.\nQu'est-ce que tu veux?\nPour le plat, il y a du poisson avec durée.\nIl y a aussi une boisson avec d'ulets.\nEt pour le dessert, c'est de la glace avec une banane.\nLe restaurant vend aussi des verres.\nIls sont très beaux.\nAppele-moi."
+      "transcription": "Allô ? Je suis devant le menu du restaurant. Qu’est-ce que tu veux ? Pour le plat, il y a du poisson avec du riz. Il y a aussi une boisson avec du lait. Et pour le dessert, c’est de la glace avec une banane. Le restaurant vend aussi des verres. Ils sont très beaux. Appelle-moi."
     },
     "questions": [],
     "melanger": false,
@@ -2999,12 +2999,12 @@
     "images": [
       {
         "id": "i1",
-        "image": "/lib/images/vocabulaire/argent-administration/addition.webp",
-        "correct": false
+        "image": "/lib/images/vocabulaire/aliments/poisson.webp",
+        "correct": true
       },
       {
         "id": "i2",
-        "image": "/lib/images/vocabulaire/aliments/poisson.webp",
+        "image": "/lib/images/vocabulaire/desserts/glace.webp",
         "correct": true
       },
       {
@@ -3014,13 +3014,13 @@
       },
       {
         "id": "i4",
-        "image": "/lib/images/vocabulaire/cuisine/couvert.webp",
+        "image": "/lib/images/vocabulaire/vetements/chapeau.webp",
         "correct": false
       },
       {
         "id": "i5",
-        "image": "/lib/images/vocabulaire/boissons/lait.webp",
-        "correct": true
+        "image": "/lib/images/vocabulaire/transports/train.webp",
+        "correct": false
       }
     ],
     "consigne_supplementaire": null
@@ -4704,11 +4704,11 @@
     "theme": "Préparation A1 · série 4 · Le message de Cathy",
     "scenario": "vie-quotidienne",
     "scene": "Au téléphone",
-    "consigne": "Vous allez entendre un message. Quels objets sont nommés dans le message ? Cochez les images des objets que vous entendez.",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
     "points": 5,
     "support": {
       "audio": "/lib/audio/tcf/co/vie-quotidienne/au-telephone.mp3",
-      "transcription": "Quelles objets sont données dans le message?\nVous entendez le nom de l'objet?\nCocher?\nOui.\nSinon?\nCocher non.\nPuis, vous allez entendre à nouveau le message.\nVous pouvez compléter vos réponses.\nBonjour, c'est Cati.\nChez nous dans le sud, il fait très chaud cette semaine.\nAlors, apporte un chapeau, ton maillot de bain et ta serviette.\nNous avons une piscine.\nPrends aussi ton appareil photo.\nLa nature est très belle ici.\nJe t'attends à la gare.\nAppele-moi si le train est en retard.\nBonjour, c'est Cati.\nChez nous dans le sud, il fait très chaud cette semaine.\nAlors, apporte un chapeau, ton maillot de bain et ta serviette.\nNous avons une piscine.\nPrends aussi ton appareil photo.\nLa nature est très belle ici.\nJe t'attends à la gare.\nAppele-moi si le train est en retard."
+      "transcription": "Bonjour, c’est Cathy. Chez nous, dans le sud, il fait très chaud cette semaine. Alors apporte un chapeau, ton maillot de bain et ta serviette. Nous avons une piscine. Prends aussi ton appareil photo. La nature est très belle ici. Je t’attends à la gare. Appelle-moi si le train est en retard."
     },
     "questions": [],
     "melanger": false,
@@ -55058,1097 +55058,6 @@
     "consigne_supplementaire": null
   },
   {
-    "id": "delf-a1-2022-co-ex5-49",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "ecole",
-    "scene": "Piste 49",
-    "consigne": "Écoutez les dialogues et cochez les bonnes réponses.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_49.mp3",
-      "transcription": "1. C’est un moyen de transport. Il est blanc. Je\nprends ce moyen de transport pour aller faire les\ncourses. Toute la famille vient avec moi.\n2. L’objet est dans la salle de bains. C’est utile le\nmatin et le soir. C’est pour laver mes dents.\n3. L’objet est de couleur noire. Je prends cet objet\npour sortir dans la rue. Je mets l’objet sur ma tête."
-    },
-    "questions": [
-      {
-        "enonce": "De qui parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Famille",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Famille",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Grands parents"
-              },
-              {
-                "id": "c",
-                "texte": "Personne âgée"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/famille-personnes/famille.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/grands-parents.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/personne-âgée.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Qui parle ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Utile",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Utile",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Marc"
-              },
-              {
-                "id": "c",
-                "texte": "Sophie"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quoi parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Tête",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Tête",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Moustache"
-              },
-              {
-                "id": "c",
-                "texte": "Cheville"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/corps/tête.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/corps/moustache.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/corps/cheville.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-50",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "vie-quotidienne",
-    "scene": "Piste 50",
-    "consigne": "Écoutez les noms d’objets et reliez au bon numéro.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3",
-      "transcription": "1. Un passeport.\n2. Une lettre.\n3. Un diplôme.\n4. Une valise.\n5. Un sac."
-    },
-    "questions": [
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Passeport",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Passeport",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Carte d embarquement"
-              },
-              {
-                "id": "c",
-                "texte": "Pension complete"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/passeport.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/voyage/carte-d-embarquement.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/pension-complete.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Que faut-il retenir ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Une lettre.",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Une lettre.",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Le magasin est fermé le lundi."
-              },
-              {
-                "id": "c",
-                "texte": "Le rendez-vous est annulé."
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/argent-administration/prix.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quoi parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Diplôme",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Diplôme",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Feuille de papier"
-              },
-              {
-                "id": "c",
-                "texte": "Porte documents"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/diplôme.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/feuille-de-papier.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Valise",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Valise",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Carte d embarquement"
-              },
-              {
-                "id": "c",
-                "texte": "Pension complete"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/valise.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/chambre-double.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Que faut-il retenir ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Un sac.",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Un sac.",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Le magasin est fermé le lundi."
-              },
-              {
-                "id": "c",
-                "texte": "Le rendez-vous est annulé."
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/accessoires/sac-a-main.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/accessoires/bijou.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/accessoires/joyau.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-51",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "vie-quotidienne",
-    "scene": "Piste 51",
-    "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3",
-      "transcription": "Image A, n° 3 : des fruits\nImage B, n° 1 : un jus de fruits\nImage C, n° 5 : une pomme\nImage D, n° 2 : des légumes\nImage E, n° 4 : une tomate",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_51.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 51 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Image A, n° 3 : des fruits » ; B : « Image B, n° 1 : un jus de fruits » ; A : « Image C, n° 5 : une pomme » ; B : « Image D, n° 2 : des légumes » ; A : « Image E, n° 4 : une tomate ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel aliment parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Tomate",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Tomate",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Cagette de legumes"
-              },
-              {
-                "id": "c",
-                "texte": "Pomme de terre"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/legumes/tomate.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/cagette-de-legumes.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-52",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "vie-quotidienne",
-    "scene": "Piste 52",
-    "consigne": "Écoutez les noms des 6 objets et cochez leur numéro dans le lieu correspondant.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
-      "transcription": "Objet n° 1 : un savon\nObjet n° 2 : un menu\nObjet n° 3 : une chemise\nObjet n° 4 : du papier toilettes\nObjet n° 5 : une addition\nObjet n° 6 : une jupe",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_52.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 52 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Objet n° 1 : un savon » ; B : « Objet n° 2 : un menu » ; A : « Objet n° 3 : une chemise » ; B : « Objet n° 4 : du papier toilettes » ; A : « Objet n° 5 : une addition ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Toilettes",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Toilettes",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Produits menagers"
-              },
-              {
-                "id": "c",
-                "texte": "Rez de chaussee"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/toilettes.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/maison/produits-menagers.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/rez-de-chaussee.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-53",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "transports",
-    "scene": "Piste 53",
-    "consigne": "Écoutez les noms d’objets et cochez les objets entendus.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_53.mp3",
-      "transcription": "Une télévision. Une table. Un ticket de bus. Un\ncouteau. Une fourchette. Une bouteille d’eau. Un\ncrayon. Une feuille.",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_53.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 53 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Une télévision » ; B : « Une table » ; A : « Un ticket de bus » ; B : « Couteau » ; A : « Une fourchette ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel moyen de transport parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Ticket de bus",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Ticket de bus",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Ceinture de sécurité"
-              },
-              {
-                "id": "c",
-                "texte": "Automate a billets"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/transports/ticket-de-bus.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/transports/automate-a-billets.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-54",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "travail",
-    "scene": "Piste 54",
-    "consigne": "Écoutez les messages et cochez les bonnes réponses.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54.mp3",
-      "transcription": "1. En voyage, je prends toujours mon ordinateur\nportable. Je dois souvent regarder mes messages\nélectroniques pour le travail. C’est la vie !\n2. J’adore mon lit. Et tu sais, il y a toujours un livre\nà côté de mon lit. Tous les soirs, je dois lire pour\nl’université.\n3. Pour mon travail, je dois avoir un permis de\nconduire. Je prends ma voiture et je paye l’essence.\nAprès, mon entreprise me donne de l’argent pour\nl’essence."
-    },
-    "questions": [
-      {
-        "enonce": "De quoi parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Ordinateur portable",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Ordinateur portable",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Distributeur de billets"
-              },
-              {
-                "id": "c",
-                "texte": "Lecteur de code barres"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/ordinateur-portable.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/distributeur-de-billets.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/lecteur-de-code-barres.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Université",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Université",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Distributeur automatique"
-              },
-              {
-                "id": "c",
-                "texte": "Bureau d information"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/université.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/distributeur-automatique.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/bureau-d-information.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quel moyen de transport parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Voiture",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Voiture",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Ceinture de sécurité"
-              },
-              {
-                "id": "c",
-                "texte": "Automate a billets"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/transports/voiture.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/transports/automate-a-billets.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-55",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "vie-quotidienne",
-    "scene": "Piste 55",
-    "consigne": "Écoutez le message et classez dans l’ordre (de 1 à 5) les objets que vous entendez.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55.mp3",
-      "transcription": "Je suis dans une librairie. Je prends des cartes\npostales et des timbres. J’achète un stylo bleu.\nAh, et je prends des enveloppes. Et il y a une tasse\nsouvenir de la ville, super.",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_55.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 55 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je suis dans une librairie » ; B : « Je prends des cartes » ; A : « Postales et des timbres » ; B : « J’achète un stylo bleu » ; A : « Ah, et je prends des enveloppes ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Cartes postales",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Cartes postales",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Carte d embarquement"
-              },
-              {
-                "id": "c",
-                "texte": "Pension complete"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/voyage/carte-d-embarquement.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/pension-complete.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-56",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "travail",
-    "scene": "Piste 56",
-    "consigne": "Écoutez le message et cochez les objets présents sur le bureau de Salim.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_56.mp3",
-      "transcription": "Sur mon bureau, il y a mes lunettes. A côté, il y\na des papiers. J’ai aussi une bouteille d’eau et un\nverre. Et bien sûr, il y a mon téléphone.",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_56.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 56 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Sur mon bureau, il y a mes lunettes » ; B : « A côté, il y » ; A : « A des papiers » ; B : « J’ai aussi une bouteille d’eau et un » ; A : « Verre ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quoi parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Bouteille",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Bouteille",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Caisse enregistreuse"
-              },
-              {
-                "id": "c",
-                "texte": "Balance commerciale"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/objets/bouteille.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/objets/caisse-enregistreuse.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/objets/balance-commerciale.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-57",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "vie-quotidienne",
-    "scene": "Piste 57",
-    "consigne": "Écoutez et cochez les plats du déjeuner de Frida et du déjeuner de Richard.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_57.mp3",
-      "transcription": "– Pour mon déjeuner, je voudrais du poulet avec\ndes pâtes. Pour le dessert, c’est de la glace.\n– Moi, pour le plat, je voudrais du poisson et du\nriz. Pour le dessert, je préfère des fruits.",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_57.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 57 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Pour mon déjeuner, je voudrais du poulet avec » ; B : « Des pâtes » ; A : « Pour le dessert, c’est de la glace » ; B : « Moi, pour le plat, je voudrais du poisson et du » ; A : « Riz ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel aliment parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Poisson",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Poisson",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Fromage de chevre"
-              },
-              {
-                "id": "c",
-                "texte": "Produits laitiers"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/aliments/poisson.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/fromage-de-chevre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/produits-laitiers.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-58",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "transports",
-    "scene": "Piste 58",
-    "consigne": "Écoutez les messages. Vous entendez le nom de l’objet ? Cochez « oui » ou « non ».",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58.mp3",
-      "transcription": "1. Pour mon travail, j’ai des chaussures noires. J’ai\naussi des gants blancs. Après, je mets une chemise\nnoire et un pantalon noir.\n2. Bonjour ! Pour payer votre carte postale, c’est\navec des espèces s’il vous plaît. Vous avez des\npièces ou des billets ? Merci.\n3. Mon entreprise est à 30 kilomètres. Je prends le\ntrain tous les jours. Je n’ai pas de voiture. Parfois,\nje viens avec un collègue."
-    },
-    "questions": [
-      {
-        "enonce": "De quel vêtement ou accessoire parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Chaussures",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Chaussures",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Chaussures de securite"
-              },
-              {
-                "id": "c",
-                "texte": "Cabine d essayage"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/vetements/chaussures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/chaussures-de-securite.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/cabine-d-essayage.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quoi parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Especes",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Especes",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Distributeur de billets"
-              },
-              {
-                "id": "c",
-                "texte": "Dossier administratif"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/especes.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/argent-administration/dossier-administratif.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "De quel moyen de transport parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Voiture",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Voiture",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Ceinture de sécurité"
-              },
-              {
-                "id": "c",
-                "texte": "Automate a billets"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/transports/voiture.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/transports/ceinture-de-sécurité.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/transports/automate-a-billets.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Combien de kilomètres ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "30",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "30",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "20"
-              },
-              {
-                "id": "c",
-                "texte": "25"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
     "id": "delf-a1-2022-co-ex1-59",
     "niveau": "A0-A1",
     "competence": "CO",
@@ -57905,252 +56814,6 @@
               {
                 "id": "c",
                 "image": "/lib/images/vocabulaire/ecole-bureau/porte-documents.webp"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-71",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "maison",
-    "scene": "Piste 71",
-    "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_71.mp3",
-      "transcription": "Bonjour, c’est Pierre. Tu veux venir à la maison ce\nsoir ? Il y a un super film à la télévision. Viens à\n20 heures ! Tu as la clé de l’appartement alors tu\npeux entrer. Je prépare des pâtes à la sauce tomate.\nTu peux apporter du pain ? Merci, à tout à l’heure.",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_71.webp",
-      "image_description": "Scénario vidéo (audio CO moyen, « Piste 71 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, c’est Pierre » ; B : « Tu veux venir à la maison ce » ; A : « Soir ? » ; B : « Il y a un super film à la télévision » ; A : « Viens à » ; B : « 20 heures ! » ; A : « Tu as la clé de l’appartement alors tu » ; B : « Peux entrer ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Appartement",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Appartement",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Produits menagers"
-              },
-              {
-                "id": "c",
-                "texte": "Rez de chaussee"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/appartement.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/maison/produits-menagers.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/rez-de-chaussee.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Qui parle ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Pierre",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Pierre",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Marc"
-              },
-              {
-                "id": "c",
-                "texte": "Sophie"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-72",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "travail",
-    "scene": "Piste 72",
-    "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3",
-      "transcription": "Bonjour, c’est Rebecca ! Demain, c’est votre\npremier jour dans notre entreprise. Vous devez\napporter votre pièce d’identité. Dans votre\nbureau, il y a une grande chaise, votre ordinateur\net une machine à café. Il y a aussi une tasse avec\nle nom de l’entreprise. Le midi, nous pouvons aller\nau restaurant de l’entreprise. À demain !",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_72.webp",
-      "image_description": "Scénario vidéo (audio CO moyen, « Piste 72 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, c’est Rebecca ! » ; B : « Demain, c’est votre » ; A : « Premier jour dans notre entreprise » ; B : « Vous devez » ; A : « Apporter votre pièce d’identité » ; B : « Dans votre » ; A : « Bureau, il y a une grande chaise, votre ordinateur » ; B : « Et une machine à café ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quoi parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Machine à café",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Machine à café",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Balance de cuisine"
-              },
-              {
-                "id": "c",
-                "texte": "Plaque de cuisson"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/electromenager/machine-à-café.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/electromenager/balance-de-cuisine.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/electromenager/plaque-de-cuisson.webp"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Qui parle ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Rebecca",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Rebecca",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Marc"
-              },
-              {
-                "id": "c",
-                "texte": "Sophie"
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "consigne_supplementaire": null
-  },
-  {
-    "id": "delf-a1-2022-co-ex5-73",
-    "niveau": "A0-A1",
-    "competence": "CO",
-    "type_exercice": "complet",
-    "theme": "Identifier des objets",
-    "scenario": "ecole",
-    "scene": "Piste 73",
-    "consigne": "Écoutez le document. Lisez les questions, puis répondez.",
-    "support": {
-      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_73.mp3",
-      "transcription": "Salut ! Tu peux faire des courses s’il te plaît ?\nAlors, prends du beurre, une salade et des œufs.\nJe voudrais aussi du thé. Pour le dessert, qu’est-ce\nque tu veux ? Tu peux prendre des pommes. J’ai\ndes bananes à la maison. Va aussi à la pharmacie\npour prendre les médicaments. Merci beaucoup.\nBisous.\nProduction orale",
-      "image": "/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_73.webp",
-      "image_description": "Scénario vidéo (audio CO court, « Piste 73 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Salut ! » ; B : « Tu peux faire des courses s’il te plaît ? » ; A : « Alors, prends du beurre, une salade et des œufs » ; B : « Je voudrais aussi du thé » ; A : « Pour le dessert, qu’est-ce ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo."
-    },
-    "questions": [
-      {
-        "enonce": "De quel lieu parle-t-on ?",
-        "type_reponse": "lignes",
-        "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Pharmacie",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Pharmacie",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "Distributeur automatique"
-              },
-              {
-                "id": "c",
-                "texte": "Bureau d information"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/pharmacie.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/distributeur-automatique.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/bureau-d-information.webp"
               }
             ]
           }
@@ -62574,6 +61237,972 @@
             ]
           }
         }
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-49-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "transports",
+    "scene": "Piste 49 — 1",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_49-1.mp3",
+      "transcription": "C’est un moyen de transport. Il est blanc. Je prends ce moyen de transport pour aller faire les courses. Toute la famille vient avec moi."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/transports/voiture-blanche.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/transports/vélo.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/transports/bus.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/transports/train.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/accessoires/sac-de-course.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-49-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "maison",
+    "scene": "Piste 49 — 2",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_49-2.mp3",
+      "transcription": "L’objet est dans la salle de bains. C’est utile le matin et le soir. C’est pour laver mes dents."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/hygiene/brosse-a-dents.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/hygiene/savon.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/hygiene/peigne.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/hygiene/serviette.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/hygiene/dentifrice.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-49-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "vie-quotidienne",
+    "scene": "Piste 49 — 3",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_49-3.mp3",
+      "transcription": "L’objet est de couleur noire. Je prends cet objet pour sortir dans la rue. Je mets l’objet sur ma tête."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/vetements/chapeau.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/vetements/casquette.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/vetements/écharpe.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/vetements/gants.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-50",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "voyage",
+    "scene": "Piste 50",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3",
+      "transcription": "Un passeport. Une lettre. Un diplôme. Une valise. Un sac."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/voyage/passeport.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/voyage/valise.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/technologie/téléphone.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/cuisine/tasse.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-51",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "loisirs",
+    "scene": "Piste 51",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3",
+      "transcription": "Numéro 3 : des fruits. Numéro 1 : un jus de fruits. Numéro 5 : une pomme. Numéro 2 : des légumes. Numéro 4 : une tomate."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/boissons/jus-d-orange.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/legumes/tomate.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/aliments/pain.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/desserts/glace.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-52",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "vie-quotidienne",
+    "scene": "Piste 52",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
+      "transcription": "Un savon. Un menu. Une chemise. Du papier toilette. Une addition. Une jupe."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/hygiene/savon.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/vetements/chemise.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/argent-administration/addition.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/transports/vélo.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/fruits/banane.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-53",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "vie-quotidienne",
+    "scene": "Piste 53",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_53.mp3",
+      "transcription": "Une télévision. Une table. Un ticket de bus. Un couteau. Une fourchette. Une bouteille d’eau. Un crayon. Une feuille."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/technologie/télévision.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/transports/ticket-de-bus.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/boissons/bouteille-deau.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/vetements/chaussures.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-54-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "travail",
+    "scene": "Piste 54 — 1",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54-1.mp3",
+      "transcription": "En voyage, je prends toujours mon ordinateur portable. Je dois souvent regarder mes messages électroniques pour le travail. C’est la vie !"
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/technologie/ordinateur.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/technologie/téléphone.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/voyage/valise.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/maison/lit.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-54-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "maison",
+    "scene": "Piste 54 — 2",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54-2.mp3",
+      "transcription": "J’adore mon lit. Et tu sais, il y a toujours un livre à côté de mon lit. Tous les soirs, je dois lire pour l’université."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/maison/lit.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/technologie/télévision.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/maison/chaise.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/cuisine/tasse.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-54-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "transports",
+    "scene": "Piste 54 — 3",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54-3.mp3",
+      "transcription": "Pour mon travail, je dois avoir un permis de conduire. Je prends ma voiture et je paye l’essence. Après, mon entreprise me donne de l’argent pour l’essence."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/transports/voiture-bleue.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/transports/train.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/transports/vélo.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/argent-administration/billet-de-banque.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/technologie/ordinateur.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-55-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "loisirs",
+    "scene": "Piste 55 — 1",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-1.mp3",
+      "transcription": "Je suis dans une librairie. Je prends des cartes postales et des timbres. J’achète un stylo bleu."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/argent-administration/timbre.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/ecole-bureau/stylo.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/fruits/pomme.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/vetements/chapeau.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-55-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "loisirs",
+    "scene": "Piste 55 — 2",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-2.mp3",
+      "transcription": "Ah, et je prends des enveloppes."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/ecole-bureau/stylo.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/cuisine/tasse.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-55-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "loisirs",
+    "scene": "Piste 55 — 3",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-3.mp3",
+      "transcription": "Et il y a une tasse souvenir de la ville, super !"
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/cuisine/tasse.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/boissons/café.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/cuisine/verre.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/fruits/banane.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/transports/train.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-56",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "ecole",
+    "scene": "Piste 56",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_56.mp3",
+      "transcription": "Sur mon bureau, il y a mes lunettes. À côté, il y a des papiers. J’ai aussi une bouteille d’eau et un verre. Et bien sûr, il y a mon téléphone."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/accessoires/lunettes.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/boissons/bouteille-deau.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/technologie/téléphone.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/cuisine/couteau.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/voyage/valise.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-57",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "loisirs",
+    "scene": "Piste 57",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_57.mp3",
+      "transcription": "Pour mon déjeuner, je voudrais du poulet avec des pâtes. Pour le dessert, c’est de la glace. Moi, pour le plat, je voudrais du poisson et du riz. Pour le dessert, je préfère des fruits."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/aliments/poulet.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/desserts/glace.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/aliments/poisson.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/vetements/chemise.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/transports/bus.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-58-1",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "travail",
+    "scene": "Piste 58 — 1",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-1.mp3",
+      "transcription": "Pour mon travail, j’ai des chaussures noires. J’ai aussi des gants blancs. Après, je mets une chemise noire et un pantalon noir."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/vetements/chaussures.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/vetements/gants.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/vetements/pantalon.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/vetements/jupe.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/vetements/chapeau.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-58-2",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "magasins",
+    "scene": "Piste 58 — 2",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-2.mp3",
+      "transcription": "Bonjour ! Pour payer votre carte postale, c’est avec des espèces s’il vous plaît. Vous avez des pièces ou des billets ? Merci."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/argent-administration/especes.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/argent-administration/pièce-de-monnaie.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/argent-administration/billet-de-banque.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/technologie/carte-bancaire.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-58-3",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "transports",
+    "scene": "Piste 58 — 3",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-3.mp3",
+      "transcription": "Mon entreprise est à 30 kilomètres. Je prends le train tous les jours. Je n’ai pas de voiture. Parfois, je viens avec un collègue."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/transports/train.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/transports/voiture-rouge.webp",
+        "correct": false
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/transports/bus.webp",
+        "correct": false
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/transports/vélo.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/transports/métro.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-71",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "maison",
+    "scene": "Piste 71",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_71.mp3",
+      "transcription": "Bonjour, c’est Pierre. Tu veux venir à la maison ce soir ? Il y a un super film à la télévision. Viens à 20 heures ! Tu as la clé de l’appartement alors tu peux entrer. Je prépare des pâtes à la sauce tomate. Tu peux apporter du pain ? Merci, à tout à l’heure."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/technologie/télévision.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/objets/cle.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/aliments/pain.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/voyage/valise.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/sports/ballon.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-72",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "travail",
+    "scene": "Piste 72",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3",
+      "transcription": "Bonjour, c’est Rebecca ! Demain, c’est votre premier jour dans notre entreprise. Vous devez apporter votre pièce d’identité. Dans votre bureau, il y a une grande chaise, votre ordinateur et une machine à café. Il y a aussi une tasse avec le nom de l’entreprise. Le midi, nous pouvons aller au restaurant de l’entreprise. À demain !"
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/technologie/ordinateur.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/electromenager/machine-à-café.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/fruits/banane.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/transports/vélo.webp",
+        "correct": false
+      }
+    ],
+    "consigne_supplementaire": null
+  },
+  {
+    "id": "delf-a1-2022-co-ex5-73",
+    "niveau": "A0-A1",
+    "competence": "CO",
+    "type_exercice": "images_a_reconnaitre",
+    "theme": "Identifier des objets",
+    "scenario": "maison",
+    "scene": "Piste 73",
+    "consigne": "Écoutez le message. Cochez la case sous l’image si vous entendez le nom de l’objet (OUI) ; sinon, laissez-la vide (NON).",
+    "points": 5,
+    "support": {
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_73.mp3",
+      "transcription": "Salut ! Tu peux faire des courses s’il te plaît ? Alors, prends du beurre, une salade et des œufs. Je voudrais aussi du thé. Pour le dessert, qu’est-ce que tu veux ? Tu peux prendre des pommes. J’ai des bananes à la maison. Va aussi à la pharmacie pour prendre les médicaments. Merci beaucoup. Bisous."
+    },
+    "questions": [],
+    "melanger": true,
+    "score": "par_image",
+    "images": [
+      {
+        "id": "i1",
+        "image": "/lib/images/vocabulaire/aliments/beurre.webp",
+        "correct": true
+      },
+      {
+        "id": "i2",
+        "image": "/lib/images/vocabulaire/boissons/thé.webp",
+        "correct": true
+      },
+      {
+        "id": "i3",
+        "image": "/lib/images/vocabulaire/sante/medicament.webp",
+        "correct": true
+      },
+      {
+        "id": "i4",
+        "image": "/lib/images/vocabulaire/vetements/chaussures.webp",
+        "correct": false
+      },
+      {
+        "id": "i5",
+        "image": "/lib/images/vocabulaire/technologie/télévision.webp",
+        "correct": false
       }
     ],
     "consigne_supplementaire": null
