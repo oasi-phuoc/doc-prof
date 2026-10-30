@@ -5,6 +5,7 @@ import { TexteSupport } from './TexteSupport'
 import { DialoguePO, FormulairePE, ZoneEcriture } from './TcfProduction'
 import {
   AssociationSituations,
+  AudioCadre,
   GrilleOral,
   ImagesACocher,
   QuestionLignes,
@@ -84,6 +85,8 @@ export function TcfItemView({
       )
     case 'lignes':
       return <QuestionLignes {...tcf} points={points} mode={mode} />
+    case 'audio_cadre':
+      return <AudioCadre audioLabel={tcf.audioLabel} questions={tcf.questions} mode={mode} />
     case 'images_a_cocher':
       return <ImagesACocher {...tcf} mode={mode} />
     case 'association':

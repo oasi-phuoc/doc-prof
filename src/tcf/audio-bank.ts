@@ -1,5 +1,6 @@
 import {
   TCF_AUDIO_TAG_COURT,
+  TCF_AUDIO_TAG_MOYEN,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
   type TcfAudioTag,
@@ -14,15 +15,15 @@ export type TcfAudioEntry = {
   label: string
   /** Thème ou type pour la recherche. */
   meta: string
-  /** Tags (ex. `scenario` = dialogue découpé ; `court` = mini-extrait 6 audios). */
+  /** Tags (ex. `scenario` / `court` / `moyen`). */
   tags: TcfAudioTag[]
-  /** N° de dialogue / piste 1-based (scenario ou court multi). */
+  /** N° de dialogue / piste 1-based (scenario, court ou moyen multi). */
   dialogueIndex?: number
-  /** Pool de questions liées à cette piste (tag `court`). */
+  /** Pool de questions liées à cette piste (tags `court` / `moyen`). */
   questionPool?: TcfQuestion[]
 }
 
-export { TCF_AUDIO_TAG_COURT, TCF_AUDIO_TAG_SCENARIO, tcfAudioHasTag }
+export { TCF_AUDIO_TAG_COURT, TCF_AUDIO_TAG_MOYEN, TCF_AUDIO_TAG_SCENARIO, tcfAudioHasTag }
 
 /** Accents courants dans les stems / dossiers audio. */
 const AUDIO_WORD_ACCENTS: Record<string, string> = {
@@ -159,10 +160,10 @@ function questionsForAudioIndex(exercise: TcfExercise, audioIndex: number, nAudi
 }
 
 /**
- * Pistes « court » : mono complet à 1 question, ou chaque piste d’un multi
- * qui a au moins une question liée.
+ * Pistes « court » (1 Q) ou « moyen » (≥ 2 Q) : mono complet, ou chaque piste
+ * d’un multi qui a un pool de questions liées.
  */
-function courtAudioRows(exercise: TcfExercise): RawAudioRow[] {
+function courtOrMoyenAudioRows(exercise: TcfExercise): RawAudioRow[] {
   if (exercise.type_exercice !== 'complet') return []
   const support = exercise.support
   const multi = (support.audios ?? []).map((a) => a.trim()).filter(Boolean)
@@ -172,6 +173,7 @@ function courtAudioRows(exercise: TcfExercise): RawAudioRow[] {
     for (let i = 0; i < multi.length; i++) {
       const pool = questionsForAudioIndex(exercise, i + 1, multi.length)
       if (pool.length === 0) continue
+      const tag = pool.length >= 2 ? TCF_AUDIO_TAG_MOYEN : TCF_AUDIO_TAG_COURT
       const audio = multi[i]!
       const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
       out.push({
@@ -179,7 +181,7 @@ function courtAudioRows(exercise: TcfExercise): RawAudioRow[] {
         exercise,
         base: `${base} · extrait ${i + 1}`,
         stem,
-        tags: [TCF_AUDIO_TAG_COURT],
+        tags: [tag],
         dialogueIndex: i + 1,
         questionPool: pool,
       })
@@ -189,8 +191,9 @@ function courtAudioRows(exercise: TcfExercise): RawAudioRow[] {
   const one = support.audio?.trim()
   if (!one) return []
   const qs = exercise.questions ?? []
-  // Un seul audio + une seule question = mini-extrait « court »
-  if (qs.length !== 1) return []
+  if (qs.length === 0) return []
+  // 1 Q → court ; ≥ 2 Q → moyen (on tire 2 questions du pool)
+  const tag = qs.length >= 2 ? TCF_AUDIO_TAG_MOYEN : TCF_AUDIO_TAG_COURT
   const stem = one.split('/').pop()?.replace(/\.mp3$/i, '') ?? one
   return [
     {
@@ -198,7 +201,7 @@ function courtAudioRows(exercise: TcfExercise): RawAudioRow[] {
       exercise,
       base: tcfAudioBaseLabel(exercise, one),
       stem,
-      tags: [TCF_AUDIO_TAG_COURT],
+      tags: [tag],
       dialogueIndex: 1,
       questionPool: qs,
     },
@@ -244,9 +247,9 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
     }
   }
 
-  // 2) Mini-extraits « court » (mono 1Q ou piste multi avec pool de questions)
+  // 2) Mini-extraits « court » / « moyen » (mono ou piste multi avec pool)
   for (const exercise of exercises) {
-    for (const row of courtAudioRows(exercise)) {
+    for (const row of courtOrMoyenAudioRows(exercise)) {
       if (seen.has(row.audio)) continue
       seen.add(row.audio)
       raw.push(row)
@@ -298,10 +301,11 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
     const list = byBase.get(row.base)!
     const total = counts.get(row.base) ?? 1
     const index = list.indexOf(row) + 1
-    // Les dialogues scénario / extraits court ont déjà « · dialogue/extrait N » dans base
+    // Les dialogues scénario / extraits court·moyen ont déjà « · dialogue/extrait N » dans base
     const label =
       tcfAudioHasTag(row.tags, TCF_AUDIO_TAG_SCENARIO) ||
       tcfAudioHasTag(row.tags, TCF_AUDIO_TAG_COURT) ||
+      tcfAudioHasTag(row.tags, TCF_AUDIO_TAG_MOYEN) ||
       total <= 1
         ? row.base
         : `${row.base} ${index}`
@@ -338,6 +342,13 @@ export function tcfScenarioAudioEntries(exercises: readonly TcfExercise[]): TcfA
 export function tcfCourtAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
   return tcfAudioEntries(exercises).filter(
     (e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_COURT) && (e.questionPool?.length ?? 0) > 0,
+  )
+}
+
+/** Audios tagués `moyen` (≥ 2 questions) pour « 3 audios moyens ». */
+export function tcfMoyenAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
+  return tcfAudioEntries(exercises).filter(
+    (e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_MOYEN) && (e.questionPool?.length ?? 0) >= 2,
   )
 }
 

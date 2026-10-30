@@ -1,5 +1,10 @@
 import { createRng, int, pick, randomSeed, shuffle, type Rng } from '@/math/rng'
-import { tcfCourtAudioEntries, tcfScenarioAudioEntries, type TcfAudioEntry } from './audio-bank'
+import {
+  tcfCourtAudioEntries,
+  tcfMoyenAudioEntries,
+  tcfScenarioAudioEntries,
+  type TcfAudioEntry,
+} from './audio-bank'
 import { isTcfCoAssociation } from './association-audio'
 import { filledForms, switchQuestionForm } from './formes'
 import { tcfBank, tcfBankAllLevels } from './loader'
@@ -7,6 +12,7 @@ import { emptyTcfExercise, tcfExerciseId } from './templates'
 import type {
   TcfCoAssociation,
   TcfCoSixCourts,
+  TcfCoTroisMoyens,
   TcfCompetence,
   TcfExercise,
   TcfNiveau,
@@ -169,9 +175,46 @@ export function drawSixCourtsCompose(
 }
 
 /**
+ * Compose « 3 audios moyens » : tire 3 pistes taguées `moyen`, deux questions
+ * au hasard dans le pool de chaque piste (QCM texte par défaut).
+ */
+export function drawTroisMoyensCompose(
+  niveau: TcfNiveau,
+  rng: Rng = createRng(randomSeed()),
+): TcfCoTroisMoyens | null {
+  const pool = enoughEntries(niveau, tcfMoyenAudioEntries(tcfBankAllLevels('CO')), 3)
+  if (pool.length < 3) return null
+  const picked = shuffle(rng, pool).slice(0, 3)
+  const questions: TcfQuestion[] = []
+  for (let i = 0; i < picked.length; i++) {
+    const fromPool = picked[i]!.questionPool ?? []
+    if (fromPool.length < 2) continue
+    const chosen = shuffle(rng, fromPool).slice(0, 2)
+    for (const q of chosen) {
+      questions.push({ ...asQcmTextePrefer(q), audio: i + 1 })
+    }
+  }
+  if (questions.length !== 6) return null
+  return {
+    id: `tcf-co-trois-moyens-draw-${niveau.toLowerCase()}`,
+    niveau,
+    competence: 'CO',
+    type_exercice: 'trois_moyens',
+    theme: 'Audios moyens',
+    scenario: 'vie-quotidienne',
+    scene: 'Trois extraits moyens',
+    consigne: 'Écoutez chaque extrait, puis répondez aux questions.',
+    points: 6,
+    support: { audios: picked.map((e) => e.audio) },
+    questions,
+    consigne_supplementaire: null,
+  }
+}
+
+/**
  * Un tirage pour le type choisi.
  * six_courts : 6 pistes `court` + 1 question chacune.
- * trois_moyens : pour l’instant un complet à 2 questions (mono).
+ * trois_moyens : 3 pistes `moyen` + 2 questions chacune.
  * Images objets / association : composition dédiée.
  */
 export function drawTcfSeries(
@@ -188,14 +231,7 @@ export function drawTcfSeries(
   }
 
   if (competence === 'CO' && typeExercice === 'trois_moyens') {
-    const ready = tcfBankAllLevels('CO').filter((ex) => {
-      if (ex.type_exercice !== 'complet' || ex.questions.length !== 2) return false
-      const multi = ex.support.audios?.some((a) => a.trim().length > 0)
-      const one = ex.support.audio?.trim()
-      return Boolean(!multi && one)
-    })
-    const source = shuffle(rng, ready)[0]
-    return source ? withNiveau(source, niveau) : blank()
+    return drawTroisMoyensCompose(niveau, rng) ?? blank()
   }
 
   if (competence === 'CO' && typeExercice === 'images_a_reconnaitre') {

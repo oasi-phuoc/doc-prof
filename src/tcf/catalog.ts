@@ -167,7 +167,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'trois_moyens',
     label: '3 audios moyens',
-    description: 'Un audio moyen, avec deux questions.',
+    description: '3 pistes taguées « moyen » tirées au hasard, deux questions chacune (QCM texte).',
     instruction: 'Écoutez chaque extrait, puis répondez aux questions.',
     reponses: ALL_REPONSES,
   },
