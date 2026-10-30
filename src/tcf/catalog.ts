@@ -186,9 +186,9 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'association_images',
     label: 'Conversations / situations',
     description:
-      '4 petits dialogues tirés au hasard parmi la banque, avec 6 ou 8 scènes (dont leurres). Notez le n° sous chaque image.',
+      '4 audios tagués « scenario » (image liée) + 2 scènes leurres. Grille 2×3, Audio n° sous chaque image (6 × 1 pt).',
     instruction:
-      'Vous allez entendre 4 petits dialogues correspondant à 4 situations différentes. Associez chaque dialogue à une image. Attention : il y a 6 ou 8 images mais seulement 4 dialogues.',
+      'Vous allez entendre 4 petits dialogues correspondant à 4 situations différentes. Associez chaque audio à une image. Attention : il y a 6 images mais seulement 4 audios.',
     reponses: [],
   },
   // —— PE ——

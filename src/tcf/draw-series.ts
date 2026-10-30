@@ -1,4 +1,4 @@
-import { createRng, int, pick, randomSeed, shuffle, type Rng } from '@/math/rng'
+import { createRng, pick, randomSeed, shuffle, type Rng } from '@/math/rng'
 import {
   tcfCourtAudioEntries,
   tcfLongAudioEntries,
@@ -24,6 +24,13 @@ import type {
 } from './types'
 
 export const TCF_LONG_DEFAULT_QUESTIONS = 5
+
+export type TcfComposeOpts = {
+  /** Chemins audio épinglés (slots vides → tirage). */
+  audioSlots?: readonly (string | undefined)[]
+  /** Nombre de questions pour un audio long (défaut 5). */
+  questionCount?: number
+}
 
 /**
  * Résout N entrées : chemins épinglés (tous niveaux) d’abord,
@@ -82,14 +89,15 @@ function asQcmTextePrefer(q: TcfQuestion): TcfQuestion {
   return clone
 }
 
+/** Unité dialogue = 1 piste audio taguée `scenario` + 1 scène associée (hors leurres). */
 type DialogueUnit = {
   audio: string
   transcription: string
   image: string
   sourceId: string
+  niveau: TcfNiveau
 }
 
-/** Unité dialogue = 1 piste audio taguée `scenario` + 1 scène associée (hors leurres). */
 function associationDialoguePool(): DialogueUnit[] {
   const out: DialogueUnit[] = []
   for (const entry of tcfScenarioAudioEntries(tcfBankAllLevels('CO'))) {
@@ -107,6 +115,7 @@ function associationDialoguePool(): DialogueUnit[] {
       transcription: (trs[idx] ?? '').trim(),
       image: sit.image.trim(),
       sourceId: ex.id,
+      niveau: ex.niveau,
     })
   }
   const seen = new Set<string>()
@@ -117,34 +126,80 @@ function associationDialoguePool(): DialogueUnit[] {
   })
 }
 
-function associationLeurreImages(exclude: Set<string>): string[] {
+function enoughDialogueUnits(niveau: TcfNiveau, items: DialogueUnit[], min: number): DialogueUnit[] {
+  const here = items.filter((u) => u.niveau === niveau)
+  return here.length >= min ? here : items
+}
+
+/** Résout N unités scénario : chemins épinglés d’abord, puis tirage. */
+function pickDialogueSlots(
+  fillPool: DialogueUnit[],
+  count: number,
+  rng: Rng,
+  pinned: readonly (string | undefined)[] | undefined,
+  lookupPool: DialogueUnit[] = fillPool,
+): DialogueUnit[] | null {
+  if (fillPool.length < count && !(pinned?.some((p) => p?.trim()))) return null
+  const byPath = new Map(lookupPool.map((u) => [u.audio, u]))
+  const used = new Set<string>()
+  const out: Array<DialogueUnit | null> = Array.from({ length: count }, () => null)
+  for (let i = 0; i < count; i++) {
+    const path = pinned?.[i]?.trim()
+    const pinnedUnit = path ? byPath.get(path) : undefined
+    if (pinnedUnit && !used.has(pinnedUnit.audio)) {
+      out[i] = pinnedUnit
+      used.add(pinnedUnit.audio)
+    }
+  }
+  const remaining = shuffle(
+    rng,
+    fillPool.filter((u) => !used.has(u.audio)),
+  )
+  let ri = 0
+  for (let i = 0; i < count; i++) {
+    if (out[i]) continue
+    const next = remaining[ri++]
+    if (!next) return null
+    out[i] = next
+    used.add(next.audio)
+  }
+  return out as DialogueUnit[]
+}
+
+/**
+ * Leurres = scènes d’autres unités `scenario` non tirées (pas les chemins
+ * « *-leurre-* » des packs, souvent absents du dépôt).
+ */
+function associationLeurreImages(exclude: Set<string>, units: DialogueUnit[]): string[] {
   const imgs: string[] = []
   const seen = new Set<string>(exclude)
-  for (const ex of tcfBankAllLevels('CO')) {
-    if (ex.type_exercice !== 'association_images') continue
-    for (const sit of ex.situations) {
-      const img = sit.image.trim()
-      if (!img || seen.has(img)) continue
-      seen.add(img)
-      imgs.push(img)
-    }
+  for (const u of units) {
+    const img = u.image.trim()
+    if (!img || seen.has(img)) continue
+    seen.add(img)
+    imgs.push(img)
   }
   return imgs
 }
 
 /**
- * Tire 4 dialogues distincts + 2 ou 4 scènes leurres (6 ou 8 images).
- * Les pistes audio restent découpées (une par dialogue).
+ * Compose « association scénarios » : 4 pistes taguées `scenario` (image liée)
+ * + 2 scènes leurres (dialogue null) → 6 images, 1 point chacune.
  */
-function drawAssociationCompose(niveau: TcfNiveau, rng: ReturnType<typeof createRng>): TcfCoAssociation | null {
-  const pool = associationDialoguePool()
-  if (pool.length < 4) return null
-  const picked = shuffle(rng, pool).slice(0, 4)
+export function drawAssociationCompose(
+  niveau: TcfNiveau,
+  rng: Rng = createRng(randomSeed()),
+  opts: TcfComposeOpts = {},
+): TcfCoAssociation | null {
+  const all = associationDialoguePool()
+  const pool = enoughDialogueUnits(niveau, all, 4)
+  const picked = pickDialogueSlots(pool, 4, rng, opts.audioSlots, all)
+  if (!picked) return null
   const usedImages = new Set(picked.map((u) => u.image))
-  const leurrePool = associationLeurreImages(usedImages)
+  // Leurres depuis le même pool de niveau (évite les scènes A1-A2 absentes du dépôt).
+  const leurrePool = associationLeurreImages(usedImages, pool)
   if (leurrePool.length < 2) return null
-  const nLeurres = int(rng, 0, 1) === 0 ? 2 : Math.min(4, leurrePool.length)
-  const leurres = shuffle(rng, leurrePool).slice(0, nLeurres)
+  const leurres = shuffle(rng, leurrePool).slice(0, 2)
 
   const matched: TcfSituation[] = picked.map((u, i) => ({
     id: `d${i + 1}`,
@@ -157,22 +212,20 @@ function drawAssociationCompose(niveau: TcfNiveau, rng: ReturnType<typeof create
     dialogue: null,
   }))
   const situations = shuffle(rng, [...matched, ...decoys])
-  const nImages = situations.length
-  const id = `tcf-co-assoc-draw-${niveau.toLowerCase()}`
 
   return {
-    id,
+    id: `tcf-co-assoc-draw-${niveau.toLowerCase()}`,
     niveau,
     competence: 'CO',
     type_exercice: 'association_images',
     theme: 'Conversations entre locuteurs',
     scenario: 'vie-quotidienne',
-    scene: 'Dialogues illustrés',
+    scene: 'Situations illustrées',
     consigne:
       `Vous allez entendre 4 petits dialogues, correspondant à 4 situations différentes. ` +
-      `Associez chaque dialogue à une image. Attention : il y a ${nImages} images mais seulement 4 dialogues. ` +
-      `Notez le numéro du dialogue sous l’image (Dialogue n° : ___).`,
-    points: 8,
+      `Associez chaque audio à une image. Attention : il y a 6 images mais seulement 4 audios. ` +
+      `Notez le numéro de l’audio sous l’image (Audio n° : ___).`,
+    points: 6,
     support: {
       nb_dialogues: 4,
       audios: picked.map((u) => u.audio),
@@ -182,13 +235,6 @@ function drawAssociationCompose(niveau: TcfNiveau, rng: ReturnType<typeof create
     situations,
     consigne_supplementaire: null,
   }
-}
-
-export type TcfComposeOpts = {
-  /** Chemins audio épinglés (slots vides → tirage). */
-  audioSlots?: readonly (string | undefined)[]
-  /** Nombre de questions pour un audio long (défaut 5). */
-  questionCount?: number
 }
 
 /**

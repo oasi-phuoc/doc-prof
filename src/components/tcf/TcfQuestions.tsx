@@ -426,7 +426,7 @@ export function LignesReponse({ nbLignes, texte }: { nbLignes: number; texte?: s
   )
 }
 
-/** CO : scènes illustrées, « Dialogue n° : ___ » (trait couleur) sous chaque image. */
+/** CO : scènes illustrées, « Audio n° : ___ » (trait couleur) sous chaque image. */
 export function AssociationSituations({
   situations,
   mode,
@@ -443,7 +443,7 @@ export function AssociationSituations({
         <li key={`${s.lettre}-${i}`}>
           <TcfImage src={s.image} alt={`Scène ${s.lettre}`} />
           <span className="tcf-situation-foot">
-            <span className="tcf-dialogue-label">Dialogue n°&nbsp;:</span>
+            <span className="tcf-dialogue-label">Audio n°&nbsp;:</span>
             <span className="answer-line-field compact tcf-situation-num">
               {show ? (s.dialogue != null ? String(s.dialogue) : '—') : ''}
             </span>

@@ -8,6 +8,7 @@ import { isTcfConsignesType } from '@/tcf/catalog'
 import {
   tcfCoAudioSlotCount,
   tcfCoComposeQuestionCount,
+  tcfCoPointsRowLabel,
 } from '@/tcf/co-audio-slots'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
@@ -301,7 +302,11 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               !isTcfConsignesType(activeBlock.exerciseType) &&
               tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
                 <div className="tcf-question-points">
-                  <b>Points par question</b>
+                  <b>
+                    {tcfCoAudioSlotCount(activeBlock.exerciseType) === 4
+                      ? 'Points par image'
+                      : 'Points par question'}
+                  </b>
                   {Array.from(
                     {
                       length: tcfCoComposeQuestionCount(
@@ -311,9 +316,10 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     },
                     (_, i) => {
                       const pts = activeBlock.tcfQuestionPoints?.[i] ?? activeBlock.pointsPerQuestion ?? 1
+                      const rowLabel = tcfCoPointsRowLabel(activeBlock.exerciseType, i)
                       return (
                         <label className="select-shell" key={`q-pts-${i}`}>
-                          <span>Question {i + 1}</span>
+                          <span>{rowLabel}</span>
                           <input
                             className="pill-input"
                             type="number"
@@ -321,7 +327,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                             min={0.5}
                             max={20}
                             step={0.5}
-                            aria-label={`Points de la question ${i + 1}`}
+                            aria-label={`Points de ${rowLabel.toLowerCase()}`}
                             value={pts}
                             onChange={(event) => {
                               const raw = Number(event.target.value.replace(',', '.'))

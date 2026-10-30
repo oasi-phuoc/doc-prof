@@ -4408,10 +4408,11 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-tableau td{font-weight:600;color:var(--purple)}
 .tcf-situations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 12px}
 .tcf-situations.is-4{grid-template-columns:repeat(2,1fr)}
-.tcf-situations.is-6{grid-template-columns:repeat(3,1fr)}
+.tcf-situations.is-6{grid-template-columns:repeat(2,1fr)} /* 2 images / ligne × 3 */
 .tcf-situations.is-8{grid-template-columns:repeat(4,1fr)}
 .tcf-situations li{display:flex;flex-direction:column;gap:4px;min-width:0}
 .tcf-situations .tcf-image{height:36mm}
+.tcf-situations.is-6 .tcf-image{height:42mm}
 .tcf-situation-foot{display:flex;align-items:flex-end;gap:4px;width:100%}
 .tcf-dialogue-label{flex:0 0 auto;font-size:.92em;font-weight:600;color:var(--ink);white-space:nowrap}
 .tcf-situation-num{

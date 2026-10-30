@@ -1,12 +1,13 @@
 /**
- * Paramètres CO ex. 1 / 2 / 3 : N listes déroulantes d’audios tagués
- * (court × 6, moyen × 3, long × 1), regroupés par scénario.
+ * Paramètres CO ex. 1 / 2 / 3 / 4 : N listes déroulantes d’audios tagués
+ * (court × 6, moyen × 3, long × 1, scenario × 4), regroupés par scénario.
  */
 import { useMemo } from 'react'
 import {
   tcfCourtAudioEntries,
   tcfLongAudioEntries,
   tcfMoyenAudioEntries,
+  tcfScenarioAudioEntries,
   type TcfAudioEntry,
 } from './audio-bank'
 import { TCF_SCENARIOS, TCF_SCENARIO_AUTRE, tcfSlotByTypeId } from './catalog'
@@ -15,15 +16,19 @@ import { tcfGroupId, tcfScene } from './sources'
 import { TCF_LONG_DEFAULT_QUESTIONS } from './draw-series'
 import type { TcfNiveau } from './types'
 
-export function tcfCoAudioSlotCount(typeId: string): 6 | 3 | 1 | null {
+export type TcfCoAudioSlotCount = 6 | 3 | 1 | 4
+
+export function tcfCoAudioSlotCount(typeId: string): TcfCoAudioSlotCount | null {
   const slot = tcfSlotByTypeId[typeId]
   if (slot?.competence !== 'CO' || slot.numero == null) return null
   if (slot.numero === 1) return 6
   if (slot.numero === 2) return 3
   if (slot.numero === 3) return 1
+  if (slot.numero === 4) return 4
   return null
 }
 
+/** Nombre de lignes « points » en mode éval (questions ou images). */
 export function tcfCoComposeQuestionCount(
   typeId: string,
   questionCount: number | undefined,
@@ -32,13 +37,20 @@ export function tcfCoComposeQuestionCount(
   if (n === 6) return 6
   if (n === 3) return 6
   if (n === 1) return Math.max(1, Math.min(20, questionCount ?? TCF_LONG_DEFAULT_QUESTIONS))
+  if (n === 4) return 6 // 4 audios + 2 leurres → 6 images
   return 0
 }
 
-function poolForSlots(slotCount: 6 | 3 | 1): TcfAudioEntry[] {
+/** Libellé d’une ligne de points (question vs image d’association). */
+export function tcfCoPointsRowLabel(typeId: string, index: number): string {
+  return tcfCoAudioSlotCount(typeId) === 4 ? `Image ${index + 1}` : `Question ${index + 1}`
+}
+
+function poolForSlots(slotCount: TcfCoAudioSlotCount): TcfAudioEntry[] {
   const all = tcfBankAllLevels('CO')
   if (slotCount === 6) return tcfCourtAudioEntries(all)
   if (slotCount === 3) return tcfMoyenAudioEntries(all)
+  if (slotCount === 4) return tcfScenarioAudioEntries(all)
   return tcfLongAudioEntries(all)
 }
 
@@ -118,7 +130,9 @@ export function TcfCoAudioSlotsPicker({
     <div className="quad-libre-block tcf-editor tcf-co-audio-slots">
       {current.map((value, i) => (
         <label className="tcf-field" key={`audio-slot-${i}`}>
-          <span>{slotCount === 1 ? 'Audio' : `Audio ${i + 1}`}</span>
+          <span>
+            {slotCount === 1 ? 'Audio' : slotCount === 4 ? `Audio scénario ${i + 1}` : `Audio ${i + 1}`}
+          </span>
           <select
             className="pill-input"
             value={value}
