@@ -1,5 +1,7 @@
 # Scènes CO — audios courts et moyens
 
+Les critères du projet sont dans [CRITERES-ILLUSTRATIONS.md](CRITERES-ILLUSTRATIONS.md). Les 115 scènes demandées, leurs briefs et leur état sont suivis dans [illustrations-manifest.json](illustrations-manifest.json). Voir [CORRESPONDANCE-IMAGES.md](CORRESPONDANCE-IMAGES.md) pour retrouver les anciens noms, notamment les pistes temporaires.
+
 Briefs de **scénario vidéo** pour chaque audio CO à 1 question (court)
 ou 2 questions (moyen). Générer les vidéos (ou images) **ailleurs**, puis
 déposer ici un **WebP** de scène (bande dessinée réaliste, décor quotidien —
@@ -4953,7 +4955,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex1-07`
 - **Scène** : Piste 07
 - **Scénario** : vie-quotidienne
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_07.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/comparer-les-dates-de-naissance.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_07.mp3`
 - **Description** : Scénario vidéo (audio CO court, « Piste 07 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Je suis né le 28 août 1978 » ; B : « Et toi Audrey ? » ; A : « Moi ? » ; B : « Le 1er mars 1982 » ; A : « Tu es plus jeune que moi ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -4963,7 +4965,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex3-32`
 - **Scène** : Piste 32
 - **Scénario** : fetes
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_32.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/travail/preparer-le-dejeuner-anniversaire-de-l-entreprise.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_32.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 32 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Allô ? » ; B : « C’est Justine » ; A : « Ce midi, c’est le déjeuner pour » ; B : « Fêter les 10 ans de l’entreprise » ; A : « Pour le repas avec » ; B : « Les collègues, est-ce que tu peux acheter le pain ? » ; A : « Et va chercher la viande s’il te plaît » ; B : « Moi, je vais au ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -4973,7 +4975,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex3-33`
 - **Scène** : Piste 33
 - **Scénario** : ecole
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_33.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/suivre-un-itineraire-vers-les-bureaux.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_33.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 33 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, c’est Mme Lee » ; B : « Je vous téléphone pour » ; A : « Vous dire comment venir dans nos bureaux » ; B : « C’est » ; A : « Très facile à partir de la place de la République où » ; B : « Vous travaillez » ; A : « Prenez le boulevard Saint-Michel » ; B : « Ensuite, tournez à droite, rue du Tournesol et ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -4983,7 +4985,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex4-38`
 - **Scène** : Piste 38
 - **Scénario** : fetes
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_38.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/ecole/remplir-le-calendrier-des-anniversaires.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_38.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 38 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Professeur : Nous allons faire le calendrier des » ; B : « Anniversaires de la classe » ; A : « David, c’est quand ton » ; B : « Anniversaire ? » ; A : « David : Mon anniversaire, c’est le 13 février » ; B : « Professeur : C’est bientôt ! » ; A : « Tu vas avoir quel âge ? » ; B : « David : 14 ans ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -4993,7 +4995,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex4-42`
 - **Scène** : Piste 42
 - **Scénario** : ecole
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_42.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/ecole/decrire-les-personnes-sur-la-photo-de-groupe.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_42.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 42 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Regarde, c’est une photo des professeurs de » ; B : « L’école » ; A : « Il y a Alexandre, le professeur d’espagnol » ; B : « C’est l’homme avec un jean et un pull rouge » ; A : « L’homme aux lunettes et au tee-shirt bleu, c’est » ; B : « Alexis, le professeur d’anglais » ; A : « Et le jeune homme » ; B : « Au tee-shirt jaune, ce n’est pas un professeur mais ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5003,7 +5005,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex2-62`
 - **Scène** : Piste 62
 - **Scénario** : magasins
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_62.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/promotion-sur-les-disques.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_62.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 62 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers clients, aujourd’hui, vendredi, nous vous » ; B : « Rappelons le début de la grande promotion » ; A : « Sur tous les disques de notre magasin » ; B : « 25 % de » ; A : « Réduction ! » ; B : « Oui, 25 % de réduction ! » ; A : « Retrouvez les » ; B : « Disques à côté des livres ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5013,7 +5015,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-ex2-63`
 - **Scène** : Piste 63
 - **Scénario** : actualite
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_63.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/concert-sur-la-place-sous-la-pluie.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_63.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 63 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ce soir, grand concert sur la place de la mairie » ; B : « Des chanteurs français, anglais et italiens » ; A : « Sont au rendez-vous » ; B : « Pour gagner des billets » ; A : « Pour rencontrer les artistes, téléphonez au » ; B : « 01.46.79.02.84 » ; A : « La météo n’est pas au rendezvous : de la pluie est annoncée » ; B : « N’oubliez pas ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5023,7 +5025,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-76`
 - **Scène** : Piste 76
 - **Scénario** : loisirs
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_76.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/ecole/repondre-a-l-entretien-oral.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_76.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 76 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour » ; B : « Bonjour » ; A : « Bienvenue à votre épreuve de production orale » ; B : « Du DELF A1 Le premier exercice est un entretien » ; A : « Dirigé » ; B : « Je vous pose des questions pour vous » ; A : « Connaître » ; B : « Ça va ? ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5033,7 +5035,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-80`
 - **Scène** : Piste 80
 - **Scénario** : transports
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_80.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/vie-quotidienne/comparer-ses-gouts-et-ses-habitudes.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_80.mp3`
 - **Description** : Scénario vidéo (audio CO court, « Piste 80 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ma couleur préférée est le bleu » ; B : « Moi, c’est » ; A : « Le vert » ; B : « J’ai un chien et deux chats » ; A : « Ah, c’est bien ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5043,7 +5045,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-83`
 - **Scène** : Piste 83
 - **Scénario** : ecole
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_83.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/ecole/poser-des-questions-a-l-examinatrice.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_83.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 83 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « L’exercice 2 est un échange d’informations » ; B : « Vous me posez des questions pour me connaître » ; A : « Utilisez les mots pour poser vos questions » ; B : « Quelle est votre nationalité ? » ; A : « Je suis française » ; B : « Et vous ? » ; A : « Moi, je suis syrien » ; B : « Combien de langues est-ce ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5053,7 +5055,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-87`
 - **Scène** : Piste 87
 - **Scénario** : magasins
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_87.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/acheter-sucre-tomates-et-baguette.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_87.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 87 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « L’exercice 3 est un dialogue simulé » ; B : « Nous » ; A : « Sommes dans une épicerie » ; B : « Vous voulez acheter » ; A : « Des produits » ; B : « Vous êtes le client et je suis la » ; A : « Vendeuse » ; B : « Nous commençons ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5063,7 +5065,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-88`
 - **Scène** : Piste 88
 - **Scénario** : fetes
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_88.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/restaurant/laisser-un-message-pour-diner-avec-sa-cousine.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_88.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 88 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour chère cousine, c’est Gilles » ; B : « Je suis dans » ; A : « Ta ville pour mon travail avec mon directeur » ; B : « Peut se voir demain après 19 h ? » ; A : « Je t’invite dans » ; B : « Un petit restaurant sympa près de mon hôtel » ; A : « Envoie-moi un texto avant 17 h si tu es d’accord » ; B : « Et je réserve une table pour 20 h ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5073,7 +5075,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-89`
 - **Scène** : Piste 89
 - **Scénario** : magasins
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_89.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/un-deuxieme-livre-offert.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_89.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 89 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Chers clients, courez vite au rayon librairie ! » ; B : « Depuis » ; A : « 14 h et jusqu’à 16 h seulement, pour un livre acheté, » ; B : « Un deuxième offert » ; A : « Et n’oubliez pas de demander à » ; B : « La caisse un bon pour participer au grand tirage au » ; A : « Sort à 19 h et gagner deux entrées gratuites pour le » ; B : « Festival du livre qui commence demain ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5083,7 +5085,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-90`
 - **Scène** : Piste 90
 - **Scénario** : sante
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_90.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/travail/rendez-vous-chez-le-medecin-du-travail.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_90.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 90 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bonjour, c’est José, le secrétaire du directeur » ; B : « Vous avez rendez-vous avec le médecin du travail » ; A : « Lundi prochain » ; B : « Pour votre rendez-vous, venez » ; A : « À 10 h au 2 étage » ; B : « Vous pouvez parler de votre » ; A : « Accident d’hier » ; B : « Racontez votre visite à l’hôpital ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5093,7 +5095,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-92`
 - **Scène** : Piste 92
 - **Scénario** : maison
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_92.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/famille/preparer-le-sac-de-week-end.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_92.mp3`
 - **Description** : Scénario vidéo (audio CO court, « Piste 92 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Allô ? » ; B : « Est-ce que tu peux m’aider à faire le sac » ; A : « Pour ce week-end ? » ; B : « Prends des gants s’il te plaît » ; A : « Il faut aussi des serviettes ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5103,7 +5105,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-93`
 - **Scène** : Piste 93
 - **Scénario** : loisirs
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_93.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/loisirs/ecrire-un-message-au-retour-des-vacances.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_93.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 93 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Salut, c’est Cyril » ; B : « Qu’est-ce que tu fais vendredi ? » ; A : « Moi, je rentre de vacances jeudi » ; B : « Tu veux aller au » ; A : « Cinéma ? » ; B : « Regarde le programme des films sur le » ; A : « Site internet » ; B : « Après, écris-moi un message ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5113,7 +5115,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-94`
 - **Scène** : Piste 94
 - **Scénario** : fetes
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_94.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/magasins/choisir-un-cadeau-pour-la-fete-des-meres.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_94.mp3`
 - **Description** : Scénario vidéo (audio CO moyen, « Piste 94 », durée indicative 15–30 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Ce week-end, c’est la fête des mères » ; B : « Venez dans » ; A : « Notre magasin » ; B : « Nous sommes ouverts de 10 h » ; A : « À 19 h » ; B : « Et il y a 15 % de réduction sur tous les » ; A : « Produits ! » ; B : « Venez vite ! ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5123,7 +5125,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-95`
 - **Scène** : Piste 95
 - **Scénario** : travail
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_95.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/travail/accueillir-un-nouveau-salarie.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_95.mp3`
 - **Description** : Scénario vidéo (audio CO court, « Piste 95 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Bienvenue dans l’entreprise ! » ; B : « Vous êtes dans le » ; A : « Bâtiment principal, rue Louis Pasteur » ; B : « Pour le » ; A : « Restaurant du personnel, allez rue Napoléon ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
@@ -5133,7 +5135,7 @@ de l’audio (personnages A/B, répliques, style) pour l’outil de génération
 - **Exercice** : `delf-a1-2022-co-97`
 - **Scène** : Piste 97
 - **Scénario** : vie-quotidienne
-- **Déposer** : `public/lib/images/tcf/co/scenes/temporaire/delf_a1_2022_piste_97.webp`
+- **Déposer** : `public/lib/images/tcf/co/scenes/restaurant/telephoner-devant-le-menu-du-restaurant.webp`
 - **Audio** : `/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_97.mp3`
 - **Description** : Scénario vidéo (audio CO court, « Piste 97 », durée indicative 8–15 s). Deux personnages adultes (A et B : usager/agent, collègues ou proches selon le lieu) se parlent dans un lieu de vie quotidienne. Déroulé réplique par réplique (caméra fixe ou léger travelling, plans moyens) : A : « Allô ? » ; B : « Je suis devant le menu du restaurant » ; A : « Qu’est-ce que tu veux ? » ; B : « Pour le plat, il y a du » ; A : « Poisson avec du riz ». Style : bande dessinée réaliste animée, décor quotidien lisible, personnages expressifs, bouche et gestes synchronisés au rythme des répliques. Pas de texte à l’écran, pas de sous-titres, pas de fond blanc studio, pas de logo.
 
