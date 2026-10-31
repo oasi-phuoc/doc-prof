@@ -73,6 +73,7 @@ export function clearLibreContentFreeze(): Partial<ExerciseBlock> {
     tcfQuestionCount: undefined,
     tcfQuestionPoints: undefined,
     tcfAudioPickMode: undefined,
+    tcfPointsDetail: undefined,
     soutienMotsLibre: false,
     soutienMotsEntries: undefined,
     soutienCompleterLibre: false,

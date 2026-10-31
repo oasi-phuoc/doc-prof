@@ -4339,17 +4339,17 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   width:6.5mm;min-width:6.5mm;max-width:6.5mm;height:6.5mm
 }
 .tcf-champ-boxes{
-  display:grid;grid-template-columns:repeat(16,minmax(0,1fr));gap:1.5px;
-  width:100%;min-width:0;max-width:100%;box-sizing:border-box
+  display:grid;grid-template-columns:repeat(16,6.5mm);gap:1.5px;justify-content:start;
+  width:max-content;max-width:100%;min-width:0;box-sizing:border-box
 }
 .tcf-champ-line.is-multi .tcf-champ-boxes{grid-template-rows:repeat(2,6.5mm)}
 .tcf-champ-box{
   display:inline-flex;align-items:center;justify-content:center;
-  width:auto;min-width:0;max-width:100%;height:6.5mm;border:1.1px solid var(--ink);box-sizing:border-box;
+  width:6.5mm;min-width:6.5mm;max-width:6.5mm;height:6.5mm;border:1.1px solid var(--ink);box-sizing:border-box;
   font-weight:700;color:var(--purple);line-height:1;overflow:hidden
 }
 .tcf-champ-line.is-boxes{
-  flex:1 1 0;border-bottom:0;display:flex;align-items:center;
+  flex:1 1 0;border-bottom:0;display:flex;align-items:center;justify-content:flex-start;
   width:auto;min-width:0;max-width:100%;overflow:hidden
 }
 .tcf-champ-line.is-traits-multi{

@@ -4,13 +4,18 @@ import {
   isTpmConsignesType,
 } from '@/tpm/test'
 import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
-import { isTcfConsignesType } from '@/tcf/catalog'
+import { isTcfConsignesType, tcfNiveauFromDifficulty } from '@/tcf/catalog'
 import {
   tcfCoAudioSlotCount,
   tcfCoCanDifferentiatePoints,
   tcfCoComposeQuestionCount,
   tcfCoPointsRowLabel,
 } from '@/tcf/co-audio-slots'
+import {
+  tcfCeCanDifferentiatePoints,
+  tcfCeQuestionCountHint,
+  tcfIsPeTaggedSlot,
+} from '@/tcf/tagged-picker'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
 import { SOUTIEN_LEVEL_FILTERS } from '@/francais/soutien/phrases-data'
@@ -308,14 +313,71 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               {isTcf &&
               evalMode &&
               !isTcfConsignesType(activeBlock.exerciseType) &&
-              tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
+              tcfIsPeTaggedSlot(activeBlock.exerciseType) ? (
+                <div className="tcf-question-points">
+                  <label className="select-shell">
+                    <span>Points (total de l’exercice)</span>
+                    <input
+                      className="pill-input"
+                      type="number"
+                      inputMode="decimal"
+                      min={0.5}
+                      max={50}
+                      step={0.5}
+                      aria-label="Points total de l’exercice"
+                      value={activeBlock.pointsPerQuestion ?? ''}
+                      placeholder="1"
+                      onChange={(event) => {
+                        updatePage({
+                          pointsPerQuestion: parsePointsInput(event.target.value),
+                          tcfQuestionPoints: undefined,
+                        })
+                      }}
+                    />
+                  </label>
+                  <label className="select-shell">
+                    <span>Détail du barème</span>
+                    <textarea
+                      className="pill-input tcf-textarea"
+                      rows={3}
+                      value={activeBlock.tcfPointsDetail ?? ''}
+                      placeholder="Ex. : 4 × 1 pt (une réplique) + 2 pts (formule de politesse)"
+                      onChange={(event) =>
+                        updatePage({ tcfPointsDetail: event.target.value || undefined })
+                      }
+                    />
+                  </label>
+                  <small className="muted">
+                    Exercice{' '}
+                    {activeSheet?.blocks?.[safeBlockIndex]?.exerciseIndex ??
+                      firstExerciseNo + safeBlockIndex}{' '}
+                    : {formatPointsLabel(activeBlock.pointsPerQuestion ?? 1)} · total du test :{' '}
+                    {formatPointsLabel(sheetTotalPoints)}
+                  </small>
+                </div>
+              ) : null}
+              {isTcf &&
+              evalMode &&
+              !isTcfConsignesType(activeBlock.exerciseType) &&
+              !tcfIsPeTaggedSlot(activeBlock.exerciseType) &&
+              (tcfCoAudioSlotCount(activeBlock.exerciseType) != null ||
+                tcfCeCanDifferentiatePoints(activeBlock.exerciseType)) ? (
                 <div className="tcf-question-points">
                   {(() => {
                     const typeId = activeBlock.exerciseType
-                    const n = tcfCoComposeQuestionCount(typeId, activeBlock.tcfQuestionCount)
-                    const canDiff = tcfCoCanDifferentiatePoints(typeId)
-                    const byImage =
-                      tcfCoPointsRowLabel(typeId, 0).startsWith('Image')
+                    const isCo = tcfCoAudioSlotCount(typeId) != null
+                    const n = isCo
+                      ? tcfCoComposeQuestionCount(typeId, activeBlock.tcfQuestionCount)
+                      : tcfCeQuestionCountHint(
+                          typeId,
+                          tcfNiveauFromDifficulty(activeBlock.difficulty),
+                          activeBlock.tcfBankId,
+                          activeBlock.tcfExercise,
+                        )
+                    const canDiff = isCo
+                      ? tcfCoCanDifferentiatePoints(typeId)
+                      : tcfCeCanDifferentiatePoints(typeId)
+                    const byImage = isCo && tcfCoPointsRowLabel(typeId, 0).startsWith('Image')
                     const pointsLabel = byImage ? 'Points par image' : 'Points par question'
                     const differentiated =
                       canDiff &&
@@ -382,7 +444,9 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         {differentiated ? (
                           Array.from({ length: n }, (_, i) => {
                             const stored = activeBlock.tcfQuestionPoints?.[i]
-                            const rowLabel = tcfCoPointsRowLabel(typeId, i)
+                            const rowLabel = isCo
+                              ? tcfCoPointsRowLabel(typeId, i)
+                              : `Question ${i + 1}`
                             return (
                               <label className="select-shell" key={`q-pts-${i}`}>
                                 <span>{rowLabel}</span>
@@ -394,14 +458,16 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                                   max={20}
                                   step={0.5}
                                   aria-label={`Points de ${rowLabel.toLowerCase()}`}
-                                  value={stored ?? ''}
+                                  value={stored == null ? '' : stored}
                                   placeholder="1"
                                   onChange={(event) => {
                                     const nextPts = parsePointsInput(event.target.value)
-                                    const next = Array.from({ length: n }, (_, k) =>
-                                      k === i
-                                        ? (nextPts ?? 1)
-                                        : (activeBlock.tcfQuestionPoints?.[k] ?? uniform),
+                                    const next: Array<number | null> = Array.from(
+                                      { length: n },
+                                      (_, k) =>
+                                        k === i
+                                          ? (nextPts ?? null)
+                                          : (activeBlock.tcfQuestionPoints?.[k] ?? uniform),
                                     )
                                     updatePage({ tcfQuestionPoints: next })
                                   }}
@@ -440,7 +506,9 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               {isTcf &&
               evalMode &&
               !isTcfConsignesType(activeBlock.exerciseType) &&
-              tcfCoAudioSlotCount(activeBlock.exerciseType) == null ? (
+              tcfCoAudioSlotCount(activeBlock.exerciseType) == null &&
+              !tcfCeCanDifferentiatePoints(activeBlock.exerciseType) &&
+              !tcfIsPeTaggedSlot(activeBlock.exerciseType) ? (
                 <label className="select-shell">
                   <span>Points par question</span>
                   <input

@@ -1017,13 +1017,18 @@ export type ExerciseBlock = {
   tcfAudioSlots?: Array<string | undefined>
   /** TCF CO ex. 3 : nombre de questions tirées du pool (défaut 5). */
   tcfQuestionCount?: number
-  /** TCF CO : points par question / image (index 0-based). */
-  tcfQuestionPoints?: number[]
   /**
-   * TCF CO : tirage des audios — `aleatoire` (défaut, selon le tag de l’exercice)
-   * ou `libre` (choix manuel parmi les audios du même tag).
+   * TCF CO / CE : points par question / image (index 0-based).
+   * `null` = champ vide (effectif 1 à l’affichage / au barème).
+   */
+  tcfQuestionPoints?: Array<number | null>
+  /**
+   * TCF CO / CE / PE : tirage — `aleatoire` (défaut, selon le tag)
+   * ou `libre` (choix manuel parmi les entrées du même tag).
    */
   tcfAudioPickMode?: 'aleatoire' | 'libre'
+  /** TCF PE : détail libre du barème (texte affiché sous le total de points). */
+  tcfPointsDetail?: string
   /**
    * Mode libre global (tous domaines) : items édités à la main.
    * S’ils sont présents, ils remplacent le tirage pour l’affichage / l’impression.

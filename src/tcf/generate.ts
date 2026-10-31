@@ -31,7 +31,7 @@ import {
 import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
-import { TCF_PE_GROUPS, TCF_PO_GROUPS, tcfGroupId } from './sources'
+import { TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { emptyTcfExercise, TCF_LETTRES, TCF_LETTRES_SITUATIONS, tcfExerciseId } from './templates'
 import type {
   TcfCadreQuestion,
@@ -424,33 +424,89 @@ export function tcfExerciseItems(
         ...(grille ? [tcfItem({ kind: 'grille', grille }, true, '', grille.points)] : []),
       ]
     }
-    case 'dialogue_a_completer':
-      return [
-        scoredItem({
-          kind: 'dialogue',
-          situation: ex.support.situation ?? '',
-          repliques: ex.support.repliques,
-          interlocuteur: ex.support.interlocuteur,
-          bulles: true,
-        }),
-      ]
+    case 'dialogue_a_completer': {
+      // Un item = un échange (examinateur + élève) → bouton « Page » entre les groupes.
+      // Points : total sur le 1er item (les suivants à 0) pour coller au barème PE.
+      const exchanges = splitDialogueExchanges(ensureFourDialogueExchanges(ex.support.repliques))
+      const totalPts = ex.points
+      return exchanges.map((repliques, i) =>
+        tcfItem(
+          {
+            kind: 'dialogue',
+            situation: i === 0 ? (ex.support.situation ?? '') : '',
+            repliques,
+            interlocuteur: ex.support.interlocuteur,
+            bulles: true,
+          },
+          true,
+          repliques
+            .filter((r) => r.locuteur === 'eleve')
+            .map((r) => r.texte)
+            .join(' · '),
+          i === 0 ? totalPts : 0,
+        ),
+      )
+    }
   }
 }
 
+/** Découpe un dialogue en échanges (paire examinateur + élève, ou tour isolé). */
+function splitDialogueExchanges(
+  repliques: Array<{ locuteur: 'examinateur' | 'eleve'; texte: string; variantes?: string[] }>,
+): Array<Array<{ locuteur: 'examinateur' | 'eleve'; texte: string; variantes?: string[] }>> {
+  const out: Array<
+    Array<{ locuteur: 'examinateur' | 'eleve'; texte: string; variantes?: string[] }>
+  > = []
+  let i = 0
+  while (i < repliques.length) {
+    const cur = repliques[i]!
+    if (cur.locuteur === 'examinateur' && repliques[i + 1]?.locuteur === 'eleve') {
+      out.push([cur, repliques[i + 1]!])
+      i += 2
+    } else {
+      out.push([cur])
+      i += 1
+    }
+  }
+  return out
+}
+
+/** PE dialogue : exactement 4 échanges à écrire (4 répliques élève). */
+function ensureFourDialogueExchanges(
+  repliques: Array<{ locuteur: 'examinateur' | 'eleve'; texte: string; variantes?: string[] }>,
+): Array<{ locuteur: 'examinateur' | 'eleve'; texte: string; variantes?: string[] }> {
+  const exchanges = splitDialogueExchanges(repliques)
+  const kept = exchanges.slice(0, 4)
+  while (kept.length < 4) {
+    kept.push([
+      { locuteur: 'examinateur', texte: 'D’accord. Autre chose ?' },
+      { locuteur: 'eleve', texte: 'Non merci, c’est tout.' },
+    ])
+  }
+  return kept.flat()
+}
+
 /** Applique les points individuels saisis dans les paramètres. */
-function withQuestionPoints(ex: TcfExercise, points: number[] | undefined): TcfExercise {
+function effectivePoint(p: number | null | undefined): number {
+  return p != null && Number.isFinite(p) ? p : 1
+}
+
+function withQuestionPoints(
+  ex: TcfExercise,
+  points: Array<number | null> | undefined,
+): TcfExercise {
   if (!points?.length) return ex
   const next = structuredClone(ex)
   next.questions = next.questions.map((q, i) => {
-    const p = points[i]
-    return p != null && Number.isFinite(p) ? { ...q, points: p } : q
+    if (i >= points.length) return q
+    return { ...q, points: effectivePoint(points[i]) }
   })
   // Association / objets : points par image → total sur l’item unique.
   if (
     next.type_exercice === 'association_images' ||
     next.type_exercice === 'images_a_reconnaitre'
   ) {
-    const sum = points.reduce((acc, p) => acc + (p != null && Number.isFinite(p) ? p : 0), 0)
+    const sum = points.reduce((acc, p) => acc + effectivePoint(p), 0)
     if (sum > 0) next.points = sum
   }
   return next
@@ -510,10 +566,23 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
     return withQuestionPoints(composed, config.tcfQuestionPoints)
   }
   const bank = slot ? tcfSlotBank(niveau, slot) : tcfBank(niveau, competence, legacy!.typeExercice)
-  // CE : pas de filtre scénario (sélecteur unique « Exercice »).
-  const useScenario = competence !== 'CE' && Boolean(config.tcfScenario)
+  // CE / PE tagués : pas de filtre scénario. Libre = id épinglé ; Aléatoire = tirage dans le pool tagué.
+  const taggedSlot =
+    competence === 'CE' || (competence === 'PE' && slot?.numero != null)
+  const useScenario = !taggedSlot && Boolean(config.tcfScenario)
   const inScenario = useScenario ? bank.filter((ex) => tcfGroupId(ex) === config.tcfScenario) : bank
   const pool = inScenario.length > 0 ? inScenario : bank
+
+  if (taggedSlot && config.tcfAudioPickMode === 'libre' && config.tcfBankId) {
+    const chosen =
+      pool.find((ex) => ex.id === config.tcfBankId) ?? bank.find((ex) => ex.id === config.tcfBankId)
+    if (chosen) return withQuestionPoints(chosen, config.tcfQuestionPoints)
+  }
+  if (taggedSlot && config.tcfAudioPickMode !== 'libre') {
+    const source = pool.length > 0 ? pick(rng, pool) : undefined
+    return source ? withQuestionPoints(source, config.tcfQuestionPoints) : undefined
+  }
+
   const pinned = tcfExerciseById(config.tcfBankId)
   if (pinned && pinned.competence === competence) {
     return withQuestionPoints(pinned, config.tcfQuestionPoints)
@@ -558,21 +627,38 @@ export function tryGenerateTcfBlock(
       ],
     }
   }
-  // Consigne liée au type d’exercice (modifiable en mode libre via tcfExercise.consigne).
+  // Consignes CO liées au type / emplacement — jamais appliquées aux CE / PE / PO.
   const typeConsigne =
-    tcfCoConsigneForType(ex.type_exercice) || tcfCoConsigneForSlot(slot?.numero)
+    slot?.competence === 'CO' || (!slot && ex.competence === 'CO')
+      ? tcfCoConsigneForType(ex.type_exercice) ||
+        (slot?.competence === 'CO' ? tcfCoConsigneForSlot(slot.numero) : undefined)
+      : undefined
   const customConsigne = config.tcfExercise != null ? ex.consigne?.trim() : undefined
   const instruction =
     customConsigne ||
     typeConsigne ||
     tcfTypeMeta(ex.competence, ex.type_exercice)?.instruction ||
     fallbackInstruction
+  let items = tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
+    ...item,
+    tcfExerciseId: ex.id,
+  }))
+  // PE : points = total de l’exercice (un seul barème), pas par question.
+  if (ex.competence === 'PE' && config.pointsPerQuestion != null) {
+    const total = config.pointsPerQuestion
+    let assigned = false
+    items = items.map((item) => {
+      if (item.noPoints) return item
+      if (!assigned) {
+        assigned = true
+        return { ...item, points: total }
+      }
+      return { ...item, points: item.points === 0 ? 0 : 0 }
+    })
+  }
   return {
     instruction,
-    items: tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
-      ...item,
-      tcfExerciseId: ex.id,
-    })),
+    items,
   }
 }
 
@@ -715,23 +801,30 @@ function appendNiveauExercisePages(
     const pool = tagged.length > 0 ? tagged : all
     if (pool.length > 0) pages.push(page(slot.typeId, pick(rng, pool)))
   }
-  const slotOf = (competence: TcfCompetence) => TCF_SLOTS.find((s) => s.competence === competence)!
-  for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CE')) {
+  for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CE' && s.numero != null)) {
     const all = numberedBank(niveau, slot)
     const tagged = all.filter((ex) => /-ex\d+-/.test(ex.id))
     const pool = tagged.length > 0 ? tagged : all
     if (pool.length > 0) pages.push(page(slot.typeId, pick(rng, pool)))
   }
-  for (const [competence, groups] of [
-    ['PE', TCF_PE_GROUPS],
-    ['PO', TCF_PO_GROUPS.filter((g) => g.id !== 'interaction')],
-  ] as const) {
-    const slot = slotOf(competence)
+  for (const slot of TCF_SLOTS.filter((s) => s.competence === 'PE' && s.numero != null)) {
     const pool = numberedBank(niveau, slot)
-    for (const group of groups) {
-      const inGroup = pool.filter((ex) => tcfGroupId(ex) === group.id)
-      if (inGroup.length > 0) pages.push(page(slot.typeId, pick(rng, inGroup)))
+    if (pool.length > 0) {
+      pages.push(
+        tcfPage(
+          slot.typeId,
+          niveau,
+          { tcfBankId: pick(rng, pool).id, pointsPerQuestion: 1 },
+          domain,
+        ),
+      )
     }
+  }
+  const poSlot = TCF_SLOTS.find((s) => s.competence === 'PO')!
+  const poPool = numberedBank(niveau, poSlot)
+  for (const group of TCF_PO_GROUPS.filter((g) => g.id !== 'interaction')) {
+    const inGroup = poPool.filter((ex) => tcfGroupId(ex) === group.id)
+    if (inGroup.length > 0) pages.push(page(poSlot.typeId, pick(rng, inGroup)))
   }
 }
 

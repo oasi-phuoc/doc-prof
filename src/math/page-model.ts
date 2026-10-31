@@ -70,6 +70,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     tcfQuestionCount: page.tcfQuestionCount,
     tcfQuestionPoints: page.tcfQuestionPoints,
     tcfAudioPickMode: page.tcfAudioPickMode,
+    tcfPointsDetail: page.tcfPointsDetail,
     libreItems: page.libreItems,
     libreInstruction: page.libreInstruction,
   }

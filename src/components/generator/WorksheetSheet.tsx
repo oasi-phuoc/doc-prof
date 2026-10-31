@@ -453,6 +453,10 @@ export function WorksheetSheet({
                     (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')
                   const isTcfAudioCadre =
                     item.layout === 'tcf' && item.tcf?.kind === 'audio_cadre'
+                  const isTcfPageBreakable =
+                    isTcfQuestion ||
+                    isTcfAudioCadre ||
+                    (item.layout === 'tcf' && item.tcf?.kind === 'dialogue')
                   const showMarginForms =
                     interactiveTcfOptions &&
                     isTcfQuestion &&
@@ -502,10 +506,10 @@ export function WorksheetSheet({
                               onSelectTcfForm(modeIndex - itemOffset, form, blockIndex)
                           : undefined
                       }
-                      tcfPageBreakBefore={isTcfQuestion ? tcfPageBreakBefore : undefined}
+                      tcfPageBreakBefore={isTcfPageBreakable ? tcfPageBreakBefore : undefined}
                       onToggleTcfPageBreak={
                         interactiveTcfPageBreaks &&
-                        isTcfQuestion &&
+                        isTcfPageBreakable &&
                         sourceIndex > 0 &&
                         onToggleTcfPageBreak
                           ? () => onToggleTcfPageBreak(index, blockIndex)

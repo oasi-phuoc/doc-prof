@@ -21,6 +21,7 @@ import type { GameTemplate } from '@/jeux/templates'
 import { TcfCoAudioSlotsPicker, tcfCoAudioSlotCount } from '@/tcf/co-audio-slots'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
 import { tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
+import { TcfTaggedExercisePicker, tcfTaggedSlotKind } from '@/tcf/tagged-picker'
 import type { TcfNiveau } from '@/tcf/types'
 import type { Dispatch, SetStateAction } from 'react'
 import type {
@@ -409,7 +410,18 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) == null ? (
+              {isTcf && tcfTaggedSlotKind(activeBlock.exerciseType) != null ? (
+                <TcfTaggedExercisePicker
+                  niveau={tcfNiveau}
+                  typeId={activeBlock.exerciseType}
+                  bankId={activeBlock.tcfBankId}
+                  pickMode={activeBlock.tcfAudioPickMode ?? 'aleatoire'}
+                  onChange={(patch) => updatePage(patch)}
+                />
+              ) : null}
+              {isTcf &&
+              tcfCoAudioSlotCount(activeBlock.exerciseType) == null &&
+              tcfTaggedSlotKind(activeBlock.exerciseType) == null ? (
                 <TcfBankPicker
                   niveau={tcfNiveau}
                   typeId={activeBlock.exerciseType}

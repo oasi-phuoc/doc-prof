@@ -1,4 +1,10 @@
 import { TCF_NIVEAUX, tcfPosition, type TcfSlotMeta } from './catalog'
+import {
+  tcfCeEntriesWithTag,
+  tcfCeTagForSlot,
+  tcfPeEntriesWithTag,
+  tcfPeTagForSlot,
+} from './content-tags'
 import { isTcfExerciseShape, validateTcfExercise } from './validate'
 import type { TcfCompetence, TcfExercise, TcfNiveau, TcfTypeExercice } from './types'
 
@@ -56,19 +62,25 @@ export function tcfBankAllLevels(competence: TcfCompetence): TcfExercise[] {
   return TCF_NIVEAUX.flatMap((n) => tcfBank(n.id, competence))
 }
 
-/** Exercices proposés pour un emplacement (CO et CE : même numéro d’épreuve). */
+/** Exercices proposés pour un emplacement (filtre par tag CE/PE, position CO héritée ailleurs). */
 export function tcfSlotBank(
   niveau: TcfNiveau | readonly TcfNiveau[],
   slot: TcfSlotMeta,
 ): TcfExercise[] {
   const niveaux = Array.isArray(niveau) ? niveau : [niveau]
-  return niveaux.flatMap((n) =>
-    tcfBank(n, slot.competence).filter((ex) => {
-      if (slot.numero == null) return true
-      if (ex.competence !== 'CO' && ex.competence !== 'CE') return true
-      return tcfPosition(ex.id) === slot.numero
-    }),
-  )
+  const pool = niveaux.flatMap((n) => tcfBank(n, slot.competence))
+  if (slot.competence === 'CE') {
+    const tag = tcfCeTagForSlot(slot.numero)
+    return tag ? tcfCeEntriesWithTag(pool, tag) : pool
+  }
+  if (slot.competence === 'PE' && slot.numero != null) {
+    const tag = tcfPeTagForSlot(slot.numero)
+    return tag ? tcfPeEntriesWithTag(pool, tag) : pool
+  }
+  if (slot.competence === 'CO' && slot.numero != null) {
+    return pool.filter((ex) => tcfPosition(ex.id) === slot.numero)
+  }
+  return pool
 }
 
 export function tcfExerciseById(id: string | undefined): TcfExercise | undefined {

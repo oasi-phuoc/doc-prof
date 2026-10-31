@@ -122,6 +122,8 @@ export function tcfDefaultTypeReponse(competence: TcfCompetence): TcfTypeReponse
   return competence === 'CE' || competence === 'CO' ? 'qcm_texte' : 'lignes'
 }
 
+const CE_INSTRUCTION = 'Lisez le document et répondez aux questions.'
+
 export const TCF_TYPES: readonly TcfTypeMeta[] = [
   // —— CE ——
   {
@@ -130,7 +132,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'sms',
     label: 'Message (SMS)',
     description: 'Lire un court message et répondre aux questions.',
-    instruction: 'Lisez le message, puis répondez aux questions.',
+    instruction: CE_INSTRUCTION,
     reponses: ALL_REPONSES,
   },
   {
@@ -139,7 +141,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'email',
     label: 'E-mail',
     description: 'Lire un e-mail et répondre aux questions.',
-    instruction: 'Lisez l’e-mail, puis répondez aux questions.',
+    instruction: CE_INSTRUCTION,
     reponses: ALL_REPONSES,
   },
   {
@@ -148,7 +150,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'annonce',
     label: 'Annonce / information',
     description: 'Lire une annonce ou une information et répondre aux questions.',
-    instruction: 'Lisez le document, puis répondez aux questions.',
+    instruction: CE_INSTRUCTION,
     reponses: ALL_REPONSES,
   },
   // —— CO ——
@@ -347,11 +349,11 @@ export type TcfSlotMeta = {
 
 export const TCF_CO_NUMEROS = [1, 2, 3, 4, 5] as const
 
-/** CE A0-A1 (CSC) — menu sans « Exercice » ni numéro. */
+/** CE A0-A1 (CSC) — tags : instructions, temps, espace, informations. */
 const CE_A1 = [
   'Instructions',
-  'S’orienter, espace',
   'S’orienter, temps',
+  'S’orienter, espace',
   'S’informer',
 ] as const
 
@@ -364,6 +366,12 @@ const CO_A1 = ['Événement', 'Activité', 'Instructions', 'Situations', 'Objets
 /** CO A1-A2 (CFR / TPF) — 4 emplacements (pas d’exercice 5). */
 const CO_A2 = ['Annonces et instructions', 'Radio', 'Message', 'Discussion'] as const
 
+/** PE A0-A1 — tags : formulaire, dialogue, message, email. */
+const PE_A1 = ['Formulaire', 'Dialogue', 'Message', 'E-mail'] as const
+
+export const TCF_CE_NUMEROS = [1, 2, 3, 4] as const
+export const TCF_PE_NUMEROS = [1, 2, 3, 4] as const
+
 export const TCF_SLOTS: readonly TcfSlotMeta[] = [
   ...TCF_CO_NUMEROS.map((numero) => ({
     typeId: `tcf-co-ex-${numero}`,
@@ -373,19 +381,27 @@ export const TCF_SLOTS: readonly TcfSlotMeta[] = [
     description: CO_A1[numero - 1] ?? `Compréhension orale : exercice ${numero}.`,
     instruction: tcfCoConsigneForSlot(numero) ?? 'Écoutez le document, puis répondez aux questions.',
   })),
-  ...([1, 2, 3, 4] as const).map((numero) => ({
+  ...TCF_CE_NUMEROS.map((numero) => ({
     typeId: `tcf-ce-ex-${numero}`,
     competence: 'CE' as const,
     numero,
     label: CE_A1[numero - 1]!,
     description: CE_A1[numero - 1]!,
-    instruction: 'Lisez le document. Cochez la bonne réponse.',
+    instruction: CE_INSTRUCTION,
+  })),
+  ...TCF_PE_NUMEROS.map((numero) => ({
+    typeId: `tcf-pe-ex-${numero}`,
+    competence: 'PE' as const,
+    numero,
+    label: PE_A1[numero - 1]!,
+    description: PE_A1[numero - 1]!,
+    instruction: 'Répondez par écrit.',
   })),
   {
     typeId: 'tcf-pe',
     competence: 'PE',
     label: 'Exercices de production écrite',
-    description: 'Tous les exercices de production écrite de la banque.',
+    description: 'Ancien emplacement unique de production écrite.',
     instruction: 'Répondez par écrit.',
   },
   {
@@ -427,14 +443,19 @@ export function tcfMenuLabel(typeId: string, niveau: TcfNiveau): string | undefi
       ? CO_A2[slot.numero - 1]
       : CO_A1[slot.numero - 1]
   }
+  if (slot.competence === 'PE') {
+    return PE_A1[slot.numero - 1]
+  }
   return undefined
 }
 
-/** True si l’emplacement CE/CO a un libellé pour ce niveau (filtre la liste déroulante). */
+/** True si l’emplacement CE/CO/PE a un libellé pour ce niveau (filtre la liste déroulante). */
 export function tcfSlotShownInMenu(typeId: string, niveau: TcfNiveau): boolean {
   const slot = tcfSlotByTypeId[typeId]
   if (!slot || slot.numero == null) return true
-  if (slot.competence !== 'CE' && slot.competence !== 'CO') return true
+  if (slot.competence !== 'CE' && slot.competence !== 'CO' && slot.competence !== 'PE') return true
+  // Ancien emplacement PE unique : masqué (remplacé par tcf-pe-ex-1…4).
+  if (slot.typeId === 'tcf-pe') return false
   return tcfMenuLabel(typeId, niveau) != null
 }
 

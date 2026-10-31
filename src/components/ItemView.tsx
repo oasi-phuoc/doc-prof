@@ -152,7 +152,10 @@ export function ItemView({
   const showTcfPageChip = Boolean(
     onToggleTcfPageBreak &&
       item.layout === 'tcf' &&
-      (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes'),
+      (item.tcf?.kind === 'qcm' ||
+        item.tcf?.kind === 'lignes' ||
+        item.tcf?.kind === 'audio_cadre' ||
+        item.tcf?.kind === 'dialogue'),
   )
   const hideNumber =
     Boolean(item.hideItemNumber) ||
