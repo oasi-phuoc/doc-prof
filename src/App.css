@@ -4378,7 +4378,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-champ-line.is-traits-multi .tcf-champ-line{width:100%;flex:none}
 /* Texte à compléter (PE) : tableau 5 images numérotées. */
-.tcf-texte-images{display:flex;flex-direction:column;gap:8px;width:100%}
+.tcf-texte-images{display:flex;flex-direction:column;gap:0;width:100%}
 .tcf-texte-images-grid{
   list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
   gap:3mm;width:100%
@@ -4389,7 +4389,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-texte-images-num{font-weight:800;color:var(--purple);line-height:1}
 .tcf-texte-images-grid .tcf-image{width:100%;height:22mm}
-.tcf-texte-images-text{margin:0;text-align:justify;line-height:1.55}
+/* 50 px entre la grille d’images et la première phrase à trous. */
+.tcf-texte-images-body{display:flex;flex-direction:column;gap:0;margin:50px 0 0;width:100%}
+/* Une phrase par ligne, interligne doublé (~1,55 → ~3,1). */
+.tcf-texte-images-line{
+  margin:0;text-align:justify;line-height:3.1;min-height:1.2em
+}
 .tcf-champ-options{display:flex;flex-wrap:wrap;gap:6px 16px}
 .tcf-champ-option{display:inline-flex;align-items:center;gap:6px}
 .tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0 0 1px}

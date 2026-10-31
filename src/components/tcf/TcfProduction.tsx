@@ -1,6 +1,7 @@
 import type { PreviewMode } from '@/math/types'
 import { isTcfBaremeConsigne } from '@/tcf/formes'
 import type { TcfChampFormulaire, TcfMotImage, TcfNbMots, TcfReplique } from '@/tcf/types'
+import { countInlineBlanks } from '@/tcf/inline-blank'
 import { LignesReponse, renderEnonceText } from './TcfQuestions'
 import { TcfImage } from './TexteSupport'
 
@@ -286,6 +287,8 @@ export function TexteImagesPE({
 }) {
   const show = mode === 'answers'
   const fills = show ? mots.map((m) => m.mot) : []
+  const lines = texte.split(/\n/).map((line) => line.trimEnd())
+  let blankOffset = 0
   return (
     <div className="tcf-texte-images">
       <ol className="tcf-texte-images-grid">
@@ -296,7 +299,18 @@ export function TexteImagesPE({
           </li>
         ))}
       </ol>
-      <p className="tcf-texte-images-text">{renderEnonceText(texte, fills)}</p>
+      <div className="tcf-texte-images-body">
+        {lines.map((line, i) => {
+          const n = countInlineBlanks(line)
+          const lineFills = fills.slice(blankOffset, blankOffset + n)
+          blankOffset += n
+          return (
+            <p key={i} className="tcf-texte-images-line">
+              {line.trim() ? renderEnonceText(line, lineFills) : '\u00a0'}
+            </p>
+          )
+        })}
+      </div>
     </div>
   )
 }
