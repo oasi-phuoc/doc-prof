@@ -208,6 +208,18 @@ export function validateTcfExercise(ex: TcfExercise, options?: TcfValidateOption
         }
       })
       break
+    case 'texte_images': {
+      if (blank(ex.support.texte)) errors.push('Le texte à compléter est vide.')
+      if (!hasInlineBlank(ex.support.texte)) {
+        errors.push('Le texte doit contenir des blancs (_____).')
+      }
+      if (ex.support.mots.length !== 5) errors.push('Exactement 5 mots / images.')
+      ex.support.mots.forEach((m, i) => {
+        if (blank(m.mot)) errors.push(`Mot ${i + 1} manquant.`)
+        if (blank(m.image)) errors.push(`Image ${i + 1} manquante.`)
+      })
+      break
+    }
     case 'image_question':
       if (blank(ex.support.image) && !(ex.support.images ?? []).some((src) => !blank(src))) {
         errors.push('Image manquante.')
@@ -315,6 +327,9 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
       break
     case 'image_question':
       images.push(ex.support.image, ...(ex.support.images ?? []))
+      break
+    case 'texte_images':
+      images.push(...ex.support.mots.map((m) => m.image))
       break
     case 'image_unique':
       images.push(ex.support.image)

@@ -433,6 +433,7 @@ export function TexteSupport({ exercise: ex, mode }: { exercise: TcfExercise; mo
         </div>
       ) : null
     case 'formulaire':
+    case 'texte_images':
     case 'dialogue_a_completer':
       return null
   }

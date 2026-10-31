@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
 import {
@@ -17,10 +17,12 @@ import { QuestionEditor } from './QuestionEditor'
 import { tcfScenarioGroups, type TcfScenarioGroup } from './sources'
 import { emptyTcfExercise, emptyTcfQuestion, tcfExerciseId } from './templates'
 import { checkTcfMedia, validateTcfExercise } from './validate'
+import { TCF_PE_TEXTE_IMAGES_CONSIGNE } from './pe-defaults'
 import type {
   TcfChampFormulaire,
   TcfChampType,
   TcfExercise,
+  TcfMotImage,
   TcfNbMots,
   TcfNiveau,
   TcfPoTheme,
@@ -48,6 +50,110 @@ function NbMotsFields({ value, onChange }: { value: TcfNbMots; onChange: (next: 
       <NumberField label="Mots min." value={value.min} onChange={(min) => onChange({ ...value, min })} />
       <NumberField label="Mots max." value={value.max} onChange={(max) => onChange({ ...value, max })} />
     </div>
+  )
+}
+
+const TEXTE_IMAGES_BLANK = '_____'
+
+/** Remplace la sélection par `_____ (n)` et enregistre le mot à l’index n−1. */
+function markMotATrouver(
+  texte: string,
+  start: number,
+  end: number,
+  mots: TcfMotImage[],
+): { texte: string; mots: TcfMotImage[]; caret: number } | null {
+  const raw = texte.slice(start, end)
+  const selected = raw.replace(/^[\s.,;:!?«»"']+|[\s.,;:!?«»"']+$/g, '')
+  if (!selected || /_{3,}/.test(selected)) return null
+  const index = mots.findIndex((m) => !m.mot.trim())
+  if (index < 0 || index >= 5) return null
+  const n = index + 1
+  const lead = raw.match(/^[\s.,;:!?«»"']*/)?.[0] ?? ''
+  const trail = raw.match(/[\s.,;:!?«»"']*$/)?.[0] ?? ''
+  const before = texte.slice(0, start) + lead
+  const after = trail + texte.slice(end)
+  const needsSpaceBefore = before.length > 0 && !/\s$/.test(before)
+  const needsSpaceAfter = after.length > 0 && !/^\s|[.,;:!?]/.test(after)
+  const blank = `${needsSpaceBefore ? ' ' : ''}${TEXTE_IMAGES_BLANK} (${n})${needsSpaceAfter ? ' ' : ''}`
+  const nextMots = mots.map((m, i) => (i === index ? { ...m, mot: selected } : m))
+  return { texte: before + blank + after, mots: nextMots, caret: before.length + blank.length }
+}
+
+function TexteImagesEditor({
+  ex,
+  set,
+}: {
+  ex: Extract<TcfExercise, { type_exercice: 'texte_images' }>
+  set: (next: TcfExercise) => void
+}) {
+  const areaRef = useRef<HTMLTextAreaElement>(null)
+  const mots = ex.support.mots.length === 5
+    ? ex.support.mots
+    : Array.from({ length: 5 }, (_, i) => ex.support.mots[i] ?? { mot: '', image: '' })
+
+  const setSupport = (texte: string, nextMots: TcfMotImage[]) =>
+    set(withSupport(ex, { texte, mots: nextMots }))
+
+  const onMark = () => {
+    const el = areaRef.current
+    if (!el) return
+    const start = el.selectionStart
+    const end = el.selectionEnd
+    if (start === end) return
+    const next = markMotATrouver(ex.support.texte, start, end, mots)
+    if (!next) return
+    setSupport(next.texte, next.mots)
+    requestAnimationFrame(() => {
+      el.focus()
+      el.setSelectionRange(next.caret, next.caret)
+    })
+  }
+
+  return (
+    <>
+      <small className="muted">{TCF_PE_TEXTE_IMAGES_CONSIGNE}</small>
+      <label className="tcf-field">
+        <span>Texte (histoire à trous)</span>
+        <textarea
+          ref={areaRef}
+          className="pill-input tcf-textarea"
+          rows={8}
+          value={ex.support.texte}
+          onChange={(event) => setSupport(event.target.value, mots)}
+        />
+      </label>
+      <div className="tcf-row">
+        <button type="button" className="tcf-btn" onClick={onMark}>
+          Mot à trouver
+        </button>
+        <small className="muted">Sélectionnez un mot dans le texte, puis cliquez.</small>
+      </div>
+      {mots.map((m, i) => (
+        <fieldset className="tcf-question-editor" key={i}>
+          <legend>Mot {i + 1}</legend>
+          <TextField
+            label="Mot (corrigé)"
+            value={m.mot}
+            onChange={(mot) =>
+              setSupport(
+                ex.support.texte,
+                mots.map((row, k) => (k === i ? { ...row, mot } : row)),
+              )
+            }
+          />
+          <ImageField
+            label="Image"
+            value={m.image}
+            onChange={(image) =>
+              setSupport(
+                ex.support.texte,
+                mots.map((row, k) => (k === i ? { ...row, image } : row)),
+              )
+            }
+          />
+        </fieldset>
+      ))}
+    </>
   )
 }
 
@@ -526,6 +632,8 @@ function SupportEditor({
         </>
       )
     }
+    case 'texte_images':
+      return <TexteImagesEditor ex={ex} set={set} />
     case 'image_question':
       return (
         <>

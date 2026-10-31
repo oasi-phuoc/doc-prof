@@ -2,7 +2,7 @@ import type { MathItem, PreviewMode } from '@/math/types'
 import type { TcfCadreQuestion, TcfSheetItem, TcfTypeReponse } from '@/tcf/types'
 import { TcfInformations } from './TcfInformations'
 import { TexteSupport } from './TexteSupport'
-import { DialoguePO, FormulairePE, ZoneEcriture } from './TcfProduction'
+import { DialoguePO, FormulairePE, TexteImagesPE, ZoneEcriture } from './TcfProduction'
 import {
   AssociationSituations,
   AudioCadre,
@@ -161,6 +161,8 @@ export function TcfItemView({
           letterGrid={formulaireLetterGrid}
         />
       )
+    case 'texte_images':
+      return <TexteImagesPE texte={tcf.texte} mots={tcf.mots} mode={mode} />
     case 'ecriture':
       return <ZoneEcriture {...tcf} mode={mode} />
     case 'dialogue':

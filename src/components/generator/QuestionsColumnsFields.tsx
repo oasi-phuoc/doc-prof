@@ -4,13 +4,19 @@ import {
   isTpmConsignesType,
 } from '@/tpm/test'
 import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
-import { isTcfConsignesType, tcfNiveauFromDifficulty } from '@/tcf/catalog'
+import {
+  isTcfConsignesType,
+  tcfNiveauFromDifficulty,
+  tcfSlotByTypeId,
+} from '@/tcf/catalog'
 import {
   tcfCoAudioSlotCount,
   tcfCoCanDifferentiatePoints,
   tcfCoComposeQuestionCount,
   tcfCoPointsRowLabel,
 } from '@/tcf/co-audio-slots'
+import { tcfPeTagsForSlot, TCF_PE_TAG_MOTS_CLES } from '@/tcf/content-tags'
+import { TCF_PE_TEXTE_IMAGES_BLANK_PX } from '@/tcf/pe-defaults'
 import {
   tcfCeCanDifferentiatePoints,
   tcfCeQuestionCountHint,
@@ -126,16 +132,21 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   } = props
   const sheetItems = activeSheet?.blocks?.[safeBlockIndex]?.items
   const sheetHasInlineBlank = sheetItems?.some((item) => {
-    const enonce =
-      item.tcf && (item.tcf.kind === 'qcm' || item.tcf.kind === 'lignes')
-        ? item.tcf.enonce
-        : undefined
-    return Boolean(enonce && hasInlineBlank(enonce))
+    if (!item.tcf) return false
+    if (item.tcf.kind === 'texte_images') return hasInlineBlank(item.tcf.texte)
+    if (item.tcf.kind === 'qcm' || item.tcf.kind === 'lignes') {
+      return hasInlineBlank(item.tcf.enonce)
+    }
+    return false
   })
+  const peMotsClesSlot = tcfPeTagsForSlot(tcfSlotByTypeId[activeBlock.exerciseType]?.numero).includes(
+    TCF_PE_TAG_MOTS_CLES,
+  )
   const showInlineBlankWidth =
-    isGrammaireExercise &&
-    !isGramTheory &&
-    (sheetItems == null || sheetItems.length === 0 || Boolean(sheetHasInlineBlank))
+    (isGrammaireExercise &&
+      !isGramTheory &&
+      (sheetItems == null || sheetItems.length === 0 || Boolean(sheetHasInlineBlank))) ||
+    (isTcf && peMotsClesSlot)
   return (
     <>
               {isPhraseChart ||
@@ -754,9 +765,17 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     max={INLINE_BLANK_PX_MAX}
                     step={5}
                     aria-label="Longueur du trait de réponse dans la phrase, en pixels"
-                    value={clampInlineBlankPx(activeBlock.inlineBlankPx)}
+                    value={clampInlineBlankPx(
+                      activeBlock.inlineBlankPx ??
+                        (peMotsClesSlot ? TCF_PE_TEXTE_IMAGES_BLANK_PX : undefined),
+                    )}
                     onChange={(event) => {
                       const next = clampInlineBlankPx(Number(event.target.value))
+                      // PE texte à images : toujours stocker (défaut 150 ≠ défaut grammaire 200).
+                      if (peMotsClesSlot) {
+                        updatePage({ inlineBlankPx: next })
+                        return
+                      }
                       updatePage({
                         inlineBlankPx: next === INLINE_BLANK_PX_DEFAULT ? undefined : next,
                       })
@@ -764,7 +783,9 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   />
                   <small className="muted">
                     Traits dans la phrase ({INLINE_BLANK_PX_MIN}–{INLINE_BLANK_PX_MAX} px ·
-                    défaut {INLINE_BLANK_PX_DEFAULT}). En QCM, le blanc reste « . . . ».
+                    défaut{' '}
+                    {peMotsClesSlot ? TCF_PE_TEXTE_IMAGES_BLANK_PX : INLINE_BLANK_PX_DEFAULT}
+                    ). En QCM, le blanc reste « . . . ».
                   </small>
                 </label>
               ) : null}

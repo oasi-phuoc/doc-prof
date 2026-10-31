@@ -62,9 +62,9 @@ function themedParen(inner: string): ReactNode {
 
 /**
  * `___` / `_ _ _` → trait (largeur `--tcf-blank-inline-px`, défaut 200), ou « . . . » en QCM.
- * Verbe entre parenthèses immédiatement après un blanc : couleur du thème.
+ * Verbe / numéro entre parenthèses immédiatement après un blanc : couleur du thème.
  */
-function renderEnonceText(
+export function renderEnonceText(
   text: string,
   fills: string[] = [],
   blankStyle: 'line' | 'dots' = 'line',

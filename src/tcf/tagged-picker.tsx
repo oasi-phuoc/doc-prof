@@ -4,7 +4,7 @@
 import { useMemo } from 'react'
 import {
   tcfCeTagForSlot,
-  tcfPeTagForSlot,
+  tcfPeTagsForSlot,
   type TcfCeTag,
   type TcfPeTag,
 } from './content-tags'
@@ -19,24 +19,30 @@ function tagLabel(tag: string): string {
   if (tag === 'espace') return 'espace'
   if (tag === 'informations') return 'informations'
   if (tag === 'formulaire') return 'formulaire'
+  if (tag === 'mots-cles') return 'mots-clés'
   if (tag === 'dialogue') return 'dialogue'
   if (tag === 'message') return 'message'
   if (tag === 'email') return 'e-mail'
   return tag
 }
 
+function tagsLabel(tags: readonly string[]): string {
+  return tags.map(tagLabel).join(' / ')
+}
+
 export function tcfTaggedSlotKind(
   typeId: string,
-): { competence: 'CE' | 'PE'; tag: TcfCeTag | TcfPeTag } | null {
+): { competence: 'CE' | 'PE'; tag: TcfCeTag | TcfPeTag; tags: Array<TcfCeTag | TcfPeTag> } | null {
   const slot = tcfSlotByTypeId[typeId]
   if (!slot || slot.numero == null) return null
   if (slot.competence === 'CE') {
     const tag = tcfCeTagForSlot(slot.numero)
-    return tag ? { competence: 'CE', tag } : null
+    return tag ? { competence: 'CE', tag, tags: [tag] } : null
   }
   if (slot.competence === 'PE') {
-    const tag = tcfPeTagForSlot(slot.numero)
-    return tag ? { competence: 'PE', tag } : null
+    const tags = tcfPeTagsForSlot(slot.numero)
+    const tag = tags[0]
+    return tag ? { competence: 'PE', tag, tags } : null
   }
   return null
 }
@@ -134,8 +140,8 @@ export function TcfTaggedExercisePicker({
         </div>
         <small className="muted">
           {isLibre
-            ? `Choix parmi les textes tagués « ${tagLabel(kind.tag)} ».`
-            : `Tirage automatique parmi les textes tagués « ${tagLabel(kind.tag)} ».`}
+            ? `Choix parmi les textes tagués « ${tagsLabel(kind.tags)} ».`
+            : `Tirage automatique parmi les textes tagués « ${tagsLabel(kind.tags)} ».`}
         </small>
       </div>
       {isLibre ? (

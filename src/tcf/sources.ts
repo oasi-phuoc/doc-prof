@@ -6,6 +6,7 @@ type TcfGroup = { id: string; label: string }
 /** PE : thèmes d’exercices (type de texte à produire). */
 export const TCF_PE_GROUPS: readonly TcfGroup[] = [
   { id: 'formulaire', label: 'Formulaire' },
+  { id: 'mots-cles', label: 'Texte à compléter' },
   { id: 'dialogue', label: 'Dialogue' },
   { id: 'message', label: 'Message' },
   { id: 'email', label: 'E-mail' },
@@ -30,6 +31,8 @@ export function tcfGroupId(ex: TcfExercise): string {
   switch (ex.type_exercice) {
     case 'formulaire':
       return 'formulaire'
+    case 'texte_images':
+      return 'mots-cles'
     case 'dialogue_a_completer':
       return 'dialogue'
     case 'email_reponse':

@@ -28,6 +28,7 @@ import {
 } from '@/grammaire/exercises/qui-suis-je-ui'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 import { clampInlineBlankPx } from '@/tcf/inline-blank'
+import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
 
 /** Audios du corrigé : figés sur le bloc, sinon recalculés depuis les items. */
 function blockCorrigeAudios(block: WorksheetBlock): string[] {
@@ -282,8 +283,13 @@ export function WorksheetSheet({
             parseGramExerciseType(block.exerciseType)?.kindId === 'verbe-pastilles' &&
             (dualActive === 'qcm_texte' ||
               (dualActive == null && dualFormSelect?.active === 'qcm_texte'))
+          const peBlank = tcfPeSlotDefaults(block.exerciseType)?.inlineBlankPx
           const blankPx =
-            block.inlineBlankPx != null ? clampInlineBlankPx(block.inlineBlankPx) : undefined
+            block.inlineBlankPx != null
+              ? clampInlineBlankPx(block.inlineBlankPx)
+              : peBlank != null
+                ? clampInlineBlankPx(peBlank)
+                : undefined
           return (
             <section
               className="exercise-block"

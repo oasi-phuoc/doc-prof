@@ -4312,36 +4312,31 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-consigne-supp{margin:0;padding:6px 10px;border-left:3px solid var(--purple);font-size:.9em;font-style:italic}
 .tcf-ecriture.is-fill .tcf-consigne-supp{margin:0 0 30px}
 .tcf-compteur{margin:2px 0 0;font-size:.85em;flex:0 0 auto}
-.tcf-formulaire{display:flex;flex-direction:column;gap:10px;border:1.5px solid var(--ink);padding:10px 12px;overflow:hidden;box-sizing:border-box;max-width:100%}
-.tcf-formulaire-title{margin:0 0 4px;font-weight:800;text-align:center}
-.tcf-champ{display:flex;align-items:flex-end;gap:8px;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
-.tcf-champ.is-adresse{align-items:flex-start}
-.tcf-champ.is-adresse .tcf-champ-label{padding-top:1.5mm}
-.tcf-champ-label{flex:0 1 auto;max-width:38%;font-weight:600;white-space:normal;line-height:1.25;min-width:0}
-/* Mode grille : colonne label fixe → cases alignées verticalement, même taille. */
-.tcf-formulaire.is-letter-grid{
+.tcf-formulaire{
+  --tcf-label-col:33%;
   --tcf-box:6mm;
   --tcf-box-gap:1.2px;
-  --tcf-label-col:36mm
+  display:flex;flex-direction:column;gap:10px;border:1.5px solid var(--ink);
+  padding:10px 12px;overflow:hidden;box-sizing:border-box;max-width:100%
 }
-.tcf-formulaire.is-letter-grid .tcf-champ{
-  display:grid;
-  grid-template-columns:var(--tcf-label-col) minmax(0,1fr);
-  column-gap:6px;align-items:center
+.tcf-formulaire-title{margin:0 0 4px;font-weight:800;text-align:center}
+/* Traits et cases : même grille 33% / 1fr → traits alignés verticalement. */
+.tcf-champ{
+  display:grid;grid-template-columns:var(--tcf-label-col) minmax(0,1fr);
+  column-gap:6px;align-items:center;width:100%;max-width:100%;min-width:0;box-sizing:border-box
 }
-.tcf-formulaire.is-letter-grid .tcf-champ.is-adresse{align-items:start}
-.tcf-formulaire.is-letter-grid .tcf-champ-label{
-  flex:none;width:100%;max-width:none;min-width:0;
-  font-size:.92em;line-height:1.2
+.tcf-champ.is-adresse{align-items:start}
+.tcf-champ.is-adresse .tcf-champ-label{padding-top:1.5mm}
+.tcf-champ-label{
+  width:100%;max-width:none;min-width:0;font-weight:600;white-space:normal;line-height:1.25
 }
-.tcf-champ-line{flex:1 1 0;min-width:0;min-height:7mm;max-width:100%}
+.tcf-formulaire.is-letter-grid .tcf-champ-label{font-size:.92em;line-height:1.2}
+.tcf-champ-line{min-width:0;min-height:7mm;max-width:100%;width:100%}
 .tcf-champ-line.is-date{
-  flex:0 0 auto;width:auto;max-width:100%;min-width:0;border-bottom:0;
+  width:auto;max-width:100%;min-width:0;border-bottom:0;
   display:inline-flex;align-items:flex-end;gap:4px;justify-content:flex-start
 }
-.tcf-formulaire.is-letter-grid .tcf-champ-line.is-date{
-  width:100%;max-width:100%
-}
+.tcf-formulaire.is-letter-grid .tcf-champ-line.is-date{width:100%;max-width:100%}
 .tcf-champ-date-sep{flex:0 0 auto;padding:0 1px;font-weight:700;line-height:7mm}
 .tcf-formulaire.is-letter-grid .tcf-champ-date-sep{line-height:var(--tcf-box)}
 /* Mode traits : chaque segment jj / mm / aaaa = 50 px. */
@@ -4351,39 +4346,50 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   min-height:7mm;text-align:center;font-weight:700;color:var(--purple);
   border-radius:0;box-sizing:border-box
 }
-/* Mode grille date : groupes de cases carrées (2 / 2 / 4). */
+/* Mode grille date : groupes de cases carrées (2 / 2 / 4) — taille fixe. */
 .tcf-champ-line.is-date.is-boxes-date .tcf-champ-boxes{
-  width:auto;flex:0 0 auto;gap:var(--tcf-box-gap,1.5px)
+  width:auto;flex:0 0 auto;gap:var(--tcf-box-gap,1.5px);
+  grid-template-columns:none
 }
 .tcf-champ-line.is-date.is-boxes-date .tcf-champ-box{
-  width:var(--tcf-box,6.5mm);min-width:var(--tcf-box,6.5mm);max-width:var(--tcf-box,6.5mm);
-  height:var(--tcf-box,6.5mm)
+  width:var(--tcf-box,6mm);min-width:var(--tcf-box,6mm);max-width:var(--tcf-box,6mm);
+  height:var(--tcf-box,6mm)
 }
+/* Cases texte : remplissent la colonne valeur jusqu’à la bordure droite. */
 .tcf-champ-boxes{
-  display:grid;grid-template-columns:repeat(16,var(--tcf-box,6.5mm));
-  gap:var(--tcf-box-gap,1.5px);justify-content:start;
-  width:max-content;max-width:100%;min-width:0;box-sizing:border-box
+  display:grid;gap:var(--tcf-box-gap,1.5px);justify-content:stretch;
+  width:100%;max-width:100%;min-width:0;box-sizing:border-box
 }
 .tcf-champ-line.is-multi .tcf-champ-boxes{
-  grid-template-rows:repeat(2,var(--tcf-box,6.5mm))
+  grid-template-rows:repeat(2,var(--tcf-box,6mm))
 }
 .tcf-champ-box{
   display:inline-flex;align-items:center;justify-content:center;
-  width:var(--tcf-box,6.5mm);min-width:var(--tcf-box,6.5mm);max-width:var(--tcf-box,6.5mm);
-  height:var(--tcf-box,6.5mm);border:1.1px solid var(--ink);box-sizing:border-box;
+  width:100%;min-width:0;max-width:none;height:var(--tcf-box,6mm);
+  border:1.1px solid var(--ink);box-sizing:border-box;
   font-weight:700;color:var(--purple);line-height:1;overflow:hidden
 }
 .tcf-champ-line.is-boxes{
-  flex:1 1 0;border-bottom:0;display:flex;align-items:center;justify-content:flex-start;
-  width:auto;min-width:0;max-width:100%;overflow:hidden
-}
-.tcf-formulaire.is-letter-grid .tcf-champ-line.is-boxes{
-  width:100%;max-width:100%
+  border-bottom:0;display:flex;align-items:center;justify-content:stretch;
+  width:100%;min-width:0;max-width:100%;overflow:hidden
 }
 .tcf-champ-line.is-traits-multi{
-  flex:1 1 0;min-width:0;max-width:100%;display:flex;flex-direction:column;gap:4px;border-bottom:0
+  min-width:0;max-width:100%;width:100%;display:flex;flex-direction:column;gap:4px;border-bottom:0
 }
 .tcf-champ-line.is-traits-multi .tcf-champ-line{width:100%;flex:none}
+/* Texte à compléter (PE) : tableau 5 images numérotées. */
+.tcf-texte-images{display:flex;flex-direction:column;gap:8px;width:100%}
+.tcf-texte-images-grid{
+  list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:3mm;width:100%
+}
+.tcf-texte-images-grid li{
+  display:flex;flex-direction:column;align-items:center;gap:1.5mm;
+  border:1.2px solid var(--ink);padding:2mm;box-sizing:border-box;min-width:0
+}
+.tcf-texte-images-num{font-weight:800;color:var(--purple);line-height:1}
+.tcf-texte-images-grid .tcf-image{width:100%;height:22mm}
+.tcf-texte-images-text{margin:0;text-align:justify;line-height:1.55}
 .tcf-champ-options{display:flex;flex-wrap:wrap;gap:6px 16px}
 .tcf-champ-option{display:inline-flex;align-items:center;gap:6px}
 .tcf-inline-form-icons{display:inline-flex;align-items:center;gap:4px;margin:0 0 1px}

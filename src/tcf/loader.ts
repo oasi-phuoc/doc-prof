@@ -2,8 +2,8 @@ import { TCF_NIVEAUX, tcfPosition, type TcfSlotMeta } from './catalog'
 import {
   tcfCeEntriesWithTag,
   tcfCeTagForSlot,
-  tcfPeEntriesWithTag,
-  tcfPeTagForSlot,
+  tcfPeEntriesWithAnyTag,
+  tcfPeTagsForSlot,
 } from './content-tags'
 import { isTcfExerciseShape, validateTcfExercise } from './validate'
 import type { TcfCompetence, TcfExercise, TcfNiveau, TcfTypeExercice } from './types'
@@ -74,8 +74,8 @@ export function tcfSlotBank(
     return tag ? tcfCeEntriesWithTag(pool, tag) : pool
   }
   if (slot.competence === 'PE' && slot.numero != null) {
-    const tag = tcfPeTagForSlot(slot.numero)
-    return tag ? tcfPeEntriesWithTag(pool, tag) : pool
+    const tags = tcfPeTagsForSlot(slot.numero)
+    return tags.length > 0 ? tcfPeEntriesWithAnyTag(pool, tags) : pool
   }
   if (slot.competence === 'CO' && slot.numero != null) {
     return pool.filter((ex) => tcfPosition(ex.id) === slot.numero)

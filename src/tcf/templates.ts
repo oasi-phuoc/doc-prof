@@ -126,6 +126,19 @@ export function emptyTcfExercise(
         type_exercice: 'formulaire',
         support: { titre: '', champs: [{ label: '', type: 'texte', corrige: '' }] },
       }
+    case 'texte_images':
+      return {
+        ...base,
+        competence: 'PE',
+        type_exercice: 'texte_images',
+        tags: ['mots-cles'],
+        points: 5,
+        consigne: 'Complétez le texte à l’aide des images. Écrivez les mots correctement.',
+        support: {
+          texte: '',
+          mots: Array.from({ length: 5 }, () => ({ mot: '', image: '' })),
+        },
+      }
     case 'image_question':
       return {
         ...base,

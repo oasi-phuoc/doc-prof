@@ -205,6 +205,22 @@ export type TcfChampFormulaire = {
 }
 
 export type TcfPeFormulaire = TcfBase<'PE', 'formulaire', { titre?: string; champs: TcfChampFormulaire[] }>
+/** Mot à trouver + image associée (texte à compléter). */
+export type TcfMotImage = { mot: string; image: string }
+/**
+ * Texte à trous continu (histoire) : 5 blancs `_____ (n)` reliés à 5 images numérotées.
+ * Tag PE : `mots-cles`.
+ */
+export type TcfPeTexteImages = TcfBase<
+  'PE',
+  'texte_images',
+  {
+    /** Texte avec blancs `_____ (1)` … `_____ (5)`. */
+    texte: string
+    /** Exactement 5 mots + images (index = n − 1). */
+    mots: TcfMotImage[]
+  }
+>
 export type TcfPeImageQuestion = TcfBase<
   'PE',
   'image_question',
@@ -253,6 +269,7 @@ export type TcfPeDialogue = TcfBase<
 >
 export type TcfPeExercise =
   | TcfPeFormulaire
+  | TcfPeTexteImages
   | TcfPeImageQuestion
   | TcfPeSmsReponse
   | TcfPeEmailReponse
@@ -426,6 +443,11 @@ export type TcfSheetItem =
       images: Array<{ id: string; image: string; correct: boolean }>
     }
   | { kind: 'formulaire'; titre?: string; champs: TcfChampFormulaire[] }
+  | {
+      kind: 'texte_images'
+      texte: string
+      mots: TcfMotImage[]
+    }
   | {
       kind: 'ecriture'
       /** Cadre autour des traits : téléphone (message) ou e-mail (en-tête À / Objet). */

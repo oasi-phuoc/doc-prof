@@ -31,6 +31,7 @@ import {
 import { filledForms, isTcfBaremeConsigne, resolveQuestionForm } from './formes'
 import { tcfBank, tcfExerciseById, tcfSlotBank } from './loader'
 import { melangerChoix } from './melanger'
+import { tcfPeSlotDefaults } from './pe-defaults'
 import { TCF_PO_GROUPS, tcfGroupId } from './sources'
 import { emptyTcfExercise, TCF_LETTRES, TCF_LETTRES_SITUATIONS, tcfExerciseId } from './templates'
 import type {
@@ -352,8 +353,21 @@ export function tcfExerciseItems(
       ]
     case 'formulaire':
       return [scoredItem({ kind: 'formulaire', titre: ex.support.titre, champs: ex.support.champs })]
+    case 'texte_images':
+      return [
+        tcfItem(
+          {
+            kind: 'texte_images',
+            texte: ex.support.texte,
+            mots: ex.support.mots,
+          },
+          true,
+          ex.support.mots.map((m, i) => `(${i + 1}) ${m.mot}`).join(' — '),
+          ex.points,
+        ),
+      ]
     case 'image_question': {
-      // Le texte à trous se complète dans le document : pas de cadre message.
+      // Ancien texte à trous (migré vers texte_images) : support seul.
       const aCompleter = /complétez/i.test(ex.consigne ?? '') || /_{4,}/.test(ex.support.consigne)
       if (aCompleter) return [support(true)]
       return [
@@ -810,11 +824,17 @@ function appendNiveauExercisePages(
   for (const slot of TCF_SLOTS.filter((s) => s.competence === 'PE' && s.numero != null)) {
     const pool = numberedBank(niveau, slot)
     if (pool.length > 0) {
+      const peDefaults = tcfPeSlotDefaults(slot.typeId)
       pages.push(
         tcfPage(
           slot.typeId,
           niveau,
-          { tcfBankId: pick(rng, pool).id, pointsPerQuestion: 1 },
+          {
+            tcfBankId: pick(rng, pool).id,
+            pointsPerQuestion: peDefaults?.pointsPerQuestion ?? 1,
+            tcfPointsDetail: peDefaults?.tcfPointsDetail,
+            inlineBlankPx: peDefaults?.inlineBlankPx,
+          },
           domain,
         ),
       )

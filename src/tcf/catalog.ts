@@ -211,6 +211,15 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     reponses: [],
   },
   {
+    typeId: 'tcf-pe-texte-images',
+    competence: 'PE',
+    typeExercice: 'texte_images',
+    label: 'Texte à compléter',
+    description: 'Compléter un texte à trous à l’aide de 5 images.',
+    instruction: 'Complétez le texte à l’aide des images. Écrivez les mots correctement.',
+    reponses: [],
+  },
+  {
     typeId: 'tcf-pe-image',
     competence: 'PE',
     typeExercice: 'image_question',
@@ -366,8 +375,8 @@ const CO_A1 = ['Événement', 'Activité', 'Instructions', 'Situations', 'Objets
 /** CO A1-A2 (CFR / TPF) — 4 emplacements (pas d’exercice 5). */
 const CO_A2 = ['Annonces et instructions', 'Radio', 'Message', 'Discussion'] as const
 
-/** PE A0-A1 — tags : formulaire, dialogue, message, email. */
-const PE_A1 = ['Formulaire', 'Dialogue', 'Message', 'E-mail'] as const
+/** PE A0-A1 — tags : formulaire, mots-cles, dialogue, message+email. */
+const PE_A1 = ['Formulaire', 'Texte à compléter', 'Dialogue', 'Message / e-mail'] as const
 
 export const TCF_CE_NUMEROS = [1, 2, 3, 4] as const
 export const TCF_PE_NUMEROS = [1, 2, 3, 4] as const

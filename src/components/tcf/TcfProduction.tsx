@@ -1,7 +1,8 @@
 import type { PreviewMode } from '@/math/types'
 import { isTcfBaremeConsigne } from '@/tcf/formes'
-import type { TcfChampFormulaire, TcfNbMots, TcfReplique } from '@/tcf/types'
-import { LignesReponse } from './TcfQuestions'
+import type { TcfChampFormulaire, TcfMotImage, TcfNbMots, TcfReplique } from '@/tcf/types'
+import { LignesReponse, renderEnonceText } from './TcfQuestions'
+import { TcfImage } from './TexteSupport'
 
 function nbMotsLabel({ min = 0, max = 0 }: TcfNbMots): string {
   if (min > 0 && max > 0) return `entre ${min} et ${max} mots`
@@ -111,11 +112,14 @@ function ChampBoxes({
   chars,
   show,
   columns,
+  fillRow = false,
 }: {
   chars: string[]
   show: boolean
-  /** Nombre de colonnes (cases carrées de taille fixe). */
+  /** Nombre de colonnes. */
   columns?: number
+  /** Remplir la largeur disponible (cases texte) ; sinon cases fixes (date). */
+  fillRow?: boolean
 }) {
   const cols = columns ?? chars.length
   return (
@@ -123,7 +127,11 @@ function ChampBoxes({
       className="tcf-champ-boxes"
       style={
         cols > 0
-          ? { gridTemplateColumns: `repeat(${cols}, var(--tcf-box, 6.5mm))` }
+          ? {
+              gridTemplateColumns: fillRow
+                ? `repeat(${cols}, minmax(0, 1fr))`
+                : `repeat(${cols}, var(--tcf-box, 6mm))`,
+            }
           : undefined
       }
       aria-hidden={!show}
@@ -187,7 +195,7 @@ function textBoxes(corrige: string, show: boolean, rows = 1) {
   const cells = Array.from({ length: capacity }, (_, i) => (show ? chars[i] ?? '' : ''))
   return (
     <span className={`tcf-champ-line is-boxes${rows > 1 ? ' is-multi' : ''}`}>
-      <ChampBoxes chars={cells} show={show} columns={perRow} />
+      <ChampBoxes chars={cells} show={show} columns={perRow} fillRow />
     </span>
   )
 }
@@ -262,6 +270,33 @@ export function FormulairePE({
         </div>
         )
       })}
+    </div>
+  )
+}
+
+/** Texte à compléter : grille 5 images numérotées + texte à trous `_____ (n)`. */
+export function TexteImagesPE({
+  texte,
+  mots,
+  mode,
+}: {
+  texte: string
+  mots: TcfMotImage[]
+  mode: PreviewMode
+}) {
+  const show = mode === 'answers'
+  const fills = show ? mots.map((m) => m.mot) : []
+  return (
+    <div className="tcf-texte-images">
+      <ol className="tcf-texte-images-grid">
+        {mots.slice(0, 5).map((m, i) => (
+          <li key={`${m.image}-${i}`}>
+            <span className="tcf-texte-images-num">{i + 1}</span>
+            <TcfImage src={m.image} alt={m.mot || `Mot ${i + 1}`} />
+          </li>
+        ))}
+      </ol>
+      <p className="tcf-texte-images-text">{renderEnonceText(texte, fills)}</p>
     </div>
   )
 }
