@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-demander. Français seul (pas de traductions). */
 export const demanderDocs: GrammaireTheoryDoc[] = [
@@ -9,35 +10,47 @@ export const demanderDocs: GrammaireTheoryDoc[] = [
     title: 'Les déterminants démonstratifs',
     topic: 'gram-demander',
     public: 'A1',
-    objectif: 'Utiliser ce, cet, cette, ces.',
-    blocks: [
-    { kind: 'heading', text: 'Les déterminants démonstratifs' },
-    { kind: 'paragraph', text: 'Je montre une chose proche avec ce / cet / cette / ces.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Ce livre.', 'Cet homme.', 'Cette table.', 'Ces stylos.'] }
+    objectif: 'Montrer une chose avec ce, cet, cette ou ces.',
+    blocks: sheet({
+      title: 'Les déterminants démonstratifs',
+      intro: 'Je montre une chose avec {g}ce{/g}, {g}cet{/g}, {g}cette{/g} ou {g}ces{/g}.',
+      regarder: [
+        '{tab:1<}{c}Ce{/c} bus est en retard. | {c}Cet{/c} homme est médecin.',
+        '{tab:1<}{c}Cette{/c} rue est longue. | {c}Ces{/c} documents sont pour vous.',
+        '{tab:1<}{c}Cet{/c} hôtel est complet. | {c}Ces{/c} chaises sont libres.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Masculin + consonne → ce. Masculin + voyelle ou h → cet.' },
-        { kind: 'paragraph', text: 'Féminin → cette. Pluriel → ces.' }
+      expliquer: [
+        p('Le déterminant se place {c}devant{/c} le nom.'),
+        p('Je choisis selon le genre et le nombre du nom.'),
+        p('Devant une voyelle ou un h, le masculin singulier devient {c}cet{/c}.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Nom{/g} | {g}Forme{/g} | {g}Exemple{/g}',
+          '{tab:2+>}Masculin + consonne | {c}ce{/c} | {c}ce{/c} livre',
+          '{tab:2+>}Masculin + voyelle | {c}cet{/c} | {c}cet{/c} ami',
+          '{tab:2+>}Féminin | {c}cette{/c} | {c}cette{/c} adresse',
+          '{tab:2+>}Pluriel | {c}ces{/c} | {c}ces{/c} papiers',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'ce / cet / cette / ces.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['', 'Masculin', 'Féminin'], rows: [['singulier', 'ce / cet', 'cette'], ['pluriel', 'ces', 'ces']] },
-        { kind: 'attention', text: 'Cet devant voyelle : cet ami, cet hôtel.' }
+      retenir: [
+        p('Ce, cet, cette, ces = je montre ce nom.'),
+        ligne,
+        table(
+          ['Cas', 'Forme', 'Exemple'],
+          [
+            ['masculin + consonne', 'ce', 'ce stylo'],
+            ['masculin + voyelle / h', 'cet', 'cet hôtel'],
+            ['féminin', 'cette', 'cette carte'],
+            ['pluriel', 'ces', 'ces clés'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Cet devant une voyelle. Pas « ce ami ».'),
+        ex([
+          { text: 'Je dis : « {c}Cet{/c} ami. »', wrong: 'Ce ami.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'f2',
@@ -46,37 +59,50 @@ export const demanderDocs: GrammaireTheoryDoc[] = [
     title: 'Pouvoir, devoir, vouloir',
     topic: 'gram-demander',
     public: 'A1',
-    objectif: 'Exprimer capacité, obligation, volonté.',
-    blocks: [
-    { kind: 'heading', text: 'Pouvoir, devoir, vouloir' },
-    { kind: 'paragraph', text: 'Je dis ce que je peux, dois ou veux.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je peux t’aider.', 'Tu dois partir.', 'Nous voulons un café.'] }
+    objectif: 'Dire ce que je peux, dois ou veux.',
+    blocks: sheet({
+      title: 'Pouvoir, devoir, vouloir',
+      intro: 'Je dis ce que je {g}peux{/g}, {g}dois{/g} ou {g}veux{/g}.',
+      regarder: [
+        '{tab:1<}Je {c}peux{/c} vous aider. | Tu {c}dois{/c} signer ici.',
+        '{tab:1<}Elle {c}veut{/c} un café. | Nous {c}pouvons{/c} payer par carte.',
+        '{tab:1<}Vous {c}devez{/c} attendre. | Ils {c}veulent{/c} partir.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Pouvoir = capacité ou permission.' },
-        { kind: 'paragraph', text: 'Devoir = obligation.' },
-        { kind: 'paragraph', text: 'Vouloir = volonté / souhait.' },
-        { kind: 'paragraph', text: 'Ces verbes + infinitif.' }
+      expliquer: [
+        p('{c}Pouvoir{/c} = capacité ou permission.'),
+        p('{c}Devoir{/c} = obligation.'),
+        p('{c}Vouloir{/c} = volonté ou souhait.'),
+        p('Le verbe suivant reste à l’{c}infinitif{/c}.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Verbe{/g} | {g}Sens{/g} | {g}Exemple{/g}',
+          '{tab:2+>}pouvoir | je peux | Je {c}peux{/c} venir.',
+          '{tab:2+>}devoir | je dois | Je {c}dois{/c} partir.',
+          '{tab:2+>}vouloir | je veux | Je {c}veux{/c} manger.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'pouvoir / devoir / vouloir + infinitif.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Verbe', 'Sens', 'Exemple'], rows: [['pouvoir', 'capacité / permission', 'Je peux venir.'], ['devoir', 'obligation', 'Tu dois étudier.'], ['vouloir', 'volonté', 'Elle veut manger.']] },
-        { kind: 'attention', text: 'Après ces verbes, le 2e verbe reste à l’infinitif.' }
+      retenir: [
+        p('Pouvoir, devoir ou vouloir + infinitif.'),
+        p('Je conjugue seulement le premier verbe.'),
+        ligne,
+        table(
+          ['Personne', 'pouvoir', 'devoir', 'vouloir'],
+          [
+            ['je', 'peux', 'dois', 'veux'],
+            ['tu', 'peux', 'dois', 'veux'],
+            ['il / elle', 'peut', 'doit', 'veut'],
+            ['nous', 'pouvons', 'devons', 'voulons'],
+            ['vous', 'pouvez', 'devez', 'voulez'],
+            ['ils / elles', 'peuvent', 'doivent', 'veulent'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Le deuxième verbe ne change pas.'),
+        ex([
+          { text: 'Je dis : « Je veux {c}partir{/c}. »', wrong: 'Je veux pars.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'f3',
@@ -85,34 +111,47 @@ export const demanderDocs: GrammaireTheoryDoc[] = [
     title: 'Accepter et refuser',
     topic: 'gram-demander',
     public: 'A1',
-    objectif: 'Accepter ou refuser une proposition.',
-    blocks: [
-    { kind: 'heading', text: 'Accepter et refuser' },
-    { kind: 'paragraph', text: 'Je réponds oui ou non à une proposition.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Oui, avec plaisir.', 'Non, merci.', 'Désolé, je ne peux pas.'] }
+    objectif: 'Répondre oui ou non à une proposition.',
+    blocks: sheet({
+      title: 'Accepter et refuser',
+      intro: 'Je réponds {g}oui{/g} ou {g}non{/g} à une proposition.',
+      regarder: [
+        '{tab:1<}Tu viens ? — {c}Oui{/c}, d’accord. | — {c}Avec plaisir{/c}.',
+        '{tab:1<}Un café ? — {c}Volontiers{/c}. | — {c}Non merci{/c}.',
+        '{tab:1<}— {c}Désolé{/c}, je ne peux pas. | — {c}Je suis occupé{/c}.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Accepter : oui, d’accord, avec plaisir, volontiers.' },
-        { kind: 'paragraph', text: 'Refuser poliment : non merci, désolé, je ne peux pas.' }
+      expliquer: [
+        p('Pour accepter : oui, d’accord, avec plaisir, volontiers.'),
+        p('Pour refuser : non merci, désolé, je ne peux pas.'),
+        p('Un refus reste {c}poli{/c}. Je donne une raison courte.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Réponse{/g} | {g}Je dis{/g}',
+          '{tab:1>}accepter | {c}Oui, d’accord.{/c}',
+          '{tab:1>}accepter avec plaisir | {c}Avec plaisir.{/c}',
+          '{tab:1>}refuser poliment | {c}Non merci.{/c}',
+          '{tab:1>}refuser + raison | {c}Désolé, je travaille.{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'refuse avec politesse.' },
-        { kind: 'examples', marker: 'puces', label: 'Formules', items: ['Oui, d’accord.', 'Avec plaisir.', 'Non, merci.', 'Désolé, je ne peux pas.'] },
-        { kind: 'attention', text: 'Un refus clair reste poli.' }
+      retenir: [
+        p('Oui clair, ou non poli avec une raison.'),
+        ligne,
+        table(
+          ['Sens', 'Formule'],
+          [
+            ['accepter', 'Oui.'],
+            ['accepter', 'D’accord.'],
+            ['accepter', 'Avec plaisir. / Volontiers.'],
+            ['refuser', 'Non merci.'],
+            ['refuser', 'Désolé, je ne peux pas.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} « Non » seul peut sembler brusque. J’ajoute merci ou désolé.'),
+        ex([
+          { text: 'Je dis : « {c}Non merci{/c}, je n’ai pas faim. »', wrong: 'Non.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
 ]

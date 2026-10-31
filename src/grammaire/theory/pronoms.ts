@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-pronoms. Français seul (pas de traductions). */
 export const pronomsDocs: GrammaireTheoryDoc[] = [
@@ -9,35 +10,49 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'Les pronoms relatifs',
     topic: 'gram-pronoms',
     public: 'A2',
-    objectif: 'Relier deux idées avec qui, que, où…',
-    blocks: [
-    { kind: 'heading', text: 'Les pronoms relatifs' },
-    { kind: 'paragraph', text: 'Je relie deux informations dans une phrase.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['L’homme qui parle est mon père.', 'Le livre que je lis est bien.', 'La ville où j’habite est calme.'] }
+    objectif: 'Relier deux informations avec qui, que, où ou dont.',
+    blocks: sheet({
+      title: 'Les pronoms relatifs',
+      intro: 'Je relie deux informations dans {g}une phrase{/g}.',
+      regarder: [
+        '{tab:1<}La femme {c}qui{/c} parle est médecin. | Le livre {c}que{/c} je lis est neuf.',
+        '{tab:1<}La ville {c}où{/c} j’habite est calme. | L’ami {c}dont{/c} je parle est ici.',
+        '{tab:1<}L’homme {c}qu’{/c}elle connaît. | Le jour {c}où{/c} je suis arrivé.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Qui = sujet. Que = complément. Où = lieu ou temps.' },
-        { kind: 'paragraph', text: 'Dont = de + nom (le livre dont je parle).' }
+      expliquer: [
+        p('{c}Qui{/c} = sujet du verbe qui suit.'),
+        p('{c}Que{/c} = complément. Devant une voyelle : {c}qu’{/c}.'),
+        p('{c}Où{/c} = lieu ou moment.'),
+        p('{c}Dont{/c} = de + nom. Le livre dont je parle.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Pronom{/g} | {g}Rôle{/g}',
+          '{tab:1>}qui | {c}sujet{/c}',
+          '{tab:1>}que / qu’ | {c}complément{/c}',
+          '{tab:1>}où | {c}lieu{/c} ou temps',
+          '{tab:1>}dont | {c}de{/c} + nom',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'qui / que / où / dont.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Pronom', 'Rôle', 'Exemple'], rows: [['qui', 'sujet', 'la femme qui chante'], ['que', 'COD', 'le film que je regarde'], ['où', 'lieu / temps', 'le jour où je suis né'], ['dont', 'de + nom', 'l’ami dont je parle']] },
-        { kind: 'attention', text: 'Que → qu’ devant voyelle : l’homme qu’elle connaît.' }
+      retenir: [
+        p('Qui fait l’action. Que reçoit l’action. Où = lieu. Dont = de.'),
+        ligne,
+        table(
+          ['Pronom', 'Exemple'],
+          [
+            ['qui', 'la femme qui parle'],
+            ['que', 'le livre que je lis'],
+            ['qu’', 'l’homme qu’elle connaît'],
+            ['où', 'la ville où j’habite'],
+            ['dont', 'l’ami dont je parle'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Qui ≠ que. Qui est sujet.'),
+        ex([
+          { text: 'Je dis : « la femme {c}qui{/c} parle. »', wrong: 'la femme que parle.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i2',
@@ -46,34 +61,51 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'Les pronoms possessifs',
     topic: 'gram-pronoms',
     public: 'A2',
-    objectif: 'Remplacer mon / ton / son par le mien…',
-    blocks: [
-    { kind: 'heading', text: 'Les pronoms possessifs' },
-    { kind: 'paragraph', text: 'Je remplace un nom déjà connu.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Ce livre est le mien.', 'Cette voiture est la tienne.'] }
+    objectif: 'Remplacer un nom déjà connu avec le mien, le tien…',
+    blocks: sheet({
+      title: 'Les pronoms possessifs',
+      intro: 'Je remplace un nom déjà {g}connu{/g}.',
+      regarder: [
+        '{tab:1<}C’est mon sac. C’est {c}le mien{/c}. | C’est ta clé. C’est {c}la tienne{/c}.',
+        '{tab:1<}Ce sont nos places. Ce sont {c}les nôtres{/c}. | C’est leur idée. C’est {c}la leur{/c}.',
+        '{tab:1<}Ton bus ou {c}le mien{/c} ? | Leurs enfants et {c}les nôtres{/c}.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Le mien, le tien, le sien, le nôtre, le vôtre, le leur (+ formes fém./plur.).' }
+      expliquer: [
+        p('Le pronom possessif remplace le nom + le possessif.'),
+        p('Je garde un article : {c}le{/c}, {c}la{/c} ou {c}les{/c}.'),
+        p('L’article et la fin du mot suivent le nom remplacé.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Possesseur{/g} | {g}Masculin{/g} | {g}Féminin{/g}',
+          '{tab:2+>}je | le {c}mien{/c} | la {c}mienne{/c}',
+          '{tab:2+>}tu | le {c}tien{/c} | la {c}tienne{/c}',
+          '{tab:2+>}il / elle | le {c}sien{/c} | la {c}sienne{/c}',
+          '{tab:2+>}nous | le {c}nôtre{/c} | la {c}nôtre{/c}',
+          '{tab:2+>}vous | le {c}vôtre{/c} | la {c}vôtre{/c}',
+          '{tab:2+>}ils / elles | le {c}leur{/c} | la {c}leur{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'pronom possessif = article + mien / tien…' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['', 'masc. sing.', 'fém. sing.'], rows: [['je', 'le mien', 'la mienne'], ['tu', 'le tien', 'la tienne'], ['il / elle', 'le sien', 'la sienne']] },
-        { kind: 'attention', text: 'Garde l’article : le mien (pas mien seul).' }
+      retenir: [
+        p('Article + mien, tien, sien, nôtre, vôtre, leur.'),
+        p('Pluriel : les miens, les miennes, les nôtres…'),
+        ligne,
+        table(
+          ['Déterminant', 'Pronom'],
+          [
+            ['mon sac', 'le mien'],
+            ['ma clé', 'la mienne'],
+            ['tes livres', 'les tiens'],
+            ['notre maison', 'la nôtre'],
+            ['vos idées', 'les vôtres'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Je garde l’article. Pas « mien » seul.'),
+        ex([
+          { text: 'Je dis : « C’est {c}le mien{/c}. »', wrong: 'C’est mien.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i3',
@@ -82,35 +114,47 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'Les pronoms démonstratifs',
     topic: 'gram-pronoms',
     public: 'A2',
-    objectif: 'Utiliser celui, celle, ceux, celles.',
-    blocks: [
-    { kind: 'heading', text: 'Les pronoms démonstratifs' },
-    { kind: 'paragraph', text: 'Je désigne une chose sans répéter le nom.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Celui-ci est rouge.', 'Je préfère celle de Marie.'] }
+    objectif: 'Désigner une chose sans répéter le nom.',
+    blocks: sheet({
+      title: 'Les pronoms démonstratifs',
+      intro: 'Je désigne une chose sans {g}répéter{/g} le nom.',
+      regarder: [
+        '{tab:1<}Ce livre ou {c}celui-là{/c} ? | Cette chaise et {c}celle-ci{/c}.',
+        '{tab:1<}Je prends {c}ceux{/c} de Nina. | {c}Celles{/c} qui restent sont à nous.',
+        '{tab:1<}{c}Celui{/c} de gauche. | {c}Celles{/c} que tu vois.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Celui / celle / ceux / celles.' },
-        { kind: 'paragraph', text: 'Souvent + -ci / -là ou + de / qui / que.' }
+      expliquer: [
+        p('{c}Celui{/c}, {c}celle{/c}, {c}ceux{/c}, {c}celles{/c} remplacent un nom.'),
+        p('J’accorde avec le nom remplacé.'),
+        p('Souvent + -ci / -là, ou + de, qui, que.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Pronom{/g}',
+          '{tab:1>}masculin singulier | {c}celui{/c}',
+          '{tab:1>}féminin singulier | {c}celle{/c}',
+          '{tab:1>}masculin pluriel | {c}ceux{/c}',
+          '{tab:1>}féminin pluriel | {c}celles{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'celui-ci / celle-là…' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['', 'singulier', 'pluriel'], rows: [['masculin', 'celui', 'ceux'], ['féminin', 'celle', 'celles']] },
-        { kind: 'attention', text: 'Accorde avec le nom remplacé.' }
+      retenir: [
+        p('Celui-ci = proche. Celui-là = plus loin.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['celui', 'celui de Paul'],
+            ['celle-ci', 'cette clé, pas celle-ci'],
+            ['ceux qui', 'ceux qui arrivent'],
+            ['celles que', 'celles que tu veux'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde avec le nom, pas avec la personne.'),
+        ex([
+          { text: 'Je dis : « la chaise, {c}celle{/c}-là. »', wrong: 'la chaise, celui-là.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i4',
@@ -118,36 +162,51 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     index: 4,
     title: 'Les pronoms COD',
     topic: 'gram-pronoms',
-    public: 'A1 / A2',
-    objectif: 'Remplacer le complément d’objet direct.',
-    blocks: [
-    { kind: 'heading', text: 'Les pronoms COD' },
-    { kind: 'paragraph', text: 'Je remplace un nom complément direct.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je regarde le film. → Je le regarde.', 'Tu aimes les pommes. → Tu les aimes.'] }
+    public: 'A2',
+    objectif: 'Remplacer un complément direct.',
+    blocks: sheet({
+      title: 'Les pronoms COD',
+      intro: 'Je remplace un nom complément {g}direct{/g}.',
+      regarder: [
+        '{tab:1<}Je vois Nina. → Je {c}la{/c} vois. | Tu prends le bus. → Tu {c}le{/c} prends.',
+        '{tab:1<}Il aide les enfants. → Il {c}les{/c} aide. | Elle m’appelle. → Elle {c}m’{/c}appelle.',
+        '{tab:1<}Nous {c}vous{/c} attendons. | Je {c}l’{/c}écoute.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'me, te, le, la, nous, vous, les.' },
-        { kind: 'paragraph', text: 'Le pronom se place avant le verbe.' }
+      expliquer: [
+        p('Le pronom COD se place {c}avant{/c} le verbe.'),
+        p('Personnes : me, te, nous, vous.'),
+        p('Choses ou personnes : le, la, les.'),
+        p('Devant une voyelle : le et la deviennent {c}l’{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Pronom{/g}',
+          '{tab:1>}moi | {c}me / m’{/c}',
+          '{tab:1>}toi | {c}te / t’{/c}',
+          '{tab:1>}masculin | {c}le / l’{/c}',
+          '{tab:1>}féminin | {c}la / l’{/c}',
+          '{tab:1>}pluriel | {c}les{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'COD avant le verbe.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Pronom', 'Exemple'], rows: [['le / la / l’', 'Je le vois.'], ['les', 'Je les mange.'], ['me / te', 'Il me connaît.']] },
-        { kind: 'astuce', text: 'Devant voyelle : le/la → l’.' }
+      retenir: [
+        p('COD avant le verbe.'),
+        ligne,
+        table(
+          ['Remplace', 'Pronom', 'Exemple'],
+          [
+            ['un homme / un objet m.', 'le', 'Je le vois.'],
+            ['une femme / un objet f.', 'la', 'Je la prends.'],
+            ['plusieurs', 'les', 'Je les aide.'],
+            ['moi', 'me', 'Tu me vois.'],
+            ['voyelle', 'l’', 'Je l’écoute.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Le pronom est avant le verbe, pas après.'),
+        ex([
+          { text: 'Je dis : « Je {c}la{/c} vois. »', wrong: 'Je vois la. (si « la » remplace Nina)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i5',
@@ -156,35 +215,50 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'Les pronoms COI',
     topic: 'gram-pronoms',
     public: 'A2',
-    objectif: 'Remplacer le complément d’objet indirect.',
-    blocks: [
-    { kind: 'heading', text: 'Les pronoms COI' },
-    { kind: 'paragraph', text: 'Je remplace à + personne.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je parle à Marie. → Je lui parle.', 'Il donne un livre à ses amis. → Il leur donne un livre.'] }
+    objectif: 'Remplacer à + personne.',
+    blocks: sheet({
+      title: 'Les pronoms COI',
+      intro: 'Je remplace {g}à + personne{/g}.',
+      regarder: [
+        '{tab:1<}Je parle à Nina. → Je {c}lui{/c} parle. | Il téléphone à ses parents. → Il {c}leur{/c} téléphone.',
+        '{tab:1<}Tu {c}me{/c} réponds. | Elle {c}nous{/c} écrit.',
+        '{tab:1<}Je {c}vous{/c} explique. | Ils {c}te{/c} demandent l’heure.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'me, te, lui, nous, vous, leur.' },
-        { kind: 'paragraph', text: 'Lui = à lui / à elle. Leur = à eux / à elles.' }
+      expliquer: [
+        p('Le COI remplace {c}à{/c} + une personne.'),
+        p('Il se place {c}avant{/c} le verbe.'),
+        p('{c}Lui{/c} = à lui ou à elle. {c}Leur{/c} = à eux ou à elles.'),
+        p('Leur pronom n’a pas de s.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}À + personne{/g} | {g}Pronom{/g}',
+          '{tab:1>}à moi | {c}me{/c}',
+          '{tab:1>}à toi | {c}te{/c}',
+          '{tab:1>}à lui / à elle | {c}lui{/c}',
+          '{tab:1>}à nous | {c}nous{/c}',
+          '{tab:1>}à vous | {c}vous{/c}',
+          '{tab:1>}à eux / à elles | {c}leur{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'COI avant le verbe. lui / leur sans à.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Pronom', 'Remplace'], rows: [['lui', 'à lui / à elle'], ['leur', 'à eux / à elles']] },
-        { kind: 'attention', text: 'Pas de s à leur pronom : je leur parle.' }
+      retenir: [
+        p('COI avant le verbe. Lui et leur sans à.'),
+        ligne,
+        table(
+          ['Phrase', 'Avec pronom'],
+          [
+            ['Je parle à Paul.', 'Je lui parle.'],
+            ['Je parle à Marie.', 'Je lui parle.'],
+            ['Je parle aux enfants.', 'Je leur parle.'],
+            ['Il écrit à nous.', 'Il nous écrit.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas de s à leur. Je leur parle, pas « je leurs parle ».'),
+        ex([
+          { text: 'Je dis : « Je {c}leur{/c} parle. »', wrong: 'Je leurs parle.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i6',
@@ -193,35 +267,48 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'Les pronoms indéfinis',
     topic: 'gram-pronoms',
     public: 'A2',
-    objectif: 'Utiliser quelqu’un, quelque chose, rien…',
-    blocks: [
-    { kind: 'heading', text: 'Les pronoms indéfinis' },
-    { kind: 'paragraph', text: 'Je parle d’une personne ou d’une chose non précise.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Quelqu’un frappe.', 'Je ne vois rien.'] }
+    objectif: 'Parler d’une personne ou d’une chose non précise.',
+    blocks: sheet({
+      title: 'Les pronoms indéfinis',
+      intro: 'Je parle d’une personne ou d’une chose {g}non précise{/g}.',
+      regarder: [
+        '{tab:1<}{c}Quelqu’un{/c} frappe. | Je vois {c}quelque chose{/c}.',
+        '{tab:1<}{c}Tout le monde{/c} est là. | Je ne vois {c}rien{/c}.',
+        '{tab:1<}{c}Personne{/c} n’est là. | {c}Chacun{/c} a un cahier.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Quelqu’un / quelque chose / tout le monde / rien / personne…' },
-        { kind: 'paragraph', text: 'Rien et personne vont avec ne.' }
+      expliquer: [
+        p('{c}Quelqu’un{/c} = une personne. {c}Quelque chose{/c} = une chose.'),
+        p('{c}Tout le monde{/c} = toutes les personnes. Le verbe est au singulier.'),
+        p('{c}Rien{/c} et {c}personne{/c} vont avec {c}ne{/c}.'),
+        p('Si personne est au début : Personne n’est là.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Sens{/g}',
+          '{tab:1>}quelqu’un | une personne',
+          '{tab:1>}quelque chose | une chose',
+          '{tab:1>}tout le monde | toutes les personnes',
+          '{tab:1>}rien | aucune chose',
+          '{tab:1>}personne | aucune personne',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'personne / rien + ne.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Pronom', 'Exemple'], rows: [['quelqu’un', 'Quelqu’un appelle.'], ['quelque chose', 'Je veux quelque chose.'], ['personne', 'Je ne vois personne.'], ['rien', 'Je n’ai rien.']] },
-        { kind: 'attention', text: 'Personne n’est là (personne au début + n’).' }
+      retenir: [
+        p('Rien et personne + ne.'),
+        ligne,
+        table(
+          ['Affirmatif', 'Négatif'],
+          [
+            ['quelqu’un', 'ne … personne'],
+            ['quelque chose', 'ne … rien'],
+            ['tout le monde', 'personne ne…'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Personne au début prend n’.'),
+        ex([
+          { text: 'Je dis : « {c}Personne n’{/c}est là. »', wrong: 'Personne est là.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i7',
@@ -230,35 +317,48 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'En et y',
     topic: 'gram-pronoms',
     public: 'A2',
-    objectif: 'Utiliser les pronoms en et y.',
-    blocks: [
-    { kind: 'heading', text: 'En et y' },
-    { kind: 'paragraph', text: 'Je remplace de + chose (en) ou à / dans + lieu (y).' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Tu veux du pain ? — Oui, j’en veux.', 'Tu vas à l’école ? — Oui, j’y vais.'] }
+    objectif: 'Remplacer de + chose avec en, ou un lieu avec y.',
+    blocks: sheet({
+      title: 'En et y',
+      intro: 'Je remplace {g}de + chose{/g} avec en, ou un lieu avec {g}y{/g}.',
+      regarder: [
+        '{tab:1<}Tu veux du café ? J’{c}en{/c} veux. | Il a trois enfants. Il {c}en{/c} a trois.',
+        '{tab:1<}Je vais à Sion. J’{c}y{/c} vais. | Tu penses à l’examen ? J’{c}y{/c} pense.',
+        '{tab:1<}Elle revient de la poste. Elle {c}en{/c} revient.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'En remplace de + nom (quantité, partitif).' },
-        { kind: 'paragraph', text: 'Y remplace à / en / dans + lieu (ou idée).' }
+      expliquer: [
+        p('{c}En{/c} remplace de + un nom : quantité, partitif, provenance.'),
+        p('{c}Y{/c} remplace à, dans, en + un lieu ou une idée.'),
+        p('En et y se placent {c}avant{/c} le verbe.'),
+        p('Avec un nombre, je garde le nombre : j’en ai trois.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Phrase{/g} | {g}Pronom{/g}',
+          '{tab:1>}du pain | j’{c}en{/c} mange',
+          '{tab:1>}de la gare | j’{c}en{/c} viens',
+          '{tab:1>}à Sion | j’{c}y{/c} vais',
+          '{tab:1>}à ce problème | j’{c}y{/c} pense',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'en = de. y = à / lieu.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Pronom', 'Remplace', 'Exemple'], rows: [['en', 'de + chose', 'J’en mange.'], ['y', 'à / lieu', 'J’y vais.']] },
-        { kind: 'attention', text: 'Place en / y avant le verbe : j’y vais.' }
+      retenir: [
+        p('En = de. Y = à ou un lieu.'),
+        ligne,
+        table(
+          ['Remplace', 'Pronom', 'Exemple'],
+          [
+            ['de + chose', 'en', 'J’en veux.'],
+            ['un nombre', 'en + nombre', 'J’en ai deux.'],
+            ['à + lieu', 'y', 'J’y vais.'],
+            ['à + idée', 'y', 'J’y pense.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} En et y sont avant le verbe.'),
+        ex([
+          { text: 'Je dis : « J’{c}y{/c} vais. »', wrong: 'Je vais y. (ordre faux)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'i8',
@@ -266,47 +366,48 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     index: 8,
     title: 'Le pronom relatif dont',
     topic: 'gram-pronoms',
-    public: 'A2',
-    objectif: 'Utiliser dont pour remplacer de + nom.',
-    blocks: [
-      { kind: 'heading', text: 'Le pronom relatif dont' },
-      { kind: 'paragraph', text: 'Je remplace de + nom avec dont.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Le livre dont je parle est neuf.',
-              'La femme dont le fils travaille ici.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Dont = de + qui / de + que.' },
-          { kind: 'paragraph', text: 'Après un verbe avec de : parler de, avoir besoin de…' },
-          { kind: 'paragraph', text: 'Aussi pour la possession : dont le / la / les…' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'vois-tu un de ? → souvent dont.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Sans dont', 'Avec dont'],
-            rows: [
-              ['Je parle de ce film.', 'le film dont je parle'],
-              ['J’ai besoin de cette aide.', 'l’aide dont j’ai besoin'],
-              ['Le fils de cette femme…', 'la femme dont le fils…'],
-            ],
-          },
-          { kind: 'attention', text: 'Pas « de dont » : un seul dont.' }
-        ],
-      },
-    ],
+    public: 'B1',
+    objectif: 'Remplacer de + nom avec dont.',
+    blocks: sheet({
+      title: 'Le pronom relatif dont',
+      intro: 'Je remplace {g}de + nom{/g} avec dont.',
+      regarder: [
+        '{tab:1<}Le film {c}dont{/c} je parle est bon. | La ville {c}dont{/c} il vient est loin.',
+        '{tab:1<}L’aide {c}dont{/c} j’ai besoin. | Une amie {c}dont{/c} le frère est ici.',
+        '{tab:1<}Les cours {c}dont{/c} tu te souviens. | Le sujet {c}dont{/c} nous discutons.',
+      ],
+      expliquer: [
+        p('{c}Dont{/c} = de + qui, ou de + que.'),
+        p('Je l’utilise après un verbe avec {c}de{/c} : parler de, avoir besoin de.'),
+        p('Aussi pour la possession : dont le, dont la, dont les.'),
+        p('Un seul dont. Je ne dis pas « de dont ».'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Je vois de{/g} | {g}Je mets dont{/g}',
+          '{tab:1>}parler de ce film | le film {c}dont{/c} je parle',
+          '{tab:1>}avoir besoin de cette aide | l’aide {c}dont{/c} j’ai besoin',
+          '{tab:1>}le frère de mon amie | l’amie {c}dont{/c} le frère…',
+        ]),
+      ],
+      retenir: [
+        p('Je vois un de ? Souvent, je mets dont.'),
+        ligne,
+        table(
+          ['Construction', 'Exemple'],
+          [
+            ['parler de', 'le sujet dont je parle'],
+            ['venir de', 'la ville dont il vient'],
+            ['avoir besoin de', 'l’aide dont j’ai besoin'],
+            ['possession', 'l’amie dont le frère travaille'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas « de dont ».'),
+        ex([
+          { text: 'Je dis : « le film {c}dont{/c} je parle. »', wrong: 'le film de dont je parle.' },
+        ]),
+      ],
+    }),
   },
   {
     id: 'i9',
@@ -315,47 +416,49 @@ export const pronomsDocs: GrammaireTheoryDoc[] = [
     title: 'Les pronoms relatifs composés',
     topic: 'gram-pronoms',
     public: 'B1',
-    objectif: 'Utiliser lequel, laquelle, auxquels…',
-    blocks: [
-      { kind: 'heading', text: 'Les pronoms relatifs composés' },
-      { kind: 'paragraph', text: 'Je relie deux idées après une préposition.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'La table sur laquelle j’écris.',
-              'Les amis avec lesquels je sors.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Lequel / laquelle / lesquels / lesquelles.' },
-          { kind: 'paragraph', text: 'Avec à : auquel, à laquelle, auxquels, auxquelles.' },
-          { kind: 'paragraph', text: 'Avec de : duquel, de laquelle, desquels, desquelles.' },
-          { kind: 'paragraph', text: 'J’accorde avec le nom repris.' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'préposition + lequel (accordé).' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'],
-            rows: [
-              ['lequel', 'le stylo avec lequel…'],
-              ['laquelle', 'la chaise sur laquelle…'],
-              ['auquel', 'le projet auquel…'],
-              ['desquels', 'les sujets desquels…'],
-            ],
-          },
-          { kind: 'attention', text: 'Qui ne va pas après toutes les prépositions.' }
-        ],
-      },
-    ],
+    objectif: 'Relier deux idées après une préposition.',
+    blocks: sheet({
+      title: 'Les pronoms relatifs composés',
+      intro: 'Je relie deux idées après une {g}préposition{/g}.',
+      regarder: [
+        '{tab:1<}La personne {c}avec laquelle{/c} je travaille. | Le bus {c}dans lequel{/c} je monte.',
+        '{tab:1<}Le sujet {c}auquel{/c} je pense. | La règle {c}à laquelle{/c} je pense.',
+        '{tab:1<}Le dossier {c}duquel{/c} je parle. | Les gens {c}parmi lesquels{/c} je vis.',
+      ],
+      expliquer: [
+        p('Après une préposition, j’utilise {c}lequel{/c} accordé.'),
+        p('Lequel, laquelle, lesquels, lesquelles.'),
+        p('À + lequel → {c}auquel{/c}, à laquelle, auxquels, auxquelles.'),
+        p('De + lequel → {c}duquel{/c}, de laquelle, desquels, desquelles.'),
+        p('J’accorde avec le nom repris.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Lequel{/g}',
+          '{tab:1>}masculin | {c}lequel{/c}',
+          '{tab:1>}féminin | {c}laquelle{/c}',
+          '{tab:1>}masculin pluriel | {c}lesquels{/c}',
+          '{tab:1>}féminin pluriel | {c}lesquelles{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Préposition + lequel accordé.'),
+        p('Qui ne va pas après toutes les prépositions.'),
+        ligne,
+        table(
+          ['Préposition', 'Masculin', 'Féminin'],
+          [
+            ['avec', 'lequel', 'laquelle'],
+            ['à', 'auquel', 'à laquelle'],
+            ['de', 'duquel', 'de laquelle'],
+            ['dans', 'lequel', 'laquelle'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde lequel avec le nom, pas avec la personne qui parle.'),
+        ex([
+          { text: 'Je dis : « la règle {c}à laquelle{/c} je pense. »', wrong: 'la règle auquel je pense.' },
+        ]),
+      ],
+    }),
   },
 ]

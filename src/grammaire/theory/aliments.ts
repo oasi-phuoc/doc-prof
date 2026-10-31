@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-aliments. Français seul (pas de traductions). */
 export const alimentsDocs: GrammaireTheoryDoc[] = [
@@ -9,35 +10,47 @@ export const alimentsDocs: GrammaireTheoryDoc[] = [
     title: 'Les articles indéfinis',
     topic: 'gram-aliments',
     public: 'A1',
-    objectif: 'Utiliser un, une, des.',
-    blocks: [
-    { kind: 'heading', text: 'Les articles indéfinis' },
-    { kind: 'paragraph', text: 'Je présente une chose non précise.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Un pain.', 'Une pomme.', 'Des œufs.'] }
+    objectif: 'Présenter une chose non précise avec un, une ou des.',
+    blocks: sheet({
+      title: 'Les articles indéfinis',
+      intro: 'Je présente une chose {g}non précise{/g}.',
+      regarder: [
+        '{tab:1<}Je veux {c}un{/c} café. | Elle achète {c}une{/c} pomme.',
+        '{tab:1<}Nous prenons {c}des{/c} œufs. | Il y a {c}un{/c} marché.',
+        '{tab:1<}Je n’ai pas {c}de{/c} pain. | Elle n’achète pas {c}d’{/c}eau.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Un (masculin), une (féminin), des (pluriel).' },
-        { kind: 'paragraph', text: 'Négation : un/une/des → de / d’ : Je n’ai pas de pain.' }
+      expliquer: [
+        p('{c}Un{/c} = masculin. {c}Une{/c} = féminin. {c}Des{/c} = pluriel.'),
+        p('Je ne précise pas quelle chose. C’est une chose parmi d’autres.'),
+        p('À la négation, un, une et des deviennent {c}de{/c} ou {c}d’{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Article{/g}',
+          '{tab:1>}masculin | {c}un{/c} kilo',
+          '{tab:1>}féminin | {c}une{/c} banane',
+          '{tab:1>}pluriel | {c}des{/c} tomates',
+          '{tab:1>}négation | pas {c}de{/c} pain',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'un / une / des. Négation → de.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['', 'Masculin', 'Féminin'], rows: [['singulier', 'un', 'une'], ['pluriel', 'des', 'des']] },
-        { kind: 'attention', text: 'Après négation : pas de, pas d’.' }
+      retenir: [
+        p('Un, une, des. À la négation : de ou d’.'),
+        ligne,
+        table(
+          ['Cas', 'Article', 'Exemple'],
+          [
+            ['masculin', 'un', 'un café'],
+            ['féminin', 'une', 'une pomme'],
+            ['pluriel', 'des', 'des œufs'],
+            ['négation', 'de / d’', 'pas de pain'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Après pas, je ne garde pas un ou des.'),
+        ex([
+          { text: 'Je dis : « Je n’ai pas {c}de{/c} pain. »', wrong: 'Je n’ai pas un pain. (sens général)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'g2',
@@ -46,35 +59,48 @@ export const alimentsDocs: GrammaireTheoryDoc[] = [
     title: 'Les articles définis',
     topic: 'gram-aliments',
     public: 'A1',
-    objectif: 'Utiliser le, la, l’, les.',
-    blocks: [
-    { kind: 'heading', text: 'Les articles définis' },
-    { kind: 'paragraph', text: 'Je parle d’une chose connue ou générale.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Le pain.', 'La soupe.', 'L’eau.', 'Les fruits.'] }
+    objectif: 'Parler d’une chose connue ou en général.',
+    blocks: sheet({
+      title: 'Les articles définis',
+      intro: 'Je parle d’une chose {g}connue{/g} ou en général.',
+      regarder: [
+        '{tab:1<}{c}Le{/c} pain est sur la table. | {c}La{/c} soupe est chaude.',
+        '{tab:1<}J’aime {c}le{/c} chocolat. | Où sont {c}les{/c} verres ?',
+        '{tab:1<}{c}L’{/c}eau est froide. | {c}Les{/c} légumes sont frais.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Le / la / l’ / les.' },
-        { kind: 'astuce', text: 'L’ devant voyelle ou h.' }
+      expliquer: [
+        p('{c}Le{/c}, {c}la{/c}, {c}l’{/c} et {c}les{/c} montrent une chose connue.'),
+        p('Je les utilise aussi pour parler {c}en général{/c}.'),
+        p('{c}L’{/c} devant une voyelle ou un h : l’eau, l’hôtel.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Article{/g}',
+          '{tab:1>}masculin | {c}le{/c} pain',
+          '{tab:1>}féminin | {c}la{/c} soupe',
+          '{tab:1>}voyelle | {c}l’{/c}eau',
+          '{tab:1>}pluriel | {c}les{/c} fruits',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'le / la / l’ / les = défini.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['', 'Masculin', 'Féminin'], rows: [['singulier', 'le / l’', 'la / l’'], ['pluriel', 'les', 'les']] },
-        { kind: 'attention', text: 'J’aime le chocolat = en général.' }
+      retenir: [
+        p('Le, la, l’, les = chose connue ou idée générale.'),
+        ligne,
+        table(
+          ['Cas', 'Article', 'Exemple'],
+          [
+            ['masculin', 'le', 'le riz'],
+            ['féminin', 'la', 'la salade'],
+            ['voyelle / h', 'l’', 'l’huile'],
+            ['pluriel', 'les', 'les pâtes'],
+            ['en général', 'le / la', 'J’aime le café.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} « J’aime le chocolat » = en général, pas un chocolat précis.'),
+        ex([
+          { text: 'Je dis : « {c}L’{/c}eau est froide. »', wrong: 'La eau est froide.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'g3',
@@ -83,35 +109,47 @@ export const alimentsDocs: GrammaireTheoryDoc[] = [
     title: 'Les articles partitifs',
     topic: 'gram-aliments',
     public: 'A1',
-    objectif: 'Parler d’une quantité non comptée.',
-    blocks: [
-    { kind: 'heading', text: 'Les articles partitifs' },
-    { kind: 'paragraph', text: 'Je parle d’une partie d’un aliment.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je mange du pain.', 'Je bois de l’eau.', 'Elle prend de la confiture.'] }
+    objectif: 'Parler d’une partie d’un aliment.',
+    blocks: sheet({
+      title: 'Les articles partitifs',
+      intro: 'Je parle d’une {g}partie{/g} d’un aliment.',
+      regarder: [
+        '{tab:1<}Je mange {c}du{/c} pain. | Elle boit {c}de la{/c} soupe.',
+        '{tab:1<}Il prend {c}de l’{/c}eau. | Nous achetons {c}des{/c} fruits.',
+        '{tab:1<}Je ne mange pas {c}de{/c} fromage. | Pas {c}d’{/c}huile.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Du / de la / de l’ = une quantité non précise.' },
-        { kind: 'paragraph', text: 'Négation : du/de la/de l’ → de / d’.' }
+      expliquer: [
+        p('{c}Du{/c}, {c}de la{/c} et {c}de l’{/c} = une quantité non précise.'),
+        p('Je ne compte pas : pas « un pain », mais « du pain ».'),
+        p('À la négation, le partitif devient {c}de{/c} ou {c}d’{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Partitif{/g}',
+          '{tab:1>}masculin | {c}du{/c} riz',
+          '{tab:1>}féminin | {c}de la{/c} viande',
+          '{tab:1>}voyelle | {c}de l’{/c}eau',
+          '{tab:1>}négation | pas {c}de{/c} sucre',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'partitif = du / de la / de l’.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'], rows: [['du', 'du fromage'], ['de la', 'de la salade'], ['de l’', 'de l’huile']] },
-        { kind: 'attention', text: 'Je ne mange pas de fromage.' }
+      retenir: [
+        p('Partitif = du, de la, de l’. Négation = de.'),
+        ligne,
+        table(
+          ['Cas', 'Forme', 'Exemple'],
+          [
+            ['masculin', 'du', 'du pain'],
+            ['féminin', 'de la', 'de la soupe'],
+            ['voyelle', 'de l’', 'de l’eau'],
+            ['négation', 'de / d’', 'pas de fromage'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Je ne mange pas de fromage. Pas « pas du fromage ».'),
+        ex([
+          { text: 'Je dis : « Je bois {c}de l’{/c}eau. »', wrong: 'Je bois de eau.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'g4',
@@ -120,35 +158,53 @@ export const alimentsDocs: GrammaireTheoryDoc[] = [
     title: 'Les quantités',
     topic: 'gram-aliments',
     public: 'A1',
-    objectif: 'Exprimer une quantité.',
-    blocks: [
-    { kind: 'heading', text: 'Les quantités' },
-    { kind: 'paragraph', text: 'Je dis une quantité avec un nombre ou une expression.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Un kilo de pommes.', 'Beaucoup de riz.', 'Un peu de sel.'] }
+    objectif: 'Dire une quantité avec un nombre ou une expression + de.',
+    blocks: sheet({
+      title: 'Les quantités',
+      intro: 'Je dis une {g}quantité{/g} avec un nombre ou une expression.',
+      regarder: [
+        '{tab:1<}Je prends {c}deux{/c} cafés. | Elle achète {c}un kilo de{/c} pommes.',
+        '{tab:1<}Il boit {c}beaucoup de{/c} thé. | Nous avons {c}un peu de{/c} temps.',
+        '{tab:1<}C’est {c}trop de{/c} sucre. | J’ai {c}assez de{/c} pain.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Nombre + nom. Expression + de + nom : beaucoup de, un peu de, assez de, trop de.' },
-        { kind: 'paragraph', text: 'Après une quantité, souvent de (sans article).' }
+      expliquer: [
+        p('Un nombre se place devant le nom : deux cafés, trois œufs.'),
+        p('Une expression de quantité + {c}de{/c} + nom.'),
+        p('Après beaucoup, un peu, assez, trop : pas d’article du ou de la.'),
+        p('Devant une voyelle : {c}d’{/c}. Beaucoup d’eau.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Quantité{/g} | {g}Exemple{/g}',
+          '{tab:1>}nombre | {c}trois{/c} pommes',
+          '{tab:1>}un kilo de | un kilo {c}de{/c} riz',
+          '{tab:1>}beaucoup de | beaucoup {c}de{/c} lait',
+          '{tab:1>}un peu de | un peu {c}de{/c} sel',
+          '{tab:1>}assez de | assez {c}de{/c} pain',
+          '{tab:1>}trop de | trop {c}de{/c} sucre',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'quantité + de + nom.' },
-        { kind: 'examples', marker: 'puces', label: 'Expressions', items: ['un kilo de', 'une bouteille de', 'beaucoup de', 'un peu de', 'assez de', 'trop de'] },
-        { kind: 'attention', text: 'Beaucoup de lait (pas du).' }
+      retenir: [
+        p('Quantité + de + nom.'),
+        p('Pas de du ou de la après beaucoup, un peu, assez, trop.'),
+        ligne,
+        table(
+          ['Expression', 'Exemple'],
+          [
+            ['un kilo de', 'un kilo de pommes'],
+            ['beaucoup de', 'beaucoup de lait'],
+            ['un peu de', 'un peu de beurre'],
+            ['assez de', 'assez de pain'],
+            ['trop de', 'trop de sel'],
+            ['d’ + voyelle', 'beaucoup d’eau'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Beaucoup de lait, pas « beaucoup du lait ».'),
+        ex([
+          { text: 'Je dis : « beaucoup {c}de{/c} lait. »', wrong: 'beaucoup du lait.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'g5',
@@ -156,35 +212,52 @@ export const alimentsDocs: GrammaireTheoryDoc[] = [
     index: 5,
     title: 'Les déterminants indéfinis',
     topic: 'gram-aliments',
-    public: 'A1 / A2',
-    objectif: 'Utiliser tout, chaque, plusieurs…',
-    blocks: [
-    { kind: 'heading', text: 'Les déterminants indéfinis' },
-    { kind: 'paragraph', text: 'Je parle d’une quantité vague.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Chaque élève.', 'Plusieurs livres.', 'Tout le monde.'] }
+    public: 'A2',
+    objectif: 'Parler d’une quantité vague.',
+    blocks: sheet({
+      title: 'Les déterminants indéfinis',
+      intro: 'Je parle d’une quantité {g}vague{/g}.',
+      regarder: [
+        '{tab:1<}{c}Chaque{/c} élève a un cahier. | J’ai {c}plusieurs{/c} questions.',
+        '{tab:1<}Il reste {c}quelques{/c} places. | {c}Tout{/c} le monde est là.',
+        '{tab:1<}Je n’ai {c}aucun{/c} ticket. | {c}Toute{/c} la classe écoute.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Mots utiles : chaque, plusieurs, quelques, tout / toute / tous / toutes, aucun / aucune.' }
+      expliquer: [
+        p('Ces mots ne donnent pas un nombre exact.'),
+        p('{c}Chaque{/c} est toujours singulier.'),
+        p('{c}Aucun{/c} et {c}aucune{/c} vont avec {c}ne{/c}.'),
+        p('{c}Tout{/c} s’accorde : tout, toute, tous, toutes.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Exemple{/g}',
+          '{tab:1>}chaque | {c}chaque{/c} jour',
+          '{tab:1>}plusieurs | {c}plusieurs{/c} amis',
+          '{tab:1>}quelques | {c}quelques{/c} minutes',
+          '{tab:1>}tout le monde | {c}tout le monde{/c}',
+          '{tab:1>}aucun | je n’ai {c}aucun{/c} ticket',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'indéfini = quantité non exacte.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Mot', 'Exemple'], rows: [['chaque', 'chaque jour'], ['plusieurs', 'plusieurs amis'], ['quelques', 'quelques minutes'], ['tout le', 'tout le monde']] },
-        { kind: 'attention', text: 'Aucun va avec ne : je n’ai aucun ticket.' }
+      retenir: [
+        p('Indéfini = quantité non exacte.'),
+        ligne,
+        table(
+          ['Mot', 'Accord', 'Exemple'],
+          [
+            ['chaque', 'singulier', 'chaque matin'],
+            ['plusieurs', 'pluriel', 'plusieurs bus'],
+            ['quelques', 'pluriel', 'quelques euros'],
+            ['tout / toute', 'singulier', 'toute la journée'],
+            ['tous / toutes', 'pluriel', 'tous les jours'],
+            ['aucun / aucune', 'avec ne', 'aucun problème'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Aucun va avec ne.'),
+        ex([
+          { text: 'Je dis : « Je n’ai {c}aucun{/c} ticket. »', wrong: 'J’ai aucun ticket. (à l’écrit)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'g6',
@@ -192,49 +265,51 @@ export const alimentsDocs: GrammaireTheoryDoc[] = [
     index: 6,
     title: 'Les articles contractés (quantité et lieu)',
     topic: 'gram-aliments',
-    public: 'A1',
-    objectif: 'Utiliser au, aux, du, des hors du partitif.',
-    blocks: [
-      { kind: 'heading', text: 'Les articles contractés' },
-      { kind: 'paragraph', text: 'Je forme au, aux, du, des avec à et de.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Je vais au marché.',
-              'Le prix du pain.',
-              'Une tasse de thé.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'À + le → au. À + les → aux.' },
-          { kind: 'paragraph', text: 'De + le → du. De + les → des.' },
-          { kind: 'paragraph', text: 'Du / de la / de l’ / des partitifs = une quantité non comptée (fiche partitifs).' },
-          { kind: 'paragraph', text: 'Ici, du / des peuvent aussi venir de de + article défini.' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'contracté = à/de collés à le/les.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Sens', 'Exemple'],
-            rows: [
-              ['au', 'à + le', 'au supermarché'],
-              ['du', 'de + le', 'le goût du fromage'],
-              ['des', 'de + les', 'le prix des fruits'],
-              ['de', 'après quantité', 'un kilo de riz'],
-            ],
-          },
-          { kind: 'attention', text: 'Après beaucoup / un kilo : de (pas du).' }
-        ],
-      },
-    ],
+    public: 'A1 / A2',
+    objectif: 'Former au, aux, du et des, et les distinguer du partitif.',
+    blocks: sheet({
+      title: 'Les articles contractés',
+      intro: 'Je forme {g}au{/g}, {g}aux{/g}, {g}du{/g} et {g}des{/g}.',
+      regarder: [
+        '{tab:1<}Je vais {c}au{/c} marché. | Le prix {c}des{/c} pommes.',
+        '{tab:1<}Je parle {c}du{/c} menu. | Je pense {c}aux{/c} courses.',
+        '{tab:1<}Un kilo {c}de{/c} riz. | Beaucoup {c}de{/c} pain.',
+      ],
+      expliquer: [
+        p('{c}À + le{/c} → {c}au{/c}. {c}À + les{/c} → {c}aux{/c}.'),
+        p('{c}De + le{/c} → {c}du{/c}. {c}De + les{/c} → {c}des{/c}.'),
+        p('Du et des peuvent aussi être des partitifs : du pain, des fruits.'),
+        p('Après un kilo, beaucoup, un peu : je garde {c}de{/c}, sans article.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mots{/g} | {g}Résultat{/g}',
+          '{tab:1>}à + le | {c}au{/c} marché',
+          '{tab:1>}à + les | {c}aux{/c} légumes',
+          '{tab:1>}de + le | le prix {c}du{/c} pain',
+          '{tab:1>}de + les | le prix {c}des{/c} œufs',
+          '{tab:1>}quantité | un kilo {c}de{/c} riz',
+        ]),
+      ],
+      retenir: [
+        p('Contracté = à ou de collés à le ou les.'),
+        p('Après une quantité, je mets de, pas du.'),
+        ligne,
+        table(
+          ['Départ', 'Forme', 'Exemple'],
+          [
+            ['à + le', 'au', 'au supermarché'],
+            ['à + les', 'aux', 'aux fruits'],
+            ['de + le', 'du', 'du menu'],
+            ['de + les', 'des', 'des courses'],
+            ['quantité', 'de', 'beaucoup de lait'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Un kilo de pommes, pas « un kilo des pommes ».'),
+        ex([
+          { text: 'Je dis : « un kilo {c}de{/c} pommes. »', wrong: 'un kilo des pommes.' },
+        ]),
+      ],
+    }),
   },
 ]

@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-temps. Français seul (pas de traductions). */
 export const tempsDocs: GrammaireTheoryDoc[] = [
@@ -9,38 +10,55 @@ export const tempsDocs: GrammaireTheoryDoc[] = [
     title: 'Le moment',
     topic: 'gram-temps',
     public: 'A1',
-    objectif: 'Dire l’heure, la date, le moment.',
-    blocks: [
-    { kind: 'heading', text: 'Le moment' },
-    { kind: 'paragraph', text: 'Je situe un moment dans le temps.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Il est 8 heures 10.', 'Nous sommes le 24 juin.', 'Nous sommes en décembre.'] }
+    objectif: 'Situer un moment : heure, date, mois, saison.',
+    blocks: sheet({
+      title: 'Le moment',
+      intro: 'Je situe un {g}moment{/g} dans le temps.',
+      regarder: [
+        '{tab:1<}Il est {c}8 h{/c}. | J’ai cours {c}à 8 h{/c}.',
+        '{tab:1<}Nous sommes {c}en mars{/c}. | C’est {c}en 2026{/c}.',
+        '{tab:1<}{c}Au{/c} printemps. | {c}En{/c} été.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Heure : Il est … J’ai rendez-vous à 8 h. Vers 8 h = à peu près.' },
-        { kind: 'paragraph', text: 'Date : jour, mois, année.' },
-        { kind: 'paragraph', text: 'Mois : en décembre / au mois de décembre.' },
-        { kind: 'paragraph', text: 'Saisons : au printemps ; en été, en automne, en hiver.' },
-        { kind: 'paragraph', text: 'Année : en 2024. Siècle : au XXIe siècle.' }
+      expliquer: [
+        p('Pour l’heure, je dis {c}il est{/c} + l’heure.'),
+        p('Pour un rendez-vous, je dis {c}à{/c} + l’heure.'),
+        p('{c}Vers{/c} 8 h = à peu près 8 h.'),
+        ligne,
+        p('Pour un mois ou une année, j’utilise {c}en{/c}.'),
+        p('Pour le printemps, j’utilise {c}au{/c}.'),
+        p('Les autres saisons prennent {c}en{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Moment{/g} | {g}Exemple{/g}',
+          '{tab:1>}Heure | Il est {c}8 h 30{/c}.',
+          '{tab:1>}Rendez-vous | {c}À{/c} 14 h.',
+          '{tab:1>}Mois | {c}En{/c} décembre.',
+          '{tab:1>}Année | {c}En{/c} 2026.',
+          '{tab:1>}Printemps | {c}Au{/c} printemps.',
+          '{tab:1>}Autre saison | {c}En{/c} hiver.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'à + heure. en + mois / année. au printemps.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Cas', 'Forme'], rows: [['heure précise', 'à 8 h'], ['environ', 'vers 8 h'], ['mois', 'en décembre'], ['printemps', 'au printemps'], ['été / automne / hiver', 'en …']] },
-        { kind: 'attention', text: 'Printemps → au. Autres saisons → en.' }
+      retenir: [
+        p('À + heure. En + mois ou année.'),
+        p('Au printemps. En été, en automne, en hiver.'),
+        ligne,
+        table(
+          ['Moment', 'Mot', 'Exemple'],
+          [
+            ['heure', 'à', 'à 8 h'],
+            ['mois', 'en', 'en mars'],
+            ['année', 'en', 'en 2026'],
+            ['printemps', 'au', 'au printemps'],
+            ['été / automne / hiver', 'en', 'en été'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Printemps prend au. Les autres saisons prennent en.'),
+        ex([
+          { text: 'Je dis : « {c}Au{/c} printemps. »', wrong: 'En printemps.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'e3',
@@ -49,37 +67,48 @@ export const tempsDocs: GrammaireTheoryDoc[] = [
     title: 'La durée',
     topic: 'gram-temps',
     public: 'A1 / A2',
-    objectif: 'Dire combien de temps.',
-    blocks: [
-    { kind: 'heading', text: 'La durée' },
-    { kind: 'paragraph', text: 'Je dis combien de temps dure une action.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je travaille depuis deux heures.', 'Le cours dure une heure.'] }
+    objectif: 'Choisir depuis, pendant, pour ou il y a.',
+    blocks: sheet({
+      title: 'La durée',
+      intro: 'Je dis {g}combien de temps{/g} dure une action.',
+      regarder: [
+        '{tab:1<}J’habite ici {c}depuis{/c} 2020. | J’ai travaillé {c}pendant{/c} 2 ans.',
+        '{tab:1<}Je pars {c}pour{/c} une semaine. | Je suis arrivé {c}il y a{/c} deux jours.',
+        '{tab:1<}Elle étudie {c}depuis{/c} septembre. | Il a plu {c}pendant{/c} une heure.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Depuis = action commencée, encore vraie.' },
-        { kind: 'paragraph', text: 'Pendant = durée terminée ou totale.' },
-        { kind: 'paragraph', text: 'Pour = durée prévue (souvent futur).' },
-        { kind: 'paragraph', text: 'Il y a = moment passé (il y a deux jours).' }
+      expliquer: [
+        p('{c}Depuis{/c} = l’action a commencé et continue.'),
+        p('{c}Pendant{/c} = la durée est finie, ou totale.'),
+        p('{c}Pour{/c} = la durée est prévue, souvent au futur.'),
+        p('{c}Il y a{/c} = un moment déjà passé.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Sens{/g}',
+          '{tab:1>}depuis | commencé, encore vrai',
+          '{tab:1>}pendant | durée finie',
+          '{tab:1>}pour | durée prévue',
+          '{tab:1>}il y a | moment passé',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'depuis / pendant / pour / il y a — sens différents.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Mot', 'Sens', 'Exemple'], rows: [['depuis', 'commencé, continue', 'J’habite ici depuis 2019.'], ['pendant', 'durée', 'J’ai dormi pendant 8 heures.'], ['pour', 'durée prévue', 'Je pars pour une semaine.'], ['il y a', 'dans le passé', 'Il est parti il y a 10 minutes.']] },
-        { kind: 'attention', text: 'Ne confonds pas depuis et pendant.' }
+      retenir: [
+        p('Je choisis le mot selon le sens, pas au hasard.'),
+        ligne,
+        table(
+          ['Mot', 'Sens', 'Exemple'],
+          [
+            ['depuis', 'continue', 'depuis lundi'],
+            ['pendant', 'durée finie', 'pendant deux heures'],
+            ['pour', 'durée prévue', 'pour trois jours'],
+            ['il y a', 'moment passé', 'il y a un an'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Depuis ≠ pendant.'),
+        ex([
+          { text: 'Je dis : « J’habite ici {c}depuis{/c} 2020. »', wrong: 'J’habite ici pendant 2020.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'e4',
@@ -88,35 +117,50 @@ export const tempsDocs: GrammaireTheoryDoc[] = [
     title: 'La fréquence',
     topic: 'gram-temps',
     public: 'A1',
-    objectif: 'Dire à quelle fréquence.',
-    blocks: [
-    { kind: 'heading', text: 'La fréquence' },
-    { kind: 'paragraph', text: 'Je dis si une action est rare ou fréquente.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je vais toujours à pied.', 'Parfois, je prends le bus.'] }
+    objectif: 'Dire si une action est rare ou fréquente.',
+    blocks: sheet({
+      title: 'La fréquence',
+      intro: 'Je dis si une action est {g}rare{/g} ou {g}fréquente{/g}.',
+      regarder: [
+        '{tab:1<}Je prends {c}toujours{/c} le bus. | Je mange {c}souvent{/c} à midi.',
+        '{tab:1<}Je sors {c}parfois{/c} le soir. | Je voyage {c}rarement{/c}.',
+        '{tab:1<}Je vais au cours {c}tous les jours{/c}. | {c}Une fois{/c} par semaine.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Mots de fréquence : toujours, souvent, parfois, rarement, jamais.' },
-        { kind: 'paragraph', text: 'Autres : tous les jours, une fois par semaine, le lundi…' }
+      expliquer: [
+        p('Le mot de fréquence se place souvent {c}devant le verbe{/c}.'),
+        p('Je peux aussi dire un rythme : tous les jours, le lundi…'),
+        p('{c}Jamais{/c} va avec {c}ne{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Exemple{/g}',
+          '{tab:1>}toujours | Je travaille {c}toujours{/c}.',
+          '{tab:1>}souvent | Elle vient {c}souvent{/c}.',
+          '{tab:1>}parfois | Nous sortons {c}parfois{/c}.',
+          '{tab:1>}rarement | Il téléphone {c}rarement{/c}.',
+          '{tab:1>}jamais | Je ne fume {c}jamais{/c}.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'place souvent devant le verbe (présent).' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Fréquence', 'Exemple'], rows: [['toujours', 'Je suis toujours à l’heure.'], ['souvent', 'Tu viens souvent ici.'], ['parfois', 'Parfois, il pleut.'], ['rarement', 'Nous sortons rarement.'], ['jamais', 'Je ne mange jamais de viande.']] },
-        { kind: 'attention', text: 'Jamais va avec ne : je ne … jamais.' }
+      retenir: [
+        p('Toujours, souvent, parfois, rarement, jamais.'),
+        p('Jamais se place comme pas : ne … jamais.'),
+        ligne,
+        table(
+          ['Fréquence', 'Exemple'],
+          [
+            ['toujours', 'Je prends toujours le bus.'],
+            ['souvent', 'Elle vient souvent.'],
+            ['parfois', 'Nous sortons parfois.'],
+            ['tous les jours', 'Je cours tous les jours.'],
+            ['ne … jamais', 'Je ne fume jamais.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Jamais remplace pas. Je ne dis pas « ne pas jamais ».'),
+        ex([
+          { text: 'Je dis : « Je ne viens {c}jamais{/c}. »', wrong: 'Je viens jamais. (à l’écrit)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'e5',
@@ -125,34 +169,48 @@ export const tempsDocs: GrammaireTheoryDoc[] = [
     title: 'La succession',
     topic: 'gram-temps',
     public: 'A1 / A2',
-    objectif: 'Ordonner des actions dans le temps.',
-    blocks: [
-    { kind: 'heading', text: 'La succession' },
-    { kind: 'paragraph', text: 'Je dis l’ordre des actions.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['D’abord je me lève. Ensuite je prends le bus.', 'Puis j’arrive au travail.'] }
+    objectif: 'Dire l’ordre des actions.',
+    blocks: sheet({
+      title: 'La succession',
+      intro: 'Je dis {g}l’ordre{/g} des actions.',
+      regarder: [
+        '{tab:1<}{c}D’abord{/c}, je me lève. | {c}Puis{/c} je prends le bus.',
+        '{tab:1<}{c}Ensuite{/c}, je travaille. | {c}Enfin{/c}, je rentre.',
+        '{tab:1<}{c}Avant{/c} le cours. | {c}Après{/c} le repas.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Mots utiles : d’abord, puis, ensuite, après, enfin, finalement.' },
-        { kind: 'paragraph', text: 'Avant / après + nom ou infinitif.' }
+      expliquer: [
+        p('Je raconte dans l’ordre : d’abord, puis, ensuite, enfin.'),
+        p('{c}Avant{/c} et {c}après{/c} se placent devant un nom ou un infinitif.'),
+        p('Une idée par phrase. C’est plus clair.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Place dans l’histoire{/g}',
+          '{tab:1>}d’abord | le début',
+          '{tab:1>}puis / ensuite | la suite',
+          '{tab:1>}après | plus tard',
+          '{tab:1>}enfin | la fin',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'd’abord → puis / ensuite → enfin.' },
-        { kind: 'examples', marker: 'numeros', label: 'Mots de succession', items: ['d’abord', 'puis', 'ensuite', 'après', 'enfin', 'finalement'] },
-        { kind: 'attention', text: 'Une idée par phrase, surtout en FALC.' }
+      retenir: [
+        p('D’abord → puis ou ensuite → enfin.'),
+        ligne,
+        table(
+          ['Mot', 'Exemple'],
+          [
+            ['d’abord', 'D’abord, je me lave.'],
+            ['puis', 'Puis je déjeune.'],
+            ['ensuite', 'Ensuite, je pars.'],
+            ['avant + nom', 'avant le cours'],
+            ['après + infinitif', 'après manger'],
+            ['enfin', 'Enfin, je dors.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Avant et après ne se remplacent pas.'),
+        ex([
+          { text: 'Je dis : « {c}Après{/c} le cours, je rentre. »', wrong: 'Avant le cours, je rentre. (si c’est après)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
 ]

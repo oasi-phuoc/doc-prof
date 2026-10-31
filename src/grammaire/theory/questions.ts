@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-questions. Français seul (pas de traductions). */
 export const questionsDocs: GrammaireTheoryDoc[] = [
@@ -10,35 +11,50 @@ export const questionsDocs: GrammaireTheoryDoc[] = [
     topic: 'gram-questions',
     public: 'A1',
     objectif: 'Former une question de trois façons.',
-    blocks: [
-    { kind: 'heading', text: 'Trois façons de poser une question' },
-    { kind: 'paragraph', text: 'Je pose une question à l’oral, avec est-ce que, ou avec l’inversion.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', marker: 'numeros', items: ['Vous êtes italien ? (intonation)', 'Est-ce que vous êtes italien ?', 'Êtes-vous italien ?'] }
+    blocks: sheet({
+      title: 'Trois façons de poser une question',
+      intro: 'Je pose une question de {g}trois façons{/g}.',
+      regarder: [
+        '{tab:1<}Vous êtes italien ? | Est-ce que vous êtes italien ?',
+        '{tab:1<}Êtes-vous italien ? | Tu habites à Sion ?',
+        '{tab:1<}Est-ce que tu habites à Sion ? | Habites-tu à Sion ?',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: '1. Intonation (parlé) : même ordre, voix qui monte.' },
-        { kind: 'paragraph', text: '2. Est-ce que + phrase (standard).' },
-        { kind: 'paragraph', text: '3. Inversion verbe-sujet (soutenu).' }
+      expliquer: [
+        p('La phrase reste la même. Ma voix {c}monte{/c} à la fin.'),
+        p('J’utilise cette façon surtout à l’oral, avec une personne proche.'),
+        ligne,
+        p('Je place {c}est-ce que{/c} devant la phrase.'),
+        p('L’ordre des mots ne change pas. C’est la forme claire.'),
+        ligne,
+        p('J’inverse le {c}verbe{/c} et le {c}sujet{/c}.'),
+        p('Cette forme est plus écrite, plus soutenue.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Façon{/g} | {g}Exemple{/g}',
+          '{tab:1>}Intonation | Vous {c}êtes{/c} prêt ?',
+          '{tab:1>}Est-ce que | {c}Est-ce que{/c} vous êtes prêt ?',
+          '{tab:1>}Inversion | {c}Êtes-vous{/c} prêt ?',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'est-ce que = forme claire pour débuter.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Façon', 'Exemple'], rows: [['intonation', 'Vous êtes italien ?'], ['est-ce que', 'Est-ce que vous êtes italien ?'], ['inversion', 'Êtes-vous italien ?']] },
-        { kind: 'attention', text: 'À l’écrit scolaire, préfère est-ce que ou l’inversion.' }
+      retenir: [
+        p('Pour débuter, je choisis {c}est-ce que{/c}.'),
+        p('Les trois façons posent la même question.'),
+        ligne,
+        table(
+          ['Façon', 'Exemple'],
+          [
+            ['intonation', 'Vous êtes italien ?'],
+            ['est-ce que', 'Est-ce que vous êtes italien ?'],
+            ['inversion', 'Êtes-vous italien ?'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} À l’écrit, je préfère est-ce que ou l’inversion.'),
+        ex([
+          { text: 'Je dis : « {c}Est-ce que{/c} tu viens ? »', wrong: 'Tu viens. (sans ?) ' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'c2',
@@ -48,34 +64,55 @@ export const questionsDocs: GrammaireTheoryDoc[] = [
     topic: 'gram-questions',
     public: 'A1',
     objectif: 'Distinguer oui/non et mots interrogatifs.',
-    blocks: [
-    { kind: 'heading', text: 'Questions fermées et ouvertes' },
-    { kind: 'paragraph', text: 'Je sais si la réponse est oui/non ou une information.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Aimes-tu les glaces ? → Oui.', 'Où dors-tu ? → À l’hôtel.'] }
+    blocks: sheet({
+      title: 'Questions fermées et ouvertes',
+      intro: 'Je sais si la réponse est {g}oui / non{/g} ou une information.',
+      regarder: [
+        '{tab:1<}Tu aimes le café ? | Oui, j’aime le café.',
+        '{tab:1<}Où habites-tu ? | J’habite à Martigny.',
+        '{tab:1<}Pourquoi es-tu en retard ? | Le bus est en panne.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Question fermée → oui ou non.' },
-        { kind: 'paragraph', text: 'Question ouverte → qui, que, quand, où, combien, comment, pourquoi.' }
+      expliquer: [
+        p('Une question {c}fermée{/c} attend oui ou non.'),
+        p('Je n’ajoute pas de mot interrogatif.'),
+        ligne,
+        p('Une question {c}ouverte{/c} demande une information.'),
+        p('Je commence par un mot : qui, que, où, quand…'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Mot{/g} | {g}Je demande{/g} | {g}Exemple{/g}',
+          '{tab:2+>}Qui | une personne | {c}Qui{/c} vient ?',
+          '{tab:2+>}Que / Quoi | une chose | {c}Que{/c} prenez-vous ?',
+          '{tab:2+>}Où | un lieu | {c}Où{/c} est la gare ?',
+          '{tab:2+>}Quand | un moment | {c}Quand{/c} pars-tu ?',
+          '{tab:2+>}Comment | une manière | {c}Comment{/c} vas-tu ?',
+          '{tab:2+>}Pourquoi | une raison | {c}Pourquoi{/c} ?',
+          '{tab:2+>}Combien | une quantité | {c}Combien{/c} ça coûte ?',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'mot interrogatif = question ouverte.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Mot', 'Sens', 'Exemple'], rows: [['Qui ?', 'personne', 'Qui vient demain ?'], ['Que ?', 'chose', 'Que prenez-vous ?'], ['Quand ?', 'temps', 'Quand pars-tu ?'], ['Où ?', 'lieu', 'Où dormons-nous ?'], ['Combien ?', 'quantité', 'Combien coûte la chambre ?'], ['Comment ?', 'manière', 'Comment voyage-t-il ?'], ['Pourquoi ?', 'cause', 'Pourquoi est-elle absente ?']] },
-        { kind: 'attention', text: 'Qui = personne. Que = chose.' }
+      retenir: [
+        p('Sans mot interrogatif, la réponse est oui ou non.'),
+        p('Avec un mot interrogatif, je donne une information.'),
+        ligne,
+        table(
+          ['Mot', 'Sens', 'Exemple'],
+          [
+            ['Qui ?', 'personne', 'Qui vient demain ?'],
+            ['Que ?', 'chose', 'Que prenez-vous ?'],
+            ['Où ?', 'lieu', 'Où dormons-nous ?'],
+            ['Quand ?', 'temps', 'Quand pars-tu ?'],
+            ['Combien ?', 'quantité', 'Combien coûte le billet ?'],
+            ['Comment ?', 'manière', 'Comment voyage-t-il ?'],
+            ['Pourquoi ?', 'raison', 'Pourquoi est-elle absente ?'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} {c}Qui{/c} = une personne. {c}Que{/c} = une chose.'),
+        ex([
+          { text: 'Je dis : « {c}Qui{/c} est là ? »', wrong: 'Que est là ?' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'c3',
@@ -85,34 +122,45 @@ export const questionsDocs: GrammaireTheoryDoc[] = [
     topic: 'gram-questions',
     public: 'A1',
     objectif: 'Accorder quel / quelle / quels / quelles.',
-    blocks: [
-    { kind: 'heading', text: 'Les questions avec quel' },
-    { kind: 'paragraph', text: 'J’utilise quel pour demander une précision sur un nom.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Quel est ton nom ?', 'Quelle est ton adresse ?'] }
+    blocks: sheet({
+      title: 'Les questions avec quel',
+      intro: 'J’utilise {g}quel{/g} pour préciser un nom.',
+      regarder: [
+        '{tab:1<}{c}Quel{/c} est ton nom ? | {c}Quelle{/c} est ton adresse ?',
+        '{tab:1<}{c}Quels{/c} jours travailles-tu ? | {c}Quelles{/c} langues parles-tu ?',
+        '{tab:1<}{c}Quel{/c} bus prends-tu ? | {c}Quelle{/c} heure est-il ?',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Quel s’accorde avec le nom.' },
-        { kind: 'paragraph', text: 'Masculin : quel / quels. Féminin : quelle / quelles.' }
+      expliquer: [
+        p('{c}Quel{/c} se place devant le nom, ou avec être.'),
+        p('Il s’accorde avec le nom : masculin ou féminin, singulier ou pluriel.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Nom{/g} | {g}Forme{/g} | {g}Exemple{/g}',
+          '{tab:2+>}Masculin singulier | {c}quel{/c} | {c}Quel{/c} jour ?',
+          '{tab:2+>}Féminin singulier | {c}quelle{/c} | {c}Quelle{/c} heure ?',
+          '{tab:2+>}Masculin pluriel | {c}quels{/c} | {c}Quels{/c} bus ?',
+          '{tab:2+>}Féminin pluriel | {c}quelles{/c} | {c}Quelles{/c} activités ?',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'quel = accord avec le nom.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['', 'Masculin', 'Féminin'], rows: [['singulier', 'quel', 'quelle'], ['pluriel', 'quels', 'quelles']] },
-        { kind: 'attention', text: 'Regarde le genre du nom : activité → quelles activités.' }
+      retenir: [
+        p('Je regarde le genre et le nombre du nom.'),
+        p('Puis je choisis quel, quelle, quels ou quelles.'),
+        ligne,
+        table(
+          ['', 'Masculin', 'Féminin'],
+          [
+            ['singulier', '{c}quel{/c}', '{c}quelle{/c}'],
+            ['pluriel', '{c}quels{/c}', '{c}quelles{/c}'],
+          ],
+          true,
+        ),
+        ligne,
+        p('{c}Attention :{/c} Activité est féminin. Je dis quelles activités.'),
+        ex([
+          { text: 'Je dis : « {c}Quelle{/c} est la date ? »', wrong: 'Quel est la date ?' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'c4',
@@ -122,45 +170,46 @@ export const questionsDocs: GrammaireTheoryDoc[] = [
     topic: 'gram-questions',
     public: 'A1 / A2',
     objectif: 'Former une phrase exclamative simple.',
-    blocks: [
-      { kind: 'heading', text: 'La phrase exclamative' },
-      { kind: 'paragraph', text: 'J’exprime un sentiment fort.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Quel beau jour !',
-              'Comme c’est bon !',
-              'Qu’il fait froid !',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Souvent avec quel / quelle / quels / quelles + nom.' },
-          { kind: 'paragraph', text: 'Aussi avec comme ou que + phrase.' },
-          { kind: 'paragraph', text: 'À l’écrit, j’utilise le point d’exclamation !' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'quel + nom. Comme / que + phrase.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'],
-            rows: [
-              ['quel + nom', 'Quelle surprise !'],
-              ['comme…', 'Comme tu es gentil !'],
-              ['que…', 'Que c’est difficile !'],
-            ],
-          },
-          { kind: 'attention', text: 'Accorde quel avec le nom : quel jour, quelle idée.' }
-        ],
-      },
-    ],
-  }
+    blocks: sheet({
+      title: 'La phrase exclamative',
+      intro: 'J’exprime un {g}sentiment fort{/g}.',
+      regarder: [
+        '{tab:1<}{c}Quel{/c} beau jour ! | {c}Quelle{/c} surprise !',
+        '{tab:1<}{c}Comme{/c} c’est bon ! | {c}Comme{/c} tu es gentil !',
+        '{tab:1<}{c}Qu’{/c}il fait froid ! | {c}Que{/c} c’est difficile !',
+      ],
+      expliquer: [
+        p('Avec un nom, j’utilise {c}quel{/c}, {c}quelle{/c}, {c}quels{/c} ou {c}quelles{/c}.'),
+        p('Quel s’accorde avec le nom, comme dans une question.'),
+        ligne,
+        p('Avec une phrase, j’utilise {c}comme{/c} ou {c}que{/c}.'),
+        p('À l’écrit, je mets un point d’exclamation {c}!{/c}'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Forme{/g} | {g}Exemple{/g}',
+          '{tab:1>}quel + nom | {c}Quelle{/c} bonne idée !',
+          '{tab:1>}comme + phrase | {c}Comme{/c} il est tard !',
+          '{tab:1>}que + phrase | {c}Que{/c} c’est cher !',
+        ]),
+      ],
+      retenir: [
+        p('Quel + nom. Comme ou que + phrase.'),
+        p('Le point d’exclamation montre le sentiment.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['quel + nom', 'Quelle surprise !'],
+            ['comme…', 'Comme tu es gentil !'],
+            ['que…', 'Que c’est difficile !'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde quel avec le nom.'),
+        ex([
+          { text: 'Je dis : « {c}Quelle{/c} idée ! »', wrong: 'Quel idée !' },
+        ]),
+      ],
+    }),
+  },
 ]

@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-exprimer. Français seul (pas de traductions). */
 export const exprimerDocs: GrammaireTheoryDoc[] = [
@@ -9,36 +10,48 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     title: 'Exprimer la cause',
     topic: 'gram-exprimer',
     public: 'A2',
-    objectif: 'Dire pourquoi.',
-    blocks: [
-    { kind: 'heading', text: 'Exprimer la cause' },
-    { kind: 'paragraph', text: 'Je dis la raison d’une action.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je suis resté à la maison parce que j’étais malade.', 'J’ai réussi grâce à ce professeur.'] }
+    objectif: 'Dire la raison d’une action.',
+    blocks: sheet({
+      title: 'Exprimer la cause',
+      intro: 'Je dis la {g}raison{/g} d’une action.',
+      regarder: [
+        '{tab:1<}Je reste {c}parce que{/c} je suis malade. | Il part, {c}car{/c} il est tard.',
+        '{tab:1<}{c}Comme{/c} il pleut, je prends le bus. | {c}Grâce à{/c} toi, j’ai compris.',
+        '{tab:1<}Le cours est annulé {c}à cause de{/c} la neige.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Parce que / car / puisque / comme…' },
-        { kind: 'paragraph', text: 'À cause de (négatif), grâce à (positif), en raison de (neutre).' },
-        { kind: 'paragraph', text: 'Gérondif : en + -ant.' }
+      expliquer: [
+        p('{c}Parce que{/c} répond à pourquoi.'),
+        p('{c}Car{/c} et {c}puisque{/c} donnent aussi une raison.'),
+        p('{c}À cause de{/c} + nom = raison négative.'),
+        p('{c}Grâce à{/c} + nom = raison positive.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Après{/g}',
+          '{tab:1>}parce que | une {c}phrase{/c}',
+          '{tab:1>}à cause de | un {c}nom{/c}',
+          '{tab:1>}grâce à | un {c}nom{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'parce que répond à pourquoi.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'], rows: [['parce que', 'parce que j’étais fatigué'], ['à cause de', 'à cause de la neige'], ['grâce à', 'grâce à mon ami']] },
-        { kind: 'attention', text: 'À cause de ≠ grâce à.' }
+      retenir: [
+        p('Parce que répond à pourquoi.'),
+        ligne,
+        table(
+          ['Mot', 'Exemple'],
+          [
+            ['parce que', 'Je reste parce que je suis fatigué.'],
+            ['car', 'Je pars, car il est tard.'],
+            ['comme', 'Comme il pleut, je reste.'],
+            ['à cause de', 'à cause de la pluie'],
+            ['grâce à', 'grâce à ton aide'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} À cause de ≠ grâce à.'),
+        ex([
+          { text: 'Je dis : « {c}Grâce à{/c} toi, j’ai réussi. »', wrong: 'À cause de toi, j’ai réussi. (si c’est positif)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k4',
@@ -47,34 +60,46 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     title: 'Exprimer la conséquence',
     topic: 'gram-exprimer',
     public: 'A2',
-    objectif: 'Dire le résultat.',
-    blocks: [
-    { kind: 'heading', text: 'Exprimer la conséquence' },
-    { kind: 'paragraph', text: 'Je dis le résultat d’une action.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Il pleut, donc je prends un parapluie.', 'Il est malade, alors il reste chez lui.'] }
+    objectif: 'Dire le résultat d’une action.',
+    blocks: sheet({
+      title: 'Exprimer la conséquence',
+      intro: 'Je dis le {g}résultat{/g} d’une action.',
+      regarder: [
+        '{tab:1<}Il pleut. {c}Donc{/c} je prends le bus. | J’ai fini. {c}Alors{/c} je pars.',
+        '{tab:1<}Le bus est en panne. {c}C’est pourquoi{/c} je marche.',
+        '{tab:1<}Elle parle vite, {c}si bien que{/c} je ne comprends pas.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Donc, alors, c’est pourquoi, si bien que, alors…' }
+      expliquer: [
+        p('La conséquence vient {c}après{/c} la cause.'),
+        p('Mots utiles : donc, alors, c’est pourquoi.'),
+        p('Je garde une phrase courte pour le résultat.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Cause{/g} | {g}Conséquence{/g}',
+          '{tab:1>}Il est tard | {c}donc{/c} je rentre',
+          '{tab:1>}J’ai mal | {c}alors{/c} je me repose',
+          '{tab:1>}Pas de bus | {c}c’est pourquoi{/c} je marche',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'cause → donc → conséquence.' },
-        { kind: 'examples', marker: 'puces', label: 'Connecteurs', items: ['donc', 'alors', 'c’est pourquoi', 'si bien que'] },
-        { kind: 'attention', text: 'Une phrase courte pour la conséquence en FALC.' }
+      retenir: [
+        p('Cause → donc → conséquence.'),
+        ligne,
+        table(
+          ['Mot', 'Exemple'],
+          [
+            ['donc', 'Il pleut, donc je reste.'],
+            ['alors', 'J’ai fini, alors je pars.'],
+            ['c’est pourquoi', 'C’est pourquoi je t’écris.'],
+            ['si bien que', 'Il crie, si bien que je sursaute.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Donc ne se place pas avant la cause.'),
+        ex([
+          { text: 'Je dis : « Il pleut, {c}donc{/c} je reste. »', wrong: 'Donc il pleut, je reste.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k5',
@@ -83,35 +108,46 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     title: 'Exprimer le but',
     topic: 'gram-exprimer',
     public: 'A2',
-    objectif: 'Dire dans quel but.',
-    blocks: [
-    { kind: 'heading', text: 'Exprimer le but' },
-    { kind: 'paragraph', text: 'Je dis le but d’une action.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je travaille pour réussir.', 'Il parle lentement afin que tout le monde comprenne.'] }
+    objectif: 'Dire le but d’une action.',
+    blocks: sheet({
+      title: 'Exprimer le but',
+      intro: 'Je dis le {g}but{/g} d’une action.',
+      regarder: [
+        '{tab:1<}Je viens {c}pour{/c} apprendre. | Elle écrit {c}pour{/c} demander un rendez-vous.',
+        '{tab:1<}J’étudie {c}afin de{/c} progresser. | Il parle lentement {c}pour{/c} être compris.',
+        '{tab:1<}Je t’appelle {c}pour que{/c} tu saches l’heure.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Pour + infinitif (même sujet).' },
-        { kind: 'paragraph', text: 'Afin de + infinitif. Afin que + subjonctif (sujets différents).' }
+      expliquer: [
+        p('Même sujet : {c}pour{/c} + infinitif.'),
+        p('{c}Afin de{/c} + infinitif = même sens, un peu plus écrit.'),
+        p('Sujets différents : {c}pour que{/c} + subjonctif.'),
+        p('Le cas le plus simple reste pour + infinitif.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Sujets{/g} | {g}Forme{/g}',
+          '{tab:1>}le même | {c}pour{/c} + infinitif',
+          '{tab:1>}le même, écrit | {c}afin de{/c} + infinitif',
+          '{tab:1>}différents | {c}pour que{/c} + subjonctif',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'pour + infinitif (cas le plus simple).' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'], rows: [['pour + infinitif', 'pour apprendre'], ['afin de + infinitif', 'afin de partir tôt']] },
-        { kind: 'attention', text: 'Même sujet → pour + infinitif.' }
+      retenir: [
+        p('Même sujet → pour + infinitif.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['pour + infinitif', 'Je viens pour apprendre.'],
+            ['afin de + infinitif', 'Il travaille afin de réussir.'],
+            ['pour que + subjonctif', 'Je parle pour que tu comprennes.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas « pour que » + infinitif.'),
+        ex([
+          { text: 'Je dis : « Je viens {c}pour apprendre{/c}. »', wrong: 'Je viens pour que apprendre.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k6',
@@ -119,35 +155,49 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     index: 4,
     title: 'Exprimer l’opposition',
     topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Opposer deux idées.',
-    blocks: [
-    { kind: 'heading', text: 'Exprimer l’opposition' },
-    { kind: 'paragraph', text: 'Je montre deux idées différentes.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Il est fatigué, mais il continue.', 'Alors que tu dors, je travaille.'] }
+    public: 'A2 / B1',
+    objectif: 'Montrer deux idées différentes.',
+    blocks: sheet({
+      title: 'Exprimer l’opposition',
+      intro: 'Je montre deux idées {g}différentes{/g}.',
+      regarder: [
+        '{tab:1<}Il fait froid, {c}mais{/c} je sors. | Elle est fatiguée. {c}Pourtant{/c}, elle travaille.',
+        '{tab:1<}J’aime la ville, {c}alors que{/c} lui préfère la campagne.',
+        '{tab:1<}Je comprends. {c}Cependant{/c}, je ne suis pas d’accord.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Mais, pourtant, cependant, alors que, tandis que…' }
+      expliquer: [
+        p('{c}Mais{/c} = opposition simple. C’est le mot le plus utile.'),
+        p('{c}Pourtant{/c} et {c}cependant{/c} renforcent le contraste.'),
+        p('{c}Alors que{/c} et {c}tandis que{/c} comparent deux situations.'),
+        p('Une opposition = deux phrases courtes.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Force{/g}',
+          '{tab:1>}mais | simple',
+          '{tab:1>}pourtant | plus fort',
+          '{tab:1>}cependant | plus écrit',
+          '{tab:1>}alors que | comparaison',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'mais = opposition simple.' },
-        { kind: 'examples', marker: 'puces', label: 'Mots d’opposition', items: ['mais', 'pourtant', 'cependant', 'alors que'] },
-        { kind: 'attention', text: 'Une opposition claire, une phrase courte.' }
+      retenir: [
+        p('Mais = opposition simple.'),
+        ligne,
+        table(
+          ['Mot', 'Exemple'],
+          [
+            ['mais', 'Il pleut, mais je sors.'],
+            ['pourtant', 'Elle est malade. Pourtant, elle vient.'],
+            ['cependant', 'C’est cher. Cependant, c’est utile.'],
+            ['alors que', 'Je reste, alors que lui part.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Mais ne commence pas les deux phrases.'),
+        ex([
+          { text: 'Je dis : « Il fait froid, {c}mais{/c} je sors. »', wrong: 'Mais il fait froid, mais je sors.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k7',
@@ -155,36 +205,46 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     index: 5,
     title: 'Exprimer la concession',
     topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Concéder un fait puis opposer.',
-    blocks: [
-    { kind: 'heading', text: 'Exprimer la concession' },
-    { kind: 'paragraph', text: 'J’admets un fait, puis je montre un contraste.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Bien qu’il soit fatigué, il vient.', 'Malgré la pluie, nous sortons.'] }
+    public: 'B1',
+    objectif: 'Admettre un fait, puis montrer un contraste.',
+    blocks: sheet({
+      title: 'Exprimer la concession',
+      intro: 'J’admets un fait, puis je montre un {g}contraste{/g}.',
+      regarder: [
+        '{tab:1<}{c}Malgré{/c} la pluie, je sors. | {c}Même si{/c} je suis fatigué, je viens.',
+        '{tab:1<}{c}Bien qu’{/c}il pleuve, le match continue.',
+        '{tab:1<}{c}Quoique{/c} ce soit difficile, j’essaie.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Bien que / quoique + subjonctif.' },
-        { kind: 'paragraph', text: 'Malgré + nom. Même si + indicatif.' }
+      expliquer: [
+        p('{c}Malgré{/c} + nom. Pas de que après malgré.'),
+        p('{c}Même si{/c} + indicatif. Le fait est réel.'),
+        p('{c}Bien que{/c} et {c}quoique{/c} + subjonctif.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Mot{/g} | {g}Après{/g}',
+          '{tab:1>}malgré | un {c}nom{/c}',
+          '{tab:1>}même si | {c}indicatif{/c}',
+          '{tab:1>}bien que | {c}subjonctif{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'malgré + nom. Bien que + subjonctif.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'], rows: [['malgré + nom', 'malgré le froid'], ['même si', 'même s’il pleut'], ['bien que + subjonctif', 'bien qu’il soit tard']] },
-        { kind: 'attention', text: 'Malgré sans que : malgré la pluie.' }
+      retenir: [
+        p('Malgré + nom. Bien que + subjonctif. Même si + indicatif.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['malgré + nom', 'Malgré la pluie, je sors.'],
+            ['même si + indicatif', 'Même si je suis fatigué, je viens.'],
+            ['bien que + subjonctif', 'Bien qu’il pleuve, je sors.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Malgré sans que.'),
+        ex([
+          { text: 'Je dis : « {c}Malgré{/c} la pluie. »', wrong: 'Malgré que la pluie.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k8',
@@ -192,35 +252,47 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     index: 6,
     title: 'Pronoms relatifs neutres',
     topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Utiliser ce qui, ce que, ce dont.',
-    blocks: [
-    { kind: 'heading', text: 'Pronoms relatifs neutres' },
-    { kind: 'paragraph', text: 'Je parle d’une idée (pas d’un nom précis).' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Ce qui est important, c’est la santé.', 'Je fais ce que tu dis.'] }
+    public: 'B1',
+    objectif: 'Parler d’une idée avec ce qui, ce que ou ce dont.',
+    blocks: sheet({
+      title: 'Pronoms relatifs neutres',
+      intro: 'Je parle d’une {g}idée{/g}, pas d’un nom précis.',
+      regarder: [
+        '{tab:1<}{c}Ce qui{/c} me plaît, c’est le calme. | Je sais {c}ce que{/c} tu veux.',
+        '{tab:1<}Dis-moi {c}ce dont{/c} tu as besoin. | {c}Ce qu’{/c}il dit est vrai.',
+        '{tab:1<}{c}Ce qui{/c} compte, c’est la santé.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Ce qui = sujet. Ce que = complément. Ce dont = de + idée.' }
+      expliquer: [
+        p('{c}Ce qui{/c} = sujet de l’idée.'),
+        p('{c}Ce que{/c} = complément. Devant une voyelle : {c}ce qu’{/c}.'),
+        p('{c}Ce dont{/c} = de + idée. Avoir besoin de, parler de.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Rôle{/g} | {g}Forme{/g}',
+          '{tab:1>}sujet | {c}ce qui{/c}',
+          '{tab:1>}complément | {c}ce que{/c}',
+          '{tab:1>}de + idée | {c}ce dont{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'ce qui / ce que / ce dont.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'], rows: [['ce qui', 'Ce qui me plaît…'], ['ce que', 'Ce que je veux…'], ['ce dont', 'Ce dont j’ai besoin…']] },
-        { kind: 'attention', text: 'Ce que → ce qu’ devant voyelle.' }
+      retenir: [
+        p('Ce qui, ce que, ce dont.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['ce qui', 'Ce qui me plaît, c’est le calme.'],
+            ['ce que', 'Je sais ce que tu veux.'],
+            ['ce qu’', 'Ce qu’il dit est clair.'],
+            ['ce dont', 'Ce dont j’ai besoin, c’est du temps.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Ce que → ce qu’ devant une voyelle.'),
+        ex([
+          { text: 'Je dis : « {c}Ce qu’{/c}il dit. »', wrong: 'Ce que il dit.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k9',
@@ -228,36 +300,49 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     index: 7,
     title: 'Les doubles pronoms',
     topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Placer deux pronoms devant le verbe.',
-    blocks: [
-    { kind: 'heading', text: 'Les doubles pronoms' },
-    { kind: 'paragraph', text: 'Je mets deux pronoms avant le verbe.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je te le donne.', 'Il me les montre.'] }
+    public: 'B1',
+    objectif: 'Mettre deux pronoms avant le verbe.',
+    blocks: sheet({
+      title: 'Les doubles pronoms',
+      intro: 'Je mets deux pronoms {g}avant{/g} le verbe.',
+      regarder: [
+        '{tab:1<}Je {c}te le{/c} donne. | Elle {c}le lui{/c} explique.',
+        '{tab:1<}Nous {c}leur en{/c} parlons. | Il {c}m’y{/c} emmène.',
+        '{tab:1<}{c}Donne-le-moi{/c}. | Ne {c}me le{/c} donne pas.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Ordre courant : me/te/nous/vous + le/la/les + lui/leur + y + en…' },
-        { kind: 'paragraph', text: 'À l’impératif affirmif, ordre différent : donne-le-moi.' }
+      expliquer: [
+        p('Ordre courant : me / te / nous / vous, puis le / la / les.'),
+        p('Puis lui / leur, puis y, puis en.'),
+        p('À l’impératif affirmatif, l’ordre change : donne-le-moi.'),
+        p('Me et te deviennent moi et toi après le verbe, à l’impératif.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Phrase{/g} | {g}Pronoms{/g}',
+          '{tab:1>}Je donne le livre à toi. | Je {c}te le{/c} donne.',
+          '{tab:1>}Elle explique la règle à lui. | Elle {c}la lui{/c} explique.',
+          '{tab:1>}Donne le livre à moi. | {c}Donne-le-moi{/c}.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'je te le / je le lui…' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Exemple', 'Sens'], rows: [['Je te le donne.', 'à toi + le livre'], ['Je le lui donne.', 'le livre + à elle/lui']] },
-        { kind: 'attention', text: 'me/te change en moi/toi à l’impératif : donne-le-moi.' }
+      retenir: [
+        p('Avant le verbe : me / te + le / la / les + lui / leur + y + en.'),
+        ligne,
+        table(
+          ['Ordre', 'Exemple'],
+          [
+            ['te + le', 'Je te le donne.'],
+            ['le + lui', 'Je le lui donne.'],
+            ['leur + en', 'Je leur en parle.'],
+            ['impératif', 'Donne-le-moi.'],
+            ['impératif négatif', 'Ne me le donne pas.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Donne-le-moi, pas « donne-moi-le ».'),
+        ex([
+          { text: 'Je dis : « {c}Donne-le-moi{/c}. »', wrong: 'Donne-moi-le.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k10',
@@ -265,37 +350,59 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     index: 8,
     title: 'Le subjonctif (emplois principaux)',
     topic: 'gram-exprimer',
-    public: 'A2 / B1',
-    objectif: 'Reconnaître quand utiliser le subjonctif.',
-    blocks: [
-    { kind: 'heading', text: 'Le subjonctif' },
-    { kind: 'paragraph', text: 'J’utilise le subjonctif après certains verbes et expressions.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Il faut que tu viennes.', 'Je veux qu’il parte.'] }
+    public: 'B1',
+    objectif: 'Utiliser le subjonctif après la volonté, le sentiment ou le doute.',
+    blocks: sheet({
+      title: 'Le subjonctif',
+      intro: 'J’utilise le subjonctif après certains verbes et {g}expressions{/g}.',
+      regarder: [
+        '{tab:1<}{c}Il faut que{/c} tu viennes. | {c}Je veux que{/c} tu comprennes.',
+        '{tab:1<}{c}J’ai peur qu’{/c}il soit en retard. | {c}Je doute que{/c} ce soit vrai.',
+        '{tab:1<}{c}J’espère que{/c} tu vas bien.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Après volonté, obligation, sentiment, doute… + que.' },
-        { kind: 'paragraph', text: 'Il faut que, je veux que, j’ai peur que, je doute que…' },
-        { kind: 'paragraph', text: 'Après espérer → indicatif (présent ou futur).' }
+      expliquer: [
+        p('Après volonté, obligation, sentiment ou doute + {c}que{/c}.'),
+        p('Expressions fréquentes : il faut que, je veux que, j’ai peur que.'),
+        p('Le verbe après que est au {c}subjonctif{/c}.'),
+        p('Après {c}espérer{/c}, je garde l’indicatif.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Expression{/g} | {g}Mode{/g}',
+          '{tab:1>}il faut que | {c}subjonctif{/c}',
+          '{tab:1>}je veux que | {c}subjonctif{/c}',
+          '{tab:1>}j’ai peur que | {c}subjonctif{/c}',
+          '{tab:1>}j’espère que | {c}indicatif{/c}',
+        ]),
+        ligne,
+        p('Présent du subjonctif, verbes fréquents :'),
+        ex([
+          '{tab:+1+}{g}Infinitif{/g} | {g}Que je / qu’il{/g}',
+          '{tab:1>}être | que je {c}sois{/c} / qu’il {c}soit{/c}',
+          '{tab:1>}avoir | que j’{c}aie{/c} / qu’il {c}ait{/c}',
+          '{tab:1>}venir | que je {c}vienne{/c} / qu’il {c}vienne{/c}',
+          '{tab:1>}parler | que je {c}parle{/c} / qu’il {c}parle{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'émotion / volonté / doute + que → souvent subjonctif.' },
-        { kind: 'examples', marker: 'puces', label: 'Contextes', items: ['volonté', 'obligation', 'sentiment', 'doute', 'possibilité'] },
-        { kind: 'attention', text: 'J’espère que tu vas bien (pas subjonctif).' }
+      retenir: [
+        p('Émotion, volonté, doute ou obligation + que → souvent subjonctif.'),
+        ligne,
+        table(
+          ['Expression', 'Exemple'],
+          [
+            ['il faut que', 'Il faut que tu viennes.'],
+            ['je veux que', 'Je veux que ce soit clair.'],
+            ['j’ai peur que', 'J’ai peur qu’il soit malade.'],
+            ['je doute que', 'Je doute que ce soit vrai.'],
+            ['j’espère que', 'J’espère que tu vas bien.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’espère que tu vas bien. Pas de subjonctif.'),
+        ex([
+          { text: 'Je dis : « J’espère que tu {c}vas{/c} bien. »', wrong: 'J’espère que tu ailles bien.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k11',
@@ -303,36 +410,48 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     index: 9,
     title: 'Verbes avec préposition',
     topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Choisir à ou de après un verbe.',
-    blocks: [
-    { kind: 'heading', text: 'Verbes avec préposition' },
-    { kind: 'paragraph', text: 'Certains verbes demandent à ou de.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je commence à lire.', 'J’essaie de comprendre.'] }
+    public: 'A2 / B1',
+    objectif: 'Choisir à ou de avant un infinitif.',
+    blocks: sheet({
+      title: 'Verbes avec préposition',
+      intro: 'Certains verbes demandent {g}à{/g} ou {g}de{/g}.',
+      regarder: [
+        '{tab:1<}Je commence {c}à{/c} comprendre. | Elle apprend {c}à{/c} conduire.',
+        '{tab:1<}J’essaie {c}de{/c} venir. | Il décide {c}de{/c} partir.',
+        '{tab:1<}Nous finissons {c}de{/c} manger. | Tu aides Nina {c}à{/c} porter le sac.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Verbe + à + infinitif : commencer à, aider à, apprendre à…' },
-        { kind: 'paragraph', text: 'Verbe + de + infinitif : essayer de, décider de, finir de…' }
+      expliquer: [
+        p('Le verbe suivant reste à l’{c}infinitif{/c}.'),
+        p('Je mémorise la préposition {c}avec le verbe{/c}.'),
+        p('À : commencer à, aider à, apprendre à, arriver à.'),
+        p('De : essayer de, décider de, finir de, oublier de, accepter de.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Préposition{/g} | {g}Verbes{/g}',
+          '{tab:1>}à | commencer, apprendre, aider, réussir',
+          '{tab:1>}de | essayer, décider, finir, oublier',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'mémorise à ou de avec le verbe.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['+ à', '+ de'], rows: [['commencer à', 'essayer de'], ['aider à', 'décider de'], ['apprendre à', 'finir de']] },
-        { kind: 'attention', text: 'Le verbe suivant reste à l’infinitif.' }
+      retenir: [
+        p('La préposition fait partie du verbe. Je l’apprends avec lui.'),
+        ligne,
+        table(
+          ['Verbe', 'Préposition', 'Exemple'],
+          [
+            ['commencer', 'à', 'Je commence à lire.'],
+            ['apprendre', 'à', 'J’apprends à nager.'],
+            ['essayer', 'de', 'J’essaie de venir.'],
+            ['décider', 'de', 'Elle décide de rester.'],
+            ['finir', 'de', 'Nous finissons de manger.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Essayer de, pas « essayer à ».'),
+        ex([
+          { text: 'Je dis : « J’essaie {c}de{/c} comprendre. »', wrong: 'J’essaie à comprendre.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'k12',
@@ -341,49 +460,49 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     title: 'Le subjonctif passé',
     topic: 'gram-exprimer',
     public: 'B1',
-    objectif: 'Former le subjonctif passé.',
-    blocks: [
-      { kind: 'heading', text: 'Le subjonctif passé' },
-      { kind: 'paragraph', text: 'Je parle d’une action déjà faite après « que ».' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Je suis content que tu aies réussi.',
-              'Il faut qu’elle soit partie avant midi.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Subjonctif passé = avoir / être au subjonctif présent + participe.' },
-          { kind: 'paragraph', text: 'Même auxiliaire qu’au passé composé.' },
-          { kind: 'paragraph', text: 'Même contextes que le subjonctif présent.' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'que + aie / aies / ait… + participe.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'avoir', 'être'],
-            rows: [
-              ['que j’', 'aie', 'sois'],
-              ['que tu', 'aies', 'sois'],
-              ['qu’il', 'ait', 'soit'],
-              ['que nous', 'ayons', 'soyons'],
-              ['que vous', 'ayez', 'soyez'],
-              ['qu’ils', 'aient', 'soient'],
-            ],
-          },
-          { kind: 'attention', text: 'Accord du participe comme au passé composé.' }
-        ],
-      },
-    ],
+    objectif: 'Parler d’une action déjà faite après que.',
+    blocks: sheet({
+      title: 'Le subjonctif passé',
+      intro: 'Je parle d’une action {g}déjà faite{/g} après que.',
+      regarder: [
+        '{tab:1<}Je suis content que tu {c}sois venu{/c}. | Il faut qu’elle {c}ait fini{/c} avant 18 h.',
+        '{tab:1<}Je doute qu’ils {c}aient compris{/c}. | Je regrette qu’il {c}soit parti{/c}.',
+        '{tab:1<}Bien qu’elle {c}ait téléphoné{/c}, personne n’a répondu.',
+      ],
+      expliquer: [
+        p('Subjonctif passé = avoir ou être au subjonctif présent + participe.'),
+        p('L’action est {c}avant{/c} le moment de la phrase.'),
+        p('Mêmes contextes que le subjonctif présent : il faut que, je veux que…'),
+        p('Même auxiliaire et même accord qu’au passé composé.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Personne{/g} | {g}Avoir{/g}',
+          '{tab:1>}que j’ | {c}aie{/c} fini',
+          '{tab:1>}que tu | {c}aies{/c} fini',
+          '{tab:1>}qu’il / qu’elle | {c}ait{/c} fini',
+          '{tab:1>}que nous | {c}ayons{/c} fini',
+          '{tab:1>}que vous | {c}ayez{/c} fini',
+          '{tab:1>}qu’ils | {c}aient{/c} fini',
+        ]),
+      ],
+      retenir: [
+        p('Que + aie / aies / ait… + participe.'),
+        ligne,
+        table(
+          ['Auxiliaire', 'Exemple'],
+          [
+            ['avoir', 'que tu aies fini'],
+            ['être', 'qu’elle soit partie'],
+            ['accord', 'qu’elles soient parties'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde le participe comme au passé composé.'),
+        ex([
+          { text: 'Je dis : « content que tu {c}sois venu{/c}. » (homme)', wrong: 'content que tu as venu.' },
+        ]),
+      ],
+    }),
   },
   {
     id: 'k13',
@@ -392,46 +511,51 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     title: 'Subjonctif ou indicatif ?',
     topic: 'gram-exprimer',
     public: 'B1',
-    objectif: 'Choisir subjonctif ou indicatif après que.',
-    blocks: [
-      { kind: 'heading', text: 'Subjonctif ou indicatif ?' },
-      { kind: 'paragraph', text: 'Je choisis le mode selon le sens.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Je sais qu’il vient. (indicatif)',
-              'Je doute qu’il vienne. (subjonctif)',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Indicatif = fait certain, connaissance, déclaration.' },
-          { kind: 'paragraph', text: 'Subjonctif = volonté, émotion, doute, obligation.' },
-          { kind: 'paragraph', text: 'Penser que / croire que → indicatif (affirmation).' },
-          { kind: 'paragraph', text: 'Ne pas penser que → souvent subjonctif.' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'certain → indicatif. Doute / souhait → subjonctif.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Indicatif', 'Subjonctif'],
-            rows: [
-              ['Je vois qu’il part.', 'Je veux qu’il parte.'],
-              ['Il est vrai qu’elle sait.', 'Il est possible qu’elle sache.'],
-              ['J’espère que tu vas bien.', 'J’ai peur que tu sois malade.'],
-            ],
-          },
-          { kind: 'attention', text: 'Apprends les expressions une par une.' }
-        ],
-      },
-    ],
+    objectif: 'Choisir le mode selon le sens.',
+    blocks: sheet({
+      title: 'Subjonctif ou indicatif ?',
+      intro: 'Je choisis le mode selon le {g}sens{/g}.',
+      regarder: [
+        '{tab:1<}Je sais qu’il {c}est{/c} là. | Je veux qu’il {c}soit{/c} là.',
+        '{tab:1<}Je pense qu’elle {c}vient{/c}. | Je ne pense pas qu’elle {c}vienne{/c}.',
+        '{tab:1<}Il est certain que tu {c}as{/c} raison. | Il faut que tu {c}aies{/c} les papiers.',
+      ],
+      expliquer: [
+        p('Indicatif = fait {c}certain{/c}, connaissance, déclaration.'),
+        p('Subjonctif = volonté, émotion, doute, obligation.'),
+        p('Penser que et croire que, à l’affirmatif → indicatif.'),
+        p('Ne pas penser que → souvent subjonctif.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Sens{/g} | {g}Mode{/g}',
+          '{tab:1>}je sais que | {c}indicatif{/c}',
+          '{tab:1>}il est certain que | {c}indicatif{/c}',
+          '{tab:1>}je pense que | {c}indicatif{/c}',
+          '{tab:1>}je veux que | {c}subjonctif{/c}',
+          '{tab:1>}il faut que | {c}subjonctif{/c}',
+          '{tab:1>}je ne pense pas que | {c}subjonctif{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Certain → indicatif. Doute ou souhait → subjonctif.'),
+        p('J’apprends les expressions une par une.'),
+        ligne,
+        table(
+          ['Expression', 'Mode', 'Exemple'],
+          [
+            ['je sais que', 'indicatif', 'Je sais qu’il est là.'],
+            ['je pense que', 'indicatif', 'Je pense qu’elle vient.'],
+            ['je ne pense pas que', 'subjonctif', 'Je ne pense pas qu’elle vienne.'],
+            ['je veux que', 'subjonctif', 'Je veux qu’il soit là.'],
+            ['il faut que', 'subjonctif', 'Il faut que tu aies les clés.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Je pense que + indicatif. Je veux que + subjonctif.'),
+        ex([
+          { text: 'Je dis : « Je pense qu’il {c}est{/c} prêt. »', wrong: 'Je pense qu’il soit prêt.' },
+        ]),
+      ],
+    }),
   },
 ]

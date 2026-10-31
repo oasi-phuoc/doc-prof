@@ -1,4 +1,5 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
 /** Théorie FALC — thème gram-passe. Français seul (pas de traductions). */
 export const passeDocs: GrammaireTheoryDoc[] = [
@@ -10,34 +11,46 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     topic: 'gram-passe',
     public: 'A1',
     objectif: 'Comprendre le passé composé.',
-    blocks: [
-    { kind: 'heading', text: 'Le passé composé' },
-    { kind: 'paragraph', text: 'Je parle d’une action finie dans le passé.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['J’ai mangé.', 'Elle est partie.'] }
+    blocks: sheet({
+      title: 'Le passé composé',
+      intro: 'Je parle d’une action {g}finie{/g} dans le passé.',
+      regarder: [
+        '{tab:1<}J’{c}ai mangé{/c}. | Elle {c}est partie{/c}.',
+        '{tab:1<}Nous {c}avons fini{/c}. | Ils {c}sont arrivés{/c}.',
+        '{tab:1<}Tu {c}as compris{/c} ? | Vous {c}êtes venus{/c} ?',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Passé composé = auxiliaire au présent + participe passé.' },
-        { kind: 'paragraph', text: 'Auxiliaire avoir (souvent) ou être (certains verbes).' }
+      expliquer: [
+        p('Le passé composé = un {c}auxiliaire{/c} + un {c}participe passé{/c}.'),
+        p('L’auxiliaire est avoir ou être, au présent.'),
+        p('Avoir est le plus fréquent. Être sert pour certains verbes.'),
+        p('L’action est terminée. Elle a un début et une fin.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Auxiliaire{/g} | {g}Participe{/g} | {g}Exemple{/g}',
+          '{tab:2+>}avoir | mangé | J’{c}ai mangé{/c}.',
+          '{tab:2+>}être | partie | Elle {c}est partie{/c}.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'auxiliaire + participe passé.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Auxiliaire', 'Participe', 'Exemple'], rows: [['j’ai', 'mangé', 'J’ai mangé.'], ['elle est', 'partie', 'Elle est partie.']] },
-        { kind: 'attention', text: 'Choisis le bon auxiliaire (fiches suivantes).' }
+      retenir: [
+        p('Auxiliaire au présent + participe passé.'),
+        p('Je choisis avoir ou être selon le verbe.'),
+        ligne,
+        table(
+          ['Auxiliaire', 'Participe', 'Exemple'],
+          [
+            ['j’ai', 'mangé', 'J’ai mangé.'],
+            ['tu as', 'fini', 'Tu as fini.'],
+            ['elle est', 'partie', 'Elle est partie.'],
+            ['nous sommes', 'arrivés', 'Nous sommes arrivés.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Le choix de l’auxiliaire change la phrase. Voir les fiches suivantes.'),
+        ex([
+          { text: 'Je dis : « Elle {c}est{/c} partie. »', wrong: 'Elle a partie.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'h2',
@@ -47,34 +60,50 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     topic: 'gram-passe',
     public: 'A1',
     objectif: 'Conjuguer le passé composé avec avoir.',
-    blocks: [
-    { kind: 'heading', text: 'Passé composé avec avoir' },
-    { kind: 'paragraph', text: 'Je forme le passé composé avec avoir.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Tu as fini.', 'Nous avons vu un film.'] }
+    blocks: sheet({
+      title: 'Passé composé avec avoir',
+      intro: 'Je forme le passé composé avec {g}avoir{/g}.',
+      regarder: [
+        '{tab:1<}J’{c}ai parlé{/c} avec Nina. | Tu {c}as fini{/c} le devoir.',
+        '{tab:1<}Il {c}a pris{/c} le bus. | Nous {c}avons mangé{/c} à midi.',
+        '{tab:1<}Vous {c}avez compris{/c}. | Elles {c}ont regardé{/c} un film.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Avoir au présent + participe passé.' },
-        { kind: 'paragraph', text: 'Participe : -er → é ; -ir → i ; -re → u (souvent).' }
+      expliquer: [
+        p('Avoir au présent + participe passé.'),
+        p('Verbe en -er → participe en {c}-é{/c} : parler → parlé.'),
+        p('Souvent -ir → {c}-i{/c} : fini. Souvent -re → {c}-u{/c} : vendu.'),
+        p('Avec avoir, le participe ne s’accorde pas avec le sujet.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Personne{/g} | {g}Avoir + parlé{/g}',
+          '{tab:1>}j’ | {c}ai{/c} parlé',
+          '{tab:1>}tu | {c}as{/c} parlé',
+          '{tab:1>}il / elle | {c}a{/c} parlé',
+          '{tab:1>}nous | {c}avons{/c} parlé',
+          '{tab:1>}vous | {c}avez{/c} parlé',
+          '{tab:1>}ils / elles | {c}ont{/c} parlé',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'j’ai / tu as / il a… + participe.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'Exemple'], rows: [['j’ai', 'J’ai parlé.'], ['tu as', 'Tu as mangé.'], ['il / elle a', 'Elle a fini.'], ['nous avons', 'Nous avons lu.'], ['vous avez', 'Vous avez pris.'], ['ils / elles ont', 'Ils ont vu.']] },
-        { kind: 'attention', text: 'Avec avoir, le participe s’accorde surtout avec le COD placé avant.' }
+      retenir: [
+        p('J’ai, tu as, il a, nous avons, vous avez, ils ont + participe.'),
+        ligne,
+        table(
+          ['Infinitif', 'Participe', 'Exemple'],
+          [
+            ['parler', 'parlé', 'J’ai parlé.'],
+            ['finir', 'fini', 'Tu as fini.'],
+            ['vendre', 'vendu', 'Il a vendu.'],
+            ['prendre', 'pris', 'Nous avons pris le bus.'],
+            ['faire', 'fait', 'Vous avez fait les courses.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Avec avoir, pas d’accord avec le sujet.'),
+        ex([
+          { text: 'Je dis : « Elle a {c}mangé{/c}. »', wrong: 'Elle a mangée.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'h3',
@@ -82,37 +111,52 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     index: 3,
     title: 'Passé composé avec être',
     topic: 'gram-passe',
-    public: 'A1',
-    objectif: 'Conjuguer le passé composé avec être.',
-    blocks: [
-    { kind: 'heading', text: 'Passé composé avec être' },
-    { kind: 'paragraph', text: 'Certains verbes utilisent être.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Je suis allé(e).', 'Ils sont arrivés.'] }
+    public: 'A1 / A2',
+    objectif: 'Conjuguer le passé composé avec être et accorder le participe.',
+    blocks: sheet({
+      title: 'Passé composé avec être',
+      intro: 'Certains verbes utilisent {g}être{/g} au passé composé.',
+      regarder: [
+        '{tab:1<}Je {c}suis allé{/c} au marché. | Elle {c}est allée{/c} à l’école.',
+        '{tab:1<}Nous {c}sommes arrivés{/c} à 8 h. | Elles {c}sont parties{/c}.',
+        '{tab:1<}Tu {c}es resté{/c} à la maison. | Il {c}est né{/c} en 2008.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Verbes de mouvement / état courants : aller, venir, arriver, partir, entrer, sortir, monter, descendre, naître, mourir, rester, tomber, retourner, passer…' },
-        { kind: 'paragraph', text: 'Verbes pronominaux : être aussi.' },
-        { kind: 'paragraph', text: 'Le participe s’accorde avec le sujet.' }
+      expliquer: [
+        p('Souvent : verbes de mouvement ou d’état.'),
+        p('Aller, venir, arriver, partir, entrer, sortir, monter, descendre.'),
+        p('Aussi : naître, mourir, rester, tomber, retourner.'),
+        p('Le participe s’{c}accorde avec le sujet{/c} : allé, allée, allés, allées.'),
+        p('Les verbes pronominaux utilisent aussi être.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Sujet{/g} | {g}Accord{/g}',
+          '{tab:1>}il | Il est {c}parti{/c}.',
+          '{tab:1>}elle | Elle est {c}partie{/c}.',
+          '{tab:1>}ils | Ils sont {c}partis{/c}.',
+          '{tab:1>}elles | Elles sont {c}parties{/c}.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'être + participe accordé.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Masculin', 'Féminin'], rows: [['allé', 'allée'], ['arrivé', 'arrivée'], ['partis', 'parties']] },
-        { kind: 'attention', text: 'Accorde toujours avec le sujet : elle est partie.' }
+      retenir: [
+        p('Être + participe accordé avec le sujet.'),
+        ligne,
+        table(
+          ['Verbe', 'Il', 'Elle'],
+          [
+            ['aller', 'est allé', 'est allée'],
+            ['venir', 'est venu', 'est venue'],
+            ['arriver', 'est arrivé', 'est arrivée'],
+            ['partir', 'est parti', 'est partie'],
+            ['rester', 'est resté', 'est restée'],
+            ['naître', 'est né', 'est née'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’accorde toujours avec le sujet.'),
+        ex([
+          { text: 'Je dis : « Elle est {c}partie{/c}. »', wrong: 'Elle est parti.' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'h4',
@@ -120,36 +164,51 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     index: 4,
     title: 'L’imparfait',
     topic: 'gram-passe',
-    public: 'A1 / A2',
-    objectif: 'Décrire le passé avec l’imparfait.',
-    blocks: [
-    { kind: 'heading', text: 'L’imparfait' },
-    { kind: 'paragraph', text: 'Je décris une habitude ou un décor dans le passé.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['Quand j’étais enfant, j’aimais le foot.', 'Il faisait beau.'] }
+    public: 'A2',
+    objectif: 'Décrire une habitude ou un décor dans le passé.',
+    blocks: sheet({
+      title: 'L’imparfait',
+      intro: 'Je décris une {g}habitude{/g} ou un décor dans le passé.',
+      regarder: [
+        '{tab:1<}Avant, j’{c}habitais{/c} à Sion. | Tous les jours, elle {c}prenait{/c} le bus.',
+        '{tab:1<}Il {c}faisait{/c} beau. | Nous {c}étions{/c} en classe.',
+        '{tab:1<}Vous {c}parliez{/c} doucement. | Ils {c}avaient{/c} un chien.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Imparfait = description, habitude, action longue dans le passé.' },
-        { kind: 'paragraph', text: 'Base : nous du présent sans -ons + ais, ais, ait, ions, iez, aient.' }
+      expliquer: [
+        p('L’imparfait décrit, raconte une habitude, ou une action longue.'),
+        p('Je pars de {c}nous{/c} au présent, j’enlève -ons, j’ajoute la terminaison.'),
+        p('Terminaisons : ais, ais, ait, ions, iez, aient.'),
+        p('Être est irrégulier : j’étais, tu étais, il était…'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nous au présent{/g} | {g}Imparfait{/g}',
+          '{tab:1>}nous parlons | je parl{c}ais{/c}',
+          '{tab:1>}nous finissons | tu finiss{c}ais{/c}',
+          '{tab:1>}nous avons | il av{c}ait{/c}',
+          '{tab:1>}être | nous {c}étions{/c}',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'imparfait = décor / habitude. Passé composé = action finie.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'parler'], rows: [['je', 'parlais'], ['tu', 'parlais'], ['il / elle', 'parlait'], ['nous', 'parlions'], ['vous', 'parliez'], ['ils / elles', 'parlaient']] },
-        { kind: 'attention', text: 'Être est irrégulier : j’étais, tu étais…' }
+      retenir: [
+        p('Imparfait = décor ou habitude. Passé composé = action finie.'),
+        ligne,
+        table(
+          ['Personne', 'parler'],
+          [
+            ['je', 'parlais'],
+            ['tu', 'parlais'],
+            ['il / elle', 'parlait'],
+            ['nous', 'parlions'],
+            ['vous', 'parliez'],
+            ['ils / elles', 'parlaient'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Être → j’étais, pas « j’étais suis ».'),
+        ex([
+          { text: 'Je dis : « J’{c}étais{/c} fatigué. »', wrong: 'J’ai été fatigué. (si c’est une description)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'h5',
@@ -157,35 +216,50 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     index: 5,
     title: 'Le plus-que-parfait',
     topic: 'gram-passe',
-    public: 'A2',
-    objectif: 'Dire qu’une action est avant une autre dans le passé.',
-    blocks: [
-    { kind: 'heading', text: 'Le plus-que-parfait' },
-    { kind: 'paragraph', text: 'Je parle d’une action passée avant une autre action passée.' },
-    {
-      kind: 'section',
-      role: 'regarder',
-      blocks: [
-        { kind: 'examples', items: ['J’avais fini quand tu es arrivé.'] }
+    public: 'B1',
+    objectif: 'Parler d’une action passée avant une autre action passée.',
+    blocks: sheet({
+      title: 'Le plus-que-parfait',
+      intro: 'Je parle d’une action passée {g}avant{/g} une autre.',
+      regarder: [
+        '{tab:1<}J’{c}avais déjà mangé{/c} quand il est arrivé. | Elle {c}était partie{/c} avant midi.',
+        '{tab:1<}Nous {c}avions fini{/c} le travail. | Ils {c}étaient sortis{/c}.',
+        '{tab:1<}Tu {c}avais compris{/c} ? | Vous {c}étiez venus{/c} plus tôt.',
       ],
-    },
-    {
-      kind: 'section',
-      role: 'expliquer',
-      blocks: [
-        { kind: 'paragraph', text: 'Plus-que-parfait = avoir / être à l’imparfait + participe passé.' }
+      expliquer: [
+        p('Plus-que-parfait = avoir ou être à l’{c}imparfait{/c} + participe.'),
+        p('Cette action est plus ancienne que l’autre action passée.'),
+        p('Je garde le même auxiliaire qu’au passé composé.'),
+        p('Avec être, j’accorde le participe avec le sujet.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Auxiliaire{/g} | {g}Exemple{/g}',
+          '{tab:1>}avoir | j’{c}avais mangé{/c}',
+          '{tab:1>}être | elle {c}était partie{/c}',
+          '{tab:1>}ordre | J’avais fini {c}quand{/c} il est arrivé.',
+        ]),
       ],
-    },
-    {
-      kind: 'section',
-      role: 'retenir',
-      blocks: [
-        { kind: 'paragraph', text: 'avant une autre action passée → plus-que-parfait.' },
-        { kind: 'table', colHeader: true, rowHeader: true, headers: ['Forme', 'Exemple'], rows: [['j’avais + participe', 'J’avais mangé.'], ['elle était + participe', 'Elle était partie.']] },
-        { kind: 'attention', text: 'Choisis le même auxiliaire qu’au passé composé.' }
+      retenir: [
+        p('Avant une autre action passée → plus-que-parfait.'),
+        ligne,
+        table(
+          ['Personne', 'avoir', 'être'],
+          [
+            ['j’', 'avais fini', 'étais parti(e)'],
+            ['tu', 'avais fini', 'étais parti(e)'],
+            ['il / elle', 'avait fini', 'était parti(e)'],
+            ['nous', 'avions fini', 'étions parti(e)s'],
+            ['vous', 'aviez fini', 'étiez parti(e)(s)'],
+            ['ils / elles', 'avaient fini', 'étaient parti(e)s'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Le plus-que-parfait n’est pas un simple passé composé.'),
+        ex([
+          { text: 'Je dis : « J’{c}avais mangé{/c} quand il est arrivé. »', wrong: 'J’ai mangé quand il est arrivé. (si manger est avant)' },
+        ]),
       ],
-    },
-    ],
+    }),
   },
   {
     id: 'h6',
@@ -193,47 +267,47 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     index: 6,
     title: 'Les verbes à double auxiliaire',
     topic: 'gram-passe',
-    public: 'A2',
-    objectif: 'Choisir être ou avoir selon le sens.',
-    blocks: [
-      { kind: 'heading', text: 'Les verbes à double auxiliaire' },
-      { kind: 'paragraph', text: 'Certains verbes acceptent être ou avoir.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Elle est descendue.',
-              'Elle a descendu la valise.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Avec être : le sujet se déplace (pas d’objet).' },
-          { kind: 'paragraph', text: 'Avec avoir : le sujet déplace quelque chose (objet).' },
-          { kind: 'paragraph', text: 'Verbes fréquents : monter, descendre, sortir, rentrer, passer, retourner.' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'objet après le verbe → souvent avoir.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Être', 'Avoir'],
-            rows: [
-              ['Elle est sortie.', 'Elle a sorti les clés.'],
-              ['Il est monté.', 'Il a monté les sacs.'],
-              ['Nous sommes rentrés.', 'Nous avons rentré les chaises.'],
-            ],
-          },
-          { kind: 'attention', text: 'Regarde s’il y a un complément d’objet.' }
-        ],
-      },
-    ],
+    public: 'A2 / B1',
+    objectif: 'Choisir être ou avoir pour monter, sortir, passer…',
+    blocks: sheet({
+      title: 'Les verbes à double auxiliaire',
+      intro: 'Certains verbes acceptent {g}être{/g} ou {g}avoir{/g}.',
+      regarder: [
+        '{tab:1<}Elle {c}est sortie{/c}. | Elle {c}a sorti{/c} la poubelle.',
+        '{tab:1<}Je {c}suis monté{/c}. | J’{c}ai monté{/c} les valises.',
+        '{tab:1<}Nous {c}sommes passés{/c} chez toi. | Nous {c}avons passé{/c} l’examen.',
+      ],
+      expliquer: [
+        p('Avec {c}être{/c} : le sujet se déplace. Il n’y a pas d’objet.'),
+        p('Avec {c}avoir{/c} : le sujet déplace quelque chose. Il y a un objet.'),
+        p('Verbes fréquents : monter, descendre, sortir, rentrer, passer, retourner.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Sens{/g} | {g}Auxiliaire{/g}',
+          '{tab:1>}le sujet bouge | {c}être{/c}',
+          '{tab:1>}le sujet déplace un objet | {c}avoir{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Je regarde s’il y a un complément d’objet.'),
+        p('Objet après le verbe → souvent avoir.'),
+        ligne,
+        table(
+          ['Verbe', 'Être (sujet)', 'Avoir (objet)'],
+          [
+            ['sortir', 'Elle est sortie.', 'Elle a sorti le pain.'],
+            ['monter', 'Je suis monté.', 'J’ai monté la valise.'],
+            ['descendre', 'Il est descendu.', 'Il a descendu les sacs.'],
+            ['passer', 'Nous sommes passés.', 'Nous avons passé une heure.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Avec être, j’accorde. Avec avoir, pas avec le sujet.'),
+        ex([
+          { text: 'Je dis : « Elle {c}est sortie{/c}. »', wrong: 'Elle a sortie.' },
+        ]),
+      ],
+    }),
   },
   {
     id: 'h7',
@@ -242,49 +316,50 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     title: 'Les verbes pronominaux au passé composé',
     topic: 'gram-passe',
     public: 'A2',
-    objectif: 'Conjuguer un verbe pronominal au passé composé.',
-    blocks: [
-      { kind: 'heading', text: 'Les verbes pronominaux au passé composé' },
-      { kind: 'paragraph', text: 'Un verbe pronominal utilise être au passé composé.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Je me suis levé(e).',
-              'Elle s’est lavée.',
-              'Ils se sont parlés.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Ordre : pronom réfléchi + être + participe passé.' },
-          { kind: 'paragraph', text: 'Le participe s’accorde souvent avec le sujet.' },
-          { kind: 'paragraph', text: 'Négation : je ne me suis pas levé(e).' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'se + verbe → être au passé composé.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Personne', 'Exemple'],
-            rows: [
-              ['je', 'je me suis habillé(e)'],
-              ['tu', 'tu t’es reposé(e)'],
-              ['elle', 'elle s’est maquillée'],
-              ['nous', 'nous nous sommes levés'],
-              ['ils', 'ils se sont rencontrés'],
-            ],
-          },
-          { kind: 'attention', text: 'Garde le pronom : me / te / se / nous / vous.' }
-        ],
-      },
-    ],
+    objectif: 'Conjuguer un verbe pronominal au passé composé avec être.',
+    blocks: sheet({
+      title: 'Les verbes pronominaux au passé composé',
+      intro: 'Un verbe pronominal utilise {g}être{/g} au passé composé.',
+      regarder: [
+        '{tab:1<}Je {c}me suis levé{/c} à 7 h. | Elle {c}s’est levée{/c} tôt.',
+        '{tab:1<}Nous {c}nous sommes promenés{/c}. | Ils {c}se sont reposés{/c}.',
+        '{tab:1<}Tu {c}t’es habillé{/c}. | Vous {c}vous êtes couchés{/c} tard.',
+      ],
+      expliquer: [
+        p('Ordre : pronom réfléchi + {c}être{/c} + participe.'),
+        p('Le participe s’accorde souvent avec le sujet.'),
+        p('Négation : ne + pronom + être + pas + participe.'),
+        p('Je garde le pronom : me, te, se, nous, vous.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Personne{/g} | {g}Se lever{/g}',
+          '{tab:1>}je | je me {c}suis levé(e){/c}',
+          '{tab:1>}tu | tu t’{c}es levé(e){/c}',
+          '{tab:1>}il / elle | il s’{c}est levé{/c} / elle s’est levée',
+          '{tab:1>}nous | nous nous {c}sommes levés{/c}',
+          '{tab:1>}vous | vous vous {c}êtes levés{/c}',
+          '{tab:1>}ils / elles | ils se {c}sont levés{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Se + verbe → être au passé composé.'),
+        p('Le pronom reste devant l’auxiliaire.'),
+        ligne,
+        table(
+          ['Affirmatif', 'Négatif'],
+          [
+            ['Je me suis levé.', 'Je ne me suis pas levé.'],
+            ['Elle s’est levée.', 'Elle ne s’est pas levée.'],
+            ['Nous nous sommes lavés.', 'Nous ne nous sommes pas lavés.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas d’auxiliaire avoir avec un verbe pronominal.'),
+        ex([
+          { text: 'Je dis : « Je {c}me suis{/c} levé. »', wrong: 'Je m’ai levé.' },
+        ]),
+      ],
+    }),
   },
   {
     id: 'h8',
@@ -293,51 +368,47 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     title: 'Imparfait ou passé composé ?',
     topic: 'gram-passe',
     public: 'A2',
-    objectif: 'Choisir imparfait ou passé composé pour raconter.',
-    blocks: [
-      { kind: 'heading', text: 'Imparfait ou passé composé ?' },
-      { kind: 'paragraph', text: 'Je combine les deux temps pour raconter.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Nous étions dans le bus. Soudain, le chauffeur a freiné.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Imparfait = décor, habitude, action en cours.' },
-          { kind: 'paragraph', text: 'Passé composé = action ponctuelle, événement principal.' },
-          { kind: 'paragraph', text: 'Souvent : imparfait pour le fond, passé composé pour le fait.' },
-          { kind: 'examples', marker: 'puces', label: 'Mots utiles', items: [
-              'Imparfait : pendant que, tous les jours, avant…',
-              'Passé composé : soudain, un jour, hier, tout à coup…',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'décor → imparfait. Événement → passé composé.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Imparfait', 'Passé composé'],
-            rows: [
-              ['habitude', 'événement ponctuel'],
-              ['description', 'action principale'],
-              ['action en cours', 'action qui coupe'],
-              ['Avant, je marchais.', 'Hier, j’ai marché.'],
-            ],
-          },
-          { kind: 'attention', text: 'J’ai marché ≠ je marchais.' }
-        ],
-      },
-    ],
+    objectif: 'Choisir l’imparfait ou le passé composé dans un récit.',
+    blocks: sheet({
+      title: 'Imparfait ou passé composé ?',
+      intro: 'Je combine les deux temps pour {g}raconter{/g}.',
+      regarder: [
+        '{tab:1<}Il {c}faisait{/c} beau. | Soudain, il {c}a plu{/c}.',
+        '{tab:1<}Je {c}marchais{/c} vers l’école. | J’{c}ai vu{/c} un ami.',
+        '{tab:1<}Elle {c}lisait{/c} quand le téléphone {c}a sonné{/c}.',
+      ],
+      expliquer: [
+        p('Imparfait = décor, habitude, action {c}en cours{/c}.'),
+        p('Passé composé = événement {c}ponctuel{/c}, action principale.'),
+        p('Souvent : l’imparfait fait le fond, le passé composé fait le fait.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Question{/g} | {g}Temps{/g}',
+          '{tab:1>}Comment c’était ? | {c}imparfait{/c}',
+          '{tab:1>}Qu’est-ce qui s’est passé ? | {c}passé composé{/c}',
+          '{tab:1>}Tous les jours, avant | {c}imparfait{/c}',
+          '{tab:1>}Une fois, à ce moment | {c}passé composé{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Décor → imparfait. Événement → passé composé.'),
+        ligne,
+        table(
+          ['Sens', 'Temps', 'Exemple'],
+          [
+            ['décor', 'imparfait', 'Il faisait froid.'],
+            ['habitude', 'imparfait', 'Je prenais le bus.'],
+            ['événement', 'passé composé', 'J’ai raté le bus.'],
+            ['action en cours + événement', 'les deux', 'Je dormais quand il a appelé.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} J’ai marché ≠ je marchais.'),
+        ex([
+          { text: 'Je dis : « Je {c}marchais{/c} quand j’ai vu Léa. »', wrong: 'J’ai marché quand j’ai vu Léa. (si marcher est le décor)' },
+        ]),
+      ],
+    }),
   },
   {
     id: 'h9',
@@ -345,48 +416,47 @@ export const passeDocs: GrammaireTheoryDoc[] = [
     index: 9,
     title: 'L’accord du participe passé',
     topic: 'gram-passe',
-    public: 'A2',
-    objectif: 'Accorder le participe passé dans les cas courants.',
-    blocks: [
-      { kind: 'heading', text: 'L’accord du participe passé' },
-      { kind: 'paragraph', text: 'Je sais quand le participe change.' },
-      {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', items: [
-              'Elle est partie.',
-              'Les lettres que j’ai écrites.',
-              'J’ai mangé une pomme.',
-            ],
-          }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Avec être : le participe s’accorde avec le sujet.' },
-          { kind: 'paragraph', text: 'Avec avoir : pas d’accord avec le sujet.' },
-          { kind: 'paragraph', text: 'Avec avoir : accord avec le COD placé avant le verbe.' }
-        ],
-      },
-      {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'être → sujet. Avoir → COD avant.' },
-          { kind: 'table', colHeader: true, rowHeader: true, headers: ['Cas', 'Exemple'],
-            rows: [
-              ['être + sujet fém.', 'Elle est allée.'],
-              ['être + sujet plur.', 'Ils sont partis.'],
-              ['avoir + COD après', 'J’ai vu la fille.'],
-              ['avoir + COD avant', 'La fille que j’ai vue.'],
-            ],
-          },
-          { kind: 'attention', text: 'Cherche le COD avant le verbe (que, l’, les…).' }
-        ],
-      },
-    ],
+    public: 'A2 / B1',
+    objectif: 'Savoir quand le participe change.',
+    blocks: sheet({
+      title: 'L’accord du participe passé',
+      intro: 'Je sais {g}quand{/g} le participe change.',
+      regarder: [
+        '{tab:1<}Elle est {c}arrivée{/c}. | Elle a {c}mangé{/c}.',
+        '{tab:1<}La pomme que j’ai {c}mangée{/c}. | Les lettres que j’ai {c}écrites{/c}.',
+        '{tab:1<}Ils sont {c}partis{/c}. | Je les ai {c}vus{/c}.',
+      ],
+      expliquer: [
+        p('Avec {c}être{/c} : le participe s’accorde avec le sujet.'),
+        p('Avec {c}avoir{/c} : pas d’accord avec le sujet.'),
+        p('Avec avoir : accord avec le {c}COD placé avant{/c} le verbe.'),
+        p('Le COD avant est souvent que, l’, les, la…'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Cas{/g} | {g}Accord{/g}',
+          '{tab:1>}être | avec le {c}sujet{/c}',
+          '{tab:1>}avoir, COD après | {c}pas{/c} d’accord',
+          '{tab:1>}avoir, COD avant | avec le {c}COD{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Être → sujet. Avoir → COD avant, sinon pas d’accord.'),
+        ligne,
+        table(
+          ['Cas', 'Exemple'],
+          [
+            ['être, féminin', 'Elle est partie.'],
+            ['avoir, COD après', 'Elle a mangé une pomme.'],
+            ['avoir, COD avant', 'La pomme qu’elle a mangée.'],
+            ['les avant', 'Je les ai vus.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Je cherche le COD avant le verbe.'),
+        ex([
+          { text: 'Je dis : « Les lettres que j’ai {c}écrites{/c}. »', wrong: 'Les lettres que j’ai écrit.' },
+        ]),
+      ],
+    }),
   },
 ]
