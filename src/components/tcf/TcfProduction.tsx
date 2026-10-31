@@ -114,13 +114,18 @@ function ChampBoxes({
 }: {
   chars: string[]
   show: boolean
-  /** Colonnes fixes pour coller à la bordure sans déborder. */
+  /** Nombre de colonnes (cases carrées de taille fixe). */
   columns?: number
 }) {
+  const cols = columns ?? chars.length
   return (
     <span
       className="tcf-champ-boxes"
-      style={columns ? { gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` } : undefined}
+      style={
+        cols > 0
+          ? { gridTemplateColumns: `repeat(${cols}, var(--tcf-box, 6.5mm))` }
+          : undefined
+      }
       aria-hidden={!show}
     >
       {chars.map((ch, i) => (
@@ -209,7 +214,7 @@ export function FormulairePE({
 }) {
   const show = mode === 'answers'
   return (
-    <div className="tcf-formulaire">
+    <div className={`tcf-formulaire${letterGrid ? ' is-letter-grid' : ''}`}>
       {titre?.trim() ? <p className="tcf-formulaire-title">{titre}</p> : null}
       {champs.map((champ, i) => {
         const adresseRows = isAdressePostaleLabel(champ.label)

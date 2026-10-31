@@ -4318,12 +4318,32 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-champ.is-adresse{align-items:flex-start}
 .tcf-champ.is-adresse .tcf-champ-label{padding-top:1.5mm}
 .tcf-champ-label{flex:0 1 auto;max-width:38%;font-weight:600;white-space:normal;line-height:1.25;min-width:0}
+/* Mode grille : colonne label fixe → cases alignées verticalement, même taille. */
+.tcf-formulaire.is-letter-grid{
+  --tcf-box:6mm;
+  --tcf-box-gap:1.2px;
+  --tcf-label-col:36mm
+}
+.tcf-formulaire.is-letter-grid .tcf-champ{
+  display:grid;
+  grid-template-columns:var(--tcf-label-col) minmax(0,1fr);
+  column-gap:6px;align-items:center
+}
+.tcf-formulaire.is-letter-grid .tcf-champ.is-adresse{align-items:start}
+.tcf-formulaire.is-letter-grid .tcf-champ-label{
+  flex:none;width:100%;max-width:none;min-width:0;
+  font-size:.92em;line-height:1.2
+}
 .tcf-champ-line{flex:1 1 0;min-width:0;min-height:7mm;max-width:100%}
 .tcf-champ-line.is-date{
   flex:0 0 auto;width:auto;max-width:100%;min-width:0;border-bottom:0;
   display:inline-flex;align-items:flex-end;gap:4px;justify-content:flex-start
 }
+.tcf-formulaire.is-letter-grid .tcf-champ-line.is-date{
+  width:100%;max-width:100%
+}
 .tcf-champ-date-sep{flex:0 0 auto;padding:0 1px;font-weight:700;line-height:7mm}
+.tcf-formulaire.is-letter-grid .tcf-champ-date-sep{line-height:var(--tcf-box)}
 /* Mode traits : chaque segment jj / mm / aaaa = 50 px. */
 .answer-line-field.tcf-champ-date-seg,
 .tcf-champ-date-seg{
@@ -4333,24 +4353,32 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 /* Mode grille date : groupes de cases carrées (2 / 2 / 4). */
 .tcf-champ-line.is-date.is-boxes-date .tcf-champ-boxes{
-  width:auto;flex:0 0 auto;gap:1.5px
+  width:auto;flex:0 0 auto;gap:var(--tcf-box-gap,1.5px)
 }
 .tcf-champ-line.is-date.is-boxes-date .tcf-champ-box{
-  width:6.5mm;min-width:6.5mm;max-width:6.5mm;height:6.5mm
+  width:var(--tcf-box,6.5mm);min-width:var(--tcf-box,6.5mm);max-width:var(--tcf-box,6.5mm);
+  height:var(--tcf-box,6.5mm)
 }
 .tcf-champ-boxes{
-  display:grid;grid-template-columns:repeat(16,6.5mm);gap:1.5px;justify-content:start;
+  display:grid;grid-template-columns:repeat(16,var(--tcf-box,6.5mm));
+  gap:var(--tcf-box-gap,1.5px);justify-content:start;
   width:max-content;max-width:100%;min-width:0;box-sizing:border-box
 }
-.tcf-champ-line.is-multi .tcf-champ-boxes{grid-template-rows:repeat(2,6.5mm)}
+.tcf-champ-line.is-multi .tcf-champ-boxes{
+  grid-template-rows:repeat(2,var(--tcf-box,6.5mm))
+}
 .tcf-champ-box{
   display:inline-flex;align-items:center;justify-content:center;
-  width:6.5mm;min-width:6.5mm;max-width:6.5mm;height:6.5mm;border:1.1px solid var(--ink);box-sizing:border-box;
+  width:var(--tcf-box,6.5mm);min-width:var(--tcf-box,6.5mm);max-width:var(--tcf-box,6.5mm);
+  height:var(--tcf-box,6.5mm);border:1.1px solid var(--ink);box-sizing:border-box;
   font-weight:700;color:var(--purple);line-height:1;overflow:hidden
 }
 .tcf-champ-line.is-boxes{
   flex:1 1 0;border-bottom:0;display:flex;align-items:center;justify-content:flex-start;
   width:auto;min-width:0;max-width:100%;overflow:hidden
+}
+.tcf-formulaire.is-letter-grid .tcf-champ-line.is-boxes{
+  width:100%;max-width:100%
 }
 .tcf-champ-line.is-traits-multi{
   flex:1 1 0;min-width:0;max-width:100%;display:flex;flex-direction:column;gap:4px;border-bottom:0
