@@ -56,10 +56,47 @@ function EmailBox({ de, a, objet, texte }: { de: string; a?: string; objet: stri
   )
 }
 
-function TcfImage({ src, alt, className = 'tcf-image' }: { src: string; alt: string; className?: string }) {
+/** Nom de fichier lisible pour un placeholder (image absente / erreur de chargement). */
+function tcfImageFileLabel(src: string | null | undefined): string {
+  const raw = (src ?? '').trim()
+  if (!raw) return 'Image manquante'
+  try {
+    const path = raw.includes('://') ? new URL(raw).pathname : raw
+    const base = path.split('/').pop() ?? path
+    return decodeURIComponent(base) || 'Image manquante'
+  } catch {
+    return raw.split('/').pop() || 'Image manquante'
+  }
+}
+
+function TcfImage({
+  src,
+  alt,
+  className = 'tcf-image',
+  /** Affiche un cadre avec le nom du fichier si l’image est absente ou en erreur (défaut : oui). */
+  placeholder = true,
+}: {
+  src: string
+  alt: string
+  className?: string
+  placeholder?: boolean
+}) {
   const resolved = tcfImageSrc(src)
   const [failed, setFailed] = useState(false)
-  if (!resolved || failed) return null
+  const label = tcfImageFileLabel(src)
+  if (!resolved || failed) {
+    if (!placeholder) return null
+    return (
+      <span
+        className={`${className} is-placeholder`}
+        role="img"
+        aria-label={alt || label}
+        title={resolved || src || label}
+      >
+        <span className="tcf-image-placeholder-name">{label}</span>
+      </span>
+    )
+  }
   return (
     <img
       className={className}
