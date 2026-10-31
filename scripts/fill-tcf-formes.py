@@ -551,73 +551,14 @@ _DET_PREFIX = re.compile(
 
 
 def resolve_image(text: str) -> str | None:
-    """Résout un libellé QCM vers une image vocabulaire — strict (pas de faux amis)."""
-    if not text or is_abstract(text):
-        return None
-    hour = resolve_hour(text)
-    if hour:
-        return hour
-    raw = text.strip()
-    low = norm_key(raw)
-    stripped = low
-    for _ in range(3):
-        nxt = _DET_PREFIX.sub("", stripped).strip()
-        if nxt == stripped:
-            break
-        stripped = nxt
-    keys = [
-        low,
-        slugify(raw),
-        stripped,
-        slugify(stripped),
-        re.sub(r"[.!?]+$", "", low).strip(),
-        re.sub(r"[.!?]+$", "", stripped).strip(),
-    ]
-    # Bi-grammes / uni-grammes exacts (ex. « numero de telephone » → telephone)
-    words = [w for w in stripped.split() if len(w) > 2]
-    if len(words) >= 2:
-        keys.append(" ".join(words[-2:]))
-        keys.append(slugify(" ".join(words[-2:])))
-    if len(words) == 1:
-        keys.append(words[0])
-        keys.append(slugify(words[0]))
+    """Correspondance entière relue, sans extraction de mots dans une phrase.
 
-    seen: set[str] = set()
-    for k in keys:
-        if not k or k in seen:
-            continue
-        seen.add(k)
-        if k in BY_LABEL:
-            return BY_LABEL[k]
-        if k in BY_SLUG:
-            return BY_SLUG[k]
-
-    # Mot entier = slug / libellé vocab (ex. « Du frère de Driss » → frère)
-    best = None
-    best_len = 0
-    for w in words:
-        if len(w) < 4:
-            continue
-        path = BY_LABEL.get(w) or BY_SLUG.get(w) or BY_LABEL.get(slugify(w))
-        if path and len(w) > best_len:
-            best, best_len = path, len(w)
-    if best:
-        return best
-
-    # Phrase vocab contenue, avec peu de mots autour
-    content_len = len(stripped)
-    for label, path in BY_LABEL.items():
-        lab = label.replace("-", " ")
-        if len(lab) < 5:
-            continue
-        if lab == stripped:
-            return path
-        if content_len and lab in stripped:
-            extra = stripped.replace(lab, "", 1).strip()
-            extra_words = [w for w in extra.split() if w]
-            if len(extra_words) <= 2 and len(lab) >= max(5, best_len) and len(lab) >= content_len * 0.45:
-                best, best_len = path, len(lab)
-    return best
+    Pour auditer et synchroniser les variantes avec le contexte de la question,
+    utiliser tcf_qcm_images.py --apply.
+    """
+    from tcf_qcm_images import resolve_image as strict_resolve
+    image = strict_resolve(text)
+    return image if image and (ROOT / "public" / image.lstrip("/")).is_file() else None
 
 
 def label_from_image(path: str) -> str:
@@ -855,7 +796,13 @@ def enrich_question(q: dict, stats: Counter) -> dict:
         q = {**q, "formes": cleaned}
     elif "formes" in q:
         q = {k: v for k, v in q.items() if k != "formes"}
-    return q
+    # Le contrôle contextuel final empêche ce script historique de réintroduire
+    # des QCM image qui ne correspondent pas aux réponses texte.
+    from tcf_qcm_images import desired_form, synchronize
+    image = desired_form(q)
+    if image and not all((ROOT / "public" / c["image"].lstrip("/")).is_file() for c in image["choix"]):
+        image = None
+    return synchronize(q, image)
 
 
 def missing_concrete_candidates(stats: Counter, limit: int = 80) -> list[tuple[int, str]]:

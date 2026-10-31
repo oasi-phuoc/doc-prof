@@ -110,24 +110,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "son anniversaire"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/valise.webp"
-              }
-            ]
           }
         }
       },
@@ -189,20 +171,20 @@
         "enonce": "Qu’est-ce que le Moov’up ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/loisirs/discotheque.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/loisirs/discotheque.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/sports/bowling.webp"
+            "image": "/lib/images/tcf/co/bg/bowling.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/ville/cinema.webp"
+            "image": "/lib/images/tcf/co/bg/cinema.webp"
           }
         ],
         "formes": {
@@ -232,21 +214,21 @@
       },
       {
         "enonce": "À quelle heure allez-vous rentrer ?",
-        "type_reponse": "qcm_image",
+        "type_reponse": "qcm_texte",
         "points": 1.5,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+            "texte": "dix sept heures"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+            "texte": "vingt deux heures"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/heure-horloge/minuit.webp",
+            "texte": "minuit",
             "correct": true
           }
         ],
@@ -254,24 +236,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "minuit"
-          },
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "dix sept heures"
-              },
-              {
-                "id": "b",
-                "texte": "vingt deux heures"
-              },
-              {
-                "id": "c",
-                "texte": "minuit",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -373,7 +337,7 @@
             "reponse_modele": "Le pain"
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
@@ -381,8 +345,8 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/pain.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/pain.webp"
               },
               {
                 "id": "c",
@@ -418,20 +382,20 @@
             "reponse_modele": "Au supermarché"
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/marché.webp"
+                "image": "/lib/images/tcf/co/bg/marche.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/supermarche.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/supermarche.webp"
               }
             ]
           }
@@ -566,8 +530,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/nature/forêt.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/foret.webp"
               },
               {
                 "id": "b",
@@ -638,8 +602,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/famille-personnes/enfant.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/famille-personnes/enfant.webp"
               },
               {
                 "id": "b",
@@ -704,24 +668,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "s’inscrire sur Internet"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/place.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/actions/telephoner.webp"
-              }
-            ]
           }
         }
       }
@@ -873,20 +819,20 @@
         "enonce": "Où Basile est-il en vacances ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/nature/campagne.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/tcf/co/bg/campagne.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/nature/mer.webp"
+            "image": "/lib/images/tcf/co/bg/plage.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/nature/montagne.webp"
+            "image": "/lib/images/tcf/co/bg/montagne.webp"
           }
         ],
         "formes": {
@@ -940,7 +886,7 @@
             "reponse_modele": "Du basketball"
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
@@ -952,8 +898,8 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/sports/basketball.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/sports/basketball.webp"
               }
             ]
           }
@@ -963,7 +909,7 @@
         "enonce": "Que préfère Basile ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
@@ -971,8 +917,8 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/lapin.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/lapin.webp"
           },
           {
             "id": "c",
@@ -1340,8 +1286,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-aquatiques/raie.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/animaux-aquatiques/raie.webp"
               },
               {
                 "id": "b",
@@ -1576,24 +1522,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Il va à l’école"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/sports/sport.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/école.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/maison.webp"
-              }
-            ]
           }
         }
       },
@@ -1628,12 +1556,12 @@
         "enonce": "À quel sport le garçon est-il inscrit ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/sports/tennis.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/tcf/co/bg/court-tennis.webp"
           },
           {
             "id": "b",
@@ -1673,7 +1601,7 @@
         "enonce": "Qu’est-ce que l’expéditrice a envoyé avec la lettre ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
@@ -1681,8 +1609,8 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/argent-administration/rib.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/argent-administration/rib.webp"
           },
           {
             "id": "c",
@@ -1785,20 +1713,20 @@
             "reponse_modele": "À la cuisine"
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/restaurant.webp"
+                "image": "/lib/images/tcf/co/bg/restaurant.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/cuisine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/magasin.webp"
+                "image": "/lib/images/tcf/co/bg/magasin.webp"
               }
             ]
           }
@@ -1830,7 +1758,7 @@
             "reponse_modele": "Le sucre"
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
@@ -1838,8 +1766,8 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/sucre.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/sucre.webp"
               },
               {
                 "id": "c",
@@ -1873,24 +1801,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "De la crème"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/fruits/citron.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/sucre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/creme.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -1969,8 +1879,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/internet.webp"
               },
               {
                 "id": "b",
@@ -1978,7 +1888,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/interrupteur.webp"
+                "image": "/lib/images/vocabulaire/maison/interrupteur.webp"
               }
             ]
           }
@@ -2014,8 +1924,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/famille-personnes/famille.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/famille-personnes/famille.webp"
               },
               {
                 "id": "b",
@@ -2055,20 +1965,20 @@
             "reponse_modele": "À la maison"
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/bureau.webp"
+                "image": "/lib/images/tcf/co/bg/bureau.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/école.webp"
+                "image": "/lib/images/tcf/co/bg/ecole.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/maison/maison.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/maison.webp"
               }
             ]
           }
@@ -2194,20 +2104,20 @@
         "enonce": "Où est la maison des parents de Nicolas ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/nature/campagne.webp"
+            "image": "/lib/images/tcf/co/bg/campagne.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/nature/plage.webp"
+            "image": "/lib/images/tcf/co/bg/plage.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/nature/montagne.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/tcf/co/bg/montagne.webp"
           }
         ],
         "formes": {
@@ -2259,24 +2169,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "des vêtements d’hiver."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/serviette.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/vetements.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -2284,16 +2176,16 @@
         "enonce": "Quelle activité est-ce que Nicolas vous propose ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/sports/randonnée.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/sports/randonnée.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/transports/vélo.webp"
+            "image": "/lib/images/vocabulaire/transports/velo.webp"
           },
           {
             "id": "c",
@@ -2448,24 +2340,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "dans l’armoire."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/table.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/orientation/dans.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/télévision.webp"
-              }
-            ]
           }
         }
       },
@@ -2522,7 +2396,7 @@
             "reponse_modele": "Le chocolat."
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
@@ -2530,8 +2404,8 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/chocolat.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/desserts/chocolat.webp"
               },
               {
                 "id": "c",
@@ -2565,24 +2439,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "au réfrigérateur."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/table.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/electromenager/four.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/electromenager/refrigerateur.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -2715,16 +2571,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/marché.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/marche.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -2752,24 +2608,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/semaine.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -2939,24 +2777,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Sur une île."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/nature/île.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/transports/bateau.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/pays/france.webp"
-              }
-            ]
           }
         }
       },
@@ -2986,7 +2806,7 @@
             "reponse_modele": "de la natation."
           },
           "qcm_image": {
-            "melanger": true,
+            "melanger": false,
             "choix": [
               {
                 "id": "a",
@@ -2994,8 +2814,8 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/sports/natation.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/sports/natation.webp"
               },
               {
                 "id": "c",
@@ -3035,8 +2855,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/aliments/fromage-de-chevre.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/fromage-de-chevre.webp"
               },
               {
                 "id": "b",
@@ -3126,7 +2946,7 @@
         "enonce": "Dans cette recette, il y a…",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
@@ -3138,8 +2958,8 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/aliments/sucre.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/aliments/sucre.webp"
           }
         ],
         "formes": {
@@ -3218,24 +3038,6 @@
                 "texte": "Paul"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/meteo/froid.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/meteo/brouillard.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/meteo/soleil.webp"
-              }
-            ]
           }
         }
       },
@@ -3290,6 +3092,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "glace."
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/desserts/glace.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/desserts/chocolat.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/boissons/jus.webp"
+              }
+            ]
           }
         }
       }
@@ -3389,24 +3209,6 @@
                 "texte": "pompier"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/metiers/scientifique.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/infirmier.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/metiers/pompier.webp"
-              }
-            ]
           }
         }
       },
@@ -3440,8 +3242,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/autre/choix.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/autre/choix.webp"
               },
               {
                 "id": "b",
@@ -3477,24 +3279,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -3697,8 +3481,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/appareil-photo.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/appareil-photo.webp"
               },
               {
                 "id": "b",
@@ -3706,7 +3490,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/interrupteur.webp"
+                "image": "/lib/images/vocabulaire/maison/interrupteur.webp"
               }
             ]
           }
@@ -3842,12 +3626,12 @@
         "enonce": "Le petit Ordi est idéal pour les personnes comme…",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/voyage/voyageur.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/voyage/voyageur.webp"
           },
           {
             "id": "b",
@@ -3985,8 +3769,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/festival.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/loisirs/festival.webp"
               },
               {
                 "id": "b",
@@ -3994,7 +3778,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
+                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
               }
             ]
           }
@@ -4057,16 +3841,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -4094,24 +3878,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/fête.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -4147,16 +3913,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/marché.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/marche.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -4308,8 +4074,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/famille-personnes/enfant.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/famille-personnes/enfant.webp"
               },
               {
                 "id": "b",
@@ -4347,24 +4113,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "D’un parking."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/parking.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/maison/jardin.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/garage.webp"
-              }
-            ]
           }
         }
       },
@@ -4392,24 +4140,6 @@
                 "texte": "prix"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/chequier.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/argent-administration/prix.webp"
-              }
-            ]
           }
         }
       },
@@ -4417,7 +4147,7 @@
         "enonce": "Que veut louer Louisa ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
@@ -4425,12 +4155,12 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/hygiene/serviette.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/hygiene/serviette.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/transports/vélo.webp"
+            "image": "/lib/images/vocabulaire/transports/velo.webp"
           }
         ],
         "formes": {
@@ -4482,24 +4212,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Par courriel."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/sms.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/courriel.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp"
-              }
-            ]
           }
         }
       }
@@ -4551,12 +4263,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/formulaire.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/argent-administration/formulaire.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
+                "image": "/lib/images/vocabulaire/technologie/distributeur-de-billets.webp"
               },
               {
                 "id": "c",
@@ -4590,24 +4302,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Sur la carte."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/carte.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/photo.webp"
-              }
-            ]
           }
         }
       },
@@ -4713,8 +4407,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-sauvages/éléphant.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/animaux-sauvages/éléphant.webp"
               },
               {
                 "id": "b",
@@ -4785,8 +4479,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/animal.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/animal.webp"
               },
               {
                 "id": "b",
@@ -4994,24 +4688,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -5046,7 +4722,7 @@
         "enonce": "Il faut mettre quoi dans la boîte ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
@@ -5054,8 +4730,8 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/argent-administration/especes.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/argent-administration/especes.webp"
           },
           {
             "id": "c",
@@ -5336,24 +5012,6 @@
                 "texte": "bosnie"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/pays/chine.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/pays/sri-lanka.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/pays/bosnie.webp"
-              }
-            ]
           }
         }
       },
@@ -5524,24 +5182,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "En France."
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/pays/france.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/pays/belgique.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/pays/espagne.webp"
-              }
-            ]
           }
         }
       },
@@ -5596,24 +5236,6 @@
                 "texte": "pompier"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/metiers/serveur.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/infirmier.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/metiers/pompier.webp"
-              }
-            ]
           }
         }
       },
@@ -5648,12 +5270,12 @@
         "enonce": "Que pense Amanda de la rentrée scolaire ?",
         "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": false,
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/famille-personnes/contente.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/famille-personnes/contente.webp"
           },
           {
             "id": "b",
@@ -5737,8 +5359,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/electromenager/four.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/electromenager/four.webp"
               },
               {
                 "id": "b",
@@ -5776,6 +5398,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "le lait."
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/boissons/lait.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/aliments/œuf.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/aliments/beurre.webp"
+              }
+            ]
           }
         }
       },
@@ -5828,24 +5468,6 @@
               {
                 "id": "c",
                 "texte": "blizzard"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/meteo/soleil.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/meteo/brouillard.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/meteo/blizzard.webp"
               }
             ]
           }
@@ -5953,8 +5575,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/loisirs/marche-de-noel.webp"
               },
               {
                 "id": "b",
@@ -5962,7 +5584,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
+                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
               }
             ]
           }
@@ -7615,45 +7237,27 @@
       },
       {
         "enonce": "Quel jour la sortie est-elle prévue ?",
-        "type_reponse": "qcm_image",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp",
+            "texte": "dimanche",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/temps-calendrier/samedi.webp"
+            "texte": "samedi"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp"
+            "texte": "vendredi"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "dimanche"
-          },
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "dimanche",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "samedi"
-              },
-              {
-                "id": "c",
-                "texte": "vendredi"
-              }
-            ]
           }
         }
       },
@@ -7678,24 +7282,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/deux-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -7750,24 +7336,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Aujourd’hui"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/samedi.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/calendrier.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -7865,24 +7433,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/minuit.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -7909,24 +7459,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un gâteau au fromage"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/aliments/fromage.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/tarte.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/desserts/flan.webp"
-              }
-            ]
           }
         }
       },
@@ -8012,8 +7544,8 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/meteo/pluie.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/meteo/pluie.webp"
           },
           {
             "id": "c",
@@ -8068,24 +7600,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Sur un film à voir"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/cuisine/recette.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -8110,24 +7624,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -8162,16 +7658,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp"
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/piscine.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/bibliotheque.webp"
+                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
               }
             ]
           }
@@ -8219,24 +7715,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À une fête avec le petit frère"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/theatre.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/pizzéria.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/frère.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -8315,24 +7793,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -8359,24 +7819,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Votre pyjama et des DVD"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/vetements/pyjama.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/gâteau.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/boissons/boisson.webp"
-              }
-            ]
           }
         }
       }
@@ -8422,24 +7864,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Dans une école de danse"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/theatre.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/école.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp"
-              }
-            ]
           }
         }
       },
@@ -8542,24 +7966,6 @@
               {
                 "id": "c",
                 "texte": "soutien gorge"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/vetements/costume.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/cintre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/soutien-gorge.webp"
               }
             ]
           }
@@ -8685,24 +8091,6 @@
                 "texte": "boulangerie"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/parc.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
-              }
-            ]
           }
         }
       },
@@ -8774,24 +8162,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un album photo"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/album.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/exposition.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/photo.webp"
-              }
-            ]
           }
         }
       },
@@ -8816,24 +8186,6 @@
               {
                 "id": "c",
                 "texte": "tout droit"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/orientation/entre.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/orientation/sous.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/orientation/tout-droit.webp"
               }
             ]
           }
@@ -8888,24 +8240,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Le dimanche après-midi"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/après-midi.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/samedi.webp"
-              }
-            ]
           }
         }
       },
@@ -8916,8 +8250,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/technologie/courriel.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/technologie/courriel.webp"
           },
           {
             "id": "b",
@@ -9019,24 +8353,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/semaine.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -9240,24 +8556,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/midi.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -9329,24 +8627,6 @@
                 "texte": "vingt et une heures quinze"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
-              }
-            ]
           }
         }
       },
@@ -9373,24 +8653,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Votre costume"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/vetements/costume.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/gâteau.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/boissons/boisson.webp"
-              }
-            ]
           }
         }
       },
@@ -9565,24 +8827,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À l’office du tourisme ou sur Internet"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/transports/bus.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/gare.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -9852,8 +9096,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/orientation/flèche.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/orientation/flèche.webp"
               },
               {
                 "id": "b",
@@ -10012,24 +9256,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À la caisse, à une borne ou sur Internet"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/telephone-portable.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp"
-              }
-            ]
           }
         }
       }
@@ -10100,24 +9326,6 @@
                 "texte": "craie"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/tampon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/craie.webp"
-              }
-            ]
           }
         }
       },
@@ -10170,24 +9378,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Une semaine"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/nombres-mesures/deux.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/semaine.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/nombres-mesures/trois.webp"
-              }
-            ]
           }
         }
       },
@@ -10242,8 +9432,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/technologie/tablette.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/technologie/tablette.webp"
           },
           {
             "id": "b",
@@ -10380,24 +9570,6 @@
                 "texte": "craie"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/tampon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/craie.webp"
-              }
-            ]
           }
         }
       }
@@ -10426,8 +9598,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/aliments/beurre.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/aliments/beurre.webp"
           },
           {
             "id": "b",
@@ -10522,8 +9694,8 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/beurre.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/beurre.webp"
               },
               {
                 "id": "c",
@@ -10570,8 +9742,8 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/desserts/chocolat.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/desserts/chocolat.webp"
               }
             ]
           }
@@ -10738,24 +9910,6 @@
               {
                 "id": "c",
                 "texte": "boulangerie"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/quartier.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
               }
             ]
           }
@@ -10961,8 +10115,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/electromenager/micro-ondes.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/electromenager/micro-ondes.webp"
           },
           {
             "id": "b",
@@ -11018,45 +10172,27 @@
     "questions": [
       {
         "enonce": "À quelle saison la sortie a-t-elle lieu ?",
-        "type_reponse": "qcm_image",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/temps-calendrier/hiver.webp",
+            "texte": "hiver",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/temps-calendrier/printemps.webp"
+            "texte": "printemps"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/temps-calendrier/été.webp"
+            "texte": "été"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "hiver"
-          },
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "hiver",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "printemps"
-              },
-              {
-                "id": "c",
-                "texte": "été"
-              }
-            ]
           }
         }
       },
@@ -11135,24 +10271,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À 8 h 30"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
-              }
-            ]
           }
         }
       },
@@ -11291,24 +10409,6 @@
               {
                 "id": "c",
                 "texte": "presenter des collegues"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/actions/manger.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/co/scenes/ecole/preter-un-stylo.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/actions/presenter-des-collegues.webp"
               }
             ]
           }
@@ -11477,24 +10577,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Une pièce d’identité"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/dictionnaire.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp"
-              }
-            ]
           }
         }
       },
@@ -11547,24 +10629,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -11591,24 +10655,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Trois semaines après l’examen"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/nombres-mesures/trois.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/jour.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/semaine.webp"
-              }
-            ]
           }
         }
       }
@@ -11653,24 +10699,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Votre professeur principal"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/metiers/secrétaire.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/professeure.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/cantine.webp"
-              }
-            ]
           }
         }
       },
@@ -11681,8 +10709,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/fruits/corbeille-de-fruits.webp"
           },
           {
             "id": "b",
@@ -11836,8 +10864,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/desserts/gâteau.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/desserts/gâteau.webp"
               },
               {
                 "id": "b",
@@ -11944,24 +10972,6 @@
                 "texte": "Suisses"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/nombres-mesures/dix.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/nombres-mesures/treize.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/nombres-mesures/trois.webp"
-              }
-            ]
           }
         }
       },
@@ -11998,8 +11008,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/transports/vélo.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/transports/velo.webp"
           },
           {
             "id": "b",
@@ -12164,12 +11174,12 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/musique/musique.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/musique/musique.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/patisserie.webp"
+                "image": "/lib/images/tcf/co/bg/patisserie.webp"
               }
             ]
           }
@@ -12212,8 +11222,8 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/internet.webp"
               }
             ]
           }
@@ -12312,24 +11322,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Sur Internet"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/bibliotheque.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/orientation/dans.webp"
-              }
-            ]
           }
         }
       },
@@ -12484,16 +11476,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/ville.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/ville.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/nature/campagne.webp"
+                "image": "/lib/images/tcf/co/bg/campagne.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/nature/montagne.webp"
+                "image": "/lib/images/tcf/co/bg/montagne.webp"
               }
             ]
           }
@@ -12696,24 +11688,6 @@
                 "texte": "homme"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/famille-personnes/femme.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/collègues.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/homme.webp"
-              }
-            ]
           }
         }
       },
@@ -12888,24 +11862,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Par téléphone ou sur Internet"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/place.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -12929,45 +11885,27 @@
     "questions": [
       {
         "enonce": "De quelle nationalité est Stromae ?",
-        "type_reponse": "qcm_image",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/pays/belgique.webp",
+            "texte": "belgique",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/pays/suisse.webp"
+            "texte": "suisse"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/pays/etats-unis.webp"
+            "texte": "etats unis"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "belgique"
-          },
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "belgique",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "suisse"
-              },
-              {
-                "id": "c",
-                "texte": "etats unis"
-              }
-            ]
           }
         }
       },
@@ -13018,24 +11956,6 @@
               {
                 "id": "c",
                 "texte": "banjo"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/musique/concert.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/musique/orchestre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/musique/banjo.webp"
               }
             ]
           }
@@ -13244,12 +12164,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/billet.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/argent-administration/billet.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/distributeur-de-billets.webp"
+                "image": "/lib/images/vocabulaire/technologie/distributeur-de-billets.webp"
               },
               {
                 "id": "c",
@@ -13378,24 +12298,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un chapeau ou une casquette"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/vetements/gilet.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/casquette.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/accessoires/lunettes.webp"
-              }
-            ]
           }
         }
       },
@@ -13466,24 +12368,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Depuis un mois"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/mois.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/calendrier.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/nombres-mesures/deux.webp"
-              }
-            ]
           }
         }
       },
@@ -13562,24 +12446,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "D’un casque de réalité virtuelle"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/nature/dune.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/tablette.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/accessoires/casque.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -13612,16 +12478,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/école.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/ecole.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -13652,8 +12518,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/animaux-sauvages/singe.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/animaux-sauvages/singe.webp"
           },
           {
             "id": "b",
@@ -13736,24 +12602,6 @@
               {
                 "id": "c",
                 "texte": "boulangerie"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/parking.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
               }
             ]
           }
@@ -13904,24 +12752,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -14054,16 +12884,16 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/nature/forêt.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/tcf/co/bg/foret.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/nature/montagne.webp"
+            "image": "/lib/images/tcf/co/bg/montagne.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/nature/plage.webp"
+            "image": "/lib/images/tcf/co/bg/plage.webp"
           }
         ],
         "formes": {
@@ -14146,8 +12976,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/animal.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/animal.webp"
               },
               {
                 "id": "b",
@@ -14312,16 +13142,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/magasin.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/magasin.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -14368,24 +13198,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Le mercredi"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/mercredi.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/vendredi.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/lundi.webp"
-              }
-            ]
           }
         }
       },
@@ -14436,24 +13248,6 @@
               {
                 "id": "c",
                 "texte": "craie"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/tampon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/craie.webp"
               }
             ]
           }
@@ -14508,24 +13302,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Utiliser un ordinateur"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/ordinateur.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/sports/sport.webp"
-              }
-            ]
           }
         }
       }
@@ -14789,24 +13565,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -14843,16 +13601,16 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/ville/cinema.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/tcf/co/bg/cinema.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/maison/maison.webp"
+            "image": "/lib/images/tcf/co/bg/maison.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/ville/gare.webp"
+            "image": "/lib/images/tcf/co/bg/gare.webp"
           }
         ],
         "formes": {
@@ -14906,8 +13664,8 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp",
-            "correct": true
+            "correct": true,
+            "image": "/lib/images/vocabulaire/loisirs/jeu-de-société.webp"
           },
           {
             "id": "b",
@@ -14980,8 +13738,8 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/transports/bus.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/transports/bus.webp"
               }
             ]
           }
@@ -15130,8 +13888,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/corps/langue.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/corps/langue.webp"
               },
               {
                 "id": "b",
@@ -15212,24 +13970,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Ce matin"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/semaine.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/matin.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -15254,24 +13994,6 @@
               {
                 "id": "c",
                 "texte": "vingt et une heures quinze"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
               }
             ]
           }
@@ -15850,24 +14572,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Judo : cours d’essai"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/cheval.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/sports/judo.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -15894,24 +14598,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À cheval"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/cheval.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/sports/judo.webp"
-              }
-            ]
           }
         }
       },
@@ -15938,24 +14624,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "L’art de la danse"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/cheval.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/sports/judo.webp"
-              }
-            ]
           }
         }
       }
@@ -16384,24 +15052,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Atelier de théâtre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/musique/musique.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/theatre.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp"
-              }
-            ]
           }
         }
       },
@@ -16428,24 +15078,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Cours de cuisine"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/musique/musique.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/theatre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -16472,24 +15104,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Atelier de musique"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/musique/musique.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/theatre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp"
-              }
-            ]
           }
         }
       }
@@ -16534,24 +15148,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Club de lecture"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/lecture.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
-              }
-            ]
           }
         }
       },
@@ -16578,24 +15174,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Cours de danse"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/lecture.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -16806,24 +15384,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "La pizzeria Bella Vita"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/pizzéria.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/sandwich.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/menu.webp"
-              }
-            ]
           }
         }
       },
@@ -16850,24 +15410,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Formule sandwich"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/pizzéria.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/sandwich.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/menu.webp"
-              }
-            ]
           }
         }
       }
@@ -17481,24 +16023,6 @@
                 "texte": "boulangerie"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/fontaine.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
-              }
-            ]
           }
         }
       },
@@ -17577,24 +16101,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un appareil photo"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/desserts/gâteau.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/appareil-photo.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/objets/bouteille.webp"
-              }
-            ]
           }
         }
       },
@@ -17627,8 +16133,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp"
               },
               {
                 "id": "b",
@@ -17742,16 +16248,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/banque.webp"
+                "image": "/lib/images/tcf/co/bg/banque.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/université.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/universite.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/école.webp"
+                "image": "/lib/images/tcf/co/bg/ecole.webp"
               }
             ]
           }
@@ -17790,8 +16296,8 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/transports/train.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/transports/train.webp"
               },
               {
                 "id": "c",
@@ -17824,24 +16330,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Dans un café"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/famille-personnes/parents.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/café.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/parc.webp"
-              }
-            ]
           }
         }
       }
@@ -17939,24 +16427,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "L’imprimante"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/imprimante.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/clé-usb.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/nombres-mesures/deux.webp"
-              }
-            ]
           }
         }
       },
@@ -18132,24 +16602,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Par téléphone"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/telephone-portable.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/courriel.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/magasin.webp"
-              }
-            ]
           }
         }
       },
@@ -18174,24 +16626,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/mois.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -18237,24 +16671,6 @@
               {
                 "id": "c",
                 "texte": "salon"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/chambre.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/maison/interrupteur.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/salon.webp"
               }
             ]
           }
@@ -18341,16 +16757,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/pharmacie.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/pharmacie.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/supermarche.webp"
+                "image": "/lib/images/tcf/co/bg/supermarche.webp"
               }
             ]
           }
@@ -18456,12 +16872,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/guichet.webp"
+                "image": "/lib/images/tcf/co/bg/gare.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/internet.webp"
               },
               {
                 "id": "c",
@@ -18552,8 +16968,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/sports/olympique.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/sports/olympique.webp"
               },
               {
                 "id": "b",
@@ -18635,24 +17051,6 @@
                 "texte": "vingt et une heures quinze"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
-              }
-            ]
           }
         }
       },
@@ -18711,8 +17109,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/boissons/boisson.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/boissons/boisson.webp"
               },
               {
                 "id": "b",
@@ -18747,24 +17145,6 @@
               {
                 "id": "c",
                 "texte": "vingt et une heures quinze"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
               }
             ]
           }
@@ -18836,24 +17216,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -19232,24 +17594,6 @@
                 "texte": "anniversaire"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/mois.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
-              }
-            ]
           }
         }
       }
@@ -19373,24 +17717,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Le samedi 10 octobre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/samedi.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/dimanche.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/mardi.webp"
-              }
-            ]
           }
         }
       },
@@ -19540,24 +17866,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -19584,24 +17892,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À l’accueil du centre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/mairie.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/bibliotheque.webp"
-              }
-            ]
           }
         }
       }
@@ -19671,24 +17961,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/mois.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -19942,8 +18214,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/boissons/boisson.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/boissons/boisson.webp"
               },
               {
                 "id": "b",
@@ -20030,8 +18302,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/maison/armoire.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/maison/armoire.webp"
               },
               {
                 "id": "b",
@@ -20039,7 +18311,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/maison/salon.webp"
+                "image": "/lib/images/tcf/co/bg/salon.webp"
               }
             ]
           }
@@ -20087,24 +18359,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "À midi"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/matin.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/midi.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/soir.webp"
-              }
-            ]
           }
         }
       },
@@ -20131,24 +18385,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un mariage"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/depart.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/famille-personnes/mariés.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -20219,6 +18455,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Le fromage"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/aliments/œuf.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/aliments/jambon.webp"
+              },
+              {
+                "id": "c",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/fromage.webp"
+              }
+            ]
           }
         }
       }
@@ -20270,8 +18524,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp"
               },
               {
                 "id": "b",
@@ -20384,8 +18638,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/desserts/glace.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/desserts/glace.webp"
               },
               {
                 "id": "b",
@@ -20492,24 +18746,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Prendre une douche"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/actions/manger.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/douche.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/actions/courir.webp"
-              }
-            ]
           }
         }
       },
@@ -20542,12 +18778,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/secretariat.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/scenes/ecole/preter-un-stylo.webp"
+                "image": "/lib/images/vocabulaire/actions/preter-un-stylo.webp"
               },
               {
                 "id": "c",
@@ -20605,8 +18841,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/reception.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/voyage/reception.webp"
               },
               {
                 "id": "b",
@@ -20643,24 +18879,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Libérer la chambre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/chambre.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/voyage/reservation.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp"
-              }
-            ]
           }
         }
       },
@@ -20731,24 +18949,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Dans le mini-frigo de la chambre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/reception.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ville/restaurant.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/chambre.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -20773,24 +18973,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -20863,24 +19045,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Faire du bruit la nuit"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/restaurant.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/actions/telephoner.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/nuit.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -20932,16 +19096,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/theatre.webp"
+                "image": "/lib/images/tcf/co/bg/theatre.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/musee.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/musee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp"
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
               }
             ]
           }
@@ -21014,24 +19178,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Manger toute son assiette"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/aliments/plateau-repas.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/yaourt.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/cuisine/assiette.webp",
-                "correct": true
-              }
-            ]
           }
         }
       },
@@ -21056,24 +19202,6 @@
               {
                 "id": "c",
                 "texte": "Paul"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/presenter/anglais.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/presenter/danois.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/presenter/afghan.webp"
               }
             ]
           }
@@ -21118,24 +19246,6 @@
               {
                 "id": "c",
                 "texte": "anniversaire"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/lundi.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
               }
             ]
           }
@@ -21241,16 +19351,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/musee.webp"
+                "image": "/lib/images/tcf/co/bg/musee.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/restaurant.webp"
+                "image": "/lib/images/tcf/co/bg/restaurant.webp"
               }
             ]
           }
@@ -21323,6 +19433,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Le sucre"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/boissons/lait.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/aliments/œuf.webp"
+              },
+              {
+                "id": "c",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/sucre.webp"
+              }
+            ]
           }
         }
       }
@@ -21393,24 +19521,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Pour profiter de réductions sur les boissons"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/orientation/dans.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/voyage/carte.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/boissons/boisson.webp",
-                "correct": true
-              }
-            ]
           }
         }
       }
@@ -21487,12 +19597,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/pique-nique.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/pique-nique.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/restaurant.webp"
+                "image": "/lib/images/tcf/co/bg/restaurant.webp"
               },
               {
                 "id": "c",
@@ -21525,24 +19635,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Votre pique-nique et de l’eau"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/pique-nique.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/accessoires/parapluie.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/telephone-portable.webp"
-              }
-            ]
           }
         }
       },
@@ -21567,24 +19659,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -21689,8 +19763,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/electricite.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/electricite.webp"
               },
               {
                 "id": "b",
@@ -21698,7 +19772,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/interrupteur.webp"
+                "image": "/lib/images/vocabulaire/maison/interrupteur.webp"
               }
             ]
           }
@@ -21849,24 +19923,6 @@
                 "texte": "noix de coco"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/fruits/citron.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/fruits/oranges.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/fruits/noix-de-coco.webp"
-              }
-            ]
           }
         }
       },
@@ -21893,24 +19949,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Du poisson et des fruits secs"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/aliments/poisson.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/bonbon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/frites.webp"
-              }
-            ]
           }
         }
       },
@@ -21937,24 +19975,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Vous asseoir et respirer en gonflant le ventre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/actions/courir.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/corps/ventre.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/actions/dormir.webp"
-              }
-            ]
           }
         }
       },
@@ -22025,24 +20045,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Des légumes frais et des noix"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/fruits/noix.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/viande.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/desserts/gâteau.webp"
-              }
-            ]
           }
         }
       },
@@ -22067,24 +20069,6 @@
               {
                 "id": "c",
                 "texte": "marron"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/couleurs/vert.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/turquoise.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/couleurs/marron.webp"
               }
             ]
           }
@@ -22209,24 +20193,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       },
@@ -22279,24 +20245,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Vous lever et lire un livre"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/orientation/dans.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/cinema.webp"
-              }
-            ]
           }
         }
       },
@@ -22323,24 +20271,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Lui raconter une histoire"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/histoire.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/jeu-video.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/actions/courir.webp"
-              }
-            ]
           }
         }
       }
@@ -22391,8 +20321,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/technologie/internet.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/internet.webp"
               },
               {
                 "id": "b",
@@ -22400,7 +20330,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/interrupteur.webp"
+                "image": "/lib/images/vocabulaire/maison/interrupteur.webp"
               }
             ]
           }
@@ -22551,24 +20481,6 @@
                 "texte": "trois"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/nombres-mesures/dix.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/nombres-mesures/treize.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/nombres-mesures/trois.webp"
-              }
-            ]
           }
         }
       },
@@ -22601,16 +20513,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/université.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/universite.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -22671,12 +20583,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/tcf/co/scenes/travail/formation.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/actions/formation.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/scenes/ecole/preter-un-stylo.webp"
+                "image": "/lib/images/vocabulaire/actions/preter-un-stylo.webp"
               },
               {
                 "id": "c",
@@ -22759,12 +20671,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ecole-bureau/élève.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/ecole-bureau/élève.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/tampon.webp"
+                "image": "/lib/images/vocabulaire/argent-administration/tampon.webp"
               },
               {
                 "id": "c",
@@ -22823,24 +20735,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Le petit-déjeuner"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/aliments/plateau-repas.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/transports/train.webp"
-              }
-            ]
           }
         }
       },
@@ -22867,6 +20761,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "La salle de bains"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/transports/voiture.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/maison/salle-de-bain.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/bureau.webp"
+              }
+            ]
           }
         }
       },
@@ -22943,8 +20855,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/loisirs/spectacle.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/loisirs/spectacle.webp"
               },
               {
                 "id": "b",
@@ -22952,7 +20864,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
+                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
               }
             ]
           }
@@ -23013,8 +20925,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/musique/musique.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/musique/musique.webp"
               },
               {
                 "id": "b",
@@ -23049,24 +20961,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -23145,16 +21039,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/ville.webp"
+                "image": "/lib/images/tcf/co/bg/ville.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/nature/montagne.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/montagne.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/nature/campagne.webp"
+                "image": "/lib/images/tcf/co/bg/campagne.webp"
               }
             ]
           }
@@ -23183,24 +21077,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Ils prennent le petit train"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/nuit.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/transports/train.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/musee.webp"
-              }
-            ]
           }
         }
       },
@@ -23227,24 +21103,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Un plat typique"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/actions/visite-guidee.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/cuisine/plat.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/spectacle.webp"
-              }
-            ]
           }
         }
       },
@@ -23295,24 +21153,6 @@
               {
                 "id": "c",
                 "texte": "vingt et une heures quinze"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
               }
             ]
           }
@@ -23437,24 +21277,6 @@
                 "texte": "anniversaire"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/temps-calendrier/calendrier.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/temps-calendrier/année.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/temps-calendrier/anniversaire.webp"
-              }
-            ]
           }
         }
       },
@@ -23531,8 +21353,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/musique/guitare.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/musique/guitare.webp"
               },
               {
                 "id": "b",
@@ -23601,8 +21423,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/couleurs/vert.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/vert.webp"
               },
               {
                 "id": "b",
@@ -23645,8 +21467,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/musique/piano.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/musique/piano.webp"
               },
               {
                 "id": "b",
@@ -23785,8 +21607,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/maison/cuisine.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/cuisine.webp"
               },
               {
                 "id": "b",
@@ -23794,7 +21616,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/maison/salon.webp"
+                "image": "/lib/images/tcf/co/bg/salon.webp"
               }
             ]
           }
@@ -23925,8 +21747,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/autre/part.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/autre/part.webp"
               },
               {
                 "id": "b",
@@ -24015,24 +21837,6 @@
                 "texte": "six heures vingt"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/midi.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
-              }
-            ]
           }
         }
       }
@@ -24083,16 +21887,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/ville/marché.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/marche.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/ville/avenue.webp"
+                "image": "/lib/images/tcf/co/bg/avenue.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/ville/boulangerie.webp"
+                "image": "/lib/images/tcf/co/bg/boulangerie.webp"
               }
             ]
           }
@@ -24147,24 +21951,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Dans une maison d’hôtes près du lac"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/maison/maison.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/camping.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/hôtel.webp"
-              }
-            ]
           }
         }
       },
@@ -24191,24 +21977,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Contacter Mme Bandeau"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/argent-administration/boîte-aux-lettres.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/accessoires/bandeau.webp",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ville/place.webp"
-              }
-            ]
           }
         }
       },
@@ -24241,8 +22009,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp"
               },
               {
                 "id": "b",
@@ -24303,12 +22071,12 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/metiers/actrice.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/metiers/actrice.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/professeure.webp"
+                "image": "/lib/images/vocabulaire/metiers/enseignant.webp"
               },
               {
                 "id": "c",
@@ -24373,8 +22141,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/musique/guitare.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/musique/guitare.webp"
               },
               {
                 "id": "b",
@@ -24487,8 +22255,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/musique/concert.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/concert.webp"
               },
               {
                 "id": "b",
@@ -24523,24 +22291,6 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -24595,24 +22345,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Ses voyages"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/voyage.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/famille.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/bureau.webp"
-              }
-            ]
           }
         }
       },
@@ -24735,24 +22467,6 @@
                 "texte": "yéti"
               }
             ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/autre/part.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/autre/cote.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/autre/yéti.webp"
-              }
-            ]
           }
         }
       },
@@ -24811,8 +22525,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/couleurs/noir.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
               },
               {
                 "id": "b",
@@ -24867,24 +22581,6 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Il explique comment ça marche"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/vocabulaire/ville/marché.webp",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/loisirs/spectacle.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/plateau-repas.webp"
-              }
-            ]
           }
         }
       },
@@ -24943,8 +22639,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/sports/sport.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/sports/sport.webp"
               },
               {
                 "id": "b",
@@ -25013,8 +22709,8 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/vocabulaire/voyage/reservation.webp",
-                "correct": true
+                "correct": true,
+                "image": "/lib/images/vocabulaire/voyage/reservation.webp"
               },
               {
                 "id": "b",

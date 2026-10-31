@@ -63,6 +63,7 @@ function linesForWords(nbMots: TcfNbMots, fallback: number): number {
 function buildFormVariant(
   q: TcfQuestion,
   rng: Rng,
+  choiceOrder?: readonly string[],
 ): NonNullable<TcfFormSelect['variants'][TcfTypeReponse]> {
   if (q.type_reponse === 'lignes') {
     return {
@@ -74,7 +75,10 @@ function buildFormVariant(
     }
   }
   const source: ReadonlyArray<TcfChoixTexte | TcfChoixImage> = q.choix
-  const ordered = melangerChoix(source, rng, q.melanger !== false)
+  const byId = new Map(source.map((choice) => [choice.id, choice]))
+  const ordered = choiceOrder?.length === source.length && choiceOrder.every((id) => byId.has(id))
+    ? choiceOrder.map((id) => byId.get(id)!)
+    : melangerChoix(source, rng, q.melanger !== false)
   const choix: TcfChoixRendu[] = ordered.map((c, i) => ({
     lettre: TCF_LETTRES[i] ?? String(i + 1),
     texte: 'texte' in c ? c.texte : undefined,
@@ -87,6 +91,19 @@ function buildFormVariant(
     choix,
     answer: choix.find((c) => c.correct)?.lettre ?? '',
   }
+}
+
+/** Un seul mélange par question : une réponse garde sa lettre entre Texte et Image. */
+function questionFormVariants(q: TcfQuestion, filled: TcfTypeReponse[], rng: Rng) {
+  const canonical = resolveQuestionForm(q, filled.includes('qcm_texte') ? 'qcm_texte' : q.type_reponse)
+  const choiceOrder = canonical.type_reponse === 'lignes'
+    ? undefined
+    : melangerChoix<TcfChoixTexte | TcfChoixImage>(canonical.choix, rng, canonical.melanger !== false).map((choice) => choice.id)
+  const variants: TcfFormSelect['variants'] = {}
+  for (const form of filled) {
+    variants[form] = buildFormVariant(resolveQuestionForm(q, form), rng, choiceOrder)
+  }
+  return variants
 }
 
 function defaultQuestionForm(
@@ -119,11 +136,7 @@ function questionItem(
       : defaultQuestionForm(q, filled, competence, exerciseId)
   const resolved = resolveQuestionForm(q, active)
   const audioLabel = resolved.audio != null ? `Audio ${resolved.audio}` : undefined
-  const variants: TcfFormSelect['variants'] = {}
-  for (const form of filled) {
-    const variantQ = resolveQuestionForm(q, form)
-    variants[form] = buildFormVariant(variantQ, rng)
-  }
+  const variants = questionFormVariants(q, filled, rng)
   const formSelect: TcfFormSelect | undefined =
     filled.length > 0
       ? { active: resolved.type_reponse, filled, variants }
@@ -187,11 +200,7 @@ function cadreQuestionInner(
       ? activeOverride
       : defaultQuestionForm(q, filled, competence, exerciseId)
   const resolved = resolveQuestionForm(q, active)
-  const variants: TcfFormSelect['variants'] = {}
-  for (const form of filled) {
-    const variantQ = resolveQuestionForm(q, form)
-    variants[form] = buildFormVariant(variantQ, rng)
-  }
+  const variants = questionFormVariants(q, filled, rng)
   const formSelect: TcfFormSelect | undefined =
     filled.length > 0
       ? { active: resolved.type_reponse, filled, variants }
