@@ -3,16 +3,21 @@ import {
   tcfCourtAudioEntries,
   tcfLongAudioEntries,
   tcfMoyenAudioEntries,
+  tcfObjetAudioEntries,
   tcfScenarioAudioEntries,
   type TcfAudioEntry,
 } from './audio-bank'
 import { isTcfCoAssociation } from './association-audio'
+import {
+  tcfCoConsigneForType,
+} from './consignes'
 import { filledForms, switchQuestionForm } from './formes'
 import { tcfBank, tcfBankAllLevels } from './loader'
 import { emptyTcfExercise, tcfExerciseId } from './templates'
 import type {
   TcfCoAssociation,
   TcfCoComplet,
+  TcfCoImages,
   TcfCoSixCourts,
   TcfCoTroisMoyens,
   TcfCompetence,
@@ -221,11 +226,7 @@ export function drawAssociationCompose(
     theme: 'Conversations entre locuteurs',
     scenario: 'vie-quotidienne',
     scene: 'Situations illustrées',
-    consigne:
-      `Vous allez entendre quatre petits dialogues correspondant à quatre situations différentes. ` +
-      `Il y a 15 secondes de pause après chaque dialogue. Notez, sous chaque image, le numéro du dialogue qui correspond. ` +
-      `Puis vous allez entendre à nouveau les dialogues. Vous pouvez compléter vos réponses. Regardez les images. ` +
-      `Attention, il y a six images (A, B, C, D, E et F) mais seulement quatre dialogues.`,
+    consigne: tcfCoConsigneForType('association_images') ?? '',
     points: 6,
     support: {
       nb_dialogues: 4,
@@ -265,9 +266,7 @@ export function drawSixCourtsCompose(
     theme: 'Mini-audios',
     scenario: 'vie-quotidienne',
     scene: 'Six extraits courts',
-    consigne:
-      'Vous allez écouter six documents différents. Il y a 2 écoutes. ' +
-      'Avant chaque écoute, vous entendez le son suivant. Lisez les questions. Écoutez le document puis répondez.',
+    consigne: tcfCoConsigneForType('six_courts') ?? '',
     points: 6,
     support: { audios: picked.map((e) => e.audio) },
     questions,
@@ -306,9 +305,7 @@ export function drawTroisMoyensCompose(
     theme: 'Audios moyens',
     scenario: 'vie-quotidienne',
     scene: 'Trois extraits moyens',
-    consigne:
-      'Vous allez écouter trois documents différents. Il y a 2 écoutes. ' +
-      'Avant chaque écoute, vous entendez le son suivant. Lisez les questions. Écoutez le document puis répondez.',
+    consigne: tcfCoConsigneForType('trois_moyens') ?? '',
     points: 6,
     support: { audios: picked.map((e) => e.audio) },
     questions,
@@ -347,13 +344,38 @@ export function drawUnLongCompose(
     theme: entry.exercise.theme ?? 'Document audio',
     scenario: entry.exercise.scenario ?? 'vie-quotidienne',
     scene: entry.label,
-    consigne:
-      'Vous allez écouter un seul document. Il y a 2 écoutes. ' +
-      'Avant chaque écoute, vous entendez le son suivant. Lisez les questions. Écoutez le document, puis répondez.',
+    consigne: tcfCoConsigneForType('complet') ?? '',
     points: n,
     support: { audio: entry.audio, transcription },
     questions: chosen,
     consigne_supplementaire: null,
+  }
+}
+
+/**
+ * Compose « objets » : 1 piste taguée `objet` + 5 images Oui / Non
+ * (images reprises de l’exercice source).
+ */
+export function drawObjetsCompose(
+  niveau: TcfNiveau,
+  rng: Rng = createRng(randomSeed()),
+  opts: TcfComposeOpts = {},
+): TcfCoImages | null {
+  const all = tcfObjetAudioEntries(tcfBankAllLevels('CO'))
+  const pool = enoughEntries(niveau, all, 1)
+  const picked = pickAudioSlots(pool, 1, rng, opts.audioSlots, all)
+  if (!picked?.[0]) return null
+  const entry = picked[0]
+  const source = entry.exercise
+  if (source.type_exercice !== 'images_a_reconnaitre' || source.images.length !== 5) {
+    return null
+  }
+  const clone = withNiveau(source, niveau) as TcfCoImages
+  return {
+    ...clone,
+    consigne: tcfCoConsigneForType('images_a_reconnaitre') ?? '',
+    support: { audio: entry.audio },
+    images: structuredClone(source.images),
   }
 }
 
@@ -386,11 +408,7 @@ export function drawTcfSeries(
   }
 
   if (competence === 'CO' && typeExercice === 'images_a_reconnaitre') {
-    const ready = tcfBankAllLevels('CO').filter(
-      (ex) => ex.type_exercice === 'images_a_reconnaitre' && ex.images.length === 5,
-    )
-    const source = shuffle(rng, ready)[0]
-    return source ? withNiveau(source, niveau) : blank()
+    return drawObjetsCompose(niveau, rng) ?? blank()
   }
 
   if (competence === 'CO' && typeExercice === 'association_images') {

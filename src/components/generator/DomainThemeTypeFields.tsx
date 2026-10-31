@@ -405,6 +405,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   typeId={activeBlock.exerciseType}
                   slots={activeBlock.tcfAudioSlots}
                   questionCount={activeBlock.tcfQuestionCount}
+                  pickMode={activeBlock.tcfAudioPickMode ?? 'aleatoire'}
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}

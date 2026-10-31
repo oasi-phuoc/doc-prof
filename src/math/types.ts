@@ -1011,14 +1011,19 @@ export type ExerciseBlock = {
   /** TCF : scénario qui limite la banque (id de `TCF_SCENARIOS`). */
   tcfScenario?: string
   /**
-   * TCF CO ex. 1/2/3 : chemins audio épinglés (6 / 3 / 1 slots).
-   * Slot vide (`undefined` / `''`) → tirage au hasard dans le pool tagué.
+   * TCF CO : chemins audio épinglés (slots).
+   * Uniquement en mode `libre` ; slot vide → tirage dans le pool tagué.
    */
   tcfAudioSlots?: Array<string | undefined>
   /** TCF CO ex. 3 : nombre de questions tirées du pool (défaut 5). */
   tcfQuestionCount?: number
-  /** TCF CO ex. 1/2/3 : points par question (index = n° de question 0-based). */
+  /** TCF CO : points par question / image (index 0-based). */
   tcfQuestionPoints?: number[]
+  /**
+   * TCF CO : tirage des audios — `aleatoire` (défaut, selon le tag de l’exercice)
+   * ou `libre` (choix manuel parmi les audios du même tag).
+   */
+  tcfAudioPickMode?: 'aleatoire' | 'libre'
   /**
    * Mode libre global (tous domaines) : items édités à la main.
    * S’ils sont présents, ils remplacent le tirage pour l’affichage / l’impression.

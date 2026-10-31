@@ -1,13 +1,13 @@
 /**
- * Paramètres CO ex. 1 / 2 / 3 / 4 : N listes déroulantes d’audios tagués
- * (court × 6, moyen × 3, long × 1, scenario × 4), regroupés par scénario.
- * Une piste peut cumuler plusieurs tags (ex. scenario + court).
+ * Paramètres CO ex. 1–5 : tirage Aléatoire (tag de l’exercice) ou Libre
+ * (listes déroulantes filtrées sur le même tag).
  */
 import { useMemo } from 'react'
 import {
   tcfCourtAudioEntries,
   tcfLongAudioEntries,
   tcfMoyenAudioEntries,
+  tcfObjetAudioEntries,
   tcfScenarioAudioEntries,
   type TcfAudioEntry,
 } from './audio-bank'
@@ -17,15 +17,34 @@ import { tcfGroupId, tcfScene } from './sources'
 import { TCF_LONG_DEFAULT_QUESTIONS } from './draw-series'
 import type { TcfNiveau } from './types'
 
+export type TcfCoAudioKind = 'court' | 'moyen' | 'long' | 'scenario' | 'objet'
+
 export type TcfCoAudioSlotCount = 6 | 3 | 1 | 4
 
-export function tcfCoAudioSlotCount(typeId: string): TcfCoAudioSlotCount | null {
+/** Tag / pool audio lié à l’emplacement CO (ou type catalogue legacy). */
+export function tcfCoAudioKind(typeId: string): TcfCoAudioKind | null {
   const slot = tcfSlotByTypeId[typeId]
-  if (slot?.competence !== 'CO' || slot.numero == null) return null
-  if (slot.numero === 1) return 6
-  if (slot.numero === 2) return 3
-  if (slot.numero === 3) return 1
-  if (slot.numero === 4) return 4
+  if (slot?.competence === 'CO' && slot.numero != null) {
+    if (slot.numero === 1) return 'court'
+    if (slot.numero === 2) return 'moyen'
+    if (slot.numero === 3) return 'long'
+    if (slot.numero === 4) return 'scenario'
+    if (slot.numero === 5) return 'objet'
+  }
+  if (typeId === 'tcf-co-six-courts') return 'court'
+  if (typeId === 'tcf-co-trois-moyens') return 'moyen'
+  if (typeId === 'tcf-co-complet') return 'long'
+  if (typeId === 'tcf-co-association') return 'scenario'
+  if (typeId === 'tcf-co-images') return 'objet'
+  return null
+}
+
+export function tcfCoAudioSlotCount(typeId: string): TcfCoAudioSlotCount | null {
+  const kind = tcfCoAudioKind(typeId)
+  if (kind === 'court') return 6
+  if (kind === 'moyen') return 3
+  if (kind === 'long' || kind === 'objet') return 1
+  if (kind === 'scenario') return 4
   return null
 }
 
@@ -34,29 +53,33 @@ export function tcfCoComposeQuestionCount(
   typeId: string,
   questionCount: number | undefined,
 ): number {
-  const n = tcfCoAudioSlotCount(typeId)
-  if (n === 6) return 6
-  if (n === 3) return 6
-  if (n === 1) return Math.max(1, Math.min(20, questionCount ?? TCF_LONG_DEFAULT_QUESTIONS))
-  if (n === 4) return 6 // 4 audios + 2 leurres → 6 images
+  const kind = tcfCoAudioKind(typeId)
+  if (kind === 'court') return 6
+  if (kind === 'moyen') return 6
+  if (kind === 'long') return Math.max(1, Math.min(20, questionCount ?? TCF_LONG_DEFAULT_QUESTIONS))
+  if (kind === 'scenario') return 6 // 4 audios + 2 leurres → 6 images
+  if (kind === 'objet') return 5
   return 0
 }
 
-/** Libellé d’une ligne de points (question vs image d’association). */
+/** Libellé d’une ligne de points (question vs image). */
 export function tcfCoPointsRowLabel(typeId: string, index: number): string {
-  return tcfCoAudioSlotCount(typeId) === 4 ? `Image ${index + 1}` : `Question ${index + 1}`
+  const kind = tcfCoAudioKind(typeId)
+  if (kind === 'scenario' || kind === 'objet') return `Image ${index + 1}`
+  return `Question ${index + 1}`
 }
 
-/** CO ex. 1–4 : points identiques par défaut, différenciables (toggle Identiques / Différents). */
+/** CO ex. 1–5 : points identiques par défaut, différenciables (toggle Identiques / Différents). */
 export function tcfCoCanDifferentiatePoints(typeId: string): boolean {
-  return tcfCoAudioSlotCount(typeId) != null
+  return tcfCoAudioKind(typeId) != null
 }
 
-function poolForSlots(slotCount: TcfCoAudioSlotCount): TcfAudioEntry[] {
+function poolForKind(kind: TcfCoAudioKind): TcfAudioEntry[] {
   const all = tcfBankAllLevels('CO')
-  if (slotCount === 6) return tcfCourtAudioEntries(all)
-  if (slotCount === 3) return tcfMoyenAudioEntries(all)
-  if (slotCount === 4) return tcfScenarioAudioEntries(all)
+  if (kind === 'court') return tcfCourtAudioEntries(all)
+  if (kind === 'moyen') return tcfMoyenAudioEntries(all)
+  if (kind === 'scenario') return tcfScenarioAudioEntries(all)
+  if (kind === 'objet') return tcfObjetAudioEntries(all)
   return tcfLongAudioEntries(all)
 }
 
@@ -65,7 +88,6 @@ function scenarioLabel(id: string): string {
 }
 
 function entryOptionLabel(entry: TcfAudioEntry): string {
-  // Préférer la scène / libellé déjà numéroté de la banque audio
   const scene = tcfScene(entry.exercise)
   if (scene && scene !== entry.label) return entry.label
   return entry.label
@@ -94,30 +116,42 @@ function groupByScenario(entries: TcfAudioEntry[]): AudioOptGroup[] {
     }))
 }
 
+function slotLabel(kind: TcfCoAudioKind, slotCount: number, index: number): string {
+  if (kind === 'objet' || (kind === 'long' && slotCount === 1)) return 'Audio'
+  if (kind === 'scenario') return `Audio scénario ${index + 1}`
+  return `Audio ${index + 1}`
+}
+
 export function TcfCoAudioSlotsPicker({
   typeId,
   niveau: _niveau,
   slots,
   questionCount,
+  pickMode = 'aleatoire',
   onChange,
 }: {
   typeId: string
   niveau: TcfNiveau
   slots?: Array<string | undefined>
   questionCount?: number
+  /** Défaut Aléatoire : tirage selon le tag ; Libre : menus filtrés sur ce tag. */
+  pickMode?: 'aleatoire' | 'libre'
   onChange: (patch: {
     tcfAudioSlots?: Array<string | undefined>
     tcfQuestionCount?: number
+    tcfAudioPickMode?: 'aleatoire' | 'libre'
     tcfExercise?: undefined
     tcfBankId?: undefined
     contentSeed?: number
   }) => void
 }) {
+  const kind = tcfCoAudioKind(typeId)
   const slotCount = tcfCoAudioSlotCount(typeId)
-  const pool = useMemo(() => (slotCount ? poolForSlots(slotCount) : []), [slotCount])
+  const pool = useMemo(() => (kind ? poolForKind(kind) : []), [kind])
   const groups = useMemo(() => groupByScenario(pool), [pool])
+  const isLibre = pickMode === 'libre'
 
-  if (!slotCount || pool.length === 0) return null
+  if (!kind || !slotCount || pool.length === 0) return null
 
   const current = Array.from({ length: slotCount }, (_, i) => slots?.[i] ?? '')
 
@@ -134,30 +168,71 @@ export function TcfCoAudioSlotsPicker({
 
   return (
     <div className="quad-libre-block tcf-editor tcf-co-audio-slots">
-      {current.map((value, i) => (
-        <label className="tcf-field" key={`audio-slot-${i}`}>
-          <span>
-            {slotCount === 1 ? 'Audio' : slotCount === 4 ? `Audio scénario ${i + 1}` : `Audio ${i + 1}`}
-          </span>
-          <select
-            className="pill-input"
-            value={value}
-            onChange={(event) => setSlot(i, event.target.value)}
+      <div className="mode-toggle-block">
+        <b>Exercice</b>
+        <div className="mode-toggle" role="group" aria-label="Tirage des audios : aléatoire ou libre">
+          <button
+            type="button"
+            className={!isLibre ? 'active' : undefined}
+            aria-pressed={!isLibre}
+            onClick={() =>
+              onChange({
+                tcfAudioPickMode: 'aleatoire',
+                tcfAudioSlots: undefined,
+                tcfExercise: undefined,
+                tcfBankId: undefined,
+                contentSeed: Date.now() % 1_000_000_000,
+              })
+            }
           >
-            <option value="">Tout</option>
-            {groups.map((g) => (
-              <optgroup key={g.id} label={g.label}>
-                {g.items.map((entry) => (
-                  <option key={entry.audio} value={entry.audio}>
-                    {entryOptionLabel(entry)}
-                  </option>
+            Aléatoire
+          </button>
+          <button
+            type="button"
+            className={isLibre ? 'active' : undefined}
+            aria-pressed={isLibre}
+            onClick={() =>
+              onChange({
+                tcfAudioPickMode: 'libre',
+                tcfExercise: undefined,
+                tcfBankId: undefined,
+                contentSeed: Date.now() % 1_000_000_000,
+              })
+            }
+          >
+            Libre
+          </button>
+        </div>
+        <small className="muted">
+          {isLibre
+            ? `Choix parmi les audios tagués « ${kind} ».`
+            : `Tirage automatique parmi les audios tagués « ${kind} ».`}
+        </small>
+      </div>
+      {isLibre
+        ? current.map((value, i) => (
+            <label className="tcf-field" key={`audio-slot-${i}`}>
+              <span>{slotLabel(kind, slotCount, i)}</span>
+              <select
+                className="pill-input"
+                value={value}
+                onChange={(event) => setSlot(i, event.target.value)}
+              >
+                <option value="">Tout</option>
+                {groups.map((g) => (
+                  <optgroup key={g.id} label={g.label}>
+                    {g.items.map((entry) => (
+                      <option key={entry.audio} value={entry.audio}>
+                        {entryOptionLabel(entry)}
+                      </option>
+                    ))}
+                  </optgroup>
                 ))}
-              </optgroup>
-            ))}
-          </select>
-        </label>
-      ))}
-      {slotCount === 1 ? (
+              </select>
+            </label>
+          ))
+        : null}
+      {kind === 'long' ? (
         <label className="tcf-field">
           <span>Nombre de questions</span>
           <input

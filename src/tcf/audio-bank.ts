@@ -2,6 +2,7 @@ import {
   TCF_AUDIO_TAG_COURT,
   TCF_AUDIO_TAG_LONG,
   TCF_AUDIO_TAG_MOYEN,
+  TCF_AUDIO_TAG_OBJET,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
   tcfMergeAudioTags,
@@ -30,6 +31,7 @@ export {
   TCF_AUDIO_TAG_COURT,
   TCF_AUDIO_TAG_LONG,
   TCF_AUDIO_TAG_MOYEN,
+  TCF_AUDIO_TAG_OBJET,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
   tcfMergeAudioTags,
@@ -311,11 +313,29 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
     for (const row of taggedLengthAudioRows(exercise)) upsert(row)
   }
 
-  // 3) Autres audios CO (objets…) — chemins pas encore indexés
+  // 3) Audios « objets » (images à reconnaître)
+  for (const exercise of exercises) {
+    if (exercise.type_exercice !== 'images_a_reconnaitre') continue
+    const audio = exercise.support.audio?.trim()
+    if (!audio) continue
+    const extra = exerciseExtraTags(exercise)
+    const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
+    upsert({
+      audio,
+      exercise,
+      base: tcfAudioBaseLabel(exercise, audio),
+      stem,
+      tags: tcfMergeAudioTags(extra, [TCF_AUDIO_TAG_OBJET]),
+      dialogueIndex: 1,
+    })
+  }
+
+  // 4) Autres audios CO — chemins pas encore indexés
   for (const exercise of exercises) {
     if (isTcfCoAssociation(exercise) && (exercise.support.audios?.length ?? 0) >= 2) {
       continue
     }
+    if (exercise.type_exercice === 'images_a_reconnaitre') continue
     const extra = exerciseExtraTags(exercise)
     for (const audio of tcfExerciseAudios(exercise)) {
       if (byPath.has(audio)) {
@@ -424,6 +444,11 @@ export function tcfLongAudioEntries(exercises: readonly TcfExercise[]): TcfAudio
   return tcfAudioEntries(exercises).filter(
     (e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_LONG) && (e.questionPool?.length ?? 0) >= 5,
   )
+}
+
+/** Audios tagués `objet` (ex. 5 — images Oui / Non). */
+export function tcfObjetAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
+  return tcfAudioEntries(exercises).filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_OBJET))
 }
 
 /** Chemins des dialogues scénario (pour validation). */

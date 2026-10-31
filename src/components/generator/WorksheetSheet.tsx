@@ -57,17 +57,61 @@ export function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
   ]
 }
 
-/** Consigne type 10 : l’ / le / la / les en gras + couleur thème. */
+/** Icône sonnerie (consignes CO TCF : [[bell]]). */
+function InstructionBellIcon() {
+  return (
+    <svg
+      className="tcf-bell-icon"
+      viewBox="0 0 24 24"
+      width="1.15em"
+      height="1.15em"
+      aria-hidden
+      focusable="false"
+    >
+      <path
+        fill="currentColor"
+        d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm8-6v-5a8 8 0 1 0-16 0v5l-2 2v1h20v-1l-2-2z"
+      />
+    </svg>
+  )
+}
+
+/**
+ * Consigne fiche : déterminants Soutien (type 10) + marqueurs TCF
+ * `[[em]]…[[/em]]` (gras couleur thème) et `[[bell]]` (sonnerie).
+ */
 export function renderSoutienInstruction(text: string): ReactNode {
   const marker = 'Complétez avec les déterminants '
-  if (!text.startsWith(marker)) return text
-  return (
-    <>
-      {marker}
-      <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
-      <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
-    </>
-  )
+  if (text.startsWith(marker) && !text.includes('[[')) {
+    return (
+      <>
+        {marker}
+        <span className="det-choice">l’</span>, <span className="det-choice">le</span>,{' '}
+        <span className="det-choice">la</span> ou <span className="det-choice">les</span>.
+      </>
+    )
+  }
+  if (!text.includes('[[')) return text
+  const parts: ReactNode[] = []
+  const re = /\[\[em\]\]([\s\S]*?)\[\[\/em\]\]|\[\[bell\]\]/g
+  let last = 0
+  let match: RegExpExecArray | null
+  let key = 0
+  while ((match = re.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index))
+    if (match[0] === '[[bell]]') {
+      parts.push(<InstructionBellIcon key={`bell-${key++}`} />)
+    } else {
+      parts.push(
+        <span className="det-choice" key={`em-${key++}`}>
+          {match[1]}
+        </span>,
+      )
+    }
+    last = match.index + match[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return <>{parts}</>
 }
 
 export function RefreshIcon() {

@@ -1112,7 +1112,9 @@ export function TcfExerciseEditor({
             <TextField
               label="Consigne (sinon consigne du type)"
               value={exercise.consigne ?? ''}
-              placeholder={meta?.instruction ?? slot?.instruction ?? ''}
+              placeholder={
+                meta?.instruction ?? slot?.instruction ?? 'Consigne liée au type d’exercice'
+              }
               onChange={(consigne) => set({ ...exercise, consigne: consigne || undefined })}
             />
           ) : null}

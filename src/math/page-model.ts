@@ -66,6 +66,10 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     tcfExercise: page.tcfExercise,
     tcfBankId: page.tcfBankId,
     tcfScenario: page.tcfScenario,
+    tcfAudioSlots: page.tcfAudioSlots,
+    tcfQuestionCount: page.tcfQuestionCount,
+    tcfQuestionPoints: page.tcfQuestionPoints,
+    tcfAudioPickMode: page.tcfAudioPickMode,
     libreItems: page.libreItems,
     libreInstruction: page.libreInstruction,
   }

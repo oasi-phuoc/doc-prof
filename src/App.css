@@ -1965,7 +1965,10 @@ html,body,#root{
 .exercise-heading h3{margin:0;font-size:calc(16pt * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.02em;color:var(--ink)}
 .exercise-heading p{margin:3px 0 0;font-size:calc(13pt * var(--app-font-scale, 1));line-height:1.45;text-align:justify;white-space:pre-line}
 /* Consigne pleine largeur (points dans la title-row, plus de retrait à droite). */
-.exercise-heading .exercise-instruction{width:100%;max-width:100%;text-align:justify}
+.exercise-heading .exercise-instruction{width:100%;max-width:100%;text-align:justify;white-space:pre-line}
+.exercise-heading .exercise-instruction .tcf-bell-icon{
+  display:inline-block;vertical-align:-0.2em;margin:0 0.15em;color:var(--purple)
+}
 /* Refresh en bas à droite du titre « Exercice N » (aperçu seulement). */
 .exercise-refresh-btn{
   width:22px;height:22px;padding:0;margin:0 0 1px;border:1px solid var(--line);

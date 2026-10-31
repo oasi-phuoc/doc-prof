@@ -1,4 +1,12 @@
 import type { Difficulty, ExerciseType, Topic } from '@/math/types'
+import {
+  TCF_CO_CONSIGNE_LONG,
+  TCF_CO_CONSIGNE_OBJETS,
+  TCF_CO_CONSIGNE_SCENARIO,
+  TCF_CO_CONSIGNE_SIX_COURTS,
+  TCF_CO_CONSIGNE_TROIS_MOYENS,
+  tcfCoConsigneForSlot,
+} from './consignes'
 import type { TcfCompetence, TcfNiveau, TcfTypeExercice, TcfTypeReponse } from './types'
 
 /** TPF — Test de placement de français (tous les niveaux, y compris A2-B1). */
@@ -149,8 +157,8 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     competence: 'CO',
     typeExercice: 'images_a_reconnaitre',
     label: 'Images à reconnaître',
-    description: 'Écouter un audio déjà prêt et cocher les 5 images qui correspondent.',
-    instruction: 'Écoutez et cochez les images qui correspondent.',
+    description: '1 piste taguée « objet » : cocher oui / non sous chaque image.',
+    instruction: TCF_CO_CONSIGNE_OBJETS,
     reponses: [],
   },
   {
@@ -159,7 +167,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'six_courts',
     label: '6 audios courts',
     description: '6 pistes taguées « court » tirées au hasard, une question chacune (QCM texte).',
-    instruction: 'Écoutez chaque extrait, puis répondez aux questions.',
+    instruction: TCF_CO_CONSIGNE_SIX_COURTS,
     reponses: ALL_REPONSES,
   },
   {
@@ -168,7 +176,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'trois_moyens',
     label: '3 audios moyens',
     description: '3 pistes taguées « moyen » tirées au hasard, deux questions chacune (QCM texte).',
-    instruction: 'Écoutez chaque extrait, puis répondez aux questions.',
+    instruction: TCF_CO_CONSIGNE_TROIS_MOYENS,
     reponses: ALL_REPONSES,
   },
   {
@@ -177,7 +185,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     typeExercice: 'complet',
     label: 'Audio complet',
     description: '1 piste taguée « long », N questions tirées du pool (défaut 5, QCM texte).',
-    instruction: 'Écoutez le document, puis répondez aux questions.',
+    instruction: TCF_CO_CONSIGNE_LONG,
     reponses: ALL_REPONSES,
   },
   {
@@ -187,8 +195,7 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     label: 'Conversations / situations',
     description:
       '4 audios tagués « scenario » (image liée) + 2 scènes leurres. Grille 2×3, Audio n° sous chaque image (6 × 1 pt).',
-    instruction:
-      'Vous allez entendre 4 petits dialogues correspondant à 4 situations différentes. Associez chaque audio à une image. Attention : il y a 6 images mais seulement 4 audios.',
+    instruction: TCF_CO_CONSIGNE_SCENARIO,
     reponses: [],
   },
   // —— PE ——
@@ -364,7 +371,7 @@ export const TCF_SLOTS: readonly TcfSlotMeta[] = [
     numero,
     label: CO_A1[numero - 1] ?? `Exercice ${numero}`,
     description: CO_A1[numero - 1] ?? `Compréhension orale : exercice ${numero}.`,
-    instruction: 'Écoutez le document, puis répondez aux questions.',
+    instruction: tcfCoConsigneForSlot(numero) ?? 'Écoutez le document, puis répondez aux questions.',
   })),
   ...([1, 2, 3, 4] as const).map((numero) => ({
     typeId: `tcf-ce-ex-${numero}`,

@@ -6,20 +6,23 @@
  * `court` = mini-extrait pour « 6 audios courts » (1 question tirée du pool de la piste).
  * `moyen` = extrait moyen pour « 3 audios moyens » (2 questions tirées du pool de la piste).
  * `long` = document long pour « audio complet » (N questions, défaut 5).
+ * `objet` = message « objets à reconnaître » (ex. 5, images Oui / Non).
  *
  * `court` / `moyen` / `long` sont mutuellement exclusifs (selon la taille du pool) ;
- * `scenario` se cumule avec n’importe lequel d’entre eux.
+ * `scenario` / `objet` se cumulent avec les tags de longueur.
  */
 export const TCF_AUDIO_TAG_SCENARIO = 'scenario' as const
 export const TCF_AUDIO_TAG_COURT = 'court' as const
 export const TCF_AUDIO_TAG_MOYEN = 'moyen' as const
 export const TCF_AUDIO_TAG_LONG = 'long' as const
+export const TCF_AUDIO_TAG_OBJET = 'objet' as const
 
 export type TcfAudioTag =
   | typeof TCF_AUDIO_TAG_SCENARIO
   | typeof TCF_AUDIO_TAG_COURT
   | typeof TCF_AUDIO_TAG_MOYEN
   | typeof TCF_AUDIO_TAG_LONG
+  | typeof TCF_AUDIO_TAG_OBJET
   | (string & {})
 
 const LENGTH_TAGS = [

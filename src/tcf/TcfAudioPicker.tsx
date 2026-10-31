@@ -3,6 +3,7 @@ import {
   TCF_AUDIO_TAG_COURT,
   TCF_AUDIO_TAG_LONG,
   TCF_AUDIO_TAG_MOYEN,
+  TCF_AUDIO_TAG_OBJET,
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
   type TcfAudioEntry,
@@ -87,8 +88,10 @@ function AudioRow({ entry, onPick }: { entry: TcfAudioEntry; onPick: (entry: Tcf
   const isCourt = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_COURT)
   const isMoyen = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_MOYEN)
   const isLong = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_LONG)
+  const isObjet = tcfAudioHasTag(entry.tags, TCF_AUDIO_TAG_OBJET)
   const tagBits = [
     isScenario ? 'scénario' : '',
+    isObjet ? 'objet' : '',
     isCourt ? 'court' : '',
     isMoyen ? 'moyen' : '',
     isLong ? 'long' : '',
@@ -177,6 +180,7 @@ export function TcfAudioPicker({
       { id: TCF_AUDIO_TAG_MOYEN, label: 'moyen' },
       { id: TCF_AUDIO_TAG_LONG, label: 'long' },
       { id: TCF_AUDIO_TAG_SCENARIO, label: 'scénario' },
+      { id: TCF_AUDIO_TAG_OBJET, label: 'objet' },
     ].filter((t) => present.has(t.id))
   }, [entries])
 

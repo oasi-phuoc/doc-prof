@@ -22,6 +22,15 @@ import {
   INLINE_BLANK_PX_MIN,
 } from '@/tcf/inline-blank'
 
+/** Champ points : vide → `undefined` (effectif 1) ; sinon demi-points ≥ 0.5. */
+function parsePointsInput(raw: string): number | undefined {
+  const text = raw.trim().replace(',', '.')
+  if (text === '') return undefined
+  const n = Number(text)
+  if (!Number.isFinite(n)) return undefined
+  return Math.max(0.5, Math.min(20, Math.round(n * 2) / 2))
+}
+
 export type QuestionsColumnsFieldsProps = {
   activeBlock: ExerciseBlock
   updatePage: (patch: Partial<ExerciseBlock>) => void
@@ -277,12 +286,10 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     max={20}
                     step={0.5}
                     aria-label="Points par question de l’exercice sélectionné"
-                    value={activeBlock.pointsPerQuestion ?? 1}
+                    value={activeBlock.pointsPerQuestion ?? ''}
+                    placeholder="1"
                     onChange={(event) => {
-                      const raw = Number(event.target.value.replace(',', '.'))
-                      if (!Number.isFinite(raw)) return
-                      const next = Math.max(0.5, Math.min(20, Math.round(raw * 2) / 2))
-                      updatePage({ pointsPerQuestion: next })
+                      updatePage({ pointsPerQuestion: parsePointsInput(event.target.value) })
                     }}
                   />
                   <small className="muted">
@@ -307,7 +314,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     const typeId = activeBlock.exerciseType
                     const n = tcfCoComposeQuestionCount(typeId, activeBlock.tcfQuestionCount)
                     const canDiff = tcfCoCanDifferentiatePoints(typeId)
-                    const byImage = tcfCoAudioSlotCount(typeId) === 4
+                    const byImage =
+                      tcfCoPointsRowLabel(typeId, 0).startsWith('Image')
                     const pointsLabel = byImage ? 'Points par image' : 'Points par question'
                     const differentiated =
                       canDiff &&
@@ -346,7 +354,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                                 onClick={() =>
                                   updatePage({
                                     tcfQuestionPoints: undefined,
-                                    pointsPerQuestion: uniform,
+                                    pointsPerQuestion: activeBlock.pointsPerQuestion,
                                   })
                                 }
                               >
@@ -356,11 +364,13 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                                 type="button"
                                 className={differentiated ? 'active' : undefined}
                                 aria-pressed={differentiated}
-                                onClick={() =>
+                                onClick={() => {
+                                  if (n <= 0) return
                                   updatePage({
                                     tcfQuestionPoints: Array.from({ length: n }, () => uniform),
+                                    pointsPerQuestion: activeBlock.pointsPerQuestion,
                                   })
-                                }
+                                }}
                               >
                                 Différents
                               </button>
@@ -371,10 +381,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         )}
                         {differentiated ? (
                           Array.from({ length: n }, (_, i) => {
-                            const pts =
-                              activeBlock.tcfQuestionPoints?.[i] ??
-                              activeBlock.pointsPerQuestion ??
-                              1
+                            const stored = activeBlock.tcfQuestionPoints?.[i]
                             const rowLabel = tcfCoPointsRowLabel(typeId, i)
                             return (
                               <label className="select-shell" key={`q-pts-${i}`}>
@@ -387,17 +394,13 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                                   max={20}
                                   step={0.5}
                                   aria-label={`Points de ${rowLabel.toLowerCase()}`}
-                                  value={pts}
+                                  value={stored ?? ''}
+                                  placeholder="1"
                                   onChange={(event) => {
-                                    const raw = Number(event.target.value.replace(',', '.'))
-                                    if (!Number.isFinite(raw)) return
-                                    const nextPts = Math.max(
-                                      0.5,
-                                      Math.min(20, Math.round(raw * 2) / 2),
-                                    )
+                                    const nextPts = parsePointsInput(event.target.value)
                                     const next = Array.from({ length: n }, (_, k) =>
                                       k === i
-                                        ? nextPts
+                                        ? (nextPts ?? 1)
                                         : (activeBlock.tcfQuestionPoints?.[k] ?? uniform),
                                     )
                                     updatePage({ tcfQuestionPoints: next })
@@ -417,16 +420,11 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                               max={20}
                               step={0.5}
                               aria-label={pointsLabel}
-                              value={uniform}
+                              value={activeBlock.pointsPerQuestion ?? ''}
+                              placeholder="1"
                               onChange={(event) => {
-                                const raw = Number(event.target.value.replace(',', '.'))
-                                if (!Number.isFinite(raw)) return
-                                const next = Math.max(
-                                  0.5,
-                                  Math.min(20, Math.round(raw * 2) / 2),
-                                )
                                 updatePage({
-                                  pointsPerQuestion: next,
+                                  pointsPerQuestion: parsePointsInput(event.target.value),
                                   tcfQuestionPoints: undefined,
                                 })
                               }}
@@ -453,12 +451,10 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     max={20}
                     step={0.5}
                     aria-label="Points par question de l’exercice sélectionné"
-                    value={activeBlock.pointsPerQuestion ?? 1}
+                    value={activeBlock.pointsPerQuestion ?? ''}
+                    placeholder="1"
                     onChange={(event) => {
-                      const raw = Number(event.target.value.replace(',', '.'))
-                      if (!Number.isFinite(raw)) return
-                      const next = Math.max(0.5, Math.min(20, Math.round(raw * 2) / 2))
-                      updatePage({ pointsPerQuestion: next })
+                      updatePage({ pointsPerQuestion: parsePointsInput(event.target.value) })
                     }}
                   />
                   <small className="muted">
