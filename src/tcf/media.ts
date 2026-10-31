@@ -2,6 +2,7 @@
  * Chemins des médias TCF.
  * - data URL, URL http(s) ou chemin absolu (`/lib/...`) : utilisés tels quels ;
  * - chemin relatif (`vocabulaire/fruits/pomme.webp`) : sous `public/lib/images|audio/`.
+ * Les anciens chemins PO sont redirigés vers `tcf/po/a1|a2`.
  */
 export const TCF_IMAGE_DIR = '/lib/images/'
 export const TCF_AUDIO_DIR = '/lib/audio/'
@@ -14,7 +15,12 @@ function resolve(src: string, dir: string): string {
 }
 
 export function tcfImageSrc(src: string | null | undefined): string {
-  return src ? resolve(src, TCF_IMAGE_DIR) : ''
+  if (!src) return ''
+  // Les fiches déjà enregistrées peuvent encore contenir l'ancien dossier PO.
+  return resolve(src, TCF_IMAGE_DIR).replace(
+    /^\/lib\/images\/comprehension\/po-a([12])\//,
+    '/lib/images/tcf/po/a$1/',
+  )
 }
 
 export function tcfAudioSrc(src: string | null | undefined): string {
