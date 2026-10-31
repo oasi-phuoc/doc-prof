@@ -506,7 +506,7 @@ function withQuestionPoints(
     next.type_exercice === 'association_images' ||
     next.type_exercice === 'images_a_reconnaitre'
   ) {
-    const sum = points.reduce((acc, p) => acc + effectivePoint(p), 0)
+    const sum = points.reduce<number>((acc, p) => acc + effectivePoint(p), 0)
     if (sum > 0) next.points = sum
   }
   return next
