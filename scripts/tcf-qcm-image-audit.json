@@ -5,15 +5,6 @@
     "illustrable": 927
   },
   "required": [
-    "/lib/images/tcf/co/bg/10-dvd.webp",
-    "/lib/images/tcf/co/bg/10-oeufs.webp",
-    "/lib/images/tcf/co/bg/10-tomates.webp",
-    "/lib/images/tcf/co/bg/12-oeufs.webp",
-    "/lib/images/tcf/co/bg/3-dvd.webp",
-    "/lib/images/tcf/co/bg/5-tomates.webp",
-    "/lib/images/tcf/co/bg/6-dvd.webp",
-    "/lib/images/tcf/co/bg/6-oeufs.webp",
-    "/lib/images/tcf/co/bg/8-tomates.webp",
     "/lib/images/tcf/co/bg/aeroport.webp",
     "/lib/images/tcf/co/bg/apero.webp",
     "/lib/images/tcf/co/bg/association.webp",
@@ -43,7 +34,6 @@
     "/lib/images/tcf/co/bg/chateau.webp",
     "/lib/images/tcf/co/bg/cinema.webp",
     "/lib/images/tcf/co/bg/concert.webp",
-    "/lib/images/tcf/co/bg/cornichons.webp",
     "/lib/images/tcf/co/bg/cour-ecole.webp",
     "/lib/images/tcf/co/bg/cours-anglais.webp",
     "/lib/images/tcf/co/bg/cours-dessin.webp",
@@ -57,7 +47,6 @@
     "/lib/images/tcf/co/bg/court-tennis.webp",
     "/lib/images/tcf/co/bg/creperie.webp",
     "/lib/images/tcf/co/bg/cuisine.webp",
-    "/lib/images/tcf/co/bg/disque-volant.webp",
     "/lib/images/tcf/co/bg/ecole.webp",
     "/lib/images/tcf/co/bg/eglise.webp",
     "/lib/images/tcf/co/bg/entree-maison.webp",
@@ -70,7 +59,6 @@
     "/lib/images/tcf/co/bg/gare.webp",
     "/lib/images/tcf/co/bg/guichet.webp",
     "/lib/images/tcf/co/bg/gymnase.webp",
-    "/lib/images/tcf/co/bg/hamburger-frites.webp",
     "/lib/images/tcf/co/bg/hopital.webp",
     "/lib/images/tcf/co/bg/hotel.webp",
     "/lib/images/tcf/co/bg/jardin.webp",
@@ -132,6 +120,18 @@
     "/lib/images/tcf/co/bg/universite.webp",
     "/lib/images/tcf/co/bg/ville.webp",
     "/lib/images/tcf/co/bg/zoo.webp",
+    "/lib/images/tcf/co/objets/10-dvd.webp",
+    "/lib/images/tcf/co/objets/10-oeufs.webp",
+    "/lib/images/tcf/co/objets/10-tomates.webp",
+    "/lib/images/tcf/co/objets/12-oeufs.webp",
+    "/lib/images/tcf/co/objets/3-dvd.webp",
+    "/lib/images/tcf/co/objets/5-tomates.webp",
+    "/lib/images/tcf/co/objets/6-dvd.webp",
+    "/lib/images/tcf/co/objets/6-oeufs.webp",
+    "/lib/images/tcf/co/objets/8-tomates.webp",
+    "/lib/images/tcf/co/objets/cornichons.webp",
+    "/lib/images/tcf/co/objets/disque-volant.webp",
+    "/lib/images/tcf/co/objets/hamburger-frites.webp",
     "/lib/images/tcf/co/personnes/directeurs.webp",
     "/lib/images/vocabulaire/accessoires/alliances.webp",
     "/lib/images/vocabulaire/accessoires/boucles-d-oreilles.webp",
@@ -1044,34 +1044,5 @@
       6
     ]
   ],
-  "changes": [
-    {
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "tcf-a1-s3-ce-4",
-      "question": 1,
-      "enonce": "Pour manger rapidement, qu’est-ce que vous pouvez préparer ?",
-      "action": "image"
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/ce.json",
-      "exercise": "delf-a1v-ce-006",
-      "question": 0,
-      "enonce": "Que prépare Élisa ?",
-      "action": "image"
-    },
-    {
-      "bank": "src/tcf/content/a0-a1/co.json",
-      "exercise": "tcf-ss-a1-s29-co-1",
-      "question": 3,
-      "enonce": "Que mange le client végétarien ?",
-      "action": "image"
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-ss-a2-s32-co-3",
-      "question": 3,
-      "enonce": "Que mange le client végétarien ?",
-      "action": "image"
-    }
-  ]
+  "changes": []
 }

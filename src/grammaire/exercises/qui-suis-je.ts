@@ -863,9 +863,9 @@ export function buildQuiSuisJeExercise(opts: {
         support: {
           images: [
             '/lib/images/tcf/po/a1/classe-presentation-3.webp',
-            '/lib/images/tcf/po/a1/classe-presentation-4.webp',
             '/lib/images/tcf/po/a1/classe-presentation-1.webp',
             '/lib/images/tcf/po/a1/classe-presentation-2.webp',
+            '/lib/images/tcf/po/a1/classe-presentation-4.webp',
           ],
           reponse_modele:
             'Bonjour, je m’appelle … Je suis … J’ai … ans. Je viens de … J’habite à … Je parle …',

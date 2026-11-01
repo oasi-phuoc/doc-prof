@@ -45,6 +45,10 @@ for (const image of manifest.images) {
 }
 assert.deepEqual(counts, manifest.counts)
 if (process.argv.includes('--complete')) assert.equal(counts.generated, 407, 'regeneration is still incomplete')
+if (process.argv.includes('--style-complete')) {
+  assert.equal(manifest.style_pending?.length ?? 0, 0, 'identified style corrections remain')
+  for (const image of manifest.images) assert.equal(image.style_reviewed, true, image.path)
+}
 
 let exercises = 0
 for (const [level, folder, count] of [['a0-a1', 'a1', 76], ['a1-a2', 'a2', 99]]) {

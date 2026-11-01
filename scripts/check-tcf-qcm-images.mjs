@@ -5,6 +5,17 @@ import { createServer } from 'vite'
 const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
 try {
   const { tcfExerciseItems } = await vite.ssrLoadModule('/src/tcf/generate.ts')
+  const { tcfImageSrc } = await vite.ssrLoadModule('/src/tcf/media.ts')
+  const registry = JSON.parse(readFileSync('scripts/tcf-qcm-image-registry.json', 'utf8'))
+  const objects = registry.filter((row) => row.kind === 'object' || row.kind === 'quantity')
+  assert.equal(objects.length, 12)
+  for (const object of objects) {
+    assert.ok(object.path.startsWith('/lib/images/tcf/co/objets/'))
+    assert.equal(object.background, 'white')
+    assert.equal(tcfImageSrc(object.path.replace('/objets/', '/bg/')), object.path)
+    assert.equal(tcfImageSrc(object.path.replace('/objets/', '/bg/') + '?v=1'), object.path + '?v=1')
+  }
+  assert.equal(tcfImageSrc('/lib/images/tcf/co/bg/gare.webp'), '/lib/images/tcf/co/bg/gare.webp')
   const { createRng } = await vite.ssrLoadModule('/src/math/rng.ts')
   const q = {
     enonce: 'Choisir un lieu', type_reponse: 'qcm_texte', melanger: true,

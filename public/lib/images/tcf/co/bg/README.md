@@ -2,7 +2,7 @@
 
 Décors en WebP, style BD semi-réaliste en couleur, une seule scène par fichier. Les lieux sont vides : aucun personnage, silhouette, reflet humain, portrait, logo ou bulle. Les scènes précédemment créées dans `../scenes/` restent indépendantes.
 
-Les objets déjà disponibles dans `/lib/images/vocabulaire/` sont réutilisés. Les collections de tomates, œufs et DVD représentent des quantités concrètes et comptables, sans chiffre écrit. Les illustrations de personnes nécessaires aux choix de métiers sont dans `../personnes/` ; les cuisiniers et voyageurs existants sont réutilisés.
+Les objets déjà disponibles dans `/lib/images/vocabulaire/` sont réutilisés. Les objets et collections créés pour les QCM sont rangés dans [`../objets/`](../objets/README.md), sur fond blanc uni opaque : tomates, œufs, DVD, cornichons, hamburger-frites et disque volant. Les neuf quantités sont concrètes et comptables, sans chiffre écrit. Les illustrations de personnes nécessaires aux choix de métiers sont dans `../personnes/` ; les cuisiniers et voyageurs existants sont réutilisés.
 
 Une variante image n'est proposée que si **tous** les choix sont représentables par des images distinctes correspondant à leur sens entier. Un seul choix non illustrable conserve toute la question en texte. Les noms de personnes ou de domiciles privés, dates, jours, mois, numéros, montants et phrases abstraites restent en texte. Une affirmation telle que « le magasin est fermé le lundi » ne devient pas une image de magasin, ni une salle de français une personne portant un drapeau.
 
