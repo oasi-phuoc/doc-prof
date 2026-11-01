@@ -126,30 +126,7 @@ export function RefreshIcon() {
   )
 }
 
-export function WorksheetSheet({
-  page,
-  mode,
-  institutional,
-  evalMode,
-  pageNumber,
-  total,
-  sheetIndex,
-  documentTotalPoints,
-  pointsPerQuestion = 1,
-  interactiveDraftGrids = false,
-  onToggleDraftGrid,
-  interactiveOralModes = false,
-  onCycleOralAnswerMode,
-  interactiveTcfOptions = false,
-  interactiveTcfPageBreaks = false,
-  onSelectTcfForm,
-  onSelectTcfFormForExercise,
-  onToggleTcfPageBreak,
-  onToggleFormulaireLetterGrid,
-  onRegenerateBlock,
-  showExerciseRefresh = true,
-  coordEdit,
-}: {
+export type WorksheetSheetProps = {
   page: WorksheetPage
   mode: PreviewMode
   institutional: InstitutionalHeader
@@ -176,10 +153,14 @@ export function WorksheetSheet({
   onSelectTcfFormForExercise?: (form: TcfTypeReponse, blockIndex?: number) => void
   onToggleTcfPageBreak?: (index: number, blockIndex?: number) => void
   onToggleFormulaireLetterGrid?: (blockIndex: number) => void
-  /** Bouton refresh : régénère uniquement cet exercice. */
-  onRegenerateBlock?: (blockIndex: number) => void
+  /** Bouton refresh : régénère uniquement cet exercice (et éventuellement une moitié A5). */
+  onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right') => void
   /** Afficher le refresh à côté du titre (désactivé en mode libre). */
   showExerciseRefresh?: boolean
+  /** Force l’en-tête (moitiés A5 : chaque mini-fiche a son en-tête). */
+  forceHeader?: boolean
+  /** Moitié A5 : racine en `.a5-half` au lieu de `.worksheet-sheet`. */
+  asHalf?: 'left' | 'right'
   coordEdit?: {
     selectedKind: CoordShape | null
     placingOrigin?: boolean
@@ -187,9 +168,36 @@ export function WorksheetSheet({
     onPlaceOrigin?: (col: number, row: number) => void
     onRemove: (x: number, y: number) => void
   }
-}) {
+}
+
+export function WorksheetSheet({
+  page,
+  mode,
+  institutional,
+  evalMode,
+  pageNumber,
+  total,
+  sheetIndex,
+  documentTotalPoints,
+  pointsPerQuestion = 1,
+  interactiveDraftGrids = false,
+  onToggleDraftGrid,
+  interactiveOralModes = false,
+  onCycleOralAnswerMode,
+  interactiveTcfOptions = false,
+  interactiveTcfPageBreaks = false,
+  onSelectTcfForm,
+  onSelectTcfFormForExercise,
+  onToggleTcfPageBreak,
+  onToggleFormulaireLetterGrid,
+  onRegenerateBlock,
+  showExerciseRefresh = true,
+  forceHeader = false,
+  asHalf,
+  coordEdit,
+}: WorksheetSheetProps) {
   const isJeuxSheet = page.domain === 'jeux'
-  const showHeader = pageNumber === 1 && !isJeuxSheet
+  const showHeader = (forceHeader || pageNumber === 1) && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
     (item) =>
@@ -224,9 +232,13 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
+  const Root = asHalf ? 'div' : 'article'
+  const rootClass = asHalf
+    ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
+    : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
-    <article
-      className={`worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`}
+    <Root
+      className={rootClass}
       style={{ '--sheet-columns': sheetColumns } as CSSProperties}
     >
       {showHeader ? (
@@ -322,9 +334,21 @@ export function WorksheetSheet({
                       <button
                         type="button"
                         className="no-print exercise-refresh-btn"
-                        aria-label="Régénérer cet exercice"
-                        title="Régénérer cet exercice"
-                        onClick={() => onRegenerateBlock(blockIndex)}
+                        aria-label={
+                          asHalf
+                            ? asHalf === 'left'
+                              ? 'Régénérer la mini-fiche de gauche'
+                              : 'Régénérer la mini-fiche de droite'
+                            : 'Régénérer cet exercice'
+                        }
+                        title={
+                          asHalf
+                            ? asHalf === 'left'
+                              ? 'Régénérer la mini-fiche de gauche'
+                              : 'Régénérer la mini-fiche de droite'
+                            : 'Régénérer cet exercice'
+                        }
+                        onClick={() => onRegenerateBlock(blockIndex, asHalf)}
                       >
                         <RefreshIcon />
                       </button>
@@ -546,6 +570,40 @@ export function WorksheetSheet({
           }
         />
       )}
+    </Root>
+  )
+}
+
+/** Feuille A4 paysage coupée en deux mini-fiches A5 (même exercice, graines indépendantes). */
+export function DualA5Sheet({
+  leftPage,
+  rightPage,
+  ...sheetProps
+}: Omit<WorksheetSheetProps, 'page' | 'asHalf' | 'forceHeader'> & {
+  leftPage: WorksheetPage
+  rightPage: WorksheetPage
+}) {
+  const isJeuxSheet = leftPage.domain === 'jeux'
+  const parity = sheetProps.sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
+  return (
+    <article
+      className={`worksheet-sheet is-a5-double ${parity}${isJeuxSheet ? ' is-jeux' : ''}${sheetProps.evalMode ? ' is-eval' : ''}`}
+    >
+      <WorksheetSheet
+        {...sheetProps}
+        page={leftPage}
+        asHalf="left"
+        forceHeader
+      />
+      <div className="a5-cut-guide" aria-hidden="true">
+        <span className="a5-cut-mark" />
+      </div>
+      <WorksheetSheet
+        {...sheetProps}
+        page={rightPage}
+        asHalf="right"
+        forceHeader
+      />
     </article>
   )
 }

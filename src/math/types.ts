@@ -833,6 +833,11 @@ export type ExerciseBlock = {
    */
   contentSeed?: number
   /**
+   * Graine de la moitié droite en format paysage double A5.
+   * Absente = même tirage que `contentSeed` (les deux moitiés identiques).
+   */
+  contentSeedTwin?: number
+  /**
    * Mode libre Gattegno : items édités (mots, catégories, verbes).
    * Si présents, ils remplacent le tirage pour l’affichage / l’impression.
    */

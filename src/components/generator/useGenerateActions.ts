@@ -22,6 +22,7 @@ import type {
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
+import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
 import { isTpmFamilyExercise, recalcTpmLibreItems } from '@/tpm/libre-recalc'
 
 export type UseGenerateActionsParams = {
@@ -275,7 +276,7 @@ export function useGenerateActions({
   }
 
   /** Régénère uniquement l’exercice ciblé (les autres blocs / pages restent inchangés). */
-  function regenerateBlock(targetBlock: number) {
+  function regenerateBlock(targetBlock: number, half?: 'left' | 'right') {
     const nextSeed = randomSeed()
     setMode('student')
     setBlockIndex(targetBlock)
@@ -285,13 +286,18 @@ export function useGenerateActions({
         const block = pageBlocks(page)[targetBlock]
         if (!block) return page
         const release = clearLibreContentFreeze()
+        const seedPatch = half
+          ? patchBlockSeedForHalf(block, half, nextSeed)
+          : { contentSeed: nextSeed, contentSeedTwin: undefined }
         let patch: Partial<ExerciseBlock> = {
           ...release,
-          contentSeed: nextSeed,
+          ...seedPatch,
           // Repérage : reprend un tirage banque (les marques figées bloqueraient le refresh).
           coordLibre: false,
         }
-        if (isCalligraphieType(block.exerciseType)) {
+        // Contenu figé (calli / jeux / phrase libre) : ne retirer que la moitié touchée.
+        const shouldReshuffleContent = !half || half === 'left'
+        if (shouldReshuffleContent && isCalligraphieType(block.exerciseType)) {
           patch = {
             ...patch,
             calliText: reshuffleCalliContent(nextSeed, {
@@ -305,13 +311,13 @@ export function useGenerateActions({
               countHint: Math.max(parseCalliLines(block.calliText).length, 1),
             }),
           }
-        } else if (block.verbGroup === 'libre' && isPhraseLibreEditable(block.exerciseType)) {
+        } else if (shouldReshuffleContent && block.verbGroup === 'libre' && isPhraseLibreEditable(block.exerciseType)) {
           patch = {
             ...patch,
             phraseItems: undefined,
             phraseInstruction: undefined,
           }
-        } else if (isJeuxType(block.exerciseType)) {
+        } else if (shouldReshuffleContent && isJeuxType(block.exerciseType)) {
           const reshuffled = reshuffleGameContent(block.exerciseType, nextSeed, {
             gameSource: block.gameSource,
             gameTopic: block.gameTopic,

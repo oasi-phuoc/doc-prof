@@ -20,6 +20,11 @@ import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
 import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
 import {
+  isA5DoubleFormat,
+  pageForA5Half,
+  type SheetFormat,
+} from '@/components/generator/sheet-format'
+import {
   ALPHA_SOUTIEN_REFERENCE,
   isAlphaSoutienDomain,
 } from '@/components/math/PrintDocumentChrome'
@@ -92,6 +97,9 @@ export function GeneratorPage({
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const [themeColor, setThemeColor] = useState(readThemeColor)
   const [fontSize, setFontSize] = useState(readBaseFontSize)
+  const [sheetFormat, setSheetFormat] = useState<SheetFormat>(
+    () => openedFiche?.recipe.sheetFormat ?? 'a4-portrait',
+  )
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
@@ -142,7 +150,24 @@ export function GeneratorPage({
     () => (previewSource ? buildWorksheets(previewSource, seed) : worksheets),
     [previewSource, seed, worksheets],
   )
+  const a5SourcePages = previewSource ?? pages
+  const a5LeftWorksheets = useMemo(() => {
+    if (!isA5DoubleFormat(sheetFormat)) return null
+    return buildWorksheets(
+      a5SourcePages.map((page) => pageForA5Half(page, 'left')),
+      seed,
+    )
+  }, [sheetFormat, a5SourcePages, seed])
+  const a5RightWorksheets = useMemo(() => {
+    if (!isA5DoubleFormat(sheetFormat)) return null
+    return buildWorksheets(
+      a5SourcePages.map((page) => pageForA5Half(page, 'right')),
+      seed,
+    )
+  }, [sheetFormat, a5SourcePages, seed])
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
+  const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
+  const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
   /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
   const jeuxPreviewSheets = useMemo(() => {
     if (activePage.domain !== 'jeux') return null
@@ -357,6 +382,7 @@ export function GeneratorPage({
       pointsPerQuestion,
       libreMode,
       libreSnapshot,
+      sheetFormat,
     })
     const saved =
       !input.asNew && ficheRef
@@ -468,6 +494,11 @@ export function GeneratorPage({
     previewFrameRef,
     seed,
     previewWorksheets,
+    sheetFormat,
+    a5LeftWorksheets,
+    a5RightWorksheets,
+    a5LeftSheet,
+    a5RightSheet,
     sheetProps,
     chromeProps,
     previewSheet,
@@ -490,7 +521,7 @@ export function GeneratorPage({
 
   return (
     <div
-      className="app-shell"
+      className={`app-shell${isA5DoubleFormat(sheetFormat) ? ' is-a5-double' : ''}`}
       style={
         {
           '--purple': themeColor,
@@ -526,6 +557,8 @@ export function GeneratorPage({
             onThemeColor={applyThemeColor}
             fontSize={fontSize}
             onFontSizeChange={changeFontSize}
+            sheetFormat={sheetFormat}
+            onSheetFormatChange={setSheetFormat}
             footerOpen={footerPanelOpen}
             onToggleFooter={() => setFooterPanelOpen((v) => !v)}
             libreOpen={libreMode}

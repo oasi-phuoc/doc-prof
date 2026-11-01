@@ -57,7 +57,7 @@ export type LibreSidePanelProps = {
   updatePage: (patch: Partial<ExerciseBlock>) => void
   onClose: () => void
   /** Régénère l’exercice actif (autres nombres / autre tirage banque). */
-  onRegenerateBlock?: (blockIndex: number) => void
+  onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right') => void
 }
 
 export function LibreSidePanel({

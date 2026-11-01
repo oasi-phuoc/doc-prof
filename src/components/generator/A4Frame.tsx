@@ -12,7 +12,8 @@ type A4FrameProps = {
 }
 
 /** CSS mm → px (référence 96 dpi) — même conversion que les navigateurs pour `210mm`. */
-const A4_WIDTH_PX = (210 * 96) / 25.4
+const A4_PORTRAIT_WIDTH_PX = (210 * 96) / 25.4
+const A4_LANDSCAPE_WIDTH_PX = (297 * 96) / 25.4
 
 function assignRef<T>(ref: Ref<T> | undefined, value: T | null) {
   if (!ref) return
@@ -24,7 +25,9 @@ function syncA4Scale(frame: HTMLElement) {
   const width = frame.clientWidth
   if (width <= 0) return
   const sheet = frame.querySelector(':scope > .worksheet-sheet') as HTMLElement | null
-  const layoutW = sheet?.offsetWidth || A4_WIDTH_PX
+  const landscape = frame.classList.contains('is-landscape')
+  const layoutW =
+    sheet?.offsetWidth || (landscape ? A4_LANDSCAPE_WIDTH_PX : A4_PORTRAIT_WIDTH_PX)
   if (layoutW <= 0) return
   const next = width / layoutW
   const prev = Number(frame.style.getPropertyValue('--a4-scale'))

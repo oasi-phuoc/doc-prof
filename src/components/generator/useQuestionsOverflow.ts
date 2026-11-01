@@ -37,32 +37,43 @@ export function useQuestionsOverflow({
     const frame = previewFrameRef.current
     if (!frame) return
 
-    const measure = () => {
-      const sheet = frame.querySelector('.worksheet-sheet') as HTMLElement | null
-      const body = frame.querySelector('.sheet-body') as HTMLElement | null
-      const grid = frame.querySelector('.exercise-grid') as HTMLElement | null
-      const footer = frame.querySelector('.doc-footer') as HTMLElement | null
-      if (!sheet || !body || !grid) {
-        setQuestionsOverflow(false)
-        return
-      }
+    const measurePanel = (root: Element) => {
+      const body = root.querySelector('.sheet-body') as HTMLElement | null
+      const grid = root.querySelector('.exercise-grid') as HTMLElement | null
+      const footer = root.querySelector('.doc-footer') as HTMLElement | null
+      if (!body || !grid) return false
 
       // Hauteur naturelle du contenu (sans compression) vs place disponible sous l'en-tête.
       const contentHeight = Math.max(grid.scrollHeight, grid.offsetHeight)
       const bodyLimit = body.clientHeight
-      const sheetOverflow = sheet.scrollHeight > sheet.clientHeight + 2
+      const rootEl = root as HTMLElement
+      const sheetOverflow = rootEl.scrollHeight > rootEl.clientHeight + 2
       const bodyOverflow = body.scrollHeight > body.clientHeight + 2
       const gridOverflow = contentHeight > bodyLimit + 2
 
       // Pied chevauché / poussé hors feuille si le corps déborde.
       let footerClash = false
       if (footer) {
-        const sheetBox = sheet.getBoundingClientRect()
+        const sheetBox = rootEl.getBoundingClientRect()
         const footerBox = footer.getBoundingClientRect()
         footerClash = footerBox.bottom > sheetBox.bottom + 1
       }
 
-      setQuestionsOverflow(sheetOverflow || bodyOverflow || gridOverflow || footerClash)
+      return sheetOverflow || bodyOverflow || gridOverflow || footerClash
+    }
+
+    const measure = () => {
+      const sheet = frame.querySelector('.worksheet-sheet') as HTMLElement | null
+      if (!sheet) {
+        setQuestionsOverflow(false)
+        return
+      }
+      const halves = sheet.querySelectorAll('.a5-half')
+      if (halves.length > 0) {
+        setQuestionsOverflow(Array.from(halves).some((half) => measurePanel(half)))
+        return
+      }
+      setQuestionsOverflow(measurePanel(sheet))
     }
 
     measure()

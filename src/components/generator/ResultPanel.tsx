@@ -1,7 +1,8 @@
 import { useMemo, type RefObject } from 'react'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
-import { WorksheetSheet } from '@/components/generator/WorksheetSheet'
+import { isA5DoubleFormat, type SheetFormat } from '@/components/generator/sheet-format'
+import { DualA5Sheet, WorksheetSheet } from '@/components/generator/WorksheetSheet'
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
 import { TranscriptionAppendixSheet } from '@/components/tcf/TranscriptionAppendixSheet'
 import { imageInteractionsOf } from '@/tcf/interaction-lines'
@@ -56,7 +57,7 @@ export type ResultPanelProps = {
     evalMode: boolean
     documentTotalPoints: number
     pointsPerQuestion: number
-    onRegenerateBlock: (targetBlock: number) => void
+    onRegenerateBlock: (targetBlock: number, half?: 'left' | 'right') => void
     showExerciseRefresh?: boolean
   }
   chromeProps: {
@@ -65,6 +66,11 @@ export type ResultPanelProps = {
     documentTotalPoints: number
     pointsPerQuestion: number
   }
+  sheetFormat: SheetFormat
+  a5LeftWorksheets: WorksheetPage[] | null
+  a5RightWorksheets: WorksheetPage[] | null
+  a5LeftSheet: WorksheetPage | undefined
+  a5RightSheet: WorksheetPage | undefined
   previewSheet: WorksheetPage | undefined
   safeSheetIndex: number
   pageExerciseBlocks: ExerciseBlock[]
@@ -118,6 +124,11 @@ export function ResultPanel({
   previewFrameRef,
   seed,
   previewWorksheets,
+  sheetFormat,
+  a5LeftWorksheets,
+  a5RightWorksheets,
+  a5LeftSheet,
+  a5RightSheet,
   sheetProps,
   chromeProps,
   previewSheet,
@@ -148,6 +159,7 @@ export function ResultPanel({
   const answersBaseCount = isCalliDomain || isJeuxDomain ? 0 : previewWorksheets.length
   /** Corrigé : pages exercices + pages transcriptions (interactions PO sans pied numéroté). */
   const corrigeTotalPages = answersBaseCount + transcriptionPacks.length
+  const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
   const showTranscriptionPreview =
     sheetProps.mode === 'answers' &&
     transcriptionPacks.length > 0 &&
@@ -361,41 +373,81 @@ export function ResultPanel({
                       ))}
                     </div>
                   ) : (
-                  <div className="sheet-stage">
-                    <A4Frame ref={previewFrameRef}>
-                      <WorksheetSheet
-                        key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
-                        page={previewSheet!}
-                        pageNumber={safeSheetIndex + 1}
-                        sheetIndex={safeSheetIndex + 1}
-                        total={previewWorksheets.length}
-                        interactiveDraftGrids={pageExerciseBlocks.some((b) =>
-                          isProblemExercise(b.exerciseType),
-                        )}
-                        onToggleDraftGrid={toggleDraftGrid}
-                        interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
-                        onCycleOralAnswerMode={cycleOralAnswerMode}
-                        interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
-                        interactiveTcfPageBreaks={isTcf}
-                        onSelectTcfForm={selectTcfForm}
-                        onSelectTcfFormForExercise={selectTcfFormForExercise}
-                        onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
-                        onToggleTcfPageBreak={toggleTcfPageBreak}
-                        coordEdit={
-                          (isFormes && activeBlock.coordLibre) ||
-                          (isCadrans && activeBlock.coordLibre) ||
-                          (isTransform && activeBlock.coordLibre)
-                            ? {
-                                selectedKind: selectedCoordShape,
-                                placingOrigin: isComposer && coordTool === 'origin',
-                                onPlace: placeCoordMark,
-                                onPlaceOrigin: placeOrigin,
-                                onRemove: removeCoordMark,
-                              }
-                            : undefined
-                        }
-                        {...sheetProps}
-                      />
+                  <div className={`sheet-stage${useA5Double ? ' is-a5-double' : ''}`}>
+                    <A4Frame
+                      ref={previewFrameRef}
+                      className={useA5Double ? 'is-landscape' : undefined}
+                    >
+                      {useA5Double && a5LeftSheet && a5RightSheet ? (
+                        <DualA5Sheet
+                          key={`a5-${a5LeftSheet.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
+                          leftPage={a5LeftSheet}
+                          rightPage={a5RightSheet}
+                          pageNumber={safeSheetIndex + 1}
+                          sheetIndex={safeSheetIndex + 1}
+                          total={previewWorksheets.length}
+                          interactiveDraftGrids={pageExerciseBlocks.some((b) =>
+                            isProblemExercise(b.exerciseType),
+                          )}
+                          onToggleDraftGrid={toggleDraftGrid}
+                          interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
+                          onCycleOralAnswerMode={cycleOralAnswerMode}
+                          interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
+                          interactiveTcfPageBreaks={isTcf}
+                          onSelectTcfForm={selectTcfForm}
+                          onSelectTcfFormForExercise={selectTcfFormForExercise}
+                          onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
+                          onToggleTcfPageBreak={toggleTcfPageBreak}
+                          coordEdit={
+                            (isFormes && activeBlock.coordLibre) ||
+                            (isCadrans && activeBlock.coordLibre) ||
+                            (isTransform && activeBlock.coordLibre)
+                              ? {
+                                  selectedKind: selectedCoordShape,
+                                  placingOrigin: isComposer && coordTool === 'origin',
+                                  onPlace: placeCoordMark,
+                                  onPlaceOrigin: placeOrigin,
+                                  onRemove: removeCoordMark,
+                                }
+                              : undefined
+                          }
+                          {...sheetProps}
+                        />
+                      ) : (
+                        <WorksheetSheet
+                          key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
+                          page={previewSheet!}
+                          pageNumber={safeSheetIndex + 1}
+                          sheetIndex={safeSheetIndex + 1}
+                          total={previewWorksheets.length}
+                          interactiveDraftGrids={pageExerciseBlocks.some((b) =>
+                            isProblemExercise(b.exerciseType),
+                          )}
+                          onToggleDraftGrid={toggleDraftGrid}
+                          interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
+                          onCycleOralAnswerMode={cycleOralAnswerMode}
+                          interactiveTcfOptions={isTcf || Boolean(isGrammaireExercise)}
+                          interactiveTcfPageBreaks={isTcf}
+                          onSelectTcfForm={selectTcfForm}
+                          onSelectTcfFormForExercise={selectTcfFormForExercise}
+                          onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
+                          onToggleTcfPageBreak={toggleTcfPageBreak}
+                          coordEdit={
+                            (isFormes && activeBlock.coordLibre) ||
+                            (isCadrans && activeBlock.coordLibre) ||
+                            (isTransform && activeBlock.coordLibre)
+                              ? {
+                                  selectedKind: selectedCoordShape,
+                                  placingOrigin: isComposer && coordTool === 'origin',
+                                  onPlace: placeCoordMark,
+                                  onPlaceOrigin: placeOrigin,
+                                  onRemove: removeCoordMark,
+                                }
+                              : undefined
+                          }
+                          {...sheetProps}
+                        />
+                      )}
                     </A4Frame>
                     {sheetProps.mode === 'answers'
                       ? imageInteractionsOf(previewSheet).map((exercise) => (
@@ -435,30 +487,62 @@ export function ResultPanel({
             </div>
             {/* Impression : fiches élèves ; corrigés seulement s’il y en a */}
             <div className="sheet-stage print-only-sheets" aria-hidden>
-              {previewWorksheets.map((page, index) => (
-                <WorksheetSheet
-                  key={`print-student-${page.exerciseType}-${seed}-${index}`}
-                  page={page}
-                  pageNumber={index + 1}
-                  sheetIndex={index + 1}
-                  total={previewWorksheets.length}
-                  {...chromeProps}
-                  mode="student"
-                />
-              ))}
-              {isCalliDomain || isJeuxDomain
-                ? null
+              {useA5Double && a5LeftWorksheets && a5RightWorksheets
+                ? a5LeftWorksheets.map((leftPage, index) => {
+                    const rightPage = a5RightWorksheets[index] ?? leftPage
+                    return (
+                      <DualA5Sheet
+                        key={`print-student-a5-${leftPage.exerciseType}-${seed}-${index}`}
+                        leftPage={leftPage}
+                        rightPage={rightPage}
+                        pageNumber={index + 1}
+                        sheetIndex={index + 1}
+                        total={a5LeftWorksheets.length}
+                        {...chromeProps}
+                        mode="student"
+                      />
+                    )
+                  })
                 : previewWorksheets.map((page, index) => (
                     <WorksheetSheet
-                      key={`print-answers-${page.exerciseType}-${seed}-${index}`}
+                      key={`print-student-${page.exerciseType}-${seed}-${index}`}
                       page={page}
                       pageNumber={index + 1}
-                      sheetIndex={previewWorksheets.length + index + 1}
+                      sheetIndex={index + 1}
                       total={previewWorksheets.length}
                       {...chromeProps}
-                      mode="answers"
+                      mode="student"
                     />
                   ))}
+              {isCalliDomain || isJeuxDomain
+                ? null
+                : useA5Double && a5LeftWorksheets && a5RightWorksheets
+                  ? a5LeftWorksheets.map((leftPage, index) => {
+                      const rightPage = a5RightWorksheets[index] ?? leftPage
+                      return (
+                        <DualA5Sheet
+                          key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}
+                          leftPage={leftPage}
+                          rightPage={rightPage}
+                          pageNumber={index + 1}
+                          sheetIndex={a5LeftWorksheets.length + index + 1}
+                          total={a5LeftWorksheets.length}
+                          {...chromeProps}
+                          mode="answers"
+                        />
+                      )
+                    })
+                  : previewWorksheets.map((page, index) => (
+                      <WorksheetSheet
+                        key={`print-answers-${page.exerciseType}-${seed}-${index}`}
+                        page={page}
+                        pageNumber={index + 1}
+                        sheetIndex={previewWorksheets.length + index + 1}
+                        total={previewWorksheets.length}
+                        {...chromeProps}
+                        mode="answers"
+                      />
+                    ))}
               {previewWorksheets.flatMap((page) =>
                 imageInteractionsOf(page).map((exercise) => (
                   <InteractionCorrigeSheet key={`print-interaction-${exercise.id}`} exercise={exercise} />

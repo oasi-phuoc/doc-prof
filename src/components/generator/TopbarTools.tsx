@@ -8,6 +8,10 @@ import {
   hueFromPointer,
 } from '@/components/generator/theme'
 import { MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE } from '@/components/generator/typography'
+import {
+  SHEET_FORMAT_LABELS,
+  type SheetFormat,
+} from '@/components/generator/sheet-format'
 
 function IconBtn({
   label,
@@ -36,18 +40,16 @@ function IconBtn({
   )
 }
 
-function ColorMenu({
+function ColorSection({
   themeColor,
   onChange,
 }: {
   themeColor: string
   onChange: (color: string) => void
 }) {
-  const [open, setOpen] = useState(false)
   const [hue, setHue] = useState(() => hexToHue(themeColor))
   const [toneId, setToneId] = useState<(typeof THEME_TONES)[number]['id']>('vif')
   const [customOpen, setCustomOpen] = useState(false)
-  const boxRef = useRef<HTMLDivElement>(null)
   const wheelRef = useRef<HTMLButtonElement>(null)
   const dragging = useRef(false)
   const toneRef = useRef(toneId)
@@ -75,13 +77,6 @@ function ColorMenu({
   }
 
   useEffect(() => {
-    if (!open) return
-    const close = (event: MouseEvent) => {
-      if (!boxRef.current?.contains(event.target as Node)) {
-        setOpen(false)
-        setCustomOpen(false)
-      }
-    }
     const move = (event: PointerEvent) => {
       if (!dragging.current) return
       pickFromPointer(event.clientX, event.clientY)
@@ -89,15 +84,13 @@ function ColorMenu({
     const stop = () => {
       dragging.current = false
     }
-    document.addEventListener('mousedown', close)
     document.addEventListener('pointermove', move)
     document.addEventListener('pointerup', stop)
     return () => {
-      document.removeEventListener('mousedown', close)
       document.removeEventListener('pointermove', move)
       document.removeEventListener('pointerup', stop)
     }
-  }, [open])
+  }, [])
 
   const knobStyle = {
     left: `${50 + 38 * Math.sin((hue * Math.PI) / 180)}%`,
@@ -106,105 +99,161 @@ function ColorMenu({
   } as CSSProperties
 
   return (
-    <div className="topbar-color-wrap" ref={boxRef}>
-      <button
-        type="button"
-        className={`topbar-icon-btn topbar-color-btn${open ? ' active' : ''}`}
-        aria-label="Couleur du thème"
-        title="Couleur du thème"
-        aria-expanded={open}
-        aria-haspopup="listbox"
-        onClick={() => {
-          setHue(hexToHue(themeColor))
-          setOpen((v) => !v)
-          setCustomOpen(false)
-        }}
-      >
-        <span className="topbar-color-swatch" style={{ background: themeColor }} />
-      </button>
-      {open ? (
-        <div className="topbar-color-menu" role="listbox" aria-label="Couleurs du thème">
-          <div className="theme-color-choices is-compact">
-            {THEME_COLORS.map((swatch) => (
+    <div className="settings-section" role="group" aria-label="Couleur du thème">
+      <p className="settings-section-title">Couleur du thème</p>
+      <div className="theme-color-choices is-compact">
+        {THEME_COLORS.map((swatch) => (
+          <button
+            key={swatch.id}
+            type="button"
+            role="option"
+            aria-selected={themeColor === swatch.color}
+            aria-label={swatch.label}
+            title={swatch.label}
+            className={`theme-color-swatch${themeColor === swatch.color ? ' active' : ''}`}
+            style={{ background: swatch.color }}
+            onClick={() => {
+              onChange(swatch.color)
+              setCustomOpen(false)
+            }}
+          />
+        ))}
+        <button
+          type="button"
+          role="option"
+          aria-selected={!isPreset}
+          aria-expanded={customOpen}
+          aria-label="Autre couleur"
+          title="Autre couleur"
+          className={`theme-color-swatch theme-color-other${!isPreset ? ' active' : ''}`}
+          style={!isPreset ? { background: themeColor } : undefined}
+          onClick={() => {
+            setHue(hexToHue(themeColor))
+            setCustomOpen((v) => !v)
+          }}
+        />
+      </div>
+      {customOpen ? (
+        <div className="theme-color-picker" role="dialog" aria-label="Cercle chromatique">
+          <button
+            ref={wheelRef}
+            type="button"
+            className="theme-hue-wheel"
+            aria-label="Choisir une teinte"
+            onPointerDown={(event) => {
+              dragging.current = true
+              event.currentTarget.setPointerCapture(event.pointerId)
+              pickFromPointer(event.clientX, event.clientY)
+            }}
+          >
+            <span className="theme-hue-knob" style={knobStyle} />
+          </button>
+          <div className="theme-tone-row" role="group" aria-label="Ton de la couleur">
+            {THEME_TONES.map((tone) => (
               <button
-                key={swatch.id}
+                key={tone.id}
                 type="button"
-                role="option"
-                aria-selected={themeColor === swatch.color}
-                aria-label={swatch.label}
-                title={swatch.label}
-                className={`theme-color-swatch${themeColor === swatch.color ? ' active' : ''}`}
-                style={{ background: swatch.color }}
-                onClick={() => {
-                  onChange(swatch.color)
-                  setCustomOpen(false)
-                  setOpen(false)
+                className={`theme-tone-chip${toneId === tone.id ? ' active' : ''}`}
+                style={{
+                  background: hslToHex(hue, tone.s, tone.l),
+                  color: contrastOnTheme(hslToHex(hue, tone.s, tone.l)),
                 }}
-              />
-            ))}
-            <button
-              type="button"
-              role="option"
-              aria-selected={!isPreset}
-              aria-expanded={customOpen}
-              aria-label="Autre couleur"
-              title="Autre couleur"
-              className={`theme-color-swatch theme-color-other${!isPreset ? ' active' : ''}`}
-              style={!isPreset ? { background: themeColor } : undefined}
-              onClick={() => {
-                setHue(hexToHue(themeColor))
-                setCustomOpen((v) => !v)
-              }}
-            />
-          </div>
-          {customOpen ? (
-            <div className="theme-color-picker" role="dialog" aria-label="Cercle chromatique">
-              <button
-                ref={wheelRef}
-                type="button"
-                className="theme-hue-wheel"
-                aria-label="Choisir une teinte"
-                onPointerDown={(event) => {
-                  dragging.current = true
-                  event.currentTarget.setPointerCapture(event.pointerId)
-                  pickFromPointer(event.clientX, event.clientY)
+                onClick={() => {
+                  setToneId(tone.id)
+                  applyHueTone(hue, tone.id)
                 }}
               >
-                <span className="theme-hue-knob" style={knobStyle} />
+                {tone.label}
               </button>
-              <div className="theme-tone-row" role="group" aria-label="Ton de la couleur">
-                {THEME_TONES.map((tone) => (
-                  <button
-                    key={tone.id}
-                    type="button"
-                    className={`theme-tone-chip${toneId === tone.id ? ' active' : ''}`}
-                    style={{
-                      background: hslToHex(hue, tone.s, tone.l),
-                      color: contrastOnTheme(hslToHex(hue, tone.s, tone.l)),
-                    }}
-                    onClick={() => {
-                      setToneId(tone.id)
-                      applyHueTone(hue, tone.id)
-                    }}
-                  >
-                    {tone.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : null}
+            ))}
+          </div>
         </div>
       ) : null}
     </div>
   )
 }
 
-function FontSizeMenu({
+function FontSizeSection({
   fontSize,
   onChange,
 }: {
   fontSize: number
   onChange: (size: number) => void
+}) {
+  return (
+    <div className="settings-section" role="group" aria-label="Taille du texte">
+      <label className="settings-font-label" htmlFor="base-font-size">
+        <span>Taille du texte de la fiche</span>
+        <output htmlFor="base-font-size">{fontSize} px</output>
+      </label>
+      <input
+        id="base-font-size"
+        type="range"
+        min={MIN_BASE_FONT_SIZE}
+        max={MAX_BASE_FONT_SIZE}
+        step="1"
+        value={fontSize}
+        onChange={(event) => onChange(Number(event.currentTarget.value))}
+      />
+      <div className="font-size-range-labels" aria-hidden="true">
+        <span>{MIN_BASE_FONT_SIZE} px</span>
+        <span>{MAX_BASE_FONT_SIZE} px</span>
+      </div>
+    </div>
+  )
+}
+
+function FormatSection({
+  sheetFormat,
+  onChange,
+}: {
+  sheetFormat: SheetFormat
+  onChange: (format: SheetFormat) => void
+}) {
+  const formats: SheetFormat[] = ['a4-portrait', 'a5-double-landscape']
+  return (
+    <div className="settings-section" role="radiogroup" aria-label="Format de page">
+      <p className="settings-section-title">Format de page</p>
+      <div className="settings-format-list">
+        {formats.map((format) => (
+          <button
+            key={format}
+            type="button"
+            role="radio"
+            aria-checked={sheetFormat === format}
+            className={`settings-format-option${sheetFormat === format ? ' active' : ''}`}
+            onClick={() => onChange(format)}
+          >
+            <span className="settings-format-radio" aria-hidden="true" />
+            <span className="settings-format-copy">
+              <strong>{SHEET_FORMAT_LABELS[format]}</strong>
+              {format === 'a5-double-landscape' ? (
+                <span>A4 paysage coupée en deux mini-fiches A5</span>
+              ) : (
+                <span>Feuille A4 verticale classique</span>
+              )}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function SettingsMenu({
+  themeColor,
+  onThemeColor,
+  fontSize,
+  onFontSizeChange,
+  sheetFormat,
+  onSheetFormatChange,
+}: {
+  themeColor: string
+  onThemeColor: (color: string) => void
+  fontSize: number
+  onFontSizeChange: (size: number) => void
+  sheetFormat: SheetFormat
+  onSheetFormatChange: (format: SheetFormat) => void
 }) {
   const [open, setOpen] = useState(false)
   const boxRef = useRef<HTMLDivElement>(null)
@@ -226,37 +275,28 @@ function FontSizeMenu({
   }, [open])
 
   return (
-    <div className="topbar-font-size-wrap" ref={boxRef}>
+    <div className="topbar-settings-wrap" ref={boxRef}>
       <button
         type="button"
         className={`topbar-icon-btn${open ? ' active' : ''}`}
-        aria-label={`Taille du texte de la fiche : ${fontSize} pixels`}
-        title={`Taille du texte de la fiche : ${fontSize} px`}
+        aria-label="Paramètres"
+        title="Paramètres"
         aria-expanded={open}
         aria-haspopup="dialog"
         onClick={() => setOpen((value) => !value)}
       >
-        <span className="font-size-icon" aria-hidden="true">A</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+          <path
+            fill="currentColor"
+            d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.07 7.07 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.58.23-1.12.54-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L2.83 14.58a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.4 1.05.71 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.58-.23 1.12-.54 1.63-.94l2.39.96c.25.12.54.02.68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"
+          />
+        </svg>
       </button>
       {open ? (
-        <div className="topbar-font-size-menu" role="dialog" aria-label="Taille du texte de la fiche">
-          <label htmlFor="base-font-size">
-            <span>Taille du texte de la fiche</span>
-            <output htmlFor="base-font-size">{fontSize} px</output>
-          </label>
-          <input
-            id="base-font-size"
-            type="range"
-            min={MIN_BASE_FONT_SIZE}
-            max={MAX_BASE_FONT_SIZE}
-            step="1"
-            value={fontSize}
-            onChange={(event) => onChange(Number(event.currentTarget.value))}
-          />
-          <div className="font-size-range-labels" aria-hidden="true">
-            <span>{MIN_BASE_FONT_SIZE} px</span>
-            <span>{MAX_BASE_FONT_SIZE} px</span>
-          </div>
+        <div className="topbar-settings-menu" role="dialog" aria-label="Paramètres">
+          <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} />
+          <ColorSection themeColor={themeColor} onChange={onThemeColor} />
+          <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
         </div>
       ) : null}
     </div>
@@ -268,6 +308,8 @@ export function TopbarTools({
   onThemeColor,
   fontSize,
   onFontSizeChange,
+  sheetFormat,
+  onSheetFormatChange,
   footerOpen,
   onToggleFooter,
   libreOpen,
@@ -281,6 +323,8 @@ export function TopbarTools({
   onThemeColor: (color: string) => void
   fontSize: number
   onFontSizeChange: (size: number) => void
+  sheetFormat: SheetFormat
+  onSheetFormatChange: (format: SheetFormat) => void
   footerOpen: boolean
   onToggleFooter: () => void
   libreOpen: boolean
@@ -295,8 +339,14 @@ export function TopbarTools({
   const isCorrige = previewMode === 'answers'
   return (
     <div className="topbar-tools">
-      <FontSizeMenu fontSize={fontSize} onChange={onFontSizeChange} />
-      <ColorMenu themeColor={themeColor} onChange={onThemeColor} />
+      <SettingsMenu
+        themeColor={themeColor}
+        onThemeColor={onThemeColor}
+        fontSize={fontSize}
+        onFontSizeChange={onFontSizeChange}
+        sheetFormat={sheetFormat}
+        onSheetFormatChange={onSheetFormatChange}
+      />
       {showPreviewToggle ? (
         <IconBtn
           label={isCorrige ? 'Corrigé (cliquer pour fiche élève)' : 'Fiche élève (cliquer pour corrigé)'}

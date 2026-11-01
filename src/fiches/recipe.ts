@@ -1,4 +1,5 @@
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
+import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
@@ -13,6 +14,8 @@ export type FicheRecipe = {
   libreSnapshot: PageConfig[] | null
   /** Livre complet : la graine reconstruit toutes les lettres. */
   bookKind?: 'alpha' | 'soutien'
+  /** Format de feuille (portrait A4 ou paysage double A5). */
+  sheetFormat?: SheetFormat
 }
 
 export type SavedFiche = {
@@ -111,6 +114,10 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
   }
   const pages = (value.pages as PageConfig[]).map(migratePage)
   const snapshot = (value.libreSnapshot as PageConfig[] | null) ?? null
+  const sheetFormat =
+    value.sheetFormat === 'a5-double-landscape' || value.sheetFormat === 'a4-portrait'
+      ? value.sheetFormat
+      : undefined
   return {
     version: 1,
     pages,
@@ -121,6 +128,7 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     libreMode: value.libreMode,
     libreSnapshot: snapshot ? snapshot.map(migratePage) : null,
     bookKind: value.bookKind === 'alpha' || value.bookKind === 'soutien' ? value.bookKind : undefined,
+    sheetFormat,
   }
 }
 
@@ -141,6 +149,7 @@ export function buildFicheRecipe(input: {
   libreMode: boolean
   libreSnapshot: PageConfig[] | null
   bookKind?: 'alpha' | 'soutien'
+  sheetFormat?: SheetFormat
 }): FicheRecipe {
   return { version: 1, ...input }
 }
