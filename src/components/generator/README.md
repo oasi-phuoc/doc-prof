@@ -22,7 +22,7 @@ Découpage de l’ancien monolithe `App.tsx` / `GeneratorPage.tsx` pour le déve
 | `CoordLibreSettings.tsx` | Panneaux formes / cadrans / droites / construire / transform |
 | `DraftGridControls.tsx` | Grilles de brouillon (problèmes / TPM) |
 | `ResultPanel.tsx` | Actions aperçu + stage A4 + feuilles impression |
-| `TopbarTools.tsx` | Icônes haut : Paramètres (taille / couleur / format A5), pied, mode libre, déconnexion |
+| `TopbarTools.tsx` | Icônes haut : aperçu, pied, libre ; menu à droite (Paramètres + déconnexion) |
 | `sheet-format.ts` | Format portrait A4 vs paysage double A5 + graines jumelles |
 | `FooterSidePanel.tsx` | Panneau droit en-tête / pied de page |
 | `LibreSidePanel.tsx` | Panneau droit édition manuelle (tous domaines) |

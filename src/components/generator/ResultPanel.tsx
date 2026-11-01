@@ -59,12 +59,14 @@ export type ResultPanelProps = {
     pointsPerQuestion: number
     onRegenerateBlock: (targetBlock: number, half?: 'left' | 'right') => void
     showExerciseRefresh?: boolean
+    hideChrome?: boolean
   }
   chromeProps: {
     institutional: InstitutionalHeader
     evalMode: boolean
     documentTotalPoints: number
     pointsPerQuestion: number
+    hideChrome?: boolean
   }
   sheetFormat: SheetFormat
   a5LeftWorksheets: WorksheetPage[] | null

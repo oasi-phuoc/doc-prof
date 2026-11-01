@@ -240,13 +240,57 @@ function FormatSection({
   )
 }
 
-function SettingsMenu({
+function ChromeSection({
+  hideChrome,
+  onChange,
+}: {
+  hideChrome: boolean
+  onChange: (hide: boolean) => void
+}) {
+  return (
+    <div className="settings-section" role="group" aria-label="En-tête et pied de page">
+      <p className="settings-section-title">En-tête et pied de page</p>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={!hideChrome}
+        className={`settings-format-option${!hideChrome ? ' active' : ''}`}
+        onClick={() => onChange(false)}
+      >
+        <span className="settings-format-radio" aria-hidden="true" />
+        <span className="settings-format-copy">
+          <strong>Avec en-tête et pied</strong>
+          <span>En-tête institutionnel et pied de page</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={hideChrome}
+        className={`settings-format-option${hideChrome ? ' active' : ''}`}
+        onClick={() => onChange(true)}
+      >
+        <span className="settings-format-radio" aria-hidden="true" />
+        <span className="settings-format-copy">
+          <strong>Exercices seulement</strong>
+          <span>Sans en-tête ni pied de page</span>
+        </span>
+      </button>
+    </div>
+  )
+}
+
+/** Menu tout à droite : Paramètres + déconnexion. */
+function AccountMenu({
   themeColor,
   onThemeColor,
   fontSize,
   onFontSizeChange,
   sheetFormat,
   onSheetFormatChange,
+  hideChrome,
+  onHideChromeChange,
+  onLogout,
 }: {
   themeColor: string
   onThemeColor: (color: string) => void
@@ -254,6 +298,9 @@ function SettingsMenu({
   onFontSizeChange: (size: number) => void
   sheetFormat: SheetFormat
   onSheetFormatChange: (format: SheetFormat) => void
+  hideChrome: boolean
+  onHideChromeChange: (hide: boolean) => void
+  onLogout: () => void
 }) {
   const [open, setOpen] = useState(false)
   const boxRef = useRef<HTMLDivElement>(null)
@@ -275,28 +322,48 @@ function SettingsMenu({
   }, [open])
 
   return (
-    <div className="topbar-settings-wrap" ref={boxRef}>
+    <div className="topbar-account-wrap" ref={boxRef}>
       <button
         type="button"
         className={`topbar-icon-btn${open ? ' active' : ''}`}
-        aria-label="Paramètres"
-        title="Paramètres"
+        aria-label="Menu"
+        title="Menu"
         aria-expanded={open}
-        aria-haspopup="dialog"
+        aria-haspopup="menu"
         onClick={() => setOpen((value) => !value)}
       >
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path
             fill="currentColor"
-            d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.07 7.07 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.58.23-1.12.54-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L2.83 14.58a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.4 1.05.71 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.58-.23 1.12-.54 1.63-.94l2.39.96c.25.12.54.02.68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"
+            d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
           />
         </svg>
       </button>
       {open ? (
-        <div className="topbar-settings-menu" role="dialog" aria-label="Paramètres">
+        <div className="topbar-account-menu" role="menu" aria-label="Menu">
+          <p className="settings-menu-heading">Paramètres</p>
           <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} />
           <ColorSection themeColor={themeColor} onChange={onThemeColor} />
           <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
+          <ChromeSection hideChrome={hideChrome} onChange={onHideChromeChange} />
+          <div className="settings-menu-divider" />
+          <button
+            type="button"
+            className="settings-logout-btn"
+            role="menuitem"
+            onClick={() => {
+              setOpen(false)
+              onLogout()
+            }}
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+              <path
+                fill="currentColor"
+                d="M10 4v2H6v12h4v2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4zm7.6 5.4L15 7l-1.4 1.4 2.6 2.6H10v2h6.2l-2.6 2.6L15 17l2.6-2.6L20.2 12l-2.6-2.6z"
+              />
+            </svg>
+            Se déconnecter
+          </button>
         </div>
       ) : null}
     </div>
@@ -310,6 +377,8 @@ export function TopbarTools({
   onFontSizeChange,
   sheetFormat,
   onSheetFormatChange,
+  hideChrome,
+  onHideChromeChange,
   footerOpen,
   onToggleFooter,
   libreOpen,
@@ -325,6 +394,8 @@ export function TopbarTools({
   onFontSizeChange: (size: number) => void
   sheetFormat: SheetFormat
   onSheetFormatChange: (format: SheetFormat) => void
+  hideChrome: boolean
+  onHideChromeChange: (hide: boolean) => void
   footerOpen: boolean
   onToggleFooter: () => void
   libreOpen: boolean
@@ -339,14 +410,6 @@ export function TopbarTools({
   const isCorrige = previewMode === 'answers'
   return (
     <div className="topbar-tools">
-      <SettingsMenu
-        themeColor={themeColor}
-        onThemeColor={onThemeColor}
-        fontSize={fontSize}
-        onFontSizeChange={onFontSizeChange}
-        sheetFormat={sheetFormat}
-        onSheetFormatChange={onSheetFormatChange}
-      />
       {showPreviewToggle ? (
         <IconBtn
           label={isCorrige ? 'Corrigé (cliquer pour fiche élève)' : 'Fiche élève (cliquer pour corrigé)'}
@@ -386,14 +449,17 @@ export function TopbarTools({
           />
         </svg>
       </IconBtn>
-      <IconBtn label="Se déconnecter" onClick={onLogout} className="is-logout">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-          <path
-            fill="currentColor"
-            d="M10 4v2H6v12h4v2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4zm7.6 5.4L15 7l-1.4 1.4 2.6 2.6H10v2h6.2l-2.6 2.6L15 17l2.6-2.6L20.2 12l-2.6-2.6z"
-          />
-        </svg>
-      </IconBtn>
+      <AccountMenu
+        themeColor={themeColor}
+        onThemeColor={onThemeColor}
+        fontSize={fontSize}
+        onFontSizeChange={onFontSizeChange}
+        sheetFormat={sheetFormat}
+        onSheetFormatChange={onSheetFormatChange}
+        hideChrome={hideChrome}
+        onHideChromeChange={onHideChromeChange}
+        onLogout={onLogout}
+      />
     </div>
   )
 }

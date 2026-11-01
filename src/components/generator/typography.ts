@@ -1,6 +1,6 @@
 export const FONT_SIZE_STORAGE_KEY = 'clairfle-base-font-size'
 export const DEFAULT_BASE_FONT_SIZE = 16
-export const MIN_BASE_FONT_SIZE = 16
+export const MIN_BASE_FONT_SIZE = 10
 export const MAX_BASE_FONT_SIZE = 24
 /** Variable CSS : échelle du texte des feuilles imprimables uniquement. */
 export const SHEET_FONT_SCALE_VAR = '--sheet-font-scale'

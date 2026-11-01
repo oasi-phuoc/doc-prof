@@ -16,6 +16,8 @@ export type FicheRecipe = {
   bookKind?: 'alpha' | 'soutien'
   /** Format de feuille (portrait A4 ou paysage double A5). */
   sheetFormat?: SheetFormat
+  /** Masque en-tête et pied : exercices seulement. */
+  hideChrome?: boolean
 }
 
 export type SavedFiche = {
@@ -118,6 +120,7 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     value.sheetFormat === 'a5-double-landscape' || value.sheetFormat === 'a4-portrait'
       ? value.sheetFormat
       : undefined
+  const hideChrome = value.hideChrome === true ? true : value.hideChrome === false ? false : undefined
   return {
     version: 1,
     pages,
@@ -129,6 +132,7 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     libreSnapshot: snapshot ? snapshot.map(migratePage) : null,
     bookKind: value.bookKind === 'alpha' || value.bookKind === 'soutien' ? value.bookKind : undefined,
     sheetFormat,
+    hideChrome,
   }
 }
 
@@ -150,6 +154,7 @@ export function buildFicheRecipe(input: {
   libreSnapshot: PageConfig[] | null
   bookKind?: 'alpha' | 'soutien'
   sheetFormat?: SheetFormat
+  hideChrome?: boolean
 }): FicheRecipe {
   return { version: 1, ...input }
 }

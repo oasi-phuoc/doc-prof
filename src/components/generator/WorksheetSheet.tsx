@@ -157,8 +157,13 @@ export type WorksheetSheetProps = {
   onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right') => void
   /** Afficher le refresh à côté du titre (désactivé en mode libre). */
   showExerciseRefresh?: boolean
-  /** Force l’en-tête (moitiés A5 : chaque mini-fiche a son en-tête). */
+  /**
+   * Force l’en-tête même si pageNumber > 1.
+   * Les moitiés A5 l’activent toujours (chaque mini-fiche est autonome).
+   */
   forceHeader?: boolean
+  /** Masque en-tête et pied : exercices seulement. */
+  hideChrome?: boolean
   /** Moitié A5 : racine en `.a5-half` au lieu de `.worksheet-sheet`. */
   asHalf?: 'left' | 'right'
   coordEdit?: {
@@ -193,11 +198,15 @@ export function WorksheetSheet({
   onRegenerateBlock,
   showExerciseRefresh = true,
   forceHeader = false,
+  hideChrome = false,
   asHalf,
   coordEdit,
 }: WorksheetSheetProps) {
   const isJeuxSheet = page.domain === 'jeux'
-  const showHeader = (forceHeader || pageNumber === 1) && !isJeuxSheet
+  /** A5 : chaque moitié a toujours son en-tête (mini-contrôle autonome), sauf chrome masqué. */
+  const showHeader =
+    !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
+  const showFooter = !hideChrome && !isJeuxSheet
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
     (item) =>
@@ -561,7 +570,7 @@ export function WorksheetSheet({
           )
         })}
       </SheetBody>
-      {isJeuxSheet ? null : (
+      {showFooter ? (
         <DocumentFooter
           pageNumber={pageNumber}
           total={total}
@@ -569,7 +578,7 @@ export function WorksheetSheet({
             isAlphaSoutienDomain(page.domain) ? ALPHA_SOUTIEN_REFERENCE : institutional.reference
           }
         />
-      )}
+      ) : null}
     </Root>
   )
 }
@@ -593,7 +602,7 @@ export function DualA5Sheet({
         {...sheetProps}
         page={leftPage}
         asHalf="left"
-        forceHeader
+        forceHeader={!sheetProps.hideChrome}
       />
       <div className="a5-cut-guide" aria-hidden="true">
         <span className="a5-cut-mark" />
@@ -602,7 +611,7 @@ export function DualA5Sheet({
         {...sheetProps}
         page={rightPage}
         asHalf="right"
-        forceHeader
+        forceHeader={!sheetProps.hideChrome}
       />
     </article>
   )

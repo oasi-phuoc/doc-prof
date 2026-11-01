@@ -100,6 +100,9 @@ export function GeneratorPage({
   const [sheetFormat, setSheetFormat] = useState<SheetFormat>(
     () => openedFiche?.recipe.sheetFormat ?? 'a4-portrait',
   )
+  const [hideChrome, setHideChrome] = useState(
+    () => openedFiche?.recipe.hideChrome ?? false,
+  )
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
@@ -383,6 +386,7 @@ export function GeneratorPage({
       libreMode,
       libreSnapshot,
       sheetFormat,
+      hideChrome,
     })
     const saved =
       !input.asNew && ficheRef
@@ -399,11 +403,13 @@ export function GeneratorPage({
     // TPM : total = somme des barèmes de la fiche (plus de plafond fixe à 100).
     documentTotalPoints: sheetTotalPoints,
     pointsPerQuestion,
+    hideChrome,
   } as const
 
   const sheetProps = {
     mode,
     ...chromeProps,
+    hideChrome,
     onRegenerateBlock: regenerateBlock,
     // En mode libre : refresh sous la numérotation du panneau (pas sur le titre Exercice).
     showExerciseRefresh: !libreMode,
@@ -559,6 +565,8 @@ export function GeneratorPage({
             onFontSizeChange={changeFontSize}
             sheetFormat={sheetFormat}
             onSheetFormatChange={setSheetFormat}
+            hideChrome={hideChrome}
+            onHideChromeChange={setHideChrome}
             footerOpen={footerPanelOpen}
             onToggleFooter={() => setFooterPanelOpen((v) => !v)}
             libreOpen={libreMode}
