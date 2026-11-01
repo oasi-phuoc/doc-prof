@@ -11,6 +11,13 @@ import {
 } from './audio-tags'
 import { isTcfCoAssociation, tcfAssociationTranscriptions } from './association-audio'
 import type { TcfExercise, TcfQuestion } from './types'
+import reviewedPools from './content/co-reviewed-pools.json'
+
+/** La taille d’un pool relu ne change pas le tag pédagogique de sa piste. */
+function audioPoolTag(audio: string, count: number) {
+  const reviewed = (reviewedPools as Record<string, { tag: 'court' | 'moyen' | 'long'; questions: number }>)[audio]
+  return reviewed && reviewed.questions === count ? reviewed.tag : tcfTagForQuestionPoolSize(count)
+}
 
 export type TcfAudioEntry = {
   audio: string
@@ -191,7 +198,7 @@ function taggedLengthAudioRows(exercise: TcfExercise): RawAudioRow[] {
     const base = tcfAudioBaseLabel(exercise, multi[0]!)
     for (let i = 0; i < multi.length; i++) {
       const pool = questionsForAudioIndex(exercise, i + 1, multi.length)
-      const tag = tcfTagForQuestionPoolSize(pool.length)
+      const tag = audioPoolTag(multi[i]!, pool.length)
       if (!tag) continue
       const audio = multi[i]!
       const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
@@ -210,7 +217,7 @@ function taggedLengthAudioRows(exercise: TcfExercise): RawAudioRow[] {
   const one = support.audio?.trim() || (multi.length === 1 ? multi[0]! : '')
   if (!one) return []
   const qs = exercise.questions ?? []
-  const tag = tcfTagForQuestionPoolSize(qs.length)
+  const tag = audioPoolTag(one, qs.length)
   if (!tag) return []
   const stem = one.split('/').pop()?.replace(/\.mp3$/i, '') ?? one
   return [
@@ -243,7 +250,7 @@ function associationScenarioRows(exercise: TcfExercise): RawAudioRow[] {
     const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
     const tr = trs[i]?.trim()
     const pool = questionsForAudioIndex(exercise, dialogueIndex, audios.length)
-    const lengthTag = tcfTagForQuestionPoolSize(pool.length)
+    const lengthTag = audioPoolTag(audio, pool.length)
     return {
       audio,
       exercise,
@@ -267,7 +274,7 @@ function mergeAudioRows(a: RawAudioRow, b: RawAudioRow): RawAudioRow {
     isTcfCoAssociation(a.exercise) ? a.exercise : isTcfCoAssociation(b.exercise) ? b.exercise : a.exercise
   const tags = tcfMergeAudioTags(a.tags, b.tags)
   // Recaler le tag de longueur sur le pool conservé.
-  const lengthTag = tcfTagForQuestionPoolSize(questionPool?.length ?? 0)
+  const lengthTag = audioPoolTag(a.audio, questionPool?.length ?? 0)
   const finalTags = lengthTag
     ? tcfMergeAudioTags(
         tags.filter(

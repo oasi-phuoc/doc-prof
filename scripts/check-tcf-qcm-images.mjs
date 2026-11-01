@@ -61,14 +61,18 @@ try {
   assert.equal(synthetic, 12, 'all rendering paths exercised')
   let bankVariants = 0
   let expectedBankVariants = 0
-  for (const level of ['a0-a1', 'a1-a2']) for (const skill of ['ce', 'co']) {
+  for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) for (const skill of ['ce', 'co']) {
     const bank = JSON.parse(readFileSync(`src/tcf/content/${level}/${skill}.json`, 'utf8'))
     for (const exercise of bank) {
       expectedBankVariants += exercise.questions.filter((question) =>
         (question.type_reponse === 'qcm_texte' || question.formes?.qcm_texte) &&
         (question.type_reponse === 'qcm_image' || question.formes?.qcm_image),
       ).length
-      for (const selector of selectors(tcfExerciseItems(exercise, createRng(42)))) {
+      // Les questions d’un scénario sont utilisées lors du tirage d’un extrait,
+      // tandis que la fiche association affiche les scènes à relier.
+      const questionExercise = exercise.type_exercice === 'association_images'
+        ? { ...exercise, type_exercice: 'complet' } : exercise
+      for (const selector of selectors(tcfExerciseItems(questionExercise, createRng(42)))) {
         const text = selector.variants.qcm_texte
         const image = selector.variants.qcm_image
         if (!text || !image) continue

@@ -11,7 +11,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / 'scripts/tcf-qcm-image-registry.json'
 BANKS = [ROOT / f'src/tcf/content/{level}/{skill}.json'
-         for level in ('a0-a1', 'a1-a2') for skill in ('ce', 'co')]
+         for level in ('a0-a1', 'a1-a2', 'a2-b1') for skill in ('ce', 'co')]
+
+HOUR_NAMES = ['minuit', 'une-heure', 'deux-heures', 'trois-heures', 'quatre-heures',
+              'cinq-heures', 'six-heures', 'sept-heures', 'huit-heures', 'neuf-heures',
+              'dix-heures', 'onze-heures', 'midi', 'treize-heures', 'quatorze-heures',
+              'quinze-heures', 'seize-heures', 'dix-sept-heures', 'dix-huit-heures',
+              'dix-neuf-heures', 'vingt-heures', 'vingt-et-une-heures',
+              'vingt-deux-heures', 'vingt-trois-heures']
+MINUTE_NAMES = {0: '', 5: 'cinq', 10: 'dix', 15: 'quinze', 20: 'vingt',
+                25: 'vingt-cinq', 30: 'trente', 35: 'trente-cinq', 40: 'quarante',
+                45: 'quarante-cinq', 50: 'cinquante', 55: 'cinquante-cinq'}
 
 def norm(text):
     text = ''.join(c for c in unicodedata.normalize('NFD', text.lower())
@@ -36,7 +46,8 @@ OBJECT_ALIASES = {
     'par mail':'technologie/courriel', 'envoyer un courriel':'technologie/courriel',
     'par la poste':'argent-administration/enveloppe', 'sur un ordinateur':'technologie/ordinateur',
     'en bus':'transports/bus', 'en voiture':'transports/voiture', 'en train':'transports/train',
-    'en metro':'transports/metro', 'a velo':'transports/vélo', 'a pied':'actions/marcher',
+    'en metro':'transports/metro', 'en bateau':'transports/bateau',
+    'en avion':'transports/avion', 'a velo':'transports/velo', 'a pied':'actions/marcher',
     'professeur':'metiers/enseignant', 'professeurs':'metiers/enseignant',
     'cuisiniers':'metiers/cuisinier','voyageurs':'voyage/voyageur',
     'distributeur automatique':'ville/distributeur-automatique',
@@ -51,6 +62,9 @@ OBJECT_ALIASES = {
     'gateaux':'desserts/gâteau', 'cornichons':'legumes/cornichon',
     'se reposer':'actions/dormir',
     'chauffeur':'metiers/chauffeur-de-bus',
+    'telephoner':'actions/telephoner', 'envoyer un sms':'technologie/sms',
+    'pluvieux':'meteo/pluie', 'ensoleille':'meteo/soleil', 'neigeux':'meteo/neige',
+    'il pleut beaucoup':'meteo/pluie', 'il neige':'meteo/neige', 'il fait soleil':'meteo/soleil',
 }
 for label, relative in OBJECT_ALIASES.items():
     path=ROOT/'public/lib/images/vocabulaire'/f'{relative}.webp'
@@ -65,8 +79,63 @@ def noun(text):
         text = new
     return text
 
+def clock_value(label, enonce):
+    """Une heure précise, jamais une durée, une date ou un numéro."""
+    question = norm(enonce)
+    if not re.search(r'quelle?s? heures?|quels? horaires?', question):
+        return None
+    if re.search(r'combien|duree', question):
+        return None
+    value = re.sub(r'^(?:a |vers )', '', norm(label))
+    numeric = re.fullmatch(r'(\d{1,2})\s*(?:h|heures?|:)\s*(\d{1,2})?', value)
+    if numeric:
+        hour, minute = int(numeric[1]), int(numeric[2] or 0)
+    else:
+        hour = minute = None
+        names = {name.replace('-', ' '): i for i, name in enumerate(HOUR_NAMES)}
+        names.update({'douze heures': 12, 'zero heure': 0})
+        for name in sorted(names, key=len, reverse=True):
+            if value != name and not value.startswith(name + ' '):
+                continue
+            hour = names[name]
+            tail = value[len(name):].strip()
+            mins = {name.replace('-', ' '): n for n, name in MINUTE_NAMES.items()}
+            mins.update({'et quart': 15, 'et demi': 30, 'et demie': 30})
+            if tail in mins:
+                minute = mins[tail]
+            elif tail.startswith('moins '):
+                sub = {'cinq': 5, 'dix': 10, 'le quart': 15, 'vingt': 20}.get(tail[6:])
+                if sub:
+                    hour, minute = (hour - 1) % 24, 60 - sub
+            break
+        if hour is None or minute is None:
+            return None
+    if not (0 <= hour <= 24 and 0 <= minute < 60) or (hour == 24 and minute):
+        return None
+    return hour % 24, minute
+
+def clock_image(value):
+    hour, minute = value
+    if minute not in MINUTE_NAMES:
+        return None
+    stem = HOUR_NAMES[hour] + ('-' + MINUTE_NAMES[minute] if minute else '')
+    path = ROOT / 'public/lib/images/vocabulaire/heure-horloge' / (stem + '.webp')
+    return '/' + str(path.relative_to(ROOT / 'public')) if path.exists() else None
+
 def resolve_image(label, enonce=''):
     text = norm(label)
+    time = clock_value(label, enonce)
+    if time is not None:
+        return clock_image(time)
+    if re.search(r'de quelles? couleurs?|quelle est la couleur|quelles sont les couleurs', norm(enonce)):
+        text = noun(text)
+        color = {'bleue': 'bleu', 'blanche': 'blanc', 'verte': 'vert',
+                 'noire': 'noir', 'violette': 'violet', 'grise': 'gris'}.get(text, text)
+        for folder in ('couleurs', 'couleur'):
+            path = ROOT / 'public/lib/images/vocabulaire' / folder / (color + '.webp')
+            if path.exists():
+                return '/' + str(path.relative_to(ROOT / 'public'))
+        return None
     # Propriété, noms propres, négation et phrases ne deviennent jamais un objet isolé.
     if re.search(r"\b(?:chez|pas|jamais|annule|annulee|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|euros?|francs?|chf)\b", text) and text not in ALIASES:
         return None
@@ -120,6 +189,11 @@ def desired_form(q):
     text = text_form(q)
     if not text or len(text.get('choix', [])) not in (3,4): return None
     if sum(c.get('correct') is True for c in text['choix']) != 1: return None
+    times = [clock_value(c.get('texte', ''), q.get('enonce', '')) for c in text['choix']]
+    if all(value is not None for value in times):
+        # Un cadran analogique ne distingue pas 8 h de 20 h : pas de choix ambigus.
+        if len({(hour % 12, minute) for hour, minute in times}) != len(times):
+            return None
     paths = [resolve_image(c.get('texte', ''), q.get('enonce', '')) for c in text['choix']]
     if not all(paths) or len(set(paths)) != len(paths): return None
     return {'melanger': text.get('melanger', True), 'choix': [

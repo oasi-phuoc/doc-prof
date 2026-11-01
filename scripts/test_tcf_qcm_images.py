@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from tcf_qcm_images import desired_form, resolve_image, synchronize
+from tcf_qcm_images import clock_value, desired_form, resolve_image, synchronize
 
 
 def question(labels, enonce='Où va-t-on ?'):
@@ -56,6 +56,8 @@ class ImageSemantics(unittest.TestCase):
                                                  'Quel est le plat du jour ?')))
         self.assertIsNotNone(desired_form(question(['Au cinéma','Au restaurant','À la piscine'],
                                                  'Où allez-vous ce jour-là ?')))
+        self.assertIsNotNone(desired_form(question(['Des t-shirts', 'Des pantalons', 'Des robes'],
+                                                 'Qu’est-ce qu’on trouve en plusieurs couleurs ?')))
 
     def test_invalid_active_image_falls_back_to_original_text(self):
         q=question(['Chez Brigitte','Chez Catherine','Au restaurant'])
@@ -67,6 +69,33 @@ class ImageSemantics(unittest.TestCase):
         self.assertEqual(result['type_reponse'],'qcm_texte')
         self.assertEqual(result['choix'],original)
         self.assertEqual(result['formes']['lignes']['reponse_modele'],'Chez Brigitte')
+
+    def test_exact_clock_times_reuse_existing_dials(self):
+        q = question(['À 18 h', 'À 8 h', 'À 16 h'], 'À quelle heure arrive le train ?')
+        form = desired_form(q)
+        self.assertIsNotNone(form)
+        self.assertEqual([c['image'].split('/')[-1] for c in form['choix']],
+                         ['dix-huit-heures.webp', 'huit-heures.webp', 'seize-heures.webp'])
+        self.assertEqual(clock_value('À trois heures moins le quart', 'À quelle heure ?'), (2, 45))
+        self.assertEqual(clock_value('À midi et demi', 'À quelle heure ?'), (12, 30))
+        self.assertEqual(clock_value('15:40', 'À quelle heure ?'), (15, 40))
+
+    def test_clocks_never_round_or_confuse_duration_and_twelve_hours(self):
+        self.assertIsNone(resolve_image('À 9 h 06', 'À quelle heure ?'))
+        self.assertIsNone(resolve_image('Deux heures', 'Combien de temps dure le trajet ?'))
+        self.assertIsNone(resolve_image('Lundi à 9 h', 'À quelle heure ?'))
+        self.assertIsNone(desired_form(question(['À 8 h', 'À 20 h', 'À 16 h'], 'À quelle heure ?')))
+
+    def test_colour_names_never_become_food(self):
+        self.assertIn('/couleurs/bleu.webp', resolve_image('Bleue', 'De quelle couleur est la voiture ?'))
+        self.assertIsNone(resolve_image('Orange', 'De quelle couleur est le sac ?'))
+        self.assertIn('/fruits/orange.webp', resolve_image('Une orange', 'Quel fruit ?'))
+
+    def test_existing_weather_transport_and_contact_images_are_reused(self):
+        for labels, enonce in [(['Pluvieux', 'Ensoleillé', 'Neigeux'], 'Quel temps fait-il ?'),
+                               (['En bus', 'En bateau', 'À vélo'], 'Comment va-t-il au collège ?'),
+                               (['Téléphoner', 'Envoyer un courriel', 'Envoyer un SMS'], 'Que faut-il faire ?')]:
+            self.assertIsNotNone(desired_form(question(labels, enonce)))
 
 
 if __name__=='__main__':unittest.main()

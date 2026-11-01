@@ -1,0 +1,52 @@
+[
+  {
+    "audio": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-pourriez-m-aider-2.mp3",
+    "audio_sha256": "c586c7521d55ec99fc0e2fa5474742a29804537d5fe628aaf2427e4b6edd9c23",
+    "status": "pending-source-review",
+    "note": "Le contrôle automatique ne reconnaît que l’annonce de page/exercice. Vérifier la piste et son niveau sonore avant de conserver le texte de formation professionnelle.",
+    "method": "Reconnaissance vocale locale Whisper small int8, français, fenêtres complètes de 28 secondes avec chevauchement ; sortie automatique à relire.",
+    "duration_seconds": 27.98,
+    "original_transcription": "Formation certifiante de graphiste, 4 mois, stage de 3 semaines, prise en charge par le CPF.",
+    "automatic_transcription_for_review": "page 129, exercice 2."
+  },
+  {
+    "audio": "/lib/audio/tcf/co/vie-quotidienne/maman-commence-fac-lundi-2.mp3",
+    "audio_sha256": "dc3da805dbf3cc286ec1f5368282c446d8f1b5702b918467e979f89bb4f41c02",
+    "status": "pending-source-review",
+    "note": "Le dialogue reconnu porte sur les objets donnés à Emmaüs et leur réparation. La transcription actuelle semble tronquée et différente. Ne pas inventer dix faits.",
+    "method": "Reconnaissance vocale locale Whisper small int8, français, fenêtres complètes de 28 secondes avec chevauchement ; sortie automatique à relire.",
+    "duration_seconds": 29.0,
+    "original_transcription": "- Salut Camille, tu vas faire un don à Emmaüs ?\n- Oui, je me suis décidé hier.",
+    "automatic_transcription_for_review": "Salut Camille ! Tu vas faire un don à Emmaus ? Oui, je vais donner des vêtements, des chaussures et des livres. Tu crois qu'ils peuvent prendre un vieux vélo ou des chaises ? Oui, bien sûr ! Ils reparent les objets avant de les vendre. ..."
+  },
+  {
+    "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-2.mp3",
+    "audio_sha256": "fbe1287c03e0e8023ff7f7a5bd3afa948d5484ce9d265637d8789116fc20f106",
+    "status": "pending-source-review",
+    "note": "Le dialogue reconnu évoque fatigue, insomnie, stress au travail et activité physique. La transcription actuelle semble erronée.",
+    "method": "Reconnaissance vocale locale Whisper small int8, français, fenêtres complètes de 28 secondes avec chevauchement ; sortie automatique à relire.",
+    "duration_seconds": 65.49,
+    "original_transcription": "- Catherine, salut !\nTu as bonne mine !\n- Oui, je fais du sport et je mange mieux.",
+    "automatic_transcription_for_review": "Tiens, Catherine, salut ! Marc ! Ça fait deux mois qu'on ne s'est pas vus. Comment ça va ? Ça va. Je ne suis pas vraiment en pleine forme. Ah bon ? Pourquoi ? Bah c'est la vie. Un somnit et cauchemar à cause du stress au travail. Repas pas équilibré. équilibré sur le pouce, je n'ai pas un mode de vie idéal. Tu ne fais pas de musculation ? Ce n'était pas ta bonne résolution de l'année. Ben non, l'abonnement au club de fitness coûte plus cher qu'un week-end de remise en forme. C'est vrai, mais il faut que tu prennes soin de toi tous les jours, pas seulement le week-end. Tu peux courir après une journée de travail, par exemple. En ville, avec la pollution ? Non merci. Je comprends que la vie que la ville n'est pas le meilleur endroit pour faire du sport, mais c'est mieux que rien. C'est pour ça que je t'adore. Tu arrives à rester toujours positive."
+  },
+  {
+    "audio": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-1.mp3",
+    "audio_sha256": "3ebdf23d29ccd3568e9fd3c63f19c55317896042b6814ed4df12b2799a10fb60",
+    "status": "pending-source-review",
+    "note": "Le contrôle reconnaît une liste de mots du corps. Le tag long et les questions doivent être vérifiés.",
+    "method": "Reconnaissance vocale locale Whisper small int8, français, fenêtres complètes de 28 secondes avec chevauchement ; sortie automatique à relire.",
+    "duration_seconds": 32.91,
+    "original_transcription": "A CORE B Heur C Gorge D Keur E Array F Opital G Seur H Oftalmo",
+    "automatic_transcription_for_review": "page 86 exercice 5 a corps b heure c gorge d coeur e oreille f hôpital g Sœur H of Talmo"
+  },
+  {
+    "audio": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-4.mp3",
+    "audio_sha256": "3741dfeafc900aa0e8b5ac6f0a196d699b66422e886f97912f9a5971377deeb4",
+    "status": "pending-source-review",
+    "note": "Le dialogue reconnu mentionne un gâteau à la crème et une intolérance au lait. La transcription actuelle est très incomplète.",
+    "method": "Reconnaissance vocale locale Whisper small int8, français, fenêtres complètes de 28 secondes avec chevauchement ; sortie automatique à relire.",
+    "duration_seconds": 35.92,
+    "original_transcription": "- Tu fais un régime ?\n- Non, j'ai une allergie alimentaire, donc je ne peux pas manger de tout.",
+    "automatic_transcription_for_review": "page 111 exercice 4 regarde solène quelle beau gâteau à la crème je l'achète ah non merci isabelle tu fais un régime ou quoi non non je n'ai pas besoin de perdre du poids alors quoi tu n'aimes pas le sucré tu préfères le salet c'est ça non j'ai une intolerance alimentaire Une intolérance ? Qu'est-ce que c'est ? C'est comme une allergie. Quand je bois du lait, j'ai très mal au ventre."
+  }
+]

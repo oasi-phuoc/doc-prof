@@ -339,6 +339,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 20 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -685,6 +703,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "onze heures"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              }
+            ]
           }
         }
       }
@@ -1471,6 +1507,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "15 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -1748,29 +1802,74 @@
     },
     "questions": [
       {
-        "enonce": "Que fait la personne invitée ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle occasion cette fête est-elle organisée ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "Elle accepte une invitation",
+            "texte": "Un anniversaire",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Elle refuse une invitation"
+            "texte": "Un mariage"
           },
           {
             "id": "c",
-            "texte": "Elle s’informe sur un itinéraire"
+            "texte": "Un départ à la retraite"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Elle accepte une invitation"
+            "reponse_modele": "Un anniversaire"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "À quelle heure la fête commence-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 20 h",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À 18 h"
+          },
+          {
+            "id": "c",
+            "texte": "À 21 h"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À 20 h"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              }
+            ]
           }
         }
       }
@@ -1883,6 +1982,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "15 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -2255,6 +2372,24 @@
                 "texte": "vingt et une heures quinze"
               }
             ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-quinze.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -2587,7 +2722,286 @@
         "Alors ton week-end, Helene.\nC'était ça pas?\nAh oui, super.\nEt encore merci d'avoir gardé mon chien.\nPas de quoi?\nCa ne m'a pas déranger.\nC'était très gentil de ta part."
       ]
     },
-    "questions": [],
+    "questions": [
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Quel numéro de bus la personne doit-elle prendre ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le 15",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le 5"
+          },
+          {
+            "id": "c",
+            "texte": "Le 50"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le 15"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "De quel côté doit-elle tourner après avoir traversé la place ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À droite",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À gauche"
+          },
+          {
+            "id": "c",
+            "texte": "Elle doit continuer tout droit"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À droite"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Quel temps est prévu le matin ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "De la pluie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Du soleil"
+          },
+          {
+            "id": "c",
+            "texte": "De la neige"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "De la pluie"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/meteo/pluie.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/meteo/soleil.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/meteo/neige.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Quelle sortie choisissent-ils finalement ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le cinéma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La piscine"
+          },
+          {
+            "id": "c",
+            "texte": "Le restaurant"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le cinéma"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/restaurant.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Où se trouve Jules ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans sa chambre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Dans la cuisine"
+          },
+          {
+            "id": "c",
+            "texte": "Dans le jardin"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Dans sa chambre"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Que prépare Jules ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une surprise",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un repas"
+          },
+          {
+            "id": "c",
+            "texte": "Un examen"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une surprise"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Quel animal a été gardé pendant le week-end ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un chien",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un chat"
+          },
+          {
+            "id": "c",
+            "texte": "Un lapin"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un chien"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/chien.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/chat.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/animaux-ferme-compagnie/lapin.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Comment Hélène décrit-elle son week-end ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Très agréable",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Ennuyeux"
+          },
+          {
+            "id": "c",
+            "texte": "Difficile"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Très agréable"
+          }
+        }
+      }
+    ],
     "consigne_supplementaire": null,
     "points": 8,
     "situations": [
@@ -3387,7 +3801,268 @@
         "C’est l’anniversaire de Juliette samedi.\nQu’est-ce qu’on achète ?\nJe n’ai pas d’idée.\nTu sais ce qu’elle aime, toi ?\n— Elle adore la musique.\nPourquoi pas une place de concert ?\n— Oh, oui !\nParfait !\nTu as toujours de super idées !"
       ]
     },
-    "questions": [],
+    "questions": [
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Quelle sortie est proposée ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une exposition",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un concert"
+          },
+          {
+            "id": "c",
+            "texte": "Une séance de cinéma"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une exposition"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/loisirs/exposition.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/co/bg/concert.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Sur quel thème porte cette exposition ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Les mangas",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La photographie"
+          },
+          {
+            "id": "c",
+            "texte": "La musique"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Les mangas"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Sur quel appareil se trouve le programme de la fête ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un téléphone",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un ordinateur"
+          },
+          {
+            "id": "c",
+            "texte": "Une tablette"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un téléphone"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/technologie/téléphone.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/technologie/ordinateur.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/technologie/tablette.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Quel événement précède le concert de hip-hop ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le concours de chansons",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le spectacle de danse"
+          },
+          {
+            "id": "c",
+            "texte": "La pièce de théâtre"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le concours de chansons"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Dans quelle matière la personne fait-elle des exercices ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Les mathématiques",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "L’histoire"
+          },
+          {
+            "id": "c",
+            "texte": "Le français"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Les mathématiques"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Quelle aide son ami lui propose-t-il ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Lui expliquer les exercices",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Lui prêter un livre"
+          },
+          {
+            "id": "c",
+            "texte": "L’accompagner chez le professeur"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Lui expliquer les exercices"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "À quelle occasion cherchent-ils un cadeau pour Juliette ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Son anniversaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Sa réussite à un examen"
+          },
+          {
+            "id": "c",
+            "texte": "Son départ à l’étranger"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Son anniversaire"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Quel cadeau est finalement proposé ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une place de concert",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un disque"
+          },
+          {
+            "id": "c",
+            "texte": "Un instrument de musique"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une place de concert"
+          }
+        }
+      }
+    ],
     "consigne_supplementaire": null,
     "points": 8,
     "situations": [
@@ -3694,6 +4369,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "18 heures."
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -3746,6 +4439,24 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -4059,7 +4770,268 @@
         "Elle est comment, la piscine où tu t’entraînes ?\n— Elle est très grande, c’est une piscine olympique.\nElle fait 50 mètres de long et 20 mètres de large.\nL’eau est chaude, c’est très agréable pour nager !\n— Super !"
       ]
     },
-    "questions": [],
+    "questions": [
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Quel sport vont-ils pratiquer avec leurs amis ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le football",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le basket"
+          },
+          {
+            "id": "c",
+            "texte": "Le tennis"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le football"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/sports/football.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/sports/basket.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/court-tennis.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Que vont-ils manger après le sport ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une pizza",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un hamburger"
+          },
+          {
+            "id": "c",
+            "texte": "Une soupe"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une pizza"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/aliments/pizza.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/aliments/hamburger.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/aliments/soupe.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Que Jonathan doit-il faire avant de sortir ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Ranger sa chambre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Faire la vaisselle"
+          },
+          {
+            "id": "c",
+            "texte": "Préparer le repas"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Ranger sa chambre"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Avec qui Jonathan a-t-il rendez-vous ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Ses amis",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Son professeur"
+          },
+          {
+            "id": "c",
+            "texte": "Sa grand-mère"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Ses amis"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Quel appareil la personne demande-t-elle à Paul ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Son ordinateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Son téléphone"
+          },
+          {
+            "id": "c",
+            "texte": "Sa télévision"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Son ordinateur"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Pour quel cours doit-elle faire des recherches ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "L’histoire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La géographie"
+          },
+          {
+            "id": "c",
+            "texte": "Les sciences"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "L’histoire"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Combien mesure la piscine en longueur ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "50 mètres",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "20 mètres"
+          },
+          {
+            "id": "c",
+            "texte": "25 mètres"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "50 mètres"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Comment est l’eau de cette piscine ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Chaude",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Froide"
+          },
+          {
+            "id": "c",
+            "texte": "Glacée"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Chaude"
+          }
+        }
+      }
+    ],
     "consigne_supplementaire": null,
     "points": 8,
     "situations": [
@@ -4445,6 +5417,24 @@
               {
                 "id": "c",
                 "texte": "six heures vingt"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-vingt.webp"
               }
             ]
           }
@@ -5443,11 +6433,9 @@
     },
     "questions": [
       {
-        "enonce": "Combien de chambres veut réserver Madame Langlois ?",
-        "type_reponse": "lignes",
         "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Deux chambres.",
+        "enonce": "Combien de chambres Madame Langlois veut-elle réserver ?",
+        "type_reponse": "lignes",
         "formes": {
           "qcm_texte": {
             "melanger": true,
@@ -5459,184 +6447,294 @@
               },
               {
                 "id": "b",
-                "texte": "interrupteur"
+                "texte": "Une chambre"
               },
               {
                 "id": "c",
-                "texte": "salon"
+                "texte": "Quatre chambres"
               }
             ]
           }
-        }
-      },
-      {
-        "enonce": "Quel type de chambre souhaite Madame Langlois ?",
-        "type_reponse": "qcm_texte",
-        "points": 1,
-        "melanger": false,
-        "choix": [
-          {
-            "id": "a",
-            "texte": "Des chambres simples."
-          },
-          {
-            "id": "b",
-            "texte": "Des chambres doubles.",
-            "correct": true
-          },
-          {
-            "id": "c",
-            "texte": "Des chambres familiales."
-          }
-        ],
-        "formes": {
-          "lignes": {
-            "nb_lignes": 1,
-            "reponse_modele": "Des chambres doubles."
-          }
-        }
-      },
-      {
-        "enonce": "Madame Langlois veut savoir s’il y a dans les chambres…",
-        "type_reponse": "qcm_image",
-        "points": 1,
-        "melanger": true,
-        "choix": [
-          {
-            "id": "a",
-            "image": "/lib/images/tcf/co/bg/petit-dejeuner-maison.webp"
-          },
-          {
-            "id": "b",
-            "correct": true,
-            "image": "/lib/images/vocabulaire/hygiene/baignoire.webp"
-          },
-          {
-            "id": "c",
-            "image": "/lib/images/vocabulaire/technologie/ordinateur.webp"
-          }
-        ],
-        "formes": {
-          "lignes": {
-            "nb_lignes": 1,
-            "reponse_modele": "baignoire"
-          },
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "petit dejeuner"
-              },
-              {
-                "id": "b",
-                "texte": "baignoire",
-                "correct": true
-              },
-              {
-                "id": "c",
-                "texte": "ordinateur"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Comment veut payer Madame Langlois ?",
-        "type_reponse": "lignes",
-        "points": 1,
+        },
         "nb_lignes": 1,
-        "reponse_modele": "Par chèque.",
-        "formes": {
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "Par chèque",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "texte": "distributeur de billets"
-              },
-              {
-                "id": "c",
-                "texte": "prix"
-              }
-            ]
-          }
-        }
+        "reponse_modele": "Deux chambres"
       },
       {
-        "enonce": "Avec quel moyen de transport va venir Madame Langlois ?",
-        "type_reponse": "qcm_image",
         "points": 1,
-        "melanger": true,
-        "choix": [
-          {
-            "id": "a",
-            "image": "/lib/images/vocabulaire/transports/train.webp"
-          },
-          {
-            "id": "b",
-            "image": "/lib/images/vocabulaire/transports/bus.webp"
-          },
-          {
-            "id": "c",
-            "correct": true,
-            "image": "/lib/images/vocabulaire/transports/voiture.webp"
-          }
-        ],
-        "formes": {
-          "lignes": {
-            "nb_lignes": 1,
-            "reponse_modele": "voiture"
-          },
-          "qcm_texte": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "texte": "train"
-              },
-              {
-                "id": "b",
-                "texte": "bus"
-              },
-              {
-                "id": "c",
-                "texte": "voiture",
-                "correct": true
-              }
-            ]
-          }
-        }
-      },
-      {
-        "enonce": "Comment devez-vous contacter Madame Langlois ?",
+        "enonce": "Quel type de chambres souhaite-t-elle ?",
         "type_reponse": "qcm_texte",
-        "points": 1,
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "Par téléphone.",
+            "texte": "Des chambres doubles",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Par courriel."
+            "texte": "Des chambres simples"
           },
           {
             "id": "c",
-            "texte": "Par courrier."
+            "texte": "Des chambres familiales"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Par téléphone."
+            "reponse_modele": "Des chambres doubles"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Pour combien de personnes réserve-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Quatre personnes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Deux personnes"
+          },
+          {
+            "id": "c",
+            "texte": "Six personnes"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Quatre personnes"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "À quelle date le séjour commence-t-il ?",
+        "type_reponse": "lignes",
+        "formes": {
+          "qcm_texte": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "texte": "Le 5 juin",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "texte": "Le 7 juin"
+              },
+              {
+                "id": "c",
+                "texte": "Le 15 juin"
+              }
+            ]
+          }
+        },
+        "nb_lignes": 1,
+        "reponse_modele": "Le 5 juin"
+      },
+      {
+        "points": 1,
+        "enonce": "À quelle date le séjour se termine-t-il ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le 7 juin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le 5 juin"
+          },
+          {
+            "id": "c",
+            "texte": "Le 9 juin"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le 7 juin"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quel repas souhaite-t-elle inclure dans le prix ?",
+        "type_reponse": "qcm_texte",
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le petit-déjeuner",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le déjeuner"
+          },
+          {
+            "id": "c",
+            "texte": "Le dîner"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le petit-déjeuner"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quel équipement cherche-t-elle dans les chambres ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une baignoire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Une douche"
+          },
+          {
+            "id": "c",
+            "texte": "Un ordinateur"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une baignoire"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/hygiene/baignoire.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/hygiene/douche.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/technologie/ordinateur.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Comment souhaite-t-elle payer ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par chèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "En espèces"
+          },
+          {
+            "id": "c",
+            "texte": "Par carte bancaire"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Par chèque"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Comment les voyageurs viendront-ils à l’hôtel ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "En voiture",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "En train"
+          },
+          {
+            "id": "c",
+            "texte": "En bus"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "En voiture"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/transports/voiture.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/transports/train.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/transports/bus.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Comment demande-t-elle à l’hôtel de la contacter ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par téléphone",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Par courriel"
+          },
+          {
+            "id": "c",
+            "texte": "Par courrier postal"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Par téléphone"
           }
         }
       }
@@ -5679,7 +6777,286 @@
         "Aujourd'hui, dans le bus, j'ai croisé Thomas.\nCe qui ?\nLe frère de Sophie.\nIl a déménagé à Lyon pour ses études.\nIl est très sympa.\nInvite-le à la maison si tu veux."
       ]
     },
-    "questions": [],
+    "questions": [
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Où Kate a-t-elle voyagé ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "En Guyane",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Au Canada"
+          },
+          {
+            "id": "c",
+            "texte": "Au Japon"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "En Guyane"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Quel temps a-t-elle eu pendant son voyage ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Du soleil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "De la pluie"
+          },
+          {
+            "id": "c",
+            "texte": "De la neige"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Du soleil"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/meteo/soleil.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/meteo/pluie.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/meteo/neige.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "À quelle heure le magasin ouvre-t-il, selon l’interlocuteur ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 15 h",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À 12 h"
+          },
+          {
+            "id": "c",
+            "texte": "À 14 h"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À 15 h"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/midi.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Comment conseille-t-il de vérifier cet horaire ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Sur Internet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Par téléphone"
+          },
+          {
+            "id": "c",
+            "texte": "Dans le journal"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Sur Internet"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Quel type de lieu est proposé pour la sortie avec Marc ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un musée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un cinéma"
+          },
+          {
+            "id": "c",
+            "texte": "Un théâtre"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un musée"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/musee.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/co/bg/cinema.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/theatre.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Combien de billets la personne possède-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Deux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un"
+          },
+          {
+            "id": "c",
+            "texte": "Trois"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Deux"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Quel est le lien entre Thomas et Sophie ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il est son frère",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Il est son cousin"
+          },
+          {
+            "id": "c",
+            "texte": "Il est son père"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Il est son frère"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Pourquoi Thomas a-t-il déménagé à Lyon ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Pour ses études",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Pour son travail"
+          },
+          {
+            "id": "c",
+            "texte": "Pour rejoindre ses parents"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Pour ses études"
+          }
+        }
+      }
+    ],
     "consigne_supplementaire": null,
     "points": 8,
     "situations": [
@@ -6225,65 +7602,63 @@
     },
     "questions": [
       {
-        "enonce": "La personne qui vous appelle…",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Dans quel service Marie travaille-t-elle ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "est votre directrice."
+            "texte": "Les ressources humaines",
+            "correct": true
           },
           {
             "id": "b",
-            "texte": "enseigne les langues étrangères."
+            "texte": "La comptabilité"
           },
           {
             "id": "c",
-            "texte": "travaille aux ressources humaines.",
-            "correct": true
+            "texte": "Le service commercial"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "travaille aux ressources humaines."
+            "reponse_modele": "Les ressources humaines"
           }
         }
       },
       {
-        "enonce": "Quelle langue est proposée ?",
-        "type_reponse": "lignes",
         "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "L’espagnol (professionnel).",
+        "enonce": "Quelle langue les cours permettent-ils d’apprendre ?",
+        "type_reponse": "lignes",
         "formes": {
           "qcm_texte": {
             "melanger": true,
             "choix": [
               {
                 "id": "a",
-                "texte": "L’espagnol (professionnel).",
+                "texte": "L’espagnol",
                 "correct": true
               },
               {
                 "id": "b",
-                "texte": "Marie"
+                "texte": "L’anglais"
               },
               {
                 "id": "c",
-                "texte": "Paul"
+                "texte": "L’allemand"
               }
             ]
           }
-        }
+        },
+        "nb_lignes": 1,
+        "reponse_modele": "L’espagnol"
       },
       {
-        "enonce": "Où se passent les cours de langues ?",
-        "type_reponse": "lignes",
         "points": 1,
-        "nb_lignes": 1,
-        "reponse_modele": "Dans l’entreprise.",
+        "enonce": "Où les cours doivent-ils avoir lieu pour obtenir l’accord de la directrice ?",
+        "type_reponse": "lignes",
         "formes": {
           "qcm_texte": {
             "melanger": true,
@@ -6295,148 +7670,240 @@
               },
               {
                 "id": "b",
-                "texte": "interrupteur"
+                "texte": "Chez le professeur"
               },
               {
                 "id": "c",
-                "texte": "salon"
-              }
-            ]
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/bureau.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/maison/interrupteur.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/co/bg/salon.webp"
+                "texte": "Dans une école de langues"
               }
             ]
           }
-        }
+        },
+        "nb_lignes": 1,
+        "reponse_modele": "Dans l’entreprise"
       },
       {
-        "enonce": "Les cours ont lieu…",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle est la nationalité du professeur ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "une fois par semaine.",
+            "texte": "Argentine",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "deux fois par semaine."
+            "texte": "Espagnole"
           },
           {
             "id": "c",
-            "texte": "une fois toutes les deux semaines."
+            "texte": "Mexicaine"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "une fois par semaine."
+            "reponse_modele": "Argentine"
           }
         }
       },
       {
-        "enonce": "Si vous voulez prendre des cours, vous devez faire quoi ?",
-        "type_reponse": "qcm_image",
         "points": 1,
+        "enonce": "À quelle heure le cours commence-t-il ?",
+        "type_reponse": "qcm_image",
         "melanger": true,
         "choix": [
           {
             "id": "a",
             "correct": true,
-            "image": "/lib/images/vocabulaire/technologie/courriel.webp"
+            "image": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp"
           },
           {
             "id": "b",
-            "image": "/lib/images/vocabulaire/actions/telephoner.webp"
+            "image": "/lib/images/vocabulaire/heure-horloge/midi.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp"
+            "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "courriel"
+            "reponse_modele": "À 13 h"
           },
           "qcm_texte": {
             "melanger": true,
             "choix": [
               {
                 "id": "a",
-                "texte": "courriel",
+                "texte": "À 13 h",
                 "correct": true
               },
               {
                 "id": "b",
-                "texte": "telephoner"
+                "texte": "À 12 h"
               },
               {
                 "id": "c",
-                "texte": "enveloppe"
+                "texte": "À 14 h"
               }
             ]
           }
         }
       },
       {
-        "enonce": "Pour connaître votre niveau, vous devez…",
-        "type_reponse": "qcm_image",
         "points": 1,
+        "enonce": "À quelle heure le cours se termine-t-il ?",
+        "type_reponse": "qcm_image",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/vocabulaire/actions/test-sur-ordinateur.webp"
+            "correct": true,
+            "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-trente.webp"
           },
           {
             "id": "b",
-            "correct": true,
-            "image": "/lib/images/vocabulaire/actions/entretien-d-embauche.webp"
+            "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
           },
           {
             "id": "c",
-            "image": "/lib/images/vocabulaire/ecole-bureau/examen.webp"
+            "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "entretien d embauche"
+            "reponse_modele": "À 14 h 30"
           },
           "qcm_texte": {
             "melanger": true,
             "choix": [
               {
                 "id": "a",
-                "texte": "test sur ordinateur"
-              },
-              {
-                "id": "b",
-                "texte": "entretien d embauche",
+                "texte": "À 14 h 30",
                 "correct": true
               },
               {
+                "id": "b",
+                "texte": "À 14 h"
+              },
+              {
                 "id": "c",
-                "texte": "examen"
+                "texte": "À 15 h"
               }
             ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quel jour le professeur vient-il ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le mardi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le lundi"
+          },
+          {
+            "id": "c",
+            "texte": "Le jeudi"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le mardi"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Comment faut-il signaler son intérêt à Marie ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Par courriel",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Par téléphone"
+          },
+          {
+            "id": "c",
+            "texte": "Par courrier postal"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Par courriel"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Avec qui faut-il passer un entretien ensuite ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le professeur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La directrice"
+          },
+          {
+            "id": "c",
+            "texte": "La comptable"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le professeur"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "À quoi cet entretien sert-il ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À connaître son niveau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À fixer le prix des cours"
+          },
+          {
+            "id": "c",
+            "texte": "À choisir le lieu de formation"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À connaître son niveau"
           }
         }
       }
@@ -6479,7 +7946,268 @@
         "Alors Emma, tes examens, tu as reçu les résultats ? Oui Alex, j'ai réussi, je suis trop contente ! Bravo, toutes mes félicitations, tu as bien travaillé ! Merci, c'est gentil."
       ]
     },
-    "questions": [],
+    "questions": [
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Quel objet la personne est-elle en train de choisir ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un sac",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un manteau"
+          },
+          {
+            "id": "c",
+            "texte": "Un pantalon"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un sac"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "De quelle couleur est l’objet qu’elle préfère ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Vert",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Noir"
+          },
+          {
+            "id": "c",
+            "texte": "Bleu"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Vert"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/vert.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Quel appareil vient d’être acheté ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un aspirateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un réfrigérateur"
+          },
+          {
+            "id": "c",
+            "texte": "Un lave-linge"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un aspirateur"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/electromenager/aspirateur.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/electromenager/refrigerateur.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/electromenager/lave-linge.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Combien cet appareil a-t-il coûté ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "78 euros",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "68 euros"
+          },
+          {
+            "id": "c",
+            "texte": "88 euros"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "78 euros"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Quel dessert la personne a-t-elle raté ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une crème au chocolat",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Une tarte aux pommes"
+          },
+          {
+            "id": "c",
+            "texte": "Un gâteau au citron"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une crème au chocolat"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Que propose l’autre personne pour l’aider ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Lui montrer comment faire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Acheter un dessert"
+          },
+          {
+            "id": "c",
+            "texte": "Appeler un pâtissier"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Lui montrer comment faire"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Quel résultat Emma a-t-elle obtenu à ses examens ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Elle a réussi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Elle a échoué"
+          },
+          {
+            "id": "c",
+            "texte": "Elle attend encore les résultats"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Elle a réussi"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Comment Emma se sent-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Très contente",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Déçue"
+          },
+          {
+            "id": "c",
+            "texte": "Inquiète"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Très contente"
+          }
+        }
+      }
+    ],
     "consigne_supplementaire": null,
     "points": 8,
     "situations": [
@@ -7279,7 +9007,304 @@
         "Allô, mon chéri ? Tu as oublié notre déjeuner.\n— Mamie, pardon, mais ce matin, le bus a eu un accident.\n— D'accord, mais le déjeuner…"
       ]
     },
-    "questions": [],
+    "questions": [
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Quel objet Sophie demande-t-elle à Martin ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Son téléphone",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Son ordinateur"
+          },
+          {
+            "id": "c",
+            "texte": "Son appareil photo"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Son téléphone"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 1,
+        "enonce": "Qui Sophie veut-elle appeler ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Sa sœur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Sa mère"
+          },
+          {
+            "id": "c",
+            "texte": "Sa cousine"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Sa sœur"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "Où le jeune a-t-il mal ce matin ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À la tête",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Au dos"
+          },
+          {
+            "id": "c",
+            "texte": "Au ventre"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À la tête"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/corps/tête.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/corps/dos.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/corps/ventre.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 2,
+        "enonce": "À quelle heure prévoit-il d’aller au lycée ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À 13 h",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À 10 h"
+          },
+          {
+            "id": "c",
+            "texte": "À 14 h"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "À 13 h"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "À quel cours Mehmet ne veut-il pas aller ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Au cours de musique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Au cours de mathématiques"
+          },
+          {
+            "id": "c",
+            "texte": "Au cours de français"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Au cours de musique"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/cours-musique.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/co/bg/cours-maths.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/cours-francais.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 3,
+        "enonce": "Pourquoi Mehmet ne veut-il pas y aller ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il n’a rien préparé",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Il a perdu son instrument"
+          },
+          {
+            "id": "c",
+            "texte": "Il est malade"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Il n’a rien préparé"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Quel repas le petit-fils a-t-il oublié ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le déjeuner",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le dîner"
+          },
+          {
+            "id": "c",
+            "texte": "Le petit-déjeuner"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le déjeuner"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "audio": 4,
+        "enonce": "Quel véhicule a eu un accident ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le train"
+          },
+          {
+            "id": "c",
+            "texte": "La voiture"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le bus"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/transports/bus.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/transports/train.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/transports/voiture.webp"
+              }
+            ]
+          }
+        }
+      }
+    ],
     "consigne_supplementaire": null,
     "points": 8,
     "situations": [
@@ -8255,168 +10280,312 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/achats-annonce-2.mp3",
-      "transcription": "Bonjour.\nDans votre supermarché Autoprix, ne manquez pas les promotions sur les produits de beauté : pour un gel douche ou un savon acheté, le deuxième est offert jusqu’en avril !\nVous pouvez aussi gagner des parfums : venez jouer à la loterie dans l’allée centrale du magasin !\nEt à partir du 1er mai, venez profiter de promotions exceptionnelles sur les télévisions !\nJusqu’à 40 % de réduction !\nAvec Autoprix, les prix sont mini !"
+      "transcription": "Bonjour.\nDans votre supermarché Autoprix, ne manquez pas les promotions sur les produits de beauté : pour un gel douche ou un savon acheté, le deuxième est offert jusqu’au 30 avril !\nVous pouvez aussi gagner des parfums : venez jouer à la loterie dans l’allée centrale du magasin !\nEt à partir du 1er mai, venez profiter de promotions exceptionnelles sur les télévisions !\nJusqu’à 40 % de réduction !\nAvec Autoprix, les prix sont mini !"
     },
     "questions": [
       {
-        "enonce": "Quel est le numéro du vol ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel est le nom du magasin qui diffuse l’annonce ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "354",
+            "texte": "Autoprix",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "456"
+            "texte": "Superprix"
           },
           {
             "id": "c",
-            "texte": "717"
+            "texte": "Miniprix"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "354"
+            "reponse_modele": "Autoprix"
           }
         }
       },
       {
-        "enonce": "Combien coûte une boisson ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Dans quel type de magasin les promotions sont-elles proposées ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "2 euros",
+            "texte": "Un supermarché",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "4 euros"
+            "texte": "Une pharmacie"
           },
           {
             "id": "c",
-            "texte": "9 euros"
+            "texte": "Une parfumerie"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "2 euros"
+            "reponse_modele": "Un supermarché"
           }
         }
       },
       {
-        "enonce": "Combien coûte un sandwich ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel produit, en plus du savon, bénéficie de l’offre « deuxième offert » ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "4 euros",
+            "texte": "Le gel douche",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "2 euros"
+            "texte": "Le shampoing"
           },
           {
             "id": "c",
-            "texte": "9 euros"
+            "texte": "Le dentifrice"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "4 euros"
+            "reponse_modele": "Le gel douche"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/hygiene/gel-douche.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/hygiene/shampoing.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/hygiene/dentifrice.webp"
+              }
+            ]
           }
         }
       },
       {
-        "enonce": "Combien coûte un menu ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel avantage obtient-on en achetant l’un de ces produits ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "9 euros",
+            "texte": "Le deuxième est offert",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "4 euros"
+            "texte": "Le troisième est offert"
           },
           {
             "id": "c",
-            "texte": "2 euros"
+            "texte": "Le premier est remboursé"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "9 euros"
+            "reponse_modele": "Le deuxième est offert"
           }
         }
       },
       {
-        "enonce": "Combien coûte un journal ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Jusqu’à quelle date cette offre est-elle valable ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "1 euro",
+            "texte": "Le 30 avril",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "2 euros"
+            "texte": "Le 1er mai"
           },
           {
             "id": "c",
-            "texte": "4 euros"
+            "texte": "Le 31 mai"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "1 euro"
+            "reponse_modele": "Le 30 avril"
           }
         }
       },
       {
-        "enonce": "En quelles langues les journaux ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quels produits peut-on gagner au jeu ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "Français et anglais",
+            "texte": "Des parfums",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Français seulement"
+            "texte": "Des télévisions"
           },
           {
             "id": "c",
-            "texte": "Anglais seulement"
+            "texte": "Des savons"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Français et anglais"
+            "reponse_modele": "Des parfums"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/hygiene/parfum.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/technologie/télévision.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/hygiene/savon.webp"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "À quel jeu faut-il participer pour tenter de gagner ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une loterie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un concours de chansons"
+          },
+          {
+            "id": "c",
+            "texte": "Un quiz sur Internet"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une loterie"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Où ce jeu est-il organisé ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Dans l’allée centrale",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À l’entrée du magasin"
+          },
+          {
+            "id": "c",
+            "texte": "Devant les caisses"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Dans l’allée centrale"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quand les promotions sur les télévisions commencent-elles ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Le 1er mai",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Le 30 avril"
+          },
+          {
+            "id": "c",
+            "texte": "Le 1er juin"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Le 1er mai"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quelle réduction maximale est annoncée sur les télévisions ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "40 %",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "20 %"
+          },
+          {
+            "id": "c",
+            "texte": "50 %"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "40 %"
           }
         }
       }
@@ -10189,9 +12358,9 @@
     },
     "questions": [
       {
-        "enonce": "Que veut envoyer la personne ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel type d’envoi la personne souhaite-t-elle effectuer ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
@@ -10201,11 +12370,11 @@
           },
           {
             "id": "b",
-            "texte": "Un colis"
+            "texte": "Une lettre simple"
           },
           {
             "id": "c",
-            "texte": "Une carte postale"
+            "texte": "Un colis express"
           }
         ],
         "formes": {
@@ -10216,9 +12385,9 @@
         }
       },
       {
-        "enonce": "Que reçoit-on chez soi ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel document reçoit-on après cet envoi ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
@@ -10228,11 +12397,11 @@
           },
           {
             "id": "b",
-            "texte": "Un remboursement"
+            "texte": "Une carte postale"
           },
           {
             "id": "c",
-            "texte": "Un catalogue"
+            "texte": "Un bon de réduction"
           }
         ],
         "formes": {
@@ -10243,36 +12412,36 @@
         }
       },
       {
-        "enonce": "À quoi sert cet accusé ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Que permet de prouver ce document ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "À prouver que la lettre est arrivée",
+            "texte": "Que le destinataire a reçu la lettre",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "À payer moins cher"
+            "texte": "Que le destinataire a répondu"
           },
           {
             "id": "c",
-            "texte": "À suivre un colis"
+            "texte": "Que la lettre a été lue"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "À prouver que la lettre est arrivée"
+            "reponse_modele": "Que le destinataire a reçu la lettre"
           }
         }
       },
       {
-        "enonce": "Combien coûte la lettre ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Combien cet envoi coûte-t-il ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
@@ -10282,11 +12451,11 @@
           },
           {
             "id": "b",
-            "texte": "2 euros"
+            "texte": "5,45 euros"
           },
           {
             "id": "c",
-            "texte": "10 euros"
+            "texte": "4,05 euros"
           }
         ],
         "formes": {
@@ -10912,73 +13081,181 @@
     },
     "questions": [
       {
-        "enonce": "Combien de jours dure la formation ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Comment la personne qui appelle se prénomme-t-elle ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "2 jours"
-          },
-          {
-            "id": "b",
-            "texte": "4 jours",
+            "texte": "Jérôme",
             "correct": true
           },
           {
+            "id": "b",
+            "texte": "Julien"
+          },
+          {
             "id": "c",
-            "texte": "5 jours"
+            "texte": "Jacques"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "4 jours"
+            "reponse_modele": "Jérôme"
           }
         }
       },
       {
-        "enonce": "Quelle est la matière de la formation ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel organisme organise la formation ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "L'informatique",
+            "texte": "Formation ABC",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Le français"
+            "texte": "Formation Plus"
           },
           {
             "id": "c",
-            "texte": "Les maths"
+            "texte": "Institut Formation"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "L'informatique"
+            "reponse_modele": "Formation ABC"
           }
         }
       },
       {
-        "enonce": "À quelle heure commence la formation le matin ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Pourquoi cette personne appelle-t-elle ?",
+        "type_reponse": "qcm_texte",
         "melanger": false,
         "choix": [
           {
             "id": "a",
-            "texte": "À 8 h"
+            "texte": "Pour confirmer une inscription",
+            "correct": true
           },
           {
             "id": "b",
+            "texte": "Pour annuler un cours"
+          },
+          {
+            "id": "c",
+            "texte": "Pour annoncer un changement de prix"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Pour confirmer une inscription"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Sur quel sujet porte la formation ?",
+        "type_reponse": "qcm_texte",
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "L’informatique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La comptabilité"
+          },
+          {
+            "id": "c",
+            "texte": "Les langues"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "L’informatique"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quel jour la formation commence-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Lundi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Mardi"
+          },
+          {
+            "id": "c",
+            "texte": "Jeudi"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Lundi"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Combien de jours la formation dure-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": false,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Quatre jours",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Trois jours"
+          },
+          {
+            "id": "c",
+            "texte": "Cinq jours"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Quatre jours"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "À quelle heure les cours commencent-ils le matin ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
             "texte": "À 9 h",
             "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "À 8 h"
           },
           {
             "id": "c",
@@ -10989,23 +13266,41 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 9 h"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              }
+            ]
           }
         }
       },
       {
-        "enonce": "À quelle heure finit la formation le matin ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
-        "melanger": false,
+        "enonce": "À quelle heure les cours reprennent-ils après le déjeuner ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "À midi",
+            "texte": "À 13 h 15",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "À 13 h"
+            "texte": "À 13 h 30"
           },
           {
             "id": "c",
@@ -11015,61 +13310,79 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "À midi"
-          }
-        }
-      },
-      {
-        "enonce": "À quelle heure reprend la formation l'après-midi ?",
-        "type_reponse": "qcm_texte",
-        "points": 1,
-        "melanger": false,
-        "choix": [
-          {
-            "id": "a",
-            "texte": "À 12 h 15"
-          },
-          {
-            "id": "b",
-            "texte": "À 13 h 15",
-            "correct": true
-          },
-          {
-            "id": "c",
-            "texte": "À 14 h 15"
-          }
-        ],
-        "formes": {
-          "lignes": {
-            "nb_lignes": 1,
             "reponse_modele": "À 13 h 15"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-quinze.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              }
+            ]
           }
         }
       },
       {
-        "enonce": "Comment peut-on payer ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
-        "melanger": false,
+        "enonce": "Quel matériel sera remis le premier jour ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Par carte bancaire sur Internet ou à l'accueil",
+            "texte": "Un stylo et du papier",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Uniquement en espèces"
+            "texte": "Un ordinateur portable"
           },
           {
             "id": "c",
-            "texte": "Par chèque uniquement"
+            "texte": "Un manuel et une clé USB"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Par carte bancaire sur Internet ou à l'accueil"
+            "reponse_modele": "Un stylo et du papier"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quel document faut-il apporter ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Une pièce d’identité",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un diplôme"
+          },
+          {
+            "id": "c",
+            "texte": "Un justificatif de domicile"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Une pièce d’identité"
           }
         }
       }
@@ -11816,6 +14129,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 11 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -12221,6 +14552,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 14 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -12821,6 +15170,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 8 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -14489,6 +16856,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 21 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -14516,6 +16901,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Vers 22 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/minuit.webp"
+              }
+            ]
           }
         }
       },
@@ -14543,6 +16946,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Vers 19 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -14686,6 +17107,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 16 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -14713,6 +17152,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 17 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -14740,6 +17197,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Vers 19 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -15161,6 +17636,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 7 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -15903,6 +18396,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 8 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -15984,6 +18495,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 16 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -16011,6 +18540,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 18 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -16322,6 +18869,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 16 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -16515,6 +19080,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 9 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -16571,6 +19154,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 9 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -16789,6 +19390,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 10 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -17219,6 +19838,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 19 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+              }
+            ]
           }
         }
       }
@@ -17442,6 +20079,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 21 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-trois-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -20485,6 +23140,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "9 h 15"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-quinze.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -20512,6 +23185,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "20 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -20738,6 +23429,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 19h30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              }
+            ]
           }
         },
         "audio": 4
@@ -20766,6 +23475,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 21h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+              }
+            ]
           }
         },
         "audio": 4
@@ -23799,6 +26526,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 9 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -24729,6 +27474,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 21 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -25323,6 +28086,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À sept heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       }
@@ -26503,6 +29284,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 14 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -26530,6 +29329,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "9 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -27147,6 +29964,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 6 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -27603,6 +30438,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 7 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -31171,6 +34024,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 6 heures"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -31296,6 +34167,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 6 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente-cinq.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-vingt.webp"
+              }
+            ]
           }
         }
       },
@@ -34105,6 +36994,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 17 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -38889,7 +41796,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/transports/vélo.webp"
+                "image": "/lib/images/vocabulaire/transports/velo.webp"
               },
               {
                 "id": "b",
@@ -39871,6 +42778,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 15h50"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures-cinquante.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -40347,6 +43272,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 13h30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -40520,6 +43463,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 20 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -40548,6 +43509,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 21 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -41111,6 +44090,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 10 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -41460,6 +44457,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 17 h 30"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -44706,6 +47721,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "13h45"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-quarante-cinq.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures-quinze.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -45077,6 +48110,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 9 h 25"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures-vingt-cinq.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-vingt-cinq.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-vingt-cinq.webp"
+              }
+            ]
           }
         }
       },
@@ -45256,6 +48307,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 18 h"
+          },
+          "qcm_image": {
+            "melanger": false,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -48972,9 +52041,9 @@
     },
     "questions": [
       {
-        "enonce": "Quel lieu va fermer ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel établissement va fermer ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49017,36 +52086,36 @@
         }
       },
       {
-        "enonce": "Pourquoi ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Pourquoi cet établissement va-t-il fermer ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "À cause de travaux",
+            "texte": "Pour des travaux",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "À cause d’une grève"
+            "texte": "Pour les vacances du personnel"
           },
           {
             "id": "c",
-            "texte": "Pour les vacances"
+            "texte": "À cause d’une panne informatique"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "À cause de travaux"
+            "reponse_modele": "Pour des travaux"
           }
         }
       },
       {
-        "enonce": "Pendant combien de temps ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Combien de temps la fermeture doit-elle durer ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49056,7 +52125,7 @@
           },
           {
             "id": "b",
-            "texte": "Un jour"
+            "texte": "Une journée"
           },
           {
             "id": "c",
@@ -49067,6 +52136,33 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une semaine"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quand la fermeture commence-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Demain",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Aujourd’hui"
+          },
+          {
+            "id": "c",
+            "texte": "La semaine prochaine"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Demain"
           }
         }
       }
@@ -49088,9 +52184,9 @@
     },
     "questions": [
       {
-        "enonce": "À quelle occasion a lieu cette offre ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle occasion cette offre est-elle proposée ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49104,7 +52200,7 @@
           },
           {
             "id": "c",
-            "texte": "Noël"
+            "texte": "La fête des pères"
           }
         ],
         "formes": {
@@ -49115,9 +52211,9 @@
         }
       },
       {
-        "enonce": "Que faut-il acheter pour avoir la remise ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Que faut-il acheter pour bénéficier de la remise ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49142,9 +52238,9 @@
         }
       },
       {
-        "enonce": "Quelle remise avez-vous sur les bijoux ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel pourcentage de réduction est annoncé sur les bijoux ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49154,17 +52250,44 @@
           },
           {
             "id": "b",
-            "texte": "17 %"
+            "texte": "50 %"
           },
           {
             "id": "c",
-            "texte": "50 %"
+            "texte": "30 %"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "70 %"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quels nouveaux articles le magasin invite-t-il à découvrir ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Des sacs à main",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Des chaussures"
+          },
+          {
+            "id": "c",
+            "texte": "Des montres"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Des sacs à main"
           }
         }
       }
@@ -49596,9 +52719,9 @@
     },
     "questions": [
       {
-        "enonce": "Qui fait grève ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle profession est en grève ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49608,11 +52731,11 @@
           },
           {
             "id": "b",
-            "texte": "Les chauffeurs de bus"
+            "texte": "Les conducteurs de train"
           },
           {
             "id": "c",
-            "texte": "Les enseignants"
+            "texte": "Les contrôleurs de métro"
           }
         ],
         "formes": {
@@ -49623,56 +52746,83 @@
         }
       },
       {
-        "enonce": "Que demandent-elles ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle nouvelle durée de grève est annoncée ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Un meilleur salaire et plus de jours de congé",
+            "texte": "Une semaine",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Moins d’heures de travail"
+            "texte": "Une journée"
           },
           {
             "id": "c",
-            "texte": "De nouveaux avions"
+            "texte": "Un mois"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Un meilleur salaire et plus de jours de congé"
+            "reponse_modele": "Une semaine"
           }
         }
       },
       {
-        "enonce": "Qui n’a pas encore répondu ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelles améliorations les grévistes demandent-elles ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Le ministère des Transports",
+            "texte": "Un meilleur salaire et davantage de congés",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Le directeur de l’aéroport"
+            "texte": "Des journées plus longues et moins de congés"
           },
           {
             "id": "c",
-            "texte": "Les passagers"
+            "texte": "Une nouvelle formation et un nouvel uniforme"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Le ministère des Transports"
+            "reponse_modele": "Un meilleur salaire et davantage de congés"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quelle est la réaction du ministère des Transports à ce stade ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Il n’a pas encore répondu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Il a accepté les demandes"
+          },
+          {
+            "id": "c",
+            "texte": "Il a refusé les demandes"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Il n’a pas encore répondu"
           }
         }
       }
@@ -49890,9 +53040,9 @@
     },
     "questions": [
       {
-        "enonce": "Pour quelle journée est cette publicité ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle occasion cette publicité est-elle diffusée ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -49902,11 +53052,11 @@
           },
           {
             "id": "b",
-            "texte": "La fête des mères"
+            "texte": "La Saint-Valentin"
           },
           {
             "id": "c",
-            "texte": "La Saint-Valentin"
+            "texte": "La fête de la musique"
           }
         ],
         "formes": {
@@ -49917,56 +53067,83 @@
         }
       },
       {
-        "enonce": "Quelle remise est proposée ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle réduction la publicité annonce-t-elle ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "25 % sur les bouquets de fleurs",
+            "texte": "25 %",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "25 % sur les chocolats"
+            "texte": "15 %"
           },
           {
             "id": "c",
-            "texte": "50 % sur les cadeaux"
+            "texte": "35 %"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "25 % sur les bouquets de fleurs"
+            "reponse_modele": "25 %"
           }
         }
       },
       {
-        "enonce": "Comment obtenir la remise ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Sur quels produits cette réduction s’applique-t-elle ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Avec un code sur le site Internet",
+            "texte": "Les bouquets de fleurs",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "En magasin seulement"
+            "texte": "Les chocolats"
           },
           {
             "id": "c",
-            "texte": "Par téléphone"
+            "texte": "Les parfums"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Avec un code sur le site Internet"
+            "reponse_modele": "Les bouquets de fleurs"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quel code faut-il utiliser pour profiter de l’offre ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "FLEURSENFÊTE",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "BONNEFÊTE"
+          },
+          {
+            "id": "c",
+            "texte": "FLEURSPRINTEMPS"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "FLEURSENFÊTE"
           }
         }
       }
@@ -50439,6 +53616,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 14 h"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -50564,6 +53759,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "18 h 30"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -50710,83 +53923,146 @@
     },
     "questions": [
       {
-        "enonce": "À quelle heure ferme la bibliothèque aujourd’hui ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel établissement est concerné par cette annonce ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "15 h 30",
+            "texte": "La bibliothèque",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "18 h 30"
+            "texte": "La piscine"
           },
           {
             "id": "c",
-            "texte": "15 h"
+            "texte": "Le musée"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "15 h 30"
+            "reponse_modele": "La bibliothèque"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/tcf/co/bg/bibliotheque.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/musee.webp"
+              }
+            ]
           }
         }
       },
       {
-        "enonce": "Comment est cette fermeture ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle heure cet établissement ferme-t-il ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Exceptionnelle",
+            "texte": "À 15 h 30",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Comme tous les jours"
+            "texte": "À 15 h"
           },
           {
             "id": "c",
-            "texte": "Pour une semaine"
+            "texte": "À 16 h"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Exceptionnelle"
+            "reponse_modele": "À 15 h 30"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/seize-heures.webp"
+              }
+            ]
           }
         }
       },
       {
+        "points": 1,
         "enonce": "Combien de temps reste-t-il avant la fermeture ?",
         "type_reponse": "qcm_texte",
-        "points": 1,
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "15 minutes",
+            "texte": "Quinze minutes",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "30 minutes"
+            "texte": "Trente minutes"
           },
           {
             "id": "c",
-            "texte": "1 heure"
+            "texte": "Une heure"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "15 minutes"
+            "reponse_modele": "Quinze minutes"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Comment cette fermeture est-elle présentée ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Comme exceptionnelle",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Comme définitive"
+          },
+          {
+            "id": "c",
+            "texte": "Comme quotidienne"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Comme exceptionnelle"
           }
         }
       }
@@ -51651,6 +54927,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "12 h 15"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/midi-quinze.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/midi-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -51678,6 +54972,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "20 h 30"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/midi-quinze.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -52919,9 +56231,9 @@
     },
     "questions": [
       {
-        "enonce": "Quelle ligne sera fermée le soir ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle ligne de métro est concernée ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -52931,11 +56243,11 @@
           },
           {
             "id": "b",
-            "texte": "La ligne 11"
+            "texte": "La ligne 2"
           },
           {
             "id": "c",
-            "texte": "La ligne 2"
+            "texte": "La ligne 3"
           }
         ],
         "formes": {
@@ -52946,36 +56258,81 @@
         }
       },
       {
-        "enonce": "À partir de quelle heure ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle heure la ligne ferme-t-elle les jours concernés ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "22 h 30",
+            "texte": "À 22 h 30",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "20 h 30"
+            "texte": "À 21 h"
           },
           {
             "id": "c",
-            "texte": "23 h"
+            "texte": "À 23 h"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "22 h 30"
+            "reponse_modele": "À 22 h 30"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-deux-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-trois-heures.webp"
+              }
+            ]
           }
         }
       },
       {
-        "enonce": "Pourquoi ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle fréquence la fermeture est-elle prévue ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Tous les soirs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un soir par semaine"
+          },
+          {
+            "id": "c",
+            "texte": "Uniquement le lundi soir"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Tous les soirs"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Pourquoi la ligne doit-elle fermer ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -52985,11 +56342,11 @@
           },
           {
             "id": "b",
-            "texte": "À cause d’une grève"
+            "texte": "Pour nettoyer les stations"
           },
           {
             "id": "c",
-            "texte": "Pour nettoyer les trains"
+            "texte": "Pour former les conducteurs"
           }
         ],
         "formes": {
@@ -53525,83 +56882,110 @@
     },
     "questions": [
       {
-        "enonce": "Où y a-t-il un problème de circulation ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quel réseau de transport connaît des perturbations ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Dans le métro",
+            "texte": "Le métro parisien",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Sur l’autoroute"
+            "texte": "Les bus de Lyon"
           },
           {
             "id": "c",
-            "texte": "À l’aéroport"
+            "texte": "Les trains de Marseille"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Dans le métro"
+            "reponse_modele": "Le métro parisien"
           }
         }
       },
       {
-        "enonce": "Pourquoi ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle est la cause des perturbations ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Le personnel fait grève",
+            "texte": "Une grève du personnel",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Il y a de la neige"
+            "texte": "Une panne de courant"
           },
           {
             "id": "c",
-            "texte": "Il y a des travaux"
+            "texte": "Des travaux sur les voies"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Le personnel fait grève"
+            "reponse_modele": "Une grève du personnel"
           }
         }
       },
       {
-        "enonce": "Combien de trains circulent ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quand ces perturbations sont-elles prévues ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "2 trains sur 4",
+            "texte": "Aujourd’hui et demain",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "1 train sur 4"
+            "texte": "Demain seulement"
           },
           {
             "id": "c",
-            "texte": "3 trains sur 4"
+            "texte": "Toute la semaine prochaine"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "2 trains sur 4"
+            "reponse_modele": "Aujourd’hui et demain"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quelle proportion des trains doit circuler ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Deux trains sur quatre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un train sur quatre"
+          },
+          {
+            "id": "c",
+            "texte": "Trois trains sur quatre"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Deux trains sur quatre"
           }
         }
       }
@@ -53721,36 +57105,108 @@
     },
     "questions": [
       {
-        "enonce": "Combien de trains circuleront ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "À quelle heure ce bulletin est-il diffusé ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "1 train sur 5",
+            "texte": "À 8 h",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "1 train sur 2"
+            "texte": "À 9 h"
           },
           {
             "id": "c",
-            "texte": "3 trains sur 5"
+            "texte": "À 7 h"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "1 train sur 5"
+            "reponse_modele": "À 8 h"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              }
+            ]
           }
         }
       },
       {
-        "enonce": "Où trouver le programme des trains ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle zone est concernée par la grève ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Toute la France",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La région parisienne seulement"
+          },
+          {
+            "id": "c",
+            "texte": "Le sud de la France seulement"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Toute la France"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Quelle proportion des trains circulera ?",
+        "type_reponse": "qcm_texte",
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un train sur cinq",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un train sur deux"
+          },
+          {
+            "id": "c",
+            "texte": "Quatre trains sur cinq"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un train sur cinq"
+          }
+        }
+      },
+      {
+        "points": 1,
+        "enonce": "Où faut-il consulter le programme des trains ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -53760,44 +57216,17 @@
           },
           {
             "id": "b",
-            "texte": "À la radio"
+            "texte": "À la mairie"
           },
           {
             "id": "c",
-            "texte": "Dans le journal"
+            "texte": "Sur le site de l’aéroport"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Sur le site Internet de la SNCF"
-          }
-        }
-      },
-      {
-        "enonce": "Quelle heure est-il ?",
-        "type_reponse": "qcm_texte",
-        "points": 1,
-        "melanger": true,
-        "choix": [
-          {
-            "id": "a",
-            "texte": "8 h",
-            "correct": true
-          },
-          {
-            "id": "b",
-            "texte": "7 h"
-          },
-          {
-            "id": "c",
-            "texte": "9 h"
-          }
-        ],
-        "formes": {
-          "lignes": {
-            "nb_lignes": 1,
-            "reponse_modele": "8 h"
           }
         }
       }
@@ -54110,6 +57539,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 8 h 30"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       }
@@ -54816,14 +58263,14 @@
     },
     "questions": [
       {
-        "enonce": "Qu'est-ce que la ville organise ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Quelle activité est organisée pour la fête de la nature ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Un pique-nique",
+            "texte": "Un pique-nique géant",
             "correct": true
           },
           {
@@ -54838,14 +58285,14 @@
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Un pique-nique"
+            "reponse_modele": "Un pique-nique géant"
           }
         }
       },
       {
-        "enonce": "Où a lieu l'événement ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Où cette activité a-t-elle lieu ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
@@ -54855,11 +58302,11 @@
           },
           {
             "id": "b",
-            "texte": "Sur la place du marché"
+            "texte": "Sur la plage"
           },
           {
             "id": "c",
-            "texte": "Au bord du lac"
+            "texte": "Sur la place de la mairie"
           }
         ],
         "formes": {
@@ -54870,56 +58317,74 @@
         }
       },
       {
-        "enonce": "Qu'est-ce qu'on peut acheter sur place ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Que contient le panier-repas proposé ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Des paniers-repas",
+            "texte": "Un sandwich, une salade et une boisson",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Des assiettes"
+            "texte": "Une soupe, du pain et un fruit"
           },
           {
             "id": "c",
-            "texte": "Des tables de pique-nique"
+            "texte": "Une pizza, un gâteau et du café"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Des paniers-repas"
+            "reponse_modele": "Un sandwich, une salade et une boisson"
           }
         }
       },
       {
-        "enonce": "Que faut-il apporter ?",
-        "type_reponse": "qcm_texte",
         "points": 1,
+        "enonce": "Que faut-il apporter en plus des couverts jetables ?",
+        "type_reponse": "qcm_texte",
         "melanger": true,
         "choix": [
           {
             "id": "a",
-            "texte": "Des assiettes et des couverts",
+            "texte": "Des assiettes",
             "correct": true
           },
           {
             "id": "b",
-            "texte": "Un sandwich et une boisson"
+            "texte": "Des chaises"
           },
           {
             "id": "c",
-            "texte": "Une nappe et des chaises"
+            "texte": "Une nappe"
           }
         ],
         "formes": {
           "lignes": {
             "nb_lignes": 1,
-            "reponse_modele": "Des assiettes et des couverts"
+            "reponse_modele": "Des assiettes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/cuisine/assiette.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/maison/chaise.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/cuisine/nappe.webp"
+              }
+            ]
           }
         }
       }
@@ -56769,6 +60234,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À 20 heures"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/vingt-et-une-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -57844,7 +61327,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/transports/vélo.webp"
+                "image": "/lib/images/vocabulaire/transports/velo.webp"
               }
             ]
           }
@@ -59090,6 +62573,24 @@
                 "texte": "8 h"
               }
             ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-dix.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -59234,6 +62735,24 @@
                 "texte": "9 h 30"
               }
             ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -59304,6 +62823,24 @@
               {
                 "id": "c",
                 "texte": "8 h"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures-quarante-cinq.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
               }
             ]
           }
@@ -59394,6 +62931,24 @@
               {
                 "id": "c",
                 "texte": "8 h"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-cinquante.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
               }
             ]
           }
@@ -59955,6 +63510,24 @@
                 "texte": "8 h"
               }
             ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/cinq-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -60205,6 +63778,24 @@
               {
                 "id": "c",
                 "texte": "8 h"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
               }
             ]
           }
@@ -60865,6 +64456,24 @@
               {
                 "id": "c",
                 "texte": "9 h 30"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
               }
             ]
           }
@@ -61594,6 +65203,24 @@
                 "texte": "9 h 30"
               }
             ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -61886,6 +65513,24 @@
               {
                 "id": "c",
                 "texte": "8 h"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-quarante-cinq.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
               }
             ]
           }
@@ -62821,6 +66466,24 @@
                 "texte": "8 h"
               }
             ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quinze-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -62981,6 +66644,24 @@
               {
                 "id": "c",
                 "texte": "8 h"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/quatorze-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
               }
             ]
           }
@@ -63376,6 +67057,24 @@
               {
                 "id": "c",
                 "texte": "9 h 30"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/neuf-heures-trente.webp"
               }
             ]
           }
@@ -63869,6 +67568,24 @@
               {
                 "id": "c",
                 "texte": "À 19 heures"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/vocabulaire/heure-horloge/midi.webp"
+              },
+              {
+                "id": "b",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-neuf-heures.webp"
               }
             ]
           }
@@ -64606,6 +68323,24 @@
               {
                 "id": "c",
                 "texte": "8 h"
+              }
+            ]
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
               }
             ]
           }
