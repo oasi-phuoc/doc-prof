@@ -384,6 +384,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                           tcfNiveauFromDifficulty(activeBlock.difficulty),
                           activeBlock.tcfBankId,
                           activeBlock.tcfExercise,
+                          activeBlock.tcfQuestionCount,
                         )
                     const canDiff = isCo
                       ? tcfCoCanDifferentiatePoints(typeId)

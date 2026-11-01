@@ -19,6 +19,7 @@ import {
   type TcfSlotMeta,
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
+import { limitTcfCeQuestions } from './ce-questions'
 import { tcfCoConsigneForSlot, tcfCoConsigneForType } from './consignes'
 import {
   drawAssociationCompose,
@@ -535,6 +536,20 @@ function withQuestionPoints(
   return next
 }
 
+function finishTcfExercise(
+  ex: TcfExercise | undefined,
+  config: PageConfig,
+  edited: boolean,
+): TcfExercise | undefined {
+  if (!ex) return undefined
+  // CE non édité : appliquer le nombre de questions choisi (ordre banque).
+  const limited =
+    !edited && ex.competence === 'CE'
+      ? limitTcfCeQuestions(ex, config.tcfQuestionCount)
+      : ex
+  return withQuestionPoints(limited, config.tcfQuestionPoints)
+}
+
 /** Exercice TCF résolu pour un bloc (banque épinglée, édition libre, ou tirage). */
 export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | undefined {
   const niveau = tcfNiveauForConfig(config.domain, config.difficulty)
@@ -544,7 +559,7 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
   if (!slot && !legacy) return undefined
   const competence = (slot ?? legacy)!.competence
   if (config.tcfExercise && config.tcfExercise.competence === competence) {
-    return withQuestionPoints(config.tcfExercise, config.tcfQuestionPoints)
+    return finishTcfExercise(config.tcfExercise, config, true)
   }
   // Libre : slots épinglés ; Aléatoire (défaut) : tirage pur dans le pool tagué.
   const composeOpts = {
@@ -599,20 +614,20 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
   if (taggedSlot && config.tcfAudioPickMode === 'libre' && config.tcfBankId) {
     const chosen =
       pool.find((ex) => ex.id === config.tcfBankId) ?? bank.find((ex) => ex.id === config.tcfBankId)
-    if (chosen) return withQuestionPoints(chosen, config.tcfQuestionPoints)
+    if (chosen) return finishTcfExercise(chosen, config, false)
   }
   if (taggedSlot && config.tcfAudioPickMode !== 'libre') {
     const source = pool.length > 0 ? pick(rng, pool) : undefined
-    return source ? withQuestionPoints(source, config.tcfQuestionPoints) : undefined
+    return finishTcfExercise(source, config, false)
   }
 
   const pinned = tcfExerciseById(config.tcfBankId)
   if (pinned && pinned.competence === competence) {
-    return withQuestionPoints(pinned, config.tcfQuestionPoints)
+    return finishTcfExercise(pinned, config, false)
   }
   const chosen = bank.find((ex) => ex.id === config.tcfBankId)
   const source = chosen ?? (pool.length > 0 ? pick(rng, pool) : undefined)
-  return source ? withQuestionPoints(source, config.tcfQuestionPoints) : undefined
+  return finishTcfExercise(source, config, false)
 }
 
 /**

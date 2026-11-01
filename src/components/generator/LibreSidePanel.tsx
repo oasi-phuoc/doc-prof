@@ -257,6 +257,7 @@ export function LibreSidePanel({
             exercise={activeBlock.tcfExercise}
             bankId={activeBlock.tcfBankId}
             shownId={activeSheet?.blocks[safeBlockIndex]?.items.find((item) => item.tcfExerciseId)?.tcfExerciseId}
+            questionCount={activeBlock.tcfQuestionCount}
             onChange={(patch) => updatePage(patch)}
           />
         ) : null}

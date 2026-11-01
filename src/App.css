@@ -4730,6 +4730,24 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-info-partie-how{margin:2px 0 0;font-size:.85em;color:var(--muted);font-style:italic}
 /* —— TCF : panneau admin —— */
 .tcf-editor{gap:8px}
+.tcf-bank-question-list{
+  list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px
+}
+.tcf-bank-question-toggle{
+  display:flex;align-items:flex-start;gap:8px;margin:0;padding:8px 10px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer
+}
+.tcf-bank-question-toggle:has(input:checked){
+  border-color:color-mix(in srgb,var(--purple) 45%,var(--line));
+  background:color-mix(in srgb,var(--purple) 6%,#fff)
+}
+.tcf-bank-question-toggle input{
+  margin-top:2px;flex:0 0 auto;accent-color:var(--purple)
+}
+.tcf-bank-question-toggle span{
+  font-size:calc(12px * var(--app-font-scale, 1));line-height:1.35;color:var(--ink)
+}
+.tcf-bank-question-toggle strong{font-variant-numeric:tabular-nums}
 .tcf-field{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
 .tcf-editor .select-box.open{z-index:40}
 .side-tool-panel-body:has(.select-box.open){overflow:visible}

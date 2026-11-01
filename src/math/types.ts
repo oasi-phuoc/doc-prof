@@ -1020,7 +1020,10 @@ export type ExerciseBlock = {
    * Uniquement en mode `libre` ; slot vide → tirage dans le pool tagué.
    */
   tcfAudioSlots?: Array<string | undefined>
-  /** TCF CO ex. 3 : nombre de questions tirées du pool (défaut 5). */
+  /**
+   * TCF CO ex. 3 : nombre de questions tirées du pool (défaut 5).
+   * TCF CE : nombre de questions du texte (défaut = toutes).
+   */
   tcfQuestionCount?: number
   /**
    * TCF CO / CE : points par question / image (index 0-based).

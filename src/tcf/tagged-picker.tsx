@@ -61,17 +61,20 @@ export function TcfTaggedExercisePicker({
   niveau,
   bankId,
   pickMode = 'aleatoire',
+  questionCount,
   onChange,
 }: {
   typeId: string
   niveau: TcfNiveau
   bankId?: string
   pickMode?: 'aleatoire' | 'libre'
+  questionCount?: number
   onChange: (patch: {
     tcfBankId?: string | undefined
     tcfExercise?: undefined
     tcfAudioPickMode?: 'aleatoire' | 'libre'
     tcfScenario?: undefined
+    tcfQuestionCount?: number | undefined
     contentSeed?: number
   }) => void
 }) {
@@ -89,6 +92,15 @@ export function TcfTaggedExercisePicker({
   }, [slot, kind, niveau])
   const labels = useMemo(() => tcfExerciseLabels(pool), [pool])
   const isLibre = pickMode === 'libre'
+  const bankCap = useMemo(() => {
+    if (kind?.competence !== 'CE') return 0
+    if (bankId) {
+      const found = pool.find((ex) => ex.id === bankId)
+      if (found?.questions?.length) return found.questions.length
+    }
+    const lens = pool.map((ex) => ex.questions?.length ?? 0).filter((n) => n > 0)
+    return lens.length > 0 ? Math.max(...lens) : 10
+  }, [kind, bankId, pool])
 
   if (!kind || !slot || pool.length === 0) return null
 
@@ -167,6 +179,33 @@ export function TcfTaggedExercisePicker({
           </select>
         </label>
       ) : null}
+      {kind.competence === 'CE' && bankCap > 0 ? (
+        <label className="tcf-field">
+          <span>Nombre de questions</span>
+          <input
+            className="pill-input"
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={bankCap}
+            step={1}
+            value={questionCount ?? bankCap}
+            onChange={(event) => {
+              const raw = Number(event.target.value)
+              if (!Number.isFinite(raw)) return
+              const next = Math.max(1, Math.min(bankCap, Math.round(raw)))
+              onChange({
+                tcfQuestionCount: next >= bankCap ? undefined : next,
+                tcfExercise: undefined,
+                contentSeed: Date.now() % 1_000_000_000,
+              })
+            }}
+          />
+          <small className="muted">
+            Défaut : toutes les questions du texte (max. {bankCap}).
+          </small>
+        </label>
+      ) : null}
     </div>
   )
 }
@@ -177,16 +216,23 @@ export function tcfCeQuestionCountHint(
   niveau: TcfNiveau,
   bankId?: string,
   exercise?: TcfExercise,
+  questionCount?: number,
 ): number {
-  if (exercise?.questions?.length) return exercise.questions.length
-  const slot = tcfSlotByTypeId[typeId]
-  if (!slot) return 5
-  if (bankId) {
-    const found = tcfSlotBank(['A0-A1', 'A1-A2', 'A2-B1'] as const, slot).find((e) => e.id === bankId)
-    if (found?.questions?.length) return found.questions.length
+  const full = (() => {
+    if (exercise?.questions?.length) return exercise.questions.length
+    const slot = tcfSlotByTypeId[typeId]
+    if (!slot) return 5
+    if (bankId) {
+      const found = tcfSlotBank(['A0-A1', 'A1-A2', 'A2-B1'] as const, slot).find((e) => e.id === bankId)
+      if (found?.questions?.length) return found.questions.length
+    }
+    const pool = tcfSlotBank(niveau, slot)
+    const lens = pool.map((e) => e.questions?.length ?? 0).filter((n) => n > 0)
+    if (lens.length === 0) return 5
+    return Math.max(...lens)
+  })()
+  if (questionCount != null && Number.isFinite(questionCount) && questionCount > 0) {
+    return Math.min(Math.round(questionCount), full)
   }
-  const pool = tcfSlotBank(niveau, slot)
-  const lens = pool.map((e) => e.questions?.length ?? 0).filter((n) => n > 0)
-  if (lens.length === 0) return 5
-  return Math.max(...lens)
+  return full
 }

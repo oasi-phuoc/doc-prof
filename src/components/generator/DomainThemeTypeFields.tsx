@@ -416,6 +416,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   typeId={activeBlock.exerciseType}
                   bankId={activeBlock.tcfBankId}
                   pickMode={activeBlock.tcfAudioPickMode ?? 'aleatoire'}
+                  questionCount={activeBlock.tcfQuestionCount}
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}

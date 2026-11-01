@@ -11,6 +11,13 @@ import {
 } from './audio-bank'
 import { TCF_TYPES, tcfDefaultTypeReponse, tcfSlotByTypeId, tcfTypeMeta } from './catalog'
 import { AudioField, ImageField, LinesField, NumberField, TextField } from './fields'
+import {
+  limitTcfCeQuestions,
+  tcfFreeQuestions,
+  tcfQuestionKey,
+  tcfSelectedBankQuestions,
+  toggleTcfBankQuestion,
+} from './ce-questions'
 import { drawTcfSeries } from './draw-series'
 import { tcfBank, tcfBankAllLevels, tcfExerciseById, tcfSlotBank } from './loader'
 import { QuestionEditor } from './QuestionEditor'
@@ -1032,6 +1039,7 @@ export function TcfExerciseEditor({
   exercise: edits,
   bankId,
   shownId,
+  questionCount,
   fallbackExercise,
   variant = 'tcf',
   onChange,
@@ -1043,6 +1051,8 @@ export function TcfExerciseEditor({
   bankId?: string
   /** Exercice de banque affiché sur la fiche (tirage selon la graine). */
   shownId?: string
+  /** CE : nombre de questions choisi dans le panneau (si pas encore édité). */
+  questionCount?: number
   /** Grammaire : exercice généré (support TCF) si le panneau n’a pas encore d’édition. */
   fallbackExercise?: TcfExercise
   variant?: 'tcf' | 'grammaire'
@@ -1062,17 +1072,27 @@ export function TcfExerciseEditor({
   const edited = isGrammaire
     ? edits != null
     : edits != null && slot != null && edits.competence === slot.competence
+  const bankSource = useMemo(() => {
+    if (isGrammaire || !slot || slot.competence !== 'CE') return undefined
+    return [tcfExerciseById(bankId), tcfExerciseById(shownId), bank[0]].find(
+      (ex) => ex != null && ex.competence === 'CE',
+    )
+  }, [isGrammaire, slot, bankId, shownId, bank])
   const fallback = useMemo(() => {
     if (isGrammaire) return fallbackExercise ? structuredClone(fallbackExercise) : undefined
     if (!slot) return undefined
     const source = [tcfExerciseById(bankId), tcfExerciseById(shownId), bank[0]].find(
       (ex) => ex != null && ex.competence === slot.competence,
     )
-    if (source) return structuredClone(source)
+    if (source) {
+      const clone = structuredClone(source)
+      return slot.competence === 'CE' ? limitTcfCeQuestions(clone, questionCount) : clone
+    }
     const first = TCF_TYPES.find((t) => t.competence === slot.competence)!
     return emptyTcfExercise(niveau, slot.competence, first.typeExercice, tcfExerciseId(niveau, slot.competence, 1))
-  }, [slot, bankId, shownId, bank, niveau, isGrammaire, fallbackExercise])
+  }, [slot, bankId, shownId, bank, niveau, isGrammaire, fallbackExercise, questionCount])
   const current = edited ? edits : fallback
+  const isCeBankPicker = !isGrammaire && slot?.competence === 'CE' && Boolean(bankSource)
   /** Tous les audios CO, tous niveaux : choisir un audio recharge questions + transcription. */
   const coAudioEntries = useMemo(
     () =>
@@ -1250,7 +1270,86 @@ export function TcfExerciseEditor({
             />
           ) : null}
 
-          {usesQuestions ? (
+          {usesQuestions && isCeBankPicker && bankSource ? (
+            <>
+              <b>
+                Questions de la banque (
+                {tcfSelectedBankQuestions(exercise, bankSource).length} / {bankSource.questions.length}
+                )
+              </b>
+              <small className="muted">
+                Cochez les questions à garder sur la fiche. Vous pouvez aussi ajouter une question
+                libre.
+              </small>
+              <ul className="tcf-bank-question-list">
+                {bankSource.questions.map((q, i) => {
+                  const key = tcfQuestionKey(q)
+                  const checked = exercise.questions.some((eq) => tcfQuestionKey(eq) === key)
+                  const preview = q.enonce.trim() || `(Question ${i + 1})`
+                  return (
+                    <li key={`${key}-${i}`}>
+                      <label className="tcf-bank-question-toggle">
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={() =>
+                            set({
+                              ...exercise,
+                              questions: toggleTcfBankQuestion(exercise, bankSource, q, !checked),
+                            })
+                          }
+                        />
+                        <span>
+                          <strong>{i + 1}.</strong> {preview.length > 120 ? `${preview.slice(0, 117)}…` : preview}
+                        </span>
+                      </label>
+                    </li>
+                  )
+                })}
+              </ul>
+              <b>Questions libres ({tcfFreeQuestions(exercise, bankSource).length})</b>
+              {tcfFreeQuestions(exercise, bankSource).map((q, freeIndex) => {
+                const absoluteIndex = exercise.questions.findIndex(
+                  (eq) => eq === q || tcfQuestionKey(eq) === tcfQuestionKey(q),
+                )
+                const index = absoluteIndex >= 0 ? absoluteIndex : freeIndex
+                return (
+                  <QuestionEditor
+                    key={`free-${index}-${tcfQuestionKey(q)}`}
+                    index={index}
+                    question={q}
+                    reponses={meta?.reponses ?? []}
+                    audioCount={audioCount}
+                    onChange={(next) =>
+                      set({
+                        ...exercise,
+                        questions: exercise.questions.map((x, k) => (k === index ? next : x)),
+                      })
+                    }
+                    onRemove={() =>
+                      set({
+                        ...exercise,
+                        questions: exercise.questions.filter((_, k) => k !== index),
+                      })
+                    }
+                  />
+                )
+              })}
+              <button
+                type="button"
+                className="tcf-btn"
+                onClick={() => {
+                  const next = emptyTcfQuestion(
+                    meta ? tcfDefaultTypeReponse(meta.competence) : 'qcm_texte',
+                  )
+                  set({ ...exercise, questions: [...exercise.questions, next] })
+                }}
+              >
+                + ajouter une question libre
+              </button>
+            </>
+          ) : null}
+          {usesQuestions && !isCeBankPicker ? (
             <>
               <b>Questions ({exercise.questions.length})</b>
               {exercise.questions.map((q, i) => (
