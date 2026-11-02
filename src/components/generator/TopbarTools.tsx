@@ -240,6 +240,38 @@ function FormatSection({
   )
 }
 
+function PrintCorrectionsSection({
+  printCorrections,
+  onChange,
+}: {
+  printCorrections: boolean
+  onChange: (include: boolean) => void
+}) {
+  return (
+    <div className="settings-section" role="radiogroup" aria-label="Correction à l’impression">
+      <p className="settings-section-title">Correction à l’impression</p>
+      <div className="settings-format-list">
+        {[true, false].map((include) => (
+          <button
+            key={String(include)}
+            type="button"
+            role="radio"
+            aria-checked={printCorrections === include}
+            className={`settings-format-option${printCorrections === include ? ' active' : ''}`}
+            onClick={() => onChange(include)}
+          >
+            <span className="settings-format-radio" aria-hidden="true" />
+            <span className="settings-format-copy">
+              <strong>{include ? 'Avec correction' : 'Sans correction'}</strong>
+              <span>{include ? 'Fiche élève et corrigé' : 'Fiche élève seulement'}</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function ChromeSection({
   hideChrome,
   onChange,
@@ -288,6 +320,8 @@ function AccountMenu({
   onFontSizeChange,
   sheetFormat,
   onSheetFormatChange,
+  printCorrections,
+  onPrintCorrectionsChange,
   hideChrome,
   onHideChromeChange,
   onLogout,
@@ -298,6 +332,8 @@ function AccountMenu({
   onFontSizeChange: (size: number) => void
   sheetFormat: SheetFormat
   onSheetFormatChange: (format: SheetFormat) => void
+  printCorrections: boolean
+  onPrintCorrectionsChange: (include: boolean) => void
   hideChrome: boolean
   onHideChromeChange: (hide: boolean) => void
   onLogout: () => void
@@ -345,6 +381,7 @@ function AccountMenu({
           <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} />
           <ColorSection themeColor={themeColor} onChange={onThemeColor} />
           <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
+          <PrintCorrectionsSection printCorrections={printCorrections} onChange={onPrintCorrectionsChange} />
           <ChromeSection hideChrome={hideChrome} onChange={onHideChromeChange} />
           <div className="settings-menu-divider" />
           <button
@@ -377,6 +414,8 @@ export function TopbarTools({
   onFontSizeChange,
   sheetFormat,
   onSheetFormatChange,
+  printCorrections,
+  onPrintCorrectionsChange,
   hideChrome,
   onHideChromeChange,
   footerOpen,
@@ -394,6 +433,8 @@ export function TopbarTools({
   onFontSizeChange: (size: number) => void
   sheetFormat: SheetFormat
   onSheetFormatChange: (format: SheetFormat) => void
+  printCorrections: boolean
+  onPrintCorrectionsChange: (include: boolean) => void
   hideChrome: boolean
   onHideChromeChange: (hide: boolean) => void
   footerOpen: boolean
@@ -456,6 +497,8 @@ export function TopbarTools({
         onFontSizeChange={onFontSizeChange}
         sheetFormat={sheetFormat}
         onSheetFormatChange={onSheetFormatChange}
+        printCorrections={printCorrections}
+        onPrintCorrectionsChange={onPrintCorrectionsChange}
         hideChrome={hideChrome}
         onHideChromeChange={onHideChromeChange}
         onLogout={onLogout}

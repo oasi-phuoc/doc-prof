@@ -18,6 +18,8 @@ export type FicheRecipe = {
   sheetFormat?: SheetFormat
   /** Masque en-tête et pied : exercices seulement. */
   hideChrome?: boolean
+  /** Inclut le corrigé à l’impression ; activé par défaut pour les anciennes fiches. */
+  printCorrections?: boolean
 }
 
 export type SavedFiche = {
@@ -133,6 +135,7 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     bookKind: value.bookKind === 'alpha' || value.bookKind === 'soutien' ? value.bookKind : undefined,
     sheetFormat,
     hideChrome,
+    printCorrections: value.printCorrections !== false,
   }
 }
 
@@ -155,6 +158,7 @@ export function buildFicheRecipe(input: {
   bookKind?: 'alpha' | 'soutien'
   sheetFormat?: SheetFormat
   hideChrome?: boolean
+  printCorrections?: boolean
 }): FicheRecipe {
   return { version: 1, ...input }
 }
