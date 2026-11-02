@@ -9,6 +9,9 @@ def write(p,d):(ROOT/p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n
 def norm(s):return ''.join(c for c in unicodedata.normalize('NFD',s.casefold().replace('’',"'")) if unicodedata.category(c)!='Mn')
 def main():
  plan=read('docs/tcf/images-a-generer.json');registry=read('docs/tcf/images-generees.json');overrides=read('scripts/tcf-qcm-image-visual-overrides.json')
+ for review in registry.get('existing_image_reviews',[]):
+  reviewed_file=ROOT/'public'/review['path'].lstrip('/')
+  if not reviewed_file.is_file() or hashlib.sha256(reviewed_file.read_bytes()).hexdigest()!=review['sha256']:raise ValueError('Reused image changed since visual review: '+review['path'])
  images={r.get('asset_id',r['id']):r for r in registry['images'] if r['status']=='visually_reviewed' and r['path'].startswith('/lib/images/tcf/')}
  priority={(r['exercise'],r['question']) for m in plan['visual_review_mappings'] if m.get('replacement') is None for r in m['references']}
  banks={};activated={(r['bank'],r['exercise'],r['question']):r for r in registry['activated_questions']}
