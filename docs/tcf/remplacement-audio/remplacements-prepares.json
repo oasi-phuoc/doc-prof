@@ -2,12 +2,20 @@
   "schema_version": 1,
   "purpose": "review-only, not an executable production mapping",
   "signal_confirmed_refs": 617,
-  "references_with_prepared_candidate": 506,
-  "references_requiring_more_segmentation": 111,
-  "candidate_alias_groups": 8,
+  "references_with_prepared_candidate": 617,
+  "references_requiring_more_segmentation": 0,
+  "candidate_alias_groups": 11,
   "listening_performed": false,
   "production_modified": false,
   "aliases_to_review": [
+    {
+      "candidate_sha256": "970dfc79829b85251de12ffd654787e7b10a86195d5dd678f8a17976b09e94ec",
+      "old_refs": [
+        "/lib/audio/tcf/co/vie-quotidienne/le-rendez-vous.mp3",
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_88.mp3"
+      ],
+      "status": "same_candidate_review_aliases_before_promotion"
+    },
     {
       "candidate_sha256": "e7190738eb6290e0ad38545c6c33bb20c7956567224c674778acc82b0de715db",
       "old_refs": [
@@ -37,6 +45,22 @@
       "old_refs": [
         "/lib/audio/tcf/co/bibliotheque/02-bibliothèque-fermeture-exceptionnelle.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_91-4.mp3"
+      ],
+      "status": "same_candidate_review_aliases_before_promotion"
+    },
+    {
+      "candidate_sha256": "cec146ce6f0da1c987aa8ea692bb6da9f5b1b08e59049c6eb7843247a03c876d",
+      "old_refs": [
+        "/lib/audio/tcf/co/vacances/01-vacances-le-sac-de-voyage.mp3",
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_92.mp3"
+      ],
+      "status": "same_candidate_review_aliases_before_promotion"
+    },
+    {
+      "candidate_sha256": "098f4efd6770ad1da65e71e755bcd1cb650d679854c70110b90e5b7472340a9f",
+      "old_refs": [
+        "/lib/audio/tcf/co/loisirs/au-cinema-1.mp3",
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_93.mp3"
       ],
       "status": "same_candidate_review_aliases_before_promotion"
     },
@@ -501,8 +525,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-088-4931a05f81cc-r2-d1",
+      "candidate_sha256": "970dfc79829b85251de12ffd654787e7b10a86195d5dd678f8a17976b09e94ec",
+      "proposed_name": "Bonjour, chère cousine.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Bonjour, chère cousine. C'est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19h. Je t'invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17h, si tu es d'accord, et je réserve une table pour 20h. Bisous!",
+      "source_start": 45.64,
+      "source_end": 71.12,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120923-75e2277133/delf_a1_2022-088-4931a05f81cc-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/bibliotheque/03-bibliothèque-inscription.mp3",
@@ -650,8 +689,23 @@
       "lexical_score": 0.9824561403508771,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-092-fe7b7db9b31c-r2-d1",
+      "candidate_sha256": "cec146ce6f0da1c987aa8ea692bb6da9f5b1b08e59049c6eb7843247a03c876d",
+      "proposed_name": "Allô?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+      "source_start": 26.631995464852608,
+      "source_end": 53.15201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120924-84614d70a9/delf_a1_2022-092-fe7b7db9b31c-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/au-cinema-1.mp3",
@@ -712,20 +766,21 @@
       ],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "delf_a1_2022-093-ac83a24c0ff4-d1",
-      "candidate_sha256": "e219e252329a5b7e28b18773371d7c97f2cfa65f18bcebaa26538e534d3c8927",
-      "proposed_name": "Lisez les questions Écoute le document, puis répondez Salut, c'est Cyril.",
+      "assignment_method": "same_original_file_included_instructions_and_replay_keep_first_complete_message_of_Cyril",
+      "candidate_cut_id": "delf_a1_2022-093-ac83a24c0ff4-r2-d1",
+      "candidate_sha256": "098f4efd6770ad1da65e71e755bcd1cb650d679854c70110b90e5b7472340a9f",
+      "proposed_name": "Salut, c'est Cyril.",
       "proposed_tags": [
         "a1",
         "delf_a1_2022",
         "source-native",
         "a-verifier",
-        "long"
+        "moyen"
       ],
-      "proposed_transcription": "Lisez les questions Écoute le document, puis répondez Salut, c'est Cyril. Qu'est-ce que tu fais vendredi? Moi, je rentre de vacances jeudi. Tu veux aller au cinéma? Regarde le programme des films sur le site internet. Après, écris moi un message. Je ne peux pas répondre au téléphone. Je vais t'apporter un t-shirt souvenir de mes vacances. A bientôt! C'est Cyril. Qu'est-ce que tu fais vendredi? Moi, je rentre de vacances jeudi. Tu veux aller au cinéma? Regarde le programme des films sur le site internet. Après, écris-moi un message. Je ne peux pas répondre au téléphone. Je vais t'apporter un t-shirt souvenir de mes vacances. A bientôt!",
-      "source_start": 23.19997732426304,
-      "source_end": 124.2080045351474,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111834-d64486379e/delf_a1_2022-093-ac83a24c0ff4-d1/candidate.mp3"
+      "proposed_transcription": "Salut, c'est Cyril. Qu'est-ce que tu fais vendredi? Moi, je rentre de vacances jeudi. Tu veux aller au cinéma? Regarde le programme des films sur le site internet. Après, écris moi un message. Je ne peux pas répondre au téléphone. Je vais t'apporter un t-shirt souvenir de mes vacances. A bientôt!",
+      "source_start": 47.24,
+      "source_end": 76.22401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120925-6d31914ec2/delf_a1_2022-093-ac83a24c0ff4-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/au-restaurant.mp3",
@@ -954,8 +1009,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "piste_a1-006-ae559453b999-r2-d1",
+      "candidate_sha256": "6ad50c8338ea582ce37e92e2121dc07147a9fe6b31c1272e9f0c2a565b484329",
+      "proposed_name": "Salut.",
+      "proposed_tags": [
+        "a1",
+        "piste_a1",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Salut. C'est Anne. Tu vas bien? Samedi, c'est la fête d'anniversaire de Lori. Tu te souviens? On t'attend au restaurant à 13h. Pour venir, prends le bus ligne 12. Tu descends au parc. Est-ce que tu peux apporter des ballons? Moi, je m'occupe des cadeaux. À samedi!",
+      "source_start": 46.679977324263035,
+      "source_end": 72.70401360544217,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T121008-c69a6b7019/piste_a1-006-ae559453b999-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/45-école-chercher-où-est-la-piscine.mp3",
@@ -2125,8 +2195,23 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "09035276-034-85242a1a610f-r2-d1",
+      "candidate_sha256": "f34750154d9a15452400ed01e6949fadf6b942814bec5a4bfff49f47940c8373",
+      "proposed_name": "Bonjour à tous Aujourd'hui sur Radio Jeune vous pouvez gagner deux places pour le concert de Mado Pour",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Bonjour à tous Aujourd'hui sur Radio Jeune vous pouvez gagner deux places pour le concert de Mado Pour gagner c'est facile Vous entendez une chanson de Mado et vous nous appelez au 0840 65, 30, 40, avant midi. Alors vite à vos téléphones!",
+      "source_start": 8.64798185941043,
+      "source_end": 33.92,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120759-382ac82f75/09035276-034-85242a1a610f-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/maison-2.mp3",
@@ -2565,8 +2650,23 @@
         "possible_instruction_or_numbering_within_seed"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "09035276-014-ef63fbcea6cb-r2-d1",
+      "candidate_sha256": "3d18907e846a1e7da6c9abf846060edca19cf4c259c3d7c00ac6464a6e7cfe0c",
+      "proposed_name": "Salut, c'est Guillaume.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Salut, c'est Guillaume. Je ne comprends pas l'exercice de mathématiques pour lundi. Tu peux m'aider? On peut se retrouver samedi à la bibliothèque à 14h. Et après, je t'invite à manger une glace. Rappelle-moi. Merci beaucoup. A plus",
+      "source_start": 5.52,
+      "source_end": 22.92,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120758-13ef81f0b1/09035276-014-ef63fbcea6cb-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-ici-magasin-mega.mp3",
@@ -2848,11 +2948,26 @@
       "source_sha256": "b3c0fdfac8a888811a5dc5fa965664349bbc43d5246439e8b2739e89424fb985",
       "signal_status": "signal_source_confirmed",
       "proposed_ref": "/lib/audio/tcf/co/transports/bonjour-desirez-1-2.mp3",
-      "lexical_score": 1.0,
+      "lexical_score": 0.9500000000000001,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "09035276-047-b3c0fdfac8a8-r2-d2",
+      "candidate_sha256": "730a7c656b4ad86be47ae15d55068f77f43ee953b76b5710aca5ebba1a4f1f86",
+      "proposed_name": "Qu'est-ce que tu regard Une émission sur les voitures.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Qu'est-ce que tu regard Une émission sur les voitures. Oh non, on ne peut pas regarder autre chose.",
+      "source_start": 17.945986394557824,
+      "source_end": 25.006009070294784,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120800-2dc73c0ede/09035276-047-b3c0fdfac8a8-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/32-école-cours-de-dessin-objets.mp3",
@@ -3477,8 +3592,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-001-2757ef233d99-r2-d1",
+      "candidate_sha256": "25022a546fb73c53a844dbc5883fc7c4211312303b86525179ea1032f0960216",
+      "proposed_name": "Bonjour, c'est Virginie.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, c'est Virginie. Tu veux aller à la piscine mercredi après-midi? Tu peux venir avec Julie? J'attends ton appel. A bientôt.",
+      "source_start": 31.75199546485261,
+      "source_end": 42.67201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120839-730b0b2393/delf_a1_2022-001-2757ef233d99-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_01-2.mp3",
@@ -3504,8 +3634,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-001-2757ef233d99-r2-d2",
+      "candidate_sha256": "82e23fd7dc6ecd3132ba4d788004b78f4f0ab67fc2fb4f9881effc8212b13135",
+      "proposed_name": "Salut, c'est Anne.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Anne. Avec Laura, nous allons au cinéma samedi pour voir le nouveau film de Josiane Balasco. Est-ce que tu veux venir? Rappelle-moi!",
+      "source_start": 45.51199546485261,
+      "source_end": 56.99201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120839-730b0b2393/delf_a1_2022-001-2757ef233d99-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_01-3.mp3",
@@ -3531,8 +3676,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-001-2757ef233d99-r2-d3",
+      "candidate_sha256": "4c4901b45790c875b310cf671432fa19491f1183926369bc6d36f3deb296b9d8",
+      "proposed_name": "Bonjour, j'organise la fête d'anniversaire de Luigi.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, j'organise la fête d'anniversaire de Luigi. C'est le samedi 24 septembre. Est-ce que tu es disponible? Appelle-moi. Ah! Au fait, c'est Vincent. A bientôt.",
+      "source_start": 60.087981859410434,
+      "source_end": 74.7680045351474,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120839-730b0b2393/delf_a1_2022-001-2757ef233d99-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_02-1.mp3",
@@ -3547,8 +3707,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-002-e5a1a3184e75-r2-d1",
+      "candidate_sha256": "5b9748ccbece8aaf85dd5583a5e5ee007a20085d884a0eefc6c52244ceff9d4d",
+      "proposed_name": "Salut, c'est Adrien.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Adrien. Samedi c'est mon anniversaire. Je t'invite au restaurant. Si tu es d'accord, rendez-vous à 19h chez moi. Tu peux venir avec Amandine.",
+      "source_start": 3.2,
+      "source_end": 16.04,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120841-eb800c89e7/delf_a1_2022-002-e5a1a3184e75-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_02-2.mp3",
@@ -3563,8 +3738,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-002-e5a1a3184e75-r2-d2",
+      "candidate_sha256": "839c9fc87491f13194f51014b731364fb0edcaa0a478ab849c2bbd6ad56a8e01",
+      "proposed_name": "Bonjour, c'est moi Valérie.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, c'est moi Valérie. Je suis devant le musée. J'attends Isabelle. Elle est en retard. Tu es toujours d'accord pour le rendez-vous de 16h avec Juliette? A tout à l'heure.",
+      "source_start": 19.11997732426304,
+      "source_end": 33.888004535147395,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120841-eb800c89e7/delf_a1_2022-002-e5a1a3184e75-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_02-3.mp3",
@@ -3601,8 +3791,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-002-e5a1a3184e75-r2-d3",
+      "candidate_sha256": "75cd5d65518bf6c19cb1a6cb38e505a40f48a4bd51d2f866ca8259d9a68ddbc9",
+      "proposed_name": "Allô?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Allô? C'est Louis. On peut aller se promener dans la forêt dimanche, s'il fait beau. Charlie est d'accord. Et j'invite Pierre, un ami du club de tennis. Rappelle-moi.",
+      "source_start": 36.407981859410434,
+      "source_end": 48.76800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120841-eb800c89e7/delf_a1_2022-002-e5a1a3184e75-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_03-1.mp3",
@@ -3617,8 +3822,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-003-c8814f3bed61-r2-d1",
+      "candidate_sha256": "328efd4066dc44e227951114fb78f25a6c422ff98d1ecda84f6852b87f090690",
+      "proposed_name": "C'est Valentin, il y a une nouvelle exposition au musée des sciences.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "C'est Valentin, il y a une nouvelle exposition au musée des sciences. Mardi, je vais au théâtre. Est-ce que tu veux venir avec moi voir l'exposition mercredi?",
+      "source_start": 3.2,
+      "source_end": 15.32,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120843-abebc21ef6/delf_a1_2022-003-c8814f3bed61-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_03-2.mp3",
@@ -3633,8 +3853,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-003-c8814f3bed61-r2-d2",
+      "candidate_sha256": "e68e789ee7dc6712f92c10008061993c2e6f4a408dd8c2f282627601c0aeaeff",
+      "proposed_name": "Allô, c'est Léa.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Allô, c'est Léa. Je t'appelle pour te dire que le film est à 16h30. Est-ce que tu peux acheter les billets? Je fais des courses et j'arrive. Merci.",
+      "source_start": 18.24,
+      "source_end": 29.34401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120843-abebc21ef6/delf_a1_2022-003-c8814f3bed61-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_03-3.mp3",
@@ -3649,8 +3884,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-003-c8814f3bed61-r2-d3",
+      "candidate_sha256": "76eda44f7e45eed4033d8dacd01509fcbc935e2e38a9ce96113317262d6762cb",
+      "proposed_name": "Salut, c'est Diana.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Diana. Est-ce que tu peux apporter un gâteau à la fête d'anniversaire de Samuel? Moi, j'apporte des boissons. Merci!",
+      "source_start": 32.343990929705214,
+      "source_end": 42.224013605442174,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120843-abebc21ef6/delf_a1_2022-003-c8814f3bed61-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_04-1.mp3",
@@ -3665,8 +3915,23 @@
       "lexical_score": 0.923076923076923,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-004-7aab1a073614-r2-d1",
+      "candidate_sha256": "a0734f3348564509989678119e20f2792628e92c3740ffc06e73f04f23dd48b0",
+      "proposed_name": "Bonjour, c'est Martine.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, c'est Martine. Alors, pour la fête de samedi, tu dois apporter un jus de fruit. Nicole apporte un gâteau une salade. À samedi.",
+      "source_start": 3.36,
+      "source_end": 15.0,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120846-3893fde1f3/delf_a1_2022-004-7aab1a073614-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_04-2.mp3",
@@ -3681,8 +3946,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-004-7aab1a073614-r2-d2",
+      "candidate_sha256": "fdf81ac5cb07c5880a4511813688c2986787d821ce255db24de1fe7462b763fa",
+      "proposed_name": "Salut, c'est Jean-Luc.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Jean-Luc. J'ai les billets pour le concert de vendredi. Tu peux venir avec Sophie. Moi, j'invite Brigitte. A vendredi",
+      "source_start": 18.4,
+      "source_end": 28.192018140589568,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120846-3893fde1f3/delf_a1_2022-004-7aab1a073614-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_04-3.mp3",
@@ -3699,8 +3979,23 @@
         "possible_instruction_or_numbering_within_seed"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-004-7aab1a073614-r2-d3",
+      "candidate_sha256": "3567370676742b5335abc0b044d2feaa2a5f8e99aa7ef9d2cda16cbfaeb53bd6",
+      "proposed_name": "Oui c'est Marc Écoute je suis disponible jeudi pour jouer au football Mercredi je vois Alberto Est-ce que",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Oui c'est Marc Écoute je suis disponible jeudi pour jouer au football Mercredi je vois Alberto Est-ce que tu es d'accord pour jeudi alors?",
+      "source_start": 31.191995464852607,
+      "source_end": 44.19201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120846-3893fde1f3/delf_a1_2022-004-7aab1a073614-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_05-1.mp3",
@@ -4066,8 +4361,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-009-cd426c4e83fe-r2-d1",
+      "candidate_sha256": "b018aa962f6ec5a9ae5cd910fc92b0900b9f863acba7fd3b87f0c2c2ae850bab",
+      "proposed_name": "Bonjour, pouvez vous me rappeler au 01 47 72 33 09 Merci",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, pouvez vous me rappeler au 01 47 72 33 09 Merci",
+      "source_start": 3.36,
+      "source_end": 13.8,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120848-e161d989f9/delf_a1_2022-009-cd426c4e83fe-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-2.mp3",
@@ -4082,8 +4392,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-009-cd426c4e83fe-r2-d2",
+      "candidate_sha256": "f0b257df027979f28cbfaf0f86624f0b61b7c50f74268fc8649b8baa06035791",
+      "proposed_name": "Le numéro de téléphone de la direction est le 03 20 90 01 00",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le numéro de téléphone de la direction est le 03 20 90 01 00",
+      "source_start": 16.79997732426304,
+      "source_end": 25.32,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120848-e161d989f9/delf_a1_2022-009-cd426c4e83fe-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_09-3.mp3",
@@ -4098,8 +4423,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-009-cd426c4e83fe-r2-d3",
+      "candidate_sha256": "16fa791779baeefc72a31114e7cc8372613d2fea353e3b340d494736ad1e4c8d",
+      "proposed_name": "Peux-tu appeler Julia sur son téléphone portable?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Peux-tu appeler Julia sur son téléphone portable? C'est le 06 09 77 50 11",
+      "source_start": 28.39199546485261,
+      "source_end": 38.592018140589566,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120848-e161d989f9/delf_a1_2022-009-cd426c4e83fe-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_10-1.mp3",
@@ -4204,8 +4544,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-011-a99cd8478f3d-r2-d1",
+      "candidate_sha256": "648ee43206c3c2d3272efed5a090317a732b9f6cf6cd8d386774a48250f86a56",
+      "proposed_name": "Oui, c'est Jacques.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Oui, c'est Jacques. Alors, samedi, je ne travaille pas au magasin de moto. On peut aller au parc faire du vélo. Après, on peut faire des crêpes chez moi. Appelle-moi.",
+      "source_start": 3.36,
+      "source_end": 15.4,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120850-47aaf49ad5/delf_a1_2022-011-a99cd8478f3d-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-2.mp3",
@@ -4220,8 +4575,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-011-a99cd8478f3d-r2-d2",
+      "candidate_sha256": "b53af2f50a1a1c6bff8bffc9a25e36adedfe5fabee27735bea9aa88e06a5089a",
+      "proposed_name": "Salut, c'est Clara.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Clara. Tu es toujours d'accord pour aller au centre commercial acheter un pantalon? Toi, tu veux une chemise, c'est ça? Rendez-vous à 11h.",
+      "source_start": 18.24,
+      "source_end": 29.6,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120850-47aaf49ad5/delf_a1_2022-011-a99cd8478f3d-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_11-3.mp3",
@@ -4238,8 +4608,23 @@
         "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-011-a99cd8478f3d-r2-d3",
+      "candidate_sha256": "79aedc8b6b9109a0282703289042c201148d3dac7ae9084581de5b585e18cc64",
+      "proposed_name": "Salut, c'est Lucie.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Lucie. Samedi, on peut aller au marché pour acheter les fruits. Mais pour les boissons, on va au magasin. D'accord? Appelle moi!",
+      "source_start": 32.76,
+      "source_end": 43.12,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120850-47aaf49ad5/delf_a1_2022-011-a99cd8478f3d-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-1.mp3",
@@ -5884,8 +6269,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-028-3e591091710c-r2-d1",
+      "candidate_sha256": "b293d9e2ed48eb52b13b588988c133011ab6cef197af8e1ba664f178a1ede1ab",
+      "proposed_name": "Bonjour, Monsieur Clément au téléphone.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, Monsieur Clément au téléphone. Je prépare notre entretien de demain. Envoyez-moi une photocopie de votre carte d'identité, s'il vous plaît. Merci. A demain.",
+      "source_start": 3.68,
+      "source_end": 16.04,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120852-9028bcb769/delf_a1_2022-028-3e591091710c-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-2.mp3",
@@ -5911,8 +6311,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-028-3e591091710c-r2-d2",
+      "candidate_sha256": "2fa4cd5fd262dc47e6913f5aaf77051d05c3d8dfcf643a71a352a59e15a8cf04",
+      "proposed_name": "Bonjour, c'est Monsieur Dumont de l'agence pour l'emploi.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, c'est Monsieur Dumont de l'agence pour l'emploi. J'ai votre CV, mais je n'ai pas votre lettre de motivation. Est-ce que vous pouvez me l'envoyer par courriel? C'est urgent. Merci.",
+      "source_start": 18.79997732426304,
+      "source_end": 31.488004535147393,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120852-9028bcb769/delf_a1_2022-028-3e591091710c-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_28-3.mp3",
@@ -5940,8 +6355,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-028-3e591091710c-r2-d3",
+      "candidate_sha256": "fbca922af5fe400b81608726a9a1477a6d94bdd94d201a28262e9801acad3656",
+      "proposed_name": "Pour la réunion avec le directeur du théâtre, n'oubliez pas le programme du concert.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Pour la réunion avec le directeur du théâtre, n'oubliez pas le programme du concert. Le directeur veut voir la liste des chanteurs. La réunion doit durer 3 minutes maximum. Merci.",
+      "source_start": 34.407981859410434,
+      "source_end": 46.208004535147396,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120852-9028bcb769/delf_a1_2022-028-3e591091710c-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_29-1.mp3",
@@ -6484,8 +6914,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-035-67517411749a-r2-d1",
+      "candidate_sha256": "492e55385c9d59495c1d495599ad53a337a7edc6a276feacaa4406f1fe979329",
+      "proposed_name": "Bonjour, c'est Maxime.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, c'est Maxime. Je suis désolée. Demain, je ne peux pas aller à notre rendez-vous. Excuse-moi, est-ce que tu es disponible jeudi? Appelle-moi.",
+      "source_start": 3.68,
+      "source_end": 15.0,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120855-ad760ca6f7/delf_a1_2022-035-67517411749a-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_35-2.mp3",
@@ -6500,8 +6945,23 @@
       "lexical_score": 0.9629629629629629,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-035-67517411749a-r2-d2",
+      "candidate_sha256": "ca515b653f89c048d1d56827899c5d9ab0aa03732ef3df25c2ec67c6bb242801",
+      "proposed_name": "Salut, c'est Caroline.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut, c'est Caroline. Alors, tu es en vacances à partir de jeudi? Super! Tu vas à Montréal, c'est ça? Bonne vacances et à très bientôt",
+      "source_start": 17.92,
+      "source_end": 30.16,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120855-ad760ca6f7/delf_a1_2022-035-67517411749a-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_35-3.mp3",
@@ -6537,8 +6997,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-035-67517411749a-r2-d3",
+      "candidate_sha256": "43f140d9b57ff67eb2d5753af8c4801a6b20a434f8ca781d39eb8578d267b47b",
+      "proposed_name": "C'est Sarah Alors tu as un nouveau travail?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "C'est Sarah Alors tu as un nouveau travail? C'est génial C'est quoi? Tu travailles où? Raconte-moi Et encore félicitations Bisous",
+      "source_start": 32.68,
+      "source_end": 45.36,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120855-ad760ca6f7/delf_a1_2022-035-67517411749a-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_36-1.mp3",
@@ -6991,8 +7466,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-041-d9b27cc57d79-r2-d1",
+      "candidate_sha256": "5e40949c9189a23c96c408d0e82369e94b0b44a8ecc1306b8f5924230b14fc02",
+      "proposed_name": "S'il vous plaît, il y a une montre sur la table.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "S'il vous plaît, il y a une montre sur la table. C'est à toi, Guillaume? Non, madame. C'est ma montre, madame. D'accord. Termine ton exercice, Delphine. Après, viens prendre ta montre.",
+      "source_start": 3.44,
+      "source_end": 20.12,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120857-3f29a4c3cb/delf_a1_2022-041-d9b27cc57d79-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_41-2.mp3",
@@ -7018,8 +7508,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-041-d9b27cc57d79-r2-d2",
+      "candidate_sha256": "7e227e6173ac2aa9faaf13a0e467fe2ef8a7942c63193cdaad2d629cda3f628b",
+      "proposed_name": "Thomas, qu'est-ce que c'est sur la table?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Thomas, qu'est-ce que c'est sur la table? C'est mon paraplui. Le paraplui, c'est à l'entrée de la salle. Sur ta table, tu dois mettre les livres et tes stylos.",
+      "source_start": 23.19997732426304,
+      "source_end": 36.32,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120857-3f29a4c3cb/delf_a1_2022-041-d9b27cc57d79-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_41-3.mp3",
@@ -7034,8 +7539,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-041-d9b27cc57d79-r2-d3",
+      "candidate_sha256": "d901c9aa6949b19b9b36d520fb048caf44cdfb17b7f380d4d4a7ff44402712bb",
+      "proposed_name": "Alors, il y a une nouvelle élève dans la classe.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Alors, il y a une nouvelle élève dans la classe. C'est Yasmine. Bonjour. Yasmine, j'aime beaucoup ton manteau rose. Merci. Mes chaussures sont roses aussi.",
+      "source_start": 39.23997732426304,
+      "source_end": 53.12,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120857-3f29a4c3cb/delf_a1_2022-041-d9b27cc57d79-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_42.mp3",
@@ -8221,8 +8741,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-068-160d235a48ef-r2-d1",
+      "candidate_sha256": "25caaa5c48be52dbb2b6dae980bdfbdd77a5976a6f03758431aac00ae2f3db71",
+      "proposed_name": "Dépêche-toi, tu vas être en retard pour l'école.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Dépêche-toi, tu vas être en retard pour l'école. J'ai bientôt fini mon petit déjeuner.",
+      "source_start": 7.52,
+      "source_end": 13.16,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120902-f94438e0a7/delf_a1_2022-068-160d235a48ef-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-2.mp3",
@@ -8237,8 +8772,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-068-160d235a48ef-r2-d2",
+      "candidate_sha256": "83ba6be207421b49da49bb0f44a3564c70838336f930dc785ea5e4a412dc2ebc",
+      "proposed_name": "Excusez-moi, vous connaissez la date de la réunion avec les professeurs?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Excusez-moi, vous connaissez la date de la réunion avec les professeurs? Oui. C'est jeudi. Merci. Et c'est dans quelle salle? C'est dans la bibliothèque de l'école.",
+      "source_start": 16.16,
+      "source_end": 27.672018140589568,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120902-f94438e0a7/delf_a1_2022-068-160d235a48ef-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-3.mp3",
@@ -8255,8 +8805,23 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-068-160d235a48ef-r2-d3",
+      "candidate_sha256": "76b28e66baf53d8b5bebb7016c234f127bc8012906e5fd433bf5d63ceb59ffd3",
+      "proposed_name": "C'est à quelle heure le cours de mathématiques?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "C'est à quelle heure le cours de mathématiques? À 10 heures. Ah ça va, encore 15 minutes.",
+      "source_start": 30.59199546485261,
+      "source_end": 36.79201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120902-f94438e0a7/delf_a1_2022-068-160d235a48ef-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-4.mp3",
@@ -8271,8 +8836,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-068-160d235a48ef-r2-d4",
+      "candidate_sha256": "d081c5f421a2e169bdd42399c2491ce260619ca23cb7318c3110634a9b354eb4",
+      "proposed_name": "Bonjour, ici c'est la bibliothèque.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour, ici c'est la bibliothèque. Vous pouvez prendre des livres. Super! Et des films aussi? Oui, tu peux prendre des films aussi.",
+      "source_start": 39.87199546485261,
+      "source_end": 50.04800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120902-f94438e0a7/delf_a1_2022-068-160d235a48ef-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_69-1.mp3",
@@ -8982,8 +9562,91 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "source_ranges": [
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d1",
+          "source_start_seconds": 7.44,
+          "source_end_seconds": 9.4,
+          "frames": 86436,
+          "flac_sha256": "c37ede5cda1cdc6c06de0568b370cc86e8ef051491b7fa717a06d1102a4bd511"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d2",
+          "source_start_seconds": 11.92,
+          "source_end_seconds": 14.2,
+          "frames": 100548,
+          "flac_sha256": "965295ffd9e072df53ae3eb143b879998ea3b0107ad45578c838fd80792d9e83"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d3",
+          "source_start_seconds": 17.039977324263038,
+          "source_end_seconds": 19.16,
+          "frames": 93493,
+          "flac_sha256": "1930929d0bbbbd0116eb8b58640086ee22974be0a4a981efc69aca0a8c5e9ade"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d4",
+          "source_start_seconds": 22.16,
+          "source_end_seconds": 24.68,
+          "frames": 111132,
+          "flac_sha256": "1e4b0527d058e410a443c2104cc486655d2ea9ad588967f5a1df1e3faa38dcd9"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d5",
+          "source_start_seconds": 27.81598639455782,
+          "source_end_seconds": 31.056009070294785,
+          "frames": 142885,
+          "flac_sha256": "2750a3cfc3e1726ff7d9e3b76763989c2d542bb022ace6836ad523270cb16244"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d6",
+          "source_start_seconds": 33.65598639455782,
+          "source_end_seconds": 35.61600907029479,
+          "frames": 86437,
+          "flac_sha256": "63e4ee6d6c0913fe25b30129eb8d2c913b082992c0cf7ea70462eea1124c02bc"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d7",
+          "source_start_seconds": 38.93598639455782,
+          "source_end_seconds": 40.736009070294784,
+          "frames": 79381,
+          "flac_sha256": "b9363bee29840505ceaa79246ec5b14fab38cad82780ee457759d3e2a437e424"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d8",
+          "source_start_seconds": 43.65598639455782,
+          "source_end_seconds": 46.016009070294785,
+          "frames": 104077,
+          "flac_sha256": "f42d0d9d1d017a43c56d1112073b1322b9be7152e91513544a7dff8dbdc62b39"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d9",
+          "source_start_seconds": 49.095986394557826,
+          "source_end_seconds": 51.29600907029479,
+          "frames": 97021,
+          "flac_sha256": "b1cca79ea2cd6e1a249a6dbd8b397d732ff6ba1ddf6e54e5c257b4da89c1e098"
+        },
+        {
+          "id": "delf_a1_2022-077-1eb6ed7efb0d-r2-d10",
+          "source_start_seconds": 54.455986394557826,
+          "source_end_seconds": 56.57600907029479,
+          "frames": 93493,
+          "flac_sha256": "51b2467517785a62afebce712794717a910de784cb690677cb661ccb6e813fe5"
+        }
+      ],
+      "candidate_cut_id": "delf_a1_2022-077-1eb6ed7efb0d-r2-joined",
+      "candidate_sha256": "8920544134e7c03ecdc42114f687db1d89112b8fdabf55f91d0cf263aa00d73a",
+      "proposed_name": "Série de phrases sans annonces de numérotation",
+      "proposed_tags": [
+        "moyen"
+      ],
+      "proposed_transcription": "Où habitez-vous? Comment s'appelle votre femme? Quand allez-vous au cinéma? Comment est-ce que vous allez à votre bureau? Combien avez-vous de frères et de sœurs? Quelle est votre profession? Vous lisez quoi? Quelle est votre nationalité? Quel est votre film préféré? Qu'est-ce que vous faites le dimanche?",
+      "source_start": 7.44,
+      "source_end": 56.57600907029479,
+      "candidate_work_file": "refinement-work/assemblies/delf_a1_2022-077-1eb6ed7efb0d/joined.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-1.mp3",
@@ -9316,8 +9979,63 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "source_ranges": [
+        {
+          "id": "delf_a1_2022-080-cf5c353de918-r2-d1",
+          "source_start_seconds": 3.6,
+          "source_end_seconds": 7.72,
+          "frames": 181692,
+          "flac_sha256": "1f412c37153573d0a3600b3799a5fe81544566ecbabcf09462b4c04bd5712dfd"
+        },
+        {
+          "id": "delf_a1_2022-080-cf5c353de918-r2-d2",
+          "source_start_seconds": 10.8,
+          "source_end_seconds": 16.36,
+          "frames": 245196,
+          "flac_sha256": "84a18980c36566bdfc93db72b5d16bb7739fd1687947427efd6ea07a2b5527b3"
+        },
+        {
+          "id": "delf_a1_2022-080-cf5c353de918-r2-d3",
+          "source_start_seconds": 19.11997732426304,
+          "source_end_seconds": 22.76,
+          "frames": 160525,
+          "flac_sha256": "866683ce931a78880ff8e3cf9cac6fc20d3b1d749aec81ed7bdd4aa9e1bb89f2"
+        },
+        {
+          "id": "delf_a1_2022-080-cf5c353de918-r2-d4",
+          "source_start_seconds": 25.735986394557823,
+          "source_end_seconds": 29.136009070294783,
+          "frames": 149941,
+          "flac_sha256": "5a7913fb4ce75f85d8e55b25330d2c940900a5d8af913454f3699485d6ac2309"
+        },
+        {
+          "id": "delf_a1_2022-080-cf5c353de918-r2-d5",
+          "source_start_seconds": 32.455986394557826,
+          "source_end_seconds": 38.17600907029478,
+          "frames": 252253,
+          "flac_sha256": "25bf1c55a86820a5445d571e7451771d46437f37ae33940ff1512bccd46e92aa"
+        },
+        {
+          "id": "delf_a1_2022-080-cf5c353de918-r2-d6",
+          "source_start_seconds": 40.855986394557824,
+          "source_end_seconds": 43.77600907029478,
+          "frames": 128773,
+          "flac_sha256": "618824a226725a7c9b92f4a929080fc13453ff5f8d5e94dc3b5fb91480eba49c"
+        }
+      ],
+      "candidate_cut_id": "delf_a1_2022-080-cf5c353de918-r2-joined",
+      "candidate_sha256": "c427b337948a8647fdf4480b433d80e05f19f74fedf566e529bcb6da1d1ed885",
+      "proposed_name": "Série de phrases sans annonces de numérotation",
+      "proposed_tags": [
+        "moyen"
+      ],
+      "proposed_transcription": "Ma couleur préférée est le bleu. Moi, c'est le vert. J'ai un chien et deux chats. 1 c'est bien. Moi je n'ai pas d'animaux. Je n'ai pas d'animaux. Ah. Moi j'ai un chien. J'a cinéma avec mes amis. Moi aussi. L'été, je vais en vacances à la mer. D'accord. Où est-ce que vous allez? Je ne prends pas le métro. Moi non plus.",
+      "source_start": 3.6,
+      "source_end": 43.77600907029478,
+      "candidate_work_file": "refinement-work/assemblies/delf_a1_2022-080-cf5c353de918/joined.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-2.mp3",
@@ -9505,8 +10223,98 @@
       "lexical_score": 0.9885057471264368,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "source_ranges": [
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d1",
+          "source_start_seconds": 3.52,
+          "source_end_seconds": 5.48,
+          "frames": 86436,
+          "flac_sha256": "a4fb26620c218cc0bd88b08c978f3471944635aea31ee0275be061edb6af2620"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d2",
+          "source_start_seconds": 7.92,
+          "source_end_seconds": 10.44,
+          "frames": 111132,
+          "flac_sha256": "62956b747c435b92ec43f12baf98d9ddc0c14bd53cbf4d43321761a71a6f5b33"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d3",
+          "source_start_seconds": 13.28,
+          "source_end_seconds": 16.52,
+          "frames": 142884,
+          "flac_sha256": "87abda08a8f8e15c54238e359081e8e8dbc5a8d12bac0a9704ff710717a8d37b"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d4",
+          "source_start_seconds": 19.68,
+          "source_end_seconds": 23.24,
+          "frames": 156996,
+          "flac_sha256": "d8ead83f4d7e13149903c189ee85b8c8fcca1958002c99df0a018620dc34520b"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d5",
+          "source_start_seconds": 26.40798185941043,
+          "source_end_seconds": 28.76800453514739,
+          "frames": 104077,
+          "flac_sha256": "998fad15a6f8262f21e8508844d2bb74bbbf53e746388e4716105aeef267fe2b"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d6",
+          "source_start_seconds": 31.60798185941043,
+          "source_end_seconds": 33.72800453514739,
+          "frames": 93493,
+          "flac_sha256": "63b9eac955737c0dd53d8a7ecefb17542e03e489254402fe5bf59930b7a33fa8"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d7",
+          "source_start_seconds": 36.48798185941043,
+          "source_end_seconds": 38.12800453514739,
+          "frames": 72325,
+          "flac_sha256": "b7408b38998dcdb13e1b9b208a94f7183e0daa2e0bab134dc224969f5a819107"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d8",
+          "source_start_seconds": 41.68798185941043,
+          "source_end_seconds": 45.64800453514739,
+          "frames": 174637,
+          "flac_sha256": "ef01c9a3f20e4a931f6cb0fd526b91f8aa393263567ca54b014b62c7c36257d0"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d9",
+          "source_start_seconds": 48.727981859410434,
+          "source_end_seconds": 51.32800453514739,
+          "frames": 114661,
+          "flac_sha256": "2e71cc153aad93e211683970ca0ebec6722a2636ccb65f14bd6326c9467b113e"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d10",
+          "source_start_seconds": 54.64798185941043,
+          "source_end_seconds": 58.84800453514739,
+          "frames": 185221,
+          "flac_sha256": "2ac866d0a1079e3dafbc06dec5608db78d9c4ca7b5dc97c305629494a03499ba"
+        },
+        {
+          "id": "delf_a1_2022-082-6e3652a41e0c-r2-d11",
+          "source_start_seconds": 62.087981859410434,
+          "source_end_seconds": 66.0480045351474,
+          "frames": 174637,
+          "flac_sha256": "e5db8849dcf812c30b474f0215b8578dd783cc86329f6c68e791a0eb4261ed0c"
+        }
+      ],
+      "candidate_cut_id": "delf_a1_2022-082-6e3652a41e0c-r2-joined",
+      "candidate_sha256": "fab2503bbf68c565ffa58c097d1ea38ac0a6d86ae34a317c5bcdd02ab1f9bf76",
+      "proposed_name": "Série de phrases sans annonces de numérotation",
+      "proposed_tags": [
+        "moyen"
+      ],
+      "proposed_transcription": "Quel âge avez-vous? Quelle est la date de votre anniversaire? La date de mon anniversaire est le 13 mai. La date de mon anniversaire? C'est le 13 mai. Est-ce que vous aimez la télévision? Vous aimez la télévision. Combien de frères? Vous avez deux frères. Moi, j'ai un frère. Le samedi. Vous faites quoi? Le samedi, vous allez au parc. Avec qui? J'aime les chats. Pourquoi? Je ne sais pas.",
+      "source_start": 3.52,
+      "source_end": 66.0480045351474,
+      "candidate_work_file": "refinement-work/assemblies/delf_a1_2022-082-6e3652a41e0c/joined.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_83.mp3",
@@ -9893,8 +10701,23 @@
         "possible_instruction_or_numbering_within_seed"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-087-60a694bc4011-r2-d1",
+      "candidate_sha256": "d0ed8f160679170ff9b83bdfdd3fb69aa6daff57b75652caab6279c30894bb5b",
+      "proposed_name": "Bonjour madame.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Bonjour madame. Bonjour monsieur. Je voudrais du sucre et des tomates, s'il vous plaît. Oui. Combien de kilo de sucre? Deux kilo de sucre, s'il vous plaît. D'accord. Et combien de tomates? Un kilo de tomates, s'il vous plaît. Quel est le prix du kilo de tomates? 1,30€. Merci. Et combien coûte le sucre? Le sucre, c'est 3 euros pour les 2 kilos. Merci. Est-ce que vous voulez autre chose, monsieur? Oui, je voudrais aussi du pain, s'il vous plaît. Est-ce que vous avez des baguettes? Oui. Combien de baguettes est-ce que vous voulez? Seulement une baguette. Quel est le prix? La baguette coûte 70 centimes. Merci. Quel est le prix total pour le sucre, les tomates et la baguette, s'il vous plaît? Alors, le prix total est de 5 euros. Comment est-ce que vous payez, monsieur? Je paye en espèces. Et voilà 5 euros. Merci, monsieur. Et voilà vos produits. Merci beaucoup. Au revoir, madame, et bonne journée. Au revoir, monsieur.",
+      "source_start": 14.639977324263038,
+      "source_end": 80.09600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120922-0b171c2160/delf_a1_2022-087-60a694bc4011-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_88.mp3",
@@ -9909,8 +10732,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-088-4931a05f81cc-r2-d1",
+      "candidate_sha256": "970dfc79829b85251de12ffd654787e7b10a86195d5dd678f8a17976b09e94ec",
+      "proposed_name": "Bonjour, chère cousine.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Bonjour, chère cousine. C'est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19h. Je t'invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17h, si tu es d'accord, et je réserve une table pour 20h. Bisous!",
+      "source_start": 45.64,
+      "source_end": 71.12,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120923-75e2277133/delf_a1_2022-088-4931a05f81cc-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_91-1.mp3",
@@ -10084,8 +10922,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-092-fe7b7db9b31c-r2-d1",
+      "candidate_sha256": "cec146ce6f0da1c987aa8ea692bb6da9f5b1b08e59049c6eb7843247a03c876d",
+      "proposed_name": "Allô?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+      "source_start": 26.631995464852608,
+      "source_end": 53.15201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120924-84614d70a9/delf_a1_2022-092-fe7b7db9b31c-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_93.mp3",
@@ -10121,8 +10974,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-093-ac83a24c0ff4-r2-d1",
+      "candidate_sha256": "098f4efd6770ad1da65e71e755bcd1cb650d679854c70110b90e5b7472340a9f",
+      "proposed_name": "Salut, c'est Cyril.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Salut, c'est Cyril. Qu'est-ce que tu fais vendredi? Moi, je rentre de vacances jeudi. Tu veux aller au cinéma? Regarde le programme des films sur le site internet. Après, écris moi un message. Je ne peux pas répondre au téléphone. Je vais t'apporter un t-shirt souvenir de mes vacances. A bientôt!",
+      "source_start": 47.24,
+      "source_end": 76.22401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120925-6d31914ec2/delf_a1_2022-093-ac83a24c0ff4-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-2.mp3",
@@ -10480,8 +11348,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-055-54f13cbbf1fe-r2-d1",
+      "candidate_sha256": "a1922b92c7ad703fbabed7f86a4874ae8037b34c95a60ed62c59245e96a280f9",
+      "proposed_name": "Je suis dans une librairie.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Je suis dans une librairie. Je prends des cartes postales et des timbres. J'achète un stylo bleu.",
+      "source_start": 2.64,
+      "source_end": 13.16,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120859-0d8f727d36/delf_a1_2022-055-54f13cbbf1fe-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-2.mp3",
@@ -10496,8 +11379,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-055-54f13cbbf1fe-r2-d2",
+      "candidate_sha256": "853e74e24466dc47339411986d3db51455b57114afefd29a8d26206aaf4f10c9",
+      "proposed_name": "Ah, et je prends des enveloppes.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Ah, et je prends des enveloppes.",
+      "source_start": 13.92,
+      "source_end": 17.4,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120859-0d8f727d36/delf_a1_2022-055-54f13cbbf1fe-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-3.mp3",
@@ -10512,8 +11410,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a1_2022-055-54f13cbbf1fe-r2-d3",
+      "candidate_sha256": "283174ba9f950c3daec7a584924e2184eb65f655c0b21bd057a87c326397f37e",
+      "proposed_name": "Et il y a une tasse souvenir de la ville.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Et il y a une tasse souvenir de la ville. Super.",
+      "source_start": 17.92,
+      "source_end": 22.76,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120859-0d8f727d36/delf_a1_2022-055-54f13cbbf1fe-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_56.mp3",
@@ -10790,8 +11703,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-062-a14e3edb351f-r2-d1",
+      "candidate_sha256": "ee1eae3c70fb4f4750e4fa9543926d4d57cf3505878a8d13f3bd207f69db0f60",
+      "proposed_name": "Le spectacle va bientôt commencer Merci de présenter votre billet à l'hôtesse puis d'entrer dans la salle Fermeture",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le spectacle va bientôt commencer Merci de présenter votre billet à l'hôtesse puis d'entrer dans la salle Fermeture des portes dans 10 minutes",
+      "source_start": 6.871995464852608,
+      "source_end": 16.032018140589567,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120831-e4077b2015/9782090351958-062-a14e3edb351f-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-2.mp3",
@@ -10817,8 +11745,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-062-a14e3edb351f-r2-d2",
+      "candidate_sha256": "c0e24c515a6665f1ddc082ac4d8a4711870d32f53b873aaf3a712d07173d7d56",
+      "proposed_name": "La ligne 9 du métro est fermée pour travaux ce week-end Des bus de remplacement circulent gratuitement de",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "La ligne 9 du métro est fermée pour travaux ce week-end Des bus de remplacement circulent gratuitement de samedi 7h à dimanche 23h.",
+      "source_start": 22.151995464852607,
+      "source_end": 32.592018140589566,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120831-e4077b2015/9782090351958-062-a14e3edb351f-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-3.mp3",
@@ -10835,8 +11778,23 @@
         "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-062-a14e3edb351f-r2-d3",
+      "candidate_sha256": "5a960ad577bcd20bf1d1b81c2d1fed487ca044bdc51872f17e24b328037c655b",
+      "proposed_name": "Chers élèves, bienvenue au musée de la mer.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Chers élèves, bienvenue au musée de la mer. Nous allons commencer par visiter l'exposition sur les bateaux. Attention, vous ne pouvez pas prendre de photo.",
+      "source_start": 37.51199546485261,
+      "source_end": 47.55201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120831-e4077b2015/9782090351958-062-a14e3edb351f-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-4.mp3",
@@ -10851,8 +11809,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-062-a14e3edb351f-r2-d4",
+      "candidate_sha256": "e4e9377a12c8c9ab5d9f1eeb039cf402479d2e03f885a1bef7af9a42f6b728a8",
+      "proposed_name": "Aujourd'hui, notre librairie est en fête.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Aujourd'hui, notre librairie est en fête. Gagnez des dizaines de livres en répondant à des questions. Pour jouer, inscrivez-vous à l'accueil derrière les caisses du magasin.",
+      "source_start": 52.64798185941043,
+      "source_end": 63.72800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120831-e4077b2015/9782090351958-062-a14e3edb351f-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-5.mp3",
@@ -10867,8 +11840,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-062-a14e3edb351f-r2-d5",
+      "candidate_sha256": "5ac30f8f1be6457685b9d60b2f2620efcc5dd5bc03162e026489f21d2d7bef0f",
+      "proposed_name": "Bienvenue au parc Aquatica.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bienvenue au parc Aquatica. Avant d'accéder aux piscines, merci de vous changer dans les vestiaires et de prendre une douche. Le port du bonnet de bain est obligatoire.",
+      "source_start": 68.56798185941044,
+      "source_end": 78.9280045351474,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120831-e4077b2015/9782090351958-062-a14e3edb351f-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-6.mp3",
@@ -10885,8 +11873,23 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-062-a14e3edb351f-r2-d6",
+      "candidate_sha256": "03a08d49b6cfeddcf91ffb6e5da7812ad1bfc52e2f6e43cd6c0a97c6db2f3b67",
+      "proposed_name": "Le zoo est ouvert jusqu'à 20h.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le zoo est ouvert jusqu'à 20h. A 1h, venez voir les bébés girafe. A 11h, c'est le repas des lions. Et à 14h, venez voir danser les dauphins.",
+      "source_start": 84.47199546485261,
+      "source_end": 95.39201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120831-e4077b2015/9782090351958-062-a14e3edb351f-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-1-1.mp3",
@@ -11220,8 +12223,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d1",
+      "candidate_sha256": "1129f9c239be0a144fe290dbb09350ef771d09507e877c542a21f10bd5818d19",
+      "proposed_name": "Demain, vous allez à la piscine avec votre professeur Madame Larouche.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Demain, vous allez à la piscine avec votre professeur Madame Larouche. N'oubliez pas de prendre vos maillots de bain et vos serviettes.",
+      "source_start": 6.16,
+      "source_end": 14.52,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120835-ceff98f45f/9782090351958-066-3f7dc91934fc-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-2.mp3",
@@ -11236,8 +12254,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d2",
+      "candidate_sha256": "ea7362728d8ea058cec9f46c80ed3be001ed51a158fbb15eea9a0ca7d7c097cb",
+      "proposed_name": "Le rendez-vous pour la visite du Mont-Saint-Michel est à 8h30 devant l'école.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le rendez-vous pour la visite du Mont-Saint-Michel est à 8h30 devant l'école. Le voyage se fait en bus. Merci de prendre une casquette et une bouteille d'eau.",
+      "source_start": 19.27997732426304,
+      "source_end": 29.744013605442177,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120835-ceff98f45f/9782090351958-066-3f7dc91934fc-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-3.mp3",
@@ -11252,8 +12285,23 @@
       "lexical_score": 0.9846153846153847,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d3",
+      "candidate_sha256": "deb8cd0525e13db05d3f6030549057d4f197b96299ad10f07c4e771e88941737",
+      "proposed_name": "Écoutez, s'il vous plaît, notre avion pour Paris a 40 minutes de retard.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Écoutez, s'il vous plaît, notre avion pour Paris a 40 minutes de retard. Vous visiter les magasins de l'aéroport. On se retrouve à la porte B 35 à 20h.",
+      "source_start": 34.263990929705216,
+      "source_end": 45.824013605442175,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120835-ceff98f45f/9782090351958-066-3f7dc91934fc-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
@@ -11291,8 +12339,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d4",
+      "candidate_sha256": "1195a43e59b746551ffe59cb28405daf230dc931beabc7d1b8061c3b9665d5ec",
+      "proposed_name": "Le magasin va fermer ses portes dans 2 minutes.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le magasin va fermer ses portes dans 2 minutes. Merci de terminer vos achats et de vous rapprocher des caisses situées au fond du magasin.",
+      "source_start": 50.42399092970521,
+      "source_end": 59.49600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120835-ceff98f45f/9782090351958-066-3f7dc91934fc-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-5.mp3",
@@ -11307,8 +12370,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d5",
+      "candidate_sha256": "083731b1cc39d306c87c24b22c17c851a9a5444e16bc7f3608620ec87016524d",
+      "proposed_name": "Bienvenue au musée.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bienvenue au musée. Il est interdit de toucher les peintures, de manger, de boire et de courir dans les salles. Merci de déposer les audioguides à l'accueil à la fin de la visite.",
+      "source_start": 64.89598639455782,
+      "source_end": 76.21600907029479,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120835-ceff98f45f/9782090351958-066-3f7dc91934fc-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-6.mp3",
@@ -11334,8 +12412,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-066-3f7dc91934fc-r2-d6",
+      "candidate_sha256": "27d194f93eaba7a23d7f8b70cc5af333416f08ed7588c8866cf806461635fdbe",
+      "proposed_name": "Alerte rouge.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Alerte rouge. Une tempête est prévue pour demain avec beaucoup de vent et des pluies très fortes. Vous devez rester chez vous. L'école sera fermée toute la journée.",
+      "source_start": 81.56,
+      "source_end": 90.64,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120835-ceff98f45f/9782090351958-066-3f7dc91934fc-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-1.mp3",
@@ -11699,8 +12792,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d1",
+      "candidate_sha256": "704a67465f6cbdc310b5a54b3680c6b9c9d1beb23b570137105eb20f4a0033fe",
+      "proposed_name": "Votre attention, s'il vous plaît.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Votre attention, s'il vous plaît. Le train numéro 346, annoncé sur la voie 15, a un retard de 20 minutes. Merci de votre compréhension.",
+      "source_start": 61.19199546485261,
+      "source_end": 72.67201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120950-64889a8564/delf_a2_eb1w-001-7e749af22d6c-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-2.mp3",
@@ -11726,8 +12834,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d2",
+      "candidate_sha256": "f5690aba309e4d8263f3993f8f8c3b4f0145a7898da4b7c418e43e26c28811b9",
+      "proposed_name": "Chers spectateurs.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Chers spectateurs. Le film Tortue est terminé. Nous espérons que vous l'avez aimé. Vous pouvez maintenant poser vos questions au réalisateur qui est présent dans votre cinéma préféré. Bonne discussion.",
+      "source_start": 139.9919954648526,
+      "source_end": 154.33600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120950-64889a8564/delf_a2_eb1w-001-7e749af22d6c-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-3.mp3",
@@ -11742,8 +12865,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d3",
+      "candidate_sha256": "6d4bc5b3ec83d2d0af58c9dab3200e18b85b0e51223533f682de643b584fc9c3",
+      "proposed_name": "Chers clients, prenez soin de vous.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Chers clients, prenez soin de vous. Pendant les vacances d'été, une paire de lunettes achetées, un chapeau offert et une crème solaire à moitié prix.",
+      "source_start": 226.3119954648526,
+      "source_end": 237.47201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120950-64889a8564/delf_a2_eb1w-001-7e749af22d6c-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-4.mp3",
@@ -11758,8 +12896,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d4",
+      "candidate_sha256": "76b35454e488950a70bc56ee4e52877744b56984a5a8dab6c9575740f4ce43fa",
+      "proposed_name": "Cher parents.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Cher parents. Les familles sont les bienvenues dans notre zoo. Mais attention à vos enfants. Ils ne sont pas autorisés à nourrir les animaux. Merci pour votre attention.",
+      "source_start": 306.4239909297052,
+      "source_end": 319.2640136054422,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120950-64889a8564/delf_a2_eb1w-001-7e749af22d6c-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-5.mp3",
@@ -11774,8 +12927,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d5",
+      "candidate_sha256": "403889d8dd8ec6d4df42cd6a87327617226a97e6607b23a760bb15056d6048a2",
+      "proposed_name": "Chères visiteuses, chers visiteurs, pour la visite des appartements du roi, merci de laisser vos manteaux à l'accueil.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Chères visiteuses, chers visiteurs, pour la visite des appartements du roi, merci de laisser vos manteaux à l'accueil. Rendez-vous dans cinq minutes dans la cour du château.",
+      "source_start": 389.70399092970524,
+      "source_end": 401.9040136054422,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120950-64889a8564/delf_a2_eb1w-001-7e749af22d6c-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-6.mp3",
@@ -11792,8 +12960,23 @@
         "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-001-7e749af22d6c-r2-d6",
+      "candidate_sha256": "d3bf75709d458858b620347f8562bd5988aa08ef44ce51b4e4d7db2179d6353b",
+      "proposed_name": "Fête de la musique, samedi 21 juin, les transports sont gratuits et fonctionnent toute la nuit, jusqu'à 6h",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Fête de la musique, samedi 21 juin, les transports sont gratuits et fonctionnent toute la nuit, jusqu'à 6h du matin. Bon concert.",
+      "source_start": 472.45598639455784,
+      "source_end": 482.2560090702948,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120950-64889a8564/delf_a2_eb1w-001-7e749af22d6c-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-1-1.mp3",
@@ -11829,8 +13012,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-002-f9e78fdea89a-r2-d1",
+      "candidate_sha256": "c2fe1019706114398a05d7862cb19946e885e8e4d14fa506509026c18d454de6",
+      "proposed_name": "La librairie après l'école vous propose une soirée spéciale le mercredi 15 juin.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "La librairie après l'école vous propose une soirée spéciale le mercredi 15 juin. Venez rencontrer l'auteur Marc Galant qui sort un nouveau livre, puis goûtez à une spécialité alsacienne, Région d'origine de Marc Galant. Inscription sur le site de la librairie.",
+      "source_start": 30.88798185941043,
+      "source_end": 50.52800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120955-64eefc73e2/delf_a2_eb1w-002-f9e78fdea89a-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-1-2.mp3",
@@ -11845,8 +13043,23 @@
       "lexical_score": 0.9230769230769231,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-002-f9e78fdea89a-r2-d2",
+      "candidate_sha256": "85b2a09f5598300a2a6831203a49c67106950b64e4e868dda3f211162dc29068",
+      "proposed_name": "Les habitants du village de Fontange vous ouvrent leur ferme le week-end prochain.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Les habitants du village de Fontange vous ouvrent leur ferme le week-end prochain. Pour découvrir moutons, vaches et poules, venez avec vos enfants. Mais sans votre chien. N'oubliez pas de goûter les spécialités locales comme le fromage.",
+      "source_start": 119.72,
+      "source_end": 136.96,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120955-64eefc73e2/delf_a2_eb1w-002-f9e78fdea89a-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-1-3.mp3",
@@ -11861,8 +13074,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-002-f9e78fdea89a-r2-d3",
+      "candidate_sha256": "a414ccc2976f986f750395b2292fb572534d2f62e1301bfcf832eee4e37c4e40",
+      "proposed_name": "Vous aimez le sport?",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Vous aimez le sport? Dimanche 7 juin, la ville de Nancy organise une course à pied. Inscrivez-vous au parcours Hommes, Femmes ou Jeunes pour 5 euros. Rendez-vous au stade à 10h.",
+      "source_start": 204.3919954648526,
+      "source_end": 219.31201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120955-64eefc73e2/delf_a2_eb1w-002-f9e78fdea89a-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3",
@@ -11890,8 +13118,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb1w-003-5a9ff0eb5c65-r2-d1",
+      "candidate_sha256": "36d51fe7f26a7d7a3bd7ac6b8cf55f29d12db84a111d7bfc4d73c29c605e0afb",
+      "proposed_name": "Bonjour, je suis Madame Langlois.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb1w",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Bonjour, je suis Madame Langlois. Je vous appelle pour réserver deux chambres doubles pour quatre personnes du 5 au 7 juin. J'aimerais connaître le prix des chambres avec petit déjeuner et savoir s'il y a une baignoire dans les chambres. Est-ce que je peux régler par chèque? Nous viendrons en voiture. Y a-t-il un parking gratuit dans l'hôtel? Merci de me rappeler au 06 71 20 98 80. J'attends votre appel. A bientôt.",
+      "source_start": 46.6,
+      "source_end": 78.17600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120958-01a293fc0c/delf_a2_eb1w-003-5a9ff0eb5c65-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
@@ -12071,8 +13314,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d2",
+      "candidate_sha256": "3a5946f05fe5e28fe508c2e7062cd4600bee36e04dbc96db6fa1c1976a5b09d0",
+      "proposed_name": "Aujourd'hui seulement, dans votre supermarché, grande promotion sur les carottes, salades et haricots.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Aujourd'hui seulement, dans votre supermarché, grande promotion sur les carottes, salades et haricots. Rendez-vous dans le rayon fruits et légumes, près de la poissonnerie. A tout de suite!",
+      "source_start": 142.69598639455782,
+      "source_end": 154.49600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120959-aa0b30767f/delf_a2_eb2w-001-e636083d0158-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-3.mp3",
@@ -12100,8 +13358,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d3",
+      "candidate_sha256": "e9fdca61f403d6e42e7193bee4fa727d19bba9713e8e413039d62fe7313b42f1",
+      "proposed_name": "Mesdames, Messieurs, votre librairie est ouverte jusqu'à samedi.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Mesdames, Messieurs, votre librairie est ouverte jusqu'à samedi. La semaine prochaine, pour cause de vacances, nous sommes fermés. Retrouvez votre librairie le lundi 12 mai.",
+      "source_start": 223.33598639455784,
+      "source_end": 236.9760090702948,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120959-aa0b30767f/delf_a2_eb2w-001-e636083d0158-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-4.mp3",
@@ -12129,8 +13402,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d4",
+      "candidate_sha256": "a5ffb4f5638254a90553095ae6844bf55c53bd86a1878b7674b9e0a1d423504c",
+      "proposed_name": "Chers visiteurs, notre musée est heureux de vous présenter l'exposition de la photographe Magali Soubre.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Chers visiteurs, notre musée est heureux de vous présenter l'exposition de la photographe Magali Soubre. Venez voir ces magnifiques photos sur les sportifs français des Jeux Olympiques.",
+      "source_start": 307.9119954648526,
+      "source_end": 321.1520181405896,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120959-aa0b30767f/delf_a2_eb2w-001-e636083d0158-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-5.mp3",
@@ -12145,8 +13433,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d5",
+      "candidate_sha256": "375687c0e39d26c6a85fef5522bc1d411cf54ac80cd9ce12d588a5c07592049e",
+      "proposed_name": "Les guichets 11 et 13 sont fermés.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places. Le bar du théâtre vous accueille de 1 à 19h. Bonne journée.",
+      "source_start": 390.9839909297052,
+      "source_end": 402.3840136054422,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120959-aa0b30767f/delf_a2_eb2w-001-e636083d0158-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3",
@@ -12172,8 +13475,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d6",
+      "candidate_sha256": "37037829ccdda5926195e0781382dc020612f59fc9595500a95ae3b082244fc8",
+      "proposed_name": "Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Venez nombreux le samedi 22 mars pour écouter le groupe de musique Dingo. Rendez-vous à la salle des fêtes à 21h. Entrez, 5 euros.",
+      "source_start": 469.16,
+      "source_end": 480.72,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120959-aa0b30767f/delf_a2_eb2w-001-e636083d0158-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-2-1.mp3",
@@ -12188,8 +13506,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-002-6174b8971935-r2-d1",
+      "candidate_sha256": "3e3535bfc82b0320e1af225fb48b558f94e2513e5a7e48b7072ab9e38e6e7c97",
+      "proposed_name": "La ville de Toulon organise samedi 24 septembre une grande vente publique place Jean Jaurès.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "La ville de Toulon organise samedi 24 septembre une grande vente publique place Jean Jaurès. Vous voulez vendre des tables ou des chaises que vous n'utilisez plus? Inscrivez-vous à la mairie. Prix de la place, 5 euros.",
+      "source_start": 30.72798185941043,
+      "source_end": 46.608004535147394,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T121005-580c30d110/delf_a2_eb2w-002-6174b8971935-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-2-2.mp3",
@@ -12204,8 +13537,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-002-6174b8971935-r2-d2",
+      "candidate_sha256": "0f606ae8eb1631b37c42c71d78487c27c146c070212a614fd67479afbdd54f31",
+      "proposed_name": "A la gare de Pau, une vache a retardé les départs de train pendant six heures.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "A la gare de Pau, une vache a retardé les départs de train pendant six heures. Les clients ont reçu un panier-repas pour attendre et les excuses de la SNCF.",
+      "source_start": 112.36,
+      "source_end": 122.72,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T121005-580c30d110/delf_a2_eb2w-002-6174b8971935-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-informations-2-3.mp3",
@@ -12231,8 +13579,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_eb2w-002-6174b8971935-r2-d3",
+      "candidate_sha256": "03826b929feb037bb0382eb4ac576c216e525f36b291d582a60862a1ab0f9c25",
+      "proposed_name": "Aujourd'hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Aujourd'hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux. Appelez vite Tony au 08 4 21 34 90. Les 10 premiers gagnent des places de concert et des CD de Jaillot.",
+      "source_start": 183.06399092970523,
+      "source_end": 201.95201814058956,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T121005-580c30d110/delf_a2_eb2w-002-6174b8971935-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/les-achats-1.mp3",
@@ -12422,8 +13785,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d1",
+      "candidate_sha256": "d47528b9b67765a7dc9cba6d16de10df3c3cab56b8afc3b26d2d5382676afcc7",
+      "proposed_name": "La librairie Les Pages organise un grand jeu pour son anniversaire.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "La librairie Les Pages organise un grand jeu pour son anniversaire. Gagner des cadeaux en répondant à deux questions. Le bulletin de participation se trouve à l'accueil de la librairie.",
+      "source_start": 15.44,
+      "source_end": 26.12,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
@@ -12451,8 +13829,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d2",
+      "candidate_sha256": "404f5842bd61242e92b5c2311ebf29212eade0a94667553a4c657ed019a5cd8f",
+      "proposed_name": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux.",
+      "source_start": 31.12798185941043,
+      "source_end": 43.888004535147395,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-3.mp3",
@@ -12467,8 +13860,23 @@
       "lexical_score": 0.9166666666666666,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d3",
+      "candidate_sha256": "9352da889b125f28d1be7fd6181a898513c962526e3c923d3682911495dff9a2",
+      "proposed_name": "Bienvenue à la cafétéria Rondo.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bienvenue à la cafétéria Rondo. Composez votre repas avec une entrée, un plat, un dessert pour 10 euros. Si vous préférez, notre bar à salade vous attend. 6 euros la petite assiette, 9 euros la grande.",
+      "source_start": 48.61598639455782,
+      "source_end": 62.656009070294786,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-5.mp3",
@@ -12483,8 +13891,23 @@
       "lexical_score": 0.9473684210526316,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d5",
+      "candidate_sha256": "1f427abdf33856e218dc60721327aa8624ef7a2726d75eb4b8fc2ed75683fb71",
+      "proposed_name": "Le magasin va fermer.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le magasin va fermer. Merci de venir régler vos achats. Des caisses sont disponibles au premier étage. Si vous payez en carte bancaire, utilisez la caisse numéro 2.",
+      "source_start": 82.10399092970522,
+      "source_end": 92.62401360544217,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-6.mp3",
@@ -12512,8 +13935,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d6",
+      "candidate_sha256": "3b6fe975c96c492d6d5badb68b0286e0288e3b5676d0505fd2e833b85fa4251e",
+      "proposed_name": "Ton magasin Tipeee te propose tout ce dont tu as besoin pour une rentrée réussie.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Ton magasin Tipeee te propose tout ce dont tu as besoin pour une rentrée réussie. Cahier, cartable, stylo, et si tu présentes ta carte de fidélité au vendeur, il t'offrira une trousse.",
+      "source_start": 97.62399092970522,
+      "source_end": 109.58401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-5-1.mp3",
@@ -12528,8 +13966,23 @@
       "lexical_score": 0.955223880597015,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-042-d86fac163633-r2-d1",
+      "candidate_sha256": "cb2e24b05e9dd3dddcc8078963de11fc85025d8f764f57d486eedb75a8874719",
+      "proposed_name": "Lundi prochain, la cafétéria ouvrira exceptionnellement à 11h30 au lieu de midi et demi.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Lundi prochain, la cafétéria ouvrira exceptionnellement à 11h30 au lieu de midi et demi. Les élèves qui veulent manger plus tôt lundi doivent prévenir le secrétariat avant demain à 14h.",
+      "source_start": 14.903990929705216,
+      "source_end": 27.55201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-5-2.mp3",
@@ -12546,8 +13999,23 @@
         "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-042-d86fac163633-r2-d2",
+      "candidate_sha256": "3fabf9ea2bc47aa3262f04209f7c29f670078cb8778584b207184e0d48e75e89",
+      "proposed_name": "Votre professeur d'histoire, Monsieur Lemaître, sera absent aujourd'hui.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Votre professeur d'histoire, Monsieur Lemaître, sera absent aujourd'hui. C'est Madame Lenfant qui vous accueillera en salle 4 pour un cours de chant.",
+      "source_start": 32.15199546485261,
+      "source_end": 41.07201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-5-3.mp3",
@@ -12564,8 +14032,23 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-042-d86fac163633-r2-d3",
+      "candidate_sha256": "99f7e549d31e100fa4562685787e21005da0084039ace045f7a9a4a2b2a785c0",
+      "proposed_name": "Pour s'inscrire à la sortie au musée du 6 novembre.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Pour s'inscrire à la sortie au musée du 6 novembre. Les élèves doivent apporter 10 euros et le formulaire d'autorisation rempli par les parents à la vie scolaire.",
+      "source_start": 45.431995464852605,
+      "source_end": 54.784013605442176,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-5-4.mp3",
@@ -12580,8 +14063,23 @@
       "lexical_score": 0.9411764705882353,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-042-d86fac163633-r2-d4",
+      "candidate_sha256": "1f0d989931c1c8a6c7850ec6172467860570bbe011f9ab9aee307edd15426071",
+      "proposed_name": "Cette année, les trois gagnants du grand concours d'écriture de l'école Victor Hugo de Tours pourront participer au",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Cette année, les trois gagnants du grand concours d'écriture de l'école Victor Hugo de Tours pourront participer au concours national de poésie qui se déroulera à Paris au mois de mai. Inscrivez-vous vite",
+      "source_start": 58.983990929705215,
+      "source_end": 71.58401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-5-5.mp3",
@@ -12596,8 +14094,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-042-d86fac163633-r2-d5",
+      "candidate_sha256": "cc1e5f8067d26973c0cb5f236813cc05f21d7a8caaabf5776bab573d9c834633",
+      "proposed_name": "Tous les jours après le repas, le collège vous propose des activités de 13h à 14h.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Tous les jours après le repas, le collège vous propose des activités de 13h à 14h. Vous pourrez faire du badminton, du foot ou du basket. Pour plus de renseignements, venez au secrétariat.",
+      "source_start": 76.04,
+      "source_end": 89.44,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/ecole-5-6.mp3",
@@ -12645,8 +14158,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-042-d86fac163633-r2-d6",
+      "candidate_sha256": "499a16940e32c0dc9f7f31199f646a2034d1fe292f6def85d630f8a332fd96a0",
+      "proposed_name": "La bibliothèque du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de 5ème 4",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "La bibliothèque du collège sera fermée la semaine prochaine, car la bibliothécaire accompagne la classe de 5ème 4 en séjour linguistique. Si vous devez prendre ou rapporter des livres, rendez-vous à la bibliothèque ce soir à 16h.",
+      "source_start": 93.48,
+      "source_end": 108.7680045351474,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120818-d2b8c1d8c6/9782090351958-042-d86fac163633-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/26-école-oublier-livre-mathématiques.mp3",
@@ -13475,8 +15003,23 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-008-bbec346152c1-r2-d1",
+      "candidate_sha256": "258c6544b4ca249dbe1db54a6b58cd7537ab113e967de22ba80a827da9fea1b5",
+      "proposed_name": "Je dois aller chez le photographe déclic, mais je ne sais pas où est le magasin.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Je dois aller chez le photographe déclic, mais je ne sais pas où est le magasin. Il n'est pas très loin. Il est près du jardin public, à côté du poiffe. Ok, merci Julien.",
+      "source_start": 14.96,
+      "source_end": 25.24,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120803-184ac09d16/9782090351958-008-bbec346152c1-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-2.mp3",
@@ -13495,7 +15038,7 @@
       "question_answer_review": [],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "9782090351958-008-bbec346152c1-d2",
+      "candidate_cut_id": "9782090351958-008-bbec346152c1-r2-d2",
       "candidate_sha256": "ec35eacf575defaf211b375dab32a58c6cd6c5f346937585ada91da245fb5aa0",
       "proposed_name": "Jules, tu pars en Italie avec l'école cette année?",
       "proposed_tags": [
@@ -13508,7 +15051,7 @@
       "proposed_transcription": "Jules, tu pars en Italie avec l'école cette année? Oui, je me suis inscrit. Et combien de temps dure le voyage? 10 jours. On va au lac de Côme et à Venise.",
       "source_start": 31.59199546485261,
       "source_end": 42.83201814058957,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111350-1223184efb/9782090351958-008-bbec346152c1-d2/candidate.mp3"
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120803-184ac09d16/9782090351958-008-bbec346152c1-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
@@ -13551,7 +15094,7 @@
       ],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "9782090351958-008-bbec346152c1-d3",
+      "candidate_cut_id": "9782090351958-008-bbec346152c1-r2-d3",
       "candidate_sha256": "f6f4dd9a87a8ce4f50f81696a8945f9f35463f17f7f5c138a3cc8cf12b6ac9b0",
       "proposed_name": "Je n'arrive pas à faire cet exercice de maths.",
       "proposed_tags": [
@@ -13564,7 +15107,7 @@
       "proposed_transcription": "Je n'arrive pas à faire cet exercice de maths. Si tu veux, je peux t'expliquer l'exercice cet après-midi. Oui, je veux bien. Mais tu viens chez moi alors. D'accord, je viens vers 4 heures.",
       "source_start": 47.751995464852605,
       "source_end": 60.608004535147394,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111350-1223184efb/9782090351958-008-bbec346152c1-d3/candidate.mp3"
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120803-184ac09d16/9782090351958-008-bbec346152c1-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3",
@@ -13581,7 +15124,7 @@
       "question_answer_review": [],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "9782090351958-008-bbec346152c1-d4",
+      "candidate_cut_id": "9782090351958-008-bbec346152c1-r2-d4",
       "candidate_sha256": "e72a8724f016315060adee6367c1fb7d1e9509ebc0f663f1e96eebaa34618e1c",
       "proposed_name": "Camille, pour avoir ta carte de cantine, tu dois aller au secrétariat.",
       "proposed_tags": [
@@ -13594,7 +15137,7 @@
       "proposed_transcription": "Camille, pour avoir ta carte de cantine, tu dois aller au secrétariat. Et combien je dois payer? Tu dois payer 50 euros et présenter ta carte d'identité. Merci!",
       "source_start": 65.36798185941043,
       "source_end": 74.7680045351474,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111350-1223184efb/9782090351958-008-bbec346152c1-d4/candidate.mp3"
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120803-184ac09d16/9782090351958-008-bbec346152c1-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/maison-3.mp3",
@@ -13696,8 +15239,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-053-1d81d8cc10b7-r2-d1",
+      "candidate_sha256": "d57dff7378ee051464394aa8dd08e7b7c681c7ce86c4c9f38c85ef1c60d2b6cd",
+      "proposed_name": "Vous voulez voyager ou apprendre des langues étrangères sans dépenser d'argent?",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Vous voulez voyager ou apprendre des langues étrangères sans dépenser d'argent? Avec le site BlablaLangue, vous pouvez loger gratuitement un voyageur chez vous et parler avec lui dans sa langue.",
+      "source_start": 18.2,
+      "source_end": 30.92800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120826-8ad168cb36/9782090351958-053-1d81d8cc10b7-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/maison-1-2.mp3",
@@ -13714,7 +15272,7 @@
       "question_answer_review": [],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "9782090351958-053-1d81d8cc10b7-d2",
+      "candidate_cut_id": "9782090351958-053-1d81d8cc10b7-r2-d2",
       "candidate_sha256": "2de0ad511fab131af1c87a46b3c1145f55a018480f9af9dec0a6a60e4fad74e3",
       "proposed_name": "Découvrez le restaurant Jules Verne situé au deuxième étage de la Tour Eiffel et profitez de la plus",
       "proposed_tags": [
@@ -13727,7 +15285,7 @@
       "proposed_transcription": "Découvrez le restaurant Jules Verne situé au deuxième étage de la Tour Eiffel et profitez de la plus belle vue de Paris. Le restaurant est ouvert de midi à 13h30, puis de 18h à 21h30.",
       "source_start": 37.04798185941043,
       "source_end": 50.44800453514739,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111456-6530d40adf/9782090351958-053-1d81d8cc10b7-d2/candidate.mp3"
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120826-8ad168cb36/9782090351958-053-1d81d8cc10b7-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/maison/maison-1-3.mp3",
@@ -13744,7 +15302,7 @@
       "question_answer_review": [],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "9782090351958-053-1d81d8cc10b7-d3",
+      "candidate_cut_id": "9782090351958-053-1d81d8cc10b7-r2-d3",
       "candidate_sha256": "9120e52c0d5c565a485295df5ba10cfec9bb21a4c006610ca2d4c4e68ae62a74",
       "proposed_name": "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner",
       "proposed_tags": [
@@ -13757,7 +15315,7 @@
       "proposed_transcription": "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission speciale sur France FM.",
       "source_start": 56.791995464852604,
       "source_end": 68.51201814058957,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111456-6530d40adf/9782090351958-053-1d81d8cc10b7-d3/candidate.mp3"
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120826-8ad168cb36/9782090351958-053-1d81d8cc10b7-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-20.mp3",
@@ -13825,8 +15383,23 @@
       "lexical_score": 0.9565217391304348,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d1",
+      "candidate_sha256": "78f9ef209a517f91576152b178f654b1db0db5b38d4ebaf3e044ac168f571ef2",
+      "proposed_name": "Les enfants, le bus est là, on va partir.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Les enfants, le bus est là, on va partir. Vous pouvez prendre vos sacs à dos avec vous à votre place, mais vous devez laisser les gros sacs au chauffeur, à l'avant du bus.",
+      "source_start": 14.719977324263038,
+      "source_end": 24.28,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-2.mp3",
@@ -13843,8 +15416,23 @@
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d2",
+      "candidate_sha256": "3869342b50690510b361742296b90d7aabb009c48daa41bbb95c98701055e973",
+      "proposed_name": "Cette année, la fête de l'école aura lieu dans la cantine.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Cette année, la fête de l'école aura lieu dans la cantine. Si vous êtes disponible mardi à 13h30, est-ce que vous pouvez venir nous aider à déplacer les tables?",
+      "source_start": 29.44798185941043,
+      "source_end": 39.48800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-3.mp3",
@@ -13859,8 +15447,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d3",
+      "candidate_sha256": "3973d4e701641d8f8f520b49c08d43ce48204e087dafdf67a10e8afe4a536036",
+      "proposed_name": "Demain, on va s'entraîner pour la course de la semaine prochaine contre les écoles de la ville.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Demain, on va s'entraîner pour la course de la semaine prochaine contre les écoles de la ville. N'oubliez pas de prendre des vêtements adaptés pour courir.",
+      "source_start": 44.32798185941043,
+      "source_end": 52.44800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
@@ -13888,8 +15491,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d4",
+      "candidate_sha256": "a59d896a6bf13969a64f94f35506fb3327898d6f4290676be6417e84c29fa176",
+      "proposed_name": "La salle informatique est fermée pour travaux.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "La salle informatique est fermée pour travaux. Si vous devez travailler sur les ordinateurs, vous pouvez aller à la bibliothèque. Profitez-en aussi pour visiter le nouveau rayon DVD.",
+      "source_start": 57.52798185941043,
+      "source_end": 69.16800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-5.mp3",
@@ -13915,8 +15533,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d5",
+      "candidate_sha256": "ceeda2245ea5a32f9f64fc27e3c4e7de9e84b331e94a266575dce2b7570e72dd",
+      "proposed_name": "Aujourd'hui, pour la semaine du goût, notre cuisinier Cyril vous propose de la cuisine du monde.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Aujourd'hui, pour la semaine du goût, notre cuisinier Cyril vous propose de la cuisine du monde. Couscous marocain, pâte italienne, palla espagnole. Pour l'occasion, ouverture de la cantine dès 11h30.",
+      "source_start": 74.56798185941044,
+      "source_end": 89.87201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-6.mp3",
@@ -13931,8 +15564,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-040-42a9a64a8955-r2-d6",
+      "candidate_sha256": "aee9ff2fe91b79c4e89f35e5942dece02d170e22a47de1a6a7a37cd27a9f4c1a",
+      "proposed_name": "Voici les devoirs pour demain.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Voici les devoirs pour demain. Vous devez lire le début de l'histoire, page 45 du livre de français, et écrire un texte pour raconter la fin de l'histoire.",
+      "source_start": 94.55199546485261,
+      "source_end": 103.95201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120814-b127f4586a/9782090351958-040-42a9a64a8955-r2-d6/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-1.mp3",
@@ -14769,8 +16417,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-034-b2afb8e8dd81-r2-d1",
+      "candidate_sha256": "69e7a001f6360962d85299e25f6cf58fb6c4a44730209e5231b222eb3f7cfbd3",
+      "proposed_name": "Bon, je vais au cinéma avec mes copines.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bon, je vais au cinéma avec mes copines. À ce soir ! Je peux venir te chercher en voiture si tu veux. Non, merci. Je vais prendre le bus avec Mathilde. Salut !",
+      "source_start": 15.481995464852607,
+      "source_end": 25.66201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120807-b610f684c1/9782090351958-034-b2afb8e8dd81-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-2.mp3",
@@ -14782,11 +16445,26 @@
       "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
       "signal_status": "signal_source_confirmed",
       "proposed_ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-2.mp3",
-      "lexical_score": 0.9393939393939394,
+      "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-034-b2afb8e8dd81-r2-d2",
+      "candidate_sha256": "9d940964d879c6a8491d03b0aa42ab658c639b6c44518a905eec8f5db89c6a62",
+      "proposed_name": "Bonjour Laura.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bonjour Laura. Ah, mais tu n'es pas seule ! Oui, je suis avec Tommy. C'est mon ami du cours de danse. Ah oui ! Enchanté, Tommy. Laura m'a beaucoup parlé de toi.",
+      "source_start": 34.84199546485261,
+      "source_end": 47.00201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120807-b610f684c1/9782090351958-034-b2afb8e8dd81-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-3.mp3",
@@ -14822,8 +16500,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-034-b2afb8e8dd81-r2-d3",
+      "candidate_sha256": "fb58657e8e464fc51fe82f9fcf327e659b40b57dd115c24e0f5169478e840ef3",
+      "proposed_name": "Kevin, range ta chambre tout de suite.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Kevin, range ta chambre tout de suite. Mais maman, j'ai rendez-vous avec mes amis. Non, d'abord, tu fais le ménage dans ta chambre.",
+      "source_start": 53.49798185941043,
+      "source_end": 62.33800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120807-b610f684c1/9782090351958-034-b2afb8e8dd81-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-4.mp3",
@@ -14859,8 +16552,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-034-b2afb8e8dd81-r2-d4",
+      "candidate_sha256": "7bd35a511d96b1accc9698ef31ff99ca8930f6ac5cfb8b3f6a21fdd9dfdc7ea7",
+      "proposed_name": "Vous aimez ma pizza ?",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Vous aimez ma pizza ? J'ai fait une nouvelle recette ! Oh oui, elle est délicieuse ! Moi aussi, j'adore tes pizzas, papa. Elles sont trop bonnes !",
+      "source_start": 68.02598639455782,
+      "source_end": 77.80600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120807-b610f684c1/9782090351958-034-b2afb8e8dd81-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/scènes courtes/09-radio-météo-parapluie.mp3",
@@ -15023,8 +16731,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-057-0dc3afbbc24a-r2-d1",
+      "candidate_sha256": "6753f498513445e2719f347df086855f479862bbbc3d871013aac9942a29f766",
+      "proposed_name": "Cette semaine à Paris, il y a le salon du tatouage.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Cette semaine à Paris, il y a le salon du tatouage. On attend des milliers de visiteurs. Le tatouage est très à la mode. Un français sur cinq est tatoué. Ce sont surtout des jeunes de 18 à 35 ans et plus de femmes que d'hommes.",
+      "source_start": 14.97,
+      "source_end": 28.24201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120828-448db13576/9782090351958-057-0dc3afbbc24a-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/03-radio-application-lab.mp3",
@@ -15036,13 +16759,26 @@
       "source_sha256": "0dc3afbbc24a55144bdf39c6db4887b555abe005cdcf28effbe4dff86d79aa13",
       "signal_status": "signal_source_confirmed",
       "proposed_ref": "/lib/audio/tcf/co/radio/03-radio-application-lab.mp3",
-      "lexical_score": 0.9230769230769231,
-      "review_flags": [
-        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
-      ],
+      "lexical_score": 1.0,
+      "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-057-0dc3afbbc24a-r2-d2",
+      "candidate_sha256": "3cd7d3806021631c7b6cb3d1b25535f5a2a106c08e08c316886297580f1f7d89",
+      "proposed_name": "Lab, c'est une application utilisée par plus de 700 millions d'adolescents de 13 à 24 ans sur toute",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Lab, c'est une application utilisée par plus de 700 millions d'adolescents de 13 à 24 ans sur toute la planète. Avec Lab, les jeunes peuvent partager des clips vidéo ou enregistrer leurs vidéos sur des musiques connues.",
+      "source_start": 34.45798185941043,
+      "source_end": 47.43800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120828-448db13576/9782090351958-057-0dc3afbbc24a-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/04-radio-fête-de-la-ville.mp3",
@@ -15057,8 +16793,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "9782090351958-057-0dc3afbbc24a-r2-d3",
+      "candidate_sha256": "01daca65573459653ad48daa66e180f6f5b1c1b72ad9f4c4e88c7eff8dba50e0",
+      "proposed_name": "samedi, c'est la fête de la ville.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "samedi, c'est la fête de la ville. Cette année encore, venez écouter des concerts dans les rues. Pop, électro, classique, il y en a pour tous les goûts. Une discothèque est même installée sur la place centrale.",
+      "source_start": 53.465986394557824,
+      "source_end": 66.36600907029478,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120828-448db13576/9782090351958-057-0dc3afbbc24a-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/famille/01-famille-la-tarte-est-bonne.mp3",
@@ -16154,8 +17905,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_2021-006-18a1ad11e4f5-r2-d1",
+      "candidate_sha256": "6994e634e86fba91df7fc94fd6aee863963d807c5712f99bed85a2f5e0b1c9fe",
+      "proposed_name": "Demain, mercredi, la piscine fermera ses portes à 20h en raison d'une compétition régionale.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_2021",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Demain, mercredi, la piscine fermera ses portes à 20h en raison d'une compétition régionale.",
+      "source_start": 2.64,
+      "source_end": 10.92,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120927-a8ca40ce48/delf_a2_2021-006-18a1ad11e4f5-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_07.mp3",
@@ -17137,7 +18903,7 @@
       ],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "delf_a2_2021-019-7725befff9ae-d1",
+      "candidate_cut_id": "delf_a2_2021-019-7725befff9ae-r2-d1",
       "candidate_sha256": "a61bf7199b7bf84c8d83d146aec0ef7379791ca5dfb92a2299ccb585281e336a",
       "proposed_name": "Coucou Amélie Prendre un an de plus, ce n'est pas un problème, mais une fête.",
       "proposed_tags": [
@@ -17150,7 +18916,7 @@
       "proposed_transcription": "Coucou Amélie Prendre un an de plus, ce n'est pas un problème, mais une fête. J'espère que tu penseras à moi quand tu souffleras tes bougies.",
       "source_start": 4.215986394557823,
       "source_end": 14.816009070294784,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111926-c372b6855f/delf_a2_2021-019-7725befff9ae-d1/candidate.mp3"
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120927-006fb67653/delf_a2_2021-019-7725befff9ae-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_19-2.mp3",
@@ -17165,8 +18931,23 @@
       "lexical_score": 1.0,
       "review_flags": [],
       "question_answer_review": [],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_2021-019-7725befff9ae-r2-d2",
+      "candidate_sha256": "cd18e2fc51854ea689f1f357fe96f11bd2f936a7a7a65737b1e0f8687a918c4a",
+      "proposed_name": "Salut les amis!",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_2021",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Salut les amis! J'espère que c'est toujours d'accord pour samedi soir. Venez vers 20h et n'oubliez pas le gâteau.",
+      "source_start": 17.575986394557823,
+      "source_end": 26.096009070294784,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120927-006fb67653/delf_a2_2021-019-7725befff9ae-r2-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_19-3.mp3",
@@ -17192,8 +18973,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_2021-019-7725befff9ae-r2-d3",
+      "candidate_sha256": "3a382d00bf5c80ce1e8340e3476110e7a2d08d63e0fa7b2b9ea93dcb09d972ed",
+      "proposed_name": "Bravo Fabien!",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_2021",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Bravo Fabien! Sortir premier de cette école, c'est vraiment super! Tu dois être content.",
+      "source_start": 29.24,
+      "source_end": 37.84,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120927-006fb67653/delf_a2_2021-019-7725befff9ae-r2-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_19-4.mp3",
@@ -17219,8 +19015,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "delf_a2_2021-019-7725befff9ae-r2-d4",
+      "candidate_sha256": "1a40690a735936e0868477488db65ad3fa8d1d29bac372b25e985b9814276f2f",
+      "proposed_name": "Alors ça y est, le petit Paul est né.",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_2021",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Alors ça y est, le petit Paul est né. Toutes mes félicitations à la maman et au papa.",
+      "source_start": 41.16,
+      "source_end": 48.8,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120927-006fb67653/delf_a2_2021-019-7725befff9ae-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_20.mp3",
@@ -20209,8 +22020,126 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "source_ranges": [
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d1",
+          "source_start_seconds": 11.88,
+          "source_end_seconds": 13.28,
+          "frames": 61740,
+          "flac_sha256": "a30a198d155839c218736932a5a1f557e3b9815358f89aed8307ea4dde769e1e"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d2",
+          "source_start_seconds": 16.36,
+          "source_end_seconds": 19.2,
+          "frames": 125244,
+          "flac_sha256": "805c0a095f2a8b5b74cf4f855fc315e69b52863f15a4543009f6ff175f90daae"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d3",
+          "source_start_seconds": 21.96,
+          "source_end_seconds": 24.32,
+          "frames": 104076,
+          "flac_sha256": "ac0e409cdc1e824e7919e5892320ad6977081f8f19b12ab81a28aea9c71c0cd2"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d4",
+          "source_start_seconds": 27.175986394557825,
+          "source_end_seconds": 29.216009070294785,
+          "frames": 89965,
+          "flac_sha256": "0eb7bc8317bce736faa73962bdef221992a661bca8bda0e97a2ad5e56118625a"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d5",
+          "source_start_seconds": 32.455986394557826,
+          "source_end_seconds": 35.13600907029478,
+          "frames": 118189,
+          "flac_sha256": "06ef600ec1b96c88d916efc272e13df6e518ec523296a043992266d3682ca13a"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d6",
+          "source_start_seconds": 38.05598639455782,
+          "source_end_seconds": 40.016009070294785,
+          "frames": 86437,
+          "flac_sha256": "8548d99cce6c79f872b91cdb3f1478eab2de6ecfe45871704bc54e7b465e1e14"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d7",
+          "source_start_seconds": 42.69598639455782,
+          "source_end_seconds": 44.81600907029478,
+          "frames": 93493,
+          "flac_sha256": "969453c0a40d0b15cf2fc7c083481adbf40b700d237d4ee2fac45808eb6b06f4"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d8",
+          "source_start_seconds": 47.89598639455782,
+          "source_end_seconds": 49.696009070294785,
+          "frames": 79381,
+          "flac_sha256": "84d3268a310eaf48b1640b3901ff4f9a1d1aff20db1686f467a5958a462f825a"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d9",
+          "source_start_seconds": 53.095986394557826,
+          "source_end_seconds": 55.29600907029479,
+          "frames": 97021,
+          "flac_sha256": "d8241d28e477ce7cd9a6415a95871978a6f566db357620a2aa1fb6281992a6a2"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d10",
+          "source_start_seconds": 58.05598639455782,
+          "source_end_seconds": 60.096009070294784,
+          "frames": 89965,
+          "flac_sha256": "3f7c2a06c6770c7904467cfcf346b295f67cb9327e5caf31d8ca69c59cee9d37"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d11",
+          "source_start_seconds": 62.93598639455782,
+          "source_end_seconds": 64.97600907029478,
+          "frames": 89965,
+          "flac_sha256": "8c6a05713afdc7ba98b2a949b5d7c2414eeb7c1f2a617d04749148d091335f88"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d12",
+          "source_start_seconds": 67.57598639455782,
+          "source_end_seconds": 70.33600907029478,
+          "frames": 121717,
+          "flac_sha256": "91ac96d958b7a1201b58735edd5ed855087fc691694f3a7d8f3ade3c93064d1c"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d13",
+          "source_start_seconds": 73.41598639455782,
+          "source_end_seconds": 77.45600907029478,
+          "frames": 178165,
+          "flac_sha256": "a0f1db5e4113a58a08d8e4c63811d10100b46e072896bd0b72e7d972bdbe268b"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d14",
+          "source_start_seconds": 80.9519954648526,
+          "source_end_seconds": 84.27201814058957,
+          "frames": 146413,
+          "flac_sha256": "0efd2314562b90963a4b70306d1586db404048c7759fc661dd82f5a0153a9ddd"
+        },
+        {
+          "id": "delf_a2_2021-047-e87bc7820c88-r2-d15",
+          "source_start_seconds": 87.19199546485261,
+          "source_end_seconds": 90.03201814058957,
+          "frames": 125245,
+          "flac_sha256": "1daa1d0035a516b6c59d588f8cfdeb463355f8042f34bb9bbb66d66f1203a0b7"
+        }
+      ],
+      "candidate_cut_id": "delf_a2_2021-047-e87bc7820c88-r2-joined",
+      "candidate_sha256": "619e437cc2f8ce48a1e9e4eaf8602bb919751491db845432a721a5333853bb76",
+      "proposed_name": "Série de phrases sans annonces de numérotation",
+      "proposed_tags": [
+        "moyen"
+      ],
+      "proposed_transcription": "Quel est votre nom Quelle est votre situation familiale Comment s'appellent vos enfants Quelle est votre nationalité Quelle est votre date de naissance? Quel âge avez-vous Avec qui faites-vous du sport? Où mangez-vous à midi Quel est votre plat préféré? Quelle est votre adresse? Où habitez-vous? Qu'est-ce que vous aimez faire le week-end? Est-ce que vous aimez aller au cinéma? Pourquoi? Où allez-passer vos prochaines vacances? Qu'est-ce que vous aimez faire pendant vos congés?",
+      "source_start": 11.88,
+      "source_end": 90.03201814058957,
+      "candidate_work_file": "refinement-work/assemblies/delf_a2_2021-047-e87bc7820c88/joined.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_48.mp3",
@@ -20270,8 +22199,119 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "source_ranges": [
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d1",
+          "source_start_seconds": 3.7359863945578233,
+          "source_end_seconds": 5.9360090702947845,
+          "frames": 97021,
+          "flac_sha256": "59e2d786aa9d0e58f0eb2192c9ff54628bedea0a3fc2e8bfbf242a6356128a9c"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d2",
+          "source_start_seconds": 8.615986394557822,
+          "source_end_seconds": 10.576009070294784,
+          "frames": 86437,
+          "flac_sha256": "e1f8182da9dba3a35564040a656cebed31e8df494685f5e6228126ea310e435a"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d3",
+          "source_start_seconds": 13.335986394557823,
+          "source_end_seconds": 15.776009070294785,
+          "frames": 107605,
+          "flac_sha256": "81dfe33d7d47f8ff85db0b7b69207078b342565554f29d4791167a46d82d30da"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d4",
+          "source_start_seconds": 18.775986394557822,
+          "source_end_seconds": 21.696009070294785,
+          "frames": 128773,
+          "flac_sha256": "170a5bde82a276324bd50abd1a708ad5d74813c0f2b91e76121ab3601cb987b4"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d5",
+          "source_start_seconds": 24.375986394557824,
+          "source_end_seconds": 26.976009070294786,
+          "frames": 114661,
+          "flac_sha256": "26f1119a0cbc324923c64b4f0b648b4da337e5091f470e5a86db6e6ecc0251a4"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d6",
+          "source_start_seconds": 30.23199546485261,
+          "source_end_seconds": 34.03201814058957,
+          "frames": 167581,
+          "flac_sha256": "67d8339717be1bb15fd8bbc8b84b28ef01d74cec409b3a0d3484c8bf627c5ff9"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d7",
+          "source_start_seconds": 37.111995464852605,
+          "source_end_seconds": 39.79201814058957,
+          "frames": 118189,
+          "flac_sha256": "5da3ef43bb91583eaf9521e5fd5d0bf7d10a511b626c0769c15b52c67736e92b"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d8",
+          "source_start_seconds": 42.791995464852604,
+          "source_end_seconds": 45.95201814058957,
+          "frames": 139357,
+          "flac_sha256": "5cc4706875a05df0b783bc07a8dc9e7f6d3328cece1b477ad2abb7b732d7c84b"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d9",
+          "source_start_seconds": 49.111995464852605,
+          "source_end_seconds": 51.79201814058957,
+          "frames": 118189,
+          "flac_sha256": "fe0c8d252a82ec3ff1a3b65d063dd416e22310149f299de71adf44db93dc1a1d"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d10",
+          "source_start_seconds": 55.08,
+          "source_end_seconds": 58.0,
+          "frames": 128772,
+          "flac_sha256": "717e164accc05ab05cb33cc58d76a4d78ca54d67139bb727d21322e63ace1887"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d11",
+          "source_start_seconds": 61.08,
+          "source_end_seconds": 63.76,
+          "frames": 118188,
+          "flac_sha256": "3d31c4d547da60d55abf617730073de1311fb619c60c9d07c63b0c62149df227"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d12",
+          "source_start_seconds": 66.44,
+          "source_end_seconds": 69.36,
+          "frames": 128772,
+          "flac_sha256": "e20784e1999f2fc0adcac484087f838659830ee8e03aac76f2f1940c023ae911"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d13",
+          "source_start_seconds": 72.27997732426304,
+          "source_end_seconds": 74.72,
+          "frames": 107605,
+          "flac_sha256": "8cc80005a7080e3d748a1f49ad41c03e20f50a497f30428a24164117baff54de"
+        },
+        {
+          "id": "delf_a2_2021-049-96c0df59a01d-r2-d14",
+          "source_start_seconds": 78.27997732426304,
+          "source_end_seconds": 79.76,
+          "frames": 65269,
+          "flac_sha256": "0516b7866817dd79cbe9bad01f720904f2b610c67d9cf2a69090b3c2170ee1ad"
+        }
+      ],
+      "candidate_cut_id": "delf_a2_2021-049-96c0df59a01d-r2-joined",
+      "candidate_sha256": "106f1d04a1e1fa938a1c1c0c041d5af199278d1b4e989284cf80f4991e7ed39a",
+      "proposed_name": "Série de phrases sans annonces de numérotation",
+      "proposed_tags": [
+        "moyen"
+      ],
+      "proposed_transcription": "Vous aimez le football? J'aime la natation. Avez-vous un téléphone portable? J'utilise souvent mon téléphone. Le samedi, qu'est-ce que vous faites? Le samedi, je vais courir avec mon meilleur ami. Le week-end, vous faites quoi? Le week-end, je fais des courses. Je suis français. Et vous? Je suis de nationalité espagnole. J'habite en France depuis 6 mois. Vous habitez en France depuis 6 mois? Je déteste manger du fromage. Vous aimez le fromage?",
+      "source_start": 3.7359863945578233,
+      "source_end": 79.76,
+      "candidate_work_file": "refinement-work/assemblies/delf_a2_2021-049-96c0df59a01d/joined.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/achats-annonce-3.mp3",
@@ -20676,7 +22716,7 @@
       "source_sha256": "f8ff3289739f7e87a22e8d592f87b820429a40af5f17290dfad2834f308ce3f3",
       "signal_status": "signal_source_confirmed",
       "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/journee-radio-1.mp3",
-      "lexical_score": 0.9300613496932515,
+      "lexical_score": 0.9463414634146342,
       "review_flags": [
         "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
@@ -20703,8 +22743,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "09035196-018-f8ff3289739f-r2-d1",
+      "candidate_sha256": "d0c88f559597cc03dc32f9e884dcd03d2ce93394855f1667ed08374d0a64a6cd",
+      "proposed_name": "Alors aujourd'hui dans l'émission \"Gren de jeunes\", on va comparer deux modes de vie complètement différents.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Alors aujourd'hui dans l'émission \"Gren de jeunes\", on va comparer deux modes de vie complètement différents. Nous avons invité Eddie, 13 ans, qui habite sur une petite île de la Bretagne. Et Béa, 15 ans, qui vit au cœur d'une grande ville, à Lille, des quotidiens opposés. Eti ! Comment définiriez-vous en deux mots la vie sur l'île de Wedik au large de Kibron ? En deux mots, calme et sérénité. trop parfois. Et vous, Béha, à l'île ? Tout le contraire, stress et quotidien rempli. Alors est dit, décrivez-nous une journée type. En fait, il n'y a pas de collège à WEDIC. Alors le matin, je prends le bateau pour aller à Kibron et je rentre le soir après les cours. J'adore le trajet du soir, surtout quand arrivent les beaux jours, le bon air de la mer. Évidemment, le soir à Weddyk, il n'y a pas grand chose à faire. Il n'y a qu'une centaine d'habitants et les jeunes peuvent se compter sur les doigts d'une main. Alors des fois, on se rencontre pour se promener et discuter ou faire de la musique. Le cinéma, les spectacles et le shopping, il n'y en a pas. C'est sur le continent et les bateaux ne circulent pas très tard, sauf l'été. Donc l'hiver, c'est très, très cal Mais j'apprécie aussi la solitude. Je suis habitué comme ça et ça ne me déplaît pas. On s'amuse bien l'été par contre. Les restaurants ouvrent, les touristes arrivent et on fait connaissance avec des jeunes de tous les horizons. Vous, Béha, à Lille, c'est comment ? On court tout le temps. Le matin, j'accompagne mon petit frère à l'école et je cours prendre le bus pour aller au lycée. Il y a beaucoup de trafic alors il met presque une heure pour arriver. Le soir, c'est pareil. Pendant la semaine, c'est un peu stressant Par contre, je sors beaucoup avec mes amis le week-end. Il y a toujours quelque chose à faire. Des sorties au bowling, des soirées à la pizzeria, les boutiques, les anniversaires des uns et des autres. Je ne passe pas un samedi sans voir mes amis. Ça, c'est important pour moi. Béha, Eddie, est-ce que vous aimeriez échanger votre quotidien ? Oui, pourquoi pas, mais pas pour la vie.",
+      "source_start": 4.825986394557823,
+      "source_end": 139.33401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120754-13eca8ba1a/09035196-018-f8ff3289739f-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/pour-faire-signer-vos.mp3",
@@ -21852,7 +23907,7 @@
       "source_sha256": "7e20ecb9bf51c007b9eadb74c535b496dca51d46bda4ea8424dca38207b9e774",
       "signal_status": "signal_source_confirmed",
       "proposed_ref": "/lib/audio/tcf/co/transports/triporteur-ou-biporteur-quel-1.mp3",
-      "lexical_score": 0.8744588744588745,
+      "lexical_score": 0.9194414607948442,
       "review_flags": [
         "digit_forms_differ_requires_fact_check_not_automatic_correction"
       ],
@@ -21866,16 +23921,6 @@
             "charge",
             "moyen",
             "prendre"
-          ],
-          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
-        },
-        {
-          "exercise_id": "tcf-ss-b1-s14-co-1",
-          "question_index_0based": 1,
-          "question": "Quel est le métier de l'invitée ?",
-          "current_correct_answer": "Spécialiste en nutrition",
-          "absent_content_tokens": [
-            "specialiste"
           ],
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         },
@@ -21910,8 +23955,23 @@
           "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
         }
       ],
-      "status": "requires_segmentation_or_timing_correction",
-      "listening_performed": false
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "explicit_review_of_whole_useful_utterance_source_context_replays_and_existing_exercise",
+      "candidate_cut_id": "09035196-027-7e20ecb9bf51-r2-d1",
+      "candidate_sha256": "1cc592e476b9829c6c956a470b33125ce81a3b7218ca957b4856acb179cd7622",
+      "proposed_name": "Bonjour et bienvenue sur Radio Zig.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Bonjour et bienvenue sur Radio Zig. Aujourd'hui, nous accueillons une spécialiste de la nutrition. Madame Aldig. Bonjour. Bonjour. Alors, vous êtes nutritionniste et vous avez beaucoup travaillé sur le thème du surpoids. Tout d'abord, quels sont les causes du surpoids ? C'est très simple. Le surpoids apparaît qu'on se crée un déséquilibre entre les apports alimentaires et les dépenses physiques d'une personne. En général, les personnes en surpoids sont des personnes qui mangent plus que leurs besoins. Il existe trois causes majeures à l'origine de ce déséquilibre. Des facteurs psychologiques, une mauvaise éducation alimentaire ou un changement dans le mode de vie. pouvez-vous nous parler un peu plus de cette dernière cause ? Bien sûr. Je donnerai un exemple. Actuellement, on observe une montée préoccupante du nombre de personnes en surpoids en Chine, au Japon, et dans certaines capitals africaines. Des chercheurs de l'Institut de recherche pour le développement ont ainsi montré que dans deux quartiers d'Ouagadougou, la capitale du Burkina Faso, 36% des femmes et 14,5% des hommes sont en surpoids. Pourquoi ? à cause principalement de l'adoption de la nourriture occidentale. Ces nouveaux consommateurs de produits tels que l'homelette, le poulet, les sandwichs, les salades, les pâtes, le pain, etc. ne savent tout simplement pas les manger. Ils n'ont jamais créé d'habitudes alimentaires en rapport à ces nouveaux produits de consommation. Merci, professeur Aldig. Nous avons l'Udivine à l'antenne, l'Udivine qui a une question pour vous, professeur. Moi, j'aimerais savoir s'il existe un régime vraiment efficace pour perdre du poids. Professeur, que répondez-vous à notre auditrice ? Eh bien... Selon nos études, 95% des régimes pour le grand public sont inefficaces et entraînent une reprise du poids initial, voire son dépassement dans les deux ans. Mais j'aimerais préciser que les régimes concernées par ce chiffre sont des recettes miracles, des prêtaportés de l'alimentaire qui proposent les mêmes recettes à tout le monde. Ils sont toujours basés sur la restriction et ne s'adaptent pas aux spécificités de la personne. Tout le contraire de ce qu'il faudrait faire. Un régime efficace est forcément individualisé et ne s'appuie pas sur un sentiment de culpabilité. C'est pourquoi les régimes que nous conseillons à nos patients prennent en compte leurs habitudes culturelles et familiales et bénéficient systématiquement d'un suivi à long terme. autant de facteurs indispensables pour ne pas reprendre du poids trop rapidement. Mais avant tout, il faut réapprendre aux patients à s'alimenter en se basant sur ces sensations. Dans nos régimes, il n'y a pas d'aliments interdits ni de sentiments de culpabilité. L'essentiel du traitement consiste à réapprendre aux patients à écouter ses besoins corporels.",
+      "source_start": 7.865986394557823,
+      "source_end": 183.43,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120756-5a3884e95c/09035196-027-7e20ecb9bf51-r2-d1/candidate.mp3"
     }
   ]
 }

@@ -20,6 +20,24 @@ class WordBoundaryPlanTests(unittest.TestCase):
     def setUp(self):
         self.plan = example()['plan']
 
+    def test_native_coarticulation_keeps_zero_time_without_creating_a_cut_inside(self):
+        plan={'schema_version':1,'words':[
+            {'text':"n'y a",'start':.2,'end':.35,'kind':'dialogue',
+             'alignment_group_method':'native_dtw_zero_duration_coarticulation',
+             'alignment_group':[{'text':"n'y",'start':.2,'end':.35},
+                                {'text':'a','start':.35,'end':.35}]},
+            {'text':"qu'une",'start':.35,'end':.7,'kind':'dialogue'}],
+            'segments':[{'id':'liaison','name':'Expression liée','tags':['test'],
+                         'first_word':0,'last_word':1,'transcript':"n'y a qu'une"}]}
+        result=plan_segments(plan,1,8000)[0]
+        self.assertEqual(result['first_word_text'],"n'y a")
+        partial=copy.deepcopy(plan);partial['segments'][0].update(last_word=0,transcript="n'y")
+        with self.assertRaisesRegex(BoundaryError,'transcription'):
+            plan_segments(partial,1,8000)
+        fake=copy.deepcopy(plan);fake['words'][0]['alignment_group'][1]['end']=.43
+        with self.assertRaisesRegex(BoundaryError,'DTW natifs'):
+            plan_segments(fake,1,8000)
+
     def test_glued_numbering_is_excluded_without_a_silence(self):
         segment = plan_segments(self.plan, 3, 8000)[0]
         self.assertEqual((segment['start_frame'], segment['end_frame']), (6400, 13600))

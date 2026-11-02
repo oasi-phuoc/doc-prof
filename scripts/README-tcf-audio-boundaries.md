@@ -13,6 +13,8 @@ Adapter cet exemple aux sources réelles. Le tableau `words` contient chaque mot
 
 Chaque segment indique les indices `first_word` et `last_word`, **inclusifs et commençant à zéro**, ainsi que `id`, `name`, `tags` et `transcript`. Réutiliser l'identifiant de dialogue existant lorsqu'il convient. La transcription doit correspondre aux mots sélectionnés ; la ponctuation reste celle des mots horodatés.
 
+Un alignement DTW peut attribuer un instant sans durée propre à un petit mot coarticulé, par exemple le « a » de « n’y a ». Ce mot n’est pas étiré artificiellement. Il reste dans un `alignment_group` indivisible avec les mots liés, leur texte et leurs horodatages natifs conservés. Le groupe a une durée positive ; les coupes portent sur ses bords, jamais à l’intérieur. Un groupe incohérent avec ses horodatages ou sa transcription est refusé.
+
 Les marges demandées sont de 80 ms avant et 120 ms après par défaut, au maximum 250 ms. Elles sont réduites à la fin du mot précédent et au début du mot suivant. Un chevauchement des horodatages ou une frontière impossible à représenter sans rogner un mot est refusé. Le découpage ne repose pas sur les silences. Une incertitude doit être inscrite dans `boundary_uncertainty`, ou `uncertain: true` sur le mot. Une confiance inférieure à 0,9 est aussi bloquante, y compris sur les voisins immédiats.
 
 ```sh

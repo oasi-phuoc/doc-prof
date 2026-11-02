@@ -134,8 +134,28 @@ def plan_segments(plan, duration, sample_rate):
     for index, word in enumerate(words):
         require(isinstance(word, dict), f'Mot {index} invalide.')
         text = word.get('text')
-        require(isinstance(text, str) and text.strip() and not re.search(r'\s', text),
-                f'Mot {index} : un seul mot horodaté est requis.')
+        group = word.get('alignment_group')
+        require(isinstance(text, str) and text.strip() and
+                (not re.search(r'\s', text) or isinstance(group, list)),
+                f'Mot {index} : un seul mot ou groupe de coarticulation documenté est requis.')
+        if group is not None:
+            require(isinstance(group, list) and len(group) >= 2 and
+                    word.get('alignment_group_method') == 'native_dtw_zero_duration_coarticulation',
+                    f'Mot {index}: groupe de coarticulation non documenté.')
+            group_end = None
+            for member in group:
+                require(isinstance(member, dict) and isinstance(member.get('text'), str) and
+                        member['text'] and not re.search(r'\s', member['text']),
+                        f'Mot {index}: membre du groupe invalide.')
+                first = number(member.get('start'), 'alignment_group.start')
+                last = number(member.get('end'), 'alignment_group.end')
+                require(first <= last and (group_end is None or first >= group_end),
+                        f'Mot {index}: groupe de coarticulation non monotone.')
+                group_end = last
+            require(text == ' '.join(member['text'] for member in group) and
+                    word.get('start') == group[0]['start'] and word.get('end') == group[-1]['end'] and
+                    any(member['start'] == member['end'] for member in group),
+                    f'Mot {index}: groupe différent des horodatages DTW natifs.')
         # A missing space cannot turn an announcement and dialogue into one cuttable word.
         web_token = bool(re.match(r'(?i)(?:https?://|www\.)', text) or '@' in text)
         require(web_token or re.fullmatch(r'\d+(?:[.,:/-]\d+)+[.,!?;:]?', text) or

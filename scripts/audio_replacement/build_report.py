@@ -45,8 +45,9 @@ def main():
                        'original_filename','sha256','size_bytes','duration_seconds','sample_rate','channels']})
         sources[-1]['original_relative_path'] = 'incoming/'+source['level']+'/'+source['original_filename']
         sources[-1]['integrity'] = 'full_ffmpeg_decode_passed' if not source.get('integrity_errors') else 'requires_review'
-        asr = read(work/'source-asr-parakeet'/f'{sid}.json')
         plan = read(plan_by_id[sid]['plan_path'])
+        asr_path=Path(plan['provenance'].get('asr_path',work/'source-asr-parakeet'/f'{sid}.json'))
+        asr = read(asr_path)
         transcripts.append({'source_id':sid, 'source_sha256':source['sha256'], 'text':asr['text'],
                             'quality':'automatic_draft_requires_listening',
                             'word_timing_method':asr['word_timing_method'], 'words':plan['words']})
@@ -129,6 +130,36 @@ def main():
             if row.get('candidate_mp3'):
                 row['candidate_work_file']=str(Path(row.pop('candidate_mp3')).relative_to(work))
         write(out/'remplacements-prepares.json',proposals)
+    baseline_path=work/'refinement-work/baseline.json'
+    refinement=None
+    if baseline_path.exists():
+        baseline=read(baseline_path)
+        by_ref={row['old_ref']:row for row in proposals.get('proposals',[])}
+        resolved=[ref for ref in baseline['unrefined_refs'] if by_ref.get(ref,{}).get('candidate_work_file')]
+        realigned=[]
+        for item in baseline['blocked_sources']:
+            sid=item['source_id'];record=plan_by_id[sid];plan=read(record['plan_path'])
+            realigned.append({'source_id':sid,'previous_issues':item['issues'],
+                              'geometry_status':record['plan_integrity'],
+                              'timing_method':plan['provenance']['word_timing_method'],
+                              'coarticulation_groups':sum(bool(w.get('alignment_group')) for w in plan['words']),
+                              'asr_file_sha256':plan['provenance']['asr_sha256'],
+                              'listening_performed':False})
+        refinement={'schema_version':1,'requested_passages':len(baseline['unrefined_refs']),
+                    'resolved_passages':len(resolved),'remaining_passages':len(baseline['unrefined_refs'])-len(resolved),
+                    'resolved_old_refs':resolved,'realigned_sources':realigned,
+                    'remaining_blocked_sources':sum(r['geometry_status']!='passed' for r in realigned),
+                    'listening_performed':False,'production_modified':False}
+        write(out/'reprises-et-realignements.json',refinement)
+    assembly_path=work/'refinement-work/assembled-candidates.json'
+    assemblies=read(assembly_path)['assemblies'] if assembly_path.exists() else []
+    portable_assemblies=[]
+    for item in assemblies:
+        row=dict(item)
+        row['work_relative_file']=str(Path(row.pop('file')).relative_to(work))
+        row['work_relative_part_manifest']=str(Path(row.pop('part_manifest')).relative_to(work))
+        portable_assemblies.append(row)
+    write(out/'assemblages.json',{'schema_version':1,'assemblies':portable_assemblies,'listening_performed':False})
     with (out/'remplacements-proposes.csv').open('w',encoding='utf-8',newline='') as handle:
         writer = csv.DictWriter(handle,fieldnames=list(csv_rows[0]),lineterminator='\n')
         writer.writeheader();writer.writerows(csv_rows)
@@ -142,18 +173,19 @@ def main():
                'prepared_sources':prepared.get('prepared_sources',0),
                'prepared_segments':prepared.get('prepared_segments',0),
                'mp3_candidates':mp3_index.get('mp3_count',0),
+               'assembled_mp3_candidates':len(assemblies),
                'preparation_complete':prepared.get('complete',False),
                'signal_confirmed_old_refs':len({row['old_ref'] for row in acoustic['evidence']
                                               if row['status']=='signal_source_confirmed'}),
                'old_refs_with_prepared_candidate':proposals.get('references_with_prepared_candidate',0),
                'old_refs_requiring_more_segmentation':proposals.get('references_requiring_more_segmentation',0),
                'candidate_alias_groups_to_review':proposals.get('candidate_alias_groups',0),
+               'requested_refinements':refinement,
                'current_old_refs':matches['summary']['current_unique_audio_urls'],
                'lexical_matching':matches['summary']['status_counts'],
                'validated_by_listening':0, 'live_database_inspected':False, 'production_modified':False,
                'full_replacement_complete':False, 'further_sources_expected':True,
                'blockers':['Écoute effective des quatre frontières et du fichier final non réalisée ici.',
-                           'Horodatages contradictoires à corriger sur les sources signalées.',
                            'Correspondances non résolues ou ambiguës ; aucune affectation automatique.',
                            'Accès à la base Cloudflare D1 distante non configuré ; recettes non migrées.']}
     write(out/'etat.json',summary)

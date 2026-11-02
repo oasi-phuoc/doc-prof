@@ -9,6 +9,7 @@ import sys
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tcf_audio_replacement import remap_tree
+from tcf_audio_boundaries import sha256
 
 
 def read(path):
@@ -26,6 +27,10 @@ def main():
               if r.get('manifest')}
     mp3={r['source_id']:r for r in read(work/'staged-boundaries-work/mp3-index.json')['sources']}
     matches=read(work/'source-dialogue-candidates.json')['matches']
+    assignment_path=work/'refinement-work/assignment-overrides.json'
+    overrides=read(assignment_path).get('assignments',{}) if assignment_path.exists() else {}
+    assembly_path=work/'refinement-work/assembled-candidates.json'
+    assemblies={r['source_id']:r for r in read(assembly_path)['assemblies']} if assembly_path.exists() else {}
     proposals=[];replacements=[]
     for match in matches:
         confirmed=[(c,signals[(match['old_ref'],c['source_id'])]) for c in match['candidates']
@@ -47,8 +52,28 @@ def main():
                 old_duration=signal['old_duration_decoded']
                 if coverage>=.9 and duration<=old_duration*1.6+3:
                     choices.append(segment)
-            if len(choices)==1:
+            explicit=overrides.get(match['old_ref'])
+            if explicit:
+                if explicit['source_id']!=sid:
+                    raise ValueError('Reviewed assignment points to another source')
+                if explicit.get('assembly'):
+                    delivery=assemblies[sid]
+                    segment={'id':delivery['id'],'transcript':delivery['transcription'],
+                             'start_seconds':delivery['parts'][0]['source_start_seconds'],
+                             'end_seconds':delivery['parts'][-1]['source_end_seconds']}
+                else:
+                    segment=next(s for s in manifest['segments'] if s['id']==explicit['candidate_cut_id'])
+                    delivery=next(r for r in mp3[sid]['segments'] if r['id']==segment['id'])
+                if sha256(delivery['file'])!=delivery['sha256']:
+                    raise ValueError('Reviewed candidate bytes have changed')
+                row['assignment_method']=explicit['reason']
+                if explicit.get('assembly'):
+                    row['source_ranges']=delivery['parts']
+            elif len(choices)==1:
                 segment=choices[0];delivery=next(r for r in mp3[sid]['segments'] if r['id']==segment['id'])
+            else:
+                segment=None
+            if segment is not None:
                 row.update(status='prepared_candidate_requires_listening_and_question_review',
                            candidate_cut_id=segment['id'],candidate_mp3=delivery['file'],
                            candidate_sha256=delivery['sha256'],proposed_name=delivery['name'],

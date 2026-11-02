@@ -43,7 +43,8 @@ def native_words(asr):
             begin = chunk['start'] + min(chunk['timestamps'][i] for i in lexical)
             end = chunk['start'] + max(chunk['timestamps'][i] + chunk['durations'][i] for i in lexical)
         rounded_begin, rounded_end = round(begin, 6), round(end, 6)
-        if rounded_end <= rounded_begin:
+        dtw = 'DTW' in asr.get('word_timing_method', '')
+        if rounded_end <= rounded_begin and not dtw:
             rounded_end = rounded_begin + .08
             corrections.append({'word_index': index, 'reason': 'zero_duration_lexical_token_estimated_80ms',
                                 'raw_start': original['start'], 'raw_end': original['end'],
@@ -66,17 +67,59 @@ def native_words(asr):
             corrections.append({'word_index': index, 'reason': 'native_float_overlap_only',
                                 'overlap_seconds': overlap, 'draft_boundary': boundary})
             previous['end'] = current['start'] = boundary
+    if 'DTW' in asr.get('word_timing_method', ''):
+        words, grouped = coarticulation_groups(words)
+        corrections.extend(grouped)
+    return words, corrections
+
+
+def coarticulation_groups(words):
+    """Keep zero-duration native emissions in indivisible spoken groups.
+
+    Do not invent a duration or cut inside a linked expression such as "n'y a".
+    All original words and native times remain attached to the group.
+    """
+    words = [dict(word) for word in words]
+    corrections = []
+    index = 0
+    while index < len(words):
+        word = words[index]
+        if word['start'] < word['end']:
+            index += 1
+            continue
+        if (index and words[index-1]['end'] == word['start'] and
+                words[index-1]['start'] < word['start'] and
+                not re.search(r'[.!?]$', words[index-1]['text'])):
+            first, last = index-1, index
+        elif (index+1 < len(words) and words[index+1]['start'] == word['end'] and
+                words[index+1]['end'] > word['end']):
+            first, last = index, index+1
+        else:
+            raise BoundaryError(f'Coarticulation DTW isolée sans groupe positif : {word["text"]}.')
+        selected = words[first:last+1]
+        members = [member for item in selected for member in item.get('alignment_group',
+                   [{key:item[key] for key in ('text','start','end','asr_word_index')}])]
+        grouped = dict(selected[0])
+        grouped.update(text=' '.join(member['text'] for member in members),
+                       start=members[0]['start'], end=members[-1]['end'],
+                       alignment_group=members,
+                       alignment_group_method='native_dtw_zero_duration_coarticulation',
+                       asr_word_indices=[member['asr_word_index'] for member in members])
+        corrections.append({'reason':'native_dtw_coarticulation_group_no_artificial_duration',
+                            'members':members})
+        words[first:last+1] = [grouped]
+        index = max(0,first)
     return words, corrections
 
 
 def labels(words):
     result = []
-    heads = {'document', 'dialogue', 'exercice', "l'exercice", 'activite', 'piste', 'partie'}
+    heads = {'document', 'dialogue', 'annonce', 'exercice', "l'exercice", 'activite', 'piste', 'partie'}
     for index in range(len(words)-1):
         head, following = norm(words[index]['text']), norm(words[index+1]['text'])
         if head in heads and re.fullmatch(r'\d{1,3}|un|une|deux|trois|quatre|cinq|six', following):
             result.append({'first_word': index, 'last_word': index+1, 'label': f'{head} {following}',
-                           'type': 'document' if head in ('document', 'dialogue') else 'exercise'})
+                           'type': 'document' if head in ('document', 'dialogue', 'annonce') else 'exercise'})
     # Standalone sequence 1/2/3 is a candidate only with gaps on both sides.
     # Numbers embedded in a phone, price, date or sentence are never split here.
     prior_sequence = 0

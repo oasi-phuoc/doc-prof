@@ -4,17 +4,19 @@ Le traitement des sources est préparé. **Le remplacement de la bibliothèque d
 
 Le lot contient 408 originaux distincts : 180 A1, 130 A2 et 98 B1, soit 8 h 42 min 43 s. Les 408 fichiers passent un décodage intégral et disposent d’une transcription automatique conservant les horodatages natifs. Les originaux et tous les fichiers de travail restent conservés.
 
-Le repérage propose 806 segments. Sur 399 sources, 788 candidats FLAC sans perte et leurs MP3 sont générés. Pour chaque FLAC et fenêtre de contrôle, les échantillons décodés sont comparés exactement à l’original ; chaque MP3 est entièrement décodé pour vérifier son intégrité. Neuf sources présentent des horodatages contradictoires et restent signalées à réaligner. Ces contrôles techniques n’établissent ni l’exactitude de la transcription ni la qualité audible des frontières.
+Le repérage corrigé propose 875 segments sur les 408 sources. Les 875 candidats FLAC sans perte et leurs MP3 sont générés. Cinq séries disposent aussi d’un assemblage sans annonces de numérotation, dont le PCM correspond exactement aux passages utiles concaténés. Pour chaque FLAC et fenêtre de contrôle, les échantillons décodés sont comparés exactement à l’original ; chaque MP3 est entièrement décodé pour vérifier son intégrité. Les neuf sources précédemment bloquées ont été réalignées avec les horodatages natifs DTW de Whisper, sur une grille de 20 ms. Les mots coarticulés sans durée propre restent groupés, avec leurs horodatages natifs conservés ; aucune coupe ne passe à l’intérieur de ces groupes. Ces contrôles techniques n’établissent ni l’exactitude de la transcription ni la qualité audible des frontières.
 
-617 anciennes références sont rapprochées des sources par comparaison du signal. Parmi elles, 506 disposent d’un candidat préparé correspondant au passage ; 111 nécessitent encore une segmentation ou un réalignement. Huit groupes d’anciens chemins proposent le même candidat et demandent un examen des alias. Les autres références de la bibliothèque actuelle restent à identifier. Une absence de correspondance ne prouve pas que l’original manque.
+617 anciennes références sont rapprochées des sources par comparaison du signal. Les 617 disposent maintenant d’un candidat préparé correspondant au passage. Les 111 découpes précédemment signalées sont reprises : premières lectures complètes sélectionnées, consignes retirées, messages séparés et fins de phrases complétées. Onze groupes d’anciens chemins proposent le même candidat et demandent un examen des alias. Les autres références de la bibliothèque actuelle restent à identifier. Une absence de correspondance ne prouve pas que l’original manque.
 
 **Aucune écoute réelle n’est déclarée.** Les quatre fenêtres de frontière et les fichiers complets sont prêts à contrôler. Les transcriptions et les découpes restent des propositions. Un second moteur a examiné huit sources sensibles : des divergences sur des noms, dates, heures et numéros de téléphone sont conservées pour vérification. Les champs de contrôle ne sont jamais remplis automatiquement comme si une écoute avait eu lieu.
 
 ## Registres
 
+- [Reprises des 111 passages et réalignement des 9 sources](reprises-et-realignements.json) : suivi des cas demandés, désormais sans blocage de découpe.
 - [État chiffré](etat.json) : état réel du traitement, couverture et blocages.
 - [Sources reçues](sources.json) : niveaux, noms originaux, identifiants de pièces jointes, durées et SHA-256.
 - [Transcriptions et mots horodatés](transcriptions.json) : brouillons automatiques et ajustements temporels déclarés.
+- [Assemblages sans numérotation](assemblages.json) : cinq séries reconstituées, avec preuve PCM et liens vers chaque frontière.
 - [Découpes proposées](decoupes.json) : frontières, identifiants des candidats, noms/tags proposés et empreintes des fichiers générés.
 - [Correspondances avec les exercices](correspondances.json) et [CSV](remplacements-proposes.csv) : identifiants d’exercices conservés, passages candidats et alertes sur les réponses.
 - [Preuves de comparaison du signal](preuves-signal.json) : ancres audio, corrélations et décalages dans les originaux.
