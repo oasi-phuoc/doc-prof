@@ -12,6 +12,7 @@ import { isQuiSuisJeKind, QUI_SUIS_JE_KIND_IDS } from './qui-suis-je'
 import { isNationaliteKind, NATIONALITE_KIND_IDS } from './nationalite'
 import { isProvenanceKind, PROVENANCE_KIND_IDS } from './provenance'
 import { isFamilleKind, FAMILLE_KIND_IDS } from './famille'
+import { hasGrammarCommunication } from './communication'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
 function theoryDerivedSubthemes(): Array<{
@@ -80,6 +81,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
       const id = gramExerciseTypeId(sub.id, kind.id)
       if (
         bankSize(id) <= 0 &&
+        !hasGrammarCommunication(sub.id, kind.id) &&
         !(sub.id === 'a1' && isQuiSuisJeKind(kind.id)) &&
         !(sub.id === 'a3' && isNationaliteKind(kind.id)) &&
         !(sub.id === 'a6' && isProvenanceKind(kind.id)) &&

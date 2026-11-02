@@ -62,15 +62,15 @@ export function quiSuisJeBankCap(kindId: QuiSuisJeKindId): number {
     case 'repondre-phrase':
       return QUESTIONS_IDENTITE.length
     case 'ecrire-question':
-      return 24
+      return 7
     case 'formulaire':
       return TPF_FORMULAIRES.length
     case 'ordre':
       return ORDRE_PHRASES.length
     case 'co-audio':
-      return CO_SETS.length
+      return Math.max(...CO_SETS.map((set) => set.questions.length))
     case 'ce-texte':
-      return CE_SETS.length
+      return Math.max(...CE_SETS.map((set) => set.questions.length))
     case 'portrait':
       return PORTRAITS.length
     case 'po-images':
@@ -133,7 +133,7 @@ const INFO_SLOTS = [
     prompt: 'J’ai ___ (âge) ans.',
     hint: 'âge',
     answer: '(votre âge)',
-    options: ['19 ans', '24 ans', '31 ans'],
+    options: ['19', '24', '31'],
   },
   {
     prompt: 'Je suis né·e le ___ (date de naissance).',
@@ -142,10 +142,10 @@ const INFO_SLOTS = [
     options: ['12.03.2001', '04.11.1998', '28.07.2004'],
   },
   {
-    prompt: 'Je viens de ___ (pays).',
+    prompt: 'Je viens ___ (provenance).',
     hint: 'pays',
-    answer: '(votre pays)',
-    options: ['Portugal', 'Brésil', 'Ukraine'],
+    answer: '(votre pays avec de, du, d’ ou des)',
+    options: ['du Portugal', 'du Brésil', 'd’Ukraine'],
   },
   {
     prompt: 'Je parle ___ (langue).',
@@ -187,6 +187,8 @@ const QUESTIONS_IDENTITE = [
   { q: 'Quelle est votre nationalité ?', a: 'Je suis …' },
   { q: 'Quelle est votre profession ?', a: 'Je suis …' },
   { q: 'Quelle est votre date de naissance ?', a: 'Je suis né·e le …' },
+  { q: 'Dans quelle ville habitez-vous ?', a: 'J’habite à …' },
+  { q: 'Quelles langues parlez-vous ?', a: 'Je parle …' },
 ]
 
 const ORDRE_PHRASES = [
@@ -614,13 +616,14 @@ function fillQuestion(
   preferQcm: boolean,
 ): TcfQuestion {
   const lignesForme = { nb_lignes: 0 as const, reponse_modele: answer }
-  if (!options || options.length < 2) {
+  // Les informations personnelles libres n’ont pas de bonne option prédéfinie.
+  if (!options || options.length < 2 || !options.includes(answer)) {
     return { enonce, type_reponse: 'lignes', ...lignesForme }
   }
   const choix = options.slice(0, 3).map((texte, index) => ({
     id: CHOICE_IDS[index] ?? `c${index}`,
     texte,
-    correct: texte === answer || (!options.includes(answer) && index === 0),
+    correct: texte === answer,
   }))
   if (preferQcm) {
     return {
@@ -667,7 +670,7 @@ export type QuiSuisJeFormUi = 'none' | 'margin3' | 'header2'
 
 export function quiSuisJeFormUi(kindId: string): QuiSuisJeFormUi {
   if (kindId === 'co-audio' || kindId === 'ce-texte') return 'margin3'
-  if (kindId === 'infos-perso' || kindId === 'verbe-pastilles') return 'header2'
+  if (kindId === 'verbe-pastilles') return 'header2'
   return 'none'
 }
 

@@ -7,11 +7,10 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 | `catalog.ts` | Thèmes SCAI + types théorie + types exercices |
 | `theory/*.ts` | Contenu FALC français |
 | `exercises/` | kinds, sous-thèmes, banques, générateur |
-| `exercises/bank/word-a1.ts` / `word-a2.ts` | Tous les exercices des Word auteur (Grammaire.docx / Grammaire Suite.docx) |
-| `exercises/bank/lessons-word-*.ts` | Relu mot à mot (CSC : se présenter, décrire, jours / mois / heures / invitation / négation / évaluation / logement / maison) |
-| `exercises/bank/lessons-core.ts` / `lessons-rest.ts` | Compléments ClairFLE (mêmes types) |
-| `exercises/bank/lessons-soutien.ts` | Banques de phrases de la section grammaire soutien-scolaire (fusion unique, en dernier) |
-| `scripts/import-grammaire-soutien-phrases.mjs` | Relance l’import depuis `SOUTIEN_ROOT` |
+| `exercises/bank/lessons-revised.ts` | 104 banques de 50 phrases, une par sous-thème repris |
+| `exercises/bank/lessons-protected.ts` | 8 banques d’introduction conservées et complétées à 50 |
+| `exercises/communication-data.json` | 160 situations, dix variantes de CE/PE/PO par thème communicatif |
+| `scripts/grammar_curriculum/` | Sources éditoriales et reconstruction des contenus |
 | `generate.ts` | Théorie **ou** exercices selon le type |
 
 ## UI
@@ -20,22 +19,11 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 2. **Sous-thème** = notion (Être, Avoir, -er… / Passé composé… / fiche théorie)
 3. **Type** = **Théorie** + exercices du sous-thème (libellés de leçon)
 
-Les énoncés d’exercices reprennent les phrases des Word auteur (`Grammaire.docx`, `Grammaire Suite.docx`) et des fiches CSC (exercices seulement, pas la théorie). Les MP3 CSC sont dans `public/lib/audio/grammaire/`. Les fiches de théorie FALC restent le type **Théorie**. Les banques ClairFLE et les phrases de la section grammaire soutien-scolaire complètent les mêmes types : fusion par `subId` + kind, sans doublon de prompt, libellés du premier lot (Word / ClairFLE).
+Les 105 fiches de théorie hors « Entrer en contact » et « Se présenter » ont été réécrites en français facile. La présentation des blocs est conservée. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
 
 ## Types d’exercice (kinds)
 
-1. Choisissez la bonne conjugaison (QCM)
-2. Conjuguez le verbe (ligne)
-3. Choisissez le verbe correct (QCM)
-4. Mettre au pluriel
-5. Mettre au singulier
-6. Mettre à la forme négative
-7. Mettre à la forme affirmative
-8. Écrire une phrase
-9. Associer
-10. Remettre dans l’ordre
-11. Transformer la phrase
-12. Corriger la phrase
+Les types affichés sont les banques disponibles pour le sous-thème. Les anciennes catégories restent reconnues pour les activités d’introduction existantes. Les nouvelles banques regroupent QCM et réponse inline ; la communication ajoute « Lire une situation », « Écrire une phrase utile » et « Dire une phrase utile ».
 
 Les libellés du sélecteur viennent de `GramLesson.label` (ex. « Compléter avec être »).
 

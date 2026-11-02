@@ -1,216 +1,704 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-temps. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const tempsDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'e2',
-    typeId: 'gram-e2-theorie',
-    index: 1,
-    title: 'Le moment',
-    topic: 'gram-temps',
-    public: 'A1',
-    objectif: 'Situer un moment : heure, date, mois, saison.',
-    blocks: sheet({
-      title: 'Le moment',
-      intro: 'Je situe un {g}moment{/g} dans le temps.',
-      regarder: [
-        '{tab:1<}Il est {c}8 h{/c}. | J’ai cours {c}à 8 h{/c}.',
-        '{tab:1<}Nous sommes {c}en mars{/c}. | C’est {c}en 2026{/c}.',
-        '{tab:1<}{c}Au{/c} printemps. | {c}En{/c} été.',
-      ],
-      expliquer: [
-        p('Pour l’heure, je dis {c}il est{/c} + l’heure.'),
-        p('Pour un rendez-vous, je dis {c}à{/c} + l’heure.'),
-        p('{c}Vers{/c} 8 h = à peu près 8 h.'),
-        ligne,
-        p('Pour un mois ou une année, j’utilise {c}en{/c}.'),
-        p('Pour le printemps, j’utilise {c}au{/c}.'),
-        p('Les autres saisons prennent {c}en{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Moment{/g} | {g}Exemple{/g}',
-          '{tab:1>}Heure | Il est {c}8 h 30{/c}.',
-          '{tab:1>}Rendez-vous | {c}À{/c} 14 h.',
-          '{tab:1>}Mois | {c}En{/c} décembre.',
-          '{tab:1>}Année | {c}En{/c} 2026.',
-          '{tab:1>}Printemps | {c}Au{/c} printemps.',
-          '{tab:1>}Autre saison | {c}En{/c} hiver.',
-        ]),
-      ],
-      retenir: [
-        p('À + heure. En + mois ou année.'),
-        p('Au printemps. En été, en automne, en hiver.'),
-        ligne,
-        table(
-          ['Moment', 'Mot', 'Exemple'],
-          [
-            ['heure', 'à', 'à 8 h'],
-            ['mois', 'en', 'en mars'],
-            ['année', 'en', 'en 2026'],
-            ['printemps', 'au', 'au printemps'],
-            ['été / automne / hiver', 'en', 'en été'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Printemps prend au. Les autres saisons prennent en.'),
-        ex([
-          { text: 'Je dis : « {c}Au{/c} printemps. »', wrong: 'En printemps.' },
-        ]),
-      ],
-    }),
+    "id": "e2",
+    "typeId": "gram-e2-theorie",
+    "index": 1,
+    "title": "Le moment",
+    "topic": "gram-temps",
+    "public": "A1",
+    "objectif": "Situer un moment : heure, date, mois, saison.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le moment"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je situe un événement à une heure ou à une date."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Le cours commence {c}à{/c} neuf heures.",
+              "Je pars {c}en{/c} juillet.",
+              "La bibliothèque ferme {c}le{/c} lundi."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Pour une heure, j’utilise à : à huit heures."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour une date, je peux dire le quinze juin."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour un mois ou une année, j’utilise en : en septembre, en 2027."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je dis au printemps, mais en été, en automne et en hiver."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Lundi peut annoncer le prochain lundi ; le lundi indique souvent une habitude."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Aujourd’hui est le jour présent ; hier est le jour précédent ; demain est le jour suivant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avant et après situent un événement par rapport à un autre."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À partir de indique un début ; jusqu’à indique une limite."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue une date précise et une habitude."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Pour une heure, j’utilise à : à huit heures."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Moment",
+              "Mot",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "heure",
+                "à",
+                "à 8 h"
+              ],
+              [
+                "mois",
+                "en",
+                "en mars"
+              ],
+              [
+                "année",
+                "en",
+                "en 2026"
+              ],
+              [
+                "printemps",
+                "au",
+                "au printemps"
+              ],
+              [
+                "été / automne / hiver",
+                "en",
+                "en été"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "En français, les jours et les mois s’écrivent normalement sans majuscule."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'e3',
-    typeId: 'gram-e3-theorie',
-    index: 2,
-    title: 'La durée',
-    topic: 'gram-temps',
-    public: 'A1 / A2',
-    objectif: 'Choisir depuis, pendant, pour ou il y a.',
-    blocks: sheet({
-      title: 'La durée',
-      intro: 'Je dis {g}combien de temps{/g} dure une action.',
-      regarder: [
-        '{tab:1<}J’habite ici {c}depuis{/c} 2020. | J’ai travaillé {c}pendant{/c} 2 ans.',
-        '{tab:1<}Je pars {c}pour{/c} une semaine. | Je suis arrivé {c}il y a{/c} deux jours.',
-        '{tab:1<}Elle étudie {c}depuis{/c} septembre. | Il a plu {c}pendant{/c} une heure.',
-      ],
-      expliquer: [
-        p('{c}Depuis{/c} = l’action a commencé et continue.'),
-        p('{c}Pendant{/c} = la durée est finie, ou totale.'),
-        p('{c}Pour{/c} = la durée est prévue, souvent au futur.'),
-        p('{c}Il y a{/c} = un moment déjà passé.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Sens{/g}',
-          '{tab:1>}depuis | commencé, encore vrai',
-          '{tab:1>}pendant | durée finie',
-          '{tab:1>}pour | durée prévue',
-          '{tab:1>}il y a | moment passé',
-        ]),
-      ],
-      retenir: [
-        p('Je choisis le mot selon le sens, pas au hasard.'),
-        ligne,
-        table(
-          ['Mot', 'Sens', 'Exemple'],
-          [
-            ['depuis', 'continue', 'depuis lundi'],
-            ['pendant', 'durée finie', 'pendant deux heures'],
-            ['pour', 'durée prévue', 'pour trois jours'],
-            ['il y a', 'moment passé', 'il y a un an'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Depuis ≠ pendant.'),
-        ex([
-          { text: 'Je dis : « J’habite ici {c}depuis{/c} 2020. »', wrong: 'J’habite ici pendant 2020.' },
-        ]),
-      ],
-    }),
+    "id": "e3",
+    "typeId": "gram-e3-theorie",
+    "index": 2,
+    "title": "La durée",
+    "topic": "gram-temps",
+    "public": "A1 / A2",
+    "objectif": "Choisir depuis, pendant, pour ou il y a.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "La durée"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis combien de temps dure une situation ou quand elle a commencé."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je travaille ici {c}depuis{/c} mars.",
+              "Elle est partie {c}il y a{/c} deux jours.",
+              "Je reviens {c}dans{/c} une heure."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Depuis relie un début dans le passé à une situation encore vraie."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec depuis, le verbe est souvent au présent : j’habite ici depuis deux ans."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il y a situe un événement terminé dans le passé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pendant donne la durée d’une action ou d’une période."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour indique souvent une durée prévue : je pars pour trois jours."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "En indique le temps nécessaire pour finir : je fais le trajet en vingt minutes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dans situe un événement à venir : je pars dans une heure."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je regarde si l’action continue, est terminée ou est prévue."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux poser la question depuis quand ou pendant combien de temps."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Depuis relie un début dans le passé à une situation encore vraie."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Sens",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "depuis",
+                "continue",
+                "depuis lundi"
+              ],
+              [
+                "pendant",
+                "durée finie",
+                "pendant deux heures"
+              ],
+              [
+                "pour",
+                "durée prévue",
+                "pour trois jours"
+              ],
+              [
+                "il y a",
+                "moment passé",
+                "il y a un an"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Depuis deux jours et il y a deux jours ne donnent pas la même information."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'e4',
-    typeId: 'gram-e4-theorie',
-    index: 3,
-    title: 'La fréquence',
-    topic: 'gram-temps',
-    public: 'A1',
-    objectif: 'Dire si une action est rare ou fréquente.',
-    blocks: sheet({
-      title: 'La fréquence',
-      intro: 'Je dis si une action est {g}rare{/g} ou {g}fréquente{/g}.',
-      regarder: [
-        '{tab:1<}Je prends {c}toujours{/c} le bus. | Je mange {c}souvent{/c} à midi.',
-        '{tab:1<}Je sors {c}parfois{/c} le soir. | Je voyage {c}rarement{/c}.',
-        '{tab:1<}Je vais au cours {c}tous les jours{/c}. | {c}Une fois{/c} par semaine.',
-      ],
-      expliquer: [
-        p('Le mot de fréquence se place souvent {c}devant le verbe{/c}.'),
-        p('Je peux aussi dire un rythme : tous les jours, le lundi…'),
-        p('{c}Jamais{/c} va avec {c}ne{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Exemple{/g}',
-          '{tab:1>}toujours | Je travaille {c}toujours{/c}.',
-          '{tab:1>}souvent | Elle vient {c}souvent{/c}.',
-          '{tab:1>}parfois | Nous sortons {c}parfois{/c}.',
-          '{tab:1>}rarement | Il téléphone {c}rarement{/c}.',
-          '{tab:1>}jamais | Je ne fume {c}jamais{/c}.',
-        ]),
-      ],
-      retenir: [
-        p('Toujours, souvent, parfois, rarement, jamais.'),
-        p('Jamais se place comme pas : ne … jamais.'),
-        ligne,
-        table(
-          ['Fréquence', 'Exemple'],
-          [
-            ['toujours', 'Je prends toujours le bus.'],
-            ['souvent', 'Elle vient souvent.'],
-            ['parfois', 'Nous sortons parfois.'],
-            ['tous les jours', 'Je cours tous les jours.'],
-            ['ne … jamais', 'Je ne fume jamais.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Jamais remplace pas. Je ne dis pas « ne pas jamais ».'),
-        ex([
-          { text: 'Je dis : « Je ne viens {c}jamais{/c}. »', wrong: 'Je viens jamais. (à l’écrit)' },
-        ]),
-      ],
-    }),
+    "id": "e4",
+    "typeId": "gram-e4-theorie",
+    "index": 3,
+    "title": "La fréquence",
+    "topic": "gram-temps",
+    "public": "A1",
+    "objectif": "Dire si une action est rare ou fréquente.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "La fréquence"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis si une action se répète souvent ou rarement."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je marche {c}souvent{/c}.",
+              "Il vient {c}deux fois par semaine{/c}.",
+              "Elle ne fume {c}jamais{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Toujours indique une action très régulière."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Souvent indique une répétition fréquente."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Parfois et de temps en temps indiquent une répétition occasionnelle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Rarement indique une répétition peu fréquente."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Jamais s’emploie avec ne ou n’ : je ne viens jamais le lundi."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Chaque jour, tous les jours et une fois par semaine donnent une fréquence précise."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au présent, l’adverbe se place souvent après le verbe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au passé composé, souvent et toujours se placent souvent entre l’auxiliaire et le participe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue une fois, deux fois et plusieurs fois."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Toujours indique une action très régulière."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Fréquence",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "toujours",
+                "Je prends toujours le bus."
+              ],
+              [
+                "souvent",
+                "Elle vient souvent."
+              ],
+              [
+                "parfois",
+                "Nous sortons parfois."
+              ],
+              [
+                "tous les jours",
+                "Je cours tous les jours."
+              ],
+              [
+                "ne … jamais",
+                "Je ne fume jamais."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je n’ajoute pas pas dans je ne viens jamais."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'e5',
-    typeId: 'gram-e5-theorie',
-    index: 4,
-    title: 'La succession',
-    topic: 'gram-temps',
-    public: 'A1 / A2',
-    objectif: 'Dire l’ordre des actions.',
-    blocks: sheet({
-      title: 'La succession',
-      intro: 'Je dis {g}l’ordre{/g} des actions.',
-      regarder: [
-        '{tab:1<}{c}D’abord{/c}, je me lève. | {c}Puis{/c} je prends le bus.',
-        '{tab:1<}{c}Ensuite{/c}, je travaille. | {c}Enfin{/c}, je rentre.',
-        '{tab:1<}{c}Avant{/c} le cours. | {c}Après{/c} le repas.',
-      ],
-      expliquer: [
-        p('Je raconte dans l’ordre : d’abord, puis, ensuite, enfin.'),
-        p('{c}Avant{/c} et {c}après{/c} se placent devant un nom ou un infinitif.'),
-        p('Une idée par phrase. C’est plus clair.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Place dans l’histoire{/g}',
-          '{tab:1>}d’abord | le début',
-          '{tab:1>}puis / ensuite | la suite',
-          '{tab:1>}après | plus tard',
-          '{tab:1>}enfin | la fin',
-        ]),
-      ],
-      retenir: [
-        p('D’abord → puis ou ensuite → enfin.'),
-        ligne,
-        table(
-          ['Mot', 'Exemple'],
-          [
-            ['d’abord', 'D’abord, je me lave.'],
-            ['puis', 'Puis je déjeune.'],
-            ['ensuite', 'Ensuite, je pars.'],
-            ['avant + nom', 'avant le cours'],
-            ['après + infinitif', 'après manger'],
-            ['enfin', 'Enfin, je dors.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Avant et après ne se remplacent pas.'),
-        ex([
-          { text: 'Je dis : « {c}Après{/c} le cours, je rentre. »', wrong: 'Avant le cours, je rentre. (si c’est après)' },
-        ]),
-      ],
-    }),
-  },
+    "id": "e5",
+    "typeId": "gram-e5-theorie",
+    "index": 4,
+    "title": "La succession",
+    "topic": "gram-temps",
+    "public": "A1 / A2",
+    "objectif": "Dire l’ordre des actions.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "La succession"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente les actions dans un ordre clair."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "{c}D’abord{/c}, je prépare mon sac.",
+              "Je ferme la porte {c}avant de{/c} partir.",
+              "{c}Enfin{/c}, je rentre chez moi."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "D’abord introduit la première étape."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ensuite et puis introduisent les étapes suivantes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Enfin termine une suite."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avant de est suivi d’un infinitif quand le sujet reste le même."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après est suivi d’un nom ; après avoir ou après être est suivi d’un participe passé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pendant que présente deux actions en même temps avec deux verbes conjugués."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Quand relie une action à un moment."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde un ordre qui permet de comprendre ce qui se passe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les connecteurs n’imposent pas tous le même temps du verbe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "D’abord introduit la première étape."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "d’abord",
+                "D’abord, je me lave."
+              ],
+              [
+                "puis",
+                "Puis je déjeune."
+              ],
+              [
+                "ensuite",
+                "Ensuite, je pars."
+              ],
+              [
+                "avant + nom",
+                "avant le cours"
+              ],
+              [
+                "après + infinitif",
+                "après manger"
+              ],
+              [
+                "enfin",
+                "Enfin, je dors."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Après avoir mangé signifie que le repas est fini avant l’action suivante."
+          }
+        ]
+      }
+    ]
+  }
 ]

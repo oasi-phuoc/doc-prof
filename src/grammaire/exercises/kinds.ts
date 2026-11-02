@@ -2,6 +2,27 @@
 
 export const GRAM_EXERCISE_KINDS = [
   {
+    id: 'communication-ce',
+    label: 'Lire une situation',
+    description: 'Dix documents du quotidien avec des questions courtes.',
+    instruction: 'Lisez le document et répondez aux questions.',
+    layout: 'qcm' as const,
+  },
+  {
+    id: 'communication-pe',
+    label: 'Écrire une phrase utile',
+    description: 'Dix situations pour écrire une seule phrase adaptée.',
+    instruction: 'Écrivez une seule phrase adaptée à la situation.',
+    layout: 'write' as const,
+  },
+  {
+    id: 'communication-po',
+    label: 'Dire une phrase utile',
+    description: 'Dix situations pour prendre la parole dans la vie quotidienne.',
+    instruction: 'Dites une seule phrase adaptée à la situation.',
+    layout: 'write' as const,
+  },
+  {
     id: 'qcm-conj',
     label: 'Choisissez la bonne conjugaison',
     description: 'Phrase avec un blanc et trois formes proposées.',

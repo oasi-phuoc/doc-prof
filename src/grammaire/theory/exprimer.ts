@@ -1,561 +1,1905 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-exprimer. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const exprimerDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'k3',
-    typeId: 'gram-k3-theorie',
-    index: 1,
-    title: 'Exprimer la cause',
-    topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Dire la raison d’une action.',
-    blocks: sheet({
-      title: 'Exprimer la cause',
-      intro: 'Je dis la {g}raison{/g} d’une action.',
-      regarder: [
-        '{tab:1<}Je reste {c}parce que{/c} je suis malade. | Il part, {c}car{/c} il est tard.',
-        '{tab:1<}{c}Comme{/c} il pleut, je prends le bus. | {c}Grâce à{/c} toi, j’ai compris.',
-        '{tab:1<}Le cours est annulé {c}à cause de{/c} la neige.',
-      ],
-      expliquer: [
-        p('{c}Parce que{/c} répond à pourquoi.'),
-        p('{c}Car{/c} et {c}puisque{/c} donnent aussi une raison.'),
-        p('{c}À cause de{/c} + nom = raison négative.'),
-        p('{c}Grâce à{/c} + nom = raison positive.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Après{/g}',
-          '{tab:1>}parce que | une {c}phrase{/c}',
-          '{tab:1>}à cause de | un {c}nom{/c}',
-          '{tab:1>}grâce à | un {c}nom{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Parce que répond à pourquoi.'),
-        ligne,
-        table(
-          ['Mot', 'Exemple'],
-          [
-            ['parce que', 'Je reste parce que je suis fatigué.'],
-            ['car', 'Je pars, car il est tard.'],
-            ['comme', 'Comme il pleut, je reste.'],
-            ['à cause de', 'à cause de la pluie'],
-            ['grâce à', 'grâce à ton aide'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} À cause de ≠ grâce à.'),
-        ex([
-          { text: 'Je dis : « {c}Grâce à{/c} toi, j’ai réussi. »', wrong: 'À cause de toi, j’ai réussi. (si c’est positif)' },
-        ]),
-      ],
-    }),
+    "id": "k3",
+    "typeId": "gram-k3-theorie",
+    "index": 1,
+    "title": "Exprimer la cause",
+    "topic": "gram-exprimer",
+    "public": "A2",
+    "objectif": "Dire la raison d’une action.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Exprimer la cause"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je donne la raison d’une action ou d’une situation."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je rentre {c}parce que{/c} je suis fatigué.",
+              "Le match est annulé {c}à cause de{/c} la pluie.",
+              "J’ai réussi {c}grâce à{/c} ton aide."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Parce que introduit une raison avec un verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle, parce que devient parce qu’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Comme peut introduire une cause en début de phrase."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Puisque rappelle souvent une raison déjà connue ou admise."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À cause de est suivi d’un nom et présente souvent une cause gênante."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Grâce à est suivi d’un nom et présente souvent une cause favorable."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "De plus le devient du ; à plus le devient au."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne mets pas un verbe conjugué juste après à cause de ou grâce à."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je réponds à pourquoi avec une raison."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Parce que introduit une raison avec un verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "parce que",
+                "Je reste parce que je suis fatigué."
+              ],
+              [
+                "car",
+                "Je pars, car il est tard."
+              ],
+              [
+                "comme",
+                "Comme il pleut, je reste."
+              ],
+              [
+                "à cause de",
+                "à cause de la pluie"
+              ],
+              [
+                "grâce à",
+                "grâce à ton aide"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je distingue grâce à son aide et parce qu’il m’aide : la construction après le lien n’est pas la même."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k4',
-    typeId: 'gram-k4-theorie',
-    index: 2,
-    title: 'Exprimer la conséquence',
-    topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Dire le résultat d’une action.',
-    blocks: sheet({
-      title: 'Exprimer la conséquence',
-      intro: 'Je dis le {g}résultat{/g} d’une action.',
-      regarder: [
-        '{tab:1<}Il pleut. {c}Donc{/c} je prends le bus. | J’ai fini. {c}Alors{/c} je pars.',
-        '{tab:1<}Le bus est en panne. {c}C’est pourquoi{/c} je marche.',
-        '{tab:1<}Elle parle vite, {c}si bien que{/c} je ne comprends pas.',
-      ],
-      expliquer: [
-        p('La conséquence vient {c}après{/c} la cause.'),
-        p('Mots utiles : donc, alors, c’est pourquoi.'),
-        p('Je garde une phrase courte pour le résultat.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Cause{/g} | {g}Conséquence{/g}',
-          '{tab:1>}Il est tard | {c}donc{/c} je rentre',
-          '{tab:1>}J’ai mal | {c}alors{/c} je me repose',
-          '{tab:1>}Pas de bus | {c}c’est pourquoi{/c} je marche',
-        ]),
-      ],
-      retenir: [
-        p('Cause → donc → conséquence.'),
-        ligne,
-        table(
-          ['Mot', 'Exemple'],
-          [
-            ['donc', 'Il pleut, donc je reste.'],
-            ['alors', 'J’ai fini, alors je pars.'],
-            ['c’est pourquoi', 'C’est pourquoi je t’écris.'],
-            ['si bien que', 'Il crie, si bien que je sursaute.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Donc ne se place pas avant la cause.'),
-        ex([
-          { text: 'Je dis : « Il pleut, {c}donc{/c} je reste. »', wrong: 'Donc il pleut, je reste.' },
-        ]),
-      ],
-    }),
+    "id": "k4",
+    "typeId": "gram-k4-theorie",
+    "index": 2,
+    "title": "Exprimer la conséquence",
+    "topic": "gram-exprimer",
+    "public": "A2",
+    "objectif": "Dire le résultat d’une action.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Exprimer la conséquence"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente le résultat d’un fait."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Le train est annulé, {c}donc{/c} je prends le bus.",
+              "Il est {c}si{/c} fatigué {c}qu’{/c}il dort.",
+              "Ce sac est {c}trop{/c} lourd {c}pour{/c} moi."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Une conséquence est ce qui arrive à la suite d’un fait."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Donc et alors peuvent introduire ce résultat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "C’est pourquoi relie aussi un fait à sa conséquence."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Si plus adjectif ou adverbe plus que montre une intensité qui produit un résultat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Tellement de plus un nom plus que relie une quantité au résultat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Trop… pour indique une limite qui empêche une action."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après ces liens, je vérifie la construction de la phrase."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde la différence entre la raison et le résultat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis une conséquence logique avec l’information donnée."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Une conséquence est ce qui arrive à la suite d’un fait."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "donc",
+                "Il pleut, donc je reste."
+              ],
+              [
+                "alors",
+                "J’ai fini, alors je pars."
+              ],
+              [
+                "c’est pourquoi",
+                "C’est pourquoi je t’écris."
+              ],
+              [
+                "si bien que",
+                "Il crie, si bien que je sursaute."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Dans il pleut, donc le sol est mouillé, la pluie est la cause et le sol mouillé est la conséquence."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k5',
-    typeId: 'gram-k5-theorie',
-    index: 3,
-    title: 'Exprimer le but',
-    topic: 'gram-exprimer',
-    public: 'A2',
-    objectif: 'Dire le but d’une action.',
-    blocks: sheet({
-      title: 'Exprimer le but',
-      intro: 'Je dis le {g}but{/g} d’une action.',
-      regarder: [
-        '{tab:1<}Je viens {c}pour{/c} apprendre. | Elle écrit {c}pour{/c} demander un rendez-vous.',
-        '{tab:1<}J’étudie {c}afin de{/c} progresser. | Il parle lentement {c}pour{/c} être compris.',
-        '{tab:1<}Je t’appelle {c}pour que{/c} tu saches l’heure.',
-      ],
-      expliquer: [
-        p('Même sujet : {c}pour{/c} + infinitif.'),
-        p('{c}Afin de{/c} + infinitif = même sens, un peu plus écrit.'),
-        p('Sujets différents : {c}pour que{/c} + subjonctif.'),
-        p('Le cas le plus simple reste pour + infinitif.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Sujets{/g} | {g}Forme{/g}',
-          '{tab:1>}le même | {c}pour{/c} + infinitif',
-          '{tab:1>}le même, écrit | {c}afin de{/c} + infinitif',
-          '{tab:1>}différents | {c}pour que{/c} + subjonctif',
-        ]),
-      ],
-      retenir: [
-        p('Même sujet → pour + infinitif.'),
-        ligne,
-        table(
-          ['Forme', 'Exemple'],
-          [
-            ['pour + infinitif', 'Je viens pour apprendre.'],
-            ['afin de + infinitif', 'Il travaille afin de réussir.'],
-            ['pour que + subjonctif', 'Je parle pour que tu comprennes.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Pas « pour que » + infinitif.'),
-        ex([
-          { text: 'Je dis : « Je viens {c}pour apprendre{/c}. »', wrong: 'Je viens pour que apprendre.' },
-        ]),
-      ],
-    }),
+    "id": "k5",
+    "typeId": "gram-k5-theorie",
+    "index": 3,
+    "title": "Exprimer le but",
+    "topic": "gram-exprimer",
+    "public": "A2",
+    "objectif": "Dire le but d’une action.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Exprimer le but"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis ce que je cherche à obtenir avec une action."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je travaille {c}pour payer{/c} mon loyer.",
+              "Je parle lentement {c}pour que{/c} tu comprennes.",
+              "Je pars tôt {c}pour ne pas{/c} être en retard."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le but est le résultat souhaité, pas forcément déjà réalisé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour est suivi d’un infinitif quand le sujet reste le même."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Afin de peut remplacer pour dans une langue plus formelle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour ne pas donne un but négatif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour que est suivi d’un verbe au subjonctif, notamment quand les sujets diffèrent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Afin que est aussi suivi du subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue un but et une cause."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je vérifie qui fait chaque action."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux répondre à dans quel but avec pour plus infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le but est le résultat souhaité, pas forcément déjà réalisé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "pour + infinitif",
+                "Je viens pour apprendre."
+              ],
+              [
+                "afin de + infinitif",
+                "Il travaille afin de réussir."
+              ],
+              [
+                "pour que + subjonctif",
+                "Je parle pour que tu comprennes."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je ne conjugue pas le verbe après pour quand je garde la construction avec l’infinitif."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k6',
-    typeId: 'gram-k6-theorie',
-    index: 4,
-    title: 'Exprimer l’opposition',
-    topic: 'gram-exprimer',
-    public: 'A2 / B1',
-    objectif: 'Montrer deux idées différentes.',
-    blocks: sheet({
-      title: 'Exprimer l’opposition',
-      intro: 'Je montre deux idées {g}différentes{/g}.',
-      regarder: [
-        '{tab:1<}Il fait froid, {c}mais{/c} je sors. | Elle est fatiguée. {c}Pourtant{/c}, elle travaille.',
-        '{tab:1<}J’aime la ville, {c}alors que{/c} lui préfère la campagne.',
-        '{tab:1<}Je comprends. {c}Cependant{/c}, je ne suis pas d’accord.',
-      ],
-      expliquer: [
-        p('{c}Mais{/c} = opposition simple. C’est le mot le plus utile.'),
-        p('{c}Pourtant{/c} et {c}cependant{/c} renforcent le contraste.'),
-        p('{c}Alors que{/c} et {c}tandis que{/c} comparent deux situations.'),
-        p('Une opposition = deux phrases courtes.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Force{/g}',
-          '{tab:1>}mais | simple',
-          '{tab:1>}pourtant | plus fort',
-          '{tab:1>}cependant | plus écrit',
-          '{tab:1>}alors que | comparaison',
-        ]),
-      ],
-      retenir: [
-        p('Mais = opposition simple.'),
-        ligne,
-        table(
-          ['Mot', 'Exemple'],
-          [
-            ['mais', 'Il pleut, mais je sors.'],
-            ['pourtant', 'Elle est malade. Pourtant, elle vient.'],
-            ['cependant', 'C’est cher. Cependant, c’est utile.'],
-            ['alors que', 'Je reste, alors que lui part.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Mais ne commence pas les deux phrases.'),
-        ex([
-          { text: 'Je dis : « Il fait froid, {c}mais{/c} je sors. »', wrong: 'Mais il fait froid, mais je sors.' },
-        ]),
-      ],
-    }),
+    "id": "k6",
+    "typeId": "gram-k6-theorie",
+    "index": 4,
+    "title": "Exprimer l’opposition",
+    "topic": "gram-exprimer",
+    "public": "A2 / B1",
+    "objectif": "Montrer deux idées différentes.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Exprimer l’opposition"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente deux faits différents ou opposés."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Paul travaille le matin, {c}alors que{/c} Lina travaille le soir.",
+              "Ce sac est léger, {c}mais{/c} petit.",
+              "{c}Contrairement à{/c} toi, je prends le train."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Mais oppose deux idées."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "En revanche compare deux aspects différents."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Alors que peut opposer deux faits avec deux verbes conjugués."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Tandis que peut aussi exprimer cette opposition."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Contrairement à est suivi d’un nom ou d’un pronom."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Par contre est courant pour présenter un contraste."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde l’indicatif après alors que et tandis que dans ces emplois."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis deux informations qui se comparent réellement."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue une simple différence et un résultat inattendu."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Mais oppose deux idées."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "mais",
+                "Il pleut, mais je sors."
+              ],
+              [
+                "pourtant",
+                "Elle est malade. Pourtant, elle vient."
+              ],
+              [
+                "cependant",
+                "C’est cher. Cependant, c’est utile."
+              ],
+              [
+                "alors que",
+                "Je reste, alors que lui part."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis contrairement à lui, avec un pronom tonique après la préposition."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k7',
-    typeId: 'gram-k7-theorie',
-    index: 5,
-    title: 'Exprimer la concession',
-    topic: 'gram-exprimer',
-    public: 'B1',
-    objectif: 'Admettre un fait, puis montrer un contraste.',
-    blocks: sheet({
-      title: 'Exprimer la concession',
-      intro: 'J’admets un fait, puis je montre un {g}contraste{/g}.',
-      regarder: [
-        '{tab:1<}{c}Malgré{/c} la pluie, je sors. | {c}Même si{/c} je suis fatigué, je viens.',
-        '{tab:1<}{c}Bien qu’{/c}il pleuve, le match continue.',
-        '{tab:1<}{c}Quoique{/c} ce soit difficile, j’essaie.',
-      ],
-      expliquer: [
-        p('{c}Malgré{/c} + nom. Pas de que après malgré.'),
-        p('{c}Même si{/c} + indicatif. Le fait est réel.'),
-        p('{c}Bien que{/c} et {c}quoique{/c} + subjonctif.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Après{/g}',
-          '{tab:1>}malgré | un {c}nom{/c}',
-          '{tab:1>}même si | {c}indicatif{/c}',
-          '{tab:1>}bien que | {c}subjonctif{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Malgré + nom. Bien que + subjonctif. Même si + indicatif.'),
-        ligne,
-        table(
-          ['Forme', 'Exemple'],
-          [
-            ['malgré + nom', 'Malgré la pluie, je sors.'],
-            ['même si + indicatif', 'Même si je suis fatigué, je viens.'],
-            ['bien que + subjonctif', 'Bien qu’il pleuve, je sors.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Malgré sans que.'),
-        ex([
-          { text: 'Je dis : « {c}Malgré{/c} la pluie. »', wrong: 'Malgré que la pluie.' },
-        ]),
-      ],
-    }),
+    "id": "k7",
+    "typeId": "gram-k7-theorie",
+    "index": 5,
+    "title": "Exprimer la concession",
+    "topic": "gram-exprimer",
+    "public": "B1",
+    "objectif": "Admettre un fait, puis montrer un contraste.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Exprimer la concession"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je reconnais un fait et j’ajoute un résultat inattendu."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "{c}Malgré{/c} la pluie, nous sortons.",
+              "{c}Même s’{/c}il pleut, je viens.",
+              "{c}Bien qu’{/c}elle soit fatiguée, elle travaille."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "La concession montre qu’un fait n’empêche pas l’autre."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Malgré est suivi d’un nom ou d’un pronom."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Même si est suivi de l’indicatif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Bien que est suivi du subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pourtant et cependant peuvent introduire le résultat inattendu."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux reconnaître une difficulté puis expliquer que l’action a lieu quand même."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je vérifie le mode du verbe après le lien choisi."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne remplace pas malgré par malgré que dans le modèle courant enseigné ici."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde une opposition de sens claire."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "La concession montre qu’un fait n’empêche pas l’autre."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "malgré + nom",
+                "Malgré la pluie, je sors."
+              ],
+              [
+                "même si + indicatif",
+                "Même si je suis fatigué, je viens."
+              ],
+              [
+                "bien que + subjonctif",
+                "Bien qu’il pleuve, je sors."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je distingue bien que plus subjonctif et même si plus indicatif."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k8',
-    typeId: 'gram-k8-theorie',
-    index: 6,
-    title: 'Pronoms relatifs neutres',
-    topic: 'gram-exprimer',
-    public: 'B1',
-    objectif: 'Parler d’une idée avec ce qui, ce que ou ce dont.',
-    blocks: sheet({
-      title: 'Pronoms relatifs neutres',
-      intro: 'Je parle d’une {g}idée{/g}, pas d’un nom précis.',
-      regarder: [
-        '{tab:1<}{c}Ce qui{/c} me plaît, c’est le calme. | Je sais {c}ce que{/c} tu veux.',
-        '{tab:1<}Dis-moi {c}ce dont{/c} tu as besoin. | {c}Ce qu’{/c}il dit est vrai.',
-        '{tab:1<}{c}Ce qui{/c} compte, c’est la santé.',
-      ],
-      expliquer: [
-        p('{c}Ce qui{/c} = sujet de l’idée.'),
-        p('{c}Ce que{/c} = complément. Devant une voyelle : {c}ce qu’{/c}.'),
-        p('{c}Ce dont{/c} = de + idée. Avoir besoin de, parler de.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Rôle{/g} | {g}Forme{/g}',
-          '{tab:1>}sujet | {c}ce qui{/c}',
-          '{tab:1>}complément | {c}ce que{/c}',
-          '{tab:1>}de + idée | {c}ce dont{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Ce qui, ce que, ce dont.'),
-        ligne,
-        table(
-          ['Forme', 'Exemple'],
-          [
-            ['ce qui', 'Ce qui me plaît, c’est le calme.'],
-            ['ce que', 'Je sais ce que tu veux.'],
-            ['ce qu’', 'Ce qu’il dit est clair.'],
-            ['ce dont', 'Ce dont j’ai besoin, c’est du temps.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Ce que → ce qu’ devant une voyelle.'),
-        ex([
-          { text: 'Je dis : « {c}Ce qu’{/c}il dit. »', wrong: 'Ce que il dit.' },
-        ]),
-      ],
-    }),
+    "id": "k8",
+    "typeId": "gram-k8-theorie",
+    "index": 6,
+    "title": "Pronoms relatifs neutres",
+    "topic": "gram-exprimer",
+    "public": "B1",
+    "objectif": "Parler d’une idée avec ce qui, ce que ou ce dont.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Pronoms relatifs neutres"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je reprends une idée sans nom précis avec ce qui, ce que ou ce dont."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je sais {c}ce qui{/c} manque.",
+              "Dis-moi {c}ce que{/c} tu veux.",
+              "Voici {c}ce dont{/c} j’ai besoin."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ce reprend une idée ou une chose qui n’a pas été nommée précisément."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ce qui est sujet du verbe qui suit."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ce que est complément direct."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle, ce que devient ce qu’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ce dont reprend une construction avec de."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux traduire le sens par la chose qui, la chose que ou la chose dont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je regarde le rôle dans la deuxième partie de la phrase."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde le verbe accordé au singulier dans ce qui est sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne remplace pas ce qui par ce que au hasard."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ce reprend une idée ou une chose qui n’a pas été nommée précisément."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "ce qui",
+                "Ce qui me plaît, c’est le calme."
+              ],
+              [
+                "ce que",
+                "Je sais ce que tu veux."
+              ],
+              [
+                "ce qu’",
+                "Ce qu’il dit est clair."
+              ],
+              [
+                "ce dont",
+                "Ce dont j’ai besoin, c’est du temps."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je cherche la préposition de dans avoir besoin de pour choisir ce dont."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k9',
-    typeId: 'gram-k9-theorie',
-    index: 7,
-    title: 'Les doubles pronoms',
-    topic: 'gram-exprimer',
-    public: 'B1',
-    objectif: 'Mettre deux pronoms avant le verbe.',
-    blocks: sheet({
-      title: 'Les doubles pronoms',
-      intro: 'Je mets deux pronoms {g}avant{/g} le verbe.',
-      regarder: [
-        '{tab:1<}Je {c}te le{/c} donne. | Elle {c}le lui{/c} explique.',
-        '{tab:1<}Nous {c}leur en{/c} parlons. | Il {c}m’y{/c} emmène.',
-        '{tab:1<}{c}Donne-le-moi{/c}. | Ne {c}me le{/c} donne pas.',
-      ],
-      expliquer: [
-        p('Ordre courant : me / te / nous / vous, puis le / la / les.'),
-        p('Puis lui / leur, puis y, puis en.'),
-        p('À l’impératif affirmatif, l’ordre change : donne-le-moi.'),
-        p('Me et te deviennent moi et toi après le verbe, à l’impératif.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Phrase{/g} | {g}Pronoms{/g}',
-          '{tab:1>}Je donne le livre à toi. | Je {c}te le{/c} donne.',
-          '{tab:1>}Elle explique la règle à lui. | Elle {c}la lui{/c} explique.',
-          '{tab:1>}Donne le livre à moi. | {c}Donne-le-moi{/c}.',
-        ]),
-      ],
-      retenir: [
-        p('Avant le verbe : me / te + le / la / les + lui / leur + y + en.'),
-        ligne,
-        table(
-          ['Ordre', 'Exemple'],
-          [
-            ['te + le', 'Je te le donne.'],
-            ['le + lui', 'Je le lui donne.'],
-            ['leur + en', 'Je leur en parle.'],
-            ['impératif', 'Donne-le-moi.'],
-            ['impératif négatif', 'Ne me le donne pas.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Donne-le-moi, pas « donne-moi-le ».'),
-        ex([
-          { text: 'Je dis : « {c}Donne-le-moi{/c}. »', wrong: 'Donne-moi-le.' },
-        ]),
-      ],
-    }),
+    "id": "k9",
+    "typeId": "gram-k9-theorie",
+    "index": 7,
+    "title": "Les doubles pronoms",
+    "topic": "gram-exprimer",
+    "public": "B1",
+    "objectif": "Mettre deux pronoms avant le verbe.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les doubles pronoms"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je remplace deux compléments et je garde le bon ordre des pronoms."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Tu {c}me le{/c} donnes.",
+              "Je {c}le lui{/c} prête.",
+              "Il {c}y en{/c} a trois."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Devant le verbe, me, te, se, nous et vous se placent avant le, la ou les."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le, la et les se placent avant lui ou leur."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Y et en viennent ensuite ; y se place avant en."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux retenir : me-te-se-nous-vous ; le-la-les ; lui-leur ; y ; en."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au passé composé, les pronoms se placent avant l’auxiliaire."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un infinitif, ils restent devant le verbe dont ils dépendent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure le groupe avec le verbe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À l’impératif affirmatif, l’ordre change : donne-le-moi."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À l’impératif négatif, je retrouve l’ordre avant le verbe : ne me le donne pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je vérifie les deux compléments remplacés avant d’écrire."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Devant le verbe, me, te, se, nous et vous se placent avant le, la ou les."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Ordre",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "te + le",
+                "Je te le donne."
+              ],
+              [
+                "le + lui",
+                "Je le lui donne."
+              ],
+              [
+                "leur + en",
+                "Je leur en parle."
+              ],
+              [
+                "impératif",
+                "Donne-le-moi."
+              ],
+              [
+                "impératif négatif",
+                "Ne me le donne pas."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis je le lui donne, mais donne-le-moi à l’impératif affirmatif."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k10',
-    typeId: 'gram-k10-theorie',
-    index: 8,
-    title: 'Le subjonctif (emplois principaux)',
-    topic: 'gram-exprimer',
-    public: 'B1',
-    objectif: 'Utiliser le subjonctif après la volonté, le sentiment ou le doute.',
-    blocks: sheet({
-      title: 'Le subjonctif',
-      intro: 'J’utilise le subjonctif après certains verbes et {g}expressions{/g}.',
-      regarder: [
-        '{tab:1<}{c}Il faut que{/c} tu viennes. | {c}Je veux que{/c} tu comprennes.',
-        '{tab:1<}{c}J’ai peur qu’{/c}il soit en retard. | {c}Je doute que{/c} ce soit vrai.',
-        '{tab:1<}{c}J’espère que{/c} tu vas bien.',
-      ],
-      expliquer: [
-        p('Après volonté, obligation, sentiment ou doute + {c}que{/c}.'),
-        p('Expressions fréquentes : il faut que, je veux que, j’ai peur que.'),
-        p('Le verbe après que est au {c}subjonctif{/c}.'),
-        p('Après {c}espérer{/c}, je garde l’indicatif.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Expression{/g} | {g}Mode{/g}',
-          '{tab:1>}il faut que | {c}subjonctif{/c}',
-          '{tab:1>}je veux que | {c}subjonctif{/c}',
-          '{tab:1>}j’ai peur que | {c}subjonctif{/c}',
-          '{tab:1>}j’espère que | {c}indicatif{/c}',
-        ]),
-        ligne,
-        p('Présent du subjonctif, verbes fréquents :'),
-        ex([
-          '{tab:+1+}{g}Infinitif{/g} | {g}Que je / qu’il{/g}',
-          '{tab:1>}être | que je {c}sois{/c} / qu’il {c}soit{/c}',
-          '{tab:1>}avoir | que j’{c}aie{/c} / qu’il {c}ait{/c}',
-          '{tab:1>}venir | que je {c}vienne{/c} / qu’il {c}vienne{/c}',
-          '{tab:1>}parler | que je {c}parle{/c} / qu’il {c}parle{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Émotion, volonté, doute ou obligation + que → souvent subjonctif.'),
-        ligne,
-        table(
-          ['Expression', 'Exemple'],
-          [
-            ['il faut que', 'Il faut que tu viennes.'],
-            ['je veux que', 'Je veux que ce soit clair.'],
-            ['j’ai peur que', 'J’ai peur qu’il soit malade.'],
-            ['je doute que', 'Je doute que ce soit vrai.'],
-            ['j’espère que', 'J’espère que tu vas bien.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} J’espère que tu vas bien. Pas de subjonctif.'),
-        ex([
-          { text: 'Je dis : « J’espère que tu {c}vas{/c} bien. »', wrong: 'J’espère que tu ailles bien.' },
-        ]),
-      ],
-    }),
+    "id": "k10",
+    "typeId": "gram-k10-theorie",
+    "index": 8,
+    "title": "Le subjonctif (emplois principaux)",
+    "topic": "gram-exprimer",
+    "public": "B1",
+    "objectif": "Utiliser le subjonctif après la volonté, le sentiment ou le doute.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le subjonctif (emplois principaux)"
+      },
+      {
+        "kind": "paragraph",
+        "text": "J’utilise le subjonctif après certaines expressions."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Il faut que tu {c}viennes{/c}.",
+              "Je veux qu’elle {c}réussisse{/c}.",
+              "Je suis content que vous {c}soyez{/c} là."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le subjonctif présente notamment une volonté, une nécessité, un sentiment ou un doute."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il faut que, je veux que et je suis content que le demandent souvent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après pour que, bien que et avant que, j’utilise le subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le verbe après que a son propre sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour beaucoup de verbes, je pars de ils au présent et j’enlève -ent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’ajoute -e, -es, -e, -ions, -iez ou -ent ; certains verbes ont deux bases."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Être donne que je sois ; avoir donne que j’aie."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Aller donne que j’aille ; faire donne que je fasse."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Quand le sujet reste le même, une construction avec infinitif est souvent plus simple : je veux partir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le mot que seul ne suffit pas à imposer le subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le subjonctif présente notamment une volonté, une nécessité, un sentiment ou un doute."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Expression",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "il faut que",
+                "Il faut que tu viennes."
+              ],
+              [
+                "je veux que",
+                "Je veux que ce soit clair."
+              ],
+              [
+                "j’ai peur que",
+                "J’ai peur qu’il soit malade."
+              ],
+              [
+                "je doute que",
+                "Je doute que ce soit vrai."
+              ],
+              [
+                "contraste : j’espère que (+ indicatif)",
+                "J’espère que tu vas bien."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Après je pense que dans une affirmation, j’utilise normalement l’indicatif."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k11',
-    typeId: 'gram-k11-theorie',
-    index: 9,
-    title: 'Verbes avec préposition',
-    topic: 'gram-exprimer',
-    public: 'A2 / B1',
-    objectif: 'Choisir à ou de avant un infinitif.',
-    blocks: sheet({
-      title: 'Verbes avec préposition',
-      intro: 'Certains verbes demandent {g}à{/g} ou {g}de{/g}.',
-      regarder: [
-        '{tab:1<}Je commence {c}à{/c} comprendre. | Elle apprend {c}à{/c} conduire.',
-        '{tab:1<}J’essaie {c}de{/c} venir. | Il décide {c}de{/c} partir.',
-        '{tab:1<}Nous finissons {c}de{/c} manger. | Tu aides Nina {c}à{/c} porter le sac.',
-      ],
-      expliquer: [
-        p('Le verbe suivant reste à l’{c}infinitif{/c}.'),
-        p('Je mémorise la préposition {c}avec le verbe{/c}.'),
-        p('À : commencer à, aider à, apprendre à, arriver à.'),
-        p('De : essayer de, décider de, finir de, oublier de, accepter de.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Préposition{/g} | {g}Verbes{/g}',
-          '{tab:1>}à | commencer, apprendre, aider, réussir',
-          '{tab:1>}de | essayer, décider, finir, oublier',
-        ]),
-      ],
-      retenir: [
-        p('La préposition fait partie du verbe. Je l’apprends avec lui.'),
-        ligne,
-        table(
-          ['Verbe', 'Préposition', 'Exemple'],
-          [
-            ['commencer', 'à', 'Je commence à lire.'],
-            ['apprendre', 'à', 'J’apprends à nager.'],
-            ['essayer', 'de', 'J’essaie de venir.'],
-            ['décider', 'de', 'Elle décide de rester.'],
-            ['finir', 'de', 'Nous finissons de manger.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Essayer de, pas « essayer à ».'),
-        ex([
-          { text: 'Je dis : « J’essaie {c}de{/c} comprendre. »', wrong: 'J’essaie à comprendre.' },
-        ]),
-      ],
-    }),
+    "id": "k11",
+    "typeId": "gram-k11-theorie",
+    "index": 9,
+    "title": "Verbes avec préposition",
+    "topic": "gram-exprimer",
+    "public": "A2 / B1",
+    "objectif": "Choisir à ou de avant un infinitif.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Verbes avec préposition"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je choisis la construction du verbe avant un infinitif."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "J’apprends {c}à{/c} nager.",
+              "Elle essaie {c}de{/c} comprendre.",
+              "Nous voulons {c}partir{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Certains verbes sont suivis directement d’un infinitif : vouloir partir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "D’autres sont suivis de à : apprendre à conduire."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "D’autres sont suivis de de : décider de partir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je retiens le verbe avec sa construction."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Commencer à, réussir à et continuer à sont des modèles fréquents."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Essayer de, oublier de et refuser de sont d’autres modèles fréquents."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle, de devient d’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne change pas la préposition parce que le sujet change."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Certains verbes ont plusieurs constructions avec des sens différents."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je regarde le sens précis : parler de son voyage et parler à son voisin."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Certains verbes sont suivis directement d’un infinitif : vouloir partir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Verbe",
+              "Préposition",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "commencer",
+                "à",
+                "Je commence à lire."
+              ],
+              [
+                "apprendre",
+                "à",
+                "J’apprends à nager."
+              ],
+              [
+                "essayer",
+                "de",
+                "J’essaie de venir."
+              ],
+              [
+                "décider",
+                "de",
+                "Elle décide de rester."
+              ],
+              [
+                "finir",
+                "de",
+                "Nous finissons de manger."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je mémorise apprendre à et décider de comme des groupes, pas comme des verbes isolés."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k12',
-    typeId: 'gram-k12-theorie',
-    index: 10,
-    title: 'Le subjonctif passé',
-    topic: 'gram-exprimer',
-    public: 'B1',
-    objectif: 'Parler d’une action déjà faite après que.',
-    blocks: sheet({
-      title: 'Le subjonctif passé',
-      intro: 'Je parle d’une action {g}déjà faite{/g} après que.',
-      regarder: [
-        '{tab:1<}Je suis content que tu {c}sois venu{/c}. | Il faut qu’elle {c}ait fini{/c} avant 18 h.',
-        '{tab:1<}Je doute qu’ils {c}aient compris{/c}. | Je regrette qu’il {c}soit parti{/c}.',
-        '{tab:1<}Bien qu’elle {c}ait téléphoné{/c}, personne n’a répondu.',
-      ],
-      expliquer: [
-        p('Subjonctif passé = avoir ou être au subjonctif présent + participe.'),
-        p('L’action est {c}avant{/c} le moment de la phrase.'),
-        p('Mêmes contextes que le subjonctif présent : il faut que, je veux que…'),
-        p('Même auxiliaire et même accord qu’au passé composé.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Personne{/g} | {g}Avoir{/g}',
-          '{tab:1>}que j’ | {c}aie{/c} fini',
-          '{tab:1>}que tu | {c}aies{/c} fini',
-          '{tab:1>}qu’il / qu’elle | {c}ait{/c} fini',
-          '{tab:1>}que nous | {c}ayons{/c} fini',
-          '{tab:1>}que vous | {c}ayez{/c} fini',
-          '{tab:1>}qu’ils | {c}aient{/c} fini',
-        ]),
-      ],
-      retenir: [
-        p('Que + aie / aies / ait… + participe.'),
-        ligne,
-        table(
-          ['Auxiliaire', 'Exemple'],
-          [
-            ['avoir', 'que tu aies fini'],
-            ['être', 'qu’elle soit partie'],
-            ['accord', 'qu’elles soient parties'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} J’accorde le participe comme au passé composé.'),
-        ex([
-          { text: 'Je dis : « content que tu {c}sois venu{/c}. » (homme)', wrong: 'content que tu as venu.' },
-        ]),
-      ],
-    }),
+    "id": "k12",
+    "typeId": "gram-k12-theorie",
+    "index": 10,
+    "title": "Le subjonctif passé",
+    "topic": "gram-exprimer",
+    "public": "B1",
+    "objectif": "Parler d’une action déjà faite après que.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le subjonctif passé"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente au subjonctif une action déjà accomplie par rapport à un repère."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je suis content que tu {c}aies réussi{/c}.",
+              "Il faut qu’elle {c}soit arrivée{/c} avant midi.",
+              "Je regrette qu’il {c}n’ait pas appelé{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le subjonctif passé utilise avoir ou être au subjonctif présent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’ajoute un participe passé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je dis que j’aie fini ou qu’elle soit arrivée."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le choix de l’auxiliaire suit celui des autres temps composés."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde les règles d’accord du participe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Cette forme vient après les expressions qui demandent le subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elle présente l’action comme achevée par rapport au moment considéré."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ce repère peut être passé, présent ou futur."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure l’auxiliaire."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le subjonctif passé utilise avoir ou être au subjonctif présent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Auxiliaire",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "avoir",
+                "que tu aies fini"
+              ],
+              [
+                "être",
+                "qu’elle soit partie"
+              ],
+              [
+                "accord",
+                "qu’elles soient parties"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je distingue qu’il finisse et qu’il ait fini : la deuxième forme présente l’action comme achevée."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'k13',
-    typeId: 'gram-k13-theorie',
-    index: 11,
-    title: 'Subjonctif ou indicatif ?',
-    topic: 'gram-exprimer',
-    public: 'B1',
-    objectif: 'Choisir le mode selon le sens.',
-    blocks: sheet({
-      title: 'Subjonctif ou indicatif ?',
-      intro: 'Je choisis le mode selon le {g}sens{/g}.',
-      regarder: [
-        '{tab:1<}Je sais qu’il {c}est{/c} là. | Je veux qu’il {c}soit{/c} là.',
-        '{tab:1<}Je pense qu’elle {c}vient{/c}. | Je ne pense pas qu’elle {c}vienne{/c}.',
-        '{tab:1<}Il est certain que tu {c}as{/c} raison. | Il faut que tu {c}aies{/c} les papiers.',
-      ],
-      expliquer: [
-        p('Indicatif = fait {c}certain{/c}, connaissance, déclaration.'),
-        p('Subjonctif = volonté, émotion, doute, obligation.'),
-        p('Penser que et croire que, à l’affirmatif → indicatif.'),
-        p('Ne pas penser que → souvent subjonctif.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Sens{/g} | {g}Mode{/g}',
-          '{tab:1>}je sais que | {c}indicatif{/c}',
-          '{tab:1>}il est certain que | {c}indicatif{/c}',
-          '{tab:1>}je pense que | {c}indicatif{/c}',
-          '{tab:1>}je veux que | {c}subjonctif{/c}',
-          '{tab:1>}il faut que | {c}subjonctif{/c}',
-          '{tab:1>}je ne pense pas que | {c}subjonctif{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Certain → indicatif. Doute ou souhait → subjonctif.'),
-        p('J’apprends les expressions une par une.'),
-        ligne,
-        table(
-          ['Expression', 'Mode', 'Exemple'],
-          [
-            ['je sais que', 'indicatif', 'Je sais qu’il est là.'],
-            ['je pense que', 'indicatif', 'Je pense qu’elle vient.'],
-            ['je ne pense pas que', 'subjonctif', 'Je ne pense pas qu’elle vienne.'],
-            ['je veux que', 'subjonctif', 'Je veux qu’il soit là.'],
-            ['il faut que', 'subjonctif', 'Il faut que tu aies les clés.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je pense que + indicatif. Je veux que + subjonctif.'),
-        ex([
-          { text: 'Je dis : « Je pense qu’il {c}est{/c} prêt. »', wrong: 'Je pense qu’il soit prêt.' },
-        ]),
-      ],
-    }),
-  },
+    "id": "k13",
+    "typeId": "gram-k13-theorie",
+    "index": 11,
+    "title": "Subjonctif ou indicatif ?",
+    "topic": "gram-exprimer",
+    "public": "B1",
+    "objectif": "Choisir le mode selon le sens.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Subjonctif ou indicatif ?"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je choisis le mode du verbe selon l’expression et le sens."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je sais qu’il {c}vient{/c}.",
+              "Je souhaite qu’il {c}vienne{/c}.",
+              "Même s’il {c}pleut{/c}, je sors."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "L’indicatif présente souvent un fait affirmé ou une information considérée comme réelle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le subjonctif apparaît notamment après une volonté, une nécessité, un sentiment ou un doute."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je pense que et je sais que sont normalement suivis de l’indicatif à l’affirmatif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne pense pas que peut introduire le subjonctif quand j’exprime un doute."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il faut que et je souhaite que demandent le subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Bien que et avant que demandent le subjonctif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après que est suivi de l’indicatif dans la norme écrite."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Même si est suivi de l’indicatif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne choisis pas le subjonctif simplement parce que je vois que."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux parfois choisir un infinitif si le sujet reste le même."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "L’indicatif présente souvent un fait affirmé ou une information considérée comme réelle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Expression",
+              "Mode",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "je sais que",
+                "indicatif",
+                "Je sais qu’il est là."
+              ],
+              [
+                "je pense que",
+                "indicatif",
+                "Je pense qu’elle vient."
+              ],
+              [
+                "je ne pense pas que",
+                "subjonctif",
+                "Je ne pense pas qu’elle vienne."
+              ],
+              [
+                "je veux que",
+                "subjonctif",
+                "Je veux qu’il soit là."
+              ],
+              [
+                "il faut que",
+                "subjonctif",
+                "Il faut que tu aies les clés."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Après que ne suit pas le modèle de avant que : je vérifie l’expression complète."
+          }
+        ]
+      }
+    ]
+  }
 ]

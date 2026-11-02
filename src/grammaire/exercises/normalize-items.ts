@@ -110,16 +110,12 @@ export function instructionForSingleVerb(
   base: string,
   verb: { verb: string; negatif: boolean },
 ): string {
-  const conj = `Conjuguez le verbe ${verb.verb}${verb.negatif ? ' à la forme négative' : ''}.`
-  if (/entre parenthèses/i.test(base)) return conj
+  // Garder le temps, le mode et la contrainte : ils restent nécessaires sans QCM.
+  if (/le verbe indiqué/i.test(base)) return base.replace(/le verbe indiqué/i, `le verbe ${verb.verb}`)
+  if (/le verbe entre parenthèses/i.test(base)) return base.replace(/le verbe entre parenthèses/i, `le verbe ${verb.verb}`)
   const escaped = verb.verb.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   if (new RegExp(escaped, 'i').test(base) && !/\bou\b/i.test(base)) return base.trim()
-  const extra = base
-    .replace(/conjuguez[^.]*\.?/i, '')
-    .replace(/complétez[^.]*\.?/i, '')
-    .trim()
-  if (extra && extra.length < 80 && /attention/i.test(extra)) return `${conj} ${extra}`
-  return conj
+  return `${base.trim()} Verbe : ${verb.verb}${verb.negatif ? ' (forme négative)' : ''}.`
 }
 
 function capitalizeIfNeeded(word: string, before: string): string {

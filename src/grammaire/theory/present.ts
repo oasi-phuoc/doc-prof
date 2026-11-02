@@ -1,732 +1,2153 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/**
- * Théorie FALC — thème gram-present.
- * Partie ClairFLE dédiée à la conjugaison au présent (répartition SCAI).
- * Adapté de notions proches du programme soutien (G1), sans copie.
- */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const presentDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'm2',
-    typeId: 'gram-m2-theorie',
-    index: 2,
-    title: 'Le verbe être',
-    topic: 'gram-present',
-    public: 'pré-A1 / A1',
-    objectif: 'Conjuguer être au présent.',
-    blocks: [
-      { kind: 'heading', text: 'Le verbe être' },
-      { kind: 'paragraph', text: 'Je conjugue {g}être{/g} au présent.' },
-      { kind: 'paragraph', text: '{ligne/2}' },
+    "id": "m2",
+    "typeId": "gram-m2-theorie",
+    "index": 2,
+    "title": "Le verbe être",
+    "topic": "gram-present",
+    "public": "pré-A1 / A1",
+    "objectif": "Conjuguer être au présent.",
+    "blocks": [
       {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', marker: 'puces', items: [
-            '{tab:1<}Je {c}suis{/c} fatigué. | Vous {c}êtes{/c} française.',
-            '{tab:1<}Tu {c}es{/c} cuisinier. | Nous {c}sommes{/c} à Sion.',
-            '{tab:1<}Il {c}est{/c} prêt. | Ils {c}sont{/c} étudiants.'
-          ]},
-        ],
+        "kind": "heading",
+        "text": "Le verbe être"
       },
       {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Le verbe {c}être{/c} est un verbe {c}irrégulier{/c}.' },
-          { kind: 'paragraph', text: 'J’utilise le verbe être pour {c}donner des informations{/c} sur une personne.' },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'examples', marker: 'puces', items : [
-            '{tab:+1+} {g}Je parle de …{/g} | {g}Exemples{/g}',
-            '{tab:1>}{c}Identité{/c} | Je suis {c}Melina{/c}.',
-            '{tab:1>}{c}Nationalité{/c} | Je suis {c}suisse{/c}.',
-            '{tab:1>}{c}Métier{/c} | Je suis {c}professeure{/c}.',
-            '{tab:1>}{c}Description{/c} | Je suis {c}fatigué{/c}.',
-            '{tab:1>}{c}Situation{/c} | Je suis {c}à l’école{/c}.',
-          ]},
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: 'Je choisis la {c}bonne forme{/c} du verbe selon la personne.'},
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'examples', marker: 'puces', items: [
-            '{tab:+1+} {g}Singulier{/g} | {g}Pluriel{/g}',
-            '{tab:1<}Je {c}suis{/c} à la maison. | Nous {c}sommes{/c} à la maison.',
-            '{tab:1<}Tu {c}es{/c} à la maison. | Vous {c}êtes{/c} à la maison.',
-            '{tab:1<}Il / Elle {c}est{/c} à la maison. | Ils / Elles {c}sont{/c} à la maison.'
-          ]},
-        ],
+        "kind": "paragraph",
+        "text": "Je donne une information sur une personne ou une chose."
       },
-      {kind: 'page'},
       {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'Je retiens les six formes du verbe {c}être{/c} au présent.' },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'table', colHeader: true, rowHeader: false, headers: ['Personne', 'Être'],
-            rows: [
-              ['je', '{c}suis{/c}'],
-              ['tu', '{c}es{/c}'],
-              ['il / elle / on', '{c}est{/c}'],
-              ['nous', '{c}sommes{/c}'],
-              ['vous', '{c}êtes{/c}'],
-              ['ils / elles', '{c}sont{/c}'],
-            ],
-          },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}être{/c}.' },
-          { kind: 'examples', marker: 'puces', items: [
-            '{tab:+1+}{g}Je l’utilise pour …{/g}',
-            '{tab:1<}l’{c}indentité{/c} | la {c}nationalité{/c}',
-            '{tab:1<}le {c}métier{/c} | la {c}description{/c}',
-            '{tab:1<}la {c}situation{/c} | ',
-          ]},
-          { kind: 'paragraph', text: '{c}Attention : {/c} Ne pas confondre les formes {c}es{/c}-{c}est{/c} et {c}êtes{/c}-{c}est{/c}.' },
-          { kind: 'examples', items: [
-            { text: 'Je dis : « Vous {c}êtes{/c} ici. »', wrong: '« Vous est ici. »' },
-            { text: 'Je dis : « Il {c}est{/c} là. »', wrong: '« Il es là. »' },
-        ]},
-        ],
+        "kind": "paragraph",
+        "text": "{ligne/2}"
       },
-    ],
-  },
-  {
-    id: 'm3',
-    typeId: 'gram-m3-theorie',
-    index: 3,
-    title: 'Le verbe avoir',
-    topic: 'gram-present',
-    public: 'pré-A1 / A1',
-    objectif: 'Conjuguer avoir au présent.',
-    blocks: [
-      { kind: 'heading', text: 'Le verbe avoir' },
-      { kind: 'paragraph', text: 'Je conjugue avoir au présent.' },
-      { kind: 'paragraph', text: '{ligne/2}' },
       {
-        kind: 'section',
-        role: 'regarder',
-        blocks: [
-          { kind: 'examples', 
-            items: [
-            '{tab:1<}J’{c}ai{/c} un téléphone. | Nous {c}avons{/c} 25 ans.',
-            '{tab:1<}Tu {c}as{/c} faim. | Vous {c}avez{/c} soif.',
-            '{tab:1<}Il {c}a{/c} besoin d’aide. | Elles {c}ont{/c} de la chance.',
-          ],
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}suis{/c} au travail.",
+              "Vous {c}êtes{/c} prêts.",
+              "Elle {c}n’est pas{/c} malade."
+            ]
           }
-        ],
+        ]
       },
       {
-        kind: 'section',
-        role: 'expliquer',
-        blocks: [
-          { kind: 'paragraph', text: 'Le verbe {c}avoir{/c} est un verbe {c}irrégulier{/c}.' },
-          { kind: 'paragraph', text: 'Je l’utilise pour la {c}possession{/c} et beaucoup d’{c}expressions{/c}.' },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'examples', marker: 'puces', 
-            items: [
-            '{tab:+1+} {g}Je parle de …{/g} | {g}Exemples{/g}',
-            '{tab:1>}{c}Possession{/c} | J’ai {c}un téléphone{/c}.',
-            '{tab:1>}{c}Âge{/c} | Tu as {c}20 ans{/c} ?',
-            '{tab:1>}{c}Famille{/c} | Elle a {c}deux enfants{/c}.',
-            '{tab:1>}{c}Sensations{/c} | Vous avez {c}faim{/c}.',
-            '{tab:1>}{c}Besoins{/c} | Nous avons {c}besoin d’aide{/c}.',
-            '{tab:1>}{c}Expressions{/c} | Ils ont {c}de la chance{/c}.',
-          ]},
-          { kind: 'paragraph', text: 'Je choisis la {c}bonne forme{/c} du verbe selon la personne.' },
-          { kind: 'paragraph', text: '{ligne/2}' },
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
           {
-            kind: 'examples',
-            marker: 'puces',
-            items: [
-              '{tab:+1+} {g}Singulier{/g} | {g}Pluriel{/g}',
-              '{tab:1<}J’{c}ai{/c} faim. | Nous {c}avons{/c} faim.',
-              '{tab:1<}Tu {c}as{/c} faim. | Vous {c}avez{/c} faim.',
-              '{tab:1<}Il / Elle {c}a{/c} faim. | Ils / Elles {c}ont{/c} faim.',
-            ],
+            "kind": "paragraph",
+            "text": "Le sujet indique de qui ou de quoi je parle."
           },
-        ],
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le verbe être change avec le sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je retiens : je suis, tu es, il est, nous sommes, vous êtes, ils sont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec elle ou on, j’utilise est."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec elles, j’utilise sont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux dire une identité, un métier, un état ou un lieu."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "L’adjectif s’accorde avec la personne : il est content, elle est contente."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour dire non, je place ne avant le verbe et pas après."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour poser une question, je peux commencer par est-ce que."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
       },
-      {kind: 'page'},
       {
-        kind: 'section',
-        role: 'retenir',
-        blocks: [
-          { kind: 'paragraph', text: 'Je retiens les six formes du verbe {c}avoir{/c} au présent.' },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'table', colHeader: true, rowHeader: false, 
-            headers: ['Personne', 'avoir'],
-            rows: [
-              ['j’', '{c}ai{/c}'],
-              ['tu', '{c}as{/c}'],
-              ['il / elle / on', '{c}a{/c}'],
-              ['nous', '{c}avons{/c}'],
-              ['vous', '{c}avez{/c}'],
-              ['ils / elles', '{c}ont{/c}'],
-            ],
-          },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: 'Je retiens les principaux emplois du verbe {c}avoir{/c}.' },
-          { kind: 'examples', marker: 'puces', items: [
-            '{tab:+1+}{g}Je l’utilise pour …{/g}',
-            '{tab:1<}la {c}possession{/c} | l’{c}âge{/c}',
-            '{tab:1<}la {c}famille{/c} | la {c}sensation{/c}',
-            '{tab:1<}le {c}besoin{/c} | les {c}expressions{/c}',
-          ]},
-          { kind: 'paragraph', text: '{c}Attention :{/c}' },
-          {
-            kind: 'examples',
-            items: [
-              { text: 'Je dis : « J’{c}ai{/c} un billet. »', wrong: '« Je ai un billet. »' },
-              { text: 'Je dis : « Ils {c}ont{/c} faim. »', wrong: '« Ils sont faim. »' },
-              { text: 'Je dis : « J’{c}ai{/c} 20 ans. »', wrong: '« Je suis 20 ans. »' },
-            ],
-          },
-          { kind: 'paragraph', text: '{ligne/2}' },
-          { kind: 'paragraph', text: 'Avec certaines sensations et expressions, j’utilise {c}avoir{/c} et non {c}être{/c}.' },
-          { kind: 'examples', marker: 'puces',
-            items: [
-              '{tab:+1+} {g}Sensation{/g} | {g}Expression{/g}',
-              '{tab:1<}Avoir {c}faim{/c} / {c}soif{/c} | Avoir {c}raison/tort{/c}',
-              '{tab:1<}Avoir {c}froid{/c} / {c}chaud{/c} | Avoir {c}besoin de{/c}',
-              '{tab:1<}Avoir {c}peur{/c} | Avoir {c}mal à{/c}',
-            ],
-          }, 
-        ],
+        "kind": "page"
       },
-    ],
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le sujet indique de qui ou de quoi je parle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "Être"
+            ],
+            "rows": [
+              [
+                "je",
+                "{c}suis{/c}"
+              ],
+              [
+                "tu",
+                "{c}es{/c}"
+              ],
+              [
+                "il / elle / on",
+                "{c}est{/c}"
+              ],
+              [
+                "nous",
+                "{c}sommes{/c}"
+              ],
+              [
+                "vous",
+                "{c}êtes{/c}"
+              ],
+              [
+                "ils / elles",
+                "{c}sont{/c}"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis j’ai vingt ans ; le verbe être ne sert pas à donner mon âge."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'm4',
-    typeId: 'gram-m4-theorie',
-    index: 4,
-    title: 'Les verbes en -er au présent',
-    topic: 'gram-present',
-    public: 'A1',
-    objectif: 'Conjuguer un verbe régulier en -er au présent.',
-    blocks: sheet({
-      title: 'Les verbes en -er',
-      intro: 'Je conjugue un verbe du 1er groupe {g}-er{/g} au présent.',
-      regarder: [
-        '{tab:1<}Je {c}parle{/c} français. | Tu {c}travailles{/c} à Sion.',
-        '{tab:1<}Il {c}habite{/c} en Suisse. | Nous {c}aimons{/c} le café.',
-        '{tab:1<}Vous {c}regardez{/c} la télévision. | Elles {c}écoutent{/c} de la musique.',
-      ],
-      expliquer: [
-        p('J’utilise le présent pour maintenant, une habitude ou une description.'),
-        p('Pour conjuguer, je suis quatre étapes.'),
-        ex(
-          [
-            '{tab:1>}Je regarde le {c}verbe{/c} à l’infinitif | {c}parler{/c}',
-            '{tab:1>}Je retire la terminaison | parl{c}-er{/c}',
-            '{tab:1>}Je garde le début du verbe | {c}parl-{/c}',
-            '{tab:1>}J’ajoute la terminaison du présent | je parl{c}e{/c}',
-          ],
-          'numeros',
-        ),
-        ligne,
-        p('Les terminaisons sont les mêmes pour les verbes réguliers en -er.'),
-        ex([
-          '{tab:+2++}{g}Personne{/g} | {g}Terminaison{/g} | {g}Parler{/g}',
-          '{tab:2+>}je | -{c}e{/c} | je parl{c}e{/c}',
-          '{tab:2+>}tu | -{c}es{/c} | tu parl{c}es{/c}',
-          '{tab:2+>}il / elle / on | -{c}e{/c} | elle parl{c}e{/c}',
-          '{tab:2+>}nous | -{c}ons{/c} | nous parl{c}ons{/c}',
-          '{tab:2+>}vous | -{c}ez{/c} | vous parl{c}ez{/c}',
-          '{tab:2+>}ils / elles | -{c}ent{/c} | ils parl{c}ent{/c}',
-        ]),
-      ],
-      retenir: [
-        p('J’enlève -er. J’ajoute -e, -es, -e, -ons, -ez, -ent.'),
-        ligne,
-        table(
-          ['Personne', 'parler'],
-          [
-            ['je', 'parle'],
-            ['tu', 'parles'],
-            ['il / elle / on', 'parle'],
-            ['nous', 'parlons'],
-            ['vous', 'parlez'],
-            ['ils / elles', 'parlent'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Aller finit en -er, mais il est irrégulier.'),
-        ex([{ text: 'Je dis : « Je {c}vais{/c}. »', wrong: 'Je alle.' }]),
-      ],
-    }),
+    "id": "m3",
+    "typeId": "gram-m3-theorie",
+    "index": 3,
+    "title": "Le verbe avoir",
+    "topic": "gram-present",
+    "public": "pré-A1 / A1",
+    "objectif": "Conjuguer avoir au présent.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le verbe avoir"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle de ce que je possède ou de ce que je ressens."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "J’{c}ai{/c} une question.",
+              "Nous {c}avons{/c} faim.",
+              "Elle {c}n’a pas de{/c} voiture."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je retiens : j’ai, tu as, il a, nous avons, vous avez, ils ont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec elle ou on, j’utilise a ; avec elles, j’utilise ont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant ai, je devient j’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avoir sert à dire un âge : j’ai trente ans."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’utilise aussi avoir faim, avoir soif, avoir froid et avoir besoin de."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour dire non : je n’ai pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après une négation, un, une et des deviennent généralement de."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À l’écrit, a est le verbe ; à est une préposition."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je retiens : j’ai, tu as, il a, nous avons, vous avez, ils ont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "avoir"
+            ],
+            "rows": [
+              [
+                "j’",
+                "{c}ai{/c}"
+              ],
+              [
+                "tu",
+                "{c}as{/c}"
+              ],
+              [
+                "il / elle / on",
+                "{c}a{/c}"
+              ],
+              [
+                "nous",
+                "{c}avons{/c}"
+              ],
+              [
+                "vous",
+                "{c}avez{/c}"
+              ],
+              [
+                "ils / elles",
+                "{c}ont{/c}"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis vous avez, sans ajouter de t à avez."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'm5',
-    typeId: 'gram-m5-theorie',
-    index: 5,
-    title: 'Les verbes en -er particuliers',
-    topic: 'gram-present',
-    public: 'A1 / A2',
-    objectif: 'Reconnaître les changements orthographiques des verbes en -er.',
-    blocks: sheet({
-      title: 'Les verbes en -er particuliers',
-      intro: 'Certains verbes en -er {g}changent{/g} l’écriture.',
-      regarder: [
-        '{tab:1<}Je {c}vais{/c} au travail. | Nous {c}allons{/c} à l’école.',
-        '{tab:1<}Nous {c}mangeons{/c}. | Nous {c}commençons{/c}.',
-        '{tab:1<}Je {c}jette{/c} le papier. | J’{c}achète{/c} du pain.',
-      ],
-      expliquer: [
-        p('Je regarde l’infinitif pour choisir le modèle.'),
-        p('{c}Aller{/c} est irrégulier : je vais, tu vas, il va, nous allons, vous allez, ils vont.'),
-        p('Verbes en -ger : je garde e devant o. Nous mangeons.'),
-        p('Verbes en -cer : c devient ç devant o. Nous commençons.'),
-        p('Certains doublent une consonne : jeter → je jette.'),
-        p('Certains changent e en è : acheter → j’achète.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Cas{/g} | {g}Exemple{/g}',
-          '{tab:1>}aller | je {c}vais{/c}',
-          '{tab:1>}-ger | nous man{c}geons{/c}',
-          '{tab:1>}-cer | nous commen{c}çons{/c}',
-          '{tab:1>}double consonne | je je{c}tte{/c}',
-          '{tab:1>}e → è | j’ach{c}ète{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Le changement protège le son du verbe.'),
-        p('Aller s’apprend à part. Il est très fréquent.'),
-        ligne,
-        table(
-          ['Cas', 'Exemple'],
-          [
-            ['aller', 'je vais / nous allons'],
-            ['-ger', 'nous mangeons'],
-            ['-cer', 'nous commençons'],
-            ['double consonne', 'je jette'],
-            ['e → è', 'j’achète'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Nous mangeons, avec un e. Pas « nous mangons ».'),
-        ex([{ text: 'Je dis : « Nous {c}mangeons{/c}. »', wrong: 'Nous mangons.' }]),
-      ],
-    }),
+    "id": "m4",
+    "typeId": "gram-m4-theorie",
+    "index": 4,
+    "title": "Les verbes en -er au présent",
+    "topic": "gram-present",
+    "public": "A1",
+    "objectif": "Conjuguer un verbe régulier en -er au présent.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les verbes en -er au présent"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je conjugue les verbes réguliers en -er au présent."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Tu {c}parles{/c} français.",
+              "Nous {c}travaillons{/c} demain.",
+              "Elles {c}écoutent{/c} la radio."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "L’infinitif est le nom du verbe : parler."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’enlève -er pour trouver la base : parl-."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’ajoute une terminaison : -e, -es, -e, -ons, -ez, -ent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La terminaison dépend du sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec elle ou on, je choisis la même terminaison qu’avec il."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les terminaisons -e, -es et -ent ne s’entendent généralement pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’écris la terminaison même si je ne l’entends pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Aller se termine en -er, mais sa conjugaison est irrégulière."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure le verbe : je ne parle pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "L’infinitif est le nom du verbe : parler."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "parler"
+            ],
+            "rows": [
+              [
+                "je",
+                "parle"
+              ],
+              [
+                "tu",
+                "parles"
+              ],
+              [
+                "il / elle / on",
+                "parle"
+              ],
+              [
+                "nous",
+                "parlons"
+              ],
+              [
+                "vous",
+                "parlez"
+              ],
+              [
+                "ils / elles",
+                "parlent"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je vérifie le sujet avant de choisir -e, -es ou -ent."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'a4',
-    typeId: 'gram-a4-theorie',
-    index: 4,
-    title: 'Aller : destination (pays et villes)',
-    topic: 'gram-present',
-    public: 'A1',
-    objectif: 'Dire où je vais (pays, continent, ville).',
-    blocks: sheet({
-      title: 'Aller : pays et villes',
-      intro: 'Je dis ma {g}destination{/g} avec le verbe aller.',
-      regarder: [
-        '{tab:1<}Je vais {c}au{/c} Sénégal. | Elle va {c}en{/c} Chine.',
-        '{tab:1<}Tu vas {c}en{/c} Irak. | Nous allons {c}aux{/c} Pays-Bas.',
-        '{tab:1<}Vous allez {c}en{/c} Europe. | Ils vont {c}à{/c} Sion.',
-      ],
-      expliquer: [
-        p('Le verbe {c}aller{/c} indique la destination.'),
-        p('Pays masculin + consonne → {c}au{/c}.'),
-        p('Pays masculin + voyelle, ou pays féminin → {c}en{/c}.'),
-        p('Pays au pluriel → {c}aux{/c}. Continent → {c}en{/c}. Ville → {c}à{/c}.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Lieu{/g} | {g}Mot{/g} | {g}Exemple{/g}',
-          '{tab:2+>}pays masculin + consonne | {c}au{/c} | au Sénégal',
-          '{tab:2+>}pays masculin + voyelle | {c}en{/c} | en Irak',
-          '{tab:2+>}pays féminin | {c}en{/c} | en Chine',
-          '{tab:2+>}pays pluriel | {c}aux{/c} | aux Pays-Bas',
-          '{tab:2+>}continent | {c}en{/c} | en Europe',
-          '{tab:2+>}ville | {c}à{/c} | à Sion',
-        ]),
-      ],
-      retenir: [
-        p('Aller = destination. Au, en, aux ou à selon le lieu.'),
-        ligne,
-        table(
-          ['Lieu', 'Forme', 'Exemple'],
-          [
-            ['pays masc. + consonne', 'au', 'Je vais au Sénégal.'],
-            ['pays masc. + voyelle', 'en', 'Tu vas en Irak.'],
-            ['pays féminin', 'en', 'Elle va en Chine.'],
-            ['pays pluriel', 'aux', 'Nous allons aux Pays-Bas.'],
-            ['continent', 'en', 'Vous allez en Europe.'],
-            ['ville', 'à', 'Ils vont à Sion.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne confonds pas au et en.'),
-        ex([{ text: 'Je dis : « Je vais {c}en{/c} France. »', wrong: 'Je vais au France.' }]),
-      ],
-    }),
+    "id": "m5",
+    "typeId": "gram-m5-theorie",
+    "index": 5,
+    "title": "Les verbes en -er particuliers",
+    "topic": "gram-present",
+    "public": "A1 / A2",
+    "objectif": "Reconnaître les changements orthographiques des verbes en -er.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les verbes en -er particuliers"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je garde le bon son dans certains verbes en -er."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Nous {c}mangeons{/c} à midi.",
+              "J’{c}achète{/c} du pain.",
+              "Tu {c}appelles{/c} ta sœur."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Les terminaisons restent celles des verbes en -er."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec manger, j’ajoute e devant -ons : nous mangeons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec commencer, j’écris ç devant -ons : nous commençons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec acheter, le e devient è dans j’achète, tu achètes, il achète et ils achètent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec préférer, j’écris je préfère, mais nous préférons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Certains verbes doublent une consonne : j’appelle, mais nous appelons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Jeter donne je jette et nous jetons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec nettoyer, y devient i dans je nettoie ; la forme nous nettoyons garde y."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour payer, les formes je paie et je paye sont admises."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Les terminaisons restent celles des verbes en -er."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Cas",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "aller",
+                "je vais / nous allons"
+              ],
+              [
+                "-ger",
+                "nous mangeons"
+              ],
+              [
+                "-cer",
+                "nous commençons"
+              ],
+              [
+                "double consonne",
+                "je jette"
+              ],
+              [
+                "e → è",
+                "j’achète"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je conserve le changement dans toute la forme écrite, même si certaines lettres ne s’entendent pas."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'a5',
-    typeId: 'gram-a5-theorie',
-    index: 5,
-    title: 'Aller : destination (lieux et chez)',
-    topic: 'gram-present',
-    public: 'A1',
-    objectif: 'Dire où je vais (lieux, chez quelqu’un).',
-    blocks: sheet({
-      title: 'Aller : lieux et chez',
-      intro: 'Je vais {g}à{/g} un lieu. Je vais {g}chez{/g} une personne.',
-      regarder: [
-        '{tab:1<}Je vais {c}chez{/c} Sarah. | Elle va {c}à la{/c} poste.',
-        '{tab:1<}Nous allons {c}à l’{/c}école. | Ils vont {c}au{/c} magasin.',
-        '{tab:1<}Tu vas {c}aux{/c} toilettes ? | Je vais {c}chez{/c} le médecin.',
-      ],
-      expliquer: [
-        p('{c}Chez{/c} + personne, ou + métier : chez Sarah, chez le médecin.'),
-        p('Lieu féminin → {c}à la{/c}. Voyelle ou h → {c}à l’{/c}.'),
-        p('Lieu masculin + consonne → {c}au{/c}. Pluriel → {c}aux{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Cas{/g} | {g}Forme{/g}',
-          '{tab:1>}personne | {c}chez{/c}',
-          '{tab:1>}lieu féminin | {c}à la{/c}',
-          '{tab:1>}voyelle ou h | {c}à l’{/c}',
-          '{tab:1>}lieu masculin | {c}au{/c}',
-          '{tab:1>}pluriel | {c}aux{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Chez = personne. À la, à l’, au ou aux = lieu.'),
-        ligne,
-        table(
-          ['Cas', 'Forme', 'Exemple'],
-          [
-            ['personne', 'chez', 'Je vais chez Sarah.'],
-            ['lieu féminin', 'à la', 'Elle va à la poste.'],
-            ['voyelle / h', 'à l’', 'Nous allons à l’école.'],
-            ['lieu masculin', 'au', 'Ils vont au magasin.'],
-            ['pluriel', 'aux', 'Je vais aux toilettes.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} École est féminin, avec une voyelle : à l’école.'),
-        ex([{ text: 'Je dis : « Je vais {c}à l’école{/c}. »', wrong: 'Je vais au école.' }]),
-      ],
-    }),
+    "id": "a4",
+    "typeId": "gram-a4-theorie",
+    "index": 4,
+    "title": "Aller : destination (pays et villes)",
+    "topic": "gram-present",
+    "public": "A1",
+    "objectif": "Dire où je vais (pays, continent, ville).",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Aller : destination (pays et villes)"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis dans quel pays, continent ou ville je vais."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je vais {c}à{/c} Lausanne.",
+              "Elle va {c}en{/c} Italie.",
+              "Nous allons {c}aux{/c} États-Unis."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue aller : je vais, tu vas, il va, nous allons, vous allez, ils vont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une ville, j’utilise à."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un pays féminin, j’utilise en : en France."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un pays masculin qui commence par une voyelle, j’utilise aussi en : en Iran."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un pays masculin qui commence par une consonne, j’utilise au : au Canada."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un pays pluriel, j’utilise aux : aux Pays-Bas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un continent, j’utilise en : en Europe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’apprends le genre du pays avec son nom ; les pays en -e ont des exceptions, comme le Mexique."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La préposition dit la destination ; elle ne dit pas la provenance."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue aller : je vais, tu vas, il va, nous allons, vous allez, ils vont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Lieu",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "pays masc. + consonne",
+                "au",
+                "Je vais au Sénégal."
+              ],
+              [
+                "pays masc. + voyelle",
+                "en",
+                "Tu vas en Irak."
+              ],
+              [
+                "pays féminin",
+                "en",
+                "Elle va en Chine."
+              ],
+              [
+                "pays pluriel",
+                "aux",
+                "Nous allons aux Pays-Bas."
+              ],
+              [
+                "continent",
+                "en",
+                "Vous allez en Europe."
+              ],
+              [
+                "ville",
+                "à",
+                "Ils vont à Sion."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis au Mexique, au Mozambique et au Cambodge : ces noms en -e sont masculins."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'm6',
-    typeId: 'gram-m6-theorie',
-    index: 6,
-    title: 'Les verbes en -ir',
-    topic: 'gram-present',
-    public: 'A1 / A2',
-    objectif: 'Conjuguer les modèles principaux des verbes en -ir.',
-    blocks: sheet({
-      title: 'Les verbes en -ir',
-      intro: 'Je conjugue un verbe en -ir selon son {g}modèle{/g}.',
-      regarder: [
-        '{tab:1<}Je {c}finis{/c} le travail. | Nous {c}finissons{/c} à 17 h.',
-        '{tab:1<}Elle {c}part{/c} tôt. | Ils {c}dorment{/c}.',
-        '{tab:1<}J’{c}ouvre{/c} la porte. | Nous {c}venons{/c} demain.',
-      ],
-      expliquer: [
-        p('Un verbe en -ir n’a pas une seule conjugaison.'),
-        p('Modèle {c}finir{/c} : je finis, tu finis, il finit, nous finissons.'),
-        p('Modèle {c}partir{/c} : je pars, tu pars, il part, nous partons. Comme dormir et sortir.'),
-        p('Modèle {c}ouvrir{/c} : j’ouvre, comme un verbe en -er.'),
-        p('Modèle {c}venir{/c} : je viens, tu viens, il vient, nous venons. Comme tenir.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Modèle{/g} | {g}Je{/g} | {g}Nous{/g}',
-          '{tab:2+>}finir | finis | finissons',
-          '{tab:2+>}partir | pars | partons',
-          '{tab:2+>}ouvrir | ouvre | ouvrons',
-          '{tab:2+>}venir | viens | venons',
-        ]),
-      ],
-      retenir: [
-        p('Je reconnais le modèle, puis j’applique ses terminaisons.'),
-        ligne,
-        table(
-          ['Modèle', 'je', 'nous', 'ils'],
-          [
-            ['finir', 'finis', 'finissons', 'finissent'],
-            ['partir', 'pars', 'partons', 'partent'],
-            ['ouvrir', 'ouvre', 'ouvrons', 'ouvrent'],
-            ['venir', 'viens', 'venons', 'viennent'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Venir et tenir changent beaucoup. Je les apprends à part.'),
-        ex([{ text: 'Je dis : « Je {c}viens{/c}. »', wrong: 'Je venis.' }]),
-      ],
-    }),
+    "id": "a5",
+    "typeId": "gram-a5-theorie",
+    "index": 5,
+    "title": "Aller : destination (lieux et chez)",
+    "topic": "gram-present",
+    "public": "A1",
+    "objectif": "Dire où je vais (lieux, chez quelqu’un).",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Aller : destination (lieux et chez)"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis vers quel lieu ou quelle personne je me déplace."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Tu vas {c}au{/c} marché.",
+              "Nous allons {c}à l’{/c}hôpital.",
+              "Je vais {c}chez{/c} ma voisine."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue aller selon le sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis la préposition avec le nom du lieu."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À + le devient au : au marché."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À + les devient aux : aux toilettes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde à la devant un nom féminin."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle ou un h muet, j’utilise à l’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec une personne ou un professionnel, j’utilise chez : chez Léa, chez le médecin."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Chez peut aussi être suivi de moi, toi, lui, elle, nous, vous, eux ou elles."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation donne je ne vais pas chez le médecin."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue aller selon le sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Cas",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "personne",
+                "chez",
+                "Je vais chez Sarah."
+              ],
+              [
+                "lieu féminin",
+                "à la",
+                "Elle va à la poste."
+              ],
+              [
+                "voyelle / h",
+                "à l’",
+                "Nous allons à l’école."
+              ],
+              [
+                "lieu masculin",
+                "au",
+                "Ils vont au magasin."
+              ],
+              [
+                "pluriel",
+                "aux",
+                "Je vais aux toilettes."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je vais chez le coiffeur, mais je vais au salon de coiffure."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'm7',
-    typeId: 'gram-m7-theorie',
-    index: 7,
-    title: 'Les verbes en -re et -oir',
-    topic: 'gram-present',
-    public: 'A1 / A2',
-    objectif: 'Conjuguer les modèles fréquents en -re et -oir.',
-    blocks: sheet({
-      title: 'Les verbes en -re et -oir',
-      intro: 'Je conjugue des verbes {g}fréquents{/g} hors du 1er groupe.',
-      regarder: [
-        '{tab:1<}Je {c}prends{/c} le bus. | Tu {c}lis{/c} un livre.',
-        '{tab:1<}Il {c}fait{/c} les courses. | Nous {c}voulons{/c} un café.',
-        '{tab:1<}Vous {c}pouvez{/c} entrer. | Elles {c}doivent{/c} signer.',
-      ],
-      expliquer: [
-        p('Je les apprends {c}un par un{/c}. Ils ne suivent pas -er.'),
-        p('Prendre : je prends, tu prends, il prend, nous prenons, ils prennent.'),
-        p('Lire : je lis, tu lis, il lit, nous lisons, ils lisent.'),
-        p('Faire : je fais, nous faisons, vous faites, ils font.'),
-        p('{c}Savoir{/c} = une information ou une compétence. {c}Connaître{/c} = une personne ou un lieu.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Verbe{/g} | {g}Je{/g}',
-          '{tab:1>}prendre | je {c}prends{/c}',
-          '{tab:1>}lire | je {c}lis{/c}',
-          '{tab:1>}faire | je {c}fais{/c}',
-          '{tab:1>}vouloir | je {c}veux{/c}',
-          '{tab:1>}savoir | je {c}sais{/c}',
-          '{tab:1>}connaître | je {c}connais{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Vous faites. Pas « vous faisez ».'),
-        ligne,
-        table(
-          ['Verbe', 'je', 'nous', 'ils'],
-          [
-            ['prendre', 'prends', 'prenons', 'prennent'],
-            ['lire', 'lis', 'lisons', 'lisent'],
-            ['faire', 'fais', 'faisons', 'font'],
-            ['vouloir', 'veux', 'voulons', 'veulent'],
-            ['pouvoir', 'peux', 'pouvons', 'peuvent'],
-            ['devoir', 'dois', 'devons', 'doivent'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Savoir ≠ connaître.'),
-        ex([
-          { text: 'Je dis : « Je {c}connais{/c} Nina. »', wrong: 'Je sais Nina.' },
-          { text: 'Je dis : « Vous {c}faites{/c}. »', wrong: 'Vous faisez.' },
-        ]),
-      ],
-    }),
+    "id": "m6",
+    "typeId": "gram-m6-theorie",
+    "index": 6,
+    "title": "Les verbes en -ir",
+    "topic": "gram-present",
+    "public": "A1 / A2",
+    "objectif": "Conjuguer les modèles principaux des verbes en -ir.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les verbes en -ir"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je reconnais plusieurs modèles de verbes en -ir."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Nous {c}finissons{/c} le repas.",
+              "Tu {c}pars{/c} à huit heures.",
+              "Elle {c}ouvre{/c} la porte."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Tous les verbes en -ir ne se conjuguent pas de la même façon."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le modèle finir donne finis, finis, finit, finissons, finissez, finissent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Choisir, réussir et grandir suivent le modèle finir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dans ce groupe, la forme avec nous se termine par -issons, comme nous finissons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Partir donne pars, pars, part, partons, partez, partent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Sortir et dormir suivent des modèles proches de partir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ouvrir se conjugue comme un verbe en -er au présent : j’ouvre, nous ouvrons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Venir et tenir ont des formes particulières : je viens, nous venons, ils viennent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis le modèle du verbe avant d’ajouter une terminaison."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Tous les verbes en -ir ne se conjuguent pas de la même façon."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Modèle",
+              "je",
+              "nous",
+              "ils"
+            ],
+            "rows": [
+              [
+                "finir",
+                "finis",
+                "finissons",
+                "finissent"
+              ],
+              [
+                "partir",
+                "pars",
+                "partons",
+                "partent"
+              ],
+              [
+                "ouvrir",
+                "ouvre",
+                "ouvrons",
+                "ouvrent"
+              ],
+              [
+                "venir",
+                "viens",
+                "venons",
+                "viennent"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je n’écris pas nous partissons : le verbe partir ne suit pas le modèle finir."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'modaux',
-    typeId: 'gram-modaux-theorie',
-    index: 8,
-    title: 'Pouvoir, devoir, vouloir',
-    topic: 'gram-present',
-    public: 'A1',
-    objectif: 'Conjuguer pouvoir, devoir et vouloir au présent.',
-    blocks: sheet({
-      title: 'Pouvoir, devoir, vouloir',
-      intro: 'Je conjugue {g}pouvoir{/g}, {g}devoir{/g} et {g}vouloir{/g}.',
-      regarder: [
-        '{tab:1<}Je {c}peux{/c} venir. | Tu {c}dois{/c} signer.',
-        '{tab:1<}Elle {c}veut{/c} un café. | Nous {c}pouvons{/c} payer.',
-        '{tab:1<}Vous {c}devez{/c} attendre. | Ils {c}veulent{/c} partir.',
-      ],
-      expliquer: [
-        p('Ces trois verbes sont {c}irréguliers{/c}.'),
-        p('{c}Pouvoir{/c} = capacité ou permission.'),
-        p('{c}Devoir{/c} = obligation. {c}Vouloir{/c} = souhait.'),
-        p('Le verbe après eux reste à l’infinitif.'),
-        p('Je, tu, il changent beaucoup. Nous et vous sont plus réguliers.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Personne{/g} | {g}Pouvoir{/g} | {g}Devoir{/g}',
-          '{tab:2+>}je | peux | dois',
-          '{tab:2+>}tu | peux | dois',
-          '{tab:2+>}il / elle | peut | doit',
-          '{tab:2+>}nous | pouvons | devons',
-          '{tab:2+>}vous | pouvez | devez',
-          '{tab:2+>}ils / elles | peuvent | doivent',
-        ]),
-      ],
-      retenir: [
-        p('Je retiens les trois colonnes. Le 2e verbe ne change pas.'),
-        ligne,
-        table(
-          ['Personne', 'pouvoir', 'devoir', 'vouloir'],
-          [
-            ['je', 'peux', 'dois', 'veux'],
-            ['tu', 'peux', 'dois', 'veux'],
-            ['il / elle', 'peut', 'doit', 'veut'],
-            ['nous', 'pouvons', 'devons', 'voulons'],
-            ['vous', 'pouvez', 'devez', 'voulez'],
-            ['ils / elles', 'peuvent', 'doivent', 'veulent'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je peux, pas « je peut ». Ils peuvent, pas « ils peut ».'),
-        ex([
-          { text: 'Je dis : « Je {c}peux{/c} venir. »', wrong: 'Je peut venir.' },
-          { text: 'Je dis : « Je veux {c}partir{/c}. »', wrong: 'Je veux pars.' },
-        ]),
-      ],
-    }),
+    "id": "m7",
+    "typeId": "gram-m7-theorie",
+    "index": 7,
+    "title": "Les verbes en -re et -oir",
+    "topic": "gram-present",
+    "public": "A1 / A2",
+    "objectif": "Conjuguer les modèles fréquents en -re et -oir.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les verbes en -re et -oir"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je conjugue les verbes fréquents en -re et en -oir."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}prends{/c} le bus.",
+              "Vous {c}savez{/c} la réponse.",
+              "Elles {c}boivent{/c} de l’eau."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ces verbes ont plusieurs modèles ; je n’applique pas une seule règle à tous."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prendre donne prends, prends, prend, prenons, prenez, prennent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Attendre donne attends, attends, attend, attendons, attendez, attendent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Mettre donne mets, mets, met, mettons, mettez, mettent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Voir donne vois, vois, voit, voyons, voyez, voient."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Savoir donne sais, sais, sait, savons, savez, savent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Lire donne lis, lis, lit, lisons, lisez, lisent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Boire donne bois, bois, boit, buvons, buvez, boivent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’apprends le verbe avec une forme au singulier et une forme au pluriel."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ces verbes ont plusieurs modèles ; je n’applique pas une seule règle à tous."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Verbe",
+              "je",
+              "nous",
+              "ils"
+            ],
+            "rows": [
+              [
+                "prendre",
+                "prends",
+                "prenons",
+                "prennent"
+              ],
+              [
+                "lire",
+                "lis",
+                "lisons",
+                "lisent"
+              ],
+              [
+                "faire",
+                "fais",
+                "faisons",
+                "font"
+              ],
+              [
+                "vouloir",
+                "veux",
+                "voulons",
+                "veulent"
+              ],
+              [
+                "pouvoir",
+                "peux",
+                "pouvons",
+                "peuvent"
+              ],
+              [
+                "devoir",
+                "dois",
+                "devons",
+                "doivent"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je vérifie les formes nous et vous : vous faites, vous dites, vous lisez."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'pronominaux',
-    typeId: 'gram-pronominaux-theorie',
-    index: 9,
-    title: 'Verbes pronominaux',
-    topic: 'gram-present',
-    public: 'A1',
-    objectif: 'Conjuguer un verbe pronominal au présent.',
-    blocks: sheet({
-      title: 'Verbes pronominaux',
-      intro: 'Je conjugue un verbe avec un pronom {g}réfléchi{/g}.',
-      regarder: [
-        '{tab:1<}Je {c}me{/c} lève à 7 h. | Tu {c}te{/c} laves.',
-        '{tab:1<}Il {c}se{/c} repose. | Nous {c}nous{/c} promenons.',
-        '{tab:1<}Vous {c}vous{/c} habillez. | Elles {c}s’{/c}appellent Nina et Léa.',
-      ],
-      expliquer: [
-        p('Le pronom réfléchi se place {c}devant{/c} le verbe.'),
-        p('Il change avec la personne : me, te, se, nous, vous, se.'),
-        p('Le verbe se conjugue comme un verbe normal : lève, lèves, lève…'),
-        p('Devant une voyelle : me → {c}m’{/c}, te → {c}t’{/c}, se → {c}s’{/c}.'),
-        p('Négation : ne + pronom + verbe + pas.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Personne{/g} | {g}Se lever{/g}',
-          '{tab:1>}je | je {c}me{/c} lève',
-          '{tab:1>}tu | tu {c}te{/c} lèves',
-          '{tab:1>}il / elle | il {c}se{/c} lève',
-          '{tab:1>}nous | nous {c}nous{/c} levons',
-          '{tab:1>}vous | vous {c}vous{/c} levez',
-          '{tab:1>}ils / elles | ils {c}se{/c} lèvent',
-        ]),
-      ],
-      retenir: [
-        p('Deux parties : le pronom et le verbe conjugué.'),
-        ligne,
-        table(
-          ['Personne', 'Pronom', 'Exemple'],
-          [
-            ['je', 'me / m’', 'je me lève'],
-            ['tu', 'te / t’', 'tu t’appelles'],
-            ['il / elle', 'se / s’', 'elle se couche'],
-            ['nous', 'nous', 'nous nous reposons'],
-            ['vous', 'vous', 'vous vous levez'],
-            ['ils / elles', 'se / s’', 'ils se lèvent'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Le pronom reste devant le verbe à la négation.'),
-        ex([{ text: 'Je dis : « Je {c}ne me{/c} lève pas. »', wrong: 'Je me ne lève pas.' }]),
-      ],
-    }),
+    "id": "modaux",
+    "typeId": "gram-modaux-theorie",
+    "index": 8,
+    "title": "Pouvoir, devoir, vouloir",
+    "topic": "gram-present",
+    "public": "A1",
+    "objectif": "Conjuguer pouvoir, devoir et vouloir au présent.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Pouvoir, devoir, vouloir"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle d’une possibilité, d’une obligation ou d’une volonté."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}peux{/c} conduire.",
+              "Nous {c}devons{/c} attendre.",
+              "Vous {c}voulez{/c} entrer ?"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Pouvoir exprime une capacité, une possibilité ou une permission."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devoir exprime une obligation ou une nécessité."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Vouloir exprime une volonté ou une demande."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après ces verbes, je garde le verbe suivant à l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne mets pas à ou de entre le modal et l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pouvoir : peux, peux, peut, pouvons, pouvez, peuvent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devoir : dois, dois, doit, devons, devez, doivent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Vouloir : veux, veux, veut, voulons, voulez, veulent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure le verbe conjugué : je ne peux pas venir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Pouvoir exprime une capacité, une possibilité ou une permission."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "pouvoir",
+              "devoir",
+              "vouloir"
+            ],
+            "rows": [
+              [
+                "je",
+                "peux",
+                "dois",
+                "veux"
+              ],
+              [
+                "tu",
+                "peux",
+                "dois",
+                "veux"
+              ],
+              [
+                "il / elle",
+                "peut",
+                "doit",
+                "veut"
+              ],
+              [
+                "nous",
+                "pouvons",
+                "devons",
+                "voulons"
+              ],
+              [
+                "vous",
+                "pouvez",
+                "devez",
+                "voulez"
+              ],
+              [
+                "ils / elles",
+                "peuvent",
+                "doivent",
+                "veulent"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dois partir contient un seul verbe conjugué ; partir reste à l’infinitif."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'a8',
-    typeId: 'gram-a8-theorie',
-    index: 10,
-    title: 'La négation ne … pas',
-    topic: 'gram-present',
-    public: 'A1',
-    objectif: 'Former une phrase négative avec ne … pas.',
-    blocks: sheet({
-      title: 'La négation ne … pas',
-      intro: 'Je mets {g}ne{/g} et {g}pas{/g} autour du verbe.',
-      regarder: [
-        '{tab:1<}Je {c}ne{/c} suis {c}pas{/c} italien. | Elle {c}n’{/c}habite {c}pas{/c} ici.',
-        '{tab:1<}Nous {c}ne{/c} parlons {c}pas{/c} anglais. | Ils {c}ne{/c} viennent {c}pas{/c}.',
-        '{tab:1<}Je {c}n’{/c}ai {c}pas{/c} compris. | {c}Ne{/c} pas fumer.',
-      ],
-      expliquer: [
-        p('{c}Ne{/c} se place avant le verbe. {c}Pas{/c} se place après.'),
-        p('Devant une voyelle, ne devient {c}n’{/c}.'),
-        p('Au passé composé : ne + auxiliaire + pas + participe.'),
-        p('À l’infinitif : {c}ne pas{/c} + verbe, les deux devant.'),
-        p('À l’impératif : ne + verbe + pas.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Cas{/g} | {g}Place{/g}',
-          '{tab:1>}présent | ne + verbe + pas',
-          '{tab:1>}voyelle | n’ + verbe + pas',
-          '{tab:1>}passé composé | ne + auxiliaire + pas + participe',
-          '{tab:1>}infinitif | ne pas + infinitif',
-        ]),
-      ],
-      retenir: [
-        p('Négation de base = ne … pas autour du verbe.'),
-        ligne,
-        table(
-          ['Cas', 'Forme', 'Exemple'],
-          [
-            ['présent', 'ne + verbe + pas', 'Je ne suis pas italien.'],
-            ['voyelle', 'n’ + verbe + pas', 'Elle n’habite pas ici.'],
-            ['composé', 'ne + aux. + pas + participe', 'Je n’ai pas compris.'],
-            ['infinitif', 'ne pas + verbe', 'Ne pas fumer.'],
-            ['impératif', 'ne + verbe + pas', 'Ne fumez pas !'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} À l’écrit, je garde ne. « Je suis pas » est seulement oral.'),
-        ex([{ text: 'Je dis : « Je {c}ne{/c} suis {c}pas{/c} italien. »', wrong: 'Je suis pas italien.' }]),
-      ],
-    }),
+    "id": "pronominaux",
+    "typeId": "gram-pronominaux-theorie",
+    "index": 9,
+    "title": "Verbes pronominaux",
+    "topic": "gram-present",
+    "public": "A1",
+    "objectif": "Conjuguer un verbe pronominal au présent.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Verbes pronominaux"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je conjugue un verbe avec me, te, se, nous ou vous."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}me{/c} prépare.",
+              "Elle {c}s’{/c}habille.",
+              "Nous {c}ne nous{/c} couchons pas tard."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un verbe pronominal se présente avec se ou s’ à l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis le sujet et le pronom réfléchi qui lui correspond."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je me, tu te, il se, nous nous, vous vous, ils se."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec elle, on ou elles, j’utilise aussi se."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le pronom réfléchi se place devant le verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle ou un h muet, me, te et se deviennent m’, t’ et s’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue le verbe selon son modèle : nous nous levons."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À la négation : je ne me lève pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec pouvoir, le pronom reste devant l’infinitif : je peux me lever."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un verbe pronominal se présente avec se ou s’ à l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "Pronom",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "je",
+                "me / m’",
+                "je me lève"
+              ],
+              [
+                "tu",
+                "te / t’",
+                "tu t’appelles"
+              ],
+              [
+                "il / elle",
+                "se / s’",
+                "elle se couche"
+              ],
+              [
+                "nous",
+                "nous",
+                "nous nous reposons"
+              ],
+              [
+                "vous",
+                "vous",
+                "vous vous levez"
+              ],
+              [
+                "ils / elles",
+                "se / s’",
+                "ils se lèvent"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Dans nous nous levons, le premier nous est le sujet ; le second appartient au verbe pronominal."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'a9',
-    typeId: 'gram-a9-theorie',
-    index: 11,
-    title: 'Autres négations',
-    topic: 'gram-present',
-    public: 'A1 / A2',
-    objectif: 'Utiliser jamais, plus, rien, personne…',
-    blocks: sheet({
-      title: 'Autres négations',
-      intro: 'Je choisis la négation selon le {g}sens{/g}.',
-      regarder: [
-        '{tab:1<}Je n’ai {c}jamais{/c} gagné. | Je n’ai {c}plus{/c} d’argent.',
-        '{tab:1<}Je ne vois {c}rien{/c}. | Je ne vois {c}personne{/c}.',
-        '{tab:1<}Je n’ai {c}aucun{/c} ticket. | Il part {c}sans{/c} sac.',
-      ],
-      expliquer: [
-        p('Ces mots remplacent {c}pas{/c}. Je garde {c}ne{/c}.'),
-        p('{c}Ne … jamais{/c} = aucune fois.'),
-        p('{c}Ne … plus{/c} = avant oui, maintenant non.'),
-        p('{c}Ne … rien{/c} = aucune chose. {c}Ne … personne{/c} = aucune personne.'),
-        p('Après {c}sans{/c}, je n’ajoute pas d’article : sans sac, sans eau.'),
-        p('Pour répondre oui à une question négative, je dis {c}si{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Idée{/g} | {g}Négation{/g}',
-          '{tab:1>}aucune fois | ne … {c}jamais{/c}',
-          '{tab:1>}plus maintenant | ne … {c}plus{/c}',
-          '{tab:1>}aucune chose | ne … {c}rien{/c}',
-          '{tab:1>}aucune personne | ne … {c}personne{/c}',
-          '{tab:1>}zéro | ne … {c}aucun{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Une idée négative = une négation adaptée.'),
-        p('Ne reste. Pas disparaît.'),
-        ligne,
-        table(
-          ['Affirmatif', 'Négatif'],
-          [
-            ['déjà / toujours', 'ne … jamais'],
-            ['encore', 'ne … plus'],
-            ['tout / quelque chose', 'ne … rien'],
-            ['quelqu’un', 'ne … personne'],
-            ['quelques', 'ne … aucun(e)'],
-            ['avec', 'sans'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Réponse à une négation : si = oui malgré le non.'),
-        ex([
-          { text: 'Je dis : « Tu n’aimes pas le café ? — {c}Si{/c}, j’aime le café. »', wrong: '— Oui, j’aime le café.' },
-        ]),
-      ],
-    }),
+    "id": "a8",
+    "typeId": "gram-a8-theorie",
+    "index": 10,
+    "title": "La négation ne … pas",
+    "topic": "gram-present",
+    "public": "A1",
+    "objectif": "Former une phrase négative avec ne … pas.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "La négation ne … pas"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis qu’une action ne se fait pas ou qu’une information est fausse."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Tu {c}ne{/c} viens {c}pas{/c}.",
+              "Je {c}n’{/c}ai {c}pas{/c} de vélo.",
+              "Elle {c}ne{/c} se repose {c}pas{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je repère le verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je place ne avant ce verbe et pas après."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle ou un h muet, ne devient n’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un verbe pronominal : je ne me lève pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec deux verbes : je ne peux pas venir."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au passé composé, la négation entoure l’auxiliaire : je n’ai pas compris."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après pas, un, une et des deviennent généralement de ou d’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec être, je garde l’article : ce n’est pas un problème."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À l’oral familier, ne est parfois absent ; je le garde à l’écrit."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je repère le verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Cas",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "présent",
+                "ne + verbe + pas",
+                "Je ne suis pas italien."
+              ],
+              [
+                "voyelle",
+                "n’ + verbe + pas",
+                "Elle n’habite pas ici."
+              ],
+              [
+                "composé",
+                "ne + aux. + pas + participe",
+                "Je n’ai pas compris."
+              ],
+              [
+                "infinitif",
+                "ne pas + verbe",
+                "Ne pas fumer."
+              ],
+              [
+                "impératif",
+                "ne + verbe + pas",
+                "Ne fumez pas !"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "J’écris les deux parties de la négation : ne ou n’, puis pas."
+          }
+        ]
+      }
+    ]
   },
+  {
+    "id": "a9",
+    "typeId": "gram-a9-theorie",
+    "index": 11,
+    "title": "Autres négations",
+    "topic": "gram-present",
+    "public": "A1 / A2",
+    "objectif": "Utiliser jamais, plus, rien, personne…",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Autres négations"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je précise ce qui est absent, terminé ou impossible."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je ne fume {c}plus{/c}.",
+              "Elle ne voit {c}personne{/c}.",
+              "Il n’a {c}que{/c} dix euros."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ne… jamais signifie à aucun moment."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ne… plus indique qu’une situation a changé et ne continue pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ne… rien signifie aucune chose."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ne… personne signifie aucune personne."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ne… aucun ou aucune accompagne un nom généralement singulier."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je n’ajoute pas pas à jamais, plus, rien ou personne dans ces constructions."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Rien et personne peuvent être sujets : personne ne répond."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au passé composé : je n’ai rien vu, mais je n’ai vu personne."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ne… que exprime une restriction et signifie seulement."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ne… jamais signifie à aucun moment."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Affirmatif",
+              "Négatif"
+            ],
+            "rows": [
+              [
+                "déjà / toujours",
+                "ne … jamais"
+              ],
+              [
+                "encore",
+                "ne … plus"
+              ],
+              [
+                "tout / quelque chose",
+                "ne … rien"
+              ],
+              [
+                "quelqu’un",
+                "ne … personne"
+              ],
+              [
+                "quelques",
+                "ne … aucun(e)"
+              ],
+              [
+                "avec",
+                "sans"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je ne confonds pas ne… plus avec ne… jamais : l’un parle d’un changement, l’autre d’une fréquence nulle."
+          }
+        ]
+      }
+    ]
+  }
 ]

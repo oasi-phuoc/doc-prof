@@ -1,315 +1,1066 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-aliments. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const alimentsDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'g1',
-    typeId: 'gram-g1-theorie',
-    index: 1,
-    title: 'Les articles indéfinis',
-    topic: 'gram-aliments',
-    public: 'A1',
-    objectif: 'Présenter une chose non précise avec un, une ou des.',
-    blocks: sheet({
-      title: 'Les articles indéfinis',
-      intro: 'Je présente une chose {g}non précise{/g}.',
-      regarder: [
-        '{tab:1<}Je veux {c}un{/c} café. | Elle achète {c}une{/c} pomme.',
-        '{tab:1<}Nous prenons {c}des{/c} œufs. | Il y a {c}un{/c} marché.',
-        '{tab:1<}Je n’ai pas {c}de{/c} pain. | Elle n’achète pas {c}d’{/c}eau.',
-      ],
-      expliquer: [
-        p('{c}Un{/c} = masculin. {c}Une{/c} = féminin. {c}Des{/c} = pluriel.'),
-        p('Je ne précise pas quelle chose. C’est une chose parmi d’autres.'),
-        p('À la négation, un, une et des deviennent {c}de{/c} ou {c}d’{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Nom{/g} | {g}Article{/g}',
-          '{tab:1>}masculin | {c}un{/c} kilo',
-          '{tab:1>}féminin | {c}une{/c} banane',
-          '{tab:1>}pluriel | {c}des{/c} tomates',
-          '{tab:1>}négation | pas {c}de{/c} pain',
-        ]),
-      ],
-      retenir: [
-        p('Un, une, des. À la négation : de ou d’.'),
-        ligne,
-        table(
-          ['Cas', 'Article', 'Exemple'],
-          [
-            ['masculin', 'un', 'un café'],
-            ['féminin', 'une', 'une pomme'],
-            ['pluriel', 'des', 'des œufs'],
-            ['négation', 'de / d’', 'pas de pain'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Après pas, je ne garde pas un ou des.'),
-        ex([
-          { text: 'Je dis : « Je n’ai pas {c}de{/c} pain. »', wrong: 'Je n’ai pas un pain. (sens général)' },
-        ]),
-      ],
-    }),
+    "id": "g1",
+    "typeId": "gram-g1-theorie",
+    "index": 1,
+    "title": "Les articles indéfinis",
+    "topic": "gram-aliments",
+    "public": "A1",
+    "objectif": "Présenter une chose non précise avec un, une ou des.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les articles indéfinis"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente une personne ou une chose qui n’est pas encore identifiée."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Voici {c}un{/c} sac.",
+              "Je cherche {c}une{/c} adresse.",
+              "Nous avons {c}des{/c} questions."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un article accompagne le nom."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Un accompagne un nom masculin singulier."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Une accompagne un nom féminin singulier."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Des accompagne un nom pluriel."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis le genre du nom, pas celui de la personne qui parle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Un ou une peut désigner un exemplaire parmi plusieurs."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après une négation avec avoir, un, une et des deviennent généralement de."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec être, je garde l’article : ce n’est pas une erreur."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un adjectif pluriel placé avant le nom, des devient souvent de : de beaux livres."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un article accompagne le nom."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Cas",
+              "Article",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "masculin",
+                "un",
+                "un café"
+              ],
+              [
+                "féminin",
+                "une",
+                "une pomme"
+              ],
+              [
+                "pluriel",
+                "des",
+                "des œufs"
+              ],
+              [
+                "négation",
+                "de / d’",
+                "pas de pain"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Un nom commençant par une voyelle ne perd pas son article indéfini : un ami, une amie."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'g2',
-    typeId: 'gram-g2-theorie',
-    index: 2,
-    title: 'Les articles définis',
-    topic: 'gram-aliments',
-    public: 'A1',
-    objectif: 'Parler d’une chose connue ou en général.',
-    blocks: sheet({
-      title: 'Les articles définis',
-      intro: 'Je parle d’une chose {g}connue{/g} ou en général.',
-      regarder: [
-        '{tab:1<}{c}Le{/c} pain est sur la table. | {c}La{/c} soupe est chaude.',
-        '{tab:1<}J’aime {c}le{/c} chocolat. | Où sont {c}les{/c} verres ?',
-        '{tab:1<}{c}L’{/c}eau est froide. | {c}Les{/c} légumes sont frais.',
-      ],
-      expliquer: [
-        p('{c}Le{/c}, {c}la{/c}, {c}l’{/c} et {c}les{/c} montrent une chose connue.'),
-        p('Je les utilise aussi pour parler {c}en général{/c}.'),
-        p('{c}L’{/c} devant une voyelle ou un h : l’eau, l’hôtel.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Nom{/g} | {g}Article{/g}',
-          '{tab:1>}masculin | {c}le{/c} pain',
-          '{tab:1>}féminin | {c}la{/c} soupe',
-          '{tab:1>}voyelle | {c}l’{/c}eau',
-          '{tab:1>}pluriel | {c}les{/c} fruits',
-        ]),
-      ],
-      retenir: [
-        p('Le, la, l’, les = chose connue ou idée générale.'),
-        ligne,
-        table(
-          ['Cas', 'Article', 'Exemple'],
-          [
-            ['masculin', 'le', 'le riz'],
-            ['féminin', 'la', 'la salade'],
-            ['voyelle / h', 'l’', 'l’huile'],
-            ['pluriel', 'les', 'les pâtes'],
-            ['en général', 'le / la', 'J’aime le café.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} « J’aime le chocolat » = en général, pas un chocolat précis.'),
-        ex([
-          { text: 'Je dis : « {c}L’{/c}eau est froide. »', wrong: 'La eau est froide.' },
-        ]),
-      ],
-    }),
+    "id": "g2",
+    "typeId": "gram-g2-theorie",
+    "index": 2,
+    "title": "Les articles définis",
+    "topic": "gram-aliments",
+    "public": "A1",
+    "objectif": "Parler d’une chose connue ou en général.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les articles définis"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle d’un élément connu ou d’une catégorie en général."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Fermez {c}la{/c} porte.",
+              "J’aime {c}les{/c} fruits.",
+              "{c}L’{/c}eau est froide."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le, la, l’ et les sont des articles définis."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le accompagne un masculin singulier ; la accompagne un féminin singulier."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle ou un h muet, le et la deviennent l’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les accompagne tous les noms pluriels."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’utilise un article défini pour un élément déjà identifié."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je l’utilise aussi pour un goût ou une idée générale : j’aime le chocolat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "L’article défini reste après la négation : je n’aime pas le café."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À ou de peut se contracter avec le ou les."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde le genre du nom même quand l’article est l’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le, la, l’ et les sont des articles définis."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Cas",
+              "Article",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "masculin",
+                "le",
+                "le riz"
+              ],
+              [
+                "féminin",
+                "la",
+                "la salade"
+              ],
+              [
+                "voyelle / h",
+                "l’",
+                "l’huile"
+              ],
+              [
+                "pluriel",
+                "les",
+                "les pâtes"
+              ],
+              [
+                "en général",
+                "le / la",
+                "J’aime le café."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je distingue j’aime le pain, qui exprime un goût, et je mange du pain, qui exprime une quantité."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'g3',
-    typeId: 'gram-g3-theorie',
-    index: 3,
-    title: 'Les articles partitifs',
-    topic: 'gram-aliments',
-    public: 'A1',
-    objectif: 'Parler d’une partie d’un aliment.',
-    blocks: sheet({
-      title: 'Les articles partitifs',
-      intro: 'Je parle d’une {g}partie{/g} d’un aliment.',
-      regarder: [
-        '{tab:1<}Je mange {c}du{/c} pain. | Elle boit {c}de la{/c} soupe.',
-        '{tab:1<}Il prend {c}de l’{/c}eau. | Nous achetons {c}des{/c} fruits.',
-        '{tab:1<}Je ne mange pas {c}de{/c} fromage. | Pas {c}d’{/c}huile.',
-      ],
-      expliquer: [
-        p('{c}Du{/c}, {c}de la{/c} et {c}de l’{/c} = une quantité non précise.'),
-        p('Je ne compte pas : pas « un pain », mais « du pain ».'),
-        p('À la négation, le partitif devient {c}de{/c} ou {c}d’{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Nom{/g} | {g}Partitif{/g}',
-          '{tab:1>}masculin | {c}du{/c} riz',
-          '{tab:1>}féminin | {c}de la{/c} viande',
-          '{tab:1>}voyelle | {c}de l’{/c}eau',
-          '{tab:1>}négation | pas {c}de{/c} sucre',
-        ]),
-      ],
-      retenir: [
-        p('Partitif = du, de la, de l’. Négation = de.'),
-        ligne,
-        table(
-          ['Cas', 'Forme', 'Exemple'],
-          [
-            ['masculin', 'du', 'du pain'],
-            ['féminin', 'de la', 'de la soupe'],
-            ['voyelle', 'de l’', 'de l’eau'],
-            ['négation', 'de / d’', 'pas de fromage'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne mange pas de fromage. Pas « pas du fromage ».'),
-        ex([
-          { text: 'Je dis : « Je bois {c}de l’{/c}eau. »', wrong: 'Je bois de eau.' },
-        ]),
-      ],
-    }),
+    "id": "g3",
+    "typeId": "gram-g3-theorie",
+    "index": 3,
+    "title": "Les articles partitifs",
+    "topic": "gram-aliments",
+    "public": "A1",
+    "objectif": "Parler d’une partie d’un aliment.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les articles partitifs"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle d’une quantité que je ne compte pas précisément."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je bois {c}du{/c} lait.",
+              "Elle prend {c}de la{/c} soupe.",
+              "Il n’y a pas {c}d’{/c}huile."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le partitif sert notamment avec un aliment ou une matière."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un nom masculin singulier, j’utilise du."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un nom féminin singulier, j’utilise de la."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle ou un h muet, j’utilise de l’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le pluriel des sert avec certains aliments : des pâtes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après une négation, le partitif devient généralement de ou d’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après une quantité précise, je dis de : un verre de lait."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec aimer ou préférer pour parler d’un goût général, je choisis plutôt l’article défini."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue une portion comptée et une quantité non précisée."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le partitif sert notamment avec un aliment ou une matière."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Cas",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "masculin",
+                "du",
+                "du pain"
+              ],
+              [
+                "féminin",
+                "de la",
+                "de la soupe"
+              ],
+              [
+                "voyelle",
+                "de l’",
+                "de l’eau"
+              ],
+              [
+                "négation",
+                "de / d’",
+                "pas de fromage"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis une tasse de café, sans du après tasse de."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'g4',
-    typeId: 'gram-g4-theorie',
-    index: 4,
-    title: 'Les quantités',
-    topic: 'gram-aliments',
-    public: 'A1',
-    objectif: 'Dire une quantité avec un nombre ou une expression + de.',
-    blocks: sheet({
-      title: 'Les quantités',
-      intro: 'Je dis une {g}quantité{/g} avec un nombre ou une expression.',
-      regarder: [
-        '{tab:1<}Je prends {c}deux{/c} cafés. | Elle achète {c}un kilo de{/c} pommes.',
-        '{tab:1<}Il boit {c}beaucoup de{/c} thé. | Nous avons {c}un peu de{/c} temps.',
-        '{tab:1<}C’est {c}trop de{/c} sucre. | J’ai {c}assez de{/c} pain.',
-      ],
-      expliquer: [
-        p('Un nombre se place devant le nom : deux cafés, trois œufs.'),
-        p('Une expression de quantité + {c}de{/c} + nom.'),
-        p('Après beaucoup, un peu, assez, trop : pas d’article du ou de la.'),
-        p('Devant une voyelle : {c}d’{/c}. Beaucoup d’eau.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Quantité{/g} | {g}Exemple{/g}',
-          '{tab:1>}nombre | {c}trois{/c} pommes',
-          '{tab:1>}un kilo de | un kilo {c}de{/c} riz',
-          '{tab:1>}beaucoup de | beaucoup {c}de{/c} lait',
-          '{tab:1>}un peu de | un peu {c}de{/c} sel',
-          '{tab:1>}assez de | assez {c}de{/c} pain',
-          '{tab:1>}trop de | trop {c}de{/c} sucre',
-        ]),
-      ],
-      retenir: [
-        p('Quantité + de + nom.'),
-        p('Pas de du ou de la après beaucoup, un peu, assez, trop.'),
-        ligne,
-        table(
-          ['Expression', 'Exemple'],
-          [
-            ['un kilo de', 'un kilo de pommes'],
-            ['beaucoup de', 'beaucoup de lait'],
-            ['un peu de', 'un peu de beurre'],
-            ['assez de', 'assez de pain'],
-            ['trop de', 'trop de sel'],
-            ['d’ + voyelle', 'beaucoup d’eau'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Beaucoup de lait, pas « beaucoup du lait ».'),
-        ex([
-          { text: 'Je dis : « beaucoup {c}de{/c} lait. »', wrong: 'beaucoup du lait.' },
-        ]),
-      ],
-    }),
+    "id": "g4",
+    "typeId": "gram-g4-theorie",
+    "index": 4,
+    "title": "Les quantités",
+    "topic": "gram-aliments",
+    "public": "A1",
+    "objectif": "Dire une quantité avec un nombre ou une expression + de.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les quantités"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je donne une quantité précise ou approximative."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Il faut un kilo {c}de{/c} pommes.",
+              "Je prends deux bouteilles {c}d’{/c}eau.",
+              "Il y a {c}trop de{/c} sel."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je peux compter avec un nombre : deux pommes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après une mesure, j’utilise de ou d’ : un kilo de pommes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Un litre mesure un volume ; un kilo mesure une masse."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Un paquet, une bouteille et une boîte désignent des contenants."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Beaucoup de, un peu de et assez de donnent une quantité non exacte."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Trop de signifie que la quantité dépasse ce qui convient."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Après une quantité, je ne remets généralement pas le, la ou les."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Combien de permet de demander une quantité."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le nom prend le pluriel si plusieurs éléments sont comptés."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je peux compter avec un nombre : deux pommes."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Expression",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "un kilo de",
+                "un kilo de pommes"
+              ],
+              [
+                "beaucoup de",
+                "beaucoup de lait"
+              ],
+              [
+                "un peu de",
+                "un peu de beurre"
+              ],
+              [
+                "assez de",
+                "assez de pain"
+              ],
+              [
+                "trop de",
+                "trop de sel"
+              ],
+              [
+                "d’ + voyelle",
+                "beaucoup d’eau"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis beaucoup de personnes, et non beaucoup des personnes quand je parle en général."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'g5',
-    typeId: 'gram-g5-theorie',
-    index: 5,
-    title: 'Les déterminants indéfinis',
-    topic: 'gram-aliments',
-    public: 'A2',
-    objectif: 'Parler d’une quantité vague.',
-    blocks: sheet({
-      title: 'Les déterminants indéfinis',
-      intro: 'Je parle d’une quantité {g}vague{/g}.',
-      regarder: [
-        '{tab:1<}{c}Chaque{/c} élève a un cahier. | J’ai {c}plusieurs{/c} questions.',
-        '{tab:1<}Il reste {c}quelques{/c} places. | {c}Tout{/c} le monde est là.',
-        '{tab:1<}Je n’ai {c}aucun{/c} ticket. | {c}Toute{/c} la classe écoute.',
-      ],
-      expliquer: [
-        p('Ces mots ne donnent pas un nombre exact.'),
-        p('{c}Chaque{/c} est toujours singulier.'),
-        p('{c}Aucun{/c} et {c}aucune{/c} vont avec {c}ne{/c}.'),
-        p('{c}Tout{/c} s’accorde : tout, toute, tous, toutes.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Exemple{/g}',
-          '{tab:1>}chaque | {c}chaque{/c} jour',
-          '{tab:1>}plusieurs | {c}plusieurs{/c} amis',
-          '{tab:1>}quelques | {c}quelques{/c} minutes',
-          '{tab:1>}tout le monde | {c}tout le monde{/c}',
-          '{tab:1>}aucun | je n’ai {c}aucun{/c} ticket',
-        ]),
-      ],
-      retenir: [
-        p('Indéfini = quantité non exacte.'),
-        ligne,
-        table(
-          ['Mot', 'Accord', 'Exemple'],
-          [
-            ['chaque', 'singulier', 'chaque matin'],
-            ['plusieurs', 'pluriel', 'plusieurs bus'],
-            ['quelques', 'pluriel', 'quelques euros'],
-            ['tout / toute', 'singulier', 'toute la journée'],
-            ['tous / toutes', 'pluriel', 'tous les jours'],
-            ['aucun / aucune', 'avec ne', 'aucun problème'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Aucun va avec ne.'),
-        ex([
-          { text: 'Je dis : « Je n’ai {c}aucun{/c} ticket. »', wrong: 'J’ai aucun ticket. (à l’écrit)' },
-        ]),
-      ],
-    }),
+    "id": "g5",
+    "typeId": "gram-g5-theorie",
+    "index": 5,
+    "title": "Les déterminants indéfinis",
+    "topic": "gram-aliments",
+    "public": "A2",
+    "objectif": "Parler d’une quantité vague.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les déterminants indéfinis"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle d’une quantité ou d’un ensemble sans donner un nombre précis."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "{c}Chaque{/c} client attend.",
+              "Il reste {c}quelques{/c} pommes.",
+              "Nous n’avons {c}aucune{/c} réservation."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Quelques et plusieurs accompagnent un nom pluriel."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Chaque accompagne un nom singulier."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Tout varie : tout le pain, toute la soupe, tous les repas, toutes les bouteilles."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Certains et certaines indiquent une partie d’un groupe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Aucun et aucune accompagnent généralement un nom singulier avec ne."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Même s’accorde : le même menu, les mêmes menus."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Autre s’accorde aussi : une autre tasse, d’autres tasses."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je regarde si le nom est singulier ou pluriel."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue chaque personne et toutes les personnes : le sens est proche, la construction change."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Quelques et plusieurs accompagnent un nom pluriel."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Accord",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "chaque",
+                "singulier",
+                "chaque matin"
+              ],
+              [
+                "plusieurs",
+                "pluriel",
+                "plusieurs bus"
+              ],
+              [
+                "quelques",
+                "pluriel",
+                "quelques euros"
+              ],
+              [
+                "tout / toute",
+                "singulier",
+                "toute la journée"
+              ],
+              [
+                "tous / toutes",
+                "pluriel",
+                "tous les jours"
+              ],
+              [
+                "aucun / aucune",
+                "avec ne",
+                "aucun problème"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je ne mets pas de s à chaque ; le nom qui suit reste au singulier."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'g6',
-    typeId: 'gram-g6-theorie',
-    index: 6,
-    title: 'Les articles contractés (quantité et lieu)',
-    topic: 'gram-aliments',
-    public: 'A1 / A2',
-    objectif: 'Former au, aux, du et des, et les distinguer du partitif.',
-    blocks: sheet({
-      title: 'Les articles contractés',
-      intro: 'Je forme {g}au{/g}, {g}aux{/g}, {g}du{/g} et {g}des{/g}.',
-      regarder: [
-        '{tab:1<}Je vais {c}au{/c} marché. | Le prix {c}des{/c} pommes.',
-        '{tab:1<}Je parle {c}du{/c} menu. | Je pense {c}aux{/c} courses.',
-        '{tab:1<}Un kilo {c}de{/c} riz. | Beaucoup {c}de{/c} pain.',
-      ],
-      expliquer: [
-        p('{c}À + le{/c} → {c}au{/c}. {c}À + les{/c} → {c}aux{/c}.'),
-        p('{c}De + le{/c} → {c}du{/c}. {c}De + les{/c} → {c}des{/c}.'),
-        p('Du et des peuvent aussi être des partitifs : du pain, des fruits.'),
-        p('Après un kilo, beaucoup, un peu : je garde {c}de{/c}, sans article.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mots{/g} | {g}Résultat{/g}',
-          '{tab:1>}à + le | {c}au{/c} marché',
-          '{tab:1>}à + les | {c}aux{/c} légumes',
-          '{tab:1>}de + le | le prix {c}du{/c} pain',
-          '{tab:1>}de + les | le prix {c}des{/c} œufs',
-          '{tab:1>}quantité | un kilo {c}de{/c} riz',
-        ]),
-      ],
-      retenir: [
-        p('Contracté = à ou de collés à le ou les.'),
-        p('Après une quantité, je mets de, pas du.'),
-        ligne,
-        table(
-          ['Départ', 'Forme', 'Exemple'],
-          [
-            ['à + le', 'au', 'au supermarché'],
-            ['à + les', 'aux', 'aux fruits'],
-            ['de + le', 'du', 'du menu'],
-            ['de + les', 'des', 'des courses'],
-            ['quantité', 'de', 'beaucoup de lait'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Un kilo de pommes, pas « un kilo des pommes ».'),
-        ex([
-          { text: 'Je dis : « un kilo {c}de{/c} pommes. »', wrong: 'un kilo des pommes.' },
-        ]),
-      ],
-    }),
-  },
+    "id": "g6",
+    "typeId": "gram-g6-theorie",
+    "index": 6,
+    "title": "Les articles contractés (quantité et lieu)",
+    "topic": "gram-aliments",
+    "public": "A1 / A2",
+    "objectif": "Former au, aux, du et des, et les distinguer du partitif.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les articles contractés (quantité et lieu)"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je distingue une contraction et un article qui indique une quantité."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je vais {c}au{/c} magasin.",
+              "Je reviens {c}du{/c} magasin.",
+              "Je mange {c}du{/c} fromage."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "À + le donne au ; à + les donne aux."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "De + le donne du ; de + les donne des."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec la et l’, je ne réunis pas les mots."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis à ou de selon le verbe ou le sens."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Aller au marché donne une destination."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Venir du marché donne une provenance."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dans manger du pain, du est un article partitif : il indique une quantité non précisée."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dans parler des voisins, des peut être de + les."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je regarde la phrase entière pour comprendre le rôle de du ou des."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "À + le donne au ; à + les donne aux."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Départ",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "à + le",
+                "au",
+                "au supermarché"
+              ],
+              [
+                "à + les",
+                "aux",
+                "aux fruits"
+              ],
+              [
+                "de + le",
+                "du",
+                "du menu"
+              ],
+              [
+                "de + les",
+                "des",
+                "des courses"
+              ],
+              [
+                "quantité",
+                "de",
+                "beaucoup de lait"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "La même forme écrite peut avoir deux rôles ; je ne décide pas seulement en regardant le mot du."
+          }
+        ]
+      }
+    ]
+  }
 ]

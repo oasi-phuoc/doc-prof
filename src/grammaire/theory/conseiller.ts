@@ -1,109 +1,349 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-conseiller. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const conseillerDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'f10',
-    typeId: 'gram-f10-theorie',
-    index: 1,
-    title: 'Devoir et pouvoir au conditionnel',
-    topic: 'gram-conseiller',
-    public: 'A2',
-    objectif: 'Donner un conseil poli avec tu devrais ou vous pourriez.',
-    blocks: sheet({
-      title: 'Devoir et pouvoir au conditionnel',
-      intro: 'Je donne un conseil {g}poli{/g}.',
-      regarder: [
-        '{tab:1<}Tu {c}devrais{/c} te reposer. | Vous {c}devriez{/c} venir plus tôt.',
-        '{tab:1<}Tu {c}pourrais{/c} prendre le bus. | Vous {c}pourriez{/c} demander de l’aide.',
-        '{tab:1<}Il {c}devrait{/c} voir un médecin. | Nous {c}devrions{/c} partir.',
-      ],
-      expliquer: [
-        p('{c}Devoir{/c} au conditionnel = un conseil.'),
-        p('{c}Pouvoir{/c} au conditionnel = une suggestion polie.'),
-        p('Le deuxième verbe reste à l’{c}infinitif{/c}.'),
-        p('Les terminaisons sont : ais, ais, ait, ions, iez, aient.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Personne{/g} | {g}Devoir{/g} | {g}Pouvoir{/g}',
-          '{tab:2+>}je | devr{c}ais{/c} | pourr{c}ais{/c}',
-          '{tab:2+>}tu | devr{c}ais{/c} | pourr{c}ais{/c}',
-          '{tab:2+>}il / elle | devr{c}ait{/c} | pourr{c}ait{/c}',
-          '{tab:2+>}nous | devr{c}ions{/c} | pourr{c}ions{/c}',
-          '{tab:2+>}vous | devr{c}iez{/c} | pourr{c}iez{/c}',
-          '{tab:2+>}ils / elles | devr{c}aient{/c} | pourr{c}aient{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Tu devrais / vous pourriez + infinitif.'),
-        p('C’est plus poli qu’un ordre.'),
-        ligne,
-        table(
-          ['Conseil', 'Exemple'],
-          [
-            ['devoir, tu', 'Tu devrais dormir.'],
-            ['devoir, vous', 'Vous devriez manger.'],
-            ['pouvoir, tu', 'Tu pourrais appeler.'],
-            ['pouvoir, vous', 'Vous pourriez répéter.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Après devrais ou pourrais, je garde l’infinitif.'),
-        ex([
-          { text: 'Je dis : « Tu devrais {c}dormir{/c}. »', wrong: 'Tu devrais dors.' },
-        ]),
-      ],
-    }),
+    "id": "f10",
+    "typeId": "gram-f10-theorie",
+    "index": 1,
+    "title": "Devoir et pouvoir au conditionnel",
+    "topic": "gram-conseiller",
+    "public": "A2",
+    "objectif": "Donner un conseil poli avec tu devrais ou vous pourriez.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Devoir et pouvoir au conditionnel"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je donne un conseil sans imposer un ordre."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Tu {c}devrais{/c} te reposer.",
+              "Vous {c}pourriez{/c} appeler la mairie.",
+              "Elle ne {c}devrait{/c} pas porter ce sac."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je peux utiliser devoir au conditionnel pour conseiller."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les formes sont devrais, devrais, devrait, devrions, devriez, devraient."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pouvoir au conditionnel présente une possibilité."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les formes sont pourrais, pourrais, pourrait, pourrions, pourriez, pourraient."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le verbe suivant reste à l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis tu ou vous selon la personne."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Une question comme pourriez-vous répéter ? est aussi une demande polie."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure le verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue tu dois, qui exprime une obligation, et tu devrais, qui donne souvent un conseil."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je peux utiliser devoir au conditionnel pour conseiller."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Conseil",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "devoir, tu",
+                "Tu devrais dormir."
+              ],
+              [
+                "devoir, vous",
+                "Vous devriez manger."
+              ],
+              [
+                "pouvoir, tu",
+                "Tu pourrais appeler."
+              ],
+              [
+                "pouvoir, vous",
+                "Vous pourriez répéter."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Après devrais et pourrais, je garde l’infinitif : tu devrais dormir."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'f11',
-    typeId: 'gram-f11-theorie',
-    index: 2,
-    title: 'L’impératif',
-    topic: 'gram-conseiller',
-    public: 'A1 / A2',
-    objectif: 'Donner un ordre, un conseil ou une consigne.',
-    blocks: sheet({
-      title: 'L’impératif',
-      intro: 'Je donne un ordre, un conseil ou une {g}consigne{/g}.',
-      regarder: [
-        '{tab:1<}{c}Parle{/c} plus fort ! | {c}Parlons{/c} français.',
-        '{tab:1<}{c}Écoutez{/c} la consigne. | {c}Prends{/c} le bus.',
-        '{tab:1<}{c}Ne parle pas{/c} ! | {c}Ne fumez pas{/c}.',
-      ],
-      expliquer: [
-        p('L’impératif existe pour {c}tu{/c}, {c}nous{/c} et {c}vous{/c}.'),
-        p('Je n’écris pas le pronom sujet devant le verbe.'),
-        p('Pour un verbe en -er, tu perd le {c}s{/c} : Parle !'),
-        p('À la négation : {c}ne{/c} + verbe + {c}pas{/c}.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Personne{/g} | {g}Parler{/g} | {g}Finir{/g}',
-          '{tab:2+>}tu | {c}parle{/c} | {c}finis{/c}',
-          '{tab:2+>}nous | {c}parlons{/c} | {c}finissons{/c}',
-          '{tab:2+>}vous | {c}parlez{/c} | {c}finissez{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Pas de sujet devant le verbe.'),
-        p('Verbes en -er : pas de s avec tu.'),
-        ligne,
-        table(
-          ['Personne', 'Affirmatif', 'Négatif'],
-          [
-            ['tu', 'Parle !', 'Ne parle pas !'],
-            ['nous', 'Parlons !', 'Ne parlons pas !'],
-            ['vous', 'Parlez !', 'Ne parlez pas !'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Être et avoir sont irréguliers : sois, soyons, soyez / aie, ayons, ayez.'),
-        ex([
-          { text: 'Je dis : « {c}Parle{/c} ! »', wrong: 'Parles !' },
-          { text: 'Je dis : « {c}Sois{/c} calme. »', wrong: 'Es calme.' },
-        ]),
-      ],
-    }),
-  },
+    "id": "f11",
+    "typeId": "gram-f11-theorie",
+    "index": 2,
+    "title": "L’impératif",
+    "topic": "gram-conseiller",
+    "public": "A1 / A2",
+    "objectif": "Donner un ordre, un conseil ou une consigne.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "L’impératif"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je donne une consigne, un conseil ou une invitation directement."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "{c}Fermez{/c} la porte, s’il vous plaît.",
+              "{c}Allons{/c} au parc.",
+              "{c}Ne te dépêche pas{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "À l’impératif, je n’écris pas de pronom sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les trois personnes sont tu, nous et vous."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je dis entre, entrons et entrez."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les verbes en -er perdent le s de tu : écoute."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Aller donne va, allons et allez."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant y ou en, je retrouve parfois un s : vas-y, manges-en."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Être donne sois, soyons, soyez ; avoir donne aie, ayons, ayez."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour dire non : ne parle pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un verbe pronominal affirmatif : lève-toi ; à la négation : ne te lève pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux ajouter s’il vous plaît pour rendre la demande polie."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "À l’impératif, je n’écris pas de pronom sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "Affirmatif",
+              "Négatif"
+            ],
+            "rows": [
+              [
+                "tu",
+                "Parle !",
+                "Ne parle pas !"
+              ],
+              [
+                "nous",
+                "Parlons !",
+                "Ne parlons pas !"
+              ],
+              [
+                "vous",
+                "Parlez !",
+                "Ne parlez pas !"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "À l’impératif affirmatif, les pronoms après le verbe sont reliés par des traits d’union : donne-le-moi."
+          }
+        ]
+      }
+    ]
+  }
 ]

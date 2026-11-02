@@ -1,0 +1,392 @@
+{
+  "banks": {
+    "gram-ex-a2-qcm-verbe": {
+      "subId": "a2",
+      "kindId": "qcm-verbe",
+      "label": "Choisir le pronom sujet",
+      "instruction": "Complétez avec je, tu, il, elle, nous, vous, ils ou elles.",
+      "items": [
+        {
+          "prompt": "___ m’appelle Léa.",
+          "answer": "Je",
+          "options": [
+            "Je",
+            "Tu",
+            "Il"
+          ]
+        },
+        {
+          "prompt": "___ es en classe, Omar ?",
+          "answer": "Tu",
+          "options": [
+            "Tu",
+            "Vous",
+            "Il"
+          ]
+        },
+        {
+          "prompt": "Lina est professeure. ___ est à Sion.",
+          "answer": "Elle",
+          "options": [
+            "Elle",
+            "Il",
+            "Ils"
+          ]
+        },
+        {
+          "prompt": "Hugo et moi, ___ sommes étudiants.",
+          "answer": "nous",
+          "options": [
+            "nous",
+            "vous",
+            "ils"
+          ]
+        },
+        {
+          "prompt": "Madame Rossi, comment ___ vous appelez ?",
+          "answer": "vous",
+          "options": [
+            "vous",
+            "tu",
+            "ils"
+          ]
+        },
+        {
+          "prompt": "Inès et Chloé, ___ sont suisses.",
+          "answer": "elles",
+          "options": [
+            "elles",
+            "ils",
+            "elle"
+          ]
+        }
+      ]
+    },
+    "gram-ex-a2-fill-conj": {
+      "subId": "a2",
+      "kindId": "fill-conj",
+      "label": "Compléter le pronom",
+      "instruction": "Écrivez le pronom sujet qui convient.",
+      "items": [
+        {
+          "prompt": "___ suis en formation. (moi)",
+          "answer": "Je"
+        },
+        {
+          "prompt": "___ as un cours ? (toi)",
+          "answer": "Tu"
+        },
+        {
+          "prompt": "Karim travaille. ___ travaille à Martigny.",
+          "answer": "Il"
+        },
+        {
+          "prompt": "Nadia et moi, ___ habitons à Sion.",
+          "answer": "nous"
+        },
+        {
+          "prompt": "Monsieur Besse, ___ êtes professeur.",
+          "answer": "vous"
+        },
+        {
+          "prompt": "Yanis et Marco ___ arrivent à 8 h.",
+          "answer": "ils"
+        }
+      ]
+    },
+    "gram-ex-b1-qcm-verbe": {
+      "subId": "b1",
+      "kindId": "qcm-verbe",
+      "label": "Choisir tu ou vous",
+      "instruction": "Choisissez tu ou vous.",
+      "items": [
+        {
+          "prompt": "Salut Pierre, comment vas-___ ?",
+          "answer": "tu",
+          "options": [
+            "tu",
+            "vous",
+            "toi"
+          ]
+        },
+        {
+          "prompt": "Bonjour Madame, comment allez-___ ?",
+          "answer": "vous",
+          "options": [
+            "vous",
+            "tu",
+            "toi"
+          ]
+        },
+        {
+          "prompt": "Madame, puis-je ___ aider ?",
+          "answer": "vous",
+          "options": [
+            "vous",
+            "te",
+            "toi"
+          ]
+        },
+        {
+          "prompt": "___ es mon ami.",
+          "answer": "Tu",
+          "options": [
+            "Tu",
+            "Vous",
+            "Toi"
+          ]
+        },
+        {
+          "prompt": "Les enfants, ___ êtes prêts ?",
+          "answer": "vous",
+          "options": [
+            "vous",
+            "tu",
+            "toi"
+          ]
+        },
+        {
+          "prompt": "Omar, ___ as un stylo ?",
+          "answer": "tu",
+          "options": [
+            "tu",
+            "vous",
+            "toi"
+          ]
+        }
+      ]
+    },
+    "gram-ex-b1-fill-conj": {
+      "subId": "b1",
+      "kindId": "fill-conj",
+      "label": "Compléter tu / vous",
+      "instruction": "Écrivez tu ou vous (et la forme du verbe si besoin : tu / vous).",
+      "items": [
+        {
+          "prompt": "Salut Léa, ___ vas bien ?",
+          "answer": "tu"
+        },
+        {
+          "prompt": "Bonjour Monsieur Besse, comment allez-___ ?",
+          "answer": "vous"
+        },
+        {
+          "prompt": "Les étudiants, ___ êtes en salle 2.",
+          "answer": "vous"
+        },
+        {
+          "prompt": "Karim, ___ habites où ?",
+          "answer": "tu"
+        },
+        {
+          "prompt": "Madame Rossi, ___ parlez français ?",
+          "answer": "vous"
+        },
+        {
+          "prompt": "Chloé, ___ es prête ?",
+          "answer": "tu"
+        }
+      ]
+    },
+    "gram-ex-b2-qcm-verbe": {
+      "subId": "b2",
+      "kindId": "qcm-verbe",
+      "label": "Choisir la salutation",
+      "instruction": "Choisissez la salutation qui convient.",
+      "items": [
+        {
+          "prompt": "Le matin, au secrétariat : ___.",
+          "answer": "Bonjour",
+          "options": [
+            "Bonjour",
+            "Salut",
+            "Bonne nuit"
+          ]
+        },
+        {
+          "prompt": "À un ami : ___, ça va ?",
+          "answer": "Salut",
+          "options": [
+            "Salut",
+            "Messieurs",
+            "Au revoir Madame"
+          ]
+        },
+        {
+          "prompt": "En partant le soir : ___.",
+          "answer": "Bonne soirée",
+          "options": [
+            "Bonne soirée",
+            "Bonjour",
+            "Enchanté"
+          ]
+        },
+        {
+          "prompt": "Première rencontre formelle : ___.",
+          "answer": "Enchanté",
+          "options": [
+            "Enchanté",
+            "Salut",
+            "Ciao"
+          ]
+        },
+        {
+          "prompt": "À 14 h, à un inconnu : ___.",
+          "answer": "Bonjour",
+          "options": [
+            "Bonjour",
+            "Bonsoir",
+            "Salut"
+          ]
+        },
+        {
+          "prompt": "En quittant la classe : ___.",
+          "answer": "Au revoir",
+          "options": [
+            "Au revoir",
+            "Enchantée",
+            "Bonjour"
+          ]
+        }
+      ]
+    },
+    "gram-ex-b2-ecrire": {
+      "subId": "b2",
+      "kindId": "ecrire",
+      "label": "Écrire une salutation",
+      "instruction": "Écrivez une phrase avec le verbe et le mot proposés.",
+      "items": [
+        {
+          "prompt": "Verbe : dire · Mot : bonjour",
+          "answer": "(phrase libre avec « dire » et « bonjour »)",
+          "givenVerb": "dire",
+          "givenWord": "bonjour"
+        },
+        {
+          "prompt": "Verbe : saluer · Mot : Madame",
+          "answer": "(phrase libre avec « saluer » et « Madame »)",
+          "givenVerb": "saluer",
+          "givenWord": "Madame"
+        },
+        {
+          "prompt": "Verbe : demander · Mot : ça va",
+          "answer": "(phrase libre avec « demander » et « ça va »)",
+          "givenVerb": "demander",
+          "givenWord": "ça va"
+        },
+        {
+          "prompt": "Verbe : répondre · Mot : très bien",
+          "answer": "(phrase libre avec « répondre » et « très bien »)",
+          "givenVerb": "répondre",
+          "givenWord": "très bien"
+        },
+        {
+          "prompt": "Verbe : partir · Mot : au revoir",
+          "answer": "(phrase libre avec « partir » et « au revoir »)",
+          "givenVerb": "partir",
+          "givenWord": "au revoir"
+        },
+        {
+          "prompt": "Verbe : rencontrer · Mot : enchanté",
+          "answer": "(phrase libre avec « rencontrer » et « enchanté »)",
+          "givenVerb": "rencontrer",
+          "givenWord": "enchanté"
+        }
+      ]
+    },
+    "gram-ex-b3-qcm-verbe": {
+      "subId": "b3",
+      "kindId": "qcm-verbe",
+      "label": "Remercier et répondre",
+      "instruction": "Choisissez la formule qui convient.",
+      "items": [
+        {
+          "prompt": "On vous donne un stylo. Vous dites : ___.",
+          "answer": "Merci",
+          "options": [
+            "Merci",
+            "Pardon",
+            "Salut"
+          ]
+        },
+        {
+          "prompt": "On vous dit merci. Vous répondez : ___.",
+          "answer": "Je vous en prie",
+          "options": [
+            "Je vous en prie",
+            "Enchanté",
+            "Au revoir"
+          ]
+        },
+        {
+          "prompt": "Vous dérangez quelqu’un. Vous dites : ___.",
+          "answer": "Pardon",
+          "options": [
+            "Pardon",
+            "Merci beaucoup",
+            "De rien"
+          ]
+        },
+        {
+          "prompt": "Un ami dit merci. Vous répondez : ___.",
+          "answer": "De rien",
+          "options": [
+            "De rien",
+            "Bonjour",
+            "S’il vous plaît"
+          ]
+        },
+        {
+          "prompt": "Pour demander poliment : un café, ___.",
+          "answer": "s’il vous plaît",
+          "options": [
+            "s’il vous plaît",
+            "de rien",
+            "pardon"
+          ]
+        },
+        {
+          "prompt": "Après un service important : ___.",
+          "answer": "Merci beaucoup",
+          "options": [
+            "Merci beaucoup",
+            "Salut",
+            "Ciao"
+          ]
+        }
+      ]
+    },
+    "gram-ex-b3-fill-conj": {
+      "subId": "b3",
+      "kindId": "fill-conj",
+      "label": "Compléter merci / s’il vous plaît",
+      "instruction": "Écrivez merci, de rien, pardon ou s’il vous plaît.",
+      "items": [
+        {
+          "prompt": "Un café, ___.",
+          "answer": "s’il vous plaît"
+        },
+        {
+          "prompt": "___ pour votre aide.",
+          "answer": "Merci"
+        },
+        {
+          "prompt": "— Merci ! — ___.",
+          "answer": "De rien"
+        },
+        {
+          "prompt": "___, vous êtes sur mon sac.",
+          "answer": "Pardon"
+        },
+        {
+          "prompt": "___ beaucoup, Madame.",
+          "answer": "Merci"
+        },
+        {
+          "prompt": "L’addition, ___.",
+          "answer": "s’il vous plaît"
+        }
+      ]
+    }
+  }
+}

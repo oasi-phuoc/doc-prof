@@ -12,6 +12,7 @@ import { parseGramExerciseType } from './subthemes'
 import { bankForType, lessonForType } from './bank'
 import { gramItemsToTcfExercise } from './to-tcf'
 import { isGrammaireExerciseType } from './types'
+import { buildGrammarCommunication, communicationQuestionCap, isCommunicationKind } from './communication'
 import {
   buildQuiSuisJeExercise,
   buildQuiSuisJeOrdreItems,
@@ -130,6 +131,19 @@ export function tryGenerateGrammaireExerciseBlock(
     }
   }
 
+  if (isCommunicationKind(parsed.kindId)) {
+    const exercise = buildGrammarCommunication({
+      subId: parsed.subId, kindId: parsed.kindId, typeId, rng, count: config.count,
+    })
+    if (exercise) return {
+      instruction: exercise.consigne ?? kind.instruction,
+      items: tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => ({
+        ...item, tcfExerciseId: exercise.id,
+      })),
+      bankQuestionCap: communicationQuestionCap(parsed.subId, parsed.kindId),
+    }
+  }
+
   const rawBank = bankForType(typeId)
   const bank = normalizeGramBank(rawBank)
   if (!bank.length) {
@@ -155,7 +169,9 @@ export function tryGenerateGrammaireExerciseBlock(
 
   const lesson = lessonForType(typeId)
   let instruction = lesson?.instruction ?? kind.instruction
-  const singleVerb = uniqueSampleVerb(sampled)
+  const singleVerb = parsed.kindId === 'qcm-conj' || parsed.kindId === 'fill-conj'
+    ? uniqueSampleVerb(sampled)
+    : null
   const items = singleVerb
     ? sampled.map((item) => ({ ...item, prompt: stripParenVerb(item.prompt) }))
     : sampled

@@ -1,168 +1,543 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-espace. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const espaceDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'e1',
-    typeId: 'gram-e1-theorie',
-    index: 1,
-    title: 'Les prépositions de lieu',
-    topic: 'gram-espace',
-    public: 'A1',
-    objectif: 'Dire où se trouve une personne ou une chose.',
-    blocks: sheet({
-      title: 'Les prépositions de lieu',
-      intro: 'Je dis {g}où{/g} se trouve une personne ou une chose.',
-      regarder: [
-        '{tab:1<}Le livre est {c}sur{/c} la table. | Le sac est {c}sous{/c} la chaise.',
-        '{tab:1<}Je suis {c}dans{/c} la classe. | L’arrêt est {c}devant{/c} l’école.',
-        '{tab:1<}La poste est {c}près de{/c} la gare. | Le parc est {c}loin de{/c} chez moi.',
-      ],
-      expliquer: [
-        p('Une préposition de lieu indique la place.'),
-        p('Elle se place {c}devant{/c} le lieu.'),
-        p('{c}Près de{/c}, {c}loin de{/c} et {c}à côté de{/c} gardent {c}de{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Préposition{/g} | {g}Exemple{/g}',
-          '{tab:1>}sur | sur la table',
-          '{tab:1>}sous | sous le lit',
-          '{tab:1>}dans | dans le bus',
-          '{tab:1>}devant / derrière | devant la porte',
-          '{tab:1>}entre | entre la banque et la poste',
-          '{tab:1>}près de / loin de | près de l’école',
-          '{tab:1>}à côté de | à côté du marché',
-        ]),
-      ],
-      retenir: [
-        p('Un lieu = une préposition claire.'),
-        p('Je garde de avec près, loin et à côté.'),
-        ligne,
-        table(
-          ['Préposition', 'Exemple'],
-          [
-            ['sur', 'sur la table'],
-            ['sous', 'sous la chaise'],
-            ['dans', 'dans la classe'],
-            ['devant', 'devant l’école'],
-            ['derrière', 'derrière la maison'],
-            ['près de', 'près de la gare'],
-            ['à côté de', 'à côté de moi'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne retire pas de.'),
-        ex([
-          { text: 'Je dis : « près {c}de{/c} la gare. »', wrong: 'près la gare.' },
-        ]),
-      ],
-    }),
+    "id": "e1",
+    "typeId": "gram-e1-theorie",
+    "index": 1,
+    "title": "Les prépositions de lieu",
+    "topic": "gram-espace",
+    "public": "A1",
+    "objectif": "Dire où se trouve une personne ou une chose.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les prépositions de lieu"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je dis où se trouve une personne ou une chose."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Le sac est {c}sous{/c} la table.",
+              "L’arrêt est {c}près du{/c} musée.",
+              "La pharmacie est {c}entre{/c} la poste et la gare."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Une préposition de lieu relie un élément à un repère."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dans indique l’intérieur."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Sur indique une position au-dessus, souvent avec un contact."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Sous indique une position plus basse."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant et derrière donnent une position par rapport au repère."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Entre place un élément au milieu de deux repères."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À côté de indique une proximité."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Près de et loin de donnent une distance."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde de dans à côté de, près de et loin de."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "De + le devient du ; de + les devient des."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Une préposition de lieu relie un élément à un repère."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Préposition",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "sur",
+                "sur la table"
+              ],
+              [
+                "sous",
+                "sous la chaise"
+              ],
+              [
+                "dans",
+                "dans la classe"
+              ],
+              [
+                "devant",
+                "devant l’école"
+              ],
+              [
+                "derrière",
+                "derrière la maison"
+              ],
+              [
+                "près de",
+                "près de la gare"
+              ],
+              [
+                "à côté de",
+                "à côté de moi"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je précise le repère : devant la porte est plus clair que devant tout seul."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'e6',
-    typeId: 'gram-e6-theorie',
-    index: 2,
-    title: 'Autres prépositions et adverbes de lieu',
-    topic: 'gram-espace',
-    public: 'A1 / A2',
-    objectif: 'Préciser un lieu avec des mots simples.',
-    blocks: sheet({
-      title: 'Autres mots de lieu',
-      intro: 'Je précise un lieu avec des {g}mots simples{/g}.',
-      regarder: [
-        '{tab:1<}Le stylo est {c}ici{/c}. | La gare est {c}là-bas{/c}.',
-        '{tab:1<}Tourne {c}à droite{/c}. | Le bureau est {c}en haut{/c}.',
-        '{tab:1<}Je suis {c}au milieu{/c} de la rue. | Va {c}jusqu’à{/c} la poste.',
-      ],
-      expliquer: [
-        p('{c}Ici{/c} = près de moi. {c}Là{/c} = un peu plus loin. {c}Là-bas{/c} = loin.'),
-        p('{c}Devant{/c} est le contraire de {c}derrière{/c}.'),
-        p('{c}Près de{/c} est le contraire de {c}loin de{/c}.'),
-        p('De + le devient {c}du{/c}. De + les devient {c}des{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Mot{/g} | {g}Exemple{/g}',
-          '{tab:1>}à droite / à gauche | à droite du magasin',
-          '{tab:1>}en haut / en bas | en haut de l’escalier',
-          '{tab:1>}au milieu de | au milieu de la place',
-          '{tab:1>}au bord de | au bord du lac',
-          '{tab:1>}jusqu’à | jusqu’à la gare',
-        ]),
-      ],
-      retenir: [
-        p('Un lieu = un mot de place clair.'),
-        ligne,
-        table(
-          ['Mot', 'Exemple'],
-          [
-            ['ici / là / là-bas', 'Assieds-toi ici.'],
-            ['à droite / à gauche', 'à gauche de la porte'],
-            ['en haut / en bas', 'en bas de la rue'],
-            ['près du', 'près du magasin'],
-            ['jusqu’à', 'jusqu’à l’arrêt'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} De + le = du. Je ne dis pas « de le ».'),
-        ex([
-          { text: 'Je dis : « près {c}du{/c} magasin. »', wrong: 'près de le magasin.' },
-        ]),
-      ],
-    }),
+    "id": "e6",
+    "typeId": "gram-e6-theorie",
+    "index": 2,
+    "title": "Autres prépositions et adverbes de lieu",
+    "topic": "gram-espace",
+    "public": "A1 / A2",
+    "objectif": "Préciser un lieu avec des mots simples.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Autres prépositions et adverbes de lieu"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je précise un endroit ou une direction."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Les toilettes sont {c}en bas{/c}.",
+              "L’école est {c}en face de{/c} la gare.",
+              "Il fait froid {c}dehors{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ici désigne l’endroit où je suis ; là ou là-bas désigne un autre endroit."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À droite et à gauche donnent une direction."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "En haut et en bas donnent une position verticale."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dedans et dehors peuvent s’utiliser sans nom après."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant un nom, je dis dans la maison et hors de la maison."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au-dessus de et au-dessous de indiquent une position sans imposer un contact."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "En face de signifie de l’autre côté, devant le repère."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au fond de indique la partie la plus éloignée."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue le lieu où je suis et la direction où je vais."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ici désigne l’endroit où je suis ; là ou là-bas désigne un autre endroit."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Mot",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "ici / là / là-bas",
+                "Assieds-toi ici."
+              ],
+              [
+                "à droite / à gauche",
+                "à gauche de la porte"
+              ],
+              [
+                "en haut / en bas",
+                "en bas de la rue"
+              ],
+              [
+                "près du",
+                "près du magasin"
+              ],
+              [
+                "jusqu’à",
+                "jusqu’à l’arrêt"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis dans le sac, mais je peux dire il est dedans sans répéter le sac."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'e7',
-    typeId: 'gram-e7-theorie',
-    index: 3,
-    title: 'Les articles contractés (lieu)',
-    topic: 'gram-espace',
-    public: 'A1',
-    objectif: 'Former au, aux, du et des.',
-    blocks: sheet({
-      title: 'Les articles contractés',
-      intro: 'Je colle {g}à{/g} ou {g}de{/g} avec le ou les.',
-      regarder: [
-        '{tab:1<}Je vais {c}au{/c} marché. | Je vais {c}aux{/c} toilettes.',
-        '{tab:1<}Je viens {c}du{/c} travail. | Je sors {c}des{/c} cours.',
-        '{tab:1<}Je vais {c}à la{/c} poste. | Je vais {c}à l’{/c}école.',
-      ],
-      expliquer: [
-        p('{c}À + le{/c} devient {c}au{/c}.'),
-        p('{c}À + les{/c} devient {c}aux{/c}.'),
-        p('{c}De + le{/c} devient {c}du{/c}.'),
-        p('{c}De + les{/c} devient {c}des{/c}.'),
-        p('{c}À la{/c}, {c}à l’{/c}, {c}de la{/c} et {c}de l’{/c} ne changent pas.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Mots{/g} | {g}Forme{/g} | {g}Exemple{/g}',
-          '{tab:2+>}à + le | {c}au{/c} | au parc',
-          '{tab:2+>}à + les | {c}aux{/c} | aux magasins',
-          '{tab:2+>}de + le | {c}du{/c} | du bureau',
-          '{tab:2+>}de + les | {c}des{/c} | des cours',
-          '{tab:2+>}à + la | {c}à la{/c} | à la gare',
-        ]),
-      ],
-      retenir: [
-        p('Au, aux, du et des sont des formes collées.'),
-        p('À la et à l’ restent en deux mots.'),
-        ligne,
-        table(
-          ['Départ', 'Forme', 'Exemple'],
-          [
-            ['à + le', 'au', 'au marché'],
-            ['à + les', 'aux', 'aux toilettes'],
-            ['de + le', 'du', 'du travail'],
-            ['de + les', 'des', 'des cours'],
-            ['à + la / l’', 'à la / à l’', 'à la poste'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne dis pas « à le » ni « de le ».'),
-        ex([
-          { text: 'Je dis : « Je vais {c}au{/c} marché. »', wrong: 'Je vais à le marché.' },
-        ]),
-      ],
-    }),
-  },
+    "id": "e7",
+    "typeId": "gram-e7-theorie",
+    "index": 3,
+    "title": "Les articles contractés (lieu)",
+    "topic": "gram-espace",
+    "public": "A1",
+    "objectif": "Former au, aux, du et des.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Les articles contractés (lieu)"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je relie à ou de à un nom avec son article."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Nous allons {c}au{/c} parc.",
+              "Je viens {c}du{/c} marché.",
+              "Tu parles {c}aux{/c} voisins."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Une contraction réunit une préposition et un article."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À + le devient au."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À + les devient aux."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "De + le devient du."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "De + les devient des."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec la, je garde deux mots : à la, de la."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec l’, je garde à l’ ou de l’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis la contraction d’après le nom qui suit."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne contracte pas avec les pronoms : je parle à la personne, je lui parle."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Une contraction réunit une préposition et un article."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Départ",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "à + le",
+                "au",
+                "au marché"
+              ],
+              [
+                "à + les",
+                "aux",
+                "aux toilettes"
+              ],
+              [
+                "de + le",
+                "du",
+                "du travail"
+              ],
+              [
+                "de + les",
+                "des",
+                "des cours"
+              ],
+              [
+                "à + la / l’",
+                "à la / à l’",
+                "à la poste"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis à l’hôpital ; je n’écris pas au hôpital."
+          }
+        ]
+      }
+    ]
+  }
 ]

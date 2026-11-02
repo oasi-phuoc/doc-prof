@@ -1,164 +1,513 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-action. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const actionDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'j1',
-    typeId: 'gram-j1-theorie',
-    index: 1,
-    title: 'Le présent progressif',
-    topic: 'gram-action',
-    public: 'A1 / A2',
-    objectif: 'Dire qu’une action se passe maintenant.',
-    blocks: sheet({
-      title: 'Le présent progressif',
-      intro: 'Je dis qu’une action se passe {g}maintenant{/g}.',
-      regarder: [
-        '{tab:1<}Je {c}suis en train de{/c} manger. | Il {c}est en train de{/c} téléphoner.',
-        '{tab:1<}Nous {c}sommes en train de{/c} travailler. | Elles {c}sont en train d’{/c}écrire.',
-        '{tab:1<}Tu {c}es en train de{/c} cuisiner ? | Vous {c}êtes en train de{/c} partir ?',
-      ],
-      expliquer: [
-        p('J’utilise {c}être{/c} au présent + {c}en train de{/c} + infinitif.'),
-        p('Être change avec la personne : suis, es, est, sommes, êtes, sont.'),
-        p('Le deuxième verbe reste à l’{c}infinitif{/c}.'),
-        p('Devant une voyelle, de devient {c}d’{/c}.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Personne{/g} | {g}Exemple{/g}',
-          '{tab:1>}je | Je {c}suis en train de{/c} lire.',
-          '{tab:1>}tu | Tu {c}es en train de{/c} manger.',
-          '{tab:1>}il / elle | Il {c}est en train de{/c} dormir.',
-          '{tab:1>}nous | Nous {c}sommes en train de{/c} parler.',
-          '{tab:1>}vous | Vous {c}êtes en train d’{/c}arriver.',
-          '{tab:1>}ils / elles | Ils {c}sont en train de{/c} jouer.',
-        ]),
-      ],
-      retenir: [
-        p('Être en train de + infinitif = action en cours.'),
-        p('Seul le verbe être se conjugue.'),
-        ligne,
-        table(
-          ['Personne', 'Être en train de'],
-          [
-            ['je', '{c}suis{/c} en train de'],
-            ['tu', '{c}es{/c} en train de'],
-            ['il / elle', '{c}est{/c} en train de'],
-            ['nous', '{c}sommes{/c} en train de'],
-            ['vous', '{c}êtes{/c} en train de'],
-            ['ils / elles', '{c}sont{/c} en train de'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne conjugue pas le deuxième verbe.'),
-        ex([
-          { text: 'Je dis : « Je suis en train de {c}manger{/c}. »', wrong: 'Je suis en train de mange.' },
-        ]),
-      ],
-    }),
+    "id": "j1",
+    "typeId": "gram-j1-theorie",
+    "index": 1,
+    "title": "Le présent progressif",
+    "topic": "gram-action",
+    "public": "A1 / A2",
+    "objectif": "Dire qu’une action se passe maintenant.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le présent progressif"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je souligne qu’une action se déroule maintenant."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}suis en train de{/c} cuisiner.",
+              "Elle {c}est en train d’{/c}écrire.",
+              "Nous {c}étions en train de{/c} travailler."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je forme être en train de plus un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue être selon le sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le verbe de l’action reste à l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle, de devient d’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux utiliser cette construction à différents temps."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au passé, elle était en train de lire décrit une action en cours."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure être."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un verbe pronominal, le pronom reste devant l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le présent simple peut aussi parler de maintenant ; en train de insiste sur le déroulement."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je forme être en train de plus un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "Être en train de"
+            ],
+            "rows": [
+              [
+                "je",
+                "{c}suis{/c} en train de"
+              ],
+              [
+                "tu",
+                "{c}es{/c} en train de"
+              ],
+              [
+                "il / elle",
+                "{c}est{/c} en train de"
+              ],
+              [
+                "nous",
+                "{c}sommes{/c} en train de"
+              ],
+              [
+                "vous",
+                "{c}êtes{/c} en train de"
+              ],
+              [
+                "ils / elles",
+                "{c}sont{/c} en train de"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je garde l’infinitif : il est en train de manger, et non de mange."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'j2',
-    typeId: 'gram-j2-theorie',
-    index: 2,
-    title: 'Le passé récent',
-    topic: 'gram-action',
-    public: 'A1 / A2',
-    objectif: 'Dire qu’une action vient de se terminer.',
-    blocks: sheet({
-      title: 'Le passé récent',
-      intro: 'Je dis qu’une action {g}vient de{/g} se terminer.',
-      regarder: [
-        '{tab:1<}Je {c}viens de{/c} manger. | Elle {c}vient d’{/c}arriver.',
-        '{tab:1<}Nous {c}venons de{/c} finir. | Ils {c}viennent de{/c} partir.',
-        '{tab:1<}Tu {c}viens de{/c} téléphoner ? | Vous {c}venez de{/c} commencer ?',
-      ],
-      expliquer: [
-        p('J’utilise {c}venir{/c} au présent + {c}de{/c} + infinitif.'),
-        p('L’action est finie, mais elle est très proche.'),
-        p('Devant une voyelle, de devient {c}d’{/c}.'),
-        p('Ici, venir de ne dit pas le pays d’origine.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Personne{/g} | {g}Venir de{/g}',
-          '{tab:1>}je | {c}viens de{/c}',
-          '{tab:1>}tu | {c}viens de{/c}',
-          '{tab:1>}il / elle | {c}vient de{/c}',
-          '{tab:1>}nous | {c}venons de{/c}',
-          '{tab:1>}vous | {c}venez de{/c}',
-          '{tab:1>}ils / elles | {c}viennent de{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Venir de + infinitif = passé récent.'),
-        p('Le deuxième verbe ne se conjugue pas.'),
-        ligne,
-        table(
-          ['Sens', 'Exemple'],
-          [
-            ['vient de finir', 'Je viens de manger.'],
-            ['devant voyelle', 'Elle vient d’arriver.'],
-            ['plusieurs personnes', 'Ils viennent de partir.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Venir de (passé récent) ≠ venir de (pays).'),
-        ex([
-          { text: 'Je dis : « Je {c}viens de{/c} manger. »', wrong: 'Je viens manger. (sens différent)' },
-        ]),
-      ],
-    }),
+    "id": "j2",
+    "typeId": "gram-j2-theorie",
+    "index": 2,
+    "title": "Le passé récent",
+    "topic": "gram-action",
+    "public": "A1 / A2",
+    "objectif": "Dire qu’une action vient de se terminer.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le passé récent"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle d’une action qui vient de se terminer."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}viens de{/c} rentrer.",
+              "Elles {c}viennent d’{/c}arriver.",
+              "Il {c}venait de{/c} partir quand tu as appelé."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je forme venir de plus un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue venir selon le sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Au présent : viens, viens, vient, venons, venez, viennent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le verbe de l’action reste à l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant une voyelle, de devient d’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec venir au présent, l’action est récente par rapport à maintenant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec venir à l’imparfait, l’action est récente par rapport à un moment passé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un verbe pronominal, je garde le pronom près de l’infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue venir de plus un lieu et venir de plus une action."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Je forme venir de plus un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Sens",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "vient de finir",
+                "Je viens de manger."
+              ],
+              [
+                "devant voyelle",
+                "Elle vient d’arriver."
+              ],
+              [
+                "plusieurs personnes",
+                "Ils viennent de partir."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je ne conjugue pas les deux verbes : nous venons de finir."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'j3',
-    typeId: 'gram-j3-theorie',
-    index: 3,
-    title: 'Le gérondif',
-    topic: 'gram-action',
-    public: 'A2',
-    objectif: 'Dire deux actions en même temps.',
-    blocks: sheet({
-      title: 'Le gérondif',
-      intro: 'Je dis deux actions {g}en même temps{/g}.',
-      regarder: [
-        '{tab:1<}Il lit {c}en mangeant{/c}. | Elle parle {c}en marchant{/c}.',
-        '{tab:1<}J’écoute {c}en travaillant{/c}. | Nous chantons {c}en cuisinant{/c}.',
-        '{tab:1<}Tu souris {c}en parlant{/c}. | Ils apprennent {c}en jouant{/c}.',
-      ],
-      expliquer: [
-        p('Le gérondif = {c}en{/c} + verbe en {c}-ant{/c}.'),
-        p('Les deux actions ont le {c}même sujet{/c}.'),
-        p('Je prends la forme de nous au présent, puis je mets -ant.'),
-        p('Nous parlons → en parlant. Nous finissons → en finissant.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Infinitif{/g} | {g}Nous{/g} | {g}Gérondif{/g}',
-          '{tab:2+>}parler | parlons | en {c}parlant{/c}',
-          '{tab:2+>}finir | finissons | en {c}finissant{/c}',
-          '{tab:2+>}manger | mangeons | en {c}mangeant{/c}',
-          '{tab:2+>}être | sommes | en {c}étant{/c}',
-        ]),
-      ],
-      retenir: [
-        p('En + verbe en -ant.'),
-        p('Un seul sujet pour les deux verbes.'),
-        ligne,
-        table(
-          ['Infinitif', 'Gérondif'],
-          [
-            ['parler', 'en parlant'],
-            ['lire', 'en lisant'],
-            ['faire', 'en faisant'],
-            ['manger', 'en mangeant'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Les deux actions ont le même sujet.'),
-        ex([
-          { text: 'Je dis : « Il lit {c}en mangeant{/c}. »', wrong: 'Il lit en je mange.' },
-        ]),
-      ],
-    }),
-  },
+    "id": "j3",
+    "typeId": "gram-j3-theorie",
+    "index": 3,
+    "title": "Le gérondif",
+    "topic": "gram-action",
+    "public": "A2",
+    "objectif": "Dire deux actions en même temps.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le gérondif"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je relie deux actions faites par la même personne."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je téléphone {c}en marchant{/c}.",
+              "Elle apprend {c}en écoutant{/c}.",
+              "Nous discutons {c}en nous promenant{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le gérondif se forme avec en plus une forme en -ant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je pars généralement de nous au présent, j’enlève -ons et j’ajoute -ant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nous parlons donne en parlant ; nous finissons donne en finissant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Être donne en étant ; avoir donne en ayant ; savoir donne en sachant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les deux actions ont normalement le même sujet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le gérondif peut exprimer une action simultanée, une manière ou un moyen."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il ne change pas au féminin ou au pluriel."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un verbe pronominal : en me promenant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je garde le verbe principal conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le gérondif se forme avec en plus une forme en -ant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Infinitif",
+              "Gérondif"
+            ],
+            "rows": [
+              [
+                "parler",
+                "en parlant"
+              ],
+              [
+                "lire",
+                "en lisant"
+              ],
+              [
+                "faire",
+                "en faisant"
+              ],
+              [
+                "manger",
+                "en mangeant"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Dans en arrivant, j’ai vu Paul, c’est moi qui arrive : je vérifie que les deux actions ont le même sujet."
+          }
+        ]
+      }
+    ]
+  }
 ]

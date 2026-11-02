@@ -1,261 +1,878 @@
 import type { GrammaireTheoryDoc } from '../types'
-import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie FALC — thème gram-avenir. Français seul (pas de traductions). */
+/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
 export const avenirDocs: GrammaireTheoryDoc[] = [
   {
-    id: 'j4',
-    typeId: 'gram-j4-theorie',
-    index: 1,
-    title: 'Le futur proche',
-    topic: 'gram-avenir',
-    public: 'A1',
-    objectif: 'Parler d’un événement bientôt avec aller + infinitif.',
-    blocks: sheet({
-      title: 'Le futur proche',
-      intro: 'Je parle d’un événement {g}bientôt{/g}.',
-      regarder: [
-        '{tab:1<}Je {c}vais{/c} manger. | Tu {c}vas{/c} partir.',
-        '{tab:1<}Elle {c}va{/c} téléphoner. | Nous {c}allons{/c} sortir.',
-        '{tab:1<}Vous {c}allez{/c} commencer. | Ils {c}vont{/c} arriver.',
-      ],
-      expliquer: [
-        p('Futur proche = {c}aller{/c} au présent + infinitif.'),
-        p('Je conjugue aller. Le deuxième verbe ne change pas.'),
-        p('Je l’utilise souvent à l’oral, pour une action proche ou décidée.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Personne{/g} | {g}Aller + infinitif{/g}',
-          '{tab:1>}je | je {c}vais{/c} manger',
-          '{tab:1>}tu | tu {c}vas{/c} manger',
-          '{tab:1>}il / elle | il {c}va{/c} manger',
-          '{tab:1>}nous | nous {c}allons{/c} manger',
-          '{tab:1>}vous | vous {c}allez{/c} manger',
-          '{tab:1>}ils / elles | ils {c}vont{/c} manger',
-        ]),
-      ],
-      retenir: [
-        p('Aller se conjugue. Le 2e verbe reste à l’infinitif.'),
-        ligne,
-        table(
-          ['Personne', 'Aller'],
-          [
-            ['je', '{c}vais{/c}'],
-            ['tu', '{c}vas{/c}'],
-            ['il / elle', '{c}va{/c}'],
-            ['nous', '{c}allons{/c}'],
-            ['vous', '{c}allez{/c}'],
-            ['ils / elles', '{c}vont{/c}'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne conjugue pas les deux verbes.'),
-        ex([
-          { text: 'Je dis : « Je vais {c}partir{/c}. »', wrong: 'Je vais partirai.' },
-        ]),
-      ],
-    }),
+    "id": "j4",
+    "typeId": "gram-j4-theorie",
+    "index": 1,
+    "title": "Le futur proche",
+    "topic": "gram-avenir",
+    "public": "A1",
+    "objectif": "Parler d’un événement bientôt avec aller + infinitif.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le futur proche"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente un projet ou un événement lié à la situation actuelle."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Je {c}vais appeler{/c} la mairie.",
+              "Nous {c}allons déménager{/c}.",
+              "Elle {c}ne va pas venir{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur proche se forme avec aller au présent plus un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue aller : vais, vas, va, allons, allez, vont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le deuxième verbe ne change pas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Cette forme est fréquente pour une intention ou un événement déjà envisagé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elle peut parler de bientôt, mais aussi d’un projet plus éloigné."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À la négation, ne et pas entourent aller."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un pronom complément, je le place près du verbe dont il dépend."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Avec un verbe pronominal : je vais me coucher."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne confonds pas aller au marché, qui donne une destination, et aller acheter, qui annonce une action."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur proche se forme avec aller au présent plus un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "Aller"
+            ],
+            "rows": [
+              [
+                "je",
+                "{c}vais{/c}"
+              ],
+              [
+                "tu",
+                "{c}vas{/c}"
+              ],
+              [
+                "il / elle",
+                "{c}va{/c}"
+              ],
+              [
+                "nous",
+                "{c}allons{/c}"
+              ],
+              [
+                "vous",
+                "{c}allez{/c}"
+              ],
+              [
+                "ils / elles",
+                "{c}vont{/c}"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je garde l’infinitif après aller : tu vas parler."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'j5',
-    typeId: 'gram-j5-theorie',
-    index: 2,
-    title: 'Le futur simple',
-    topic: 'gram-avenir',
-    public: 'A2',
-    objectif: 'Conjuguer le futur simple.',
-    blocks: sheet({
-      title: 'Le futur simple',
-      intro: 'Je parle de {g}l’avenir{/g} avec le futur simple.',
-      regarder: [
-        '{tab:1<}Je {c}parlerai{/c} avec le professeur. | Tu {c}finiras{/c} demain.',
-        '{tab:1<}Elle {c}sera{/c} là. | Nous {c}aurons{/c} un examen.',
-        '{tab:1<}Vous {c}irez{/c} à Paris. | Ils {c}feront{/c} les courses.',
-      ],
-      expliquer: [
-        p('Souvent : infinitif + {c}ai, as, a, ons, ez, ont{/c}.'),
-        p('Parler → je parlerai. Finir → je finirai.'),
-        p('Si l’infinitif finit par e muet, j’enlève le e : lire → je lirai.'),
-        p('Quelques verbes changent le radical : être → ser-, avoir → aur-.'),
-        ligne,
-        ex([
-          '{tab:+2++}{g}Verbe{/g} | {g}Radical{/g} | {g}Je{/g}',
-          '{tab:2+>}parler | parler- | je parler{c}ai{/c}',
-          '{tab:2+>}être | ser- | je {c}serai{/c}',
-          '{tab:2+>}avoir | aur- | j’{c}aurai{/c}',
-          '{tab:2+>}aller | ir- | j’{c}irai{/c}',
-          '{tab:2+>}faire | fer- | je {c}ferai{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Terminaisons : ai, as, a, ons, ez, ont.'),
-        p('Elles sont les mêmes pour tous les verbes.'),
-        ligne,
-        table(
-          ['Personne', 'Terminaison', 'parler'],
-          [
-            ['je', '-ai', 'parlerai'],
-            ['tu', '-as', 'parleras'],
-            ['il / elle', '-a', 'parlera'],
-            ['nous', '-ons', 'parlerons'],
-            ['vous', '-ez', 'parlerez'],
-            ['ils / elles', '-ont', 'parleront'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} J’irai, je ferai, j’aurai, je serai. À apprendre.'),
-        ex([
-          { text: 'Je dis : « J’{c}irai{/c}. »', wrong: 'Je allerai.' },
-        ]),
-      ],
-    }),
+    "id": "j5",
+    "typeId": "gram-j5-theorie",
+    "index": 2,
+    "title": "Le futur simple",
+    "topic": "gram-avenir",
+    "public": "A2",
+    "objectif": "Conjuguer le futur simple.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le futur simple"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente une action à venir au futur simple."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Demain, je {c}travaillerai{/c}.",
+              "Tu {c}prendras{/c} le train.",
+              "Nous {c}serons{/c} là."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur simple se forme souvent avec l’infinitif et une terminaison."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les terminaisons sont -ai, -as, -a, -ons, -ez, -ont."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour les verbes en -re, j’enlève le e final avant la terminaison."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Certains verbes ont une base irrégulière."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Être donne ser- ; avoir donne aur- ; aller donne ir-."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Faire donne fer- ; venir donne viendr- ; pouvoir donne pourr-."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux utiliser le futur pour une prévision, une promesse ou une décision."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La négation entoure le verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Un futur simple peut aussi parler de demain ; il ne sert pas seulement à un avenir lointain."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur simple se forme souvent avec l’infinitif et une terminaison."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "Terminaison",
+              "parler"
+            ],
+            "rows": [
+              [
+                "je",
+                "-ai",
+                "parlerai"
+              ],
+              [
+                "tu",
+                "-as",
+                "parleras"
+              ],
+              [
+                "il / elle",
+                "-a",
+                "parlera"
+              ],
+              [
+                "nous",
+                "-ons",
+                "parlerons"
+              ],
+              [
+                "vous",
+                "-ez",
+                "parlerez"
+              ],
+              [
+                "ils / elles",
+                "-ont",
+                "parleront"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je distingue je parlerai au futur et je parlerais au conditionnel."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'o1',
-    typeId: 'gram-o1-theorie',
-    index: 3,
-    title: 'Futur proche ou futur simple ?',
-    topic: 'gram-avenir',
-    public: 'A2',
-    objectif: 'Choisir entre aller + infinitif et le futur simple.',
-    blocks: sheet({
-      title: 'Futur proche ou futur simple ?',
-      intro: 'Les deux parlent de l’avenir, mais {g}pas pareil{/g}.',
-      regarder: [
-        '{tab:1<}Je {c}vais partir{/c} dans cinq minutes. | Je {c}partirai{/c} l’année prochaine.',
-        '{tab:1<}On {c}va manger{/c} ? | Nous {c}mangerons{/c} à 20 h.',
-        '{tab:1<}Elle {c}va appeler{/c} tout de suite. | Elle {c}appellera{/c} demain.',
-      ],
-      expliquer: [
-        p('Futur proche = aller + infinitif. Souvent {c}bientôt{/c}, ou une décision claire.'),
-        p('Futur simple = plus loin, plus écrit, ou une promesse.'),
-        p('À l’oral, le futur proche est très fréquent.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Situation{/g} | {g}Temps{/g}',
-          '{tab:1>}dans cinq minutes | futur {c}proche{/c}',
-          '{tab:1>}décision maintenant | futur {c}proche{/c}',
-          '{tab:1>}l’année prochaine | futur {c}simple{/c}',
-          '{tab:1>}promesse, texte | futur {c}simple{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Bientôt → souvent futur proche.'),
-        p('Plus tard ou à l’écrit → futur simple.'),
-        ligne,
-        table(
-          ['Temps', 'Forme', 'Exemple'],
-          [
-            ['futur proche', 'aller + infinitif', 'Je vais partir.'],
-            ['futur simple', 'radical + ai…', 'Je partirai.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Je ne mélange pas les deux formes.'),
-        ex([
-          { text: 'Je dis : « Je {c}vais partir{/c}. »', wrong: 'Je vais partirai.' },
-        ]),
-      ],
-    }),
+    "id": "o1",
+    "typeId": "gram-o1-theorie",
+    "index": 3,
+    "title": "Futur proche ou futur simple ?",
+    "topic": "gram-avenir",
+    "public": "A2",
+    "objectif": "Choisir entre aller + infinitif et le futur simple.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Futur proche ou futur simple ?"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je choisis une façon de présenter l’avenir."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Regarde les nuages : il {c}va pleuvoir{/c}.",
+              "Je te promets que je {c}reviendrai{/c}.",
+              "L’an prochain, nous {c}allons changer{/c} de logement."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur proche utilise aller au présent et un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le futur simple utilise un seul verbe conjugué."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le futur proche présente souvent un projet déjà envisagé ou un signe visible maintenant."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le futur simple convient notamment à une prévision ou une promesse."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Les deux formes peuvent parfois convenir à la même situation."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La distance dans le temps ne suffit pas à décider."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux dire je vais partir demain ou je partirai demain."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je choisis la forme selon le sens et le contexte de l’échange."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Pour vérifier la formation, je regarde s’il faut un infinitif ou une terminaison de futur."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur proche utilise aller au présent et un infinitif."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Temps",
+              "Forme",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "futur proche",
+                "aller + infinitif",
+                "Je vais partir."
+              ],
+              [
+                "futur simple",
+                "radical + ai…",
+                "Je partirai."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je n’apprends pas futur proche égale bientôt et futur simple égale très loin : cette règle serait trop limitée."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'o2',
-    typeId: 'gram-o2-theorie',
-    index: 4,
-    title: 'Le futur antérieur',
-    topic: 'gram-avenir',
-    public: 'B1',
-    objectif: 'Parler d’une action future déjà finie avant une autre.',
-    blocks: sheet({
-      title: 'Le futur antérieur',
-      intro: 'Je parle d’une action future {g}déjà finie{/g} avant une autre.',
-      regarder: [
-        '{tab:1<}Quand j’{c}aurai fini{/c}, je partirai. | Dès qu’elle {c}sera arrivée{/c}, on mangera.',
-        '{tab:1<}Tu m’appelleras quand tu {c}auras compris{/c}. | Nous sortirons quand il {c}aura plu{/c}.',
-        '{tab:1<}Une fois que vous {c}aurez signé{/c}, c’est bon. | Quand ils {c}seront partis{/c}, je fermerai.',
-      ],
-      expliquer: [
-        p('Futur antérieur = avoir ou être au {c}futur simple{/c} + participe.'),
-        p('L’autre action est au futur simple.'),
-        p('Souvent après quand, dès que, une fois que.'),
-        p('J’utilise le même auxiliaire qu’au passé composé.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Auxiliaire{/g} | {g}Exemple{/g}',
-          '{tab:1>}avoir | j’{c}aurai mangé{/c}',
-          '{tab:1>}être | elle {c}sera partie{/c}',
-          '{tab:1>}puis futur | Quand j’aurai fini, je {c}partirai{/c}.',
-        ]),
-      ],
-      retenir: [
-        p('Action 1 au futur antérieur, puis action 2 au futur.'),
-        ligne,
-        table(
-          ['Personne', 'avoir + participe', 'être + participe'],
-          [
-            ['j’', 'aurai fini', 'serai parti(e)'],
-            ['tu', 'auras fini', 'seras parti(e)'],
-            ['il / elle', 'aura fini', 'sera parti(e)'],
-            ['nous', 'aurons fini', 'serons parti(e)s'],
-            ['vous', 'aurez fini', 'serez parti(e)(s)'],
-            ['ils / elles', 'auront fini', 'seront parti(e)s'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Avec être, j’accorde le participe avec le sujet.'),
-        ex([
-          { text: 'Je dis : « Quand elle {c}sera arrivée{/c}… »', wrong: 'Quand elle sera arrivé…' },
-        ]),
-      ],
-    }),
+    "id": "o2",
+    "typeId": "gram-o2-theorie",
+    "index": 4,
+    "title": "Le futur antérieur",
+    "topic": "gram-avenir",
+    "public": "B1",
+    "objectif": "Parler d’une action future déjà finie avant une autre.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Le futur antérieur"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je parle d’une action future terminée avant un autre moment futur."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "Quand j’{c}aurai fini{/c}, je sortirai.",
+              "Dès qu’elle {c}sera arrivée{/c}, nous mangerons.",
+              "Avant midi, ils {c}auront répondu{/c}."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur antérieur contient deux éléments."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je conjugue avoir ou être au futur simple."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "J’ajoute un participe passé."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le choix de l’auxiliaire et les accords suivent les règles des temps composés."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Quand et dès que peuvent relier deux actions futures."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le futur antérieur présente l’action déjà terminée au moment du deuxième événement."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux aussi annoncer un résultat attendu avant une limite."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "À la négation : je n’aurai pas fini."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je distingue je finirai, qui annonce l’action, et j’aurai fini, qui présente son achèvement."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Le futur antérieur contient deux éléments."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Personne",
+              "avoir + participe",
+              "être + participe"
+            ],
+            "rows": [
+              [
+                "j’",
+                "aurai fini",
+                "serai parti(e)"
+              ],
+              [
+                "tu",
+                "auras fini",
+                "seras parti(e)"
+              ],
+              [
+                "il / elle",
+                "aura fini",
+                "sera parti(e)"
+              ],
+              [
+                "nous",
+                "aurons fini",
+                "serons parti(e)s"
+              ],
+              [
+                "vous",
+                "aurez fini",
+                "serez parti(e)(s)"
+              ],
+              [
+                "ils / elles",
+                "auront fini",
+                "seront parti(e)s"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Après quand dans ces constructions futures, j’utilise un futur, pas une forme avec si."
+          }
+        ]
+      }
+    ]
   },
   {
-    id: 'o3',
-    typeId: 'gram-o3-theorie',
-    index: 5,
-    title: 'L’hypothèse sur le futur',
-    topic: 'gram-avenir',
-    public: 'A2',
-    objectif: 'Dire une condition possible avec si + présent.',
-    blocks: sheet({
-      title: 'L’hypothèse sur le futur',
-      intro: 'Je parle d’une {g}condition{/g} pour l’avenir.',
-      regarder: [
-        '{tab:1<}{c}S’il{/c} pleut, je prendrai le bus. | {c}Si{/c} tu veux, on y va.',
-        '{tab:1<}{c}Si{/c} j’ai le temps, je t’appelle. | {c}Si{/c} vous êtes libres, venez.',
-        '{tab:1<}{c}S’{/c}elle finit tôt, nous sortirons. | {c}Si{/c} je peux, je viendrai.',
-      ],
-      expliquer: [
-        p('La condition possible : {c}si{/c} + présent.'),
-        p('L’autre partie est au futur, au futur proche, ou à l’impératif.'),
-        p('Je ne mets pas le futur juste après si.'),
-        p('Si + il → {c}s’il{/c}. Si + elle reste si elle.'),
-        ligne,
-        ex([
-          '{tab:+1+}{g}Si + présent{/g} | {g}Résultat{/g}',
-          '{tab:1>}S’il pleut | je {c}prendrai{/c} le bus',
-          '{tab:1>}Si tu veux | on {c}va{/c} manger',
-          '{tab:1>}Si vous pouvez | {c}venez{/c}',
-        ]),
-      ],
-      retenir: [
-        p('Si + présent → futur dans l’autre partie.'),
-        p('Pas de futur après si.'),
-        ligne,
-        table(
-          ['Condition', 'Résultat', 'Exemple'],
-          [
-            ['si + présent', 'futur', 'S’il pleut, je resterai.'],
-            ['si + présent', 'futur proche', 'Si tu veux, on va sortir.'],
-            ['si + présent', 'impératif', 'Si tu peux, viens.'],
-          ],
-        ),
-        ligne,
-        p('{c}Attention :{/c} Pas « si il pleuvra ». Je dis « s’il pleut ».'),
-        ex([
-          { text: 'Je dis : « {c}S’il pleut{/c}, je reste. »', wrong: 'S’il pleuvra, je reste.' },
-        ]),
-      ],
-    }),
-  },
+    "id": "o3",
+    "typeId": "gram-o3-theorie",
+    "index": 5,
+    "title": "L’hypothèse sur le futur",
+    "topic": "gram-avenir",
+    "public": "A2",
+    "objectif": "Dire une condition possible avec si + présent.",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "L’hypothèse sur le futur"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Je présente une condition possible et sa conséquence."
+      },
+      {
+        "kind": "paragraph",
+        "text": "{ligne/2}"
+      },
+      {
+        "kind": "section",
+        "role": "regarder",
+        "blocks": [
+          {
+            "kind": "examples",
+            "marker": "puces",
+            "items": [
+              "{c}Si{/c} tu viens, nous mangerons ensemble.",
+              "Nous sortirons {c}s’il{/c} fait beau.",
+              "{c}Si{/c} vous avez une question, demandez."
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "section",
+        "role": "expliquer",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Avec si, je peux présenter une condition encore possible."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dans ce modèle, le verbe après si est au présent."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "La conséquence peut être au futur : si tu viens, je préparerai le repas."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elle peut aussi être au présent : si je suis fatigué, je me repose."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elle peut être à l’impératif : si tu as froid, ferme la fenêtre."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je peux inverser l’ordre des deux parties."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Si placé au début est souvent suivi d’une virgule à la fin de la condition."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Devant il ou ils, si devient s’."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Je ne mets pas de futur juste après si dans ce modèle de condition."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          }
+        ]
+      },
+      {
+        "kind": "page"
+      },
+      {
+        "kind": "section",
+        "role": "retenir",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Avec si, je peux présenter une condition encore possible."
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "table",
+            "colHeader": true,
+            "rowHeader": false,
+            "headers": [
+              "Condition",
+              "Résultat",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "si + présent",
+                "futur",
+                "S’il pleut, je resterai."
+              ],
+              [
+                "si + présent",
+                "futur proche",
+                "Si tu veux, on va sortir."
+              ],
+              [
+                "si + présent",
+                "impératif",
+                "Si tu peux, viens."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "{ligne/2}"
+          },
+          {
+            "kind": "attention",
+            "text": "Je dis s’il fait beau, nous sortirons ; je ne dis pas s’il fera beau pour cette condition."
+          }
+        ]
+      }
+    ]
+  }
 ]
