@@ -247,7 +247,7 @@
       "label": "La danse",
       "original_image": "/lib/images/tcf/co/bg/salle-de-danse.webp",
       "replacement": "/lib/images/vocabulaire/loisirs/danse.webp",
-      "reason": "These choices name the dance activity. The current image depicts an empty studio; the confirmed replacement directly shows a person dancing. Keep the existing studio illustration for the explicit room and course/place labels.",
+      "reason": "Nouvelle image générée et contrôlée : image existante déjà auditée",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -277,7 +277,7 @@
       "label": "La danse",
       "original_image": "/lib/images/tcf/co/bg/salle-de-danse.webp",
       "replacement": "/lib/images/vocabulaire/loisirs/danse.webp",
-      "reason": "These choices name the dance activity. The current image depicts an empty studio; the confirmed replacement directly shows a person dancing. Keep the existing studio illustration for the explicit room and course/place labels.",
+      "reason": "Nouvelle image générée et contrôlée : image existante déjà auditée",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -412,7 +412,7 @@
       "label": "Le yoga",
       "original_image": "/lib/images/tcf/co/bg/salle-de-yoga.webp",
       "replacement": "/lib/images/vocabulaire/sports/yoga.webp",
-      "reason": "The image only depicts an empty yoga studio and mats. All uses ask about the activity/course « Le yoga ». A person visibly practising yoga is available.",
+      "reason": "Nouvelle image générée et contrôlée : image existante déjà auditée",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -471,8 +471,8 @@
       "question": "Quel cours a lieu le mercredi ?",
       "label": "Le surf",
       "original_image": "/lib/images/tcf/co/bg/surf.webp",
-      "replacement": null,
-      "reason": "The image depicts a surf equipment rental/shop, with unused boards and wetsuits, rather than the sport being practised or taught. All uses ask which sport/course.",
+      "replacement": "/lib/images/tcf/qcm-audit/6d404d15dcb9.webp",
+      "reason": "Nouvelle image générée et contrôlée : Personne sur une planche dans une vague ; ni voile ni pagaie ; distinct du yoga et du volleyball.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -516,8 +516,8 @@
       "question": "Quel espace extérieur possède l'appartement ?",
       "label": "Une terrasse",
       "original_image": "/lib/images/tcf/co/bg/terrasse.webp",
-      "replacement": null,
-      "reason": "This is a public street café terrace with many restaurant tables, not the exterior terrace possessed by the apartment described in the question.",
+      "replacement": "/lib/images/tcf/qcm-audit/c99a5652f3bc.webp",
+      "reason": "Nouvelle image générée et contrôlée : Sol extérieur dallé au niveau du logement et porte-fenêtre ; distinct du balcon en hauteur et du jardin en pelouse.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -531,8 +531,8 @@
       "question": "Quelle activité est proposée à la MLC ?",
       "label": "Le théâtre",
       "original_image": "/lib/images/tcf/co/bg/theatre.webp",
-      "replacement": null,
-      "reason": "An empty auditorium depicts the venue but not acting, a theatre class, or the practice of theatre. These four references explicitly ask about an activity offered/practised; the other theatre destination/place uses are supported.",
+      "replacement": "/lib/images/tcf/qcm-audit/b3a9535d4a2f-v2.webp",
+      "reason": "Nouvelle image générée et contrôlée : Deux acteurs jouent sur scène devant un public ; anatomie corrigée, deux bras chacun ; activité théâtrale visible.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -546,8 +546,8 @@
       "question": "Quelle activité est proposée aux enfants ?",
       "label": "Le théâtre",
       "original_image": "/lib/images/tcf/co/bg/theatre.webp",
-      "replacement": null,
-      "reason": "An empty auditorium depicts the venue but not acting, a theatre class, or the practice of theatre. These four references explicitly ask about an activity offered/practised; the other theatre destination/place uses are supported.",
+      "replacement": "/lib/images/tcf/qcm-audit/b3a9535d4a2f-v2.webp",
+      "reason": "Nouvelle image générée et contrôlée : Deux acteurs jouent sur scène devant un public ; anatomie corrigée, deux bras chacun ; activité théâtrale visible.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -561,8 +561,8 @@
       "question": "Quelle activité est proposée le jeudi soir ?",
       "label": "Le théâtre",
       "original_image": "/lib/images/tcf/co/bg/theatre.webp",
-      "replacement": null,
-      "reason": "An empty auditorium depicts the venue but not acting, a theatre class, or the practice of theatre. These four references explicitly ask about an activity offered/practised; the other theatre destination/place uses are supported.",
+      "replacement": "/lib/images/tcf/qcm-audit/b3a9535d4a2f-v2.webp",
+      "reason": "Nouvelle image générée et contrôlée : Deux acteurs jouent sur scène devant un public ; anatomie corrigée, deux bras chacun ; activité théâtrale visible.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1107,8 +1107,8 @@
       "question": "Quels bébés animaux peut-on découvrir ?",
       "label": "Des lions",
       "original_image": "/lib/images/vocabulaire/animaux-sauvages/lion.webp",
-      "replacement": null,
-      "reason": "La question demande des bébés animaux. L'image montre un animal seul d'apparence adulte, sans indice permettant d'identifier un petit. L'espèce générique reste reconnaissable.",
+      "replacement": "/lib/images/tcf/qcm-audit/99ccce79d807.webp",
+      "reason": "Nouvelle image générée et contrôlée : Deux lionceaux sans crinière adulte, pelage fauve et queue à touffe ; distincts des singes et tortues.",
       "references": [
         {
           "bank": "src/tcf/content/a1-a2/ce.json",
@@ -1122,8 +1122,8 @@
       "question": "Quels bébés animaux peut-on découvrir ?",
       "label": "Des singes",
       "original_image": "/lib/images/vocabulaire/animaux-sauvages/singe.webp",
-      "replacement": null,
-      "reason": "La question demande des bébés animaux. L'image montre un animal seul d'apparence adulte, sans indice permettant d'identifier un petit. L'espèce générique reste reconnaissable.",
+      "replacement": "/lib/images/tcf/qcm-audit/4df3a19671d3.webp",
+      "reason": "Nouvelle image générée et contrôlée : Deux jeunes singes avec queues et visages de primates ; même présentation que les deux autres propositions de bébés animaux.",
       "references": [
         {
           "bank": "src/tcf/content/a1-a2/ce.json",
@@ -1137,8 +1137,8 @@
       "question": "Quels bébés animaux peut-on découvrir ?",
       "label": "Des tortues",
       "original_image": "/lib/images/vocabulaire/animaux-sauvages/tortue.webp",
-      "replacement": null,
-      "reason": "La question demande des bébés animaux. L'image montre un animal seul d'apparence adulte, sans indice permettant d'identifier un petit. L'espèce générique reste reconnaissable.",
+      "replacement": "/lib/images/tcf/qcm-audit/5c29cc7b37c5.webp",
+      "reason": "Nouvelle image générée et contrôlée : Deux petites tortues terrestres, carapaces et pattes visibles ; même nombre et même âge illustré que les autres choix.",
       "references": [
         {
           "bank": "src/tcf/content/a1-a2/ce.json",
@@ -1152,8 +1152,8 @@
       "question": "Quel objet est interdit ?",
       "label": "Le dictionnaire",
       "original_image": "/lib/images/vocabulaire/ecole-bureau/dictionnaire.webp",
-      "replacement": null,
-      "reason": "Le visuel original est un gros livre fermé à couverture totalement vierge. Aucun mot, repère alphabétique ou page lexicographique ne permet de reconnaître un dictionnaire plutôt qu'un livre ordinaire. Le détail nécessaire au nom demandé manque.",
+      "replacement": "/lib/images/tcf/qcm-audit/16edefcaf66e.webp",
+      "reason": "Nouvelle image générée et contrôlée : Livre de référence épais, deux colonnes et onglets alphabétiques ; distinct du stylo et de la montre, sans montants ni dates.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1317,8 +1317,8 @@
       "question": "Que faut-il emporter pour se protéger du soleil ?",
       "label": "De la crème solaire",
       "original_image": "/lib/images/vocabulaire/hygiene/creme-solaire.webp",
-      "replacement": null,
-      "reason": "L'original est un tube de crème entièrement blanc et sans symbole solaire, mention SPF ou accessoire de protection solaire. Il ne permet pas d'identifier de la crème solaire plutôt qu'une crème quelconque, notamment dans les exercices demandant le produit pour le soleil et dans la reconnaissance.",
+      "replacement": "/lib/images/tcf/qcm-audit/7594233a027f.webp",
+      "reason": "Nouvelle image générée et contrôlée : Crème étalée sur la peau et tube avec soleil, sans inscription chiffrée ; contraste clair avec parapluie et gants.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1917,8 +1917,8 @@
       "question": "Avec quel professionnel Karim a-t-il rendez-vous le soir ?",
       "label": "Un coiffeur",
       "original_image": "/lib/images/vocabulaire/metiers/coiffeur.webp",
-      "replacement": null,
-      "reason": "Le visuel montre une façade de commerce (salon), aucun coiffeur ni geste de coiffure. Les labels demandent le professionnel, pas le bâtiment.",
+      "replacement": "/lib/images/tcf/qcm-audit/885edeb02c7b.webp",
+      "reason": "Nouvelle image générée et contrôlée : Coiffeur coupant les cheveux avec ciseaux et peigne dans un salon ; distinct du médecin et du dentiste.",
       "references": [
         {
           "bank": "src/tcf/content/a0-a1/ce.json",
