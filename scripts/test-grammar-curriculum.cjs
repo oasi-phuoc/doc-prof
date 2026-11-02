@@ -36,6 +36,7 @@ const { gramExerciseFormUi } = get('exercises/qui-suis-je-ui.ts')
 const { GRAMMAIRE_THEORY_DOCS: theory } = get('theory/index.ts')
 const { validateTcfExercise } = load(path.join(root, 'src/tcf/validate.ts'))
 const comm = get('exercises/communication.ts')
+const illustrations = load(path.join(root, 'docs/grammaire/illustrations.json'))
 let checks = 0
 function check(condition, message) { assert.ok(condition, message); checks++ }
 const normalize = text => text.normalize('NFC').toLocaleLowerCase('fr').replace(/[’']/g, "'").replace(/\s+/g, ' ').trim()
@@ -102,6 +103,11 @@ for (const group of comm.GRAM_COMMUNICATION_GROUPS) {
   check(group.variants.length === 10, 'ten scenarios ' + group.subId)
   check(new Set(group.variants.map(v => normalize(v.text))).size === 10, 'ten different documents')
   for (const v of group.variants) {
+    if (illustrations[v.id]) {
+      const file = path.join(root, 'public', v.image)
+      check(v.image === illustrations[v.id].image && fs.existsSync(file), 'reviewed illustration is used ' + v.id)
+      check(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex') === illustrations[v.id].sha256, 'illustration bytes retained ' + v.id)
+    } else check(!v.image, 'no ungenerated placeholder is loaded ' + v.id)
     check(v.questions.length === 5, 'five short CE questions')
     for (const q of v.questions) {
       check(v.text.includes(q.answer), v.id + ' answer present in source: ' + q.answer)
@@ -122,6 +128,11 @@ for (const group of comm.GRAM_COMMUNICATION_GROUPS) {
       if (kindId !== 'communication-ce') {
         const visible = kindId === 'communication-pe' ? ex.consigne_supplementaire : ex.support.situation
         check(!visible.includes('Voici une phrase utile'), 'production model hidden')
+      }
+      if (group.variants.every(v => v.image)) {
+        if (kindId === 'communication-ce') check(Boolean(ex.support.image), 'CE illustration rendered')
+        if (kindId === 'communication-pe') check(ex.type_exercice === 'image_question' && Boolean(ex.support.image), 'PE illustration rendered')
+        if (kindId === 'communication-po') check(ex.support.images?.length === 1, 'PO has one illustration')
       }
     }
     check(seen.size === 10, 'all variants reachable ' + typeId)

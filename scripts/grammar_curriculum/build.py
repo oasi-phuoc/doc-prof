@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Rebuild grammar from its authored curriculum; no network or image generation."""
-import json,subprocess,sys
+import hashlib,json,subprocess,sys
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
@@ -9,6 +9,15 @@ import banks_verbs,banks_nominal,banks_usage,banks_advanced,banks_links,banks_sp
 from bank_common import LESSONS
 from protected_banks import PROTECTED
 from communications import ALL
+illustrations_file=ROOT/'docs/grammaire/illustrations.json'
+ILLUSTRATIONS=json.loads(illustrations_file.read_text()) if illustrations_file.exists() else {}
+for group in ALL:
+ for variant in group['variants']:
+  illustration=ILLUSTRATIONS.get(variant['id'])
+  if illustration:
+   file=ROOT/'public'/illustration['image'].lstrip('/')
+   assert file.is_file() and hashlib.sha256(file.read_bytes()).hexdigest()==illustration['sha256'],variant['id']
+   variant['image']=illustration['image']
 
 assert len(LESSONS)==104
 assert len({lesson['subId'] for lesson in LESSONS})==104
@@ -30,11 +39,11 @@ report={
  'protectedBanksCompleted':len(PROTECTED),'protectedBankItems':sum(len(x['items']) for x in PROTECTED),
  'communicativeThemes':len(ALL),'variantsPerCommunicationType':10,'newCommunicationTypes':3*len(ALL),
  'communicationVariants':3*sum(len(x['variants']) for x in ALL),'readingQuestions':sum(len(v['questions']) for x in ALL for v in x['variants']),
- 'imagesGenerated':0,
+ 'imagesGenerated':len(ILLUSTRATIONS),
  'coverage':[{'subId':l['subId'],'label':l['label'],'items':len(l['items'])} for l in LESSONS],
  'communication':[{'subId':g['subId'],'goal':g['goal'],'ce':len(g['variants']),'pe':len(g['variants']),'po':len(g['variants'])} for g in ALL],
 }
 DOC=ROOT/'docs/grammaire';DOC.mkdir(exist_ok=True)
 (DOC/'audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-(DOC/'images-a-preparer.json').write_text(json.dumps([{'id':v['id'],'description':v['imageDescription'],'status':'à générer ultérieurement','usedByExercise':False} for g in ALL for v in g['variants']],ensure_ascii=False,indent=2)+'\n')
+(DOC/'images-a-preparer.json').write_text(json.dumps([{'id':v['id'],'description':v['imageDescription'],'status':'générée et validée' if v.get('image') else 'à générer ultérieurement','usedByExercise':bool(v.get('image')),**({'image':v['image']} if v.get('image') else {})} for g in ALL for v in g['variants']],ensure_ascii=False,indent=2)+'\n')
 print(f"{len(LESSONS)} banques de 50 phrases ; {len(PROTECTED)} banques d’introduction complétées ; {report['communicationVariants']} variantes CE/PE/PO.")

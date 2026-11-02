@@ -18,7 +18,7 @@ def main():
   if target.exists():raise SystemExit('Refusing to overwrite an existing asset')
   target.parent.mkdir(parents=True,exist_ok=True)
   subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-i',str(source),'-c:v','libwebp','-quality','90','-compression_level','6','-frames:v','1',str(target)],check=True)
-  row={'id':args.id,'path':args.target,'source_png':str(source),'source_sha256':digest(source),'sha256':digest(target),'bytes':target.stat().st_size,'status':'generated_pending_visual_review','review_note':'','prompt':args.prompt}
+  row={'id':args.id,'path':args.target,'source_png':str(source),'source_sha256':digest(source),'sha256':digest(target),'bytes':target.stat().st_size,'domain':'grammaire' if args.target.startswith('/lib/images/grammaire/') else 'ce-co','status':'generated_pending_visual_review','review_note':'','prompt':args.prompt}
   if any(r['id']==args.id for r in data['images']):raise SystemExit('Duplicate image id')
   data['images'].append(row)
  else:

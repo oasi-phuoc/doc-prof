@@ -12,6 +12,7 @@ type CommunicationVariant = {
   po: string
   model: string
   imageDescription: string
+  image?: string
 }
 type CommunicationGroup = { subId: string; goal: string; variants: CommunicationVariant[] }
 
@@ -58,13 +59,22 @@ export function buildGrammarCommunication(opts: {
     return {
       id, niveau: 'A1-A2', competence: 'CE', type_exercice: 'annonce',
       consigne: 'Lisez le document et répondez aux questions.',
-      support: { titre: variant.title, texte: variant.text, image: null },
+      support: { titre: variant.title, texte: variant.text, image: variant.image ?? null },
       questions,
     }
   }
   // Le modèle de réponse du CE ne doit pas apparaître dans la consigne de production.
   const context = variant.text.split('Voici une phrase utile :')[0]!.trim()
   if (opts.kindId === 'communication-pe') {
+    if (variant.image) return {
+      id, niveau: 'A1-A2', competence: 'PE', type_exercice: 'image_question',
+      consigne: variant.pe, consigne_supplementaire: context,
+      support: {
+        image: variant.image, consigne: variant.pe,
+        nb_mots: { min: 3, max: 30 }, reponse_modele: variant.model,
+      },
+      questions: [],
+    }
     return {
       id, niveau: 'A1-A2', competence: 'PE', type_exercice: 'question_texte',
       consigne: variant.pe, consigne_supplementaire: context,
@@ -79,6 +89,7 @@ export function buildGrammarCommunication(opts: {
       situation: `${context}\n${variant.po}`,
       repliques: [{ locuteur: 'eleve', texte: variant.model }],
       repliques_au_corrige: true,
+      ...(variant.image ? { images: [variant.image] } : {}),
     },
     questions: [],
   }

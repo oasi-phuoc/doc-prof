@@ -16,7 +16,7 @@ La théorie et les exercices des 17 thèmes concernés ont été repris. Les th�
 | Situations différentes, partagées entre les trois compétences | 160 |
 | Variantes utilisables au total | 480 |
 | Questions de lecture rattachées à ces documents | 800 |
-| Images générées pendant cette reprise | 0 |
+| Illustrations de grammaire générées et intégrées | 10 |
 
 ## Théorie
 
@@ -38,7 +38,7 @@ Les 16 thèmes de communication proposent chacun dix fiches de situation du quot
 - une tâche de PE demandant une seule phrase ;
 - une tâche de PO demandant une seule prise de parole courte, avec modèle réservé au corrigé.
 
-Les nouvelles activités fonctionnent avec les informations écrites. Les descriptions d’illustrations facultatives sont conservées dans [images-a-preparer.json](images-a-preparer.json). Aucun fichier d’image manquant n’est référencé par les exercices.
+Dix illustrations du sous-thème « Demander une possibilité » ont été régénérées individuellement dans le style dessiné CE/CO, contrôlées puis intégrées aux variantes CE, PE et PO correspondantes. La première planche au rendu photographique est écartée. Le registre [illustrations.json](illustrations.json) conserve les chemins, empreintes et contrôles. Les 150 autres descriptions restent dans [images-a-preparer.json](images-a-preparer.json). Les activités continuent de fonctionner avec leurs informations écrites et aucune image future manquante n’est référencée.
 
 ## Vérification et entretien
 
