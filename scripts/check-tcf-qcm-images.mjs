@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createServer } from 'vite'
 
-const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
+const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
 try {
   const { tcfExerciseItems } = await vite.ssrLoadModule('/src/tcf/generate.ts')
   const { createRng } = await vite.ssrLoadModule('/src/math/rng.ts')
@@ -50,14 +50,19 @@ try {
   assert.equal(synthetic, 12, 'all rendering paths exercised')
   let bankVariants = 0
   let expectedBankVariants = 0
-  for (const level of ['a0-a1', 'a1-a2']) for (const skill of ['ce', 'co']) {
+  for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) for (const skill of ['ce', 'co']) {
     const bank = JSON.parse(readFileSync(`src/tcf/content/${level}/${skill}.json`, 'utf8'))
     for (const exercise of bank) {
       expectedBankVariants += exercise.questions.filter((question) =>
         (question.type_reponse === 'qcm_texte' || question.formes?.qcm_texte) &&
         (question.type_reponse === 'qcm_image' || question.formes?.qcm_image),
       ).length
-      for (const selector of selectors(tcfExerciseItems(exercise, createRng(42)))) {
+      // Les questions des exercices objets/associations sont des pools réutilisés
+      // dans un « complet » ; leur rendu propre reste celui des images à reconnaître.
+      const renderable = ['images_a_reconnaitre', 'association_images'].includes(exercise.type_exercice)
+        ? { ...exercise, type_exercice: 'complet' }
+        : exercise
+      for (const selector of selectors(tcfExerciseItems(renderable, createRng(42)))) {
         const text = selector.variants.qcm_texte
         const image = selector.variants.qcm_image
         if (!text || !image) continue

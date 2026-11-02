@@ -6,11 +6,19 @@ import {
   TCF_AUDIO_TAG_SCENARIO,
   tcfAudioHasTag,
   tcfMergeAudioTags,
+  tcfTagForAudioDuration,
   tcfTagForQuestionPoolSize,
   type TcfAudioTag,
 } from './audio-tags'
 import { isTcfCoAssociation, tcfAssociationTranscriptions } from './association-audio'
 import type { TcfExercise, TcfQuestion } from './types'
+import audioDurations from './content/audio-durations.json'
+
+const durations: Readonly<Record<string, number>> = audioDurations
+
+function lengthTag(audio: string, questionCount: number) {
+  return tcfTagForAudioDuration(durations[audio]) ?? tcfTagForQuestionPoolSize(questionCount)
+}
 
 export type TcfAudioEntry = {
   audio: string
@@ -177,7 +185,7 @@ function exerciseExtraTags(exercise: TcfExercise): TcfAudioTag[] {
 }
 
 /**
- * Pistes taguées court (1 Q) / moyen (2–4 Q) / long (≥ 5 Q) : mono complet,
+ * Pistes taguées court / moyen / long par durée réelle : mono complet,
  * ou chaque piste d’un multi qui a un pool de questions liées.
  * Les tags `exercise.tags` (ex. `scenario`) se cumulent.
  */
@@ -191,7 +199,8 @@ function taggedLengthAudioRows(exercise: TcfExercise): RawAudioRow[] {
     const base = tcfAudioBaseLabel(exercise, multi[0]!)
     for (let i = 0; i < multi.length; i++) {
       const pool = questionsForAudioIndex(exercise, i + 1, multi.length)
-      const tag = tcfTagForQuestionPoolSize(pool.length)
+      if (pool.length === 0) continue
+      const tag = lengthTag(multi[i]!, pool.length)
       if (!tag) continue
       const audio = multi[i]!
       const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
@@ -210,7 +219,8 @@ function taggedLengthAudioRows(exercise: TcfExercise): RawAudioRow[] {
   const one = support.audio?.trim() || (multi.length === 1 ? multi[0]! : '')
   if (!one) return []
   const qs = exercise.questions ?? []
-  const tag = tcfTagForQuestionPoolSize(qs.length)
+  if (qs.length === 0) return []
+  const tag = lengthTag(one, qs.length)
   if (!tag) return []
   const stem = one.split('/').pop()?.replace(/\.mp3$/i, '') ?? one
   return [
@@ -228,7 +238,7 @@ function taggedLengthAudioRows(exercise: TcfExercise): RawAudioRow[] {
 
 /**
  * Entrées audio issues d’un pack association : une entrée par dialogue découpé,
- * taguée `scenario`. Si la piste a un pool de questions (1 / 2–4 / ≥ 5), on
+ * taguée `scenario`. Si la piste a un pool de questions, on
  * ajoute aussi `court` / `moyen` / `long` pour la rendre sélectionnable ailleurs.
  */
 function associationScenarioRows(exercise: TcfExercise): RawAudioRow[] {
@@ -243,13 +253,13 @@ function associationScenarioRows(exercise: TcfExercise): RawAudioRow[] {
     const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
     const tr = trs[i]?.trim()
     const pool = questionsForAudioIndex(exercise, dialogueIndex, audios.length)
-    const lengthTag = tcfTagForQuestionPoolSize(pool.length)
+    const tag = pool.length ? lengthTag(audio, pool.length) : null
     return {
       audio,
       exercise,
       base: `${base} · dialogue ${dialogueIndex}`,
       stem: tr ? `${stem} ${tr.slice(0, 80)}` : stem,
-      tags: tcfMergeAudioTags(extra, [TCF_AUDIO_TAG_SCENARIO], lengthTag ? [lengthTag] : []),
+      tags: tcfMergeAudioTags(extra, [TCF_AUDIO_TAG_SCENARIO], tag ? [tag] : []),
       dialogueIndex,
       questionPool: pool.length > 0 ? pool : undefined,
     }
@@ -266,15 +276,15 @@ function mergeAudioRows(a: RawAudioRow, b: RawAudioRow): RawAudioRow {
   const exercise =
     isTcfCoAssociation(a.exercise) ? a.exercise : isTcfCoAssociation(b.exercise) ? b.exercise : a.exercise
   const tags = tcfMergeAudioTags(a.tags, b.tags)
-  // Recaler le tag de longueur sur le pool conservé.
-  const lengthTag = tcfTagForQuestionPoolSize(questionPool?.length ?? 0)
-  const finalTags = lengthTag
+  // Une correction du pool ne doit pas changer la catégorie d'une piste connue.
+  const tag = questionPool?.length ? lengthTag(a.audio, questionPool.length) : null
+  const finalTags = tag
     ? tcfMergeAudioTags(
         tags.filter(
           (t) =>
             t !== TCF_AUDIO_TAG_COURT && t !== TCF_AUDIO_TAG_MOYEN && t !== TCF_AUDIO_TAG_LONG,
         ),
-        [lengthTag],
+        [tag],
       )
     : tags
   return {
@@ -320,13 +330,16 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
     if (!audio) continue
     const extra = exerciseExtraTags(exercise)
     const stem = audio.split('/').pop()?.replace(/\.mp3$/i, '') ?? audio
+    const pool = exercise.questions ?? []
+    const tag = pool.length ? lengthTag(audio, pool.length) : null
     upsert({
       audio,
       exercise,
       base: tcfAudioBaseLabel(exercise, audio),
       stem,
-      tags: tcfMergeAudioTags(extra, [TCF_AUDIO_TAG_OBJET]),
+      tags: tcfMergeAudioTags(extra, [TCF_AUDIO_TAG_OBJET], tag ? [tag] : []),
       dialogueIndex: 1,
+      questionPool: pool.length ? pool : undefined,
     })
   }
 
@@ -432,14 +445,14 @@ export function tcfCourtAudioEntries(exercises: readonly TcfExercise[]): TcfAudi
   )
 }
 
-/** Audios tagués `moyen` (2–4 questions) pour « 3 audios moyens ». */
+/** Audios moyens disposant des deux questions nécessaires au tirage. */
 export function tcfMoyenAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
   return tcfAudioEntries(exercises).filter(
     (e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_MOYEN) && (e.questionPool?.length ?? 0) >= 2,
   )
 }
 
-/** Audios tagués `long` (≥ 5 questions) pour l’audio complet CO ex. 3. */
+/** Audios longs disposant des cinq questions nécessaires au tirage par défaut. */
 export function tcfLongAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
   return tcfAudioEntries(exercises).filter(
     (e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_LONG) && (e.questionPool?.length ?? 0) >= 5,

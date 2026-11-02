@@ -1,6 +1,6 @@
 /**
  * Tags des audios CO découpés / typés — **plusieurs tags possibles** sur une même piste
- * (ex. `scenario` + `court` si le dialogue a 1 question → sélectionnable en ex. 1 et ex. 4).
+ * (ex. `scenario` + `court` pour un petit dialogue sélectionnable en ex. 1 et ex. 4).
  *
  * `scenario` = petit dialogue d’association (scénario + scène), une piste = une situation.
  * `court` = mini-extrait pour « 6 audios courts » (1 question tirée du pool de la piste).
@@ -8,7 +8,7 @@
  * `long` = document long pour « audio complet » (N questions, défaut 5).
  * `objet` = message « objets à reconnaître » (ex. 5, images Oui / Non).
  *
- * `court` / `moyen` / `long` sont mutuellement exclusifs (selon la taille du pool) ;
+ * `court` / `moyen` / `long` sont mutuellement exclusifs (durée de la piste) ;
  * `scenario` / `objet` se cumulent avec les tags de longueur.
  */
 export const TCF_AUDIO_TAG_SCENARIO = 'scenario' as const
@@ -31,13 +31,21 @@ const LENGTH_TAGS = [
   TCF_AUDIO_TAG_LONG,
 ] as const
 
-/** Tag court / moyen / long selon la taille du pool de questions. */
+/** Repli pour une piste sans durée connue : cibles de banque 2–3 / 4–5 / 8–10. */
 export function tcfTagForQuestionPoolSize(
   n: number,
 ): typeof TCF_AUDIO_TAG_COURT | typeof TCF_AUDIO_TAG_MOYEN | typeof TCF_AUDIO_TAG_LONG | null {
   if (n <= 0) return null
-  if (n === 1) return TCF_AUDIO_TAG_COURT
-  if (n <= 4) return TCF_AUDIO_TAG_MOYEN
+  if (n <= 3) return TCF_AUDIO_TAG_COURT
+  if (n <= 7) return TCF_AUDIO_TAG_MOYEN
+  return TCF_AUDIO_TAG_LONG
+}
+
+/** Durée réelle, indépendante du nombre de questions disponibles. */
+export function tcfTagForAudioDuration(seconds: number | undefined) {
+  if (seconds == null || !Number.isFinite(seconds) || seconds <= 0) return null
+  if (seconds <= 15) return TCF_AUDIO_TAG_COURT
+  if (seconds <= 45) return TCF_AUDIO_TAG_MOYEN
   return TCF_AUDIO_TAG_LONG
 }
 

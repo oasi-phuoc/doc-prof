@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / 'scripts/tcf-qcm-image-registry.json'
 BANKS = [ROOT / f'src/tcf/content/{level}/{skill}.json'
-         for level in ('a0-a1', 'a1-a2') for skill in ('ce', 'co')]
+         for level in ('a0-a1', 'a1-a2', 'a2-b1') for skill in ('ce', 'co')]
 
 def norm(text):
     text = ''.join(c for c in unicodedata.normalize('NFD', text.lower())
@@ -36,21 +36,19 @@ OBJECT_ALIASES = {
     'par mail':'technologie/courriel', 'envoyer un courriel':'technologie/courriel',
     'par la poste':'argent-administration/enveloppe', 'sur un ordinateur':'technologie/ordinateur',
     'en bus':'transports/bus', 'en voiture':'transports/voiture', 'en train':'transports/train',
-    'en metro':'transports/metro', 'a velo':'transports/vélo', 'a pied':'actions/marcher',
+    'en metro':'transports/metro', 'en avion':'transports/avion', 'en bateau':'transports/bateau',
+    'en tram':'transports/tramway', 'a velo':'transports/vélo', 'a pied':'actions/marcher',
     'professeur':'metiers/enseignant', 'professeurs':'metiers/enseignant',
     'cuisiniers':'metiers/cuisinier','voyageurs':'voyage/voyageur',
     'distributeur automatique':'ville/distributeur-automatique',
     'distributeur de billets':'technologie/distributeur-de-billets',
-    'pastilles':'sante/comprime', 'steak':'aliments/viande',
-    'gateau au chocolat':'desserts/gâteau', 'bol de cereales':'aliments/céréales',
+    'bol de cereales':'aliments/céréales',
     'bouteille d eau':'boissons/bouteille-deau', "bouteille d'eau":'boissons/bouteille-deau',
     "jus d'orange":'boissons/jus-d-orange', 'jus de fruits':'boissons/jus',
     "verre d'eau":'boissons/eau', "carte d'embarquement":'voyage/carte-d-embarquement',
     'repas':'aliments/plateau-repas', 'prendre des photos':'loisirs/photographie',
     'lire un livre':'actions/lire-dans-un-fauteuil', 'faire ses devoirs':'actions/faire-ses-devoirs',
     'gateaux':'desserts/gâteau', 'cornichons':'legumes/cornichon',
-    'se reposer':'actions/dormir',
-    'chauffeur':'metiers/chauffeur-de-bus',
 }
 for label, relative in OBJECT_ALIASES.items():
     path=ROOT/'public/lib/images/vocabulaire'/f'{relative}.webp'
@@ -65,10 +63,46 @@ def noun(text):
         text = new
     return text
 
+HOURS = ['minuit','une-heure','deux-heures','trois-heures','quatre-heures',
+         'cinq-heures','six-heures','sept-heures','huit-heures','neuf-heures',
+         'dix-heures','onze-heures','midi','treize-heures','quatorze-heures',
+         'quinze-heures','seize-heures','dix-sept-heures','dix-huit-heures',
+         'dix-neuf-heures','vingt-heures','vingt-et-une-heures','vingt-deux-heures',
+         'vingt-trois-heures']
+MINUTES = {5:'cinq',10:'dix',15:'quinze',20:'vingt',25:'vingt-cinq',30:'trente',
+           35:'trente-cinq',40:'quarante',45:'quarante-cinq',50:'cinquante',55:'cinquante-cinq'}
+
+def clock_time(label, enonce=''):
+    if not re.search(r'quelle(?:s)? heure(?:s)?|horaire',norm(enonce)):
+        return None
+    text=re.sub(r'^(?:a |jusqu.a |vers |des )','',norm(label))
+    match=re.fullmatch(r'(\d{1,2})\s*(?:h|heures?)(?:\s*(\d{1,2}))?',text)
+    if match:
+        hour,minute=int(match[1]),int(match[2] or 0)
+    elif text in ('midi','minuit','midi et demi','midi et demie'):
+        hour,minute=(12 if text.startswith('midi') else 0),(30 if 'demi' in text else 0)
+    else:
+        return None
+    return (hour,minute) if 0<=hour<24 and 0<=minute<60 else None
+
+def clock_image(label,enonce):
+    time=clock_time(label,enonce)
+    if time is None:return None
+    hour,minute=time
+    if minute and minute not in MINUTES:return None
+    stem=HOURS[hour]+('-'+MINUTES[minute] if minute else '')
+    path=ROOT/'public/lib/images/vocabulaire/heure-horloge'/f'{stem}.webp'
+    return '/'+str(path.relative_to(ROOT/'public')) if path.is_file() else None
+
 def resolve_image(label, enonce=''):
     text = norm(label)
+    # Les horloges sont autorisées ; les durées, dates et montants restent du texte.
+    clock=clock_image(label,enonce)
+    if clock:return clock
     # Propriété, noms propres, négation et phrases ne deviennent jamais un objet isolé.
-    if re.search(r"\b(?:chez|pas|jamais|annule|annulee|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|euros?|francs?|chf)\b", text) and text not in ALIASES:
+    if re.search(r"\b(?:lundis?|mardis?|mercredis?|jeudis?|vendredis?|samedis?|dimanches?|janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre|euros?|francs?|chf|dollars?)\b|[€$£%]",text):
+        return None
+    if re.search(r"\b(?:chez|pas|jamais|annule|annulee)\b", text) and text not in ALIASES:
         return None
     if re.search(r'\d', text):
         count_question = re.search(r"combien\s+(?:de\s+|d')(tomates?|oeufs?|dvd)\b", norm(enonce))
@@ -118,10 +152,14 @@ def text_form(q):
 
 def desired_form(q):
     text = text_form(q)
-    if not text or len(text.get('choix', [])) not in (3,4): return None
+    if not text or len(text.get('choix', [])) != 3: return None
     if sum(c.get('correct') is True for c in text['choix']) != 1: return None
     paths = [resolve_image(c.get('texte', ''), q.get('enonce', '')) for c in text['choix']]
     if not all(paths) or len(set(paths)) != len(paths): return None
+    times=[clock_time(c.get('texte',''),q.get('enonce','')) for c in text['choix']]
+    # 6 h et 18 h, ou midi et minuit, ont le même cadran analogique.
+    if all(t is not None for t in times) and len({(t[0]%12,t[1]) for t in times})!=3:
+        return None
     return {'melanger': text.get('melanger', True), 'choix': [
         {**{k: v for k, v in c.items() if k != 'texte'}, 'image': path}
         for c, path in zip(text['choix'], paths)]}

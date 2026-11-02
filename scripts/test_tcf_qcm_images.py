@@ -68,5 +68,15 @@ class ImageSemantics(unittest.TestCase):
         self.assertEqual(result['choix'],original)
         self.assertEqual(result['formes']['lignes']['reponse_modele'],'Chez Brigitte')
 
+    def test_clock_faces_must_be_distinct_and_times_not_durations(self):
+        self.assertIsNotNone(desired_form(question(['À 18 h','À 8 h','À 16 h'],'À quelle heure ?')))
+        self.assertIsNone(desired_form(question(['À 6 h','À 18 h','À 16 h'],'À quelle heure ?')))
+        self.assertIsNone(desired_form(question(['2 heures','3 heures','4 heures'],'Combien de temps ?')))
+        self.assertIsNone(desired_form(question(['Midi','Minuit','À 16 h'],'À quelle heure ?')))
+
+    def test_approximate_concepts_are_not_silently_substituted(self):
+        self.assertIsNone(resolve_image('Se reposer'))
+        self.assertIsNone(resolve_image('Chauffeur'))
+
 
 if __name__=='__main__':unittest.main()
