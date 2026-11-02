@@ -43,6 +43,7 @@ export type ResultPanelProps = {
   drawAlphaSeries: () => void
   generate: () => void
   printAll: () => void
+  printCorrections: boolean
   onSaveFiche: () => void
   onOpenBook: () => void
   isCalliDomain: boolean
@@ -118,6 +119,7 @@ export function ResultPanel({
   drawAlphaSeries,
   generate,
   printAll,
+  printCorrections,
   onSaveFiche,
   onOpenBook,
   isCalliDomain,
@@ -161,6 +163,8 @@ export function ResultPanel({
   const answersBaseCount = isCalliDomain || isJeuxDomain ? 0 : previewWorksheets.length
   /** Corrigé : pages exercices + pages transcriptions (interactions PO sans pied numéroté). */
   const corrigeTotalPages = answersBaseCount + transcriptionPacks.length
+  const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain
+  const printLabel = includeCorrections ? 'Imprimer la fiche et le corrigé' : 'Imprimer la fiche'
   const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
   const showTranscriptionPreview =
     sheetProps.mode === 'answers' &&
@@ -318,16 +322,8 @@ export function ResultPanel({
                   className="print-chip is-icon is-generate"
                   type="button"
                   onClick={printAll}
-                  aria-label={
-                    isCalliDomain || isJeuxDomain
-                      ? 'Imprimer la fiche'
-                      : 'Imprimer la fiche et le corrigé'
-                  }
-                  title={
-                    isCalliDomain || isJeuxDomain
-                      ? 'Imprimer la fiche'
-                      : 'Imprimer la fiche et le corrigé'
-                  }
+                  aria-label={printLabel}
+                  title={printLabel}
                 >
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                     <path
@@ -516,51 +512,53 @@ export function ResultPanel({
                       mode="student"
                     />
                   ))}
-              {isCalliDomain || isJeuxDomain
-                ? null
-                : useA5Double && a5LeftWorksheets && a5RightWorksheets
-                  ? a5LeftWorksheets.map((leftPage, index) => {
-                      const rightPage = a5RightWorksheets[index] ?? leftPage
-                      return (
-                        <DualA5Sheet
-                          key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}
-                          leftPage={leftPage}
-                          rightPage={rightPage}
+              {includeCorrections ? (
+                <>
+                  {useA5Double && a5LeftWorksheets && a5RightWorksheets
+                    ? a5LeftWorksheets.map((leftPage, index) => {
+                        const rightPage = a5RightWorksheets[index] ?? leftPage
+                        return (
+                          <DualA5Sheet
+                            key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}
+                            leftPage={leftPage}
+                            rightPage={rightPage}
+                            pageNumber={index + 1}
+                            sheetIndex={a5LeftWorksheets.length + index + 1}
+                            total={a5LeftWorksheets.length}
+                            {...chromeProps}
+                            mode="answers"
+                          />
+                        )
+                      })
+                    : previewWorksheets.map((page, index) => (
+                        <WorksheetSheet
+                          key={`print-answers-${page.exerciseType}-${seed}-${index}`}
+                          page={page}
                           pageNumber={index + 1}
-                          sheetIndex={a5LeftWorksheets.length + index + 1}
-                          total={a5LeftWorksheets.length}
+                          sheetIndex={previewWorksheets.length + index + 1}
+                          total={previewWorksheets.length}
                           {...chromeProps}
                           mode="answers"
                         />
-                      )
-                    })
-                  : previewWorksheets.map((page, index) => (
-                      <WorksheetSheet
-                        key={`print-answers-${page.exerciseType}-${seed}-${index}`}
-                        page={page}
-                        pageNumber={index + 1}
-                        sheetIndex={previewWorksheets.length + index + 1}
-                        total={previewWorksheets.length}
-                        {...chromeProps}
-                        mode="answers"
-                      />
-                    ))}
-              {previewWorksheets.flatMap((page) =>
-                imageInteractionsOf(page).map((exercise) => (
-                  <InteractionCorrigeSheet key={`print-interaction-${exercise.id}`} exercise={exercise} />
-                )),
-              )}
-              {transcriptionPacks.map((entries, i) => (
-                <TranscriptionAppendixSheet
-                  key={`print-transcription-${i}`}
-                  entries={entries}
-                  pageNumber={answersBaseCount + i + 1}
-                  totalPages={corrigeTotalPages}
-                  institutional={chromeProps.institutional}
-                  appendixIndex={i + 1}
-                  appendixTotal={transcriptionPacks.length}
-                />
-              ))}
+                      ))}
+                  {previewWorksheets.flatMap((page) =>
+                    imageInteractionsOf(page).map((exercise) => (
+                      <InteractionCorrigeSheet key={`print-interaction-${exercise.id}`} exercise={exercise} />
+                    )),
+                  )}
+                  {transcriptionPacks.map((entries, i) => (
+                    <TranscriptionAppendixSheet
+                      key={`print-transcription-${i}`}
+                      entries={entries}
+                      pageNumber={answersBaseCount + i + 1}
+                      totalPages={corrigeTotalPages}
+                      institutional={chromeProps.institutional}
+                      appendixIndex={i + 1}
+                      appendixTotal={transcriptionPacks.length}
+                    />
+                  ))}
+                </>
+              ) : null}
             </div>
           </section>
 

@@ -103,6 +103,9 @@ export function GeneratorPage({
   const [hideChrome, setHideChrome] = useState(
     () => openedFiche?.recipe.hideChrome ?? false,
   )
+  const [printCorrections, setPrintCorrections] = useState(
+    () => openedFiche?.recipe.printCorrections ?? true,
+  )
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
@@ -387,6 +390,7 @@ export function GeneratorPage({
       libreSnapshot,
       sheetFormat,
       hideChrome,
+      printCorrections,
     })
     const saved =
       !input.asNew && ficheRef
@@ -487,6 +491,7 @@ export function GeneratorPage({
     drawAlphaSeries,
     generate,
     printAll,
+    printCorrections,
     onSaveFiche: () => setSaveOpen(true),
     onOpenBook: () =>
       setBookRequest({
@@ -565,6 +570,8 @@ export function GeneratorPage({
             onFontSizeChange={changeFontSize}
             sheetFormat={sheetFormat}
             onSheetFormatChange={setSheetFormat}
+            printCorrections={printCorrections}
+            onPrintCorrectionsChange={setPrintCorrections}
             hideChrome={hideChrome}
             onHideChromeChange={setHideChrome}
             footerOpen={footerPanelOpen}
