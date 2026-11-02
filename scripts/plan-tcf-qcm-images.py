@@ -7,7 +7,7 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
-from tcf_qcm_images import ROOT, BANKS, REGISTRY, norm, noun, text_form, desired_form, resolve_image, clock_time
+from tcf_qcm_images import ROOT, BANKS, REGISTRY, VISUAL_OVERRIDES, norm, noun, text_form, desired_form, resolve_image, clock_time
 
 FORBIDDEN=re.compile(r"\b(?:lundis?|mardis?|mercredis?|jeudis?|vendredis?|samedis?|dimanches?|janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre|euros?|francs?|chf|dollars?|centimes?|pour\s+cent)\b|[€$£%]",re.I)
 ABSTRACT=re.compile(r"\b(?:loi|droit|obligation|possibilite|autorisation|raison|cause|consequence|opinion|avis|choix|liberte|identite|qualite|quantite|information|informations|programme|reponse|question|message|numero|adresse|inscription|reservation|examen|diplome|reunion|conseil|projet|etude|regle|conditions|technique|regime|mot|phrase|verbe|temps|annee|mois|jour|semaine|minute|heure|quotidien|succes|moyen|but|resultat|texte|annonce|habitude|taux|prix|salaire|budget|point|points|anonymat|rechauffement|pollution|biodiversite|protection|dependance|culpabilite|transmission|relation|sensations|metamorphose|statut|edition|fabrication|amelioration|reduction|annulation|changement|delai|retard|avance|scenario|article|amour|parents|voisins|amis|camarades|collegues|directeur|client|clients|vendeurs)\b",re.I)
@@ -78,11 +78,29 @@ def main():
                            f"Illustration pédagogique représentant exactement cette proposition : « {choice['texte']} ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires.")
                     assets.setdefault(key,{'id':key,'label':choice['texte'],'path_after_generation':target,'prompt':brief+' Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.','status':'à générer après validation éditoriale','references':[]})['references'].append({'exercise':ex['id'],'question':index,'choice':choice['id']})
                 questions.append(ref)
+    pending_scenes=[]
+    for scene in VISUAL_OVERRIDES.get('pending_association_images',[]):
+        bank=json.loads((ROOT/scene['bank']).read_text())
+        ex=next(e for e in bank if e['id']==scene['exercise'])
+        tr=ex['support'].get('transcription','')
+        source=tr[scene['dialogue']-1] if isinstance(tr,list) and scene['dialogue'] else tr
+        target=scene.get('target_image',scene['original_image'])
+        pending_scenes.append({**scene,'path_after_generation':target,'transcription':source,
+            'prompt':('Créer une scène pédagogique fidèle au dialogue fourni, avec les personnages et les actions effectivement décrits. ' if scene['dialogue'] else 'Créer une scène leurre clairement différente de tous les dialogues fournis. ')+
+                     'Ne pas afficher de texte, de montant, de date, de jour ni de mois. Ne pas inventer de détail contradictoire. Relire le support avant génération.',
+            'activation':'Après contrôle de l’image, conserver le chemin cible et retirer image_pending de la situation.'})
     out=args.output_dir;out.mkdir(parents=True,exist_ok=True)
     data={'instructions':['Ne lancer aucune génération tant que le quota est épuisé.','Relire les trois propositions et le support indiqué avant de générer.','Les candidats sont un plan de reprise, pas une certification visuelle automatique.','Réutiliser les images existantes indiquées ; générer seulement les assets manquants.','Garder montants, dates, jours et mois en texte. Les horloges doivent avoir trois cadrans distincts.','Ne lier formes.qcm_image qu’après création et contrôle des trois fichiers, avec mêmes id et correct que le QCM texte.','Conserver le QCM texte et le corrigé rédigé.'],
-          'summary':{'question_candidates':len(questions),'missing_assets':len(assets),'exclusions':dict(excluded)},'questions':questions,'assets':list(assets.values())}
+          'summary':{'question_candidates':len(questions),'missing_assets':len(assets),'pending_association_images':len(pending_scenes),'exclusions':dict(excluded)},'questions':questions,'assets':list(assets.values()),
+          'pending_association_images':pending_scenes,
+          'visual_review_mappings':VISUAL_OVERRIDES.get('mappings',[])}
     (out/'images-a-generer.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
-    lines=['# Images QCM à préparer à la prochaine session','',f"{len(questions)} questions candidates ; {len(assets)} images manquantes. Aucun fichier image n’a été généré.",'',*['- '+s for s in data['instructions']],'','Le fichier `images-a-generer.json` contient les références exactes, les trois réponses, les images réutilisables, les chemins prévus et tous les prompts.','']
+    lines=['# Images QCM à préparer à la prochaine session','',f"{len(questions)} questions candidates ; {len(assets)} images manquantes, plus {len(pending_scenes)} scènes d’association en attente. Aucun fichier image n’a été généré.",'',*['- '+s for s in data['instructions']],'','Le fichier `images-a-generer.json` contient les références exactes, les trois réponses, les images réutilisables, les chemins prévus et tous les prompts.','',
+           '## Scènes d’association prioritaires','',
+           'Ces scènes ne sont pas utilisées dans les tirages automatiques tant que leur illustration reste en attente.','']
+    for scene in pending_scenes:
+        lines.extend([f"- `{scene['exercise']}` — dialogue {scene['dialogue'] or 'leurre'} — `{scene['path_after_generation']}`",f"  Motif : {scene['reason']}"])
+    lines.append('')
     for ref in questions:
         lines.extend([f"## {ref['exercise']} — question {ref['question']}",'',ref['enonce'],''])
         for choice in ref['choices']:

@@ -227,6 +227,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À midi et demi"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/midi-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures-trente.webp"
+              }
+            ]
           }
         }
       },
@@ -353,6 +371,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À midi"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/midi.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/treize-heures.webp"
+              }
+            ]
           }
         }
       }
@@ -1220,7 +1256,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/sports/ballon.webp"
+                "image": "/lib/images/vocabulaire/sports/ballon-de-football.webp"
               },
               {
                 "id": "b",
@@ -2705,24 +2741,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "De la crème solaire"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/hygiene/creme-solaire.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/dentifrice.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/hygiene/savon.webp"
-              }
-            ]
           }
         }
       }
@@ -2737,7 +2755,7 @@
       },
       {
         "id": "i2",
-        "image": "/lib/images/vocabulaire/hygiene/creme-solaire.webp",
+        "image": "/lib/images/vocabulaire/voyage/valise.webp",
         "correct": true
       },
       {
@@ -2752,7 +2770,7 @@
       },
       {
         "id": "i5",
-        "image": "/lib/images/vocabulaire/hygiene/serviette.webp",
+        "image": "/lib/images/vocabulaire/vetements/tongs.webp",
         "correct": true
       }
     ],
@@ -6229,7 +6247,7 @@
       },
       {
         "id": "s3",
-        "image": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp",
+        "image": "/lib/images/tcf/co/bg/piscine.webp",
         "dialogue": 3
       },
       {
@@ -6693,7 +6711,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "b",
@@ -7766,7 +7784,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
+                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
               },
               {
                 "id": "b",
@@ -8082,24 +8100,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des journaux"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/objets/journaux.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/technologie/écouteurs.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/maison/couverture.webp"
-              }
-            ]
           }
         }
       },
@@ -8720,7 +8720,7 @@
     "images": [
       {
         "id": "i1",
-        "image": "/lib/images/vocabulaire/hygiene/serviette.webp",
+        "image": "/lib/images/vocabulaire/vetements/maillot-de-bain.webp",
         "correct": true
       },
       {
@@ -9232,24 +9232,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le dentiste"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/metiers/dentiste.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/médecin.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/fruits/avocat.webp"
-              }
-            ]
           }
         }
       },
@@ -10347,7 +10329,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "c",
@@ -12826,7 +12808,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-reunion.webp"
+                "image": "/lib/images/tcf/co/scenes/travail/reunion.webp"
               },
               {
                 "id": "b",
@@ -13476,7 +13458,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               }
             ]
           }
@@ -15736,7 +15718,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "c",
@@ -24779,24 +24761,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le cahier"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/ecole-bureau/cahier.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/calculatrice.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/dictionnaire.webp"
-              }
-            ]
           }
         }
       }
@@ -27400,7 +27364,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               }
             ]
           }
@@ -27537,6 +27501,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Bleue"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/vert.webp"
+              }
+            ]
           }
         }
       },
@@ -27806,6 +27788,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Noire"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              }
+            ]
           }
         }
       },
@@ -28012,24 +28012,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des légumes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/fruits/fruit.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/poisson.webp"
-              }
-            ]
           }
         }
       },
@@ -29506,11 +29488,11 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/sports/ballon.webp"
+                "image": "/lib/images/vocabulaire/sports/ballon-de-football.webp"
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/maison/tapis.webp"
+                "image": "/lib/images/vocabulaire/sports/tapis-de-yoga.webp"
               }
             ]
           }
@@ -29735,7 +29717,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp"
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
               },
               {
                 "id": "c",
@@ -30459,24 +30441,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un CD"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/technologie/cd.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/téléphone.webp"
-              }
-            ]
           }
         }
       },
@@ -32455,7 +32419,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "b",
@@ -32734,24 +32698,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des légumes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/desserts/gâteau.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/fromage.webp"
-              }
-            ]
           }
         }
       },
@@ -32794,7 +32740,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/patisserie.webp"
+                "image": "/lib/images/vocabulaire/desserts/mille-feuille.webp"
               }
             ]
           }
@@ -33281,6 +33227,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À sept heures"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures.webp"
+              }
+            ]
           }
         }
       },
@@ -33550,24 +33514,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un buffet"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/maison/buffet.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/co/bg/pique-nique.webp"
-              }
-            ]
           }
         }
       },
@@ -33855,6 +33801,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À sept heures et demie"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/sept-heures-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/six-heures.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/huit-heures-trente.webp"
+              }
+            ]
           }
         }
       }
@@ -34005,7 +33969,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "b",
@@ -37084,6 +37048,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Bleue"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              }
+            ]
           }
         }
       },
@@ -37524,6 +37506,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Jaune"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/jaune.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              }
+            ]
           }
         }
       },
@@ -38026,24 +38026,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Aux légumes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/poulet.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/fromage.webp"
-              }
-            ]
           }
         }
       },
@@ -40988,7 +40970,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/technologie/carte-bancaire.webp"
+                "image": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp"
               }
             ]
           }
@@ -47253,24 +47235,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Journaliste"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/metiers/journaliste.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/professeure.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/metiers/médecin.webp"
-              }
-            ]
           }
         }
       },
@@ -49457,24 +49421,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des bouteilles"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/objets/bouteille.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/chaussures.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/objets/journaux.webp"
-              }
-            ]
           }
         }
       },
@@ -50408,7 +50354,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "c",
@@ -50944,24 +50890,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une crème"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/aliments/creme.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/boissons/sirop.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/meteo/goutte.webp"
-              }
-            ]
           }
         }
       },
@@ -53609,7 +53537,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "c",
@@ -53683,7 +53611,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cafe.webp"
+                "image": "/lib/images/vocabulaire/boissons/café.webp"
               },
               {
                 "id": "c",
@@ -53804,24 +53732,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des lunettes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/accessoires/lunettes.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/chapeau.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/écharpe.webp"
-              }
-            ]
           }
         },
         "audio": 1
@@ -54045,7 +53955,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "b",
@@ -54450,7 +54360,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/ecole-bureau/bureau.webp"
+                "image": "/lib/images/tcf/co/bg/bureau.webp"
               },
               {
                 "id": "b",
@@ -55417,7 +55327,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp"
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
               },
               {
                 "id": "b",
@@ -55900,7 +55810,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/loisirs/peinture.webp"
+                "image": "/lib/images/vocabulaire/actions/regarder-une-peinture.webp"
               },
               {
                 "id": "b",
@@ -58935,7 +58845,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/vocabulaire/actions/cuisiner.webp"
               }
             ]
           }
@@ -62544,7 +62454,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/desserts/chocolat.webp"
+                "image": "/lib/images/vocabulaire/boissons/chocolat-chaud.webp"
               }
             ]
           }
@@ -63107,24 +63017,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le surf"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/surf.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/sports/ski.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/sports/escalade.webp"
-              }
-            ]
           }
         }
       }
@@ -63183,7 +63075,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
+                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
               }
             ]
           }
@@ -64566,7 +64458,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/technologie/téléphone.webp"
+                "image": "/lib/images/vocabulaire/technologie/smartphone.webp"
               },
               {
                 "id": "b",
@@ -64746,24 +64638,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un dictionnaire"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/ecole-bureau/dictionnaire.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/cahier.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/règle.webp"
-              }
-            ]
           }
         }
       },
@@ -64958,7 +64832,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/sports/ballon.webp"
+                "image": "/lib/images/vocabulaire/sports/ballon-de-football.webp"
               },
               {
                 "id": "b",
@@ -65683,24 +65557,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un stylo"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/ecole-bureau/stylo.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/crayon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/feutre.webp"
-              }
-            ]
           }
         }
       },
@@ -65739,7 +65595,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "c",
@@ -65890,24 +65746,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La viande"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/aliments/viande.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/fromage.webp"
-              }
-            ]
           }
         }
       },
@@ -67243,7 +67081,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "c",
@@ -67397,7 +67235,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               }
             ]
           }
@@ -67435,7 +67273,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "b",
@@ -73462,24 +73300,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le médecin"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/metiers/médecin.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/dentiste.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/metiers/coiffeur.webp"
-              }
-            ]
           }
         },
         "audio": 1
@@ -73808,24 +73628,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les poissons"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/aliments/poisson.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/boissons/boisson.webp"
-              }
-            ]
           }
         },
         "audio": 1
@@ -74368,24 +74170,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les légumes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/aliments/poisson.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/jouet.webp"
-              }
-            ]
           }
         }
       },
@@ -80572,24 +80356,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Rose"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/couleurs/rose.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/couleurs/vert.webp"
-              }
-            ]
           }
         },
         "audio": 3
@@ -80821,24 +80587,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un pull"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/vetements/pull.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/manteau.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/pantalon.webp"
-              }
-            ]
           }
         }
       },
@@ -80900,7 +80648,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "b",
@@ -80976,7 +80724,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "c",
@@ -82967,7 +82715,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
+                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
               },
               {
                 "id": "c",
@@ -87586,7 +87334,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/vocabulaire/actions/cuisiner.webp"
               }
             ]
           }
@@ -88342,7 +88090,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "b",
@@ -89714,24 +89462,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La carte"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/voyage/carte.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/facture.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/argent-administration/billet.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -89760,24 +89490,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des pulls"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/vetements/pull.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/vetements/pantalon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/chemise.webp"
-              }
-            ]
           }
         },
         "audio": 3
@@ -89806,24 +89518,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Bleus"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/couleurs/vert.webp"
-              }
-            ]
           }
         },
         "audio": 3
@@ -93502,24 +93196,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un stylo"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/ecole-bureau/stylo.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/crayon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/feutre.webp"
-              }
-            ]
           }
         },
         "audio": 1
@@ -93559,7 +93235,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "c",
@@ -93696,24 +93372,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La viande"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/aliments/viande.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/fromage.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -94709,7 +94367,7 @@
     "images": [
       {
         "id": "i1",
-        "image": "/lib/images/vocabulaire/vetements/chapeau.webp",
+        "image": "/lib/images/vocabulaire/vetements/béret.webp",
         "correct": true
       },
       {
@@ -94724,7 +94382,7 @@
       },
       {
         "id": "i4",
-        "image": "/lib/images/vocabulaire/accessoires/lunettes-de-soleil.webp",
+        "image": "/lib/images/vocabulaire/accessoires/sac-a-dos.webp",
         "correct": false
       },
       {
@@ -95138,24 +94796,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un savon"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/hygiene/savon.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/shampoing.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/hygiene/dentifrice.webp"
-              }
-            ]
           }
         }
       },
@@ -95183,24 +94823,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un menu"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/aliments/menu.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/facture.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/reservation.webp"
-              }
-            ]
           }
         }
       },
@@ -95667,7 +95289,7 @@
       },
       {
         "id": "i2",
-        "image": "/lib/images/vocabulaire/transports/ticket-de-bus.webp",
+        "image": "/lib/images/vocabulaire/cuisine/couteau.webp",
         "correct": true
       },
       {
@@ -96282,24 +95904,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un stylo"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/ecole-bureau/stylo.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/ecole-bureau/crayon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/ecole-bureau/feutre.webp"
-              }
-            ]
           }
         }
       },
@@ -96334,7 +95938,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "b",
@@ -96354,7 +95958,7 @@
     "images": [
       {
         "id": "i1",
-        "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+        "image": "/lib/images/vocabulaire/ville/librairie.webp",
         "correct": true
       },
       {
@@ -96364,7 +95968,7 @@
       },
       {
         "id": "i3",
-        "image": "/lib/images/vocabulaire/ecole-bureau/stylo.webp",
+        "image": "/lib/images/tcf/co/scenes/ecole/preter-un-stylo.webp",
         "correct": true
       },
       {
@@ -96419,24 +96023,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des enveloppes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/argent-administration/enveloppe.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/argent-administration/timbre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp"
-              }
-            ]
           }
         }
       }
@@ -96456,7 +96042,7 @@
       },
       {
         "id": "i3",
-        "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
+        "image": "/lib/images/vocabulaire/ecole-bureau/ciseaux.webp",
         "correct": false
       },
       {
@@ -96675,24 +96261,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des lunettes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/accessoires/lunettes.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/legumes/lentille.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/objets/loupe.webp"
-              }
-            ]
           }
         }
       },
@@ -96864,7 +96432,7 @@
     "images": [
       {
         "id": "i1",
-        "image": "/lib/images/vocabulaire/accessoires/lunettes.webp",
+        "image": "/lib/images/vocabulaire/cuisine/verre.webp",
         "correct": true
       },
       {
@@ -97237,6 +96805,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Noires"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/blanc.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              }
+            ]
           }
         }
       },
@@ -97279,7 +96865,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               }
             ]
           }
@@ -97309,6 +96895,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Noire"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/blanc.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              }
+            ]
           }
         }
       },
@@ -97351,7 +96955,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               }
             ]
           }
@@ -97368,13 +96972,13 @@
       },
       {
         "id": "i2",
-        "image": "/lib/images/vocabulaire/vetements/gants.webp",
-        "correct": true
+        "image": "/lib/images/vocabulaire/vetements/pull.webp",
+        "correct": false
       },
       {
         "id": "i3",
-        "image": "/lib/images/vocabulaire/vetements/pantalon.webp",
-        "correct": true
+        "image": "/lib/images/vocabulaire/vetements/robe.webp",
+        "correct": false
       },
       {
         "id": "i4",
@@ -97506,13 +97110,13 @@
       },
       {
         "id": "i4",
-        "image": "/lib/images/vocabulaire/technologie/carte-bancaire.webp",
+        "image": "/lib/images/vocabulaire/argent-administration/carte-de-credit.webp",
         "correct": false
       },
       {
         "id": "i5",
-        "image": "/lib/images/vocabulaire/voyage/cartes-postales.webp",
-        "correct": true
+        "image": "/lib/images/vocabulaire/ecole-bureau/livre.webp",
+        "correct": false
       }
     ],
     "consigne_supplementaire": null
@@ -98253,7 +97857,7 @@
     "images": [
       {
         "id": "i1",
-        "image": "/lib/images/vocabulaire/argent-administration/carte-d-identite.webp",
+        "image": "/lib/images/vocabulaire/argent-administration/carte-didentite.webp",
         "correct": true
       },
       {

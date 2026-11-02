@@ -527,7 +527,7 @@ function SupportEditor({
                   label={`Situation ${i + 1}`}
                   value={s.image}
                   onChange={(image) =>
-                    set({ ...ex, situations: ex.situations.map((x, k) => (k === i ? { ...x, image } : x)) })
+                    set({ ...ex, situations: ex.situations.map((x, k) => (k === i ? { ...x, image, image_pending: false } : x)) })
                   }
                 />
                 <label className="tcf-field is-number">

@@ -17,8 +17,10 @@ def answer_key(text):
     return norm(re.sub(r'[-−](?=\s*\d)', 'moins ', text))
 
 def audit(baseline=None):
-    errors=[];warnings=[];banks=[];tracks=defaultdict(list);ce_short=[];ids=set()
+    errors=[];warnings=[];banks=[];tracks=defaultdict(list);ce_short=[];ids=set();pending_scenes=[]
     durations=json.loads((ROOT/'src/tcf/content/audio-durations.json').read_text())
+    reviewed_path=ROOT/'src/tcf/content/co-reviewed-pools.json'
+    reviewed_pools=json.loads(reviewed_path.read_text()) if reviewed_path.exists() else {}
     original_total=0;added=removed=changed=0
     for level in LEVELS:
         for skill in ('ce','co'):
@@ -35,6 +37,9 @@ def audit(baseline=None):
                 if eid in ids:errors.append({**location,'error':'Identifiant de support dupliqué.'})
                 ids.add(eid)
                 old=before.get(eid)
+                for situation in ex.get('situations',[]):
+                    if situation.get('image_pending'):
+                        pending_scenes.append({**location,'situation':situation['id'],'dialogue':situation.get('dialogue'),'image':situation['image']})
                 if old:
                     if old['support']!=ex['support']:errors.append({**location,'error':'Le texte ou support a été modifié.'})
                     added+=max(0,len(ex['questions'])-len(old['questions']))
@@ -78,16 +83,16 @@ def audit(baseline=None):
                     for ai,p in enumerate(paths,1):
                         if not p:errors.append({**location,'error':'Piste audio manquante.'});continue
                         seconds=durations.get(p)
-                        category='court' if seconds and seconds<=15 else 'moyen' if seconds and seconds<=45 else 'long'
+                        category=reviewed_pools.get(p,{}).get('tag') or ('court' if seconds and seconds<=15 else 'moyen' if seconds and seconds<=45 else 'long')
                         minimum={'court':2,'moyen':4,'long':8}[category]
                         pool=[q for q in ex['questions'] if len(paths)==1 or q.get('audio')==ai]
                         tracks[level,p].append({**location,'audio':ai,'path':p,'seconds':seconds,'category':category,'minimum':minimum,'questions':len(pool),'deficit':max(0,minimum-len(pool)),'object_recognition':ex['type_exercice']=='images_a_reconnaitre'})
             banks.append({'niveau':level,'competence':skill.upper(),'supports':len(data),'questions':nq,'variantes_image':nimage})
     best=[max(rows,key=lambda r:r['questions']) for rows in tracks.values()]
-    return {'method':'Relecture éditoriale des supports et questions ; contrôles de structure automatisés. La durée est celle du fichier complet, consignes et répétitions comprises. La vérification automatique ne certifie pas la sémantique ni la conformité audio/transcription.',
+    return {'method':'Relecture éditoriale des supports et questions ; contrôles de structure automatisés. Les tags pédagogiques déjà relus sont conservés en priorité ; à défaut la durée du fichier complet détermine sa catégorie. La vérification automatique ne certifie pas la sémantique ni la conformité audio/transcription.',
             'audio_categories_seconds':{'court':'≤15','moyen':'>15 à45','long':'>45'},
             'summary':{'supports':len(ids),'questions_before':original_total if baseline else None,'questions_after':sum(b['questions'] for b in banks),'questions_net_added':added-removed if baseline else None,'supports_ce_below_minimum':len(ce_short),'audio_pools_by_level':len(best),'audio_pools_below_minimum':sum(r['deficit']>0 for r in best),'errors':len(errors),'warnings':len(warnings)},
-            'banks':banks,'errors':errors,'warnings':warnings,'ce_below_minimum':ce_short,'audio_pools':best,'audio_occurrences':[r for rows in tracks.values() for r in rows]}
+            'banks':banks,'errors':errors,'warnings':warnings,'ce_below_minimum':ce_short,'audio_pools':best,'audio_occurrences':[r for rows in tracks.values() for r in rows],'pending_association_images':pending_scenes}
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--baseline',type=Path);parser.add_argument('--report',type=Path,default=ROOT/'scripts/tcf-bank-audit.json');args=parser.parse_args()

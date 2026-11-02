@@ -1,6 +1,6 @@
 # Images QCM à préparer à la prochaine session
 
-571 questions candidates ; 1064 images manquantes. Aucun fichier image n’a été généré.
+618 questions candidates ; 1101 images manquantes, plus 13 scènes d’association en attente. Aucun fichier image n’a été généré.
 
 - Ne lancer aucune génération tant que le quota est épuisé.
 - Relire les trois propositions et le support indiqué avant de générer.
@@ -11,6 +11,37 @@
 - Conserver le QCM texte et le corrigé rédigé.
 
 Le fichier `images-a-generer.json` contient les références exactes, les trois réponses, les images réutilisables, les chemins prévus et tous les prompts.
+
+## Scènes d’association prioritaires
+
+Ces scènes ne sont pas utilisées dans les tirages automatiques tant que leur illustration reste en attente.
+
+- `tcf-a2-s1-co-4` — dialogue 1 — `/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-1-audite.webp`
+  Motif : The visible bus displays line 3 and is immediately beside the speakers at the stop. The assigned dialogue asks where to catch bus 15 and directs the person across the square, then into the first street on the right. This is a concrete line-number and route-context mismatch.
+- `tcf-a2-sb-co-4` — dialogue 1 — `/lib/images/tcf/co/scenes/magasins/les-achats-1.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sb-co-4` — dialogue 2 — `/lib/images/tcf/co/scenes/magasins/les-achats-2.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sb-co-4` — dialogue 3 — `/lib/images/tcf/co/scenes/magasins/les-achats-3.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sb-co-4` — dialogue 4 — `/lib/images/tcf/co/scenes/magasins/les-achats-4.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sb-co-4` — dialogue leurre — `/lib/images/tcf/co/scenes/magasins/les-achats-leurre-1.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sb-co-4` — dialogue leurre — `/lib/images/tcf/co/scenes/magasins/les-achats-leurre-2.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sc-co-4` — dialogue 1 — `/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-1.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sc-co-4` — dialogue 2 — `/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-2.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sc-co-4` — dialogue 3 — `/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-3.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sc-co-4` — dialogue 4 — `/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-4.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sc-co-4` — dialogue leurre — `/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
+- `tcf-a2-sc-co-4` — dialogue leurre — `/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp`
+  Motif : The referenced source file is absent from public/. The contact sheet displays a file-not-found error, so no image can be shown or semantically validated.
 
 ## tcf-a1j-s1-ce-1 — question 5
 
@@ -44,6 +75,14 @@ Quel appareil utilise-t-on pour filmer ?
 - B. Une caméra professionnelle — générer c863c24623c0
 - C. Une tablette — réutiliser /lib/images/vocabulaire/technologie/tablette.webp
 
+## tcf-a1j-s1-ce-4 — question 2
+
+Quelle activité est proposée à la MLC ?
+
+- A. Le théâtre — générer b3a9535d4a2f
+- B. La natation — réutiliser /lib/images/vocabulaire/sports/natation.webp
+- C. L'escalade — réutiliser /lib/images/vocabulaire/sports/escalade.webp
+
 ## tcf-a1j-s2-ce-1 — question 6
 
 Que fait-on fondre dans la casserole ?
@@ -51,6 +90,22 @@ Que fait-on fondre dans la casserole ?
 - A. Le chocolat et le beurre — générer 2df8e0308bac
 - B. Le sucre et le chocolat — générer d9fd0d541584
 - C. La farine et le beurre — générer c2b4e04cdc02
+
+## tcf-a1j-s2-ce-2 — question 4
+
+Que faut-il emporter pour se protéger du soleil ?
+
+- A. De la crème solaire — générer 7594233a027f
+- B. Un parapluie — réutiliser /lib/images/vocabulaire/accessoires/parapluie.webp
+- C. Des gants — réutiliser /lib/images/vocabulaire/vetements/gants.webp
+
+## tcf-a1j-s3-ce-3 — question 8
+
+Quel cours a lieu le mercredi ?
+
+- A. Le yoga — réutiliser /lib/images/vocabulaire/sports/yoga.webp
+- B. Le surf — générer 6d404d15dcb9
+- C. Le volleyball — réutiliser /lib/images/vocabulaire/sports/volleyball.webp
 
 ## tcf-a1-s2-ce-1 — question 2
 
@@ -188,6 +243,14 @@ Que vont-ils manger ?
 - B. Une salade de tomates — générer ffb4171c4e3e
 - C. Une pizza au fromage — générer b678c5e49e03
 
+## delf-a1v-ce-007 — question 7
+
+Avec quel professionnel Karim a-t-il rendez-vous le soir ?
+
+- A. Un dentiste — réutiliser /lib/images/vocabulaire/metiers/dentiste.webp
+- B. Un médecin — réutiliser /lib/images/vocabulaire/metiers/médecin.webp
+- C. Un coiffeur — générer 885edeb02c7b
+
 ## delf-a1v-ce-008 — question 8
 
 Quelle activité est proposée après le repas ?
@@ -300,6 +363,30 @@ Sous quelle forme est servi le petit-déjeuner ?
 - B. Un panier à emporter — générer aa1c608b838f
 - C. Un plateau en chambre — générer b90fd3918c5d
 
+## delf-a1v-ce-036 — question 1
+
+Quelle activité est proposée aux enfants ?
+
+- A. Le théâtre — générer b3a9535d4a2f
+- B. La danse — réutiliser /lib/images/vocabulaire/loisirs/danse.webp
+- C. La peinture — réutiliser /lib/images/vocabulaire/loisirs/peinture.webp
+
+## delf-a1v-ce-041 — question 2
+
+Quel espace extérieur possède l'appartement ?
+
+- A. Un balcon — réutiliser /lib/images/tcf/co/bg/balcon.webp
+- B. Un jardin — réutiliser /lib/images/tcf/co/bg/jardin.webp
+- C. Une terrasse — générer c99a5652f3bc
+
+## delf-a1v-ce-042 — question 1
+
+Quelle activité est proposée le jeudi soir ?
+
+- A. La danse — réutiliser /lib/images/vocabulaire/loisirs/danse.webp
+- B. La peinture — réutiliser /lib/images/vocabulaire/loisirs/peinture.webp
+- C. Le théâtre — générer b3a9535d4a2f
+
 ## delf-a1v-ce-042 — question 5
 
 Quel commerce va ouvrir ?
@@ -395,6 +482,14 @@ Quel plat peut-on commander toute la journée ?
 - A. Des sandwichs — réutiliser /lib/images/vocabulaire/aliments/sandwich.webp
 - B. Des plats chauds — générer 3d979241f136
 - C. Des crêpes — réutiliser /lib/images/vocabulaire/desserts/crêpe.webp
+
+## delf-a1s-ce-001 — question 7
+
+Quel objet est interdit ?
+
+- A. Le dictionnaire — générer 16edefcaf66e
+- B. Le stylo — réutiliser /lib/images/vocabulaire/ecole-bureau/stylo.webp
+- C. La montre — réutiliser /lib/images/vocabulaire/accessoires/montre.webp
 
 ## delf-a1s-ce-004 — question 4
 
@@ -692,6 +787,14 @@ Quel accessoire faut-il prendre pour la tête ?
 - B. Un casque de vélo — générer 6b018e889cae
 - C. Un bonnet de laine — générer f137023c3623
 
+## tcf-a1j-s3-co-5 — question 8
+
+Quel produit Jeanne apporte-t-elle ?
+
+- A. De la crème solaire — générer 7594233a027f
+- B. Du dentifrice — réutiliser /lib/images/vocabulaire/hygiene/dentifrice.webp
+- C. Du savon — réutiliser /lib/images/vocabulaire/hygiene/savon.webp
+
 ## tcf-a1-s1-co-1 — question 5
 
 Où Gilles propose-t-il de manger ?
@@ -764,6 +867,14 @@ Quel moyen de paiement faut-il apporter ?
 - B. Une carte bancaire — réutiliser /lib/images/vocabulaire/technologie/carte-bancaire.webp
 - C. Des espèces — réutiliser /lib/images/vocabulaire/argent-administration/especes.webp
 
+## tcf-a1p-s4-co-2 — question 4
+
+Quels objets sont disponibles gratuitement ?
+
+- A. Des journaux — générer c3fbdd8fc4e4
+- B. Des écouteurs — réutiliser /lib/images/vocabulaire/technologie/écouteurs.webp
+- C. Des couvertures — réutiliser /lib/images/vocabulaire/maison/couverture.webp
+
 ## tcf-a1p-s4-co-5 — question 5
 
 Quels vêtements faut-il apporter pour se protéger du soleil et se baigner ?
@@ -779,6 +890,14 @@ Quel dessert sera apporté ?
 - A. Une tarte aux pommes — générer 3cfdd714bc3a
 - B. Un gâteau au chocolat — générer 40b742b7985d
 - C. Une salade de fruits — réutiliser /lib/images/vocabulaire/desserts/salade-de-fruits.webp
+
+## tcf-a1p-s3-co-3 — question 2
+
+Avec quel professionnel le premier rendez-vous a-t-il lieu ?
+
+- A. Le dentiste — réutiliser /lib/images/vocabulaire/metiers/dentiste.webp
+- B. Le médecin — réutiliser /lib/images/vocabulaire/metiers/médecin.webp
+- C. L’avocat — générer b4fc7ef8ff4d
 
 ## tcf-a1-tpa-co-1 — question 4
 
@@ -988,6 +1107,14 @@ Quelle activité Anthony propose-t-il ?
 - B. Aller au cinéma — réutiliser /lib/images/tcf/co/bg/cinema.webp
 - C. Faire du sport — réutiliser /lib/images/tcf/co/bg/salle-de-sport.webp
 
+## tcf-ss-a1-s13-co-4 — question 4
+
+Quel objet ne faut-il pas oublier ?
+
+- A. Le cahier — réutiliser /lib/images/vocabulaire/ecole-bureau/cahier.webp
+- B. La calculatrice — réutiliser /lib/images/vocabulaire/ecole-bureau/calculatrice.webp
+- C. Le dictionnaire — générer 16edefcaf66e
+
 ## tcf-ss-a1-s14-co-1 — question 3
 
 Quelle activité a lieu le lundi midi ?
@@ -1052,6 +1179,14 @@ Quels autres articles sont proposés ?
 - B. Le téléphone — réutiliser /lib/images/vocabulaire/technologie/téléphone.webp
 - C. La télévision — réutiliser /lib/images/vocabulaire/technologie/télévision.webp
 
+## tcf-ss-a1-s17-co-4 — question 4
+
+Quels aliments composent les entrées décrites ?
+
+- A. Des légumes — générer 159b7a5e2950
+- B. Des fruits — réutiliser /lib/images/vocabulaire/fruits/fruit.webp
+- C. Du poisson — réutiliser /lib/images/vocabulaire/aliments/poisson.webp
+
 ## tcf-ss-a1-s18-co-2 — question 1
 
 Dans quel rayon la promotion sur le poisson a-t-elle lieu ?
@@ -1099,6 +1234,14 @@ Dans la deuxième situation, que prépare la personne ?
 - A. Un gâteau au chocolat — générer 40b742b7985d
 - B. Une tarte aux pommes — générer 3cfdd714bc3a
 - C. Une salade de fruits — réutiliser /lib/images/vocabulaire/desserts/salade-de-fruits.webp
+
+## tcf-ss-a1-s20-co-3 — question 7
+
+Dans la cinquième situation, quel objet vient d’être acheté ?
+
+- A. Un CD — générer 4b22b570e1e4
+- B. Un livre — réutiliser /lib/images/vocabulaire/ecole-bureau/livre.webp
+- C. Un téléphone — réutiliser /lib/images/vocabulaire/technologie/téléphone.webp
 
 ## tcf-ss-a1-s21-co-1 — question 4
 
@@ -1156,6 +1299,14 @@ Pour quelle sortie les places sont-elles proposées ?
 - B. Une pièce de théâtre — générer d8953c7ddfe7
 - C. Une séance de cinéma — réutiliser /lib/images/tcf/co/bg/cinema.webp
 
+## tcf-ss-a1-s23-co-2 — question 3
+
+Quels aliments faut-il manger en entrée ?
+
+- A. Des légumes — générer 159b7a5e2950
+- B. Des gâteaux — réutiliser /lib/images/vocabulaire/desserts/gâteau.webp
+- C. Des fromages — réutiliser /lib/images/vocabulaire/aliments/fromage.webp
+
 ## tcf-ss-a1-s23-co-2 — question 5
 
 Quels fruits sont de saison selon le message ?
@@ -1168,9 +1319,17 @@ Quels fruits sont de saison selon le message ?
 
 Sous quelle forme le repas est-il prévu ?
 
-- A. Un buffet — réutiliser /lib/images/vocabulaire/maison/buffet.webp
+- A. Un buffet — générer 357780fc82ca
 - B. Un menu servi à table — générer 39fd3f83b8ab
 - C. Un repas à emporter — générer 934ec532c787
+
+## tcf-ss-a1-s24-co-1 — question 5
+
+Quel type de repas est évoqué ?
+
+- A. Un buffet — générer 357780fc82ca
+- B. Un repas au restaurant — réutiliser /lib/images/tcf/co/bg/restaurant.webp
+- C. Un pique-nique — réutiliser /lib/images/tcf/co/bg/pique-nique.webp
 
 ## tcf-ss-a1-s24-co-3 — question 2
 
@@ -1211,6 +1370,14 @@ Quelle entrée ce menu comprend-il ?
 - A. Une salade italienne — générer cd542aa9dea1
 - B. Une soupe de légumes — générer 7c19995b2621
 - C. Une assiette de fromage — générer 592953f35482
+
+## tcf-ss-a1-s29-co-2 — question 4
+
+Comment les pâtes sont-elles préparées ?
+
+- A. Aux légumes — générer 8546c8a5cc6c
+- B. Au poulet — réutiliser /lib/images/vocabulaire/aliments/poulet.webp
+- C. Au fromage — réutiliser /lib/images/vocabulaire/aliments/fromage.webp
 
 ## tcf-ss-a1-s29-co-3 — question 5
 
@@ -1312,7 +1479,7 @@ Où le petit déjeuner est-il proposé ?
 
 Quelle forme de repas est proposée le soir ?
 
-- A. Un buffet — réutiliser /lib/images/vocabulaire/maison/buffet.webp
+- A. Un buffet — générer 357780fc82ca
 - B. Un pique-nique — réutiliser /lib/images/tcf/co/bg/pique-nique.webp
 - C. Un menu à emporter — générer b8455741cbcc
 
@@ -1396,6 +1563,14 @@ Où devrait-on ranger les vélos ?
 - B. Dans les escaliers — réutiliser /lib/images/vocabulaire/maison/escalier.webp
 - C. Dans les couloirs — réutiliser /lib/images/vocabulaire/maison/couloir.webp
 
+## tcf-ss-a1-s42-co-3 — question 3
+
+Que trouve-t-on dans les escaliers ?
+
+- A. Des bouteilles — réutiliser /lib/images/vocabulaire/objets/bouteille.webp
+- B. Des chaussures — réutiliser /lib/images/vocabulaire/vetements/chaussures.webp
+- C. Des journaux — générer c3fbdd8fc4e4
+
 ## tcf-ss-a1-s42-co-3 — question 5
 
 Où peut-on jeter les bouteilles en verre ?
@@ -1419,6 +1594,14 @@ Quel dessert choisit-elle ?
 - A. Une tarte aux pommes — générer 3cfdd714bc3a
 - B. Un éclair — réutiliser /lib/images/vocabulaire/meteo/eclair.webp
 - C. Une tarte au citron — générer b7c1b054229e
+
+## tcf-ss-a1-s44-co-2 — question 3
+
+Quel produit lui donne-t-on ?
+
+- A. Une crème — réutiliser /lib/images/vocabulaire/aliments/creme.webp
+- B. Un sirop — réutiliser /lib/images/vocabulaire/boissons/sirop.webp
+- C. Des gouttes — générer 5c44ce00b1ef
 
 ## tcf-ss-a1-s45-co-1 — question 3
 
@@ -1708,6 +1891,14 @@ Quelles activités sont proposées ?
 - B. La natation ou le tennis — générer c79b7406149c
 - C. Le ski ou le patinage — générer 1f0f5eabbf0b
 
+## tcf-sc-21-cours-de-surf-co-4 — question 2
+
+Quel sport voudrait-elle apprendre ?
+
+- A. Le surf — générer 6d404d15dcb9
+- B. Le ski — réutiliser /lib/images/vocabulaire/sports/ski.webp
+- C. L'escalade — réutiliser /lib/images/vocabulaire/sports/escalade.webp
+
 ## tcf-sc-24-meteo-escalade-co-4 — question 2
 
 Quel temps est annoncé pour demain ?
@@ -1748,6 +1939,14 @@ Quel type de dictionnaires la personne cherche-t-elle ?
 - B. Les livres de musique — générer 1e7965200fcf
 - C. Les livres de cuisine — générer 9b511cf764ee
 
+## tcf-ssx-a1-ecole-stylo-vert-co-4 — question 1
+
+Quel objet est prêté ?
+
+- A. Un stylo — générer 8e4309172597
+- B. Un crayon — réutiliser /lib/images/vocabulaire/ecole-bureau/crayon.webp
+- C. Un feutre — réutiliser /lib/images/vocabulaire/ecole-bureau/feutre.webp
+
 ## tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4 — question 2
 
 Dans quel restaurant cet aliment est-il servi ?
@@ -1755,6 +1954,14 @@ Dans quel restaurant cet aliment est-il servi ?
 - A. Le restaurant de l'université — générer ab7eea2adade
 - B. Le restaurant de l'hôtel — générer a6a917953b36
 - C. Le restaurant de la gare — générer 916d6573cd97
+
+## tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4 — question 3
+
+Quel aliment la personne dit-elle ne pas manger ?
+
+- A. La viande — réutiliser /lib/images/vocabulaire/aliments/viande.webp
+- B. Les légumes — générer 90de79c523db
+- C. Le fromage — réutiliser /lib/images/vocabulaire/aliments/fromage.webp
 
 ## delf-a1-2022-co-ex1-03 — question 2
 
@@ -1852,6 +2059,14 @@ Que peut-on y acheter ?
 - B. Des livres et des journaux — générer b2b236c246e2
 - C. Des vêtements et des chaussures — générer 2086536a8acb
 
+## delf-a1-2022-co-ex2-22 — question 3
+
+Chez quel professionnel va-t-elle aller ?
+
+- A. Le médecin — réutiliser /lib/images/vocabulaire/metiers/médecin.webp
+- B. Le dentiste — réutiliser /lib/images/vocabulaire/metiers/dentiste.webp
+- C. Le coiffeur — générer 1770e2891746
+
 ## delf-a1-2022-co-ex2-22 — question 6
 
 À quelle sortie la personne veut-elle être accompagnée ?
@@ -1860,6 +2075,14 @@ Que peut-on y acheter ?
 - B. Un concert — réutiliser /lib/images/tcf/co/bg/concert.webp
 - C. Une exposition — réutiliser /lib/images/vocabulaire/loisirs/exposition.webp
 
+## delf-a1-2022-co-ex2-23 — question 1
+
+Quels produits sont en promotion ?
+
+- A. Les poissons — réutiliser /lib/images/vocabulaire/aliments/poisson.webp
+- B. Les légumes — générer 90de79c523db
+- C. Les boissons — réutiliser /lib/images/vocabulaire/boissons/boisson.webp
+
 ## delf-a1-2022-co-ex2-23 — question 7
 
 Où les clients doivent-ils se rendre ?
@@ -1867,6 +2090,14 @@ Où les clients doivent-ils se rendre ?
 - A. À l'entrée du magasin — générer bbb3e9f7aadb
 - B. Au parking — générer b539ebfaf403
 - C. Au rayon jouets — générer c4a1f4f70317
+
+## delf-a1-2022-co-ex2-24 — question 6
+
+Quels produits seront ensuite en réduction ?
+
+- A. Les légumes — générer 90de79c523db
+- B. Les poissons — réutiliser /lib/images/vocabulaire/aliments/poisson.webp
+- C. Les jouets — réutiliser /lib/images/vocabulaire/loisirs/jouet.webp
 
 ## delf-a1-2022-co-ex2-25 — question 8
 
@@ -1891,6 +2122,14 @@ Que faut-il apporter pour la réunion ?
 - A. Des feuilles et des stylos — générer 65a61409d4ab
 - B. Des livres et des cahiers — générer 99569a332795
 - C. Des crayons et des gommes — générer 97d2ae49817d
+
+## delf-a1-2022-co-ex4-41 — question 8
+
+De quelle couleur son manteau est-il ?
+
+- A. Rose — générer 618d663af0f1
+- B. Bleu — réutiliser /lib/images/vocabulaire/couleurs/azur.webp
+- C. Vert — réutiliser /lib/images/vocabulaire/couleurs/vert.webp
 
 ## delf-a1-2022-co-ex4-45 — question 5
 
@@ -2004,6 +2243,14 @@ Quelles couleurs préférées sont annoncées au début ?
 - B. Le rouge et le jaune — générer 0fd60ad647bb
 - C. Le noir et le blanc — générer 994890d8e15a
 
+## delf-a1-2022-co-84 — question 4
+
+Quel vêtement la personne cherche-t-elle ?
+
+- A. Des pulls — générer 88e315aa872e
+- B. Des pantalons — réutiliser /lib/images/vocabulaire/vetements/pantalon.webp
+- C. Des chemises — réutiliser /lib/images/vocabulaire/vetements/chemise.webp
+
 ## delf-a1-2022-co-84 — question 6
 
 Quel moyen de paiement la personne évoque-t-elle ?
@@ -2108,6 +2355,14 @@ Quelle fête a lieu ce week-end ?
 - B. La fête des pères — générer bde7b3dd02f7
 - C. La fête de la musique — réutiliser /lib/images/tcf/co/bg/concert.webp
 
+## delf-a1-2022-co-96 — question 1
+
+Quel objet est prêté ?
+
+- A. Un stylo — générer 8e4309172597
+- B. Un crayon — réutiliser /lib/images/vocabulaire/ecole-bureau/crayon.webp
+- C. Un feutre — réutiliser /lib/images/vocabulaire/ecole-bureau/feutre.webp
+
 ## delf-a1-2022-co-96 — question 5
 
 Dans quel restaurant cet aliment est-il servi ?
@@ -2115,6 +2370,14 @@ Dans quel restaurant cet aliment est-il servi ?
 - A. Le restaurant de l'université — générer ab7eea2adade
 - B. Le restaurant de l'hôtel — générer a6a917953b36
 - C. Le restaurant de la gare — générer 916d6573cd97
+
+## delf-a1-2022-co-96 — question 6
+
+Quel aliment la personne ne mange-t-elle pas ?
+
+- A. La viande — réutiliser /lib/images/vocabulaire/aliments/viande.webp
+- B. Les légumes — générer 90de79c523db
+- C. Le fromage — réutiliser /lib/images/vocabulaire/aliments/fromage.webp
 
 ## delf-a1-2022-co-ex5-53 — question 4
 
@@ -2131,6 +2394,30 @@ Quelle boisson est nommée ?
 - A. Une bouteille d'eau — réutiliser /lib/images/vocabulaire/boissons/bouteille-deau.webp
 - B. Une bouteille de lait — générer c2b213a17e80
 - C. Une bouteille de jus — générer ed1c4335755e
+
+## delf-a1-2022-co-ex5-55-1 — question 3
+
+Quel objet pour écrire achète-t-elle ?
+
+- A. Un stylo — générer 8e4309172597
+- B. Un crayon — réutiliser /lib/images/vocabulaire/ecole-bureau/crayon.webp
+- C. Un feutre — réutiliser /lib/images/vocabulaire/ecole-bureau/feutre.webp
+
+## delf-a1-2022-co-ex5-55-2 — question 1
+
+Quel objet la personne prend-elle ?
+
+- A. Des enveloppes — réutiliser /lib/images/vocabulaire/argent-administration/enveloppe.webp
+- B. Des timbres — réutiliser /lib/images/vocabulaire/argent-administration/timbre.webp
+- C. Des cartes postales — générer 88feb36de74f
+
+## delf-a1-2022-co-ex5-56 — question 2
+
+Quel accessoire de vue se trouve sur le bureau ?
+
+- A. Des lunettes — générer 49dc1fdc4bc6
+- B. Des lentilles — générer ec9ee54edae6
+- C. Une loupe — réutiliser /lib/images/vocabulaire/objets/loupe.webp
 
 ## delf-a1-2022-co-ex5-56 — question 4
 
@@ -2588,6 +2875,14 @@ Que mange-t-on le mardi gras selon le texte ?
 - B. Des pizzas — réutiliser /lib/images/vocabulaire/aliments/pizza.webp
 - C. Des tartes aux pommes — générer 4f1c9a733951
 
+## delf-a2j-ce-059 — question 2
+
+Quels bébés animaux peut-on découvrir ?
+
+- A. Des singes — générer 4df3a19671d3
+- B. Des lions — générer 99ccce79d807
+- C. Des tortues — générer 5c29cc7b37c5
+
 ## delf-a2j-ce-061 — question 2
 
 Quel bateau peut-on louer ?
@@ -2948,6 +3243,14 @@ Quel comportement faut-il éviter dans les chambres la nuit ?
 - B. Dormir — réutiliser /lib/images/vocabulaire/actions/dormir.webp
 - C. Lire silencieusement — générer 63807642c31f
 
+## delf-a2r-ce-048 — question 1
+
+Quel aliment ne faut-il pas donner avant le repas ?
+
+- A. Des bonbons — réutiliser /lib/images/vocabulaire/desserts/bonbon.webp
+- B. Des légumes — générer 159b7a5e2950
+- C. Du pain — réutiliser /lib/images/vocabulaire/aliments/pain.webp
+
 ## delf-a2r-ce-048 — question 7
 
 Où peut-elle aller jouer ?
@@ -3060,6 +3363,14 @@ Quelle protection faut-il porter pour le hockey ?
 - B. Un masque de plongée — générer efe319380e6b
 - C. Un gilet de sauvetage — générer ac98b3817fe8
 
+## delf-a2r-ce-070 — question 4
+
+Quel équipement faut-il porter aux pieds pour le hockey ?
+
+- A. Des patins — générer ed549a909d95
+- B. Des raquettes — générer e6e35814c7c6
+- C. Des palmes — réutiliser /lib/images/vocabulaire/sports/palmes.webp
+
 ## tcf-a2j-s1-co-1 — question 19
 
 Que peut-on voir à 11 h ?
@@ -3115,6 +3426,14 @@ Quel salon accueille les visiteurs ?
 - A. Le salon de l’automobile — générer ef44fadd9202
 - B. Le salon du livre — générer 6f475889b200
 - C. Le salon de l’agriculture — générer 3faa18b043b2
+
+## tcf-a2-s1-co-1 — question 6
+
+Quel produit faut-il acheter pour participer ?
+
+- A. De la lessive — réutiliser /lib/images/vocabulaire/hygiene/lessive.webp
+- B. Du savon — réutiliser /lib/images/vocabulaire/hygiene/savon.webp
+- C. Du shampoing — générer 5ef621f947d4
 
 ## tcf-a2-s1-co-1 — question 9
 
@@ -3244,6 +3563,14 @@ Quelle sortie est proposée ?
 - B. Une séance de cinéma — réutiliser /lib/images/tcf/co/bg/cinema.webp
 - C. Une sortie à la piscine — générer bd7832a7d611
 
+## tcf-a2-sb-co-1 — question 5
+
+Quels produits sont en promotion ?
+
+- A. Des légumes — générer 159b7a5e2950
+- B. Des fruits — réutiliser /lib/images/vocabulaire/fruits/fruit.webp
+- C. Des poissons — réutiliser /lib/images/vocabulaire/aliments/poisson.webp
+
 ## tcf-a2-sb-co-1 — question 17
 
 Que peut-on acheter au guichet ouvert ?
@@ -3371,6 +3698,22 @@ Quels produits Valérie fait-elle goûter ?
 - A. Des pâtisseries — générer d9f954358d38
 - B. Des fromages — réutiliser /lib/images/vocabulaire/aliments/fromage.webp
 - C. Des boissons — réutiliser /lib/images/vocabulaire/boissons/boisson.webp
+
+## tcf-ss-a2-s5b-co-2 — question 2
+
+Dans quelle structure fera-t-elle son stage ?
+
+- A. Une association — générer 766102c743b5
+- B. Une banque — réutiliser /lib/images/tcf/co/bg/banque.webp
+- C. Un restaurant — réutiliser /lib/images/tcf/co/bg/restaurant.webp
+
+## tcf-ss-a2-s7-co-3 — question 5
+
+Quel cours madame Lenfant donnera-t-elle ?
+
+- A. Un cours de chant — générer 2d720222e5f4
+- B. Un cours de danse — réutiliser /lib/images/tcf/co/bg/salle-de-danse.webp
+- C. Un cours de dessin — réutiliser /lib/images/tcf/co/bg/cours-dessin.webp
 
 ## tcf-ss-a2-s10-co-2 — question 7
 
@@ -3716,6 +4059,14 @@ Quel repas préfère-t-elle à une salade ?
 - B. Une pizza — réutiliser /lib/images/vocabulaire/aliments/pizza.webp
 - C. Un plat de pâtes — générer 1b32a4cb5514
 
+## tcf-ss-a2-s34-co-2 — question 6
+
+Quel produit d’hygiène des dents est cité ?
+
+- A. Le dentifrice — réutiliser /lib/images/vocabulaire/hygiene/dentifrice.webp
+- B. Le shampoing — générer a5d1b3050d01
+- C. Le déodorant — réutiliser /lib/images/vocabulaire/hygiene/déodorant.webp
+
 ## tcf-ss-a2-s34-co-2 — question 10
 
 Quels produits de maquillage sont cités ?
@@ -3844,6 +4195,14 @@ Quel bureau risque de fermer ?
 - B. L'office de tourisme — générer 28494024cbf3
 - C. Le commissariat — générer c0087bdfa341
 
+## tcf-ss-a2-s45-co-2 — question 2
+
+Quel produit la personne ne trouve-t-elle pas au début ?
+
+- A. Le savon — réutiliser /lib/images/vocabulaire/hygiene/savon.webp
+- B. Le shampoing — générer a5d1b3050d01
+- C. La crème solaire — générer 140c3c1e3bdd
+
 ## tcf-ss-a2-s45-co-2 — question 5
 
 Quel produit est recherché à la fin ?
@@ -3859,6 +4218,22 @@ De quel club scolaire garde-t-elle un bon souvenir ?
 - A. Du club de théâtre — générer cfae8f8ef8a6
 - B. Du club de football — générer 80546e2c0710
 - C. Du club de cuisine — générer e1ccad65ba39
+
+## tcf-ss-a2-s48-co-1 — question 2
+
+Quel cours va-t-elle suivre ?
+
+- A. Un cours de cuisine — générer 382a0bc20dc1
+- B. Un cours de danse — réutiliser /lib/images/tcf/co/bg/salle-de-danse.webp
+- C. Un cours de français — réutiliser /lib/images/tcf/co/bg/cours-francais.webp
+
+## tcf-ss-a2-s48-co-2 — question 2
+
+Quelle activité Catherine pratique-t-elle pour sa forme ?
+
+- A. Du sport — réutiliser /lib/images/vocabulaire/sports/sport.webp
+- B. Du théâtre — générer 141068626994
+- C. De la peinture — réutiliser /lib/images/vocabulaire/loisirs/peinture.webp
 
 ## tcf-ss-a2-s48-co-3 — question 9
 
@@ -3899,6 +4274,14 @@ Quelle spécialité y mange-t-on ?
 - A. Des crêpes — réutiliser /lib/images/vocabulaire/desserts/crêpe.webp
 - B. Des pizzas — réutiliser /lib/images/vocabulaire/aliments/pizza.webp
 - C. Des moules — générer b69f4b71c7b4
+
+## tcf-ss-a2-s51-co-4 — question 1
+
+Quel sport pratique Julien ?
+
+- A. Le surf — générer 6d404d15dcb9
+- B. Le ski — réutiliser /lib/images/vocabulaire/sports/ski.webp
+- C. Le vélo — réutiliser /lib/images/vocabulaire/transports/velo.webp
 
 ## tcf-ss-a2-s52-co-3 — question 2
 
@@ -4137,7 +4520,7 @@ Qu’est-ce qui a été retrouvé ?
 Qu’est-ce qui est à disposition des voyageurs ?
 
 - A. Des films — générer 57c361aa9816
-- B. Des journaux — réutiliser /lib/images/vocabulaire/objets/journaux.webp
+- B. Des journaux — générer c3fbdd8fc4e4
 - C. Des repas — réutiliser /lib/images/vocabulaire/aliments/plateau-repas.webp
 
 ## tcf-sc-10-fete-de-la-nature-co-2 — question 3
@@ -4228,6 +4611,14 @@ Que va-t-on manger ce soir ?
 - B. Une salade de tomates — générer ffb4171c4e3e
 - C. Une pizza — réutiliser /lib/images/vocabulaire/aliments/pizza.webp
 
+## tcf-ssx-a2-transport-comment-tu-rentres-co-4 — question 3
+
+Que lui prête Jules ?
+
+- A. Un parapluie — réutiliser /lib/images/vocabulaire/accessoires/parapluie.webp
+- B. Un ticket de bus — générer e5764664c609
+- C. Une veste — réutiliser /lib/images/vocabulaire/vetements/veste.webp
+
 ## tcf-ssx-a2-famille-trouver-un-cadeau-co-4 — question 3
 
 Que propose Martin ?
@@ -4235,6 +4626,14 @@ Que propose Martin ?
 - A. Des tickets pour un match — générer f5b55684a3ff
 - B. Un ballon — réutiliser /lib/images/vocabulaire/sports/ballon.webp
 - C. Un maillot — réutiliser /lib/images/vocabulaire/vetements/maillot.webp
+
+## delf-a2-2021-co-ex1-02 — question 3
+
+Quel équipement faut-il attacher ?
+
+- A. La ceinture — réutiliser /lib/images/vocabulaire/transports/ceinture-de-sécurité.webp
+- B. Le casque — générer 50a071f76f47
+- C. Les bagages — réutiliser /lib/images/vocabulaire/voyage/bagage.webp
 
 ## delf-a2-2021-co-ex1-02 — question 5
 
@@ -4296,7 +4695,7 @@ Quel lieu faut-il repérer ?
 
 À quel moyen de paiement cette caisse est-elle réservée ?
 
-- A. La carte — réutiliser /lib/images/vocabulaire/voyage/carte.webp
+- A. La carte — générer 12b16293a4cc
 - B. Les espèces — réutiliser /lib/images/vocabulaire/argent-administration/especes.webp
 - C. Le chèque — générer 3fdab7ee8aab
 
@@ -4555,6 +4954,14 @@ Dans quels établissements des chats sont-ils adoptés pour apaiser les résiden
 - A. Des maisons de retraite — générer 11b873fbccdd
 - B. Des gares ferroviaires — générer 20911f290515
 - C. Des centres commerciaux — générer 83d2d7f8a7da
+
+## tcf-ss-b1-s11-co-2 — question 6
+
+Dans Une sirène à Paris, qui est Lula ?
+
+- A. Une sirène — réutiliser /lib/images/vocabulaire/autre/sirène.webp
+- B. Une journaliste — générer d28f9890df7c
+- C. Une professeure — réutiliser /lib/images/vocabulaire/metiers/professeure.webp
 
 ## tcf-ss-b1-s12-co-2 — question 5
 

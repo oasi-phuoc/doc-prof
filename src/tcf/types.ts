@@ -173,7 +173,13 @@ export type TcfCoComplet = TcfBase<
 >
 
 /** Une situation illustrée ; `dialogue` = n° du dialogue qui correspond (null = aucun). */
-export type TcfSituation = { id: string; image: string; dialogue: number | null }
+export type TcfSituation = {
+  id: string
+  image: string
+  dialogue: number | null
+  /** Illustration absente ou retirée après relecture ; exclue des tirages. */
+  image_pending?: boolean
+}
 /**
  * Association : une piste unique (`audio`) ou une piste par dialogue (`audios`),
  * alignée sur `nb_dialogues` / `situations[].dialogue`.

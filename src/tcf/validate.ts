@@ -316,7 +316,7 @@ export function tcfMediaPaths(ex: TcfExercise): string[] {
       break
     case 'association_images':
       audios.push(...tcfAssociationAudioRefs(ex))
-      ex.situations.forEach((s) => images.push(s.image))
+      ex.situations.forEach((s) => { if (!s.image_pending) images.push(s.image) })
       break
     case 'mots_theme':
       if (ex.support.audio) audios.push(ex.support.audio)

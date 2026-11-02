@@ -13,11 +13,13 @@ import {
 import { isTcfCoAssociation, tcfAssociationTranscriptions } from './association-audio'
 import type { TcfExercise, TcfQuestion } from './types'
 import audioDurations from './content/audio-durations.json'
+import reviewedPools from './content/co-reviewed-pools.json'
 
 const durations: Readonly<Record<string, number>> = audioDurations
 
 function lengthTag(audio: string, questionCount: number) {
-  return tcfTagForAudioDuration(durations[audio]) ?? tcfTagForQuestionPoolSize(questionCount)
+  const reviewed = (reviewedPools as Record<string, { tag: 'court' | 'moyen' | 'long' }>)[audio]
+  return reviewed?.tag ?? tcfTagForAudioDuration(durations[audio]) ?? tcfTagForQuestionPoolSize(questionCount)
 }
 
 export type TcfAudioEntry = {
@@ -435,7 +437,11 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
 
 /** Audios tagués `scenario` (petits dialogues d’association). */
 export function tcfScenarioAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
-  return tcfAudioEntries(exercises).filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO))
+  return tcfAudioEntries(exercises).filter((e) => {
+    if (!tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO)) return false
+    if (!isTcfCoAssociation(e.exercise) || e.dialogueIndex == null) return true
+    return !e.exercise.situations.find((s) => s.dialogue === e.dialogueIndex)?.image_pending
+  })
 }
 
 /** Audios tagués `court` (mini-extraits pour 6 audios courts), avec pool de questions. */
@@ -510,15 +516,15 @@ export function applyAssociationDialogueSlot(
   let situations = current.situations.map((s) => ({ ...s }))
   if (isTcfCoAssociation(entry.exercise) && entry.dialogueIndex != null) {
     const srcSit = entry.exercise.situations.find((s) => s.dialogue === entry.dialogueIndex)
-    if (srcSit?.image.trim()) {
+    if (srcSit?.image.trim() && !srcSit.image_pending) {
       const targetDial = slotIndex + 1
       const hit = situations.findIndex((s) => s.dialogue === targetDial)
       if (hit >= 0) {
-        situations[hit] = { ...situations[hit]!, image: srcSit.image }
+        situations[hit] = { ...situations[hit]!, image: srcSit.image, image_pending: false }
       } else {
-        const empty = situations.findIndex((s) => s.dialogue == null && !s.image.trim())
+        const empty = situations.findIndex((s) => s.dialogue == null && (!s.image.trim() || s.image_pending))
         if (empty >= 0) {
-          situations[empty] = { ...situations[empty]!, image: srcSit.image, dialogue: targetDial }
+          situations[empty] = { ...situations[empty]!, image: srcSit.image, dialogue: targetDial, image_pending: false }
         }
       }
     }

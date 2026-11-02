@@ -1,5 +1,5 @@
 {
-  "method": "Relecture éditoriale des supports et questions ; contrôles de structure automatisés. La durée est celle du fichier complet, consignes et répétitions comprises. La vérification automatique ne certifie pas la sémantique ni la conformité audio/transcription.",
+  "method": "Relecture éditoriale des supports et questions ; contrôles de structure automatisés. Les tags pédagogiques déjà relus sont conservés en priorité ; à défaut la durée du fichier complet détermine sa catégorie. La vérification automatique ne certifie pas la sémantique ni la conformité audio/transcription.",
   "audio_categories_seconds": {
     "court": "≤15",
     "moyen": ">15 à45",
@@ -12,7 +12,7 @@
     "questions_net_added": 4359,
     "supports_ce_below_minimum": 3,
     "audio_pools_by_level": 1319,
-    "audio_pools_below_minimum": 112,
+    "audio_pools_below_minimum": 110,
     "errors": 0,
     "warnings": 0
   },
@@ -22,28 +22,28 @@
       "competence": "CE",
       "supports": 162,
       "questions": 1450,
-      "variantes_image": 304
+      "variantes_image": 295
     },
     {
       "niveau": "a0-a1",
       "competence": "CO",
       "supports": 434,
       "questions": 2889,
-      "variantes_image": 587
+      "variantes_image": 565
     },
     {
       "niveau": "a1-a2",
       "competence": "CE",
       "supports": 177,
       "questions": 1472,
-      "variantes_image": 154
+      "variantes_image": 148
     },
     {
       "niveau": "a1-a2",
       "competence": "CO",
       "supports": 432,
       "questions": 3082,
-      "variantes_image": 384
+      "variantes_image": 374
     },
     {
       "niveau": "a2-b1",
@@ -57,7 +57,7 @@
       "competence": "CO",
       "supports": 57,
       "questions": 570,
-      "variantes_image": 25
+      "variantes_image": 24
     }
   ],
   "errors": [],
@@ -311,10 +311,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/bibliotheque/02-bibliothèque-fermeture-exceptionnelle.mp3",
       "seconds": 16.18,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -347,10 +347,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/radio/la-fete-des-meres.mp3",
       "seconds": 111.44,
-      "category": "long",
-      "minimum": 8,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 6,
-      "deficit": 2,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -587,10 +587,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/radio/a-l-aeroport-1.mp3",
       "seconds": 116.4,
-      "category": "long",
-      "minimum": 8,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 6,
-      "deficit": 2,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -659,10 +659,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/ecole/les-etudes-1-1.mp3",
       "seconds": 15.65,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -671,10 +671,10 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/ecole/les-etudes-1-2.mp3",
       "seconds": 16.74,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -695,8 +695,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/ecole/les-etudes-1-4.mp3",
       "seconds": 19.33,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 5,
       "deficit": 0,
       "object_recognition": false
@@ -887,10 +887,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/radio/les-annonces-1.mp3",
       "seconds": 16.54,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -7919,8 +7919,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-2.mp3",
       "seconds": 17.24,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -7943,8 +7943,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-4.mp3",
       "seconds": 15.65,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8075,8 +8075,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-1.mp3",
       "seconds": 15.05,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8087,8 +8087,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-2.mp3",
       "seconds": 17.03,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8099,8 +8099,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-3.mp3",
       "seconds": 16.54,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8111,8 +8111,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-4.mp3",
       "seconds": 18.34,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8159,8 +8159,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-1.mp3",
       "seconds": 16.25,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8171,8 +8171,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-2.mp3",
       "seconds": 15.23,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8183,8 +8183,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-3.mp3",
       "seconds": 15.54,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8195,8 +8195,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-4.mp3",
       "seconds": 17.35,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8399,8 +8399,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3",
       "seconds": 34.76,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "long",
+      "minimum": 8,
       "questions": 8,
       "deficit": 0,
       "object_recognition": false
@@ -8411,8 +8411,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
       "seconds": 16.14,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8423,8 +8423,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3",
       "seconds": 18.23,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8435,8 +8435,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
       "seconds": 15.05,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8447,8 +8447,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
       "seconds": 15.23,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8591,8 +8591,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
       "seconds": 15.65,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8603,8 +8603,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
       "seconds": 15.33,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8615,8 +8615,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
       "seconds": 16.85,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8759,8 +8759,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-2.mp3",
       "seconds": 17.63,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8771,8 +8771,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-3.mp3",
       "seconds": 20.14,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -8855,10 +8855,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/magasins/achats-annonce-2.mp3",
       "seconds": 41.95,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "long",
+      "minimum": 8,
       "questions": 5,
-      "deficit": 0,
+      "deficit": 3,
       "object_recognition": false
     },
     {
@@ -9179,10 +9179,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/travail/04-travail-confirmation-cours-d-informatique.mp3",
       "seconds": 39.53,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "long",
+      "minimum": 8,
       "questions": 7,
-      "deficit": 0,
+      "deficit": 1,
       "object_recognition": false
     },
     {
@@ -12755,10 +12755,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.3.mp3",
       "seconds": 10.21,
-      "category": "court",
-      "minimum": 2,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 3,
-      "deficit": 0,
+      "deficit": 1,
       "object_recognition": false
     },
     {
@@ -13175,10 +13175,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/transports/moyen-a2__radio-14.3.mp3",
       "seconds": 14.73,
-      "category": "court",
-      "minimum": 2,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 3,
-      "deficit": 0,
+      "deficit": 1,
       "object_recognition": false
     },
     {
@@ -16141,10 +16141,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/bibliotheque/02-bibliothèque-fermeture-exceptionnelle.mp3",
       "seconds": 16.18,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -16177,10 +16177,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/radio/la-fete-des-meres.mp3",
       "seconds": 111.44,
-      "category": "long",
-      "minimum": 8,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 6,
-      "deficit": 2,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -16417,10 +16417,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/radio/a-l-aeroport-1.mp3",
       "seconds": 116.4,
-      "category": "long",
-      "minimum": 8,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 6,
-      "deficit": 2,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -16489,10 +16489,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/ecole/les-etudes-1-1.mp3",
       "seconds": 15.65,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -16501,10 +16501,10 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/ecole/les-etudes-1-2.mp3",
       "seconds": 16.74,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -16525,8 +16525,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/ecole/les-etudes-1-4.mp3",
       "seconds": 19.33,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 5,
       "deficit": 0,
       "object_recognition": false
@@ -16717,10 +16717,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/radio/les-annonces-1.mp3",
       "seconds": 16.54,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 3,
-      "deficit": 1,
+      "deficit": 0,
       "object_recognition": false
     },
     {
@@ -23749,8 +23749,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-2.mp3",
       "seconds": 17.24,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -23773,8 +23773,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-dialogues-du-quotidien-4.mp3",
       "seconds": 15.65,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -23905,8 +23905,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-1.mp3",
       "seconds": 15.05,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -23917,8 +23917,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-2.mp3",
       "seconds": 17.03,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -23929,8 +23929,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-3.mp3",
       "seconds": 16.54,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -23941,8 +23941,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/loisirs/la-sortie-entre-amis-4.mp3",
       "seconds": 18.34,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -23989,8 +23989,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-1.mp3",
       "seconds": 16.25,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24001,8 +24001,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-2.mp3",
       "seconds": 15.23,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24013,8 +24013,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-3.mp3",
       "seconds": 15.54,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24025,8 +24025,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-4.mp3",
       "seconds": 17.35,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24229,8 +24229,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3",
       "seconds": 34.76,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "long",
+      "minimum": 8,
       "questions": 8,
       "deficit": 0,
       "object_recognition": false
@@ -24241,8 +24241,8 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
       "seconds": 16.14,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24253,8 +24253,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3",
       "seconds": 18.23,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24265,8 +24265,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
       "seconds": 15.05,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24277,8 +24277,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
       "seconds": 15.23,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24421,8 +24421,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
       "seconds": 15.65,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24433,8 +24433,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
       "seconds": 15.33,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24445,8 +24445,8 @@
       "audio": 4,
       "path": "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
       "seconds": 16.85,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24589,8 +24589,8 @@
       "audio": 2,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-2.mp3",
       "seconds": 17.63,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24601,8 +24601,8 @@
       "audio": 3,
       "path": "/lib/audio/tcf/co/vie-quotidienne/la-famille-2-3.mp3",
       "seconds": 20.14,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "court",
+      "minimum": 2,
       "questions": 4,
       "deficit": 0,
       "object_recognition": false
@@ -24685,10 +24685,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/magasins/achats-annonce-2.mp3",
       "seconds": 41.95,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "long",
+      "minimum": 8,
       "questions": 5,
-      "deficit": 0,
+      "deficit": 3,
       "object_recognition": false
     },
     {
@@ -25009,10 +25009,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/travail/04-travail-confirmation-cours-d-informatique.mp3",
       "seconds": 39.53,
-      "category": "moyen",
-      "minimum": 4,
+      "category": "long",
+      "minimum": 8,
       "questions": 7,
-      "deficit": 0,
+      "deficit": 1,
       "object_recognition": false
     },
     {
@@ -28585,10 +28585,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.3.mp3",
       "seconds": 10.21,
-      "category": "court",
-      "minimum": 2,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 3,
-      "deficit": 0,
+      "deficit": 1,
       "object_recognition": false
     },
     {
@@ -29005,10 +29005,10 @@
       "audio": 1,
       "path": "/lib/audio/tcf/co/transports/moyen-a2__radio-14.3.mp3",
       "seconds": 14.73,
-      "category": "court",
-      "minimum": 2,
+      "category": "moyen",
+      "minimum": 4,
       "questions": 3,
-      "deficit": 0,
+      "deficit": 1,
       "object_recognition": false
     },
     {
@@ -31746,6 +31746,99 @@
       "questions": 10,
       "deficit": 0,
       "object_recognition": false
+    }
+  ],
+  "pending_association_images": [
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-s1-co-4",
+      "situation": "s1",
+      "dialogue": 1,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-1-audite.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s1",
+      "dialogue": 1,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-1.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s2",
+      "dialogue": 2,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-2.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s3",
+      "dialogue": 3,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-3.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s4",
+      "dialogue": 4,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-4.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "l1",
+      "dialogue": null,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-1.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "l2",
+      "dialogue": null,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-2.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sc-co-4",
+      "situation": "s1",
+      "dialogue": 1,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-1.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sc-co-4",
+      "situation": "s2",
+      "dialogue": 2,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-2.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sc-co-4",
+      "situation": "s3",
+      "dialogue": 3,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-3.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sc-co-4",
+      "situation": "s4",
+      "dialogue": 4,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-4.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sc-co-4",
+      "situation": "l1",
+      "dialogue": null,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sc-co-4",
+      "situation": "l2",
+      "dialogue": null,
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp"
     }
   ]
 }

@@ -19,8 +19,12 @@ def digest(path):
 
 
 def save(manifest):
-    manifest['counts'] = dict(Counter(row['status'] for row in manifest['images']))
-    manifest['status'] = 'complete' if manifest['counts'].get('generated') == len(manifest['images']) else 'partial'
+    counts = Counter(row['status'] for row in manifest['images'])
+    manifest['counts'] = {status: counts[status] for status in ('generated', 'prepared', 'pending')}
+    if manifest['counts']['generated'] == len(manifest['images']):
+        manifest['status'] = 'content-complete-style-corrections-pending' if manifest.get('style_pending') else 'complete'
+    else:
+        manifest['status'] = 'partial'
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
 
 

@@ -858,7 +858,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/ville.webp"
+                "image": "/lib/images/vocabulaire/ville/mairie.webp"
               },
               {
                 "id": "b",
@@ -2642,7 +2642,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               }
             ]
           }
@@ -3936,24 +3936,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "De la lessive"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/hygiene/lessive.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/savon.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/hygiene/shampoing.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -5591,7 +5573,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp"
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
               }
             ]
           }
@@ -5800,8 +5782,9 @@
     "situations": [
       {
         "id": "s1",
-        "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-1.webp",
-        "dialogue": 1
+        "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-dialogues-du-quotidien-1-audite.webp",
+        "dialogue": 1,
+        "image_pending": true
       },
       {
         "id": "s2",
@@ -12379,24 +12362,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des légumes"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/légume.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/fruits/fruit.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/aliments/poisson.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -13700,7 +13665,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               }
             ]
           }
@@ -13868,7 +13833,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/vocabulaire/actions/cuisiner.webp"
               },
               {
                 "id": "b",
@@ -14086,32 +14051,38 @@
       {
         "id": "s1",
         "image": "/lib/images/tcf/co/scenes/magasins/les-achats-1.webp",
-        "dialogue": 1
+        "dialogue": 1,
+        "image_pending": true
       },
       {
         "id": "s2",
         "image": "/lib/images/tcf/co/scenes/magasins/les-achats-2.webp",
-        "dialogue": 2
+        "dialogue": 2,
+        "image_pending": true
       },
       {
         "id": "s3",
         "image": "/lib/images/tcf/co/scenes/magasins/les-achats-3.webp",
-        "dialogue": 3
+        "dialogue": 3,
+        "image_pending": true
       },
       {
         "id": "s4",
         "image": "/lib/images/tcf/co/scenes/magasins/les-achats-4.webp",
-        "dialogue": 4
+        "dialogue": 4,
+        "image_pending": true
       },
       {
         "id": "l1",
         "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-1.webp",
-        "dialogue": null
+        "dialogue": null,
+        "image_pending": true
       },
       {
         "id": "l2",
         "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-2.webp",
-        "dialogue": null
+        "dialogue": null,
+        "image_pending": true
       }
     ]
   },
@@ -16061,32 +16032,38 @@
       {
         "id": "s1",
         "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-1.webp",
-        "dialogue": 1
+        "dialogue": 1,
+        "image_pending": true
       },
       {
         "id": "s2",
         "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-2.webp",
-        "dialogue": 2
+        "dialogue": 2,
+        "image_pending": true
       },
       {
         "id": "s3",
         "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-3.webp",
-        "dialogue": 3
+        "dialogue": 3,
+        "image_pending": true
       },
       {
         "id": "s4",
         "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-4.webp",
-        "dialogue": 4
+        "dialogue": 4,
+        "image_pending": true
       },
       {
         "id": "l1",
         "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
-        "dialogue": null
+        "dialogue": null,
+        "image_pending": true
       },
       {
         "id": "l2",
         "image": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp",
-        "dialogue": null
+        "dialogue": null,
+        "image_pending": true
       }
     ]
   },
@@ -17138,7 +17115,7 @@
     "consigne": "Vous allez écouter un document sonore. Il y a 2 écoutes. Lisez les questions, puis répondez.",
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/achats-annonce-2.mp3",
-      "transcription": "Bonjour.\nDans votre supermarché Autoprix, ne manquez pas les promotions sur les produits de beauté : pour un gel douche ou un savon acheté, le deuxième est offert jusqu’en avril !\nVous pouvez aussi gagner des parfums : venez jouer à la loterie dans l’allée centrale du magasin !\nEt à partir du 1er mai, venez profiter de promotions exceptionnelles sur les télévisions !\nJusqu’à 40 % de réduction !\nAvec Autoprix, les prix sont mini !"
+      "transcription": "Bonjour.\nDans votre supermarché Autoprix, ne manquez pas les promotions sur les produits de beauté : pour un gel douche ou un savon acheté, le deuxième est offert jusqu’au 30 avril !\nVous pouvez aussi gagner des parfums : venez jouer à la loterie dans l’allée centrale du magasin !\nEt à partir du 1er mai, venez profiter de promotions exceptionnelles sur les télévisions !\nJusqu’à 40 % de réduction !\nAvec Autoprix, les prix sont mini !"
     },
     "questions": [
       {
@@ -20605,24 +20582,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une association"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/association.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/co/bg/banque.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/co/bg/restaurant.webp"
-              }
-            ]
           }
         }
       }
@@ -21679,7 +21638,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-yoga.webp"
+                "image": "/lib/images/vocabulaire/sports/yoga.webp"
               },
               {
                 "id": "b",
@@ -22359,6 +22318,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Midi et demi"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/heure-horloge/midi-trente.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/heure-horloge/onze-heures-trente.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/heure-horloge/dix-heures-trente.webp"
+              }
+            ]
           }
         },
         "audio": 1
@@ -22443,24 +22420,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un cours de chant"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cours-musique.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/co/bg/cours-dessin.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -26723,7 +26682,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-sport.webp"
+                "image": "/lib/images/vocabulaire/sports/course.webp"
               }
             ]
           }
@@ -29316,7 +29275,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/couleurs/bleu.webp"
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
               },
               {
                 "id": "c",
@@ -33659,7 +33618,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/ville.webp"
+                "image": "/lib/images/vocabulaire/ville/centre-ville.webp"
               }
             ]
           }
@@ -38898,7 +38857,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/actions/aller-a-la-piscine.webp"
+                "image": "/lib/images/tcf/co/bg/piscine.webp"
               },
               {
                 "id": "c",
@@ -39978,7 +39937,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/legumes/salade.webp"
+                "image": "/lib/images/vocabulaire/aliments/salade-composée.webp"
               },
               {
                 "id": "b",
@@ -40556,7 +40515,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/hamburger-frites.webp"
+                "image": "/lib/images/tcf/co/objets/hamburger-frites.webp"
               },
               {
                 "id": "c",
@@ -45707,7 +45666,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/voyage/carte.webp"
+                "image": "/lib/images/vocabulaire/loisirs/jeu-de-cartes.webp"
               },
               {
                 "id": "b",
@@ -47709,7 +47668,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/vocabulaire/actions/cuisiner.webp"
               },
               {
                 "id": "c",
@@ -48782,24 +48741,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le dentifrice"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/hygiene/dentifrice.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/shampoing.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/hygiene/déodorant.webp"
-              }
-            ]
           }
         }
       },
@@ -51378,7 +51319,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-reunion.webp"
+                "image": "/lib/images/tcf/co/scenes/travail/reunion.webp"
               },
               {
                 "id": "b",
@@ -57603,24 +57544,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le savon"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/hygiene/savon.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/hygiene/shampoing.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/hygiene/creme-solaire.webp"
-              }
-            ]
           }
         }
       },
@@ -59509,24 +59432,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un cours de cuisine"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/co/bg/cours-francais.webp"
-              }
-            ]
           }
         }
       },
@@ -59652,24 +59557,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Du sport"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/sports/sport.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/co/bg/theatre.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/loisirs/peinture.webp"
-              }
-            ]
           }
         }
       },
@@ -60575,7 +60462,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/sports/ballon.webp"
+                "image": "/lib/images/vocabulaire/sports/basket.webp"
               },
               {
                 "id": "b",
@@ -61240,11 +61127,11 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/famille-personnes/mere.webp"
+                "image": "/lib/images/vocabulaire/famille-personnes/maman.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/pere.webp"
+                "image": "/lib/images/vocabulaire/famille-personnes/papa.webp"
               },
               {
                 "id": "c",
@@ -64959,24 +64846,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Le surf"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/tcf/co/bg/surf.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/sports/ski.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/transports/velo.webp"
-              }
-            ]
           }
         }
       },
@@ -66274,7 +66143,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-yoga.webp"
+                "image": "/lib/images/vocabulaire/sports/yoga.webp"
               },
               {
                 "id": "b",
@@ -66282,7 +66151,7 @@
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
+                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
               }
             ]
           }
@@ -76282,7 +76151,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/loisirs/photographie.webp"
+                "image": "/lib/images/vocabulaire/metiers/photographe.webp"
               },
               {
                 "id": "b",
@@ -84673,24 +84542,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un parapluie"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/accessoires/parapluie.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/transports/ticket-de-bus.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/vetements/veste.webp"
-              }
-            ]
           }
         }
       },
@@ -84921,24 +84772,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Professeur"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/metiers/enseignant.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/metiers/médecin.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/fruits/avocat.webp"
-              }
-            ]
           }
         }
       },
@@ -85777,24 +85610,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "La ceinture"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/accessoires/ceinture.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/accessoires/casque.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/voyage/bagage.webp"
-              }
-            ]
           }
         },
         "audio": 2
@@ -90867,7 +90682,7 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/vocabulaire/technologie/téléphone.webp"
+                "image": "/lib/images/vocabulaire/technologie/smartphone.webp"
               },
               {
                 "id": "b",
@@ -92813,7 +92628,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/vocabulaire/famille-personnes/mere.webp"
+                "image": "/lib/images/vocabulaire/famille-personnes/maman.webp"
               },
               {
                 "id": "c",
@@ -92904,24 +92719,6 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un docteur"
-          },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "correct": true,
-                "image": "/lib/images/vocabulaire/metiers/docteur.webp"
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/vocabulaire/fruits/avocat.webp"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/vocabulaire/metiers/mécanicien.webp"
-              }
-            ]
           }
         },
         "audio": 3
@@ -94007,6 +93804,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Bleue"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/blanc.webp"
+              }
+            ]
           }
         },
         "audio": 5
@@ -97182,6 +96997,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Bleue"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/vocabulaire/couleurs/azur.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/vocabulaire/couleurs/rouge.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/vocabulaire/couleurs/noir.webp"
+              }
+            ]
           }
         },
         "audio": 3
@@ -97612,11 +97445,11 @@
               {
                 "id": "a",
                 "correct": true,
-                "image": "/lib/images/tcf/co/bg/salle-de-danse.webp"
+                "image": "/lib/images/vocabulaire/loisirs/danse.webp"
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/salle-de-yoga.webp"
+                "image": "/lib/images/vocabulaire/sports/yoga.webp"
               },
               {
                 "id": "c",
@@ -99050,7 +98883,7 @@
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/co/bg/cuisine.webp"
+                "image": "/lib/images/vocabulaire/actions/cuisiner.webp"
               },
               {
                 "id": "c",

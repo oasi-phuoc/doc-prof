@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / 'scripts/tcf-qcm-image-registry.json'
+VISUAL_OVERRIDES_PATH = ROOT / 'scripts/tcf-qcm-image-visual-overrides.json'
 BANKS = [ROOT / f'src/tcf/content/{level}/{skill}.json'
          for level in ('a0-a1', 'a1-a2', 'a2-b1') for skill in ('ce', 'co')]
 
@@ -54,6 +55,11 @@ for label, relative in OBJECT_ALIASES.items():
     path=ROOT/'public/lib/images/vocabulaire'/f'{relative}.webp'
     if path.exists(): OBJECTS[norm(label)]='/'+str(path.relative_to(ROOT/'public'))
 
+VISUAL_OVERRIDES = json.loads(VISUAL_OVERRIDES_PATH.read_text()) if VISUAL_OVERRIDES_PATH.exists() else {'mappings': []}
+VISUAL_MAPPINGS = {(norm(row['question']),norm(row['label'])): row.get('replacement')
+                   for row in VISUAL_OVERRIDES['mappings']}
+VISUAL_REJECTED_IMAGES = set(VISUAL_OVERRIDES.get('rejected_images',[]))
+
 PREFIX = re.compile(r"^(?:dans une? |dans les? |dans la |dans l'|a la |a l'|au |aux |le |la |les |l'|un |une |des |du |de la |de l'|de |d'|pour les |pour le |pour la |aux )")
 
 def noun(text):
@@ -76,14 +82,32 @@ def clock_time(label, enonce=''):
     if not re.search(r'quelle(?:s)? heure(?:s)?|horaire',norm(enonce)):
         return None
     text=re.sub(r'^(?:a |jusqu.a |vers |des )','',norm(label))
-    match=re.fullmatch(r'(\d{1,2})\s*(?:h|heures?)(?:\s*(\d{1,2}))?',text)
+    if re.search(r'combien|duree',norm(enonce)):return None
+    match=re.fullmatch(r'(\d{1,2})\s*(?:h|heures?|:)(?:\s*(\d{1,2}))?',text)
     if match:
         hour,minute=int(match[1]),int(match[2] or 0)
     elif text in ('midi','minuit','midi et demi','midi et demie'):
         hour,minute=(12 if text.startswith('midi') else 0),(30 if 'demi' in text else 0)
     else:
-        return None
+        hour=minute=None
+        names={name.replace('-',' '):i for i,name in enumerate(HOURS)}
+        names.update({'douze heures':12,'zero heure':0})
+        mins={name.replace('-',' '):n for n,name in MINUTES.items()}
+        mins.update({'':0,'et quart':15,'et demi':30,'et demie':30})
+        for name in sorted(names,key=len,reverse=True):
+            if text!=name and not text.startswith(name+' '):continue
+            hour=names[name];tail=text[len(name):].strip()
+            if tail in mins:minute=mins[tail]
+            elif tail.startswith('moins '):
+                sub={'cinq':5,'dix':10,'le quart':15,'vingt':20}.get(tail[6:])
+                if sub:hour,minute=(hour-1)%24,60-sub
+            break
+        if hour is None or minute is None:return None
+    if hour==24 and minute==0:hour=0
     return (hour,minute) if 0<=hour<24 and 0<=minute<60 else None
+
+# Compatibilité avec les preuves du premier lot relu sur origin/main.
+clock_value = clock_time
 
 def clock_image(label,enonce):
     time=clock_time(label,enonce)
@@ -94,7 +118,7 @@ def clock_image(label,enonce):
     path=ROOT/'public/lib/images/vocabulaire/heure-horloge'/f'{stem}.webp'
     return '/'+str(path.relative_to(ROOT/'public')) if path.is_file() else None
 
-def resolve_image(label, enonce=''):
+def _resolve_image(label, enonce=''):
     text = norm(label)
     # Les horloges sont autorisées ; les durées, dates et montants restent du texte.
     clock=clock_image(label,enonce)
@@ -146,6 +170,30 @@ def resolve_image(label, enonce=''):
     if text.endswith('s') and text[:-1] in OBJECTS:
         return OBJECTS[text[:-1]]
     return None
+
+def resolve_image(label,enonce=''):
+    key=(norm(enonce),norm(label))
+    if key in VISUAL_MAPPINGS:return VISUAL_MAPPINGS[key]
+    text=noun(norm(label))
+    question=norm(enonce)
+    if 'couleur' in question:
+        color={'bleue':'bleu','bleus':'bleu','bleues':'bleu','le bleu':'bleu',
+               'blanche':'blanc','blanches':'blanc','blancs':'blanc',
+               'verte':'vert','verts':'vert','vertes':'vert','noire':'noir',
+               'noirs':'noir','noires':'noir','violette':'violet','grise':'gris'}.get(text,text)
+        if color=='rose':return None  # Le fichier rose.webp représente une fleur rouge.
+        stem='azur' if color=='bleu' else color
+        path=ROOT/'public/lib/images/vocabulaire/couleurs'/f'{stem}.webp'
+        return '/'+str(path.relative_to(ROOT/'public')) if path.is_file() else None
+    if text=='avocat' and not re.search(r'fruit|aliment|legume|manger|cuisine|ingredient',question):
+        return None
+    if text=='avocate':return None  # Le portrait en tailleur n’identifie pas le métier.
+    if text in ('lentille','lentilles') and re.search(r'vue|optique|oeil|lunettes|contact',question):
+        return None
+    if text=='buffet' and re.search(r'repas|manger|plat|nourrit|restaur|aperitif|apero',question):
+        return None
+    path=_resolve_image(label,enonce)
+    return None if path in VISUAL_REJECTED_IMAGES else path
 
 def text_form(q):
     return q if q['type_reponse'] == 'qcm_texte' else q.get('formes', {}).get('qcm_texte')

@@ -78,5 +78,14 @@ class ImageSemantics(unittest.TestCase):
         self.assertIsNone(resolve_image('Se reposer'))
         self.assertIsNone(resolve_image('Chauffeur'))
 
+    def test_visual_review_keeps_polysemous_words_in_the_right_sense(self):
+        self.assertIsNone(resolve_image('Un avocat','Quel métier exerce-t-il ?'))
+        self.assertIsNotNone(resolve_image('Un avocat','Quel fruit achète-t-il ?'))
+        self.assertIsNone(resolve_image('Des lentilles','Quel accessoire de vue ?'))
+        self.assertIsNone(resolve_image('Un buffet','Quel repas est prévu ?'))
+        self.assertIsNone(resolve_image('Rose','De quelle couleur est le manteau ?'))
+        self.assertTrue(resolve_image('Bleu','De quelle couleur est le manteau ?').endswith('/azur.webp'))
+        self.assertIsNotNone(resolve_image('Une rose','Quelle fleur offre-t-on ?'))
+
 
 if __name__=='__main__':unittest.main()

@@ -8,7 +8,8 @@
  * `long` = document long pour « audio complet » (N questions, défaut 5).
  * `objet` = message « objets à reconnaître » (ex. 5, images Oui / Non).
  *
- * `court` / `moyen` / `long` sont mutuellement exclusifs (durée de la piste) ;
+ * `court` / `moyen` / `long` sont mutuellement exclusifs (tag pédagogique relu,
+ * sinon durée de la piste) ;
  * `scenario` / `objet` se cumulent avec les tags de longueur.
  */
 export const TCF_AUDIO_TAG_SCENARIO = 'scenario' as const

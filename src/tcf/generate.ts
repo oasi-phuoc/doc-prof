@@ -356,7 +356,7 @@ export function tcfExerciseItems(
           nbDialogues: ex.support.nb_dialogues,
           situations: ex.situations.map((s, i) => ({
             lettre: TCF_LETTRES_SITUATIONS[i] ?? String(i + 1),
-            image: s.image,
+            image: s.image_pending ? '' : s.image,
             dialogue: s.dialogue,
           })),
         }),
