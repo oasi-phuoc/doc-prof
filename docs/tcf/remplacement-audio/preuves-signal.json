@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "compared": 658,
-    "signal_confirmed": 617,
+    "compared": 758,
+    "signal_confirmed": 643,
     "listening_performed": false,
     "production_modified": false
   },
@@ -25434,6 +25434,3843 @@
       "offset_spread_seconds": null,
       "old_duration_decoded": 3.4,
       "source_duration_decoded": 120.816375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_35-1.mp3",
+      "old_sha256": "5f7e395997179ac1c5fa9d1483642559c519b65dc7eb186b4af5a5fe2c8a9005",
+      "source_id": "09035276:019:75c9e35dc924",
+      "source_sha256": "75c9e35dc9244da418db879016c37c500bcd747c1300347b6b84eb46f68a3117",
+      "lexical_score": 0.46153846153846156,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.56,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 12.775,
+          "correlation": 0.099721,
+          "source_offset_seconds": 11.215
+        },
+        {
+          "old_anchor_start": 6.15,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 13.01225,
+          "correlation": 0.078553,
+          "source_offset_seconds": 6.86225
+        },
+        {
+          "old_anchor_start": 10.74,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 11.75025,
+          "correlation": 0.108306,
+          "source_offset_seconds": 1.01025
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 15.3,
+      "source_duration_decoded": 20.715125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+      "old_sha256": "7ff061620ce869cf311866be5c95578ed043bce2c3ff2a168dddc33340c4caed",
+      "source_id": "09035276:024:a96cd1d778d8",
+      "source_sha256": "a96cd1d778d8d8e2f9cc5a90289f04c614ec98ecfba3789189d8b96a1714d94d",
+      "lexical_score": 0.47887323943661975,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.1525,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 13.8525,
+          "correlation": 0.998311,
+          "source_offset_seconds": 11.7
+        },
+        {
+          "old_anchor_start": 7.63125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 19.33125,
+          "correlation": 0.997845,
+          "source_offset_seconds": 11.7
+        },
+        {
+          "old_anchor_start": 13.11,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 24.81,
+          "correlation": 0.997852,
+          "source_offset_seconds": 11.7
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 18.2625,
+      "source_duration_decoded": 29.9625,
+      "source_offset_seconds": 11.7,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3",
+      "old_sha256": "96d6df6d60915cd53a67c15fe3c92cc72a9feb49622474ec614cc852514b7aea",
+      "source_id": "09035276:026:cc7467b0c6d3",
+      "source_sha256": "cc7467b0c6d38b01b1a2e7dd7c2d78be96a06fd142354b6d331a2e6a62bcef2b",
+      "lexical_score": 0.5287356321839081,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.624375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 6.374375,
+          "correlation": 0.999504,
+          "source_offset_seconds": 3.75
+        },
+        {
+          "old_anchor_start": 8.811125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 12.561125,
+          "correlation": 0.999563,
+          "source_offset_seconds": 3.75
+        },
+        {
+          "old_anchor_start": 14.99775,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 18.74775,
+          "correlation": 0.99967,
+          "source_offset_seconds": 3.75
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 20.62225,
+      "source_duration_decoded": 24.37225,
+      "source_offset_seconds": 3.75,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-destination.mp3",
+      "old_sha256": "f7b742856940cc339a201b91feaf49de9d673390064dd6b66cac1b3556cf4b0e",
+      "source_id": "09035276:027:10f0dd53bf08",
+      "source_sha256": "10f0dd53bf08601b1714f8355c5e7b1c7d0a2eeef0b2fbf22c233e171812ec6e",
+      "lexical_score": 0.559322033898305,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 4.633125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 8.083125,
+          "correlation": 0.997174,
+          "source_offset_seconds": 3.45
+        },
+        {
+          "old_anchor_start": 13.833,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 17.283,
+          "correlation": 0.997756,
+          "source_offset_seconds": 3.45
+        },
+        {
+          "old_anchor_start": 23.03275,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 26.48275,
+          "correlation": 0.996959,
+          "source_offset_seconds": 3.45
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 30.666,
+      "source_duration_decoded": 34.116,
+      "source_offset_seconds": 3.45,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-piscine-ferme.mp3",
+      "old_sha256": "fb6989f1ccbe5136617061af7c317e7a26e6953745cccc923c2ea1a5bf012e89",
+      "source_id": "09035276:030:0445b7cdb353",
+      "source_sha256": "0445b7cdb3539be40542ac04750dbc654b58f84c5b0ff1569e5789ee9d5867de",
+      "lexical_score": 0.7032967032967035,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 3.066125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 5.966125,
+          "correlation": 0.99835,
+          "source_offset_seconds": 2.9
+        },
+        {
+          "old_anchor_start": 9.91525,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 12.81525,
+          "correlation": 0.998631,
+          "source_offset_seconds": 2.9
+        },
+        {
+          "old_anchor_start": 16.7645,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 19.6645,
+          "correlation": 0.997229,
+          "source_offset_seconds": 2.9
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 22.830625,
+      "source_duration_decoded": 25.730625,
+      "source_offset_seconds": 2.9,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-5.mp3",
+      "old_sha256": "379c1abca3c86ac177bf82ba5ca8bfa6346a131e1542a58123f99fc495e7b628",
+      "source_id": "09035276:030:0445b7cdb353",
+      "source_sha256": "0445b7cdb3539be40542ac04750dbc654b58f84c5b0ff1569e5789ee9d5867de",
+      "lexical_score": 0.6101694915254238,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.79,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 15.65325,
+          "correlation": 0.097358,
+          "source_offset_seconds": 13.86325
+        },
+        {
+          "old_anchor_start": 6.725,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 20.91325,
+          "correlation": 0.083304,
+          "source_offset_seconds": 14.18825
+        },
+        {
+          "old_anchor_start": 11.66,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 6.389375,
+          "correlation": 0.066099,
+          "source_offset_seconds": -5.270625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 16.45,
+      "source_duration_decoded": 25.730625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-3.mp3",
+      "old_sha256": "cc63e45a57f311c722f062e86295363d875d82e4173a405def9034cf6730613f",
+      "source_id": "09035276:042:909bfbcce118",
+      "source_sha256": "909bfbcce118bc911e28a9c59c3a1b0b7112899c2ef76818ec9c9d04aa41a806",
+      "lexical_score": 0.47058823529411764,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.47625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 18.530875,
+          "correlation": 0.160932,
+          "source_offset_seconds": 18.054625
+        },
+        {
+          "old_anchor_start": 2.38125,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 24.773375,
+          "correlation": 0.181927,
+          "source_offset_seconds": 22.392125
+        },
+        {
+          "old_anchor_start": 4.28625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 19.5895,
+          "correlation": 0.174946,
+          "source_offset_seconds": 15.30325
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.35,
+      "source_duration_decoded": 27.742125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/bonjour-desirez-1-1.mp3",
+      "old_sha256": "551d0b4a24a5ce1de197100228d97f84877187fb050f5f7c5676da0bbcc7d168",
+      "source_id": "09035276:047:b3c0fdfac8a8",
+      "source_sha256": "b3c0fdfac8a888811a5dc5fa965664349bbc43d5246439e8b2739e89424fb985",
+      "lexical_score": 0.7428571428571428,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.684,
+          "anchor_seconds": 2.28,
+          "source_anchor_start": 9.077375,
+          "correlation": 0.980965,
+          "source_offset_seconds": 8.393375
+        },
+        {
+          "old_anchor_start": 3.42,
+          "anchor_seconds": 2.28,
+          "source_anchor_start": 11.813375,
+          "correlation": 0.910299,
+          "source_offset_seconds": 8.393375
+        },
+        {
+          "old_anchor_start": 6.156,
+          "anchor_seconds": 2.28,
+          "source_anchor_start": 14.549375,
+          "correlation": 0.982508,
+          "source_offset_seconds": 8.393375
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 9.12,
+      "source_duration_decoded": 61.622875,
+      "source_offset_seconds": 8.393375,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_21-2.mp3",
+      "old_sha256": "114d57307902e1539283ea83a10e88be383f97288c0dc74e26ee349c0056f606",
+      "source_id": "09035276:047:b3c0fdfac8a8",
+      "source_sha256": "b3c0fdfac8a888811a5dc5fa965664349bbc43d5246439e8b2739e89424fb985",
+      "lexical_score": 0.46153846153846156,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.6,
+          "anchor_seconds": 2.0,
+          "source_anchor_start": 5.506125,
+          "correlation": 0.186173,
+          "source_offset_seconds": 4.906125
+        },
+        {
+          "old_anchor_start": 3.0,
+          "anchor_seconds": 2.0,
+          "source_anchor_start": 56.995875,
+          "correlation": 0.204413,
+          "source_offset_seconds": 53.995875
+        },
+        {
+          "old_anchor_start": 5.4,
+          "anchor_seconds": 2.0,
+          "source_anchor_start": 1.13125,
+          "correlation": 0.179932,
+          "source_offset_seconds": -4.26875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 8.0,
+      "source_duration_decoded": 61.622875,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_05-3.mp3",
+      "old_sha256": "fd1178c70f11dad41167fbb667f08faa2411ba6ff999e391e9ae6d8f2ca921e6",
+      "source_id": "09035276:048:44c1253827eb",
+      "source_sha256": "44c1253827ebb52c5706d4c4fa31159901b25093ae21dbaebac7b26a8c83a315",
+      "lexical_score": 0.5333333333333333,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.69225,
+          "anchor_seconds": 2.3075,
+          "source_anchor_start": 36.814625,
+          "correlation": 0.178454,
+          "source_offset_seconds": 36.122375
+        },
+        {
+          "old_anchor_start": 3.46125,
+          "anchor_seconds": 2.3075,
+          "source_anchor_start": 18.350375,
+          "correlation": 0.101746,
+          "source_offset_seconds": 14.889125
+        },
+        {
+          "old_anchor_start": 6.23025,
+          "anchor_seconds": 2.3075,
+          "source_anchor_start": 9.0425,
+          "correlation": 0.116236,
+          "source_offset_seconds": 2.81225
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 9.23,
+      "source_duration_decoded": 56.4245,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-3.mp3",
+      "old_sha256": "1f81e0411716ad08147d758795181a8cd6d8f925e234b405cf68445ecb689864",
+      "source_id": "09035276:051:537bc0f5109c",
+      "source_sha256": "537bc0f5109c13e6eacc9050ec76256bc6670f320c6970f134fedc913bc19fb8",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.57,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 2.757625,
+          "correlation": 0.100868,
+          "source_offset_seconds": 2.187625
+        },
+        {
+          "old_anchor_start": 2.85,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 10.177375,
+          "correlation": 0.106412,
+          "source_offset_seconds": 7.327375
+        },
+        {
+          "old_anchor_start": 5.13,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 3.50475,
+          "correlation": 0.112972,
+          "source_offset_seconds": -1.62525
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.6,
+      "source_duration_decoded": 23.82375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_01-1.mp3",
+      "old_sha256": "63fb4ac77a142e96cb0d3578cfe2e49c48e69fedad7afbfa38bff31aaa7bd8db",
+      "source_id": "09035276:053:00eacc4c3739",
+      "source_sha256": "00eacc4c3739b064c1c41f932c3effad51244b78b6472b94c34e513dc1fd38b0",
+      "lexical_score": 0.5555555555555556,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.525,
+          "anchor_seconds": 1.75,
+          "source_anchor_start": 42.6895,
+          "correlation": 0.139667,
+          "source_offset_seconds": 42.1645
+        },
+        {
+          "old_anchor_start": 2.625,
+          "anchor_seconds": 1.75,
+          "source_anchor_start": 41.573,
+          "correlation": 0.171769,
+          "source_offset_seconds": 38.948
+        },
+        {
+          "old_anchor_start": 4.725,
+          "anchor_seconds": 1.75,
+          "source_anchor_start": 42.597875,
+          "correlation": 0.40676,
+          "source_offset_seconds": 37.872875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.0,
+      "source_duration_decoded": 56.26775,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "old_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "source_id": "09035276:058:0e9049761456",
+      "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.84675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 26.522375,
+          "correlation": 0.140918,
+          "source_offset_seconds": 23.675625
+        },
+        {
+          "old_anchor_start": 9.366875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 50.024625,
+          "correlation": 0.193832,
+          "source_offset_seconds": 40.65775
+        },
+        {
+          "old_anchor_start": 15.887,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 11.562,
+          "correlation": 0.136919,
+          "source_offset_seconds": -4.325
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 21.733875,
+      "source_duration_decoded": 62.093125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_69-2.mp3",
+      "old_sha256": "21e77efa89405752b6a17e566fb9af8c69f95a3b5d89fdf31f738488eac0e3f9",
+      "source_id": "09035276:058:0e9049761456",
+      "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+      "lexical_score": 0.4848484848484849,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.675,
+          "anchor_seconds": 2.25,
+          "source_anchor_start": 25.840625,
+          "correlation": 0.249009,
+          "source_offset_seconds": 25.165625
+        },
+        {
+          "old_anchor_start": 3.375,
+          "anchor_seconds": 2.25,
+          "source_anchor_start": 10.347375,
+          "correlation": 0.181752,
+          "source_offset_seconds": 6.972375
+        },
+        {
+          "old_anchor_start": 6.075,
+          "anchor_seconds": 2.25,
+          "source_anchor_start": 42.96475,
+          "correlation": 0.119762,
+          "source_offset_seconds": 36.88975
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 9.0,
+      "source_duration_decoded": 62.093125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/52-école-frites-à-la-cantine.mp3",
+      "old_sha256": "5bf7c9e889b60714165df709efc34291b32131c4ca2231c83918f70f24937907",
+      "source_id": "09035276:058:0e9049761456",
+      "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+      "lexical_score": 0.5283018867924528,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.158125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 20.9625,
+          "correlation": 0.10026,
+          "source_offset_seconds": 19.804375
+        },
+        {
+          "old_anchor_start": 5.145375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 49.8805,
+          "correlation": 0.113789,
+          "source_offset_seconds": 44.735125
+        },
+        {
+          "old_anchor_start": 9.1325,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 3.225625,
+          "correlation": 0.094125,
+          "source_offset_seconds": -5.906875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 13.29075,
+      "source_duration_decoded": 62.093125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_10-1.mp3",
+      "old_sha256": "9832b55fb5d6ec667443dcf748874196b12c90a40a1a6360b7a19bf4ec2381a4",
+      "source_id": "delf_a1_2022:003:c8814f3bed61",
+      "source_sha256": "c8814f3bed615f87055abe34799ef4a21baac2af212b057099b5226592edc013",
+      "lexical_score": 0.5333333333333333,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.70125,
+          "anchor_seconds": 2.3375,
+          "source_anchor_start": 15.533125,
+          "correlation": 0.106154,
+          "source_offset_seconds": 14.831875
+        },
+        {
+          "old_anchor_start": 3.50625,
+          "anchor_seconds": 2.3375,
+          "source_anchor_start": 4.248125,
+          "correlation": 0.094804,
+          "source_offset_seconds": 0.741875
+        },
+        {
+          "old_anchor_start": 6.31125,
+          "anchor_seconds": 2.3375,
+          "source_anchor_start": 28.759375,
+          "correlation": 0.119532,
+          "source_offset_seconds": 22.448125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 9.35,
+      "source_duration_decoded": 44.19925,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-1.mp3",
+      "old_sha256": "318ea6d73460d7d3fcb0d61179a0ac0e427b3019c821c5131a19b465eca15269",
+      "source_id": "delf_a1_2022:011:a99cd8478f3d",
+      "source_sha256": "a99cd8478f3d2f093b154bf8402aa5c194946b33dcca59f29826289d49ba9301",
+      "lexical_score": 0.588235294117647,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.47625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 6.377,
+          "correlation": 0.149462,
+          "source_offset_seconds": 5.90075
+        },
+        {
+          "old_anchor_start": 2.38125,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 24.439125,
+          "correlation": 0.111548,
+          "source_offset_seconds": 22.057875
+        },
+        {
+          "old_anchor_start": 4.28625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 17.16075,
+          "correlation": 0.188373,
+          "source_offset_seconds": 12.8745
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.35,
+      "source_duration_decoded": 45.191875,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-2.mp3",
+      "old_sha256": "9a4a906e6206e3a1ee924d07ebd405f1633ca1a9320abe2f7c3e42a3549bc6be",
+      "source_id": "delf_a1_2022:016:1054645edfdd",
+      "source_sha256": "1054645edfdd98223559356f0c2285663e3e4115e71dd3a9f3889a1503d290a1",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.47625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 18.37425,
+          "correlation": 0.475696,
+          "source_offset_seconds": 17.898
+        },
+        {
+          "old_anchor_start": 2.38125,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 3.019625,
+          "correlation": 0.194843,
+          "source_offset_seconds": 0.638375
+        },
+        {
+          "old_anchor_start": 4.28625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 42.120625,
+          "correlation": 0.754033,
+          "source_offset_seconds": 37.834375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.35,
+      "source_duration_decoded": 44.2515,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-4.mp3",
+      "old_sha256": "45009604324abae6b3047befbc05130557398b58bd6b5855a254bcb81f14cf4e",
+      "source_id": "delf_a1_2022:018:4e7ffcbf4fda",
+      "source_sha256": "4e7ffcbf4fda57dd02b6190a4285526986cc21ad16ea3aa31a208245cca44994",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.60375,
+          "anchor_seconds": 2.0125,
+          "source_anchor_start": 20.70075,
+          "correlation": 0.155193,
+          "source_offset_seconds": 20.097
+        },
+        {
+          "old_anchor_start": 3.01875,
+          "anchor_seconds": 2.0125,
+          "source_anchor_start": 20.398375,
+          "correlation": 0.148677,
+          "source_offset_seconds": 17.379625
+        },
+        {
+          "old_anchor_start": 5.43375,
+          "anchor_seconds": 2.0125,
+          "source_anchor_start": 19.73925,
+          "correlation": 0.269442,
+          "source_offset_seconds": 14.3055
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 8.05,
+      "source_duration_decoded": 52.662875,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/a-la-gare.mp3",
+      "old_sha256": "8ee7dfae3550890383bb5b30892c88a86b74e77fcfbabb6c6d1addeb89354338",
+      "source_id": "delf_a1_2022:025:f51720efd4b0",
+      "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 23.117,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 32.743375,
+          "correlation": 0.148679,
+          "source_offset_seconds": 9.626375
+        },
+        {
+          "old_anchor_start": 96.968,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 29.28875,
+          "correlation": 0.126194,
+          "source_offset_seconds": -67.67925
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 123.085,
+      "source_duration_decoded": 65.306125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-2.mp3",
+      "old_sha256": "5decd23a53acf4142ff45a403dd8a15763ae8d82eddd679350e26504ad5ba831",
+      "source_id": "delf_a1_2022:025:f51720efd4b0",
+      "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+      "lexical_score": 0.6818181818181818,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.53,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 27.08,
+          "correlation": 0.999959,
+          "source_offset_seconds": 24.55
+        },
+        {
+          "old_anchor_start": 8.575,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 33.125,
+          "correlation": 0.999576,
+          "source_offset_seconds": 24.55
+        },
+        {
+          "old_anchor_start": 14.62,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 39.17,
+          "correlation": 0.999708,
+          "source_offset_seconds": 24.55
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 20.15,
+      "source_duration_decoded": 65.306125,
+      "source_offset_seconds": 24.55,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-5-1.mp3",
+      "old_sha256": "a11071f3f7eef579ba7d163123ffe959df4d464488e190c4405d57f11fbb0104",
+      "source_id": "delf_a1_2022:025:f51720efd4b0",
+      "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+      "lexical_score": 0.45454545454545453,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.53,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 43.874875,
+          "correlation": 0.117006,
+          "source_offset_seconds": 42.344875
+        },
+        {
+          "old_anchor_start": 6.075,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 44.731875,
+          "correlation": 0.127568,
+          "source_offset_seconds": 38.656875
+        },
+        {
+          "old_anchor_start": 10.62,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 42.256,
+          "correlation": 0.126025,
+          "source_offset_seconds": 31.636
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 15.15,
+      "source_duration_decoded": 65.306125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-3.mp3",
+      "old_sha256": "7b7f5e2ecfd6247ce44d7868380b9c568816a9ae27678dd17c817eda4c06bfd2",
+      "source_id": "delf_a1_2022:026:1d9efd4d4d1e",
+      "source_sha256": "1d9efd4d4d1e3a56e2a073957603562403a74babfa9eb7e071f74e977e3a119a",
+      "lexical_score": 0.6,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.62625,
+          "anchor_seconds": 2.0875,
+          "source_anchor_start": 38.006625,
+          "correlation": 0.132048,
+          "source_offset_seconds": 37.380375
+        },
+        {
+          "old_anchor_start": 3.13125,
+          "anchor_seconds": 2.0875,
+          "source_anchor_start": 5.172625,
+          "correlation": 0.12051,
+          "source_offset_seconds": 2.041375
+        },
+        {
+          "old_anchor_start": 5.63625,
+          "anchor_seconds": 2.0875,
+          "source_anchor_start": 18.250625,
+          "correlation": 0.575386,
+          "source_offset_seconds": 12.614375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 8.35,
+      "source_duration_decoded": 48.431,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_36-1.mp3",
+      "old_sha256": "cc18f90441d7764e370b3af6cada9d4820efc91d90018ad5515f0e35c8f06e16",
+      "source_id": "delf_a1_2022:027:38fa96a2f6c8",
+      "source_sha256": "38fa96a2f6c84188ed16b0570810055a4d57051a3c3a03647a0b10f4a7c6acfa",
+      "lexical_score": 0.5822784810126581,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.17,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 31.01025,
+          "correlation": 0.12172,
+          "source_offset_seconds": 28.84025
+        },
+        {
+          "old_anchor_start": 7.675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 14.12275,
+          "correlation": 0.104183,
+          "source_offset_seconds": 6.44775
+        },
+        {
+          "old_anchor_start": 13.18,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 29.37975,
+          "correlation": 0.10481,
+          "source_offset_seconds": 16.19975
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 18.35,
+      "source_duration_decoded": 47.647375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_26-3.mp3",
+      "old_sha256": "e87718ac697ad9b15395df6224f6ae66a65d80a82fa1d13f36b154d5906b931c",
+      "source_id": "delf_a1_2022:029:c647602bf84c",
+      "source_sha256": "c647602bf84c8e751b43e5307182f02d7e94c578b4956f30df3b54f2d6a274a8",
+      "lexical_score": 0.6037735849056604,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.006,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 21.764,
+          "correlation": 0.071123,
+          "source_offset_seconds": 20.758
+        },
+        {
+          "old_anchor_start": 4.765,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 8.867125,
+          "correlation": 0.10731,
+          "source_offset_seconds": 4.102125
+        },
+        {
+          "old_anchor_start": 8.524,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 35.37925,
+          "correlation": 0.100507,
+          "source_offset_seconds": 26.85525
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 12.53,
+      "source_duration_decoded": 60.917625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-2.mp3",
+      "old_sha256": "de39238c134e7cc0493495a85e4ef3638a6b8b3a7469831e9f8c373478ef098f",
+      "source_id": "delf_a1_2022:030:abd914d309ec",
+      "source_sha256": "abd914d309ec512dde3b5c8494d33cba7586b061121f33c1109741756f57b8e4",
+      "lexical_score": 0.5333333333333333,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.55125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 8.90125,
+          "correlation": 0.999783,
+          "source_offset_seconds": 8.35
+        },
+        {
+          "old_anchor_start": 2.75625,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 11.10625,
+          "correlation": 0.999941,
+          "source_offset_seconds": 8.35
+        },
+        {
+          "old_anchor_start": 4.96125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 13.31125,
+          "correlation": 0.999756,
+          "source_offset_seconds": 8.35
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 7.35,
+      "source_duration_decoded": 38.086625,
+      "source_offset_seconds": 8.35,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-4.mp3",
+      "old_sha256": "d6de8ed25d32d73d153767fcc3b385290f3c8eeb4ed2c66bdf8db66bebbe2c86",
+      "source_id": "delf_a1_2022:030:abd914d309ec",
+      "source_sha256": "abd914d309ec512dde3b5c8494d33cba7586b061121f33c1109741756f57b8e4",
+      "lexical_score": 0.7142857142857143,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.55125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 23.90125,
+          "correlation": 0.999961,
+          "source_offset_seconds": 23.35
+        },
+        {
+          "old_anchor_start": 2.75625,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 26.10625,
+          "correlation": 0.999956,
+          "source_offset_seconds": 23.35
+        },
+        {
+          "old_anchor_start": 4.96125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 28.31125,
+          "correlation": 0.999541,
+          "source_offset_seconds": 23.35
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 7.35,
+      "source_duration_decoded": 38.086625,
+      "source_offset_seconds": 23.35,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_27-1.mp3",
+      "old_sha256": "cd41a688dbd5e530ae69befbb7f1b84f9ee903eaae9e34aacd3333621f21741d",
+      "source_id": "delf_a1_2022:036:0aedb8525f1a",
+      "source_sha256": "0aedb8525f1ac206120f39e162cd8ed1e19e1c96994ac1b71427813a54174ffc",
+      "lexical_score": 0.5227272727272727,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.77,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 44.370625,
+          "correlation": 0.097806,
+          "source_offset_seconds": 42.600625
+        },
+        {
+          "old_anchor_start": 6.675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 53.254125,
+          "correlation": 0.110157,
+          "source_offset_seconds": 46.579125
+        },
+        {
+          "old_anchor_start": 11.58,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 12.11725,
+          "correlation": 0.109882,
+          "source_offset_seconds": 0.53725
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 16.35,
+      "source_duration_decoded": 58.253125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_39-2.mp3",
+      "old_sha256": "480747c0711bf795b51c1e962c0acb34fbd368fd5cf181523b76ad2b1267c65e",
+      "source_id": "delf_a1_2022:039:ee5aa0d4a74a",
+      "source_sha256": "ee5aa0d4a74a212f6344de0a7d138764f61949c04163df861c2a0259e095fb6a",
+      "lexical_score": 0.6111111111111112,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.63225,
+          "anchor_seconds": 2.1075,
+          "source_anchor_start": 14.10225,
+          "correlation": 0.999838,
+          "source_offset_seconds": 13.47
+        },
+        {
+          "old_anchor_start": 3.16125,
+          "anchor_seconds": 2.1075,
+          "source_anchor_start": 16.63125,
+          "correlation": 0.99976,
+          "source_offset_seconds": 13.47
+        },
+        {
+          "old_anchor_start": 5.69025,
+          "anchor_seconds": 2.1075,
+          "source_anchor_start": 19.16025,
+          "correlation": 0.999817,
+          "source_offset_seconds": 13.47
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 8.43,
+      "source_duration_decoded": 44.0425,
+      "source_offset_seconds": 13.47,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "old_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "source_id": "delf_a1_2022:043:c219016ad093",
+      "source_sha256": "c219016ad093a57774fc09fdafd35096f304aec10eee9bd6edfc03ff80422e7d",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.84675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 18.735,
+          "correlation": 0.11871,
+          "source_offset_seconds": 15.88825
+        },
+        {
+          "old_anchor_start": 9.366875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 8.387375,
+          "correlation": 0.177053,
+          "source_offset_seconds": -0.9795
+        },
+        {
+          "old_anchor_start": 15.887,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 35.529875,
+          "correlation": 0.089662,
+          "source_offset_seconds": 19.642875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 21.733875,
+      "source_duration_decoded": 45.139625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_69-4.mp3",
+      "old_sha256": "5d7d0c3bea79512bb73940cf3eee7e9a95b79c2b143a396f5c94136414199aae",
+      "source_id": "delf_a1_2022:043:c219016ad093",
+      "source_sha256": "c219016ad093a57774fc09fdafd35096f304aec10eee9bd6edfc03ff80422e7d",
+      "lexical_score": 0.6,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.6375,
+          "anchor_seconds": 2.125,
+          "source_anchor_start": 26.599,
+          "correlation": 0.16203,
+          "source_offset_seconds": 25.9615
+        },
+        {
+          "old_anchor_start": 3.1875,
+          "anchor_seconds": 2.125,
+          "source_anchor_start": 29.22775,
+          "correlation": 0.190551,
+          "source_offset_seconds": 26.04025
+        },
+        {
+          "old_anchor_start": 5.7375,
+          "anchor_seconds": 2.125,
+          "source_anchor_start": 13.242875,
+          "correlation": 0.152124,
+          "source_offset_seconds": 7.505375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 8.5,
+      "source_duration_decoded": 45.139625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3",
+      "old_sha256": "c8195da5416066290c6d2c000c704f9a0deb574de0e8533e65396d35fc4b387c",
+      "source_id": "delf_a1_2022:050:2d8ad201371f",
+      "source_sha256": "2d8ad201371f541b1188338fb837db0cd8af04604b195f64173bb074dd011aff",
+      "lexical_score": 0.625,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 4.9,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 6.4,
+          "correlation": 0.999749,
+          "source_offset_seconds": 1.5
+        },
+        {
+          "old_anchor_start": 14.5,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 16.0,
+          "correlation": 0.99989,
+          "source_offset_seconds": 1.5
+        },
+        {
+          "old_anchor_start": 24.1,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 25.6,
+          "correlation": 0.999853,
+          "source_offset_seconds": 1.5
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 32.0,
+      "source_duration_decoded": 34.194375,
+      "source_offset_seconds": 1.5,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
+      "old_sha256": "650d120fe00eddf2106f8fb182cdc5c3b748357c153d5694a4a9c745d4065832",
+      "source_id": "delf_a1_2022:052:bc4e91cb6629",
+      "source_sha256": "bc4e91cb6629724c737fd7533e8e27dc3e94d38b429241f61e136ed8b75738db",
+      "lexical_score": 0.6341463414634146,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 6.04,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 7.54,
+          "correlation": 0.99981,
+          "source_offset_seconds": 1.5
+        },
+        {
+          "old_anchor_start": 17.35,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 18.85,
+          "correlation": 0.999936,
+          "source_offset_seconds": 1.5
+        },
+        {
+          "old_anchor_start": 28.66,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 30.16,
+          "correlation": 0.999867,
+          "source_offset_seconds": 1.5
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 37.7,
+      "source_duration_decoded": 42.18775,
+      "source_offset_seconds": 1.5,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_01-2.mp3",
+      "old_sha256": "ec78c86dabc514d6b5711d684196689e436e054255060a477ab12bb2003077a1",
+      "source_id": "delf_a1_2022:059:ec90fcce3ba6",
+      "source_sha256": "ec90fcce3ba61df4788b5488cff9bb074c1ba670ef8e80570f20c589680f2110",
+      "lexical_score": 0.5098039215686274,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.3,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 26.77575,
+          "correlation": 0.064909,
+          "source_offset_seconds": 25.47575
+        },
+        {
+          "old_anchor_start": 5.5,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 2.21275,
+          "correlation": 0.062707,
+          "source_offset_seconds": -3.28725
+        },
+        {
+          "old_anchor_start": 9.7,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 21.200875,
+          "correlation": 0.077213,
+          "source_offset_seconds": 11.500875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 14.0,
+      "source_duration_decoded": 34.429375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_05-1.mp3",
+      "old_sha256": "a30f90f8779b19454ac10a0e2af23ada5884f84c322b4400747e2988b7acd5f8",
+      "source_id": "delf_a1_2022:059:ec90fcce3ba6",
+      "source_sha256": "ec90fcce3ba61df4788b5488cff9bb074c1ba670ef8e80570f20c589680f2110",
+      "lexical_score": 0.6285714285714287,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.55125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 1.360875,
+          "correlation": 0.126902,
+          "source_offset_seconds": 0.809625
+        },
+        {
+          "old_anchor_start": 2.75625,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 30.6895,
+          "correlation": 0.128104,
+          "source_offset_seconds": 27.93325
+        },
+        {
+          "old_anchor_start": 4.96125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 1.154875,
+          "correlation": 0.117572,
+          "source_offset_seconds": -3.806375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.35,
+      "source_duration_decoded": 34.429375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_03-3.mp3",
+      "old_sha256": "49c253a762c25962b36f1af3c0c30289ae8ace142067f16aa40f23eab6d7520b",
+      "source_id": "delf_a1_2022:060:36a09838df72",
+      "source_sha256": "36a09838df72e99f2e627fa1f0a9aa7524f703338b246e0323d376eb393cadf7",
+      "lexical_score": 0.5714285714285714,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.14,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 14.559625,
+          "correlation": 0.086382,
+          "source_offset_seconds": 13.419625
+        },
+        {
+          "old_anchor_start": 5.1,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 3.896875,
+          "correlation": 0.063956,
+          "source_offset_seconds": -1.203125
+        },
+        {
+          "old_anchor_start": 9.06,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 9.59425,
+          "correlation": 0.091158,
+          "source_offset_seconds": 0.53425
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 13.2,
+      "source_duration_decoded": 22.517625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-2.mp3",
+      "old_sha256": "de39238c134e7cc0493495a85e4ef3638a6b8b3a7469831e9f8c373478ef098f",
+      "source_id": "delf_a1_2022:065:52fb46b893a6",
+      "source_sha256": "52fb46b893a6b99da557f32618286163e565a8b6234b45a7b06df413b7b6cd68",
+      "lexical_score": 0.56,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.55125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 3.95175,
+          "correlation": 0.214231,
+          "source_offset_seconds": 3.4005
+        },
+        {
+          "old_anchor_start": 2.75625,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 3.088375,
+          "correlation": 0.097332,
+          "source_offset_seconds": 0.332125
+        },
+        {
+          "old_anchor_start": 4.96125,
+          "anchor_seconds": 1.8375,
+          "source_anchor_start": 2.213625,
+          "correlation": 0.308592,
+          "source_offset_seconds": -2.747625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.35,
+      "source_duration_decoded": 29.466125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-1.mp3",
+      "old_sha256": "b9c4e9bb64e4fa49b51f930f521e41e35946cce7dabbbe7ecfcf7cf64b8fa4ea",
+      "source_id": "delf_a1_2022:066:137458dd30b5",
+      "source_sha256": "137458dd30b5511db57ed00680eb6e9a056f39557b78d293a6924c895f60595a",
+      "lexical_score": 0.5789473684210527,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.89625,
+          "anchor_seconds": 2.9875,
+          "source_anchor_start": 8.372375,
+          "correlation": 0.095561,
+          "source_offset_seconds": 7.476125
+        },
+        {
+          "old_anchor_start": 4.48125,
+          "anchor_seconds": 2.9875,
+          "source_anchor_start": 21.10125,
+          "correlation": 0.048747,
+          "source_offset_seconds": 16.62
+        },
+        {
+          "old_anchor_start": 8.06625,
+          "anchor_seconds": 2.9875,
+          "source_anchor_start": 27.6985,
+          "correlation": 0.060903,
+          "source_offset_seconds": 19.63225
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 11.95,
+      "source_duration_decoded": 30.87675,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_43-1.mp3",
+      "old_sha256": "985181a2b33351a21711146498da6b6407759d55e2cab02da013fc00eb44b2e6",
+      "source_id": "delf_a1_2022:069:e775e4f7399c",
+      "source_sha256": "e775e4f7399c89584408dfbbaac2a1a527689a4d9d50817125994b08cea3bd07",
+      "lexical_score": 0.4615384615384615,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.6525,
+          "anchor_seconds": 2.175,
+          "source_anchor_start": 2.02125,
+          "correlation": 0.309757,
+          "source_offset_seconds": 1.36875
+        },
+        {
+          "old_anchor_start": 3.2625,
+          "anchor_seconds": 2.175,
+          "source_anchor_start": 40.784375,
+          "correlation": 0.136969,
+          "source_offset_seconds": 37.521875
+        },
+        {
+          "old_anchor_start": 5.8725,
+          "anchor_seconds": 2.175,
+          "source_anchor_start": 33.87325,
+          "correlation": 0.107117,
+          "source_offset_seconds": 28.00075
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 8.7,
+      "source_duration_decoded": 46.994375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_43-3.mp3",
+      "old_sha256": "b111101acc4b87b33df797d4276221fb751dec4373751ba91ccefbc66eeb35f9",
+      "source_id": "delf_a1_2022:069:e775e4f7399c",
+      "source_sha256": "e775e4f7399c89584408dfbbaac2a1a527689a4d9d50817125994b08cea3bd07",
+      "lexical_score": 0.6285714285714286,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.34,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 23.104,
+          "correlation": 0.724164,
+          "source_offset_seconds": 21.764
+        },
+        {
+          "old_anchor_start": 5.6,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 36.470375,
+          "correlation": 0.153995,
+          "source_offset_seconds": 30.870375
+        },
+        {
+          "old_anchor_start": 9.86,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 40.63975,
+          "correlation": 0.129008,
+          "source_offset_seconds": 30.77975
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 14.2,
+      "source_duration_decoded": 46.994375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-4.mp3",
+      "old_sha256": "4d61fe45f79496597479ed13cdd9447c087a7c8ee6d0c4885608562ff4fab077",
+      "source_id": "delf_a1_2022:070:09dc23c07f48",
+      "source_sha256": "09dc23c07f4895833707e08e985dd8de9e712767eb981292ccfd976e7f2392af",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.32625,
+          "anchor_seconds": 1.0875,
+          "source_anchor_start": 10.291125,
+          "correlation": 0.326362,
+          "source_offset_seconds": 9.964875
+        },
+        {
+          "old_anchor_start": 1.63125,
+          "anchor_seconds": 1.0875,
+          "source_anchor_start": 0.28075,
+          "correlation": 0.163796,
+          "source_offset_seconds": -1.3505
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 4.35,
+      "source_duration_decoded": 47.8825,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-5.mp3",
+      "old_sha256": "947c1b11a92c4135fd92922983fcf7ab7e7d5f29dbfd09b956f1d43bfc0dc98f",
+      "source_id": "delf_a1_2022:070:09dc23c07f48",
+      "source_sha256": "09dc23c07f4895833707e08e985dd8de9e712767eb981292ccfd976e7f2392af",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.40125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 22.666,
+          "correlation": 0.528566,
+          "source_offset_seconds": 22.26475
+        },
+        {
+          "old_anchor_start": 2.00625,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 45.5545,
+          "correlation": 0.205619,
+          "source_offset_seconds": 43.54825
+        },
+        {
+          "old_anchor_start": 3.61125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 12.777625,
+          "correlation": 0.515213,
+          "source_offset_seconds": 9.166375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.35,
+      "source_duration_decoded": 47.8825,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-6.mp3",
+      "old_sha256": "6da8e8334b3cbc058b6b4f794afb93ff5c795bb07ca989753fe26c7d6aa86529",
+      "source_id": "delf_a1_2022:070:09dc23c07f48",
+      "source_sha256": "09dc23c07f4895833707e08e985dd8de9e712767eb981292ccfd976e7f2392af",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.36225,
+          "anchor_seconds": 1.2075,
+          "source_anchor_start": 20.623625,
+          "correlation": 0.232458,
+          "source_offset_seconds": 20.261375
+        },
+        {
+          "old_anchor_start": 1.81125,
+          "anchor_seconds": 1.2075,
+          "source_anchor_start": 5.5785,
+          "correlation": 0.209543,
+          "source_offset_seconds": 3.76725
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 4.83,
+      "source_duration_decoded": 47.8825,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-6.mp3",
+      "old_sha256": "8d3a9bc1e82c28360266bfe658a0953185a19c48fbdd870a59c8a943b3b83f11",
+      "source_id": "delf_a1_2022:076:d174e78a94da",
+      "source_sha256": "d174e78a94da1e2db338cf5a3cc3b8f98bad4409cda5c3fc701045c0c8bffcdd",
+      "lexical_score": 0.45454545454545453,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.585,
+          "anchor_seconds": 1.95,
+          "source_anchor_start": 30.9875,
+          "correlation": 0.168416,
+          "source_offset_seconds": 30.4025
+        },
+        {
+          "old_anchor_start": 2.925,
+          "anchor_seconds": 1.95,
+          "source_anchor_start": 2.71175,
+          "correlation": 0.138646,
+          "source_offset_seconds": -0.21325
+        },
+        {
+          "old_anchor_start": 5.265,
+          "anchor_seconds": 1.95,
+          "source_anchor_start": 73.498625,
+          "correlation": 0.479963,
+          "source_offset_seconds": 68.233625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.8,
+      "source_duration_decoded": 75.650625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-2.mp3",
+      "old_sha256": "05924fa50f0be1c78c9467b361a142cabecd1d9e52b7900b7a37f2da37c9d838",
+      "source_id": "delf_a1_2022:078:39ed581e6068",
+      "source_sha256": "39ed581e6068a899c458b2288d0fc781e047c5cec3225fdbc1890b360b8024b7",
+      "lexical_score": 0.7142857142857143,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.43875,
+          "anchor_seconds": 1.4625,
+          "source_anchor_start": 8.28875,
+          "correlation": 0.99984,
+          "source_offset_seconds": 7.85
+        },
+        {
+          "old_anchor_start": 2.19375,
+          "anchor_seconds": 1.4625,
+          "source_anchor_start": 10.04375,
+          "correlation": 0.999805,
+          "source_offset_seconds": 7.85
+        },
+        {
+          "old_anchor_start": 3.94875,
+          "anchor_seconds": 1.4625,
+          "source_anchor_start": 11.79875,
+          "correlation": 0.999914,
+          "source_offset_seconds": 7.85
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 5.85,
+      "source_duration_decoded": 29.1005,
+      "source_offset_seconds": 7.85,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-3.mp3",
+      "old_sha256": "9c60b8841d599f71d619d416d114c162209add25f0208895c38eee539b546c3e",
+      "source_id": "delf_a1_2022:078:39ed581e6068",
+      "source_sha256": "39ed581e6068a899c458b2288d0fc781e047c5cec3225fdbc1890b360b8024b7",
+      "lexical_score": 0.4736842105263158,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.066,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 19.551375,
+          "correlation": 0.127063,
+          "source_offset_seconds": 18.485375
+        },
+        {
+          "old_anchor_start": 4.915,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 9.866375,
+          "correlation": 0.150711,
+          "source_offset_seconds": 4.951375
+        },
+        {
+          "old_anchor_start": 8.764,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 20.795375,
+          "correlation": 0.249296,
+          "source_offset_seconds": 12.031375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 12.83,
+      "source_duration_decoded": 29.1005,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-5.mp3",
+      "old_sha256": "422519143f2bcaacf498fde65043de12f9f18e5ba68b55a0bc72b3c58ad22b20",
+      "source_id": "delf_a1_2022:079:171161d1919f",
+      "source_sha256": "171161d1919f0402e344f87eec0a62eeb199ffa7286e73a93a68a7c522531060",
+      "lexical_score": 0.6,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.41625,
+          "anchor_seconds": 1.3875,
+          "source_anchor_start": 22.461375,
+          "correlation": 0.293111,
+          "source_offset_seconds": 22.045125
+        },
+        {
+          "old_anchor_start": 2.08125,
+          "anchor_seconds": 1.3875,
+          "source_anchor_start": 69.415875,
+          "correlation": 0.24228,
+          "source_offset_seconds": 67.334625
+        },
+        {
+          "old_anchor_start": 3.74625,
+          "anchor_seconds": 1.3875,
+          "source_anchor_start": 13.400625,
+          "correlation": 0.488419,
+          "source_offset_seconds": 9.654375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.55,
+      "source_duration_decoded": 72.25475,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-4.mp3",
+      "old_sha256": "d6606f5433e98e65b766013870f1b5ccdad4d80a7f5fe7ec21c3ec355b8be707",
+      "source_id": "delf_a1_2022:079:171161d1919f",
+      "source_sha256": "171161d1919f0402e344f87eec0a62eeb199ffa7286e73a93a68a7c522531060",
+      "lexical_score": 0.5833333333333334,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.47625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 43.297875,
+          "correlation": 0.9915,
+          "source_offset_seconds": 42.821625
+        },
+        {
+          "old_anchor_start": 2.38125,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 15.627375,
+          "correlation": 0.157657,
+          "source_offset_seconds": 13.246125
+        },
+        {
+          "old_anchor_start": 4.28625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 46.315125,
+          "correlation": 0.50757,
+          "source_offset_seconds": 42.028875
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 6.35,
+      "source_duration_decoded": 72.25475,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-5.mp3",
+      "old_sha256": "c6dcb1806af2442076f01b732d314447ffd80adca28797ef74cbd76bd56f2295",
+      "source_id": "delf_a1_2022:081:336f67bfc8ca",
+      "source_sha256": "336f67bfc8ca45482255df54010282c640ef377a20a9ae0d48735cc23b7fa1c4",
+      "lexical_score": 0.5365853658536586,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.586,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 9.64,
+          "correlation": 0.116229,
+          "source_offset_seconds": 8.054
+        },
+        {
+          "old_anchor_start": 6.215,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 31.3635,
+          "correlation": 0.208565,
+          "source_offset_seconds": 25.1485
+        },
+        {
+          "old_anchor_start": 10.844,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 26.31825,
+          "correlation": 0.21687,
+          "source_offset_seconds": 15.47425
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 15.43,
+      "source_duration_decoded": 39.18375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-5.mp3",
+      "old_sha256": "028d8692bdef02ca26961e75b74d468cae5a1eb8c815b0ec29a6353db035695e",
+      "source_id": "delf_a1_2022:083:f17cd559890d",
+      "source_sha256": "f17cd559890dcddfae8fbf5ec6c9956852963bf6bc35f83bbc8038219d562c19",
+      "lexical_score": 0.7142857142857143,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.58875,
+          "anchor_seconds": 1.9625,
+          "source_anchor_start": 57.0605,
+          "correlation": 0.235171,
+          "source_offset_seconds": 56.47175
+        },
+        {
+          "old_anchor_start": 2.94375,
+          "anchor_seconds": 1.9625,
+          "source_anchor_start": 0.81475,
+          "correlation": 0.201739,
+          "source_offset_seconds": -2.129
+        },
+        {
+          "old_anchor_start": 5.29875,
+          "anchor_seconds": 1.9625,
+          "source_anchor_start": 9.863875,
+          "correlation": 0.238557,
+          "source_offset_seconds": 4.565125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.85,
+      "source_duration_decoded": 65.828625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-1.mp3",
+      "old_sha256": "8be2775f95c7522e9fd37ee02fbe5964f3ef821b596b3396bc1d39b9efd2e91f",
+      "source_id": "delf_a1_2022:087:60a694bc4011",
+      "source_sha256": "60a694bc4011a51b0bb8b573fdea1369d69a0d579d6204d0c36433924126c96b",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.225,
+          "anchor_seconds": 0.75,
+          "source_anchor_start": 24.319875,
+          "correlation": 0.315738,
+          "source_offset_seconds": 24.094875
+        },
+        {
+          "old_anchor_start": 1.125,
+          "anchor_seconds": 0.75,
+          "source_anchor_start": 32.600375,
+          "correlation": 0.342829,
+          "source_offset_seconds": 31.475375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 3.0,
+      "source_duration_decoded": 86.2825,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/travail/le-nouveau-travail.mp3",
+      "old_sha256": "56492f3dd6951779a95bda58919c95b48c1c694a4875f365f5fa06ce3d6fd793",
+      "source_id": "delf_a1_2022:095:9276ab0bc6c8",
+      "source_sha256": "9276ab0bc6c854bef16a55702d9bcb2d9e3cb104c356e3da696f60f5bc208877",
+      "lexical_score": 0.603448275862069,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 25.006125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 32.126125,
+          "correlation": 0.999686,
+          "source_offset_seconds": 7.12
+        },
+        {
+          "old_anchor_start": 104.5245,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 111.6445,
+          "correlation": 0.999765,
+          "source_offset_seconds": 7.12
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 132.530625,
+      "source_duration_decoded": 139.650625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/48-école-venir-au-tableau.mp3",
+      "old_sha256": "7698c9402fc513386e2691278a09ff1640983cc953bbf065418d716cbc31c96f",
+      "source_id": "delf_a1_2022:096:c780e82fd1ad",
+      "source_sha256": "c780e82fd1ad409770881d0b1443896eb513939f93f45b0c2a96486f2a31075c",
+      "lexical_score": 0.4571428571428572,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.013,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 189.376375,
+          "correlation": 0.153078,
+          "source_offset_seconds": 188.363375
+        },
+        {
+          "old_anchor_start": 4.782625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 71.067125,
+          "correlation": 0.175182,
+          "source_offset_seconds": 66.2845
+        },
+        {
+          "old_anchor_start": 8.55225,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 190.6645,
+          "correlation": 0.219667,
+          "source_offset_seconds": 182.11225
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 12.565375,
+      "source_duration_decoded": 281.809,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+      "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+      "source_id": "delf_a1_2022:097:dee2ccc9aea0",
+      "source_sha256": "dee2ccc9aea0a2423b0b61a8c735dc7d88f82165fecc6f10d75c71859c5c9e49",
+      "lexical_score": 0.5714285714285715,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.0,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 12.473,
+          "correlation": 0.195525,
+          "source_offset_seconds": 12.473
+        },
+        {
+          "old_anchor_start": 0.20275,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 7.912,
+          "correlation": 0.234447,
+          "source_offset_seconds": 7.70925
+        },
+        {
+          "old_anchor_start": 0.405625,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 0.94825,
+          "correlation": 0.313019,
+          "source_offset_seconds": 0.542625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 0.905625,
+      "source_duration_decoded": 66.4555,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/a-la-gare.mp3",
+      "old_sha256": "8ee7dfae3550890383bb5b30892c88a86b74e77fcfbabb6c6d1addeb89354338",
+      "source_id": "piste_a1:007:0f382a81844d",
+      "source_sha256": "0f382a81844d30d8b3e843b0eeefa2dbfc6390578074643193682da69be3b07a",
+      "lexical_score": 0.7254901960784313,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 23.117,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 30.357,
+          "correlation": 0.998995,
+          "source_offset_seconds": 7.24
+        },
+        {
+          "old_anchor_start": 96.968,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 104.208,
+          "correlation": 0.998738,
+          "source_offset_seconds": 7.24
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 123.085,
+      "source_duration_decoded": 130.325,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-1.mp3",
+      "old_sha256": "e62852df0dc164d02c805f550cdd49843320f2c2ab8f259025e681b250e8aa7d",
+      "source_id": "piste_a1:007:0f382a81844d",
+      "source_sha256": "0f382a81844d30d8b3e843b0eeefa2dbfc6390578074643193682da69be3b07a",
+      "lexical_score": 0.7,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 3.2,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 73.32125,
+          "correlation": 0.063345,
+          "source_offset_seconds": 70.12125
+        },
+        {
+          "old_anchor_start": 10.25,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 2.93425,
+          "correlation": 0.147898,
+          "source_offset_seconds": -7.31575
+        },
+        {
+          "old_anchor_start": 17.3,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 5.87325,
+          "correlation": 0.126161,
+          "source_offset_seconds": -11.42675
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 23.5,
+      "source_duration_decoded": 130.325,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-2.mp3",
+      "old_sha256": "5decd23a53acf4142ff45a403dd8a15763ae8d82eddd679350e26504ad5ba831",
+      "source_id": "piste_a1:007:0f382a81844d",
+      "source_sha256": "0f382a81844d30d8b3e843b0eeefa2dbfc6390578074643193682da69be3b07a",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.53,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 80.067625,
+          "correlation": 0.072403,
+          "source_offset_seconds": 77.537625
+        },
+        {
+          "old_anchor_start": 8.575,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 1.101125,
+          "correlation": 0.207429,
+          "source_offset_seconds": -7.473875
+        },
+        {
+          "old_anchor_start": 14.62,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 3.834625,
+          "correlation": 0.117531,
+          "source_offset_seconds": -10.785375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 20.15,
+      "source_duration_decoded": 130.325,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/les-etudes-1-5.mp3",
+      "old_sha256": "946fbdee695a8d3f41a259e5bbfc7e5cd50cc07c6b78333fbbe923c55ca99a36",
+      "source_id": "piste_a1:009:ab20da57a3f8",
+      "source_sha256": "ab20da57a3f86169f9425f82b56315bb2831c20495ccc855265a7c5ec52c6c3a",
+      "lexical_score": 0.4727272727272727,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.846625,
+          "anchor_seconds": 2.821875,
+          "source_anchor_start": 21.262375,
+          "correlation": 0.197812,
+          "source_offset_seconds": 20.41575
+        },
+        {
+          "old_anchor_start": 4.233,
+          "anchor_seconds": 2.821875,
+          "source_anchor_start": 2.26175,
+          "correlation": 0.229859,
+          "source_offset_seconds": -1.97125
+        },
+        {
+          "old_anchor_start": 7.61925,
+          "anchor_seconds": 2.821875,
+          "source_anchor_start": 36.27225,
+          "correlation": 0.176247,
+          "source_offset_seconds": 28.653
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 11.28775,
+      "source_duration_decoded": 285.15275,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_47-2.mp3",
+      "old_sha256": "471837b782c8b214e5b9066bfd0b17884f6dc3fc894aeb1a50c108876ae5c08c",
+      "source_id": "9782090351958:003:01a4a88d9f8f",
+      "source_sha256": "01a4a88d9f8fa975464ffc894d9bdbf6890a39a45481ada53d2a983e7ad9fa8e",
+      "lexical_score": 0.5714285714285715,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.77625,
+          "anchor_seconds": 2.5875,
+          "source_anchor_start": 16.070375,
+          "correlation": 0.13956,
+          "source_offset_seconds": 15.294125
+        },
+        {
+          "old_anchor_start": 3.88125,
+          "anchor_seconds": 2.5875,
+          "source_anchor_start": 35.312625,
+          "correlation": 0.261392,
+          "source_offset_seconds": 31.431375
+        },
+        {
+          "old_anchor_start": 6.98625,
+          "anchor_seconds": 2.5875,
+          "source_anchor_start": 18.146375,
+          "correlation": 0.185215,
+          "source_offset_seconds": 11.160125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 10.35,
+      "source_duration_decoded": 87.458,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-3.mp3",
+      "old_sha256": "2d1651c348e4d5950b2e86e3e016f951f2e04753becd07acecb6279782c7c6f5",
+      "source_id": "9782090351958:003:01a4a88d9f8f",
+      "source_sha256": "01a4a88d9f8fa975464ffc894d9bdbf6890a39a45481ada53d2a983e7ad9fa8e",
+      "lexical_score": 0.47058823529411764,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.57,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 50.89775,
+          "correlation": 0.183369,
+          "source_offset_seconds": 50.32775
+        },
+        {
+          "old_anchor_start": 2.85,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 10.553125,
+          "correlation": 0.137735,
+          "source_offset_seconds": 7.703125
+        },
+        {
+          "old_anchor_start": 5.13,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 15.731625,
+          "correlation": 0.239661,
+          "source_offset_seconds": 10.601625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.6,
+      "source_duration_decoded": 87.458,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "old_sha256": "ba1773fbd8c1578342f267c3d4ea9c6a6c7daa187f89bd48850941b01f15151d",
+      "source_id": "9782090351958:012:221a05aacac6",
+      "source_sha256": "221a05aacac66cad104db986318bc52b46af57150b20ce9c69ac6e8d14754d8d",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.7725,
+          "anchor_seconds": 2.575,
+          "source_anchor_start": 25.362875,
+          "correlation": 0.158686,
+          "source_offset_seconds": 24.590375
+        },
+        {
+          "old_anchor_start": 3.8625,
+          "anchor_seconds": 2.575,
+          "source_anchor_start": 45.230375,
+          "correlation": 0.091992,
+          "source_offset_seconds": 41.367875
+        },
+        {
+          "old_anchor_start": 6.9525,
+          "anchor_seconds": 2.575,
+          "source_anchor_start": 2.082875,
+          "correlation": 0.145,
+          "source_offset_seconds": -4.869625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 10.3,
+      "source_duration_decoded": 49.084125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-2.mp3",
+      "old_sha256": "93cc25f42b87e93a101b4a045860abaa9a933c83a79cbe40b6e08f0686e854dc",
+      "source_id": "9782090351958:016:5e362e520f8c",
+      "source_sha256": "5e362e520f8c36558a2dc7e74025dc5fd82dcb15becd2746ce1a4819188fa010",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.2625,
+          "anchor_seconds": 0.875,
+          "source_anchor_start": 40.952125,
+          "correlation": 0.183395,
+          "source_offset_seconds": 40.689625
+        },
+        {
+          "old_anchor_start": 1.3125,
+          "anchor_seconds": 0.875,
+          "source_anchor_start": 52.71175,
+          "correlation": 0.272451,
+          "source_offset_seconds": 51.39925
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 3.5,
+      "source_duration_decoded": 83.017125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/16-école-comment-renter-à-la-maison.mp3",
+      "old_sha256": "0051c09e3706a0aca859e29be8f5fa564feca7918115115e53d65686e82958c0",
+      "source_id": "9782090351958:022:7f8bd4692577",
+      "source_sha256": "7f8bd4692577826827edeec4d363321857814712848483a9bda7dfe208597055",
+      "lexical_score": 0.4615384615384615,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.590375,
+          "anchor_seconds": 1.968,
+          "source_anchor_start": 47.46775,
+          "correlation": 0.18707,
+          "source_offset_seconds": 46.877375
+        },
+        {
+          "old_anchor_start": 2.952,
+          "anchor_seconds": 1.968,
+          "source_anchor_start": 81.48375,
+          "correlation": 0.179489,
+          "source_offset_seconds": 78.53175
+        },
+        {
+          "old_anchor_start": 5.3135,
+          "anchor_seconds": 1.968,
+          "source_anchor_start": 62.057625,
+          "correlation": 0.159173,
+          "source_offset_seconds": 56.744125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.872,
+      "source_duration_decoded": 100.388625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-1.mp3",
+      "old_sha256": "52e1dd2d25aba00f1b4b453ae951c3cb80254e676e43aab4db3f4fee24c7435d",
+      "source_id": "9782090351958:026:b461d3565f79",
+      "source_sha256": "b461d3565f791f143d886e44329e956d58a31c3e65d1015cd002b278a7deef6d",
+      "lexical_score": 0.7142857142857143,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.40125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 0.136875,
+          "correlation": 0.228788,
+          "source_offset_seconds": -0.264375
+        },
+        {
+          "old_anchor_start": 2.00625,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 39.944125,
+          "correlation": 0.146684,
+          "source_offset_seconds": 37.937875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.35,
+      "source_duration_decoded": 70.2955,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-2.mp3",
+      "old_sha256": "3e9b8bf9fb47fc55dc88e0bd3712d25bcb06db3862bf3e7564bca3ba036407f9",
+      "source_id": "9782090351958:029:67496835f0f8",
+      "source_sha256": "67496835f0f89ba3762dd77044c2b27c3fcd48723c7e037c62f3404753be99ad",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.3,
+          "anchor_seconds": 1.0,
+          "source_anchor_start": 50.12975,
+          "correlation": 0.235625,
+          "source_offset_seconds": 49.82975
+        },
+        {
+          "old_anchor_start": 1.5,
+          "anchor_seconds": 1.0,
+          "source_anchor_start": 5.965625,
+          "correlation": 0.311585,
+          "source_offset_seconds": 4.465625
+        },
+        {
+          "old_anchor_start": 2.7,
+          "anchor_seconds": 1.0,
+          "source_anchor_start": 56.69125,
+          "correlation": 0.253924,
+          "source_offset_seconds": 53.99125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 4.0,
+      "source_duration_decoded": 78.262875,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-2.mp3",
+      "old_sha256": "9ce056fe805b64f4b2e36d84e797b614f02ed983d49d9cef71986ae9e896a4ac",
+      "source_id": "9782090351958:034:b2afb8e8dd81",
+      "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
+      "lexical_score": 0.49180327868852464,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.54,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 77.312875,
+          "correlation": 0.1496,
+          "source_offset_seconds": 75.772875
+        },
+        {
+          "old_anchor_start": 6.1,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 38.760125,
+          "correlation": 0.151874,
+          "source_offset_seconds": 32.660125
+        },
+        {
+          "old_anchor_start": 10.66,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 60.6535,
+          "correlation": 0.119115,
+          "source_offset_seconds": 49.9935
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 15.2,
+      "source_duration_decoded": 81.502125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-5.mp3",
+      "old_sha256": "a7415e5c3d173e40f11db660d0b563bb42afcacfc47458330822a4256a415f04",
+      "source_id": "9782090351958:035:c8723151fd49",
+      "source_sha256": "c8723151fd4930aac19c0d95503308db356b4f24bfc664ba8eb8026ec42c512e",
+      "lexical_score": 0.6,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.585,
+          "anchor_seconds": 1.95,
+          "source_anchor_start": 4.479125,
+          "correlation": 0.207409,
+          "source_offset_seconds": 3.894125
+        },
+        {
+          "old_anchor_start": 2.925,
+          "anchor_seconds": 1.95,
+          "source_anchor_start": 71.26875,
+          "correlation": 0.177875,
+          "source_offset_seconds": 68.34375
+        },
+        {
+          "old_anchor_start": 5.265,
+          "anchor_seconds": 1.95,
+          "source_anchor_start": 5.108,
+          "correlation": 0.386178,
+          "source_offset_seconds": -0.157
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.8,
+      "source_duration_decoded": 74.9715,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-22.mp3",
+      "old_sha256": "cae491191637a4269bb79ebc7e0e1d5188833123ed68cf5041d6ebfb9d10fca3",
+      "source_id": "9782090351958:043:cae491191637",
+      "source_sha256": "cae491191637a4269bb79ebc7e0e1d5188833123ed68cf5041d6ebfb9d10fca3",
+      "lexical_score": 0.528,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 7.120375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 7.120375,
+          "correlation": 1.0,
+          "source_offset_seconds": 0.0
+        },
+        {
+          "old_anchor_start": 20.051,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 20.051,
+          "correlation": 1.0,
+          "source_offset_seconds": 0.0
+        },
+        {
+          "old_anchor_start": 32.981625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 32.981625,
+          "correlation": 1.0,
+          "source_offset_seconds": 0.0
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 43.102125,
+      "source_duration_decoded": 43.102125,
+      "source_offset_seconds": 0.0,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/scènes courtes/27-loisirs-propositions-aller-au-cinéma.mp3",
+      "old_sha256": "737cc66d1016ede046167d4b7ff7ef4c03221558cb1757b8688489615d4c9bd3",
+      "source_id": "9782090351958:045:b71ab169c7da",
+      "source_sha256": "b71ab169c7da8ec8a0bbf26492cf0db76363cb0cb2ea1f90499c37693cd9f2f9",
+      "lexical_score": 0.5294117647058824,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.79675,
+          "anchor_seconds": 2.656,
+          "source_anchor_start": 1.396375,
+          "correlation": 0.140191,
+          "source_offset_seconds": 0.599625
+        },
+        {
+          "old_anchor_start": 3.984,
+          "anchor_seconds": 2.656,
+          "source_anchor_start": 1.904125,
+          "correlation": 0.177915,
+          "source_offset_seconds": -2.079875
+        },
+        {
+          "old_anchor_start": 7.171125,
+          "anchor_seconds": 2.656,
+          "source_anchor_start": 4.9885,
+          "correlation": 0.115919,
+          "source_offset_seconds": -2.182625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 10.624,
+      "source_duration_decoded": 42.24,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-5.mp3",
+      "old_sha256": "595218021f5d06264e374f451e8e5dd78038d5d67f021a8f54b2575443b2fe88",
+      "source_id": "9782090351958:047:5cfdceb0ed80",
+      "source_sha256": "5cfdceb0ed802340258419349ad5cab62f4971bedf3601fd5428b3c182896a9c",
+      "lexical_score": 0.5714285714285715,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.5745,
+          "anchor_seconds": 1.915,
+          "source_anchor_start": 38.137875,
+          "correlation": 0.097744,
+          "source_offset_seconds": 37.563375
+        },
+        {
+          "old_anchor_start": 2.8725,
+          "anchor_seconds": 1.915,
+          "source_anchor_start": 35.677875,
+          "correlation": 0.159011,
+          "source_offset_seconds": 32.805375
+        },
+        {
+          "old_anchor_start": 5.1705,
+          "anchor_seconds": 1.915,
+          "source_anchor_start": 32.764375,
+          "correlation": 0.158696,
+          "source_offset_seconds": 27.593875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.66,
+      "source_duration_decoded": 41.95275,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/magasins-2.mp3",
+      "old_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+      "source_id": "9782090351958:048:47fb66740058",
+      "source_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+      "lexical_score": 0.5135135135135136,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 9.016875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 9.016875,
+          "correlation": 1.0,
+          "source_offset_seconds": 0.0
+        },
+        {
+          "old_anchor_start": 24.79225,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 24.79225,
+          "correlation": 1.0,
+          "source_offset_seconds": 0.0
+        },
+        {
+          "old_anchor_start": 40.5675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 40.5675,
+          "correlation": 1.0,
+          "source_offset_seconds": 0.0
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 52.5845,
+      "source_duration_decoded": 52.5845,
+      "source_offset_seconds": 0.0,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
+      "old_sha256": "5b831361a87db3b53474aecfb4d0b9bde39c47e8d50938788798eb714f4f616e",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.88875,
+          "anchor_seconds": 2.9625,
+          "source_anchor_start": 93.556125,
+          "correlation": 0.13356,
+          "source_offset_seconds": 92.667375
+        },
+        {
+          "old_anchor_start": 4.44375,
+          "anchor_seconds": 2.9625,
+          "source_anchor_start": 44.331,
+          "correlation": 0.103227,
+          "source_offset_seconds": 39.88725
+        },
+        {
+          "old_anchor_start": 7.99875,
+          "anchor_seconds": 2.9625,
+          "source_anchor_start": 76.738125,
+          "correlation": 0.12629,
+          "source_offset_seconds": 68.739375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 11.85,
+      "source_duration_decoded": 110.86375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-2.mp3",
+      "old_sha256": "c6f33c58ed9e989db677478602ea4ddaabd00010bf8fc0932c14d91e4709adc1",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "lexical_score": 0.5454545454545454,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.66,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 93.718125,
+          "correlation": 0.145624,
+          "source_offset_seconds": 92.058125
+        },
+        {
+          "old_anchor_start": 6.4,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 65.222,
+          "correlation": 0.071977,
+          "source_offset_seconds": 58.822
+        },
+        {
+          "old_anchor_start": 11.14,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 1.71875,
+          "correlation": 0.114009,
+          "source_offset_seconds": -9.42125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 15.8,
+      "source_duration_decoded": 110.86375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3",
+      "old_sha256": "d3102b78c280d57fb2dea33d69b8fb8c4b8dafe7f9a77bde6460e5dfce0b18af",
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.8175,
+          "anchor_seconds": 2.725,
+          "source_anchor_start": 68.5175,
+          "correlation": 0.999648,
+          "source_offset_seconds": 67.7
+        },
+        {
+          "old_anchor_start": 4.0875,
+          "anchor_seconds": 2.725,
+          "source_anchor_start": 71.7875,
+          "correlation": 0.999544,
+          "source_offset_seconds": 67.7
+        },
+        {
+          "old_anchor_start": 7.3575,
+          "anchor_seconds": 2.725,
+          "source_anchor_start": 75.0575,
+          "correlation": 0.999525,
+          "source_offset_seconds": 67.7
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 10.9,
+      "source_duration_decoded": 110.86375,
+      "source_offset_seconds": 67.7,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
+      "old_sha256": "244687dd708c6bb9d21662c909081f54382123bceb44293650ca4cf25cc8f48b",
+      "source_id": "9782090351958:054:ea3062ec1e3e",
+      "source_sha256": "ea3062ec1e3ec51123d03084e5c370d28151b20bedaefa9180b017807f66cb09",
+      "lexical_score": 0.7444444444444445,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 7.348125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 16.998125,
+          "correlation": 0.998478,
+          "source_offset_seconds": 9.65
+        },
+        {
+          "old_anchor_start": 20.62025,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 30.27025,
+          "correlation": 0.998701,
+          "source_offset_seconds": 9.65
+        },
+        {
+          "old_anchor_start": 33.8925,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 43.5425,
+          "correlation": 0.999157,
+          "source_offset_seconds": 9.65
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 44.240625,
+      "source_duration_decoded": 53.890625,
+      "source_offset_seconds": 9.65,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_08-1.mp3",
+      "old_sha256": "2a38d5e7e0fda1479435ae7f2e99b644746fe8278ae5d5a3bfef3666b3b7ac50",
+      "source_id": "9782090351958:062:a14e3edb351f",
+      "source_sha256": "a14e3edb351fc36ed0dac7868834df4f5c8a0c27ba91fe21e9a369ff6fca13f1",
+      "lexical_score": 0.6,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.2625,
+          "anchor_seconds": 0.875,
+          "source_anchor_start": 18.077125,
+          "correlation": 0.377349,
+          "source_offset_seconds": 17.814625
+        },
+        {
+          "old_anchor_start": 1.3125,
+          "anchor_seconds": 0.875,
+          "source_anchor_start": 46.721625,
+          "correlation": 0.211222,
+          "source_offset_seconds": 45.409125
+        },
+        {
+          "old_anchor_start": 2.3625,
+          "anchor_seconds": 0.875,
+          "source_anchor_start": 3.417375,
+          "correlation": 0.313605,
+          "source_offset_seconds": 1.054875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 3.5,
+      "source_duration_decoded": 96.966625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/06-école-menu-de-la-cantine.mp3",
+      "old_sha256": "8560be287b10d22d73579cf4993d9fa72b4dab094eae2abd8478465a9f4dd0cf",
+      "source_id": "9782090351958:065:3ecf4406fd74",
+      "source_sha256": "3ecf4406fd74c61348a39d8763a989a75c32f8d417f64b92e7b7678209fff886",
+      "lexical_score": 0.5490196078431373,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.79675,
+          "anchor_seconds": 2.656,
+          "source_anchor_start": 28.494,
+          "correlation": 0.288259,
+          "source_offset_seconds": 27.69725
+        },
+        {
+          "old_anchor_start": 3.984,
+          "anchor_seconds": 2.656,
+          "source_anchor_start": 42.205125,
+          "correlation": 0.130095,
+          "source_offset_seconds": 38.221125
+        },
+        {
+          "old_anchor_start": 7.171125,
+          "anchor_seconds": 2.656,
+          "source_anchor_start": 1.9575,
+          "correlation": 0.104648,
+          "source_offset_seconds": -5.213625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 10.624,
+      "source_duration_decoded": 60.786875,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-3.mp3",
+      "old_sha256": "1f81e0411716ad08147d758795181a8cd6d8f925e234b405cf68445ecb689864",
+      "source_id": "9782090351958:067:b60c1f3cd8b2",
+      "source_sha256": "b60c1f3cd8b2d765635126fd05c975587727aeba72a007a38a427d1ac70c4981",
+      "lexical_score": 0.5714285714285715,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.57,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 18.173375,
+          "correlation": 0.364324,
+          "source_offset_seconds": 17.603375
+        },
+        {
+          "old_anchor_start": 2.85,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 35.766,
+          "correlation": 0.202978,
+          "source_offset_seconds": 32.916
+        },
+        {
+          "old_anchor_start": 5.13,
+          "anchor_seconds": 1.9,
+          "source_anchor_start": 53.011125,
+          "correlation": 0.177562,
+          "source_offset_seconds": 47.881125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 7.6,
+      "source_duration_decoded": 55.327375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_02-1.mp3",
+      "old_sha256": "3b4c39578684d9232963d5119198804f8abde54471ebec2a07884b4381ef62b6",
+      "source_id": "delf_a2_2021:005:523515a4ebd7",
+      "source_sha256": "523515a4ebd7e94560c06e19e5ebddea4c1117c687e3ca492a4e59451a01028a",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.375,
+          "anchor_seconds": 1.25,
+          "source_anchor_start": 16.159625,
+          "correlation": 0.205751,
+          "source_offset_seconds": 15.784625
+        },
+        {
+          "old_anchor_start": 1.875,
+          "anchor_seconds": 1.25,
+          "source_anchor_start": 12.1505,
+          "correlation": 0.176863,
+          "source_offset_seconds": 10.2755
+        },
+        {
+          "old_anchor_start": 3.375,
+          "anchor_seconds": 1.25,
+          "source_anchor_start": 19.797125,
+          "correlation": 0.211694,
+          "source_offset_seconds": 16.422125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.0,
+      "source_duration_decoded": 21.81225,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/ecole/12-école-prêter-le-dictionnaire.mp3",
+      "old_sha256": "947ab189a97ea2d97668e3bf14098a612a9acbc06481b762cc7586822b7989af",
+      "source_id": "delf_a2_2021:025:9826d567af05",
+      "source_sha256": "9826d567af05cc879e9e743d379a0336fb91a761fb09e060d59c2bca6179bd6f",
+      "lexical_score": 0.45454545454545453,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.486375,
+          "anchor_seconds": 1.62125,
+          "source_anchor_start": 20.837,
+          "correlation": 0.190057,
+          "source_offset_seconds": 20.350625
+        },
+        {
+          "old_anchor_start": 2.432,
+          "anchor_seconds": 1.62125,
+          "source_anchor_start": 1.812,
+          "correlation": 0.226471,
+          "source_offset_seconds": -0.62
+        },
+        {
+          "old_anchor_start": 4.377625,
+          "anchor_seconds": 1.62125,
+          "source_anchor_start": 20.760125,
+          "correlation": 0.145177,
+          "source_offset_seconds": 16.3825
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.485375,
+      "source_duration_decoded": 52.819625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-4.mp3",
+      "old_sha256": "b0813f887ea109d1786ee437ce18653cbb20e90d9734ff96f178d449f9fc4c03",
+      "source_id": "delf_a2_2021:034:4c482707a98f",
+      "source_sha256": "4c482707a98ff3147581fda344cba863b0315ec01ac8bcb5ce5bd2f744d7292c",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.69,
+          "anchor_seconds": 2.3,
+          "source_anchor_start": 21.54075,
+          "correlation": 0.347058,
+          "source_offset_seconds": 20.85075
+        },
+        {
+          "old_anchor_start": 3.45,
+          "anchor_seconds": 2.3,
+          "source_anchor_start": 87.855875,
+          "correlation": 0.140544,
+          "source_offset_seconds": 84.405875
+        },
+        {
+          "old_anchor_start": 6.21,
+          "anchor_seconds": 2.3,
+          "source_anchor_start": 88.3825,
+          "correlation": 0.139318,
+          "source_offset_seconds": 82.1725
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 9.2,
+      "source_duration_decoded": 123.6115,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/12-magasin-annonce-enfant-perdu.mp3",
+      "old_sha256": "b3569ab443ce4279ca5bb83807340a45a03c43865c570f65de4be77a5d31be9c",
+      "source_id": "delf_a2_2021:034:4c482707a98f",
+      "source_sha256": "4c482707a98ff3147581fda344cba863b0315ec01ac8bcb5ce5bd2f744d7292c",
+      "lexical_score": 0.5882352941176471,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.876875,
+          "anchor_seconds": 2.922625,
+          "source_anchor_start": 18.907125,
+          "correlation": 0.135663,
+          "source_offset_seconds": 18.03025
+        },
+        {
+          "old_anchor_start": 4.384125,
+          "anchor_seconds": 2.922625,
+          "source_anchor_start": 34.223375,
+          "correlation": 0.100766,
+          "source_offset_seconds": 29.83925
+        },
+        {
+          "old_anchor_start": 7.89125,
+          "anchor_seconds": 2.922625,
+          "source_anchor_start": 30.392875,
+          "correlation": 0.103019,
+          "source_offset_seconds": 22.501625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 11.69075,
+      "source_duration_decoded": 123.6115,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-3.mp3",
+      "old_sha256": "508827e12ddcbfaf201a8cbe50771f5660140d405d27ed00ab41b0aa2bc17911",
+      "source_id": "delf_a2_2021:049:96c0df59a01d",
+      "source_sha256": "96c0df59a01d4aba11a956044eaf849f80c724bda84c054f1e92e890e7325b60",
+      "lexical_score": 0.7142857142857143,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.38925,
+          "anchor_seconds": 1.2975,
+          "source_anchor_start": 58.515,
+          "correlation": 0.291916,
+          "source_offset_seconds": 58.12575
+        },
+        {
+          "old_anchor_start": 1.94625,
+          "anchor_seconds": 1.2975,
+          "source_anchor_start": 4.817625,
+          "correlation": 0.460165,
+          "source_offset_seconds": 2.871375
+        },
+        {
+          "old_anchor_start": 3.50325,
+          "anchor_seconds": 1.2975,
+          "source_anchor_start": 16.474875,
+          "correlation": 0.926432,
+          "source_offset_seconds": 12.971625
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 5.19,
+      "source_duration_decoded": 81.893875,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
+      "old_sha256": "06df4cf8760c1cb38dcce4cf6e67a6858bc3072ff6b1fdf65d09d7f930edd71a",
+      "source_id": "delf_a2_eb2w:001:e636083d0158",
+      "source_sha256": "e636083d0158d53bd2eb37477c35cbe5174464858b07b37cc0a66b61ff0a6481",
+      "lexical_score": 0.717948717948718,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.45,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 59.97,
+          "correlation": 0.999479,
+          "source_offset_seconds": 58.52
+        },
+        {
+          "old_anchor_start": 5.875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 64.395,
+          "correlation": 0.999745,
+          "source_offset_seconds": 58.52
+        },
+        {
+          "old_anchor_start": 10.3,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 68.82,
+          "correlation": 0.99976,
+          "source_offset_seconds": 58.52
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 14.75,
+      "source_duration_decoded": 540.8915,
+      "source_offset_seconds": 58.52,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+      "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+      "source_id": "09035196:002:539c5a28e99a",
+      "source_sha256": "539c5a28e99a74e266d2773a4b1ad39745271afbe7ef8a82b1416c6b0ec7f497",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.0,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 41.2325,
+          "correlation": 0.236505,
+          "source_offset_seconds": 41.2325
+        },
+        {
+          "old_anchor_start": 0.20275,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 38.597875,
+          "correlation": 0.25005,
+          "source_offset_seconds": 38.395125
+        },
+        {
+          "old_anchor_start": 0.405625,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 66.456625,
+          "correlation": 0.327717,
+          "source_offset_seconds": 66.051
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 0.905625,
+      "source_duration_decoded": 100.44075,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/fetes/10-fêtes-conversation-Ingrid.mp3",
+      "old_sha256": "e9f31b4c725d8678eb65774595c410a9a07c64f5a98173281c8101f9223880c1",
+      "source_id": "09035196:005:db80a86103b3",
+      "source_sha256": "db80a86103b3c13c440de92f39474b47d77949cf655452e69e3c278158745657",
+      "lexical_score": 0.519298245614035,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 18.48925,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 19.555875,
+          "correlation": 0.981709,
+          "source_offset_seconds": 1.066625
+        },
+        {
+          "old_anchor_start": 48.473375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 49.54,
+          "correlation": 0.994028,
+          "source_offset_seconds": 1.066625
+        },
+        {
+          "old_anchor_start": 78.457375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 79.524,
+          "correlation": 0.990506,
+          "source_offset_seconds": 1.066625
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 99.94675,
+      "source_duration_decoded": 101.041625,
+      "source_offset_seconds": 1.066625,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-5.mp3",
+      "old_sha256": "c04024551c0115012044a5e73b37fab335dcd14e0c08ff9c7d4e738980fb75c4",
+      "source_id": "09035196:007:bd75eac6f83e",
+      "source_sha256": "bd75eac6f83e66938c96947a54cb126e1c5f3371c9ab347eca50748d87adafea",
+      "lexical_score": 0.5714285714285714,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.27,
+          "anchor_seconds": 0.9,
+          "source_anchor_start": 25.28,
+          "correlation": 0.328709,
+          "source_offset_seconds": 25.01
+        },
+        {
+          "old_anchor_start": 1.35,
+          "anchor_seconds": 0.9,
+          "source_anchor_start": 81.269375,
+          "correlation": 0.309914,
+          "source_offset_seconds": 79.919375
+        },
+        {
+          "old_anchor_start": 2.43,
+          "anchor_seconds": 0.9,
+          "source_anchor_start": 82.62475,
+          "correlation": 0.454645,
+          "source_offset_seconds": 80.19475
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 3.6,
+      "source_duration_decoded": 115.069375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/tu-viens-moi-limons-1.mp3",
+      "old_sha256": "c3910d73c2163226bd262d08fb716aa8edbeaae151d278449cf4378866efd792",
+      "source_id": "09035196:007:bd75eac6f83e",
+      "source_sha256": "bd75eac6f83e66938c96947a54cb126e1c5f3371c9ab347eca50748d87adafea",
+      "lexical_score": 0.9097345132743362,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 20.493875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 25.593875,
+          "correlation": 0.999113,
+          "source_offset_seconds": 5.1
+        },
+        {
+          "old_anchor_start": 53.484625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 58.584625,
+          "correlation": 0.998213,
+          "source_offset_seconds": 5.1
+        },
+        {
+          "old_anchor_start": 86.4755,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 91.5755,
+          "correlation": 0.999118,
+          "source_offset_seconds": 5.1
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 109.969375,
+      "source_duration_decoded": 115.069375,
+      "source_offset_seconds": 5.1,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_86-2.mp3",
+      "old_sha256": "9c55d90a47108413e954aa04e86362e6e57a556bdf903a7d46828f9dd1c3be4a",
+      "source_id": "09035196:010:23954638ae27",
+      "source_sha256": "23954638ae273cdc92a9e28234d96dd2d911b5590087d893b9bf7ef8ef97717e",
+      "lexical_score": 0.5263157894736842,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.47625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 67.77325,
+          "correlation": 0.271434,
+          "source_offset_seconds": 67.297
+        },
+        {
+          "old_anchor_start": 2.38125,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 79.421375,
+          "correlation": 0.18824,
+          "source_offset_seconds": 77.040125
+        },
+        {
+          "old_anchor_start": 4.28625,
+          "anchor_seconds": 1.5875,
+          "source_anchor_start": 0.890625,
+          "correlation": 0.267189,
+          "source_offset_seconds": -3.395625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.35,
+      "source_duration_decoded": 114.573125,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/journee-conversation.mp3",
+      "old_sha256": "b970c903821532ccb45929418c3f3854150bea76453589caebd85a8810306718",
+      "source_id": "09035196:013:44d439fabe9d",
+      "source_sha256": "44d439fabe9df4d18d5c959607fb40e3af1fed871ecdb9cfd8f84b2cfbc16911",
+      "lexical_score": 0.604895104895105,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 18.22625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 20.97625,
+          "correlation": 0.99927,
+          "source_offset_seconds": 2.75
+        },
+        {
+          "old_anchor_start": 47.815625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 50.565625,
+          "correlation": 0.999555,
+          "source_offset_seconds": 2.75
+        },
+        {
+          "old_anchor_start": 77.405,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 80.155,
+          "correlation": 0.999418,
+          "source_offset_seconds": 2.75
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 98.63125,
+      "source_duration_decoded": 101.38125,
+      "source_offset_seconds": 2.75,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-4.mp3",
+      "old_sha256": "3741dfeafc900aa0e8b5ac6f0a196d699b66422e886f97912f9a5971377deeb4",
+      "source_id": "09035196:015:575a005b1b0a",
+      "source_sha256": "575a005b1b0a203d35c63f2038cbc2879b91ca89b8e23fe18f6ecf6923388c32",
+      "lexical_score": 0.4827586206896552,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 5.683625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 15.264,
+          "correlation": 0.123442,
+          "source_offset_seconds": 9.580375
+        },
+        {
+          "old_anchor_start": 16.459125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 60.382875,
+          "correlation": 0.130106,
+          "source_offset_seconds": 43.92375
+        },
+        {
+          "old_anchor_start": 27.234625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 73.70575,
+          "correlation": 0.101806,
+          "source_offset_seconds": 46.471125
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 35.918375,
+      "source_duration_decoded": 93.727375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-aimerais-beaucoup-creer-livre.mp3",
+      "old_sha256": "0e80918676e4d0af63b265fffad2365e2ce4f88be14a5eaedbbf4936f432f16b",
+      "source_id": "09035196:015:575a005b1b0a",
+      "source_sha256": "575a005b1b0a203d35c63f2038cbc2879b91ca89b8e23fe18f6ecf6923388c32",
+      "lexical_score": 0.6947368421052632,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 16.645375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 19.645375,
+          "correlation": 0.998463,
+          "source_offset_seconds": 3.0
+        },
+        {
+          "old_anchor_start": 43.863625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 46.863625,
+          "correlation": 0.999392,
+          "source_offset_seconds": 3.0
+        },
+        {
+          "old_anchor_start": 71.081875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 74.081875,
+          "correlation": 0.999271,
+          "source_offset_seconds": 3.0
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 90.727375,
+      "source_duration_decoded": 93.727375,
+      "source_offset_seconds": 3.0,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+      "old_sha256": "e111f495f099048a6f36653f6cdb75e71434d3a661da68f76a34099d54e67a39",
+      "source_id": "09035196:017:dbf36c7a1874",
+      "source_sha256": "dbf36c7a1874dd6d767d6f851cb748b54f40b5130f37e117165ecff65a898656",
+      "lexical_score": 0.6853146853146854,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 23.683125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 25.323125,
+          "correlation": 0.999505,
+          "source_offset_seconds": 1.64
+        },
+        {
+          "old_anchor_start": 61.458,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 63.098,
+          "correlation": 0.99913,
+          "source_offset_seconds": 1.64
+        },
+        {
+          "old_anchor_start": 99.23275,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 100.87275,
+          "correlation": 0.999101,
+          "source_offset_seconds": 1.64
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 125.916,
+      "source_duration_decoded": 127.556,
+      "source_offset_seconds": 1.64,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/loisirs-radio.mp3",
+      "old_sha256": "24c090ed48a0d1a4f45d4dc6911a510a8cc1a027d132d503b8a69fd2f29b0f83",
+      "source_id": "09035196:019:8b277774cb0a",
+      "source_sha256": "8b277774cb0a3775428e5b559ae90708bf32f7d47c5c6e15004843e83ce7b6ed",
+      "lexical_score": 0.560126582278481,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 23.093125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 25.593125,
+          "correlation": 0.999535,
+          "source_offset_seconds": 2.5
+        },
+        {
+          "old_anchor_start": 59.983,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 62.483,
+          "correlation": 0.999545,
+          "source_offset_seconds": 2.5
+        },
+        {
+          "old_anchor_start": 96.872875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 99.372875,
+          "correlation": 0.999382,
+          "source_offset_seconds": 2.5
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 122.966125,
+      "source_duration_decoded": 125.466125,
+      "source_offset_seconds": 2.5,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/maison/quand-parle-pollution.mp3",
+      "old_sha256": "87f6ad54c04059ce3d9277658d58170dbc481d4b92db80e3cfd4505aadaa7ad2",
+      "source_id": "09035196:022:9409854f4721",
+      "source_sha256": "9409854f4721b13a970e26f9f100bb3e718cb38560a71f41db164b18b26e3e22",
+      "lexical_score": 0.5639097744360902,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 20.659,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 22.399,
+          "correlation": 0.999634,
+          "source_offset_seconds": 1.74
+        },
+        {
+          "old_anchor_start": 53.89775,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 55.63775,
+          "correlation": 0.999343,
+          "source_offset_seconds": 1.74
+        },
+        {
+          "old_anchor_start": 87.136375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 88.876375,
+          "correlation": 0.999239,
+          "source_offset_seconds": 1.74
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 110.7955,
+      "source_duration_decoded": 112.5355,
+      "source_offset_seconds": 1.74,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
+      "old_sha256": "7f2edf9b43e51365260d6e5a066b6cfeadbd00fcf7bf16d2fd824f992467add5",
+      "source_id": "09035196:029:cbe1b9e8fa3c",
+      "source_sha256": "cbe1b9e8fa3c00793482e50fceff1e8b0ecd300257bdb11d66e269b79b0c9561",
+      "lexical_score": 0.7222222222222223,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 23.98475,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 25.91775,
+          "correlation": 0.956565,
+          "source_offset_seconds": 1.933
+        },
+        {
+          "old_anchor_start": 62.212,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 64.145,
+          "correlation": 0.953985,
+          "source_offset_seconds": 1.933
+        },
+        {
+          "old_anchor_start": 100.439125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 102.372125,
+          "correlation": 0.951758,
+          "source_offset_seconds": 1.933
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 127.424,
+      "source_duration_decoded": 129.3845,
+      "source_offset_seconds": 1.933,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+      "old_sha256": "fda22c07315a1b1af012b8ac0d2e2ff4623e86451aefc9ba1b13e9781a71d2e6",
+      "source_id": "09035196:037:662ea39af90e",
+      "source_sha256": "662ea39af90e9720637926a6fc9a57313bbac8cf3837a16d9d2a09ca051ad3f6",
+      "lexical_score": 0.5843478260869566,
+      "status": "signal_source_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 17.4605,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 19.1805,
+          "correlation": 0.998994,
+          "source_offset_seconds": 1.72
+        },
+        {
+          "old_anchor_start": 45.90125,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 47.62125,
+          "correlation": 0.999317,
+          "source_offset_seconds": 1.72
+        },
+        {
+          "old_anchor_start": 74.342,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 76.062,
+          "correlation": 0.999536,
+          "source_offset_seconds": 1.72
+        }
+      ],
+      "offset_spread_seconds": 0.0,
+      "old_duration_decoded": 94.8025,
+      "source_duration_decoded": 96.5225,
+      "source_offset_seconds": 1.72,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-1.mp3",
+      "old_sha256": "057e8fe06d8e12da6e4d8d321a6448463fa1c6ab6e7f88d21c287c4b462bc1ca",
+      "source_id": "delf_b1_2021:033:d0618d16b2ad",
+      "source_sha256": "d0618d16b2ad3b6304dacc8bc835da30d85e4eb2bcf0856b45779ab866b77047",
+      "lexical_score": 0.6666666666666665,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.44625,
+          "anchor_seconds": 1.4875,
+          "source_anchor_start": 1.896375,
+          "correlation": 0.202755,
+          "source_offset_seconds": 1.450125
+        },
+        {
+          "old_anchor_start": 2.23125,
+          "anchor_seconds": 1.4875,
+          "source_anchor_start": 8.365625,
+          "correlation": 0.187667,
+          "source_offset_seconds": 6.134375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.95,
+      "source_duration_decoded": 120.32,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-2.mp3",
+      "old_sha256": "8db5fc608eabde0ffe4cbac8da112f7e0f64700837ce03d581edc672975ebdfe",
+      "source_id": "delf_b1_2021:033:d0618d16b2ad",
+      "source_sha256": "d0618d16b2ad3b6304dacc8bc835da30d85e4eb2bcf0856b45779ab866b77047",
+      "lexical_score": 0.6666666666666665,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.40125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 0.994375,
+          "correlation": 0.439529,
+          "source_offset_seconds": 0.593125
+        },
+        {
+          "old_anchor_start": 2.00625,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 112.182,
+          "correlation": 0.212017,
+          "source_offset_seconds": 110.17575
+        },
+        {
+          "old_anchor_start": 3.61125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 11.112,
+          "correlation": 0.180016,
+          "source_offset_seconds": 7.50075
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.35,
+      "source_duration_decoded": 120.32,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-3.mp3",
+      "old_sha256": "c6243a2a924d86ddbf59bbffceaf07dc4ec42a7100d337b86592d0267c3e7aca",
+      "source_id": "delf_b1_2021:033:d0618d16b2ad",
+      "source_sha256": "d0618d16b2ad3b6304dacc8bc835da30d85e4eb2bcf0856b45779ab866b77047",
+      "lexical_score": 0.6666666666666665,
+      "status": "signal_not_confirmed",
+      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.40125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 48.8805,
+          "correlation": 0.247468,
+          "source_offset_seconds": 48.47925
+        },
+        {
+          "old_anchor_start": 2.00625,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 69.004125,
+          "correlation": 0.345739,
+          "source_offset_seconds": 66.997875
+        },
+        {
+          "old_anchor_start": 3.61125,
+          "anchor_seconds": 1.3375,
+          "source_anchor_start": 1.401,
+          "correlation": 0.14891,
+          "source_offset_seconds": -2.21025
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.35,
+      "source_duration_decoded": 120.32,
       "source_offset_seconds": null,
       "listening_performed": false,
       "clean_boundaries_validated": false

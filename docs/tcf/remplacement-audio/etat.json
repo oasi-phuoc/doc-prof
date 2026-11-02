@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T12:19:18.447617+00:00",
+  "updated_at": "2026-11-02T18:49:22.833770+00:00",
   "received_sources": 408,
   "received_levels": {
     "a1": 180,
@@ -19,10 +19,10 @@
   "mp3_candidates": 875,
   "assembled_mp3_candidates": 5,
   "preparation_complete": true,
-  "signal_confirmed_old_refs": 617,
-  "old_refs_with_prepared_candidate": 617,
+  "signal_confirmed_old_refs": 643,
+  "old_refs_with_prepared_candidate": 643,
   "old_refs_requiring_more_segmentation": 0,
-  "candidate_alias_groups_to_review": 11,
+  "candidate_alias_groups_to_review": 10,
   "requested_refinements": {
     "schema_version": 1,
     "requested_passages": 111,
@@ -1203,10 +1203,10 @@
   "live_database_inspected": false,
   "production_modified": false,
   "full_replacement_complete": false,
-  "further_sources_expected": true,
+  "further_sources_expected": false,
   "blockers": [
     "Écoute effective des quatre frontières et du fichier final non réalisée ici.",
     "Correspondances non résolues ou ambiguës ; aucune affectation automatique.",
-    "Accès à la base Cloudflare D1 distante non configuré ; recettes non migrées."
+    "Connexion au Worker des fiches bloquée par le réseau avant authentification ; D1 non inspectée, recettes non migrées."
   ]
 }

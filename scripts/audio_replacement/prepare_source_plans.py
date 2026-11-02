@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Work-only segmentation drafts from native timed ASR; never attests listening."""
 import argparse
+import copy
 import difflib
 import hashlib
 import json
@@ -114,12 +115,16 @@ def coarticulation_groups(words):
 
 def labels(words):
     result = []
-    heads = {'document', 'dialogue', 'annonce', 'exercice', "l'exercice", 'activite', 'piste', 'partie'}
+    heads = {'document', 'dialogue', 'annonce', 'situation', 'exercice', "l'exercice", 'activite', 'activity', 'piste', 'partie'}
     for index in range(len(words)-1):
         head, following = norm(words[index]['text']), norm(words[index+1]['text'])
+        last = index+1
+        if following in ('numero','n°') and index+2 < len(words):
+            last = index+2
+            following = norm(words[last]['text'])
         if head in heads and re.fullmatch(r'\d{1,3}|un|une|deux|trois|quatre|cinq|six', following):
-            result.append({'first_word': index, 'last_word': index+1, 'label': f'{head} {following}',
-                           'type': 'document' if head in ('document', 'dialogue', 'annonce') else 'exercise'})
+            result.append({'first_word': index, 'last_word': last, 'label': f'{head} {following}',
+                           'type': 'document' if head in ('document', 'dialogue', 'annonce', 'situation') else 'exercise'})
     # Standalone sequence 1/2/3 is a candidate only with gaps on both sides.
     # Numbers embedded in a phone, price, date or sentence are never split here.
     prior_sequence = 0
@@ -217,6 +222,7 @@ def main():
     parser.add_argument('--asr-dir', type=Path, default=base/'source-asr-parakeet')
     parser.add_argument('--extra-asr', type=Path, action='append', default=[])
     parser.add_argument('--overrides', type=Path, default=base/'segmentation-overrides.json')
+    parser.add_argument('--reference-index', type=Path, help='Reuse reviewed draft plans only for exactly identical source bytes; preserve every receipt')
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--prepare-source-id', action='append', default=[])
     parser.add_argument('--compact', action='store_true')
@@ -224,22 +230,54 @@ def main():
     output = safe_work(args.output_dir)
     output.mkdir(parents=True, exist_ok=True)
     sources = load(args.catalogue)['sources']
-    by_hash = {source['sha256']: source for source in sources}
+    by_id = {source['source_id']: source for source in sources}
+    by_hash = {}
+    for source in sources:
+        by_hash.setdefault(source['sha256'], []).append(source)
     overrides = load(args.overrides) if args.overrides.exists() else {}
     overrides = overrides.get('overrides', overrides.get('sources', overrides))
+    references = {}
+    if args.reference_index:
+        for record in load(args.reference_index)['sources']:
+            if record.get('plan_integrity') == 'passed':
+                references.setdefault(record['source_sha256'], record)
     asr_paths = list(args.asr_dir.glob('*.json')) + args.extra_asr
     records, seen = [], set()
     for path in sorted(asr_paths):
         asr = load(path)
         if not isinstance(asr, dict) or asr.get('status') != 'transcribed' or 'words' not in asr:
             continue
-        source = by_hash.get(asr.get('source_sha256'))
+        source = by_id.get(asr.get('source_id'))
+        if source and source['sha256'] != asr.get('source_sha256'):
+            raise BoundaryError('ASR/source checksum mismatch: '+source['source_id'])
+        if source is None:
+            matching = by_hash.get(asr.get('source_sha256'), [])
+            source = matching[0] if len(matching) == 1 else None
         if not source or source['source_id'] in seen:
             continue
         seen.add(source['source_id'])
-        plan = make_plan(asr, source, overrides.get(source['source_id']))
-        plan['provenance']['asr_path'] = str(path)
-        plan['provenance']['asr_sha256'] = sha256(path)
+        reference = references.get(source['sha256']) if source['source_id'] not in overrides else None
+        if reference:
+            plan = copy.deepcopy(load(reference['plan_path']))
+            if plan['provenance']['source_sha256'] != source['sha256'] or sha256(source['source_file']) != source['sha256']:
+                raise BoundaryError('Reference plan/source checksum mismatch')
+            ids = {}
+            for number, segment in enumerate(plan['segments'], 1):
+                ids[segment['id']] = slug(source['source_id'])+'-d'+str(number)
+                segment.update(id=ids[segment['id']],
+                               name=source['original_filename']+' — '+segment.get('recording_label',str(number)),
+                               tags=[source['level'],source['collection'],'source-native','a-verifier'])
+            for group in plan['provenance'].get('possible_replays',[]):
+                group['segment_ids'] = [ids.get(identifier,identifier) for identifier in group['segment_ids']]
+            plan['provenance'].update(source_id=source['source_id'],source_file=source['source_file'],
+                classification_method='reference_draft_plan_exact_source_bytes_no_listening',
+                reference_plan=str(reference['plan_path']),reference_plan_sha256=sha256(reference['plan_path']),
+                reference_source_id=reference['source_id'],receipt_asr_path=str(path),receipt_asr_sha256=sha256(path),
+                listening_performed=False,production_modified=False)
+        else:
+            plan = make_plan(asr, source, overrides.get(source['source_id']))
+            plan['provenance']['asr_path'] = str(path)
+            plan['provenance']['asr_sha256'] = sha256(path)
         folder = output / slug(source['source_id'])
         folder.mkdir(exist_ok=True)
         plan_path = folder/'candidate-plan.json'
@@ -247,15 +285,20 @@ def main():
             raise BoundaryError(f'Sortie existante, choisir un nouveau output-dir : {plan_path}')
         save(plan_path, plan)
         record = {'source_id': source['source_id'], 'source_file': source['source_file'],
-                  'source_sha256': source['sha256'], 'asr_path': str(path), 'plan_path': str(plan_path),
+                  'source_sha256': source['sha256'], 'asr_path': plan['provenance']['asr_path'], 'plan_path': str(plan_path),
                   'word_count': len(plan['words']), 'segments': plan['segments'],
                   'excluded_ranges': plan['provenance']['excluded_ranges'],
                   'timing_adjustments': len(plan['provenance']['timing_adjustments']),
                   'classification_method': plan['provenance']['classification_method'],
                   'possible_replays': plan['provenance']['possible_replays'], 'status': 'candidate'}
         try:
-            plan_segments(plan, source['duration_seconds'], source['sample_rate'])
-            record['plan_integrity'] = 'passed'
+            if overrides.get(source['source_id'],{}).get('non_dialogue_source'):
+                if plan['segments'] or any(word['kind']=='dialogue' for word in plan['words']):
+                    raise BoundaryError('An administrative source exclusion must cover every word and contain no segment')
+                record.update(plan_integrity='not_applicable_no_dialogue',status='source_preserved_no_dialogue')
+            else:
+                plan_segments(plan, source['duration_seconds'], source['sample_rate'])
+                record['plan_integrity'] = 'passed'
         except BoundaryError as exc:
             record['plan_integrity'] = 'requires_correction'
             record['blocker'] = str(exc)
@@ -267,7 +310,8 @@ def main():
     index = {'schema_version': 1, 'created_at': now(), 'sources_in_catalogue': len(sources),
              'sources_with_plan': len(records), 'segments': sum(len(record['segments']) for record in records),
              'plans_passed': sum(record['plan_integrity'] == 'passed' for record in records),
-             'plans_requiring_correction': sum(record['plan_integrity'] != 'passed' for record in records),
+             'plans_requiring_correction': sum(record['plan_integrity'] not in ('passed','not_applicable_no_dialogue') for record in records),
+             'administrative_sources_preserved_without_dialogue': sum(record['plan_integrity']=='not_applicable_no_dialogue' for record in records),
              'sources_prepared': sum('manifest_path' in record for record in records),
              'listening_performed': False, 'validated_segments': 0, 'production_modified': False,
              'sources': records}

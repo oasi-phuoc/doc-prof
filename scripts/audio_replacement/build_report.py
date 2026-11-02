@@ -22,6 +22,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--work', type=Path, default=Path('/workspace/work/tcf-audio-replacement'))
     parser.add_argument('--out', type=Path, default=Path(__file__).resolve().parents[2]/'docs/tcf/remplacement-audio')
+    parser.add_argument('--delivery-complete', action='store_true', help='User confirmed all source deliveries are complete')
+    parser.add_argument('--api-network-blocked', action='store_true', help='Worker connection was blocked before authentication could be checked')
     args = parser.parse_args()
     work, out = args.work.resolve(), args.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
@@ -77,9 +79,9 @@ def main():
     for match in matches['matches']:
         candidates = []
         for candidate in match['candidates']:
-            if candidate['score'] < .65:
-                continue
             signal = signals.get((match['old_ref'],candidate['source_id']),{})
+            if candidate['score'] < .65 and signal.get('status') != 'signal_source_confirmed':
+                continue
             item = {key:candidate[key] for key in ['source_id','source_sha256','score','target_token_coverage',
                     'source_token_precision','word_first','word_last','start_estimated_seconds','end_estimated_seconds',
                     'matched_text','review_flags','digit_form_comparison','question_answer_review']}
@@ -89,10 +91,12 @@ def main():
         slim_matches.append({'old_ref':match['old_ref'], 'dialogue_id':match['dialogue_id'],
                              'exercise_ids':match['exercise_ids'], 'status':match['status'],
                              'proposed_ref':match['old_ref'], 'candidates':candidates})
-        first = candidates[0] if candidates else {}
+        confirmed = [item for item in candidates if item['signal_status'] == 'signal_source_confirmed']
+        slim_matches[-1]['source_signal_confirmed'] = bool(confirmed)
+        first = (confirmed or candidates or [{}])[0]
         csv_rows.append({'ancienne_reference':match['old_ref'], 'reference_proposee':match['old_ref'],
                          'identifiant_dialogue':match['dialogue_id'], 'exercices':';'.join(match['exercise_ids']),
-                         'statut':match['status'], 'source_id':first.get('source_id',''),
+                         'statut':'source_confirmed_requires_listening' if confirmed else match['status'], 'source_id':first.get('source_id',''),
                          'score_lexical':first.get('score',''), 'preuve_signal':first.get('signal_status',''),
                          'debut_estime':first.get('start_estimated_seconds',''),
                          'fin_estimee':first.get('end_estimated_seconds',''),
@@ -184,10 +188,11 @@ def main():
                'current_old_refs':matches['summary']['current_unique_audio_urls'],
                'lexical_matching':matches['summary']['status_counts'],
                'validated_by_listening':0, 'live_database_inspected':False, 'production_modified':False,
-               'full_replacement_complete':False, 'further_sources_expected':True,
+               'full_replacement_complete':False, 'further_sources_expected':not args.delivery_complete,
                'blockers':['Écoute effective des quatre frontières et du fichier final non réalisée ici.',
                            'Correspondances non résolues ou ambiguës ; aucune affectation automatique.',
-                           'Accès à la base Cloudflare D1 distante non configuré ; recettes non migrées.']}
+                           ('Connexion au Worker des fiches bloquée par le réseau avant authentification ; D1 non inspectée, recettes non migrées.'
+                            if args.api_network_blocked else 'Accès à la base Cloudflare D1 distante non configuré ; recettes non migrées.')]}
     write(out/'etat.json',summary)
     rows = []
     for source in sources:

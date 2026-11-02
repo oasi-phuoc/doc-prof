@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "purpose": "review-only, not an executable production mapping",
-  "signal_confirmed_refs": 617,
-  "references_with_prepared_candidate": 617,
+  "signal_confirmed_refs": 643,
+  "references_with_prepared_candidate": 643,
   "references_requiring_more_segmentation": 0,
-  "candidate_alias_groups": 11,
+  "candidate_alias_groups": 10,
   "listening_performed": false,
   "production_modified": false,
   "aliases_to_review": [
@@ -85,14 +85,6 @@
       "old_refs": [
         "/lib/audio/tcf/co/ecole/24-école-ne-pas-comprendre-l-exercice.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-4.mp3"
-      ],
-      "status": "same_candidate_review_aliases_before_promotion"
-    },
-    {
-      "candidate_sha256": "dbe527e2ae69e7c957fd20b33b2c00a171994ca67adb5694a9f4fa4f5a9d2643",
-      "old_refs": [
-        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-2.mp3",
-        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-3.mp3"
       ],
       "status": "same_candidate_review_aliases_before_promotion"
     }
@@ -1142,6 +1134,70 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T112340-f5f01dbb26/piste_a1-009-ab20da57a3f8-d4/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+      "dialogue_id": "chers-clients-magasin-ferme",
+      "exercise_ids": [
+        "tcf-ss-a1-s1-co-3"
+      ],
+      "source_id": "09035276:024:a96cd1d778d8",
+      "source_sha256": "a96cd1d778d8d8e2f9cc5a90289f04c614ec98ecfba3789189d8b96a1714d94d",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+      "lexical_score": 0.47887323943661975,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a1-s1-co-3",
+          "question_index_0based": 1,
+          "question": "Où les clients doivent-ils se diriger ?",
+          "current_correct_answer": "Vers les caisses",
+          "absent_content_tokens": [
+            "vers"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a1-s1-co-3",
+          "question_index_0based": 2,
+          "question": "Pourquoi les clients doivent-ils aller aux caisses ?",
+          "current_correct_answer": "Pour régler leurs achats",
+          "absent_content_tokens": [
+            "regler"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a1-s1-co-3",
+          "question_index_0based": 4,
+          "question": "À quelle heure le magasin ouvre-t-il lundi ?",
+          "current_correct_answer": "À 10 h",
+          "absent_content_tokens": [
+            "10"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035276-024-a96cd1d778d8-d1",
+      "candidate_sha256": "421aff953ba92e6238c989fa8934e6f08f26ad50465fdde055d7364de7318ade",
+      "proposed_name": "Mesdames Messieurs, notre magasin ferme ses portes dans 15 minutes.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Mesdames Messieurs, notre magasin ferme ses portes dans 15 minutes. Merci d'aller à la caisse pour payer vos achats. Le magasin est fermé dimanche. Nous vous accueillons lundi de 9h à 20h. Nous vous souhaitons un bon week-end.",
+      "source_start": 11.991995464852607,
+      "source_end": 27.52,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111245-7d3abe7d3b/09035276-024-a96cd1d778d8-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/magasins/chers-clients-feter-rentree.mp3",
       "dialogue_id": "chers-clients-feter-rentree",
       "exercise_ids": [
@@ -1659,6 +1715,61 @@
       "source_start": 2.96,
       "source_end": 28.68,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111234-29cce06d00/09035276-011-ffcde40035ac-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-piscine-ferme.mp3",
+      "dialogue_id": "mesdames-messieurs-piscine-ferme",
+      "exercise_ids": [
+        "tcf-ss-a1-s11-co-4"
+      ],
+      "source_id": "09035276:030:0445b7cdb353",
+      "source_sha256": "0445b7cdb3539be40542ac04750dbc654b58f84c5b0ff1569e5789ee9d5867de",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-piscine-ferme.mp3",
+      "lexical_score": 0.7032967032967035,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "possible_instruction_or_numbering_within_seed",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a1-s11-co-4",
+          "question_index_0based": 0,
+          "question": "Dans combien de temps la piscine ferme-t-elle ?",
+          "current_correct_answer": "15 minutes",
+          "absent_content_tokens": [
+            "15"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a1-s11-co-4",
+          "question_index_0based": 1,
+          "question": "Où les usagers doivent-ils se rendre ?",
+          "current_correct_answer": "Aux vestiaires",
+          "absent_content_tokens": [
+            "vestiaire"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035276-030-0445b7cdb353-d1",
+      "candidate_sha256": "f2dd74237462f7f6a7f30390fdda32ccd9458a3a49ea5e268d410a3c812f8169",
+      "proposed_name": "Messieurs dames, la piscine ferme ses portes dans 30 minutes.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Messieurs dames, la piscine ferme ses portes dans 30 minutes. Merci de sortir de l'eau et d'aller vers les douches. La piscine est ouverte demain de 8h30 à 18h30. N'oubliez pas de prendre le programme des activités en sortant. Bonne soirée à tous.",
+      "source_start": 4.16,
+      "source_end": 23.72,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111250-364575d594/09035276-030-0445b7cdb353-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-zoo-ouvert.mp3",
@@ -2285,6 +2396,40 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111300-b11f07a909/09035276-042-909bfbcce118-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3",
+      "dialogue_id": "mesdames-messieurs-bonsoir",
+      "exercise_ids": [
+        "tcf-ss-a1-s46-co-2"
+      ],
+      "source_id": "09035276:026:cc7467b0c6d3",
+      "source_sha256": "cc7467b0c6d38b01b1a2e7dd7c2d78be96a06fd142354b6d331a2e6a62bcef2b",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-bonsoir.mp3",
+      "lexical_score": 0.5287356321839081,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "possible_instruction_or_numbering_within_seed",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035276-026-cc7467b0c6d3-d1",
+      "candidate_sha256": "951a3d9e2de88e475f648248dff1f95294417326473b9e25f55ab185a93c2fc9",
+      "proposed_name": "Bonjour, votre film va commencer dans 15 minutes.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Bonjour, votre film va commencer dans 15 minutes. Vous pouvez acheter des boissons au bar du premier étage. Les toilettes sont au deuxième étage, à côté de la salle 10. A la fin du film, vous devez sortir par la porte située à droite de l'écran. Bon film à tous.",
+      "source_start": 3.36,
+      "source_end": 22.68,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111247-eed2c8f40e/09035276-026-cc7467b0c6d3-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/cette-semaine-encore-cinema-2.mp3",
       "dialogue_id": "cette-semaine-encore-cinema-2",
       "exercise_ids": [
@@ -2906,6 +3051,81 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111259-2a4fdb6388/09035276-041-08962d9705b4-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-destination.mp3",
+      "dialogue_id": "mesdames-messieurs-train-destination",
+      "exercise_ids": [
+        "tcf-ss-a1-s53-co-3"
+      ],
+      "source_id": "09035276:027:10f0dd53bf08",
+      "source_sha256": "10f0dd53bf08601b1714f8355c5e7b1c7d0a2eeef0b2fbf22c233e171812ec6e",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-destination.mp3",
+      "lexical_score": 0.559322033898305,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a1-s53-co-3",
+          "question_index_0based": 0,
+          "question": "De quelle voie part le train ?",
+          "current_correct_answer": "La voie 3",
+          "absent_content_tokens": [
+            "3"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a1-s53-co-3",
+          "question_index_0based": 2,
+          "question": "Dans quelle ville le train s'arrête-t-il à 11 h 22 ?",
+          "current_correct_answer": "Lyon",
+          "absent_content_tokens": [
+            "lyon"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a1-s53-co-3",
+          "question_index_0based": 3,
+          "question": "À quelle heure arrive-t-il à Paris ?",
+          "current_correct_answer": "12 h 03",
+          "absent_content_tokens": [
+            "03",
+            "12"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a1-s53-co-3",
+          "question_index_0based": 4,
+          "question": "Quelles informations faut-il écrire sur les bagages ?",
+          "current_correct_answer": "Son adresse et son téléphone",
+          "absent_content_tokens": [
+            "telephone"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035276-027-10f0dd53bf08-d1",
+      "candidate_sha256": "f8323d2ae48ebdf9a915d935317cfba4e966054e6ad344867e1b58ceff8f8b42",
+      "proposed_name": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 1h25. Merci de mettre une étiquette sur vos bagages avec vos nom et adresses. Gardez bien votre billet avec vous pendant tout le voyage.",
+      "source_start": 6.295986394557823,
+      "source_end": 31.824013605442175,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111248-9a7cd1b4dd/09035276-027-10f0dd53bf08-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-station-republique.mp3",
       "dialogue_id": "mesdames-messieurs-station-republique",
       "exercise_ids": [
@@ -2937,6 +3157,49 @@
       "source_start": 6.24,
       "source_end": 26.04,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111252-5c6d12741b/09035276-032-819605add0b0-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/transports/bonjour-desirez-1-1.mp3",
+      "dialogue_id": "bonjour-desirez-1-1",
+      "exercise_ids": [
+        "tcf-ss-a1-s54-co-2"
+      ],
+      "source_id": "09035276:047:b3c0fdfac8a8",
+      "source_sha256": "b3c0fdfac8a888811a5dc5fa965664349bbc43d5246439e8b2739e89424fb985",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/transports/bonjour-desirez-1-1.mp3",
+      "lexical_score": 0.7428571428571428,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a1-s54-co-2",
+          "question_index_0based": 0,
+          "question": "Qui est appelé dans le premier dialogue ?",
+          "current_correct_answer": "Mikael",
+          "absent_content_tokens": [
+            "mikael"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035276-047-b3c0fdfac8a8-r2-d1",
+      "candidate_sha256": "32c03995302e157ff1ba4118e0980440c796ff4cf96015a17bd3e948a606f9fe",
+      "proposed_name": "Michael, tu m'aides à sortir les courses de la voiture s'il te plaît Oui, j'arrive.",
+      "proposed_tags": [
+        "a1",
+        "09035276",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Michael, tu m'aides à sortir les courses de la voiture s'il te plaît Oui, j'arrive.",
+      "source_start": 8.377981859410431,
+      "source_end": 13.434013605442177,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120800-2dc73c0ede/09035276-047-b3c0fdfac8a8-r2-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/bonjour-desirez-1-2.mp3",
@@ -5577,8 +5840,9 @@
       ],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "delf_a1_2022-021-af4e4a968728-d1",
-      "candidate_sha256": "dbe527e2ae69e7c957fd20b33b2c00a171994ca67adb5694a9f4fa4f5a9d2643",
+      "assignment_method": "distinct_utterance_selected_from_three_waveform_anchor_positions_not_repeated_identical_words; preserve_recorded_occurrence_and_intonation; listening_still_required",
+      "candidate_cut_id": "delf_a1_2022-021-af4e4a968728-d2",
+      "candidate_sha256": "e4548296ad0bca104725ec07d01e082ab903fce7a6c21dba5ebdc7ea418efe4c",
       "proposed_name": "C'est une grande maison",
       "proposed_tags": [
         "a1",
@@ -5588,9 +5852,9 @@
         "court"
       ],
       "proposed_transcription": "C'est une grande maison",
-      "source_start": 3.76,
-      "source_end": 5.72,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111603-f80daa5051/delf_a1_2022-021-af4e4a968728-d1/candidate.mp3"
+      "source_start": 8.64,
+      "source_end": 10.6,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111603-f80daa5051/delf_a1_2022-021-af4e4a968728-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-3.mp3",
@@ -5618,8 +5882,9 @@
       ],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "delf_a1_2022-021-af4e4a968728-d1",
-      "candidate_sha256": "dbe527e2ae69e7c957fd20b33b2c00a171994ca67adb5694a9f4fa4f5a9d2643",
+      "assignment_method": "distinct_utterance_selected_from_three_waveform_anchor_positions_not_repeated_identical_words; preserve_recorded_occurrence_and_intonation; listening_still_required",
+      "candidate_cut_id": "delf_a1_2022-021-af4e4a968728-d3",
+      "candidate_sha256": "705ab5087731b4181afcc7ef6ebd34a4e802c69305f031a2d08ae5156ad5018f",
       "proposed_name": "C'est une grande maison",
       "proposed_tags": [
         "a1",
@@ -5629,9 +5894,9 @@
         "court"
       ],
       "proposed_transcription": "C'est une grande maison",
-      "source_start": 3.76,
-      "source_end": 5.72,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111603-f80daa5051/delf_a1_2022-021-af4e4a968728-d1/candidate.mp3"
+      "source_start": 13.44,
+      "source_end": 15.32,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111603-f80daa5051/delf_a1_2022-021-af4e4a968728-d3/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_21-5.mp3",
@@ -5648,8 +5913,9 @@
       "question_answer_review": [],
       "status": "prepared_candidate_requires_listening_and_question_review",
       "listening_performed": false,
-      "candidate_cut_id": "delf_a1_2022-021-af4e4a968728-d4",
-      "candidate_sha256": "421b33d57dc6e25066ecc32eac50e5a7e10c9b4a42cc0f4e4da9a487a223bd48",
+      "assignment_method": "distinct_utterance_selected_from_three_waveform_anchor_positions_not_repeated_identical_words; preserve_recorded_occurrence_and_intonation; listening_still_required",
+      "candidate_cut_id": "delf_a1_2022-021-af4e4a968728-d5",
+      "candidate_sha256": "79ae1f18f43f656f4640d8ab71587f72cc89f671b95739a6677148104cabd591",
       "proposed_name": "Le voyage est long",
       "proposed_tags": [
         "a1",
@@ -5659,9 +5925,9 @@
         "court"
       ],
       "proposed_transcription": "Le voyage est long",
-      "source_start": 18.32,
-      "source_end": 19.8,
-      "candidate_work_file": "staged-boundaries-work/run-20261102T111603-f80daa5051/delf_a1_2022-021-af4e4a968728-d4/candidate.mp3"
+      "source_start": 22.879977324263038,
+      "source_end": 24.44,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111603-f80daa5051/delf_a1_2022-021-af4e4a968728-d5/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_22-1.mp3",
@@ -6045,6 +6311,39 @@
       "source_start": 10.32,
       "source_end": 21.88,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111613-2cd6086a9f/delf_a1_2022-025-f51720efd4b0-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-2.mp3",
+      "dialogue_id": "delf_a1_2022_piste_25-2",
+      "exercise_ids": [
+        "delf-a1-2022-co-ex2-25"
+      ],
+      "source_id": "delf_a1_2022:025:f51720efd4b0",
+      "source_sha256": "f51720efd4b00833725328c39264a82b0a1db863754a5058c61581295b269966",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-2.mp3",
+      "lexical_score": 0.6818181818181818,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a1_2022-025-f51720efd4b0-d2",
+      "candidate_sha256": "a53628639b3ad7e505d6280ca8f07f16c2f9e8b8a4258dcd55fd3febb19761d9",
+      "proposed_name": "Mesdames, Messieurs, votre attention s'il plaît.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Mesdames, Messieurs, votre attention s'il plaît. Le train TGV 1210 à destination de Nantes partira avec 10 minutes de retard.",
+      "source_start": 30.88798185941043,
+      "source_end": 43.40800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111613-2cd6086a9f/delf_a1_2022-025-f51720efd4b0-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-3.mp3",
@@ -6494,6 +6793,40 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111623-970d7ba938/delf_a1_2022-030-abd914d309ec-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-2.mp3",
+      "dialogue_id": "delf_a1_2022_piste_30-2",
+      "exercise_ids": [
+        "delf-a1-2022-co-ex3-30"
+      ],
+      "source_id": "delf_a1_2022:030:abd914d309ec",
+      "source_sha256": "abd914d309ec512dde3b5c8494d33cba7586b061121f33c1109741756f57b8e4",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-2.mp3",
+      "lexical_score": 0.5333333333333333,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "assignment_method": "three_waveform_anchors_place_the_old_clip_at_8.35_to_15.70_seconds; useful_utterance_at_10.40_to_13.64; midi_and_12_h_00_are_textually_equivalent; listening_still_required",
+      "candidate_cut_id": "delf_a1_2022-030-abd914d309ec-d2",
+      "candidate_sha256": "31f0c58c8771c51de484e69b07162980899e4eef2abf4e2a8d87d87759105abf",
+      "proposed_name": "Le déjeuner avec le directeur est à midi.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Le déjeuner avec le directeur est à midi.",
+      "source_start": 10.4,
+      "source_end": 13.64,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111623-970d7ba938/delf_a1_2022-030-abd914d309ec-d2/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-3.mp3",
       "dialogue_id": "delf_a1_2022_piste_30-3",
       "exercise_ids": [
@@ -6522,6 +6855,51 @@
       "source_start": 16.95997732426304,
       "source_end": 21.08,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111623-970d7ba938/delf_a1_2022-030-abd914d309ec-d3/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-4.mp3",
+      "dialogue_id": "delf_a1_2022_piste_30-4",
+      "exercise_ids": [
+        "delf-a1-2022-co-ex3-30"
+      ],
+      "source_id": "delf_a1_2022:030:abd914d309ec",
+      "source_sha256": "abd914d309ec512dde3b5c8494d33cba7586b061121f33c1109741756f57b8e4",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-4.mp3",
+      "lexical_score": 0.7142857142857143,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "delf-a1-2022-co-ex3-30",
+          "question_index_0based": 7,
+          "question": "À quelle heure commence-t-il ?",
+          "current_correct_answer": "9 h 45",
+          "absent_content_tokens": [
+            "45",
+            "9"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a1_2022-030-abd914d309ec-d4",
+      "candidate_sha256": "3e8b5b1976d5f42ffc535131d57ebf31e33d8a1d54382765b05e85379e65c849",
+      "proposed_name": "Votre entretien commence à 10h moins le quart.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Votre entretien commence à 10h moins le quart.",
+      "source_start": 24.583990929705216,
+      "source_end": 27.904013605442177,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111623-970d7ba938/delf_a1_2022-030-abd914d309ec-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_30-5.mp3",
@@ -7294,6 +7672,51 @@
       "source_start": 3.68,
       "source_end": 11.48,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111640-f9c855bfe2/delf_a1_2022-039-ee5aa0d4a74a-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_39-2.mp3",
+      "dialogue_id": "delf_a1_2022_piste_39-2",
+      "exercise_ids": [
+        "delf-a1-2022-co-ex4-39"
+      ],
+      "source_id": "delf_a1_2022:039:ee5aa0d4a74a",
+      "source_sha256": "ee5aa0d4a74a212f6344de0a7d138764f61949c04163df861c2a0259e095fb6a",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_39-2.mp3",
+      "lexical_score": 0.6111111111111112,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "delf-a1-2022-co-ex4-39",
+          "question_index_0based": 5,
+          "question": "Comment Louis est-il décrit ?",
+          "current_correct_answer": "Petit et blond",
+          "absent_content_tokens": [
+            "blond",
+            "petit"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a1_2022-039-ee5aa0d4a74a-d2",
+      "candidate_sha256": "2957fc846b6727f7964f452b6ea6ed30b1caba0e791303084ef7c4a35ecc9dd2",
+      "proposed_name": "Louis a 23 ans.",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Louis a 23 ans. C'est le secrétaire de la directrice.",
+      "source_start": 14.32,
+      "source_end": 19.64,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111640-f9c855bfe2/delf_a1_2022-039-ee5aa0d4a74a-d2/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_39-3.mp3",
@@ -9690,6 +10113,49 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111749-814dcad616/delf_a1_2022-078-39ed581e6068-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-2.mp3",
+      "dialogue_id": "delf_a1_2022_piste_78-2",
+      "exercise_ids": [
+        "delf-a1-2022-co-78"
+      ],
+      "source_id": "delf_a1_2022:078:39ed581e6068",
+      "source_sha256": "39ed581e6068a899c458b2288d0fc781e047c5cec3225fdbc1890b360b8024b7",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-2.mp3",
+      "lexical_score": 0.7142857142857143,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "delf-a1-2022-co-78",
+          "question_index_0based": 1,
+          "question": "Quelle information est demandée ?",
+          "current_correct_answer": "Les langues parlées",
+          "absent_content_tokens": [
+            "parlee"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a1_2022-078-39ed581e6068-d2",
+      "candidate_sha256": "fd61482463f8ea8049b3b66c4cdbe4151f3bb8b3a1b064a93ef17afb6bb07758",
+      "proposed_name": "Quelle langue est-ce que vous parlez?",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Quelle langue est-ce que vous parlez?",
+      "source_start": 8.64,
+      "source_end": 11.48,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111749-814dcad616/delf_a1_2022-078-39ed581e6068-d2/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-3.mp3",
       "dialogue_id": "delf_a1_2022_piste_78-3",
       "exercise_ids": [
@@ -11186,6 +11652,38 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111702-267c8a9980/delf_a1_2022-049-b02d6bac2289-d3/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3",
+      "dialogue_id": "delf_a1_2022_piste_50",
+      "exercise_ids": [
+        "delf-a1-2022-co-ex5-50"
+      ],
+      "source_id": "delf_a1_2022:050:2d8ad201371f",
+      "source_sha256": "2d8ad201371f541b1188338fb837db0cd8af04604b195f64173bb074dd011aff",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_50.mp3",
+      "lexical_score": 0.625,
+      "review_flags": [
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a1_2022-050-2d8ad201371f-d1",
+      "candidate_sha256": "3eab18a7f75613d78b70c87a04f8b3f67e70d0eb0a976f1503c03fca5a408bc0",
+      "proposed_name": "Activité cinquante Objet numéro un passeport Objet numéro deux Une lettre Objet numéro trois Un diplôme Objet numéro",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Activité cinquante Objet numéro un passeport Objet numéro deux Une lettre Objet numéro trois Un diplôme Objet numéro quatre Une valise Objet numéro 5 Un sac",
+      "source_start": 0.0,
+      "source_end": 30.496009070294786,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111704-ff79daefb2/delf_a1_2022-050-2d8ad201371f-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_51.mp3",
       "dialogue_id": "delf_a1_2022_piste_51",
       "exercise_ids": [
@@ -11214,6 +11712,38 @@
       "source_start": 0.0,
       "source_end": 36.25600907029479,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111705-3f7f4f620a/delf_a1_2022-051-82aa2ad382a4-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
+      "dialogue_id": "delf_a1_2022_piste_52",
+      "exercise_ids": [
+        "delf-a1-2022-co-ex5-52"
+      ],
+      "source_id": "delf_a1_2022:052:bc4e91cb6629",
+      "source_sha256": "bc4e91cb6629724c737fd7533e8e27dc3e94d38b429241f61e136ed8b75738db",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
+      "lexical_score": 0.6341463414634146,
+      "review_flags": [
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a1_2022-052-bc4e91cb6629-d1",
+      "candidate_sha256": "8925025848da9a96b93d71bdb96ddae91cec3ed18d076adce6a65557cc951d97",
+      "proposed_name": "Objet numéro 1 Un savon Objet numéro 2 Un menu Objet numéro 3 Une chemise Objet numéro 4",
+      "proposed_tags": [
+        "a1",
+        "delf_a1_2022",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Objet numéro 1 Un savon Objet numéro 2 Un menu Objet numéro 3 Une chemise Objet numéro 4 Du papier toilette Objet numéro 5, une addition. Objet numéro 6 Une jupe.",
+      "source_start": 2.88,
+      "source_end": 38.96,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111706-f0010992fb/delf_a1_2022-052-bc4e91cb6629-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_53.mp3",
@@ -13291,6 +13821,49 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T112121-e16351d8d9/delf_a2_eb1w-004-1ec4b6331d56-d4/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
+      "dialogue_id": "les-annonces-publiques-6-1",
+      "exercise_ids": [
+        "tcf-a2-sb-co-1"
+      ],
+      "source_id": "delf_a2_eb2w:001:e636083d0158",
+      "source_sha256": "e636083d0158d53bd2eb37477c35cbe5174464858b07b37cc0a66b61ff0a6481",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-1.mp3",
+      "lexical_score": 0.717948717948718,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-a2-sb-co-1",
+          "question_index_0based": 2,
+          "question": "Que veulent connaître les assistants ?",
+          "current_correct_answer": "L’avis des clients sur les services",
+          "absent_content_tokens": [
+            "avis"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d1",
+      "candidate_sha256": "7197d9134ba4588a9589a203bf3cf116441289d9873f9a79e3c2902c8f47228a",
+      "proposed_name": "Cher client, êtes-vous des services de votre magasin?",
+      "proposed_tags": [
+        "a2",
+        "delf_a2_eb2w",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Cher client, êtes-vous des services de votre magasin? Nos assistants vont venir vers vous pour vous poser des questions. Merci d'y répondre.",
+      "source_start": 62.56798185941043,
+      "source_end": 72.36800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120959-aa0b30767f/delf_a2_eb2w-001-e636083d0158-r2-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-2.mp3",
       "dialogue_id": "les-annonces-publiques-6-2",
       "exercise_ids": [
@@ -13762,6 +14335,82 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T112155-05cb067bdc/delf_a2_eb2w-004-adb4c61350d8-d4/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/magasins/magasins-2.mp3",
+      "dialogue_id": "magasins-2",
+      "exercise_ids": [
+        "tcf-ss-a2-s2-co-3"
+      ],
+      "source_id": "9782090351958:048:47fb66740058",
+      "source_sha256": "47fb66740058b32472b8136d3ac7623428309cf09a70e523ae69b3599d3450ae",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/magasins/magasins-2.mp3",
+      "lexical_score": 0.5135135135135136,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a2-s2-co-3",
+          "question_index_0based": 1,
+          "question": "Dans quel rayon les promotions ont-elles lieu ?",
+          "current_correct_answer": "Sport et nature",
+          "absent_content_tokens": [
+            "nature"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a2-s2-co-3",
+          "question_index_0based": 2,
+          "question": "À quelle heure les promotions commencent-elles ?",
+          "current_correct_answer": "À 14 h",
+          "absent_content_tokens": [
+            "14",
+            "h"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a2-s2-co-3",
+          "question_index_0based": 3,
+          "question": "À quelle heure les promotions se terminent-elles ?",
+          "current_correct_answer": "À 20 h",
+          "absent_content_tokens": [
+            "20",
+            "h"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a2-s2-co-3",
+          "question_index_0based": 4,
+          "question": "Quelle réduction s’applique aux vêtements de sport ?",
+          "current_correct_answer": "30 %",
+          "absent_content_tokens": [
+            "30"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "9782090351958-048-47fb66740058-d1",
+      "candidate_sha256": "ec3c4855a8ba68bbcd961da1270f168ecd65f0dc799b7f13bfc471c10030032c",
+      "proposed_name": "Lisez les questions.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Lisez les questions. Écoutez l'enregistrement, puis répondez. Vous êtes dans un grand magasin en France. Vous entendez cette annonce. Répondez aux questions. C'est la semaine européenne du sport. You will have a reduction exceptionnelle. The equipment de montagne are at mountain 40%, and the chaussures de sport for enfants are a more price. En plus, if you achieve 4 articles, the 5 is offert. Nos vendors attend.",
+      "source_start": 5.24,
+      "source_end": 50.592018140589566,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111449-03053488e2/9782090351958-048-47fb66740058-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
       "dialogue_id": "magasins-3-1",
       "exercise_ids": [
@@ -13877,6 +14526,38 @@
       "source_start": 48.61598639455782,
       "source_end": 62.656009070294786,
       "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d3/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3",
+      "dialogue_id": "magasins-3-4",
+      "exercise_ids": [
+        "tcf-ss-a2-s3-co-3"
+      ],
+      "source_id": "9782090351958:049:a4431f87ae61",
+      "source_sha256": "a4431f87ae61175f42764e9be38995308b7ae8812677b3cdda5c291cfb632b6a",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/magasins/magasins-3-4.mp3",
+      "lexical_score": 0.6666666666666666,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
+      ],
+      "question_answer_review": [],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d4",
+      "candidate_sha256": "017fb872b80db3c47288eaf391dc9b6fdad6bb1dc2abbba7360c70f69a44c142",
+      "proposed_name": "Vous ne savez pas quoi offrir à votre mère pour sa fête?",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "court"
+      ],
+      "proposed_transcription": "Vous ne savez pas quoi offrir à votre mère pour sa fête? Achetez-lui une carte cadeau, elle pourra choisir parmi des centaines d'articles. Vêtements, bijoux, parfum, chapeau.",
+      "source_start": 67.46399092970522,
+      "source_end": 77.74401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120822-024ebd277a/9782090351958-049-a4431f87ae61-r2-d4/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/magasins-3-5.mp3",
@@ -14686,6 +15367,49 @@
       "source_start": 2.0239909297052154,
       "source_end": 43.04,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111452-5406725115/9782090351958-051-c1b7ec577e0b-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
+      "dialogue_id": "vie-quotidienne-29",
+      "exercise_ids": [
+        "tcf-ss-a2-s16-co-1"
+      ],
+      "source_id": "9782090351958:054:ea3062ec1e3e",
+      "source_sha256": "ea3062ec1e3ec51123d03084e5c370d28151b20bedaefa9180b017807f66cb09",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-29.mp3",
+      "lexical_score": 0.7444444444444445,
+      "review_flags": [
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a2-s16-co-1",
+          "question_index_0based": 7,
+          "question": "Qui donnera des informations à l’ouverture ?",
+          "current_correct_answer": "Les clubs",
+          "absent_content_tokens": [
+            "club"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "9782090351958-054-ea3062ec1e3e-d1",
+      "candidate_sha256": "6746c1836ba946fdf3341d9c02cb367f5a40b25626f6dccc65060664e9403749",
+      "proposed_name": "Lisez les questions Écoutez l'enregistrement puis répondez Vous êtes à Marseille Vous entendez cette annonce à la radio",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Lisez les questions Écoutez l'enregistrement puis répondez Vous êtes à Marseille Vous entendez cette annonce à la radio locale The Nouve Centre Sportif de la Plaine will be à l'ouest de Marseille in one semaine. You pratique de nombreuses sports, participation, and competition, from mardi au dimanche, de 9h à 21h. For demander votre carte d'abonnés à prix réduit, venez le jour de l'ouverture, samedi 1. L'équipe sera là pour vous donner des informations sur le calendrier des matchs, les horaires des différents cours et les tarifs.",
+      "source_start": 3.095986394557823,
+      "source_end": 52.04800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111458-d530997645/9782090351958-054-ea3062ec1e3e-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-30.mp3",
@@ -15960,6 +16684,74 @@
       "source_start": 87.48,
       "source_end": 98.72,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111410-faf314ac02/9782090351958-020-ed311afde286-d4/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-22.mp3",
+      "dialogue_id": "vie-quotidienne-22",
+      "exercise_ids": [
+        "tcf-ss-a2-s51-co-1"
+      ],
+      "source_id": "9782090351958:043:cae491191637",
+      "source_sha256": "cae491191637a4269bb79ebc7e0e1d5188833123ed68cf5041d6ebfb9d10fca3",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-22.mp3",
+      "lexical_score": 0.528,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-a2-s51-co-1",
+          "question_index_0based": 0,
+          "question": "Qui téléphone ?",
+          "current_correct_answer": "Le magasin de jeux vidéo",
+          "absent_content_tokens": [
+            "jeux",
+            "magasin",
+            "video"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a2-s51-co-1",
+          "question_index_0based": 2,
+          "question": "Quels documents devez-vous apporter pour retirer la commande ?",
+          "current_correct_answer": "Le bon de commande et une carte d'identité",
+          "absent_content_tokens": [
+            "bon",
+            "carte",
+            "commande",
+            "identite"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-a2-s51-co-1",
+          "question_index_0based": 3,
+          "question": "Quel type de produit avez-vous commandé ?",
+          "current_correct_answer": "Un jeu vidéo",
+          "absent_content_tokens": [
+            "video"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "9782090351958-043-cae491191637-d1",
+      "candidate_sha256": "0389c6c73d3afef6d8803f83363251c9383d6bb7912c4bb84d8616dc6984e29a",
+      "proposed_name": "Lisez les questions Écoute l'enregistrement, puis répondez.",
+      "proposed_tags": [
+        "a2",
+        "9782090351958",
+        "source-native",
+        "a-verifier",
+        "moyen"
+      ],
+      "proposed_transcription": "Lisez les questions Écoute l'enregistrement, puis répondez. Vous habitez en France. Vous entendez ce message sur votre répondeur. The magazine d'electronique EuroVideo. Nous vous appelons pour vous dire que le jeu Voyage in Espagne is arrived in our magazine of the rue Saint Rome. You can chercher du mardi au vendredi, the matin only.",
+      "source_start": 4.983990929705215,
+      "source_end": 33.61600907029479,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111444-cd0cd7a759/9782090351958-043-cae491191637-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-23.mp3",
@@ -22368,6 +23160,67 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111204-db78ca0161/09035196-033-d3440a21d221-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/magasins/tu-viens-moi-limons-1.mp3",
+      "dialogue_id": "tu-viens-moi-limons-1",
+      "exercise_ids": [
+        "tcf-ss-b1-s1-co-2"
+      ],
+      "source_id": "09035196:007:bd75eac6f83e",
+      "source_sha256": "bd75eac6f83e66938c96947a54cb126e1c5f3371c9ab347eca50748d87adafea",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/magasins/tu-viens-moi-limons-1.mp3",
+      "lexical_score": 0.9097345132743362,
+      "review_flags": [],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s1-co-2",
+          "question_index_0based": 4,
+          "question": "De quelle nationalité est le peintre Modigliani ?",
+          "current_correct_answer": "Italienne",
+          "absent_content_tokens": [
+            "italienne"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s1-co-2",
+          "question_index_0based": 6,
+          "question": "Quelle nationalité Sami attribue-t-il à Picasso ?",
+          "current_correct_answer": "Espagnole",
+          "absent_content_tokens": [
+            "espagnole"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s1-co-2",
+          "question_index_0based": 9,
+          "question": "À quel siècle une élève situe-t-elle l'impressionnisme ?",
+          "current_correct_answer": "Au XIXe siècle",
+          "absent_content_tokens": [
+            "xixe"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-007-bd75eac6f83e-r2-d1",
+      "candidate_sha256": "0dc331538dbb6593234d620f344e447679ab2c3ce1fe4e4f6664338699031d37",
+      "proposed_name": "Bonjour et bonne rentrée.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Bonjour et bonne rentrée. Je suis votre nouvelle professeure d'art plastique. Je m'appelle Lise Barbera et c'est moi qui vous enseigneuré tout ce qui touche à l'art cette année. Nous définirons ensemble quels sont les arts plastiques et nous apprenons quelques techniques de dessin et de peinture. Évidemment, il y aura aussi des leçons d'histoire de l'art Pour faire connaissance, nous allons parler un peu de vos goûts en peinture. Voyons un peu. Vous allez me dire votre nom et me dire ce que vous aimez. D'accord ? Commençons par vous mademoiselles Je m'appelle Juliette et j'aime beaucoup l'art moderne comme par exemple... Les tableaux du peintre italien Modigliani. Oui, d'accord. Connaissez-vous un autre peintre qui fait partie du style art moderne ? Oui ! Picasso. Peux-tu nous dire ton nom et qui est Picasso? Moi, c'est Sammy. Et je sais que Picasso est espagnol et qu'il a vécu à Paris. Très bien. Et vous, quel style de peinture préférez-vous ? Moi, je connais un autre peintre espagnol Salvador Dali, celui qui a peint les Montre-Molle, c'est du surréalisme. Très bien. Connaissez-vous des peintres français Oui, moi. Alors, je m'appelle Rita et je connais les peintres français impressionnistes comme Monet et Degas. Quelqu'un sait dire quelle est la période de l'impressionnisme et ce que cela signifie. Je crois que la période est le 19e siècle et que les impressionnistes peignaient des tableaux sans faire de dessins avant et que ces tableaux donnaient une impression de mouvement. Merci. Je vois que ce sujet vous intéresse. Nous allons bien travailler ensemble cette année.",
+      "source_start": 4.89,
+      "source_end": 112.39401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T120753-1363670d88/09035196-007-bd75eac6f83e-r2-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/actualite/07-actualité-annonymat-sur-internet.mp3",
       "dialogue_id": "07-actualité-annonymat-sur-internet",
       "exercise_ids": [
@@ -22566,6 +23419,114 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111138-7af06e526a/09035196-010-23954638ae27-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
+      "dialogue_id": "10-radio-loisirs-préférés-des-adolescents",
+      "exercise_ids": [
+        "tcf-ss-b1-s2-co-4"
+      ],
+      "source_id": "09035196:029:cbe1b9e8fa3c",
+      "source_sha256": "cbe1b9e8fa3c00793482e50fceff1e8b0ecd300257bdb11d66e269b79b0c9561",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/radio/10-radio-loisirs-préférés-des-adolescents.mp3",
+      "lexical_score": 0.7222222222222223,
+      "review_flags": [
+        "possible_instruction_or_numbering_within_seed"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 0,
+          "question": "À quel public est destinée cette émission ?",
+          "current_correct_answer": "Aux adolescents",
+          "absent_content_tokens": [
+            "adolescent"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 1,
+          "question": "D'après les sondages, quel est le loisir préféré des filles ?",
+          "current_correct_answer": "Les sorties entre amies",
+          "absent_content_tokens": [
+            "amie"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 2,
+          "question": "Quel sport Myriam pratique-t-elle ?",
+          "current_correct_answer": "La gymnastique",
+          "absent_content_tokens": [
+            "gymnastique"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 3,
+          "question": "Pourquoi Myriam a-t-elle arrêté plusieurs activités ?",
+          "current_correct_answer": "Pour avoir davantage de temps libre et de liberté",
+          "absent_content_tokens": [
+            "avoir",
+            "davantage",
+            "liberte"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 4,
+          "question": "Pourquoi Christopher ne considère-t-il pas le tennis comme un loisir ?",
+          "current_correct_answer": "Il le distingue du temps libre dont il dispose librement",
+          "absent_content_tokens": [
+            "dispose",
+            "distingue",
+            "dont",
+            "librement"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 5,
+          "question": "Quelle serait la journée idéale de Myriam ?",
+          "current_correct_answer": "Sortir et voir ses copains librement",
+          "absent_content_tokens": [
+            "librement"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s2-co-4",
+          "question_index_0based": 9,
+          "question": "Avec qui Myriam fait-elle parfois des spectacles au lycée ?",
+          "current_correct_answer": "Trois copines",
+          "absent_content_tokens": [
+            "3"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-029-cbe1b9e8fa3c-d1",
+      "candidate_sha256": "5f3d18413262ae9c1f863d72bbb52bb3b76fdbec4a3a3c45a26bbdca8856090d",
+      "proposed_name": "Bonjour et bienvenue sur Radio Zig Zag Aujourd'hui nous allons parler de vos loisirs préférés à vous les",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Bonjour et bienvenue sur Radio Zig Zag Aujourd'hui nous allons parler de vos loisirs préférés à vous les ados Selon des sondages, c'est le football qui est en tête chez les garçons de 12 à 18 ans avec 76% de préférence. Et les sorties entre copines chez les filles avec 53% de préférence. Juste devant les activités artistiques, en général, 47,5%. Est-ce que ces sondagètent la réalité des jeunes d'aujourd'hui? Pour en parler, nous avons deux invités sur le plateau, Myriam et Christopher. Myriam, tu as 17 ans, is that? Oui, je suis en terminale au lycée Goethe. And tes loisirs préférés? Fopping, tout ça. When she's petite, je faisais de la gym acrobatic, du ballet, du piano, la totale, quoi. But. Now it's the gymnastics acrobatic that you continue. With three copines, we have a pet spectacle on lycée when it's why you arrest the other activities? Et toi, Christopher, quels sont tes loisirs préférés et que penses-tu de l'opinion de Myriam? Je suis complètement d'accord avec elle. Je pense qu'il y a une grosse différence entre le temps libre qui est à nous et ce qu'on nous impose comme activité. Moi, par exemple, j'ai tennis tous les lundis et mercredis c'est une activité extra-scolaire, mais je ne considère pas que ce soit du loisir. Et quels seraient vos loisirs idéaux, ou bien que feriez-vous avec plus de temps libre pour vous? Pour moi sans hésitation, un jour entier pour sortir, aller voir les copains et faire ce que je veux sans les parents. Et pour toi, Christopher? Pas de cours de tennis et un après-midi et une soirée en plus complètement libre. Peut-être avec la famille, mais pas planifié à l'avance.",
+      "source_start": 5.943990929705215,
+      "source_end": 128.2560090702948,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111159-16c2f1d969/09035196-029-cbe1b9e8fa3c-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/famille-radio.mp3",
       "dialogue_id": "famille-radio",
       "exercise_ids": [
@@ -22631,6 +23592,107 @@
       "source_start": 9.847981859410432,
       "source_end": 135.48800453514738,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111150-f0b16c0160/09035196-021-336970ba1e15-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/fetes/10-fêtes-conversation-Ingrid.mp3",
+      "dialogue_id": "10-fêtes-conversation-Ingrid",
+      "exercise_ids": [
+        "tcf-ss-b1-s4-co-1"
+      ],
+      "source_id": "09035196:005:db80a86103b3",
+      "source_sha256": "db80a86103b3c13c440de92f39474b47d77949cf655452e69e3c278158745657",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/fetes/10-fêtes-conversation-Ingrid.mp3",
+      "lexical_score": 0.519298245614035,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-1",
+          "question_index_0based": 2,
+          "question": "Pourquoi le frère d'Ingrid doit-il étudier tout le week-end ?",
+          "current_correct_answer": "Il prépare son examen de fin d'année",
+          "absent_content_tokens": [
+            "prepare"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-1",
+          "question_index_0based": 3,
+          "question": "Pourquoi l'expérience de Samuel n'a-t-elle pas été positive ?",
+          "current_correct_answer": "Sa sœur l'a empêché de sortir",
+          "absent_content_tokens": [
+            "empeche",
+            "soeur",
+            "sortir"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-1",
+          "question_index_0based": 4,
+          "question": "Qu'est-ce que la sœur de Samuel a dit aux parents ?",
+          "current_correct_answer": "Ce que Samuel n'a pas fait de bien",
+          "absent_content_tokens": [
+            "bien"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-1",
+          "question_index_0based": 5,
+          "question": "Qu'a rapporté la sœur de Samuel au sujet de ses activités et de ses devoirs ?",
+          "current_correct_answer": "Il a manqué son cours de guitare et pris du retard dans ses devoirs",
+          "absent_content_tokens": [
+            "cour",
+            "guitare",
+            "manque",
+            "pris"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-1",
+          "question_index_0based": 8,
+          "question": "Comment Samuel décrit-il la sévérité de sa sœur ?",
+          "current_correct_answer": "Elle était encore plus sévère que ses parents",
+          "absent_content_tokens": [
+            "etait",
+            "plus",
+            "severe"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-1",
+          "question_index_0based": 9,
+          "question": "Quand Ingrid décide-t-elle de faire ses devoirs ?",
+          "current_correct_answer": "En avance, avant le week-end",
+          "absent_content_tokens": [
+            "avant"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-005-db80a86103b3-d1",
+      "candidate_sha256": "0964f9e136dcab98c41e4841ae6680ddc948b860e1acd1c8a3c20328de89742d",
+      "proposed_name": "Salut Samuel Salut Ingrid, tu as l'air de bonne humeur, tu as appris une bonne nouvelle?",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Salut Samuel Salut Ingrid, tu as l'air de bonne humeur, tu as appris une bonne nouvelle? Oh oui! Je viens d'apprendre que mes parents partent en week-end et qu'ils nous laissent tout seul, mon grand frère et moi, pendant deux jours à la maison. Pour une fois qu'ils n'appellent pas mes grands parents pour venir nous surveiller. Oui. Et qu'est-ce que vous comptez faire? Je n'en ai pas encore parlé avec mon frère. I'm going to fight at the maison, inviting amis, organiser a barbecue. I never said mo Al méfie-toi because it made arrive the mess, and my grand sir, who se senti responsible, has been the role des parents pendant three years. Ah bon? Wait. And my parents are rent, elle a fait un compte rendu du weekend. Elle a dit how many time I've passed the telephone, because I'm already a court of guitar, my retard in the devoirs. You know, it's the weekend ideal. Oh but that already an idea. My devoir en avance for be tranquille and m'organiser avec mon frère dès maintenant for l'invitation des amis. Mais he ne doit pas passer son examen de fin d'année, ton frère? Tu has reason, j'avais oublié. He does étudier too weekend. Zut. He ne voudra jamais organiser une fête. Bon. But.",
+      "source_start": 1.975986394557823,
+      "source_end": 96.88,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111133-5dabf67b15/09035196-005-db80a86103b3-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/01-radio-importance-du-look-vestimentaire.mp3",
@@ -22705,6 +23767,107 @@
       "source_start": 6.96,
       "source_end": 86.56,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111149-d9fb86004f/09035196-020-b1b4e9c355f7-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/journee-conversation.mp3",
+      "dialogue_id": "journee-conversation",
+      "exercise_ids": [
+        "tcf-ss-b1-s4-co-3"
+      ],
+      "source_id": "09035196:013:44d439fabe9d",
+      "source_sha256": "44d439fabe9df4d18d5c959607fb40e3af1fed871ecdb9cfd8f84b2cfbc16911",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/journee-conversation.mp3",
+      "lexical_score": 0.604895104895105,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-3",
+          "question_index_0based": 0,
+          "question": "Comment Élisa juge-t-elle son stage d'escalade ?",
+          "current_correct_answer": "Elle l'a trouvé génial",
+          "absent_content_tokens": [
+            "trouve"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-3",
+          "question_index_0based": 1,
+          "question": "Pourquoi Élisa n'a-t-elle pas donné beaucoup de nouvelles ?",
+          "current_correct_answer": "Elle n'avait pas une minute de libre",
+          "absent_content_tokens": [
+            "libre"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-3",
+          "question_index_0based": 2,
+          "question": "Que faisait le groupe avant d'arriver aux falaises ?",
+          "current_correct_answer": "Il marchait une demi-heure avec le matériel",
+          "absent_content_tokens": [
+            "marchait",
+            "materiel"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-3",
+          "question_index_0based": 3,
+          "question": "Pourquoi Élisa n'a-t-elle parfois pas pu escalader ?",
+          "current_correct_answer": "Le niveau était trop élevé",
+          "absent_content_tokens": [
+            "eleve",
+            "niveau"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-3",
+          "question_index_0based": 7,
+          "question": "Comment Élisa a-t-elle aussi appris pendant le stage ?",
+          "current_correct_answer": "En observant ses camarades plus expérimentés",
+          "absent_content_tokens": [
+            "camarade",
+            "experimente",
+            "observant"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s4-co-3",
+          "question_index_0based": 9,
+          "question": "Pourquoi les participants se couchaient-ils tard ?",
+          "current_correct_answer": "Ils écoutaient de la musique et se racontaient des blagues",
+          "absent_content_tokens": [
+            "blague",
+            "ecoutaient",
+            "musique",
+            "racontaient"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-013-44d439fabe9d-d1",
+      "candidate_sha256": "a3a50e17423dabfed8e64d1666db0c5a21dec5f4e555c1027669eaa494671252",
+      "proposed_name": "Papa, c'était genial ce stage d'escalade!",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Papa, c'était genial ce stage d'escalade! Raconte moi, j'ai hâte de savoir ce que tu as fait pendant ces 4 jours. It's hyper intense. On avait pas une minute, pas le temps de s'ennuyer. Ah ça, j'ai bien compris. Tu ne nous as pas trop donné de nouvelles. You say, we seven. It fallait vite s'habiller and prendre le petit déjeuner. Ensuite on partait à pied with all the material that prepared the monitor to render the lieu d'escalade. It had just a demi-hear de march, and in plus it faisait chaud. And after on escalader. C'est normal, ce n'est que ta deuxième année d'apprentissage. Oui, mais j'ai beaucoup appris aussi en regardant mes copains qui font de l'escalade depuis plus longtemps. Jim, par exemple, en fait depuis six ans. Il est très fort. Vous escaladiez toute la journée? Oui. Et vers 17 heures, on rentrait au gîte et on se baignait dans la rivière. L'eau était glacée, mais c'était très rafraîchissant après une journée aussi intense. And after on prepared repas tous ensemble, on cuisinaient des pâtes, and one, Mathieu, the monitor, a few des grillades. Sauf the source, on managing in pizzeria. And at 22 heures we ally dormir? No. Once a tard parce que it's telling me to be together, to go to the music and to recent blague. I'm very. I'm very amusing. J'ai rencontrée plein de nouvelles personnes trop sympathiques.",
+      "source_start": 2.48,
+      "source_end": 100.66401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111142-86dbae1831/09035196-013-44d439fabe9d-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/journee-radio-1.mp3",
@@ -22901,6 +24064,170 @@
       "source_start": 2.8079818594104307,
       "source_end": 180.43201814058958,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111208-15d7487f88/09035196-036-a79a2771f57e-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+      "dialogue_id": "loisirs-annonce",
+      "exercise_ids": [
+        "tcf-ss-b1-s6-co-2"
+      ],
+      "source_id": "09035196:037:662ea39af90e",
+      "source_sha256": "662ea39af90e9720637926a6fc9a57313bbac8cf3837a16d9d2a09ca051ad3f6",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/loisirs/loisirs-annonce.mp3",
+      "lexical_score": 0.5843478260869566,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s6-co-2",
+          "question_index_0based": 4,
+          "question": "Dans quelle ville Angèle va-t-elle passer plus de temps ?",
+          "current_correct_answer": "Bruxelles",
+          "absent_content_tokens": [
+            "bruxelle"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s6-co-2",
+          "question_index_0based": 6,
+          "question": "Combien de personnes sont attendues à chacun des quatre grands concerts ?",
+          "current_correct_answer": "Vingt mille personnes",
+          "absent_content_tokens": [
+            "1000",
+            "personne"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s6-co-2",
+          "question_index_0based": 7,
+          "question": "Combien de temps s'est écoulé depuis les débuts évoqués sur Instagram ?",
+          "current_correct_answer": "Trois ans",
+          "absent_content_tokens": [
+            "ans"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s6-co-2",
+          "question_index_0based": 8,
+          "question": "Comment Angèle décrit-elle la vitesse de son succès ?",
+          "current_correct_answer": "Elle a été très rapide",
+          "absent_content_tokens": [
+            "rapide",
+            "tres"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-037-662ea39af90e-d1",
+      "candidate_sha256": "f3700fe221dfc781a1752b4c23bf638a7ff303ea2d7f2aec1ae8e00413391da9",
+      "proposed_name": "Elle était en tête des ventes en 2019 et à quelques jours des victoires de la musique où",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Elle était en tête des ventes en 2019 et à quelques jours des victoires de la musique où elle a été nommée dans trois catégories, à quelques jours aussi de quatre grands concerts, les 18, 19, 20 et 21 février. Voici Angèle. Bonjour Angèle. Bonjour. Après la super tournée, qu'est-ce que vous allez faire? Je vais faire des festivals parce que je me suis dit que j'allais regretter de ne pas les faire. La suite, on verra, comme vous dites dans la chanson. Dans cette chanson, d'ailleurs, vous dites, j'ai commencé sur Instagram des petits concerts dans des bars vides, et ma baby sitter, la première à me suivre. Non, c'était il y a. It's a truck de fou! En même temps I'm habituée at that rapidity. I ate vraiment vite. I've jamais imagined en arrivé là in si peu de temps. Donc je profite. It's that is étonnant because after the generation of artists, they met these days to install, to devenir célèbre, conquérir their independent, and you, you have to the success and you have to imposing your style, your liberty. You travaille with who you will, you have the maîtrise artistic for what you have. The milieu dans lequel j'ai grandi, mes parents musiciens and my frère rappeur m'ont apporté beaucoup de soutien and connaissance du travail qui demande énormément de série, enormement de rigueur, and that je l'ai appris en voyant mes parents.",
+      "source_start": 2.1359863945578232,
+      "source_end": 95.23201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111209-9fe78d33b9/09035196-037-662ea39af90e-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/loisirs/loisirs-radio.mp3",
+      "dialogue_id": "loisirs-radio",
+      "exercise_ids": [
+        "tcf-ss-b1-s7-co-1"
+      ],
+      "source_id": "09035196:019:8b277774cb0a",
+      "source_sha256": "8b277774cb0a3775428e5b559ae90708bf32f7d47c5c6e15004843e83ce7b6ed",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/loisirs/loisirs-radio.mp3",
+      "lexical_score": 0.560126582278481,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s7-co-1",
+          "question_index_0based": 2,
+          "question": "Comment se sent Julia lorsqu'elle danse devant un public ?",
+          "current_correct_answer": "Elle se sent très bien",
+          "absent_content_tokens": [
+            "sent"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s7-co-1",
+          "question_index_0based": 3,
+          "question": "Quel effet Julia attribue-t-elle à la danse sur sa croissance ?",
+          "current_correct_answer": "Elle dit que sa croissance s'est arrêtée",
+          "absent_content_tokens": [
+            "arretee",
+            "dit"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s7-co-1",
+          "question_index_0based": 4,
+          "question": "Quels avantages Julia trouve-t-elle au métier de danseuse ?",
+          "current_correct_answer": "Voyager et avoir des projets variés",
+          "absent_content_tokens": [
+            "avoir",
+            "projet",
+            "varie",
+            "voyager"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s7-co-1",
+          "question_index_0based": 8,
+          "question": "Quel problème économique du métier Julia évoque-t-elle ?",
+          "current_correct_answer": "Les salaires sont généralement bas",
+          "absent_content_tokens": [
+            "generalement"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s7-co-1",
+          "question_index_0based": 9,
+          "question": "Quel métier Julia aimerait-elle exercer plus tard ?",
+          "current_correct_answer": "Chorégraphe",
+          "absent_content_tokens": [
+            "choregraphe"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-019-8b277774cb0a-d1",
+      "candidate_sha256": "c144588d3d34a6360cd227e62d9f75ca406c0191045b059462cf4dc3ff1a8a31",
+      "proposed_name": "C'est l'heure de parole d'ado.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "C'est l'heure de parole d'ado. Un portrait artistique ce matin avec Julia, 15 ans, elle se prépare à une carrière de danseuse and suit for cela une formation en danse contemporaine au conservatoire de Paris. When I arrive à rentrer dans la danse, she's libre and bien fou. It's a moment incroyable. And le feeling passe avec le public à l'intérieur de soi, c'est comme un jeu. On peut définir la danse de diverses manières, entre autres comme un langage à travers des mouvements. La danse, c'est vraiment un jeu de mouvement. Tu prends un mouvement et tu essaies de faire passer quelque chose. Julia danse depuis qu'elle a 3 ans, donc depuis plus de 10 ans, elle mobilise son corps intensément et donc physiquement, ça l'a changé. La danse is a sport, and it has arrêted totally my croissance, and en plus en danse contemporaine, on danse au sol, the corps s'étire more than danse classique, for example. It could sort of jour au lendemain But it's also magic parce que chaque jour is different. We've jamais the memory project, on voyage, it's asrichissant. And your avenue from danseuse? It's a salaire très bas in general, même dans des troupe magnifique. Parlez-nous du plaisir de la scène. It's a super moment. It's magic. It's not too come in studio. When the public en face, it's his regard and it's to gard your attention, it's surprising. It's come at the radio. It's natural. And chorégraph, not simply danseuse. Car to pass his idea.",
+      "source_start": 5.68,
+      "source_end": 124.65600907029479,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111148-dc75c8f948/09035196-019-8b277774cb0a-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/mutee-saint-denis-jeune-1.mp3",
@@ -23322,6 +24649,104 @@
       "candidate_work_file": "staged-boundaries-work/run-20261102T111136-9f603dc1ef/09035196-008-b099aeb5181a-d1/candidate.mp3"
     },
     {
+      "old_ref": "/lib/audio/tcf/co/maison/quand-parle-pollution.mp3",
+      "dialogue_id": "quand-parle-pollution",
+      "exercise_ids": [
+        "tcf-ss-b1-s9-co-4"
+      ],
+      "source_id": "09035196:022:9409854f4721",
+      "source_sha256": "9409854f4721b13a970e26f9f100bb3e718cb38560a71f41db164b18b26e3e22",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/maison/quand-parle-pollution.mp3",
+      "lexical_score": 0.5639097744360902,
+      "review_flags": [],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s9-co-4",
+          "question_index_0based": 2,
+          "question": "Quel est l'objectif de cette journée pour les fumeurs ?",
+          "current_correct_answer": "Les aider à arrêter et à sortir de la dépendance",
+          "absent_content_tokens": [
+            "aider",
+            "sortir"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s9-co-4",
+          "question_index_0based": 3,
+          "question": "Quelle est la plus grande difficulté après l'arrêt du tabac selon l'émission ?",
+          "current_correct_answer": "Ne pas recommencer à fumer",
+          "absent_content_tokens": [
+            "recommencer"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s9-co-4",
+          "question_index_0based": 4,
+          "question": "Quel piège lors d'une fête est évoqué après l'arrêt du tabac ?",
+          "current_correct_answer": "Reprendre une cigarette et recommencer à fumer",
+          "absent_content_tokens": [
+            "cigarette",
+            "recommencer",
+            "reprendre"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s9-co-4",
+          "question_index_0based": 5,
+          "question": "Quels aspects faut-il prendre en compte pour arrêter de fumer ?",
+          "current_correct_answer": "La psychologie et la dépendance à la nicotine",
+          "absent_content_tokens": [
+            "psychologie"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s9-co-4",
+          "question_index_0based": 7,
+          "question": "Quelles aides au sevrage sont citées ?",
+          "current_correct_answer": "Les patchs, les gommes et les pastilles",
+          "absent_content_tokens": [
+            "gomme",
+            "pastille",
+            "patch"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s9-co-4",
+          "question_index_0based": 9,
+          "question": "Quel argument économique peut motiver l'arrêt selon l'émission ?",
+          "current_correct_answer": "Les économies réalisées sur l'achat des cigarettes",
+          "absent_content_tokens": [
+            "achat",
+            "cigarette",
+            "realisee"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-022-9409854f4721-d1",
+      "candidate_sha256": "f1178cb0c40e6a66fece4f16c84a884c87bf273f2aa09c8642ffa64f98009829",
+      "proposed_name": "On parle santé ce jeudi 31 mai, c'est comme chaque année la journée mondiale sans tabac.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "On parle santé ce jeudi 31 mai, c'est comme chaque année la journée mondiale sans tabac. Associations, médecins et hôpitaux se sont mobilisés pour faire un travail d'information auprès des fumeurs qui, malgré les campagnes, les interdictions, continue de fumer. Ils sont toujours aussi nombreux, un Français sur trois fume aujourd'hui. France is même un des plus mauvaises eleves in Europe, and the risques are connu. The objective of this journey is to aid the fumers to arrest, to sort of the dependent. Arrêter fuming is totally. The piège is une soirée. Les techniques d'arrêt sont simples. C'est un travail sur la dépendance à la nicotine et ensuite travailler sur l'image du tabac. Donc en clair, il faut lier un traitement à la nicotine et un traitement cognitif et sur le comportement et entretenir la motivation. C'est pour ça qu'on appelle nos consultations consultations d'aide à l'arrêt du tabac, et non anti-taba, car l'arrêt est aussi psychologique que dépendant. For arrest of fuming, you can prove one reason. It is the argument economic. The economies that you ferry. For example, with a paquet de 6,20 €, if you en fumez one paquet par jour, you economisez prone 2300 euros par an.",
+      "source_start": 5.0639909297052155,
+      "source_end": 111.72800453514739,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111151-36b91f0e9c/09035196-022-9409854f4721-d1/candidate.mp3"
+    },
+    {
       "old_ref": "/lib/audio/tcf/co/maison/quarante-ans-apres-l-ouverture-1.mp3",
       "dialogue_id": "quarante-ans-apres-l-ouverture-1",
       "exercise_ids": [
@@ -23414,6 +24839,101 @@
       "source_start": 2.535986394557823,
       "source_end": 97.39201814058957,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111156-219fee8b04/09035196-026-6e0681770440-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-aimerais-beaucoup-creer-livre.mp3",
+      "dialogue_id": "j-aimerais-beaucoup-creer-livre",
+      "exercise_ids": [
+        "tcf-ss-b1-s10-co-4"
+      ],
+      "source_id": "09035196:015:575a005b1b0a",
+      "source_sha256": "575a005b1b0a203d35c63f2038cbc2879b91ca89b8e23fe18f6ecf6923388c32",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/j-aimerais-beaucoup-creer-livre.mp3",
+      "lexical_score": 0.6947368421052632,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s10-co-4",
+          "question_index_0based": 1,
+          "question": "Quel point commun avec la Polynésie est attribué à l'eau près des plages ?",
+          "current_correct_answer": "Sa couleur turquoise",
+          "absent_content_tokens": [
+            "couleur"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s10-co-4",
+          "question_index_0based": 2,
+          "question": "Quelle activité aime particulièrement Erwan ?",
+          "current_correct_answer": "Il aime se promener au bord de l'océan",
+          "absent_content_tokens": [
+            "bord",
+            "promener"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s10-co-4",
+          "question_index_0based": 3,
+          "question": "Quels lieux lui conseille-t-on de visiter dans la ville ?",
+          "current_correct_answer": "La cathédrale et la vieille ville",
+          "absent_content_tokens": [
+            "vieille"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s10-co-4",
+          "question_index_0based": 7,
+          "question": "Quels bâtiments caractérisent notamment la vieille ville ?",
+          "current_correct_answer": "Des maisons à pans de bois",
+          "absent_content_tokens": [
+            "pans"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s10-co-4",
+          "question_index_0based": 8,
+          "question": "Que vont-ils manger à midi ?",
+          "current_correct_answer": "Une galette bretonne",
+          "absent_content_tokens": [
+            "galette"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s10-co-4",
+          "question_index_0based": 9,
+          "question": "À qui Louise veut-elle rapporter des souvenirs ?",
+          "current_correct_answer": "À ses amis et à sa famille",
+          "absent_content_tokens": [
+            "amis",
+            "famille"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-015-575a005b1b0a-d1",
+      "candidate_sha256": "be2ec3248a61a778edc9a4fe580dd60233fcc8ee99810ab02109d79a01a5d273",
+      "proposed_name": "Bienvenue Louise.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Bienvenue Louise. Tu as fait bon voyage alors? Tu vas voir, il y a beaucoup de choses à voir dans ma ville et ma région. Erwan, j'ai très envie de découvrir Quimper et la Bretagne. J'adore l'océan. J'espère que nous pourrons aller nous baigner. Bien sûr. On est tout près de la côte. It's de belles plages avec du sable blanc et l'eau est turquoise comme en Polynésie. Mais attention! La température de l'eau te rappellera vite que tu es en Bretagne. Si tu aimes les vagues, nous pourrons aller un jour vers la presqu'île de Crozon. Waouh! J'aimerais vraiment. Et tu fais du surf? Non. Je ne fais pas de surf. Je préfère les randonnées sur les sentiers de la côte. Et donc, Quimpère, qu'est-ce que tu me conseilles de voir? In fact, the view of Quimper is plain de jolly petite place, ruelles, de maisons à pan de bois. You have the impression of a saut in the past. This village rich of history. You can visit the cathedrale Saint Corentin, it is telling it that you want partout in the village. You decouri the gastronomy also, gourmand. Tu ne seras pas déçu. Et puis, dans les prochains jours, on ira goûter les specialités de pâtisserie, promis. Bon, mais après, il faudra qu'on aille faire de longues randonnées. Je voudrais aussi acheter des souvenirs à my family. Tu me donneras des ideas? Tu auras l'embarras du choix. Les villes bretonnes sont touristiques and il y a des boutiques de souvenirs à tous les coins de rue.",
+      "source_start": 2.6639909297052156,
+      "source_end": 92.87201814058957,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111144-d7890fb7a7/09035196-015-575a005b1b0a-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/en-moins-d-une-dizaine-1.mp3",
@@ -23609,6 +25129,127 @@
       "source_start": 2.727981859410431,
       "source_end": 85.07201814058956,
       "candidate_work_file": "staged-boundaries-work/run-20261102T111145-27d71917af/09035196-016-919ecc7fa151-d1/candidate.mp3"
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+      "dialogue_id": "presenter-radio",
+      "exercise_ids": [
+        "tcf-ss-b1-s12-co-2"
+      ],
+      "source_id": "09035196:017:dbf36c7a1874",
+      "source_sha256": "dbf36c7a1874dd6d767d6f851cb748b54f40b5130f37e117165ecff65a898656",
+      "signal_status": "signal_source_confirmed",
+      "proposed_ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-radio.mp3",
+      "lexical_score": 0.6853146853146854,
+      "review_flags": [
+        "seed_extends_beyond_lexical_matches_do_not_use_as_cut",
+        "digit_forms_differ_requires_fact_check_not_automatic_correction"
+      ],
+      "question_answer_review": [
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 0,
+          "question": "Combien de temps a réellement duré la pause de M. Pokora, selon lui ?",
+          "current_correct_answer": "2 mois",
+          "absent_content_tokens": [
+            "2",
+            "mois"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 1,
+          "question": "Combien de titres M. Pokora a-t-il créés pendant sa pause selon le journaliste ?",
+          "current_correct_answer": "16 titres",
+          "absent_content_tokens": [
+            "16"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 2,
+          "question": "Quelle activité a donné à M. Pokora l'idée de Pyramide ?",
+          "current_correct_answer": "Regarder un documentaire puis des films à la télévision",
+          "absent_content_tokens": [
+            "puis",
+            "regarder",
+            "television"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 3,
+          "question": "Quels effets spéciaux sont présents dans ses concerts ?",
+          "current_correct_answer": "Des feux d'artifice et des lasers",
+          "absent_content_tokens": [
+            "artifice",
+            "feux",
+            "laser"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 4,
+          "question": "Qu'est-ce qui manquait à M. Pokora ?",
+          "current_correct_answer": "La danse",
+          "absent_content_tokens": [
+            "danse"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 5,
+          "question": "De quoi M. Pokora souhaite-t-il parler dans Pyramide ?",
+          "current_correct_answer": "De lui-même et de ses doutes",
+          "absent_content_tokens": [
+            "meme"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 7,
+          "question": "Pourquoi sa pause réelle a-t-elle été plus courte que prévu ?",
+          "current_correct_answer": "Il a commencé à s'ennuyer",
+          "absent_content_tokens": [
+            "ennuyer"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        },
+        {
+          "exercise_id": "tcf-ss-b1-s12-co-2",
+          "question_index_0based": 9,
+          "question": "Quel classement l'album Pyramide a-t-il atteint en France ?",
+          "current_correct_answer": "La première place des ventes d'albums",
+          "absent_content_tokens": [
+            "place",
+            "premiere",
+            "vente"
+          ],
+          "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+        }
+      ],
+      "status": "prepared_candidate_requires_listening_and_question_review",
+      "listening_performed": false,
+      "candidate_cut_id": "09035196-017-dbf36c7a1874-d1",
+      "candidate_sha256": "412a3c1c3df610073eee27502d217d32a452f85ea9419fa8926f3518e9dbe318",
+      "proposed_name": "Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur Mpokora pour une interview exclusive.",
+      "proposed_tags": [
+        "b1",
+        "09035196",
+        "source-native",
+        "a-verifier",
+        "long"
+      ],
+      "proposed_transcription": "Nous avons aujourd'hui le plaisir et la chance d'avoir avec nous le chanteur Mpokora pour une interview exclusive. Mpokora, bonjour. Bonjour, le plaisir est pour moi. Après l'immense succès de ton album My Way, plus de 600 000 exemplaires vendus, tu as décidé de faire un an de pause. When I feel a pause, I respect the thousand and pause, but you have created six titles and a new album. Wait, that's right. It's a bit of that. Et comment tu as eu l'idée de ton nouvel album Pyramide? Ben justement, j'étais devant la télé je regardais un documentaire qui s'appelle Dans le secret des Pyramides. Juste après, j'ai regardé plusieurs films Marvel avec des super-héros, parce que c'est un style que j'aime bien, et là, bam, l'idée m'est venue. Faire l'album Pyramide avec un monde fantastique un peu futur. J'ai eu des images dans ma tête et j'ai appelé mon équipe pour qu'on commence à travailler. C'est un univers que l'on retrouve dans tes concerts? Oui, les décors sont impressionnants. Pyramid a été un immense succès. Tu es arrivé premier au classement des albums français les plus vendus. On sent que tu as mis beaucoup de toi dans cette album. Tu parles vrai, tu parles sans filtre, tu parles de tes doutes. Oui, c'est vrai. J'ai cherché à me retrouver après avoir chanté longtemps les textes des autres. And this pause, I mean posed a question, notamment to know if j'allais ou non arrêter ma carrière de chanteur. If me restait trois minutes là for, and I did quoi? Pyramide, qui est également devenu le titre de l'album.",
+      "source_start": 5.04,
+      "source_end": 126.46401360544218,
+      "candidate_work_file": "staged-boundaries-work/run-20261102T111146-d9d84e4566/09035196-017-dbf36c7a1874-d1/candidate.mp3"
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/le-premier-film-d-edouard-1.mp3",
