@@ -6,7 +6,7 @@ Reprendre d’abord les variantes retirées lors de l’audit visuel. Les textes
 
 Lot CE prioritaire : **12 illustrations validées visuellement et 11 variantes QCM image CE activées**. Les deux variantes relatives aux légumes et aux équipements de hockey/neige sont maintenant incluses. La première version du théâtre avait des bras supplémentaires : elle a été écartée, corrigée et seule la seconde version est utilisée.
 
-Le lot comporte désormais **24 nouvelles images CE validées et 32 variantes CE activées au total**, dont les 11 reprises prioritaires. Les réutilisations sont contrôlées visuellement et consignées (téléphone fixe, pommes de terre, théâtre, parking, tarte aux pommes, crème glacée et petit-déjeuner). Les correspondances trompeuses restent écartées : le casque audio ne remplace pas un casque de vélo, et une lampe de chevet ne remplace pas une lampe de bureau.
+Le lot comporte désormais **30 nouvelles images CE validées et 40 variantes CE activées au total**, dont les 11 reprises prioritaires. Les réutilisations sont contrôlées visuellement et consignées (téléphone fixe, pommes de terre, théâtre, parking, tarte aux pommes, crème glacée, petit-déjeuner, musée et hôtel de ville). Les correspondances trompeuses restent écartées : le casque audio ne remplace pas un casque de vélo, et une lampe de chevet ne remplace pas une lampe de bureau.
 
 Le registre reproductible [images-generees.json](images-generees.json) conserve les fichiers, empreintes, contrôles visuels et références des questions activées. Les QCM texte et les corrigés sont conservés. Les montants, dates, jours et mois ne sont pas ajoutés dans les images.
 

@@ -19,8 +19,8 @@
       "identité ou catégorie abstraite": 5,
       "concepts visuels existants identiques entre plusieurs réponses": 1
     },
-    "generated_reviewed_assets": 24,
-    "activated_ce_questions_this_batch": 32
+    "generated_reviewed_assets": 30,
+    "activated_ce_questions_this_batch": 40
   },
   "questions": [
     {
@@ -1726,7 +1726,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -2315,7 +2315,7 @@
           "asset": "640c7c11101e"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -2452,8 +2452,8 @@
           "id": "a",
           "texte": "L'hôtel de ville",
           "correct": true,
-          "existing_image": null,
-          "asset": "98453d119856"
+          "existing_image": "/lib/images/tcf/co/bg/mairie.webp",
+          "asset": null
         },
         {
           "id": "b",
@@ -2470,7 +2470,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -2590,11 +2590,11 @@
           "id": "c",
           "texte": "Dans les musées",
           "correct": false,
-          "existing_image": null,
-          "asset": "1c08c1565dbf"
+          "existing_image": "/lib/images/tcf/qcm-audit/640c7c11101e.webp",
+          "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -10003,7 +10003,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -10158,7 +10158,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11770,7 +11770,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11925,7 +11925,7 @@
           "asset": "c4051ad4c87f"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -21036,14 +21036,15 @@
       "label": "Des plats chauds",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3d979241f136.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des plats chauds ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-064",
           "question": 6,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/3d979241f136.webp"
     },
     {
       "id": "16edefcaf66e",
@@ -21647,14 +21648,15 @@
       "label": "Un musée d'art",
       "path_after_generation": "/lib/images/tcf/qcm-audit/640c7c11101e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée d'art ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1s-ce-038",
           "question": 9,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/640c7c11101e.webp"
     },
     {
       "id": "5a631dace7d2",
@@ -21830,14 +21832,15 @@
       "label": "L'hôtel de ville",
       "path_after_generation": "/lib/images/tcf/qcm-audit/98453d119856.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L'hôtel de ville ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image existante contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a1s-ce-046",
           "question": 3,
           "choice": "a"
         }
-      ]
+      ],
+      "existing_path": "/lib/images/tcf/co/bg/mairie.webp"
     },
     {
       "id": "3455f12e5a59",
@@ -21938,14 +21941,15 @@
       "label": "Dans les musées",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1c08c1565dbf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les musées ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image générée déjà contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a1-2022-ce-ex1-carte",
           "question": 7,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/640c7c11101e.webp"
     },
     {
       "id": "f31c48803543",
@@ -28431,14 +28435,15 @@
       "label": "Une serviette de bain",
       "path_after_generation": "/lib/images/tcf/qcm-audit/201f3a85ed45.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une serviette de bain ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a2-sa-ce-1",
           "question": 2,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/201f3a85ed45.webp"
     },
     {
       "id": "1cc64d5246fb",
@@ -28563,14 +28568,15 @@
       "label": "Une voiture de sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/57f804ba4853.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une voiture de sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a2-sb-ce-4",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/57f804ba4853.webp"
     },
     {
       "id": "3980f80adf32",
@@ -30056,7 +30062,7 @@
       "label": "Des moules",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b69f4b71c7b4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des moules ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-018",
@@ -30068,7 +30074,8 @@
           "question": 14,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/b69f4b71c7b4.webp"
     },
     {
       "id": "c72863ee2e2a",
@@ -30145,14 +30152,15 @@
       "label": "Un atelier de peinture",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c4051ad4c87f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un atelier de peinture ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-035",
           "question": 9,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/c4051ad4c87f.webp"
     },
     {
       "id": "df5b9df35d56",
