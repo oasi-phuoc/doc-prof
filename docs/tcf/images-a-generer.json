@@ -19,8 +19,8 @@
       "identité ou catégorie abstraite": 5,
       "concepts visuels existants identiques entre plusieurs réponses": 1
     },
-    "generated_reviewed_assets": 18,
-    "activated_ce_questions_this_batch": 22
+    "generated_reviewed_assets": 24,
+    "activated_ce_questions_this_batch": 32
   },
   "questions": [
     {
@@ -393,7 +393,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -623,8 +623,8 @@
           "id": "a",
           "texte": "Des petits-déjeuners",
           "correct": true,
-          "existing_image": null,
-          "asset": "588fadad8728"
+          "existing_image": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp",
+          "asset": null
         },
         {
           "id": "b",
@@ -641,7 +641,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1013,7 +1013,7 @@
           "asset": "909d4bb264fc"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1088,8 +1088,8 @@
           "id": "a",
           "texte": "Du parking",
           "correct": true,
-          "existing_image": null,
-          "asset": "78e8682f2fb1"
+          "existing_image": "/lib/images/tcf/qcm-audit/f6145b0eb230.webp",
+          "asset": null
         },
         {
           "id": "b",
@@ -1106,7 +1106,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1509,7 +1509,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -9569,7 +9569,7 @@
           "asset": "e95e213c4bdb"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -9972,7 +9972,7 @@
           "asset": "6b018e889cae"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -10840,7 +10840,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -10991,11 +10991,11 @@
           "id": "c",
           "texte": "Des tartes aux pommes",
           "correct": false,
-          "existing_image": null,
-          "asset": "4f1c9a733951"
+          "existing_image": "/lib/images/vocabulaire/desserts/tarte.webp",
+          "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -12224,8 +12224,8 @@
           "id": "b",
           "texte": "La crème glacée",
           "correct": false,
-          "existing_image": null,
-          "asset": "6aa7dec040c9"
+          "existing_image": "/lib/images/vocabulaire/desserts/glace.webp",
+          "asset": null
         },
         {
           "id": "c",
@@ -12235,7 +12235,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -19537,14 +19537,15 @@
       "label": "Le stade de foot",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0398dc176cac.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le stade de foot ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a1-s3-ce-2",
           "question": 9,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/0398dc176cac.webp"
     },
     {
       "id": "2b166a2961bd",
@@ -19844,14 +19845,15 @@
       "label": "Des petits-déjeuners",
       "path_after_generation": "/lib/images/tcf/qcm-audit/588fadad8728.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des petits-déjeuners ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image existante contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "tcf-a1-tpa-ce-4",
           "question": 5,
           "choice": "a"
         }
-      ]
+      ],
+      "existing_path": "/lib/images/vocabulaire/aliments/petit-dejeuner.webp"
     },
     {
       "id": "df269517fadb",
@@ -20293,14 +20295,15 @@
       "label": "Le magasin de fleurs",
       "path_after_generation": "/lib/images/tcf/qcm-audit/909d4bb264fc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le magasin de fleurs ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-021",
           "question": 7,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/909d4bb264fc.webp"
     },
     {
       "id": "b3120ed6dab5",
@@ -20377,14 +20380,15 @@
       "label": "Du parking",
       "path_after_generation": "/lib/images/tcf/qcm-audit/78e8682f2fb1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du parking ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image générée déjà contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a1v-ce-024",
           "question": 7,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/f6145b0eb230.webp"
     },
     {
       "id": "54294ec7857b",
@@ -20751,7 +20755,7 @@
       "label": "Un parking",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f6145b0eb230.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un parking ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-054",
@@ -20778,7 +20782,8 @@
           "question": 5,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/f6145b0eb230.webp"
     },
     {
       "id": "8a96589c653c",
@@ -22314,7 +22319,7 @@
       "label": "Un casque de vélo",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6b018e889cae.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un casque de vélo ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a1j-s3-co-5",
@@ -22336,7 +22341,8 @@
           "question": 8,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/6b018e889cae.webp"
     },
     {
       "id": "f137023c3623",
@@ -28046,14 +28052,15 @@
       "label": "Un bonnet de bain",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e95e213c4bdb.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un bonnet de bain ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a2j-s2-ce-1",
           "question": 8,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/e95e213c4bdb.webp"
     },
     {
       "id": "79b5aa76668b",
@@ -29183,14 +29190,15 @@
       "label": "La lampe de bureau",
       "path_after_generation": "/lib/images/tcf/qcm-audit/86d1a8a27d41.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La lampe de bureau ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2j-ce-043",
           "question": 7,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/86d1a8a27d41.webp"
     },
     {
       "id": "3876826a1c8d",
@@ -29337,14 +29345,15 @@
       "label": "Des tartes aux pommes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4f1c9a733951.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des tartes aux pommes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image existante contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a2j-ce-053",
           "question": 8,
           "choice": "c"
         }
-      ]
+      ],
+      "existing_path": "/lib/images/vocabulaire/desserts/tarte.webp"
     },
     {
       "id": "4df3a19671d3",
@@ -30379,14 +30388,15 @@
       "label": "La crème glacée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6aa7dec040c9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La crème glacée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image existante contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a2r-ce-040",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "existing_path": "/lib/images/vocabulaire/desserts/glace.webp"
     },
     {
       "id": "1b707348431d",
