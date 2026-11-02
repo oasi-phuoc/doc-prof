@@ -19,8 +19,8 @@
       "identité ou catégorie abstraite": 5,
       "concepts visuels existants identiques entre plusieurs réponses": 1
     },
-    "generated_reviewed_assets": 12,
-    "activated_ce_questions_this_batch": 11
+    "generated_reviewed_assets": 18,
+    "activated_ce_questions_this_batch": 22
   },
   "questions": [
     {
@@ -145,7 +145,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -517,7 +517,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -889,7 +889,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1385,7 +1385,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1571,7 +1571,7 @@
           "asset": "3762b0724d76"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -1777,8 +1777,8 @@
           "id": "b",
           "texte": "Au théâtre de la ville",
           "correct": false,
-          "existing_image": null,
-          "asset": "0524d82daa72"
+          "existing_image": "/lib/images/tcf/qcm-audit/b3a9535d4a2f-v2.webp",
+          "asset": null
         },
         {
           "id": "c",
@@ -1788,7 +1788,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -9817,7 +9817,7 @@
           "asset": "3762b0724d76"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -10034,7 +10034,7 @@
           "asset": "1cc64d5246fb"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -10705,8 +10705,8 @@
           "id": "b",
           "texte": "Un téléphone fixe",
           "correct": false,
-          "existing_image": null,
-          "asset": "361e1b1b7baf"
+          "existing_image": "/lib/images/vocabulaire/technologie/téléphone.webp",
+          "asset": null
         },
         {
           "id": "c",
@@ -10716,7 +10716,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11708,7 +11708,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11728,8 +11728,8 @@
           "id": "b",
           "texte": "Les pommes de terre",
           "correct": false,
-          "existing_image": null,
-          "asset": "22800756395b"
+          "existing_image": "/lib/images/tcf/qcm-audit/3762b0724d76.webp",
+          "asset": null
         },
         {
           "id": "c",
@@ -11739,7 +11739,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -19311,14 +19311,15 @@
       "label": "Une caméra professionnelle",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c863c24623c0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une caméra professionnelle ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a1j-s1-ce-3",
           "question": 6,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/c863c24623c0.webp"
     },
     {
       "id": "b3a9535d4a2f",
@@ -19681,14 +19682,15 @@
       "label": "Du pain grillé",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a5a6f0ab9261.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du pain grillé ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a1-s3-ce-4",
           "question": 7,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/a5a6f0ab9261.webp"
     },
     {
       "id": "183eebb7cd69",
@@ -20115,14 +20117,15 @@
       "label": "Des marrons chauds",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8429cd4152ab.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des marrons chauds ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-011",
           "question": 6,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/8429cd4152ab.webp"
     },
     {
       "id": "3415ce9ccecf",
@@ -20597,7 +20600,7 @@
       "label": "Une boucherie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/59a49a38191a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une boucherie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-042",
@@ -20609,7 +20612,8 @@
           "question": 1,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/59a49a38191a.webp"
     },
     {
       "id": "d563f0fe7936",
@@ -20828,7 +20832,7 @@
       "label": "Des pommes de terre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3762b0724d76.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des pommes de terre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-057",
@@ -20860,7 +20864,8 @@
           "question": 3,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/3762b0724d76.webp"
     },
     {
       "id": "d38d01f66d88",
@@ -21060,14 +21065,15 @@
       "label": "Au théâtre de la ville",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0524d82daa72.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au théâtre de la ville ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image générée déjà contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a1s-ce-004",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/b3a9535d4a2f-v2.webp"
     },
     {
       "id": "0bd01d1c691f",
@@ -28432,7 +28438,7 @@
       "label": "Une tablette tactile",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1cc64d5246fb.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une tablette tactile ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "tcf-a2-sa-ce-3",
@@ -28444,7 +28450,8 @@
           "question": 1,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/1cc64d5246fb.webp"
     },
     {
       "id": "8a650cd412c8",
@@ -29044,14 +29051,15 @@
       "label": "Un téléphone fixe",
       "path_after_generation": "/lib/images/tcf/qcm-audit/361e1b1b7baf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un téléphone fixe ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image existante réutilisée après contrôle visuel",
       "references": [
         {
           "exercise": "delf-a2j-ce-035",
           "question": 1,
           "choice": "b"
         }
-      ]
+      ],
+      "existing_image": "/lib/images/vocabulaire/technologie/téléphone.webp"
     },
     {
       "id": "bc4f6596a411",
@@ -30019,7 +30027,7 @@
       "label": "Les pommes de terre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/22800756395b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les pommes de terre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image générée déjà contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a2r-ce-018",
@@ -30031,7 +30039,8 @@
           "question": 4,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/3762b0724d76.webp"
     },
     {
       "id": "b69f4b71c7b4",

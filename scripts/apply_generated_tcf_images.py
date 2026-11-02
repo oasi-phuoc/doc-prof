@@ -14,7 +14,7 @@ def main():
  banks={};activated={(r['bank'],r['exercise'],r['question']):r for r in registry['activated_questions']}
  for proposal in plan['questions']:
   key=(proposal['bank'],proposal['exercise'],proposal['question'])
-  if not proposal['bank'].endswith('/ce.json') or (proposal['exercise'],proposal['question']) not in priority:continue
+  if not proposal['bank'].endswith('/ce.json'):continue
   data=banks.setdefault(proposal['bank'],read(proposal['bank']))
   exercise=next(e for e in data if e['id']==proposal['exercise']);question=exercise['questions'][proposal['question']-1]
   if question['enonce']!=proposal['enonce']:raise ValueError('Question changed since audit: '+str(key))
@@ -30,7 +30,7 @@ def main():
    output.append({'id':c['id'],'image':path,'correct':c['correct']})
   if len(output)!=3 or len({c['image'] for c in output})!=3:continue
   question.setdefault('formes',{})['qcm_image']={'melanger':True,'choix':output}
-  activated[key]={'bank':key[0],'exercise':key[1],'question':key[2],'enonce':proposal['enonce'],'images':[c['image'] for c in output],'status':'active_after_visual_review'}
+  activated[key]={'bank':key[0],'exercise':key[1],'question':key[2],'enonce':proposal['enonce'],'images':[c['image'] for c in output],'priority_recovery':(proposal['exercise'],proposal['question']) in priority,'status':'active_after_visual_review'}
   proposal['status']='active après génération et contrôle visuel des trois propositions'
   for c,img in zip(proposal['choices'],output):
    for m in overrides['mappings']:
