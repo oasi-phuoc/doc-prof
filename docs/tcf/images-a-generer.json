@@ -19,8 +19,8 @@
       "identité ou catégorie abstraite": 5,
       "concepts visuels existants identiques entre plusieurs réponses": 1
     },
-    "generated_reviewed_assets": 39,
-    "activated_ce_questions_this_batch": 50
+    "generated_reviewed_assets": 48,
+    "activated_ce_questions_this_batch": 59
   },
   "questions": [
     {
@@ -1044,7 +1044,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -2335,8 +2335,8 @@
           "id": "b",
           "texte": "Les hôtels de luxe",
           "correct": false,
-          "existing_image": null,
-          "asset": "5a631dace7d2"
+          "existing_image": "/lib/images/tcf/qcm-audit/2d5428451739.webp",
+          "asset": null
         },
         {
           "id": "c",
@@ -2346,7 +2346,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -11336,7 +11336,7 @@
           "asset": "2d5428451739"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11553,7 +11553,7 @@
           "asset": "7e158d139cac"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11584,7 +11584,7 @@
           "asset": "49bf4f3e549b"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11801,7 +11801,7 @@
           "asset": "c72863ee2e2a"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11814,8 +11814,8 @@
           "id": "a",
           "texte": "Dans la salle d’un café",
           "correct": true,
-          "existing_image": null,
-          "asset": "25d22020e033"
+          "existing_image": "/lib/images/tcf/co/bg/cafe.webp",
+          "asset": null
         },
         {
           "id": "b",
@@ -11832,7 +11832,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -11894,7 +11894,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -12483,7 +12483,7 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active après génération et contrôle visuel des trois propositions"
     },
     {
       "bank": "src/tcf/content/a1-a2/ce.json",
@@ -20310,28 +20310,30 @@
       "label": "Le pont",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b3120ed6dab5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le pont ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-022",
           "question": 7,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/b3120ed6dab5.webp"
     },
     {
       "id": "adb2adefbf24",
       "label": "La fontaine",
       "path_after_generation": "/lib/images/tcf/qcm-audit/adb2adefbf24.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La fontaine ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1v-ce-022",
           "question": 7,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/adb2adefbf24.webp"
     },
     {
       "id": "b641d16a3e55",
@@ -21664,14 +21666,15 @@
       "label": "Les hôtels de luxe",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5a631dace7d2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les hôtels de luxe ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image déjà contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a1s-ce-041",
           "question": 9,
           "choice": "b"
         }
-      ]
+      ],
+      "existing_path": "/lib/images/tcf/qcm-audit/2d5428451739.webp"
     },
     {
       "id": "2759e93c0b22",
@@ -26445,7 +26448,7 @@
       "label": "Le musée des sciences",
       "path_after_generation": "/lib/images/tcf/qcm-audit/61e66f12efb4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le musée des sciences ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-03",
@@ -26462,7 +26465,8 @@
           "question": 6,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/61e66f12efb4.webp"
     },
     {
       "id": "4a13d54969ca",
@@ -29635,14 +29639,15 @@
       "label": "Un hôtel de luxe",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2d5428451739.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un hôtel de luxe ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-007",
           "question": 4,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/2d5428451739.webp"
     },
     {
       "id": "4276af446a96",
@@ -29887,7 +29892,7 @@
       "label": "Le musée des cultures du monde",
       "path_after_generation": "/lib/images/tcf/qcm-audit/49bf4f3e549b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le musée des cultures du monde ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-013",
@@ -29899,14 +29904,15 @@
           "question": 6,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/49bf4f3e549b.webp"
     },
     {
       "id": "7e158d139cac",
       "label": "Le musée de cire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7e158d139cac.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le musée de cire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-013",
@@ -29918,7 +29924,8 @@
           "question": 6,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/7e158d139cac.webp"
     },
     {
       "id": "619ede8ff5a9",
@@ -30091,28 +30098,30 @@
       "label": "Le magasin de téléphones",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c72863ee2e2a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le magasin de téléphones ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-020",
           "question": 1,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/c72863ee2e2a.webp"
     },
     {
       "id": "25d22020e033",
       "label": "Dans la salle d’un café",
       "path_after_generation": "/lib/images/tcf/qcm-audit/25d22020e033.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans la salle d’un café ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "image déjà contrôlée réutilisée en CE",
       "references": [
         {
           "exercise": "delf-a2r-ce-024",
           "question": 8,
           "choice": "a"
         }
-      ]
+      ],
+      "existing_path": "/lib/images/tcf/co/bg/cafe.webp"
     },
     {
       "id": "d7d4c8ff31ac",
@@ -30147,14 +30156,15 @@
       "label": "À l’accueil du centre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/73ae858b4ca5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À l’accueil du centre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-034",
           "question": 9,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/73ae858b4ca5.webp"
     },
     {
       "id": "c4051ad4c87f",
@@ -30640,14 +30650,15 @@
       "label": "Dans la rue",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7dc7f857ae84.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans la rue ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "générée et contrôlée visuellement",
       "references": [
         {
           "exercise": "delf-a2r-ce-048",
           "question": 7,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/7dc7f857ae84.webp"
     },
     {
       "id": "ee79504f6818",
