@@ -428,7 +428,7 @@ const CE_SETS: CeSet[] = [
     titre: 'Café des langues',
     texte:
       'Tout le monde est le bienvenu au Café des langues : étudiant, professeur, vendeur… Vous avez 20, 30, 40 ou 50 ans ? Vous êtes brésilien, italien, allemand… ? Venez parler allemand, anglais, espagnol, coréen ou français autour d’un café. Pour les informations, téléphonez au 027 322 00 00.',
-    image: '/lib/images/documents/cafe-des-langues.webp',
+    image: null,
     questions: [
       vf('Tout le monde est le bienvenu.', true),
       vf('Une personne de 25 ans est la bienvenue.', true),

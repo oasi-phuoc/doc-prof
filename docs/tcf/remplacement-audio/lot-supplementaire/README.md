@@ -14,3 +14,5 @@ Au point d’avancement de ce commit : 657 passages candidats sont repérés ; c
 - [Priorités de vérification des transcriptions](transcript-review-priorities.json)
 
 Le dossier de travail est `/workspace/work/tcf-audio-additional-20261102-work`. Les sources individuelles restent également dans `/workspace/attachments`. La bibliothèque de production reste `public/lib/audio/tcf/co/` ; les fichiers de travail ne sont pas une seconde bibliothèque servie.
+
+Le [contrôle du signal](preuves-signal.json) identifie 451 anciennes références dans ce lot, dont 214 non identifiées dans le premier. Le total des deux lots atteint 857 références identifiées ; 461 restent à rapprocher.

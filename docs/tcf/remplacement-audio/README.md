@@ -10,6 +10,8 @@ Le repérage corrigé propose 875 segments sur les 408 sources. Les 875 candidat
 
 **Aucune écoute réelle n’est déclarée.** Les quatre fenêtres de frontière et les fichiers complets sont prêts à contrôler. Les transcriptions et les découpes restent des propositions. Un second moteur a examiné huit sources sensibles : des divergences sur des noms, dates, heures et numéros de téléphone sont conservées pour vérification. Les champs de contrôle ne sont jamais remplis automatiquement comme si une écoute avait eu lieu.
 
+Le rapprochement du lot supplémentaire confirme 214 anciennes références de plus : **857 références sont identifiées sur 1 318**. Les 643 remplacements préparés du premier lot et les 657 passages candidats supplémentaires restent à contrôler avant la bascule.
+
 ## Registres
 
 - [Reprises des 111 passages et réalignement des 9 sources](reprises-et-realignements.json) : suivi des cas demandés, désormais sans blocage de découpe.

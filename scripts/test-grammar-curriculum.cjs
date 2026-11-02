@@ -167,4 +167,14 @@ const lonePast = generate({ exerciseType: 'gram-ex-pc-avoir-qcm-conj', count: 1 
 check(/passé composé/.test(lonePast.instruction), 'single question retains required tense')
 const loneAdj = generate({ exerciseType: 'gram-ex-f7-qcm-verbe', count: 1 }, 4)
 check(!/Conjuguez/.test(loneAdj.instruction), 'adjective cue never becomes verb instruction')
+// Previously image-only family supports must remain answerable after the asset removal.
+const { buildFamilleExercise } = load(path.join(root, 'src/grammaire/exercises/famille.ts'))
+for (const kindId of ['fam-faire-part', 'fam-arbre', 'fam-photo', 'fam-email']) {
+  for (const value of [.05, .25, .45, .65, .85]) {
+    const ex = buildFamilleExercise({ kindId, typeId: `gram-ex-famille-${kindId}`, rng: () => value, count: 6 })
+    check(ex.competence === 'CE' && ex.support.texte.length > 40, `${kindId} keeps a readable source`)
+    check(ex.support.image === null, `${kindId} does not request a removed image`)
+    check(ex.questions.length > 0, `${kindId} keeps its questions`)
+  }
+}
 console.log(`${checks} contrôles réussis : 105 théories réécrites, 104 banques de 50 phrases, 8 banques complétées, 480 variantes CE/PE/PO.`)

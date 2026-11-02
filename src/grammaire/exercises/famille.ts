@@ -10,7 +10,6 @@ import type {
 import type { GramExerciseKindId } from './kinds'
 
 const CHOICE_IDS = ['a', 'b', 'c'] as const
-const IMG = '/lib/images/documents/famille'
 const AUD = '/lib/audio/grammaire/famille'
 
 export const FAMILLE_KIND_IDS = [
@@ -234,14 +233,14 @@ function pronomPrompt2(item: PronomItem2): string {
 
 type FairePart = {
   slug: string
-  image: string
+  texte: string
   questions: TcfQuestion[]
 }
 
 const FAIRE_PARTS: FairePart[] = [
   {
     slug: 'jackie',
-    image: `${IMG}/faire-part-jackie.webp`,
+    texte: "Olivier et Natasha annoncent la naissance de leur fille Jackie. Jackie a un frère, Sébastien, et une sœur, Marion. Marc et Catherine sont leurs grands-parents.",
     questions: [
       dualQcmTrait('Jackie est ___ d’Olivier et Natasha.', 'la fille', ['la fille', 'le fils']),
       dualQcmTrait('Jackie est ___ de Sébastien et Marion.', 'la sœur', ['le frère', 'la sœur']),
@@ -253,7 +252,7 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'lucas',
-    image: `${IMG}/faire-part-lucas.webp`,
+    texte: "Julie et Thomas annoncent la naissance de leur fils Lucas. Lucas a un frère, Noah, et une sœur, Emma. Paul et Anne sont leurs grands-parents.",
     questions: [
       dualQcmTrait('Lucas est ___ de Julie et Thomas.', 'le fils', ['la fille', 'le fils']),
       dualQcmTrait('Lucas est ___ d’Emma et Noah.', 'le frère', ['le frère', 'la sœur']),
@@ -265,7 +264,7 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'sara',
-    image: `${IMG}/faire-part-sara.webp`,
+    texte: "Leila et Samir annoncent la naissance de leur fille Sara. Sara a un frère, Karim, et une sœur, Layla. Hassan et Fatima sont leurs grands-parents.",
     questions: [
       dualQcmTrait('Sara est ___ de Leila et Samir.', 'la fille', ['la fille', 'le fils']),
       dualQcmTrait('Sara est ___ de Karim et Layla.', 'la sœur', ['le frère', 'la sœur']),
@@ -277,7 +276,7 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'leo',
-    image: `${IMG}/faire-part-leo.webp`,
+    texte: "Marie et David annoncent la naissance de leur fils Léo. Léo a une sœur, Chloé. Jean et Claire sont leurs grands-parents.",
     questions: [
       dualQcmTrait('Léo est ___ de Marie et David.', 'le fils', ['la fille', 'le fils']),
       dualQcmTrait('Léo est ___ de Chloé.', 'le frère', ['le frère', 'la sœur']),
@@ -289,7 +288,7 @@ const FAIRE_PARTS: FairePart[] = [
   },
   {
     slug: 'mina',
-    image: `${IMG}/faire-part-mina.webp`,
+    texte: "Nadia et Youssef annoncent la naissance de leur fille Mina. Mina a un frère, Adam, et une sœur, Yasmine. Amira et Rachid sont leurs grands-parents.",
     questions: [
       dualQcmTrait('Mina est ___ de Nadia et Youssef.', 'la fille', ['la fille', 'le fils']),
       dualQcmTrait('Mina est ___ d’Adam et Yasmine.', 'la sœur', ['le frère', 'la sœur']),
@@ -313,6 +312,8 @@ const PE_MODELE = [
 
 // —— CE arbre ——
 
+const ARBRE_TEXTE = 'Élisabeth Kerval et Dominique Lepont ont une fille, Claire, et deux fils, Louis et Guillaume. Claire est musicienne. Elle est mariée à Damien Paulo, qui est chanteur. Ils ont un fils, Auguste. Ces deux parents sont artistes. Louis est médecin et le beau-frère de Damien. Guillaume et sa conjointe Camille Sagu sont étudiants. Ils ont un fils, Alban. Auguste et Alban sont les deux petits-fils d’Élisabeth et Dominique. Ils n’ont pas de petite-fille.'
+
 const ARBRE_QUESTIONS: TcfQuestion[] = [
   vf('Dominique a une petite-fille.', false),
   vf('Louis et Damien sont frères.', false),
@@ -326,7 +327,7 @@ const ARBRE_QUESTIONS: TcfQuestion[] = [
 
 type PhotoSet = {
   slug: string
-  image: string
+  texte: string
   questions: TcfQuestion[]
 }
 
@@ -350,7 +351,7 @@ function photoQuestions(n: {
 const PHOTO_SETS: PhotoSet[] = [
   {
     slug: 'paul-lea',
-    image: `${IMG}/photo-famille-paul-lea.webp`,
+    texte: "Paul et Françoise ont deux enfants : Léa et Jules. Léa est la sœur de Jules. Elise est leur grand-mère et Daniel est leur grand-père.",
     questions: photoQuestions({
       dad: 'Paul',
       girl: 'Léa',
@@ -362,7 +363,7 @@ const PHOTO_SETS: PhotoSet[] = [
   },
   {
     slug: 'marc-nina',
-    image: `${IMG}/photo-famille-marc-nina.webp`,
+    texte: "Marc et Sophie ont deux enfants : Nina et Hugo. Nina est la sœur de Hugo. Anne est leur grand-mère et Pierre est leur grand-père.",
     questions: photoQuestions({
       dad: 'Marc',
       girl: 'Nina',
@@ -374,7 +375,7 @@ const PHOTO_SETS: PhotoSet[] = [
   },
   {
     slug: 'karim-sara',
-    image: `${IMG}/photo-famille-karim-sara.webp`,
+    texte: "Karim et Leila ont deux enfants : Sara et Amir. Sara est la sœur d’Amir. Fatima est leur grand-mère et Hassan est leur grand-père.",
     questions: photoQuestions({
       dad: 'Karim',
       girl: 'Sara',
@@ -386,7 +387,7 @@ const PHOTO_SETS: PhotoSet[] = [
   },
   {
     slug: 'thomas-emma',
-    image: `${IMG}/photo-famille-thomas-emma.webp`,
+    texte: "Thomas et Julie ont deux enfants : Emma et Noah. Emma est la sœur de Noah. Claire est leur grand-mère et Jean est leur grand-père.",
     questions: photoQuestions({
       dad: 'Thomas',
       girl: 'Emma',
@@ -398,7 +399,7 @@ const PHOTO_SETS: PhotoSet[] = [
   },
   {
     slug: 'youssef-mina',
-    image: `${IMG}/photo-famille-youssef-mina.webp`,
+    texte: "Youssef et Nadia ont deux enfants : Mina et Adam. Mina est la sœur d’Adam. Amira est leur grand-mère et Rachid est leur grand-père.",
     questions: photoQuestions({
       dad: 'Youssef',
       girl: 'Mina',
@@ -434,6 +435,8 @@ const RECIT_QUESTIONS: TcfQuestion[] = [
 ]
 
 // —— CE email ——
+
+const EMAIL_TEXTE = 'À : Monsieur le directeur\nObjet : Inscription à l’école\n\nMonsieur le directeur,\nNous sommes nouveaux à Saint-Georges et nous avons deux enfants : Marie, 8 ans, et Bérangère, 10 ans. Nous souhaitons les inscrire dans votre école.\nMerci beaucoup.\nCordialement,\nTom et Véronique Duval.'
 
 const EMAIL_QUESTIONS: TcfQuestion[] = [
   dualQcmTrait('Le document est …', 'Un email au directeur', [
@@ -606,7 +609,7 @@ export function buildFamilleExercise(opts: {
         niveau: 'A1-A2',
         competence: 'CE',
         type_exercice: 'annonce',
-        support: { titre: '', texte: '', image: set.image },
+        support: { titre: '', texte: set.texte, image: null },
         questions,
       })
     }
@@ -625,24 +628,24 @@ export function buildFamilleExercise(opts: {
     }
     case 'fam-arbre': {
       const questions = ARBRE_QUESTIONS.slice(0, Math.max(1, count))
-      return wrap(typeId, 'Observez l’arbre généalogique. Vrai ou faux ?', {
+      return wrap(typeId, 'Lisez la présentation de la famille. Vrai ou faux ?', {
         id: '',
         niveau: 'A1-A2',
         competence: 'CE',
         type_exercice: 'annonce',
-        support: { titre: 'Famille Lepont', texte: '', image: `${IMG}/arbre-lepont.webp` },
+        support: { titre: 'Famille Lepont', texte: ARBRE_TEXTE, image: null },
         questions,
       })
     }
     case 'fam-photo': {
       const set = pick(rng, PHOTO_SETS)
       const questions = set.questions.slice(0, Math.max(1, count))
-      return wrap(typeId, 'Observez la photo. Complétez les phrases.', {
+      return wrap(typeId, 'Lisez la présentation. Complétez les phrases.', {
         id: '',
         niveau: 'A1-A2',
         competence: 'CE',
         type_exercice: 'annonce',
-        support: { titre: '', texte: '', image: set.image },
+        support: { titre: '', texte: set.texte, image: null },
         questions,
       })
     }
@@ -664,7 +667,7 @@ export function buildFamilleExercise(opts: {
         niveau: 'A1-A2',
         competence: 'CE',
         type_exercice: 'annonce',
-        support: { titre: '', texte: '', image: `${IMG}/email-inscription.webp` },
+        support: { titre: 'Courriel au directeur', texte: EMAIL_TEXTE, image: null },
         questions,
       })
     }

@@ -23,7 +23,6 @@ const COMM = join(SOUTIEN, 'lib/curriculum/content/communication')
 const MANIFEST = join(ROOT, 'scripts/audio-theme-manifest.json')
 const OUT = join(ROOT, 'src/francais/comprehension-orale-banks.ts')
 const VOCAB_IMG = join(ROOT, 'public/lib/images/vocabulaire')
-const CO_IMG = join(ROOT, 'public/lib/images/comprehension')
 
 const THEME_TO_FR = {
   presenter: 'fr-presenter',
@@ -87,7 +86,7 @@ function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
 }
 
-/** Index images vocabulaire + PO_* compréhension. */
+/** Index des images de vocabulaire disponibles. */
 function buildImageIndex() {
   const bySlug = new Map()
   function add(file, url) {
@@ -104,9 +103,6 @@ function buildImageIndex() {
     }
   }
   walk(VOCAB_IMG, '/lib/images/vocabulaire')
-  for (const level of ['facile-a1', 'moyen-a2', 'difficile-b1']) {
-    walk(join(CO_IMG, level), `/lib/images/comprehension/${level}`)
-  }
   return bySlug
 }
 
