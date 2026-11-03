@@ -48,6 +48,8 @@ def checked_images(manifest):
     for row in manifest['images']:
         if row.get('status') != 'visually_reviewed':
             continue
+        if row.get('style_review', {}).get('status') == 'needs_correction':
+            continue
         path = ROOT / 'public' / row['path'].lstrip('/')
         if not path.is_file():
             continue
