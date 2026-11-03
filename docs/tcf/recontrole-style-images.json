@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 372,
+    "reviewed_co_images": 402,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 431,
+    "reviewed_total_images": 461,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 420,
+    "already_aligned": 450,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 113
+    "new_images_compared_to_reference": 143
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -4799,17 +4799,17 @@
       "id": "co306-eau-mer-dessine",
       "label": "De l’eau de mer",
       "path": "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
-      "sha256": "a32bd1e820dfeacea3a1bfadd12f3a0cea578838a1302b71eae5c6e845ded055",
+      "sha256": "3f713f1b1447507c6e849098e6cd07489d4f782bc2a69d9d2577acb987f1fd06",
       "status": "aligned",
-      "review_note": "Comparaison au rendu peint du commit 48a753d8 : volumes doux, couleurs naturelles et détails fins. Version reprise : vague remplissant un seau transparent, mer et rochers en touches peintes et formes modelées, rendu photographique retiré.",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Reprise demandée par l’utilisateur : bouteille entière transparente remplie d’eau, bouchon bleu et autocollant représentant mer, vagues et horizon ; fond crème, aucun mot, nombre ou marque. Seau et ancien paysage retirés.",
       "group": "co_active_audio_batch",
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
-        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "review_origin": "new_generation_after_reference48",
-      "user_approved_reference": false
+      "user_approved_reference": false,
+      "revision_reason": "Demande utilisateur : remplacer la scène avec seau par une bouteille portant un sticker de mer."
     },
     {
       "id": "co306-croissants-dessine",
@@ -5137,6 +5137,474 @@
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
         "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-montagnes-forets-dessine",
+      "label": "Les montagnes et les forêts",
+      "path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+      "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Sommets rocheux et forêt dense de sapins tous deux lisibles ; touches peintes, sans glacier dominant.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mer-plages-dessine",
+      "label": "La mer et les plages",
+      "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+      "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Mer turquoise et plusieurs plages de sable dans une baie ; arbres et vagues peints, sans texte.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-deserts-dunes-dessine",
+      "label": "Les déserts et les dunes",
+      "path": "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp",
+      "sha256": "173c4b22c27810b2b6e2a0865a57e35bb69862378da0e365dbb346eda514edfd",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Dunes dorées successives dans un désert sans eau ni végétation ; formes et ombres peintes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-campagne-rivieres-dessine",
+      "label": "La campagne et les rivières",
+      "path": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+      "sha256": "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Champs, haies, ferme et cours d’eau sinueux bien visibles ; campagne distincte des paysages de mer et de glacier.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-glaciers-sommets-dessine",
+      "label": "Les glaciers et les sommets",
+      "path": "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+      "sha256": "6cedd9be041b85e629249ddd81a7ef67cf1be26fa2922ae8c8fb0ee27de62472",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Glacier crevassé bleu-blanc et sommets enneigés ; aucun arbre, distinction claire avec les montagnes boisées.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-buffet-dessine",
+      "label": "Un buffet",
+      "path": "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+      "sha256": "596a341f41fd643903f2976028173fb89abffca0fb8bcf7f95d905670e836f4a",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Buffet identifiable par les bacs de service, plats partagés, piles d’assiettes et pinces ; aucun emballage à emporter.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-menu-servi-table-dessine",
+      "label": "Un menu servi à table",
+      "path": "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+      "sha256": "5bff3faa0ace73bad474835cf8a667f59d9edf74ce97576d0ec70e5bf80419cc",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Serveur posant une assiette devant deux clients à une table de restaurant ; trois visages différents, mains cohérentes, peinture modelée comme le club photo.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-repas-emporter-dessine",
+      "label": "Un repas à emporter",
+      "path": "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp",
+      "sha256": "e4c226ea432d738f47df32fcb505446e98df3798f5a4bc11396c97424dad69c5",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Sac kraft et boîtes de repas préparé visibles ensemble avec couverts emballés ; fond crème, détails peints doux.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mal-tete-dessine",
+      "label": "Un mal de tête",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+      "sha256": "5044660ae9e50443c7d9fb496967c62c2bc6fbf9a07270bc2c2ae14386b114e8",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Version recomposée nativement en paysage 4:3 : femme entière sur fond crème, mains sur front et tempe, rougeur au front ; silhouette et mains préservées sans déformation.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mal-dents-dessine",
+      "label": "Un mal de dents",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+      "sha256": "6e73c6abb1f7d3c3688116883844f08d45034875a3c1bacf5d499d3cfd624f71",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Homme noir au visage nouveau, main sur la joue au niveau des dents, expression douloureuse et rougeur localisée ; pas de blessure.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mal-dos-dessine",
+      "label": "Un mal de dos",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+      "sha256": "4e1c1c273413abe8133d1dbb58e94c1412cc73ac5f5c183f944015cc02c7a397",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Femme âgée avec lunettes et tresse grise, main et rougeur au bas du dos ; silhouette entière, dessin doux sans blessure.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-mal-pied-dessine",
+      "label": "Un mal de pied",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp",
+      "sha256": "544b788ad8aa541a290636613172c2968f029d0f885af7251c5e16d1d4c18975",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Homme avec chignon et moustache tenant le dessus de son pied nu ; douleur au pied distincte de la cheville, anatomie et chaise cohérentes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-chapeau-maillot-dessine",
+      "label": "Un chapeau et un maillot de bain",
+      "path": "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+      "sha256": "8f666556451639cac54dea866525b23c80ba9ff24d579b42978fe035aff5b22f",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Chapeau à large bord et maillot une pièce tous deux visibles ; aucun objet manquant.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bonnet-combinaison-ski-dessine",
+      "label": "Un bonnet et une combinaison de ski",
+      "path": "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+      "sha256": "f72218093b963a5346f5bf3cfb74e01eaafa079b6faf2b2cb134344ff2b6c74c",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Bonnet rouge distinct et combinaison de ski complète avec manches et jambes ; pas une simple veste.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-manteau-gants-dessine",
+      "label": "Un manteau et des gants",
+      "path": "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp",
+      "sha256": "0934c5a55ff2c852a22a665fefd0c29ebd6651e60c900d3d7d0ab36f0ba69ff7",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Manteau vert entier et paire de gants bordeaux anatomiquement correcte ; matières fines comme les pulls de la référence.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-crayons-feutres-dessine",
+      "label": "Des crayons de couleur ou des feutres",
+      "path": "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+      "sha256": "c97a76c6ecb826deabf08a0bf9fdfa71fca95f0bc5df9e219b5e5ef019e318f5",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Crayons colorés taillés et feutres à capuchons en deux éventails distincts, aucune marque.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-encre-charbon-dessine",
+      "label": "De l’encre ou du charbon",
+      "path": "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+      "sha256": "64e1d7751bde874eefff9fc56ccb1ca66e59a919c1da9b3e079586e5e59a213e",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Encrier noir, plume et bâtons ou morceaux de charbon lisibles, sans confusion avec des crayons colorés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-craies-peinture-dessine",
+      "label": "Des craies ou de la peinture",
+      "path": "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp",
+      "sha256": "570f568c30a1a19e8d996d2929c87caadd55b9d00ffd993d32823f4c07ae04ec",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Craies colorées mates et palette de peinture avec pinceaux ; les deux techniques sont visibles.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-serviettes-assiettes-dessine",
+      "label": "Des serviettes et des assiettes",
+      "path": "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+      "sha256": "4ca7744ee1ab801d2230e153f2015a717486f223efbda93637c1f41677207381",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Pile de serviettes papier et pile d’assiettes blanches nettement séparées.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-casseroles-poeles-dessine",
+      "label": "Des casseroles et des poêles",
+      "path": "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+      "sha256": "2e25c6a74c6e78697ae6ae9fa0ab8984dcb3e534699415006de3322435b85334",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Casseroles en inox à bords hauts et poêles noires à bords bas ; manches entiers et formes distinctes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-nappes-bougies-dessine",
+      "label": "Des nappes et des bougies",
+      "path": "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp",
+      "sha256": "2bf64d610d096284ca1d0d9ed2416ed18a64c25895ba4f21d934b0c7282dc6f4",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Deux nappes pliées reconnaissables à leur texture et leurs franges, avec trois bougies cylindriques.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dentifrice-brosses-dessine",
+      "label": "Le dentifrice et les brosses à dents",
+      "path": "/lib/images/tcf/qcm-audit/co306-dentifrice-brosses-dessine.webp",
+      "sha256": "ff8805345f6f1c875926b69e324e8d4b508fd3f97a0dfea1736a991b539606f7",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Tube de dentifrice avec pâte sortante et deux brosses à dents, sans texte ni objet supplémentaire.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-savon-peigne-dessine",
+      "label": "Le savon et le peigne",
+      "path": "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+      "sha256": "e1cccb02e95ca76ee33aaede30c0389934ac5592bd87f3827f36a5fb3213fd19",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Savon ovale sur porte-savon et peigne à dents régulières ; formes entières.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-shampoing-seche-cheveux-dessine",
+      "label": "Le shampoing et le sèche-cheveux",
+      "path": "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp",
+      "sha256": "dea48faed294845e1cc60147d23cfb3e0fd109d97a875ab01f1cad6ba48748ca",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Flacon de shampoing avec motif de cheveux et sèche-cheveux à poignée et cordon, tous deux entiers.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-feuilles-stylos-dessine",
+      "label": "Des feuilles et des stylos",
+      "path": "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+      "sha256": "861265d59601077639490ca7e3328ab92f1f3d7e8ce1b9475e5dda69e66a0e17",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Feuilles vierges et stylos à bille à capuchon ; aucun crayon ou cahier parasite.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-cahiers-dessine",
+      "label": "Des livres et des cahiers",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+      "sha256": "cf161d7aad9ddcaace773c3d9fe1a9f1be831a4d307e7a3e81ae83930ba301f0",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Livres reliés épais et cahiers souples dont un ouvert avec lignes vierges ; deux types distincts.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-crayons-gommes-dessine",
+      "label": "Des crayons et des gommes",
+      "path": "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp",
+      "sha256": "41fe53392136dbd39316d8ca63c43a054da636b43654d6f0bbb09af42a49b792",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Crayons de papier avec graphite gris et gommes rectangulaires ; aucun feutre.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-salades-sandwichs-dessine",
+      "label": "Des salades et des sandwichs",
+      "path": "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+      "sha256": "a246bc9a8a628e90be52ac07eb9e89938b98ef0e206551a803986eaa2f0d45c0",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Salades composées en bols et sandwichs baguette garnis ; les deux aliments sont représentés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pizzas-pates-dessine",
+      "label": "Des pizzas et des pâtes",
+      "path": "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+      "sha256": "c010e6fb88d529130b86caa0625838d12ebedd72b41b1bafca2ffa4b7aa8bdf5",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Pizza entière et assiette de pâtes à côté, distinctes des autres couples de repas.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-soupes-grillades-dessine",
+      "label": "Des soupes et des grillades",
+      "path": "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp",
+      "sha256": "7ff41647bd1bff2a87f762081e862a94ecebf115714f256c4575710895b69ec0",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Bol de soupe liquide et assiette de grillades avec traces de gril ; les deux catégories sont reconnaissables.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

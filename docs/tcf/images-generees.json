@@ -13093,11 +13093,10 @@
       "id": "co306-eau-mer-dessine",
       "label": "De l’eau de mer",
       "path": "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
-      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de la collection pédagogique validée au commit 48a753d8 : modelé doux avec dégradés, dessin fin et discret, matières délicates et couleurs naturelles chaudes. Aucun rendu photo ni 3D, pas d’aplats ou contours épais. Sujet entier avec des marges. Aucun texte lisible, logo, nombre, prix, montant, date, jour ou mois. Reprendre la PREMIÈRE image en remplaçant complètement son rendu photographique par le même langage visuel de DESSIN PEINT que les deux autres références : lignes fines discrètes autour du seau et des rochers, formes peintes simplifiées mais modelées, touches de pinceau douces dans les vagues et ciel. Conserver le seau transparent rempli visiblement par une vague de la mer, l’horizon marin et les rochers, sans personne. Supprimer la microtexture photographique, la profondeur de champ photo et les éclaboussures hyperréalistes. Eau claire peinte comme l’eau du verre de la deuxième référence ; couleurs naturelles chaudes et modelé de la troisième référence. Pas de gros traits noirs ou aplats cartoon. Exact 4:3 et seau entier.",
+      "prompt": "Remplacer entièrement le contenu de la PREMIÈRE image par UNE BOUTEILLE TRANSPARENTE REMPLIE D’EAU DE MER, fermée avec un bouchon bleu. Sur la bouteille, un autocollant blanc bien visible représente une petite mer bleue avec des vagues et un horizon ; cet autocollant est une illustration, SANS TEXTE, lettre, chiffre ou marque. Bouteille entière au centre avec marge, ombre douce sur fond crème uni. Supprimer le seau, la plage et le paysage de fond. Reprendre exactement la peinture numérique semi-réaliste de la DEUXIÈME image : contours fins discrets, volumes doux, reflets de verre dessinés, couleurs naturelles chaudes. Pas de photographie ni rendu 3D. FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 et hauteur 1086. Aucun montant, date ou inscription. Cette image est une réponse pédagogique « De l’eau de mer » ; le sticker marin doit être immédiatement lisible.",
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
-        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "references": [
         {
@@ -13109,26 +13108,31 @@
         }
       ],
       "rejected_source_png": "/workspace/generated_images/exec-d3804821-6aff-49f6-9986-ccfcf5da51f6.png",
-      "revision_reason": "Première scène d’eau de mer trop photographique, non intégrée",
-      "source_png": "/workspace/generated_images/exec-e572d882-5cee-4f44-bc7c-3fa65a0c2f79.png",
+      "revision_reason": "Demande utilisateur : remplacer la scène avec seau par une bouteille portant un sticker de mer.",
+      "source_png": "/workspace/generated_images/exec-a707a2d4-7736-4db9-ac88-5212c3023d9e.png",
       "status": "visually_reviewed",
       "recovered_after_metadata_write_error": true,
-      "review_note": "Version reprise : vague remplissant un seau transparent, mer et rochers en touches peintes et formes modelées, rendu photographique retiré. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "review_note": "Reprise demandée par l’utilisateur : bouteille entière transparente remplie d’eau, bouchon bleu et autocollant représentant mer, vagues et horizon ; fond crème, aucun mot, nombre ou marque. Seau et ancien paysage retirés. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
       "style_review": {
         "status": "aligned",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
-          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
-          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
         ],
-        "review_note": "Comparaison au rendu peint du commit 48a753d8 : volumes doux, couleurs naturelles et détails fins. Version reprise : vague remplissant un seau transparent, mer et rochers en touches peintes et formes modelées, rendu photographique retiré."
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Reprise demandée par l’utilisateur : bouteille entière transparente remplie d’eau, bouchon bleu et autocollant représentant mer, vagues et horizon ; fond crème, aucun mot, nombre ou marque. Seau et ancien paysage retirés."
       },
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-e572d882-5cee-4f44-bc7c-3fa65a0c2f79.png",
+      "replace_existing_sha256": "a32bd1e820dfeacea3a1bfadd12f3a0cea578838a1302b71eae5c6e845ded055",
       "width": 1280,
       "height": 960,
       "aspect_ratio": "4:3",
-      "source_sha256": "dc3ba111dffe09ce45f10be75edd57af3ab55a5a9f86c4bbf81c2fbee1c9ca21",
-      "sha256": "a32bd1e820dfeacea3a1bfadd12f3a0cea578838a1302b71eae5c6e845ded055",
-      "bytes": 168814,
+      "source_sha256": "2e5fdd7e93db4efea95ea0657527b714cd892c18f460f16472a217f65f341cb6",
+      "sha256": "3f713f1b1447507c6e849098e6cd07489d4f782bc2a69d9d2577acb987f1fd06",
+      "bytes": 47816,
       "domain": "co",
       "batch": "active-audios-834"
     },
@@ -13983,6 +13987,1244 @@
       "source_sha256": "8e8d5790627316a01bdfbd5714077fc3c8b584a0ab39de6925074f9de5c35c2a",
       "sha256": "5bb6359411266856282a3cae8f97677d0f7a256103c5f2fe36deb6c2a9ae1343",
       "bytes": 59820,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-montagnes-forets-dessine",
+      "label": "Les montagnes et les forêts",
+      "path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Paysage panoramique de hautes montagnes alpines avec plusieurs sommets rocheux entièrement visibles et une large forêt dense de sapins verts sur les pentes et dans la vallée. Aucun glacier, désert ou mer. Ciel bleu et quelques nuages peints, touches de pinceau fines visibles, sans personnes.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 2,
+          "choice": "a",
+          "label": "Les montagnes et les forêts",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-41fc8ecc-5178-418c-8376-2d90ad9ccef4.png",
+      "status": "visually_reviewed",
+      "review_note": "Sommets rocheux et forêt dense de sapins tous deux lisibles ; touches peintes, sans glacier dominant. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Sommets rocheux et forêt dense de sapins tous deux lisibles ; touches peintes, sans glacier dominant."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3534d2f818945faa637efdb8d5dec89bb2b08dc428c4a871040b977c5a6048a0",
+      "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38",
+      "bytes": 341384,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-mer-plages-dessine",
+      "label": "La mer et les plages",
+      "path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Paysage côtier avec vaste mer bleu turquoise et plusieurs portions de plages de sable clair bordant une petite baie. Vagues douces peintes et côte méditerranéenne, aucun glacier ou dune désertique, aucune personne, bateau ou écriture. Touches de pinceau visibles, pas une photo.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 2,
+          "choice": "b",
+          "label": "La mer et les plages",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 4,
+          "choice": "a",
+          "label": "La mer et les plages",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-57e88d1e-19ef-4e34-8aa5-45ec3a122220.png",
+      "status": "visually_reviewed",
+      "review_note": "Mer turquoise et plusieurs plages de sable dans une baie ; arbres et vagues peints, sans texte. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Mer turquoise et plusieurs plages de sable dans une baie ; arbres et vagues peints, sans texte."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "ba1a26635521aa1d935fe040f921705a1369074069ef1d618e3e2f08b3e46d97",
+      "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+      "bytes": 346302,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-deserts-dunes-dessine",
+      "label": "Les déserts et les dunes",
+      "path": "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Paysage de désert chaud avec grandes dunes de sable doré en vagues successives, crêtes et ombres douces, horizon de désert sans eau, forêt ou plage. Ciel bleu pâle, peinture douce avec touches de pinceau fines, aucune personne ni véhicule.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 2,
+          "choice": "c",
+          "label": "Les déserts et les dunes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 3,
+          "choice": "c",
+          "label": "Les déserts et les dunes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 4,
+          "choice": "c",
+          "label": "Les déserts et les dunes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-ef31cfb4-08aa-4a5c-9700-b0ac79110962.png",
+      "status": "visually_reviewed",
+      "review_note": "Dunes dorées successives dans un désert sans eau ni végétation ; formes et ombres peintes. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Dunes dorées successives dans un désert sans eau ni végétation ; formes et ombres peintes."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f87527645d3e37b3b9b44b55e3b1a20c44d97bb4d883216cee331ad38468140e",
+      "sha256": "173c4b22c27810b2b6e2a0865a57e35bb69862378da0e365dbb346eda514edfd",
+      "bytes": 97198,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-campagne-rivieres-dessine",
+      "label": "La campagne et les rivières",
+      "path": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Paysage de campagne verdoyante avec prés, champs séparés par haies, une ferme lointaine et deux petits cours d’eau sinueux qui se rejoignent dans la vallée. Aucune haute montagne, mer ou désert. Vue panoramique peinte douce, pas de personne, pas d’inscription.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 3,
+          "choice": "a",
+          "label": "La campagne et les rivières",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-0f5bbacd-136f-4f56-950f-90ae79bccc9c.png",
+      "status": "visually_reviewed",
+      "review_note": "Champs, haies, ferme et cours d’eau sinueux bien visibles ; campagne distincte des paysages de mer et de glacier. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Champs, haies, ferme et cours d’eau sinueux bien visibles ; campagne distincte des paysages de mer et de glacier."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "43e42c88f981b4c16ad07d74e0bb6e65b1e9075ba0886b49e5eeefb7ddedd335",
+      "sha256": "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1",
+      "bytes": 355346,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-glaciers-sommets-dessine",
+      "label": "Les glaciers et les sommets",
+      "path": "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Paysage de haute montagne glacée, plusieurs pics rocheux enneigés et un grand glacier bleu-blanc avec crevasses visibles descendant entre les sommets. Aucun arbre ou forêt dans cette scène d’altitude, pas de mer, personne ou véhicule. Peinture détaillée mais douce, touches de pinceau fines.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 3,
+          "choice": "b",
+          "label": "Les glaciers et les sommets",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s33-co-4",
+          "question": 4,
+          "choice": "b",
+          "label": "Les glaciers et les sommets",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-539aca0b-6aea-43ed-82fd-b3003e2a25b4.png",
+      "status": "visually_reviewed",
+      "review_note": "Glacier crevassé bleu-blanc et sommets enneigés ; aucun arbre, distinction claire avec les montagnes boisées. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Glacier crevassé bleu-blanc et sommets enneigés ; aucun arbre, distinction claire avec les montagnes boisées."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f27905211cda3af41684772a5b635ef714b4d7dff4c9088259f78496417e7e01",
+      "sha256": "6cedd9be041b85e629249ddd81a7ef67cf1be26fa2922ae8c8fb0ee27de62472",
+      "bytes": 294184,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-buffet-dessine",
+      "label": "Un buffet",
+      "path": "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Un buffet de repas en libre-service, longue table de service avec plats chauds en bacs ouverts, salades et desserts sur grands plats, piles d’assiettes vides et pinces de service accessibles aux invités. Salle de réception claire, tables à manger discrètes au fond, aucun serveur apportant une assiette à table et aucun emballage à emporter. Sans personnages, les éléments du libre-service sont clairement visibles.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s23-co-4",
+          "question": 6,
+          "choice": "a",
+          "label": "Un buffet",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s24-co-1",
+          "question": 5,
+          "choice": "a",
+          "label": "Un buffet",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s34-co-1",
+          "question": 3,
+          "choice": "a",
+          "label": "Un buffet",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-5c5e4f3d-73f3-422f-a26b-acee81b9449b.png",
+      "status": "visually_reviewed",
+      "review_note": "Buffet identifiable par les bacs de service, plats partagés, piles d’assiettes et pinces ; aucun emballage à emporter. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Buffet identifiable par les bacs de service, plats partagés, piles d’assiettes et pinces ; aucun emballage à emporter."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6ac0b7180d71422a759c545f7bf02e821a105617ea06771de1011251aabc9393",
+      "sha256": "596a341f41fd643903f2976028173fb89abffca0fb8bcf7f95d905670e836f4a",
+      "bytes": 230516,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-menu-servi-table-dessine",
+      "label": "Un menu servi à table",
+      "path": "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Transformer la scène de club photo en un repas servi à table dans un restaurant. Trois nouveaux personnages fictifs : un serveur de 30 ans d’origine polonaise aux cheveux blond cendré courts, visage triangulaire et chemise blanche apporte une assiette à une cliente brésilienne de 70 ans à peau brune, cheveux blancs raides courts et blouse verte ; son compagnon philippin de 45 ans au visage rond, cheveux noirs courts et lunettes fines est assis en chemise bleu marine. Deux clients assis, un serveur debout, six mains anatomiques ; les assiettes sont posées par le serveur. Même dessin de visages que la référence, aucune ancienne personne ou appareil photo conservé. Pas de buffet, pas de sacs à emporter ni menu avec texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s23-co-4",
+          "question": 6,
+          "choice": "b",
+          "label": "Un menu servi à table",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-12f03e8d-6b54-4b7e-91e3-fee21c3f5461.png",
+      "status": "visually_reviewed",
+      "review_note": "Serveur posant une assiette devant deux clients à une table de restaurant ; trois visages différents, mains cohérentes, peinture modelée comme le club photo. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Serveur posant une assiette devant deux clients à une table de restaurant ; trois visages différents, mains cohérentes, peinture modelée comme le club photo."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "e912aa6c58ae6fc25e951712c139d4e6d2ca50c5576bc2527026f7981a684dc0",
+      "sha256": "5bff3faa0ace73bad474835cf8a667f59d9edf74ce97576d0ec70e5bf80419cc",
+      "bytes": 174744,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-repas-emporter-dessine",
+      "label": "Un repas à emporter",
+      "path": "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Un repas à emporter entier sur fond crème : sac en papier kraft à anses ouvert, deux boîtes alimentaires de transport dont une au couvercle transparent montrant un plat cuisiné, et couverts emballés en papier sans marque. Aucun verre de restaurant, serveur ou buffet. Nourriture et emballage doivent être tous deux visibles.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s23-co-4",
+          "question": 6,
+          "choice": "c",
+          "label": "Un repas à emporter",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-61afc471-8fff-4a41-8669-fdb8190d8470.png",
+      "status": "visually_reviewed",
+      "review_note": "Sac kraft et boîtes de repas préparé visibles ensemble avec couverts emballés ; fond crème, détails peints doux. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Sac kraft et boîtes de repas préparé visibles ensemble avec couverts emballés ; fond crème, détails peints doux."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6a14fb0c019a264b2c65a19909060e0141db85796d3423de1872c2c3eb174be7",
+      "sha256": "e4c226ea432d738f47df32fcb505446e98df3798f5a4bc11396c97424dad69c5",
+      "bytes": 119262,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-mal-tete-dessine",
+      "label": "Un mal de tête",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+      "prompt": "Recomposer la PREMIÈRE image au FORMAT PAYSAGE EXACT 4:3 (1448 pixels de large, 1086 de haut). Garder cette même femme fictive aux cheveux noirs courts, pull terracotta, pantalon gris, deux mains sur front et tempe, petite lueur rouge sur front et expression de mal de tête. La montrer EN ENTIER avec chaussures et marge, plus petite dans un vaste fond crème horizontal, sans couper, étirer ou déformer son corps. Deux mains anatomiques. Rapprocher le modelé et le dessin de son visage de la DEUXIÈME référence : peinture numérique semi-réaliste chaleureuse, contours fins et discrets, volumes doux, ni photographie ni 3D ni aplats cartoon. Aucun texte ni nombre, date, logo. Ne pas créer une nouvelle image en portrait : la largeur doit absolument être supérieure à la hauteur, rapport 4:3.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s22-co-1",
+          "question": 4,
+          "choice": "a",
+          "label": "Un mal de tête",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s52-co-2",
+          "question": 3,
+          "choice": "a",
+          "label": "Un mal de tête",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-adf4ec95-3549-445e-bc89-002a4d20d9de.png",
+      "status": "visually_reviewed",
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-d25afa4d-7436-4765-abb0-12cf3bc0e0cc.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-d25afa4d-7436-4765-abb0-12cf3bc0e0cc.png",
+      "revision_reason": "Première génération portrait rejetée ; recomposition native en paysage 4:3.",
+      "review_note": "Version recomposée nativement en paysage 4:3 : femme entière sur fond crème, mains sur front et tempe, rougeur au front ; silhouette et mains préservées sans déformation. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Version recomposée nativement en paysage 4:3 : femme entière sur fond crème, mains sur front et tempe, rougeur au front ; silhouette et mains préservées sans déformation."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "aefa3c824f9e087bb19a7a4dbe4f26f7b996dc376551ac8052d3dcbde049ee75",
+      "sha256": "5044660ae9e50443c7d9fb496967c62c2bc6fbf9a07270bc2c2ae14386b114e8",
+      "bytes": 25982,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-mal-dents-dessine",
+      "label": "Un mal de dents",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Transformer la référence en un homme fictif noir de 27 ans seul sur fond crème, cheveux crépus très courts et petite barbe, visage carré nouveau, sweat bordeaux et jean bleu. Debout en entier, une main soutenant la joue au niveau de la mâchoire et expression douloureuse ; petite lueur rouge discrète sur la joue à hauteur des dents. Autre bras détendu, deux mains anatomiques. Ne pas indiquer une douleur à l’oreille, ne pas montrer de blessure ou sang. Même dessin de visages peints que la référence, pas une photo, aucun ancien visage ou objet conservé.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s22-co-1",
+          "question": 4,
+          "choice": "b",
+          "label": "Un mal de dents",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-7e4086c6-e83e-44a8-a548-fc00267cbc02.png",
+      "status": "visually_reviewed",
+      "review_note": "Homme noir au visage nouveau, main sur la joue au niveau des dents, expression douloureuse et rougeur localisée ; pas de blessure. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Homme noir au visage nouveau, main sur la joue au niveau des dents, expression douloureuse et rougeur localisée ; pas de blessure."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "ff7b513e038c48f4d7c3cfb519c935eaa2e41be8ef72c5d3c69edc26e1c245eb",
+      "sha256": "6e73c6abb1f7d3c3688116883844f08d45034875a3c1bacf5d499d3cfd624f71",
+      "bytes": 32500,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-mal-dos-dessine",
+      "label": "Un mal de dos",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Transformer la référence en une femme fictive blanche de 62 ans seule sur fond crème, silhouette ronde, longue tresse grise et lunettes ovales, cardigan beige et pantalon bleu. En entier vue de trois quarts, légèrement penchée, une main sur le BAS DU DOS et expression douloureuse ; petite lueur rouge discrète au bas du dos. L’autre bras est détendu. Deux mains anatomiques, aucune blessure ni sang. Visage entièrement nouveau, même dessin de visage et peinture douce que la référence, aucun rendu photo.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s22-co-1",
+          "question": 4,
+          "choice": "c",
+          "label": "Un mal de dos",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-ss-a1-s52-co-2",
+          "question": 3,
+          "choice": "b",
+          "label": "Un mal de dos",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-ca65085b-e9be-4eee-ab4a-8bd291519a5d.png",
+      "status": "visually_reviewed",
+      "review_note": "Femme âgée avec lunettes et tresse grise, main et rougeur au bas du dos ; silhouette entière, dessin doux sans blessure. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Femme âgée avec lunettes et tresse grise, main et rougeur au bas du dos ; silhouette entière, dessin doux sans blessure."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "112d2b58e353929180c4bed4e351081304bdc1b02cdd1b76bf6604af245d44d8",
+      "sha256": "4e1c1c273413abe8133d1dbb58e94c1412cc73ac5f5c183f944015cc02c7a397",
+      "bytes": 43352,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-mal-pied-dessine",
+      "label": "Un mal de pied",
+      "path": "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3. Illustration peinte numérique semi-réaliste de collection pédagogique, détails fins, modelé doux et contours discrets, couleurs naturelles chaudes et lumière douce. Style du commit 48a753d8 : dessin clair et peinture lisible, aucune photo ni 3D ni contour noir épais. Sujet entier avec marge, aucun texte, logo, nombre, montant, date, jour ou mois. Transformer la référence en un homme fictif d’origine indienne de 40 ans seul, silhouette athlétique, cheveux noirs attachés en petit chignon et moustache, t-shirt vert et pantalon beige. Assis sur une chaise simple sur fond crème, en entier avec ses deux pieds visibles. Il tient de ses deux mains le MILIEU D’UN PIED nu légèrement soulevé, expression douloureuse et petite lueur rouge sur le dessus du pied, pas à la cheville. Deux mains, deux jambes, deux pieds anatomiques ; aucun sang, gonflement extrême ou inscription. Même visage dessiné et modelé peint que la référence, entièrement nouveau et sans photo.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s52-co-2",
+          "question": 3,
+          "choice": "c",
+          "label": "Un mal de pied",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-2439aed3-bad2-4173-b0f4-1e75fb3052d1.png",
+      "status": "visually_reviewed",
+      "review_note": "Homme avec chignon et moustache tenant le dessus de son pied nu ; douleur au pied distincte de la cheville, anatomie et chaise cohérentes. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle avec les références validées du commit 48a753d8 : contours fins, volumes doux, couleurs naturelles chaudes et détails peints. Homme avec chignon et moustache tenant le dessus de son pied nu ; douleur au pied distincte de la cheville, anatomie et chaise cohérentes."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "0a4bf8cf7d28839fd038ed10e11f3b60fdfa9e6c6314e5085600759e14e6407f",
+      "sha256": "544b788ad8aa541a290636613172c2968f029d0f885af7251c5e16d1d4c18975",
+      "bytes": 41016,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-chapeau-maillot-dessine",
+      "label": "Un chapeau et un maillot de bain",
+      "path": "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un chapeau de soleil en paille à large bord ET un maillot de bain une pièce bleu turquoise, disposés côte à côte. Les deux objets entiers, sans personne, ni serviette ou lunettes.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1p-s4-co-5",
+          "question": 5,
+          "choice": "a",
+          "label": "Un chapeau et un maillot de bain",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-75fbe83b-8604-4efd-8d87-1c19b5cfa5c4.png",
+      "status": "visually_reviewed",
+      "review_note": "Chapeau à large bord et maillot une pièce tous deux visibles ; aucun objet manquant. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Chapeau à large bord et maillot une pièce tous deux visibles ; aucun objet manquant."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c6bdb267e8b3ce3ba98552f8b8034b729092d80337ec78aecc7c1aa2403a2874",
+      "sha256": "8f666556451639cac54dea866525b23c80ba9ff24d579b42978fe035aff5b22f",
+      "bytes": 95432,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-bonnet-combinaison-ski-dessine",
+      "label": "Un bonnet et une combinaison de ski",
+      "path": "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un bonnet en laine rouge à pompon ET une combinaison de ski une pièce bleu marine et jaune, manches et jambes visibles, disposés côte à côte sans personne. Aucun ski ni autre équipement.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1p-s4-co-5",
+          "question": 5,
+          "choice": "b",
+          "label": "Un bonnet et une combinaison de ski",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-8f8e3c13-9fc7-4bea-895a-930a50c8674f.png",
+      "status": "visually_reviewed",
+      "review_note": "Bonnet rouge distinct et combinaison de ski complète avec manches et jambes ; pas une simple veste. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Bonnet rouge distinct et combinaison de ski complète avec manches et jambes ; pas une simple veste."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b7d3fd6e7bf7f494983996533a437a1f388f7cd0f49e6a5ee37a5b5cbc2c228d",
+      "sha256": "f72218093b963a5346f5bf3cfb74e01eaafa079b6faf2b2cb134344ff2b6c74c",
+      "bytes": 101564,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-manteau-gants-dessine",
+      "label": "Un manteau et des gants",
+      "path": "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un manteau d’hiver vert foncé entier avec manches ET une paire de gants en laine bordeaux, côte à côte. Pas de bonnet, pas de personne.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1p-s4-co-5",
+          "question": 5,
+          "choice": "c",
+          "label": "Un manteau et des gants",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-0d4706a0-2358-4dde-9553-ce08855a60f5.png",
+      "status": "visually_reviewed",
+      "review_note": "Manteau vert entier et paire de gants bordeaux anatomiquement correcte ; matières fines comme les pulls de la référence. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Manteau vert entier et paire de gants bordeaux anatomiquement correcte ; matières fines comme les pulls de la référence."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6e6de4f1cebc1b61371e81ca64e344d47cd94cd76db22b0e06c24eafea5f1bbf",
+      "sha256": "0934c5a55ff2c852a22a665fefd0c29ebd6651e60c900d3d7d0ab36f0ba69ff7",
+      "bytes": 90872,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-crayons-feutres-dessine",
+      "label": "Des crayons de couleur ou des feutres",
+      "path": "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un ensemble de crayons de couleur taillés ET un ensemble de feutres colorés à capuchons, rangés en deux petits éventails côte à côte. Aucun mot ou lettre sur les corps. Pas de peinture ni craie.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s4-co-3",
+          "question": 5,
+          "choice": "a",
+          "label": "Des crayons de couleur ou des feutres",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-aac6938d-dad7-4727-8d87-d949b5f5055b.png",
+      "status": "visually_reviewed",
+      "review_note": "Crayons colorés taillés et feutres à capuchons en deux éventails distincts, aucune marque. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Crayons colorés taillés et feutres à capuchons en deux éventails distincts, aucune marque."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "917bd41f8044134a59d994a9a2bb29c150534b8da990742d3299fb0a84117287",
+      "sha256": "c97a76c6ecb826deabf08a0bf9fdfa71fca95f0bc5df9e219b5e5ef019e318f5",
+      "bytes": 78898,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-encre-charbon-dessine",
+      "label": "De l’encre ou du charbon",
+      "path": "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un encrier de verre ouvert contenant de l’encre noire, une plume simple posée à côté, ET plusieurs bâtons de fusain noir et morceaux de charbon de dessin visibles à côté sur une petite feuille blanche. Pas de crayons colorés ou peinture.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s4-co-3",
+          "question": 5,
+          "choice": "b",
+          "label": "De l’encre ou du charbon",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-0c627655-fe19-4d36-ba0b-6276443e198e.png",
+      "status": "visually_reviewed",
+      "review_note": "Encrier noir, plume et bâtons ou morceaux de charbon lisibles, sans confusion avec des crayons colorés. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Encrier noir, plume et bâtons ou morceaux de charbon lisibles, sans confusion avec des crayons colorés."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "fb773acfa70574ec70636967c533cfb1d461a7b5daca9a7007a4385cc2511333",
+      "sha256": "64e1d7751bde874eefff9fc56ccb1ca66e59a919c1da9b3e079586e5e59a213e",
+      "bytes": 110258,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-craies-peinture-dessine",
+      "label": "Des craies ou de la peinture",
+      "path": "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Plusieurs craies épaisses de couleurs variées ET une palette de peinture garnie de petites touches colorées avec deux pinceaux, bien séparées côte à côte. Aucun feutre, crayon ou texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s4-co-3",
+          "question": 5,
+          "choice": "c",
+          "label": "Des craies ou de la peinture",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-d3ff6c19-2c75-46a7-a947-5ad0a2497d5a.png",
+      "status": "visually_reviewed",
+      "review_note": "Craies colorées mates et palette de peinture avec pinceaux ; les deux techniques sont visibles. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Craies colorées mates et palette de peinture avec pinceaux ; les deux techniques sont visibles."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3a0bd1343412e8fe5945fb654877e2cebe97bfefa7bf886fc01722da3a1c6903",
+      "sha256": "570f568c30a1a19e8d996d2929c87caadd55b9d00ffd993d32823f4c07ae04ec",
+      "bytes": 109820,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-serviettes-assiettes-dessine",
+      "label": "Des serviettes et des assiettes",
+      "path": "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Une petite pile de serviettes de table en papier blanc et rouge ET une petite pile d’assiettes blanches, côte à côte. Pas de nourriture, verre ou couvert.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s24-co-3",
+          "question": 2,
+          "choice": "a",
+          "label": "Des serviettes et des assiettes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-c8889ac1-3915-4c42-88e2-62c9d894633c.png",
+      "status": "visually_reviewed",
+      "review_note": "Pile de serviettes papier et pile d’assiettes blanches nettement séparées. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Pile de serviettes papier et pile d’assiettes blanches nettement séparées."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "9b2b3e45d04c340ac3dde079a79032643855b2adb2e87f827f191a6879cd8a37",
+      "sha256": "4ca7744ee1ab801d2230e153f2015a717486f223efbda93637c1f41677207381",
+      "bytes": 46766,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-casseroles-poeles-dessine",
+      "label": "Des casseroles et des poêles",
+      "path": "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Deux casseroles de cuisine en inox de tailles différentes avec leurs poignées ET deux poêles noires de cuisine à long manche, groupées lisiblement sans empilement cachant les formes. Aucun aliment ou texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s24-co-3",
+          "question": 2,
+          "choice": "b",
+          "label": "Des casseroles et des poêles",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-e8b128fe-4f03-4613-842c-2903016f4dc3.png",
+      "status": "visually_reviewed",
+      "review_note": "Casseroles en inox à bords hauts et poêles noires à bords bas ; manches entiers et formes distinctes. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Casseroles en inox à bords hauts et poêles noires à bords bas ; manches entiers et formes distinctes."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "b2890812d5afc48b7e92470d6748dcfb0a0e524860244cd36227714f61ce27ae",
+      "sha256": "2e25c6a74c6e78697ae6ae9fa0ab8984dcb3e534699415006de3322435b85334",
+      "bytes": 78794,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-nappes-bougies-dessine",
+      "label": "Des nappes et des bougies",
+      "path": "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Deux nappes de table pliées en tissu, une blanche et une à carreaux rouge et blanc, ET trois bougies cylindriques crème de hauteurs variées sans texte, à côté. Montrer plis et petites franges pour distinguer les nappes de papier.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s24-co-3",
+          "question": 2,
+          "choice": "c",
+          "label": "Des nappes et des bougies",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-ab956342-22d0-46f9-9e5c-4da1b9279a77.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux nappes pliées reconnaissables à leur texture et leurs franges, avec trois bougies cylindriques. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Deux nappes pliées reconnaissables à leur texture et leurs franges, avec trois bougies cylindriques."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "86afb77f96a875d9d2366b2166eb23d9a4e598ad3e8668e5bce2e2158ab34dc3",
+      "sha256": "2bf64d610d096284ca1d0d9ed2416ed18a64c25895ba4f21d934b0c7282dc6f4",
+      "bytes": 103108,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-dentifrice-brosses-dessine",
+      "label": "Le dentifrice et les brosses à dents",
+      "path": "/lib/images/tcf/qcm-audit/co306-dentifrice-brosses-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un tube de dentifrice blanc et bleu sans aucune inscription, légèrement ouvert avec une noisette de pâte, ET deux brosses à dents dont les poils et manches sont visibles. Aucun autre article.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 4,
+          "choice": "a",
+          "label": "Le dentifrice et les brosses à dents",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-6df68dc7-497c-4a6a-a419-24e5319c5f19.png",
+      "status": "visually_reviewed",
+      "review_note": "Tube de dentifrice avec pâte sortante et deux brosses à dents, sans texte ni objet supplémentaire. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Tube de dentifrice avec pâte sortante et deux brosses à dents, sans texte ni objet supplémentaire."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "7e09c75544cc114ca063313f7070085e2f088a15e12ae17487bbe96a598d1b72",
+      "sha256": "ff8805345f6f1c875926b69e324e8d4b508fd3f97a0dfea1736a991b539606f7",
+      "bytes": 55378,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-savon-peigne-dessine",
+      "label": "Le savon et le peigne",
+      "path": "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un savon solide ovale crème dans un porte-savon simple ET un peigne brun à dents régulières, côte à côte, objets entiers. Aucun autre article.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 4,
+          "choice": "b",
+          "label": "Le savon et le peigne",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-db2e6998-3fbf-4140-8cf9-ce10e26e54e8.png",
+      "status": "visually_reviewed",
+      "review_note": "Savon ovale sur porte-savon et peigne à dents régulières ; formes entières. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Savon ovale sur porte-savon et peigne à dents régulières ; formes entières."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "ccfd01ee89875722c2ce77dd61bcc4f9490bddd588f5a9b7e7dadb7172c1ccbe",
+      "sha256": "e1cccb02e95ca76ee33aaede30c0389934ac5592bd87f3827f36a5fb3213fd19",
+      "bytes": 34628,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-shampoing-seche-cheveux-dessine",
+      "label": "Le shampoing et le sèche-cheveux",
+      "path": "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un flacon de shampoing fermé, bleu clair avec capuchon et un petit motif de mèches de cheveux sans texte, ET un sèche-cheveux noir dont la poignée et le cordon sont visibles. Aucun autre article.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 4,
+          "choice": "c",
+          "label": "Le shampoing et le sèche-cheveux",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-c6627832-962b-4b1d-be45-bfa3229f45e5.png",
+      "status": "visually_reviewed",
+      "review_note": "Flacon de shampoing avec motif de cheveux et sèche-cheveux à poignée et cordon, tous deux entiers. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Flacon de shampoing avec motif de cheveux et sèche-cheveux à poignée et cordon, tous deux entiers."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "0d5cf138f52d5ea13b2f0c027094bc70d18c87bff1ee438ce2eaf4c6d882ead5",
+      "sha256": "dea48faed294845e1cc60147d23cfb3e0fd109d97a875ab01f1cad6ba48748ca",
+      "bytes": 45046,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-feuilles-stylos-dessine",
+      "label": "Des feuilles et des stylos",
+      "path": "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Plusieurs feuilles de papier blanc vierges en éventail ET trois stylos à bille sans marque avec leurs capuchons, côte à côte. Aucun cahier, livre, gomme, écriture ou chiffre.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex3-36",
+          "question": 9,
+          "choice": "a",
+          "label": "Des feuilles et des stylos",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-8eaa1299-8649-4fef-b34b-00924bf6a982.png",
+      "status": "visually_reviewed",
+      "review_note": "Feuilles vierges et stylos à bille à capuchon ; aucun crayon ou cahier parasite. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Feuilles vierges et stylos à bille à capuchon ; aucun crayon ou cahier parasite."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "44bae26eed14fcefcdf5c9dd05ae10d2148032ca5375af560ac3a6799f8dc8f5",
+      "sha256": "861265d59601077639490ca7e3328ab92f1f3d7e8ce1b9475e5dda69e66a0e17",
+      "bytes": 29148,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-livres-cahiers-dessine",
+      "label": "Des livres et des cahiers",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Deux livres de lecture fermés à reliure épaisse sans aucune inscription ET deux cahiers scolaires à couverture souple, dont un ouvert montrant des lignes vierges. Objets distincts côte à côte, aucun stylo.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex3-36",
+          "question": 9,
+          "choice": "b",
+          "label": "Des livres et des cahiers",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-c0cafa62-2dcb-43a2-a905-0331be9db221.png",
+      "status": "visually_reviewed",
+      "review_note": "Livres reliés épais et cahiers souples dont un ouvert avec lignes vierges ; deux types distincts. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Livres reliés épais et cahiers souples dont un ouvert avec lignes vierges ; deux types distincts."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "9ed19182ad3d2595524d5732e323a294e6dc5196ddf646addb462c8d0160b75f",
+      "sha256": "cf161d7aad9ddcaace773c3d9fe1a9f1be831a4d307e7a3e81ae83930ba301f0",
+      "bytes": 87826,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-crayons-gommes-dessine",
+      "label": "Des crayons et des gommes",
+      "path": "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Quatre crayons de papier en bois taillés, pointes de graphite gris visibles, ET deux gommes rectangulaires blanches et roses à côté. Aucune couleur de crayon, marque, feutre ou livre.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a1-2022-co-ex3-36",
+          "question": 9,
+          "choice": "c",
+          "label": "Des crayons et des gommes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-af0cb4eb-b07e-401b-91c4-a50a2018fe69.png",
+      "status": "visually_reviewed",
+      "review_note": "Crayons de papier avec graphite gris et gommes rectangulaires ; aucun feutre. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Crayons de papier avec graphite gris et gommes rectangulaires ; aucun feutre."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "8a1ce6a8ecb9e63d1d277456e2ab20a7f3af824720bd823775143a7c6ccfe717",
+      "sha256": "41fe53392136dbd39316d8ca63c43a054da636b43654d6f0bbb09af42a49b792",
+      "bytes": 59302,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-salades-sandwichs-dessine",
+      "label": "Des salades et des sandwichs",
+      "path": "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Deux petits bols de salade composée fraîche ET deux sandwichs baguette coupés avec garniture visible, côte à côte. Pas de pizza, pâtes, soupe ou grillade.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s22-co-2",
+          "question": 3,
+          "choice": "a",
+          "label": "Des salades et des sandwichs",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-d047a10e-d623-4246-9dd2-8f21e0ce91ad.png",
+      "status": "visually_reviewed",
+      "review_note": "Salades composées en bols et sandwichs baguette garnis ; les deux aliments sont représentés. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Salades composées en bols et sandwichs baguette garnis ; les deux aliments sont représentés."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "d4258426a96318075df7e1eb5768eba8e13182c8508440c17874fab3164d3c98",
+      "sha256": "a246bc9a8a628e90be52ac07eb9e89938b98ef0e206551a803986eaa2f0d45c0",
+      "bytes": 162044,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-pizzas-pates-dessine",
+      "label": "Des pizzas et des pâtes",
+      "path": "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Une pizza ronde tomate fromage entièrement visible ET une assiette de pâtes penne à la sauce tomate, côte à côte. Pas de salade, sandwich, soupe ou grillade.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s22-co-2",
+          "question": 3,
+          "choice": "b",
+          "label": "Des pizzas et des pâtes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-7f65df5b-27ac-4e31-bf8d-1aba0f6db788.png",
+      "status": "visually_reviewed",
+      "review_note": "Pizza entière et assiette de pâtes à côté, distinctes des autres couples de repas. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Pizza entière et assiette de pâtes à côté, distinctes des autres couples de repas."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "ca1abc1d58d010f7e1babe875d3b16832506e111d86621a59d2798594b74ee1b",
+      "sha256": "c010e6fb88d529130b86caa0625838d12ebedd72b41b1bafca2ffa4b7aa8bdf5",
+      "bytes": 122162,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-soupes-grillades-dessine",
+      "label": "Des soupes et des grillades",
+      "path": "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp",
+      "prompt": "FORMAT RECTANGULAIRE PAYSAGE EXACT 4:3, largeur 1448 hauteur 1086. Illustration numérique semi-réaliste dessinée et peinte de la collection pédagogique validée au commit 48a753d8 : contours fins discrets, volumes doux, dégradés subtils, matières finement dessinées, couleurs naturelles chaudes. Pas de photo, de 3D ou de contour noir épais. Fond crème uni avec ombre douce. Tous les objets entiers, marges autour, réponse simple immédiatement reconnaissable. Aucun texte, lettre, logo, chiffre, montant, date, jour ou mois. Un bol de soupe de légumes avec liquide et petits morceaux visibles ET une assiette de grillades comprenant un morceau de viande et légumes marqués au gril, côte à côte. Pas de salade ou pâtes.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s22-co-2",
+          "question": 3,
+          "choice": "c",
+          "label": "Des soupes et des grillades",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-49067e40-179a-4fa8-b202-e176780b10bc.png",
+      "status": "visually_reviewed",
+      "review_note": "Bol de soupe liquide et assiette de grillades avec traces de gril ; les deux catégories sont reconnaissables. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+        ],
+        "review_note": "Comparaison aux boissons et pulls validés du commit 48a753d8 : fond crème, contours fins, volumes doux, reflets et textures dessinés. Bol de soupe liquide et assiette de grillades avec traces de gril ; les deux catégories sont reconnaissables."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "eb5cfb4b8da8a4a4a0efe9c352e2c4036196b92b4fada6933b30694027770679",
+      "sha256": "7ff41647bd1bff2a87f762081e862a94ecebf115714f256c4575710895b69ec0",
+      "bytes": 122438,
       "domain": "co",
       "batch": "active-audios-834"
     }
@@ -17575,6 +18817,87 @@
       "source_ids": [
         "09035276:044:6f1e71a5d8e3",
         "additional-20261102:mdf-a1-abc-junior:44:6f1e71a5d8e3:a0d1f6e7"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s4-co-3",
+      "question": 5,
+      "enonce": "Avec quoi peut-on colorier les espaces vides ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Trois ensembles distincts de matériel de coloriage, chacun couvrant les deux objets ou matières du libellé. Transcription relue : Pour cette activité créative, il nous faut du scotch et des papiers colorés. Nous commençons par découper les formes, puis nous les collons sur du papier blanc. Les enfants adorent faire ça. Nous pouvons également les laisser colorier les vides avec des crayons de couleurs ou des feutres.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/vie-quotidienne/couleurs-objet.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a1-abc:52:24f659ea6d91:8491b8ff"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-92",
+      "question": 4,
+      "enonce": "Quels objets de toilette faut-il prendre avec les serviettes ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+        "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Dentifrice/brosses à dents, savon/peigne, shampoing/sèche-cheveux : les six objets sont reconnaissables, chaque paire distincte. Transcription relue : Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_92.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:092:fe7b7db9b31c"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex3-36",
+      "question": 9,
+      "enonce": "Que faut-il apporter pour la réunion ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les images distinguent les feuilles avec stylos des livres/cahiers et crayons/gommes ; aucun matériel de la mauvaise réponse dans la bonne image. Transcription relue : Bonjour, c'est Madame le Comte. Pour la réunion, merci d'apporter des feuilles et des stylos pour tout le monde. Pas de crayon! Juste des stylos pour écrire. C'est important. Merci beaucoup!",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_36-3.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:036:0aedb8525f1a"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s22-co-2",
+      "question": 3,
+      "enonce": "Quels aliments sont proposés au bar ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les trois paires alimentaires sont illustrées en entier ; pas de réutilisation d’une simple salade pour la réponse composée. Transcription relue : Bonjour Le bar est ouvert voiture 15 Vous pouvez acheter des boissons chaud ou froides des salades et des sandwichs Et pour un jus de fruits acheter un croissant offert Vous pouvez aussi acheter des journaux et magazines Voiture 14",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/maison/mesdames-messieurs-bienvenue-bord.mp3"
+      ],
+      "source_ids": [
+        "09035276:028:c036003c1c6c",
+        "additional-20261102:mdf-a1-abc-junior:28:c036003c1c6c:361683f4"
       ]
     }
   ],

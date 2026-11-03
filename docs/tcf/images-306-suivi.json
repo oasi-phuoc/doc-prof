@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 67,
-    "newly_activated": 22,
-    "prepared_pending_audio_link": 41,
+    "questions_illustrated_or_prepared": 81,
+    "newly_activated": 26,
+    "prepared_pending_audio_link": 51,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 239,
+    "remaining_questions_requiring_images_or_review": 225,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -372,20 +372,29 @@
           "asset": "d6a833dd034a"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp"
       ],
-      "missing_labels": [
-        "Un chapeau et un maillot de bain",
-        "Un bonnet et une combinaison de ski",
-        "Un manteau et des gants"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a1p-s4-co-5",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c’est Cathy. Chez nous, dans le sud, il fait très chaud cette semaine. Alors apporte un chapeau, ton maillot de bain et ta serviette. Nous avons une piscine. Prends aussi ton appareil photo. La nature est très belle ici. Je t’attends à la gare. Appelle-moi si le train est en retard.",
+        "current_bank_transcription": "Bonjour, c’est Cathy. Chez nous, dans le sud, il fait très chaud cette semaine. Alors apporte un chapeau, ton maillot de bain et ta serviette. Nous avons une piscine. Prends aussi ton appareil photo. La nature est très belle ici. Je t’attends à la gare. Appelle-moi si le train est en retard.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les deux vêtements de chaque réponse sont présents, sans substituer un accessoire partiel."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -954,7 +963,7 @@
           "asset": "964bf515d232"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:52:24f659ea6d91:8491b8ff"
       ],
@@ -967,16 +976,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp"
       ],
-      "missing_labels": [
-        "Des crayons de couleur ou des feutres",
-        "De l’encre ou du charbon",
-        "Des craies ou de la peinture"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s4-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp"
+        ],
+        "support_quote": "Pour cette activité créative, il nous faut du scotch et des papiers colorés. Nous commençons par découper les formes, puis nous les collons sur du papier blanc. Les enfants adorent faire ça. Nous pouvons également les laisser colorier les vides avec des crayons de couleurs ou des feutres.",
+        "current_bank_transcription": "Pour cette activité créative, il nous faut du Scotch et des papiers colorés.\nNous commençons par découper les formes, puis nous les collons sur du papier blanc.\nLes enfants adorent faire ça !\nNous pouvons également les laisser colorier les vides avec des crayons de couleur ou des feutres.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Trois ensembles distincts de matériel de coloriage, chacun couvrant les deux objets ou matières du libellé."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1839,20 +1862,29 @@
           "asset": "7343c3fe2e6b"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp"
       ],
-      "missing_labels": [
-        "Un mal de tête",
-        "Un mal de dents",
-        "Un mal de dos"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s22-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp"
+        ],
+        "support_quote": "- Vous avez mal où ?\n- J'ai mal à la gorge.\n- Vous toussez ?\n- Oui, je tousse beaucoup.\n- Et vous vous sentez comment ?\n- J'ai froid, j'ai chaud et j'ai très soif…\n- Vous avez mal au ventre ?\n- Non, j'ai mal à la tête et je n'ai pas faim…\n- Je pense que vous avez de la fièvre.\nVous êtes fatigué, vous avez besoin de repos.\n- Mais qu'est-ce que j'ai ?\nUn rhume ?\n- Non !\nC'est la grippe !\n- Qu'est-ce que je dois faire, docteur ?\n- Pour commencer, je vous conseille de rester à la maison...",
+        "current_bank_transcription": "- Vous avez mal où ?\n- J'ai mal à la gorge.\n- Vous toussez ?\n- Oui, je tousse beaucoup.\n- Et vous vous sentez comment ?\n- J'ai froid, j'ai chaud et j'ai très soif…\n- Vous avez mal au ventre ?\n- Non, j'ai mal à la tête et je n'ai pas faim…\n- Je pense que vous avez de la fièvre.\nVous êtes fatigué, vous avez besoin de repos.\n- Mais qu'est-ce que j'ai ?\nUn rhume ?\n- Non !\nC'est la grippe !\n- Qu'est-ce que je dois faire, docteur ?\n- Pour commencer, je vous conseille de rester à la maison...",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Mal de tête, mal de dents et mal de dos : les zones douloureuses sont explicitement visibles, avec des personnages fictifs variés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1883,7 +1915,7 @@
           "asset": "727d865b5316"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:028:c036003c1c6c",
         "additional-20261102:mdf-a1-abc-junior:28:c036003c1c6c:361683f4"
@@ -1897,16 +1929,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp"
       ],
-      "missing_labels": [
-        "Des salades et des sandwichs",
-        "Des pizzas et des pâtes",
-        "Des soupes et des grillades"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s22-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp"
+        ],
+        "support_quote": "Bonjour Le bar est ouvert voiture 15 Vous pouvez acheter des boissons chaud ou froides des salades et des sandwichs Et pour un jus de fruits acheter un croissant offert Vous pouvez aussi acheter des journaux et magazines Voiture 14",
+        "current_bank_transcription": "Bonjour, le bar est ouvert, voiture 15.\nVous pouvez acheter des bois sont chaudes ou froides, des salades et des sandwichs.\nEt pour un jus de fruit acheté, un croissant au fer.\nVous pouvez aussi acheter des journaux et magasines, voiture 14.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les trois paires alimentaires sont illustrées en entier ; pas de réutilisation d’une simple salade pour la réponse composée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1990,20 +2036,29 @@
           "asset": "934ec532c787"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
       ],
-      "missing_labels": [
-        "Un buffet",
-        "Un menu servi à table",
-        "Un repas à emporter"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s23-co-4",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
+        ],
+        "support_quote": "- Bonjour madame Bugier !\nComment ça va ?\n- Bonjour Thomas.\nMoi, ça va…\nEt votre famille ?\n- Bien merci.\nLa Fête des voisins, c'est bientôt, non ?\n- Non !\nLa Fête des voisins est en juin.\nMais j'organise un apéro samedi, je vous invite, vous et votre femme.\nVous êtes libres ?\n- Samedi 28 ?\nMoi je suis libre, mais ma femme ne peut pas, elle travaille le week-end.\n- Dommage !\n- C'est à quelle heure ?\n- On commence à sept heures.\nC'est un buffet.\n- J'apporte quelque chose ?\nUne salade, une quiche à partager, des chips, une boisson ?\n- Quelque chose pour le dessert peut-être…\nUne salade de fruits ?\n- Super !\nÀ samedi alors.\n- À samedi.",
+        "current_bank_transcription": "- Bonjour madame Bugier !\nComment ça va ?\n- Bonjour Thomas.\nMoi, ça va…\nEt votre famille ?\n- Bien merci.\nLa Fête des voisins, c'est bientôt, non ?\n- Non !\nLa Fête des voisins est en juin.\nMais j'organise un apéro samedi, je vous invite, vous et votre femme.\nVous êtes libres ?\n- Samedi 28 ?\nMoi je suis libre, mais ma femme ne peut pas, elle travaille le week-end.\n- Dommage !\n- C'est à quelle heure ?\n- On commence à sept heures.\nC'est un buffet.\n- J'apporte quelque chose ?\nUne salade, une quiche à partager, des chips, une boisson ?\n- Quelque chose pour le dessert peut-être…\nUne salade de fruits ?\n- Super !\nÀ samedi alors.\n- À samedi.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Buffet en libre-service, repas apporté par un serveur à table et repas emballé à emporter : trois modes de repas clairement distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2034,20 +2089,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp"
       ],
-      "missing_labels": [
-        "Un buffet",
-        "Un repas au restaurant",
-        "Un pique-nique"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s24-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp"
+        ],
+        "support_quote": "J'organise un appereau.\nTu es libre ?\nJ'organise un appereau.\nVous êtes libre ?\nOui, je suis libre.\nOui, nous sommes libres.\nNon, désolé, nous ne sommes pas libres.\nJe t'invite samedi.\nTu peux venir ?\nOui, avec plaisir.\nSuper.\nC'est à quelle heure ?\nC'est à 19 heures.\nJe vous invite samedi.\nVous pouvez venir ?\nDésolé, je ne peux pas samedi.\nMoi, volontiers, mais ma femme ne peut pas.\nDommage.\nJ'apporte quelque chose ?\nQuelque chose pour le buffet peut-être ?\nJ'apporte un dessert.\nPour le buffet, tu as besoin de quelque chose ?\nJ'ai besoin de serviettes, d'aciettes.",
+        "current_bank_transcription": "J'organise un appereau.\nTu es libre ?\nJ'organise un appereau.\nVous êtes libre ?\nOui, je suis libre.\nOui, nous sommes libres.\nNon, désolé, nous ne sommes pas libres.\nJe t'invite samedi.\nTu peux venir ?\nOui, avec plaisir.\nSuper.\nC'est à quelle heure ?\nC'est à 19 heures.\nJe vous invite samedi.\nVous pouvez venir ?\nDésolé, je ne peux pas samedi.\nMoi, volontiers, mais ma femme ne peut pas.\nDommage.\nJ'apporte quelque chose ?\nQuelque chose pour le buffet peut-être ?\nJ'apporte un dessert.\nPour le buffet, tu as besoin de quelque chose ?\nJ'ai besoin de serviettes, d'aciettes.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Buffet, restaurant avec service à table et pique-nique sur couverture dans un parc : contexte et trois réponses concordent. Réutilisation entière de la scène de pique-nique contrôlée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2078,20 +2142,29 @@
           "asset": "b92d969b9926"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp"
       ],
-      "missing_labels": [
-        "Des serviettes et des assiettes",
-        "Des casseroles et des poêles",
-        "Des nappes et des bougies"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s24-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp"
+        ],
+        "support_quote": "- Ah Roxane !\nPour notre pique-nique, j'ai besoin de serviettes et d'assiettes.\n- D'accord Tim.\nJ'apporte aussi des chips et des boissons.\n- Je prépare une salade et Rémi une pizza.",
+        "current_bank_transcription": "- Ah Roxane !\nPour notre pique-nique, j'ai besoin de serviettes et d'assiettes.\n- D'accord Tim.\nJ'apporte aussi des chips et des boissons.\n- Je prépare une salade et Rémi une pizza.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les couples serviettes/assiettes, casseroles/poêles et nappes/bougies sont représentés entièrement."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2755,20 +2828,29 @@
           "asset": "4c7e73dc4eba"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
       ],
-      "missing_labels": [
-        "Les montagnes et les forêts",
-        "La mer et les plages",
-        "Les déserts et les dunes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+        ],
+        "support_quote": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "current_bank_transcription": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Montagnes boisées, mer et plages, désert de dunes : chacun des deux éléments de chaque réponse est visible."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2799,20 +2881,29 @@
           "asset": "4c7e73dc4eba"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
       ],
-      "missing_labels": [
-        "La campagne et les rivières",
-        "Les glaciers et les sommets",
-        "Les déserts et les dunes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+        ],
+        "support_quote": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "current_bank_transcription": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Campagne avec cours d’eau, glacier avec sommets et désert avec dunes : les couples de paysages sont entiers et distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2843,20 +2934,29 @@
           "asset": "4c7e73dc4eba"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
       ],
-      "missing_labels": [
-        "La mer et les plages",
-        "Les glaciers et les sommets",
-        "Les déserts et les dunes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+        ],
+        "support_quote": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "current_bank_transcription": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Mer avec plages, glacier avec sommets et désert avec dunes : aucun paysage générique ne remplace une réponse composée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2930,20 +3030,29 @@
           "asset": "b8455741cbcc"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
       ],
-      "missing_labels": [
-        "Un buffet",
-        "Un pique-nique",
-        "Un menu à emporter"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s34-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
+        ],
+        "support_quote": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "current_bank_transcription": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Buffet, pique-nique et repas à emporter : le menu à emporter est représenté par un repas cuisiné emballé, sens complet de la réponse dans ce contexte."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4191,20 +4300,29 @@
           "asset": "0b0c334fd52d"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp"
       ],
-      "missing_labels": [
-        "Un mal de tête",
-        "Un mal de dos",
-        "Un mal de pied"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s52-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp"
+        ],
+        "support_quote": "Vous avez mal ou ?\nJ'ai mal au ventre.\nJ'ai mal à la gorge.\nJ'ai mal à la tête.\nVous vous sentez comment ?\nJ'ai chaud et j'ai soif.\nJe tous.\nVous avez de la fièvre ?\nOui, j'ai de la fièvre.\nQu'est-ce que j'ai, docteur ?\nVous avez la grippe ?\nVous avez un rume ?\nQu'est-ce que je dois faire, docteur ?\nJe vous conseille de rester à la maison.\nReposez-vous.\nN'allez pas au travail.\nJe voudrais prendre un rendez-vous, s'il vous plaît.\nJe peux vous donner un rendez-vous mardi à 14 heures.\nD'accord ?\nC'est possible d'avoir une télé-consultation ?",
+        "current_bank_transcription": "Vous avez mal ou ?\nJ'ai mal au ventre.\nJ'ai mal à la gorge.\nJ'ai mal à la tête.\nVous vous sentez comment ?\nJ'ai chaud et j'ai soif.\nJe tous.\nVous avez de la fièvre ?\nOui, j'ai de la fièvre.\nQu'est-ce que j'ai, docteur ?\nVous avez la grippe ?\nVous avez un rume ?\nQu'est-ce que je dois faire, docteur ?\nJe vous conseille de rester à la maison.\nReposez-vous.\nN'allez pas au travail.\nJe voudrais prendre un rendez-vous, s'il vous plaît.\nJe peux vous donner un rendez-vous mardi à 14 heures.\nD'accord ?\nC'est possible d'avoir une télé-consultation ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Mal de tête, mal de dos et mal de pied : gestes et rougeurs indiquent trois zones différentes, anatomie cohérente et visages distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6369,7 +6487,7 @@
           "asset": "97d2ae49817d"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:036:0aedb8525f1a"
       ],
@@ -6382,16 +6500,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp"
       ],
-      "missing_labels": [
-        "Des feuilles et des stylos",
-        "Des livres et des cahiers",
-        "Des crayons et des gommes"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex3-36",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Madame le Comte. Pour la réunion, merci d'apporter des feuilles et des stylos pour tout le monde. Pas de crayon! Juste des stylos pour écrire. C'est important. Merci beaucoup!",
+        "current_bank_transcription": "Bonjour, c’est Madame Lecomte. Pour la réunion, merci d’apporter des feuilles et des stylos pour tout le monde. Pas de crayons ! Juste des stylos pour écrire. C’est important. Merci beaucoup.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les images distinguent les feuilles avec stylos des livres/cahiers et crayons/gommes ; aucun matériel de la mauvaise réponse dans la bonne image."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7378,7 +7510,7 @@
           "asset": "3e39ad71677f"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:092:fe7b7db9b31c"
       ],
@@ -7392,14 +7524,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp"
       ],
-      "missing_labels": [
-        "Le savon et le peigne",
-        "Le shampoing et le sèche-cheveux"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+        "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-92",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+          "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp"
+        ],
+        "support_quote": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+        "current_bank_transcription": "Allô ? Est-ce que tu peux m’aider à faire le sac\npour ce week-end ? Prends des gants s’il te plaît.\nIl faut aussi des serviettes. Elles sont sur mon lit,\ndans ma chambre. Mets aussi le dentifrice et les\nbrosses à dents dans le sac. Pour nos vêtements,\nje vais apporter une valise. Merci.\nÉpreuve blanche 2",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Dentifrice/brosses à dents, savon/peigne, shampoing/sèche-cheveux : les six objets sont reconnaissables, chaque paire distincte."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10556,7 +10703,7 @@
         "support_quote": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
         "current_bank_transcription": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
         "support_basis": "current_bank_transcription_pending_replacement_audio_link",
-        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Eau provenant visiblement d’une vague marine qui remplit un seau, distincte du lait et du jus de fruits. Seule la version au rendu peint est intégrée, première version photo écartée."
+        "review_note": "Trio relu : eau de mer représentée par la bouteille avec sticker marin demandée par l’utilisateur ; lait et jus de tomate distincts. Images vérifiées dans le style validé et en 4:3. Lien audio encore à rapprocher."
       }
     },
     {

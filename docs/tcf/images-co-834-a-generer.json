@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 139,
-    "pending_question_candidates": 284,
+    "activated_planned_questions": 143,
+    "pending_question_candidates": 280,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 267,
-    "remaining_original_concepts": 474,
-    "new_co_images_this_batch": 372,
+    "original_concepts_now_generated_or_reused": 296,
+    "remaining_original_concepts": 445,
+    "new_co_images_this_batch": 402,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 139,
-    "sources_with_new_active_question_or_scene": 143,
+    "sources_with_pending_question_candidates": 135,
+    "sources_with_new_active_question_or_scene": 147,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 372,
+    "co_images_style_aligned": 402,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -629,17 +629,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/mesdames-messieurs-bienvenue-bord.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s22-co-2",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -2275,17 +2275,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_36-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_36-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex3-36",
           "question": 9
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -3579,10 +3579,6 @@
         },
         {
           "exercise": "delf-a1-2022-co-92",
-          "question": 4
-        },
-        {
-          "exercise": "delf-a1-2022-co-92",
           "question": 7
         }
       ],
@@ -3590,11 +3586,15 @@
         {
           "exercise": "tcf-a1-s1-co-5",
           "question": 4
+        },
+        {
+          "exercise": "delf-a1-2022-co-92",
+          "question": 4
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -9142,17 +9142,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/mesdames-messieurs-bienvenue-bord.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s22-co-2",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10984,17 +10984,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/couleurs-objet.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s4-co-3",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -17804,7 +17804,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a1p-s4-co-5",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c’est Cathy. Chez nous, dans le sud, il fait très chaud cette semaine. Alors apporte un chapeau, ton maillot de bain et ta serviette. Nous avons une piscine. Prends aussi ton appareil photo. La nature est très belle ici. Je t’attends à la gare. Appelle-moi si le train est en retard.",
+        "current_bank_transcription": "Bonjour, c’est Cathy. Chez nous, dans le sud, il fait très chaud cette semaine. Alors apporte un chapeau, ton maillot de bain et ta serviette. Nous avons une piscine. Prends aussi ton appareil photo. La nature est très belle ici. Je t’attends à la gare. Appelle-moi si le train est en retard.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les deux vêtements de chaque réponse sont présents, sans substituer un accessoire partiel."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -18324,7 +18343,7 @@
           "asset": "964bf515d232"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:52:24f659ea6d91:8491b8ff"
       ],
@@ -18335,6 +18354,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-52-24f659ea6d91-8491b8ff-d1",
           "transcription": "Pour cette activité créative, il nous faut du scotch et des papiers colorés. Nous commençons par découper les formes, puis nous les collons sur du papier blanc. Les enfants adorent faire ça. Nous pouvons également les laisser colorier les vides avec des crayons de couleurs ou des feutres."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp"
       ]
     },
     {
@@ -19961,7 +19985,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s22-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp"
+        ],
+        "support_quote": "- Vous avez mal où ?\n- J'ai mal à la gorge.\n- Vous toussez ?\n- Oui, je tousse beaucoup.\n- Et vous vous sentez comment ?\n- J'ai froid, j'ai chaud et j'ai très soif…\n- Vous avez mal au ventre ?\n- Non, j'ai mal à la tête et je n'ai pas faim…\n- Je pense que vous avez de la fièvre.\nVous êtes fatigué, vous avez besoin de repos.\n- Mais qu'est-ce que j'ai ?\nUn rhume ?\n- Non !\nC'est la grippe !\n- Qu'est-ce que je dois faire, docteur ?\n- Pour commencer, je vous conseille de rester à la maison...",
+        "current_bank_transcription": "- Vous avez mal où ?\n- J'ai mal à la gorge.\n- Vous toussez ?\n- Oui, je tousse beaucoup.\n- Et vous vous sentez comment ?\n- J'ai froid, j'ai chaud et j'ai très soif…\n- Vous avez mal au ventre ?\n- Non, j'ai mal à la tête et je n'ai pas faim…\n- Je pense que vous avez de la fièvre.\nVous êtes fatigué, vous avez besoin de repos.\n- Mais qu'est-ce que j'ai ?\nUn rhume ?\n- Non !\nC'est la grippe !\n- Qu'est-ce que je dois faire, docteur ?\n- Pour commencer, je vous conseille de rester à la maison...",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Mal de tête, mal de dents et mal de dos : les zones douloureuses sont explicitement visibles, avec des personnages fictifs variés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -19992,7 +20035,7 @@
           "asset": "727d865b5316"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:028:c036003c1c6c",
         "additional-20261102:mdf-a1-abc-junior:28:c036003c1c6c:361683f4"
@@ -20004,6 +20047,11 @@
           "candidate_cut_id": "09035276-028-c036003c1c6c-d1",
           "transcription": "Bonjour Le bar est ouvert voiture 15 Vous pouvez acheter des boissons chaud ou froides des salades et des sandwichs Et pour un jus de fruits acheter un croissant offert Vous pouvez aussi acheter des journaux et magazines Voiture 14"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp"
       ]
     },
     {
@@ -20270,7 +20318,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s23-co-4",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
+        ],
+        "support_quote": "- Bonjour madame Bugier !\nComment ça va ?\n- Bonjour Thomas.\nMoi, ça va…\nEt votre famille ?\n- Bien merci.\nLa Fête des voisins, c'est bientôt, non ?\n- Non !\nLa Fête des voisins est en juin.\nMais j'organise un apéro samedi, je vous invite, vous et votre femme.\nVous êtes libres ?\n- Samedi 28 ?\nMoi je suis libre, mais ma femme ne peut pas, elle travaille le week-end.\n- Dommage !\n- C'est à quelle heure ?\n- On commence à sept heures.\nC'est un buffet.\n- J'apporte quelque chose ?\nUne salade, une quiche à partager, des chips, une boisson ?\n- Quelque chose pour le dessert peut-être…\nUne salade de fruits ?\n- Super !\nÀ samedi alors.\n- À samedi.",
+        "current_bank_transcription": "- Bonjour madame Bugier !\nComment ça va ?\n- Bonjour Thomas.\nMoi, ça va…\nEt votre famille ?\n- Bien merci.\nLa Fête des voisins, c'est bientôt, non ?\n- Non !\nLa Fête des voisins est en juin.\nMais j'organise un apéro samedi, je vous invite, vous et votre femme.\nVous êtes libres ?\n- Samedi 28 ?\nMoi je suis libre, mais ma femme ne peut pas, elle travaille le week-end.\n- Dommage !\n- C'est à quelle heure ?\n- On commence à sept heures.\nC'est un buffet.\n- J'apporte quelque chose ?\nUne salade, une quiche à partager, des chips, une boisson ?\n- Quelque chose pour le dessert peut-être…\nUne salade de fruits ?\n- Super !\nÀ samedi alors.\n- À samedi.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Buffet en libre-service, repas apporté par un serveur à table et repas emballé à emporter : trois modes de repas clairement distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20303,7 +20370,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s24-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp"
+        ],
+        "support_quote": "J'organise un appereau.\nTu es libre ?\nJ'organise un appereau.\nVous êtes libre ?\nOui, je suis libre.\nOui, nous sommes libres.\nNon, désolé, nous ne sommes pas libres.\nJe t'invite samedi.\nTu peux venir ?\nOui, avec plaisir.\nSuper.\nC'est à quelle heure ?\nC'est à 19 heures.\nJe vous invite samedi.\nVous pouvez venir ?\nDésolé, je ne peux pas samedi.\nMoi, volontiers, mais ma femme ne peut pas.\nDommage.\nJ'apporte quelque chose ?\nQuelque chose pour le buffet peut-être ?\nJ'apporte un dessert.\nPour le buffet, tu as besoin de quelque chose ?\nJ'ai besoin de serviettes, d'aciettes.",
+        "current_bank_transcription": "J'organise un appereau.\nTu es libre ?\nJ'organise un appereau.\nVous êtes libre ?\nOui, je suis libre.\nOui, nous sommes libres.\nNon, désolé, nous ne sommes pas libres.\nJe t'invite samedi.\nTu peux venir ?\nOui, avec plaisir.\nSuper.\nC'est à quelle heure ?\nC'est à 19 heures.\nJe vous invite samedi.\nVous pouvez venir ?\nDésolé, je ne peux pas samedi.\nMoi, volontiers, mais ma femme ne peut pas.\nDommage.\nJ'apporte quelque chose ?\nQuelque chose pour le buffet peut-être ?\nJ'apporte un dessert.\nPour le buffet, tu as besoin de quelque chose ?\nJ'ai besoin de serviettes, d'aciettes.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Buffet, restaurant avec service à table et pique-nique sur couverture dans un parc : contexte et trois réponses concordent. Réutilisation entière de la scène de pique-nique contrôlée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20336,7 +20422,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s24-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp"
+        ],
+        "support_quote": "- Ah Roxane !\nPour notre pique-nique, j'ai besoin de serviettes et d'assiettes.\n- D'accord Tim.\nJ'apporte aussi des chips et des boissons.\n- Je prépare une salade et Rémi une pizza.",
+        "current_bank_transcription": "- Ah Roxane !\nPour notre pique-nique, j'ai besoin de serviettes et d'assiettes.\n- D'accord Tim.\nJ'apporte aussi des chips et des boissons.\n- Je prépare une salade et Rémi une pizza.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les couples serviettes/assiettes, casseroles/poêles et nappes/bougies sont représentés entièrement."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20931,7 +21036,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+        ],
+        "support_quote": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "current_bank_transcription": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Montagnes boisées, mer et plages, désert de dunes : chacun des deux éléments de chaque réponse est visible."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20964,7 +21088,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+        ],
+        "support_quote": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "current_bank_transcription": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Campagne avec cours d’eau, glacier avec sommets et désert avec dunes : les couples de paysages sont entiers et distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20997,7 +21140,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp"
+        ],
+        "support_quote": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "current_bank_transcription": "Vous aimez le camping ?\nMais quelle destination choisir ?\nDans les Alpes, entre montagnes et forêts ?\nLa campagne et les rivières de Normandie ?\nLa mer et les plages de Provence ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Mer avec plages, glacier avec sommets et désert avec dunes : aucun paysage générique ne remplace une réponse composée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21063,7 +21225,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s34-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp"
+        ],
+        "support_quote": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "current_bank_transcription": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Buffet, pique-nique et repas à emporter : le menu à emporter est représenté par un repas cuisiné emballé, sens complet de la réponse dans ce contexte."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22208,7 +22389,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s52-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp"
+        ],
+        "support_quote": "Vous avez mal ou ?\nJ'ai mal au ventre.\nJ'ai mal à la gorge.\nJ'ai mal à la tête.\nVous vous sentez comment ?\nJ'ai chaud et j'ai soif.\nJe tous.\nVous avez de la fièvre ?\nOui, j'ai de la fièvre.\nQu'est-ce que j'ai, docteur ?\nVous avez la grippe ?\nVous avez un rume ?\nQu'est-ce que je dois faire, docteur ?\nJe vous conseille de rester à la maison.\nReposez-vous.\nN'allez pas au travail.\nJe voudrais prendre un rendez-vous, s'il vous plaît.\nJe peux vous donner un rendez-vous mardi à 14 heures.\nD'accord ?\nC'est possible d'avoir une télé-consultation ?",
+        "current_bank_transcription": "Vous avez mal ou ?\nJ'ai mal au ventre.\nJ'ai mal à la gorge.\nJ'ai mal à la tête.\nVous vous sentez comment ?\nJ'ai chaud et j'ai soif.\nJe tous.\nVous avez de la fièvre ?\nOui, j'ai de la fièvre.\nQu'est-ce que j'ai, docteur ?\nVous avez la grippe ?\nVous avez un rume ?\nQu'est-ce que je dois faire, docteur ?\nJe vous conseille de rester à la maison.\nReposez-vous.\nN'allez pas au travail.\nJe voudrais prendre un rendez-vous, s'il vous plaît.\nJe peux vous donner un rendez-vous mardi à 14 heures.\nD'accord ?\nC'est possible d'avoir une télé-consultation ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement, natif paysage 4:3, style peint du commit 48a753d8, sans date ni montant. Mal de tête, mal de dos et mal de pied : gestes et rougeurs indiquent trois zones différentes, anatomie cohérente et visages distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -24436,7 +24636,7 @@
           "asset": "97d2ae49817d"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:036:0aedb8525f1a"
       ],
@@ -24447,6 +24647,11 @@
           "candidate_cut_id": "delf_a1_2022-036-0aedb8525f1a-d3",
           "transcription": "Bonjour, c'est Madame le Comte. Pour la réunion, merci d'apporter des feuilles et des stylos pour tout le monde. Pas de crayon! Juste des stylos pour écrire. C'est important. Merci beaucoup!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp"
       ]
     },
     {
@@ -25651,7 +25856,7 @@
           "asset": "3e39ad71677f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:092:fe7b7db9b31c"
       ],
@@ -25662,6 +25867,11 @@
           "candidate_cut_id": "delf_a1_2022-092-fe7b7db9b31c-r2-d1",
           "transcription": "Allô? Est-ce que tu peux m'aider à faire le sac pour ce week-end? Prends des gants, s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+        "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp"
       ]
     },
     {
@@ -29805,7 +30015,7 @@
         "support_quote": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
         "current_bank_transcription": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
         "support_basis": "current_bank_transcription_pending_replacement_audio_link",
-        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Eau provenant visiblement d’une vague marine qui remplit un seau, distincte du lait et du jus de fruits. Seule la version au rendu peint est intégrée, première version photo écartée."
+        "review_note": "Trio relu : eau de mer représentée par la bouteille avec sticker marin demandée par l’utilisateur ; lait et jus de tomate distincts. Images vérifiées dans le style validé et en 4:3. Lien audio encore à rapprocher."
       }
     },
     {
@@ -34942,7 +35152,7 @@
       "label": "Des salades et des sandwichs",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6b1251fe8a61.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des salades et des sandwichs ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-2",
@@ -34950,8 +35160,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-salades-sandwichs-dessine.webp",
+      "sha256": "a246bc9a8a628e90be52ac07eb9e89938b98ef0e206551a803986eaa2f0d45c0",
+      "review_note": "Salades composées en bols et sandwichs baguette garnis ; les deux aliments sont représentés. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "fcdeb285f2ed",
@@ -35275,7 +35490,7 @@
       "label": "Un menu à emporter",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b8455741cbcc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un menu à emporter ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s34-co-1",
@@ -35283,8 +35498,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp",
+      "sha256": "e4c226ea432d738f47df32fcb505446e98df3798f5a4bc11396c97424dad69c5",
+      "review_note": "Sac kraft et boîtes de repas préparé visibles ensemble avec couverts emballés ; fond crème, détails peints doux. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d8953c7ddfe7",
@@ -36418,7 +36638,7 @@
       "label": "Un repas à emporter",
       "path_after_generation": "/lib/images/tcf/qcm-audit/934ec532c787.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un repas à emporter ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-4",
@@ -36426,8 +36646,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-repas-emporter-dessine.webp",
+      "sha256": "e4c226ea432d738f47df32fcb505446e98df3798f5a4bc11396c97424dad69c5",
+      "review_note": "Sac kraft et boîtes de repas préparé visibles ensemble avec couverts emballés ; fond crème, détails peints doux. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c936c0eda6a3",
@@ -36604,7 +36829,7 @@
       "label": "Les déserts et les dunes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4c7e73dc4eba.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les déserts et les dunes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-4",
@@ -36622,8 +36847,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-deserts-dunes-dessine.webp",
+      "sha256": "173c4b22c27810b2b6e2a0865a57e35bb69862378da0e365dbb346eda514edfd",
+      "review_note": "Dunes dorées successives dans un désert sans eau ni végétation ; formes et ombres peintes. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cbd917e14911",
@@ -36763,7 +36993,7 @@
       "label": "Un mal de dos",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7343c3fe2e6b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un mal de dos ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-1",
@@ -36776,8 +37006,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+      "sha256": "4e1c1c273413abe8133d1dbb58e94c1412cc73ac5f5c183f944015cc02c7a397",
+      "review_note": "Femme âgée avec lunettes et tresse grise, main et rougeur au bas du dos ; silhouette entière, dessin doux sans blessure. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "13d89974de16",
@@ -37390,7 +37625,7 @@
       "label": "Le savon et le peigne",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e7bdddbb60a2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le savon et le peigne ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-92",
@@ -37398,8 +37633,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-savon-peigne-dessine.webp",
+      "sha256": "e1cccb02e95ca76ee33aaede30c0389934ac5592bd87f3827f36a5fb3213fd19",
+      "review_note": "Savon ovale sur porte-savon et peigne à dents régulières ; formes entières. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5ef621f947d4",
@@ -38615,7 +38855,7 @@
       "label": "Les glaciers et les sommets",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8d46b4f60f9f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les glaciers et les sommets ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-4",
@@ -38628,8 +38868,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+      "sha256": "6cedd9be041b85e629249ddd81a7ef67cf1be26fa2922ae8c8fb0ee27de62472",
+      "review_note": "Glacier crevassé bleu-blanc et sommets enneigés ; aucun arbre, distinction claire avec les montagnes boisées. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c7b5c71ee5d5",
@@ -39056,7 +39301,7 @@
       "label": "Des feuilles et des stylos",
       "path_after_generation": "/lib/images/tcf/qcm-audit/65a61409d4ab.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des feuilles et des stylos ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex3-36",
@@ -39064,8 +39309,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+      "sha256": "861265d59601077639490ca7e3328ab92f1f3d7e8ce1b9475e5dda69e66a0e17",
+      "review_note": "Feuilles vierges et stylos à bille à capuchon ; aucun crayon ou cahier parasite. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0bb260bd3a38",
@@ -39177,7 +39427,7 @@
       "label": "Des livres et des cahiers",
       "path_after_generation": "/lib/images/tcf/qcm-audit/99569a332795.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des livres et des cahiers ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex3-36",
@@ -39185,8 +39435,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-livres-cahiers-dessine.webp",
+      "sha256": "cf161d7aad9ddcaace773c3d9fe1a9f1be831a4d307e7a3e81ae83930ba301f0",
+      "review_note": "Livres reliés épais et cahiers souples dont un ouvert avec lignes vierges ; deux types distincts. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "975e6934fa80",
@@ -39389,7 +39644,7 @@
       "label": "Des pizzas et des pâtes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9a1c5beb92ea.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des pizzas et des pâtes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-2",
@@ -39402,8 +39657,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+      "sha256": "c010e6fb88d529130b86caa0625838d12ebedd72b41b1bafca2ffa4b7aa8bdf5",
+      "review_note": "Pizza entière et assiette de pâtes à côté, distinctes des autres couples de repas. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6c503aef9a58",
@@ -39569,7 +39829,7 @@
       "label": "Les montagnes et les forêts",
       "path_after_generation": "/lib/images/tcf/qcm-audit/42808611aacc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les montagnes et les forêts ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-4",
@@ -39577,8 +39837,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+      "sha256": "48a7dccec5ffb03aaf2b426b5377b50f0fadc5f7d5d0f8fa91f1745ec0443d38",
+      "review_note": "Sommets rocheux et forêt dense de sapins tous deux lisibles ; touches peintes, sans glacier dominant. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a308625ff421",
@@ -40307,7 +40572,7 @@
       "label": "Des soupes et des grillades",
       "path_after_generation": "/lib/images/tcf/qcm-audit/727d865b5316.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des soupes et des grillades ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-2",
@@ -40315,8 +40580,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-soupes-grillades-dessine.webp",
+      "sha256": "7ff41647bd1bff2a87f762081e862a94ecebf115714f256c4575710895b69ec0",
+      "review_note": "Bol de soupe liquide et assiette de grillades avec traces de gril ; les deux catégories sont reconnaissables. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "be39ec8513e6",
@@ -40381,7 +40651,7 @@
       "label": "Le shampoing et le sèche-cheveux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3e39ad71677f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le shampoing et le sèche-cheveux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-92",
@@ -40389,8 +40659,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-shampoing-seche-cheveux-dessine.webp",
+      "sha256": "dea48faed294845e1cc60147d23cfb3e0fd109d97a875ab01f1cad6ba48748ca",
+      "review_note": "Flacon de shampoing avec motif de cheveux et sèche-cheveux à poignée et cordon, tous deux entiers. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "382a0bc20dc1",
@@ -40650,7 +40925,7 @@
       "label": "Un mal de pied",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0b0c334fd52d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un mal de pied ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s52-co-2",
@@ -40658,8 +40933,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-mal-pied-dessine.webp",
+      "sha256": "544b788ad8aa541a290636613172c2968f029d0f885af7251c5e16d1d4c18975",
+      "review_note": "Homme avec chignon et moustache tenant le dessus de son pied nu ; douleur au pied distincte de la cheville, anatomie et chaise cohérentes. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1d288bf652f7",
@@ -40682,7 +40962,7 @@
       "label": "Des crayons et des gommes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/97d2ae49817d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des crayons et des gommes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex3-36",
@@ -40690,8 +40970,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-crayons-gommes-dessine.webp",
+      "sha256": "41fe53392136dbd39316d8ca63c43a054da636b43654d6f0bbb09af42a49b792",
+      "review_note": "Crayons de papier avec graphite gris et gommes rectangulaires ; aucun feutre. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7f7cc89d653d",
@@ -40972,7 +41257,7 @@
       "label": "Des casseroles et des poêles",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1a4d4ecfbf27.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des casseroles et des poêles ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s24-co-3",
@@ -40980,8 +41265,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-casseroles-poeles-dessine.webp",
+      "sha256": "2e25c6a74c6e78697ae6ae9fa0ab8984dcb3e534699415006de3322435b85334",
+      "review_note": "Casseroles en inox à bords hauts et poêles noires à bords bas ; manches entiers et formes distinctes. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "dd39092e3677",
@@ -42372,7 +42662,7 @@
       "label": "La campagne et les rivières",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b6b623732ec0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La campagne et les rivières ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-4",
@@ -42380,8 +42670,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-campagne-rivieres-dessine.webp",
+      "sha256": "499375f99be9fa0c26be1b8228efd9bdbe0afb56b595e6e5aee4a6471f8c2cc1",
+      "review_note": "Champs, haies, ferme et cours d’eau sinueux bien visibles ; campagne distincte des paysages de mer et de glacier. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "90395a30569f",
@@ -42698,7 +42993,7 @@
       "label": "Des craies ou de la peinture",
       "path_after_generation": "/lib/images/tcf/qcm-audit/964bf515d232.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des craies ou de la peinture ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s4-co-3",
@@ -42706,8 +43001,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-craies-peinture-dessine.webp",
+      "sha256": "570f568c30a1a19e8d996d2929c87caadd55b9d00ffd993d32823f4c07ae04ec",
+      "review_note": "Craies colorées mates et palette de peinture avec pinceaux ; les deux techniques sont visibles. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0fd60ad647bb",
@@ -44063,7 +44363,7 @@
       "label": "Un chapeau et un maillot de bain",
       "path_after_generation": "/lib/images/tcf/qcm-audit/83244c3241ea.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un chapeau et un maillot de bain ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s4-co-5",
@@ -44071,8 +44371,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-chapeau-maillot-dessine.webp",
+      "sha256": "8f666556451639cac54dea866525b23c80ba9ff24d579b42978fe035aff5b22f",
+      "review_note": "Chapeau à large bord et maillot une pièce tous deux visibles ; aucun objet manquant. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "baea646241f5",
@@ -45681,7 +45986,7 @@
       "label": "Un buffet",
       "path_after_generation": "/lib/images/tcf/qcm-audit/357780fc82ca.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un buffet ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-4",
@@ -45699,8 +46004,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-buffet-dessine.webp",
+      "sha256": "596a341f41fd643903f2976028173fb89abffca0fb8bcf7f95d905670e836f4a",
+      "review_note": "Buffet identifiable par les bacs de service, plats partagés, piles d’assiettes et pinces ; aucun emballage à emporter. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "72793a334b97",
@@ -45739,7 +46049,7 @@
       "label": "La mer et les plages",
       "path_after_generation": "/lib/images/tcf/qcm-audit/877414e8dcbe.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La mer et les plages ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-4",
@@ -45752,8 +46062,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+      "sha256": "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883",
+      "review_note": "Mer turquoise et plusieurs plages de sable dans une baie ; arbres et vagues peints, sans texte. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bdc30706324f",
@@ -46340,7 +46655,7 @@
       "label": "Un manteau et des gants",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d6a833dd034a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un manteau et des gants ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s4-co-5",
@@ -46348,8 +46663,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-manteau-gants-dessine.webp",
+      "sha256": "0934c5a55ff2c852a22a665fefd0c29ebd6651e60c900d3d7d0ab36f0ba69ff7",
+      "review_note": "Manteau vert entier et paire de gants bordeaux anatomiquement correcte ; matières fines comme les pulls de la référence. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a14ef527c4c4",
@@ -46451,7 +46771,7 @@
       "label": "Un bonnet et une combinaison de ski",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d31fa32e3d3f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un bonnet et une combinaison de ski ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s4-co-5",
@@ -46459,8 +46779,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-bonnet-combinaison-ski-dessine.webp",
+      "sha256": "f72218093b963a5346f5bf3cfb74e01eaafa079b6faf2b2cb134344ff2b6c74c",
+      "review_note": "Bonnet rouge distinct et combinaison de ski complète avec manches et jambes ; pas une simple veste. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "288e5a9a788e",
@@ -46498,8 +46823,8 @@
       ],
       "ready_4_3": true,
       "generated_path": "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
-      "sha256": "a32bd1e820dfeacea3a1bfadd12f3a0cea578838a1302b71eae5c6e845ded055",
-      "review_note": "Version reprise : vague remplissant un seau transparent, mer et rochers en touches peintes et formes modelées, rendu photographique retiré. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "sha256": "3f713f1b1447507c6e849098e6cd07489d4f782bc2a69d9d2577acb987f1fd06",
+      "review_note": "Reprise demandée par l’utilisateur : bouteille entière transparente remplie d’eau, bouchon bleu et autocollant représentant mer, vagues et horizon ; fond crème, aucun mot, nombre ou marque. Seau et ancien paysage retirés. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
       "priority": "A1_A2_first",
       "style_review_status": "aligned",
       "ready_for_new_reuse": true
@@ -46573,7 +46898,7 @@
       "label": "Des nappes et des bougies",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b92d969b9926.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des nappes et des bougies ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s24-co-3",
@@ -46581,8 +46906,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-nappes-bougies-dessine.webp",
+      "sha256": "2bf64d610d096284ca1d0d9ed2416ed18a64c25895ba4f21d934b0c7282dc6f4",
+      "review_note": "Deux nappes pliées reconnaissables à leur texture et leurs franges, avec trois bougies cylindriques. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ef44fadd9202",
@@ -47415,7 +47745,7 @@
       "label": "Un mal de dents",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1b76adfe941c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un mal de dents ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-1",
@@ -47423,8 +47753,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-mal-dents-dessine.webp",
+      "sha256": "6e73c6abb1f7d3c3688116883844f08d45034875a3c1bacf5d499d3cfd624f71",
+      "review_note": "Homme noir au visage nouveau, main sur la joue au niveau des dents, expression douloureuse et rougeur localisée ; pas de blessure. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "587687fe8c4e",
@@ -47643,7 +47978,7 @@
       "label": "De l’encre ou du charbon",
       "path_after_generation": "/lib/images/tcf/qcm-audit/65ec158c94f0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « De l’encre ou du charbon ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s4-co-3",
@@ -47651,8 +47986,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-encre-charbon-dessine.webp",
+      "sha256": "64e1d7751bde874eefff9fc56ccb1ca66e59a919c1da9b3e079586e5e59a213e",
+      "review_note": "Encrier noir, plume et bâtons ou morceaux de charbon lisibles, sans confusion avec des crayons colorés. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "994890d8e15a",
@@ -47979,7 +48319,7 @@
       "label": "Des serviettes et des assiettes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2ee757631bd3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des serviettes et des assiettes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s24-co-3",
@@ -47987,8 +48327,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-serviettes-assiettes-dessine.webp",
+      "sha256": "4ca7744ee1ab801d2230e153f2015a717486f223efbda93637c1f41677207381",
+      "review_note": "Pile de serviettes papier et pile d’assiettes blanches nettement séparées. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b1787d0bd6bd",
@@ -48170,7 +48515,7 @@
       "label": "Des crayons de couleur ou des feutres",
       "path_after_generation": "/lib/images/tcf/qcm-audit/611e4d8fae64.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des crayons de couleur ou des feutres ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s4-co-3",
@@ -48178,8 +48523,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-crayons-feutres-dessine.webp",
+      "sha256": "c97a76c6ecb826deabf08a0bf9fdfa71fca95f0bc5df9e219b5e5ef019e318f5",
+      "review_note": "Crayons colorés taillés et feutres à capuchons en deux éventails distincts, aucune marque. Contrôle individuel et par trio : natif paysage exact 4:3, sujet entier, aucun texte, date ou montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "aa5adb3a720f",
@@ -48397,7 +48747,7 @@
       "label": "Un menu servi à table",
       "path_after_generation": "/lib/images/tcf/qcm-audit/39fd3f83b8ab.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un menu servi à table ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-4",
@@ -48405,8 +48755,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-menu-servi-table-dessine.webp",
+      "sha256": "5bff3faa0ace73bad474835cf8a667f59d9edf74ce97576d0ec70e5bf80419cc",
+      "review_note": "Serveur posant une assiette devant deux clients à une table de restaurant ; trois visages différents, mains cohérentes, peinture modelée comme le club photo. Contrôle visuel : natif paysage exact 4:3, sujet entier, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3bff7b9e520a",
@@ -48986,19 +49341,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 372,
+    "reviewed_co_images": 402,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 431,
+    "reviewed_total_images": 461,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 420,
+    "already_aligned": 450,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 113
+    "new_images_compared_to_reference": 143
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [
