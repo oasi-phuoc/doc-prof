@@ -9653,6 +9653,601 @@
           "reason": "Reprise du nuancier avec les références du commit 48a753d8 validées par l’utilisateur."
         }
       ]
+    },
+    {
+      "id": "co834-pain-dessine",
+      "label": "Du pain",
+      "prompt": "Modifier la PREMIÈRE image : Transformer le sandwich de la première image en pain uniquement : retirer toute garniture et la bouteille. Montrer une baguette dorée entière et un pain de campagne rond avec deux tranches devant, sur une simple planche. Aucun autre aliment. La DEUXIÈME image fournit le style exact validé par l’utilisateur dans le commit 48a753d8. Conserver ce même traitement de peinture numérique semi-réaliste détaillée, modelé doux et progressif, nuances lisses, matières fines, couleurs naturelles chaleureuses et contours très fins et discrets. Fond crème clair et ombre légère comme cette référence. Sujet entier, composition claire et marges généreuses. Ne pas renforcer l’encrage ni simplifier les volumes. FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Aucun texte, chiffre, logo, montant, prix, date, jour ou mois. Aucun personnage.",
+      "path": "/lib/images/tcf/qcm-audit/co834-pain-dessine.webp",
+      "character_diversity_plan": null,
+      "source_review": "Concept générique de réponse déjà utilisé dans les CE/CO, sans quantité ni qualification supplémentaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "style_edit_base": "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+      "source_png": "/workspace/generated_images/exec-fb27c597-7605-4b1c-ba34-87a56e0d1bae.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "9e6312580cd0dcf5c8866417d9c13d1e4ffc8472fcfa8f156d096a52af02a829",
+      "sha256": "6a760b1c2914ae938d1ea3e04f5a81e327d52b1782580a35635f3afb660d9034",
+      "bytes": 164606,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-sandwich-dessine",
+      "label": "Un sandwich",
+      "prompt": "Modifier la PREMIÈRE image : Retirer entièrement la bouteille de la première image. Conserver uniquement le sandwich baguette garni de salade verte, tomate et jambon, entier, centré avec des marges. Aucun autre aliment ou boisson à côté. La DEUXIÈME image fournit le style exact validé par l’utilisateur dans le commit 48a753d8. Conserver ce même traitement de peinture numérique semi-réaliste détaillée, modelé doux et progressif, nuances lisses, matières fines, couleurs naturelles chaleureuses et contours très fins et discrets. Fond crème clair et ombre légère comme cette référence. Sujet entier, composition claire et marges généreuses. Ne pas renforcer l’encrage ni simplifier les volumes. FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Aucun texte, chiffre, logo, montant, prix, date, jour ou mois. Aucun personnage.",
+      "path": "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+      "character_diversity_plan": null,
+      "source_review": "Concept générique de réponse déjà utilisé dans les CE/CO, sans quantité ni qualification supplémentaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "style_edit_base": "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+      "source_png": "/workspace/generated_images/exec-8eec22fb-45d0-46fa-b939-dee36d90df8f.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "17e1b31211c6eecd77cb5ccc3d525c4e2e8baca379416b1c8c5f067edeb872cf",
+      "sha256": "a1be35905e3ba7734f3be031c33e2a06408fa846de84a39391461d1ddc2256bc",
+      "bytes": 96730,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-soupe-dessine",
+      "label": "Une soupe",
+      "prompt": "Modifier la PREMIÈRE image : Retirer la tasse de café et sa soucoupe de la première image. Garder uniquement un bol blanc de soupe de légumes orange onctueuse, avec une cuillère à côté et une légère vapeur. Aucun autre plat, pain ou boisson. La DEUXIÈME image fournit le style exact validé par l’utilisateur dans le commit 48a753d8. Conserver ce même traitement de peinture numérique semi-réaliste détaillée, modelé doux et progressif, nuances lisses, matières fines, couleurs naturelles chaleureuses et contours très fins et discrets. Fond crème clair et ombre légère comme cette référence. Sujet entier, composition claire et marges généreuses. Ne pas renforcer l’encrage ni simplifier les volumes. FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Aucun texte, chiffre, logo, montant, prix, date, jour ou mois. Aucun personnage.",
+      "path": "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp",
+      "character_diversity_plan": null,
+      "source_review": "Concept générique de réponse déjà utilisé dans les CE/CO, sans quantité ni qualification supplémentaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "style_edit_base": "/lib/images/tcf/qcm-audit/cbfdf11e0ab8.webp",
+      "source_png": "/workspace/generated_images/exec-578a7162-5d22-489d-b10a-86059e14e3c5.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3f56a62e74c9753d13e02ad7e128d37ab82ff0c2efae2590ed226a4f67df3872",
+      "sha256": "c1f7b76ef0b78671c6fb4199e4062f21b0b47d4f04a82fc89109b06a3bc26b9e",
+      "bytes": 64604,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-the-dessine",
+      "label": "Un thé",
+      "prompt": "Modifier la PREMIÈRE image : Remplacer les trois boissons par une seule tasse en verre de thé ambré limpide sur sa soucoupe. Ajouter un petit sachet de thé avec une étiquette vierge à côté. Ni café, ni lait, ni jus, ni dessert ou citron. La DEUXIÈME image fournit le style exact validé par l’utilisateur dans le commit 48a753d8. Conserver ce même traitement de peinture numérique semi-réaliste détaillée, modelé doux et progressif, nuances lisses, matières fines, couleurs naturelles chaleureuses et contours très fins et discrets. Fond crème clair et ombre légère comme cette référence. Sujet entier, composition claire et marges généreuses. Ne pas renforcer l’encrage ni simplifier les volumes. FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Aucun texte, chiffre, logo, montant, prix, date, jour ou mois. Aucun personnage.",
+      "path": "/lib/images/tcf/qcm-audit/co834-the-dessine.webp",
+      "character_diversity_plan": null,
+      "source_review": "Concept générique de réponse déjà utilisé dans les CE/CO, sans quantité ni qualification supplémentaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "style_edit_base": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+      "source_png": "/workspace/generated_images/exec-4b3b5249-d6ae-4b60-be1d-a0b9c86a15fb.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "809c469591cb1695073746e4da5c24928e3f1f5a64f0d3ef180cfebc2ccb3be9",
+      "sha256": "4d0adb09009394fe86b95b66526f73ab66beedb2bc3640664071adbe1312e26d",
+      "bytes": 49032,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-chocolat-dessine",
+      "label": "Du chocolat",
+      "prompt": "Modifier la PREMIÈRE image : Remplacer la boîte cadeau et les bonbons de chocolat par une tablette de chocolat brun avec quelques carrés détachés devant, sur une petite soucoupe simple. Tablette moulée reconnaissable, aucun emballage, cadeau, boisson, gâteau ou crème. La DEUXIÈME image fournit le style exact validé par l’utilisateur dans le commit 48a753d8. Conserver ce même traitement de peinture numérique semi-réaliste détaillée, modelé doux et progressif, nuances lisses, matières fines, couleurs naturelles chaleureuses et contours très fins et discrets. Fond crème clair et ombre légère comme cette référence. Sujet entier, composition claire et marges généreuses. Ne pas renforcer l’encrage ni simplifier les volumes. FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Aucun texte, chiffre, logo, montant, prix, date, jour ou mois. Aucun personnage.",
+      "path": "/lib/images/tcf/qcm-audit/co834-chocolat-dessine.webp",
+      "character_diversity_plan": null,
+      "source_review": "Concept générique de réponse déjà utilisé dans les CE/CO, sans quantité ni qualification supplémentaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp"
+      ],
+      "style_edit_base": "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+      "source_png": "/workspace/generated_images/exec-5cbc6946-a57a-4892-bd11-c5bb2d5dd7b6.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp"
+        ],
+        "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "5923bf1e8c10f22f0c2d3892737878abc4e2ab9753028cf7b5343130ea67334c",
+      "sha256": "7595f29c85273aad4f731014601af1e6cfc030d841ac07fbcdf99320a196137f",
+      "bytes": 46500,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-guitare-dessine",
+      "label": "La guitare",
+      "prompt": "Modifier la PREMIÈRE image : Isoler et représenter uniquement la guitare acoustique classique en bois blond jouée par la jeune fille : guitare entière, en diagonale douce, six cordes et six chevilles cohérentes, rosace ronde. Retirer tous les personnages, les autres instruments et le décor de salle ; les remplacer par un fond crème clair avec une ombre douce. Aucune partition. La DEUXIÈME image fournit le style exact validé par l’utilisateur dans le commit 48a753d8. Conserver ce même traitement de peinture numérique semi-réaliste détaillée, modelé doux et progressif, nuances lisses, matières fines, couleurs naturelles chaleureuses et contours très fins et discrets. Fond crème clair et ombre légère comme cette référence. Sujet entier, composition claire et marges généreuses. Ne pas renforcer l’encrage ni simplifier les volumes. FORMAT PAYSAGE EXACT 4:3, quatre de large pour trois de haut. Aucun texte, chiffre, logo, montant, prix, date, jour ou mois. Aucun personnage.",
+      "path": "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+      "character_diversity_plan": null,
+      "source_review": "Concept générique de réponse déjà utilisé dans les CE/CO, sans quantité ni qualification supplémentaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "style_edit_base": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "source_png": "/workspace/generated_images/exec-0be5ddb3-8eb0-4831-94e7-38c506f6cf8c.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "afa1bb9ed3c55328143586859859db1f405dd0ea9c916f5eac7677d0e432981a",
+      "sha256": "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77",
+      "bytes": 63760,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-horloge-2200-dessinee",
+      "label": "À 22 h",
+      "clock_time": "22:00",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 22:00. L'écran doit afficher uniquement « 22:00 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-b11e3d9e-7aaa-40bf-a789-c0a06e80e907.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "review_note": "Contrôle individuel : affichage exact 22:00, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "4ed8a358a92ed27c4fdc899be1efbc0b6853d6046e156c6d1e82c46308a0d3d8",
+      "sha256": "38d5d3972131f28f674de5c001584b8b9312274177cbe2171eb95d3d8d6e438b",
+      "bytes": 54690
+    },
+    {
+      "id": "co834-horloge-1500-dessinee",
+      "label": "À 15 h",
+      "clock_time": "15:00",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 15:00. L'écran doit afficher uniquement « 15:00 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-2ec7efeb-9fd8-41cd-b73e-22a3a91d03bc.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "review_note": "Contrôle individuel : affichage exact 15:00, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f5c6785f342cacc935a73f2ad44c131710a3cec5ef0fd29342593b201ac4a375",
+      "sha256": "0db3a74327fca20c319feec4403738dd2fcc24aab17ebdce65171c8940fed9f2",
+      "bytes": 55700
+    },
+    {
+      "id": "co834-horloge-1300-dessinee",
+      "label": "À 13 h",
+      "clock_time": "13:00",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 13:00. L'écran doit afficher uniquement « 13:00 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-4aa3e353-4cba-41ea-9e55-44e9250de76e.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "review_note": "Contrôle individuel : affichage exact 13:00, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "cb9892025649104807c3ab0afa229186890c41f21a192be4525898c7aed45e88",
+      "sha256": "100a8788fef9ff0ec3e7b118ad92a1c22213e44699ea20233cfb7ca902be20b3",
+      "bytes": 56488
+    },
+    {
+      "id": "co834-horloge-1830-dessinee",
+      "label": "À 18 h 30",
+      "clock_time": "18:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 18:30. L'écran doit afficher uniquement « 18:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-1dd1157b-8a6a-4b22-963e-569e8a59f90b.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "review_note": "Contrôle individuel : affichage exact 18:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "2aff9a394b39066358f843969b592ad0da89834629117da873fc508782d50dda",
+      "sha256": "6eab27796264f35538685a69597904489f62756300ac2ecd6a2eb012a29fc027",
+      "bytes": 58876
+    },
+    {
+      "id": "co834-horloge-1230-dessinee",
+      "label": "À 12 h 30",
+      "clock_time": "12:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 12:30. L'écran doit afficher uniquement « 12:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-fd83b212-a846-4308-88e5-9ac26023cdbc.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "recovered_existing_output": true,
+      "review_note": "Contrôle individuel : affichage exact 12:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "262025e9023e9c0a78f854437b84a5fb2777beed3528626c4777daa6016b5071",
+      "sha256": "93d9bc26807c65ecaedb7149fe2c7abd4626365079899c66c1aae84d2733edfc",
+      "bytes": 54968
+    },
+    {
+      "id": "co834-horloge-1930-dessinee",
+      "label": "À 19 h 30",
+      "clock_time": "19:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 19:30. L'écran doit afficher uniquement « 19:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1930-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-a857f59f-9618-4bea-940c-0160d6f16dbc.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "recovered_existing_output": true,
+      "review_note": "Contrôle individuel : affichage exact 19:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f576b48b3cd37decd46f4266ed7d97be18d3636a5955bf39f279766d3755c9a2",
+      "sha256": "e0d4ef326d7abcfac71e4ac7d0aa779e3f98ddedb9399b0b810b34ddacf6b410",
+      "bytes": 53580
+    },
+    {
+      "id": "co834-horloge-0930-dessinee",
+      "label": "À 9 h 30",
+      "clock_time": "09:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 09:30. L'écran doit afficher uniquement « 09:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne. La deuxième image est une référence de style du commit 48a753d8 validé par l’utilisateur : garder un modelé peint doux et des contours fins, sans encrage renforcé. Ne pas ajouter les objets de cette deuxième image.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-6183d040-4b66-43f1-ad80-f6961b7e9ab8.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle individuel : affichage exact 09:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3, rendu doux comparé au commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": false,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "cdbfe34fd98a5c0e8edf6c2010454a498364d0fa892a8f56fa7f0ecd75649e7d",
+      "sha256": "a7687db4b968aa4e0522a1569d4a4fabfa7e625330d6ad649997cf855a4b6cc6",
+      "bytes": 56266,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-horloge-1030-dessinee",
+      "label": "À 10 h 30",
+      "clock_time": "10:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 10:30. L'écran doit afficher uniquement « 10:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "source_png": "/workspace/generated_images/exec-24ffbe42-d6e4-4e78-b832-87e672fc82c9.png",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "active-audios-834",
+      "review_note": "Contrôle individuel : affichage exact 10:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3. Illustration déjà disponible récupérée et comparée aux références du commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": true,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "77e828d67504d6abc232880fd145aa24ef7120916357632592790303c6a08414",
+      "sha256": "188660c3a643702434b55e39996d9d763e2a8f30d23d36463bf8501518604425",
+      "bytes": 54078
+    },
+    {
+      "id": "co834-horloge-1530-dessinee",
+      "label": "À 15 h 30",
+      "clock_time": "15:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 15:30. L'écran doit afficher uniquement « 15:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne. La deuxième image est une référence de style du commit 48a753d8 validé par l’utilisateur : garder un modelé peint doux et des contours fins, sans encrage renforcé. Ne pas ajouter les objets de cette deuxième image.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-51cbda88-e041-47df-8aee-bdf28a261922.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle individuel : affichage exact 15:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3, rendu doux comparé au commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": false,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "201d60ed12dd6d4f045c8ec4fef1ccb52a2297631eddef75dbf6dcaffc930ce6",
+      "sha256": "2bf1b3da36b21336c707e026667ec267db55ae3dbb343d7f17461a8bc82f1684",
+      "bytes": 51636,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-horloge-1630-dessinee",
+      "label": "À 16 h 30",
+      "clock_time": "16:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 16:30. L'écran doit afficher uniquement « 16:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne. La deuxième image est une référence de style du commit 48a753d8 validé par l’utilisateur : garder un modelé peint doux et des contours fins, sans encrage renforcé. Ne pas ajouter les objets de cette deuxième image.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-545369ec-88af-416f-931a-3e1a5a97a551.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle individuel : affichage exact 16:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3, rendu doux comparé au commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": false,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "7dfecbcc12b0bbbfdc9bb3ea97185e7be6d8ffbc5c8ecb3a9b53c81b2dae71f5",
+      "sha256": "3b6ac18d3901fef7a357fa8ce14f07931ce372049f8798522293c06e05fcad16",
+      "bytes": 52822,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-horloge-1430-dessinee",
+      "label": "À 14 h 30",
+      "clock_time": "14:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 14:30. L'écran doit afficher uniquement « 14:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne. La deuxième image est une référence de style du commit 48a753d8 validé par l’utilisateur : garder un modelé peint doux et des contours fins, sans encrage renforcé. Ne pas ajouter les objets de cette deuxième image.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-1218ebe8-f2f7-4b5f-af5f-0706428dcf3f.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle individuel : affichage exact 14:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3, rendu doux comparé au commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": false,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "55ab6ac2bdeee534b61ea066ec036faf6815b39c2e52e306681ba49f24122a64",
+      "sha256": "538337d16630420ee6ab875e1b9c63ac20023db0acad860e9a279a134ce6e232",
+      "bytes": 51716,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-horloge-1730-dessinee",
+      "label": "À 17 h 30",
+      "clock_time": "17:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 17:30. L'écran doit afficher uniquement « 17:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne. La deuxième image est une référence de style du commit 48a753d8 validé par l’utilisateur : garder un modelé peint doux et des contours fins, sans encrage renforcé. Ne pas ajouter les objets de cette deuxième image.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-0853ad95-25fa-4710-8ff3-47d986da63a6.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle individuel : affichage exact 17:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3, rendu doux comparé au commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": false,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "8b5d5157191b9664cb647150fd3f5482d6bca1877695c305d4398c0b1182b9d6",
+      "sha256": "890fab011105b49338421d6539d1f3d999e55b7103736bec9d8835cc091b6a8f",
+      "bytes": 48770,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co834-horloge-1330-dessinee",
+      "label": "À 13 h 30",
+      "clock_time": "13:30",
+      "prompt": "Modifier cette illustration en gardant EXACTEMENT le format PAYSAGE 4:3, le style dessiné semi-réaliste CE/CO, la même horloge de table en bois, la même composition et les mêmes couleurs. Changer uniquement les chiffres de l'écran : remplacer 10:00 par 13:30. L'écran doit afficher uniquement « 13:30 », très grand et lisible, avec les deux points entre les heures et les minutes. Aucun autre horaire, aucun mot, aucune lettre, aucun montant, date, jour ou mois. Aucune personne. La deuxième image est une référence de style du commit 48a753d8 validé par l’utilisateur : garder un modelé peint doux et des contours fins, sans encrage renforcé. Ne pas ajouter les objets de cette deuxième image.",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+      "character_diversity_plan": null,
+      "source_review": "Horloge réutilisable uniquement pour cette heure exacte, sans date ni montant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-fb34a2e0-e7ee-4c59-b867-7e63d3d8c29e.png",
+      "status": "visually_reviewed",
+      "review_note": "Contrôle individuel : affichage exact 13:30, deux points, chiffres lisibles sans date ni montant ; boîtier en bois peint et format natif 4:3, rendu doux comparé au commit 48a753d8.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement."
+      },
+      "recovered_existing_generation": false,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "02f4f6eec945fd002e50e5c12d74a0e1d70c45c8eb988145a234a95aa632a17a",
+      "sha256": "cecb334005d7369c12ec0439498f9dc250cccc8d94b8bcb95fd017590ef8f9c3",
+      "bytes": 51584,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [

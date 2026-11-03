@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "scope": "Recomparaison des 318 images aux 35 références du commit 48a753d8 explicitement validées par l’utilisateur. Le précédent diagnostic de 171 reprises utilisait une mauvaise référence de style et est retiré.",
+  "scope": "Contrôle des images avec les 35 références du commit 48a753d8 explicitement validées par l’utilisateur. Le précédent diagnostic de 171 reprises utilisait une mauvaise référence de style et est retiré.",
   "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "references": [
     {
@@ -224,18 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 259,
+    "reviewed_co_images": 278,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 318,
+    "reviewed_total_images": 337,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 307,
+    "already_aligned": 326,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
-    "rejected_unpublished_previews": 12
+    "rejected_unpublished_previews": 12,
+    "new_images_compared_to_reference": 19
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -3443,6 +3444,291 @@
       "group": "co_active_audio_batch",
       "user_approved_reference": false,
       "source_png": "/workspace/generated_images/exec-cfdf23c1-9af4-4c10-bbe4-5e15253459d8.png"
+    },
+    {
+      "id": "co834-pain-dessine",
+      "label": "Du pain",
+      "path": "/lib/images/tcf/qcm-audit/co834-pain-dessine.webp",
+      "sha256": "6a760b1c2914ae938d1ea3e04f5a81e327d52b1782580a35635f3afb660d9034",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-sandwich-dessine",
+      "label": "Un sandwich",
+      "path": "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+      "sha256": "a1be35905e3ba7734f3be031c33e2a06408fa846de84a39391461d1ddc2256bc",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-soupe-dessine",
+      "label": "Une soupe",
+      "path": "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp",
+      "sha256": "c1f7b76ef0b78671c6fb4199e4062f21b0b47d4f04a82fc89109b06a3bc26b9e",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-the-dessine",
+      "label": "Un thé",
+      "path": "/lib/images/tcf/qcm-audit/co834-the-dessine.webp",
+      "sha256": "4d0adb09009394fe86b95b66526f73ab66beedb2bc3640664071adbe1312e26d",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-chocolat-dessine",
+      "label": "Du chocolat",
+      "path": "/lib/images/tcf/qcm-audit/co834-chocolat-dessine.webp",
+      "sha256": "7595f29c85273aad4f731014601af1e6cfc030d841ac07fbcdf99320a196137f",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-guitare-dessine",
+      "label": "La guitare",
+      "path": "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+      "sha256": "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : même peinture numérique semi-réaliste détaillée, volumes doux et trait discret ; aucun contour noir renforcé. Contenu entier et format 4:3 relus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-2200-dessinee",
+      "label": "À 22 h",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp",
+      "sha256": "38d5d3972131f28f674de5c001584b8b9312274177cbe2171eb95d3d8d6e438b",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1500-dessinee",
+      "label": "À 15 h",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+      "sha256": "0db3a74327fca20c319feec4403738dd2fcc24aab17ebdce65171c8940fed9f2",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1300-dessinee",
+      "label": "À 13 h",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+      "sha256": "100a8788fef9ff0ec3e7b118ad92a1c22213e44699ea20233cfb7ca902be20b3",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1830-dessinee",
+      "label": "À 18 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp",
+      "sha256": "6eab27796264f35538685a69597904489f62756300ac2ecd6a2eb012a29fc027",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1230-dessinee",
+      "label": "À 12 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+      "sha256": "93d9bc26807c65ecaedb7149fe2c7abd4626365079899c66c1aae84d2733edfc",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1930-dessinee",
+      "label": "À 19 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1930-dessinee.webp",
+      "sha256": "e0d4ef326d7abcfac71e4ac7d0aa779e3f98ddedb9399b0b810b34ddacf6b410",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-0930-dessinee",
+      "label": "À 9 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp",
+      "sha256": "a7687db4b968aa4e0522a1569d4a4fabfa7e625330d6ad649997cf855a4b6cc6",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1030-dessinee",
+      "label": "À 10 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp",
+      "sha256": "188660c3a643702434b55e39996d9d763e2a8f30d23d36463bf8501518604425",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1530-dessinee",
+      "label": "À 15 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+      "sha256": "2bf1b3da36b21336c707e026667ec267db55ae3dbb343d7f17461a8bc82f1684",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1630-dessinee",
+      "label": "À 16 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+      "sha256": "3b6ac18d3901fef7a357fa8ce14f07931ce372049f8798522293c06e05fcad16",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1430-dessinee",
+      "label": "À 14 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+      "sha256": "538337d16630420ee6ab875e1b9c63ac20023db0acad860e9a279a134ce6e232",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1730-dessinee",
+      "label": "À 17 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp",
+      "sha256": "890fab011105b49338421d6539d1f3d999e55b7103736bec9d8835cc091b6a8f",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co834-horloge-1330-dessinee",
+      "label": "À 13 h 30",
+      "path": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+      "sha256": "cecb334005d7369c12ec0439498f9dc250cccc8d94b8bcb95fd017590ef8f9c3",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle au commit 48a753d8 : volumes doux, matière bois peinte et trait discret. L’horloge de référence déjà en banque est conservée ; chiffres de l’heure relus individuellement.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
     }
   ]
 }

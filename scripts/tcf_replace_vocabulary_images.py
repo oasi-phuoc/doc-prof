@@ -64,6 +64,7 @@ def checked_images(manifest):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--report', type=Path, help='Write complete proposed trios for editorial review')
     args = parser.parse_args()
     plan = json.loads(PLAN.read_text())
     manifest = json.loads((ROOT / 'docs/tcf/images-generees.json').read_text())
@@ -88,6 +89,8 @@ def main():
         base, question = normalise(label), normalise(enonce)
         if 'combien' in question:
             return None
+        if re.search(r'\bparfum\b|\bsaveur\b|\barome\b', question):
+            return None
         time = clock_time(label, enonce)
         if time is not None:
             return clocks.get(f'{time[0]:02d}:{time[1]:02d}')
@@ -97,6 +100,11 @@ def main():
                     'noire': 'noir', 'noirs': 'noir', 'noires': 'noir',
                     'blanche': 'blanc', 'blancs': 'blanc', 'blanches': 'blanc',
                     'rouges': 'rouge', 'jaunes': 'jaune'}.get(base, base)
+        if base == 'chocolat' and not re.search(r'ingredient|aliment|produit|fabriqu', question) and re.search(r'boisson|boire|tasse|chaud|commande', question):
+            drink = '/lib/images/tcf/qcm-audit/co834-chocolat-chaud-dessine.webp'
+            return drink if drink in checked else None
+        if base == 'cafe' and 'ingredient' in question:
+            return None
         if base == 'cafe' and re.search(r'\bou\b|lieu|endroit|parfum|histoire', question):
             return None
         if base == 'film' and not re.search(r'dvd|emprunt|preter|mediatheque', question):
@@ -146,6 +154,8 @@ def main():
         for exercise in content:
             for node, path in vocabulary_paths(exercise):
                 remaining.append(dict(bank=str(bank.relative_to(ROOT)), exercise=exercise['id'], node=list(node), image=path))
+    if args.report:
+        args.report.write_text(json.dumps(changes, ensure_ascii=False, indent=2) + '\n')
     if args.apply:
         plan['completed_question_trios'].extend(changes)
         plan['remaining_uses'] = remaining
@@ -156,6 +166,10 @@ def main():
         plan['summary'].update(remaining_occurrences=len(remaining), remaining_original_images=len(counts),
                                replaced_occurrences=plan['summary']['original_occurrences'] - len(remaining),
                                completed_question_trios=len(plan['completed_question_trios']))
+        aligned = sum(all(path in checked for path in trio['after'])
+                      for trio in plan['completed_question_trios'])
+        plan['summary'].update(style_aligned_question_trios=aligned,
+                               question_trios_awaiting_style_correction=len(plan['completed_question_trios']) - aligned)
         PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(dict(applied=args.apply, ready_question_trios=len(changes),
                           occurrences_replaced=sum(c['replaced_occurrences'] for c in changes),
