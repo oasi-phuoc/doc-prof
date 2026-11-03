@@ -15,6 +15,8 @@ from pathlib import Path
 
 from PIL import Image
 
+from tcf_qcm_images import clock_time
+
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/tcf/remplacement-images-vocabulaire.json'
 PREFIX = '/lib/images/vocabulaire/'
@@ -77,11 +79,22 @@ def main():
         if row['image'] in checked:
             for label in row['labels']:
                 aliases[normalise(label)] = {row['image']}
+    clocks = {row['clock_time']: path for path, row in checked.items()
+              if row.get('clock_time')}
 
     def resolve(label, enonce):
         base, question = normalise(label), normalise(enonce)
         if 'combien' in question:
             return None
+        time = clock_time(label, enonce)
+        if time is not None:
+            return clocks.get(f'{time[0]:02d}:{time[1]:02d}')
+        if 'couleur' in question:
+            base = {'bleue': 'bleu', 'bleus': 'bleu', 'bleues': 'bleu',
+                    'verte': 'vert', 'verts': 'vert', 'vertes': 'vert',
+                    'noire': 'noir', 'noirs': 'noir', 'noires': 'noir',
+                    'blanche': 'blanc', 'blancs': 'blanc', 'blanches': 'blanc',
+                    'rouges': 'rouge', 'jaunes': 'jaune'}.get(base, base)
         if base == 'cafe' and re.search(r'\bou\b|lieu|endroit|parfum|histoire', question):
             return None
         if base == 'film' and not re.search(r'dvd|emprunt|preter|mediatheque', question):
