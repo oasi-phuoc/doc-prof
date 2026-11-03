@@ -133,7 +133,7 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
 
 export type TcfCeSms = TcfBase<'CE', 'sms', { expediteur: string; texte: string }>
 export type TcfCeEmail = TcfBase<'CE', 'email', { de: string; a: string; objet: string; texte: string }>
-export type TcfCeAnnonce = TcfBase<'CE', 'annonce', { titre: string; texte: string; image: string | null }>
+export type TcfCeAnnonce = TcfBase<'CE', 'annonce', { titre: string; texte: string; image: string | null; presentation?: 'image-bullets' }>
 export type TcfCeExercise = TcfCeSms | TcfCeEmail | TcfCeAnnonce
 
 // —— CO ——

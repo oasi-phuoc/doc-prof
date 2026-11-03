@@ -13,6 +13,10 @@ import { isNationaliteKind, NATIONALITE_KIND_IDS } from './nationalite'
 import { isProvenanceKind, PROVENANCE_KIND_IDS } from './provenance'
 import { isFamilleKind, FAMILLE_KIND_IDS } from './famille'
 import { hasGrammarCommunication } from './communication'
+import { CLOSED_QUESTION_KIND_IDS } from './closed-questions'
+import { isQuestionReadingType } from './reading-types'
+import { OPEN_QUESTION_KIND_IDS } from './open-questions'
+import { QUEL_QUESTION_KIND_IDS } from './quel-questions'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
 function theoryDerivedSubthemes(): Array<{
@@ -34,7 +38,7 @@ function theoryDerivedSubthemes(): Array<{
     knownIds.add(sid)
     out.push({
       id: sid,
-      label: doc.title,
+      label: ({ c1: 'Questions fermées', c2: 'Questions ouvertes', c3: 'Questions avec quel' } as Record<string, string>)[doc.id] ?? doc.title,
       topic: doc.topic,
       theoryTypeIds: [doc.typeId],
     })
@@ -60,7 +64,19 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
 
   for (const sub of ALL_GRAM_SUBTHEMES) {
     const kinds =
-      sub.id === 'a1'
+      sub.id === 'c1'
+        ? CLOSED_QUESTION_KIND_IDS.map(id => gramKindById(id)).filter(
+            (kind): kind is NonNullable<typeof kind> => Boolean(kind),
+          )
+        : sub.id === 'c2'
+          ? OPEN_QUESTION_KIND_IDS.map(id => gramKindById(id)).filter(
+              (kind): kind is NonNullable<typeof kind> => Boolean(kind),
+            )
+          : sub.id === 'c3'
+            ? QUEL_QUESTION_KIND_IDS.map(id => gramKindById(id)).filter(
+                (kind): kind is NonNullable<typeof kind> => Boolean(kind),
+              )
+        : sub.id === 'a1'
         ? QUI_SUIS_JE_KIND_IDS.map((id) => gramKindById(id)).filter(
             (kind): kind is NonNullable<typeof kind> => Boolean(kind),
           )
@@ -81,6 +97,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
       const id = gramExerciseTypeId(sub.id, kind.id)
       if (
         bankSize(id) <= 0 &&
+        !isQuestionReadingType(id) &&
         !hasGrammarCommunication(sub.id, kind.id) &&
         !(sub.id === 'a1' && isQuiSuisJeKind(kind.id)) &&
         !(sub.id === 'a3' && isNationaliteKind(kind.id)) &&

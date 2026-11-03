@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Rebuild grammar from its authored curriculum; no network or image generation."""
-import hashlib,json,subprocess,sys
+import hashlib,json,sys
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
@@ -33,9 +33,9 @@ bank=ROOT/'src/grammaire/exercises/bank'
 for filename,name,data in [('lessons-revised','GRAM_LESSONS_REVISED',LESSONS),('lessons-protected','GRAM_LESSONS_PROTECTED',PROTECTED)]:
  (bank/(filename+'.ts')).write_text("import type { GramLesson } from '../types'\n\n/** Généré par scripts/grammar_curriculum/build.py ; données éditoriales relues. */\nexport const "+name+': GramLesson[] = '+json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 (ROOT/'src/grammaire/exercises/communication-data.json').write_text(json.dumps(ALL,ensure_ascii=False,indent=2)+'\n')
-subprocess.run([sys.executable,str(HERE/'render_theory.py')],check=True)
+# Theory is authored directly in src/grammaire/theory; preserve it when rebuilding exercises.
 report={
- 'theoryRewritten':105,'theoryProtected':8,'newPracticeBanks':104,'newPracticeItems':5200,
+ 'theoryRewritten':0,'theoryProtected':113,'newPracticeBanks':104,'newPracticeItems':5200,
  'protectedBanksCompleted':len(PROTECTED),'protectedBankItems':sum(len(x['items']) for x in PROTECTED),
  'communicativeThemes':len(ALL),'variantsPerCommunicationType':10,'newCommunicationTypes':3*len(ALL),
  'communicationVariants':3*sum(len(x['variants']) for x in ALL),'readingQuestions':sum(len(v['questions']) for x in ALL for v in x['variants']),

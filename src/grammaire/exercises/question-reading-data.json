@@ -1,0 +1,862 @@
+[
+  {
+    "slug": "formation",
+    "genre": "présentation",
+    "title": "Le cours de français de Lina",
+    "text": "Lina habite à Sion. Elle suit un cours de français le lundi et le jeudi. Le cours commence à neuf heures et finit à midi. Lina vient en bus. Le mercredi, elle travaille dans une boulangerie. Elle aime apprendre avec ses camarades et révise ses leçons à la maison.",
+    "questions": [
+      {
+        "prompt": "Est-ce que Lina habite à Sion ?",
+        "affirmative": true,
+        "answer": "Oui, elle habite à Sion.",
+        "evidence": "Lina habite à Sion.",
+        "inversion": "Lina habite-t-elle à Sion ?"
+      },
+      {
+        "prompt": "Est-ce que Lina suit un cours le mardi ?",
+        "affirmative": false,
+        "answer": "Non, elle ne suit pas de cours le mardi.",
+        "evidence": "le lundi et le jeudi",
+        "inversion": "Lina suit-elle un cours le mardi ?"
+      },
+      {
+        "prompt": "Est-ce que le cours commence à neuf heures ?",
+        "affirmative": true,
+        "answer": "Oui, le cours commence à neuf heures.",
+        "evidence": "commence à neuf heures",
+        "inversion": "Le cours commence-t-il à neuf heures ?"
+      },
+      {
+        "prompt": "Est-ce que Lina vient à pied ?",
+        "affirmative": false,
+        "answer": "Non, elle ne vient pas à pied.",
+        "evidence": "Lina vient en bus.",
+        "inversion": "Lina vient-elle à pied ?"
+      },
+      {
+        "prompt": "Est-ce que Lina travaille le mercredi ?",
+        "affirmative": true,
+        "answer": "Oui, elle travaille le mercredi.",
+        "evidence": "Le mercredi, elle travaille",
+        "inversion": "Lina travaille-t-elle le mercredi ?"
+      }
+    ]
+  },
+  {
+    "slug": "bibliotheque",
+    "genre": "affiche",
+    "title": "La bibliothèque du quartier",
+    "text": "La bibliothèque du quartier est fermée le lundi. Elle ouvre du mardi au samedi, de dix heures à dix-huit heures. L’inscription est gratuite. Les lecteurs peuvent emprunter cinq livres pendant trois semaines. La bibliothèque propose aussi des livres pour les enfants. Le dimanche, les portes restent fermées.",
+    "questions": [
+      {
+        "prompt": "Est-ce que la bibliothèque ouvre le lundi ?",
+        "affirmative": false,
+        "answer": "Non, elle n’ouvre pas le lundi.",
+        "evidence": "fermée le lundi",
+        "inversion": "La bibliothèque ouvre-t-elle le lundi ?"
+      },
+      {
+        "prompt": "Est-ce que l’inscription est gratuite ?",
+        "affirmative": true,
+        "answer": "Oui, l’inscription est gratuite.",
+        "evidence": "L’inscription est gratuite.",
+        "inversion": "L’inscription est-elle gratuite ?"
+      },
+      {
+        "prompt": "Est-ce que les lecteurs peuvent emprunter cinq livres ?",
+        "affirmative": true,
+        "answer": "Oui, ils peuvent emprunter cinq livres.",
+        "evidence": "emprunter cinq livres",
+        "inversion": "Les lecteurs peuvent-ils emprunter cinq livres ?"
+      },
+      {
+        "prompt": "Est-ce que les livres sont prêtés pendant une semaine ?",
+        "affirmative": false,
+        "answer": "Non, ils ne sont pas prêtés pendant une semaine.",
+        "evidence": "pendant trois semaines",
+        "inversion": "Les livres sont-ils prêtés pendant une semaine ?"
+      },
+      {
+        "prompt": "Est-ce que la bibliothèque propose des livres pour les enfants ?",
+        "affirmative": true,
+        "answer": "Oui, elle propose des livres pour les enfants.",
+        "evidence": "des livres pour les enfants",
+        "inversion": "La bibliothèque propose-t-elle des livres pour les enfants ?"
+      }
+    ]
+  },
+  {
+    "slug": "dentiste",
+    "genre": "message",
+    "title": "Un rendez-vous chez le dentiste",
+    "text": "Bonjour Paul, votre rendez-vous chez le dentiste est confirmé pour jeudi à quatorze heures. Merci d’apporter votre carte d’assurance. Le cabinet est au deuxième étage du 8, rue du Parc. Il y a un ascenseur. Le cabinet ferme à dix-sept heures. Appelez-nous si vous devez annuler votre visite.",
+    "questions": [
+      {
+        "prompt": "Est-ce que Paul a rendez-vous jeudi ?",
+        "affirmative": true,
+        "answer": "Oui, il a rendez-vous jeudi.",
+        "evidence": "pour jeudi à quatorze heures",
+        "inversion": "Paul a-t-il rendez-vous jeudi ?"
+      },
+      {
+        "prompt": "Est-ce que le rendez-vous est à dix heures ?",
+        "affirmative": false,
+        "answer": "Non, le rendez-vous n’est pas à dix heures.",
+        "evidence": "à quatorze heures",
+        "inversion": "Le rendez-vous est-il à dix heures ?"
+      },
+      {
+        "prompt": "Est-ce que Paul doit apporter sa carte d’assurance ?",
+        "affirmative": true,
+        "answer": "Oui, il doit apporter sa carte d’assurance.",
+        "evidence": "apporter votre carte d’assurance",
+        "inversion": "Paul doit-il apporter sa carte d’assurance ?"
+      },
+      {
+        "prompt": "Est-ce que le cabinet est au rez-de-chaussée ?",
+        "affirmative": false,
+        "answer": "Non, il n’est pas au rez-de-chaussée.",
+        "evidence": "au deuxième étage",
+        "inversion": "Le cabinet est-il au rez-de-chaussée ?"
+      },
+      {
+        "prompt": "Est-ce qu’il y a un ascenseur ?",
+        "affirmative": true,
+        "answer": "Oui, il y a un ascenseur.",
+        "evidence": "Il y a un ascenseur.",
+        "inversion": "Y a-t-il un ascenseur ?"
+      }
+    ]
+  },
+  {
+    "slug": "natation",
+    "genre": "email",
+    "title": "Un cours à la piscine",
+    "text": "De : Club du Lac\nÀ : Julie\nObjet : Inscription de votre fils\n\nBonjour Julie, votre fils Noé est inscrit au cours de natation du mercredi. Le cours a lieu de quinze heures à seize heures. Le trimestre coûte quatre-vingts francs. Noé doit apporter un bonnet et une serviette. La première séance est le 10 septembre. Les parents attendent dans le hall.",
+    "questions": [
+      {
+        "prompt": "Est-ce que Noé est inscrit à un cours de tennis ?",
+        "affirmative": false,
+        "answer": "Non, il n’est pas inscrit à un cours de tennis.",
+        "evidence": "cours de natation",
+        "inversion": "Noé est-il inscrit à un cours de tennis ?"
+      },
+      {
+        "prompt": "Est-ce que le cours a lieu le mercredi ?",
+        "affirmative": true,
+        "answer": "Oui, le cours a lieu le mercredi.",
+        "evidence": "du mercredi",
+        "inversion": "Le cours a-t-il lieu le mercredi ?"
+      },
+      {
+        "prompt": "Est-ce que le cours dure deux heures ?",
+        "affirmative": false,
+        "answer": "Non, le cours ne dure pas deux heures.",
+        "evidence": "de quinze heures à seize heures",
+        "inversion": "Le cours dure-t-il deux heures ?"
+      },
+      {
+        "prompt": "Est-ce que Noé doit apporter une serviette ?",
+        "affirmative": true,
+        "answer": "Oui, il doit apporter une serviette.",
+        "evidence": "un bonnet et une serviette",
+        "inversion": "Noé doit-il apporter une serviette ?"
+      },
+      {
+        "prompt": "Est-ce que les parents attendent dans le hall ?",
+        "affirmative": true,
+        "answer": "Oui, les parents attendent dans le hall.",
+        "evidence": "Les parents attendent dans le hall.",
+        "inversion": "Les parents attendent-ils dans le hall ?"
+      }
+    ]
+  },
+  {
+    "slug": "marche",
+    "genre": "récit",
+    "title": "Samedi au marché",
+    "text": "Samedi matin, Amina va au marché avec sa sœur. Elles achètent des tomates, des pommes et du pain. Elles ne prennent pas de fromage, car elles en ont déjà à la maison. Amina paie en espèces. Après les courses, les deux sœurs rentrent à pied. Elles préparent ensuite le repas pour leurs parents.",
+    "questions": [
+      {
+        "prompt": "Est-ce qu’Amina va au marché avec sa sœur ?",
+        "affirmative": true,
+        "answer": "Oui, elle va au marché avec sa sœur.",
+        "evidence": "avec sa sœur",
+        "inversion": "Amina va-t-elle au marché avec sa sœur ?"
+      },
+      {
+        "prompt": "Est-ce que les sœurs achètent du fromage ?",
+        "affirmative": false,
+        "answer": "Non, elles n’achètent pas de fromage.",
+        "evidence": "Elles ne prennent pas de fromage",
+        "inversion": "Les sœurs achètent-elles du fromage ?"
+      },
+      {
+        "prompt": "Est-ce qu’elles achètent des pommes ?",
+        "affirmative": true,
+        "answer": "Oui, elles achètent des pommes.",
+        "evidence": "des tomates, des pommes et du pain",
+        "inversion": "Achètent-elles des pommes ?"
+      },
+      {
+        "prompt": "Est-ce qu’Amina paie par carte ?",
+        "affirmative": false,
+        "answer": "Non, elle ne paie pas par carte.",
+        "evidence": "Amina paie en espèces.",
+        "inversion": "Amina paie-t-elle par carte ?"
+      },
+      {
+        "prompt": "Est-ce que les sœurs rentrent à pied ?",
+        "affirmative": true,
+        "answer": "Oui, elles rentrent à pied.",
+        "evidence": "les deux sœurs rentrent à pied",
+        "inversion": "Les sœurs rentrent-elles à pied ?"
+      }
+    ]
+  },
+  {
+    "slug": "travail",
+    "genre": "portrait",
+    "title": "Le travail de Karim",
+    "text": "Karim est mécanicien dans un garage. Il travaille du lundi au vendredi. Il commence à huit heures et déjeune avec ses collègues à midi. Le garage répare des voitures, mais pas des vélos. Karim habite près de son travail et vient à pied. Le samedi, il reste avec sa famille.",
+    "questions": [
+      {
+        "prompt": "Est-ce que Karim est boulanger ?",
+        "affirmative": false,
+        "answer": "Non, il n’est pas boulanger.",
+        "evidence": "Karim est mécanicien",
+        "inversion": "Karim est-il boulanger ?"
+      },
+      {
+        "prompt": "Est-ce que Karim travaille le vendredi ?",
+        "affirmative": true,
+        "answer": "Oui, il travaille le vendredi.",
+        "evidence": "du lundi au vendredi",
+        "inversion": "Karim travaille-t-il le vendredi ?"
+      },
+      {
+        "prompt": "Est-ce que le garage répare des vélos ?",
+        "affirmative": false,
+        "answer": "Non, le garage ne répare pas de vélos.",
+        "evidence": "mais pas des vélos",
+        "inversion": "Le garage répare-t-il des vélos ?"
+      },
+      {
+        "prompt": "Est-ce que Karim déjeune avec ses collègues ?",
+        "affirmative": true,
+        "answer": "Oui, il déjeune avec ses collègues.",
+        "evidence": "déjeune avec ses collègues",
+        "inversion": "Karim déjeune-t-il avec ses collègues ?"
+      },
+      {
+        "prompt": "Est-ce que Karim vient au travail à pied ?",
+        "affirmative": true,
+        "answer": "Oui, il vient au travail à pied.",
+        "evidence": "vient à pied",
+        "inversion": "Karim vient-il au travail à pied ?"
+      }
+    ]
+  },
+  {
+    "slug": "anniversaire",
+    "genre": "invitation",
+    "title": "La fête de grand-mère",
+    "text": "Nous fêtons les soixante ans de notre grand-mère Rose dimanche à midi. Le repas aura lieu dans le jardin de mes parents. Mon père prépare les salades et ma mère achète le gâteau. Tous les cousins sont invités. Apportez une photo de famille. En cas de pluie, nous mangerons dans le salon. À dimanche ! Léa.",
+    "questions": [
+      {
+        "prompt": "Est-ce que la fête a lieu samedi ?",
+        "affirmative": false,
+        "answer": "Non, la fête n’a pas lieu samedi.",
+        "evidence": "dimanche à midi",
+        "inversion": "La fête a-t-elle lieu samedi ?"
+      },
+      {
+        "prompt": "Est-ce que Rose fête ses soixante ans ?",
+        "affirmative": true,
+        "answer": "Oui, elle fête ses soixante ans.",
+        "evidence": "les soixante ans",
+        "inversion": "Rose fête-t-elle ses soixante ans ?"
+      },
+      {
+        "prompt": "Est-ce que le père de Léa prépare les salades ?",
+        "affirmative": true,
+        "answer": "Oui, il prépare les salades.",
+        "evidence": "Mon père prépare les salades",
+        "inversion": "Le père de Léa prépare-t-il les salades ?"
+      },
+      {
+        "prompt": "Est-ce que les invités doivent apporter un gâteau ?",
+        "affirmative": false,
+        "answer": "Non, ils ne doivent pas apporter de gâteau.",
+        "evidence": "Apportez une photo de famille.",
+        "inversion": "Les invités doivent-ils apporter un gâteau ?"
+      },
+      {
+        "prompt": "Est-ce que la famille mangera dans le salon en cas de pluie ?",
+        "affirmative": true,
+        "answer": "Oui, elle mangera dans le salon en cas de pluie.",
+        "evidence": "En cas de pluie, nous mangerons dans le salon.",
+        "inversion": "La famille mangera-t-elle dans le salon en cas de pluie ?"
+      }
+    ]
+  },
+  {
+    "slug": "logement",
+    "genre": "annonce",
+    "title": "Un appartement à louer",
+    "text": "À louer : un appartement de trois pièces près de la gare. Il comprend deux chambres, une cuisine et une salle de bains. Il se trouve au premier étage, dans un immeuble sans ascenseur. Le loyer est de mille francs par mois. Les animaux sont acceptés. Les visites sont possibles le jeudi après-midi.",
+    "questions": [
+      {
+        "prompt": "Est-ce que l’appartement est près de la gare ?",
+        "affirmative": true,
+        "answer": "Oui, il est près de la gare.",
+        "evidence": "près de la gare",
+        "inversion": "L’appartement est-il près de la gare ?"
+      },
+      {
+        "prompt": "Est-ce qu’il comprend trois chambres ?",
+        "affirmative": false,
+        "answer": "Non, il ne comprend pas trois chambres.",
+        "evidence": "deux chambres",
+        "inversion": "Comprend-il trois chambres ?"
+      },
+      {
+        "prompt": "Est-ce que l’immeuble a un ascenseur ?",
+        "affirmative": false,
+        "answer": "Non, l’immeuble n’a pas d’ascenseur.",
+        "evidence": "sans ascenseur",
+        "inversion": "L’immeuble a-t-il un ascenseur ?"
+      },
+      {
+        "prompt": "Est-ce que les animaux sont acceptés ?",
+        "affirmative": true,
+        "answer": "Oui, les animaux sont acceptés.",
+        "evidence": "Les animaux sont acceptés.",
+        "inversion": "Les animaux sont-ils acceptés ?"
+      },
+      {
+        "prompt": "Est-ce que les visites sont possibles le jeudi après-midi ?",
+        "affirmative": true,
+        "answer": "Oui, elles sont possibles le jeudi après-midi.",
+        "evidence": "le jeudi après-midi",
+        "inversion": "Les visites sont-elles possibles le jeudi après-midi ?"
+      }
+    ]
+  },
+  {
+    "slug": "cafe",
+    "genre": "menu",
+    "title": "Le café de la place",
+    "text": "Le café de la place ouvre tous les jours à sept heures, sauf le dimanche. Le petit-déjeuner coûte huit francs et comprend une boisson chaude, du pain et de la confiture. La terrasse est ouverte quand il fait beau. Le café ne sert pas de repas le soir. Les clients peuvent payer par carte.",
+    "questions": [
+      {
+        "prompt": "Est-ce que le café ouvre le dimanche ?",
+        "affirmative": false,
+        "answer": "Non, il n’ouvre pas le dimanche.",
+        "evidence": "sauf le dimanche",
+        "inversion": "Le café ouvre-t-il le dimanche ?"
+      },
+      {
+        "prompt": "Est-ce que le petit-déjeuner coûte huit francs ?",
+        "affirmative": true,
+        "answer": "Oui, il coûte huit francs.",
+        "evidence": "coûte huit francs",
+        "inversion": "Le petit-déjeuner coûte-t-il huit francs ?"
+      },
+      {
+        "prompt": "Est-ce que le petit-déjeuner comprend une boisson chaude ?",
+        "affirmative": true,
+        "answer": "Oui, il comprend une boisson chaude.",
+        "evidence": "une boisson chaude",
+        "inversion": "Le petit-déjeuner comprend-il une boisson chaude ?"
+      },
+      {
+        "prompt": "Est-ce que le café sert des repas le soir ?",
+        "affirmative": false,
+        "answer": "Non, il ne sert pas de repas le soir.",
+        "evidence": "ne sert pas de repas le soir",
+        "inversion": "Le café sert-il des repas le soir ?"
+      },
+      {
+        "prompt": "Est-ce que les clients peuvent payer par carte ?",
+        "affirmative": true,
+        "answer": "Oui, ils peuvent payer par carte.",
+        "evidence": "payer par carte",
+        "inversion": "Les clients peuvent-ils payer par carte ?"
+      }
+    ]
+  },
+  {
+    "slug": "ecole",
+    "genre": "note aux parents",
+    "title": "La sortie au musée",
+    "text": "Mardi, la classe de Madame Simon visite le musée des sciences. Le départ est à neuf heures devant l’école. Les enfants font le trajet en bus et reviennent à quinze heures. Chaque élève doit apporter un pique-nique et une bouteille d’eau. La visite du musée est gratuite pour la classe. Les parents viennent chercher les enfants à l’école.",
+    "questions": [
+      {
+        "prompt": "Est-ce que la classe visite le musée des sciences ?",
+        "affirmative": true,
+        "answer": "Oui, elle visite le musée des sciences.",
+        "evidence": "visite le musée des sciences",
+        "inversion": "La classe visite-t-elle le musée des sciences ?"
+      },
+      {
+        "prompt": "Est-ce que les enfants partent à dix heures ?",
+        "affirmative": false,
+        "answer": "Non, ils ne partent pas à dix heures.",
+        "evidence": "Le départ est à neuf heures",
+        "inversion": "Les enfants partent-ils à dix heures ?"
+      },
+      {
+        "prompt": "Est-ce que les enfants voyagent en train ?",
+        "affirmative": false,
+        "answer": "Non, ils ne voyagent pas en train.",
+        "evidence": "le trajet en bus",
+        "inversion": "Les enfants voyagent-ils en train ?"
+      },
+      {
+        "prompt": "Est-ce que chaque élève doit apporter un pique-nique ?",
+        "affirmative": true,
+        "answer": "Oui, chaque élève doit apporter un pique-nique.",
+        "evidence": "apporter un pique-nique",
+        "inversion": "Chaque élève doit-il apporter un pique-nique ?"
+      },
+      {
+        "prompt": "Est-ce que la visite est gratuite pour la classe ?",
+        "affirmative": true,
+        "answer": "Oui, la visite est gratuite pour la classe.",
+        "evidence": "est gratuite pour la classe",
+        "inversion": "La visite est-elle gratuite pour la classe ?"
+      }
+    ]
+  },
+  {
+    "slug": "weekend",
+    "genre": "carte postale",
+    "title": "Un week-end chez notre tante",
+    "text": "Chère Nora, nous passons le week-end chez notre tante à Neuchâtel. Sa maison est près du lac. Samedi, nous faisons une promenade, mais nous ne nous baignons pas : l’eau est trop froide. Notre cousin prépare le dîner. Nous rentrons dimanche soir en train. Je t’enverrai une photo du lac. À bientôt ! Emma.",
+    "questions": [
+      {
+        "prompt": "Est-ce qu’Emma passe le week-end chez sa tante ?",
+        "affirmative": true,
+        "answer": "Oui, elle passe le week-end chez sa tante.",
+        "evidence": "chez notre tante",
+        "inversion": "Emma passe-t-elle le week-end chez sa tante ?"
+      },
+      {
+        "prompt": "Est-ce que la maison est loin du lac ?",
+        "affirmative": false,
+        "answer": "Non, elle n’est pas loin du lac.",
+        "evidence": "près du lac",
+        "inversion": "La maison est-elle loin du lac ?"
+      },
+      {
+        "prompt": "Est-ce qu’Emma et sa famille se baignent ?",
+        "affirmative": false,
+        "answer": "Non, Emma et sa famille ne se baignent pas.",
+        "evidence": "nous ne nous baignons pas",
+        "inversion": "Emma et sa famille se baignent-elles ?"
+      },
+      {
+        "prompt": "Est-ce que le cousin prépare le dîner ?",
+        "affirmative": true,
+        "answer": "Oui, le cousin prépare le dîner.",
+        "evidence": "Notre cousin prépare le dîner.",
+        "inversion": "Le cousin prépare-t-il le dîner ?"
+      },
+      {
+        "prompt": "Est-ce que la famille rentre en train ?",
+        "affirmative": true,
+        "answer": "Oui, la famille rentre en train.",
+        "evidence": "en train",
+        "inversion": "La famille rentre-t-elle en train ?"
+      }
+    ]
+  },
+  {
+    "slug": "pharmacie",
+    "genre": "dialogue",
+    "title": "À la pharmacie",
+    "text": "La pharmacienne : Bonjour, vous avez une ordonnance ?\nLe client : Oui, elle est dans mon sac. Ce médicament est pour mon fils.\nLa pharmacienne : Quel âge a-t-il ?\nLe client : Il a six ans.\nLa pharmacienne : Donnez-lui le médicament après le repas du soir. Il doit aussi boire beaucoup d’eau.\nLe client : D’accord. Je peux payer par carte ?\nLa pharmacienne : Oui, bien sûr.",
+    "questions": [
+      {
+        "prompt": "Est-ce que le client a une ordonnance ?",
+        "affirmative": true,
+        "answer": "Oui, il a une ordonnance.",
+        "evidence": "Oui, elle est dans mon sac.",
+        "inversion": "Le client a-t-il une ordonnance ?"
+      },
+      {
+        "prompt": "Est-ce que le médicament est pour sa fille ?",
+        "affirmative": false,
+        "answer": "Non, le médicament n’est pas pour sa fille.",
+        "evidence": "pour mon fils",
+        "inversion": "Le médicament est-il pour sa fille ?"
+      },
+      {
+        "prompt": "Est-ce que son fils a dix ans ?",
+        "affirmative": false,
+        "answer": "Non, son fils n’a pas dix ans.",
+        "evidence": "Il a six ans.",
+        "inversion": "Son fils a-t-il dix ans ?"
+      },
+      {
+        "prompt": "Est-ce que l’enfant doit boire beaucoup d’eau ?",
+        "affirmative": true,
+        "answer": "Oui, il doit boire beaucoup d’eau.",
+        "evidence": "boire beaucoup d’eau",
+        "inversion": "L’enfant doit-il boire beaucoup d’eau ?"
+      },
+      {
+        "prompt": "Est-ce que le client peut payer par carte ?",
+        "affirmative": true,
+        "answer": "Oui, il peut payer par carte.",
+        "evidence": "Oui, bien sûr.",
+        "inversion": "Le client peut-il payer par carte ?"
+      }
+    ]
+  },
+  {
+    "slug": "sport",
+    "genre": "programme",
+    "title": "La marche du dimanche",
+    "text": "L’association du quartier organise une marche dimanche. Le rendez-vous est à dix heures devant la mairie. Le parcours dure deux heures et se termine près du lac. Il est facile et convient aux débutants. La participation est gratuite. Chacun apporte de l’eau et des chaussures confortables. La marche sera annulée en cas de forte pluie.",
+    "questions": [
+      {
+        "prompt": "Est-ce que la marche a lieu dimanche ?",
+        "affirmative": true,
+        "answer": "Oui, la marche a lieu dimanche.",
+        "evidence": "une marche dimanche",
+        "inversion": "La marche a-t-elle lieu dimanche ?"
+      },
+      {
+        "prompt": "Est-ce que le rendez-vous est devant la gare ?",
+        "affirmative": false,
+        "answer": "Non, le rendez-vous n’est pas devant la gare.",
+        "evidence": "devant la mairie",
+        "inversion": "Le rendez-vous est-il devant la gare ?"
+      },
+      {
+        "prompt": "Est-ce que le parcours dure trois heures ?",
+        "affirmative": false,
+        "answer": "Non, le parcours ne dure pas trois heures.",
+        "evidence": "dure deux heures",
+        "inversion": "Le parcours dure-t-il trois heures ?"
+      },
+      {
+        "prompt": "Est-ce que les débutants peuvent participer ?",
+        "affirmative": true,
+        "answer": "Oui, les débutants peuvent participer.",
+        "evidence": "convient aux débutants",
+        "inversion": "Les débutants peuvent-ils participer ?"
+      },
+      {
+        "prompt": "Est-ce que la participation est gratuite ?",
+        "affirmative": true,
+        "answer": "Oui, la participation est gratuite.",
+        "evidence": "La participation est gratuite.",
+        "inversion": "La participation est-elle gratuite ?"
+      }
+    ]
+  },
+  {
+    "slug": "colis",
+    "genre": "avis de livraison",
+    "title": "Votre colis est arrivé",
+    "text": "Madame Dupont, votre colis est disponible au bureau de poste de la gare. Vous pouvez le retirer dès aujourd’hui et jusqu’à vendredi. Le bureau ouvre de huit heures à dix-huit heures. Apportez cet avis et une pièce d’identité. Le colis est déjà payé. Si votre mari vient à votre place, il doit aussi présenter une autorisation signée.",
+    "questions": [
+      {
+        "prompt": "Est-ce que le colis est à la poste de la gare ?",
+        "affirmative": true,
+        "answer": "Oui, le colis est à la poste de la gare.",
+        "evidence": "au bureau de poste de la gare",
+        "inversion": "Le colis est-il à la poste de la gare ?"
+      },
+      {
+        "prompt": "Est-ce que Madame Dupont peut le retirer samedi ?",
+        "affirmative": false,
+        "answer": "Non, elle ne peut pas le retirer samedi.",
+        "evidence": "jusqu’à vendredi",
+        "inversion": "Madame Dupont peut-elle le retirer samedi ?"
+      },
+      {
+        "prompt": "Est-ce qu’elle doit apporter une pièce d’identité ?",
+        "affirmative": true,
+        "answer": "Oui, elle doit apporter une pièce d’identité.",
+        "evidence": "une pièce d’identité",
+        "inversion": "Doit-elle apporter une pièce d’identité ?"
+      },
+      {
+        "prompt": "Est-ce qu’elle doit payer le colis au guichet ?",
+        "affirmative": false,
+        "answer": "Non, elle ne doit pas payer le colis au guichet.",
+        "evidence": "Le colis est déjà payé.",
+        "inversion": "Doit-elle payer le colis au guichet ?"
+      },
+      {
+        "prompt": "Est-ce que son mari doit présenter une autorisation ?",
+        "affirmative": true,
+        "answer": "Oui, il doit présenter une autorisation.",
+        "evidence": "une autorisation signée",
+        "inversion": "Son mari doit-il présenter une autorisation ?"
+      }
+    ]
+  },
+  {
+    "slug": "voisin",
+    "genre": "message",
+    "title": "Un coup de main samedi",
+    "text": "Bonjour Marc, je déménage samedi matin dans la rue des Fleurs. Mon nouvel appartement est au rez-de-chaussée. Peux-tu m’aider à porter les cartons ? Mon frère vient avec une camionnette à neuf heures. Nous n’avons pas besoin d’outils, car les meubles sont déjà montés. Je prépare le déjeuner pour tout le monde. Merci ! Paul.",
+    "questions": [
+      {
+        "prompt": "Est-ce que Paul déménage samedi matin ?",
+        "affirmative": true,
+        "answer": "Oui, il déménage samedi matin.",
+        "evidence": "je déménage samedi matin",
+        "inversion": "Paul déménage-t-il samedi matin ?"
+      },
+      {
+        "prompt": "Est-ce que le nouvel appartement est au troisième étage ?",
+        "affirmative": false,
+        "answer": "Non, il n’est pas au troisième étage.",
+        "evidence": "au rez-de-chaussée",
+        "inversion": "Le nouvel appartement est-il au troisième étage ?"
+      },
+      {
+        "prompt": "Est-ce que le frère de Paul vient avec une camionnette ?",
+        "affirmative": true,
+        "answer": "Oui, il vient avec une camionnette.",
+        "evidence": "Mon frère vient avec une camionnette",
+        "inversion": "Le frère de Paul vient-il avec une camionnette ?"
+      },
+      {
+        "prompt": "Est-ce que Paul a besoin d’outils ?",
+        "affirmative": false,
+        "answer": "Non, il n’a pas besoin d’outils.",
+        "evidence": "Nous n’avons pas besoin d’outils",
+        "inversion": "Paul a-t-il besoin d’outils ?"
+      },
+      {
+        "prompt": "Est-ce que Paul prépare le déjeuner ?",
+        "affirmative": true,
+        "answer": "Oui, il prépare le déjeuner.",
+        "evidence": "Je prépare le déjeuner",
+        "inversion": "Paul prépare-t-il le déjeuner ?"
+      }
+    ]
+  },
+  {
+    "slug": "boulangerie",
+    "genre": "horaires",
+    "title": "La nouvelle boulangerie",
+    "text": "La boulangerie du Soleil ouvre à six heures trente du mardi au dimanche. Elle est fermée le lundi. On y trouve du pain, des croissants et des sandwiches. Les commandes de gâteaux doivent être passées deux jours à l’avance. Il n’y a pas de livraison à domicile. La boulangerie accepte les paiements en espèces et par carte.",
+    "questions": [
+      {
+        "prompt": "Est-ce que la boulangerie est ouverte le lundi ?",
+        "affirmative": false,
+        "answer": "Non, elle n’est pas ouverte le lundi.",
+        "evidence": "fermée le lundi",
+        "inversion": "La boulangerie est-elle ouverte le lundi ?"
+      },
+      {
+        "prompt": "Est-ce qu’elle ouvre à six heures trente ?",
+        "affirmative": true,
+        "answer": "Oui, elle ouvre à six heures trente.",
+        "evidence": "à six heures trente",
+        "inversion": "Ouvre-t-elle à six heures trente ?"
+      },
+      {
+        "prompt": "Est-ce qu’on peut acheter des sandwiches ?",
+        "affirmative": true,
+        "answer": "Oui, on peut acheter des sandwiches.",
+        "evidence": "des sandwiches",
+        "inversion": "Peut-on acheter des sandwiches ?"
+      },
+      {
+        "prompt": "Est-ce que la boulangerie livre à domicile ?",
+        "affirmative": false,
+        "answer": "Non, elle ne livre pas à domicile.",
+        "evidence": "Il n’y a pas de livraison à domicile.",
+        "inversion": "La boulangerie livre-t-elle à domicile ?"
+      },
+      {
+        "prompt": "Est-ce qu’on peut payer par carte ?",
+        "affirmative": true,
+        "answer": "Oui, on peut payer par carte.",
+        "evidence": "par carte",
+        "inversion": "Peut-on payer par carte ?"
+      }
+    ]
+  },
+  {
+    "slug": "jardin",
+    "genre": "règlement",
+    "title": "Le jardin partagé",
+    "text": "Le jardin partagé accueille les habitants du quartier. Il est ouvert tous les après-midi, de mars à octobre. Les enfants sont les bienvenus avec un adulte. Chaque jardinier apporte ses gants. Les outils sont prêtés par l’association. Il est interdit d’utiliser des produits chimiques. On partage les légumes à la fin de chaque récolte.",
+    "questions": [
+      {
+        "prompt": "Est-ce que le jardin accueille les habitants du quartier ?",
+        "affirmative": true,
+        "answer": "Oui, il accueille les habitants du quartier.",
+        "evidence": "les habitants du quartier",
+        "inversion": "Le jardin accueille-t-il les habitants du quartier ?"
+      },
+      {
+        "prompt": "Est-ce que le jardin ouvre en décembre ?",
+        "affirmative": false,
+        "answer": "Non, il n’ouvre pas en décembre.",
+        "evidence": "de mars à octobre",
+        "inversion": "Le jardin ouvre-t-il en décembre ?"
+      },
+      {
+        "prompt": "Est-ce que les enfants doivent venir avec un adulte ?",
+        "affirmative": true,
+        "answer": "Oui, ils doivent venir avec un adulte.",
+        "evidence": "avec un adulte",
+        "inversion": "Les enfants doivent-ils venir avec un adulte ?"
+      },
+      {
+        "prompt": "Est-ce que chaque jardinier doit acheter les outils ?",
+        "affirmative": false,
+        "answer": "Non, il ne doit pas acheter les outils.",
+        "evidence": "Les outils sont prêtés",
+        "inversion": "Chaque jardinier doit-il acheter les outils ?"
+      },
+      {
+        "prompt": "Est-ce que les légumes sont partagés ?",
+        "affirmative": true,
+        "answer": "Oui, les légumes sont partagés.",
+        "evidence": "On partage les légumes",
+        "inversion": "Les légumes sont-ils partagés ?"
+      }
+    ]
+  },
+  {
+    "slug": "stage",
+    "genre": "carnet",
+    "title": "Le stage de Sarah",
+    "text": "Cette semaine, Sarah fait un stage chez une fleuriste. Elle commence chaque jour à neuf heures. Le matin, elle arrose les plantes et prépare des bouquets. Elle ne travaille pas à la caisse, car elle apprend encore. La fleuriste lui montre comment choisir les fleurs. Sarah rentre chez elle à vélo et écrit ses découvertes dans un carnet.",
+    "questions": [
+      {
+        "prompt": "Est-ce que Sarah fait un stage dans une pharmacie ?",
+        "affirmative": false,
+        "answer": "Non, elle ne fait pas de stage dans une pharmacie.",
+        "evidence": "chez une fleuriste",
+        "inversion": "Sarah fait-elle un stage dans une pharmacie ?"
+      },
+      {
+        "prompt": "Est-ce que Sarah commence à neuf heures ?",
+        "affirmative": true,
+        "answer": "Oui, elle commence à neuf heures.",
+        "evidence": "à neuf heures",
+        "inversion": "Sarah commence-t-elle à neuf heures ?"
+      },
+      {
+        "prompt": "Est-ce qu’elle prépare des bouquets ?",
+        "affirmative": true,
+        "answer": "Oui, elle prépare des bouquets.",
+        "evidence": "prépare des bouquets",
+        "inversion": "Prépare-t-elle des bouquets ?"
+      },
+      {
+        "prompt": "Est-ce qu’elle travaille à la caisse ?",
+        "affirmative": false,
+        "answer": "Non, elle ne travaille pas à la caisse.",
+        "evidence": "Elle ne travaille pas à la caisse",
+        "inversion": "Travaille-t-elle à la caisse ?"
+      },
+      {
+        "prompt": "Est-ce que Sarah rentre à vélo ?",
+        "affirmative": true,
+        "answer": "Oui, elle rentre à vélo.",
+        "evidence": "à vélo",
+        "inversion": "Sarah rentre-t-elle à vélo ?"
+      }
+    ]
+  },
+  {
+    "slug": "train",
+    "genre": "annonce en gare",
+    "title": "Un train en retard",
+    "text": "Le train pour Genève de seize heures a quinze minutes de retard. Il partira de la voie trois et non de la voie deux. Il s’arrêtera à Lausanne avant de continuer jusqu’à Genève. Les billets achetés pour ce train restent valables. Le wagon-restaurant est fermé aujourd’hui. Nous vous remercions pour votre patience.",
+    "questions": [
+      {
+        "prompt": "Est-ce que le train va à Genève ?",
+        "affirmative": true,
+        "answer": "Oui, le train va à Genève.",
+        "evidence": "Le train pour Genève",
+        "inversion": "Le train va-t-il à Genève ?"
+      },
+      {
+        "prompt": "Est-ce que le train est à l’heure ?",
+        "affirmative": false,
+        "answer": "Non, le train n’est pas à l’heure.",
+        "evidence": "quinze minutes de retard",
+        "inversion": "Le train est-il à l’heure ?"
+      },
+      {
+        "prompt": "Est-ce que le train partira de la voie deux ?",
+        "affirmative": false,
+        "answer": "Non, il ne partira pas de la voie deux.",
+        "evidence": "de la voie trois",
+        "inversion": "Le train partira-t-il de la voie deux ?"
+      },
+      {
+        "prompt": "Est-ce que le train s’arrêtera à Lausanne ?",
+        "affirmative": true,
+        "answer": "Oui, il s’arrêtera à Lausanne.",
+        "evidence": "Il s’arrêtera à Lausanne",
+        "inversion": "Le train s’arrêtera-t-il à Lausanne ?"
+      },
+      {
+        "prompt": "Est-ce que les billets restent valables ?",
+        "affirmative": true,
+        "answer": "Oui, les billets restent valables.",
+        "evidence": "Les billets achetés pour ce train restent valables.",
+        "inversion": "Les billets restent-ils valables ?"
+      }
+    ]
+  },
+  {
+    "slug": "repas",
+    "genre": "courriel",
+    "title": "Le repas entre voisins",
+    "text": "De : Association des voisins\nÀ : Tous les habitants\nObjet : Repas de vendredi\n\nBonjour, nous organisons un repas vendredi à dix-neuf heures dans la cour de l’immeuble. Chaque famille apporte un plat à partager. L’association offre les boissons. Le repas est gratuit, mais il faut s’inscrire avant mercredi. Les enfants sont les bienvenus. En cas de pluie, le repas aura lieu dans la salle commune.",
+    "questions": [
+      {
+        "prompt": "Est-ce que le repas a lieu vendredi ?",
+        "affirmative": true,
+        "answer": "Oui, le repas a lieu vendredi.",
+        "evidence": "vendredi à dix-neuf heures",
+        "inversion": "Le repas a-t-il lieu vendredi ?"
+      },
+      {
+        "prompt": "Est-ce que l’association prépare tous les plats ?",
+        "affirmative": false,
+        "answer": "Non, elle ne prépare pas tous les plats.",
+        "evidence": "Chaque famille apporte un plat",
+        "inversion": "L’association prépare-t-elle tous les plats ?"
+      },
+      {
+        "prompt": "Est-ce que l’association offre les boissons ?",
+        "affirmative": true,
+        "answer": "Oui, elle offre les boissons.",
+        "evidence": "L’association offre les boissons.",
+        "inversion": "L’association offre-t-elle les boissons ?"
+      },
+      {
+        "prompt": "Est-ce que le repas est payant ?",
+        "affirmative": false,
+        "answer": "Non, le repas n’est pas payant.",
+        "evidence": "Le repas est gratuit",
+        "inversion": "Le repas est-il payant ?"
+      },
+      {
+        "prompt": "Est-ce que les enfants peuvent venir ?",
+        "affirmative": true,
+        "answer": "Oui, les enfants peuvent venir.",
+        "evidence": "Les enfants sont les bienvenus.",
+        "inversion": "Les enfants peuvent-ils venir ?"
+      }
+    ]
+  }
+]

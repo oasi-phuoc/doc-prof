@@ -662,7 +662,13 @@ function wrap(
   consigne: string,
   exercise: TcfExercise,
 ): TcfExercise {
-  return { ...exercise, id: `gram-${typeId}`, consigne }
+  return {
+    ...exercise, id: `gram-${typeId}`, consigne,
+    questions: exercise.questions.map((question) => ({
+      ...question,
+      enonce: question.enonce.replace(/\s*(?:\.{3}|…)\s*/g, ' ___ ').trim(),
+    })),
+  }
 }
 
 /** UI des formes de réponse pour Qui suis-je. */

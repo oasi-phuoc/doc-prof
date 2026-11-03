@@ -35,6 +35,7 @@ import {
   isFamilleKind,
 } from '@/grammaire/exercises/famille'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
+import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import { defaultThemeGameContent, isGameBankType } from '@/jeux/bank'
@@ -220,7 +221,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
           : isPhraseChart || isVocabLearn || isJeux || isCalli || isTheory
             ? { count: 1 }
             : isGramEx
-              ? { count: quiSuisJeCount ?? 6 }
+              ? { count: quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
             : isVocabPool
               ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
               : isPhrase

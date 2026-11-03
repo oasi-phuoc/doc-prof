@@ -1,1762 +1,512 @@
 import type { GrammaireTheoryDoc } from '../types'
+import { ex, ligne, p, sheet, table } from './falc-sheet'
 
-/** Théorie réécrite en français facile ; gabarit visuel et identifiants conservés. */
+/** Théorie FALC — thème gram-decrire. Français seul (pas de traductions). */
 export const decrireDocs: GrammaireTheoryDoc[] = [
   {
-    "id": "f4",
-    "typeId": "gram-f4-theorie",
-    "index": 1,
-    "title": "La météo",
-    "topic": "gram-decrire",
-    "public": "A1",
-    "objectif": "Décrire le temps qu’il fait.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "La météo"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je décris le temps qu’il fait."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Il {c}fait{/c} beau.",
-              "Il {c}y a{/c} des nuages.",
-              "Il {c}pleut{/c} depuis ce matin."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Pour la météo, il ne désigne pas une personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un adjectif, je dis souvent il fait : il fait froid."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je dis il y a avec un nom : il y a du vent."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pleuvoir et neiger s’emploient normalement avec il."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je distingue le soleil, la pluie, le vent et la neige."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour la température, je peux dire il fait dix degrés."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux préciser une saison, un moment ou un lieu."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "La météo concerne une période courte ; le climat décrit des habitudes sur une longue période."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour parler de moi, je dis j’ai froid, et non je suis froid."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Pour la météo, il ne désigne pas une personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "Il fait…",
-                "Il fait froid."
-              ],
-              [
-                "Il + verbe",
-                "Il pleut."
-              ],
-              [
-                "Il + verbe",
-                "Il neige."
-              ],
-              [
-                "Il y a…",
-                "Il y a du brouillard."
-              ],
-              [
-                "Il y a…",
-                "Il y a de la pluie."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je ne dis pas il fait pleut : pleuvoir est déjà un verbe."
-          }
-        ]
-      }
-    ]
+    id: 'f4',
+    typeId: 'gram-f4-theorie',
+    index: 1,
+    title: 'La météo',
+    topic: 'gram-decrire',
+    public: 'A1',
+    objectif: 'Décrire le temps qu’il fait.',
+    blocks: sheet({
+      title: 'La météo',
+      intro: 'Je dis le temps qu’{g}il fait{/g}.',
+      regarder: [
+        '{tab:1<}Il fait {c}beau{/c}. | Il fait {c}froid{/c}.',
+        '{tab:1<}Il {c}pleut{/c}. | Il {c}neige{/c}.',
+        '{tab:1<}Il y a du {c}soleil{/c}. | Il y a du {c}vent{/c}.',
+      ],
+      expliquer: [
+        p('{c}Il fait{/c} + adjectif : beau, mauvais, chaud, froid, doux.'),
+        p('{c}Il pleut{/c}. {c}Il neige{/c}. Le sujet est il.'),
+        p('{c}Il y a{/c} + du ou de la : du soleil, du vent, de la pluie, du brouillard.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Forme{/g} | {g}Exemple{/g}',
+          '{tab:1>}il fait + adjectif | Il fait {c}chaud{/c}.',
+          '{tab:1>}il + verbe | Il {c}pleut{/c}.',
+          '{tab:1>}il y a + du / de la | Il y a {c}du vent{/c}.',
+        ]),
+      ],
+      retenir: [
+        p('Il fait, il pleut, il neige, il y a…'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['Il fait…', 'Il fait froid.'],
+            ['Il + verbe', 'Il pleut.'],
+            ['Il + verbe', 'Il neige.'],
+            ['Il y a…', 'Il y a du brouillard.'],
+            ['Il y a…', 'Il y a de la pluie.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pour la météo, je dis il fait beau, pas il est beau.'),
+        ex([
+          { text: 'Je dis : « Il {c}fait{/c} beau. »', wrong: 'Il est beau.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f5",
-    "typeId": "gram-f5-theorie",
-    "index": 2,
-    "title": "C’est, il est, il y a",
-    "topic": "gram-decrire",
-    "public": "A1",
-    "objectif": "Choisir c’est, il est ou il y a.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "C’est, il est, il y a"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je présente, je décris ou je signale une présence."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "{c}C’est{/c} mon voisin.",
-              "Elle {c}est{/c} médecin.",
-              "{c}Il y a{/c} une pharmacie ici."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "C’est présente ou identifie une personne, une chose ou une idée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant un nom avec un déterminant, je dis souvent c’est."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Au pluriel, dans la langue écrite, je choisis ce sont."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Il est ou elle est décrit un élément déjà identifié."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un métier seul : elle est infirmière."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un adjectif : il est patient."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "C’est + adjectif peut donner un avis général : c’est utile."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Il y a annonce la présence ou l’existence d’un élément."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "À la négation : ce n’est pas, il n’est pas, il n’y a pas de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "C’est présente ou identifie une personne, une chose ou une idée."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Forme",
-              "Usage",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "c’est",
-                "présenter",
-                "C’est mon ami."
-              ],
-              [
-                "il est",
-                "qualité",
-                "Il est gentil."
-              ],
-              [
-                "il est",
-                "métier",
-                "Il est médecin."
-              ],
-              [
-                "il y a",
-                "présence",
-                "Il y a un bus."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis c’est un médecin, mais il est médecin : le déterminant change la construction."
-          }
-        ]
-      }
-    ]
+    id: 'f5',
+    typeId: 'gram-f5-theorie',
+    index: 2,
+    title: 'C’est, il est, il y a',
+    topic: 'gram-decrire',
+    public: 'A1',
+    objectif: 'Choisir c’est, il est ou il y a.',
+    blocks: sheet({
+      title: 'C’est, il est, il y a',
+      intro: 'Je choisis la bonne formule pour {g}présenter{/g} ou situer.',
+      regarder: [
+        '{tab:1<}{c}C’est{/c} un livre. | {c}C’est{/c} mon ami.',
+        '{tab:1<}{c}Il est{/c} professeur. | {c}Elle est{/c} gentille.',
+        '{tab:1<}{c}Il y a{/c} une école. | {c}Il y a{/c} un bus.',
+      ],
+      expliquer: [
+        p('{c}C’est{/c} + un nom. Je présente une personne ou une chose.'),
+        p('{c}Il est{/c} ou {c}elle est{/c} + adjectif, ou + métier sans article.'),
+        p('{c}Il y a{/c} + nom = quelque chose est là, ou existe.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Formule{/g} | {g}Usage{/g}',
+          '{tab:1>}c’est | {c}présenter{/c}',
+          '{tab:1>}il est | {c}qualité{/c} ou métier',
+          '{tab:1>}il y a | {c}présence{/c}',
+        ]),
+      ],
+      retenir: [
+        p('C’est présente. Il est qualifie. Il y a dit qu’une chose est là.'),
+        ligne,
+        table(
+          ['Forme', 'Usage', 'Exemple'],
+          [
+            ['c’est', 'présenter', 'C’est mon ami.'],
+            ['il est', 'qualité', 'Il est gentil.'],
+            ['il est', 'métier', 'Il est médecin.'],
+            ['il y a', 'présence', 'Il y a un bus.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Métier sans article : il est médecin.'),
+        ex([
+          { text: 'Je dis : « Il est {c}médecin{/c}. »', wrong: 'Il est un médecin.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f6",
-    "typeId": "gram-f6-theorie",
-    "index": 3,
-    "title": "Les déterminants possessifs",
-    "topic": "gram-decrire",
-    "public": "A1",
-    "objectif": "Dire à qui appartient une chose.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les déterminants possessifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je dis à qui appartient une personne, une chose ou une idée."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "C’est {c}mon{/c} amie.",
-              "Elle cherche {c}son{/c} téléphone.",
-              "Ils rangent {c}leurs{/c} affaires."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le déterminant possessif se place devant le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je regarde qui possède et quel nom suit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec je : mon, ma, mes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec tu : ton, ta, tes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec il ou elle : son, sa, ses."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec nous : notre, nos ; avec vous : votre, vos."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec ils ou elles : leur, leurs."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle ou un h muet, mon, ton et son remplacent ma, ta et sa."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Le choix de son ou sa dépend du nom possédé, pas du genre de la personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Leur est suivi d’un nom singulier ; leurs accompagne un nom pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le déterminant possessif se place devant le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Personne",
-              "Un objet",
-              "Plusieurs"
-            ],
-            "rows": [
-              [
-                "je",
-                "mon sac / ma clé",
-                "mes clés"
-              ],
-              [
-                "tu",
-                "ton sac / ta clé",
-                "tes clés"
-              ],
-              [
-                "il / elle",
-                "son sac / sa clé",
-                "ses clés"
-              ],
-              [
-                "nous",
-                "notre sac",
-                "nos clés"
-              ],
-              [
-                "vous",
-                "votre sac",
-                "vos clés"
-              ],
-              [
-                "ils / elles",
-                "leur sac",
-                "leurs clés"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis mon adresse et son école, même si adresse et école sont des noms féminins."
-          }
-        ]
-      }
-    ]
+    id: 'f6',
+    typeId: 'gram-f6-theorie',
+    index: 3,
+    title: 'Les déterminants possessifs',
+    topic: 'gram-decrire',
+    public: 'A1',
+    objectif: 'Dire à qui appartient une chose.',
+    blocks: sheet({
+      title: 'Les déterminants possessifs',
+      intro: 'Je dis à {g}qui{/g} appartient une chose.',
+      regarder: [
+        '{tab:1<}{c}Mon{/c} sac est ici. | {c}Ma{/c} clé est dans le sac.',
+        '{tab:1<}{c}Mes{/c} documents sont prêts. | {c}Ton{/c} bus arrive.',
+        '{tab:1<}{c}Son{/c} amie est là. | {c}Notre{/c} cours commence.',
+      ],
+      expliquer: [
+        p('Le possessif se place {c}devant{/c} le nom.'),
+        p('Il s’accorde avec le nom possédé, pas avec le possesseur.'),
+        p('Devant une voyelle, ma, ta et sa deviennent {c}mon{/c}, {c}ton{/c}, {c}son{/c}.'),
+        p('Mon amie. Ton école. Son adresse.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Possesseur{/g} | {g}Masculin{/g} | {g}Féminin{/g}',
+          '{tab:2+>}je | {c}mon{/c} | {c}ma{/c}',
+          '{tab:2+>}tu | {c}ton{/c} | {c}ta{/c}',
+          '{tab:2+>}il / elle | {c}son{/c} | {c}sa{/c}',
+          '{tab:2+>}nous | {c}notre{/c} | {c}notre{/c}',
+          '{tab:2+>}vous | {c}votre{/c} | {c}votre{/c}',
+          '{tab:2+>}ils / elles | {c}leur{/c} | {c}leur{/c}',
+        ]),
+      ],
+      retenir: [
+        p('J’accorde avec la chose, pas avec la personne.'),
+        p('Pluriel : mes, tes, ses, nos, vos, leurs.'),
+        ligne,
+        table(
+          ['Personne', 'Un objet', 'Plusieurs'],
+          [
+            ['je', 'mon sac / ma clé', 'mes clés'],
+            ['tu', 'ton sac / ta clé', 'tes clés'],
+            ['il / elle', 'son sac / sa clé', 'ses clés'],
+            ['nous', 'notre sac', 'nos clés'],
+            ['vous', 'votre sac', 'vos clés'],
+            ['ils / elles', 'leur sac', 'leurs clés'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Ma → mon devant une voyelle.'),
+        ex([
+          { text: 'Je dis : « {c}mon{/c} école. »', wrong: 'ma école.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f7",
-    "typeId": "gram-f7-theorie",
-    "index": 4,
-    "title": "Les adjectifs qualificatifs",
-    "topic": "gram-decrire",
-    "public": "A1",
-    "objectif": "Décrire avec un adjectif accordé.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les adjectifs qualificatifs"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je décris une personne ou une chose avec un adjectif."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Une veste {c}verte{/c}.",
-              "Des voisins {c}sympathiques{/c}.",
-              "Elles sont {c}heureuses{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif donne une information sur un nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Il s’accorde généralement avec le nom en genre et en nombre."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour le féminin, j’ajoute souvent e."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour le pluriel, j’ajoute souvent s."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif déjà terminé par e ne change généralement pas au féminin."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains adjectifs changent davantage : sportif devient sportive, heureux devient heureuse."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec être, l’adjectif s’accorde aussi : elles sont contentes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif qui décrit plusieurs noms s’accorde au pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certaines couleurs ne changent pas : des chaussures orange, des yeux marron."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Une couleur composée reste généralement invariable : des chemises bleu clair."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Un adjectif donne une information sur un nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Masculin",
-              "Féminin",
-              "Pluriel"
-            ],
-            "rows": [
-              [
-                "petit",
-                "petite",
-                "petits / petites"
-              ],
-              [
-                "content",
-                "contente",
-                "contents / contentes"
-              ],
-              [
-                "beau",
-                "belle",
-                "beaux / belles"
-              ],
-              [
-                "nouveau",
-                "nouvelle",
-                "nouveaux / nouvelles"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je cherche d’abord le nom décrit ; je n’accorde pas l’adjectif avec le mot le plus proche par hasard."
-          }
-        ]
-      }
-    ]
+    id: 'f7',
+    typeId: 'gram-f7-theorie',
+    index: 4,
+    title: 'Les adjectifs qualificatifs',
+    topic: 'gram-decrire',
+    public: 'A1',
+    objectif: 'Décrire avec un adjectif accordé.',
+    blocks: sheet({
+      title: 'Les adjectifs qualificatifs',
+      intro: 'Je décris avec un adjectif {g}accordé{/g}.',
+      regarder: [
+        '{tab:1<}Une voiture {c}rouge{/c}. | Un {c}petit{/c} café.',
+        '{tab:1<}Elle est {c}contente{/c}. | Ils sont {c}grands{/c}.',
+        '{tab:1<}Un {c}bel{/c} homme. | Une {c}nouvelle{/c} adresse.',
+      ],
+      expliquer: [
+        p('L’adjectif s’accorde en {c}genre{/c} et en {c}nombre{/c} avec le nom.'),
+        p('Souvent, il est {c}après{/c} le nom : une voiture rouge.'),
+        p('Quelques adjectifs courts sont avant : grand, petit, beau, bon, nouveau.'),
+        p('Devant une voyelle, beau devient {c}bel{/c} : un bel homme.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Nom{/g} | {g}Adjectif{/g}',
+          '{tab:1>}masculin | un sac {c}noir{/c}',
+          '{tab:1>}féminin | une robe {c}noire{/c}',
+          '{tab:1>}pluriel | des sacs {c}noirs{/c}',
+          '{tab:1>}beau + voyelle | un {c}bel{/c} ami',
+        ]),
+      ],
+      retenir: [
+        p('Adjectif = accord avec le nom.'),
+        ligne,
+        table(
+          ['Masculin', 'Féminin', 'Pluriel'],
+          [
+            ['petit', 'petite', 'petits / petites'],
+            ['content', 'contente', 'contents / contentes'],
+            ['beau', 'belle', 'beaux / belles'],
+            ['nouveau', 'nouvelle', 'nouveaux / nouvelles'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Beau → bel devant une voyelle masculine.'),
+        ex([
+          { text: 'Je dis : « un {c}bel{/c} homme. »', wrong: 'un beau homme.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f8",
-    "typeId": "gram-f8-theorie",
-    "index": 5,
-    "title": "Les professions",
-    "topic": "gram-decrire",
-    "public": "A1",
-    "objectif": "Dire son métier avec être, sans article.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Les professions"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je dis le métier d’une personne."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Elle est {c}architecte{/c}.",
-              "Mon frère est {c}infirmier{/c}.",
-              "C’est {c}une excellente cuisinière{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Avec être et un métier seul, je n’ajoute généralement pas d’article."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis la forme féminine ou masculine du nom de métier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains métiers ont la même forme : un artiste, une artiste."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "D’autres changent : un vendeur, une vendeuse."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec c’est, j’utilise un déterminant : c’est une médecin."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un métier précisé par un adjectif, un article peut apparaître : c’est un excellent cuisinier."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux dire travailler comme ou travailler dans un lieu."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je distingue le métier et le lieu de travail."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour demander le métier : quelle est votre profession ?"
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Avec être et un métier seul, je n’ajoute généralement pas d’article."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Cas",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "masculin",
-                "Je suis cuisinier."
-              ],
-              [
-                "féminin",
-                "Elle est médecin."
-              ],
-              [
-                "pluriel",
-                "Nous sommes étudiants."
-              ],
-              [
-                "avec adjectif",
-                "C’est un bon médecin."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis elle est enseignante, sans une quand le métier est employé seul."
-          }
-        ]
-      }
-    ]
+    id: 'f8',
+    typeId: 'gram-f8-theorie',
+    index: 5,
+    title: 'Les professions',
+    topic: 'gram-decrire',
+    public: 'A1',
+    objectif: 'Dire son métier avec être, sans article.',
+    blocks: sheet({
+      title: 'Les professions',
+      intro: 'Je dis mon métier avec {g}être{/g}.',
+      regarder: [
+        '{tab:1<}Je suis {c}cuisinier{/c}. | Elle est {c}médecin{/c}.',
+        '{tab:1<}Il est {c}professeur{/c}. | Nous sommes {c}étudiants{/c}.',
+        '{tab:1<}{c}C’est{/c} une bonne médecin. | {c}C’est{/c} un jeune boulanger.',
+      ],
+      expliquer: [
+        p('Avec être seul : métier {c}sans article{/c}.'),
+        p('Je suis professeur. Elle est infirmière.'),
+        p('Si j’ajoute un adjectif, j’utilise {c}c’est{/c} + un ou une.'),
+        p('C’est un bon médecin. C’est une jeune professeure.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Cas{/g} | {g}Forme{/g}',
+          '{tab:1>}métier seul | être + métier',
+          '{tab:1>}métier + adjectif | c’est un / une + adjectif + métier',
+        ]),
+      ],
+      retenir: [
+        p('Je suis + métier, sans un ou une.'),
+        ligne,
+        table(
+          ['Cas', 'Exemple'],
+          [
+            ['masculin', 'Je suis cuisinier.'],
+            ['féminin', 'Elle est médecin.'],
+            ['pluriel', 'Nous sommes étudiants.'],
+            ['avec adjectif', 'C’est un bon médecin.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Pas d’article après je suis.'),
+        ex([
+          { text: 'Je dis : « Je suis {c}professeur{/c}. »', wrong: 'Je suis un professeur.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f9",
-    "typeId": "gram-f9-theorie",
-    "index": 6,
-    "title": "La comparaison",
-    "topic": "gram-decrire",
-    "public": "A2",
-    "objectif": "Comparer deux personnes ou deux choses.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "La comparaison"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je compare une qualité chez deux personnes ou deux choses."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Cette rue est {c}plus calme que{/c} l’avenue.",
-              "Mon sac est {c}aussi lourd que{/c} le tien.",
-              "Ce repas est {c}meilleur{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Plus + adjectif + que indique un degré supérieur."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Moins + adjectif + que indique un degré inférieur."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Aussi + adjectif + que indique une égalité."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "L’adjectif garde son accord avec le nom décrit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Bon donne meilleur, et non plus bon dans l’emploi courant."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Bien donne mieux ; bien décrit la manière de faire."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde que devant le deuxième élément de la comparaison."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant une voyelle, que devient qu’."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis un critère précis : le prix, la taille, la vitesse ou une qualité."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Plus + adjectif + que indique un degré supérieur."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "plus … que",
-                "plus grand que"
-              ],
-              [
-                "moins … que",
-                "moins facile que"
-              ],
-              [
-                "aussi … que",
-                "aussi fort que"
-              ],
-              [
-                "plus de + nom",
-                "plus de temps que"
-              ],
-              [
-                "bon",
-                "meilleur"
-              ],
-              [
-                "mauvais",
-                "pire"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Meilleur accompagne un nom ou être ; mieux décrit généralement une action."
-          }
-        ]
-      }
-    ]
+    id: 'f9',
+    typeId: 'gram-f9-theorie',
+    index: 6,
+    title: 'La comparaison',
+    topic: 'gram-decrire',
+    public: 'A2',
+    objectif: 'Comparer deux personnes ou deux choses.',
+    blocks: sheet({
+      title: 'La comparaison',
+      intro: 'Je compare deux personnes ou deux {g}choses{/g}.',
+      regarder: [
+        '{tab:1<}Nina est {c}plus{/c} grande {c}que{/c} Paul. | Ce bus est {c}moins{/c} cher {c}que{/c} le train.',
+        '{tab:1<}Il est {c}aussi{/c} fort {c}que{/c} toi. | J’ai {c}plus de{/c} temps que toi.',
+        '{tab:1<}Ce café est {c}meilleur{/c}. | Cette route est {c}pire{/c}.',
+      ],
+      expliquer: [
+        p('{c}Plus … que{/c} = supérieur. {c}Moins … que{/c} = inférieur.'),
+        p('{c}Aussi … que{/c} = égal.'),
+        p('Avec un nom : plus {c}de{/c}, moins {c}de{/c}.'),
+        p('Bon devient {c}meilleur{/c}. Mauvais devient {c}pire{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Sens{/g} | {g}Forme{/g}',
+          '{tab:1>}supérieur | plus … {c}que{/c}',
+          '{tab:1>}inférieur | moins … {c}que{/c}',
+          '{tab:1>}égal | aussi … {c}que{/c}',
+          '{tab:1>}nom | plus {c}de{/c} … que',
+        ]),
+      ],
+      retenir: [
+        p('Plus, moins ou aussi + adjectif + que.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['plus … que', 'plus grand que'],
+            ['moins … que', 'moins facile que'],
+            ['aussi … que', 'aussi fort que'],
+            ['plus de + nom', 'plus de temps que'],
+            ['bon', 'meilleur'],
+            ['mauvais', 'pire'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Bon → meilleur. Pas « plus bon ».'),
+        ex([
+          { text: 'Je dis : « Ce café est {c}meilleur{/c}. »', wrong: 'Ce café est plus bon.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f12",
-    "typeId": "gram-f12-theorie",
-    "index": 7,
-    "title": "La place de l’adjectif",
-    "topic": "gram-decrire",
-    "public": "A1 / A2",
-    "objectif": "Placer l’adjectif avant ou après le nom.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "La place de l’adjectif"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je place l’adjectif au bon endroit autour du nom."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Une robe {c}rouge{/c}.",
-              "Un {c}petit{/c} jardin.",
-              "Un {c}bel{/c} appartement."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup d’adjectifs se placent après le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Les couleurs et les nationalités se placent généralement après le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains adjectifs courts et fréquents se placent souvent avant : petit, grand, beau, bon, jeune, vieux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "L’adjectif s’accorde quel que soit son emplacement."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Devant un nom masculin commençant par une voyelle, beau devient bel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Nouveau peut devenir nouvel ; vieux peut devenir vieil."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Certains adjectifs changent de sens selon leur place."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Un grand homme est une personne importante ; un homme grand est de grande taille."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis donc la place selon le sens de ma phrase."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Beaucoup d’adjectifs se placent après le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Place",
-              "Exemple",
-              "Sens"
-            ],
-            "rows": [
-              [
-                "après",
-                "une table ronde",
-                "description"
-              ],
-              [
-                "avant",
-                "un petit chien",
-                "adjectif court"
-              ],
-              [
-                "avant",
-                "un ancien collègue",
-                "d’avant"
-              ],
-              [
-                "après",
-                "un meuble ancien",
-                "vieux"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Un ancien professeur était professeur avant ; un objet ancien a beaucoup d’années."
-          }
-        ]
-      }
-    ]
+    id: 'f12',
+    typeId: 'gram-f12-theorie',
+    index: 7,
+    title: 'La place de l’adjectif',
+    topic: 'gram-decrire',
+    public: 'A1 / A2',
+    objectif: 'Placer l’adjectif avant ou après le nom.',
+    blocks: sheet({
+      title: 'La place de l’adjectif',
+      intro: 'Je place l’adjectif au {g}bon endroit{/g}.',
+      regarder: [
+        '{tab:1<}Une voiture {c}rouge{/c}. | Un {c}petit{/c} café.',
+        '{tab:1<}Un {c}bon{/c} repas. | Une table {c}ronde{/c}.',
+        '{tab:1<}Un {c}ancien{/c} collègue. | Un collègue {c}ancien{/c}.',
+      ],
+      expliquer: [
+        p('Souvent, l’adjectif est {c}après{/c} le nom.'),
+        p('Des adjectifs courts et fréquents sont {c}avant{/c}.'),
+        p('Avant : beau, bon, grand, petit, joli, jeune, vieux, mauvais.'),
+        p('Certains changent de sens selon la place.'),
+        p('J’accorde toujours l’adjectif avec le nom.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Place{/g} | {g}Exemple{/g}',
+          '{tab:1>}après | une table {c}ronde{/c}',
+          '{tab:1>}avant | un {c}petit{/c} chien',
+          '{tab:1>}sens différent | un {c}ancien{/c} collègue',
+        ]),
+      ],
+      retenir: [
+        p('Après = règle générale. Avant = petite liste fréquente.'),
+        ligne,
+        table(
+          ['Place', 'Exemple', 'Sens'],
+          [
+            ['après', 'une table ronde', 'description'],
+            ['avant', 'un petit chien', 'adjectif court'],
+            ['avant', 'un ancien collègue', 'd’avant'],
+            ['après', 'un meuble ancien', 'vieux'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Ancien avant le nom ≠ ancien après le nom.'),
+        ex([
+          { text: 'Je dis : « un {c}ancien{/c} collègue » = un collègue d’avant.', wrong: 'un collègue ancien (ce n’est pas le même sens).' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f13",
-    "typeId": "gram-f13-theorie",
-    "index": 8,
-    "title": "Le superlatif",
-    "topic": "gram-decrire",
-    "public": "A2",
-    "objectif": "Dire le plus ou le moins avec un adjectif.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Le superlatif"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je distingue un élément dans un groupe avec le plus ou le moins."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "C’est {c}la plus petite{/c} chambre.",
-              "Ce sont {c}les meilleurs{/c} billets.",
-              "Il court {c}le moins vite{/c}."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le superlatif compare un élément à tout un groupe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je forme le plus ou le moins avec un adjectif."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "L’article et l’adjectif s’accordent avec le nom."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je dis la plus grande maison et les maisons les plus grandes."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux préciser le groupe avec de : le plus grand de la classe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Bon donne le meilleur ; mauvais peut donner le pire ou le plus mauvais, selon le sens."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour une action, je dis le mieux : elle chante le mieux."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux placer le nom avant ou après selon l’adjectif."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne confonds pas une comparaison entre deux éléments et un classement dans un groupe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Le superlatif compare un élément à tout un groupe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "le plus…",
-                "le plus rapide"
-              ],
-              [
-                "la moins…",
-                "la moins chère"
-              ],
-              [
-                "les plus…",
-                "les plus importants"
-              ],
-              [
-                "bon",
-                "le meilleur"
-              ],
-              [
-                "mauvais",
-                "le pire"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je garde l’article : la plus grande, et non plus grande tout seul pour désigner la première du groupe."
-          }
-        ]
-      }
-    ]
+    id: 'f13',
+    typeId: 'gram-f13-theorie',
+    index: 8,
+    title: 'Le superlatif',
+    topic: 'gram-decrire',
+    public: 'A2',
+    objectif: 'Dire le plus ou le moins avec un adjectif.',
+    blocks: sheet({
+      title: 'Le superlatif',
+      intro: 'Je dis le {g}plus haut{/g} degré.',
+      regarder: [
+        '{tab:1<}C’est {c}le plus{/c} grand bâtiment. | Elle est {c}la moins{/c} chère.',
+        '{tab:1<}Ce sont {c}les plus{/c} importants. | C’est {c}le meilleur{/c} choix.',
+        '{tab:1<}C’est {c}la pire{/c} idée. | C’est {c}le moindre{/c} problème.',
+      ],
+      expliquer: [
+        p('Forme : {c}le{/c}, {c}la{/c} ou {c}les{/c} + plus ou moins + adjectif.'),
+        p('L’article s’accorde avec le nom.'),
+        p('Bon → {c}le meilleur{/c}. Mauvais → {c}le pire{/c}.'),
+        p('Petit, dans ce sens, peut devenir {c}le moindre{/c}.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Article{/g} | {g}Exemple{/g}',
+          '{tab:1>}le | {c}le plus{/c} rapide',
+          '{tab:1>}la | {c}la moins{/c} difficile',
+          '{tab:1>}les | {c}les plus{/c} importants',
+        ]),
+      ],
+      retenir: [
+        p('Le plus ou le moins + adjectif.'),
+        ligne,
+        table(
+          ['Forme', 'Exemple'],
+          [
+            ['le plus…', 'le plus rapide'],
+            ['la moins…', 'la moins chère'],
+            ['les plus…', 'les plus importants'],
+            ['bon', 'le meilleur'],
+            ['mauvais', 'le pire'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Bon → le meilleur. Pas « le plus bon ».'),
+        ex([
+          { text: 'Je dis : « C’est {c}le meilleur{/c}. »', wrong: 'C’est le plus bon.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "f14",
-    "typeId": "gram-f14-theorie",
-    "index": 9,
-    "title": "Comparer un nom ou un verbe",
-    "topic": "gram-decrire",
-    "public": "A2",
-    "objectif": "Comparer une quantité ou une action.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Comparer un nom ou un verbe"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je compare une quantité ou une action."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "J’ai {c}autant de{/c} livres que toi.",
-              "Elle travaille {c}plus{/c} que moi.",
-              "Il est {c}aussi{/c} patient que vous."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Avec un nom, j’utilise plus de, moins de ou autant de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je garde de devant le nom, même au pluriel."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Pour préciser la comparaison, j’ajoute que."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec un verbe, je place plus, moins ou autant après le verbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je ne mets pas de si aucun nom ne suit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Autant exprime une égalité de quantité ou d’action."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Aussi s’emploie avec un adjectif ou un adverbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Au passé composé, je place souvent la quantité après le participe : j’ai travaillé autant."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je vérifie ce que je compare avant de choisir la structure."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Avec un nom, j’utilise plus de, moins de ou autant de."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Cas",
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "nom",
-                "plus de… que",
-                "plus de livres que"
-              ],
-              [
-                "nom",
-                "autant de… que",
-                "autant d’amis que"
-              ],
-              [
-                "verbe",
-                "plus… que",
-                "court plus que"
-              ],
-              [
-                "verbe",
-                "autant… que",
-                "parle autant que"
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Je dis autant de livres, mais je lis autant ; aussi ne remplace pas autant dans ces exemples."
-          }
-        ]
-      }
-    ]
+    id: 'f14',
+    typeId: 'gram-f14-theorie',
+    index: 9,
+    title: 'Comparer un nom ou un verbe',
+    topic: 'gram-decrire',
+    public: 'A2',
+    objectif: 'Comparer une quantité ou une action.',
+    blocks: sheet({
+      title: 'Comparer un nom ou un verbe',
+      intro: 'Je compare une {g}quantité{/g} ou une action.',
+      regarder: [
+        '{tab:1<}J’ai {c}plus de{/c} temps que toi. | Elle a {c}moins de{/c} travail.',
+        '{tab:1<}Il a {c}autant d’{/c}amis que moi. | Elle travaille {c}autant que{/c} lui.',
+        '{tab:1<}Je cours {c}plus que{/c} toi. | Nous parlons {c}moins que{/c} vous.',
+      ],
+      expliquer: [
+        p('Avec un nom : plus {c}de{/c}, moins {c}de{/c}, autant {c}de{/c}.'),
+        p('Devant une voyelle : autant {c}d’{/c}.'),
+        p('Avec un verbe : plus, moins, autant + verbe + {c}que{/c}. Pas de « de ».'),
+        p('Aussi + adjectif. Autant + verbe ou + de + nom.'),
+        ligne,
+        ex([
+          '{tab:+1+}{g}Cas{/g} | {g}Forme{/g}',
+          '{tab:1>}nom | plus {c}de{/c} … que',
+          '{tab:1>}nom | autant {c}de{/c} … que',
+          '{tab:1>}verbe | plus … {c}que{/c}',
+          '{tab:1>}verbe | autant … {c}que{/c}',
+        ]),
+      ],
+      retenir: [
+        p('Nom → de. Verbe → pas de « de » après plus, moins ou autant.'),
+        ligne,
+        table(
+          ['Cas', 'Forme', 'Exemple'],
+          [
+            ['nom', 'plus de… que', 'plus de livres que'],
+            ['nom', 'autant de… que', 'autant d’amis que'],
+            ['verbe', 'plus… que', 'court plus que'],
+            ['verbe', 'autant… que', 'parle autant que'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Autant de (nom) ≠ aussi (adjectif).'),
+        ex([
+          { text: 'Je dis : « aussi {c}grand{/c} que ».', wrong: 'autant grand que.' },
+        ]),
+      ],
+    }),
   },
   {
-    "id": "description-physique",
-    "typeId": "gram-f15-theorie",
-    "index": 10,
-    "title": "Description physique",
-    "topic": "gram-decrire",
-    "public": "A1",
-    "objectif": "Décrire une personne : corps, cheveux, yeux.",
-    "blocks": [
-      {
-        "kind": "heading",
-        "text": "Description physique"
-      },
-      {
-        "kind": "paragraph",
-        "text": "Je décris l’apparence d’une personne avec des mots respectueux."
-      },
-      {
-        "kind": "paragraph",
-        "text": "{ligne/2}"
-      },
-      {
-        "kind": "section",
-        "role": "regarder",
-        "blocks": [
-          {
-            "kind": "examples",
-            "marker": "puces",
-            "items": [
-              "Il est {c}grand{/c}.",
-              "Elle a les yeux {c}verts{/c}.",
-              "Il {c}porte{/c} des lunettes."
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "section",
-        "role": "expliquer",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Avec être, je donne la taille, l’allure ou une caractéristique."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Avec avoir, je parle des yeux, des cheveux ou d’un autre élément du corps."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je dis elle est grande, mais elle a les cheveux longs."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "J’accorde l’adjectif avec le nom qu’il décrit."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Yeux et cheveux sont des noms masculins pluriels."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je peux préciser la couleur, la longueur ou la forme."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je dis porter des lunettes ou porter une barbe."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je choisis des informations utiles pour reconnaître une personne."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "paragraph",
-            "text": "Je sépare une description visible et une opinion sur la personnalité."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          }
-        ]
-      },
-      {
-        "kind": "page"
-      },
-      {
-        "kind": "section",
-        "role": "retenir",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "Avec être, je donne la taille, l’allure ou une caractéristique."
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "table",
-            "colHeader": true,
-            "rowHeader": false,
-            "headers": [
-              "Je décris",
-              "Forme",
-              "Exemple"
-            ],
-            "rows": [
-              [
-                "taille",
-                "être",
-                "Il est grand."
-              ],
-              [
-                "allure",
-                "être",
-                "Elle est mince."
-              ],
-              [
-                "cheveux",
-                "avoir",
-                "Il a les cheveux noirs."
-              ],
-              [
-                "yeux",
-                "avoir",
-                "Elle a les yeux bleus."
-              ],
-              [
-                "couleur des cheveux",
-                "être",
-                "Elle est blonde."
-              ]
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "text": "{ligne/2}"
-          },
-          {
-            "kind": "attention",
-            "text": "Marron et les couleurs composées restent généralement invariables : des yeux marron, des cheveux châtain clair."
-          }
-        ]
-      }
-    ]
-  }
+    id: 'description-physique',
+    typeId: 'gram-f15-theorie',
+    index: 10,
+    title: 'Description physique',
+    topic: 'gram-decrire',
+    public: 'A1',
+    objectif: 'Décrire une personne : corps, cheveux, yeux.',
+    blocks: sheet({
+      title: 'Description physique',
+      intro: 'Je décris une personne avec {g}être{/g} et {g}avoir{/g}.',
+      regarder: [
+        '{tab:1<}Il est {c}grand{/c}. | Elle est {c}grande{/c}.',
+        '{tab:1<}Il a les cheveux {c}bruns{/c}. | Elle a les yeux {c}verts{/c}.',
+        '{tab:1<}Il est {c}blond{/c}. | Elle est {c}blonde{/c}.',
+      ],
+      expliquer: [
+        p('Pour la taille ou l’allure : {c}être{/c} + adjectif.'),
+        p('L’adjectif s’accorde : grand / grande, petit / petite.'),
+        p('Pour les cheveux et les yeux : {c}avoir{/c} + les + nom + adjectif.'),
+        p('Les cheveux sont au pluriel : bruns, blonds, noirs, châtains.'),
+        p('Blond, brun et roux s’accordent aussi avec la personne : il est blond, elle est blonde.'),
+        ligne,
+        ex([
+          '{tab:+2++}{g}Masculin{/g} | {g}Féminin{/g} | {g}Pluriel{/g}',
+          '{tab:2+>}grand | grande | grands / grandes',
+          '{tab:2+>}blond | blonde | blonds / blondes',
+          '{tab:2+>}brun | brune | bruns / brunes',
+          '{tab:2+>}roux | rousse | roux / rousses',
+          '{tab:2+>}mince | mince | minces',
+        ]),
+      ],
+      retenir: [
+        p('Être pour la personne. Avoir pour les cheveux et les yeux.'),
+        ligne,
+        table(
+          ['Je décris', 'Forme', 'Exemple'],
+          [
+            ['taille', 'être', 'Il est grand.'],
+            ['allure', 'être', 'Elle est mince.'],
+            ['cheveux', 'avoir', 'Il a les cheveux noirs.'],
+            ['yeux', 'avoir', 'Elle a les yeux bleus.'],
+            ['couleur des cheveux', 'être', 'Elle est blonde.'],
+          ],
+        ),
+        ligne,
+        p('{c}Attention :{/c} Les cheveux sont toujours au pluriel.'),
+        ex([
+          { text: 'Je dis : « Il a les cheveux {c}noirs{/c}. »', wrong: 'Il a les cheveux noir.' },
+          { text: 'Je dis : « Elle est {c}blonde{/c}. »', wrong: 'Elle est blond.' },
+        ]),
+      ],
+    }),
+  },
 ]

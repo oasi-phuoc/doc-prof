@@ -9,6 +9,7 @@ export const GRAMMAIRE_TOPICS: Topic[] = [
   { id: 'gram-se-presenter', label: 'Se présenter', domain: 'grammaire' },
   { id: 'gram-present', label: 'Conjuguer au présent', domain: 'grammaire' },
   { id: 'gram-questions', label: 'Poser une question', domain: 'grammaire' },
+  { id: 'gram-exclamation', label: 'La phrase exclamative', domain: 'grammaire' },
   { id: 'gram-activite', label: 'Parler d’une activité', domain: 'grammaire' },
   { id: 'gram-espace', label: 'Se situer dans l’espace', domain: 'grammaire' },
   { id: 'gram-temps', label: 'Se situer dans le temps', domain: 'grammaire' },

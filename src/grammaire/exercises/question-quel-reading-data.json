@@ -1,0 +1,662 @@
+[
+  {
+    "slug": "voyage",
+    "genre": "offre de voyage",
+    "title": "Une journée à Berne",
+    "text": "L’agence Horizon propose une excursion à Berne le samedi 14 juin. Le départ est prévu à huit heures depuis la gare routière de Sion. Le trajet se fait en autocar. Le prix de soixante francs comprend le transport et l’entrée au musée d’histoire. Les voyageurs doivent apporter une pièce d’identité. Le retour est prévu vers vingt heures.",
+    "questions": [
+      {
+        "prompt": "Quelle ville les voyageurs vont-ils visiter ?",
+        "answer": "Ils vont visiter Berne.",
+        "evidence": "à Berne"
+      },
+      {
+        "prompt": "À quelle date a lieu l’excursion ?",
+        "answer": "Elle a lieu le samedi 14 juin.",
+        "evidence": "le samedi 14 juin"
+      },
+      {
+        "prompt": "Quel moyen de transport est prévu ?",
+        "answer": "Le trajet se fait en autocar.",
+        "evidence": "en autocar"
+      },
+      {
+        "prompt": "Quel est le prix de l’excursion ?",
+        "answer": "Le prix est de soixante francs.",
+        "evidence": "soixante francs"
+      },
+      {
+        "prompt": "Quel document faut-il apporter ?",
+        "answer": "Il faut apporter une pièce d’identité.",
+        "evidence": "une pièce d’identité"
+      }
+    ]
+  },
+  {
+    "slug": "restaurant",
+    "genre": "carte de restaurant",
+    "title": "Le menu du jardin",
+    "text": "Cette semaine, le restaurant Le Jardin propose deux menus à midi. Le menu classique comprend une soupe, du poulet avec du riz et une salade de fruits. Le menu végétarien propose une tarte aux légumes à la place du poulet. Chaque menu coûte dix-huit francs. Le restaurant est fermé le mercredi. Pour réserver une table, téléphonez avant onze heures.",
+    "questions": [
+      {
+        "prompt": "Quels menus sont proposés ?",
+        "answer": "Le restaurant propose un menu classique et un menu végétarien.",
+        "evidence": "Le menu classique"
+      },
+      {
+        "prompt": "Quelle viande trouve-t-on dans le menu classique ?",
+        "answer": "On trouve du poulet.",
+        "evidence": "du poulet"
+      },
+      {
+        "prompt": "Quel dessert est proposé ?",
+        "answer": "Le dessert est une salade de fruits.",
+        "evidence": "une salade de fruits"
+      },
+      {
+        "prompt": "Quel jour le restaurant est-il fermé ?",
+        "answer": "Il est fermé le mercredi.",
+        "evidence": "le mercredi"
+      },
+      {
+        "prompt": "Quel est le prix d’un menu ?",
+        "answer": "Un menu coûte dix-huit francs.",
+        "evidence": "dix-huit francs"
+      }
+    ]
+  },
+  {
+    "slug": "anniversaire",
+    "genre": "carte d’invitation",
+    "title": "Un anniversaire à l’atelier",
+    "text": "Tu es invité à mon anniversaire le 6 octobre ! Nous fabriquerons des objets en terre dans l’atelier de ma tante Alice, qui est potière. Mets des vêtements faciles à laver. Nous commencerons à quatorze heures et finirons à dix-sept heures. L’atelier se trouve au 3, rue des Érables. Réponds à ma mère avant dimanche. À bientôt ! Hugo.",
+    "questions": [
+      {
+        "prompt": "À quelle date Hugo fête-t-il son anniversaire ?",
+        "answer": "Il le fête le 6 octobre.",
+        "evidence": "le 6 octobre"
+      },
+      {
+        "prompt": "Quel métier exerce sa tante ?",
+        "answer": "Sa tante est potière.",
+        "evidence": "potière"
+      },
+      {
+        "prompt": "Quels vêtements faut-il mettre ?",
+        "answer": "Il faut mettre des vêtements faciles à laver.",
+        "evidence": "des vêtements faciles à laver"
+      },
+      {
+        "prompt": "À quelle heure la fête commence-t-elle ?",
+        "answer": "Elle commence à quatorze heures.",
+        "evidence": "à quatorze heures"
+      },
+      {
+        "prompt": "Quelle est l’adresse de l’atelier ?",
+        "answer": "L’atelier est au 3, rue des Érables.",
+        "evidence": "au 3, rue des Érables"
+      }
+    ]
+  },
+  {
+    "slug": "emploi",
+    "genre": "offre d’emploi",
+    "title": "Une place dans un hôtel",
+    "text": "L’hôtel des Sources cherche une personne pour préparer les petits-déjeuners. Le travail commence à six heures et finit à dix heures, du mardi au samedi. Il faut parler français et comprendre un peu l’anglais. Une expérience en cuisine est souhaitée. Envoyez un CV et une lettre de motivation à Madame Rey avant le 20 août. Le poste est disponible dès septembre.",
+    "questions": [
+      {
+        "prompt": "Quel établissement propose ce travail ?",
+        "answer": "L’hôtel des Sources propose ce travail.",
+        "evidence": "L’hôtel des Sources"
+      },
+      {
+        "prompt": "Quelles langues sont demandées ?",
+        "answer": "Le français et un peu d’anglais sont demandés.",
+        "evidence": "parler français et comprendre un peu l’anglais"
+      },
+      {
+        "prompt": "Quels jours faut-il travailler ?",
+        "answer": "Il faut travailler du mardi au samedi.",
+        "evidence": "du mardi au samedi"
+      },
+      {
+        "prompt": "Quels documents faut-il envoyer ?",
+        "answer": "Il faut envoyer un CV et une lettre de motivation.",
+        "evidence": "un CV et une lettre de motivation"
+      },
+      {
+        "prompt": "Quel mois le poste devient-il disponible ?",
+        "answer": "Le poste est disponible dès septembre.",
+        "evidence": "dès septembre"
+      }
+    ]
+  },
+  {
+    "slug": "ecole",
+    "genre": "bulletin scolaire",
+    "title": "La semaine de classe de Zoé",
+    "text": "La classe de Zoé prépare une semaine spéciale sur les animaux. Lundi, les élèves visiteront la ferme des Roches. Mardi, une vétérinaire viendra parler de son métier. Jeudi, les enfants présenteront des affiches sur les oiseaux. Vendredi, ils regarderont un documentaire dans la salle 12. Pour la visite à la ferme, ils doivent mettre des bottes et apporter un manteau imperméable.",
+    "questions": [
+      {
+        "prompt": "Quel est le sujet de la semaine spéciale ?",
+        "answer": "Le sujet est les animaux.",
+        "evidence": "sur les animaux"
+      },
+      {
+        "prompt": "Quelle ferme la classe visitera-t-elle ?",
+        "answer": "La classe visitera la ferme des Roches.",
+        "evidence": "la ferme des Roches"
+      },
+      {
+        "prompt": "Quel métier la visiteuse exerce-t-elle ?",
+        "answer": "La visiteuse est vétérinaire.",
+        "evidence": "une vétérinaire"
+      },
+      {
+        "prompt": "Quelle salle sera utilisée vendredi ?",
+        "answer": "La salle 12 sera utilisée.",
+        "evidence": "la salle 12"
+      },
+      {
+        "prompt": "Quels vêtements faut-il prévoir pour la ferme ?",
+        "answer": "Il faut prévoir des bottes et un manteau imperméable.",
+        "evidence": "des bottes et apporter un manteau imperméable"
+      }
+    ]
+  },
+  {
+    "slug": "sante",
+    "genre": "conseils de prévention",
+    "title": "Bouger au quotidien",
+    "text": "Pour rester en forme, le centre de santé conseille une marche quotidienne de trente minutes. Choisissez des chaussures souples et confortables. Évitez les chemins glissants après la pluie. En été, partez de préférence tôt le matin et prenez une bouteille d’eau. Le centre propose aussi une marche accompagnée chaque jeudi à neuf heures, au départ du parc des Lilas.",
+    "questions": [
+      {
+        "prompt": "Quelle durée de marche est conseillée ?",
+        "answer": "Une marche de trente minutes est conseillée.",
+        "evidence": "trente minutes"
+      },
+      {
+        "prompt": "Quelles chaussures faut-il choisir ?",
+        "answer": "Il faut choisir des chaussures souples et confortables.",
+        "evidence": "des chaussures souples et confortables"
+      },
+      {
+        "prompt": "Quels chemins faut-il éviter après la pluie ?",
+        "answer": "Il faut éviter les chemins glissants.",
+        "evidence": "les chemins glissants"
+      },
+      {
+        "prompt": "Quel jour a lieu la marche accompagnée ?",
+        "answer": "Elle a lieu le jeudi.",
+        "evidence": "chaque jeudi"
+      },
+      {
+        "prompt": "Quel parc est le point de départ ?",
+        "answer": "Le parc des Lilas est le point de départ.",
+        "evidence": "du parc des Lilas"
+      }
+    ]
+  },
+  {
+    "slug": "portrait",
+    "genre": "portrait de commerçante",
+    "title": "La nouvelle libraire",
+    "text": "Sofia tient une librairie dans la rue du Pont. Avant, elle était enseignante. Elle aime particulièrement les romans policiers et les bandes dessinées. Sa boutique ouvre à neuf heures et ferme à dix-neuf heures, sauf le lundi. Chaque samedi, elle lit une histoire aux enfants à onze heures. Ce mois-ci, la vitrine présente des livres sur les voyages en Italie.",
+    "questions": [
+      {
+        "prompt": "Quel commerce Sofia tient-elle ?",
+        "answer": "Elle tient une librairie.",
+        "evidence": "une librairie"
+      },
+      {
+        "prompt": "Quel métier exerçait-elle avant ?",
+        "answer": "Elle était enseignante.",
+        "evidence": "enseignante"
+      },
+      {
+        "prompt": "Quels livres aime-t-elle particulièrement ?",
+        "answer": "Elle aime les romans policiers et les bandes dessinées.",
+        "evidence": "les romans policiers et les bandes dessinées"
+      },
+      {
+        "prompt": "À quelle heure lit-elle aux enfants ?",
+        "answer": "Elle lit aux enfants à onze heures.",
+        "evidence": "à onze heures"
+      },
+      {
+        "prompt": "Quel pays est présenté dans la vitrine ?",
+        "answer": "L’Italie est présentée dans la vitrine.",
+        "evidence": "en Italie"
+      }
+    ]
+  },
+  {
+    "slug": "sport",
+    "genre": "fiche d’inscription",
+    "title": "Le stage de vacances",
+    "text": "Le club des Amandiers organise un stage pour les enfants de huit à douze ans. Il se déroule du 7 au 11 juillet. Le matin, les enfants jouent au basket et au football. L’après-midi, ils découvrent l’escalade. Ils doivent apporter un pique-nique et une gourde. Le stage coûte cent francs. Le rendez-vous quotidien est à huit heures trente devant le gymnase.",
+    "questions": [
+      {
+        "prompt": "Quelles sont les dates du stage ?",
+        "answer": "Le stage se déroule du 7 au 11 juillet.",
+        "evidence": "du 7 au 11 juillet"
+      },
+      {
+        "prompt": "Quels sports sont pratiqués le matin ?",
+        "answer": "Le basket et le football sont pratiqués le matin.",
+        "evidence": "au basket et au football"
+      },
+      {
+        "prompt": "Quelle activité découvre-t-on l’après-midi ?",
+        "answer": "On découvre l’escalade.",
+        "evidence": "l’escalade"
+      },
+      {
+        "prompt": "Quel est le prix du stage ?",
+        "answer": "Le prix est de cent francs.",
+        "evidence": "cent francs"
+      },
+      {
+        "prompt": "À quelle heure est le rendez-vous ?",
+        "answer": "Il est à huit heures trente.",
+        "evidence": "huit heures trente"
+      }
+    ]
+  },
+  {
+    "slug": "train",
+    "genre": "billet de transport",
+    "title": "Le billet de Léa",
+    "text": "Léa a acheté un billet de train pour aller de Fribourg à Lausanne. Elle voyage le vendredi 23 mai. Son train part à dix heures dix et arrive à onze heures. Elle est en deuxième classe. Son billet coûte vingt-quatre francs et peut être présenté sur son téléphone. Elle prendra ensuite le bus numéro 2 pour rejoindre sa tante.",
+    "questions": [
+      {
+        "prompt": "Quelle est la destination du train ?",
+        "answer": "La destination est Lausanne.",
+        "evidence": "à Lausanne"
+      },
+      {
+        "prompt": "À quelle date Léa voyage-t-elle ?",
+        "answer": "Elle voyage le vendredi 23 mai.",
+        "evidence": "le vendredi 23 mai"
+      },
+      {
+        "prompt": "À quelle heure son train part-il ?",
+        "answer": "Il part à dix heures dix.",
+        "evidence": "dix heures dix"
+      },
+      {
+        "prompt": "Quelle classe Léa a-t-elle choisie ?",
+        "answer": "Elle a choisi la deuxième classe.",
+        "evidence": "deuxième classe"
+      },
+      {
+        "prompt": "Quel bus prendra-t-elle après le train ?",
+        "answer": "Elle prendra le bus numéro 2.",
+        "evidence": "le bus numéro 2"
+      }
+    ]
+  },
+  {
+    "slug": "cuisine",
+    "genre": "carnet de recettes",
+    "title": "Le gâteau de tante Lucie",
+    "text": "Pour mon gâteau au yaourt, j’utilise un yaourt nature, deux pots de sucre et trois pots de farine. J’ajoute trois œufs, un demi-pot d’huile et de la levure. Je mélange le tout avec une cuillère en bois. Le gâteau cuit trente-cinq minutes à cent quatre-vingts degrés. Je le sers avec une compote de pommes. C’est le dessert préféré de mes neveux. Lucie.",
+    "questions": [
+      {
+        "prompt": "Quel type de yaourt Lucie utilise-t-elle ?",
+        "answer": "Elle utilise un yaourt nature.",
+        "evidence": "un yaourt nature"
+      },
+      {
+        "prompt": "Quels ingrédients sont mesurés avec le pot ?",
+        "answer": "Le sucre, la farine et l’huile sont mesurés avec le pot.",
+        "evidence": "deux pots de sucre et trois pots de farine"
+      },
+      {
+        "prompt": "Quel ustensile sert à mélanger ?",
+        "answer": "Une cuillère en bois sert à mélanger.",
+        "evidence": "une cuillère en bois"
+      },
+      {
+        "prompt": "Quelle est la durée de cuisson ?",
+        "answer": "La durée de cuisson est de trente-cinq minutes.",
+        "evidence": "trente-cinq minutes"
+      },
+      {
+        "prompt": "Avec quelle compote le gâteau est-il servi ?",
+        "answer": "Il est servi avec une compote de pommes.",
+        "evidence": "une compote de pommes"
+      }
+    ]
+  },
+  {
+    "slug": "musee",
+    "genre": "programme d’exposition",
+    "title": "Les couleurs de la ville",
+    "text": "L’exposition Les couleurs de la ville ouvre le 3 mars au musée des Beaux-Arts. Elle rassemble des peintures et des photographies réalisées par des artistes de la région. Le billet adulte coûte douze francs. Les étudiants paient six francs. Le musée est fermé le mardi. Une visite en français est organisée chaque dimanche à quatorze heures, dans la grande salle du premier étage.",
+    "questions": [
+      {
+        "prompt": "Quel est le titre de l’exposition ?",
+        "answer": "Son titre est Les couleurs de la ville.",
+        "evidence": "Les couleurs de la ville"
+      },
+      {
+        "prompt": "Quelles œuvres sont exposées ?",
+        "answer": "Des peintures et des photographies sont exposées.",
+        "evidence": "des peintures et des photographies"
+      },
+      {
+        "prompt": "Quel prix paient les étudiants ?",
+        "answer": "Les étudiants paient six francs.",
+        "evidence": "six francs"
+      },
+      {
+        "prompt": "Quel jour le musée est-il fermé ?",
+        "answer": "Il est fermé le mardi.",
+        "evidence": "le mardi"
+      },
+      {
+        "prompt": "Dans quelle salle commence la visite ?",
+        "answer": "Elle commence dans la grande salle du premier étage.",
+        "evidence": "la grande salle du premier étage"
+      }
+    ]
+  },
+  {
+    "slug": "commande",
+    "genre": "confirmation de commande",
+    "title": "Une table pour la cuisine",
+    "text": "Bonjour Monsieur Roy, votre commande est prête. Vous avez choisi une table ronde en bois clair et quatre chaises blanches. La livraison est prévue le 18 novembre entre neuf heures et midi. Notre équipe vous appellera trente minutes avant son arrivée. Le montant restant à payer est de deux cents francs. Préparez l’accès à votre cuisine pour faciliter l’installation.",
+    "questions": [
+      {
+        "prompt": "Quelle forme de table a choisie Monsieur Roy ?",
+        "answer": "Il a choisi une table ronde.",
+        "evidence": "une table ronde"
+      },
+      {
+        "prompt": "Dans quelle matière est la table ?",
+        "answer": "Elle est en bois clair.",
+        "evidence": "en bois clair"
+      },
+      {
+        "prompt": "Quelles chaises a-t-il commandées ?",
+        "answer": "Il a commandé quatre chaises blanches.",
+        "evidence": "quatre chaises blanches"
+      },
+      {
+        "prompt": "À quelle date la livraison est-elle prévue ?",
+        "answer": "Elle est prévue le 18 novembre.",
+        "evidence": "le 18 novembre"
+      },
+      {
+        "prompt": "Quel montant reste à payer ?",
+        "answer": "Il reste deux cents francs à payer.",
+        "evidence": "deux cents francs"
+      }
+    ]
+  },
+  {
+    "slug": "ecologie",
+    "genre": "panneau de tri",
+    "title": "Bien trier ses déchets",
+    "text": "Dans notre commune, les bouteilles en verre vont dans les conteneurs verts. Les journaux et les cartons sont ramassés devant les immeubles le premier lundi du mois. Les piles doivent être déposées dans les magasins. Les déchets de cuisine vont dans le bac brun. La déchèterie est ouverte le mercredi et le samedi. Elle se trouve dans la zone industrielle des Prés.",
+    "questions": [
+      {
+        "prompt": "Quels conteneurs sont réservés au verre ?",
+        "answer": "Les conteneurs verts sont réservés au verre.",
+        "evidence": "les conteneurs verts"
+      },
+      {
+        "prompt": "Quels déchets sont ramassés le premier lundi ?",
+        "answer": "Les journaux et les cartons sont ramassés.",
+        "evidence": "Les journaux et les cartons"
+      },
+      {
+        "prompt": "Dans quels lieux doit-on déposer les piles ?",
+        "answer": "On doit déposer les piles dans les magasins.",
+        "evidence": "dans les magasins"
+      },
+      {
+        "prompt": "Quel bac reçoit les déchets de cuisine ?",
+        "answer": "Le bac brun reçoit les déchets de cuisine.",
+        "evidence": "le bac brun"
+      },
+      {
+        "prompt": "Quels jours la déchèterie est-elle ouverte ?",
+        "answer": "Elle est ouverte le mercredi et le samedi.",
+        "evidence": "le mercredi et le samedi"
+      }
+    ]
+  },
+  {
+    "slug": "musique",
+    "genre": "dialogue",
+    "title": "Choisir un cours de musique",
+    "text": "Le père : Ma fille veut apprendre la musique. Quels instruments enseignez-vous ?\nLa secrétaire : Le piano, la guitare et le violon.\nLe père : Elle préfère le violon. Quel jour a lieu le cours ?\nLa secrétaire : Le jeudi à seize heures, avec Madame Brunner.\nLe père : Quel est le tarif ?\nLa secrétaire : Cinquante francs par mois. Le cours se déroule dans la salle Mozart.",
+    "questions": [
+      {
+        "prompt": "Quels instruments peut-on apprendre ?",
+        "answer": "On peut apprendre le piano, la guitare et le violon.",
+        "evidence": "Le piano, la guitare et le violon."
+      },
+      {
+        "prompt": "Quel instrument la fille préfère-t-elle ?",
+        "answer": "Elle préfère le violon.",
+        "evidence": "Elle préfère le violon."
+      },
+      {
+        "prompt": "Quel jour a lieu le cours ?",
+        "answer": "Il a lieu le jeudi.",
+        "evidence": "Le jeudi"
+      },
+      {
+        "prompt": "Quelle personne donne le cours ?",
+        "answer": "Madame Brunner donne le cours.",
+        "evidence": "Madame Brunner"
+      },
+      {
+        "prompt": "Quelle salle est utilisée ?",
+        "answer": "La salle Mozart est utilisée.",
+        "evidence": "la salle Mozart"
+      }
+    ]
+  },
+  {
+    "slug": "hotel",
+    "genre": "fiche de réservation",
+    "title": "Un séjour de deux nuits",
+    "text": "Monsieur et Madame Perez ont réservé une chambre double à l’hôtel du Lac. Ils arrivent le 8 avril et repartent le 10 avril. Leur chambre donne sur le jardin. Le petit-déjeuner est servi de sept heures à dix heures dans la salle des Roses. Pour rejoindre l’hôtel depuis la gare, ils peuvent prendre le bus numéro 6. La réception parle français et espagnol.",
+    "questions": [
+      {
+        "prompt": "Quel hôtel les Perez ont-ils choisi ?",
+        "answer": "Ils ont choisi l’hôtel du Lac.",
+        "evidence": "l’hôtel du Lac"
+      },
+      {
+        "prompt": "Quelle chambre ont-ils réservée ?",
+        "answer": "Ils ont réservé une chambre double.",
+        "evidence": "une chambre double"
+      },
+      {
+        "prompt": "À quelle date arrivent-ils ?",
+        "answer": "Ils arrivent le 8 avril.",
+        "evidence": "le 8 avril"
+      },
+      {
+        "prompt": "Quelle salle accueille le petit-déjeuner ?",
+        "answer": "La salle des Roses accueille le petit-déjeuner.",
+        "evidence": "la salle des Roses"
+      },
+      {
+        "prompt": "Quelles langues parle la réception ?",
+        "answer": "La réception parle français et espagnol.",
+        "evidence": "français et espagnol"
+      }
+    ]
+  },
+  {
+    "slug": "livres",
+    "genre": "lettre",
+    "title": "Le colis de livres",
+    "text": "Chère Émilie, je t’envoie les livres que tu m’as demandés : un dictionnaire français-italien et un guide de Genève. J’ajoute deux petits romans pour tes enfants. Le colis part aujourd’hui par la poste et devrait arriver jeudi. J’ai choisi une boîte bleue pour que tu la reconnaisses. J’espère que le guide te sera utile pendant ton voyage de septembre. Amitiés, Paolo.",
+    "questions": [
+      {
+        "prompt": "Quel dictionnaire Paolo envoie-t-il ?",
+        "answer": "Il envoie un dictionnaire français-italien.",
+        "evidence": "un dictionnaire français-italien"
+      },
+      {
+        "prompt": "Quelle ville est présentée dans le guide ?",
+        "answer": "Genève est présentée dans le guide.",
+        "evidence": "un guide de Genève"
+      },
+      {
+        "prompt": "Quels livres sont destinés aux enfants ?",
+        "answer": "Deux petits romans sont destinés aux enfants.",
+        "evidence": "deux petits romans"
+      },
+      {
+        "prompt": "Quel jour le colis devrait-il arriver ?",
+        "answer": "Il devrait arriver jeudi.",
+        "evidence": "jeudi"
+      },
+      {
+        "prompt": "Quelle est la couleur de la boîte ?",
+        "answer": "La boîte est bleue.",
+        "evidence": "une boîte bleue"
+      }
+    ]
+  },
+  {
+    "slug": "randonnee",
+    "genre": "fiche pratique",
+    "title": "Une randonnée facile",
+    "text": "Le sentier des Trois-Ponts relie le village de Rives au lac Vert. Le parcours fait six kilomètres et convient aux familles. Il faut compter environ deux heures de marche. Portez des chaussures de randonnée et prenez de l’eau. Le départ se trouve derrière la mairie de Rives. Le meilleur moment pour cette promenade est le printemps, quand les arbres sont en fleurs.",
+    "questions": [
+      {
+        "prompt": "Quel sentier est présenté ?",
+        "answer": "Le sentier des Trois-Ponts est présenté.",
+        "evidence": "Le sentier des Trois-Ponts"
+      },
+      {
+        "prompt": "Quel lac est la destination ?",
+        "answer": "Le lac Vert est la destination.",
+        "evidence": "au lac Vert"
+      },
+      {
+        "prompt": "Quelle est la longueur du parcours ?",
+        "answer": "Le parcours fait six kilomètres.",
+        "evidence": "six kilomètres"
+      },
+      {
+        "prompt": "Quelles chaussures sont conseillées ?",
+        "answer": "Des chaussures de randonnée sont conseillées.",
+        "evidence": "des chaussures de randonnée"
+      },
+      {
+        "prompt": "Quelle saison est recommandée ?",
+        "answer": "Le printemps est recommandé.",
+        "evidence": "le printemps"
+      }
+    ]
+  },
+  {
+    "slug": "voiture",
+    "genre": "petite annonce",
+    "title": "Une voiture d’occasion",
+    "text": "Je vends ma voiture de marque Citadine, modèle Lune. Elle est rouge et date de 2018. Elle a parcouru quatre-vingt mille kilomètres. Le dernier contrôle a eu lieu en janvier. Je la vends avec quatre pneus d’hiver. Le prix demandé est de cinq mille francs. Vous pouvez la voir le samedi matin devant le garage de la rue du Stade. Contactez Karim par téléphone.",
+    "questions": [
+      {
+        "prompt": "Quelle est la marque de la voiture ?",
+        "answer": "La marque est Citadine.",
+        "evidence": "de marque Citadine"
+      },
+      {
+        "prompt": "Quel est son modèle ?",
+        "answer": "Son modèle est Lune.",
+        "evidence": "modèle Lune"
+      },
+      {
+        "prompt": "Quelle est sa couleur ?",
+        "answer": "Elle est rouge.",
+        "evidence": "Elle est rouge"
+      },
+      {
+        "prompt": "Quels pneus sont vendus avec la voiture ?",
+        "answer": "Quatre pneus d’hiver sont vendus avec la voiture.",
+        "evidence": "quatre pneus d’hiver"
+      },
+      {
+        "prompt": "Quel prix Karim demande-t-il ?",
+        "answer": "Il demande cinq mille francs.",
+        "evidence": "cinq mille francs"
+      }
+    ]
+  },
+  {
+    "slug": "calendrier",
+    "genre": "programme de quartier",
+    "title": "Une semaine au centre culturel",
+    "text": "Lundi, le centre culturel propose un atelier de dessin dans la salle Picasso. Mercredi, un cours de cuisine italienne commence à dix-huit heures. Vendredi, les habitants peuvent participer à une soirée de jeux de société. Samedi, le groupe de danse présente des danses grecques et espagnoles. Toutes les activités sont gratuites pour les moins de seize ans. Les inscriptions se font à l’accueil.",
+    "questions": [
+      {
+        "prompt": "Quelle salle accueille l’atelier de dessin ?",
+        "answer": "La salle Picasso accueille l’atelier.",
+        "evidence": "la salle Picasso"
+      },
+      {
+        "prompt": "Quel type de cuisine enseigne-t-on mercredi ?",
+        "answer": "On enseigne la cuisine italienne.",
+        "evidence": "cuisine italienne"
+      },
+      {
+        "prompt": "À quelle heure commence le cours de cuisine ?",
+        "answer": "Il commence à dix-huit heures.",
+        "evidence": "à dix-huit heures"
+      },
+      {
+        "prompt": "Quels jeux sont proposés vendredi ?",
+        "answer": "Des jeux de société sont proposés.",
+        "evidence": "jeux de société"
+      },
+      {
+        "prompt": "Quelles danses sont présentées samedi ?",
+        "answer": "Des danses grecques et espagnoles sont présentées.",
+        "evidence": "grecques et espagnoles"
+      }
+    ]
+  },
+  {
+    "slug": "rendezvous",
+    "genre": "agenda partagé",
+    "title": "Les rendez-vous de la famille",
+    "text": "Notre famille a plusieurs rendez-vous cette semaine. Lundi à dix heures, maman va chez la dentiste, Madame Robert. Mardi, papa participe à une réunion dans la salle 5 de son entreprise. Mercredi, Lina commence un cours d’anglais. Jeudi, nous essayons une nouvelle voiture au garage des Pins. Vendredi soir, toute la famille va voir le film Le grand voyage au cinéma Central.",
+    "questions": [
+      {
+        "prompt": "Quelle dentiste la mère va-t-elle voir ?",
+        "answer": "Elle va voir Madame Robert.",
+        "evidence": "Madame Robert"
+      },
+      {
+        "prompt": "Quelle salle accueille la réunion du père ?",
+        "answer": "La salle 5 accueille la réunion.",
+        "evidence": "la salle 5"
+      },
+      {
+        "prompt": "Quelle langue Lina va-t-elle apprendre ?",
+        "answer": "Elle va apprendre l’anglais.",
+        "evidence": "un cours d’anglais"
+      },
+      {
+        "prompt": "Quel garage la famille visite-t-elle jeudi ?",
+        "answer": "La famille visite le garage des Pins.",
+        "evidence": "au garage des Pins"
+      },
+      {
+        "prompt": "Quel film la famille va-t-elle voir ?",
+        "answer": "Elle va voir Le grand voyage.",
+        "evidence": "Le grand voyage"
+      }
+    ]
+  }
+]

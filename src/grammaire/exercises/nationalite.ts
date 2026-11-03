@@ -44,7 +44,7 @@ export function nationaliteBankCap(kindId: NationaliteKindId): number {
 }
 
 export function nationaliteFormUi(kindId: string): 'none' | 'header2' | 'margin3' {
-  if (kindId === 'nat-image') return 'header2'
+  if (kindId === 'nat-image' || kindId === 'nat-accorder') return 'header2'
   if (kindId === 'nat-co') return 'margin3'
   return 'none'
 }

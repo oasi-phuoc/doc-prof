@@ -27,6 +27,7 @@ import { splitMultiDocumentAnnonce } from '@/tcf/split-documents'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
+import { splitGrammarReadingPages } from '@/grammaire/exercises/reading-pagination'
 import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
@@ -601,6 +602,12 @@ export function buildWorksheets(pages: PageConfig[], seed: number): WorksheetPag
       }
       return
     }
+    const grammarReadingPages = splitGrammarReadingPages(worksheet)
+    if (grammarReadingPages) {
+      out.push(...grammarReadingPages.map(sheet => ({ ...sheet, configIndex: index })))
+      return
+    }
+
     // TPF / TCF : sauts de page manuels après certaines questions (marge « Page »).
     if (isTpfFamilyDomain(page.domain)) {
       const sourceBlock = worksheet.blocks[0]

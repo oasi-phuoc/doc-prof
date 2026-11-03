@@ -1,15 +1,14 @@
 # Reprise de la grammaire
 
-La théorie et les exercices des 17 thèmes concernés ont été repris. Les théories « Entrer en contact » et « Se présenter » restent identiques à leur version précédente, vérifiée par empreinte SHA-256.
+La théorie a été rétablie dans son état antérieur au commit `b04247cb`. Les types d’exercices et les banques actuels sont conservés.
 
 | Contenu | Résultat |
 |---|---:|
-| Fiches de théorie réécrites en français facile | 105 |
-| Fiches de théorie préservées | 8 |
+| Fiches de théorie antérieures conservées | 113 |
 | Sous-thèmes avec une nouvelle banque de 50 phrases | 104 |
 | Phrases dans les nouvelles banques | 5 200 |
-| Banques d’introduction complétées à 50 phrases | 8 |
-| Phrases dans ces banques d’introduction | 400 |
+| Banques d’introduction complétées à 50 phrases | 7 |
+| Phrases dans ces banques d’introduction | 350 |
 | Thèmes avec des activités de communication | 16 |
 | Nouveaux types CE / PE / PO | 48 |
 | Variantes par type CE, PE ou PO | 10 |
@@ -20,7 +19,7 @@ La théorie et les exercices des 17 thèmes concernés ont été repris. Les th�
 
 ## Théorie
 
-Chaque fiche conserve son identifiant, son thème et sa présentation : « Je regarde », « J’explique », « Je retiens », exemples en couleur, tableaux, espacements et passage à la page suivante. Les explications donnent l’usage, la construction, des exemples et les difficultés à éviter. Les tableaux conservés ont aussi reçu les corrections nécessaires, notamment pour **dont**, le contraste indicatif/subjonctif et les variantes de pluriel admises.
+Les 113 fiches retrouvent leur contenu antérieur, avec leurs identifiants et leur mise en forme. La reconstruction des banques d’exercices ne modifie plus la théorie.
 
 ## Exercices
 
@@ -28,7 +27,7 @@ Les 16 anciens fichiers de banques cumulées ont été retirés. Ils sont rempla
 
 Le même type d’exercice propose **QCM texte** et **réponse dans le blanc** avec le sélecteur de format existant. Le choix des phrases et l’ordre des réponses restent déterministes à graine identique. Une sélection d’une seule question garde le temps ou le mode demandé dans la consigne.
 
-Les huit banques ordinaires des thèmes d’introduction ont été complétées à 50 éléments. Les activités particulières de présentation, nationalités, provenance et famille restent disponibles, avec leurs supports existants et leur capacité réelle. Les questions de présentation manquantes sur la ville et les langues ont été ajoutées. Les informations personnelles libres restent à écrire : aucune nationalité ou aucun prénom arbitraire n’est présenté comme la bonne réponse de l’apprenant.
+Les sept banques ordinaires des thèmes d’introduction ont été complétées à 50 éléments. Les activités particulières de présentation, nationalités, provenance et famille restent disponibles, avec leurs supports existants et leur capacité réelle. Les questions de présentation manquantes sur la ville et les langues ont été ajoutées. Les informations personnelles libres restent à écrire : aucune nationalité ou aucun prénom arbitraire n’est présenté comme la bonne réponse de l’apprenant.
 
 ## Communication
 

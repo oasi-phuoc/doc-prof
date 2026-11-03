@@ -29,9 +29,11 @@ function PhrasePastille({ category, filled }: { category?: PhraseCategory; fille
 function PhraseAnswerSlot({
   show,
   answer,
+  verb,
 }: {
   show: boolean
   answer?: string
+  verb?: string
 }) {
   return (
     <div className="phrase-answer-slot">
@@ -40,6 +42,7 @@ function PhraseAnswerSlot({
       ) : (
         <span className="phrase-write-line" aria-hidden={!show} />
       )}
+      {verb ? <span className="phrase-verb-hint tcf-verbe-theme">({verb})</span> : null}
     </div>
   )
 }
@@ -96,7 +99,7 @@ export function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: Preview
           )
         })}
       </div>
-      <PhraseAnswerSlot show={show} answer={answerText} />
+      <PhraseAnswerSlot show={show} answer={answerText} verb={item.responseVerb} />
     </div>
   )
 }
