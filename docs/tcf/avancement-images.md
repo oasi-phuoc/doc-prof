@@ -2,11 +2,11 @@
 
 ## Priorité du lot en cours
 
-Le périmètre CO demandé le 3 novembre 2026 couvre **les 834 sources audio actives**. Les illustrations passent avant la reprise des 432 anciennes références audio encore à rapprocher. Aucune confirmation de périmètre supplémentaire n’est attendue.
+Le périmètre CO demandé le 3 novembre 2026 couvre **les 834 sources audio actives**. **Priorité aux niveaux A1 et A2, au format paysage 4:3 et dans le style dessiné CE/CO défini.** Les illustrations passent avant la reprise des 432 anciennes références audio encore à rapprocher. Aucune confirmation de périmètre supplémentaire n’est attendue.
 
-**28 nouvelles illustrations CO sont générées et contrôlées visuellement : 15 illustrations de réponses et les 13 scènes d’association signalées par l’audit.** Six nouveaux QCM image sont activés, avec les mêmes identifiants, réponses correctes et options texte. Les scènes d’itinéraire, d’achats et de famille sont rétablies ; leurs marqueurs d’image en attente sont retirés. L’ancienne scène montrant un bus de la mauvaise ligne n’est plus utilisée par l’exercice.
+**42 illustrations CO sont générées et contrôlées visuellement au format paysage 4:3 (1 280 × 960) : 29 illustrations de réponses et les 13 scènes d’association signalées par l’audit.** Les 41 premières images ont été reprises au bon format ; une version 4:3 du casque réutilisé complète le lot. Onze nouveaux QCM image sont activés, avec les mêmes identifiants, réponses correctes et options texte. Les scènes d’itinéraire, d’achats et de famille sont rétablies ; leurs marqueurs d’image en attente sont retirés. L’ancienne scène montrant un bus de la mauvaise ligne n’est plus utilisée par l’exercice.
 
-Le [plan CO des 834 sources](images-co-834-a-generer.json) conserve chaque réception, les liens vers les supports et les questions, les fichiers générés et les éléments restants. Il suit 423 questions candidates, dont six activées dans ce lot ; 417 restent à relire et illustrer. Parmi les 741 concepts initialement manquants du plan, 24 disposent désormais d’une image générée ou réutilisable contrôlée ; 717 restent ouverts. Ce nombre ne comprend pas les scènes d’association, maintenant terminées.
+Le [plan CO des 834 sources](images-co-834-a-generer.json) conserve chaque réception, les liens vers les supports et les questions, les fichiers générés et les éléments restants. Il suit 423 questions candidates, dont onze activées dans ce lot ; 412 restent à traiter. Parmi les 741 concepts initialement manquants du plan, 27 disposent désormais d’une image contrôlée en 4:3 ; 714 restent ouverts, y compris les réutilisations qui demandent une reprise au format requis. Ce nombre ne comprend pas les scènes d’association, maintenant terminées.
 
 Lot CE prioritaire : **12 illustrations validées visuellement et 11 variantes QCM image CE activées**. Les deux variantes relatives aux légumes et aux équipements de hockey/neige sont maintenant incluses. La première version du théâtre avait des bras supplémentaires : elle a été écartée, corrigée et seule la seconde version est utilisée.
 
@@ -14,7 +14,7 @@ Le lot comporte désormais **48 nouvelles images CE validées et 59 variantes CE
 
 Le registre reproductible [images-generees.json](images-generees.json) conserve les fichiers, empreintes, contrôles visuels et références des questions activées. Les QCM texte et les corrigés sont conservés. Les montants, dates, jours et mois ne sont pas ajoutés dans les images.
 
-Le lot CO continue. Les 834 réceptions restent toutes présentes dans le suivi, y compris celles qui partagent une analyse antérieure. Pour 234 sources, aucun exercice actuel n’est encore relié par les rapprochements disponibles : leurs illustrations de questions restent à définir une fois le lien établi. La présence d’une image existante ne certifie pas à elle seule son adéquation à la réponse.
+Le lot CO continue en priorité pour A1 et A2. Les nouveaux fichiers sont contrôlés à l’export : rapport 4:3 exact, sujet entier et style dessiné CE/CO. Les 834 réceptions restent toutes présentes dans le suivi, y compris celles qui partagent une analyse antérieure. Pour 234 sources, aucun exercice actuel n’est encore relié par les rapprochements disponibles : leurs illustrations de questions restent à définir une fois le lien établi. La présence d’une image existante ne certifie pas à elle seule son adéquation à la réponse.
 
 ## Suite
 

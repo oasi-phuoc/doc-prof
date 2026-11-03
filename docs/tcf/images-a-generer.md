@@ -1,4 +1,6 @@
-# Images QCM à préparer à la prochaine session
+# Plan historique des images QCM
+
+> Plan initial conservé pour la traçabilité. Les 13 scènes d’association sont désormais réalisées. Le [suivi actuel](avancement-images.md) et le [plan CO des 834 sources](images-co-834-a-generer.json) font foi pour la reprise : priorité A1/A2, paysage 4:3, style dessiné CE/CO.
 
 618 questions candidates ; 1101 images manquantes, plus 13 scènes d’association en attente. Aucun fichier image n’a été généré.
 

@@ -21,8 +21,8 @@
     },
     "generated_reviewed_assets": 48,
     "activated_ce_questions_this_batch": 59,
-    "co_new_reviewed_images_this_batch": 28,
-    "co_activated_questions_this_batch": 6,
+    "co_new_reviewed_images_this_batch": 42,
+    "co_activated_questions_this_batch": 11,
     "association_scenes_restored_this_batch": 13
   },
   "questions": [
@@ -2935,7 +2935,7 @@
       "status": "active_after_visual_and_source_text_review",
       "active_images": [
         "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/6b018e889cae.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
         "/lib/images/tcf/qcm-audit/f137023c3623.webp"
       ]
     },
@@ -2968,7 +2968,12 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3092,7 +3097,12 @@
           "asset": "8149d2f1ec7d"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+        "/lib/images/tcf/qcm-audit/414095db5c3f.webp",
+        "/lib/images/tcf/qcm-audit/8149d2f1ec7d.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -12981,7 +12991,12 @@
           "asset": "aa5adb3a720f"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/5e661b9f0701.webp",
+        "/lib/images/tcf/qcm-audit/d1f862e82237.webp",
+        "/lib/images/tcf/qcm-audit/aa5adb3a720f.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -18809,7 +18824,12 @@
           "asset": "6b018e889cae"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -18995,7 +19015,12 @@
           "asset": "8db629d5ee8e"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/ad5f5ee754d1.webp",
+        "/lib/images/tcf/qcm-audit/e86658ac6ca0.webp",
+        "/lib/images/tcf/qcm-audit/8db629d5ee8e.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a2-b1/co.json",
@@ -21541,7 +21566,7 @@
       "label": "L'atelier théâtre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ad5f5ee754d1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L'atelier théâtre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1s-ce-034",
@@ -21553,7 +21578,9 @@
           "question": 8,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/ad5f5ee754d1.webp",
+      "sha256": "c004efe1232fd9380690530165f6b70110e016dd31acfb7bf555eb40c134a814"
     },
     {
       "id": "cd81fadbd4f8",
@@ -22114,7 +22141,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/a14ef527c4c4.webp",
-      "sha256": "068d2dea078cc47264a6c275f43e0afce026e7884e45886781b4d74ccb86071f"
+      "sha256": "77f268cdca951b62fdcce4b5a59afa51d2766e22a0248cd6fd5b095338c3dc80"
     },
     {
       "id": "40b742b7985d",
@@ -22160,7 +22187,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
-      "sha256": "23b8bf80797aacd3be043306226e2c6a9e44605af8c07916a681af2a4fd0e832"
+      "sha256": "4fb973811362c24d1f2c759f134728c2d43183d5e41f3953af02a97a2a17d733"
     },
     {
       "id": "8921a6017fbb",
@@ -22176,7 +22203,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/8921a6017fbb.webp",
-      "sha256": "51e54e97de16d9d496f6d9546c32e2e0f775d38c92b3d6de4c3fb433b19bfbcc"
+      "sha256": "bee872b0882cfad77d28c6996ee8797e2eaff8237a307aae4c333eb0f1c5fba1"
     },
     {
       "id": "c83761f74ee0",
@@ -22220,7 +22247,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/c52b42c054fb.webp",
-      "sha256": "4ea449b9e00b646b6136c84350a633e165d60f1a253cac00c50699f8b96b983b"
+      "sha256": "f1c01e28aa21e5145958910d5c7899bad452200f350e682e68c23f6ddaef85b0"
     },
     {
       "id": "696e493d40b2",
@@ -22236,7 +22263,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/696e493d40b2.webp",
-      "sha256": "214162944f50648767a247ba33526af75252323f7a5ee66c027adad0164bc7da"
+      "sha256": "61d536e2296fc4dcff59ae34dd97a03ab592290854e0f8ebd1d7175329b4f28b"
     },
     {
       "id": "f694221012ff",
@@ -22252,7 +22279,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/f694221012ff.webp",
-      "sha256": "b18308ba8b5022756fa70acacc710431eb43352e01dd57155d089b3be7f29148"
+      "sha256": "3c70b06b31573671c23e3cc1436d4d2fc5a5c3e0e106fd84d16a7e9f2f2cd0c2"
     },
     {
       "id": "6feafff4fbbb",
@@ -22273,7 +22300,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/6feafff4fbbb.webp",
-      "sha256": "d621b0552551e72b4a6e46f7a079b26c53329a5354396a4b6d98feea2595bf6e"
+      "sha256": "0e0655dadaccc7ecd94f45d9702768f1df4569b449bfa0a16bd2b02b72ca2b85"
     },
     {
       "id": "fc15cf96998e",
@@ -22289,7 +22316,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/fc15cf96998e.webp",
-      "sha256": "a983ce1cd9ba74416398c914899e444b99abc1e5ca05712aec855cfe7fc50d84"
+      "sha256": "36b98f10551ff324a40203e201a9968b231b02cea00b4e5d90cdbdb0b1760c13"
     },
     {
       "id": "5fb44e9d6044",
@@ -22305,7 +22332,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/5fb44e9d6044.webp",
-      "sha256": "21a5591cb327ee20b0ceec4be9945e272ab02004e2f297d0cbb7d105058f8f44"
+      "sha256": "b8e8c524a87b9d79d21592883e8e7cf1230e09f43dd16900489e3cfdce721db3"
     },
     {
       "id": "83d487815c0d",
@@ -22321,7 +22348,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/83d487815c0d.webp",
-      "sha256": "c21f74c67bd0fc19b20dd33b8e27a3de6cd8d5861e60cdf5c89998c2f8bdf5bd"
+      "sha256": "dc346d60dbd31d72d621c23accf3a42804bd27ea7c0972c9e0ac5d56f3de5176"
     },
     {
       "id": "58eb70256485",
@@ -22337,7 +22364,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/58eb70256485.webp",
-      "sha256": "fc624a0191aa2a05589ed500aecdab09e0a6ab2211b2521a3a955f47a4601c52"
+      "sha256": "b0235b601d8b95da12fa8d3abcc1b41d9d95684966492fb05490a6def5428260"
     },
     {
       "id": "79c78f62683b",
@@ -22353,7 +22380,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/79c78f62683b.webp",
-      "sha256": "3c0756fb25888db051c1efd111867df727f2fbf5081d8d6649d578f8f542f636"
+      "sha256": "d55cf202dfb37a4381ae738fdfb48b2522a11da2d3dffea6cf0a6638bdb4b9fd"
     },
     {
       "id": "e7bad43ee047",
@@ -22369,7 +22396,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/e7bad43ee047.webp",
-      "sha256": "4d4febea7845c0b4fe85a1da974952ac17a26fceeec1d35fe8c88911438536bb"
+      "sha256": "a948378eb40e8e16cf0b38524cadbb13ff2dfda8c440ee5c46b53c9bab2c96ba"
     },
     {
       "id": "2c195660c1de",
@@ -22449,7 +22476,7 @@
         }
       ],
       "generated_path": "/lib/images/tcf/qcm-audit/f137023c3623.webp",
-      "sha256": "de752634e660cd3e58266e87f652a2c24ee66964d634ced870fc420b06bf21ff"
+      "sha256": "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
     },
     {
       "id": "99f6abbf3068",
@@ -22559,7 +22586,7 @@
       "label": "Le dentifrice et les brosses à dents",
       "path_after_generation": "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le dentifrice et les brosses à dents ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-5",
@@ -22571,35 +22598,41 @@
           "question": 4,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/46205d9bab84.webp",
+      "sha256": "fce8421dd4278d3e12ae14eea17b4357e6ed0cba7a977f500bd43f199b7b31a6"
     },
     {
       "id": "414095db5c3f",
       "label": "Le savon et le shampooing",
       "path_after_generation": "/lib/images/tcf/qcm-audit/414095db5c3f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le savon et le shampooing ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-5",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/414095db5c3f.webp",
+      "sha256": "265a2691a2c0caebc7b5dd785ad4c238d6483d3631f1f593508053711c73908d"
     },
     {
       "id": "8149d2f1ec7d",
       "label": "La crème et le parfum",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8149d2f1ec7d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La crème et le parfum ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-5",
           "question": 4,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/8149d2f1ec7d.webp",
+      "sha256": "c152b2a82f274420b8158abdedefea739abae8c696728b28223b812d59805f3e"
     },
     {
       "id": "b48c69f2021e",
@@ -31171,42 +31204,48 @@
       "label": "Le repas des lions",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5e661b9f0701.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le repas des lions ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s1-co-1",
           "question": 19,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/5e661b9f0701.webp",
+      "sha256": "177aa65c5e3dad38a1bea6ef4c03e6c830569a83506b34c97861cacf00e4fd71"
     },
     {
       "id": "d1f862e82237",
       "label": "Le repas des girafes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d1f862e82237.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le repas des girafes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s1-co-1",
           "question": 19,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/d1f862e82237.webp",
+      "sha256": "414435630c62bdbb5b8ac6222dbe426d1dd19a3ffc771292ad7ea2eac0c6986d"
     },
     {
       "id": "aa5adb3a720f",
       "label": "Le repas des dauphins",
       "path_after_generation": "/lib/images/tcf/qcm-audit/aa5adb3a720f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le repas des dauphins ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s1-co-1",
           "question": 19,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/aa5adb3a720f.webp",
+      "sha256": "ec6b24aee1d1ae9af5bc2c071368ab533af9f5c3d84ac869acd03c52488c8770"
     },
     {
       "id": "b7cd7c8d975f",
@@ -35395,14 +35434,16 @@
       "label": "Un chapeau en toile",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un chapeau en toile ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-b1-s3-co-1",
           "question": 8,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
+      "sha256": "1458a3f1384865db03b9db5ba7c8b9d6673e4f48b59bd4967c76befe6db81c3d"
     },
     {
       "id": "6f025960254b",
@@ -35521,28 +35562,32 @@
       "label": "L'atelier chant",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e86658ac6ca0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L'atelier chant ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-b1-s7-co-4",
           "question": 8,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/e86658ac6ca0.webp",
+      "sha256": "c14a106f3b6daae62f86fab7ab0b44735efdac777093782ce64fe380d18ef27e"
     },
     {
       "id": "8db629d5ee8e",
       "label": "L'atelier karaté",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8db629d5ee8e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L'atelier karaté ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-b1-s7-co-4",
           "question": 8,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/8db629d5ee8e.webp",
+      "sha256": "a773e3a8cfbd82c56d02a4b8032c2d1e650d3bce41f35d24f9afa506e59d56b6"
     },
     {
       "id": "7f9ae76f1f04",
