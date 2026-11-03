@@ -17085,6 +17085,33 @@
             "reponse_modele": "Elle va mal dormir"
           }
         }
+      },
+      {
+        "enonce": "Quand la personne va-t-elle mal dormir ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Cette nuit",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "La nuit dernière"
+          },
+          {
+            "id": "c",
+            "texte": "Dans trois nuits"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Cette nuit"
+          }
+        }
       }
     ],
     "consigne_supplementaire": null

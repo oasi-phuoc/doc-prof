@@ -6715,7 +6715,7 @@
               "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
             }
           ],
-          "signal_status": "not_compared",
+          "signal_status": "signal_not_confirmed",
           "matched_word_first": 0,
           "matched_word_last": 1,
           "word_index_basis": "exact_candidate_plan_words_including_native_coarticulation_groups",
@@ -6759,7 +6759,7 @@
               "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
             }
           ],
-          "signal_status": "not_compared",
+          "signal_status": "signal_not_confirmed",
           "matched_word_first": 0,
           "matched_word_last": 1,
           "word_index_basis": "exact_candidate_plan_words_including_native_coarticulation_groups",
@@ -6803,7 +6803,7 @@
               "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
             }
           ],
-          "signal_status": "not_compared",
+          "signal_status": "signal_not_confirmed",
           "matched_word_first": 0,
           "matched_word_last": 1,
           "word_index_basis": "exact_candidate_plan_words_including_native_coarticulation_groups",
@@ -18577,6 +18577,16 @@
               "current_correct_answer": "Elle souhaite le regarder",
               "absent_content_tokens": [
                 "souhaite"
+              ],
+              "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
+            },
+            {
+              "exercise_id": "tcf-ss-a2-s21-co-1",
+              "question_index_0based": 11,
+              "question": "Que répond Élisa à la demande de DVD ?",
+              "current_correct_answer": "Elle refuse de prêter le DVD",
+              "absent_content_tokens": [
+                "refuse"
               ],
               "status": "semantic_review_required_lexical_absence_is_not_proof_of_wrong_answer"
             }

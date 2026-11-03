@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "summary": {
-    "compared": 542,
+    "compared": 558,
     "signal_confirmed": 452,
     "listening_performed": false,
     "production_modified": false
@@ -1370,9 +1370,10 @@
       "old_sha256": "fbb13ee3af79175f9865fb3ca5c74b519c07e3e844a56f931677f9047f917d6f",
       "source_id": "additional-20261102:mdf-a2-abc-junior-direct:38:90bcfa2850dd:9fc8633f",
       "source_sha256": "90bcfa2850ddf6a4722e93ec323c55fd1c1e3bcb4281b9a07a9bcadab64eb1e9",
-      "lexical_score": 0.9220183486238532,
+      "lexical_score": 0.9103448275862069,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -1402,7 +1403,47 @@
       "source_duration_decoded": 128.36575,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+        "old_sha256": "fbb13ee3af79175f9865fb3ca5c74b519c07e3e844a56f931677f9047f917d6f",
+        "source_id": "additional-20261102:mdf-a2-abc-junior-direct:38:90bcfa2850dd:9fc8633f",
+        "source_sha256": "90bcfa2850ddf6a4722e93ec323c55fd1c1e3bcb4281b9a07a9bcadab64eb1e9",
+        "source_file": "/workspace/attachments/195d5256-7e99-4a4d-9b85-0f01553ce6a3/9782090351958_38_CO_ex36.mp3",
+        "lexical_score": 0.9220183486238532,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 16.79975,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 41.87975,
+            "correlation": 0.997188,
+            "source_offset_seconds": 25.08
+          },
+          {
+            "old_anchor_start": 44.249375,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 75.209375,
+            "correlation": 0.867023,
+            "source_offset_seconds": 30.96
+          },
+          {
+            "old_anchor_start": 71.699,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 105.787,
+            "correlation": 0.984409,
+            "source_offset_seconds": 34.088
+          }
+        ],
+        "offset_spread_seconds": 9.008000000000003,
+        "old_duration_decoded": 91.49875,
+        "source_duration_decoded": 128.36575,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-1.mp3",
@@ -2152,7 +2193,8 @@
       "source_sha256": "575a005b1b0a203d35c63f2038cbc2879b91ca89b8e23fe18f6ecf6923388c32",
       "lexical_score": 0.4827586206896552,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -2182,7 +2224,47 @@
       "source_duration_decoded": 93.727375,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-4.mp3",
+        "old_sha256": "3741dfeafc900aa0e8b5ac6f0a196d699b66422e886f97912f9a5971377deeb4",
+        "source_id": "additional-20261102:mdf-b1-abc-junior-direct:15:575a005b1b0a:61b8e940",
+        "source_sha256": "575a005b1b0a203d35c63f2038cbc2879b91ca89b8e23fe18f6ecf6923388c32",
+        "source_file": "/workspace/attachments/2110f2da-e6c7-4e2c-b1b6-6cdd70619ac7/09035196_15_DELF_CO_E13.mp3",
+        "lexical_score": 0.4827586206896552,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 5.683625,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 15.264,
+            "correlation": 0.123442,
+            "source_offset_seconds": 9.580375
+          },
+          {
+            "old_anchor_start": 16.459125,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 60.382875,
+            "correlation": 0.130106,
+            "source_offset_seconds": 43.92375
+          },
+          {
+            "old_anchor_start": 27.234625,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 73.70575,
+            "correlation": 0.101806,
+            "source_offset_seconds": 46.471125
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 35.918375,
+        "source_duration_decoded": 93.727375,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/vie-quotidienne/j-aimerais-beaucoup-creer-livre.mp3",
@@ -3191,7 +3273,8 @@
       "source_sha256": "9c62b2fd9a50603513ea25d6eaef7790f4a828414cf1abb955ccc91fe86995e7",
       "lexical_score": 0.4761904761904762,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -3221,7 +3304,47 @@
       "source_duration_decoded": 17.345375,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/scènes courtes/29-loisirs-demande-de-reduction.mp3",
+        "old_sha256": "c5d4d6a4f91da6685267ec67deb33f085c705c5795b65ff66723f98e5dd60462",
+        "source_id": "additional-20261102:mdf-a2-abc-direct:16:9c62b2fd9a50:19fc69bf",
+        "source_sha256": "9c62b2fd9a50603513ea25d6eaef7790f4a828414cf1abb955ccc91fe86995e7",
+        "source_file": "/workspace/attachments/3342677c-df3c-4171-b5d9-322adcd2c6dd/09035199_016_ACT 3-4.mp3",
+        "lexical_score": 0.4761904761904762,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.481625,
+            "anchor_seconds": 1.60525,
+            "source_anchor_start": 0.298125,
+            "correlation": 0.061738,
+            "source_offset_seconds": -0.1835
+          },
+          {
+            "old_anchor_start": 2.408,
+            "anchor_seconds": 1.60525,
+            "source_anchor_start": 1.326,
+            "correlation": 0.061294,
+            "source_offset_seconds": -1.082
+          },
+          {
+            "old_anchor_start": 4.334375,
+            "anchor_seconds": 1.60525,
+            "source_anchor_start": 9.877125,
+            "correlation": 0.153301,
+            "source_offset_seconds": 5.54275
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 6.421375,
+        "source_duration_decoded": 17.345375,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/31-école-montrer-carte-d-identité.mp3",
@@ -5102,7 +5225,8 @@
       "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
       "lexical_score": 0.49180327868852464,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -5132,7 +5256,47 @@
       "source_duration_decoded": 81.502125,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/la-famille-d-accueil-2.mp3",
+        "old_sha256": "9ce056fe805b64f4b2e36d84e797b614f02ed983d49d9cef71986ae9e896a4ac",
+        "source_id": "additional-20261102:mdf-a2-abc-junior-direct:34:b2afb8e8dd81:8fe16458",
+        "source_sha256": "b2afb8e8dd81c76ad9758790fca3ccb71ddb300fa414c257676592b983b000e4",
+        "source_file": "/workspace/attachments/5bb0cd0e-4325-43da-9cc0-48931ca1ad04/9782090351958_34_CO_ex32.mp3",
+        "lexical_score": 0.49180327868852464,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 1.54,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 77.312875,
+            "correlation": 0.1496,
+            "source_offset_seconds": 75.772875
+          },
+          {
+            "old_anchor_start": 6.1,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 38.760125,
+            "correlation": 0.151874,
+            "source_offset_seconds": 32.660125
+          },
+          {
+            "old_anchor_start": 10.66,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 60.6535,
+            "correlation": 0.119115,
+            "source_offset_seconds": 49.9935
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 15.2,
+        "source_duration_decoded": 81.502125,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-1.mp3",
@@ -7630,7 +7794,8 @@
       "source_sha256": "396d51730759830622ccf2cfed9c37d973858fdc1a7d39f3a5eb95be4228f00c",
       "lexical_score": 0.5151515151515151,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -7660,7 +7825,47 @@
       "source_duration_decoded": 17.31925,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-1.mp3",
+        "old_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+        "source_id": "additional-20261102:mdf-a2-abc-direct:4:396d51730759:96445c67",
+        "source_sha256": "396d51730759830622ccf2cfed9c37d973858fdc1a7d39f3a5eb95be4228f00c",
+        "source_file": "/workspace/attachments/7f9764af-e18e-4327-bd31-aab88309d142/09035199_004_ACT 1-4.mp3",
+        "lexical_score": 0.5151515151515151,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 3.839375,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 0.383125,
+            "correlation": 0.125401,
+            "source_offset_seconds": -3.45625
+          },
+          {
+            "old_anchor_start": 11.8485,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 1.50725,
+            "correlation": 0.060543,
+            "source_offset_seconds": -10.34125
+          },
+          {
+            "old_anchor_start": 19.857625,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 2.725125,
+            "correlation": 0.097697,
+            "source_offset_seconds": -17.1325
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 26.697125,
+        "source_duration_decoded": 17.31925,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-1.4.mp3",
@@ -8683,7 +8888,8 @@
       "source_sha256": "2163e371959ceb3196bd4e88923c55a27df3f107f762a93020fe7d6b0849d225",
       "lexical_score": 0.5,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -8713,7 +8919,47 @@
       "source_duration_decoded": 17.397625,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-2.mp3",
+        "old_sha256": "503572d3c4d4fdcf18c99aef67396cecb2e7a4dd8553f646fed87f76c273b92e",
+        "source_id": "additional-20261102:mdf-a2-abc-direct:17:2163e371959c:7d404394",
+        "source_sha256": "2163e371959ceb3196bd4e88923c55a27df3f107f762a93020fe7d6b0849d225",
+        "source_file": "/workspace/attachments/93fdf5d7-7280-43c2-a683-b9ec9c04b8d3/09035199_017_ACT 3-5.mp3",
+        "lexical_score": 0.5,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.50325,
+            "anchor_seconds": 1.6775,
+            "source_anchor_start": 2.268375,
+            "correlation": 0.081946,
+            "source_offset_seconds": 1.765125
+          },
+          {
+            "old_anchor_start": 2.51625,
+            "anchor_seconds": 1.6775,
+            "source_anchor_start": 14.447,
+            "correlation": 0.14797,
+            "source_offset_seconds": 11.93075
+          },
+          {
+            "old_anchor_start": 4.52925,
+            "anchor_seconds": 1.6775,
+            "source_anchor_start": 9.5945,
+            "correlation": 0.144652,
+            "source_offset_seconds": 5.06525
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 6.71,
+        "source_duration_decoded": 17.397625,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-3.5.mp3",
@@ -9190,7 +9436,8 @@
       "source_sha256": "b60c1f3cd8b2d765635126fd05c975587727aeba72a007a38a427d1ac70c4981",
       "lexical_score": 0.5714285714285715,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -9220,7 +9467,47 @@
       "source_duration_decoded": 55.327375,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/radio/les-annonces-3.mp3",
+        "old_sha256": "1f81e0411716ad08147d758795181a8cd6d8f925e234b405cf68445ecb689864",
+        "source_id": "additional-20261102:mdf-a2-abc-junior-direct:67:b60c1f3cd8b2:5ab1df2c",
+        "source_sha256": "b60c1f3cd8b2d765635126fd05c975587727aeba72a007a38a427d1ac70c4981",
+        "source_file": "/workspace/attachments/a2241237-d660-47f4-8d6d-63ade6f7bb3a/9782090351958_67_DELF2_ex2.mp3",
+        "lexical_score": 0.5714285714285715,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.57,
+            "anchor_seconds": 1.9,
+            "source_anchor_start": 18.173375,
+            "correlation": 0.364324,
+            "source_offset_seconds": 17.603375
+          },
+          {
+            "old_anchor_start": 2.85,
+            "anchor_seconds": 1.9,
+            "source_anchor_start": 35.766,
+            "correlation": 0.202978,
+            "source_offset_seconds": 32.916
+          },
+          {
+            "old_anchor_start": 5.13,
+            "anchor_seconds": 1.9,
+            "source_anchor_start": 53.011125,
+            "correlation": 0.177562,
+            "source_offset_seconds": 47.881125
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 7.6,
+        "source_duration_decoded": 55.327375,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/radio/les-annonces-a-la-radio-2-1.mp3",
@@ -13147,7 +13434,8 @@
       "source_sha256": "b71ab169c7da8ec8a0bbf26492cf0db76363cb0cb2ea1f90499c37693cd9f2f9",
       "lexical_score": 0.5294117647058824,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -13177,7 +13465,47 @@
       "source_duration_decoded": 42.24,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/scènes courtes/27-loisirs-propositions-aller-au-cinéma.mp3",
+        "old_sha256": "737cc66d1016ede046167d4b7ff7ef4c03221558cb1757b8688489615d4c9bd3",
+        "source_id": "additional-20261102:mdf-a2-abc-junior-direct:45:b71ab169c7da:2c050a28",
+        "source_sha256": "b71ab169c7da8ec8a0bbf26492cf0db76363cb0cb2ea1f90499c37693cd9f2f9",
+        "source_file": "/workspace/attachments/e8bce2d3-d434-44c9-87ca-003be38fd3c0/9782090351958_45_CO_ex43.mp3",
+        "lexical_score": 0.5294117647058824,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.79675,
+            "anchor_seconds": 2.656,
+            "source_anchor_start": 1.396375,
+            "correlation": 0.140191,
+            "source_offset_seconds": 0.599625
+          },
+          {
+            "old_anchor_start": 3.984,
+            "anchor_seconds": 2.656,
+            "source_anchor_start": 1.904125,
+            "correlation": 0.177915,
+            "source_offset_seconds": -2.079875
+          },
+          {
+            "old_anchor_start": 7.171125,
+            "anchor_seconds": 2.656,
+            "source_anchor_start": 4.9885,
+            "correlation": 0.115919,
+            "source_offset_seconds": -2.182625
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 10.624,
+        "source_duration_decoded": 42.24,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/transports/transports-3.mp3",
@@ -14239,7 +14567,8 @@
       "source_sha256": "62f33f0434fe2d3441e236e276992ae1813220a71b20d5addd58659b1127eb65",
       "lexical_score": 0.5454545454545454,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -14269,7 +14598,47 @@
       "source_duration_decoded": 18.39025,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-2.mp3",
+        "old_sha256": "503572d3c4d4fdcf18c99aef67396cecb2e7a4dd8553f646fed87f76c273b92e",
+        "source_id": "additional-20261102:mdf-a2-abc-direct:22:62f33f0434fe:5ed60de9",
+        "source_sha256": "62f33f0434fe2d3441e236e276992ae1813220a71b20d5addd58659b1127eb65",
+        "source_file": "/workspace/attachments/ff88225f-e829-41b2-a718-2a8cc9d70858/09035199_022_ACT 4-4.mp3",
+        "lexical_score": 0.5454545454545454,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.50325,
+            "anchor_seconds": 1.6775,
+            "source_anchor_start": 13.59575,
+            "correlation": 0.058839,
+            "source_offset_seconds": 13.0925
+          },
+          {
+            "old_anchor_start": 2.51625,
+            "anchor_seconds": 1.6775,
+            "source_anchor_start": 15.765125,
+            "correlation": 0.097808,
+            "source_offset_seconds": 13.248875
+          },
+          {
+            "old_anchor_start": 4.52925,
+            "anchor_seconds": 1.6775,
+            "source_anchor_start": 12.0255,
+            "correlation": 0.153664,
+            "source_offset_seconds": 7.49625
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 6.71,
+        "source_duration_decoded": 18.39025,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3",
@@ -14590,7 +14959,8 @@
       "source_sha256": "10b8ddc63993dcee0c0d360e5d6e8f8331fae475d326fd5bcc8fa42cbc0e4480",
       "lexical_score": 0.5,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -14620,7 +14990,47 @@
       "source_duration_decoded": 24.16325,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+        "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+        "source_id": "additional-20261102:mdf-a1-abc-junior:10:10b8ddc63993:efec9f14",
+        "source_sha256": "10b8ddc63993dcee0c0d360e5d6e8f8331fae475d326fd5bcc8fa42cbc0e4480",
+        "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_10_Ex 7-1.mp3",
+        "lexical_score": 0.5,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.0,
+            "anchor_seconds": 0.5,
+            "source_anchor_start": 17.5715,
+            "correlation": 0.241296,
+            "source_offset_seconds": 17.5715
+          },
+          {
+            "old_anchor_start": 0.20275,
+            "anchor_seconds": 0.5,
+            "source_anchor_start": 17.652625,
+            "correlation": 0.214412,
+            "source_offset_seconds": 17.449875
+          },
+          {
+            "old_anchor_start": 0.405625,
+            "anchor_seconds": 0.5,
+            "source_anchor_start": 0.319625,
+            "correlation": 0.212636,
+            "source_offset_seconds": -0.086
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 0.905625,
+        "source_duration_decoded": 24.16325,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/fetes/14-invitation-aller-à-la-montagne.mp3",
@@ -14668,7 +15078,8 @@
       "source_sha256": "ffcde40035ac37171dbf4f1a173423a97baa8914d0efe12484c91d3134a6e342",
       "lexical_score": 0.5,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -14698,7 +15109,47 @@
       "source_duration_decoded": 28.786875,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+        "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+        "source_id": "additional-20261102:mdf-a1-abc-junior:11:ffcde40035ac:5b5d4142",
+        "source_sha256": "ffcde40035ac37171dbf4f1a173423a97baa8914d0efe12484c91d3134a6e342",
+        "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_11_Ex 8-1.mp3",
+        "lexical_score": 0.5,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.0,
+            "anchor_seconds": 0.5,
+            "source_anchor_start": 12.014875,
+            "correlation": 0.208198,
+            "source_offset_seconds": 12.014875
+          },
+          {
+            "old_anchor_start": 0.20275,
+            "anchor_seconds": 0.5,
+            "source_anchor_start": 12.217625,
+            "correlation": 0.264234,
+            "source_offset_seconds": 12.014875
+          },
+          {
+            "old_anchor_start": 0.405625,
+            "anchor_seconds": 0.5,
+            "source_anchor_start": 1.426875,
+            "correlation": 0.23611,
+            "source_offset_seconds": 1.02125
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 0.905625,
+        "source_duration_decoded": 28.786875,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/loisirs/02-loisirs-cours-de-dessin.mp3",
@@ -16845,7 +17296,8 @@
       "source_sha256": "537bc0f5109c13e6eacc9050ec76256bc6670f320c6970f134fedc913bc19fb8",
       "lexical_score": 0.5,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -16875,7 +17327,47 @@
       "source_duration_decoded": 23.82375,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/radio/les-annonces-3.mp3",
+        "old_sha256": "1f81e0411716ad08147d758795181a8cd6d8f925e234b405cf68445ecb689864",
+        "source_id": "additional-20261102:mdf-a1-abc-junior:51:537bc0f5109c:3c68a97c",
+        "source_sha256": "537bc0f5109c13e6eacc9050ec76256bc6670f320c6970f134fedc913bc19fb8",
+        "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_51_Epreuve blanche Ex 2.mp3",
+        "lexical_score": 0.5,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 0.57,
+            "anchor_seconds": 1.9,
+            "source_anchor_start": 2.757625,
+            "correlation": 0.100868,
+            "source_offset_seconds": 2.187625
+          },
+          {
+            "old_anchor_start": 2.85,
+            "anchor_seconds": 1.9,
+            "source_anchor_start": 10.177375,
+            "correlation": 0.106412,
+            "source_offset_seconds": 7.327375
+          },
+          {
+            "old_anchor_start": 5.13,
+            "anchor_seconds": 1.9,
+            "source_anchor_start": 3.50475,
+            "correlation": 0.112972,
+            "source_offset_seconds": -1.62525
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 7.6,
+        "source_duration_decoded": 23.82375,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_01-1.mp3",
@@ -17040,7 +17532,8 @@
       "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
       "lexical_score": 0.6666666666666666,
       "status": "signal_not_confirmed",
-      "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
       "sample_rate": 8000,
       "anchors": [
         {
@@ -17070,7 +17563,47 @@
       "source_duration_decoded": 62.093125,
       "source_offset_seconds": null,
       "listening_performed": false,
-      "clean_boundaries_validated": false
+      "clean_boundaries_validated": false,
+      "previous_comparison_preserved": {
+        "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+        "old_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+        "source_id": "additional-20261102:mdf-a1-abc-junior:58:0e9049761456:ff1d6abf",
+        "source_sha256": "0e9049761456e21a61568a37b8c4c398f00e3eefaa3035bb89f0abe9a6e5d5de",
+        "source_file": "/workspace/work/tcf-audio-additional-20261102-work/incoming/a1/mdf-a1-abc-junior/MDF_A1_ABC-DELF-Junior-Scolaire_AUDIO/09035276_58_Delf blanc 1- Ex 4.mp3",
+        "lexical_score": 0.6666666666666666,
+        "status": "signal_not_confirmed",
+        "method": "three separated 8kHz PCM waveform anchors, normalized FFT correlation",
+        "sample_rate": 8000,
+        "anchors": [
+          {
+            "old_anchor_start": 2.84675,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 26.522375,
+            "correlation": 0.140918,
+            "source_offset_seconds": 23.675625
+          },
+          {
+            "old_anchor_start": 9.366875,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 50.024625,
+            "correlation": 0.193832,
+            "source_offset_seconds": 40.65775
+          },
+          {
+            "old_anchor_start": 15.887,
+            "anchor_seconds": 3.0,
+            "source_anchor_start": 11.562,
+            "correlation": 0.136919,
+            "source_offset_seconds": -4.325
+          }
+        ],
+        "offset_spread_seconds": null,
+        "old_duration_decoded": 21.733875,
+        "source_duration_decoded": 62.093125,
+        "source_offset_seconds": null,
+        "listening_performed": false,
+        "clean_boundaries_validated": false
+      }
     },
     {
       "old_ref": "/lib/audio/tcf/co/ecole/04-école-oublier-le-livre-de-math.mp3",
@@ -21064,6 +21597,646 @@
       "offset_spread_seconds": null,
       "old_duration_decoded": 7.8,
       "source_duration_decoded": 86.0735,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
+      "old_sha256": "4971f9e59126676947040c79ef0f1fb97278027e68fdf961aef19a52956c0efe",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:35:95941d7f62e0:b91ccce7",
+      "source_sha256": "95941d7f62e07b95ea0b2855e2e327661a7a4f2ec14624f4855bc475225fc6ca",
+      "lexical_score": 0.4000000000000001,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.50775,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 54.980625,
+          "correlation": 0.274379,
+          "source_offset_seconds": 54.472875
+        },
+        {
+          "old_anchor_start": 2.53875,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 86.730125,
+          "correlation": 0.403119,
+          "source_offset_seconds": 84.191375
+        },
+        {
+          "old_anchor_start": 4.56975,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 102.136,
+          "correlation": 0.292203,
+          "source_offset_seconds": 97.56625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.77,
+      "source_duration_decoded": 129.88075,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-5.mp3",
+      "old_sha256": "19bc08ab4b30070466454ed725bb81d509a6497c7476b12e047b8bf375c2e2f2",
+      "source_id": "additional-20261102:mdf-b1-abc-junior-direct:36:a79a2771f57e:7ada9500",
+      "source_sha256": "a79a2771f57e31d302f37b97afcd1936e161e21de5d3eaeeb48a1d93bf785f65",
+      "lexical_score": 0.4444444444444445,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.39225,
+          "anchor_seconds": 1.3075,
+          "source_anchor_start": 73.302,
+          "correlation": 0.282605,
+          "source_offset_seconds": 72.90975
+        },
+        {
+          "old_anchor_start": 1.96125,
+          "anchor_seconds": 1.3075,
+          "source_anchor_start": 0.52475,
+          "correlation": 0.175246,
+          "source_offset_seconds": -1.4365
+        },
+        {
+          "old_anchor_start": 3.53025,
+          "anchor_seconds": 1.3075,
+          "source_anchor_start": 96.19775,
+          "correlation": 0.283195,
+          "source_offset_seconds": 92.6675
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 5.23,
+      "source_duration_decoded": 185.0515,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/mesdames-messieurs-votre-attention-1.mp3",
+      "old_sha256": "3a12f2cfec8efca40ede06449ce89c6a5ed7b5146e063d2ad01759b1b2d4622a",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:13:9668d83aa801:1ebc2d84",
+      "source_sha256": "9668d83aa80149e04fc2fe44fbad5ddc7f53030a4aa58a5965bee26ce54c0bd9",
+      "lexical_score": 0.41379310344827586,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 3.839375,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 1.1995,
+          "correlation": 0.128631,
+          "source_offset_seconds": -2.639875
+        },
+        {
+          "old_anchor_start": 11.8485,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 5.1375,
+          "correlation": 0.071827,
+          "source_offset_seconds": -6.711
+        },
+        {
+          "old_anchor_start": 19.857625,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 9.606625,
+          "correlation": 0.080153,
+          "source_offset_seconds": -10.251
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 26.697125,
+      "source_duration_decoded": 15.2555,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-publiques-4-3.mp3",
+      "old_sha256": "c67ee9f6e21d47ab67e76e021c690e42fb913146fa1f3316937c9e2ee30b3177",
+      "source_id": "additional-20261102:mdf-a2-abc-direct:4:396d51730759:96445c67",
+      "source_sha256": "396d51730759830622ccf2cfed9c37d973858fdc1a7d39f3a5eb95be4228f00c",
+      "lexical_score": 0.4262295081967213,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 1.88,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 2.263125,
+          "correlation": 0.119625,
+          "source_offset_seconds": 0.383125
+        },
+        {
+          "old_anchor_start": 6.95,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 1.30975,
+          "correlation": 0.064692,
+          "source_offset_seconds": -5.64025
+        },
+        {
+          "old_anchor_start": 12.02,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 1.993375,
+          "correlation": 0.088597,
+          "source_offset_seconds": -10.026625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 16.9,
+      "source_duration_decoded": 17.31925,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
+      "old_sha256": "4971f9e59126676947040c79ef0f1fb97278027e68fdf961aef19a52956c0efe",
+      "source_id": "additional-20261102:mdf-b1-abc-junior-direct:11:4d0f035a1c11:9e9c0e2f",
+      "source_sha256": "4d0f035a1c11d71620f86600935b773bf9e6161aaa86074a1b9f32404c909cf9",
+      "lexical_score": 0.4000000000000001,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.50775,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 27.135,
+          "correlation": 0.242814,
+          "source_offset_seconds": 26.62725
+        },
+        {
+          "old_anchor_start": 2.53875,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 1.29375,
+          "correlation": 0.210925,
+          "source_offset_seconds": -1.245
+        },
+        {
+          "old_anchor_start": 4.56975,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 7.0065,
+          "correlation": 0.180868,
+          "source_offset_seconds": 2.43675
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.77,
+      "source_duration_decoded": 125.231,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
+      "old_sha256": "4971f9e59126676947040c79ef0f1fb97278027e68fdf961aef19a52956c0efe",
+      "source_id": "additional-20261102:mdf-a2-abc-junior-direct:22:7f8bd4692577:fa483cc4",
+      "source_sha256": "7f8bd4692577826827edeec4d363321857814712848483a9bda7dfe208597055",
+      "lexical_score": 0.4000000000000001,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.50775,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 46.032875,
+          "correlation": 0.40919,
+          "source_offset_seconds": 45.525125
+        },
+        {
+          "old_anchor_start": 2.53875,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 12.037625,
+          "correlation": 0.172053,
+          "source_offset_seconds": 9.498875
+        },
+        {
+          "old_anchor_start": 4.56975,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 48.7095,
+          "correlation": 0.292764,
+          "source_offset_seconds": 44.13975
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.77,
+      "source_duration_decoded": 100.388625,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/radio/les-annonces-4.mp3",
+      "old_sha256": "b0813f887ea109d1786ee437ce18653cbb20e90d9734ff96f178d449f9fc4c03",
+      "source_id": "additional-20261102:mdf-b1-abc-direct:5:ec5107c4901f:5f042470",
+      "source_sha256": "ec5107c4901f54898db954ed2e261f8827135743c9412ebd9b3ab7d9f78c7394",
+      "lexical_score": 0.4210526315789474,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.69,
+          "anchor_seconds": 2.3,
+          "source_anchor_start": 3.566,
+          "correlation": 0.286798,
+          "source_offset_seconds": 2.876
+        },
+        {
+          "old_anchor_start": 3.45,
+          "anchor_seconds": 2.3,
+          "source_anchor_start": 82.861125,
+          "correlation": 0.190958,
+          "source_offset_seconds": 79.411125
+        },
+        {
+          "old_anchor_start": 6.21,
+          "anchor_seconds": 2.3,
+          "source_anchor_start": 88.92925,
+          "correlation": 0.108315,
+          "source_offset_seconds": 82.71925
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 9.2,
+      "source_duration_decoded": 108.356,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+      "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:12:47a202e9daaf:5debf9c2",
+      "source_sha256": "47a202e9daafa7ec1cff6b001d001f86de04808fc2047b2890248a11e5c9c94c",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.0,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 16.40275,
+          "correlation": 0.260845,
+          "source_offset_seconds": 16.40275
+        },
+        {
+          "old_anchor_start": 0.20275,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 6.455,
+          "correlation": 0.287417,
+          "source_offset_seconds": 6.25225
+        },
+        {
+          "old_anchor_start": 0.405625,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 0.4095,
+          "correlation": 0.25913,
+          "source_offset_seconds": 0.003875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 0.905625,
+      "source_duration_decoded": 20.976375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+      "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:13:a78f72feb28d:f7bfae37",
+      "source_sha256": "a78f72feb28d65a3ff42ece2b656d71e42f5a8396a21e888490a5d31b739cb96",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.0,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 20.130875,
+          "correlation": 0.30631,
+          "source_offset_seconds": 20.130875
+        },
+        {
+          "old_anchor_start": 0.20275,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 20.333625,
+          "correlation": 0.386452,
+          "source_offset_seconds": 20.130875
+        },
+        {
+          "old_anchor_start": 0.405625,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 13.365625,
+          "correlation": 0.219979,
+          "source_offset_seconds": 12.96
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 0.905625,
+      "source_duration_decoded": 23.1445,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+      "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:14:ef63fbcea6cb:770d4c4b",
+      "source_sha256": "ef63fbcea6cb59b14fd87fbfe02698ab61f7675212e888a273b0d053fb735954",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.0,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 6.914875,
+          "correlation": 0.206252,
+          "source_offset_seconds": 6.914875
+        },
+        {
+          "old_anchor_start": 0.20275,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 21.7255,
+          "correlation": 0.386777,
+          "source_offset_seconds": 21.52275
+        },
+        {
+          "old_anchor_start": 0.405625,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 0.352,
+          "correlation": 0.26704,
+          "source_offset_seconds": -0.053625
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 0.905625,
+      "source_duration_decoded": 23.745375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/les-objets-du-quotidien.mp3",
+      "old_sha256": "b6319aa7e4877a73e57629c1674ddd70b191a4cc1b9f70249b97e779f49f332e",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:15:176a5458e8ca:757db70b",
+      "source_sha256": "176a5458e8ca15ede36827b80503f38125fd6723d480ee05d91a9b543707d501",
+      "lexical_score": 0.5,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.0,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 14.45625,
+          "correlation": 0.183199,
+          "source_offset_seconds": 14.45625
+        },
+        {
+          "old_anchor_start": 0.20275,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 14.659,
+          "correlation": 0.226045,
+          "source_offset_seconds": 14.45625
+        },
+        {
+          "old_anchor_start": 0.405625,
+          "anchor_seconds": 0.5,
+          "source_anchor_start": 9.640125,
+          "correlation": 0.212027,
+          "source_offset_seconds": 9.2345
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 0.905625,
+      "source_duration_decoded": 22.256375,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/scènes courtes/28-loisirs-demande-disponibilité-place-de-concert.mp3",
+      "old_sha256": "2037e0e2da920e0c4b4d7dff0834e58a2f189770bac200fac6dd041b3ab55420",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:34:85242a1a610f:6c20666d",
+      "source_sha256": "85242a1a610fab1e282e26a2729379a8f2cc27dafabcc171c188e8734ac5e1ec",
+      "lexical_score": 0.4444444444444445,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.5135,
+          "anchor_seconds": 1.712,
+          "source_anchor_start": 20.56525,
+          "correlation": 0.128973,
+          "source_offset_seconds": 20.05175
+        },
+        {
+          "old_anchor_start": 2.568,
+          "anchor_seconds": 1.712,
+          "source_anchor_start": 30.504875,
+          "correlation": 0.229069,
+          "source_offset_seconds": 27.936875
+        },
+        {
+          "old_anchor_start": 4.622375,
+          "anchor_seconds": 1.712,
+          "source_anchor_start": 2.185,
+          "correlation": 0.227433,
+          "source_offset_seconds": -2.437375
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.848,
+      "source_duration_decoded": 36.96325,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "old_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:53:00eacc4c3739:0accd643",
+      "source_sha256": "00eacc4c3739b064c1c41f932c3effad51244b78b6472b94c34e513dc1fd38b0",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.84675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 11.039125,
+          "correlation": 0.095983,
+          "source_offset_seconds": 8.192375
+        },
+        {
+          "old_anchor_start": 9.366875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 35.165,
+          "correlation": 0.165543,
+          "source_offset_seconds": 25.798125
+        },
+        {
+          "old_anchor_start": 15.887,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 21.0395,
+          "correlation": 0.093771,
+          "source_offset_seconds": 5.1525
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 21.733875,
+      "source_duration_decoded": 56.26775,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-objet-4-1.mp3",
+      "old_sha256": "4971f9e59126676947040c79ef0f1fb97278027e68fdf961aef19a52956c0efe",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:61:4562ce41408e:3494ba62",
+      "source_sha256": "4562ce41408ece5f89b4c7ef570e37a7e97c92e0446c4b41f42cf118b5c2a710",
+      "lexical_score": 0.4000000000000001,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 0.50775,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 3.3835,
+          "correlation": 0.222382,
+          "source_offset_seconds": 2.87575
+        },
+        {
+          "old_anchor_start": 2.53875,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 11.47875,
+          "correlation": 0.118003,
+          "source_offset_seconds": 8.94
+        },
+        {
+          "old_anchor_start": 4.56975,
+          "anchor_seconds": 1.6925,
+          "source_anchor_start": 11.9005,
+          "correlation": 0.233297,
+          "source_offset_seconds": 7.33075
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 6.77,
+      "source_duration_decoded": 22.33475,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "old_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:62:49e69d6e5e7f:b4e90d78",
+      "source_sha256": "49e69d6e5e7f1ad02fd4093c610c815a9f0cd625d294f42bf850c4f95f051785",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.84675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 26.36675,
+          "correlation": 0.087342,
+          "source_offset_seconds": 23.52
+        },
+        {
+          "old_anchor_start": 9.366875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 45.003375,
+          "correlation": 0.178135,
+          "source_offset_seconds": 35.6365
+        },
+        {
+          "old_anchor_start": 15.887,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 42.985875,
+          "correlation": 0.127193,
+          "source_offset_seconds": 27.098875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 21.733875,
+      "source_duration_decoded": 49.63275,
+      "source_offset_seconds": null,
+      "listening_performed": false,
+      "clean_boundaries_validated": false
+    },
+    {
+      "old_ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-voudrais-tickets-1.mp3",
+      "old_sha256": "a0ba162dc6a273796be6f77a8eb1c3c055eb8e5ad27366e2b39e57e9db23508b",
+      "source_id": "additional-20261102:mdf-a1-abc-junior:67:0f32d1f3511b:079d529f",
+      "source_sha256": "0f32d1f3511bd0b4fa2c948360659d83e41f8c963ee11a2262080ee74ce087eb",
+      "lexical_score": 0.6666666666666666,
+      "status": "signal_not_confirmed",
+      "method": "three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation",
+      "comparison_version": 2,
+      "sample_rate": 8000,
+      "anchors": [
+        {
+          "old_anchor_start": 2.84675,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 18.364875,
+          "correlation": 0.104509,
+          "source_offset_seconds": 15.518125
+        },
+        {
+          "old_anchor_start": 9.366875,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 24.436375,
+          "correlation": 0.164442,
+          "source_offset_seconds": 15.0695
+        },
+        {
+          "old_anchor_start": 15.887,
+          "anchor_seconds": 3.0,
+          "source_anchor_start": 33.674875,
+          "correlation": 0.11564,
+          "source_offset_seconds": 17.787875
+        }
+      ],
+      "offset_spread_seconds": null,
+      "old_duration_decoded": 21.733875,
+      "source_duration_decoded": 44.173125,
       "source_offset_seconds": null,
       "listening_performed": false,
       "clean_boundaries_validated": false

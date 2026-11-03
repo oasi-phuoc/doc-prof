@@ -25271,6 +25271,34 @@
           }
         },
         "audio": 4
+      },
+      {
+        "enonce": "Quel événement la personne annonce-t-elle ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Un mariage",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Un anniversaire"
+          },
+          {
+            "id": "c",
+            "texte": "Un départ à la retraite"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Un mariage"
+          }
+        },
+        "audio": 3
       }
     ],
     "consigne_supplementaire": null,
@@ -35633,6 +35661,34 @@
           }
         },
         "audio": 3
+      },
+      {
+        "enonce": "Que répond Élisa à la demande de DVD ?",
+        "type_reponse": "qcm_texte",
+        "points": 1,
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "texte": "Elle refuse de prêter le DVD",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "texte": "Elle accepte de prêter le DVD"
+          },
+          {
+            "id": "c",
+            "texte": "Elle propose de vendre le DVD"
+          }
+        ],
+        "formes": {
+          "lignes": {
+            "nb_lignes": 1,
+            "reponse_modele": "Elle refuse de prêter le DVD"
+          }
+        },
+        "audio": 1
       }
     ],
     "consigne_supplementaire": null,

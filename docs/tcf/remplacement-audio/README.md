@@ -14,10 +14,15 @@ Les neuf premiers réalignements sont conservés. Des alignements DTW supplémen
 
 **Aucune écoute réelle n’est déclarée.** Les quatre fenêtres de frontière et les fichiers complets sont prêts à contrôler. Il reste à vérifier les premiers et derniers mots, les consignes encore éventuellement audibles, les transcriptions, les noms, les nombres et les réponses des exercices. Les champs d’attestation restent vierges. Les brouillons ASR contenant des passages mal reconnus ou en anglais sont signalés et ne constituent pas des transcriptions définitives.
 
+Le [contrôle de structure et de couverture des questions](questions-a-controler.json) porte sur 4 026 questions de 537 exercices utilisant les 886 supports reliés. Elles présentent une formulation interrogative, trois choix et une seule réponse indiquée comme correcte. Trois banques ont été [complétées à quatre questions](questions-completees.json), avec une information explicite dans leurs transcriptions. Il reste 21 banques sous le minimum demandé, dont vingt associées à des phrases isolées ou questions d’entraînement très courtes. Leur contenu est à enrichir ou regrouper. Les alertes lexicales orientent la relecture des réponses ; les synonymes et erreurs d’ASR peuvent les déclencher. La justesse sémantique de l’ensemble reste à contrôler sur les sources.
+
+Le [contrôle global des banques actuelles](../../../scripts/tcf-bank-audit.json) recense 9 466 questions, avec 107 pools CO et trois supports CE encore sous leur minimum. Il inclut les supports dont le remplacement reste à préparer.
+
 ## Registres
 
 - [Avancement des deux lots](progression-unifiee.json) et [liaisons préparées unifiées](liaisons-unifiees.json).
 - [Corrections textuelles des limites](corrections-de-limites.json).
+- [Questions complétées](questions-completees.json) et [questions à contrôler](questions-a-controler.json).
 - [Reprises des 111 passages et neuf premiers réalignements](reprises-et-realignements.json).
 - [État du premier lot](etat.json), [sources](sources.json), [transcriptions horodatées](transcriptions.json), [extraits](decoupes.json) et [assemblages](assemblages.json).
 - [Correspondances](correspondances.json), [CSV](remplacements-proposes.csv), [preuves de signal](preuves-signal.json), [candidats préparés](remplacements-prepares.json) et [comparaison des transcriptions](double-transcription.json).
