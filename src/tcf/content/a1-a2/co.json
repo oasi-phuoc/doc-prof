@@ -84331,6 +84331,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À l'accueil"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "correct": true,
+                "image": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp"
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+              }
+            ]
           }
         }
       },

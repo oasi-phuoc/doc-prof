@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 117,
-    "pending_question_candidates": 306,
+    "activated_planned_questions": 125,
+    "pending_question_candidates": 298,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 184,
-    "remaining_original_concepts": 557,
-    "new_co_images_this_batch": 278,
+    "original_concepts_now_generated_or_reused": 199,
+    "remaining_original_concepts": 542,
+    "new_co_images_this_batch": 302,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 158,
-    "sources_with_new_active_question_or_scene": 125,
+    "sources_with_pending_question_candidates": 152,
+    "sources_with_new_active_question_or_scene": 131,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 278,
+    "co_images_style_aligned": 302,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -54,7 +54,8 @@
     "Format paysage exact 4:3 obligatoire, 1280×960 à l’export. Priorité aux questions A1 et A2.",
     "Même style dessiné CE/CO ; ni montant, date, jour ni mois dans les images. Une action ou une relation doit être réellement visible.",
     "Les sources sans référence de banque déjà liée restent à relier à leurs exercices avant de choisir leurs illustrations.",
-    "Les rapprochements de signal et les relectures de transcriptions ne sont pas des écoutes certifiées."
+    "Les rapprochements de signal et les relectures de transcriptions ne sont pas des écoutes certifiées.",
+    "Ordre explicite demandé : illustrations des 306 questions restantes, puis rapprochement des 432 références audio, puis remplacement des 1906 usages du vocabulaire. Les variantes dont le lien audio manque ou présente un écart restent préparées en attente de validation audio."
   ],
   "sources": [
     {
@@ -1995,22 +1996,21 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_23-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_23-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "delf-a1-2022-co-ex2-23",
+          "question": 1
+        },
         {
           "exercise": "delf-a1-2022-co-ex2-23",
           "question": 7
         }
       ],
-      "new_active_visual_questions": [
-        {
-          "exercise": "delf-a1-2022-co-ex2-23",
-          "question": 1
-        }
-      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -2048,17 +2048,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex2-25",
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -3948,17 +3948,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/radio/a-la-gare.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-tpb-co-2",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10395,17 +10395,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/madame-bienvenue-train-1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s39-co-3",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10556,21 +10556,22 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s53-co-1",
+          "question": 5
+        }
+      ],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a1-s53-co-1",
           "question": 3
         },
         {
           "exercise": "tcf-ss-a1-s53-co-1",
           "question": 4
-        },
-        {
-          "exercise": "tcf-ss-a1-s53-co-1",
-          "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10583,17 +10584,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/transports/mesdames-messieurs-l-embarquement-vol.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s53-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -11876,17 +11877,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/15-magasin-annonce-clé-retrouvé.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-cles-retrouvees-co-2",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -17948,7 +17949,7 @@
           "asset": "1ae59e877906"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:007:0f382a81844d"
       ],
@@ -17959,6 +17960,11 @@
           "candidate_cut_id": "piste_a1-007-0f382a81844d-d1",
           "transcription": "Mesdames Messieurs, votre attention s'il vous plaît. Le train TGV numéro 8756 à destination de Lorient partira à 9h06 quai numéro 7. Le bar se trouve dans la voiture 15. Vous pouvez acheter des sandwiches et des boissons. Avant de monter dans le train, préparer votre billet. Merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-0906-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0916-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1006-dessinee.webp"
       ]
     },
     {
@@ -20918,7 +20924,7 @@
           "asset": "784c2a82bf0c"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:24:e98633261bb0:66d6324f"
       ],
@@ -20929,6 +20935,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-24-e98633261bb0-66d6324f-d1",
           "transcription": "Radio France Bonjour Il est 11h17 Aujourd'hui il fait beau en France Le soleil brille La température est de 20 degrés dans le nord et 24 degrés dans le sud Mais dans l'ouest de la France, il y a des nuages et beaucoup de vent. Et la température est fraîche. 18 degrés seulement en Bretagne. Bon journée."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1117-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1107-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1017-dessinee.webp"
       ]
     },
     {
@@ -21814,7 +21825,7 @@
           "asset": "c3c9dfd4f2ed"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:32:f71ff141da9e:82fae981"
       ],
@@ -21825,6 +21836,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-32-f71ff141da9e-82fae981-d1",
           "transcription": "Mesdames, Messieurs, le train numéro 864 à destination de Nantes, départ prévu à 14h27, est annulé. Vous pouvez prendre le train suivant à 16h18, voie numéro 6. Si vous voulez. Vous pouvez demander un remboursement de votre billet à l'accueil de la gare. La SNCF vous présente ses excuses et vous remercie pour votre compréhension."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1427-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1618-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1418-dessinee.webp"
       ]
     },
     {
@@ -21856,7 +21872,7 @@
           "asset": "de240bf51293"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:32:f71ff141da9e:82fae981"
       ],
@@ -21867,6 +21883,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-32-f71ff141da9e-82fae981-d1",
           "transcription": "Mesdames, Messieurs, le train numéro 864 à destination de Nantes, départ prévu à 14h27, est annulé. Vous pouvez prendre le train suivant à 16h18, voie numéro 6. Si vous voulez. Vous pouvez demander un remboursement de votre billet à l'accueil de la gare. La SNCF vous présente ses excuses et vous remercie pour votre compréhension."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1618-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1427-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1627-dessinee.webp"
       ]
     },
     {
@@ -21940,7 +21961,7 @@
           "asset": "222ab72a131b"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:33:fb6104e10980:026ec85a"
       ],
@@ -21951,6 +21972,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-33-fb6104e10980-026ec85a-d1",
           "transcription": "Mesdames, Messieurs, l'embarquement du vol Air France numéro AF717 commence dans 15 minutes. Ce vol est à destination de Paris. Il part à 8h17. Il dure environ 2h20. Merci de préparer votre billet et votre passeport. Les passagers qui voyagent avec des enfants peuvent embarquer maintenant. Merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-0817-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0807-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0847-dessinee.webp"
       ]
     },
     {
@@ -23633,7 +23659,7 @@
           "asset": "c4a1f4f70317"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:023:823660913714"
       ],
@@ -23644,6 +23670,11 @@
           "candidate_cut_id": "delf_a1_2022-023-823660913714-d3",
           "transcription": "Cher clients, rendez-vous à l'entrée du magasin pour découvrir nos promotions spéciales sur tous nos produits. Ne partez pas! Rendez-vous à l'entrée!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp"
       ]
     },
     {
@@ -23722,7 +23753,7 @@
           "asset": "50d1b470de6a"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:025:f51720efd4b0"
       ],
@@ -23733,6 +23764,11 @@
           "candidate_cut_id": "delf_a1_2022-025-f51720efd4b0-d3",
           "transcription": "Mesdames, Messieurs, votre attention s'il vous plaît. Le train TGV 1002 à destination de Rennes partira à 9h03."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-0903-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1003-dessinee.webp"
       ]
     },
     {
@@ -31854,7 +31890,7 @@
           "asset": "b539ebfaf403"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:30:d6ab3c10c7c8:3c74436b"
       ],
@@ -31865,6 +31901,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-30-d6ab3c10c7c8-3c74436b-d1",
           "transcription": "Mesdames, Messieurs, votre attention s'il vous plaît. Le personnel du magasin a trouvé des clés. Merci à leur propriétaire de venir les récupérer à l'accueil avant la fermeture."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ]
     },
     {
@@ -34170,7 +34211,7 @@
       "label": "14 h 18",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c3c9dfd4f2ed.webp",
       "prompt": "Horloge analogique montrant exactement 14 h 18, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-1",
@@ -34178,8 +34219,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1418-dessinee.webp",
+      "sha256": "7ed5b3e9550019f067f4c5ddfd1f391c5c59962508fa73af68ba1a101982a885",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 14:18, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "582f807f7876",
@@ -35782,7 +35828,7 @@
       "label": "10 h 03",
       "path_after_generation": "/lib/images/tcf/qcm-audit/50d1b470de6a.webp",
       "prompt": "Horloge analogique montrant exactement 10 h 03, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-25",
@@ -35790,15 +35836,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1003-dessinee.webp",
+      "sha256": "9eb5d9417085cea514ad337f6234f45991432b56aef46d6a5a50a7827953e37a",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 10:03, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1ae59e877906",
       "label": "À 10 h 06",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1ae59e877906.webp",
       "prompt": "Horloge analogique montrant exactement 10 h 06, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-2",
@@ -35806,8 +35857,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1006-dessinee.webp",
+      "sha256": "9d677eabcebf1f589d2c5a92703e003fb675a551f21ca32b6d7938d182c430e2",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 10:06, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "854cade7fbc7",
@@ -36087,7 +36143,7 @@
       "label": "9 h 03",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4af2ac685690.webp",
       "prompt": "Horloge analogique montrant exactement 09 h 03, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-25",
@@ -36095,8 +36151,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0903-dessinee.webp",
+      "sha256": "257cea4ff1e7f509d951929e8c1ae11e133c062fe3566e81d5cb5e336869f1f5",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 09:03, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4efd9ebcfdf9",
@@ -37224,7 +37285,7 @@
       "label": "À 9 h 06",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e802c3136a5f.webp",
       "prompt": "Horloge analogique montrant exactement 09 h 06, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-2",
@@ -37237,8 +37298,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0906-dessinee.webp",
+      "sha256": "ec59e928a4d64f704a6ccf1141bb482cb815cbbdfa7a6bd5161f6eb7ce2b4032",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 09:06, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4a68246d2aef",
@@ -37468,7 +37534,7 @@
       "label": "14 h 27",
       "path_after_generation": "/lib/images/tcf/qcm-audit/847290677be0.webp",
       "prompt": "Horloge analogique montrant exactement 14 h 27, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-1",
@@ -37481,8 +37547,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1427-dessinee.webp",
+      "sha256": "ac9fbbd4e3baa85337e07854212b889d15f8c5bb4ed246ef2eacebc3fe854724",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 14:27, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "824ee7aa1e22",
@@ -38147,7 +38218,7 @@
       "label": "À 9 h 16",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b00433f344ad.webp",
       "prompt": "Horloge analogique montrant exactement 09 h 16, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-2",
@@ -38155,8 +38226,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0916-dessinee.webp",
+      "sha256": "faa15d479875677d78c79c80c15d9e3c7b655e8faf6e98ce70df05660429fe51",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 09:16, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ecfb6029a38c",
@@ -41273,7 +41349,7 @@
       "label": "16 h 27",
       "path_after_generation": "/lib/images/tcf/qcm-audit/de240bf51293.webp",
       "prompt": "Horloge analogique montrant exactement 16 h 27, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-1",
@@ -41281,8 +41357,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1627-dessinee.webp",
+      "sha256": "47eef9caa075012856c686e1610d1915d335eab5e086c1d204401a6ab8180fb9",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 16:27, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7fc758bcecd9",
@@ -41748,7 +41829,7 @@
       "label": "10 h 17",
       "path_after_generation": "/lib/images/tcf/qcm-audit/784c2a82bf0c.webp",
       "prompt": "Horloge analogique montrant exactement 10 h 17, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s39-co-3",
@@ -41756,8 +41837,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1017-dessinee.webp",
+      "sha256": "fc56d07627ab3323322f4fc2c914542be23a499853d2a21460a35abafd0f640b",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 10:17, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7594233a027f",
@@ -41854,7 +41940,7 @@
       "label": "11 h 17",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0c8bf5e768b8.webp",
       "prompt": "Horloge analogique montrant exactement 11 h 17, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s39-co-3",
@@ -41862,8 +41948,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1117-dessinee.webp",
+      "sha256": "ba633fe51730e5e9153aa38c890cbbc1d65420714bfabd69dfd747606233d3e4",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 11:17, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0ed88269b484",
@@ -43501,7 +43592,7 @@
       "label": "11 h 07",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0da0a3643f1b.webp",
       "prompt": "Horloge analogique montrant exactement 11 h 07, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s39-co-3",
@@ -43509,8 +43600,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1107-dessinee.webp",
+      "sha256": "42957cd86af22d019d415caa9421fbcc8be835574088d40a66e42941b32acc92",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 11:07, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a5e7da9881ab",
@@ -44741,7 +44837,7 @@
       "label": "8 h 07",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fa93dd8416d6.webp",
       "prompt": "Horloge analogique montrant exactement 08 h 07, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-2",
@@ -44749,8 +44845,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0807-dessinee.webp",
+      "sha256": "f6cad3ef1dc22bf39fc294f370587e00221f858694618e72dda3974a45aa74fa",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 08:07, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d7cd71fc768f",
@@ -46209,7 +46310,7 @@
       "label": "8 h 17",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c0b1510106d7.webp",
       "prompt": "Horloge analogique montrant exactement 08 h 17, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-2",
@@ -46217,8 +46318,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0817-dessinee.webp",
+      "sha256": "31ea8439b15d6697ccecbc23eb45d6b175781183d180d316e80472621185343d",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 08:17, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f7e209d1e226",
@@ -46273,7 +46379,7 @@
       "label": "8 h 47",
       "path_after_generation": "/lib/images/tcf/qcm-audit/222ab72a131b.webp",
       "prompt": "Horloge analogique montrant exactement 08 h 47, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-2",
@@ -46281,8 +46387,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0847-dessinee.webp",
+      "sha256": "e1a774c08840a96c64d65d5a857b4303ef194645163d7920e8f0c00f5c68c770",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 08:47, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "766102c743b5",
@@ -47593,7 +47704,7 @@
       "label": "16 h 18",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0891ffabd506.webp",
       "prompt": "Horloge analogique montrant exactement 16 h 18, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-1",
@@ -47606,26 +47717,37 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1618-dessinee.webp",
+      "sha256": "800c743b285aabe8926e3dc7bd34e3ac6d0316afccb5cc0d94ef03ecca29989c",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 16:18, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     }
   ],
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 278,
+    "reviewed_co_images": 302,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 337,
+    "reviewed_total_images": 361,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 326,
+    "already_aligned": 350,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 19
+    "new_images_compared_to_reference": 43
   },
-  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11"
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "workflow_order": [
+    "images_for_remaining_306_questions",
+    "match_remaining_432_audio_references",
+    "replace_remaining_1906_vocabulary_image_occurrences"
+  ],
+  "remaining_306_question_plan": "images-306-suivi.json"
 }
