@@ -31,16 +31,16 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 36,
-    "pending_question_candidates": 387,
+    "activated_planned_questions": 51,
+    "pending_question_candidates": 372,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 75,
-    "remaining_original_concepts": 666,
-    "new_co_images_this_batch": 103,
+    "original_concepts_now_generated_or_reused": 96,
+    "remaining_original_concepts": 645,
+    "new_co_images_this_batch": 137,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 222,
-    "sources_with_new_active_question_or_scene": 43,
+    "sources_with_pending_question_candidates": 209,
+    "sources_with_new_active_question_or_scene": 63,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432
   },
@@ -225,17 +225,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/fetes/14-invitation-aller-à-la-montagne.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s9-co-4",
           "question": 7
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -446,17 +446,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/fetes/15-invitation-sortie-avec-l-école.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s8-co-4",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -473,17 +473,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ssx-a1-objet-18-co-1",
-          "question": 2
-        },
-        {
-          "exercise": "tcf-ssx-a1-objet-18-co-1",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ssx-a1-objet-18-co-1",
+          "question": 2
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -742,17 +743,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s23-co-1",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -967,17 +968,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s19-co-3",
-          "question": 1
-        },
-        {
-          "exercise": "tcf-ss-a1-s19-co-3",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a1-s19-co-3",
+          "question": 1
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -1774,17 +1776,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_14-3.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_14-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex2-14",
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -1963,17 +1965,18 @@
       "pending_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex2-22",
-          "question": 3
-        },
-        {
-          "exercise": "delf-a1-2022-co-ex2-22",
           "question": 6
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "delf-a1-2022-co-ex2-22",
+          "question": 3
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -3669,10 +3672,6 @@
       "status": "pending_visual_questions",
       "pending_visual_questions": [
         {
-          "exercise": "tcf-ssx-a1-ecole-stylo-vert-co-4",
-          "question": 1
-        },
-        {
           "exercise": "tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4",
           "question": 2
         },
@@ -3693,10 +3692,15 @@
           "question": 6
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ssx-a1-ecole-stylo-vert-co-4",
+          "question": 1
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 28,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -5454,17 +5458,17 @@
         "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
         "/lib/audio/tcf/co/loisirs/16-loisirs-dernier-album-de-Gimz.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a2j-s2b-co-1",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -6719,16 +6723,17 @@
         {
           "exercise": "tcf-a2-sa-co-4",
           "question": 5
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a2-sa-co-4",
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -8724,17 +8729,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/fetes/14-invitation-aller-à-la-montagne.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s9-co-4",
           "question": 7
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -8945,17 +8950,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/fetes/15-invitation-sortie-avec-l-école.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s8-co-4",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -8972,17 +8977,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ssx-a1-objet-18-co-1",
-          "question": 2
-        },
-        {
-          "exercise": "tcf-ssx-a1-objet-18-co-1",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ssx-a1-objet-18-co-1",
+          "question": 2
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -9241,17 +9247,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s23-co-1",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -9466,17 +9472,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s19-co-3",
-          "question": 1
-        },
-        {
-          "exercise": "tcf-ss-a1-s19-co-3",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a1-s19-co-3",
+          "question": 1
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10314,17 +10321,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s12-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -11422,17 +11429,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/transports/moyen-a2__annonce-1.6.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-1-6-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -12579,17 +12586,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/radio/08-radio-prévision-météo.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-radio-19-3-co-3",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 4,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -13112,8 +13119,9 @@
         "/lib/audio/tcf/co/transports/bonjour-desirez-2-2.mp3",
         "/lib/audio/tcf/co/transports/bonjour-desirez-2-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s55-co-4",
           "question": 1
@@ -13123,10 +13131,9 @@
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -14694,17 +14701,17 @@
         "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
         "/lib/audio/tcf/co/loisirs/16-loisirs-dernier-album-de-Gimz.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a2j-s2b-co-1",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -18383,7 +18390,7 @@
           "asset": "46975abea508"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:020:7dcd36b8b169",
         "additional-20261102:mdf-a1-abc-junior:20:7dcd36b8b169:ff4976ba"
@@ -18395,6 +18402,11 @@
           "candidate_cut_id": "09035276-020-7dcd36b8b169-d1",
           "transcription": "Salut, c'est Ismaïl. On fait une sortie à Paris avec l'école lundi 25 juin. On va visiter un musée de peinture le matin et voir une pièce de théâtre l'après-midi. Le midi, on va faire un pique-nique près de la Tour Eiffel. C'est 20 euros pour participer. Tu veux venir? Rappelle-moi après 18h30."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+        "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/46975abea508.webp"
       ]
     },
     {
@@ -18511,7 +18523,7 @@
           "asset": "26876e2318ce"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:010:10b8ddc63993",
         "additional-20261102:mdf-a1-abc-junior:10:10b8ddc63993:efec9f14"
@@ -18523,6 +18535,11 @@
           "candidate_cut_id": "09035276-010-10b8ddc63993-d1",
           "transcription": "Bonjour, c'est Alicia. Je pars chez mes grands-parents à la montagne ce week-end. Tu veux venir? Mes parents me déposent en voiture à la gare pour prendre le train de 1h. Prends des bottes. On va faire des promenades dans la neige et le soir, on va regarder la télé. Rappelle-moi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/b14ac3e444af.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
       ]
     },
     {
@@ -18742,7 +18759,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:21:9d63b76876e1:a27d4dd0"
       ],
@@ -18753,6 +18770,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-21-9d63b76876e1-a27d4dd0-d1",
           "transcription": "Radio France, il est 10h. Le nouveau musée d'Art Moderne va ouvrir jeudi prochain. Les horaires sont de 9h à 19h du mardi au vendredi et de 9h30 à 17h30 le samedi et le dimanche. Radio France offre 20 places. Pour participer, Appelez le zé huit cent cinq quinze douze quinze."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/0ab5acf21bf4.webp",
+        "/lib/images/tcf/qcm-audit/46975abea508.webp",
+        "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
       ]
     },
     {
@@ -19372,7 +19394,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:045:6641da2a02b3",
         "additional-20261102:mdf-a1-abc-junior:45:6641da2a02b3:9530672f"
@@ -19384,6 +19406,11 @@
           "candidate_cut_id": "09035276-045-6641da2a02b3-d1",
           "transcription": "Monsieur, qu'est-ce qu'on fait aujourd'hui? On va faire du tennis de table. Allez chercher les raquettes."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/da47aae8b2d9.webp",
+        "/lib/images/tcf/qcm-audit/co834-basketball-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp"
       ]
     },
     {
@@ -19820,7 +19847,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:034:85242a1a610f",
         "additional-20261102:mdf-a1-abc-junior:34:85242a1a610f:6c20666d"
@@ -19832,6 +19859,11 @@
           "candidate_cut_id": "09035276-034-85242a1a610f-r2-d1",
           "transcription": "Bonjour à tous Aujourd'hui sur Radio Jeune vous pouvez gagner deux places pour le concert de Mado Pour gagner c'est facile Vous entendez une chanson de Mado et vous nous appelez au 0840 65, 30, 40, avant midi. Alors vite à vos téléphones!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
       ]
     },
     {
@@ -22323,7 +22355,7 @@
           "asset": "90395a30569f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:021:9007549ed981",
         "additional-20261102:mdf-a1-abc-junior:21:9007549ed981:60465dbd"
@@ -22335,6 +22367,11 @@
           "candidate_cut_id": "09035276-021-9007549ed981-d1",
           "transcription": "Bonjour, c'est Lydie. Pour le cours de dessin demain, le prof nous demande d'apporter des ciseaux et de la colle. Il faut aussi un grand cahier et des crayons de couleurs. On va dessiner des fleurs. Ah oui, et n'oublie pas ta règle. A demain"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/29e5cb0a4a24.webp",
+        "/lib/images/tcf/qcm-audit/fe7817ff539b.webp",
+        "/lib/images/tcf/qcm-audit/90395a30569f.webp"
       ]
     },
     {
@@ -22716,7 +22753,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:096:c780e82fd1ad"
       ],
@@ -22727,6 +22764,11 @@
           "candidate_cut_id": "delf_a1_2022-096-c780e82fd1ad-d1",
           "transcription": "Tiens, mon stylo vert. Oh, merci. Qu'est-ce que je dois écrire en vert? Tu écris la date en haut de la feuille."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-stylo-vert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-crayon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-feutre-dessine.webp"
       ]
     },
     {
@@ -23178,7 +23220,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:014:cd05ca586933"
       ],
@@ -23189,6 +23231,11 @@
           "candidate_cut_id": "delf_a1_2022-014-cd05ca586933-d4",
           "transcription": "Attention! Beaucoup de nuages dans le nord de la France et des orages importants dans le sud."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/f8469d602006.webp",
+        "/lib/images/tcf/qcm-audit/co834-soleil-ciel-degage.webp",
+        "/lib/images/tcf/qcm-audit/co834-neige-dessinee.webp"
       ]
     },
     {
@@ -23346,7 +23393,7 @@
           "asset": "1770e2891746"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:022:60e05a9083eb"
       ],
@@ -23357,6 +23404,11 @@
           "candidate_cut_id": "delf_a1_2022-022-60e05a9083eb-d1",
           "transcription": "Allô, c'est Rachida. Je t'appelle pour te dire que je ne peux pas venir ce soir. Je suis malade. Je vais chez le médecin tout à l'heure."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-coiffeur-dessine.webp"
       ]
     },
     {
@@ -25797,7 +25849,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:069:38399e6d0f4e",
         "additional-20261102:mdf-a2-abc-junior-direct:69:38399e6d0f4e:d48bfb61"
@@ -25809,6 +25861,11 @@
           "candidate_cut_id": "9782090351958-069-38399e6d0f4e-d2",
           "transcription": "Tu n'es pas venu hier au cours de natation. Non, je devais étudier. Ah bon? Qu'est-ce que tu devais étudier? J'avais un contrôle de maths aujourd'hui et je dois absolument avoir une bonne note."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+        "/lib/images/tcf/qcm-audit/71f949130ffe.webp",
+        "/lib/images/tcf/qcm-audit/58eb70256485.webp"
       ]
     },
     {
@@ -26451,7 +26508,7 @@
           "asset": "bd7832a7d611"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb1w:004:1ec4b6331d56"
       ],
@@ -26462,6 +26519,11 @@
           "candidate_cut_id": "delf_a2_eb1w-004-1ec4b6331d56-d3",
           "transcription": "Salut Marc, ça va? Tu fais quoi samedi? Euh rien je crois. Je suis libre. Pourquoi? Ça te dit de venir avec moi au musée d'histoire. J'ai deux billets. D'accord."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/bd7832a7d611.webp"
       ]
     },
     {
@@ -30060,7 +30122,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:93:c6c86c3b863e:cb1eb595"
       ],
@@ -30071,6 +30133,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-93-c6c86c3b863e-cb1eb595-d1",
           "transcription": "Bonjour madame, vous désirez? Je voudrais un café gourmand, s'il vous plaît. Bien, madame. Je vous la porte tout de suite. Oh je voudrais un verre d'eau également, c'est possible? Bien sûr, madame. Je vous la porte avec le café."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/0bb260bd3a38.webp",
+        "/lib/images/tcf/qcm-audit/02a497468b14.webp",
+        "/lib/images/tcf/qcm-audit/co834-chocolat-chaud-dessine.webp"
       ]
     },
     {
@@ -30102,7 +30169,7 @@
           "asset": "fc08f12c7321"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:93:c6c86c3b863e:cb1eb595"
       ],
@@ -30113,6 +30180,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-93-c6c86c3b863e-cb1eb595-d1",
           "transcription": "Bonjour madame, vous désirez? Je voudrais un café gourmand, s'il vous plaît. Bien, madame. Je vous la porte tout de suite. Oh je voudrais un verre d'eau également, c'est possible? Bien sûr, madame. Je vous la porte avec le café."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/fc08f12c7321.webp"
       ]
     },
     {
@@ -30627,7 +30699,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:66:3a5af2e5438e:2dbdc8b1"
       ],
@@ -30638,6 +30710,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-66-3a5af2e5438e-2dbdc8b1-d1",
           "transcription": "Tout de suite les prévisions météo. Aujourd'hui le temps sera magnifique avec un grand soleil et des températures douces. Mais demain la pluie arrivera accompagnée de vents très fort. Il faudra sortir son parapluie."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-soleil-ciel-degage.webp",
+        "/lib/images/tcf/qcm-audit/co834-pluie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-neige-dessinee.webp"
       ]
     },
     {
@@ -31007,7 +31084,7 @@
           "asset": "b48c69f2021e"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:6:716264ffdb10:fd778c69"
       ],
@@ -31018,6 +31095,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-6-716264ffdb10-fd778c69-d1",
           "transcription": "Chers passagers, attention! Un portefeuille a été retrouvé dans les toilettes situées à l'avant du train. Veuillez venir le récupérer auprès d'un de nos agents."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
       ]
     },
     {
@@ -33631,7 +33713,7 @@
       "label": "Un couteau et du ruban",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fe7817ff539b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un couteau et du ruban ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a1-objet-18-co-1",
@@ -33639,7 +33721,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/fe7817ff539b.webp",
+      "sha256": "33b6b25d801acc2a55519f16ff67aff72fc0f361a3c28eec9dcef61c21c575d5",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -33865,7 +33950,7 @@
       "label": "Une pièce de théâtre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une pièce de théâtre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-1",
@@ -33888,7 +33973,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+      "sha256": "ca3bc5f49aec1ce39ffbdd1cf53d19e35e07100013022d90498a82e59f8f8fca",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -35448,7 +35536,7 @@
       "label": "Jouer au tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Jouer au tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s4-ce-1",
@@ -35466,7 +35554,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+      "sha256": "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -35612,7 +35703,7 @@
       "label": "Un ciel dégagé",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d55423a4a616.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un ciel dégagé ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-14",
@@ -35620,7 +35711,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-soleil-ciel-degage.webp",
+      "sha256": "41b94d2dc20a2f5c30c953883c3d62923a6ce30e3f4578861139330f354e4cff",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -36552,7 +36646,7 @@
       "label": "Des orages importants",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f8469d602006.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des orages importants ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-14",
@@ -36560,7 +36654,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/f8469d602006.webp",
+      "sha256": "9fcc2801765b69888f5bee310d411aa6bfa8071f2ba546caccf1094cccdf9cca",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -37374,7 +37471,7 @@
       "label": "Un café gourmand",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0bb260bd3a38.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un café gourmand ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s55-co-4",
@@ -37382,7 +37479,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/0bb260bd3a38.webp",
+      "sha256": "7980310ab4867634013057a68da19cb084e4bce92ab62cb7dbacb28739d3a86d",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -37438,7 +37538,7 @@
       "label": "Un stylo",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8e4309172597.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un stylo ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a1-ecole-stylo-vert-co-4",
@@ -37456,7 +37556,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-stylo-vert-dessine.webp",
+      "sha256": "d9b47e47c9d58a821f315a0899334007836f34f713c79d45560a1279083ca03f",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -38609,7 +38712,7 @@
       "label": "Un musée de peinture",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée de peinture ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s8-co-4",
@@ -38627,7 +38730,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+      "sha256": "4337ff0aa8f24ba3c95a1873d943bf738afc8a8715efc805aa27cee5887c9dd4",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -39938,7 +40044,7 @@
       "label": "Une sortie à la piscine",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bd7832a7d611.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une sortie à la piscine ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sa-co-4",
@@ -39946,7 +40052,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/bd7832a7d611.webp",
+      "sha256": "cb1c1b6d57fddd5b0e392bdc02e995b4518eab2ed73d08d012671f720da649d2",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -39954,7 +40063,7 @@
       "label": "Un musée des sciences",
       "path_after_generation": "/lib/images/tcf/qcm-audit/46975abea508.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée des sciences ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s8-co-4",
@@ -39967,7 +40076,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/46975abea508.webp",
+      "sha256": "80a1908bafb96e3137be92c0845bc0f9f71a2e9c30859b7cac2c5c1b322ae299",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -40424,7 +40536,7 @@
       "label": "Une scie et des clous",
       "path_after_generation": "/lib/images/tcf/qcm-audit/90395a30569f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une scie et des clous ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a1-objet-18-co-1",
@@ -40432,7 +40544,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/90395a30569f.webp",
+      "sha256": "89a5ed7ef5305b0135ca9ac64ae22fad950052d49c2a864bbc9a68487fb8fdd7",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -40466,7 +40581,7 @@
       "label": "Une visite au musée d’histoire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e45126c896fa.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une visite au musée d’histoire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sa-co-4",
@@ -40474,7 +40589,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp",
+      "sha256": "3767beb5c68867f2fb5790a9924e11dece8dd8808bb1c24f5222a1cbe40869df",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -41023,7 +41141,7 @@
       "label": "Au cours de tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/71f949130ffe.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au cours de tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s2b-co-1",
@@ -41031,7 +41149,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/71f949130ffe.webp",
+      "sha256": "672a6d04399519aacfd9c72692fd826ab266a4b6fde5f209caf4a1bb5104958e",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -41212,7 +41333,7 @@
       "label": "Le tennis de table",
       "path_after_generation": "/lib/images/tcf/qcm-audit/da47aae8b2d9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le tennis de table ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s19-co-3",
@@ -41220,7 +41341,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/da47aae8b2d9.webp",
+      "sha256": "26f1e2ed0849eb2898dfc032d128b0e70cff8540d5a2c836c573641076f5bc2f",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -42780,7 +42904,7 @@
       "label": "Un musée d’art moderne",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0ab5acf21bf4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée d’art moderne ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s12-co-2",
@@ -42788,7 +42912,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/0ab5acf21bf4.webp",
+      "sha256": "95665711f402681abc4ee2316b0995404aa6f253eb4499039f1229ab0c3c65e5",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -42796,7 +42923,7 @@
       "label": "Regarder la télévision",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b14ac3e444af.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Regarder la télévision ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s9-co-4",
@@ -42804,7 +42931,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/b14ac3e444af.webp",
+      "sha256": "e1adcdcbb24c3534c60913773660305e640b8c04390709294792cf3a88ff8556",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -44689,7 +44819,7 @@
       "label": "Le coiffeur",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1770e2891746.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le coiffeur ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-22",
@@ -44697,7 +44827,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-coiffeur-dessine.webp",
+      "sha256": "e5f1c179541e95446b54f2b803c5deab003fa0a467f96d4462bfb044d6ae6bd1",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -44705,7 +44838,7 @@
       "label": "Un thé au lait",
       "path_after_generation": "/lib/images/tcf/qcm-audit/02a497468b14.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un thé au lait ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s55-co-4",
@@ -44713,7 +44846,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/02a497468b14.webp",
+      "sha256": "63f3b8bf838203a89cfc13030eb9d8e3208fd16a7b58c419979f3ecfa94980c1",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -45430,7 +45566,7 @@
       "label": "Un grand soleil",
       "path_after_generation": "/lib/images/tcf/qcm-audit/129be0169cbf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un grand soleil ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-radio-19-3-co-3",
@@ -45438,7 +45574,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-soleil-ciel-degage.webp",
+      "sha256": "41b94d2dc20a2f5c30c953883c3d62923a6ce30e3f4578861139330f354e4cff",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
@@ -45661,7 +45800,7 @@
       "label": "Au cours de natation",
       "path_after_generation": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au cours de natation ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s2b-co-1",
@@ -45669,7 +45808,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+      "sha256": "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
       "priority": "A1_A2_first"
     },
     {
@@ -46200,7 +46342,7 @@
       "label": "Des ciseaux et de la colle",
       "path_after_generation": "/lib/images/tcf/qcm-audit/29e5cb0a4a24.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des ciseaux et de la colle ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a1-objet-18-co-1",
@@ -46208,7 +46350,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/29e5cb0a4a24.webp",
+      "sha256": "800488bf1298c48c0f68b7a136a6436276496484369cdeb3a153e70de91df5e4",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché.",
       "priority": "A1_A2_first"
     },
     {
