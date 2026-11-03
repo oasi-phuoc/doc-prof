@@ -31,16 +31,16 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 102,
-    "pending_question_candidates": 321,
+    "activated_planned_questions": 117,
+    "pending_question_candidates": 306,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 160,
-    "remaining_original_concepts": 581,
-    "new_co_images_this_batch": 217,
+    "original_concepts_now_generated_or_reused": 184,
+    "remaining_original_concepts": 557,
+    "new_co_images_this_batch": 238,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 168,
-    "sources_with_new_active_question_or_scene": 116,
+    "sources_with_pending_question_candidates": 158,
+    "sources_with_new_active_question_or_scene": 125,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432
   },
@@ -562,17 +562,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/chers-clients-feter-rentree.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s1-co-4",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -3491,11 +3491,13 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-a1-s1-co-2",
-          "question": 1
-        },
+          "question": 5
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-s1-co-2",
-          "question": 5
+          "question": 1
         },
         {
           "exercise": "delf-a1-2022-co-89",
@@ -3506,10 +3508,9 @@
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 17,
-      "current_linked_image_variants": 6,
+      "current_linked_image_variants": 9,
       "complete_image_audit_certified": false
     },
     {
@@ -5002,10 +5003,6 @@
         },
         {
           "exercise": "tcf-ss-a2-s3-co-3",
-          "question": 5
-        },
-        {
-          "exercise": "tcf-ss-a2-s3-co-3",
           "question": 6
         }
       ],
@@ -5013,11 +5010,15 @@
         {
           "exercise": "tcf-ss-a2-s3-co-3",
           "question": 4
+        },
+        {
+          "exercise": "tcf-ss-a2-s3-co-3",
+          "question": 5
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -5584,16 +5585,17 @@
         {
           "exercise": "delf-a2-2021-co-ex1-02",
           "question": 3
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex1-02",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -5725,14 +5727,13 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_08-3.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_08-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex1-08",
           "question": 3
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "delf-a2-2021-co-ex1-08",
           "question": 8
@@ -5740,7 +5741,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -6729,14 +6730,13 @@
         "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a2-sa-co-4",
           "question": 5
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-a2-sa-co-4",
           "question": 10
@@ -6744,7 +6744,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -9076,17 +9076,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/chers-clients-feter-rentree.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s1-co-4",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -10451,17 +10451,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/la-bibliotheque-ferme-minutes-1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s18-co-2",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -10492,17 +10492,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s18-co-3",
           "question": 2
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 5,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -11175,17 +11175,17 @@
         "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-s3-co-4",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -11395,8 +11395,9 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/12-magasin-annonce-enfant-perdu.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-1-5-co-2",
           "question": 2
@@ -11406,10 +11407,9 @@
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -12448,17 +12448,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/presenter/moyen-a2__radio-18.1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-radio-18-1-co-3",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -12823,22 +12823,21 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/bonjour-ici-service-client.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s3-co-1",
+          "question": 4
+        },
         {
           "exercise": "tcf-ss-a2-s3-co-1",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [
-        {
-          "exercise": "tcf-ss-a2-s3-co-1",
-          "question": 4
-        }
-      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -14250,10 +14249,6 @@
         },
         {
           "exercise": "tcf-ss-a2-s3-co-3",
-          "question": 5
-        },
-        {
-          "exercise": "tcf-ss-a2-s3-co-3",
           "question": 6
         }
       ],
@@ -14261,11 +14256,15 @@
         {
           "exercise": "tcf-ss-a2-s3-co-3",
           "question": 4
+        },
+        {
+          "exercise": "tcf-ss-a2-s3-co-3",
+          "question": 5
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -17373,7 +17372,7 @@
           "asset": "cad994ca20f9"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:089:d43462913b14"
       ],
@@ -17384,6 +17383,11 @@
           "candidate_cut_id": "delf_a1_2022-089-d43462913b14-d1",
           "transcription": "Chers clients, courez vite au rayon librairies. Depuis 14 heures et jusqu'à 16 heures seulement pour un livre acheté, un deuxième offert. And n'oubliez pas de demander à la caisse un bond pour participer au grand tirage au sort à 19h. et gagner deux entrées gratuites pour le festival du livre qui commence demain."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-bricolage-dessine.webp"
       ]
     },
     {
@@ -17598,7 +17602,7 @@
           "asset": "71457a190482"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:62:cdfafe749af2:cf61c1c3"
       ],
@@ -17609,6 +17613,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-62-cdfafe749af2-cf61c1c3-d2",
           "transcription": "Où sont les yaourts, s'il vous plaît? Dans le rayon frais, au fond du magasin. Merci, monsieur."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-frais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-boissons-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
       ]
     },
     {
@@ -18128,7 +18137,7 @@
           "asset": "92d379e0fbf8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:025:d1c3ba98ad03",
         "additional-20261102:mdf-a1-abc-junior:25:d1c3ba98ad03:a4a62781"
@@ -18140,6 +18149,11 @@
           "candidate_cut_id": "09035276-025-d1c3ba98ad03-d1",
           "transcription": "Cher clients, aujourd'hui c'est la rentrée des classes. Pour fêter cet événement, les cahiers et les crayons sont 50% moins chers. Et si vous achetez un sac d'école, nous vous offrons une trousse. Venez la chercher à l'accueil, porte 30. Vite, la promotion termine à 18h."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-sortie-dessinee.webp"
       ]
     },
     {
@@ -19347,7 +19361,7 @@
           "asset": "40dee4eb73ea"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:27:a055174b2a24:d74cbdca"
       ],
@@ -19358,6 +19372,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-27-a055174b2a24-d74cbdca-d1",
           "transcription": "Aujourd'hui votre magasin propose une promotion exceptionnelle au rayon frais, moins 20% sur le poisson. Profitez aussi des fromages, 2 euros de réduction sur le camembert, le brie et le roquefort. Dépêchez-vous, ces promotions se terminent dans 15 minutes!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-frais-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-surgeles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
       ]
     },
     {
@@ -19389,7 +19408,7 @@
           "asset": "149ccf4c7d95"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:29:dce5dca9d4f2:58a9641b"
       ],
@@ -19400,6 +19419,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-29-dce5dca9d4f2-58a9641b-d1",
           "transcription": "Chers clients le magasin ferme dans 30 minutes Merci de vous présenter à la caisse pour payer vos achats demain matin le magasin ouvre à 9h15 et ferme à 2h Le magasin proposera des promotions toute la journée. Merci et bonne soirée."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp"
       ]
     },
     {
@@ -24822,7 +24846,7 @@
           "asset": "a9199c1eaa05"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:089:d43462913b14"
       ],
@@ -24833,6 +24857,11 @@
           "candidate_cut_id": "delf_a1_2022-089-d43462913b14-d1",
           "transcription": "Chers clients, courez vite au rayon librairies. Depuis 14 heures et jusqu'à 16 heures seulement pour un livre acheté, un deuxième offert. And n'oubliez pas de demander à la caisse un bond pour participer au grand tirage au sort à 19h. et gagner deux entrées gratuites pour le festival du livre qui commence demain."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp"
       ]
     },
     {
@@ -24864,7 +24893,7 @@
           "asset": "b539ebfaf403"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:089:d43462913b14"
       ],
@@ -24875,6 +24904,11 @@
           "candidate_cut_id": "delf_a1_2022-089-d43462913b14-d1",
           "transcription": "Chers clients, courez vite au rayon librairies. Depuis 14 heures et jusqu'à 16 heures seulement pour un livre acheté, un deuxième offert. And n'oubliez pas de demander à la caisse un bond pour participer au grand tirage au sort à 19h. et gagner deux entrées gratuites pour le festival du livre qui commence demain."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ]
     },
     {
@@ -26638,7 +26672,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb1w:004:1ec4b6331d56"
       ],
@@ -26649,6 +26683,11 @@
           "candidate_cut_id": "delf_a2_eb1w-004-1ec4b6331d56-d2",
           "transcription": "Je ne comprends pas. Le magasin de journaux était fermé à midi. C'est normal. Il ouvre seulement l'après-midi cette semaine. Et tu sais à quelle heure? À 15h, je crois. Vérifie sur internet. D'accord."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-magasin-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
       ]
     },
     {
@@ -27187,7 +27226,7 @@
           "asset": "6e3cc7fc8aba"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:79:586c23badc3d:57547066"
       ],
@@ -27198,6 +27237,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-79-586c23badc3d-57547066-d1",
           "transcription": "Bonjour, ici le service client du marché de Ringis. Malheureusement, votre commande a pris du retard. Je vous informe aussi que nous n'avons plus de poissons. Pour nous excuser, nous vous offrons deux paquets de 500 grammes de fraises et de myrtille. Nous vous informons que nous avons actuellement des réductions sur nos produits laitiers. Durant la semaine, vous pouvez retrouver votre colis à l'accueil de 8h à midi. Le week-end, la livraison est gratuite pour un minimum d'achat de 15 euros."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp"
       ]
     },
     {
@@ -27367,7 +27411,7 @@
           "asset": "7c83417211ed"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:049:a4431f87ae61",
         "additional-20261102:mdf-a2-abc-junior-direct:49:a4431f87ae61:beafaa4b"
@@ -27379,6 +27423,11 @@
           "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d2",
           "transcription": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-poissonnerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp"
       ]
     },
     {
@@ -30664,7 +30713,7 @@
           "asset": "71457a190482"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:5:6511f41b4280:f9fb425c"
       ],
@@ -30675,6 +30724,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-5-6511f41b4280-f9fb425c-d1",
           "transcription": "Votre attention s'il vous plaît. Le petit Grégoire qui s'est perdu au rayon fruits et légumes attend ses parents à l'entrée du magasin."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-fruits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
       ]
     },
     {
@@ -30706,7 +30760,7 @@
           "asset": "b539ebfaf403"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:5:6511f41b4280:f9fb425c"
       ],
@@ -30717,6 +30771,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-5-6511f41b4280-f9fb425c-d1",
           "transcription": "Votre attention s'il vous plaît. Le petit Grégoire qui s'est perdu au rayon fruits et légumes attend ses parents à l'entrée du magasin."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ]
     },
     {
@@ -31227,7 +31286,7 @@
           "asset": "59a49a38191a"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:61:1fe3792cd6a3:ed229033"
       ],
@@ -31238,6 +31297,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-61-1fe3792cd6a3-ed229033-d1",
           "transcription": "Bonjour, une nouvelle fromagerie ouvrira dans la petite ville de Sainte-Ernestine dans 5 semaines. La bouti vendra uniquement des produits frais de la région et vous accueillera tous les jours de 9h à 18h30 sauf le week-end."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-fromagerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp"
       ]
     },
     {
@@ -32004,7 +32068,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:002:f151bbfcaf5f"
       ],
@@ -32015,6 +32079,11 @@
           "candidate_cut_id": "delf_a2_2021-002-f151bbfcaf5f-d3",
           "transcription": "Vous êtes au niveau moins 2 Parking Hôtel de ville"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+        "/lib/images/tcf/qcm-audit/bd7832a7d611.webp"
       ]
     },
     {
@@ -32256,7 +32325,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:008:f50114d4eae2"
       ],
@@ -32267,6 +32336,11 @@
           "candidate_cut_id": "delf_a2_2021-008-f50114d4eae2-d2",
           "transcription": "La sortie est à gauche de l'écran."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-sortie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp"
       ]
     },
     {
@@ -34480,7 +34554,7 @@
       "label": "Au rayon vêtements",
       "path_after_generation": "/lib/images/tcf/qcm-audit/723dc1d4401b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon vêtements ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-2",
@@ -34493,7 +34567,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+      "sha256": "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -34656,7 +34733,7 @@
       "label": "À la caisse automatique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6e3cc7fc8aba.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À la caisse automatique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-1",
@@ -34664,7 +34741,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-caisse-automatique-dessinee.webp",
+      "sha256": "c21318db67afdee3e2995c2397e7340161e7ce69f5c61067a3e5582af047c728",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -35135,7 +35215,7 @@
       "label": "Le rayon vêtements",
       "path_after_generation": "/lib/images/tcf/qcm-audit/40dee4eb73ea.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le rayon vêtements ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s18-co-2",
@@ -35148,7 +35228,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+      "sha256": "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -36642,7 +36725,7 @@
       "label": "À la sortie du parking",
       "path_after_generation": "/lib/images/tcf/qcm-audit/149ccf4c7d95.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À la sortie du parking ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s18-co-3",
@@ -36655,7 +36738,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp",
+      "sha256": "3db148a44c799a41c4b17513a3ed000aa7c8ab4e600acdb3d60b327461ac12fc",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -36876,7 +36962,7 @@
       "label": "Au rayon jouets",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c4a1f4f70317.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon jouets ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-23",
@@ -36889,7 +36975,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+      "sha256": "6cae2bda213a9e03a51826eb2fc54fb56ce5f8df0a44953e1f4ccda49415daa1",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -36897,7 +36986,7 @@
       "label": "Le rayon jouets",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a9199c1eaa05.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le rayon jouets ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-89",
@@ -36905,7 +36994,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+      "sha256": "6cae2bda213a9e03a51826eb2fc54fb56ce5f8df0a44953e1f4ccda49415daa1",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -36913,7 +37005,7 @@
       "label": "La poissonnerie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/be4f0337345c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La poissonnerie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
@@ -36921,7 +37013,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-poissonnerie-dessinee.webp",
+      "sha256": "e6b55450f1afe7268f1e11ea1db85139b033998f6572a5ac30832dfcf989b5be",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -37827,7 +37922,7 @@
       "label": "Le rayon frais",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0177c3d081c4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le rayon frais ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s18-co-2",
@@ -37835,7 +37930,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-frais-dessine.webp",
+      "sha256": "a554e6c0a526d5afa5e13b0fd530513cf7cf033489e1a159be46818d1d342198",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -38510,7 +38608,7 @@
       "label": "Le magasin de journaux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/be0672cdd153.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le magasin de journaux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sa-co-4",
@@ -38518,7 +38616,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-magasin-journaux-dessine.webp",
+      "sha256": "b610da68e2b97ffe076f3d3e0a22c75ac3e0578ab626d87b6fbcc4f186883e8c",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -38590,7 +38691,7 @@
       "label": "À l'entrée du magasin",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bbb3e9f7aadb.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À l'entrée du magasin ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-23",
@@ -38608,7 +38709,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+      "sha256": "0dd7415616d797e1805e95acf8b72cd736f48998adea0e1caa7a12deb7f955f5",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -38725,7 +38829,7 @@
       "label": "Le rayon librairie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e9013d72b032.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le rayon librairie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-89",
@@ -38733,7 +38837,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+      "sha256": "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -39327,7 +39434,7 @@
       "label": "La sortie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/298ed47d35a6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La sortie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-08",
@@ -39335,7 +39442,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-sortie-dessinee.webp",
+      "sha256": "622091b925be7c90d730cc76e447dc511ad0c7f8ba0974ea20b328d757968744",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -41135,7 +41245,7 @@
       "label": "Au rayon boissons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9068718fd913.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon boissons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s3-co-4",
@@ -41143,7 +41253,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-boissons-dessine.webp",
+      "sha256": "35ed641b74650f55f8910e1e80f282399ddcff34207a68a8fa15151a61e8a8d5",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -41167,7 +41280,7 @@
       "label": "La boucherie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7c83417211ed.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La boucherie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
@@ -41175,7 +41288,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp",
+      "sha256": "39d557b3a0f05413fe0ad88c0206ed000ecef65f8238040d52d9ecbd0ceca72a",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -41263,7 +41379,7 @@
       "label": "Un parking",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f6145b0eb230.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un parking ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "reviewed_asset_requires_4_3_reframing",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-054",
@@ -41291,10 +41407,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "generated_path": "/lib/images/tcf/qcm-audit/f6145b0eb230.webp",
-      "sha256": "86fa11bf3f41a76a70741b7c91b72acafe85b4cd128e35e827d95fdad0b79b5b",
-      "review_note": "Aire de stationnement extérieure, voitures immobiles dans des places marquées ; pas de route en circulation ni de numéros lisibles.",
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+      "sha256": "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -41355,7 +41471,7 @@
       "label": "À la sortie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/92d379e0fbf8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À la sortie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-026",
@@ -41368,7 +41484,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-sortie-dessinee.webp",
+      "sha256": "622091b925be7c90d730cc76e447dc511ad0c7f8ba0974ea20b328d757968744",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -41734,7 +41853,7 @@
       "label": "Au parking",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b539ebfaf403.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au parking ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-026",
@@ -41772,7 +41891,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+      "sha256": "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -41828,7 +41950,7 @@
       "label": "Une boucherie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/59a49a38191a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une boucherie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "reviewed_asset_requires_4_3_reframing",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-042",
@@ -41841,10 +41963,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "generated_path": "/lib/images/tcf/qcm-audit/59a49a38191a.webp",
-      "sha256": "8cb5ce165f417f8c14744214d3e237fcc748d10223558b5c5f42db5be5811720",
-      "review_note": "Boucher derrière une vitrine de steaks, côtelettes et saucisses ; aucun pain ni médicament, aucune étiquette chiffrée.",
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp",
+      "sha256": "39d557b3a0f05413fe0ad88c0206ed000ecef65f8238040d52d9ecbd0ceca72a",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -42363,7 +42485,7 @@
       "label": "Au rayon librairie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0463ade9b531.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon librairie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-2",
@@ -42371,7 +42493,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+      "sha256": "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -43044,7 +43169,7 @@
       "label": "Au rayon bricolage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cad994ca20f9.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon bricolage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-2",
@@ -43052,7 +43177,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-bricolage-dessine.webp",
+      "sha256": "1956f0869b90f80a008ec6481b0907db0744cf582bd90a015e93082cd2cb772e",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -43180,7 +43308,7 @@
       "label": "Au rayon frais",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f088bcb378ed.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon frais ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s3-co-4",
@@ -43188,7 +43316,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-frais-dessine.webp",
+      "sha256": "a554e6c0a526d5afa5e13b0fd530513cf7cf033489e1a159be46818d1d342198",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -44128,7 +44259,7 @@
       "label": "Au rayon boulangerie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/71457a190482.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon boulangerie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s3-co-4",
@@ -44141,7 +44272,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+      "sha256": "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -44528,7 +44662,7 @@
       "label": "Le rayon surgelés",
       "path_after_generation": "/lib/images/tcf/qcm-audit/265d102b4b5b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le rayon surgelés ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s18-co-2",
@@ -44536,7 +44670,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-surgeles-dessine.webp",
+      "sha256": "376ccf4d35718fb0ad62a8c2b3c3068ab4ba92146fce0786c79bd766da910795",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
@@ -46136,7 +46273,7 @@
       "label": "Au rayon fruits et légumes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b0d45a659810.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au rayon fruits et légumes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-1-5-co-2",
@@ -46144,7 +46281,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-fruits-legumes-dessine.webp",
+      "sha256": "484223aada93287d0ba65e8dd64cc0f56a8ae1e08d7e47e1966bf581b462f0c9",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
       "priority": "A1_A2_first"
     },
     {
