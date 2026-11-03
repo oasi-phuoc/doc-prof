@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 402,
+    "reviewed_co_images": 449,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 461,
+    "reviewed_total_images": 508,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 450,
+    "already_aligned": 497,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 143
+    "new_images_compared_to_reference": 190
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -5605,6 +5605,719 @@
       "references": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
         "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pain-complet-dessine",
+      "label": "Un pain complet",
+      "path": "/lib/images/tcf/qcm-audit/co306-pain-complet-dessine.webp",
+      "sha256": "fa9ff641fd593ee88840ccdc6b97a22763cbb8f8698b4d512c978bc0131b7762",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Pain brun complet et tranches à mie brune ; aucun morceau de noix.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pain-noix-dessine",
+      "label": "Un pain aux noix",
+      "path": "/lib/images/tcf/qcm-audit/co306-pain-noix-dessine.webp",
+      "sha256": "22c14c5ca808b4a70c0a0211149acc3281d5b38101b54d1a75112e5ac6bc50ea",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Pain et tranche contenant des noix visibles, cerneaux posés à côté ; décor paysager retiré.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-eclair-dessine",
+      "label": "Un éclair",
+      "path": "/lib/images/tcf/qcm-audit/co306-eclair-dessine.webp",
+      "sha256": "d52ed49ebbb880b1f9c97b7476d36f6c82e402db58353eb9b0811b28715bd156",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Un seul éclair à pâte à choux, crème et glaçage chocolat, entier sur assiette ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-tarte-citron-dessine",
+      "label": "Une tarte au citron",
+      "path": "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp",
+      "sha256": "395345c543575c1f64ddd60889f816e5e1268b46333830ac7036c88016c18b11",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Tarte jaune au citron avec rondelles et quartier de citron ; fond repris sans arbre ni maison.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-creme-medicale-dessine",
+      "label": "Une crème",
+      "path": "/lib/images/tcf/qcm-audit/co306-creme-medicale-dessine.webp",
+      "sha256": "85c166d9f52fef38c34348967dc07a4a372b7b6ac60b0f8acff848f64b2ab93b",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Crème blanche en pot et tube de soin, sans confusion avec un dessert.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-sirop-medical-dessine",
+      "label": "Un sirop",
+      "path": "/lib/images/tcf/qcm-audit/co306-sirop-medical-dessine.webp",
+      "sha256": "08cc20a679d8e73bb899aebbaf635db8b541eb0cde26b13c633edf53ecaa1246",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Flacon de sirop avec cuillère doseuse contenant du liquide ambré ; aucune graduation numérique.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-gouttes-medicales-dessine",
+      "label": "Des gouttes",
+      "path": "/lib/images/tcf/qcm-audit/co306-gouttes-medicales-dessine.webp",
+      "sha256": "5111918a395833cab4f8496d6ac6bc3a21d89985da6d313532d361613dd70447",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Petit flacon compte-gouttes, pipette et goutte visibles ; fond repris sans décor.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-grande-valise-dessine",
+      "label": "Une grande valise",
+      "path": "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+      "sha256": "f20169823daa745440f0da1a808e34d00f39138275b7a352e9a828d889f681a8",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Grande valise rigide avec poignée et quatre roulettes, entière sur fond crème.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-petit-sac-dessine",
+      "label": "Un petit sac",
+      "path": "/lib/images/tcf/qcm-audit/co306-petit-sac-dessine.webp",
+      "sha256": "99ef1b2d98951fc75ac45efb3264ce2c0f68b6730cb138008f25678562156c84",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Petit sac souple à anses sans roulettes, entier sur fond crème.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-poussette-dessine",
+      "label": "Une poussette",
+      "path": "/lib/images/tcf/qcm-audit/co306-poussette-dessine.webp",
+      "sha256": "26485a43526fee704b62a6b5ae5447732ca8182cdb1e07c6a31e8c3fa8551606",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Poussette vide avec siège, capote, châssis et roues cohérents ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-lunettes-vue-dessine",
+      "label": "Des lunettes",
+      "path": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+      "sha256": "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Lunettes de vue ouvertes avec deux verres transparents et branches entières.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-lentilles-contact-dessine",
+      "label": "Des lentilles",
+      "path": "/lib/images/tcf/qcm-audit/co306-lentilles-contact-dessine.webp",
+      "sha256": "75b08a5a1a1958ace9a86ba597ab4e88aa41f0111a55bf344f7631b891326c72",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Deux lentilles transparentes dans un étui double ouvert, reconnaissables sans œil.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-loupe-dessine",
+      "label": "Une loupe",
+      "path": "/lib/images/tcf/qcm-audit/co306-loupe-dessine.webp",
+      "sha256": "d54685d1641b85fb5b7d5b190cf27728e86166a05741a808a90c4a696d9272e2",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Une loupe entière avec lentille et manche ; paysage et coccinelle retirés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-grande-chaise-dessine",
+      "label": "Une grande chaise",
+      "path": "/lib/images/tcf/qcm-audit/co306-grande-chaise-dessine.webp",
+      "sha256": "ffaf33bf50fcdf639d93342d2b35b631b7b5651ce38dec5b23b6fa5aab283ec3",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Grande chaise de bureau à dossier haut, distincte du canapé et du fauteuil roulant.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-canape-dessine",
+      "label": "Un canapé",
+      "path": "/lib/images/tcf/qcm-audit/co306-canape-dessine.webp",
+      "sha256": "3c80bd23975029525e1e714e6c1614cc85beb6413193d6dce9d7f15274463177",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Canapé trois places vert avec coussins et pieds, entier sur fond crème.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-fauteuil-roulant-dessine",
+      "label": "Un fauteuil roulant",
+      "path": "/lib/images/tcf/qcm-audit/co306-fauteuil-roulant-dessine.webp",
+      "sha256": "38b41a1eda40efb3a351c7e7f050cb0abd4caa8c7ed867e998a1a266af43d4b6",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Fauteuil roulant manuel vide avec grandes roues et repose-pieds, cadre cohérent ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-machine-cafe-dessine",
+      "label": "Une machine à café",
+      "path": "/lib/images/tcf/qcm-audit/co306-machine-cafe-dessine.webp",
+      "sha256": "ad4d00a51c55ad90c68c5cbadb51c6154589c09eed5c9fec90d4dde35a592fdd",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Machine à expresso avec porte-filtre, tasse et buse vapeur ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bouilloire-dessine",
+      "label": "Une bouilloire",
+      "path": "/lib/images/tcf/qcm-audit/co306-bouilloire-dessine.webp",
+      "sha256": "bca5c2873f8c2162abbf68ae71a9f05d3e84c133626c92ace282618aab93aec0",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Bouilloire électrique en inox avec bec, poignée et socle, sans graduation.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-distributeur-jus-dessine",
+      "label": "Un distributeur de jus",
+      "path": "/lib/images/tcf/qcm-audit/co306-distributeur-jus-dessine.webp",
+      "sha256": "1c30fe2417a297b47a02108e2a7740cfd8f36cdb5006ee6d128cb8a7b5911627",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Distributeur à réservoir de jus et robinet, distinct de la bouilloire et du café ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bouteilles-pluriel-dessine",
+      "label": "Des bouteilles",
+      "path": "/lib/images/tcf/qcm-audit/co306-bouteilles-pluriel-dessine.webp",
+      "sha256": "0f7c1456b9403ff8034eb8f137da06959de13371e5c6b7adae599252c0072fe2",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Trois bouteilles en verre vides sans étiquette, entières ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-chaussures-paire-dessine",
+      "label": "Des chaussures",
+      "path": "/lib/images/tcf/qcm-audit/co306-chaussures-paire-dessine.webp",
+      "sha256": "51705179ee0346336ee540dfdacb108025a8e4f55a0a0ab996532d0caf377b54",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Une paire de chaussures basses à lacets, entière ; fond repris.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pluie-froid-dessine",
+      "label": "De la pluie et du froid",
+      "path": "/lib/images/tcf/qcm-audit/co306-pluie-froid-dessine.webp",
+      "sha256": "7a8a3715480bcff8bf6327d17e28093a295c3f04c5cb74a11f0b904a92ce5227",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Pluie verticale, flaques et homme emmitouflé aux mains serrées montrant le froid. Visage et décor redessinés vers la référence club photo, personnage entier.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-soleil-chaleur-dessine",
+      "label": "Du soleil et de la chaleur",
+      "path": "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+      "sha256": "ed196465ce44a198fba5dd12cd806752b480d93901370a0c8fcd06bbed948c2e",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Soleil bien visible et femme âgée à vêtements légers, éventail et geste essuyant le front : soleil et chaleur. Visage repris vers le dessin peint validé.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-neige-vent-dessine",
+      "label": "De la neige et du vent",
+      "path": "/lib/images/tcf/qcm-audit/co306-neige-vent-dessine.webp",
+      "sha256": "aefa77d906164639c604e06edc7b9bdc5ad174ae712564b8c67a5b93742c1820",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Neige oblique, écharpe emportée et personnage penché : neige et vent. Visage distinct redessiné vers la référence validée, sans contour épais.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pluie-vent-dessine",
+      "label": "De la pluie et du vent",
+      "path": "/lib/images/tcf/qcm-audit/co306-pluie-vent-dessine.webp",
+      "sha256": "db288b3c0f83e6e6ae5a75b8dc09e7c79a09169a74873ea86aafb11a7662d810",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Pluie oblique, feuilles soufflées et parapluie retourné : pluie et vent. Visage repris vers le dessin peint, personnage entier et deux mains cohérentes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-neige-brouillard-dessine",
+      "label": "De la neige et du brouillard",
+      "path": "/lib/images/tcf/qcm-audit/co306-neige-brouillard-dessine.webp",
+      "sha256": "c9baca97185c79a12eef75d731030f5ebb33f196b5e6c409ced8d9f84a3b0e7b",
+      "status": "aligned",
+      "review_note": "Comparaison aux références validées du commit 48a753d8 : trait fin, volumes doux et couleurs naturelles, matière dessinée. Neige au sol et flocons verticaux, arbres progressivement effacés dans le brouillard : deux phénomènes visibles, pas de vent.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-lessive-dessine",
+      "label": "De la lessive",
+      "path": "/lib/images/tcf/qcm-audit/co306-lessive-dessine.webp",
+      "sha256": "81c819535538d582e468fd5f53169012f6d1468d381250f6085cbd2fdf0db3af",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Bidon de lessive à poignée, bouchon doseur et dessin de tee-shirt avec bulles, sans inscription.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-deodorant-dessine",
+      "label": "Le déodorant",
+      "path": "/lib/images/tcf/qcm-audit/co306-deodorant-dessine.webp",
+      "sha256": "c67fec01d11bcff7cec5b39784230a289af621add9becf4e77e300117d9b9f61",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Déodorant à bille ouverte et capuchon à côté, produit distinct du shampoing.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-gel-douche-dessine",
+      "label": "Le gel douche",
+      "path": "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp",
+      "sha256": "da617e8ef9fb337e9846cc17228152b10329a244acddd4b933debe6ef59035e1",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Flacon de gel douche vert avec motif de douche et gouttes ; distinct du flacon de shampoing à motif de cheveux.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-rouge-levres-dessine",
+      "label": "Le rouge à lèvres",
+      "path": "/lib/images/tcf/qcm-audit/co306-rouge-levres-dessine.webp",
+      "sha256": "19c9362165eb234d82e2f977e08ef309dd2cff11ec35792d3b6008ce816bef7a",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Rouge à lèvres rouge sorti de son tube avec capuchon, entier sur fond crème.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-rouge-levres-mascara-dessine",
+      "label": "Le rouge à lèvres et le mascara",
+      "path": "/lib/images/tcf/qcm-audit/co306-rouge-levres-mascara-dessine.webp",
+      "sha256": "d1794230ae189b2eef0572f30428e891d3e199f11c08fc355c01b3d76d56bac9",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Rouge à lèvres et mascara ouvert à brosse visible : deux produits de maquillage représentés en entier.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-dentifrice-shampoing-dessine",
+      "label": "Le dentifrice et le shampoing",
+      "path": "/lib/images/tcf/qcm-audit/co306-dentifrice-shampoing-dessine.webp",
+      "sha256": "9b900cd01a8788c5f4c1f3acfeea5b32de026bf483620e1de920086efe6f971d",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Dentifrice au symbole de dent et shampoing au symbole de cheveux réunis à partir des dessins existants ; aucun élément manquant.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-savon-gel-douche-dessine",
+      "label": "Le savon et le gel douche",
+      "path": "/lib/images/tcf/qcm-audit/co306-savon-gel-douche-dessine.webp",
+      "sha256": "597b6cc98a2e1e33e92c3c194c2de9ec87af493417304e4760b29047b27ee6aa",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons du commit 48a753d8 : volumes doux, reflets dessinés et trait fin ; cohérence vérifiée avec savon, shampoing et dentifrice existants. Savon solide avec bulles réutilisé et flacon de gel douche au motif de douche ; deux produits entiers.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-table-dessine",
+      "label": "Une table",
+      "path": "/lib/images/tcf/qcm-audit/co306-table-dessine.webp",
+      "sha256": "2e9b91bedaa7986c66c3350e1404bba26cea475ed4db3a67604708237c74b208",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Table rectangulaire à plateau et quatre pieds, entière et sans autre meuble.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-chauffage-dessine",
+      "label": "Un appareil de chauffage",
+      "path": "/lib/images/tcf/qcm-audit/co306-chauffage-dessine.webp",
+      "sha256": "69550ebea34cb293d351c07bc1b5bebee6488002d305524bf37543f82990c034",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Radiateur électrique à ailettes avec roulettes et cordon, identifiable sans inscription.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-appareil-medical-dessine",
+      "label": "Un appareil médical",
+      "path": "/lib/images/tcf/qcm-audit/co306-appareil-medical-dessine.webp",
+      "sha256": "465ec0f5bdc8e86d23d854bdcf08f0aa92738f9dd24a94e1d4f95ae9ced46bf7",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Tensiomètre médical avec brassard et tuyau relié au moniteur, écran éteint sans chiffre.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-alliances-dessine",
+      "label": "Les alliances",
+      "path": "/lib/images/tcf/qcm-audit/co306-alliances-dessine.webp",
+      "sha256": "217d2010189dc0c021ba0004bd698062ef64bb8b4d6efb740d3b3a8ff5ab1864",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Deux alliances lisses en or, sans gravure, distinctes des boucles et bracelets.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-boucles-oreilles-dessine",
+      "label": "Les boucles d’oreilles",
+      "path": "/lib/images/tcf/qcm-audit/co306-boucles-oreilles-dessine.webp",
+      "sha256": "e27445f75563a769aafa5a3c8f075c25241a5ac22ce87fe19198ab08ec5f88d1",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Deux boucles d’oreilles à crochets et perles, formes entières et distinctes des alliances.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bracelets-dessine",
+      "label": "Les bracelets",
+      "path": "/lib/images/tcf/qcm-audit/co306-bracelets-dessine.webp",
+      "sha256": "2bfb21e50366525a6b70a691500b71cd816cefc877258020c9a48d09ca418b4a",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Bracelet chaîne à fermoir et bracelet jonc ouvert, échelle et formes reconnaissables.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-cartes-dessine",
+      "label": "Un jeu de cartes",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+      "sha256": "feab05dbf3eae3394474b48168a26e58ce989bbef983ce5c99462011559f676c",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Paquet de cartes à jouer avec motifs des quatre enseignes, sans chiffre ou inscription.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-quilles-dessine",
+      "label": "Un jeu de quilles",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-quilles-dessine.webp",
+      "sha256": "9a9371a224c184ccb78ad32d6743227cf10867290d007ee343eef8785e9941b5",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Quilles en bois et boule pour les renverser : matériel de jeu complet visible.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jeu-flechettes-dessine",
+      "label": "Un jeu de fléchettes",
+      "path": "/lib/images/tcf/qcm-audit/co306-jeu-flechettes-dessine.webp",
+      "sha256": "198276a657cc641faf9023dea3514309e77335f89178a03ffa176793ebe7f111",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Cible et fléchettes à ailettes, sans nombre ; cercle entier et pointes cohérentes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-menu-vegetarien-dessine",
+      "label": "Un menu végétarien",
+      "path": "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+      "sha256": "fb090d737eea181b18985e77e3d616f29d780c50e572392e12f9a7d5a7d7beba",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Version clarifiée : entrée salade, plat de riz avec légumes reconnaissables et champignons, dessert de fruits. Tous les cubes dorés ambigus retirés ; aucun élément ressemblant à de la viande.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-menu-poisson-dessine",
+      "label": "Un menu de poisson",
+      "path": "/lib/images/tcf/qcm-audit/co306-menu-poisson-dessine.webp",
+      "sha256": "b3a95380675303fc3aa7715a9edaaaf71f52d6531f4064c7ee5814e05d29ddca",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Menu complet avec entrée salade, poisson et riz au centre, dessert de fruits ; réutilisation du dessin de poisson-riz validé pour le plat principal.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-menu-viande-dessine",
+      "label": "Un menu de viande",
+      "path": "/lib/images/tcf/qcm-audit/co306-menu-viande-dessine.webp",
+      "sha256": "96c4a8ace15c8c104de8fb8033f3c318577488ed16ee0f16edd4fb67b4472567",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Menu complet avec entrée salade, steak et accompagnements au centre, dessert de fruits.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-baignade-dessinee",
+      "label": "La baignade",
+      "path": "/lib/images/tcf/qcm-audit/co306-baignade-dessinee.webp",
+      "sha256": "a51bf42655b59fe6d0ba1fbadaf73563d62ebe6138018feab20b010c968f3ec8",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Deux adultes aux nouveaux visages et origines différentes se baignent dans une mer calme ; quatre mains cohérentes, corps immergés sans membres ajoutés, style peint proche du club photo.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-animal-chat-noir-blanc-dessine",
+      "label": "Un animal",
+      "path": "/lib/images/tcf/qcm-audit/co306-animal-chat-noir-blanc-dessine.webp",
+      "sha256": "ad996ddac95d80bedf10db8d7c496ae67a909c6c1a70c2a86c79ce49af8b9ebe",
+      "status": "aligned",
+      "review_note": "Comparaison visuelle aux références du commit 48a753d8 : trait fin discret, volumes doux, détails peints et couleurs naturelles. Chat noir et blanc entier sur fond crème ; silhouette, pattes et queue cohérentes, fourrure dessinée et volumes doux. Exemple de la catégorie animale, couleur cohérente avec le support.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

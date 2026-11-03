@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 81,
-    "newly_activated": 26,
-    "prepared_pending_audio_link": 51,
+    "questions_illustrated_or_prepared": 106,
+    "newly_activated": 32,
+    "prepared_pending_audio_link": 70,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 225,
+    "remaining_questions_requiring_images_or_review": 200,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -3083,20 +3083,29 @@
           "asset": "824ee7aa1e22"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pluie-froid-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-neige-vent-dessine.webp"
       ],
-      "missing_labels": [
-        "De la pluie et du froid",
-        "Du soleil et de la chaleur",
-        "De la neige et du vent"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s34-co-3",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pluie-froid-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-neige-vent-dessine.webp"
+        ],
+        "support_quote": "- Ah, il fait beau aujourd'hui !\nOn joue au tennis ?\n- Ah non !\nJe déteste le tennis !\nOn peut faire du VTT.\n- Mais il fait trop chaud pour faire du vélo !!\n- Mais non !\nIl fait 20 °C, c'est parfait pour faire du vélo en montagne !\n- Pff…\nje préfère faire de l'escalade.\n- L'escalade au printemps ou en automne, d'accord !\nMais en été, avec le soleil, non merci !\n- Alors faisons de la voile sur le lac ou louons un canoé-kayak !\n- Écoute, aujourd'hui, moi je fais du vélo et demain, on fait ce que tu veux !\n- Tu n'es pas sympa…\nEt puis regarde la météo, demain il pleut et il fait froid !",
+        "current_bank_transcription": "- Ah, il fait beau aujourd'hui !\nOn joue au tennis ?\n- Ah non !\nJe déteste le tennis !\nOn peut faire du VTT.\n- Mais il fait trop chaud pour faire du vélo !!\n- Mais non !\nIl fait 20 °C, c'est parfait pour faire du vélo en montagne !\n- Pff…\nje préfère faire de l'escalade.\n- L'escalade au printemps ou en automne, d'accord !\nMais en été, avec le soleil, non merci !\n- Alors faisons de la voile sur le lac ou louons un canoé-kayak !\n- Écoute, aujourd'hui, moi je fais du vélo et demain, on fait ce que tu veux !\n- Tu n'es pas sympa…\nEt puis regarde la météo, demain il pleut et il fait froid !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Chaque couple météo est complet : pluie et personnage ayant froid, soleil et personnage ayant chaud, neige et vent visible. Visages variés, repris vers le style validé."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3127,20 +3136,29 @@
           "asset": "2fb3a663b6aa"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pluie-vent-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-neige-brouillard-dessine.webp"
       ],
-      "missing_labels": [
-        "De la pluie et du vent",
-        "Du soleil et de la chaleur",
-        "De la neige et du brouillard"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s34-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pluie-vent-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-neige-brouillard-dessine.webp"
+        ],
+        "support_quote": "Et voici la météo de ce jour de printemps.\nÀ Paris, temps beau et chaud.\nÀ Bordeaux, nuages et vent.\nÀ Strasbourg, pluie et vent.\nÀ Nice, du soleil et 32 °C.\nEt enfin à Lille, 12 °C et des nuages.",
+        "current_bank_transcription": "Et voici la météo de ce jour de printemps.\nÀ Paris, temps beau et chaud.\nÀ Bordeaux, nuages et vent.\nÀ Strasbourg, pluie et vent.\nÀ Nice, du soleil et 32 °C.\nEt enfin à Lille, 12 °C et des nuages.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Pluie avec vent visible, soleil avec chaleur et neige avec brouillard : les deux éléments de chaque réponse sont présents."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3554,19 +3572,29 @@
           "asset": "c3fbdd8fc4e4"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-bouteilles-pluriel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chaussures-paire-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp"
       ],
-      "missing_labels": [
-        "Des bouteilles",
-        "Des chaussures"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s42-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bouteilles-pluriel-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chaussures-paire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp"
+        ],
+        "support_quote": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "current_bank_transcription": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Bouteilles vides, paire de chaussures et journaux déjà disponibles réutilisés : trois catégories d’objets distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3641,19 +3669,29 @@
           "asset": "f106af5bef6a"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pain-complet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-noix-dessine.webp"
       ],
-      "missing_labels": [
-        "Un pain complet",
-        "Un pain aux noix"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s43-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-complet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-noix-dessine.webp"
+        ],
+        "support_quote": "- C'est à qui ?\nMadame ?\n- Non, c'est à moi…\nBonjour, deux croissants s'il vous plaît !\n- Et avec ceci ?\n- Une baguette…\nJe voudrais aussi une tarte au citron.\n- Une tarte pour combien ?\n- Pour six.\n- Ce sera tout ?\n- Vous faites des crêpes ?\n- Non, désolée.\n- Alors c'est tout.\n- 17,30 € s'il vous plaît.\nPar carte ?\n- Oui, sans contact.\nAu revoir !\n- Merci monsieur.\nBonne journée !",
+        "current_bank_transcription": "- C'est à qui ?\nMadame ?\n- Non, c'est à moi…\nBonjour, deux croissants s'il vous plaît !\n- Et avec ceci ?\n- Une baguette…\nJe voudrais aussi une tarte au citron.\n- Une tarte pour combien ?\n- Pour six.\n- Ce sera tout ?\n- Vous faites des crêpes ?\n- Non, désolée.\n- Alors c'est tout.\n- 17,30 € s'il vous plaît.\nPar carte ?\n- Oui, sans contact.\nAu revoir !\n- Merci monsieur.\nBonne journée !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Baguette déjà disponible réutilisée, pain complet à mie brune et pain aux noix avec noix visibles : trois pains distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3684,19 +3722,29 @@
           "asset": "b7c1b054229e"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-eclair-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp"
       ],
-      "missing_labels": [
-        "Un éclair",
-        "Une tarte au citron"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s43-co-4",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+          "/lib/images/tcf/qcm-audit/co306-eclair-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp"
+        ],
+        "support_quote": "- C'est à qui ?\nMonsieur ?\n- Non, c'est à moi.\n- Bonjour madame, vous désirez ?\n- Bonjour, vous avez des sandwichs ?\n- Oui, bien sûr, au saumon, au poulet, végétarien.\nOn a aussi des formules déjeuner.\n- Ah, qu'est-ce qu'il y a dans une formule ?\n- Un sandwich, une boisson et une part de tarte ou un éclair - Parfait, une formule s'il vous plaît !\nAvec un sandwich végétarien et une part de tarte aux pommes.\n- Et comme boisson ?\n- Un jus d'orange s'il vous plaît.\n- Voilà…\nEt avec ceci ?\n- Ce sera tout, merci.",
+        "current_bank_transcription": "- C'est à qui ?\nMonsieur ?\n- Non, c'est à moi.\n- Bonjour madame, vous désirez ?\n- Bonjour, vous avez des sandwichs ?\n- Oui, bien sûr, au saumon, au poulet, végétarien.\nOn a aussi des formules déjeuner.\n- Ah, qu'est-ce qu'il y a dans une formule ?\n- Un sandwich, une boisson et une part de tarte ou un éclair - Parfait, une formule s'il vous plaît !\nAvec un sandwich végétarien et une part de tarte aux pommes.\n- Et comme boisson ?\n- Un jus d'orange s'il vous plaît.\n- Voilà…\nEt avec ceci ?\n- Ce sera tout, merci.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Tarte aux pommes déjà disponible réutilisée ; éclair et tarte au citron distincts. La question porte sur le type de dessert, pas la quantité ou une part précise."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3727,20 +3775,29 @@
           "asset": "5c44ce00b1ef"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-creme-medicale-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sirop-medical-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gouttes-medicales-dessine.webp"
       ],
-      "missing_labels": [
-        "Une crème",
-        "Un sirop",
-        "Des gouttes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s44-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-creme-medicale-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-sirop-medical-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gouttes-medicales-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, j'ai une brûlure à la main et j'ai très mal.\nVous pouvez m'aider s'il vous plaît ?\n- Oui bien sûr.\nVoici une crème à mettre quatre fois par jour pendant une semaine",
+        "current_bank_transcription": "- Bonjour, j'ai une brûlure à la main et j'ai très mal.\nVous pouvez m'aider s'il vous plaît ?\n- Oui bien sûr.\nVoici une crème à mettre quatre fois par jour pendant une semaine",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Crème de soin, sirop en cuillère et gouttes à la pipette : trois formes de produits de pharmacie reconnaissables."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4868,20 +4925,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-petit-sac-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-poussette-dessine.webp"
       ],
-      "missing_labels": [
-        "Une grande valise",
-        "Un petit sac",
-        "Une poussette"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s55-co-4",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-grande-valise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-petit-sac-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-poussette-dessine.webp"
+        ],
+        "support_quote": "- Les passagers du vol Air France pour Paris sont invités à se présenter porte B12.\n- Le vol à destination de Paris est retardé.\n- Quelle est votre destination ?\n- Je vais aux États-Unis.\n- J'ai déjà ma carte d'embarquement.\n- Vous avez des bagages à enregistrer ?\n- Oui, j'ai une grande valise.\n- Mon siège est côté hublot ?\n- Non, côté couloir.\n- C'est un vol direct ?\n- Non, il y a une escale à Zurich.\n- Je vous souhaite un bon vol !",
+        "current_bank_transcription": "- Les passagers du vol Air France pour Paris sont invités à se présenter porte B12.\n- Le vol à destination de Paris est retardé.\n- Quelle est votre destination ?\n- Je vais aux États-Unis.\n- J'ai déjà ma carte d'embarquement.\n- Vous avez des bagages à enregistrer ?\n- Oui, j'ai une grande valise.\n- Mon siège est côté hublot ?\n- Non, côté couloir.\n- C'est un vol direct ?\n- Non, il y a une escale à Zurich.\n- Je vous souhaite un bon vol !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Valise de soute à roulettes, petit sac souple et poussette : trois bagages ou équipements entiers et distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5503,20 +5569,29 @@
           "asset": "d0abfbd26cbf"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pluie-vent-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-neige-brouillard-dessine.webp"
       ],
-      "missing_labels": [
-        "De la pluie et du vent",
-        "Du soleil et de la chaleur",
-        "Du brouillard et de la neige"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-24-meteo-escalade-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pluie-vent-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-neige-brouillard-dessine.webp"
+        ],
+        "support_quote": "- Aujourd'hui, il fait trop chaud pour faire de l'escalade.\n- Il fait quel temps demain ?\n- Demain, il pleut et il y a du vent.",
+        "current_bank_transcription": "- Aujourd'hui, il fait trop chaud pour faire de l'escalade.\n- Il fait quel temps demain ?\n- Demain, il pleut et il y a du vent.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Même trio météo contrôlé réutilisé ; brouillard et neige est équivalent à neige et brouillard, sans modifier la réponse originale."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7351,7 +7426,7 @@
           "asset": "3a84de4cc3d9"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:086:c9d1659a97e4"
       ],
@@ -7364,16 +7439,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-creme-chocolat-dessinee.webp"
       ],
-      "missing_labels": [
-        "Un menu",
-        "Un plat seul",
-        "Un dessert seul"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-creme-chocolat-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-86",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-creme-chocolat-dessinee.webp"
+        ],
+        "support_quote": "Le menu est à 13 euros, c'est ça?",
+        "current_bank_transcription": "Le menu est à 13 €, c’est ça ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Menu à trois services, plat seul dans une seule assiette et un dessert seul : distinction visuelle du type d’offre. Aucun montant de l’audio reproduit."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7404,7 +7493,7 @@
           "asset": "b27fc3163ea0"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:086:c9d1659a97e4"
       ],
@@ -7417,16 +7506,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-animal-chat-noir-blanc-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-table-dessine.webp"
       ],
-      "missing_labels": [
-        "Un animal",
-        "Un vêtement",
-        "Un meuble"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-animal-chat-noir-blanc-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-table-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-86",
+        "question": 11,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-animal-chat-noir-blanc-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-table-dessine.webp"
+        ],
+        "support_quote": "Est-ce que vous avez un animal noir et blanc?",
+        "current_bank_transcription": "Est-ce que vous avez un animal noir et blanc ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Chat noir et blanc comme exemple de la catégorie animale, manteau pour vêtement et table pour meuble ; couleurs de l’animal cohérentes avec la transcription, sans changer les catégories originales."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7788,7 +7891,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:056:31c7cde97be3"
       ],
@@ -7801,16 +7904,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-lentilles-contact-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-loupe-dessine.webp"
       ],
-      "missing_labels": [
-        "Des lunettes",
-        "Des lentilles",
-        "Une loupe"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-lentilles-contact-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-loupe-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-56",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-lentilles-contact-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-loupe-dessine.webp"
+        ],
+        "support_quote": "Sur mon bureau, il y a mes lunettes. À côté, il y a des papiers. J'ai aussi une bouteille d'eau et un verre. Et bien sûr, il y a mon téléphone.",
+        "current_bank_transcription": "Sur mon bureau, il y a mes lunettes. À côté, il y a des papiers. J’ai aussi une bouteille d’eau et un verre. Et bien sûr, il y a mon téléphone.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Lunettes correctrices, lentilles dans leur étui et loupe : trois accessoires de vue, sans confondre lunettes de soleil et de vue."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7999,7 +8116,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:072:31b4c1d4dcec"
       ],
@@ -8012,16 +8129,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-grande-chaise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-canape-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-fauteuil-roulant-dessine.webp"
       ],
-      "missing_labels": [
-        "Une grande chaise",
-        "Un canapé",
-        "Un fauteuil roulant"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-grande-chaise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-canape-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-fauteuil-roulant-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-72",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-grande-chaise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-canape-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-fauteuil-roulant-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Rebecca. Demain, c'est votre premier jour dans notre entreprise. Vous devez apporter votre pièce d'identité. Dans votre bureau, il y a une grande chaise, votre ordinateur et une machine à café. Il y a aussi une tasse avec le nom de l'entreprise. Le midi, nous pouvons aller au restaurant de l'entreprise. A demain!",
+        "current_bank_transcription": "Bonjour, c’est Rebecca ! Demain, c’est votre premier jour dans notre entreprise. Vous devez apporter votre pièce d’identité. Dans votre bureau, il y a une grande chaise, votre ordinateur et une machine à café. Il y a aussi une tasse avec le nom de l’entreprise. Le midi, nous pouvons aller au restaurant de l’entreprise. À demain !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Grande chaise de bureau à dossier haut, canapé et fauteuil roulant : trois sièges clairement distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -8052,7 +8183,7 @@
           "asset": "04eace3d1524"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:072:31b4c1d4dcec"
       ],
@@ -8065,16 +8196,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-machine-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bouilloire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-distributeur-jus-dessine.webp"
       ],
-      "missing_labels": [
-        "Une machine à café",
-        "Une bouilloire",
-        "Un distributeur de jus"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-machine-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bouilloire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-distributeur-jus-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex5-72",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-machine-cafe-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bouilloire-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-distributeur-jus-dessine.webp"
+        ],
+        "support_quote": "Bonjour, c'est Rebecca. Demain, c'est votre premier jour dans notre entreprise. Vous devez apporter votre pièce d'identité. Dans votre bureau, il y a une grande chaise, votre ordinateur et une machine à café. Il y a aussi une tasse avec le nom de l'entreprise. Le midi, nous pouvons aller au restaurant de l'entreprise. A demain!",
+        "current_bank_transcription": "Bonjour, c’est Rebecca ! Demain, c’est votre premier jour dans notre entreprise. Vous devez apporter votre pièce d’identité. Dans votre bureau, il y a une grande chaise, votre ordinateur et une machine à café. Il y a aussi une tasse avec le nom de l’entreprise. Le midi, nous pouvons aller au restaurant de l’entreprise. À demain !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Machine à expresso, bouilloire et distributeur de jus avec robinet : trois appareils identifiables sans inscription."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8256,18 +8401,29 @@
           "asset": "5ef621f947d4"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-lessive-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp"
       ],
-      "missing_labels": [
-        "De la lessive"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2-s1-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-lessive-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp"
+        ],
+        "support_quote": "Chers clients, vous rêvez d'une maison bien propre ? Achetez notre nouvelle lessive et gagnez un aspirateur. Pour cela, complétez un formulaire à l'entrée du magasin. Bonne chance !",
+        "current_bank_transcription": "Chers clients, vous rêvez d'une maison bien propre ? Achetez notre nouvelle lessive et gagnez un aspirateur. Pour cela, complétez un formulaire à l'entrée du magasin. Bonne chance !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Lessive, savon solide et shampoing au symbole de cheveux distincts ; savon et shampoing existants relus et réutilisés."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9644,19 +9800,29 @@
           "asset": "f6145b0eb230"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ],
-      "missing_labels": [
-        "Les montagnes",
-        "La plage"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s16-co-3",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-montagnes-forets-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+        ],
+        "support_quote": "- Agence du Rhône, bonjour.\n- Bonjour monsieur.\nJe cherche un appartement à louer.\nSur votre site, il y a deux annonces intéressantes.\nJe voudrais vous poser quelques questions…\n- Bien sûr.\nQuels appartements vous intéressent ?\n- Le T3 dans le quartier de la Banque et le T2, rue Ancienne.\n- Désolé, le T2 n'est plus disponible.\nLes nouveaux locataires vont emménager demain.\n- Déjà ?\nBon, et le T3, il est libre ?\n- Oui, il est disponible.\nNous allons organiser les visites la semaine prochaine.\n- Très bien…\nCet appartement est à quel étage ?\n- Au 5e, c'est le dernier étage de l'immeuble.\nVous avez une jolie vue sur les montagnes.\n- Il y a bien un ascenseur ?\n- Bien sûr, l'immeuble est moderne et l'appartement est rénové.\n- Parfait.\nLes visites, c'est quel jour ?\nEst-ce que je dois m'inscrire ?\n- Mardi prochain de 17 heures à 19 heures, pas besoin de vous inscrire.\nJe vais vous donner l'adresse exacte.",
+        "current_bank_transcription": "- Agence du Rhône, bonjour.\n- Bonjour monsieur.\nJe cherche un appartement à louer.\nSur votre site, il y a deux annonces intéressantes.\nJe voudrais vous poser quelques questions…\n- Bien sûr.\nQuels appartements vous intéressent ?\n- Le T3 dans le quartier de la Banque et le T2, rue Ancienne.\n- Désolé, le T2 n'est plus disponible.\nLes nouveaux locataires vont emménager demain.\n- Déjà ?\nBon, et le T3, il est libre ?\n- Oui, il est disponible.\nNous allons organiser les visites la semaine prochaine.\n- Très bien…\nCet appartement est à quel étage ?\n- Au 5e, c'est le dernier étage de l'immeuble.\nVous avez une jolie vue sur les montagnes.\n- Il y a bien un ascenseur ?\n- Bien sûr, l'immeuble est moderne et l'appartement est rénové.\n- Parfait.\nLes visites, c'est quel jour ?\nEst-ce que je dois m'inscrire ?\n- Mardi prochain de 17 heures à 19 heures, pas besoin de vous inscrire.\nJe vais vous donner l'adresse exacte.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Paysage de montagnes, mer avec plage et parking relus et réutilisés. Les montagnes boisées représentent bien la catégorie générale montagnes dans ce contexte de vue."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10160,20 +10326,29 @@
           "asset": "1d3b03cdf179"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-poisson-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-viande-dessine.webp"
       ],
-      "missing_labels": [
-        "Un menu végétarien",
-        "Un menu de poisson",
-        "Un menu de viande"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s23-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-poisson-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-viande-dessine.webp"
+        ],
+        "support_quote": "Est-ce que tu auras un restaurant me recommandé ?\nBien sûr !\nTu cherche quel type de cuisine ?\nDes spécialités du sud-ouest, ce serait sympa.\nIl existe depuis longtemps ?\nOui !\nLe resto a ouvert, il y a une vingtaine d'années.\nOn y mange quel type de plat ?\nTous les incontournables de la gastronomie locale.\nIl faut réserver une table ?\nC'est mieux, parce qu'il y a toujours du monde.\nJ'appelle pour commander un menu végétarien avec un supplément de riz.\nSur place, à emporter ou pour une livraison ?\nÀ emporter.\nTrès bien.\nVous pouvez venir chercher la commande dans 20 minutes.\nC'est prêt !\nBonne dégustation !\nVotre commande est en cours de livraison.",
+        "current_bank_transcription": "Est-ce que tu auras un restaurant me recommandé ?\nBien sûr !\nTu cherche quel type de cuisine ?\nDes spécialités du sud-ouest, ce serait sympa.\nIl existe depuis longtemps ?\nOui !\nLe resto a ouvert, il y a une vingtaine d'années.\nOn y mange quel type de plat ?\nTous les incontournables de la gastronomie locale.\nIl faut réserver une table ?\nC'est mieux, parce qu'il y a toujours du monde.\nJ'appelle pour commander un menu végétarien avec un supplément de riz.\nSur place, à emporter ou pour une livraison ?\nÀ emporter.\nTrès bien.\nVous pouvez venir chercher la commande dans 20 minutes.\nC'est prêt !\nBonne dégustation !\nVotre commande est en cours de livraison.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Chaque menu comporte entrée, plat et dessert ; plats principaux légumes/riz, poisson/riz et viande. Version végétarienne clarifiée sans cubes ambigus."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10204,20 +10379,29 @@
           "asset": "5d8e88dcdcf7"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-quilles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jeu-flechettes-dessine.webp"
       ],
-      "missing_labels": [
-        "Un jeu de cartes",
-        "Un jeu de quilles",
-        "Un jeu de fléchettes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s23-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jeu-quilles-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jeu-flechettes-dessine.webp"
+        ],
+        "support_quote": "Salut !\nTu fais quoi aujourd'hui, elle est en or ?\nJe vais chez Thomas pour un après-midi jeu.\nJe vidéo ?\nAh non, je de société !\nJe déteste les jeux vidéo !\nEt vous allez jouer à quoi ?\nAu carte, Thomas a acheté un nouveau jeu, donc on va aussi l'essayer.\nJe crois que c'est un jeu en équipe avec des pions, des dées, des stratégies.\nEt tu connais les règles ?\nNon, je ne l'ai connaît pas du tout.\nMais Thomas va les expliquer.\nEt tu vas gagner.\nJe ne pense pas.\nEn général, je joue mal et je perds.\nThomas gagne et Margot triche.\nMais on rigole bien.\nTu veux venir ?\nCe gentil, mais je ne peux pas.\nC'est après-midi, je participe à un atelier de réparation de vélo.\nAh super !\nTu as trouvé ça comment ?\nC'est l'association de mon quartier qui l'organise.\nNa vois-y n'y va aussi.",
+        "current_bank_transcription": "Salut !\nTu fais quoi aujourd'hui, elle est en or ?\nJe vais chez Thomas pour un après-midi jeu.\nJe vidéo ?\nAh non, je de société !\nJe déteste les jeux vidéo !\nEt vous allez jouer à quoi ?\nAu carte, Thomas a acheté un nouveau jeu, donc on va aussi l'essayer.\nJe crois que c'est un jeu en équipe avec des pions, des dées, des stratégies.\nEt tu connais les règles ?\nNon, je ne l'ai connaît pas du tout.\nMais Thomas va les expliquer.\nEt tu vas gagner.\nJe ne pense pas.\nEn général, je joue mal et je perds.\nThomas gagne et Margot triche.\nMais on rigole bien.\nTu veux venir ?\nCe gentil, mais je ne peux pas.\nC'est après-midi, je participe à un atelier de réparation de vélo.\nAh super !\nTu as trouvé ça comment ?\nC'est l'association de mon quartier qui l'organise.\nNa vois-y n'y va aussi.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Cartes à jouer, quilles avec boule et cible à fléchettes : trois jeux distincts. Le passage entendu transcrit Au carte désigne le jeu de cartes."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10550,20 +10734,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-alliances-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-boucles-oreilles-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bracelets-dessine.webp"
       ],
-      "missing_labels": [
-        "Les alliances",
-        "Les boucles d’oreilles",
-        "Les bracelets"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s28-co-3",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-alliances-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-boucles-oreilles-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bracelets-dessine.webp"
+        ],
+        "support_quote": "Les lieux l'hôtel le restaurant le parc la salle la salle municipal le traiteur la péritif la péritif dinatoire le buffet le barbecue le dîner l'orchestre le diger le disque jocquet se renseigner louer réserver les événements le mariage la noce ce marié le marié la marié la robe de marié les témoins les alliances le plan de table le voyage de noce l'anniversaire l'anniversaire de mariage l'enterrement de vie de garçon EVG l'enterrement de vie de jeune fille EVGF pendre la crème ailleurs une pandaison de crème ailleurs les invités les cadeaux la liste de mariage la canyote participer offrir",
+        "current_bank_transcription": "Les lieux l'hôtel le restaurant le parc la salle la salle municipal le traiteur la péritif la péritif dinatoire le buffet le barbecue le dîner l'orchestre le diger le disque jocquet se renseigner louer réserver les événements le mariage la noce ce marié le marié la marié la robe de marié les témoins les alliances le plan de table le voyage de noce l'anniversaire l'anniversaire de mariage l'enterrement de vie de garçon EVG l'enterrement de vie de jeune fille EVGF pendre la crème ailleurs une pandaison de crème ailleurs les invités les cadeaux la liste de mariage la canyote participer offrir",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Alliances, boucles d’oreilles à crochets et bracelets à fermoir : trois types de bijoux identifiables sans inscription."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10739,12 +10932,11 @@
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
         null,
         null
       ],
       "missing_labels": [
-        "Un jeu de cartes",
         "Un jeu de piste",
         "Un jeu vidéo"
       ],
@@ -10779,19 +10971,29 @@
           "asset": "6cbba3395edf"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-chauffage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-appareil-medical-dessine.webp"
       ],
-      "missing_labels": [
-        "Un appareil de chauffage",
-        "Un appareil médical"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s30-co-2",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chauffage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-appareil-medical-dessine.webp"
+        ],
+        "support_quote": "Un jeu de carte, un jeu de société, un jeu de plateau, un jeu vidéo, un jeu de piste, bien joué à, mal joué à, joué en équipe, joué en famille, un pion, un D, une règle du jeu, gagner, perdre, tricher, les conditions de participation, s'inscrire à une activité, s'inscrire à un atelier, en plein air, en extérieur, une inscription, animée par une professionnelle, animée par un professionnel, prêté le matériel, un participant, une participant, participer à un concours, gratuit, gratuit, payant, payante, réserve une place en ligne, prendra un billet, compris, comprise, fournie, inclut, incluse, les compétences, le niveau débutant, débutante, intermédiaire, confirmé, être bon en, être bon en, être mauvais en, être mauvaises en, être créatifs, être créatifs, avoir de l'expérience en, être rapide, se concentrer.\nLes activités manuelles, une réparation, réparer un vélo, un mécanicien, une mécanicienne, la fabrication, fabriquer une ceinture.\nLes activités artistiques, peindre, une peinture, l'oeuvre, un artiste, une artiste, une technique, une toile, la peinture, le matériel, un pinceau, une blouse, un appareil photo, une photo, une photographie,",
+        "current_bank_transcription": "Un jeu de carte, un jeu de société, un jeu de plateau, un jeu vidéo, un jeu de piste, bien joué à, mal joué à, joué en équipe, joué en famille, un pion, un D, une règle du jeu, gagner, perdre, tricher, les conditions de participation, s'inscrire à une activité, s'inscrire à un atelier, en plein air, en extérieur, une inscription, animée par une professionnelle, animée par un professionnel, prêté le matériel, un participant, une participant, participer à un concours, gratuit, gratuit, payant, payante, réserve une place en ligne, prendra un billet, compris, comprise, fournie, inclut, incluse, les compétences, le niveau débutant, débutante, intermédiaire, confirmé, être bon en, être bon en, être mauvais en, être mauvaises en, être créatifs, être créatifs, avoir de l'expérience en, être rapide, se concentrer.\nLes activités manuelles, une réparation, réparer un vélo, un mécanicien, une mécanicienne, la fabrication, fabriquer une ceinture.\nLes activités artistiques, peindre, une peinture, l'oeuvre, un artiste, une artiste, une technique, une toile, la peinture, le matériel, un pinceau, une blouse, un appareil photo, une photo, une photographie,",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Appareil photo déjà disponible réutilisé, radiateur et appareil médical avec brassard : trois fonctions distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10822,18 +11024,29 @@
           "asset": "b48c69f2021e"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
-        null,
+        "/lib/images/tcf/qcm-audit/co306-table-dessine.webp",
         "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
       ],
-      "missing_labels": [
-        "Une table"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s30-co-4",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-table-dessine.webp",
+          "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+        ],
+        "support_quote": "Je vidéo ?\nAh non, je de société, je déteste les jeux vidéo.\nEt vous allez jouer à quoi ?\nAu carte.\nEt tu connais les règles ?\nÇa te dit de voir un film en plein air ?\nC'est gratuit et on peut réserver les places en ligne.\nJe peux les prendre si tu veux.\nBonjour, je vous appelle pour l'atelier de fabrication de ceinture.\nJe voudrais savoir comment ça marche.\nTu as entendu parler du concours de photos de la ville ?\nOui, tu peux gagner un appareil photo, non ?\nTu es très bonne en photographie et très créative.\nParticipe.\nIl y a des conditions de participation ou concours ?\nJe ne sais pas, je vais regarder sur le site.\nOn a fait le jeu en équipe à quatre personnes et c'était une activité très amusante.\nIl faut se concentrer et être rapide, mais c'est facile à comprendre.\nDommage, c'est un peu cher.",
+        "current_bank_transcription": "Je vidéo ?\nAh non, je de société, je déteste les jeux vidéo.\nEt vous allez jouer à quoi ?\nAu carte.\nEt tu connais les règles ?\nÇa te dit de voir un film en plein air ?\nC'est gratuit et on peut réserver les places en ligne.\nJe peux les prendre si tu veux.\nBonjour, je vous appelle pour l'atelier de fabrication de ceinture.\nJe voudrais savoir comment ça marche.\nTu as entendu parler du concours de photos de la ville ?\nOui, tu peux gagner un appareil photo, non ?\nTu es très bonne en photographie et très créative.\nParticipe.\nIl y a des conditions de participation ou concours ?\nJe ne sais pas, je vais regarder sur le site.\nOn a fait le jeu en équipe à quatre personnes et c'était une activité très amusante.\nIl faut se concentrer et être rapide, mais c'est facile à comprendre.\nDommage, c'est un peu cher.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Ceinture et sac déjà disponibles relus et réutilisés, table nouvelle : trois objets de fabrication distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11039,18 +11252,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-deodorant-dessine.webp"
       ],
-      "missing_labels": [
-        "Le déodorant"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s34-co-2",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-deodorant-dessine.webp"
+        ],
+        "support_quote": "Le sommeil, s'endormir, rêver, faire un rêve, faire un cauchemar, une insomnie, passer une nuit blanche, faire une sieste.\nPrendre soin de soi, protéger, se protéger, se détendre, se relaxer, prendre l'air, faire un massage, un soin du corps, un soin du visage, une résolution, une bonne résolution, un séjour de remise en forme, produit digienne, un dentifrice, un savon, un champs point, un démaquillant, un déodorant, un déo, une mousse arasée, une huile, une huile de massage, un gel, un gel douche, une crème pour les mains, une crème pour le visage, une crème, produit de beauté, une haute toilette, en parlant, le maquillage, le rouge de la lèvres, le mascarra.",
+        "current_bank_transcription": "Le sommeil, s'endormir, rêver, faire un rêve, faire un cauchemar, une insomnie, passer une nuit blanche, faire une sieste.\nPrendre soin de soi, protéger, se protéger, se détendre, se relaxer, prendre l'air, faire un massage, un soin du corps, un soin du visage, une résolution, une bonne résolution, un séjour de remise en forme, produit digienne, un dentifrice, un savon, un champs point, un démaquillant, un déodorant, un déo, une mousse arasée, une huile, une huile de massage, un gel, un gel douche, une crème pour les mains, une crème pour le visage, une crème, produit de beauté, une haute toilette, en parlant, le maquillage, le rouge de la lèvres, le mascarra.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Dentifrice avec dent, shampoing avec cheveux et déodorant à bille : trois produits clairement distincts. La transcription actuelle comporte des graphies ASR imparfaites, conservées pour le rapprochement audio."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11081,20 +11305,29 @@
           "asset": "cfea9b286af4"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-rouge-levres-mascara-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dentifrice-shampoing-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-savon-gel-douche-dessine.webp"
       ],
-      "missing_labels": [
-        "Le rouge à lèvres et le mascara",
-        "Le dentifrice et le shampoing",
-        "Le savon et le gel douche"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s34-co-2",
+        "question": 10,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-rouge-levres-mascara-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-dentifrice-shampoing-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-savon-gel-douche-dessine.webp"
+        ],
+        "support_quote": "Le sommeil, s'endormir, rêver, faire un rêve, faire un cauchemar, une insomnie, passer une nuit blanche, faire une sieste.\nPrendre soin de soi, protéger, se protéger, se détendre, se relaxer, prendre l'air, faire un massage, un soin du corps, un soin du visage, une résolution, une bonne résolution, un séjour de remise en forme, produit digienne, un dentifrice, un savon, un champs point, un démaquillant, un déodorant, un déo, une mousse arasée, une huile, une huile de massage, un gel, un gel douche, une crème pour les mains, une crème pour le visage, une crème, produit de beauté, une haute toilette, en parlant, le maquillage, le rouge de la lèvres, le mascarra.",
+        "current_bank_transcription": "Le sommeil, s'endormir, rêver, faire un rêve, faire un cauchemar, une insomnie, passer une nuit blanche, faire une sieste.\nPrendre soin de soi, protéger, se protéger, se détendre, se relaxer, prendre l'air, faire un massage, un soin du corps, un soin du visage, une résolution, une bonne résolution, un séjour de remise en forme, produit digienne, un dentifrice, un savon, un champs point, un démaquillant, un déodorant, un déo, une mousse arasée, une huile, une huile de massage, un gel, un gel douche, une crème pour les mains, une crème pour le visage, une crème, produit de beauté, une haute toilette, en parlant, le maquillage, le rouge de la lèvres, le mascarra.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Les trois paires sont entières : rouge à lèvres/mascara, dentifrice/shampoing, savon/gel douche. Le contexte maquillage et les transcriptions phonétiques rouge de la lèvres / mascarra soutiennent la bonne réponse ; relier ensuite l’audio."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11570,20 +11803,29 @@
           "asset": "58afa9c687a4"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-poisson-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-menu-viande-dessine.webp"
       ],
-      "missing_labels": [
-        "Le menu végétarien",
-        "Le menu de poisson",
-        "Le menu de viande"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s43-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-menu-vegetarien-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-poisson-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-menu-viande-dessine.webp"
+        ],
+        "support_quote": "Portée.\nJe vais prendre le menu végétarien avec un suple et morie.\nOui, à quel nom ?\nMorvan.\nTrès bien.\nVous pouvez venir chercher la commande dans 20 minutes.",
+        "current_bank_transcription": "Portée.\nJe vais prendre le menu végétarien avec un suple et morie.\nOui, à quel nom ?\nMorvan.\nTrès bien.\nVous pouvez venir chercher la commande dans 20 minutes.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Même trio complet de menus réutilisé après contrôle dans cette question ; aucune assimilation d’un plat seul à un menu."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11895,19 +12137,29 @@
           "asset": "6aeec9d3c6a4"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-rouge-levres-dessine.webp"
       ],
-      "missing_labels": [
-        "Le gel douche",
-        "Le rouge à lèvres"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s45-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-rouge-levres-dessine.webp"
+        ],
+        "support_quote": "Thomas !\nJe n'arrive pas à trouver le savon !\nOh !\nIl est entre le savon de Marseille et ma mou s'arrasé !\nEt le déo !\nIl est où ?\nJe vois seulement mon parfum !\nJe l'ai vu dans le maquillage avec ton mascarat !\nEt le dentifrice ?",
+        "current_bank_transcription": "Thomas !\nJe n'arrive pas à trouver le savon !\nOh !\nIl est entre le savon de Marseille et ma mou s'arrasé !\nEt le déo !\nIl est où ?\nJe vois seulement mon parfum !\nJe l'ai vu dans le maquillage avec ton mascarat !\nEt le dentifrice ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Dentifrice déjà disponible, gel douche au symbole de douche et rouge à lèvres : tous identifiables et distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13021,7 +13273,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:33:31bdd69e1fc4:8aa455b2"
       ],
@@ -13034,14 +13286,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-baignade-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
       ],
-      "missing_labels": [
-        "La baignade"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-baignade-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-6-3-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-baignade-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+        ],
+        "support_quote": "A l'occasion du Salon du Tourisme, venez découvrir nos derniers séjours au soleil. Balade en bord de mer, baignade, palmier, découvrez nos destinations 100% relaxantes.",
+        "current_bank_transcription": "À l’occasion du salon du tourisme, venez découvrir nos derniers séjours au soleil !\nBalades en bord de mer, baignade, palmiers...\nDécouvrez nos destinations 100% relaxantes !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Baignade en mer, ski et escalade : trois activités représentées par des personnes en action. Ski et escalade existants relus et réutilisés."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
