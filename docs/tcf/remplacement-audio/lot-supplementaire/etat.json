@@ -1,6 +1,48 @@
 {
   "schema_version": 1,
-  "recorded_at": "2026-11-02T18:49:23.076719+00:00",
+  "updated_at": "2026-11-03T02:01:45.362711+00:00",
+  "received_sources": 426,
+  "received_levels": {
+    "a1": 139,
+    "a2": 184,
+    "b1": 103
+  },
+  "source_seconds": 26709.471924,
+  "source_integrity_checked": 426,
+  "transcribed_sources": 426,
+  "transcription_failures": 0,
+  "source_words": 57060,
+  "planned_segments": 661,
+  "geometrically_blocked_sources": 0,
+  "prepared_sources": 426,
+  "prepared_segments": 661,
+  "mp3_candidates": 661,
+  "assembled_mp3_candidates": 6,
+  "preparation_complete": true,
+  "signal_confirmed_old_refs": 451,
+  "old_refs_with_prepared_candidate": 451,
+  "old_refs_requiring_more_segmentation": 0,
+  "candidate_alias_groups_to_review": 0,
+  "requested_refinements": null,
+  "current_old_refs": 1318,
+  "lexical_matching": {
+    "unresolved": 866,
+    "strong_lexical_candidate": 354,
+    "partial_lexical_candidate": 87,
+    "short_transcript_requires_review": 8,
+    "multiple_sources_require_review": 3
+  },
+  "validated_by_listening": 0,
+  "live_database_inspected": false,
+  "production_modified": false,
+  "full_replacement_complete": false,
+  "further_sources_expected": false,
+  "blockers": [
+    "Écoute effective des quatre frontières et du fichier final non réalisée ici.",
+    "Correspondances non résolues ou ambiguës ; aucune affectation automatique.",
+    "Connexion au Worker des fiches bloquée par le réseau avant authentification ; D1 non inspectée, recettes non migrées."
+  ],
+  "recorded_at": "2026-11-03T02:03:24.253848+00:00",
   "source_delivery_complete": true,
   "initial_source_file_entries": 408,
   "additional_received_source_file_entries": 428,
@@ -9,62 +51,18 @@
   "total_received_source_file_entries": 836,
   "total_active_source_file_entries": 834,
   "all_other_originals_retained": true,
-  "summary": {
-    "files": 426,
-    "bytes": 321106559,
-    "duration_seconds": 26709.471924,
-    "integrity_checked": 426,
-    "invalid": 0,
-    "by_level": {
-      "a1": 139,
-      "a2": 184,
-      "b1": 103
-    },
-    "archives_received": 2,
-    "collections_received": 6,
-    "collections_awaiting_transfer": 0,
-    "individual_files_received": 287,
-    "received_source_file_entries": 428,
-    "user_authorized_copyright_removals": 2,
-    "previous_408_sources_unchanged": true,
-    "no_unapproved_source_discarded": true,
-    "listening_performed": false,
-    "production_modified": false
-  },
   "transcribed_additional_active_sources": 426,
   "asr_complete": true,
   "sources_with_plan": 426,
-  "candidate_segments": 657,
-  "plans_requiring_timing_or_token_correction": 5,
-  "prepared_additional_audio_files": 0,
+  "candidate_segments": 661,
+  "plans_requiring_timing_or_token_correction": 0,
+  "prepared_additional_audio_files": 661,
   "listening_performed": false,
-  "production_modified": false,
-  "live_database_inspected": false,
-  "blockers": [
-    {
-      "source_id": "additional-20261102:mdf-a2-abc-direct:56:d467ed7ec7a8:690969d8",
-      "reason": "Mot 41 fusionné (fleurenne.fr) : séparer et réaligner les mots."
-    },
-    {
-      "source_id": "additional-20261102:mdf-a2-abc-direct:85:6f2842b225ef:5ebc5db9",
-      "reason": "Mot 99 chevauché : réalignement manuel requis."
-    },
-    {
-      "source_id": "additional-20261102:mdf-b1-abc-direct:1:671ffb0a3419:fdfcb0b3",
-      "reason": "Mot 79 fusionné (StarMyname.com) : séparer et réaligner les mots."
-    },
-    {
-      "source_id": "additional-20261102:mdf-b1-abc-direct:50:6ae112e87e4a:67316fec",
-      "reason": "Mot 32 fusionné (WI.SNCF) : séparer et réaligner les mots."
-    },
-    {
-      "source_id": "additional-20261102:mdf-b1-abc-direct:8:e04b6d42979a:6a449e9a",
-      "reason": "Mot 130 chevauché : réalignement manuel requis."
-    }
-  ],
   "signal_comparisons": 542,
   "signal_confirmed_old_refs_from_additional_sources": 451,
   "combined_signal_confirmed_old_refs": 857,
   "newly_identified_old_refs": 214,
-  "old_refs_remaining_unmatched": 461
+  "old_refs_remaining_unmatched": 432,
+  "prepared_additional_sources": 426,
+  "combined_confirmed_refs": 886
 }

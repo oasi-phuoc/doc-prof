@@ -165,11 +165,17 @@ def run(args):
             doc = json.loads(path.read_text())
         except (ValueError, OSError):
             continue
-        if doc.get('status') != 'transcribed' or not doc.get('words'):
+        if doc.get('status') not in ('transcribed','plan_matching_view') or not doc.get('words'):
             continue
         sid = doc.get('source_id', path.stem)
         if sid not in metadata:
             continue
+        if doc.get('source_sha256') != metadata[sid]['sha256']:
+            raise ValueError('ASR/matching view source checksum differs from catalogue: '+sid)
+        if doc.get('status') == 'plan_matching_view':
+            if (doc.get('purpose') != 'canonical_plan_words_for_matching_only_not_asr_input' or
+                    hashlib.sha256(pathlib.Path(doc['plan_path']).read_bytes()).hexdigest() != doc['plan_sha256']):
+                raise ValueError('Matching view no longer corresponds to the exact candidate plan: '+sid)
         tokens, token_words = source_tokens(doc)
         docs.append({'source_id': sid, 'doc': doc, 'tokens': tokens, 'token_words': token_words,
                      'counts': collections.Counter(tokens), 'metadata': metadata[sid], 'asr_file': str(path)})
@@ -216,6 +222,9 @@ def run(args):
                               'context_after': words[last+1:last+13],
                               'word_text_matches_result': source['doc'].get('word_text_matches_result'),
                               'word_timing_method': source['doc'].get('word_timing_method'),
+                              'word_index_basis': source['doc'].get('word_index_basis','raw_asr_words'),
+                              'plan_path': source['doc'].get('plan_path'),
+                              'plan_sha256': source['doc'].get('plan_sha256'),
                               'status': 'lexical_seed_requires_dialogue_boundaries_and_listening'})
             alignment['review_flags'] = []
             if alignment['target_prefix_unmatched'] or alignment['target_suffix_unmatched']:

@@ -36,6 +36,9 @@ def main():
         confirmed=[(c,signals[(match['old_ref'],c['source_id'])]) for c in match['candidates']
                    if (match['old_ref'],c['source_id']) in signals]
         if not confirmed:continue
+        explicit=overrides.get(match['old_ref'])
+        if explicit:
+            confirmed.sort(key=lambda pair:pair[0]['source_id']!=explicit['source_id'])
         candidate,signal=confirmed[0];sid=candidate['source_id']
         row={'old_ref':match['old_ref'],'dialogue_id':match['dialogue_id'],'exercise_ids':match['exercise_ids'],
              'source_id':sid,'source_sha256':candidate['source_sha256'],'signal_status':signal['status'],
@@ -44,6 +47,13 @@ def main():
              'status':'requires_segmentation_or_timing_correction','listening_performed':False}
         if sid in prepared and sid in mp3:
             manifest=read(prepared[sid]['manifest']);choices=[]
+            if candidate.get('plan_path'):
+                current_plan=Path(candidate['plan_path'])
+                manifest_plan=Path(prepared[sid]['manifest']).parent/manifest['plan']['path']
+                if sha256(current_plan)!=candidate['plan_sha256'] or read(current_plan)!=read(manifest_plan):
+                    row['review_flags']=row['review_flags']+['matching_word_basis_differs_from_current_prepared_plan']
+                    proposals.append(row)
+                    continue
             for segment in manifest['segments']:
                 first,last=candidate['matched_word_first'],candidate['matched_word_last']
                 intersection=max(0,min(last,segment['last_word'])-max(first,segment['first_word'])+1)
@@ -52,17 +62,26 @@ def main():
                 old_duration=signal['old_duration_decoded']
                 if coverage>=.9 and duration<=old_duration*1.6+3:
                     choices.append(segment)
-            explicit=overrides.get(match['old_ref'])
             if explicit:
                 if explicit['source_id']!=sid:
-                    raise ValueError('Reviewed assignment points to another source')
+                    row['review_flags']=row['review_flags']+['previous_assignment_source_requires_new_confirmation']
+                    proposals.append(row)
+                    continue
                 if explicit.get('assembly'):
                     delivery=assemblies[sid]
+                    if delivery.get('part_manifest_sha256')!=sha256(prepared[sid]['manifest']):
+                        row['review_flags']=row['review_flags']+['assembly_uses_an_earlier_boundary_manifest']
+                        proposals.append(row)
+                        continue
                     segment={'id':delivery['id'],'transcript':delivery['transcription'],
                              'start_seconds':delivery['parts'][0]['source_start_seconds'],
                              'end_seconds':delivery['parts'][-1]['source_end_seconds']}
                 else:
-                    segment=next(s for s in manifest['segments'] if s['id']==explicit['candidate_cut_id'])
+                    segment=next((s for s in manifest['segments'] if s['id']==explicit['candidate_cut_id']),None)
+                    if segment is None:
+                        row['review_flags']=row['review_flags']+['previous_assignment_cut_removed_by_textual_audit']
+                        proposals.append(row)
+                        continue
                     delivery=next(r for r in mp3[sid]['segments'] if r['id']==segment['id'])
                 if sha256(delivery['file'])!=delivery['sha256']:
                     raise ValueError('Reviewed candidate bytes have changed')

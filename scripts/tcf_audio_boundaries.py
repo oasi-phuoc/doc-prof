@@ -158,6 +158,11 @@ def plan_segments(plan, duration, sample_rate):
                     f'Mot {index}: groupe différent des horodatages DTW natifs.')
         # A missing space cannot turn an announcement and dialogue into one cuttable word.
         web_token = bool(re.match(r'(?i)(?:https?://|www\.)', text) or '@' in text)
+        if word.get('lexical_unit') == 'web_address':
+            require(bool(re.fullmatch(r'(?i)(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:fr|ch|com|org|net|info|sncf)', text.strip('.,;:!?'))) and
+                    isinstance(word.get('lexical_unit_reason'), str) and word['lexical_unit_reason'].strip(),
+                    f'Mot {index}: adresse web explicitement documentée requise.')
+            web_token = True
         require(web_token or re.fullmatch(r'\d+(?:[.,:/-]\d+)+[.,!?;:]?', text) or
                 not re.search(r'[.!?;:…][\wÀ-ÿ]', text),
                 f'Mot {index} fusionné ({text}) : séparer et réaligner les mots.')

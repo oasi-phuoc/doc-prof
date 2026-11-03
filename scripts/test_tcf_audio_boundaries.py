@@ -76,6 +76,19 @@ class WordBoundaryPlanTests(unittest.TestCase):
             with self.subTest(value=value):
                 self.assertEqual(plan_segments(plan, 3, 8000)[0]['first_word_text'], value)
 
+    def test_reviewed_domain_is_an_indivisible_expression_without_allowing_fused_numbering(self):
+        for value in ('fleurenne.fr','StarMyname.com','WI.SNCF'):
+            plan=copy.deepcopy(self.plan)
+            plan['words'][2].update(text=value,lexical_unit='web_address',
+                                    lexical_unit_reason='Site nommé dans la phrase ; conserver l’expression entière.')
+            plan['segments'][0]['transcript']=value+' madame.'
+            with self.subTest(value=value):
+                self.assertEqual(plan_segments(plan,3,8000)[0]['first_word_text'],value)
+        plan['words'][2]['text']='Document2.Bonjour'
+        plan['segments'][0]['transcript']='Document2.Bonjour madame.'
+        with self.assertRaisesRegex(BoundaryError,'adresse web'):
+            plan_segments(plan,3,8000)
+
     def test_overlapping_words_and_reused_ranges_are_ambiguous(self):
         self.plan['words'][2]['start'] = .79
         with self.assertRaisesRegex(BoundaryError, 'chevauché'):

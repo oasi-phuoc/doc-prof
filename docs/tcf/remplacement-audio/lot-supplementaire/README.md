@@ -1,18 +1,18 @@
 # Collections supplémentaires reçues
 
-Les six collections supplémentaires représentent **428 fichiers audio** : 141 A1, 184 A2 et 103 B1, soit 7 h 25 min 24 s. Avec les 408 premiers fichiers, le catalogue reçu compte **836 entrées de fichiers sources**. Chaque entrée conserve son identifiant, son empreinte et sa provenance. Deux pistes de copyright ont ensuite été retirées des fichiers extraits et du catalogue de traitement, sur instruction explicite. Il reste **426 fichiers supplémentaires à traiter (139 A1, 184 A2, 103 B1)**, soit 834 avec le premier lot. Les autres originaux sont conservés.
+Les six collections supplémentaires représentent **428 fichiers reçus**. Les deux pistes de copyright ont été retirées des fichiers extraits et du catalogue de traitement sur instruction explicite. Il reste **426 sources actives : 139 A1, 184 A2 et 103 B1**, soit 834 avec les 408 premiers fichiers. Chaque réception, identifiant et provenance reste tracé ; les autres originaux sont conservés.
 
-Les deux ZIP A1 sont conservés et leurs 141 MP3 sont extraits dans des chemins distincts. Les quatre ZIP A2/B1 dépassaient la limite de transfert de 32 Mio ; les 287 fichiers envoyés individuellement constituent leur livraison exploitable. Les six collections sont désormais récupérées.
+Les deux ZIP A1 sont conservés. Les quatre ZIP A2/B1 dépassaient la limite de transfert de 32 Mio ; leurs 287 fichiers envoyés individuellement constituent leur livraison exploitable. Les six collections sont récupérées et les 426 sources actives passent un décodage intégral.
 
-Les **428 fichiers** passent le contrôle d’intégrité et disposent d’une transcription automatique avec horodatages natifs. Les deux mentions de copyright sont tracées dans [le registre de retrait](copyright-retire.json). Les autres plans distinguent les annonces de numérotation, les consignes et les paroles utiles. Les plans issus d’une source ayant exactement les mêmes octets sont réutilisables avec une provenance explicite ; chaque nouvelle entrée et chaque original restent conservés.
+**661 extraits FLAC et 661 MP3 sont maintenant générés**, ainsi que six assemblages de conversations sans annonces de numérotation. Les FLAC et les fenêtres de contrôle correspondent exactement aux échantillons source ; tous les MP3 passent un décodage intégral. Les cinq blocages de plan précédents sont corrigés. La relecture des limites a aussi repris 97 entrées, notamment les numéros d’activité composés et les consignes « Lisez les questions… ».
 
-Au point d’avancement de ce commit : 657 passages candidats sont repérés ; cinq plans demandent encore une correction d’horodatage ou de représentation des expressions prononcées. Des noms, nombres et passages mal reconnus dans les brouillons ASR restent signalés. Aucun contrôle par écoute ni aucune bascule en production n’est déclaré.
+451 anciennes références sont identifiées dans ce lot, dont 214 supplémentaires par rapport au premier lot. Chacune est reliée à un extrait ou assemblage réel. Le total des deux lots atteint **886 références préparées sur 1 318** ; 432 restent à rapprocher.
 
-- [Sources et provenance](sources.json)
-- [État chiffré et blocages](etat.json)
-- [Exclusions de consignes et limites explicites](segmentation-overrides.json)
-- [Priorités de vérification des transcriptions](transcript-review-priorities.json)
+**Aucune écoute ni bascule en production n’est déclarée.** Les transcriptions restent automatiques et parfois incomplètes. Les différences sur les noms, heures, nombres et formulations doivent encore être contrôlées, ainsi que les questions et réponses. Les cinq lectures supplémentaires du second moteur sont conservées pour comparaison.
 
-Le dossier de travail est `/workspace/work/tcf-audio-additional-20261102-work`. Les sources individuelles restent également dans `/workspace/attachments`. La bibliothèque de production reste `public/lib/audio/tcf/co/` ; les fichiers de travail ne sont pas une seconde bibliothèque servie.
+- [État chiffré](etat.json), [sources et provenance](sources.json), [retraits de copyright](copyright-retire.json).
+- [Transcriptions et mots horodatés](transcriptions.json), [extraits générés](decoupes.json), [assemblages](assemblages.json), [comparaison ASR](double-transcription.json).
+- [Liaisons préparées](remplacements-prepares.json), [correspondances](correspondances.json), [preuves de signal](preuves-signal.json).
+- [Exclusions et unités lexicales explicites](segmentation-overrides.json), [corrections des limites des deux lots](../corrections-de-limites.json), [priorités de transcription](transcript-review-priorities.json).
 
-Le [contrôle du signal](preuves-signal.json) identifie 451 anciennes références dans ce lot, dont 214 non identifiées dans le premier. Le total des deux lots atteint 857 références identifiées ; 461 restent à rapprocher.
+Le dossier de travail est `/workspace/work/tcf-audio-additional-20261102-work`. Le plan courant est `plans-all-reviewed-v9/segmentation-index.json`. `staged-boundaries-work/review-index.html` ouvre les candidats complets, les fenêtres de contrôle et les modèles de revue vierges. La bibliothèque servie reste `public/lib/audio/tcf/co/` ; les fichiers de travail ne sont pas une bibliothèque parallèle.

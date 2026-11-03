@@ -118,6 +118,9 @@ def labels(words):
     heads = {'document', 'dialogue', 'annonce', 'situation', 'exercice', "l'exercice", 'activite', 'activity', 'piste', 'partie'}
     for index in range(len(words)-1):
         head, following = norm(words[index]['text']), norm(words[index+1]['text'])
+        # The past participle « annoncé un appel » is not « Annonce un ».
+        if head == 'annonce' and words[index]['text'].lower().rstrip('.,!?;:') == 'annoncé':
+            continue
         last = index+1
         if following in ('numero','n°') and index+2 < len(words):
             last = index+2
@@ -182,6 +185,11 @@ def classify(words, override=None):
 
 def make_plan(asr, source, override=None):
     words, corrections = native_words(asr)
+    for unit in (override or {}).get('lexical_units', []):
+        word = words[unit['word_index']]
+        if word['text'] != unit['text'] or unit['type'] != 'web_address':
+            raise BoundaryError('Lexical expression differs from the reviewed source tokens')
+        word.update(lexical_unit=unit['type'],lexical_unit_reason=unit['reason'])
     segments, excluded, uncertainties, method, markers = classify(words, override)
     result = []
     for index, entry in enumerate(segments):

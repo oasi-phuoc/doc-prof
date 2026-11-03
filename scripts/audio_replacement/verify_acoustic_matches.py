@@ -11,6 +11,7 @@ import numpy as np
 from scipy.signal import correlate
 
 RATE = 8000
+COMPARISON_VERSION = 2
 
 @functools.lru_cache(maxsize=6)
 def decode(path):
@@ -36,12 +37,41 @@ def best_correlation(source, query):
     index = int(np.argmax(corr))
     return index, float(corr[index])
 
+
+def anchor_starts(old, width):
+    """Choose actual signal windows when the middle of an exam is a long pause.
+
+    This only locates matching evidence. Silence never defines a dialogue cut.
+    Keep the separated anchors and the same correlation/offset thresholds.
+    """
+    targets=[max(0,min(len(old)-width,int(len(old)*fraction)-width//2)) for fraction in (.2,.5,.8)]
+    options=sorted(set(targets+[round((len(old)-width)*i/60) for i in range(61)]))
+    sums=np.r_[0.,np.cumsum(old)]
+    squares=np.r_[0.,np.cumsum(old*old)]
+    energy={first:max(0.,float(squares[first+width]-squares[first] -
+                   (sums[first+width]-sums[first])**2/width)) for first in options}
+    floor=max(1e-8,max(energy.values(),default=0)*.02)
+    useful=[first for first in options if energy[first]>=floor]
+    if not useful:
+        return sorted(set(targets))
+    selected=[]
+    for target in targets:
+        candidates=sorted(useful,key=lambda first:(abs(first-target),-energy[first]))
+        choice=next((first for first in candidates if all(abs(first-other)>=min(width//2,max(1,(len(old)-width)//2))
+                                                        for other in selected)),None)
+        if choice is not None:
+            selected.append(choice)
+    return sorted(set(selected))
+
 def compare(old_file, source_file):
     old, source = decode(old_file), decode(source_file)
     # Separated anchors can demonstrate shared waveform and constant offset.
-    width = min(3*RATE, max(RATE//2, len(old)//4))
-    starts = sorted(set(max(0, min(len(old)-width, int(len(old)*fraction)-width//2))
-                        for fraction in (.2, .5, .8)))
+    width = min(len(old),3*RATE,max(RATE//2,len(old)//4))
+    if width == 0:
+        return {'status':'signal_not_confirmed','comparison_version':COMPARISON_VERSION,
+                'reason':'empty_decoded_old_signal','anchors':[],
+                'listening_performed':False,'clean_boundaries_validated':False}
+    starts = anchor_starts(old,width)
     rows = []
     for first in starts:
         query = old[first:first+width]
@@ -56,7 +86,8 @@ def compare(old_file, source_file):
               min(row['source_offset_seconds'] for row in strong)) if strong else None
     same = len(strong) >= min(3, len(starts)) and len(strong) >= 2 and spread <= .04
     return {'status': 'signal_source_confirmed' if same else 'signal_not_confirmed',
-            'method': 'three separated 8kHz PCM waveform anchors, normalized FFT correlation',
+            'method': 'three separated non-silent 8kHz PCM waveform anchors, normalized FFT correlation',
+            'comparison_version': COMPARISON_VERSION,
             'sample_rate': RATE, 'anchors': rows, 'offset_spread_seconds': spread,
             'old_duration_decoded': len(old)/RATE, 'source_duration_decoded': len(source)/RATE,
             'source_offset_seconds': float(np.median([row['source_offset_seconds'] for row in strong])) if same else None,
@@ -67,6 +98,9 @@ def main():
     parser.add_argument('--work', type=Path, default=Path('/workspace/work/tcf-audio-replacement'))
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--min-lexical-score', type=float, default=.75)
+    parser.add_argument('--top-candidates',type=int,default=2)
+    parser.add_argument('--refs-file',type=Path,help='JSON list of current audio refs to compare')
+    parser.add_argument('--retry-unconfirmed',action='store_true',help='Recheck older failed comparisons with signal-bearing anchors')
     args = parser.parse_args()
     matches = json.loads((args.work/'source-dialogue-candidates.json').read_text())
     current = json.loads((args.work/'current-dialogue-index.json').read_text())
@@ -74,8 +108,11 @@ def main():
     output = args.work/'acoustic-source-evidence.json'
     previous = json.loads(output.read_text()) if output.exists() else {'evidence': []}
     evidence = {(row['old_ref'], row['source_id']): row for row in previous['evidence']}
-    candidates = [(row, candidate) for row in matches['matches']
-                  for candidate in row['candidates'][:2]
+    if not 1<=args.top_candidates<=24:
+        raise ValueError('top-candidates must be between 1 and 24')
+    refs=set(json.loads(args.refs_file.read_text())) if args.refs_file else None
+    candidates = [(row, candidate) for row in matches['matches'] if refs is None or row['old_ref'] in refs
+                  for candidate in row['candidates'][:args.top_candidates]
                   if candidate['score'] >= args.min_lexical_score]
     candidates.sort(key=lambda pair: pair[1]['source_file'])
     processed = 0
@@ -90,7 +127,9 @@ def main():
         temporary.replace(output)
     for row, candidate in candidates:
         key = row['old_ref'], candidate['source_id']
-        if key in evidence:
+        earlier=evidence.get(key)
+        if earlier and (not args.retry_unconfirmed or earlier['status']=='signal_source_confirmed' or
+                        earlier.get('comparison_version',1)>=COMPARISON_VERSION):
             continue
         old = byref[row['old_ref']]
         result = {'old_ref': row['old_ref'], 'old_sha256': old['sha256'],
@@ -100,6 +139,8 @@ def main():
             result.update(compare(old['current_file'], candidate['source_file']))
         except Exception as error:
             result.update(status='comparison_failed', error=str(error))
+        if earlier:
+            result['previous_comparison_preserved']=earlier
         evidence[key] = result
         processed += 1
         save()

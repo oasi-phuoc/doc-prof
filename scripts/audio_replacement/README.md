@@ -35,3 +35,22 @@ python scripts/audio_replacement/build_report.py
 `transcribe_sherpa.py` permet une lecture indépendante avec le modèle Whisper small INT8 officiel. Cet export donne des horodatages de segments, sans horodatages de mots. Il peut s’arrêter après une annonce d’exercice sur un original ; comparer la couverture et conserver cette sortie comme incomplète. Une seconde transcription des candidats sans préambule a servi à signaler les divergences factuelles, pas à certifier l’écoute.
 
 Les manifestes de découpe se préparent avec [tcf_audio_boundaries.py](../README-tcf-audio-boundaries.md). La préparation de migration et les sauvegardes sont décrites dans [tcf_audio_replacement.py](../README-tcf-audio-replacement.md). Ne pas utiliser les correspondances candidates comme des validations de frontières ou des autorisations de suppression.
+
+## Reprise des collections complètes
+
+Les index courants sont `plans-textual-review-v4/segmentation-index.json` dans le premier dossier de travail et `plans-all-reviewed-v9/segmentation-index.json` dans le dossier supplémentaire. Les anciennes versions restent disponibles.
+
+- `realign_sources.py` produit une lecture française et un alignement DTW natif supplémentaires, sans écraser la première ASR.
+- `review_plan_ranges.py` applique des plages de mots explicitement relues, liées à l’empreinte du plan précédent. Il conserve les temps natifs et les identifiants réutilisables.
+- `export_plan_word_views.py` fournit au rapprochement les indices exacts du plan courant, y compris les groupes coarticulés. Ces vues ont le statut `plan_matching_view` et ne servent jamais d’entrée ASR au préparateur.
+- `batch_prepare.py` génère et vérifie les FLAC, quatre fenêtres de contrôle, MP3 et pages de revue. Il reprend les sources déjà préparées uniquement si le plan et les fichiers correspondent. Une modification du plan crée un nouveau dossier de travail. Une sélection `--source-id` conserve le suivi de l’ensemble du catalogue.
+- `share_work_artifacts.py` partage les octets de fichiers générés identiques pour la même empreinte source, en conservant tous les chemins. Il refuse les originaux et les dossiers de production. Les artefacts existants restent immuables ; toute nouvelle coupe utilise un nouveau run.
+- `verify_acoustic_matches.py --retry-unconfirmed --top-candidates 6 --refs-file …` reprend les anciens échecs sur une liste JSON de références. Les ancres contenant du signal évitent les longues pauses d’examen ; les corrélations doivent atteindre 0,8 avec un écart de décalage d’au plus 40 ms ; trois ancres sont exigées lorsque la durée le permet, et au moins deux dans tous les cas. Les comparaisons précédentes sont conservées.
+
+Exemple de reprise du lot supplémentaire :
+
+```sh
+python scripts/audio_replacement/batch_prepare.py --work /workspace/work/tcf-audio-additional-20261102-work --catalogue /workspace/work/tcf-audio-additional-20261102-work/source-catalogue.json --plan-index /workspace/work/tcf-audio-additional-20261102-work/plans-all-reviewed-v9/segmentation-index.json --share-root /workspace/work/tcf-audio-replacement/staged-boundaries-work
+```
+
+La réserve disque porte sur les passages et fenêtres réellement écrits, avec une borne de taille PCM et MP3 ; le PCM intégral de l’original est traité en mémoire. Si la réserve est atteinte, les fichiers et versions déjà produits restent conservés. Les modèles de revue ne sont jamais remplis comme si une écoute avait été effectuée.

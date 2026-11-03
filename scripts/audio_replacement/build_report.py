@@ -24,12 +24,13 @@ def main():
     parser.add_argument('--out', type=Path, default=Path(__file__).resolve().parents[2]/'docs/tcf/remplacement-audio')
     parser.add_argument('--delivery-complete', action='store_true', help='User confirmed all source deliveries are complete')
     parser.add_argument('--api-network-blocked', action='store_true', help='Worker connection was blocked before authentication could be checked')
+    parser.add_argument('--plan-index',type=Path,help='Exact reviewed plan index; earlier versions remain intact')
     args = parser.parse_args()
     work, out = args.work.resolve(), args.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
     catalogue = read(work/'source-catalogue.json')
     progress = read(work/'source-asr-parakeet/batch-progress.json')
-    plans = read(work/'plans-native-final/segmentation-index.json')
+    plans = read(args.plan_index or work/'plans-native-final/segmentation-index.json')
     matches = read(work/'source-dialogue-candidates.json')
     acoustic = read(work/'acoustic-source-evidence.json')
     prepared_path = work/'staged-boundaries-work/batch-progress.json'
@@ -45,7 +46,14 @@ def main():
         sid = source['source_id']
         sources.append({key: source[key] for key in ['source_id','file_id','level','collection','track',
                        'original_filename','sha256','size_bytes','duration_seconds','sample_rate','channels']})
-        sources[-1]['original_relative_path'] = 'incoming/'+source['level']+'/'+source['original_filename']
+        source_path=Path(source['source_file'])
+        if source_path.is_relative_to(work):
+            sources[-1]['original_relative_path']=str(source_path.relative_to(work))
+        else:
+            sources[-1]['uploaded_original_path']=str(source_path)
+        for key in ('archive_sha256','archive_member','archive_name','source_batch'):
+            if key in source:
+                sources[-1][key]=source[key]
         sources[-1]['integrity'] = 'full_ffmpeg_decode_passed' if not source.get('integrity_errors') else 'requires_review'
         plan = read(plan_by_id[sid]['plan_path'])
         asr_path=Path(plan['provenance'].get('asr_path',work/'source-asr-parakeet'/f'{sid}.json'))
@@ -86,6 +94,8 @@ def main():
                     'source_token_precision','word_first','word_last','start_estimated_seconds','end_estimated_seconds',
                     'matched_text','review_flags','digit_form_comparison','question_answer_review']}
             item['signal_status'] = signal.get('status','not_compared')
+            item.update({key:candidate[key] for key in ('matched_word_first','matched_word_last',
+                        'word_index_basis','plan_sha256') if key in candidate})
             item['signal_source_offset_seconds'] = signal.get('source_offset_seconds')
             candidates.append(item)
         slim_matches.append({'old_ref':match['old_ref'], 'dialogue_id':match['dialogue_id'],
@@ -109,7 +119,8 @@ def main():
     by_hash = {source['sha256']:source for source in sources}
     link_file = work/'whisper-candidate-links.json'
     links = {row['candidate_sha256']:row for row in read(link_file)} if link_file.exists() else {}
-    for directory in ('source-asr-whisper-targeted','source-asr-whisper-candidates'):
+    for directory in ('source-asr-whisper-targeted','source-asr-whisper-candidates',
+                      'source-asr-whisper-dtw-v1','source-asr-whisper-dtw-v2'):
         if not (work/directory).exists():
             continue
         for path in sorted((work/directory).glob('*.json')):
@@ -125,7 +136,9 @@ def main():
                               'input_sha256':doc.get('source_sha256'),'parakeet_original':original_asr['text'],
                               'whisper':text,'status':'automatic_comparison_requires_listening',
                               'may_be_incomplete':len(text.split())<.6*len(original_asr['text'].split()),
-                              'word_timestamps_available':False,'listening_performed':False})
+                              'word_timestamps_available':bool(doc.get('words')),
+                              'word_timing_method':doc.get('word_timing_method'),
+                              'listening_performed':False})
     write(out/'double-transcription.json',{'schema_version':1,'sources':secondary,'listening_performed':False})
     proposals_path=work/'proposed-replacements-work/proposals.json'
     proposals=read(proposals_path) if proposals_path.exists() else {}
@@ -171,7 +184,7 @@ def main():
                'received_sources':len(sources), 'received_levels':catalogue['summary']['by_level'],
                'source_seconds':catalogue['summary']['duration_seconds'],
                'source_integrity_checked':catalogue['summary']['integrity_checked'],
-               'transcribed_sources':progress['transcribed'], 'transcription_failures':progress['failed'],
+               'transcribed_sources':len(transcripts), 'transcription_failures':progress['failed'],
                'source_words':sum(len(row['words']) for row in transcripts),
                'planned_segments':len(cuts), 'geometrically_blocked_sources':plans['plans_requiring_correction'],
                'prepared_sources':prepared.get('prepared_sources',0),

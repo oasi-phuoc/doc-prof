@@ -33,5 +33,11 @@ class SourceLabelTest(unittest.TestCase):
         segments,*_=classify(data)
         self.assertEqual(data[segments[0]['first_word']]['text'],'Bonjour')
 
+    def test_announced_a_project_is_not_an_announcement_number(self):
+        data=words('Activité 28 Le groupe a annoncé un appel à projets pour les cafés ruraux.')
+        segments,*_=classify(data)
+        self.assertEqual(segments[0]['first_word'],2)
+        self.assertIn('Le groupe', ' '.join(w['text'] for w in data[2:]))
+
 
 if __name__=='__main__':unittest.main()
