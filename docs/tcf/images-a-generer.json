@@ -21,8 +21,8 @@
     },
     "generated_reviewed_assets": 48,
     "activated_ce_questions_this_batch": 59,
-    "co_new_reviewed_images_this_batch": 42,
-    "co_activated_questions_this_batch": 11,
+    "co_new_reviewed_images_this_batch": 52,
+    "co_activated_questions_this_batch": 15,
     "association_scenes_restored_this_batch": 13
   },
   "questions": [
@@ -3133,7 +3133,12 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3226,7 +3231,12 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -13027,7 +13037,12 @@
           "asset": "bedd7c96f687"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
+        "/lib/images/tcf/qcm-audit/dbbfbad028b2.webp",
+        "/lib/images/tcf/qcm-audit/bedd7c96f687.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13585,7 +13600,12 @@
           "asset": "803b9d86fa1d"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/7df2449418dc.webp",
+        "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
+        "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -22639,7 +22659,7 @@
       "label": "Un sac",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sac ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s2-co-2",
@@ -22681,7 +22701,9 @@
           "question": 1,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+      "sha256": "6b93cbe2659a4ece110b3aab1503718f72bd70f5809fe352cda84ea996471e1a"
     },
     {
       "id": "0bea21a7ce1a",
@@ -24797,7 +24819,7 @@
       "label": "Des chambres simples",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chambres simples ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-3",
@@ -24809,14 +24831,16 @@
           "question": 3,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
+      "sha256": "9de305c09cf1470d957500b8ca4c40dd1deb1e542316bcf871793dbb73ca734c"
     },
     {
       "id": "803b9d86fa1d",
       "label": "Des chambres familiales",
       "path_after_generation": "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chambres familiales ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-3",
@@ -24828,7 +24852,9 @@
           "question": 3,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp",
+      "sha256": "980bf6606909549c63c68b7be9f23b403e742329ef3fab6251567c1a97d4f9ce"
     },
     {
       "id": "5db01ef5e45b",
@@ -31252,7 +31278,7 @@
       "label": "Un maillot de bain et une serviette",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un maillot de bain et une serviette ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s2-co-1",
@@ -31264,28 +31290,32 @@
           "question": 7,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
+      "sha256": "ea1d7673acf0bac3ce11ec7d6b3803bb4d5a179d97489b8e42c288ec22020fcb"
     },
     {
       "id": "dbbfbad028b2",
       "label": "Un ballon et une raquette",
       "path_after_generation": "/lib/images/tcf/qcm-audit/dbbfbad028b2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un ballon et une raquette ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s2-co-1",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/dbbfbad028b2.webp",
+      "sha256": "781e4967028bc6cadc5df678817357993c9ac3ebfc7306765dbb60c08ff66819"
     },
     {
       "id": "bedd7c96f687",
       "label": "Un cahier et un stylo",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bedd7c96f687.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un cahier et un stylo ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2j-s2-co-1",
@@ -31297,7 +31327,9 @@
           "question": 7,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/bedd7c96f687.webp",
+      "sha256": "d55bff5953ef18c5b6c02abd378994a46c3aaae343ec8220f0bc94e72fc28cd3"
     },
     {
       "id": "3ed19b68fd35",
@@ -31729,14 +31761,16 @@
       "label": "Des chambres doubles",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7df2449418dc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chambres doubles ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sa-co-3",
           "question": 3,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/7df2449418dc.webp",
+      "sha256": "bd70043ba54312208e38ad8f112178b0816cb91039850ad09b2a6397220a0e4c"
     },
     {
       "id": "7df3fe96e480",
