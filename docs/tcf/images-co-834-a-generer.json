@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 161,
-    "pending_question_candidates": 262,
+    "activated_planned_questions": 167,
+    "pending_question_candidates": 256,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 380,
-    "remaining_original_concepts": 361,
-    "new_co_images_this_batch": 490,
+    "original_concepts_now_generated_or_reused": 403,
+    "remaining_original_concepts": 338,
+    "new_co_images_this_batch": 516,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 120,
-    "sources_with_new_active_question_or_scene": 161,
+    "sources_with_pending_question_candidates": 116,
+    "sources_with_new_active_question_or_scene": 167,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 490,
+    "co_images_style_aligned": 516,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -1916,17 +1916,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-2.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex2-20",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -2534,17 +2534,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_48-3.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_48-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex4-48",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 11,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -2801,17 +2801,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_60.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a1-2022-co-ex1-60",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -4162,17 +4162,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s24-co-4",
-          "question": 2
-        },
-        {
-          "exercise": "tcf-ss-a2-s24-co-4",
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s24-co-4",
+          "question": 2
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -6793,8 +6794,9 @@
         "/lib/audio/tcf/co/radio/les-informations-2-2.mp3",
         "/lib/audio/tcf/co/radio/les-informations-2-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a2-sb-co-2",
           "question": 4
@@ -6804,10 +6806,9 @@
           "question": 12
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -14930,17 +14931,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s24-co-4",
-          "question": 2
-        },
-        {
-          "exercise": "tcf-ss-a2-s24-co-4",
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s24-co-4",
+          "question": 2
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -19485,7 +19487,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-chaussures-accessoires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-meubles-lampes-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s16-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-chaussures-accessoires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-meubles-lampes-dessine.webp"
+        ],
+        "support_quote": "La nouvelle collection printemps-été pour enfants est déjà dans notre boutique !\nLarge choix de couleurs de T-shirts, de nombreux modèles de chaussures et d'accessoires.",
+        "current_bank_transcription": "La nouvelle collection printemps-été pour enfants est déjà dans notre boutique !\nLarge choix de couleurs de T-shirts, de nombreux modèles de chaussures et d'accessoires.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Chaussures et accessoires d’enfants, livres et jeux, meubles et lampes : les deux catégories de chaque réponse sont montrées ensemble, au pluriel quand nécessaire."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21759,7 +21780,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s42-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp"
+        ],
+        "support_quote": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "current_bank_transcription": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Local à vélos, escaliers et couloirs sont représentés dans des vues distinctes, adaptées aux parties communes d’un immeuble."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21844,7 +21884,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s42-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+        ],
+        "support_quote": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "current_bank_transcription": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Tri du verre explicite par les pictogrammes et le matériau, local à vélos réutilisé, garage à voiture : les trois lieux sont distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23559,7 +23618,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-sc-17-metro-c-est-loin-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+        ],
+        "support_quote": "- La station de métro, c'est loin ?\n- Non, c'est à côté.",
+        "current_bank_transcription": "- La station de métro, c'est loin ?\n- Non, c'est à côté.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Station souterraine, gare ferroviaire déjà disponible et arrêt de bus en surface ; les infrastructures différencient les trois réponses."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -24582,7 +24660,7 @@
           "asset": "2086536a8acb"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:020:2c1a47878cfe"
       ],
@@ -24593,6 +24671,11 @@
           "candidate_cut_id": "delf_a1_2022-020-2c1a47878cfe-d2",
           "transcription": "ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
       ]
     },
     {
@@ -25147,7 +25230,7 @@
           "asset": "6cbee869ed1e"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:048:2ff67f56a340"
       ],
@@ -25158,6 +25241,11 @@
           "candidate_cut_id": "delf_a1_2022-048-2ff67f56a340-d2",
           "transcription": "Est-ce que vous avez des documents en anglais? Bien sûr. Qu'est-ce que vous cherchez? Je cherche des livres et des journaux."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-films-disques-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cartes-affiches-dessine.webp"
       ]
     },
     {
@@ -25189,7 +25277,7 @@
           "asset": "c08b1656dcd7"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:060:36a09838df72"
       ],
@@ -25200,6 +25288,11 @@
           "candidate_cut_id": "delf_a1_2022-060-36a09838df72-d1",
           "transcription": "Salut, c'est Jeannette. Pour l'anniversaire de Louis Samedi, est-ce que tu peux apporter le gâteau? Moi j'apporte les boissons et les ballons. On se retrouve chez moi à 14h, d'accord? Je propose d'aller chez Louis en voiture et pas en métro. À samedi alors!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-boissons-ballons-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gateau-fleurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-fromage-dessine.webp"
       ]
     },
     {
@@ -28177,7 +28270,7 @@
           "asset": "b2b236c246e2"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:002:6174b8971935"
       ],
@@ -28188,6 +28281,11 @@
           "candidate_cut_id": "delf_a2_eb2w-002-6174b8971935-r2-d1",
           "transcription": "La ville de Toulon organise samedi 24 septembre une grande vente publique place Jean Jaurès. Vous voulez vendre des tables ou des chaises que vous n'utilisez plus? Inscrivez-vous à la mairie. Prix de la place, 5 euros."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-tables-chaises-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp"
       ]
     },
     {
@@ -28219,7 +28317,7 @@
           "asset": "d29ba2465ee2"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:002:6174b8971935"
       ],
@@ -28230,6 +28328,11 @@
           "candidate_cut_id": "delf_a2_eb2w-002-6174b8971935-r2-d3",
           "transcription": "Aujourd'hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux. Appelez vite Tony au 08 4 21 34 90. Les 10 premiers gagnent des places de concert et des CD de Jaillot."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-concert-cd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp"
       ]
     },
     {
@@ -29355,7 +29458,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-rue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s17-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-rue-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+        ],
+        "support_quote": "Vous allez voir, c'est un bel appartement.\nIci un grand salon de 19 m2.\nLà, vous avez deux chambres et deux salles de bain.\nLa cuisine est équipée.\nEt regardez cette belle terrasse exposée sud.\nVous avez une magnifique vue sur le parc !",
+        "current_bank_transcription": "Vous allez voir, c'est un bel appartement.\nIci un grand salon de 19 m2.\nLà, vous avez deux chambres et deux salles de bain.\nLa cuisine est équipée.\nEt regardez cette belle terrasse exposée sud.\nVous avez une magnifique vue sur le parc !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Parc public arboré, rue résidentielle et parking existant réutilisé ; la question porte sur le lieu visible depuis la terrasse, sans ajouter cette terrasse aux réponses."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29421,7 +29543,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-arret-tramway-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s17-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-arret-tramway-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+        ],
+        "support_quote": "- Salut Flo, alors cette visite ?\nTu penses quoi du studio ?\n- Salut Allan.\nC'est un coup de cœur !\nIl est grand — 35 m2 — et exposé est-ouest.\n- Et le quartier ?\n- C'est à 5 minutes d'une station de métro.\nJe vais aussi discuter avec le gardien pour savoir si c'est calme.\nBon, 490 € de loyer c'est un peu cher, mais les charges sont comprises, alors je pense que ça va aller.\n- Tu signes le bail quand ?\n- Attends, attends…\nl'agence va me donner une réponse demain.",
+        "current_bank_transcription": "- Salut Flo, alors cette visite ?\nTu penses quoi du studio ?\n- Salut Allan.\nC'est un coup de cœur !\nIl est grand — 35 m2 — et exposé est-ouest.\n- Et le quartier ?\n- C'est à 5 minutes d'une station de métro.\nJe vais aussi discuter avec le gardien pour savoir si c'est calme.\nBon, 490 € de loyer c'est un peu cher, mais les charges sont comprises, alors je pense que ça va aller.\n- Tu signes le bail quand ?\n- Attends, attends…\nl'agence va me donner une réponse demain.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Station de métro réutilisée, arrêt de tram sur rails urbains et gare existante réutilisée ; le type de transport entier est représenté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -30002,7 +30143,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:008:bbec346152c1",
         "additional-20261102:mdf-a2-abc-junior-direct:8:bbec346152c1:df0594c9"
@@ -30014,6 +30155,11 @@
           "candidate_cut_id": "9782090351958-008-bbec346152c1-r2-d1",
           "transcription": "Je dois aller chez le photographe déclic, mais je ne sais pas où est le magasin. Il n'est pas très loin. Il est près du jardin public, à côté du poiffe. Ok, merci Julien."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
       ]
     },
     {
@@ -38125,7 +38271,7 @@
       "label": "Des livres et des magazines",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d29ba2465ee2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des livres et des magazines ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sb-co-2",
@@ -38133,8 +38279,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+      "sha256": "43b709a2a3c6c7d34581e11c45a2153c117400355b6adbd80eda33a3d26bc389",
+      "review_note": "Trois livres à couvertures unies et trois magazines souples à couvertures illustrées colorées ; pas de journal gris ou titre imprimé, types de documents distincts. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5aa49e2ac262",
@@ -38837,7 +38988,7 @@
       "label": "Des livres et des jeux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6b1a724b2cf1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des livres et des jeux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s16-co-2",
@@ -38850,8 +39001,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+      "sha256": "0cbc179069dedcbfea02ecabb43c412f0537dd6932aa5abfb33b59bf3cb837d4",
+      "review_note": "Trois livres sans titre, jeu de cartes à seuls symboles et jeu de quilles ; plusieurs livres et deux jeux distincts, pas de chiffre sur les cartes. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c3c843a756af",
@@ -39022,7 +39178,7 @@
       "label": "Des livres et des journaux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b2b236c246e2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des livres et des journaux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-20",
@@ -39040,8 +39196,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+      "sha256": "48138713d035e563e33a17e6ad2129b09db219dc0980a69050adb7aeaa47f34e",
+      "review_note": "Trois livres reliés et pile de journaux gris à colonnes abstraites ; pas de titre lisible, les deux types de documents sont distincts. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e34e8bfa7c12",
@@ -39132,7 +39293,7 @@
       "label": "Un arrêt de tramway",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ddb782fd0887.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un arrêt de tramway ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s17-co-4",
@@ -39140,8 +39301,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-arret-tramway-dessine.webp",
+      "sha256": "bac4910372615f1e313f71225777888d733322ff0cbbfacf9f1dc272286cea3f",
+      "review_note": "Quai et abri de tramway, rame articulée verte sur rails urbains et pantographe ; version redessinée, pas de bus à pneus. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "12364c7f4ffd",
@@ -39765,7 +39931,7 @@
       "label": "Le jardin public",
       "path_after_generation": "/lib/images/tcf/qcm-audit/dbe3cf340967.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le jardin public ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s24-co-4",
@@ -39773,8 +39939,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+      "sha256": "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+      "review_note": "Parc public avec allées, bancs, pelouse et jeux, entrée ouverte : lieu de promenade public distinct d’un jardin privé. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a30071aec873",
@@ -40036,7 +40207,7 @@
       "label": "Une station de métro",
       "path_after_generation": "/lib/images/tcf/qcm-audit/431168c87f8d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une station de métro ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s17-co-4",
@@ -40044,8 +40215,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+      "sha256": "d5b4687fd0535f81e7865be5f07fcbe1c22d86b9403df5da9221dc37a697dc2d",
+      "review_note": "Accès marqué M et quai souterrain carrelé avec rame et tunnel : station de métro représentée en coupe illustrative, distincte d’une gare. Version redessinée. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "65a61409d4ab",
@@ -40621,7 +40797,7 @@
       "label": "Le gâteau et les fleurs",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a308625ff421.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le gâteau et les fleurs ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-60",
@@ -40629,8 +40805,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-gateau-fleurs-dessine.webp",
+      "sha256": "09383040470dfa0552661ed8e1881bc39806cbbaa363928ba4c7a55be3e5de8e",
+      "review_note": "Un gâteau aux pommes avec sa part et un bouquet de fleurs ; pommes entières extérieures supprimées pour conserver les deux éléments de la réponse. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "25c79ccef5bd",
@@ -41310,7 +41491,7 @@
       "label": "Des cartes et des affiches",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6cbee869ed1e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des cartes et des affiches ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex4-48",
@@ -41318,8 +41499,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cartes-affiches-dessine.webp",
+      "sha256": "e2f616ea801734d04a22fe8ad12cfe37ce230e99e5c0b38a3752aa270e8f130a",
+      "review_note": "Deux cartes géographiques pliées et deux affiches papier de montagne et voilier, à coins fixés ; aucun titre, numéro, date ou prix. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "3138182600b6",
@@ -41410,7 +41596,7 @@
       "label": "Des meubles et des lampes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f643b34acc71.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des meubles et des lampes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s16-co-2",
@@ -41423,8 +41609,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-meubles-lampes-dessine.webp",
+      "sha256": "efbc6be0b8de4bbb726b7e0347321ebc606b8805208a845bb689782fc2b8c5c5",
+      "review_note": "Table, fauteuil et deux lampes distinctes, lampadaire et lampe de bureau ; tous les objets entiers, deux catégories au pluriel. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0cdb874c74dc",
@@ -43419,7 +43610,7 @@
       "label": "Les boissons et les ballons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b4d16c17229b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les boissons et les ballons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-60",
@@ -43427,8 +43618,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-boissons-ballons-dessine.webp",
+      "sha256": "f7a7fc9d723ff99a9bebd1cadab0f00c514d28eec95292d2f3148263bd038803",
+      "review_note": "Trois boissons et quatre ballons de fête avec ficelles et poids ; pas de ballon de sport, tous les éléments des deux catégories sont visibles. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c1894208bd4c",
@@ -44937,7 +45133,7 @@
       "label": "Des fruits et des légumes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b190abf23f89.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des fruits et des légumes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1v-ce-050",
@@ -44950,8 +45146,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+      "sha256": "a2c16cb8e61354daf3b1a09793d3e08e5c050498f353b3e2fd25ebd94b6e2469",
+      "review_note": "Fruits et légumes des dessins disponibles regroupés séparément ; tous les sujets entiers, sans panier ou aliment cuisiné. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "724a3551d63f",
@@ -45069,7 +45270,7 @@
       "label": "Dans une poubelle pour le verre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7d324ea9c39d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans une poubelle pour le verre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s42-co-3",
@@ -45077,8 +45278,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+      "sha256": "86ed3900571cd8e43429e9c284253e730b58598cdcd099524352352777d65b06",
+      "review_note": "Conteneur vert à ouvertures rondes, pictogrammes de bouteille et bocal, bouteille et bocal intacts devant : tri du verre explicite, sans mots. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "be9f5ef48c65",
@@ -45137,7 +45343,7 @@
       "label": "Des places de concert et des CD",
       "path_after_generation": "/lib/images/tcf/qcm-audit/49a41ec64743.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des places de concert et des CD ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sb-co-2",
@@ -45145,8 +45351,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-concert-cd-dessine.webp",
+      "sha256": "fae7a03fe803d029bffaf6c7aa6ee9e163755d925b395b9c6b54b6a9119dc5d3",
+      "review_note": "Deux billets vierges et CD avec boîtiers ; petite scène de concert existante réutilisée pour qualifier les billets. Personnages fictifs inclusifs de la référence conservés, sans nouvelle distribution identique générée. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0463ade9b531",
@@ -45237,7 +45448,7 @@
       "label": "Une rue",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c659a51b3b6b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une rue ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s17-co-1",
@@ -45245,8 +45456,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-rue-dessine.webp",
+      "sha256": "35444ff79247044c6c86f018f97adac461fd4d232590ad31411bc1dba2647e33",
+      "review_note": "Rue résidentielle avec chaussée, trottoirs et passage piéton, sans parking fermé ou parc. Version redessinée et surfaces peintes. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "45003505c590",
@@ -45900,7 +46116,7 @@
       "label": "Des tables et des chaises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/12e3c4fdd3ef.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des tables et des chaises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sb-co-2",
@@ -45908,8 +46124,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-tables-chaises-dessine.webp",
+      "sha256": "d691fb26ef59596a56334045489e7e46c73b2ac4280ab440375ce4e3e1cabf3d",
+      "review_note": "Deux tables en bois et trois chaises à dossier, objets entiers et pieds cohérents ; pluriel des deux catégories respecté. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cad994ca20f9",
@@ -46557,7 +46778,7 @@
       "label": "Le pain et le fromage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c08b1656dcd7.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le pain et le fromage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex1-60",
@@ -46565,15 +46786,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pain-fromage-dessine.webp",
+      "sha256": "b65df01eaa9999cd8e533aed2ba02cc66227bf9c31be44ec02e3febc8707aae4",
+      "review_note": "Pain et baguette sur une planche et fromages sur une deuxième, sans autre catégorie alimentaire ajoutée. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e56f09db2b0c",
       "label": "Dans le local à vélos",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e56f09db2b0c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans le local à vélos ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s42-co-3",
@@ -46586,8 +46812,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+      "sha256": "518b7c34a997a219bbd05274c3105446473a3fc614cdb16c2a2047b48319996c",
+      "review_note": "Deux vélos rangés dans des arceaux à l’intérieur d’un local fermé ; ni couloir ni escalier. Version redessinée avec modelé peint après rejet du rendu photographique initial. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9dd6fb9363ec",
@@ -46984,7 +47215,7 @@
       "label": "Des films et des disques",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6fc0ab281183.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des films et des disques ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex4-48",
@@ -46992,8 +47223,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-films-disques-dessine.webp",
+      "sha256": "e3b6429e91eca8b8a33e7936ccf454f93e26313b187cc29f7a1d1bc06b9b224b",
+      "review_note": "Deux boîtiers de films illustrés par clap et pellicule, et plusieurs CD avec boîtiers transparents. Le contexte de documents recherchés permet la représentation physique DVD/CD ; aucune réutilisation de ce sens pour une question sur regarder un film. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "877414e8dcbe",
@@ -47563,7 +47799,7 @@
       "label": "La station de métro",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0844675a2519.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La station de métro ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-17-metro-c-est-loin-co-4",
@@ -47571,8 +47807,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+      "sha256": "d5b4687fd0535f81e7865be5f07fcbe1c22d86b9403df5da9221dc37a697dc2d",
+      "review_note": "Accès marqué M et quai souterrain carrelé avec rame et tunnel : station de métro représentée en coupe illustrative, distincte d’une gare. Version redessinée. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5d4821a08500",
@@ -48049,7 +48290,7 @@
       "label": "L'arrêt de bus",
       "path_after_generation": "/lib/images/tcf/qcm-audit/031cfb932212.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L'arrêt de bus ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-17-metro-c-est-loin-co-4",
@@ -48057,8 +48298,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "review_note": "Abri et poteau à pictogramme bus, autobus à pneus sur chaussée, aucun rail. Version redessinée, bus et arrêt visibles ensemble. Contrôle natif paysage 4:3, absence de montant et de date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "44868384583f",
@@ -48123,7 +48369,7 @@
       "label": "Des chaussures et des accessoires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bff90c628f6f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chaussures et des accessoires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s16-co-2",
@@ -48131,8 +48377,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-chaussures-accessoires-dessine.webp",
+      "sha256": "07bde1c7b504e54727928ecbbd69763223de6892f9ef2f0846681f233c89c4db",
+      "review_note": "Paire de baskets bleues et accessoires d’enfants : petit sac jaune, casquette rouge et barrettes ; deux catégories visibles et contexte de collection pour enfants conservé. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "24a750b52155",
@@ -49204,7 +49455,7 @@
       "label": "Des vêtements et des chaussures",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2086536a8acb.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des vêtements et des chaussures ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1s-ce-045",
@@ -49227,8 +49478,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+      "sha256": "e0675e8b025c2f79baf7f3b9a2d217f79a090eb346586c589a9c5428a8fea4e3",
+      "review_note": "Chemise, pantalon et pull pliés et paire de baskets entières, références existantes composées ensemble. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "cfae8f8ef8a6",
@@ -49277,7 +49533,7 @@
       "label": "Des boissons et des biscuits",
       "path_after_generation": "/lib/images/tcf/qcm-audit/80d8f3a8b422.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des boissons et des biscuits ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex2-20",
@@ -49285,8 +49541,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+      "sha256": "a56a3ce5a19107604aa5a846435b48b32f566cbc3e3b66339ade2a9b1a7ef6e1",
+      "review_note": "Jus, eau et café de la référence réutilisés, plus des biscuits sablés sur une assiette ; aucune pâtisserie à la crème ajoutée. Contrôle individuel et par trio, natif paysage exact 4:3, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "764e0de3f50f",
@@ -50382,19 +50643,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 490,
+    "reviewed_co_images": 516,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 549,
+    "reviewed_total_images": 575,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 538,
+    "already_aligned": 564,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 231
+    "new_images_compared_to_reference": 257
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

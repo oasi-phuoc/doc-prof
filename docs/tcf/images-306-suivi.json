@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 127,
-    "newly_activated": 44,
-    "prepared_pending_audio_link": 79,
+    "questions_illustrated_or_prepared": 139,
+    "newly_activated": 50,
+    "prepared_pending_audio_link": 85,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 179,
+    "remaining_questions_requiring_images_or_review": 167,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -1628,20 +1628,29 @@
           "asset": "f643b34acc71"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-chaussures-accessoires-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-meubles-lampes-dessine.webp"
       ],
-      "missing_labels": [
-        "Des chaussures et des accessoires",
-        "Des livres et des jeux",
-        "Des meubles et des lampes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s16-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-chaussures-accessoires-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-meubles-lampes-dessine.webp"
+        ],
+        "support_quote": "La nouvelle collection printemps-été pour enfants est déjà dans notre boutique !\nLarge choix de couleurs de T-shirts, de nombreux modèles de chaussures et d'accessoires.",
+        "current_bank_transcription": "La nouvelle collection printemps-été pour enfants est déjà dans notre boutique !\nLarge choix de couleurs de T-shirts, de nombreux modèles de chaussures et d'accessoires.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Chaussures et accessoires d’enfants, livres et jeux, meubles et lampes : les deux catégories de chaque réponse sont montrées ensemble, au pluriel quand nécessaire."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3632,20 +3641,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans le local à vélos",
-        "Dans les escaliers",
-        "Dans les couloirs"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s42-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp"
+        ],
+        "support_quote": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "current_bank_transcription": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Local à vélos, escaliers et couloirs sont représentés dans des vues distinctes, adaptées aux parties communes d’un immeuble."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3729,20 +3747,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans une poubelle pour le verre",
-        "Dans le local à vélos",
-        "Dans le garage"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s42-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+        ],
+        "support_quote": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "current_bank_transcription": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Tri du verre explicite par les pictogrammes et le matériau, local à vélos réutilisé, garage à voiture : les trois lieux sont distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5512,19 +5539,29 @@
           "asset": "031cfb932212"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
       ],
-      "missing_labels": [
-        "La station de métro",
-        "L'arrêt de bus"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-17-metro-c-est-loin-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+        ],
+        "support_quote": "- La station de métro, c'est loin ?\n- Non, c'est à côté.",
+        "current_bank_transcription": "- La station de métro, c'est loin ?\n- Non, c'est à côté.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Station souterraine, gare ferroviaire déjà disponible et arrêt de bus en surface ; les infrastructures différencient les trois réponses."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6467,7 +6504,7 @@
           "asset": "2086536a8acb"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:020:2c1a47878cfe"
       ],
@@ -6480,16 +6517,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
       ],
-      "missing_labels": [
-        "Des boissons et des biscuits",
-        "Des livres et des journaux",
-        "Des vêtements et des chaussures"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex2-20",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
+        ],
+        "support_quote": "ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage.",
+        "current_bank_transcription": "Mesdames, Messieurs. Tous nos trains ont un bar pour acheter des boissons et des biscuits pendant votre voyage. Merci de votre attention et bon voyage.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Boissons avec biscuits, livres avec journaux, vêtements avec chaussures : aucune réponse réduite à un seul mot de la paire."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6961,7 +7012,7 @@
           "asset": "6cbee869ed1e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:048:2ff67f56a340"
       ],
@@ -6974,16 +7025,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-films-disques-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cartes-affiches-dessine.webp"
       ],
-      "missing_labels": [
-        "Des livres et des journaux",
-        "Des films et des disques",
-        "Des cartes et des affiches"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-films-disques-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cartes-affiches-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex4-48",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-films-disques-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cartes-affiches-dessine.webp"
+        ],
+        "support_quote": "Est-ce que vous avez des documents en anglais? Bien sûr. Qu'est-ce que vous cherchez? Je cherche des livres et des journaux.",
+        "current_bank_transcription": "– Est-ce que vous avez des documents en anglais ? – Bien sûr ! Qu’est-ce que vous cherchez ? – Je cherche des livres et des journaux.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Livres et journaux, films sur DVD et disques CD, cartes géographiques et affiches : trois ensembles de documents distincts. La représentation DVD respecte ici le contexte de documents recherchés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7014,7 +7079,7 @@
           "asset": "c08b1656dcd7"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:060:36a09838df72"
       ],
@@ -7027,16 +7092,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-boissons-ballons-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gateau-fleurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-fromage-dessine.webp"
       ],
-      "missing_labels": [
-        "Les boissons et les ballons",
-        "Le gâteau et les fleurs",
-        "Le pain et le fromage"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-boissons-ballons-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gateau-fleurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-fromage-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-60",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-boissons-ballons-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gateau-fleurs-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-fromage-dessine.webp"
+        ],
+        "support_quote": "Salut, c'est Jeannette. Pour l'anniversaire de Louis Samedi, est-ce que tu peux apporter le gâteau? Moi j'apporte les boissons et les ballons. On se retrouve chez moi à 14h, d'accord? Je propose d'aller chez Louis en voiture et pas en métro. À samedi alors!",
+        "current_bank_transcription": "Salut, c’est Jeannette ! Pour l’anniversaire de Louis\nsamedi, est-ce que tu peux apporter le gâteau ?\nMoi, j’apporte les boissons et les ballons. On se\nretrouve chez moi à 14 h d’accord ? Je propose\nd’aller chez Louis en voiture et pas en métro. À\nsamedi alors !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Boissons et ballons de fête, gâteau et fleurs, pain et fromage : chaque paire entière est lisible. Les images ne portent aucun jour, date ou horaire mentionné par le support."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -9264,7 +9343,7 @@
           "asset": "b2b236c246e2"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:002:6174b8971935"
       ],
@@ -9277,16 +9356,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-tables-chaises-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp"
       ],
-      "missing_labels": [
-        "Des tables et des chaises",
-        "Des fruits et des légumes",
-        "Des livres et des journaux"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-tables-chaises-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a2-sb-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-tables-chaises-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp"
+        ],
+        "support_quote": "La ville de Toulon organise samedi 24 septembre une grande vente publique place Jean Jaurès. Vous voulez vendre des tables ou des chaises que vous n'utilisez plus? Inscrivez-vous à la mairie. Prix de la place, 5 euros.",
+        "current_bank_transcription": "La Ville de Toulon organise samedi 24 septembre une grande vente publique Place Jean Jaurès. Vous voulez vendre des tables ou des chaises que vous n'utilisez plus ? Inscrivez-vous à la mairie. Prix de la place, 5 euros.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Tables et chaises, fruits et légumes, livres et journaux : trois ensembles réellement distincts ; plusieurs meubles et chaises visibles."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9317,7 +9410,7 @@
           "asset": "d29ba2465ee2"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:002:6174b8971935"
       ],
@@ -9330,16 +9423,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-concert-cd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp"
       ],
-      "missing_labels": [
-        "Des places de concert et des CD",
-        "Des vêtements et des chaussures",
-        "Des livres et des magazines"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-concert-cd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a2-sb-co-2",
+        "question": 12,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-concert-cd-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp"
+        ],
+        "support_quote": "Aujourd'hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux. Appelez vite Tony au 08 4 21 34 90. Les 10 premiers gagnent des places de concert et des CD de Jaillot.",
+        "current_bank_transcription": "Aujourd'hui, pour son anniversaire, votre radio préférée vous offre plein de cadeaux. Appelez vite Tony au 08 34 21 34 90. Les dix premiers gagnent des places de concert et des CD de Jaillot.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé visuellement en 4:3 et comparé au style 48a753d8 ; transcription relue. Billets de concert avec scène qualifiante et CD, vêtements et chaussures, livres et magazines ; les magazines se distinguent des journaux utilisés dans les autres trios."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10070,19 +10177,29 @@
           "asset": "f6145b0eb230"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-rue-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
       ],
-      "missing_labels": [
-        "Un parc",
-        "Une rue"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s17-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-rue-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+        ],
+        "support_quote": "Vous allez voir, c'est un bel appartement.\nIci un grand salon de 19 m2.\nLà, vous avez deux chambres et deux salles de bain.\nLa cuisine est équipée.\nEt regardez cette belle terrasse exposée sud.\nVous avez une magnifique vue sur le parc !",
+        "current_bank_transcription": "Vous allez voir, c'est un bel appartement.\nIci un grand salon de 19 m2.\nLà, vous avez deux chambres et deux salles de bain.\nLa cuisine est équipée.\nEt regardez cette belle terrasse exposée sud.\nVous avez une magnifique vue sur le parc !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Parc public arboré, rue résidentielle et parking existant réutilisé ; la question porte sur le lieu visible depuis la terrasse, sans ajouter cette terrasse aux réponses."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10157,19 +10274,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-arret-tramway-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
       ],
-      "missing_labels": [
-        "Une station de métro",
-        "Un arrêt de tramway"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s17-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-arret-tramway-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+        ],
+        "support_quote": "- Salut Flo, alors cette visite ?\nTu penses quoi du studio ?\n- Salut Allan.\nC'est un coup de cœur !\nIl est grand — 35 m2 — et exposé est-ouest.\n- Et le quartier ?\n- C'est à 5 minutes d'une station de métro.\nJe vais aussi discuter avec le gardien pour savoir si c'est calme.\nBon, 490 € de loyer c'est un peu cher, mais les charges sont comprises, alors je pense que ça va aller.\n- Tu signes le bail quand ?\n- Attends, attends…\nl'agence va me donner une réponse demain.",
+        "current_bank_transcription": "- Salut Flo, alors cette visite ?\nTu penses quoi du studio ?\n- Salut Allan.\nC'est un coup de cœur !\nIl est grand — 35 m2 — et exposé est-ouest.\n- Et le quartier ?\n- C'est à 5 minutes d'une station de métro.\nJe vais aussi discuter avec le gardien pour savoir si c'est calme.\nBon, 490 € de loyer c'est un peu cher, mais les charges sont comprises, alors je pense que ça va aller.\n- Tu signes le bail quand ?\n- Attends, attends…\nl'agence va me donner une réponse demain.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Station de métro réutilisée, arrêt de tram sur rails urbains et gare existante réutilisée ; le type de transport entier est représenté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10672,7 +10799,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:008:bbec346152c1",
         "additional-20261102:mdf-a2-abc-junior-direct:8:bbec346152c1:df0594c9"
@@ -10686,15 +10813,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
       ],
-      "missing_labels": [
-        "Le jardin public",
-        "Le collège"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s24-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-college-dessine.webp"
+        ],
+        "support_quote": "Je dois aller chez le photographe déclic, mais je ne sais pas où est le magasin. Il n'est pas très loin. Il est près du jardin public, à côté du poiffe. Ok, merci Julien.",
+        "current_bank_transcription": "Vous entendez ces conversations à la sortie d'une école, en France.\nDialogue A.\nJe dois aller chez le photographe des clics, mais je ne sais pas où il magasin.\nIl n'est pas très loin.\nIl est près du jardin public, à côté du pofeur.\nOk, merci Julien.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3, comparé au style 48a753d8 ; transcription proposée ou actuelle relue selon la présence du lien. Parc public municipal réutilisé pour jardin public, gare existante et collège avec cour de récréation ; qualification du lieu conservée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15334,11 +15476,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
       ],
       "missing_labels": [
-        "Sous la grande tente",
-        "Dans le parc"
+        "Sous la grande tente"
       ],
       "ready_for_source_review": false
     },

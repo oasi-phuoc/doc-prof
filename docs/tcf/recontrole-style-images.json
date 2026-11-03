@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 490,
+    "reviewed_co_images": 516,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 549,
+    "reviewed_total_images": 575,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 538,
+    "already_aligned": 564,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 231
+    "new_images_compared_to_reference": 257
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -6958,6 +6958,408 @@
       "sha256": "6cf93ca43ab8dcb6fca8d54b0924e8bf6c2ed3a824b0bc775a03b7c744d5efa3",
       "status": "aligned",
       "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Barbecue à charbon à couvercle ouvert et grille vide, pieds et roues complets, sans personne.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-local-velos-dessine",
+      "label": "Dans le local à vélos",
+      "path": "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+      "sha256": "518b7c34a997a219bbd05274c3105446473a3fc614cdb16c2a2047b48319996c",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Deux vélos rangés dans des arceaux à l’intérieur d’un local fermé ; ni couloir ni escalier. Version redessinée avec modelé peint après rejet du rendu photographique initial.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-escaliers-dessine",
+      "label": "Dans les escaliers",
+      "path": "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+      "sha256": "3cc7ad966f08904610bee7dbac4d57563d6ea64114e0ab9543e7baca1d27f1d8",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Cage d’escalier et palier d’immeuble, marches et main courante continues. Version redessinée, surfaces peintes et contours discrets.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-couloirs-dessine",
+      "label": "Dans les couloirs",
+      "path": "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp",
+      "sha256": "4a3c8afe693bdb5699c027d97b59cf21fba20ca7faeb5b82ab68c316c11728fa",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Couloir de plain-pied distribuant plusieurs portes, sans escalier ; version redessinée avec matériaux peints.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-poubelle-verre-dessine",
+      "label": "Dans une poubelle pour le verre",
+      "path": "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+      "sha256": "86ed3900571cd8e43429e9c284253e730b58598cdcd099524352352777d65b06",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Conteneur vert à ouvertures rondes, pictogrammes de bouteille et bocal, bouteille et bocal intacts devant : tri du verre explicite, sans mots.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-garage-dessine",
+      "label": "Dans le garage",
+      "path": "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp",
+      "sha256": "f2af82c4d25220ebab769be403b2a6a32adbb7c920d74e50c5bafccad5ae4aaa",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Voiture entière dans un box de garage à porte levée, outillage et étagères. Version initiale trop photographique écartée et redessinée avant intégration.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-station-metro-dessine",
+      "label": "La station de métro",
+      "path": "/lib/images/tcf/qcm-audit/co306-station-metro-dessine.webp",
+      "sha256": "d5b4687fd0535f81e7865be5f07fcbe1c22d86b9403df5da9221dc37a697dc2d",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Accès marqué M et quai souterrain carrelé avec rame et tunnel : station de métro représentée en coupe illustrative, distincte d’une gare. Version redessinée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-arret-bus-dessine",
+      "label": "L'arrêt de bus",
+      "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Abri et poteau à pictogramme bus, autobus à pneus sur chaussée, aucun rail. Version redessinée, bus et arrêt visibles ensemble.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-arret-tramway-dessine",
+      "label": "Un arrêt de tramway",
+      "path": "/lib/images/tcf/qcm-audit/co306-arret-tramway-dessine.webp",
+      "sha256": "bac4910372615f1e313f71225777888d733322ff0cbbfacf9f1dc272286cea3f",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Quai et abri de tramway, rame articulée verte sur rails urbains et pantographe ; version redessinée, pas de bus à pneus.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-parc-public-dessine",
+      "label": "Un parc",
+      "path": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+      "sha256": "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Parc public avec allées, bancs, pelouse et jeux, entrée ouverte : lieu de promenade public distinct d’un jardin privé.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-rue-dessine",
+      "label": "Une rue",
+      "path": "/lib/images/tcf/qcm-audit/co306-rue-dessine.webp",
+      "sha256": "35444ff79247044c6c86f018f97adac461fd4d232590ad31411bc1dba2647e33",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Rue résidentielle avec chaussée, trottoirs et passage piéton, sans parking fermé ou parc. Version redessinée et surfaces peintes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-college-dessine",
+      "label": "Le collège",
+      "path": "/lib/images/tcf/qcm-audit/co306-college-dessine.webp",
+      "sha256": "eaa0ac8043b543e479947111dc0b06aca54bfa29008fb891c4687aa4f56b6248",
+      "status": "aligned",
+      "review_note": "Comparaison aux deux références 48a753d8 de cinéma et théâtre relues : volumes doux, contours fins et surfaces peintes. Les neuf rendus trop photographiques ont été redessinés avant publication. Collège avec cour, préau, classes et panier de basket ; inscription COLLÈGE relue après reprise du dessin, sans autre information chiffrée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-chaussures-accessoires-dessine",
+      "label": "Des chaussures et des accessoires",
+      "path": "/lib/images/tcf/qcm-audit/co306-chaussures-accessoires-dessine.webp",
+      "sha256": "07bde1c7b504e54727928ecbbd69763223de6892f9ef2f0846681f233c89c4db",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Paire de baskets bleues et accessoires d’enfants : petit sac jaune, casquette rouge et barrettes ; deux catégories visibles et contexte de collection pour enfants conservé.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-jeux-dessine",
+      "label": "Des livres et des jeux",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+      "sha256": "0cbc179069dedcbfea02ecabb43c412f0537dd6932aa5abfb33b59bf3cb837d4",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Trois livres sans titre, jeu de cartes à seuls symboles et jeu de quilles ; plusieurs livres et deux jeux distincts, pas de chiffre sur les cartes.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-meubles-lampes-dessine",
+      "label": "Des meubles et des lampes",
+      "path": "/lib/images/tcf/qcm-audit/co306-meubles-lampes-dessine.webp",
+      "sha256": "efbc6be0b8de4bbb726b7e0347321ebc606b8805208a845bb689782fc2b8c5c5",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Table, fauteuil et deux lampes distinctes, lampadaire et lampe de bureau ; tous les objets entiers, deux catégories au pluriel.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-boissons-biscuits-dessine",
+      "label": "Des boissons et des biscuits",
+      "path": "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+      "sha256": "a56a3ce5a19107604aa5a846435b48b32f566cbc3e3b66339ade2a9b1a7ef6e1",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Jus, eau et café de la référence réutilisés, plus des biscuits sablés sur une assiette ; aucune pâtisserie à la crème ajoutée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-journaux-dessine",
+      "label": "Des livres et des journaux",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-journaux-dessine.webp",
+      "sha256": "48138713d035e563e33a17e6ad2129b09db219dc0980a69050adb7aeaa47f34e",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Trois livres reliés et pile de journaux gris à colonnes abstraites ; pas de titre lisible, les deux types de documents sont distincts.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-vetements-chaussures-dessine",
+      "label": "Des vêtements et des chaussures",
+      "path": "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+      "sha256": "e0675e8b025c2f79baf7f3b9a2d217f79a090eb346586c589a9c5428a8fea4e3",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Chemise, pantalon et pull pliés et paire de baskets entières, références existantes composées ensemble.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-films-disques-dessine",
+      "label": "Des films et des disques",
+      "path": "/lib/images/tcf/qcm-audit/co306-films-disques-dessine.webp",
+      "sha256": "e3b6429e91eca8b8a33e7936ccf454f93e26313b187cc29f7a1d1bc06b9b224b",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Deux boîtiers de films illustrés par clap et pellicule, et plusieurs CD avec boîtiers transparents. Le contexte de documents recherchés permet la représentation physique DVD/CD ; aucune réutilisation de ce sens pour une question sur regarder un film.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cartes-affiches-dessine",
+      "label": "Des cartes et des affiches",
+      "path": "/lib/images/tcf/qcm-audit/co306-cartes-affiches-dessine.webp",
+      "sha256": "e2f616ea801734d04a22fe8ad12cfe37ce230e99e5c0b38a3752aa270e8f130a",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Deux cartes géographiques pliées et deux affiches papier de montagne et voilier, à coins fixés ; aucun titre, numéro, date ou prix.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-boissons-ballons-dessine",
+      "label": "Les boissons et les ballons",
+      "path": "/lib/images/tcf/qcm-audit/co306-boissons-ballons-dessine.webp",
+      "sha256": "f7a7fc9d723ff99a9bebd1cadab0f00c514d28eec95292d2f3148263bd038803",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Trois boissons et quatre ballons de fête avec ficelles et poids ; pas de ballon de sport, tous les éléments des deux catégories sont visibles.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-gateau-fleurs-dessine",
+      "label": "Le gâteau et les fleurs",
+      "path": "/lib/images/tcf/qcm-audit/co306-gateau-fleurs-dessine.webp",
+      "sha256": "09383040470dfa0552661ed8e1881bc39806cbbaa363928ba4c7a55be3e5de8e",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Un gâteau aux pommes avec sa part et un bouquet de fleurs ; pommes entières extérieures supprimées pour conserver les deux éléments de la réponse.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-pain-fromage-dessine",
+      "label": "Le pain et le fromage",
+      "path": "/lib/images/tcf/qcm-audit/co306-pain-fromage-dessine.webp",
+      "sha256": "b65df01eaa9999cd8e533aed2ba02cc66227bf9c31be44ec02e3febc8707aae4",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Pain et baguette sur une planche et fromages sur une deuxième, sans autre catégorie alimentaire ajoutée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-tables-chaises-dessine",
+      "label": "Des tables et des chaises",
+      "path": "/lib/images/tcf/qcm-audit/co306-tables-chaises-dessine.webp",
+      "sha256": "d691fb26ef59596a56334045489e7e46c73b2ac4280ab440375ce4e3e1cabf3d",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Deux tables en bois et trois chaises à dossier, objets entiers et pieds cohérents ; pluriel des deux catégories respecté.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-fruits-legumes-dessine",
+      "label": "Des fruits et des légumes",
+      "path": "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+      "sha256": "a2c16cb8e61354daf3b1a09793d3e08e5c050498f353b3e2fd25ebd94b6e2469",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Fruits et légumes des dessins disponibles regroupés séparément ; tous les sujets entiers, sans panier ou aliment cuisiné.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-concert-cd-dessine",
+      "label": "Des places de concert et des CD",
+      "path": "/lib/images/tcf/qcm-audit/co306-concert-cd-dessine.webp",
+      "sha256": "fae7a03fe803d029bffaf6c7aa6ee9e163755d925b395b9c6b54b6a9119dc5d3",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Deux billets vierges et CD avec boîtiers ; petite scène de concert existante réutilisée pour qualifier les billets. Personnages fictifs inclusifs de la référence conservés, sans nouvelle distribution identique générée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-livres-magazines-dessine",
+      "label": "Des livres et des magazines",
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+      "sha256": "43b709a2a3c6c7d34581e11c45a2153c117400355b6adbd80eda33a3d26bc389",
+      "status": "aligned",
+      "review_note": "Comparaison aux objets peints du commit 48a753d8 effectivement relus : volumes doux, fond crème, matières détaillées et contours fins. Composition de dessins disponibles avec conservation du concept entier. Trois livres à couvertures unies et trois magazines souples à couvertures illustrées colorées ; pas de journal gris ou titre imprimé, types de documents distincts.",
       "group": "co_active_audio_batch",
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
