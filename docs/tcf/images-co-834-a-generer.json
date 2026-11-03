@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 135,
-    "pending_question_candidates": 288,
+    "activated_planned_questions": 139,
+    "pending_question_candidates": 284,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 213,
-    "remaining_original_concepts": 528,
-    "new_co_images_this_batch": 338,
+    "original_concepts_now_generated_or_reused": 267,
+    "remaining_original_concepts": 474,
+    "new_co_images_this_batch": 372,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 144,
-    "sources_with_new_active_question_or_scene": 139,
+    "sources_with_pending_question_candidates": 139,
+    "sources_with_new_active_question_or_scene": 143,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 338,
+    "co_images_style_aligned": 372,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -943,17 +943,17 @@
         "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-2.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s47-co-1",
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 9,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -3829,17 +3829,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/la-famille-1.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-tpa-co-1",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -6766,22 +6766,21 @@
         "/lib/audio/tcf/co/radio/les-annonces-publiques-6-5.mp3",
         "/lib/audio/tcf/co/radio/les-annonces-publiques-6-6.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-a2-sb-co-1",
+          "question": 5
+        },
         {
           "exercise": "tcf-a2-sb-co-1",
           "question": 17
         }
       ],
-      "new_active_visual_questions": [
-        {
-          "exercise": "tcf-a2-sb-co-1",
-          "question": 5
-        }
-      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 21,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -9457,17 +9456,17 @@
         "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-2.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s47-co-1",
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 9,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -11979,17 +11978,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/06-magasin-annonce-offre-petit-déjeuner.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a2-annonce-6-4-co-2",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 3,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -17702,7 +17701,25 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a1p-s4-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp"
+        ],
+        "support_quote": "Merci de venir au premier cours mercredi dix septembre avec votre check de 160 euros pour l’inscription.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réponse correcte appuyée par la transcription ; les trois images entières ont été revues ensemble, distinctes et cohérentes, sans montant ni date. Le chèque et les espèces sont représentés sans valeur inscrite."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -17735,7 +17752,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couvertures-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a1p-s4-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-couvertures-dessine.webp"
+        ],
+        "support_quote": "Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention",
+        "current_bank_transcription": "Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Trois catégories d’objets distinctes : journaux papier, écouteurs intra-auriculaires et couvertures. La transcription actuelle annonce des journaux gratuits."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -17801,7 +17837,25 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+        "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+        "/lib/images/tcf/qcm-audit/co834-salade-fruits-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a1p-s3-co-1",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+          "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+          "/lib/images/tcf/qcm-audit/co834-salade-fruits-dessinee.webp"
+        ],
+        "support_quote": "Ils apportent le dessert : une tarte aux pommes.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réponse correcte appuyée par la transcription ; les trois images entières ont été revues ensemble, distinctes et cohérentes, en 4:3 et dans le style du commit 48a753d8."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -17834,7 +17888,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-avocat-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a1p-s3-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-avocat-dessine.webp"
+        ],
+        "support_quote": "Bonsoir.\nJe vous rappelle vos rendez-vous de demain, mardi.\nÀ 11 h, vous avez rendez-vous chez le dentiste.\nÀ 12 h 30, vous allez déjeuner au Club des Arts avec Madame Seguin.\nEt à 16 h, vous devez revenir au bureau pour la réunion avec le directeur de l’entreprise Nysol.\nBonne soirée !",
+        "current_bank_transcription": "Bonsoir.\nJe vous rappelle vos rendez-vous de demain, mardi.\nÀ 11 h, vous avez rendez-vous chez le dentiste.\nÀ 12 h 30, vous allez déjeuner au Club des Arts avec Madame Seguin.\nEt à 16 h, vous devez revenir au bureau pour la réunion avec le directeur de l’entreprise Nysol.\nBonne soirée !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Dentiste en consultation dentaire, médecin au stéthoscope et avocat en robe avec cliente ; trois professions reconnaissables et personnages variés. La transcription actuelle annonce le dentiste à 11 h."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -17865,7 +17938,7 @@
           "asset": "eb86112d610e"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:001:ded5d3894aeb"
       ],
@@ -17876,6 +17949,11 @@
           "candidate_cut_id": "piste_a1-001-ded5d3894aeb-d1",
           "transcription": "Allô, c'est Catherine. Je suis encore à mon bureau. Est-ce que tu peux aller à l'école à 1h45 pour prendre Margot? Après, passe à la boulangerie pour acheter du pain. Pour le repas de ce soir, je vais préparer de la soupe. Merci, à tout à l'heure."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
       ]
     },
     {
@@ -18196,7 +18274,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s4-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
+        ],
+        "support_quote": "Au revoir l'achat au distributeur, bonjour l'e-ticket !\nAvec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
+        "current_bank_transcription": "Au revoir l'achat au distributeur, bonjour l'e-ticket !\nAvec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Téléphone mobile, ordinateur de bureau avec unité centrale et imprimante seule ; les trois appareils sont entiers et distincts. La transcription actuelle indique le téléphone portable pour acheter le e-ticket."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -18399,7 +18496,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s6-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, je suis une nouvelle étudiante.\n- Bonjour.\nVous vous appelez comment ?\n- Je m'appelle Yoko Sumida.\n- Vous avez votre carte d'étudiant ?\n- Non, c'est quoi ?\n- C'est la carte pour entrer à la faculté, vous inscrire à la bibliothèque…\n- Ah oui, j'ai le formulaire de demande !\n- Très bien.\n- Et…\nexcusez-moi, je cherche le cours d'économie.\nOù est la salle, s'il vous plaît ?\n- Aujourd'hui, le cours a lieu dans l'amphi A12.\nVenez chercher votre carte demain à 10 heures.\n- Merci !\nJe peux venir plus tard ?\n- Vous pouvez venir quand ?\n- Demain, je commence à 9 heures et je finis à 11 heures.\n- Venez à 11 heures alors !",
+        "current_bank_transcription": "- Bonjour monsieur, je suis une nouvelle étudiante.\n- Bonjour.\nVous vous appelez comment ?\n- Je m'appelle Yoko Sumida.\n- Vous avez votre carte d'étudiant ?\n- Non, c'est quoi ?\n- C'est la carte pour entrer à la faculté, vous inscrire à la bibliothèque…\n- Ah oui, j'ai le formulaire de demande !\n- Très bien.\n- Et…\nexcusez-moi, je cherche le cours d'économie.\nOù est la salle, s'il vous plaît ?\n- Aujourd'hui, le cours a lieu dans l'amphi A12.\nVenez chercher votre carte demain à 10 heures.\n- Merci !\nJe peux venir plus tard ?\n- Vous pouvez venir quand ?\n- Demain, je commence à 9 heures et je finis à 11 heures.\n- Venez à 11 heures alors !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Bibliothèque de prêt avec lecteurs et comptoir, gymnase et piscine distincts ; le second rendu des lecteurs correspond au trait peint de la référence validée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -18740,7 +18856,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-terrasse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-balcon-ferme-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s10-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-terrasse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-balcon-ferme-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+        ],
+        "support_quote": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "current_bank_transcription": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Terrasse au niveau du sol, balcon vitré en étage et bassin de piscine ; aucune assimilation d’un balcon fermé à une terrasse."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -18773,7 +18908,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-demi-baguette-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-croissant-singulier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s11-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-demi-baguette-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-croissant-singulier-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
+        ],
+        "support_quote": "- Aujourd'hui, écoutons la recette du sandwich « Le Bocase ».\n- C'est très simple.\nDans une demi-baguette, mettez beaucoup de beurre, un œuf dur, 150 g de fromage, trois tranches de tomates avec un peu de sel et un morceau de poulet.",
+        "current_bank_transcription": "- Aujourd'hui, écoutons la recette du sandwich « Le Bocase ».\n- C'est très simple.\nDans une demi-baguette, mettez beaucoup de beurre, un œuf dur, 150 g de fromage, trois tranches de tomates avec un peu de sel et un morceau de poulet.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Demi-baguette avec une face coupée, un seul croissant et pain de mie ; les trois pains sont entiers dans leur représentation et distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -19349,7 +19503,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s17-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
+        ],
+        "support_quote": "Je déjeune tous les jours chez Jeanne.\nLes plats et les desserts sont excellents.\nIl y a toujours deux entrées avec des légumes délicieux.\nEn été, ils servent aussi des glaces à la fraise.",
+        "current_bank_transcription": "Je déjeune tous les jours chez Jeanne.\nLes plats et les desserts sont excellents.\nIl y a toujours deux entrées avec des légumes délicieux.\nEn été, ils servent aussi des glaces à la fraise.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Les images montrent les catégories entières légumes, fruits et poisson, sans ingrédient parasite ni qualification ajoutée. La transcription actuelle décrit deux entrées avec des légumes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -19736,7 +19909,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s21-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+        ],
+        "support_quote": "Le restaurant d'entreprise Mille Repas cherche un serveur ou une serveuse.\nVous êtes dynamique et sérieux, pas stressé ?\nVous aimez travailler en équipe ?\nDébut du contrat : le 1er avril.",
+        "current_bank_transcription": "Le restaurant d'entreprise Mille Repas cherche un serveur ou une serveuse.\nVous êtes dynamique et sérieux, pas stressé ?\nVous aimez travailler en équipe ?\nDébut du contrat : le 1er avril.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Restaurant d’entreprise avec badges, plateaux et bureaux visibles, boulangerie et pharmacie ; trois établissements distincts et nouveaux visages variés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20210,7 +20402,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s26-co-3",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
+        ],
+        "support_quote": "- Sacha, on est en retard !\n- Maman, je prends mon petit déjeuner !\n- Tu te couches trop tard !\nAprès, tu as des problèmes pour te réveiller le matin.\n- D'accord...\nCe soir, je me couche tôt et je mets mon réveil pour me lever à 6 h 30 demain.\n- Bien.\nEt arrête de regarder la télé !\nTu peux lire aussi !\n- Anaïs, elle, regarde des séries après le dîner.\n- Je dois parler avec elle.\nMais…\nelle est où ta sœur ?\n- Elle se douche, se maquille, ou s'habille peut-être.\nElle a besoin d'une heure pour se préparer.\n- Elle n'est pas en avance…\nAnaïs !\n- Tu finis le travail à quelle heure aujourd'hui ?\n- À 17 h.\nJe fais les courses et je rentre à la maison pour cuisiner.",
+        "current_bank_transcription": "- Sacha, on est en retard !\n- Maman, je prends mon petit déjeuner !\n- Tu te couches trop tard !\nAprès, tu as des problèmes pour te réveiller le matin.\n- D'accord...\nCe soir, je me couche tôt et je mets mon réveil pour me lever à 6 h 30 demain.\n- Bien.\nEt arrête de regarder la télé !\nTu peux lire aussi !\n- Anaïs, elle, regarde des séries après le dîner.\n- Je dois parler avec elle.\nMais…\nelle est où ta sœur ?\n- Elle se douche, se maquille, ou s'habille peut-être.\nElle a besoin d'une heure pour se préparer.\n- Elle n'est pas en avance…\nAnaïs !\n- Tu finis le travail à quelle heure aujourd'hui ?\n- À 17 h.\nJe fais les courses et je rentre à la maison pour cuisiner.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle visuel du trio complet, sujet entier, format exact 4:3 et style du commit 48a753d8. La scène existante d’achat de légumes au marché illustre les courses avant de cuisiner ; séance de gymnastique et visite au musée restent deux actions distinctes. Le mot courses n’est pas interprété comme de la course à pied."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20276,7 +20487,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp"
+        ],
+        "support_quote": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "current_bank_transcription": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Trois entrées entières distinctes : salade italienne avec tomate et mozzarella, soupe avec plusieurs légumes, assiette de fromages."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20309,7 +20539,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pates-poulet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pates-fromage-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pates-poulet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pates-fromage-dessine.webp"
+        ],
+        "support_quote": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "current_bank_transcription": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Trois plats complets de pâtes, respectivement aux légumes, au poulet et au fromage ; les ingrédients qualifiants sont tous visibles."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20408,7 +20657,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-jus-tomate-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-carotte-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-betterave-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-4",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jus-tomate-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jus-carotte-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jus-betterave-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "current_bank_transcription": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Trois jus avec leur légume explicitement visible : tomate rouge, carotte orange et betterave pourpre, sans étiquette."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20474,7 +20742,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s30-co-4",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, vous avez une ordonnance ?\n- Oui, et voilà ma carte Vitale.\n- Merci…\nAlors, voilà les antibiotiques, l'aspirine pour la fièvre et le sirop contre la toux.\n- Comment je prends ces médicaments s'il vous plaît ?\n- Pour l'antibiotique, vous devez prendre un comprimé matin, midi et soir, avec un verre d'eau.\n- Et le sirop ?\n- Une cuillère deux fois par jour, matin et soir, pendant 3 jours.\n- Vous avez de l'aspirine en sachet ?\n- Bien sûr.\nTenez.\n- Et…\ncontre la toux, vous avez des pastilles ?\n- Oui bien sûr.\nCe sera tout ?\n- Euh…\nnon, ma fille a une brûlure à la main, vous avez une crème ou un gel ?\n- Bien sûr.\nIl faut mettre cette crème sur la brûlure deux fois par jour",
+        "current_bank_transcription": "- Bonjour monsieur, vous avez une ordonnance ?\n- Oui, et voilà ma carte Vitale.\n- Merci…\nAlors, voilà les antibiotiques, l'aspirine pour la fièvre et le sirop contre la toux.\n- Comment je prends ces médicaments s'il vous plaît ?\n- Pour l'antibiotique, vous devez prendre un comprimé matin, midi et soir, avec un verre d'eau.\n- Et le sirop ?\n- Une cuillère deux fois par jour, matin et soir, pendant 3 jours.\n- Vous avez de l'aspirine en sachet ?\n- Bien sûr.\nTenez.\n- Et…\ncontre la toux, vous avez des pastilles ?\n- Oui bien sûr.\nCe sera tout ?\n- Euh…\nnon, ma fille a une brûlure à la main, vous avez une crème ou un gel ?\n- Bien sûr.\nIl faut mettre cette crème sur la brûlure deux fois par jour",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle visuel du trio complet, sujet entier, format exact 4:3 et style du commit 48a753d8. Eau claire en verre, café en tasse et jus de fruits en verre avec une orange ; les trois contenants et boissons correspondent aux réponses entières dans cette question."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20540,7 +20827,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s31-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp"
+        ],
+        "support_quote": "Vous toussez ?\nAchetez Calmatoux pour toute la famille, adultes ou enfants.\nDes pastilles contre la toux et le mal de gorge, à utiliser le jour et la nuit…\nCet hiver, Calmatoux est dans toutes les pharmacies !",
+        "current_bank_transcription": "Vous toussez ?\nAchetez Calmatoux pour toute la famille, adultes ou enfants.\nDes pastilles contre la toux et le mal de gorge, à utiliser le jour et la nuit…\nCet hiver, Calmatoux est dans toutes les pharmacies !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle visuel du trio complet, sujet entier, format exact 4:3 et style du commit 48a753d8. Pharmacie, boulangerie et espace de vente de livres distincts ; le rayon de livres existant représente ici la catégorie librairie, avec présentoir et panier d’achat, sans comptoir de prêt."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20573,7 +20879,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
+        "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp",
+        "/lib/images/tcf/qcm-audit/co306-suites-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
+          "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp",
+          "/lib/images/tcf/qcm-audit/co306-suites-dessine.webp"
+        ],
+        "support_quote": "- Hôtel de La Plage, bonjour.\n- Bonjour, vous avez une chambre double disponible pour la nuit du 12 au 13 juin s'il vous plaît ?\n- Non, mais nous avons des chambres simples…",
+        "current_bank_transcription": "- Hôtel de La Plage, bonjour.\n- Bonjour, vous avez une chambre double disponible pour la nuit du 12 au 13 juin s'il vous plaît ?\n- Non, mais nous avons des chambres simples…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Chambre à lit individuel, chambre familiale avec lit double et lits superposés, suite avec salon et espace nuit séparés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21049,7 +21374,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-jardin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-terrasse-toit-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cour-partagee-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s41-co-1",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jardin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-terrasse-toit-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cour-partagee-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, je cherche un appartement dans un immeuble calme.\n- Très bien.\nEt vous habitez où maintenant ?\n- J'habite boulevard des Charmes et il y a beaucoup de bruit.\n- C'est vrai.\nVous voulez combien de pièces ?\n- Nous sommes un couple avec 2 enfants…\n- Et vous voulez 2 ou 3 chambres ?\n- 3 chambres, c'est bien.\nEt…\nune cuisine équipée et des pièces lumineuses !\n- Bien sûr !\nVous préférez un appartement à l'étage avec une terrasse ou au rez-de-chaussée avec un jardin ?\n- Un appartement avec un jardin ?\nC'est super !\nNous avons un chien.\n- Vous êtes libre aujourd'hui pour visiter un appartement ?",
+        "current_bank_transcription": "- Bonjour monsieur, je cherche un appartement dans un immeuble calme.\n- Très bien.\nEt vous habitez où maintenant ?\n- J'habite boulevard des Charmes et il y a beaucoup de bruit.\n- C'est vrai.\nVous voulez combien de pièces ?\n- Nous sommes un couple avec 2 enfants…\n- Et vous voulez 2 ou 3 chambres ?\n- 3 chambres, c'est bien.\nEt…\nune cuisine équipée et des pièces lumineuses !\n- Bien sûr !\nVous préférez un appartement à l'étage avec une terrasse ou au rez-de-chaussée avec un jardin ?\n- Un appartement avec un jardin ?\nC'est super !\nNous avons un chien.\n- Vous êtes libre aujourd'hui pour visiter un appartement ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Jardin de plain-pied, terrasse aménagée sur un toit dont les étages sont visibles et cour commune entourée de plusieurs appartements ; les relations spatiales sont réellement représentées."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21313,7 +21657,25 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0806-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s45-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-0806-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+        ],
+        "support_quote": "Je voudrais un billet pour Marseille le 20 juin avec le TGV de 8 h. Le TGV est complet, mais il y a des places dans le TER de 8 h 06.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois horaires sont représentés exactement par les horloges relues en 4:3. La transcription appuie la bonne réponse « À 8 heures »."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21346,7 +21708,25 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-0806-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0906-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s45-co-2",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-0806-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-0906-dessinee.webp"
+        ],
+        "support_quote": "Je voudrais un billet pour Marseille le 20 juin avec le TGV de 8 h. Le TGV est complet, mais il y a des places dans le TER de 8 h 06.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois horaires sont représentés exactement par les horloges relues en 4:3. La transcription appuie la bonne réponse « À 8 h 06 »."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21420,7 +21800,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:044:6f1e71a5d8e3",
         "additional-20261102:mdf-a1-abc-junior:44:6f1e71a5d8e3:a0d1f6e7"
@@ -21432,6 +21812,11 @@
           "candidate_cut_id": "09035276-044-6f1e71a5d8e3-d4",
           "transcription": "J'ai faim. Je vais m'acheter un sandwich à la machine. Tu veux quelque chose? Oui, je veux bien une bouteille d'eau, s'il te plaît. D'accord, pas de problème."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
       ]
     },
     {
@@ -21738,7 +22123,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s50-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp"
+        ],
+        "support_quote": "— C'est pour déjeuner ?\n— Oui. Vous avez une table pour deux ?\n— Qu'est-ce que vous buvez ?\n— Une carafe d'eau, s'il vous plaît.\n— Qu'est-ce que tu bois ?\n— Pas d'alcool pour moi aujourd'hui. Un jus d'orange, s'il te plaît.\n— Tu prends du poisson ou de la viande ?\n— Je ne mange pas de viande. Je suis végétarien.\n— Je peux prendre votre commande ?\n— Oui. Une salade, un steak-frites et une tarte.",
+        "current_bank_transcription": "— C'est pour déjeuner ?\n— Oui. Vous avez une table pour deux ?\n— Qu'est-ce que vous buvez ?\n— Une carafe d'eau, s'il vous plaît.\n— Qu'est-ce que tu bois ?\n— Pas d'alcool pour moi aujourd'hui. Un jus d'orange, s'il te plaît.\n— Tu prends du poisson ou de la viande ?\n— Je ne mange pas de viande. Je suis végétarien.\n— Je peux prendre votre commande ?\n— Oui. Une salade, un steak-frites et une tarte.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Carafe d’eau, café en tasse et jus de pomme avec fruit, trois boissons distinctes ; la première boisson demandée est la carafe."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22030,7 +22434,28 @@
           "candidate_cut_id": "09035276-027-10f0dd53bf08-d1",
           "transcription": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 1h25. Merci de mettre une étiquette sur vos bagages avec vos nom et adresses. Gardez bien votre billet avec vous pendant tout le voyage."
         }
-      ]
+      ],
+      "image_preparation_status": "images_prepared_pending_audio_validation",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s53-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+        ],
+        "support_quote": "Mesdames et messieurs, le train à destination de Paris va partir voie numéro 17. Il s'arrête à la gare de Bordeaux et arrive à Paris à 1h25. Merci de mettre une étiquette sur vos bagages avec vos nom et adresses. Gardez bien votre billet avec vous pendant tout le voyage.",
+        "current_bank_transcription": "Mesdames, messieurs, le train à destination de Paris va partir voie numéro 3.\nIl s'arrête à Lyon à 11 h 22 et arrive à Paris à 12 h 03.\nN'oubliez pas d'écrire votre adresse et votre numéro de téléphone sur l'étiquette de vos bagages.\nVous devez avoir votre billet avec vous pendant le voyage.\nLa SNCF vous souhaite un bon voyage.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation.",
+        "audio_validation_required": true,
+        "audio_validation_reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22171,7 +22596,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1102-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1120-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s55-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1102-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1120-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp"
+        ],
+        "support_quote": "Mesdames, messieurs, bonjour.\nLa vitesse de notre TGV est maintenant de 300 km/h.\nL'arrivée en gare de Bordeaux est prévue à 11 h 02, avec un retard de 5 minutes.\nLa SNCF vous souhaite un excellent voyage.",
+        "current_bank_transcription": "Mesdames, messieurs, bonjour.\nLa vitesse de notre TGV est maintenant de 300 km/h.\nL'arrivée en gare de Bordeaux est prévue à 11 h 02, avec un retard de 5 minutes.\nLa SNCF vous souhaite un excellent voyage.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La transcription relue appuie la bonne réponse « 11 h 02 »."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22237,7 +22681,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-brioche-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-brioche-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
+        ],
+        "support_quote": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "current_bank_transcription": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Baguette longue entière, brioche ronde tressée et pain de mie rectangulaire à tranches carrées : trois formes de pain distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22270,7 +22733,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chaussons-pommes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-1",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chaussons-pommes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp"
+        ],
+        "support_quote": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "current_bank_transcription": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Trois viennoiseries distinctes, chacune montrée en deux exemplaires : croissants, chaussons montrant la pomme et pains en spirale avec raisins."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22303,7 +22785,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+        "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+        "/lib/images/tcf/qcm-audit/co834-glace-vanille-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+          "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+          "/lib/images/tcf/qcm-audit/co834-glace-vanille-dessinee.webp"
+        ],
+        "support_quote": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "current_bank_transcription": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. La tarte aux pommes représente entièrement la catégorie tarte ; les deux autres images montrent un gâteau au chocolat et une glace. Aucune indication de nombre de parts n’est ajoutée. La transcription actuelle demande une tarte pour quatre puis pour six."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22336,7 +22837,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-chocolat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-chocolat-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp"
+        ],
+        "support_quote": "- Chérie, j'achète quoi ?\n- Deux baguettes, deux croissants…\n- Des pains au chocolat ?\n- Oui, un pain au chocolat, mais pas de pain aux raisins.\n- D'accord !",
+        "current_bank_transcription": "- Chérie, j'achète quoi ?\n- Deux baguettes, deux croissants…\n- Des pains au chocolat ?\n- Oui, un pain au chocolat, mais pas de pain aux raisins.\n- D'accord !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Pain aux raisins, pain au chocolat et croissants clairement distincts ; le pain aux raisins massique désigne cette catégorie de viennoiserie, sans question de quantité."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22667,7 +23187,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-sc-21-cours-de-surf-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+        ],
+        "support_quote": "- Vous savez faire du ski ?\n- Oui, je sais faire du ski, mais je voudrais prendre des cours de surf.",
+        "current_bank_transcription": "- Vous savez faire du ski ?\n- Oui, je sais faire du ski, mais je voudrais prendre des cours de surf.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Surf, ski et escalade avec action et équipement visibles ; la nouvelle grimpeuse est différente des autres personnages de la banque."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -22733,7 +23272,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-sc-28-places-de-concert-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+          "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+        ],
+        "support_quote": "- Vous avez encore des places pour ce concert ?\n- Désolé, c'est complet !",
+        "current_bank_transcription": "- Vous avez encore des places pour ce concert ?\n- Désolé, c'est complet !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet, format exact 4:3 et comparaison au style approuvé du commit 48a753d8. Pour le sens spectacle, le film est représenté par une séance de cinéma et non par un DVD. Concert et pièce de théâtre restent distincts, trois scènes relues ensemble."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23826,7 +24384,28 @@
           "candidate_cut_id": "delf_a1_2022-031-6cfe44cdaf17-d1",
           "transcription": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 3h40."
         }
-      ]
+      ],
+      "image_preparation_status": "images_prepared_pending_audio_validation",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1540-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1640-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex3-31",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1540-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1640-dessinee.webp"
+        ],
+        "support_quote": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 3h40.",
+        "current_bank_transcription": "Votre rendez-vous est lundi avec Monsieur Denis. Il vous attend à 15 h 40.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation.",
+        "audio_validation_required": true,
+        "audio_validation_reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -24711,7 +25290,28 @@
           "candidate_cut_id": "delf_a1_2022-085-657006e9075c-d4",
           "transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 1h58. C'est le même prix."
         }
-      ]
+      ],
+      "image_preparation_status": "images_prepared_pending_audio_validation",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-85",
+        "question": 14,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
+        ],
+        "support_quote": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 1h58. C'est le même prix.",
+        "current_bank_transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 €. Ensuite, le prochain départ est à 11 h 58. C’est le même prix.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation.",
+        "audio_validation_required": true,
+        "audio_validation_reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -26235,7 +26835,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2-s1-co-1",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
+        ],
+        "support_quote": "Chers clients, vous rêvez d'une maison bien propre ? Achetez notre nouvelle lessive et gagnez un aspirateur. Pour cela, complétez un formulaire à l'entrée du magasin. Bonne chance !",
+        "current_bank_transcription": "Chers clients, vous rêvez d'une maison bien propre ? Achetez notre nouvelle lessive et gagnez un aspirateur. Pour cela, complétez un formulaire à l'entrée du magasin. Bonne chance !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Entrée de magasin, sortie de parking avec barrière et bureau de poste avec colis et courrier, trois lieux distincts ; les sens entrée et sortie sont visibles."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -26367,7 +26986,25 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/71f949130ffe.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2p-s1-co-1",
+        "question": 13,
+        "images": [
+          "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-danse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/71f949130ffe.webp"
+        ],
+        "support_quote": "Venez prendre des cours de natation avec nos professeurs.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Réponse correcte appuyée par la transcription ; les trois images entières ont été revues ensemble, distinctes et cohérentes, en 4:3 et dans le style du commit 48a753d8."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -26499,7 +27136,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-brosse-dents-pyjama-dessine.webp",
+        "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
+        "/lib/images/tcf/qcm-audit/bedd7c96f687.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2p-s2-co-2",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-brosse-dents-pyjama-dessine.webp",
+          "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
+          "/lib/images/tcf/qcm-audit/bedd7c96f687.webp"
+        ],
+        "support_quote": "Salut, c’est Julie !\nJe t’appelle pour te confirmer notre rendez-vous au cinéma ce soir à 18 h 00.\nComme je te l’ai dit, mon père va venir nous chercher en voiture à 21 h 00 après le film et va nous ramener à la maison.\nTu es toujours d’accord pour venir dormir chez moi ?\nSurtout, n’oublie pas ta brosse à dents et ton pyjama !\nAllez, à ce soir !\nBisou !",
+        "current_bank_transcription": "Salut, c’est Julie !\nJe t’appelle pour te confirmer notre rendez-vous au cinéma ce soir à 18 h 00.\nComme je te l’ai dit, mon père va venir nous chercher en voiture à 21 h 00 après le film et va nous ramener à la maison.\nTu es toujours d’accord pour venir dormir chez moi ?\nSurtout, n’oublie pas ta brosse à dents et ton pyjama !\nAllez, à ce soir !\nBisou !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Les trois réponses composées sont entièrement représentées : brosse à dents et pyjama, maillot et serviette, cahier et stylo."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -26882,7 +27538,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:001:e636083d0158"
       ],
@@ -26893,6 +27549,11 @@
           "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d5",
           "transcription": "Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places. Le bar du théâtre vous accueille de 1 à 19h. Bonne journée."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
       ]
     },
     {
@@ -27184,7 +27845,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a2-sc-co-1",
+        "question": 16,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+        ],
+        "support_quote": "Les clients qui ont le ticket avec les numéros de 1 à 20 peuvent venir chercher leur cadeau au premier étage. Les autres vont recevoir un t-shirt de notre magasin.",
+        "current_bank_transcription": "Les clients qui ont le ticket avec les numéros de 1 à 20 peuvent venir chercher leur cadeau au premier étage. Les autres vont recevoir un t-shirt de notre magasin.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. T-shirt, casquette et sac entiers, aucun texte ou numéro de ticket ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -27540,7 +28220,28 @@
           "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d2",
           "transcription": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux."
         }
-      ]
+      ],
+      "image_preparation_status": "images_prepared_pending_audio_validation",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s3-co-3",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "support_quote": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux.",
+        "current_bank_transcription": "Aujourd'hui, dans votre supermarché, des réductions sur les tomates et les carottes.\nVenez vite en profiter.\nFaites aussi un petit tour à l'Oréan boulangerie : Valérie vous fera goûter nos pâtisseries.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. L’assiette de trois gâteaux représente des pâtisseries ; fromages et boissons sont distincts. Le sujet visuel est prêt, mais le mot « parfétiaux » du candidat ASR ne permet pas de valider ce produit sans écoute.",
+        "audio_validation_required": true,
+        "audio_validation_reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -28142,7 +28843,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+        "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s18-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+          "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
+        ],
+        "support_quote": "Didier, nous serions pré-contents de vous recevoir à dîner vendredi soir, à save.\nÊtes-vous disponible ?\nMerci beaucoup, avec plaisir.\nÀ quelle heure ?\nEh bien, venez pour 20 heures ?\nEntendu, j'apporterai un gâteau.",
+        "current_bank_transcription": "Didier, nous serions pré-contents de vous recevoir à dîner vendredi soir, à save.\nÊtes-vous disponible ?\nMerci beaucoup, avec plaisir.\nÀ quelle heure ?\nEh bien, venez pour 20 heures ?\nEntendu, j'apporterai un gâteau.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Gâteau, bouquet composé uniquement de tulipes et bouteille de vin ; la source actuelle indique que Didier apportera un gâteau."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -28530,7 +29250,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s24-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        ],
+        "support_quote": "Salut Isa, c'est Marine.\nJ'ai téléphoné à ton prof de guitare et je lui ai expliqué mon niveau.\nIl va me donner des cours à partir de la semaine prochaine et me prêter un instrument.\nJ'ai hâte de recommencer à jouer de la guitare.",
+        "current_bank_transcription": "Salut Isa, c'est Marine.\nJ'ai téléphoné à ton prof de guitare et je lui ai expliqué mon niveau.\nIl va me donner des cours à partir de la semaine prochaine et me prêter un instrument.\nJ'ai hâte de recommencer à jouer de la guitare.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet, format exact 4:3 et comparaison au style approuvé du commit 48a753d8. La guitare représente l’instrument musical cité dans ce dialogue sur des cours de guitare, distinct de l’ordinateur et du vélo. Aucune nouvelle génération nécessaire."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29048,7 +29787,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
+        "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s30-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
+          "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+        ],
+        "support_quote": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
+        "current_bank_transcription": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Eau provenant visiblement d’une vague marine qui remplit un seau, distincte du lait et du jus de fruits. Seule la version au rendu peint est intégrée, première version photo écartée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29491,7 +30249,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-voiture-location-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s38-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-voiture-location-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        ],
+        "support_quote": "- Salut Vincent !\nTu sais comment aller au mariage de Thomas le week-end prochain ?\n- Oui, je viens de louer une voiture.\nJe pensais prendre le train, mais c'est plus long et plus cher.\n- Et en covoiturage ?\n- Les trajets proposés ne sont pas pratiques.\n- Dommage.\nTu es passé par une agence pour la location ?\n- Non, un service de location de voitures entre particuliers.\nÇa s'appelle « Loue ma voiture !\n».\nTu connais ?\n- Pas du tout.\nMais…\nc'est sûr comme service ?\n- Oui, c'est sûr et simple.\nTu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire, et tu loues une voiture.\n- Il y a une assurance ?\n- Oui, c'est compris.\nEt pour cette voiture, le propriétaire vient de faire le contrôle technique.\n- Et pour l'essence ?\n- À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+        "current_bank_transcription": "- Salut Vincent !\nTu sais comment aller au mariage de Thomas le week-end prochain ?\n- Oui, je viens de louer une voiture.\nJe pensais prendre le train, mais c'est plus long et plus cher.\n- Et en covoiturage ?\n- Les trajets proposés ne sont pas pratiques.\n- Dommage.\nTu es passé par une agence pour la location ?\n- Non, un service de location de voitures entre particuliers.\nÇa s'appelle « Loue ma voiture !\n».\nTu connais ?\n- Pas du tout.\nMais…\nc'est sûr comme service ?\n- Oui, c'est sûr et simple.\nTu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire, et tu loues une voiture.\n- Il y a une assurance ?\n- Oui, c'est compris.\nEt pour cette voiture, le propriétaire vient de faire le contrôle technique.\n- Et pour l'essence ?\n- À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. La location entre particuliers est illustrée par la remise des clés dans une cour privée, selon le dialogue ; train et bus distincts. Le nouveau personnage avec prothèse et la propriétaire ont des visages distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29524,7 +30301,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s39-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
+        ],
+        "support_quote": "Bonjour, madame Duma, je suis désolé pour mon retard.\nBonjour, monsieur Leclerc, entré, je vais prendre votre manteau et votre écharpe.\nMerci beaucoup, voici un petit cadeau pour vous.\nOh, c'est très gentil, mais il ne fallait pas.\nSi, si, c'est tout naturel.\nMerci, ce bouquet de tulip est superbe, je vais le mettre dans un vase.\nMais, venez au salon.\nNous allons prendre la péritif avant de passer à table.",
+        "current_bank_transcription": "Bonjour, madame Duma, je suis désolé pour mon retard.\nBonjour, monsieur Leclerc, entré, je vais prendre votre manteau et votre écharpe.\nMerci beaucoup, voici un petit cadeau pour vous.\nOh, c'est très gentil, mais il ne fallait pas.\nSi, si, c'est tout naturel.\nMerci, ce bouquet de tulip est superbe, je vais le mettre dans un vase.\nMais, venez au salon.\nNous allons prendre la péritif avant de passer à table.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Bouquet de tulipes, boîte de chocolats et bouteille de vin ; les fleurs sont exclusivement des tulipes, confirmées par la transcription actuelle."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29623,7 +30419,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-musee-histoire-naturelle-dessine.webp",
+        "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+        "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s41-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-musee-histoire-naturelle-dessine.webp",
+          "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+          "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp"
+        ],
+        "support_quote": "Papa, tu veux bien accompagner la sortie scolaire, jeudi prochain, avec le prof d'Histois.\nIl faut deux parents.\nVolontier, vous allez faire quoi ?\nOn va au musée d'Histois naturel, voire l'exposition sur les dinosaures.",
+        "current_bank_transcription": "Papa, tu veux bien accompagner la sortie scolaire, jeudi prochain, avec le prof d'Histois.\nIl faut deux parents.\nVolontier, vous allez faire quoi ?\nOn va au musée d'Histois naturel, voire l'exposition sur les dinosaures.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Musée avec squelette de dinosaure, fossiles et minéraux, distinct du musée de peinture et du château. Aucun objet d’astronomie conservé du premier musée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29755,7 +30570,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
+        "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s43-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
+          "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+        ],
+        "support_quote": "Bonjour, je vous appelle pour l'atelier de fabrication de centure.\nJe voudrais savoir comment ça marche.\nBonjour, monsieur.\nAlors, c'est un atelier de trois heures, tous les samedis de décembre.\nPendant cet atelier, je vous explique comment on fabrique une cinture en cuire.\nOn fait une cinture ensemble et à la fin, vous pouvez la garder.\nEt c'est 80 euros, c'est ça ?\nAbsolument, matériel compris.\nD'accord, je peux m'inscrire pour samedi prochain ?\nOui, il reste des places.",
+        "current_bank_transcription": "Bonjour, je vous appelle pour l'atelier de fabrication de centure.\nJe voudrais savoir comment ça marche.\nBonjour, monsieur.\nAlors, c'est un atelier de trois heures, tous les samedis de décembre.\nPendant cet atelier, je vous explique comment on fabrique une cinture en cuire.\nOn fait une cinture ensemble et à la fin, vous pouvez la garder.\nEt c'est 80 euros, c'est ça ?\nAbsolument, matériel compris.\nD'accord, je peux m'inscrire pour samedi prochain ?\nOui, il reste des places.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Ceinture de cuir, portefeuille et sac, trois objets distincts ; la transcription actuelle décrit la fabrication d’une ceinture en cuir."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29887,7 +30721,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s45-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp"
+        ],
+        "support_quote": "Thomas !\nJe n'arrive pas à trouver le savon !\nOh !\nIl est entre le savon de Marseille et ma mou s'arrasé !\nEt le déo !\nIl est où ?\nJe vois seulement mon parfum !\nJe l'ai vu dans le maquillage avec ton mascarat !\nEt le dentifrice ?",
+        "current_bank_transcription": "Thomas !\nJe n'arrive pas à trouver le savon !\nOh !\nIl est entre le savon de Marseille et ma mou s'arrasé !\nEt le déo !\nIl est où ?\nJe vois seulement mon parfum !\nJe l'ai vu dans le maquillage avec ton mascarat !\nEt le dentifrice ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Savon seul, shampoing avec pictogramme de cheveux et crème solaire avec soleil, trois produits distincts ; la première recherche porte sur le savon."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -30596,7 +31449,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/f9e55937da20.webp",
+        "/lib/images/tcf/qcm-audit/co834-bottes-pluie-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s59-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/f9e55937da20.webp",
+          "/lib/images/tcf/qcm-audit/co834-bottes-pluie-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
+        ],
+        "support_quote": "Sonia, j'ai besoin d'aide, demain je commence mon nouveau poste, et je ne sais pas qu'elle vêtement maître.\nNe t'inquiète pas, Adrien, habite-toi de façon classique, avec une chemise blanche ou bleue, un pantalon droit et des chaussures de ville.",
+        "current_bank_transcription": "Sonia, j'ai besoin d'aide, demain je commence mon nouveau poste, et je ne sais pas qu'elle vêtement maître.\nNe t'inquiète pas, Adrien, habite-toi de façon classique, avec une chemise blanche ou bleue, un pantalon droit et des chaussures de ville.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Trois paires distinctes : chaussures de ville fermées, bottes de pluie et sandales ouvertes ; la source conseille des chaussures de ville."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -31012,7 +31884,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:34:5474c0710359:e1eea890"
       ],
@@ -31023,6 +31895,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-34-5474c0710359-e1eea890-d1",
           "transcription": "Chers clients, après une offre sur les sandwichs la semaine dernière, nous vous proposons aujourd'hui une offre spéciale petit déjeuner. Pour l'achat de trois pieds de moiserie, un grand café vous est offert."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
       ]
     },
     {
@@ -34081,7 +34958,7 @@
       "label": "Un verre de jus de fruits",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fcdeb285f2ed.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un verre de jus de fruits ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s30-co-4",
@@ -34089,15 +34966,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+      "sha256": "47bf446aec09cf3930268a1421321038c144cd5013a23a44b2f9f2b2e8d35822",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la boisson du petit-déjeuner, tcf-ss-a2-s25-co-4 Q10.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9cad4a185163",
       "label": "Des cours de natation",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9cad4a185163.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des cours de natation ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2j-ce-010",
@@ -34110,8 +34992,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+      "sha256": "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "2b354a77b8d1",
@@ -34245,7 +35132,7 @@
       "label": "Une terrasse sur le toit",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cb2566b20dae.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une terrasse sur le toit ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s41-co-1",
@@ -34253,8 +35140,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-terrasse-toit-dessine.webp",
+      "sha256": "a22ff74fda8cc4720c92cf2bb4568ffcb1b3d8945cd74eabb627aae8fa055441",
+      "review_note": "Toit aménagé avec table et plantes, étages sous le parapet et autres toits visibles. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c3c9dfd4f2ed",
@@ -34545,7 +35437,7 @@
       "label": "Une visite au musée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5f39fc017989.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une visite au musée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s26-co-3",
@@ -34553,8 +35445,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp",
+      "sha256": "3767beb5c68867f2fb5790a9924e11dece8dd8808bb1c24f5222a1cbe40869df",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7daac2689d64",
@@ -34619,7 +35516,7 @@
       "label": "Un jus de tomate",
       "path_after_generation": "/lib/images/tcf/qcm-audit/10e5012f144c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jus de tomate ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-4",
@@ -34627,8 +35524,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jus-tomate-dessine.webp",
+      "sha256": "be9d201ac4a54115645d59545a52b7c0eb703560d782aba23d3ac53a6064c358",
+      "review_note": "Jus rouge avec tomate coupée entière à côté du verre. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6c1dc765a398",
@@ -34926,7 +35828,7 @@
       "label": "Une salade italienne",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cd542aa9dea1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une salade italienne ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-1",
@@ -34939,8 +35841,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp",
+      "sha256": "4c4d3b8882ddba5f895b5c16e24b7ba01751783c7c2ac6e16c2b5bb3c1f1699b",
+      "review_note": "Salade avec tomate, mozzarella, basilic et olives, assiette entière. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e5d0b3a7c229",
@@ -35416,7 +36323,7 @@
       "label": "Des suites",
       "path_after_generation": "/lib/images/tcf/qcm-audit/5db01ef5e45b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des suites ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s33-co-3",
@@ -35424,8 +36331,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-suites-dessine.webp",
+      "sha256": "de5313a8f049b9bd38a7e4b1b44595f9d8e81492d593c522ff69dddfa55a9560",
+      "review_note": "Suite avec espace salon et chambre clairement séparés, aucun montant ni numéro de chambre. Contrôle visuel individuel du sujet entier, format natif exact 4:3 et absence de montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d40f9534a8fd",
@@ -36362,7 +37274,7 @@
       "label": "Aux légumes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8546c8a5cc6c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Aux légumes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-2",
@@ -36370,8 +37282,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+      "sha256": "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c",
+      "review_note": "Pâtes avec légumes identifiables, sans poulet ni fromage visible. Contrôle visuel individuel du sujet entier, format natif exact 4:3 et absence de montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0cacdbfb9ed5",
@@ -36394,7 +37311,7 @@
       "label": "Un jus de carotte",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1b0fedc6be4c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jus de carotte ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-4",
@@ -36402,8 +37319,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jus-carotte-dessine.webp",
+      "sha256": "de743dad0d48357e81628c63f070a2ee51a7110c2b0ce06a3f06d375bdcba6a1",
+      "review_note": "Jus orange avec carottes, aucune orange ou autre fruit ajouté. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b9c01be3f926",
@@ -37002,7 +37924,7 @@
       "label": "Dans les pharmacies",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2863e3614ca6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les pharmacies ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s31-co-2",
@@ -37010,8 +37932,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+      "sha256": "620870f481022e883cabb486221196bed0137eadd45c47c808c55d9fd847b388",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8c47eb676894",
@@ -37419,7 +38346,7 @@
       "label": "Un balcon fermé",
       "path_after_generation": "/lib/images/tcf/qcm-audit/566306fb620a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un balcon fermé ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-3",
@@ -37427,8 +38354,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-balcon-ferme-dessine.webp",
+      "sha256": "9c337ed333c4848b4a77989be66389638f0733b0a4fee578658e59f1a35c802e",
+      "review_note": "Balcon vitré en étage avec garde-corps et étage inférieur visible. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1168630d88a0",
@@ -37451,7 +38383,7 @@
       "label": "Des pâtisseries",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d9f954358d38.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des pâtisseries ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
@@ -37459,15 +38391,20 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+      "sha256": "be46913f2ea811a999f22e150a4591807a7468de2785ff6a7e843687902c9dc1",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur des légumes conseillés en entrée, tcf-ss-a1-s23-co-2 Q3.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7c19995b2621",
       "label": "Une soupe de légumes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7c19995b2621.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une soupe de légumes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-2",
@@ -37475,8 +38412,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+      "sha256": "850075bad1f18cb1ef930844529d34ff3b11a85f09f7fbb2d68241def12d60ca",
+      "review_note": "Bol de soupe avec morceaux de plusieurs légumes reconnaissables. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ab9152b575b4",
@@ -38484,7 +39426,7 @@
       "label": "Un ordinateur fixe",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b3d5349627f5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un ordinateur fixe ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s4-co-1",
@@ -38492,8 +39434,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+      "sha256": "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+      "review_note": "Version antérieure rétablie après la précision de l’utilisateur sur le style du commit 48a753d8 ; le contenu, le format et la bonne réponse sont conservés.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "da2e696f92ee",
@@ -38696,7 +39643,7 @@
       "label": "Le shampoing",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a5d1b3050d01.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le shampoing ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s34-co-2",
@@ -38709,15 +39656,20 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+      "sha256": "a1cf08b1e8a5be3c4a37e5d826a38cecf9fe8e84c1b12a2e4bb10e426d494fd6",
+      "review_note": "Flacon de shampoing seul, pictogramme de chevelure, savon retiré. Contrôle visuel individuel du sujet entier, format natif exact 4:3 et absence de montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e04fa7acc651",
       "label": "12 h 03",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e04fa7acc651.webp",
       "prompt": "Horloge analogique montrant exactement 12 h 03, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-3",
@@ -38725,8 +39677,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1203-dessinee.webp",
+      "sha256": "0f9258fb20226e4c84fa63406674fa23d8c79c3b2e8e3c514b705e9d6fd0e0ca",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 12:03, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b975aa5bbb3b",
@@ -38902,7 +39859,7 @@
       "label": "Une demi-baguette",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d50ee3d47055.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une demi-baguette ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s11-co-2",
@@ -38910,8 +39867,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-demi-baguette-dessine.webp",
+      "sha256": "52797a609ffae53987cd3c0c4b00372de6cb4f4ec82c3d688ae8f85b02c4eba6",
+      "review_note": "Morceau de baguette avec une extrémité ronde et une extrémité coupée, sans autre moitié. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "906b288bc8bc",
@@ -38950,7 +39912,7 @@
       "label": "L’avocat",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b4fc7ef8ff4d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « L’avocat ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s3-co-3",
@@ -38958,8 +39920,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-avocat-dessine.webp",
+      "sha256": "e2e477f68ac04308ad31a731384ef3f104c104cf65c8452395a29984d415eae4",
+      "review_note": "Seconde version : visages clairement dessinés, volumes peints doux et trait fin comparés au club photo validé. Avocat avec robe noire et rabat blanc, fauteuil roulant visible, cliente aux cheveux argentés, deux personnes distinctes des références et quatre mains anatomiquement cohérentes. Sujet entier, format natif exact 4:3, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bbb3e9f7aadb",
@@ -39028,7 +39995,7 @@
       "label": "Un restaurant d’entreprise",
       "path_after_generation": "/lib/images/tcf/qcm-audit/492a306fbe43.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un restaurant d’entreprise ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s21-co-4",
@@ -39036,8 +40003,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+      "sha256": "688f167b2c37ad6be698cd9e6cce937732a8c8ee33f4db3b27095ee800210266",
+      "review_note": "Restaurant collectif, plateaux-repas, badges vierges et bureaux derrière la cloison vitrée ; trois employés aux visages différents. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "20911f290515",
@@ -39161,7 +40133,7 @@
       "label": "11 h 02",
       "path_after_generation": "/lib/images/tcf/qcm-audit/57d97737a7d7.webp",
       "prompt": "Horloge analogique montrant exactement 11 h 02, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s55-co-3",
@@ -39169,8 +40141,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1102-dessinee.webp",
+      "sha256": "47ed7bd4e6d4b46ea6c805e0d5bcf3a08f53df7582018e3fae410683ccdbddd9",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 11:02, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b71adfb4ca1a",
@@ -39235,7 +40212,7 @@
       "label": "Une voiture de location",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9ade9f49fd52.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une voiture de location ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s38-co-4",
@@ -39243,8 +40220,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-voiture-location-dessine.webp",
+      "sha256": "19a2a4817bde0b7d5c402a907eb7b36767a3e08d1a297fa59d5850fbeade7c17",
+      "review_note": "Remise de clés à côté de la voiture dans une cour de maison, entre particuliers ; deux nouveaux personnages, prothèse de jambe représentée naturellement. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "95a8867c2af0",
@@ -39304,7 +40286,7 @@
       "label": "Dans les librairies",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9782b9945f3c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les librairies ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s31-co-2",
@@ -39312,8 +40294,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+      "sha256": "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "727d865b5316",
@@ -39711,7 +40698,7 @@
       "label": "Un musée d’histoire naturelle",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7f7cc89d653d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un musée d’histoire naturelle ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s41-co-2",
@@ -39719,8 +40706,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-musee-histoire-naturelle-dessine.webp",
+      "sha256": "69e9674484836e1d41c89607dd80ffd9d06907df347a1569bfc1bca3f823cad9",
+      "review_note": "Collections de fossiles et de minéraux, grand squelette de dinosaure terrestre et vitrines, planètes et visiteurs retirés. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "298ed47d35a6",
@@ -39869,7 +40861,7 @@
       "label": "Dans les boulangeries",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ac541b7d7a02.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans les boulangeries ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s31-co-2",
@@ -39877,8 +40869,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+      "sha256": "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637",
+      "review_note": "Revue visuelle individuelle : paysage 4:3 exact, style dessiné CE/CO, lieu ou rayon entier identifiable, pas de montant ni date. Accueil, caisse avec personnel, caisse automatique, entrée et sortie sont distincts. Le frais montre des yaourts réfrigérés et du poisson frais ; les surgelés sont dans des congélateurs. Les portraits principaux diffèrent et les clients répétitifs ajoutés ont été retirés des commerces avant intégration.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "66185fc6b8a7",
@@ -40124,7 +41121,7 @@
       "label": "À 8 h 06",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8a34edd9dc81.webp",
       "prompt": "Horloge analogique montrant exactement 08 h 06, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s45-co-2",
@@ -40137,8 +41134,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-0806-dessinee.webp",
+      "sha256": "5b186d095d86c5ab3541aa8a5696e1bcba9d5ae7ea2f17cfd061335f75712263",
+      "review_note": "Contrôle visuel individuel : écran affichant exactement 08:06, chiffres et deux points relus ; horloge entière et format natif exact 4:3, fond crème et bois peint doux. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "618d663af0f1",
@@ -40256,7 +41258,7 @@
       "label": "Une assiette de fromage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/592953f35482.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une assiette de fromage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-2",
@@ -40264,8 +41266,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp",
+      "sha256": "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff",
+      "review_note": "Trois morceaux de fromage différents sur une assiette blanche, aucun autre aliment. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "38b59869c170",
@@ -40341,7 +41348,7 @@
       "label": "Une cour partagée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7015d2580533.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une cour partagée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s41-co-1",
@@ -40349,8 +41356,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cour-partagee-dessine.webp",
+      "sha256": "170caed2fb8a590c713f3375b349eeae6875d0caa9c3a7955e33b168fdc40c7d",
+      "review_note": "Cour pavée entourée de plusieurs façades d’appartements, portes distinctes, banc collectif et abri à vélos. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "59b8ec0b7321",
@@ -40754,7 +41766,7 @@
       "label": "Une brosse à dents et un pyjama",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b2ad1f4210d4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une brosse à dents et un pyjama ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2p-s2-co-2",
@@ -40762,8 +41774,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-brosse-dents-pyjama-dessine.webp",
+      "sha256": "8a7dbc377de5cb2a794e4b3ea6f82cb0b1a711c518fc941f3a331c798fb85a3d",
+      "review_note": "Brosse à dents et pyjama complet haut/pantalon, deux concepts présents. Contrôle visuel individuel du sujet entier, format natif exact 4:3 et absence de montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d1a780a1a49e",
@@ -40955,7 +41972,7 @@
       "label": "Des journaux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c3fbdd8fc4e4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des journaux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s4-co-2",
@@ -40973,8 +41990,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+      "sha256": "c6e7e7c0ac68786b43c311cfa58fcb22d7a01970964e55719b8b85ba5e6fbeac",
+      "review_note": "Trois journaux papier pliés, colonnes abstraites sans mot, nombre ni date lisible. Contrôle visuel du sujet entier et du format natif exact 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "29aa3b49e144",
@@ -41597,7 +42619,7 @@
       "label": "Le gymnase municipal",
       "path_after_generation": "/lib/images/tcf/qcm-audit/986e43727f55.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le gymnase municipal ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s6-co-3",
@@ -41605,8 +42627,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+      "sha256": "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4",
+      "review_note": "Parquet de sport, paniers de basket, but et gradins, sans piscine ni salle de classe. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9068718fd913",
@@ -41735,7 +42762,7 @@
       "label": "Des pains aux raisins",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e1a9c223db85.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des pains aux raisins ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-1",
@@ -41743,8 +42770,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp",
+      "sha256": "2cd1c0fa10a4d187a8bc12fc420a2c4083a99b4935fcb02093b2086c4b50797e",
+      "review_note": "Deux spirales de viennoiserie avec raisins secs visibles. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f6145b0eb230",
@@ -41871,7 +42903,7 @@
       "label": "Un pain de mie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8860ce592cec.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un pain de mie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-1",
@@ -41879,8 +42911,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp",
+      "sha256": "7c50905d66da2c5d1ba261f556562ec46aef73b96aa32692bd182880715e24e3",
+      "review_note": "Pain de mie à croûte fine et tranches carrées de mie blanche, un seul type de pain. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ec9ee54edae6",
@@ -41977,7 +43014,7 @@
       "label": "La crème solaire",
       "path_after_generation": "/lib/images/tcf/qcm-audit/140c3c1e3bdd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La crème solaire ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s45-co-2",
@@ -41985,8 +43022,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp",
+      "sha256": "91843a621156271275bb997488cb541a090bd548b61d799db23ce9d966eb1667",
+      "review_note": "Reprise en 4:3, sujet complet, proportions et style dessinés conservés. Tube seul, pictogramme de soleil et crème blanche, sans indice SPF ni texte.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "06bb33f69462",
@@ -42419,7 +43461,7 @@
       "label": "Un instrument",
       "path_after_generation": "/lib/images/tcf/qcm-audit/14ea609043a6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un instrument ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s24-co-1",
@@ -42427,8 +43469,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+      "sha256": "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8ab3f2c0bd8c",
@@ -42493,7 +43540,7 @@
       "label": "Du pain de mie",
       "path_after_generation": "/lib/images/tcf/qcm-audit/75277054f3bf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du pain de mie ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s11-co-2",
@@ -42501,8 +43548,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp",
+      "sha256": "7c50905d66da2c5d1ba261f556562ec46aef73b96aa32692bd182880715e24e3",
+      "review_note": "Pain de mie à croûte fine et tranches carrées de mie blanche, un seul type de pain. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "458991647ee2",
@@ -42763,7 +43815,7 @@
       "label": "11 h 58",
       "path_after_generation": "/lib/images/tcf/qcm-audit/de1d833648a2.webp",
       "prompt": "Horloge analogique montrant exactement 11 h 58, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-85",
@@ -42771,8 +43823,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+      "sha256": "4f650280caddf46c436217d1162946a9dca28753fdb318e1dd960deae7c37ae1",
+      "review_note": "Contrôle visuel de chaque sortie originale du lot 3 : écran affichant exactement 11:58, deux points et chiffres relus, horloge entière et format natif exact 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f4cc9b221b94",
@@ -42932,7 +43989,7 @@
       "label": "Du pain aux raisins",
       "path_after_generation": "/lib/images/tcf/qcm-audit/bdf8a10399fd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Du pain aux raisins ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-2",
@@ -42940,8 +43997,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp",
+      "sha256": "2cd1c0fa10a4d187a8bc12fc420a2c4083a99b4935fcb02093b2086c4b50797e",
+      "review_note": "Deux spirales de viennoiserie avec raisins secs visibles. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "dbbfbad028b2",
@@ -43269,7 +44331,7 @@
       "label": "Une carafe d'eau",
       "path_after_generation": "/lib/images/tcf/qcm-audit/057e3d24eca8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une carafe d'eau ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s50-co-4",
@@ -43277,15 +44339,20 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
+      "sha256": "1d65694297f8518381996db1a894bf046f096f88880e1c1114aa91ea94c24959",
+      "review_note": "Carafe transparente sans bouchon contenant de l’eau, bec verseur visible. Contrôle visuel individuel du sujet entier, format natif exact 4:3 et absence de montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6cd8edff719f",
       "label": "15 h 14",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6cd8edff719f.webp",
       "prompt": "Horloge analogique montrant exactement 15 h 14, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-ex3-31",
@@ -43293,8 +44360,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1514-dessinee.webp",
+      "sha256": "dbc7b1e57601302038da2dc45f13641e3021a37264d24933e4fa48fbadfa6f31",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 15:14, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ecb4ece23e23",
@@ -43418,7 +44490,7 @@
       "label": "Des chaussons aux pommes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/27a24cd778fe.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chaussons aux pommes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s57-co-1",
@@ -43426,8 +44498,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-chaussons-pommes-dessine.webp",
+      "sha256": "b3469663f40ebd54f4d1f85572dd972b3e81cb2087f6421024e4d30f3ddbcb39",
+      "review_note": "Deux chaussons en demi-lune soudée, dont un ouvert montrant la pomme. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7b2906f7ceeb",
@@ -43825,7 +44902,7 @@
       "label": "Un bouquet de tulipes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/4a8451a0400f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un bouquet de tulipes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s18-co-1",
@@ -43838,8 +44915,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+      "sha256": "3ed31427ff76dc54401b711de3f5e5fae8e15be4e298baba50262a92d2d2046b",
+      "review_note": "Toutes les fleurs sont des tulipes, aucune autre espèce. Contrôle visuel individuel du sujet entier, format natif exact 4:3 et absence de montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "e216360ad2b4",
@@ -43968,7 +45050,7 @@
       "label": "12 h 02",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3979ef1b402e.webp",
       "prompt": "Horloge analogique montrant exactement 12 h 02, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s55-co-3",
@@ -43976,8 +45058,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp",
+      "sha256": "4c76317e8b885096f1b562b894d08ac8bd7e41b92f25eeb7239195cb85499e98",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 12:02, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5d1772d40002",
@@ -45232,7 +46319,7 @@
       "label": "Une séance de sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c9f1da59328c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une séance de sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s26-co-3",
@@ -45240,8 +46327,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+      "sha256": "1dcfa221a99ebccd9cfb60113a80decd6f9d51bcf85b112c225dd4351901bec4",
+      "review_note": "Contrôle visuel individuel : format natif 4:3 et style dessiné CE/CO chaleureux, concept entier reconnaissable, pas de montant ni date. Personnages fictifs aux visages, coiffures, carnations, âges, morphologies et expressions variés dans le lot. Tickets vierges associés explicitement au type de spectacle. Logos des appareils du club photo retirés avant export.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d6a833dd034a",
@@ -45396,7 +46488,7 @@
       "label": "De l’eau de mer",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0a8c5d6e0895.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « De l’eau de mer ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s30-co-1",
@@ -45404,8 +46496,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
+      "sha256": "a32bd1e820dfeacea3a1bfadd12f3a0cea578838a1302b71eae5c6e845ded055",
+      "review_note": "Version reprise : vague remplissant un seau transparent, mer et rochers en touches peintes et formes modelées, rendu photographique retiré. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "adf0b810e3b3",
@@ -45816,7 +46913,7 @@
       "label": "Un jus de betterave",
       "path_after_generation": "/lib/images/tcf/qcm-audit/438bdc0cd2ba.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jus de betterave ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-4",
@@ -45824,8 +46921,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jus-betterave-dessine.webp",
+      "sha256": "e0727df08df849cba1137921b069a9a5905ed5079ff4262f2194851ca0bfc335",
+      "review_note": "Jus pourpre avec betterave coupée, distinct des autres jus. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c79b7406149c",
@@ -45848,7 +46950,7 @@
       "label": "Des places",
       "path_after_generation": "/lib/images/tcf/qcm-audit/10319ff7920c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des places ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2-sb-co-1",
@@ -45856,8 +46958,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
+      "sha256": "fb430aae5f0b4b7f93ade793939cfe9f82ae448dfa76b1737bab8ad9b87fcbd1",
+      "review_note": "Contrôle visuel individuel : format natif 4:3 et style dessiné CE/CO chaleureux, concept entier reconnaissable, pas de montant ni date. Personnages fictifs aux visages, coiffures, carnations, âges, morphologies et expressions variés dans le lot. Tickets vierges associés explicitement au type de spectacle. Logos des appareils du club photo retirés avant export.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ab7eea2adade",
@@ -45932,7 +47039,7 @@
       "label": "Au centre sportif",
       "path_after_generation": "/lib/images/tcf/qcm-audit/eb86112d610e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au centre sportif ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpa-co-1",
@@ -45940,8 +47047,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp",
+      "sha256": "cdaceb216b68e2cfa2ae4a2e4902dcf0c54b47a26824248206a84b5b3176db79",
+      "review_note": "Équipement de basket et bassin de natation visibles dans le centre, terrain extérieur, aucun texte. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d9194de5459f",
@@ -45969,7 +47081,7 @@
       "label": "11 h 48",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b64d064673f2.webp",
       "prompt": "Horloge analogique montrant exactement 11 h 48, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-85",
@@ -45977,8 +47089,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+      "sha256": "e1474b048f63e411d69a1c4ea0c6c184d57d98e6c1d5744e9581278eaf177cf9",
+      "review_note": "Contrôle visuel de chaque sortie originale du lot 3 : écran affichant exactement 11:48, deux points et chiffres relus, horloge entière et format natif exact 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1825575c7b70",
@@ -46367,7 +47484,7 @@
       "label": "Un jus de pomme",
       "path_after_generation": "/lib/images/tcf/qcm-audit/70ee2d433ec3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jus de pomme ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s50-co-4",
@@ -46375,8 +47492,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp",
+      "sha256": "dc956f303ce4288450610e657e12d6fc1c371f395f1870dcbbfbc2e17701bd86",
+      "review_note": "Contrôle visuel individuel : dessin CE/CO chaleureux au format natif exact 4:3, objets entiers et groupes complets, aliments ou catégories reconnaissables, aucun texte, montant ou date. Les pulls sont bleus comme dans le support.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f1d1fda7e042",
@@ -46600,7 +47722,7 @@
       "label": "À la machine",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fab1493302a8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À la machine ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s47-co-1",
@@ -46608,8 +47730,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp",
+      "sha256": "d1c0939280a2f8f1e5d46eed716b3fe9225141872fc8cd7d6d868018d6a8bc88",
+      "review_note": "Distributeur automatique de sandwichs et boissons avec trappe, boutons sans prix ni nombre. Contrôle visuel individuel : format natif exact 4:3, sujet entier, aucun montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6d404d15dcb9",
@@ -46642,7 +47769,7 @@
       "label": "11 h 22",
       "path_after_generation": "/lib/images/tcf/qcm-audit/70e07d2a9d3d.webp",
       "prompt": "Horloge analogique montrant exactement 11 h 22, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s53-co-3",
@@ -46650,8 +47777,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1122-dessinee.webp",
+      "sha256": "63a7ea0160c505cb49b71ceca748487a610685b3201e88ddbb08d6abead78c35",
+      "review_note": "Contrôle visuel de chaque horloge sur la planche du lot 2 : écran affichant exactement 11:22, deux points et chiffres relus, horloge entière et format natif 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "93efdaf23b3c",
@@ -46964,7 +48096,7 @@
       "label": "Des cours de tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d28f860d34cc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des cours de tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a2p-s1-co-1",
@@ -46972,8 +48104,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/71f949130ffe.webp",
+      "sha256": "672a6d04399519aacfd9c72692fd826ab266a4b6fde5f209caf4a1bb5104958e",
+      "review_note": "Contrôle visuel individuel : illustration dessinée chaleureuse, format natif 4:3, concept entier reconnaissable, sans texte ni montant ni date. Correspond au sens du choix et au support rapproché. Personnages renouvelés : visages, coiffures, carnations, âges et silhouettes variés dans le lot ; actions préservées, représentation sans stéréotype.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a0dee0b37d05",
@@ -47313,7 +48450,7 @@
       "label": "12 h 58",
       "path_after_generation": "/lib/images/tcf/qcm-audit/18580c1239a8.webp",
       "prompt": "Horloge analogique montrant exactement 12 h 58, aiguilles cohérentes, cadran très lisible, sans texte. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a1-2022-co-85",
@@ -47321,8 +48458,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp",
+      "sha256": "0401c1d5ec3c1d05254e96618889002b10761c8850ed3c32e0ea1f548948ddbd",
+      "review_note": "Contrôle visuel de chaque sortie originale du lot 3 : écran affichant exactement 12:58, deux points et chiffres relus, horloge entière et format natif exact 4:3. Aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c8ff993f904e",
@@ -47609,7 +48751,7 @@
       "label": "Un grand café",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9854be24bb89.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un grand café ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ssx-a2-annonce-6-4-co-2",
@@ -47617,8 +48759,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp",
+      "sha256": "543fb32e2350b0847c94137811116015dd8b09eecaa47404d73c698fbab59496",
+      "review_note": "Grand mug de café noir chaud seul sur fond crème. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6ab9db6995d8",
@@ -47839,19 +48986,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 338,
+    "reviewed_co_images": 372,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 397,
+    "reviewed_total_images": 431,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 386,
+    "already_aligned": 420,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 79
+    "new_images_compared_to_reference": 113
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

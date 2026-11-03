@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 43,
-    "newly_activated": 18,
-    "prepared_pending_audio_link": 21,
+    "questions_illustrated_or_prepared": 67,
+    "newly_activated": 22,
+    "prepared_pending_audio_link": 41,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 263,
+    "remaining_questions_requiring_images_or_review": 239,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -521,7 +521,7 @@
           "asset": "eb86112d610e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:001:ded5d3894aeb"
       ],
@@ -534,16 +534,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
       ],
-      "missing_labels": [
-        "À l’école",
-        "À la gare",
-        "Au centre sportif"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1-tpa-co-1",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-centre-sportif-dessine.webp"
+        ],
+        "support_quote": "Allô, c'est Catherine. Je suis encore à mon bureau. Est-ce que tu peux aller à l'école à 1h45 pour prendre Margot? Après, passe à la boulangerie pour acheter du pain. Pour le repas de ce soir, je vais préparer de la soupe. Merci, à tout à l'heure.",
+        "current_bank_transcription": "C’est Catherine.\nJe suis encore à mon bureau.\nEst-ce que tu peux aller à l’école à 16 h 45 pour prendre Margot ?\nAprès, passe à la boulangerie pour acheter du pain.\nPour le repas de ce soir, je vais préparer de la soupe.\nMerci.\nÀ tout à l’heure.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. École avec classes visibles, gare avec train et centre sportif avec gymnase et bassin : trois destinations distinctes. Les personnages de l’école et de la gare ont des visages nouveaux."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1037,20 +1051,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
       ],
-      "missing_labels": [
-        "La bibliothèque",
-        "Le gymnase municipal",
-        "La piscine"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s6-co-3",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, je suis une nouvelle étudiante.\n- Bonjour.\nVous vous appelez comment ?\n- Je m'appelle Yoko Sumida.\n- Vous avez votre carte d'étudiant ?\n- Non, c'est quoi ?\n- C'est la carte pour entrer à la faculté, vous inscrire à la bibliothèque…\n- Ah oui, j'ai le formulaire de demande !\n- Très bien.\n- Et…\nexcusez-moi, je cherche le cours d'économie.\nOù est la salle, s'il vous plaît ?\n- Aujourd'hui, le cours a lieu dans l'amphi A12.\nVenez chercher votre carte demain à 10 heures.\n- Merci !\nJe peux venir plus tard ?\n- Vous pouvez venir quand ?\n- Demain, je commence à 9 heures et je finis à 11 heures.\n- Venez à 11 heures alors !",
+        "current_bank_transcription": "- Bonjour monsieur, je suis une nouvelle étudiante.\n- Bonjour.\nVous vous appelez comment ?\n- Je m'appelle Yoko Sumida.\n- Vous avez votre carte d'étudiant ?\n- Non, c'est quoi ?\n- C'est la carte pour entrer à la faculté, vous inscrire à la bibliothèque…\n- Ah oui, j'ai le formulaire de demande !\n- Très bien.\n- Et…\nexcusez-moi, je cherche le cours d'économie.\nOù est la salle, s'il vous plaît ?\n- Aujourd'hui, le cours a lieu dans l'amphi A12.\nVenez chercher votre carte demain à 10 heures.\n- Merci !\nJe peux venir plus tard ?\n- Vous pouvez venir quand ?\n- Demain, je commence à 9 heures et je finis à 11 heures.\n- Venez à 11 heures alors !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Bibliothèque de prêt avec lecteurs et comptoir, gymnase et piscine distincts ; le second rendu des lecteurs correspond au trait peint de la référence validée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1232,20 +1255,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-terrasse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-balcon-ferme-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
       ],
-      "missing_labels": [
-        "Une terrasse",
-        "Un balcon fermé",
-        "Une piscine"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s10-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-terrasse-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-balcon-ferme-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+        ],
+        "support_quote": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "current_bank_transcription": "Vous voulez habiter dans un quartier calme ?\nVenez visiter les pièces lumineuses des studios avec terrasse et des appartements de 4 pièces de notre immeuble avec jardin.\nNous sommes ouverts…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Terrasse au niveau du sol, balcon vitré en étage et bassin de piscine ; aucune assimilation d’un balcon fermé à une terrasse."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1276,20 +1308,29 @@
           "asset": "75277054f3bf"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-demi-baguette-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-croissant-singulier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
       ],
-      "missing_labels": [
-        "Une demi-baguette",
-        "Un croissant",
-        "Du pain de mie"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s11-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-demi-baguette-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-croissant-singulier-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
+        ],
+        "support_quote": "- Aujourd'hui, écoutons la recette du sandwich « Le Bocase ».\n- C'est très simple.\nDans une demi-baguette, mettez beaucoup de beurre, un œuf dur, 150 g de fromage, trois tranches de tomates avec un peu de sel et un morceau de poulet.",
+        "current_bank_transcription": "- Aujourd'hui, écoutons la recette du sandwich « Le Bocase ».\n- C'est très simple.\nDans une demi-baguette, mettez beaucoup de beurre, un œuf dur, 150 g de fromage, trois tranches de tomates avec un peu de sel et un morceau de poulet.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Demi-baguette avec une face coupée, un seul croissant et pain de mie ; les trois pains sont entiers dans leur représentation et distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1745,18 +1786,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
       ],
-      "missing_labels": [
-        "Un restaurant d’entreprise"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s21-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+        ],
+        "support_quote": "Le restaurant d'entreprise Mille Repas cherche un serveur ou une serveuse.\nVous êtes dynamique et sérieux, pas stressé ?\nVous aimez travailler en équipe ?\nDébut du contrat : le 1er avril.",
+        "current_bank_transcription": "Le restaurant d'entreprise Mille Repas cherche un serveur ou une serveuse.\nVous êtes dynamique et sérieux, pas stressé ?\nVous aimez travailler en équipe ?\nDébut du contrat : le 1er avril.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Restaurant d’entreprise avec badges, plateaux et bureaux visibles, boulangerie et pharmacie ; trois établissements distincts et nouveaux visages variés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2114,20 +2166,29 @@
           "asset": "5f39fc017989"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
       ],
-      "missing_labels": [
-        "Les courses",
-        "Une séance de sport",
-        "Une visite au musée"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s26-co-3",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
+          "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
+        ],
+        "support_quote": "- Sacha, on est en retard !\n- Maman, je prends mon petit déjeuner !\n- Tu te couches trop tard !\nAprès, tu as des problèmes pour te réveiller le matin.\n- D'accord...\nCe soir, je me couche tôt et je mets mon réveil pour me lever à 6 h 30 demain.\n- Bien.\nEt arrête de regarder la télé !\nTu peux lire aussi !\n- Anaïs, elle, regarde des séries après le dîner.\n- Je dois parler avec elle.\nMais…\nelle est où ta sœur ?\n- Elle se douche, se maquille, ou s'habille peut-être.\nElle a besoin d'une heure pour se préparer.\n- Elle n'est pas en avance…\nAnaïs !\n- Tu finis le travail à quelle heure aujourd'hui ?\n- À 17 h.\nJe fais les courses et je rentre à la maison pour cuisiner.",
+        "current_bank_transcription": "- Sacha, on est en retard !\n- Maman, je prends mon petit déjeuner !\n- Tu te couches trop tard !\nAprès, tu as des problèmes pour te réveiller le matin.\n- D'accord...\nCe soir, je me couche tôt et je mets mon réveil pour me lever à 6 h 30 demain.\n- Bien.\nEt arrête de regarder la télé !\nTu peux lire aussi !\n- Anaïs, elle, regarde des séries après le dîner.\n- Je dois parler avec elle.\nMais…\nelle est où ta sœur ?\n- Elle se douche, se maquille, ou s'habille peut-être.\nElle a besoin d'une heure pour se préparer.\n- Elle n'est pas en avance…\nAnaïs !\n- Tu finis le travail à quelle heure aujourd'hui ?\n- À 17 h.\nJe fais les courses et je rentre à la maison pour cuisiner.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle visuel du trio complet, sujet entier, format exact 4:3 et style du commit 48a753d8. La scène existante d’achat de légumes au marché illustre les courses avant de cuisiner ; séance de gymnastique et visite au musée restent deux actions distinctes. Le mot courses n’est pas interprété comme de la course à pied."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2164,12 +2225,11 @@
       "resolved_images": [
         null,
         null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
       ],
       "missing_labels": [
         "Une salade chinoise",
-        "Une salade grecque",
-        "Une salade italienne"
+        "Une salade grecque"
       ],
       "ready_for_source_review": false
     },
@@ -2202,20 +2262,29 @@
           "asset": "592953f35482"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp"
       ],
-      "missing_labels": [
-        "Une salade italienne",
-        "Une soupe de légumes",
-        "Une assiette de fromage"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp"
+        ],
+        "support_quote": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "current_bank_transcription": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Trois entrées entières distinctes : salade italienne avec tomate et mozzarella, soupe avec plusieurs légumes, assiette de fromages."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2386,20 +2455,29 @@
           "asset": "438bdc0cd2ba"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-jus-tomate-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-carotte-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-betterave-dessine.webp"
       ],
-      "missing_labels": [
-        "Un jus de tomate",
-        "Un jus de carotte",
-        "Un jus de betterave"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-4",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jus-tomate-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jus-carotte-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jus-betterave-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "current_bank_transcription": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Trois jus avec leur légume explicitement visible : tomate rouge, carotte orange et betterave pourpre, sans étiquette."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2474,19 +2552,29 @@
           "asset": "fcdeb285f2ed"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
       ],
-      "missing_labels": [
-        "Une tasse de café",
-        "Un verre de jus de fruits"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s30-co-4",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, vous avez une ordonnance ?\n- Oui, et voilà ma carte Vitale.\n- Merci…\nAlors, voilà les antibiotiques, l'aspirine pour la fièvre et le sirop contre la toux.\n- Comment je prends ces médicaments s'il vous plaît ?\n- Pour l'antibiotique, vous devez prendre un comprimé matin, midi et soir, avec un verre d'eau.\n- Et le sirop ?\n- Une cuillère deux fois par jour, matin et soir, pendant 3 jours.\n- Vous avez de l'aspirine en sachet ?\n- Bien sûr.\nTenez.\n- Et…\ncontre la toux, vous avez des pastilles ?\n- Oui bien sûr.\nCe sera tout ?\n- Euh…\nnon, ma fille a une brûlure à la main, vous avez une crème ou un gel ?\n- Bien sûr.\nIl faut mettre cette crème sur la brûlure deux fois par jour",
+        "current_bank_transcription": "- Bonjour monsieur, vous avez une ordonnance ?\n- Oui, et voilà ma carte Vitale.\n- Merci…\nAlors, voilà les antibiotiques, l'aspirine pour la fièvre et le sirop contre la toux.\n- Comment je prends ces médicaments s'il vous plaît ?\n- Pour l'antibiotique, vous devez prendre un comprimé matin, midi et soir, avec un verre d'eau.\n- Et le sirop ?\n- Une cuillère deux fois par jour, matin et soir, pendant 3 jours.\n- Vous avez de l'aspirine en sachet ?\n- Bien sûr.\nTenez.\n- Et…\ncontre la toux, vous avez des pastilles ?\n- Oui bien sûr.\nCe sera tout ?\n- Euh…\nnon, ma fille a une brûlure à la main, vous avez une crème ou un gel ?\n- Bien sûr.\nIl faut mettre cette crème sur la brûlure deux fois par jour",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle visuel du trio complet, sujet entier, format exact 4:3 et style du commit 48a753d8. Eau claire en verre, café en tasse et jus de fruits en verre avec une orange ; les trois contenants et boissons correspondent aux réponses entières dans cette question."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2561,20 +2649,29 @@
           "asset": "9782b9945f3c"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans les pharmacies",
-        "Dans les boulangeries",
-        "Dans les librairies"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s31-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp"
+        ],
+        "support_quote": "Vous toussez ?\nAchetez Calmatoux pour toute la famille, adultes ou enfants.\nDes pastilles contre la toux et le mal de gorge, à utiliser le jour et la nuit…\nCet hiver, Calmatoux est dans toutes les pharmacies !",
+        "current_bank_transcription": "Vous toussez ?\nAchetez Calmatoux pour toute la famille, adultes ou enfants.\nDes pastilles contre la toux et le mal de gorge, à utiliser le jour et la nuit…\nCet hiver, Calmatoux est dans toutes les pharmacies !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle visuel du trio complet, sujet entier, format exact 4:3 et style du commit 48a753d8. Pharmacie, boulangerie et espace de vente de livres distincts ; le rayon de livres existant représente ici la catégorie librairie, avec présentoir et panier d’achat, sans comptoir de prêt."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2795,12 +2892,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
         null
       ],
       "missing_labels": [
         "Au restaurant du camping",
-        "À la piscine",
         "Dans les tentes"
       ],
       "ready_for_source_review": false
@@ -3252,20 +3348,29 @@
           "asset": "7015d2580533"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-jardin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-terrasse-toit-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cour-partagee-dessine.webp"
       ],
-      "missing_labels": [
-        "Un jardin",
-        "Une terrasse sur le toit",
-        "Une cour partagée"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s41-co-1",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-jardin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-terrasse-toit-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cour-partagee-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, je cherche un appartement dans un immeuble calme.\n- Très bien.\nEt vous habitez où maintenant ?\n- J'habite boulevard des Charmes et il y a beaucoup de bruit.\n- C'est vrai.\nVous voulez combien de pièces ?\n- Nous sommes un couple avec 2 enfants…\n- Et vous voulez 2 ou 3 chambres ?\n- 3 chambres, c'est bien.\nEt…\nune cuisine équipée et des pièces lumineuses !\n- Bien sûr !\nVous préférez un appartement à l'étage avec une terrasse ou au rez-de-chaussée avec un jardin ?\n- Un appartement avec un jardin ?\nC'est super !\nNous avons un chien.\n- Vous êtes libre aujourd'hui pour visiter un appartement ?",
+        "current_bank_transcription": "- Bonjour monsieur, je cherche un appartement dans un immeuble calme.\n- Très bien.\nEt vous habitez où maintenant ?\n- J'habite boulevard des Charmes et il y a beaucoup de bruit.\n- C'est vrai.\nVous voulez combien de pièces ?\n- Nous sommes un couple avec 2 enfants…\n- Et vous voulez 2 ou 3 chambres ?\n- 3 chambres, c'est bien.\nEt…\nune cuisine équipée et des pièces lumineuses !\n- Bien sûr !\nVous préférez un appartement à l'étage avec une terrasse ou au rez-de-chaussée avec un jardin ?\n- Un appartement avec un jardin ?\nC'est super !\nNous avons un chien.\n- Vous êtes libre aujourd'hui pour visiter un appartement ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Jardin de plain-pied, terrasse aménagée sur un toit dont les étages sont visibles et cour commune entourée de plusieurs appartements ; les relations spatiales sont réellement représentées."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3431,12 +3536,11 @@
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
         null,
         null
       ],
       "missing_labels": [
-        "Une baguette",
         "Un pain complet",
         "Un pain aux noix"
       ],
@@ -3760,7 +3864,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:044:6f1e71a5d8e3",
         "additional-20261102:mdf-a1-abc-junior:44:6f1e71a5d8e3:a0d1f6e7"
@@ -3774,15 +3878,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
       ],
-      "missing_labels": [
-        "À la machine",
-        "Au restaurant"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s47-co-1",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp"
+        ],
+        "support_quote": "J'ai faim. Je vais m'acheter un sandwich à la machine. Tu veux quelque chose? Oui, je veux bien une bouteille d'eau, s'il te plaît. D'accord, pas de problème.",
+        "current_bank_transcription": "J'ai faim.\nJe vais m'acheter un sandwich à la machine.\nTu veux quelque chose?\nOui, je veux bien une bouteille d'eau s'il te plaît.\nD'accord, pas de problème.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Distributeur automatique de sandwichs et boissons, boulangerie et restaurant ; aucun prix ou montant affiché. La scène de restaurant d’entreprise représente ici la catégorie générale restaurant."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4675,20 +4794,29 @@
           "asset": "8860ce592cec"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-brioche-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
       ],
-      "missing_labels": [
-        "Une baguette",
-        "Une brioche",
-        "Un pain de mie"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-brioche-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-mie-dessine.webp"
+        ],
+        "support_quote": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "current_bank_transcription": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Baguette longue entière, brioche ronde tressée et pain de mie rectangulaire à tranches carrées : trois formes de pain distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4719,20 +4847,29 @@
           "asset": "e1a9c223db85"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-chaussons-pommes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp"
       ],
-      "missing_labels": [
-        "Des croissants",
-        "Des chaussons aux pommes",
-        "Des pains aux raisins"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-1",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-chaussons-pommes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp"
+        ],
+        "support_quote": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "current_bank_transcription": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Trois viennoiseries distinctes, chacune montrée en deux exemplaires : croissants, chaussons montrant la pomme et pains en spirale avec raisins."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4816,20 +4953,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pain-chocolat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp"
       ],
-      "missing_labels": [
-        "Du pain aux raisins",
-        "Du pain au chocolat",
-        "Des croissants"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pains-raisins-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pain-chocolat-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp"
+        ],
+        "support_quote": "- Chérie, j'achète quoi ?\n- Deux baguettes, deux croissants…\n- Des pains au chocolat ?\n- Oui, un pain au chocolat, mais pas de pain aux raisins.\n- D'accord !",
+        "current_bank_transcription": "- Chérie, j'achète quoi ?\n- Deux baguettes, deux croissants…\n- Des pains au chocolat ?\n- Oui, un pain au chocolat, mais pas de pain aux raisins.\n- D'accord !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Pain aux raisins, pain au chocolat et croissants clairement distincts ; le pain aux raisins massique désigne cette catégorie de viennoiserie, sans question de quantité."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5060,12 +5206,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         null
       ],
       "missing_labels": [
         "La station de métro",
-        "La gare",
         "L'arrêt de bus"
       ],
       "ready_for_source_review": false
@@ -5187,18 +5332,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
       ],
-      "missing_labels": [
-        "L'escalade"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-21-cours-de-surf-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+        ],
+        "support_quote": "- Vous savez faire du ski ?\n- Oui, je sais faire du ski, mais je voudrais prendre des cours de surf.",
+        "current_bank_transcription": "- Vous savez faire du ski ?\n- Oui, je sais faire du ski, mais je voudrais prendre des cours de surf.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Surf, ski et escalade avec action et équipement visibles ; la nouvelle grimpeuse est différente des autres personnages de la banque."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5273,18 +5429,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
         "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
       ],
-      "missing_labels": [
-        "Un film"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-28-places-de-concert-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+          "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+        ],
+        "support_quote": "- Vous avez encore des places pour ce concert ?\n- Désolé, c'est complet !",
+        "current_bank_transcription": "- Vous avez encore des places pour ce concert ?\n- Désolé, c'est complet !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet, format exact 4:3 et comparaison au style approuvé du commit 48a753d8. Pour le sens spectacle, le film est représenté par une séance de cinéma et non par un DVD. Concert et pièce de théâtre restent distincts, trois scènes relues ensemble."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7984,18 +8151,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
       ],
-      "missing_labels": [
-        "Au bureau de poste"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2-s1-co-1",
+        "question": 9,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-entree-magasin-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-sortie-parking-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
+        ],
+        "support_quote": "Chers clients, vous rêvez d'une maison bien propre ? Achetez notre nouvelle lessive et gagnez un aspirateur. Pour cela, complétez un formulaire à l'entrée du magasin. Bonne chance !",
+        "current_bank_transcription": "Chers clients, vous rêvez d'une maison bien propre ? Achetez notre nouvelle lessive et gagnez un aspirateur. Pour cela, complétez un formulaire à l'entrée du magasin. Bonne chance !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Entrée de magasin, sortie de parking avec barrière et bureau de poste avec colis et courrier, trois lieux distincts ; les sens entrée et sortie sont visibles."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8543,7 +8721,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:001:e636083d0158"
       ],
@@ -8556,14 +8734,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
         "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
         "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
       ],
-      "missing_labels": [
-        "Des places"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a2-sb-co-1",
+        "question": 17,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp"
+        ],
+        "support_quote": "Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places. Le bar du théâtre vous accueille de 1 à 19h. Bonne journée.",
+        "current_bank_transcription": "Les guichets 11 et 13 sont fermés. Allez au guichet 12 pour acheter vos places.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Contrôle du trio complet, format exact 4:3 et comparaison au style approuvé du commit 48a753d8. Les billets vierges devant la scène représentent les places de théâtre du support, distincts des livres et des vêtements. Aucun prix, date ou numéro n’est visible."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8705,12 +8899,11 @@
       "source_links": [],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         null
       ],
       "missing_labels": [
         "Au bar de la plage",
-        "À la gare",
         "Au centre commercial"
       ],
       "ready_for_source_review": false
@@ -9484,12 +9677,11 @@
       "resolved_images": [
         null,
         null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
       ],
       "missing_labels": [
         "Une station de métro",
-        "Un arrêt de tramway",
-        "Une gare"
+        "Un arrêt de tramway"
       ],
       "ready_for_source_review": false
     },
@@ -9686,12 +9878,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         null
       ],
       "missing_labels": [
         "Dans un magasin de disques",
-        "Dans une gare",
         "Dans une salle de concert"
       ],
       "ready_for_source_review": false
@@ -9910,18 +10101,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
-      "missing_labels": [
-        "Un instrument"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s24-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        ],
+        "support_quote": "Salut Isa, c'est Marine.\nJ'ai téléphoné à ton prof de guitare et je lui ai expliqué mon niveau.\nIl va me donner des cours à partir de la semaine prochaine et me prêter un instrument.\nJ'ai hâte de recommencer à jouer de la guitare.",
+        "current_bank_transcription": "Salut Isa, c'est Marine.\nJ'ai téléphoné à ton prof de guitare et je lui ai expliqué mon niveau.\nIl va me donner des cours à partir de la semaine prochaine et me prêter un instrument.\nJ'ai hâte de recommencer à jouer de la guitare.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet, format exact 4:3 et comparaison au style approuvé du commit 48a753d8. La guitare représente l’instrument musical cité dans ce dialogue sur des cours de guitare, distinct de l’ordinateur et du vélo. Aucune nouvelle génération nécessaire."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9967,12 +10169,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         null
       ],
       "missing_labels": [
         "Le jardin public",
-        "La gare",
         "Le collège"
       ],
       "ready_for_source_review": false
@@ -10334,18 +10535,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
         "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
         "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
       ],
-      "missing_labels": [
-        "De l’eau de mer"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s30-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-eau-mer-dessine.webp",
+          "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+        ],
+        "support_quote": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
+        "current_bank_transcription": "Marseille, c'est le vieux port, la bonne mère et la bouillabaisse.\nÀ sa création, sous l'empire grec, on mange déjà un ragout à base d'eau de mer et de poissons invendus.\nEn 1980, si restaurateurs Marseillais ont écrit une charte pour préserver ce monument de la gastronomie.\nAujourd'hui, la bouillabaisse populaire est devenue un plat de riche avec du haumard par exemple.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3, sujets entiers et comparaison au style du commit 48a753d8. Eau provenant visiblement d’une vague marine qui remplit un seau, distincte du lait et du jus de fruits. Seule la version au rendu peint est intégrée, première version photo écartée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10921,18 +11133,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-voiture-location-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
-      "missing_labels": [
-        "Une voiture de location"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s38-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-voiture-location-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        ],
+        "support_quote": "- Salut Vincent !\nTu sais comment aller au mariage de Thomas le week-end prochain ?\n- Oui, je viens de louer une voiture.\nJe pensais prendre le train, mais c'est plus long et plus cher.\n- Et en covoiturage ?\n- Les trajets proposés ne sont pas pratiques.\n- Dommage.\nTu es passé par une agence pour la location ?\n- Non, un service de location de voitures entre particuliers.\nÇa s'appelle « Loue ma voiture !\n».\nTu connais ?\n- Pas du tout.\nMais…\nc'est sûr comme service ?\n- Oui, c'est sûr et simple.\nTu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire, et tu loues une voiture.\n- Il y a une assurance ?\n- Oui, c'est compris.\nEt pour cette voiture, le propriétaire vient de faire le contrôle technique.\n- Et pour l'essence ?\n- À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+        "current_bank_transcription": "- Salut Vincent !\nTu sais comment aller au mariage de Thomas le week-end prochain ?\n- Oui, je viens de louer une voiture.\nJe pensais prendre le train, mais c'est plus long et plus cher.\n- Et en covoiturage ?\n- Les trajets proposés ne sont pas pratiques.\n- Dommage.\nTu es passé par une agence pour la location ?\n- Non, un service de location de voitures entre particuliers.\nÇa s'appelle « Loue ma voiture !\n».\nTu connais ?\n- Pas du tout.\nMais…\nc'est sûr comme service ?\n- Oui, c'est sûr et simple.\nTu t'inscris, tu enregistres une pièce d'identité et ton permis de conduire, et tu loues une voiture.\n- Il y a une assurance ?\n- Oui, c'est compris.\nEt pour cette voiture, le propriétaire vient de faire le contrôle technique.\n- Et pour l'essence ?\n- À la fin du week-end, je dois juste faire le plein dans une station-service avant de rendre la voiture.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. La location entre particuliers est illustrée par la remise des clés dans une cour privée, selon le dialogue ; train et bus distincts. Le nouveau personnage avec prothèse et la propriétaire ont des visages distincts."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11104,18 +11327,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-musee-histoire-naturelle-dessine.webp",
         "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
         "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp"
       ],
-      "missing_labels": [
-        "Un musée d’histoire naturelle"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s41-co-2",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-musee-histoire-naturelle-dessine.webp",
+          "/lib/images/tcf/qcm-audit/f84b97e2c8a8.webp",
+          "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp"
+        ],
+        "support_quote": "Papa, tu veux bien accompagner la sortie scolaire, jeudi prochain, avec le prof d'Histois.\nIl faut deux parents.\nVolontier, vous allez faire quoi ?\nOn va au musée d'Histois naturel, voire l'exposition sur les dinosaures.",
+        "current_bank_transcription": "Papa, tu veux bien accompagner la sortie scolaire, jeudi prochain, avec le prof d'Histois.\nIl faut deux parents.\nVolontier, vous allez faire quoi ?\nOn va au musée d'Histois naturel, voire l'exposition sur les dinosaures.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Musée avec squelette de dinosaure, fossiles et minéraux, distinct du musée de peinture et du château. Aucun objet d’astronomie conservé du premier musée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11422,12 +11656,11 @@
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
         null,
         null
       ],
       "missing_labels": [
-        "Le bureau de poste",
         "L'office de tourisme",
         "Le commissariat"
       ],
@@ -12522,7 +12755,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:34:5474c0710359:e1eea890"
       ],
@@ -12535,14 +12768,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
       ],
-      "missing_labels": [
-        "Un grand café"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a2-annonce-6-4-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
+        ],
+        "support_quote": "Chers clients, après une offre sur les sandwichs la semaine dernière, nous vous proposons aujourd'hui une offre spéciale petit déjeuner. Pour l'achat de trois pieds de moiserie, un grand café vous est offert.",
+        "current_bank_transcription": "Chers clients, après une offre sur les sandwichs la semaine dernière, nous vous proposons aujourd’hui une offre spéciale petit-déjeuner !\nPour l’achat de trois viennoiseries, un grand café vous est offert !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Contrôle du trio complet au format exact 4:3 et dans le style du commit 48a753d8. Le café offert est un grand mug, distinct du verre de jus et du sandwich ; aucun montant ou date ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12587,12 +12836,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         null
       ],
       "missing_labels": [
         "Au salon du tourisme",
-        "Dans une gare",
         "À l’aéroport"
       ],
       "ready_for_source_review": false
@@ -12641,11 +12889,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
       ],
       "missing_labels": [
-        "La baignade",
-        "L’escalade"
+        "La baignade"
       ],
       "ready_for_source_review": false
     },
@@ -14418,12 +14665,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
         null
       ],
       "missing_labels": [
         "Sous la grande tente",
-        "Dans la gare",
         "Dans le parc"
       ],
       "ready_for_source_review": false
@@ -14736,12 +14982,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
       ],
       "missing_labels": [
-        "Le repas gastronomique français",
-        "La baguette"
+        "Le repas gastronomique français"
       ],
       "ready_for_source_review": false
     },
