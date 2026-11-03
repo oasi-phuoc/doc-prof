@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 155,
-    "pending_question_candidates": 268,
+    "activated_planned_questions": 161,
+    "pending_question_candidates": 262,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 348,
-    "remaining_original_concepts": 393,
-    "new_co_images_this_batch": 460,
+    "original_concepts_now_generated_or_reused": 380,
+    "remaining_original_concepts": 361,
+    "new_co_images_this_batch": 490,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 127,
-    "sources_with_new_active_question_or_scene": 154,
+    "sources_with_pending_question_candidates": 120,
+    "sources_with_new_active_question_or_scene": 161,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 460,
+    "co_images_style_aligned": 490,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -5080,8 +5080,9 @@
         "/lib/audio/tcf/co/scènes courtes/10-fêtes-annonce-fête-de-la-nature.mp3",
         "/lib/audio/tcf/co/scènes courtes/11-magasin-annonce-sortie-nouvel-album.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
           "question": 3
@@ -5091,10 +5092,9 @@
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -5109,17 +5109,17 @@
         "/lib/audio/tcf/co/maison/maison-1-2.mp3",
         "/lib/audio/tcf/co/maison/maison-1-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s26-co-1",
           "question": 13
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -6326,17 +6326,17 @@
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-5.mp3",
         "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-6.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "delf-a2-2021-co-ex1-35",
           "question": 12
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 21,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -10727,17 +10727,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s58-co-1",
           "question": 6
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -13085,17 +13085,17 @@
         "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-3.mp3",
         "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s20-co-4",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 15,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -14281,8 +14281,9 @@
         "/lib/audio/tcf/co/scènes courtes/10-fêtes-annonce-fête-de-la-nature.mp3",
         "/lib/audio/tcf/co/scènes courtes/11-magasin-annonce-sortie-nouvel-album.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
           "question": 3
@@ -14292,10 +14293,9 @@
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 13,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -14338,17 +14338,17 @@
         "/lib/audio/tcf/co/maison/maison-1-2.mp3",
         "/lib/audio/tcf/co/maison/maison-1-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s26-co-1",
           "question": 13
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 5,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -20597,7 +20597,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, c'est pour déjeuner ?\n- Oui, vous avez une table pour deux ?\n- Ici.\nVoici le menu du jour.\n- Tu prends du poisson ou de la viande ?\n- Mais, je suis végétarien !\n- C'est vrai !\nTu ne manges pas de viande, pas de poisson.\nUne salade ?\n- D'accord.\n- Et tu bois quoi ?\n- Pas d'alcool, je bois de l'eau.\n- Je peux prendre votre commande ?\n- Alors…\nune salade chinoise, un steak-frites et deux tartes aux fraises.\n- Qu'est-ce que vous buvez ?\n- Une carafe d'eau s'il vous plaît.\n- Tout va bien ?\n- Oui, c'est excellent !\n- L'addition s'il vous plaît !\n- On laisse un pourboire ?\n- Oui, bien sûr !",
+        "current_bank_transcription": "- Bonjour, c'est pour déjeuner ?\n- Oui, vous avez une table pour deux ?\n- Ici.\nVoici le menu du jour.\n- Tu prends du poisson ou de la viande ?\n- Mais, je suis végétarien !\n- C'est vrai !\nTu ne manges pas de viande, pas de poisson.\nUne salade ?\n- D'accord.\n- Et tu bois quoi ?\n- Pas d'alcool, je bois de l'eau.\n- Je peux prendre votre commande ?\n- Alors…\nune salade chinoise, un steak-frites et deux tartes aux fraises.\n- Qu'est-ce que vous buvez ?\n- Une carafe d'eau s'il vous plaît.\n- Tout va bien ?\n- Oui, c'est excellent !\n- L'addition s'il vous plaît !\n- On laisse un pourboire ?\n- Oui, bien sûr !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Salade chinoise végétarienne, salade grecque et salade italienne à mozzarella existante réutilisée : les trois recettes sont distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -20734,7 +20753,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+        "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+          "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+        ],
+        "support_quote": "- Bonjour messieurs-dames, voici une table pour quatre.\nAujourd'hui pour le déjeuner, le chef vous propose un menu spécial « Atlantique » avec du poisson et des petits légumes.",
+        "current_bank_transcription": "- Bonjour messieurs-dames, voici une table pour quatre.\nAujourd'hui pour le déjeuner, le chef vous propose un menu spécial « Atlantique » avec du poisson et des petits légumes.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Légumes cuits, frites et pâtes à la tomate déjà disponibles : trois accompagnements distincts. Aucune image de poisson ajoutée à la réponse sur l’accompagnement."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21438,7 +21476,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s35-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+        ],
+        "support_quote": "- Bonjour madame, il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez.\n- Ce matin, il ne pleut pas et je peux vous proposer une sortie en canoé-kayak à 10 heures ou un cours de voile à 11 heures.\nLes deux activités durent 2 heures.\n- Je peux vous proposer aussi un cours d'escalade à 11 heures.\nIl dure 2 heures aussi.\n- Ah oui !\nC'est bien l'escalade, non ?\n- Oui c'est très bien, mais nous ne savons pas faire d'escalade !\n- Il y a un cours pour les débutants, vous voulez vous inscrire ?\n- Oui s'il vous plaît !",
+        "current_bank_transcription": "- Bonjour madame, il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez.\n- Ce matin, il ne pleut pas et je peux vous proposer une sortie en canoé-kayak à 10 heures ou un cours de voile à 11 heures.\nLes deux activités durent 2 heures.\n- Je peux vous proposer aussi un cours d'escalade à 11 heures.\nIl dure 2 heures aussi.\n- Ah oui !\nC'est bien l'escalade, non ?\n- Oui c'est très bien, mais nous ne savons pas faire d'escalade !\n- Il y a un cours pour les débutants, vous voulez vous inscrire ?\n- Oui s'il vous plaît !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Kayak et pagaie complets, voile et mât recadrés en plan plus éloigné avant publication, escalade avec corde réutilisée ; les trois activités sont cohérentes et la transcription situe le kayak à 10 heures."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21976,7 +22033,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s45-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, vous avez un plan de la ville s'il vous plaît ?\nJe cherche la préfecture.\n- Oui, bien sûr.\nVoilà.\nPour aller à la préfecture, vous pouvez prendre le métro ou le bus.\n- Je préfère le métro pour aller plus vite.\nLa station est loin ?\n- Non, regardez sur le plan.\nL'office du tourisme est ici.\nVous traversez la rue, vous tournez à gauche et vous allez tout droit.\nLa station de métro est en face du commissariat.\n- Et c'est direct ?\n- Non, il faut changer à Opéra et prendre la ligne 7",
+        "current_bank_transcription": "- Bonjour monsieur, vous avez un plan de la ville s'il vous plaît ?\nJe cherche la préfecture.\n- Oui, bien sûr.\nVoilà.\nPour aller à la préfecture, vous pouvez prendre le métro ou le bus.\n- Je préfère le métro pour aller plus vite.\nLa station est loin ?\n- Non, regardez sur le plan.\nL'office du tourisme est ici.\nVous traversez la rue, vous tournez à gauche et vous allez tout droit.\nLa station de métro est en face du commissariat.\n- Et c'est direct ?\n- Non, il faut changer à Opéra et prendre la ligne 7",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Les trois paires de transports sont représentées en entier ; métro/bus est la réponse effectivement proposée par la transcription actuelle."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23343,7 +23419,7 @@
           "asset": "444ebf5b888c"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:40:92017d07c943:43660711"
       ],
@@ -23354,6 +23430,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-40-92017d07c943-43660711-joined",
           "transcription": "Bonjour, je voudrais un billet pour Paris. Vous voulez partir à quelle heure? Vers 14h si c'est possible. Bonjour monsieur, bienvenue à l'hôtel Beaulieu. Bonjour madame. J'ai réservé une chamier. Très bien, c'est à quel nom? Monsieur Dubar. Bonjour. J'aimerais un café et un croissant, s'il vous plaît. Je vous apporte ça tout de suite, mademoiselle. Et l'addition aussi. Je veux payer tout de suite. Bonjour, je voudrais 2 pains au chocolat et trois croissants, s'il vous plaît. Avec ceci, on a des baguettes qui viennent de sortir du four. Non merci, ça sera tout. 3 euros, s'il vous plaît."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp"
       ]
     },
     {
@@ -23511,7 +23592,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+        ],
+        "support_quote": "- Comment on va à la poste, s'il vous plaît ?\n- Vous pouvez prendre le bus ou le tram.",
+        "current_bank_transcription": "- Comment on va à la poste, s'il vous plaît ?\n- Vous pouvez prendre le bus ou le tram.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Bus/tram, train/métro et bateau/taxi sont visuellement distincts. La paire taxi/bateau existante est réutilisée sans générer un doublon."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23544,7 +23644,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-sc-20-activites-proposees-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp"
+        ],
+        "support_quote": "- Vous proposez quelles activités ?\n- Vous pouvez faire du canoë-kayak ou de l'escalade.",
+        "current_bank_transcription": "- Vous proposez quelles activités ?\n- Vous pouvez faire du canoë-kayak ou de l'escalade.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Les deux activités de chacune des trois réponses sont réellement présentes, sans réduire les réponses à un seul sport. Réutilisation de kayak, escalade, natation, tennis et ski ; seul le patineur a été ajouté à la dernière paire."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -29418,7 +29537,7 @@
           "asset": "503aeb6fb2a8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:91:457975b7976f:f9b9f106"
       ],
@@ -29429,6 +29548,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-91-457975b7976f-f9b9f106-d1",
           "transcription": "Bonjour Je voudrais un sandwich au fromage avec une bouteille d'eau s'il vous plaît Très bien Est-ce qu'il vous faut autre chose Oui je prendrai aussi une tarte aux fraises Très bien je vous apporte ça"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp"
       ]
     },
     {
@@ -30107,7 +30231,7 @@
           "asset": "be05d90145ae"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:053:1d81d8cc10b7",
         "additional-20261102:mdf-a2-abc-junior-direct:53:1d81d8cc10b7:c448701c"
@@ -30119,6 +30243,11 @@
           "candidate_cut_id": "9782090351958-053-1d81d8cc10b7-r2-d3",
           "transcription": "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission speciale sur France FM."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
       ]
     },
     {
@@ -30624,7 +30753,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s34-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+        ],
+        "support_quote": "Au bureau, je n'ai jamais le temps de déjeuner normalement.\nAlors, je mange sur le pouce.\nCe n'est pas un mode de vie très équilibrée.\nD'accord, mais j'ai vite les sodas, je bois de l'eau.\nEt tu manges des salades ?\nPas question !\nJe préfère un sandwich traditionnel.",
+        "current_bank_transcription": "Au bureau, je n'ai jamais le temps de déjeuner normalement.\nAlors, je mange sur le pouce.\nCe n'est pas un mode de vie très équilibrée.\nD'accord, mais j'ai vite les sodas, je bois de l'eau.\nEt tu manges des salades ?\nPas question !\nJe préfère un sandwich traditionnel.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Sandwich baguette traditionnel, pizza et plat de pâtes entiers réutilisés après relecture : aucun nouveau doublon généré pour ce trio."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -33088,7 +33236,7 @@
           "asset": "8e33e56e2d89"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:052:5f5797e2f308",
         "additional-20261102:mdf-a2-abc-junior-direct:52:5f5797e2f308:9572ec6b"
@@ -33100,6 +33248,11 @@
           "candidate_cut_id": "9782090351958-052-5f5797e2f308-d2",
           "transcription": "Pour la fête de la nature, la ville organise un pique-nique géant au parc des fleurs. Des paniers repas seront en vente avec sandwich, salade, boissons. Apportez vos assiettes des couverjetables et installez-vous sur les tables de pique-nique."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp"
       ]
     },
     {
@@ -33131,7 +33284,7 @@
           "asset": "458991647ee2"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:052:5f5797e2f308",
         "additional-20261102:mdf-a2-abc-junior-direct:52:5f5797e2f308:9572ec6b"
@@ -33143,6 +33296,11 @@
           "candidate_cut_id": "9782090351958-052-5f5797e2f308-d2",
           "transcription": "Pour la fête de la nature, la ville organise un pique-nique géant au parc des fleurs. Des paniers repas seront en vente avec sandwich, salade, boissons. Apportez vos assiettes des couverjetables et installez-vous sur les tables de pique-nique."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+        "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+        "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp"
       ]
     },
     {
@@ -34567,7 +34725,7 @@
           "asset": "8a7b66b34725"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:035:542d98a3e53c"
       ],
@@ -34578,6 +34736,11 @@
           "candidate_cut_id": "delf_a2_2021-035-542d98a3e53c-d4",
           "transcription": "Dans le parc, les pique-niques ne sont pas autorisées, mais vous pouvez entrer avec une boisson. Pour déjeuner, le chef du restaurant 4 étoiles vous attend. Bonne journée!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp"
       ]
     },
     {
@@ -35747,7 +35910,7 @@
       "label": "Un sandwich et une boisson",
       "path_after_generation": "/lib/images/tcf/qcm-audit/31474ff5a57c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sandwich et une boisson ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
@@ -35755,8 +35918,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+      "sha256": "5c340c7885153084d48c88c4270aaf4e073f0ba0497b0f3dc3661c975ddd17cb",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Manu demande un sandwich et une bouteille d’eau pour le pique-nique dans tcf-ss-a1-s14-co-3 Q7.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "962cfd460737",
@@ -35857,7 +36025,7 @@
       "label": "Une sortie en canoé-kayak",
       "path_after_generation": "/lib/images/tcf/qcm-audit/582f807f7876.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une sortie en canoé-kayak ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s35-co-4",
@@ -35865,8 +36033,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+      "sha256": "b0cdc2eb3af1e58fabf8c09cedaefbb3f2d87771dc302b3c94241387e1416262",
+      "review_note": "Kayak rouge entier, femme âgée en gilet de sauvetage et pagaie double complète ; deux mains, geste et assise cohérents. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a1f62a66bfc2",
@@ -36856,7 +37029,7 @@
       "label": "Des assiettes et des couverts",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e2c2f1c3028d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des assiettes et des couverts ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
@@ -36864,8 +37037,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+      "sha256": "f2283bb772d8255d8562bf8ca00f2ce35b87f0f6b17ee58412a4a18b904fa28e",
+      "review_note": "Deux assiettes jetables et deux ensembles de couverts en bois, chacun avec fourchette, couteau et cuillère. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "16edefcaf66e",
@@ -36962,7 +37140,7 @@
       "label": "Un panier-repas",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8a7b66b34725.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un panier-repas ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2-2021-co-ex1-35",
@@ -36970,8 +37148,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp",
+      "sha256": "18fd0af31304f4fb4b840b6e7afeab9751cb3e7609604f67cd55fd77ade1378d",
+      "review_note": "Un seul panier-repas ouvert avec sandwich, salade et boisson ; nombre singulier contrôlé en vue pleine. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "40dee4eb73ea",
@@ -37157,7 +37340,7 @@
       "label": "Le train ou le métro",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c936c0eda6a3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le train ou le métro ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
@@ -37165,8 +37348,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+      "sha256": "9a8f01f5b88ea6336e7963cab706a0a7545e26e79d76c60822dcbb717101bc66",
+      "review_note": "Train régional dehors sur ballast et métro souterrain en station ; les environnements distinguent les deux transports. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7a41d5ab27a2",
@@ -37316,7 +37504,7 @@
       "label": "Des plats de poisson",
       "path_after_generation": "/lib/images/tcf/qcm-audit/176ba33a00b2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des plats de poisson ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s26-co-1",
@@ -37324,8 +37512,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+      "sha256": "34ac0ecdaf38db15526fa0b1c77827b51ec26dc5c45b895f17e6d4c82dd4a0c5",
+      "review_note": "Deux plats cuisinés de poisson, saumon et poisson entier, avec garniture ; pas de viande rouge. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4c7e73dc4eba",
@@ -37837,7 +38030,7 @@
       "label": "Une salade grecque",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a98310ed8c28.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une salade grecque ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-1",
@@ -37845,8 +38038,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+      "sha256": "1f0961879e219aff23ee649eb8ece1d7111053fd740e21737f57f4419bca46dd",
+      "review_note": "Salade grecque avec feta en cubes, concombre, olives, quartiers de tomates et oignon rouge ; différente de la mozzarella en rondelles de la salade italienne existante. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4af2ac685690",
@@ -38307,7 +38505,7 @@
       "label": "Le bus ou le tram",
       "path_after_generation": "/lib/images/tcf/qcm-audit/afc3fdd1fbf2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le bus ou le tram ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
@@ -38315,8 +38513,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+      "sha256": "b70622e8aa4ab2324014c1d13552da3bfb4b4ea69e65c983768a8f115b0948de",
+      "review_note": "Bus routier à pneus et tramway articulé sur rails intégrés à la rue ; aucune confusion des infrastructures. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "f106af5bef6a",
@@ -38539,7 +38742,7 @@
       "label": "Un café et un croissant",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b3ee57b33653.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un café et un croissant ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s58-co-1",
@@ -38547,8 +38750,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+      "sha256": "401165cd5a0b0854e5183c32589b6d422a7e8595a14d277eb9128e6b2c93ca8f",
+      "review_note": "Une tasse de café noir et un seul croissant sur deux soucoupes, les deux aliments sont entiers. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ac6cd971bad1",
@@ -38793,7 +39001,7 @@
       "label": "Un cours de voile",
       "path_after_generation": "/lib/images/tcf/qcm-audit/624b88e40310.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un cours de voile ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s35-co-4",
@@ -38801,8 +39009,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+      "sha256": "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
+      "review_note": "Plan éloigné corrigé : bateau, voile triangulaire et sommet du mât entiers avec marge. Instructeur et apprenante en gilets, geste d’enseignement et écoute tenue. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b2b236c246e2",
@@ -40703,7 +40916,7 @@
       "label": "Le métro ou le bus",
       "path_after_generation": "/lib/images/tcf/qcm-audit/906b288bc8bc.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le métro ou le bus ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s45-co-1",
@@ -40711,8 +40924,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+      "sha256": "4a27607f277e4432b9719712d2a527a7382e2376a6aecddd969334d5b116ea5b",
+      "review_note": "Métro souterrain avec quai et tunnel, bus avec pneus sur chaussée et abri ; deux vignettes distinctes et véhicules entiers. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "de11d68150bd",
@@ -40876,7 +41094,7 @@
       "label": "Le bateau ou le taxi",
       "path_after_generation": "/lib/images/tcf/qcm-audit/299a466e71d0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le bateau ou le taxi ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
@@ -40884,8 +41102,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp",
+      "sha256": "6fa2e1ef65b3071912813cf0b52ba2270c0b0b948adb0d7f6db74bcd67e00e08",
+      "review_note": "Taxi jaune entier avec petite enseigne TAXI relue, bateau passagers entier sur eau. La paire est aussi réutilisable dans l’ordre bateau ou taxi. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8f3be28400db",
@@ -40929,7 +41152,7 @@
       "label": "Des plats de viande",
       "path_after_generation": "/lib/images/tcf/qcm-audit/be05d90145ae.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des plats de viande ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s26-co-1",
@@ -40937,8 +41160,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp",
+      "sha256": "0f3d9df0eb0e30d2f99c2ac8426075629c452aad4afb1c4fbd9a208abd76e02d",
+      "review_note": "Deux plats cuisinés de viande, steak et rôti tranché, avec garniture ; pas de poisson. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0741fc6955c3",
@@ -41098,7 +41326,7 @@
       "label": "Des paniers-repas",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3138182600b6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des paniers-repas ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
@@ -41106,8 +41334,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+      "sha256": "400a1d1c636e6e1ef32beda3e58648636670c24dafb09dbb45807fb4cfe3a3b5",
+      "review_note": "Deux paniers-repas ouverts, chacun avec sandwich, salade et boisson ; pluriel et contenu annoncé visibles. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9782b9945f3c",
@@ -41382,7 +41615,7 @@
       "label": "Le taxi ou le bateau",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c146386a7607.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le taxi ou le bateau ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s45-co-1",
@@ -41390,15 +41623,20 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp",
+      "sha256": "6fa2e1ef65b3071912813cf0b52ba2270c0b0b948adb0d7f6db74bcd67e00e08",
+      "review_note": "Taxi jaune entier avec petite enseigne TAXI relue, bateau passagers entier sur eau. La paire est aussi réutilisable dans l’ordre bateau ou taxi. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d51a21923f62",
       "label": "Des petits légumes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d51a21923f62.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des petits légumes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-3",
@@ -41406,8 +41644,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+      "sha256": "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91",
+      "review_note": "Petites carottes, courgettes, brocoli et petits pois cuits ; accompagnement de légumes sans viande ou féculent parasite. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5ddb245588e2",
@@ -41624,7 +41867,7 @@
       "label": "Un plat de pâtes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1b32a4cb5514.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un plat de pâtes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s34-co-1",
@@ -41632,8 +41875,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/abf45c70332d.webp",
+      "sha256": "54e99d6236d644eb984a4699989b57b999b31c26f9a509348e8eda0a3ae0f378",
+      "review_note": "Contrôle visuel individuel : style dessiné CE/CO chaleureux, format natif 4:3, objets entiers distincts et aliments fidèles à la proposition complète ; aucun texte, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9ca28e999c80",
@@ -42047,7 +42295,7 @@
       "label": "Un sandwich au thon",
       "path_after_generation": "/lib/images/tcf/qcm-audit/503aeb6fb2a8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sandwich au thon ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s20-co-4",
@@ -42055,8 +42303,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp",
+      "sha256": "8cb9c17e7fbac1d79fac48279ecd3a139644bbeaa7e03db1354ac72cf112c5a4",
+      "review_note": "Sandwich de thon en miettes beige rosé avec une petite conserve ouverte sans étiquette ; le thon est distinct du poulet tranché. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6b5010f2253d",
@@ -42454,7 +42707,7 @@
       "label": "Un cours d’escalade",
       "path_after_generation": "/lib/images/tcf/qcm-audit/efcd4dd846bf.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un cours d’escalade ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s35-co-4",
@@ -42462,8 +42715,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp",
+      "sha256": "4f5aadc5f4d766ef5cc7e50a9845d7b70ea9f9abdbb638eba86ec10cb78dfe06",
+      "review_note": "Une femme noire aux cheveux gris grimpe, deux bras et deux jambes anatomiques en appui, harnais et corde reliés, activité reconnaissable. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0bea21a7ce1a",
@@ -42803,7 +43061,7 @@
       "label": "Un sandwich au poulet",
       "path_after_generation": "/lib/images/tcf/qcm-audit/dc680a719dad.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sandwich au poulet ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s20-co-4",
@@ -42811,8 +43069,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+      "sha256": "0d8774caa59137205d3511599e59afdf05793ebd43ec6617f14955a29346071b",
+      "review_note": "Sandwich au blanc de poulet rôti à fibres et bord doré, laitue et tomate, petite soucoupe avec le même poulet ; aucun fromage ou jambon. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c52b42c054fb",
@@ -42918,7 +43181,7 @@
       "label": "Un thé et une tartine",
       "path_after_generation": "/lib/images/tcf/qcm-audit/58399f9d05e5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un thé et une tartine ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s58-co-1",
@@ -42926,8 +43189,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+      "sha256": "6358a10f9a7baa4ca8fefa495ba448f2035b392d166715ab933c8977e3265d73",
+      "review_note": "Thé ambré et sachet dans tasse transparente, une tartine grillée beurrée sur assiette ; pas de croissant ou café. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "0538db01b3bb",
@@ -44071,7 +44339,7 @@
       "label": "Un sandwich au fromage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/81795dce2be8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sandwich au fromage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s3-ce-4",
@@ -44084,8 +44352,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+      "sha256": "aa2c7aa6c68717a64e977def76e76652e3c6bd59ba40eebec957d170fdca8f0c",
+      "review_note": "Sandwich garni de fromage à trous et laitue, avec morceau du même fromage à côté ; aucun jambon ou poisson. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ae3bca9d9675",
@@ -44249,7 +44522,7 @@
       "label": "Une salade chinoise",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1455d45b191a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une salade chinoise ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s29-co-1",
@@ -44257,8 +44530,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+      "sha256": "f50b842664c96a41154e68c8635b2e594499db10b24b9f0fd75535a740680bda",
+      "review_note": "Salade chinoise végétarienne à chou, carotte, pousses de soja, concombre et sésame ; ingrédients dessinés distincts de la grecque et de l’italienne. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "50a071f76f47",
@@ -44454,7 +44732,7 @@
       "label": "Une nappe et des chaises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/458991647ee2.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une nappe et des chaises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
@@ -44462,8 +44740,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp",
+      "sha256": "f0cafa697d0e36d2eac8337b5f094f3b1ac4a3576de0433e2ee13dce73529633",
+      "review_note": "Une nappe à carreaux et deux chaises de jardin pliantes vertes, objets complets ; aucun repas ajouté. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "5797cab4ce8d",
@@ -44633,7 +44916,7 @@
       "label": "Des tables de pique-nique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/8e33e56e2d89.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des tables de pique-nique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
@@ -44641,8 +44924,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp",
+      "sha256": "ca82924312268ce6c747d039fb8a6a2df275e86cfa34fdce88ea8d0efeb9d830",
+      "review_note": "Deux tables de pique-nique en bois à bancs attachés, tous les pieds et plateaux entiers contrôlés en vue pleine. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "b190abf23f89",
@@ -45381,7 +45669,7 @@
       "label": "Le train ou le tramway",
       "path_after_generation": "/lib/images/tcf/qcm-audit/92a41ae9f798.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le train ou le tramway ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s45-co-1",
@@ -45389,8 +45677,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+      "sha256": "104eca432faabe3fb64db8c18b4b84736522da89475342f548ab7064f88a789a",
+      "review_note": "Train régional sur ballast dehors, tramway vert articulé avec pantographe sur rails de rue ; les deux matériels restent reconnaissables. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1b8a6531398e",
@@ -45476,7 +45769,7 @@
       "label": "Un sandwich traditionnel",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7bb3c045c102.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sandwich traditionnel ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s34-co-1",
@@ -45484,8 +45777,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+      "sha256": "a1be35905e3ba7734f3be031c33e2a06408fa846de84a39391461d1ddc2256bc",
+      "review_note": "Contrôle visuel individuel : concept entier reconnaissable et isolé, sujet entier, format natif exact 4:3, fond crème et modelé doux comparés aux références du commit 48a753d8. Aucun montant, date ou texte.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ad5f5ee754d1",
@@ -45961,7 +46259,7 @@
       "label": "Le ski ou le patinage",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1f0f5eabbf0b.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le ski ou le patinage ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-20-activites-proposees-co-4",
@@ -45969,8 +46267,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp",
+      "sha256": "ef6c52ecedd9864fb2548c15b71b7cd19ee5971fab29cbf1a767d5081913825e",
+      "review_note": "Skieuse avec deux skis et deux bâtons dans la neige ; patineur asiatique fictif nouveau avec deux lames de patins visibles, aucun ski dans la patinoire. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "6aeec9d3c6a4",
@@ -47365,7 +47668,7 @@
       "label": "Un jus et une brioche",
       "path_after_generation": "/lib/images/tcf/qcm-audit/444ebf5b888c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un jus et une brioche ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s58-co-1",
@@ -47373,8 +47676,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp",
+      "sha256": "f60419411ef1433f7882c7ccef0d5d9f42ee4ca54764c55e8ef0aaee0029a8fb",
+      "review_note": "Un verre de jus orange et une brioche à tête entière ; les deux éléments de la réponse sont présents. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "d19731c2f33f",
@@ -47794,7 +48102,7 @@
       "label": "Des plats sucrés",
       "path_after_generation": "/lib/images/tcf/qcm-audit/678c50345d54.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des plats sucrés ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s26-co-1",
@@ -47802,8 +48110,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+      "sha256": "1418b31d5ddba46c0dc828e5bed633bbd855b7e84b2252d9c8bdc6878b92838f",
+      "review_note": "Trois desserts entiers : tarte aux fraises, mousse au chocolat et flan ; catégorie plats sucrés représentée au pluriel. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "bff90c628f6f",
@@ -47937,7 +48250,7 @@
       "label": "La natation ou le tennis",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c79b7406149c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La natation ou le tennis ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-20-activites-proposees-co-4",
@@ -47945,8 +48258,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+      "sha256": "581aeaeb49f6e702a3a87b8e2df506bc481cf883ce0b464bcda78c48bcf39994",
+      "review_note": "Nageuse avec bonnet et planche dans un bassin ; deux joueurs échangent au tennis, raquettes, balle et filet visibles. Deux activités séparées. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "10319ff7920c",
@@ -49086,7 +49404,7 @@
       "label": "Le canoë-kayak ou l'escalade",
       "path_after_generation": "/lib/images/tcf/qcm-audit/55ff7a6749ac.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le canoë-kayak ou l'escalade ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-sc-20-activites-proposees-co-4",
@@ -49094,8 +49412,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+      "sha256": "1446772f14045a141a627af8f9cc535f8924606beb6ef22fbb7b2b481ff2c783",
+      "review_note": "Deux scènes réellement différentes : kayak avec pagaie double sur un lac et escalade avec harnais et corde sur mur. Deux personnages âgés des scènes disponibles réutilisés. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "eb82d6d99458",
@@ -50059,19 +50382,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 460,
+    "reviewed_co_images": 490,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 519,
+    "reviewed_total_images": 549,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 508,
+    "already_aligned": 538,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 201
+    "new_images_compared_to_reference": 231
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

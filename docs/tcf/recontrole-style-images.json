@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 460,
+    "reviewed_co_images": 490,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 519,
+    "reviewed_total_images": 549,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 508,
+    "already_aligned": 538,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 201
+    "new_images_compared_to_reference": 231
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -6494,6 +6494,474 @@
       "references": [
         "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
         "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-metro-bus-dessine",
+      "label": "Le métro ou le bus",
+      "path": "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+      "sha256": "4a27607f277e4432b9719712d2a527a7382e2376a6aecddd969334d5b116ea5b",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Métro souterrain avec quai et tunnel, bus avec pneus sur chaussée et abri ; deux vignettes distinctes et véhicules entiers.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-train-tramway-dessine",
+      "label": "Le train ou le tramway",
+      "path": "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+      "sha256": "104eca432faabe3fb64db8c18b4b84736522da89475342f548ab7064f88a789a",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Train régional sur ballast dehors, tramway vert articulé avec pantographe sur rails de rue ; les deux matériels restent reconnaissables.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-taxi-bateau-dessine",
+      "label": "Le taxi ou le bateau",
+      "path": "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp",
+      "sha256": "6fa2e1ef65b3071912813cf0b52ba2270c0b0b948adb0d7f6db74bcd67e00e08",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Taxi jaune entier avec petite enseigne TAXI relue, bateau passagers entier sur eau. La paire est aussi réutilisable dans l’ordre bateau ou taxi.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bus-tram-dessine",
+      "label": "Le bus ou le tram",
+      "path": "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+      "sha256": "b70622e8aa4ab2324014c1d13552da3bfb4b4ea69e65c983768a8f115b0948de",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Bus routier à pneus et tramway articulé sur rails intégrés à la rue ; aucune confusion des infrastructures.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-train-metro-dessine",
+      "label": "Le train ou le métro",
+      "path": "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+      "sha256": "9a8f01f5b88ea6336e7963cab706a0a7545e26e79d76c60822dcbb717101bc66",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Train régional dehors sur ballast et métro souterrain en station ; les environnements distinguent les deux transports.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-sortie-canoe-kayak-dessine",
+      "label": "Une sortie en canoé-kayak",
+      "path": "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+      "sha256": "b0cdc2eb3af1e58fabf8c09cedaefbb3f2d87771dc302b3c94241387e1416262",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Kayak rouge entier, femme âgée en gilet de sauvetage et pagaie double complète ; deux mains, geste et assise cohérents.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cours-voile-dessine",
+      "label": "Un cours de voile",
+      "path": "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+      "sha256": "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Plan éloigné corrigé : bateau, voile triangulaire et sommet du mât entiers avec marge. Instructeur et apprenante en gilets, geste d’enseignement et écoute tenue.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-canoe-escalade-dessine",
+      "label": "Le canoë-kayak ou l'escalade",
+      "path": "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+      "sha256": "1446772f14045a141a627af8f9cc535f8924606beb6ef22fbb7b2b481ff2c783",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Deux scènes réellement différentes : kayak avec pagaie double sur un lac et escalade avec harnais et corde sur mur. Deux personnages âgés des scènes disponibles réutilisés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-natation-tennis-dessine",
+      "label": "La natation ou le tennis",
+      "path": "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+      "sha256": "581aeaeb49f6e702a3a87b8e2df506bc481cf883ce0b464bcda78c48bcf39994",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Nageuse avec bonnet et planche dans un bassin ; deux joueurs échangent au tennis, raquettes, balle et filet visibles. Deux activités séparées.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-ski-patinage-dessine",
+      "label": "Le ski ou le patinage",
+      "path": "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp",
+      "sha256": "ef6c52ecedd9864fb2548c15b71b7cd19ee5971fab29cbf1a767d5081913825e",
+      "status": "aligned",
+      "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Skieuse avec deux skis et deux bâtons dans la neige ; patineur asiatique fictif nouveau avec deux lames de patins visibles, aucun ski dans la patinoire.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-petits-legumes-dessine",
+      "label": "Des petits légumes",
+      "path": "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+      "sha256": "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Petites carottes, courgettes, brocoli et petits pois cuits ; accompagnement de légumes sans viande ou féculent parasite.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-frites-dessine",
+      "label": "Des frites",
+      "path": "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+      "sha256": "27e2a2cd255a71a0985b4494d6c9475c42bd9edd1692a0ad1a1c61f4d572f773",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Assiette de frites dorées seules ; aucun poulet ou autre élément qui changerait la réponse.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-salade-chinoise-dessine",
+      "label": "Une salade chinoise",
+      "path": "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+      "sha256": "f50b842664c96a41154e68c8635b2e594499db10b24b9f0fd75535a740680bda",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Salade chinoise végétarienne à chou, carotte, pousses de soja, concombre et sésame ; ingrédients dessinés distincts de la grecque et de l’italienne.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-salade-grecque-dessine",
+      "label": "Une salade grecque",
+      "path": "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+      "sha256": "1f0961879e219aff23ee649eb8ece1d7111053fd740e21737f57f4419bca46dd",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Salade grecque avec feta en cubes, concombre, olives, quartiers de tomates et oignon rouge ; différente de la mozzarella en rondelles de la salade italienne existante.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-sandwich-fromage-dessine",
+      "label": "Un sandwich au fromage",
+      "path": "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+      "sha256": "aa2c7aa6c68717a64e977def76e76652e3c6bd59ba40eebec957d170fdca8f0c",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Sandwich garni de fromage à trous et laitue, avec morceau du même fromage à côté ; aucun jambon ou poisson.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-sandwich-poulet-dessine",
+      "label": "Un sandwich au poulet",
+      "path": "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+      "sha256": "0d8774caa59137205d3511599e59afdf05793ebd43ec6617f14955a29346071b",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Sandwich au blanc de poulet rôti à fibres et bord doré, laitue et tomate, petite soucoupe avec le même poulet ; aucun fromage ou jambon.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-sandwich-thon-dessine",
+      "label": "Un sandwich au thon",
+      "path": "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp",
+      "sha256": "8cb9c17e7fbac1d79fac48279ecd3a139644bbeaa7e03db1354ac72cf112c5a4",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Sandwich de thon en miettes beige rosé avec une petite conserve ouverte sans étiquette ; le thon est distinct du poulet tranché.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cafe-croissant-dessine",
+      "label": "Un café et un croissant",
+      "path": "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+      "sha256": "401165cd5a0b0854e5183c32589b6d422a7e8595a14d277eb9128e6b2c93ca8f",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Une tasse de café noir et un seul croissant sur deux soucoupes, les deux aliments sont entiers.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-the-tartine-dessine",
+      "label": "Un thé et une tartine",
+      "path": "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+      "sha256": "6358a10f9a7baa4ca8fefa495ba448f2035b392d166715ab933c8977e3265d73",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Thé ambré et sachet dans tasse transparente, une tartine grillée beurrée sur assiette ; pas de croissant ou café.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-jus-brioche-dessine",
+      "label": "Un jus et une brioche",
+      "path": "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp",
+      "sha256": "f60419411ef1433f7882c7ccef0d5d9f42ee4ca54764c55e8ef0aaee0029a8fb",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Un verre de jus orange et une brioche à tête entière ; les deux éléments de la réponse sont présents.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-plats-sucres-dessine",
+      "label": "Des plats sucrés",
+      "path": "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+      "sha256": "1418b31d5ddba46c0dc828e5bed633bbd855b7e84b2252d9c8bdc6878b92838f",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Trois desserts entiers : tarte aux fraises, mousse au chocolat et flan ; catégorie plats sucrés représentée au pluriel.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-plats-poisson-dessine",
+      "label": "Des plats de poisson",
+      "path": "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+      "sha256": "34ac0ecdaf38db15526fa0b1c77827b51ec26dc5c45b895f17e6d4c82dd4a0c5",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux plats cuisinés de poisson, saumon et poisson entier, avec garniture ; pas de viande rouge.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-plats-viande-dessine",
+      "label": "Des plats de viande",
+      "path": "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp",
+      "sha256": "0f3d9df0eb0e30d2f99c2ac8426075629c452aad4afb1c4fbd9a208abd76e02d",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux plats cuisinés de viande, steak et rôti tranché, avec garniture ; pas de poisson.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-paniers-repas-dessine",
+      "label": "Des paniers-repas",
+      "path": "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+      "sha256": "400a1d1c636e6e1ef32beda3e58648636670c24dafb09dbb45807fb4cfe3a3b5",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux paniers-repas ouverts, chacun avec sandwich, salade et boisson ; pluriel et contenu annoncé visibles.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-panier-repas-dessine",
+      "label": "Un panier-repas",
+      "path": "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp",
+      "sha256": "18fd0af31304f4fb4b840b6e7afeab9751cb3e7609604f67cd55fd77ade1378d",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Un seul panier-repas ouvert avec sandwich, salade et boisson ; nombre singulier contrôlé en vue pleine.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-assiettes-dessine",
+      "label": "Des assiettes",
+      "path": "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+      "sha256": "c45d68e80b2065f82f99d31ceca557b840dcd5810dc19140894a46ae4d4cd2cd",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Trois assiettes blanches vides ; bords complets contrôlés en vue pleine, pas de couverts ou aliments ajoutés.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-tables-pique-nique-dessine",
+      "label": "Des tables de pique-nique",
+      "path": "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp",
+      "sha256": "ca82924312268ce6c747d039fb8a6a2df275e86cfa34fdce88ea8d0efeb9d830",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux tables de pique-nique en bois à bancs attachés, tous les pieds et plateaux entiers contrôlés en vue pleine.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-assiettes-couverts-dessine",
+      "label": "Des assiettes et des couverts",
+      "path": "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+      "sha256": "f2283bb772d8255d8562bf8ca00f2ce35b87f0f6b17ee58412a4a18b904fa28e",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux assiettes jetables et deux ensembles de couverts en bois, chacun avec fourchette, couteau et cuillère.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-nappe-chaises-dessine",
+      "label": "Une nappe et des chaises",
+      "path": "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp",
+      "sha256": "f0cafa697d0e36d2eac8337b5f094f3b1ac4a3576de0433e2ee13dce73529633",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Une nappe à carreaux et deux chaises de jardin pliantes vertes, objets complets ; aucun repas ajouté.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-barbecue-dessine",
+      "label": "Un barbecue",
+      "path": "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+      "sha256": "6cf93ca43ab8dcb6fca8d54b0924e8bf6c2ed3a824b0bc775a03b7c744d5efa3",
+      "status": "aligned",
+      "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Barbecue à charbon à couvercle ouvert et grille vide, pieds et roues complets, sans personne.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false

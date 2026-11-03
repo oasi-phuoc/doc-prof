@@ -17691,6 +17691,1238 @@
       "bytes": 301740,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-metro-bus-dessine",
+      "label": "Le métro ou le bus",
+      "path": "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+      "prompt": "Recomposer les références en UNE illustration pédagogique peinte semi-réaliste, format paysage EXACT 4:3, 1448 de large par 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les dessins validés 48a753d8. Deux vignettes peintes côte à côte sur fond crème, sans cadre ou séparation dure. Chaque moyen de transport doit être ENTIER avec marge, dans son propre petit contexte local, sans mélanger les rails, la route ou l’eau entre eux. Pas de photo, 3D ou gros contour noir, aucune personne. Aucun texte, montant, date, jour, mois, horaire ou numéro de ligne ; seulement le petit mot TAXI si un taxi est présent. À gauche, conserver le métro argenté et bleu de la première référence dans sa petite station SOUTERRAINE à murs carrelés et entrée de tunnel. À droite, conserver le bus blanc et bleu de la deuxième référence sur une petite portion de rue avec abri d’arrêt. Les deux véhicules complets, pas de train de campagne ou tram.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s45-co-1",
+          "question": 3,
+          "choice": "a",
+          "label": "Le métro ou le bus",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-e169548e-6565-4a78-a94d-4494def39ac9.png",
+      "status": "visually_reviewed",
+      "review_note": "Métro souterrain avec quai et tunnel, bus avec pneus sur chaussée et abri ; deux vignettes distinctes et véhicules entiers. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Métro souterrain avec quai et tunnel, bus avec pneus sur chaussée et abri ; deux vignettes distinctes et véhicules entiers."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "d673f8d409b23f0309df894a2b2f50af256aca3726e64fb767f6585100522d76",
+      "sha256": "4a27607f277e4432b9719712d2a527a7382e2376a6aecddd969334d5b116ea5b",
+      "bytes": 144524,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-train-tramway-dessine",
+      "label": "Le train ou le tramway",
+      "path": "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+      "prompt": "Recomposer les références en UNE illustration pédagogique peinte semi-réaliste, format paysage EXACT 4:3, 1448 de large par 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les dessins validés 48a753d8. Deux vignettes peintes côte à côte sur fond crème, sans cadre ou séparation dure. Chaque moyen de transport doit être ENTIER avec marge, dans son propre petit contexte local, sans mélanger les rails, la route ou l’eau entre eux. Pas de photo, 3D ou gros contour noir, aucune personne. Aucun texte, montant, date, jour, mois, horaire ou numéro de ligne ; seulement le petit mot TAXI si un taxi est présent. À gauche, conserver le train régional blanc et bleu de la référence, ses voitures entières sur des rails à ballast dehors. À droite, ajouter un tramway urbain VERT à deux parties articulées et pantographe, sur des rails intégrés au pavage d’une petite rue. Le train n’est pas dans un tunnel et le tramway ne doit pas ressembler à un bus. Deux matériels de rail différents.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s45-co-1",
+          "question": 3,
+          "choice": "b",
+          "label": "Le train ou le tramway",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-6ca2e3b5-40af-4768-b88b-9940ea08d037.png",
+      "status": "visually_reviewed",
+      "review_note": "Train régional sur ballast dehors, tramway vert articulé avec pantographe sur rails de rue ; les deux matériels restent reconnaissables. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Train régional sur ballast dehors, tramway vert articulé avec pantographe sur rails de rue ; les deux matériels restent reconnaissables."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "060bc4a212cd0dc884ed0da4c90b07552c2fab9918fb76b7ec837294db7492ae",
+      "sha256": "104eca432faabe3fb64db8c18b4b84736522da89475342f548ab7064f88a789a",
+      "bytes": 149310,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-taxi-bateau-dessine",
+      "label": "Le taxi ou le bateau",
+      "path": "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp",
+      "prompt": "Recomposer les références en UNE illustration pédagogique peinte semi-réaliste, format paysage EXACT 4:3, 1448 de large par 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les dessins validés 48a753d8. Deux vignettes peintes côte à côte sur fond crème, sans cadre ou séparation dure. Chaque moyen de transport doit être ENTIER avec marge, dans son propre petit contexte local, sans mélanger les rails, la route ou l’eau entre eux. Pas de photo, 3D ou gros contour noir, aucune personne. Aucun texte, montant, date, jour, mois, horaire ou numéro de ligne ; seulement le petit mot TAXI si un taxi est présent. À gauche, une voiture taxi jaune entière sur un petit bout de chaussée, avec petite enseigne TAXI sur le toit et aucune plaque lisible. À droite, conserver le bateau de transport de passagers blanc et bleu de la référence entier sur un petit morceau d’eau peinte. Pas de personne ou ferry à voitures.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s45-co-1",
+          "question": 3,
+          "choice": "c",
+          "label": "Le taxi ou le bateau",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
+          "question": 2,
+          "choice": "c",
+          "label": "Le bateau ou le taxi",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-85248521-ae18-49dc-801b-b1a082b0cd58.png",
+      "status": "visually_reviewed",
+      "review_note": "Taxi jaune entier avec petite enseigne TAXI relue, bateau passagers entier sur eau. La paire est aussi réutilisable dans l’ordre bateau ou taxi. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Taxi jaune entier avec petite enseigne TAXI relue, bateau passagers entier sur eau. La paire est aussi réutilisable dans l’ordre bateau ou taxi."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f99b91ef8301a8cfc1a1dbe0693f889b7af4c666e20026163ceb572bc40b2fd0",
+      "sha256": "6fa2e1ef65b3071912813cf0b52ba2270c0b0b948adb0d7f6db74bcd67e00e08",
+      "bytes": 127884,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-bus-tram-dessine",
+      "label": "Le bus ou le tram",
+      "path": "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+      "prompt": "Recomposer les références en UNE illustration pédagogique peinte semi-réaliste, format paysage EXACT 4:3, 1448 de large par 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les dessins validés 48a753d8. Deux vignettes peintes côte à côte sur fond crème, sans cadre ou séparation dure. Chaque moyen de transport doit être ENTIER avec marge, dans son propre petit contexte local, sans mélanger les rails, la route ou l’eau entre eux. Pas de photo, 3D ou gros contour noir, aucune personne. Aucun texte, montant, date, jour, mois, horaire ou numéro de ligne ; seulement le petit mot TAXI si un taxi est présent. À gauche, conserver le bus blanc et bleu de la référence avec ses pneus sur une petite chaussée. À droite, ajouter un tramway urbain VERT articulé à deux parties et pantographe sur de vrais rails intégrés au pavage. Aucun autre véhicule, pas de métro ou train régional.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
+          "question": 2,
+          "choice": "a",
+          "label": "Le bus ou le tram",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-59eac834-e9e1-4e15-9850-c33ba6db69e2.png",
+      "status": "visually_reviewed",
+      "review_note": "Bus routier à pneus et tramway articulé sur rails intégrés à la rue ; aucune confusion des infrastructures. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Bus routier à pneus et tramway articulé sur rails intégrés à la rue ; aucune confusion des infrastructures."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "06e63a03fec0d240ad26d1175ed0a2a64b1462a2dde1ae3568ac421eb8360484",
+      "sha256": "b70622e8aa4ab2324014c1d13552da3bfb4b4ea69e65c983768a8f115b0948de",
+      "bytes": 189758,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-train-metro-dessine",
+      "label": "Le train ou le métro",
+      "path": "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+      "prompt": "Recomposer les références en UNE illustration pédagogique peinte semi-réaliste, format paysage EXACT 4:3, 1448 de large par 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les dessins validés 48a753d8. Deux vignettes peintes côte à côte sur fond crème, sans cadre ou séparation dure. Chaque moyen de transport doit être ENTIER avec marge, dans son propre petit contexte local, sans mélanger les rails, la route ou l’eau entre eux. Pas de photo, 3D ou gros contour noir, aucune personne. Aucun texte, montant, date, jour, mois, horaire ou numéro de ligne ; seulement le petit mot TAXI si un taxi est présent. À gauche, conserver le train régional blanc et bleu de la première référence entier sur rails à ballast dans un petit décor extérieur. À droite, conserver le métro argenté et bleu de la deuxième référence entier dans un petit décor SOUTERRAIN avec mur carrelé, quai et tunnel sombre. Les contextes dehors/souterrain doivent permettre de distinguer clairement les deux moyens de transport.",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
+          "question": 2,
+          "choice": "b",
+          "label": "Le train ou le métro",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-42b40bb4-dc99-4b31-bd2d-f4c422b87c4b.png",
+      "status": "visually_reviewed",
+      "review_note": "Train régional dehors sur ballast et métro souterrain en station ; les environnements distinguent les deux transports. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Train régional dehors sur ballast et métro souterrain en station ; les environnements distinguent les deux transports."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f7d2a4a23b6a661c86447cb0015df7975322aa4d2ef332abb84c9b23a72584df",
+      "sha256": "9a8f01f5b88ea6336e7963cab706a0a7545e26e79d76c60822dcbb717101bc66",
+      "bytes": 129182,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-sortie-canoe-kayak-dessine",
+      "label": "Une sortie en canoé-kayak",
+      "path": "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large et 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste dans le style des personnages du commit validé 48a753d8 : contours fins discrets, yeux et visage clairement dessinés, volumes doux, couleurs naturelles chaudes et eau peinte. Pas de photographie, de pores de peau, de 3D ou de contour noir épais. Sujets entiers avec marges. Aucun texte, montant, prix, chiffre, date, jour ou mois. Sur un lac calme, une femme fictive blanche de 65 ans aux cheveux gris courts, visage nouveau et silhouette ronde, pagaie dans un kayak rouge. Elle porte un gilet de sauvetage jaune. Kayak ENTIER, pagaie double entière tenue avec deux mains anatomiques, posture assise cohérente, rive arborée discrète. Aucune voile ou escalade.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s35-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "Une sortie en canoé-kayak",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-f8fbd048-9583-4dc2-897c-6444b9c7a75d.png",
+      "status": "visually_reviewed",
+      "review_note": "Kayak rouge entier, femme âgée en gilet de sauvetage et pagaie double complète ; deux mains, geste et assise cohérents. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Kayak rouge entier, femme âgée en gilet de sauvetage et pagaie double complète ; deux mains, geste et assise cohérents."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "2580295fb1cb4f9ba5be02c56d6ccb15e737a81b2f8a7325b6c1b2d785e73add",
+      "sha256": "b0cdc2eb3af1e58fabf8c09cedaefbb3f2d87771dc302b3c94241387e1416262",
+      "bytes": 162476,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cours-voile-dessine",
+      "label": "Un cours de voile",
+      "path": "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+      "prompt": "Reprendre cette illustration en changeant son cadrage par un vrai plan plus éloigné. Image finale PAYSAGE EXACT 4:3, 1448 pixels de large par 1086 de haut. Le petit voilier, TOUTE sa voile triangulaire et TOUT le mât avec son sommet doivent tenir entièrement dans l’image avec une marge de ciel au-dessus du sommet et une marge d’eau autour du bateau. Réduire la taille du voilier dans la composition pour y arriver, sans étirer le mât ou le bateau. Garder les deux personnages fictifs et leurs gilets, l’instructeur indiquant la voile et l’apprenante tenant l’écoute. Conserver le même dessin peint semi-réaliste, contours discrets, couleurs chaudes, visages dessinés, eau peinte. Aucun texte, montant, date, jour, mois ou chiffre. Aucun changement de format en carré ou portrait.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s35-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "Un cours de voile",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "previous_source_png": "/workspace/generated_images/exec-b8c5c203-fe60-4433-bd89-c59cb6bac691.png",
+      "revision_reason": "Voile et sommet du mât coupés au bord supérieur dans la première génération.",
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-b8c5c203-fe60-4433-bd89-c59cb6bac691.png"
+      ],
+      "source_png": "/workspace/generated_images/exec-d9c8ebc9-a486-440b-ab13-772282075ca9.png",
+      "status": "visually_reviewed",
+      "review_note": "Plan éloigné corrigé : bateau, voile triangulaire et sommet du mât entiers avec marge. Instructeur et apprenante en gilets, geste d’enseignement et écoute tenue. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Plan éloigné corrigé : bateau, voile triangulaire et sommet du mât entiers avec marge. Instructeur et apprenante en gilets, geste d’enseignement et écoute tenue."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "6247265691280711ff1fd12f3b56bc7b4e048b620251df4d1e53690906aab694",
+      "sha256": "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
+      "bytes": 150414,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-canoe-escalade-dessine",
+      "label": "Le canoë-kayak ou l'escalade",
+      "path": "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+      "prompt": "Créer UNE illustration numérique dessinée et peinte semi-réaliste au format paysage EXACT 4:3, 1448 pixels de large et 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les références fournies et le commit validé 48a753d8. Deux activités représentées dans deux vignettes peintes côte à côte sur fond crème, contours de vignette fondus, sans cadre dur. Les activités restent séparées : aucun mélange des équipements ou du décor. Sujets et matériel entiers avec marges, membres et mains anatomiques, visages dessinés. Pas de photographie ni pores de peau, pas de 3D ou gros contour noir. Aucun mot, montant, chiffre, date, jour ou mois. À gauche, reprendre la kayakiste âgée, le kayak rouge et la pagaie double de la première référence, sur un petit morceau de lac. À droite, reprendre la femme noire aux cheveux gris courts en train de grimper, harnais et corde, de la deuxième référence. Kayak et pagaie entiers, grimpeuse entière. ",
+      "referenced_image_paths": [
+        "/workspace/generated_images/exec-f8fbd048-9583-4dc2-897c-6444b9c7a75d.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-20-activites-proposees-co-4",
+          "question": 2,
+          "choice": "a",
+          "label": "Le canoë-kayak ou l'escalade",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-f4cf5361-9821-4613-b55d-d9141306ec84.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux scènes réellement différentes : kayak avec pagaie double sur un lac et escalade avec harnais et corde sur mur. Deux personnages âgés des scènes disponibles réutilisés. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Deux scènes réellement différentes : kayak avec pagaie double sur un lac et escalade avec harnais et corde sur mur. Deux personnages âgés des scènes disponibles réutilisés."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "1ead5bc6d463ed08fc2e0a3d7f915a8267eabc8cb35dd712543927a94fcfcb1f",
+      "sha256": "1446772f14045a141a627af8f9cc535f8924606beb6ef22fbb7b2b481ff2c783",
+      "bytes": 169318,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-natation-tennis-dessine",
+      "label": "La natation ou le tennis",
+      "path": "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+      "prompt": "Créer UNE illustration numérique dessinée et peinte semi-réaliste au format paysage EXACT 4:3, 1448 pixels de large et 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les références fournies et le commit validé 48a753d8. Deux activités représentées dans deux vignettes peintes côte à côte sur fond crème, contours de vignette fondus, sans cadre dur. Les activités restent séparées : aucun mélange des équipements ou du décor. Sujets et matériel entiers avec marges, membres et mains anatomiques, visages dessinés. Pas de photographie ni pores de peau, pas de 3D ou gros contour noir. Aucun mot, montant, chiffre, date, jour ou mois. À gauche, reprendre la nageuse avec bonnet bleu et planche dans un bassin, sans besoin de reprendre son instructrice. À droite, reprendre les deux joueurs adultes et leur échange de balle au tennis. Le filet sépare les deux joueurs, les raquettes sont dans les mains et la balle jaune est devant la raquette. Deux environnements sportifs différents bien séparés. ",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-20-activites-proposees-co-4",
+          "question": 2,
+          "choice": "b",
+          "label": "La natation ou le tennis",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-191d8fa7-9e24-4024-99a2-d1a9962695d6.png",
+      "status": "visually_reviewed",
+      "review_note": "Nageuse avec bonnet et planche dans un bassin ; deux joueurs échangent au tennis, raquettes, balle et filet visibles. Deux activités séparées. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Nageuse avec bonnet et planche dans un bassin ; deux joueurs échangent au tennis, raquettes, balle et filet visibles. Deux activités séparées."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "2ae4eb42086e7cbb0e849f8787685af827b2b80d4a2629301b9ff66b1aea7d24",
+      "sha256": "581aeaeb49f6e702a3a87b8e2df506bc481cf883ce0b464bcda78c48bcf39994",
+      "bytes": 226864,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-ski-patinage-dessine",
+      "label": "Le ski ou le patinage",
+      "path": "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp",
+      "prompt": "Créer UNE illustration numérique dessinée et peinte semi-réaliste au format paysage EXACT 4:3, 1448 pixels de large et 1086 de haut. Même trait fin discret, volumes doux et couleurs naturelles que les références fournies et le commit validé 48a753d8. Deux activités représentées dans deux vignettes peintes côte à côte sur fond crème, contours de vignette fondus, sans cadre dur. Les activités restent séparées : aucun mélange des équipements ou du décor. Sujets et matériel entiers avec marges, membres et mains anatomiques, visages dessinés. Pas de photographie ni pores de peau, pas de 3D ou gros contour noir. Aucun mot, montant, chiffre, date, jour ou mois. À gauche, reprendre la skieuse de la référence : skis, bâtons, casque et montagne enneigée. À droite, ajouter un nouveau personnage fictif, homme de 35 ans aux traits asiatiques, visage long et cheveux noirs courts, en pull bordeaux et pantalon gris, qui patine sur une patinoire : deux patins à glace complets avec lames sous les chaussures, bras en équilibre, aucun bâton ou ski dans cette vignette. Skieuse, deux skis, deux bâtons et patineur entiers avec marges. ",
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-20-activites-proposees-co-4",
+          "question": 2,
+          "choice": "c",
+          "label": "Le ski ou le patinage",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-9b3a8d7a-71f0-441c-b562-d7b7ceb86b02.png",
+      "status": "visually_reviewed",
+      "review_note": "Skieuse avec deux skis et deux bâtons dans la neige ; patineur asiatique fictif nouveau avec deux lames de patins visibles, aucun ski dans la patinoire. Contrôle du concept entier et du paysage 4:3 natif ; aucun montant ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ],
+        "review_note": "Comparaison aux références 48a753d8 effectivement relues : dessin peint, volumes doux, contours discrets, couleurs naturelles ; les scènes de personnages suivent le club photo. Skieuse avec deux skis et deux bâtons dans la neige ; patineur asiatique fictif nouveau avec deux lames de patins visibles, aucun ski dans la patinoire."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "9507d192b9120a8f0f2029b07635ef8ae71b50aefc3b2ce0dfbca6060e16064e",
+      "sha256": "ef6c52ecedd9864fb2548c15b71b7cd19ee5971fab29cbf1a767d5081913825e",
+      "bytes": 158846,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-petits-legumes-dessine",
+      "label": "Des petits légumes",
+      "path": "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Une petite assiette blanche avec un assortiment de légumes CUITS pour accompagner un plat : petites carottes, petits bouquets de brocoli, rondelles de courgette, petits pois. Aucun poisson, viande, pâtes ou pomme de terre frite.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s29-co-3",
+          "question": 5,
+          "choice": "a",
+          "label": "Des petits légumes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-cca22689-44a2-4a8b-a3db-08275cfd93d7.png",
+      "status": "visually_reviewed",
+      "review_note": "Petites carottes, courgettes, brocoli et petits pois cuits ; accompagnement de légumes sans viande ou féculent parasite. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Petites carottes, courgettes, brocoli et petits pois cuits ; accompagnement de légumes sans viande ou féculent parasite."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "783798e22c3e6950fd6ce637e6cb88fcf5064a2f867adbc2e1722aa70a89a51d",
+      "sha256": "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91",
+      "bytes": 87556,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-frites-dessine",
+      "label": "Des frites",
+      "path": "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Une petite assiette blanche de frites dorées, bâtonnets de pomme de terre seulement, pas de viande ou légumes verts.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s29-co-3",
+          "question": 5,
+          "choice": "b",
+          "label": "Des frites",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-84ec5224-3dc7-40ed-83d7-1d744a55fdde.png",
+      "status": "visually_reviewed",
+      "review_note": "Assiette de frites dorées seules ; aucun poulet ou autre élément qui changerait la réponse. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Assiette de frites dorées seules ; aucun poulet ou autre élément qui changerait la réponse."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "19ed70490fbd0b68847768e46f85bd2d31da6eb3d0b3b1e45d37d2bc2a1bb8a8",
+      "sha256": "27e2a2cd255a71a0985b4494d6c9475c42bd9edd1692a0ad1a1c61f4d572f773",
+      "bytes": 53366,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-salade-chinoise-dessine",
+      "label": "Une salade chinoise",
+      "path": "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Transformer la salade de la référence en salade chinoise végétarienne : chou chinois émincé, carottes râpées, pousses de soja, concombre en lamelles et quelques graines de sésame. Aucun morceau de fromage, tomate en rondelle, viande ou crevette. Garder l’assiette blanche entière et le fond crème, sans texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s29-co-1",
+          "question": 3,
+          "choice": "a",
+          "label": "Une salade chinoise",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-530ad69c-e76c-412f-aced-af5000f77804.png",
+      "status": "visually_reviewed",
+      "review_note": "Salade chinoise végétarienne à chou, carotte, pousses de soja, concombre et sésame ; ingrédients dessinés distincts de la grecque et de l’italienne. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Salade chinoise végétarienne à chou, carotte, pousses de soja, concombre et sésame ; ingrédients dessinés distincts de la grecque et de l’italienne."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "84034dcb9e40165a2e3189a2947f5cfcdd866da2eabc59c196d9a9b11a1aaff2",
+      "sha256": "f50b842664c96a41154e68c8635b2e594499db10b24b9f0fd75535a740680bda",
+      "bytes": 144452,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-salade-grecque-dessine",
+      "label": "Une salade grecque",
+      "path": "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Transformer la salade de la référence en salade grecque : morceaux anguleux de feta blanche, concombre en gros morceaux, quartiers de tomate rouge, olives noires et fines rondelles d’oignon rouge. Pas de rondelles de mozzarella ou feuilles de basilic. Garder l’assiette blanche entière et le fond crème, sans texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s29-co-1",
+          "question": 3,
+          "choice": "b",
+          "label": "Une salade grecque",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-15126c0a-5c61-4114-959d-d591422921f2.png",
+      "status": "visually_reviewed",
+      "review_note": "Salade grecque avec feta en cubes, concombre, olives, quartiers de tomates et oignon rouge ; différente de la mozzarella en rondelles de la salade italienne existante. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Salade grecque avec feta en cubes, concombre, olives, quartiers de tomates et oignon rouge ; différente de la mozzarella en rondelles de la salade italienne existante."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "5ddac329030026df8ad0d5f0e380747ea34ae401f0a950b6239a429ebf109afb",
+      "sha256": "1f0961879e219aff23ee649eb8ece1d7111053fd740e21737f57f4419bca46dd",
+      "bytes": 154608,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-sandwich-fromage-dessine",
+      "label": "Un sandwich au fromage",
+      "path": "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Reprendre le pain baguette de la référence, mais garnir ce sandwich UNIQUEMENT de tranches de fromage jaune avec des trous visibles et de quelques feuilles de laitue. RETIRER tout jambon, toute viande et tout poisson. À côté du sandwich, un petit morceau du même fromage à trous pour rendre l’ingrédient explicite. Pain et fromage entiers sur le fond crème.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "Un sandwich au fromage",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-8999b639-864e-4918-8a97-8ae9a3b7e798.png",
+      "status": "visually_reviewed",
+      "review_note": "Sandwich garni de fromage à trous et laitue, avec morceau du même fromage à côté ; aucun jambon ou poisson. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Sandwich garni de fromage à trous et laitue, avec morceau du même fromage à côté ; aucun jambon ou poisson."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "685fcaa510f558dbf3e4254183e726dfff7be521bb662c7bdff21fecf47c743e",
+      "sha256": "aa2c7aa6c68717a64e977def76e76652e3c6bd59ba40eebec957d170fdca8f0c",
+      "bytes": 97920,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-sandwich-poulet-dessine",
+      "label": "Un sandwich au poulet",
+      "path": "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Reprendre le pain baguette de la référence et remplacer le jambon et le fromage par des morceaux de blanc de poulet rôti, blancs et fibreux avec bord doré, sur laitue. Pas de tranche de fromage jaune ou de jambon rose. À côté, un petit morceau de blanc de poulet rôti sur une minuscule soucoupe, pas un poulet entier. Sandwich et soucoupe entiers sur le fond crème.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "Un sandwich au poulet",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-6abfed1f-43bf-43ec-a6c6-ff3f80106b06.png",
+      "status": "visually_reviewed",
+      "review_note": "Sandwich au blanc de poulet rôti à fibres et bord doré, laitue et tomate, petite soucoupe avec le même poulet ; aucun fromage ou jambon. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Sandwich au blanc de poulet rôti à fibres et bord doré, laitue et tomate, petite soucoupe avec le même poulet ; aucun fromage ou jambon."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "e25d9dc76ac83d85d12e9d3a9df20cae9121058c2f5bc0e616f38dbecc1a7769",
+      "sha256": "0d8774caa59137205d3511599e59afdf05793ebd43ec6617f14955a29346071b",
+      "bytes": 106870,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-sandwich-thon-dessine",
+      "label": "Un sandwich au thon",
+      "path": "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Reprendre le pain baguette de la référence et remplacer le jambon et le fromage par du thon en miettes beige rosé, quelques rondelles de concombre et un peu de laitue. Pas de tranches de fromage ou jambon. À côté, une petite boîte de conserve ouverte avec un peu du même thon, bord lisse sans languette tranchante, AUCUN mot ou label sur la boîte. Sandwich et boîte entiers sur le fond crème.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s20-co-4",
+          "question": 1,
+          "choice": "c",
+          "label": "Un sandwich au thon",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "referenced_image_paths": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp"
+      ],
+      "source_png": "/workspace/generated_images/exec-e44cd2cd-c23e-440e-990b-dcfc10fbf04b.png",
+      "status": "visually_reviewed",
+      "review_note": "Sandwich de thon en miettes beige rosé avec une petite conserve ouverte sans étiquette ; le thon est distinct du poulet tranché. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Sandwich de thon en miettes beige rosé avec une petite conserve ouverte sans étiquette ; le thon est distinct du poulet tranché."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "46eaca00aa87063c8638639de619d820381a026dcb24b8f64664288331828e07",
+      "sha256": "8cb9c17e7fbac1d79fac48279ecd3a139644bbeaa7e03db1354ac72cf112c5a4",
+      "bytes": 108206,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cafe-croissant-dessine",
+      "label": "Un café et un croissant",
+      "path": "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Une tasse blanche de café noir sur soucoupe, et UN croissant doré bien feuilleté sur une petite assiette à côté. Les deux objets entiers, aucune cafetière, boisson au lait ou autre viennoiserie.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s58-co-1",
+          "question": 6,
+          "choice": "a",
+          "label": "Un café et un croissant",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-6254cd4e-5c3d-490d-8a9e-1bca778e7e94.png",
+      "status": "visually_reviewed",
+      "review_note": "Une tasse de café noir et un seul croissant sur deux soucoupes, les deux aliments sont entiers. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Une tasse de café noir et un seul croissant sur deux soucoupes, les deux aliments sont entiers."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "41b91b0e270d515f04455e3449ddc88d45086ef03ec6bc242f565d041ced96f4",
+      "sha256": "401165cd5a0b0854e5183c32589b6d422a7e8595a14d277eb9128e6b2c93ca8f",
+      "bytes": 59460,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-the-tartine-dessine",
+      "label": "Un thé et une tartine",
+      "path": "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Une tasse transparente contenant du thé ambré, un petit sachet infuseur sans étiquette pend dans la tasse ; à côté, UNE tartine de pain grillé avec du beurre sur une petite assiette blanche. Aucun croissant, café ou autre aliment.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s58-co-1",
+          "question": 6,
+          "choice": "b",
+          "label": "Un thé et une tartine",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-fca741ee-7049-40a7-af54-0643b0d1105e.png",
+      "status": "visually_reviewed",
+      "review_note": "Thé ambré et sachet dans tasse transparente, une tartine grillée beurrée sur assiette ; pas de croissant ou café. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Thé ambré et sachet dans tasse transparente, une tartine grillée beurrée sur assiette ; pas de croissant ou café."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "bcc7f931e940c58b71a379501642568c9cb2c51cc4885945f623a41f89a2405d",
+      "sha256": "6358a10f9a7baa4ca8fefa495ba448f2035b392d166715ab933c8977e3265d73",
+      "bytes": 82152,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-jus-brioche-dessine",
+      "label": "Un jus et une brioche",
+      "path": "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Un verre transparent de jus d’orange et UNE petite brioche ronde dorée avec tête sur une petite assiette blanche à côté. Les deux objets entiers, aucun croissant, tartine ou tasse de café.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s58-co-1",
+          "question": 6,
+          "choice": "c",
+          "label": "Un jus et une brioche",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-2c00f76d-b861-4908-8183-26c2f6e489d1.png",
+      "status": "visually_reviewed",
+      "review_note": "Un verre de jus orange et une brioche à tête entière ; les deux éléments de la réponse sont présents. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Un verre de jus orange et une brioche à tête entière ; les deux éléments de la réponse sont présents."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "25a7d110141e573799a50b3d7e2f8f2c45dc3edd4a7b94d0b4c8ac989298315c",
+      "sha256": "f60419411ef1433f7882c7ccef0d5d9f42ee4ca54764c55e8ef0aaee0029a8fb",
+      "bytes": 59300,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-plats-sucres-dessine",
+      "label": "Des plats sucrés",
+      "path": "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Trois petits plats sucrés sur vaisselle blanche : une part de tarte aux fraises rouges, une coupe de mousse au chocolat et un petit flan au caramel. Trois desserts entiers, aucun aliment salé ou boisson.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s26-co-1",
+          "question": 13,
+          "choice": "a",
+          "label": "Des plats sucrés",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-00a3be25-3a86-4344-9663-475fa0fc17b9.png",
+      "status": "visually_reviewed",
+      "review_note": "Trois desserts entiers : tarte aux fraises, mousse au chocolat et flan ; catégorie plats sucrés représentée au pluriel. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Trois desserts entiers : tarte aux fraises, mousse au chocolat et flan ; catégorie plats sucrés représentée au pluriel."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "749030e5267f59dc0a581a8961850a77c503525f64cb6e74ef1a1e99c516f89a",
+      "sha256": "1418b31d5ddba46c0dc828e5bed633bbd855b7e84b2252d9c8bdc6878b92838f",
+      "bytes": 88226,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-plats-poisson-dessine",
+      "label": "Des plats de poisson",
+      "path": "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Deux petites assiettes blanches de plats cuisinés à base de POISSON : un filet de saumon rose grillé avec citron et quelques légumes sur la première ; un petit poisson entier doré cuisiné avec quelques pommes de terre sur la deuxième. Pas de viande rouge, poulet ou dessert. Deux plats entiers distincts, aucun texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s26-co-1",
+          "question": 13,
+          "choice": "b",
+          "label": "Des plats de poisson",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-b5ffae53-d6f2-4daf-95e0-9bb5daf03350.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux plats cuisinés de poisson, saumon et poisson entier, avec garniture ; pas de viande rouge. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux plats cuisinés de poisson, saumon et poisson entier, avec garniture ; pas de viande rouge."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "fff33340b4c78ee3e09e7b37bf87143f6291c8cc0933f698e233df61595148ac",
+      "sha256": "34ac0ecdaf38db15526fa0b1c77827b51ec26dc5c45b895f17e6d4c82dd4a0c5",
+      "bytes": 105596,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-plats-viande-dessine",
+      "label": "Des plats de viande",
+      "path": "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, matières détaillées par la peinture, volumes doux, dégradés naturels et couleurs chaleureuses, style cohérent avec les aliments du commit de référence 48a753d8. Fond crème uni, ombre légère, composition isolée centrée et ENTIEREMENT visible avec marge sur les quatre côtés. Pas de décor de campagne ou table ajoutée autour. Aucun texte, label, logo, montant, date, jour, mois ou chiffre. Aucune personne. Deux petites assiettes blanches de plats cuisinés à base de VIANDE : un steak grillé brun avec haricots verts sur la première ; un petit rôti de bœuf tranché montrant son intérieur rosé avec quelques pommes de terre sur la deuxième. Pas de poisson, crustacé ou dessert. Deux plats entiers distincts, aucun texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a2-s26-co-1",
+          "question": 13,
+          "choice": "c",
+          "label": "Des plats de viande",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-6bf55bdb-8d63-4cb5-be13-c8a7a85a0045.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux plats cuisinés de viande, steak et rôti tranché, avec garniture ; pas de poisson. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux plats cuisinés de viande, steak et rôti tranché, avec garniture ; pas de poisson."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "55a68af20ee282816e1230b7d668a589f3763ad0d6bbbb4012d1bca45298924d",
+      "sha256": "0f3d9df0eb0e30d2f99c2ac8426075629c452aad4afb1c4fbd9a208abd76e02d",
+      "bytes": 105910,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-paniers-repas-dessine",
+      "label": "Des paniers-repas",
+      "path": "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. DEUX paniers-repas en osier ouverts côte à côte, chacun contient son sandwich emballé en partie dans du papier blanc, une petite salade en boîte transparente et une bouteille de boisson fermée sans étiquette. Montrer tous les contenants entiers sans les cacher derrière de grandes anses.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+          "question": 3,
+          "choice": "a",
+          "label": "Des paniers-repas",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-39140e9f-85a3-4427-9611-84fd659b655d.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux paniers-repas ouverts, chacun avec sandwich, salade et boisson ; pluriel et contenu annoncé visibles. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux paniers-repas ouverts, chacun avec sandwich, salade et boisson ; pluriel et contenu annoncé visibles."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "dc46e6647588b5806cafa6cd2f23e44de65dbcd9ab76f1c8b43414f3d5791ee0",
+      "sha256": "400a1d1c636e6e1ef32beda3e58648636670c24dafb09dbb45807fb4cfe3a3b5",
+      "bytes": 213374,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-panier-repas-dessine",
+      "label": "Un panier-repas",
+      "path": "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. UN panier-repas en osier ouvert contenant un sandwich emballé en partie dans du papier blanc, une petite salade en boîte transparente et une bouteille de boisson fermée sans étiquette. Un seul panier, objets visibles entiers.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a2-2021-co-ex1-35",
+          "question": 12,
+          "choice": "c",
+          "label": "Un panier-repas",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-0cee353b-046d-4fe6-9b77-e3c6c78878f5.png",
+      "status": "visually_reviewed",
+      "review_note": "Un seul panier-repas ouvert avec sandwich, salade et boisson ; nombre singulier contrôlé en vue pleine. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Un seul panier-repas ouvert avec sandwich, salade et boisson ; nombre singulier contrôlé en vue pleine."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "3fbce4ea1ef4b2f75273c848a1a6118ae441370f7833a1b47f998d31bd3b59c0",
+      "sha256": "18fd0af31304f4fb4b840b6e7afeab9751cb3e7609604f67cd55fd77ade1378d",
+      "bytes": 184784,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-assiettes-dessine",
+      "label": "Des assiettes",
+      "path": "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. Trois assiettes blanches vides de même taille, légèrement décalées en éventail, toutes leurs bordures entièrement visibles. Aucun couvert, aliment, serviette ou nappe.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+          "question": 3,
+          "choice": "b",
+          "label": "Des assiettes",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-a3cc6f49-726c-4378-ad72-cdfb3a75d356.png",
+      "status": "visually_reviewed",
+      "review_note": "Trois assiettes blanches vides ; bords complets contrôlés en vue pleine, pas de couverts ou aliments ajoutés. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Trois assiettes blanches vides ; bords complets contrôlés en vue pleine, pas de couverts ou aliments ajoutés."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "13204445b522513d5253f4abcf92cf02c3384c4e80fbea5bf749a4eda974487d",
+      "sha256": "c45d68e80b2065f82f99d31ceca557b840dcd5810dc19140894a46ae4d4cd2cd",
+      "bytes": 20978,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-tables-pique-nique-dessine",
+      "label": "Des tables de pique-nique",
+      "path": "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. Deux tables de pique-nique en bois avec leurs bancs fixés de part et d’autre. Mobilier entièrement visible, pas de nappe ou vaisselle, fond crème et ombre seulement.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+          "question": 3,
+          "choice": "c",
+          "label": "Des tables de pique-nique",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-dccb3d46-041f-4cdf-b2d5-f60403018fa2.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux tables de pique-nique en bois à bancs attachés, tous les pieds et plateaux entiers contrôlés en vue pleine. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux tables de pique-nique en bois à bancs attachés, tous les pieds et plateaux entiers contrôlés en vue pleine."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "936462c4cd572ace8a408cf553d1c6b97d073805d74528145ea8ee3606c194eb",
+      "sha256": "ca82924312268ce6c747d039fb8a6a2df275e86cfa34fdce88ea8d0efeb9d830",
+      "bytes": 93232,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-assiettes-couverts-dessine",
+      "label": "Des assiettes et des couverts",
+      "path": "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. Deux assiettes jetables blanches vides côte à côte, et deux ensembles de couverts jetables en bois : chaque ensemble a une fourchette, un couteau de table et une cuillère. Vaisselle et couverts entiers, aucun aliment, verre, serviette ou mobilier.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+          "question": 4,
+          "choice": "a",
+          "label": "Des assiettes et des couverts",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-77ef4671-b527-4813-8f01-3f0204c5666b.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux assiettes jetables et deux ensembles de couverts en bois, chacun avec fourchette, couteau et cuillère. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Deux assiettes jetables et deux ensembles de couverts en bois, chacun avec fourchette, couteau et cuillère."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "d097e0862eeb41ad00fd49ad4e36262c3c8339f1558cb7e64671adcc342b14cf",
+      "sha256": "f2283bb772d8255d8562bf8ca00f2ce35b87f0f6b17ee58412a4a18b904fa28e",
+      "bytes": 42682,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-nappe-chaises-dessine",
+      "label": "Une nappe et des chaises",
+      "path": "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. Une nappe à carreaux bleus et blancs nettement dépliée en partie, posée à plat de façon à voir le tissu rectangulaire, à côté de DEUX chaises de jardin pliantes vertes entièrement ouvertes et visibles. Pas de table, assiette ou nourriture.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+          "question": 4,
+          "choice": "c",
+          "label": "Une nappe et des chaises",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-ecdd5cf9-bfe5-46f0-91b4-2b1fa1857bb2.png",
+      "status": "visually_reviewed",
+      "review_note": "Une nappe à carreaux et deux chaises de jardin pliantes vertes, objets complets ; aucun repas ajouté. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Une nappe à carreaux et deux chaises de jardin pliantes vertes, objets complets ; aucun repas ajouté."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "09f8b26374c6e40aeccfe417bb240587146c6cf44681b64c14082aea641202f2",
+      "sha256": "f0cafa697d0e36d2eac8337b5f094f3b1ac4a3576de0433e2ee13dce73529633",
+      "bytes": 129914,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-barbecue-dessine",
+      "label": "Un barbecue",
+      "path": "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+      "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste. Format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Trait fin discret, volumes doux, matières peintes détaillées et couleurs naturelles chaleureuses comme les objets du commit de référence 48a753d8. Objets isolés sur un fond crème UNI, ombre légère et marges autour de TOUS les objets entiers. Pas de décor de paysage, pas de photo, de 3D ou de gros contour noir. Aucun texte, label, logo, prix, montant, chiffre, date, jour ou mois. Aucune personne. Un barbecue à charbon mobile noir et rouge avec grille de cuisson vide, couvercle ouvert, bac à charbon, trois pieds dont deux à roues. Objet entier avec marge, aucun aliment ou personnage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "delf-a2-2021-co-ex1-35",
+          "question": 12,
+          "choice": "b",
+          "label": "Un barbecue",
+          "bank": "src/tcf/content/a1-a2/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-7edc5ff0-d067-47cb-9b53-cd97189bea78.png",
+      "status": "visually_reviewed",
+      "review_note": "Barbecue à charbon à couvercle ouvert et grille vide, pieds et roues complets, sans personne. Relecture individuelle et par trio, natif 4:3 exact, aucun mot, montant ou date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux boissons et poisson-riz du commit 48a753d8 relus : modelé peint, contours discrets, fond crème et ombre douce, matières détaillées. Barbecue à charbon à couvercle ouvert et grille vide, pieds et roues complets, sans personne."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "21150cde7ecae4b98527e9d3501b83525790c3994f6a109f797e806bcbc006ce",
+      "sha256": "6cf93ca43ab8dcb6fca8d54b0924e8bf6c2ed3a824b0bc775a03b7c744d5efa3",
+      "bytes": 58650,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -21603,6 +22835,129 @@
       ],
       "source_ids": [
         "delf_a1_2022:096:c780e82fd1ad"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s58-co-1",
+      "question": 6,
+      "enonce": "Que commande la cliente dans la troisième situation ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Les deux éléments de chaque commande sont visibles : café/croissant, thé/tartine et jus/brioche. La troisième situation confirme le café et le croissant. Transcription relue : Bonjour, je voudrais un billet pour Paris. Vous voulez partir à quelle heure? Vers 14h si c'est possible. Bonjour monsieur, bienvenue à l'hôtel Beaulieu. Bonjour madame. J'ai réservé une chamier. Très bien, c'est à quel nom? Monsieur Dubar. Bonjour. J'aimerais un café et un croissant, s'il vous plaît. Je vous apporte ça tout de suite, mademoiselle. Et l'addition aussi. Je veux payer tout de suite. Bonjour, je voudrais 2 pains au chocolat et trois croissants, s'il vous plaît. Avec ceci, on a des baguettes qui viennent de sortir du four. Non merci, ça sera tout. 3 euros, s'il vous plaît.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/magasins/tiens-jacqueline-comment-vas-2.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a1-abc:40:92017d07c943:43660711"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s20-co-4",
+      "question": 1,
+      "enonce": "Quel sandwich la personne commande-t-elle ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Les garnitures fromage, poulet et thon sont contrôlées séparément et rendues explicites par l’ingrédient à côté, sans viande dans le sandwich au fromage. Transcription relue : Bonjour Je voudrais un sandwich au fromage avec une bouteille d'eau s'il vous plaît Très bien Est-ce qu'il vous faut autre chose Oui je prendrai aussi une tarte aux fraises Très bien je vous apporte ça",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-1.mp3"
+      ],
+      "source_ids": [
+        "additional-20261102:mdf-a2-abc-direct:91:457975b7976f:f9b9f106"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s26-co-1",
+      "question": 13,
+      "enonce": "Quel type de plats le chef expliquera-t-il ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Trois catégories cohérentes de plats cuisinés : desserts sucrés, poisson et viande ; chaque image montre plusieurs plats, pas des ingrédients crus. Transcription relue : Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission speciale sur France FM.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/maison/maison-1-3.mp3"
+      ],
+      "source_ids": [
+        "9782090351958:053:1d81d8cc10b7",
+        "additional-20261102:mdf-a2-abc-junior-direct:53:1d81d8cc10b7:c448701c"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+      "question": 3,
+      "enonce": "Qu'est-ce qu'on peut acheter sur place ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Deux paniers-repas avec sandwich, salade et boisson, assiettes seules et tables de pique-nique : les trois catégories et le pluriel sont visibles. Transcription relue : Pour la fête de la nature, la ville organise un pique-nique géant au parc des fleurs. Des paniers repas seront en vente avec sandwich, salade, boissons. Apportez vos assiettes des couverjetables et installez-vous sur les tables de pique-nique.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/scènes courtes/10-fêtes-annonce-fête-de-la-nature.mp3"
+      ],
+      "source_ids": [
+        "9782090351958:052:5f5797e2f308",
+        "additional-20261102:mdf-a2-abc-junior-direct:52:5f5797e2f308:9572ec6b"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+      "question": 4,
+      "enonce": "Que faut-il apporter ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+        "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+        "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Assiettes et couverts représentés ensemble ; sandwich et boisson existants réutilisés ; nappe et chaises représentées ensemble. Le mot couverts est mal reconnu dans la proposition de transcription, mais présent sans ambiguïté dans la transcription actuelle de la banque ; aucune certification d’écoute ajoutée. Transcription relue : Pour la fête de la nature, la ville organise un pique-nique géant au parc des fleurs. Des paniers repas seront en vente avec sandwich, salade, boissons. Apportez vos assiettes des couverjetables et installez-vous sur les tables de pique-nique.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/scènes courtes/10-fêtes-annonce-fête-de-la-nature.mp3"
+      ],
+      "source_ids": [
+        "9782090351958:052:5f5797e2f308",
+        "additional-20261102:mdf-a2-abc-junior-direct:52:5f5797e2f308:9572ec6b"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex1-35",
+      "question": 12,
+      "enonce": "Avec quoi peut-on néanmoins entrer ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Une bouteille de boisson existante réutilisée, barbecue et un panier-repas : trois objets entiers distincts ; le singulier du panier est respecté. Transcription relue : Dans le parc, les pique-niques ne sont pas autorisées, mais vous pouvez entrer avec une boisson. Pour déjeuner, le chef du restaurant 4 étoiles vous attend. Bonne journée!",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-4.mp3"
+      ],
+      "source_ids": [
+        "delf_a2_2021:035:542d98a3e53c"
       ]
     }
   ],

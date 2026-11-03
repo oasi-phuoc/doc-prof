@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 114,
-    "newly_activated": 38,
-    "prepared_pending_audio_link": 72,
+    "questions_illustrated_or_prepared": 127,
+    "newly_activated": 44,
+    "prepared_pending_audio_link": 79,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 192,
+    "remaining_questions_requiring_images_or_review": 179,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -2357,19 +2357,29 @@
           "asset": "cd542aa9dea1"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
       ],
-      "missing_labels": [
-        "Une salade chinoise",
-        "Une salade grecque"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-salade-chinoise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-salade-italienne-dessine.webp"
+        ],
+        "support_quote": "- Bonjour, c'est pour déjeuner ?\n- Oui, vous avez une table pour deux ?\n- Ici.\nVoici le menu du jour.\n- Tu prends du poisson ou de la viande ?\n- Mais, je suis végétarien !\n- C'est vrai !\nTu ne manges pas de viande, pas de poisson.\nUne salade ?\n- D'accord.\n- Et tu bois quoi ?\n- Pas d'alcool, je bois de l'eau.\n- Je peux prendre votre commande ?\n- Alors…\nune salade chinoise, un steak-frites et deux tartes aux fraises.\n- Qu'est-ce que vous buvez ?\n- Une carafe d'eau s'il vous plaît.\n- Tout va bien ?\n- Oui, c'est excellent !\n- L'addition s'il vous plaît !\n- On laisse un pourboire ?\n- Oui, bien sûr !",
+        "current_bank_transcription": "- Bonjour, c'est pour déjeuner ?\n- Oui, vous avez une table pour deux ?\n- Ici.\nVoici le menu du jour.\n- Tu prends du poisson ou de la viande ?\n- Mais, je suis végétarien !\n- C'est vrai !\nTu ne manges pas de viande, pas de poisson.\nUne salade ?\n- D'accord.\n- Et tu bois quoi ?\n- Pas d'alcool, je bois de l'eau.\n- Je peux prendre votre commande ?\n- Alors…\nune salade chinoise, un steak-frites et deux tartes aux fraises.\n- Qu'est-ce que vous buvez ?\n- Une carafe d'eau s'il vous plaît.\n- Tout va bien ?\n- Oui, c'est excellent !\n- L'addition s'il vous plaît !\n- On laisse un pourboire ?\n- Oui, bien sûr !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Salade chinoise végétarienne, salade grecque et salade italienne à mozzarella existante réutilisée : les trois recettes sont distinctes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2506,19 +2516,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
         "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
       ],
-      "missing_labels": [
-        "Des petits légumes",
-        "Des frites"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+          "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+        ],
+        "support_quote": "- Bonjour messieurs-dames, voici une table pour quatre.\nAujourd'hui pour le déjeuner, le chef vous propose un menu spécial « Atlantique » avec du poisson et des petits légumes.",
+        "current_bank_transcription": "- Bonjour messieurs-dames, voici une table pour quatre.\nAujourd'hui pour le déjeuner, le chef vous propose un menu spécial « Atlantique » avec du poisson et des petits légumes.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Légumes cuits, frites et pâtes à la tomate déjà disponibles : trois accompagnements distincts. Aucune image de poisson ajoutée à la réponse sur l’accompagnement."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3264,20 +3284,29 @@
           "asset": "efcd4dd846bf"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
       ],
-      "missing_labels": [
-        "Une sortie en canoé-kayak",
-        "Un cours de voile",
-        "Un cours d’escalade"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s35-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-sortie-canoe-kayak-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+        ],
+        "support_quote": "- Bonjour madame, il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez.\n- Ce matin, il ne pleut pas et je peux vous proposer une sortie en canoé-kayak à 10 heures ou un cours de voile à 11 heures.\nLes deux activités durent 2 heures.\n- Je peux vous proposer aussi un cours d'escalade à 11 heures.\nIl dure 2 heures aussi.\n- Ah oui !\nC'est bien l'escalade, non ?\n- Oui c'est très bien, mais nous ne savons pas faire d'escalade !\n- Il y a un cours pour les débutants, vous voulez vous inscrire ?\n- Oui s'il vous plaît !",
+        "current_bank_transcription": "- Bonjour madame, il ne fait pas très beau aujourd'hui et je voudrais savoir quelles activités vous proposez.\n- Ce matin, il ne pleut pas et je peux vous proposer une sortie en canoé-kayak à 10 heures ou un cours de voile à 11 heures.\nLes deux activités durent 2 heures.\n- Je peux vous proposer aussi un cours d'escalade à 11 heures.\nIl dure 2 heures aussi.\n- Ah oui !\nC'est bien l'escalade, non ?\n- Oui c'est très bien, mais nous ne savons pas faire d'escalade !\n- Il y a un cours pour les débutants, vous voulez vous inscrire ?\n- Oui s'il vous plaît !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Kayak et pagaie complets, voile et mât recadrés en plan plus éloigné avant publication, escalade avec corde réutilisée ; les trois activités sont cohérentes et la transcription situe le kayak à 10 heures."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3903,20 +3932,29 @@
           "asset": "c146386a7607"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
       ],
-      "missing_labels": [
-        "Le métro ou le bus",
-        "Le train ou le tramway",
-        "Le taxi ou le bateau"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s45-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+        ],
+        "support_quote": "- Bonjour monsieur, vous avez un plan de la ville s'il vous plaît ?\nJe cherche la préfecture.\n- Oui, bien sûr.\nVoilà.\nPour aller à la préfecture, vous pouvez prendre le métro ou le bus.\n- Je préfère le métro pour aller plus vite.\nLa station est loin ?\n- Non, regardez sur le plan.\nL'office du tourisme est ici.\nVous traversez la rue, vous tournez à gauche et vous allez tout droit.\nLa station de métro est en face du commissariat.\n- Et c'est direct ?\n- Non, il faut changer à Opéra et prendre la ligne 7",
+        "current_bank_transcription": "- Bonjour monsieur, vous avez un plan de la ville s'il vous plaît ?\nJe cherche la préfecture.\n- Oui, bien sûr.\nVoilà.\nPour aller à la préfecture, vous pouvez prendre le métro ou le bus.\n- Je préfère le métro pour aller plus vite.\nLa station est loin ?\n- Non, regardez sur le plan.\nL'office du tourisme est ici.\nVous traversez la rue, vous tournez à gauche et vous allez tout droit.\nLa station de métro est en face du commissariat.\n- Et c'est direct ?\n- Non, il faut changer à Opéra et prendre la ligne 7",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Les trois paires de transports sont représentées en entier ; métro/bus est la réponse effectivement proposée par la transcription actuelle."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5353,7 +5391,7 @@
           "asset": "444ebf5b888c"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:40:92017d07c943:43660711"
       ],
@@ -5366,16 +5404,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp"
       ],
-      "missing_labels": [
-        "Un café et un croissant",
-        "Un thé et une tartine",
-        "Un jus et une brioche"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s58-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cafe-croissant-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-the-tartine-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-jus-brioche-dessine.webp"
+        ],
+        "support_quote": "Bonjour, je voudrais un billet pour Paris. Vous voulez partir à quelle heure? Vers 14h si c'est possible. Bonjour monsieur, bienvenue à l'hôtel Beaulieu. Bonjour madame. J'ai réservé une chamier. Très bien, c'est à quel nom? Monsieur Dubar. Bonjour. J'aimerais un café et un croissant, s'il vous plaît. Je vous apporte ça tout de suite, mademoiselle. Et l'addition aussi. Je veux payer tout de suite. Bonjour, je voudrais 2 pains au chocolat et trois croissants, s'il vous plaît. Avec ceci, on a des baguettes qui viennent de sortir du four. Non merci, ça sera tout. 3 euros, s'il vous plaît.",
+        "current_bank_transcription": "Bonjour, je voudrais un billet pour Paris.\nVous voulez partir à quelle heure ?\nVers 14 heures si c'est possible.\nSituation numéro 2.\nBonjour monsieur, bienvenue à l'hôtel Boulieu.\nBonjour madame, j'ai réservé une chambre hier.\nTrès bien, c'est à quel nom ?\nMonsieur Michel Dubard.\nSituation numéro 3.\nBonjour, j'aimerais un café et un croissant s'il vous plaît.\nJe vous apporte ça tout de suite mademoiselle.\nEt l'addition aussi, je veux payer tout de suite.\nSituation numéro 4.\nBonjour, je voudrais deux pans au chocolat et trois croissants s'il vous plaît.\nAvec ceci, on a des baguettes qui viennent de sortir du four.\nNon merci, ça sera tout.\nTrois euros s'il vous plaît.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Les deux éléments de chaque commande sont visibles : café/croissant, thé/tartine et jus/brioche. La troisième situation confirme le café et le croissant."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5503,20 +5555,29 @@
           "asset": "299a466e71d0"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
       ],
-      "missing_labels": [
-        "Le bus ou le tram",
-        "Le train ou le métro",
-        "Le bateau ou le taxi"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-18-aller-a-la-poste-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bus-tram-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+        ],
+        "support_quote": "- Comment on va à la poste, s'il vous plaît ?\n- Vous pouvez prendre le bus ou le tram.",
+        "current_bank_transcription": "- Comment on va à la poste, s'il vous plaît ?\n- Vous pouvez prendre le bus ou le tram.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Bus/tram, train/métro et bateau/taxi sont visuellement distincts. La paire taxi/bateau existante est réutilisée sans générer un doublon."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5547,20 +5608,29 @@
           "asset": "1f0f5eabbf0b"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp"
       ],
-      "missing_labels": [
-        "Le canoë-kayak ou l'escalade",
-        "La natation ou le tennis",
-        "Le ski ou le patinage"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-sc-20-activites-proposees-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-canoe-escalade-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-natation-tennis-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ski-patinage-dessine.webp"
+        ],
+        "support_quote": "- Vous proposez quelles activités ?\n- Vous pouvez faire du canoë-kayak ou de l'escalade.",
+        "current_bank_transcription": "- Vous proposez quelles activités ?\n- Vous pouvez faire du canoë-kayak ou de l'escalade.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et au style 48a753d8 ; préparation sur la transcription actuelle en attente de rapprochement audio. Les deux activités de chacune des trois réponses sont réellement présentes, sans réduire les réponses à un seul sport. Réutilisation de kayak, escalade, natation, tennis et ski ; seul le patineur a été ajouté à la dernière paire."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -10227,7 +10297,7 @@
           "asset": "503aeb6fb2a8"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:91:457975b7976f:f9b9f106"
       ],
@@ -10240,16 +10310,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp"
       ],
-      "missing_labels": [
-        "Un sandwich au fromage",
-        "Un sandwich au poulet",
-        "Un sandwich au thon"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s20-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-sandwich-fromage-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-sandwich-poulet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-sandwich-thon-dessine.webp"
+        ],
+        "support_quote": "Bonjour Je voudrais un sandwich au fromage avec une bouteille d'eau s'il vous plaît Très bien Est-ce qu'il vous faut autre chose Oui je prendrai aussi une tarte aux fraises Très bien je vous apporte ça",
+        "current_bank_transcription": "Bonjour, je voudrais un sandwich au fromage avec une bouteille d’eau, s’il vous plaît.\n— Très bien.\nEst-ce qu’il vous faut autre chose ?\n— Oui, je prendrai aussi une tarte aux fraises.\n— Très bien, je vous apporte ça.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Les garnitures fromage, poulet et thon sont contrôlées séparément et rendues explicites par l’ingrédient à côté, sans viande dans le sandwich au fromage."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10695,7 +10779,7 @@
           "asset": "be05d90145ae"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:053:1d81d8cc10b7",
         "additional-20261102:mdf-a2-abc-junior-direct:53:1d81d8cc10b7:c448701c"
@@ -10709,16 +10793,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
       ],
-      "missing_labels": [
-        "Des plats sucrés",
-        "Des plats de poisson",
-        "Des plats de viande"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s26-co-1",
+        "question": 13,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-plats-sucres-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-plats-poisson-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-plats-viande-dessine.webp"
+        ],
+        "support_quote": "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission speciale sur France FM.",
+        "current_bank_transcription": "Aujourd'hui à 18h, le chef Martin, qui est aussi acteur de cinéma, vous donne des conseils pour cuisiner des plats sucrés très simplement. Ne ratez pas cette émission spéciale sur France FM.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Trois catégories cohérentes de plats cuisinés : desserts sucrés, poisson et viande ; chaque image montre plusieurs plats, pas des ingrédients crus."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11312,19 +11410,29 @@
           "asset": "1b32a4cb5514"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
-        null
+        "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
       ],
-      "missing_labels": [
-        "Un sandwich traditionnel",
-        "Un plat de pâtes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s34-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/abf45c70332d.webp"
+        ],
+        "support_quote": "Au bureau, je n'ai jamais le temps de déjeuner normalement.\nAlors, je mange sur le pouce.\nCe n'est pas un mode de vie très équilibrée.\nD'accord, mais j'ai vite les sodas, je bois de l'eau.\nEt tu manges des salades ?\nPas question !\nJe préfère un sandwich traditionnel.",
+        "current_bank_transcription": "Au bureau, je n'ai jamais le temps de déjeuner normalement.\nAlors, je mange sur le pouce.\nCe n'est pas un mode de vie très équilibrée.\nD'accord, mais j'ai vite les sodas, je bois de l'eau.\nEt tu manges des salades ?\nPas question !\nJe préfère un sandwich traditionnel.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Sandwich baguette traditionnel, pizza et plat de pâtes entiers réutilisés après relecture : aucun nouveau doublon généré pour ce trio."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13653,7 +13761,7 @@
           "asset": "8e33e56e2d89"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:052:5f5797e2f308",
         "additional-20261102:mdf-a2-abc-junior-direct:52:5f5797e2f308:9572ec6b"
@@ -13667,16 +13775,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp"
       ],
-      "missing_labels": [
-        "Des paniers-repas",
-        "Des assiettes",
-        "Des tables de pique-nique"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-paniers-repas-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-assiettes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-tables-pique-nique-dessine.webp"
+        ],
+        "support_quote": "Pour la fête de la nature, la ville organise un pique-nique géant au parc des fleurs. Des paniers repas seront en vente avec sandwich, salade, boissons. Apportez vos assiettes des couverjetables et installez-vous sur les tables de pique-nique.",
+        "current_bank_transcription": "Pour la fête de la nature, la ville organise un pique-nique géant au parc des Fleurs.\nDes paniers-repas seront en vente avec sandwich, salade, boisson.\nApportez vos assiettes, des couverts jetables et installez-vous sur les tables de pique-nique.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Deux paniers-repas avec sandwich, salade et boisson, assiettes seules et tables de pique-nique : les trois catégories et le pluriel sont visibles."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13707,7 +13829,7 @@
           "asset": "458991647ee2"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:052:5f5797e2f308",
         "additional-20261102:mdf-a2-abc-junior-direct:52:5f5797e2f308:9572ec6b"
@@ -13721,16 +13843,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+        "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+        "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp"
       ],
-      "missing_labels": [
-        "Des assiettes et des couverts",
-        "Un sandwich et une boisson",
-        "Une nappe et des chaises"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+        "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+        "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-sc-10-fete-de-la-nature-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-assiettes-couverts-dessine.webp",
+          "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+          "/lib/images/tcf/qcm-audit/co306-nappe-chaises-dessine.webp"
+        ],
+        "support_quote": "Pour la fête de la nature, la ville organise un pique-nique géant au parc des fleurs. Des paniers repas seront en vente avec sandwich, salade, boissons. Apportez vos assiettes des couverjetables et installez-vous sur les tables de pique-nique.",
+        "current_bank_transcription": "Pour la fête de la nature, la ville organise un pique-nique géant au parc des Fleurs.\nDes paniers-repas seront en vente avec sandwich, salade, boisson.\nApportez vos assiettes, des couverts jetables et installez-vous sur les tables de pique-nique.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Assiettes et couverts représentés ensemble ; sandwich et boisson existants réutilisés ; nappe et chaises représentées ensemble. Le mot couverts est mal reconnu dans la proposition de transcription, mais présent sans ambiguïté dans la transcription actuelle de la banque ; aucune certification d’écoute ajoutée."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -15116,7 +15252,7 @@
           "asset": "8a7b66b34725"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:035:542d98a3e53c"
       ],
@@ -15129,16 +15265,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp"
       ],
-      "missing_labels": [
-        "Une boisson",
-        "Un barbecue",
-        "Un panier-repas"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-35",
+        "question": 12,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-barbecue-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-panier-repas-dessine.webp"
+        ],
+        "support_quote": "Dans le parc, les pique-niques ne sont pas autorisées, mais vous pouvez entrer avec une boisson. Pour déjeuner, le chef du restaurant 4 étoiles vous attend. Bonne journée!",
+        "current_bank_transcription": "Dans le parc, les pique-niques ne sont pas autorisés, mais vous pouvez entrer avec une boisson. Pour déjeuner, le chef du restaurant Quatre étoiles vous attend ! Bonne journée !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet contrôlé en paysage 4:3 et comparé au style 48a753d8. Une bouteille de boisson existante réutilisée, barbecue et un panier-repas : trois objets entiers distincts ; le singulier du panier est respecté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
