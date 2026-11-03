@@ -21,8 +21,8 @@
     },
     "generated_reviewed_assets": 48,
     "activated_ce_questions_this_batch": 59,
-    "co_new_reviewed_images_this_batch": 87,
-    "co_activated_questions_this_batch": 30,
+    "co_new_reviewed_images_this_batch": 103,
+    "co_activated_questions_this_batch": 36,
     "association_scenes_restored_this_batch": 13
   },
   "questions": [
@@ -4950,7 +4950,12 @@
           "asset": "6dc9358b953f"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/2bf99a89efec.webp",
+        "/lib/images/tcf/qcm-audit/14e20d86f7e0.webp",
+        "/lib/images/tcf/qcm-audit/6dc9358b953f.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5012,7 +5017,12 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -13805,7 +13815,12 @@
           "asset": null
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14254,7 +14269,12 @@
           "asset": "9ca28e999c80"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/664e6729256f.webp",
+        "/lib/images/tcf/qcm-audit/ab9152b575b4.webp",
+        "/lib/images/tcf/qcm-audit/9ca28e999c80.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14941,7 +14961,12 @@
           "asset": "801037e2d80f"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/86bde69ed810.webp",
+        "/lib/images/tcf/qcm-audit/b5e107d80468.webp",
+        "/lib/images/tcf/qcm-audit/801037e2d80f.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -14972,7 +14997,12 @@
           "asset": "a61bbbcb4616"
         }
       ],
-      "status": "À relire avant génération : vérifier les trois contrastes et la fidélité de chaque scène."
+      "status": "active_after_visual_and_source_text_review",
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp"
+      ]
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -24315,42 +24345,48 @@
       "label": "Des carottes et des pommes de terre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2bf99a89efec.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des carottes et des pommes de terre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
           "question": 4,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/2bf99a89efec.webp",
+      "sha256": "0afd0396da8975f813036bd59e3ff8b45545328f2525dce0d83b49c3cfc2de05"
     },
     {
       "id": "14e20d86f7e0",
       "label": "Des tomates et des courgettes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/14e20d86f7e0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des tomates et des courgettes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/14e20d86f7e0.webp",
+      "sha256": "94ad52c813a08183cf09858b332cbc1f0e59c8ac05cb7a76d2dcb89ab74de042"
     },
     {
       "id": "6dc9358b953f",
       "label": "Des haricots et des petits pois",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6dc9358b953f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des haricots et des petits pois ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
           "question": 4,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/6dc9358b953f.webp",
+      "sha256": "9e44f4cc06934e05cc311f6ae5f7f17156abe0e145f44c25b27cf613f151d7d4"
     },
     {
       "id": "d8953c7ddfe7",
@@ -32189,42 +32225,48 @@
       "label": "Les tomates et les carottes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/664e6729256f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les tomates et les carottes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
           "question": 4,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/664e6729256f.webp",
+      "sha256": "46ffea8ecb2fd45c1959dd9b74362edd17dbd1f6e367a33357ee807f3401083e"
     },
     {
       "id": "ab9152b575b4",
       "label": "Les pommes de terre et les oignons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ab9152b575b4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les pommes de terre et les oignons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
           "question": 4,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/ab9152b575b4.webp",
+      "sha256": "79962abf5b61ff4156e5a6530bb235391c13188ec4fa634e8b0212ec996007ed"
     },
     {
       "id": "9ca28e999c80",
       "label": "Les courgettes et les poivrons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9ca28e999c80.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les courgettes et les poivrons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
           "question": 4,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/9ca28e999c80.webp",
+      "sha256": "89d48126776677b8ff95629f19280e0c4335d921052bf3d448b6ce86c2abb116"
     },
     {
       "id": "be4f0337345c",
@@ -32835,56 +32877,64 @@
       "label": "Un tapis de gym",
       "path_after_generation": "/lib/images/tcf/qcm-audit/86bde69ed810.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un tapis de gym ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9,
           "choice": "a"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/86bde69ed810.webp",
+      "sha256": "16b08c89a841779f443952e451094c0ac8c4a2d5b5a5c794b6b7b373c10a5e0b"
     },
     {
       "id": "b5e107d80468",
       "label": "Une couverture de pique-nique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b5e107d80468.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une couverture de pique-nique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/b5e107d80468.webp",
+      "sha256": "e6c35a0de71c9f8d34985b468827118f559d8b2eedf5aa6a891dc1caff45661f"
     },
     {
       "id": "801037e2d80f",
       "label": "Une planche de surf",
       "path_after_generation": "/lib/images/tcf/qcm-audit/801037e2d80f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une planche de surf ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9,
           "choice": "c"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/801037e2d80f.webp",
+      "sha256": "46a8b529e7cd5a9625e2611914a8517d298abb2106f5c88b0970949db0360ec6"
     },
     {
       "id": "95a8867c2af0",
       "label": "Une bouteille de soda",
       "path_after_generation": "/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une bouteille de soda ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois.",
-      "status": "à générer après validation éditoriale",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 10,
           "choice": "b"
         }
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+      "sha256": "39529f650ee16d0b0a28cdc9a4b523e5e17b24ed86c52853ff0576bfb0e5c7db"
     },
     {
       "id": "315d8a184179",

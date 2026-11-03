@@ -10,6 +10,16 @@
     "A1",
     "A2"
   ],
+  "character_diversity_policy": {
+    "scope": "Les prochaines générations avec personnages uniquement; ne pas modifier les objets sans personnages ni imposer de reprise des images déjà terminées.",
+    "requirements": [
+      "Visages réellement différents d’une scène à l’autre, éviter le même duo récurrent.",
+      "Répartir les origines et nationalités des personnages fictifs, les carnations, les genres et expressions de genre, les âges adultes, les morphologies et les situations de handicap.",
+      "Intégration naturelle dans les rôles et activités, sans stéréotypes ni drapeaux ou costumes utilisés comme raccourcis.",
+      "Conserver la fidélité au support, le style dessiné CE/CO et le paysage exact 4:3."
+    ],
+    "requested_by_user": true
+  },
   "format_correction": {
     "images_in_this_batch": 42,
     "corrected_4_3": 42,
@@ -21,16 +31,16 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 30,
-    "pending_question_candidates": 393,
+    "activated_planned_questions": 36,
+    "pending_question_candidates": 387,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 63,
-    "remaining_original_concepts": 678,
-    "new_co_images_this_batch": 87,
+    "original_concepts_now_generated_or_reused": 75,
+    "remaining_original_concepts": 666,
+    "new_co_images_this_batch": 103,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 224,
-    "sources_with_new_active_question_or_scene": 37,
+    "sources_with_pending_question_candidates": 222,
+    "sources_with_new_active_question_or_scene": 43,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432
   },
@@ -809,14 +819,13 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/maison-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 3
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 5
@@ -824,7 +833,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -4980,10 +4989,6 @@
         },
         {
           "exercise": "tcf-ss-a2-s3-co-3",
-          "question": 4
-        },
-        {
-          "exercise": "tcf-ss-a2-s3-co-3",
           "question": 5
         },
         {
@@ -4991,10 +4996,15 @@
           "question": 6
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s3-co-3",
+          "question": 4
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -5132,7 +5142,9 @@
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 1
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9
@@ -5142,10 +5154,9 @@
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -6739,17 +6750,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-a2-sb-co-1",
-          "question": 5
-        },
-        {
-          "exercise": "tcf-a2-sb-co-1",
           "question": 17
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-a2-sb-co-1",
+          "question": 5
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 21,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -9306,14 +9318,13 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/maison-2.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 3
-        }
-      ],
-      "new_active_visual_questions": [
+        },
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 5
@@ -9321,7 +9332,7 @@
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -10980,16 +10991,17 @@
         {
           "exercise": "tcf-ss-a1-s22-co-4",
           "question": 1
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -14219,10 +14231,6 @@
         },
         {
           "exercise": "tcf-ss-a2-s3-co-3",
-          "question": 4
-        },
-        {
-          "exercise": "tcf-ss-a2-s3-co-3",
           "question": 5
         },
         {
@@ -14230,10 +14238,15 @@
           "question": 6
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s3-co-3",
+          "question": 4
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 19,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -14371,7 +14384,9 @@
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 1
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
           "question": 9
@@ -14381,10 +14396,9 @@
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 16,
-      "current_linked_image_variants": 4,
+      "current_linked_image_variants": 6,
       "complete_image_audit_certified": false
     },
     {
@@ -19759,7 +19773,7 @@
           "asset": "6dc9358b953f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:53:2d4bf5874372:080ebb02"
       ],
@@ -19770,6 +19784,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-53-2d4bf5874372-080ebb02-d1",
           "transcription": "Pour le repas de ce soir, j'ai préparé un gâteau, une salade de fruits et un poulet rôti. Je voulais rajouter des carottes et des pommes de terre, mais je n'en ai pas à la maison. Je sais que Jasmine aime les légumes. Je lui ai fait une salade pour me faire pardonner."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/2bf99a89efec.webp",
+        "/lib/images/tcf/qcm-audit/14e20d86f7e0.webp",
+        "/lib/images/tcf/qcm-audit/6dc9358b953f.webp"
       ]
     },
     {
@@ -19844,7 +19863,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:038:39cc6bb2e5a3",
         "additional-20261102:mdf-a1-abc-junior:38:39cc6bb2e5a3:bfafcd8f"
@@ -19856,6 +19875,11 @@
           "candidate_cut_id": "09035276-038-39cc6bb2e5a3-d1",
           "transcription": "Pour être en bonne santé, manger 5 fruits et légumes par jour. C'est facile. Buvez un jus d'orange le matin. Et à chaque repas, mangez des légumes en entrée et un fruit en dessert. En ce moment, c'est la saison des pommes et des poivres. Retrouvez plein de recettes sur notre site internet."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
       ]
     },
     {
@@ -26469,7 +26493,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:001:e636083d0158"
       ],
@@ -26480,6 +26504,11 @@
           "candidate_cut_id": "delf_a2_eb2w-001-e636083d0158-r2-d2",
           "transcription": "Aujourd'hui seulement, dans votre supermarché, grande promotion sur les carottes, salades et haricots. Rendez-vous dans le rayon fruits et légumes, près de la poissonnerie. A tout de suite!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
       ]
     },
     {
@@ -27046,7 +27075,7 @@
           "asset": "9ca28e999c80"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:049:a4431f87ae61",
         "additional-20261102:mdf-a2-abc-junior-direct:49:a4431f87ae61:beafaa4b"
@@ -27058,6 +27087,11 @@
           "candidate_cut_id": "9782090351958-049-a4431f87ae61-r2-d2",
           "transcription": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/664e6729256f.webp",
+        "/lib/images/tcf/qcm-audit/ab9152b575b4.webp",
+        "/lib/images/tcf/qcm-audit/9ca28e999c80.webp"
       ]
     },
     {
@@ -27927,7 +27961,7 @@
           "asset": "801037e2d80f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:055:6b088a9bc9dd",
         "additional-20261102:mdf-a2-abc-junior-direct:55:6b088a9bc9dd:e9b3b277"
@@ -27939,6 +27973,11 @@
           "candidate_cut_id": "9782090351958-055-6b088a9bc9dd-d2",
           "transcription": "Aujourd'hui, nous recevons Samia, professeur de sport. Elle va nous expliquer comment rester en forme en faisant du sport chez soi. Pas besoin de grand chose. Un tapis de gym, une bouteille d'eau, de la musique et c'est parti!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/86bde69ed810.webp",
+        "/lib/images/tcf/qcm-audit/b5e107d80468.webp",
+        "/lib/images/tcf/qcm-audit/801037e2d80f.webp"
       ]
     },
     {
@@ -27970,7 +28009,7 @@
           "asset": "a61bbbcb4616"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:055:6b088a9bc9dd",
         "additional-20261102:mdf-a2-abc-junior-direct:55:6b088a9bc9dd:e9b3b277"
@@ -27982,6 +28021,11 @@
           "candidate_cut_id": "9782090351958-055-6b088a9bc9dd-d2",
           "transcription": "Aujourd'hui, nous recevons Samia, professeur de sport. Elle va nous expliquer comment rester en forme en faisant du sport chez soi. Pas besoin de grand chose. Un tapis de gym, une bouteille d'eau, de la musique et c'est parti!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp"
       ]
     },
     {
@@ -36314,7 +36358,7 @@
       "label": "Des tomates et des courgettes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/14e20d86f7e0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des tomates et des courgettes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
@@ -36322,7 +36366,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/14e20d86f7e0.webp",
+      "sha256": "94ad52c813a08183cf09858b332cbc1f0e59c8ac05cb7a76d2dcb89ab74de042",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur des légumes du repas, tcf-ss-a1-s22-co-4 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -36705,7 +36752,7 @@
       "label": "Les pommes de terre et les oignons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ab9152b575b4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les pommes de terre et les oignons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
@@ -36713,7 +36760,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/ab9152b575b4.webp",
+      "sha256": "79962abf5b61ff4156e5a6530bb235391c13188ec4fa634e8b0212ec996007ed",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur des légumes en promotion, tcf-ss-a2-s3-co-3 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -36721,7 +36771,7 @@
       "label": "Des carottes et des pommes de terre",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2bf99a89efec.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des carottes et des pommes de terre ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
@@ -36729,7 +36779,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/2bf99a89efec.webp",
+      "sha256": "0afd0396da8975f813036bd59e3ff8b45545328f2525dce0d83b49c3cfc2de05",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. La personne voulait ajouter des carottes et des pommes de terre au repas du soir, tcf-ss-a1-s22-co-4 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -38372,7 +38425,7 @@
       "label": "Une bouteille de soda",
       "path_after_generation": "/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une bouteille de soda ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
@@ -38380,7 +38433,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+      "sha256": "39529f650ee16d0b0a28cdc9a4b523e5e17b24ed86c52853ff0576bfb0e5c7db",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur de l’eau conseillée pour le sport, tcf-ss-a2-s21-co-3 Q10.",
       "priority": "A1_A2_first"
     },
     {
@@ -38892,7 +38948,7 @@
       "label": "Les courgettes et les poivrons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9ca28e999c80.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les courgettes et les poivrons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
@@ -38900,7 +38956,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/9ca28e999c80.webp",
+      "sha256": "89d48126776677b8ff95629f19280e0c4335d921052bf3d448b6ce86c2abb116",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur des légumes en promotion, tcf-ss-a2-s3-co-3 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -39780,7 +39839,7 @@
       "label": "Les tomates et les carottes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/664e6729256f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les tomates et les carottes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-3",
@@ -39788,7 +39847,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/664e6729256f.webp",
+      "sha256": "46ffea8ecb2fd45c1959dd9b74362edd17dbd1f6e367a33357ee807f3401083e",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Le supermarché annonce des réductions sur les tomates et les carottes, tcf-ss-a2-s3-co-3 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -41941,7 +42003,7 @@
       "label": "Une tasse de café",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a61bbbcb4616.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une tasse de café ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s4-ce-1",
@@ -41959,7 +42021,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+      "sha256": "6b4622c9174580a3cc80ef58711086d1fd8b668c710c756372aa231ddea2b126",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la boisson du petit-déjeuner, tcf-ss-a2-s25-co-4 Q10.",
       "priority": "A1_A2_first"
     },
     {
@@ -42494,7 +42559,7 @@
       "label": "Un tapis de gym",
       "path_after_generation": "/lib/images/tcf/qcm-audit/86bde69ed810.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un tapis de gym ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
@@ -42502,7 +42567,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/86bde69ed810.webp",
+      "sha256": "16b08c89a841779f443952e451094c0ac8c4a2d5b5a5c794b6b7b373c10a5e0b",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Samia conseille un tapis de gym pour faire du sport chez soi, tcf-ss-a2-s21-co-3 Q9.",
       "priority": "A1_A2_first"
     },
     {
@@ -43357,7 +43425,7 @@
       "label": "Des haricots et des petits pois",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6dc9358b953f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des haricots et des petits pois ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s22-co-4",
@@ -43365,7 +43433,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/6dc9358b953f.webp",
+      "sha256": "9e44f4cc06934e05cc311f6ae5f7f17156abe0e145f44c25b27cf613f151d7d4",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur des légumes du repas, tcf-ss-a1-s22-co-4 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -43888,7 +43959,7 @@
       "label": "Une couverture de pique-nique",
       "path_after_generation": "/lib/images/tcf/qcm-audit/b5e107d80468.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une couverture de pique-nique ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
@@ -43896,7 +43967,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/b5e107d80468.webp",
+      "sha256": "e6c35a0de71c9f8d34985b468827118f559d8b2eedf5aa6a891dc1caff45661f",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur du tapis de gym, tcf-ss-a2-s21-co-3 Q9.",
       "priority": "A1_A2_first"
     },
     {
@@ -45723,7 +45797,7 @@
       "label": "Des légumes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/159b7a5e2950.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des légumes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "reviewed_asset_requires_4_3_reframing",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s17-co-4",
@@ -45741,10 +45815,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "generated_path": "/lib/images/tcf/qcm-audit/159b7a5e2950.webp",
-      "sha256": "068490d1a5be390a8bcde65b89eaf0f642ccaa4acb1a035bcc0c6688d90f3493",
-      "review_note": "Carottes, brocoli, courgette, poireau et aubergine visibles, sans fruits de dessert ni bonbons ni pain ; catégorie légumes claire.",
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+      "sha256": "5f1824b19f70aa1f5ee71ebdf88ee8c321fed7c84423d668d4c324406736c6ee",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. La promotion A2 concerne carottes, salades et haricots (tcf-a2-sb-co-1 Q5); le conseil A1 porte aussi sur les légumes en entrée (tcf-ss-a1-s23-co-2 Q3).",
       "priority": "A1_A2_first"
     },
     {
@@ -46374,7 +46448,7 @@
       "label": "Une planche de surf",
       "path_after_generation": "/lib/images/tcf/qcm-audit/801037e2d80f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une planche de surf ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s21-co-3",
@@ -46382,7 +46456,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/801037e2d80f.webp",
+      "sha256": "46a8b529e7cd5a9625e2611914a8517d298abb2106f5c88b0970949db0360ec6",
+      "review_note": "Inspection visuelle : format natif 4:3, style dessiné CE/CO, sujets entiers et groupes clairement distincts, sans texte, chiffre, prix ou date. Distracteur du tapis de gym, tcf-ss-a2-s21-co-3 Q9.",
       "priority": "A1_A2_first"
     },
     {
