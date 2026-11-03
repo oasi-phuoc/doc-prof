@@ -21,16 +21,16 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 15,
-    "pending_question_candidates": 408,
+    "activated_planned_questions": 30,
+    "pending_question_candidates": 393,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 34,
-    "remaining_original_concepts": 707,
-    "new_co_images_this_batch": 52,
+    "original_concepts_now_generated_or_reused": 63,
+    "remaining_original_concepts": 678,
+    "new_co_images_this_batch": 87,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 232,
-    "sources_with_new_active_question_or_scene": 22,
+    "sources_with_pending_question_candidates": 224,
+    "sources_with_new_active_question_or_scene": 37,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432
   },
@@ -274,17 +274,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/fetes/23-fêtes-anniversaire-Bastien.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s5-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -320,8 +320,9 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/nous-preparons-cadeau.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
           "question": 5
@@ -339,10 +340,9 @@
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -814,16 +814,17 @@
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 3
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -3700,17 +3701,17 @@
         "/lib/audio/tcf/co/loisirs/au-restaurant.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_97.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-s2-co-5",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 14,
-      "current_linked_image_variants": 7,
+      "current_linked_image_variants": 8,
       "complete_image_audit_certified": false
     },
     {
@@ -4719,8 +4720,9 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/maison-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s25-co-4",
           "question": 7
@@ -4730,10 +4732,9 @@
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -5029,16 +5030,17 @@
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 4
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -6814,10 +6816,6 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-a2-sb-co-4",
-          "question": 1
-        },
-        {
-          "exercise": "tcf-a2-sb-co-4",
           "question": 2
         },
         {
@@ -6825,7 +6823,12 @@
           "question": 9
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-a2-sb-co-4",
+          "question": 1
+        }
+      ],
       "new_active_association_scenes": [
         {
           "exercise": "tcf-a2-sb-co-4",
@@ -6859,7 +6862,7 @@
         }
       ],
       "current_linked_questions": 15,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -8768,17 +8771,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/fetes/23-fêtes-anniversaire-Bastien.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s5-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -8814,8 +8817,9 @@
       "old_refs": [
         "/lib/audio/tcf/co/vie-quotidienne/nous-preparons-cadeau.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
           "question": 5
@@ -8833,10 +8837,9 @@
           "question": 8
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 5,
       "complete_image_audit_certified": false
     },
     {
@@ -9308,16 +9311,17 @@
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 3
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -10794,17 +10798,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s20-co-3",
-          "question": 2
-        },
-        {
-          "exercise": "tcf-ss-a1-s20-co-3",
           "question": 7
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a1-s20-co-3",
+          "question": 2
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 9,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -10866,17 +10871,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a1-s10-co-2",
-          "question": 1
-        },
-        {
-          "exercise": "tcf-ss-a1-s10-co-2",
           "question": 7
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a1-s10-co-2",
+          "question": 1
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -12791,17 +12797,18 @@
       "pending_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s3-co-1",
-          "question": 4
-        },
-        {
-          "exercise": "tcf-ss-a2-s3-co-1",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
+      "new_active_visual_questions": [
+        {
+          "exercise": "tcf-ss-a2-s3-co-1",
+          "question": 4
+        }
+      ],
       "new_active_association_scenes": [],
       "current_linked_questions": 6,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 2,
       "complete_image_audit_certified": false
     },
     {
@@ -12969,17 +12976,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s3-co-2",
           "question": 3
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 9,
-      "current_linked_image_variants": 0,
+      "current_linked_image_variants": 1,
       "complete_image_audit_certified": false
     },
     {
@@ -13934,8 +13941,9 @@
       "old_refs": [
         "/lib/audio/tcf/co/maison/maison-3.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s25-co-4",
           "question": 7
@@ -13945,10 +13953,9 @@
           "question": 10
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 1,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -14273,16 +14280,17 @@
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 4
-        },
+        }
+      ],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 8,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -17510,7 +17518,7 @@
           "asset": "ac85576d88c3"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:097:dee2ccc9aea0"
       ],
@@ -17521,6 +17529,11 @@
           "candidate_cut_id": "delf_a1_2022-097-dee2ccc9aea0-d1",
           "transcription": "Allô? Je suis devant le menu du restaurant. Qu'est-ce que tu veux? Pour le plat, il y a du poisson avec du riz. Il y a aussi une boisson avec du lait. Et pour le dessert, c'est de la glace avec une banane. Le restaurant vend aussi des verres. Ils sont très beaux. Appelle-moi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/0bea21a7ce1a.webp",
+        "/lib/images/tcf/qcm-audit/8921a6017fbb.webp",
+        "/lib/images/tcf/qcm-audit/ac85576d88c3.webp"
       ]
     },
     {
@@ -18200,7 +18213,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:013:a78f72feb28d",
         "additional-20261102:mdf-a1-abc-junior:13:a78f72feb28d:f7bfae37"
@@ -18212,6 +18225,11 @@
           "candidate_cut_id": "09035276-013-a78f72feb28d-d1",
           "transcription": "Coucou, c'est Claire. Pour l'anniversaire de Bastien samedi, j'apporte son dessert préféré. Une tarte aux fraises. Et aussi ma guitare. On va jouer de la musique. Tu peux prendre des jeux et des boissons? Bastien prépare des pizzas. Bise à samedi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/ac7f419dce8c.webp",
+        "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+        "/lib/images/tcf/qcm-audit/co834-salade-fruits-dessinee.webp"
       ]
     },
     {
@@ -18522,7 +18540,7 @@
           "asset": "88a6b997029d"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:48:b71e48ec4f9a:25e1a588"
       ],
@@ -18533,6 +18551,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-48-b71e48ec4f9a-25e1a588-d1",
           "transcription": "J'ai acheté une jolie robe rouge avec un nœud en soie pour la fête d'anniversaire de Margot. Sally m'a gentiment prêté ses chaussures. Je vais lui chancer. J'apporte ma guitare. As-tu commandé le gâteau? Elle aime le chocolat blanc et les fruits rouges. Michelle s'occupe de la décoration."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/437924daf0f1.webp",
+        "/lib/images/tcf/qcm-audit/a840cdfdb301.webp",
+        "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
       ]
     },
     {
@@ -18918,7 +18941,7 @@
           "asset": "f9e55937da20"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:015:176a5458e8ca",
         "additional-20261102:mdf-a1-abc-junior:15:176a5458e8ca:757db70b"
@@ -18930,6 +18953,11 @@
           "candidate_cut_id": "09035276-015-176a5458e8ca-d1",
           "transcription": "Salut, c'est Manu. L'école organise une sortie jeudi. On va faire une balade en forêt. Il faut mettre des chaussures de sport et une casquette. Apporte un sandwich et une bouteille d'eau pour le pique-ni. J'apporte une boîte de gâteau pour toute la classe. A jeudi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/156f40c5a624.webp",
+        "/lib/images/tcf/qcm-audit/co834-bottes-pluie-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/f9e55937da20.webp"
       ]
     },
     {
@@ -18961,7 +18989,7 @@
           "asset": "f137023c3623"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:015:176a5458e8ca",
         "additional-20261102:mdf-a1-abc-junior:15:176a5458e8ca:757db70b"
@@ -18973,6 +19001,11 @@
           "candidate_cut_id": "09035276-015-176a5458e8ca-d1",
           "transcription": "Salut, c'est Manu. L'école organise une sortie jeudi. On va faire une balade en forêt. Il faut mettre des chaussures de sport et une casquette. Apporte un sandwich et une bouteille d'eau pour le pique-ni. J'apporte une boîte de gâteau pour toute la classe. A jeudi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
       ]
     },
     {
@@ -19004,7 +19037,7 @@
           "asset": "cbfdf11e0ab8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:015:176a5458e8ca",
         "additional-20261102:mdf-a1-abc-junior:15:176a5458e8ca:757db70b"
@@ -19016,6 +19049,11 @@
           "candidate_cut_id": "09035276-015-176a5458e8ca-d1",
           "transcription": "Salut, c'est Manu. L'école organise une sortie jeudi. On va faire une balade en forêt. Il faut mettre des chaussures de sport et une casquette. Apporte un sandwich et une bouteille d'eau pour le pique-ni. J'apporte une boîte de gâteau pour toute la classe. A jeudi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+        "/lib/images/tcf/qcm-audit/031a1cb863f6.webp",
+        "/lib/images/tcf/qcm-audit/cbfdf11e0ab8.webp"
       ]
     },
     {
@@ -19047,7 +19085,7 @@
           "asset": "c7b5c71ee5d5"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:015:176a5458e8ca",
         "additional-20261102:mdf-a1-abc-junior:15:176a5458e8ca:757db70b"
@@ -19059,6 +19097,11 @@
           "candidate_cut_id": "09035276-015-176a5458e8ca-d1",
           "transcription": "Salut, c'est Manu. L'école organise une sortie jeudi. On va faire une balade en forêt. Il faut mettre des chaussures de sport et une casquette. Apporte un sandwich et une bouteille d'eau pour le pique-ni. J'apporte une boîte de gâteau pour toute la classe. A jeudi."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/d9194de5459f.webp",
+        "/lib/images/tcf/qcm-audit/44868384583f.webp",
+        "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp"
       ]
     },
     {
@@ -19443,7 +19486,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:45:ea566369f2be:886f23a9"
       ],
@@ -19454,6 +19497,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a1-abc-45-ea566369f2be-886f23a9-joined",
           "transcription": "Je m'amuse beaucoup Moi aussi J'adore danser Qu'est-ce que tu fais? Un gâteau au chocolat Tu veux de l'aide On regarde un film? Je préfère regarder un documentaire D'accord ça me convient Bonjour madame Bonjour Je voudrais peau de miel s'il vous plaît Et voilà A qui est le CD? C'est le mien. Je l'ai acheté ce matin. On peut l'écouter maintenant."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+        "/lib/images/tcf/qcm-audit/co834-salade-fruits-dessinee.webp"
       ]
     },
     {
@@ -19839,7 +19887,7 @@
           "asset": "97a7b968987c"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:038:39cc6bb2e5a3",
         "additional-20261102:mdf-a1-abc-junior:38:39cc6bb2e5a3:bfafcd8f"
@@ -19851,6 +19899,11 @@
           "candidate_cut_id": "09035276-038-39cc6bb2e5a3-d1",
           "transcription": "Pour être en bonne santé, manger 5 fruits et légumes par jour. C'est facile. Buvez un jus d'orange le matin. Et à chaque repas, mangez des légumes en entrée et un fruit en dessert. En ce moment, c'est la saison des pommes et des poivres. Retrouvez plein de recettes sur notre site internet."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/60817b5cd6f1.webp",
+        "/lib/images/tcf/qcm-audit/97a7b968987c.webp"
       ]
     },
     {
@@ -26584,7 +26637,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_eb2w:004:adb4c61350d8"
       ],
@@ -26595,6 +26648,11 @@
           "candidate_cut_id": "delf_a2_eb2w-004-adb4c61350d8-d1",
           "transcription": "Alors, tu prends quoi? Le sac vert ou le sac noir? Le noir ne me plaît pas trop. Je crois que j'aime mieux le vert. C'est un bon choix. Merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-sac-vert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
       ]
     },
     {
@@ -26809,7 +26867,7 @@
           "asset": "272abc0c5fc4"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:79:586c23badc3d:57547066"
       ],
@@ -26820,6 +26878,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-79-586c23badc3d-57547066-d1",
           "transcription": "Bonjour, ici le service client du marché de Ringis. Malheureusement, votre commande a pris du retard. Je vous informe aussi que nous n'avons plus de poissons. Pour nous excuser, nous vous offrons deux paquets de 500 grammes de fraises et de myrtille. Nous vous informons que nous avons actuellement des réductions sur nos produits laitiers. Durant la semaine, vous pouvez retrouver votre colis à l'accueil de 8h à midi. Le week-end, la livraison est gratuite pour un minimum d'achat de 15 euros."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/7e0f83f053bd.webp",
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/272abc0c5fc4.webp"
       ]
     },
     {
@@ -26893,7 +26956,7 @@
           "asset": "c9dcae8daa9f"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:86:4d678702e0e2:f9841f3d"
       ],
@@ -26904,6 +26967,11 @@
           "candidate_cut_id": "additional-20261102-mdf-a2-abc-direct-86-4d678702e0e2-f9841f3d-d1",
           "transcription": "Bonjour, c'est la société FMAC. Vous avez participé à notre grand jeu concours le mois dernier. Je vous informe que vous avez gagné une télévision. Félicitations. Rappelez-nous au 02 50 88 23 40 Pour nous donner votre adresse récupérer votre cadeau. Vous pouvez consulter toutes nos offres promotionnelles sur notre site internet www.fmac.fr Vous avez 3% de réduction sur les lecteurs DVD. et vingt-cinq pourcent de réduction sur les ordinateurs du neuf au vingt-neuf mars."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-television-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/c9dcae8daa9f.webp"
       ]
     },
     {
@@ -27453,7 +27521,7 @@
           "asset": "e0b9c553597c"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:051:c1b7ec577e0b",
         "additional-20261102:mdf-a2-abc-junior-direct:51:c1b7ec577e0b:58ed421c"
@@ -27465,6 +27533,11 @@
           "candidate_cut_id": "9782090351958-051-c1b7ec577e0b-d1",
           "transcription": "Votre attention, s'il vous plaît. Il est déjà 18h30. La piscine ferme dans 30 minutes. Vous devez sortir du bassin et vous diriger vers les douches et les vestiaires. N'oubliez rien dans les vestiaires et donnez la clé de votre casier à Isabelle au guichet à la sortie. Nous vous rappelons que la piscine est ouverte tous les jours, même le dimanche et les vacances scolaires, de 9h à 19h et le mercredi de 9h à 22h."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/6ab9db6995d8.webp",
+        "/lib/images/tcf/qcm-audit/07b2c36cc965.webp",
+        "/lib/images/tcf/qcm-audit/e0b9c553597c.webp"
       ]
     },
     {
@@ -28243,7 +28316,7 @@
           "asset": "33d280a8830d"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:037:41d12e4b673d",
         "additional-20261102:mdf-a2-abc-junior-direct:37:41d12e4b673d:bd2744df"
@@ -28255,6 +28328,11 @@
           "candidate_cut_id": "9782090351958-037-41d12e4b673d-d1",
           "transcription": "Bonjour Dans notre émission Roules et jeunesse, nous allons parler aujourd'hui de l'alimentation des adolescents. Le repas préféré des adolescents? The hamburger frit bien sûr. Mais attention. Les adolescents mange aussi d'autres produits. Des pâte, du riz, du poulet. Yohan, bonjour. Bonjour. Alors, qu'est-ce que tu aimes manger? C'est vrai. J'aime bien le hamburger frit. Mon plat préféré, c'est la pizza. Chez mes parents, on mange to the journey de la salade. Les fruits, ça depend. J'aime bien les fraises, les bananes, les orange, but les pommes ni les poires. En fait, je préfère boire des jus de fruits plutôt que de manger des fruits. Et au petit déjeuner, qu'est-ce que tu prends? In general, du pain avec du chocolat and un verre de lait. Merci Yohan."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/a092565a4e3e.webp",
+        "/lib/images/tcf/qcm-audit/33d280a8830d.webp"
       ]
     },
     {
@@ -28286,7 +28364,7 @@
           "asset": null
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "9782090351958:037:41d12e4b673d",
         "additional-20261102:mdf-a2-abc-junior-direct:37:41d12e4b673d:bd2744df"
@@ -28298,6 +28376,11 @@
           "candidate_cut_id": "9782090351958-037-41d12e4b673d-d1",
           "transcription": "Bonjour Dans notre émission Roules et jeunesse, nous allons parler aujourd'hui de l'alimentation des adolescents. Le repas préféré des adolescents? The hamburger frit bien sûr. Mais attention. Les adolescents mange aussi d'autres produits. Des pâte, du riz, du poulet. Yohan, bonjour. Bonjour. Alors, qu'est-ce que tu aimes manger? C'est vrai. J'aime bien le hamburger frit. Mon plat préféré, c'est la pizza. Chez mes parents, on mange to the journey de la salade. Les fruits, ça depend. J'aime bien les fraises, les bananes, les orange, but les pommes ni les poires. En fait, je préfère boire des jus de fruits plutôt que de manger des fruits. Et au petit déjeuner, qu'est-ce que tu prends? In general, du pain avec du chocolat and un verre de lait. Merci Yohan."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
       ]
     },
     {
@@ -33400,7 +33483,7 @@
       "label": "Les pêches et les abricots",
       "path_after_generation": "/lib/images/tcf/qcm-audit/97a7b968987c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les pêches et les abricots ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
@@ -33408,7 +33491,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/97a7b968987c.webp",
+      "sha256": "be56057b38d70d29237e0303380593140c3ccb4fc27601302a7a0014a6ce9b92",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la paire de fruits de saison, tcf-ss-a1-s23-co-2 Q5.",
       "priority": "A1_A2_first"
     },
     {
@@ -34073,7 +34159,7 @@
       "label": "Les oranges et les raisins",
       "path_after_generation": "/lib/images/tcf/qcm-audit/33d280a8830d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les oranges et les raisins ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s25-co-4",
@@ -34081,7 +34167,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/33d280a8830d.webp",
+      "sha256": "52960c4d88b4f4c2a45759104e4fa2bf62821bf070ca6f240fabf564feab25e6",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur des fruits que Johan n’aime pas, tcf-ss-a2-s25-co-4 Q7.",
       "priority": "A1_A2_first"
     },
     {
@@ -34204,7 +34293,7 @@
       "label": "Une jupe verte",
       "path_after_generation": "/lib/images/tcf/qcm-audit/88a6b997029d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une jupe verte ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-2",
@@ -34212,7 +34301,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/88a6b997029d.webp",
+      "sha256": "7bcfb889f7fb26c898966c2888df3bd56fa2e594c6fd506823fe272459d4aa1f",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la robe rouge, tcf-ss-a1-s10-co-2 Q1.",
       "priority": "A1_A2_first"
     },
     {
@@ -34746,7 +34838,7 @@
       "label": "Un lecteur DVD",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c9dcae8daa9f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un lecteur DVD ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-2",
@@ -34754,7 +34846,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/c9dcae8daa9f.webp",
+      "sha256": "ab018851b6283b747315a6feee55209bafc255d1ddd27ab97a57c8953e22e2a8",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. Distracteur du cadeau gagné, tcf-ss-a2-s3-co-2 Q3. Le tiroir ouvert montre le fonctionnement du lecteur.",
       "priority": "A1_A2_first"
     },
     {
@@ -35900,7 +35995,7 @@
       "label": "Le ticket d’entrée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e0b9c553597c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le ticket d’entrée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
@@ -35908,7 +36003,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/e0b9c553597c.webp",
+      "sha256": "5f910af3e331f4c16912970e2fd8bbd5bb912405862c4c526dadd2889638f760",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. Distracteur de la clé à rendre en sortant de la piscine, tcf-ss-a2-s15-co-4 Q5.",
       "priority": "A1_A2_first"
     },
     {
@@ -35990,7 +36088,7 @@
       "label": "Des oranges et des citrons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/272abc0c5fc4.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des oranges et des citrons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2r-ce-042",
@@ -36003,7 +36101,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/272abc0c5fc4.webp",
+      "sha256": "9a1f821b1628200bd28bb3c293566af9c642fed1bd1810e46e04c298cb1bdc0d",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Distracteur de l’offre de fruits tcf-ss-a2-s3-co-1 Q4; les deux espèces sont nettement distinguées.",
       "priority": "A1_A2_first"
     },
     {
@@ -36420,7 +36521,7 @@
       "label": "Un sandwich et une bouteille d’eau",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un sandwich et une bouteille d’eau ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -36428,7 +36529,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/0e50e0292c3c.webp",
+      "sha256": "5c340c7885153084d48c88c4270aaf4e073f0ba0497b0f3dc3661c975ddd17cb",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Manu demande un sandwich et une bouteille d’eau pour le pique-nique dans tcf-ss-a1-s14-co-3 Q7.",
       "priority": "A1_A2_first"
     },
     {
@@ -36790,7 +36894,7 @@
       "label": "Un paquet de bonbons",
       "path_after_generation": "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un paquet de bonbons ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -36803,7 +36907,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/c7b5c71ee5d5.webp",
+      "sha256": "6e93fd4480f7f6fda92a459f95175923002d70272dc40980b7526f2977e9c35d",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. Distracteur du cadeau de Manu, tcf-ss-a1-s14-co-3 Q8.",
       "priority": "A1_A2_first"
     },
     {
@@ -37035,7 +37142,7 @@
       "label": "Les fraises et les framboises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/60817b5cd6f1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les fraises et les framboises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
@@ -37043,7 +37150,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/60817b5cd6f1.webp",
+      "sha256": "6fce0fec3f977de45e93a5ac8a2e48fdba5bc40cecbd1ab59cf6735c4d02193f",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la paire de fruits de saison dans tcf-ss-a1-s23-co-2 Q5.",
       "priority": "A1_A2_first"
     },
     {
@@ -37825,7 +37935,7 @@
       "label": "Des fraises et des myrtilles",
       "path_after_generation": "/lib/images/tcf/qcm-audit/7e0f83f053bd.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des fraises et des myrtilles ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s3-co-1",
@@ -37833,7 +37943,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/7e0f83f053bd.webp",
+      "sha256": "6a4282f463802fbe34c15110448290f7208858bbf80bf5acfb754030704716ae",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Le service client offre des fraises et des myrtilles pour s’excuser du retard, tcf-ss-a2-s3-co-1 Q4. Aucun poids dans l’image.",
       "priority": "A1_A2_first"
     },
     {
@@ -38498,7 +38611,7 @@
       "label": "Une tarte aux pommes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/3cfdd714bc3a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une tarte aux pommes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1p-s3-co-1",
@@ -38521,7 +38634,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+      "sha256": "e28bb9d9188dc9d628f4945d34d5324017e4814e02b4b76e3b9c00cd1b3716f5",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur du gâteau au chocolat préparé dans tcf-ss-a1-s20-co-3 Q2. Version CO 4:3 distincte des fichiers CE conservés.",
       "priority": "A1_A2_first"
     },
     {
@@ -39187,7 +39303,7 @@
       "label": "Une soupe et une tasse de café",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cbfdf11e0ab8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une soupe et une tasse de café ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -39195,7 +39311,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/cbfdf11e0ab8.webp",
+      "sha256": "ad4b66742e9b6e8834dda6ff3c98cf6f1e345d09d503f3140ddf47e55993e471",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Distracteur représentant exactement soupe et café, tcf-ss-a1-s14-co-3 Q7.",
       "priority": "A1_A2_first"
     },
     {
@@ -39378,7 +39497,7 @@
       "label": "Un gâteau avec des fraises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/cf4d4662031f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un gâteau avec des fraises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s2-co-5",
@@ -39386,7 +39505,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/8921a6017fbb.webp",
+      "sha256": "bee872b0882cfad77d28c6996ee8797e2eaff8237a307aae4c333eb0f1c5fba1",
+      "review_note": "Reprise visuelle en 4:3 : Gâteau épais avec génoise, crème rose et fraises visibles dans la garniture et sur le dessus ; aucune autre saveur ni texte. Sujet entier et même style dessiné ; aucun chiffre ni texte.",
       "priority": "A1_A2_first"
     },
     {
@@ -39522,7 +39644,7 @@
       "label": "De la glace avec une banane",
       "path_after_generation": "/lib/images/tcf/qcm-audit/0bea21a7ce1a.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « De la glace avec une banane ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s2-co-5",
@@ -39530,7 +39652,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/0bea21a7ce1a.webp",
+      "sha256": "5bfcc0be3dfde385e32ce7857543128e763b8f9d6c2752bd21e7184873f203f5",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Le dessert du restaurant est de la glace avec une banane, tcf-a1-s2-co-5 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -40181,7 +40306,7 @@
       "label": "Des chaussures de ville",
       "path_after_generation": "/lib/images/tcf/qcm-audit/f9e55937da20.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chaussures de ville ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -40194,7 +40319,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/f9e55937da20.webp",
+      "sha256": "c15994c0d4782e2127a61760e71bdd8905b9b4727c81f06251bc4890a1e795a0",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Distracteur de chaussures de sport dans tcf-ss-a1-s14-co-3 Q5.",
       "priority": "A1_A2_first"
     },
     {
@@ -40881,7 +41009,7 @@
       "label": "Un yaourt avec une pomme",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ac85576d88c3.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un yaourt avec une pomme ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s2-co-5",
@@ -40889,7 +41017,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/ac85576d88c3.webp",
+      "sha256": "263ce399fdf0bc92000a3f04185a189eaee2231609ea62b36cdfbb841757fdf6",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur du dessert glace et banane, tcf-a1-s2-co-5 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -41185,7 +41316,7 @@
       "label": "Un verre de lait",
       "path_after_generation": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un verre de lait ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s4-ce-1",
@@ -41203,7 +41334,10 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/fc08f12c7321.webp",
+      "sha256": "457d17820beb5f41eeeaad11312702365a913525e52894916cce37b920bcb60b",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Johan prend un verre de lait au petit-déjeuner, tcf-ss-a2-s25-co-4 Q10.",
       "priority": "A1_A2_first"
     },
     {
@@ -41400,7 +41534,7 @@
       "label": "Une pizza et une canette de soda",
       "path_after_generation": "/lib/images/tcf/qcm-audit/031a1cb863f6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une pizza et une canette de soda ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -41408,7 +41542,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/031a1cb863f6.webp",
+      "sha256": "76e41d8a373a918ad34606e3eb52f4e546fe86a763f4314e202dad48a6540e3a",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Distracteur représentant les deux aliments de la réponse entière, tcf-ss-a1-s14-co-3 Q7.",
       "priority": "A1_A2_first"
     },
     {
@@ -41780,7 +41917,7 @@
       "label": "Les pommes et les poires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/baea646241f5.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les pommes et les poires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s23-co-2",
@@ -41793,7 +41930,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+      "sha256": "8d12afe0ea8d8b62e9abad89feab1c713e162cf749a4f2b7aea592dc75b30690",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Distracteur de l’offre de fruits tcf-ss-a2-s3-co-1 Q4; réutilisable seulement pour le concept pommes et poires.",
       "priority": "A1_A2_first"
     },
     {
@@ -42918,7 +43058,7 @@
       "label": "Des pommes et des poires",
       "path_after_generation": "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des pommes et des poires ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "delf-a2r-ce-042",
@@ -42931,7 +43071,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+      "sha256": "8d12afe0ea8d8b62e9abad89feab1c713e162cf749a4f2b7aea592dc75b30690",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Distracteur de l’offre de fruits tcf-ss-a2-s3-co-1 Q4; réutilisable seulement pour le concept pommes et poires.",
       "priority": "A1_A2_first"
     },
     {
@@ -43578,7 +43721,7 @@
       "label": "Une tarte aux fraises",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ac7f419dce8c.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une tarte aux fraises ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s5-co-2",
@@ -43591,7 +43734,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/ac7f419dce8c.webp",
+      "sha256": "158d548e2307d7ae296763afa3f3392ecc2fcb223f20ef7ae367cb3c2eb9459b",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Claire apporte une tarte aux fraises pour Bastien, tcf-ss-a1-s5-co-2 Q4.",
       "priority": "A1_A2_first"
     },
     {
@@ -44245,7 +44391,7 @@
       "label": "Un panier de pommes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/44868384583f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Un panier de pommes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -44253,7 +44399,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/44868384583f.webp",
+      "sha256": "63b4f2c2f54a1dc9ae47027a141107b0e035d0c81c45c757bc6d476a14d53903",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. Distracteur du cadeau de Manu, tcf-ss-a1-s14-co-3 Q8.",
       "priority": "A1_A2_first"
     },
     {
@@ -44514,7 +44663,7 @@
       "label": "Une boîte de gâteaux",
       "path_after_generation": "/lib/images/tcf/qcm-audit/d9194de5459f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une boîte de gâteaux ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -44522,7 +44671,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/d9194de5459f.webp",
+      "sha256": "7b379ffcade6cf89000a078b7489100049b798d9ace4d1889561d50ae5a6c7de",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. Manu apporte une boîte de gâteaux pour toute la classe, tcf-ss-a1-s14-co-3 Q8.",
       "priority": "A1_A2_first"
     },
     {
@@ -44727,7 +44879,7 @@
       "label": "Une veste bleue",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a840cdfdb301.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une veste bleue ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-2",
@@ -44735,7 +44887,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/a840cdfdb301.webp",
+      "sha256": "49cbd082850684b1ea20c92b2e80caef22d576dd8626d7d7a1cb19c920a2ba92",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur de la robe rouge, tcf-ss-a1-s10-co-2 Q1.",
       "priority": "A1_A2_first"
     },
     {
@@ -45089,7 +45244,7 @@
       "label": "Des chaussures de sport",
       "path_after_generation": "/lib/images/tcf/qcm-audit/156f40c5a624.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Des chaussures de sport ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s14-co-3",
@@ -45097,7 +45252,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/156f40c5a624.webp",
+      "sha256": "32c1b822dad8eaec70a913176178baee9cbc21d0ca48dd9e48dfc41d3af67801",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné chaleureux, objets entiers et contrastes explicites. Aucun texte, chiffre, prix ou date. Manu demande des chaussures de sport pour la balade en forêt, tcf-ss-a1-s14-co-3 Q5.",
       "priority": "A1_A2_first"
     },
     {
@@ -45642,7 +45800,7 @@
       "label": "Une robe rouge",
       "path_after_generation": "/lib/images/tcf/qcm-audit/437924daf0f1.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Une robe rouge ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s10-co-2",
@@ -45650,7 +45808,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/437924daf0f1.webp",
+      "sha256": "4f0ab7ab14e5ed456062d2fa732f1c1aee0c9f2eba062fe66ea98f0e4824ff3f",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. L’audio de Margot mentionne une robe rouge avec un nœud en soie, tcf-ss-a1-s10-co-2 Q1.",
       "priority": "A1_A2_first"
     },
     {
@@ -45770,7 +45931,7 @@
       "label": "Les fraises et les bananes",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a092565a4e3e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Les fraises et les bananes ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s25-co-4",
@@ -45778,7 +45939,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/a092565a4e3e.webp",
+      "sha256": "f6c1f6f54157957e9c5d7133782223ec9180d4da0d835e13acfe4371600d188d",
+      "review_note": "Inspection visuelle : dessin CE/CO cohérent, format paysage natif 4:3, concept entier et contrastes reconnaissables. Aucun texte, chiffre, prix ou date. Distracteur des fruits que Johan n’aime pas, tcf-ss-a2-s25-co-4 Q7.",
       "priority": "A1_A2_first"
     },
     {
@@ -46079,7 +46243,7 @@
       "label": "La clé du casier",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6ab9db6995d8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La clé du casier ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
@@ -46087,7 +46251,10 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/6ab9db6995d8.webp",
+      "sha256": "624b2eaa196c942e5548e814469de9db272b60c4f9ca083222492c45915eb6be",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. La piscine demande de rendre la clé du casier au guichet, tcf-ss-a2-s15-co-4 Q5.",
       "priority": "A1_A2_first"
     },
     {
@@ -46127,7 +46294,7 @@
       "label": "Le bonnet de bain",
       "path_after_generation": "/lib/images/tcf/qcm-audit/07b2c36cc965.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le bonnet de bain ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a2-s15-co-4",
@@ -46135,7 +46302,10 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/07b2c36cc965.webp",
+      "sha256": "8918d804763e27073a4b920eeab5ab9933fffcfaf67442ed114219f6520aec08",
+      "review_note": "Inspection visuelle : format natif paysage 4:3, style dessiné CE/CO chaleureux, concept entier identifiable, sans texte, chiffre, prix ou date. Distracteur de la clé à rendre, tcf-ss-a2-s15-co-4 Q5. Bonnet de piscine en silicone.",
       "priority": "A1_A2_first"
     },
     {
