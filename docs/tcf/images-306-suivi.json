@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 16,
-    "newly_activated": 8,
-    "prepared_pending_audio_link": 6,
-    "prepared_pending_audio_validation": 2,
-    "remaining_questions_requiring_images_or_review": 290,
+    "questions_illustrated_or_prepared": 43,
+    "newly_activated": 18,
+    "prepared_pending_audio_link": 21,
+    "prepared_pending_audio_validation": 4,
+    "remaining_questions_requiring_images_or_review": 263,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -319,20 +319,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couvertures-dessine.webp"
       ],
-      "missing_labels": [
-        "Des journaux",
-        "Des écouteurs",
-        "Des couvertures"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a1p-s4-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-couvertures-dessine.webp"
+        ],
+        "support_quote": "Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention",
+        "current_bank_transcription": "Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention Ce message est pour les passagers du vol AF-79 par imméderie de 5h30 L'avion a un retard de 2 heures à cause de la neige Merci d'attendre ici en salle 4 Il y a des journaux gratuits Vous pouvez acheter à boire et amonger près du bureau d'information Attention",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Trois catégories d’objets distinctes : journaux papier, écouteurs intra-auriculaires et couvertures. La transcription actuelle annonce des journaux gratuits."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -459,18 +468,29 @@
           "asset": "b4fc7ef8ff4d"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-avocat-dessine.webp"
       ],
-      "missing_labels": [
-        "L’avocat"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a1p-s3-co-3",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-avocat-dessine.webp"
+        ],
+        "support_quote": "Bonsoir.\nJe vous rappelle vos rendez-vous de demain, mardi.\nÀ 11 h, vous avez rendez-vous chez le dentiste.\nÀ 12 h 30, vous allez déjeuner au Club des Arts avec Madame Seguin.\nEt à 16 h, vous devez revenir au bureau pour la réunion avec le directeur de l’entreprise Nysol.\nBonne soirée !",
+        "current_bank_transcription": "Bonsoir.\nJe vous rappelle vos rendez-vous de demain, mardi.\nÀ 11 h, vous avez rendez-vous chez le dentiste.\nÀ 12 h 30, vous allez déjeuner au Club des Arts avec Madame Seguin.\nEt à 16 h, vous devez revenir au bureau pour la réunion avec le directeur de l’entreprise Nysol.\nBonne soirée !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Dentiste en consultation dentaire, médecin au stéthoscope et avocat en robe avec cliente ; trois professions reconnaissables et personnages variés. La transcription actuelle annonce le dentiste à 11 h."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -867,19 +887,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
       ],
-      "missing_labels": [
-        "Un ordinateur fixe",
-        "Une imprimante"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s4-co-1",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-imprimante-dessine.webp"
+        ],
+        "support_quote": "Au revoir l'achat au distributeur, bonjour l'e-ticket !\nAvec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
+        "current_bank_transcription": "Au revoir l'achat au distributeur, bonjour l'e-ticket !\nAvec votre téléphone portable et un numéro français, vous pouvez payer par SMS et télécharger votre ticket.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Téléphone mobile, ordinateur de bureau avec unité centrale et imprimante seule ; les trois appareils sont entiers et distincts. La transcription actuelle indique le téléphone portable pour acheter le e-ticket."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1290,7 +1320,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a1-abc:38:dd777122eac5:8541575a"
       ],
@@ -1303,14 +1333,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp",
         "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
       ],
-      "missing_labels": [
-        "Les chèques"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s12-co-4",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-especes-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+        ],
+        "support_quote": "Bonsoir, votre commande est prête à la boulangerie. Vous pouvez la récupérer dès 15h. Comme tous les lundis et mardis, la boutique ferme à 18h30 aujourd'hui. On ferme à 2h les autres jours. Je vous rappelle que nous n'acceptons pas l'échec. Bonne journée.",
+        "current_bank_transcription": "Bonsoir, votre commande est prête à la boulangerie.\nVous pouvez la récupérer dès 15 heures.\nComme tous les lundis et mardis, la boutique ferme à 18 heures 30 aujourd'hui.\nOn ferme à 20 heures les autres jours.\nJe vous rappelle que nous n'acceptons pas les chèques.\nBonne journée.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Chéquier à pages vierges, espèces sans valeur faciale et carte bancaire sans montant. La transcription actuelle indique « nous n’acceptons pas les chèques » ; le candidat ASR écrit l’homophone « l’échec ». La variante d’image n’atteste pas l’écoute du candidat audio."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1341,7 +1387,7 @@
           "asset": "16edefcaf66e"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:018:9461384f79c7",
         "additional-20261102:mdf-a1-abc-junior:18:9461384f79c7:f779e162"
@@ -1355,16 +1401,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp"
       ],
-      "missing_labels": [
-        "Le cahier",
-        "La calculatrice",
-        "Le dictionnaire"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s13-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp"
+        ],
+        "support_quote": "Salut, c'est Anthony. Demain, le prof de dessin est absent. On peut aller travailler ensemble à la bibliothèque à 1h? On doit faire notre devoir de mathématiques pour lundi. N'oublie pas ton cahier. A demain",
+        "current_bank_transcription": "Salut c'est Anthony, demain le prof de dessin est absent.\nOn peut aller travailler ensemble à la biblioth On doit faire notre devoir de mathématiques pour l'Indy.\nN'oublie pas ton cahier, à demain.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Cahier seul sans stylo, calculatrice avec écran vide et dictionnaire ouvert avec onglets vierges, tous en 4:3. La transcription préparée indique « N’oublie pas ton cahier »."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -1483,18 +1543,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
         "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
       ],
-      "missing_labels": [
-        "Du poisson"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s17-co-4",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-poissons-dessines.webp"
+        ],
+        "support_quote": "Je déjeune tous les jours chez Jeanne.\nLes plats et les desserts sont excellents.\nIl y a toujours deux entrées avec des légumes délicieux.\nEn été, ils servent aussi des glaces à la fraise.",
+        "current_bank_transcription": "Je déjeune tous les jours chez Jeanne.\nLes plats et les desserts sont excellents.\nIl y a toujours deux entrées avec des légumes délicieux.\nEn été, ils servent aussi des glaces à la fraise.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. Les images montrent les catégories entières légumes, fruits et poisson, sans ingrédient parasite ni qualification ajoutée. La transcription actuelle décrit deux entrées avec des légumes."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2175,18 +2246,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
-        null,
-        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
+        "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pates-poulet-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-pates-fromage-dessine.webp"
       ],
-      "missing_labels": [
-        "Au poulet"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s29-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pates-poulet-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-pates-fromage-dessine.webp"
+        ],
+        "support_quote": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "current_bank_transcription": "- Délidéli, bonjour, je peux prendre votre commande ?\n- Oui, bonjour !\nJe voudrais un menu Roma avec une salade italienne et des pâtes aux légumes.\n- D'accord, donnez-moi votre adresse.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Trois plats complets de pâtes, respectivement aux légumes, au poulet et au fromage ; les ingrédients qualifiants sont tous visibles."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2523,18 +2605,29 @@
           "asset": "5db01ef5e45b"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
         "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-suites-dessine.webp"
       ],
-      "missing_labels": [
-        "Des suites"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s33-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/cbc76cf097b1.webp",
+          "/lib/images/tcf/qcm-audit/803b9d86fa1d.webp",
+          "/lib/images/tcf/qcm-audit/co306-suites-dessine.webp"
+        ],
+        "support_quote": "- Hôtel de La Plage, bonjour.\n- Bonjour, vous avez une chambre double disponible pour la nuit du 12 au 13 juin s'il vous plaît ?\n- Non, mais nous avons des chambres simples…",
+        "current_bank_transcription": "- Hôtel de La Plage, bonjour.\n- Bonjour, vous avez une chambre double disponible pour la nuit du 12 au 13 juin s'il vous plaît ?\n- Non, mais nous avons des chambres simples…",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Chambre à lit individuel, chambre familiale avec lit double et lits superposés, suite avec salon et espace nuit séparés."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -3253,12 +3346,11 @@
       "resolved_images": [
         null,
         null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp"
       ],
       "missing_labels": [
         "Des bouteilles",
-        "Des chaussures",
-        "Des journaux"
+        "Des chaussures"
       ],
       "ready_for_source_review": false
     },
@@ -3883,18 +3975,29 @@
           "asset": "70ee2d433ec3"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp"
       ],
-      "missing_labels": [
-        "Une carafe d'eau"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s50-co-4",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-carafe-eau-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp"
+        ],
+        "support_quote": "— C'est pour déjeuner ?\n— Oui. Vous avez une table pour deux ?\n— Qu'est-ce que vous buvez ?\n— Une carafe d'eau, s'il vous plaît.\n— Qu'est-ce que tu bois ?\n— Pas d'alcool pour moi aujourd'hui. Un jus d'orange, s'il te plaît.\n— Tu prends du poisson ou de la viande ?\n— Je ne mange pas de viande. Je suis végétarien.\n— Je peux prendre votre commande ?\n— Oui. Une salade, un steak-frites et une tarte.",
+        "current_bank_transcription": "— C'est pour déjeuner ?\n— Oui. Vous avez une table pour deux ?\n— Qu'est-ce que vous buvez ?\n— Une carafe d'eau, s'il vous plaît.\n— Qu'est-ce que tu bois ?\n— Pas d'alcool pour moi aujourd'hui. Un jus d'orange, s'il te plaît.\n— Tu prends du poisson ou de la viande ?\n— Je ne mange pas de viande. Je suis végétarien.\n— Je peux prendre votre commande ?\n— Oui. Une salade, un steak-frites et une tarte.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Carafe d’eau, café en tasse et jus de pomme avec fruit, trois boissons distinctes ; la première boisson demandée est la carafe."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -4299,6 +4402,10 @@
         "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation.",
         "audio_validation_required": true,
         "audio_validation_reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
+      },
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La banque attend 12 h 03 ; la transcription préparée annonce 1 h 25. Écouter le candidat et contrôler son alignement avant toute activation."
       }
     },
     {
@@ -4656,18 +4763,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
         "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
         "/lib/images/tcf/qcm-audit/co834-glace-vanille-dessinee.webp"
       ],
-      "missing_labels": [
-        "Une tarte"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s57-co-1",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-tarte-pommes-4-3.webp",
+          "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+          "/lib/images/tcf/qcm-audit/co834-glace-vanille-dessinee.webp"
+        ],
+        "support_quote": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "current_bank_transcription": "C'est à qui ?\nC'est à moi.\nEt avec ceci ?\nUne baguette.\nDe croissant.\nVous désirez ?\nUne tarte pour quatre s'il vous plaît.\nUne tarte pour six s'il vous plaît.\nEt aussi un pain au céréal.\nEt je vais prendre aussi un pain au céréal.\nVous prenez une formule ?\nVous prenez une formule petit déjeuner ?\nVous prenez une formule déjeuner ?\nOui.\nQu'est-ce qu'il y a dans une formule ?\nDans une formule, il y a un sandwich, un dessert et une boisson.\nQu'est-ce qu' ?\nQu'est-ce qu'il y a dans une formule ?\nQu'est-ce qu'il y a dans une formule ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. La tarte aux pommes représente entièrement la catégorie tarte ; les deux autres images montrent un gâteau au chocolat et une glace. Aucune indication de nombre de parts n’est ajoutée. La transcription actuelle demande une tarte pour quatre puis pour six."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5392,7 +5510,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:003:c8814f3bed61"
       ],
@@ -5406,13 +5524,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/46975abea508.webp",
-        null,
+        "/lib/images/tcf/qcm-audit/co306-musee-mer-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
       ],
-      "missing_labels": [
-        "Le musée de la mer"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/46975abea508.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-mer-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex1-03",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/46975abea508.webp",
+          "/lib/images/tcf/qcm-audit/co306-musee-mer-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-musee-histoire-dessine.webp"
+        ],
+        "support_quote": "C'est Valentin, il y a une nouvelle exposition au musée des sciences. Mardi, je vais au théâtre. Est-ce que tu veux venir avec moi voir l'exposition mercredi?",
+        "current_bank_transcription": "C’est Valentin. Il y a une nouvelle exposition au musée des sciences. Mardi, je vais au théâtre. Est-ce que tu veux venir avec moi voir l’exposition mercredi ?",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Trois musées distincts : sciences avec système solaire, mer avec spécimens marins et histoire avec armure et objets anciens."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6033,6 +6167,10 @@
         "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation.",
         "audio_validation_required": true,
         "audio_validation_reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
+      },
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La banque attend 15 h 40 ; la transcription préparée écrit 3 h 40. Vérifier à l’écoute la forme exacte de l’heure et le contexte avant activation."
       }
     },
     {
@@ -6117,7 +6255,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:041:d9b27cc57d79"
       ],
@@ -6130,14 +6268,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-couleur-rose-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
       ],
-      "missing_labels": [
-        "Rose"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-couleur-rose-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex4-41",
+        "question": 8,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-couleur-rose-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
+        ],
+        "support_quote": "Alors, il y a une nouvelle élève dans la classe. C'est Yasmine. Bonjour. Yasmine, j'aime beaucoup ton manteau rose. Merci. Mes chaussures sont roses aussi.",
+        "current_bank_transcription": "– Alors, il y a une nouvelle élève dans la classe. C’est Yasmine. – Bonjour ! – Yasmine, j’aime beaucoup ton manteau rose. – Merci. Mes chaussures sont roses aussi.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Même nuancier textile pour les trois couleurs rose, bleu et vert ; aucun vêtement différent n’indique la réponse."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6380,7 +6534,7 @@
           "asset": "8e38c8d17ecd"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:064:ed6bd842d6ff"
       ],
@@ -6393,16 +6547,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-horloge-1024-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1042-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1124-dessinee.webp"
       ],
-      "missing_labels": [
-        "10 h 24",
-        "10 h 42",
-        "11 h 24"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1024-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1042-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1124-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex2-64",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1024-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1042-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1124-dessinee.webp"
+        ],
+        "support_quote": "Mesdames et messieurs, votre attention s'il est. Le train TGV, numéro 8570, partira à 10h24, voie eux. Pour des consignes de sécurité, merci de vous présenter 15 minutes avant le départ. N'oubliez pas votre billet et votre pièce d'identité. Merci de mettre votre nom sur tous vos bagages. Bon voyage!",
+        "current_bank_transcription": "Mesdames et Messieurs, votre attention s’il vous\nplaît. Le train TGV numéro 8570 partira à 10 h 24\nvoie E. Pour des consignes de sécurité, merci\nde vous présenter 15 minutes avant le départ.\nN’oubliez pas votre billet et votre pièce d’identité.\nMerci de mettre votre nom sur tous vos bagages.\nBon voyage !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La transcription relue appuie la bonne réponse « 10 h 24 »."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6538,7 +6706,7 @@
           "asset": "3762b0724d76"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:069:e775e4f7399c"
       ],
@@ -6551,14 +6719,30 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
         "/lib/images/tcf/qcm-audit/abf45c70332d.webp",
         "/lib/images/tcf/qcm-audit/co834-pommes-terre-dessinees.webp"
       ],
-      "missing_labels": [
-        "Du riz"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/abf45c70332d.webp",
+        "/lib/images/tcf/qcm-audit/co834-pommes-terre-dessinees.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-ex4-69",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
+          "/lib/images/tcf/qcm-audit/abf45c70332d.webp",
+          "/lib/images/tcf/qcm-audit/co834-pommes-terre-dessinees.webp"
+        ],
+        "support_quote": "Ah non, il y a toujours du riz à la cantine. Ouais, tu as raison. Moi, je veux des frites.",
+        "current_bank_transcription": "– Oh non, il y a toujours du riz à la cantine ! – Oui, tu as raison. Moi, je veux des frites !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Riz seul, pâtes et pommes de terre distincts ; les images illustrent les catégories d’accompagnements. La source indique qu’il y a toujours du riz."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -6747,7 +6931,7 @@
           "asset": "18580c1239a8"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_validation",
       "linked_source_ids": [
         "delf_a1_2022:085:657006e9075c"
       ],
@@ -6760,16 +6944,31 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
       ],
-      "missing_labels": [
-        "11 h 58",
-        "11 h 48",
-        "12 h 58"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-85",
+        "question": 14,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1158-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1148-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1258-dessinee.webp"
+        ],
+        "support_quote": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 euros. Ensuite, le prochain départ est à 1h58. C'est le même prix.",
+        "current_bank_transcription": "Il y a un départ pour Paris dans 30 minutes. Le billet coûte 68 €. Ensuite, le prochain départ est à 11 h 58. C’est le même prix.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation.",
+        "audio_validation_required": true,
+        "audio_validation_reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
+      },
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La banque attend 11 h 58 ; la transcription préparée écrit 1 h 58. Écouter le candidat et vérifier la reconnaissance de l’heure avant activation."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7749,11 +7948,10 @@
       "resolved_images": [
         null,
         "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp"
       ],
       "missing_labels": [
-        "De la lessive",
-        "Du shampoing"
+        "De la lessive"
       ],
       "ready_for_source_review": false
     },
@@ -8143,18 +8341,29 @@
           "asset": "bedd7c96f687"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-brosse-dents-pyjama-dessine.webp",
         "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
         "/lib/images/tcf/qcm-audit/bedd7c96f687.webp"
       ],
-      "missing_labels": [
-        "Une brosse à dents et un pyjama"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2p-s2-co-2",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-brosse-dents-pyjama-dessine.webp",
+          "/lib/images/tcf/qcm-audit/b7cd7c8d975f.webp",
+          "/lib/images/tcf/qcm-audit/bedd7c96f687.webp"
+        ],
+        "support_quote": "Salut, c’est Julie !\nJe t’appelle pour te confirmer notre rendez-vous au cinéma ce soir à 18 h 00.\nComme je te l’ai dit, mon père va venir nous chercher en voiture à 21 h 00 après le film et va nous ramener à la maison.\nTu es toujours d’accord pour venir dormir chez moi ?\nSurtout, n’oublie pas ta brosse à dents et ton pyjama !\nAllez, à ce soir !\nBisou !",
+        "current_bank_transcription": "Salut, c’est Julie !\nJe t’appelle pour te confirmer notre rendez-vous au cinéma ce soir à 18 h 00.\nComme je te l’ai dit, mon père va venir nous chercher en voiture à 21 h 00 après le film et va nous ramener à la maison.\nTu es toujours d’accord pour venir dormir chez moi ?\nSurtout, n’oublie pas ta brosse à dents et ton pyjama !\nAllez, à ce soir !\nBisou !",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Les trois réponses composées sont entièrement représentées : brosse à dents et pyjama, maillot et serviette, cahier et stylo."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8535,18 +8744,29 @@
           "asset": "b48c69f2021e"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
         "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
       ],
-      "missing_labels": [
-        "Un t-shirt"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a2-sc-co-1",
+        "question": 16,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+        ],
+        "support_quote": "Les clients qui ont le ticket avec les numéros de 1 à 20 peuvent venir chercher leur cadeau au premier étage. Les autres vont recevoir un t-shirt de notre magasin.",
+        "current_bank_transcription": "Les clients qui ont le ticket avec les numéros de 1 à 20 peuvent venir chercher leur cadeau au premier étage. Les autres vont recevoir un t-shirt de notre magasin.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. T-shirt, casquette et sac entiers, aucun texte ou numéro de ticket ajouté."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8643,7 +8863,11 @@
         "À la mairie",
         "À l’entrée du parking"
       ],
-      "ready_for_source_review": false
+      "ready_for_source_review": false,
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "La bonne réponse actuelle est « À la caisse de la librairie » ; la transcription préparée indique « à l’accueil de la librairie ». Écouter le candidat et vérifier son alignement avant de corriger les choix et d’activer les images."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -8674,7 +8898,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_validation",
       "linked_source_ids": [
         "9782090351958:049:a4431f87ae61",
         "additional-20261102:mdf-a2-abc-junior-direct:49:a4431f87ae61:beafaa4b"
@@ -8688,14 +8912,31 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
         "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
-      "missing_labels": [
-        "Des pâtisseries"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s3-co-3",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "support_quote": "Aujourd'hui dans votre supermarché des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos parfétiaux.",
+        "current_bank_transcription": "Aujourd'hui, dans votre supermarché, des réductions sur les tomates et les carottes.\nVenez vite en profiter.\nFaites aussi un petit tour à l'Oréan boulangerie : Valérie vous fera goûter nos pâtisseries.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trois images relues ensemble sur la planche de contrôle, concept complet, format exact 4:3 et style du commit 48a753d8. L’assiette de trois gâteaux représente des pâtisseries ; fromages et boissons sont distincts. Le sujet visuel est prêt, mais le mot « parfétiaux » du candidat ASR ne permet pas de valider ce produit sans écoute.",
+        "audio_validation_required": true,
+        "audio_validation_reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
+      },
+      "audio_review_issue": {
+        "status": "pending_source_audio_review",
+        "reason": "Le mot correspondant au produit dégusté est transcrit « parfétiaux ». Écouter le candidat pour distinguer pâtisseries, pains spéciaux ou une autre formule avant activation."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -9281,18 +9522,29 @@
           "asset": "a7e10b55e91a"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
-        null,
+        "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
       ],
-      "missing_labels": [
-        "Un bouquet de tulipes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s18-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/40b742b7985d.webp",
+          "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
+        ],
+        "support_quote": "Didier, nous serions pré-contents de vous recevoir à dîner vendredi soir, à save.\nÊtes-vous disponible ?\nMerci beaucoup, avec plaisir.\nÀ quelle heure ?\nEh bien, venez pour 20 heures ?\nEntendu, j'apporterai un gâteau.",
+        "current_bank_transcription": "Didier, nous serions pré-contents de vous recevoir à dîner vendredi soir, à save.\nÊtes-vous disponible ?\nMerci beaucoup, avec plaisir.\nÀ quelle heure ?\nEh bien, venez pour 20 heures ?\nEntendu, j'apporterai un gâteau.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Gâteau, bouquet composé uniquement de tulipes et bouteille de vin ; la source actuelle indique que Didier apportera un gâteau."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10215,12 +10467,11 @@
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
         null,
         "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
       ],
       "missing_labels": [
-        "Une ceinture",
         "Une table"
       ],
       "ready_for_source_review": false
@@ -10434,11 +10685,10 @@
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
-        null,
+        "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
         null
       ],
       "missing_labels": [
-        "Le shampoing",
         "Le déodorant"
       ],
       "ready_for_source_review": false
@@ -10604,7 +10854,7 @@
           "asset": "570857dc2d46"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:43:05f804517f60:e8a8300d"
       ],
@@ -10617,16 +10867,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-horloge-1312-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1213-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1412-dessinee.webp"
       ],
-      "missing_labels": [
-        "13 h 12",
-        "12 h 13",
-        "14 h 12"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1312-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1213-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1412-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s37-co-4",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1312-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1213-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1412-dessinee.webp"
+        ],
+        "support_quote": "Madame Monsieur, bienvenue dans le train numéro 1608 à destination de Paris. Le train partira avec 7 minutes de retard. Il s'arrêtera à la gare d'Orléans à 12h02. Il arrivera à Paris à 13h12. Si vous utilisez votre téléphone portable, nous vous demandons d'aller passer vos appels dans le couloir. La cafétéria se trouve dans le wagon numéro 9. Bon voyage!",
+        "current_bank_transcription": "Madame, monsieur, bienvenue dans le train numéro 1608 à destination de Paris.\nLe train partira avec 7 minutes de retard.\nIl s’arrêtera à la gare d’Orléans à 12 h 02.\nIl arrivera à Paris à 13 h 12.\nSi vous utilisez votre téléphone portable, nous vous demandons d’aller passer vos appels dans le couloir.\nLa cafétéria se trouve dans le wagon numéro 9.\nBon voyage.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La transcription relue appuie la bonne réponse « 13 h 12 »."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -10699,18 +10963,29 @@
           "asset": "a7e10b55e91a"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
       ],
-      "missing_labels": [
-        "Un bouquet de tulipes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s39-co-3",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-bouquet-tulipes-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp"
+        ],
+        "support_quote": "Bonjour, madame Duma, je suis désolé pour mon retard.\nBonjour, monsieur Leclerc, entré, je vais prendre votre manteau et votre écharpe.\nMerci beaucoup, voici un petit cadeau pour vous.\nOh, c'est très gentil, mais il ne fallait pas.\nSi, si, c'est tout naturel.\nMerci, ce bouquet de tulip est superbe, je vais le mettre dans un vase.\nMais, venez au salon.\nNous allons prendre la péritif avant de passer à table.",
+        "current_bank_transcription": "Bonjour, madame Duma, je suis désolé pour mon retard.\nBonjour, monsieur Leclerc, entré, je vais prendre votre manteau et votre écharpe.\nMerci beaucoup, voici un petit cadeau pour vous.\nOh, c'est très gentil, mais il ne fallait pas.\nSi, si, c'est tout naturel.\nMerci, ce bouquet de tulip est superbe, je vais le mettre dans un vase.\nMais, venez au salon.\nNous allons prendre la péritif avant de passer à table.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Bouquet de tulipes, boîte de chocolats et bouteille de vin ; les fleurs sont exclusivement des tulipes, confirmées par la transcription actuelle."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11002,18 +11277,29 @@
           "asset": "b48c69f2021e"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
         "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
       ],
-      "missing_labels": [
-        "Une ceinture"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s43-co-3",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
+          "/lib/images/tcf/qcm-audit/b48c69f2021e.webp"
+        ],
+        "support_quote": "Bonjour, je vous appelle pour l'atelier de fabrication de centure.\nJe voudrais savoir comment ça marche.\nBonjour, monsieur.\nAlors, c'est un atelier de trois heures, tous les samedis de décembre.\nPendant cet atelier, je vous explique comment on fabrique une cinture en cuire.\nOn fait une cinture ensemble et à la fin, vous pouvez la garder.\nEt c'est 80 euros, c'est ça ?\nAbsolument, matériel compris.\nD'accord, je peux m'inscrire pour samedi prochain ?\nOui, il reste des places.",
+        "current_bank_transcription": "Bonjour, je vous appelle pour l'atelier de fabrication de centure.\nJe voudrais savoir comment ça marche.\nBonjour, monsieur.\nAlors, c'est un atelier de trois heures, tous les samedis de décembre.\nPendant cet atelier, je vous explique comment on fabrique une cinture en cuire.\nOn fait une cinture ensemble et à la fin, vous pouvez la garder.\nEt c'est 80 euros, c'est ça ?\nAbsolument, matériel compris.\nD'accord, je peux m'inscrire pour samedi prochain ?\nOui, il reste des places.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Ceinture de cuir, portefeuille et sac, trois objets distincts ; la transcription actuelle décrit la fabrication d’une ceinture en cuir."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11176,18 +11462,29 @@
           "asset": "140c3c1e3bdd"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
-        null,
+        "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp"
       ],
-      "missing_labels": [
-        "Le shampoing"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s45-co-2",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp"
+        ],
+        "support_quote": "Thomas !\nJe n'arrive pas à trouver le savon !\nOh !\nIl est entre le savon de Marseille et ma mou s'arrasé !\nEt le déo !\nIl est où ?\nJe vois seulement mon parfum !\nJe l'ai vu dans le maquillage avec ton mascarat !\nEt le dentifrice ?",
+        "current_bank_transcription": "Thomas !\nJe n'arrive pas à trouver le savon !\nOh !\nIl est entre le savon de Marseille et ma mou s'arrasé !\nEt le déo !\nIl est où ?\nJe vois seulement mon parfum !\nJe l'ai vu dans le maquillage avec ton mascarat !\nEt le dentifrice ?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Savon seul, shampoing avec pictogramme de cheveux et crème solaire avec soleil, trois produits distincts ; la première recherche porte sur le savon."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11685,7 +11982,7 @@
           "asset": "abcdf94a20cb"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "additional-20261102:mdf-a2-abc-direct:44:23e1b96ebf0c:6ffe99e4"
       ],
@@ -11699,14 +11996,29 @@
       ],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp",
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-horloge-1220-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1302-dessinee.webp"
       ],
-      "missing_labels": [
-        "À 12 h 20",
-        "À 13 h 02"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1220-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1302-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s55-co-3",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1202-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1220-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1302-dessinee.webp"
+        ],
+        "support_quote": "Madame Monsieur, vous êtes arrivés à la gare de Montpellier. Avant de descendre du train, vérifiez que vous n'avez rien oublié. Nous vous conseillons de regarder sous votre siège. Si vous allez à Perpignan, vous devez prendre le train numéro 468. Il partira à 12h02. Il se trouve au quai numéro 7. Si vous prenez un autre train, vous pouvez regarder les horaires sur le panneau d'affichage de la gare.",
+        "current_bank_transcription": "Madame, monsieur, vous êtes arrivé(e) à la gare de Montpellier.\nAvant de descendre du train, vérifiez que vous n’avez rien oublié.\nNous vous conseillons de regarder sous votre siège.\nSi vous allez à Perpignan, vous devez prendre le train numéro 468.\nIl partira à 12 h 02.\nIl se trouve au quai numéro 7.\nSi vous prenez un autre train, vous pouvez regarder les horaires sur le panneau d’affichage de la gare.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La transcription relue appuie la bonne réponse « À 12 h 02 »."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -11781,18 +12093,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
         "/lib/images/tcf/qcm-audit/f9e55937da20.webp",
         "/lib/images/tcf/qcm-audit/co834-bottes-pluie-dessinees.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
       ],
-      "missing_labels": [
-        "Des sandales"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a2-s59-co-1",
+        "question": 6,
+        "images": [
+          "/lib/images/tcf/qcm-audit/f9e55937da20.webp",
+          "/lib/images/tcf/qcm-audit/co834-bottes-pluie-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
+        ],
+        "support_quote": "Sonia, j'ai besoin d'aide, demain je commence mon nouveau poste, et je ne sais pas qu'elle vêtement maître.\nNe t'inquiète pas, Adrien, habite-toi de façon classique, avec une chemise blanche ou bleue, un pantalon droit et des chaussures de ville.",
+        "current_bank_transcription": "Sonia, j'ai besoin d'aide, demain je commence mon nouveau poste, et je ne sais pas qu'elle vêtement maître.\nNe t'inquiète pas, Adrien, habite-toi de façon classique, avec une chemise blanche ou bleue, un pantalon droit et des chaussures de ville.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Les trois réponses ont été relues ensemble sur la planche du lot 2 : concepts complets, images distinctes, style du commit 48a753d8 et format exact 4:3. Trois paires distinctes : chaussures de ville fermées, bottes de pluie et sandales ouvertes ; la source conseille des chaussures de ville."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -12527,12 +12850,11 @@
       ],
       "resolved_images": [
         null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-journaux-dessine.webp",
         null
       ],
       "missing_labels": [
         "Des films",
-        "Des journaux",
         "Des repas"
       ],
       "ready_for_source_review": false
@@ -13118,12 +13440,11 @@
         }
       ],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
         null,
         null
       ],
       "missing_labels": [
-        "La ceinture",
         "Le casque",
         "Les bagages"
       ],
@@ -13158,7 +13479,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:003:2505cafdfeda"
       ],
@@ -13171,15 +13492,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
+        "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
         "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
       ],
-      "missing_labels": [
-        "9 h 10",
-        "12 h 07"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-03",
+        "question": 3,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+        ],
+        "support_quote": "Voie 5 Le train Thalys numéro 62911 pour Bruxelles partira à 9h10",
+        "current_bank_transcription": "Voie 5, le train Thalys n° 6291 pour Bruxelles partira à 9 h 10.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La transcription relue appuie la bonne réponse « 9 h 10 »."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -13210,7 +13546,7 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a2_2021:003:2505cafdfeda"
       ],
@@ -13223,16 +13559,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1045-dessinee.webp"
       ],
-      "missing_labels": [
-        "12 h 07",
-        "9 h 10",
-        "10 h 45"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-horloge-1045-dessinee.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a2-2021-co-ex1-03",
+        "question": 7,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-horloge-1207-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-0910-dessinee.webp",
+          "/lib/images/tcf/qcm-audit/co306-horloge-1045-dessinee.webp"
+        ],
+        "support_quote": "Le TGV 7829 entrera en gare de Marseille, voie 7. Arrivée prévue, 12h07.",
+        "current_bank_transcription": "Le TGV 7829 entrera en gare de Marseille voie 7. Arrivée prévue : 12 h 07.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Les trois images d’horloge ont été relues individuellement puis ensemble : heures et minutes exactes, trois choix distincts, 4:3 et style du commit 48a753d8. La transcription relue appuie la bonne réponse « 12 h 07 »."
+      }
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
