@@ -15,11 +15,11 @@
   ],
   "summary": {
     "initial_question_candidates": 306,
-    "questions_illustrated_or_prepared": 106,
-    "newly_activated": 32,
-    "prepared_pending_audio_link": 70,
+    "questions_illustrated_or_prepared": 114,
+    "newly_activated": 38,
+    "prepared_pending_audio_link": 72,
     "prepared_pending_audio_validation": 4,
-    "remaining_questions_requiring_images_or_review": 200,
+    "remaining_questions_requiring_images_or_review": 192,
     "unreviewed_complete_trios": 0,
     "audio_references_next_stage": 432,
     "vocabulary_occurrences_final_stage": 1906
@@ -108,7 +108,7 @@
           "asset": "80f2e4138d02"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:065:07efb5a82e80",
         "additional-20261102:mdf-a1-abc-junior:65:07efb5a82e80:e5c873a3"
@@ -122,16 +122,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp"
       ],
-      "missing_labels": [
-        "Au restaurant du musée",
-        "À la cafétéria de la gare",
-        "Au restaurant du parc"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1j-s3-co-2",
+        "question": 4,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp"
+        ],
+        "support_quote": "Bonjour à tous. La visite du musée commence à 1h. Vous devez laisser vos sacs à l'entrée et attendre la guide devant la salle 12. Après la visite, vous pouvez manger au restaurant du musée au premier étage et acheter le livre du musée à la boutique à côté de la sortie.",
+        "current_bank_transcription": "Bonjour à tous.\nLa visite du musée commence à 11 heures.\nVous devez laisser vos sacs à l'entrée et attendre la guide devant la salle 12.\nAprès la visite, vous pouvez manger au restaurant du musée au premier étage et acheter le livre du musée à la boutique à côté de la sortie.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restaurant dans le musée, cafétéria dans la gare et restaurant dans un parc : les trois contextes sont réellement visibles, avec les tables de restauration."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -162,7 +176,7 @@
           "asset": "a3e05ed537e8"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:088:4931a05f81cc"
       ],
@@ -175,16 +189,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
       ],
-      "missing_labels": [
-        "Dans un restaurant près de son hôtel",
-        "Dans le restaurant de son entreprise",
-        "Dans un café près de la gare"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1-s1-co-1",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
+        ],
+        "support_quote": "Bonjour, chère cousine. C'est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19h. Je t'invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17h, si tu es d'accord, et je réserve une table pour 20h. Bisous!",
+        "current_bank_transcription": "et preuve blanche 1, compréhension de l'oral.\nVous allez écouter plusieurs documents, il y a deux écoutes, avant chaque écoute, vous entendez le son suivant, exercice 1, lisez les questions, écoutez le document, puis répondez.\nBonjour, cher cousin, c'est Gilles, je suis dans ta ville pour mon travail avec mon directeur.\nOn peut se voir demain après 19h, je t'invite dans un petit restaurant sympa près de mon hôtel.\nEnvoie-moi un texto avant 17h, situé d'accord, et je réserve une table pour 20h.\nBisou, bonjour, cher cousin, c'est Gilles, je suis dans ta ville pour mon travail avec mon directeur.\nOn peut se voir demain après 19h, je t'invite dans un petit restaurant sympa près de mon hôtel.\nEnvoie-moi un texto avant 17h, situé d'accord, et je réserve une table pour 20h.\nBisou !",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restaurant voisin d’un hôtel, restaurant d’entreprise et café proche d’une gare : deux bâtiments séparés établissent les proximités. Le restaurant d’entreprise existant est relu et réutilisé."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -597,7 +625,7 @@
           "asset": "a6a917953b36"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:004:a8ddb5bf8bde"
       ],
@@ -610,16 +638,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp"
       ],
-      "missing_labels": [
-        "Le restaurant de l’université",
-        "Le restaurant de la gare",
-        "Le restaurant de l’hôtel"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1-tpa-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp"
+        ],
+        "support_quote": "Je n'aime pas le restaurant de l'université. Où est-ce que tu manges alors? Je préfère me préparer mes repas.",
+        "current_bank_transcription": "Je n'aime pas le restaurant de l'université.\nOù est-ce que tu manges alors ?\nJe préfère me préparer mes repas.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restauration universitaire sur campus, restauration dans la gare et restaurant dans l’hôtel : trois établissements distincts. La cafétéria de gare représente bien ici la catégorie générale restaurant de gare."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -769,7 +811,7 @@
           "asset": "e1b23bf8a5a6"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:009:ab20da57a3f8"
       ],
@@ -782,16 +824,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp"
       ],
-      "missing_labels": [
-        "La piscine de l’université",
-        "La bibliothèque de l’université",
-        "La cantine de l’université"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-a1-tpb-co-4",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp"
+        ],
+        "support_quote": "Excuse moi, j'ai cours de sport. Je cherche la piscine de l'université. Où est-ce qu'elle est? Derrière toi. Regarde. Oh merci.",
+        "current_bank_transcription": "Excuse-moi, j'ai cours de sport.\nJe cherche la piscine de l'université.\nOù est-ce qu'elle est ?\nDerrière toi, regarde.\nOh, merci.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Piscine, bibliothèque et cantine avec contexte universitaire visible dans les trois images ; la cantine utilise la scène de restauration universitaire en libre-service."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -866,20 +922,29 @@
           "asset": "a65d7fbb8151"
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ],
-      "missing_labels": [
-        "Au restaurant de l’entreprise",
-        "Au restaurant du musée",
-        "Au restaurant de la gare"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-a1-sem1-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+        ],
+        "support_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?",
+        "current_bank_transcription": "Le midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restauration d’entreprise déjà disponible réutilisée, restaurant du musée et restauration de gare ; aucun effacement des qualificatifs des lieux."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -2987,19 +3052,29 @@
           "asset": null
         }
       ],
-      "status": "pending_images",
+      "status": "images_prepared_pending_audio_link",
       "linked_source_ids": [],
       "source_links": [],
       "resolved_images": [
-        null,
+        "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
-        null
+        "/lib/images/tcf/qcm-audit/co306-tentes-camping-dessine.webp"
       ],
-      "missing_labels": [
-        "Au restaurant du camping",
-        "Dans les tentes"
-      ],
-      "ready_for_source_review": false
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s34-co-1",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-tentes-camping-dessine.webp"
+        ],
+        "support_quote": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "current_bank_transcription": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restaurant au milieu des emplacements de camping, piscine et intérieur des tentes : trois lieux distincts. Piscine existante relue et réutilisée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -5817,7 +5892,7 @@
           "asset": "916d6573cd97"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:096:c780e82fd1ad"
       ],
@@ -5830,16 +5905,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ],
-      "missing_labels": [
-        "Le restaurant de l'université",
-        "Le restaurant de l'hôtel",
-        "Le restaurant de la gare"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+        ],
+        "support_quote": "Tous les jours, il y a de la viande au restaurant de l'université. C'est vrai. Tu n'aimes pas la viande? Non. Je ne mange pas de viande. Je vais sortir pour manger dehors.",
+        "current_bank_transcription": "- Tous les jours, il y a de la viande au restaurant de l'université.\n- C'est vrai.\nTu n'aimes pas la viande ?\n- Non, je ne mange pas de viande.\nJe vais sortir pour manger dehors.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Même trio université/hôtel/gare réutilisé dans l’ordre propre à cette question, en conservant les identifiants et le corrigé."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -7785,7 +7874,7 @@
           "asset": "916d6573cd97"
         }
       ],
-      "status": "pending_images",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:096:c780e82fd1ad"
       ],
@@ -7798,16 +7887,30 @@
         }
       ],
       "resolved_images": [
-        null,
-        null,
-        null
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ],
-      "missing_labels": [
-        "Le restaurant de l'université",
-        "Le restaurant de l'hôtel",
-        "Le restaurant de la gare"
+      "missing_labels": [],
+      "ready_for_source_review": true,
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ],
-      "ready_for_source_review": false
+      "editorial_review": {
+        "exercise": "delf-a1-2022-co-96",
+        "question": 5,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+        ],
+        "support_quote": "Tous les jours, il y a de la viande au restaurant de l'université. C'est vrai. Tu n'aimes pas la viande? Non. Je ne mange pas de viande. Je vais sortir pour manger dehors.",
+        "current_bank_transcription": "– Tous les jours, il y a de la viande au restaurant de l’université. – C’est vrai. Tu n’aimes pas la viande ? – Non, je ne mange pas de viande. Je vais sortir pour manger dehors.",
+        "support_basis": "prepared_replacement_transcription",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Même trio université/hôtel/gare réutilisé, images réellement qualifiées par leur environnement et aucune modification du corrigé."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",

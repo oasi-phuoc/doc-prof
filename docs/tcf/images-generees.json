@@ -17244,6 +17244,453 @@
       "bytes": 48352,
       "domain": "co",
       "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-musee-dessine",
+      "label": "Au restaurant du musée",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Intérieur d’un restaurant situé DANS un musée : tables à manger avec nappes et assiettes vides au premier plan, petit comptoir de restaurant ; une grande ouverture au fond mène directement à une galerie contenant des tableaux encadrés et une sculpture sur socle. Petite plaque MUSÉE au-dessus de cette ouverture. Aucun train, bâtiment d’hôtel ou parc dominant.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1j-s3-co-2",
+          "question": 4,
+          "choice": "a",
+          "label": "Au restaurant du musée",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        },
+        {
+          "exercise": "tcf-a1-sem1-co-2",
+          "question": 1,
+          "choice": "b",
+          "label": "Au restaurant du musée",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-a3ac3fb7-1ce7-48c9-acdc-f18e52593385.png",
+      "status": "visually_reviewed",
+      "review_note": "Restaurant avec galerie de tableaux et sculpture accessible dans le même bâtiment ; enseigne MUSÉE relue, pas de montant. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant avec galerie de tableaux et sculpture accessible dans le même bâtiment ; enseigne MUSÉE relue, pas de montant."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "d4a9028bc5f1a5cbdd9f6d7f49aa78fd520fab5eb2a33226b7201a67151d9c3f",
+      "sha256": "aa4de3bbdbf232cf8681c51f7f6cd0d799e563e4b25152c07917282bb6061ba2",
+      "bytes": 167266,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cafeteria-gare-dessine",
+      "label": "À la cafétéria de la gare",
+      "path": "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Intérieur d’une cafétéria DANS une gare : tables simples, chaises, plateaux et comptoir de libre-service sans prix. De grandes baies vitrées donnent directement sur les quais et deux trains arrêtés, portes de gare proches. Petit panneau GARE intégré au fond, sans horaires, numéro de voie ou horloge.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1j-s3-co-2",
+          "question": 4,
+          "choice": "b",
+          "label": "À la cafétéria de la gare",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-8bbcec03-24ad-49b2-88a8-82f0f070779b.png",
+      "status": "visually_reviewed",
+      "review_note": "Cafétéria avec comptoir de libre-service, plateaux et trains vus directement sur les quais ; enseigne GARE relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Cafétéria avec comptoir de libre-service, plateaux et trains vus directement sur les quais ; enseigne GARE relue."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "f78c68f52e8362d07c46fb5ebdc4a58159b23a6c5d4c6a767607e72bb616d9d7",
+      "sha256": "df104e95f880b640756482dadcdcdc76f54321ad6e78c33cd1345cae77313ffe",
+      "bytes": 249624,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-parc-dessine",
+      "label": "Au restaurant du parc",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Petit restaurant dans un parc public verdoyant : bâtiment bas avec comptoir et grande terrasse de tables à manger sous auvent, de tous côtés des allées de parc, massifs et arbres, bancs au loin. Pas de parking dominant, train, hôtel ou musée. Aucun mot nécessaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1j-s3-co-2",
+          "question": 4,
+          "choice": "c",
+          "label": "Au restaurant du parc",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-163a577b-495b-418a-8698-d080ac9e1043.png",
+      "status": "visually_reviewed",
+      "review_note": "Restaurant avec terrasse ouvert sur les allées, arbres et bancs d’un parc ; contexte de parc public visible. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant avec terrasse ouvert sur les allées, arbres et bancs d’un parc ; contexte de parc public visible."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "234a58f2f99f70d47f54f22b4fcf18fb9f529b47a05cee8a06907269aff254f9",
+      "sha256": "2772437ca964e311ba6221a0fb880540539fa0a1e3e27a881df9b195f6910c74",
+      "bytes": 379412,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-universite-dessine",
+      "label": "Le restaurant de l’université",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Cantine universitaire dans un campus : salle de restauration à grandes tables simples, plateaux et comptoir de libre-service, grandes fenêtres donnant sur une cour universitaire et un bâtiment de cours avec une petite enseigne UNIVERSITÉ. Une porte vitrée montre aussi quelques casiers et une salle de cours au-delà. Aucun train ou hôtel, pas de prix ou affichage de menu.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-tpa-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "Le restaurant de l’université",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-49e120ac-ceee-4bd8-b93c-955cfc19a144.png",
+      "status": "visually_reviewed",
+      "review_note": "Cantine de campus avec tables, plateaux et libre-service, bâtiment UNIVERSITÉ et salle de cours visibles ; enseigne relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Cantine de campus avec tables, plateaux et libre-service, bâtiment UNIVERSITÉ et salle de cours visibles ; enseigne relue."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "aa71310821a7e67a3945702f07470f71feb62b7ef9cc06fdcc69549bb7810d7b",
+      "sha256": "bff5b151cce44ab58d77ad0f0880a39776fdf1ad6736b6b34725a2f0e9dc90f0",
+      "bytes": 236308,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-hotel-dessine",
+      "label": "Le restaurant de l’hôtel",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Salle de restaurant intégrée au rez-de-chaussée d’un hôtel : tables à nappes et chaises de restaurant, grande ouverture vers le hall du MÊME BÂTIMENT avec comptoir de réception, rangée de clés et chariot à bagages, petite enseigne HÔTEL au fond. On doit comprendre que restaurant et réception sont dans le même établissement. Aucun musée, parc ou train.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-tpa-co-4",
+          "question": 1,
+          "choice": "c",
+          "label": "Le restaurant de l’hôtel",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-e5db95e4-c739-4575-82c2-8f4946a6f78d.png",
+      "status": "visually_reviewed",
+      "review_note": "Restaurant ouvrant sur la réception et le chariot à bagages du même hôtel ; enseigne HÔTEL relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant ouvrant sur la réception et le chariot à bagages du même hôtel ; enseigne HÔTEL relue."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "1444299d5c91ea8888a3e49e08c65ef88a55b8e1d90bf462feef9389bd0e4550",
+      "sha256": "f2279348c1c5a4921800206b92698f946456533c5510d2a1f38c52165490330f",
+      "bytes": 221336,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-camping-dessine",
+      "label": "Au restaurant du camping",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Restaurant ouvert d’un camping : terrasse de tables et chaises devant un petit bâtiment en bois à comptoir de service, des emplacements de camping avec plusieurs tentes et un camping-car visibles à proximité, quelques arbres et allées de gravier. Petite enseigne CAMPING sur le bâtiment. Aucun repas dressé au premier plan, pas de piscine ou plage.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s34-co-1",
+          "question": 2,
+          "choice": "a",
+          "label": "Au restaurant du camping",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-eba3cd1b-1908-4287-ae89-d1fbe8ffadaf.png",
+      "status": "visually_reviewed",
+      "review_note": "Restaurant de camping avec tentes et camping-car proches ; enseigne CAMPING relue et aucun prix. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant de camping avec tentes et camping-car proches ; enseigne CAMPING relue et aucun prix."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "0f757597950edda048529f988db8cdddabdab99bddc5432b971282baea6472eb",
+      "sha256": "2a44959629732d54c406287cfe10f9886d58bf71bda3e097479bd1be3b77f956",
+      "bytes": 399544,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-restaurant-pres-hotel-dessine",
+      "label": "Dans un restaurant près de son hôtel",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Vue de rue montrant DEUX ÉTABLISSEMENTS SÉPARÉS l’un près de l’autre : à gauche un hôtel avec sa porte d’entrée et petite enseigne HÔTEL ; à droite un petit restaurant avec sa propre porte et terrasse de tables à manger. Les façades et portes distinctes, trottoir continu et séparation entre bâtiments rendent la proximité claire. Le restaurant ne doit pas apparaître à l’intérieur de l’hôtel. Aucun train ou parc.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-s1-co-1",
+          "question": 5,
+          "choice": "a",
+          "label": "Dans un restaurant près de son hôtel",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-92064200-915f-4b4f-ace4-020d6645f0ff.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux établissements à portes distinctes sur le même trottoir : hôtel et restaurant voisin. Relation de proximité visible, pas un restaurant montré dans le hall. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Deux établissements à portes distinctes sur le même trottoir : hôtel et restaurant voisin. Relation de proximité visible, pas un restaurant montré dans le hall."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "17d9f6a605423dccf61d6c633b90facabc132bda8303fd6d993927c6bdb560f4",
+      "sha256": "6be6888701d6d19cd4ed444ba8958cf05fc827d4a2d94af4d28c3ca22e050584",
+      "bytes": 312422,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-cafe-pres-gare-dessine",
+      "label": "Dans un café près de la gare",
+      "path": "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Vue de rue montrant un petit café de quartier au premier plan avec terrasse de tables et tasses, porte séparée. Juste à côté, de l’autre côté d’une petite placette, l’entrée d’une gare avec enseigne GARE et un train visible derrière les grandes vitres. Deux établissements proches mais distincts ; le café est dehors et non dans le hall de la gare. Pas d’hôtel, prix, horaires ou horloge.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-s1-co-1",
+          "question": 5,
+          "choice": "c",
+          "label": "Dans un café près de la gare",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-a068ae52-91cc-441c-8976-ada66ad70e87.png",
+      "status": "visually_reviewed",
+      "review_note": "Café à terrasse et gare à train visible séparés par une placette ; relation de proximité et deux bâtiments distincts. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Café à terrasse et gare à train visible séparés par une placette ; relation de proximité et deux bâtiments distincts."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "ab826d403886c3c6aacf7aed6a5bd81cd16740988aea939efa0e1a1fd6ebfaaf",
+      "sha256": "cb05d12edd6da2cbc7574a491ddbd7ad2b73daac337b5feac37de17cc1bcbcbe",
+      "bytes": 375742,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-piscine-universite-dessine",
+      "label": "La piscine de l’université",
+      "path": "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Piscine couverte d’un campus universitaire : grand bassin avec lignes d’eau et échelles, baies vitrées donnant sur une cour et bâtiment de cours où une petite enseigne UNIVERSITÉ est visible. Architecture de campus cohérente, aucun restaurant ou rayonnage de livres. Bassin vide de personnes, pas de numéro ou panneau horaire.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-tpb-co-4",
+          "question": 1,
+          "choice": "a",
+          "label": "La piscine de l’université",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-80553064-9e89-453d-9038-76d877397c9c.png",
+      "status": "visually_reviewed",
+      "review_note": "Bassin et lignes d’eau sur un campus, bâtiment UNIVERSITÉ visible ; aucun personnage ou horaire. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Bassin et lignes d’eau sur un campus, bâtiment UNIVERSITÉ visible ; aucun personnage ou horaire."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "c432631ac714a8109cd915c42b80fd94177dfb07dc5d2197ae1c70ff6cb1b0e5",
+      "sha256": "c5be0a883cbd620c24e83fc8b3372a489e12c8f14c09fbeedc6a695643399700",
+      "bytes": 332574,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-bibliotheque-universite-dessine",
+      "label": "La bibliothèque de l’université",
+      "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Bibliothèque de campus universitaire : rayonnages de livres sans titres lisibles, tables d’étude et lampes, baies vitrées donnant sur une cour et bâtiment de cours où une petite enseigne UNIVERSITÉ est visible. Aucun bassin ou comptoir de nourriture. Salle vide de personnes, lecture clairement identifiable.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-a1-tpb-co-4",
+          "question": 1,
+          "choice": "b",
+          "label": "La bibliothèque de l’université",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-54e948b8-b205-4f80-8187-fdf8944666f7.png",
+      "status": "visually_reviewed",
+      "review_note": "Rayonnages et tables d’étude sur un campus, bâtiment UNIVERSITÉ visible ; aucun titre parasite lisible. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Rayonnages et tables d’étude sur un campus, bâtiment UNIVERSITÉ visible ; aucun titre parasite lisible."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "49659c0e89b7328a42b8754ecc6595146ac3c68db48ca54c4e4602c76328cf8a",
+      "sha256": "ffaa8a1f1ea5cf59596a0d3d1a79ec62817d9ff0b29179553b9d31adf0db3946",
+      "bytes": 257908,
+      "domain": "co",
+      "batch": "active-audios-834"
+    },
+    {
+      "id": "co306-tentes-camping-dessine",
+      "label": "Dans les tentes",
+      "path": "/lib/images/tcf/qcm-audit/co306-tentes-camping-dessine.webp",
+      "prompt": "FORMAT PAYSAGE EXACT 4:3, 1448 de large par 1086 de haut. Illustration numérique DESSINÉE ET PEINTE semi-réaliste de la collection validée 48a753d8 : formes modelées doucement, contours fins et discrets, matières peintes détaillées et couleurs naturelles chaudes. Pas de photo, de 3D ou de gros traits noirs. Scène lisible avec ses éléments utiles entiers, marge et perspective cohérente. Sans personnes. Aucun nombre, montant, prix, date, jour ou mois. Seulement les petits mots explicitement demandés intégrés à des enseignes réelles de la scène, aucun texte superposé ou autre inscription. Deux tentes de camping montées dans un emplacement herbeux au bord d’arbres, vue assez proche pour voir à travers leurs entrées ouvertes un tapis de sol et sacs de couchage à l’INTÉRIEUR. Tentes entières et espace intérieur lisible, aucun restaurant, table, piscine ou caravane. Aucun texte.",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "references": [
+        {
+          "exercise": "tcf-ss-a1-s34-co-1",
+          "question": 2,
+          "choice": "c",
+          "label": "Dans les tentes",
+          "bank": "src/tcf/content/a0-a1/co.json"
+        }
+      ],
+      "source_png": "/workspace/generated_images/exec-304c2404-4cac-427a-a217-3ba384850be2.png",
+      "status": "visually_reviewed",
+      "review_note": "Deux tentes entières ouvertes montrant leurs tapis et sacs de couchage à l’intérieur ; réponse dans les tentes représentée. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+        ],
+        "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Deux tentes entières ouvertes montrant leurs tapis et sacs de couchage à l’intérieur ; réponse dans les tentes représentée."
+      },
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "source_sha256": "cd9bdb1cfb2ba719742dd0aa3e8cb62cd62eb782c0527bec759bbecf70b9abe4",
+      "sha256": "66da1e60226a761960a5ce589d33bdbfee038ad718e3d92c1323d06fe2c2eecc",
+      "bytes": 301740,
+      "domain": "co",
+      "batch": "active-audios-834"
     }
   ],
   "activated_questions": [
@@ -21035,6 +21482,127 @@
       ],
       "source_ids": [
         "delf_a1_2022:086:c9d1659a97e4"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s3-co-2",
+      "question": 4,
+      "enonce": "Où peut-on manger après la visite ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restaurant dans le musée, cafétéria dans la gare et restaurant dans un parc : les trois contextes sont réellement visibles, avec les tables de restauration. Transcription relue : Bonjour à tous. La visite du musée commence à 1h. Vous devez laisser vos sacs à l'entrée et attendre la guide devant la salle 12. Après la visite, vous pouvez manger au restaurant du musée au premier étage et acheter le livre du musée à la boutique à côté de la sortie.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/loisirs/au-musee.mp3"
+      ],
+      "source_ids": [
+        "09035276:065:07efb5a82e80",
+        "additional-20261102:mdf-a1-abc-junior:65:07efb5a82e80:e5c873a3"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-1",
+      "question": 5,
+      "enonce": "Où Gilles propose-t-il de manger ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restaurant voisin d’un hôtel, restaurant d’entreprise et café proche d’une gare : deux bâtiments séparés établissent les proximités. Le restaurant d’entreprise existant est relu et réutilisé. Transcription relue : Bonjour, chère cousine. C'est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19h. Je t'invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17h, si tu es d'accord, et je réserve une table pour 20h. Bisous!",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/vie-quotidienne/le-rendez-vous.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:088:4931a05f81cc"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-4",
+      "question": 1,
+      "enonce": "Quel restaurant la personne n’aime-t-elle pas ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restauration universitaire sur campus, restauration dans la gare et restaurant dans l’hôtel : trois établissements distincts. La cafétéria de gare représente bien ici la catégorie générale restaurant de gare. Transcription relue : Je n'aime pas le restaurant de l'université. Où est-ce que tu manges alors? Je préfère me préparer mes repas.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3"
+      ],
+      "source_ids": [
+        "piste_a1:004:a8ddb5bf8bde"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpb-co-4",
+      "question": 1,
+      "enonce": "Quel lieu la personne cherche-t-elle ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Piscine, bibliothèque et cantine avec contexte universitaire visible dans les trois images ; la cantine utilise la scène de restauration universitaire en libre-service. Transcription relue : Excuse moi, j'ai cours de sport. Je cherche la piscine de l'université. Où est-ce qu'elle est? Derrière toi. Regarde. Oh merci.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/ecole/45-école-chercher-où-est-la-piscine.mp3"
+      ],
+      "source_ids": [
+        "piste_a1:009:ab20da57a3f8"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4",
+      "question": 2,
+      "enonce": "Dans quel restaurant cet aliment est-il servi ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Même trio université/hôtel/gare réutilisé dans l’ordre propre à cette question, en conservant les identifiants et le corrigé. Transcription relue : Tous les jours, il y a de la viande au restaurant de l'université. C'est vrai. Tu n'aimes pas la viande? Non. Je ne mange pas de viande. Je vais sortir pour manger dehors.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/ecole/22-école-menu-viande-au-restaurant.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:096:c780e82fd1ad"
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-96",
+      "question": 5,
+      "enonce": "Dans quel restaurant cet aliment est-il servi ?",
+      "images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+      ],
+      "source_batch": "active-audios-834",
+      "status": "active_after_visual_review",
+      "source_support_review": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Même trio université/hôtel/gare réutilisé, images réellement qualifiées par leur environnement et aucune modification du corrigé. Transcription relue : Tous les jours, il y a de la viande au restaurant de l'université. C'est vrai. Tu n'aimes pas la viande? Non. Je ne mange pas de viande. Je vais sortir pour manger dehors.",
+      "source_old_refs": [
+        "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-2.mp3"
+      ],
+      "source_ids": [
+        "delf_a1_2022:096:c780e82fd1ad"
       ]
     }
   ],

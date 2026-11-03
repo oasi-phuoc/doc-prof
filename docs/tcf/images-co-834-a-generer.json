@@ -31,20 +31,20 @@
     "received_source_entries": 836,
     "copyright_removed": 2,
     "planned_question_candidates": 423,
-    "activated_planned_questions": 149,
-    "pending_question_candidates": 274,
+    "activated_planned_questions": 155,
+    "pending_question_candidates": 268,
     "original_missing_concepts": 741,
-    "original_concepts_now_generated_or_reused": 333,
-    "remaining_original_concepts": 408,
-    "new_co_images_this_batch": 449,
+    "original_concepts_now_generated_or_reused": 348,
+    "remaining_original_concepts": 393,
+    "new_co_images_this_batch": 460,
     "activated_association_scenes_this_batch": 13,
     "pending_association_scenes": 0,
-    "sources_with_pending_question_candidates": 133,
-    "sources_with_new_active_question_or_scene": 149,
+    "sources_with_pending_question_candidates": 127,
+    "sources_with_new_active_question_or_scene": 154,
     "sources_without_current_bank_reference": 234,
     "remaining_audio_references_to_match": 432,
     "co_images_needing_style_correction": 0,
-    "co_images_style_aligned": 449,
+    "co_images_style_aligned": 460,
     "co_style_redraws_completed": 11
   },
   "instructions": [
@@ -1394,17 +1394,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/au-musee.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1j-s3-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -3465,17 +3465,17 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_88.mp3",
         "/lib/audio/tcf/co/vie-quotidienne/le-rendez-vous.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-s1-co-1",
           "question": 5
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 17,
-      "current_linked_image_variants": 3,
+      "current_linked_image_variants": 4,
       "complete_image_audit_certified": false
     },
     {
@@ -3680,21 +3680,16 @@
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-3.mp3",
         "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
-        {
-          "exercise": "tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4",
-          "question": 2
-        },
-        {
-          "exercise": "delf-a1-2022-co-96",
-          "question": 5
-        }
-      ],
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
       "new_active_visual_questions": [
         {
           "exercise": "tcf-ssx-a1-ecole-stylo-vert-co-4",
           "question": 1
+        },
+        {
+          "exercise": "tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4",
+          "question": 2
         },
         {
           "exercise": "tcf-ssx-a1-ecole-viande-au-restaurant-u-co-4",
@@ -3706,12 +3701,16 @@
         },
         {
           "exercise": "delf-a1-2022-co-96",
+          "question": 5
+        },
+        {
+          "exercise": "delf-a1-2022-co-96",
           "question": 6
         }
       ],
       "new_active_association_scenes": [],
       "current_linked_questions": 28,
-      "current_linked_image_variants": 8,
+      "current_linked_image_variants": 10,
       "complete_image_audit_certified": false
     },
     {
@@ -3890,17 +3889,17 @@
         "/lib/audio/tcf/co/ecole/les-etudes-2-3.mp3",
         "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-tpa-co-4",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 10,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -3995,17 +3994,17 @@
         "/lib/audio/tcf/co/ecole/46-école-rendez-vous-professeur-de-français.mp3",
         "/lib/audio/tcf/co/ecole/48-école-venir-au-tableau.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1-tpb-co-4",
           "question": 1
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 12,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -9906,17 +9905,17 @@
       "old_refs": [
         "/lib/audio/tcf/co/loisirs/au-musee.mp3"
       ],
-      "status": "pending_visual_questions",
-      "pending_visual_questions": [
+      "status": "linked_questions_no_remaining_candidate_in_this_plan",
+      "pending_visual_questions": [],
+      "new_active_visual_questions": [
         {
           "exercise": "tcf-a1j-s3-co-2",
           "question": 4
         }
       ],
-      "new_active_visual_questions": [],
       "new_active_association_scenes": [],
       "current_linked_questions": 7,
-      "current_linked_image_variants": 2,
+      "current_linked_image_variants": 3,
       "complete_image_audit_certified": false
     },
     {
@@ -17194,7 +17193,7 @@
           "asset": "80f2e4138d02"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "09035276:065:07efb5a82e80",
         "additional-20261102:mdf-a1-abc-junior:65:07efb5a82e80:e5c873a3"
@@ -17206,6 +17205,11 @@
           "candidate_cut_id": "09035276-065-07efb5a82e80-d1",
           "transcription": "Bonjour à tous. La visite du musée commence à 1h. Vous devez laisser vos sacs à l'entrée et attendre la guide devant la salle 12. Après la visite, vous pouvez manger au restaurant du musée au premier étage et acheter le livre du musée à la boutique à côté de la sortie."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp"
       ]
     },
     {
@@ -17333,7 +17337,7 @@
           "asset": "a3e05ed537e8"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:088:4931a05f81cc"
       ],
@@ -17344,6 +17348,11 @@
           "candidate_cut_id": "delf_a1_2022-088-4931a05f81cc-r2-d1",
           "transcription": "Bonjour, chère cousine. C'est Gilles. Je suis dans ta ville pour mon travail, avec mon directeur. On peut se voir demain après 19h. Je t'invite dans un petit restaurant sympa près de mon hôtel. Envoie-moi un texto avant 17h, si tu es d'accord, et je réserve une table pour 20h. Bisous!"
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp"
       ]
     },
     {
@@ -18004,7 +18013,7 @@
           "asset": "a6a917953b36"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:004:a8ddb5bf8bde"
       ],
@@ -18015,6 +18024,11 @@
           "candidate_cut_id": "piste_a1-004-a8ddb5bf8bde-d1",
           "transcription": "Je n'aime pas le restaurant de l'université. Où est-ce que tu manges alors? Je préfère me préparer mes repas."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp"
       ]
     },
     {
@@ -18135,7 +18149,7 @@
           "asset": "e1b23bf8a5a6"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "piste_a1:009:ab20da57a3f8"
       ],
@@ -18146,6 +18160,11 @@
           "candidate_cut_id": "piste_a1-009-ab20da57a3f8-d5",
           "transcription": "Excuse moi, j'ai cours de sport. Je cherche la piscine de l'université. Où est-ce qu'elle est? Derrière toi. Regarde. Oh merci."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp"
       ]
     },
     {
@@ -18212,7 +18231,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-a1-sem1-co-2",
+        "question": 1,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
+        ],
+        "support_quote": "Le midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?",
+        "current_bank_transcription": "Le midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?\nLe midi, vous pouvez manger au restaurant de l'entreprise.\nAh oui.\nEt le restaurant ouvre à quelle heure?\nÀ 11h30.\n11h30.\nD'accord.\nÀ tout à l'heure?",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restauration d’entreprise déjà disponible réutilisée, restaurant du musée et restauration de gare ; aucun effacement des qualificatifs des lieux."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -21192,7 +21230,26 @@
       ],
       "status": "requires_editorial_and_visual_review_before_activation",
       "linked_source_ids": [],
-      "source_links": []
+      "source_links": [],
+      "image_preparation_status": "images_prepared_pending_audio_link",
+      "prepared_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-tentes-camping-dessine.webp"
+      ],
+      "editorial_review": {
+        "exercise": "tcf-ss-a1-s34-co-1",
+        "question": 2,
+        "images": [
+          "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co306-tentes-camping-dessine.webp"
+        ],
+        "support_quote": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "current_bank_transcription": "- Bonjour !\nVous proposez la pension complète ?\n- Non, nous proposons un petit déjeuner au restaurant du camping et un buffet le soir, mais nous n'avons pas de déjeuner.",
+        "support_basis": "current_bank_transcription_pending_replacement_audio_link",
+        "review_note": "Trio complet relu visuellement en 4:3 et comparé au style 48a753d8. Restaurant au milieu des emplacements de camping, piscine et intérieur des tentes : trois lieux distincts. Piscine existante relue et réutilisée."
+      }
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23830,7 +23887,7 @@
           "asset": "916d6573cd97"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:096:c780e82fd1ad"
       ],
@@ -23841,6 +23898,11 @@
           "candidate_cut_id": "delf_a1_2022-096-c780e82fd1ad-d2",
           "transcription": "Tous les jours, il y a de la viande au restaurant de l'université. C'est vrai. Tu n'aimes pas la viande? Non. Je ne mange pas de viande. Je vais sortir pour manger dehors."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ]
     },
     {
@@ -26196,7 +26258,7 @@
           "asset": "916d6573cd97"
         }
       ],
-      "status": "requires_editorial_and_visual_review_before_activation",
+      "status": "active_after_visual_and_source_text_review",
       "linked_source_ids": [
         "delf_a1_2022:096:c780e82fd1ad"
       ],
@@ -26207,6 +26269,11 @@
           "candidate_cut_id": "delf_a1_2022-096-c780e82fd1ad-d2",
           "transcription": "Tous les jours, il y a de la viande au restaurant de l'université. C'est vrai. Tu n'aimes pas la viande? Non. Je ne mange pas de viande. Je vais sortir pour manger dehors."
         }
+      ],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp"
       ]
     },
     {
@@ -36100,7 +36167,7 @@
       "label": "Le restaurant de la gare",
       "path_after_generation": "/lib/images/tcf/qcm-audit/916d6573cd97.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le restaurant de la gare ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpa-co-4",
@@ -36118,8 +36185,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+      "sha256": "df104e95f880b640756482dadcdcdc76f54321ad6e78c33cd1345cae77313ffe",
+      "review_note": "Cafétéria avec comptoir de libre-service, plateaux et trains vus directement sur les quais ; enseigne GARE relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "ddb64493037c",
@@ -36716,7 +36788,7 @@
       "label": "Au restaurant du musée",
       "path_after_generation": "/lib/images/tcf/qcm-audit/89c8dff57510.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au restaurant du musée ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1j-s1-ce-1",
@@ -36734,8 +36806,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+      "sha256": "aa4de3bbdbf232cf8681c51f7f6cd0d799e563e4b25152c07917282bb6061ba2",
+      "review_note": "Restaurant avec galerie de tableaux et sculpture accessible dans le même bâtiment ; enseigne MUSÉE relue, pas de montant. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "c1bd71aa0d80",
@@ -39841,7 +39918,7 @@
       "label": "Au restaurant du camping",
       "path_after_generation": "/lib/images/tcf/qcm-audit/6b5efb59345d.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au restaurant du camping ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-ss-a1-s34-co-1",
@@ -39849,8 +39926,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
+      "sha256": "2a44959629732d54c406287cfe10f9886d58bf71bda3e097479bd1be3b77f956",
+      "review_note": "Restaurant de camping avec tentes et camping-car proches ; enseigne CAMPING relue et aucun prix. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "8e4309172597",
@@ -39983,7 +40065,7 @@
       "label": "Dans un restaurant près de son hôtel",
       "path_after_generation": "/lib/images/tcf/qcm-audit/99f6abbf3068.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans un restaurant près de son hôtel ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-1",
@@ -39991,8 +40073,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+      "sha256": "6be6888701d6d19cd4ed444ba8958cf05fc827d4a2d94af4d28c3ca22e050584",
+      "review_note": "Deux établissements à portes distinctes sur le même trottoir : hôtel et restaurant voisin. Relation de proximité visible, pas un restaurant montré dans le hall. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9b21b982b6f5",
@@ -43284,7 +43371,7 @@
       "label": "La cantine de l’université",
       "path_after_generation": "/lib/images/tcf/qcm-audit/e1b23bf8a5a6.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La cantine de l’université ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-4",
@@ -43292,8 +43379,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+      "sha256": "bff5b151cce44ab58d77ad0f0880a39776fdf1ad6736b6b34725a2f0e9dc90f0",
+      "review_note": "Cantine de campus avec tables, plateaux et libre-service, bâtiment UNIVERSITÉ et salle de cours visibles ; enseigne relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "190b6defe6e6",
@@ -43379,7 +43471,7 @@
       "label": "Le restaurant de l’hôtel",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a6a917953b36.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le restaurant de l’hôtel ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpa-co-4",
@@ -43397,8 +43489,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+      "sha256": "f2279348c1c5a4921800206b92698f946456533c5510d2a1f38c52165490330f",
+      "review_note": "Restaurant ouvrant sur la réception et le chariot à bagages du même hôtel ; enseigne HÔTEL relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "986e43727f55",
@@ -44425,7 +44522,7 @@
       "label": "Dans un café près de la gare",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a3e05ed537e8.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans un café près de la gare ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-1",
@@ -44433,8 +44530,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp",
+      "sha256": "cb05d12edd6da2cbc7574a491ddbd7ad2b73daac337b5feac37de17cc1bcbcbe",
+      "review_note": "Café à terrasse et gare à train visible séparés par une placette ; relation de proximité et deux bâtiments distincts. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "4ca501145722",
@@ -44568,7 +44670,7 @@
       "label": "Au restaurant de l’entreprise",
       "path_after_generation": "/lib/images/tcf/qcm-audit/724a3551d63f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au restaurant de l’entreprise ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-sem1-co-2",
@@ -44576,8 +44678,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+      "sha256": "688f167b2c37ad6be698cd9e6cce937732a8c8ee33f4db3b27095ee800210266",
+      "review_note": "Restaurant collectif, plateaux-repas, badges vierges et bureaux derrière la cloison vitrée ; trois employés aux visages différents. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "9c12bc679b98",
@@ -44653,7 +44760,7 @@
       "label": "À la cafétéria de la gare",
       "path_after_generation": "/lib/images/tcf/qcm-audit/2c195660c1de.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « À la cafétéria de la gare ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1j-s3-co-2",
@@ -44661,8 +44768,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+      "sha256": "df104e95f880b640756482dadcdcdc76f54321ad6e78c33cd1345cae77313ffe",
+      "review_note": "Cafétéria avec comptoir de libre-service, plateaux et trains vus directement sur les quais ; enseigne GARE relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "7d324ea9c39d",
@@ -45285,7 +45397,7 @@
       "label": "La piscine de l’université",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1b8a6531398e.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La piscine de l’université ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-4",
@@ -45293,8 +45405,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+      "sha256": "c5be0a883cbd620c24e83fc8b3372a489e12c8f14c09fbeedc6a695643399700",
+      "review_note": "Bassin et lignes d’eau sur un campus, bâtiment UNIVERSITÉ visible ; aucun personnage ou horaire. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "27a24cd778fe",
@@ -46854,7 +46971,7 @@
       "label": "Au restaurant du parc",
       "path_after_generation": "/lib/images/tcf/qcm-audit/80f2e4138d02.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au restaurant du parc ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1j-s3-co-2",
@@ -46862,8 +46979,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp",
+      "sha256": "2772437ca964e311ba6221a0fb880540539fa0a1e3e27a881df9b195f6910c74",
+      "review_note": "Restaurant avec terrasse ouvert sur les allées, arbres et bancs d’un parc ; contexte de parc public visible. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "fa93dd8416d6",
@@ -47757,7 +47879,7 @@
       "label": "La bibliothèque de l’université",
       "path_after_generation": "/lib/images/tcf/qcm-audit/650d2ccd338f.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « La bibliothèque de l’université ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpb-co-4",
@@ -47765,8 +47887,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+      "sha256": "ffaa8a1f1ea5cf59596a0d3d1a79ec62817d9ff0b29179553b9d31adf0db3946",
+      "review_note": "Rayonnages et tables d’étude sur un campus, bâtiment UNIVERSITÉ visible ; aucun titre parasite lisible. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "28494024cbf3",
@@ -47847,7 +47974,7 @@
       "label": "Le restaurant de l’université",
       "path_after_generation": "/lib/images/tcf/qcm-audit/ab7eea2adade.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Le restaurant de l’université ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-tpa-co-4",
@@ -47865,8 +47992,13 @@
           "choice": "a"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+      "sha256": "bff5b151cce44ab58d77ad0f0880a39776fdf1ad6736b6b34725a2f0e9dc90f0",
+      "review_note": "Cantine de campus avec tables, plateaux et libre-service, bâtiment UNIVERSITÉ et salle de cours visibles ; enseigne relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "1770e2891746",
@@ -48010,7 +48142,7 @@
       "label": "Au restaurant de la gare",
       "path_after_generation": "/lib/images/tcf/qcm-audit/a65d7fbb8151.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Au restaurant de la gare ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-sem1-co-2",
@@ -48018,8 +48150,13 @@
           "choice": "c"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+      "sha256": "df104e95f880b640756482dadcdcdc76f54321ad6e78c33cd1345cae77313ffe",
+      "review_note": "Cafétéria avec comptoir de libre-service, plateaux et trains vus directement sur les quais ; enseigne GARE relue. Contrôle individuel puis par trio : natif paysage exact 4:3, aucune date ni montant.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "425191a7ab61",
@@ -48248,7 +48385,7 @@
       "label": "Dans le restaurant de son entreprise",
       "path_after_generation": "/lib/images/tcf/qcm-audit/1e3815bad790.webp",
       "prompt": "Illustration pédagogique représentant exactement cette proposition : « Dans le restaurant de son entreprise ». Montrer tous les éléments utiles de la proposition, sans ajouter de précision absente. Ne pas réduire une action à un objet isolé ni une scène à un décor vide si les personnages sont nécessaires. Style cohérent entre les trois choix : illustration réaliste simple, cadrage clair, sans légende, sans logo, sans montant, sans date, sans jour ni mois. FORMAT OBLIGATOIRE : paysage exact 4:3, style DESSINÉ CE/CO défini, aucun étirement ni découpe des sujets utiles.",
-      "status": "pending_generation_after_full_choice_review",
+      "status": "generated_and_visually_reviewed",
       "references": [
         {
           "exercise": "tcf-a1-s1-co-1",
@@ -48256,8 +48393,13 @@
           "choice": "b"
         }
       ],
-      "ready_4_3": false,
-      "priority": "A1_A2_first"
+      "ready_4_3": true,
+      "generated_path": "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+      "sha256": "688f167b2c37ad6be698cd9e6cce937732a8c8ee33f4db3b27095ee800210266",
+      "review_note": "Restaurant collectif, plateaux-repas, badges vierges et bureaux derrière la cloison vitrée ; trois employés aux visages différents. Contrôle visuel individuel : sujet entier, 4:3 natif, aucun montant ni date.",
+      "priority": "A1_A2_first",
+      "style_review_status": "aligned",
+      "ready_for_new_reuse": true
     },
     {
       "id": "a6b01d45fafb",
@@ -49917,19 +50059,19 @@
   "pending_association_images": [],
   "visual_style_review": {
     "audit": "recontrole-style-images.json",
-    "reviewed_co_images": 449,
+    "reviewed_co_images": 460,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 508,
+    "reviewed_total_images": 519,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 497,
+    "already_aligned": 508,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 190
+    "new_images_compared_to_reference": 201
   },
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "workflow_order": [

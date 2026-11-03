@@ -224,19 +224,19 @@
     "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
   ],
   "summary": {
-    "reviewed_co_images": 449,
+    "reviewed_co_images": 460,
     "reviewed_other_images": 59,
-    "reviewed_total_images": 508,
+    "reviewed_total_images": 519,
     "user_approved_reference_images": 35,
     "initial_redraw_required": 11,
     "initial_co_redraw_required": 11,
     "initial_other_redraw_required": 0,
-    "already_aligned": 497,
+    "already_aligned": 508,
     "redrawn_images": 11,
     "remaining_redraws": 0,
     "restored_previous_images": 14,
     "rejected_unpublished_previews": 12,
-    "new_images_compared_to_reference": 190
+    "new_images_compared_to_reference": 201
   },
   "superseded_review": {
     "commit": "f6f2a521",
@@ -6318,6 +6318,182 @@
       "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "references": [
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-restaurant-musee-dessine",
+      "label": "Au restaurant du musée",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-musee-dessine.webp",
+      "sha256": "aa4de3bbdbf232cf8681c51f7f6cd0d799e563e4b25152c07917282bb6061ba2",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant avec galerie de tableaux et sculpture accessible dans le même bâtiment ; enseigne MUSÉE relue, pas de montant.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cafeteria-gare-dessine",
+      "label": "À la cafétéria de la gare",
+      "path": "/lib/images/tcf/qcm-audit/co306-cafeteria-gare-dessine.webp",
+      "sha256": "df104e95f880b640756482dadcdcdc76f54321ad6e78c33cd1345cae77313ffe",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Cafétéria avec comptoir de libre-service, plateaux et trains vus directement sur les quais ; enseigne GARE relue.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-restaurant-parc-dessine",
+      "label": "Au restaurant du parc",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-parc-dessine.webp",
+      "sha256": "2772437ca964e311ba6221a0fb880540539fa0a1e3e27a881df9b195f6910c74",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant avec terrasse ouvert sur les allées, arbres et bancs d’un parc ; contexte de parc public visible.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-restaurant-universite-dessine",
+      "label": "Le restaurant de l’université",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-universite-dessine.webp",
+      "sha256": "bff5b151cce44ab58d77ad0f0880a39776fdf1ad6736b6b34725a2f0e9dc90f0",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Cantine de campus avec tables, plateaux et libre-service, bâtiment UNIVERSITÉ et salle de cours visibles ; enseigne relue.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-restaurant-hotel-dessine",
+      "label": "Le restaurant de l’hôtel",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-hotel-dessine.webp",
+      "sha256": "f2279348c1c5a4921800206b92698f946456533c5510d2a1f38c52165490330f",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant ouvrant sur la réception et le chariot à bagages du même hôtel ; enseigne HÔTEL relue.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-restaurant-camping-dessine",
+      "label": "Au restaurant du camping",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-camping-dessine.webp",
+      "sha256": "2a44959629732d54c406287cfe10f9886d58bf71bda3e097479bd1be3b77f956",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Restaurant de camping avec tentes et camping-car proches ; enseigne CAMPING relue et aucun prix.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-restaurant-pres-hotel-dessine",
+      "label": "Dans un restaurant près de son hôtel",
+      "path": "/lib/images/tcf/qcm-audit/co306-restaurant-pres-hotel-dessine.webp",
+      "sha256": "6be6888701d6d19cd4ed444ba8958cf05fc827d4a2d94af4d28c3ca22e050584",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Deux établissements à portes distinctes sur le même trottoir : hôtel et restaurant voisin. Relation de proximité visible, pas un restaurant montré dans le hall.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-cafe-pres-gare-dessine",
+      "label": "Dans un café près de la gare",
+      "path": "/lib/images/tcf/qcm-audit/co306-cafe-pres-gare-dessine.webp",
+      "sha256": "cb05d12edd6da2cbc7574a491ddbd7ad2b73daac337b5feac37de17cc1bcbcbe",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Café à terrasse et gare à train visible séparés par une placette ; relation de proximité et deux bâtiments distincts.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-piscine-universite-dessine",
+      "label": "La piscine de l’université",
+      "path": "/lib/images/tcf/qcm-audit/co306-piscine-universite-dessine.webp",
+      "sha256": "c5be0a883cbd620c24e83fc8b3372a489e12c8f14c09fbeedc6a695643399700",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Bassin et lignes d’eau sur un campus, bâtiment UNIVERSITÉ visible ; aucun personnage ou horaire.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-bibliotheque-universite-dessine",
+      "label": "La bibliothèque de l’université",
+      "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-universite-dessine.webp",
+      "sha256": "ffaa8a1f1ea5cf59596a0d3d1a79ec62817d9ff0b29179553b9d31adf0db3946",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Rayonnages et tables d’étude sur un campus, bâtiment UNIVERSITÉ visible ; aucun titre parasite lisible.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
+      ],
+      "review_origin": "new_generation_after_reference48",
+      "user_approved_reference": false
+    },
+    {
+      "id": "co306-tentes-camping-dessine",
+      "label": "Dans les tentes",
+      "path": "/lib/images/tcf/qcm-audit/co306-tentes-camping-dessine.webp",
+      "sha256": "66da1e60226a761960a5ce589d33bdbfee038ad718e3d92c1323d06fe2c2eecc",
+      "status": "aligned",
+      "review_note": "Comparaison aux scènes de cinéma et théâtre du commit 48a753d8 : couleurs naturelles chaudes, volumes modelés, mobilier détaillé et contours discrets. Deux tentes entières ouvertes montrant leurs tapis et sacs de couchage à l’intérieur ; réponse dans les tentes représentée.",
+      "group": "co_active_audio_batch",
+      "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp"
       ],
       "review_origin": "new_generation_after_reference48",
       "user_approved_reference": false
